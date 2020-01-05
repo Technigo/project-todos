@@ -6,7 +6,7 @@ export const TodoList = () => {
   const todos = useSelector(store => store.todos);
 
   return (
-    <ul className="todo-list">
+    <ul className="TodoList">
       {todos.map(todo => (
         <TodoItem key={todo.id} todo={todo} />
       ))}
