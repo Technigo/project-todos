@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Input } from "components/Input";
 // import { tasks } from "reducers/tasks";
 
 export const TaskList = () => {
@@ -7,7 +8,8 @@ export const TaskList = () => {
 
   return (
     <div>
-      {tasks.map(task => {
+      <Input />
+      {tasks.taskData.map(task => {
         return <p key={task.id}>{task.text}</p>;
       })}
     </div>
