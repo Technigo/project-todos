@@ -5,7 +5,6 @@ import { tasks } from "reducers/tasks";
 let taskId = 0;
 
 export const Input = ({ handleClick }) => {
-  // let userInput = useSelector(state => state.tasks.value);
   const [todoText, setTodoText] = useState("");
 
   const dispatch = useDispatch();
@@ -18,10 +17,6 @@ export const Input = ({ handleClick }) => {
       })
     );
   };
-
-  // handleonChange = e => {
-  //   userInput = e.target.value;
-  // };
 
   return (
     <form
