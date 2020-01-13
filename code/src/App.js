@@ -4,6 +4,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { tasks } from "reducers/tasks";
 
 import { TaskList } from "./components/TaskList";
+import { Counter } from "components/Counter";
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -14,6 +15,7 @@ const store = configureStore({ reducer });
 export const App = () => {
   return (
     <Provider store={store}>
+      <Counter />
       <TaskList />
     </Provider>
   );

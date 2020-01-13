@@ -4,9 +4,10 @@ import { tasks } from "reducers/tasks";
 
 export const Toggle = ({ ifCompleted, id }) => {
   const dispatch = useDispatch();
-  // const hello = useSelector(state => state.tasks.taskData);
-  // const i = useSelector(state => state.tasks.taskData.id);
-  // const hi = useSelector(state => state.tasks.taskData.map(task => task.id));
+  // let completed = useSelector(state =>
+  //   state.tasks.taskData.map(todo => todo.complete)
+  // );
+  // console.log(completed);
 
   const handleClick = () => {
     dispatch(tasks.actions.toggle({ id }));
