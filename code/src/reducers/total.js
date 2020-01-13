@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const totalTodos = createSlice({
-    name: 'totalTodos',
+export const total = createSlice({
+    name: 'number',
     initialState: {
         items: []
 

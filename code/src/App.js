@@ -3,13 +3,13 @@ import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { todos } from 'reducers/todos'
 import { Todos } from 'components/Todos'
-import { totalTodos } from 'reducers/totalTodos'
+import { total } from 'reducers/total'
 import { Header } from 'components/Header'
 import { StyleSheet } from 'react'
 
 const reducer = combineReducers({
   todos: todos.reducer,
-  totalTodos: totalTodos.reducer
+  total: total.reducer
 })
 
 const store = configureStore({ reducer })
@@ -18,7 +18,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
-      <totalTodos />
+      <total />
       <Todos />
     </Provider>
   )
