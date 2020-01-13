@@ -1,0 +1,7 @@
+.totalTodos {
+  background: #0003ff;
+  color: #fff;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+}
