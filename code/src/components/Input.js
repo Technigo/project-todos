@@ -1,30 +1,43 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import { tasks } from "reducers/tasks";
 
-export const Input = ({ handleClick, handleonChange }) => {
-  let userInput = useSelector(state => state.tasks.value);
+let taskId = 0;
+
+export const Input = ({ handleClick }) => {
+  // let userInput = useSelector(state => state.tasks.value);
+  const [todoText, setTodoText] = useState("");
 
   const dispatch = useDispatch();
 
   handleClick = () => {
     dispatch(
       tasks.actions.addTask({
-        taskText: userInput
+        text: todoText,
+        id: taskId++
       })
     );
   };
 
-  handleonChange = e => {
-    userInput = e.target.value;
-  };
+  // handleonChange = e => {
+  //   userInput = e.target.value;
+  // };
 
   return (
-    <form>
+    <form
+      onSubmit={e => {
+        e.preventDefault();
+        if (!todoText.trim()) {
+          return;
+        }
+
+        setTodoText("");
+      }}
+    >
       <input
         type="text"
         placeholder="Add task"
-        onChange={handleonChange}
+        onChange={e => setTodoText(e.target.value)}
       ></input>
       <button type="button" onClick={handleClick}>
         Add task +

@@ -8,8 +8,7 @@ import { createSlice } from "@reduxjs/toolkit";
 // ];
 
 const initialState = {
-  taskData: [],
-  value: ""
+  taskData: []
 };
 
 export const tasks = createSlice({
@@ -17,19 +16,32 @@ export const tasks = createSlice({
   initialState,
   reducers: {
     addTask: (state, action) => {
-      let { taskText } = action.payload;
-      const taskId = state.taskData.length + 1;
+      let { text, id } = action.payload;
 
-      state.taskData.push({ id: taskId, text: taskText, complete: false });
+      state.taskData.push({
+        id,
+        text,
+        complete: false
+      });
+    },
+    toggle: (state, action) => {
+      const todo = state.taskData.map(todo => todo.id);
+      let completed = state.taskData.map(todo => todo.complete);
+      console.log(todo);
+      console.log(completed);
+      console.log(todo[action.payload.id]);
+      console.log(action.payload.id);
+      console.log(completed[action.payload.id]);
+      console.log(!completed[action.payload.id]);
 
-      // return [
-      //   ...state,
-      //   {
-      //     id: taskId,
-      //     text: taskText,
-      //     completed: false
-      //   }
-      // ];
+      if (todo[action.payload.id] === action.payload.id) {
+        state.taskData[action.payload.id].complete = !state.taskData[
+          action.payload.id
+        ].complete;
+      }
     }
   }
 });
+
+export const { addTask, toggle } = tasks.actions;
+export default tasks.reducer;
