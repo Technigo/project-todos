@@ -21,7 +21,8 @@ export const tasks = createSlice({
       state.taskData.push({
         id,
         text,
-        complete: false
+        complete: false,
+        important: false
       });
     },
     toggle: (state, action) => {
@@ -40,8 +41,23 @@ export const tasks = createSlice({
         ].complete;
       }
     },
+    toggleImportant: (state, action) => {
+      const todo = state.taskData.map(todo => todo.id);
+
+      if (todo[action.payload.id] === action.payload.id) {
+        state.taskData[action.payload.id].important = !state.taskData[
+          action.payload.id
+        ].important;
+      }
+    },
     deleteAll: state => {
       for (let i in state.taskData) delete state.taskData[i];
+    },
+    deleteOne: (state, action) => {
+      const todo = state.taskData.map(todo => todo.id);
+      if (todo[action.payload.id] === action.payload.id) {
+        delete state.taskData[action.payload.id];
+      }
     }
   }
 });
