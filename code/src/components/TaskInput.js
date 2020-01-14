@@ -28,11 +28,25 @@ export const TaskInput = ({ task }) => {
 }
 
 const Wrapper = styled.section`
-
+  background: #f2f2f2;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  padding: 10px;
 `
 const AddButton = styled.button`
-
+  background: #fff;
+  color: #666;
+  font-weight: 700;
+  font-size: 20px;
+  border: none;
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
 `
 const Input = styled.input`
   color: #666;
+  border: none;
+  background: transparent;
+  padding: 10px 5px;
 `
