@@ -1,21 +1,26 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { todos } from 'reducers/todos';
 
 const StyledAddTodo = styled.div`
-  /* background-color: rgba(0, 0, 0, 0.01); */
+  border-bottom: ${props =>
+    props.empty ? '1px solid rgba(0, 0, 0, 0.1)' : ''};
 `;
 
 const Form = styled.form`
   height: 55px;
-  display: flex;
+  /* display: flex; */
+  display: grid;
+  grid-template-columns: 1fr 8fr;
+  grid-gap: 0.5rem;
+  align-items: center;
 `;
 
 const Input = styled.input`
   /* width: 90%; */
-  padding-left: 1rem;
-  flex-grow: 2;
+  /* padding-left: 1rem; */
+  /* flex-grow: 2; */
   border: none;
   outline: none;
   font-size: 1rem;
@@ -26,7 +31,7 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  width: 50px;
+  /* width: 50px; */
   color: rgba(0, 0, 0, 0.3);
   padding: 0 1rem;
   background-color: white;
@@ -43,6 +48,7 @@ const Button = styled.button`
 `;
 
 export const AddTodo = () => {
+  const allTodos = useSelector(state => state.todos);
   const [todoText, setTodoText] = useState('');
   const dispatch = useDispatch();
 
@@ -60,7 +66,7 @@ export const AddTodo = () => {
   };
 
   return (
-    <StyledAddTodo>
+    <StyledAddTodo empty={allTodos.length === 0}>
       <Form onSubmit={handleSubmit}>
         <Button type="submit">+</Button>
         <Input

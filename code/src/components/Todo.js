@@ -42,7 +42,7 @@ const TextWrapper = styled.div`
   height: 100%;
   color: ${props => (props.completed ? 'rgba(0,0,0, 0.3)' : '')};
   font-size: 1rem;
-  padding: 0 1rem;
+  /* padding: 0 1rem; */
   /* border: 1px solid green; */
 `;
 
@@ -80,12 +80,14 @@ const Button = styled.button`
   background-color: none;
   border: none;
   font-size: 1.1rem;
+  /* transform: scale(0.8); */
   opacity: 0.2;
 
   &:hover {
     opacity: 1;
+    /* transform: scale(1.3); */
     cursor: pointer;
-    transition: all 200ms ease-in;
+    transition: all 200ms ease-in-out;
   }
 `;
 
@@ -105,7 +107,7 @@ export const Todo = ({ todo }) => {
         onClick={() => dispatch(todos.actions.toggleTodo({ todo }))}
         completed={todo.completed}
       >
-        {todo.text}
+        <span>{todo.text}</span>
       </TextWrapper>
       <TimeWrapper
         onClick={() => dispatch(todos.actions.toggleTodo({ todo }))}

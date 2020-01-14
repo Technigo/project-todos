@@ -7,7 +7,7 @@ export const todos = createSlice({
     {
       id: 1,
       text: 'Todo 1',
-      createdAt: '2020-01-12T15:14:51.733Z',
+      createdAt: '2019-11-29T15:14:51.733Z',
       completed: false
     },
     {
@@ -25,7 +25,7 @@ export const todos = createSlice({
     {
       id: 4,
       text: 'Todo 4',
-      createdAt: '2020-01-14T15:20:13.556Z',
+      createdAt: '2020-01-14T19:50:13.556Z',
       completed: false
     }
   ],
