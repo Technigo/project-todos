@@ -6,11 +6,13 @@ export const Quest = ({ questIndex }) => {
   const dispatch = useDispatch()
   const currentQuest = useSelector((state) => state.quests.questsList[questIndex])
 
+  const handleStatus = () => (dispatch(quests.actions.doneToggle({ questIndex })))
+
   return (
     <div>{currentQuest.text}-{currentQuest.category}
       <button
         type="button"
-        onClick={() => dispatch(quests.actions.doneToggle({ questIndex }))}> {currentQuest.status ? 'done' : 'not done'}
+        onClick={handleStatus}> {currentQuest.status ? 'done' : 'not done'}
       </button>
     </div>)
 }
