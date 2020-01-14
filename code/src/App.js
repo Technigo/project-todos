@@ -8,12 +8,14 @@ import { TaskList } from 'components/TaskList'
 
 import { tasks } from 'reducers/tasks'
 
-// Store with the todos (hardcoded at first)
+// Store with the tasks (hardcoded at first)
+// Reducer for the tasks
+// Reducer to count quantity of completed and not completed tasks
 // Component TaskInput to create new todos
-// Component TaskItem
-// Component TaskList to list the todos
+// Component TaskItem for the tasks
+// Component TaskList to list the tasks
 // Component Reset to clear list (button)
-// Component Header with title, date, task quantity, clearbutton
+// Component Header with title, date, completed tasks/task quantity, clearbutton
 
 const reducer = combineReducers({
   tasks: tasks.reducer

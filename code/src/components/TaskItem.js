@@ -29,7 +29,7 @@ const Task = styled.section`
   display: flex;
   flex-direction: row;
   padding-bottom: 10px;
-  border-bottom: 1px solid lightgray;
+  border-bottom: 1px solid #EBEEEF;
 `
 const TaskButton = styled.button`
   background: transparent;
