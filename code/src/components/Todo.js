@@ -61,26 +61,26 @@ const TimeWrapper = styled.div`
 
 const DeleteWrapper = styled.div`
   display: flex;
-  visibility: hidden;
+  /* visibility: hidden; */
   justify-content: center;
   align-items: center;
   /* border: 1px solid red; */
   /* padding-right: 0.4rem; */
 
-  @media (hover: hover) and (pointer: fine) {
+  /* @media (hover: hover) and (pointer: fine) {
     visibility: hidden;
 
     ${StyledTodo}:hover & {
       visibility: visible;
     }
-  }
+  } */
 `;
 
 const Button = styled.button`
   background-color: none;
   border: none;
   font-size: 1.1rem;
-  opacity: 0.5;
+  opacity: 0.2;
 
   &:hover {
     opacity: 1;
