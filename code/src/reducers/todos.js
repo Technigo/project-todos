@@ -4,9 +4,30 @@ import uuid from 'uuid/v4';
 export const todos = createSlice({
   name: 'todos',
   initialState: [
-    { id: 1, text: 'Todo test 1', completed: false },
-    { id: 2, text: 'Todo test 2', completed: false },
-    { id: 3, text: 'Todo test 3', completed: false }
+    {
+      id: 1,
+      text: 'Todo 1',
+      createdAt: '2020-01-12T15:14:51.733Z',
+      completed: false
+    },
+    {
+      id: 2,
+      text: 'Todo 2',
+      createdAt: '2020-01-13T13:14:51.733Z',
+      completed: false
+    },
+    {
+      id: 3,
+      text: 'Todo 3',
+      createdAt: '2020-01-14T14:14:51.733Z',
+      completed: false
+    },
+    {
+      id: 4,
+      text: 'Todo 4',
+      createdAt: '2020-01-14T15:20:13.556Z',
+      completed: false
+    }
   ],
   reducers: {
     addTodo: {
@@ -26,8 +47,7 @@ export const todos = createSlice({
       }
     },
     removeTodo: (state, action) => {
-      const { id } = action.payload.todo;
-      state = state.filter(item => item.id !== id);
+      return state.filter(item => item.id !== action.payload.id);
     },
     toggleTodo: (state, action) => {
       const { id } = action.payload.todo;
