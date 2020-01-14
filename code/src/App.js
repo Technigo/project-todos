@@ -1,9 +1,26 @@
-import React from 'react'
+import React from 'react';
+import { Header } from './components/Header';
+import { AllTasks } from 'components/AllTasks';
+import { AddTask } from './components/AddTask';
+import { Provider } from 'react-redux';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+
+import { addTask } from 'reducers/addTask';
+import { tasks } from 'reducers/tasks';
+
+const reducer = combineReducers({
+  addTask: addTask.reducer,
+  tasks: tasks.reducer
+});
+
+const store = configureStore({ reducer });
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
-}
+    <Provider store={store}>
+      <Header />
+      <AddTask />
+      <AllTasks />
+    </Provider>
+  );
+};
