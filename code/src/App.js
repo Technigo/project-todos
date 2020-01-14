@@ -6,6 +6,7 @@ import { Todos } from 'components/Todos'
 import { total } from 'reducers/total'
 import { Header } from 'components/Header'
 import { StyleSheet } from 'react'
+import { AddTodo } from './components/AddTodo'
 
 const reducer = combineReducers({
   todos: todos.reducer,
@@ -18,6 +19,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
+      <AddTodo />
       <total />
       <Todos />
     </Provider>
