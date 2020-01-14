@@ -16,18 +16,24 @@ export const Form = () => {
     dispatch(quests.actions.createQuest({ text, category }))
     setText('')
   }
+  const handleDeleteAll = () => (dispatch(quests.actions.deleteAllQuests()))
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={text} onChange={handleChangeText} />
-      <select
-        onChange={handleChangeCategory}
-        value={category}>
-        {categoriesList.map((e, index) => (
-          <option value={e} key={`option-${index}`}>{e}</option>
-        ))}
-      </select>
-      <button type="submit">Add</button>
-    </form>
+    <>
+      <form onSubmit={handleSubmit}>
+        <input type="text" value={text} onChange={handleChangeText} />
+        <select
+          onChange={handleChangeCategory}
+          value={category}>
+          {categoriesList.map((e, index) => (
+            <option value={e} key={`option-${index}`}>{e}</option>
+          ))}
+        </select>
+        <button type="submit">Add</button>
+      </form>
+      <button type="button" onClick={handleDeleteAll}>
+        Clear Your Quest Log
+      </button>
+    </>
   )
 }

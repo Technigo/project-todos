@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { Quest } from 'components/Quest'
-import { Form } from 'components/Form'
 
 export const QuestsLog = () => {
   const questsList = useSelector((state) => state.quests.questsList)
@@ -41,7 +40,6 @@ export const QuestsLog = () => {
           {miscellaneousQuests.map((e) => (
             <Quest key={`quest-${e}`} questIndex={e} />))}
         </>}
-      <Form />
     </>
   )
 }
