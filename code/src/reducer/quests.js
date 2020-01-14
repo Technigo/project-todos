@@ -38,6 +38,10 @@ export const quests = createSlice({
     doneToggle: (state, action) => {
       const { questIndex } = action.payload
       state.questsList[questIndex].status = !state.questsList[questIndex].status
+    },
+    deleteQuest: (state, action) => {
+      const { questIndex } = action.payload
+      state.questsList.splice(questIndex, 1)
     }
   }
 })

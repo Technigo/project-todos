@@ -8,11 +8,19 @@ export const Quest = ({ questIndex }) => {
 
   const handleStatus = () => (dispatch(quests.actions.doneToggle({ questIndex })))
 
+  const handleDelete = () => (dispatch(quests.actions.deleteQuest({ questIndex })))
+
   return (
     <div>{currentQuest.text}-{currentQuest.category}
       <button
         type="button"
-        onClick={handleStatus}> {currentQuest.status ? 'done' : 'not done'}
+        onClick={handleStatus}>
+        {currentQuest.status ? 'done' : 'not done'}
+      </button>
+      <button
+        type="button"
+        onClick={handleDelete}>
+        Delete
       </button>
     </div>)
 }
