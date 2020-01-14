@@ -1,0 +1,8 @@
+.footer {
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+    justify-content: flex-end;
+    margin: 20px;
+   
+}

@@ -1,0 +1,28 @@
+.add-task-container{
+    display: flex;
+    flex-direction: row;
+}
+
+form {
+    display: flex;
+}
+
+textarea {
+    background-color: inherit;
+    width: 490px;
+    height: auto;
+    margin-right: 5px;
+    border-color: white;
+}
+
+.add-task-btn {
+    width: max-content;
+    padding: 3px;
+    background-color: #f5ab92;
+}
+
+
+
+
+
+
