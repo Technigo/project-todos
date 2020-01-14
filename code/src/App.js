@@ -1,9 +1,22 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
+
+import { todoList } from 'reducers/todoList'
+
+// Combine reducers
+const reducer = combineReducers({
+  todoList: todoList.reducer
+})
+
+const store = configureStore({ reducer })
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
+    <Provider store={store}>
+      <div>
+        Todo list in progress
     </div>
+    </Provider>
   )
 }
