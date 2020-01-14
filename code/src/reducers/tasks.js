@@ -8,7 +8,8 @@ import { createSlice } from "@reduxjs/toolkit";
 // ];
 
 const initialState = {
-  taskData: []
+  taskData: [],
+  total: 0
 };
 
 export const tasks = createSlice({
@@ -24,6 +25,8 @@ export const tasks = createSlice({
         complete: false,
         important: false
       });
+
+      state.total += 1;
     },
     toggle: (state, action) => {
       const todo = state.taskData.map(todo => todo.id);
@@ -52,12 +55,15 @@ export const tasks = createSlice({
     },
     deleteAll: state => {
       for (let i in state.taskData) delete state.taskData[i];
+
+      state.total = 0;
     },
     deleteOne: (state, action) => {
       const todo = state.taskData.map(todo => todo.id);
       if (todo[action.payload.id] === action.payload.id) {
         delete state.taskData[action.payload.id];
       }
+      state.total -= 1;
     }
   }
 });
