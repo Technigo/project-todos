@@ -7,7 +7,7 @@ const moment = require('moment');
 
 const StyledTodo = styled.li`
   display: grid;
-  grid-template-columns: 1fr 5fr 2fr 1fr;
+  grid-template-columns: 1fr 7fr 1fr;
   grid-gap: 0.5rem;
   align-items: center;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -22,6 +22,10 @@ const StyledTodo = styled.li`
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.05);
     transition: background-color 0.2s ease-in-out;
+  }
+
+  @media screen and (min-width: 768px) {
+    grid-template-columns: 1fr 5fr 2fr 1fr;
   }
 `;
 
@@ -43,12 +47,16 @@ const TextWrapper = styled.div`
 `;
 
 const TimeWrapper = styled.div`
-  display: flex;
+  display: none;
   justify-content: flex-end;
   align-items: center;
   font-size: 0.7rem;
   color: ${props => (props.completed ? 'rgba(0,0,0, 0.3)' : '')};
   /* border: 1px solid blue; */
+
+  @media screen and (min-width: 768px) {
+    display: flex;
+  }
 `;
 
 const DeleteWrapper = styled.div`
@@ -59,8 +67,12 @@ const DeleteWrapper = styled.div`
   /* border: 1px solid red; */
   /* padding-right: 0.4rem; */
 
-  ${StyledTodo}:hover & {
-    visibility: visible;
+  @media (hover: hover) and (pointer: fine) {
+    visibility: hidden;
+
+    ${StyledTodo}:hover & {
+      visibility: visible;
+    }
   }
 `;
 
