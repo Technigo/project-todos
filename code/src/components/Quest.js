@@ -1,8 +1,16 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import { quests } from 'reducer/quests'
 
 export const Quest = ({ questIndex }) => {
-  const quest = useSelector((state) => state.quests.questsList[questIndex])
+  const dispatch = useDispatch()
+  const currentQuest = useSelector((state) => state.quests.questsList[questIndex])
 
-  return (<div>{quest.text}-{quest.category}</div>)
+  return (
+    <div>{currentQuest.text}-{currentQuest.category}
+      <button
+        type="button"
+        onClick={() => dispatch(quests.actions.doneToggle({ questIndex }))}> {currentQuest.status ? 'done' : 'not done'}
+      </button>
+    </div>)
 }

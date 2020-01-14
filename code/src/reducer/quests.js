@@ -34,6 +34,10 @@ export const quests = createSlice({
         status: false,
         category
       })
+    },
+    doneToggle: (state, action) => {
+      const { questIndex } = action.payload
+      state.questsList[questIndex].status = !state.questsList[questIndex].status
     }
   }
 })
