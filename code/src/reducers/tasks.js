@@ -39,6 +39,9 @@ export const tasks = createSlice({
           action.payload.id
         ].complete;
       }
+    },
+    deleteAll: state => {
+      for (let i in state.taskData) delete state.taskData[i];
     }
   }
 });

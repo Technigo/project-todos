@@ -6,7 +6,7 @@ import { Toggle } from "./Toggle";
 
 export const TaskList = () => {
   const tasks = useSelector(state => state.tasks);
-  // console.log(tasks);
+  console.log(tasks);
 
   return (
     <div>

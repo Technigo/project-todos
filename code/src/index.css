@@ -24,3 +24,8 @@ ion-icon {
   display: flex;
   width: 80%;
 }
+
+.header {
+  display: flex;
+  justify-content: space-around;
+}
