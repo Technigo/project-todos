@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import { QuestsLog } from 'components/QuestsLog'
+import { Header } from 'components/Header'
 
 import { quests } from './reducer/quests'
 
@@ -15,7 +16,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <h1>test</h1>
+      <Header />
       <QuestsLog />
     </Provider>
   )

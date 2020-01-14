@@ -23,15 +23,24 @@ export const QuestsLog = () => {
 
   return (
     <>
-      <h3>Main</h3>
-      {mainQuests.map((e) => (
-        <Quest key={`quest-${e}`} questIndex={e} />))}
-      <h3>Side</h3>
-      {sideQuests.map((e) => (
-        <Quest key={`quest-${e}`} questIndex={e} />))}
-      <h3>Miscellaneous</h3>
-      {miscellaneousQuests.map((e) => (
-        <Quest key={`quest-${e}`} questIndex={e} />))}
+      {(mainQuests.length > 0)
+        && <>
+          <h3>Main</h3>
+          {mainQuests.map((e) => (
+            <Quest key={`quest-${e}`} questIndex={e} />))}
+        </>}
+      {(sideQuests.length > 0)
+        && <>
+          <h3>Side</h3>
+          {sideQuests.map((e) => (
+            <Quest key={`quest-${e}`} questIndex={e} />))}
+        </>}
+      {(miscellaneousQuests.length > 0)
+        && <>
+          <h3>Miscellaneous</h3>
+          {miscellaneousQuests.map((e) => (
+            <Quest key={`quest-${e}`} questIndex={e} />))}
+        </>}
       <Form />
     </>
   )

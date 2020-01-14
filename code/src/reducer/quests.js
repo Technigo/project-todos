@@ -1,21 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const questsList = [
-  {
-    text: 'asfasd',
-    category: 'Main',
-    status: false
-  },
-  {
-    text: 'a123d',
-    category: 'Main',
-    status: false
-  },
-  {
-    text: 'asfawqersd',
-    category: 'Main',
-    status: false
-  }]
+const questsList = []
 const categories = ['Main', 'Side', 'Miscellaneous']
 
 const initialState = {
@@ -42,6 +27,9 @@ export const quests = createSlice({
     deleteQuest: (state, action) => {
       const { questIndex } = action.payload
       state.questsList.splice(questIndex, 1)
+    },
+    deleteAllQuests: () => {
+      return initialState
     }
   }
 })
