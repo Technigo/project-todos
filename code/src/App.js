@@ -4,6 +4,11 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
 import { todoList } from 'reducers/todoList'
 
+import { TaskList } from 'components/TaskList'
+import { AddTask } from 'components/AddTask'
+
+import "index.css"
+
 // Combine reducers
 const reducer = combineReducers({
   todoList: todoList.reducer
@@ -17,6 +22,8 @@ export const App = () => {
       <div>
         Todo list in progress
     </div>
+      <AddTask />
+      <TaskList />
     </Provider>
   )
 }
