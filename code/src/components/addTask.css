@@ -1,0 +1,26 @@
+.task-form {
+  display: flex;
+  flex-direction: row-reverse;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.task-input {
+  border: none;
+  border-top: 2px solid #f4f4f4;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  padding: 1.5rem 1rem;
+  width: 100%;
+}
+
+@media screen and (min-width: 668px) {
+  .task-form {
+    border-left: 2px solid #f4f4f4;
+    border-right: 2px solid #f4f4f4;
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+  }
+}
