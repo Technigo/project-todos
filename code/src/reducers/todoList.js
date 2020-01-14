@@ -6,6 +6,10 @@ export const todoList = createSlice({
     tasks: []
   },
   reducers: {
+    addTask: (state, action) => {
+
+      state.tasks.push({ todoText: action.payload, isCompleted: false })
+    }
 
   }
 })
