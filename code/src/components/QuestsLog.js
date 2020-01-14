@@ -2,13 +2,15 @@ import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { quests } from 'reducer/quests'
 
-export const QuestsLog = () => {
-  const [text, setText] = useState()
-  const [category, setCategory] = useState()
+import { Quest } from 'components/Quest'
 
+export const QuestsLog = () => {
   const dispatch = useDispatch()
   const categoriesList = useSelector((state) => state.quests.categories)
   const questsList = useSelector((state) => state.quests.questsList)
+
+  const [text, setText] = useState()
+  const [category, setCategory] = useState(categoriesList[0])
 
   const handleChangeText = (e) => { setText(e.target.value) }
   const handleChangeCategory = (e) => setCategory(e.target.value)
@@ -27,8 +29,7 @@ export const QuestsLog = () => {
 
   return (
     <>
-      {questsList.map((e, index) => (
-        <div key={`quest-${index}`}>{e.text}-{e.category}</div>))}
+      {questsList.map((e, index) => (<Quest key={`quest-${index}`} questIndex={index} />))}
       <input type="text" value={text} onChange={handleChangeText} />
       <select
         onChange={handleChangeCategory}
