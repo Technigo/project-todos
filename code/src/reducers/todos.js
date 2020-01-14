@@ -24,6 +24,18 @@ export const todos = createSlice({
           }
         };
       }
+    },
+    removeTodo: (state, action) => {
+      const { id } = action.payload.todo;
+      state = state.filter(item => item.id !== id);
+    },
+    toggleTodo: (state, action) => {
+      const { id } = action.payload.todo;
+      const todo = state.find(todo => todo.id === id);
+
+      if (todo) {
+        todo.completed = !todo.completed;
+      }
     }
   }
 });

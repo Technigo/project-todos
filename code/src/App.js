@@ -3,8 +3,7 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { todos } from 'reducers/todos';
 import { visibilityFilter } from 'reducers/visibilityFilter';
-import { Todos } from 'components/Todos';
-import { AddTodo } from 'components/AddTodo';
+import { TodoApp } from 'components/TodoApp';
 
 const reducer = combineReducers({
   todos: todos.reducer,
@@ -19,8 +18,7 @@ const store = configureStore({
 export const App = () => {
   return (
     <Provider store={store}>
-      <AddTodo />
-      <Todos />
+      <TodoApp />
     </Provider>
   );
 };
