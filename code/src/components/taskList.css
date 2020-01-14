@@ -1,0 +1,63 @@
+.task-list {
+  background-color: #fff;
+  font-family: 'Roboto', sans-serif;
+  padding: 0;
+}
+
+/* Task items */
+
+.task-item {
+  border-bottom: 2px solid #f4f4f4;
+  list-style-type: none;
+  padding: 1.5rem 1rem;
+}
+
+.task-item:first-child {
+  border-top: 2px solid #f4f4f4;
+}
+
+/* add zero-width space so that voiceover can read list as a list when list-style-type is set to none.
+  https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/ */
+.task-item::before {
+  content:"\200B"; 
+}
+
+/* Task status */
+
+.task-completed {
+  color: #c1c1c1;
+}
+
+.task-todo  {
+  color: #757575;
+}
+
+
+/* Button */
+
+/* Accessible button
+https://www.sarasoueidan.com/blog/accessible-icon-buttons/ */
+.sr-only:not(:focus):not(:active) {
+  clip: rect(0 0 0 0);
+  clip-path: inset(100%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+.toggle-status-button {
+  border: none;
+  background-color: transparent;
+}
+
+@media screen and (min-width: 668px) {
+  .task-list {
+    border-left: 2px solid #f4f4f4;
+    border-right: 2px solid #f4f4f4;
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+  }
+}
