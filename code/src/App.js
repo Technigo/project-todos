@@ -2,7 +2,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { todos } from 'reducers/todos'
-import { Todos } from 'components/Todos'
+import { TodoList } from 'components/TodoList'
 import { total } from 'reducers/total'
 import { Header } from 'components/Header'
 import { StyleSheet } from 'react'
@@ -21,7 +21,7 @@ export const App = () => {
       <Header />
       <AddTodo />
       <total />
-      <Todos />
+      <TodoList />
     </Provider>
   )
 }

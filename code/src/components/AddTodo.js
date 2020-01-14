@@ -12,19 +12,37 @@ export const AddTodo = () => {
 
     const handleSubmit = e => {
         e.preventDefault()
-        if (!todoText.trim()) {
+        if (!todoText()) {
             return
         }
         dispatch(todos.actions.AddTodo({ text: todoText }))
     }
 
+    // return (
+    //     <div className="InputField">
+    //         <form onSubmit={handleSubmit}>
+    //             <button type="submit">Add todo</button>
+    //             <input value={todoText} type="text" onChange={handleInputChange} />
+    //         </form>
+    //     </div>
+    // )
+    // }
+
+
     return (
-        <div>
+
+        <article className="InputField">
             <form onSubmit={handleSubmit}>
-                <input value={todoText} type="text" onChange={handleInputChange} />
-                <button type="submit">Add todo</button>
+
+                <button
+                    type="button"
+                    // disabled={todo.inventory === 0}
+                    onClick={() => ((AddTodo))}>
+                    <span className="emoji" role="img" aria-label="butterfly">🦋</span>
+                    <input value={todoText} type="text" onChange={handleInputChange} />
+                </button>
+
             </form>
-        </div>
+        </article>
     )
 }
-

@@ -48,7 +48,6 @@ code {
   /* display: inline-block;
   float: right; */
   color: grey;
-  
 }
 
 .totalButton {
@@ -58,18 +57,28 @@ code {
   float: right;
   margin-top: 12%;
   color: white;
-  margin-right: 20px;
-  
+  margin-right: 20px; 
 }
 
 .totalButton p{
   color: white;
   display: inline;
 }
+
+.InputField {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  padding: 20px;
+  font-size: 20px;
+  align-items: center;
+  border-bottom: solid 1px lightgray;
+}
 .todos {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  list-style: none;
 }
 .todo {
   display: flex;
@@ -83,9 +92,9 @@ code {
 
 .todoName {
   text-align: left;
-  padding-left: 10px;
-  
+  padding-left: 10px; 
 }
+
 /* .product .emoji {
   font-size: 15vw;
 } */
