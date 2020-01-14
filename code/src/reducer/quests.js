@@ -2,16 +2,19 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const questsList = [
   {
-    text: 'asfasd'
-    // categories: 'Main'
+    text: 'asfasd',
+    category: 'Main',
+    status: false
   },
   {
-    text: 'a123d'
-    // categories: 'Main'
+    text: 'a123d',
+    category: 'Main',
+    status: false
   },
   {
-    text: 'asfawqersd'
-    // categories: 'Main'
+    text: 'asfawqersd',
+    category: 'Main',
+    status: false
   }]
 const categories = ['Main', 'Side', 'Miscellaneous']
 
@@ -25,9 +28,11 @@ export const quests = createSlice({
   initialState,
   reducers: {
     createQuest: (state, action) => {
-      const { text } = action.payload
+      const { text, category } = action.payload
       state.questsList.push({
-        text
+        text,
+        status: false,
+        category
       })
     }
   }
