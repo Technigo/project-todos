@@ -7,8 +7,17 @@ export const todoList = createSlice({
   },
   reducers: {
     addTask: (state, action) => {
+      const taskId = 1 + state.tasks.length;
+      state.tasks.push({ id: Date.now(), todoText: action.payload, isCompleted: false })
+    },
+    toggleTaskStatus: (state, action) => {
+      const existingTask = state.tasks.find((task) => task.id === action.payload)
 
-      state.tasks.push({ todoText: action.payload, isCompleted: false })
+      if (existingTask && existingTask.isCompleted === true) {
+        existingTask.isCompleted = false;
+      } else if (existingTask && existingTask.isCompleted === false) {
+        existingTask.isCompleted = true;
+      }
     }
 
   }
