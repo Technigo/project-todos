@@ -1,23 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
-// import { useDispatch } from 'react-redux'
-// import { tasks } from 'reducers/tasks'
-
-
-//Toggle task when button onClick (completed: true/false)
-// Add a trash-icon with remove--task-function
+import { useDispatch } from 'react-redux'
+import { tasks } from 'reducers/tasks'
 
 export const TaskItem = (props) => {
 
-  // const dispatch = useDispatch()
+  const dispatch = useDispatch()
   // const handleToggleTask = () => { dispatch(tasks.actions.toggleCompleted(props.task.id))}
-  // const handleRemoveTask = () => { dispatch(tasks.actions.xxx(props.task.id))}
+  const handleRemoveTask = () => {
+    dispatch(tasks.actions.removeTask(props.task.id))
+  }
 
   return (
     <TaskWrapper>
       <Task>
-        <TaskButton />
+        <TaskToggleButton />
         <TaskText>{props.task.text}</TaskText>
+        <TaskRemoveButton onClick={handleRemoveTask} aria-label="remove">🗑</TaskRemoveButton>
       </Task>
     </TaskWrapper>
   )
@@ -34,7 +33,7 @@ const Task = styled.section`
   padding-bottom: 10px;
   border-bottom: 1px solid #EBEEEF;
 `
-const TaskButton = styled.button`
+const TaskToggleButton = styled.button`
   background: transparent;
   border: 1px solid #264653;
   color: #264653;
@@ -46,4 +45,9 @@ const TaskButton = styled.button`
 const TaskText = styled.article`
   font-size: 16px;
   color: #333;
+`
+const TaskRemoveButton = styled.button`
+  background: transparent;
+  border: none;
+  margin-left: auto;
 `
