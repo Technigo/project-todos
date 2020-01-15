@@ -19,7 +19,8 @@ export const tasks = createSlice({
             console.log(state)
             //state.items.push({...action.payload})
             //const myTask = <Task />
-            state.items.push({...{ id: 5, text: action.payload, complete: false }})
+            //state.items.push({...{ id: 5, text: action.payload, complete: false }})
+            state.items.push({ id: Date.now(), text: action.payload})
         },
 
         removeItem: (state, action) =>{

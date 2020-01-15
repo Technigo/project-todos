@@ -1,8 +1,12 @@
 import React from 'react'
 
 
-export const Task = ({paramTask}) =>{
+export const Task = ({props}) =>{
     return(
-        <p>{paramTask.text}</p>
+        <li>{props.text}
+        <label>
+            <input type="checkbox" />
+            </label>
+            </li>
     )
 }

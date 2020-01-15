@@ -1,8 +1,7 @@
 .taskList{
     display: flex; 
     flex-direction: column; 
-    justify-content: center;
-    align-items: center;
+    
 }
 
 
@@ -16,7 +15,7 @@
 p{
     border-bottom: 1.5px solid midnightblue;
     color: midnightblue;
-    
+    margin: 0px;
 }
 
 ul{
