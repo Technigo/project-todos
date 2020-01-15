@@ -49,7 +49,7 @@ const Container = styled.div`
 
 const Side = styled.div`
   width: 100%;
-  height: 5rem;
+  height: 6rem;
   background: #eee;
   flex: wrap;
 

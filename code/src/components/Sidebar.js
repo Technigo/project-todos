@@ -14,7 +14,7 @@ export const Sidebar = () => {
   };
   return (
     <Main>
-      <p>Show todos: </p>
+      <P>Show todos: </P>
       <Container>
         <Button type="button" onClick={handleAll}>
           <p>All</p>
@@ -36,9 +36,30 @@ const Main = styled.div`
     margin-top: 3rem;
   }
 `;
-const Button = styled.button``;
+const Button = styled.button`
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+  width: 20%;
+  padding: 0.5rem;
+  @media (min-width: 768px) {
+    margin-bottom: 0;
+    margin-right: 0;
+    padding: 1rem 0;
+    width: 100%;
+  }
+`;
+const P = styled.p`
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+  @media (min-width: 768px) {
+    margin-bottom: 2rem;
+    margin-top: 0;
+  }
+`;
 const Container = styled.div`
   display: flex;
+  justify-content: center;
   @media (min-width: 768px) {
     flex-direction: column;
   }

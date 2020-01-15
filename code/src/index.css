@@ -15,6 +15,7 @@ body {
   background-size: cover;
   background-repeat: repeat;
   height: 100%;
+  letter-spacing: 1px;
 }
 
 code {

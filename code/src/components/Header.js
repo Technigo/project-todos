@@ -29,6 +29,7 @@ const Main = styled.div`
 
 const Head = styled.h1`
   font-size: 1.2rem;
+  letter-spacing: 1px;
   display: flex;
   align-self: center;
   margin-top: 3rem;

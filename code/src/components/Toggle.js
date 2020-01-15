@@ -20,4 +20,5 @@ export const Toggle = ({ ifCompleted, id }) => {
 
 const Button = styled.button`
   border: none;
+  background: none;
 `;
