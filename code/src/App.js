@@ -1,9 +1,36 @@
-import React from 'react'
+import React from "react";
+import { Provider } from "react-redux";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { tasks } from "./reducers/tasks";
+import styled from "styled-components";
+import { Header } from "./components/Header";
+import { AddTask } from "./components/AddTask";
+import { List } from "./components/List";
+
+const reducer = combineReducers({
+  tasks: tasks.reducer
+});
+
+const store = configureStore({ reducer });
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
-}
+    <Provider store={store}>
+      <ToDo>
+        <Header />
+        <AddTask />
+        <List />
+      </ToDo>
+    </Provider>
+  );
+};
+
+const ToDo = styled.header`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fdfdfd;
+`;
