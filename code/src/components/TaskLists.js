@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { CheckBox } from './CheckBox'
 
 
 export const TaskLists = () => {
@@ -8,9 +9,9 @@ export const TaskLists = () => {
 
   return (
     <div className="tasks-container">
-      {allTasks.map((task) => (
+      {allTasks.items.map((task) => (
         <div key={task.id} className="task">
-          <div className="status"> {task.complete}</div>
+          <CheckBox task={task} />
           <div className="text"> {task.text} </div>
         </div>
       ))}

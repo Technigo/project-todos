@@ -1,8 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
 const taskData = [
   { id: 1, text: 'Watch video on actions & reducers', complete: true },
-  { id: 2, text: 'Follow redux codealong', complete: true },
+  { id: 2, text: 'Follow redux codealong', complete: false },
   { id: 3, text: 'Fork weekly assignment', complete: true },
   { id: 4, text: 'Update LinkedIn profile ', complete: true },
   { id: 5, text: 'Create a todo app', complete: false },
@@ -10,11 +11,21 @@ const taskData = [
 
 export const tasks = createSlice({
   name: 'tasks',
-  initialState: taskData,
+  initialState: {
+    items: taskData
+  },
 
   reducers: {
     addTask: (state, action) => {
-      state.push({ id: Date.now(), text: action.payload, complete: false })
+      state.items.push({ id: Date.now(), text: action.payload, complete: false })
+    },
+
+    toggleCheckbox: (state, action) => {
+      let foundItem = state.items.find((item) => item.id === action.payload)
+
+      if (foundItem) {
+        foundItem.complete = !foundItem.complete
+      }
     }
   }
 })
