@@ -29,29 +29,38 @@ export const tasks = createSlice({
       state.total += 1;
     },
     toggle: (state, action) => {
-      const todo = state.taskData.map(todo => todo.id);
-      let completed = state.taskData.map(todo => todo.complete);
-      console.log(todo);
-      console.log(completed);
-      console.log(todo[action.payload.id]);
-      console.log(action.payload.id);
-      console.log(completed[action.payload.id]);
-      console.log(!completed[action.payload.id]);
+      const todo = state.taskData.find(todo => todo.id === action.payload);
+      // let completed = state.taskData.map(todo => todo.complete);
+      // console.log(todo);
+      // console.log(completed);
+      // console.log(todo[action.payload.id]);
+      // console.log(action.payload.id);
+      // console.log(completed[action.payload.id]);
+      // console.log(!completed[action.payload.id]);
 
-      if (todo[action.payload.id] === action.payload.id) {
-        state.taskData[action.payload.id].complete = !state.taskData[
-          action.payload.id
-        ].complete;
+      if (todo) {
+        todo.complete = !todo.complete;
       }
+
+      // if (todo[action.payload] === action.payload) {
+      //   state.taskData[action.payload].complete = !state.taskData[
+      //     action.payload
+      //   ].complete;
+      // }
     },
     toggleImportant: (state, action) => {
-      const todo = state.taskData.map(todo => todo.id);
+      const todo = state.taskData.find(todo => todo.id === action.payload);
+      console.log(todo);
 
-      if (todo[action.payload.id] === action.payload.id) {
-        state.taskData[action.payload.id].important = !state.taskData[
-          action.payload.id
-        ].important;
+      if (todo) {
+        todo.important = !todo.important;
       }
+
+      // if (todo[action.payload] === action.payload) {
+      //   state.taskData[action.payload].important = !state.taskData[
+      //     action.payload
+      //   ].important;
+      // }
     },
     deleteAll: state => {
       for (let i in state.taskData) delete state.taskData[i];
@@ -59,11 +68,32 @@ export const tasks = createSlice({
       state.total = 0;
     },
     deleteOne: (state, action) => {
-      const todo = state.taskData.map(todo => todo.id);
-      if (todo[action.payload.id] === action.payload.id) {
-        delete state.taskData[action.payload.id];
-      }
+      // const todo = state.taskData.map(todo => todo.id);
+      // if (todo[action.payload] === action.payload) {
+      //   delete state.taskData[action.payload];
+      // }
+      state.taskData = state.taskData.filter(
+        item => item.id !== action.payload
+      );
       state.total -= 1;
+    },
+    showAll: (state, action) => {
+      state.taskData = state.taskData.map(todo => todo);
+      state.total = state.taskData.length;
+    },
+    showCompleted: (state, action) => {
+      console.log(state.taskData);
+      state.taskData = state.taskData.filter(todo => todo.complete);
+      console.log(state.taskData);
+      // console.log(todo);
+      // if (todo) {
+      //   console.log(state.taskData);
+      // }
+      state.total = state.taskData.length;
+    },
+    showNotCompleted: (state, action) => {
+      state.taskData = state.taskData.filter(todo => !todo.complete);
+      state.total = state.taskData.length;
     }
   }
 });

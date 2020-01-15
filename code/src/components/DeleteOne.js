@@ -12,7 +12,7 @@ export const DeleteOne = ({ id }) => {
   // console.log(completed);
 
   const handleClick = () => {
-    dispatch(tasks.actions.deleteOne({ id }));
+    dispatch(tasks.actions.deleteOne(id));
   };
   return (
     <Button type="button" onClick={handleClick}>

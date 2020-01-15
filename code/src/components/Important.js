@@ -8,7 +8,7 @@ export const Important = ({ ifImportant, id }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(tasks.actions.toggleImportant({ id }));
+    dispatch(tasks.actions.toggleImportant(id));
   };
   return (
     <Button type="button" onClick={handleClick}>

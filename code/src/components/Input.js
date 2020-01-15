@@ -29,6 +29,7 @@ export const Input = ({ handleClick }) => {
       <Field
         type="text"
         placeholder="Add task"
+        value={todoText}
         onChange={e => setTodoText(e.target.value)}
       ></Field>
       <Button type="button" onClick={handleClick}>

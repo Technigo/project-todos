@@ -8,7 +8,7 @@ export const Toggle = ({ ifCompleted, id }) => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
-    dispatch(tasks.actions.toggle({ id }));
+    dispatch(tasks.actions.toggle(id));
   };
   return (
     <Button type="button" onClick={handleClick}>

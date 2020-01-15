@@ -10,6 +10,7 @@ import styled from "styled-components";
 
 export const TaskList = () => {
   const tasks = useSelector(state => state.tasks);
+  console.log(tasks);
 
   return (
     <div>
