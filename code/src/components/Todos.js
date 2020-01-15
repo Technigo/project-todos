@@ -20,6 +20,7 @@ const Emoji = styled.span`
   /* text-align: center; */
   /* border: 1px solid red; */
   padding: 1.5rem 0 1rem 0;
+  margin: 0;
 `;
 
 const Message = styled.p`
