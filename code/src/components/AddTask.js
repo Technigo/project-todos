@@ -16,7 +16,9 @@ export const AddTask = () => {
   return (
     <TaskForm onSubmit={handleSubmit}>
       <NewTask>
-        <AddNewTask type="submit">+</AddNewTask>
+        <AddNewTask type="submit" active={item.length > 0 ? true : false}>
+          +
+        </AddNewTask>
         <label>
           <TaskText
             type="text"
@@ -55,12 +57,17 @@ const AddNewTask = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: ${props => (props.active ? "1" : "0.6")};
 `;
 
 const TaskText = styled.input`
   border-style: hidden;
   background-color: #fdfdfd;
-  width: 75vw;
+  width: 100%;
   height: 30px;
   font-size: 20px;
+
+  @media (min-width: 768px) {
+    width: 40vw;
+  }
 `;

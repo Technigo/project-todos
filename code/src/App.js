@@ -33,4 +33,10 @@ const ToDo = styled.header`
   width: 100vw;
   height: 100vh;
   background-color: #fdfdfd;
+
+  @media (min-width: 768px) {
+    width: 50vw;
+    height: 75vh;
+    margin-top: 5vh;
+  }
 `;
