@@ -52,6 +52,11 @@ https://www.sarasoueidan.com/blog/accessible-icon-buttons/ */
   background-color: transparent;
 }
 
+input:checked {
+  background-color: blue;
+  outline: 1px solid blue;
+}
+
 @media screen and (min-width: 668px) {
   .task-list {
     border-left: 2px solid #f4f4f4;

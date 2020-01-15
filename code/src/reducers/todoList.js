@@ -9,6 +9,10 @@ export const todoList = createSlice({
     addTask: (state, action) => {
       state.tasks.push({ id: Date.now(), todoText: action.payload, isCompleted: false })
     },
+    removeTask: (state, action) => {
+      //Remove task from list
+      state.tasks = state.tasks.filter((task) => task.id !== action.payload)
+    },
     toggleTaskStatus: (state, action) => {
       const existingTask = state.tasks.find((task) => task.id === action.payload)
 
