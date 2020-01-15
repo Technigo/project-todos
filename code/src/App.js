@@ -6,6 +6,7 @@ import { todoList } from 'reducers/todoList'
 
 import { TaskList } from 'components/TaskList'
 import { AddTask } from 'components/AddTask'
+import { TodoCount } from 'components/TodoCount'
 
 import "index.css"
 
@@ -21,7 +22,8 @@ export const App = () => {
     <Provider store={store}>
       <div>
         Todo list in progress
-    </div>
+        <TodoCount />
+      </div>
       <AddTask />
       <TaskList />
     </Provider>
