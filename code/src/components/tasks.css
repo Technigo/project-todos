@@ -1,0 +1,24 @@
+.taskList{
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*.task{
+ color: midnightblue;
+ border-bottom: 2 px solid midnightblue;
+   
+}*/
+
+
+p{
+    border-bottom: 1.5px solid midnightblue;
+    color: midnightblue;
+    
+}
+
+ul{
+    margin-right: 40px;
+}
