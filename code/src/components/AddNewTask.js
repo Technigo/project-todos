@@ -1,29 +1,31 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 
-import { toggleTask } from "reducers/toggleTask"
+import { addNewTask } from "reducers/addNewTask"
 
 
-export const AddNewTask = ({ newTask }) => {
+export const AddNewTask = () => {
 
-  const [saveTask, setSaveTask] = useState("")
-  console.log(saveTask)
+  const [sendTask, setSendTask] = useState("")
   const dispatch = useDispatch()
 
-  return (
-    <div className="add-new-list" >
-      <form >
-        <textarea value={saveTask}
-          onChange={(e) => { setSaveTask(e.target.value) }}
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    dispatch(addNewTask.actions.addTask(sendTask))
+    setSendTask("")
+  }
 
-        />
-        <div>
-          <button
-            type="button"
-            onClick={() => dispatch(toggleTask.actions.addTask(newTask))}>Save</button>
-        </div>
-      </form >
-    </div >
+  return (
+
+    <form className="add-new-list" onSubmit={handleSubmit}>
+      <label>
+        ADD NEW TASK
+          <input type="text" value={sendTask} onChange={(event) => setSendTask(event.target.value)} />
+      </label>
+      <button
+        type="submit">Save</button>
+    </form >
+
 
 
   )

@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit"
 
 
-export const toggleTask = createSlice({
-  name: "toggleTask",
+export const addNewTask = createSlice({
+  name: "addNewTask",
   initialState: {
     items: []
   },
   reducers: {
     addTask: (state, action) => {
-      state.items.push({ ...action.payload.id })
+      state.items.push({ id: Date.now(), text: action.payload })
 
     }
   }

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { TaskList } from './TaskList'
 import { AddNewTask } from "./AddNewTask"
 
 export const TaskLists = () => {
@@ -12,7 +11,7 @@ export const TaskLists = () => {
     <>
       <AddNewTask />
       {allTasks.map((task) => (
-        <TaskList key={task.id} task={task} />
+        <div key={task.id} task={task}>{task.text}</div>
       ))}
     </>
   )

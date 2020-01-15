@@ -1,13 +1,11 @@
-import React from 'react'
+// import React from 'react'
 
 
-export const TaskList = ({ task }) => {
+// export const TaskList = (props) => {
 
-  return (
-    <div className="tasks-list-container">
-      <div className="added-tasks-container">
-        <div className="added-tasks" aria-label={task.text}>{task.text}</div>
-      </div>
-    </div >
-  )
-}
+//   return (
+//     <div className="tasks-list-container">
+//       <div className="added-tasks" >{props.text}</div>
+//     </div >
+//   )
+// }
