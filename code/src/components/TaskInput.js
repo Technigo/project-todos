@@ -8,11 +8,15 @@ export const TaskInput = ({ task }) => {
 
   const [newTask, setNewTask] = useState('')
   const dispatch = useDispatch()
+  const handleAddTask = () => {
+    dispatch(tasks.actions.addTask(newTask))
+    setNewTask('')
+  }
 
   return (
 
     <Wrapper>
-      <AddButton onClick={() => dispatch(tasks.actions.addTask(newTask))}>
+      <AddButton onClick={handleAddTask}>
         +
       </AddButton>
       <Input

@@ -4,17 +4,20 @@ import styled from 'styled-components'
 // import { tasks } from 'reducers/tasks'
 
 
-//Toggle task when onClick (completed: true/false)
+//Toggle task when button onClick (completed: true/false)
+// Add a trash-icon with remove--task-function
 
-export const TaskItem = ({ task }) => {
+export const TaskItem = (props) => {
 
   // const dispatch = useDispatch()
+  // const handleToggleTask = () => { dispatch(tasks.actions.toggleCompleted(props.task.id))}
+  // const handleRemoveTask = () => { dispatch(tasks.actions.xxx(props.task.id))}
 
   return (
     <TaskWrapper>
       <Task>
         <TaskButton />
-        <TaskText>{task}</TaskText>
+        <TaskText>{props.task.text}</TaskText>
       </Task>
     </TaskWrapper>
   )
@@ -41,5 +44,6 @@ const TaskButton = styled.button`
   margin-right: 10px;
 `
 const TaskText = styled.article`
+  font-size: 16px;
   color: #333;
 `

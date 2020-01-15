@@ -5,14 +5,21 @@ import { createSlice } from '@reduxjs/toolkit'
 export const tasks = createSlice({
 
   name: 'tasks',
-  initialState: [
-    { id: 1, text: 'Diapers', complete: false },
-    { id: 2, text: 'Milk', complete: false },
-    { id: 3, text: 'Pizza', complete: true },
-  ],
+  initialState: {
+    items: [
+      { id: 1, text: 'Diapers', completed: false },
+      { id: 2, text: 'Milk', completed: false },
+      { id: 3, text: 'Pizza', completed: true }
+    ]
+  },
   reducers: {
-    // Fix the ADD_TASK
-    //Fix the TOGGLE_TASK
+    // The actions - but called reducers 🤷‍♀
+    // Fix the addTask
+    // Fix the toggleCompleted
+    // Fix the removeTask
+    addTask: (state, action) => {
+      state.items.push({ id: Date.now(), text: action.payload, completed: false })
+    }
   }
 
 })

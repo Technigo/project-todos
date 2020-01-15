@@ -5,14 +5,13 @@ import { TaskItem } from 'components/TaskItem'
 
 export const TaskList = () => {
 
-  const allTasks = useSelector((store) => store.tasks)
-  console.log(allTasks)
+  const allTasks = useSelector((store) => store.tasks.items)
 
   return (
 
     <TasksWrapper>
       {allTasks.map((task) => (
-        <TaskItem key={task.id} task={task.text} />
+        <TaskItem key={task.id} task={task} />
       ))}
     </TasksWrapper>
   )
