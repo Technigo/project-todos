@@ -2,7 +2,7 @@
 
 In this week's project, it's time to flex your redux muscles and build an application which pulls together all the parts of redux by building a todo app.
 
-In your todo app, you should be able to add tasks, list tasks and toggle whether a task is done or not. 
+In your todo app, you should be able to add tasks, list tasks and toggle whether a task is done or not.
 
 You're free to style your todo list however you'd like, but try to keep it simple and clean - remember prospective employers will probably be interested to see this project!
 
@@ -14,9 +14,9 @@ Here's an example of what you could aim for (mobile first design - this project 
 
 ## What you will learn 🧠
 
-* How to structure a redux store
-* How to write reducers and actions
-* How to interact with your store using selectors or by dispatching actions
+- How to structure a redux store
+- How to write reducers and actions
+- How to interact with your store using selectors or by dispatching actions
 
 ## How to get started 💪🏼
 
@@ -29,7 +29,7 @@ Here's an example of what you could aim for (mobile first design - this project 
 
 ## Hints and tips to complete the project 🤓
 
-As always, start by sketching out what your app will look like and how you'd like to use components. Now we're using redux, you can very easily break things into many small, manageable components. 
+As always, start by sketching out what your app will look like and how you'd like to use components. Now we're using redux, you can very easily break things into many small, manageable components.
 
 Once you have your sketch, think about how the data in your store should look. What data does a todo task contain? Sketch it out and get it clear in your head. Knowing how your data will look will help a lot when writing the redux actions and then using that data in your components.
 
@@ -39,7 +39,7 @@ Then you're ready to start working on the project. The `code` folder has a copy 
 npm install @reduxjs/toolkit react-redux
 ```
 
-When starting to write your code, try to work on the project in small chunks rather than taking on too much at once. For example, you could start by making a new slice to store your todo tasks and use a hard-coded list of tasks to get up-and-running with. 
+When starting to write your code, try to work on the project in small chunks rather than taking on too much at once. For example, you could start by making a new slice to store your todo tasks and use a hard-coded list of tasks to get up-and-running with.
 
 <p>
 <details><summary>Stuck? Click here to see an example.</summary>
@@ -49,17 +49,17 @@ Here is an example slice you could create to store your tasks:
 
 ```js
 // src/reducers/tasks.js
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 export const tasks = createSlice({
-  name: 'tasks',
+  name: "tasks",
   initialState: [
-    { id: 1, text: 'Watch video on actions & reducers', complete: true },
-    { id: 2, text: 'Follow redux codealong', complete: true },
-    { id: 3, text: 'Fork weekly assignment', complete: true },
-    { id: 4, text: 'Create a todo app', complete: false },
+    { id: 1, text: "Watch video on actions & reducers", complete: true },
+    { id: 2, text: "Follow redux codealong", complete: true },
+    { id: 3, text: "Fork weekly assignment", complete: true },
+    { id: 4, text: "Create a todo app", complete: false }
   ]
-})
+});
 ```
 
 </p>
@@ -76,24 +76,24 @@ Here is how you can set up your store to be passed to the provider:
 
 ```js
 // src/App.js
-import React from 'react'
-import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { tasks } from './reducers/tasks'
+import React from "react";
+import { Provider } from "react-redux";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { tasks } from "./reducers/tasks";
 
 const reducer = combineReducers({
   tasks: tasks.reducer
-})
+});
 
-const store = configureStore({ reducer })
+const store = configureStore({ reducer });
 
 export const App = () => {
   return (
     <Provider store={store}>
       Your components can be mounted here, inside the Provider.
     </Provider>
-  )
-}
+  );
+};
 ```
 
 </p>
@@ -106,19 +106,18 @@ Once you have your todos being listed, it's much easier to see actions you start
 
 ## Requirements 🧪
 
-* Your app should list all todo tasks - completed or uncompleted
-* You should be able to mark an uncompleted task as complete
-* You should be able to change a completed task back to uncomplete
-* You should be able to add new tasks
-* Your app should show a count of either all todos, or all uncomplete todos
-* Code follows Technigo’s code guidelines.
-* Contribute by helping others with this project on Stack Overflow.
-* If selected; demo your solution for your team.
-
+- Your app should list all todo tasks - completed or uncompleted
+- You should be able to mark an uncompleted task as complete
+- You should be able to change a completed task back to uncomplete
+- You should be able to add new tasks
+- Your app should show a count of either all todos, or all uncomplete todos
+- Code follows Technigo’s code guidelines.
+- Contribute by helping others with this project on Stack Overflow.
+- If selected; demo your solution for your team.
 
 ## How to hand in the code 🎯
 
-* When you’re finished with the project, push your code to GitHub with these commands:
+- When you’re finished with the project, push your code to GitHub with these commands:
 
   ```
   git add .
@@ -126,12 +125,12 @@ Once you have your todos being listed, it's much easier to see actions you start
   git push origin master
   ```
 
-* Navigate to your repo and create a Pull Request into the Technigo repo (Add a link to your deployed project.)
-* Wait for the code review from your teachers
+- Navigate to your repo and create a Pull Request into the Technigo repo (Add a link to your deployed project.)
+- Wait for the code review from your teachers
 
 ## How to get help 🆘
 
-Ask for help and share your knowledge about this project with the '[TAG]' tag on [Stack Overflow](https://stackoverflow.com/c/technigo/questions). Talk to your team on Slack and help each other out. Do some research about your problem, you are surely not the first one with this problem, Google is your friend 🙂. And you can of course also book a tech call. 
+Ask for help and share your knowledge about this project with the '[TAG]' tag on [Stack Overflow](https://stackoverflow.com/c/technigo/questions). Talk to your team on Slack and help each other out. Do some research about your problem, you are surely not the first one with this problem, Google is your friend 🙂. And you can of course also book a tech call.
 
 ## Stretch Goals 🏃‍♂
 

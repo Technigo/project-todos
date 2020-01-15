@@ -67,6 +67,3 @@ export const tasks = createSlice({
     }
   }
 });
-
-export const { addTask, toggle } = tasks.actions;
-export default tasks.reducer;
