@@ -1,7 +1,6 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
-
-import { addNewTask } from "reducers/addNewTask"
+import { tasks } from "reducers/tasks"
 
 
 export const AddNewTask = () => {
@@ -11,7 +10,7 @@ export const AddNewTask = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(addNewTask.actions.addTask(sendTask))
+    dispatch(tasks.actions.addTask(sendTask))
     setSendTask("")
   }
 

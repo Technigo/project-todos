@@ -3,15 +3,15 @@ import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from "@reduxjs/toolkit"
 
 import { tasks } from './reducers/tasks'
-import { addNewTask } from './reducers/addNewTask'
+// import { todo } from './reducers/todo'
 
 
 import { TaskLists } from './components/TaskLists'
-
+import { AddNewTask } from "./components/AddNewTask"
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
-  addNewTask: addNewTask
+  // todo: todo.reducer
 })
 
 const store = configureStore({ reducer })
@@ -19,6 +19,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
+      <AddNewTask />
       <TaskLists />
     </Provider>
   )

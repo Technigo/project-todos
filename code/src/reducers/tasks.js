@@ -10,5 +10,11 @@ const taskData = [
 
 export const tasks = createSlice({
   name: 'tasks',
-  initialState: taskData
+  initialState: taskData,
+
+  reducers: {
+    addTask: (state, action) => {
+      state.push({ id: Date.now(), text: action.payload, complete: false })
+    }
+  }
 })
