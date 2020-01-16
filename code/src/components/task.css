@@ -32,7 +32,10 @@
 .checkbox-label {
   align-items: center;
   display: flex;
+  margin-right: 1rem;
+  overflow-wrap: break-word;
   position: relative;
+  word-break: break-word;
 }
 
 .checkbox-label::before {
@@ -40,8 +43,9 @@
   border-radius: 50%;
   content: "";
   display: inline-block;
+  flex-shrink: 0;
   height: 1.75rem;
-  margin-right: 0.5rem;
+  margin-right: 0.8rem;
   position: relative;
   width: 1.75rem;
 }
@@ -54,12 +58,12 @@
   color: #fff;
   content: '✔';
   display: inline-block;
+  flex-shrink: 0;
   height: 1.75rem;
   left: 2px;
   line-height: 1.6;
   position: absolute;
   text-align: center;
-  top: 3px;
   width: 1.75rem;
 }
 
