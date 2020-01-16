@@ -41,9 +41,15 @@ const TextWrapper = styled.div`
   align-items: center;
   height: 100%;
   color: ${props => (props.completed ? 'rgba(0,0,0, 0.3)' : '')};
+  /* text-decoration: ${props => (props.completed ? 'line-through' : '')};
+  text-decoration-color: crimson; */
   font-size: 1rem;
   /* padding: 0 1rem; */
   /* border: 1px solid green; */
+
+  span {
+    word-break: break-all;
+  }
 `;
 
 const TimeWrapper = styled.div`
