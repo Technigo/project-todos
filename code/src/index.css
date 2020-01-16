@@ -11,3 +11,97 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+button {
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Main container in App.js */
+.main-container {
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  height: 80vh;
+  margin-left: 10vw;
+  margin-top: 10vh;
+  width: 80vw;
+}
+
+/* Head component */
+.head-main {
+  background: #F5F5F5;
+  padding-bottom: 4vh;
+  padding-left: 1vw;
+}
+
+.head-top, .head-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 1vw;
+}
+
+.head-top {
+  margin-bottom: 1vh;
+}
+
+.head-title {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.clear-button {
+  background: blue;
+  color: white;
+}
+
+/* Add task component */
+.addtask-form {
+  padding-left: 1vw;
+}
+
+.add-task {
+  border: none;
+}
+
+.add-button {
+  margin-right: 1vw;
+}
+
+/* Task list component */
+.task-list {
+  padding-left: 1vw;
+}
+
+.addtask-button {
+  border: none;
+}
+
+ul {
+  list-style-type: none;
+  padding-left: 1vw;
+}
+
+.li a {
+  text-decoration: none;
+}
+
+/* Task */
+.remove-button {
+  margin-right: 1vw;
+}
+
+/********************************************/
+
+/* Media queries */
+@media(min-width: 768px) {
+.main-container {
+  height: 70vh;
+  margin-left: 30vw;
+  margin-top: 15vh;
+  width: 30vw;
+}
+.head-title {
+  font-size: 20px;
+}
+}
