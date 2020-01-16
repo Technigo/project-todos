@@ -37,7 +37,7 @@ const Button = styled.button`
     color: white;
     transition: all 150ms ease-in-out;
     cursor: pointer;
-    font-weight: bold;
+    /* font-weight: bold; */
   }
 `;
 
