@@ -7,10 +7,6 @@
   padding: 1.5rem 1rem;
 }
 
-.task-item:first-child {
-  border-top: 2px solid #f4f4f4;
-}
-
 /* add zero-width space so that voiceover can read list as a list when list-style-type is set to none.
   https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/ */
 .task-item::before {
