@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 const StyledFilters = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 35px 1fr 1fr 1fr 1fr;
   grid-template-rows: 30px;
   grid-gap: 0.5rem;
   justify-content: center;
@@ -18,7 +18,7 @@ const Button = styled.button`
   /* color: rgba(194, 0, 42, 1); */
   color: rgba(230, 0, 60, 1);
   padding: 0.3rem 0.5rem;
-  letter-spacing: 0.05rem;
+  /* letter-spacing: 0.05rem; */
   font-size: 0.8rem;
   /* margin: 0.5rem; */
 
@@ -41,6 +41,18 @@ const Button = styled.button`
   }
 `;
 
+const Icon = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.7rem;
+  padding-left: 0.4rem;
+
+  i {
+    color: rgba(230, 0, 60, 1);
+  }
+`;
+
 export const Filters = () => {
   const countAll = useSelector(state => state.todos);
   const countActive = useSelector(state =>
@@ -55,6 +67,9 @@ export const Filters = () => {
 
   return (
     <StyledFilters>
+      <Icon>
+        <i class="fas fa-filter"></i>
+      </Icon>
       <Button>All ({countAll.length})</Button>
       <Button>Active ({countActive.length})</Button>
       <Button>Completed ({countCompleted.length})</Button>
