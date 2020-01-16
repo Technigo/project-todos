@@ -29,6 +29,10 @@ const Input = styled.input`
     color: rgba(0, 0, 0, 0.3);
     padding-left: 0;
   }
+
+  &:focus::placeholder {
+    color: rgba(230, 0, 60, 1);
+  }
 `;
 
 const Button = styled.button`
