@@ -88,7 +88,7 @@ const DeleteWrapper = styled.div`
   } */
 `;
 
-const Button = styled.button`
+const DeleteButton = styled.button`
   background-color: transparent;
   color: rgba(0, 220, 240, 1);
   border: none;
@@ -171,12 +171,12 @@ export const Todo = ({ todo }) => {
         </PinButton>
       </PinWrapper>
       <DeleteWrapper>
-        <Button
+        <DeleteButton
           onClick={() => dispatch(todos.actions.removeTodo(todo))}
           completed={todo.completed}
         >
           <i class="fas fa-trash-alt"></i>
-        </Button>
+        </DeleteButton>
       </DeleteWrapper>
     </StyledTodo>
   );
