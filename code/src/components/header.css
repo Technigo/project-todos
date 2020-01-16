@@ -2,6 +2,7 @@
   align-items: center;
   background-color: #ad1457;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   padding: 1rem 2rem 1rem 1rem;
   width: 100%;
@@ -9,6 +10,7 @@
 
 .todos-header-title {
   color: #fff;
+  flex-basis: 100%;
 }
 
 @media screen and (min-width: 668px) {
