@@ -22,6 +22,10 @@ const StyledTodo = styled.li`
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
 
+  /* &:nth-child(even) {
+    background-color: rgba(0, 0, 0, 0.01);
+  } */
+
   &:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.05);
@@ -29,7 +33,7 @@ const StyledTodo = styled.li`
   }
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: 50px 1fr 90px 40px 40px;
+    grid-template-columns: 50px 1fr 110px 40px 40px;
   }
 `;
 
@@ -58,10 +62,11 @@ const TextWrapper = styled.div`
 
 const TimeWrapper = styled.div`
   display: none;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   font-size: 0.7rem;
   font-style: italic;
+  margin-right: 0.9rem;
   color: ${props => (props.completed ? 'rgba(0,0,0, 0.3)' : '')};
   /* border: 1px solid blue; */
 

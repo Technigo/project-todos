@@ -32,6 +32,7 @@ const Input = styled.input`
 
   &:focus::placeholder {
     color: rgba(230, 0, 60, 1);
+    transition: color 150ms ease-in-out;
   }
 `;
 
