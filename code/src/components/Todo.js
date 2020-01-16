@@ -95,7 +95,8 @@ const DeleteWrapper = styled.div`
 
 const DeleteButton = styled.button`
   background-color: transparent;
-  color: rgba(0, 220, 240, 1);
+  /* color: rgba(0, 220, 240, 1); */
+  color: rgba(0, 0, 0, 0.2);
   border: none;
   font-size: 1.1rem;
   /* transform: scale(0.8); */

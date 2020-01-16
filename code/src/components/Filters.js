@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
 
 const StyledFilters = styled.div`
   display: grid;
@@ -41,12 +42,23 @@ const Button = styled.button`
 `;
 
 export const Filters = () => {
+  const countAll = useSelector(state => state.todos);
+  const countActive = useSelector(state =>
+    state.todos.filter(todo => todo.completed !== true)
+  );
+  const countCompleted = useSelector(state =>
+    state.todos.filter(todo => todo.completed === true)
+  );
+  const countPinned = useSelector(state =>
+    state.todos.filter(todo => todo.pinned === true)
+  );
+
   return (
     <StyledFilters>
-      <Button>All</Button>
-      <Button>Active</Button>
-      <Button>Completed</Button>
-      <Button>Pinned</Button>
+      <Button>All ({countAll.length})</Button>
+      <Button>Active ({countActive.length})</Button>
+      <Button>Completed ({countCompleted.length})</Button>
+      <Button>Pinned ({countPinned.length})</Button>
     </StyledFilters>
   );
 };
