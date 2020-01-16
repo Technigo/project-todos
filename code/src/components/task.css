@@ -1,0 +1,82 @@
+.task-item {
+  align-items: center;
+  border-bottom: 2px solid #f4f4f4;
+  display: flex;
+  justify-content: flex-start;
+  list-style-type: none;
+  padding: 1.5rem 1rem;
+}
+
+.task-item:first-child {
+  border-top: 2px solid #f4f4f4;
+}
+
+/* add zero-width space so that voiceover can read list as a list when list-style-type is set to none.
+  https://unfetteredthoughts.net/2017/09/26/voiceover-and-list-style-type-none/ */
+.task-item::before {
+  content:"\200B"; 
+}
+
+/* Task status */
+
+.task-completed {
+  color: #c1c1c1;
+}
+
+.task-todo  {
+  color: #757575;
+}
+
+.checkbox {
+  position: absolute;
+  opacity: 0;
+  z-index: -1;
+}
+
+.checkbox-label {
+  align-items: center;
+  display: flex;
+  position: relative;
+}
+
+.checkbox-label::before {
+  border: 2px solid#ad1457;
+  border-radius: 50%;
+  content: "";
+  display: inline-block;
+  height: 1.75rem;
+  margin-right: 0.5rem;
+  position: relative;
+  width: 1.75rem;
+}
+
+.checkbox:checked + .checkbox-label::before {
+  background-color: #ad1457;
+}
+
+.checkbox:checked + .checkbox-label::after {
+  color: #fff;
+  content: '✔';
+  display: inline-block;
+  height: 1.75rem;
+  left: 2px;
+  line-height: 1.6;
+  position: absolute;
+  text-align: center;
+  top: 3px;
+  width: 1.75rem;
+}
+
+.checkbox:focus + .checkbox-label::before {
+  box-shadow: 0 0 0 2px #fff, 0 0 0 4px #ad1457;
+}
+
+/* Remove task */
+
+.remove-button {
+  background-color: black;
+  border: none;
+  color: #fff;
+  margin-left: auto;
+  padding: 1rem;
+}

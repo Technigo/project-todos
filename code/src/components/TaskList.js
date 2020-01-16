@@ -1,13 +1,12 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import { todoList } from 'reducers/todoList'
+import { useSelector } from 'react-redux'
 import "./taskList.css"
 import { Task } from 'components/Task'
 
-export const TaskList = ({ task }) => {
+
+export const TaskList = () => {
   const allTasks = useSelector(state => state.todoList.tasks)
-  const dispatch = useDispatch()
-  console.log(allTasks)
+
   return (
     <ul className="task-list">
       {allTasks.map(task => (

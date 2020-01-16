@@ -1,6 +1,7 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { todoList } from 'reducers/todoList'
+import "./task.css"
 
 export const Task = ({ task }) => {
   const dispatch = useDispatch()
@@ -16,10 +17,11 @@ export const Task = ({ task }) => {
   return (
 
     <li className={`task-item  ${task.isCompleted ? "task-completed" : "task-todo"}`}>
-      <input type="checkbox" defaultChecked={task.isCompleted} onChange={handleCheckbox} />
-      {task.isCompleted ? <span className="sr-only">Done</span> : <span className="sr-only">Todo</span>}
-      {task.todoText}
-      <button className="remove-button" type="button" onClick={handleTaskRemoval}>Delete</button>
+      <input id={`todo-${task.id}`} type="checkbox" defaultChecked={task.isCompleted} onChange={handleCheckbox} className="checkbox" />
+      <label className="checkbox-label" for={`todo-${task.id}`}>
+        {task.todoText}
+      </label>
+      <button aria-label={`Delete ${task.todoText}`} className="remove-button" type="button" onClick={handleTaskRemoval}>&#128465;</button>
     </li>
 
   )
