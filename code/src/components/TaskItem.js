@@ -6,7 +6,8 @@ import { tasks } from 'reducers/tasks'
 export const TaskItem = (props) => {
 
   const dispatch = useDispatch()
-  // const handleToggleTask = () => { dispatch(tasks.actions.toggleCompleted(props.task.id))}
+  const taskStatus = props.task.completed
+  // const handleToggleTask = () => { dispatch(tasks.actions.toggleTask(props.task.id))}
   const handleRemoveTask = () => {
     dispatch(tasks.actions.removeTask(props.task.id))
   }
@@ -14,12 +15,13 @@ export const TaskItem = (props) => {
   return (
     <TaskWrapper>
       <Task>
-        <TaskToggleButton />
-        <TaskText>{props.task.text}</TaskText>
+        <TaskToggleButton taskStatus={taskStatus} />
+        <TaskText taskStatus={taskStatus}>{props.task.text}</TaskText>
         <TaskRemoveButton onClick={handleRemoveTask} aria-label="remove">🗑</TaskRemoveButton>
       </Task>
     </TaskWrapper>
   )
+
 }
 
 const TaskWrapper = styled.section`
@@ -34,17 +36,28 @@ const Task = styled.section`
   border-bottom: 1px solid #EBEEEF;
 `
 const TaskToggleButton = styled.button`
-  background: transparent;
-  border: 1px solid #264653;
+  background: ${props => (props.taskStatus ? "#264653" : "transparent")};
   color: #264653;
+  border: 1px solid #264653;
   border-radius: 50%;
   height: 20px;
   width: 20px;
   margin-right: 10px;
+    &:after {
+    content: '';
+    display: ${props => (props.taskStatus ? "block" : "none")};
+ 
+    /*Create white L-shape turned 45 degrees*/
+    width: 3px;
+    height: 6px;
+    border: solid #fff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+  }
 `
 const TaskText = styled.article`
   font-size: 16px;
-  color: #333;
+  color: ${props => (props.taskStatus ? "#e6e6e6" : "#333")};
 `
 const TaskRemoveButton = styled.button`
   background: transparent;

@@ -14,9 +14,7 @@ export const tasks = createSlice({
   },
   reducers: {
     // The actions for my store - but called reducers 🤷‍♀
-    // Fix the addTask
-    // Fix the toggleCompleted
-    // Fix the removeTask
+    // Fix the toggleTask
     addTask: (state, action) => {
       state.items.push({ id: Date.now(), text: action.payload, completed: false })
     },

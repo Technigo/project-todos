@@ -11,13 +11,12 @@ export const TaskInput = ({ task }) => {
   const handleAddTask = () => {
     dispatch(tasks.actions.addTask(newTask))
     setNewTask('')
-    //Prevent from adding empty task
   }
 
   return (
 
     <Wrapper>
-      <AddButton onClick={handleAddTask}>+</AddButton>
+      <AddButton disabled={newTask.length === 0} onClick={handleAddTask}>+</AddButton>
       <Input
         type='text'
         required
