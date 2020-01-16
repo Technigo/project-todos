@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 import { Quest } from 'components/Quest'
 
-export const QuestsLog = () => {
+export const QuestLog = () => {
   const questsList = useSelector((state) => state.quests.questsList)
 
   const mainQuests = []
@@ -21,7 +21,7 @@ export const QuestsLog = () => {
   })
 
   return (
-    <>
+    <main>
       {(mainQuests.length > 0)
         && <>
           <h3>Main</h3>
@@ -40,6 +40,6 @@ export const QuestsLog = () => {
           {miscellaneousQuests.map((e) => (
             <Quest key={`quest-${e}`} questIndex={e} />))}
         </>}
-    </>
+    </main>
   )
 }

@@ -21,7 +21,9 @@ export const Form = () => {
   return (
     <>
       <form onSubmit={handleSubmit}>
-        <input type="text" value={text} onChange={handleChangeText} />
+        <label htmlFor="newQuest">My next adventure will be:</label>
+        <input type="text" maxlength="20" value={text} required onChange={handleChangeText} id="newQuest" />
+        <label htmlFor="category">Category:</label>
         <select
           onChange={handleChangeCategory}
           value={category}>
@@ -29,11 +31,12 @@ export const Form = () => {
             <option value={e} key={`option-${index}`}>{e}</option>
           ))}
         </select>
-        <button type="submit">Add</button>
+        <button type="submit" className="success">Add</button>
+        <button type="button" onClick={handleDeleteAll}>
+          Clear Your Quest Log
+        </button>
       </form>
-      <button type="button" onClick={handleDeleteAll}>
-        Clear Your Quest Log
-      </button>
+
     </>
   )
 }

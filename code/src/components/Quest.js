@@ -11,16 +11,20 @@ export const Quest = ({ questIndex }) => {
   const handleDelete = () => (dispatch(quests.actions.deleteQuest({ questIndex })))
 
   return (
-    <div>{currentQuest.text}-{currentQuest.category}
-      <button
-        type="button"
-        onClick={handleStatus}>
-        {currentQuest.status ? 'done' : 'not done'}
-      </button>
+    <div className="quest">
+      <p>
+        <button
+          type="button"
+          onClick={handleStatus}
+          className={currentQuest.status ? 'success' : 'not-done'}>
+          {currentQuest.status ? '✔' : '⬜'}
+        </button>
+        {currentQuest.text}
+      </p>
       <button
         type="button"
         onClick={handleDelete}>
-        Delete
+        <span role="img" aria-label="delete">❌</span>
       </button>
     </div>)
 }

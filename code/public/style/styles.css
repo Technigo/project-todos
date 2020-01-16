@@ -1,0 +1,110 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Kaushan Script", cursive;
+}
+
+body {
+  background: url("../img/bg.jpg") fixed;
+  background-size: cover;
+  background-position-x: center;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header h1 {
+  font-family: "Uncial Antiqua", cursive;
+  text-transform: uppercase;
+  text-align: center;
+  color: #660303;
+  font-size: 3rem;
+  margin: 15px 0;
+}
+
+main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+main h3 {
+  font-family: "Uncial Antiqua", cursive;
+  color: #660303;
+  font-size: 2rem;
+}
+
+form {
+  font-size: 1.3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+form input {
+  padding: 10px;
+  font-size: 1.3rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+form select {
+  padding: 10px;
+  font-size: 1.3rem;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+button {
+  background-color: #660303;
+  color: #e0b500;
+  padding: 5px;
+  border: black 1px solid;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  font-size: 1.3rem;
+}
+
+.quest {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 1.3rem;
+}
+
+.quest button {
+  width: 40px;
+  height: 40px;
+  margin: 2px;
+}
+
+.quest .not-done {
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.success {
+  background-color: #0b6623;
+}
+/*# sourceMappingURL=styles.css.map */
