@@ -19,7 +19,7 @@ const Button = styled.button`
   border-radius: 10px;
   color: ${props => (props.activeFilter ? '#FFF' : 'rgba(230, 0, 60, 1)')};
   padding: 0.3rem 0.5rem;
-  font-size: 0.6rem;
+  font-size: 0.5rem;
   outline: none;
   font-weight: bold;
 
