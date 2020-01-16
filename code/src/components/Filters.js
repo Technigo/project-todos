@@ -5,11 +5,16 @@ import { visibilityFilter } from 'reducers/visibilityFilter';
 
 const StyledFilters = styled.div`
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 30px;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 30px 30px;
   grid-gap: 0.5rem;
   justify-content: center;
   padding: 0.4rem;
+
+  @media screen and (min-width: 326px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 30px;
+  }
 `;
 
 const Button = styled.button`
@@ -19,7 +24,7 @@ const Button = styled.button`
   border-radius: 10px;
   color: ${props => (props.activeFilter ? '#FFF' : 'rgba(230, 0, 60, 1)')};
   padding: 0.3rem 0.5rem;
-  font-size: 0.5rem;
+  font-size: 0.7rem;
   outline: none;
   font-weight: bold;
 
