@@ -1,0 +1,20 @@
+.todos-header {
+  align-items: center;
+  background-color: #ad1457;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem 1rem 1rem;
+  width: 100%;
+}
+
+.todos-header-title {
+  color: #fff;
+}
+
+@media screen and (min-width: 668px) {
+  .todos-header {
+    margin: 0 auto;
+    max-width: 600px;
+    width: 100%;
+  }
+}
