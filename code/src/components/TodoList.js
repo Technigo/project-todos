@@ -1,18 +1,21 @@
 import React from 'react'
-import { AddedTodo } from './AddedTodo'
 import { useSelector } from 'react-redux'
+import { Todo } from 'components/Todo'
+//import { AddedTodo } from './AddedTodo'
+
 
 export const TodoList = () => {
-    const allTodos = useSelector((store) => store.todos)
+    const todos = useSelector((state) => state.todoTasks.todos)
 
 
     return (
         <div className="todos">
-            <li>
-                {allTodos.map((todo) => (
-                    <AddedTodo key={todo.id} todo={todo} />
+            <ul>
+                {todos.map((todo) => (
+                    //Mounted the single todo with map
+                    <Todo key={todo.id} todo={todo} />
                 ))}
-            </li>
+            </ul>
         </div>
     )
 }

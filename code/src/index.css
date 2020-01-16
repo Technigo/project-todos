@@ -74,12 +74,21 @@ code {
   align-items: center;
   border-bottom: solid 1px lightgray;
 }
-.todos {
+.todoTasks {
   display: flex;
   flex-direction: column;
   justify-content: center;
   list-style: none;
+  /* margin: 20px 20; */
+  
 }
+ul {
+  padding: 20px;
+  display: inline;
+  justify-content: space-between;
+  text-decoration: none;
+ 
+} 
 .todo {
   display: flex;
   flex-direction: row;

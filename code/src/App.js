@@ -1,25 +1,28 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import { todos } from 'reducers/todos'
-import { TodoList } from 'components/TodoList'
-import { total } from 'reducers/total'
-import { Header } from 'components/Header'
-import { StyleSheet } from 'react'
-import { AddTodo } from './components/AddTodo'
+import { todoTasks } from 'reducers/todoTasks'
 
+import { TodoList } from 'components/TodoList'
+//import { total } from 'reducers/total'
+import { Header } from 'components/Header'
+//import { StyleSheet } from 'react'
+import { AddTodoForm } from './components/AddTodoForm'
+
+//create reducer
 const reducer = combineReducers({
-  todos: todos.reducer,
-  total: total.reducer
+  todoTasks: todoTasks.reducer,
+  //total: total.reducer
 })
 
+// create store 
 const store = configureStore({ reducer })
 
 export const App = () => {
   return (
     <Provider store={store}>
       <Header />
-      <AddTodo />
+      <AddTodoForm />
       <total />
       <TodoList />
     </Provider>
