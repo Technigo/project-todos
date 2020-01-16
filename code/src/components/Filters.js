@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 const StyledFilters = styled.div`
   display: grid;
-  grid-template-columns: 35px 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-template-rows: 30px;
   grid-gap: 0.5rem;
   justify-content: center;
@@ -19,7 +19,7 @@ const Button = styled.button`
   color: rgba(230, 0, 60, 1);
   padding: 0.3rem 0.5rem;
   /* letter-spacing: 0.05rem; */
-  font-size: 0.8rem;
+  font-size: 0.6rem;
   /* margin: 0.5rem; */
 
   /* &:nth-of-type(1),
@@ -67,9 +67,9 @@ export const Filters = () => {
 
   return (
     <StyledFilters>
-      <Icon>
+      {/* <Icon>
         <i class="fas fa-filter"></i>
-      </Icon>
+      </Icon> */}
       <Button>All ({countAll.length})</Button>
       <Button>Active ({countActive.length})</Button>
       <Button>Completed ({countCompleted.length})</Button>
