@@ -74,9 +74,9 @@
 /* Remove task */
 
 .remove-button {
-  background-color: black;
+  background-color: transparent;
   border: none;
-  color: #fff;
+  color: #ad1457;
+  font-size: 1.5rem;
   margin-left: auto;
-  padding: 1rem;
 }

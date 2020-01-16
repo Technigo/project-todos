@@ -1,4 +1,5 @@
 .task-form {
+  border-bottom: 3px solid #f4f4f4;
   display: flex;
   flex-direction: row-reverse;
   margin: 0;
@@ -17,7 +18,6 @@
 
 @media screen and (min-width: 668px) {
   .task-form {
-    border-bottom: 2px solid #f4f4f4;
     border-left: 2px solid #f4f4f4;
     border-right: 2px solid #f4f4f4;
     margin: 0 auto;

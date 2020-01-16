@@ -21,7 +21,7 @@ export const Task = ({ task }) => {
       <label className="checkbox-label" for={`todo-${task.id}`}>
         {task.todoText}
       </label>
-      <button aria-label={`Delete ${task.todoText}`} className="remove-button" type="button" onClick={handleTaskRemoval}>&#128465;</button>
+      <button aria-label={`Delete ${task.todoText}`} className="remove-button" type="button" onClick={handleTaskRemoval}>&#10006;</button>
     </li>
 
   )
