@@ -40,7 +40,7 @@ export const Todos = () => {
           <Emoji role="img" aria-label="Todo">
             📝
           </Emoji>
-          <Message>Write you first todo!</Message>
+          <Message>Write your first todo!</Message>
         </>
       ) : (
         <ul>
