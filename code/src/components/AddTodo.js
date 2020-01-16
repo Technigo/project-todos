@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { todos } from 'reducers/todos';
 
 const StyledAddTodo = styled.div`
-  border-bottom: ${props =>
-    props.empty ? '1px solid rgba(0, 0, 0, 0.1)' : ''};
+  /* border-bottom: ${props =>
+    props.empty ? '1px solid rgba(0, 0, 0, 0.1)' : ''}; */
 `;
 
 const Form = styled.form`

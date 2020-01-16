@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { visibilityFilter } from 'reducers/visibilityFilter';
 
 const StyledFilters = styled.div`
   display: grid;
@@ -13,31 +14,24 @@ const StyledFilters = styled.div`
 
 const Button = styled.button`
   border: 1px solid rgba(0, 0, 0, 0.1);
-  background-color: rgba(0, 0, 0, 0.02);
+  background-color: ${props =>
+    props.activeFilter ? 'rgba(230, 0, 60, 1)' : 'rgba(0, 0, 0, 0.02)'};
   border-radius: 10px;
-  /* color: rgba(194, 0, 42, 1); */
-  color: rgba(230, 0, 60, 1);
+  color: ${props => (props.activeFilter ? '#FFF' : 'rgba(230, 0, 60, 1)')};
   padding: 0.3rem 0.5rem;
-  /* letter-spacing: 0.05rem; */
   font-size: 0.6rem;
-  /* margin: 0.5rem; */
+  outline: none;
+  font-weight: bold;
 
-  /* &:nth-of-type(1),
-  &:nth-of-type(2) {
-    border-right: none;
+  &:disabled {
+    opacity: 0.5;
   }
 
-  &:nth-of-type(4) {
-    border-left: none;
-  } */
-
-  &:hover {
-    /* background-color: rgba(194, 0, 42, 1); */
+  &:hover:enabled {
     background-color: rgba(230, 0, 60, 1);
     color: white;
     transition: all 150ms ease-in-out;
     cursor: pointer;
-    /* font-weight: bold; */
   }
 `;
 
@@ -54,6 +48,10 @@ const Icon = styled.div`
 `;
 
 export const Filters = () => {
+  const dispatch = useDispatch();
+
+  const filter = useSelector(state => state.visibilityFilter);
+
   const countAll = useSelector(state => state.todos);
   const countActive = useSelector(state =>
     state.todos.filter(todo => todo.completed !== true)
@@ -67,13 +65,50 @@ export const Filters = () => {
 
   return (
     <StyledFilters>
-      {/* <Icon>
-        <i class="fas fa-filter"></i>
-      </Icon> */}
-      <Button>All ({countAll.length})</Button>
-      <Button>Active ({countActive.length})</Button>
-      <Button>Completed ({countCompleted.length})</Button>
-      <Button>Pinned ({countPinned.length})</Button>
+      <Button
+        onClick={() =>
+          dispatch(
+            visibilityFilter.actions.setVisibility({ filter: 'SHOW_ALL' })
+          )
+        }
+        disabled={countAll.length === 0}
+        activeFilter={filter === 'SHOW_ALL'}
+      >
+        All ({countAll.length})
+      </Button>
+      <Button
+        onClick={() =>
+          dispatch(
+            visibilityFilter.actions.setVisibility({ filter: 'SHOW_ACTIVE' })
+          )
+        }
+        disabled={countActive.length === 0}
+        activeFilter={filter === 'SHOW_ACTIVE'}
+      >
+        Active ({countActive.length})
+      </Button>
+      <Button
+        onClick={() =>
+          dispatch(
+            visibilityFilter.actions.setVisibility({ filter: 'SHOW_COMPLETED' })
+          )
+        }
+        disabled={countCompleted.length === 0}
+        activeFilter={filter === 'SHOW_COMPLETED'}
+      >
+        Completed ({countCompleted.length})
+      </Button>
+      <Button
+        onClick={() =>
+          dispatch(
+            visibilityFilter.actions.setVisibility({ filter: 'SHOW_PINNED' })
+          )
+        }
+        disabled={countPinned.length === 0}
+        activeFilter={filter === 'SHOW_PINNED'}
+      >
+        Pinned ({countPinned.length})
+      </Button>
     </StyledFilters>
   );
 };

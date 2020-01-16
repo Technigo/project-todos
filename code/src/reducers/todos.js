@@ -44,7 +44,6 @@ export const todos = createSlice({
           payload: {
             text,
             id: uuid(),
-            // https://github.com/rt2zz/redux-persist/issues/988
             createdAt: new Date().toISOString()
           }
         };
