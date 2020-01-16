@@ -1,0 +1,21 @@
+.container {
+  background-color: #B3DEC1;
+  margin: 30px;
+  height: 75px;
+  width: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.todo-text {
+  color: rgb(114, 12, 105);
+  font-size: 40px;
+  font-weight: 800;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.amount {
+  color: #210124;
+}

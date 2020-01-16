@@ -1,0 +1,10 @@
+.form-container {
+  margin: 30px;
+}
+
+.input-container {
+  background-color: #e5fcf5;
+  width: 525px;
+  height: 55px;
+  font-size: 30px;
+}
