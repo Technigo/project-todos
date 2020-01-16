@@ -7,7 +7,7 @@ const moment = require('moment');
 
 const StyledTodo = styled.li`
   display: grid;
-  grid-template-columns: 50px 1fr 30px 30px;
+  grid-template-columns: 50px 1fr 40px 40px;
   grid-gap: 0.5rem;
   align-items: center;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -29,7 +29,7 @@ const StyledTodo = styled.li`
   }
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: 50px 1fr 90px 30px 30px;
+    grid-template-columns: 50px 1fr 90px 40px 40px;
   }
 `;
 
@@ -89,18 +89,19 @@ const DeleteWrapper = styled.div`
 `;
 
 const Button = styled.button`
-  background-color: none;
+  background-color: transparent;
   color: rgba(0, 220, 240, 1);
   border: none;
   font-size: 1.1rem;
   /* transform: scale(0.8); */
-  opacity: 0.2;
+  opacity: ${props => (props.completed ? 0.3 : 1)};
 
   &:hover {
+    color: rgba(230, 0, 60, 1);
     opacity: 1;
     /* transform: scale(1.3); */
     cursor: pointer;
-    transition: all 200ms ease-in-out;
+    /* transition: all 200ms ease-in-out; */
   }
 `;
 
@@ -170,7 +171,10 @@ export const Todo = ({ todo }) => {
         </PinButton>
       </PinWrapper>
       <DeleteWrapper>
-        <Button onClick={() => dispatch(todos.actions.removeTodo(todo))}>
+        <Button
+          onClick={() => dispatch(todos.actions.removeTodo(todo))}
+          completed={todo.completed}
+        >
           <i class="fas fa-trash-alt"></i>
         </Button>
       </DeleteWrapper>
