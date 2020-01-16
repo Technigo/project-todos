@@ -8,9 +8,9 @@ export const Task = ({ task }) => {
   return (
     <>
       <div className="task">
+        <CompletedTask key={task.id} task={task} />
         <p>{task.text}</p>
         <div className="buttons">
-          <CompletedTask key={task.id} task={task} />
           <RemoveTask key={task.id} task={task} />
         </div>
       </div>

@@ -5,7 +5,7 @@
 }
 
 .buttons {
-    margin:23px 30px 0;
+    margin:18px 30px 0;
     justify-content: space-evenly; 
 }
 
@@ -35,9 +35,33 @@ input[type=text] {
     color:rgb(68, 177, 166);
     font-size:16px;
     margin-left:20px;
-    width:80px;
+    width:90px;
+    border-radius:4px;
+    border: solid 1px rgb(189, 189, 68);
+    background-color:rgb(254, 254, 158)
 }
 
 form {
     padding:40px 0;
 }
+
+.checkbox > input {
+    height: 25px;
+    width: 25px;
+    margin-top:30px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 1px solid black;
+    border-radius: 4px;
+    outline: none;
+    transition-duration: 0.3s;
+    background-color:white;
+    cursor: pointer;
+  }
+
+.checkbox > input:checked {
+    background-color:rgb(138, 225, 222);
+}
+
