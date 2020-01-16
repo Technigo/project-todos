@@ -1,0 +1,18 @@
+
+.body {
+    margin-top:50px;
+    min-height: 900px;
+    background-image:url(../assets/1383079.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .todo-list {
+      margin-left:50px; 
+      padding-left:20px;
+      width:500px;
+      background-color:rgb(250, 214, 214);
+      font-family: 'Gloria Hallelujah', cursive;
+      font-size:22px;
+  }
+

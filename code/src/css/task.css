@@ -1,0 +1,43 @@
+.task {
+    display:flex;
+    /* margin:10px; */
+
+}
+
+.buttons {
+    margin:23px 30px 0;
+    justify-content: space-evenly; 
+}
+
+input[type=checkbox] {
+    margin: 8px 20px 0 5px;
+}
+
+input[type=text] {
+    height:20px;
+    width: 200px;;
+}
+
+.btn-remove,
+.btn-add {
+    font-family:inherit;
+    font-weight: 700;
+    /* color:rgb(238, 82, 108); */
+}
+
+.btn-remove {
+    background-color:rgb(238, 82, 108);
+    border-radius: 50%;
+
+}
+
+.btn-add {
+    color:rgb(68, 177, 166);
+    font-size:16px;
+    margin-left:20px;
+    width:80px;
+}
+
+form {
+    padding:40px 0;
+}
