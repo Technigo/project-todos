@@ -37,9 +37,6 @@ export const Todos = () => {
     <StyledTodos empty={allTodos.length === 0}>
       {allTodos.length === 0 ? (
         <>
-          {/* <Emoji role="img" aria-label="Todo">
-            📝
-          </Emoji> */}
           <i class="far fa-ballot-check"></i>
           <Message>Write your first todo!</Message>
         </>
