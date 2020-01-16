@@ -15,18 +15,28 @@ export const AddTodoForm = () => {
     }
 
     return (
-        <article className="InputField">
-        <form onSubmit={handleSubmit}>
-            <label>
-                What do you want to add?:
-                <input 
-                type="text" 
-                value={todoText} 
-                onChange={(event) => setTodoText(event.target.value)}/>
-            </label>
+        <article className="inputField">
+            <form className=""
+                onSubmit={handleSubmit}>
+                    <button 
+                        type="submit">
+                            <span 
+                                className="emoji" 
+                                role="img" 
+                                aria-label="butterfly">
+                                    🦋
+                            </span>
+                    </button>
+        
+                <label className="inputLabel">
+                    <input 
+                    type="text" 
+                    value={todoText} 
+                    placeholder={"Add task"}
+                    onChange={(event) => setTodoText(event.target.value)}/>
+                </label>
 
-            <button type="submit">Add your to-do</button>
-        </form>
+            </form>
         </article>
     )
 }

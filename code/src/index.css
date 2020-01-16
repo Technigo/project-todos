@@ -65,15 +65,19 @@ code {
   display: inline;
 }
 
-.InputField {
+.inputField {
   display: flex;
   flex-direction: row;
   justify-content: left;
   padding: 20px;
   font-size: 20px;
   align-items: center;
-  border-bottom: solid 1px lightgray;
+  border-bottom: solid 1px  lightgray;
 }
+
+/* .inputLabel {
+  border: none;
+} */
 .todos {
   display: flex;
   flex-direction: column;
@@ -86,6 +90,7 @@ code {
   justify-content: left;
   padding: 20px;
   font-size: 20px;
+  color: #96969677;
   align-items: center;
   border-bottom: solid 1px lightgray;
 }
@@ -108,6 +113,15 @@ code {
   cursor: pointer;
 }
 
+.emoji {
+  font-size: 15px;
+  border: none;
+  background: white;
+  border-radius: 50%;
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
 .icon {
   align-items: center;
   justify-content: center;
