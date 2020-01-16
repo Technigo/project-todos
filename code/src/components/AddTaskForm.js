@@ -22,7 +22,7 @@ export const AddTaskForm = () => {
           onChange={event => setName(event.target.value)}
         />
       </label>
-      <button type="submit">Add new task</button>
+      <button type="submit">➕</button>
     </form>
   );
 };

@@ -6,6 +6,7 @@ import { Provider } from "react-redux";
 import { AddTaskForm } from "components/AddTaskForm";
 import { TaskList } from "components/TaskList";
 import { Header } from "components/Header";
+import { ProgressBar } from "components/ProgressBar";
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -17,6 +18,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
+      <ProgressBar />
       <AddTaskForm />
       <TaskList />
     </Provider>

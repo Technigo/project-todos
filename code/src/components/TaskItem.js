@@ -28,7 +28,7 @@ export const TaskItem = props => {
       <label>
         <input
           type="checkbox"
-          checked={props.item.Done}
+          checked={props.item.isDone}
           onChange={handleCheckboxClick}
         />
       </label>

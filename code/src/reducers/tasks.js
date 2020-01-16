@@ -3,16 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 export const tasks = createSlice({
   name: "tasks",
   initialState: {
-    items: [
-      {
-        id: 1,
-        text: "Watch video on actions & reducers",
-        complete: true
-      },
-      { id: 2, text: "Meditate for 30 minutes", isDone: true },
-      { id: 3, text: "Finish reading the book", isDone: true },
-      { id: 4, text: "Buy banana", isDone: false }
-    ]
+    items: []
   },
 
   reducers: {
