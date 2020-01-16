@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { Task } from './Task';
 
 export const AllTasks = () => {
-  const allTasks = useSelector(state => state.tasks);
+  const allTasks = useSelector(state => state.tasks.taskData);
 
   return (
     <div>
