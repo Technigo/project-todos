@@ -14,6 +14,10 @@ const StyledTodo = styled.li`
   background-color: rgba(0, 0, 0, 0.01);
   padding: 1rem 0;
 
+  &:first-of-type {
+    border-top: none;
+  }
+
   &:last-of-type {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   }
@@ -57,6 +61,7 @@ const TimeWrapper = styled.div`
   justify-content: flex-end;
   align-items: center;
   font-size: 0.7rem;
+  font-style: italic;
   color: ${props => (props.completed ? 'rgba(0,0,0, 0.3)' : '')};
   /* border: 1px solid blue; */
 
@@ -84,6 +89,7 @@ const DeleteWrapper = styled.div`
 
 const Button = styled.button`
   background-color: none;
+  color: crimson;
   border: none;
   font-size: 1.1rem;
   /* transform: scale(0.8); */
@@ -123,9 +129,7 @@ export const Todo = ({ todo }) => {
       </TimeWrapper>
       <DeleteWrapper>
         <Button onClick={() => dispatch(todos.actions.removeTodo(todo))}>
-          <span role="img" aria-label="delete">
-            ❌
-          </span>
+          <i class="fas fa-trash-alt"></i>
         </Button>
       </DeleteWrapper>
     </StyledTodo>

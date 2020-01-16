@@ -4,14 +4,15 @@ import styled from 'styled-components';
 const StyledFilters = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 40px;
   /* grid-gap: 0.2rem; */
   justify-content: center;
   /* padding: 0.4rem; */
 `;
 
 const Button = styled.button`
-  border: 1px solid crimson;
-  background-color: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.02);
   /* border-radius: 10px; */
   color: crimson;
   padding: 0.3rem 0.5rem;
@@ -41,7 +42,7 @@ export const Filters = () => {
       <Button>All</Button>
       <Button>Completed</Button>
       <Button>Uncompleted</Button>
-      <Button>Overdue</Button>
+      <Button>Pinned</Button>
     </StyledFilters>
   );
 };

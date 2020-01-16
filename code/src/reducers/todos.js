@@ -8,24 +8,28 @@ export const todos = createSlice({
       id: 1,
       text: 'Todo 1',
       createdAt: '2019-11-29T15:14:51.733Z',
+      pin: false,
       completed: false
     },
     {
       id: 2,
       text: 'Todo 2',
       createdAt: '2020-01-13T13:14:51.733Z',
+      pin: false,
       completed: false
     },
     {
       id: 3,
       text: 'Todo 3',
       createdAt: '2020-01-14T14:14:51.733Z',
+      pin: false,
       completed: false
     },
     {
       id: 4,
       text: 'Todo 4',
       createdAt: '2020-01-14T19:50:13.556Z',
+      pin: false,
       completed: false
     }
   ],
@@ -33,7 +37,7 @@ export const todos = createSlice({
     addTodo: {
       reducer(state, action) {
         const { id, text, createdAt } = action.payload;
-        state.push({ id, text, createdAt, completed: false });
+        state.push({ id, text, createdAt, pin: false, completed: false });
       },
       prepare({ text }) {
         return {
