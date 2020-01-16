@@ -25,7 +25,6 @@ export const AddTask = () => {
         onChange={(event) => setNewTask(event.target.value)}
       />
       </label>
-
     </form>
   )
 }

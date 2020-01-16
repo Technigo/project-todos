@@ -8,7 +8,7 @@ export const TaskList = () => {
   return (
     <ul>
       {taskslisted.map((task) => (
-        <Task key={task.id} task={task}/>
+        <Task key={task.id} task={task} timeCreated={task.timeCreated}/>
       ))}
     </ul>
   )

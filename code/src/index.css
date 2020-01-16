@@ -23,9 +23,9 @@ button {
 .main-container {
   border: 1px solid rgba(0, 0, 0, 0.1);
   height: 80vh;
-  margin-left: 10vw;
-  margin-top: 10vh;
-  width: 80vw;
+  margin-left: 2.5vw;
+  margin-top: 2.5vh;
+  width: 95vw;
 }
 
 /* Head component */
@@ -57,7 +57,9 @@ button {
 
 /* Add task component */
 .addtask-form {
+  height: 5vh;
   padding-left: 1vw;
+  padding-top: 1vh;
 }
 
 .add-task {
@@ -65,6 +67,7 @@ button {
 }
 
 .add-button {
+  background: white;
   margin-right: 1vw;
 }
 
@@ -83,25 +86,48 @@ ul {
 }
 
 .li a {
+  height: 5vh;
   text-decoration: none;
 }
 
 /* Task */
 .remove-button {
+  background: white;
+  float: right;
+  font-size: 10px;
+  margin-left: 0.5vw;
   margin-right: 1vw;
 }
 
-/********************************************/
+.time-created {
+  float: right;
+  font-size: 12px;
+  margin-right: 1vw;
+}
 
+
+/********************************************/
 /* Media queries */
 @media(min-width: 768px) {
 .main-container {
   height: 70vh;
-  margin-left: 30vw;
+  margin-left: 25vw;
   margin-top: 15vh;
+  width: 50vw;
+}
+}
+
+@media(min-width: 1024px) {
+.main-container {
+  margin-left: 30vw;
   width: 30vw;
 }
+
 .head-title {
   font-size: 20px;
+}
+
+.remove-button {
+  font-size: 12px;
 }
 }

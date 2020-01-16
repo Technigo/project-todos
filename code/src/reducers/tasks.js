@@ -1,18 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
+import moment from 'moment'
 
 export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      { id: 1, text: 'Watch video on actions and reducers', complete: true },
-      { id: 2, text: 'Follow redux codealong', complete: true },
-      { id: 3, text: 'Fork weekly assignment', complete: true },
-      { id: 4, text: 'Create a todo app', complete: false }
+      { id: 1, text: 'Watch video on actions and reducers', complete: true, timeCreated:'' },
+      { id: 2, text: 'Follow redux codealong', complete: true, timeCreated: '' },
+      { id: 3, text: 'Fork weekly assignment', complete: true, timeCreated: '' },
+      { id: 4, text: 'Create a todo app', complete: false, timeCreated:'' }
     ]
   },
   reducers: {
     addTask: (state, action) => {
-      state.items.push({id: Date.now(), text: action.payload })
+      const date = moment().startOf('minute').fromNow()
+      state.items.push({id: state.items.length + 1, text: action.payload, timeCreated: date })
     },
     removeItem: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload)
@@ -25,17 +27,8 @@ export const tasks = createSlice({
         foundItem.complete = !foundItem.complete
       }
     },
-    clearAll: () => {
-      return[]
+    clearAll: (state) => {
+      state.items = []
     }
   }
 }) 
-
-
-// initialState: {
-//   items: [
-//   { id: 1, text: 'Watch video on actions and reducers', complete: true },
-//   { id: 2, text: 'Follow redux codealong', complete: true },
-//   { id: 3, text: 'Fork weekly assignment', complete: true },
-//   { id: 4, text: 'Create a todo app', complete: false }
-// ]},

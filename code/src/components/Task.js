@@ -15,20 +15,21 @@ export const Task = (props) => {
 
   return (
     <li>
-      <button class="remove-button" type="button" onClick={handleRemoveClick}>
-        -
-      </button>
-
-      {props.task.text}
-
       <label>
-        <input 
+        <input
           type="checkbox" 
           checked={props.task.complete} 
           onChange={handleCheckboxClick}
         />
       </label>
 
+      {props.task.text}
+      
+      <button class="remove-button" type="button" onClick={handleRemoveClick}>
+        Remove
+      </button>
+      
+      <div class="time-created">{props.task.timeCreated}</div>
     </li>
   )
 }
