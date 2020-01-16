@@ -9,6 +9,7 @@ const StyledTodos = styled.div`
   justify-content: ${props => (props.empty ? 'center' : '')};
   align-items: ${props => (props.empty ? 'center' : '')};
   height: ${props => (props.empty ? '200px' : '')};
+  padding: 0 0.4rem;
   /* border: 1px solid red; */
 `;
 
