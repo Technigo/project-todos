@@ -14,7 +14,8 @@ const Button = styled.button`
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.02);
   /* border-radius: 10px; */
-  color: crimson;
+  /* color: rgba(194, 0, 42, 1); */
+  color: rgba(230, 0, 60, 1);
   padding: 0.3rem 0.5rem;
   /* margin: 0.5rem; */
 
@@ -28,7 +29,8 @@ const Button = styled.button`
   }
 
   &:hover {
-    background-color: crimson;
+    /* background-color: rgba(194, 0, 42, 1); */
+    background-color: rgba(230, 0, 60, 1);
     color: white;
     transition: all 150ms ease-in-out;
     cursor: pointer;
@@ -40,8 +42,8 @@ export const Filters = () => {
   return (
     <StyledFilters>
       <Button>All</Button>
+      <Button>Active</Button>
       <Button>Completed</Button>
-      <Button>Uncompleted</Button>
       <Button>Pinned</Button>
     </StyledFilters>
   );

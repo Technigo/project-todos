@@ -7,12 +7,12 @@ const moment = require('moment');
 
 const StyledTodo = styled.li`
   display: grid;
-  grid-template-columns: 1fr 7fr 1fr;
+  grid-template-columns: 50px 1fr 30px 30px;
   grid-gap: 0.5rem;
   align-items: center;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   background-color: rgba(0, 0, 0, 0.01);
-  padding: 1rem 0;
+  padding: 1rem 1rem 1rem 0;
 
   &:first-of-type {
     border-top: none;
@@ -29,7 +29,7 @@ const StyledTodo = styled.li`
   }
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: 1fr 5fr 2fr 1fr;
+    grid-template-columns: 50px 1fr 90px 30px 30px;
   }
 `;
 
@@ -58,7 +58,7 @@ const TextWrapper = styled.div`
 
 const TimeWrapper = styled.div`
   display: none;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
   font-size: 0.7rem;
   font-style: italic;
@@ -75,6 +75,7 @@ const DeleteWrapper = styled.div`
   /* visibility: hidden; */
   justify-content: center;
   align-items: center;
+  /* margin-right: 1rem; */
   /* border: 1px solid red; */
   /* padding-right: 0.4rem; */
 
@@ -89,7 +90,7 @@ const DeleteWrapper = styled.div`
 
 const Button = styled.button`
   background-color: none;
-  color: crimson;
+  color: rgba(0, 220, 240, 1);
   border: none;
   font-size: 1.1rem;
   /* transform: scale(0.8); */
@@ -103,6 +104,34 @@ const Button = styled.button`
   }
 `;
 
+const PinWrapper = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid blue; */
+`;
+
+const PinButton = styled.button`
+  background-color: transparent;
+  color: ${props =>
+    props.pinned ? 'rgba(255, 191, 0, 1)' : 'rgba(0, 0, 0, 0.2)'};
+  border: none;
+  font-size: 1.1rem;
+  /* transform: scale(0.8); */
+  /* opacity: 1; */
+  opacity: ${props => (props.completed ? 0.3 : 1)};
+  outline: none;
+
+  &:hover {
+    opacity: 1;
+    color: ${props =>
+      props.pinned ? 'rgba(0, 0, 0, 0.2)' : 'rgba(255, 191, 0, 1);'};
+    /* transform: scale(1.3); */
+    cursor: pointer;
+    transition: all 200ms ease-in-out;
+  }
+`;
+
 export const Todo = ({ todo }) => {
   const dispatch = useDispatch();
 
@@ -110,23 +139,36 @@ export const Todo = ({ todo }) => {
     <StyledTodo>
       <CheckboxWrapper>
         <input
-          onChange={() => dispatch(todos.actions.toggleTodo({ todo }))}
+          onChange={() => dispatch(todos.actions.toggleCompleted({ todo }))}
           type="checkbox"
           checked={todo.completed}
         />
       </CheckboxWrapper>
       <TextWrapper
-        onClick={() => dispatch(todos.actions.toggleTodo({ todo }))}
+        onClick={() => dispatch(todos.actions.toggleCompleted({ todo }))}
         completed={todo.completed}
       >
         <span>{todo.text}</span>
       </TextWrapper>
       <TimeWrapper
-        onClick={() => dispatch(todos.actions.toggleTodo({ todo }))}
+        onClick={() => dispatch(todos.actions.toggleCompleted({ todo }))}
         completed={todo.completed}
       >
         {moment(todo.createdAt).fromNow()}
       </TimeWrapper>
+      <PinWrapper>
+        <PinButton
+          onClick={() => dispatch(todos.actions.togglePinned({ todo }))}
+          pinned={todo.pinned}
+          completed={todo.completed}
+        >
+          {todo.pinned ? (
+            <i class="fas fa-star"></i>
+          ) : (
+            <i class="far fa-star"></i>
+          )}
+        </PinButton>
+      </PinWrapper>
       <DeleteWrapper>
         <Button onClick={() => dispatch(todos.actions.removeTodo(todo))}>
           <i class="fas fa-trash-alt"></i>
