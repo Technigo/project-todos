@@ -50,7 +50,9 @@ export const Todos = () => {
 
   switch (filter) {
     case 'SHOW_ACTIVE':
-      filteredTodos = allTodos.filter(todo => todo.completed === false);
+      filteredTodos = allTodos
+        .filter(todo => todo.completed === false)
+        .sort((a, b) => b.pinned - a.pinned);
       if (filteredTodos.length === 0) {
         dispatch(
           visibilityFilter.actions.setVisibility({ filter: 'SHOW_ALL' })
@@ -58,7 +60,9 @@ export const Todos = () => {
       }
       break;
     case 'SHOW_COMPLETED':
-      filteredTodos = allTodos.filter(todo => todo.completed === true);
+      filteredTodos = allTodos
+        .filter(todo => todo.completed === true)
+        .sort((a, b) => b.pinned - a.pinned);
       if (filteredTodos.length === 0) {
         dispatch(
           visibilityFilter.actions.setVisibility({ filter: 'SHOW_ALL' })
