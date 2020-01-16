@@ -17,6 +17,8 @@ const Button = styled.button`
   /* color: rgba(194, 0, 42, 1); */
   color: rgba(230, 0, 60, 1);
   padding: 0.3rem 0.5rem;
+  letter-spacing: 0.05rem;
+  font-size: 0.8rem;
   /* margin: 0.5rem; */
 
   /* &:nth-of-type(1),
