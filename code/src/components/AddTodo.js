@@ -26,6 +26,7 @@ const Input = styled.input`
   font-size: 1rem;
 
   &::placeholder {
+    color: rgba(0, 0, 0, 0.3);
     padding-left: 0;
   }
 `;
@@ -34,14 +35,14 @@ const Button = styled.button`
   /* width: 50px; */
   color: rgba(0, 0, 0, 0.3);
   padding: 0 1rem;
-  background-color: white;
+  background-color: transparent;
   border: none;
   font-weight: bold;
   font-size: 1.5rem;
   outline: none;
 
   &:hover {
-    color: black;
+    color: rgba(230, 0, 60, 1);
     cursor: pointer;
     transition: all 0.3s ease-in;
   }
@@ -68,7 +69,9 @@ export const AddTodo = () => {
   return (
     <StyledAddTodo empty={allTodos.length === 0}>
       <Form onSubmit={handleSubmit}>
-        <Button type="submit">+</Button>
+        <Button type="submit">
+          <i class="far fa-plus-square"></i>
+        </Button>
         <Input
           value={todoText}
           type="text"
