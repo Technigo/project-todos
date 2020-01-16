@@ -1,9 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit'
+// import { createSlice } from '@reduxjs/toolkit'
 
-export const total = createSlice({
-    name: 'number',
-    initialState: {
-        items: []
+// export const total = createSlice({
+//     name: 'number',
+//     initialState: {
+//         items: []
 
-    }
-})
+//     }
+// })
