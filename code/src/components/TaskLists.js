@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+
 import { CheckBox } from './CheckBox'
+import "./tasklists.css"
 
 
 export const TaskLists = () => {

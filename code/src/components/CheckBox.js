@@ -12,11 +12,14 @@ export const CheckBox = (props) => {
   }
 
   return (
-    <input
-      className="checkbox"
-      type="checkbox"
-      checked={props.task.complete}
-      onChange={() => { handleCheckboxClick(props.task.id) }}>
-    </input>
+    <label className="checkbox-container">
+      <input
+        type="checkbox"
+        checked={props.task.complete}
+        onChange={() => { handleCheckboxClick(props.task.id) }}>
+      </input>
+      <span className="checkmark" role="checkbox" aria-checked="false" tabIndex="0"></span>
+    </label>
+
   )
 }
