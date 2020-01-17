@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { list } from 'reducers/list'
+import './addtodo.css'
 
 export const AddTodo = () => {
     const [name, setName] = useState('')
@@ -14,13 +15,13 @@ export const AddTodo = () => {
     return (
         <form onSubmit={handleSubmit}>
             <label>
-                Name:
-                <input 
+                <input
+                    class="text-input" 
                     type="text" 
                     value={name} 
                     onChange={(event) => setName(event.target.value)}/>
             </label>
-            <button type="submit">Submit!</button>
+            <button type="submit">Add task</button>
         </form>
         
     )

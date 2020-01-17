@@ -4,6 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 // REDUCERS
 import { list } from 'reducers/list'
 // COMPONENTS
+import { Header } from 'Components/Header'
 import { AddTodo } from 'Components/AddTodo'
 import { List } from 'Components/List'
 // STYLE
@@ -20,7 +21,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <h1>To Do</h1>
+      <Header />
       <AddTodo />
       <List />
     </Provider>

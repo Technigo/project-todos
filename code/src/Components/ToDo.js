@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { list } from 'reducers/list'
+import './todo.css'
 
 export const Todo = (props) => {
     const dispatch = useDispatch()
@@ -20,12 +21,13 @@ export const Todo = (props) => {
                 type="checkbox" 
                 checked={props.task.done}
                 onChange={checkDone} />
+                <span className="fakeCheckbox"></span>
             </label>
             {props.task.name}
             <button 
                 type="button"
                 onClick={removeTask}>
-                Remove
+                    ❌
             </button>
             
             

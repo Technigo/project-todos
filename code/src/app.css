@@ -1,5 +1,15 @@
 body {
     display: flex;
     justify-content: center;
-    background-color: aqua;
+    justify-items: center;
+    background-color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 40px;
+    color: #155257;
+}
+
+h1 {
+    font-family: 'Comfortaa', cursive;
+    color: #155257;
+    font-size: 30px;
 }

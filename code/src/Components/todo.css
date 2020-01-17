@@ -1,0 +1,30 @@
+input[type="checkbox"] {
+    display: none;
+}
+
+.fakeCheckbox {
+    display: inline-flex;
+    width: 13px;
+    height: 13px;
+    border-radius: 50%;
+    margin-right: 5px;
+    border: solid 2px #155257; 
+    justify-content: center;
+    align-items: center;
+}
+
+input:checked + .fakeCheckbox::after {
+    content: " ";
+    width: 70%;
+    height: 70%;
+    border-radius: 50%;
+    background: #155257;
+    display: inline-block;
+}
+button[type="button"] {
+    width: auto;
+    height: auto;
+    background: none;
+    border: none;
+    font-size: large;
+}
