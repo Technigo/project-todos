@@ -18,7 +18,7 @@ export const AddTodoForm = () => {
         <article className="inputField">
             <form className=""
                 onSubmit={handleSubmit}>
-                    <button 
+                    <button className="addTodoButton"
                         type="submit">
                             <span 
                                 className="emoji" 

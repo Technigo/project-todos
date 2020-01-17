@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Todo } from 'components/Todo'
-// import { AddedTodo } from './AddedTodo'
+
 
 export const TodoList = () => {
     // todos = items - todoTasks  = fridge

@@ -17,16 +17,6 @@ code {
     monospace;
 }
 
-/* h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-} */
-
-/* .todos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-} */
-
 .headerContainer {
   background-color: silver;
 }
@@ -66,18 +56,39 @@ code {
 }
 
 .inputField {
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  padding: 20px;
-  font-size: 20px;
-  align-items: center;
-  border-bottom: solid 1px  lightgray;
+  display: flex; 
+    /* flex-direction: row; */
+    /* justify-content: left; */
+    /* justify-content: space-between; */
+    padding: 20px;
+    /* align-items: center; */
+    border-bottom: solid 1px lightgray;
+  
+}
+input {
+  border: hidden;
+  font-size: 20px; 
+  color: #96969677;
+  align-items: center; 
+  }
+
+/* Takes away the blue border around a text field */
+input:focus, textarea {
+  outline: none;
 }
 
-/* .inputLabel {
+.addTodoButton {
   border: none;
-} */
+  border: solid 1px lightgray;
+  border-radius: 50%;
+  padding: 10px 5px;
+  color: white;
+  cursor: pointer;
+}
+
+label {
+  border: none;
+}
 .todos {
   display: flex;
   flex-direction: column;
@@ -143,15 +154,15 @@ code {
   justify-content: center;
   font-size: 60px;
 } */
-.total .total {
+/* .total .total {
   display: flex;
-  align-items: center;
-}
+  align-items: center; */
+/* } */
 /* .cart .amount {
   font-size: 30px;
   margin-left: 10px;
 } */
-.total .items {
+/* .total .items {
   margin: 0;
   padding: 0;
   margin-left: auto;
@@ -166,14 +177,14 @@ code {
   list-style-type: none;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-}
+} */
 /* .cart .items .emoji {
   width: 50px;
   height: 50px;
   font-size: 30px;
   margin-right: 10px;
 } */
-.total .sum {
+/* .total .sum {
   display: block;
   font-weight: bold;
   width: 100%;
@@ -205,4 +216,5 @@ code {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
-}
+} */
+
