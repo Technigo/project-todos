@@ -28,8 +28,6 @@ export const App = () => {
 }
 
 const TodoWrapper = styled.main`
-  @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
-    font-family: 'Ubuntu', sans-serif;
   @media (min-width: 668px) {
     width: 50%;
     margin: 20px auto;

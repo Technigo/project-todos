@@ -51,8 +51,8 @@ const AddButton = styled.button`
   }
 `
 const Input = styled.input`
-  @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
-  font-family: 'Ubuntu', sans-serif;
+  // @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+  // font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   color: #666;
   border: none;
