@@ -7,7 +7,11 @@ export const TaskItem = (props) => {
 
   const dispatch = useDispatch()
   const taskStatus = props.task.completed
-  // const handleToggleTask = () => { dispatch(tasks.actions.toggleTask(props.task.id))}
+
+  const handleToggleTask = () => {
+    dispatch(tasks.actions.toggleTask(props.task.id))
+  }
+
   const handleRemoveTask = () => {
     dispatch(tasks.actions.removeTask(props.task.id))
   }
@@ -15,7 +19,7 @@ export const TaskItem = (props) => {
   return (
     <TaskWrapper>
       <Task>
-        <TaskToggleButton taskStatus={taskStatus} />
+        <TaskToggleButton taskStatus={taskStatus} onClick={handleToggleTask} />
         <TaskText taskStatus={taskStatus}>{props.task.text}</TaskText>
         <TaskRemoveButton onClick={handleRemoveTask} aria-label="remove">🗑</TaskRemoveButton>
       </Task>
@@ -57,7 +61,7 @@ const TaskToggleButton = styled.button`
 `
 const TaskText = styled.article`
   font-size: 16px;
-  color: ${props => (props.taskStatus ? "#e6e6e6" : "#333")};
+  color: ${props => (props.taskStatus ? "#d9d9d9" : "#333")};
 `
 const TaskRemoveButton = styled.button`
   background: transparent;

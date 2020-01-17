@@ -1,11 +1,23 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
+// import { tasks } from 'reducers/tasks'
 
 export const Header = () => {
 
+  // To get todays date
   let date = new Date()
   let day = date.getDate()
   const month = date.toLocaleString('default', { month: 'long' })
+
+  // To get all tasks
+  const allTasks = useSelector(store => store.tasks.items)
+
+  // To get tasks with completed status true
+  const completedTasks = allTasks.filter(task => task.completed === true)
+
+  // Function to clear all todos
+  //const handleClearAll = () => {  }
 
   return (
 
@@ -15,7 +27,7 @@ export const Header = () => {
         <Text>{day} {month}</Text>
       </WrapperLeft>
       <WrapperRight>
-        <Text>2/4 done</Text>
+        <Text>{completedTasks.length}/{allTasks.length} done</Text>
         <ClearButton>Clear all</ClearButton>
       </WrapperRight>
     </WrapperHeader>
