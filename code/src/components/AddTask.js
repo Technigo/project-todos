@@ -13,17 +13,15 @@ export const AddTask = () => {
   }
 
   return (
-    <div className="todo-list">
-      <form onSubmit={handleSubmit}>
-        <label>
+    <form onSubmit={handleSubmit}>
+      <label>
         New todo:
-          <input
-            type="text"
-            value={text}
-            onChange={(event) => setText(event.target.value)} />
-        </label>
-        <button className="btn-add" type="submit"> Add </button>
-      </form>
-    </div>
+        <input
+          type="text"
+          value={text}
+          onChange={(event) => setText(event.target.value)} />
+      </label>
+      <button className="btn-add" type="submit"> Add </button>
+    </form>
   )
 }

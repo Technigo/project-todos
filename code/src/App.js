@@ -4,6 +4,9 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { tasks } from 'reducers/tasks'
 import { ToDoList } from 'components/ToDoList'
 import { AddTask } from 'components/AddTask'
+import { ClearButton } from 'components/ClearButton'
+import { Summary } from 'components/Summary'
+import 'css/todo-list.css'
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -15,8 +18,13 @@ export const App = () => {
   return (
     <Provider store={store}>
       <div className="body">
-        <ToDoList />
-        <AddTask />
+        <div className="todo-list">
+          <ToDoList />
+
+          <ClearButton />
+          <Summary />
+          <AddTask />
+        </div>
       </div>
     </Provider>
   )

@@ -7,11 +7,11 @@ export const ToDoList = () => {
   const allTasks = useSelector((store) => (store.tasks))
 
   return (
-    <div className="todo-list">
-      <h1>Todo List </h1>
+    <>
+      <h1>Todo List<span role="img" aria-label="Thinking cloud">  💬</span> </h1>
       {allTasks.map((task) => (
         <Task key={task.id} task={task} />
       ))}
-    </div>
+    </>
   )
 }
