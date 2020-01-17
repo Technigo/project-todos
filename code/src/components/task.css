@@ -59,7 +59,7 @@
 }
 
 .checkbox:checked + .checkbox-label::after {
-  background: center / 50% no-repeat url("./icons8-checkmark.svg");
+  background: center / 50% no-repeat url("../icons/icons8-checkmark.svg");
   color: #daa520;
   content:'';
   display: inline-block;
