@@ -6,6 +6,6 @@ export const Date = () => {
   const currentDate = moment(Date.now).format('LL')
 
   return (
-    <p class="current-date">{currentDate}</p>
+    <p className="current-date">{currentDate}</p>
   )
 }
