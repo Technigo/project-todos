@@ -1,4 +1,26 @@
 header {
-  background-color: aqua;
+  background-color: rgb(192, 212, 212);
   border-bottom: 1px solid cadetblue;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+h1 {
+  font-size: 25px;
+  font-weight: normal;
+}
+
+h4 {
+  font-weight: normal;
+}
+
+.counter {
+  display: flex;
+  flex-direction: column;
+}
+
+.counterContainer {
+  display: flex;
+  flex-direction: column;
 }

@@ -40,7 +40,12 @@ export const tasks = createSlice({
       }
     },
     removeTask: (state, action) => {
-      state.taskData = state.taskData.find(task => task.id !== action.payload);
+      state.taskData = state.taskData.filter(
+        task => task.id !== action.payload
+      );
+    },
+    removeAllTasks: (state, action) => {
+      state.taskData = state.taskData.filter(task => task !== action.payload);
     }
   }
 });

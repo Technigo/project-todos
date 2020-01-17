@@ -10,21 +10,31 @@ export const Task = ({ task }) => {
     dispatch(tasks.actions.addToCounter(task.complete));
   };
 
-  const handelRemoveOnClick = () => {
+  const handleRemoveOnClick = () => {
     dispatch(tasks.actions.removeTask(task.id));
   };
+
   return (
     <section className="taskItem">
-      <input
-        type="checkbox"
-        checked={task.complete}
-        onChange={handleCheckbox}
-      />
+      <div className="taskList">
+        <input
+          className="checkbox"
+          type="checkbox"
+          checked={task.complete}
+          onChange={handleCheckbox}
+        />
 
-      <p>{task.text}</p>
-      <button className="remove" type="button" onClick={handelRemoveOnClick}>
-        Delete
-      </button>
+        <p className="taskName" onClick={handleCheckbox}>
+          {task.text}
+        </p>
+        <button
+          className="removeBtn"
+          type="button"
+          onClick={handleRemoveOnClick}
+        >
+          Delete
+        </button>
+      </div>
     </section>
   );
 };

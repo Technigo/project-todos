@@ -8,6 +8,7 @@ export const AddTask = () => {
 
   return (
     <form
+      className="addTaskForm"
       onSubmit={event => {
         event.preventDefault();
         dispatch(tasks.actions.addTodo(toDoText));
@@ -15,12 +16,15 @@ export const AddTask = () => {
       }}
     >
       <input
+        className="addTask"
         type="text"
         value={toDoText}
         onChange={event => setToDoText(event.target.value)}
-        placeholder="Your Todo"
+        placeholder="Add new Todo"
       />
-      <button type="submit">Add Task</button>
+      <button className="addTaskBtn" type="submit">
+        <i class="fas fa-plus"></i>
+      </button>
     </form>
   );
 };
