@@ -52,4 +52,5 @@ const Input = styled.input`
   border: none;
   background: transparent;
   padding: 10px 5px;
+  width: 100%;
 `

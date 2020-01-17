@@ -45,30 +45,33 @@ const WrapperHeader = styled.section`
   justify-content: space-between;
   align-items: center;
   background: #B0BBC0;
-  padding: 5px 20px;
+  padding: 20px;
   font-weight: 700;
 `
 const WrapperLeft = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
+  height: 50px;
 `
 const WrapperRight = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-end;
+  height: 50px;
 `
 const Heading = styled.p`
   font-size: 20px;
-  margin: 5px 0;
+  margin: 0;
   color: #333;
 `
 const Text = styled.p`
   font-size: 12px;
   font-weight: 400;
   color: #666;
+  margin: 0;
 `
 const ClearButton = styled.button`
   background: #264653;
