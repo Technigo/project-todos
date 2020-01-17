@@ -23,6 +23,8 @@ export const TaskInput = ({ task }) => {
         placeholder='Add task'
         onChange={(event) => setNewTask(event.target.value)}
         value={newTask}
+        // To add the task when hitting enter key
+        onKeyPress={(event) => { event.key === "Enter" && handleAddTask() }}
       />
     </Wrapper>
   )

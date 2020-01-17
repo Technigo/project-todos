@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// Declaring the initialState to use it in the Slice and to return initialState when invoking removeAll()
+// Declaring initialState to use it in the Slice and to return initialState when invoking removeAll()
 const initialState = {
   items: [
     // Hard coded tasks for testing
@@ -13,7 +13,7 @@ const initialState = {
 export const tasks = createSlice({
 
   name: 'tasks',
-  initialState,
+  initialState, //shorthand for initialState: initialState
   reducers: {
     // The actions for my store - but called reducers 🤷‍♀
 
@@ -37,8 +37,9 @@ export const tasks = createSlice({
       }
     },
 
-    removeAll: () => {
-      return initialState
+    removeAll: (state) => {
+      // return initialState (gives same result as below)
+      state.items = []
     }
 
   }
