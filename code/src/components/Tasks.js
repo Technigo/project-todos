@@ -9,11 +9,14 @@ export const Tasks = () => {
     return (
       
        <ul>
+           
           {tasks.map((task)=> (
-              <Task key={task.id} props={task}/>
-             
+              <p>
+              <Task key={task.id} props={task}/> 
+              </p>
           ))}
           {console.log(tasks)}
+         
           </ul>
         
       

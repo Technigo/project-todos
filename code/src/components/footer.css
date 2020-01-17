@@ -1,0 +1,13 @@
+.footer{
+    display: flex;
+    justify-content: space-between;
+    color: midnightblue;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: baseline;
+}
+
+.clearButton{
+    height: 30px;
+}

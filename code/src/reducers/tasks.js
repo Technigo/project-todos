@@ -7,6 +7,7 @@ const initialTasks = [
     { id: 3, text: 'Fork weekly assignment', complete: true },
     { id: 4, text: 'Create a todo app', complete: false },
   ]
+
  
 export const tasks = createSlice({
     name: 'tasks',
@@ -25,7 +26,7 @@ export const tasks = createSlice({
             const foundItem = state.items.find((item) => item.id === action.payload)
 
             if (foundItem) {
-                foundItem.markAsCompleted = !foundItem.markAsCompleted
+                foundItem.complete = !foundItem.complete
             }
         },
 
@@ -38,8 +39,9 @@ export const tasks = createSlice({
         },
 
         clearForm: (state, action) =>{
-            state.items = state.items.filter((item) => item.id === action.payload)  
-        }
+           /* state.items = state.items.filter((item) => item.id === action.payload) */ 
+            state.items = []
+        },
         
     }
   }) 

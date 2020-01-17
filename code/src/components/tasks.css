@@ -5,6 +5,7 @@
 }
 
 
+
 /*.task{
  color: midnightblue;
  border-bottom: 2 px solid midnightblue;
@@ -19,5 +20,21 @@ p{
 }
 
 ul{
-    margin-right: 40px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    
+}
+
+.checkboxButton{
+    align-items: baseline;
+}
+
+
+
+.tasklist{
+   display: flex;
+   justify-content: space-between; 
+   margin-top: 20px;
 }

@@ -11,6 +11,7 @@ import './header.css'
 export const Header = () => {
     const [newTodo, setNewTodo] = useState('')
     const dispatch = useDispatch()
+    
 
     const handleSubmit = (event) => {
         event.preventDefault()
@@ -19,13 +20,16 @@ export const Header = () => {
     }
     return (
       <form onSubmit={handleSubmit} className='headerComponent'>
-      <h1>TO DO: </h1>
+      <section className='title'>
+      <h1>TO DO </h1>
+      <h1>{moment().format('dddd')}</h1>
+      </section>
       <label className='inputfield'>
       <input type="text" value={newTodo} required placeholder='New task' onChange = {event => setNewTodo(event.target.value)}/>
       {console.log(newTodo)}
      
     
-      <button type="submit">Add it </button>
+      <button className="addTaskButton" type="submit">+ </button>
       </label>
       
         

@@ -1,6 +1,7 @@
 import React from 'react'
 import {useDispatch} from 'react-redux'
 import {tasks} from 'reducers/tasks'
+import './tasks.css'
 
 
 export const Task = ({props}) =>{
@@ -16,12 +17,15 @@ dispatch(tasks.actions.toggleMarkAsCompleted(props.id))
 
 
     return(
-        <li>{props.text}
-        <label>
-            <input type="checkbox" checked={props.complete} onChange={handleCheckboxClick}/>
-            done
+        <section >
+        <li className='tasklist'>{props.text}
+        <label className='checkboxButton' >
+            <input  type="checkbox" checked={props.complete} onChange={handleCheckboxClick}/>
+            
+            
+            <button className='removeButton' type="button" onClick={handleRemoveButtonClick}>x</button>
             </label>
-            <button type="button" onClick={handleRemoveButtonClick}>remove</button>
             </li>
+            </section>
     )
 }
