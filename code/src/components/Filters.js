@@ -11,7 +11,7 @@ const StyledFilters = styled.div`
   justify-content: center;
   padding: 0.4rem;
 
-  @media screen and (min-width: 420px) {
+  @media screen and (min-width: 450px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 30px;
   }
