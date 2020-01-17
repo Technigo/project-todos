@@ -70,6 +70,7 @@ const Text = styled.p`
   margin: 0;
 `
 const ClearButton = styled.button`
+  @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
   font-family: 'Ubuntu', sans-serif;
   background: #C98850;
   color: #EFEBE9;
