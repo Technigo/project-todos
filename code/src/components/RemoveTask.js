@@ -5,7 +5,6 @@ import 'css/task.css'
 
 export const RemoveTask = (props) => {
   const dispatch = useDispatch()
-  console.log('remove', props.task.id)
 
   return (
     <button

@@ -5,6 +5,7 @@
     background-image:url(../assets/1383079.jpg);
     background-repeat: no-repeat;
     background-size: contain;
+    background-position: center bottom;
   }
 
   .todo-list {

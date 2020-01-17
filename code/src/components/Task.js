@@ -4,7 +4,6 @@ import { CompletedTask } from 'components/CompletedTask'
 import 'css/task.css'
 
 export const Task = ({ task }) => {
-  console.log('task id', task.id)
   return (
     <>
       <div className="task">

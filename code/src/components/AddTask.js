@@ -23,5 +23,6 @@ export const AddTask = () => {
       </label>
       <button className="btn-add" type="submit"> Add </button>
     </form>
+
   )
 }

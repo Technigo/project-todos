@@ -14,11 +14,13 @@ export const tasks = createSlice({
     },
 
     removeTodo: (state, action) => {
-      state = state.filter((task) => task.id !== action.payload)
+      // Return a totally new state,
+      // needed when the initial state is an array
+      return state.filter((task) => task.id !== action.payload)
     },
 
-    removeAll: (state, action) => {
-      state = []
+    removeAll: () => {
+      return []
     },
 
     toggleCompleted: (state, action) => {

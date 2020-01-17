@@ -1,14 +1,17 @@
 .task {
     display:flex;
+    margin: 1em 0;
+}
+
+.task p {
+    margin: 0;
 }
 
 .buttons {
-    margin:18px 30px 0;
-    justify-content: space-evenly; 
-}
-
-input[type=checkbox] {
-    margin: 8px 20px 0 5px;
+    display: flex;
+    margin:0 30px 0;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
 input[type=text] {
@@ -52,10 +55,19 @@ form {
     padding:40px 0;
 }
 
+input[type=checkbox] {
+    margin: 0;
+}
+
+.checkbox {
+    position: relative;
+    margin: 0 20px 0 5px;
+    user-select: none;
+}
+
 .checkbox > input {
     height: 25px;
     width: 25px;
-    margin-top:30px;
     -webkit-appearance: none;
     -moz-appearance: none;
     -o-appearance: none;
@@ -70,6 +82,18 @@ form {
 
 .checkbox > input:checked {
     background-color:rgb(138, 225, 222);
+}
+
+.checkbox > input:focus {
+    outline: 1px dotted;
+}
+
+.check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    line-height: 1;
 }
 
 .total-score {

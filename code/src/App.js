@@ -20,7 +20,6 @@ export const App = () => {
       <div className="body">
         <div className="todo-list">
           <ToDoList />
-
           <ClearButton />
           <Summary />
           <AddTask />
