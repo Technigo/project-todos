@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './form.css'
 
-export const Form = () => {
+export const AddForm = () => {
+  const [todo, setTodo] = useState('')
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    console.log('Submit!', todo)
+  }
   return (
-    <form className="form-container">
-      <input className="input-container" type="text"/>
-      <button className="add-button">ADD</button>
-    </form> 
-   
+    <form onSubmit={handleSubmit} className="form-container">
+      <label>
+        Todo:
+        <input type="text" className="input-container" value={todo} onChange={(event) => setTodo(event.target.value)} />
+      </label>
+      <button type="submit" className="add-button">ADD</button>
+    </form>
   )
 }
