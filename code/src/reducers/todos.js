@@ -7,29 +7,43 @@ export const todos = createSlice({
     {
       id: 1,
       text: 'Todo 1',
-      createdAt: '2019-11-29T15:14:51.733Z',
+      createdAt: '2017-12-29T15:14:51.733Z',
       pinned: false,
-      completed: false
+      completed: true
     },
     {
       id: 2,
       text: 'Todo 2',
-      createdAt: '2020-01-13T13:14:51.733Z',
-      pinned: true,
+      createdAt: '2019-01-13T13:14:51.733Z',
+      pinned: false,
       completed: false
     },
     {
       id: 3,
       text: 'Todo 3',
-      createdAt: '2020-01-14T14:14:51.733Z',
+      createdAt: '2020-01-01T14:14:51.733Z',
       pinned: false,
-      completed: false
+      completed: true
     },
     {
       id: 4,
       text: 'Todo 4',
-      createdAt: '2020-01-14T19:50:13.556Z',
+      createdAt: '2019-12-14T19:50:13.556Z',
       pinned: false,
+      completed: false
+    },
+    {
+      id: 5,
+      text: 'Todo 5',
+      createdAt: '2019-11-14T19:50:13.556Z',
+      pinned: true,
+      completed: false
+    },
+    {
+      id: 6,
+      text: 'Todo 6',
+      createdAt: '2020-01-14T19:50:13.556Z',
+      pinned: true,
       completed: false
     }
   ],
