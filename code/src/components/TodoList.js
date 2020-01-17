@@ -3,5 +3,13 @@ import { useSelector } from "react-redux"
 import { TodoItem } from "components/TodoItem"
 
 export const TodoList = () => {
-  return <ul></ul>
+  const todoItems = useSelector(state => state.todoList.items)
+
+  return (
+    <ul>
+      {todoItems.map(item => (
+        <TodoItem key={item.id} item={item} />
+      ))}
+    </ul>
+  )
 }
