@@ -9,7 +9,7 @@ const initialState = {
 }
 
 export const fridge = createSlice({
-  name: 'Fridge',
+  name: 'tasks',
   initialState,
   reducers: {
     addItem: (state, action) => {
@@ -20,12 +20,8 @@ export const fridge = createSlice({
       state.items = state.items.filter((item) => item.id !== action.payload)
     },
 
-    removeAll: (state, action) => {
+    removeAll: (state) => {
       state.items = []
-    },
-
-    removeDone: (state, action) => {
-      state.items = state.items.filter((item) => item.done === action.payload)
     },
 
     toggleDone: (state, action) => {

@@ -15,7 +15,7 @@ export const AddTask = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <NewTaskForm onSubmit={handleSubmit}>
       <AddNewTask
         type="submit"
         active={task.length > 0 ? true : false}
@@ -24,26 +24,45 @@ export const AddTask = () => {
       >
         +
       </AddNewTask>
-      <label>
-        <input
+      <Label>
+        <InputTask
           type="text"
           value={task}
           onChange={(e) => setTask(e.target.value)}
           placeholder="Add task"
         />
-      </label>
-    </form>
+      </Label>
+    </NewTaskForm>
   )
 }
 
+const NewTaskForm = styled.form`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0px;
+  height: 35px;
+  background: #c69c72;
+`
+const InputTask = styled.input`
+  width: 300px;
+  height: 15px;
+  font-size: 20px;
+  padding: 5px;
+  background: transparent;
+  border: none;
+  color: rgb(37, 37, 37);
+`
+const Label = styled.label``
+
 const AddNewTask = styled.button`
   border: none;
-  background-color: #fff;
-  color: #000;
+  background-color: transparent;
+  color: rgb(37, 37, 37);
   width: 30px;
   height: 30px;
   font-size: 30px;
-  margin: 0px 20px;
+  margin: 0px 10px;
   padding: 0;
   display: flex;
   justify-content: center;
