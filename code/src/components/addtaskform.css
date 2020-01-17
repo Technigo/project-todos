@@ -3,11 +3,11 @@ form{
 }
 
 .add-task{
-    background-color: #f1a264;
+    background-color: #6ec5b8;
     /* padding: 2px; */
-    border: 2px solid #ec7a1c;
+    border: 2px solid #6ec5b8;
     border-radius: 4px;
-    color: #ec7a1c;
+    color: #4a8179;
     width: 45px;
     height: 45px;
     margin-left: 4px;
@@ -16,11 +16,18 @@ form{
     padding: 0;
 }
 
+.add-task:hover {
+    background-color: #bce9e2;
+    border-color: #bce9e2;
+    color: #6ec5b8; 
+}
+
 .input-task{
-    border: 2px solid #ec7a1c;
+    border: 2px solid #6ec5b8;
     background-color: #fffaeb;
     height: 45px;
     width: 270px;
     font-size: 32px;
     color: #ec7a1c;
+    padding: 0 0 1px 5px;
 }

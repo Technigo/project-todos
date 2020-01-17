@@ -1,22 +1,51 @@
 import React from 'react'
-
-
+import { fridge } from '../reducers/fridge'
+import { useSelector } from 'react-redux'
 import './header.css'
 
 export const Header = () => {
-// const date = + new Date()
-const currentDate = Math.floor(Date.now() / 10000)
 
-    return (
-        <header>
-            <div className="today">
+const quantity = useSelector((state) => state.fridge.items )
+
+const totalQuantity = quantity.length
+
+
+// const handleQuantity = () => {
+//     dispatch
+// }
+
+const moment = require('moment');
+
+
+return (
+   <header>
+
+    {totalQuantity === 0 && (
+        <div className="today">
             <h1>Todo</h1>
-            <p>{currentDate}</p>
-            </div>
-            <div class="task-count">
-            <p>You have xx {} tasks to do</p>
-            </div>
+            <p>{moment().format('MMMM Do, YYYY')}</p>
+        </div>
+        )
+    }
+
+    {totalQuantity >= 1 && (
+        <>
+        <div className="today">
+            <h1>Todo</h1>
+            <p>{moment().format('MMMM Do YYYY')}</p>      
+        </div>
+        <div class="task-count">
+            <p>Total todos: {totalQuantity}</p>
+        </div>
+</>
+        )}
+        
         </header>
+        
+
+    
+           
+       
         
     )
 }

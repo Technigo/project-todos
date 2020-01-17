@@ -6,3 +6,7 @@ header{
     align-items: center;
     color:#f5eccf;
 }
+
+.task-count{
+    align-self: flex-end;
+}

@@ -19,7 +19,14 @@ setName('')
     return(
      <form onSubmit={handleSubmit}>
        <label>
-           <input className="input-task" type="text" value={name} onChange={(event) => setName(event.target.value)}></input>
+           <input 
+           className="input-task"
+           type="text" 
+           placeholder="Add task.." 
+           required
+           value={name} 
+           onChange={(event) => setName(event.target.value)}>
+           </input>
         </label>    
         <button className="add-task" type="submit">+</button>
     

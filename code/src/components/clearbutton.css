@@ -1,0 +1,24 @@
+.remove-all{
+    /* align-self: center; */
+  background-color: #6ec5b8;
+      /* padding: 2px; */
+      border: 2px solid #6ec5b8;
+      border-radius: 4px;
+      color: #4a8179;
+      width: 200px;
+      height: 45px;
+      margin-left: 4px;
+      font-size: 32px;
+      font-weight: 700;
+      padding: 4px;
+      margin: 24px;
+      /* margin: 52px 0 ; */
+  }
+
+  .remove-all:hover
+    {
+        background-color: #bce9e2;
+        border-color: #bce9e2;
+        color: #6ec5b8; 
+    }
+  
