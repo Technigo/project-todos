@@ -107,7 +107,7 @@ const DeleteButton = styled.button`
     opacity: 1;
     /* transform: scale(1.3); */
     cursor: pointer;
-    /* transition: all 200ms ease-in-out; */
+    transition: all 200ms ease-in-out;
   }
 `;
 
