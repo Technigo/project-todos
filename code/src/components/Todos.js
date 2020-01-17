@@ -78,7 +78,9 @@ export const Todos = () => {
       }
       break;
     default:
-      filteredTodos = allTodos;
+      filteredTodos = allTodos
+        .filter(todo => todo)
+        .sort((a, b) => b.pinned - a.pinned);
   }
 
   return (
