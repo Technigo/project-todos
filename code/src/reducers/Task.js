@@ -13,15 +13,29 @@ export const tasks = createSlice({
   },
 
   reducers: {
+    // reducer that Adds items (tasks)
     addTask: (state, action) => {
       state.items.push({ id: Date.now(), text: action.payload })
     },
-    // add reducer for CLEAR ALL tasks.
+    // reducer for CLEAR ALL tasks.
 
-    // add reducer to check and uncheck (toggle) the tasks via a checkbox. 
+    removeAllItems: (state, action) => {
+      state.items = state.items.filter((item) => item !== action.payload)
+
+    },
+
+    // reducer to remove 1 tasks.
+
+    removeItems: (state, action) => {
+      // find 'the task' or whatever item
+      // remove it from the items array
+      // id = 3
+      state.items = state.items.filter((item) => item.id !== action.payload)
+    },
+    // reducer to check and uncheck (toggle) the tasks via a checkbox. 
 
     toggleComplete: (state, action) => {
-      console.log(action.payload)
+
       //find task
       const foundItem = state.items.find((item) => item.id === action.payload)
 
@@ -29,9 +43,8 @@ export const tasks = createSlice({
       if (foundItem) {
         foundItem.complete = !foundItem.complete
       }
-    }
+    },
 
-    // count length of the array with unchecked tasks.
   }
 
 })

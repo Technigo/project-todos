@@ -17,12 +17,11 @@ export const AddTaskForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Todo:
-        <input type="text" value={text} onChange={(event) => setText(event.target.value)} />
-      </label>
+      <Label>
+        <Button className="button" type="submit"> + </Button>
+        <Input type="text" value={text} onChange={(event) => setText(event.target.value)} />
+      </Label>
 
-      <button className="button" type="submit"> Add Todo</button>
 
 
     </form>
@@ -31,16 +30,35 @@ export const AddTaskForm = () => {
 
 }
 
+const Input = styled.input`
+  width: 225px;
+  height: 30px;
+  background-color: white;
+  text-align: left;
+  border-radius: 5px;
+  font-size: 16px;
+  color: blue;
+  margin-left: 10px;
+  padding: 3px;
+`
 
-const button = styled.button`
-  width: 70px;
-  height: 20px;
+const Label = styled.div`
+  background-color: white;
+  width: 280px;
+  padding: 20px;
+`
+
+const Button = styled.button`
+  width: 30px;
+  height: 30px;
   background-color: #8aa8e9;
   text-align: center;
+  line-height:14px;
   border-radius: 5px;
-  font-size: 10px;
-  font-weight: bold;
+  font-size: 20px;
+  font-weight: 700;
   color: white;
-  margin: 5px;
+  // margin-top: 25px;
+  // margin-bottom: 50px;
   padding: 3px;
 `

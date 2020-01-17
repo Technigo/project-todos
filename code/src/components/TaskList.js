@@ -9,16 +9,16 @@ export const Tasks = () => {
 
 
   return (
-    <List>
+    <ListBackground>
       {allTasks.map((item) => (
         <Todo key={item.id} item={item} />
       ))}
 
-    </List>
+    </ListBackground>
   )
 }
 
-const List = styled.ul`
+const ListBackground = styled.div`
  
   color: blue;
   background-color: grey;
@@ -26,7 +26,5 @@ const List = styled.ul`
   justify-content: center;
   padding-top: 10px; 
   padding-bottom: 10px;
-  
+  width: 320px;
 `
-
-//<List key={task.id}> {task.complete} {task.text} </List>

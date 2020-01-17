@@ -5,6 +5,10 @@ import { tasks } from 'reducers/Task'
 import { Tasks } from 'components/TaskList'
 import { AddTaskForm } from 'components/AddTaskForm'
 import { Date } from 'components/Date'
+import { ClearAllButton } from 'components/ClearAllButton'
+import { NumberOfTasks } from 'components/NumberOfTasks'
+
+
 import styled from 'styled-components/macro'
 
 
@@ -24,8 +28,9 @@ export const App = () => {
             <Date />
           </HeaderLeft>
           <HeaderRight>
-            <Button > CLEAR ALL
-            </Button>
+            <NumberOfTasks />
+            <ClearAllButton />
+
           </HeaderRight>
         </Header>
         <AddTaskForm />
@@ -41,48 +46,45 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   color: black;
-  background-color: yellow;
+  background-color: lightyellow;
   align-items: center;
   justify-content: center;
+  
 `
 const Header = styled.div`
   display: flex;
   flex-direction: row;
-  color: black;
-  background-color: red;
   align-items: center;
   justify-content: space-between;
-  width: 300px;
+  color: black;
+  background-color: #f7f7fc;
+  width: 280px;
+  hight: 120px;
+  margin-top: 15px;
+  padding: 20px;
 `
 const HeaderLeft = styled.div`
   color: black;
-  background-color: white;
-  width: 50%;
+  //background-color: white;
+  width: 30%;
 `
 const HeaderRight = styled.div`
   color: black;
-  background-color: green;
-  width: 50%;
+  //background-color: white;
+  width: 25%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  justify-content: space-between;
 `
 
 const Heading = styled.h4`
   font-family: 'Roboto', sans-serif;
-  font-weight: 500;
-  font-size: 20px;
-  color: black;
-  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  color: darkgrey;
   margin: 2px;
+  // padding-left: 10px;
 `
 
-const Button = styled.button`
-  width: 70px;
-  height: 20px;
-  background-color: #8aa8e9;
-  text-align: center;
-  border-radius: 5px;
-  font-size: 10px;
-  font-weight: bold;
-  color: white;
-  margin: 5px;
-  padding: 3px;
-`
+

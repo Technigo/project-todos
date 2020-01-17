@@ -12,8 +12,8 @@ export const Date = () => {
 
 const Dateview = styled.h4`
   font-family: 'Roboto', sans-serif;;
-  font-weight:400;
-  font-size: 14px;
+  font-weight:500;
+  font-size: 13px;
   color: black;
   margin: 2px;
 `
