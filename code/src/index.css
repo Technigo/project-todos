@@ -22,10 +22,8 @@ button {
 /* Main container in App.js */
 .main-container {
   border: 1px solid rgba(0, 0, 0, 0.1);
-  height: 80vh;
-  margin-left: 2.5vw;
-  margin-top: 2.5vh;
-  width: 95vw;
+  height: 100vh;
+  width: 100vw;
 }
 
 /* Head component */
@@ -67,7 +65,8 @@ button {
 }
 
 .add-button {
-  background: white;
+  background: blue;
+  color: white;
   margin-right: 1vw;
 }
 
@@ -81,6 +80,7 @@ button {
 }
 
 ul {
+  font-size: 14px;
   list-style-type: none;
   padding-left: 1vw;
 }
@@ -88,6 +88,14 @@ ul {
 .li a {
   height: 5vh;
   text-decoration: none;
+}
+
+.uncompleted-tasks {
+  padding-left: 1vw;
+}
+
+.uncompleted-emoji {
+  cursor: pointer;
 }
 
 /* Task */
@@ -105,6 +113,30 @@ ul {
   margin-right: 1vw;
 }
 
+input[type='checkbox'] {
+  display: none;
+}
+
+.fakeCheckbox {
+  align-items: center;
+  border: 2px solid blue;
+  border-radius: 4px;
+  display: inline-flex;
+  height: 14px;
+  justify-content: center;
+  margin-right: 5px;
+  width: 14px;
+}
+
+input:checked + .fakeCheckbox::after {
+  background: #007db2;
+  border-radius: 2px;
+  content: '';
+  display: inline-block;
+  height: 10px;
+  width: 10px;
+}
+
 
 /********************************************/
 /* Media queries */
@@ -114,6 +146,10 @@ ul {
   margin-left: 25vw;
   margin-top: 15vh;
   width: 50vw;
+}
+
+ul {
+  font-size: 15px;
 }
 }
 

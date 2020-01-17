@@ -21,10 +21,10 @@ export const Task = (props) => {
           checked={props.task.complete} 
           onChange={handleCheckboxClick}
         />
+        <span className="fakeCheckbox" ariaLabel="checkbox"/>
+        {props.task.text}
       </label>
 
-      {props.task.text}
-      
       <button class="remove-button" type="button" onClick={handleRemoveClick}>
         Remove
       </button>
