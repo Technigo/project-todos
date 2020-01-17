@@ -1,12 +1,16 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { todoList } from 'reducers/todoList'
 import './form.css'
 
 export const AddForm = () => {
   const [todo, setTodo] = useState('')
+  const dispatch = useDispatch()
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log('Submit!', todo)
+    dispatch(todoList.actions.addTodo(todo))
+    setTodo('')
   }
   return (
     <form onSubmit={handleSubmit} className="form-container">
