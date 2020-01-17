@@ -5,9 +5,148 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* HEADER */
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 40px 30px 40px;
+  font-family: 'Indie Flower', cursive;
+  font-size: 28px;
+}
+
+span.dots {
+  color: #ff9999;
+}
+
+/* FORM */
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: 'Indie Flower', cursive;
+  font-size: 17px;
+}
+
+input {
+  border: 2px solid lightgray;
+  padding: 10px 20px;
+  border-radius: 4px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+/* LIST */
+
+ul {
+  width: 100%;
+}
+
+ul li {
+  list-style-type: none;
+  width: 200px;
+  margin: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 5px;
+  font-family: 'Indie Flower', cursive;
+  font-size: 17px;
+}
+
+span img {
+  color: red;
+}
+
+input[type='checkbox'] {
+  display: none;
+}
+
+/* CHECKBOXES */
+
+.fakeCheckbox {
+  border: 2px solid lightgray;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  margin-right: 5px;
+}
+
+input:checked + .fakeCheckbox::after {
+  content: '✔' ;
+  text-align: center;
+  width: 25px;
+  height: 25px;
+  background: lightgray;
+  display: inline-block;
+  border-radius: 2px;
+  color: black;
+}
+
+.item-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SUMMARY */
+
+.tasksleft {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h2 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  position: absolute;
+  bottom: 140px;
+}
+
+h3 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  position: absolute;
+  bottom: 90px;
+}
+
+/* CLEAR ALL BUTTON*/
+
+footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+button.clear-all {
+  background-color: #ffe5e5;
+  border: 2px solid #ff9999;
+  border-radius: 4px;
+  color: black;
+  font-family: 'Indie Flower', cursive;
+  font-size: 20px;
+  padding: 5px 10px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 40px;
 }
