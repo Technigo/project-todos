@@ -16,7 +16,7 @@ export const TaskList = () => {
 
     <TasksWrapper>
       {allTasks.length === 0 &&
-        <NoTasks>Yay! You don't have any todos <span aria-label='yay'>✌️</span></NoTasks>
+        <NoTasks>Yay! You don't have any todos <span role='img' aria-label='yay'>✌️</span></NoTasks>
       }
 
       {tasksNotCompleted.map((task) => (
@@ -34,10 +34,11 @@ export const TaskList = () => {
 
 const TasksWrapper = styled.section`
   background: #fff;
+  padding-bottom: 10px;
 `
 const NoTasks = styled.div`
   font-size: 16px;
-  color: #333;
+  color: #999;
   display: flex;
   justify-content: center;
   padding: 30px;

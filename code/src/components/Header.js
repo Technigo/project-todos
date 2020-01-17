@@ -1,16 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import moment from 'moment'
 import { useDispatch, useSelector } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 
 export const Header = () => {
 
   const dispatch = useDispatch()
-
-  // To get todays date
-  let date = new Date()
-  let day = date.getDate()
-  const month = date.toLocaleString('default', { month: 'long' })
 
   // To get all tasks
   const allTasks = useSelector(store => store.tasks.items)
@@ -27,8 +23,8 @@ export const Header = () => {
 
     <WrapperHeader>
       <WrapperLeft>
-        <Heading>Todo</Heading>
-        <Text>{day} {month}</Text>
+        <Heading>My todos</Heading>
+        <Text>{moment().format("MMMM Do")}</Text>
       </WrapperLeft>
       <WrapperRight>
         <Text>{completedTasks.length}/{allTasks.length} done</Text>
@@ -44,7 +40,7 @@ const WrapperHeader = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #B0BBC0;
+  background: #1E2D2F;
   padding: 20px;
   font-weight: 700;
 `
@@ -65,21 +61,26 @@ const WrapperRight = styled.section`
 const Heading = styled.p`
   font-size: 20px;
   margin: 0;
-  color: #333;
+  color: #EFEBE9;
 `
 const Text = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 400;
-  color: #666;
+  color: #EFEBE9;
   margin: 0;
 `
 const ClearButton = styled.button`
-  background: #264653;
-  color: #fff;
+  font-family: 'Ubuntu', sans-serif;
+  background: #C98850;
+  color: #EFEBE9;
   text-transform: uppercase;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: 300;
   padding: 5px;
   border-radius: 7px;
-  border: none;
+  border: 2px solid #EFEBE9;
+  // border: none;
+  &:hover {
+    cursor: pointer;
+  }
 `

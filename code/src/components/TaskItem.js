@@ -31,24 +31,29 @@ export const TaskItem = (props) => {
 const TaskWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 10px 0;
 `
 const Task = styled.section`
   display: flex;
   flex-direction: row;
-  padding-bottom: 10px;
+  padding: 10px;
   border-bottom: 1px solid #EBEEEF;
 `
 // Not circular in iPhone - elipse?
 const TaskToggleButton = styled.button`
-  background: ${props => (props.taskStatus ? "#264653" : "transparent")};
-  color: #264653;
-  border: 1px solid #264653;
+  background: ${props => (props.taskStatus ? "#1E2D2F" : "transparent")};
+  color: #1E2D2F;
+  border: 2px solid #1E2D2F;
   border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
   height: 20px;
   width: 20px;
   margin-right: 10px;
-    &:after {
+  &:hover {
+    cursor: pointer;
+  }
+  &:after {
     content: '';
     display: ${props => (props.taskStatus ? "block" : "none")};
  
@@ -67,5 +72,9 @@ const TaskText = styled.article`
 const TaskRemoveButton = styled.button`
   background: transparent;
   border: none;
+  font-size: 20px;
   margin-left: auto;
+  &:hover {
+    cursor: pointer;
+  }
 `

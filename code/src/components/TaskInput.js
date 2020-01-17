@@ -33,10 +33,11 @@ export const TaskInput = ({ task }) => {
 
 const Wrapper = styled.section`
   background: #f2f2f2;
-  height: 40px;
+  height: 45px;
   display: flex;
   align-items: center;
   padding: 10px;
+  margin-bottom: 5px;
 `
 const AddButton = styled.button`
   background: transparent;
@@ -45,11 +46,22 @@ const AddButton = styled.button`
   height: 20px;
   width: 20px;
   margin-right: 5px;
+  &:hover {
+    cursor: pointer;
+  }
 `
 const Input = styled.input`
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 16px;
   color: #666;
   border: none;
   background: transparent;
-  padding: 10px 5px;
-  width: 100%;
+  padding: 5px 5px;
+  margin: 5px 0;
+  width: 90%;
+  &:focus {
+    outline-style: none;
+    border-bottom: 1px dashed #666;
+    color: #333;
+  }
 `
