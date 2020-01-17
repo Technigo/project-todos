@@ -17,18 +17,29 @@ export const tasks = createSlice({
         addItem: (state, action) =>{
             console.log(action)
             console.log(state)
-            //state.items.push({...action.payload})
-            //const myTask = <Task />
-            //state.items.push({...{ id: 5, text: action.payload, complete: false }})
+          
             state.items.push({ id: Date.now(), text: action.payload})
         },
 
+        toggleMarkAsCompleted: (state, action) =>{
+            const foundItem = state.items.find((item) => item.id === action.payload)
+
+            if (foundItem) {
+                foundItem.markAsCompleted = !foundItem.markAsCompleted
+            }
+        },
+
         removeItem: (state, action) =>{
-            const existingTask = state.items.find((item) => item.id === action.payload.id)
+            /*const existingTask = state.items.find((item) => item.id === action.payload.id)
             if (existingTask) {
                 /*return new array with the items in the array exept the item that was removed*/
-                state.items.filter((item) => item.id !== action.payload.id)
-            } 
+                /*state.items.filter((item) => item.id !== action.payload.id)*/
+                state.items = state.items.filter((item) => item.id !== action.payload)
+        },
+
+        clearForm: (state, action) =>{
+            state.items = state.items.filter((item) => item.id === action.payload)  
         }
+        
     }
   }) 

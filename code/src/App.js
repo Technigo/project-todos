@@ -1,6 +1,7 @@
 import React from 'react'
 import {Provider} from 'react-redux'
 import {configureStore, combineReducers} from '@reduxjs/toolkit'
+import moment from 'moment'
 
 import {Header} from 'components/Header'
 import {Tasks} from 'components/Tasks'

@@ -24,13 +24,10 @@ export const Header = () => {
       <input type="text" value={newTodo} required placeholder='New task' onChange = {event => setNewTodo(event.target.value)}/>
       {console.log(newTodo)}
      
-      <button className='button'
-      type='reset'
-      onClick={()=>dispatch(tasks.actions.addItem(newTodo))}>
-      Add task
-      </button>
-      </label>
+    
       <button type="submit">Add it </button>
+      </label>
+      
         
       </form>
     )
