@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { todoList } from 'reducers/todoList'
 import "./todoCount.css"
 
 export const TodoCount = () => {

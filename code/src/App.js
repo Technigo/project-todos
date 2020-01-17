@@ -6,7 +6,6 @@ import { todoList } from 'reducers/todoList'
 
 import { TaskList } from 'components/TaskList'
 import { AddTask } from 'components/AddTask'
-import { TodoCount } from 'components/TodoCount'
 import { Header } from 'components/Header'
 
 import "index.css"
