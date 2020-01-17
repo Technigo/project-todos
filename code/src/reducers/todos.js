@@ -9,7 +9,7 @@ export const todos = createSlice({
       text: 'Todo 1',
       createdAt: '2017-12-29T15:14:51.733Z',
       pinned: false,
-      completed: true
+      completed: false
     },
     {
       id: 2,
@@ -21,22 +21,22 @@ export const todos = createSlice({
     {
       id: 3,
       text: 'Todo 3',
-      createdAt: '2020-01-01T14:14:51.733Z',
-      pinned: false,
-      completed: true
+      createdAt: '2019-11-14T19:50:13.556Z',
+      pinned: true,
+      completed: false
     },
     {
       id: 4,
       text: 'Todo 4',
       createdAt: '2019-12-14T19:50:13.556Z',
       pinned: false,
-      completed: false
+      completed: true
     },
     {
       id: 5,
       text: 'Todo 5',
-      createdAt: '2019-11-14T19:50:13.556Z',
-      pinned: true,
+      createdAt: '2020-01-01T14:14:51.733Z',
+      pinned: false,
       completed: false
     },
     {
@@ -44,7 +44,7 @@ export const todos = createSlice({
       text: 'Todo 6',
       createdAt: '2020-01-14T19:50:13.556Z',
       pinned: true,
-      completed: false
+      completed: true
     }
   ],
   reducers: {
