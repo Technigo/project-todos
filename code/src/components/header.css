@@ -1,0 +1,16 @@
+.header-container {
+  padding: 18px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  border-bottom: solid #ffb677;
+}
+
+.title-container, .info-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-container>span, .info-container>span {
+  margin: 10px;
+}

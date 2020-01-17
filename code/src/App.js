@@ -8,6 +8,9 @@ import { tasks } from './reducers/tasks'
 
 import { TaskLists } from './components/TaskLists'
 import { AddNewTask } from "./components/AddNewTask"
+import { Header } from "./components/Header"
+
+
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
@@ -21,6 +24,7 @@ export const App = () => {
 
     <Provider store={store}>
       <main>
+        <Header />
         <AddNewTask />
         <TaskLists />
       </main>

@@ -1,0 +1,17 @@
+.remove-all-container {
+  padding: 15px;
+  /* background-color: #ff8364; */
+  background-color: transparent;
+  border-radius: 10px;
+  border: solid 3px #ff8364;
+}
+
+.remove-all-container:hover {
+  background-color: #ffb677;
+  cursor: pointer;
+}
+
+.remove-all-btn {
+  font-size: 12px;
+  font-weight: bold;
+}
