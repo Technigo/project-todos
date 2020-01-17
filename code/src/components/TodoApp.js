@@ -15,8 +15,8 @@ export const TodoApp = () => {
     <StyledTodoApp>
       <GlobalStyle />
       <Header />
-      <AddTodo />
       <Filters />
+      <AddTodo />
       <Todos />
     </StyledTodoApp>
   );

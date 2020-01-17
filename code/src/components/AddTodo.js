@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { todos } from 'reducers/todos';
+import { visibilityFilter } from 'reducers/visibilityFilter';
 
 const StyledAddTodo = styled.div`
   /* border-bottom: ${props =>
@@ -12,7 +13,7 @@ const Form = styled.form`
   height: 55px;
   /* display: flex; */
   display: grid;
-  grid-template-columns: 50px 12fr;
+  grid-template-columns: 57px 12fr;
   grid-gap: 0.5rem;
   align-items: center;
 `;
@@ -68,6 +69,7 @@ export const AddTodo = () => {
       return;
     }
     dispatch(todos.actions.addTodo({ text: todoText }));
+    dispatch(visibilityFilter.actions.setVisibility({ filter: 'SHOW_ALL' }));
     setTodoText('');
   };
 
@@ -81,7 +83,7 @@ export const AddTodo = () => {
           value={todoText}
           type="text"
           onChange={handleInputChange}
-          placeholder="Add todo"
+          placeholder="New todo"
         />
       </Form>
     </StyledAddTodo>
