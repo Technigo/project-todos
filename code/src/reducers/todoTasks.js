@@ -1,18 +1,19 @@
 import { createSlice, combineReducers } from '@reduxjs/toolkit'
 // import { AddTodoForm } from 'components/AddTodoForm';
+ 
+const initialState = {
+//items
+todos:[
+    { id: 1, name: 'Shop', completeTodo: true },
+    { id: 2, name: 'Go to the gym', completeTodo: true },
+    { id: 3, name: 'Walk the dog', completeTodo: true },
+    { id: 4, name: 'Create a todo app', completeTodo: false }
+    ]
+}
 
 export const todoTasks = createSlice({
     name: 'todoTasks',
-    initialState: {
-        //items
-        todos:[
-
-        { id: 1, name: 'Shop', completeTodo: true },
-        { id: 2, name: 'Go to the gym', completeTodo: true },
-        { id: 3, name: 'Walk the dog', completeTodo: true },
-        { id: 4, name: 'Create a todo app', completeTodo: false }
-        ]
-    },
+    initialState,
     reducers: {
         //creating an action
         addTodo: (state, action) => {
@@ -24,6 +25,9 @@ export const todoTasks = createSlice({
             // remove it from the items array
             // id = 3
             state.todos = state.todos.filter((todo) => todo.id !== action.payload)
+        },
+        removeAll: () => {
+            return initialState 
         },
         toggleCompleteTodo: (state, action) => {
             const checkedTodo = state.todos.find((todo) => todo.id === action.payload)

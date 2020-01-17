@@ -5,10 +5,11 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { todoTasks } from 'reducers/todoTasks'
 
 import { TodoList } from 'components/TodoList'
-// import { total } from 'reducers/total'
+
 import { Header } from 'components/Header'
 // import { StyleSheet } from 'react'
 import { AddTodoForm } from './components/AddTodoForm'
+
 
 
 //create reducer
@@ -24,9 +25,11 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
+    
       <AddTodoForm />
-      {/* <total /> */}
+    
       <TodoList />
+      
     </Provider>
   )
 }
