@@ -14,7 +14,6 @@ export const TaskInput = ({ task }) => {
   }
 
   return (
-
     <Wrapper>
       <AddButton disabled={newTask.length === 0} onClick={handleAddTask}>+</AddButton>
       <Input
@@ -51,8 +50,6 @@ const AddButton = styled.button`
   }
 `
 const Input = styled.input`
-  // @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
-  // font-family: 'Ubuntu', sans-serif;
   font-size: 16px;
   color: #666;
   border: none;

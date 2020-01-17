@@ -11,9 +11,7 @@ export const TaskList = () => {
   const tasksCompleted = allTasks.filter(task => (task.completed === true))
   const tasksNotCompleted = allTasks.filter(task => (task.completed === false))
 
-
   return (
-
     <TasksWrapper>
       {allTasks.length === 0 &&
         <NoTasks>Yay! You don't have any todos <span role='img' aria-label='yay'>✌️</span></NoTasks>
@@ -27,7 +25,6 @@ export const TaskList = () => {
         <TaskItem key={task.id} task={task} />
       ))}
     </TasksWrapper>
-
   )
 
 }

@@ -20,7 +20,6 @@ export const Header = () => {
   }
 
   return (
-
     <WrapperHeader>
       <WrapperLeft>
         <Heading>My todos</Heading>
@@ -31,7 +30,6 @@ export const Header = () => {
         <ClearButton onClick={handleClearTasks}>Clear all</ClearButton>
       </WrapperRight>
     </WrapperHeader>
-
   )
 
 }
@@ -70,8 +68,6 @@ const Text = styled.p`
   margin: 0;
 `
 const ClearButton = styled.button`
-  // @import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
-  // font-family: 'Ubuntu', sans-serif;
   background: #C98850;
   color: #EFEBE9;
   text-transform: uppercase;
