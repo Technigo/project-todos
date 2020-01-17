@@ -21,13 +21,8 @@ export const AddTaskForm = () => {
         <Button className="button" type="submit"> + </Button>
         <Input type="text" value={text} onChange={(event) => setText(event.target.value)} />
       </Label>
-
-
-
     </form>
   )
-
-
 }
 
 const Input = styled.input`

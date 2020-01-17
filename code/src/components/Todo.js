@@ -27,10 +27,10 @@ export const Todo = (props) => {
         </label>
         {props.item.text}
 
+
+
+        <Button type="button" onClick={handleRemoveButtonClick}>-</Button>
       </List>
-
-      <Button type="button" onClick={handleRemoveButtonClick}>Remove</Button>
-
     </div>
   )
 
@@ -43,9 +43,7 @@ const List = styled.ul`
   background-color: lightgrey;
   align-items: center;
   justify-content: center;
-  padding-top: 10px; 
-  padding-bottom: 10px;
-  padding-left: 10
+  padding: 10px;
   
 `
 
@@ -60,12 +58,13 @@ const Checkbox = styled.input`
   
 `
 const Button = styled.button`
-  width: 70px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   background-color: #8aa8e9;
   text-align: center;
+  line-height:14px;
   border-radius: 5px;
-  font-size: 10px;
+  font-size: 20px;
   font-weight: bold;
   color: white;
   // margin: 5px;

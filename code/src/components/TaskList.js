@@ -21,7 +21,7 @@ export const Tasks = () => {
 const ListBackground = styled.div`
  
   color: blue;
-  background-color: grey;
+  background-color: white;
   align-items: center;
   justify-content: center;
   padding-top: 10px; 
