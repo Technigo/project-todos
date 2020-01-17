@@ -1,22 +1,28 @@
 .todos-header {
   align-items: center;
-  background-color: #ad1457;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 1rem 2rem 1rem 1rem;
-  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 0 1rem 0;
+  width: 90%;
 }
 
 .todos-header-title {
-  color: #fff;
+  color: #daa520;
   flex-basis: 100%;
+  font-family: 'Playfair Display', serif;
+  font-size: 3rem;
 }
 
 @media screen and (min-width: 668px) {
   .todos-header {
-    margin: 0 auto;
     max-width: 600px;
     width: 100%;
   }
+
+  .todos-header-title {
+    font-size: 4rem;;
+  }
+
 }

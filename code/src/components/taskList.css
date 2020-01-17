@@ -1,14 +1,12 @@
 .task-list {
-  background-color: #fff;
   font-family: 'Roboto', sans-serif;
-  padding: 0;
+  margin: 0 auto;
+  padding: 1rem 0;
+  width: 90%;
 }
 
 @media screen and (min-width: 668px) {
   .task-list {
-    border-left: 2px solid #f4f4f4;
-    border-right: 2px solid #f4f4f4;
-    margin: 0 auto;
     max-width: 600px;
     width: 100%;
   }

@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { todoList } from 'reducers/todoList'
 import "./task.css"
+import deleteSymbol from './icons8-delete-yellow.svg'
 
 export const Task = ({ task }) => {
   const dispatch = useDispatch()
@@ -21,7 +22,9 @@ export const Task = ({ task }) => {
       <label className="checkbox-label" for={`todo-${task.id}`}>
         {task.todoText}
       </label>
-      <button aria-label={`Delete ${task.todoText}`} className="remove-button" type="button" onClick={handleTaskRemoval}>&#10006;</button>
+      <button aria-label={`Delete ${task.todoText}`} className="remove-button" type="button" onClick={handleTaskRemoval}>
+        <img className="delete-symbol" src={deleteSymbol} alt="Delete" />
+      </button>
     </li>
 
   )

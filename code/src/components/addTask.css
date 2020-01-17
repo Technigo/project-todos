@@ -1,26 +1,37 @@
 .task-form {
-  border-bottom: 3px solid #f4f4f4;
   display: flex;
-  flex-direction: row-reverse;
-  margin: 0;
-  padding: 0;
-  width: 100%;
+  margin: 0 auto;
+  width: 90%;
 }
 
 .task-input {
+  background-color: #f1f1f6;
   border: none;
-  border-top: 2px solid #f4f4f4;
+  border-radius: 0.5rem;
   font-family: 'Roboto', sans-serif;
   font-size: 1rem;
-  padding: 1.5rem 1rem;
+  padding: 1rem;
   width: 100%;
+}
+
+.task-submit {
+  background-color: #daa520;
+  border: none;
+  border-radius: 0.5rem;
+  color: #fff;
+  font-size: 2rem;
+  flex-shrink: 0;
+  margin-left: 0.5rem;
+  height: 3.2rem;
+  width: 3.2rem;
+}
+
+.task-submit:disabled {
+  opacity: 0.5;
 }
 
 @media screen and (min-width: 668px) {
   .task-form {
-    border-left: 2px solid #f4f4f4;
-    border-right: 2px solid #f4f4f4;
-    margin: 0 auto;
     max-width: 600px;
     width: 100%;
   }

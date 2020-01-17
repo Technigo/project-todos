@@ -16,7 +16,7 @@ export const AddTask = () => {
   return (
     <form className="task-form" onSubmit={handleFormSubmit}>
       <input aria-label="Write a new todo" className="task-input" type="text" placeholder="E.g. Start to code" onChange={(event) => setTask(event.target.value)} value={task} />
-      <button type="submit" className="task-submit" value={task} disabled={task.length < 5 ? "disabled" : ""}>Add task</button>
-    </form>
+      <button type="submit" className="task-submit" value={task} disabled={task.length < 5 ? "disabled" : ""} aria-label="Add task">+</button>
+    </form >
   )
 }
