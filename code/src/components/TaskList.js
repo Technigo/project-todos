@@ -15,6 +15,10 @@ export const TaskList = () => {
   return (
 
     <TasksWrapper>
+      {allTasks.length === 0 &&
+        <NoTasks>Yay! You don't have any todos <span aria-label='yay'>✌️</span></NoTasks>
+      }
+
       {tasksNotCompleted.map((task) => (
         <TaskItem key={task.id} task={task} />
       ))}
@@ -23,10 +27,18 @@ export const TaskList = () => {
         <TaskItem key={task.id} task={task} />
       ))}
     </TasksWrapper>
+
   )
 
 }
 
 const TasksWrapper = styled.section`
   background: #fff;
+`
+const NoTasks = styled.div`
+  font-size: 16px;
+  color: #333;
+  display: flex;
+  justify-content: center;
+  padding: 30px;
 `

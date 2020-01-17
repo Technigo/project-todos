@@ -41,7 +41,6 @@ const Wrapper = styled.section`
 const AddButton = styled.button`
   background: transparent;
   color: #666;
-  // font-size: 22px;
   border: none;
   height: 20px;
   width: 20px;

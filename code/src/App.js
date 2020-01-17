@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
@@ -19,9 +20,19 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <Header />
-      <TaskInput />
-      <TaskList />
+      <TodoWrapper>
+        <Header />
+        <TaskInput />
+        <TaskList />
+      </TodoWrapper>
     </Provider>
   )
 }
+
+const TodoWrapper = styled.main`
+  @media (min-width: 668px) {
+    width: 50%;
+    margin: 20px auto;
+    border: 1px solid #e6e6e6;
+  }
+`
