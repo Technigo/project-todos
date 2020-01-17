@@ -1,12 +1,12 @@
 import React from 'react'
 import { TaskBar } from 'components/TaskBar'
-import { Form } from 'components/Form'
+import { AddForm } from 'components/AddForm'
 
 export const App = () => {
   return (
     <>
       <TaskBar />   
-      <Form />
+      <AddForm />
     </>
   )
 }

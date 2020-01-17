@@ -5,6 +5,8 @@ export const Form = () => {
   return (
     <form className="form-container">
       <input className="input-container" type="text"/>
-    </form>
+      <button className="add-button">ADD</button>
+    </form> 
+   
   )
 }

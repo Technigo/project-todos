@@ -1,5 +1,7 @@
 .form-container {
   margin: 30px;
+  display: flex;
+  align-items: center;
 }
 
 .input-container {
@@ -7,4 +9,14 @@
   width: 525px;
   height: 55px;
   font-size: 30px;
+  border: none;
+}
+
+.add-button {
+  border: none;
+  width: 55px;
+  height: 55px;
+  background-color: #e5fcf5;
+  color: rgb(114, 12, 105);
+  margin: 30px;
 }
