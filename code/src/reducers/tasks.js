@@ -1,18 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// Task data: id, text, completed: true/false
+// Declaring the initialState to use it in the Slice and to return initialState when invoking removeAll()
+const initialState = {
+  items: [
+    // Hard coded tasks for testing
+    // { id: 1, text: 'Diapers', completed: false },
+    // { id: 2, text: 'Milk', completed: false },
+    // { id: 3, text: 'Pizza', completed: true }
+  ]
+}
 
 export const tasks = createSlice({
 
   name: 'tasks',
-  initialState: {
-    items: [
-      // Hard coded tasks for testing
-      // { id: 1, text: 'Diapers', completed: false },
-      // { id: 2, text: 'Milk', completed: false },
-      // { id: 3, text: 'Pizza', completed: true }
-    ]
-  },
+  initialState,
   reducers: {
     // The actions for my store - but called reducers 🤷‍♀
 
@@ -34,7 +35,12 @@ export const tasks = createSlice({
       if (foundTask) {
         foundTask.completed = !foundTask.completed
       }
+    },
+
+    removeAll: () => {
+      return initialState
     }
+
   }
 
 })

@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useSelector } from 'react-redux'
-// import { tasks } from 'reducers/tasks'
+import { useDispatch, useSelector } from 'react-redux'
+import { tasks } from 'reducers/tasks'
 
 export const Header = () => {
+
+  const dispatch = useDispatch()
 
   // To get todays date
   let date = new Date()
@@ -17,7 +19,9 @@ export const Header = () => {
   const completedTasks = allTasks.filter(task => task.completed === true)
 
   // Function to clear all todos
-  //const handleClearAll = () => {  }
+  const handleClearTasks = () => {
+    dispatch(tasks.actions.removeAll())
+  }
 
   return (
 
@@ -28,7 +32,7 @@ export const Header = () => {
       </WrapperLeft>
       <WrapperRight>
         <Text>{completedTasks.length}/{allTasks.length} done</Text>
-        <ClearButton>Clear all</ClearButton>
+        <ClearButton onClick={handleClearTasks}>Clear all</ClearButton>
       </WrapperRight>
     </WrapperHeader>
 
