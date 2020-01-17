@@ -15,15 +15,28 @@ export const Task = ({ task }) => {
     dispatch(todoList.actions.removeTask(task.id))
   }
 
+  const toggleClass = task.isCompleted ? "task-completed" : "task-todo"
+
   return (
 
-    <li className={`task-item  ${task.isCompleted ? "task-completed" : "task-todo"}`}>
-      <input id={`todo-${task.id}`} type="checkbox" defaultChecked={task.isCompleted} onChange={handleCheckbox} className="checkbox" />
-      <label className="checkbox-label" for={`todo-${task.id}`}>
+    <li className={`task-item ${toggleClass}`}>
+      <input
+        id={`todo-${task.id}`}
+        type="checkbox"
+        defaultChecked={task.isCompleted}
+        onChange={handleCheckbox}
+        className="checkbox" />
+
+      <label htmlFor={`todo-${task.id}`} className="checkbox-label">
         {task.todoText}
       </label>
-      <button aria-label={`Delete ${task.todoText}`} className="remove-button" type="button" onClick={handleTaskRemoval}>
-        <img className="delete-symbol" src={deleteSymbol} alt="Delete" />
+
+      <button
+        aria-label={`Delete ${task.todoText}`}
+        type="button"
+        onClick={handleTaskRemoval}
+        className="remove-button">
+        <img src={deleteSymbol} alt="Delete" className="delete-symbol" />
       </button>
     </li>
 
