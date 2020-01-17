@@ -1,44 +1,50 @@
 import React, { useState } from 'react'
 import 'components/AddTask.css'
 import { useDispatch } from 'react-redux'
+//tasks is the slice
 import { tasks } from 'reducers/tasks'
 
 
 
-export const AddTask = ({ task }) => {
-    const [addTask, setAddTask] = useState('')
+
+
+export const AddTask = () => {
+    const [newToDo, setNewToDo] = useState('')
     const dispatch = useDispatch()
 
-    //     const handleFormSubmit = (event) => {
-    //         event.preventDefault()
-    //         setAddTask((previousTask) => [newTask, ...previousTask])
-    // }
+    const handleFormSubmit = (event) => {
+        event.preventDefault()
+        // console.log('submit!', newToDo)
+        dispatch(tasks.actions.addTask(newToDo))
+        setNewToDo('')
+    }
 
     return (
         <div className="add-task-container">
-            <form onSubmit={(event) => event.preventDefault()}>
-                <textarea
-                    rows="1"
-                    //minLength="5"
-                    // maxLength="150"
-                    onChange={(event) => setAddTask(event.target.value)}
-                    value={task} //dont know if needed
-                // required
-                >
-                </textarea>
+            <form onSubmit={handleFormSubmit}
+                className="add-task-form">
+                <label>
+                    <input
+                        className="input-task"
+                        type="text"
+                        required
+                        value={newToDo}
+                        placeholder="Write your todos "
+                        onChange={event => setNewToDo(event.target.value)}  //.value is what ever we srite in the input field
+                    />
+                </label>
 
                 {/*** Form submit button ***/}
                 <div>
-                    <button className="add-task-btn"
-                        // onClick={handleFormSubmit}
-                        onClick={() => dispatch(tasks.actions.addTask(task))}
-                        type="submit" >
+                    <button
+                        className="add-task-btn"
+                        type="submit">
                         Add new task
                     </button >
                 </div>
 
 
             </form>
-        </div>
+        </div >
     )
 }

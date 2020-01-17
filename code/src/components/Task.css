@@ -1,0 +1,40 @@
+.todo-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0;
+    border-bottom: 1.5px dotted white;
+    margin: 25px 0;
+    width: -webkit-fill-available;
+    align-items: baseline;
+}
+
+.checkbox-container {
+
+}
+
+p {
+    font-size: 18px;
+}
+
+.checkbox {
+    padding: 10px;
+    width: 10px;
+    height: 10px;
+    /* background-color: #f5ab92;
+    border-bottom: 1.5px dotted white; */
+}
+
+input[id=checkbox] {
+    text-decoration: none;
+    /* display: none; */
+  }
+  
+  input[id=checkbox]:checked~p.strikethrough {
+    text-decoration: line-through;
+    color: red;
+  }
+
+  .checkbox input:checked ~ .strikethrough {
+    text-decoration: line-through;
+  }

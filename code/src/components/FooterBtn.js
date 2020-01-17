@@ -5,15 +5,22 @@ import { tasks } from 'reducers/tasks'
 
 
 
-export const FooterBtn = () => {
+export const FooterBtn = (props) => {
     const dispatch = useDispatch()
+
+
+    const handleNewDayButtonClick = () => {
+        dispatch(tasks.actions.emptyTasks(props.task))
+
+        console.log(handleNewDayButtonClick)
+    }
 
     return (
         <div>
             <button
                 className="footer-btn"
                 type="button"
-                onClick={() => dispatch(tasks.action.emptyTasks(tasks))}>
+                onClick={handleNewDayButtonClick}>
                 New Day
             </button>
         </div>
