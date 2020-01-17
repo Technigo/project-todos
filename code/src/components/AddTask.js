@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import "./addTask.css"
 import { useDispatch } from 'react-redux'
 import { todoList } from '../reducers/todoList'
+import addSymbol from 'icons/icons8-plus.svg'
 
 export const AddTask = () => {
   const dispatch = useDispatch();
@@ -15,8 +16,22 @@ export const AddTask = () => {
 
   return (
     <form className="task-form" onSubmit={handleFormSubmit}>
-      <input aria-label="Write a new todo" className="task-input" type="text" placeholder="E.g. Start to code" onChange={(event) => setTask(event.target.value)} value={task} />
-      <button type="submit" className="task-submit" value={task} disabled={task.length < 5 ? "disabled" : ""} aria-label="Add task">+</button>
+      <input
+        aria-label="Write a new todo"
+        type="text"
+        placeholder="E.g. Start to code"
+        onChange={(event) => setTask(event.target.value)}
+        value={task}
+        className="task-input" />
+
+      <button
+        aria-label="Add task"
+        type="submit"
+        value={task}
+        disabled={task.length < 5 ? "disabled" : ""}
+        className="task-submit"  >
+        <img src={addSymbol} alt="Add task" className="add-symbol" />
+      </button>
     </form >
   )
 }

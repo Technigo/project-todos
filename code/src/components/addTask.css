@@ -15,19 +15,26 @@
 }
 
 .task-submit {
+  align-items: center;
   background-color: #daa520;
   border: none;
   border-radius: 0.5rem;
-  color: #fff;
-  font-size: 2rem;
+  display: flex;
   flex-shrink: 0;
+  height: 51.2px;
+  justify-content: center;
   margin-left: 0.5rem;
-  height: 3.2rem;
-  width: 3.2rem;
+  width: 51.2px;
 }
 
 .task-submit:disabled {
   opacity: 0.5;
+}
+
+.add-symbol {
+  height: 25px;
+  margin: auto;
+  width: 25px;
 }
 
 @media screen and (min-width: 668px) {
