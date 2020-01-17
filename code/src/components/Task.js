@@ -21,14 +21,16 @@ export const Task = ({ task }) => {
 
     <li className={`task-item ${toggleClass}`}>
       <input
-        id={`todo-${task.id}`}
+        id={`task-${task.id}`}
         type="checkbox"
         defaultChecked={task.isCompleted}
         onChange={handleCheckbox}
         className="checkbox" />
 
-      <label htmlFor={`todo-${task.id}`} className="checkbox-label">
-        {task.todoText}
+      <label htmlFor={`task-${task.id}`} className="checkbox-label">
+        <span className="task-text">
+          {task.todoText}
+        </span>
       </label>
 
       <button
