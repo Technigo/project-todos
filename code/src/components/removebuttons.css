@@ -1,4 +1,4 @@
-.remove-all-container {
+.remove-all-btn {
   padding: 15px;
   /* background-color: #ff8364; */
   background-color: transparent;
@@ -6,12 +6,27 @@
   border: solid 3px #ff8364;
 }
 
-.remove-all-container:hover {
+.remove-all-btn:hover {
   background-color: #ffb677;
   cursor: pointer;
 }
 
-.remove-all-btn {
+.remove-all-btn-text {
   font-size: 12px;
   font-weight: bold;
+}
+
+.remove-task-btn {
+  width: 70px;
+  background-color: transparent;
+  padding: 0;
+  border-style: none;
+  height: 100%;
+  outline: none;
+}
+
+.remove-icon {
+  font-size: 40px;
+  color: #ff8364;
+  height: 100%;
 }

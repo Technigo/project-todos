@@ -30,6 +30,13 @@ export const tasks = createSlice({
     removeAllTasks: (state, action) => {
       state.items = []
 
+    },
+    removeTask: (state, action) => {
+      // find 'item' or whatever item
+      // remove it from the items array
+      // id = 3
+      state.items = state.items.filter(item => item.id !== action.payload)
+
     }
   }
 })

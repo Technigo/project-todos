@@ -1,24 +1,27 @@
 .new-task-form {
   display: flex;
-  padding: 18px;
   border-bottom: solid #ffb677;
 }
 
 .task-input {
   width: 100%;
-  font-size: 15px;
+  font-size: 22px;
   background-color: #edf7fa;
   border-style: none;
+  padding-left: 18px;
+  outline: none;
+  height: 80px;
 }
 
-.btn-container {
+.add-task-btn {
   width: 70px;
   background-color: transparent;
   padding: 0;
   border-style: none;
+  outline: none;
 }
 
-.add-task-btn {
-  font-size: 35px;
+.add-task-icon {
+  font-size: 40px;
   color: #ff8364;
 }

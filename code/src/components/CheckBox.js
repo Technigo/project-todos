@@ -12,7 +12,7 @@ export const CheckBox = (props) => {
   }
 
   return (
-    <label className="checkbox-container">
+    <label className="checkbox-label">
       <input
         type="checkbox"
         checked={props.task.complete}

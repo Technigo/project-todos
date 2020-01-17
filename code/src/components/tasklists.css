@@ -1,13 +1,15 @@
 .task {
   display: flex;
-  padding: 18px;
+  padding: 0px 0 0px 0;
   border-bottom: solid #ffb677;
+  align-items: center;
+  height: 80px;
 }
 
-.checkbox-container {
+.checkbox-label {
   position: relative;
-  height: 40px;
-  width: 40px;
+  height: 100%;
+  width: 100px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -17,7 +19,7 @@
 
 /* Hide the browser's default checkbox */
 
-.checkbox-container input[type=checkbox] {
+.checkbox-label input[type=checkbox] {
   position: absolute;
   cursor: pointer;
   appearance: none;
@@ -28,22 +30,30 @@
 
 .checkmark {
   position: absolute;
-  top: 0;
-  left: 0;
+  left: 50%;
+  margin-left: -20px;
+  top: 50%;
+  margin-top: -18px;
   height: 30px;
   width: 30px;
   background-color: #fff;
   border-radius: 50%;
   border: solid #5f6caf;
+  outline: none;
+}
+
+.centered-element {
+  height: 100px;
+  width: 100px;
 }
 
 /* When the checkbox is checked, add a blue background */
 
-.checkbox-container input:checked~.checkmark {
+.checkbox-label input:checked~.checkmark {
   background-color: #5f6caf;
 }
 
-.checkbox-container .checkmark:after {
+.checkbox-label .checkmark:after {
   left: 12px;
   top: 6px;
   width: 5px;
@@ -65,6 +75,10 @@
 
 /* Show the checkmark when checked */
 
-.checkbox-container input:checked~.checkmark:after {
+.checkbox-label input:checked~.checkmark:after {
   display: block;
+}
+
+.text {
+  width: 100%;
 }

@@ -13,8 +13,8 @@ export const ClearButton = () => {
 
 
   return (
-    <button className="remove-all-container" type="button" onClick={() => { removeAllHandler() }} >
-      <span className="remove-all-btn" role="button" aria-label="remove">CLEAR ALL</span>
+    <button className="remove-all-btn" type="button" onClick={() => { removeAllHandler() }} >
+      <span className="remove-all-btn-text" role="button" aria-label="remove">CLEAR ALL</span>
     </button >
   )
 }
