@@ -2,12 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 // Declaring initialState to use it in the Slice and to return initialState when invoking removeAll()
 const initialState = {
-  items: [
-    // Hard coded tasks for testing
-    // { id: 1, text: 'Diapers', completed: false },
-    // { id: 2, text: 'Milk', completed: false },
-    // { id: 3, text: 'Pizza', completed: true }
-  ]
+  items: []
 }
 
 export const tasks = createSlice({
@@ -27,7 +22,6 @@ export const tasks = createSlice({
     },
 
     toggleTask: (state, action) => {
-
       // To find the task we want to toggle
       const foundTask = state.items.find((task) => task.id === action.payload)
 
