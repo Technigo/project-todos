@@ -1,0 +1,37 @@
+.message {
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem auto 1rem auto;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  width: 90%;
+}
+
+.message-image {
+  height: auto;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.message-title {
+  color: #333;
+  font-size: 1.3rem;
+  line-height: 1.5;
+  margin: 1rem 0 0.5rem 0;
+}
+
+.message-text {
+  line-height: 1.5;
+}
+
+@media screen and (min-width: 668px) {
+  .message {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .message-image {
+    width: 300px;
+  }
+}

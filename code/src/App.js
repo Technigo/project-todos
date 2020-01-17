@@ -7,6 +7,7 @@ import { todoList } from 'reducers/todoList'
 import { TaskList } from 'components/TaskList'
 import { AddTask } from 'components/AddTask'
 import { Header } from 'components/Header'
+import { EmptyListState } from 'components/EmptyListState'
 
 import "index.css"
 
@@ -22,6 +23,7 @@ export const App = () => {
     <Provider store={store}>
       <Header />
       <AddTask />
+      <EmptyListState />
       <TaskList />
     </Provider>
   )
