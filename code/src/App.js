@@ -60,7 +60,7 @@ const Header = styled.div`
   background-color: #f7f7fc;
   width: 280px;
   hight: 120px;
-  margin-top: 15px;
+  margin-top: 50px;
   padding: 20px;
 `
 const HeaderLeft = styled.div`

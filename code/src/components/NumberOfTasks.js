@@ -4,11 +4,11 @@ import styled from 'styled-components'
 
 
 export const NumberOfTasks = () => {
-  const number = useSelector((store) => store.tasks.items.length)
-
+  const number = useSelector(store => store.tasks.items)
+  const countUncompleted = number.filter(item => item.complete)
 
   return (
-    <Number>{number} tasks </Number>
+    <Number>{countUncompleted.length}/{number.length} tasks </Number>
   )
 }
 

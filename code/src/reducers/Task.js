@@ -19,10 +19,10 @@ export const tasks = createSlice({
     },
     // reducer for CLEAR ALL tasks.
 
-    removeAllItems: (state, action) => {
-      state.items = state.items.filter((item) => item !== action.payload)
+    //removeAllItems: () => {
+    //return initialState
 
-    },
+    //},
 
     // reducer to remove 1 tasks.
 

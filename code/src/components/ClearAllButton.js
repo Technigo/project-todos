@@ -5,11 +5,11 @@ import styled from 'styled-components/macro'
 
 
 
-export const ClearAllButton = (props) => {
+export const ClearAllButton = () => {
 
   const dispatch = useDispatch()
 
-  const handleClearAllButtonClick = () => {
+  const handleClearAllButtonClick = (props) => {
     dispatch(tasks.actions.removeAllItems(props.item))
   }
 
@@ -17,10 +17,9 @@ export const ClearAllButton = (props) => {
 
     <Button type="button" onClick={handleClearAllButtonClick}>CLEAR ALL</Button>
 
+    // <Button type="button" onClick{(} => dispatch  CLEAR ALL</Button>
 
   )
-
-
 }
 
 const Button = styled.button`
