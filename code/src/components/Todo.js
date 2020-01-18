@@ -38,9 +38,7 @@ const CheckboxWrapper = styled.div`
   align-items: center;
 `;
 
-const Checkbox = styled.input.attrs({ type: 'checkbox' })`
-  /* background: transparent; */
-`;
+const Checkbox = styled.input.attrs({ type: 'checkbox' })``;
 
 const TextWrapper = styled.div`
   display: flex;
