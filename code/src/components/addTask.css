@@ -1,0 +1,20 @@
+.addTask {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+   
+}
+
+.addButton {
+    border: none;
+    background: transparent;
+    border-bottom: 1px dashed black;
+    margin-left: 2px;
+}
+
+.newTaskInput {
+    background: transparent;
+    border: none;
+    border-bottom: 1px dashed black;
+    outline: none;
+}

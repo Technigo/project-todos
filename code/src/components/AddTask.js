@@ -1,7 +1,8 @@
 import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { ToDoList } from 'reducers/todolist'
+import { ToDoList } from 'reducers/ToDoList'
+import 'components/addTask.css'
 
 export const AddTask = () => {
     const [task, setTask] = useState('')
@@ -14,12 +15,13 @@ export const AddTask = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
+
+        <form onSubmit={handleSubmit} className="addTask">
             <label>
-                <input className="newTaskInput" type="text" placeholder="New To Do" value={task} onChange={(event) => setTask(event.target.value)} />
+                <input className="newTaskInput" type="text" required placeholder="New To Do" value={task} onChange={(event) => setTask(event.target.value)} />
             </label>
 
-            <button type="submit"><span role="img" aria-label="Add">✚</span></button>
+            <button type="submit" className="addButton"><span role="img" aria-label="Add">✚</span></button>
 
         </form>
     )

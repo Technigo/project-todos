@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { ToDoList } from 'reducers/todolist'
+import { ToDoList } from 'reducers/ToDoList'
 
 export const Task = (props) => {
     const dispatch = useDispatch()
@@ -16,7 +16,7 @@ export const Task = (props) => {
     return (
         <li>
             <label>
-                <span role="img" aria-label="done">✅</span>
+                
                 <input type="checkbox" checked={props.task.done} onChange={handleCheckbox} />
 
             </label>

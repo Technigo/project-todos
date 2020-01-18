@@ -5,9 +5,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  justify-content: center;
+  background: #FFFACD;
+  font-family: 'Indie Flower', cursive;
 }
+
+@import url("https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet")
+
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.toDoSection {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  background: #E6E6FA;
+}
+
+.toDoList {
+  margin: 50px;
 }

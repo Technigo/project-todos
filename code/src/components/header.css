@@ -1,0 +1,9 @@
+h1 {
+    font-family: 'Indie Flower', cursive;
+    font-size: 32px;
+}
+
+.header {
+    display: flex;
+    justify-content: center;
+}
