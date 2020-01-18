@@ -75,7 +75,7 @@ export const AddTodo = () => {
           value={todoText}
           type="text"
           onChange={handleInputChange}
-          placeholder="New todo"
+          placeholder="New to-do"
         />
       </Form>
     </StyledAddTodo>

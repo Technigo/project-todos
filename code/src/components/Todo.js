@@ -11,7 +11,6 @@ const StyledTodo = styled.li`
   grid-gap: 0.5rem;
   align-items: center;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
-  /* background-color: rgba(0, 0, 0, 0.01); */
   padding: 1rem 1rem 1rem 0;
 
   &:first-of-type {

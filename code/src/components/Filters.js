@@ -10,9 +10,8 @@ const StyledFilters = styled.div`
   grid-gap: 0.5rem;
   justify-content: center;
   padding: 0rem 0.4rem 0.4rem 0.4rem;
-  /* border: 1px solid green; */
 
-  @media screen and (min-width: 450px) {
+  @media screen and (min-width: 500px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 30px;
   }
@@ -39,18 +38,6 @@ const Button = styled.button`
     color: white;
     transition: all 150ms ease-in;
     cursor: pointer;
-  }
-`;
-
-const Icon = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.7rem;
-  padding-left: 0.4rem;
-
-  i {
-    color: rgba(230, 0, 60, 1);
   }
 `;
 
