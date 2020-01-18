@@ -10,7 +10,7 @@ export const ProgressBar = () => {
 
     return (
       <div className="ProgressBar">
-        Completed tasks: {completed} / {total}
+        {completed} / {total}
       </div>
     );
   }

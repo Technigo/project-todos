@@ -11,12 +11,12 @@ export const EmptyList = () => {
     <>
       {emptyList && (
         <div className="message">
+          <h3 className="message-title">Add a task to get started!</h3>
           <img
             src={postIt}
             alt="An empty and sad list."
             className="post-it-image"
           />
-          <h3 className="message-title">Add a task to get started!</h3>
         </div>
       )}
     </>

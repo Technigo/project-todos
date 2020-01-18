@@ -1,17 +1,31 @@
 .header {
   background-color: #4cbbb9;
-  height: 90px;
+  height: 60px;
   color: white;
   font-weight: 700;
   padding-left: 10px;
-  padding-top: 10px;
-  justify-content: center;
+  padding-top: 20px;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  opacity: 0.9;
+  padding-bottom: 10px;
+  justify-content: space-between;
+  font-family: Inconsolata;
 }
 
 .header h1 {
   margin: 0;
+  font-size: 30px;
+  padding-bottom: 5px;
+}
+
+.todays-date {
+  margin: 0;
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.progress-bar {
+  padding-right: 10px;
+  padding-top: 5px;
+  font-size: 30px;
+  font-weight: normal;
 }

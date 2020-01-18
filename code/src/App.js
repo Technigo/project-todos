@@ -6,8 +6,6 @@ import { Provider } from "react-redux";
 import { AddTaskForm } from "components/AddTaskForm";
 import { TaskList } from "components/TaskList";
 import { Header } from "components/Header";
-import { ProgressBar } from "components/ProgressBar";
-import { ClearButton } from "components/ClearButton";
 import { EmptyList } from "components/EmptyList";
 
 const reducer = combineReducers({
@@ -20,11 +18,9 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
-      <ProgressBar />
       <AddTaskForm />
       <TaskList />
       <EmptyList />
-      <ClearButton />
     </Provider>
   );
 };

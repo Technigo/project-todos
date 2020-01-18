@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { tasks } from "reducers/tasks";
+import "components/addTaskForm.css";
 
 export const AddTaskForm = () => {
   const [name, setName] = useState("");
@@ -17,13 +18,16 @@ export const AddTaskForm = () => {
       <label>
         Task:
         <input
-          placeholder=" Add a new todo"
+          className="input-field"
+          placeholder=" e.g buy milk"
           type="text"
           value={name}
           onChange={event => setName(event.target.value)}
         />
       </label>
-      <button type="submit">+</button>
+      <button className="add-button" type="submit">
+        +
+      </button>
     </form>
   );
 };
