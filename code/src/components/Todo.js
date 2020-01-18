@@ -39,6 +39,10 @@ const CheckboxWrapper = styled.div`
   align-items: center;
 `;
 
+const Checkbox = styled.input.attrs({ type: 'checkbox' })`
+  background: rgba(230, 0, 60, 1);
+`;
+
 const TextWrapper = styled.div`
   display: flex;
   align-items: center;
@@ -116,7 +120,7 @@ export const Todo = ({ todo }) => {
   return (
     <StyledTodo>
       <CheckboxWrapper>
-        <input
+        <Checkbox
           onChange={() => dispatch(todos.actions.toggleCompleted({ todo }))}
           type="checkbox"
           checked={todo.completed}
