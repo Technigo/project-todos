@@ -25,7 +25,7 @@ const StyledTodo = styled.li`
   &:hover {
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.05);
-    transition: background-color 0.2s ease-in-out;
+    transition: background-color 150ms ease-in;
   }
 
   @media screen and (min-width: 768px) {

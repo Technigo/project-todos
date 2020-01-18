@@ -25,17 +25,21 @@ const Button = styled.button`
   background-color: rgba(0, 0, 0, 0.02);
   /* background-color: rgba(0, 230, 170, 0.7); */
   /* background-color: rgba(0, 117, 255, 1); */
+  /* background-color: rgba(0, 0, 0, 0.02); */
   border-radius: 5px;
   /* color: rgba(0, 230, 170, 1); */
-  /* background-color: transparent; */
+  background-color: transparent;
   color: rgba(0, 117, 255, 1);
   padding: 0.3rem 0.5rem;
   font-size: 0.9rem;
   outline: none;
   font-weight: bold;
+  /* transition: all 100ms ease-in; */
 
   &:disabled {
     opacity: 0.5;
+    filter: grayscale(100);
+    /* border: 1px solid rgba(0, 0, 0, 0.1); */
   }
 
   &:hover:enabled {
@@ -44,7 +48,7 @@ const Button = styled.button`
     /* background-color: rgba(0, 0, 0, 0.02); */
     opacity: 1;
     color: #ffffff;
-    transition: all 200ms ease-in-out;
+    transition: all 150ms ease-in;
   }
 `;
 

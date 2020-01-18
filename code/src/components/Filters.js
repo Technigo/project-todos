@@ -19,7 +19,7 @@ const StyledFilters = styled.div`
 `;
 
 const Button = styled.button`
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   background-color: ${props =>
     props.activeFilter ? 'rgba(230, 0, 60, 1)' : 'rgba(0, 0, 0, 0.02)'};
   border-radius: 10px;
@@ -30,13 +30,14 @@ const Button = styled.button`
   font-weight: bold;
 
   &:disabled {
-    opacity: 0.5;
+    opacity: 0.4;
+    filter: grayscale(100);
   }
 
   &:hover:enabled {
     background-color: rgba(230, 0, 60, 1);
     color: white;
-    transition: all 150ms ease-in-out;
+    transition: all 150ms ease-in;
     cursor: pointer;
   }
 `;
