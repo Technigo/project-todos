@@ -1,23 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-
 export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      { id: 1, text: 'Dance around naked', complete: true },
-      { id: 2, text: 'Find out how to build an app', complete: true },
-      { id: 3, text: 'Learn how to code', complete: true },
-      { id: 4, text: 'Get to know Redux', complete: false },
+      { id: 1, name: "Clean house", complete: false }
     ]
   },
+
   reducers: {
     addTask: (state, action) => {
-      state.items.push({ id: Date.now(), todo: action.payload })
+      state.items.push({ id: Date.now(), name: action.payload })
     },
 
     removeTask: (state, action) => {
       state.items = state.items.filter((task) => task.id !== action.payload)
+    },
+
+    removeAll: (state, action) => {
+      state.items = []
     },
 
     toggleComplete: (state, action) => {

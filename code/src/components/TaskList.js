@@ -1,16 +1,28 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { Task } from 'components/Task'
+import styled from 'styled-components'
 
 
 export const TaskList = () => {
-  const allTasks = useSelector((store) => store.tasks.allTasks)
+  const allTasks = useSelector((state) => state.tasks.items)
 
   return (
-    <ul>
+    <List>
       {allTasks.map((taskName) => (
         <Task key={taskName.id} taskName={taskName} />
       ))}
-    </ul>
+    </List>
   )
 }
+
+const List = styled.ul`
+flex-direction: row;
+align-items: baseline;
+padding-right: 10;
+padding-bottom: 15;
+margin-top: 30px; 
+background: transparent;
+font-size: 25px;
+width: 100%; 
+`
