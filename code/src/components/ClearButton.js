@@ -1,17 +1,22 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { tasks } from 'reducers/tasks'
-import 'css/task.css'
+import 'css/buttons.css'
 
 export const ClearButton = () => {
   const dispatch = useDispatch()
+  const allTasks = useSelector((state) => state.tasks)
 
   return (
-    <button
-      className="btn-clear"
-      type="button"
-      onClick={() => dispatch(tasks.actions.removeAll())}>
+    <>
+      {allTasks.length !== 0 && (
+        <button
+          className="btn-clear"
+          type="button"
+          onClick={() => dispatch(tasks.actions.removeAll())}>
             Remove all
-    </button>
+        </button>
+      )}
+    </>
   )
 }

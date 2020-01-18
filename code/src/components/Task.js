@@ -2,6 +2,7 @@ import React from 'react'
 import { RemoveTask } from 'components/RemoveTask'
 import { CompletedTask } from 'components/CompletedTask'
 import 'css/task.css'
+import 'css/buttons.css'
 
 export const Task = ({ task }) => {
   return (
@@ -14,6 +15,5 @@ export const Task = ({ task }) => {
         </div>
       </div>
     </>
-
   )
 }

@@ -1,5 +1,5 @@
 
-.body {
+.background {
     margin-top:50px;
     min-height: 900px;
     background-image:url(../assets/1383079.jpg);
@@ -8,15 +8,21 @@
     background-position: center bottom;
   }
 
-  .todo-list {
-      margin-left:50px; 
-      padding:40px;
-      width:500px;
-      background-color:rgb(250, 214, 214);
-      font-family: 'Gloria Hallelujah', cursive;
-      font-size:22px;
-  }
+.todo-list {
+    margin-left:50px; 
+    padding:40px;
+    width:500px;
+    background-color:rgb(250, 214, 214);
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size:22px;
+}
 
 h1 {
     margin:0 0 20px;
 }
+
+.empty-list {
+    margin:60px 0;
+    font-size:18px;
+}
+

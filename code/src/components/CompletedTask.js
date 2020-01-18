@@ -7,14 +7,13 @@ export const CompletedTask = (props) => {
   const dispatch = useDispatch()
 
   return (
-    // eslint-disable-next-line jsx-a11y/label-has-associated-control
     <label className="checkbox">
       <input
         className="checkbox"
         type="checkbox"
         checked={props.task.complete}
         onChange={() => dispatch(tasks.actions.toggleCompleted(props.task.id))} />
-      {props.task.complete && <span className="check">✔</span>}
+      {props.task.complete && <span className="check" role="img" aria-label="checked">✔</span>}
     </label>
   )
 }

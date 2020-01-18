@@ -17,7 +17,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <div className="body">
+      <div className="background">
         <div className="todo-list">
           <ToDoList />
           <ClearButton />

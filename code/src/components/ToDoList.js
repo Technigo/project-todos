@@ -8,10 +8,17 @@ export const ToDoList = () => {
 
   return (
     <>
-      <h1>Todo List<span role="img" aria-label="Thinking cloud">  💬</span> </h1>
+      <h1>Todo List<span role="img" aria-label="Thinking cloud">  💬</span></h1>
       {allTasks.map((task) => (
         <Task key={task.id} task={task} />
       ))}
+
+      {allTasks.length === 0
+    && (
+      <div className="empty-list">
+        <p>Time to get things done....<span role="img" aria-label="Writing pen">✍</span></p>
+      </div>
+    )}
     </>
   )
 }

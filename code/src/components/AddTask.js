@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
+import 'css/buttons.css'
+import 'css/task.css'
 
 export const AddTask = () => {
   const [text, setText] = useState('')
@@ -23,6 +25,5 @@ export const AddTask = () => {
       </label>
       <button className="btn-add" type="submit"> Add </button>
     </form>
-
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
-import 'css/task.css'
+import 'css/buttons.css'
 
 export const RemoveTask = (props) => {
   const dispatch = useDispatch()
