@@ -4,9 +4,11 @@ import { Input } from "components/Input";
 import { Toggle } from "./Toggle";
 import { DeleteOne } from "./DeleteOne";
 import { Important } from "./Important";
-// import { tasks } from "reducers/tasks";
+
+import { tasks } from "reducers/tasks";
 
 import styled from "styled-components";
+import { EmptyState } from "./EmptyState";
 
 export const TaskList = () => {
   const tasks = useSelector(state => state.tasks);
@@ -15,6 +17,7 @@ export const TaskList = () => {
   return (
     <div>
       <Input />
+      {tasks.total === 0 && <EmptyState />}
       {tasks.taskData.map(task => {
         return (
           <Container className="task" key={task.id}>

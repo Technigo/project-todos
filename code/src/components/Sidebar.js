@@ -5,7 +5,6 @@ import { tasks } from "reducers/tasks";
 
 export const Sidebar = () => {
   const dispatch = useDispatch();
-  const handleAll = () => {};
   const handleCompleted = () => {
     dispatch(tasks.actions.showCompleted());
   };
@@ -16,14 +15,11 @@ export const Sidebar = () => {
     <Main>
       <P>Show todos: </P>
       <Container>
-        <Button type="button" onClick={handleAll}>
-          <p>All</p>
-        </Button>
         <Button type="button" onClick={handleCompleted}>
           <p>Completed</p>
         </Button>
         <Button type="button" onClick={handleNotCompleted}>
-          <p>To be done</p>
+          <p>Ongoing</p>
         </Button>
       </Container>
     </Main>
@@ -32,6 +28,7 @@ export const Sidebar = () => {
 
 const Main = styled.div`
   text-align: center;
+  height: 3000px;
   @media (min-width: 768px) {
     margin-top: 3rem;
   }
@@ -39,7 +36,7 @@ const Main = styled.div`
 const Button = styled.button`
   margin-bottom: 2rem;
   margin-right: 1rem;
-  width: 20%;
+  width: 30%;
   padding: 0.5rem;
   @media (min-width: 768px) {
     margin-bottom: 0;
