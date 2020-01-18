@@ -1,0 +1,19 @@
+li {
+    list-style-type: none;
+}
+
+.listSection {
+    margin: 8px 5px 0px -45px;
+    background: rgba(255, 240, 245, 0.865);
+    box-shadow: grey;
+    padding: 4px 6px;
+}
+
+.text {
+    font-size: 22px;
+}
+
+.checked .text {
+    text-decoration: line-through;
+  }
+
