@@ -18,12 +18,10 @@ const Date = styled.p`
 `;
 
 export const Header = () => {
-  // const time = new window.Date.now();
-  // console.log(time);
   return (
     <StyledHeader>
       <Title>Todo</Title>
-      <Date>January 18th</Date>
+      <Date>{moment('2019-11-14T19:50:13.556Z').format('MMMM Do')}</Date>
     </StyledHeader>
   );
 };
