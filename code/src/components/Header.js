@@ -24,13 +24,15 @@ export const Header = () => {
       <h1>TO DO </h1>
       <h1>{moment().format('dddd')}</h1>
       </section>
-      <label className='inputfield'>
-      <input type="text" value={newTodo} required placeholder='New task' onChange = {event => setNewTodo(event.target.value)}/>
+      <label className='inputContainer'>
+      <input className='newInput' type="text" value={newTodo} required placeholder='New task' onChange = {event => setNewTodo(event.target.value)}/>
       {console.log(newTodo)}
      
     
-      <button className="addTaskButton" type="submit">+ </button>
+      <button className='btn-Container' type="submit"><span className="add-task-btn" role="img" aria-label="plus">+</span> </button>
       </label>
+
+     
       
         
       </form>

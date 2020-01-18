@@ -5,16 +5,18 @@ import {tasks} from 'reducers/tasks'
 import './footer.css'
 
 export const Footer = ({props}) => {
-  const tasks = useSelector((store) =>store.tasks.items)
+  const tasksSelector = useSelector((store) =>store.tasks.items)
   const dispatch = useDispatch()
-  const completed = tasks.filter(item => item.complete)
+  const completed = tasksSelector.filter(item => !item.complete)
 
 
  
     return (
       <section className='footer'>
         <h4>still to do: {completed.length}</h4>
+        <label className='clear-btn-container'>
         <button className='clearButton' type="button" onClick={() => dispatch(tasks.actions.clearForm())}>Clear</button>
+        </label>
       </section>
     )
   }

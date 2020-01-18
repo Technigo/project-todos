@@ -8,6 +8,20 @@
     align-items: baseline;
 }
 
+.clear-btn-container{
+    outline: none;
+    cursor: pointer;
+    border: 1.5px solid midnightblue;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 .clearButton{
     height: 30px;
+    outline: none;
+    cursor: pointer;
+    border-style: none;
+    font-weight: bold;
+    color: midnightblue;
 }

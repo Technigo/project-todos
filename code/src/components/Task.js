@@ -17,13 +17,20 @@ dispatch(tasks.actions.toggleMarkAsCompleted(props.id))
 
 
     return(
-        <section >
+        <section className='listContainer'>
+            <label className='container'>
+             <input  type="checkbox" checked={props.complete} onChange={handleCheckboxClick}/>
+            
+             
+             <span className='checkmark'></span>
+             </label>
         <li className='tasklist'>{props.text}
-        <label className='checkboxButton' >
-            <input  type="checkbox" checked={props.complete} onChange={handleCheckboxClick}/>
+        <label className='remove-btn-container' >
+           
             
             
             <button className='removeButton' type="button" onClick={handleRemoveButtonClick}>x</button>
+           
             </label>
             </li>
             </section>
