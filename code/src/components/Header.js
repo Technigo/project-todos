@@ -22,7 +22,7 @@ export const Header = () => {
 
   return (
     <StyledHeader>
-      <Title>Todo</Title>
+      <Title>To-do list</Title>
       <Date>{time}</Date>
     </StyledHeader>
   );
