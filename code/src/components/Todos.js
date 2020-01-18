@@ -39,7 +39,8 @@ const Icon = styled.div`
   align-items: center;
   margin: 2rem 0 1.5rem 0;
   font-size: 4rem;
-  color: rgba(230, 0, 60, 1);
+  /* color: rgba(230, 0, 60, 1); */
+  color: rgba(0, 230, 170, 1);
 `;
 
 export const Todos = () => {
