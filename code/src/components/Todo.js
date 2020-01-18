@@ -39,7 +39,7 @@ const CheckboxWrapper = styled.div`
 `;
 
 const Checkbox = styled.input.attrs({ type: 'checkbox' })`
-  background: rgba(230, 0, 60, 1);
+  background: rgba(0, 117, 255, 1);
 `;
 
 const TextWrapper = styled.div`
