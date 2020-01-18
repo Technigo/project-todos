@@ -4,7 +4,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 
-export const TaskInput = ({ task }) => {
+export const TaskInput = () => {
 
   const [newTask, setNewTask] = useState('')
   const dispatch = useDispatch()
