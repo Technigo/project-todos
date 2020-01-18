@@ -16,7 +16,7 @@ export const Header = () => {
     <header>
       <div>
         <h1>TO DO</h1>
-        <h4>{`${dateTime.toLocaleDateString()}`}</h4>
+        <h4>{`${dateTime.toDateString()}`}</h4>
       </div>
       <div className="counter">
         <Counter />
