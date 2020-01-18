@@ -14,8 +14,8 @@ export const AddForm = () => {
   }
   return (
     <form onSubmit={handleSubmit} className="form-container">
-      <label>
-        Todo:
+      <label className="todo-bar">
+        To do
         <input type="text" className="input-container" value={todo} onChange={(event) => setTodo(event.target.value)} />
       </label>
       <button type="submit" className="add-button">ADD</button>

@@ -3,13 +3,23 @@ import { createSlice } from '@reduxjs/toolkit'
 export const todoList = createSlice({
   name: 'todoList',
   initialState: {
-    items: []
+    items: [
+      { id: 1, name: 'Make function', taskDone: false},
+      { id: 2, name: 'Check out', taskDone: true}
+    ]
   },
   reducers: {
     addTodo: (state, action) => {
-      console.log('current state', state)
-      console.log('action', action)
       state.items.push({ id: Date.now(), name: action.payload })
+    },
+    toggleTaskDone: (state, action) =>{
+      console.log(action.payload)
+     
+     const foundItem = state.items.find((item) => item.id === action.payload)
+      
+     if (foundItem) {
+       foundItem.taskDone = !foundItem.taskDone
+     }
     }
   }
 })
