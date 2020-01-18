@@ -1,11 +1,12 @@
 .delete-icon {
   height: 27px;
   width: 27px;
-  padding-top: 8px;
+  padding-top: 22px;
 }
 
 .remove-button {
   padding: 0;
+  border: none;
 }
 
 .checkbox {
