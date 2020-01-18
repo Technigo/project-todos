@@ -17,12 +17,13 @@ export const AddTaskForm = () => {
       <label>
         Task:
         <input
+          placeholder=" Add a new todo"
           type="text"
           value={name}
           onChange={event => setName(event.target.value)}
         />
       </label>
-      <button type="submit">➕</button>
+      <button type="submit">+</button>
     </form>
   );
 };

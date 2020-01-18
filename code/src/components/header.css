@@ -1,0 +1,17 @@
+.header {
+  background-color: #4cbbb9;
+  height: 90px;
+  color: white;
+  font-weight: 700;
+  padding-left: 10px;
+  padding-top: 10px;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.9;
+}
+
+.header h1 {
+  margin: 0;
+}

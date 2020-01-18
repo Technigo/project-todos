@@ -7,6 +7,8 @@ import { AddTaskForm } from "components/AddTaskForm";
 import { TaskList } from "components/TaskList";
 import { Header } from "components/Header";
 import { ProgressBar } from "components/ProgressBar";
+import { ClearButton } from "components/ClearButton";
+import { EmptyList } from "components/EmptyList";
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -21,6 +23,8 @@ export const App = () => {
       <ProgressBar />
       <AddTaskForm />
       <TaskList />
+      <EmptyList />
+      <ClearButton />
     </Provider>
   );
 };

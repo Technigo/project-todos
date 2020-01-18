@@ -10,13 +10,13 @@ export const TaskItem = props => {
   };
 
   const handleRemoveButtonClick = () => {
-    dispatch(tasks.actions.removeTask(props.item.id));
+    dispatch(tasks.actions.removeItem(props.item.id));
   };
 
   return (
     <li>
       <button
-        class="remove-button"
+        className="remove-button"
         type="button"
         onClick={handleRemoveButtonClick}
       >
