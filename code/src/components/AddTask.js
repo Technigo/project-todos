@@ -1,8 +1,7 @@
 import React from 'react'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
-
-import { ToDoList } from 'reducers/ToDoList'
+import { ToDoList } from 'reducers/todolist'
 
 export const AddTask = () => {
     const [task, setTask] = useState('')
@@ -10,7 +9,7 @@ export const AddTask = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        dispatch(ToDoList.action.addTask(task))
+        dispatch(ToDoList.actions.addTask(task))
         setTask('')
     }
 
@@ -20,7 +19,7 @@ export const AddTask = () => {
                 <input className="newTaskInput" type="text" placeholder="New To Do" value={task} onChange={(event) => setTask(event.target.value)} />
             </label>
 
-            <button type="submit"><span role="img">✚</span></button>
+            <button type="submit"><span role="img" aria-label="Add">✚</span></button>
 
         </form>
     )

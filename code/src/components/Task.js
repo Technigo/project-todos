@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-
-import { ToDoList } from 'reducers/ToDoList'
+import { ToDoList } from 'reducers/todolist'
 
 export const Task = (props) => {
     const dispatch = useDispatch()

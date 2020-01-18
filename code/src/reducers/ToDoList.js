@@ -13,14 +13,14 @@ export const ToDoList = createSlice ({
         removeTask: (state, action) => {
             state.tasks = state.tasks.filter(task => task.id !== action.payload)
         },
-        toggleDone: (state, action) => {
-            console.log(action.payload)
-            const foundTask = state.tasks.find(task => task.id === action.payload)
+        // toggleDone: (state, action) => {
+        //     console.log(action.payload)
+        //     const foundTask = state.tasks.find(task => task.id === action.payload)
 
-            if (foundTask) {
-                foundTask.toDo = !foundTask.toDo 
-            }
-        },
+        //     if (foundTask) {
+        //         foundTask.toDo = !foundTask.toDo 
+        //     }
+        // },
 
 
     }
