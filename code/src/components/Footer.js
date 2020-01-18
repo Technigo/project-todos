@@ -11,10 +11,11 @@ const StyledFooter = styled.div`
   margin: 0.5rem 0 1rem 0;
   padding: 0.4rem;
 
-  /* @media screen and (min-width: 400px) {
+  @media screen and (min-width: 500px) {
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 30px;
-  } */
+    grid-template-rows: 30px 30px;
+    justify-content: flex-start;
+  }
 `;
 
 const Button = styled.button`
@@ -24,7 +25,7 @@ const Button = styled.button`
   border-radius: 10px;
   color: rgba(0, 230, 170, 1);
   padding: 0.3rem 0.5rem;
-  font-size: 0.7rem;
+  font-size: 0.9rem;
   outline: none;
   font-weight: bold;
 
@@ -54,7 +55,7 @@ export const Footer = () => {
       <Button
         onClick={() => dispatch(todos.actions.clearCompletedTodo())}
         disabled={completedTodos.length === 0}
-        hidden={completedTodos.length === 0}
+        // hidden={completedTodos.length === 0}
       >
         Clear completed
       </Button>
