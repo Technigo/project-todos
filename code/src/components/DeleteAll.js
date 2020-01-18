@@ -26,6 +26,7 @@ const Button = styled.button`
   border-radius: 10px;
   opacity: 0.6;
   margin-top: 1rem;
+  cursor: pointer;
 `;
 
 const P = styled.p`

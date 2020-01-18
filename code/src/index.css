@@ -13,9 +13,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-image: url(./img/green2.jpg);
   background-size: cover;
-  background-repeat: repeat;
+  /* background-repeat: repeat; */
   height: 100%;
+  width: 100%;
   letter-spacing: 1px;
+  overflow: auto;
 }
 
 code {
@@ -23,23 +25,8 @@ code {
     monospace;
 }
 
-.root {
-  /* height: 100%; */
-}
-
 ion-icon {
   align-self: center;
-  /* margin-right: 1rem; */
   width: 25px;
   height: 25px;
 }
-
-/* .task {
-  display: flex;
-  width: 80%;
-}
-
-.header {
-  display: flex;
-  justify-content: space-around;
-}  */

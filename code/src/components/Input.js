@@ -58,6 +58,7 @@ const Button = styled.button`
   background: black;
   color: white;
   opacity: 0.6;
+  cursor: pointer;
   @media (min-width: 600px) {
     width: 20%;
   }

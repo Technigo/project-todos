@@ -38,6 +38,7 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-height: 100vh;
   @media (min-width: 768px) {
     flex-direction: row;
   }
@@ -49,12 +50,13 @@ const Container = styled.div`
 
 const Side = styled.div`
   width: 100%;
-  height: 6rem;
+  height: 15%;
   background: #eee;
   flex: wrap;
 
   @media (min-width: 768px) {
-    height: 100%;
+    min-height: 100vh;
+    height: 400%;
     width: 15rem;
   }
 `;

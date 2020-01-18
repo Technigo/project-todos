@@ -5,14 +5,11 @@ import { Toggle } from "./Toggle";
 import { DeleteOne } from "./DeleteOne";
 import { Important } from "./Important";
 
-import { tasks } from "reducers/tasks";
-
 import styled from "styled-components";
 import { EmptyState } from "./EmptyState";
 
 export const TaskList = () => {
   const tasks = useSelector(state => state.tasks);
-  console.log(tasks);
 
   return (
     <div>

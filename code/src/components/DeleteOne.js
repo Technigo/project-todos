@@ -6,10 +6,6 @@ import styled from "styled-components";
 
 export const DeleteOne = ({ id }) => {
   const dispatch = useDispatch();
-  // let completed = useSelector(state =>
-  //   state.tasks.taskData.map(todo => todo.complete)
-  // );
-  // console.log(completed);
 
   const handleClick = () => {
     dispatch(tasks.actions.deleteOne(id));
@@ -24,4 +20,5 @@ export const DeleteOne = ({ id }) => {
 const Button = styled.button`
   border: none;
   background: none;
+  cursor: pointer;
 `;

@@ -25,4 +25,5 @@ export const Important = ({ ifImportant, id }) => {
 const Button = styled.button`
   border: none;
   background: none;
+  cursor: pointer;
 `;

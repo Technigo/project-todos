@@ -38,6 +38,7 @@ const Button = styled.button`
   margin-right: 1rem;
   width: 30%;
   padding: 0.5rem;
+  cursor: pointer;
   @media (min-width: 768px) {
     margin-bottom: 0;
     margin-right: 0;
