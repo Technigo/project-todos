@@ -1,0 +1,32 @@
+/* Tasks page */
+section.taskItem {
+  border-bottom: 2px dotted rgb(133, 155, 161);
+}
+
+.taskOnClick {
+  height: 5%;
+}
+
+.taskList {
+  display: flex;
+  align-items: center;
+  margin: 20px;
+  height: 25%;
+  width: 100%;
+}
+
+.taskName {
+  text-align: left;
+  width: 100%;
+  margin: 10px;
+  font-size: 18px;
+}
+
+.taskName:focus {
+  color: gray;
+}
+
+.removeBtn {
+  border: none;
+  color: rgb(133, 155, 161);
+}

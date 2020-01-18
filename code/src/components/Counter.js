@@ -20,7 +20,7 @@ export const Counter = () => {
   return (
     <section className="counterContainer">
       <div>
-        <h3 className="tasksLeft">{currentTasks} tasks left</h3>
+        <h3 className="tasksLeft">{currentTasks} tasks</h3>
       </div>
       <div>
         <button

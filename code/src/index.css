@@ -6,78 +6,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   border: 1px solid grey;
-  font-family: 'Helvetica';
+  font-family: 'Caveat', cursive;
+  letter-spacing: 1.5px;
+
   height: 600px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
-
-/* Tasks page */
-section.taskItem {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  border-bottom: 1px solid grey;
-}
-
-.taskOnClick {
-  height: 5%;
-}
-
-.taskList {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 20px;
-  height: 25%;
-  width: 100%;
-}
-
-.taskName {
-  text-align: left;
-  width: 100%;
-  display: flex;
-  margin: 10px;
-}
-
-.taskName:focus {
-  color: grey;
-}
-
-/* AddTask page */
-.addTaskForm {
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  height: 60px;
-  border-bottom: 1px solid grey;
-  background: rgb(232, 236, 238);
-}
-
-input.addTask {
-  width: 50%;
-  height: 50px;
-  border: none;
-  background: rgb(232, 236, 238);
-}
-
-.addTaskBtn {
-  width: 20%;
-  height: 50px;
-  border: none;
-  background: rgb(254, 253, 253);
-  margin: 10px;
-}
-
-input::placeholder {
-  text-align: left;
-  font-size: 14px;
-}
-
-i {
-  font-size: 18px;
-  color: gray;
 }

@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { useSelector } from 'react-redux';
 
 const taskData = [
   { id: 1, text: 'Book hotel in Ubud', complete: false },
@@ -44,8 +43,9 @@ export const tasks = createSlice({
         task => task.id !== action.payload
       );
     },
-    removeAllTasks: (state, action) => {
-      state.taskData = state.taskData.filter(task => task !== action.payload);
+    removeAllTasks: state => {
+      state.taskData = [];
+      //state.taskData = state.taskData.filter(task => task !== action.payload);
     }
   }
 });

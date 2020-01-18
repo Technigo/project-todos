@@ -6,6 +6,8 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import { tasks } from 'reducers/tasks';
+import { ClearButton } from 'components/ClearButton';
+import { FridgeSummary } from 'components/FridgeSummary';
 
 const reducer = combineReducers({
   tasks: tasks.reducer

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
+import './AddTask.css';
 
 export const AddTask = () => {
   const [toDoText, setToDoText] = useState('');

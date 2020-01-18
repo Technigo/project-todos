@@ -1,13 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { tasks } from 'reducers/tasks';
+import './Task.css';
 
 export const Task = ({ task }) => {
   const dispatch = useDispatch();
+  const [changeColor, setChangeColor] = useState('black');
 
   const handleCheckbox = () => {
     dispatch(tasks.actions.toggleCompleteTask(task.id));
     dispatch(tasks.actions.addToCounter(task.complete));
+    const nextColor = changeColor === 'red';
+    setChangeColor(nextColor);
   };
 
   const handleRemoveOnClick = () => {
@@ -23,17 +27,9 @@ export const Task = ({ task }) => {
           checked={task.complete}
           onChange={handleCheckbox}
         />
-
-        <p className="taskName" onClick={handleCheckbox}>
-          {task.text}
-        </p>
-        <button
-          className="removeBtn"
-          type="button"
-          onClick={handleRemoveOnClick}
-        >
-          Delete
-        </button>
+        <label className="taskName">
+          <span onClick={handleCheckbox}> {task.text}</span>
+        </label>
       </div>
     </section>
   );

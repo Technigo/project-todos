@@ -1,0 +1,46 @@
+/* AddTask styling */
+.addTaskForm {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 60px;
+  border-bottom: 2px solid rgb(133, 155, 161);
+  background: rgb(232, 236, 238);
+  padding-left: 20px;
+}
+
+input.addTask {
+  width: 50%;
+  height: 50px;
+  border: none;
+  background: rgb(232, 236, 238);
+  font-family: 'Caveat', cursive;
+}
+
+.addTaskBtn {
+  width: 20%;
+  height: 50px;
+  border: none;
+  background: rgb(232, 236, 238);
+  margin: 10px;
+}
+
+input::placeholder {
+  text-align: left;
+  font-size: 25px;
+}
+
+i {
+  font-size: 20px;
+  color: rgb(133, 155, 161);
+}
+
+i:hover {
+  color: white;
+}
+
+@media (min-width: 600px) {
+  .addTaskForm {
+    justify-content: center;
+  }
+}
