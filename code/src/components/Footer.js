@@ -20,10 +20,15 @@ const StyledFooter = styled.div`
 
 const Button = styled.button`
   display: ${props => (props.hidden ? 'none' : '')};
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  /* border: 1px solid rgba(0, 0, 0, 0.1); */
+  border: 1px solid rgba(0, 117, 255, 1);
   background-color: rgba(0, 0, 0, 0.02);
-  border-radius: 10px;
-  color: rgba(0, 230, 170, 1);
+  /* background-color: rgba(0, 230, 170, 0.7); */
+  /* background-color: rgba(0, 117, 255, 1); */
+  border-radius: 5px;
+  /* color: rgba(0, 230, 170, 1); */
+  /* background-color: transparent; */
+  color: rgba(0, 117, 255, 1);
   padding: 0.3rem 0.5rem;
   font-size: 0.9rem;
   outline: none;
@@ -34,7 +39,10 @@ const Button = styled.button`
   }
 
   &:hover:enabled {
-    background-color: rgba(0, 230, 170, 1);
+    /* background-color: rgba(0, 230, 170, 1); */
+    background-color: rgba(0, 117, 255, 1);
+    /* background-color: rgba(0, 0, 0, 0.02); */
+    opacity: 1;
     color: #ffffff;
     transition: all 200ms ease-in-out;
   }
