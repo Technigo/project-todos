@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux'
 
 import { CheckBox } from './CheckBox'
 import { RemoveButton } from './RemoveButton'
-import "./tasklists.css"
+import "./taskslist.css"
 
 
-export const TaskLists = () => {
+export const TasksList = () => {
   // TODO - fetch all tasks from the store
   const allTasks = useSelector((store) => store.tasks)
 

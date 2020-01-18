@@ -27,6 +27,7 @@ export const tasks = createSlice({
         foundItem.complete = !foundItem.complete
       }
     },
+
     removeAllTasks: (state, action) => {
       state.items = []
 

@@ -6,9 +6,10 @@ import { tasks } from './reducers/tasks'
 // import { todo } from './reducers/todo'
 
 
-import { TaskLists } from './components/TaskLists'
+import { TasksList } from './components/TasksList'
 import { AddNewTask } from "./components/AddNewTask"
 import { Header } from "./components/Header"
+import { TasksSummary } from "./components/TasksSummary"
 
 
 
@@ -25,8 +26,9 @@ export const App = () => {
     <Provider store={store}>
       <main>
         <Header />
+        <TasksSummary />
         <AddNewTask />
-        <TaskLists />
+        <TasksList />
       </main>
 
     </Provider>

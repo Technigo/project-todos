@@ -11,6 +11,8 @@ export const AddNewTask = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    if (sendTask === "") return
+
     dispatch(tasks.actions.addTask(sendTask))
     setSendTask("")
   }
