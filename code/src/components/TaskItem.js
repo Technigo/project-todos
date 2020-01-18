@@ -17,24 +17,25 @@ export const TaskItem = props => {
 
   return (
     <li>
-      <label>
-        <input
-          className="checkbox"
-          type="checkbox"
-          checked={props.item.isDone}
-          onChange={handleCheckboxClick}
-        />
-      </label>
-
-      {props.item.name}
-
-      <button
-        className="remove-button"
-        type="button"
-        onClick={handleRemoveButtonClick}
-      >
-        <img src={rubbish} alt="Bin" className="delete-icon" />
-      </button>
+      <div className="task-list">
+        <label ClassName="checkbox-label">
+          <input
+            className="checkbox"
+            type="checkbox"
+            checked={props.item.isDone}
+            onChange={handleCheckboxClick}
+          />
+          <span className="fake-checkbox"></span>
+        </label>
+        <p>{props.item.name}</p>
+        <button
+          className="remove-button"
+          type="button"
+          onClick={handleRemoveButtonClick}
+        >
+          <img src={rubbish} alt="Bin" className="delete-icon" />
+        </button>
+      </div>
     </li>
   );
 };
