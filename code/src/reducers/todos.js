@@ -51,7 +51,7 @@ export const todos = createSlice({
     addTodo: {
       reducer(state, action) {
         const { id, text, createdAt } = action.payload;
-        state.push({ id, text, createdAt, pin: false, completed: false });
+        state.push({ id, text, createdAt, pinned: false, completed: false });
       },
       prepare({ text }) {
         return {
@@ -65,6 +65,12 @@ export const todos = createSlice({
     },
     removeTodo: (state, action) => {
       return state.filter(item => item.id !== action.payload.id);
+    },
+    clearAllTodos: (state, action) => {
+      return (state = []);
+    },
+    clearCompletedTodo: (state, action) => {
+      return state.filter(item => item.completed === false);
     },
     toggleCompleted: (state, action) => {
       const { id } = action.payload.todo;

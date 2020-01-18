@@ -37,7 +37,7 @@ const Icon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem 0;
+  margin: 2rem 0 1.5rem 0;
   font-size: 4rem;
   color: rgba(230, 0, 60, 1);
 `;

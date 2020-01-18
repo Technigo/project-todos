@@ -4,14 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { todos } from 'reducers/todos';
 import { visibilityFilter } from 'reducers/visibilityFilter';
 
-const StyledAddTodo = styled.div`
-  /* border-bottom: ${props =>
-    props.empty ? '1px solid rgba(0, 0, 0, 0.1)' : ''}; */
-`;
+const StyledAddTodo = styled.div``;
 
 const Form = styled.form`
   height: 55px;
-  /* display: flex; */
   display: grid;
   grid-template-columns: 57px 12fr;
   grid-gap: 0.5rem;
@@ -19,9 +15,6 @@ const Form = styled.form`
 `;
 
 const Input = styled.input`
-  /* width: 90%; */
-  /* padding-left: 1rem; */
-  /* flex-grow: 2; */
   border: none;
   outline: none;
   font-size: 1rem;
@@ -38,9 +31,8 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-  /* width: 50px; */
   color: rgba(0, 0, 0, 0.3);
-  padding: 0 1rem;
+  padding: 0 1rem 0 1.2rem;
   background-color: transparent;
   border: none;
   font-weight: bold;

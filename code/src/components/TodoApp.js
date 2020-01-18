@@ -5,10 +5,9 @@ import { Todos } from 'components/Todos';
 import { AddTodo } from 'components/AddTodo';
 import { Filters } from 'components/Filters';
 import { Header } from 'components/Header';
+import { Footer } from 'components/Footer';
 
-const StyledTodoApp = styled.div`
-  /* border: 1px solid #ff0000; */
-`;
+const StyledTodoApp = styled.div``;
 
 export const TodoApp = () => {
   return (
@@ -18,6 +17,7 @@ export const TodoApp = () => {
       <Filters />
       <AddTodo />
       <Todos />
+      <Footer />
     </StyledTodoApp>
   );
 };

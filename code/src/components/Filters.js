@@ -9,7 +9,8 @@ const StyledFilters = styled.div`
   grid-template-rows: 30px 30px;
   grid-gap: 0.5rem;
   justify-content: center;
-  padding: 0.4rem;
+  padding: 0rem 0.4rem 0.4rem 0.4rem;
+  /* border: 1px solid green; */
 
   @media screen and (min-width: 450px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -54,9 +55,7 @@ const Icon = styled.div`
 
 export const Filters = () => {
   const dispatch = useDispatch();
-
   const filter = useSelector(state => state.visibilityFilter);
-
   const countAll = useSelector(state => state.todos);
   const countActive = useSelector(state =>
     state.todos.filter(todo => todo.completed !== true)

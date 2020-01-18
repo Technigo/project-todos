@@ -1,15 +1,29 @@
 import React from 'react';
 import styled from 'styled-components';
+const moment = require('moment');
 
 const StyledHeader = styled.div`
-  /* background-color: rgba(0, 0, 0, 0.02); */
-  /* border-bottom: 1px solid rgba(0, 0, 0, 0.1); */
-  /* box-shadow: 0 1px 6px 0 rgba(14, 30, 37, 0.12); */
-  margin-bottom: 0.8rem;
-  color: white;
-  height: 100px;
+  margin: 0.8rem 0 0 1rem;
+  color: rgba(230, 0, 60, 1);
+  height: 70px;
+  font-size: 1.3rem;
+  font-weight: bold;
+`;
+
+const Title = styled.p``;
+
+const Date = styled.p`
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 0.8rem;
 `;
 
 export const Header = () => {
-  return <StyledHeader>Test</StyledHeader>;
+  // const time = new window.Date.now();
+  // console.log(time);
+  return (
+    <StyledHeader>
+      <Title>Todo</Title>
+      <Date>January 18th</Date>
+    </StyledHeader>
+  );
 };
