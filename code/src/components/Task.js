@@ -16,27 +16,31 @@ export const Task = (props) => {
     }
 
     return (
-        <ul className="todo-list">
-            <p className="strikethrough">{props.task.text}</p>
-            <div className="checkbox-container">
+        <section className="todo-list">
 
-                <input
-                    className="checkbox" id="checkbox"
-                    // className="checkbox"
-                    type="checkbox"
-                    checked={props.task.needsMore}
-                    onChange={handleCheckboxClick}
-                />
-                {/* removing items/tasks */}
-                <label for="checkbox">
-                    <button
-                        type="button"
-                        onClick={handleRemoveButtonClick}>
-                        <span role="img" aria-label="x">✖️</span>
-                    </button>
+            <ul className={props.task.needsMore ? 'checked' : 'unchecked'}>
+                <span className="text">
+                    {props.task.text}
+                </span>
 
-                </label>
-            </div>
-        </ul >
+                <div className="checkbox-container">
+                    <input
+                        className="checkbox" id="checkbox"
+                        type="checkbox"
+                        checked={props.task.needsMore}
+                        onChange={handleCheckboxClick}
+                    />
+                    {/* removing items/tasks */}
+                    <label for="checkbox">
+                        <button
+                            type="button"
+                            onClick={handleRemoveButtonClick}>
+                            <span className="styled-button" role="img" aria-label="x">✖️</span>
+                        </button>
+
+                    </label>
+                </div>
+            </ul >
+        </section>
     )
 }

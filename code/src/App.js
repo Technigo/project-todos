@@ -22,12 +22,14 @@ const store = configureStore({ reducer })
 
 export const App = () => {
   return (
-    <Provider store={store} className="app-container">
-      <Header />
-      <AddTask />
-      <TaskList />
-      <Counter />
-      <Footer />
-    </Provider>
+    <div className="app-container">
+      <Provider store={store} >
+        <Header />
+        <AddTask />
+        <TaskList />
+        <Counter />
+        <Footer />
+      </Provider>
+    </div>
   )
 }

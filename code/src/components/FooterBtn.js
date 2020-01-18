@@ -21,7 +21,7 @@ export const FooterBtn = (props) => {
                 className="footer-btn"
                 type="button"
                 onClick={handleNewDayButtonClick}>
-                New Day
+                Clear All
             </button>
         </div>
     )

@@ -1,4 +1,13 @@
 .app-container {
-    width: 375px;
+    width: 500px;
     border: 1px solid white;
+}
+
+/***** Media ******/
+@media (min-width: 375px) and (max-width: 650px){
+.app-container {
+    border: none;
+    width: auto;
+}
+
 }
