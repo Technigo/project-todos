@@ -22,6 +22,11 @@
   background-color: #4cbbb9;
 }
 
+.add-button:hover {
+  opacity: 0.8;
+  cursor: pointer;
+}
+
 label {
   padding-top: 30px;
   padding-left: 10px;
