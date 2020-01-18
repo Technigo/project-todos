@@ -20,10 +20,23 @@ export const TodoItem = props => {
         checked={props.item.complete}
         onChange={handleCheckboxClick}
       />
+
       <li>{props.item.name}</li>
+
       <button type='button' onClick={handleRemoveClick}>
         Remove
       </button>
     </>
   )
 }
+
+// const Todo = ({ onClick, completed, text }) => (
+//   <li
+//     onClick={onClick}
+//     style={{
+//       textDecoration: completed ? 'line-through' : 'none'
+//     }}
+//   >
+//     {text}
+//   </li>
+// )

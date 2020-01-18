@@ -2,17 +2,23 @@ import React from "react"
 import { useSelector } from "react-redux"
 
 export const Header = () => {
+  const now = new Date(Date.now())
+  const options = { dateStyle: "long" }
+  const date = new Intl.DateTimeFormat("sv-SE", options).format(now)
+
   const uncomplete = useSelector(store =>
-    store.todoList.items.reduce(total => total + 1, 0)
+    store.todoList.items.reduce((total, item) => {
+      if (item.complete) {
+        return total
+      } else {
+        return total + 1
+      }
+    }, 0)
   )
-  return <div>{uncomplete}</div>
+  return (
+    <div>
+      <div> {date} </div>
+      <div>todos left todo: {uncomplete}</div>
+    </div>
+  )
 }
-
-//dagens datum
-//summera uncompleted task
-
-// const totalPrice = useSelector(store =>
-//   store.cart.items.reduce(
-//     (total) => total + item.price * item.quantity,
-//     0
-//   )
