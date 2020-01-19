@@ -1,8 +1,9 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { todos } from 'reducers/todos'
+import React from "react"
+import { useDispatch } from "react-redux"
+import { todos } from "reducers/todos"
+
 import "./task.css"
-import deleteSymbol from '../icons/icons8-delete-yellow.svg'
+import deleteSymbol from "../icons/icons8-delete-yellow.svg"
 
 export const Task = ({ task }) => {
   const dispatch = useDispatch()
