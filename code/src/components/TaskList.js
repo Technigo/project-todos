@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 import { TaskItem } from 'components/TaskItem'
+import done from 'assets/done.png'
 
 export const TaskList = () => {
 
@@ -14,7 +15,10 @@ export const TaskList = () => {
   return (
     <TasksWrapper>
       {allTasks.length === 0 &&
-        <NoTasks>Yay! You don't have any todos <span role='img' aria-label='yay'>✌️</span></NoTasks>
+        <>
+          <NoTasks>Yay - you don't have any todos!</NoTasks>
+          <NoTasksImg src={done} alt='No todos' />
+        </>
       }
 
       {tasksNotCompleted.map((task) => (
@@ -32,11 +36,17 @@ export const TaskList = () => {
 const TasksWrapper = styled.section`
   background: #fff;
   padding-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 const NoTasks = styled.div`
   font-size: 16px;
   color: #999;
-  display: flex;
-  justify-content: center;
+  text-align: center;
   padding: 30px;
+`
+const NoTasksImg = styled.img`
+  width: 50%;
+  margin: 0 auto;
 `
