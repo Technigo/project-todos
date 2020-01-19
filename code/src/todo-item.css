@@ -1,3 +1,15 @@
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  padding: 0.5em 1em;
+  font-size: 1.3em;
+}
+
 .container {
   display: block;
   position: relative;
@@ -65,6 +77,10 @@
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.checked {
+  color: lightgray;
 }
 
 .remove {

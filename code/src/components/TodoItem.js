@@ -14,7 +14,10 @@ export const TodoItem = props => {
   }
 
   return (
-    <li className='todo-item'>
+    <li
+      className={props.item.complete ? "checked" : "unchecked"}
+      draggable='true'
+    >
       <label className='container'>
         <input
           type='checkbox'
@@ -28,12 +31,10 @@ export const TodoItem = props => {
         className='remove'
         type='button'
         onClick={handleRemoveClick}
-        aria-label='remove'
+        aria-label='remove todo'
       >
         🗑️
       </button>
     </li>
   )
 }
-
-// ariaLabel
