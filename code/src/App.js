@@ -30,7 +30,7 @@ export const App = () => {
       <footer>
        
         <TodoTasksSummary />
-        <ClearButton />
+        <ClearButton /> 
       </footer>
     </Provider>
   )

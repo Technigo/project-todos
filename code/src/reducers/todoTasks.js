@@ -4,10 +4,10 @@ import { createSlice, combineReducers } from '@reduxjs/toolkit'
 const initialState = {
 //items
 todos:[
-    { id: 1, name: 'Shop', completeTodo: true },
-    { id: 2, name: 'Go to the gym', completeTodo: true },
-    { id: 3, name: 'Walk the dog', completeTodo: true },
-    { id: 4, name: 'Create a todo app', completeTodo: false }
+    { id: 1, name: 'Kids off to school', completeTodo: true },
+    { id: 2, name: 'CrossFit', completeTodo: true },
+    { id: 3, name: 'Walk the puppy', completeTodo: true },
+    { id: 4, name: 'Create a to-do app', completeTodo: false }
     ]
 }
 
