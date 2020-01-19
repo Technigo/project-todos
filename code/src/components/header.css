@@ -7,6 +7,10 @@ header{
     color:#f5eccf;
 }
 
+header p{
+    font-size: 18px;
+}
+
 .task-count{
     align-self: flex-end;
 }

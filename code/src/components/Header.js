@@ -6,14 +6,7 @@ import './header.css'
 export const Header = () => {
 
 const quantity = useSelector((state) => state.fridge.items )
-
 const totalQuantity = quantity.length
-
-
-// const handleQuantity = () => {
-//     dispatch
-// }
-
 const moment = require('moment');
 
 

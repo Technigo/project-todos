@@ -5,6 +5,7 @@ import { Header } from 'components/Header'
 import { AddTaskForm } from './components/AddTaskForm'
 import { TaskList } from './components/TaskList'
 import { fridge } from './reducers/fridge'
+import { NoTask } from './components/NoTask'
 import './app.css'
 
 const reducer = combineReducers({
@@ -17,12 +18,14 @@ const store = configureStore({ reducer: reducer})
 
 export const App = () => {
   return (
+
     <Provider store={store}>
-    {/* <> */}
-    <Header />
-    <AddTaskForm />
-    <TaskList />
-    {/* </> */}
+      {/* <> */}
+      <Header />
+      <AddTaskForm />
+      <TaskList />
+      {/* </> */}
+      <NoTask />
     </Provider>
   )
 }
