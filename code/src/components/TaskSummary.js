@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux' //because we will have a action
-import { tasks } from 'reducers/tasks'
+import styled from 'styled-components/macro'
 
 export const TaskSummary = () => {
 
@@ -8,25 +8,36 @@ export const TaskSummary = () => {
   const doMoreTasks = tasks.filter(task => task.completed)
 
   const [showShoppingList, setShowShoppingList] = useState(false)
-  const buyMoreItems = tasks.filter(task => task.completed)
+  const completedItems = tasks.filter(task => task.completed)
 
   return (
-    <section>
-      <h1>TOTAL {tasks.length} TASKS</h1>
-      <h2>I NEED TO DO: {doMoreTasks.length} item{""}
-        {doMoreTasks.length === 1 ? "." : "s."}
+    <>
+      <Completed>Completed {doMoreTasks.length} task{""}{doMoreTasks.length === 1 ? "" : "s"}
         <span onClick={() => setShowShoppingList(!showShoppingList)}> ➕ </span>
-      </h2>
+      </Completed>
 
       {showShoppingList && (
         <ol>
-          {buyMoreItems.map(task => (
-            <li key={task.id}>{task.text}</li>
+          {completedItems.map(task => (
+            <ListItem key={task.id}>{task.text}</ListItem>
           ))}
         </ol>
       )
       }
-
-    </section >
+    </>
   )
 }
+
+const Completed = styled.section`
+  background: #df993e;
+  color: #343434;
+  padding: 20px;
+  font-weight: 600;
+`
+const ListItem = styled.li`
+  color: #343434;
+  padding: 10px;
+  font-weight: 600;
+
+`
+

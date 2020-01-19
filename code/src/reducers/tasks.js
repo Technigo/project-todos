@@ -2,8 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   tasks: [
-    { id: 1, text: 'Clean', completed: false },
-    { id: 2, text: 'Workout', completed: true },
+    { id: 1, text: 'Dance', completed: false },
+    { id: 2, text: 'Workout', completed: false },
     { id: 3, text: 'Get dressed', completed: false }
   ]
 }
@@ -20,7 +20,6 @@ export const tasks = createSlice({
       // remove it from the items array
       state.tasks = state.tasks.filter((todo) => todo.id !== action.payload)
     },
-
     removeAll: (state, action) => {
       state.tasks = []
     },
