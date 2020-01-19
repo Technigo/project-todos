@@ -16,9 +16,11 @@ export const AddTask = () => {
   return (
     <TaskForm onSubmit={handleSubmit}>
       <NewTask>
-        <AddNewTask type="submit" active={item.length > 0 ? true : false}>
-          +
-        </AddNewTask>
+        <AddNewTask
+          type="submit"
+          value="+"
+          active={item.length > 0 ? true : false}
+        />
         <label>
           <TaskText
             type="text"
@@ -45,18 +47,15 @@ const TaskForm = styled.form`
   width: 100%;
 `;
 
-const AddNewTask = styled.button`
+const AddNewTask = styled.input`
   border: none;
   background-color: #fff;
   color: #000;
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
-  margin: 0px 20px;
-  padding: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 20px;
+  line-height: 20px;
+  margin: 0px 30px;
+  padding: 0px;
+  text-align: center;
   opacity: ${props => (props.active ? "1" : "0.6")};
 `;
 
@@ -66,7 +65,12 @@ const TaskText = styled.input`
   width: 100%;
   height: 30px;
   font-size: 20px;
-
+  line-height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0px;
   @media (min-width: 768px) {
     width: 40vw;
   }

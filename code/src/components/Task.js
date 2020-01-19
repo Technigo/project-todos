@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { tasks } from "../reducers/tasks";
 import styled from "styled-components";
+import moment from "moment";
 
 export const Task = props => {
   const dispatch = useDispatch();
@@ -18,7 +19,14 @@ export const Task = props => {
           checked={props.task.complete}
           onChange={handleCheckboxClick}
         />
-        <ItemText completed={props.task.complete}>{props.task.text}</ItemText>
+        <ItemInfo>
+          <ItemText completed={props.task.complete}>{props.task.text}</ItemText>
+          <ItemAdded completed={props.task.complete}>
+            {props.task.complete
+              ? "Completed " + moment(props.task.completed).fromNow()
+              : "Added " + moment(props.task.added).fromNow()}
+          </ItemAdded>
+        </ItemInfo>
       </ItemLabel>
     </Item>
   );
@@ -29,18 +37,18 @@ const Item = styled.li`
   list-style: none;
   width: 100%;
   background-color: #fdfdfd;
-  margin-bottom: 2px;
+  margin-bottom: 2px solid #f0f0f0;
   border-bottom: 2px solid #f0f0f0;
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  font-size: 20px;
+  font-size: 15px;
   overflow: auto;
 `;
 
 const ItemLabel = styled.label`
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-between;
   align-items: center;
 `;
 
@@ -62,10 +70,20 @@ const Check = styled.input`
   }
 `;
 
-const ItemText = styled.span`
+const ItemInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const ItemText = styled.p`
   opacity: ${props => (props.completed ? "0.6" : "1")};
-  width: 100%;
-  height: 30px;
   display: inline-block;
   overflow: hidden;
+  margin: 0px;
+`;
+
+const ItemAdded = styled.p`
+  opacity: ${props => (props.completed ? "0.6" : "1")};
+  font-size: 10px;
+  margin: 0px;
 `;
