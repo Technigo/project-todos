@@ -14,20 +14,22 @@ export const AddTaskForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Task:
-        <input
-          className="input-field"
-          placeholder=" e.g buy milk"
-          type="text"
-          value={name}
-          onChange={event => setName(event.target.value)}
-        />
-      </label>
-      <button className="add-button" type="submit">
-        +
-      </button>
-    </form>
+    <section className="form">
+      <form onSubmit={handleSubmit}>
+        <label>
+          Task:
+          <input
+            className="input-field"
+            placeholder=" e.g buy milk"
+            type="text"
+            value={name}
+            onChange={event => setName(event.target.value)}
+          />
+        </label>
+        <button className="add-button" type="submit">
+          +
+        </button>
+      </form>
+    </section>
   );
 };

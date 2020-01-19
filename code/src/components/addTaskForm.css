@@ -38,3 +38,10 @@ label {
 .input-field {
   height: 20px;
 }
+
+@media (min-width: 1281px) {
+  .form {
+    justify-content: center;
+    display: flex;
+  }
+}
