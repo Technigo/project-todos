@@ -14,61 +14,46 @@ body {
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  monospace;
 }
 
+
+
+/*******HEADER **********/
+
 .headerContainer {
-  background-color: silver;
+  background-color: #f4c2d8;
+  display: flex;
+  justify-content: left;
 }
 
 .headerInfo {
   padding: 25px;
-  color: #f0f0f0;
-  margin-left: 15px;
+  color: white;
+  font-weight: lighter;
   display: inline-block;
   border-bottom: solid 1px lightgray;
 }
 
 .headerTasks{
-  margin-right: 20px;
-  flex-direction: column;
+  position: absolute;
+  right: 0;
   display: inline-block;
-}
-.taskTotal {
-  /* display: inline-block;
-  float: right; */
-  color: grey;
+
 }
 
-.totalButton {
-  border-radius: 10%;
-  background: lightskyblue;
-  display: inline-flex;
-  float: right;
-  margin-top: 12%;
-  color: white;
-  margin-right: 20px; 
-}
-
-.totalButton p{
-  color: white;
-  display: inline;
-}
+/*******Add-Todo*******/
 
 .inputField {
   display: flex; 
-    /* flex-direction: row; */
-    /* justify-content: left; */
-    /* justify-content: space-between; */
-    padding: 20px;
-    /* align-items: center; */
-    border-bottom: solid 1px lightgray;
-  
+  padding: 20px;
+  border-bottom: solid 1px #ced6e3;
 }
+
 input {
   border: hidden;
   font-size: 20px; 
-  color: #96969677;
+  color:#ced6e3;
   align-items: center; 
   }
 
@@ -78,22 +63,30 @@ input:focus, textarea {
 }
 
 .addTodoButton {
-  border: none;
   border: solid 1px lightgray;
   border-radius: 50%;
-  padding: 10px 5px;
+  padding: 8px 8px;
   color: white;
   cursor: pointer;
+  margin-right: 10px;
+  color:#ced6e3;
 }
 
 label {
   border: none;
 }
+
+/******** List of to-do's***********/
+
 .todos {
   display: flex;
   flex-direction: column;
   justify-content: center;
   list-style: none;
+}
+
+.checkbox {
+  margin-right: 10px;
 }
 .todo {
   display: flex;
@@ -101,120 +94,45 @@ label {
   justify-content: left;
   padding: 20px;
   font-size: 20px;
-  color: #96969677;
+  color:#ced6e3;
   align-items: center;
-  border-bottom: solid 1px lightgray;
+  border-bottom: solid 1px#ced6e3;
 }
 
-.todoName {
-  text-align: left;
-  padding-left: 10px; 
-}
+/******Footer******/
 
-/* .product .emoji {
-  font-size: 15vw;
-} */
-.todo button {
-  font-size: 15px;
-  border: none;
-  background: lightskyblue;
-  border-radius: 50%;
-  padding: 10px;
-  color: white;
-  cursor: pointer;
-}
-
-.emoji {
-  font-size: 15px;
-  border: none;
-  background: white;
-  border-radius: 50%;
-  padding: 10px;
-  color: white;
-  cursor: pointer;
-}
-.icon {
-  align-items: center;
-  justify-content: center;
-}
-/* .total {
-  background: #0003ff;
-  color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
+footer {
+  background-color: #f4c2d8;
   display: flex;
-} */
-/* .cart .emoji {
+  justify-content: left;
+  padding: 30px 10px;
+  display: flex;
+}
+
+.summary {
+  padding: 25px;
+  color: white;
+  margin-inline: 10px;
+}
+
+.summary span {
   background: white;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 60px;
-} */
-/* .total .total {
-  display: flex;
-  align-items: center; */
-/* } */
-/* .cart .amount {
-  font-size: 30px;
-  margin-left: 10px;
-} */
-/* .total .items {
-  margin: 0;
-  padding: 0;
-  margin-left: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  width: 40%;
-  gap: 10px;
-  min-height: 110px;
-}
-.total .items li {
-  list-style-type: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-} */
-/* .cart .items .emoji {
-  width: 50px;
-  height: 50px;
-  font-size: 30px;
-  margin-right: 10px;
-} */
-/* .total .sum {
-  display: block;
-  font-weight: bold;
-  width: 100%;
-}
-.total .quantity {
-  margin-right: 10px;
-}
-.total .actions button {
-  appearance: none;
-  border: none;
-  background: rgb(246, 166, 34);
-  color: white;
-  margin-right: 2px;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  font-size: 20px;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  line-height: 0.8;
-}
-.total .info,
-.total .actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-} */
+  font-size: 36px;
+  margin-left: 15px;
+} 
 
+.clearButton {
+  background: transparent;
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+  border: solid 1px white;
+  border-radius: 50%;
+  padding: 8px 25px;
+}

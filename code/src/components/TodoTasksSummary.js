@@ -6,26 +6,29 @@ import { todoTasks } from 'reducers/todoTasks'
 export const TodoTasksSummary = () => {
     // keeps track of all the things to do / summary
     const todos = useSelector(state => state.todoTasks.todos)
-    // keeps track of the things not checked or completed yet
+    // keeps track of the things checked and completed 
     // filter (online shopping) gets many things out / find (look for one word ex) only one item
     const stillTodos = todos.filter(todo => todo.completeTodo)
-
-
+    // shows the list on whats left to do
     const [ShowTodoList, setShowTodoList] = useState(false)
 
     return (
-        <section>
-            <h1> I have in total {todos.length} on my agenda </h1>
-            <h2>I still need to do {stillTodos.length} these thing 
-            {stillTodos.length ===1 ? "." : "s."}</h2>
-            <span onClick={() => setShowTodoList(!ShowTodoList)}> Get going / thins to do! </span>
+        <div className="summary">
+            <h4> {stillTodos.length} ✔️ of {todos.length} 
+                <span   
+                    type='button'
+                    onClick={() => setShowTodoList(!ShowTodoList)}> 
+                        💡
+                </span> 
+            </h4>
 
             {ShowTodoList && (
                 <ol>
-                    {stillTodos.map(todo => <li key={todo.id}>{todo.name}</li>)}
+                    {stillTodos.map(
+                        todo => <li key={todo.id}>{todo.name}</li>)}
                 </ol>
             )}
-        </section>
+        </div>
     )
 }
 

@@ -6,8 +6,10 @@ export const ClearButton = () => {
     const dispatch = useDispatch()
 
     return (
-        <button type = 'button' onClick= {() => dispatch(todoTasks.actions.removeAll())}>
-        removeAll
+        <button 
+            className="clearButton" 
+            type = 'button' onClick= {() => dispatch(todoTasks.actions.removeAll())}>
+                Done
         </button>
     )
 }

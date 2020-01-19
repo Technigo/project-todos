@@ -15,7 +15,7 @@ export const AddTodoForm = () => {
     }
 
     return (
-        <article className="inputField">
+        <div className="inputField">
             <form className=""
                 onSubmit={handleSubmit}>
                     <button className="addTodoButton"
@@ -24,7 +24,7 @@ export const AddTodoForm = () => {
                                 className="emoji" 
                                 role="img" 
                                 aria-label="butterfly">
-                                    🦋
+                                    ➕
                             </span>
                     </button>
         
@@ -37,47 +37,6 @@ export const AddTodoForm = () => {
                 </label>
 
             </form>
-        </article>
+        </div>
     )
 }
-    // const handleInputChange = e => {
-    //     setTodoText(e.target.value)
-    // }
-
-    // const handleSubmit = e => {
-    //     e.preventDefault()
-    //     if (!todoText()) {
-    //         return
-    //     }
-    //     dispatch(todoTasks.actions.AddTodoForm({ text: todoText }))
-    // }
-
-    // return (
-    //     <div className="InputField">
-    //         <form onSubmit={handleSubmit}>
-    //             <button type="submit">Add todo</button>
-    //             <input value={todoText} type="text" onChange={handleInputChange} />
-    //         </form>
-    //     </div>
-    // )
-    // }
-
-
-//     return (
-
-//         <article className="InputField">
-//             <form onSubmit={handleSubmit}>
-
-//                 <button
-//                     type="button"
-//                     // disabled={todo.inventory === 0}
-//                     onClick={() => ((AddTodo))}>
-//                     <span className="emoji" role="img" aria-label="butterfly">🦋</span>
-//                     <input value={todoText} type="text" onChange={handleInputChange} />
-//                 </button>
-
-//             </form>
-//         </article>
-//     )
-// }
-
