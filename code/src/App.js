@@ -8,6 +8,7 @@ import { Header } from 'components/Header'
 import { AddTask } from 'components/AddTask'
 import { EmptyListState } from 'components/EmptyListState'
 import { TaskList } from 'components/TaskList'
+import { ClearButton } from 'components/ClearButton'
 
 import "index.css"
 
@@ -25,6 +26,7 @@ export const App = () => {
       <AddTask />
       <EmptyListState />
       <TaskList />
+      <ClearButton />
     </Provider>
   )
 }
