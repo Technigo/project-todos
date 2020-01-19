@@ -2,18 +2,18 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
-import { todoList } from 'reducers/todoList'
+import { todos } from 'reducers/todos'
 
-import { TaskList } from 'components/TaskList'
-import { AddTask } from 'components/AddTask'
 import { Header } from 'components/Header'
+import { AddTask } from 'components/AddTask'
 import { EmptyListState } from 'components/EmptyListState'
+import { TaskList } from 'components/TaskList'
 
 import "index.css"
 
 // Combine reducers
 const reducer = combineReducers({
-  todoList: todoList.reducer
+  todos: todos.reducer
 })
 
 const store = configureStore({ reducer })

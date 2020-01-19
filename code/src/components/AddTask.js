@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import "./addTask.css"
 import { useDispatch } from 'react-redux'
-import { todoList } from '../reducers/todoList'
+import { todos } from '../reducers/todos'
 import addSymbol from 'icons/icons8-plus.svg'
 
 export const AddTask = () => {
@@ -10,7 +10,7 @@ export const AddTask = () => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
-    dispatch(todoList.actions.addTask(task))
+    dispatch(todos.actions.addTask(task))
     setTask("")
   }
 
@@ -28,7 +28,7 @@ export const AddTask = () => {
         aria-label="Add task"
         type="submit"
         value={task}
-        disabled={task.length < 5 ? "disabled" : ""}
+        disabled={task.length === 0 ? "disabled" : ""}
         className="task-submit"  >
         <img src={addSymbol} alt="Add task" className="add-symbol" />
       </button>

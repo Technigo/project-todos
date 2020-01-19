@@ -4,7 +4,7 @@ import "./emptyListState.css"
 import listIllustration from "../icons/kingdom-list-is-empty.png"
 
 export const EmptyListState = () => {
-  const list = useSelector(state => state.todoList.tasks)
+  const list = useSelector(state => state.todos.tasks)
   const emptyList = list.length === 0;
 
   return (

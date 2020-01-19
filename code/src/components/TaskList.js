@@ -5,7 +5,7 @@ import { Task } from 'components/Task'
 
 
 export const TaskList = () => {
-  const allTasks = useSelector(state => state.todoList.tasks)
+  const allTasks = useSelector(state => state.todos.tasks)
 
   return (
     <ul className="task-list">

@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { todoList } from 'reducers/todoList'
+import { todos } from 'reducers/todos'
 import "./task.css"
 import deleteSymbol from '../icons/icons8-delete-yellow.svg'
 
@@ -8,11 +8,11 @@ export const Task = ({ task }) => {
   const dispatch = useDispatch()
 
   const handleCheckbox = () => {
-    dispatch(todoList.actions.toggleTaskStatus(task.id))
+    dispatch(todos.actions.toggleTaskStatus(task.id))
   }
 
   const handleTaskRemoval = () => {
-    dispatch(todoList.actions.removeTask(task.id))
+    dispatch(todos.actions.removeTask(task.id))
   }
 
   const toggleClass = task.isCompleted ? "task-completed" : "task-todo"
@@ -29,12 +29,12 @@ export const Task = ({ task }) => {
 
       <label htmlFor={`task-${task.id}`} className="checkbox-label">
         <span className="task-text">
-          {task.todoText}
+          {task.text}
         </span>
       </label>
 
       <button
-        aria-label={`Delete ${task.todoText}`}
+        aria-label={`Delete ${task.text}`}
         type="button"
         onClick={handleTaskRemoval}
         className="remove-button">
