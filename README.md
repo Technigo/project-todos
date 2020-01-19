@@ -23,6 +23,7 @@ In this project, I made a to-do list in React Redux. In the app, you are able to
 
 https://todo-app-by-nasim.netlify.com/
 
-
+<br>
+<br>
 
 <p> Nasim Mahzoun 2020 </p>
