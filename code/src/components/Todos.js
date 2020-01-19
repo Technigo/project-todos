@@ -90,7 +90,7 @@ export const Todos = () => {
           <Icon>
             <i class="fas fa-tasks"></i>
           </Icon>
-          <Message>Write your first todo!</Message>
+          <Message>Your to-do list is empty.</Message>
         </>
       ) : (
         <ul>
