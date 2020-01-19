@@ -13,16 +13,19 @@ export const AddTodo = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        +
-        <input
-          type='text'
-          value={todo}
-          onChange={event => setTodo(event.target.value)}
-        />
-      </label>
-      <button type='submit'>Add todo</button>
-    </form>
+    <div className='add-todo'>
+      <form onSubmit={handleSubmit}>
+        <label>
+          +
+          <input
+            className='input-field'
+            type='text'
+            value={todo}
+            onChange={event => setTodo(event.target.value)}
+          />
+        </label>
+        {/* <button type='submit'>Add todo</button> */}
+      </form>
+    </div>
   )
 }

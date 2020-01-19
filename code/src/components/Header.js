@@ -16,9 +16,12 @@ export const Header = () => {
     }, 0)
   )
   return (
-    <div>
-      <div> {date} </div>
-      <div>todos left todo: {uncomplete}</div>
+    <div className='header'>
+      <div className='logo'>Todo Today</div>
+      <div className='header-info'>
+        <div> {date} </div>
+        <div>Items left: {uncomplete}</div>
+      </div>
     </div>
   )
 }
