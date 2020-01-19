@@ -18,11 +18,9 @@ const Input = styled.input`
   border: none;
   font-size: 1rem;
   margin-right: 0.5rem;
-  padding: 0.5rem;
 
   &::placeholder {
     color: rgba(0, 0, 0, 0.3);
-    padding-left: 0;
   }
 
   &:focus::placeholder {
