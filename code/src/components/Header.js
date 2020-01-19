@@ -11,7 +11,7 @@ export const Header = () => {
         <div className="headerContainer">
             <div className="headerInfo">
                 <h1>To-do</h1>
-                <h5>January 17th</h5>
+    
             </div>
 
         </div>
