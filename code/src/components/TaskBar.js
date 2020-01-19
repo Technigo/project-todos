@@ -15,15 +15,15 @@ const quantity = useSelector((state) => state.todoList.items)
 <>
     {totalQuantity === 0 && (
       <div className="container">
-       <p className="todo-text">TODO</p>
+       <p className="todo-text">TO DO</p>
         <p className="date-box">{moment().format('MMM Do YY')}</p>
       </div>
     )}
     {totalQuantity >= 1 && (
       <div className="container">
-        <p className="todo-text">TODO</p>
+        <p className="todo-text">TO DO</p>
         <p className="date-box">{moment().format('MMM Do YY')}</p>
-        <div className="amount">Tasks:{totalQuantity}</div>
+        <div className="amount">Tasks: {totalQuantity}</div>
       </div>
     )}
     <div className="amount"></div>
