@@ -1,0 +1,28 @@
+.attributon-details {
+  margin-top: auto;
+  width: 100%;
+}
+
+.attribution-summary {
+  border-bottom: 2px solid #daa520;
+  border-top: 2px solid #daa520;
+  margin: 0 auto 1rem auto;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+  width: 90%;
+}
+
+.attribution-list {
+  line-height: 1.5;
+  margin: 0 auto;
+  padding: 1.2rem;
+  width: 90%;
+}
+
+@media screen and (min-width: 600px) {
+  .attribution-summary,
+  .attribution-list {
+    max-width: 600px;
+    width: 100%;
+  }
+}
