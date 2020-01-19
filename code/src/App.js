@@ -7,6 +7,7 @@ import { TaskList } from './components/TaskList'
 import { fridge } from './reducers/fridge'
 import { NoTask } from './components/NoTask'
 import './app.css'
+import './components/mediaqueries.css'
 
 const reducer = combineReducers({
  fridge: fridge.reducer

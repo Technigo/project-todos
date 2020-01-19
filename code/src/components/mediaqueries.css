@@ -1,0 +1,13 @@
+
+@media (min-width: 1400px){
+    header{
+        padding: 20px 550px 20px 550px;
+    }
+
+    lottie-player{
+        width: 400px;
+        height: 400px;
+    }
+
+}
+

@@ -25,7 +25,7 @@ return (
         <>
         <div className="today">
             <h1>Todo</h1>
-            <p>{moment().format('MMMM Do YYYY')}</p>      
+            <p>{moment().format('MMMM Do, YYYY')}</p>      
         </div>
         <div class="task-count">
             <p>Total todos: {totalQuantity}</p>

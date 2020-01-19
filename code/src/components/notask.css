@@ -5,4 +5,11 @@
     justify-content: center;
     /* text-align: center; */
     padding: 12px;
+    color: #006654;
+}
+
+lottie-player{
+width: 150px;
+margin-bottom: 30px;
+margin-top: 60px;
 }
