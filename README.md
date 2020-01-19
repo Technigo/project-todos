@@ -9,7 +9,7 @@ You're free to style your todo list however you'd like, but try to keep it simpl
 Here's an example of what you could aim for (mobile first design - this project should be a web app, not react native):
 
 <p align="center">
-<img src="https://i.imgur.com/pQxk9wv.png" alt="Mobile design" />
+![Alt Screenshot](https://github.com/Nasimmhn/project-todos/blob/master/to-do-app.png "Screenshot")
 </p>
 
 ## What you will learn 🧠
