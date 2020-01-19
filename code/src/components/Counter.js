@@ -7,6 +7,6 @@ export const Counter = (props) => {
     const completedTasks = amountOfTasks.filter(task => !task.done)
 
     return (
-        <p> {completedTasks.length} /{amountOfTasks.length}</p>
+        <p> {completedTasks.length} /{amountOfTasks.length} left to do</p>
     )
 }

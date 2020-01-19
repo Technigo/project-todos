@@ -8,6 +8,7 @@ li {
     box-shadow: grey;
     padding: 0px 10px 10px 10px;
     display: flex;
+    justify-content: space-between;
 }
 
 .checkboxLabel {
@@ -46,11 +47,11 @@ li {
  }
 
 .checkboxLabel:hover input ~ .customCheckbox {
-    background-color: #ccc;
+    background-color: #FFFACD;
 } 
 
 .checkboxLabel input:checked ~ .customCheckbox {
-    background-color: #FFFACD;
+    background-color: rgba(180, 237, 152, 0.954);
 }
 
 .customCheckbox:after {
@@ -68,26 +69,21 @@ li {
     top: 2px;
     width: 5px;
     height: 10px;
-    border: solid grey;
+    border: solid rgba(180, 237, 152, 0.954);
     border-width: 0 3px 3px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
 
-.textAndButton {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-left: 33px;
-}
-
 .text {
     font-size: 22px;
+    margin-left: 36px;
 }
 
 .checked .text {
     text-decoration: line-through;
+    color: grey;
   }
 
   .buttonRemov {
@@ -95,6 +91,8 @@ li {
     outline: none;
     cursor: pointer;
     background-color: transparent;
-    font-size: 20px;
-    color: grey;
+    font-size: 18px;
+    color: rgba(252, 77, 77, 0.92);
+    font-family: 'Indie Flower', cursive;
+    align-self: flex-end;
   }

@@ -9,6 +9,7 @@
     border: none;
     background: transparent;
     margin-left: 2px;
+    cursor: pointer;
 }
 
 .newTaskInput {

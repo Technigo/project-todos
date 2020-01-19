@@ -7,6 +7,8 @@ export const ClearAll = () => {
     const dispatch = useDispatch()
 
     return (
-        <button type="button" className="clearAllButton" onClick={() => dispatch(ToDoList.actions.clearList())}>Im Done!</button>
+        <button type="button" className="clearAllButton" onClick={() => dispatch(ToDoList.actions.clearList())}>I'm Done!
+        <span class="tooltiptext">Clear All</span>
+        </button>
     )
 }
