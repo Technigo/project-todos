@@ -14,4 +14,4 @@ One reducer, plenty components and some CSS styling.
 
 Redux, React, JavaScript, CSS and HTML 
 
-See the To do: saras-todo.netlify.com
+See the To do: https://saras-todo.netlify.com/
