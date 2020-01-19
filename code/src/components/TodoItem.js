@@ -14,29 +14,26 @@ export const TodoItem = props => {
   }
 
   return (
-    <>
-      <input
-        type='checkbox'
-        checked={props.item.complete}
-        onChange={handleCheckboxClick}
-      />
-
-      <li>{props.item.name}</li>
-
-      <button type='button' onClick={handleRemoveClick}>
-        Remove
+    <li className='todo-item'>
+      <label className='container'>
+        <input
+          type='checkbox'
+          checked={props.item.complete}
+          onChange={handleCheckboxClick}
+        />
+        <span class='checkmark'></span>
+      </label>
+      <div>{props.item.name}</div>
+      <button
+        className='remove'
+        type='button'
+        onClick={handleRemoveClick}
+        aria-label='remove'
+      >
+        🗑️
       </button>
-    </>
+    </li>
   )
 }
 
-// const Todo = ({ onClick, completed, text }) => (
-//   <li
-//     onClick={onClick}
-//     style={{
-//       textDecoration: completed ? 'line-through' : 'none'
-//     }}
-//   >
-//     {text}
-//   </li>
-// )
+// ariaLabel

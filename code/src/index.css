@@ -33,12 +33,29 @@ code {
 }
 
 .add-todo {
-  padding: 1em;
   border-bottom: 1px dotted lightgray;
 }
 
 .input-field {
-  margin-left: 0.8em;
   border: hidden;
   font-size: larger;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5em;
+}
+
+.input-field:focus {
+  outline: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.todo-item {
+  display: flex;
+  padding: 0.5em 1em;
+  font-size: 1.3em;
 }

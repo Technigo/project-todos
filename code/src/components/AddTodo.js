@@ -15,16 +15,13 @@ export const AddTodo = () => {
   return (
     <div className='add-todo'>
       <form onSubmit={handleSubmit}>
-        <label>
-          +
-          <input
-            className='input-field'
-            type='text'
-            value={todo}
-            onChange={event => setTodo(event.target.value)}
-          />
-        </label>
-        {/* <button type='submit'>Add todo</button> */}
+        <input
+          className='input-field'
+          type='text'
+          placeholder='+ Add todo'
+          value={todo}
+          onChange={event => setTodo(event.target.value)}
+        />
       </form>
     </div>
   )
