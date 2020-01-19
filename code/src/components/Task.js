@@ -17,15 +17,16 @@ export const Task = (props) => {
     return (
         <section className="listSection">
             <li className={props.task.done ? 'checked' : 'unchecked'} >
-                <label>
-                    <input type="checkbox" checked={props.task.done} onChange={handleCheckbox} />
+                <label className="checkboxLabel">
+                        <input type="checkbox" checked={props.task.done} onChange={handleCheckbox} />
+                            <span className="customCheckbox"></span>
                 </label>
+                <div className="textAndButton">
                 <span className="text">
-                {props.task.text}
+                    {props.task.text}
                 </span>
-                <button type="button" onClick={handleRemove}>
-                    <span role="img" aria-label="delete">❌</span>
-                </button>
+                <button type="button" className="buttonRemov" onClick={handleRemove}>X</button>
+                </div>
             </li>
         </section>
     )

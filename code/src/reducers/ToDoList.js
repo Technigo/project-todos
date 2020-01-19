@@ -7,7 +7,7 @@ export const ToDoList = createSlice ({
     },
     reducers:{
         addTask: (state, action) => {
-            state.tasks.push({ id: Date.now(), text: action.payload })
+            state.tasks.push({ id: Date.now(), text: action.payload, done: false })
              // id: Date.now() - use to get milliesconds as id on each post.
         },
         removeTask: (state, action) => {
@@ -21,8 +21,9 @@ export const ToDoList = createSlice ({
                 foundTask.done = !foundTask.done
             }
         },
-
-
+        clearList: (state, action) => {
+            state.tasks = [] 
+        }
     }
 
 })

@@ -7,6 +7,7 @@ import { Header } from 'components/Header'
 import { AddTask } from 'components/AddTask'
 import { TaskList } from 'components/TaskList'
 import { Counter } from 'components/Counter'
+import { ClearAll } from 'components/ClearAll'
 
 
 const reducer = combineReducers({
@@ -20,10 +21,13 @@ export const App = () => {
     <section className="toDoSection">
     <Provider store={store}>
       <div className="toDoList">
-        <Header />
-        <AddTask />
-        <TaskList />
-        <Counter />
+          <Header />
+          <AddTask />
+          <TaskList />
+          <div className="footer">
+            <Counter />
+            <ClearAll />
+          </div>
       </div>
     </Provider>
     </section>

@@ -6,7 +6,80 @@ li {
     margin: 8px 5px 0px -45px;
     background: rgba(255, 240, 245, 0.865);
     box-shadow: grey;
-    padding: 4px 6px;
+    padding: 0px 10px 10px 10px;
+    display: flex;
+}
+
+.checkboxLabel {
+    display: block;
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 15px;
+    /* margin-bottom: 12px; */
+    cursor: pointer;
+    /* font-size: 22px; */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.customCheckbox {
+    position: absolute;
+    margin-top: 6px;
+    top: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+    border-radius: 50%;
+    border: 1.5px solid grey;
+}
+
+.checkboxLabel input {
+    display: none;
+    cursor: pointer;
+    /* position: absolute; */
+    /* height: 0;
+    width: 0; */
+ }
+
+.checkboxLabel:hover input ~ .customCheckbox {
+    background-color: #ccc;
+} 
+
+.checkboxLabel input:checked ~ .customCheckbox {
+    background-color: #FFFACD;
+}
+
+.customCheckbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.checkboxLabel input:checked ~ .customCheckbox:after {
+    display: block;
+}
+
+.checkboxLabel .customCheckbox:after {
+    left: 7px;
+    top: 2px;
+    width: 5px;
+    height: 10px;
+    border: solid grey;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.textAndButton {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-left: 33px;
 }
 
 .text {
@@ -17,3 +90,11 @@ li {
     text-decoration: line-through;
   }
 
+  .buttonRemov {
+    border-style: none;
+    outline: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-size: 20px;
+    color: grey;
+  }

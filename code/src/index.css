@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
-  background: #FFFACD;
+  background: rgba(249, 244, 206, 0.975);
   font-family: 'Indie Flower', cursive;
 }
 
@@ -22,11 +22,17 @@ code {
 .toDoSection {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 40px;
   background: #E6E6FA;
 }
 
 .toDoList {
   margin: 50px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
 }
 
