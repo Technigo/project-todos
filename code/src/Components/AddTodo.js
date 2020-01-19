@@ -16,7 +16,7 @@ export const AddTodo = () => {
         <form onSubmit={handleSubmit}>
             <label>
                 <input
-                    class="text-input" 
+                    className="text-input" 
                     type="text" 
                     value={name} 
                     onChange={(event) => setName(event.target.value)}/>

@@ -15,50 +15,20 @@ div > h1 {
     color: #fff;
 }
 #flip {
-    /* border: solid green; */
     display: flex;
     justify-content: center;
     align-content: center;
     text-align: center;
     height:150px;
     width: 225px;
-    margin-top: 40px;
+    margin-top: 60px;
     overflow:hidden;
   }
   
   #flip > div > div {
-    /* border: solid salmon; */
     color: #fff;
-    /* padding:4px 40px; */
     height:50px;
     margin-left: 20px;
     margin-bottom:50px;
     display:inline-block;
-  }
-  
-  
-  #flip div:first-child {
-    animation: show 5s linear infinite;
-    /* animation: show 3s infinite; */
-  }
-  
-  /* #flip div div {
-    background:#42c58a;
-  }
-  #flip div:first-child div {
-    background:#4ec7f3;
-  }
-  #flip div:last-child div {
-    background:#DC143C;
-  } */
-  
-  @keyframes show {
-    0% {margin-top:-240px;}
-    5% {margin-top:-150px;}
-    33% {margin-top:-150px;}
-    38% {margin-top:-60px;}
-    66% {margin-top:-60px;}
-    71% {margin-top:0px;}
-    99.99% {margin-top:0px;}
-    100% {margin-top:-240px;}
   }

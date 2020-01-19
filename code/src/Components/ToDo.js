@@ -25,7 +25,7 @@ export const Todo = (props) => {
             </label>
             {props.task.name}
             <button
-                class="invisible-button"
+                className="invisible-button"
                 type="button"
                 onClick={removeTask}>
                     <span role="img" aria-label="cross emoji">❌</span>
