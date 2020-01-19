@@ -26,7 +26,7 @@ export const App = () => {
     <Provider store={store}>
       <main>
         <Header />
-        <TasksSummary />
+        {/* <TasksSummary /> */}
         <AddNewTask />
         <TasksList />
       </main>

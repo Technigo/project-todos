@@ -19,7 +19,7 @@ export const AddNewTask = () => {
 
   return (
 
-    <form className="new-task-form" onSubmit={handleSubmit}>
+    <form className="new-task-form" disabled={sendTask.length === 0} onSubmit={handleSubmit}>
       <input className="task-input" type="text" placeholder="Add a new task" value={sendTask} onChange={(event) => setSendTask(event.target.value)} />
 
       <button className="add-task-btn" type="submit"><span className="add-task-icon" role="img" aria-label="plus">+</span></button>
