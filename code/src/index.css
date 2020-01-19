@@ -85,6 +85,11 @@ label {
   list-style: none;
 }
 
+ul {
+  list-style: none;
+  padding-left: 0;
+}​
+
 .checkbox {
   margin-right: 10px;
 }
