@@ -8,6 +8,7 @@ export const Item = (props) => {
 const handleRemoveButtonClick = () => {
     dispatch(fridge.actions.removeItem(props.item.id))
     }
+    
 return (
     <li>
         <button className="remove" type="button" onClick={handleRemoveButtonClick}>

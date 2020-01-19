@@ -9,9 +9,11 @@ export const ClearButton = () => {
 const dispatch = useDispatch()
 
     return (
-<button type="button" className="remove-all" onClick={() => dispatch(fridge.actions.removeAll())}>
+        <div class="clear-all">
+<button type="button" className="slide-top" onClick={() => dispatch(fridge.actions.removeAll())}>
     Clear all
 </button>
+</div>
 
 )
 
