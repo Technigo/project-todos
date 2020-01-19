@@ -6,42 +6,42 @@ export const todos = createSlice({
   initialState: [
     {
       id: 1,
-      text: 'To-do 1',
+      text: 'Item 1',
       createdAt: '2017-12-29T15:14:51.733Z',
       pinned: false,
       completed: false
     },
     {
       id: 2,
-      text: 'To-do 2',
+      text: 'Item 2',
       createdAt: '2019-01-13T13:14:51.733Z',
       pinned: false,
       completed: false
     },
     {
       id: 3,
-      text: 'To-do 3',
+      text: 'Item 3',
       createdAt: '2019-11-14T19:50:13.556Z',
       pinned: true,
       completed: false
     },
     {
       id: 4,
-      text: 'To-do 4',
+      text: 'Item 4',
       createdAt: '2019-12-14T19:50:13.556Z',
       pinned: false,
       completed: true
     },
     {
       id: 5,
-      text: 'To-do 5',
+      text: 'Item 5',
       createdAt: '2020-01-01T14:14:51.733Z',
       pinned: false,
       completed: false
     },
     {
       id: 6,
-      text: 'To-do 6',
+      text: 'Item 6',
       createdAt: '2020-01-14T19:50:13.556Z',
       pinned: true,
       completed: true
