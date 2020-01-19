@@ -1,7 +1,8 @@
 import React from 'react'
-import "./header.css"
 import { TodoCount } from "./TodoCount"
 import { Date } from "./Date"
+
+import "./header.css"
 
 export const Header = () => {
   return (
