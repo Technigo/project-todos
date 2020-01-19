@@ -1,3 +1,16 @@
 *{
     background-color: aliceblue;
 }
+
+@media (min-width: 450px){
+    .backgroundContainer{
+        border: 1.5px solid midnightblue;
+        width: 400px;
+        height: 550px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 10px;
+        border-radius: 10px;
+    }
+}
+

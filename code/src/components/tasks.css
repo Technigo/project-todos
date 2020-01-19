@@ -1,7 +1,6 @@
 .taskList{
     display: flex; 
-    flex-direction: column; 
-    
+    flex-direction: column;   
 }
 
 .listContainer{
@@ -21,18 +20,16 @@
     -ms-user-select: none;
     user-select: none;
     margin-top: 30px;
-
 }
 
 .container input{
     opacity: 0;
-  cursor: pointer;
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-  
+    cursor: pointer;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
 
 .checkmark {
@@ -43,43 +40,42 @@
     width: 20px;
     background-color: #eee;
     border-radius: 50%;
-    border: 1.5px solid midnightblue;
-    
+    border: 1.5px solid midnightblue; 
   }
 
-  .container:hover input ~ .checkmark {
+.container:hover input ~ .checkmark {
     background-color: #ccc;
-  }
+}
 
-  .container input:checked ~ .checkmark {
+.container input:checked ~ .checkmark {
     background-color: midnightblue;
-  }
+}
 
-  .checkmark:after {
+.checkmark:after {
     content: "";
     position: absolute;
     display: none;
-  }
+}
 
-  .container input:checked ~ .checkmark:after {
+.container input:checked ~ .checkmark:after {
     display: block;
-  }
+}
 
-  .container .checkmark:after {
+.container .checkmark:after {
     left: 7px;
     top: 2px;
     width: 5px;
     height: 10px;
     border: solid white;
-    border-width: 0 3px 3px 0;
+    border-width: 0 2px 2px 0;
     -webkit-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
-  }
+}
 
-  .tasklist.checked {
-      text-decoration: line-through;
-  }
+.tasklist.checked {
+    text-decoration: line-through;
+}
 
 p{
     border-bottom: 1.5px solid midnightblue;
@@ -92,13 +88,11 @@ ul{
     width: 300px;
     margin-left: auto;
     margin-right: auto;
-    padding: 0px;
-    
+    padding: 0px; 
 }
 
 .remove-btn-container{
     align-items: baseline;
-  
 }
 
 .removeButton{
@@ -106,8 +100,6 @@ ul{
     outline: none;
     cursor: pointer;
 }
-
-
 
 .tasklist{
    display: flex;

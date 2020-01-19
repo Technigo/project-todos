@@ -7,21 +7,12 @@ export const Tasks = () => {
     const tasks = useSelector((store) =>store.tasks.items)
 
     return (
-      
-       <ul>
-           
+        <ul> 
           {tasks.map((task)=> (
               <p>
               <Task key={task.id} props={task}/> 
               </p>
           ))}
-          {console.log(tasks)}
-         
-          </ul>
-        
-      
-        
-      
+        </ul>
     )
-    
-  }
+}

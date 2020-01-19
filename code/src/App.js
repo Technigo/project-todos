@@ -17,13 +17,14 @@ const reducer = combineReducers({
 
 const store = configureStore({ reducer: reducer })
 
-
 export const App = () => {
   return (
-    <Provider store={store}>
+    <Provider  store={store}>
+      <div className='backgroundContainer'>
       <Header/>
       <Tasks/>
       <Footer/>
+      </div>
     </Provider>
   )
 }
