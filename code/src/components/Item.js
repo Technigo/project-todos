@@ -15,14 +15,12 @@ export const Item = (props) => {
   }
 
   return (
-    <li>
-     
-     <span className="text">
-     
+
+    <li className={props.item.needsMore ? 'checked' : 'unchecked'}>
+    <span className="text">
      {props.item.name} 
-
      </span> 
-
+     
       <span className="checkboxbuttons">
 
       <label>    

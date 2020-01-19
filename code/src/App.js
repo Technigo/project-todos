@@ -25,8 +25,8 @@ export const App = () => (
       <Header />
       <AddItemForm />
       <ItemList />
+    <footer>  
       <FridgeSummary />
-    <footer>
       <ClearButton />
     </footer>    
     </section>

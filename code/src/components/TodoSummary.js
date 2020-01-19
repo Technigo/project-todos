@@ -8,7 +8,7 @@ export const FridgeSummary = () => {
   const [showShoppingList, setShowShoppingList] = useState(false)
 
   return (
-    <section class="tasksleft">
+    <section class="itemsleft">
       <h2>You have {items.length} task
       {items.length === 1 ? ' ' : 's'} left.</h2>
       
