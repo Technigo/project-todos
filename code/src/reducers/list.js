@@ -15,6 +15,28 @@ export const list = createSlice({
         addTask: (state, action) => {
             state.tasks.push({ id: Date.now(), name: action.payload })
         },
+        // showDone: (state, action) => {
+        //     const doneTasks = state.tasks.filter((task) => task.done === true)
+        //     console.log(doneTasks)
+
+        //     if (doneTasks.length < 1) {
+        //         return (
+        //             'No done tasks :('
+        //         )
+        //     } else {
+        //         state.tasks = doneTasks
+        //     }
+        // },
+        // showTodo: (state, action) => {
+        //     const todoTasks = state.tasks.filter((task) => task.done === false)
+
+        //     if (todoTasks.length < 1) {
+        //         return (
+        //             "You're done!"
+        //         )
+        //     } else {
+        //     }
+        // },
         removeTask: (state, action) => {
             // find task & filter out
             // renamde state.tasks => todos
@@ -28,6 +50,9 @@ export const list = createSlice({
             if (foundTodo) {
                 foundTodo.done = !foundTodo.done
             }
-        }
+        },
+        removeAll: (state, action) => {
+            state.tasks = []
+            }
     }
 })

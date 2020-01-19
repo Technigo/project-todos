@@ -33,12 +33,12 @@ div > h1 {
     height:50px;
     margin-left: 20px;
     margin-bottom:50px;
-    /* display:inline-block; */
+    display:inline-block;
   }
   
   
   #flip div:first-child {
-    /* animation: show 5s linear infinite; */
+    animation: show 5s linear infinite;
     /* animation: show 3s infinite; */
   }
   

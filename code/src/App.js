@@ -7,6 +7,9 @@ import { list } from 'reducers/list'
 import { Header } from 'Components/Header'
 import { AddTodo } from 'Components/AddTodo'
 import { List } from 'Components/List'
+import { RemoveAll } from 'Components/RemoveAll'
+import { ShowDone } from 'Components/ShowDone'
+import { ShowTodo } from 'Components/ShowTodo'
 // STYLE
 import 'app.css'
 
@@ -23,7 +26,10 @@ export const App = () => {
     <Provider store={store}>
       <Header />
       <AddTodo />
+      {/* <ShowDone />
+      <ShowTodo /> */}
       <List />
+      <RemoveAll />
     </Provider>
   )
 }

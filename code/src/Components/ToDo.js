@@ -24,10 +24,11 @@ export const Todo = (props) => {
                 <span className="fakeCheckbox"></span>
             </label>
             {props.task.name}
-            <button 
+            <button
+                class="invisible-button"
                 type="button"
                 onClick={removeTask}>
-                    ❌
+                    <span role="img" aria-label="cross emoji">❌</span>
             </button>
             
             

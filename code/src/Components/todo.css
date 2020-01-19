@@ -21,7 +21,7 @@ input:checked + .fakeCheckbox::after {
     background: #155257;
     display: inline-block;
 }
-button[type="button"] {
+.invisible-button {
     width: auto;
     height: auto;
     background: none;
