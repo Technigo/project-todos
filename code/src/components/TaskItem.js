@@ -31,12 +31,12 @@ export const TaskItem = (props) => {
 const TaskWrapper = styled.section`
   display: flex;
   flex-direction: column;
-  padding: 10px 0;
 `
 const Task = styled.section`
   display: flex;
   flex-direction: row;
-  padding: 10px;
+  align-items: center;
+  padding: 12px 10px;
   border-bottom: 1px solid #EBEEEF;
 `
 // Not circular in iPhone - elipse?
@@ -67,6 +67,8 @@ const TaskToggleButton = styled.button`
 `
 const TaskText = styled.article`
   font-size: 16px;
+  overflow-wrap: break-word;
+  word-break: break-word;
   color: ${props => (props.taskStatus ? "#d9d9d9" : "#333")};
 `
 const TaskRemoveButton = styled.button`

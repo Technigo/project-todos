@@ -20,7 +20,7 @@ export const TaskInput = () => {
         type='text'
         required
         placeholder='Add task'
-        maxLength='25'
+        maxLength='100'
         onChange={(event) => setNewTask(event.target.value)}
         value={newTask}
         // To add the task when hitting enter key
