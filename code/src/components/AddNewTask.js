@@ -11,7 +11,7 @@ export const AddNewTask = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    if (sendTask === "") return
+
 
     dispatch(tasks.actions.addTask(sendTask))
     setSendTask("")
@@ -19,10 +19,10 @@ export const AddNewTask = () => {
 
   return (
 
-    <form className="new-task-form" disabled={sendTask.length === 0} onSubmit={handleSubmit}>
+    <form className="new-task-form" onSubmit={handleSubmit}>
       <input className="task-input" type="text" placeholder="Add a new task" value={sendTask} onChange={(event) => setSendTask(event.target.value)} />
 
-      <button className="add-task-btn" type="submit"><span className="add-task-icon" role="img" aria-label="plus">+</span></button>
+      <button className="add-task-btn" disabled={sendTask.length === 0} type="submit"><span className="add-task-icon" role="img" aria-label="plus">+</span></button>
     </form >
 
 
