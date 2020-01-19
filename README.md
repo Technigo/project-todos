@@ -1,6 +1,6 @@
-# To-do list in React Redux
+# To-do app in React Redux
 
-In this project, I made a to-do list in React Redux. In the app, you are able to add tasks, lists tasks and toggle whether a task is done or not. 
+In this project, I made a to-do list in React Redux. In the app, you are able to add tasks, lists tasks and toggle whether a task is done or not. The app is fully responsive.
 
 
 ![Alt Screenshot](https://github.com/Nasimmhn/project-todos/blob/master/to-do-app.png?raw=true "Screenshot" )
