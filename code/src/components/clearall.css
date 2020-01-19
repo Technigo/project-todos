@@ -1,0 +1,14 @@
+.clear-container {
+  display: flex;
+  justify-content: center;
+}
+
+.clear-button {
+  border-top: none;
+  border-left: none;
+  border-bottom: 3px solid #b3dec1;
+  border-right: none;
+  width: 55px;
+  height: 55px;
+  background-color: #e5fcf5;
+}

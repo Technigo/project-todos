@@ -15,6 +15,9 @@ export const todoList = createSlice({
     removeItem: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload)
     },
+    removeAll: (state, action) => {
+      state.items = []
+    },
 
     toggleTaskDone: (state, action) =>{
       console.log(action.payload)

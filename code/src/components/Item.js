@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { todoList } from 'reducers/todoList'
+import './item.css'
 
 
 export const Item = (props) => { 
@@ -20,8 +21,8 @@ export const Item = (props) => {
     </label>
     {props.item.name}
     <label>
-      <button type="button" onClick={handleRemoveButtonClick}>
-        Remove
+      <button type="button" onClick={handleRemoveButtonClick} className="remove-button" emoji="❌">
+      ❌
       </button>
 
     </label>

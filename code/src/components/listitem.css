@@ -4,4 +4,6 @@
   background-color: #e5fcf5;
   margin: 30px;
   border-bottom: solid 2px #750d37;
+  display: flex;
+  flex-direction: column;
 }

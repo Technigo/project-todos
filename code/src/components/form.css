@@ -4,31 +4,26 @@
   align-items: center;
 }
 
-.todo-bar {
-  background-color: #b3dec1;
-  color: rgb(114, 12, 105);
-  font-size: 40px;
-  font-weight: 800;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-}
-
 .input-container {
   background-color: #e5fcf5;
-  width: 525px;
+  border-top: 3px solid #b3dec1;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
   height: 55px;
   font-size: 30px;
-  border: none;
   color: rgb(114, 12, 105);
   ;
 }
 
 .add-button {
-  border: none;
   width: 55px;
   height: 55px;
   background-color: #e5fcf5;
+  border-top: 3px solid #b3dec1;
+  border-bottom: none;
+  border-left: none;
+  border-right: none;
   color: rgb(114, 12, 105);
   margin: 30px;
 }
