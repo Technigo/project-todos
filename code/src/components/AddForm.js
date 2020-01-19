@@ -18,7 +18,6 @@ export const AddForm = () => {
         <input type="text" className="input-container" value={todo} onChange={(event) => setTodo(event.target.value)} />
         <button type="submit" className="add-button">ADD</button>
       </label>
-     
     </form>
   )
 }

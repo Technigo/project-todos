@@ -12,10 +12,10 @@ export const ClearAll = () => {
 
   return ( 
     <>
-    <div className='clear-container'>
-    {totalQuantity >= 1 && (
-      <button className="clear-button" onClick={() => dispatch(todoList.actions.removeAll())}>Clear All</button>
-      )} 
+      <div className='clear-container'>
+        {totalQuantity >= 1 && (
+          <button className="clear-button" onClick={() => dispatch(todoList.actions.removeAll())}>Clear All</button>
+        )} 
       </div>
     </>
   )

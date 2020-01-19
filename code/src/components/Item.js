@@ -5,7 +5,7 @@ import './item.css'
 
 
 
-export const Item = (props) => { 
+export const Item = (props) => {
   const dispatch = useDispatch()
 
   const handleCheckboxClick = () => {
@@ -16,18 +16,18 @@ export const Item = (props) => {
     dispatch(todoList.actions.removeItem(props.item.id))
   }
   return (
-  <li className="list-item">
-    <label className="checkbox-container"> 
-     <input type="checkbox" className="checkbox"checked={props.item.taskDone} onChange={handleCheckboxClick}/>
-    <span className="check-new"></span>
-    </label>
-    {props.item.name}
-    <label>
-      <button type="button" onClick={handleRemoveButtonClick} className="remove-button">
+    <li className="list-item">
+      <label className="checkbox-container">
+        <input type="checkbox" className="checkbox"checked={props.item.taskDone} onChange={handleCheckboxClick}/>
+        <span className="check-new" />
+      </label>
+      {props.item.name}
+      <label>
+        <button type="button" onClick={handleRemoveButtonClick} className="remove-button">
       ❌
-      </button>
+        </button>
 
-    </label>
+      </label>
     </li>
   )
 }

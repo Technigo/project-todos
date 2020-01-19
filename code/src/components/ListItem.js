@@ -8,7 +8,7 @@ export const ListItem = () => {
   return (
     <ul className="list">
       {items.map((item) => (
-       <Item key={item.id} item={item} />
+        <Item key={item.id} item={item} />
       ))}
     </ul>
   )
