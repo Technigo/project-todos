@@ -16,36 +16,27 @@ export const AddTodoForm = () => {
     }
 
     return (
-        <article className="InputField">
-            <form onSubmit={handleSubmit}>
-                <label>
-                    What do you want to add?
+        <div className="InputField">
+            <form className=""
+                onSubmit={handleSubmit}>
+                <button className="addTodoButton"
+                    type="submit">
+                    <span
+                        className="emoji"
+                        role="img"
+                        aria-label="butterfly">
+                        ➕
+                    </span>
+                </button>
+
+                <label className="inputLabel">
                     <input
                         type="text"
                         value={todoText}
+                        placeholder={"Add task"}
                         onChange={(event) => setTodoText(event.target.value)} />
                 </label>
-                <button type="submit">Add to-do</button>
             </form>
-        </article>
+        </div>
     )
 }
-
-
-// return (
-
-//     <article className="InputField">
-//         <form onSubmit={handleSubmit}>
-
-//             <button
-//                 type="button"
-//                 // disabled={todo.inventory === 0}
-//                 onClick={() => ((AddTodo))}>
-//                 <span className="emoji" role="img" aria-label="butterfly">🦋</span>
-//                 <input value={todoText} type="text" onChange={handleInputChange} />
-//             </button>
-//         </form>
-//     </article>
-// )
-// }
-

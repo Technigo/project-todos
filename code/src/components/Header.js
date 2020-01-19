@@ -1,26 +1,17 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import { TodoTasksSummary } from './TodoTasksSummary'
+import { ClearButton } from './ClearButton'
 
 export const Header = () => {
     const dispatch = useDispatch()
     return (
-        <article className="headerContainer">
+        <div className="headerContainer">
             <div className="headerInfo">
                 <h1>To-do</h1>
-                <h5>January 17th</h5>
-                {/* <span className="todoName" role="text"></span> */}
-                {/* <p>{total.quantity}st</p> */}
+                <h5>January 20th</h5>
             </div>
-
-            <div className="headerTasks">
-                <div className="taskTotal"><
-                    h5>4 tasks</h5>
-                </div>
-                <div className="totalButton">
-                    <button type="button" onClick><p>Clear all</p></button>
-                </div>
-            </div>
-        </article>
+        </div>
     )
 }
 

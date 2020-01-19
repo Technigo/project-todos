@@ -5,6 +5,10 @@
 
 body {
   margin: 0;
+  /* width: 600px;
+  height: 600px; */
+  /* border: 1px solid darkgray;
+  border-radius: 15px; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -17,187 +21,142 @@ code {
     monospace;
 }
 
-/* h1, h2, h3, h4, h5, h6 {
-  margin: 0;
-} */
-
-/* .todos {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
-} */
-
 .headerContainer {
-  background-color: silver;
+  background-color: rgb(190, 120, 247);
+  /* border-top-right-radius: 15px;
+  border-top-left-radius: 15px; */
+  display: flex;
+  justify-content: left;
 }
 
 .headerInfo {
   padding: 25px;
-  color: #f0f0f0;
-  margin-left: 15px;
+  color: white;
+  font-weight: lighter;
   display: inline-block;
   border-bottom: solid 1px lightgray;
 }
 
 .headerTasks{
-  margin-right: 20px;
-  flex-direction: column;
-  display: inline-block;
-}
-.taskTotal {
-  /* display: inline-block;
-  float: right; */
-  color: grey;
+  position: absolute;
+  margin-right: 0px;
+  display: inline-block; 
 }
 
-.totalButton {
-  border-radius: 10%;
-  background: lightskyblue;
-  display: inline-flex;
-  float: right;
-  margin-top: 12%;
-  color: white;
-  margin-right: 20px; 
-}
+/**** Add Todo ****/
 
-.totalButton p{
-  color: white;
-  display: inline;
-}
-
-.InputField {
+.inputField {
   display: flex;
-  flex-direction: row;
-  justify-content: left;
   padding: 20px;
-  font-size: 20px;
-  align-items: center;
-  border-bottom: solid 1px lightgray;
+  border-bottom: solid 1px #ced6e3;
 }
-.todoTasks {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  list-style: none;
-  /* margin: 20px 20; */
-  
+
+.input {
+  border: hidden;
+  font-size: 30px; 
+  color: #ced6e3;
+  /* align-items: center;  */
+  border-style: none;
 }
-ul {
-  padding: 20px;
-  display: inline;
-  justify-content: space-between;
-  text-decoration: none;
- 
+
+/* .emoji {
+  font-size: 15px;
+} */
+input:focus, textarea {
+  outline: none;
+}
+
+.addTodoButton { 
+  border: solid 1px lightgray;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  padding: 10px 10px;
+  color: white;
+  cursor: pointer; 
+  margin: 15px;
 } 
+
+.label {
+  border: none;
+}
+
+
+/***to-do list  ****/
+.todos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; 
+  color: darkgray;
+  /* list-style: none; */
+  /* padding: 20px; */
+}
+
+ul {
+  padding-left: 0px;
+  list-style: none;
+}
+
+
+.checkbox {
+  margin-right: 10px;
+}
+
 .todo {
   display: flex;
   flex-direction: row;
   justify-content: left;
   padding: 20px;
   font-size: 20px;
+  color: rgb(70, 69, 69);
   align-items: center;
   border-bottom: solid 1px lightgray;
+  margin-left: 5px;
 }
 
-.todoName {
-  text-align: left;
-  padding-left: 10px; 
-}
-
-/* .product .emoji {
-  font-size: 15vw;
-} */
-.todo button {
-  font-size: 15px;
-  border: none;
-  background: lightskyblue;
-  border-radius: 50%;
-  padding: 10px;
-  color: white;
-  cursor: pointer;
-}
-
-.icon {
-  align-items: center;
-  justify-content: center;
-}
-/* .total {
-  background: #0003ff;
-  color: #fff;
-  padding: 20px;
-  margin-bottom: 20px;
+/***footer ***/
+footer {
+  /* background-color: purple; */
+  background-color: rgb(190, 120, 247);
   display: flex;
-} */
-/* .cart .emoji {
+  justify-content: left;
+  padding: 0px 10px;
+  display: flex;
+}
+
+h4{
+  font-size: 20px;
+}
+
+.summary {
+  padding: 25px;
+  color: white;
+  margin-inline: 10px;
+}
+
+.summary span {
   background: white;
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   border-radius: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 60px;
-} */
-.total .total {
-  display: flex;
-  align-items: center;
-}
-/* .cart .amount {
-  font-size: 30px;
-  margin-left: 10px;
-} */
-.total .items {
-  margin: 0;
-  padding: 0;
-  margin-left: auto;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  width: 40%;
-  gap: 10px;
-  min-height: 110px;
-}
-.total .items li {
-  list-style-type: none;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-}
-/* .cart .items .emoji {
+  font-size: 36px;
+  margin-left: 15px;
+} 
+
+.clearButton {
   width: 50px;
   height: 50px;
-  font-size: 30px;
-  margin-right: 10px;
-} */
-.total .sum {
-  display: block;
+  background: transparent;
+  font-size: 15px;
   font-weight: bold;
-  width: 100%;
-}
-.total .quantity {
-  margin-right: 10px;
-}
-.total .actions button {
-  appearance: none;
-  border: none;
-  background: rgb(246, 166, 34);
   color: white;
-  margin-right: 2px;
-  width: 25px;
-  height: 25px;
-  border-radius: 50%;
-  font-size: 20px;
-  display: inline-block;
-  cursor: pointer;
-  outline: none;
-  position: relative;
+  border: solid 1px white;
+  border-radius: 100%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  line-height: 0.8;
-}
-.total .info,
-.total .actions {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+  margin-top: 25px;
 }

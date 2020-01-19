@@ -9,30 +9,28 @@ export const Todo = (props) => {
     const handleCompleteTodo = () => {
         dispatch(todoTasks.actions.toggleCompleteTodo(props.todo.id))
     }
-    const handleRemoveButtonClick = () => {
-        dispatch(todoTasks.actions.removeItem(props.todo.id))
-    }
+    // const handleRemoveButtonClick = () => {
+    //     dispatch(todoTasks.actions.removeItem(props.todo.id))
+    // }
 
     return (
-        <li>
-            {props.todo.name}
-
-            <label>
-                <input
-                    type="checkbox"
-                    checked={props.todo.completeTodo}
-                    onChange={handleCompleteTodo} />
-            </label>
-            <button type="button" onClick={handleRemoveButtonClick}>
-                Remove
-                        <span
+        <article className="todos">
+            <li className="todo">
+                <label>
+                    <input className="chackbox"
+                        type="checkbox"
+                        checked={props.todo.completeTodo}
+                        onChange={handleCompleteTodo} />
+                    {/* <span *
                     className="emoji"
                     role="img"
                     aria-label="butterfly">
                     🦋
-                        </span>
-            </button>
-
-        </li>
+                        </span> */}
+                    {/* </button> */}
+                </label>
+                {props.todo.name}
+            </li>
+        </article>
     )
 }
