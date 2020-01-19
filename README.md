@@ -15,11 +15,14 @@ https://nyblad-todolist.netlify.com/
 
 ## Technologies used
 
-JavaScript ES6 <br>
-React <br>
-Redux<br>
-CSS3 <br>
-Styled components<br>
+* JavaScript ES6 <br>
+* React <br>
+* Redux<br>
+* CSS3 <br>
+* Styled components<br>
+
+## Illustrations/Credits
+Illustration from Icons8 https://icons8.com/ouch/illustration/done-1
 
 <br>
 Sofie Nyblad 2020
