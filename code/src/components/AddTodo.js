@@ -16,8 +16,9 @@ const Form = styled.form`
 
 const Input = styled.input`
   border: none;
-  outline: none;
   font-size: 1rem;
+  margin-right: 0.5rem;
+  padding: 0.5rem;
 
   &::placeholder {
     color: rgba(0, 0, 0, 0.3);
@@ -25,7 +26,7 @@ const Input = styled.input`
   }
 
   &:focus::placeholder {
-    color: rgba(230, 0, 60, 1);
+    color: #000;
     transition: color 150ms ease-in-out;
   }
 `;
@@ -37,7 +38,6 @@ const Button = styled.button`
   border: none;
   font-weight: bold;
   font-size: 1.5rem;
-  outline: none;
 
   &:hover {
     color: rgba(230, 0, 60, 1);

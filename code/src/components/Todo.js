@@ -100,7 +100,6 @@ const PinButton = styled.button`
   border: none;
   font-size: 1.1rem;
   opacity: ${props => (props.completed ? 0.3 : 1)};
-  outline: none;
 
   &:hover {
     opacity: 1;

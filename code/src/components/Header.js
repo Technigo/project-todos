@@ -5,7 +5,7 @@ const moment = require('moment');
 const StyledHeader = styled.div`
   margin: 0.8rem 0 0 1rem;
   height: 70px;
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-weight: bold;
 `;
 
@@ -17,7 +17,7 @@ const Date = styled.p`
 `;
 
 export const Header = () => {
-  let time = moment().format('MMMM Do');
+  let time = moment().format('MMMM Do, YYYY');
 
   return (
     <StyledHeader>

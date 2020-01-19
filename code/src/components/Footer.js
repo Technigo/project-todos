@@ -27,7 +27,6 @@ const Button = styled.button`
   color: rgba(0, 117, 255, 1);
   padding: 0.3rem 0.5rem;
   font-size: 0.9rem;
-  outline: none;
   font-weight: bold;
 
   &:disabled {

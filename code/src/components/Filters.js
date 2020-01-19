@@ -25,7 +25,6 @@ const Button = styled.button`
   color: ${props => (props.activeFilter ? '#FFF' : 'rgba(230, 0, 60, 1)')};
   padding: 0.3rem 0.5rem;
   font-size: 0.7rem;
-  outline: none;
   font-weight: bold;
 
   &:disabled {
