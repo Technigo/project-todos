@@ -8,7 +8,6 @@ export const TaskList = () => {
 
   const allTasks = useSelector((store) => store.tasks.items)
 
-  // Add filter for showing just completed or uncompleted?
   const tasksCompleted = allTasks.filter(task => (task.completed === true))
   const tasksNotCompleted = allTasks.filter(task => (task.completed === false))
 

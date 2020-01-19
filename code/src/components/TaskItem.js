@@ -39,7 +39,6 @@ const Task = styled.section`
   padding: 12px 10px;
   border-bottom: 1px solid #EBEEEF;
 `
-// Not circular in iPhone - elipse?
 const TaskToggleButton = styled.button`
   background: ${props => (props.taskStatus ? "#1E2D2F" : "transparent")};
   color: #1E2D2F;
