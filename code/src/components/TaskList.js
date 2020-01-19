@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import { Task } from 'components/Task'
 
 export const TaskList = () => {
-  const taskslisted = useSelector((store) => store.tasks.items)
   const taskList = useSelector((store) => store.tasks.items)
   const countUncompleted = taskList.filter((item) => !item.complete)
   const [showTaskList, setShowTaskList] = useState(false)
@@ -11,7 +10,7 @@ export const TaskList = () => {
   return (
     <div>
       <ul>
-        {taskslisted.map((task) => (
+        {taskList.map((task) => (
           <Task key={task.id} task={task} timeCreated={task.timeCreated}/>
         ))}
       </ul>

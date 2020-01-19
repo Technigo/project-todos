@@ -17,7 +17,7 @@ export const tasks = createSlice({
   reducers: {
     addTask: (state, action) => {
       const date = moment().startOf('minute').fromNow()
-      state.items.push({id: state.items.length + 1, text: action.payload, timeCreated: date })
+      state.items.push({id: state.items.length + 1, text: action.payload, timeCreated: date})
     },
     removeItem: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload)
