@@ -3,7 +3,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  border-bottom: solid #ffb677;
+  /* border-bottom: solid #ffb677; */
+  background-color: #6e5773;
+  color: #e9e2d0;
+}
+
+.header-icon {
+  font-size: 35px;
 }
 
 .title-container, .info-container {
@@ -11,6 +17,15 @@
   flex-direction: column;
 }
 
-.title-container>span, .info-container>span {
-  margin: 10px;
+.title-container h2 {
+  margin: 0px;
+  margin-bottom: 15px;
+  align-content: center;
+  font-size: 30px;
+}
+
+.tasks-quantity {
+  margin-bottom: 15px;
+  font-weight: bold;
+  text-align: center;
 }

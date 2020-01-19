@@ -3,17 +3,18 @@
   /* background-color: #ff8364; */
   background-color: transparent;
   border-radius: 10px;
-  border: solid 3px #ff8364;
+  border: solid 2px #ea9085;
 }
 
 .remove-all-btn:hover {
-  background-color: #ffb677;
+  background-color: #ea9085;
   cursor: pointer;
 }
 
 .remove-all-btn-text {
   font-size: 12px;
   font-weight: bold;
+  color: #e9e2d0;
 }
 
 .remove-task-btn {

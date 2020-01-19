@@ -12,7 +12,7 @@ export const Header = () => {
     <div className="header-container">
 
       <div className="title-container">
-        <span> My To-Do </span>
+        <h2> My todos <span className="header-icon" role="emoji" aria-label="todo emoji"> 🔖</span> </h2>
         <span>{moment().format('dddd Do MMM')}</span>
       </div>
       <div className="info-container">

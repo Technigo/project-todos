@@ -1,9 +1,13 @@
 .task {
   display: flex;
   padding: 0px 0 0px 0;
-  border-bottom: solid #ffb677;
+  /* border-bottom: solid 2px #ffb677; */
   align-items: center;
   height: 80px;
+}
+
+.task:not(:last-child) {
+  border-bottom: solid 2px #ffb677;
 }
 
 .checkbox-label {
@@ -38,7 +42,7 @@
   width: 30px;
   background-color: #fff;
   border-radius: 50%;
-  border: solid #5f6caf;
+  border: solid #e9e2d0;
   outline: none;
 }
 
@@ -50,7 +54,7 @@
 /* When the checkbox is checked, add a blue background */
 
 .checkbox-label input:checked~.checkmark {
-  background-color: #5f6caf;
+  background-color: #6e5773;
 }
 
 .checkbox-label .checkmark:after {

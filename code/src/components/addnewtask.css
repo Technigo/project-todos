@@ -1,6 +1,6 @@
 .new-task-form {
   display: flex;
-  border-bottom: solid #ffb677;
+  border-bottom: solid 2px #ffb677;
 }
 
 .task-input {
@@ -11,6 +11,7 @@
   padding-left: 18px;
   outline: none;
   height: 80px;
+  font-family: 'Kalam', cursive;
 }
 
 .add-task-btn {

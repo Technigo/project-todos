@@ -8,6 +8,6 @@ export const TasksQuantity = () => {
   let completedTasks = allTasks.filter((item) => item.complete === true)
 
   return (
-    <span>{completedTasks.length}/{allTasks.length} finished</span>
+    <span className="tasks-quantity">{completedTasks.length}/{allTasks.length} Done</span>
   )
 } 

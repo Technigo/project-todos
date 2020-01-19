@@ -1,7 +1,8 @@
 body {
   margin: 0px;
   height: 100vh;
-  font-family: 'Open Sans', sans-serif;
+  /* font-family: 'Open Sans', sans-serif; */
+  font-family: 'Kalam', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
@@ -9,15 +10,11 @@ body {
   justify-content: center;
 }
 
-/* code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
-} */
-
 main {
   background-color: #edf7fa;
   width: 100%;
-  min-width: 350px;
-  max-width: 350px;
+  min-width: 380px;
+  max-width: 380px;
   display: flex;
   flex-direction: column;
   min-height: 600px;
