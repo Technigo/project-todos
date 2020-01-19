@@ -67,3 +67,11 @@ input:checked + .fake-checkbox::after {
   padding-bottom: 14px;
   padding-right: 5px;
 }
+
+@media (min-width: 1281px) {
+  ul {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+  }
+}
