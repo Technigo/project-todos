@@ -1,12 +1,15 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { todos } from 'reducers/todos'
+
 import "./clearButton.css"
 
 export const ClearButton = () => {
 
   const dispatch = useDispatch()
+
   const list = useSelector(state => state.todos.tasks)
+
   const emptyList = list.length === 0;
 
   return (
