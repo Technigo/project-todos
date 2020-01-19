@@ -1,8 +1,8 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import "./taskList.css"
-import { Task } from 'components/Task'
+import React from "react"
+import { useSelector } from "react-redux"
+import { Task } from "components/Task"
 
+import "./taskList.css"
 
 export const TaskList = () => {
   const allTasks = useSelector(state => state.todos.tasks)
