@@ -1,0 +1,67 @@
+input[type="checkbox"]{
+  /* opacity:0; */
+  display:none;
+}
+
+.checkbox-list-items {
+  display:flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: white;
+  margin:5px;
+}
+
+.checkbox-and-item-name {
+  display:flex;
+  align-items: center;
+  margin-left: 10px;
+}
+
+.date-and-remove-button {
+  display:flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding:10px 0 0 0;
+}
+
+.checkbox-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.fakeCheckbox{
+  border: 2px solid #ffc75f;
+  width: 18px;
+  height: 18px;
+  border-radius: 3px;
+  display:inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+}
+
+input:checked + .fakeCheckbox::after{
+  content: '';
+  width: 14px;
+  height: 14px;
+  background: #ffc75f;
+  display: inline-block;
+  border-radius: 3px;
+}
+
+.time-tag {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:12px;
+  color:grey;
+  margin:0;
+  padding: 0 35px 2px 0;
+}
+
+.remove-task-button {
+  border: 0;
+  background-color: transparent;
+  font-size: 16px;
+  padding:5px 8px 0 0;
+}

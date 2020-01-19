@@ -1,6 +1,10 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import { tasks } from "reducers/tasks"
+import styled from "styled-components"
+
+import "./addItemForm.css"
+
 
 export const AddItemForm = () => {
   const [taskInput, setTaskInput] = useState("")
@@ -19,11 +23,15 @@ export const AddItemForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Add task:
-      <input type="text" value={taskInput} onChange={(event) => setTaskInput(event.target.value)} />
+      <label className="input-label">
+        <input type="text"
+          value={taskInput}
+          onChange={(event) => setTaskInput(event.target.value)}
+          placeholder="Add task..." />
+        <button type="submit" className="add-task-button">➕</button>
       </label>
-      <button type="submit">Add task</button>
+
     </form>
   )
 }
+

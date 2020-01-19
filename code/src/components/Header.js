@@ -1,19 +1,31 @@
 import React from "react"
 import { useSelector } from "react-redux"
+import styled from "styled-components/macro"
 // import { tasks } from "reducers/tasks"
+import { ClearButton } from "components/ClearButton"
+import moment from "moment"
 
-export const Header = () => {
+import "./header.css"
+
+export const Header = (state) => {
   const items = useSelector((state) => state.tasks.items)
-  const unCompleted = useSelector((state) => state.tasks.noOfUncompletedTasks)
+
+  const completed = items.filter(item => item.checkedTask)
+
   return (
     <header>
-      <h1>To do</h1>
-      Amount of todo's: {items.length}
-      <br></br>
-      Uncompleted todo's: {unCompleted}
-
-      <br></br>
-      <br></br>
+      <div className="header-left">
+        <h1>To do</h1>
+        <hr></hr>
+        <p>{moment().format('MMMM Do')}</p>
+      </div>
+      <div className="header-right">
+        <p>Done: {completed.length} / {items.length}</p>
+        <ClearButton />
+      </div>
     </header>
   )
 }
+
+
+
