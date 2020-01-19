@@ -15,7 +15,7 @@ export const Footer = ({props}) => {
       <section className='footer'>
         <h4>still to do: {completed.length}</h4>
         <label className='clear-btn-container'>
-        <button className='clearButton' type="button" onClick={() => dispatch(tasks.actions.clearForm())}>Clear</button>
+        <button className='clearButton' type="button" onClick={() => dispatch(tasks.actions.clearForm())}>Clear all</button>
         </label>
       </section>
     )

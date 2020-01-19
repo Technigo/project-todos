@@ -24,7 +24,8 @@ dispatch(tasks.actions.toggleMarkAsCompleted(props.id))
              
              <span className='checkmark'></span>
              </label>
-        <li className='tasklist'>{props.text}
+        <li className={props.complete ? 'tasklist checked' : 'tasklist'} >{props.text}
+        
         <label className='remove-btn-container' >
            
             
