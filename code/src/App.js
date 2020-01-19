@@ -7,7 +7,7 @@ import { todoList } from "reducers/todoList"
 import { Header } from "components/Header"
 import { AddTodo } from "components/AddTodo"
 import { TodoList } from "components/TodoList"
-
+import { CompletedTodoList } from "components/CompletedTodoList"
 const reducer = combineReducers({
   todoList: todoList.reducer
 })
@@ -19,5 +19,6 @@ export const App = () => (
     <Header />
     <AddTodo />
     <TodoList />
+    <CompletedTodoList />
   </Provider>
 )

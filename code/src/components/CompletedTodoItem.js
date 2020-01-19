@@ -2,11 +2,11 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import { todoList } from "reducers/todoList"
 
-export const TodoItem = props => {
+export const CompletedTodoItem = props => {
   const dispatch = useDispatch()
 
   const handleCheckboxClick = () => {
-    dispatch(todoList.actions.completeTodo(props.item.id))
+    dispatch(todoList.actions.uncompleteTodo(props.item.id))
   }
 
   const handleRemoveClick = () => {
@@ -14,9 +14,9 @@ export const TodoItem = props => {
   }
 
   return (
-    <li className='unchecked'>
+    <li className='checked'>
       <label className='container'>
-        <input type='checkbox' checked={false} onChange={handleCheckboxClick} />
+        <input type='checkbox' checked={true} onChange={handleCheckboxClick} />
         <span class='checkmark'></span>
       </label>
       <div>{props.item.name}</div>

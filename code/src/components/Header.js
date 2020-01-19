@@ -6,15 +6,7 @@ export const Header = () => {
   const options = { dateStyle: "long" }
   const date = new Intl.DateTimeFormat("sv-SE", options).format(now)
 
-  const uncomplete = useSelector(store =>
-    store.todoList.items.reduce((total, item) => {
-      if (item.complete) {
-        return total
-      } else {
-        return total + 1
-      }
-    }, 0)
-  )
+  const uncomplete = useSelector(store => store.todoList.items.length)
   return (
     <div className='header'>
       <div className='logo'>Todo Today</div>
