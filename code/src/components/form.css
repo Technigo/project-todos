@@ -12,9 +12,12 @@
   border-left: none;
   border-right: none;
   height: 55px;
-  font-size: 30px;
   color: rgb(114, 12, 105);
-  ;
+  width: 100%;
+}
+
+input {
+  font-size: 25px;
 }
 
 .add-button {
