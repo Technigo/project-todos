@@ -16,8 +16,9 @@ export const Header = () => {
         <span>{moment().format('dddd Do MMM')}</span>
       </div>
       <div className="info-container">
-        <TasksQuantity />
         <ClearButton />
+        <TasksQuantity />
+
       </div>
     </div>
   )
