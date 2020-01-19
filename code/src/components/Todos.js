@@ -11,18 +11,6 @@ const StyledTodos = styled.div`
   align-items: ${props => (props.empty ? 'center' : '')};
   height: ${props => (props.empty ? '200px' : '')};
   padding: 0 0.4rem;
-  /* border: 1px solid red; */
-`;
-
-const Emoji = styled.span`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 3rem;
-  /* text-align: center; */
-  /* border: 1px solid red; */
-  padding: 1.5rem 0 1rem 0;
-  margin: 0;
 `;
 
 const Message = styled.p`
@@ -30,7 +18,6 @@ const Message = styled.p`
   font-size: 1.3rem;
   text-align: center;
   font-style: italic;
-  /* border: 1px solid green; */
 `;
 
 const Icon = styled.div`
