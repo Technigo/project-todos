@@ -1,21 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState } from "react"
+import { useDispatch } from "react-redux"
+import { todos } from "../reducers/todos"
+
 import "./addTask.css"
-import { useDispatch } from 'react-redux'
-import { todos } from '../reducers/todos'
-import addSymbol from 'icons/icons8-plus.svg'
+import addSymbol from "icons/icons8-plus.svg"
 
 export const AddTask = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
+
   const [task, setTask] = useState("")
 
   const handleFormSubmit = (event) => {
-    event.preventDefault();
+    event.preventDefault()
     dispatch(todos.actions.addTask(task))
     setTask("")
   }
 
   return (
     <form className="task-form" onSubmit={handleFormSubmit}>
+
       <input
         aria-label="Write a new todo"
         type="text"
@@ -32,6 +35,7 @@ export const AddTask = () => {
         className="task-submit"  >
         <img src={addSymbol} alt="Add task" className="add-symbol" />
       </button>
+
     </form >
   )
 }
