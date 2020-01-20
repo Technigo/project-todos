@@ -21,7 +21,7 @@ export const AddTaskForm = () => {
         <Button
           className="button"
           type="submit"
-          disabled={text.length < 1 || text.length > 80 ? true : false}
+          disabled={text.length < 1 || text.length > 40 ? true : false}
         > <span>+</span>
 
         </Button>
@@ -52,7 +52,7 @@ const Label = styled.div`
   background-color: white;
   width: 350px;
   padding: 40px 20px;
-  // padding-top:40px;
+
 `
 
 const Button = styled.button`
