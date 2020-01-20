@@ -28,7 +28,7 @@ const StyledTodo = styled.li`
   }
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: 50px 1fr 125px 40px 40px;
+    grid-template-columns: 50px 1fr 160px 40px 40px;
   }
 `;
 
