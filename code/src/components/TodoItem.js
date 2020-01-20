@@ -15,20 +15,22 @@ export const TodoItem = props => {
 
   return (
     <>
-      <input
-        type='checkbox'
-        checked={props.item.complete}
-        onChange={handleCheckboxClick}
-      />
       <li>
+        <input
+          type='checkbox'
+          checked={props.item.complete}
+          onChange={handleCheckboxClick}
+        />
+
         {props.item.name}
-      </li>
-      <button
-        type='button'
-        onClick={handleRemoveClick}
-      >
-        Remove
+
+        <button
+          type='button'
+          onClick={handleRemoveClick}
+        >
+          Remove
       </button>
+      </li>
     </>
   )
 }

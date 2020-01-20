@@ -8,7 +8,7 @@ export const todoList = createSlice({
   },
   reducers: {
     addTodo: (state, action) => {
-      state.items.push({ id: Date.now(), name: action.payload }
+      state.items.push({ id: Date.now(), name: action.payload, complete: false }
       )
     },
     removeTodo: (state, action) => {

@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { todoList } from 'reducers/todoList'
+import { Form } from 'components/styles'
 
 export const AddTodo = () => {
   const [todo, setTodo] = useState('')
@@ -13,7 +14,7 @@ export const AddTodo = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit}>
       <label>
         +
         <input
@@ -23,12 +24,6 @@ export const AddTodo = () => {
         ></input>
       </label>
       <button type='submit'>Add</button>
-      {/* <button
-        type='button'
-        onClick={() => dispatch(todoList.actions.addTodo(item))}
-      >
-        Add To Do
-      </button> */}
-    </form>
+    </Form>
   )
 }
