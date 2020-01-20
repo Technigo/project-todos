@@ -16,19 +16,24 @@ export const ClearButton = () => {
 }
 
 const Clear = styled.button`
-  box-shadow: 1px 1px 5px black;
+  box-shadow: 1px 1px 2px black;
   border: none;
   border-radius: 5px;
-  background-color: #433e3f;
+  background-color: #001aff;
   color: rgb(209, 198, 235);
   width: 60px;
   height: 25px;
+  margin: 10px 0px;
   font-size: 10px;
-  margin: 0px 10px;
   padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
+  transition: ease-in-out 100ms;
+  &:hover {
+    opacity: 0.7;
+  }
 `
 
 const ButtonWrapper = styled.section`

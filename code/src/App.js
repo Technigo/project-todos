@@ -27,4 +27,13 @@ export const App = () => {
 }
 
 const Background = styled.section`
-background`
+  width: 100vw;
+  height: 100vh;
+  background-color: white;
+  @media (min-width: 769px) {
+    margin-top: 5vh;
+    box-shadow: 2px 3px 8px black;
+    height: 90vh;
+    width: 768px;
+  }
+`

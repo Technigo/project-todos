@@ -1,11 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  items: [
-    { id: 1, task: 'bla', done: true },
-    { id: 2, task: 'bldada', done: false },
-    { id: 4, task: 'blakllu', done: true }
-  ]
+  items: []
 }
 
 export const fridge = createSlice({
@@ -13,7 +9,12 @@ export const fridge = createSlice({
   initialState,
   reducers: {
     addItem: (state, action) => {
-      state.items.push({ id: Date.now(), task: action.payload })
+      state.items.push({
+        id: Date.now(),
+        task: action.payload,
+        done: false,
+        added: Date.now()
+      })
     },
 
     removeItem: (state, action) => {

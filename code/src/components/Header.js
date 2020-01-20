@@ -28,7 +28,7 @@ export const Header = () => {
 }
 
 const HeaderSection = styled.section`
-  background: #8e6e53;
+  background: #fff;
   margin: 0;
   display: flex;
   flex-direction: row;
@@ -37,9 +37,13 @@ const HeaderSection = styled.section`
 `
 const HeaderText = styled.h1`
   font-size: 50px;
-  margin: 10px;
+  margin: 0px;
   color: rgb(37, 37, 37);
 `
-const RegularText = styled.p``
+const RegularText = styled.p`
+  margin: 0px;
+`
 
-const Wrapper = styled.div``
+const Wrapper = styled.div`
+  margin: 10px;
+`

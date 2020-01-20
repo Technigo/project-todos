@@ -42,10 +42,10 @@ const NewTaskForm = styled.form`
   align-items: center;
   margin: 0px;
   height: 35px;
-  background: #c69c72;
+  background: #e3e6e4;
 `
 const InputTask = styled.input`
-  width: 300px;
+  width: 100%;
   height: 15px;
   font-size: 20px;
   padding: 5px;
@@ -67,5 +67,6 @@ const AddNewTask = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
   opacity: ${(props) => (props.active ? '1' : '0.4')};
 `
