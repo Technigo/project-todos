@@ -2,16 +2,16 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
-import { fridge } from 'reducers/fridge'
+import { todo } from 'reducers/todo'
 
 import { AddItemForm } from 'components/AddItemForm'
 import { ItemList } from 'components/ItemList'
 import { Header } from 'components/Header'
-import { FridgeSummary } from 'components/TodoSummary'
+import { TodoSummary } from 'components/TodoSummary'
 import { ClearButton } from 'components/ClearButton'
 
 const reducer = combineReducers({
-  fridge: fridge.reducer
+  todo: todo.reducer
 })
 
 const store = configureStore({ reducer })
@@ -26,7 +26,7 @@ export const App = () => (
       <AddItemForm />
       <ItemList />
     <footer>  
-      <FridgeSummary />
+      <TodoSummary />
       <ClearButton />
     </footer>    
     </section>

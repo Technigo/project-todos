@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { Item } from 'components/Item'
 
 export const ItemList = () => {
-  const items = useSelector((state) => state.fridge.items)
+  const items = useSelector((state) => state.todo.items)
 
   return (
   

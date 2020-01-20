@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const fridge = createSlice({
-  name: 'fridge',
+export const todo = createSlice({
+  name: 'todo',
   initialState: {
     items: [
-      { id: 1, name: 'Create todo app', needsMore: false },
-      { id: 2, name: 'Follow Redux codealong', needsMore: true },
-      { id: 3, name: 'Do laundry', needsMore: false }
+      { id: 1, name: 'Create todo app', finishedTask: false },
+      { id: 2, name: 'Follow Redux codealong', finishedTask: true },
+      { id: 3, name: 'Do laundry', finishedTask: false }
     ]
   },
 
@@ -20,7 +20,7 @@ export const fridge = createSlice({
   //Date.now() is milliseconds and serves as an id since we are not going to add the same todo item in the same millisecond.
 
     removeItem: (state, action) => {
-      // find 'cheese' or whatever item
+      // find item/task
       // remove it from the items array
       // id = 3
       state.items = state.items.filter(item => item.id !== action.payload)
@@ -28,14 +28,14 @@ export const fridge = createSlice({
     removeAll: (state, action) => {
       state.items = []
     },
-    toggleNeedsMore: (state, action) => {
+    toggleFinishedTask: (state, action) => {
       console.log(action.payload)
-      // find 'cheese'
+      // find item/task
       const foundItem = state.items.find(item => item.id === action.payload)
 
-      // toggle the value of needsMore
+      // toggle the value of finishedTask
       if (foundItem) {
-        foundItem.needsMore = !foundItem.needsMore
+        foundItem.finishedTask = !foundItem.finishedTask
       }
     }
   }

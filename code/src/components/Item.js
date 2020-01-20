@@ -1,22 +1,22 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { fridge } from 'reducers/fridge'
+import { todo } from 'reducers/todo'
 
 export const Item = (props) => {
   const dispatch = useDispatch()
 
   const handleCheckboxClick = () => {
-    dispatch(fridge.actions.toggleNeedsMore(props.item.id))
+    dispatch(todo.actions.toggleFinishedTask(props.item.id))
   }
 
   const handleRemoveButtonClick = () => {
-    dispatch(fridge.actions.removeItem(props.item.id))
+    dispatch(todo.actions.removeItem(props.item.id))
   }
 
   return (
 
-    <li className={props.item.needsMore ? 'checked' : 'unchecked'}>
+    <li className={props.item.finishedTask ? 'checked' : 'unchecked'}>
     <span className="text">
      {props.item.name} 
      </span> 
@@ -26,7 +26,7 @@ export const Item = (props) => {
       <label>    
         <input
           type="checkbox"
-          checked={props.item.needsMore}
+          checked={props.item.finishedTask}
           onChange={handleCheckboxClick} />
         <span className="fakeCheckbox" />  
       </label>
