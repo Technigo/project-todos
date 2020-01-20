@@ -9,7 +9,7 @@ import { tasks } from './reducers/tasks'
 import { TasksList } from './components/TasksList'
 import { AddNewTask } from "./components/AddNewTask"
 import { Header } from "./components/Header"
-import { TasksSummary } from "./components/TasksSummary"
+
 
 
 
@@ -26,7 +26,6 @@ export const App = () => {
     <Provider store={store}>
       <main>
         <Header />
-        {/* <TasksSummary /> */}
         <AddNewTask />
         <TasksList />
       </main>
