@@ -3,28 +3,17 @@
     flex-direction: row;
     justify-content: space-between;
     width: -webkit-fill-available;
-    /* padding: 0;
-    /* border-bottom: 1.5px dotted white; */
-    /* margin: 25px 0;
-  align-items: baseline;  */
-  border-bottom: 1.5px dotted white;
+    border-bottom: 1.5px dotted white;
 }
 
 ul {
     display: flex;
-    /* flex-direction: row; */
     justify-content: space-between;
     padding: 0;
-    /* border-bottom: 1.5px dotted white; */
-    /* margin: 25px 0; */
     width: -webkit-fill-available;
     align-items: baseline;
     margin-top: 25px;
 }
-
-/* .checkbox-container {
-
-} */
 
 p {
     font-size: 18px;
@@ -32,19 +21,46 @@ p {
 
 .checkbox {
     padding: 10px;
-    width: 10px;
-    height: 10px;
-    /* background-color: #f5ab92;
-    border-bottom: 1.5px dotted white; */
+    width: 18px;
+    height: 18px;
+}
+/* 
+.checked + .checkbox::after {
+    background-color: green;
 }
 
-  .checked .text {
+input[type="checkbox" i] {
+    background-color: red;
+} */
+
+/* .checked .checkbox::after {
+    background-color: lawngreen;
+} */
+
+.checked .text {
     text-decoration: line-through;
     text-decoration-color: white;
-  }
+}
 
-.styled-checkbox {
+/* .styled-checkbox {
     padding: 10px;
     width: 10px;
     height: 10px;
+} */
+
+/* input .checkbox {
+    padding: 10px;
+    width: 10px;
+    height: 10px;
+} */
+
+/* .fakeCheckbox {
+    width: 10px;
+    height: 10px;
+} */
+
+.styled-btn{
+    border: none;
+    background-color: initial;
+    font-size: 20px;
 }

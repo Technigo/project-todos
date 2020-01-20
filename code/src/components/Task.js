@@ -23,21 +23,26 @@ export const Task = (props) => {
                     {props.task.text}
                 </span>
 
-                <div className="checkbox-container">
-                    <input
-                        className="checkbox" id="checkbox"
-                        type="checkbox"
-                        checked={props.task.needsMore}
-                        onChange={handleCheckboxClick}
-                    />
+                <div>
+                    <label>
+                        <input
+                            className="checkbox"
+                            type="checkbox"
+                            checked={props.task.needsMore}
+                            onChange={handleCheckboxClick}
+                        />
+                        <span className="fakeCheckbox" />
+                    </label>
                     {/* removing items/tasks */}
-                    <label for="checkbox">
-                        <button
+                    <label>
+                        <button className="styled-btn"
                             type="button"
                             onClick={handleRemoveButtonClick}>
-                            <span className="styled-button" role="img" aria-label="x">✖️</span>
+                            <span
+                                role="img"
+                                aria-label="x"
+                            >✖️</span>
                         </button>
-
                     </label>
                 </div>
             </ul >

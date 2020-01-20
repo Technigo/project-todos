@@ -8,11 +8,9 @@ import { tasks } from 'reducers/tasks'
 export const FooterBtn = (props) => {
     const dispatch = useDispatch()
 
-
     const handleNewDayButtonClick = () => {
         dispatch(tasks.actions.emptyTasks(props.task))
 
-        console.log(handleNewDayButtonClick)
     }
 
     return (

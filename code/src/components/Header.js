@@ -4,13 +4,13 @@ import './Header.css'
 
 
 const now = moment().format('LLLL')
-//console.log(now)
 
-export const Header = () => {
+
+export const Header = (props) => {
 
     return (
         <div className="header-container">
-            <h1> Todays todo:</h1>
+            <h1> ToDo:</h1>
             <h4>{now}</h4>
         </div>
     )

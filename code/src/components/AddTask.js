@@ -21,7 +21,8 @@ export const AddTask = () => {
 
     return (
         <div className="add-task-container">
-            <form onSubmit={handleFormSubmit}
+            <form
+                onSubmit={handleFormSubmit}
                 className="add-task-form">
                 <label>
                     <input
