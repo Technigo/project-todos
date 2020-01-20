@@ -1,8 +1,8 @@
 form {
-background-color: rgb(255, 243, 151);
-padding: 10px 0;
-width: 100%;
-margin:0;
+  background-color: rgb(255, 243, 151);
+  padding: 10px 0;
+  width: 100%;
+  margin:0;
 }
 
 .input-label {
@@ -30,8 +30,7 @@ input[type=text]{
     font-size: 20px;
     border: 2px solid black;
   }
-.add-task-button {
-  font-size: 30px;
+  .add-task-button {
+    font-size: 30px;
 }
-
 }

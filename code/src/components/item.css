@@ -15,6 +15,7 @@ input[type="checkbox"]{
   align-items: center;
   margin-left: 10px;
 }
+
 .item-name {
   margin:0;
 }
@@ -82,7 +83,6 @@ input:checked + .fakeCheckbox::after{
     height: 22px;
     margin-right: 10px;
   }
-  
   input:checked + .fakeCheckbox::after{
     width: 18px;
     height: 18px;
