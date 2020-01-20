@@ -41,7 +41,7 @@ const NewTaskForm = styled.form`
   flex-direction: row;
   align-items: center;
   margin: 0px;
-  height: 35px;
+  height: 40px;
   background: #e3e6e4;
 `
 const InputTask = styled.input`
@@ -50,8 +50,12 @@ const InputTask = styled.input`
   font-size: 20px;
   padding: 5px;
   background: transparent;
+  width: 80vw;
   border: none;
   color: rgb(37, 37, 37);
+  @media (min-width: 769px) {
+    width: 600px;
+  }
 `
 const Label = styled.label``
 

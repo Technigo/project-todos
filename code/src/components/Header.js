@@ -33,6 +33,7 @@ const HeaderSection = styled.section`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   padding: 0px 20px;
 `
 const HeaderText = styled.h1`

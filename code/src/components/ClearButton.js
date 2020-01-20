@@ -9,7 +9,7 @@ export const ClearButton = () => {
   return (
     <ButtonWrapper>
       <Clear type="button" onClick={() => dispatch(fridge.actions.removeAll())}>
-        Clear all
+        Clear
       </Clear>
     </ButtonWrapper>
   )
@@ -24,7 +24,7 @@ const Clear = styled.button`
   width: 60px;
   height: 25px;
   margin: 10px 0px;
-  font-size: 10px;
+  font-size: 13px;
   padding: 0;
   display: flex;
   justify-content: center;
