@@ -22,11 +22,12 @@ export const Todo = (props) => {
         <label>
           <Checkbox
             type="checkbox"
+            arialabel="completed"
             checked={props.item.complete}
             onChange={handleCheckboxClick} />
         </label>
         {props.item.text}
-        <Button type="button" onClick={handleRemoveButtonClick}><span>🗑</span></Button>
+        <Button type="button" arialabel="delete" onClick={handleRemoveButtonClick}><span>🗑</span></Button>
       </List>
     </div>
   )
@@ -41,7 +42,8 @@ const List = styled.ul`
   font-size: 16px;
   font-family: 'Roboto' sans-serif;
   font-weight: 500;
-  margin-top: 10px;
+  margin-top: 3px;
+  margin-bottom:0px;
 `
 
 const Checkbox = styled.input`
@@ -49,7 +51,7 @@ const Checkbox = styled.input`
   justify-content: center;
   padding-top: 10px; 
   padding-bottom: 10px;
-  margin-right:10px;
+  margin-right: 20px;
   
 `
 const Button = styled.button`
@@ -63,6 +65,9 @@ const Button = styled.button`
   font-size: 12px;
   font-weight: bold;
   color: white;
-  margin-left: 10px;
+  // margin-left: 10px;
   padding: 1px;
+  position: relative;
+  right: -10px;
+  
 `

@@ -84,7 +84,6 @@ const Heading = styled.h4`
   font-size: 16px;
   color: darkgrey;
   margin: 2px;
-  // padding-left: 10px;
 `
 
 
