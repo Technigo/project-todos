@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { fridge } from '../reducers/fridge'
+import { tasks } from '../reducers/tasks'
 
 import './clearbutton.css'
 
@@ -10,7 +10,7 @@ const dispatch = useDispatch()
 
     return (
         <div class="clear-all">
-<button type="button" className="slide-top" onClick={() => dispatch(fridge.actions.removeAll())}>
+<button type="button" className="slide-top" onClick={() => dispatch(tasks.actions.removeAll())}>
     Clear all
 </button>
 </div>

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { fridge } from '../reducers/fridge'
+import { tasks } from '../reducers/tasks'
 
 import './addtaskform.css'
 
@@ -12,7 +12,7 @@ export const AddTaskForm = () => {
 
     const handleSubmit = (event) => { //this function will be envoked when the form submits. It will save the input from name
     event.preventDefault()
-    dispatch(fridge.actions.addItem(name)) //inside addItem() is the payload. It is the paylowad I want to reach
+    dispatch(tasks.actions.addItem(name)) //inside addItem() is the payload. It is the paylowad I want to reach
 setName('')    
 }
 

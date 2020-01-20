@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import './notask.css'
 
 export const NoTask = () => {
-    const items = useSelector((state) => state.fridge.items )
+    const items = useSelector((state) => state.tasks.items )
 
     return (
 

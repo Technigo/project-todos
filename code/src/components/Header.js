@@ -1,11 +1,11 @@
 import React from 'react'
-import { fridge } from '../reducers/fridge'
+import { tasks } from '../reducers/tasks'
 import { useSelector } from 'react-redux'
 import './header.css'
 
 export const Header = () => {
 
-const quantity = useSelector((state) => state.fridge.items )
+const quantity = useSelector((state) => state.tasks.items )
 const totalQuantity = quantity.length
 const moment = require('moment');
 

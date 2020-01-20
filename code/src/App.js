@@ -4,13 +4,13 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { Header } from 'components/Header'
 import { AddTaskForm } from './components/AddTaskForm'
 import { TaskList } from './components/TaskList'
-import { fridge } from './reducers/fridge'
+import { tasks } from './reducers/tasks'
 import { NoTask } from './components/NoTask'
 import './app.css'
 import './components/mediaqueries.css'
 
 const reducer = combineReducers({
- fridge: fridge.reducer
+ tasks: tasks.reducer
 //   tasks: tasks.reducer
 })
 
@@ -21,11 +21,9 @@ export const App = () => {
   return (
 
     <Provider store={store}>
-      {/* <> */}
       <Header />
       <AddTaskForm />
       <TaskList />
-      {/* </> */}
       <NoTask />
     </Provider>
   )

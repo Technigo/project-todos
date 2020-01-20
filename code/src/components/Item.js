@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { useDispatch} from 'react-redux'
-import { fridge } from '../reducers/fridge'
+import { tasks } from '../reducers/tasks'
 
 export const Item = (props) => {
     const dispatch = useDispatch()
 
 const handleRemoveButtonClick = () => {
-    dispatch(fridge.actions.removeItem(props.item.id))
+    dispatch(tasks.actions.removeItem(props.item.id))
     }
     
 return (
