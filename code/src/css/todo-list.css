@@ -1,20 +1,19 @@
 
 .background {
-    margin-top:50px;
-    min-height: 900px;
+    margin:10px;
+    min-height:750px;
     background-image:url(../assets/1383079.jpg);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: center bottom;
+    background-position:center bottom;
   }
 
-.todo-list {
-    margin-left:50px; 
-    padding:40px;
-    width:500px;
+.todo-list { 
+    padding:20px;
+    width:auto;
     background-color:rgb(250, 214, 214);
     font-family: 'Gloria Hallelujah', cursive;
-    font-size:22px;
+    font-size:16px;
 }
 
 h1 {
@@ -22,7 +21,27 @@ h1 {
 }
 
 .empty-list {
-    margin:60px 0;
-    font-size:18px;
+    margin:40px 0;
+    font-size:16px;
+}
+
+
+@media (min-width: 668px ) { 
+    .background {
+        margin-top:50px;
+        min-height: 900px;
+    }
+
+    .todo-list {
+        width:500px;
+        margin-left:50px; 
+        padding:40px;
+        font-size:20px;
+    }
+
+    .empty-list {
+        margin:60px 0;
+        font-size:18px;
+    }
 }
 

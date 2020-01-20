@@ -8,6 +8,7 @@
 }
 
 form {
+    display:flex;
     padding:40px 0;
 }
 
@@ -56,9 +57,18 @@ input[type=text] {
 
 .summary {
     text-align:right;
-    font-size: 18px;
+    font-size: 16px;
 }
 
 .summary p {
     margin:0;
+}
+
+
+@media (min-width: 668px) {
+
+    .summary {
+        font-size: 18px;
+    }
+
 }
