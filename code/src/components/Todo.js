@@ -24,9 +24,9 @@ export const Todo = (props) => {
           onChange={handleCheckboxClick} />
         <TaskText completed={props.todo.completed}>{props.todo.text}</TaskText>
       </ListItem>
-      <button type="button" onClick={handleRemoveButtonClick}>
+      <ButtonRemove type="button" onClick={handleRemoveButtonClick}>
         <Emoji role="img" aria-label="add task"> ❌</Emoji>
-      </button>
+      </ButtonRemove>
     </ListWrapper>
   )
 }
@@ -34,10 +34,15 @@ export const Todo = (props) => {
 const Emoji = styled.span`
 font-size: large;
 `
+const ButtonRemove = styled.button`
+background-color: transparent;
+border: 0;
+`
 
 const Check = styled.input`
   width: 30px;
   height: 30px;
+  font-size: large;
   background-color: white;
   border-radius: 50%;
   vertical-align: middle;
