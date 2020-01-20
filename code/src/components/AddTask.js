@@ -40,7 +40,7 @@ export const AddTask = () => {
                     <button
                         className="add-task-btn"
                         type="submit">
-                        Add new task
+                        Add new Todo
                     </button >
                 </div>
 
