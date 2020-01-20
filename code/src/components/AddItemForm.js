@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { fridge } from 'reducers/fridge'
+import './AddItemForm.css'
 
 export const AddItemForm = () => {
     const [name, setName] = useState('')
@@ -15,10 +16,13 @@ export const AddItemForm = () => {
         <form onSubmit={handleSubmit}>
             <label>
                 Name:
-                <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
+                <input
+                    type="text"
+                    value={name}
+                    onChange={(event) => setName(event.target.value)} />
             </label>
 
-            <button type="submit">Add Item</button>
+            <button className="submitButton" type="submit">Add Item</button>
         </form>
     )
 } 
