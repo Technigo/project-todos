@@ -2,7 +2,6 @@
 
 A project using Redux to build a Todo app, where its possible to add tasks, list tasks and toggle whether a task is done or not, a counter that counts the number of tasks and whats left todo, as well as a clear all button, built using reducers, dispatch and useSelector.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 Learning objectives:
 * How to structure a redux store
