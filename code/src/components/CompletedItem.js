@@ -2,7 +2,7 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import { todoList } from "reducers/todoList"
 
-export const CompletedTodoItem = props => {
+export const CompletedItem = props => {
   const dispatch = useDispatch()
 
   const handleCheckboxClick = () => {
@@ -20,13 +20,10 @@ export const CompletedTodoItem = props => {
         <span class='checkmark'></span>
       </label>
       <div>{props.item.name}</div>
-      <button
-        className='remove'
-        type='button'
-        onClick={handleRemoveClick}
-        aria-label='remove todo'
-      >
-        🗑️
+      <button className='remove' type='button' onClick={handleRemoveClick}>
+        <span role='img' aria-label='remove todo'>
+          🗑️
+        </span>
       </button>
     </li>
   )

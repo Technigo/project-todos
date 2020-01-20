@@ -1,14 +1,15 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import { CompletedTodoItem } from "components/CompletedTodoItem"
+import { CompletedItem } from "components/CompletedItem"
 
-export const CompletedTodoList = () => {
+export const CompletedList = () => {
   const todoItems = useSelector(state => state.todoList.completedItems)
 
   return (
     <ul>
+      {todoItems.length > 0 && <h2>Completed todo</h2>}
       {todoItems.map(item => (
-        <CompletedTodoItem key={item.id} item={item} />
+        <CompletedItem key={item.id} item={item} />
       ))}
     </ul>
   )

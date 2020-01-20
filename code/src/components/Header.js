@@ -8,12 +8,12 @@ export const Header = () => {
 
   const uncomplete = useSelector(store => store.todoList.items.length)
   return (
-    <div className='header'>
+    <header>
       <div className='logo'>Todo Today</div>
       <div className='header-info'>
         <div> {date} </div>
-        <div>Items left: {uncomplete}</div>
+        <div>Left todo: {uncomplete}</div>
       </div>
-    </div>
+    </header>
   )
 }
