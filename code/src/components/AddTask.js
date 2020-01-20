@@ -18,42 +18,42 @@ export const AddTaskForm = () => {
   return (
     <FormWrapper onSubmit={handleSubmit}>
       <label>
-        <Input type="text" placeholder="New Todo" value={todo} onChange={(event) => setTodo(event.target.value)} />
+        <Input type="text" multiline={true} maxLength={20} placeholder="New Todo" value={todo} onChange={(event) => setTodo(event.target.value)} />
       </label>
       <Button type="submit">Add task</Button>
     </FormWrapper>
   )
-
-
 }
 
-
 const FormWrapper = styled.form`
-display: flex;
-justify-content: space-around; 
+  display: flex;
+  justify-content: space-around; 
+  padding: 10px; 
+  background-color: #cfcfcf;
 `
 
 const Input = styled.input`
-flex-direction: row;
-align-items: baseline;
-padding-right: 10;
-padding-bottom: 15;
-margin-top: 30px; 
-background: transparent;
-font-size: 25px;
-width: 100%; 
-border-style: none;
-
+  flex-direction: row;
+  align-items: baseline;
+  padding-right: 10;
+  padding-bottom: 15;
+  margin-top: 10px; 
+  background: transparent;
+  font-size: 25px;
+  width: 100%; 
+  border-style: none;
+  height: 50px; 
+  color: #3e3e3e;
 `
 const Button = styled.button`
-background-color: black;
-color: white;
-font-size: 20px; 
-align-item: right; 
-margin-top: 20px; 
-border-radius: 50px;
-width: 100px;
-height: 35px; 
+  background-color: grey;
+  color: white;
+  font-size: 20px; 
+  align-item: right; 
+  margin-top: 20px; 
+  border-radius: 10px;
+  width: 100px;
+  height: 35px; 
 `
 
 

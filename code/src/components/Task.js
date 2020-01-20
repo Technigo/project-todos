@@ -17,64 +17,58 @@ export const Task = (props) => {
 
   return (
     <List>
-
-      {props.taskName.name}
-
       <TaskItem>
         <input
           type='checkbox'
           checked={props.taskName.complete}
           onChange={handleCheckboxClick} />
       </TaskItem>
-
-
-      <Button type="button" onClick={handleRemoveButtonClick}>
-        Remove
-      </Button>
-
+      <WrapperTask>
+        {props.taskName.name}
+      </WrapperTask>
+      <WrapperButton>
+        <Button type="button" onClick={handleRemoveButtonClick}>
+          🗑️
+        </Button>
+      </WrapperButton>
     </List>
   )
 }
 
-const List = styled.ul`
-// display: flex;
-// align-items: center;
-// align-items: center;
-// justify-content: space-evenly; 
-padding-inline-start: 0;
-padding-left: 0;
-
+const List = styled.section`
+  display: flex;
+`
+const WrapperTask = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-right: 50px; 
+  justify-content: space-between; 
+  width: 300px;
+  color: #3e3e3e;
 `
 
-// const WrapperTask = styled.ul`
-// display: flex;
-// flex-direction: column;
-// justify-content: flex-start;
-// padding-inline-start: 0;
-// padding-left: 0;
-// `
-
-
 const TaskItem = styled.label`
-  // float: left;
-  `
+  float: left;
+`
 
-// const WrapperRemoveButton = styled.section`
-// display: flex;
-// flex-direction: column;
-// justify-content: flex-end;
-// padding-inline-start: 0;
-// padding-left: 0;
-// `
+const WrapperButton = styled.section`
+display: flex;
+flex-direction: column;
+align-items: flex-end;
+margin-right: 50px; 
+justify-content: space-between; 
+width: 350px;
+padding-bottom: 30px; 
+`
 
 const Button = styled.button`
-background - color: black;
-color: black;
-font - size: 20px;
-margin - top: 20px;
-margin - right: 5px;
-border - radius: 50px;
+background: transparent;
+color: white;
+font-size: 20px; 
+margin-top: 0; 
+margin-right: 5px; 
 width: 100px;
-height: 35px;
-
+height: 35px; 
+border: none;
 `

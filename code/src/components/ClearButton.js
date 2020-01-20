@@ -7,21 +7,21 @@ export const ClearButton = () => {
   const dispatch = useDispatch()
 
   return (
-    <Button type="button" onClick={() => dispatch(tasks.actions.removeAll)}>
-      Remove all
+    <Button type="button" onClick={() => dispatch(tasks.actions.removeAll())}>
+      Clear all 💣
       </Button>
   )
 }
 
 const Button = styled.button`
-background-color: black;
-color: white;
-font-size: 20px; 
-align-item: right; 
-margin-top: 20px; 
-margin-right: 20px; 
-border-radius: 50px;
-width: 150px;
-height: 35px; 
-float: right;
+  background-color: grey;
+  color: white;
+  font-size: 20px; 
+  align-item: center; 
+  margin-top: 20px; 
+  margin-left: 140px; 
+  border-radius: 10px;
+  width: 150px;
+  height: 35px; 
+  float: bottom;
 `

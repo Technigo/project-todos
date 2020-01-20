@@ -17,12 +17,12 @@ export const TaskList = () => {
 }
 
 const List = styled.ul`
-flex-direction: row;
-align-items: baseline;
-padding-right: 10;
-padding-bottom: 15;
-margin-top: 30px; 
-background: transparent;
-font-size: 25px;
-width: 100%; 
+  flex-direction: row;
+  align-items: baseline;
+  padding-right: 10;
+  padding-bottom: 5;
+  margin-top: 20px; 
+  background: transparent;
+  font-size: 25px;
+  width: 100%; 
 `
