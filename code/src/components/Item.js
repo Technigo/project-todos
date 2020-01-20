@@ -1,15 +1,12 @@
 import React from "react"
 import { useDispatch } from "react-redux"
-import { useSelector } from "react-redux"
 import { tasks } from "reducers/tasks"
 import moment from "moment"
-
 
 import "./item.css"
 
 export const Item = (props) => {
   const dispatch = useDispatch()
-  const items = useSelector((state) => state.tasks.items)
 
   const handleCheckboxClick = () => {
     dispatch(tasks.actions.toggleCheckedTask(props.item.id))
@@ -26,7 +23,7 @@ export const Item = (props) => {
           <input type="checkbox"
             checked={props.item.checkedTask}
             onChange={handleCheckboxClick} />
-          <span className="fakeCheckbox" ariaLabel="checkbox"></span>
+          <span className="fakeCheckbox" role="img" aria-label="checkbox"></span>
         </label>
         {props.item.name}
 
@@ -36,7 +33,7 @@ export const Item = (props) => {
           type="button"
           onClick={handleRemoveButtonClick}
           className="remove-task-button">
-          <span>❌</span>
+          <span role="img" aria-label="remove-button">❌</span>
         </button>
         <p className="time-tag">
           {moment(props.item.createdAt).fromNow()}

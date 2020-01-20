@@ -1,4 +1,3 @@
-// import React from "react"
 import { createSlice } from "@reduxjs/toolkit"
 import moment from "moment"
 
@@ -6,22 +5,17 @@ const initialState = {
   items: [
     {
       id: 1,
-      name: "task 1",
-      checkedTask: false,
-      createdAt: "2020-01-16T08:08:25.289Z",
+      name: "create to-do-app",
+      checkedTask: true,
+      createdAt: "2020-01-14T19:43:21.337Z",
     },
     {
       id: 2,
-      name: "task 2",
+      name: "drink coffee",
       checkedTask: false,
-      createdAt: "2020-01-10T13:27:12.408Z",
+      createdAt: "2020-01-20T10:15:41.525Z",
     },
-    {
-      id: 3,
-      name: "task 3",
-      checkedTask: false,
-      createdAt: "2020-01-09T14:23:41.196Z"
-    },
+
   ]
 }
 
@@ -31,12 +25,9 @@ export const tasks = createSlice({
 
   reducers: {
     //Here we will add actions
-    //Would make sense if this heading was actions instead
+    //Would make sense if this heading was actions instead lol
 
     addTask: (state, action) => {
-      console.log("current state", state)
-      console.log("action", action)
-
       state.items.push({ id: Date.now(), name: action.payload, createdAt: moment() })
     },
     removeTask: (state, action) => {
@@ -46,9 +37,7 @@ export const tasks = createSlice({
     removeAll: (state) => {
       state.items = []
     },
-
     toggleCheckedTask: (state, action) => {
-      console.log(action)
       //find the right task and toggle the value of checkedTask
       const checkedItem = state.items.find((item) => item.id === action.payload)
 
@@ -57,7 +46,5 @@ export const tasks = createSlice({
         //Toggle: if it's true, set to false and vice versa
       }
     }
-
-
   }
 })
