@@ -34,5 +34,3 @@ const Button = styled.button`
   // margin: 5px;
   padding: 3px;
 `
-
-//does not work!!!

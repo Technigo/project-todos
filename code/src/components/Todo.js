@@ -63,7 +63,6 @@ const Checkbox = styled.input`
 const Button = styled.button`
   width: 30px;
   height: 30px;
-  //background-color: #f7f7fc;
   background-color: #e8e9f1;
   text-align: center;
   line-height:13px;
