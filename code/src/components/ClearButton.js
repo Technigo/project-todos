@@ -21,6 +21,7 @@ text-align: center;
   border: 3px solid #e5e5e5;
   padding: 5px;
   margin: 5px;
+  font-weight: 600;
   border-radius: 10px;
   text-transform: uppercase;
   &:hover {

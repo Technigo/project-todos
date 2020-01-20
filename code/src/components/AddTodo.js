@@ -36,13 +36,14 @@ export const AddTodo = () => {
 
 const TextInputContainer = styled.section`
   display: flex;
+  justify-content: center;
   flex-direction: row;
   align-items: baseline;
-  padding-right: 10px;
-  padding-bottom: 10px;
+  padding-top: 10px;
   `
 const TextInput = styled.input`
-  border-color: black;
+width: 70%;
+  border-color:  #4a4a4a;
   border-bottom-width: 1;
   border-top-width: 0;
   border-left-width: 0;
@@ -62,7 +63,7 @@ const SubmitButton = styled.button`
   border-radius: 10px;
   text-transform: uppercase;
   &:hover {
-    background: #e26d5a;
+    background: #ece3c5;
     cursor: pointer;
   }
 `
