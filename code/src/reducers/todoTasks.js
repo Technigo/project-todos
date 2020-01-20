@@ -41,27 +41,4 @@ export const todoTasks = createSlice({
     }
 })
 
-// addTodo: (state, action) => {
-//     let { text, id } = action.payload;
-//     state.taskData.push({
-//       id,
-//       text,
-//       complete: false,
-//       important: false
-//     });
-//   }
-// reducers: {
-//     addItem: (state, action) => {
-//         const existingTodo = state.items.find((item) => item.id === action.payload.id)
 
-//         if (todo) {
-//             todo.quantity += 1
-//         } else {
-//             state.items.push({ ...action.payload })
-
-
-//             // const { id, text, createdAt } = action.payload
-//             // state.push({ id, text, createdAt, completed: false })
-//         }
-//     }
-// }

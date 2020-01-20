@@ -17,17 +17,17 @@ export const Todo = (props) => {
       
     return (
         <div className="todos">
-        <li className="todo">
-            <label>  
-                <input className="checkBox"
-                    type="checkbox" 
-                    checked={props.todo.completeTodo} 
-                    onChange={handleCompleteTodo} />
-                <span>
-                    {props.todo.name} 
-                </span>      
-            </label>
-        </li>
+            <li className="todo">
+                <label>  
+                    <input className="checkBox"
+                        type="checkbox" 
+                        checked={props.todo.completeTodo} 
+                        onChange={handleCompleteTodo} />
+                    <span>
+                        {props.todo.name} 
+                    </span>      
+                </label>
+            </li>
         </div>
     )
 }
