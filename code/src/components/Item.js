@@ -36,7 +36,7 @@ export const Item = (props) => {
           <span role="img" aria-label="remove-button">❌</span>
         </button>
         <p className="time-tag">
-          {moment(props.item.createdAt).fromNow()}
+          Added {moment(props.item.createdAt).fromNow()}
         </p>
       </div>
     </li>

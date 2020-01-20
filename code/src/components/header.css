@@ -1,16 +1,15 @@
 header {
   background-color: #ffc75f;
-  /* width: 100%; */
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
-  padding: 0 50px;
+  justify-content: center;
 }
 
 .header-left {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 30px;
 }
 
 .header-right {
@@ -18,6 +17,7 @@ header {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  padding: 0 30px;
 }
 
 h1 {
