@@ -4,6 +4,7 @@ A project using Redux to build a Todo app, where its possible to add tasks, list
 
 Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
+Learning objectives:
 * How to structure a redux store
 * How to write reducers and actions
 * How to interact with your store using selectors or by dispatching actions
@@ -13,9 +14,12 @@ Describe how you approached to problem, and what tools and techniques you used t
 * You should be able to add new tasks
 * Your app should show a count of either all todos, or all uncomplete todos
 
+ My next *Todo* would be to implement that when tasks been marked as complete it would move to the bottom of the list.
+
+
 Technologies Implemented: Redux, React, JSX, CSS
 
-Deployed project on Netlify:
+Deployed project on Netlify: https://todo-anna-almestal.netlify.com/
 
 
 
