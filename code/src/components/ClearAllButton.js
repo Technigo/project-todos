@@ -17,7 +17,7 @@ export const ClearAllButton = () => {
 
     <Button type="button" onClick={handleClearAllButtonClick}>CLEAR ALL</Button>
 
-    // <Button type="button" onClick{(} => dispatch  CLEAR ALL</Button>
+    // Could also be written like <Button type="button" onClick{(} => dispatch-function  CLEAR ALL</Button>
 
   )
 }

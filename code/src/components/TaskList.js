@@ -24,9 +24,8 @@ const ListBackground = styled.div`
   background-color: white;
   align-items: center;
   justify-content: center;
-  padding-top: 10px; 
-  padding-bottom: 10px;
-  width: 320px;
-  padding-bottom: 20px;
+  width: 390px;
+  //padding: 20px;
   margin-bottom: 100px;
 `
+

@@ -58,7 +58,7 @@ const Header = styled.div`
   justify-content: space-between;
   color: black;
   background-color: #f7f7fc;
-  width: 280px;
+  width: 350px;
   hight: 120px;
   margin-top: 50px;
   padding: 20px;

@@ -18,29 +18,30 @@ export const AddTaskForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <Label>
-        <Button className="button" type="submit"> + </Button>
-        <Input type="text" value={text} onChange={(event) => setText(event.target.value)} />
+        <Button className="button" type="submit"> <span>+</span> </Button>
+        <Input type="text" placeholder="Add a new task" value={text} onChange={(event) => setText(event.target.value)} />
       </Label>
     </form>
   )
 }
 
 const Input = styled.input`
-  width: 225px;
+  width: 250px;
   height: 30px;
   background-color: white;
   text-align: left;
   border-radius: 5px;
   font-size: 16px;
-  color: blue;
+  color: darkblue;
   margin-left: 10px;
-  padding: 3px;
+  padding: 5px;
 `
 
 const Label = styled.div`
   background-color: white;
-  width: 280px;
+  width: 350px;
   padding: 20px;
+  padding-top:40px;
 `
 
 const Button = styled.button`

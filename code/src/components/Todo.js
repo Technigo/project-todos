@@ -26,10 +26,7 @@ export const Todo = (props) => {
             onChange={handleCheckboxClick} />
         </label>
         {props.item.text}
-
-
-
-        <Button type="button" onClick={handleRemoveButtonClick}>-</Button>
+        <Button type="button" onClick={handleRemoveButtonClick}><span>🗑</span></Button>
       </List>
     </div>
   )
@@ -38,35 +35,34 @@ export const Todo = (props) => {
 }
 
 const List = styled.ul`
- 
-  color: blue;
-  background-color: lightgrey;
-  align-items: center;
-  justify-content: center;
-  padding: 10px;
-  
+  background-color: #f7f7fc;
+  color: darkblue;
+  padding: 20px;
+  font-size: 16px;
+  font-family: 'Roboto' sans-serif;
+  font-weight: 500;
+  margin-top: 10px;
 `
 
 const Checkbox = styled.input`
- 
-  color: red;
-  background-color: lightgrey;
   align-items: center;
   justify-content: center;
   padding-top: 10px; 
   padding-bottom: 10px;
+  margin-right:10px;
   
 `
 const Button = styled.button`
   width: 30px;
   height: 30px;
-  background-color: #8aa8e9;
+  background-color: #f7f7fc;
+  //background-color: darkblue;
   text-align: center;
-  line-height:14px;
+  line-height:13px;
   border-radius: 5px;
-  font-size: 20px;
+  font-size: 12px;
   font-weight: bold;
   color: white;
-  // margin: 5px;
-  padding: 3px;
+  margin-left: 10px;
+  padding: 1px;
 `

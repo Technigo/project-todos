@@ -17,19 +17,17 @@ export const tasks = createSlice({
     addTask: (state, action) => {
       state.items.push({ id: Date.now(), text: action.payload })
     },
-    // reducer for CLEAR ALL tasks.
+    // reducer for CLEAR ALL tasks. (return initialState)
 
-    //removeAllItems: () => {
-    //return initialState
-
-    //},
+    removeAllItems: (state, action) => {
+      state.items = []
+    },
 
     // reducer to remove 1 tasks.
 
     removeItems: (state, action) => {
       // find 'the task' or whatever item
       // remove it from the items array
-      // id = 3
       state.items = state.items.filter((item) => item.id !== action.payload)
     },
     // reducer to check and uncheck (toggle) the tasks via a checkbox. 
