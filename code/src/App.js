@@ -11,7 +11,6 @@ import './components/mediaqueries.css'
 
 const reducer = combineReducers({
  tasks: tasks.reducer
-//   tasks: tasks.reducer
 })
 
 const store = configureStore({ reducer: reducer})

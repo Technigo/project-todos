@@ -5,9 +5,13 @@ import { tasks } from '../reducers/tasks'
 export const Item = (props) => {
     const dispatch = useDispatch()
 
-const handleRemoveButtonClick = () => {
+    const handleRemoveButtonClick = () => {
     dispatch(tasks.actions.removeItem(props.item.id))
     }
+
+    const [ checked, setChecked ] = useState('')
+
+
     
 return (
     <li>
@@ -15,7 +19,7 @@ return (
             X
         </button>
         <label className="container">
-            <input className="check-box" type="checkbox" onClick=""></input>
+            <input className="check-box" type="checkbox" value={checked} onClick={console.log(setChecked)}></input>
             <span className="checkmark"></span>
             {props.item.name}
         </label>

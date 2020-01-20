@@ -25,6 +25,10 @@ export const tasks = createSlice({
    // state.items = state.items.splice((initialState) => initialState !== action.payload)
         // state.items = state.items.splice((items) => items !== action.payload)
         },
+        checkedTask: (state, action) => {
+            // state.items.push({})
+
+        },
         countQuantity: (state, action) => {
             state.items.count(state.items)
         }
