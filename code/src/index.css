@@ -23,8 +23,6 @@ code {
 
 .headerContainer {
   background-color: rgb(190, 120, 247);
-  /* border-top-right-radius: 15px;
-  border-top-left-radius: 15px; */
   display: flex;
   justify-content: left;
 }
@@ -32,10 +30,17 @@ code {
 .headerInfo {
   padding: 25px;
   color: white;
-  font-weight: lighter;
+  /* font-weight: lighter; */
   display: inline-block;
   border-bottom: solid 1px lightgray;
 }
+
+/* .emojiButterfly {
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  margin-top: 20px;
+} */
 
 .headerTasks{
   position: absolute;
@@ -43,7 +48,17 @@ code {
   display: inline-block; 
 }
 
+h2 {
+  margin-bottom: 5px;
+}
 /**** Add Todo ****/
+
+input {
+  border: hidden;
+  color: #ced6e3;
+  border-style: none;
+  font-size: 16px;
+}
 
 .inputField {
   display: flex;
@@ -51,45 +66,41 @@ code {
   border-bottom: solid 1px #ced6e3;
 }
 
-.input {
-  border: hidden;
-  font-size: 30px; 
-  color: #ced6e3;
-  /* align-items: center;  */
-  border-style: none;
-}
-
-/* .emoji {
-  font-size: 15px;
-} */
 input:focus, textarea {
   outline: none;
 }
 
 .addTodoButton { 
   border: solid 1px lightgray;
-  border-radius: 100%;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
   padding: 10px 10px;
   color: white;
   cursor: pointer; 
   margin: 15px;
+  margin-left: 20px;
+  border-bottom: solid 1px lightgray;
 } 
 
 .label {
   border: none;
 }
 
+form {
+  border-bottom: solid 1px lightgray;
+  
+}
+.inputLabel {
+  font-size: 20px;
 
+}
 /***to-do list  ****/
 .todos {
   display: flex;
   flex-direction: column;
   justify-content: center; 
   color: darkgray;
-  /* list-style: none; */
-  /* padding: 20px; */
 }
 
 ul {
@@ -97,9 +108,9 @@ ul {
   list-style: none;
 }
 
-
 .checkbox {
-  margin-right: 10px;
+  margin-left: 10px;
+  margin-right: 15px;
 }
 
 .todo {
@@ -107,11 +118,12 @@ ul {
   flex-direction: row;
   justify-content: left;
   padding: 20px;
-  font-size: 20px;
+  font-size: 16px;
   color: rgb(70, 69, 69);
   align-items: center;
   border-bottom: solid 1px lightgray;
   margin-left: 5px;
+
 }
 
 /***footer ***/
@@ -120,12 +132,12 @@ footer {
   background-color: rgb(190, 120, 247);
   display: flex;
   justify-content: left;
-  padding: 0px 10px;
+  padding: 15px 0px;
   display: flex;
 }
 
-h4{
-  font-size: 20px;
+h4 {
+  font-size: 16px;
 }
 
 .summary {
@@ -135,28 +147,31 @@ h4{
 }
 
 .summary span {
-  background: white;
+  background: transparent;
   width: 50px;
-  height: 50px;
-  border-radius: 100%;
+  height: 30px;
+  border-radius: 10%;
+  border: solid 1px white;
+  border-radius: 10%;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 36px;
+  font-size: 16px;
   margin-left: 15px;
 } 
 
 .clearButton {
   width: 50px;
-  height: 50px;
+  height: 30px;
   background: transparent;
   font-size: 15px;
   font-weight: bold;
   color: white;
   border: solid 1px white;
-  border-radius: 100%;
+  border-radius: 10%;
   display: inline-flex;
-  align-items: center;
   justify-content: center;
-  margin-top: 25px;
+  align-self: center;
 }
+
+

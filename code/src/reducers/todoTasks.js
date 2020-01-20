@@ -1,12 +1,14 @@
 import { createSlice, combineReducers } from '@reduxjs/toolkit'
+// import { AddTodoForm } from 'components/AddTodoForm';
 
 const initialState = {
     //items
     todos: [
-        { id: 1, text: 'Shop', complete: true },
-        { id: 2, text: 'Go to the gym', complete: true },
-        { id: 3, text: 'Walk the dog', complete: true },
-        { id: 4, text: 'Create a todo app', complete: false },
+        { id: 1, name: 'Create To-do app', completeTodo: true },
+        { id: 2, name: 'Plan family dinner', completeTodo: true },
+        { id: 3, name: 'Invite friends to Salsa class', completeTodo: true },
+        { id: 4, name: 'Book yoga retreat', completeTodo: false },
+        { id: 5, name: 'Plan a new trip with friends', completeTodo: false }
     ]
 }
 

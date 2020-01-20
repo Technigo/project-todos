@@ -14,13 +14,16 @@ export const Todo = (props) => {
     // }
 
     return (
-        <article className="todos">
+        <div className="todos">
             <li className="todo">
                 <label>
-                    <input className="chackbox"
+                    <input className="checkbox"
                         type="checkbox"
                         checked={props.todo.completeTodo}
                         onChange={handleCompleteTodo} />
+                    <span>
+                        {props.todo.name}
+                    </span>
                     {/* <span *
                     className="emoji"
                     role="img"
@@ -29,8 +32,8 @@ export const Todo = (props) => {
                         </span> */}
                     {/* </button> */}
                 </label>
-                {props.todo.name}
+
             </li>
-        </article>
+        </div>
     )
 }

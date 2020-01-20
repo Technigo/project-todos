@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { todoTasks } from 'reducers/todoTasks'
+// import { todoTasks } from 'reducers/todoTasks'
 
 // defined our state from react
 export const TodoTasksSummary = () => {
@@ -19,7 +19,7 @@ export const TodoTasksSummary = () => {
                 <span
                     type='button'
                     onClick={() => setShowTodoList(!ShowTodoList)}>
-                    📝
+                    ❔
                 </span>
             </h4>
 
