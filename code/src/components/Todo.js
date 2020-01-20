@@ -28,7 +28,7 @@ const StyledTodo = styled.li`
   }
 
   @media screen and (min-width: 768px) {
-    grid-template-columns: 50px 1fr 110px 40px 40px;
+    grid-template-columns: 50px 1fr 125px 40px 40px;
   }
 `;
 
@@ -132,7 +132,7 @@ export const Todo = ({ todo }) => {
         onClick={() => dispatch(todos.actions.toggleCompleted({ todo }))}
         completed={todo.completed}
       >
-        {moment(todo.createdAt).fromNow()}
+        Added {moment(todo.createdAt).fromNow()}
       </TimeWrapper>
       <PinWrapper>
         <PinButton
