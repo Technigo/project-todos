@@ -31,7 +31,6 @@ code {
 .headerInfo {
   padding: 25px;
   color: white;
-  /* font-weight: lighter; */
   display: inline-block;
   border-bottom: solid 1px lightgray;
 }
