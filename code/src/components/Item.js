@@ -85,7 +85,7 @@ const TaskWrapper = styled.article`
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: 0;
+  margin: 1px;
   justify-content: space-between;
 `
 const Wrapper = styled.div`
