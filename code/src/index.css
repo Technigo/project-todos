@@ -191,8 +191,7 @@ button.clear-all {
   /* INPUT */
 
   input {
-   padding-left: 90px;
-   padding-right: 90px;
+   width: 280px;
    margin-left: 20px;
    margin-right: 20px;
   }
@@ -208,7 +207,7 @@ button.clear-all {
 
 }
 
-@media (min-width: 668px) {
+@media (min-width: 900px) {
 
     /* LIST */
   
@@ -217,7 +216,7 @@ button.clear-all {
     }
 
     .item-container {
-      width: 55%;
+      width: 45%;
     }
 
   /* SUMMARY */
