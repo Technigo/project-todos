@@ -28,9 +28,9 @@ export const Sidebar = () => {
 
 const Main = styled.div`
   text-align: center;
-  height: 3000px;
   @media (min-width: 768px) {
     margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 `;
 const Button = styled.button`
@@ -39,6 +39,9 @@ const Button = styled.button`
   width: 30%;
   padding: 0.5rem;
   cursor: pointer;
+  :hover {
+    background: silver;
+  }
   @media (min-width: 768px) {
     margin-bottom: 0;
     margin-right: 0;

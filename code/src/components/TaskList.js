@@ -31,12 +31,15 @@ export const TaskList = () => {
 
 const Container = styled.div`
   display: flex;
-  width: 80%;
+  width: 90%;
   background: #eee;
   padding: 0.7rem 1rem;
   border: none;
   border-radius: 10px;
   margin: 0.5rem 1.5rem;
+  @media (min-width: 600px) {
+    width: 80%;
+  }
   @media (min-width: 900px) {
     margin: 0.5rem 3rem;
   }

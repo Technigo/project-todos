@@ -27,6 +27,16 @@ const Button = styled.button`
   opacity: 0.6;
   margin-top: 1rem;
   cursor: pointer;
+  width: 100%;
+  @media (min-width: 600px) {
+    width: 100%;
+  }
+  :hover {
+    background: white;
+  }
+  :hover > p {
+    color: black;
+  }
 `;
 
 const P = styled.p`
