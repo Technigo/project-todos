@@ -1,7 +1,8 @@
+/* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { fridge } from 'reducers/fridge'
+import { tasks } from 'reducers/tasks'
 import styled from 'styled-components'
 
 export const AddTask = () => {
@@ -10,7 +11,7 @@ export const AddTask = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(fridge.actions.addItem(task))
+    dispatch(tasks.actions.addItem(task))
     setTask('')
   }
 
@@ -18,7 +19,7 @@ export const AddTask = () => {
     <NewTaskForm onSubmit={handleSubmit}>
       <AddNewTask
         type="submit"
-        active={task.length > 0 ? true : false}
+        active={task.length > 0}
         disabled={task.length === 0}
         onClick={handleSubmit}
       >
@@ -41,14 +42,14 @@ const NewTaskForm = styled.form`
   flex-direction: row;
   align-items: center;
   margin: 0px;
-  height: 40px;
-  background: #e3e6e4;
+  height: 50px;
+  background: #f5f5f5;
 `
 const InputTask = styled.input`
   width: 100%;
-  height: 15px;
+  height: 25px;
   font-size: 20px;
-  padding: 5px;
+  padding-top: 5px;
   background: transparent;
   width: 80vw;
   border: none;
@@ -62,12 +63,11 @@ const Label = styled.label``
 const AddNewTask = styled.button`
   border: none;
   background-color: transparent;
-  color: rgb(37, 37, 37);
+  color: black;
   width: 30px;
   height: 30px;
   font-size: 30px;
   margin: 0px 10px;
-  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;

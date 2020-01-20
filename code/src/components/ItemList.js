@@ -4,7 +4,7 @@ import { Item } from 'components/Item'
 import styled from 'styled-components'
 
 export const ItemList = () => {
-  const items = useSelector((state) => state.fridge.items)
+  const items = useSelector((state) => state.tasks.items)
   return (
     <ListedTask>
       {items.map((item) => (

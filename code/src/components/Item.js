@@ -1,21 +1,26 @@
+/* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import { fridge } from 'reducers/fridge'
+import { useDispatch, useSelector } from 'react-redux'
+import { tasks } from 'reducers/tasks'
 import styled from 'styled-components'
 import moment from 'moment'
 
 export const Item = (props) => {
   const dispatch = useDispatch()
+  const allTasks = useSelector((store) => store.tasks.items)
+  console.log(allTasks.length)
 
   const handleCheckClick = () => {
-    dispatch(fridge.actions.toggleDone(props.item.id))
+    dispatch(tasks.actions.toggleDone(props.item.id))
   }
 
   const handleRemovekClick = () => {
-    dispatch(fridge.actions.removeItem(props.item.id))
+    dispatch(tasks.actions.removeItem(props.item.id))
   }
-
+  if (allTasks.length === 0) {
+    return <Task>dada</Task>
+  }
   return (
     <List>
       <TaskWrapper>
@@ -28,7 +33,7 @@ export const Item = (props) => {
             />
           </Checkbox>
           <TextWrapper>
-            <Task>{props.item.task}</Task>
+            <Task completed={props.item.done}>{props.item.task}</Task>
             <Added>Added {moment(props.item.added).fromNow()}</Added>
           </TextWrapper>
         </Wrapper>
@@ -43,7 +48,7 @@ export const Item = (props) => {
 }
 
 const List = styled.section`
-  background: #ece8ff;
+  background: #f0f0f0;
   margin: 1px;
   display: flex;
   flex-direction: column;
@@ -80,6 +85,8 @@ const RemoveButton = styled.button`
 const Task = styled.h1`
   font-size: 18px;
   margin: 0px;
+  transition: ease-in-out 200ms;
+  opacity: ${(props) => (props.completed ? '0.4' : '1')};
 `
 const TaskWrapper = styled.article`
   display: flex;

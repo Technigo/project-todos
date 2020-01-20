@@ -6,7 +6,7 @@ import { ClearButton } from './ClearButton'
 
 export const Header = () => {
   // To get all tasks
-  const taskStore = useSelector((store) => store.fridge.items)
+  const taskStore = useSelector((store) => store.tasks.items)
 
   // To get tasks with completed status true
   const completedTasks = taskStore.filter((task) => task.done === true)
@@ -28,7 +28,7 @@ export const Header = () => {
 }
 
 const HeaderSection = styled.section`
-  background: #fff;
+  background: #dddddd;
   margin: 0;
   display: flex;
   flex-direction: row;

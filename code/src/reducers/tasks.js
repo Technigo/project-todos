@@ -4,7 +4,7 @@ const initialState = {
   items: []
 }
 
-export const fridge = createSlice({
+export const tasks = createSlice({
   name: 'tasks',
   initialState,
   reducers: {

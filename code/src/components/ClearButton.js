@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { fridge } from 'reducers/fridge'
+import { tasks } from 'reducers/tasks'
 import styled from 'styled-components'
 
 export const ClearButton = () => {
@@ -8,7 +8,7 @@ export const ClearButton = () => {
 
   return (
     <ButtonWrapper>
-      <Clear type="button" onClick={() => dispatch(fridge.actions.removeAll())}>
+      <Clear type="button" onClick={() => dispatch(tasks.actions.removeAll())}>
         Clear
       </Clear>
     </ButtonWrapper>
