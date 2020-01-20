@@ -4,6 +4,7 @@ An application which pulls together all the parts of redux by building a todo ap
 
 In my todo app, you can add tasks, list tasks and toggle whether a task is done or not. 
 
+https://todo-app-linda.netlify.com/
 
 ## Learnings 🧠
 
