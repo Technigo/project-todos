@@ -1,6 +1,13 @@
 ul {
   list-style: none;
-  width: 300px;
+  width: 275px;
   margin:0;
   padding:0;
+}
+
+/***DESKTOP***/
+@media (min-width: 1025px){
+  ul {
+    width: 400px;
+  }
 }

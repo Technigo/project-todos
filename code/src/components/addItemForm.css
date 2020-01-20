@@ -11,7 +11,7 @@ margin:0;
 }
 
 input[type=text]{
-  width: 235px;
+  width: 210px;
   padding: 8px;
   font-size: 16px;
   border: 1px solid black;
@@ -21,4 +21,17 @@ input[type=text]{
   border: 0;
   background-color: transparent;
   font-size: 20px;
+}
+
+/***DESKTOP***/
+@media (min-width: 1025px){
+  input[type=text] {
+    width: 325px;
+    font-size: 20px;
+    border: 2px solid black;
+  }
+.add-task-button {
+  font-size: 30px;
+}
+
 }

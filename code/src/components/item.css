@@ -15,6 +15,9 @@ input[type="checkbox"]{
   align-items: center;
   margin-left: 10px;
 }
+.item-name {
+  margin:0;
+}
 
 .date-and-remove-button {
   display:flex;
@@ -63,4 +66,25 @@ input:checked + .fakeCheckbox::after{
   background-color: transparent;
   font-size: 16px;
   padding:5px 8px 0 0;
+}
+
+/***DESKTOP***/
+@media (min-width: 1025px){
+  .item-name {
+    font-size: 32px;
+  }
+  .time-tag {
+    font-size:12px;
+  }
+  .fakeCheckbox{
+    border: 2px solid #ffc75f;
+    width: 22px;
+    height: 22px;
+    margin-right: 10px;
+  }
+  
+  input:checked + .fakeCheckbox::after{
+    width: 18px;
+    height: 18px;
+  }
 }

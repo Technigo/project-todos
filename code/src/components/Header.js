@@ -14,9 +14,10 @@ export const Header = (state) => {
     <header>
       <div className="header-left">
         <h1>To do</h1>
-        <hr></hr>
+        {/* <hr></hr> */}
         <p>{moment().format('MMMM Do')}</p>
       </div>
+      <div class="vertical-line"></div>
       <div className="header-right">
         <p>Done: {completed.length} / {items.length}</p>
         <ClearButton />

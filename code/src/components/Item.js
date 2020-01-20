@@ -25,7 +25,9 @@ export const Item = (props) => {
             onChange={handleCheckboxClick} />
           <span className="fakeCheckbox" role="img" aria-label="checkbox"></span>
         </label>
-        {props.item.name}
+        <p className="item-name">
+          {props.item.name}
+        </p>
 
       </div>
       <div className="date-and-remove-button">
