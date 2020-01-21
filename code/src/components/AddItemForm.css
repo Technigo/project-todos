@@ -1,15 +1,25 @@
 form {
     display: flex;
     justify-content: center;
-    margin: 0 10px;
+    margin: 10px;
     font-weight:bold;
 }
 
+.addToBuyBox {
+    border: 1px solid yellow;
+    margin-left: 5px;
+}
+
 .submitButton {
-    margin-left:10px;
+    margin-left:5px;
     border:1px solid black;
     background-color:white;
     border-radius:16px;
     font-family: 'Amatic SC';
     font-weight: bold;
+    /* cursor: grab; */
 }
+
+/* .submitButton:hover {
+    cursor:grab;
+} */

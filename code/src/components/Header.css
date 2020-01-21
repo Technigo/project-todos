@@ -1,9 +1,9 @@
 .headerContainer {
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: center;
     margin: 10px;
-    width:auto;
+    width: 80%;
     align-items: center;
 }
 
@@ -19,7 +19,8 @@ h1 {
     margin:0 10px 10px;
 }
 
-p {
+.dateP {
     margin:5px;
+    font-size:15px;
     font-weight:bold;
 }

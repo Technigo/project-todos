@@ -16,7 +16,7 @@ export const AddItemForm = () => {
         <form onSubmit={handleSubmit}>
             <label>
                 To buy:
-                <input
+                <input className="addToBuyBox"
                     type="text"
                     value={name}
                     onChange={(event) => setName(event.target.value)} />

@@ -20,15 +20,17 @@ const store = configureStore({ reducer })
 
 export const App = () => {
   return (
-    <div className="appContainer">
+    <container className="appContainer">
       <Provider store={store}>
         <Header />
-        <AddItemForm />
-        <ItemList />
-        <ClearButton />
-        <FridgeSummary />
+        <section className="formBox">
+          <AddItemForm />
+          <ItemList />
+          <ClearButton />
+          <FridgeSummary />
+        </section>
         <Footer />
       </Provider>
-    </div>
+    </container>
   )
 }

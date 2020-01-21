@@ -1,10 +1,19 @@
 .appContainer {
     display: flex;
     justify-content: center;
+    align-items:center;
     flex-direction: column;
-    background-color: gray;
     background-image: url(fridge2.jpg);
     background-size: cover;
     height:auto;
-    /* background-repeat: no-repeat; */
+    width:auto;
+}
+
+.formBox {
+    display: flex;
+    flex-direction: column;
+    background-color:white;
+    width:80%;
+    border-radius:30px;
+    margin:0 10px 0;
 }
