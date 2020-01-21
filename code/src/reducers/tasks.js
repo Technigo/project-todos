@@ -13,7 +13,8 @@ const taskData = [
 export const tasks = createSlice({
   name: 'tasks',
   initialState: {
-    items: taskData
+    items: taskData,
+    taskToDelete: null,
   },
 
   reducers: {
@@ -23,7 +24,6 @@ export const tasks = createSlice({
 
     toggleCheckbox: (state, action) => {
       let foundItem = state.items.find((item) => item.id === action.payload)
-
       if (foundItem) {
         foundItem.complete = !foundItem.complete
       }
@@ -37,8 +37,12 @@ export const tasks = createSlice({
       // find 'item' or whatever item
       // remove it from the items array
       // id = 3
-      state.items = state.items.filter(item => item.id !== action.payload)
-
+      state.items = state.items.filter(item => item.id !== state.taskToDelete)
+      state.taskToDelete = null
+      // state.items = state.items.filter(item => item.id !== action.payload)
+    },
+    setTaskToDelete: (state, action) => {
+      state.taskToDelete = action.payload
     }
   }
 })

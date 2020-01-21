@@ -3,9 +3,9 @@ import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from "@reduxjs/toolkit"
 
 import { tasks } from './reducers/tasks'
-// import { todo } from './reducers/todo'
+import { dialogs } from './reducers/dialogs'
 
-
+// import { Dialog } from "components/Dialog"
 import { TasksList } from './components/TasksList'
 import { AddNewTask } from "./components/AddNewTask"
 import { Header } from "./components/Header"
@@ -15,7 +15,7 @@ import { Header } from "./components/Header"
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
-  // todo: todo.reducer
+  dialogs: dialogs.reducer
 })
 
 const store = configureStore({ reducer })
@@ -29,7 +29,6 @@ export const App = () => {
         <AddNewTask />
         <TasksList />
       </main>
-
     </Provider>
 
   )
