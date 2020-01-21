@@ -11,10 +11,11 @@ export const AddItemForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(tasks.actions.addTask(taskInput))
-    setTaskInput("")
-    //To empty input-field after submit
-
+    if (taskInput.length > 0) {
+      dispatch(tasks.actions.addTask(taskInput))
+      setTaskInput("")
+      //To empty input-field after submit
+    }
   }
 
   return (
