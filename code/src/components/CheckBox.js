@@ -7,8 +7,6 @@ export const CheckBox = (props) => {
 
   const handleCheckboxClick = (id) => {
     dispatch(tasks.actions.toggleCheckbox(id))
-    console.log("THIS IS THE ID:", id)
-    console.log("CHANGED")
   }
 
   return (

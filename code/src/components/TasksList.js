@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import moment from "moment"
+
 
 import { CheckBox } from './CheckBox'
 import { RemoveButton } from './RemoveButton'
@@ -18,7 +18,7 @@ export const TasksList = () => {
           <CheckBox task={task} />
           <div className="task-detail">
             <div className="text"> {task.text} </div>
-            <span className="elapsed-time" > Added {moment().fromNow()} </span>
+            <span className="elapsed-time" > Added {task.createdAt} </span>
           </div>
           <RemoveButton task={task} />
         </div>
