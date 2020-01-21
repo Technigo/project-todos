@@ -25,6 +25,10 @@ export const tasks = createSlice({
       state.items = []
     },
 
+    clearCompleted: (state, action) => {
+      state.items = state.items.filter((item) => item.done !== action.payload)
+    },
+
     toggleDone: (state, action) => {
       const foundItem = state.items.find((item) => item.id === action.payload)
 

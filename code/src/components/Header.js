@@ -13,16 +13,16 @@ export const Header = () => {
 
   return (
     <HeaderSection>
-      <Wrapper>
+      <LeftWrapper>
         <HeaderText>To-Do</HeaderText>
         <RegularText>{moment().format('MMM Do')}</RegularText>
-      </Wrapper>
-      <Wrapper>
+      </LeftWrapper>
+      <RightWrapper>
         <RegularText>
           {completedTasks.length}/{taskStore.length}done
         </RegularText>
         <ClearButton />
-      </Wrapper>
+      </RightWrapper>
     </HeaderSection>
   )
 }
@@ -42,9 +42,17 @@ const HeaderText = styled.h1`
   color: rgb(37, 37, 37);
 `
 const RegularText = styled.p`
-  margin: 0px;
+  margin: 0px 10px;
+  display: flex;
+  align-self: flex-end;
 `
 
-const Wrapper = styled.div`
+const LeftWrapper = styled.div`
   margin: 10px;
+`
+
+const RightWrapper = styled.div`
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
 `

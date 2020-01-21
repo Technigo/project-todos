@@ -30,7 +30,9 @@ export const Item = (props) => {
           </Checkbox>
           <TextWrapper>
             <Task completed={props.item.done}>{props.item.task}</Task>
-            <Added>Added {moment(props.item.added).fromNow()}</Added>
+            <Added completed={props.item.done}>
+              Added {moment(props.item.added).fromNow()}
+            </Added>
           </TextWrapper>
         </Wrapper>
         <RemoveButton type="button" onClick={handleRemovekClick}>
@@ -59,11 +61,13 @@ const CheckboxInput = styled.input`
   height: 30px;
   margin: 0px 20px;
   opacity: 0.2;
-  transition: ease-in-out 200ms;
+  transition: ease-in-out 400ms;
   cursor: pointer;
   &:checked {
     opacity: 0.8;
     transform: rotate(360deg);
+    width: 34px;
+    height: 34px;
   }
   &:hover {
     opacity: 0.8;
@@ -77,11 +81,10 @@ const RemoveButton = styled.button`
   border: none;
   background-color: transparent;
   cursor: pointer;
-  transition: ease-in-out 200ms;
+  transition: ease-in-out 300ms;
   &:hover {
     opacity: 0.7;
     margin-right: 10px;
-    transform: rotate(360deg);
   }
 `
 const Task = styled.h1`
@@ -89,6 +92,7 @@ const Task = styled.h1`
   margin: 0px;
   transition: ease-in-out 200ms;
   opacity: ${(props) => (props.completed ? '0.4' : '1')};
+  margin-left: ${(props) => (props.completed ? '8px' : '0')};
 `
 const TaskWrapper = styled.article`
   display: flex;
@@ -105,6 +109,8 @@ const Added = styled.p`
   margin: 2px;
   font-size: 10px;
   font-style: oblique;
+  opacity: ${(props) => (props.completed ? '0.3' : '1')};
+  margin-left: ${(props) => (props.completed ? '8px' : '0')};
 `
 
 const TextWrapper = styled.div`

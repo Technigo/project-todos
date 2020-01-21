@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-closing-bracket-location */
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
@@ -11,6 +12,12 @@ export const ClearButton = () => {
       <Clear type="button" onClick={() => dispatch(tasks.actions.removeAll())}>
         Clear
       </Clear>
+      <Clear
+        type="button"
+        onClick={() => dispatch(tasks.actions.clearCompleted(true))}
+      >
+        Clear done
+      </Clear>
     </ButtonWrapper>
   )
 }
@@ -21,11 +28,11 @@ const Clear = styled.button`
   border-radius: 5px;
   background-color: #001aff;
   color: rgb(209, 198, 235);
-  width: 60px;
+  width: 75px;
   height: 25px;
-  margin: 10px 0px;
-  font-size: 13px;
-  padding: 0;
+  margin: 10px 5px;
+  font-size: 12px;
+  padding: 0px;
   display: flex;
   justify-content: center;
   align-items: center;
