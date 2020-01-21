@@ -60,7 +60,12 @@ const CheckboxInput = styled.input`
   margin: 0px 20px;
   opacity: 0.2;
   transition: ease-in-out 200ms;
+  cursor: pointer;
   &:checked {
+    opacity: 0.8;
+    transform: rotate(360deg);
+  }
+  &:hover {
     opacity: 0.8;
   }
 `
@@ -76,6 +81,7 @@ const RemoveButton = styled.button`
   &:hover {
     opacity: 0.7;
     margin-right: 10px;
+    transform: rotate(360deg);
   }
 `
 const Task = styled.h1`
