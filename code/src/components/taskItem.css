@@ -73,5 +73,6 @@ input:checked + .fake-checkbox::after {
     align-items: center;
     justify-content: center;
     display: flex;
+    flex-direction: column;
   }
 }
