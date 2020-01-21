@@ -1,0 +1,30 @@
+.shoppingSummary {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: auto;
+    margin:10px;
+}
+
+h4 {
+    margin:0px;
+    width:auto;
+    margin: 10px 10px 0 10px;
+}
+
+h2{
+    margin:0px;
+    width:auto;
+    margin:10px;
+}
+
+ol {
+    padding-left:10px;
+    margin:0px;
+}
+
+.shoppingIcon {
+    margin-left: 10px;
+    font-size: 30px;
+}

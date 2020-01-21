@@ -1,8 +1,25 @@
-.dateContainer {
+.headerContainer {
     display:flex;
-    flex-direction: row;
-    justify-content: space-between;
+    flex-direction: column;
+    justify-content: center;
     margin: 10px;
     width:auto;
+    align-items: center;
+}
 
+.dateBar {
+    display:flex;
+    flex-direction: row;
+    justify-content:space-between;
+    width: 100%;
+}
+
+h1 {
+    width: auto;
+    margin:0 10px 10px;
+}
+
+p {
+    margin:5px;
+    font-weight:bold;
 }

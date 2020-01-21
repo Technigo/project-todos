@@ -4,7 +4,11 @@
     margin:10px;
 }
 
-
-/* button:hover {
-    cursor: pointer;
-} */
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    /* list-style-type: none; */
+    margin:0px;
+}

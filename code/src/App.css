@@ -3,4 +3,8 @@
     justify-content: center;
     flex-direction: column;
     background-color: gray;
+    background-image: url(fridge2.jpg);
+    background-size: cover;
+    height:auto;
+    /* background-repeat: no-repeat; */
 }

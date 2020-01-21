@@ -15,7 +15,7 @@ export const AddItemForm = () => {
     return (
         <form onSubmit={handleSubmit}>
             <label>
-                My Shoppinglist:
+                To buy:
                 <input
                     type="text"
                     value={name}

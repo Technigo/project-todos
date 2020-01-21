@@ -4,12 +4,14 @@ import './Header.css'
 
 export const Header = () => {
     return (
-        <container className="dateContainer">
+        <container className="headerContainer">
             {/* I would like to add time api here */}
-            <p>10.43</p>
+            <div className="dateBar">
+                <p>2020.21.01</p>
+                <p>10.43</p>
+            </div>
             <h1>My Shoppinglist</h1>
             {/* I would like to add date api here */}
-            <p>2020.21.01</p>
         </container>
     )
 }

@@ -11,11 +11,11 @@ export const FridgeSummary = () => {
     const [showShoppingList, setShowShoppingList] = useState(false)
 
     return (
-        <section>
-            <h1>I have {items.length} items in my fridge</h1>
+        <section className="shoppingSummary">
+            <h4>I have {items.length} items in my fridge</h4>
             <h2>I need to buy more of {buyMoreItems.length} item
                 {buyMoreItems.length === 1 ? "." : "s."}
-                <span onClick={() => setShowShoppingList(!showShoppingList)}> 🛍 </span>
+                <span className="shoppingIcon" onClick={() => setShowShoppingList(!showShoppingList)}> 🛍 </span>
             </h2>
 
             {showShoppingList && (

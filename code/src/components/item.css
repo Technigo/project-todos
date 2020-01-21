@@ -1,22 +1,14 @@
-ul {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-left: 30px;
-    /* list-style-type: none; */
-    margin:0px;
-}
-
-li {
-    /* display:flex;
+/* li {
+    display:flex;
     justify-content: center;
     align-items: center;
-    margin:5px; */
-}
+    margin:5px;
+} */
 
 .buyMoreLabel {
     margin-left:5px;
     font-size:10px;
+    font-weight:bold;
 }
 
 .removeButton {
@@ -27,3 +19,7 @@ li {
     font-family: 'Amatic SC';
     font-weight: bold;
 }
+
+/* .removeButton:hover {
+    cursor: pointer;
+} */
