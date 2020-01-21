@@ -1,9 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { fridge } from 'reducers/fridge'
-import './Item.css'
+import './AddToList.css'
 
-export const Item = (props) => {
+export const AddToList = (props) => {
     const dispatch = useDispatch()
 
     const handleCheckBoxClick = () => {

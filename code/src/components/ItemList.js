@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { Item } from 'components/Item'
+import { AddToList } from 'components/AddToList'
 import './ItemList.css'
 
 export const ItemList = () => {
@@ -9,7 +9,7 @@ export const ItemList = () => {
         <container className="itemListContainer">
             <ul>
                 {items.map((item) => (
-                    <Item key={item.id} item={item} />
+                    <AddToList key={item.id} item={item} />
                 ))}
             </ul>
         </container>
