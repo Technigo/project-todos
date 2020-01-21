@@ -18,7 +18,7 @@ export const Item = (props) => {
   const handleRemovekClick = () => {
     dispatch(tasks.actions.removeItem(props.item.id))
   }
-  if (allTasks.length === 1) {
+  if (allTasks.length === 0) {
     return <Added>no tasks...</Added>
   }
   return (
