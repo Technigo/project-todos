@@ -1,17 +1,26 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
-import { HeaderWrapper } from 'components/styles'
+import React from "react";
+import { useSelector } from "react-redux";
+import { HeaderWrapper } from "components/styles";
 
 export const Header = () => {
-  const totalTasks = useSelector((store) => (store.todoList.items.reduce(total => total + 1, 0)))
-  // const today = new Date()
+  const now = new Date(Date.now());
+  const options = { dateStyle: "long" };
+  const date = new Intl.DateTimeFormat("sv-SE", options).format(now);
 
-  // Nice to have: incomplete tasks. filter?
+  const incomplete = useSelector(store =>
+    store.todoList.items.reduce((total, item) => {
+      if (item.complete) {
+        return total;
+      } else {
+        return total + 1;
+      }
+    }, 0)
+  );
 
   return (
     <HeaderWrapper>
-      <div>Today</div>
-      <div>{totalTasks}</div>
+      <h1>{date}</h1>
+      <p>Left to do: {incomplete}</p>
     </HeaderWrapper>
-  )
-}
+  );
+};
