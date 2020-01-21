@@ -46,12 +46,11 @@ const NewTaskForm = styled.form`
   background: #f5f5f5;
 `
 const InputTask = styled.input`
-  width: 100%;
   height: 25px;
   font-size: 20px;
   padding-top: 5px;
   background: transparent;
-  width: 80vw;
+  width: 250px;
   border: none;
   color: rgb(37, 37, 37);
   @media (min-width: 769px) {
