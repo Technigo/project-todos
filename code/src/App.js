@@ -24,8 +24,3 @@ export const App = () => (
     </TodoContainer>
   </Provider>
 );
-
-//TODO
-//Animation on sort??
-//Toggle textarea onClick when adding new task.
-//STYLING!
