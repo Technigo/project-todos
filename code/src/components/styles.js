@@ -13,7 +13,8 @@ export const ListWrapper = styled.div`
   border-bottom-left-radius: 3px;
   border-bottom-right-radius: 3px;
   min-height: 490px;
-  max-heightoverflow: scroll;
+  max-height: 550px;
+  overflow: scroll;
 `;
 
 export const HeaderWrapper = styled.div`
@@ -46,7 +47,7 @@ export const ToggleAddTodo = styled.div`
   transition: background 0.25s;
   cursor: pointer;
   &:hover {
-    background: grey;
+    background: #d7dae5;
   }
 `;
 
@@ -64,6 +65,10 @@ export const AddTodoButton = styled.input`
   border-radius: 3px;
   align-self: flex-start;
   box-shadow: 0px 2px 6px 0px rgb(204, 202, 204);
+  &:hover {
+    background-color: #50a040;
+    color: white;
+  }
 `;
 
 export const ListItem = styled.li`
@@ -83,6 +88,7 @@ export const Checkbox = styled.input`
 export const RemoveButton = styled.div`
   display: flex;
   justify-content: center;
+  cursor: pointer;
 `;
 
 export const FlexWrapper = styled.div`
