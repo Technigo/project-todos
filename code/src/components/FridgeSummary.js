@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { fridge } from 'reducers/fridge'
+import './FridgeSummary.css'
 
 
 export const FridgeSummary = () => {

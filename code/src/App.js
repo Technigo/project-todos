@@ -8,6 +8,7 @@ import { AddItemForm } from 'components/AddItemForm'
 import { ItemList } from 'components/ItemList'
 import { ClearButton } from 'components/ClearButton'
 import { FridgeSummary } from 'components/FridgeSummary'
+import './App.css'
 
 const reducer = combineReducers({
   fridge: fridge.reducer
@@ -17,11 +18,13 @@ const store = configureStore({ reducer })
 
 export const App = () => {
   return (
-    <Provider store={store}>
-      <FridgeSummary />
-      <AddItemForm />
-      <ItemList />
-      <ClearButton />
-    </Provider>
+    <div className="appContainer">
+      <Provider store={store}>
+        <AddItemForm />
+        <ItemList />
+        <ClearButton />
+        <FridgeSummary />
+      </Provider>
+    </div>
   )
 }

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { fridge } from 'reducers/fridge'
-import './item.css'
+import './Item.css'
 
 export const Item = (props) => {
     const dispatch = useDispatch()
