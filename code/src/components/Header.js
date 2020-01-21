@@ -34,12 +34,14 @@ const HeaderSection = styled.section`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 0px 20px;
+  padding: 0px 10px;
 `
 const HeaderText = styled.h1`
-  font-size: 50px;
+  font-size: 30px;
   margin: 0px;
   color: rgb(37, 37, 37);
+  @media (min-width: 321px) {
+   font-size: 45px;
 `
 const RegularText = styled.p`
   margin: 0px 10px;
@@ -52,7 +54,7 @@ const LeftWrapper = styled.div`
 `
 
 const RightWrapper = styled.div`
-  margin: 10px;
+  margin: 0px;
   display: flex;
   flex-direction: column;
 `
