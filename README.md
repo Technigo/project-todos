@@ -12,5 +12,4 @@ When I had the sketch I started to think about how the data in my store should l
 
 If I had more time with the project I would have added a timestamp to the tasks and a due date on the task.
 
-This is my deployed site:
-
+This is my deployed site: https://hopeful-chandrasekhar-034e24.netlify.com

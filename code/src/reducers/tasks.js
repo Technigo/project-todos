@@ -45,27 +45,6 @@ export const tasks = createSlice({
     },
     removeAllTasks: state => {
       state.taskData = [];
-      //state.taskData = state.taskData.filter(task => task !== action.payload);
     }
   }
 });
-
-/*
-
-import { createSlice } from '@reduxjs/toolkit';
-import { tasks } from 'reducers/tasks';
-
-export const addTask = createSlice({
-  name: 'addTask',
-  initialState: [],
-
-  reducers: {
-    addTodo: (state, action) => {
-      console.log(action);
-      const { text, textId } = action.payload;
-      const id = state.find(t => t.id === textId);
-      state.push({ id, text, complete: false });
-    }
-  }
-});
-*/
