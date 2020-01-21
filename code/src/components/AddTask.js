@@ -16,6 +16,9 @@ export const AddTask = () => {
         setToDoText('');
       }}
     >
+      <button className="addTaskBtn" type="submit">
+        <i class="fas fa-plus"></i>
+      </button>
       <input
         className="addTask"
         type="text"
@@ -23,9 +26,6 @@ export const AddTask = () => {
         onChange={event => setToDoText(event.target.value)}
         placeholder="Add new Todo"
       />
-      <button className="addTaskBtn" type="submit">
-        <i class="fas fa-plus"></i>
-      </button>
     </form>
   );
 };

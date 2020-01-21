@@ -1,48 +1,17 @@
 header {
-  background-color: rgb(124, 172, 185);
-  border-bottom: 1px solid cadetblue;
+  border-bottom: 1px solid rgba(0, 144, 184, 0.851);
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: center;
   padding: 10px;
 }
 
 h1 {
   font-size: 25px;
   font-weight: normal;
+  text-align: center;
 }
 
 h4 {
   font-weight: normal;
-}
-
-.counter {
-  display: flex;
-  flex-direction: column;
-  font-size: 20px;
-}
-
-.counterContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.tasksLeft {
-  font-weight: normal;
-  margin-top: 15px;
-}
-
-.clearAllTasks {
-  height: 30px;
-  width: 65px;
-  font-family: 'Caveat', cursive;
-  font-size: 15px;
-  border-radius: 15px;
-  border: 3px solid rgba(0, 144, 184, 0.851);
-}
-
-.clearAllTasks:hover {
-  background-color: rgba(0, 144, 184, 0.851);
-  color: white;
+  text-align: center;
 }

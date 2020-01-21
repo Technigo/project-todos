@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import './Task.css';
 
@@ -14,21 +14,21 @@ export const Task = ({ task }) => {
     setChangeColor(nextColor);
   };
 
-  const handleRemoveOnClick = () => {
-    dispatch(tasks.actions.removeTask(task.id));
-  };
-
   return (
-    <section className="taskItem">
+    <section className={task.complete ? 'checked' : 'unchecked'}>
       <div className="taskList">
-        <input
-          className="checkbox"
-          type="checkbox"
-          checked={task.complete}
-          onChange={handleCheckbox}
-        />
         <label className="taskName">
-          <span onClick={handleCheckbox}> {task.text}</span>
+          <input
+            className="checkbox"
+            type="checkbox"
+            checked={task.complete}
+            onChange={handleCheckbox}
+          />
+          <span className="fakeCheckbox"></span>
+          <span className="taskText" onClick={handleCheckbox}>
+            {' '}
+            {task.text}
+          </span>
         </label>
       </div>
     </section>

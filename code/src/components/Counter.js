@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
-import './Header.css';
+import './Counter.css';
 
 export const Counter = () => {
   const dispatch = useDispatch();
@@ -12,25 +12,18 @@ export const Counter = () => {
     )
   );
 
-  // not done, need to fix how to remove all tasks
-  const clearTasksButton = task => {
-    dispatch(tasks.actions.removeAllTasks(task));
-  };
-
   return (
-    <section className="counterContainer">
+    <div className="counterContainer">
       <div>
         <h3 className="tasksLeft">{currentTasks} tasks</h3>
       </div>
-      <div>
-        <button
-          className="clearAllTasks"
-          type="button"
-          onClick={clearTasksButton}
-        >
-          Clear all
-        </button>
-      </div>
-    </section>
+      <button
+        className="clearAllTasks"
+        type="button"
+        onClick={() => dispatch(tasks.actions.removeAllTasks())}
+      >
+        Clear All
+      </button>
+    </div>
   );
 };

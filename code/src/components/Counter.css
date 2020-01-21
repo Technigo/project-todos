@@ -1,0 +1,28 @@
+.counter {
+  font-size: 15px;
+}
+
+.counterContainer {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.tasksLeft {
+  font-weight: normal;
+  margin-top: 15px;
+}
+
+.clearAllTasks {
+  height: 40px;
+  width: 70px;
+  font-family: 'Roboto';
+  font-size: 15px;
+  border-radius: 10px;
+  border: 3px solid rgba(0, 144, 184, 0.851);
+}
+
+.clearAllTasks:hover {
+  background-color: rgba(0, 144, 184, 0.851);
+  color: white;
+}

@@ -1,6 +1,6 @@
 /* Tasks page */
-section.taskItem {
-  border-bottom: 2px dotted rgb(133, 155, 161);
+section {
+  border-bottom: 2px dotted rgba(0, 144, 184, 0.851);
 }
 
 .taskOnClick {
@@ -15,15 +15,45 @@ section.taskItem {
   width: 100%;
 }
 
-.taskName {
+.checked .taskText {
+  color: rgba(128, 128, 128, 0.742);
+  text-decoration: line-through;
+}
+
+.taskText {
   text-align: left;
   width: 100%;
   margin: 10px;
   font-size: 18px;
 }
 
-.taskName:focus {
+.taskText:focus {
   color: gray;
+}
+
+input[type='checkbox'] {
+  opacity: 0;
+  position: relative;
+}
+
+.fakeCheckbox {
+  border: 1px solid blue;
+  width: 15px;
+  height: 15px;
+  display: inline-flex;
+  border-radius: 100px;
+  align-items: center;
+  justify-content: center;
+}
+
+input:checked + .fakeCheckbox {
+  content: 'x';
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  background: black;
+  color: white;
 }
 
 .removeBtn {

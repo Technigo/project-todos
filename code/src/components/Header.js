@@ -1,10 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import './Header.css';
-import { Counter } from './Counter';
 
 export const Header = () => {
   const [dateTime, setDateTime] = useState(new Date());
-
+  const month = [
+    'Sunday',
+    'Monday',
+    'Tuseday',
+    'Wednesday',
+    'Thursday',
+    'Friday',
+    'Saturday'
+  ];
   useEffect(() => {
     const id = setInterval(() => setDateTime(new Date()), 1000);
     return () => {
@@ -16,10 +23,7 @@ export const Header = () => {
     <header>
       <div>
         <h1>TO DO</h1>
-        <h4>{`${dateTime.toDateString()}`}</h4>
-      </div>
-      <div className="counter">
-        <Counter />
+        <h4>{`${month[dateTime.getDay()]}`}</h4>
       </div>
     </header>
   );
