@@ -3,11 +3,14 @@ form {
     justify-content: center;
     margin: 10px;
     font-weight:bold;
+    font-size:20px;
 }
 
 .addToBuyBox {
     border: 1px solid yellow;
     margin-left: 5px;
+    font-family: 'Amatic SC';
+    font-size:20px;
 }
 
 .submitButton {
@@ -17,6 +20,7 @@ form {
     border-radius:16px;
     font-family: 'Amatic SC';
     font-weight: bold;
+    font-weight:20px;
     /* cursor: grab; */
 }
 

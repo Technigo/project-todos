@@ -1,17 +1,17 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { fridge } from 'reducers/fridge'
+import { shopping } from 'reducers/shopping'
 import './AddToList.css'
 
 export const AddToList = (props) => {
     const dispatch = useDispatch()
 
     const handleCheckBoxClick = () => {
-        dispatch(fridge.actions.toggleNeedsMore(props.item.id))
+        dispatch(shopping.actions.toggleNeedsMore(props.item.id))
     }
 
     const handleRemoveButtonClick = () => {
-        dispatch(fridge.actions.removeItem(props.item.id))
+        dispatch(shopping.actions.removeItem(props.item.id))
     }
 
     return (

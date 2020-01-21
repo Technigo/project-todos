@@ -8,8 +8,8 @@ const initialState = {
     ]
 }
 
-export const fridge = createSlice({
-    name: 'fridge',
+export const shopping = createSlice({
+    name: 'shopping',
     initialState,
     reducers: {
         addItem: (state, action) => {

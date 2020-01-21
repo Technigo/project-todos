@@ -1,6 +1,6 @@
 .buyMoreLabel {
     margin-left:5px;
-    font-size:10px;
+    font-size:15px;
     font-weight:bold;
 }
 
@@ -11,4 +11,5 @@
     border-radius: 16px;
     font-family: 'Amatic SC';
     font-weight: bold;
+    font-size:15px;
 }

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { fridge } from 'reducers/fridge'
+import { shopping } from 'reducers/shopping'
 import './AddItemForm.css'
 
 export const AddItemForm = () => {
@@ -9,7 +9,7 @@ export const AddItemForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        dispatch(fridge.actions.addItem(name))
+        dispatch(shopping.actions.addItem(name))
         setName('')
     }
     return (

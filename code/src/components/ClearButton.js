@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { fridge } from 'reducers/fridge'
+import { shopping } from 'reducers/shopping'
 import './ClearButton.css'
 
 export const ClearButton = () => {
@@ -9,7 +9,7 @@ export const ClearButton = () => {
     return (
         <button
             className="clearButton"
-            type="button" onClick={() => dispatch(fridge.actions.removeAll())}>
+            type="button" onClick={() => dispatch(shopping.actions.removeAll())}>
             Clear All!
         </button>
     )

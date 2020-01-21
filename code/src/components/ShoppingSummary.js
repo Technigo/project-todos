@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { fridge } from 'reducers/fridge'
-import './FridgeSummary.css'
+import { shopping } from 'reducers/shopping'
+import './ShoppingSummary.css'
 
 
-export const FridgeSummary = () => {
-    const items = useSelector(state => state.fridge.items)
+export const ShoppingSummary = () => {
+    const items = useSelector(state => state.shopping.items)
     const buyMoreItems = items.filter(item => item.needsMore === true)
 
     const [showShoppingList, setShowShoppingList] = useState(false)

@@ -1,10 +1,10 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { AddToList } from 'components/AddToList'
-import './ItemList.css'
+import './ShoppingList.css'
 
-export const ItemList = () => {
-    const items = useSelector((state) => state.fridge.items)
+export const ShoppingList = () => {
+    const items = useSelector((state) => state.shopping.items)
     return (
         <container className="itemListContainer">
             <ul>

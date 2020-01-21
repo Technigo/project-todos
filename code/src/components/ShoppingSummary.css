@@ -11,17 +11,20 @@ h4 {
     margin:0px;
     width:auto;
     margin: 10px 10px 0 10px;
+    font-size: 20px;
 }
 
 h2{
     margin:0px;
     width:auto;
     margin:10px;
+    font-size:23px;
 }
 
 ol {
     padding-left:10px;
     margin:0px;
+    font-size: 20px;
 }
 
 .shoppingIcon {
