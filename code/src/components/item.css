@@ -1,5 +1,29 @@
+ul {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 30px;
+    /* list-style-type: none; */
+    margin:0px;
+}
+
+li {
+    /* display:flex;
+    justify-content: center;
+    align-items: center;
+    margin:5px; */
+}
+
+.buyMoreLabel {
+    margin-left:5px;
+    font-size:10px;
+}
+
 .removeButton {
-    border:1px solid black;
-    background-color:white;
-    border-radius:16px;
+    margin-left: 10px;
+    border: 1px solid black;
+    background-color: white;
+    border-radius: 16px;
+    font-family: 'Amatic SC';
+    font-weight: bold;
 }

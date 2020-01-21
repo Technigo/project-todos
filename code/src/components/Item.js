@@ -17,7 +17,7 @@ export const Item = (props) => {
     return (
         <li>
             {props.item.name}
-            <label>
+            <label className="buyMoreLabel">
                 Buy More!
                 <input
                     type="checkbox"

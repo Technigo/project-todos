@@ -1,0 +1,9 @@
+.footerContainer {
+    display:flex;
+    justify-content: center;
+    width:auto;
+}
+
+p {
+    font-size:15px;
+}
