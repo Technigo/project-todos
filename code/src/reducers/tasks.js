@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
-  items: []
-}
+// const initialState = {
+//   items: []
+// }
 
 export const tasks = createSlice({
   name: 'tasks',
-  initialState,
+  initialState: { items: [] },
   reducers: {
     addItem: (state, action) => {
       state.items.push({

@@ -5,6 +5,19 @@ import styled from 'styled-components'
 
 export const ItemList = () => {
   const items = useSelector((state) => state.tasks.items)
+
+  if (items.length === 0) {
+    return (
+      <Wrapper>
+        <NoTask>
+          Add a new task{' '}
+          <span role="img" aria-label="pointing-finger">
+            ☝️
+          </span>
+        </NoTask>
+      </Wrapper>
+    )
+  }
   return (
     <ListedTask>
       {items.map((item) => (
@@ -16,4 +29,14 @@ export const ItemList = () => {
 
 const ListedTask = styled.ul`
   padding: 0;
+`
+const NoTask = styled.p``
+const Wrapper = styled.div`
+  width: 100%;
+  height: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.4;
+  font-size: 30px;
 `

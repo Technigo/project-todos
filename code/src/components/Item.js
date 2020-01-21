@@ -1,15 +1,13 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 import styled from 'styled-components'
 import moment from 'moment'
 
 export const Item = (props) => {
   const dispatch = useDispatch()
-  const allTasks = useSelector((store) => store.tasks.items)
-  console.log(allTasks.length)
 
   const handleCheckClick = () => {
     dispatch(tasks.actions.toggleDone(props.item.id))
@@ -18,9 +16,7 @@ export const Item = (props) => {
   const handleRemovekClick = () => {
     dispatch(tasks.actions.removeItem(props.item.id))
   }
-  if (allTasks.length === 0) {
-    return <Added>no tasks...</Added>
-  }
+
   return (
     <List>
       <TaskWrapper>
