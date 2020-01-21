@@ -1,17 +1,12 @@
 # Project Todos
-This project is a to do app made with Redux. 
+This project is a to do app made with Redux. Functions in this app are: Adding tasks to list, checkmark if task is done or not, task count, todays date, delete for single tasks & clear all. 
 
-Functions in this app are:
-Adding tasks to list.
-Checkmark if task is done or not.
-Task count.
-Todays date.
-Delete for single tasks.
-Clear all. 
-
-# Technical 
+# Includes
 One reducer, plenty components and some CSS styling. 
-
-Redux, React, JavaScript, CSS and HTML 
+* JavaScript
+* Redux 
+* React
+* JSX
+* CSS
 
 See the To do: https://saras-todo.netlify.com/
