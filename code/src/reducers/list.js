@@ -5,19 +5,16 @@ const tasks = [
     id: 1,
     name: 'Gurka',
     completed: false,
-    archived: false
   },
   {
     id: 2,
     name: 'Tomat',
     completed: true,
-    archived: false
   },
   {
     id: 3,
     name: 'Zucchini',
     completed: false,
-    archived: false
   }
 ]
 
@@ -28,13 +25,19 @@ const tasks = [
     },
     reducers: {
       addTask: (state, action) => {
-        console.log(action)
         state.tasks.push({
           id: state.tasks.length + 1,
           name: action.payload,
           completed: false,
           archived: false
         })
+      },
+      clearAll: (state) => {
+        state.tasks = []
+      },
+      updateCompleted: (state, action) => {
+        const id = action.payload
+        state.tasks[id - 1].completed = !state.tasks[id - 1].completed
       }
     }
   })
