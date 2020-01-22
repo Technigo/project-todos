@@ -18,13 +18,17 @@ export const List = () => {
         <InputListItem />
         {tasks.map((task) => (
           <li key={task.id}>
-            <input 
+            <input
+              id={task.id}
               type="checkbox" 
-              className="checkbox"
+              className="unchecked"
               onClick={() => handleCompleted(task.id)}
               value={task.completed}
             />
-            <div className="taskname">{task.name}</div>
+            <label htmlFor={task.id} className="taskname">
+              <span></span>
+              <p>{task.name}</p>
+            </label>
           </li>
         ))}
       </ul>

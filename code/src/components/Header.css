@@ -1,0 +1,31 @@
+header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 20px;
+  flex-wrap: wrap;
+  background: #efefef;
+
+}
+
+header>* {
+  width: 50%;
+}
+
+header .left {
+  text-align: start;
+}
+
+header .right {
+  height: 100%;
+  text-align: end;
+}
+
+header button {
+  width: 80px;
+  background-color: #aaa;
+  color: white;
+  font-size: 14px;
+  border-radius: 5px;
+}
