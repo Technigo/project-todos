@@ -1,16 +1,22 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import './list.css'
+import { InputListItem } from './InputListItem.js'
 
 export const List = () => {
-  const tasks = useSelector((state) => state.tasks)
+  
+  const tasks = useSelector((state) => state.todos.tasks)
+
   return (
     <main>
       <ul>
-        <li>
-          <input type="radio" className="checkbox" />
-          <div className="taskname">Task 1</div>
-        </li>
+        <InputListItem />
+        {tasks.map((task) => (
+          <li key={task.id}>
+            <input type="checkbox" className="checkbox" />
+            <div className="taskname">{task.name}</div>
+          </li>
+        ))}
       </ul>
     </main>
   )

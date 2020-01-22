@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const tasksList = [
+const tasks = [
   {
     id: 1,
     name: 'Gurka',
@@ -21,16 +21,17 @@ const tasksList = [
   }
 ]
 
-  export const todosList = createSlice({
+  export const todos = createSlice({
     name: 'todos',
     initialState: {
-      tasks: []
+      tasks
     },
     reducers: {
-      addTask: (state, name) => {
+      addTask: (state, action) => {
+        console.log(action)
         state.tasks.push({
-          id: state.tasks.length,
-          name: name,
+          id: state.tasks.length + 1,
+          name: action.payload,
           completed: false,
           archived: false
         })
