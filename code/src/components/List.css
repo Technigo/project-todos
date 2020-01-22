@@ -1,0 +1,32 @@
+li {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid;
+  border-bottom-width: 0.5px;
+  border-bottom-color: #eee;
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+label {
+  width: 100%;
+  display: flex;
+}
+label span {
+  margin-right: 10px;
+}
+
+input[type="checkbox"] + label span {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    height: 20px;
+    background: url("/icons/circle.svg") 0px center no-repeat;
+}
+
+input[type="checkbox"]:checked + label span {
+  background: url("/icons/completed.svg") 0px center no-repeat;
+}
