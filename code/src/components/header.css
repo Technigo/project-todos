@@ -5,6 +5,10 @@ header{
     justify-content: space-between;
     align-items: center;
     color:#f5eccf;
+    position: fixed;
+    width: 100%;
+    z-index: 2;
+    box-shadow: -1px 3px 5px -2px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0,0,0,.12);
 }
 
 header p{

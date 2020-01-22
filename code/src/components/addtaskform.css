@@ -3,6 +3,9 @@ form{
     align-items: center;
     justify-content: center;
     padding: 42px 0 32px 0;
+    position: relative;
+    top: 80px;
+    z-index: 1;
 }
 
 .add-task{
