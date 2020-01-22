@@ -6,8 +6,8 @@ import { addTodo } from '../actions'
 const AddTodo = ({ dispatch }) => {
   let input
   return (
-    <div>
-      <form
+    <div className='text'>
+      <form className='form'
         onSubmit={e => {
           e.preventDefault()
           if (!input.value.trim()) {
@@ -23,4 +23,5 @@ const AddTodo = ({ dispatch }) => {
     </div>
   )
 }
+
 export default connect()(AddTodo)

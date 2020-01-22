@@ -1,15 +1,18 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+
 const Todo = ({ onClick, completed, text }) => (
-  <li
+  <li 
     onClick={onClick}
     style={{
       textDecoration: completed ? 'line-through' : 'none'
     }}
   >
-    {text}
+    <input type="checkbox" className='checkmarks'/> 
+      {text}
   </li>
 )
+
 Todo.propTypes = {
   onClick: PropTypes.func.isRequired,
   completed: PropTypes.bool.isRequired,
