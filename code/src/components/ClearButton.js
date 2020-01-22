@@ -2,7 +2,6 @@ import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 
-import { tasks } from '../reducers/tasks'
 import { dialogs } from '../reducers/dialogs'
 
 import { Dialog } from '../components/Dialog'

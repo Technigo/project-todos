@@ -52,19 +52,19 @@ const ButtonText = styled.button`
 
 
 
-export const Dialog = ({ title, supportingText, primaryBtnText, secondaryBtnText, showDialog, test }) => {
+export const Dialog = ({ title, supportingText, primaryBtnText, secondaryBtnText, showDialog }) => {
   const dispatch = useDispatch()
 
   const btnClicked = (btnText) => {
-    if (btnText.toLowerCase() == "cancel") {
+    if (btnText.toLowerCase() === "cancel") {
       dispatch(tasks.actions.setTaskToDelete(null))
       dispatch(dialogs.actions.closeDialog())
     }
-    if (btnText.toLowerCase() == "delete") {
+    if (btnText.toLowerCase() === "delete") {
       dispatch(tasks.actions.removeTask())
       dispatch(dialogs.actions.closeDialog())
     }
-    if (btnText.toLowerCase() == "yes") {
+    if (btnText.toLowerCase() === "yes") {
       dispatch(tasks.actions.removeAllTasks())
       dispatch(dialogs.actions.closeDialog())
     }
@@ -80,7 +80,7 @@ export const Dialog = ({ title, supportingText, primaryBtnText, secondaryBtnText
             {supportingText && <Supportingtext>{supportingText}</Supportingtext>}
           </div>
           <DialogActions>
-            <DialogButton className={test} onClick={() => { }}>
+            <DialogButton onClick={() => { }}>
               {secondaryBtnText && <ButtonText role="button" aria-label={secondaryBtnText} onClick={() => btnClicked(secondaryBtnText)}>{secondaryBtnText}</ButtonText>}
             </DialogButton>
             <DialogButton onClick={() => { }}>

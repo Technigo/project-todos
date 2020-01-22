@@ -1,4 +1,4 @@
-import { createSlice, findNonSerializableValue, bindActionCreators } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 
 export const dialogs = createSlice({
@@ -11,7 +11,7 @@ export const dialogs = createSlice({
   reducers: {
 
     openDialog: (state, action) => {
-      if (action.payload == "ClearAll") {
+      if (action.payload === "ClearAll") {
         state.dialog2 = true
       }
       else {
