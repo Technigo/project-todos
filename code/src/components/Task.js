@@ -21,15 +21,15 @@ export const Task = (props) => {
           checked={props.task.complete}
           onChange={handleCheckboxClick}
         />
-        <span className="fakeCheckbox" ariaLabel="checkbox" />
+        <span className="Checkbox" ariaLabel="checkbox" />
         {props.task.text}
       </label>
 
-      <button class="remove-button" type="button" onClick={handleRemoveClick}>
+      <button class="remove-btn" type="button" onClick={handleRemoveClick}>
         Remove
       </button>
 
-      <div class="time-created">{props.task.timeCreated}</div>
+      <div class="time">{props.task.timeCreated}</div>
     </li>
   )
 }

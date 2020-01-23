@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { tasks } from 'reducers/tasks'
+import { Tasks } from 'reducers/tasks'
+
 
 export const AddNewTask = () => {
   const [newTask, setNewTask] = useState('')
@@ -8,14 +9,14 @@ export const AddNewTask = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(tasks.actions.addTask(newTask))
+    dispatch(Tasks.actions.addTask(newTask))
     setNewTask('')
   }
 
 
   return (
     <form class="addNewTask-form" onSubmit={handleSubmit}>
-      <button class="submit-button" type="submit">+</button>
+      <button class="submit-btn" type="submit">+</button>
       <label>
         <input
           class="New-task"
