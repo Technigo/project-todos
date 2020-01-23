@@ -20,11 +20,12 @@ code {
     height: 600px;
     width: 500px;
     margin: 0 auto;
+    background-color: thistle;
 }
 
 .form {
     resize: unset;
-    height: 60px;
+    height: 50px;
     width: 100%;
     margin-bottom: 2px;
     font-size: 16px;
@@ -67,19 +68,58 @@ ul {
     list-style: none;
     cursor: pointer;
     font-size: 18px;
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+    padding-inline-start: 10px;
+    padding: 10px;
 }
 
 li {
-    line-height: unset;
+    line-height: 30px;
 }
 
-li input {
-    margin: 5px;
-    background-color: yellow;
+ul .checkbox-custom {
+    background-color: teal;
+    border-radius: 50%;
+}
+
+.styled-checkbox {
+    position: absolute;
+    opacity: 0;
+}
+
+label {
+    position: relative;
+    cursor: pointer;
+    padding: 0;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: text-top;
+    width: 20px;
+    height: 20px;
+    background: white;
+}
+
+label:hover {
+    background: #f35429;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12)
+}
+
+label:after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+    transform: rotate(45deg);
 }
 
 .footer {
     display: flex;
+    width: 100%;
     justify-content: space-evenly;
     align-items: flex-end;
 }

@@ -8,8 +8,12 @@ const Todo = ({ onClick, completed, text }) => (
       textDecoration: completed ? 'line-through' : 'none'
     }}
   >
-    <input type="checkbox" className='checkmarks'/> 
-      {text}
+    {/* <input type="checkbox"/>
+    <span className="checkbox-custom">
+      {text}</span>  */}
+    <input className="styled-checkbox" type="checkbox"/>
+      <label for="styled-checkbox-1"></label>
+    {text}
   </li>
 )
 
