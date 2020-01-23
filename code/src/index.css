@@ -20,7 +20,6 @@ code {
     height: 600px;
     width: 500px;
     margin: 0 auto;
-    background-color: thistle;
 }
 
 .form {
@@ -78,11 +77,6 @@ li {
     line-height: 30px;
 }
 
-ul .checkbox-custom {
-    background-color: teal;
-    border-radius: 50%;
-}
-
 .styled-checkbox {
     position: absolute;
     opacity: 0;
@@ -102,7 +96,7 @@ label {
 
 label:hover {
     background: #f35429;
-    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12)
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.12);
 }
 
 label:after {
@@ -116,6 +110,23 @@ label:after {
     box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
     transform: rotate(45deg);
 }
+
+
+/* A try to make checkbox being checked */
+
+
+/* label:after:checked {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 9px;
+    background: white;
+    width: 2px;
+    height: 2px;
+    box-shadow: 2px 0 0 white, 4px 0 0 white, 4px -2px 0 white, 4px -4px 0 white, 4px -6px 0 white, 4px -8px 0 white;
+    transform: rotate(45deg);
+}
+ */
 
 .footer {
     display: flex;

@@ -12,7 +12,7 @@ const Todo = ({ onClick, completed, text }) => (
     <span className="checkbox-custom">
       {text}</span>  */}
     <input className="styled-checkbox" type="checkbox"/>
-      <label for="styled-checkbox-1"></label>
+      <label for="styled-checkbox"></label>
     {text}
   </li>
 )
