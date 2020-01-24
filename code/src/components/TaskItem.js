@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 
 export const TaskItem = (props) => {
+  // Instead of props we can use {task}
 
   const dispatch = useDispatch()
   const taskStatus = props.task.completed

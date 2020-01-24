@@ -11,6 +11,9 @@ export const Header = () => {
   // To get all tasks
   const allTasks = useSelector(store => store.tasks.items)
 
+  // To get lenght of the tasks array
+  const numberOfTasks = useSelector(store => store.tasks.items.length)
+
   // To get tasks with completed status true
   const completedTasks = allTasks.filter(task => task.completed === true)
 
@@ -26,7 +29,7 @@ export const Header = () => {
         <Text>{moment().format("MMMM Do")}</Text>
       </WrapperLeft>
       <WrapperRight>
-        <Text>{completedTasks.length}/{allTasks.length} done</Text>
+        <Text>{completedTasks.length}/{numberOfTasks} done</Text>
         <ClearButton onClick={handleClearTasks}>Clear all</ClearButton>
       </WrapperRight>
     </WrapperHeader>
