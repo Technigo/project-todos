@@ -7,10 +7,12 @@ export const ItemList = () => {
   const items = useSelector((state) => state.todos.items)
 
     return (
+      
       <ul>
       {items.map((item) => (
         <Item key={item.id} item={item} />
       ))}
       </ul>
+    
     )
 }
