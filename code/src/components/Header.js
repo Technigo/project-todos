@@ -19,7 +19,9 @@ export const Header = () => {
         <RegularText>{moment().format("MMM Do")}</RegularText>
       </SubHeader>
       <SubHeader right>
-        <RegularText>{numberOfTasks} tasks</RegularText>
+        <RegularText>
+          {numberOfTasks} {numberOfTasks > 1 ? "tasks" : "task"}
+        </RegularText>
         <ClearAll type="button" onClick={clearAll}>
           Clear all
         </ClearAll>
