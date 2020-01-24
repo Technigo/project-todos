@@ -17,9 +17,9 @@ export const Item = (props) => {
   return (
     <li>
       {props.item.name}
-      <label>
-        <input type="checkbox" checked={props.item.ifChecked} onChange={handleCheckbox} />
-      </label>
+      
+        <input type="checkbox" id={props.item.id} name="do" checked={props.item.ifChecked} onChange={handleCheckbox} />
+      <label for={props.item.id}></label>
 
       <button type="button" onClick={handleRemove}>Remove</button>
     </li>

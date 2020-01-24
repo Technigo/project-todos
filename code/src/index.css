@@ -19,17 +19,110 @@ code {
 }
 
 button {
+    position: relative;
+    height: 40px;
+    z-index: 1;
+    width: 100%;
+    display: inline-block;
+    padding: 0 20px;
+    margin-top: 10px;
     border-radius: 5px;
     font-size: 1rem;
+    background-color: #f2395a;
+    background-size: 20px 20px;
+    background-image: -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
+    border: 1px solid #f02146;
+    border-bottom-width: 3px;
+    color: white;
+    outline: none;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 input {
-    font-size: 1rem;
+    display: inline-block;
+    width: 100%;
+    padding: 0 20px;
+    line-height: 50px;
+    height: 50px;
+    background: white;
+    border: 1px solid gray;
+    border-bottom-width: 3px;
+    border-radius: 5px;
+    -webkit-transition: all 0.3 ease;
+    transition: all 0.3 ease;
+    font-size: 1.2rem;
+}
+
+input[type=checkbox]+label {
+    display: block;
+    margin: 0.2em;
+    cursor: pointer;
+    padding: 0.2em;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+input[type=checkbox]+label:before {
+    content: "\2714";
+    border: 0.1em solid black;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: 0.2s;
+}
+
+input[type=checkbox]+label:active:before {
+    transform: scale(0);
+}
+
+input[type=checkbox]:checked+label:before {
+    background-color: mediumspringgreen;
+    color: white;
+    border-color: mediumspringgreen;
+}
+
+input[type=checkbox]:disabled+label:before {
+    transform: scale(1);
+    border-color: red;
+}
+
+input[type=checkbox]:checked:disabled+label:before {
+    transform: scale(1);
+    background-color: green;
+    border-color: blue;
+}
+
+ul {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 15px;
+}
+
+label {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.theName {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 20px;
 }
 
 .wrapper {
     width: 400px;
-    margin: 200px auto;
+    margin: 100px auto;
     background-color: silver;
     padding: 20px;
     border-radius: 20px;

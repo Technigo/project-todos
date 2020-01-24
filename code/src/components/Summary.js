@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 export const Summary = () => {
     const items = useSelector(state => state.todos.items)
     return(
-    <h1>I have {items.length} items in my to-dos list</h1>
+    <h1>I have {items.length} ite{items.length ===1 ? "m" : "ms"} in my to-do's list</h1>
     )
 
 }
