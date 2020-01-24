@@ -1,5 +1,6 @@
 // src/reducers/tasks.js
 import { createSlice } from "@reduxjs/toolkit";
+import moment from "moment";
 
 export const tasks = createSlice({
   name: "tasks",
@@ -8,28 +9,28 @@ export const tasks = createSlice({
       {
         id: 1,
         text: "Watch video on actions & reducers",
-        added: Date.now() - 604800000,
+        added: moment().subtract(4, "days"),
         complete: true,
-        completed: Date.now() - 362880000
+        completed: moment().subtract(3, "days")
       },
       {
         id: 2,
         text: "Follow redux codealong",
-        added: Date.now() - 604800000,
+        added: moment().subtract(4, "days"),
         complete: true,
-        completed: Date.now() - 241920000
+        completed: moment().subtract(2, "days")
       },
       {
         id: 3,
         text: "Fork weekly assignment",
-        added: Date.now() - 604800000,
+        added: moment().subtract(4, "days"),
         complete: true,
-        completed: Date.now() - 120960000
+        completed: moment().subtract(1, "days")
       },
       {
         id: 4,
         text: "Create a todo app",
-        added: Date.now() - 604800000,
+        added: moment().subtract(4, "days"),
         complete: false,
         completed: 0
       }

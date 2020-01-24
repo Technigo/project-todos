@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { tasks } from "../reducers/tasks";
 
 export const Header = () => {
-  const taskStore = useSelector(store => store.tasks.tasks);
+  const numberOfTasks = useSelector(store => store.tasks.tasks.length);
   const dispatch = useDispatch();
 
   const clearAll = () => {
@@ -19,7 +19,7 @@ export const Header = () => {
         <RegularText>{moment().format("MMM Do")}</RegularText>
       </SubHeader>
       <SubHeader right>
-        <RegularText>{taskStore.length} tasks</RegularText>
+        <RegularText>{numberOfTasks} tasks</RegularText>
         <ClearAll type="button" onClick={clearAll}>
           Clear all
         </ClearAll>

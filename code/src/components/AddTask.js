@@ -16,11 +16,7 @@ export const AddTask = () => {
   return (
     <TaskForm onSubmit={handleSubmit}>
       <NewTask>
-        <AddNewTask
-          type="submit"
-          value="+"
-          active={item.length > 0 ? true : false}
-        />
+        <AddNewTask type="submit" value="+" active={item.length > 0} />
         <label>
           <TaskText
             type="text"
