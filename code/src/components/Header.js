@@ -9,7 +9,7 @@ export const Header = () => {
     return (
         <div className="headerContainer">
             <div className="headerInfo">
-                <h2>To-do <span className="header-icon" role="emoji" aria-label="todo emoji" > 🔖</span></h2>
+                <h2>To-do list<span className="header-icon" role="emoji" aria-label="todo emoji" > 🔖</span></h2>
                 {/* <span>{moment().format("MMM Do YY")}</span> */}
                 <span>{moment().format('dddd MMMM Do')}</span>
             </div>

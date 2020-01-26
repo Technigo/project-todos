@@ -4,9 +4,14 @@
 }
 
 body {
-  margin: 0;
+  margin-top: 200px;
   font-family: 'Roboto', sans-serif;
-  /* width: 600px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  background-color: ghostwhite;
+  
+    /* width: 600px;
   height: 600px; */
   /* border: 1px solid darkgray;
   border-radius: 15px; */
@@ -26,13 +31,16 @@ code {
   background-color: rgb(190, 120, 247);
   display: flex;
   justify-content: left;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-top: 1px solid lightgray;
 }
 
 .headerInfo {
   padding: 25px;
   color: white;
   display: inline-block;
-  border-bottom: solid 1px lightgray;
+  border-bottom: solid 1px darkgray;
 }
 
 /* .emojiButterfly {
@@ -55,7 +63,8 @@ h2 {
 
 input {
   border: hidden;
-  color: #ced6e3;
+  /* color: #ced6e3; */
+  color: darkslategray;
   border-style: none;
   font-size: 16px;
 }
@@ -89,6 +98,8 @@ input:focus, textarea {
 
 form {
   border-bottom: solid 1px lightgray;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
   
 }
 .inputLabel {
@@ -106,6 +117,8 @@ form {
 ul {
   padding-left: 0px;
   list-style: none;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
 }
 
 .checkbox {
@@ -134,6 +147,9 @@ footer {
   justify-content: left;
   padding: 15px 0px;
   display: flex;
+  border-left: 1px solid lightgray;
+  border-right: 1px solid lightgray;
+  border-bottom: 1px solid lightgray;
 }
 
 h4 {
