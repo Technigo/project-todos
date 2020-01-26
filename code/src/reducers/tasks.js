@@ -11,7 +11,7 @@ const initialState = {
   uncomplete: 1
 }
 
-export const Tasks = createSlice({
+export const tasks = createSlice({
   name: 'tasks',
   initialState,
   reducers: {

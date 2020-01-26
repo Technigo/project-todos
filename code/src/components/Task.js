@@ -1,16 +1,17 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { Tasks } from 'reducers/tasks'
+import { tasks } from 'reducers/tasks'
+import "./Task.css"
 
 export const Task = (props) => {
-
+  const dispatch = useDispatch()
 
   const handleCheckboxClick = () => {
-    useDispatch(Tasks.actions.toggleCompleted(props.task.id))
+    dispatch(tasks.actions.toggleCompleted(props.task.id))
   }
 
   const handleRemoveClick = () => {
-    useDispatch(Tasks.actions.removeItem(props.task.id))
+    dispatch(tasks.actions.removeItem(props.task.id))
   }
 
   return (
@@ -24,12 +25,14 @@ export const Task = (props) => {
         <span className="Checkbox" ariaLabel="checkbox" />
         {props.task.text}
       </label>
-
-      <button class="remove-btn" type="button" onClick={handleRemoveClick}>
-        Remove
-      </button>
-
-      <div class="time">{props.task.timeCreated}</div>
+      <div className="btn-container">
+        <button class="btn-submit"
+          onClick={handleRemoveClick}
+        >
+          <span>Remove</span>
+        </button>
+      </div>
+      <div className="time">{props.task.timeCreated}</div>
     </li>
   )
 }

@@ -1,0 +1,31 @@
+
+.task{
+width: 300px;
+height: 75px;
+margin: 20px;
+border-style: ridge;
+}
+
+
+.submit-btn{
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    background: teal;
+    color: white;
+}
+
+.plus{
+  font-size: 30px;
+    scroll-padding-inline: auto;
+    line-height: 0.5;
+}
+.task{
+  text-align: -webkit-center;
+}
+
+.from{
+  background: whitesmoke;
+    border-radius: 10px;
+    margin-top: 5px;
+}

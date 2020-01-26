@@ -1,16 +1,17 @@
 import React from 'react'
 import moment from "moment"
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
+import "./Header.css"
 
 export const Header = () => {
-  //const dispatch = useDispatch()
+
   const completedTasks = useSelector((store) => store.tasks.items)
 
   return (
     <div className="header-container">
       <div class="header">
-        <span class="title">Your Todo list</span>
-        <span className="completedTask">{completedTasks.length}</span>
+        <span class="title">Your todo list</span>
+        <span className="completed-task">{completedTasks.length} completed tasks</span>
       </div>
       <div class="header-footer">
         <span className="moment">{moment().format("MMMM Do")}</span>

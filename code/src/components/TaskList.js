@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Task } from "components/Task"
-
+import "./TaskList.css"
 
 
 export const TaskList = () => {
@@ -10,23 +10,23 @@ export const TaskList = () => {
   const [showTaskList, setShowTaskList] = useState(false)
 
   return (
-    <div>
-      <ul>
+    <div className="task-List">
+      <ul className="task-bullets">
+
         {taskList.map((task) => (
           <Task key={task.id} task={task} timeCreated={task.timeCreated} />
         ))}
+
       </ul>
       <div className="uncompleted-tasks">
+
         {countUncompleted.length} uncompleted task
         {countUncompleted.length === 1 ? "" : "s"}
         <span
           onClick={() => setShowTaskList(!showTaskList)}
-          role="img"
-          aria-label="emoji"
-          className="uncompleted-emoji"
-        >
-          📔
-        </span>
+          className="uncompleted"
+        />
+
       </div>
 
       {showTaskList && (
