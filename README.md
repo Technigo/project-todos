@@ -1,7 +1,8 @@
 # Project Todos 
 
  / https://mrsucodesproject15todo.netlify.com/
- An application which pulls together all the parts of redux by building a todo app.
+ 
+An application which pulls together all the parts of redux by building a todo app.
 
 Im be able to add tasks, list tasks and toggle whether a task is done or not. 
 
@@ -23,5 +24,5 @@ Im be able to add tasks, list tasks and toggle whether a task is done or not.
 
 ## Stretch Goals 🏃‍♂
 
-**_Added a 'clear all' button_**
+
 
