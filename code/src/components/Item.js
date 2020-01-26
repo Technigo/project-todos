@@ -21,7 +21,7 @@ export const Item = (props) => {
      {props.item.name} 
      </span> 
      
-      <span className="checkboxbuttons">
+      <span className="checkboxButtons">
 
       <label>    
         <input

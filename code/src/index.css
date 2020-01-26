@@ -79,7 +79,7 @@ ul li {
   font-size: 17px;
 }
 
-.checkboxbuttons {
+.checkboxButtons {
   display: flex;
   flex-direction: row;
 }
@@ -127,7 +127,7 @@ input:checked + .fakeCheckbox::after {
   align-items: center;
 }
 
-.checkboxbuttons button {
+.checkboxButtons button {
   border: none;
   background-color: transparent;
 }

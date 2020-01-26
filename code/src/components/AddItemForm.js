@@ -9,8 +9,10 @@ export const AddItemForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
+    if (name) { //makes sure that no empty tasks are created
     dispatch(todo.actions.addItem(name))
     setName('') //clears the input field
+  }
   }
 
   return (
