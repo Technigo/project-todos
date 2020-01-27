@@ -23,7 +23,7 @@ export const AddTodoForm = () => {
                             <span 
                                 className="emoji" 
                                 role="img" 
-                                aria-label="butterfly">
+                                aria-label="add-sign">
                                     ➕
                             </span>
                     </button>

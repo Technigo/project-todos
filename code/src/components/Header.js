@@ -17,7 +17,3 @@ export const Header = () => {
         </div>
     )
 }
-
-// const styles = StyleSheet.create`
-// backgrund-color: black; 
-// `
