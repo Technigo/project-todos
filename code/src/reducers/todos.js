@@ -16,7 +16,7 @@ export const todos = createSlice({
       const existingTask = state.tasks.find((task) => task.id === action.payload)
 
       // If the task is already completed set isCompleted to false, otherwise to true to toggle task status
-      existingTask.isCompleted ? existingTask.isCompleted = false : existingTask.isCompleted = true
+      existingTask.isCompleted = !existingTask.isCompleted
     },
     clearAllTasks: (state, action) => {
       state.tasks = []
