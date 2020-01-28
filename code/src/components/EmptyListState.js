@@ -4,12 +4,11 @@ import "./emptyListState.css"
 import listIllustration from "../icons/kingdom-list-is-empty.png"
 
 export const EmptyListState = () => {
-  const list = useSelector(state => state.todos.tasks)
-  const emptyList = list.length === 0;
+  const numberOfTasks = useSelector(state => state.todos.tasks.length)
 
   return (
     <>
-      {emptyList && (
+      {numberOfTasks === 0 && (
         <div className="message">
           <img src={listIllustration} alt="An empty and sad list." className="message-image" />
           <h2 className="message-title">Your todo list is empty</h2>
