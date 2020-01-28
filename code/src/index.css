@@ -9,7 +9,7 @@ body {
   display: flex;
   align-content: center;
   justify-content: center;
-  background-color: ghostwhite;
+  background-color: rgb(12, 12, 26);
   
     /* width: 600px;
   height: 600px; */
@@ -89,6 +89,7 @@ input:focus, textarea {
   cursor: pointer; 
   margin: 15px;
   margin-left: 20px;
+  background-color: white;
   border-bottom: solid 1px lightgray;
 } 
 
@@ -100,6 +101,7 @@ form {
   border-bottom: solid 1px lightgray;
   border-left: 1px solid lightgray;
   border-right: 1px solid lightgray;
+  background-color: white;
   
 }
 .inputLabel {
@@ -135,8 +137,8 @@ ul {
   color: rgb(70, 69, 69);
   align-items: center;
   border-bottom: solid 1px lightgray;
-  margin-left: 5px;
-
+  /* margin-left: 5px; */
+  background-color: white;
 }
 
 /***footer ***/
