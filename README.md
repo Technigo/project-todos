@@ -1,6 +1,6 @@
 Description
 
-This project is a Todo app where you can add and remove tasks. Calculate hov many task you have finished and how many tasks you have left. And also be cheered on by the app.
+This project is a Todo app where you can add and remove tasks. Calculate how many task you have finished and how many tasks you have left. And also be cheered on by the app.
 
 What did I do?
 I used redux for adding and removing the tasks. And split the project up in components and reducers. To se how it looks I also pre programmed some tasks that easily can be removed. I also sat up some calculations using javascript. And made a simple design using CSS3.
