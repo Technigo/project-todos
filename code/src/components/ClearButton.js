@@ -8,11 +8,11 @@ export const ClearButton = () => {
 
   const dispatch = useDispatch()
 
-  const list = useSelector(state => state.todos.tasks.length)
+  const numberOfTasks = useSelector(state => state.todos.tasks.length)
 
   return (
     <>
-      {list && (
+      {numberOfTasks && (
         <button
           aria-label="Clear all tasks"
           type="submit"
