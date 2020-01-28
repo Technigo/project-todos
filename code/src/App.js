@@ -5,6 +5,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import styled from "styled-components";
 
 import { tasks } from "reducers/tasks";
+// import { filter } from "reducers/filter";
 
 import { TaskList } from "./components/TaskList";
 import { Date } from "components/Date";

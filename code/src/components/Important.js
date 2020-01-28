@@ -12,12 +12,10 @@ export const Important = ({ ifImportant, id }) => {
   };
   return (
     <Button type="button" onClick={handleClick}>
-      {ifImportant === true && (
-        <ion-icon name="star" style={{ color: "orange" }}></ion-icon>
-      )}
-      {ifImportant === false && (
-        <ion-icon name="star-outline" style={{ color: "orange" }}></ion-icon>
-      )}
+      <ion-icon
+        name={ifImportant ? "star" : "star-outline"}
+        style={{ color: "orange" }}
+      ></ion-icon>
     </Button>
   );
 };

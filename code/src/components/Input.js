@@ -6,12 +6,23 @@ import styled from "styled-components";
 
 let taskId = 0;
 
-export const Input = ({ handleClick, handleSubmit }) => {
+export const Input = ({ handleSubmit }) => {
   let [todoText, setTodoText] = useState("");
 
   const dispatch = useDispatch();
 
-  handleClick = () => {
+  // handleClick = () => {
+  //   setTodoText("");
+  //   dispatch(
+  //     tasks.actions.addTask({
+  //       text: todoText,
+  //       id: taskId++
+  //     })
+  //   );
+  // };
+
+  handleSubmit = e => {
+    e.preventDefault();
     setTodoText("");
     dispatch(
       tasks.actions.addTask({
@@ -19,10 +30,6 @@ export const Input = ({ handleClick, handleSubmit }) => {
         id: taskId++
       })
     );
-  };
-
-  handleSubmit = e => {
-    e.preventDefault();
   };
 
   return (
@@ -33,7 +40,7 @@ export const Input = ({ handleClick, handleSubmit }) => {
         value={todoText}
         onChange={e => setTodoText(e.target.value)}
       ></Field>
-      <Button type="button" onClick={handleClick}>
+      <Button type="button" onClick={handleSubmit}>
         Add task
       </Button>
     </form>

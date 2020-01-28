@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   taskData: [],
+  listFilter: "SHOW_ACTIVE",
   total: 0
 };
 
@@ -46,12 +47,13 @@ export const tasks = createSlice({
       state.total -= 1;
     },
     showCompleted: state => {
-      state.taskData = state.taskData.filter(todo => todo.complete);
-      state.total = state.taskData.length;
+      state.listFilter = "SHOW_COMPLETED";
     },
     showNotCompleted: state => {
-      state.taskData = state.taskData.filter(todo => !todo.complete);
-      state.total = state.taskData.length;
+      state.listFilter = "SHOW_ACTIVE";
+    },
+    showAll: state => {
+      state.listFilter = "SHOW_ALL";
     }
   }
 });

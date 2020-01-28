@@ -10,12 +10,24 @@ import { EmptyState } from "./EmptyState";
 
 export const TaskList = () => {
   const tasks = useSelector(state => state.tasks);
+  const filter = useSelector(state => state.tasks.listFilter);
+  console.log(filter);
+
+  const filterTasks = tasks.taskData.filter(item => {
+    if (filter === "SHOW_ACTIVE") {
+      return !item.complete;
+    } else if (filter === "SHOW_COMPLETED") {
+      return item.complete;
+    } else {
+      return true;
+    }
+  });
 
   return (
     <div>
       <Input />
       {tasks.total === 0 && <EmptyState />}
-      {tasks.taskData.map(task => {
+      {filterTasks.map(task => {
         return (
           <Container className="task" key={task.id}>
             <Toggle ifCompleted={task.complete} id={task.id} />
