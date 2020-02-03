@@ -32,7 +32,7 @@ CSS breakpoints of interest:
 - Redux
 - CSS
 - Styled Components
-- Moment.js
+- Moment
 - HTML
 
 ### Where can you see it in action?
