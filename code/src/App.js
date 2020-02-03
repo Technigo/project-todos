@@ -7,6 +7,7 @@ import { AddTaskForm } from 'components/AddTaskForm'
 import { Date } from 'components/Date'
 import { ClearAllButton } from 'components/ClearAllButton'
 import { NumberOfTasks } from 'components/NumberOfTasks'
+import { FatFooter } from 'components/FatFooter'
 
 
 import styled from 'styled-components/macro'
@@ -35,6 +36,7 @@ export const App = () => {
         </Header>
         <AddTaskForm />
         <Tasks />
+        <FatFooter />
       </Wrapper>
     </Provider>
   )
@@ -59,7 +61,7 @@ const Header = styled.div`
   color: black;
   background-color: #f7f7fc;
   width: 350px;
-  hight: 120px;
+  height: 90px;
   margin-top: 50px;
   padding: 20px;
 `
