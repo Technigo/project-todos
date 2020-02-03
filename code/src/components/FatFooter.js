@@ -25,7 +25,7 @@ export const FatFooter = () => {
 }
 
 const Footer = styled.div`
-background-color: firebrick;
+background-color: #f7f7fc;
 width: 350px;
 height: auto;
 padding: 20px;
@@ -33,8 +33,8 @@ padding: 20px;
 
 const Footertext = styled.h4`
 font-family: 'Roboto', sans-serif;
-font-weight:500;
+font-weight:600;
 font-size: 13px;
-color: white;
+color: darkblue;
 margin: 2px;
 `
