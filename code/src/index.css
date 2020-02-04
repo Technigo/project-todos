@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color:whitesmoke;
+  background-color: whitesmoke;
 }
 
 code {
@@ -13,15 +13,14 @@ code {
     monospace;
 }
 
-.contanier{
-  width: 50vh;
-  margin: 20vw;
+.contanier {
+  margin: 4vw;
   display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: solid;
-  border-color: #C9663F;
+  border-color: #c9663f;
   box-shadow: 5px 5px #f5c8b4;
   background: white;
 }
