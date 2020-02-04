@@ -48,7 +48,7 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   color: black;
-  background-color: lightyellow;
+  background-color: darkblue;
   align-items: center;
   justify-content: center;
   
@@ -67,12 +67,10 @@ const Header = styled.div`
 `
 const HeaderLeft = styled.div`
   color: black;
-  //background-color: white;
   width: 30%;
 `
 const HeaderRight = styled.div`
   color: black;
-  //background-color: white;
   width: 25%;
   display: flex;
   flex-direction: column;

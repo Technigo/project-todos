@@ -29,6 +29,7 @@ background-color: #f7f7fc;
 width: 350px;
 height: auto;
 padding: 20px;
+margin-bottom: 50px;
 `
 
 const Footertext = styled.h4`
