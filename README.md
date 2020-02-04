@@ -5,7 +5,7 @@ In this todo app, you can list tasks and toggle whether a task is done or not se
 
 ## Technologies implemented 
 
-* React Native
+* React 
 * Reudx
 * CSS
 * javaScript
