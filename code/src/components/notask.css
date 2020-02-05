@@ -1,14 +1,14 @@
 .no-task{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 12px;
-    color: #006654;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  color: #006654;
 }
 
 lottie-player{
-width: 150px;
-margin-bottom: 30px;
-margin-top: 60px;
+  width: 150px;
+  margin-bottom: 30px;
+  margin-top: 60px;
 }

@@ -7,7 +7,7 @@ export const NoTask = () => {
 
     return (
         <>
-            {items.length === 0 && (
+            {!items.length && (
 
                 <div className="no-task">
                     <lottie-player

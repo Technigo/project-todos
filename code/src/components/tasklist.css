@@ -43,7 +43,7 @@ li{
   color: #4a8179;
   }
   
-  .container input {
+.container input {
   position: absolute;
   opacity: 0;
   cursor: pointer;
@@ -51,7 +51,7 @@ li{
   width: 0;
   }
   
-  .checkmark {
+.checkmark {
   display: inline-block;
   height: 22px;
   width: 22px;

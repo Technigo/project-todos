@@ -5,12 +5,12 @@ import { tasks } from '../reducers/tasks'
 import './addtaskform.css'
 
 export const AddTaskForm = () => {
-    const [name, setName] = useState("")
+    const [todoText, setTodoText] = useState("")
     const dispatch = useDispatch()
     const handleSubmit = (event) => {
         event.preventDefault()
-        dispatch(tasks.actions.addItem(name))
-        setName('')
+        dispatch(tasks.actions.addItem(todoText))
+        setTodoText('')
     }
 
     return (
@@ -21,8 +21,8 @@ export const AddTaskForm = () => {
                     type="text"
                     placeholder="Add task.."
                     required
-                    value={name}
-                    onChange={(event) => setName(event.target.value)}>
+                    value={todoText}
+                    onChange={(event) => setTodoText(event.target.value)}>
                 </input>
             </label>
             <button className="add-task" type="submit">+</button>

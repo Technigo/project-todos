@@ -8,7 +8,7 @@ export const TaskList = () => {
     const items = useSelector((state) => state.tasks.items)
     return (
         <>
-            {!items.lenght === 0 && (
+            {!items.length === 0 && (
                 <div className="no-tasks">
                     <h2>Seems like you have no tasks at this moment...</h2>
                 </div>
