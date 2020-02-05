@@ -18,7 +18,7 @@ export const FatFooter = () => {
       <Footertext>IN</Footertext>
       <Footertext>THE</Footertext>
       <Footertext>FUTURE</Footertext>
-      <Footertext><span>🙌🙌</span></Footertext>
+      <Footertext><span role="img" arialabel="Get it done, hands clapp">🙌🙌</span></Footertext>
       <Footertext>By Nina Månsson, Technigo 2020</Footertext>
     </Footer>
   )

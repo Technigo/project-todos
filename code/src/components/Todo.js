@@ -32,7 +32,7 @@ export const Todo = (props) => {
             onChange={handleCheckboxClick} />
         </label>
         <Todotext>{text}</Todotext>
-        <Button type="button" arialabel="delete" onClick={handleRemoveButtonClick}><span>🗑</span></Button>
+        <Button type="button" arialabel="delete" onClick={handleRemoveButtonClick}><span role="img" arialabel="delete task">🗑</span></Button>
       </List>
     </div>
   )
