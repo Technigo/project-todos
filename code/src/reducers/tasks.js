@@ -8,22 +8,16 @@ export const tasks = createSlice({
         items: []
     },
     reducers: {
-        //Here I am creating an action in the reducers object. addItem is the name of the action
-        addItem: (state, action) => { //redux is passing in two arguments
+        addItem: (state, action) => {
             state.items.push({ id: Date.now(), name: action.payload })
 
         },
         removeItem: (state, action) => {
-            //find item in payload and remove it
             state.items = state.items.filter((items) => items.id !== action.payload)
 
         },
-        removeAll: (state) =>{
-            // return initialState
+        removeAll: (state) => {
             state.items = []
-
-   // state.items = state.items.splice((initialState) => initialState !== action.payload)
-        // state.items = state.items.splice((items) => items !== action.payload)
         },
         checkedTask: (state, action) => {
             // state.items.push({})
@@ -32,7 +26,6 @@ export const tasks = createSlice({
         countQuantity: (state, action) => {
             state.items.count(state.items)
         }
-       
-}
-}
-)
+
+    }
+})

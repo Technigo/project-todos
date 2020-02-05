@@ -6,15 +6,14 @@ import './clearbutton.css'
 
 export const ClearButton = () => {
 
-const dispatch = useDispatch()
+    const dispatch = useDispatch()
 
     return (
         <div class="clear-all">
-<button type="button" className="slide-top" onClick={() => dispatch(tasks.actions.removeAll())}>
-    Clear all
+            <button type="button" className="slide-top" onClick={() => dispatch(tasks.actions.removeAll())}>
+                Clear all
 </button>
-</div>
+        </div>
 
-)
-
+    )
 }

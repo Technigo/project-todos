@@ -4,15 +4,10 @@
     border-radius: 4px;
     color: #4a8179;
     width: 160px;
-    /* height: 45px; */
-    /* margin-left: 4px; */
     font-size: 32px;
-    /* font-weight: 700; */
     padding: 4px;
     margin: 24px;
-        /* -webkit-animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-                animation: slide-top 0.5s cubic-bezier(0.250, 0.460, 0.450, 0.940) both; */
-                font-family: 'Muli', sans-serif;
+    font-family: 'Muli', sans-serif;
   }
 
   .slide-top:hover

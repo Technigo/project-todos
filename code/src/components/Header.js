@@ -5,40 +5,34 @@ import './header.css'
 
 export const Header = () => {
 
-const quantity = useSelector((state) => state.tasks.items )
-const totalQuantity = quantity.length
-const moment = require('moment');
+    const quantity = useSelector((state) => state.tasks.items)
+    const totalQuantity = quantity.length
+    const moment = require('moment');
 
 
-return (
-   <header>
+    return (
+        <header>
 
-    {totalQuantity === 0 && (
-        <div className="today">
-            <h1>Todo</h1>
-            <p>{moment().format('MMMM Do, YYYY')}</p>
-        </div>
-        )
-    }
+            {totalQuantity === 0 && (
+                <div className="today">
+                    <h1>Todo</h1>
+                    <p>{moment().format('MMMM Do, YYYY')}</p>
+                </div>
+            )
+            }
 
-    {totalQuantity >= 1 && (
-        <>
-        <div className="today">
-            <h1>Todo</h1>
-            <p>{moment().format('MMMM Do, YYYY')}</p>      
-        </div>
-        <div class="task-count">
-            <p>Total todos: {totalQuantity}</p>
-        </div>
-</>
-        )}
-        
+            {totalQuantity >= 1 && (
+                <>
+                    <div className="today">
+                        <h1>Todo</h1>
+                        <p>{moment().format('MMMM Do, YYYY')}</p>
+                    </div>
+                    <div class="task-count">
+                        <p>Total todos: {totalQuantity}</p>
+                    </div>
+                </>
+            )}
+
         </header>
-        
-
-    
-           
-       
-        
     )
 }
