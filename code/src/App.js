@@ -8,6 +8,7 @@ import { Date } from 'components/Date'
 import { ClearAllButton } from 'components/ClearAllButton'
 import { NumberOfTasks } from 'components/NumberOfTasks'
 import { FatFooter } from 'components/FatFooter'
+import { Intro } from 'components/Intro'
 
 
 import styled from 'styled-components/macro'
@@ -23,9 +24,11 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Wrapper>
+        <Intro />
+
         <Header>
           <HeaderLeft>
-            <Heading>Todo</Heading>
+            <Heading>Today:</Heading>
             <Date />
           </HeaderLeft>
           <HeaderRight>
@@ -62,7 +65,7 @@ const Header = styled.div`
   background-color: #f7f7fc;
   width: 350px;
   height: 90px;
-  margin-top: 50px;
+  margin-top: 0.2px;
   padding: 20px;
 `
 const HeaderLeft = styled.div`
