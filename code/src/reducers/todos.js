@@ -67,7 +67,7 @@ export const todos = createSlice({
       return state.filter(item => item.id !== action.payload.id);
     },
     clearAllTodos: (state, action) => {
-      return (state = []);
+      return [];
     },
     clearCompletedTodo: (state, action) => {
       return state.filter(item => item.completed === false);

@@ -43,15 +43,15 @@ const Button = styled.button`
 export const Filters = () => {
   const dispatch = useDispatch();
   const filter = useSelector(state => state.visibilityFilter);
-  const countAll = useSelector(state => state.todos);
-  const countActive = useSelector(state =>
-    state.todos.filter(todo => todo.completed !== true)
+  const countAll = useSelector(state => state.todos.length);
+  const countActive = useSelector(
+    state => state.todos.filter(todo => todo.completed !== true).length
   );
-  const countCompleted = useSelector(state =>
-    state.todos.filter(todo => todo.completed === true)
+  const countCompleted = useSelector(
+    state => state.todos.filter(todo => todo.completed === true).length
   );
-  const countPinned = useSelector(state =>
-    state.todos.filter(todo => todo.pinned === true)
+  const countPinned = useSelector(
+    state => state.todos.filter(todo => todo.pinned === true).length
   );
 
   return (
@@ -62,10 +62,10 @@ export const Filters = () => {
             visibilityFilter.actions.setVisibility({ filter: 'SHOW_ALL' })
           )
         }
-        disabled={countAll.length === 0}
+        disabled={countAll === 0}
         activeFilter={filter === 'SHOW_ALL'}
       >
-        All ({countAll.length})
+        All ({countAll})
       </Button>
       <Button
         onClick={() =>
@@ -73,10 +73,10 @@ export const Filters = () => {
             visibilityFilter.actions.setVisibility({ filter: 'SHOW_ACTIVE' })
           )
         }
-        disabled={countActive.length === 0}
+        disabled={countActive === 0}
         activeFilter={filter === 'SHOW_ACTIVE'}
       >
-        Active ({countActive.length})
+        Active ({countActive})
       </Button>
       <Button
         onClick={() =>
@@ -84,10 +84,10 @@ export const Filters = () => {
             visibilityFilter.actions.setVisibility({ filter: 'SHOW_COMPLETED' })
           )
         }
-        disabled={countCompleted.length === 0}
+        disabled={countCompleted === 0}
         activeFilter={filter === 'SHOW_COMPLETED'}
       >
-        Completed ({countCompleted.length})
+        Completed ({countCompleted})
       </Button>
       <Button
         onClick={() =>
@@ -95,10 +95,10 @@ export const Filters = () => {
             visibilityFilter.actions.setVisibility({ filter: 'SHOW_PINNED' })
           )
         }
-        disabled={countPinned.length === 0}
+        disabled={countPinned === 0}
         activeFilter={filter === 'SHOW_PINNED'}
       >
-        Pinned ({countPinned.length})
+        Pinned ({countPinned})
       </Button>
     </StyledFilters>
   );

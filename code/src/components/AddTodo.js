@@ -45,7 +45,7 @@ const Button = styled.button`
 `;
 
 export const AddTodo = () => {
-  const allTodos = useSelector(state => state.todos);
+  const allTodosCount = useSelector(state => state.todos.length);
   const [todoText, setTodoText] = useState('');
   const dispatch = useDispatch();
 
@@ -64,7 +64,7 @@ export const AddTodo = () => {
   };
 
   return (
-    <StyledAddTodo empty={allTodos.length === 0}>
+    <StyledAddTodo empty={allTodosCount === 0}>
       <Form onSubmit={handleSubmit}>
         <Button type="submit">
           <i class="far fa-plus-square"></i>

@@ -5,7 +5,7 @@ export const visibilityFilter = createSlice({
   initialState: 'SHOW_ALL',
   reducers: {
     setVisibility: (state, action) => {
-      return (state = action.payload.filter);
+      return action.payload.filter;
     }
   }
 });
