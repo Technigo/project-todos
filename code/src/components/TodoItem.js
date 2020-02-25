@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from '../reducers/tasks'
 
-export const Item = (props) => {
+export const TodoItem = (props) => {
     const dispatch = useDispatch()
     const [checked, setChecked] = useState('')
     const handleRemoveButtonClick = () => {

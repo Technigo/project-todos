@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { ClearButton } from './ClearButton'
-import { Item } from './Item'
+import { TodoItem } from './TodoItem'
 import './tasklist.css'
 
 export const TaskList = () => {
@@ -17,7 +17,7 @@ export const TaskList = () => {
                 <div className="list-container">
                     <ul>
                         {items.map((item) => {
-                            return <Item
+                            return <TodoItem
                                 key={item.id}
                                 item={item} />
                         })}
