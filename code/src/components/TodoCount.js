@@ -4,13 +4,15 @@ import { tasks } from '../reducers/tasks'
 
 
 export const TodoCount = () => {
-  const quantity = useSelector((state) => state.tasks.items.length)
+  const unfinishedTasks = useSelector(state => state.tasks.items.filter(task => !task.isCompleted))
+  const totalTasks = unfinishedTasks.length
+  // const checkedQuantity = useSelector((state) => state.tasks)
 
   return (
     <>
-      {quantity >= 1 && (
+      {totalTasks >= 1 && (
         <div class="task-count">
-          <p>Total todos: {quantity}</p>
+          <p>Total todos: {totalTasks}</p>
         </div>
       )}
     </>

@@ -19,12 +19,18 @@ export const tasks = createSlice({
         removeAll: (state) => {
             state.items = []
         },
-        checkedTask: (state, action) => {
-            // state.items.push({})
+        // checkedTask: (state, action) => {
+        //     // state.items.push({})
 
+        // },
+        toggleTaskStatus: (state, action) => {
+            const existingTask = state.tasks.find((task) => task.id === action.payload)
+
+            existingTask.isCompleted = !existingTask.isCompleted
         },
-        countQuantity: (state, action) => {
-            state.items.count(state.items)
+        countTotalQuantity: (state, action) => {
+            // state.items.count(state.items)
+            state.items = state.items.length(state.items)
         }
 
     }
