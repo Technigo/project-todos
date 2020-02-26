@@ -5,16 +5,16 @@ import { useSelector } from 'react-redux'
 import './header.css'
 
 export const Header = () => {
-    const moment = require('moment');
+  const moment = require('moment');
 
 
-    return (
-        <header>
-            <div className="today">
-                <h1>Todo</h1>
-                <p>{moment().format('MMMM Do, YYYY')}</p>
-            </div>
-            <TodoCount />
-        </header>
-    )
+  return (
+    <header>
+      <div className="today">
+        <h1>Todo</h1>
+        <p>{moment().format('MMMM Do, YYYY')}</p>
+      </div>
+      <TodoCount />
+    </header>
+  )
 }
