@@ -11,7 +11,7 @@ export const TodoCount = () => {
   return (
     <>
       {totalTasks >= 1 && (
-        <div class="task-count">
+        <div className="task-count">
           <p>Total todos: {totalTasks}</p>
         </div>
       )}
