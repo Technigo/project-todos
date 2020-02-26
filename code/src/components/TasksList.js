@@ -8,7 +8,7 @@ import "./taskslist.css"
 
 
 export const TasksList = () => {
-  // TODO - fetch all tasks from the store
+
   const allTasks = useSelector((store) => store.tasks)
 
   return (
