@@ -1,6 +1,4 @@
-import React from 'react'
 import { createSlice } from '@reduxjs/toolkit'
-
 
 export const tasks = createSlice({
   name: 'tasks',
@@ -9,8 +7,9 @@ export const tasks = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      state.items.push({ id: Date.now(), name: action.payload })
-
+      state.items.push({
+        id: Date.now(), text: action.payload, isCompleted: false
+      })
     },
     removeItem: (state, action) => {
       state.items = state.items.filter((items) => items.id !== action.payload)
@@ -19,19 +18,11 @@ export const tasks = createSlice({
     removeAll: (state) => {
       state.items = []
     },
-    // checkedTask: (state, action) => {
-    //     // state.items.push({})
-
-    // },
     toggleTaskStatus: (state, action) => {
-      const existingTask = state.tasks.find((task) => task.id === action.payload)
+      const existingTask = state.items.find((task) => task.id === action.payload)
 
+      // If  task is already completed set isCompleted to false, else to true to toggle task status
       existingTask.isCompleted = !existingTask.isCompleted
-    },
-    countTotalQuantity: (state, action) => {
-      // state.items.count(state.items)
-      state.items = state.items.length(state.items)
     }
-
   }
 })

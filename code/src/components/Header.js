@@ -1,12 +1,10 @@
 import React from 'react'
-import { TodoCount } from './TodoCount'
-import { tasks } from '../reducers/tasks'
-import { useSelector } from 'react-redux'
+import moment from 'moment'
 import './header.css'
+import { TodoCount } from './TodoCount'
 
 export const Header = () => {
-  const moment = require('moment');
-
+  // const moment = require('moment');
 
   return (
     <header>

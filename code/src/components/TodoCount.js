@@ -1,20 +1,21 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import { tasks } from '../reducers/tasks'
-
 
 export const TodoCount = () => {
-  const unfinishedTasks = useSelector(state => state.tasks.items.filter(task => !task.isCompleted))
-  const totalTasks = unfinishedTasks.length
-  // const checkedQuantity = useSelector((state) => state.tasks)
+  const unfinishedTasks = useSelector((state) => state.tasks.items).filter((task) => !task.isCompleted)
+  const totalUnfinishedTasks = unfinishedTasks.length
 
   return (
     <>
-      {totalTasks >= 1 && (
-        <div className="task-count">
-          <p>Total todos: {totalTasks}</p>
-        </div>
-      )}
+      <div className="task-count">
+        {totalUnfinishedTasks === 0 && (
+          <p>You have no tasks</p>
+        )}
+        {totalUnfinishedTasks >= 1 && (
+          <p>You have {totalUnfinishedTasks} {totalUnfinishedTasks === 1 ? 'task' : 'tasks'}
+          </p>
+        )}
+      </div>
     </>
   )
 }

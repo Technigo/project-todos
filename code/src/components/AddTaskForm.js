@@ -1,11 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from '../reducers/tasks'
-
 import './addtaskform.css'
 
 export const AddTaskForm = () => {
-  const [todoText, setTodoText] = useState("")
+  const [todoText, setTodoText] = useState('')
   const dispatch = useDispatch()
 
   const handleSubmit = (event) => {
@@ -24,7 +23,6 @@ export const AddTaskForm = () => {
           required
           value={todoText}
           onChange={(event) => setTodoText(event.target.value)} />
-        {/* </input> */}
       </label>
       <button className="add-task" type="submit">+</button>
     </form>
