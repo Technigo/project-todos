@@ -15,7 +15,7 @@ input.addTask {
   height: 50px;
   border: none;
   background: rgb(232, 236, 238);
-  font-family: 'Pacifico';
+  font-family: '';
 }
 
 .addTaskBtn {
@@ -29,6 +29,7 @@ input.addTask {
 input::placeholder {
   text-align: left;
   font-size: 20px;
+  font-family: 'Caveat';
 }
 
 i {

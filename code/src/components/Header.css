@@ -3,6 +3,8 @@ header {
   display: flex;
   justify-content: center;
   padding: 10px;
+  background: rgba(0, 144, 184, 0.851);
+  color: white;
 }
 
 h1 {
@@ -14,4 +16,5 @@ h1 {
 h4 {
   font-weight: normal;
   text-align: center;
+  font-size: 25px;
 }

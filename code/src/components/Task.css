@@ -37,7 +37,7 @@ input[type='checkbox'] {
 }
 
 .fakeCheckbox {
-  border: 1px solid blue;
+  border: 1px solid black;
   width: 15px;
   height: 15px;
   display: inline-flex;
@@ -53,7 +53,8 @@ input:checked + .fakeCheckbox {
   height: 15px;
   display: inline-block;
   background: black;
-  color: white;
+  color: black;
+  border: 1px solid white;
 }
 
 .removeBtn {

@@ -24,8 +24,6 @@ export const tasks = createSlice({
 
       if (chooseTask) {
         chooseTask.complete = !chooseTask.complete;
-      }
-      if (chooseTask) {
         chooseTask.currentTaskIndex += 1;
       }
     },

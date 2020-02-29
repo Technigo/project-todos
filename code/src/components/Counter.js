@@ -15,7 +15,7 @@ export const Counter = () => {
   return (
     <div className="counterContainer">
       <div>
-        <h3 className="tasksLeft">{currentTasks} tasks</h3>
+        <h3 className="tasksLeft">{currentTasks} tasks todo</h3>
       </div>
       <button
         className="clearAllTasks"

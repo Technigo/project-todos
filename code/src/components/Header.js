@@ -6,7 +6,7 @@ export const Header = () => {
   const month = [
     'Sunday',
     'Monday',
-    'Tuseday',
+    'Tuesday',
     'Wednesday',
     'Thursday',
     'Friday',
