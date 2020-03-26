@@ -6,8 +6,8 @@ const TasksSlice = createSlice({
   reducers: {
     addTask: {
       reducer(state, action) {
-        const { id, text } = action.payload
-        state.push({ id, text, completed: false })
+        const { text } = action.payload
+        state.push({ text, completed: false })
       }
     }
   }

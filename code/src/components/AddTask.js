@@ -6,21 +6,22 @@ const mapDispatch = { addTask }
 
 const AddTask = ({ addTask }) => {
 
-  const [value, setValue] = useState('')
+  const [text, setText] = useState('')
 
-  const handleChange = (e) => setValue(e.target.value)
+  const handleChange = (e) => setText(e.target.value)
 
   const handleSubmit = (e) => {
+    console.log(text)
     e.preventDefault()
-    addTask(value)
-    setValue('')
+    addTask({text})
+    setText('')
   }
 
   return (
     <form onSubmit={handleSubmit}>
       <div>
         <label>Add input</label>
-        <input type="text" value={value} onChange={handleChange} />
+        <input type="text" value={text} onChange={handleChange} />
         <button type="submit">Add</button>
       </div>
     </form>
