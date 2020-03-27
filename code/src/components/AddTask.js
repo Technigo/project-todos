@@ -11,9 +11,8 @@ const AddTask = ({ addTask }) => {
   const handleChange = (e) => setText(e.target.value)
 
   const handleSubmit = (e) => {
-    console.log(text)
     e.preventDefault()
-    addTask({text})
+    addTask( text )
     setText('')
   }
 
@@ -21,9 +20,9 @@ const AddTask = ({ addTask }) => {
     <form onSubmit={handleSubmit}>
       <div>
         <label>Add input</label>
-        <input type="text" value={text} onChange={handleChange} />
-        <button type="submit">Add</button>
+        <input type="text" value={text} onChange={handleChange} required />
       </div>
+      <button type="submit">Add</button>
     </form>
   )
 }

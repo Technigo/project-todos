@@ -2,7 +2,7 @@ import React from 'react'
 
 const Task = ({ task }) => {
   return (
-    <div><p>{task.text}</p></div>
+    <li>{task.text}<input type="checkbox" value="" /></li>
   )
 }
 
