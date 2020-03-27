@@ -14,11 +14,20 @@ const TasksSlice = createSlice({
       prepare(text) {
         return { payload: { text, id: initId++ } }
       }
+    },
+    toggleComplete: {
+      reducer(state, action) {
+        const task = state.find(task => task.id === action.payload)
+        if (task) {
+          task.completed = !task.completed
+        }
+      }
     }
   }
 })
 
-export const { addTask } = TasksSlice.actions
+
+export const { addTask, toggleComplete } = TasksSlice.actions
 export default TasksSlice.reducer
 
 

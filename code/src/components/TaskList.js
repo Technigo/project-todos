@@ -4,13 +4,13 @@ import Task from 'components/Task'
 
 const TaskList = () => {
 
-const list = useSelector(state => state.tasks)
+const list = useSelector( state => state.tasks)
 
   return (
     <ul>
-      {list.map((task, index) => (
+      {list.map((task) => (
         <Task 
-          key={index}
+          key={task.id}
           task={task} />
       ))}
     </ul>
