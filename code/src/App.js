@@ -2,7 +2,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import tasksReducer from './reducers/TasksSlice'
-import TaskList from 'components/TaskList'
+import Filter from 'components/Filter'
 import AddTask from 'components/AddTask'
 
 const reducer = combineReducers({
@@ -16,7 +16,7 @@ export const App = () => {
     <div>
     <Provider store={store}>
       <AddTask />
-      <TaskList />
+      <Filter />
     </Provider>
     </div>
   )
