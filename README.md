@@ -4,6 +4,10 @@ An application which pulls together all the parts of redux by building a to-do a
 
 Im be able to add tasks, list tasks and toggle whether a task is done or not. 
 
+## View it live
+
+https://mrsucodesproject15todo.netlify.com/
+
 ## Questions answered and techniques used
 
 * How to structure a redux store
@@ -20,7 +24,5 @@ Im be able to add tasks, list tasks and toggle whether a task is done or not.
 * The app should show a count of either all to-do's, or all uncomplete to-do's
 * Code follows Technigo’s code guidelines.
 
-## View it live
 
-https://mrsucodesproject15todo.netlify.com/
 
