@@ -202,6 +202,7 @@ footer {
 
   .headerContainer {
     align-items: center;
+    height: 150px;
   }
   
   .inputField {
@@ -218,7 +219,7 @@ footer {
 
   .todo {
     display: inline;
-    line-height: 200%;
+    line-height: 150%;
     border-radius: 0;
     font-size: 25px;
   }
