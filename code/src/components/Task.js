@@ -5,7 +5,6 @@ import { toggleComplete } from '../reducers/TasksSlice'
 const mapDispatch = { toggleComplete }
 
 const Task = ({ task, toggleComplete }) => {
-
   return (
     <li>{task.text}<input type="checkbox" value={task.completed} onChange={() => toggleComplete(task.id)} /></li>
   )
