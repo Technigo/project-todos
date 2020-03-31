@@ -1,5 +1,5 @@
 import React from 'react'
-import Task from 'components/Task'
+import Task from 'components/Header/Task'
 
 const TaskList = ({ tasks }) => {
 console.log({ tasks })

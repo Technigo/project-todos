@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 import { createSelector } from '@reduxjs/toolkit'
-import { Filters } from '../reducers/FilterSlice'
+import { Filters } from '../../reducers/FilterSlice'
 import  TaskList  from 'components/TaskList'
 
 const selectedTasks = (state => state.tasks)

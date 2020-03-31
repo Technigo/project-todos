@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
-import { addTask } from '../reducers/TasksSlice' 
+import { addTask } from '../../reducers/TasksSlice' 
 
 const mapDispatch = { addTask }
 

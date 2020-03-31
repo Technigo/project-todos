@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { toggleComplete } from '../reducers/TasksSlice' 
+import { toggleComplete } from '../../reducers/TasksSlice' 
 
 const mapDispatch = { toggleComplete }
 
