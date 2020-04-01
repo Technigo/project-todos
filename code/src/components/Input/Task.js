@@ -34,6 +34,7 @@ const Checkbox = styled.input`
   outline: none;
 
     &:checked {
+      background: linear-gradient(-45deg, rgba(247, 251, 255, 0.4) 20%, rgba(0, 0, 0, 0.2) 100%);
       border: 3px solid lighten(hsl(210, 50%, 90%), 2);
       box-shadow:
         3px 3px 6px 3px rgba(0, 0, 0, 0),

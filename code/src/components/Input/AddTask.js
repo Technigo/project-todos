@@ -28,6 +28,14 @@ const Label = styled.label`
   display: none;
 `;
 
+const Button = styled.button`
+  width: 50px;
+  height: 50px;
+  font-size: 40px;
+  border-radius: 50%;
+  margin-top: 20px;
+`;
+
 const mapDispatch = { addTask }
 
 const AddTask = ({ addTask }) => {
@@ -45,8 +53,8 @@ const AddTask = ({ addTask }) => {
   return (
     <Wrapper onSubmit={handleSubmit}>
       <Label aria-hidden={true} name="add">Add input</Label>
-      <Input type="text" for="add" value={text} onChange={handleChange} placeholder="Add task" required />
-      <button type="submit"><span>+</span></button>
+      <Input type="text" htmlFor="add" value={text} onChange={handleChange} placeholder="Add task" required />
+      <Button type="submit"><span>+</span></Button>
     </Wrapper>
   )
 }

@@ -4,12 +4,21 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import tasksReducer from './reducers/TasksSlice'
 import { Filters } from './reducers/FilterSlice'
 import filters from './reducers/FilterSlice'
+
 import InputContainer from 'components/Input/InputContainer'
 import Globals from 'components/Globals'
-import FilterButton from 'components/FilterButton'
+import FilterInput from 'components/FilterInput'
 import TaskSummary from 'components/TaskSummary'
 import Filter from 'components/Filter'
 import styled from 'styled-components'
+
+
+const reducer = combineReducers({
+  tasks: tasksReducer,
+  filters
+})
+
+const store = configureStore({ reducer })
 
 const Wrapper = styled.div`
   display: flex;
@@ -33,20 +42,17 @@ const Inner = styled.div`
   } 
 `;
 
-const FilterContainer = styled.div `
-  width: 100%;
-  display: flex;
-  justify-content: space-around;
-
-
+const FilterContainer = styled.fieldset `
+    width: 100%;
+    margin: 0 auto;
+    border: none;
 `;
 
-const reducer = combineReducers({
-  tasks: tasksReducer,
-  filters
-})
-
-const store = configureStore({ reducer })
+const Form = styled.form`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+`;
 
 export const App = () => {
   return (
@@ -55,9 +61,11 @@ export const App = () => {
         <Wrapper>  
             <Inner>
               <FilterContainer>
-                  <FilterButton filter={ Filters.SHOW_ALL }>Show all</FilterButton>
-                  <FilterButton filter={ Filters.SHOW_COMPLETED }>Show completed</FilterButton>
-                  <FilterButton filter={ Filters.SHOW_ACTIVE }>Show active</FilterButton>
+                <Form>
+                    <FilterInput filter={ Filters.SHOW_ALL }>Show all</FilterInput>
+                    <FilterInput filter={ Filters.SHOW_COMPLETED }>Show completed</FilterInput>
+                    <FilterInput filter={ Filters.SHOW_ACTIVE }>Show active</FilterInput>
+                </Form>  
               </FilterContainer>
               <InputContainer/>
               <TaskSummary />
