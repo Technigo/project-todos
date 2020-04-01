@@ -15,6 +15,7 @@ const Wrapper = styled.div`
   display: flex;
   width: 100%;
   max-width: 767px;
+  margin: 0 auto;
   height: 100vh;
   justify-content: center;
 `;
@@ -23,6 +24,7 @@ const Inner = styled.div`
   display: flex;
   flex-direction: column;
   width: 60%;
+  height: 100%;
   border-radius: 32px;
   box-shadow: inset 5px 5px 7px 5px ${props => props.theme.colors.boxshadow}, inset -5px -5px 7px 5px ${props => props.theme.colors.boxshadow};
   padding-left: 30px;
@@ -33,6 +35,10 @@ const Inner = styled.div`
 
 const FilterContainer = styled.div `
   width: 100%;
+  display: flex;
+  justify-content: space-around;
+
+
 `;
 
 const reducer = combineReducers({
@@ -49,9 +55,9 @@ export const App = () => {
         <Wrapper>  
             <Inner>
               <FilterContainer>
-                  <FilterButton filter={ Filters.SHOW_ALL }/>
-                  <FilterButton filter={ Filters.SHOW_COMPLETED }/>
-                  <FilterButton filter={ Filters.SHOW_ACTIVE }/>
+                  <FilterButton filter={ Filters.SHOW_ALL }>Show all</FilterButton>
+                  <FilterButton filter={ Filters.SHOW_COMPLETED }>Show completed</FilterButton>
+                  <FilterButton filter={ Filters.SHOW_ACTIVE }>Show active</FilterButton>
               </FilterContainer>
               <InputContainer/>
               <TaskSummary />

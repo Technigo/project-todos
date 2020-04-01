@@ -19,7 +19,7 @@ const TaskSummary = () => {
   return(
     <Wrapper>
     { tasks > 0 &&
-        <Paragraph>Du har {tasks} uppgifter idag. {completed} är avklarade och du har {active} kvar.</Paragraph>
+        <Paragraph>You have {tasks} tasks today. {completed} are completed and {active} are active.</Paragraph>
     }
     </Wrapper>
     

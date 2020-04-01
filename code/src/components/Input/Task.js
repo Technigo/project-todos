@@ -52,6 +52,7 @@ const Task = ({ task, toggleComplete }) => {
       <Checkbox 
         type="checkbox" 
         value={task.completed} 
+        checked={task.completed ? true : false }
         onChange={() => toggleComplete(task.id)} />{task.text}
     </Wrapper>
   ) 
