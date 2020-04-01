@@ -2,9 +2,12 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-const Wrapper = styled.aside`
-    max-width: 33%;
-    border: 1px solid green;
+const Wrapper = styled.div`
+   width: 100%;
+`;
+
+const Paragraph = styled.p`
+  text-align: center
 `;
 
 const TaskSummary = () => {
@@ -16,10 +19,7 @@ const TaskSummary = () => {
   return(
     <Wrapper>
     { tasks > 0 &&
-      <div>
-        <div>Du har {tasks} uppgifter idag.</div>
-        <div>{completed} är avklarade och du har {active} kvar</div>
-      </div>
+        <Paragraph>Du har {tasks} uppgifter idag. {completed} är avklarade och du har {active} kvar.</Paragraph>
     }
     </Wrapper>
     

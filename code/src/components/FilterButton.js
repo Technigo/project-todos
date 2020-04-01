@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { setFilters } from '../../reducers/FilterSlice'
+import { setFilters } from '../reducers/FilterSlice'
 
 const mapDispatch = { setFilters }
 

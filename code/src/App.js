@@ -2,13 +2,13 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import tasksReducer from './reducers/TasksSlice'
+import { Filters } from './reducers/FilterSlice'
 import filters from './reducers/FilterSlice'
-import Filter from 'components/Header/Filter'
-import HeaderContainer from 'components/Header/HeaderContainer'
+import InputContainer from 'components/Input/InputContainer'
 import Globals from 'components/Globals'
+import FilterButton from 'components/FilterButton'
+import Filter from 'components/Filter'
 import styled from 'styled-components'
-
-
 
 const Wrapper = styled.div`
   display: flex;
@@ -20,9 +20,16 @@ const Wrapper = styled.div`
 const Inner = styled.div`
   display: flex;
   flex-direction: column;
-  width: 50%;
+  width: 80%;
   box-shadow: 4px 3px 48px -27px ${props => props.theme.colors.blackOpaque};
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 15px;
   } 
+`;
+
+const FilterContainer = styled.div `
+  width: 100%;
 `;
 
 const reducer = combineReducers({
@@ -35,14 +42,19 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Globals>
-      <Wrapper>  
-          <Inner>
-            <Provider store={store}>
-              <HeaderContainer/>
+     <Provider store={store}>
+        <Wrapper>  
+            <Inner>
+              <FilterContainer>
+                  <FilterButton filter={ Filters.SHOW_ALL }/>
+                  <FilterButton filter={ Filters.SHOW_COMPLETED }/>
+                  <FilterButton filter={ Filters.SHOW_ACTIVE }/>
+              </FilterContainer>
               <Filter />
-            </Provider>
-          </Inner>
-      </Wrapper>
+              <InputContainer/>
+            </Inner>
+        </Wrapper>
+      </Provider>
     </Globals>
   )
 }

@@ -1,5 +1,5 @@
 import React from 'react'
-import Task from 'components/Header/Task'
+import Task from 'components/Input/Task'
 import styled from 'styled-components'
 
 const Wrapper = styled.main `
