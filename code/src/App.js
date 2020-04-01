@@ -7,12 +7,14 @@ import filters from './reducers/FilterSlice'
 import InputContainer from 'components/Input/InputContainer'
 import Globals from 'components/Globals'
 import FilterButton from 'components/FilterButton'
+import TaskSummary from 'components/TaskSummary'
 import Filter from 'components/Filter'
 import styled from 'styled-components'
 
 const Wrapper = styled.div`
   display: flex;
   width: 100%;
+  max-width: 767px;
   height: 100vh;
   justify-content: center;
 `;
@@ -20,11 +22,12 @@ const Wrapper = styled.div`
 const Inner = styled.div`
   display: flex;
   flex-direction: column;
-  width: 80%;
-  box-shadow: 4px 3px 48px -27px ${props => props.theme.colors.blackOpaque};
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 15px;
+  width: 60%;
+  border-radius: 32px;
+  box-shadow: inset 5px 5px 7px 5px ${props => props.theme.colors.boxshadow}, inset -5px -5px 7px 5px ${props => props.theme.colors.boxshadow};
+  padding-left: 30px;
+  padding-right: 30px;
+  padding-top: 30px;
   } 
 `;
 
@@ -50,8 +53,9 @@ export const App = () => {
                   <FilterButton filter={ Filters.SHOW_COMPLETED }/>
                   <FilterButton filter={ Filters.SHOW_ACTIVE }/>
               </FilterContainer>
-              <Filter />
               <InputContainer/>
+              <TaskSummary />
+              <Filter />
             </Inner>
         </Wrapper>
       </Provider>

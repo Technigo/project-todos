@@ -16,14 +16,16 @@ const theme = {
     black: '#222',
     white: '#fff',
     blackOpaque: 'rgba(0,0,0,0.75)',
-    orange: 'orangered'
+    boxshadow: 'rgba(0,0,0,0.1)',
+    orange: 'orangered',
+    background: '#EFFBFB'
   } 
 }
 
 const GlobalStyle = createGlobalStyle`
   body {
     color: ${props => props.theme.colors.black};
-    background-color: ${props => props.theme.colors.white};
+    background-color: ${props => props.theme.colors.background};
   }
 `;
   
