@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const Wrapper = styled.div`
    width: 100%;
+   margin-bottom: 20px;
 `;
 
 const Paragraph = styled.p`
@@ -19,7 +20,7 @@ const TaskSummary = () => {
   return(
     <Wrapper>
     { tasks > 0 &&
-        <Paragraph>You have {tasks} tasks today. {completed} are completed and {active} are active.</Paragraph>
+        <Paragraph>You have {tasks} tasks today. <br/>{completed} are completed and {active} are active.</Paragraph>
     }
     </Wrapper>
     

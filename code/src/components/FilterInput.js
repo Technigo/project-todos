@@ -14,10 +14,12 @@ const FilteringInput = styled.input`
 `;
 
 const Label = styled.label`
-  text-align: center;
-  width: 80px;
-  height: 50px;
-  font-size: 12px;
+    text-align: center;
+    width: 64px;
+    height: 64px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
 `;
 
 const FilterInput= ({ setFilters, filter, children }) => {

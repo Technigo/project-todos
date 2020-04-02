@@ -32,20 +32,24 @@ const Wrapper = styled.div`
 const Inner = styled.div`
   display: flex;
   flex-direction: column;
-  width: 60%;
+  width: 70%;
   height: 100%;
   border-radius: 32px;
   box-shadow: inset 5px 5px 7px 5px ${props => props.theme.colors.boxshadow}, inset -5px -5px 7px 5px ${props => props.theme.colors.boxshadow};
   padding-left: 30px;
   padding-right: 30px;
   padding-top: 30px;
+
+    @media (min-width: 766px) {
+      width: 50%;
+    }
   } 
 `;
 
 const FilterContainer = styled.fieldset `
-    width: 100%;
-    margin: 0 auto;
     border: none;
+    height: 80px;
+    padding: 0;
 `;
 
 const Form = styled.form`

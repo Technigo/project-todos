@@ -5,7 +5,9 @@ import styled from 'styled-components'
 
 const mapDispatch = { toggleComplete }
 
+
 const Wrapper = styled.li`
+  position: relative;
   width: 100%;
   display: flex;
   align-items: center;
@@ -13,7 +15,7 @@ const Wrapper = styled.li`
   min-height: 50px;
   border-radius: 5px;
   margin-top: 5px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
   box-shadow:
         3px 3px 6px 3px rgba(0, 0, 0, 0.1),
         -3px -3px 3px 3px rgba(247, 251, 255, 0.5),
@@ -47,14 +49,40 @@ const Checkbox = styled.input`
     }
 `;
 
+const AnimatedLine = styled.div`
+
+@keyframes width {
+  from {
+    width: 0px;
+  }
+  to {
+    width: 80%;
+  }
+}
+  position: absolute;
+  left: 15%;
+  top: 50%;
+  height: 1px;
+  animation: width 600ms linear forwards;
+
+    .js-completed & {
+      background: ${props => props.theme.colors.text};
+  }
+`;
+
+
 const Task = ({ task, toggleComplete }) => {
   return (
-    <Wrapper>
+    <Wrapper className={task.completed ? "js-completed" : ""} >
       <Checkbox 
         type="checkbox" 
         value={task.completed} 
         checked={task.completed ? true : false }
-        onChange={() => toggleComplete(task.id)} />{task.text}
+        onChange={() => toggleComplete(task.id)} />
+        { task.completed === true &&
+         <AnimatedLine/>
+        }
+        {task.text}
     </Wrapper>
   ) 
 }
