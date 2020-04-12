@@ -7,15 +7,12 @@ body {
     font-family: 'Montserrat', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #FEAC5E;
-    /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
-    /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);
+    background-color: rgba(255, 255, 255, .5);
 }
 
 h1 {
     text-transform: uppercase;
+    font-weight: 900;
 }
 
 code {
@@ -32,10 +29,10 @@ button {
     margin-top: 10px;
     border-radius: 5px;
     font-size: 1.2rem;
-    background-color: #f2395a;
+    background-color: #bb1534;
     background-size: 20px 20px;
     background-image: -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.15) 25%, rgba(0, 0, 0, 0) 25%, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0));
-    border: 1px solid #f02146;
+    border: 1px solid #bb1534;
     border-bottom-width: 3px;
     color: white;
     outline: none;
@@ -105,9 +102,9 @@ input[type=checkbox]+label:active:before {
 }
 
 input[type=checkbox]:checked+label:before {
-    background-color: mediumspringgreen;
+    background-color: rgb(0, 143, 88);
     color: white;
-    border-color: mediumspringgreen;
+    border-color: rgba(0, 0, 0, .5);
 }
 
 input[type=checkbox]:disabled+label:before {
@@ -134,7 +131,7 @@ label {
 }
 
 .wrapper {
-    width: 400px;
+    width: 40%;
     margin: 50px auto;
     background-color: silver;
     padding: 20px;
