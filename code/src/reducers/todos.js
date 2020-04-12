@@ -4,7 +4,7 @@ const initialState = {
     items: [
         { id: 1, name: 'Fix the car', ifChecked: false },
         { id: 2, name: 'Pay bills', ifChecked: true },
-        { id: 3, name: 'Buy lightbulbs', ifChecked: false }
+
     ]
 }
 
