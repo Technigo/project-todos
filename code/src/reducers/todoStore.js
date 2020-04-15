@@ -19,8 +19,15 @@ export const todoStore = createSlice({
         },
 
         statusTask: (state, action) =>{
-            console.log("from removeTask")
+            console.log("from statudTask")
+            
         },
     }
 
 })
+
+// - Your app should list all todo tasks - completed or uncompleted --TaskList/Done
+// - You should be able to mark an uncompleted task as complete --taskcomponent/notDone
+// - You should be able to change a completed task back to uncomplete
+// - You should be able to add new tasks
+// - Your app should show a count of either all todos, or all uncomplete todos

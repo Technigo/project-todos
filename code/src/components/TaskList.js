@@ -6,6 +6,7 @@ export const TaskList = () => {
   return (
     <section>
       <h1>Todo List</h1>
+      <p>{allTasks.length}</p>
       {allTasks.map((task)=>{
 
       return(<p>{task.task}</p>)
@@ -15,3 +16,4 @@ export const TaskList = () => {
     </section>
   )
 }
+// Clear all
