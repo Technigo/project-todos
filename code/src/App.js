@@ -1,9 +1,13 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+import { ToDoScreen } from 'components/ToDoScreen'
+import { AddToDoScreen } from 'components/AddToDoScreen'
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <Provider store={store}>
+      <ToDoScreen />
+      <AddToDoScreen />
+    </Provider>
   )
 }
