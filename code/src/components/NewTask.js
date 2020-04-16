@@ -1,19 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import {todoStore} from '../reducers/todoStore'
 
 export const NewTask = () => {
 const dispatch = useDispatch()
+const [taskInput, setTaskInput] = useState("")
 
-  const handleNewTask = () => {
-    dispatch(todoStore.actions.createTask(newtodo))
+  const handleNewTask = (event) => {
+    event.preventDefault()
+    dispatch(todoStore.actions.createTask({task:taskInput}))
   }
-  const newtodo = {task:'my new task'}
+ //What is the smallest screen size you design for 320px
   return (
-    <div>      
-      Find me in NewTask.js!
-      <button onClick={handleNewTask}>press me</button>
-    </div>
+       <form onSubmit={handleNewTask}>
+      <input
+        type="text"
+        onChange={e => setTaskInput(e.target.value)}
+        value={taskInput}
+      ></input>
+      <input
+        type="submit"
+        value="Add Todo"
+      ></input>
+    </form>
   )
 }
 
