@@ -31,7 +31,7 @@ export const AddTask = () => {
                         required
                         value={newToDo}
                         placeholder="Write your todos "
-                        onChange={event => setNewToDo(event.target.value)}  //.value is what ever we srite in the input field
+                        onChange={event => setNewToDo(event.target.value)}  //.value is what ever we write in the input field
                     />
                 </label>
 

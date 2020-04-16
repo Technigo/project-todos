@@ -15,18 +15,19 @@ export const tasks = createSlice({
             state.items.push({ id: Date.now(), text: action.payload })
         },
 
-        toggleNeedsMore: (state, action) => {
+        toggleCompleted: (state, action) => {
             // console.log('action', action)
             // console.log('state', state)
             // console.log(action.payload)
 
             //find tasks in the array
             const foundTask = state.items.find((item) => item.id === action.payload)
-            // toggle the value of needsMore in Task.js
+            // toggle the value of completed in Task.js
             // console.log(JSON.stringify(foundTask))
 
             if (foundTask) {
-                foundTask.needsMore = !foundTask.needsMore
+                // foundTask.needsMore = !foundTask.needsMore
+                foundTask.completed = !foundTask.completed
             }
         },
 
@@ -34,11 +35,11 @@ export const tasks = createSlice({
         completedTask: (state, action) => {
 
             const doneTask = state.items.find((item) => item.id === action.payload)
-            // toggle the value of needsMore in Task.js
+            // toggle the value of completed in Task.js
             // console.log(JSON.stringify(doneTask))
 
             if (doneTask) {
-                doneTask.needsMore = !doneTask.needsMore
+                doneTask.completed = !doneTask.completed
             }
         },
 
