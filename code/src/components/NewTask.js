@@ -8,7 +8,7 @@ const dispatch = useDispatch()
   const handleNewTask = () => {
     dispatch(todoStore.actions.createTask(newtodo))
   }
-  const newtodo = {id:2, task:'my new task'}
+  const newtodo = {task:'my new task'}
   return (
     <div>      
       Find me in NewTask.js!

@@ -9,17 +9,27 @@ export const todoStore = createSlice({
     reducers: {
         createTask: (state, action) => {
             console.log(action)
-            state.todos.push({ ...action.payload, taskDone: false})
+            const lastId = state.todos[state.todos.length - 1].id 
+            state.todos.push({id:(lastId+1), ...action.payload, taskDone: false})
         },
         
         removeTask: (state, action) =>{
             console.log("from removeTask")
-            const currentTask = action.payload.id
-            state.todos = state.todos.filter((task)=>(task.id !== currentTask))
+            const currentTaskId = action.payload.id
+            state.todos = state.todos.filter((task)=>(task.id !== currentTaskId))
         },
-
+//console.log(array1.findIndex(isLargeNumber));
         statusTask: (state, action) =>{
             console.log("from statudTask")
+            const currentTaskId = action.payload.id
+            const myIndex = state.todos.findIndex((item)=>item.id === currentTaskId)
+            console.log("index",myIndex)
+            if (action.payload.taskDone) {
+              state.todos[myIndex].taskDone = false 
+            }
+            else {
+              state.todos[myIndex].taskDone = true
+            }
             
         },
     }
