@@ -33,7 +33,7 @@ export const TodoInput = ({ listId }) => {
       <input
         type="submit"
         className="todo-input-button"
-        value=" ➕ Add Task"
+        value=" ➕"
       ></input>
     </form>
   );
