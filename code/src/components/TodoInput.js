@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-//import { Link } from "react-router-dom";
-//import { useDispatch } from "react-redux";
-//import { todos } from "../reducers/todos.js";
+import { useDispatch } from "react-redux";
+import { todos } from "../reducers/todos.js";
 
 export const TodoInput = () => {
+  const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState("");
 
   // E står för Event
@@ -14,6 +14,12 @@ export const TodoInput = () => {
   
 
   // This is where we will Dispatch the action to save new todo item
+    dispatch(
+      todos.actions.addTodo({
+      description: inputValue,
+      done: false,
+    })
+  );
 
   // Clear the text field
   setInputValue("");
