@@ -1,18 +1,8 @@
 import React from 'react'
 import { Provider } from "react-redux"
-import { configureStore, createStore, combineReducers } from '@reduxjs/toolkit'
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { todos } from '../reducers/todos'
 import { TodoList } from '../components/TodoList'
-
-/*
-Plan:
--create TodoInput
--create store
--use Provider
--create TodoList
--create TodoItem
--create TodoSummary
-*/
 
 // StoreCreation : Tell redux about our reducers
 const reducer = combineReducers({ todos: todos.reducer })
