@@ -11,7 +11,29 @@ export const Summary = () => {
 
   return (
     <div>
-      <p>{uncompleted}</p>
+      {uncompleted === 0 ? (
+        <p>Yay! You have finished all your tasks!</p>
+      ) : (
+        <> </>
+      )}
+      {uncompleted === 1 ? (
+        <p>You have only one teeny tiny thing on your list today!</p>
+      ) : (
+        <> </>
+      )}
+      {uncompleted > 1 && uncompleted <= 5 ? (
+        <p>You have only {uncompleted} things left to do!</p>
+      ) : (
+        <> </>
+      )}
+      {uncompleted > 5 ? (
+        <p>
+          You have {uncompleted} things to do on your list! Keep up the good
+          work!
+        </p>
+      ) : (
+        <> </>
+      )}
     </div>
   );
 };

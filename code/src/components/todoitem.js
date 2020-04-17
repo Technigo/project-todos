@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { todos } from '../reducers/todos.js';
+import moment from 'moment';
 
 export const ToDoItem = ({ itemIndex }) => {
   const item = useSelector((store) => store.todos.list.items[itemIndex]);
@@ -28,6 +29,7 @@ export const ToDoItem = ({ itemIndex }) => {
           onChange={handleOnChange}
           checked={item.completed ? 'completed' : ''}
         ></input>
+        <p>added {moment(item.createdAt).format('ll')}</p>
       </div>
     );
   }
