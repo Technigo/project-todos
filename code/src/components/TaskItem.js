@@ -19,6 +19,14 @@ const MediumText = styled.p`
 	font-size: 18px;
 	font-width: 100;
 `;
+const ItemButton = styled.button`
+	box-shadow: none;
+	font-size: 40px;
+	background: none;
+	border: none;
+	color: red;
+`;
+
 export const TaskItem = ({ todo }) => {
 	const dispatch = useDispatch();
 
@@ -35,7 +43,9 @@ export const TaskItem = ({ todo }) => {
 				<MediumText>{todo.task}</MediumText>
 				<SmallText>{todo.taskDone ? 'you are done' : 'do your job'}</SmallText>
 			</TodoItem>
-			<button onClick={handleDelete}>deletoo</button>
+			<ItemButton onClick={handleDelete} aria-label="remove">
+				-
+			</ItemButton>
 		</div>
 	);
 };
