@@ -6,6 +6,8 @@ export const ToDoItem = ({ itemIndex }) => {
   const item = useSelector((store) => store.todos.list.items[itemIndex]);
 
   const dispatch = useDispatch();
+
+  // will send info to the store on whether task is completed or not
   const handleOnChange = (event) => {
     dispatch(
       todos.actions.setCompleted({

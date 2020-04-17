@@ -1,6 +1,7 @@
 import React from 'react';
 import { ToDoInput } from './todoinput';
 import { ToDoItem } from './todoitem';
+import { Summary } from './todosummary';
 import { useSelector } from 'react-redux';
 
 export const ToDoList = () => {
@@ -13,6 +14,7 @@ export const ToDoList = () => {
       {list.items.map((item, index) => (
         <ToDoItem item={item} itemIndex={index} />
       ))}
+      <Summary />
     </div>
   );
 };
