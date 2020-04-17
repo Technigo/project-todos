@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos.js';
 
-export const ToDoInput = ({ itemId }) => {
+export const ToDoInput = ({ itemsId }) => {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState('');
 
@@ -11,8 +11,8 @@ export const ToDoInput = ({ itemId }) => {
     event.preventDefault();
     dispatch(
       todos.actions.addTodo({
-        itemId: itemId,
-        itemInfo: { text: inputValue, complete: false },
+        itemsId: itemsId,
+        todoInfo: { text: inputValue, complete: false },
       })
     );
 
