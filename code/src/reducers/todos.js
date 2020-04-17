@@ -40,21 +40,16 @@ export const todos = createSlice({
     removeOne: (state, action) => {
       state.todos = state.todos.find((todo) =>
       todo.id !== action.payload)
+    },
+
+    isDone: (state, action) => {
+      const checkTodo = state.todos.find((todo) =>
+      todo.id === action.payload)
+
+      if (checkTodo) {
+        checkTodo.complete = !checkTodo.complete
+      }
     }
-
-    // isDone: (state, action) => {
-    //   state.todos = state.todos.filter(todo =>
-    //     todo.complete !== action.payload)
-    // }
-
-    // isDone: (state, action) => {
-    //   const existingItem = state.todos.find(item => item.id === action.payload)
-
-    //   if (existingItem) {
-    //     existingItem.complete = !existingItem.complete
-    //     if (existingItem.complete === true) existingItem.completed = Date.now()
-    //   }
-    // }
 
     // clearAll: (state, action) => {
     //   state.items = []

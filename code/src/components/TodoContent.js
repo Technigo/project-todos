@@ -6,9 +6,9 @@ import './Content.css'
 
 export const TodoContent = () => {
   return (
-    <div className="mainContent">
+    <main className="mainContent">
       <AddingTodo />
       <ListedItems />
-    </div>
+    </main>
   )
 }

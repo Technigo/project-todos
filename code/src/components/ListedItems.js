@@ -1,21 +1,20 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { CompleteList } from './CompleteList'
 // import { todos } from 'reducers/todos'
+
+
 
 import './Listed.css'
 
 export const ListedItems = () => {
-  const everyTodo = useSelector((store) => store.todos)
+  const allTodos = useSelector((store) => store.todos.todos)
 
 
   return (
-    <div className="postedContainer">
-      {everyTodo.todos.map((todo) => (
-        <div className="eachItem" 
-        key={todo.id}>
-          <p className="todoText">{todo.text}</p>
-          <p className="todoTime">{todo.time}</p>
-        </div>
+    <div>
+      {allTodos.map((todo) => (
+        <CompleteList key={todo.id} todo={todo} />
       ))}
     </div>
   )

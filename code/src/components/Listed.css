@@ -20,12 +20,14 @@
   padding: 15px;
   border: 2px solid rgb(154, 206, 219);
   margin: 5px;
+  overflow-wrap: break-word;
 }
 
 .todoText {
   font-size: 18px;
   color: #305f72;
   margin-right: 10px;
+  overflow-wrap: break-word;
 }
 
 .todoTime {
