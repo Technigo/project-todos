@@ -10,12 +10,14 @@ import { sizes } from '../reducers/sizes';
 const ParentContainer = styled.div`
 	max-width: 900px;
 	margin: 0 auto;
-	background-color: palegreen;
+	background-color: #02485e;
 	min-height: 1000px;
 `;
 const MainSection = styled.section`
 	width: ${(props) => props.size}px;
-	margin: 16px auto;
+	margin: 0 auto;
+	padding: 16px;
+	flex: 1;
 `;
 
 export const Home = () => {
@@ -30,9 +32,11 @@ export const Home = () => {
 	return (
 		<ParentContainer>
 			<MainSection size={boxsize}>
+				<h1>Your Todos</h1>
 				<NewTask />
 				<TaskList />
 			</MainSection>
 		</ParentContainer>
 	);
 };
+// background-color:  #02485E;  font-family Lato thin?  taskundone:
