@@ -2,13 +2,14 @@
 
 .mainContent {
   width: 300px;
+  margin-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
   background-color: rgba(254, 245, 255, 0.26);
   padding: 20px;
-  border: 10px double rgb(190, 159, 185);
+  border: 10px solid rgb(255, 179, 66);
   border-radius: 30px;
   font-family: 'Archivo Narrow', sans-serif;
 }

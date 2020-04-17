@@ -8,7 +8,7 @@ export const CompleteList = (props) => {
   const dispatch = useDispatch()
 
   const handleRemoval = () => {
-    dispatch(todos.actions.removeOne(props.todo.id))
+    dispatch(todos.actions.removeItem(props.todo.id))
   }
 
   const handleChecked = () => {
@@ -19,14 +19,16 @@ export const CompleteList = (props) => {
     <div className="postedContainer">
       <div className="eachItem"
         key={props.todo.id}>
-        <input type="checkbox"
-        checked={props.todo.complete}
-        onChange={handleChecked}/>
+        <label className="checkBox">
+          <input type="checkbox"
+            className="checkBox"
+            checked={props.todo.complete}
+            onChange={handleChecked} />
+        </label>
         <p className="todoText">{props.todo.text}</p>
         <p className="todoTime">{props.todo.time}</p>
-      </div>
-      <div>
         <button type="button"
+          className="removeItem"
           onClick={handleRemoval}>
           🗑
         </button>
