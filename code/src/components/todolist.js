@@ -3,6 +3,7 @@ import { ToDoInput } from './todoinput';
 import { ToDoItem } from './todoitem';
 import { Summary } from './todosummary';
 import { useSelector } from 'react-redux';
+import { CompletedTasks } from './completedtodolist';
 
 export const ToDoList = () => {
   // Pick up things from the store
@@ -15,6 +16,7 @@ export const ToDoList = () => {
         <ToDoItem item={item} itemIndex={index} />
       ))}
       <Summary />
+      <CompletedTasks />
     </div>
   );
 };
