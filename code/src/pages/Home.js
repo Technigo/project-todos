@@ -1,6 +1,7 @@
 import React from 'react'
 import { Provider } from "react-redux"
 import { createStore, combineReducers } from '@reduxjs/toolkit'
+import { TodoInput } from '../components/TodoInput'
 
 /*
 Plan:
@@ -21,5 +22,9 @@ Plan:
 // Persistence: Tell the store to persist the state in localstorage after every action
 
 export const Home = () => {
-  return <main></main>
+  return (
+    <main>
+      <TodoInput></TodoInput>
+    </main>
+  )
 }
