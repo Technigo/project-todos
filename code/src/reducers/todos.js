@@ -18,5 +18,9 @@ export const todos = createSlice({
       const { todoInfo } = action.payload;
       state.list.items.push(todoInfo);
     },
+    setCompleted: (state, action) => {
+      const { itemIndex, completed } = action.payload;
+      state.list.items[itemIndex].completed = completed;
+    },
   },
 });

@@ -12,7 +12,7 @@ export const ToDoInput = ({ itemsId }) => {
     dispatch(
       todos.actions.addTodo({
         itemsId: itemsId,
-        todoInfo: { text: inputValue, complete: false },
+        todoInfo: { text: inputValue, completed: false },
       })
     );
 
