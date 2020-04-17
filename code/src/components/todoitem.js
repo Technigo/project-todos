@@ -17,20 +17,20 @@ export const ToDoItem = ({ itemIndex }) => {
       })
     );
   };
-  console.log(item.dueDate);
+  console.log(item.duedate);
   if (!item.text) {
     return <></>;
   } else {
     return (
       <div>
         {item.text}
-        {item.dueDate}
         <input
           type='checkbox'
           onChange={handleOnChange}
           checked={item.completed ? 'completed' : ''}
         ></input>
         <p>added {moment(item.createdAt).format('ll')}</p>
+        <p>due: {moment(item.duedate).format('ll')}</p>
       </div>
     );
   }

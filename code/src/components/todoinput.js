@@ -1,15 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos.js';
-import DatePicker from 'react-datepicker';
+
+import MomentLocaleUtils, {
+  formatDate,
+  parseDate,
+} from 'react-day-picker/moment';
 
 import moment from 'moment';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
 
 import 'react-day-picker/lib/style.css';
-import { formatDate } from 'react-day-picker/moment';
 
-//import 'moment/locale/it';
+import 'moment/locale/it';
 
 export const ToDoInput = ({ itemsId }) => {
   const dispatch = useDispatch();
@@ -25,17 +28,14 @@ export const ToDoInput = ({ itemsId }) => {
         todoInfo: {
           text: inputValue,
           completed: false,
-          duedate: dueDate,
+          duedate: selectedDay,
         },
       })
     );
     // Reset value
     setInputValue('');
   };
-
-  const handleDaySelected = (dueDate) => {
-    setDueDate({ dueDate });
-  };
+  const selectedDay = dueDate.toLocaleDateString();
 
   return (
     <form onSubmit={handleOnSubmit}>
@@ -44,18 +44,14 @@ export const ToDoInput = ({ itemsId }) => {
         onChange={(event) => setInputValue(event.target.value)}
         value={inputValue}
       ></input>
-      <DayPickerInput selected={dueDate} onDayChange={handleDaySelected} />
+      <DayPickerInput
+        selected={dueDate}
+        onDayChange={setDueDate}
+        formatDate={formatDate}
+        parseDate={parseDate}
+      />
 
       <input type='submit' value='Add todo'></input>
     </form>
   );
 };
-
-{
-  /* <DayPickerInput
-        formatDate={formatDate}
-        onChange={(day) => setDueDate(day.target.value)}
-        format='ll'
-        selected={dueDate}
-      /> */
-}
