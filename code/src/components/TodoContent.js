@@ -1,13 +1,14 @@
 import React from 'react'
 
 import { AddingTodo } from './AddingTodo'
-import { Prov } from './Prov'
+import { ListedItems } from './ListedItems'
+import './Content.css'
 
 export const TodoContent = () => {
   return (
-    <div>
+    <div className="mainContent">
       <AddingTodo />
-      <Prov />
+      <ListedItems />
     </div>
   )
 }

@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux"
 import './Adding.css'
 import { todos } from "../reducers/todos"
 
-export const AddingTodo = () => {
 
+export const AddingTodo = () => {
   const [postNew, setPostNew] = useState('')
   const dispatch = useDispatch()
 
@@ -16,9 +16,9 @@ export const AddingTodo = () => {
   }
 
   return (
-    <form>
+    <form className="addingTodo">
 
-      <input type="text"
+      <textarea type="text"
         value={postNew} 
         placeholder="What To Do?"
         onChange={(event) => 
