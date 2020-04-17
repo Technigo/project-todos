@@ -5,7 +5,6 @@ const initialState = {
     name: 'todos',
     items: [
       {
-        id: 1,
         description: 'This is a test todo',
         done: false
       }
@@ -17,6 +16,10 @@ export const todos = createSlice({
   name: 'todos',
   initialState: initialState,
   reducers: {
-    //Reducers: addTodo, removeTodo, setDone
+    addTodo: (state, action) => {
+      const itemInfo = action.payload
+      state.list.items.push(itemInfo)
+    }
+    //Reducers: removeTodo, setDone
   }
 })

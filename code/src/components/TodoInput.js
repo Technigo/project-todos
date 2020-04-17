@@ -1,14 +1,20 @@
 import React, { useEffect, useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { todos } from '../reducers/todos'
 
 export const TodoInput = () => {
+  const dispatch = useDispatch()
   //State for input
   const [inputValue, setInputValue] = useState('')
 
   const handleOnSubmit = (e) => {
     e.preventDefault()
-    console.log(inputValue)
+    dispatch(todos.actions.addTodo({
+      description: inputValue,
+      done: false
+    }))
+    setInputValue('')
   }
 
   return (
