@@ -3,6 +3,7 @@ import { Provider } from "react-redux";
 import { TodoList } from "../components/TodoList.js";
 import { createStore, combineReducers } from "@reduxjs/toolkit";
 import { todos } from "../reducers/todos.js";
+import { Header } from "components/Header"
 
 // Tell redux about our reducers
 const reducer = combineReducers({ todos: todos.reducer });
@@ -24,6 +25,9 @@ export const Home = () => {
   return (
     <Provider store={store}>
       <main>
+        <header>
+          <Header />
+        </header>
         <TodoList></TodoList>
       </main>
     </Provider>
