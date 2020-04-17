@@ -20,10 +20,11 @@ export const TodoItem = ({ itemIndex }) => {
 
   // Create the onChange handler for handling the done status
   const handleOnChange = event => {
-    dispatch(todos.actions.setDone({
-      itemIndex: itemIndex,
-      done: !item.done
-    }))
+    dispatch(
+      todos.actions.setDone({
+        itemIndex: itemIndex,
+        done: !item.done
+      }))
   }
 
   return (

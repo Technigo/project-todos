@@ -6,7 +6,7 @@ const initialState = {
     items: [
       {
         description: "My first task...",
-        done: true
+        done: false
       }
     ]
   }

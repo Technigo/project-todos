@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: white;
 }
 
 code {
@@ -24,9 +25,20 @@ code {
 }
 
 .todo-input-button {
-  padding: 8px;
-  font-size: 22px;
+  width: 6vh;
+  height: 6vh;
+  font-size: 32px;
   margin-left: 16px;
+  background-color: deeppink;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 1s ease;
+}
+
+.todo-input-button:hover {
+  transform: rotate(180deg);
 }
 
 .todo-list {
@@ -35,7 +47,7 @@ code {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  background-image: linear-gradient(#adadad, #efefef);
+  background-image: linear-gradient(white, white);
   border-radius: 16px;
 }
 

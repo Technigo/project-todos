@@ -28,13 +28,14 @@ export const TodoInput = ({ listID }) => {
         type="text"
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
+        placeholder="New task ..."
         className="todo-input-text"
       >
       </input>
       <input
         type="submit"
         className="todo-input-button"
-        value="Add Todo"
+        value="+"
       >
       </input>
     </form>
