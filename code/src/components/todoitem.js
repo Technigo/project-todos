@@ -17,13 +17,14 @@ export const ToDoItem = ({ itemIndex }) => {
       })
     );
   };
-
+  console.log(item.dueDate);
   if (!item.text) {
     return <></>;
   } else {
     return (
       <div>
         {item.text}
+        {item.dueDate}
         <input
           type='checkbox'
           onChange={handleOnChange}

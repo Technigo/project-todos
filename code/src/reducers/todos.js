@@ -8,6 +8,8 @@ export const todos = createSlice({
         {
           text: '',
           completed: false,
+          duedate: '',
+          working: '',
         },
       ],
     },
@@ -18,6 +20,12 @@ export const todos = createSlice({
       const { todoInfo } = action.payload;
       state.list.items.push(todoInfo);
     },
+
+    // setDueDate: (state, action) => {
+    //   const { dueDate } = action.payload;
+    //   state.list.items.push(dueDate);
+    // },
+
     setCompleted: (state, action) => {
       const { itemIndex, completed } = action.payload;
       state.list.items[itemIndex].completed = completed;
