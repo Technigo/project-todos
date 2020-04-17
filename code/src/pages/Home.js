@@ -1,6 +1,7 @@
 import React from 'react'
 import { Provider } from "react-redux"
 import { createStore, combineReducers } from '@reduxjs/toolkit'
+import { todos } from '../reducers/todos'
 import { TodoInput } from '../components/TodoInput'
 
 /*
@@ -14,17 +15,21 @@ Plan:
 */
 
 // StoreCreation : Tell redux about our reducers
+const reducer = combineReducers({ todos: todos.reducer })
 
 // Persistence: Retrieve the existing state from localstorage if it exists
 
 // StoreCreation: Create the store using our reducers and the retrieved state
+const store = createStore(reducer)
 
 // Persistence: Tell the store to persist the state in localstorage after every action
 
 export const Home = () => {
   return (
-    <main>
-      <TodoInput></TodoInput>
-    </main>
+    <Provider store={store}>
+      <main>
+        <TodoInput></TodoInput>
+      </main>
+    </Provider>
   )
 }
