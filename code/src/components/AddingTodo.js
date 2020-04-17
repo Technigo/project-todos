@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 
+import { todos } from "reducers/todos"
 import './Adding.css'
-import { todos } from "../reducers/todos"
 
 
 export const AddingTodo = () => {
@@ -11,12 +11,13 @@ export const AddingTodo = () => {
 
   const handleSubmit = event => {
     event.preventDefault()
+
     dispatch(todos.actions.addTodo(postNew))
     setPostNew('')
   }
 
   return (
-    <form className="addingTodo">
+    <form className="addingTodo" onSubmit={handleSubmit}>
 
       <textarea type="text"
         value={postNew} 
@@ -25,7 +26,6 @@ export const AddingTodo = () => {
         setPostNew(event.target.value)} />
 
       <button type="submit"
-        onSubmit={handleSubmit}
         disabled={postNew.length === 0}>
         ADD
       </button>

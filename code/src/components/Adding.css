@@ -1,5 +1,8 @@
 body {
   background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .addingTodo {
@@ -17,10 +20,103 @@ body {
   outline: none;
   border: none;
   margin-right: 10px;
+  border: 1px solid black;
+  box-shadow: 2px 2px black;
+}
+
+.addingTodo textarea::placeholder {
+  padding: 5px;
 }
 
 .addingTodo button {
   border-radius: 50%;
   width: 40px;
   height: 40px;
+  transition: .3s ease-in-out;
+  border: 1px solid black;
 }
+
+.addingTodo button:disabled {
+  transform: scale(0.8);
+  border: 1px solid rgba(0, 0, 0, 0.315);
+}
+
+.addingTodo button:disabled:hover {
+  animation: none;
+}
+
+.addingTodo button:hover {
+  animation-name: heartbeat;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+        transform: scale(1);
+    -webkit-transform-origin: center center;
+        transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+        transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+  }
+}
+@keyframes heartbeat {
+  from {
+    -webkit-transform: scale(1);
+        transform: scale(1);
+    -webkit-transform-origin: center center;
+        transform-origin: center center;
+    -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+  }
+  10% {
+    -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+    -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+  }
+  17% {
+    -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+    -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+  }
+  33% {
+    -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+    -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+  }
+  45% {
+    -webkit-transform: scale(1);
+        transform: scale(1);
+    -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+  }
+}
+
