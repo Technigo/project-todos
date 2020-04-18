@@ -1,5 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  list: {
+    items: [
+      {
+        text: '',
+        completed: false,
+        duedate: '',
+        working: '',
+      },
+    ],
+  },
+};
+
 export const todos = createSlice({
   name: 'todos',
   initialState: {
@@ -29,6 +42,11 @@ export const todos = createSlice({
     setCompleted: (state, action) => {
       const { itemIndex, completed } = action.payload;
       state.list.items[itemIndex].completed = completed;
+    },
+
+    setReset: (state, action) => {
+      const { reset } = action.payload;
+      return initialState;
     },
   },
 });
