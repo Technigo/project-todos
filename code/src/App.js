@@ -1,4 +1,7 @@
 import React from 'react'
+import {Home} from './pages/Home.js';
+/*
+
 // to wrap everything in Store:
 import { Provider } from 'react-redux'
 // to access 2 reducers we need this from redux-toolkit:
@@ -19,13 +22,23 @@ const store = configureStore({ reducer })
 
 
 // and now finally we have a Store we can include in our Provider:
-export const App = () => {
+/* export const App = () => {
   return (
     <Provider store={store}>      
       <TaskList />
     </Provider>
   )
 }
+ */
+
+
+export const App = () => {
+  return (
+    <div>
+      <Home />
+    </div>
+  );
+};
 
 
 
