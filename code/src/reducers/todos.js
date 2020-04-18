@@ -14,8 +14,8 @@ export const todos = createSlice({
   initialState: todoItems,
   reducers: {
     addTodo: (state, action) => {
-      const { newTask } = action.payload
-      state.items.push(newTask)
+      const { newItem } = action.payload
+      state.items.push(newItem)
     },
     setComplete: (state, action) => {
       const { itemIndex, completed } = action.payload
