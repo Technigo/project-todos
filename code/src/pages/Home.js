@@ -24,8 +24,6 @@ const store = configureStore({ reducer })
 
 // Persistance: Tell the store to persist the state in localstorage efter each action 
 
-
-
 export const Home = () => {
   return (
     <Provider store={store}>
