@@ -6,6 +6,7 @@ import { NewTask } from './NewTask';
 import { TaskList } from './TaskList';
 import { todoStore } from '../reducers/todoStore';
 import { sizes } from '../reducers/sizes';
+import { Header } from './Header';
 
 const ParentContainer = styled.div`
 	max-width: 900px;
@@ -32,7 +33,7 @@ export const Home = () => {
 	return (
 		<ParentContainer>
 			<MainSection size={boxsize}>
-				<h1>Your Todos</h1>
+				<Header />
 				<NewTask />
 				<TaskList />
 			</MainSection>
