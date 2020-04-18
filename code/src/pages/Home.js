@@ -7,6 +7,7 @@ import { Footer } from "../components/Footer";
 import { todos } from "reducers/todos";
 import styled from "styled-components";
 import img from "../image/purty-wood.png";
+import border from "image/border-wood.jpg";
 
 export const Home = () => {
   const reducer = combineReducers({ todos: todos.reducer });
@@ -43,7 +44,7 @@ const Main = styled.section`
   width: 40vw;
   min-height: 500px;
 
-  padding: 20px;
+  padding: 30px;
   margin: auto;
 
   background: #426452;
@@ -55,7 +56,11 @@ const Main = styled.section`
 
   box-shadow: inset 0px 1px 10px 10px #22332a;
 
+  border: 10px solid transparent;
+  border-image: url(${border}) 100 round;
+
   @media (max-width: 668px) {
     width: 70vw;
+    padding: 15px;
   }
 `;

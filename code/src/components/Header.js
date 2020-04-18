@@ -51,6 +51,8 @@ const Content = styled.header`
 
   box-shadow: inset 0px -5px 13px 3px #22332a;
 
+  border-image: url(/static/media/border-wood.bf645562.jpg) 30 round;
+
   margin-bottom: 20px;
   height: 150px;
   width: 100vw;
