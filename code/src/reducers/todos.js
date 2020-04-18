@@ -4,6 +4,16 @@ const initialState = {
   list: {
     name: "Test List",
     items: [
+
+      {
+        description: "Create To-do app",
+        done: false
+      },
+
+      {
+        description: "Book a summer trip",
+        done: false
+      }
       
     ]
   },

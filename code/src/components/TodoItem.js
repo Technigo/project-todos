@@ -34,7 +34,7 @@ export const TodoItem = ({itemIndex}) => {
       />
     
     <span className="todo-item-description"> {item.description} </span>
-    <a className="todo-item-remove" onClick={onRemoveClicked}> [Remove] </a>
+    <button className="todo-item-remove" onClick={onRemoveClicked}> CLEAR ALL </button>
     </div>
     
   );

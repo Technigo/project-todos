@@ -12,10 +12,10 @@ export const Home = () => {
 
   return (
     <Provider store={store}>
+      <div className="bajs">
       <Header/>
-      
-        <TodoList></TodoList>
-      
+      <TodoList></TodoList> 
+      </div> 
     </Provider>
   );
 };
