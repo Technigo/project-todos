@@ -7,10 +7,12 @@ import {SectionHeader} from './NewTask'
 
 const StyledSection = styled.section`
   border-bottom: 3px solid white;
+  min-height: 300px;
 `
 const StyledGrid = styled.section`
   width: ${props=>props.width}px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: ${props=>(props.width<500)?'column':'row'};
   align-items: center;
   justify-content: flex-start;

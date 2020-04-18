@@ -14,10 +14,12 @@ const TodoItem = styled.button`
 const SmallText = styled.p`
 	font-size: 14px;
 	font-width: 100;
+  
 `;
 const MediumText = styled.p`
 	font-size: 18px;
 	font-width: 100;
+  text-decoration: ${props=>props.todoDone ? 'line-through' : 'none'};
 `;
 const ItemButton = styled.button`
 	box-shadow: none;
@@ -40,8 +42,7 @@ export const TaskItem = ({ todo }) => {
 	return (
 		<div>
 			<TodoItem todoDone={todo.taskDone} onClick={handleStatusChange}>
-				<MediumText>{todo.task}</MediumText>
-				<SmallText>{todo.taskDone ? 'you are done' : 'do your job'}</SmallText>
+				<MediumText todoDone={todo.taskDone}>{todo.task}</MediumText>
 			</TodoItem>
 			<ItemButton onClick={handleDelete} aria-label="remove">
 				-

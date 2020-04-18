@@ -6,6 +6,7 @@ import { todoStore } from '../reducers/todoStore';
 const StyledForm = styled.form`
 	display: flex;
   flex-direction: column;
+  min-height: 200px;
 	align-items: flex-start;
 	justify-content: space-between;
   border-bottom: 3px solid white;
