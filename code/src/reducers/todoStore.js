@@ -25,6 +25,10 @@ export const todoStore = createSlice({
 			const currentTaskId = action.payload.id;
 			state.todos = state.todos.filter((task) => task.id !== currentTaskId);
 		},
+
+    clearAll: (state, action) =>{
+      state.todos=[]
+    },
 		//console.log(array1.findIndex(isLargeNumber));
 		statusTask: (state, action) => {
 			console.log('from statudTask');

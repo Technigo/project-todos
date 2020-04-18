@@ -23,14 +23,9 @@ export const TaskList = () => {
   const dispatch = useDispatch()
 
 
-const emptyArr = []
-console.log("emptyArr", emptyArr.length)
-const handleStatusChange = (todo) => {
-    dispatch(todoStore.actions.statusTask(todo))
+  const handleClear = () => {
+    dispatch(todoStore.actions.clearAll())
   }
-const handleDelete = (todo) => {
-  dispatch(todoStore.actions.removeTask(todo))
-}
 
   return (
     <StyledSection>
@@ -40,7 +35,7 @@ const handleDelete = (todo) => {
         <TaskItem todo={task} />
       ))}
       </StyledGrid>
-      <button>Clear All</button>
+      <button onClick={handleClear}>Clear All</button>
     </StyledSection>
   )
 }
