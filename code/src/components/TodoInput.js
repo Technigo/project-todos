@@ -11,10 +11,12 @@ export const TodoInput = () => {
   const handleOnSubmit = event => {
     event.preventDefault();
 
-    dispatch(todos.action.addTodo({
-      description: "this is a test todo",
-      done: false
-    }));
+    dispatch(
+      todos.actions.addTodo({
+        description: inputValue,
+        done: false
+      })
+    );
 
     setInputValue("");
   };

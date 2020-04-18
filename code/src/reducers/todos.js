@@ -18,8 +18,12 @@ export const todos = createSlice({
   initialState: initialState,
   reducers: {
     addTodo: (state, action) => {
-      const { itemInfo } = action.payload;
+      const itemInfo = action.payload;
       state.list.items.push(itemInfo);
+    },
+    setDone: (state, action) => {
+      const { itemIndex, done } = action.payload;
+      state.list.items[itemIndex].done = done;
     }
   }
 });
