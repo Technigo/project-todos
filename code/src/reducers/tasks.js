@@ -30,8 +30,12 @@ export const tasks = createSlice({
       state.list.items[itemIndex].done = done
     },
     // Will remove an item from the list
-    
-
+    removeTodo: (state, action) => {
+      const { itemIndex} = action.payload
+      state.list.items = state.list.items.filter(
+        (item, index) => index !== itemIndex
+      )
+    }
   }
 })
 // Reducers needed:

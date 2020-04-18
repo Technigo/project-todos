@@ -12,7 +12,11 @@ export const TaskItem = ({ itemIndex }) => {
   const dispatch = useDispatch()
     // Dispatch the remove todo event for this item:
   const onRemoveClicked = (event) => {
-
+    dispatch(
+      tasks.actions.removeTodo({
+        itemIndex,
+      })
+    )
   }
 
   // Change the value of done for this item:
@@ -35,8 +39,8 @@ export const TaskItem = ({ itemIndex }) => {
       checked={item.done ? "checked" : ""}
       ></input>
       <span className="todo-item-description">{item.description}</span>
-      <a className="todo-item-remove" onClick={onRemoveClicked}>🍌 
-      [remove]
+      <a className="todo-item-remove" onClick={onRemoveClicked}>
+      [remove]🍌
       </a>
     </div>
   )
