@@ -181,3 +181,26 @@
   opacity: .8;
 }
 
+@media (max-width: 670px) {
+  section {
+    width: 100%;
+  }
+
+  .postedContainer {
+    width: 95%;
+  }
+
+  .eachItem {
+    width: 100%;
+    margin: 10px 0px;
+  }
+
+  .todoText {
+    margin: 5px 10px;
+  }
+
+  .emptyList {
+    text-align: center;
+  }
+}
+
