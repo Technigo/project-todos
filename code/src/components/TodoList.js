@@ -21,8 +21,8 @@ export const TodoList = () => {
           options={{
             animationData: animation,
           }}
-          height="80%"
-          width="65%"
+          height="60%"
+          width="45%"
         />
       )}
     </TodoListContainer>

@@ -57,7 +57,7 @@ const Button = styled.input`
   height: 30px;
 
   font-weight: lighter;
-  background: #426452;
+  background: none;
 
   border-radius: 5px;
 
@@ -73,6 +73,7 @@ const Form = styled.form`
 
   height: 30px;
   width: 300px;
+  margin-bottom: 15px;
 
   @media (max-width: 668px) {
     flex-direction: column;

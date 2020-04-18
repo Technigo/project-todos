@@ -33,7 +33,8 @@ const Site = styled.section`
 
   justify-content: center;
 
-  background: #fdeacb;
+  background-color: #b1a289;
+  background-image: linear-gradient(45deg, #b1a289 0%, #fde9cb 74%);
 `;
 
 const Main = styled.section`
@@ -42,7 +43,7 @@ const Main = styled.section`
   justify-content: center;
 
   width: 40vw;
-  min-height: 500px;
+  min-height: 400px;
 
   padding: 30px;
   margin: auto;

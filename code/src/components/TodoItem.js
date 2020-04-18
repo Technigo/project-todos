@@ -69,7 +69,7 @@ const Remove = styled.button`
   font-family: "Pangolin", cursive;
   color: #fff;
   font-weight: lighter;
-  background: #426452;
+  background: none;
 
   border-radius: 5px;
   font-size: 16px;
