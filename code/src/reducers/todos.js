@@ -84,6 +84,10 @@ export const todos = createSlice({
       // }
     },
 
+    removeAll: (state, action) => {
+      state.list.todos = []
+    }
+
     // clearAll: (state, action) => {
     //   state.todos = []
     // }
