@@ -1,13 +1,31 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {}
+const initialState = {
+  list: {
+    name: "Test list",
+    items: [
+      {
+        description: "This is a test todo",
+        done: false
+      }
+    ]
+  } 
+}
+
 
 export const tasks = createSlice({
   name: 'tasks',
-  initialState: [
-    { id: 1, text: 'Watch videos', comlete: true },
-    { id: 2, text: 'Studie Redux', comlete: true },
-    { id: 3, text: 'Setup Trello', comlete: true },
-    { id: 4, text: 'Keep on working on my to do app', comlete: false },
-  ]
+  initialState: initialState,
+  reducers: {
+    addTodo:(state, action) => {
+      const { itemInfo } = action.payload
+      state.list.items.push(itemInfo)
+    }
+
+  }
 })
+// Reducers needed:
+// addTask
+// removeTask
+// setDone
+// option: rensa listan?

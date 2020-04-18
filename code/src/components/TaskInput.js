@@ -6,6 +6,8 @@ import { tasks } from '../reducers/tasks'
 export const TaskInput = () => {
   // change state from textinput
   const [inputValue, setInputValue] = useState("")
+  // dispatch the actions to save our new task:
+  const dispatch = useDispatch()
 
   // create handleSubmit function with dispatch:
   const handleOnSubmit = event => {
@@ -13,8 +15,14 @@ export const TaskInput = () => {
     console.log(inputValue)
     // prevent page from refreshing itself:
     event.preventDefault()
+    // the dispatch function to save new task to store:
+    dispatch(
+      tasks.actions.addTodo({
+        // listId: listId,
+        itemInfo: { description: inputValue, done: false }
+      })
+    )
 
-    // dispatch the actions to save our new task:
 
     // clear text field after Submit:
     setInputValue("")

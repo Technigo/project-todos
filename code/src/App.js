@@ -7,7 +7,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { tasks } from './reducers/tasks'
 
 import { TaskList } from './components/TaskList'
-import { TaskInput } from 'components/TaskInput'
+// import { TaskInput } from 'components/TaskInput'
 
 
 // first we create our combined-REDUCER-file:
@@ -19,15 +19,15 @@ const store = configureStore({ reducer })
 
 
 // and now finally we have a Store we can include in our Provider:
-
 export const App = () => {
   return (
-    <Provider store={store}>
-      <TaskInput />
+    <Provider store={store}>      
       <TaskList />
     </Provider>
   )
 }
+
+
 
 /*
  PLAN 
@@ -42,7 +42,6 @@ export const App = () => {
   - Do all this without breaking the code - changes should show
 
 */
-
 // StoreCreation : Tell redux about our reducers - combined reducers
 
 // Persistence: Retrieve the existing state from localstorage if it exists
