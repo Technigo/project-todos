@@ -1,7 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const myInitialState = {
-	todos: [ { id: 1, task: 'example task', taskDone: false } ]
+	todos: [ 
+    { id: 1, task: 'example task', taskDone: false }, 
+    { id: 2, task: 'cook dinner', taskDone: false },
+    { id: 3, task: 'buy birthday gift for John', taskDone: true }, 
+    { id: 4, task: 'example task', taskDone: false } 
+  ]
 };
 export const todoStore = createSlice({
 	name: 'todoStore',
