@@ -53,6 +53,14 @@
   display: none;
 }
 
+.swal-button--danger {
+  background-color: teal;
+}
+
+.swal-modal {
+  border-radius: 20px;
+}
+
 /* @media (max-width: 670px) {
   .mainContent {
     width: 60%;

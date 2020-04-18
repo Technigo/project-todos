@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import swal from 'sweetalert'
 import { todos } from '../reducers/todos'
 
 import './Content.css'
@@ -10,14 +11,20 @@ export const ClearAll = () => {
   const everyTodos = useSelector(store => store.todos.list.todos.length)
 
   const handleClearAll = () => {
-    const confirmation = window.confirm("Are you sure?")
-    if (confirmation === true) {
-    dispatch(
+    swal({
+      title: 'Are you sure?',
+      text: "Once deleted, you can't recover your list!",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+      dispatch(
       todos.actions.removeAll()
-    )
+    )}
+    })
   }
-}
-
+  
   return (
     <div>
       <button type="button"
