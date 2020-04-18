@@ -1,7 +1,18 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { todoStore } from '../reducers/todoStore';
+
+const Wrapper = styled.div`
+  width: ${props=>(props.width<500) ? props.width-1 : (props.width*0.5)-2}px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-right: 1px dotted white;
+  box-size: border-box;
+`
+
 
 const TodoItem = styled.button`
 	min-width: 200px;
@@ -31,6 +42,7 @@ const ItemButton = styled.button`
 
 export const TaskItem = ({ todo }) => {
 	const dispatch = useDispatch();
+  const theWidth = useSelector((state)=>state.size.screenSize)
 
 	const handleStatusChange = () => {
 		dispatch(todoStore.actions.statusTask(todo));
@@ -40,14 +52,14 @@ export const TaskItem = ({ todo }) => {
 	};
 
 	return (
-		<div>
+    <Wrapper width={theWidth}>
 			<TodoItem todoDone={todo.taskDone} onClick={handleStatusChange}>
 				<MediumText todoDone={todo.taskDone}>{todo.task}</MediumText>
 			</TodoItem>
 			<ItemButton onClick={handleDelete} aria-label="remove">
 				-
 			</ItemButton>
-		</div>
+    </Wrapper>
 	);
 };
 

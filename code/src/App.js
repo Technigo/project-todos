@@ -4,12 +4,12 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { NewTask } from 'components/NewTask';
 import { TaskList } from 'components/TaskList';
 import { todoStore } from 'reducers/todoStore';
-import { sizes } from 'reducers/sizes';
+import { size } from 'reducers/sizes';
 import { Home } from 'components/Home';
 
 const reducer = combineReducers({
 	todoStore: todoStore.reducer,
-	sizes: sizes.reducer
+	size: size.reducer
 });
 
 const store = configureStore({ reducer });

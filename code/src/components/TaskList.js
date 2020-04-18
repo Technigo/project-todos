@@ -21,7 +21,7 @@ const StyledGrid = styled.section`
 
 export const TaskList = () => {
   const allTasks = useSelector((state)=>state.todoStore.todos)
-  const theWidth = useSelector((state)=>state.sizes.screenSize.size)
+  const theWidth = useSelector((state)=>state.size.screenSize)
   const dispatch = useDispatch()
 
 

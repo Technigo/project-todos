@@ -12,6 +12,7 @@ const StyledForm = styled.form`
   border-bottom: 3px solid white;
 `;
 const Wrapper = styled.div`
+  width: ${props=>props.width}px;
 	display: flex;
   flex: auto;
 	flex-direction: row;
@@ -23,6 +24,7 @@ export const SectionHeader = styled.h2`
   width: ${props=>props.width}px;
   color: black;
   text-align: center;
+  padding: 16px 0;
 `
 
 
@@ -43,7 +45,7 @@ const FormButton = styled.button`
 export const NewTask = () => {
 	const dispatch = useDispatch();
 	const [ taskInput, setTaskInput ] = useState('');
-  const myWidth = useSelector((state)=>(state.sizes.screenSize.size))
+  const theWidth = useSelector((state)=>(state.size.screenSize))
 
 	const handleNewTask = (event) => {
 		event.preventDefault();
@@ -53,9 +55,9 @@ export const NewTask = () => {
 	//What is the smallest screen size you design for 320px
 	return (
 		<StyledForm onSubmit={handleNewTask}>
-      <SectionHeader width={myWidth}>Make a new Todo</SectionHeader>
-      <Wrapper>
-        <StyledInput width={myWidth} type="text" name="todoInput" onChange={(e) => setTaskInput(e.target.value)} value={taskInput} />
+      <SectionHeader width={theWidth}>Make a new Todo</SectionHeader>
+      <Wrapper width={theWidth}>
+        <StyledInput width={theWidth} type="text" name="todoInput" onChange={(e) => setTaskInput(e.target.value)} value={taskInput} />
       
 			<FormButton type="submit" aria-label="add">
 				+
