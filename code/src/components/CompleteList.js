@@ -17,6 +17,7 @@ export const CompleteList = ({ todoIndex }) => {
     )
   }
 
+
   const handleChecked = (e) => {
     dispatch(
       todos.actions.setDone({
@@ -24,6 +25,7 @@ export const CompleteList = ({ todoIndex }) => {
         complete: !todo.complete
       }))
   }
+
 
   return (
     <div className="postedContainer">

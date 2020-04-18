@@ -10,10 +10,13 @@ export const ClearAll = () => {
   const everyTodos = useSelector(store => store.todos.list.todos.length)
 
   const handleClearAll = () => {
+    const confirmation = window.confirm("Are you sure?")
+    if (confirmation === true) {
     dispatch(
       todos.actions.removeAll()
     )
   }
+}
 
   return (
     <div>
