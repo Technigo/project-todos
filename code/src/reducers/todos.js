@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialState = {
+const todoItems = {
   items: [
     {
       text: 'Buy more striped t-shirts',
@@ -11,11 +11,19 @@ const initialState = {
 
 export const todos = createSlice({
   name: 'todos',
-  initialState: initialState,
+  initialState: todoItems,
   reducers: {
     addTodo: (state, action) => {
       const { newTask } = action.payload
       state.items.push(newTask)
+    },
+    setComplete: (state, action) => {
+      const { itemIndex, completed } = action.payload
+      state.items[itemIndex].completed = completed
+    },
+    removeTodo: (state, action) => {
+      const { itemIndex } = action.payload
+      state.items.splice(itemIndex, 1)
     }
   }
 })

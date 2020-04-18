@@ -3,14 +3,15 @@ import { useSelector } from 'react-redux'
 import { Task } from './Task'
 
 export const Tasks = () => {
-  const todos = useSelector((store) => store.todos.items)
+  const todosList = useSelector((store) => store.todos.items)
 
   return (
     <div className="tasks">
       <div className="task">
-        {todos.map((todo, index) => (
+        {todosList.map((todo, index) => (
           <Task
             key={index}
+            itemIndex={index}
             text={todo.text} />
         ))}
       </div>
