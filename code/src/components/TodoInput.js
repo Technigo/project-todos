@@ -28,18 +28,33 @@ export const TodoInput = () => {
         type='submit'
         value='+'
       ></Submit>
-    </TodoForm>
+    </TodoForm >
   )
 }
 
 const TodoForm = styled.form`
-  
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  width: 90%;
 `
 
 const TodoInputField = styled.input`
-  
+  width: 75%;
+  margin-right: 5px;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 10px;
+  background: #e8cbb9;
+  font-size: 16px;
 `
 
 const Submit = styled.input`
-  
+  width: 50px;
+  height: 50px;
+  border: none;
+  border-radius: 10px; 
+  background: #ce745a;
+  color: #fff;
+  font-size: 2em;
 `
