@@ -1,32 +1,41 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { todos } from 'reducers/todos'
 
 import './Listed.css'
 
-export const CompleteList = (props) => {
+export const CompleteList = ({ todoIndex }) => {
   const dispatch = useDispatch()
 
-  const handleRemoval = () => {
-    dispatch(todos.actions.removeItem(props.todo.id))
+  const todo = useSelector((store) => store.todos.list.todos[todoIndex])
+
+  const handleRemoval = (e) => {
+    dispatch(
+      todos.actions.removeItem({
+        todoIndex,
+      })
+    )
   }
 
-  const handleChecked = () => {
-    dispatch(todos.actions.isDone(props.todo.id))
+  const handleChecked = (e) => {
+    dispatch(
+      todos.actions.setDone({
+        todoIndex: todoIndex,
+        complete: !todo.complete
+      }))
   }
 
   return (
     <div className="postedContainer">
-      <div className="eachItem"
-        key={props.todo.id}>
+      <div className="eachItem">
         <label className="checkBox">
           <input type="checkbox"
             className="checkBox"
-            checked={props.todo.complete}
+            checked={todo.complete ? 'checked' : ''}
             onChange={handleChecked} />
         </label>
-        <p className="todoText">{props.todo.text}</p>
-        <p className="todoTime">{props.todo.time}</p>
+        <p className="todoText">{todo.text}</p>
+        <p className="todoTime">{todo.time}</p>
         <button type="button"
           className="removeItem"
           onClick={handleRemoval}>

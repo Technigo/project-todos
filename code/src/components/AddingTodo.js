@@ -5,14 +5,19 @@ import { todos } from "reducers/todos"
 import './Adding.css'
 
 
-export const AddingTodo = () => {
+export const AddingTodo = ({ todoId }) => {
   const [postNew, setPostNew] = useState('')
   const dispatch = useDispatch()
 
   const handleSubmit = event => {
     event.preventDefault()
 
-    dispatch(todos.actions.addTodo(postNew))
+    dispatch(
+      todos.actions.addTodo({
+        todoId: todoId,
+        todoInfo: { text: postNew, complete: false }
+      })
+    )
     setPostNew('')
   }
 

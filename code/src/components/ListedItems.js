@@ -5,17 +5,17 @@ import { CompleteList } from './CompleteList'
 import './Listed.css'
 
 export const ListedItems = () => {
-  const allTodos = useSelector((store) => store.todos.todos)
+  const allTodos = useSelector((store) => store.todos.list)
 
   return (
-    <div>
-      {allTodos.length === 0 &&
+    <section>
+      {allTodos.length === 0 && 
       <>
-        <h1 className="emptyList">Great job!</h1>
-      </>}
-      {allTodos.map((todo) => (
-        <CompleteList key={todo.id} todo={todo} />
+        <h1 className="emptyList">All Done!!</h1>
+      </>} 
+      {allTodos.todos.map((todo, index) => (
+        <CompleteList key={todo} todo={todo} todoIndex={index}/>
       ))}
-    </div>
+    </section>
   )
 }

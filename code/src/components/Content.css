@@ -8,8 +8,8 @@
   align-items: center;
   justify-content: flex-start;
   background-color: rgba(254, 245, 255, 0.26);
-  padding: 20px;
-  border: 10px solid rgb(255, 179, 66);
+  padding: 40px;
+  border: 10px solid rgb(245, 186, 76);
   border-radius: 30px;
   font-family: 'Archivo Narrow', sans-serif;
 }
