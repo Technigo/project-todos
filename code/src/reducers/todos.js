@@ -4,12 +4,9 @@ const initialState = {
   list: {
     name: "Test List",
     items: [
-      {
-        description: "This is a test todo",
-        done: false
-      }
+      
     ]
-  }
+  },
 };
 
 export const todos = createSlice( {
@@ -19,6 +16,14 @@ export const todos = createSlice( {
     addTodo: (state, action) => {
       const itemInfo = action.payload;
       state.list.items.push(itemInfo);
+    },
+    setDone: (state, action) => {
+      const { itemIndex, done } = action.payload;
+      state.list.items[itemIndex].done = done;
+    },
+    removeTodo: (state, action) => {
+      const itemToRemove = action.payload;
+      state.list.items.splice(itemToRemove, 1);
     },
 
   }

@@ -1,17 +1,18 @@
 import React from "react";
-//import React from "react";
-//import { BrowserRouter, Route, Switch } from "react-router-dom";
-//import { Provider } from "react-redux";
-import { TodoInput } from "../components/TodoInput.js";
-//import { createStore, combineReducers } from "@reduxjs/toolkit";
-//import { todos } from "../reducers/todos.js";
+import { useSelector } from "react-redux";
+import { TodoInput } from "./TodoInput";
+import { TodoItem } from "./TodoItem";
+import { TodoSummary } from "./TodoSummary";
 
 export const TodoList = () => {
+  const list = useSelector(store => store.todos.list);
   return (
-
-    <div> hejhej
-
+    <div>
       <TodoInput />
+        {list.items.map((item, index) => (
+        <TodoItem key={index} itemIndex={index}></TodoItem>
+      ))}        
+       <TodoSummary />
     </div>
-    );
+  );
 };
