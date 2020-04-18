@@ -1,0 +1,21 @@
+.todo-input {
+  margin: 8px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-input-text {
+  font-size: 22px;
+  width: 100%;
+  padding: 15px;
+  border-style: none;
+}
+
+.todo-input-button {
+  padding: 8px;
+  font-size: 30px;
+  font-weight: bold;
+  border-style: none;
+}

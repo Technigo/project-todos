@@ -2,15 +2,8 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   list: {
-    name: "Test list",
-    items: [
-      {
-        description: "This is a test",
-        done: false,
-        category: "Groceries",
-        date: "24th July"
-      }
-    ]
+    name: "Todo List",
+    items: []
   }
 }
 
@@ -31,6 +24,9 @@ export const todos = createSlice({
       state.list.items = state.list.items.filter(
         (item, index) => index !== itemIndex
       );
+    },
+    clearAll: () => {
+      return initialState;
     },
     //Reducers: 
     // - setCategory

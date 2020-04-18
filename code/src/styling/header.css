@@ -1,0 +1,35 @@
+header {
+  background: rgb(28,4,227);
+  background: linear-gradient(90deg, rgba(28,4,227,0.6432948179271709) 0%, rgba(156,137,255,0.5704656862745099) 100%);
+  display: flex;
+  flex-direction: column;
+  color: white;
+  padding-top: 50px;
+  padding-bottom: 30px;
+  width: 100%;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.text-wrap {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+h1 {
+  font-size: 50px;
+  margin: 0 0 0 50px;
+}
+
+p {
+  margin: 0 0 0 50px;
+}
+
+p.tasks {
+  margin-right: 20px;
+  margin-top: -25px;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+

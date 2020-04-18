@@ -1,0 +1,26 @@
+.todo-item {
+  margin: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 24px;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.todo-item.done {
+  text-decoration: line-through;
+  color: darkgreen;
+}
+
+.todo-item-check {
+  transform: scale(2);
+  margin: 16px;
+}
+
+.todo-item-remove {
+  cursor: pointer;
+  margin: 8px;
+  font-size: 14px;
+  color: darkolivegreen;
+}

@@ -5,12 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
-  /* Background */
-  /* background-image: url(https://wallpaperplay.com/walls/full/b/5/d/212455.jpg);
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed; */
 }
 
 code {
@@ -18,58 +12,10 @@ code {
     monospace;
 }
 
-.todo-input {
-  margin: 8px;
+main {
   display: flex;
-  flex: column;
-}
-
-.todo-input-text {
-  font-size: 22px;
-  width: 40%;
-}
-
-.todo-input-button {
-  padding: 8px;
-  font-size: 22px;
-  margin-left: 16px;
-}
-
-.todo-list {
-  margin: 8px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  background-image: linear-gradient(#adadad, #efefef);
-  border-radius: 16px;
-}
-
-.todo-item {
-  margin: 8px;
-  display: flex;
-  flex-direction: row;
+  justify-content: center;
   align-items: center;
-  justify-content: flex-start;
-  font-size: 24px;
+  flex-direction: column;
 }
 
-.todo-item.done {
-  text-decoration: line-through;
-}
-
-.todo-item-check {
-  transform: scale(2);
-  margin: 16px;
-}
-
-.todo-item-remove {
-  cursor: pointer;
-  margin: 8px;
-  font-size: 14px;
-  color: blue;
-}
-
-.todo-summary {
-  margin: 8px;
-}

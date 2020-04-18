@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
+import '../styling/todo-input.css'
 
 // receive listId for input 
 export const TodoInput = () => {
@@ -13,7 +14,6 @@ export const TodoInput = () => {
   // handle submit function to dispatch addTodo
   const handleOnSubmit = (e) => {
     e.preventDefault()
-    console.log(inputValue)
 
     // Dispatch the action to save the new todo item to list
     dispatch(
@@ -32,16 +32,17 @@ export const TodoInput = () => {
   return (
     <form className="todo-input" onSubmit={handleOnSubmit}>
       <input
+        type="submit"
+        className="todo-input-button"
+        value="+"
+      ></input>
+      <input
         type="text"
+        placeholder="new todo..."
         className="todo-input-text"
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
       ></input>
-      <input
-        type="submit"
-        className="todo-input-button"
-        value="Add todo"
-      ></input>
-    </form>
+    </form >
   )
 }

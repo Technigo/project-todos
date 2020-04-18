@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
+import '../styling/todo-item.css'
 
 export const TodoItem = ({ itemIndex }) => {
   // gets the item from the store based on index
