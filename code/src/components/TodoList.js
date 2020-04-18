@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import styled from "styled-components";
 import { TodoInput } from "./TodoInput";
 import { TodoItem } from "./TodoItem";
 import { TodoSummary } from "./TodoSummary";
@@ -7,12 +8,19 @@ import { TodoSummary } from "./TodoSummary";
 export const TodoList = () => {
   const list = useSelector((store) => store.todos.list);
   return (
-    <div>
+    <TodoListContainer>
       <TodoInput />
       {list.items.map((item, index) => (
         <TodoItem key={index} itemIndex={index}></TodoItem>
       ))}
       <TodoSummary />
-    </div>
+    </TodoListContainer>
   );
 };
+
+const TodoListContainer = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;

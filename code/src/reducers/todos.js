@@ -20,8 +20,10 @@ export const todos = createSlice({
       state.list.items[itemIndex].done = done;
     },
     removeTodo: (state, action) => {
-      const itemToRemove = action.payload;
-      state.list.items.splice(itemToRemove, 1);
+      const { itemIndex } = action.payload;
+      state.list.items = state.list.items.filter(
+        (item, index) => index !== itemIndex
+      );
     },
   },
 });

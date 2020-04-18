@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import styled from "styled-components";
 
 export const TodoSummary = () => {
   const list = useSelector((store) => store.todos.list);
@@ -8,9 +9,15 @@ export const TodoSummary = () => {
 
   return (
     <div>
-      <h2>
+      <TaskCount>
         {doneList.length}/{list.items.length} tasks done!
-      </h2>
+      </TaskCount>
     </div>
   );
 };
+
+const TaskCount = styled.h2`
+  font-family: "Cabin Sketch", cursive;
+  color: #fff;
+  font-weight: lighter;
+`;

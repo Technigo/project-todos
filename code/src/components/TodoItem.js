@@ -26,20 +26,55 @@ export const TodoItem = ({ itemIndex }) => {
 
   return (
     <TodoContainer>
-      <input
-        type="checkbox"
-        onChange={handleOnChange}
-        checked={item.done ? true : ""}
-      />
-      <p>{item.description}</p>
+      <Divider>
+        <Input
+          type="checkbox"
+          onChange={handleOnChange}
+          checked={item.done ? true : ""}
+        />
+        <Description>{item.description}</Description>
+      </Divider>
       <Remove onClick={onRemoveClicked}>REMOVE</Remove>
     </TodoContainer>
   );
 };
 
-const Remove = styled.button``;
-
 const TodoContainer = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  width: 100%;
+`;
+
+const Divider = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const Description = styled.h2`
+  font-family: "Cabin Sketch", cursive;
+  color: #fff;
+  font-weight: lighter;
+
+  margin: 0;
+`;
+
+const Input = styled.input`
+  &:checked + ${Description} {
+    text-decoration: line-through;
+  }
+`;
+
+const Remove = styled.button`
+  font-family: "Cabin Sketch", cursive;
+  color: #fff;
+  font-weight: lighter;
+  background: #426452;
+
+  border-radius: 5px;
+  font-size: 16px;
+
+  &:active {
+    background: #2a4034;
+  }
 `;
