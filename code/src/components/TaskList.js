@@ -19,6 +19,6 @@ from the 'react-redux' package to fetch the list of todos and map over them.
 
 export const TaskList = () => {
   return (
-    <div>✏ TO DO App 📎 📓 🌞 TaskList</div>
+    <div>TaskList</div>
   )
 }

@@ -11,3 +11,61 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* Change this to STYLE components later - in each COMPONENT */
+
+
+.todo-input {
+  margin: 8px;
+  display: flex;
+  flex: column;
+}
+
+.todo-input-text {
+  font-size: 22px;
+  width: 40%;
+}
+
+.todo-input-button {
+  padding: 8px;
+  font-size: 22px;
+  margin-left: 16px;
+}
+
+.todo-list {
+  margin: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-image: linear-gradient(#adadad, #efefef);
+  border-radius: 16px;
+}
+
+.todo-item {
+  margin: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 24px;
+}
+
+.todo-item.done {
+  text-decoration: line-through;
+}
+
+.todo-item-check {
+  transform: scale(2);
+  margin: 16px;
+}
+
+.todo-item-remove {
+  cursor: pointer;
+  margin: 8px;
+  font-size: 14px;
+  color: blue;
+}
+
+.todo-summary {
+  margin: 8px;
+}

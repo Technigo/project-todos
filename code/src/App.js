@@ -1,12 +1,13 @@
 import React from 'react'
 // to wrap everything in Store:
 import { Provider } from 'react-redux'
-import { TaskList } from './components/TaskList'
 // to access 2 reducers we need this from redux-toolkit:
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 // import reducers:
 import { tasks } from './reducers/tasks'
 
+import { TaskList } from './components/TaskList'
+import { TaskInput } from 'components/TaskInput'
 
 
 // first we create our combined-REDUCER-file:
@@ -22,10 +23,8 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
+      <TaskInput />
       <TaskList />
-      <div>
-        Find me in src/app.js!
-      </div>
     </Provider>
   )
 }
