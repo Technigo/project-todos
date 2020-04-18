@@ -17,10 +17,20 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState: initialState,
   reducers: {
+
+     // Will add a todo item to the state list
     addTodo:(state, action) => {
       const { itemInfo } = action.payload
       state.list.items.push(itemInfo)
-    }
+    },
+
+    // Will set a specific item to done using the index
+    setDone: (state, action) => {
+      const { itemIndex, done } = action.payload
+      state.list.items[itemIndex].done = done
+    },
+    // Will remove an item from the list
+    
 
   }
 })
