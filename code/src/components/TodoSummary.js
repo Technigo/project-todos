@@ -20,12 +20,10 @@ export const TodoSummary = () => {
 
   return (
     <section className="todo-summary">
-      <p>
+      <p className="completed">
         {numDone}/{list.items.length} are completed
       </p>
-      <p>
-        <button onClick={handleClick}>Clear all</button>
-      </p>
+      <button onClick={handleClick}>Clear all</button>
     </section>
   )
 }
