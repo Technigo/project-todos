@@ -8,11 +8,11 @@
 
 .emptyList {
   margin-top: 50px;
-  color: rgb(0, 0, 0);
+  color: rgb(196, 109, 163);
   font-family: 'Menlo', sans-serif;
   font-size: 40px;
   animation-name: shake-lr;
-  animation-duration: 1.2s;
+  animation-duration: 2s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
@@ -100,14 +100,14 @@
 
 .todoText {
   font-size: 18px;
-  color: #305f72;
+  color: #000000;
   margin-right: 10px;
   overflow-wrap: break-word;
 }
 
 .todoTime {
   font-size: 14px;
-  color: #568EA6;
+  color: rgb(0, 0, 0);
 }
 
 .removeItem {

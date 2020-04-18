@@ -6,15 +6,24 @@ import './Listed.css'
 
 export const ListedItems = () => {
   const allTodos = useSelector((store) => store.todos.list)
+  const totalList = useSelector((store) => store.todos.list.todos)
+
+  if (totalList.length === 0) {
+    return (
+      <>
+        <h1 className="emptyList">All Done!!</h1>
+      </>
+    )
+  }
 
   return (
     <section>
-      {allTodos.length === 0 && 
+      {/* {allTodos.length === 0 && 
       <>
         <h1 className="emptyList">All Done!!</h1>
-      </>} 
+      </>}  */}
       {allTodos.todos.map((todo, index) => (
-        <CompleteList key={todo} todo={todo} todoIndex={index}/>
+        <CompleteList todo={todo} todoIndex={index} />
       ))}
     </section>
   )
