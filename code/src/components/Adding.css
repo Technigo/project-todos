@@ -43,13 +43,15 @@ html {
   height: 40px;
   transition: .3s ease-in-out;
   border: 1px solid rgb(103, 153, 168);
-  color: rgb(103, 153, 168)
+  color: rgb(103, 153, 168);
+  background-color: white;
 }
 
 .addingTodo button:disabled {
   transform: scale(0.8);
   border: 1px solid rgba(103, 153, 168, 0.603);
-  color: rgba(103, 153, 168, 0.349)
+  color: rgba(103, 153, 168, 0.349);
+  background-color: white;
 }
 
 .addingTodo button:disabled:hover {
