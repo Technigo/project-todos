@@ -18,10 +18,6 @@ export const ListedItems = () => {
 
   return (
     <section>
-      {/* {allTodos.length === 0 && 
-      <>
-        <h1 className="emptyList">All Done!!</h1>
-      </>}  */}
       {allTodos.todos.map((todo, index) => (
         <CompleteList todo={todo} todoIndex={index} />
       ))}

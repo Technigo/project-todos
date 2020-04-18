@@ -91,11 +91,17 @@
   justify-content: space-between;
   align-items: center;
   width: 280px;
-  padding: 15px;
-  border: 1px solid rgb(189, 140, 178);
-  box-shadow: 3px 5px rgb(189, 140, 178);
-  margin: 5px;
+  /* padding: 10px; */
+  /* border-top: 3px solid rgb(103, 153, 168); */
+  border-bottom: 2px solid rgb(103, 153, 168);
+  /* box-shadow: 0px 5px 10px rgb(202, 213, 216); */
+  margin: 15px;
   overflow-wrap: break-word;
+  transition: .3s ease-in-out;
+}
+
+.eachItem:hover {
+  transform: scale(1.1);
 }
 
 .todoText {
@@ -127,11 +133,6 @@
   position: relative;
 }
 
-/* .checkBox > span {
-  color: #34495E;
-  padding: 0.5rem 0.25rem;
-} */
-
 .checkBox > input {
   height: 20px;
   width: 20px;
@@ -139,7 +140,7 @@
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid rgb(185, 118, 165);
   border-radius: 50%;
   outline: none;
   transition-duration: 0.3s;
@@ -148,8 +149,7 @@
 }
 
 .checkBox > input:checked {
-  /* border: 1px solid #41B883; */
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(185, 118, 165);
 }
 
 .checkBox > input:checked + span::before {
@@ -157,10 +157,16 @@
   text-align: center;
   color: rgb(0, 0, 0);
   position: absolute;
-  /* left: 0.7rem;
-  top: 0.2rem; */
 }
 
 .checkBox > input:active {
   border: 2px solid rgb(255, 255, 255);
+}
+
+.checkBox:hover {
+  opacity: .8;
+}
+
+.check {
+  opacity: 0.4;
 }

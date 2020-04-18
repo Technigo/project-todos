@@ -28,7 +28,7 @@ html {
   outline: none;
   border: none;
   margin-right: 10px;
-  border: 1px solid black;
+  border: 2px solid rgb(103, 153, 168);
   /* box-shadow: 2px 2px black; */
   font-size: 14px;
 }

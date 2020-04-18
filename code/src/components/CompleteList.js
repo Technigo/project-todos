@@ -34,8 +34,10 @@ export const CompleteList = ({ todoIndex }) => {
             checked={todo.complete ? 'checked' : ''}
             onChange={handleChecked} />
         </label>
-        <p className="todoText">{todo.text}</p>
+
+        <p className={todo.complete === true ? "todoText check" : "todoText"}>{todo.text}</p>
         <p className="todoTime">{todo.time}</p>
+
         <button type="button"
           className="removeItem"
           onClick={handleRemoval}>
