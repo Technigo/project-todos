@@ -29,12 +29,12 @@ html {
   border: none;
   margin-right: 10px;
   border: 2px solid rgb(103, 153, 168);
-  /* box-shadow: 2px 2px black; */
+  box-shadow: 2px 2px rgb(103, 153, 168);
   font-size: 14px;
 }
 
 .addingTodo textarea::placeholder {
-  padding: 5px;
+  padding: 3px;
 }
 
 .addingTodo button {
@@ -42,12 +42,14 @@ html {
   width: 40px;
   height: 40px;
   transition: .3s ease-in-out;
-  border: 1px solid black;
+  border: 1px solid rgb(103, 153, 168);
+  color: rgb(103, 153, 168)
 }
 
 .addingTodo button:disabled {
   transform: scale(0.8);
-  border: 1px solid rgba(0, 0, 0, 0.315);
+  border: 1px solid rgba(103, 153, 168, 0.603);
+  color: rgba(103, 153, 168, 0.349)
 }
 
 .addingTodo button:disabled:hover {

@@ -11,8 +11,14 @@
   color: rgb(196, 109, 163);
   font-family: 'Menlo', sans-serif;
   font-size: 40px;
+}
+
+.emptyImg {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
   animation-name: shake-lr;
-  animation-duration: 2s;
+  animation-duration: 1.2s;
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-fill-mode: both;
@@ -111,6 +117,11 @@
   overflow-wrap: break-word;
 }
 
+.check {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
 .todoTime {
   font-size: 14px;
   color: rgb(0, 0, 0);
@@ -167,6 +178,3 @@
   opacity: .8;
 }
 
-.check {
-  opacity: 0.4;
-}
