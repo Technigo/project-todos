@@ -7,7 +7,8 @@ import { TodoSummary } from "./TodoSummary";
 export const TodoList = () => {
   const list = useSelector(store => store.todos.list);
   return (
-    <div>
+    <div className="todo-list"> 
+      
       <TodoInput />
         {list.items.map((item, index) => (
         <TodoItem key={index} itemIndex={index}></TodoItem>
