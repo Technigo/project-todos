@@ -1,45 +1,66 @@
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue","Manrope"
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: white;
+  box-sizing: border-box;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: 'Manrope', sans-serif;
 }
 
 .todo-input {
   margin: 8px;
   display: flex;
   flex: column;
+  font-family: 'Manrope', sans-serif;
 }
 
+
 .todo-input-text {
-  font-size: 22px;
-  width: 40%;
+  font-size: 30px;
+  font-family: 'Manrope', sans-serif;
+  width: 60%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #ccc;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+  outline: none;
+}
+
+.todo-input-text:focus {
+  border: 3px solid #ff6cd7;
 }
 
 .todo-input-button {
-  width: 6vh;
-  height: 6vh;
+  width: 8vh;
+  height: 8vh;
   font-size: 32px;
   margin-left: 16px;
-  background-color: deeppink;
+  margin-top: 10px;
+  background-color: #ff6cd7;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  transition: 1s ease;
 }
 
-.todo-input-button:hover {
-  transform: rotate(180deg);
+.todo-input-button:active {
+  background: #ff6cd7;
+  box-shadow: inset 7px 7px 14px #a14487, 
+              inset -7px -7px 14px #ff94ff;
 }
+
+.todo-input-button:focus {
+outline: none;
+}
+
 
 .todo-list {
   margin: 8px;
@@ -58,6 +79,7 @@ code {
   align-items: center;
   justify-content: flex-start;
   font-size: 24px;
+  font-family: 'Manrope', sans-serif;
 }
 
 .todo-item.done {
@@ -71,13 +93,31 @@ code {
 
 .todo-item-remove {
   cursor: pointer;
-  margin: 8px;
-  font-size: 14px;
-  color: blue;
-  text-decoration: underline;
+  border: none;
+  margin-left: 20px;
+  padding: 8px 20px 8px 20px;
+  font-size: 12px;
+  color: black;
   cursor: pointer;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Manrope', sans-serif;
+  font-weight: 600;
+  border-radius: 10px;
+  background: #99F2AF;
+}
+
+.todo-item-remove:active {
+  background: #79F297;
+  box-shadow: inset 7px 7px 14px #4c985f, 
+            inset -7px -7px 14px #a6ffcf;
+}
+
+.todo-item-remove:focus {
+  outline: none;
 }
 
 .todo-summary {
   margin: 8px;
+  font-family: 'Manrope', sans-serif;
 }

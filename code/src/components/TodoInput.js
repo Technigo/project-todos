@@ -30,6 +30,7 @@ export const TodoInput = ({ listID }) => {
         value={inputValue}
         placeholder="New task ..."
         className="todo-input-text"
+        required
       >
       </input>
       <input
