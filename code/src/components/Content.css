@@ -52,3 +52,9 @@
 .noAmount {
   display: none;
 }
+
+/* @media (max-width: 670px) {
+  .mainContent {
+    width: 60%;
+  }
+} */

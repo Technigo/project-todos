@@ -151,7 +151,7 @@
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
-  border: 1px solid rgb(185, 118, 165);
+  border: 1px solid rgb(228, 74, 125);
   border-radius: 50%;
   outline: none;
   transition-duration: 0.3s;
@@ -160,7 +160,7 @@
 }
 
 .checkBox > input:checked {
-  background-color: rgb(185, 118, 165);
+  background-color: rgb(228, 74, 125);
 }
 
 .checkBox > input:checked + span::before {

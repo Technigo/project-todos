@@ -12,7 +12,7 @@ export const ListedItems = () => {
     return (
       <>
         <h1 className="emptyList">All Done!!</h1>
-        <img className="emptyImg"
+        <img className="emptyImg" alt="Happy beet"
         src='https://cdn.dribbble.com/users/26684/screenshots/11093212/media/cb70a269aebd17e9164304d06197a4e9.png' />
       </>
     )
