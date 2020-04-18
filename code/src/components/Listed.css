@@ -130,6 +130,9 @@
 .removeItem {
   font-size: 18px;
   border: none;
+  background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .removeItem:hover {
