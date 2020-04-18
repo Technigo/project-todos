@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import img from "../image/purty-wood.png";
 
 export const Footer = () => {
   return (
@@ -9,15 +10,11 @@ export const Footer = () => {
   );
 };
 
-const Emoji = styled.span`
-  font-size: 60px;
-`;
-
 const Title = styled.h1`
   color: green;
   text-align: center;
 
-  font-family: "Cabin Sketch", cursive;
+  font-family: "Pangolin", cursive;
   font-size: 24px;
   color: #fff;
 
@@ -26,6 +23,14 @@ const Title = styled.h1`
 
 const Content = styled.footer`
   background: #426452;
+  background-image: url(${img});
+  background-repeat: repeat;
+  background-size: contain;
+  border-radius: 10px 10px 0 0;
+  border-top: 5px solid #855418;
+
+  box-shadow: inset 0px 5px 13px 3px #22332a;
+
   margin-top: 20px;
   width: 100vw;
   display: flex;

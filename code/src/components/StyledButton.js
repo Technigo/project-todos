@@ -12,7 +12,7 @@ export const StyledButton = ({ btnText, fontSize, onClick }) => {
   `;
 
   const ButtonText = styled.p`
-  font-family: "Cabin Sketch", cursive;
+  font-family: "Pangolin", cursive;
   color: #fff;
   font-weight: lighter;
   font-size: font-size: ${fontSize ? fontSize : "16px"}

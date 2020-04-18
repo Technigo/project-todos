@@ -17,7 +17,6 @@ export const TodoInput = () => {
           done: false,
         })
       );
-      console.log(inputValue);
       setInputValue("");
     }
   };
@@ -38,15 +37,25 @@ export const TodoInput = () => {
 const Input = styled.input`
   border-radius: 5px;
   border: none;
+
   margin: 0 5px;
-  width: 150px;
   padding: 0 5px;
+  width: 150px;
+  height: 30px;
+
+  box-sizing: border-box;
 `;
 
 const Button = styled.input`
-  font-family: "Cabin Sketch", cursive;
+  font-family: "Pangolin", cursive;
   font-size: 24px;
   color: #fff;
+
+  margin: 5px;
+  padding: 0 5px;
+  width: 150px;
+  height: 30px;
+
   font-weight: lighter;
   background: #426452;
 
@@ -59,5 +68,16 @@ const Button = styled.input`
 
 const Form = styled.form`
   display: flex;
-  margin: 10px 0;
+  align-items: center;
+  justify-content: center;
+
+  height: 30px;
+  width: 300px;
+
+  @media (max-width: 668px) {
+    flex-direction: column;
+    margin: 0 10px;
+    height: 70px;
+    width: 150px;
+  }
 `;

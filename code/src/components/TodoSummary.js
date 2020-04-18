@@ -17,7 +17,8 @@ export const TodoSummary = () => {
 };
 
 const TaskCount = styled.h2`
-  font-family: "Cabin Sketch", cursive;
+  font-family: "Pangolin", cursive;
+  text-align: center;
   color: #fff;
   font-weight: lighter;
 `;

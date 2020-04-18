@@ -41,18 +41,18 @@ export const TodoItem = ({ itemIndex }) => {
 
 const TodoContainer = styled.div`
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
   width: 100%;
 `;
 
 const Divider = styled.div`
   display: flex;
-  align-items: center;
+  align-items: baseline;
 `;
 
 const Description = styled.h2`
-  font-family: "Cabin Sketch", cursive;
+  font-family: "Pangolin", cursive;
   color: #fff;
   font-weight: lighter;
 
@@ -66,13 +66,15 @@ const Input = styled.input`
 `;
 
 const Remove = styled.button`
-  font-family: "Cabin Sketch", cursive;
+  font-family: "Pangolin", cursive;
   color: #fff;
   font-weight: lighter;
   background: #426452;
 
   border-radius: 5px;
   font-size: 16px;
+
+  font-family: "Pangolin", cursive;
 
   &:active {
     background: #2a4034;
