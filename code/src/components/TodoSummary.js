@@ -19,7 +19,7 @@ export const TodoSummary = () => {
   };
 
   return (
-    <div>
+    <SummaryWrapper>
       {list.items.length !== 0 && (
         <TaskCount>
           {doneList.length}/{list.items.length} tasks done!
@@ -38,7 +38,7 @@ export const TodoSummary = () => {
           </Button>
         )}
       </Wrapper>
-    </div>
+    </SummaryWrapper>
   );
 };
 
@@ -82,4 +82,11 @@ const Button = styled.button`
 
 const Wrapper = styled.div`
   display: flex;
+`;
+
+const SummaryWrapper = styled.div`
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
 `;

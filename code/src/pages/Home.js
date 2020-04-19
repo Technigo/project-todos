@@ -62,6 +62,10 @@ const Main = styled.section`
   border: 10px solid #855418;
   border-image: url(${border}) 30;
 
+  @media (max-width: 1024px) {
+    padding: 20px 55px;
+  }
+
   @media (max-width: 668px) {
     border-image: none;
     padding: 15px;
