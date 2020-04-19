@@ -2,14 +2,17 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { todoStore } from '../reducers/todoStore';
+import DatePicker from 'react-datepicker';
+
+ export const StyledSection = styled.section`
+  border-bottom: 3px solid white;
+  min-height: 300px;
+`
 
 const StyledForm = styled.form`
 	display: flex;
   flex-direction: column;
-  min-height: 200px;
-	align-items: flex-start;
-	justify-content: space-between;
-  border-bottom: 3px solid white;
+
 `;
 const Wrapper = styled.div`
   width: ${props=>props.width}px;
@@ -54,22 +57,41 @@ export const NewTask = () => {
 	};
 	//What is the smallest screen size you design for 320px
 	return (
-		<StyledForm onSubmit={handleNewTask}>
+    <StyledSection>
       <SectionHeader width={theWidth}>Make a new Todo</SectionHeader>
-      <Wrapper width={theWidth}>
-        <StyledInput width={theWidth} type="text" name="todoInput" onChange={(e) => setTaskInput(e.target.value)} value={taskInput} />
+		  <StyledForm onSubmit={handleNewTask}>
       
-			<FormButton type="submit" aria-label="add">
-				+
-			</FormButton>
-      </Wrapper>
-      <label for="todoInput">Write the task</label>
-      <label>
-        <input type="checkbox" name="today" value="today" />
-        Finish today
-      </label>
+        <Wrapper width={theWidth}>
+          <StyledInput width={theWidth} type="text" name="todoInput" onChange={ (e) => setTaskInput(e.target.value)} value={taskInput} />
+      
+			    <FormButton type="submit" aria-label="add">
+				    +
+			    </FormButton>
+        </Wrapper>
+        <label for="todoInput">Write the task</label>
+        <label>
+          <input type="checkbox" name="today" value="today" />
+          Finish today
+        </label>
 		</StyledForm>
+    </StyledSection>
 	);
 };
 
 //Add a due date to a task
+
+// () => {
+//   const [startDate, setStartDate] = useState(new Date());
+//   return (
+//     <DatePicker
+//       selected={startDate}
+//       onChange={date => setStartDate(date)}
+//       showTimeSelect
+//       timeFormat="HH:mm"
+//       timeIntervals={15}
+//       timeCaption="time"
+//       dateFormat="MMMM d, yyyy h:mm aa"
+//     />
+//   );
+// };
+

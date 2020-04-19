@@ -3,12 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import {todoStore} from '../reducers/todoStore'
 import { TaskItem } from './TaskItem'
-import {SectionHeader} from './NewTask'
+import {StyledSection, SectionHeader} from './NewTask'
 
-const StyledSection = styled.section`
-  border-bottom: 3px solid white;
-  min-height: 300px;
-`
 const StyledGrid = styled.section`
   width: ${props=>props.width}px;
   display: flex;
