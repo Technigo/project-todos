@@ -79,7 +79,7 @@ const Form = styled.form`
   @media (max-width: 668px) {
     flex-direction: column;
     margin: 0 10px;
-    height: 70px;
+    height: 90px;
     width: 150px;
   }
 `;
