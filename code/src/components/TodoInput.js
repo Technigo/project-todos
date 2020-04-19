@@ -23,6 +23,7 @@ export const TodoInput = () => {
         type='text'
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
+        placeholder='Add task...'
       ></TodoInputField>
       <Submit
         type='submit'
@@ -47,6 +48,19 @@ const TodoInputField = styled.input`
   border-radius: 10px;
   background: #e8cbb9;
   font-size: 16px;
+
+  ::placeholder {
+    color: #ce745a;
+    opacity: 1;
+  }
+  
+  :-ms-input-placeholder {
+    color: #ce745a;
+  }
+  
+  ::-ms-input-placeholder {
+    color: #ce745a;
+  }
 `
 
 const Submit = styled.input`
