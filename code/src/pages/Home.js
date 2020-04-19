@@ -44,8 +44,8 @@ const Main = styled.section`
 
   box-sizing: border-box;
 
-  width: 70%;
   min-height: 67vh;
+  width: 70%;
 
   padding: 30px 150px;
   margin: auto;
@@ -64,10 +64,12 @@ const Main = styled.section`
 
   @media (max-width: 1024px) {
     padding: 20px 55px;
+    width: 70%;
   }
 
   @media (max-width: 668px) {
     border-image: none;
     padding: 15px;
+    width: 90%;
   }
 `;
