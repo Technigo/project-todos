@@ -58,7 +58,7 @@ const Main = styled.section`
   box-shadow: inset 0px 1px 10px 10px #22332a;
 
   border: 10px solid transparent;
-  border-image: url(${border}) 100 round;
+  border-image: url(${border}) 30;
 
   @media (max-width: 668px) {
     width: 70vw;

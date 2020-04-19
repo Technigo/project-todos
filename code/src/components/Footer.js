@@ -31,7 +31,7 @@ const Content = styled.footer`
 
   box-shadow: inset 0px 5px 13px 3px #22332a;
 
-  border-image: url(/static/media/border-wood.bf645562.jpg) 30 round;
+  border-image: url(/static/media/border-wood.bf645562.jpg) 30;
 
   margin-top: 20px;
   width: 100vw;
