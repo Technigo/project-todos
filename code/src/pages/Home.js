@@ -42,10 +42,12 @@ const Main = styled.section`
   align-items: space-evely;
   justify-content: center;
 
-  width: 70%;
-  height: 50vh;
+  box-sizing: border-box;
 
-  padding: 30px;
+  width: 70%;
+  min-height: 67vh;
+
+  padding: 30px 150px;
   margin: auto;
 
   background: #426452;

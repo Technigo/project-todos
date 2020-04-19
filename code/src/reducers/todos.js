@@ -25,5 +25,14 @@ export const todos = createSlice({
         (item, index) => index !== itemIndex
       );
     },
+    removeAllTodos: (state) => {
+      state.list.items = [];
+    },
+    setAll: (state) => {
+      state.list.items.forEach((item) => {
+        const doneOrNot = item.done;
+        item.done = !doneOrNot;
+      });
+    },
   },
 });

@@ -48,7 +48,7 @@ const TodoContainer = styled.div`
 
 const Divider = styled.div`
   display: flex;
-  align-items: CENTER;
+  align-items: baseline;
 `;
 
 const Description = styled.h2`
@@ -58,6 +58,10 @@ const Description = styled.h2`
   font-size: 27px;
 
   margin: 0;
+
+  @media (max-width: 668px) {
+    font-size: 20px;
+  }
 `;
 
 const Input = styled.input`
@@ -78,6 +82,10 @@ const Input = styled.input`
   &:checked + ${Description} {
     text-decoration: line-through;
   }
+  @media (max-width: 668px) {
+    height: 12px;
+    width: 12px;
+  }
 `;
 
 const Remove = styled.button`
@@ -90,9 +98,13 @@ const Remove = styled.button`
 
   border-radius: 5px;
   border: 2px dashed #fff;
-  align-self: center;
+  align-self: baseline;
 
   &:active {
     background: #2a4034;
+  }
+
+  @media (max-width: 668px) {
+    font-size: 12px;
   }
 `;

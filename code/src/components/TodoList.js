@@ -22,7 +22,7 @@ export const TodoList = () => {
             animationData: animation,
           }}
           height="60%"
-          width="45%"
+          width="25%"
         />
       )}
     </TodoListContainer>

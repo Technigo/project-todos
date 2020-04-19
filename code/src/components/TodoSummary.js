@@ -1,11 +1,22 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { todos } from "reducers/todos";
 import styled from "styled-components";
 
 export const TodoSummary = () => {
   const list = useSelector((store) => store.todos.list);
-
   const doneList = list.items.filter((item) => item.done);
+  const dispatch = useDispatch();
+  const [setCount, setSetCount] = useState(false);
+
+  const onRemoveClicked = (event) => {
+    dispatch(todos.actions.removeAllTodos());
+  };
+
+  const setAll = (event) => {
+    setSetCount(!setCount);
+    dispatch(todos.actions.setAll());
+  };
 
   return (
     <div>
@@ -17,6 +28,16 @@ export const TodoSummary = () => {
       {list.items.length === 0 && (
         <GettingStarted>Time to write some tasks!</GettingStarted>
       )}
+      <Wrapper>
+        {list.items.length > 1 && (
+          <Button onClick={onRemoveClicked}>REMOVE ALL</Button>
+        )}
+        {list.items.length > 1 && (
+          <Button onClick={setAll}>
+            {setCount ? "UNCHECK ALL" : "CHECK ALL"}
+          </Button>
+        )}
+      </Wrapper>
     </div>
   );
 };
@@ -34,4 +55,31 @@ const GettingStarted = styled.h2`
   color: #fff;
   font-weight: lighter;
   font-size: 34px;
+`;
+
+const Button = styled.button`
+  display: flex;
+  font-family: "Pangolin", cursive;
+  font-weight: lighter;
+  font-size: 16px;
+  color: #fff;
+
+  background: none;
+
+  border-radius: 5px;
+  border: 2px dashed #fff;
+
+  margin: 0 10px;
+
+  &:active {
+    background: #2a4034;
+  }
+
+  @media (max-width: 668px) {
+    font-size: 12px;
+  }
+`;
+
+const Wrapper = styled.div`
+  display: flex;
 `;
