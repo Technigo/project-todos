@@ -43,7 +43,7 @@ const Main = styled.section`
   justify-content: center;
 
   width: 40vw;
-  min-height: 400px;
+  min-height: 250px;
 
   padding: 30px;
   margin: auto;

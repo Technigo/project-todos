@@ -28,7 +28,7 @@ const Emoji = styled.span`
 
 const Title = styled.h1`
   color: green;
-  margin: 0;
+  margin: 20px 0;
   text-align: center;
 
   font-family: "Pangolin", cursive;
@@ -55,7 +55,6 @@ const Content = styled.header`
   border-image: url(${border}) 30;
 
   margin-bottom: 20px;
-  height: 150px;
   width: 100vw;
   display: flex;
   justify-content: center;
