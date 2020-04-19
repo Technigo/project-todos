@@ -14,18 +14,20 @@ export const TodoItem = ({ itemIndex }) => {
     dispatch(todos.actions.removeTodo({ itemIndex }))
   }
 
-  const handleOnChange = () => {
+  const onCheckClick = () => {
     dispatch(todos.actions.setDone({ itemIndex })
     )
   }
+
+  const itemChecked = item.done
 
   return (
     <Styled>
       <Label>
         <Checkbox
-          type='checkbox'
-          onChange={handleOnChange}
-          checked={item.done ? 'checked' : ''}
+          type='button'
+          onClick={onCheckClick}
+          itemChecked={itemChecked}
         ></Checkbox>
         {item.description}
       </Label>
@@ -42,46 +44,39 @@ export const TodoItem = ({ itemIndex }) => {
 
 const Styled = styled.div`
   display: flex;
-  justify-content: space-between
+  justify-content: space-between;
+  align-content: center;
+  margin: 10px 0;
 `
 const Label = styled.label`
-  position: relative;
-  margin: 10px 5px;
-  padding-left: 10px;
-  font-size: 20px;
-  
-  ::before {
-    position: absolute;
-    top: 0px;
-    left: 0;
-    content: '';
-    display: inline-block;
-    width: 25px;
-    height: 25px;
-    border: 1px solid;
-  }
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+`
 
-  ::after + input:checked {
-    visibility: ${prop => !prop.checked ? 'hidden' : ''};
-    position: absolute;
-    left: 4px;
-    top: 7px;
+const Checkbox = styled.button`
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  padding-left: 4px;
+  border: 1px solid;
+  border-radius: 5px;
+  background: none;
+  font-size: 20px;
+
+  &:after {
     content: '';
-    display: inline-block;
-    width: 8px;
+    display: ${prop => (prop.itemChecked ? 'block' : 'none')};
+    width: 9px;
     height: 5px;
-    border-left: 2px solid;
-    border-bottom: 2px solid;
+    border-left: 1px solid;
+    border-bottom: 1px solid;
     transform: rotate(-45deg);
   }
 `
 
-const Checkbox = styled.input`
-  opacity: 0;
-`
-
 const RemoveButton = styled.button`
-border: none;
-background: none;
-font-size: 25px;
+  border: none;
+  background: none;
+  font-size: 20px;
 `
