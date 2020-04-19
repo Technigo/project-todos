@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { fridge } from 'reducers/fridge'
+import { toDo } from 'reducers/toDo'
 
 export const AddItemForm = () => {
   const [name, setName] = useState('')
@@ -8,7 +8,7 @@ export const AddItemForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(fridge.actions.addItem(name))
+    dispatch(toDo.actions.addItem(name))
     setName('')
   }
 
