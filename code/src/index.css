@@ -15,6 +15,16 @@ body, html {
   -moz-osx-font-smoothing: grayscale;
 }
 
+h2 {
+  color: black;
+  font-weight: initial;
+  margin-bottom: 2px;
+}
+
+.header-info span {
+  color: #737271;
+}
+
 .home-page {
   width: 350px;
 }

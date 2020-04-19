@@ -9,7 +9,7 @@ export const Header = () => {
   return (
     <div className="header-container">
       <div className="header-info">
-        <h2>To-do list </h2>
+        <h2>Todo</h2>
         <span>{moment().format('dddd MMMM Do')}</span> 
       </div>
     
