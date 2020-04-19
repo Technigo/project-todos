@@ -48,6 +48,7 @@ const Content = styled.header`
   background-image: url(${img});
   background-size: cover;
   background-repeat: repeat;
+  background-position: center;
   border-radius: 0 0 10px 10px;
   border-bottom: 10px solid #855418;
 

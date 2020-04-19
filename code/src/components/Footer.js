@@ -28,6 +28,7 @@ const Content = styled.footer`
   background-image: url(${img});
   background-size: cover;
   background-repeat: repeat;
+  background-position: center;
   border-radius: 10px 10px 0 0;
   border-top: 10px solid #855418;
 
