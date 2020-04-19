@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { ToDoScreen } from 'components/ToDoScreen'
-import { AddToDoScreen } from 'components/AddToDoScreen'
 
 import { tasklist } from 'reducers/tasklist'
 
@@ -13,10 +12,10 @@ const reducer = combineReducers({
 const store = configureStore({ reducer })
 
 export const App = () => {
+
   return (
     <Provider store={store}>
-      <ToDoScreen />
-      <AddToDoScreen />
+        <ToDoScreen />
     </Provider>
   )
 }
