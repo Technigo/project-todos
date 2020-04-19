@@ -1,18 +1,26 @@
 import React from 'react'
-import { TitleContainer } from './TitleContainer'
-import { TodoInput } from './TodoInput'
 import { TodoItem } from './TodoItem'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
+import { EmptyState } from './EmptyState'
 
 export const TodoItems = () => {
   const items = useSelector(store => store.todos.items)
+  console.log(items)
 
   return (
     <TodoListing>
-      {items.map((item, index) => (
-        <TodoItem key={index} item={item} itemIndex={index}></TodoItem>
-      ))}
+      {items.length > 0 &&
+        <>
+          {items.map((item, index) => (
+            <TodoItem key={index} item={item} itemIndex={index}></TodoItem>
+          ))}
+        </>
+      }
+
+      {items.length === 0 &&
+        <EmptyState />
+      }
     </TodoListing>
   )
 }
