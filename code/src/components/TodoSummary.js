@@ -56,6 +56,8 @@ const GettingStarted = styled.h2`
   font-weight: lighter;
   font-size: 34px;
   margin: 0;
+  display: flex;
+  justify-self: flex-end;
 `;
 
 const Button = styled.button`
