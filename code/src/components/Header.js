@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import img from "../image/purty-wood.png";
+import border from "image/border-wood.jpg";
 
 export const Header = () => {
   return (
@@ -51,7 +52,7 @@ const Content = styled.header`
 
   box-shadow: inset 0px -5px 13px 3px #22332a;
 
-  border-image: url(/static/media/border-wood.bf645562.jpg) 30;
+  border-image: url(${border}) 30;
 
   margin-bottom: 20px;
   height: 150px;
@@ -59,4 +60,8 @@ const Content = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @media (max-width: 668px) {
+    border-image: none;
+  }
 `;

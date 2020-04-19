@@ -53,14 +53,14 @@ const Main = styled.section`
   background-repeat: repeat;
   background-size: contain;
   border-radius: 10px;
-  border: 15px solid #855418;
 
   box-shadow: inset 0px 1px 10px 10px #22332a;
 
-  border: 10px solid transparent;
+  border: 10px solid #855418;
   border-image: url(${border}) 30;
 
   @media (max-width: 668px) {
+    border-image: none;
     width: 70vw;
     padding: 15px;
   }
