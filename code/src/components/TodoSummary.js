@@ -55,6 +55,7 @@ const GettingStarted = styled.h2`
   color: #fff;
   font-weight: lighter;
   font-size: 34px;
+  margin: 0;
 `;
 
 const Button = styled.button`
