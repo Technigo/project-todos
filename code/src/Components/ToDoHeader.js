@@ -7,10 +7,15 @@ export const ToDoHeader = () => {
   const allItems = useSelector((store) => store.todoitem.items)
 
   return (
-    <div>
-      TodoHeader
-      items.length {allItems.length}
-      <button onClick={() => dispatch(todoitem.actions.removeAll())}>remove all</button>
-    </div>
+    <header>
+      <div>
+        <h1>To do</h1>
+        <p>Today's date</p>
+      </div>
+      <div>
+        <p>{allItems.length}</p>
+        <button onClick={() => dispatch(todoitem.actions.removeAll())}>remove all</button>
+      </div>
+    </header>
   )
 }
