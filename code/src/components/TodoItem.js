@@ -17,7 +17,13 @@ export const TodoItem = ({ itemIndex }) => {
     );
   };
 
-  const onRemoveClicked = event => { };
+  const onRemoveClicked = event => {
+    dispatch(
+      todos.actions.removeTodo({
+        itemIndex: itemIndex
+      })
+    );
+  };
 
 
 
@@ -29,7 +35,7 @@ export const TodoItem = ({ itemIndex }) => {
       ></input>
       <p>{item.description}</p>
 
-      <button onClick={onRemoveClicked}>Remove</button>
+      <button onClick={onRemoveClicked}>-</button>
     </div>
   )
 };
