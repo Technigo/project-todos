@@ -11,3 +11,62 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.todo-input {
+  margin: 8px;
+  display: flex;
+  flex: column;
+}
+
+.todo-input-text {
+  font-size: 22px;
+  width: 40%;
+}
+
+.todo-input-button {
+  padding: 8px;
+  font-size: 45px;
+  margin-left: 8px;
+  border:none;
+  background-color: transparent;
+  color: rgb(149, 158, 167);
+}
+
+.todo-list {
+  margin: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-color:#fff;
+  border-radius: 16px;
+}
+
+.todo-item {
+  margin: 8px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 24px;
+}
+
+.todo-item.done {
+  color: #a0a0a0;
+}
+
+.todo-item-check {
+  transform: scale(2);
+  margin: 16px;
+}
+
+.todo-item-remove {
+  cursor: pointer;
+  margin: 8px;
+  font-size: 14px;
+  color: rgb(111, 111, 230);
+}
+
+.todo-summary {
+  margin: 8px;
+}
