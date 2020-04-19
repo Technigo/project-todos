@@ -22,7 +22,7 @@ export const TodoList = () => {
       <TodoInput />
       <TodoListing>
         {items.map((task, index) => (
-          <TodoItem task={task} itemIndex={index}></TodoItem>
+          <TodoItem key={index} task={task} itemIndex={index}></TodoItem>
         ))}
       </TodoListing>
 

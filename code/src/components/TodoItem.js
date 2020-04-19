@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { todos } from '../reducers/todos'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
 
 export const TodoItem = ({ itemIndex }) => {
   const item = useSelector(store => store.todos.items[itemIndex])
@@ -31,7 +33,13 @@ export const TodoItem = ({ itemIndex }) => {
         ></Checkbox>
         {item.description}
       </Label>
-      <a onClick={onRemoveClicked}>Remove</a>
+      <RemoveButton
+        aria-label={`Delete ${item.description}`}
+        type="button"
+        onClick={onRemoveClicked}
+      >
+        <FontAwesomeIcon icon={faTrash} />
+      </RemoveButton>
     </Styled>
   )
 }
@@ -69,4 +77,7 @@ const Label = styled.label`
 
 const Checkbox = styled.input`
   opacity: 0;
+`
+
+const RemoveButton = styled.button`
 `
