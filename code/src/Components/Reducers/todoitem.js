@@ -4,17 +4,14 @@ export const todoitem = createSlice({
   name: 'todoitem',
   initialState: {
     items: [
-      { name: "todo1" },
-      { name: "todo2" }
     ]
   },
   reducers: {
     addItem: (state, action) => {
-      console.log("action name", action.payload)
-      state.items.push({ name: action.payload })
+      state.items.push({ id: Date.now(), name: action.payload })
     },
     removeItem: (state, action) => {
-
+      state.items = state.items.filter(item => item.id !== action.payload.id)
     }
   },
 })
