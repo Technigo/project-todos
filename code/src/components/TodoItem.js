@@ -41,25 +41,40 @@ export const TodoItem = ({ itemIndex }) => {
 
 const TodoContainer = styled.div`
   display: flex;
-  align-items: baseline;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
 `;
 
 const Divider = styled.div`
   display: flex;
-  align-items: baseline;
+  align-items: CENTER;
 `;
 
 const Description = styled.h2`
   font-family: "Pangolin", cursive;
   color: #fff;
   font-weight: lighter;
+  font-size: 27px;
 
   margin: 0;
 `;
 
 const Input = styled.input`
+  height: 20px;
+  width: 20px;
+  appearance: none;
+  border: 2px dashed #fff;
+  border-radius: 4px;
+  transition-duration: 0.3s;
+  background-color: none;
+  cursor: pointer;
+
+  &:checked {
+    border: 2px solid #fff;
+    background-color: #fff;
+  }
+
   &:checked + ${Description} {
     text-decoration: line-through;
   }
@@ -67,14 +82,15 @@ const Input = styled.input`
 
 const Remove = styled.button`
   font-family: "Pangolin", cursive;
-  color: #fff;
   font-weight: lighter;
+  font-size: 16px;
+  color: #fff;
+
   background: none;
 
   border-radius: 5px;
-  font-size: 16px;
-
-  font-family: "Pangolin", cursive;
+  border: 2px dashed #fff;
+  align-self: center;
 
   &:active {
     background: #2a4034;

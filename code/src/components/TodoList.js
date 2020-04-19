@@ -5,7 +5,7 @@ import { TodoInput } from "./TodoInput";
 import { TodoItem } from "./TodoItem";
 import { TodoSummary } from "./TodoSummary";
 import Lottie from "lottie-react-web";
-import animation from "../animation/taskman.json";
+import animation from "../animation/check-list.json";
 
 export const TodoList = () => {
   const list = useSelector((store) => store.todos.list);

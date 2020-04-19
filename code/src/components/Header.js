@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import img from "../image/purty-wood.png";
-import border from "image/border-wood.jpg";
+// import img from "../image/purty-wood.png";
+import img from "../image/chalkboard.png";
+import border from "image/wood-top.png";
 
 export const Header = () => {
   return (
@@ -45,12 +46,12 @@ const Title = styled.h1`
 const Content = styled.header`
   background: #426452;
   background-image: url(${img});
+  background-size: cover;
   background-repeat: repeat;
-  background-size: contain;
   border-radius: 0 0 10px 10px;
-  border-bottom: 5px solid #855418;
+  border-bottom: 10px solid #855418;
 
-  box-shadow: inset 0px -5px 13px 3px #22332a;
+  box-shadow: inset 0px -5px 13px 3px #22332a, -2px 3px 13px 3px #9e8d73;
 
   border-image: url(${border}) 30;
 

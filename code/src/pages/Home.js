@@ -6,8 +6,8 @@ import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import { todos } from "reducers/todos";
 import styled from "styled-components";
-import img from "../image/purty-wood.png";
-import border from "image/border-wood.jpg";
+import img from "../image/chalkboard.png";
+import border from "image/wood.png";
 
 export const Home = () => {
   const reducer = combineReducers({ todos: todos.reducer });
@@ -42,8 +42,8 @@ const Main = styled.section`
   align-items: space-evely;
   justify-content: center;
 
-  width: 40vw;
-  min-height: 250px;
+  width: 70%;
+  height: 50vh;
 
   padding: 30px;
   margin: auto;
@@ -54,14 +54,13 @@ const Main = styled.section`
   background-size: contain;
   border-radius: 10px;
 
-  box-shadow: inset 0px 1px 10px 10px #22332a;
+  box-shadow: inset 0px 1px 10px 10px #22332a, 0px 0px 19px 7px #9e8d73;
 
   border: 10px solid #855418;
   border-image: url(${border}) 30;
 
   @media (max-width: 668px) {
     border-image: none;
-    width: 70vw;
     padding: 15px;
   }
 `;

@@ -9,9 +9,14 @@ export const TodoSummary = () => {
 
   return (
     <div>
-      <TaskCount>
-        {doneList.length}/{list.items.length} tasks done!
-      </TaskCount>
+      {list.items.length !== 0 && (
+        <TaskCount>
+          {doneList.length}/{list.items.length} tasks done!
+        </TaskCount>
+      )}
+      {list.items.length === 0 && (
+        <GettingStarted>Time to write some tasks!</GettingStarted>
+      )}
     </div>
   );
 };
@@ -21,4 +26,12 @@ const TaskCount = styled.h2`
   text-align: center;
   color: #fff;
   font-weight: lighter;
+`;
+
+const GettingStarted = styled.h2`
+  font-family: "Pangolin", cursive;
+  text-align: center;
+  color: #fff;
+  font-weight: lighter;
+  font-size: 34px;
 `;

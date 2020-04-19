@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { todos } from "reducers/todos";
+import { todos } from "../reducers/todos";
 import styled from "styled-components";
 
 export const TodoInput = () => {
@@ -60,6 +60,7 @@ const Button = styled.input`
   background: none;
 
   border-radius: 5px;
+  border: 2px dashed #fff;
 
   &:active {
     background: #2a4034;
