@@ -51,7 +51,7 @@ const Styled = styled.div`
 const Label = styled.label`
   display: flex;
   align-items: center;
-  color: #3e3e2d;
+  color: ${prop => prop.itemChecked ? '#888d64' : '#3e3e2d'};
   font-size: 16px;
   text-decoration: ${prop => prop.itemChecked ? 'line-through' : ''};
 `

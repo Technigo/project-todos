@@ -1,9 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useDispatch, useSelector } from 'react-redux'
+import { todos } from '../reducers/todos'
 
 export const ClearAll = () => {
+  const items = useSelector(store => store.todos.items)
+  const dispatch = useDispatch()
+
+  const onClick = () => dispatch(todos.actions.clearAll())
+
   return (
-    <ClearAllButton>Clear all</ClearAllButton>
+    <>
+      {items.length > 0 &&
+        <ClearAllButton onClick={onClick}>Clear all</ClearAllButton>
+      }
+    </>
   )
 }
 

@@ -24,6 +24,9 @@ export const todos = createSlice({
       state.items = state.items.filter(
         (item, index) => index !== itemIndex
       )
+    },
+    clearAll: () => {
+      return initialState
     }
   }
 })

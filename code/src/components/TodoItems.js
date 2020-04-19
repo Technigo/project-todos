@@ -6,7 +6,6 @@ import { EmptyState } from './EmptyState'
 
 export const TodoItems = () => {
   const items = useSelector(store => store.todos.items)
-  console.log(items)
 
   return (
     <TodoListing>
