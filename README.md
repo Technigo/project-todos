@@ -1,6 +1,6 @@
 # Project Todos
 
-Working with Redux global state in a To do-app that can add, remove and clear all tasks. It will also provide an empty state if you're finished with everything.
+Working with Redux global state in a To do-app that can add, remove and clear all tasks. It will also provide an empty state if you're finished with everything 🌻📖✅🙋‍♀️
 
 ## Code
 I've used:
