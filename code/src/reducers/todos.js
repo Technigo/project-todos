@@ -8,6 +8,7 @@ const initialState = {
         completed: false,
         duedate: '',
         working: '',
+        shopping: true,
       },
     ],
   },
@@ -15,18 +16,8 @@ const initialState = {
 
 export const todos = createSlice({
   name: 'todos',
-  initialState: {
-    list: {
-      items: [
-        {
-          text: '',
-          completed: false,
-          duedate: '',
-          working: '',
-        },
-      ],
-    },
-  },
+  initialState: initialState,
+
   reducers: {
     // adding a task to the list
     addTodo: (state, action) => {
@@ -34,16 +25,13 @@ export const todos = createSlice({
       state.list.items.push(todoInfo);
     },
 
-    // setDueDate: (state, action) => {
-    //   const { dueDate } = action.payload;
-    //   state.list.items.push(dueDate);
-    // },
-
+    // changing task to completed/uncompleted
     setCompleted: (state, action) => {
       const { itemIndex, completed } = action.payload;
       state.list.items[itemIndex].completed = completed;
     },
 
+    // removing all items
     setReset: (state, action) => {
       const { reset } = action.payload;
       return initialState;

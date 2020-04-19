@@ -22,16 +22,25 @@ export const ToDoItem = ({ itemIndex }) => {
     return <></>;
   } else {
     return (
-      <div>
-        {item.text}
-        <input
-          type='checkbox'
-          onChange={handleOnChange}
-          checked={item.completed ? 'completed' : ''}
-        ></input>
-        <p>added {moment(item.createdAt).format('ll')}</p>
-        <p>due: {moment(item.duedate).format('ll')}</p>
-      </div>
+      <article
+        className={`todoitems 
+      ${item.shopping === true ? 'toshopitem' : ''}`}
+      >
+        <p className='task'>
+          <input
+            type='checkbox'
+            onChange={handleOnChange}
+            checked={item.completed ? 'completed' : ''}
+          ></input>
+          {item.text}
+        </p>
+        <div className='dates'>
+          <p className='dateadded'>
+            added: {moment(item.createdAt).format('ll')}
+          </p>
+          <p className='dateadded'>due: {moment(item.duedate).format('ll')}</p>
+        </div>
+      </article>
     );
   }
 };

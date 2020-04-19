@@ -14,7 +14,7 @@ import 'react-day-picker/lib/style.css';
 
 import 'moment/locale/it';
 
-export const ToDoInput = ({ itemsId }) => {
+export const ToShopInput = ({ itemsId }) => {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState('');
   const [dueDate, setDueDate] = useState(new Date());
@@ -29,6 +29,7 @@ export const ToDoInput = ({ itemsId }) => {
           text: inputValue,
           completed: false,
           duedate: selectedDay,
+          shopping: true,
         },
       })
     );

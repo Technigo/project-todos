@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { ToDoInput } from './todoinput';
+import { ToShopInput } from './toshopinput';
 import { ToDoItem } from './todoitem';
 import { Summary } from './todosummary';
 import { useSelector, useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos.js';
 import { CompletedTasks } from './completedtodolist';
+import '../index.css';
 
 export const ToDoList = () => {
   // Pick up things from the store
@@ -14,28 +16,34 @@ export const ToDoList = () => {
 
   const dispatch = useDispatch();
 
+  // will remove all items in the store
   const resetall = () => {
     dispatch(
       todos.actions.setReset({
         reset: reset,
         setReset: setReset,
       })
-      // return {
-      //   type: 'RESET_ITEM',
-      // };
     );
   };
 
   return (
-    <div>
-      hello todolist-component. Here you can start adding your todoItems
-      <ToDoInput />
+    <main className='main'>
+      <h1>Stuff to do</h1>
+      <section className='additems'>
+        <article className='additem addtodo'>
+          <ToDoInput />
+        </article>
+        <article className='additem addtoshop'>
+          <ToShopInput />
+        </article>
+      </section>
+      <Summary />
       {list.items.map((item, index) => (
         <ToDoItem item={item} itemIndex={index} />
       ))}
-      <Summary />
+
       <CompletedTasks />
       <button onClick={resetall}>reset</button>
-    </div>
+    </main>
   );
 };
