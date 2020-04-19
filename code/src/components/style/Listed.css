@@ -26,12 +26,12 @@
 
 .todoText {
   font-size: 18px;
-  color: #000000;
+  color: #17484e;
   margin-right: 10px;
   overflow-wrap: break-word;
 }
 
-/* If checked - makes little transparent and overlined */
+/* If todo = checked => transparent and overlined */
 .check {
   opacity: 0.5;
   text-decoration: line-through;

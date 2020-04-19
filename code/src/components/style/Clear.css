@@ -1,11 +1,12 @@
 /* Clear all component - with button, alert, left to do */
 .clearAll {
   margin-top: 30px;
-  width: 100px;
+  width: 150px;
   height: 30px;
   border-radius: 10px;
-  background-color: white;
-  color: gray;
+  background-color: rgb(216, 162, 207);
+  color: white;
+  border: none;
   outline: none;
   font-family: 'Menlo', sans-serif;
   font-size: 14px;
@@ -18,7 +19,7 @@
 
 .amountOf {
   font-weight: bold;
-  color: gray;
+  color: rgba(128, 128, 128, 0.692);
   font-size: 14px;
   text-align: center;
   font-family: 'Menlo', sans-serif;
