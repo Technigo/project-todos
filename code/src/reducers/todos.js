@@ -1,10 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  items: [
-    { description: 'Test', done: false },
-    { description: 'Test2', done: false }
-  ]
+  items: []
 }
 
 export const todos = createSlice({
