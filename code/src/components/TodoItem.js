@@ -9,7 +9,7 @@ export const TodoItem = ({itemIndex}) => {
   const onRemoveClicked = (event) => {
     dispatch(
       todos.actions.removeTodo({
-        itemIndex,
+        itemIndex, itemIndex
       })
     );
   };
@@ -23,19 +23,21 @@ export const TodoItem = ({itemIndex}) => {
     );
   };
 
-
   return (
-    
     <div className={`todo-item ${item.done ? "done" : ""}`}>
       <input type="checkbox"
-      onChange={handleOnChange} 
-      className="todo-item-check"
-      checked={item.done ? true : ""}
-      />
+        onChange={handleOnChange} 
+        className="todo-item-check"
+        checked={item.done ? true : ""}>
+      </input>
     
-    <span className="todo-item-description"> {item.description} </span>
-    <button className="todo-item-remove" onClick={onRemoveClicked}> CLEAR </button>
-    </div>
-    
+      <span className="todo-item-description"> 
+        {item.description} 
+      </span>
+      
+      <button className="todo-item-remove" 
+        onClick={onRemoveClicked}> CLEAR 
+      </button>
+    </div>  
   );
 };

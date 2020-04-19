@@ -13,8 +13,8 @@ export const Home = () => {
   return (
     <Provider store={store}>
       <div className="home-page">
-      <Header/>
-      <TodoList></TodoList> 
+        <Header/>
+        <TodoList/>
       </div> 
     </Provider>
   );

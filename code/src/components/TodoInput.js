@@ -10,7 +10,7 @@ export const TodoInput = () => {
   const handleOnSubmit = e => {
     // Prevent page reload
     e.preventDefault();
-    console.log(inputValue)
+    //console.log(inputValue)
   
 
   // This is where we will Dispatch the action to save new todo item
@@ -27,13 +27,11 @@ export const TodoInput = () => {
 
   return (
     <form className="todo-input" onSubmit={handleOnSubmit}>
-
-
       <input
-        type="submit"
-        className="todo-input-button"
-        value="+"
-      ></input>
+        type="submit" 
+        className="todo-input-button" 
+        value="+">
+      </input>
 
       <input
         type="text"
@@ -41,9 +39,7 @@ export const TodoInput = () => {
         value={inputValue}
         className="todo-input-text"
         placeholder={"Add task"}> 
-        </input>
-
-      
+      </input> 
     </form>    
-    );
+  );
 };

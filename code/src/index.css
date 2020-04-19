@@ -16,7 +16,7 @@ body, html {
 }
 
 .home-page {
-  width: 400px;
+  width: 350px;
 }
 
 .header-container {
@@ -28,9 +28,6 @@ body, html {
 
 .header-info {
   padding: 25px;
-  /*color: white;*/
-  /*display: inline-block;*/
-  
 }
 
 .todo-summary {
