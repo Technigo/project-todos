@@ -7,7 +7,9 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 // import reducers:
 import { tasks } from '../reducers/tasks'
+
 import { TaskList } from '../components/TaskList'
+import { Header } from '../components/Header'
 
 
 // first we create our combined-REDUCER-file:
@@ -22,6 +24,7 @@ const store = configureStore({ reducer })
 export const Home = () => {
   return (
     <Provider store={store}>      
+      <Header />
       <TaskList />
     </Provider>
   )

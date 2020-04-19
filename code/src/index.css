@@ -26,9 +26,12 @@ code {
 }
 
 .todo-input-button {
+  cursor: pointer;
   padding: 8px;
   font-size: 22px;
   margin-left: 16px;
+  background-color: #6878A0;
+  color: #efefef;
 }
 
 .todo-list {
@@ -62,8 +65,8 @@ code {
 .todo-item-remove {
   cursor: pointer;
   margin: 8px;
-  font-size: 14px;
-  color: blue;
+  font-size: 12px;
+  color: rgb(255, 77, 0);
 }
 
 .todo-summary {
