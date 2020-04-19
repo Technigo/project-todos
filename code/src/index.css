@@ -1,18 +1,100 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+* {
+  box-sizing: border-box;
 }
 
 header {
   display: flex;
   justify-content: space-between;
+  padding: 20px;
+  background-color: #87cefa80;
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+h1 {
+  margin: 0;
+  font-size: 3.2em;
+}
+
+header p {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+header button {
+  background-color: darksalmon;
+  border: none;
+  border-radius: 40px;
+  padding: 5px;
+}
+
+form {
+  display: flex;
+  height: 55px;
+  border-bottom: solid 1px grey;
+  background-color: #add8e645;
+}
+
+form button {
+  border: none;
+  font-size: 2.3em;
+  width: 10%;
+  color: #D0C9D6;
+  background-color: transparent;
+}
+
+form input {
+  border: none;
+  border: none;
+  background-color: #eefbff45;
+  font-size: 1.5em;
+  height: 100%;
+  width: 90%;
+}
+
+.finished-status {
+  height: 25px;
+  width: 25px;
+  margin: 0 5px;
+  border: #6979F8 2px solid;
+  border-radius: 50%;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  height: 55px;
+  background-color: #eefbff45;
+  border-bottom: solid 1px grey;
+  font-size: 1.5em;
+}
+
+.todo-item button {
+  border: none;
+  background-color: transparent
+}
+
+.fill {
+  background-color: #6979F8;
+}
+
+.done {
+  color: #D0C9D6;
 }

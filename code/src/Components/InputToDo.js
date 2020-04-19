@@ -15,17 +15,18 @@ export const InputToDo = () => {
   //Add todoitems by mapping the items in the todolist in the store
   return (
     <form onSubmit={handleSubmit}>
+      <button
+        type="submit">
+        +
+      </button>
       <input
-        type="textarea"
+      type="text"
+        placeholder="Add Task"
         value={input}
         onChange={(event) => setInput(event.target.value)}
       >
       </input>
-      <button
-        type="submit">
-        Submit Todo
-      </button>
-    </form>
+       </form>
 
   )
 }

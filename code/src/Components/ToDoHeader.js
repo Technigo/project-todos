@@ -8,12 +8,12 @@ export const ToDoHeader = () => {
 
   return (
     <header>
-      <div>
+      <div className="header-left">
         <h1>To do</h1>
         <p>Today's date</p>
       </div>
-      <div>
-        <p>{allItems.length}</p>
+      <div className="header-right">
+        <p>{allItems.length} tasks</p>
         <button onClick={() => dispatch(todoitem.actions.removeAll())}>remove all</button>
       </div>
     </header>
