@@ -7,7 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: white;
   box-sizing: border-box;
-  background-color: #99F2AF;
+  background-color: #04D9B2;
 }
 
 code {
@@ -33,10 +33,11 @@ code {
   -webkit-transition: 0.5s;
   transition: 0.5s;
   outline: none;
+  text-transform: capitalize;
 }
 
 .todo-input-text:focus {
-  border: 3px solid #ff6cd7;
+  border: 3px solid #ff5464;
 }
 
 .todo-input-button {
@@ -45,17 +46,24 @@ code {
   font-size: 32px;
   margin-left: 16px;
   margin-top: 10px;
-  background-color: #ff6cd7;
+  background-color: #F24957;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.todo-input-button:hover {
+  opacity: 1;
 }
 
 .todo-input-button:active {
-  background: #ff6cd7;
-  box-shadow: inset 7px 7px 14px #a14487, 
-              inset -7px -7px 14px #ff94ff;
+  box-shadow: inset 20px 20px 60px #ce3e4a, 
+  inset -20px -20px 60px #ff5464;
+  transform: translateY(2px);
+  background: #F24957;
 }
 
 .todo-input-button:focus {
@@ -81,10 +89,12 @@ outline: none;
   justify-content: flex-start;
   font-size: 24px;
   font-family: 'Manrope', sans-serif;
+  text-transform: capitalize;
 }
 
 .todo-item.done {
   text-decoration: line-through;
+  color: grey;
 }
 
 .todo-item-check {
@@ -96,22 +106,29 @@ outline: none;
   cursor: pointer;
   border: none;
   margin-left: 20px;
-  padding: 8px 20px 8px 20px;
+  padding: 4px 8px 4px 8px;
   font-size: 12px;
-  color: black;
+  color: white;
   cursor: pointer;
   text-transform: uppercase;
   text-decoration: none;
   font-family: 'Manrope', sans-serif;
-  font-weight: 600;
-  border-radius: 10px;
-  background: #99F2AF;
+  font-weight: 800;
+  border-radius: 8px;
+  background: #F27405;
+  opacity: 0.7;
+  transition: 0.3s;
+}
+
+.todo-item-remove:hover {
+  opacity: 1;
 }
 
 .todo-item-remove:active {
-  background: #79F297;
-  box-shadow: inset 7px 7px 14px #4c985f, 
-            inset -7px -7px 14px #a6ffcf;
+  background: #F27405;
+  box-shadow: inset 20px 20px 60px #ce6304, 
+  inset -20px -20px 60px #ff8506;
+  transform: translateY(2px);
 }
 
 .todo-item-remove:focus {

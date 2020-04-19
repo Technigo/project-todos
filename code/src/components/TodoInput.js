@@ -39,6 +39,6 @@ export const TodoInput = ({ listID }) => {
         value="+"
       >
       </input>
-    </form>
+    </form >
   )
 }

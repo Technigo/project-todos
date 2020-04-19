@@ -5,6 +5,7 @@ import { TodoList } from '../components/TodoList.js'
 import { Header } from '../components/Header.js'
 import { todos } from '../reducers/todos.js'
 import home from './home.css'
+import styled from 'styled-components/macro'
 
 
 // STORE CREACTION : tell redux about our reducers

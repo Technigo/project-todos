@@ -24,6 +24,9 @@ export const todos = createSlice({
       const { itemIndex, done } = action.payload
       state.list.items[itemIndex].done = done // to update the global state
     },
+    removeAll: (state, action) => {
+      state.todos = []
+    },
     removeTodo: (state, action) => {
       const { itemIndex } = action.payload
       state.list.items = state.list.items.filter(

@@ -8,8 +8,6 @@ export const TodoList = () => {
   // Get list information for this list from the store
   const list = useSelector((store) => store.todos.list)
 
-  // Show TodoInput + ecach TodoItem in the list + TodoSummary
-
   return (
     <section className="todo-list">
       <TodoInput />
