@@ -29,10 +29,15 @@ export const todos = createSlice({
       state.list.items = [];
     },
     setAll: (state) => {
-      state.list.items.forEach((item) => {
-        const doneOrNot = item.done;
-        item.done = !doneOrNot;
-      });
+      if (state.list.items[0].done) {
+        state.list.items.forEach((item) => {
+          item.done = false;
+        });
+      } else {
+        state.list.items.forEach((item) => {
+          item.done = true;
+        });
+      }
     },
   },
 });

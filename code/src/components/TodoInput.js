@@ -11,10 +11,13 @@ export const TodoInput = () => {
     //inputValue !== "" removes possibilty to add empty todo
     if (inputValue !== "") {
       e.preventDefault();
+      const date = new Date();
+      const currentDate = date.getTime();
       dispatch(
         todos.actions.addTodo({
           description: inputValue,
           done: false,
+          date: currentDate,
         })
       );
       setInputValue("");

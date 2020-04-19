@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import { combineReducers, createStore } from "@reduxjs/toolkit";
 import { TodoList } from "../components/TodoList";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -10,8 +10,33 @@ import img from "../image/chalkboard.png";
 import border from "image/wood.png";
 
 export const Home = () => {
+  const saveToLocalStorage = (state) => {
+    try {
+      const serializedState = JSON.stringify(state);
+      localStorage.setItem("state", serializedState);
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
+  const loadFromLocalStorage = () => {
+    try {
+      const serializedState = localStorage.getItem("state");
+      if (serializedState === null) return undefined;
+      return JSON.parse(serializedState);
+    } catch (e) {
+      console.log(e);
+      return undefined;
+    }
+  };
+
   const reducer = combineReducers({ todos: todos.reducer });
-  const store = configureStore({ reducer });
+
+  const persistedState = loadFromLocalStorage();
+
+  const store = createStore(reducer, persistedState);
+
+  store.subscribe(() => saveToLocalStorage(store.getState()));
 
   return (
     <Provider store={store}>
