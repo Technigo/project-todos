@@ -1,8 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+Working with Redux global state in a To do-app that can add, remove and clear all tasks. It will also provide an empty state if you're finished with everything.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Code
+I've used:
+  * **Redux**
+  * **React.js**
+  * **JavaScript**
+  * **CSS**
 
 ## The problem
 
