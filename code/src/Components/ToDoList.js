@@ -9,7 +9,9 @@ export const ToDoList = () => {
     <div>
       < ToDoHeader />
       < InputToDo />
-      < ToDoItem />
+      <ul>
+        < ToDoItem />
+      </ul>
     </div>
   )
 }

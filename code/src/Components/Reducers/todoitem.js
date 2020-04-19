@@ -8,7 +8,7 @@ export const todoitem = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      state.items.push({ id: Date.now(), name: action.payload })
+      state.items.push({ id: Date.now(), name: action.payload, done: false})
     },
     removeItem: (state, action) => {
       state.items = state.items.filter(item => item.id !== action.payload.id)
