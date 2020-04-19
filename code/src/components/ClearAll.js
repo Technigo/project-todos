@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import swal from 'sweetalert'
 import { todos } from '../reducers/todos'
 
-import './Content.css'
+import './style/Clear.css'
 import { AmountOf } from './AmountOf'
 
 export const ClearAll = () => {
@@ -24,7 +24,7 @@ export const ClearAll = () => {
     )}
     })
   }
-  
+
   return (
     <div>
       <button type="button"

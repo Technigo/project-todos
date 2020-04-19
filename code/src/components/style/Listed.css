@@ -1,0 +1,124 @@
+/* Shows the added todos */
+.postedContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 20px;
+  font-family: 'Menlo', sans-serif;
+}
+
+.eachItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 280px;
+  border-bottom: 2px solid rgb(103, 153, 168);
+  margin: 15px;
+  overflow-wrap: break-word;
+  transition: .3s ease-in-out;
+}
+
+/* Get to flip through the items */
+.eachItem:hover {
+  transform: scale(1.1);
+}
+
+.todoText {
+  font-size: 18px;
+  color: #000000;
+  margin-right: 10px;
+  overflow-wrap: break-word;
+}
+
+/* If checked - makes little transparent and overlined */
+.check {
+  opacity: 0.5;
+  text-decoration: line-through;
+}
+
+.todoTime {
+  font-size: 14px;
+  color: rgb(0, 0, 0);
+}
+
+.removeItem {
+  font-size: 18px;
+  border: none;
+  background-color: white;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.removeItem:hover {
+  transition: .3s ease-in-out;
+  opacity: .6;
+  cursor: pointer;
+}
+
+.checkBox {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkBox > input {
+  height: 20px;
+  width: 20px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid rgb(228, 74, 125);
+  border-radius: 50%;
+  outline: none;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+.checkBox > input:checked {
+  background-color: rgb(228, 74, 125);
+}
+
+.checkBox > input:checked + span::before {
+  display: block;
+  text-align: center;
+  color: rgb(0, 0, 0);
+  position: absolute;
+}
+
+.checkBox > input:active {
+  border: 2px solid rgb(255, 255, 255);
+}
+
+.checkBox:hover {
+  opacity: .8;
+}
+
+/* Adjust to mobile */
+@media (max-width: 670px) {
+  section {
+    width: 100%;
+  }
+
+  .postedContainer {
+    width: 100%;
+  }
+
+  .eachItem {
+    width: 80%;
+    margin: 10px 0px;
+    padding-bottom: 5px;
+  }
+
+  .eachItem:hover {
+    transform: none;
+  }
+
+  .todoText {
+    margin: 5px 10px;
+    font-size: 16px;
+  }
+}
+

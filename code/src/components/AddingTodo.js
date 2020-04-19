@@ -2,7 +2,7 @@ import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 
 import { todos } from "reducers/todos"
-import './Adding.css'
+import './style/Adding.css'
 
 
 export const AddingTodo = ({ todoId }) => {

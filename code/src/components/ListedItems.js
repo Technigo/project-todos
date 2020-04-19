@@ -2,7 +2,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { CompleteList } from './CompleteList'
 
-import './Listed.css'
+import './style/Listed.css'
+import './style/EmptyState.css'
 
 export const ListedItems = () => {
   const allTodos = useSelector((store) => store.todos.list)

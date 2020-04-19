@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { todos } from 'reducers/todos'
 
-import './Listed.css'
+import './style/Listed.css'
 
 export const CompleteList = ({ todoIndex }) => {
   const dispatch = useDispatch()

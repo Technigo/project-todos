@@ -4,7 +4,8 @@ import { AddingTodo } from './AddingTodo'
 import { ListedItems } from './ListedItems'
 import { ClearAll } from './ClearAll'
 
-import './Content.css'
+import './style/Content.css'
+import './style/Base.css'
 
 export const TodoContent = () => {
   return (

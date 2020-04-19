@@ -1,0 +1,44 @@
+/* Clear all component - with button, alert, left to do */
+.clearAll {
+  margin-top: 30px;
+  width: 100px;
+  height: 30px;
+  border-radius: 10px;
+  background-color: white;
+  color: gray;
+  outline: none;
+  font-family: 'Menlo', sans-serif;
+  font-size: 14px;
+  transition: .4s ease-in-out;
+}
+
+.clearAll:hover {
+  transform: scale(0.8);
+}
+
+.amountOf {
+  font-weight: bold;
+  color: gray;
+  font-size: 14px;
+  text-align: center;
+  font-family: 'Menlo', sans-serif;
+  text-align: center;
+}
+
+/* If nothing left todo - hide element */
+.clearAll:disabled {
+  display: none;
+}
+
+.noAmount {
+  display: none;
+}
+
+/* SweetAlert styling */
+.swal-button--danger {
+  background-color: teal;
+}
+
+.swal-modal {
+  border-radius: 20px;
+}

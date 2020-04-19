@@ -1,17 +1,4 @@
-body,
-html {
-  background: linear-gradient(rgba(0, 0, 0, 0.103), rgba(0, 0, 0, 0.055)),
-  url('https://images.unsplash.com/photo-1533158326339-7f3cf2404354?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1004&q=80');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
+/* Styling for adding section */
 .addingTodo {
   display: flex;
   justify-content: center;
@@ -34,6 +21,7 @@ html {
 
 .addingTodo textarea::placeholder {
   padding: 3px;
+  font-family: 'Menlo', sans-serif;
 }
 
 .addingTodo button {
@@ -46,6 +34,7 @@ html {
   background-color: white;
   -webkit-appearance: none;
   -moz-appearance: none;
+  font-family: 'Menlo', sans-serif;
 }
 
 .addingTodo button:disabled {
@@ -136,25 +125,8 @@ html {
   }
 }
 
+/* Adjusted for mobile */
 @media (max-width: 668px) {
-  body,
-  html {
-    max-height: 100%;
-    max-width: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #root {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    margin: 30px 0px;
-  }
-
   .addingTodo{
     width: 100%;
   }
