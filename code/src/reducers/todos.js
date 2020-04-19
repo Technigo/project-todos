@@ -35,17 +35,17 @@ const initialState = {
       {
         text: 'Buy Candy!',
         complete: false,
-        time: moment().format('D/M, HH:mm').subtract(1, 'days')
+        // time: moment().format('D/M, HH:mm')
       },
       {
         text: 'Walk the dog',
         complete: true,
-        time: moment().format('D/M, HH:mm').subtract(2, 'hours')
+        // time: moment().format('D/M, HH:mm')
       },
       {
         text: 'Apply for jobs 🌸',
         complete: false,
-        time: moment().format('D/M, HH:mm').subtract(5, 'days')
+        // time: moment().format('D/M, HH:mm')
       }
     ]
   }

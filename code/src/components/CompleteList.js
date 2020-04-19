@@ -41,7 +41,6 @@ export const CompleteList = ({ todoIndex }) => {
         <div className="timeAndText">
           <p className={todo.complete === true ? "todoText check" : "todoText"}>{todo.text}</p>
           <p className="todoTime">{moment(todo.time).format('D/M, HH:mm')}</p>
-          {/* <p className="todoTime">{Date.now()}</p> */}
         </div>
 
         <button type="button"
