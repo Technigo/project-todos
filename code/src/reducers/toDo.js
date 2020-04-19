@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const toDo = createSlice({
-  name: 'toDo',
+export const ToDo = createSlice({
+  name: 'ToDo',
   initialState: {
     items: [
-      { id: 1, name: 'Milk', needsMore: false },
-      { id: 2, name: 'Butter', needsMore: true },
-      { id: 3, name: 'Cheese', needsMore: false }
+      { id: 1, name: 'Take over the world', completed: false },
+      { id: 2, name: 'Tequila reace', completed: true },
+      { id: 3, name: 'Clean the kitchen', completed: false }
     ]
   },
   reducers: {
@@ -22,14 +22,14 @@ export const toDo = createSlice({
     removeAll: (state, action) => {
       state.items = []
     },
-    toggleNeedsMore: (state, action) => {
+    toggleCompleted: (state, action) => {
       console.log(action.payload)
       // find 'cheese'
       const foundItem = state.items.find(item => item.id === action.payload)
 
-      // toggle the value of needsMore
+      // toggle the value of completed
       if (foundItem) {
-        foundItem.needsMore = !foundItem.needsMore
+        foundItem.completed = !foundItem.completed
       }
     }
   }
