@@ -75,11 +75,8 @@ const Title = styled.h1`
 
 const TodoListing = styled.section`
   flex: 1;
-  width: 85%;
-  margin: 15px auto;
-  padding: 5px 10px;
-  border-radius: 10px;
-  background: #ece4cd;
+  width: 90%;
+  margin: 5px auto;
 `
 
 const DateToday = styled.p`

@@ -51,32 +51,38 @@ const Styled = styled.div`
 const Label = styled.label`
   display: flex;
   align-items: center;
+  color: #3e3e2d;
   font-size: 16px;
 `
 
 const Checkbox = styled.button`
-  width: 20px;
-  height: 20px;
+  width: 35px;
+  height: 35px;
   margin-right: 10px;
-  padding-left: 4px;
-  border: 1px solid;
-  border-radius: 5px;
-  background: none;
+  padding-left: 8px;
+  padding-bottom: 6px;
+  border: none;
+  border-radius: 10px; 
+  background: #888d64;
+  color: #fff;
   font-size: 20px;
 
   &:after {
     content: '';
     display: ${prop => (prop.itemChecked ? 'block' : 'none')};
-    width: 9px;
-    height: 5px;
-    border-left: 1px solid;
-    border-bottom: 1px solid;
-    transform: rotate(-45deg);
+    width: 15px;
+    height: 7px;
+    border-left: 3px solid;
+    border-bottom: 3px solid;
+    /* border-radius: 0 4px; */
+    transform: rotate(-50deg);
   }
 `
 
 const RemoveButton = styled.button`
+  margin-right: 7px;
   border: none;
   background: none;
-  font-size: 20px;
+  color: #888d64;
+  font-size: 25px;
 `

@@ -24,10 +24,12 @@ export const TodoInput = () => {
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
         placeholder='Add task...'
+        maxLength={25}
       ></TodoInputField>
       <Submit
         type='submit'
         value='+'
+        disabled={inputValue < 1 ? true : false}
       ></Submit>
     </TodoForm >
   )
@@ -47,23 +49,25 @@ const TodoInputField = styled.input`
   border: none;
   border-radius: 10px;
   background: #e8cbb9;
-  font-size: 16px;
+  color: #3e3e2d;
+  font-size: 12px;
 
   ::placeholder {
-    color: #ce745a;
+    color: #3e3e2d;
     opacity: 1;
   }
   
   :-ms-input-placeholder {
-    color: #ce745a;
+    color: #3e3e2d;
   }
   
   ::-ms-input-placeholder {
-    color: #ce745a;
+    color: #3e3e2d;
   }
 `
 
 const Submit = styled.input`
+  opacity: ${prop => prop.disabled ? 0.7 : 1};
   width: 50px;
   height: 50px;
   border: none;
