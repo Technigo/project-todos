@@ -28,18 +28,22 @@ export const TodoInput = () => {
   return (
     <form className="todo-input" onSubmit={handleOnSubmit}>
 
+
+      <input
+        type="submit"
+        className="todo-input-button"
+        value="+"
+      ></input>
+
       <input
         type="text"
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
         className="todo-input-text"
-      ></input>
+        placeholder={"Add task"}> 
+        </input>
 
-      <input
-        type="submit"
-        className="todo-input-button"
-        value="Add Todo"
-      ></input>
+      
     </form>    
     );
 };

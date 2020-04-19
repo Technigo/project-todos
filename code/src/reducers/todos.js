@@ -7,11 +7,16 @@ const initialState = {
 
       {
         description: "Create To-do app",
-        done: false
+        done: true
       },
 
       {
         description: "Book a summer trip",
+        done: false
+      },
+
+      {
+        description: "Do my homework",
         done: false
       }
       

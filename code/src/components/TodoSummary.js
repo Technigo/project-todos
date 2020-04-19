@@ -9,7 +9,7 @@ export const TodoSummary = () => {
   return (
     <div>
       <h2>
-        {doneList.length}/{list.items.length} tasks done!
+        {doneList.length}/{list.items.length}
       </h2>
     </div>
   );

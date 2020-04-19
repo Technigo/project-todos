@@ -12,7 +12,7 @@ export const Home = () => {
 
   return (
     <Provider store={store}>
-      <div className="bajs">
+      <div className="home-page">
       <Header/>
       <TodoList></TodoList> 
       </div> 
