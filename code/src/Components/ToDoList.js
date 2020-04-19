@@ -1,12 +1,13 @@
 import React from 'react'
 import { ToDoItem } from './ToDoItem'
 import { InputToDo } from './InputToDo'
+import { ToDoHeader } from './ToDoHeader'
 
 export const ToDoList = () => {
 
   return (
     <div>
-      TodoList
+      < ToDoHeader />
       < InputToDo />
       < ToDoItem />
     </div>
