@@ -33,15 +33,18 @@ const initialState = {
     todos: [
       {
         text: 'Buy Candy!',
-        complete: false
+        complete: false,
+        time: '2 hours ago'
       },
       {
         text: 'Walk the dog',
-        complete: true
+        complete: true,
+        time: '36 minutes ago'
       },
       {
         text: 'Apply for jobs 🌸',
-        complete: false
+        complete: false,
+        time: '2 days ago'
       }
     ]
   }
