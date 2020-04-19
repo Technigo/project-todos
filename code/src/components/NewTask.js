@@ -35,8 +35,19 @@ const StyledInput = styled.input`
 	width: ${props => props.width*0.8}px;
   height: ${props => (props.width<500)?60:40}px;
 	border: 1px solid black;
+  background-color: #C7D3D4;
 	box-shadow: none;
 `;
+
+const DateInput = styled.input`
+  width: 200px;
+  background-color: #C7D3D4;
+  border: 1px solid black;
+  height: 32px;
+
+`
+
+
 const FormButton = styled.button`
 	box-shadow: none;
 	font-size: 40px;
@@ -62,7 +73,7 @@ export const NewTask = () => {
     <StyledSection>
       <SectionHeader width={theWidth}>Make a new Todo</SectionHeader>
 		  <StyledForm onSubmit={handleNewTask}>
-      
+      <label for="todoInput">Write the task</label>
         <Wrapper width={theWidth}>
           <StyledInput width={theWidth} type="text" name="todoInput" onChange={ (e) => setTaskInput(e.target.value)} value={taskInput} />
       
@@ -70,14 +81,11 @@ export const NewTask = () => {
 				    +
 			    </FormButton>
         </Wrapper>
-        <label for="todoInput">Write the task</label>
-        <label>
-          <input type="checkbox" name="today" value="today" />
-          Finish today
-        </label>
-        <input type="date" id="start" name="trip-start" onChange={e=> setStartDate(e.target.value)}
-       value={startDate}
-       ></input>
+        
+        <label for="start">Pick a due date</label>
+        <DateInput type="date" id="start" name="start" onChange={e=> setStartDate(e.target.value)}
+       value={startDate}></DateInput>
+  
 		</StyledForm>
     </StyledSection>
 	);
@@ -99,4 +107,6 @@ export const NewTask = () => {
 //     />
 //   );
 // };
+
+
 

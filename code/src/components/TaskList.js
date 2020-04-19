@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import {todoStore} from '../reducers/todoStore'
 import { TaskItem } from './TaskItem'
 import {StyledSection, SectionHeader} from './NewTask'
+import {ItemButton} from './TaskItem'
 
 const StyledGrid = styled.section`
   width: ${props=>props.width}px;
@@ -13,6 +14,15 @@ const StyledGrid = styled.section`
   align-items: center;
   justify-content: flex-start;
 `
+const ClearButton = styled.button`
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  box-shadow: 1px 1px 2px #222;
+`
+
 
 
 export const TaskList = () => {
@@ -33,7 +43,7 @@ export const TaskList = () => {
         <TaskItem todo={task} />
       ))}
       </StyledGrid>
-      <button onClick={handleClear}>Clear All</button>
+      <ClearButton onClick={handleClear} >clear</ClearButton>
     </StyledSection>
   )
 }

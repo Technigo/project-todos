@@ -22,11 +22,13 @@ const TodoItem = styled.button`
 	border: 1px solid black;
 	box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 	border-radius: 25px;
+  text-transform: capitalize;
 	opacity: ${(props) => (props.todoDone ? 0.6 : 1)};
 `;
 const SmallText = styled.p`
 	font-size: 14px;
 	font-width: 100;
+  font-style: italic;
   
 `;
 const MediumText = styled.p`
@@ -34,7 +36,7 @@ const MediumText = styled.p`
 	font-width: 100;
   text-decoration: ${props=>props.todoDone ? 'line-through' : 'none'};
 `;
-const ItemButton = styled.button`
+export const ItemButton = styled.button`
 	box-shadow: none;
 	font-size: 40px;
 	background: none;
@@ -57,7 +59,7 @@ export const TaskItem = ({ todo }) => {
     <Wrapper width={theWidth}>
 			<TodoItem todoDone={todo.taskDone} onClick={handleStatusChange}>
 				<MediumText todoDone={todo.taskDone}>{todo.task}</MediumText>
-        <MediumText>{moment(todo.dueDate).fromNow()}</MediumText>
+        <SmallText>{moment(todo.dueDate).fromNow()}</SmallText>
 			</TodoItem>
 			<ItemButton onClick={handleDelete} aria-label="remove">
 				-
