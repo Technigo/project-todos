@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import moment from 'moment'
 // import moment from 'moment'
 
 // const initialState = {
@@ -34,17 +35,17 @@ const initialState = {
       {
         text: 'Buy Candy!',
         complete: false,
-        time: '2 hours ago'
+        time: moment().subtract(1, 'days')
       },
       {
         text: 'Walk the dog',
         complete: true,
-        time: '36 minutes ago'
+        time: moment().subtract(2, 'hours')
       },
       {
         text: 'Apply for jobs 🌸',
         complete: false,
-        time: '2 days ago'
+        time: moment().subtract(5, 'days')
       }
     ]
   }
