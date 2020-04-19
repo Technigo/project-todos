@@ -23,7 +23,7 @@ export const TodoItem = ({ itemIndex }) => {
 
   return (
     <Styled>
-      <Label>
+      <Label itemChecked={itemChecked}>
         <Checkbox
           type='button'
           onClick={onCheckClick}
@@ -53,6 +53,7 @@ const Label = styled.label`
   align-items: center;
   color: #3e3e2d;
   font-size: 16px;
+  text-decoration: ${prop => prop.itemChecked ? 'line-through' : ''};
 `
 
 const Checkbox = styled.button`
@@ -69,7 +70,7 @@ const Checkbox = styled.button`
 
   &:after {
     content: '';
-    display: ${prop => (prop.itemChecked ? 'block' : 'none')};
+    display: ${prop => prop.itemChecked ? 'block' : 'none'};
     width: 15px;
     height: 7px;
     border-left: 3px solid;

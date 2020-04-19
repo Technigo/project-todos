@@ -4,6 +4,7 @@ import { TodoInput } from './TodoInput'
 import styled from 'styled-components'
 import { TodoSummary } from './TodoSummary'
 import { TodoItems } from './TodoItems'
+import { ClearAll } from './ClearAll'
 
 export const TodoList = () => {
   return (
@@ -11,6 +12,7 @@ export const TodoList = () => {
       <TitleContainer />
       <TodoInput />
       <TodoItems />
+      <ClearAll />
       <TodoSummary />
     </TodoContainer>
   )

@@ -38,8 +38,8 @@ const Title = styled.h1`
   margin: 0;
   padding: 5px 10px;
   border-radius: 10px;
-  background: #ece4cd;
-  color: #994c2e;
+  background: #f6f6ec;
+  color: #b55136;
   font-family: 'Playfair Display';
   font-size: 1.8em;
   text-align: center;

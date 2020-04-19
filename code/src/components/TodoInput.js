@@ -48,7 +48,7 @@ const TodoInputField = styled.input`
   padding: 5px 10px;
   border: none;
   border-radius: 10px;
-  background: #e8cbb9;
+  background: #eaceca;
   color: #3e3e2d;
   font-size: 12px;
 
@@ -72,7 +72,7 @@ const Submit = styled.input`
   height: 50px;
   border: none;
   border-radius: 10px; 
-  background: #ce745a;
+  background: #b55136;
   color: #fff;
   font-size: 2em;
 `
