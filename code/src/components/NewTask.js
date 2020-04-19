@@ -48,11 +48,13 @@ const FormButton = styled.button`
 export const NewTask = () => {
 	const dispatch = useDispatch();
 	const [ taskInput, setTaskInput ] = useState('');
+  const [startDate, setStartDate] = useState(new Date())
   const theWidth = useSelector((state)=>(state.size.screenSize))
 
 	const handleNewTask = (event) => {
 		event.preventDefault();
-		dispatch(todoStore.actions.createTask({ task: taskInput }));
+		dispatch(todoStore.actions.createTask({ task: taskInput, dueDate: startDate }));
+    console.log("date",startDate)
 		setTaskInput('');
 	};
 	//What is the smallest screen size you design for 320px
@@ -73,6 +75,9 @@ export const NewTask = () => {
           <input type="checkbox" name="today" value="today" />
           Finish today
         </label>
+        <input type="date" id="start" name="trip-start" onChange={e=> setStartDate(e.target.value)}
+       value={startDate}
+       ></input>
 		</StyledForm>
     </StyledSection>
 	);

@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import moment from 'moment'
+import Moment from 'moment'
 import { todoStore } from '../reducers/todoStore';
+import moment from 'moment';
 
 const Wrapper = styled.div`
   width: ${props=>(props.width<500) ? props.width-1 : (props.width*0.5)-2}px;
@@ -56,6 +57,7 @@ export const TaskItem = ({ todo }) => {
     <Wrapper width={theWidth}>
 			<TodoItem todoDone={todo.taskDone} onClick={handleStatusChange}>
 				<MediumText todoDone={todo.taskDone}>{todo.task}</MediumText>
+        <MediumText>{moment(todo.dueDate).fromNow()}</MediumText>
 			</TodoItem>
 			<ItemButton onClick={handleDelete} aria-label="remove">
 				-
