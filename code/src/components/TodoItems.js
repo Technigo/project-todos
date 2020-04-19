@@ -28,4 +28,20 @@ const TodoListing = styled.section`
   flex: 1;
   width: 90%;
   margin: 5px auto;
+  overflow: auto;
+  
+  ::-webkit-scrollbar {
+    width: 4px;
+    padding-right: -4px;
+}
+ 
+::-webkit-scrollbar-track {
+    background: #eaceca;
+    border-radius: 10px;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: #b55136;
+    border-radius: 10px; 
+}
 `

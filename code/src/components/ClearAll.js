@@ -29,4 +29,9 @@ const ClearAllButton = styled.button`
   color: #fff;
   font-family: 'Playfair Display';
   font-size: 1em;
+
+  @media (min-width: 768px) {
+    height: 50px;
+    font-size: 1.2em;
+  }
 `

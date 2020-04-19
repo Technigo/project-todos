@@ -47,6 +47,10 @@ const Styled = styled.div`
   justify-content: space-between;
   align-content: center;
   margin: 10px 0;
+
+  @media (min-width: 768px) {
+    margin-bottom: 15px;
+  }
 `
 const Label = styled.label`
   display: flex;
@@ -54,6 +58,10 @@ const Label = styled.label`
   color: ${prop => prop.itemChecked ? '#888d64' : '#3e3e2d'};
   font-size: 16px;
   text-decoration: ${prop => prop.itemChecked ? 'line-through' : ''};
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
 `
 
 const Checkbox = styled.button`
@@ -68,7 +76,7 @@ const Checkbox = styled.button`
   color: #fff;
   font-size: 20px;
 
-  &:after {
+  ::after {
     content: '';
     display: ${prop => prop.itemChecked ? 'block' : 'none'};
     width: 15px;
@@ -78,6 +86,12 @@ const Checkbox = styled.button`
     /* border-radius: 0 4px; */
     transform: rotate(-50deg);
   }
+
+  @media (min-width: 768px) {
+    width: 50px;
+    height: 50px;
+    padding-left: 15px;
+  }
 `
 
 const RemoveButton = styled.button`
@@ -86,4 +100,9 @@ const RemoveButton = styled.button`
   background: none;
   color: #888d64;
   font-size: 25px;
+
+  @media (min-width: 768px) {
+    font-size: 35px;
+    margin-right: 4px;
+  }
 `

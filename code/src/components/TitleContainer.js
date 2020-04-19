@@ -33,7 +33,7 @@ const IconContainer = styled.section`
 `
 
 const Title = styled.h1`
-  width: 75%;
+  min-width: 75%;
   height: 40px;
   margin: 0;
   padding: 5px 10px;
@@ -43,4 +43,8 @@ const Title = styled.h1`
   font-family: 'Playfair Display';
   font-size: 1.8em;
   text-align: center;
+
+  @media (min-width: 768px) {
+    width: 88%;
+  }
 `

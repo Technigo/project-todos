@@ -20,6 +20,10 @@ export const TodoSummary = () => {
   font-family: 'Playfair Display';
   font-size: 1em;
   font-weight: bold;
+
+  @media (min-width: 768px) {
+    font-size: 1.2em;
+  }
 `
 
   return (

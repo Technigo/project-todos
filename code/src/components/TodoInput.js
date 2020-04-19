@@ -64,6 +64,11 @@ const TodoInputField = styled.input`
   ::-ms-input-placeholder {
     color: #3e3e2d;
   }
+
+  @media (min-width: 768px) {
+    width: 88%;
+    font-size: 14px;
+  }
 `
 
 const Submit = styled.input`
