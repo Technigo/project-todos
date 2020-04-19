@@ -1,6 +1,4 @@
 import React from 'react'
-import { TodoItem } from '../components/TodoItem'
-import { TodoInput } from '../components/TodoInput'
 import { useSelector, useDispatch } from 'react-redux'
 import '../styling/todo-summary.css'
 import { todos } from '../reducers/todos'

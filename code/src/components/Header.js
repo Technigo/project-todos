@@ -1,9 +1,6 @@
 import React from 'react'
-import moment from 'moment'
-import 'moment/locale/sv'
 import '../styling/header.css'
-import { useSelector, useDispatch } from 'react-redux'
-import { todos } from '../reducers/todos'
+import { useSelector } from 'react-redux'
 
 
 

@@ -35,7 +35,7 @@ export const TodoItem = ({ itemIndex }) => {
         checked={item.done ? "checked" : ""}
       ></input>
       <span className="todo-item-description">{item.description}</span>
-      <a className="todo-item-remove" onClick={handleRemove}>[Remove]</a>
+      <a aria-label="remove-button" className="todo-item-remove" onClick={handleRemove}>[Remove]</a>
     </div>
   )
 }
