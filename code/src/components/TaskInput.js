@@ -51,7 +51,7 @@ export const TaskInput = () => {
 }
 
 export const Container = styled.section`
-  background: #387adf;
+  background: red;
 `;
 
 export const Form = styled.form`

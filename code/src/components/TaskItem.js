@@ -3,6 +3,9 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { tasks } from '../reducers/tasks'
 
+// For time stamping to dos
+// import moment from 'moment'
+
 
 export const TaskItem = ({ itemIndex }) => {
     // Get the item from the store based on the index
@@ -39,6 +42,7 @@ export const TaskItem = ({ itemIndex }) => {
       checked={item.done ? "checked" : ""}
       ></input>
       <span className="todo-item-description">{item.description}</span>
+      {/* <span className="MAKE TIMESTAMP">Due date:{item.id}</span> */}
 {/*       <a className="todo-item-remove" onClick={onRemoveClicked}>
       [remove]
       </a> */}

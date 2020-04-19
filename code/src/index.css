@@ -33,7 +33,7 @@ code {
   background-color: #6878A0;
   color: #efefef;
 }
-
+/* 
 .todo-list {
   margin: 8px;
   padding: 16px;
@@ -42,7 +42,7 @@ code {
   justify-content: flex-start;
   background-image: linear-gradient(#adadad, #efefef);
   border-radius: 16px;
-}
+} */
 
 .todo-item {
   margin: 8px;

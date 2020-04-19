@@ -6,6 +6,9 @@ import { TaskInput } from 'components/TaskInput'
 import { TaskItem } from './TaskItem'
 import { TaskSummery } from './TaskSummery'
 
+import styled from 'styled-components'
+
+
 
   // TODO - fetch all to-dos from the store
   // Using useSelector: Och vipps så kommer vi åt allti vår store!
@@ -25,13 +28,26 @@ export const TaskList = () => {
 
 
   return (
-    <section className="todo-list">
+    <Container>
       <TaskInput />
       {list.items.map((item, index) => (
-        <TaskItem key= {index} item={item} itemIndex={index}></TaskItem>
+        <TaskItem key={index} item={item} itemIndex={index}></TaskItem>
       ))}
 
       <TaskSummery />
-    </section>
+    </Container>
   )
 }
+
+
+const Container = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  /* align-items: center; */
+  background: #b3d9ff;
+  /* background-image: linear-gradient(#387adf, #efefef); */
+  padding: 20px;
+  color: white;
+  font-weight: 700;
+`;
