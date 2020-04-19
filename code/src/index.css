@@ -54,7 +54,7 @@ h2 {
 }
 
 .todo-input-text {
-  background-color: #FFF;
+  background-color: green;
   font-size: 20px;
   border: hidden;
 }
@@ -69,21 +69,60 @@ h2 {
   font-size: 20px;
 }
 
-.todo-item {
-  background-color: #FFF;
-  display: flex;
-  padding: 20px;
+/*.todo-item { /* här är alla todos*/
+  /*padding: 20px;
   border-bottom: solid 2px #ced6e3;
-}
+  display: flex;
+  align-items: flex-start;
+  /*justify-content: space-between;
+}*/
 
-.todo-item-check {
+/*.todo-item-check {
   margin-right: 15px;
-}
+}*/
 
-.todo-item-remove {
+/*.todo-item-description {
+  margin-right: 70px;
+}*/
+
+/*.todo-item-remove {
   background: #4d3de2;
   color: #FFF;
   border: none;
   padding: 3px 6px;
   border-radius: 4px;
-}
+  /*align-self: baseline;
+}*/
+  
+  /*&:active {
+    background: #2a4034;
+  }*/
+
+  .todo-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    /*width: 100%;*/
+    border-bottom: solid 2px #ced6e3;
+  }
+
+  .todo-item-div {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .todo-item-description {
+    padding: 20px;
+    font-size: 18px;
+    font-weight: initial;
+  }
+
+  .todo-item-remove {
+    margin-top: 20px;
+    background: #4d3de2;
+    color: #FFF;
+    border: none;
+    padding: 3px 6px;
+    border-radius: 4px;
+    font-size: 15px;
+  }

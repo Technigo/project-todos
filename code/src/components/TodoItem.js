@@ -25,15 +25,17 @@ export const TodoItem = ({itemIndex}) => {
 
   return (
     <div className={`todo-item ${item.done ? "done" : ""}`}>
-      <input type="checkbox"
-        onChange={handleOnChange} 
-        className="todo-item-check"
-        checked={item.done ? true : ""}>
-      </input>
+      <div className="todo-item-div">
+        <input type="checkbox"
+          onChange={handleOnChange} 
+          className="todo-item-check"
+          checked={item.done ? true : ""}>
+        </input>
     
-      <span className="todo-item-description"> 
-        {item.description} 
-      </span>
+        <span className="todo-item-description"> 
+          {item.description} 
+        </span>
+      </div>
       
       <button className="todo-item-remove" 
         onClick={onRemoveClicked}> CLEAR 
