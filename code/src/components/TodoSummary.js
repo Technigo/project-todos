@@ -18,6 +18,18 @@ export const TodoSummary = () => {
     dispatch(todos.actions.setAll());
   };
 
+  const filterActive = (event) => {
+    dispatch(todos.actions.filterActive());
+  };
+
+  const filterComplete = (event) => {
+    dispatch(todos.actions.filterComplete());
+  };
+
+  const displayAll = (event) => {
+    dispatch(todos.actions.displayAll());
+  };
+
   return (
     <SummaryWrapper>
       {list.items.length !== 0 && (
@@ -36,6 +48,17 @@ export const TodoSummary = () => {
           <Button onClick={setAll}>
             {setCount ? "UNCHECK ALL" : "CHECK ALL"}
           </Button>
+        )}
+      </Wrapper>
+      <Wrapper>
+        {list.items.length > 0 && (
+          <Button onClick={filterActive}>ACTIVE</Button>
+        )}
+        {list.items.length > 0 && (
+          <Button onClick={filterComplete}>COMPLETE</Button>
+        )}
+        {list.items.length > 0 && (
+          <Button onClick={displayAll}>ALL TASKS</Button>
         )}
       </Wrapper>
     </SummaryWrapper>
@@ -85,6 +108,9 @@ const Button = styled.button`
 
 const Wrapper = styled.div`
   display: flex;
+  justify-content: center;
+
+  margin-bottom: 10px;
 `;
 
 const SummaryWrapper = styled.div`

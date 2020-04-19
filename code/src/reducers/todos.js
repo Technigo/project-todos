@@ -39,5 +39,28 @@ export const todos = createSlice({
         });
       }
     },
+    filterComplete: (state) => {
+      state.list.items.forEach((item) => {
+        if (item.done) {
+          item.display = true;
+        } else {
+          item.display = false;
+        }
+      });
+    },
+    filterActive: (state) => {
+      state.list.items.forEach((item) => {
+        if (item.done) {
+          item.display = false;
+        } else {
+          item.display = true;
+        }
+      });
+    },
+    displayAll: (state) => {
+      state.list.items.forEach((item) => {
+        item.display = true;
+      });
+    },
   },
 });

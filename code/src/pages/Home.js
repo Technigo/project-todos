@@ -31,11 +31,9 @@ export const Home = () => {
   };
 
   const reducer = combineReducers({ todos: todos.reducer });
-
   const persistedState = loadFromLocalStorage();
 
   const store = createStore(reducer, persistedState);
-
   store.subscribe(() => saveToLocalStorage(store.getState()));
 
   return (

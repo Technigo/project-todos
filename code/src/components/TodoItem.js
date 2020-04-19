@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { todos } from "reducers/todos";
+import moment from "moment";
 import styled from "styled-components";
 
 export const TodoItem = ({ itemIndex }) => {
@@ -24,19 +25,27 @@ export const TodoItem = ({ itemIndex }) => {
     );
   };
 
-  return (
-    <TodoContainer>
-      <Divider>
-        <Input
-          type="checkbox"
-          onChange={handleOnChange}
-          checked={item.done ? true : ""}
-        />
-        <Description>{item.description}</Description>
-      </Divider>
-      <Remove onClick={onRemoveClicked}>REMOVE</Remove>
-    </TodoContainer>
-  );
+  if (item.display) {
+    return (
+      <>
+        <TodoContainer>
+          <Divider>
+            <Input
+              type="checkbox"
+              onChange={handleOnChange}
+              checked={item.done ? true : ""}
+            />
+            <Description>{item.description}</Description>
+          </Divider>
+          <Remove onClick={onRemoveClicked}>REMOVE</Remove>
+        </TodoContainer>
+        <Date>{moment(item.date).fromNow()}</Date>
+        <Line />
+      </>
+    );
+  } else {
+    return <div />;
+  }
 };
 
 const TodoContainer = styled.div`
@@ -107,4 +116,22 @@ const Remove = styled.button`
   @media (max-width: 668px) {
     font-size: 12px;
   }
+`;
+
+const Date = styled.p`
+  font-family: "Pangolin", cursive;
+  color: #fff;
+  font-weight: lighter;
+  font-size: 10px;
+
+  display: flex;
+  align-self: flex-end;
+
+  margin: -5px 0 5px 0;
+`;
+
+const Line = styled.hr`
+  width: 100%;
+  margin: 0 0 10px 0;
+  border: 1px solid #ffffff50;
 `;

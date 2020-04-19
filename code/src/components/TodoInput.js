@@ -18,6 +18,7 @@ export const TodoInput = () => {
           description: inputValue,
           done: false,
           date: currentDate,
+          display: true,
         })
       );
       setInputValue("");
