@@ -29,6 +29,7 @@ export const ToDoInput = ({ itemsId }) => {
           text: inputValue,
           completed: false,
           duedate: selectedDay,
+          shopped: 'null',
         },
       })
     );
@@ -41,6 +42,7 @@ export const ToDoInput = ({ itemsId }) => {
     <form className='form' onSubmit={handleOnSubmit}>
       <textarea
         required
+        placeholder='Add things to do!'
         className='input'
         type='text'
         onChange={(event) => setInputValue(event.target.value)}

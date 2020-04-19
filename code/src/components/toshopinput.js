@@ -27,9 +27,10 @@ export const ToShopInput = ({ itemsId }) => {
         itemsId: itemsId,
         todoInfo: {
           text: inputValue,
-          completed: false,
-          duedate: selectedDay,
           shopping: true,
+          duedate: selectedDay,
+          shopped: false,
+          completed: 'null',
         },
       })
     );
@@ -43,6 +44,7 @@ export const ToShopInput = ({ itemsId }) => {
       <textarea
         required
         className='input'
+        placeholder='Add things to buy!'
         type='text'
         onChange={(event) => setInputValue(event.target.value)}
         value={inputValue}
@@ -58,7 +60,7 @@ export const ToShopInput = ({ itemsId }) => {
       </div>
 
       <button type='submit' value='Add todo'>
-        Add to do
+        Add to shop
       </button>
     </form>
   );

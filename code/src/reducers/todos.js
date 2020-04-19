@@ -9,6 +9,7 @@ const initialState = {
         duedate: '',
         working: '',
         shopping: true,
+        shopped: false,
       },
     ],
   },
@@ -29,6 +30,11 @@ export const todos = createSlice({
     setCompleted: (state, action) => {
       const { itemIndex, completed } = action.payload;
       state.list.items[itemIndex].completed = completed;
+    },
+
+    setShopped: (state, action) => {
+      const { itemIndex, shopped } = action.payload;
+      state.list.items[itemIndex].shopped = shopped;
     },
 
     // removing all items

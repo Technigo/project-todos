@@ -8,8 +8,9 @@ export const CompletedTasks = () => {
 
   // Counter of how many tasks left to do
   const completed = list.items.filter((item) => item.completed);
+  const shopped = list.items.filter((item) => item.shopped);
 
-  if (completed == 0) {
+  if ((shopped === 0, completed === 0)) {
     return (
       <div>
         <p> You have not completed any tasks yet.</p>

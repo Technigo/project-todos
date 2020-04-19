@@ -6,8 +6,10 @@ export const Summary = () => {
   // pick up the list from the store
   const list = useSelector((store) => store.todos.list);
 
-  // Counter of how many tasks left to do
-  const uncompleted = list.items.filter((item) => !item.completed).length - 1;
+  // Counter of how many tasks left to do/how many things left to shop
+  const notShopped = list.items.filter((item) => !item.shopped).length - 1;
+  const notCompleted = list.items.filter((item) => !item.completed).length - 1;
+  const uncompleted = notShopped + notCompleted;
 
   return (
     <div>

@@ -15,6 +15,7 @@ code {
 }
 
 h1 {
+  font-size: 3rem;
 }
 
 .main {
@@ -67,6 +68,10 @@ input [type='submit'] {
   width: 100%;
 }
 
+textarea {
+  font-size: 1rem;
+}
+
 .input {
   width: 100%;
   height: 50%;
@@ -98,9 +103,18 @@ button {
   justify-content: center;
   margin: 10px 0;
   margin-top: 30px;
+  outline: none;
+}
+
+button:focus {
+  border: 3px solid #555;
 }
 
 /* TO-DO-ITEM */
+
+.summary {
+  font-size: 1.8rem;
+}
 
 .todoitems {
   margin-bottom: 20px;
@@ -133,6 +147,13 @@ input[type='checkbox'] {
   overflow-wrap: break-word;
   font-size: 1.2rem;
   max-width: 50%;
+  display: flex;
+  align-items: center;
+}
+
+.shoppingitem {
+  display: flex;
+  align-items: center;
 }
 
 .dates {

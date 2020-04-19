@@ -17,10 +17,53 @@ export const ToDoItem = ({ itemIndex }) => {
       })
     );
   };
+
+  const handleShoppedItem = () => {
+    dispatch(
+      todos.actions.setShopped({
+        itemIndex: itemIndex,
+        shopped: !item.shopped,
+      })
+    );
+  };
+
   console.log(item.duedate);
   if (!item.text) {
     return <></>;
-  } else {
+  }
+  if (item.text && item.shopping === true) {
+    return (
+      <article
+        className={`todoitems 
+      ${item.shopping === true ? 'toshopitem' : ''}`}
+      >
+        <p className='task'>
+          <input
+            type='checkbox'
+            onChange={handleShoppedItem}
+            checked={
+              // (item.completed ? 'completed' : '') &&
+              item.shopped ? 'shopped' : ''
+            }
+          ></input>
+          <div className='shoppingitem'>
+            {item.shopping === true ? (
+              <p>Buy {item.text}</p>
+            ) : (
+              <p>{item.text}</p>
+            )}
+          </div>
+        </p>
+        <div className='dates'>
+          <p className='dateadded'>
+            added: {moment(item.createdAt).format('ll')}
+          </p>
+          <p className='dateadded'>due: {moment(item.duedate).format('ll')}</p>
+        </div>
+      </article>
+    );
+  }
+  if (item.text && !item.shopping) {
     return (
       <article
         className={`todoitems 
@@ -30,9 +73,18 @@ export const ToDoItem = ({ itemIndex }) => {
           <input
             type='checkbox'
             onChange={handleOnChange}
-            checked={item.completed ? 'completed' : ''}
+            checked={
+              item.completed ? 'completed' : ''
+              //item.shopped ? 'shopped' : ''
+            }
           ></input>
-          {item.text}
+          <div className='shoppingitem'>
+            {item.shopping === true ? (
+              <p>Buy {item.text}</p>
+            ) : (
+              <p>{item.text}</p>
+            )}
+          </div>
         </p>
         <div className='dates'>
           <p className='dateadded'>
