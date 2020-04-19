@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { todos } from '../reducers/todos'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 export const TodoItem = ({ itemIndex }) => {
   const item = useSelector(store => store.todos.items[itemIndex])
@@ -11,15 +11,11 @@ export const TodoItem = ({ itemIndex }) => {
   const dispatch = useDispatch()
 
   const onRemoveClicked = () => {
-    dispatch(todos.actions.removeTodo({ itemIndex: itemIndex })
-    )
+    dispatch(todos.actions.removeTodo({ itemIndex }))
   }
 
   const handleOnChange = () => {
-    dispatch(todos.actions.setDone({
-      itemIndex: itemIndex,
-      done: !item.done,
-    })
+    dispatch(todos.actions.setDone({ itemIndex })
     )
   }
 
@@ -38,25 +34,30 @@ export const TodoItem = ({ itemIndex }) => {
         type="button"
         onClick={onRemoveClicked}
       >
-        <FontAwesomeIcon icon={faTrash} />
+        <FontAwesomeIcon icon={faTrashAlt} />
       </RemoveButton>
     </Styled>
   )
 }
 
 const Styled = styled.div`
-  
+  display: flex;
+  justify-content: space-between
 `
 const Label = styled.label`
   position: relative;
+  margin: 10px 5px;
+  padding-left: 10px;
+  font-size: 20px;
   
   ::before {
     position: absolute;
-    top: 3px;
+    top: 0px;
+    left: 0;
     content: '';
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 25px;
+    height: 25px;
     border: 1px solid;
   }
 
@@ -80,4 +81,7 @@ const Checkbox = styled.input`
 `
 
 const RemoveButton = styled.button`
+border: none;
+background: none;
+font-size: 25px;
 `
