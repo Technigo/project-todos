@@ -28,7 +28,7 @@ export const TaskList = () => {
     <section className="todo-list">
       <TaskInput />
       {list.items.map((item, index) => (
-        <TaskItem item={item} itemIndex={index}></TaskItem>
+        <TaskItem key= {index} item={item} itemIndex={index}></TaskItem>
       ))}
 
       <TaskSummery />

@@ -1,14 +1,15 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-/* const initialState = {
+const initialState = {
   list: {
+    // key: Date.now(),
     name: "My todo list",
     items: [],
   },
 };
- */
 
-const initialState = {
+
+/* const initialState = {
   list: {
     name: "Test list",
     items: [
@@ -19,7 +20,7 @@ const initialState = {
       },
     ],
   },
-};
+}; */
 
 export const tasks = createSlice({
   name: "tasks",
@@ -53,4 +54,4 @@ export const tasks = createSlice({
 // addTask
 // removeTask
 // setDone
-// option: rensa listan? Remove All
+// option: rensa listan? Remove All info from state []
