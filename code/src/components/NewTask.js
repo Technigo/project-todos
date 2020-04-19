@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { todoStore } from '../reducers/todoStore';
-import DatePicker from 'react-datepicker';
+
 
  export const StyledSection = styled.section`
   border-bottom: 3px solid white;
-  min-height: 300px;
+
 `
 
 const StyledForm = styled.form`
@@ -44,6 +44,7 @@ const DateInput = styled.input`
   background-color: #C7D3D4;
   border: 1px solid black;
   height: 32px;
+  margin-bottom: 16px;
 
 `
 

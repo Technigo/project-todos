@@ -21,6 +21,7 @@ const ClearButton = styled.button`
   border: none;
   border-radius: 5px;
   box-shadow: 1px 1px 2px #222;
+  margin: 16px 0;
 `
 
 
