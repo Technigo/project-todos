@@ -11,6 +11,8 @@ import { tasks } from '../reducers/tasks'
 import { TaskList } from '../components/TaskList'
 import { Header } from '../components/Header'
 
+import styled from 'styled-components'
+
 
 // first we create our combined-REDUCER-file:
 const reducer = combineReducers({
@@ -19,14 +21,25 @@ const reducer = combineReducers({
 // then we use this reducer to configure a STORE:
 const store = configureStore({ reducer })
 
-
 // and now finally we have a Store we can include in our Provider:
 export const Home = () => {
   return (
     <Provider store={store}>      
-      <Header />
-      <TaskList />
+      <AppContainer>
+
+        <Header />
+        <TaskList />
+
+      </AppContainer>
     </Provider>
   )
 }
 
+// styled-components:
+const AppContainer = styled.main`
+    @media (min-width: 668px) {
+    width: 50%;
+    margin: 20px auto;
+  },
+
+`
