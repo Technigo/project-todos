@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import moment from 'moment'
 // import moment from 'moment'
 
 // const initialState = {
@@ -91,9 +90,5 @@ export const todos = createSlice({
     removeAll: (state, action) => {
       state.list.todos = []
     }
-
-    // clearAll: (state, action) => {
-    //   state.todos = []
-    // }
   }
 })
