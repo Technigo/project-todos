@@ -4,6 +4,7 @@ import { TodoInput } from '../components/TodoInput'
 import { TodoSummary } from '../components/TodoSummary'
 import { useSelector } from 'react-redux'
 import { EmptyList } from '../components/EmptyList'
+import { todos } from '../reducers/todos'
 import '../styling/todo-list.css'
 import '../styling/todo-item.css'
 
@@ -13,7 +14,6 @@ export const TodoList = () => {
 
   return (
     <section className="todo-list">
-      <EmptyList />
       <TodoInput />
       {
         list.items.map((item, index) => (

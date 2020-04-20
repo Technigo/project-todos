@@ -1,9 +1,11 @@
 import React from 'react'
+import moment from 'moment'
 import { useSelector, useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
+
 import '../styling/todo-item.css'
 
-export const TodoItem = ({ itemIndex }) => {
+export const TodoItem = ({ itemIndex, dueDate, startDate }) => {
   // gets the item from the store based on index
   const item = useSelector(store => store.todos.list.items[itemIndex])
 
@@ -34,7 +36,8 @@ export const TodoItem = ({ itemIndex }) => {
         className="todo-item-check"
         checked={item.done ? "checked" : ""}
       ></input>
-      <span className="todo-item-description">{item.description}</span>
+      <p><span className="todo-item-description">{item.description}</span></p>
+      <p><span>Due: {moment(dueDate).format('MMM Do YYYY')}</span></p>
       <a aria-label="remove-button" className="todo-item-remove" onClick={handleRemove}>[Remove]</a>
     </div>
   )

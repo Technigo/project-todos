@@ -6,12 +6,14 @@
   align-items: center;
 }
 
+
 .todo-input-text {
   font-size: 22px;
   width: 100%;
   padding: 15px;
   border-style: none;
   font-family: 'Quicksand', sans-serif;
+  outline: none;
 }
 
 .todo-input-button {
@@ -19,4 +21,8 @@
   font-size: 30px;
   font-weight: bold;
   border-style: none;
+}
+
+.todo-input-text:focus {
+  outline:none;
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
 import '../styling/todo-input.css'
+import DatePicker from 'react-date-picker'
 
 // receive listId for input 
 export const TodoInput = () => {
@@ -9,6 +10,8 @@ export const TodoInput = () => {
 
   // state for input from that comes from text box
   const [inputValue, setInputValue] = useState("")
+  const [category, setCategory] = useState('')
+  const [dueDate, setDueDate] = useState()
 
   // handle submit function to dispatch addTodo
   const handleOnSubmit = (e) => {
@@ -19,13 +22,15 @@ export const TodoInput = () => {
       todos.actions.addTodo({
         description: inputValue,
         done: false,
-        //category: selectCategory,
-        //date: selectDate
+        category: category,
+        date: dueDate
       })
     )
 
-    // clear the text field after submit
+    // clear the fields after submit
     setInputValue("")
+    setCategory("")
+    setDueDate('')
   }
 
   return (
@@ -42,6 +47,23 @@ export const TodoInput = () => {
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
       ></input>
+      <label>
+        Category:
+          <select
+          value={category}
+          onChange={(event) => setCategory(event.target.value)}
+        >
+          <option value=''>select...</option>
+          <option value='work'>Work</option>
+          <option value='event'>Event</option>
+          <option value='school'>School</option>
+          <option value='personal'>Personal</option>
+        </select>
+      </label>
+      <label>
+        Due Date
+          <DatePicker onChange={(date) => setDueDate(date)} value={dueDate} />
+      </label>
     </form >
   )
 }

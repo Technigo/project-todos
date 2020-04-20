@@ -30,6 +30,5 @@ export const todos = createSlice({
     },
     //Reducers: 
     // - setCategory
-    // -clearAll
   }
 })
