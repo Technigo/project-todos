@@ -21,7 +21,7 @@ export const Header = () => {
     
       <div className="todo-summary">
         <h2>{doneList.length}/{list.items.length}</h2>
-        <button onClick={onRemoveClicked}> CLEAR ALL</button>
+        <button onClick={onRemoveClicked}> DONE</button>
       </div>
     </div>
   );
