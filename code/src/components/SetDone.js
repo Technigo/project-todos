@@ -15,6 +15,8 @@ export const SetDone = ({itemIndex}) => {
     )
   }
 
+  
+
   return (
     <section>
       <a onClick={onDoneClicked}>

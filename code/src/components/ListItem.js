@@ -12,13 +12,27 @@ const Container = styled.section`
   align-items: center;
   border-radius: 8px;
 `
-// This should change bg color depending of category
+
 const TodoItem = styled(Container)`
   justify-content: space-evenly;
-  background-color: white;
+  background-color: ${props => props.theme.main};
   width: 25vw;
   margin: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 `
+// default background color for TodoItem
+TodoItem.defaultProps = {
+  theme: {
+    main: "white"
+  }
+}
+
+// Background color if item done is true
+const theme = {
+  main: "mediumseagreen"
+};
+
+
 const InfoSection = styled(Container)`
   flex-direction: row;
   justify-content: space-between;
@@ -35,13 +49,13 @@ export const ListItem = () => {
   return (
     <Container>
       {todo.items.map((item, index) => (
-        <TodoItem>
+        <TodoItem theme={item.done ? theme : ''}>
           <InfoSection>
             <span>
               Created at {item.startDate}
             </span>
             <span>
-              Due at {item.dueDate}
+              {/* Due at {item.dueDate} */}
             </span>
           </InfoSection>
 
