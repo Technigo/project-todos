@@ -4,8 +4,8 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { todos } from 'reducers/todos'
 
 import { Header } from 'components/Header'
-import { ItemsCount } from 'components/ItemsCount'
 import { AddItem } from 'components/AddItem'
+import { ItemData } from 'components/ItemData'
 import { ItemsList } from 'components/ItemsList'
 
 import 'normalize.css';
@@ -27,7 +27,7 @@ export const App = () => {
 
         <main className="main-content">
           <AddItem />
-          <ItemsCount />
+          <ItemData />
           <ItemsList />
         </main>
 
