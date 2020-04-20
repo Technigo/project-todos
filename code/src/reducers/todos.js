@@ -19,6 +19,9 @@ export const todos = createSlice({
     removeTodo: (state, action) => {
       const { itemIndex } = action.payload
       state.items.splice(itemIndex, 1)
+    },
+    removeAll: (state) => {
+      state.items = []
     }
   }
 })

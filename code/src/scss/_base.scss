@@ -104,3 +104,13 @@ input[type=text] {
   text-decoration: line-through;
   opacity: .5;
 }
+
+.btn-clear {
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+  margin-top: 2rem;
+  color: $primaryCol;
+  border-bottom: 2px solid $primaryCol;
+  font-weight: 700;
+}
