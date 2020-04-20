@@ -13,7 +13,7 @@ export const Home = () => {
   return (
     <Provider store={store}>
       <main>
-        <TodoInput />
+        <TodoList />
       </main>
     </Provider>
   )
