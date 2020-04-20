@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 
 export const ShowSummery = () => {
-  const items = useSelector((store) => store.apa.todoListItems)
+  const items = useSelector((store) => store.todo.todoListItems)
   const numDone = items.items.filter(item => item.done).length;
 
   return (

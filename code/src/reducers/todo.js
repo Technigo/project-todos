@@ -5,26 +5,26 @@ const initialState = {
     name: 'Todo list',
     items: [
     {
-      id: 1,
+      id: Date.now(),
       description: 'test',
       category: 'work',
       done: false,
-      startDate: 2020,
+      startDate: '2020-04-13',
       dueDate: 2021
     },
     {
-      id: 2,
+      id: Date.now(),
       description: 'test 2',
       category: 'private',
       done: false,
-      startDate: 2019,
+      startDate: '2020-04-15',
       dueDate: 2022
     }
     ]
   }
 }
 
-export const apa = createSlice({
+export const todo = createSlice({
   name: 'TodoList',
   initialState: initialState,
   reducers: {

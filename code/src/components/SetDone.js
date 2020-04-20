@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { apa } from "../reducers/apa"
+import { todo } from "../reducers/todo"
 
 export const SetDone = ({itemIndex}) => {
 
@@ -8,7 +8,7 @@ export const SetDone = ({itemIndex}) => {
 
   const onDoneClicked = (e) => {
     dispatch(
-      apa.actions.doneTodo({
+      todo.actions.doneTodo({
         itemIndex,
         done: true,
       })

@@ -1,27 +1,14 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit'
-import { apa } from 'reducers/apa'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { todo } from 'reducers/todo'
 import { TodoContainer } from './components/TodoContainer'
 
-// Tell redux about our reducers
-// Store both my reducers todos and reducer inside reducers to combine reducers
-const reducers = combineReducers({ 
-  apa: apa.reducer
- });
+const reducer = combineReducers({ 
+  todo: todo.reducer
+ })
 
-// Retrieve the existing state from localstorage if it exists
-const persistedState = localStorage.getItem("reduxState")
-  ? JSON.parse(localStorage.getItem("reduxState"))
-  : {};
-
-// Create the store using our reducers and the retrieved state
-const store = createStore(reducers, persistedState);
-
-// Tell the store to persist the state in localstorage after every action
-store.subscribe(() => {
-  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
-});
+const store = configureStore({ reducer })
 
 export const App = () => {
   return (

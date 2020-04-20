@@ -30,7 +30,7 @@ const TodoSection = styled(Container)`
 `
 
 export const ListItem = () => {
-  const todo = useSelector((store) => store.apa.todoListItems)
+  const todo = useSelector((store) => store.todo.todoListItems)
 
   return (
     <Container>

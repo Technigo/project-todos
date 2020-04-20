@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { apa } from "../reducers/apa"
+import { todo } from "../reducers/todo"
 
 export const DeleteItem = ({itemIndex}) => {
 
@@ -8,7 +8,7 @@ export const DeleteItem = ({itemIndex}) => {
 
   const onRemoveClicked = (e) => {
     dispatch(
-      apa.actions.removeTodo({
+      todo.actions.removeTodo({
         itemIndex,
       })
     )
