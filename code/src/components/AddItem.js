@@ -11,7 +11,7 @@ export const AddItem = () => {
     e.preventDefault()
     dispatch(todos.actions.addTodo({
       newItem: {
-        text: inputValue,
+        text: inputValue.charAt(0).toUpperCase() + inputValue.slice(1),
         completed: false
       }
     }))
