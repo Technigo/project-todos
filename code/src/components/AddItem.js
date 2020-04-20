@@ -1,7 +1,43 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from "react-redux"
+import styled from 'styled-components'
+import { reducer } from '../reducers/reducer';
 
 export const AddItem = () => {
+  const dispatch = useDispatch()
+  const [inputValue, setInputValue] = useState('Test')
+
+  const handleSubmit = e => {
+    e.preventDefault()
+
+    const date = new Date()
+
+    dispatch(
+      reducer.actions.addTodo({
+        itemInfo: {
+          id: Date.now(),
+          description: inputValue,
+          category: 'work',
+          startDate: date.toLocaleDateString( 'se-SE', { dateStyle: 'short' }),
+          dueDate: 2021
+        }
+      })
+    )
+
+    setInputValue()
+  }
+
   return (
-    <p>AddItem!</p>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        onChange={e => setInputValue(e.target.value)}
+        value={inputValue}
+      ></input>
+      <input
+        type="submit"
+        value="Add Todo"
+      ></input>
+    </form>
   )
 }

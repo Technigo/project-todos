@@ -1,8 +1,7 @@
 import React from 'react'
-import { Provider, useSelector } from 'react-redux'
-import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit'
+import { Provider } from 'react-redux'
+import { combineReducers, createStore } from '@reduxjs/toolkit'
 import { reducer } from 'reducers/reducer'
-import { Test } from './components/Test'
 import { TodoContainer } from './components/TodoContainer'
 
 // Tell redux about our reducers
@@ -31,7 +30,3 @@ export const App = () => {
     </Provider>
   )
 }
-
-
-/*
-*/

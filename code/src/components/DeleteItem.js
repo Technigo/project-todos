@@ -2,14 +2,14 @@ import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
 import { reducer } from "../reducers/reducer"
 
-export const SetDone = ({itemIndex}) => {
+export const DeleteItem = ({itemIndex}) => {
   const item = useSelector((store) => store.reducer.todoListItems[itemIndex])
 
   const dispatch = useDispatch()
 
-  const onDoneClicked = (e) => {
+  const onRemoveClicked = (e) => {
     dispatch(
-      reducer.actions.doneTodo({
+      reducer.actions.removeTodo({
         itemIndex,
       })
     )
@@ -17,8 +17,8 @@ export const SetDone = ({itemIndex}) => {
 
   return (
     <section>
-      <a onClick={onDoneClicked}>
-        [Done]
+      <a onClick={onRemoveClicked}>
+        [Delete]
       </a>
     </section>
   )

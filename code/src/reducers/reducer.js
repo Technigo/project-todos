@@ -32,8 +32,8 @@ export const reducer = createSlice({
 
     // Add item, 
     addTodo: ( state, action ) => {
-      const { id, itemInfo } = action.payload
-      state.todoListItems.items.push( {id, itemInfo, done: false} ) 
+      const { itemInfo } = action.payload
+      state.todoListItems.items.push(itemInfo)
     },
     // Remove item,
     removeTodo: ( state, action ) => {
@@ -53,6 +53,9 @@ export const reducer = createSlice({
       if(todo) {
         todo.done = !todo.done
       }
+    },
+    killSwitch: ( state, action ) => {
+      state.todoListItems.items = []
     }
   }
 })
