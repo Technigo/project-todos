@@ -4,9 +4,14 @@
   box-sizing: border-box;
 }
 
+html, body, #root, .wrapper {
+  height: 100%;
+}
+
 body {
   margin: 0;
   color: #000;
+  background-color: $primaryCol;
   font-size: 16px;
   font-family: 'Avenir', 'Helvetica', 'sans-serif';
   -webkit-font-smoothing: antialiased;
@@ -15,4 +20,29 @@ body {
 a {
   text-decoration: none;
   color: inherit;
+}
+
+h1, h2, h3 {
+  margin: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  flex: 0 1 auto;
+  padding: 2rem;
+
+  color: #fff;
+}
+
+.main-content {
+  flex: 1 1 auto;
+  padding: 1rem 2rem;
+
+
+  background-color: #fff;
+  border-top-right-radius: 3rem;
 }
