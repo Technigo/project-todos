@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 
 export const ToDoSummary = () => {
   const items = useSelector(state => state.ToDo.items)
-  const buyMoreItems = items.filter(item => item.needsMore)
+  const buyMoreItems = items.filter(item => item.completed)
 
   const [showShoppingList, setShowShoppingList] = useState(false)
 

@@ -7,7 +7,7 @@ export const Item = (props) => {
   const dispatch = useDispatch()
 
   const handleCheckboxClick = () => {
-    dispatch(ToDo.actions.toggleNeedsMore(props.item.id))
+    dispatch(ToDo.actions.toggleCompleted(props.item.id))
   }
 
   const handleRemoveButtonClick = () => {
