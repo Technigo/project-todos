@@ -16,12 +16,12 @@
   outline: none;
 }
 
-.todo-input-button {
+/* .todo-input-button {
   padding: 8px;
   font-size: 30px;
   font-weight: bold;
   border-style: none;
-}
+} */
 
 .todo-input-text:focus {
   outline:none;

@@ -38,7 +38,7 @@ export const TodoInput = () => {
       <input
         type="submit"
         className="todo-input-button"
-        value="+"
+        value="Add todo"
       ></input>
       <input
         type="text"

@@ -1,8 +1,7 @@
 import React from 'react'
 import '../styling/header.css'
+import moment from 'moment'
 import { useSelector } from 'react-redux'
-
-
 
 
 // Todo title
@@ -19,7 +18,7 @@ export const Header = () => {
     <header>
       <h1>My Day</h1>
       <div className="text-wrap">
-        <p>Saturday 18th April</p>
+        <p>{moment().format('dddd Do MMM')}</p>
         <p className="tasks">{task} Tasks</p>
       </div>
     </header>
