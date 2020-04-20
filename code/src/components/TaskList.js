@@ -45,7 +45,7 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: flex-start;
   /* align-items: center; */
-  background: #b3d9ff;
+  background: white;
   /* background-image: linear-gradient(#387adf, #efefef); */
   padding: 20px;
   color: white;

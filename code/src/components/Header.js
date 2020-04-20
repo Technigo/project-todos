@@ -6,7 +6,7 @@ import { tasks } from '../reducers/tasks'
 
 import styled from 'styled-components'
 
-import { ButtonStyle, ButtonClear } from '../lib/Button'
+import { ButtonClear } from '../lib/Button'
 
 
 export const Header = () => {
@@ -71,7 +71,7 @@ const ContainerButton = styled.div`
   margin-top: 90px;
 
 `;
-const DateText = styled.h3`
+const DateText = styled.text`
   font-size: 12px;
   /* font-weight: 200; */
   font-weight: 100;
@@ -84,5 +84,5 @@ const Text = styled.h1`
   /* font-weight: 200; */
   font-weight: 300;
   color: #EFEBE9;
-  margin: 0 0 10px 0;
+  margin: 0 0 5px 0;
 `;

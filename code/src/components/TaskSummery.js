@@ -2,6 +2,8 @@ import React from 'react'
 
 import { useSelector } from 'react-redux'
 
+import styled from 'styled-components'
+
 
 export const TaskSummery = () => {
 
@@ -15,13 +17,42 @@ export const TaskSummery = () => {
 
 
   return (
-      <section className="todo-summery">
+ 
+      <SummeryText>
+        COMPLETED <NumberDone>{numDone}</NumberDone>  
+        OUT OF {list.items.length} THINGS TO DO
+        {/* COMPLETED <NumberDone>{numDone}</NumberDone>/{list.items.length}   */}
+      </SummeryText>
+
+  )
+/*       <section className="todo-summery">
         <h2>
           {numDone}/{list.items.length} are done 💚 
         </h2>
       </section>
-  )
-
-
+  ) */
 
 }
+
+
+
+
+const SummeryText = styled.text`
+  font-size: 14px;
+  /* font-weight: 200; */
+  font-weight: 600;
+  color: #9e9ea7;
+  margin: 0;
+`;
+const NumberDone = styled.div`
+    background-color: #9e9ea7;
+    color: white;
+    display: inline-block;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    margin: 5px;
+    padding: 3px 2px 2px 2px;
+
+`;

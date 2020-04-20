@@ -47,12 +47,12 @@ export const TaskInput = () => {
           className="todo-input-button"
           value="Add Todo"
         ></input>  */}
-          <ButtonStyle>Add</ButtonStyle>
-        <input
+          <ButtonStyle type="submit" value="Add Todo">Add new thing</ButtonStyle>
+        {/* <input
           type="submit"
           className="todo-input-button"
           value="Add Todo"
-        ></input> 
+        ></input>  */}
       </form>
     </Container>
   )

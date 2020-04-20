@@ -1,24 +1,34 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
+/* const initialState = {
   list: {
     // key: Date.now(),
     name: "My todo list",
     items: [],
   },
-};
-/* const initialState = {
+}; */
+const initialState = {
   list: {
     name: "Test list",
     items: [
       {
         id: Date.now(),
-        description: "This is a test todo",
+        description: "Style this App",
+        done: false,
+      },
+      {
+        id: Date.now(),
+        description: "Have fun",
+        done: false,
+      },
+      {
+        id: Date.now(),
+        description: "Go to gym",
         done: false,
       },
     ],
   },
-}; */
+};
 
 export const tasks = createSlice({
   name: "tasks",
