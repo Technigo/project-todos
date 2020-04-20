@@ -17,13 +17,12 @@ export const TaskSummery = () => {
 
 
   return (
- 
       <SummeryText>
-        COMPLETED <NumberDone>{numDone}</NumberDone>  
-        OUT OF {list.items.length} THINGS TO DO
+        COMPLETED 
+          <NumberDone>{numDone}</NumberDone>  
+          <SummeryTextThin>OUT OF {list.items.length} THINGS TO DO</SummeryTextThin>
         {/* COMPLETED <NumberDone>{numDone}</NumberDone>/{list.items.length}   */}
       </SummeryText>
-
   )
 /*       <section className="todo-summery">
         <h2>
@@ -31,7 +30,6 @@ export const TaskSummery = () => {
         </h2>
       </section>
   ) */
-
 }
 
 
@@ -42,7 +40,14 @@ const SummeryText = styled.text`
   /* font-weight: 200; */
   font-weight: 600;
   color: #9e9ea7;
-  margin: 0;
+  margin: 0 0 0 16px;
+`;
+const SummeryTextThin = styled.text`
+  font-size: 14px;
+  /* font-weight: 200; */
+  font-weight: 200;
+  color: #9e9ea7;
+  margin: 0 0 0 16px;
 `;
 const NumberDone = styled.div`
     background-color: #9e9ea7;

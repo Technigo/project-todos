@@ -18,12 +18,12 @@ const initialState = {
       },
       {
         id: Date.now(),
-        description: "Have fun",
+        description: "Eat ice cream",
         done: false,
       },
       {
         id: Date.now(),
-        description: "Go to gym",
+        description: "Go to the gym",
         done: false,
       },
     ],

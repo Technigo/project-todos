@@ -45,9 +45,11 @@ const Container = styled.section`
   flex-direction: column;
   justify-content: flex-start;
   /* align-items: center; */
-  background: white;
+  background: whitesmoke;
   /* background-image: linear-gradient(#387adf, #efefef); */
-  padding: 20px;
+  padding: 0px 0px 200px 0px;
   color: white;
+  margin: 0;
   font-weight: 700;
+  border-bottom: 1px solid #EBEEEF;
 `;

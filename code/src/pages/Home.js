@@ -38,8 +38,8 @@ export const Home = () => {
 // styled-components:
 const AppContainer = styled.main`
     @media (min-width: 668px) {
-    width: 50%;
-    margin: 20px auto;
+    width: 600px;
+    margin: 40px auto;
   },
 
 `

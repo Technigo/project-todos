@@ -21,7 +21,7 @@ code {
 }
 
 .todo-input-text {
-  font-size: 22px;
+  font-size: 18px;
   width: 40%;
 }
 
@@ -50,13 +50,14 @@ code {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  font-size: 24px;
+  font-size: 18px;
   border-bottom: 1px solid #EBEEEF;
   color: black;
+  font-weight: 300;
 }
 
 .todo-item.done {
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
 }
 
 .todo-item-check {
@@ -64,12 +65,12 @@ code {
   margin: 16px;
 }
 
-.todo-item-remove {
+/* .todo-item-remove {
   cursor: pointer;
   margin: 8px;
   font-size: 12px;
   color: rgb(255, 77, 0);
-}
+} */
 
 /* .todo-summary {
   margin: 8px;

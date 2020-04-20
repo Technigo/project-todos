@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { useDispatch } from 'react-redux'
 import { tasks } from '../reducers/tasks'
-import { ButtonStyle } from '../lib/Button'
+import { ButtonAdd } from '../lib/Button'
 
 import styled from 'styled-components'
 
@@ -47,7 +47,7 @@ export const TaskInput = () => {
           className="todo-input-button"
           value="Add Todo"
         ></input>  */}
-          <ButtonStyle type="submit" value="Add Todo">Add new thing</ButtonStyle>
+          <ButtonAdd type="submit" value="Add Todo">Add new thing</ButtonAdd>
         {/* <input
           type="submit"
           className="todo-input-button"
@@ -59,9 +59,10 @@ export const TaskInput = () => {
 }
 
 export const Container = styled.section`
-  background: lightgrey;
+  background: #ccdae9;
+  padding: 20px 0px 20px 10px;
 `;
 
 export const Form = styled.form`
-  back
+  
 `;
