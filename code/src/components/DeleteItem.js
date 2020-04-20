@@ -1,15 +1,14 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { reducer } from "../reducers/reducer"
+import { apa } from "../reducers/apa"
 
 export const DeleteItem = ({itemIndex}) => {
-  const item = useSelector((store) => store.reducer.todoListItems[itemIndex])
 
   const dispatch = useDispatch()
 
   const onRemoveClicked = (e) => {
     dispatch(
-      reducer.actions.removeTodo({
+      apa.actions.removeTodo({
         itemIndex,
       })
     )

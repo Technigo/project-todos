@@ -15,7 +15,7 @@ const Container = styled.section`
 // This should change bg color depending of category
 const TodoItem = styled(Container)`
   justify-content: space-evenly;
-  background-color: green;
+  background-color: white;
   width: 25vw;
   margin: 8px;
 `
@@ -30,7 +30,7 @@ const TodoSection = styled(Container)`
 `
 
 export const ListItem = () => {
-  const todo = useSelector((store) => store.reducer.todoListItems)
+  const todo = useSelector((store) => store.apa.todoListItems)
 
   return (
     <Container>

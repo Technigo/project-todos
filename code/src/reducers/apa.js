@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const initialstate = {
+const initialState = {
   todoListItems: {
     name: 'Todo list',
     items: [
@@ -24,9 +24,9 @@ const initialstate = {
   }
 }
 
-export const reducer = createSlice({
+export const apa = createSlice({
   name: 'TodoList',
-  initialState: initialstate,
+  initialState: initialState,
   reducers: {
     // Add all reducers here, addItem, removeItem, setDone, toggleDone,
 

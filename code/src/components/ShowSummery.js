@@ -4,13 +4,14 @@ import styled from 'styled-components'
 
 
 export const ShowSummery = () => {
-  const items = useSelector((store) => store.reducer.todoListItems)
+  const items = useSelector((store) => store.apa.todoListItems)
+  const numDone = items.items.filter(item => item.done).length;
 
   return (
     <main>
       <section>
         {/* Show total numbers of todo */}
-        {items.items.length}
+        Done {numDone}/{items.items.length}
       </section>
     </main>
   )

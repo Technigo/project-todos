@@ -1,16 +1,16 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
-import { reducer } from "../reducers/reducer"
+import { apa } from "../reducers/apa"
 
 export const SetDone = ({itemIndex}) => {
-  const item = useSelector((store) => store.reducer.todoListItems[itemIndex])
 
   const dispatch = useDispatch()
 
   const onDoneClicked = (e) => {
     dispatch(
-      reducer.actions.doneTodo({
+      apa.actions.doneTodo({
         itemIndex,
+        done: true,
       })
     )
   }

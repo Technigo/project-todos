@@ -1,13 +1,13 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, createStore } from '@reduxjs/toolkit'
-import { reducer } from 'reducers/reducer'
+import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit'
+import { apa } from 'reducers/apa'
 import { TodoContainer } from './components/TodoContainer'
 
 // Tell redux about our reducers
 // Store both my reducers todos and reducer inside reducers to combine reducers
 const reducers = combineReducers({ 
-  reducer: reducer.reducer,
+  apa: apa.reducer
  });
 
 // Retrieve the existing state from localstorage if it exists

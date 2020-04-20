@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from "react-redux"
 import styled from 'styled-components'
-import { reducer } from '../reducers/reducer';
+import { apa } from '../reducers/apa';
 
 export const AddItem = () => {
   const dispatch = useDispatch()
@@ -13,7 +13,7 @@ export const AddItem = () => {
     const date = new Date()
 
     dispatch(
-      reducer.actions.addTodo({
+      apa.actions.addTodo({
         itemInfo: {
           id: Date.now(),
           description: inputValue,
