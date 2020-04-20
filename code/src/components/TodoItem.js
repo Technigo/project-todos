@@ -44,7 +44,7 @@ export const TodoItem = ({ itemIndex }) => {
       <div className="created-at-time"> {moment(item.date).fromNow()}</div>
 
 
-      <a className="todo-item-remove" onClick={onRemoveClicked}>
+      <div className="todo-item-remove" onClick={onRemoveClicked}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="22"
@@ -57,7 +57,7 @@ export const TodoItem = ({ itemIndex }) => {
             transform="matrix(.1 0 0 -.1 0 1280)"
           ></path>
         </svg>
-      </a>
+      </div>
 
 
     </div>
