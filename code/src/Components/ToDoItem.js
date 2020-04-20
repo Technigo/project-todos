@@ -1,17 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { ItemText } from './ItemText'
+import { todoitem } from './Reducers/todoitem';
+import { Checkmark } from './Checkmark'
 
-export const ToDoItem = () => {
+export const ToDoItem = ({item}) => {
 
-  const allItems = useSelector((store) => store.todoitem.items)
-  
+  const dispatch = useDispatch();
+  const [done, setDone] = useState(false)
+
   return (
-    allItems.map(item => {
-      return (
-        < ItemText item={item}/>
-      )
-    })
-
+    <li className={`todo-item ${done ? "done" : ""}`}>
+      <section className="checkmark-itemname">
+        <div className={`finished-status ${done ? "fill" : ""}`} onClick={() => setDone(!done)}>
+          {done ? < Checkmark /> : ""}
+        </div>
+        <p>{item.name}</p>
+      </section>
+      <button onClick={() => { dispatch(todoitem.actions.removeItem(item)) }}>Remove</button>
+    </li>
   )
 }
