@@ -9,6 +9,10 @@ export const ListedItems = () => {
   const allTodos = useSelector((store) => store.todos.list)
   const totalList = useSelector((store) => store.todos.list.todos)
 
+  // const completedTodos = totalList.filter(todo => (todo.complete === true))
+  // const notDoneTodos = totalList.filter(todo => (todo.complete === false))
+
+
   if (totalList.length === 0) {
     return (
       <>

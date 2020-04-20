@@ -10,6 +10,7 @@ export const ClearAll = () => {
   const dispatch = useDispatch()
   const everyTodos = useSelector(store => store.todos.list.todos.length)
 
+  // Get pop-up to confirm before clearing list
   const handleClearAll = () => {
     swal({
       title: 'Are you sure?',
@@ -26,7 +27,7 @@ export const ClearAll = () => {
   }
 
   return (
-    <div>
+    <div className="clearContent">
       <button type="button"
         className="clearAll"
         onClick={handleClearAll}

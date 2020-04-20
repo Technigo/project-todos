@@ -1,32 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 // import moment from 'moment'
 
-// const initialState = {
-//   list: {
-//     name: "Todo",
-//     todos: [
-//       {
-//         id: 1,
-//         text: 'Walk the dog',
-//         time: '1 hour ago',
-//         complete: true
-//       },
-//       {
-//         id: 2,
-//         text: 'Apply for jobs!!',
-//         time: '3 days ago',
-//         complete: false
-//       },
-//       {
-//         id: 3,
-//         text: 'Buy candy?',
-//         time: '36 min ago',
-//         complete: false
-//       }
-//     ]
-//   }
-// }
-
 const initialState = {
   list: {
     name: 'Todo',
@@ -34,20 +8,24 @@ const initialState = {
       {
         text: 'Buy Candy!',
         complete: false,
+        category: 'Other'
         // time: moment().format('D/M, HH:mm')
       },
       {
         text: 'Walk the dog',
         complete: true,
+        category: 'Home'
         // time: moment().format('D/M, HH:mm')
       },
       {
         text: 'Apply for jobs 🌸',
         complete: false,
+        category: 'Work'
         // time: moment().format('D/M, HH:mm')
       }
     ]
-  }
+  },
+  category: ['Other', 'Home', 'Study', 'Work'],
 }
 
 export const todos = createSlice({

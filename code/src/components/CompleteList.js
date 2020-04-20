@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { todos } from 'reducers/todos'
-import moment from 'moment'
+// import moment from 'moment'
 
 import './style/Listed.css'
 
@@ -40,7 +40,7 @@ export const CompleteList = ({ todoIndex }) => {
 
         <div className="timeAndText">
           <p className={todo.complete === true ? "todoText check" : "todoText"}>{todo.text}</p>
-          <p className="todoTime">{moment(todo.time).format('D/M, HH:mm')}</p>
+          {/* <p className="todoTime">{moment(todo.time).format('D/M, HH:mm')}</p> */}
         </div>
 
         <button type="button"
