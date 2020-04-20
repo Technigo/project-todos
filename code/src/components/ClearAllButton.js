@@ -2,7 +2,7 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
 import styled from 'styled-components/macro'
-
+import swal from 'sweetalert';
 
 export const ClearAllButton = () => {
   const dispatch = useDispatch()
@@ -10,9 +10,26 @@ export const ClearAllButton = () => {
   return (
     <ClearAll
       type="button"
-      onClick={() => dispatch(todos.actions.removeAll())}
-    >Clear All
-    </ClearAll>
+      onClick={() => swal({
+        title: "Are you sure?",
+        text: "Once deleted, you will not be able to recover your tasks!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+        .then((willDelete) => {
+          if (willDelete) {
+            dispatch(todos.actions.removeAll())
+            swal("Poof! All your tasks have been deleted!", {
+              icon: "success",
+            });
+          } else {
+            swal("Your todo list is safe!");
+          }
+        })
+      }
+    > Clear All
+    </ClearAll >
   )
 }
 

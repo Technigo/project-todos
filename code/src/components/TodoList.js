@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import { TodoInput } from './TodoInput.js'
 import { TodoItem } from './TodoItem.js'
 import { TodoSummary } from './TodoSummary.js'
+import { ClearAllButton } from './ClearAllButton.js'
+
 
 export const TodoList = () => {
   // Get list information for this list from the store
@@ -17,6 +19,7 @@ export const TodoList = () => {
         ))
       }
       <TodoSummary />
+      <ClearAllButton />
     </section>
   )
 }
