@@ -54,6 +54,7 @@ input [type='submit'] {
 }
 
 .addtoshop {
+  /* background-color: #dfcdc0; */
   background-color: #d8e2dc;
 }
 
@@ -110,6 +111,20 @@ button:focus {
   border: 3px solid #555;
 }
 
+.overlay {
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
+}
+
 /* TO-DO-ITEM */
 
 .summary {
@@ -130,6 +145,7 @@ button:focus {
 
 .toshopitem {
   background-color: #a4babd;
+  /* background-color: #cdbeb3; */
 }
 
 input[type='checkbox'] {
@@ -165,6 +181,10 @@ input[type='checkbox'] {
   font-size: 1rem;
   color: white;
   font-style: italic;
+}
+
+.reset {
+  margin-bottom: 30px;
 }
 
 /** MEDIA QUERIES **/

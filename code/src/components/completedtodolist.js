@@ -3,20 +3,49 @@ import { useDispatch, useSelector } from 'react-redux';
 import { todos } from '../reducers/todos.js';
 
 export const CompletedTasks = () => {
-  // pick up the list from the store
   const list = useSelector((store) => store.todos.list);
+  const tasks = list.items.filter((item) => item.completed === true);
 
-  // Counter of how many tasks left to do
-  const completed = list.items.filter((item) => item.completed);
-  const shopped = list.items.filter((item) => item.shopped);
-
-  if ((shopped === 0, completed === 0)) {
+  if (tasks == 0) {
+    return <></>;
+  } else {
     return (
       <div>
-        <p> You have not completed any tasks yet.</p>
+        Stuff you did today:{' '}
+        {tasks.map((item) => (
+          <p>{item.text}</p>
+        ))}
       </div>
     );
-  } else {
-    return <div>Completed tasks: {completed.map((item) => item.text)}</div>;
   }
 };
+
+export const CompletedShopping = () => {
+  const list = useSelector((store) => store.todos.list);
+  const shopping = list.items.filter((item) => item.shopped === true);
+
+  if (shopping == 0) {
+    return <></>;
+  } else {
+    return (
+      <div>
+        Stuff you rememebered to buy:{' '}
+        {shopping.map((item) => (
+          <p>{item.text}</p>
+        ))}
+      </div>
+    );
+  }
+};
+
+//   if (shopped == false && completed == false) {
+//     return (
+//       <div>
+//         <p> You haven't completed any tasks yet.</p>
+//       </div>
+//     );
+//   }
+//   if (shopped == true && completed == false) {
+//     return <div>Completed tasks: Bought </div>;
+//   }
+// };

@@ -27,7 +27,6 @@ export const ToDoItem = ({ itemIndex }) => {
     );
   };
 
-  console.log(item.duedate);
   if (!item.text) {
     return <></>;
   }

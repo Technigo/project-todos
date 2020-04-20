@@ -5,7 +5,7 @@ import { ToDoItem } from './todoitem';
 import { Summary } from './todosummary';
 import { useSelector, useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos.js';
-import { CompletedTasks } from './completedtodolist';
+import { CompletedTasks, CompletedShopping } from './completedtodolist';
 import '../index.css';
 
 export const ToDoList = () => {
@@ -41,9 +41,12 @@ export const ToDoList = () => {
       {list.items.map((item, index) => (
         <ToDoItem item={item} itemIndex={index} />
       ))}
-
       <CompletedTasks />
-      <button onClick={resetall}>reset</button>
+      <CompletedShopping />
+
+      <button className='reset' onClick={resetall}>
+        reset
+      </button>
     </main>
   );
 };
