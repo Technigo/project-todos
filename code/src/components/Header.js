@@ -6,14 +6,15 @@ export const Header = () => {
 
   return (
     <StyledHeader>
+      <StyledBackground></StyledBackground>
       <StyledText>Just do it!</StyledText>
     </StyledHeader>
+
 
   )
 }
 const StyledHeader = styled.header`
  background-color:#1e3756;
- padding-left: 20px;
  border-radius: 100% 0% 100% 0% / 0% 79% 55% 100% ;
  height: 200px;
 `
@@ -26,4 +27,10 @@ font-size: 48px;
 font-weight: 700;
 font-family: 'niveau-grotesk', sans-serif ;
 font-style: italic;
+`
+const StyledBackground = styled.div`
+ background-color:#f18666;
+ height: 70px;
+ width: 100%;
+ border-bottom-left-radius: 55% 100%;
 `

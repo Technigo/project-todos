@@ -33,5 +33,12 @@ export const todos = createSlice({
       const { itemIndex, done } = action.payload;
       state.list.items[itemIndex].done = done;
     }
+  },
+
+  removeAll: (state) => {
+    // return initialState (gives same result as below)
+    state.items = []
   }
+
+
 });

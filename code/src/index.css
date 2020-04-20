@@ -34,7 +34,7 @@ main {
 }
 
 .todo-input-text {
-  font-size: 22px;
+  font-size: 20px;
   width: 70%;
   color: #1e3756;
   font-family: 'niveau-grotesk', sans-serif ;
@@ -60,23 +60,31 @@ main {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  font-size: 24px;
   width: 90%
 }
 
 .todo-item-description {
   font-family: 'niveau-grotesk', sans-serif ;
-  font-size: 24px;
+  font-size: 16px;
   color: #1e3756;
+}
+
+.created-at-time {
+  color: #607ea3;
+  font-size: 12px;
+  font-family: 'niveau-grotesk', sans-serif ;
+  margin-left: 10px;
 }
 
 .todo-item.done {
   text-decoration: line-through;
 }
 
-.todo-item-remove {
+.todo-item-remove svg {
   display: flex;
   margin-left: 10px;
+  fill: #1e3756;
+  
 }
 
 .todo-summary {

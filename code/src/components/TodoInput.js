@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { todos } from "../reducers/todos.js";
+import styled from 'styled-components'
+
 
 export const TodoInput = ({ listId }) => {
   const dispatch = useDispatch();
@@ -9,18 +11,24 @@ export const TodoInput = ({ listId }) => {
   const handleOnSubmit = e => {
     // Prevent page reload
     e.preventDefault();
+    const date = new Date();
+    const currentDate = date.getTime();
 
     // Dispatch the info to create a new todo
     dispatch(
       todos.actions.addTodo({
         listId: listId,
-        itemInfo: { description: inputValue, done: false }
+        itemInfo: {
+          description: inputValue, done: false, date: currentDate,
+          display: true,
+        }
       })
     );
 
     // Reset value
     setInputValue("");
   };
+
 
   return (
     <form className="todo-input" onSubmit={handleOnSubmit}>
@@ -38,3 +46,4 @@ export const TodoInput = ({ listId }) => {
     </form>
   );
 };
+

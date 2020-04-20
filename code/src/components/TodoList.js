@@ -3,6 +3,7 @@ import { TodoItem } from "./TodoItem.js";
 import { TodoInput } from "./TodoInput.js";
 import { TodoSummary } from "./TodoSummary.js";
 import { useSelector } from "react-redux";
+import { ClearAll } from './ClearAll'
 
 export const TodoList = () => {
   // Get list information for this list
@@ -15,6 +16,7 @@ export const TodoList = () => {
       {list.items.map((item, index) => (
         <TodoItem item={item} itemIndex={index} />
       ))}
+      {/* <ClearAll /> */}
       <TodoSummary />
     </section>
   );

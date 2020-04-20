@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { todos } from "../reducers/todos.js";
+import moment from 'moment'
+
 
 export const TodoItem = ({ itemIndex }) => {
   // Get the item from the store based on the index
@@ -27,6 +29,9 @@ export const TodoItem = ({ itemIndex }) => {
     );
   };
 
+
+
+
   return (
     <div className={`todo-item ${item.done ? "done" : ""}`}>
       <input
@@ -35,12 +40,15 @@ export const TodoItem = ({ itemIndex }) => {
         className="todo-item-check"
         checked={item.done ? "checked" : ""}
       ></input>
-      <span className="todo-item-description">{item.description}</span>
+      <span className="todo-item-description">{item.description} </span>
+      <div className="created-at-time"> {moment(item.date).fromNow()}</div>
+
+
       <a className="todo-item-remove" onClick={onRemoveClicked}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          width="32"
-          height="32"
+          width="22"
+          height="22"
           version="1"
           viewBox="0 0 1280 1280"
         >
@@ -50,6 +58,9 @@ export const TodoItem = ({ itemIndex }) => {
           ></path>
         </svg>
       </a>
+
+
     </div>
   );
 };
+
