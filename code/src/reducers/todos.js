@@ -29,15 +29,14 @@ export const todos = createSlice({
       state.list.items = [];
     },
     setAll: (state) => {
-      if (state.list.items[0].done) {
-        state.list.items.forEach((item) => {
-          item.done = false;
-        });
-      } else {
-        state.list.items.forEach((item) => {
-          item.done = true;
-        });
-      }
+      state.list.items.forEach((item) => {
+        item.done = true;
+      });
+    },
+    unSetAll: (state) => {
+      state.list.items.forEach((item) => {
+        item.done = false;
+      });
     },
     filterComplete: (state) => {
       state.list.items.forEach((item) => {

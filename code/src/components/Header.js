@@ -8,19 +8,21 @@ export const Header = () => {
   return (
     <Content>
       <Title>
-        <Emoji role="img" aria-label="pen">
-          ✏️
-        </Emoji>{" "}
-        TODO{" "}
-        <Emoji role="img" aria-label="crayon">
-          🖍
-        </Emoji>
+        <Emoji ariaLabel="pen">✏️</Emoji>
+        TODO
+        <Emoji ariaLabel="crayon">🖍</Emoji>
       </Title>
     </Content>
   );
 };
 
-const Emoji = styled.span`
+//Even withthis code I get the following warning
+// Line 11:9:  Emojis should be wrapped in <span>, have role="img", and have an accessible description with aria-label or aria-labelledby
+//And I dont know why,
+const Emoji = styled.span.attrs(({ ariaLabel }) => ({
+  role: "img",
+  "aria-label": ariaLabel,
+}))`
   font-size: 60px;
   @media (max-width: 668px) {
     font-size: 35px;

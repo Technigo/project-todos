@@ -2,20 +2,42 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { todos } from "reducers/todos";
 import styled from "styled-components";
+import swal from "sweetalert";
+import { Button } from "lib/Button";
 
 export const TodoSummary = () => {
   const list = useSelector((store) => store.todos.list);
   const doneList = list.items.filter((item) => item.done);
   const dispatch = useDispatch();
-  const [setCount, setSetCount] = useState(false);
+  const [trueOrFalse, setTrueOrFalse] = useState(false);
 
   const onRemoveClicked = (event) => {
-    dispatch(todos.actions.removeAllTodos());
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover your todo's",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    }).then((willDelete) => {
+      if (willDelete) {
+        dispatch(todos.actions.removeAllTodos());
+        swal("1, 2, 3! Your todo's are now todont's", {
+          icon: "success",
+        });
+      } else {
+        swal("Phew!", "Your todo's are safe!");
+      }
+    });
   };
 
   const setAll = (event) => {
-    setSetCount(!setCount);
-    dispatch(todos.actions.setAll());
+    if (!trueOrFalse) {
+      setTrueOrFalse(!trueOrFalse);
+      dispatch(todos.actions.setAll());
+    } else {
+      setTrueOrFalse(!trueOrFalse);
+      dispatch(todos.actions.unSetAll());
+    }
   };
 
   const filterActive = (event) => {
@@ -46,18 +68,18 @@ export const TodoSummary = () => {
         )}
         {list.items.length > 1 && (
           <Button onClick={setAll}>
-            {setCount ? "UNCHECK ALL" : "CHECK ALL"}
+            {trueOrFalse ? "UNCHECK ALL" : "CHECK ALL"}
           </Button>
         )}
       </Wrapper>
       <Wrapper>
-        {list.items.length > 0 && (
+        {list.items.length > 1 && (
           <Button onClick={filterActive}>ACTIVE</Button>
         )}
-        {list.items.length > 0 && (
+        {list.items.length > 1 && (
           <Button onClick={filterComplete}>COMPLETE</Button>
         )}
-        {list.items.length > 0 && (
+        {list.items.length > 1 && (
           <Button onClick={displayAll}>ALL TASKS</Button>
         )}
       </Wrapper>
@@ -81,29 +103,6 @@ const GettingStarted = styled.h2`
   margin: 0;
   display: flex;
   justify-self: flex-end;
-`;
-
-const Button = styled.button`
-  display: flex;
-  font-family: "Pangolin", cursive;
-  font-weight: lighter;
-  font-size: 16px;
-  color: #fff;
-
-  background: none;
-
-  border-radius: 5px;
-  border: 2px dashed #fff;
-
-  margin: 0 10px;
-
-  &:active {
-    background: #2a4034;
-  }
-
-  @media (max-width: 668px) {
-    font-size: 12px;
-  }
 `;
 
 const Wrapper = styled.div`

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { todos } from "../reducers/todos";
 import styled from "styled-components";
+import { PrimaryButton } from "lib/PrimaryButton";
 
 export const TodoInput = () => {
   const [inputValue, setInputValue] = useState("");
@@ -33,7 +34,7 @@ export const TodoInput = () => {
         value={inputValue}
         placeholder="Let's get some tasks done!"
       ></Input>
-      <Button type="submit" value="Add todo"></Button>
+      <PrimaryButton type="submit" value="ADD TODO"></PrimaryButton>
     </Form>
   );
 };
@@ -48,27 +49,6 @@ const Input = styled.input`
   height: 30px;
 
   box-sizing: border-box;
-`;
-
-const Button = styled.input`
-  font-family: "Pangolin", cursive;
-  font-size: 24px;
-  color: #fff;
-
-  margin: 5px;
-  padding: 0 5px;
-  width: 150px;
-  height: 30px;
-
-  font-weight: lighter;
-  background: none;
-
-  border-radius: 5px;
-  border: 2px dashed #fff;
-
-  &:active {
-    background: #2a4034;
-  }
 `;
 
 const Form = styled.form`
