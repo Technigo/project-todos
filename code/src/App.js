@@ -26,8 +26,8 @@ export const App = () => {
         <Header />
 
         <main className="main-content">
-          <ItemsCount />
           <AddItem />
+          <ItemsCount />
           <ItemsList />
         </main>
 

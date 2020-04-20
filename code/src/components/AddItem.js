@@ -29,7 +29,7 @@ export const AddItem = () => {
         placeholder="Add task"
         required
       />
-      <input type="submit" className="add-btn" value="Add" />
+      <button className="add-btn">add</button>
     </form>
   )
 }

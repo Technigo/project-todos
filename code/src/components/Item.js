@@ -26,7 +26,7 @@ export const Item = ({ itemIndex, text }) => {
   return (
     <div className={`item ${item.completed ? 'completed' : ''}`} onClick={completeItem}>
       {text}
-      <button onClick={removeItem}>x</button>
+      <button className="remove-btn" onClick={removeItem}>x</button>
     </div>
   )
 }

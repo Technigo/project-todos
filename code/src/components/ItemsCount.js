@@ -8,6 +8,8 @@ export const ItemsCount = () => {
   const numCompleted = list.filter(item => item.completed).length
 
   return (
-    <p>{numCompleted}/{list.length}</p>
+    <div className="items-count">
+      {numCompleted}/{list.length} Completed
+    </div>
   )
 }

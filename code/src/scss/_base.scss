@@ -10,10 +10,11 @@ html, body, #root, .wrapper {
 
 body {
   margin: 0;
-  color: #000;
+  color: $darkCol;
   background-color: $primaryCol;
   font-size: 16px;
   font-family: 'Avenir', 'Helvetica', 'sans-serif';
+  font-weight: 700;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -31,6 +32,18 @@ h1, h2, h3 {
   flex-direction: column;
 }
 
+.main-content {
+  flex: 1 1 auto;
+  padding: 1rem 2rem;
+
+
+  background-color: #fff;
+  border-top-right-radius: $borderRadiusBig;
+}
+
+
+/* –––– Header –––– */
+
 header {
   flex: 0 1 auto;
   padding: 2rem;
@@ -38,11 +51,56 @@ header {
   color: #fff;
 }
 
-.main-content {
-  flex: 1 1 auto;
-  padding: 1rem 2rem;
 
 
-  background-color: #fff;
-  border-top-right-radius: 3rem;
+/* –––– Add Item –––– */
+
+.add-item {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0 3rem;
+}
+
+input[type=text] {
+  border: 0;
+  font-weight: 700;
+}
+
+.add-btn {
+  text-align: center;
+  background-color: $primaryCol;
+  color: #fff;
+  padding: .6rem 1rem;
+  border-radius: 2rem;
+  border: none;
+  font-weight: 700;
+}
+
+
+/* –––– Counter –––– */
+
+.items-count {
+  color: $primaryCol;
+  font-size: .85rem;
+}
+
+
+/* –––– Items list –––– */
+
+.item {
+  display: flex;
+  justify-content: space-between;
+
+  padding: 1.5rem;
+  border-top-left-radius: $borderRadiusSmall;
+  border-top-right-radius: $borderRadiusSmall;
+  // border-bottom-left-radius: $borderRadiusSmall;
+  border-bottom-right-radius: $borderRadiusSmall;
+  margin: 1rem 0;
+  background-color: #eee;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: .5;
 }
