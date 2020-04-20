@@ -6,6 +6,8 @@ import { tasks } from '../reducers/tasks'
 
 import styled from 'styled-components'
 
+import { ButtonStyle, ButtonClear } from '../lib/Button'
+
 
 export const Header = () => {
 
@@ -19,13 +21,16 @@ export const Header = () => {
 
   return(
     <Container>
-      <Text>
-      Today is {moment().format("MMMM Do, Y")}
-      </Text>
-      <h1>My To do app</h1>
-
-      <button onClick={handleClearList}>CLEAR</button>
-
+      <ContainerLeft>
+        <Text>My Things To do</Text>
+        <DateText>{moment().format("MMMM Do, Y")}</DateText>
+      </ContainerLeft>
+      <ContainerRight>
+        <ContainerButton>
+          <ButtonClear onClick={handleClearList}>CLEAR LIST</ButtonClear>
+        {/* <button onClick={handleClearList}>CLEAR</button> */}
+        </ContainerButton>
+      </ContainerRight>
     </Container>
   )
 }
@@ -36,16 +41,48 @@ const Container = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #387adf;
+  /* background: #387adf; */
+  background: #46539e;
   padding: 20px;
   color: white;
-  font-weight: 700;
+  /* font-weight: 700; */
+  margin: 0;
+  /* height: 150px; */
 `;
 
-const Text = styled.h3`
-  font-size: 14px;
-  font-weight: 400;
+const ContainerLeft = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 120px;
+  width: 150px;
+`
+const ContainerRight = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  height: 100px;
+  
+`;
+
+const ContainerButton = styled.div`
+  margin-top: 90px;
+
+`;
+const DateText = styled.h3`
+  font-size: 12px;
+  /* font-weight: 200; */
+  font-weight: 100;
   color: #EFEBE9;
   margin: 0;
 `;
 
+const Text = styled.h1`
+  font-size: 34px;
+  /* font-weight: 200; */
+  font-weight: 300;
+  color: #EFEBE9;
+  margin: 0 0 10px 0;
+`;

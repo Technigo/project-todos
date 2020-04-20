@@ -7,8 +7,6 @@ const initialState = {
     items: [],
   },
 };
-
-
 /* const initialState = {
   list: {
     name: "Test list",

@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useDispatch, useSelector } from 'react-redux'
 import { tasks } from '../reducers/tasks'
+import { ButtonStyle } from 'lib/Button'
 
 // For time stamping to dos
 // import moment from 'moment'
@@ -45,8 +46,9 @@ export const TaskItem = ({ itemIndex }) => {
       {/* <span className="MAKE TIMESTAMP">Due date:{item.id}</span> */}
 {/*       <a className="todo-item-remove" onClick={onRemoveClicked}>
       [remove]
-      </a> */}
+    </a> */}
       <button className="todo-item-remove" onClick={onRemoveClicked}>remove</button>
+      <ButtonStyle>Remove</ButtonStyle>
     </div>
   )
 }
