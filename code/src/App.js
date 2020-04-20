@@ -1,11 +1,12 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { tasks } from './reducers/tasks'
-import { TaskList } from './components/TaskList'
+import { todos } from './reducers/todos'
+import { TodoInput } from './components/TodoInput'
+import { TodoList } from './components/TodoList'
 
 const reducer = combineReducers({
-  tasks: tasks.reducer
+  todos: todos.reducer
 })
 
 const store = configureStore({ reducer })
@@ -14,7 +15,12 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <TaskList></TaskList>
+      <main>
+        TODO INPUT
+        <TodoInput></TodoInput>
+        TODO LIST
+        <TodoList></TodoList>
+      </main>
     </Provider>
   )
 }
