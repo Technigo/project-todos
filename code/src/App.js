@@ -7,6 +7,9 @@ import { ItemsCount } from 'components/ItemsCount'
 
 import { todos } from 'reducers/todos'
 
+import 'normalize.css';
+import 'scss/app.scss'
+
 const reducer = combineReducers({
   todos: todos.reducer
 })
