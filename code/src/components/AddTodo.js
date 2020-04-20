@@ -4,7 +4,8 @@ import { todos } from '../reducers/todos';
 
 
 export const AddTodo = () => {
-  const [inputValue, setInputValue] = useState('');
+  const [inputValueDescription, setInputValueDescription] = useState('');
+  const [inputValueDate, setInputValueDate] = useState('');
   const dispatch = useDispatch();
 
   const handleOnSubmit = event => {
@@ -12,21 +13,28 @@ export const AddTodo = () => {
     
     dispatch(
       todos.actions.addTodo({
-        description: inputValue,
+        description: inputValueDescription,
+        date: inputValueDate,
         done: false
       })
     );
 
-    setInputValue('');
+    setInputValueDescription('');
+    setInputValueDate('');
   }
 
   return (
     <form className='todo-input' onSubmit={handleOnSubmit}>
       <input 
         type='text'
-        onChange={event => setInputValue(event.target.value)}
-        value={inputValue}
+        onChange={event => setInputValueDescription(event.target.value)}
+        value={inputValueDescription}
         className='todo-input-text'
+      ></input>
+      <input
+        type='date'
+        onChange={event => setInputValueDate(event.target.value)}
+        value={inputValueDate}
       ></input>
       <input
         type='submit'

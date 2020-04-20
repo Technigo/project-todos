@@ -3,12 +3,7 @@ import { createSlice } from  '@reduxjs/toolkit';
 const initialState = {
   list: {
     name: 'Test List',
-    items: [
-      {
-        description: 'This is a test todo',
-        done: false
-      }
-    ]
+    items: []
   }
 };
 
@@ -29,6 +24,9 @@ export const todos = createSlice({
       state.list.items = state.list.items.filter(
         (item, index) => index !== itemIndex
       );
+    }, 
+    removeAllTodos: (state) => {
+      state.list.items = []
     }
   }
 });

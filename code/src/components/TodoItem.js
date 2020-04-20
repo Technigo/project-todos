@@ -1,19 +1,22 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
+import moment from 'moment';
 
 export const TodoItem = ({ itemIndex }) => {
   const item = useSelector((store) => store.todos.list.items[itemIndex]);
 
   const dispatch = useDispatch();
 
-  const onRemovedClicked = () => {
-    dispatch(
-      todos.actions.removeTodo({
-        itemIndex: itemIndex
-      })
-    );
-  };
+  const statusStyling = () => {
+    if (item.done) {
+      return 'done'
+    } else if (item.date > moment().format('MMMM Do YYYY')) {
+      return 'over-due'
+    } else {
+      return ''
+    }
+  }
 
   const handleOnChange = () => {
     dispatch(
@@ -24,8 +27,16 @@ export const TodoItem = ({ itemIndex }) => {
     );
   };
 
+  const onClickedRemoved = () => {
+    dispatch(
+      todos.actions.removeTodo({
+        itemIndex: itemIndex
+      })
+    );
+  };
+
   return (
-    <div className={`todo-item ${item.done ? 'done' : ''}`}>
+    <div className={`todo-item ${statusStyling()}`}>
       <input 
         type='checkbox'
         onChange={handleOnChange}
@@ -35,7 +46,11 @@ export const TodoItem = ({ itemIndex }) => {
       <span className='todo-item-description'>
         {item.description}
       </span>
-      <a className='todo-item-remove' onClick={onRemovedClicked}>
+      <span className='todo-item-description'>
+        {item.date}
+      </span>
+      <h3>{moment(item.createdAt).fromNow()}</h3>
+      <a className='todo-item-remove' onClick={onClickedRemoved}>
         [Remove]
       </a>
     </div>
