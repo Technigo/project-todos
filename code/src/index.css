@@ -5,9 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(270deg, #8EC5FC 0%, #E0C3FC 100%);
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+main {
+  
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.todo-input {
+  margin: 20px;
+}
+
+.todo-input-text {
+padding: 5px;
+font-size: 20px;
+}
+
+.todo-input-button {
+  font-size: 20px;
+  padding: 5px;
+}
+
+.todo-item {
+  font-size: 20px;
 }
