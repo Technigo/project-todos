@@ -1,17 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const todoItems = {
-  items: [
-    {
-      text: 'Buy more striped t-shirts',
-      completed: false
-    }
-  ]
-}
-
 export const todos = createSlice({
   name: 'todos',
-  initialState: todoItems,
+  initialState: {
+    items: [
+      { text: 'Buy more striped t-shirts', completed: false }
+    ]
+  },
   reducers: {
     addTodo: (state, action) => {
       const { newItem } = action.payload

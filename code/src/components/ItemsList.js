@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { Item } from './Item'
 
 export const ItemsList = () => {
+  // Get all todos from store
   const todosList = useSelector((store) => store.todos.items)
 
   return (

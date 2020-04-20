@@ -3,10 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
 
 export const Item = ({ itemIndex, text }) => {
-  const item = useSelector((store) => store.todos.items[itemIndex]);
 
+  const item = useSelector((store) => store.todos.items[itemIndex])
   const dispatch = useDispatch()
 
+  // 
   const removeItem = (e) => {
     dispatch(todos.actions.removeTodo({
       itemIndex: itemIndex
