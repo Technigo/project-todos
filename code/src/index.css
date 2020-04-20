@@ -45,6 +45,16 @@ h2 {
   margin-left: 90px;
 }
 
+.todo-summary button {
+  background-color: #ff4f70;
+  color: #FFF;
+  border: none;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+}
+
 .todo-input {
   background-color: #FFF;
   display: flex;

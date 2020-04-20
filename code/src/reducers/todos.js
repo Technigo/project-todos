@@ -41,5 +41,8 @@ export const todos = createSlice( {
       state.list.items = state.list.items.filter(
         (item, index) => index !== itemIndex);
     },
+    removeAllTodos: (state) => {
+      state.list.items = [];
+    },
   }
 });

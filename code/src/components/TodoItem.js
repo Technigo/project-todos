@@ -42,7 +42,7 @@ export const TodoItem = ({itemIndex}) => {
       </div>
       
       <button className="todo-item-remove" 
-        onClick={onRemoveClicked}> CLEAR 
+        onClick={onRemoveClicked}> CLEAR
       </button>
     </div>  
   );

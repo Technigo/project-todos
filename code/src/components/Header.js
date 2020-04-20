@@ -1,10 +1,16 @@
 import React from 'react'
 import moment from 'moment'
-import { useSelector } from "react-redux";
+import { todos } from "reducers/todos";
+import { useSelector, useDispatch } from "react-redux";
 
 export const Header = () => {
   const list = useSelector((store) => store.todos.list);
   const doneList = list.items.filter((item) => item.done);
+  const dispatch = useDispatch();
+  
+  const onRemoveClicked = (event) => {
+    dispatch(todos.actions.removeAllTodos());
+  };
 
   return (
     <div className="header-container">
@@ -15,6 +21,7 @@ export const Header = () => {
     
       <div className="todo-summary">
         <h2>{doneList.length}/{list.items.length}</h2>
+        <button onClick={onRemoveClicked}> CLEAR ALL</button>
       </div>
     </div>
   );
