@@ -8,7 +8,7 @@ import { Header } from "components/Header"
 // Tell redux about our reducers
 const reducer = combineReducers({ todos: todos.reducer });
 
-// Retrieve the existing state from localstorage if it exists
+// // Retrieve the existing state from localstorage if it exists
 const persistedState = localStorage.getItem("reduxState")
   ? JSON.parse(localStorage.getItem("reduxState"))
   : {};

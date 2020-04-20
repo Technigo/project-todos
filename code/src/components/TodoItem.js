@@ -5,13 +5,10 @@ import moment from 'moment'
 
 
 export const TodoItem = ({ itemIndex }) => {
-  // Get the item from the store based on the index
   const item = useSelector((store) => store.todos.list.items[itemIndex]);
-
   const dispatch = useDispatch();
 
   const onRemoveClicked = (e) => {
-    // Dispatch the remove todo event for this item
     dispatch(
       todos.actions.removeTodo({
         itemIndex,
@@ -20,7 +17,6 @@ export const TodoItem = ({ itemIndex }) => {
   };
 
   const handleOnChange = (e) => {
-    // Change the value of done for this item
     dispatch(
       todos.actions.setDone({
         itemIndex: itemIndex,
@@ -28,9 +24,6 @@ export const TodoItem = ({ itemIndex }) => {
       })
     );
   };
-
-
-
 
   return (
     <div className={`todo-item ${item.done ? "done" : ""}`}>
@@ -42,8 +35,6 @@ export const TodoItem = ({ itemIndex }) => {
       ></input>
       <span className="todo-item-description">{item.description} </span>
       <div className="created-at-time"> {moment(item.date).fromNow()}</div>
-
-
       <div className="todo-item-remove" onClick={onRemoveClicked}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -58,8 +49,6 @@ export const TodoItem = ({ itemIndex }) => {
           ></path>
         </svg>
       </div>
-
-
     </div>
   );
 };

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { todos } from "../reducers/todos.js";
-import styled from 'styled-components'
 
 
 export const TodoInput = ({ listId }) => {

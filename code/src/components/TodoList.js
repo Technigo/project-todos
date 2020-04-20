@@ -6,9 +6,7 @@ import { useSelector } from "react-redux";
 import { RemoveAll } from './RemoveAll'
 
 export const TodoList = () => {
-  // Get list information for this list
   const list = useSelector((store) => store.todos.list);
-  // const [list, setList] = useState(useSelector((store) => store.todos.list));
 
   return (
     <section className="todo-list">

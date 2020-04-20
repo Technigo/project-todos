@@ -1,9 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
-import img from 'components/header_nike.png'
 
 export const Header = () => {
-
   return (
     <StyledHeader>
       <StyledBackground>
@@ -12,10 +10,11 @@ export const Header = () => {
     </StyledHeader>
   )
 }
+
 const StyledHeader = styled.header`
  background-color:#1e3756;
  border-radius: 100% 0% 100% 0% / 0% 79% 55% 100% ;
- height: 150px;
+ height: 170px;
 `
 const StyledText = styled.text`
 color: #FFFF;
