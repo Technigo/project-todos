@@ -22,9 +22,10 @@ export const TodoItem = ({ itemIndex }) => {
   const itemChecked = item.done
 
   return (
-    <Styled>
+    <TodoItemContainer>
 
       <Checkbox
+        aria-label={`Mark ${item.description} as done`}
         type='button'
         onClick={onCheckClick}
         itemChecked={itemChecked}
@@ -41,14 +42,14 @@ export const TodoItem = ({ itemIndex }) => {
       >
         <FontAwesomeIcon icon={faTrashAlt} />
       </RemoveButton>
-    </Styled>
+    </TodoItemContainer>
   )
 }
 
-const Styled = styled.div`
+const TodoItemContainer = styled.div`
   display: grid;
   grid-template-columns: 30px 1fr 50px;
-  grid-gap: 5px;
+  grid-gap: 10px;
   width: 100%;
   margin: 10px 0;
 
@@ -61,7 +62,7 @@ const TodoText = styled.p`
   align-items: center;
   margin: 0;
   color: ${prop => prop.itemChecked ? '#888d64' : '#3e3e2d'};
-  font-size: 16px;
+  font-size: 12px;
   text-decoration: ${prop => prop.itemChecked ? 'line-through' : ''};
 
   @media (min-width: 768px) {
@@ -77,17 +78,14 @@ const Checkbox = styled.button`
   border: none;
   border-radius: 10px; 
   background: #888d64;
-  color: #fff;
-  font-size: 20px;
 
   ::after {
     content: '';
     display: ${prop => prop.itemChecked ? 'block' : 'none'};
     width: 15px;
     height: 7px;
-    border-left: 3px solid;
-    border-bottom: 3px solid;
-    /* border-radius: 0 4px; */
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
     transform: rotate(-50deg);
   }
 
