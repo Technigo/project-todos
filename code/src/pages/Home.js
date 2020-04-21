@@ -20,9 +20,9 @@ export const Home = () => {
         <div className='header'>
           <ShowDate />
           <TodoSummery />
+          <TodoInput />
         </div>
         <div className='todo-list-wrapper'>
-          <TodoInput />
           <TodoList />
         </div>
 
