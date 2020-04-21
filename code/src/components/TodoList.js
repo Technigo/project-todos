@@ -48,12 +48,14 @@ const SectionFormat = styled.section `
 display: flex;
 justify-content: space-between;
 width: 100%;
+background: #EBEAEA;
 
 `
 
 const PageTitle = styled.h2 `
 font-weight: normal;
 margin: 20px 10px 5px 15px;
+font-size: 22px;
 `
 
 const DateText = styled.p `

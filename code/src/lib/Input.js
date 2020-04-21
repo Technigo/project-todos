@@ -7,6 +7,7 @@ width: 100%;
 border: 2px white solid;
 margin: 0 auto;
 font-size: 20px;
+outline-color: white;
 `
 
 export const Span = styled.span `

@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Main = styled.main `
-background: #EBEAEA;
+
 height: 100%;
 width: 100%;
 display: flex;
@@ -28,10 +28,10 @@ border-top: solid 2px #A7A6A5;
 
 export const Article = styled.article `
 width: 90%;
-padding: 15px;
+margin: 10px;
 background: white;
 font-size: 20px;
-margin: 2px auto;
+border-bottom: grey solid 1px;
 display:flex;
 justify-content: space-between;
 `

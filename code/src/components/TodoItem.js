@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
 import { useSelector } from 'react-redux'
 import { Article } from '../lib/Container'
-
+import styled from 'styled-components'
 
 export const TodoItem = ({ itemIndex }) => {
   
@@ -33,16 +33,23 @@ const onRemoveClicked = event => {
 
   return (
     <Article className={`todo-item ${item.done ? 'done' : ''}`}>
+      
       <div> 
-        <input type='checkbox'
-          onChange={handleOnChange}
-          className='todo-item-check'
-          checked={item.done ? 'checked' : ''} 
-        >
-        </input>
+        <label className='container'> 
         <span className='todo-item-description'>{item.description}</span>
+          <input type='checkbox'
+            onChange={handleOnChange}
+            className='todo-item-check'
+            checked={item.done ? 'checked' : ''} 
+          >
+          </input>
+          <span className='checkmark'></span>
+        </label>
+        
       </div> 
       <a className='todo-item-remove' onClick={onRemoveClicked}>🗑</a>
+      
     </Article>
   )
 }
+
