@@ -2,10 +2,9 @@ import React from 'react'
 import moment from 'moment'
 import { useSelector, useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
-
 import '../styling/todo-item.css'
 
-export const TodoItem = ({ itemIndex, dueDate, startDate }) => {
+export const TodoItem = ({ itemIndex, dueDate }) => {
   // gets the item from the store based on index
   const item = useSelector(store => store.todos.list.items[itemIndex])
 

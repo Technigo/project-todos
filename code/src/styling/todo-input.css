@@ -34,8 +34,10 @@ button.react-date-picker__clear-button {
   display: none;
 }
 
-div.react-date-picker__calendar {
-  background-color: black;
+
+div.react-date-picker__calendar .react-calendar {
+  background-color: #7473f2;
+  font-size: 20px;
 }
 
 .category-duedate {

@@ -9,16 +9,14 @@ import { todos } from '../reducers/todos'
 import '../styling/todo-list.css'
 import '../styling/todo-item.css'
 
-export const TodoList = ({ setToggle }) => {
+export const TodoList = ({ toggle }) => {
   // get list information from this list from the store
   const list = useSelector(store => store.todos.list)
 
   return (
     <div>
       <ToggleButton />
-      {!setToggle && (
-        <TodoInput />
-      )}
+      {toggle && <TodoInput />}
       <section className="todo-list">
         {
           list.items.map((item, index) => (
