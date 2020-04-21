@@ -7,15 +7,16 @@ import { useSelector } from 'react-redux'
 
 
 export const TaskList = () => {
-
-  const list = useSelector((store) => store.addtodo.list)
+const list = useSelector((store) => store.todos.list)
   
   return (
     <section className="task-list">
       <TaskInput />
-      {list.items.map((item, index) => (
-        <TaskItem item={item} itemIndex={index}></TaskItem>
-      ))}
+      {list.items.map((item, index) => {
+       console.log(index)
+       return <TaskItem item={item} itemIndex={index} />
+        
+})}
     </section>
   )
 }

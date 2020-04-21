@@ -1,20 +1,22 @@
 import React, { useState } from 'react'
 
 import { useDispatch } from 'react-redux'
-import { addtodo } from '../Reducers/addtodo.js'
+import { todos } from '../Reducers/todos.js'
 
-export const TaskInput = () => {
+
+
+
+export const TaskInput = ({ listId }) => {
 const dispatch = useDispatch()
-
 const [inputValue, setInputValue] = useState("")
 
 const handleOnSubmit = e => {
   e.preventDefault()
   // Här lägger vi till "task". 
   dispatch(
-    addtodo.actions.addTodos({
-      description: inputValue,
-      done: false 
+    todos.actions.addTodos({
+      listId: listId,
+      itemInfo: { description: inputValue, done: false }
   })
   )
 
