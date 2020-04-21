@@ -11,7 +11,7 @@ export const TitleContainer = () => {
           aria-hidden='true'
           icon={faListUl} />
       </IconContainer>
-      <Title>B. Productive
+      <Title>B. Productive{' '}
         <FontAwesomeIcon
           aria-hidden='true'
           icon={faCheck} />
