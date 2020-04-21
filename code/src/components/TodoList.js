@@ -7,11 +7,21 @@ import { ClearButton } from "./ClearButton"
 import { useSelector } from "react-redux"
 
 const TodoListContainer = styled.section`
-padding: 16px;
+display: flex;
+flex-direction: column;
+font-family: 'Work Sans', sans-serif;
+`
+const InputContainer = styled.section`
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
+min-height: 100vh;
+padding: 18px;
 background-color: #dff9fb;
+
+@media (min-width: 668px) {
+  padding: 5% 20%;
+}
 `
 
 export const TodoList = () => {
@@ -22,9 +32,11 @@ export const TodoList = () => {
   return(
     <TodoListContainer>
        <TodoSummary />
-      <TodoInput />
+       <InputContainer>
+       <TodoInput />
       {list.items.map((item, index) =>(<TodoItem itemIndex={index}></TodoItem>))}
       <ClearButton />
+       </InputContainer>
     </TodoListContainer>
   )
 }

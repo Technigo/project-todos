@@ -6,17 +6,30 @@ import { todos } from "../reducers/todos"
 const Form = styled.form`
 margin: 8px;
 display: flex;
-flex: column;
+align-items: center;
+justify-content: space-between;
 
   input {
-    font-size: 22px;
-    width: 40%;
+    font-size: 18px;
+    width: 50%;
+    height: 44px;
+    font-family: 'Work Sans', sans-serif;
   }
 
   button {
-    padding: 8px;
-    font-size: 22px;
-    margin-left: 16px;
+    padding: 12px;
+    margin: 6px; 
+    font-size: 18px;
+    border: none;
+    border-radius: 6px;
+    background: #c7ecee;
+    font-family: 'Work Sans', sans-serif;
+  }
+
+  @media (min-width: 668px) {
+    input {
+      width: 70%;
+    }
   }
 `
 
@@ -32,8 +45,8 @@ export const TodoInput = () => {
 
     //Dispatches action to save new todo item
     dispatch(todos.actions.addTodo({
-        description: inputValue,
-        done: false
+      description: inputValue,
+      done: false
     })
     )
 

@@ -5,10 +5,13 @@ import styled from 'styled-components'
 
 const RemoveButton = styled.button`
   padding: 12px;
-  margin: 6px; 
-  font-size: 20px;
+  margin: 12px; 
+  width: fit-content;
+  font-size: 18px;
   border: none;
   border-radius: 6px;
+  background: #c7ecee;
+  font-family: 'Work Sans', sans-serif;
 `
 
 export const ClearButton = () => {
