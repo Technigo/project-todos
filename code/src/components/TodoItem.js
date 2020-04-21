@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 export const TodoItem = ({ itemIndex }) => {
-  const item = useSelector(store => store.todos.items[itemIndex])
+  const item = useSelector(store => store.todos.items[itemIndex]) //Ev ta bort då jag inte behöver hämta igen, kan lägga in som props istället, se TodoItems
 
   const dispatch = useDispatch()
 
