@@ -1,7 +1,7 @@
-import React from "react";
+import React from "react"
 import styled from 'styled-components'
-import { useDispatch, useSelector } from "react-redux";
-import { todos } from "../reducers/todos.js";
+import { useDispatch, useSelector } from "react-redux"
+import { todos } from "../reducers/todos.js"
 
 const Item = styled.section`
 margin: 8px;
@@ -14,6 +14,10 @@ font-size: 24px;
   input {
     transform: scale(2);
     margin: 16px;
+  }
+
+  button {
+    margin: 16px; 
   }
 `
 
