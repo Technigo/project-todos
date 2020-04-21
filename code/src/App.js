@@ -18,9 +18,8 @@ export const App = () => {
     <Provider store={store}>
       <main>
         <TodoSummary />
-        TODO INPUT
+        TODO INPUT FORM
         <TodoInput />
-        TODO LIST
         <TodoList />
       </main>
     </Provider>

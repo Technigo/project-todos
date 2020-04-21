@@ -7,7 +7,12 @@ const TodoListItem = styled.li`
 list-style: none;
 font-size: 20px;
 `
+const Checkbox = styled.input`
 
+`
+const ItemText = styled.span`
+margin-left: 10px;
+`
 
 export const TodoItem = (props) => {
   const { id, text, complete } = props.task
@@ -25,8 +30,7 @@ export const TodoItem = (props) => {
         checked={complete}
         onChange={handleOnChange}>
       </input>
-      <span>{text}</span>
+      <ItemText>{text}</ItemText>
     </TodoListItem>
-
   )
 }
