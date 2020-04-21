@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { combineReducers, createStore } from '@reduxjs/toolkit'
 import { TodoList } from '../components/TodoList.js'
 import { Header } from '../components/Header.js'
+import { Footer } from '../components/Footer.js'
 import { todos } from '../reducers/todos.js'
 import styled from 'styled-components/macro'
 
@@ -31,6 +32,7 @@ export const Home = () => {
           <Header />
           <TodoList />
         </TodoWrapper>
+        <Footer />
       </MainBackground>
     </Provider>
   )
@@ -41,7 +43,7 @@ const MainBackground = styled.section`
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
+  margin-top: 20px;
 `
 
 const TodoWrapper = styled.section`
