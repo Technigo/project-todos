@@ -13,9 +13,10 @@ export const TitleContainer = () => {
 }
 
 const TitleWrapper = styled.section`
-  display: flex;
-  justify-content: space-between;
-  margin: 15px auto;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  grid-gap: 10px;
+  margin: 10px auto;
   padding-top: 15px;
   width: 90%;
 `
@@ -24,27 +25,22 @@ const IconContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 10px;
   background: #888d64;
   color: #fff;
-  font-size: 1.8em;
+  font-size: 1.5em;
 `
 
 const Title = styled.h1`
-  min-width: 75%;
-  height: 40px;
+  height: 30px;
   margin: 0;
   padding: 5px 10px;
   border-radius: 10px;
   background: #f6f6ec;
   color: #b55136;
   font-family: 'Playfair Display';
-  font-size: 1.8em;
+  font-size: 1.5em;
   text-align: center;
-
-  @media (min-width: 768px) {
-    width: 88%;
-  }
 `
