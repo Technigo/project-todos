@@ -1,7 +1,5 @@
 import React from "react";
 import styled from 'styled-components'
-// import { TodoItem } from "./TodoItem.js";
-// import { TodoInput } from "./TodoInput.js";
 import { useSelector } from "react-redux";
 
 const Summary=styled.section`
@@ -13,8 +11,9 @@ export const TodoSummary = () => {
   const list = useSelector(store=>store.todos.list)
 
   //Counts the number of todos that are done using filter
+  const numberDone = list.items.filter(item => item.done).length 
 
   return <Summary>
-    <h2>0/{list.items.length} tasks done</h2>
+    <h2>{numberDone}/{list.items.length} tasks done</h2>
   </Summary>
 }

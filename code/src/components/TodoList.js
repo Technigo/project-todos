@@ -12,6 +12,7 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 border-radius: 16px;
+background-color: #dff9fb;
 `
 
 export const TodoList = () => {

@@ -24,7 +24,10 @@ export const TodoItem = ({ itemIndex }) => {
   const dispatch = useDispatch()
 
   //Creates onRemove handler
-  const onRemove = event => {
+  const handleRemove = event => {
+    dispatch(todos.actions.removeTodo({
+      itemIndex: itemIndex
+    }))
   }
 
   //Creates handleOnChange handler to handle the done status
@@ -35,13 +38,13 @@ export const TodoItem = ({ itemIndex }) => {
     }))
   }
 
-  return <Item className={item.done ? "done" : ""}>
+  return <Item >
     <input
       type="checkbox"
       onChange={handleOnChange}
       checked={item.done ? "checked" : ""}
     ></input>
-    <span>{item.description}</span>
-    <button onClick={onRemove}>Remove</button>
+    <span className={item.done ? "done" : ""}>{item.description}</span>
+    <button onClick={handleRemove}>Remove</button>
   </Item>
 }
