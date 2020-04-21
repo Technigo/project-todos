@@ -5,13 +5,18 @@ import { todos } from '../reducers/todos'
 import { Button } from '../lib/Button'
 
 export const Filter = () => {
+  const itemsLength = useSelector(store => store.todos.items.length)
 
   return (
-    <FilterWrapper>
-      <Button width={'100%'} margin={'5px auto'}>Active</Button>
-      <Button width={'100%'} margin={'5px auto'}>Done</Button>
-      <Button width={'100%'} margin={'5px auto'}>All</Button>
-    </FilterWrapper>
+    <>
+      {itemsLength > 0 &&
+        <FilterWrapper>
+          <Button width={'100%'} margin={'5px auto'}>Active</Button>
+          <Button width={'100%'} margin={'5px auto'}>Done</Button>
+          <Button width={'100%'} margin={'5px auto'}>All</Button>
+        </FilterWrapper>
+      }
+    </>
   )
 }
 
