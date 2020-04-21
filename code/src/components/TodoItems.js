@@ -29,6 +29,7 @@ const TodoListing = styled.section`
 export const TodoItems = () => {
   const items = useSelector(store => store.todos.items)
 
+  //If the todo list contains todos it will render them, if it is empty it will render the EmptyState component
   return (
     <TodoListing>
 

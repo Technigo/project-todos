@@ -17,6 +17,7 @@ export const Filter = () => {
 
   const dispatch = useDispatch()
 
+  //Functions filtering active, done and all todos
   const showActive = () => dispatch(todos.actions.showActive())
   const showDone = () => dispatch(todos.actions.showDone())
   const showAll = () => dispatch(todos.actions.showAll())

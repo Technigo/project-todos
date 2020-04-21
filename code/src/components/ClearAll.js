@@ -7,6 +7,7 @@ export const ClearAll = () => {
   const itemsLength = useSelector(store => store.todos.items.length)
   const dispatch = useDispatch()
 
+  //Clears all todos by returning the initial empty state
   const onClick = () => dispatch(todos.actions.clearAll())
 
   return (

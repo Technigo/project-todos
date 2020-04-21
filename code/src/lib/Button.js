@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+//Button component used for almost all buttons of the app
 export const Button = styled.button`
   opacity: ${prop => prop.disabled ? 0.7 : 1};
   width: ${props => props.width || '40px'};

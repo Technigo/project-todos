@@ -40,9 +40,11 @@ const TodoInputField = styled.input`
 
 export const TodoInput = () => {
   const dispatch = useDispatch()
-  //State for input
+
+  //Local state for input used for dispatch for todo description
   const [inputValue, setInputValue] = useState('')
 
+  //Function used when clicking on submit button, adds todo into array of todos
   const handleOnSubmit = (e) => {
     e.preventDefault()
     dispatch(todos.actions.addTodo({
@@ -50,7 +52,7 @@ export const TodoInput = () => {
       done: false,
       show: true
     }))
-    setInputValue('')
+    setInputValue('') //Empties the input field on submit
   }
 
   return (

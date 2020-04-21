@@ -27,6 +27,7 @@ export const TodoSummary = () => {
   const items = useSelector(store => store.todos.items)
   const tasksDone = items.filter(item => item.done).length
 
+  //Show how many are done if there are todos in the array, else only shows today's date
   return (
     <DetailsContainer>
 

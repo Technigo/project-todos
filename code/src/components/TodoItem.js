@@ -60,12 +60,15 @@ const Checkbox = styled.button`
 `
 
 export const TodoItem = ({ itemIndex }) => {
-  const dispatch = useDispatch()
-
   const item = useSelector(store => store.todos.items[itemIndex])
   const itemChecked = item.done
 
+  const dispatch = useDispatch()
+
+  //Removes todo from array
   const onRemoveClicked = () => dispatch(todos.actions.removeTodo({ itemIndex }))
+
+  //Marks todo as done
   const onCheckClick = () => dispatch(todos.actions.setDone({ itemIndex }))
 
   return (
