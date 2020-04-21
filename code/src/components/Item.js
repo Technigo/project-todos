@@ -26,14 +26,14 @@ export const Item = ({ itemIndex, text }) => {
   return (
     <div className={`item ${item.completed ? "completed" : ''}`}>
 
-      <label class="checkbox-container">
+      <label className="checkbox-container">
         <input
           type="checkbox"
           onChange={completeItem}
           className="item-check"
           checked={item.completed ? "checked" : ""}
         ></input>
-        <span class="checkbox-custom"></span>
+        <span className="checkbox-custom"></span>
       </label>
 
       <span className="item-desc">{text}</span>
