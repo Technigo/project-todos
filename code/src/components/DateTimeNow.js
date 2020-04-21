@@ -12,7 +12,7 @@ export let DateTimeNow = () => {
 }
 
 const HeaderDate = styled.section`
-  font-size: 30px;
+  font-size: 40px;
   color: grey;
   font-family: 'Manrope', sans-serif;
   margin-left: 10%;

@@ -37,14 +37,16 @@ const ClearAll = styled.button`
   text-align: center;
   background: transparent;
   color: #000;
-  border: 3px solid #e5e5e5;
+  border: 2px solid #EBEBF2;
   padding: 5px;
   margin: 5px;
   font-weight: 600;
   border-radius: 10px;
   text-transform: uppercase;
   &:hover {
-    background: white;
+    background: #EBEBF2;
+    transition: 1s;
     cursor: pointer;
+    focus: none;
   }
 `

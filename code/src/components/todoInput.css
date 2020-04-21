@@ -3,6 +3,7 @@
   display: flex;
   flex: column;
   font-family: 'Manrope', sans-serif;
+  justify-content: center;
 }
 
 

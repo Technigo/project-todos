@@ -29,7 +29,7 @@ export const TodoInput = ({ listID }) => {
         type="text"
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
-        placeholder="New task ..."
+        placeholder="Add task ..."
         className="todo-input-text"
         required
       >

@@ -10,15 +10,16 @@ export const TodoSummary = () => {
   const numDone = list.items.filter(item => item.done).length
 
   return (
-    <section className="todo-summary">
-      <h2>
-        {numDone}/{list.items.length} {list.items.length === 1 || list.items.length === 0 ? "task complete" : "tasks complete"}
-      </h2>
-    </section>
+    <TodoSummarySection>
+      {numDone}/{list.items.length} {list.items.length === 1 || list.items.length === 0 ? "task complete" : "tasks complete"}
+    </TodoSummarySection>
   )
 }
 
-const TodoSummary = styled.section`
+const TodoSummarySection = styled.section`
   margin: 8px;
   font-family: 'Manrope', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  font-weight: 800;
 `

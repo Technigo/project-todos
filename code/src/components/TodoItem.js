@@ -3,6 +3,7 @@ import { todos } from '../reducers/todos.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { TimeStamp } from './TimeStamp'
 import { todoItem } from './todoItem.css'
+import styled from 'styled-components/macro'
 
 export const TodoItem = ({ itemIndex }) => {
   // Get the item from the store based on the index
@@ -29,16 +30,23 @@ export const TodoItem = ({ itemIndex }) => {
   }
 
   return (
-    <div className={`todo-item ${item.done ? "done" : ""}`}>
-      <input
-        type='checkbox'
-        onChange={handleOnChange}
-        className='todo-item-check'
-        checked={item.done ? "checked" : ""}
-      ></input>
-      <span className='todo-item-description'>{item.description}</span>
-      <button className='todo-item-remove' onClick={onRemoveClicked}>x</button>
+    <ItemSection>
+      <div className={`todo-item ${item.done ? "done" : ""}`}>
+        <input
+          type='checkbox'
+          onChange={handleOnChange}
+          className='todo-item-check'
+          checked={item.done ? "checked" : ""}
+        ></input>
+        <span className='todo-item-description'>{item.description}</span>
+        <button className='todo-item-remove' onClick={onRemoveClicked}>x</button>
+      </div>
       <TimeStamp />
-    </div>
+    </ItemSection>
   )
 }
+
+const ItemSection = styled.section`
+  display: flex;
+  flex-direction: row;
+`
