@@ -1,6 +1,6 @@
 import React from 'react'
+import { combineReducers, createStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
-import { createStore, combineReducers } from '@reduxjs/toolkit'
 import { todos } from '../reducers/todos'
 import { TodoList } from '../components/TodoList'
 
@@ -24,7 +24,7 @@ export const Home = () => {
   return (
     <Provider store={store}>
       <main>
-        <TodoList></TodoList>
+        <TodoList />
       </main>
     </Provider>
   )
