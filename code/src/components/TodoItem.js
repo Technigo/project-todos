@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { todos } from '../reducers/todos'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { Button } from '../lib/Button'
 
 export const TodoItem = ({ itemIndex }) => {
   const item = useSelector(store => store.todos.items[itemIndex]) //Ev ta bort då jag inte behöver hämta igen, kan lägga in som props istället, se TodoItems
@@ -35,13 +36,16 @@ export const TodoItem = ({ itemIndex }) => {
         itemChecked={itemChecked}>
         {item.description}
       </TodoText>
-      <RemoveButton
+      <Button
         aria-label={`Delete ${item.description}`}
         type="button"
         onClick={onRemoveClicked}
+        background={'none'}
+        color={'#888d64'}
+        size={'1.3em'}
       >
         <FontAwesomeIcon icon={faTrashAlt} />
-      </RemoveButton>
+      </Button>
     </TodoItemContainer>
   )
 }
@@ -94,17 +98,5 @@ const Checkbox = styled.button`
     width: 40px;
     height: 40px;
     padding-left: 10px;
-  }
-`
-
-const RemoveButton = styled.button`
-  border: none;
-  background: none;
-  color: #888d64;
-  font-size: 25px;
-  text-align: center;
-
-  @media (min-width: 768px) {
-    font-size: 30px;
   }
 `

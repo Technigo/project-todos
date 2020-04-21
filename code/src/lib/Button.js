@@ -9,7 +9,7 @@ export const Button = styled.button`
   border: none;
   border-radius: 10px; 
   background: ${props => props.background || '#888d64'};
-  color: #fff;
+  color: ${props => props.color || '#fff'};
   font-family: 'Playfair Display';
   font-size: ${props => props.size || '1em'}
 `
