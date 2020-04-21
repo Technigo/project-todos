@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { useDispatch, useSelector } from 'react-redux'
 import { todos } from '../reducers/todos'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -23,30 +23,33 @@ export const TodoItem = ({ itemIndex }) => {
   const itemChecked = item.done
 
   return (
-    <TodoItemContainer>
-
-      <Checkbox
-        aria-label={`Mark ${item.description} as done`}
-        type='button'
-        onClick={onCheckClick}
-        itemChecked={itemChecked}
-      ></Checkbox>
-      <TodoText
-        onClick={onCheckClick}
-        itemChecked={itemChecked}>
-        {item.description}
-      </TodoText>
-      <Button
-        aria-label={`Delete ${item.description}`}
-        type="button"
-        onClick={onRemoveClicked}
-        background={'none'}
-        color={'#888d64'}
-        size={'1.3em'}
-      >
-        <FontAwesomeIcon icon={faTrashAlt} />
-      </Button>
-    </TodoItemContainer>
+    <>
+      {item.show &&
+        <TodoItemContainer>
+          <Checkbox
+            aria-label={`Mark ${item.description} as done`}
+            type='button'
+            onClick={onCheckClick}
+            itemChecked={itemChecked}
+          ></Checkbox>
+          <TodoText
+            onClick={onCheckClick}
+            itemChecked={itemChecked}>
+            {item.description}
+          </TodoText>
+          <Button
+            aria-label={`Delete ${item.description}`}
+            type="button"
+            onClick={onRemoveClicked}
+            background={'none'}
+            color={'#888d64'}
+            size={'1.3em'}
+          >
+            <FontAwesomeIcon icon={faTrashAlt} />
+          </Button>
+        </TodoItemContainer>
+      }
+    </>
   )
 }
 

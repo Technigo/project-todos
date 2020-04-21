@@ -1,6 +1,6 @@
 import React from 'react'
 import checklist from '../assets/checklist.jpg'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 export const EmptyState = () => {
   return (

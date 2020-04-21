@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { todos } from '../reducers/todos'
 import { Button } from '../lib/Button'
 
@@ -13,7 +13,8 @@ export const TodoInput = () => {
     e.preventDefault()
     dispatch(todos.actions.addTodo({
       description: inputValue,
-      done: false
+      done: false,
+      show: true
     }))
     setInputValue('')
   }

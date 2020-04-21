@@ -27,6 +27,19 @@ export const todos = createSlice({
     },
     clearAll: () => {
       return initialState
+    },
+    showActive: (state) => {
+      state.items.forEach(item => {
+        item.done ? item.show = false : item.show = true
+      })
+    },
+    showDone: (state) => {
+      state.items.forEach(item => {
+        item.done ? item.show = true : item.show = false
+      })
+    },
+    showAll: (state) => {
+      state.items.forEach(item => item.show = true)
     }
   }
 })

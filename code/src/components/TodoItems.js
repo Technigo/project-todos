@@ -1,6 +1,6 @@
 import React from 'react'
 import { TodoItem } from './TodoItem'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { useSelector } from 'react-redux'
 import { EmptyState } from './EmptyState'
 
