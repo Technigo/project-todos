@@ -8,6 +8,7 @@ import { UncontrolledLottie } from './EmptyToDo'
 export const ToDoList = () => {
 
   const allItems = useSelector((store) => store.todoitem.items)
+  const completedTask = allItems.filter(item => item.done)
 
   return (
     <div>
@@ -18,8 +19,13 @@ export const ToDoList = () => {
           < ToDoItem item={item} key={item.id}/>)
         }
       </ul>
-      {allItems.length === 0 && 
-      <UncontrolledLottie />}
+
+      {/* print all completed tasks (done: true) if there are more than 0 items in the list, else print emptystate component */}
+      {allItems.length === 0 ?
+        <UncontrolledLottie /> : 
+        <p>{completedTask.length}/{allItems.length} tasks complete!</p> 
+      }
+
     </div>
   )
 }

@@ -16,9 +16,9 @@ export const UncontrolledLottie = () => {
     return(
       <div className="empty-state">
         <p>Nothing to see here.. why don't you add someting to do?</p>
-        <Lottie options={defaultOptions}
-              height={400}
-              width={400}
+        <Lottie 
+          options={defaultOptions}
+          className="lottie"
         />
       </div>
     )

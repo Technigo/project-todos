@@ -63,11 +63,11 @@ form button {
   border: none;
   font-size: 2.2em;
   width: 10%;
-  height: 70%;
+  height: 60%;
   margin: 0 5px;
   border-radius: 10px;
   color: #D0C9D6;
-  background-color: #cdebee9c;
+  background-color: transparent;
 }
 
 form input {
@@ -135,13 +135,13 @@ ul {
 }
 
 .empty-state {
-  height: -webkit-fill-available;
+  height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   font-size: 1.5em;
-  background-color: #add8e621;
+  background-color: transparent;
 }
 
 .empty-state p {
