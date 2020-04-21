@@ -10,3 +10,17 @@ export const SectionHeader = styled.h2`
 	text-align: center;
 	padding: 16px 0;
 `;
+// text and labels
+export const Paragraf = styled.p`
+	color: white;
+	font-size: 22px;
+	font-weight: 100;
+`;
+// add and remove buttons
+export const ColorButton = styled.button`
+	box-shadow: none;
+	font-size: 45px;
+	color: ${(props) => props.color};
+	background: none;
+	border: none;
+`;

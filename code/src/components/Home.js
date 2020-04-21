@@ -1,10 +1,8 @@
 import React, { useState } from 'react';
 import { Provider, useDispatch, useSelector } from 'react-redux';
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import styled from 'styled-components';
 import { NewTask } from './NewTask';
 import { TaskList } from './TaskList';
-import { todoStore } from '../reducers/todoStore';
 import { size } from '../reducers/sizes';
 import { Header } from './Header';
 
@@ -39,4 +37,3 @@ export const Home = () => {
 		</ParentContainer>
 	);
 };
-// background-color:  #02485E;  font-family Lato thin?  taskundone:

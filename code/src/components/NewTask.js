@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import { todoStore } from '../reducers/todoStore';
-import { StyledSection, SectionHeader } from '../shared/shared';
+import { StyledSection, SectionHeader, Paragraf, ColorButton } from '../shared/shared';
 
 const StyledForm = styled.form`
 	display: flex;
@@ -33,14 +33,6 @@ const DateInput = styled.input`
 	margin-bottom: 16px;
 `;
 
-const FormButton = styled.button`
-	box-shadow: none;
-	font-size: 40px;
-	color: green;
-	background: none;
-	border: none;
-`;
-
 export const NewTask = () => {
 	const dispatch = useDispatch();
 	const [ taskInput, setTaskInput ] = useState('');
@@ -58,7 +50,9 @@ export const NewTask = () => {
 		<StyledSection>
 			<SectionHeader width={theWidth}>Make a new Todo</SectionHeader>
 			<StyledForm onSubmit={handleNewTask}>
-				<label for="todoInput">Write the task</label>
+				<label for="todoInput">
+					<Paragraf> Write the task</Paragraf>
+				</label>
 				<Wrapper width={theWidth}>
 					<StyledInput
 						width={theWidth}
@@ -67,13 +61,14 @@ export const NewTask = () => {
 						onChange={(e) => setTaskInput(e.target.value)}
 						value={taskInput}
 					/>
-
-					<FormButton type="submit" aria-label="add">
+					<ColorButton color="green" type="submit" aria-label="add">
 						+
-					</FormButton>
+					</ColorButton>
 				</Wrapper>
 
-				<label for="start">Pick a due date</label>
+				<label for="start">
+					<Paragraf>Pick a due date</Paragraf>
+				</label>
 				<DateInput
 					type="date"
 					id="start"
@@ -85,20 +80,3 @@ export const NewTask = () => {
 		</StyledSection>
 	);
 };
-
-//Add a due date to a task
-
-// () => {
-//   const [startDate, setStartDate] = useState(new Date());
-//   return (
-//     <DatePicker
-//       selected={startDate}
-//       onChange={date => setStartDate(date)}
-//       showTimeSelect
-//       timeFormat="HH:mm"
-//       timeIntervals={15}
-//       timeCaption="time"
-//       dateFormat="MMMM d, yyyy h:mm aa"
-//     />
-//   );
-// };
