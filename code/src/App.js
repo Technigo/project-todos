@@ -11,8 +11,10 @@ const reducer = combineReducers({
 	todoStore: todoStore.reducer,
 	size: size.reducer
 });
+// Retrieve the existing state from localstorage if it exists
+const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {};
 
-const store = configureStore({ reducer });
+const store = configureStore({ reducer }, persistedState);
 
 export const App = () => {
 	return (
