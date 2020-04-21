@@ -22,11 +22,6 @@ const initialState = {
         description: "Eat more ice cream",
         done: false,
       },
-      {
-        id: Date.now(),
-        description: "Go to the gym",
-        done: true,
-      },
     ],
   },
 };

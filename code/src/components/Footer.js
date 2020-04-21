@@ -13,16 +13,15 @@ export const Footer = () => {
 export const Container = styled.div`
 
   text-align: center;
-  margin-top: auto;
   border-bottom: 1px solid #EBEEEF;
-  opacity: 100%;
-  background-color: #46539e;
+  /* opacity: 100%; */
+  /* background-color: #46539e; */
   padding-top: 1px;
 `;
  
 export const FooterText = styled.h3`
   font-weight: 100;
   font-size: 10px;
-  color: whitesmoke;
-  opacity: 100%
+  color: #46539e;
+  opacity: 40%;
 `;

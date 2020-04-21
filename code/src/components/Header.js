@@ -38,13 +38,17 @@ const Container = styled.section`
   background: #46539e;
   padding: 20px;
   margin: 0;
+  height: 80px;
+  @media (min-width: 668px) {
+    height: 120px;
+  },
 `;
 const ContainerLeft = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-start;
-  height: 120px;
+  /* height: 120px; */
   width: 150px;
 `;
 const ContainerRight = styled.section`
@@ -52,16 +56,19 @@ const ContainerRight = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  height: 120px;
+  /* height: 120px; */
 `;
 const ContainerButton = styled.div`
   margin-top: 90px;
 `;
 const HeaderText = styled.p`
-  font-size: 34px;
+  font-size: 28px;
   font-weight: 200;
   color: #efebe9;
   margin: 0px 0px 5px 0px;
+  @media (min-width: 668px) {
+    font-size: 34px;
+  },
 `;
 const DateText = styled.p`
   font-size: 12px;
@@ -69,3 +76,4 @@ const DateText = styled.p`
   color: #efebe9;
   margin: 0;
 `;
+
