@@ -3,23 +3,6 @@ import styled from 'styled-components/macro'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faListUl, faCheck } from '@fortawesome/free-solid-svg-icons'
 
-export const TitleContainer = () => {
-  return (
-    <TitleWrapper>
-      <IconContainer>
-        <FontAwesomeIcon
-          aria-hidden='true'
-          icon={faListUl} />
-      </IconContainer>
-      <Title>B. Productive{' '}
-        <FontAwesomeIcon
-          aria-hidden='true'
-          icon={faCheck} />
-      </Title>
-    </TitleWrapper>
-  )
-}
-
 const TitleWrapper = styled.section`
   display: grid;
   grid-template-columns: 40px 1fr;
@@ -52,3 +35,23 @@ const Title = styled.h1`
   font-size: 1.5em;
   text-align: center;
 `
+
+export const TitleContainer = () => {
+  return (
+    <TitleWrapper>
+
+      <IconContainer>
+        <FontAwesomeIcon
+          aria-hidden='true'
+          icon={faListUl} />
+      </IconContainer>
+
+      <Title>B. Productive{' '}
+        <FontAwesomeIcon
+          aria-hidden='true'
+          icon={faCheck} />
+      </Title>
+
+    </TitleWrapper>
+  )
+}
