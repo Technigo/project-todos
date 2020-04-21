@@ -9,62 +9,46 @@ const initialState = {
         text: 'Buy Candy!',
         complete: false,
         category: 'Other'
-        // time: moment().format('D/M, HH:mm')
       },
       {
         text: 'Walk the dog',
         complete: true,
         category: 'Home'
-        // time: moment().format('D/M, HH:mm')
       },
       {
         text: 'Apply for jobs 🌸',
         complete: false,
         category: 'Work'
-        // time: moment().format('D/M, HH:mm')
       }
     ]
   },
-  category: ['Other', 'Home', 'Study', 'Work'],
 }
 
 export const todos = createSlice({
   name: 'todos',
   initialState: initialState,
   reducers: {
+    //Adding new todo 
     addTodo: (state, action) => {
       const { todoInfo } = action.payload
       state.list.todos.push(todoInfo)
       },
-      // state.todos.push({
-      //   id: state.todos.length + 1,
-      //   text: action.payload,
-      //   time: moment().fromNow(),
-      //   complete: false  
-      // })
-    // },
 
+    //Removing existing todo
     removeItem: (state, action) => {
       const { todoIndex } = action.payload
       state.list.todos = state.list.todos.filter(
         (todo, index) => index !== todoIndex
       )
-      // state.todos = state.todos.find((todo) =>
-      // todo.id !== action.payload)
     },
 
+    //Gets checked when done
     setDone: (state, action) => {
       const { todoIndex, complete } = action.payload
       state.list.todos[todoIndex].complete = complete
-
-      // const checkTodo = state.todos.find((todo) =>
-      // todo.id === action.payload)
-
-      // if (checkTodo) {
-      //   checkTodo.complete = !checkTodo.complete
-      // }
     },
 
+    //Clear the list of to dos
     removeAll: (state, action) => {
       state.list.todos = []
     }

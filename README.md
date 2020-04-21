@@ -11,8 +11,12 @@ I've used:
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Started out with a simple reducer and a base for the site - a form and a list. The form should take the user message which contains a task and post it on the list. The list itself should be interactive in a way where you can check if it's completed, reverse the check, remove specific to do and also clear all. I chose to use conditional rendering for the list to be a bit more personal.
+If you haven't started on your todos - a pepped up message will show in the summary.
+If everything is done on the list - it will give you cred for your work!
+Before trying to delete all items you'll be alerted through a SweetAlert pop-up to confirm that you do intend to remove all. If the list is cleared and therefore are no tasks, the list will be replaced with an empty state that contains an animation and a message, without the count of items.
+I styled it with a colorful background and the list itself looks somewhat elevated with the boxshadows. Like a digital notepad on a painted canvas. Very pleased with the look and how responsive it is.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Deployed site: https://what-todo-bealun.netlify.app 
