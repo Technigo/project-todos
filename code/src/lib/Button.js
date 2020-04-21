@@ -11,5 +11,6 @@ export const Button = styled.button`
   background: ${props => props.background || '#888d64'};
   color: ${props => props.color || '#fff'};
   font-family: 'Playfair Display';
-  font-size: ${props => props.size || '1em'}
+  font-size: ${props => props.size || '1em'};
+  cursor: pointer;
 `

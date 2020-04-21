@@ -40,6 +40,7 @@ const Checkbox = styled.button`
   border: none;
   border-radius: 10px; 
   background: #888d64;
+  cursor: pointer;
 
   ::after {
     content: '';
