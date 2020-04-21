@@ -9,7 +9,7 @@ const item = useSelector(store => store.todos.list.items[itemIndex])
  
 const dispatch = useDispatch()
 
-const onRemoveClicked = event => {
+const onClearClicked = event => {
  dispatch(
     todos.actions.removeTodo({
     itemIndex: itemIndex
@@ -35,8 +35,8 @@ return (
     checked={item.done ? "checked" : ""}
     ></input>
     <span className="todo-item-description">{item.description}</span>
-    <a className="todo-item-remove" onClick={onRemoveClicked}>
-      [remove]
+    <a className="todo-item-remove" onClick={onClearClicked}>
+      clear
     </a>
  </div>
 )

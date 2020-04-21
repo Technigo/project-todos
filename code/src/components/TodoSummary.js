@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { TodoItem } from "./TodoItem.js";
-import { TodoInput } from "./TodoInput.js";
+//import { TodoItem } from "./TodoItem.js";
+//import { TodoInput } from "./TodoInput.js";
 import { useSelector } from "react-redux";
 
 export const TodoSummary = () => {
@@ -12,7 +12,7 @@ const numDone = list.items.filter(item => item.done).length
   return (
   <section className="todo-summary">
       <h2>
-        {numDone}/{list.items.length} todos done
+        {numDone}/{list.items.length} done
       </h2>
   </section>
   )

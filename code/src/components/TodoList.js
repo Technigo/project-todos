@@ -14,11 +14,12 @@ const list = useSelector(store => store.todos.list)
   */
   return (
   <section className="todo-list">
+      <TodoSummary />
       <TodoInput />
       {list.items.map((item, index) => (
       <TodoItem itemIndex={index}></TodoItem>
       ))}
-      <TodoSummary></TodoSummary>
+      
   </section>
   )
 };
