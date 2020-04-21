@@ -20,6 +20,7 @@ export const TodoInput = () => {
   return (
     <TodoForm onSubmit={handleOnSubmit}>
       <TodoInputField
+        aria-label="Enter task here"
         type='text'
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
