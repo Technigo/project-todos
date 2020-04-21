@@ -16,15 +16,15 @@ export const Home = () => {
   return (
     <Provider store={store}>
       <main>
-        <div className='header-wrapper'>
-          <div className='header'>
-            <h2>Todo</h2>
-            <ShowDate />
-          </div>
+
+        <div className='header'>
+          <ShowDate />
           <TodoSummery />
         </div>
-
-        <TodoList />
+        <div className='todo-list-wrapper'>
+          <TodoInput />
+          <TodoList />
+        </div>
 
       </main>
     </Provider>

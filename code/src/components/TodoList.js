@@ -13,7 +13,7 @@ export const TodoList = () => {
 
   return (
     <section className='todo-list'>
-      <TodoInput />
+
       {list.items.map((item, index) => (
         <TodoItem itemIndex={index}></TodoItem>
       ))

@@ -1,14 +1,18 @@
 import React from 'react'
-import Moment from 'react-moment'
-import 'moment-timezone'
+
+
+
+
+
 
 export const ShowDate = () => {
-  const date = new Date()
+
+  const d = new Date()
+  const today = d.toDateString()
 
   return (
-
-    <section >
-      <Moment format="YYYY/MM/DD">{date}</Moment>
-    </section>
+    <>
+      <h1>{today}</h1>
+    </>
   )
 }

@@ -22,7 +22,7 @@ export const TodoInput = () => {
     <form className='todo-input' onSubmit={handleOnSubmit}>
       <input
         Type='text'
-        placeholder='Add task'
+        placeholder='Add Todo'
         onChange={event => setInputValue(event.target.value)}
         value={inputValue}
         className='todo-input-text'

@@ -11,7 +11,7 @@ export const TodoSummery = () => {
 
   return (
     <section className='todo-summery'>
-      <h4>{numDone}/{list.items.length} Tasks complete</h4>
+      <h4>{numDone}/{list.items.length} Done</h4>
     </section>)
 
 }
