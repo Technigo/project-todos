@@ -1,5 +1,7 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import styled, { css } from 'styled-components'
+import { Task } from './Task'
 
 const Text = styled.h1`
   background-color: lightyellow;
@@ -14,8 +16,15 @@ const Text = styled.h1`
 
 
 export const ToDoList = () => {
+  const allTasks = useSelector((store) => store.tasks)
 
   return (
-    <Text>ToDoList will be here</Text>
+    <>
+    <Text>
+      {allTasks.map((task) => (
+        <Task key={task.id} task={task} />
+      ))}
+    </Text>
+    </>
   )
 }
