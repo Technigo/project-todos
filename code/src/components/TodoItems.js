@@ -21,7 +21,7 @@ const TodoListing = styled.section`
   }
  
   ::-webkit-scrollbar-thumb {
-      background: #b55136;
+      background: #3e3e2d;
       border-radius: 10px; 
   }
 `

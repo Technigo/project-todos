@@ -13,6 +13,7 @@ const TodoForm = styled.form`
 `
 
 const TodoInputField = styled.input`
+  height: 30px;
   padding: 5px 10px;
   border: none;
   border-radius: 10px;
@@ -71,7 +72,7 @@ export const TodoInput = () => {
         aria-label='Submit task'
         type='submit'
         disabled={inputValue < 1 ? true : false}
-        background={'#b55136'}
+        background={'#3e3e2d'}
         size={'1.5em'}
       >+</Button>
 

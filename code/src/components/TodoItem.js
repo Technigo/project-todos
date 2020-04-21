@@ -22,7 +22,7 @@ const TodoText = styled.p`
   display: flex;
   align-items: center;
   margin: 0;
-  color: ${prop => prop.itemChecked ? '#888d64' : '#3e3e2d'};
+  color: ${prop => prop.itemChecked ? '#78786c' : '#3e3e2d'};
   font-size: 12px;
   text-decoration: ${prop => prop.itemChecked ? 'line-through' : ''};
   word-break: break-all;
@@ -39,7 +39,7 @@ const Checkbox = styled.button`
   padding-bottom: 6px;
   border: none;
   border-radius: 10px; 
-  background: #888d64;
+  background: #78786c;
   cursor: pointer;
 
   ::after {
@@ -88,7 +88,7 @@ export const TodoItem = ({ itemIndex }) => {
             type="button"
             onClick={onRemoveClicked}
             background={'none'}
-            color={'#888d64'}
+            color={'#78786c'}
             size={'1.3em'}
           >
             <FontAwesomeIcon icon={faTrashAlt} />

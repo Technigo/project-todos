@@ -5,11 +5,11 @@ import { todos } from '../reducers/todos'
 import { Button } from '../lib/Button'
 
 const FilterWrapper = styled.section`
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
-grid-gap: 10px;
-width: 90%;
-margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 10px;
+  width: 90%;
+  margin: 0 auto;
 `
 
 export const Filter = () => {

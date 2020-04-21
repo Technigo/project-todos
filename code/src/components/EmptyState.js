@@ -32,7 +32,7 @@ const Caption = styled.p`
 `
 
 const Link = styled.a`
-  color: #888d64;
+  color: #78786c;
   font-weight: bold;
   text-decoration: none;
 `

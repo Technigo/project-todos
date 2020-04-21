@@ -4,23 +4,23 @@ import { useSelector } from 'react-redux'
 import moment from 'moment'
 
 const DetailsContainer = styled.section`
-display: flex;
-justify-content: space-between;
-width: 90%;
-margin: 15px auto;
-border-top: 2px dotted #b55136;
+  display: flex;
+  justify-content: space-between;
+  width: 90%;
+  margin: 15px auto;
+  border-top: 2px dotted #eaceca;
 `
 
 const Details = styled.p`
-margin: 15px auto;
-color: #3e3e2d;
-font-family: 'Playfair Display';
-font-size: 1em;
-font-weight: bold;
+  margin: 15px auto;
+  color: #3e3e2d;
+  font-family: 'Playfair Display';
+  font-size: 1em;
+  font-weight: bold;
 
-@media (min-width: 768px) {
-  font-size: 1.2em;
-}
+  @media (min-width: 768px) {
+    font-size: 1.2em;
+  }
 `
 
 export const TodoSummary = () => {
