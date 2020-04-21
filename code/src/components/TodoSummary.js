@@ -11,7 +11,7 @@ export const TodoSummary = () => {
   return (
     <section className="todo-summary">
       <h2>
-        {numDone}/{list.items.length} tasks complete
+        {numDone}/{list.items.length} {list.items.length === 1 || list.items.length === 0 ? "task complete" : "tasks complete"}
       </h2>
     </section>
   )

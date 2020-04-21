@@ -1,9 +1,20 @@
 import React from 'react'
-import dateTimeNow from './dateTimeNow.css'
+import styled from 'styled-components/macro'
 
 export let DateTimeNow = () => {
   let today = new Date();
 
-  return <span className="header-date">{today.toDateString()}</span>
+  return (
+    <HeaderDate>
+      {today.toDateString()}
+    </HeaderDate>
+  )
 }
+
+const HeaderDate = styled.section`
+  font-size: 30px;
+  color: grey;
+  font-family: 'Manrope', sans-serif;
+  margin-left: 10%;
+`
 

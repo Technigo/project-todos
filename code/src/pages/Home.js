@@ -1,10 +1,9 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { combineReducers, createStore } from '@reduxjs/toolkit'
 import { TodoList } from '../components/TodoList.js'
 import { Header } from '../components/Header.js'
 import { todos } from '../reducers/todos.js'
-import home from './home.css'
 import styled from 'styled-components/macro'
 
 
@@ -12,20 +11,44 @@ import styled from 'styled-components/macro'
 const reducer = combineReducers({ todos: todos.reducer })
 
 // Persistence: retrieve the existing state from localstorage if it exists
+const persistedState = localStorage.getItem("reduxState")
+  ? JSON.parse(localStorage.getItem("reduxState"))
+  : {};
 
 // Store creation: create the store using our reducers and the retrieved state
-const store = configureStore({ reducer })
+const store = createStore(reducer, persistedState)
+
+// Tell the store to persist the state in localstorage after every action
+store.subscribe(() => {
+  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+});
 
 export const Home = () => {
   return (
     <Provider store={store}>
-      <main className="main-content">
-        <div className="main-wrapper">
+      <MainBackground>
+        <TodoWrapper>
           <Header />
           <TodoList />
-        </div>
-      </main>
+        </TodoWrapper>
+      </MainBackground>
     </Provider>
-
   )
 }
+
+const MainBackground = styled.section`
+  align-items: center;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+`
+
+const TodoWrapper = styled.section`
+  width: 80 %;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: white;
+  border-radius: 7px;
+`

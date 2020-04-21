@@ -1,7 +1,7 @@
 import React from 'react'
 import { todos } from '../reducers/todos.js'
 import { useSelector, useDispatch } from 'react-redux'
-
+import { TimeStamp } from './TimeStamp'
 
 export const TodoItem = ({ itemIndex }) => {
   // Get the item from the store based on the index
@@ -37,6 +37,7 @@ export const TodoItem = ({ itemIndex }) => {
       ></input>
       <span className='todo-item-description'>{item.description}</span>
       <button className='todo-item-remove' onClick={onRemoveClicked}>x</button>
+      <TimeStamp />
     </div>
   )
 }
