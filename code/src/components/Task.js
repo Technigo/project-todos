@@ -1,14 +1,20 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import swal from 'sweetalert'
+import { useDispatch } from 'react-redux'
 import { tasklist } from 'reducers/tasklist'
 
 export const Task = ({ id, text, complete }) => {
   const dispatch = useDispatch()
-  const task = useSelector((store) => (store.tasklist))
 
   const handleCheckToggle = (event) => {
     dispatch(
       tasklist.actions.toggleCheck(id)
+    )
+  }
+
+  const handleRemove = () => {
+    dispatch(
+      tasklist.actions.removeToDo(id)
     )
   }
 
@@ -21,6 +27,7 @@ export const Task = ({ id, text, complete }) => {
           onChange={handleCheckToggle}>
         </input>
         <p>{text}</p>
+        <a onClick={handleRemove}>x</a>
       </label>
     </div>
   )

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { Header } from './Header'
 import { TaskList } from './TaskList'
+import { ClearAllButton } from './ClearAllButton'
 import { tasklist } from 'reducers/tasklist'
 
 export const ToDoScreen = ({ id }) => {
@@ -15,6 +16,7 @@ export const ToDoScreen = ({ id }) => {
 
     setInputValue('')
   }
+
 
   return (
     <>
@@ -32,6 +34,7 @@ export const ToDoScreen = ({ id }) => {
           value='Add task'>
         </input>
       </form>
+      <ClearAllButton />
     </>
   )
 }

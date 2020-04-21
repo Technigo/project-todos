@@ -1,12 +1,12 @@
 import React from 'react'
-import { Counter } from './Counter'
+import { Summary } from './Summary'
 
 export const Header = () => {
 
   return (
     <>
       <h1>ToDo</h1>
-      <Counter />
+      <Summary />
     </>
   )
 }
