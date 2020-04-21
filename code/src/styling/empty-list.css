@@ -1,0 +1,11 @@
+.empty-list p {
+  font-size: 25px;
+  text-align: center;
+  font-family: 'Quicksand', sans-serif;
+  width: 320px;
+  margin: 20px 0 0 0;
+}
+
+.party {
+  font-size: 50px;
+}

@@ -1,6 +1,14 @@
+
+.toggle {
+  text-align: center;
+}
+
+
 .toggle-button {
   border-radius: 50%;
   font-size: 25px;
   padding: 2px 10px;
   background-color: #7473f2;
+  height: 50px;
+  width: 50px;
 }

@@ -1,10 +1,15 @@
 import React from 'react'
+import '../styling/empty-list.css'
+
 
 export const EmptyList = () => {
   return (
-    <div>
-      <p><span role="img" aria-label="party-popper">🎉</span></p>
-      <p>Well done! No items in the todo. Click to add new</p>
+
+    <div className="empty-list">
+      <p><span className="party" role="img" aria-label="party-popper">🎉</span></p>
+
+      <p>Hurray! No items in your list, click to add new!</p>
+
     </div>
   )
 }

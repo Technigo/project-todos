@@ -11,8 +11,8 @@ export const ToggleButton = () => {
   }
 
   return (
-    <div>
-      <button className="toggle-button" onClick={handleToggle}>+</button>
+    <div className="toggle">
+      <button className="toggle-button" onClick={handleToggle}>{`${!toggle ? "+" : "-"}`}</button>
       {toggle && <TodoInput />}
     </div>
   )
