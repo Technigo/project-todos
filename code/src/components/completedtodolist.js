@@ -10,12 +10,12 @@ export const CompletedTasks = () => {
     return <></>;
   } else {
     return (
-      <div>
-        Stuff you did today:{' '}
+      <section>
+        <h3>Stuff you got done today:</h3>
         {tasks.map((item) => (
           <p>{item.text}</p>
         ))}
-      </div>
+      </section>
     );
   }
 };
@@ -29,7 +29,7 @@ export const CompletedShopping = () => {
   } else {
     return (
       <div>
-        Stuff you rememebered to buy:{' '}
+        <h3>Stuff you remembered to buy:</h3>
         {shopping.map((item) => (
           <p>{item.text}</p>
         ))}
@@ -37,15 +37,3 @@ export const CompletedShopping = () => {
     );
   }
 };
-
-//   if (shopped == false && completed == false) {
-//     return (
-//       <div>
-//         <p> You haven't completed any tasks yet.</p>
-//       </div>
-//     );
-//   }
-//   if (shopped == true && completed == false) {
-//     return <div>Completed tasks: Bought </div>;
-//   }
-// };

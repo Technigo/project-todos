@@ -41,8 +41,10 @@ export const ToDoList = () => {
       {list.items.map((item, index) => (
         <ToDoItem item={item} itemIndex={index} />
       ))}
-      <CompletedTasks />
-      <CompletedShopping />
+      <section className='completed'>
+        <CompletedTasks />
+        <CompletedShopping />
+      </section>
 
       <button className='reset' onClick={resetall}>
         reset
