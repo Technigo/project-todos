@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { TodoSummary } from './TodoSummary'
 import { TodoItems } from './TodoItems'
 import { ClearAll } from './ClearAll'
+import { Filter } from './Filters'
 
 export const TodoList = () => {
   return (
@@ -13,6 +14,7 @@ export const TodoList = () => {
       <TodoInput />
       <TodoItems />
       <ClearAll />
+      <Filter />
       <TodoSummary />
     </TodoContainer>
   )

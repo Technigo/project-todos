@@ -20,9 +20,9 @@ export const ClearAll = () => {
 
 const ClearAllButton = styled.button`
   width: 90%;
-  height: 35px;
+  height: 40px;
   margin: 5px auto;
-  padding: 8px;
+  padding: 0 8px;
   border: none;
   border-radius: 10px; 
   background: #888d64;
@@ -31,7 +31,6 @@ const ClearAllButton = styled.button`
   font-size: 1em;
 
   @media (min-width: 768px) {
-    height: 50px;
     font-size: 1.2em;
   }
 `
