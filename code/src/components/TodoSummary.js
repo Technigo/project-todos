@@ -29,10 +29,13 @@ export const TodoSummary = () => {
 
   return (
     <DetailsContainer>
+
       {itemsLength > 0 &&
         <Details>{tasksDone}/{itemsLength} done</Details>
       }
+
       <Details>{moment().format('ddd')} {moment().format("MMM Do")}</Details>
+
     </DetailsContainer>
   )
 }
