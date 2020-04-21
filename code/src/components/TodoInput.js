@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { todos } from '../reducers/todos'
@@ -24,27 +24,26 @@ export const TodoInput = () => {
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
         placeholder='Add task...'
-        maxLength={25}
+        maxLength={50}
       ></TodoInputField>
       <Submit
+        aria-label='Submit task'
         type='submit'
-        value='+'
         disabled={inputValue < 1 ? true : false}
-      ></Submit>
+      >+</Submit>
     </TodoForm >
   )
 }
 
 const TodoForm = styled.form`
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 40px;
+  grid-gap: 10px;
   margin: 0 auto;
   width: 90%;
 `
 
 const TodoInputField = styled.input`
-  width: 75%;
-  margin-right: 5px;
   padding: 5px 10px;
   border: none;
   border-radius: 10px;
@@ -66,15 +65,14 @@ const TodoInputField = styled.input`
   }
 
   @media (min-width: 768px) {
-    width: 88%;
     font-size: 14px;
   }
 `
 
-const Submit = styled.input`
+const Submit = styled.button`
   opacity: ${prop => prop.disabled ? 0.7 : 1};
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border: none;
   border-radius: 10px; 
   background: #b55136;
