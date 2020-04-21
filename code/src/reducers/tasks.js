@@ -19,13 +19,13 @@ const initialState = {
       },
       {
         id: Date.now(),
-        description: "Eat ice cream",
+        description: "Eat more ice cream",
         done: false,
       },
       {
         id: Date.now(),
         description: "Go to the gym",
-        done: false,
+        done: true,
       },
     ],
   },

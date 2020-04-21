@@ -14,15 +14,13 @@ export const TaskSummery = () => {
   const numDone = list.items.filter(item => item.done).length
 
 
-
-
   return (
-      <SummeryText>
-        COMPLETED 
-          <NumberDone>{numDone}</NumberDone>  
-          <SummeryTextThin>OUT OF {list.items.length} THINGS TO DO</SummeryTextThin>
+      <SummeryContainer>
+          <SummeryTextThin> COMPLETED </SummeryTextThin>
+          <NumberDone>{numDone}</NumberDone> 
+          <SummeryTextThin> OUT OF {list.items.length} THINGS TO DO </SummeryTextThin>
         {/* COMPLETED <NumberDone>{numDone}</NumberDone>/{list.items.length}   */}
-      </SummeryText>
+      </SummeryContainer>
   )
 /*       <section className="todo-summery">
         <h2>
@@ -33,34 +31,30 @@ export const TaskSummery = () => {
 }
 
 
-
-
-const SummeryText = styled.text`
+const SummeryContainer = styled.section`
   font-size: 14px;
-  /* font-weight: 200; */
   font-weight: 200;
   color: #9e9ea7;
-  margin: 0 0 0 16px;
+  margin: 30px 0 0 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
 `;
-const SummeryTextThin = styled.text`
+const NumberDone = styled.h3`
+  background: #3d415b;
+  color: white;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  text-align: center;
+  margin: 0px 10px 0px 10px;
+  padding: 3px 3px 3px 3px;
+  font-weight: 600;
+`;
+
+const SummeryTextThin = styled.h3`
   font-size: 14px;
-  /* font-weight: 200; */
   font-weight: 200;
   color: #9e9ea7;
-  margin: 0 0 0 0px;
-`;
-const NumberDone = styled.div`
-    /* background-color: #9e9ea7; */
-    background: #46539e;
-    color: white;
-    display: inline-block;
-    border-radius: 50%;
-    width: 20px;
-    height: 20px;
-    text-align: center;
-    margin: 5px;
-    padding: 3px 2px 2px 2px;
-    font-weight: 600;
-
-
+  margin: 2px 0 0 0px;
 `;

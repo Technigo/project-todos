@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector} from 'react-redux'
 
 import { TaskInput } from 'components/TaskInput'
-
 import { TaskItem } from './TaskItem'
 import { TaskSummery } from './TaskSummery'
 

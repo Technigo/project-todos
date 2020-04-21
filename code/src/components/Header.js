@@ -22,6 +22,7 @@ export const Header = () => {
       </ContainerLeft>
       <ContainerRight>
         <ContainerButton>
+          {/* // Clear all to dos in list */}
           <ButtonClear onClick={handleClearList}>CLEAR LIST</ButtonClear>
         </ContainerButton>
       </ContainerRight>
@@ -29,7 +30,6 @@ export const Header = () => {
   );
 };
 
-// Clear all to dos in list
 
 const Container = styled.section`
   display: flex;
@@ -37,10 +37,8 @@ const Container = styled.section`
   align-items: center;
   background: #46539e;
   padding: 20px;
-  /* color: white; */
   margin: 0;
 `;
-
 const ContainerLeft = styled.section`
   display: flex;
   flex-direction: column;
@@ -54,22 +52,20 @@ const ContainerRight = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  height: 100px;
+  height: 120px;
 `;
-
 const ContainerButton = styled.div`
   margin-top: 90px;
 `;
-const DateText = styled.text`
-  font-size: 12px;
-  font-weight: 200;
-  color: #efebe9;
-  margin: 0;
-`;
-
 const HeaderText = styled.p`
   font-size: 34px;
   font-weight: 200;
   color: #efebe9;
   margin: 0px 0px 5px 0px;
+`;
+const DateText = styled.p`
+  font-size: 12px;
+  font-weight: 200;
+  color: #efebe9;
+  margin: 0;
 `;

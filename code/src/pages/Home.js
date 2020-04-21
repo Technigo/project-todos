@@ -28,10 +28,8 @@ export const Home = () => {
     <Provider store={store}>
       <GlobalStyle />      
       <AppContainer>
-
         <Header />
         <TaskList />
-
       </AppContainer>
     </Provider>
   )
@@ -39,9 +37,8 @@ export const Home = () => {
 
 // styled-components:
 const AppContainer = styled.main`
-    @media (min-width: 668px) {
-    width: 600px;
-    margin: 40px auto;
+  @media (min-width: 668px) {
+  width: 600px;
+  margin: 40px auto;
   },
-
 `
