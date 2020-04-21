@@ -51,12 +51,6 @@ const Checkbox = styled.button`
     border-bottom: 3px solid #fff;
     transform: rotate(-50deg);
   }
-
-  @media (min-width: 768px) {
-    width: 40px;
-    height: 40px;
-    padding-left: 10px;
-  }
 `
 
 export const TodoItem = ({ itemIndex }) => {
