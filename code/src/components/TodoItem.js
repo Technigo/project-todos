@@ -9,7 +9,13 @@ export const TodoItem = ({ itemIndex }) => {
 
   const dispatch = useDispatch()
 
-  const onRemoveClicked = event => { }
+  const onRemoveClicked = event => {
+    dispatch(
+      todos.actions.removeTodo({
+        itemIndex: itemIndex
+      })
+    )
+  }
 
   const handleOnChange = event => {
     dispatch(

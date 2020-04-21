@@ -1,6 +1,7 @@
 import React from 'react'
 import { TodoInput } from 'components/TodoInput'
 import { TodoList } from 'components/TodoList'
+import { TodoSummery } from 'components/TodoSummery'
 import { todos } from 'reducers/todos'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
@@ -14,6 +15,7 @@ export const Home = () => {
     <Provider store={store}>
       <main>
         <TodoList />
+        <TodoSummery />
       </main>
     </Provider>
   )
