@@ -1,7 +1,5 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faListUl, faCheck } from '@fortawesome/free-solid-svg-icons'
 
 const TitleWrapper = styled.section`
   margin: 10px auto;
