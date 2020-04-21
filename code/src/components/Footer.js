@@ -29,7 +29,6 @@ const Content = styled.footer`
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
-  border-radius: 10px 10px 0 0;
   border-top: 10px solid #855418;
 
   box-shadow: inset 0px -5px 13px 3px #22332a, -1px -5px 14px 2px #9e8d73;

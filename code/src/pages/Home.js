@@ -78,7 +78,7 @@ const Main = styled.section`
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  border-radius: 10px;
+  border-radius: 4px;
 
   box-shadow: inset 0px 1px 10px 10px #22332a, 0px 0px 19px 7px #9e8d73;
 

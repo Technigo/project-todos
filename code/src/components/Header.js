@@ -51,7 +51,6 @@ const Content = styled.header`
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
-  border-radius: 0 0 10px 10px;
   border-bottom: 10px solid #855418;
 
   box-shadow: inset 0px -5px 13px 3px #22332a, -2px 3px 13px 3px #9e8d73;
