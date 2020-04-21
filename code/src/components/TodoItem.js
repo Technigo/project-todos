@@ -6,59 +6,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { Button } from '../lib/Button'
 
-export const TodoItem = ({ itemIndex }) => {
-  const item = useSelector(store => store.todos.items[itemIndex]) //Ev ta bort då jag inte behöver hämta igen, kan lägga in som props istället, se TodoItems
-
-  const dispatch = useDispatch()
-
-  const onRemoveClicked = () => {
-    dispatch(todos.actions.removeTodo({ itemIndex }))
-  }
-
-  const onCheckClick = () => {
-    dispatch(todos.actions.setDone({ itemIndex })
-    )
-  }
-
-  const itemChecked = item.done
-
-  return (
-    <>
-      {item.show &&
-        <TodoItemContainer>
-          <Checkbox
-            aria-label={`Mark ${item.description} as done`}
-            type='button'
-            onClick={onCheckClick}
-            itemChecked={itemChecked}
-          ></Checkbox>
-          <TodoText
-            onClick={onCheckClick}
-            itemChecked={itemChecked}>
-            {item.description}
-          </TodoText>
-          <Button
-            aria-label={`Delete ${item.description}`}
-            type="button"
-            onClick={onRemoveClicked}
-            background={'none'}
-            color={'#888d64'}
-            size={'1.3em'}
-          >
-            <FontAwesomeIcon icon={faTrashAlt} />
-          </Button>
-        </TodoItemContainer>
-      }
-    </>
-  )
-}
-
 const TodoItemContainer = styled.div`
   display: grid;
   grid-template-columns: 30px 1fr 40px;
   grid-gap: 10px;
+  align-items: center;
   width: 100%;
-  margin: 10px 0 15px 0;
+  margin: 5px 0;
 
   @media (min-width: 768px) {
     grid-template-columns: 40px 1fr 40px;
@@ -103,3 +57,47 @@ const Checkbox = styled.button`
     padding-left: 10px;
   }
 `
+
+export const TodoItem = ({ itemIndex }) => {
+  const dispatch = useDispatch()
+
+  const item = useSelector(store => store.todos.items[itemIndex])
+  const itemChecked = item.done
+
+  const onRemoveClicked = () => dispatch(todos.actions.removeTodo({ itemIndex }))
+  const onCheckClick = () => dispatch(todos.actions.setDone({ itemIndex }))
+
+  return (
+    <>
+      {item.show &&
+        <TodoItemContainer>
+
+          <Checkbox
+            aria-label={`Mark ${item.description} as done`}
+            type='button'
+            onClick={onCheckClick}
+            itemChecked={itemChecked}
+          ></Checkbox>
+
+          <TodoText
+            onClick={onCheckClick}
+            itemChecked={itemChecked}>
+            {item.description}
+          </TodoText>
+
+          <Button
+            aria-label={`Delete ${item.description}`}
+            type="button"
+            onClick={onRemoveClicked}
+            background={'none'}
+            color={'#888d64'}
+            size={'1.3em'}
+          >
+            <FontAwesomeIcon icon={faTrashAlt} />
+          </Button>
+
+        </TodoItemContainer>
+      }
+    </>
+  )
+}
