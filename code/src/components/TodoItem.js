@@ -2,10 +2,9 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 import moment from 'moment';
+import styled from 'styled-components';
 
-export const TodoItem = ({ itemIndex }) => {
-  const item = useSelector((store) => store.todos.list.items[itemIndex]);
-
+export const TodoItem = ({ projectName, item, itemIndex }) => {
   const dispatch = useDispatch();
 
   const statusStyling = () => {
@@ -21,7 +20,8 @@ export const TodoItem = ({ itemIndex }) => {
   const handleOnChange = () => {
     dispatch(
       todos.actions.setDone({
-        itemIndex: itemIndex,
+        projectName,
+        itemIndex,
         done: !item.done
       })
     );
@@ -30,29 +30,43 @@ export const TodoItem = ({ itemIndex }) => {
   const onClickedRemoved = () => {
     dispatch(
       todos.actions.removeTodo({
-        itemIndex: itemIndex
+        projectName,
+        itemIndex
       })
     );
   };
 
   return (
     <div className={`todo-item ${statusStyling()}`}>
-      <input 
-        type='checkbox'
-        onChange={handleOnChange}
-        className='todo-item-check'
-        checked={item.done ? 'checked' : ''}
-      ></input>
+      <label>
+        <input 
+          type='checkbox'
+          onChange={handleOnChange}
+          className='todo-item-check'
+          checked={item.done ? 'checked' : ''}
+        ></input>
+      </label>
       <span className='todo-item-description'>
         {item.description}
       </span>
       <span className='todo-item-description'>
         {item.date}
       </span>
-      <h3>{moment(item.createdAt).fromNow()}</h3>
-      <a className='todo-item-remove' onClick={onClickedRemoved}>
+      <span>{moment(item.createdAt).fromNow()}</span>
+      <span>
+        <a className='todo-item-remove' onClick={onClickedRemoved}>
         [Remove]
-      </a>
+        </a>
+      </span>
     </div>
   )
 };
+
+const TodoItemContainer = styled.div`
+  display: flex;
+  font-size: 20px;
+  flex-direction: row;  
+`
+const Span = styled.span`
+  padding: 20px;
+`

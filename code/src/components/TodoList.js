@@ -2,17 +2,16 @@ import React from 'react';
 import { useSelector } from 'react-redux'
 import { AddTodo } from './AddTodo';
 import { TodoItem } from './TodoItem';
-import { TodoHeader } from './TodoHeader';
+import { TodoHeader } from '../components/TodoHeader';
 
-export const TodoList = () => {
-  const list = useSelector(store => store.todos.list);
+export const TodoList = ({projectName}) => {
+  const list = useSelector(store => store.todos[projectName]);
 
   return (
     <section>
-      <TodoHeader />
-      <AddTodo />
-      {list.items.map((item, index) => <TodoItem item={item} itemIndex={index} />)}
+      <TodoHeader projectName={projectName} />
+      <AddTodo projectName={projectName} />
+      {list.map((item, index) => <TodoItem key={index} projectName={projectName} item={item} itemIndex={index} />)}
     </section>
   )
 };
-

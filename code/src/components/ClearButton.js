@@ -2,11 +2,13 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 
-export const ClearButton = () => {
+export const ClearButton = ({projectName}) => {
   const dispatch = useDispatch();
 
   const onClickedRemoved = () => {
-    dispatch(todos.actions.removeAllTodos());
+    dispatch(todos.actions.removeAllTodos({
+      projectName
+    }));
   };
 
   return (
@@ -15,7 +17,7 @@ export const ClearButton = () => {
         type='button'
         onClick={onClickedRemoved}
       >
-        CLEAR ALL
+        REMOVE PROJECT
       </button>
     </div>
   )

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 
 
-export const AddTodo = () => {
+export const AddTodo = ({projectName}) => {
   const [inputValueDescription, setInputValueDescription] = useState('');
   const [inputValueDate, setInputValueDate] = useState('');
   const dispatch = useDispatch();
@@ -13,9 +13,12 @@ export const AddTodo = () => {
     
     dispatch(
       todos.actions.addTodo({
-        description: inputValueDescription,
-        date: inputValueDate,
-        done: false
+        projectName,
+        itemInfo: {
+          description: inputValueDescription,
+          date: inputValueDate,
+          done: false
+        }
       })
     );
 
@@ -25,22 +28,28 @@ export const AddTodo = () => {
 
   return (
     <form className='todo-input' onSubmit={handleOnSubmit}>
-      <input 
-        type='text'
-        onChange={event => setInputValueDescription(event.target.value)}
-        value={inputValueDescription}
-        className='todo-input-text'
-      ></input>
-      <input
-        type='date'
-        onChange={event => setInputValueDate(event.target.value)}
-        value={inputValueDate}
-      ></input>
-      <input
-        type='submit'
-        value='Add Todo'
-        className='todo-input-button'
-      ></input>
+      <label>
+        <input 
+          type='text'
+          onChange={event => setInputValueDescription(event.target.value)}
+          value={inputValueDescription}
+          className='todo-input-text'
+        ></input>
+      </label>
+      <label>
+        <input
+          type='date'
+          onChange={event => setInputValueDate(event.target.value)}
+          value={inputValueDate}
+        ></input>
+      </label>
+      <label>
+        <input
+          type='submit'
+          value='Add Todo'
+          className='todo-input-button'
+        ></input>
+      </label>
     </form>
   )
 };
