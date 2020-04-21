@@ -6,8 +6,16 @@ import { faListUl, faCheck } from '@fortawesome/free-solid-svg-icons'
 export const TitleContainer = () => {
   return (
     <TitleWrapper>
-      <IconContainer><FontAwesomeIcon icon={faListUl} /></IconContainer>
-      <Title>B. Productive <FontAwesomeIcon icon={faCheck} /></Title>
+      <IconContainer>
+        <FontAwesomeIcon
+          aria-hidden='true'
+          icon={faListUl} />
+      </IconContainer>
+      <Title>B. Productive
+        <FontAwesomeIcon
+          aria-hidden='true'
+          icon={faCheck} />
+      </Title>
     </TitleWrapper>
   )
 }
