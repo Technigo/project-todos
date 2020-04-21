@@ -37,7 +37,7 @@ code {
 }
 
 .todo-item-check {
-  transform: scale(1);
+  transform: scale(1.5);
   margin: 16px;
   background-color: grey;
 }

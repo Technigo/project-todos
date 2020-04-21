@@ -10,6 +10,7 @@ import { tasks } from '../reducers/tasks'
 
 import { TaskList } from '../components/TaskList'
 import { Header } from '../components/Header'
+import { Footer } from '../components/Footer'
 
 import styled from 'styled-components'
 import { GlobalStyle } from 'lib/Global'
@@ -27,10 +28,11 @@ export const Home = () => {
   return (
     <Provider store={store}>
       <GlobalStyle />      
-      <AppContainer>
-        <Header />
-        <TaskList />
-      </AppContainer>
+        <AppContainer>
+          <Header />
+          <TaskList />
+          <Footer />
+        </AppContainer>
     </Provider>
   )
 }

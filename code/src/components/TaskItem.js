@@ -3,7 +3,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { tasks } from '../reducers/tasks'
 import { ButtonRemove } from 'lib/Button'
-// import styled from 'styled-components'
+import styled from 'styled-components'
 // For time stamping to dos:
 import moment from 'moment'
 
@@ -40,14 +40,16 @@ export const TaskItem = ({ itemIndex }) => {
       className="todo-item-check"
       checked={item.done ? "checked" : ""}
       ></input>
-      <span>{item.description}</span>
+      {/* <span>{item.description}</span> */}
+      <ItemDescription>{item.description}</ItemDescription>
       {/* <span className="MAKE TIMESTAMP">Due date:{item.id}</span> */}
 {/*       <a className="todo-item-remove" onClick={onRemoveClicked}>
       [remove]
     </a> */}
       {/* <button className="todo-item-remove" onClick={onRemoveClicked}>remove</button> */}
       <ButtonRemove onClick={onRemoveClicked}>Remove</ButtonRemove>
-      <span className="todo-item-created">Created: {moment(item.id).format('LT, MMM Do')}, {moment(item.id).fromNow()}</span>
+      {/* <span className="todo-item-created">Created: {moment(item.id).format('LT, MMM Do')}, {moment(item.id).fromNow()}</span> */}
+      <span className="todo-item-created">Created {moment(item.id).fromNow()}</span>
 {/*       <label>
           <Checkbox2
             checked={item.done ? "checked" : ""}
@@ -58,3 +60,13 @@ export const TaskItem = ({ itemIndex }) => {
     </div>
   )
 }
+export const ItemDescription = styled.span`
+  font-size: 12px;
+  width: 50%;
+  /* font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", */
+    /* "Lucida Sans", Arial, sans-serif; */
+
+  @media (min-width: 668px) {
+  font-size: 18px;
+  },
+`;
