@@ -8,8 +8,6 @@ import { TaskSummery } from './TaskSummery'
 
 import styled from 'styled-components'
 
-
-
   // TODO - fetch all to-dos from the store
   // Using useSelector: Och vipps så kommer vi åt allti vår store!
 /*
@@ -39,14 +37,11 @@ export const TaskList = () => {
   )
 }
 
-
 const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  /* align-items: center; */
   background: whitesmoke;
-  /* background-image: linear-gradient(#387adf, #efefef); */
   padding: 0px 0px 200px 0px;
   color: white;
   margin: 0;

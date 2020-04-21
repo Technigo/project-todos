@@ -1,53 +1,44 @@
-import React from 'react'
-import moment from 'moment'
+import React from "react";
+import moment from "moment";
 
-import { useDispatch } from 'react-redux'
-import { tasks } from '../reducers/tasks'
+import { useDispatch } from "react-redux";
+import { tasks } from "../reducers/tasks";
 
-import styled from 'styled-components'
-
-import { ButtonClear } from '../lib/Button'
-
+import styled from "styled-components";
+import { ButtonClear } from "../lib/Button";
 
 export const Header = () => {
-
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const handleClearList = () => {
-    dispatch(
-      tasks.actions.removeAllTasks()
-      )
-  }
+    dispatch(tasks.actions.removeAllTasks());
+  };
 
-  return(
+  return (
     <Container>
       <ContainerLeft>
-        <Text>My Things To do</Text>
+        <HeaderText> My Things To do </HeaderText>
         <DateText>{moment().format("MMMM Do, Y")}</DateText>
       </ContainerLeft>
       <ContainerRight>
         <ContainerButton>
           <ButtonClear onClick={handleClearList}>CLEAR LIST</ButtonClear>
-        {/* <button onClick={handleClearList}>CLEAR</button> */}
         </ContainerButton>
       </ContainerRight>
     </Container>
-  )
-}
+  );
+};
 
-// Clear all todos in list
+// Clear all to dos in list
 
 const Container = styled.section`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* background: #387adf; */
   background: #46539e;
   padding: 20px;
-  color: white;
-  /* font-weight: 700; */
+  /* color: white; */
   margin: 0;
-  /* height: 150px; */
 `;
 
 const ContainerLeft = styled.section`
@@ -57,32 +48,28 @@ const ContainerLeft = styled.section`
   align-items: flex-start;
   height: 120px;
   width: 150px;
-`
+`;
 const ContainerRight = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
   height: 100px;
-  
 `;
 
 const ContainerButton = styled.div`
   margin-top: 90px;
-
 `;
 const DateText = styled.text`
   font-size: 12px;
-  /* font-weight: 200; */
-  font-weight: 100;
-  color: #EFEBE9;
+  font-weight: 200;
+  color: #efebe9;
   margin: 0;
 `;
 
-const Text = styled.h1`
+const HeaderText = styled.p`
   font-size: 34px;
-  /* font-weight: 200; */
-  font-weight: 300;
-  color: #EFEBE9;
-  margin: 0 0 5px 0;
+  font-weight: 200;
+  color: #efebe9;
+  margin: 0px 0px 5px 0px;
 `;

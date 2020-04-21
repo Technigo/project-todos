@@ -38,7 +38,7 @@ export const TaskSummery = () => {
 const SummeryText = styled.text`
   font-size: 14px;
   /* font-weight: 200; */
-  font-weight: 600;
+  font-weight: 200;
   color: #9e9ea7;
   margin: 0 0 0 16px;
 `;
@@ -47,10 +47,11 @@ const SummeryTextThin = styled.text`
   /* font-weight: 200; */
   font-weight: 200;
   color: #9e9ea7;
-  margin: 0 0 0 16px;
+  margin: 0 0 0 0px;
 `;
 const NumberDone = styled.div`
-    background-color: #9e9ea7;
+    /* background-color: #9e9ea7; */
+    background: #46539e;
     color: white;
     display: inline-block;
     border-radius: 50%;
@@ -59,5 +60,7 @@ const NumberDone = styled.div`
     text-align: center;
     margin: 5px;
     padding: 3px 2px 2px 2px;
+    font-weight: 600;
+
 
 `;

@@ -7,7 +7,7 @@ import { ButtonAdd } from '../lib/Button'
 import styled from 'styled-components'
 
 export const TaskInput = () => {
-  // change state from textinput
+  // change state from text input
   const [inputValue, setInputValue] = useState("")
   // dispatch the actions to save our new task:
   const dispatch = useDispatch()
@@ -15,7 +15,7 @@ export const TaskInput = () => {
   // create handleSubmit function with dispatch:
   const handleOnSubmit = event => {
     // console.log if the value in the text field is there:
-    console.log(inputValue)
+    // console.log(inputValue)
     // prevent page from refreshing itself:
     event.preventDefault()
     // the dispatch function to save new task to store:
@@ -32,28 +32,21 @@ export const TaskInput = () => {
   // create a handle submit function
   return (
     <Container>
-      <form className="todo-input" onSubmit={handleOnSubmit}>
-        {/* <p>** hi im to do input** </p> */}
-        <input 
-          type="text"
+      <Form onSubmit={handleOnSubmit}>
+        <InputField 
+          type="text" 
           onChange={event => setInputValue(event.target.value)}
           value={inputValue}
-          className="todo-input-text"
-          // placeholder='Add here'
           required
-        ></input>
+        >
+        </InputField>
         {/* <input
           type="submit"
           className="todo-input-button"
           value="Add Todo"
         ></input>  */}
-          <ButtonAdd type="submit" value="Add Todo">Add new thing</ButtonAdd>
-        {/* <input
-          type="submit"
-          className="todo-input-button"
-          value="Add Todo"
-        ></input>  */}
-      </form>
+        <ButtonAdd type="submit" value="Add Todo">Add To do</ButtonAdd>
+      </Form>
     </Container>
   )
 }
@@ -64,5 +57,13 @@ export const Container = styled.section`
 `;
 
 export const Form = styled.form`
-  
+  margin: 8px;
+  display: flex;
+  flex: column;
+`;
+
+export const InputField = styled.input`
+  font-size: 18px;
+  width: 50%;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif
 `;

@@ -13,9 +13,7 @@ export const ButtonAdd = styled.button`
   &:hover {
     background: #3d415b;
   }
-
 `;
-
 
 export const ButtonClear= styled.button`
   padding: 3px 8px;
@@ -24,12 +22,11 @@ export const ButtonClear= styled.button`
   cursor: pointer;
   /* border: 1px solid #555555; */
   font-size: 10px;
-  background: #3d415b;
+  background: #ac647c;
   color: whitesmoke;
   &:hover {
-    background: #ac647c;
+    background: #3d415b;
   }
-
 `;
 
 export const ButtonRemove= styled.button`
@@ -38,16 +35,12 @@ export const ButtonRemove= styled.button`
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  /* border: 1px solid #bcbbbd; */
   /* border: 1px solid #555555; */
   font-size: 10px;
-  background: #bcbbbd;
-  /* background: #ac647c; */
-  /* background: #fab026; */
-  /* background: #3d415b; */
+  background: #ac647c;
   color: whitesmoke;
   &:hover {
-    background: #ac647c;
+    background: #3d415b;
   }
    
 

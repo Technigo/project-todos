@@ -12,6 +12,7 @@ import { TaskList } from '../components/TaskList'
 import { Header } from '../components/Header'
 
 import styled from 'styled-components'
+import { GlobalStyle } from 'lib/Global'
 
 
 // first we create our combined-REDUCER-file:
@@ -24,7 +25,8 @@ const store = configureStore({ reducer })
 // and now finally we have a Store we can include in our Provider:
 export const Home = () => {
   return (
-    <Provider store={store}>      
+    <Provider store={store}>
+      <GlobalStyle />      
       <AppContainer>
 
         <Header />

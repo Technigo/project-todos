@@ -7,6 +7,7 @@ import { createSlice } from "@reduxjs/toolkit";
     items: [],
   },
 }; */
+
 const initialState = {
   list: {
     name: "Test list",
@@ -52,7 +53,7 @@ export const tasks = createSlice({
         (item, index) => index !== itemIndex
       );
     },
-    // Remove all - clean the stet to initial 0 value:
+    // Remove all - clean the State/Store to initial 0 value:
     removeAllTasks: (state) => {
       state.list.items = [];
     },
@@ -62,4 +63,4 @@ export const tasks = createSlice({
 // addTask
 // removeTask
 // setDone
-// option: rensa listan? Remove All info from state []
+// option: Remove All info from state []
