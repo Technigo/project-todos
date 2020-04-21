@@ -4,9 +4,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { todos } from 'reducers/todos'
 
 import { Header } from 'components/Header'
-import { AddItem } from 'components/AddItem'
-import { ItemData } from 'components/ItemData'
-import { ItemsList } from 'components/ItemsList'
+import { MainContent } from 'components/MainContent'
 
 import 'normalize.css';
 import 'scss/app.scss'
@@ -18,20 +16,16 @@ const reducer = combineReducers({
 
 const store = configureStore({ reducer })
 
+
 export const App = () => {
   return (
     <Provider store={store}>
+
       <div className="wrapper">
-
         <Header />
-
-        <main className="main-content">
-          <AddItem />
-          <ItemData />
-          <ItemsList />
-        </main>
-
+        <MainContent />
       </div>
+
     </Provider>
   )
 }
