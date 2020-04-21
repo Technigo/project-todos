@@ -5,10 +5,13 @@ import {ToDo} from "reducers/ToDo"
 
 export const ClearButton = () => {
     const dispatch = useDispatch()
+    const handleRemoveAllClick = () => {
+        dispatch(ToDo.actions.removeAll())
+      }
 
     return (
-        <button type="button" onClick={() => dispatch(ToDo.actions.removeAll)}>
-            Clear All
+        <button type="button" onClick={handleRemoveAllClick}>
+            Remove All
         </button>
     )
 }

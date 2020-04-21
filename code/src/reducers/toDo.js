@@ -4,19 +4,18 @@ export const ToDo = createSlice({
   name: 'ToDo',
   initialState: {
     items: [
-      { id: 1, name: 'Take over the world', completed: false },
-      { id: 2, name: 'Tequila reace', completed: true },
-      { id: 3, name: 'Clean the kitchen', completed: false }
+      { id: 1, name: 'Take over the world', category: "work", completed: false },
+      { id: 2, name: 'Tequila reace', category: "play", completed: true },
+      { id: 3, name: 'Clean the kitchen', category: "work", completed: false }
     ]
   },
   reducers: {
     addItem: (state, action) => {
-      state.items.push({ id: Date.now(), name: action.payload })
+      const {name, category, dueDate} = action.payload
+      state.items.push({ id: Date.now(), name, category, startDate:Date.now(), dueDate })
+      console.log(name)
     },
     removeItem: (state, action) => {
-      // find 'cheese' or whatever item
-      // remove it from the items array
-      // id = 3
       state.items = state.items.filter(item => item.id !== action.payload)
     },
     removeAll: (state, action) => {

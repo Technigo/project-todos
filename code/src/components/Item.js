@@ -1,34 +1,37 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { ToDo } from 'reducers/ToDo'
+import moment from 'moment'
 
 export const Item = (props) => {
+  const { id, name, dueDate, category, completed, startDate } = props.item
   const dispatch = useDispatch()
 
   const handleCheckboxClick = () => {
-    dispatch(ToDo.actions.toggleCompleted(props.item.id))
+    dispatch(ToDo.actions.toggleCompleted(id))
   }
 
   const handleRemoveButtonClick = () => {
-    dispatch(ToDo.actions.removeItem(props.item.id))
+    dispatch(ToDo.actions.removeItem(id))
   }
 
   return (
     <li>
-      {props.item.name}
+      {name}
 
       <label>
          - Check!
         <input
           type="checkbox"
-          checked={props.item.completed}
+          checked={completed}
           onChange={handleCheckboxClick} />
       </label>
 
       <button type="button" onClick={handleRemoveButtonClick}>
         Remove
       </button>
+      <span>ADDED: {moment(startDate).format('MMM Do YYYY')}</span>
+      {dueDate && <span> -> DUE: {moment(dueDate).format('MMM Do YYYY')}</span>}
     </li>
   )
 }
