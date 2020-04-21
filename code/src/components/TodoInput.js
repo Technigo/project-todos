@@ -3,9 +3,11 @@ import { useDispatch } from "react-redux";
 import { todos } from "../reducers/todos";
 import styled from "styled-components";
 import { PrimaryButton } from "lib/PrimaryButton";
+import DatePicker from "react-date-picker";
 
 export const TodoInput = () => {
   const [inputValue, setInputValue] = useState("");
+  const [dueDate, setDueDate] = useState("");
   const dispatch = useDispatch();
 
   const handleOnSubmit = (e) => {
@@ -20,22 +22,37 @@ export const TodoInput = () => {
           done: false,
           date: currentDate,
           display: true,
+          dueDate: dueDate,
         })
       );
       setInputValue("");
+      setDueDate("");
     }
   };
 
   return (
-    <Form onSubmit={handleOnSubmit}>
-      <Input
-        type="text"
-        onChange={(e) => setInputValue(e.target.value)}
-        value={inputValue}
-        placeholder="Let's get some tasks done!"
-      ></Input>
-      <PrimaryButton type="submit" value="ADD TODO"></PrimaryButton>
-    </Form>
+    <>
+      <Form onSubmit={handleOnSubmit}>
+        <Input
+          type="text"
+          onChange={(e) => setInputValue(e.target.value)}
+          value={inputValue}
+          placeholder="Let's get some tasks done!"
+        ></Input>
+        <DatePickerBackground>
+          <DatePicker
+            onChange={(date) => setDueDate(date)}
+            value={dueDate}
+            style={{ background: "white" }}
+          />
+        </DatePickerBackground>
+        <PrimaryButton type="submit" value="ADD TODO"></PrimaryButton>
+
+        {/* <Wrapper> */}
+      </Form>
+      {/* <Text>Adding a due date is optinal</Text> */}
+      {/* </Wrapper> */}
+    </>
   );
 };
 
@@ -67,3 +84,24 @@ const Form = styled.form`
     width: 150px;
   }
 `;
+
+const DatePickerBackground = styled.div`
+  background: white;
+`;
+
+// const Text = styled.p`
+//   font-family: "Pangolin", cursive;
+//   color: #fff;
+//   font-weight: lighter;
+//   font-size: 20px;
+
+//   margin: 0;
+// `;
+
+// const Wrapper = styled.div`
+//   display: flex;
+
+//   @media (max-width: 668px) {
+//     flex-direction: column;
+//   }
+// `;

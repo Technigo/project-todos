@@ -39,7 +39,14 @@ export const TodoItem = ({ itemIndex }) => {
           </Divider>
           <Remove onClick={onRemoveClicked}>REMOVE</Remove>
         </TodoContainer>
-        <Date>{moment(item.date).fromNow()}</Date>
+        <Wrapper>
+          <Date>Added {moment(item.date).fromNow()}</Date>
+          {item.dueDate ? (
+            <Date>Due {moment(item.dueDate).fromNow()}</Date>
+          ) : (
+            ""
+          )}
+        </Wrapper>
         <Line />
       </>
     );
@@ -127,11 +134,18 @@ const Date = styled.p`
   display: flex;
   align-self: flex-end;
 
-  margin: -5px 0 5px 0;
+  margin: 0;
 `;
 
 const Line = styled.hr`
   width: 100%;
   margin: 0 0 10px 0;
   border: 1px solid #ffffff50;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  width: 100%;
 `;
