@@ -6,14 +6,20 @@ import { TodoItem } from './TodoItem'
 
 
 export const TodoList = () => {
-  // Fetch all tasks from the store
-  const allTodos = useSelector((store) => store.todos)
-
+  // Fetch all tasks from the store, "state" is the "store"
+  const allTodos = useSelector((state) => state.todos.items)
+  console.log(allTodos)
   return (
-    <section className="todo-list">
-      <TodoSummary></TodoSummary>
-      <TodoInput></TodoInput>
-      <TodoItem></TodoItem>
-    </section>
+    <ul>
+      {allTodos.map((task) => (
+        <TodoItem key={task.id} task={task} />
+      ))}
+    </ul>
   )
 }
+
+{/* {{ <section className="todo-list">
+<TodoSummary></TodoSummary>
+<TodoInput></TodoInput>
+<TodoItem></TodoItem>
+</section>}} */} 

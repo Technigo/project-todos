@@ -17,6 +17,16 @@ export const todos = createSlice({
         text,
         complete
       })
+    },
+    setComplete: (state, action) => {
+      // find the task that is clicked and toggle if it is done or not
+      // task.id equals the payload that is sent from TodoItem
+      const taskComplete = state.items.find((task) => task.id === action.payload)
+
+      // toggle the value of complete
+      if (taskComplete) {
+        taskComplete.complete = !taskComplete.complete
+      }
     }
   }
 })
