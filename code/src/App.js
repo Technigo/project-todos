@@ -8,14 +8,14 @@ import { todos } from 'reducers/todos.js'
 
 const reducer = combineReducers({  todos: todos.reducer })
 
-const persistedState = localStorage.getItem("reduxSate")
+const persistedState = localStorage.getItem("reduxState")
 ? JSON.parse(localStorage.getItem("reduxState"))
  : {};
 
  const store = createStore(reducer, persistedState);
 
  store.subscribe(() => {
-   localStorage.setItem("reduxSate", JSON.stringify(store.getSate()));
+   localStorage.setItem("reduxState", JSON.stringify(store.getState()));
 
  });
 

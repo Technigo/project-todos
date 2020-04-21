@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { todos } from "../reducers/todos.js"
@@ -37,8 +37,9 @@ export const TodoItem = ({ itemIndex }) => {
             checked={item.done ? "checked" : ""}
             ></input>
             <span className="todo-description">{item.description}</span>
-
-
+            <a href="/#"  className="todo-remove" onClick={onRemoveClicked}>
+                [remove]
+            </a>
         </div>
 
 
