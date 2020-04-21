@@ -27,7 +27,7 @@ const Image = styled.img`
 `
 const Caption = styled.p`
   margin: 2px 0 20px 0;
-  font-size: 0.5em;
+  font-size: 11px;
   color: #3e3e2d;
 `
 
@@ -39,11 +39,11 @@ const Link = styled.a`
 
 const Text = styled.p`
   margin: 2px 0;
-  font-size: 0.7em;
+  font-size: 12px;
   color: #3e3e2d;
 
   @media (min-width: 768px) {
-    font-size: 1em;
+    font-size: 14px;
   }
 `
 
