@@ -17,53 +17,61 @@ export const TodoInput = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault()
 
-    // Dispatch the action to save the new todo item to list
-    dispatch(
-      todos.actions.addTodo({
-        description: inputValue,
-        done: false,
-        category: category,
-        date: dueDate
-      })
-    )
+    // Limit the chars to min 3 and max 140
+    if (inputValue.length > 3 && inputValue.length < 140) {
+      // Dispatch the action to save the new todo item to list
+      dispatch(
+        todos.actions.addTodo({
+          description: inputValue,
+          done: false,
+          category: category,
+          date: dueDate
+        })
+      )
 
-    // clear the fields after submit
-    setInputValue("")
-    setCategory("")
-    setDueDate('')
+      // clear the fields after submit
+      setInputValue("")
+      setCategory("")
+      setDueDate('')
+    }
+
+    else {
+      return alert('OOPS! Chars must be min 3 and max 140')
+    }
   }
 
   return (
     <form className="todo-input" onSubmit={handleOnSubmit}>
-      <input
-        type="submit"
-        className="todo-input-button"
-        value="Add todo"
-      ></input>
+      What's cooking?
       <input
         type="text"
-        placeholder="new todo..."
         className="todo-input-text"
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
       ></input>
-      <label>
-        Category:
-          <select
+
+      <div class="category-duedate">
+        <label>
+          Due Date:
+          <DatePicker onChange={(date) => setDueDate(date)} value={dueDate} />
+        </label>
+
+        <select
           value={category}
           onChange={(event) => setCategory(event.target.value)}
         >
-          <option value=''>select...</option>
+          <option value=''>Category...</option>
           <option value='work'>Work</option>
           <option value='event'>Event</option>
           <option value='school'>School</option>
           <option value='personal'>Personal</option>
         </select>
-      </label>
-      <label>
-        Due Date
-          <DatePicker onChange={(date) => setDueDate(date)} value={dueDate} />
-      </label>
-    </form >
+      </div>
+      <input
+        type="submit"
+        className="todo-input-button"
+        value="Add todo"
+      ></input>
+    </form>
   )
 }

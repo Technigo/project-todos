@@ -12,6 +12,8 @@
   padding: 15px;
   margin: 5px;
   border-color: #bbb;
+  max-width: 360px;
+  overflow-wrap: break-word;
 }
 
 .todo-item.done {
@@ -31,6 +33,15 @@
   color: darkolivegreen;
 }
 
-.todo-item-description {
-  margin-left: 15px;
+.todo-item-category {
+  font-size: 15px;
+  background-color: #7473f2;
+  padding: 5px;
+  border-radius: 50px;
+  color: white;
+  margin-right: 5px;
+}
+
+p.item-text {
+  margin: 0 0 0 10px;
 }

@@ -1,28 +1,53 @@
 .todo-input {
-  margin: 8px;
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 25px;
 }
 
+.todo-input-button {
+  width: fit-content;
+  font-family: 'Quicksand', sans-serif;
+  align-self: center;
+  font-size: 20px;
+  background-color: #7473f2;
+  margin: 20px;
+  border-radius: 50px;
+  color: white;
+  padding: 10px;
+}
 
 .todo-input-text {
   font-size: 22px;
-  width: 100%;
-  padding: 15px;
-  border-style: none;
   font-family: 'Quicksand', sans-serif;
-  outline: none;
+} 
+
+div.react-date-picker__wrapper {
+  border: none;
 }
 
-/* .todo-input-button {
-  padding: 8px;
-  font-size: 30px;
-  font-weight: bold;
-  border-style: none;
-} */
-
-.todo-input-text:focus {
-  outline:none;
+div.react-date-picker__inputGroup {
+  display: none;
 }
+
+button.react-date-picker__clear-button {
+  display: none;
+}
+
+div.react-date-picker__calendar {
+  background-color: black;
+}
+
+.category-duedate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: 20px;
+}
+
+select {
+  font-size: 20px;
+  font-family: 'Quicksand', sans-serif;
+}
+
