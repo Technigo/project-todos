@@ -63,7 +63,7 @@ header {
 
 input[type=text] {
   border: 0;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .add-btn {
@@ -107,6 +107,7 @@ input[type=text] {
 .item {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   padding: 1.5rem;
   border-top-left-radius: $borderRadiusSmall;
@@ -117,9 +118,16 @@ input[type=text] {
   background-color: #eee;
 }
 
+.item-desc {
+  flex: 1 1 auto;
+  font-weight: 500;
+}
+
 .completed {
-  text-decoration: line-through;
-  opacity: .5;
+  .item-desc {
+    text-decoration: line-through;
+    // color: #888;
+  }
 }
 
 .remove-btn {
