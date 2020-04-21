@@ -8,9 +8,7 @@ export const ShowDate = () => {
   return (
 
     <section >
-      <Moment format="YYYY-MM-DD">{date}</Moment>
+      <Moment format="YYYY/MM/DD">{date}</Moment>
     </section>
-
-
   )
 }

@@ -22,6 +22,7 @@ export const TodoInput = () => {
     <form className='todo-input' onSubmit={handleOnSubmit}>
       <input
         Type='text'
+        placeholder='Add task'
         onChange={event => setInputValue(event.target.value)}
         value={inputValue}
         className='todo-input-text'
@@ -29,7 +30,7 @@ export const TodoInput = () => {
       <input
         Type='submit'
         className='todo-input-button'
-        value='Add Todo'
+        value='+'
       ></input>
 
     </form>

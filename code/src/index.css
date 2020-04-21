@@ -1,13 +1,42 @@
+
+
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+margin: 0;
+  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    sans-serif;*/
+font-family: 🇲ontserrat Alternates;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+background: linear-gradient(purple, pink, white);
+background-repeat: no-repeat;
+text-align: center;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  /*font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;*/
 }
+
+.header-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 30px;
+}
+
+h2 {
+  margin-bottom: 4px;
+}
+
+h4 {
+  margin-right: 30px;
+  margin-top: 25px;
+}
+
+@import url('<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates>')

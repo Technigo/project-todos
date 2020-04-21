@@ -32,7 +32,7 @@ export const TodoItem = ({ itemIndex }) => {
       className='todo-item-check'
       checked={item.done ? 'checked' : ''}></input>
     <span className='todo-item-description'>{item.description}</span>
-    <a className='todo-item-remove' onClick={onRemoveClicked}>[Remove]</a>
+    <button className='todo-item-remove' onClick={onRemoveClicked}>-</button>
   </div >
 
 }
