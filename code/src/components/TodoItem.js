@@ -17,37 +17,32 @@ const Div = styled.div`
   align-items: center;
 `
 
+const Icon = styled.svg`
+  fill: none;
+  stroke: white;
+  stroke-width: 2px;
+`
+
 const Styled = styled.div`
   margin-right: 10px;
   position: relative;
-  top: 0px;
-  left: 0px;
   height: 30px;
   width: 30px;
   border-radius: 50%;
-  background-color: #F5F0D7;
+  background: ${props => (props.checked ? '#ED839D' : '#F5F0D7')};
+
+  ${Icon} {
+    visibility: ${props => (props.checked ? 'visible' : 'hidden')}
+  }
 
   &:hover {
     background: #ED839D;
   }
-
-  &:before {
-    content: '';
-  }
-
-  &:after {
-    content: "✔";
-    position: absolute;
-    top: 5px;
-    left: 10px;
-    font-size: 16px;
-    color: #ED839D;
-    }
 `
 
 export const Checkbox = styled.input.attrs({ type: 'checkbox' })`
-position: absolute;
-opacity: 0;
+  position: absolute;
+// opacity: 0;
 `
 
 
@@ -78,15 +73,17 @@ export const TodoItem = ({ itemIndex }) => {
   return (
     <TodosContainer>
       <Div>
-        <Styled>
-          <Checkbox
-            onChange={handleOnchange}
-            checked={item.done ? "checked" : ""}
-          ></Checkbox>
+        <Styled
+          onChange={handleOnchange}
+          checked={item.done}
+        ><Checkbox>
+          </Checkbox>
+          <Icon viewBox="0 0 24 24">
+            <polyline points="20 6 9 17 4 12" />
+          </Icon>
         </Styled>
         <p>{item.description}</p>
       </Div>
-
       <Button onClick={onRemoveClicked}
         background="#E66032"
         color="#F5F0D7"

@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { TodoInput } from 'components/TodoInput'
 import { TodoItem } from 'components/TodoItem'
 import { TodoSummary } from 'components/TodoSummary'
+import { RemoveAll } from 'components/RemoveAll'
 import styled from 'styled-components'
 
 const Section = styled.section`
@@ -29,6 +30,7 @@ export const TodoList = () => {
       {list.items.map((item, index) => (
         <TodoItem itemIndex={index}></TodoItem>
       ))}
+      <RemoveAll />
       <TodoSummary />
     </Section>
   );

@@ -7,7 +7,7 @@ import { Button } from 'lib/Button'
 const TextInput = styled.input`
   width: 350px;
   height: 20px;
-  margin: 10px 10px 0 0;
+  margin: 10px 10px 20px 0;
   padding: 5px;
   border: none;
   border-radius: 7px;
