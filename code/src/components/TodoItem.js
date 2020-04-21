@@ -48,13 +48,13 @@ export const TodoItem = ({ itemIndex }) => {
 
 const TodoItemContainer = styled.div`
   display: grid;
-  grid-template-columns: 30px 1fr 50px;
+  grid-template-columns: 30px 1fr 40px;
   grid-gap: 10px;
   width: 100%;
-  margin: 10px 0;
+  margin: 10px 0 15px 0;
 
   @media (min-width: 768px) {
-    margin-bottom: 15px;
+    grid-template-columns: 40px 1fr 40px;
   }
 `
 const TodoText = styled.p`
@@ -66,7 +66,7 @@ const TodoText = styled.p`
   text-decoration: ${prop => prop.itemChecked ? 'line-through' : ''};
 
   @media (min-width: 768px) {
-    font-size: 18px;
+    font-size: 14px;
   }
 `
 
@@ -90,8 +90,8 @@ const Checkbox = styled.button`
   }
 
   @media (min-width: 768px) {
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     padding-left: 15px;
   }
 `
@@ -104,7 +104,6 @@ const RemoveButton = styled.button`
   text-align: center;
 
   @media (min-width: 768px) {
-    font-size: 35px;
-    margin-right: 4px;
+    font-size: 30px;
   }
 `
