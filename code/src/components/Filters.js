@@ -25,9 +25,28 @@ export const Filter = () => {
     <>
       {itemsLength > 0 &&
         <FilterWrapper>
-          <Button onClick={showActive} width={'100%'} margin={'5px auto'}>Active</Button>
-          <Button onClick={showDone} width={'100%'} margin={'5px auto'}>Done</Button>
-          <Button onClick={showAll} width={'100%'} margin={'5px auto'}>All</Button>
+
+          <Button
+            aria-label='Show active tasks'
+            onClick={showActive}
+            width={'100%'}
+            margin={'5px auto'}
+          >Active</Button>
+
+          <Button
+            aria-label='Show done tasks'
+            onClick={showDone}
+            width={'100%'}
+            margin={'5px auto'}
+          >Done</Button>
+
+          <Button
+            aria-label='Show all tasks'
+            onClick={showAll}
+            width={'100%'}
+            margin={'5px auto'}
+          >All</Button>
+
         </FilterWrapper>
       }
     </>
