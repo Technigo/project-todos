@@ -5,6 +5,7 @@ import { todoStore } from '../reducers/todoStore';
 import moment from 'moment';
 import { ColorButton } from 'shared/shared';
 
+// styled components
 const Wrapper = styled.div`
 	width: ${(props) => (props.width < 500 ? props.width - 1 : props.width * 0.5 - 2)}px;
 	display: flex;
@@ -39,9 +40,11 @@ export const TaskItem = ({ todo }) => {
 	const dispatch = useDispatch();
 	const theWidth = useSelector((state) => state.size.screenSize);
 
+	//action to change status
 	const handleStatusChange = () => {
 		dispatch(todoStore.actions.statusTask(todo));
 	};
+	// action to delete task
 	const handleDelete = () => {
 		dispatch(todoStore.actions.removeTask(todo));
 	};
@@ -50,7 +53,7 @@ export const TaskItem = ({ todo }) => {
 		<Wrapper width={theWidth}>
 			<TodoItem todoDone={todo.taskDone} onClick={handleStatusChange}>
 				<MediumText todoDone={todo.taskDone}>{todo.task}</MediumText>
-				<SmallText>{moment(todo.dueDate).fromNow()}</SmallText>
+				<SmallText>Deadline: {moment(todo.dueDate).fromNow()}</SmallText>
 			</TodoItem>
 			<ColorButton color="red" onClick={handleDelete} aria-label="remove">
 				-

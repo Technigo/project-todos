@@ -1,17 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+// Inital state
 const myInitialState = {
-	todos: [ 
-    { id: 1, task: 'example task', dueDate:'2020-01-30', taskDone: false }, 
-    { id: 2, task: 'cook dinner', dueDate:'2020-01-30', taskDone: false },
-    { id: 3, task: 'buy birthday gift for John', dueDate:'2020-01-30', taskDone: true }, 
-    { id: 4, task: 'example task', dueDate:'2020-01-30', taskDone: false } 
-  ]
+	todos: [
+		{ id: 1, task: 'example task', dueDate: '2020-03-30', taskDone: false },
+		{ id: 2, task: 'cook dinner', dueDate: '2020-04-30', taskDone: false },
+		{ id: 3, task: 'buy birthday gift for John', dueDate: '2020-08-20', taskDone: false },
+		{ id: 4, task: 'changing tires', dueDate: '2020-01-30', taskDone: true }
+	]
 };
+// Todo Store
 export const todoStore = createSlice({
 	name: 'todoStore',
 	initialState: myInitialState,
 	reducers: {
+		// Possible actione
+		// New Task
 		createTask: (state, action) => {
 			let lastId = 0;
 			if (state.todos.length !== 0) {
@@ -19,17 +22,17 @@ export const todoStore = createSlice({
 			}
 			state.todos.push({ id: lastId + 1, ...action.payload, taskDone: false });
 		},
-
+		// Remove Task
 		removeTask: (state, action) => {
 			console.log('from removeTask');
 			const currentTaskId = action.payload.id;
 			state.todos = state.todos.filter((task) => task.id !== currentTaskId);
 		},
-
-    clearAll: (state, action) =>{
-      state.todos=[]
-    },
-		//console.log(array1.findIndex(isLargeNumber));
+		// remove all tasks
+		clearAll: (state, action) => {
+			state.todos = [];
+		},
+		// change done on task
 		statusTask: (state, action) => {
 			console.log('from statudTask');
 			const currentTaskId = action.payload.id;
@@ -43,9 +46,3 @@ export const todoStore = createSlice({
 		}
 	}
 });
-
-// - Your app should list all todo tasks - completed or uncompleted --TaskList/Done
-// - You should be able to mark an uncompleted task as complete --taskcomponent/notDone
-// - You should be able to change a completed task back to uncomplete
-// - You should be able to add new tasks
-// - Your app should show a count of either all todos, or all uncomplete todos

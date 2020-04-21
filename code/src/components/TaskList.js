@@ -4,8 +4,8 @@ import styled from 'styled-components';
 import { todoStore } from '../reducers/todoStore';
 import { TaskItem } from './TaskItem';
 import { StyledSection, SectionHeader } from '../shared/shared';
-import { ItemButton } from './TaskItem';
 
+// Styled components
 const StyledGrid = styled.section`
 	width: ${(props) => props.width}px;
 	display: flex;
@@ -41,4 +41,3 @@ export const TaskList = () => {
 		</StyledSection>
 	);
 };
-// Clear all

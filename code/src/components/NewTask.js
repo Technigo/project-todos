@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { todoStore } from '../reducers/todoStore';
 import { StyledSection, SectionHeader, Paragraf, ColorButton } from '../shared/shared';
 
+// Styled components
 const StyledForm = styled.form`
 	display: flex;
 	flex-direction: column;
@@ -45,7 +46,7 @@ export const NewTask = () => {
 		console.log('date', startDate);
 		setTaskInput('');
 	};
-	//What is the smallest screen size you design for 320px
+
 	return (
 		<StyledSection>
 			<SectionHeader width={theWidth}>Make a new Todo</SectionHeader>
