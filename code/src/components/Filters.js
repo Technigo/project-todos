@@ -9,16 +9,9 @@ export const Filter = () => {
 
   const itemsLength = useSelector(store => store.todos.items.length)
 
-  const showActive = () => {
-    dispatch(todos.actions.showActive())
-  }
-
-  const showDone = () => {
-    dispatch(todos.actions.showDone())
-  }
-  const showAll = () => {
-    dispatch(todos.actions.showAll())
-  }
+  const showActive = () => dispatch(todos.actions.showActive())
+  const showDone = () => dispatch(todos.actions.showDone())
+  const showAll = () => dispatch(todos.actions.showAll())
 
   return (
     <>
