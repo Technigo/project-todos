@@ -1,44 +1,8 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import styled from 'styled-components/macro'
+import { useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
 import { Button } from '../lib/Button'
-
-export const TodoInput = () => {
-  const dispatch = useDispatch()
-  //State for input
-  const [inputValue, setInputValue] = useState('')
-
-  const handleOnSubmit = (e) => {
-    e.preventDefault()
-    dispatch(todos.actions.addTodo({
-      description: inputValue,
-      done: false,
-      show: true
-    }))
-    setInputValue('')
-  }
-
-  return (
-    <TodoForm onSubmit={handleOnSubmit}>
-      <TodoInputField
-        aria-label="Enter task here"
-        type='text'
-        onChange={e => setInputValue(e.target.value)}
-        value={inputValue}
-        placeholder='Add task...'
-        maxLength={50}
-      ></TodoInputField>
-      <Button
-        aria-label='Submit task'
-        type='submit'
-        disabled={inputValue < 1 ? true : false}
-        background={'#b55136'}
-        size={'1.5em'}
-      >+</Button>
-    </TodoForm >
-  )
-}
 
 const TodoForm = styled.form`
   display: grid;
@@ -73,3 +37,42 @@ const TodoInputField = styled.input`
     font-size: 14px;
   }
 `
+
+export const TodoInput = () => {
+  const dispatch = useDispatch()
+  //State for input
+  const [inputValue, setInputValue] = useState('')
+
+  const handleOnSubmit = (e) => {
+    e.preventDefault()
+    dispatch(todos.actions.addTodo({
+      description: inputValue,
+      done: false,
+      show: true
+    }))
+    setInputValue('')
+  }
+
+  return (
+    <TodoForm onSubmit={handleOnSubmit}>
+
+      <TodoInputField
+        aria-label="Enter task here"
+        type='text'
+        onChange={e => setInputValue(e.target.value)}
+        value={inputValue}
+        placeholder='Add task...'
+        maxLength={50}
+      ></TodoInputField>
+
+      <Button
+        aria-label='Submit task'
+        type='submit'
+        disabled={inputValue < 1 ? true : false}
+        background={'#b55136'}
+        size={'1.5em'}
+      >+</Button>
+
+    </TodoForm >
+  )
+}
