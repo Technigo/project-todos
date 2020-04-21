@@ -1,6 +1,5 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { todos } from '../reducers/todos';
+import { useSelector } from 'react-redux';
 
 export const TodoSummary = () => {
 
