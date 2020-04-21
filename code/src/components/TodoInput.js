@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { todos } from '../reducers/todos'
+import { Button } from '../lib/Button'
 
 export const TodoInput = () => {
   const dispatch = useDispatch()
@@ -27,11 +28,13 @@ export const TodoInput = () => {
         placeholder='Add task...'
         maxLength={50}
       ></TodoInputField>
-      <Submit
+      <Button
         aria-label='Submit task'
         type='submit'
         disabled={inputValue < 1 ? true : false}
-      >+</Submit>
+        background={'#b55136'}
+        size={'1.5em'}
+      >+</Button>
     </TodoForm >
   )
 }
@@ -68,15 +71,4 @@ const TodoInputField = styled.input`
   @media (min-width: 768px) {
     font-size: 14px;
   }
-`
-
-const Submit = styled.button`
-  opacity: ${prop => prop.disabled ? 0.7 : 1};
-  width: 40px;
-  height: 40px;
-  border: none;
-  border-radius: 10px; 
-  background: #b55136;
-  color: #fff;
-  font-size: 2em;
 `

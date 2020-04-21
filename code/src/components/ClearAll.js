@@ -1,36 +1,19 @@
 import React from 'react'
-import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
 import { todos } from '../reducers/todos'
+import { Button } from '../lib/Button'
 
 export const ClearAll = () => {
-  const items = useSelector(store => store.todos.items)
+  const itemsLength = useSelector(store => store.todos.items.length)
   const dispatch = useDispatch()
 
   const onClick = () => dispatch(todos.actions.clearAll())
 
   return (
     <>
-      {items.length > 0 &&
-        <ClearAllButton onClick={onClick}>Clear all</ClearAllButton>
+      {itemsLength > 0 &&
+        <Button aria-label='Clear all tasks' onClick={onClick} width={'90%'} margin={'5px auto'}>Clear all</Button>
       }
     </>
   )
 }
-
-const ClearAllButton = styled.button`
-  width: 90%;
-  height: 40px;
-  margin: 5px auto;
-  padding: 0 8px;
-  border: none;
-  border-radius: 10px; 
-  background: #888d64;
-  color: #fff;
-  font-family: 'Playfair Display';
-  font-size: 1em;
-
-  @media (min-width: 768px) {
-    font-size: 1.2em;
-  }
-`

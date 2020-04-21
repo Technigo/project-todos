@@ -8,9 +8,9 @@ export const Filter = () => {
 
   return (
     <FilterWrapper>
-      <Button width={'100%'}>Active</Button>
-      <Button width={'100%'}>Done</Button>
-      <Button width={'100%'}>All</Button>
+      <Button width={'100%'} margin={'5px auto'}>Active</Button>
+      <Button width={'100%'} margin={'5px auto'}>Done</Button>
+      <Button width={'100%'} margin={'5px auto'}>All</Button>
     </FilterWrapper>
   )
 }
