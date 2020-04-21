@@ -1,8 +1,5 @@
 .all {
   display: flex;
   flex-direction: column;
-}
-
-.content {
   padding: 1em;
 }

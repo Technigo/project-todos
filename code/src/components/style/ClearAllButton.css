@@ -1,0 +1,13 @@
+.clear-all-button {
+  color: #3e4e8a;
+  background: transparent;
+  border: none;
+}
+
+.clear-all-button:hover {
+  color: lightcoral;
+}
+
+.fas .fa-trash-alt {
+
+}

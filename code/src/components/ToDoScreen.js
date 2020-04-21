@@ -23,29 +23,26 @@ export const ToDoScreen = () => {
 
   return (
     <main className='all'>
-      <section className='content'>
-        <Header />
-        <TaskList />
-      </section>
-        <div className='footer'>
-          <form
-            className='add-task'
-            onSubmit={handleAddTask}>
-            <input
-              type='text'
-              onChange={event => setInputValue(event.target.value)}
-              value={inputValue}>
-            </input>
-            <input
-              className='button'
-              type='submit'
-              value='Add task'>
-            </input>
-          </form>
-          
-          <ClearAllButton />
-        </div>
-      
+      <Header />
+      <TaskList />
+      <div className='footer'>
+        <form
+          className='add-task-container'
+          onSubmit={handleAddTask}>
+          <input
+            className='text-input'
+            type='text'
+            onChange={event => setInputValue(event.target.value)}
+            value={inputValue}>
+          </input>
+          <input
+            className='button'
+            type='submit'
+            value='Add task'>
+          </input>
+        </form>
+      </div>
+      <ClearAllButton />
     </main>
   )
 }

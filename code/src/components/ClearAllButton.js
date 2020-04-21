@@ -3,6 +3,8 @@ import swal from 'sweetalert'
 import { useDispatch } from 'react-redux'
 import { tasklist } from 'reducers/tasklist'
 
+import './style/ClearAllButton.css'
+
 export const ClearAllButton = ({ id }) => {
   const dispatch = useDispatch()
 
@@ -22,13 +24,18 @@ export const ClearAllButton = ({ id }) => {
         }
       })
   }
-  
+
 
   return (
-    <button
-      onClick={handleClearAll}>
-      Clear all
-    </button>
+    <>
+      <i className="fas fa-trash-alt"></i>
+      <button
+        className='clear-all-button'
+        onClick={handleClearAll}>
+        Clear all
+      </button>
+    </>
+
   )
 }
 
