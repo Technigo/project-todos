@@ -4,10 +4,18 @@ import { useDispatch, useSelector } from 'react-redux'
 import { todos } from '../reducers/todos'
 import { Button } from '../lib/Button'
 
-export const Filter = () => {
-  const dispatch = useDispatch()
+const FilterWrapper = styled.section`
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-gap: 10px;
+width: 90%;
+margin: 0 auto;
+`
 
+export const Filter = () => {
   const itemsLength = useSelector(store => store.todos.items.length)
+
+  const dispatch = useDispatch()
 
   const showActive = () => dispatch(todos.actions.showActive())
   const showDone = () => dispatch(todos.actions.showDone())
@@ -25,11 +33,3 @@ export const Filter = () => {
     </>
   )
 }
-
-const FilterWrapper = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 10px;
-  width: 90%;
-  margin: 0 auto;
-`
