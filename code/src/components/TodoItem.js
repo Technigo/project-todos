@@ -23,14 +23,17 @@ export const TodoItem = ({ itemIndex }) => {
 
   return (
     <Styled>
-      <Label itemChecked={itemChecked}>
-        <Checkbox
-          type='button'
-          onClick={onCheckClick}
-          itemChecked={itemChecked}
-        ></Checkbox>
+
+      <Checkbox
+        type='button'
+        onClick={onCheckClick}
+        itemChecked={itemChecked}
+      ></Checkbox>
+      <TodoText
+        onClick={onCheckClick}
+        itemChecked={itemChecked}>
         {item.description}
-      </Label>
+      </TodoText>
       <RemoveButton
         aria-label={`Delete ${item.description}`}
         type="button"
@@ -43,18 +46,20 @@ export const TodoItem = ({ itemIndex }) => {
 }
 
 const Styled = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-content: center;
+  display: grid;
+  grid-template-columns: 30px 1fr 50px;
+  grid-gap: 5px;
+  width: 100%;
   margin: 10px 0;
 
   @media (min-width: 768px) {
     margin-bottom: 15px;
   }
 `
-const Label = styled.label`
+const TodoText = styled.p`
   display: flex;
   align-items: center;
+  margin: 0;
   color: ${prop => prop.itemChecked ? '#888d64' : '#3e3e2d'};
   font-size: 16px;
   text-decoration: ${prop => prop.itemChecked ? 'line-through' : ''};
@@ -65,10 +70,9 @@ const Label = styled.label`
 `
 
 const Checkbox = styled.button`
-  width: 35px;
-  height: 35px;
-  margin-right: 10px;
-  padding-left: 8px;
+  width: 30px;
+  height: 30px;
+  padding-left: 6px;
   padding-bottom: 6px;
   border: none;
   border-radius: 10px; 
@@ -95,11 +99,11 @@ const Checkbox = styled.button`
 `
 
 const RemoveButton = styled.button`
-  margin-right: 7px;
   border: none;
   background: none;
   color: #888d64;
   font-size: 25px;
+  text-align: center;
 
   @media (min-width: 768px) {
     font-size: 35px;
