@@ -14,6 +14,12 @@ font-size: 18px;
     margin: 16px;
   }
 
+  //How can I make this work????
+
+  span {
+    color: ${props => (props.done ? "#95afc0" : "black")}
+  }
+
   button {
     padding: 12px;
     margin: 6px; 
@@ -59,7 +65,7 @@ export const TodoItem = ({ itemIndex }) => {
         onChange={handleOnChange}
         checked={item.done ? "checked" : ""}
       ></input>
-      <span className={item.done ? "done" : ""}>{item.description}</span>
+      <span done={item.done} className={item.done ? "done" : ""}>{item.description}</span>
     </Item>
     <button onClick={handleRemove}>Remove</button>
   </ItemContainer>
