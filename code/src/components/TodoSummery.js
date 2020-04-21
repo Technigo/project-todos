@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { TodoItem } from 'components/TodoItem'
 import { TodoInput } from 'components/TodoInput'
 import { useSelector } from 'react-redux'
