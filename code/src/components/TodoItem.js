@@ -92,7 +92,7 @@ const Checkbox = styled.button`
   @media (min-width: 768px) {
     width: 40px;
     height: 40px;
-    padding-left: 15px;
+    padding-left: 10px;
   }
 `
 
