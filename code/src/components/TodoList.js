@@ -1,24 +1,11 @@
 import React from 'react'
+import styled from 'styled-components/macro'
 import { TitleContainer } from './TitleContainer'
 import { TodoInput } from './TodoInput'
-import styled from 'styled-components/macro'
-import { TodoSummary } from './TodoSummary'
 import { TodoItems } from './TodoItems'
 import { ClearAll } from './ClearAll'
 import { Filter } from './Filters'
-
-export const TodoList = () => {
-  return (
-    <TodoContainer>
-      <TitleContainer />
-      <TodoInput />
-      <TodoItems />
-      <ClearAll />
-      <Filter />
-      <TodoSummary />
-    </TodoContainer>
-  )
-}
+import { TodoSummary } from './TodoSummary'
 
 const TodoContainer = styled.section`
   display: flex;
@@ -32,3 +19,16 @@ const TodoContainer = styled.section`
     max-width: 800px;
   }
 `
+
+export const TodoList = () => {
+  return (
+    <TodoContainer>
+      <TitleContainer />
+      <TodoInput />
+      <TodoItems />
+      <ClearAll />
+      <Filter />
+      <TodoSummary />
+    </TodoContainer>
+  )
+}
