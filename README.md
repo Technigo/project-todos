@@ -1,13 +1,25 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A todo app made using React Redux. Thoughts can be added, marked as completed and removed from the list. The list can also be filtered and cleared.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The initial structure is made following the example from our teacher. I have added the filter and remove all functionalities to the app and decided to use Styled Components for the styling. I decided not to include a timestamp for each todo, instead I used moments to display today's date in the summary section.
+
+## Learning objectives
+
+* How to structure a redux store
+* How to write reducers and actions
+* How to interact with your store using selectors or by dispatching actions
+
+## Tech
+
+* JavaScript ES6
+* React
+* React Redux
+* React Toolkit
+* Styled Components
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+View site here: https://fridamaria-todos.netlify.app/
