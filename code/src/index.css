@@ -64,6 +64,11 @@ h4 {
   color: purple;
 }
 
+.done {
+  text-decoration: line-through;
+  text-decoration-color: purple;
+}
+
 .todo-input-button:hover {
   cursor: pointer;
 }
@@ -87,7 +92,7 @@ h4 {
     background: #fcfff4;
     background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
     border-radius: 50px;
-    box-shadow: inset 0px 1px 1px white, 0px 1px 3px rgba(0,0,0,0.5);
+    
 }
 
 
@@ -98,7 +103,10 @@ h4 {
   color: rgb(247, 214, 234);
   border: none;
   border-radius: 5px;
-  
+}
+
+.todo-item-remove:hover {
+  cursor: pointer;
 }
 
 .todo-list-wrapper {
