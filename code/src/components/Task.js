@@ -1,7 +1,8 @@
 import React from 'react'
-import swal from 'sweetalert'
 import { useDispatch } from 'react-redux'
 import { tasklist } from 'reducers/tasklist'
+
+import './style/Task.css'
 
 export const Task = ({ id, text, complete }) => {
   const dispatch = useDispatch()
@@ -20,14 +21,17 @@ export const Task = ({ id, text, complete }) => {
 
   return (
     <div>
-      <label>
-        <input
-          type='checkbox'
-          checked={complete ? 'checked' : ''}
-          onChange={handleCheckToggle}>
-        </input>
-        <p>{text}</p>
-        <a onClick={handleRemove}>x</a>
+      <label className='task'>
+        <div className='input-and-task'>
+          <input
+            className='checkbox'
+            type='checkbox'
+            checked={complete ? 'checked' : ''}
+            onChange={handleCheckToggle}>
+          </input>
+          <p className='text'>{text}</p>
+        </div>
+        <button className='x-button' onClick={handleRemove}>x</button>
       </label>
     </div>
   )

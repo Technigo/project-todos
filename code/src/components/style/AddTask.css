@@ -1,0 +1,15 @@
+.add-task {
+ 
+  margin: 20px 0;
+}
+
+.button {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+}
+
+.footer {
+  background-color: #9A9653;
+  margin-top: 20px;
+}

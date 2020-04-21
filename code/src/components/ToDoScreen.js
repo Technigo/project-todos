@@ -5,36 +5,47 @@ import { TaskList } from './TaskList'
 import { ClearAllButton } from './ClearAllButton'
 import { tasklist } from 'reducers/tasklist'
 
-export const ToDoScreen = ({ id }) => {
+import './style/All.css'
+import './style/Background.css'
+import './style/AddTask.css'
+
+export const ToDoScreen = () => {
   const dispatch = useDispatch()
   const [inputValue, setInputValue] = useState('')
 
   const handleAddTask = event => {
     event.preventDefault()
-   
+
     dispatch(tasklist.actions.addToDo(inputValue))
 
     setInputValue('')
   }
 
-
   return (
-    <>
-      <Header />
-      <TaskList />
-      <form
-        onSubmit={handleAddTask}>
-        <input
-          type='text'
-          onChange={event => setInputValue(event.target.value)}
-          value={inputValue}>
-        </input>
-        <input
-          type='submit'
-          value='Add task'>
-        </input>
-      </form>
-      <ClearAllButton />
-    </>
+    <main className='all'>
+      <section className='content'>
+        <Header />
+        <TaskList />
+      </section>
+        <div className='footer'>
+          <form
+            className='add-task'
+            onSubmit={handleAddTask}>
+            <input
+              type='text'
+              onChange={event => setInputValue(event.target.value)}
+              value={inputValue}>
+            </input>
+            <input
+              className='button'
+              type='submit'
+              value='Add task'>
+            </input>
+          </form>
+          
+          <ClearAllButton />
+        </div>
+      
+    </main>
   )
 }

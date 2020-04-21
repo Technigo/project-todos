@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
+import './style/Summary.css'
+
 export const Summary = () => {
   const list = useSelector(store => store.tasklist.tasks)
 
