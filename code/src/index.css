@@ -46,6 +46,7 @@ padding: 14px;
   padding: 16px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   justify-content: flex-start;
   background-color:#fff;
 }
@@ -89,7 +90,8 @@ padding: 14px;
 @media (min-width: 600px) {
   .todo-list {
    width: 100%;
-   align-items: center;
-   justify-content: center;
+   align-items: flex-start;
+   border-radius: 10px;
+   flex-wrap: wrap;
   }
 }
