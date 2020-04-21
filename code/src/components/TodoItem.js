@@ -2,6 +2,7 @@ import React from 'react'
 import { todos } from '../reducers/todos.js'
 import { useSelector, useDispatch } from 'react-redux'
 import { TimeStamp } from './TimeStamp'
+import { todoItem } from './todoItem.css'
 
 export const TodoItem = ({ itemIndex }) => {
   // Get the item from the store based on the index

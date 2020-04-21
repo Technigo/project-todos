@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import styled from 'styled-components/macro'
 
 export const TodoSummary = () => {
   // Get list information from the store, for the list
@@ -16,3 +17,8 @@ export const TodoSummary = () => {
     </section>
   )
 }
+
+const TodoSummary = styled.section`
+  margin: 8px;
+  font-family: 'Manrope', sans-serif;
+`

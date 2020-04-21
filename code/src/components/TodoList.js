@@ -4,16 +4,14 @@ import { TodoInput } from './TodoInput.js'
 import { TodoItem } from './TodoItem.js'
 import { TodoSummary } from './TodoSummary.js'
 import { ClearAllButton } from './ClearAllButton.js'
-
+import styled from 'styled-components/macro'
 
 export const TodoList = () => {
   // Get list information for this list from the store
   const list = useSelector((store) => store.todos.list)
 
-
-
   return (
-    <section className="todo-list">
+    <TodoListSection>
       <TodoInput />
       {
         list.items.map((item, index) => (
@@ -22,6 +20,16 @@ export const TodoList = () => {
       }
       <TodoSummary />
       <ClearAllButton />
-    </section>
+    </TodoListSection>
   )
 }
+
+const TodoListSection = styled.section`
+  margin: 8px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background-image: linear-gradient(white, white);
+  border-radius: 16px;
+`
