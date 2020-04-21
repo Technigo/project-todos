@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import styled from 'styled-components'
 import { useDispatch, useSelector } from "react-redux";
 import { todos } from "../reducers/todos.js";
