@@ -64,6 +64,7 @@ const TodoText = styled.p`
   color: ${prop => prop.itemChecked ? '#888d64' : '#3e3e2d'};
   font-size: 12px;
   text-decoration: ${prop => prop.itemChecked ? 'line-through' : ''};
+  word-break: break-all;
 
   @media (min-width: 768px) {
     font-size: 14px;
