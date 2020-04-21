@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { TodoSummary } from './TodoSummary'
 import { TodoInput } from './TodoInput'
 import { TodoItem } from './TodoItem'
+import { Container } from 'lib/Container'
 
 
 export const TodoList = () => {
@@ -10,11 +11,13 @@ export const TodoList = () => {
   const allTodos = useSelector((state) => state.todos.items)
   console.log(allTodos)
   return (
-    <ul>
-      {allTodos.map((task) => (
-        <TodoItem key={task.id} task={task} />
-      ))}
-    </ul>
+    <Container>
+      <ul>
+        {allTodos.map((task) => (
+          <TodoItem key={task.id} task={task} />
+        ))}
+      </ul>
+    </Container>
   )
 }
 

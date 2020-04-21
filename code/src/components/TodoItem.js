@@ -12,6 +12,7 @@ const Checkbox = styled.input`
 `
 const ItemText = styled.span`
 margin-left: 10px;
+font-size: 18px;
 `
 
 export const TodoItem = (props) => {

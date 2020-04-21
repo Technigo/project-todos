@@ -10,8 +10,8 @@ export const TodoSummary = () => {
   console.log(tasksDone)
   return (
     <Container>
-      <Title>In my list I have {tasks.length} todos.</Title>
-      <Subtitle>I have {tasksDone} todos left todo.</Subtitle>
+      <Title color='#888'>In my list I have {tasks.length} todos.</Title>
+      <Subtitle color='#888'>I have {tasksDone} things left todo.</Subtitle>
     </Container>
   )
 }
