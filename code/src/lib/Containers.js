@@ -3,24 +3,41 @@ import styled from 'styled-components';
 export const OuterContainer = styled.main`
   width: 80%;
   margin: 0px auto;
+
+  @media (min width: 430px) {
+    width: 90%;
+  }
+`
+export const ProjectCard = styled.section`
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: center;
 `
 export const ProjectForm = styled.form`
-  max-width: 300px;
+  max-width: 340px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
-  margin: 40px 0px 20px 0px;
+  align-items: flex-end;
+  margin: 40px auto 20px auto;
+  border-bottom: 2px solid #f4f7f7;
+  padding-bottom: 10px;
 `
 export const ProjectInput = styled.input`
   border: none;
-  border-bottom: 2px solid #f4f7f7;
+  width: 300px;
   background-color: #1f4e5f;
-  font-size: 20px;
+  font-size: 25px;
   color: #f4f7f7;
 `
 export const TodoLists = styled.section`
   background-color: #f4f7f7;
+  border-radius: 12px;
   margin-bottom: 20px;
+  width: 340px;
+
+  @media (min-width: 526px) {
+    margin: 20px 20px 20px 20px
+  }
 `
 export const HeaderContainer = styled.section`
   display: flex;
@@ -28,6 +45,7 @@ export const HeaderContainer = styled.section`
   justify-content: space-between;
   background-color: rgba(169, 207, 208, 0.3);
   padding: 20px;
+  border-radius: 12px 12px 0px 0px;
 `
 export const HeaderContent = styled.div`
   display: flex;
@@ -56,7 +74,7 @@ export const SummaryContainer = styled.section`
 export const TodoItems = styled.section`
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 15px;
   border-top: 2px solid rgba(169, 207, 208, 0.3);
 `
 export const TodoItemContainer = styled.div`
@@ -71,4 +89,5 @@ export const TodoItemContent = styled.div`
   font-size: 20px;
   flex-direction: row;
   justify-content: space-between;  
+  margin-bottom: 5px;
 `

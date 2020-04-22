@@ -1,25 +1,35 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 import { AddButtonWhite } from '../lib/Buttons';
 import { ProjectInput } from 'lib/Containers';
 import { InputTitle } from 'lib/Texts';
 import { ProjectForm } from 'lib/Containers';
+import swal from 'sweetalert';
 
 export const AddProject = () => {
   const [inputValue, setInputValue] = useState('');
+  const todo = useSelector(store => store.todos);
   const dispatch = useDispatch();
 
   const handleOnSubmit = event => {
     event.preventDefault();
-    
-    dispatch(
-      todos.actions.addProject({
-        inputValue
+    if (Object.keys(todo).includes(inputValue)) {
+      swal({
+        title: "There is already a project with this name",
+        text: "Please select a new name!",
+        icon: "warning",
       })
-    );
+      setInputValue('');
+    } else {
 
-    setInputValue('');
+      dispatch(
+        todos.actions.addProject({
+          inputValue
+        })
+      );
+      setInputValue('');
+    }
   }
 
   return (

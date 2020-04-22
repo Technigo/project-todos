@@ -6,6 +6,8 @@ import { TodoItems } from '../lib/Containers'
 import { TodoItemContainer } from '../lib/Containers'
 import { TodoItemContent } from '../lib/Containers'
 import { SpanText } from '../lib/Texts'
+import { SpanTextItem } from '../lib/Texts'
+import { SpanTextBold } from '../lib/Texts'
 import { RemoveButton } from '../lib/Buttons'
 
 export const TodoItem = ({ projectName, item, itemIndex }) => {
@@ -14,10 +16,11 @@ export const TodoItem = ({ projectName, item, itemIndex }) => {
   const statusStyling = () => {
     if (item.done) {
       return 'done'
-    } else if (item.date > moment().format('MMMM Do YYYY')) {
+    } else if (item.date > moment().format('L')) {
+      
       return 'over-due'
     } else {
-      return ''
+      return 'normal'
     }
   }
 
@@ -41,7 +44,7 @@ export const TodoItem = ({ projectName, item, itemIndex }) => {
   };
 
   return (
-    <TodoItems className={`todo-item ${statusStyling()}`}>
+    <TodoItems>
       <label>
           <input 
             type='checkbox'
@@ -51,19 +54,19 @@ export const TodoItem = ({ projectName, item, itemIndex }) => {
       </label>
       <TodoItemContainer>
         <TodoItemContent>
-          <SpanText>
+          <SpanTextBold className={statusStyling()}>
             {item.description}
-          </SpanText>
+          </SpanTextBold>
           {item.date === '' ? <SpanText></SpanText> :
-            <SpanText>
+            <SpanTextItem className={statusStyling()}>
             Due: {item.date}
-            </SpanText>
+            </SpanTextItem>
           }
         </TodoItemContent>
         <TodoItemContent>
-          <SpanText>
+          <SpanTextItem className={statusStyling()}>
             {moment(item.createdAt).fromNow()}
-          </SpanText>
+          </SpanTextItem>
           <RemoveButton
             onClick={onClickedRemoved}
           >X</RemoveButton>
