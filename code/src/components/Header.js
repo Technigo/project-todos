@@ -1,13 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
+import { ToDoSummary } from './ToDoSummary' 
+
+const HeaderContainer = styled.section`
+  background-color: lightgrey;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+`
 
 const Title = styled.h1`
-  background-color: lightblue;
+  font-size: 40px;
 `
+
+
 
 export const Header = () => {
 
   return (
-    <Title>Things To Do</Title>
+    <HeaderContainer>
+      <Title>Let's Go!</Title>
+      <ToDoSummary />
+    </HeaderContainer>
+    
   )
 }

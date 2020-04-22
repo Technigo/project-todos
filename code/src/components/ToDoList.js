@@ -1,7 +1,22 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import styled, { css } from 'styled-components'
 import { Task } from './Task'
+import { AddTask } from './AddNewTask'
+
+
+export const ToDoList = () => {
+  const list = useSelector(store => store.tasks.list)
+
+  return (
+    <div>
+      <AddTask />
+      {list.items.map((item, index) => (
+        <Task item={item} itemIndex={index} />
+      ))}     
+    </div>
+  )
+}
 
 const Text = styled.h1`
   background-color: lightyellow;
@@ -13,18 +28,3 @@ const Text = styled.h1`
   ${props => props.example && css`
   background-color: example;`}
 `
-
-
-export const ToDoList = () => {
-  const allTasks = useSelector((store) => store.tasks)
-
-  return (
-    <>
-    <Text>
-      {allTasks.map((task) => (
-        <Task key={task.id} task={task} />
-      ))}
-    </Text>
-    </>
-  )
-}
