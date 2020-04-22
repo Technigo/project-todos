@@ -4,25 +4,25 @@ import { TodoSummary } from './TodoSummary'
 import { TodoInput } from './TodoInput'
 import { TodoItem } from './TodoItem'
 import { Container } from 'lib/Container'
+import styled from 'styled-components'
 
+const ItemsList = styled.ul`
+padding: 10px;
+`
 
 export const TodoList = () => {
-  // Fetch all tasks from the store, "state" is the "store"
-  const allTodos = useSelector((state) => state.todos.items)
-  console.log(allTodos)
+  // Get list information for this list from the store
+  const list = useSelector(store => store.todos.list)
+  console.log(list)
+
+  // Show todo input
   return (
     <Container>
-      <ul>
-        {allTodos.map((task) => (
-          <TodoItem key={task.id} task={task} />
+      <ItemsList>
+        {list.items.map((item, index) => (
+          <TodoItem itemIndex={index}></TodoItem>
         ))}
-      </ul>
+      </ItemsList>
     </Container>
   )
 }
-
-{/* {{ <section className="todo-list">
-<TodoSummary></TodoSummary>
-<TodoInput></TodoInput>
-<TodoItem></TodoItem>
-</section>}} */} 

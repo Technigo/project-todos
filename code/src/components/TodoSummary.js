@@ -5,13 +5,15 @@ import { Title, Subtitle } from 'lib/Text'
 
 
 export const TodoSummary = () => {
-  const tasks = useSelector((state) => state.todos.items)
-  const tasksDone = tasks.filter((task) => task.taskComplete === true).length
-  console.log(tasksDone)
+  // Get list information from the store, for this list
+  const list = useSelector(store => store.todos.list)
+
+  // Count the number of items that are done using filter
+  const numDone = list.items.filter(item => item.done).length
+
   return (
     <Container>
-      <Title color='#888'>In my list I have {tasks.length} todos.</Title>
-      <Subtitle color='#888'>I have {tasksDone} things left todo.</Subtitle>
+      <Subtitle color='#888'>{numDone}/{list.items.length} todos done.</Subtitle>
     </Container>
   )
 }
