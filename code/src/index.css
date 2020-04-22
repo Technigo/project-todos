@@ -3,6 +3,11 @@
   src: local('Gotham-Medium'), url(fonts/Gotham-Medium.otf) format('truetype')
 }
 
+@font-face {
+  font-family: 'Gotham-Bold';
+  src: local('Gotham-Bold'), url(fonts/Gotham-Bold.otf) format('truetype')
+}
+
 
 body {
   margin: 0;

@@ -1,21 +1,20 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { tasklist } from 'reducers/tasklist'
 import styled from 'styled-components'
 
-export const CustomCheckbox = () => {
-  const dispatch = useDispatch()
-  const [checked, setChecked] = useState(false)
+export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
+  const [checked, setChecked] = useState(isChecked)
 
   const handleOnChange = (event) => {
+    onChangeHandler()
     setChecked(event.target.checked)
   }
 
-  const Checkbox = (props) => <input type='checkbox' {...props}></input>
+  const Dot = styled.svg`
+  `
 
-  const HiddenCheckBox = styled.input.attrs({type: 'checkbox'})`
+  const HiddenCheckBox = styled.input.attrs({ type: 'checkbox' })`
     border: 0;
-    clip: rect(0000);
+    clip: rect(0 0 0 0);
     clippath: inset(50%);
     height: 1px;
     margin: -1px;
@@ -27,21 +26,35 @@ export const CustomCheckbox = () => {
   `
   const StyledCheckBox = styled.div`
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    background: ${(props) => (props.checked ? 'salmon' : 'papayawhip')};
-    border-radius: 3px;
+    width: 22px;
+    height: 22px;
+    background: ${(props) => (props.checked ? '#f25849' : '#F9EFE5')};
+    border-radius: 50%;
     transition: all 150ms;
-    ${Icon} {
-      visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
+    ${Dot} {
+      visibility: ${props => props.checked ? 'visible' : 'hidden'}
     }
-
   `
+  const CheckboxContainer = styled.div`
+    display: inline-block;
+    vertical-align: middle;
+  `
+
+  const Checkbox = ({ className, checked, ...props }) => (
+    <CheckboxContainer>
+      <HiddenCheckBox checked={checked} {...props}></HiddenCheckBox>
+      <StyledCheckBox checked={checked}>
+        <Dot viewBox='0 0 24 24'>
+          <circle cx='12' cy='12' r='6' stroke='none' fill='#F9EFE5'></circle>
+        </Dot>
+      </StyledCheckBox>
+    </CheckboxContainer>
+  )
 
   return (
     <div>
       <label>
-        <Checkbox checked={checked} onChange{handleOnChange}></Checkbox>
+        <Checkbox checked={checked} onChange={handleOnChange}></Checkbox>
       </label>
     </div>
   )

@@ -17,7 +17,6 @@ export const App = () => {
   return (
     <Provider store={store}>
         <ToDoScreen />
-        {/* <CustomCheckbox /> */}
     </Provider>
   )
 }

@@ -4,7 +4,6 @@ import { Task } from 'components/Task'
 
 export const TaskList = () => {
   const allTasks = useSelector((store) => (store.tasklist.tasks))
-  // console.log(allTasks)
   
 
   return (

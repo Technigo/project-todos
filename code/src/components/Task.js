@@ -1,13 +1,14 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { tasklist } from 'reducers/tasklist'
+import { CustomCheckbox } from './CustomCheckbox'
 
 import './style/Task.css'
 
 export const Task = ({ id, text, complete }) => {
   const dispatch = useDispatch()
 
-  const handleCheckToggle = (event) => {
+  const handleCheckToggle = () => {
     dispatch(
       tasklist.actions.toggleCheck(id)
     )
@@ -23,12 +24,9 @@ export const Task = ({ id, text, complete }) => {
     <div>
       <label className='task'>
         <div className='input-and-task'>
-          <input
-            className='checkbox'
-            type='checkbox'
-            checked={complete ? 'checked' : ''}
-            onChange={handleCheckToggle}>
-          </input>
+          <CustomCheckbox 
+            isChecked={complete} 
+            onChangeHandler={handleCheckToggle} />
           <p className='text'>{text}</p>
         </div>
         <button className='x-button' onClick={handleRemove}>x</button>
