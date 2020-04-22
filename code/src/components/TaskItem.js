@@ -29,6 +29,7 @@ const SmallText = styled.p`
 	font-size: 14px;
 	font-width: 100;
 	font-style: italic;
+  color: ${props => props.late ? 'red' : 'black' }
 `;
 const MediumText = styled.p`
 	font-size: 18px;
@@ -56,9 +57,10 @@ export const TaskItem = ({ todo }) => {
 		<Wrapper width={theWidth}>
 			<TodoItem todoDone={todo.taskDone} onClick={handleStatusChange}>
 				<MediumText todoDone={todo.taskDone}>{todo.task}</MediumText>
-        <SmallText>Deadline: {moment(todo.dueDate).fromNow()}</SmallText>
-        <p>{compareOntime ? 'goodjob' : 'work faster'}</p>
-				
+
+        {todo.taskDone ? <SmallText>Good job</SmallText> : <SmallText late={!compareOntime} >Deadline: {moment(todo.dueDate).fromNow()}</SmallText>
+        }
+        
 			</TodoItem>
 			<ColorButton color="red" onClick={handleDelete} aria-label="remove">
 				-
