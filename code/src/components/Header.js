@@ -56,8 +56,8 @@ const ContainerRight = styled.section`
   flex-direction: column;
   justify-content: space-between;
   align-items: flex-end;
-  /* height: 120px; */
 `;
+
 const ContainerButton = styled.div`
   margin-top: 90px;
 `;

@@ -1,41 +1,39 @@
-
 // move APP in here and then Export to APP
-import React from 'react'
+import React from "react";
 // to wrap everything in Store:
-import { Provider } from 'react-redux'
+import { Provider } from "react-redux";
 // to access 2 reducers we need this from redux-toolkit:
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 // import reducers:
-import { tasks } from '../reducers/tasks'
+import { tasks } from "../reducers/tasks";
 
-import { TaskList } from '../components/TaskList'
-import { Header } from '../components/Header'
-import { Footer } from '../components/Footer'
+import { TaskList } from "../components/TaskList";
+import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
-import styled from 'styled-components'
-import { GlobalStyle } from 'lib/Global'
-
+import styled from "styled-components";
+import { GlobalStyle } from "lib/Global";
 
 // first we create our combined-REDUCER-file:
 const reducer = combineReducers({
-  tasks: tasks.reducer
-})
+  tasks: tasks.reducer,
+});
 // then we use this reducer to configure a STORE:
-const store = configureStore({ reducer })
+const store = configureStore({ reducer });
 
 // and now finally we have a Store we can include in our Provider:
 export const Home = () => {
   return (
     <Provider store={store}>
-      <GlobalStyle />      
-        <AppContainer>
-          <Header />
-          <TaskList />
-          <Footer />
-        </AppContainer>
+      <GlobalStyle />
+      <AppContainer>
+        <Header />
+        <TaskList />
+        <Footer />
+      </AppContainer>
     </Provider>
-  )
-}
+  );
+};
 
 // styled-components:
 const AppContainer = styled.main`
@@ -43,4 +41,4 @@ const AppContainer = styled.main`
   width: 600px;
   margin: 40px auto;
   },
-`
+`;

@@ -1,5 +1,4 @@
 import React from "react";
-
 import styled from 'styled-components'
 
 export const Footer = () => {
@@ -11,11 +10,8 @@ export const Footer = () => {
 }
 
 export const Container = styled.div`
-
   text-align: center;
   border-bottom: 1px solid #EBEEEF;
-  /* opacity: 100%; */
-  /* background-color: #46539e; */
   padding-top: 1px;
 `;
  

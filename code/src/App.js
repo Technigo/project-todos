@@ -10,8 +10,6 @@ export const App = () => {
   );
 };
 
-
-
 /*
  PLAN 
   - create TodoInput

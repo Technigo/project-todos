@@ -42,6 +42,4 @@ export const ButtonRemove= styled.button`
   &:hover {
     background: #3d415b;
   }
-   
-
 `;

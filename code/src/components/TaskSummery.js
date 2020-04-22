@@ -1,35 +1,34 @@
-import React from 'react'
+import React from "react";
 
-import { useSelector } from 'react-redux'
+import { useSelector } from "react-redux";
 
-import styled from 'styled-components'
-
+import styled from "styled-components";
 
 export const TaskSummery = () => {
-
   // Get list information for this task-list:
-  const list = useSelector(store => store.tasks.list)
+  const list = useSelector((store) => store.tasks.list);
 
   // this variable contains the nr of items that are done:
-  const numDone = list.items.filter(item => item.done).length
-
+  const numDone = list.items.filter((item) => item.done).length;
 
   return (
-      <SummeryContainer>
-          <SummeryTextThin> COMPLETED </SummeryTextThin>
-          <NumberDone>{numDone}</NumberDone> 
-          <SummeryTextThin> OUT OF {list.items.length} THINGS TO DO </SummeryTextThin>
-        {/* COMPLETED <NumberDone>{numDone}</NumberDone>/{list.items.length}   */}
-      </SummeryContainer>
-  )
-/*       <section className="todo-summery">
+    <SummeryContainer>
+      <SummeryTextThin> COMPLETED </SummeryTextThin>
+      <NumberDone>{numDone}</NumberDone>
+      <SummeryTextThin>
+        {" "}
+        OUT OF {list.items.length} THINGS TO DO{" "}
+      </SummeryTextThin>
+      {/* COMPLETED <NumberDone>{numDone}</NumberDone>/{list.items.length}   */}
+    </SummeryContainer>
+  );
+  /*       <section className="todo-summery">
         <h2>
           {numDone}/{list.items.length} are done 💚 
         </h2>
       </section>
   ) */
-}
-
+};
 
 const SummeryContainer = styled.section`
   font-size: 14px;

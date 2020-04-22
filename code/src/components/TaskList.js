@@ -1,14 +1,14 @@
-import React from 'react'
-import { useSelector} from 'react-redux'
+import React from "react";
+import { useSelector } from "react-redux";
 
-import { TaskInput } from 'components/TaskInput'
-import { TaskItem } from './TaskItem'
-import { TaskSummery } from './TaskSummery'
+import { TaskInput } from "components/TaskInput";
+import { TaskItem } from "./TaskItem";
+import { TaskSummery } from "./TaskSummery";
 
-import styled from 'styled-components'
+import styled from "styled-components";
 
-  // TODO - fetch all to-dos from the store
-  // Using useSelector: Och vipps så kommer vi åt allti vår store!
+// TODO - fetch all to-dos from the store
+// Using useSelector: Och vipps så kommer vi åt allti vår store!
 /*
     - Show TodoInput / TaskInput
     - Show each TodoItem in the list
@@ -20,9 +20,7 @@ from the 'react-redux' package to fetch the list of todos and map over them.
 */
 
 export const TaskList = () => {
-
-  const list = useSelector((store) => store.tasks.list)
-
+  const list = useSelector((store) => store.tasks.list);
 
   return (
     <Container>
@@ -33,8 +31,8 @@ export const TaskList = () => {
 
       <TaskSummery />
     </Container>
-  )
-}
+  );
+};
 
 const Container = styled.section`
   display: flex;
@@ -45,5 +43,5 @@ const Container = styled.section`
   color: white;
   margin: 0;
   font-weight: 700;
-  border-bottom: 1px solid #EBEEEF;
+  border-bottom: 1px solid #ebeeef;
 `;
