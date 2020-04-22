@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import { ToDoSummary } from './ToDoSummary' 
 
 const HeaderContainer = styled.section`
-  background-color: lightgrey;
   display: flex;
   justify-content: space-evenly;
   align-items: center;

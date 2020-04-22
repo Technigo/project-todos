@@ -1,7 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
+import styled from 'styled-components'
 import { Task } from './Task'
 import { tasks } from '../reducers/tasks'
+
+const TaskSummary = styled.h4`
+  font-size: 30px;
+  `
 
 export const ToDoSummary = () => {
   const list = useSelector(store => store.tasks.list)
@@ -10,7 +15,7 @@ export const ToDoSummary = () => {
 
   return (
     <section>
-      <h4> {tasksDone}/{list.items.length}</h4>
+      <TaskSummary> {tasksDone}/{list.items.length}</TaskSummary>
     </section>
   )
 }

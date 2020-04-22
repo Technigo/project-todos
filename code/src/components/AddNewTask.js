@@ -2,11 +2,9 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 import styled from 'styled-components'
+import { Button } from '../library/Button'
+import { Input} from '../library/Input'
 
-const Btn = styled.button`
-  Background-color: black;
-  color: white;
-`
 
 export const AddTask = () => {
   const [newTask, setNewTask] = useState('')
@@ -29,16 +27,16 @@ export const AddTask = () => {
     <div>
       <form onSubmit={handleSubmit}>
         <label>
-          Name:
-          <input
+          <Input
             type='text'
+            placeholder= 'Add things to do'
             value={newTask}
             onChange={(event) => setNewTask(event.target.value)}
           />
         </label>
-        <Btn type='submit' background='#3f8488'>
-          Add Task
-        </Btn>
+        <Button type='submit'>
+          Add
+        </Button>
         </form>
     </div>
   )}

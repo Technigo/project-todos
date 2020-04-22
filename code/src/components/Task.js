@@ -2,6 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled, { css } from 'styled-components'
 import { tasks } from '../reducers/tasks'
+import { Button } from '../library/Button'
 
 
 
@@ -24,15 +25,15 @@ export const Task = ({ itemIndex }) => {
 
   return (
     <div>
+      <span>{item.description}</span>
       <input
         type="checkbox"
         onChange={handleOnChange}
         checked={item.done ? 'chekced' : ''}
       ></input>
-      <span>{item.description}</span>
-      <a onClick={onRemoveClicked}>
-        [Remove]
-      </a>
+      <Button onClick={onRemoveClicked}>
+        Remove
+      </Button>
     </div>
   )
 }
@@ -49,9 +50,4 @@ const Text = styled.h2`
   `
 const SmallText = styled.h3`
     background-color: lightgreen;
-  `
-const Btn = styled.button`
-    background-color: red;
-    color: white;
-    font-size: 32;
   `
