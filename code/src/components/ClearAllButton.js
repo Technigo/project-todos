@@ -2,6 +2,9 @@ import React from 'react'
 import swal from 'sweetalert'
 import { useDispatch } from 'react-redux'
 import { tasklist } from 'reducers/tasklist'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
 
 import './style/ClearAllButton.css'
 
@@ -27,14 +30,14 @@ export const ClearAllButton = ({ id }) => {
 
 
   return (
-    <>
-      <i className="fas fa-trash-alt"></i>
+    <div className='container'>
       <button
         className='clear-all-button'
         onClick={handleClearAll}>
-        Clear all
+          <FontAwesomeIcon icon={faTrash} className='icon' />
+          Clear all
       </button>
-    </>
+    </div>
 
   )
 }

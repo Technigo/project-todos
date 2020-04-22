@@ -1,4 +1,5 @@
 .all {
+  font-family: 'Gotham-Medium';
   display: flex;
   flex-direction: column;
   padding: 1em;

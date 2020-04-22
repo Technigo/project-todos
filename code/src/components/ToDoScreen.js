@@ -31,12 +31,14 @@ export const ToDoScreen = () => {
           onSubmit={handleAddTask}>
           <input
             className='text-input'
+            placeholder='What do you need to do?'
             type='text'
             onChange={event => setInputValue(event.target.value)}
             value={inputValue}>
           </input>
           <input
             className='button'
+            disabled={!inputValue}
             type='submit'
             value='Add task'>
           </input>
