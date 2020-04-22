@@ -31,10 +31,12 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     background: ${(props) => (props.checked ? '#f25849' : '#F9EFE5')};
     border-radius: 50%;
     transition: all 150ms;
+    cursor: pointer;
     ${Dot} {
       visibility: ${props => props.checked ? 'visible' : 'hidden'}
     }
   `
+  
   const CheckboxContainer = styled.div`
     display: inline-block;
     vertical-align: middle;

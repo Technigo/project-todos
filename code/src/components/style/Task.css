@@ -28,4 +28,9 @@
   font-size: large;
   background-color: transparent;
   border: none;
+  cursor: pointer;
+}
+
+.x-button:hover {
+  color: tomato;
 }

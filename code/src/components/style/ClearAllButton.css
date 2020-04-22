@@ -18,5 +18,6 @@
 }
 
 .clear-all-button:hover {
-  color: lightcoral;
+  cursor: pointer;
+  color: #6878B3;
 }
