@@ -14,7 +14,11 @@ const persistedState = localStorage.getItem("reduxState")
   : {};
 
 // Create the store using our reducers and the retrieved state
-const store = createStore(reducer, persistedState);
+const store = createStore(
+  reducer,
+  persistedState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 // Tell the store to persist the state in localstorage after every action
 store.subscribe(() => {
