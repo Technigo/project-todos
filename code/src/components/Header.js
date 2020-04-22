@@ -1,14 +1,22 @@
 import React from 'react'
-
+import styled from 'styled-components'
 
 export const Header = () => {
 
   return (
-    <header>
-      <h1>
-        My ToDo-list
-    </h1>
-    </header>
+    <HeaderContainer>
+      <Title>
+        Do this, do that
+    </Title>
+    </HeaderContainer>
   )
 
 }
+
+const Title = styled.h1`
+  font-family: Manrope;
+`
+
+const HeaderContainer = styled.header`
+background-color:#C8B8DB;
+`
