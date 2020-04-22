@@ -33,6 +33,7 @@
 }
 
 .text-input {
+  font-family: 'Gotham-Medium';
   width: 80%;
   height: 25px;
   margin: 20px 0;
@@ -43,6 +44,7 @@
   -o-border-radius: 10px;
   border: none;
   background-color: #F9EFE5;
+  padding-left: 10px;
 }
 
 .button {
@@ -52,4 +54,9 @@
   -moz-border-radius: 20px;
   -ms-border-radius: 20px;
   -o-border-radius: 20px;
+}
+
+.button-text {
+  position: relative;
+  top: 1px;
 }

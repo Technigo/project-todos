@@ -1,6 +1,7 @@
 .header-container {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   background-color: #6878B3;
   padding: 20px;
 }

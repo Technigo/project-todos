@@ -36,12 +36,15 @@ export const ToDoScreen = () => {
             onChange={event => setInputValue(event.target.value)}
             value={inputValue}>
           </input>
-          <input
+          <button
             className='button'
             disabled={!inputValue}
             type='submit'
             value='Add task'>
-          </input>
+              <span className='button-text'>
+                Add task
+              </span>
+          </button>
         </form>
       </div>
       <ClearAllButton />
