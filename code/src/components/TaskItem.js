@@ -47,6 +47,9 @@ export const ItemButton = styled.button`
 export const TaskItem = ({ todo }) => {
 	const dispatch = useDispatch();
   const theWidth = useSelector((state)=>state.size.screenSize)
+  const todayDate = new Date()
+  const deadline = new Date(todo.dueDate)
+  const compareOntime = (todayDate < deadline)
 
 	const handleStatusChange = () => {
 		dispatch(todoStore.actions.statusTask(todo));
@@ -60,6 +63,7 @@ export const TaskItem = ({ todo }) => {
 			<TodoItem todoDone={todo.taskDone} onClick={handleStatusChange}>
 				<MediumText todoDone={todo.taskDone}>{todo.task}</MediumText>
         <SmallText>{moment(todo.dueDate).fromNow()}</SmallText>
+        <p>{compareOntime ? 'goodjob' : 'work faster'}</p>
 			</TodoItem>
 			<ItemButton onClick={handleDelete} aria-label="remove">
 				-

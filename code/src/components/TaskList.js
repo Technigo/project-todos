@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import {todoStore} from '../reducers/todoStore'
 import { TaskItem } from './TaskItem'
 import {StyledSection, SectionHeader} from './NewTask'
-import {ItemButton} from './TaskItem'
 
 const StyledGrid = styled.section`
   width: ${props=>props.width}px;
@@ -30,15 +29,27 @@ export const TaskList = () => {
   const allTasks = useSelector((state)=>state.todoStore.todos)
   const theWidth = useSelector((state)=>state.size.screenSize)
   const dispatch = useDispatch()
+  const [filteredTasks, setFilteredTasks] = useState(allTasks)
+
 
 
   const handleClear = () => {
     dispatch(todoStore.actions.clearAll())
   }
-
+  const handleFilter = () => {
+    if (filteredTasks.length === allTasks.length){
+      setFilteredTasks(allTasks.filter((item)=>(!item.taskdone)))
+    }
+    else{
+      setFilteredTasks(allTasks)
+    }
+    
+    
+  }
   return (
     <StyledSection>
       <SectionHeader width={theWidth}>Todo List</SectionHeader>
+       <ClearButton onClick={handleFilter} >clear</ClearButton>
       <StyledGrid width={theWidth}>
       {allTasks.map((task)=>(
         <TaskItem todo={task} />
