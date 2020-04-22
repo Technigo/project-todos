@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 //import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { todos } from "../reducers/todos.js";
+import { useDispatch } from "react-redux"
+import { todos } from "../reducers/todos.js"
 
 // Receives listId as input
 export const TodoInput = () => {
@@ -31,6 +31,7 @@ return (
     onChange={e => setInputValue(e.target.value)}
     value={inputValue}
     className="todo-input-text"
+    required
     ></input>
     <input
     type="submit"

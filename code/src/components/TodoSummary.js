@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react'
 //import { TodoItem } from "./TodoItem.js";
 //import { TodoInput } from "./TodoInput.js";
-import { useSelector } from "react-redux";
+import { useSelector } from 'react-redux'
 
 export const TodoSummary = () => {
   // Get list information from the store, for this list

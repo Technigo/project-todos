@@ -6,9 +6,6 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: rgb(203, 248, 231);
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
 }
 
 code {
@@ -17,6 +14,10 @@ code {
 }
 form {
 padding: 14px;
+display: flex;
+justify-content: center;
+flex-wrap: wrap;
+width: 100%;
 }
 
 .todo-input {
@@ -32,6 +33,10 @@ padding: 14px;
 
 }
 
+.todo-input-description {
+  overflow-wrap: break-word;
+}
+
 .todo-input-button {
   padding: 8px;
   font-size: 45px;
@@ -42,13 +47,15 @@ padding: 14px;
 }
 
 .todo-list {
-  margin: 8px;
-  padding: 16px;
+  margin: 12px;
+  padding: 12px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
   justify-content: flex-start;
+  align-self: center;
   background-color:#fff;
+  overflow-wrap: break-word;
 }
 
 .todo-item {
@@ -82,14 +89,19 @@ padding: 14px;
 }
 
 .todo-summary {
-  margin: 8px;
+  padding: 8px;
   font-size: smaller;
   color: rgb(112, 112, 112);
 }
 
-@media (min-width: 600px) {
+
+@media (min-width: 620px) {
+  body {
+    padding: 30px;
+  }
+  
   .todo-list {
-   width: 100%;
+   width: 50%;
    align-items: flex-start;
    border-radius: 10px;
    flex-wrap: wrap;

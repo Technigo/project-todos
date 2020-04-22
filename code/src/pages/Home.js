@@ -27,7 +27,7 @@ const store = configureStore({ reducer })
 export const Home = () => {
     return (
         <Provider store={store}>
-            <main>
+            <main>       
              <TodoList></TodoList>
             </main>
         </Provider>

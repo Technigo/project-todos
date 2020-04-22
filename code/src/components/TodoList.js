@@ -19,7 +19,6 @@ const list = useSelector(store => store.todos.list)
       {list.items.map((item, index) => (
       <TodoItem itemIndex={index}></TodoItem>
       ))}
-      
   </section>
   )
 };
