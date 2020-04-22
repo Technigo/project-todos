@@ -7,16 +7,21 @@ import { RemoveAll } from 'components/RemoveAll'
 import styled from 'styled-components'
 
 const Section = styled.section`
-  width: 400px;
+  width: 300px;
   background: #F1CB59; //gul
   border-radius: 20px;
   padding: 20px;
   margin: 20px auto;
+
+  @media (min-width: 667px){
+    width: 400px;
+  }
 `
+
 const H1 = styled.h1`
-  font-size: 50px;
-  color: #F5F0D7; //ljusgul
-  margin: 0;
+font-size: 50px;
+color: #F5F0D7; //ljusgul
+margin: 0;
 `
 
 

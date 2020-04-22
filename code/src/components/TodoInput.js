@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Button } from 'lib/Button'
 
 const TextInput = styled.input`
-  width: 350px;
+  width: 250px;
   height: 20px;
   margin: 10px 10px 20px 0;
   padding: 5px;
@@ -13,6 +13,10 @@ const TextInput = styled.input`
   border-radius: 7px;
   background: #F5F0D7;
   font-size: 16px;
+
+  @media (min-width: 667px){
+    width: 350px;
+  }
 `
 
 export const TodoInput = () => {
