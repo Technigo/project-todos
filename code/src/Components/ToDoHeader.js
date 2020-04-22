@@ -8,9 +8,9 @@ export const ToDoHeader = () => {
   const warningAlert = () => {
 
     swal({
+      icon: "warning",
       title: "Are you sure?",
       text: "Once deleted, you will not be able to recover your tasks!",
-      className: 'swal',
       buttons: true,
       dangerMode: true,
     })

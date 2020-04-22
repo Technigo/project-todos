@@ -63,7 +63,6 @@ form button {
   border: none;
   font-size: 2.2em;
   width: 10%;
-  height: 60%;
   margin: 0 5px;
   border-radius: 10px;
   color: #D0C9D6;
@@ -150,6 +149,83 @@ ul {
   padding: 0 15px;
 }
 
-.swal {
-  margin: 0;
+.summary-tasks {
+  padding: 0 30px;
+  margin-top: 30px;
 }
+
+@media (min-width: 600px) {
+
+  body {
+    font-size: 1.3em;
+  }
+
+  header {
+    height: 100px;
+    font-size: 1em;
+  }
+
+  form button {
+    width: 5%;
+  }
+
+  .empty-state {
+    font-size: 1.3em;
+  }
+
+  .empty-state p {
+    margin: 0;
+    margin-top: 30px;
+    padding: 0 15px;
+  }
+}
+
+@media (min-width: 992px) {
+
+  header {
+    font-size: 1.5em;
+    height: 140px;
+    padding: 0 30px;
+  }
+
+  h1 {
+    font-size: 2em;
+  }
+
+  .empty-state p {
+    font-size: 1.3em;
+    margin: 0;
+    margin-top: 15px;
+  }
+
+  form {
+    height: 80px;
+  }
+
+  form input {
+    font-size: 1.5em;
+  }
+
+  .todo-item {
+    height: 80px;
+    font-size: 1.5em;
+    padding: 0 30px;
+  }
+
+  button {
+    font-size: 0.6em;
+  }
+
+  .finished-status {
+    height: 35px;
+    width: 35px;
+  }
+
+  .empty-state svg {
+    width: 40% !important;
+    height: 40% !important;
+  }
+}
+
+
+

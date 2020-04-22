@@ -18,7 +18,6 @@ export const UncontrolledLottie = () => {
         <p>Nothing to see here.. why don't you add someting to do?</p>
         <Lottie 
           options={defaultOptions}
-          className="lottie"
         />
       </div>
     )
