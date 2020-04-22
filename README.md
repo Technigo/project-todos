@@ -1,13 +1,22 @@
-# Project Todos
+# A ToDo Project ✔️🏆❣️
 
-Replace this readme with your own information about your project.
+This is a ToDo app website that shows how many tasks you have completed and of how many. You can add a task, delete a task and clear the list. It has some tasks in there to show how it looks when it is not empty. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Tech
 
-## The problem
+- React
+- Redux
+- JSX
+- JavaScript
+- Flexbox
+- CSS
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+
+## How I did it
+
+The ToDo app built using React and Redux Toolkit. I divided the project into small components and tackled small chunks of code at a time.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+It can be viewed here👀: 
+https://happy-lumiere-80172d.netlify.app/
