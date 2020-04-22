@@ -1,12 +1,24 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore, combineReducers } from '@reduxjs/toolkit';
+import { combineReducers, createStore } from '@reduxjs/toolkit';
 import { todos } from '../reducers/todos';
 import { TodoProjects } from '../components/TodoProjects';
-import styled from 'styled-components';
+import { OuterContainer }from '../lib/Containers';
 
 const reducer = combineReducers({ todos: todos.reducer });
-const store = createStore(reducer);
+
+const persistedStateJSON = localStorage.getItem('TodoAppState'); 
+let persistedState = {};
+
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON);
+}
+
+const store = createStore(reducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+store.subscribe(() => {
+  localStorage.setItem('TodoAppState', JSON.stringify(store.getState()));
+})
 
 export const Home = () => {
   return (
@@ -18,7 +30,3 @@ export const Home = () => {
   )
 };
 
-const OuterContainer = styled.main`
-  width: 375px;
-  margin: 0px auto;
-`

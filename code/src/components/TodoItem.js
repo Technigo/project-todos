@@ -1,8 +1,12 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 import moment from 'moment';
-import styled from 'styled-components';
+import { TodoItems } from '../lib/Containers'
+import { TodoItemContainer } from '../lib/Containers'
+import { TodoItemContent } from '../lib/Containers'
+import { SpanText } from '../lib/Texts'
+import { RemoveButton } from '../lib/Buttons'
 
 export const TodoItem = ({ projectName, item, itemIndex }) => {
   const dispatch = useDispatch();
@@ -37,36 +41,34 @@ export const TodoItem = ({ projectName, item, itemIndex }) => {
   };
 
   return (
-    <div className={`todo-item ${statusStyling()}`}>
+    <TodoItems className={`todo-item ${statusStyling()}`}>
       <label>
-        <input 
-          type='checkbox'
-          onChange={handleOnChange}
-          className='todo-item-check'
-          checked={item.done ? 'checked' : ''}
-        ></input>
+          <input 
+            type='checkbox'
+            onChange={handleOnChange}
+            checked={item.done ? 'checked' : ''}
+          ></input>
       </label>
-      <span className='todo-item-description'>
-        {item.description}
-      </span>
-      <span className='todo-item-description'>
-        {item.date}
-      </span>
-      <span>{moment(item.createdAt).fromNow()}</span>
-      <span>
-        <a className='todo-item-remove' onClick={onClickedRemoved}>
-        [Remove]
-        </a>
-      </span>
-    </div>
+      <TodoItemContainer>
+        <TodoItemContent>
+          <SpanText>
+            {item.description}
+          </SpanText>
+          {item.date === '' ? <SpanText></SpanText> :
+            <SpanText>
+            Due: {item.date}
+            </SpanText>
+          }
+        </TodoItemContent>
+        <TodoItemContent>
+          <SpanText>
+            {moment(item.createdAt).fromNow()}
+          </SpanText>
+          <RemoveButton
+            onClick={onClickedRemoved}
+          >X</RemoveButton>
+        </TodoItemContent>
+      </TodoItemContainer>
+    </TodoItems>
   )
 };
-
-const TodoItemContainer = styled.div`
-  display: flex;
-  font-size: 20px;
-  flex-direction: row;  
-`
-const Span = styled.span`
-  padding: 20px;
-`

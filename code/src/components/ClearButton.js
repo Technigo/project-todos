@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
+import { DeleteButton } from '../lib/Buttons'
 
 export const ClearButton = ({projectName}) => {
   const dispatch = useDispatch();
@@ -13,12 +14,12 @@ export const ClearButton = ({projectName}) => {
 
   return (
     <div>
-      <button
+      <DeleteButton
         type='button'
         onClick={onClickedRemoved}
       >
-        REMOVE PROJECT
-      </button>
+        DELETE PROJECT
+      </DeleteButton>
     </div>
   )
 }

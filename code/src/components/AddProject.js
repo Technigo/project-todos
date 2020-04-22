@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
-
+import { AddButtonWhite } from '../lib/Buttons';
+import { ProjectInput } from 'lib/Containers';
+import { InputTitle } from 'lib/Texts';
+import { ProjectForm } from 'lib/Containers';
 
 export const AddProject = () => {
   const [inputValue, setInputValue] = useState('');
@@ -20,20 +23,23 @@ export const AddProject = () => {
   }
 
   return (
-    <form className='todo-input' onSubmit={handleOnSubmit}>
+    <ProjectForm onSubmit={handleOnSubmit}>
       <label>
-        <input 
+        <InputTitle>Create a new project:</InputTitle> 
+        <ProjectInput 
           type='text'
           onChange={event => setInputValue(event.target.value)}
           value={inputValue}
-        ></input>
+          placeholder='Todo list name'
+        ></ProjectInput >
       </label>  
       <label>
-        <input
+        <AddButtonWhite
           type='submit'
-          value='Add Todo'
-        ></input>
+          value='+'
+        ></AddButtonWhite>
       </label>
-    </form>
+    </ProjectForm>
   )
 };
+

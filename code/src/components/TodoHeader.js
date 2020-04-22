@@ -2,35 +2,25 @@ import React from 'react';
 import { ClearButton } from './ClearButton';
 import { TodoSummary } from './TodoSummary';
 import moment from 'moment';
-import styled from 'styled-components';
+import { HeaderContainer } from '../lib/Containers';
+import { HeaderContent } from '../lib/Containers';
+import { HeaderTitle } from '../lib/Texts';
+import { SpanText } from '../lib/Texts';
 
 export const TodoHeader = ({projectName}) => {
 
   return(
     <HeaderContainer>
-      <div>
-        <ListName>{projectName}</ListName>
-        <h2>{moment().format('MMMM Do')}</h2>
-      </div>
-      <div>
+      <HeaderContent>
+        <HeaderTitle>{projectName}</HeaderTitle>
+        <SpanText>{moment().format('MMMM Do')}</SpanText>
+      </HeaderContent>
+      <HeaderContent>
         <TodoSummary projectName={projectName} />
         <ClearButton projectName={projectName} />
-      </div>
+      </HeaderContent>
     </HeaderContainer>
   )
 };
 
-const HeaderContainer = styled.section`
-  display: flex;
-  flex-driection: row; 
-  justify-content: space-between;
-`
 
-const HeaderContent = styled.div`
-  display: flex;
-  flex-driection: column;
-`
-
-const ListName = styled.h1`
-
-`

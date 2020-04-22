@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
-
+import { TodoForm } from 'lib/Containers';
+import { TodoInputContainer } from 'lib/Containers';
+import { TodoInput } from 'lib/Containers';
+import { AddButtonColor } from '../lib/Buttons';
 
 export const AddTodo = ({projectName}) => {
   const [inputValueDescription, setInputValueDescription] = useState('');
@@ -27,29 +30,30 @@ export const AddTodo = ({projectName}) => {
   }
 
   return (
-    <form className='todo-input' onSubmit={handleOnSubmit}>
+    <TodoForm onSubmit={handleOnSubmit}>
+      <TodoInputContainer>
+        <label>
+          <TodoInput 
+            type='text'
+            onChange={event => setInputValueDescription(event.target.value)}
+            value={inputValueDescription}
+            placeholder='Add a task'
+          ></TodoInput>
+        </label>
+        <label>
+          <TodoInput
+            type='date'
+            onChange={event => setInputValueDate(event.target.value)}
+            value={inputValueDate}
+          ></TodoInput>
+        </label>
+      </TodoInputContainer>
       <label>
-        <input 
-          type='text'
-          onChange={event => setInputValueDescription(event.target.value)}
-          value={inputValueDescription}
-          className='todo-input-text'
-        ></input>
-      </label>
-      <label>
-        <input
-          type='date'
-          onChange={event => setInputValueDate(event.target.value)}
-          value={inputValueDate}
-        ></input>
-      </label>
-      <label>
-        <input
+        <AddButtonColor
           type='submit'
-          value='Add Todo'
-          className='todo-input-button'
-        ></input>
+          value='+'
+        ></AddButtonColor>
       </label>
-    </form>
+    </TodoForm>
   )
 };
