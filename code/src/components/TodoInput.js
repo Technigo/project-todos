@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
-//import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux"
-import { todos } from "../reducers/todos.js"
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { todos } from '../reducers/todos.js'
+import { Form } from 'lib/Form'
+import { AddTodo } from 'lib/Button'
+import { InputText } from 'lib/Text'
 
 // Receives listId as input
 export const TodoInput = () => {
@@ -25,19 +27,17 @@ const handleOnSubmit = (e) => {
 }
   
 return (
- <form className="todo-input" onSubmit={handleOnSubmit}>
-    <input
+ <Form onSubmit={handleOnSubmit}>
+    <InputText
     type="text"
     onChange={e => setInputValue(e.target.value)}
     value={inputValue}
-    className="todo-input-text"
     required
-    ></input>
-    <input
+    ></InputText>
+    <AddTodo
     type="submit"
-    className="todo-input-button"
     value="+"
-    ></input>
-  </form>
+    ></AddTodo>
+  </Form>
   )
 };

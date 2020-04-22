@@ -5,6 +5,7 @@ import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import { todos } from "../reducers/todos.js";
 import { TodoList } from "components/TodoList.js";
+import { ClearAll } from "components/ClearAll.js";
 
 /*
  PLAN 
@@ -28,7 +29,7 @@ export const Home = () => {
     return (
         <Provider store={store}>
             <main>       
-             <TodoList></TodoList>
+             <TodoList />
             </main>
         </Provider>
     )

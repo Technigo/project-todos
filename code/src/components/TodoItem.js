@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { todos } from "../reducers/todos.js";
+import React from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { todos } from "../reducers/todos.js"
+import { Button } from 'lib/Button'
+import { ItemDescription } from 'lib/Text'
+import { CheckSection } from "lib/Container.js"
 
 export const TodoItem = ({ itemIndex }) => {
   // Get the item from the store based on the index
@@ -27,17 +29,17 @@ const handleOnChange = event => {
 }
 
 return ( 
- <div className={`todo-item ${item.done ? "done" : ""}`}>
+ <CheckSection className={`todo-item ${item.done ? "done" : ""}`}>
     <input 
     type="checkbox"
     onChange={handleOnChange}
     className="todo-item-check"
     checked={item.done ? "checked" : ""}
     ></input>
-    <span className="todo-item-description">{item.description}</span>
-    <a className="todo-item-remove" onClick={onClearClicked}>
+    <ItemDescription>{item.description}</ItemDescription>
+    <Button onClick={onClearClicked}>
       clear
-    </a>
- </div>
+    </Button>
+ </CheckSection>
 )
 };
