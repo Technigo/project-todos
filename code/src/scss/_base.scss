@@ -28,6 +28,7 @@ h1, h2, h3 {
 }
 
 button {
+  border: 0;
   cursor: pointer;
 }
 
@@ -40,7 +41,7 @@ button {
   flex: 1 1 auto;
   padding: 1rem 2rem;
 
-  background-color: #fff;
+  background-color: $lightCol;
   // border-top-right-radius: $borderRadiusBig;
 }
 
@@ -67,7 +68,9 @@ header {
 input[type=text] {
   flex: 1 1 auto;
   border: 0;
+  padding: 1rem;
   font-weight: 500;
+  border-radius: $borderRadiusSmall;
 }
 
 .add-btn {
@@ -75,9 +78,8 @@ input[type=text] {
   background-color: $primaryCol;
   color: #fff;
   margin-left: 1rem;
-  padding: .6rem 1rem;
-  border-radius: 2rem;
-  border: none;
+  padding: 0rem 1.2rem;
+  border-radius: $borderRadiusSmall;
   font-weight: 700;
 }
 
@@ -98,8 +100,6 @@ input[type=text] {
 
 .btn-clear {
   background-color: transparent;
-  border: 0;
-  padding: 0;
   color: $primaryCol;
   font-size: .85rem;
   font-weight: 700;
@@ -113,12 +113,12 @@ input[type=text] {
   justify-content: space-between;
   align-items: center;
 
-  border-top-left-radius: $borderRadiusSmall;
-  border-top-right-radius: $borderRadiusSmall;
-  // border-bottom-left-radius: $borderRadiusSmall;
-  border-bottom-right-radius: $borderRadiusSmall;
+  border-top-left-radius: $borderRadiusMedium;
+  border-top-right-radius: $borderRadiusMedium;
+  // border-bottom-left-radius: $borderRadiusMedium;
+  border-bottom-right-radius: $borderRadiusMedium;
   margin: 1rem 0;
-  background-color: #eee;
+  background-color: #fff;
 }
 
 .item-desc {
@@ -127,9 +127,11 @@ input[type=text] {
 }
 
 .completed {
+  * {
+    color: $mediumCol;
+  }
   .item-desc {
     text-decoration: line-through;
-    // color: #888;
   }
 }
 
@@ -137,5 +139,4 @@ input[type=text] {
   padding: 1.5rem;
   border: 0;
   background-color: transparent;
-  cursor: pointer;
 }

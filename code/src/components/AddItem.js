@@ -29,7 +29,9 @@ export const AddItem = () => {
         placeholder="Add task"
         required
       />
-      <button className="add-btn">add</button>
+      <button className="add-btn">
+        <i class="fas fa-plus"></i>
+      </button>
     </form>
   )
 }
