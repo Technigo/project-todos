@@ -140,6 +140,7 @@ code {
     top: 1.1rem;
     font-size: 26px;
     line-height: 28px;
+    pointer-events: none;
 }
 
 .todo-item > input:active {
@@ -147,7 +148,7 @@ code {
 }
 
 svg:hover {
-  animation: shake 0.3s;
+  animation: shake 0.8s;
   animation-iteration-count: infinite;
 }
 
