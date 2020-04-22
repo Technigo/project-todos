@@ -19,9 +19,9 @@ const Section = styled.section`
 `
 
 const H1 = styled.h1`
-font-size: 50px;
-color: #F5F0D7; //ljusgul
-margin: 0;
+  font-size: 50px;
+  color: #F5F0D7; //ljusgul
+  margin: 0;
 `
 
 

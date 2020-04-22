@@ -13,7 +13,7 @@ background: #E66032;
 color: #F5F0D7;
 border: none;
 height: 30px;
-width: 100px;
+width: 120px;
 border-radius: 7px;
 font-size: 16px;
 margin-top: 10px;

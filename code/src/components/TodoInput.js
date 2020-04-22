@@ -4,10 +4,16 @@ import { todos } from 'reducers/todos';
 import styled from 'styled-components'
 import { Button } from 'lib/Button'
 
+const Form = styled.form`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
 const TextInput = styled.input`
   width: 250px;
   height: 20px;
-  margin: 10px 10px 20px 0;
+  margin: 20px 0;
   padding: 5px;
   border: none;
   border-radius: 7px;
@@ -38,7 +44,7 @@ export const TodoInput = () => {
   };
 
   return (
-    <form onSubmit={handleOnSubmit}>
+    <Form onSubmit={handleOnSubmit}>
       <TextInput
         type="text"
         onChange={event => setInputValue(event.target.value)}
@@ -50,6 +56,6 @@ export const TodoInput = () => {
         background="#ED839D"
         color="#F5F0D7"
       >+</Button>
-    </form>
+    </Form>
   )
 };
