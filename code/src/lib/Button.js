@@ -9,8 +9,9 @@ export const Button = styled.button`
   border-radius: 50%;
   font-weight: bold;
   font-size: 16px;
+  transition: all 150ms;
 
   &:hover {
-    opacity: 0.3;
+    background: #F5F0D7;
   }
 `

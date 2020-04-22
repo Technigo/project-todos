@@ -11,7 +11,10 @@ const TodosContainer = styled.div`
   align-items: center;
   justify-content: space-between;
 `
-
+const Div = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 export const TodoItem = ({ itemIndex }) => {
 
@@ -39,10 +42,13 @@ export const TodoItem = ({ itemIndex }) => {
 
   return (
     <TodosContainer>
-      <CustomCheckbox isChecked={item.done}
-        onChangeHandler={handleOnchange}
-      >
-      </CustomCheckbox>
+      <Div>
+        <CustomCheckbox isChecked={item.done}
+          onChangeHandler={handleOnchange}
+        >
+        </CustomCheckbox>
+        <p>{item.description}</p>
+      </Div>
       <Button onClick={onRemoveClicked}
         background="#E66032"
         color="#F5F0D7"
