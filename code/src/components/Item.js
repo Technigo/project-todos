@@ -38,7 +38,7 @@ export const Item = ({ itemIndex, text }) => {
 
       <span className="item-desc">{text}</span>
 
-      <button className="remove-btn" value="Click to clear list" onClick={removeItem}>
+      <button className="remove-btn" aria-label="Click to clear list" onClick={removeItem}>
         <i className="fas fa-times"></i>
       </button>
     </div>

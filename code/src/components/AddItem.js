@@ -29,7 +29,7 @@ export const AddItem = () => {
         ariaLabel="Type a task"
         required
       />
-      <button className="add-btn" value="Click to add task">
+      <button className="add-btn" aria-label="Click to add task">
         <i className="fas fa-plus"></i>
       </button>
     </form>
