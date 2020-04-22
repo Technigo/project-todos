@@ -5,16 +5,17 @@ import { AddTask } from './AddTask'
 import { ClearAllButton } from './ClearAllButton'
 
 import './style/All.css'
-import './style/Background.css'
 
 export const ToDoScreen = () => {
 
   return (
     <main className='all'>
-      <Header />
-      <TaskList />
-      <AddTask />
-      <ClearAllButton />
+      <div className='content'>
+        <Header />
+        <TaskList />
+        <AddTask />
+        <ClearAllButton />
+      </div>
     </main>
   )
 }
