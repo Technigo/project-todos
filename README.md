@@ -1,13 +1,21 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+This is my Todo-list build with React and Redux. You can set your todo-items together with a category such as Personal or Work. You can also mark your items as done and remove them form the list. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+For an easy overview you can also see how many pending items you have. 
 
-## The problem
+## Teach used
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+- React
+- Redux
+- React Hooks
+- Form inputs
+- Javascript
+
+## Information
+
+There are still some functionalites I want to add to this page such as: Render list based on categories and set a due date for the todo.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://keen-jones-92731e.netlify.app/
