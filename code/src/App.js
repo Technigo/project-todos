@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { configureStore, combineReducers, createStore } from '@reduxjs/toolkit'
+import { combineReducers, createStore } from '@reduxjs/toolkit'
 import { ToDoList } from './Components/ToDoList'
 import { todoitem } from './Components/Reducers/todoitem'
 

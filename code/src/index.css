@@ -7,7 +7,11 @@ body {
 }
 
 #root {
-  height: 100vh;
+  display: flex;
+  justify-content: center;
+  height: -webkit-fill-available;
+  max-height: auto;
+  width: 100vw;
   background-color: #add8e621;
 }
 
@@ -15,6 +19,13 @@ body {
   box-sizing: border-box;
 }
 
+main {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background: #cdebee9c;
+}
+    
 header {
   display: flex;
   justify-content: space-between;
@@ -26,7 +37,7 @@ header {
 .header-left {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .header-right {
@@ -94,6 +105,7 @@ form input {
 }
 
 ul {
+  overflow-y: auto;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -144,23 +156,34 @@ ul {
 }
 
 .empty-state p {
-  font-size: 1.2em;
+  font-size: 1em;
   margin-top: 50px;
   padding: 0 15px;
 }
 
 .summary-tasks {
+  display: flex;
+  align-items: center;
   padding: 0 30px;
-  margin-top: 30px;
+  height: 70px;
+  margin: 0;
+  background: #cdebee9c;
 }
 
 @media (min-width: 600px) {
+
+  main {
+    width: 60vw;
+    margin: 120px 0;
+    border-radius: 20px;
+  }
 
   body {
     font-size: 1.3em;
   }
 
   header {
+    border-radius: 20px 20px 0 0;
     height: 100px;
     font-size: 1em;
   }
@@ -170,7 +193,7 @@ ul {
   }
 
   .empty-state {
-    font-size: 1.3em;
+    font-size: 1em;
   }
 
   .empty-state p {
@@ -182,6 +205,11 @@ ul {
 
 @media (min-width: 992px) {
 
+  main {
+    margin: 70px 0;
+    width: 40vw;
+  }
+
   header {
     font-size: 1.5em;
     height: 140px;
@@ -189,7 +217,7 @@ ul {
   }
 
   h1 {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   .empty-state p {
@@ -221,10 +249,6 @@ ul {
     width: 35px;
   }
 
-  .empty-state svg {
-    width: 40% !important;
-    height: 40% !important;
-  }
 }
 
 

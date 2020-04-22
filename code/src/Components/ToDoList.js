@@ -2,7 +2,7 @@ import React from 'react'
 import { ToDoItem } from './ToDoItem'
 import { InputToDo } from './InputToDo'
 import { ToDoHeader } from './ToDoHeader'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { UncontrolledLottie } from './EmptyToDo'
 
 export const ToDoList = () => {
@@ -11,7 +11,7 @@ export const ToDoList = () => {
   const completedTask = allItems.filter(item => item.done)
 
   return (
-    <div>
+    <main>
       < ToDoHeader />
       < InputToDo />
       <ul>
@@ -26,6 +26,6 @@ export const ToDoList = () => {
         <p className="summary-tasks">{completedTask.length}/{allItems.length} tasks complete!</p> 
       }
 
-    </div>
+    </main>
   )
 }
