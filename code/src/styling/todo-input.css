@@ -20,32 +20,12 @@
 .todo-input-text {
   font-size: 22px;
   font-family: 'Quicksand', sans-serif;
+  width: 290px;
+  margin-top: 5px;
 } 
 
-div.react-date-picker__wrapper {
-  border: none;
-}
-
-div.react-date-picker__inputGroup {
-  display: none;
-}
-
-button.react-date-picker__clear-button {
-  display: none;
-}
-
-
-div.react-date-picker__calendar .react-calendar {
-  background-color: #7473f2;
-  font-size: 20px;
-}
-
-.category-duedate {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-end;
-  font-size: 20px;
+.category {
+  margin-top: 12px;
 }
 
 select {
