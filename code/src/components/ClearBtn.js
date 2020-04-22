@@ -6,7 +6,7 @@ export const ClearBtn = () => {
   const dispatch = useDispatch()
 
   return (
-    <button className="btn-clear" onClick={() => {
+    <button className="clear-btn" onClick={() => {
       dispatch(todos.actions.removeAll())
     }}>
       <i className="far fa-trash-alt"></i>

@@ -1,0 +1,24 @@
+/* –––– Add Item –––– */
+
+.add-item {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[type=text] {
+  flex: 1 1 auto;
+  border: 0;
+  padding: 1rem;
+  font-weight: 500;
+  border-radius: $borderRadiusSmall;
+}
+
+.add-btn {
+  text-align: center;
+  background-color: $primaryCol;
+  color: #fff;
+  margin-left: 1rem;
+  padding: 0rem 1.2rem;
+  border-radius: $borderRadiusSmall;
+  font-weight: 700;
+}

@@ -1,0 +1,30 @@
+/* –––– Item data –––– */
+
+.item-data {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 .2rem;
+  margin-top: 3rem;
+}
+
+.items-count {
+  color: $primaryCol;
+  font-size: .85rem;
+
+  span {
+    margin-left: .5rem;
+  }
+}
+
+.clear-btn {
+  background-color: transparent;
+  color: $primaryCol;
+  border-radius: $borderRadiusSmall;
+  font-size: .85rem;
+  font-weight: 700;
+
+  span {
+    margin-left: .4rem;
+  }
+}
