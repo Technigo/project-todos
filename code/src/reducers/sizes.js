@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+// Store to solve resizing based on window size
+// smallest screen is 320px
 const myInitialState = {
 	screenSize: 300
 };
@@ -16,7 +18,5 @@ export const size = createSlice({
 				state.screenSize = 300;
 			}
 		}
-
-		//console.log(array1.findIndex(isLargeNumber));
 	}
 });
