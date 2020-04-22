@@ -62,14 +62,14 @@ input[type= submit] {
 
 @media screen and (max-width: 600px) {
   .body {
-    width: 70%;
+    width: 100%;
     margin-left:5px;
   }
 
   main{
-    width:70%;
+    width:100%;
   }
   .tasklist{
-    width:70%;
+    width:100%;
   }
 }
