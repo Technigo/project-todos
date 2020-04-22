@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from 'react'
+import React from 'react'
 import { TaskItem } from './TaskItem'
 import { TaskInput} from './TaskInput'
 // import { TaskSummary } from './TaskSummary'
@@ -10,11 +10,12 @@ export const TaskList = () => {
 const list = useSelector((store) => store.todos.list)
   
   return (
-    <section className="task-list">
+    <section>
       <TaskInput />
       {list.items.map((item, index) => {
-       console.log(index)
-       return <TaskItem item={item} itemIndex={index} />
+       return <TaskItem 
+       key="taskNum"
+       item={item} itemIndex={index} />
         
 })}
     </section>

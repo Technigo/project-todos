@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from '../Reducers/todos.js'
 
-
+import styled from 'styled-components'
 
 
 export const TaskInput = ({ listId }) => {
@@ -12,7 +12,7 @@ const [inputValue, setInputValue] = useState("")
 
 const handleOnSubmit = e => {
   e.preventDefault()
-  // Här lägger vi till "task". 
+  
   dispatch(
     todos.actions.addTodos({
       listId: listId,
@@ -25,7 +25,7 @@ const handleOnSubmit = e => {
 
 
   return(
-    <form className="task-input" 
+     <form className="task-input" 
     onSubmit={handleOnSubmit}>
       <input
       type="text"
@@ -35,10 +35,10 @@ const handleOnSubmit = e => {
       ></input>
       <input
       type="submit"
-      className="task-input-button"
+      className="button"
       value="Add task"
       ></input>
      </form>
-   
+  
   )
 }
