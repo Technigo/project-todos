@@ -2,11 +2,20 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { todos } from "../reducers/todos.js";
 import moment from 'moment'
+import { CustomCheckbox } from './CustomCheckbox';
 
 
 export const TodoItem = ({ itemIndex }) => {
   const item = useSelector((store) => store.todos.list.items[itemIndex]);
   const dispatch = useDispatch();
+
+  const handleCheckboxClick = (e) => {
+    dispatch(todos.actions.setDone({
+      itemIndex: itemIndex,
+      done: !item.done,
+    })
+    );
+  };
 
   const onRemoveClicked = (e) => {
     dispatch(
@@ -16,27 +25,17 @@ export const TodoItem = ({ itemIndex }) => {
     );
   };
 
-  const handleOnChange = (e) => {
-    dispatch(
-      todos.actions.setDone({
-        itemIndex: itemIndex,
-        done: !item.done,
-      })
-    );
-  };
 
   return (
     <div className={`todo-item ${item.done ? "done" : ""}`}>
-      <input
-        type="checkbox"
-        onChange={handleOnChange}
-        className="todo-item-check"
-        checked={item.done ? "checked" : ""}
-      ></input>
-      <span className="todo-item-description">{item.description} </span>
+      <CustomCheckbox
+        isChecked={item.done ? "done" : ""}
+        onChangeHandler={handleCheckboxClick}
+      />
+      <span className="todo-item-description"> {item.description} </span>
       <div className="created-at-time"> {moment(item.date).fromNow()}</div>
       <div className="todo-item-remove" onClick={onRemoveClicked}>
-        <svg
+        <svg className="trash"
           xmlns="http://www.w3.org/2000/svg"
           width="22"
           height="22"

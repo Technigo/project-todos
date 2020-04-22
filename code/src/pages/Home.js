@@ -4,6 +4,7 @@ import { TodoList } from "../components/TodoList.js";
 import { createStore, combineReducers, configureStore } from "@reduxjs/toolkit";
 import { todos } from "../reducers/todos.js";
 import { Header } from "components/Header"
+import { CustomCheckbox } from 'components/CustomCheckbox';
 
 // Tell redux about our reducers
 const reducer = combineReducers({ todos: todos.reducer });

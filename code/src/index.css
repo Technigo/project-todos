@@ -61,11 +61,11 @@ code {
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  width: 95%;
+  width: 90%;
   border: solid white 2px;
   border-radius: 5px;
   background-color: white;
-  padding:3px;
+  padding:7px;
 }
 
 .todo-item-description {
@@ -75,6 +75,11 @@ code {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
+  margin-left: 7px;
+}
+
+.todo-item.done {
+text-decoration: line-through;
 }
 
 .created-at-time {
@@ -84,11 +89,7 @@ code {
   margin-left: 10px;
   position: absolute;
   right:5px;
-  top:40px;
-}
-
-.todo-item.done {
-  text-decoration: line-through;
+  top:35px;
 }
 
 .todo-item-remove  {
@@ -105,49 +106,13 @@ code {
   font-family: 'niveau-grotesk', sans-serif ;
   font-weight: 700;
   }
-
-  
+ 
 .todo-item {
   display: inline-flex;
   position: relative;
 }
 
-.todo-item > input {
-    height: 20px;
-    width: 20px;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -o-appearance: none;
-    appearance: none;
-    border: 1px solid #1e3756;
-    border-radius: 4px;
-    outline: none;
-    transition-duration: 0.4s;
-    background-color: transparent;
-    cursor: pointer;
-  }
-
-.todo-item > input:checked {
-    border: 1px solid #1e3756;
-}
-
-.todo-item > input:checked + span::before {
-    content: '\2714';
-    display: block;
-    color: rgb(19, 226, 178);
-    position: absolute;
-    left: 1.1rem;
-    top: 1.1rem;
-    font-size: 26px;
-    line-height: 28px;
-    pointer-events: none;
-}
-
-.todo-item > input:active {
-    border: 2px solid #1e3756;
-}
-
-svg:hover {
+.trash:hover {
   animation: shake 0.8s;
   animation-iteration-count: infinite;
 }
