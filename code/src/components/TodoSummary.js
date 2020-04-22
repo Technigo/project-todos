@@ -11,14 +11,6 @@ height: 120px;
 border-bottom: 1px solid #535c68;
 background: #34ace0;
 font-family: 'Work Sans', sans-serif;
-
-@media (min-width: 668px) {
-  padding: 0 25%;
-}
-
-@media (min-width: 1024px) {
-  padding: 0 35%;
-}
 `
 
 

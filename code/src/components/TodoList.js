@@ -10,21 +10,17 @@ const TodoListContainer = styled.section`
 display: flex;
 flex-direction: column;
 font-family: 'Work Sans', sans-serif;
+
+@media (min-width: 700px) {
+  margin: 0 15%;
+  border: 1px solid #535c68;
+}
 `
 const InputContainer = styled.section`
 display: flex;
 flex-direction: column;
 justify-content: flex-start;
-min-height: 100vh;
 padding: 4% 8%;
-
-@media (min-width: 668px) {
-  padding: 5% 20%;
-}
-
-@media (min-width: 1024px) {
-  padding: 5% 30%;
-}
 `
 
 export const TodoList = () => {
