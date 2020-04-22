@@ -1,6 +1,6 @@
 # A ToDo Project ✔️🏆❣️
 
-This is a ToDo app website that shows how many tasks you have completed and of how many. You can add a task, delete a task and clear the list. It has some tasks in there to show how it looks when it is not empty. 
+This is a ToDo app website that shows how many tasks you have completed and out of how many. You can add a task, delete a task and clear the list. It has some tasks in there to show how it looks when it is not empty. 
 
 ## Tech
 
