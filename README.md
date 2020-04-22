@@ -6,4 +6,4 @@ This is an app to learn react-redux. The redux store keeps track of the tasks an
 
 ## View it live
 
-Site: 
+Site: https://tender-noyce-e51470.netlify.app/
