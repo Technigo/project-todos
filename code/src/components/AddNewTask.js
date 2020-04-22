@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 import styled from 'styled-components'
+import { EntryContainer } from '../library/EntryContainer'
+import { Input } from '../library/Input'
 import { Button } from '../library/Button'
-import { Input} from '../library/Input'
+
 
 
 export const AddTask = () => {
@@ -24,19 +26,15 @@ export const AddTask = () => {
   }
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
+      <EntryContainer onSubmit={handleSubmit}>
           <Input
             type='text'
             placeholder= 'Add things to do'
             value={newTask}
             onChange={(event) => setNewTask(event.target.value)}
           />
-        </label>
         <Button type='submit'>
           Add
         </Button>
-        </form>
-    </div>
+        </EntryContainer>
   )}
