@@ -7,7 +7,6 @@ import { Footer } from '../components/Footer.js'
 import { todos } from '../reducers/todos.js'
 import styled from 'styled-components/macro'
 
-
 // STORE CREACTION : tell redux about our reducers
 const reducer = combineReducers({ todos: todos.reducer })
 

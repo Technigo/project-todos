@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { TimeStamp } from './TimeStamp'
 import { todoItem } from './todoItem.css'
 import styled from 'styled-components/macro'
+import { CustomCheckbox } from './CustomCheckbox'
 
 export const TodoItem = ({ itemIndex }) => {
   // Get the item from the store based on the index
@@ -31,13 +32,16 @@ export const TodoItem = ({ itemIndex }) => {
 
   return (
     <ItemSection>
-      <div className={`todo-item ${item.done ? "done" : ""}`}>
-        <input
+      <CustomCheckbox
+        isChecked={item.done ? "checked" : ""}
+        onChangeHandler={handleOnChange} />
+      {/* <input
           type='checkbox'
           onChange={handleOnChange}
           className='todo-item-check'
           checked={item.done ? "checked" : ""}
-        ></input>
+        ></input> */}
+      <div className={`todo-item ${item.done ? "done" : ""}`}>
         <span className='todo-item-description'>{item.description}</span>
         <button className='todo-item-remove' onClick={onRemoveClicked}>x</button>
       </div>
@@ -49,4 +53,5 @@ export const TodoItem = ({ itemIndex }) => {
 const ItemSection = styled.section`
   display: flex;
   flex-direction: row;
+  margin-bottom: 15px;
 `
