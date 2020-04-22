@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { AddItem } from 'components/AddItem'
 import { ItemData } from 'components/ItemData'
 import { ItemsList } from 'components/ItemsList'
+import { EmptyState } from 'components/EmptyState'
 
 export const MainContent = () => {
 
@@ -15,6 +16,8 @@ export const MainContent = () => {
       {itemExists && <ItemData />}
 
       <ItemsList />
+
+      {!itemExists && <EmptyState />}
     </main>
   )
 }

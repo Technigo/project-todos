@@ -11,7 +11,7 @@ html, body, #root, .wrapper {
 body {
   margin: 0;
   color: $darkCol;
-  background-color: $primaryCol;
+  background-color: $lightCol;
   font-size: 16px;
   font-family: 'Avenir', 'Helvetica', 'sans-serif';
   font-weight: 700;
@@ -39,10 +39,10 @@ button {
 
 .main-content {
   flex: 1 1 auto;
-  padding: 1rem 2rem;
+  padding: 1.5rem 1.5rem;
 
-  background-color: $lightCol;
-  // border-top-right-radius: $borderRadiusBig;
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -52,6 +52,7 @@ header {
   flex: 0 1 auto;
   padding: 2rem;
 
+  background-color: $primaryCol;
   color: #fff;
 }
 
@@ -62,7 +63,6 @@ header {
 .add-item {
   display: flex;
   justify-content: space-between;
-  margin: 1rem 0 3rem;
 }
 
 input[type=text] {
@@ -91,7 +91,7 @@ input[type=text] {
   justify-content: space-between;
   align-items: center;
   padding: 0 .2rem;
-  margin-bottom: 2rem;
+  margin-top: 3rem;
 }
 
 .items-count {
@@ -150,4 +150,22 @@ input[type=text] {
   padding: 1.5rem;
   border: 0;
   background-color: transparent;
+  font-size: .8rem;
+}
+
+.empty-state {
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+
+  img {
+    width: 100%;
+  }
+  
+  h2 {
+    text-align: center;
+  }
 }
