@@ -4,13 +4,12 @@ import { useSelector } from 'react-redux'
 
 export const TodoList = () => {
 
-  const list = useSelector(store => store.todos.list) // jag bytte "todo" till "todos" för det är så du kallar det på andra ställen
-  console.log("list", list)
+  const list = useSelector(store => store.todos.list)
 
   return (
     <section className='todo-list'>
       {list.items.map((item, index) => (
-        <TodoItem itemIndex={index} />
+        <TodoItem key={index} itemIndex={index} />
       ))}
     </section>
   )

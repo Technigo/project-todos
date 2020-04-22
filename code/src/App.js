@@ -14,8 +14,10 @@ export const App = () => {
   return (
     <Provider store={store}>
       <main>
-        <TodoInput />
-        <TodoList />
+        <div className='header-wrapper'>
+          <TodoInput />
+          <TodoList />
+        </div>
         <TodoSummary />
       </main>
     </Provider>

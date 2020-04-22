@@ -12,7 +12,7 @@ export const TodoSummary = () => {
   return (
     <section className='todo-summary'>
       <h2>
-        {numDone}/{list.items.length} task finished!
+        {numDone} out of {list.items.length} tasks finished!
       </h2>
     </section>
   )

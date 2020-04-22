@@ -28,16 +28,21 @@ export const TodoInput = ({ listId }) => {
     <form
       className='todo-input'
       onSubmit={handleOnSubmit}>
+      <h1>
+        What's on your agenda?
+      </h1>
       <input
         type='text'
         onChange={e => setInputValue(e.target.value)}
         value={inputValue} // här är variabeln som uppdaterar i onChange
-        className='todo-input-text'>
+        className='todo-input-text'
+        placeholder='Drink coffee'>
       </input>
       <input
         type='submit'
         className='todo-input-button'
-        value='ADD'>
+        value='ADD TO LIST'
+        disabled={inputValue === ''}>
       </input>
     </form>
   )
