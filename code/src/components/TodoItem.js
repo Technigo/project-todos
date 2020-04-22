@@ -1,5 +1,5 @@
 import React from "react"
-import styled from 'styled-components'
+import styled from "styled-components"
 import { useDispatch, useSelector } from "react-redux"
 import { todos } from "../reducers/todos.js"
 import { Checkbox } from "../library/Checkbox"
@@ -9,6 +9,10 @@ margin: 8px;
 display: flex;
 justify-content: space-between;
 font-size: 18px;
+
+span {
+  color: ${(props) => (props.checked ? "#84817a" : "black")};
+}
 
   button {
     padding: 6px;
@@ -34,14 +38,14 @@ export const TodoItem = ({ itemIndex }) => {
 
   const dispatch = useDispatch()
 
-  //Creates onRemove handler
+  //Creates onRemove that handles remove of a todo item
   const handleRemove = event => {
     dispatch(todos.actions.removeTodo({
       itemIndex: itemIndex
     }))
   }
 
-  //Creates handleOnChange handler to handle the done status
+  //Creates handleOnChange that handles the done status
   const handleOnChange = event => {
     dispatch(todos.actions.setDone({
       itemIndex: itemIndex,
@@ -51,11 +55,9 @@ export const TodoItem = ({ itemIndex }) => {
 
   return <ItemContainer >
     <Item>
-
-      {/* Replace this checkbox with custom checkbox: */}
       <Checkbox 
          onChange={handleOnChange}
-         checked={item.done ? "checked" : ""}
+         isChecked={item.done ? "checked" : ""}
       />
       <span>{item.description}</span>
     </Item>
