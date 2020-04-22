@@ -6,7 +6,7 @@ const initialState = {
     items: [
     {
       id: Date.now(),
-      description: 'test',
+      description: 'Build a todo app',
       category: 'work',
       done: false,
       startDate: '2020-04-13',
@@ -14,7 +14,7 @@ const initialState = {
     },
     {
       id: Date.now(),
-      description: 'test 2',
+      description: 'Eat pizza!',
       category: 'private',
       done: false,
       startDate: '2020-04-15',
