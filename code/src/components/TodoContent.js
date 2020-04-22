@@ -8,6 +8,7 @@ import { ClearAll } from './ClearAll'
 import './style/Content.css'
 import './style/Base.css'
 
+//Base content components
 export const TodoContent = () => {
   return (
     <main className="mainContent">

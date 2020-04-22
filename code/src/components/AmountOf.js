@@ -14,11 +14,13 @@ export const AmountOf = () => {
       </>
     )
   }
+  
   //If list is empty, don't show counter
+  //If nothing been done, encourage!
   return (
     <div>
       <p className={todos.length === 0 ? "noAmount" : "amountOf"}>
-        {leftTodo.length}/{todos.length} left to do
+        {leftTodo.length} of {todos.length} left to do
       </p>
       <p className={todos.length === leftTodo.length ? "amountOf pep" : "noAmount"}>
         Let's get going!

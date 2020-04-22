@@ -26,6 +26,7 @@ export const ClearAll = () => {
     })
   }
 
+  //Btn to clear list
   return (
     <div className="clearContent">
       <button type="button"

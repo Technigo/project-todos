@@ -1,15 +1,14 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { todos } from 'reducers/todos'
-// import moment from 'moment'
 
 import './style/Listed.css'
 
 export const CompleteList = ({ todoIndex }) => {
   const dispatch = useDispatch()
-
   const todo = useSelector((store) => store.todos.list.todos[todoIndex])
 
+  //Deletes item
   const handleRemoval = (e) => {
     dispatch(
       todos.actions.removeItem({
@@ -18,16 +17,18 @@ export const CompleteList = ({ todoIndex }) => {
     )
   }
 
-
+  //Toggles checkbox 
   const handleChecked = (e) => {
     dispatch(
       todos.actions.setDone({
         todoIndex: todoIndex,
         complete: !todo.complete
-      }))
+      })
+    )
   }
 
-
+  //Container for each to do-task
+  //Checkbox, task and delete
   return (
     <div className="postedContainer">
       <div className="eachItem">

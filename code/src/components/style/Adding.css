@@ -27,6 +27,7 @@
   box-shadow: 2px 2px rgb(103, 153, 168);
   font-size: 14px;
   color: #16454b;
+  font-family: 'Menlo', sans-serif;
 }
 
 .react-datepicker__input-container input {

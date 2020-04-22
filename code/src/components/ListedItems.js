@@ -6,13 +6,14 @@ import './style/Listed.css'
 import './style/EmptyState.css'
 
 export const ListedItems = () => {
-  const allTodos = useSelector((store) => store.todos.list)
-  const totalList = useSelector((store) => store.todos.list.todos)
-
   // const completedTodos = totalList.filter(todo => (todo.complete === true))
   // const notDoneTodos = totalList.filter(todo => (todo.complete === false))
 
+  const allTodos = useSelector((store) => store.todos.list)
+  const totalList = useSelector((store) => store.todos.list.todos)
 
+
+  //Empty state, if list is cleared
   if (totalList.length === 0) {
     return (
       <>
@@ -23,11 +24,14 @@ export const ListedItems = () => {
     )
   }
 
+  //Maps through each posted item
   return (
     <section>
       {allTodos.todos.map((todo, index) => (
         <CompleteList todo={todo} todoIndex={index} />
       ))}
+
+
       {/* {completedTodos.map((todo, index) => (
         <CompleteList todo={todo} todoIndex={index} />
       ))}
@@ -35,8 +39,6 @@ export const ListedItems = () => {
       {notDoneTodos.map((todo, index) => (
         <CompleteList todo={todo} todoIndex={index} />
       ))} */}
-
-
     </section>
   )
 }
