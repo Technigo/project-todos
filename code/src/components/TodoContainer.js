@@ -19,7 +19,7 @@ min-height: 100vh;
 export const TodoContainer = () => {
   return(
     <Container>
-      <Header />
+      {/* <Header /> */}
       <AddItem />
       <ListItem />
       <ShowSummery />

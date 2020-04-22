@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import Flippy, { FrontSide, BackSide } from 'react-flippy'
 import styled from 'styled-components'
 import { DeleteItem } from 'components/DeleteItem'
 import { SetDone } from 'components/SetDone'
@@ -32,12 +33,12 @@ const theme = {
   main: "mediumseagreen"
 };
 
-
 const InfoSection = styled(Container)`
   flex-direction: row;
   justify-content: space-between;
   margin: 5px;
   width: 25vw;
+  font-size: 10px;
 `
 const TodoSection = styled(Container)`
   width: 25vw;
@@ -47,15 +48,26 @@ export const ListItem = () => {
   const todo = useSelector((store) => store.todo.todoListItems)
 
   return (
+ 
+
+
+
     <Container>
       {todo.items.map((item, index) => (
+        <Flippy
+        flipOnHover={true} // default false
+        flipOnClick={false} // default false
+        flipDirection="horizontal" // horizontal or vertical
+        style={{ padding: '0em' }} 
+        >    
+        <FrontSide>
         <TodoItem theme={item.done ? theme : ''}>
           <InfoSection>
             <span>
               Created at {item.startDate}
             </span>
             <span>
-              {/* Due at {item.dueDate} */}
+              Due at {item.dueDate}
             </span>
           </InfoSection>
 
@@ -63,6 +75,7 @@ export const ListItem = () => {
             <h1>
               {item.description}
             </h1>
+            <span>{item.category}</span>
           </TodoSection>
 
           <InfoSection>
@@ -72,6 +85,12 @@ export const ListItem = () => {
           </InfoSection>
 
         </TodoItem>
+      </FrontSide>
+
+          <BackSide>
+            ROCKS
+          </BackSide>
+        </Flippy>
       ))}
     </Container>
   )

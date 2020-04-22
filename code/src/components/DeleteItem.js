@@ -1,9 +1,13 @@
 import React from 'react'
 import { useDispatch, useSelector } from "react-redux"
+import styled from 'styled-components'
 import { todo } from "../reducers/todo"
 
-export const DeleteItem = ({itemIndex}) => {
+const A = styled.a`
+  cursor: pointer;
+`
 
+export const DeleteItem = ({itemIndex}) => {
   const dispatch = useDispatch()
 
   const onRemoveClicked = (e) => {
@@ -16,9 +20,9 @@ export const DeleteItem = ({itemIndex}) => {
 
   return (
     <section>
-      <a onClick={onRemoveClicked}>
-        [Delete]
-      </a>
+      <A onClick={onRemoveClicked}>
+      🧨
+      </A>
     </section>
   )
 }

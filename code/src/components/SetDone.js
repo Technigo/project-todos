@@ -1,27 +1,33 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from "react-redux"
+import styled from 'styled-components'
 import { todo } from "../reducers/todo"
 
-export const SetDone = ({itemIndex}) => {
+const A = styled.a`
+  cursor: pointer;
+`
 
+
+export const SetDone = ({itemIndex}) => {
+  const [updateDone, SetupdateDone] = useState(true)
   const dispatch = useDispatch()
 
   const onDoneClicked = (e) => {
+    SetupdateDone(!updateDone)
+
     dispatch(
       todo.actions.doneTodo({
         itemIndex,
-        done: true,
+        done: updateDone,
       })
     )
   }
 
-  
-
   return (
     <section>
-      <a onClick={onDoneClicked}>
-        [Done]
-      </a>
+      <A onClick={onDoneClicked}>
+        {updateDone ? "✔️" : "❌"}
+      </A>
     </section>
   )
 }

@@ -10,7 +10,7 @@ const initialState = {
       category: 'work',
       done: false,
       startDate: '2020-04-13',
-      dueDate: 2021
+      dueDate: '2020-04-10'
     },
     {
       id: Date.now(),
@@ -18,7 +18,7 @@ const initialState = {
       category: 'private',
       done: false,
       startDate: '2020-04-15',
-      dueDate: 2022
+      dueDate: '2020-04-30'
     }
     ]
   }

@@ -17,3 +17,5 @@ export const App = () => {
     </Provider>
   )
 }
+
+// Make some items a priority
