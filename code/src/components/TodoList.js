@@ -1,10 +1,9 @@
 import React from 'react'
 import { useSelector } from "react-redux"
 
-
+import { Title } from "../Header/Title"
 import { TodoItem } from "./TodoItem.js"
 import { TodoInput } from "./TodoInput.js"
-import { TodoSummary } from "./TodoSummary.js"
 
 import styled from 'styled-components'
 
@@ -14,13 +13,14 @@ export const TodoList = () => {
 
     return (
         <Article>
+            <Title /> 
+      
 
             <TodoInput />
             {list.items.map((item, index) => (
-                <TodoItem item={item} itemIndex={index} />
+                <TodoItem key={item} item={item} itemIndex={index} />
             ))}
-            <TodoSummary /> 
-
+      
         </Article>
 
 
