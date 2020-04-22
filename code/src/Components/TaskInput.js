@@ -3,7 +3,6 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from '../Reducers/todos.js'
 
-import styled from 'styled-components'
 
 
 export const TaskInput = ({ listId }) => {

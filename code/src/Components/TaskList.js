@@ -1,7 +1,6 @@
 import React from 'react'
 import { TaskItem } from './TaskItem'
 import { TaskInput} from './TaskInput'
-// import { TaskSummary } from './TaskSummary'
 import { useSelector } from 'react-redux'
 
 
