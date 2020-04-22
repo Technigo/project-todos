@@ -13,6 +13,8 @@ justify-content: space-between;
     font-size: 18px;
     width: 50%;
     height: 44px;
+    border: 1px solid #535c68;
+    border-radius: 6px;
     font-family: 'Work Sans', sans-serif;
   }
 
@@ -20,15 +22,15 @@ justify-content: space-between;
     padding: 12px;
     margin: 6px; 
     font-size: 18px;
-    border: none;
+    border: 1px solid #535c68;
     border-radius: 6px;
-    background: #c7ecee;
+    background: #f5f6fa;
     font-family: 'Work Sans', sans-serif;
   }
 
   @media (min-width: 668px) {
     input {
-      width: 70%;
+      width: 60%;
     }
   }
 `

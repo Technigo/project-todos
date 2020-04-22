@@ -16,27 +16,30 @@ display: flex;
 flex-direction: column;
 justify-content: flex-start;
 min-height: 100vh;
-padding: 18px;
-background-color: #dff9fb;
+padding: 4% 8%;
 
 @media (min-width: 668px) {
   padding: 5% 20%;
+}
+
+@media (min-width: 1024px) {
+  padding: 5% 30%;
 }
 `
 
 export const TodoList = () => {
 
-  // Gets information about this list from the store
+  // Gets information about todo list from the store
   const list = useSelector(store => store.todos.list)
 
-  return(
+  return (
     <TodoListContainer>
-       <TodoSummary />
-       <InputContainer>
-       <TodoInput />
-      {list.items.map((item, index) =>(<TodoItem itemIndex={index}></TodoItem>))}
-      <ClearButton />
-       </InputContainer>
+      <TodoSummary />
+      <InputContainer>
+        <TodoInput />
+        {list.items.map((item, index) => (<TodoItem itemIndex={index}></TodoItem>))}
+        <ClearButton />
+      </InputContainer>
     </TodoListContainer>
   )
 }

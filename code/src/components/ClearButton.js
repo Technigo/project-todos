@@ -5,12 +5,12 @@ import styled from 'styled-components'
 
 const RemoveButton = styled.button`
   padding: 12px;
-  margin: 12px; 
+  margin: 24px 12px; 
   width: fit-content;
   font-size: 18px;
-  border: none;
+  border: 1px solid #535c68;
   border-radius: 6px;
-  background: #c7ecee;
+  background: #f5f6fa;
   font-family: 'Work Sans', sans-serif;
 `
 

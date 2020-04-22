@@ -6,19 +6,24 @@ const Header = styled.section`
 display: flex;
 justify-content: space-between;
 align-items: center;
-padding: 0 18px;
+padding: 0 10%;
 height: 120px;
-background: #c7ecee;
+border-bottom: 1px solid #535c68;
+background: #34ace0;
 font-family: 'Work Sans', sans-serif;
 
 @media (min-width: 668px) {
-  padding: 0 20%;
+  padding: 0 25%;
+}
+
+@media (min-width: 1024px) {
+  padding: 0 35%;
 }
 `
 
 
 export const TodoSummary = () => {
-  //Gets information from the store for this list
+  //Gets information from the store for todo list
   const list = useSelector(store => store.todos.list)
 
   //Counts the number of todos that are done using filter
