@@ -25,6 +25,7 @@ a {
 
 h1, h2, h3 {
   margin: 0;
+  letter-spacing: -.1rem;
 }
 
 button {
@@ -45,7 +46,7 @@ button {
 .main-content {
   flex: 1 1 auto;
   padding: 1.5rem 1.5rem;
-  max-width: 1200px;
+  max-width: 1000px;
 
   display: flex;
   flex-direction: column;
@@ -127,7 +128,7 @@ input[type=text] {
 /* –––– Items list –––– */
 
 .items-list {
-  margin-top: 2rem;
+  margin-top: 1rem;
 }
 
 .item {
@@ -144,14 +145,22 @@ input[type=text] {
   & + .item {
     margin-top: 1rem;
   }
-}
-
-.item-desc {
-  flex: 1 1 auto;
-  font-weight: 500;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  
+  .item-desc {
+    flex: 1 1 auto;
+    font-weight: 500;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  .remove-btn {
+    padding: 2rem 1.5rem;
+    border: 0;
+    background-color: transparent;
+    color: $primaryCol;
+    font-size: .8rem;
+  }
 }
 
 .completed {
@@ -163,12 +172,6 @@ input[type=text] {
   }
 }
 
-.remove-btn {
-  padding: 2rem 1.5rem;
-  border: 0;
-  background-color: transparent;
-  font-size: .8rem;
-}
 
 .empty-state {
   flex: 1 1 auto;

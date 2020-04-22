@@ -3,9 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: [
-      { text: 'Buy more striped t-shirts', completed: false }
-    ]
+    items: []
   },
   reducers: {
     addTodo: (state, action) => {
