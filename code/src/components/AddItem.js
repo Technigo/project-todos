@@ -19,14 +19,14 @@ const InputText = styled.input`
 `
 
 const Select = styled.select`
-width: 100%;
-padding: 8px 10px;
-margin: 8px 0;
-display: inline-block;
-border: none;
-border-bottom: 1px solid black;
-box-sizing: border-box;
-background-color: DodgerBlue;
+  width: 100%;
+  padding: 8px 10px;
+  margin: 8px 0;
+  display: inline-block;
+  border: none;
+  border-bottom: 1px solid black;
+  box-sizing: border-box;
+  background-color: DodgerBlue;
 `
 
 const InputBtn = styled.input`
@@ -83,7 +83,7 @@ export const AddItem = () => {
       <Select id="category" name="category" onChange={e => setCategory(e.target.value)}>
         <option value='other' active>Other</option>
         <option value="work">Work</option>
-        <option value="private">Private</option>
+        <option value="personal">Personal</option>
       </Select>
 
       <InputBtn
@@ -94,8 +94,3 @@ export const AddItem = () => {
     </form>
   )
 }
-
-// - Add item
-// - Pick category
-// - Add dueDate
-// - Add priority

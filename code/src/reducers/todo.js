@@ -15,7 +15,31 @@ const initialState = {
     {
       id: Date.now(),
       description: 'Eat pizza!',
-      category: 'private',
+      category: 'personal',
+      done: false,
+      startDate: '2020-04-15',
+      dueDate: '2020-04-30'
+    },
+    {
+      id: Date.now(),
+      description: 'Watch Tiger king!',
+      category: 'other',
+      done: false,
+      startDate: '2020-04-15',
+      dueDate: '2020-04-30'
+    },
+    {
+      id: Date.now(),
+      description: 'Drink beer',
+      category: 'personal',
+      done: false,
+      startDate: '2020-04-15',
+      dueDate: '2020-04-30'
+    },
+    {
+      id: Date.now(),
+      description: 'Social distancing',
+      category: 'other',
       done: false,
       startDate: '2020-04-15',
       dueDate: '2020-04-30'

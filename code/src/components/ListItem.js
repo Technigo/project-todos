@@ -13,7 +13,6 @@ const Container = styled.section`
   align-items: center;
   border-radius: 8px;
 `
-
 const TodoItem = styled(Container)`
   justify-content: space-evenly;
   background-color: ${props => props.theme.main};
@@ -21,18 +20,31 @@ const TodoItem = styled(Container)`
   margin: ${props => props.backside ? "0px" : "8px"};
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   min-height: 111px;
+  background-color: ${props => props.bg == 'work' ? "#FFBB00" : props.bg == 'personal' ? '#7CBB00' : props.bg == 'other' ? '#00A1F1' : ''};
 `
-// default background color for TodoItem
-TodoItem.defaultProps = {
-  theme: {
-    main: "white"
+  // default background color for TodoItem
+  TodoItem.defaultProps = {
+    theme: {
+      main: "white"
+    }
   }
-}
 
-// Background color if item done is true
-const theme = {
-  main: "mediumseagreen"
-};
+  // Background color if item done is true
+  const theme = {
+    main: "mediumseagreen",
+  };
+
+  const work = {
+    backgroundColor: "yellow"
+  }
+
+  const personal = {
+    cat: "purple"
+  }
+
+  const other = {
+    cat: "red"
+  }
 
 const InfoSection = styled(Container)`
   flex-direction: row;
@@ -51,11 +63,13 @@ export const ListItem = () => {
   return (
     <Container>
       {todo.items.map((item, index) => (
+        // Flippy container
         <Flippy
         flipOnHover={true} // default false
         flipOnClick={false} // default false
         flipDirection="horizontal" // horizontal or vertical
         >    
+          {/* Front side of todo item */}
           <FrontSide
           style={{
             margin: '0px',
@@ -85,45 +99,40 @@ export const ListItem = () => {
           </TodoItem>
         </FrontSide>
 
-          <BackSide
-          style={{
-          margin: '0px',
-          padding: '0px',
-          left: '8px',
-          boxShadow: 'none',
-          }}>
-            <TodoItem theme={item.done ? theme : ''} backside>
-              <InfoSection>
-                <span>
-                  Created at {item.startDate}
-                </span>
-                {/* <span>
-                  Due at {item.dueDate}
-                </span> */}
-              </InfoSection>
+        {/* Back side of todo item */}
+        <BackSide
+        style={{
+        margin: '0px',
+        padding: '0px',
+        left: '8px',
+        boxShadow: 'none',
+        }}>
+          <TodoItem theme={item.done ? theme : ''} backside bg={item.category}>
+            <InfoSection>
+              <span>
+                Created at {item.startDate}
+              </span>
+              {/* <span>
+                Due at {item.dueDate}
+              </span> */}
+            </InfoSection>
 
-              <TodoSection>
-                <h1>
-                {item.category}
-                </h1>
-              </TodoSection>
+            <TodoSection>
+              <h1>
+              {item.category}
+              </h1>
+            </TodoSection>
 
-              <InfoSection>
-                <DeleteItem itemIndex={index} />
-                {/* Create component to display green checkmark if done */}
-                <SetDone itemIndex={index} />
-              </InfoSection>
+            <InfoSection>
+              <DeleteItem itemIndex={index} />
+              {/* Create component to display green checkmark if done */}
+              <SetDone itemIndex={index} />
+            </InfoSection>
 
-              </TodoItem>
-          </BackSide>
+          </TodoItem>
+        </BackSide>
         </Flippy>
       ))}
     </Container>
   )
 }
-
-
-// <p>{item.description}</p>
-// <p>{item.category}</p>
-// <p>{item.startDate}</p>
-// <p>{item.dueDate}</p>
