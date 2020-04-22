@@ -10,7 +10,7 @@ export const ItemsCount = () => {
   return (
     <div className="items-count">
       <i className="fas fa-list-alt"></i>
-      <span>{numCompleted}/{list.length} Completed</span>
+      <span>{numCompleted}/{list.length}</span>
     </div>
   )
 }

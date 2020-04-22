@@ -13,9 +13,13 @@ export const MainContent = () => {
     <main className="main-content">
       <AddItem />
 
-      {itemExists && <ItemData />}
+      {itemExists &&
+        <>
+          <ItemData />
+          <ItemsList />
+        </>
+      }
 
-      <ItemsList />
 
       {!itemExists && <EmptyState />}
     </main>

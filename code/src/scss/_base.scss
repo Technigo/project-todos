@@ -35,11 +35,17 @@ button {
 .wrapper {
   display: flex;
   flex-direction: column;
+  align-items: center;
+
+  >* {
+    width: 100%;
+  }
 }
 
 .main-content {
   flex: 1 1 auto;
   padding: 1.5rem 1.5rem;
+  max-width: 1200px;
 
   display: flex;
   flex-direction: column;
@@ -104,10 +110,11 @@ input[type=text] {
 }
 
 .btn-clear {
-  background-color: darken($lightCol, 10%);
+  // background-color: darken($lightCol, 10%);
+  background-color: transparent;
   color: $primaryCol;
   border-radius: $borderRadiusSmall;
-  padding: .2rem .5rem;
+  // padding: .2rem .5rem;
   font-size: .85rem;
   font-weight: 700;
 
@@ -119,6 +126,10 @@ input[type=text] {
 
 /* –––– Items list –––– */
 
+.items-list {
+  margin-top: 2rem;
+}
+
 .item {
   display: flex;
   justify-content: space-between;
@@ -126,15 +137,21 @@ input[type=text] {
 
   border-top-left-radius: $borderRadiusMedium;
   border-top-right-radius: $borderRadiusMedium;
-  // border-bottom-left-radius: $borderRadiusMedium;
+  border-bottom-left-radius: $borderRadiusMedium;
   border-bottom-right-radius: $borderRadiusMedium;
-  margin: 1rem 0;
   background-color: #fff;
+
+  & + .item {
+    margin-top: 1rem;
+  }
 }
 
 .item-desc {
   flex: 1 1 auto;
   font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .completed {
@@ -147,7 +164,7 @@ input[type=text] {
 }
 
 .remove-btn {
-  padding: 1.5rem;
+  padding: 2rem 1.5rem;
   border: 0;
   background-color: transparent;
   font-size: .8rem;
@@ -163,8 +180,9 @@ input[type=text] {
 
   img {
     width: 100%;
+    max-width: 700px;
   }
-  
+
   h2 {
     text-align: center;
   }
