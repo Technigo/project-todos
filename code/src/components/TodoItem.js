@@ -35,7 +35,8 @@ export const TodoItem = ({ itemIndex, dueDate }) => {
         checked={item.done ? "checked" : ""}
       ></input>
       <p className="item-text">
-        <span className={`${item.category === '' ? 'hide' : "todo-item-category"}`}>{item.category}</span><span className="todo-item-description">{item.description}</span></p>
+        <span className={`${item.category === '' ? 'hide' : "todo-item-category"}`}>{item.category}</span>
+        <span className="todo-item-description">{item.description}</span></p>
       <a aria-label="remove-button" className="todo-item-remove" onClick={handleRemove}>[Remove]</a>
     </div>
   )

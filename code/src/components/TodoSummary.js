@@ -15,7 +15,6 @@ export const TodoSummary = () => {
   // count how many tasks are done using filter 
   const numDone = list.items.filter(item => item.done).length
 
-
   return (
     <section className="todo-summary">
       <p className="completed">
