@@ -6,7 +6,6 @@ import { ClearAllButton } from './ClearAllButton'
 
 import './style/All.css'
 import './style/Background.css'
-import './style/AddTask.css'
 
 export const ToDoScreen = () => {
 

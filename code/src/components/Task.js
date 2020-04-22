@@ -23,7 +23,7 @@ export const Task = ({ id, text, complete }) => {
   return (
     <div>
       <label className='task'>
-        <div className='input-and-task'>
+        <div className='checkbox-and-task'>
           <CustomCheckbox 
             isChecked={complete} 
             onChangeHandler={handleCheckToggle} />

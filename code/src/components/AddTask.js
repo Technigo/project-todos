@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasklist } from 'reducers/tasklist'
 
+import './style/AddTask.css'
+
 export const AddTask = () => {
   const dispatch = useDispatch()
   const [inputValue, setInputValue] = useState('')

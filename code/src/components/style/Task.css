@@ -13,7 +13,7 @@
   -o-border-radius: 10px;
 }
 
-.input-and-task {
+.checkbox-and-task {
   display: flex;
   align-items: center;
 }
