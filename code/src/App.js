@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { createStore, combineReducers } from '@reduxjs/toolkit';
 import { todoStore } from 'reducers/todoStore';
 import { size } from 'reducers/sizes';
 import { Home } from 'components/Home';
@@ -12,7 +12,10 @@ const reducer = combineReducers({
 // Retrieve the existing state from localstorage if it exists
 const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {};
 
-const store = configureStore({ reducer }, persistedState);
+const store = createStore(reducer, persistedState);
+store.subscribe(() => {
+  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+});
 
 export const App = () => {
 	return (
