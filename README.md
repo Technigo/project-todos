@@ -1,13 +1,18 @@
-# Project Todos
+# Project Todos 
 
-Replace this readme with your own information about your project.
+Project week 15 @ Technigo Bootcamp we were supposed to build a todo-app using React and Redux! 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## What I learned
 
-## The problem
+- How to use the many functionalities of Redux, such as setting up the store, dispatching to the store and using selectors
+- Practicing using conditional styling with Styled Components and props
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Technologies used
+
+- React
+- Redux
+- Styled components 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Try it out here: https://annas-todo-app.netlify.app/ 
