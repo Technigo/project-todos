@@ -25,7 +25,6 @@ export const AddItem = () => {
         type="text"
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
-        minLength="2"
         placeholder="Add task"
         required
       />
