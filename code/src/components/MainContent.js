@@ -8,7 +8,6 @@ export const MainContent = () => {
 
   const itemExists = useSelector((store) => store.todos.items).length >= 1
 
-
   return (
     <main className="main-content">
       <AddItem />

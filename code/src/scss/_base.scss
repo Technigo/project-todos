@@ -36,9 +36,8 @@ h1, h2, h3 {
   flex: 1 1 auto;
   padding: 1rem 2rem;
 
-
   background-color: #fff;
-  border-top-right-radius: $borderRadiusBig;
+  // border-top-right-radius: $borderRadiusBig;
 }
 
 
@@ -62,6 +61,7 @@ header {
 }
 
 input[type=text] {
+  flex: 1 1 auto;
   border: 0;
   font-weight: 500;
 }
@@ -70,6 +70,7 @@ input[type=text] {
   text-align: center;
   background-color: $primaryCol;
   color: #fff;
+  margin-left: 1rem;
   padding: .6rem 1rem;
   border-radius: 2rem;
   border: none;
@@ -109,7 +110,6 @@ input[type=text] {
   justify-content: space-between;
   align-items: center;
 
-  padding: 1.5rem;
   border-top-left-radius: $borderRadiusSmall;
   border-top-right-radius: $borderRadiusSmall;
   // border-bottom-left-radius: $borderRadiusSmall;
@@ -131,6 +131,8 @@ input[type=text] {
 }
 
 .remove-btn {
+  padding: 1.5rem;
   border: 0;
   background-color: transparent;
+  cursor: pointer;
 }

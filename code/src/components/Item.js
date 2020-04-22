@@ -38,7 +38,9 @@ export const Item = ({ itemIndex, text }) => {
 
       <span className="item-desc">{text}</span>
 
-      <button className="remove-btn" onClick={removeItem}>x</button>
+      <button className="remove-btn" onClick={removeItem}>
+        <i class="far fa-trash-alt"></i>
+      </button>
     </div>
   )
 }
