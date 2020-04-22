@@ -11,7 +11,7 @@ justify-content: space-between;
 font-size: 18px;
 
 span {
-  color: ${(props) => (props.checked ? "#84817a" : "black")};
+  color: ${(props) => (props.checked ? "#535c68" : "black")};
 }
 
   button {
@@ -53,7 +53,7 @@ export const TodoItem = ({ itemIndex }) => {
     }))
   }
 
-  return <ItemContainer >
+  return <ItemContainer checked={item.done}>
     <Item>
       <Checkbox 
          onChange={handleOnChange}

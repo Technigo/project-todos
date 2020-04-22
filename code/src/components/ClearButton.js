@@ -1,7 +1,7 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+import React from "react"
+import { useDispatch } from "react-redux"
 import { todos } from "../reducers/todos"
-import styled from 'styled-components'
+import styled from "styled-components"
 
 const RemoveButton = styled.button`
   padding: 12px;
@@ -11,7 +11,7 @@ const RemoveButton = styled.button`
   border: 1px solid #535c68;
   border-radius: 6px;
   background: #f5f6fa;
-  font-family: 'Work Sans', sans-serif;
+  font-family: "Work Sans", sans-serif;
 `
 
 export const ClearButton = () => {

@@ -10,7 +10,7 @@ export const Checkbox = ({ isChecked, onChange }) => {
   }
 
   //This is the "original" checkbox, hidden outside the screen
-  const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
+  const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
     border: 0;
     clip: rect(0 0 0 0);
     clippath: inset(50%);
