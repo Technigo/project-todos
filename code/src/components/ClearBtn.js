@@ -9,7 +9,9 @@ export const ClearBtn = () => {
     <button className="btn-clear" onClick={() => {
       dispatch(todos.actions.removeAll())
     }}>
-      Clear all <i class="far fa-trash-alt"></i>
+      <i className="far fa-trash-alt"></i>
+      <span>Clear</span>
+
     </button>
   )
 }

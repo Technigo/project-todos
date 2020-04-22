@@ -30,7 +30,7 @@ export const AddItem = () => {
         required
       />
       <button className="add-btn">
-        <i class="fas fa-plus"></i>
+        <i className="fas fa-plus"></i>
       </button>
     </form>
   )
