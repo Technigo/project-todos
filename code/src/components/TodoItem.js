@@ -13,11 +13,47 @@ const TodoItemContainer = styled.div`
   align-items: center;
   width: 100%;
   margin: 5px 0;
+`
 
-  @media (min-width: 768px) {
-    grid-template-columns: 40px 1fr 40px;
+const CheckboxContainer = styled.div`
+  position: relative;
+  width: 30px;
+  height: 30px;
+`
+
+//Hides default checkbox
+const HiddenCheckbox = styled.input`
+  opacity: 0;
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+`
+
+const NewCheckbox = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  height: 30px;
+  width: 30px;
+  background-color: #78786c;
+  pointer-events: none;
+
+  ::after {
+    content: '';
+    position: absolute;
+    top: 7px;
+    left: 6px;
+    display: ${prop => prop.itemChecked ? 'block' : 'none'};
+    width: 15px;
+    height: 7px;
+    border-left: 3px solid #fff;
+    border-bottom: 3px solid #fff;
+    transform: rotate(-50deg);
+    
   }
 `
+
 const TodoText = styled.p`
   display: flex;
   align-items: center;
@@ -29,27 +65,6 @@ const TodoText = styled.p`
 
   @media (min-width: 768px) {
     font-size: 14px;
-  }
-`
-
-const Checkbox = styled.button`
-  width: 30px;
-  height: 30px;
-  padding-left: 6px;
-  padding-bottom: 6px;
-  border: none;
-  border-radius: 10px; 
-  background: #78786c;
-  cursor: pointer;
-
-  ::after {
-    content: '';
-    display: ${prop => prop.itemChecked ? 'block' : 'none'};
-    width: 15px;
-    height: 7px;
-    border-left: 3px solid #fff;
-    border-bottom: 3px solid #fff;
-    transform: rotate(-50deg);
   }
 `
 
@@ -70,12 +85,16 @@ export const TodoItem = ({ itemIndex }) => {
       {item.show &&
         <TodoItemContainer>
 
-          <Checkbox
-            aria-label={`Mark ${item.description} as done`}
-            type='button'
-            onClick={onCheckClick}
-            itemChecked={itemChecked}
-          ></Checkbox>
+          <CheckboxContainer>
+            <HiddenCheckbox
+              aria-label={`Mark ${item.description} as done`}
+              type='checkbox'
+              onClick={onCheckClick}
+            ></HiddenCheckbox>
+            <NewCheckbox
+              aria-hidden='true'
+              itemChecked={itemChecked} />
+          </CheckboxContainer>
 
           <TodoText
             onClick={onCheckClick}
