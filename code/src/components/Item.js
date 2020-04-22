@@ -26,7 +26,7 @@ export const Item = ({ itemIndex, text }) => {
   return (
     <div className={`item ${item.completed ? "completed" : ''}`}>
 
-      <label className="checkbox-container">
+      <label className="checkbox-container" aria-label="Complete">
         <input
           type="checkbox"
           onChange={completeItem}
@@ -38,7 +38,7 @@ export const Item = ({ itemIndex, text }) => {
 
       <span className="item-desc">{text}</span>
 
-      <button className="remove-btn" onClick={removeItem}>
+      <button className="remove-btn" value="Click to clear list" onClick={removeItem}>
         <i className="fas fa-times"></i>
       </button>
     </div>

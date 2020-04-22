@@ -26,9 +26,10 @@ export const AddItem = () => {
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
         placeholder="Add task"
+        ariaLabel="Type a task"
         required
       />
-      <button className="add-btn">
+      <button className="add-btn" value="Click to add task">
         <i className="fas fa-plus"></i>
       </button>
     </form>
