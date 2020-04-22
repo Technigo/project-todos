@@ -5,7 +5,7 @@ const initialState = {
     name: "test List",
     items: [
       {
-        description: "this is a test todo",
+        description: "Give someone a hug",
         done: false
       }
     ]
