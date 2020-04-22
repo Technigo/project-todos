@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { tasks } from '../reducers/tasks'
+import moment from 'moment';
 
-export const TaskItem = ({ itemIndex }) => {
+
+
+/*tasks.actions.addTask({
+  listId: listId,
+  itemInfo: { text: inputValue, complete: false, category, dueDate }*/
+
+
+export const TaskItem = ({ dueDate, category, startDate, itemIndex }) => {
   const item = useSelector((store) => store.tasks.list.items[itemIndex]);
 
   const dispatch = useDispatch();
@@ -25,7 +33,8 @@ export const TaskItem = ({ itemIndex }) => {
   };
 
   return (
-    <div className={`task-item ${item.complete ? "complete" : ""}`}>
+    <div>
+      <span>{category}: </span>
       <input
         type="checkbox"
         onChange={handleOnChange}
@@ -33,9 +42,9 @@ export const TaskItem = ({ itemIndex }) => {
         checked={item.complete ? "checked" : ""}
       ></input>
       <span className="task-item-text">{item.text}</span>
-      <a className="task-item-remove" onClick={onRemoveClicked}>
-        [Remove]
-      </a>
+      <button onClick={onRemoveClicked}>[Remove]</button>
+      <span>ADDED: {moment(startDate).format('MMM Do YYYY')}</span>
+      {dueDate && <span> -> DUE: {moment(dueDate).format('MMM Do YYYY')}</span>}
     </div>
   );
 };  

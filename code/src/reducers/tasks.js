@@ -4,10 +4,10 @@ const initialState = {
   list: {
     name: "Tasks",
     items: [
-      { id: 1, text: 'ToDo', complete: true },
-      { id: 2, text: 'ToDo', complete: true },
-      { id: 3, text: 'ToDo', complete: true },
-      { id: 4, text: 'ToDo', complete: false },
+      { id: 1, text: 'ToDo', complete: true, category: 'Contact' },
+      { id: 2, text: 'ToDo', complete: false, category: 'Pay' },
+      { id: 3, text: 'ToDo', complete: false, category: 'Do' },
+      { id: 4, text: 'ToDo', complete: false, category: 'Buy' },
     ]
   }
 };
@@ -18,6 +18,7 @@ export const tasks = createSlice({
   reducers: {
     addTask: (state, action) => {
       const { itemInfo } = action.payload;
+      console.log(itemInfo)
       state.list.items.push(itemInfo);
     },
     removeTask: (state, action) => {
@@ -29,6 +30,21 @@ export const tasks = createSlice({
     setDone: (state, action) => {
       const { itemIndex, complete } = action.payload;
       state.list.items[itemIndex].complete = complete;
+    },
+    removeAllTasks: (state, action) => {
+      state.list.items = []
     }
   }
 });
+
+
+/*    addDate: (state, action) => {
+      const { dueDate, category } = action.payload;
+      state.list.items.push({
+        id: Date.now(),
+        startDate: Date.now(),
+        dueDate,
+        category
+      });
+    },
+    */
