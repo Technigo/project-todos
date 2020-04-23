@@ -1,17 +1,35 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { configureStore, combineReducers, createStore } from '@reduxjs/toolkit'
 import { tasks } from 'reducers/tasks'
 import { shopping } from 'reducers/shopping'
 import { Header } from 'components/Header'
 import { ToDoList } from 'components/ToDoList'
+
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
   shopping: shopping.reducer
 })
 
-const store = configureStore({ reducer })
+// const store = configureStore({ reducer })
+
+const persistedStateJSON = localStorage.getItem('reduxState-15')
+console.log(`persistedStateJSON: ${persistedStateJSON}`)
+let persistedState = {}
+
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON)
+}
+console.log(`persistedState: ${JSON.stringify(persistedState)}`)
+
+const store = createStore( reducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+
+store.subscribe(() => {
+  localStorage.setItem('reduxState-15', JSON.stringify(store.getState()));
+ })
+
 
 export const App = () => {
   return (

@@ -31,8 +31,8 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   `
 
   const StyledCheckbox = styled.div`
-    width: 24px;
-    height: 24px;
+    width: 30px;
+    height: 30px;
     background: ${(props) => (props.checked ? 'lightgrey' : 'white')};
     border-radius: 50%;
     transition: all 150ms;

@@ -12,7 +12,7 @@ export const ToDoList = () => {
     <div>
       <AddTask />
         {list.items.map((item, index) => (
-          <Task item={item} itemIndex={index} />
+          <Task key={index} item={item} itemIndex={index} />
       ))}     
     </div>
   )
