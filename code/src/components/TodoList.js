@@ -6,6 +6,10 @@ import { TodoItem } from "./TodoItem.js"
 import { TodoInput } from "./TodoInput.js"
 
 import styled from 'styled-components'
+import img from '../assets/water.jpg'
+
+
+// import img from './img/bg.gif';
 
 export const TodoList = () => {
 
@@ -13,6 +17,8 @@ export const TodoList = () => {
 
     return (
         <Article>
+
+        <ArticleWrapper>
             <Title /> 
       
 
@@ -20,6 +26,8 @@ export const TodoList = () => {
             {list.items.map((item, index) => (
                 <TodoItem key={item} item={item} itemIndex={index} />
             ))}
+        
+        </ArticleWrapper>
       
         </Article>
 
@@ -29,7 +37,22 @@ export const TodoList = () => {
 }
 
 const Article = styled.div `
+     display: flex;
+     justify-content: center;
      text-align: center;
+     width: 100%;
+     background-image: url(${img});
+     background-size: cover;
 `
+
+const ArticleWrapper = styled.div `
+     margin-top: 60px;
+     text-align: center;
+     width: 30%;
+     height: 600px;
+     background-color: red;
+     
+`
+
 
 

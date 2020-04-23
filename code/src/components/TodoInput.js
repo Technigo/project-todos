@@ -28,12 +28,12 @@ export const TodoInput = ({ listId }) => {
             onChange={e => setInputValue(e.target.value)}
             value={inputValue}
             className="todo-input-text"
-            ></input>
+            />
             <input
             type="submit"
             className="todo-submit-button"
             value="Add Todo"
-            ></input>
+            />
         </form>
 
     );

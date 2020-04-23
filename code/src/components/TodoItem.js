@@ -2,20 +2,14 @@ import React from "react";
 
 import { useDispatch, useSelector } from "react-redux";
 import { todos } from "../reducers/todos.js"
+import { CustomCheckbox } from "lib/CustomCheckbox.js";
+import styled from 'styled-components'
+
 
 export const TodoItem = ({ itemIndex }) => {
     const item = useSelector((store) => store.todos.list.items[itemIndex]);
 
     const dispatch = useDispatch();
-
-    const onRemoveClicked = (e) => {
-
-        dispatch (
-            todos.actions.removeTodo({
-                itemIndex,
-            })
-        );
-    };
 
     const handleOnChange = (e) => {
 
@@ -27,22 +21,58 @@ export const TodoItem = ({ itemIndex }) => {
         );
     };
 
+    const onRemoveClicked = (e) => {
+
+        dispatch (
+            todos.actions.removeTodo({
+                itemIndex,
+            })
+        );
+    };
+
     return (
 
-        <div className={`todo-item ${item.done ? "done" : ""}`}>
-            <input
-            type="checkbox"
-            onChange={handleOnChange}
-            className="todo-checked"
-            checked={item.done ? "checked" : ""}
-            ></input>
-            <span className="todo-description">{item.description}</span>
+        <ItemArea>
+
+       
+            <Item>
+            <CustomCheckbox 
+            isChecked={item.done ? "checked" : ""}
+            onChangeHandler={handleOnChange}
+            /> 
+            <Itemtext>{item.description}</Itemtext>
+            </Item>
+           
+     
+         
             <a href="/#"  className="todo-remove" onClick={onRemoveClicked}>
                 [remove]
             </a>
-        </div>
+
+        </ItemArea>
 
 
     )
 
 }
+
+const ItemArea = styled.div `
+     text-align: center;
+    
+`
+
+const Item = styled.div `
+     display: flex;
+     justify-content: center;
+     margin-top: 20px;
+     width: 30%px;
+
+`
+
+const Itemtext = styled.text`
+    padding-left: 10px;
+
+`
+
+
+

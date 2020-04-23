@@ -1,49 +1,52 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { todos } from "../reducers/todos"
+// import { useDispatch } from "react-redux";
+// import { todos } from "../reducers/todos"
 import styled from 'styled-components'
-import { ReactComponent } from "*.svg";
 
-export const CustomCheckbox = () => {
 
-    const dispatch = useDispatch();
-    const [checked, setChecked] = useState(false);
+export const CustomCheckbox = ({isChecked, onChangeHandler}) => {
+    const [checked, setChecked] = useState(isChecked);
 
     const HandleOnChange = e => {
+        onChangeHandler();
         setChecked(e.target.checked)
     }
 
 
-    const HiddenCheckbox = styled.input.attrs({type: 'checkbox'})`
+    const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
        border: 0;
-       clip:ReactComponent(0 0 0 0);
-       clippath: inset(50%)
+       clip: rect(0 0 0 0);
+       clippath: inset(50%);
        height: 1px;
        margin: -1px;
        overflow: hidden;
        padding: 0;
        position: absolute;
        white-space: nowrap;
-       width. 1px;
+       width: 1px;
     `;
 
     const Icon = styled.svg`
        fill: none;
        stroke: white;
-       stroke-width: 2px;
+       stroke-width: 1px;
     `;
 
-    const styledCheckbox = style.div`
-       display: inline-block;
-       width: 12px;
-       height: 12px;
-       background: ${(props) => (props.checked ? 'DarkOliveGreen' : 'WhiteSmoke')}
-       border-radius 50%;
+    const StyledCheckbox = styled.div`
+       width: 20px;
+       height: 20px;
+       background: ${(props) => (props.checked ? '#7487AD' : '#E6F5FF')};
+       border-radius: 50%;
        transition: all 150ms;
+
+       ${HiddenCheckbox}:focus + & {
+        box-shadow: 0 0 0 3px pink;
+      }
+
        ${Icon} {
-           visibility: ${(props) => (props.checked ? 'visible' : 'hidden')}
+            visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
        }
-    `
+     `;
 
     const CheckboxContainer = styled.div`
        display: inline.block;
@@ -53,28 +56,26 @@ export const CustomCheckbox = () => {
 
     const Checkbox = ({className, checked, ...props}) => (
         <CheckboxContainer>
-            <HiddenCheckbox checked={checked} {...props}> </HiddenCheckbox>
-            <styledCheckbox checked={checked}>
-                <Icon viewbox="0 0 24 24">
 
+            <HiddenCheckbox checked={checked} {...props} ></HiddenCheckbox>
+            <StyledCheckbox  checked={checked}>
+                <Icon viewbox="0 0 20 20">
+                   <text x="0" y="20" fill="red">x</text>
                 </Icon>
-
-            </styledCheckbox>
+            </StyledCheckbox>
 
         </CheckboxContainer>
 
     )
 
-
-
-    // return (
-    //     <div>
-    //         <label>
-    //             <Checkbox checked={checked} onChange={HandleOnChange}></Checkbox>
-    //         </label>
+    return (
+        <div>
+            <label>
+                <Checkbox checked={checked} onChange={HandleOnChange}></Checkbox>
+            </label>
             
-    //     </div>
+        </div>
     
-    // );
+    );
 
 };
