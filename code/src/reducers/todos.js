@@ -3,10 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   list: {
     name:'List',
-    items: [  {
-      description: 'Do something nice',
-      done: false
-    }]
+    items: [ ]
   }
 }
 
