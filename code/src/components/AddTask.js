@@ -29,7 +29,7 @@ export const AddTask = () => {
       <EntryContainer onSubmit={handleSubmit}>
           <Input
             type='text'
-            placeholder= 'Add things to do'
+            placeholder= '  Add things to do'
             value={newTask}
             onChange={(event) => setNewTask(event.target.value)}
           />
