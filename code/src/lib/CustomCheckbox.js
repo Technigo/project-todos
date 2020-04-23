@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { todos } from '../reducers/todos.js'
 import styled from 'styled-components/macro'
 
 
@@ -46,10 +44,11 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     display: inline-block;
     width: 18px;
     height: 18px;
-    background: ${props => props.checked ? 'salmon' : 'white'};
-    border: solid salmon 2px;
+    background: ${props => props.checked ? '#F24957' : 'white'};
+    border: solid #F24957 2px;
     border-radius: 50px;
     transition: all 150ms;
+    opacity: 0.8;
     ${Icon} {
       visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
     }

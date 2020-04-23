@@ -1,9 +1,9 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { TodoInput } from './TodoInput.js'
 import { TodoItem } from './TodoItem.js'
 import { TodoSummary } from './TodoSummary.js'
-import { ClearAllButton } from './ClearAllButton.js'
+import { ClearAllButton } from 'lib/ClearAllButton.js'
 import styled from 'styled-components/macro'
 
 export const TodoList = () => {

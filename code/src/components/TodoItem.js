@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 // import { TimeStamp } from './TimeStamp'
 import { todoItem } from './todoItem.css'
 import styled from 'styled-components/macro'
-import { CustomCheckbox } from './CustomCheckbox'
+import { CustomCheckbox } from 'lib/CustomCheckbox'
 
 export const TodoItem = ({ itemIndex }) => {
   // Get the item from the store based on the index

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { DateTimeNow } from './DateTimeNow.js'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components/macro'
