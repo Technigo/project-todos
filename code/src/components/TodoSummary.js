@@ -13,7 +13,8 @@ export const TodoSummary = () => {
 
   return (
     <Container>
-      <Subtitle color='#888'>{numDone}/{list.items.length} todos done.</Subtitle>
+      <Title color='#24292e'>Get stuff done</Title>
+      <Subtitle color='#888'>{numDone} done / {list.items.length} to go</Subtitle>
     </Container>
   )
 }

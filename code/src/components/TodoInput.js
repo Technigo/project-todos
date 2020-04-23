@@ -4,17 +4,21 @@ import { todos } from 'reducers/todos'
 import { Container } from 'lib/Container'
 import styled from 'styled-components'
 import { Button } from 'lib/Button'
+import DatePicker from 'react-datepicker'
 
 const InputForm = styled.form`
 padding: 10px;
+display: flex;
+justify-content: space-between;
+align-items: center;
 `
 const TextInput = styled.input`
-width: 70%;
-font-size: 20px;
+width: 250px;
+font-size: 16px;
 margin-right: 5px;
-border: 2px solid #888;
-border-radius: 8px;
-background: transparent;
+border: 1px solid #888;
+border-radius: 5px;
+padding: 4px;
 `
 // Receives listId as input
 export const TodoInput = () => {
@@ -33,7 +37,7 @@ export const TodoInput = () => {
         done: false
       })
     )
-    // Clear the text fiels after we save it
+    // Clear the text fields after we save it
     setInputValue("")
   }
 
@@ -47,7 +51,9 @@ export const TodoInput = () => {
             value={inputValue}
           />
         </label>
-        <Button background='blue'>Add todo</Button>
+        <Button background='lightgray'><span>{/* <i class="fas fa-plus"></i> */}Add</span>
+
+        </Button>
       </InputForm>
     </Container>
   )

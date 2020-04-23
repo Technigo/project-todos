@@ -6,7 +6,7 @@ const initialState = {
     items: [
       {
         description: "This is a test todo",
-        done: false
+        done: true
       },
       {
         description: "This is another test todo",
@@ -22,7 +22,7 @@ export const todos = createSlice({
   reducers: {
     addTodo: (state, action) => {
       const itemInfo = action.payload
-      state.items.push(itemInfo)
+      state.list.items.push(itemInfo)
     },
     setDone: (state, action) => {
       const { itemIndex, done } = action.payload

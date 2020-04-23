@@ -14,10 +14,12 @@ margin-bottom: 10px;
 const ItemText = styled.span`
 margin-left: 10px;
 font-size: 18px;
+color: #24292e;
 `
 const RemoveLink = styled.a`
 font-size: 12px;
 margin-left: 5px;
+color: #24292e;
 cursor: pointer;
 
 &:hover {

@@ -8,6 +8,6 @@ padding: 0px 10px;
 
 export const Subtitle = styled.h2`
 color: ${(props) => props.color || 'black'};
-font-size: 16px;
+font-size: 14px;
 padding: 0px 10px;
 `
