@@ -1,52 +1,66 @@
 import React, { useState } from "react"
-import Moment from 'react-moment'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { todos } from '../reducers/todos'
 import styled from 'styled-components'
+import { InputForm, TextInput, PostButton } from '../lib/InputForm'
+import img from '../Assets/dropdown.svg'
 
-const InputForm = styled.form`
-   width: 100%;
-   border-bottom: 3px solid #f0f0f0;
-   padding: 16px;  
-   display: flex;
-   align-items: center;
-   background-color: #FCFCFC;
-`
+const Dropdown = styled.select`
+  background: transparent;
+  margin: 0;
+  line-height: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 160%;
+  z-index: 10; 
+  font-size: 13px;
+  color: black;
+  @media (min-width: 1024px) {
+      font-size: 16px;
+  }
 
-const TextInput = styled.input`
-font-size: 20px;
-width: 100%;
-line-height: 28px;
-background-color: transparent;
-border: none;
-color: #a3a3a3;
 `
-const PostButton = styled.button`
-background: white;
-padding: 0 10px 8px 10px;
-border-radius: 8px;
-color: #d0c9d6;
-font-size: 30px;
-border: none;
-margin-right: 8px;
+const DropdownContainer = styled.div`
+  display: block;
+  font-size: 13px;
+  padding: 8px 35px 8px 5px;
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow-x: hidden;
+  background-image: url(${img});
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 95% center;
 `
 
 export const AddToDo = () => {
     const dispatch = useDispatch()
     const [inputValue, setInputValue] = useState()
-
+    const [categoryValue, setCategoryValue] = useState()
+    const categories = useSelector((store) => store.todos.list.categories)
     const handleSumbmit = (event) => {
         event.preventDefault()
         dispatch(
-            todos.actions.addTodo({ itemInfo: { description: inputValue, done: false, created: <Moment fromNow>{Date.now()}</Moment> } })
+            todos.actions.addTodo({ itemInfo: { description: inputValue, done: false, created: new Date(Date.now()), category: categoryValue } })
         )
         setInputValue('')
+        setCategoryValue('')
     }
 
     return (
         <InputForm onSubmit={(event) => handleSumbmit(event)}>
             <PostButton type="submit">+</PostButton>
-            <TextInput value={inputValue} type="text" placeholder="Add task" onChange={(event) => setInputValue(event.target.value)} />
+            <TextInput required value={inputValue} type="text" placeholder="Add task" onChange={(event) => setInputValue(event.target.value)} />
+            <DropdownContainer>
+                <Dropdown value={categoryValue} required onChange={(event) => setCategoryValue(event.target.value)}>
+                    <option value="">Category</option>
+                    {categories.map((category) => {
+                        return <option value={category.name}>{category.name}</option>
+                    })}
+                </Dropdown>
+            </DropdownContainer>
         </InputForm>
     )
 }
