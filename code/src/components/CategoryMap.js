@@ -6,6 +6,8 @@ import { ToDoItem } from './ToDoItem'
 import { EmptyDisplay } from './EmptyDisplay'
 import { TextButton } from '../lib/TextButton'
 import { FlexColumn } from '../lib/FlexColumn'
+import Bounce from 'react-reveal/Bounce'
+import LightSpeed from 'react-reveal/LightSpeed'
 import img from '../Assets/dropdown.svg'
 
 const FolderContainer = styled.div`
@@ -18,6 +20,7 @@ const FolderContainer = styled.div`
   background-color: ${(props) => props.backgroundColor};
   font-size: 20px;
   color: #a3a3a3;
+  transition: all 1s ease-in-out;
   &:hover {
       background-color: papayawhip;
   }
@@ -127,43 +130,51 @@ export const CategoryMap = () => {
             const sortByDueDate = dueDateArray.concat(noDateArray)
             sortByDueDate.sort((a, b) => (a.done === b.done) ? 0 : a.done ? 1 : -1)
             return (
-                <section>
-                    <FolderContainer backgroundColor={folder.reveal ? "papayawhip" : "#FCFCFC"}>
-                        <LeftSideContainer>
-                            {unFinished.length !== 0 &&
-                                <Dot></Dot>}
-                            <FolderButton onClick={() => openFolder(index, folder)}
-                                fontSize={folder.name.length > 16 ? "13px" : "16px"}>
-                                <Image src={require('../Assets/FolderIcon.png')} />
-                                <ButtonText>
-                                    {folder.name} ({folder.items.length} {folder.items.length === 1 ? "item" : "items"})
+                <LightSpeed left>
+                    <section key={index}>
+                        <FolderContainer backgroundColor={folder.reveal ? "papayawhip" : "#FCFCFC"}>
+                            <LeftSideContainer>
+                                {unFinished.length !== 0 &&
+                                    <Bounce >
+                                        <Dot></Dot>
+                                    </Bounce>}
+                                <FolderButton onClick={() => openFolder(index, folder)}
+                                    fontSize={folder.name.length > 16 ? "13px" : "16px"}>
+                                    <Image src={require('../Assets/FolderIcon.png')} />
+                                    <ButtonText>
+                                        {folder.name} ({folder.items.length} {folder.items.length === 1 ? "item" : "items"})
                                 </ButtonText>
-                            </FolderButton>
-                            <DropdownContainer>
-                                <Dropdown onChange={(event) => event.target.value === "dueDate" ? sortFolder(sortByDueDate, index) : event.target.value === "dateCreated" ? sortFolder(sortByCreated, index) : ""}>
-                                    <option value="">Sort by</option>
-                                    <option value={"dueDate"}>Due Date</option>
-                                    <option value={"dateCreated"}>Post Time</option>
-                                </Dropdown>
-                            </DropdownContainer>
+                                </FolderButton>
+                                <DropdownContainer>
+                                    <Dropdown onChange={(event) => event.target.value === "dueDate" ? sortFolder(sortByDueDate, index) : event.target.value === "dateCreated" ? sortFolder(sortByCreated, index) : ""}>
+                                        <option value="">Sort by</option>
+                                        <option value={"dueDate"}>Due Date</option>
+                                        <option value={"dateCreated"}>Post Time</option>
+                                    </Dropdown>
+                                </DropdownContainer>
 
-                        </LeftSideContainer>
-                        <FlexColumn>
-                            <TextButton color="#a3a3a3" onClick={() => removeCategory(index)}>[remove]</TextButton>
-                            <TextButton color="#a3a3a3" onClick={() => clearFolder(index)}>[empty folder]</TextButton>
-                        </FlexColumn>
+                            </LeftSideContainer>
+                            <FlexColumn>
+                                <TextButton color="#a3a3a3" onClick={() => removeCategory(index)}>[remove]</TextButton>
+                                <TextButton color="#a3a3a3" onClick={() => clearFolder(index)}>[empty folder]</TextButton>
+                            </FlexColumn>
 
-                    </FolderContainer>
+                        </FolderContainer>
 
-                    {folder.reveal && folder.items.length > 0 &&
-                        folder.items.map((item, index) => {
-                            return <ToDoItem {...item} index={index} />
-                        })
-                    }
-                    {folder.reveal && folder.items.length === 0 &&
-                        < EmptyDisplay />
-                    }
-                </section>
+                        {folder.reveal && folder.items.length > 0 &&
+                            folder.items.map((item, index) => {
+                                return (
+                                    <LightSpeed left>
+                                        <ToDoItem key={index} {...item} index={index} />
+                                    </LightSpeed>
+                                )
+                            })
+                        }
+                        {folder.reveal && folder.items.length === 0 &&
+                            < EmptyDisplay />
+                        }
+                    </section>
+                </LightSpeed>
             )
         })
     )

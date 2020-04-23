@@ -57,7 +57,7 @@ export const AddToDo = () => {
                 <Dropdown value={categoryValue} required onChange={(event) => setCategoryValue(event.target.value)}>
                     <option value="">Category</option>
                     {categories.map((category) => {
-                        return <option value={category.name}>{category.name}</option>
+                        return <option key={category.name} value={category.name}>{category.name}</option>
                     })}
                 </Dropdown>
             </DropdownContainer>
