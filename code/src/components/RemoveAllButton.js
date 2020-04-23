@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { todoStore } from '../reducers/todoStore'
+import swal from 'sweetalert';
 
 
 export const RemoveAllButton = () => {
@@ -10,14 +11,21 @@ export const RemoveAllButton = () => {
   
   
   const removeOnClick = (event) => {
-    dispatch(todoStore.actions.removeAllItems())
-      
-    
+    swal({
+      title: "Sure?",
+      text: "Once deleted, your todos are lost forever!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+    })
+    .then (dispatch(todoStore.actions.removeAllItems()))
   }
 
   return(
+    <section>
     <a 
     className="remove-all-todo"
     onClick={removeOnClick}>Remove all todos</a>
+    </section>
   )
 }
