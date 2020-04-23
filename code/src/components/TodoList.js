@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux'
 import { List } from 'lib/Form'
 
 export const TodoList = () => {
-  // Get list information for this list from the store
 const list = useSelector(store => store.todos.list)
 
   return (

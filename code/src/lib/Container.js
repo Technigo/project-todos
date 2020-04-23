@@ -13,10 +13,11 @@ export const SummaryContainer = styled.section`
     width: 90%;
   `
 export const CheckSection = styled.section `
-   margin: 8px;
-   display: flex;
-   flex-direction: row;
-   align-items: center;
-   justify-content: flex-start;
-   font-size: 24px;
+    margin: 8px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    font-size: 24px;
+    flex-wrap:wrap;
 `

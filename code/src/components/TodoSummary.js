@@ -1,21 +1,23 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
-import { ClearAll } from './ClearAll'
+import { useSelector, useDispatch } from 'react-redux'
+import { Button } from 'lib/Button'
 import { SummaryContainer } from 'lib/Container'
+import { todos } from '../reducers/todos'
 
 export const TodoSummary = () => {
-  // Get list information from the store, for this list
 const list = useSelector(store => store.todos.list)
-  // Count the number of items that are done using filter
 const numDone = list.items.filter(item => item.done).length
-
+const dispatch = useDispatch()
+const handleClick = () => {
+  dispatch(todos.actions.clearAll())
+}
 
   return (
   <SummaryContainer >
       <h2>
         {numDone}/{list.items.length} done
       </h2>
-      <ClearAll />
+      <Button onClick={handleClick}>Clear all</Button>
   </SummaryContainer>
   )
 };

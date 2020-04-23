@@ -3,12 +3,10 @@ import { createSlice } from "@reduxjs/toolkit"
 const initialState = {
   list: {
     name:"List",
-    items: [
-      {
-        description: "Do something nice",
-        done: false
-      }
-    ]
+    items: [  {
+      description: "Do something nice",
+      done: false
+    }]
   }
 }
 
@@ -30,8 +28,8 @@ export const todos = createSlice({
         (item,index) => index !== itemIndex 
         )
     },
-    removeAll: (state, action) => {
-      state.items = []
+    clearAll: (state, action) => {
+      return initialState;
     },
   }
 })

@@ -3,7 +3,6 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { todos } from './reducers/todos'
 import { Home } from 'pages/Home'
-import { ClearAll } from 'components/ClearAll';
 
 const reducer = combineReducers({
   todos: todos.reducer

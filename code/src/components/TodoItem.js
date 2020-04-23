@@ -6,7 +6,6 @@ import { ItemDescription } from 'lib/Text'
 import { CheckSection } from "lib/Container.js"
 
 export const TodoItem = ({ itemIndex }) => {
-  // Get the item from the store based on the index
 const item = useSelector(store => store.todos.list.items[itemIndex])
  
 const dispatch = useDispatch()
@@ -38,7 +37,7 @@ return (
     ></input>
     <ItemDescription>{item.description}</ItemDescription>
     <Button onClick={onClearClicked}>
-      clear
+      remove
     </Button>
  </CheckSection>
 )
