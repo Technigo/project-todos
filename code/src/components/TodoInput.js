@@ -1,6 +1,8 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import { todos } from "../reducers/todos"
+import styled from 'styled-components'
+import { Button } from '../lib/Button'
 
 export const TodoInput = ({ listId }) => {
     const dispatch = useDispatch();
@@ -22,21 +24,32 @@ export const TodoInput = ({ listId }) => {
 
 
     return (
-        <form className="todo-input" onSubmit={handleOnSumbit}>
-            <input
+        <Form onSubmit={handleOnSumbit}>
+            <Input
             type="text"
             onChange={e => setInputValue(e.target.value)}
             value={inputValue}
             className="todo-input-text"
             />
-            <input
-            type="submit"
-            className="todo-submit-button"
-            value="Add Todo"
-            />
-        </form>
+
+            <Button>Add todo</Button>
+        
+        </Form>
 
     );
 
 };
 
+const Form = styled.form `
+    text-align: center;
+    height: 50px;
+    
+`
+
+const Input = styled.input `
+    display: inline-block;
+    margin-right: 10px;
+    width: 250px;
+    border: none;
+    border-bottom: 1px solid black;
+`

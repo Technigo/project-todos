@@ -30,10 +30,15 @@ export const todos = createSlice({
             );
         },
 
+        removeAll: (state) => {
+            state.list.items = [];
+          },
+
         setDone: (state, action) => {
             const { itemIndex, done } = action.payload;
             state.list.items[itemIndex].done = done;
-        }
+        },
+        
     }
 
 });

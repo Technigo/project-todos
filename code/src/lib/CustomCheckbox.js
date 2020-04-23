@@ -1,7 +1,6 @@
 import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
-// import { todos } from "../reducers/todos"
 import styled from 'styled-components'
+
 
 
 export const CustomCheckbox = ({isChecked, onChangeHandler}) => {
@@ -39,13 +38,10 @@ export const CustomCheckbox = ({isChecked, onChangeHandler}) => {
        border-radius: 50%;
        transition: all 150ms;
 
-       ${HiddenCheckbox}:focus + & {
-        box-shadow: 0 0 0 3px pink;
-      }
-
        ${Icon} {
             visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
        }
+
      `;
 
     const CheckboxContainer = styled.div`
@@ -60,7 +56,7 @@ export const CustomCheckbox = ({isChecked, onChangeHandler}) => {
             <HiddenCheckbox checked={checked} {...props} ></HiddenCheckbox>
             <StyledCheckbox  checked={checked}>
                 <Icon viewbox="0 0 20 20">
-                   <text x="0" y="20" fill="red">x</text>
+                <polyline points="15 3 8 14 4 10" />
                 </Icon>
             </StyledCheckbox>
 
