@@ -86,9 +86,12 @@ font-size: 13px;
   overflow-x: hidden;
    background-image: url(${img});
    background-repeat: no-repeat;
-   background-size: 20px;
+   background-size: 15px;
    background-position: 95% center;
    margin-left: 8px;
+   @media (min-width: 660px) {
+       background-size: 20px;
+   }
 `
 export const CategoryMap = () => {
     const dispatch = useDispatch()
