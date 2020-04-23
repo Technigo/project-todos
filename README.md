@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+Week 15 in bootcamp
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+First solo project using Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by creating the store and learning how to select and dispatch information to the store by creating an input field and adding the information inserted there to update the store. The hardest part of the project was to use the selected information to update the styling of the page. I solved it by making ternary operators to add classes depending on the state in the store (true/false). At first I used a local state (with useState) but that did not work when I added persisted state because the local state reset, but not the state in the store. I solved it by adding the local state to the store by dispatching the information to the store.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://malins-todo-app.netlify.app/
