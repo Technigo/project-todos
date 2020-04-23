@@ -9,8 +9,8 @@ export const Task = ({ itemIndex }) => {
   const item = useSelector(store => store.todos.list.items[itemIndex])
 
   const dispatch = useDispatch()
+
   //Remove task
-  //varför tar de event objects??
   const onRemoveClicked = event => {
     dispatch(
       todos.actions.removeTask({
@@ -29,7 +29,6 @@ export const Task = ({ itemIndex }) => {
       }))
   }
 
-
   return (
     //om den är done så blir classen sådär och överstruken
     // <div className={`todo-item ${item.done ? 'done' : ''}`}>
@@ -38,7 +37,6 @@ export const Task = ({ itemIndex }) => {
         onChange={handleOnChange}
         checked={item.done ? 'checked' : ''}>
       </input>
-
       <span>{item.description}</span>
       <RemoveLink
         onClick={onRemoveClicked}>
@@ -51,7 +49,8 @@ export const Task = ({ itemIndex }) => {
 const TaskItem = styled.div`
   display: flex;
   justify-content: space-between;
-  margin: 5px;
+  
+  padding: 20px;
   border-top: 1px #502F4C solid;
 `
 

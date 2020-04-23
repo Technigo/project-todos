@@ -11,6 +11,6 @@ export const App = () => {
 }
 
 const AppContainer = styled.div`
-  display:flex;
+  display: flex;
   justify-content: center;
 `

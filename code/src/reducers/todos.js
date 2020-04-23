@@ -21,8 +21,6 @@ const initialState = {
   }
 }
 
-
-
 export const todos = createSlice({
   name: 'todos',
 
@@ -47,6 +45,9 @@ export const todos = createSlice({
       state.list.items = state.list.items.filter(
         (item, index) => index !== itemIndex
       )
-    }
+    },
+    deleteAll: () => {
+      return initialState
+    },
   }
 })

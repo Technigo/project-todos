@@ -31,7 +31,9 @@ const TodoContainer = styled.main`
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  max-width: 500px;
-  min-height: 600px;
+  width: 100%;
+  max-width: 400px;
+  min-height: 100vh;
+  margin: 0;
   background-color: #F9F4F5;
 `

@@ -11,7 +11,7 @@ export const TasksDone = () => {
   return (
     <TasksDoneSection>
       <GoodJob>Good job!</GoodJob>
-      <TasksDoneText>You have finished {numDone} out of {list.items.length}. </TasksDoneText>
+      <TasksDoneText>{numDone} out of {list.items.length} done. </TasksDoneText>
     </TasksDoneSection>
   )
 }
@@ -22,8 +22,8 @@ const TasksDoneSection = styled.section`
   align-items:center;
 `
 const GoodJob = styled.h2`
-  margin:0;
+  margin: 0;
 `
 const TasksDoneText = styled.h3`
-  margin:0;
+  margin: 0;
 `
