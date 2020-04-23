@@ -79,7 +79,7 @@ code {
 }
 
 .todo-item.done {
-text-decoration: line-through;
+  text-decoration: line-through;
 }
 
 .created-at-time {

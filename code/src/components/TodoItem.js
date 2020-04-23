@@ -51,4 +51,3 @@ export const TodoItem = ({ itemIndex }) => {
     </div>
   );
 };
-
