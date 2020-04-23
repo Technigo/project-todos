@@ -1,6 +1,4 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import { notepad } from 'reducers/notepad'
 import styled from 'styled-components'
 
 export const CustomCheckBox = ({ isChecked, onChangeHandler }) => {
@@ -10,8 +8,6 @@ export const CustomCheckBox = ({ isChecked, onChangeHandler }) => {
     onChangeHandler()
     setChecked(event.target.checked)
   }
-
-  const dispatch = useDispatch()
 
   const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
     border: 0;

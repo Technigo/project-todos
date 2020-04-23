@@ -7,8 +7,6 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css'
 import { AddTaskContainer, FormContainer } from 'library/Container'
 import ToggleDisplay from 'react-toggle-display'
-import styled from 'styled-components'
-
 
 export const AddTaskForm = () => {
 
@@ -16,28 +14,25 @@ export const AddTaskForm = () => {
   const [description, setDescription] = useState('')
   const [dueDate, setDueDate] = useState(new Date())
   const [category, setCategory] = useState('')
+  const [done, setDone] = useState(false)
   const [show, setShow] = useState(false)
 
   const dispatch = useDispatch()
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(notepad.actions.addTask({ name, description, dueDate, category, show }))
+    dispatch(notepad.actions.addTask({ name, description, dueDate, category, done }))
     setName('')
     setDescription('')
     setDueDate(new Date())
     setCategory('')
-    setShow(false)
+    setDone(false)
   }
 
   const addTaskHandler = () => {
     setShow(!show)
   }
 
-  const FormLabel = styled.label`
-    margin-right: 20px;
-    padding: 5px;
-  `
 
   return (
     <>
@@ -48,30 +43,30 @@ export const AddTaskForm = () => {
       <ToggleDisplay show={show}>
         <FormContainer>
           <form onSubmit={handleSubmit}>
-            <FormLabel>
+            <label>
               Title:
             <input
                 type='text'
                 value={name}
                 onChange={(event) => setName(event.target.value)}
               />
-            </FormLabel>
-            <FormLabel>
+            </label>
+            <label>
               Description:
             <input
                 type='text'
                 value={description}
                 onChange={(event) => setDescription(event.target.value)}
               />
-            </FormLabel>
-            <FormLabel>
+            </label>
+            <label>
               Due Date:
             <DatePicker
                 selected={dueDate}
                 onChange={(date) => setDueDate(date)}
               />
-            </FormLabel>
-            <FormLabel>
+            </label>
+            <label>
               Category:
               <Category
                 value={category}
@@ -83,7 +78,7 @@ export const AddTaskForm = () => {
                 <option value='coding'>coding</option>
                 <option value='training'>training</option>
               </Category>
-            </FormLabel>
+            </label>
             <Button type='submit'>Add to the list</Button>
           </form>
         </FormContainer>

@@ -1,11 +1,10 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { notepad } from 'reducers/notepad'
 import { TaskSummary } from 'components/TaskSummary'
 import { AddTaskForm } from 'components/AddTaskForm'
 import { TaskList } from 'components/TaskList'
-import { CustomCheckBox } from 'components/CustomCheckBox'
 
 const reducer = combineReducers({
   notepad: notepad.reducer
