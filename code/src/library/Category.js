@@ -1,13 +1,20 @@
 import styled from 'styled-components'
 
 export const Category = styled.select`
-  height: 35px;
-  background: pink;
-  color: gray;
-  padding-left: 5px;
+  height: 36px;
+  padding: 10px;
+  margin: 6px;
+  background: gold;
   font-size: 14px;
+  color: gray;
   border: none;
-  margin-left: 10px;
+  border-radius: 6px; 
+  
+  &:hover {
+    background: navy;
+    color: white;
+    cursor: pointer;
+  }
   
   option {
     color: black;
