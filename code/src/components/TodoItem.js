@@ -30,11 +30,12 @@ const handleOnChange = event => {
 
 return (
 <div className={`todo-item ${item.done ? "done" : ""}`}>
-<input
+  <CustomCheckbox checked={checked}/>
+{/* <input
 type='checkbox'
 onChange={handleOnChange}
 className='todo-check'
-checked={ item.done ? 'checked' : '' } />
+checked={ item.done ? 'checked' : '' } /> */}
 <span className='todo-description'>{item.description}</span>
 <a className='remove-todo-button'
 onClick={removeOnClick}
