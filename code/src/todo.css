@@ -1,0 +1,161 @@
+@font-face {
+  src: url("/fonts/pusab-mnqp-webfont.woff");
+  src: url("/fonts/pusab-mnqp-webfont.woff2");
+  font-family: "Pusab";
+  }
+
+@font-face {
+  src: url("/fonts/atamag-6yeey-webfont.woff");
+  src: url("/fonts/atamag-6yeey-webfont.woff2");
+  font-family: "Atamag";
+  }
+
+body{
+  font-family: "Futura";
+  background-color: #FFE1D6;
+}
+input{
+  font-family: "Futura";
+}
+
+h1{
+  font-family:'Pusab';
+  font-size:72px;
+  color: #FFE1D6;
+  margin-bottom: 0;
+  padding-bottom: 20px;
+  letter-spacing: 3px;
+}
+.todo-container{
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  margin-left:auto;
+  margin-right:auto;
+}
+.todo-input {
+  display: flex;
+  flex-direction: column;
+}
+.todo-item{
+  width:500px;
+  display:flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+  background-color: #F67280;
+  padding:15px;
+  border-radius: 5px;
+  font-size:21px;
+  margin-bottom:10px;
+  margin-top:10px;
+}
+header {
+  background-color: #85A392;
+  width:100vw;
+  padding-bottom:25px;
+  
+}
+.header-content {
+  max-width:500px;
+  margin-right:auto;
+  margin-left:auto;
+  text-align:center;
+}
+.todo-time{
+  color:#FFE1D6;
+}
+input.todo-input-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:100%;
+  height:60px;
+  border-radius: 5px;
+  font-size:21px;
+  border:none;
+  outline: none;
+  
+  background-color:#FFFBEF;
+  padding-left:10px;
+}
+.todo-description{
+  color:rgb(82, 65, 94);
+}
+::placeholder{
+  background-color:#FFFBEF;
+}
+.todo-submit-button {
+  background: transparent;
+  border: none;
+  height:40px;
+  width:150px;
+  margin-top:20px;
+  border-radius: 5px;
+  color:#FFE1D6;
+  font-size:16px;
+  font-weight:400;
+  outline: none;
+  transition: all 0.3s ease;
+}
+.todo-submit-button:hover{
+  color:#6C567B;
+  font-size:21px;
+  font-weight:700;
+}
+footer {
+  background-color: #85A392;
+  width:100vw;
+  text-align: center;
+  position:fixed;
+  top:600px;
+  height:20%;
+}
+.todo{
+  height:1500px;
+  overflow-y: scroll;
+}
+.todo-summary {
+  color:#6C567B;
+  font-family:'Pusab';
+  letter-spacing: 2px;
+  font-size:21px;
+}
+.remove-all-todo{
+  font-size:21px;
+  transition: all 0.3s ease;
+  color:#FFE1D6;
+  
+}
+.remove-all-todo:hover{
+  color:#6C567B;
+  font-size:24px;
+  font-weight:bold;
+}
+
+@media (max-width: 375px){
+  .todo-item{
+    width:300px;
+
+  }
+  footer {
+    top:675px;
+  }
+  input.todo-input-text {
+    text-align: center;
+    max-width:80%;
+    margin-left: auto;
+    margin-right:auto;
+  }
+  .todo-submit-button{
+    font-size: 24px;
+    margin-bottom:20px;
+  }
+  .remove-all-todo:hover{
+    font-size:28px;
+  }
+}

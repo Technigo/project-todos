@@ -8,6 +8,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   const [checked, setChecked] = useState(false)
 
   const handleOnChange = (event) => {
+    onChangeHandler()
     setChecked(event.target.checked)
   }
 
@@ -24,10 +25,8 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     width:1px;
   `
   const Circle = styled.svg`
- 
-`
-
-  const StyledCheckbox = styled.div`
+ `
+const StyledCheckbox = styled.div`
     display: inline-block;
     width: 32px;
     height: 32px;
@@ -49,7 +48,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
       <HiddenCheckbox checked={checked} {...props}></HiddenCheckbox>
       <StyledCheckbox checked={checked}>
         <Circle viewBox='0 0 24 24'>
-          <circle cx='12' cy='12' r='6' stroke='#F67280' fill='#6C567B'></circle>
+          <circle cx='12' cy='12' r='6' stroke='none' fill='#6C567B'></circle>
         </Circle>
       </StyledCheckbox>
 
@@ -58,9 +57,9 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
 
   return (
     <div>
-      <label>
+      
         <Checkbox checked={checked} onChange={handleOnChange}></Checkbox>
-      </label>
+      
 
     </div>
   )

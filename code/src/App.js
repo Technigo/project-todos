@@ -7,6 +7,7 @@ import { TodoList } from './components/TodoList'
 import { TodoSummary } from './components/TodoSummary'
 import { RemoveAllButton } from './components/RemoveAllButton'
 import { CustomCheckbox } from 'components/CustomCheckbox'
+import 'todo.css' 
 
 const reducer = combineReducers({ todoStore: todoStore.reducer })
 // const store = configureStore({ reducer })
@@ -35,11 +36,11 @@ export const App = () => {
   return (
     //the provider makes it possible to use the useSelector
     <Provider store = {store}>
-      {/* <main>
+      <main>
+        
         <TodoList />
-       <RemoveAllButton /> 
-      </main> */}
-      <CustomCheckbox />
+       
+      </main>
     </Provider>
   )
 }

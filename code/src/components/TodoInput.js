@@ -8,7 +8,7 @@ export const TodoInput = () => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault()
-    
+
     //This is where I will dispatch my action to save the todo to the store
     dispatch(
       todoStore.actions.addTodo({
@@ -24,21 +24,27 @@ export const TodoInput = () => {
 
 
   return (
-    <form
-      className='todo-input-form'
-      onSubmit={handleOnSubmit}>
-      <input
-        type='text'
-        onChange={e => setTodoInputValue(e.target.value)}
-        placeholder='type todo here...'
-        value={todoInputValue}
-        className='todo-input-text' 
-        required/>
-      <input
-        type='submit'
-        value='Add todo'
-        className='todo-submit-button'>
-      </input>
-    </form>
+    <header>
+      <div className="header-content">
+        <form
+          className='todo-input-form'
+          onSubmit={handleOnSubmit}>
+          <input
+            type='text'
+            onChange={e => setTodoInputValue(e.target.value)}
+            placeholder ='type todo here...'
+            value={todoInputValue}
+            className='todo-input-text'
+            required />
+          <input
+            type='submit'
+            value='Add todo'
+            className='todo-submit-button'>
+          </input>
+
+        </form>
+      </div>
+    </header>
+
   )
 }
