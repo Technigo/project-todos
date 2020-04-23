@@ -8,7 +8,7 @@ import { InputText } from 'lib/Text'
 export const TodoInput = () => {
   const dispatch = useDispatch()
 
-const [inputValue, setInputValue] = useState("")
+const [inputValue, setInputValue] = useState('')
 
 const handleOnSubmit = (e) => {
   e.preventDefault()
@@ -20,20 +20,20 @@ const handleOnSubmit = (e) => {
     })
   )
 
-  setInputValue("")
+  setInputValue('')
 }
   
 return (
  <Form onSubmit={handleOnSubmit}>
     <InputText
-    type="text"
+    type='text'
     onChange={e => setInputValue(e.target.value)}
     value={inputValue}
     required
     ></InputText>
     <AddTodo
-    type="submit"
-    value="+"
+    type='submit'
+    value='+'
     ></AddTodo>
   </Form>
   )

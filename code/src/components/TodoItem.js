@@ -1,9 +1,10 @@
-import React from "react"
-import { useDispatch, useSelector } from "react-redux"
-import { todos } from "../reducers/todos.js"
+import React from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { todos } from '../reducers/todos.js'
+
 import { Button } from 'lib/Button'
 import { ItemDescription } from 'lib/Text'
-import { CheckSection } from "lib/Container.js"
+import { CheckSection } from 'lib/Container.js'
 
 export const TodoItem = ({ itemIndex }) => {
 const item = useSelector(store => store.todos.list.items[itemIndex])
@@ -28,12 +29,12 @@ const handleOnChange = event => {
 }
 
 return ( 
- <CheckSection className={`todo-item ${item.done ? "done" : ""}`}>
+ <CheckSection className={`todo-item ${item.done ? 'done' : ''}`}>
     <input 
-    type="checkbox"
+    type='checkbox'
     onChange={handleOnChange}
-    className="todo-item-check"
-    checked={item.done ? "checked" : ""}
+    className='todo-item-check'
+    checked={item.done ? 'checked' : ''}
     ></input>
     <ItemDescription>{item.description}</ItemDescription>
     <Button onClick={onClearClicked}>
