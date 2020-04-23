@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { AddItem } from 'components/AddItem'
-import { ItemData } from 'components/ItemData'
+import { Summary } from 'components/Summary'
 import { ItemsList } from 'components/ItemsList'
 import { EmptyState } from 'components/EmptyState'
 
@@ -15,7 +15,7 @@ export const MainContent = () => {
 
       {itemExists &&
         <>
-          <ItemData />
+          <Summary />
           <ItemsList />
         </>
       }
