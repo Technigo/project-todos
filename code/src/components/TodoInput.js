@@ -6,9 +6,9 @@ export const TodoInput = () => {
   const dispatch = useDispatch()
   const [todoInputValue, setTodoInputValue] = useState('')
 
-  const handleOnSubmit = (e) => {
-    e.preventDefault()
-    console.log(todoInputValue)
+  const handleOnSubmit = (event) => {
+    event.preventDefault()
+    
     //This is where I will dispatch my action to save the todo to the store
     dispatch(
       todoStore.actions.addTodo({
@@ -32,7 +32,8 @@ export const TodoInput = () => {
         onChange={e => setTodoInputValue(e.target.value)}
         placeholder='type todo here...'
         value={todoInputValue}
-        className='todo-input-text' />
+        className='todo-input-text' 
+        required/>
       <input
         type='submit'
         value='Add todo'

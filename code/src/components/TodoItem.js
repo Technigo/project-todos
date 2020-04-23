@@ -7,10 +7,17 @@ import './todo.css'
 export const TodoItem = ({itemIndex}) => {
 const item = useSelector(store => store.todoStore.list.items[itemIndex])
 const dispatch = useDispatch()
+
 const removeOnClick = event => {
-  
+  event.preventDefault()
+  dispatch(
+    todoStore.actions.removeItem({
+      itemIndex: itemIndex,
+  }) 
+  )
 }
 const handleOnChange = event => {
+  event.preventDefault()
   dispatch(
     todoStore.actions.setDone({
   //here comes the payload...
@@ -19,6 +26,7 @@ const handleOnChange = event => {
     })
     )
   }
+  
 
 return (
 <div className={`todo-item ${item.done ? "done" : ""}`}>

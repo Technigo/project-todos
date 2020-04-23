@@ -35,10 +35,19 @@ export const todoStore = createSlice( {
       state.list.items.push(itemInfo)
     //this is where we push the payload into the store (updating the store) itemInfo = payload
     },
+   
     setDone: (state, action) => {
       const {itemIndex, done} = action.payload
       state.list.items[itemIndex].done = done
       //itemIndex corresponds to the list item that we've clicked and we change the state of done
+    },
+    removeItem: (state, action) => {
+      //itemIndex is the one we click on
+      const {itemIndex} = action.payload
+      state.list.items = state.list.items.filter((item, index) => index !== itemIndex)
+    },
+    removeAllItems: (state)=> {
+      state.list.items = []
     }
     //removeTodo
     //setDone
