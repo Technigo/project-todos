@@ -1,10 +1,10 @@
-import { createSlice } from "@reduxjs/toolkit"
+import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   list: {
-    name:"List",
+    name:'List',
     items: [  {
-      description: "Do something nice",
+      description: 'Do something nice',
       done: false
     }]
   }

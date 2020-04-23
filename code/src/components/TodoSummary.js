@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { Button } from 'lib/Button'
+import { ClearButton } from 'lib/Button'
 import { SummaryContainer } from 'lib/Container'
 import { todos } from '../reducers/todos'
 
@@ -14,10 +14,11 @@ const handleClick = () => {
 
   return (
   <SummaryContainer >
+    <><h2>Add new things to do</h2></>
       <h2>
         {numDone}/{list.items.length} done
       </h2>
-      <Button onClick={handleClick}>Clear all</Button>
+      <ClearButton onClick={handleClick}>Clear all</ClearButton>
   </SummaryContainer>
   )
 };

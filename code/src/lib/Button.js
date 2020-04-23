@@ -15,6 +15,22 @@ export const Button = styled.button`
   }
 `
 
+export const ClearButton = styled.button`
+  padding: 8px;
+  margin: 16px;
+  background: ${(props) => props.background || '#9999ff'};
+  cursor: pointer;
+  border: none;
+  font-size: 14px;
+  border-radius: 50px;
+  color: #ffffff;
+  position:relative;
+  &:hover {
+    transform: scale(1.1);
+    background: ${(props) => props.background || '#6F6FE6'};
+  }
+`
+
 export const AddTodo = styled.input `
   padding: 8px;
   font-size: 45px;
