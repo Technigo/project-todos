@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux"
 import { todos } from "../reducers/todos"
 import styled from 'styled-components'
 import { Button } from '../lib/Button'
+import { TodoRemoveall } from "./TodoRemoveall"
+import moment from 'moment';
 
 export const TodoInput = ({ listId }) => {
     const dispatch = useDispatch();
@@ -29,10 +31,14 @@ export const TodoInput = ({ listId }) => {
             type="text"
             onChange={e => setInputValue(e.target.value)}
             value={inputValue}
-            className="todo-input-text"
             />
+            <Button
+            disabled={inputValue === ""}
+            >Add todo</Button>
 
-            <Button>Add todo</Button>
+            <Section >
+              <TodoRemoveall /> 
+            </ Section >
         
         </Form>
 
@@ -52,4 +58,11 @@ const Input = styled.input `
     width: 250px;
     border: none;
     border-bottom: 1px solid black;
+`
+
+const Section = styled.section `
+    margin-top: 10px;
+    margin-right: 15px;
+    text-align: right;
+ 
 `

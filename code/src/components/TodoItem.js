@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { todos } from "../reducers/todos.js"
 import { CustomCheckbox } from "lib/CustomCheckbox.js";
 import styled from 'styled-components'
+import { Button } from '../lib/Button'
 
 
 export const TodoItem = ({ itemIndex }) => {
@@ -41,13 +42,14 @@ export const TodoItem = ({ itemIndex }) => {
             onChangeHandler={handleOnChange}
             /> 
             <Itemtext>{item.description}</Itemtext>
+  
+
+            <Button
+                onClick={onRemoveClicked}
+            >
+            remove
+            </Button>
             </Item>
-           
-     
-         
-            <a href="/#"  className="todo-remove" onClick={onRemoveClicked}>
-                [remove]
-            </a>
 
         </ItemArea>
 
@@ -63,14 +65,16 @@ const ItemArea = styled.div `
 
 const Item = styled.div `
      display: flex;
-     justify-content: center;
+     justify-content: left;
      margin-top: 20px;
-     width: 30%px;
+     margin-left: 20px;
+     width: 30%;
 
 `
 
 const Itemtext = styled.text`
     padding-left: 10px;
+    padding-right: 10px;
 
 `
 

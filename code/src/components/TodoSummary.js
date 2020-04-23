@@ -1,5 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
+import styled from 'styled-components'
 
 export const TodoSummary = () => {
 
@@ -8,11 +9,11 @@ export const TodoSummary = () => {
     const numDone = list.items.filter(item => item.done).length;
 
     return (
-        <section className="todo-task-done">
+        <section>
 
-            <h2>
+            <Title>
                 {numDone}/{list.items.length} tasks done
-            </h2>
+            </Title>
 
 
         </section>
@@ -20,3 +21,10 @@ export const TodoSummary = () => {
 
 }
 
+
+const Title = styled.h2`
+    margin-left: 16px;
+    text-align: left;
+    font-size: 15px;
+    font-family: "Courier New", Courier, monospace;
+`

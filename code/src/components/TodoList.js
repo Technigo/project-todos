@@ -4,7 +4,7 @@ import { useSelector } from "react-redux"
 import { Title } from "../Header/Title"
 import { TodoItem } from "./TodoItem.js"
 import { TodoInput } from "./TodoInput.js"
-import { TodoRemoveall } from "./TodoRemoveall"
+
 
 import styled from 'styled-components'
 import img from '../assets/water.jpg'
@@ -27,11 +27,9 @@ export const TodoList = () => {
             {list.items.map((item, index) => (
                 <TodoItem key={item} item={item} itemIndex={index} />
             ))}
-
-            <TodoRemoveall /> 
         
         </ArticleWrapper>
-      
+    
         </Article>
 
 
@@ -59,6 +57,7 @@ const ArticleWrapper = styled.div `
      box-shadow: 10px 10px;
      
 `
+
 
 
 

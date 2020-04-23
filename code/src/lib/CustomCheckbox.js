@@ -42,6 +42,8 @@ export const CustomCheckbox = ({isChecked, onChangeHandler}) => {
             visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
        }
 
+       text-decoration: line-through;
+
      `;
 
     const CheckboxContainer = styled.div`
