@@ -7,7 +7,6 @@ export const TodoInput = ({ listId }) => {
   const dispatch = useDispatch()
   const [inputValue, setInputValue] = useState('')
 
-
   const handleOnSubmit = (e) => {
     e.preventDefault()
 
@@ -34,7 +33,7 @@ export const TodoInput = ({ listId }) => {
       <input
         type='text'
         onChange={e => setInputValue(e.target.value)}
-        value={inputValue} // här är variabeln som uppdaterar i onChange
+        value={inputValue}
         className='todo-input-text'
         placeholder='Drink another coffee..'>
       </input>

@@ -39,7 +39,13 @@ export const todos = createSlice({
     },
 
     removeAll: (state) => {
-      state.list.items = [];
+      state.list.items = []
+    },
+
+    removeDone: (state) => {
+      state.list.items = state.list.items.filter((item) => {
+        return item.done === false
+      })
     },
 
   }

@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import { RemoveAll } from 'components/RemoveAll'
+import { RemoveDone } from 'components/RemoveDone'
 
 export const TodoSummary = () => {
 
@@ -14,6 +15,7 @@ export const TodoSummary = () => {
         {numDone} OUT OF {list.items.length} DONE
       </h2>
       <RemoveAll />
+      <RemoveDone />
     </section>
   )
 }

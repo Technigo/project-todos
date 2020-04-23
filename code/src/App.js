@@ -6,22 +6,6 @@ import { createStore, combineReducers } from '@reduxjs/toolkit'
 import { todos } from 'reducers/todos'
 import { TodoSummary } from 'components/TodoSummary'
 
-// const initialState = {
-//   list: {
-//     name: 'Test list',
-//     items: [
-//       {
-//         description: 'Drink coffee',
-//         done: false
-//       },
-//       {
-//         description: 'Take a walk',
-//         done: false
-//       }
-//     ]
-//   }
-// }
-
 const saveToLocalStorage = (state) => {
   try {
     const serializedState = JSON.stringify(state)
@@ -42,12 +26,6 @@ const loadFromLocalStorage = () => {
   }
 }
 
-
-// let state = loadFromLocalStorage()
-// if (!state || state.list.items.length === 0) {
-//   state = initialState;
-// }
-
 const reducer = combineReducers({ todos: todos.reducer })
 
 const persistedState = loadFromLocalStorage()
@@ -55,7 +33,6 @@ const persistedState = loadFromLocalStorage()
 const store = createStore(
   reducer,
   persistedState,
-  // initialState
 )
 
 store.subscribe(() => saveToLocalStorage(store.getState()))
