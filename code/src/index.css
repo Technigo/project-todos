@@ -9,8 +9,7 @@ body {
 #root {
   display: flex;
   justify-content: center;
-  height: -webkit-fill-available;
-  max-height: auto;
+  height: 100vh;
   width: 100vw;
   background-color: #add8e621;
 }
