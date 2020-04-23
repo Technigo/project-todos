@@ -14,8 +14,8 @@ export const TaskList = () => {
       {list.items.map((item, index) => (
         <TaskItem key={index} item={item} itemIndex={index} />
       ))}
-      <TaskSummary />
       <ClearButton />
+      <TaskSummary />
     </div>
   )
 }

@@ -3,12 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { tasks } from '../reducers/tasks'
 import moment from 'moment';
 
-
-
 /*tasks.actions.addTask({
   listId: listId,
   itemInfo: { text: inputValue, complete: false, category, dueDate }*/
-
 
 export const TaskItem = ({ startDate, itemIndex }) => {
   const item = useSelector((store) => store.tasks.list.items[itemIndex]);
@@ -33,18 +30,21 @@ export const TaskItem = ({ startDate, itemIndex }) => {
   };
 
   return (
-    <div className="taskItem">
+    <section className="taskItem">
+      <div className="taskSection">
+        <span className="category" >{item.category}: </span>
+        <span className="task-item-text">{item.text}</span>
+      </div>
       <input
         type="checkbox"
         onChange={handleOnChange}
         className='task-item-check'
         checked={item.complete ? "checked" : ""}
       ></input>
-      <span className="category" >{item.category}: </span>
-      <span className="task-item-text">{item.text}</span>
-      <span className="dates">Added: {moment(startDate).format('MMM Do YYYY')}</span>
-      {item.dueDate && <span> -> Due: {moment(item.dueDate).format('MMM Do YYYY')}</span>}
-      <button onClick={onRemoveClicked}>X</button>
-    </div>
+      <div className="dateSection">ADDED:
+        <span className="datePicker"> {moment(startDate).format('MMM Do YYYY')}</span>
+        DUE: {item.dueDate && <span className="datePicker"> {moment(item.dueDate).format('MMM Do YYYY')}</span>}
+      </div> <button className="deleteButton" onClick={onRemoveClicked}>X</button>
+    </section >
   );
 };  

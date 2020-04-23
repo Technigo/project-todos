@@ -13,11 +13,22 @@ code {
 }
 
 body {
-  background-color: rgb(247, 206, 189);
+  background-color: rgb(255, 223, 203);
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 50px;
+}
+
+h3 {
+  font-weight: 100;
+  font-size: 30px;
+  margin-top: 25px;
+}
+
+h6 {
+  margin-bottom: 0;
+  font-size: 10px;
 }
 
 .todoscreen {
@@ -26,64 +37,142 @@ body {
   align-items: center;
   background-color: white;
   border-radius: 10px;
-  width: 300px;
-  height: 600px;
-  box-shadow: 4px 4px 11px 4px rgb(242, 199, 176);
-  padding: 20px;
+  width: 340px;
+  height: 100%;
+  box-shadow: 4px 4px 11px 4px rgb(216, 143, 126);
   font-weight: 300;
-  padding-top: 11px;
+  padding-top: 10px;
 }
 
-.containerInput {
-  background-color: pink;
+.taskList {
+  width: 75%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.taskInput {
+  margin-top: 0px;
+  background-color: rgb(255, 167, 147);
   border-radius: 5px;
-  width: 98%;
   margin-bottom: 10px;
-  padding: 20px;
-}
-
-.task-input {
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-bottom: 5px;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: space-between;
   justify-content: space-between;
 }
 
 .task-input-text {
-  font-size: 10px;
-  width: 100%;
-  padding: 8px;
+  font-size: 12px;
+  width: 90%;
+  padding-left: 8px;
   border-radius: 5px;
   background-color: white;
-  font-weight: 400;
-  outline: none;
+  font-weight: 300;
   border: none;
   color: black;
+  margin-bottom: 10px;
+  margin-right: 20px;
+  height: 35px;
 }
 
-
-.clearButton {
+.catDate {
   display: flex;
-  flex-direction: column;
-  align-self: center;
-  background-color: white;
-  border: none;
-  box-shadow: 1px 1px 2px 2px rgb(237, 237, 237);
-  margin-top: 10px;
-  padding: 5px 10px;
+  flex-direction: row;
+
+}
+
+label {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: white;
+  font-weight: 500;
+
+}
+
+.categoryPickerContainer {
+  display: flex;
+  flex-direction: row;
+
 }
 
 .selectCat {
   height: 35px;
-  background: lightgreen;
-  color: gray;
-  padding-left: 5px;
-  font-size: 14px;
+  color: white;
   border: none;
-  margin-left: 10px;
+  font-size: 10px;
+  background-color: rgb(255, 167, 147);
+  border: 1px solid rgb(114, 125, 133);
+  font-weight: 700;
+  width: 110px;
+  height: 29px;
+  margin-right: 10px;
+  border-radius: 0;
+  padding-left: 22px;
+  border-radius: 0;
+}
+
+.selectCat:hover {
+  text-decoration: underline;
+  background: rgb(5, 52, 89);
+  color: white;
+  text-decoration: none;
+}
+
+.datePickerContainer {
+  display: flex;
+  width: 110%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.datePicker {
+  width: 100px;
+  margin-right: 90px;
+  font-size: 8px;
+  font-weight: 600;
+}
+
+.addButtonContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.addButton {
+  font-size: 10px;
+  border: none;
+  background: rgb(5, 52, 89);
+  width: 260px;
+  font-weight: 700;
+  color: white;
+  padding-left: 7px;
+  margin-right: 20px;
+  height: 35px;
+  margin-bottom: 10px;
+}
+
+.addButton:hover {
+  text-decoration: underline;
+  background: rgb(255, 76, 36);
+  color: white;
+  text-decoration: none;
+}
+
+.deleteButton {
+  font-size: 10px;
+  border: none;
+  border-radius: 30px;
+  background: rgb(255, 167, 147);
+  width: 25px;
+  height: 25px;
+  font-weight: 900;
+  color: white;
+  margin-right: 5px;
 }
 
 /*option {
@@ -95,68 +184,78 @@ body {
   padding: 0px 2px 1px;
 }*/
 
-.addButton {
-  padding: 12px 33px;
-  margin: 6px 22px;
-  font-size: 10px;
-  border: none;
-  border-radius: 3px;
-  color: red;
-  background: white;
-  width: 30px;
+.taskItem {
+  background-color: white;
+  margin-top: 15px;
+  border-radius: 5px;
+  width: 100%;
+  height: 50px;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 2px 2px 5px 2px rgb(237, 237, 237);
 }
 
-/*  &:hover {
-    background: black;
-    color: white; */
-
-.taskList {
+.taskSection {
+  height: 80%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
+  width: 140px;
+  padding-top: 4px;
+}
 
+.category {
+  text-transform: uppercase;
+  font-size: 8px;
+  font-weight: 700;
+}
+
+.task-item-text {
+  font-size: 12px;
+  font-weight: 500px;
+}
+
+.dateSection {
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: space-between;
+  margin-left: 10px;
+  width: 65px;
+  padding-top: 4px;
+  padding-left: 6px;
+  font-size: 7px;
+  border-left: 0.5px solid rgb(255, 167, 147);
+  font-weight: 400;
 }
 
 h2 {
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   margin: 6px 10px;
-  width: 120px;
+  width: 2000px;
   height: 30px;
-  background-color: rgb(213, 213, 213);
   padding-top: 10px;
+  font-weight: 200;
+  color: black;
+  margin-bottom: 40px;
 }
 
-.taskItem {
-  background-color: rgb(237, 211, 192);
-  margin: 5px;
-  border-radius: 5px;
-  width: 95%;
-  height: 50px;
-  padding: 5px;
-  padding-left: 25px;
-  padding-right: 25px;
+.clearButton {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.datePicker {
-  background-color: rgb(209, 179, 179);
-}
-
-.category {
-  text-transform: uppercase;
+  flex-direction: column;
+  background-color: rgb(5, 52, 89);
+  border: none;
+  box-shadow: 1px 1px 2px 2px rgb(237, 237, 237);
+  margin-top: 40px;
+  padding: 9px 50px;
+  color: white;
+  margin-bottom: 10px;
+  font-weight: 600;
   font-size: 10px;
-}
-
-.dates {
-  font-size: 7px;
-}
-
-h3 {
-  font-weight: 100;
-  font-size: 30px;
 }

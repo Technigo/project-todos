@@ -2,13 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components'
 
-/*const Summarysection = styled.div`
-  margin: 8px 16px;
-  width: 200px;
-  height: 100px;
-  background-color: #d0f2dc;
-`
-*/
+
 
 
 export const TaskSummary = () => {
@@ -19,7 +13,7 @@ export const TaskSummary = () => {
   return (
     <section className="taskSummary">
       <h2>
-        {numDone}/{list.items.length} tasks done
+        {numDone}/{list.items.length} TASKS DONE
       </h2>
     </section>
   )
