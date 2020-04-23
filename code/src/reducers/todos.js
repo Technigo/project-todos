@@ -8,8 +8,6 @@ const initialState = {
 }
 
 
-
-
 export const todos = createSlice({
   name: 'todos',
   initialState: initialState,

@@ -21,12 +21,15 @@ export const Home = () => {
         <div className='header'>
           <ShowDate />
           <TodoSummery />
-          <TodoInput />
+          <div className='input-remove'>
+            <TodoInput />
+            <RemoveButton />
+          </div>
         </div>
         <div className='todo-list-wrapper'>
           <TodoList />
         </div>
-        <RemoveButton />
+
       </main>
     </Provider>
   )
