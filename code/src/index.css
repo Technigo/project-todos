@@ -87,11 +87,15 @@ width: 100%;
 }
 
 .todo-item-check {
-margin: 10px
+margin: 10px;
+cursor: pointer;
 }
 
 .todo-item-remove {
 padding: 10px;
+border: none;
+background-color: transparent;
+cursor: pointer;
 }
 
 .todo-summary {
