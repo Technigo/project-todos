@@ -36,7 +36,7 @@ export const TodoInput = ({ listId }) => {
         onChange={e => setInputValue(e.target.value)}
         value={inputValue} // här är variabeln som uppdaterar i onChange
         className='todo-input-text'
-        placeholder='Drink another coffee'>
+        placeholder='Drink another coffee..'>
       </input>
       <input
         type='submit'
