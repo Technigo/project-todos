@@ -3,12 +3,9 @@ import { useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
 import { InputForm, TextInput, PostButton } from '../lib/InputForm'
 
-
-
 export const AddCategory = () => {
     const [newCategory, setNewCategory] = useState()
     const dispatch = useDispatch()
-
     const handleSubmit = (event) => {
         event.preventDefault()
         dispatch(

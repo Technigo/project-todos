@@ -14,7 +14,7 @@ const FolderContainer = styled.div`
   width: 100%;
   border-bottom: 3px solid #f0f0f0;
   padding: 16px;  
-   display: flex;
+  display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: ${(props) => props.backgroundColor};
@@ -22,13 +22,13 @@ const FolderContainer = styled.div`
   color: #a3a3a3;
   transition: all 1s ease-in-out;
   &:hover {
-      background-color: papayawhip;
+    background-color: papayawhip;
   }
 `
 
 const LeftSideContainer = styled.div`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 `
 
 const FolderButton = styled.button`
@@ -41,21 +41,21 @@ const FolderButton = styled.button`
   cursor: pointer;
   text-align: left;
   @media (min-width: 1024px) {
-      font-size: 20px;
+    ont-size: 20px;
   }
 `
 
 const ButtonText = styled.span`
   width: 100px;
   @media (min-width: 660px) {
-      width: 250px;
+    width: 250px;
   }
 `
 
 const Image = styled.img`
-height: 20px;
-width: 20px;
-margin-right: 8px;
+  height: 20px;
+  width: 20px;
+  margin-right: 8px;
 `
 
 const Dot = styled.div`
@@ -65,32 +65,32 @@ const Dot = styled.div`
   width: 10px;
 `
 const Dropdown = styled.select`
-background: transparent;
-    margin: 0;
-    line-height: 1;
-    border: 0;
-    padding: 0;
-    border-radius: 0;
-    width: 130%;
-    z-index: 10;
-    font-size: 13px;
-    color: black;
+  background: transparent;
+  margin: 0;
+  line-height: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 130%;
+  z-index: 10;
+  font-size: 13px;
+  color: black;
 `
 const DropdownContainer = styled.div`
-display: block;
-font-size: 13px;
+  display: block;
+  font-size: 13px;
   padding: 8px 14px 8px 5px;
   background: transparent;
   border: 1px solid #ccc;
   border-radius: 6px;
   overflow-x: hidden;
-   background-image: url(${img});
-   background-repeat: no-repeat;
-   background-size: 15px;
-   background-position: 95% center;
-   margin-left: 8px;
-   @media (min-width: 660px) {
-       background-size: 20px;
+  background-image: url(${img});
+  background-repeat: no-repeat;
+  background-size: 15px;
+  background-position: 95% center; 
+  margin-left: 8px;
+  @media (min-width: 660px) {
+     background-size: 20px;
    }
 `
 export const CategoryMap = () => {

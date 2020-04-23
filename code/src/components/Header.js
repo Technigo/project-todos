@@ -13,9 +13,9 @@ const HeaderContainer = styled.div`
 `
 
 const Title = styled.h1`
-margin: 0;
-font-size: 20px;
-padding-bottom: 5px;
+  margin: 0;
+  font-size: 20px;
+  padding-bottom: 5px;
 `
 
 const DateText = styled.p`
@@ -24,15 +24,15 @@ const DateText = styled.p`
 `
 
 const TaskText = styled.p`
-margin: 0;
-font-size: ${(props) => props.fontSize}
+  margin: 0;
+  font-size: ${(props) => props.fontSize}
 `
 
 const ClearButton = styled.button`
-color: white;
-border-radius: 5px;
-background-color: #6979f8;
-margin-top: 5px;
+  color: white;
+  border-radius: 5px;
+  background-color: #6979f8;
+  margin-top: 5px;
 `
 
 

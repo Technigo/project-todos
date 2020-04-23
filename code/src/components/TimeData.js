@@ -50,9 +50,13 @@ export const TimeData = ({ ...item }) => {
 
     return (
         <>
-            <TimeStamp>posted <Moment fromNow>{new Date(item.created)}</Moment></TimeStamp>
+            <TimeStamp>posted
+                <Moment fromNow>{new Date(item.created)}</Moment>
+            </TimeStamp>
             {item.dueDate && !item.done &&
-                <TimeStamp style={{ color: timeLeftColor(item) }}>{checkTimeLeft(item)}</TimeStamp>
+                <TimeStamp style={{ color: timeLeftColor(item) }}>
+                    {checkTimeLeft(item)}
+                </TimeStamp>
             }
         </>
     )
