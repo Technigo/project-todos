@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { todo } from "../reducers/todo"
 
 const FilterSection = styled.section`
@@ -31,20 +31,8 @@ const A = styled.a`
   color: black;
 `
 
-
 export const ShowFilter = () => {
-  const categorys = useSelector((store) => store.todo.todoListItems)
-
-  const [filter, setFilter] = useState('')
   const dispatch = useDispatch()
-  
-  const onDoneClicked = ( ) => {
-    dispatch(
-      todo.actions.filterTodo({
-        // filter: value,
-      })
-    )
-  }
 
   return (
     <FilterSection>
@@ -52,15 +40,6 @@ export const ShowFilter = () => {
       <A work onClick={() => dispatch(todo.actions.filterTodo({filter: 'work',}))}>W</A>
       <A personal onClick={() => dispatch(todo.actions.filterTodo({filter: 'personal',}))}>P</A>
       <A other onClick={() => dispatch(todo.actions.filterTodo({filter: 'other',}))}>O</A>
-      <span>{filter}</span>
     </FilterSection>
   )
 }
-
-
-{/* <form handle dispatch>
-  <button update filter value></button>
-  <button></button>
-  <button></button>
-  <button></button>
-</form> */}
