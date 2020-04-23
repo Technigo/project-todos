@@ -14,4 +14,4 @@ Created a state containing one array of objects, each object are a todo item, st
 
 ## View it live
 
-[Link](url)
+[Link](https://flamboyant-swartz-55a72b.netlify.app/)
