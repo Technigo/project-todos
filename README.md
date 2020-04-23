@@ -1,13 +1,17 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+A todo app built using React Redux.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Approach
 
-## The problem
+By default, the initial state in the store is empty (and the EmptyState component gets mounted). On Redux state change, the state is stored in localstorage & used as the new initial state. Reducers & actions are handling states such as adding items to the list, deleting items, completing items and clear the list. The styles are split up in several files.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Tech
+- Javascript ES6
+- React
+- Redux Toolkit
+- SASS
 
-## View it live
+## Deployed
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://todays.netlify.app/
