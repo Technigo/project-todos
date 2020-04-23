@@ -55,11 +55,10 @@ export const ListItem = () => {
   return (
     <Container>
       {todoItems.map((item, index) => (
-        // Flippy container
         <Flippy
         flipOnHover={true} 
         flipOnClick={false} 
-        flipDirection="horizontal" // horizontal or vertical
+        flipDirection="horizontal"
         >    
           {/* Front side of todo item */}
           <FrontSide
@@ -102,9 +101,6 @@ export const ListItem = () => {
                 <span>
                   Created at {item.startDate}
                 </span>
-                {/* <span>
-                  Due at {item.dueDate}
-                </span> */}
               </InfoSection>
 
               <TodoSection>
@@ -115,7 +111,6 @@ export const ListItem = () => {
 
               <InfoSection>
                 <DeleteItem itemIndex={index} />
-                {/* Create component to display green checkmark if done */}
                 <SetDone itemIndex={index} />
               </InfoSection>
 
