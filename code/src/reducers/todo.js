@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   todoListItems: {
     name: 'Todo list',
+    filter: '',
     items: [
     {
       id: Date.now(),
@@ -70,6 +71,11 @@ export const todo = createSlice({
     doneTodo: ( state, action ) => {
       const { itemIndex, done } = action.payload
       state.todoListItems.items[itemIndex].done = done
+    },
+    // Set Filter
+    filterTodo: ( state, action ) => {
+      const { filter } = action.payload
+      state.todoListItems.filter = filter
     },
     // Toggle done/undone items
     toggleTodo: ( state, action ) => {

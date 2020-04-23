@@ -34,18 +34,6 @@ const TodoItem = styled(Container)`
     main: "mediumseagreen",
   };
 
-  const work = {
-    backgroundColor: "yellow"
-  }
-
-  const personal = {
-    cat: "purple"
-  }
-
-  const other = {
-    cat: "red"
-  }
-
 const InfoSection = styled(Container)`
   flex-direction: row;
   justify-content: space-between;
@@ -58,15 +46,19 @@ const TodoSection = styled(Container)`
 `
 
 export const ListItem = () => {
-  const todo = useSelector((store) => store.todo.todoListItems)
+  const categoryFilter = useSelector((store) => store.todo.todoListItems.filter)
+  const todoItems = useSelector((store) => {
+    if (!categoryFilter) return store.todo.todoListItems.items
+    else return store.todo.todoListItems.items.filter((item) => item.category === categoryFilter)
+  })
 
   return (
     <Container>
-      {todo.items.map((item, index) => (
+      {todoItems.map((item, index) => (
         // Flippy container
         <Flippy
-        flipOnHover={true} // default false
-        flipOnClick={false} // default false
+        flipOnHover={true} 
+        flipOnClick={false} 
         flipDirection="horizontal" // horizontal or vertical
         >    
           {/* Front side of todo item */}
@@ -76,61 +68,59 @@ export const ListItem = () => {
             padding: '0px',
             boxShadow: 'none',
           }}>
-          <TodoItem theme={item.done ? theme : ''}>
-            <InfoSection>
-              <span>
-                Created at {item.startDate}
-              </span>
-              {/* <span>
-                Due at {item.dueDate}
-              </span> */}
-            </InfoSection>
 
-            <TodoSection>
-              <h1>
-                {item.description}
-              </h1>
-            </TodoSection>
+            <TodoItem theme={item.done ? theme : ''}>
+              <InfoSection>
+                <span>
+                  Created at {item.startDate}
+                </span>
+              </InfoSection>
 
-            <InfoSection>
-              <span></span>
-            </InfoSection>
+              <TodoSection>
+                <h1>
+                  {item.description}
+                </h1>
+              </TodoSection>
 
-          </TodoItem>
-        </FrontSide>
+              <InfoSection>
+                <span></span>
+              </InfoSection>
 
-        {/* Back side of todo item */}
-        <BackSide
-        style={{
-        margin: '0px',
-        padding: '0px',
-        left: '8px',
-        boxShadow: 'none',
-        }}>
-          <TodoItem theme={item.done ? theme : ''} backside bg={item.category}>
-            <InfoSection>
-              <span>
-                Created at {item.startDate}
-              </span>
-              {/* <span>
-                Due at {item.dueDate}
-              </span> */}
-            </InfoSection>
+            </TodoItem>
+          </FrontSide>
 
-            <TodoSection>
-              <h1>
-              {item.category}
-              </h1>
-            </TodoSection>
+          {/* Back side of todo item */}
+          <BackSide
+          style={{
+          margin: '0px',
+          padding: '0px',
+          left: '8px',
+          boxShadow: 'none',
+          }}>
+            <TodoItem theme={item.done ? theme : ''} backside bg={item.category}>
+              <InfoSection>
+                <span>
+                  Created at {item.startDate}
+                </span>
+                {/* <span>
+                  Due at {item.dueDate}
+                </span> */}
+              </InfoSection>
 
-            <InfoSection>
-              <DeleteItem itemIndex={index} />
-              {/* Create component to display green checkmark if done */}
-              <SetDone itemIndex={index} />
-            </InfoSection>
+              <TodoSection>
+                <h1>
+                {item.category}
+                </h1>
+              </TodoSection>
 
-          </TodoItem>
-        </BackSide>
+              <InfoSection>
+                <DeleteItem itemIndex={index} />
+                {/* Create component to display green checkmark if done */}
+                <SetDone itemIndex={index} />
+              </InfoSection>
+
+            </TodoItem>
+          </BackSide>
         </Flippy>
       ))}
     </Container>

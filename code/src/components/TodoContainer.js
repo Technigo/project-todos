@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { AddItem } from 'components/AddItem'
 import { ListItem } from 'components/ListItem'
-import { ShowSummery } from 'components/ShowSummery'
+import { SettingsContainer } from 'components/SettingsContainer'
 
 const Container = styled.main`
   display: flex;
@@ -15,10 +15,12 @@ const Container = styled.main`
 
 export const TodoContainer = () => {
   return(
-    <Container>
-      <ShowSummery />
-      <AddItem />
-      <ListItem />
-    </Container>
+    <>
+      <SettingsContainer />
+      <Container>
+        <AddItem />
+        <ListItem />
+      </Container>
+    </>
   )
 }

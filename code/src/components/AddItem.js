@@ -49,7 +49,7 @@ const InputBtn = styled.input`
 export const AddItem = () => {
   const dispatch = useDispatch()
   const [inputValue, setInputValue] = useState('')
-  const [category, setCategory] = useState('Other')
+  const [category, setCategory] = useState('other')
 
   const handleSubmit = e => {
     e.preventDefault()
