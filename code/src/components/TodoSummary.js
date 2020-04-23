@@ -1,7 +1,6 @@
 import React from 'react'
-// import { TodoItem } from 'components/TodoItem'
-// import { TodoInput } from 'components/TodoInput'
 import { useSelector } from 'react-redux'
+import { RemoveAll } from 'components/RemoveAll'
 
 export const TodoSummary = () => {
 
@@ -12,8 +11,9 @@ export const TodoSummary = () => {
   return (
     <section className='todo-summary'>
       <h2>
-        {numDone} out of {list.items.length} tasks finished!
+        {numDone} OUT OF {list.items.length} DONE
       </h2>
+      <RemoveAll />
     </section>
   )
 }

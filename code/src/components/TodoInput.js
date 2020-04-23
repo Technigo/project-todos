@@ -29,19 +29,19 @@ export const TodoInput = ({ listId }) => {
       className='todo-input'
       onSubmit={handleOnSubmit}>
       <h1>
-        What's on your agenda?
+        GET SHIT DONE
       </h1>
       <input
         type='text'
         onChange={e => setInputValue(e.target.value)}
         value={inputValue} // här är variabeln som uppdaterar i onChange
         className='todo-input-text'
-        placeholder='Drink coffee'>
+        placeholder='Drink another coffee'>
       </input>
       <input
         type='submit'
-        className='todo-input-button'
-        value='ADD TO LIST'
+        className='button'
+        value='add to list'
         disabled={inputValue === ''}>
       </input>
     </form>

@@ -2,12 +2,16 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   list: {
-    // name: 'Test list',
+    name: 'Test list',
     items: [
-      // {
-      //   description: '',
-      //   done: false
-      // }
+      {
+        description: 'Drink coffee',
+        done: false
+      },
+      {
+        description: 'Take a walk',
+        done: false
+      }
     ]
   }
 }
@@ -32,7 +36,11 @@ export const todos = createSlice({
       state.list.items = state.list.items.filter((item, index) => {
         return index !== itemIndex
       })
-    }
+    },
+
+    removeAll: (state) => {
+      state.list.items = [];
+    },
 
   }
 })
