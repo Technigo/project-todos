@@ -7,6 +7,7 @@ import { ShowDate } from 'components/ShowDate'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { Provider } from 'react-redux'
 import 'index.css'
+import { RemoveButton } from 'components/RemoveAll'
 
 const reducer = combineReducers({ todos: todos.reducer })
 
@@ -25,7 +26,7 @@ export const Home = () => {
         <div className='todo-list-wrapper'>
           <TodoList />
         </div>
-
+        <RemoveButton />
       </main>
     </Provider>
   )
