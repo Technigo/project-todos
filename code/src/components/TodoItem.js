@@ -1,7 +1,7 @@
 import React from 'react'
 import { todos } from '../reducers/todos.js'
 import { useSelector, useDispatch } from 'react-redux'
-import { TimeStamp } from './TimeStamp'
+// import { TimeStamp } from './TimeStamp'
 import { todoItem } from './todoItem.css'
 import styled from 'styled-components/macro'
 import { CustomCheckbox } from './CustomCheckbox'
@@ -35,17 +35,11 @@ export const TodoItem = ({ itemIndex }) => {
       <CustomCheckbox
         isChecked={item.done ? "checked" : ""}
         onChangeHandler={handleOnChange} />
-      {/* <input
-          type='checkbox'
-          onChange={handleOnChange}
-          className='todo-item-check'
-          checked={item.done ? "checked" : ""}
-        ></input> */}
       <div className={`todo-item ${item.done ? "done" : ""}`}>
         <span className='todo-item-description'>{item.description}</span>
         <button className='todo-item-remove' onClick={onRemoveClicked}>x</button>
       </div>
-      <TimeStamp />
+      {/* <TimeStamp /> */}
     </ItemSection>
   )
 }

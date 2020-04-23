@@ -48,7 +48,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     height: 18px;
     background: ${props => props.checked ? 'salmon' : 'white'};
     border: solid salmon 2px;
-    border-radius: 3px;
+    border-radius: 50px;
     transition: all 150ms;
     ${Icon} {
       visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};

@@ -28,9 +28,11 @@ const TotalTasks = styled.section`
   margin: 5px;
   font-weight: 800;
   text-transform: uppercase;
+  margin-bottom: 10px;
 `
 
 const HeaderSection = styled.section`
   display: flex;
   flex-direction: column;
+  text-align: center;
 `
