@@ -1,13 +1,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import styled, { css } from 'styled-components'
 import { tasks } from '../reducers/tasks'
 import { Button } from '../styledComponents/Button'
 import { DoubleButtons } from '../styledComponents/DoubleButtons'
 import { List } from '../styledComponents/List'
 import { ListItem } from '../styledComponents/ListItem'
 import { CustomCheckbox } from 'components/CustomCheckbox'
-
 
 
 export const Task = ({ itemIndex }) => {

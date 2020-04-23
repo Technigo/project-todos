@@ -1,13 +1,13 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { Header } from '../components/Header'
+import { HeaderToDo } from '../components/HeaderToDo'
 import { ToDoList } from '../components/ToDoList'
 
 export const ToDo = () => {
 
   return (
     <>
-    <Header />
+    <HeaderToDo />
     <Link to="/shopping">Shopping List =></Link>
     <ToDoList />
     </>

@@ -3,15 +3,13 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers, createStore } from '@reduxjs/toolkit'
 import { tasks } from 'reducers/tasks'
-import { shopping } from 'reducers/shopping'
+import { shoppings } from 'reducers/shoppings'
 import { ToDo } from './pages/ToDo'
-import { ShoppingList } from './pages/ShoppingList'
-
-
+import { Shopping } from './pages/Shopping'
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
-  shopping: shopping.reducer
+  shopping: shoppings.reducer
 })
 
 // const store = configureStore({ reducer })
@@ -42,7 +40,7 @@ export const App = () => {
             <ToDo />
           </Route>
           <Route path="/shopping" exact >
-            <ShoppingList />
+            <Shopping />
           </Route>
         </Switch>
       </BrowserRouter>

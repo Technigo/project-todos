@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
-import styled from 'styled-components'
 import { EntryContainer } from '../styledComponents/EntryContainer'
 import { Input } from '../styledComponents/Input'
 import { Button } from '../styledComponents/Button'
-
 
 
 export const AddTask = () => {

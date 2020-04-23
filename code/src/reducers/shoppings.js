@@ -2,29 +2,30 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   list: {
-    name: "ToDo List",
+    name: "Shopping List",
     items: [
       {
-        description: "Add tasks to the to-do list",
-        done: false,
+        description: "Coffee",
+        category: "groceries",
+        cart: false
       }
     ]
   }
 };
 
-export const tasks = createSlice({
-  name: 'tasks',
+export const shoppings = createSlice({
+  name: 'shoppings',
   initialState: initialState,
   reducers: {
-    addTodo: (state, action) => {
+    addShop: (state, action) => {
       const itemInfo = action.payload;
-      state.list.items.push(itemInfo); 
+      state.list.items.push(itemInfo);
     },
-    setDone: (state, action) => {
+    setDoneShoppinig: (state, action) => {
       const { itemIndex, done } = action.payload
       state.list.items[itemIndex].done = done
     },
-    removeTodo: (state, action) => {
+    removeShopping: (state, action) => {
       const { itemIndex } = action.payload
       state.list.items = state.list.items.filter((item, index) => index !== itemIndex)
     }

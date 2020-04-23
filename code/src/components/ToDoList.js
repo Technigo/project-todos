@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
-import styled, { css } from 'styled-components'
 import { Task } from './Task'
 import { AddTask } from './AddTask'
 
@@ -17,14 +16,3 @@ export const ToDoList = () => {
     </div>
   )
 }
-
-const Text = styled.h1`
-  background-color: lightyellow;
-
-  &:hover {
-    color: grey;
-  }
-
-  ${props => props.example && css`
-  background-color: example;`}
-`
