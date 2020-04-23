@@ -11,7 +11,9 @@ export const ShoppingList = () => {
   return (
     <div>
       <AddShopping />
-      <p>Items in a list</p>
+      {list.items.map((item, index) => (
+        <Shop itemIndex={index}></Shop>
+        ))}
     </div>
   )
 }

@@ -18,7 +18,7 @@ export const AddShopping = () => {
     dispatch(
       shoppings.actions.addShop({
         description: newShop,
-        catgory: category,
+        category: category,
         done: false
       })
     );
@@ -28,7 +28,7 @@ export const AddShopping = () => {
   return (
     <EntryContainer onSubmit={handleSubmit}>
       <Input
-        type='text'
+        type='text' required
         placeholder='Add to shopping list'
         value={newShop}
         onChange={(event) => setNewShop(event.target.value)} />
@@ -37,11 +37,11 @@ export const AddShopping = () => {
         onChange={(event) => setCategory(event.target.value)}
       >
         <option value=''>Category</option>
-        <option value='groceries'>Groceries</option>
-        <option value='diaries'>Diaries</option>
-        <option value='bread'>Bread</option>
-        <option value='fruitveg'>Fruit&amp;Veg</option>
-        <option value='other'>Other</option>
+        <option value='Groceries'>Groceries</option>
+        <option value='Diaries'>Diaries</option>
+        <option value='Bread'>Bread</option>
+        <option value='Fruit&amp;Veg'>Fruit&amp;Veg</option>
+        <option value='Other'>Other</option>
       </Dropdown>
       <Button type='submit'>
         Add

@@ -26,7 +26,7 @@ export const AddTask = () => {
   return (
     <EntryContainer onSubmit={handleSubmit}>
       <Input
-        type='text'
+        type='text' required
         placeholder='Add things to do'
         value={newTask}
         onChange={(event) => setNewTask(event.target.value)}

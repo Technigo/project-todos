@@ -5,6 +5,8 @@ import styled from 'styled-components'
 const TaskSummary = styled.h4`
   font-size: 20px;
   margin: 16px;
+  display: flex;
+  justify-content: flex-end;
   `
 
 export const ToDoSummary = () => {

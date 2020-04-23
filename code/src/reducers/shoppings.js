@@ -2,12 +2,12 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   list: {
-    name: "Shopping List",
+    name: "ToDo List",
     items: [
       {
         description: "Coffee",
-        category: "groceries",
-        cart: false
+        category: 'groceries',
+        done: false,
       }
     ]
   }
