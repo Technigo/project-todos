@@ -5,7 +5,7 @@ import { tasks } from '../reducers/tasks'
 import { Button } from '../library/Button'
 import { DoubleButtons } from '../library/DoubleButtons'
 import { ListItem } from '../library/ListItem'
-import { CustomCheckBox } from 'components/CustomCheckBox'
+import { CustomCheckbox } from 'components/CustomCheckbox'
 
 
 
@@ -30,15 +30,10 @@ export const Task = ({ itemIndex }) => {
     <ListItem>
       <span>{item.description}</span>
       <DoubleButtons>
-        <CustomCheckBox 
+        <CustomCheckbox 
           isChecked={item.done ? 'checked' : ''} 
           onChangeHandler={handleOnChange}
         />
-      <input
-        type="checkbox"
-        onChange={handleOnChange}
-        checked={item.done ? 'checked' : ''}
-      ></input>
       <Button onClick={onRemoveClicked}>
         Remove
       </Button>

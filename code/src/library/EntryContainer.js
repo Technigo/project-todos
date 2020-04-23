@@ -5,5 +5,4 @@ export const EntryContainer = styled.form`
   flex-direction: row;
   margin: 5%;
   font-size: 20px;
-  justify-content: space-between;
   `

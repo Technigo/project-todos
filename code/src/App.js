@@ -5,7 +5,6 @@ import { tasks } from 'reducers/tasks'
 import { shopping } from 'reducers/shopping'
 import { Header } from 'components/Header'
 import { ToDoList } from 'components/ToDoList'
-import { CustomCheckBox } from 'components/CustomCheckBox'
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
