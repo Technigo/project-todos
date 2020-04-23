@@ -11,7 +11,7 @@ export const TodoInput = () => {
   const dispatch = useDispatch();
 
   const handleOnSubmit = (e) => {
-    //inputValue !== "" removes possibilty to add empty todo
+    //inputValue !== "" removes posibilty to add empty todo
     if (inputValue !== "") {
       e.preventDefault();
       const date = new Date();
@@ -47,11 +47,7 @@ export const TodoInput = () => {
           />
         </DatePickerBackground>
         <PrimaryButton type="submit" value="ADD TODO"></PrimaryButton>
-
-        {/* <Wrapper> */}
       </Form>
-      {/* <Text>Adding a due date is optinal</Text> */}
-      {/* </Wrapper> */}
     </>
   );
 };
@@ -88,20 +84,3 @@ const Form = styled.form`
 const DatePickerBackground = styled.div`
   background: white;
 `;
-
-// const Text = styled.p`
-//   font-family: "Pangolin", cursive;
-//   color: #fff;
-//   font-weight: lighter;
-//   font-size: 20px;
-
-//   margin: 0;
-// `;
-
-// const Wrapper = styled.div`
-//   display: flex;
-
-//   @media (max-width: 668px) {
-//     flex-direction: column;
-//   }
-// `;

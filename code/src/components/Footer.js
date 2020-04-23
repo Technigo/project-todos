@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import img from "../image/purty-wood.png";
 import img from "../image/chalkboard.png";
 import border from "image/wood-bottom.png";
 
