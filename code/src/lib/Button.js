@@ -1,12 +1,12 @@
 import styled from 'styled-components'
 
 export const Button = styled.button`
-  padding: 12px;
-  margin: 6px;
+  padding: 8px;
+  margin-left: 36px;
   background: ${(props) => props.background || '#6F6FE6'};
   cursor: pointer;
   border: none;
-  font-size: 14px;
+  font-size: 12px;
   border-radius: 50px;
   color: #ffffff;
   position:relative;

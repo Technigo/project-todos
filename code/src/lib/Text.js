@@ -9,5 +9,3 @@ export const InputText = styled.input`
 export const ItemDescription = styled.span`
   overflow-wrap: break-word;
 `
-//span className="todo-item-description"
-//
