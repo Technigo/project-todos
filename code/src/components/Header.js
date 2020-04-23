@@ -6,6 +6,7 @@ const HeaderContainer = styled.section`
   display: flex;
   justify-content: space-evenly;
   align-items: flex-end;
+  margin-top: 16px;
 `
 
 const Title = styled.h1`

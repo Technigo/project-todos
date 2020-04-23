@@ -1,10 +1,12 @@
 import React from 'react'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers, createStore } from '@reduxjs/toolkit'
 import { tasks } from 'reducers/tasks'
 import { shopping } from 'reducers/shopping'
-import { Header } from 'components/Header'
-import { ToDoList } from 'components/ToDoList'
+import { ToDo } from './pages/ToDo'
+import { ShoppingList } from './pages/ShoppingList'
+
 
 
 const reducer = combineReducers({
@@ -34,8 +36,16 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store ={store}>
-      <Header />
-      <ToDoList /> 
+      <BrowserRouter>
+        <Switch>
+          <Route path="/" exact >
+            <ToDo />
+          </Route>
+          <Route path="/shopping" exact >
+            <ShoppingList />
+          </Route>
+        </Switch>
+      </BrowserRouter>
     </Provider>
   )
 }
