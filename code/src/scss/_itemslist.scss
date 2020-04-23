@@ -15,6 +15,12 @@
   & + .item {
     margin-top: 1rem;
   }
+
+  &:hover {
+    .remove-btn {
+      transform: translateX(-5px);
+    }
+  }
   
   .item-desc {
     flex: 1 1 auto;
@@ -30,6 +36,7 @@
     background-color: transparent;
     color: $primaryCol;
     font-size: .8rem;
+    transition: all .15s ease-in-out;
   }
 }
 

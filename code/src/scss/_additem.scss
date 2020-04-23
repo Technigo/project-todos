@@ -21,4 +21,9 @@ input[type=text] {
   padding: 0rem 1.2rem;
   border-radius: $borderRadiusSmall;
   font-weight: 700;
+  transition: all .2s ease-in-out;
+
+  &:hover {
+    background-color: darken($primaryCol, 15%);
+  }
 }

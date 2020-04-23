@@ -7,12 +7,14 @@
   margin-right: 1rem;
   cursor: pointer;
 
+  // Hide input tag
   input {
     position: absolute;
     opacity: 0;
     cursor: pointer;
   }
 
+  // Add custom checkbox element
   .checkbox-custom {
     position: absolute;
     top: 0;
@@ -25,6 +27,11 @@
     border-radius: 50%;
     transition: all 0.3s ease-out;
 
+    &:hover {
+      background-color: $primaryCol;
+    }
+
+    // Checkmark
     &::after {
       position: absolute;
       content: '';
@@ -34,36 +41,33 @@
       width: 0;
 
       border: solid #fff;
-      border-width: 0 3px 3px 0;
+      border-width: 0 2px 2px 0;
+      transition: all .3s ease-out;
+
       -webkit-transform: rotate(0deg) scale(0);
       -ms-transform: rotate(0deg) scale(0);
       transform: rotate(0deg) scale(0);
-      opacity: 1;
-      transition: all .3s ease-out;
     }
   }
 
+  // Checkbox is checked
   input:checked ~ .checkbox-custom {
     background-color: $primaryCol;
+
     -webkit-transform: rotate(0deg) scale(1);
     -ms-transform: rotate(0deg) scale(1);
     transform: rotate(0deg) scale(1);
-    opacity: 1;
 
+    // Checkmark
     &::after {
+        top: 2px;
+        left: 7px;
+        height: 10px;
+        width: 5px;
+
         -webkit-transform: rotate(45deg) scale(1);
         -ms-transform: rotate(45deg) scale(1);
         transform: rotate(45deg) scale(1);
-        left: 7px;
-        top: 2px;
-        width: 5px;
-        height: 10px;
-
-        border: solid #fff;
-        border-width: 0 2px 2px 0;
-        background-color: transparent;
-        border-radius: 0;
-        opacity: 1;
       }
   } 
 }
