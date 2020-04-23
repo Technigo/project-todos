@@ -62,16 +62,19 @@ const TaskInputField = styled.input`
   border-left: 3px solid #502F4C;
   border-right: 3px solid #502F4C;
   border-radius: 5px;
-  transition: border-color .5s ease-out;
+  transition: border-color .4s ease-out;
   font-family: 'Segoe UI';
+  &:focus {
+    border-color: #F9F4F5;
+  }
 `
-const SubmitButton = styled.input`
+const SubmitButton = styled.button`
   margin: 0;
   padding: 10px;
   box-sizing: border-box;
   border: none;
   border-radius: 5px;
-  background-color:#502F4C;
+  background-color: #70587C;
   color:#F9F4F5;
   font-family: 'Segoe UI';
   cursor: pointer;

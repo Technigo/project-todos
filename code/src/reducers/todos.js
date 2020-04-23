@@ -5,18 +5,11 @@ const initialState = {
   //hur det ska se ut det vi kör in i storen
   list: {
     //namnet på listan
-    name: 'Test list',
+
     //innehållet, aLLtså tasksen
     items: [
       // varje task är ett object som har en description och en boolean
-      {
-        description: 'Water the plants',
-        done: false
-      },
-      {
-        description: 'Bake a cake',
-        done: false
-      }
+
     ]
   }
 }
