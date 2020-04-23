@@ -7,9 +7,9 @@ import { CustomCheckbox } from 'components/CustomCheckbox'
 const TodoListItem = styled.li`
 list-style: none;
 font-size: 20px;
-`
-const Checkbox = styled.input`
-
+display: flex;
+align-items: center;
+margin-bottom: 10px;
 `
 const ItemText = styled.span`
 margin-left: 10px;
@@ -50,16 +50,15 @@ export const TodoItem = ({ itemIndex }) => {
 
   return (
     <TodoListItem>
-      <CustomCheckbox
-        isChecked={item.done}
-        onChangeHandler={handleOnChange} />
-      {/*   <input
-        type='checkbox'
-        onChange={handleOnChange}
-        checked={item.done ? "checked" : ""}
-      ></input> */}
+      <CustomCheckbox isChecked={item.done} onChangeHandler={handleOnChange} />
       <ItemText>{item.description}</ItemText>
       <RemoveLink onClick={onRemoveClicked}>[Remove]</RemoveLink>
     </TodoListItem>
   )
 }
+
+{/*   <input
+        type='checkbox'
+        onChange={handleOnChange}
+        checked={item.done ? "checked" : ""}
+      ></input> */}
