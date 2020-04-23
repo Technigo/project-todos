@@ -9,7 +9,7 @@ const TaskSummary = styled.h4`
 
 export const ToDoSummary = () => {
   const list = useSelector(store => store.tasks.list)
-  
+
   const tasksDone = list.items.filter(item => item.done).length
 
   return (

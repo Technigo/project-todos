@@ -10,9 +10,9 @@ export const ToDoList = () => {
   return (
     <div>
       <AddTask />
-        {list.items.map((item, index) => (
-          <Task key={index} item={item} itemIndex={index} />
-      ))}     
+      {list.items.map((item, index) => (
+        <Task key={index} item={item} itemIndex={index} />
+      ))}
     </div>
   )
 }

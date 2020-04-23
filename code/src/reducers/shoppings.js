@@ -21,11 +21,11 @@ export const shoppings = createSlice({
       const itemInfo = action.payload;
       state.list.items.push(itemInfo);
     },
-    setDoneShoppinig: (state, action) => {
+    setDoneShop: (state, action) => {
       const { itemIndex, done } = action.payload
       state.list.items[itemIndex].done = done
     },
-    removeShopping: (state, action) => {
+    removeShop: (state, action) => {
       const { itemIndex } = action.payload
       state.list.items = state.list.items.filter((item, index) => index !== itemIndex)
     }

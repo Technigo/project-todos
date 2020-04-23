@@ -30,14 +30,14 @@ export const Task = ({ itemIndex }) => {
       <ListItem isChecked={item.done ? 'checked' : ''}
         onChangeHandler={handleOnChange}>{item.description}</ListItem>
       <DoubleButtons>
-        <CustomCheckbox 
-          isChecked={item.done ? 'checked' : ''} 
+        <CustomCheckbox
+          isChecked={item.done ? 'checked' : ''}
           onChangeHandler={handleOnChange}
         />
-      <Button onClick={onRemoveClicked}>
-        Remove
+        <Button onClick={onRemoveClicked}>
+          Remove
       </Button>
-    </DoubleButtons>
+      </DoubleButtons>
     </List>
   )
 }

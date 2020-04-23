@@ -23,17 +23,17 @@ if (persistedStateJSON) {
 }
 console.log(`persistedState: ${JSON.stringify(persistedState)}`)
 
-const store = createStore( reducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+const store = createStore(reducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
 store.subscribe(() => {
   localStorage.setItem('reduxState-15', JSON.stringify(store.getState()));
- })
+})
 
 
 export const App = () => {
   return (
-    <Provider store ={store}>
+    <Provider store={store}>
       <BrowserRouter>
         <Switch>
           <Route path="/" exact >

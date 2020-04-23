@@ -16,23 +16,24 @@ export const AddTask = () => {
 
     dispatch(
       tasks.actions.addTodo({
-          description: newTask,
-          done: false
+        description: newTask,
+        done: false
       })
     );
-    setNewTask('') 
+    setNewTask('')
   }
 
   return (
-      <EntryContainer onSubmit={handleSubmit}>
-          <Input
-            type='text'
-            placeholder= 'Add things to do'
-            value={newTask}
-            onChange={(event) => setNewTask(event.target.value)}
-          />
-        <Button type='submit'>
-          Add
+    <EntryContainer onSubmit={handleSubmit}>
+      <Input
+        type='text'
+        placeholder='Add things to do'
+        value={newTask}
+        onChange={(event) => setNewTask(event.target.value)}
+      />
+      <Button type='submit'>
+        Add
         </Button>
-        </EntryContainer>
-  )}
+    </EntryContainer>
+  )
+}

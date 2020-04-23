@@ -7,9 +7,9 @@ export const ToDo = () => {
 
   return (
     <>
-    <HeaderToDo />
-    <Link to="/shopping">Shopping List =></Link>
-    <ToDoList />
+      <HeaderToDo />
+      <Link to="/shopping">Shopping List =></Link>
+      <ToDoList />
     </>
   )
 }

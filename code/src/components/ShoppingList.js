@@ -11,7 +11,7 @@ export const ShoppingList = () => {
   return (
     <div>
       <AddShopping />
-     <p>Items in a list</p>
+      <p>Items in a list</p>
     </div>
   )
 }
