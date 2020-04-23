@@ -2,9 +2,10 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled, { css } from 'styled-components'
 import { tasks } from '../reducers/tasks'
-import { Button } from '../library/Button'
-import { DoubleButtons } from '../library/DoubleButtons'
-import { ListItem } from '../library/ListItem'
+import { Button } from '../styledComponents/Button'
+import { DoubleButtons } from '../styledComponents/DoubleButtons'
+import { List } from '../styledComponents/List'
+import { ListItem } from '../styledComponents/ListItem'
 import { CustomCheckbox } from 'components/CustomCheckbox'
 
 
@@ -27,8 +28,9 @@ export const Task = ({ itemIndex }) => {
   }
 
   return (
-    <ListItem>
-      <span>{item.description}</span>
+    <List>
+      <ListItem isChecked={item.done ? 'checked' : ''}
+        onChangeHandler={handleOnChange}>{item.description}</ListItem>
       <DoubleButtons>
         <CustomCheckbox 
           isChecked={item.done ? 'checked' : ''} 
@@ -38,6 +40,6 @@ export const Task = ({ itemIndex }) => {
         Remove
       </Button>
     </DoubleButtons>
-    </ListItem>
+    </List>
   )
 }

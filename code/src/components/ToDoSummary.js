@@ -5,7 +5,8 @@ import { Task } from './Task'
 import { tasks } from '../reducers/tasks'
 
 const TaskSummary = styled.h4`
-  font-size: 30px;
+  font-size: 20px;
+  margin: 16px;
   `
 
 export const ToDoSummary = () => {
@@ -15,7 +16,7 @@ export const ToDoSummary = () => {
 
   return (
     <section>
-      <TaskSummary> {tasksDone}/{list.items.length}</TaskSummary>
+      <TaskSummary> Done: {tasksDone}/{list.items.length}</TaskSummary>
     </section>
   )
 }

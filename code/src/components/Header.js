@@ -5,20 +5,21 @@ import { ToDoSummary } from './ToDoSummary'
 const HeaderContainer = styled.section`
   display: flex;
   justify-content: space-evenly;
-  align-items: center;
+  align-items: flex-end;
 `
 
 const Title = styled.h1`
   font-size: 40px;
+  margin: 16px;
 `
 
 
 
 export const Header = () => {
 
-  return (
+  return (  
     <HeaderContainer>
-      <Title>Let's Go!</Title>
+      <Title>Get Started!</Title>
       <ToDoSummary />
     </HeaderContainer>
     

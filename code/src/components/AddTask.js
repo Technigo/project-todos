@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 import styled from 'styled-components'
-import { EntryContainer } from '../library/EntryContainer'
-import { Input } from '../library/Input'
-import { Button } from '../library/Button'
+import { EntryContainer } from '../styledComponents/EntryContainer'
+import { Input } from '../styledComponents/Input'
+import { Button } from '../styledComponents/Button'
 
 
 
@@ -21,15 +21,15 @@ export const AddTask = () => {
           description: newTask,
           done: false
       })
-    ); // name, category & dueDate as payload
-    setNewTask('') // Clearing the input
+    );
+    setNewTask('') 
   }
 
   return (
       <EntryContainer onSubmit={handleSubmit}>
           <Input
             type='text'
-            placeholder= '  Add things to do'
+            placeholder= 'Add things to do'
             value={newTask}
             onChange={(event) => setNewTask(event.target.value)}
           />
