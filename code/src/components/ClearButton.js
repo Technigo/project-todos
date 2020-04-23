@@ -10,7 +10,7 @@ export const ClearButton = () => {
   }
 
   return (
-    <button type="button" onClick={onRemoveAllClicked}>
+    <button className="clearButton" type="button" onClick={onRemoveAllClicked}>
       CLEAR ALL
     </button>
   )

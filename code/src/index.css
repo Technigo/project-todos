@@ -11,3 +11,152 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+body {
+  background-color: rgb(247, 206, 189);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.todoscreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  width: 300px;
+  height: 600px;
+  box-shadow: 4px 4px 11px 4px rgb(242, 199, 176);
+  padding: 20px;
+  font-weight: 300;
+  padding-top: 11px;
+}
+
+.containerInput {
+  background-color: pink;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 5px;
+  width: 98%;
+  margin-bottom: 10px;
+  padding: 20px;
+}
+
+.task-input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.task-input-text {
+  font-size: 10px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: white;
+  font-weight: 400;
+  outline: none;
+  border: none;
+  color: black;
+}
+
+
+.clearButton {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  background-color: white;
+  border: none;
+  box-shadow: 1px 1px 2px 2px rgb(237, 237, 237);
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+
+.selectCat {
+  height: 35px;
+  background: lightgreen;
+  color: gray;
+  padding-left: 5px;
+  font-size: 14px;
+  border: none;
+  margin-left: 10px;
+}
+
+/*option {
+  color: black;
+  background: white;
+  display: flex;
+  white-space: pre;
+  min-height: 20px;
+  padding: 0px 2px 1px;
+}*/
+
+.addButton {
+  padding: 12px 33px;
+  margin: 6px 22px;
+  font-size: 10px;
+  border: none;
+  border-radius: 3px;
+  color: red;
+  background: white;
+  width: 30px;
+}
+
+/*  &:hover {
+    background: black;
+    color: white; */
+
+.taskList {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+
+h2 {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 15px;
+  margin: 6px 10px;
+  width: 120px;
+  height: 30px;
+  background-color: rgb(213, 213, 213);
+  padding-top: 10px;
+}
+
+.taskItem {
+  background-color: rgb(237, 211, 192);
+  margin: 5px;
+  border-radius: 5px;
+  width: 95%;
+  height: 50px;
+  padding: 5px;
+  padding-left: 25px;
+  padding-right: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.datePicker {
+  background-color: rgb(209, 179, 179);
+}
+
+.category {
+  text-transform: uppercase;
+  font-size: 10px;
+}
+
+.dates {
+  font-size: 7px;
+}
+
+h3 {
+  font-weight: 100;
+  font-size: 30px;
+}

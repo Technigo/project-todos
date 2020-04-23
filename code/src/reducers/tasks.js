@@ -36,15 +36,3 @@ export const tasks = createSlice({
     }
   }
 });
-
-
-/*    addDate: (state, action) => {
-      const { dueDate, category } = action.payload;
-      state.list.items.push({
-        id: Date.now(),
-        startDate: Date.now(),
-        dueDate,
-        category
-      });
-    },
-    */

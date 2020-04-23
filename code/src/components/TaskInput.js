@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { tasks } from '../reducers/tasks';
 import DatePicker from 'react-date-picker'
-import { Container } from '../library/Container'
-import { Select } from 'library/Select'
-import { Button } from 'library/Button'
 
 export const TaskInput = ({ listId }) => {
   const [inputValue, setInputValue] = useState("");
@@ -26,23 +23,24 @@ export const TaskInput = ({ listId }) => {
   };
 
   return (
-    <Container>
-
+    <section className="containerInput">
       <form className="task-input" onSubmit={handleOnSubmit}>
         <input
           type="text"
+          placeholder="What do you ned to do?"
           onChange={e => setInputValue(e.target.value)}
           value={inputValue}
           className="task-input-text">
+
         </input>
-        <input
+        {/*  <input
           type="submit"
           className="task-input-button"
           value="Add Task">
-        </input>
+          </input>*/}
         <label>
           Category:
-          <Select
+          <select id="selectCat"
             value={category}
             onChange={(event) => setCategory(event.target.value)}
           >
@@ -51,19 +49,18 @@ export const TaskInput = ({ listId }) => {
             <option value='Contact'>Contact</option>
             <option value='Pay'>Pay</option>
             <option value='Buy'>Buy</option>
-          </Select>
+          </select>
         </label>
 
         {/* Date picker to set due date */}
         <label>
           Due Date
-          <DatePicker onChange={(date) => setDueDate(date)} value={dueDate} />
+          <DatePicker className="datePicker" onChange={(date) => setDueDate(date)} value={dueDate} />
         </label>
-
-        <Button type='submit' background='#3f8488'>
-          Add item
-        </Button>
+        <button className="addButton" type='submit' background='#3f8488'>
+          Add task
+        </button>
       </form>
-    </Container>
+    </section>
   );
 };

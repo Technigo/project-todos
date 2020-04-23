@@ -9,7 +9,7 @@ export const TaskList = () => {
   const list = useSelector((store) => store.tasks.list);
 
   return (
-    <div className="tasks-list">
+    <div className="taskList">
       <TaskInput />
       {list.items.map((item, index) => (
         <TaskItem key={index} item={item} itemIndex={index} />
