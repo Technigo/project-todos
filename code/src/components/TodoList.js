@@ -55,6 +55,16 @@ const ArticleWrapper = styled.div `
      border-right: solid 20px transparent; 
      border-bottom: solid 20px #fff;
      box-shadow: 0 0 20px #2F4F4F;
+
+     @media (max-width: 400px) {
+        width: 80%;
+        height: 800px;
+      }
+
+      @media (max-width: 768px) {
+        width: 80%;
+        height: 1000px;
+      }
 `
 
 const Section = styled.section `
@@ -62,6 +72,16 @@ const Section = styled.section `
      text-align: right;
      margin-right: 30px;
      margin-bottom: 20px;  
+
+     @media (max-width: 400px) {
+        text-align: right;
+        margin-left: 217px;
+      }
+
+      @media (max-width: 768px) {
+        margin-right: 122px;
+      }
+  
 `
 
 

@@ -53,5 +53,10 @@ const Input = styled.input `
     width: 275px;
     border: none;
     border-bottom: 1px solid black;
+
+
+    @media (max-width: 400px) {
+        width: 200px;
+      }
    
 `
