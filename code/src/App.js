@@ -25,7 +25,7 @@ const persistedStateJSON = localStorage.getItem("rememberReduxState")
 let persistedState={}
 
 if (persistedStateJSON) {
-  persistedStateJSON = JSON.parse(persistedStateJSON)
+  persistedState = JSON.parse(persistedStateJSON)
 }
 const store = createStore(
   reducer,
@@ -33,7 +33,9 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
-
+store.subscribe(() => {
+  localStorage.setItem("rememberReduxState", JSON.stringify(store.getState()))
+})
 
 export const App = () => {
   return (

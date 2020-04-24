@@ -22,7 +22,7 @@ export const Item = (props) => {
   return (
     <li>
       <span>{category}: </span>
-      <span>{name.toUpperCase()} </span>
+      <span>{name} </span>
       <label>
          - Done!
         <CustomCheckbox
