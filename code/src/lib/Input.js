@@ -7,7 +7,9 @@ width: 100%;
 border: 2px white solid;
 margin: 0 auto;
 font-size: 20px;
-outline-color: white;
+outline: none;
+font-family: 'Roboto', sans-serif;
+
 `
 
 export const Span = styled.span `

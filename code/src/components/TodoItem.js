@@ -4,6 +4,7 @@ import { todos } from '../reducers/todos'
 import { useSelector } from 'react-redux'
 import { Article } from '../lib/Container'
 import styled from 'styled-components'
+import moment from 'moment'
 
 export const TodoItem = ({ itemIndex }) => {
   
@@ -47,9 +48,22 @@ const onRemoveClicked = event => {
         </label>
         
       </div> 
+      <RemoveAndTime>
       <a className='todo-item-remove' onClick={onRemoveClicked}>🗑</a>
       
+      <MomentContainer>{moment(new Date).fromNow()}</MomentContainer>
+      </RemoveAndTime>
     </Article>
   )
 }
 
+export const MomentContainer = styled.p `
+font-size: 12px;
+`
+
+export const RemoveAndTime = styled.div `
+display: flex;
+justify-content: flex-end;
+flex-direction: column;
+align-items: flex-end;
+`
