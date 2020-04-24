@@ -68,6 +68,7 @@ outline: none;
     margin-top: 25px;
     border-radius: inherit;
     text-align: center;
+    vertical-align: middle;
   }
   .todo-input-button:active {
     box-shadow: none;
