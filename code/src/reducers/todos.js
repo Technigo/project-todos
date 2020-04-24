@@ -5,11 +5,11 @@ const initialState = {
     name: "Test list",
     items: [
       {
-        description: "This is a test todo",
+        description: "Yes, this is done!",
         done: true
       },
       {
-        description: "This is another test todo",
+        description: "No, this is not done. Yet.",
         done: false
       }
     ]

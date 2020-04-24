@@ -51,7 +51,7 @@ export const TodoInput = () => {
             value={inputValue}
           />
         </label>
-        <Button background='lightgray'><span>{/* <i class="fas fa-plus"></i> */}Add</span>
+        <Button background='lightgray'>Add
 
         </Button>
       </InputForm>
