@@ -4,6 +4,8 @@ import { combineReducers, createStore } from '@reduxjs/toolkit'
 import { TaskList } from 'components/TaskList'
 import { AddTask } from 'components/AddTask'
 import { Header } from 'components/Header'
+import styled from "styled-components";
+
 
 import { tasks } from 'reducers/tasks'
 // another reducer 
@@ -36,10 +38,17 @@ export const App = () => {
   return (
     <div>
       <Provider store={store} >
-        <Header />
-        <AddTask />
-        <TaskList />
+        <Wrapper>
+          <Header />
+          <AddTask />
+          <TaskList />
+        </Wrapper>
       </Provider>
     </div>
   )
 }
+
+
+const Wrapper = styled.section`
+  margin-left: 50px;
+`;

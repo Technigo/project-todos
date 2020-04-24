@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
+import styled from "styled-components";
+
 
 export const AddTask = () => {
   const dispatch = useDispatch()
@@ -22,7 +24,7 @@ export const AddTask = () => {
 
 
   return (
-    <form
+    <Form
       className="task-input"
       onSubmit={handleOnSubmit}>
       <input
@@ -39,6 +41,11 @@ export const AddTask = () => {
         aria-label="Add task">
         Add task
       </button>
-    </form >
+    </Form >
   )
 }
+
+
+const Form = styled.form`
+  margin: 20px 0;
+`;

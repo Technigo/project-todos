@@ -49,5 +49,3 @@ export const tasks = createSlice({
 
   }
 })
-
-// filter on complete, not complete, show all, date

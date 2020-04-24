@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
+import styled from "styled-components";
 
 
 
@@ -15,7 +16,7 @@ export const HandleTasks = () => {
   }
 
   return (
-    <div>
+    <Wrapper>
       Completed: {displayLenght()}/{allTasks.length}
       <button type="button" onClick={() => {
         dispatch(
@@ -28,15 +29,20 @@ export const HandleTasks = () => {
       <button type="button" onClick={() => {
         dispatch(
           tasks.actions.filterTasks("complete"))
-      }}>Completed</button>
+      }}>Filter completed</button>
       <button type="button" onClick={() => {
         dispatch(
           tasks.actions.filterTasks("un-complete"))
-      }}>Not completed</button>
+      }}>Filter To do</button>
       <button type="button" onClick={() => {
         dispatch(
           tasks.actions.filterTasks(""))
-      }}>All</button>
-    </div>
+      }}>Show All</button>
+    </Wrapper>
   )
 }
+
+const Wrapper = styled.div`
+  display: flex;
+  margin-top: 50px;
+`;
