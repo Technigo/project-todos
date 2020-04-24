@@ -18,8 +18,6 @@ export const TodoInput = ({ listID }) => {
         itemInfo: { description: inputValue, done: false }
       })
     )
-
-    // clear the text field
     setInputValue('')
   }
 

@@ -7,12 +7,10 @@ import styled from 'styled-components/macro'
 import { CustomCheckbox } from 'lib/CustomCheckbox'
 
 export const TodoItem = ({ itemIndex }) => {
-  // Get the item from the store based on the index
   const item = useSelector(store => store.todos.list.items[itemIndex])
 
   const dispatch = useDispatch()
 
-  // Create the onRemoveClicked handler
   const onRemoveClicked = event => {
     dispatch(
       todos.actions.removeTodo({
@@ -21,7 +19,6 @@ export const TodoItem = ({ itemIndex }) => {
     )
   }
 
-  // Create the onChange handler for handling the done status
   const handleOnChange = event => {
     dispatch(
       todos.actions.setDone({

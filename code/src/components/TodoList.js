@@ -7,7 +7,6 @@ import { ClearAllButton } from 'lib/ClearAllButton.js'
 import styled from 'styled-components/macro'
 
 export const TodoList = () => {
-  // Get list information for this list from the store
   const list = useSelector((store) => store.todos.list)
 
   return (
