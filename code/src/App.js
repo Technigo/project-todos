@@ -4,8 +4,8 @@ import { Provider } from 'react-redux'
 import { configureStore, combineReducers, createStore } from '@reduxjs/toolkit'
 import { tasks } from 'reducers/tasks'
 import { shoppings } from 'reducers/shoppings'
-import { ToDo } from './pages/ToDo'
-import { Shopping } from './pages/Shopping'
+import { ToDo } from './Pages/ToDo'
+import { Shopping } from './Pages/Shopping'
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
