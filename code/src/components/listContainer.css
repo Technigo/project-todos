@@ -1,0 +1,8 @@
+.list-container {
+    margin: 20px;
+    padding: 20px;
+    width: 350px;
+    border: gray 2px solid;
+    display: flex;
+    flex-direction: column;
+}
