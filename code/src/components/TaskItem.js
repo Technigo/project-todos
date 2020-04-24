@@ -28,12 +28,6 @@ export const TaskItem = ({ item }) => {
         isChecked={item.complete ? "checked" : ""}
         onChangeHandler={handleOnChange}
       />
-      {/*  <input
-        type="checkbox"
-        onChange={handleOnChange}
-        className='task-item-check'
-        checked={item.complete ? "checked" : ""}
-      ></input>*/}
       <div className="dateSection">ADDED:
         <span className="datePicker"> {moment(item.startDate).format('MMM Do YYYY')}</span>
         DUE: {item.dueDate && <span className="datePicker"> {moment(item.dueDate).format('MMM Do YYYY')}</span>}

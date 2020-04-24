@@ -14,4 +14,4 @@ This project is built in react and redux. I planned which components to use and 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://cranky-meitner-e67652.netlify.app
