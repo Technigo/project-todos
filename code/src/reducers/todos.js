@@ -28,6 +28,10 @@ export const todos = createSlice({
         (item, index) => index !== itemIndex
       );
     },
+    // Will remove all items
+    removeAllTodos: (state) => {
+      state.list.items = [];
+    },
     // Will set a specific item to done using the index
     setDone: (state, action) => {
       const { itemIndex, done } = action.payload;

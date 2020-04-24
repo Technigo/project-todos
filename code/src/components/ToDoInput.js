@@ -54,7 +54,6 @@ const Input = styled.input`
   border: none;
   border-radius: 4px;
 
-  height: 30px;
   width: 45%;
 
   background-color: #e92272;
@@ -74,7 +73,7 @@ const Button = styled.input`
   border: none;
   border-radius: 4px;
 
-  height: 30px;
+  
   width: 45%;
 
   background: 
@@ -85,4 +84,6 @@ const Button = styled.input`
   }
 
   box-sizing: border-box;
+
+  cursor: pointer;
 `;

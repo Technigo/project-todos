@@ -6,7 +6,7 @@ import { TodoSummary } from "./ToDoSummary.js";
 export const Header = () => {
   return (
     <Content>
-      <Title>ToDo </Title>
+      <Title>TODO</Title>
       <Date>
         <span>{moment().format("dddd MMMM Do")}</span>
       </Date>
