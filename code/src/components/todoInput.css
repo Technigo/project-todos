@@ -70,6 +70,7 @@ outline: none;
     text-align: center;
     vertical-align: middle;
     background-color: palevioletred;
+    opacity: 1;
   }
   .todo-input-button:active {
     box-shadow: none;
