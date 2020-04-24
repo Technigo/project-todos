@@ -23,8 +23,20 @@ export const HandleTasks = () => {
       }}>Remove All</button>
       <button type="button" onClick={() => {
         dispatch(
+          tasks.actions.removeComplete())
+      }}>Remove Complete</button>
+      <button type="button" onClick={() => {
+        dispatch(
           tasks.actions.filterTasks("complete"))
-      }}>Filter</button>
+      }}>Completed</button>
+      <button type="button" onClick={() => {
+        dispatch(
+          tasks.actions.filterTasks("un-complete"))
+      }}>Not completed</button>
+      <button type="button" onClick={() => {
+        dispatch(
+          tasks.actions.filterTasks(""))
+      }}>All</button>
     </div>
   )
 }

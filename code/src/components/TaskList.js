@@ -3,6 +3,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { Task } from './Task'
 import { HandleTasks } from './HandleTasks'
+import { EmptyList } from './EmptyList'
 
 // import { tasks } from 'reducers/tasks'
 
@@ -21,5 +22,5 @@ export const TaskList = () => {
         <HandleTasks />
       </div>
     )
-  } else return <>Lottie Please Add Tasks</>
+  } else return <EmptyList />
 }

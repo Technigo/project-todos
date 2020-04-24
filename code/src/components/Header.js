@@ -6,18 +6,13 @@ export const Header = () => {
   const user = useSelector(store => store.tasks.user)
   const dispatch = useDispatch()
 
-  if (user === "") {
-    dispatch(
-      tasks.actions.changeUser(prompt("Välj namn")))
-  }
-
   return (
     <header>
-      <h1>{user}'s Todo List</h1>
-      <button type="button" onClick={() => {
+      <h1>{user && `${user}'s`} Todo list</h1>
+      <a className="change-name" onClick={() => {
         dispatch(
-          tasks.actions.changeUser(""))
-      }}>Change user name</button>
+          tasks.actions.changeUser(prompt("Välj namn")))
+      }}>{user ? "Change" : "Add"} user name</a>
     </header>
   )
 }

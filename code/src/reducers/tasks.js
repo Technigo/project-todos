@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const tasks = createSlice({
   name: 'task',
   initialState: {
-    user: "Olle",
+    user: "",
     taskArray: [
       { id: 1, text: 'clean up', complete: true, display: true },
       { id: 2, text: 'get groceries', complete: true, display: true },
@@ -20,6 +20,9 @@ export const tasks = createSlice({
     },
     removeTask: (state, action) => {
       state.taskArray = state.taskArray.filter((item) => item.id !== action.payload);
+    },
+    removeComplete: (state, action) => {
+      state.taskArray = state.taskArray.filter((item) => item.complete !== true);
     },
     doneTask: (state, action) => {
       const taskDone = state.taskArray.find(item => item.id === action.payload);
