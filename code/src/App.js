@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-export const App = () => {
-  return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
-}
+import { Provider } from './store';
+import TodoList from './TodoList';
+
+const App = () => (
+  <Provider>
+    <TodoList />
+  </Provider>
+);
+
+export default App;
