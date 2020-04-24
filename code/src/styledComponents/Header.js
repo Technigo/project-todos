@@ -2,12 +2,14 @@ import styled from 'styled-components'
 
  export const HeaderContainer = styled.section`
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: flex-end;
-  margin-top: 16px;
+  margin: 32px;
 `
 
 export const Title = styled.h1`
   font-size: 40px;
-  margin: 16px;
+  margin-top: 64px;
+  margin-bottom: 0;
+ 
 `

@@ -5,8 +5,8 @@ export const StyledLink = styled(Link)`
     text-decoration: none;
     color: black;
     display: flex;
+    align-items: center;
     flex-direction: row;
-    justify-content: flex-end;
     font-size: 20px;
     font-weight: bold;
     background-color: white;
