@@ -53,7 +53,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     &:hover {
       cursor: pointer;
       ${Icon} {
-        visibility: ? 'visible' 
+        visibility: visible;
         stroke: rgb(34, 214, 255);}
     }
   `;

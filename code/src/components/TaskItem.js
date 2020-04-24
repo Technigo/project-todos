@@ -33,7 +33,7 @@ export const TaskItem = ({ startDate, itemIndex }) => {
   return (
     <section className="taskItem">
       <div className="taskSection">
-        <span className="category" >{item.category} </span>
+        <span className="category">{item.category}</span>
         <span className="task-item-text">{item.text}</span>
       </div>
       <CustomCheckbox

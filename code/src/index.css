@@ -83,7 +83,6 @@ h6 {
 .catDate {
   display: flex;
   flex-direction: row;
-
 }
 
 label {
@@ -141,6 +140,8 @@ label {
   margin-right: 20px;
   height: 35px;
   margin-bottom: 10px;
+  box-shadow: 2px 2px 3px 1px rgb(213, 130, 105);
+
 }
 
 .addButton:hover {
@@ -233,14 +234,14 @@ h2 {
   display: flex;
   flex-direction: column;
   text-align: center;
-  font-size: 16px;
+  font-size: 18px;
   margin: 6px 10px;
   width: 2000px;
   height: 30px;
-  padding-top: 10px;
+  padding-top: 25px;
   font-weight: 200;
   color: black;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
 .clearButton {
@@ -248,12 +249,11 @@ h2 {
   flex-direction: column;
   background-color: rgb(5, 52, 89);
   border: none;
-  box-shadow: 1px 1px 2px 2px rgb(237, 237, 237);
-  margin-top: 40px;
-  padding: 9px 50px;
+  box-shadow: 2px 2px 3px 1px rgb(233, 232, 232);
+  padding: 9px 40px;
   color: white;
-  margin-bottom: 10px;
-  font-weight: 600;
+  margin-bottom: 40px;
+  font-weight: 700;
   font-size: 10px;
 }
 

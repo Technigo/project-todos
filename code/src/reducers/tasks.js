@@ -4,7 +4,7 @@ const initialState = {
   list: {
     name: "Tasks",
     items: [
-      { id: 1, text: 'ToDo', complete: true, category: 'Contact' },
+      { id: 1, text: 'ToDo', complete: true, category: 'Mail' },
       { id: 2, text: 'ToDo', complete: false, category: 'Pay' },
       { id: 3, text: 'ToDo', complete: false, category: 'Do' },
       { id: 4, text: 'ToDo', complete: false, category: 'Buy' },

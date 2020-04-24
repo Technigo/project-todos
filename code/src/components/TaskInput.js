@@ -5,7 +5,7 @@ import DatePicker from 'react-date-picker'
 import { TaskSummary } from './TaskSummary.js';
 
 
-export const TaskInput = ({ listId }) => {
+export const TaskInput = () => {
   const [inputValue, setInputValue] = useState("");
   const [category, setCategory] = useState('')
   const [dueDate, setDueDate] = useState()
@@ -18,7 +18,7 @@ export const TaskInput = ({ listId }) => {
       tasks.actions.addTask({
         itemInfo: { text: inputValue, complete: false, category, dueDate }
       }));
-
+    console.log("klicka")
     setInputValue("");
     setCategory('') // Clearing the input
     setDueDate('') // Clearing the input
