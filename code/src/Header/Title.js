@@ -44,4 +44,14 @@ const HeaderText = styled.h2`
 const Hedertextdate = styled.h2`
     margin-top: 20px;
     font-size: 15px;
+
+    @media (max-width: 400px) {
+        display: none;
+      }
+
+    @media (max-width: 768px) {
+        margin-top: 40px;
+        margin-left: 122px;
+        font-size: 20px;
+      }
 `
