@@ -1,7 +1,8 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { Todos } from 'components/Todos'
+import { TaskList } from 'components/TaskList'
+import { AddTask } from 'components/AddTask'
 
 import { tasks } from 'reducers/tasks'
 // another reducer 
@@ -17,8 +18,8 @@ export const App = () => {
     <div>
       <Provider store={store} >
         {/* <Summary /> */}
-        <Todos />
-        {/* <AddTask /> */}
+        <TaskList />
+        <AddTask />
       </Provider>
     </div>
   )
