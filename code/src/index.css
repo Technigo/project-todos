@@ -2,24 +2,16 @@
 
 body {
 margin: 0;
-  /*font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;*/
-font-family: 🇲ontserrat Alternates;
+ font-family: 🇲ontserrat Alternates;
 -webkit-font-smoothing: antialiased;
 -moz-osx-font-smoothing: grayscale;
 
 }
 
-code {
-  /*font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;*/
-}
-
 main {
   background: linear-gradient(purple, pink, white);
-background-repeat: no-repeat;
-text-align: center;
+  background-repeat: no-repeat;
+  text-align: center;
   border: solid;
   color: purple;
   border-radius: 15px;
@@ -37,6 +29,7 @@ text-align: center;
    margin-top: 50px;
    color: rgb(247, 214, 234);
  }
+
 h2 {
   margin-bottom: 4px;
 }
@@ -102,13 +95,9 @@ h4 {
   cursor: pointer;
 }
 
-.todo-list {
-
-}
-
 .todo-item {
   text-align: left;
-  margin-left: 60px;
+  margin-left: 40px;
 }
 
 .todo-item-check {
@@ -120,9 +109,7 @@ h4 {
     background: #fcfff4;
     background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
     border-radius: 50px;
-    
-}
-
+  }
 
 .todo-item-remove {
   margin-top: 10px;
@@ -143,29 +130,25 @@ h4 {
   flex-direction: column;
 }
 
-/*@media (min-width: 600px) {
-  .todo-list {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    margin-top: -130px;
-    margin-right: 150px;
-  }
-  .header {
-    width: 50%;
-    align-items: flex-start;
-  }
-
-  .todo-input-text {
-    width: 190px;
-  }
+@media screen and (min-width: 600px) {
+    .todo-item {
+      margin-left: 200px;
+    }
 
     .input-remove {
       justify-content: center;
     }
-    .todo-item {
-      margin-left: 32%;
-    }
-}*/
+
+    .todo-input-button {
+      margin-right: 50px;
+}
+    
+}
+
+@media screen and (min-width: 770px) {
+  .todo-item {
+    margin-left: 240px;
+  }
+}
 
 @import url('<link href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates>')

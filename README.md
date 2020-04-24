@@ -1,12 +1,10 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This was a project I did when attending Technigos frontend bootcamp. The assignment was to build an todo application using all the parts of redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We got a lot of help with the basic set up of the app. I tried to add some extra features but ran out of time so I sticked to the basic version.
 
 ## View it live
 

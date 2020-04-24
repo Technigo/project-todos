@@ -17,7 +17,6 @@ export const Home = () => {
   return (
     <Provider store={store}>
       <main>
-
         <div className='header'>
           <ShowDate />
           <TodoSummery />
@@ -29,7 +28,6 @@ export const Home = () => {
         <div className='todo-list-wrapper'>
           <TodoList />
         </div>
-
       </main>
     </Provider>
   )
