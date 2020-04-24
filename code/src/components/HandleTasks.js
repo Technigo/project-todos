@@ -18,31 +18,39 @@ export const HandleTasks = () => {
   return (
     <Wrapper>
       Completed: {displayLenght()}/{allTasks.length}
-      <button type="button" onClick={() => {
-        dispatch(
-          tasks.actions.removeAllTasks())
-      }}>Remove All</button>
-      <button type="button" onClick={() => {
-        dispatch(
-          tasks.actions.removeComplete())
-      }}>Remove Complete</button>
-      <button type="button" onClick={() => {
-        dispatch(
-          tasks.actions.filterTasks("complete"))
-      }}>Filter completed</button>
-      <button type="button" onClick={() => {
-        dispatch(
-          tasks.actions.filterTasks("un-complete"))
-      }}>Filter To do</button>
-      <button type="button" onClick={() => {
-        dispatch(
-          tasks.actions.filterTasks(""))
-      }}>Show All</button>
+      <div>
+        <Button type="button" onClick={() => {
+          dispatch(
+            tasks.actions.filterTasks("un-complete"))
+        }}>Filter To do</Button>
+        <Button type="button" onClick={() => {
+          dispatch(
+            tasks.actions.filterTasks("complete"))
+        }}>Filter completed</Button>
+        <Button type="button" onClick={() => {
+          dispatch(
+            tasks.actions.filterTasks(""))
+        }}>Show All</Button>
+      </div>
+      <div>
+        <Button type="button" onClick={() => {
+          dispatch(
+            tasks.actions.removeComplete())
+        }}>Remove Complete</Button>
+        <Button type="button" onClick={() => {
+          dispatch(
+            tasks.actions.removeAllTasks())
+        }}>Remove All</Button>
+      </div>
+
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  display: flex;
   margin-top: 50px;
+`;
+
+const Button = styled.button`
+  margin: 10px 10px 0 0;
 `;

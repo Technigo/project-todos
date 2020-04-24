@@ -10,17 +10,17 @@ export const Task = ({ task }) => {
 
   return (
     <div>
-      {task.text} {task.display ? "" : "Hidden,"} {task.complete ? "Done " : " "}
+      {task.text} {task.display ? "" : "Hidden,"} {task.complete ? "Completed " : " "}
       <Date>{moment(task.date).fromNow()}</Date>
 
       <button type="button" onClick={() => {
         dispatch(
-          tasks.actions.removeTask(task.id))
-      }}>Remove</button>
+          tasks.actions.doneTask(task.id))
+      }}>Complete</button>
       <button type="button" onClick={() => {
         dispatch(
-          tasks.actions.doneTask(task.id))
-      }}>Done</button>
+          tasks.actions.removeTask(task.id))
+      }}>Remove</button>
     </div >
   )
 }
