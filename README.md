@@ -4,9 +4,9 @@ A ToDo-list that list todo-tasks. Marked as complete or uncomplete with a counte
 
 ## The problem
 
-This project is built in react and redux. I planned which components to use and made a sketch of how the list would show up. Installed required dependencies, such as moment, a datepicker, styled components and redux toolkit  
+This project is built in react and redux. I planned which components to use and made a sketch of how the list would show up. Installed required dependencies, such as moment, a datepicker, styled components and redux toolkit. I used useSelector to read from the store and dispatched actions from the components to the reducer and store. I checked out redux devtools along the way. 
 
- If you had more time I would have: 
+ If I had more time I would have: 
  1. added local storage
  2. used styled components
  3. styled the dropdown input fields
