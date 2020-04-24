@@ -5,10 +5,10 @@ export const tasks = createSlice({
   initialState: {
     user: "",
     taskArray: [
-      { id: 1, text: 'clean up', complete: true, display: true },
-      { id: 2, text: 'get groceries', complete: true, display: true },
-      { id: 3, text: 'work out', complete: true, display: true },
-      { id: 4, text: 'save the world', complete: false, display: true }
+      { id: 1, text: 'Clean up', complete: true, display: true },
+      { id: 2, text: 'Get groceries', complete: false, display: true },
+      { id: 3, text: 'Work out', complete: false, display: true },
+      { id: 4, text: 'Save the world', complete: false, display: true }
     ]
   },
   reducers: {
