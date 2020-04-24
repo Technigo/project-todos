@@ -32,7 +32,9 @@ export const TodoItem = ({ itemIndex }) => {
         onChange={handleOnChange}
         checked={item.done ? "checked" : ""}
       ></Input>
-      <Description>{item.description}</Description>
+      <DescriptionContainer>
+        <Description>{item.description}</Description>
+      </DescriptionContainer>
       <Remove onClick={onRemoveClicked}>REMOVE</Remove>
     </TodoContainer>
   );
@@ -46,6 +48,12 @@ const TodoContainer = styled.div`
   justify-content: space-between;
 
   width: 80%;
+`;
+
+// Keep long text inside container
+const DescriptionContainer = styled.div`
+  width: 45%;
+  word-wrap: break-word;
 `;
 
 const Description = styled.h2`
