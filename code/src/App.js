@@ -4,7 +4,6 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { tasks } from './reducers/tasks'
 import { ToDoScreen } from './components/ToDoScreen'
 
-
 const reducer = combineReducers({ tasks: tasks.reducer });
 
 const store = configureStore({ reducer })

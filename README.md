@@ -1,12 +1,16 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A ToDo-list that list todo-tasks. Marked as complete or uncomplete with a counter. Duedate and categories can be choosen. The list can be filtered by category.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This project is built in react and redux. I planned which components to use and made a sketch of how the list would show up. Installed required dependencies, such as moment, a datepicker, styled components and redux toolkit  
+
+ If you had more time I would have: 
+ 1. added local storage
+ 2. used styled components
+ 3. styled the dropdown input fields
+ 4. styled the datepicker
 
 ## View it live
 

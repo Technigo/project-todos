@@ -6,7 +6,7 @@ export const ToDoScreen = () => {
   return (
     <section className="todoscreen">
       {/*<h6>REMEMBER TO</h6>*/}
-      <h3>GET IT DONE</h3>
+      <h3>TODO</h3>
       <TaskList />
     </section>
   )

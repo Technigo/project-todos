@@ -4,31 +4,19 @@ import { tasks } from '../reducers/tasks'
 import moment from 'moment';
 import { CustomCheckbox } from './CustomCheckbox';
 
-/*tasks.actions.addTask({
-  listId: listId,
-  itemInfo: { text: inputValue, complete: false, category, dueDate }*/
-
-export const TaskItem = ({ startDate, itemIndex }) => {
-  const item = useSelector((store) => store.tasks.list.items[itemIndex]);
+export const TaskItem = ({ item }) => {
 
   const dispatch = useDispatch();
 
   const onRemoveClicked = (e) => {
     dispatch(
-      tasks.actions.removeTask({
-        itemIndex,
-      })
-    )
-  };
+      tasks.actions.removeTask(item.id))
+  }
 
   const handleOnChange = (e) => {
     dispatch(
-      tasks.actions.setDone({
-        itemIndex: itemIndex,
-        complete: !item.complete,
-      })
-    )
-  };
+      tasks.actions.setDone(item.id))
+  }
 
   return (
     <section className="taskItem">
@@ -47,7 +35,7 @@ export const TaskItem = ({ startDate, itemIndex }) => {
         checked={item.complete ? "checked" : ""}
       ></input>*/}
       <div className="dateSection">ADDED:
-        <span className="datePicker"> {moment(startDate).format('MMM Do YYYY')}</span>
+        <span className="datePicker"> {moment(item.startDate).format('MMM Do YYYY')}</span>
         DUE: {item.dueDate && <span className="datePicker"> {moment(item.dueDate).format('MMM Do YYYY')}</span>}
       </div> <button className="deleteButton" onClick={onRemoveClicked}>X</button>
     </section >

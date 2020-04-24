@@ -2,8 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { tasks } from '../reducers/tasks';
 import DatePicker from 'react-date-picker'
-import { TaskSummary } from './TaskSummary.js';
-
 
 export const TaskInput = () => {
   const [inputValue, setInputValue] = useState("");
@@ -16,7 +14,7 @@ export const TaskInput = () => {
     e.preventDefault();
     dispatch(
       tasks.actions.addTask({
-        itemInfo: { text: inputValue, complete: false, category, dueDate }
+        itemInfo: { text: inputValue, complete: false, category, dueDate, id: Date.now(), }
       }));
     console.log("klicka")
     setInputValue("");
@@ -27,12 +25,12 @@ export const TaskInput = () => {
   return (
     <form className="taskInput" onSubmit={handleOnSubmit}>
       <input
-        type="text"
+        type="text" required={true} disabled={false}
         placeholder="What do you need to do?"
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
-        className="task-input-text">
-
+        className="task-input-text"
+      >
       </input>
       <div className="catDate">
         <label className="categoryPickerContainer">
@@ -57,11 +55,12 @@ export const TaskInput = () => {
         <button
           className="addButton"
           type='submit'
-          background='#3f8488'>
-          ADD YOUR THING
+          background='#3f8488'
+        > ADD YOUR TASK
         </button>
-
       </div>
     </form >
   );
 };
+
+
