@@ -39,20 +39,20 @@ export const Home = () => {
 
 const MainBackground = styled.section`
   align-items: center;
-  width: 100%;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  margin-top: 20px;
+  max-width: 1100px;
 `
 
 const TodoWrapper = styled.section`
-  width: 80 %;
-  display: flex;
-  flex-direction: column;
+  margin-top: 20px;
+  padding: 50px;
+  width: 50%;
   justify-content: center;
   background-color: white;
   border-radius: 2px;
   @media(max-width:768px){
-    width: 90%;
+    width: 70%;
   }
 `
