@@ -52,4 +52,7 @@ const TodoWrapper = styled.section`
   justify-content: center;
   background-color: white;
   border-radius: 2px;
+  @media(max-width:768px){
+    width: 90%;
+  }
 `

@@ -55,3 +55,14 @@
 outline: none;
 }
 
+/* ******* MEDIA QUERIES ****** */
+@media(max-width:768px){
+  .todo-input-text {
+    font-size: 20px;
+    width: 90%;
+  }
+  .todo-input-button {
+    width: 1.5em;
+    height: 1.5em;
+  }
+}
