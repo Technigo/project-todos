@@ -10,4 +10,5 @@ If I had more time, I would have worked on how to order the tasks in relation to
 
 ## View it live
 
+https://practical-bassi-d5a5e9.netlify.app/
 
