@@ -19,8 +19,6 @@ export const ToDoSummary = () => {
         <span
           type='button'
           onClick={() => setShowShoppingList(!showShoppingList)}>
-        
-          
             <Emoji ariaLabel="arrow-down">↓</Emoji> Reasons to Celebrate <Emoji ariaLabel="champagne-bottle">🍾</Emoji>
         </span>
       </h2>

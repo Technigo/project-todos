@@ -2,6 +2,10 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { ToDo } from 'reducers/ToDo'
 import moment from 'moment'
+import {Button} from "library/Button"
+import styled from "styled-components"
+import {CustomCheckbox} from "./CustomCheckbox"
+
 
 export const Item = (props) => {
   const { id, name, dueDate, category, completed, startDate } = props.item
@@ -17,19 +21,18 @@ export const Item = (props) => {
 
   return (
     <li>
-      {name}
-
+      <span>{category}: </span>
+      <span>{name.toUpperCase()} </span>
       <label>
-         - Check!
-        <input
-          type="checkbox"
-          checked={completed}
-          onChange={handleCheckboxClick} />
+         - Done!
+        <CustomCheckbox
+        isChecked={completed}
+        onChangeHandler = {handleCheckboxClick}/>
       </label>
 
-      <button type="button" onClick={handleRemoveButtonClick}>
+      <Button type="button" onClick={handleRemoveButtonClick}>
         Remove
-      </button>
+      </Button>
       <span>ADDED: {moment(startDate).format('MMM Do YYYY')}</span>
       {dueDate && <span> -> DUE: {moment(dueDate).format('MMM Do YYYY')}</span>}
     </li>

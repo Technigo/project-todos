@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { ToDo } from 'reducers/ToDo'
 import {Select } from "library/Select"
-import DatePicker from 'react-datepicker'
+/* import DatePicker from "react-date-picker"https://reactdatepicker.com/ */
 import {Form} from "library/Form"
 
 
@@ -30,10 +30,10 @@ export const AddItemForm = () => {
         <input type="text" value={name} onChange={(event) => setName(event.target.value)} />
       </label>
       
-      <label>
+     {/*  <label>
           Due Date
         <DatePicker onChange={(date) => setDueDate(date)} value={dueDate} />
-        </label>
+        </label> */}
         <label>
         Category:
       
