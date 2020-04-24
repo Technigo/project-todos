@@ -44,11 +44,11 @@ export const RemoveButton = styled.button`
   }
 `
 export const RemoveAllButton = styled.button`
-  background: navy;
+  background: #a3a3a3;
   padding: 5px 10px;
   border-radius: 8px;
-  color: #a3a3a3;
-  font-size: 15px;
+  color: gold;
+  font-size: 16px;
   border: none;
   margin: 15px 0px 15px 0px;
 

@@ -7,6 +7,7 @@ import { CustomCheckBox } from 'components/CustomCheckBox'
 import { ButtonEmoji } from 'library/Emoji'
 import { ListContainer, DetailContainer } from 'library/Container'
 import ToggleDisplay from 'react-toggle-display'
+import moment from 'moment'
 
 export const Task = (props) => {
 
@@ -25,6 +26,7 @@ export const Task = (props) => {
     setShow(!show)
   }
 
+
   return (
     <>
       <ListContainer>
@@ -33,13 +35,14 @@ export const Task = (props) => {
             isChecked={props.item.done}
             onChangeHandler={handleCheckBox} />
         </label>
-        <span onClick={showDetailHandler}>{props.item.name} by {props.item.dueDate}</span>
+        <span onClick={showDetailHandler}>{props.item.name} by {moment(props.item.dueDate).format('dddd, MMM Do')}</span>
         <RemoveButton onClick={handleDoneButtonClick}><ButtonEmoji ariaLabel='wastebin'>🗑</ButtonEmoji></RemoveButton>
       </ListContainer>
       <ToggleDisplay show={show}>
         <DetailContainer>
           <span>{props.item.description}</span>
-          <span>Due: {props.item.dueDate}</span>
+          <span>added {moment(props.item.createdAt).fromNow()}</span>
+          <span>Due: {moment(props.item.dueDate).format('MMMM Do YYYY')}</span>
           <span>Category: {props.item.category}</span>
         </DetailContainer>
       </ToggleDisplay>

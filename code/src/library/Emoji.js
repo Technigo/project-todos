@@ -4,7 +4,7 @@ export const TitleEmoji = styled.span.attrs(({ ariaLabel }) => ({
   role: 'img',
   'aria-label': ariaLabel
 }))`
-  font-size:40px;
+  font-size:30px;
 `
 export const ButtonEmoji = styled.span.attrs(({ ariaLabel }) => ({
   role: 'img',

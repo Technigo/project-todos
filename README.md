@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week I made a Todo app using Redux as a weekly project for frontend development bootcamp at Technigo.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started with making the structure of different folders and files (reducers, components, library for styling purpose). I tried to make use of React components such as Datepicker and ToggleDisplay. One of the problems I had was that the date object Datepicker uses is non-serializable and it caused the app to crash. I asked for help at StackOverflow and got suggestions on using either JSON.stringify() or moment.js to reformat the date object. 
+
+If I had more time, I would have worked on how to order the tasks in relation to how much time is left until their due date. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+

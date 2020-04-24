@@ -72,6 +72,7 @@ export const AddTaskForm = () => {
                 value={category}
                 onChange={(event) => setCategory(event.target.value)}
               >
+                <option value='option'>option</option>
                 <option value='home'>home</option>
                 <option value='work'>work</option>
                 <option value='fun'>fun</option>

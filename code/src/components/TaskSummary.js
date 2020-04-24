@@ -4,6 +4,7 @@ import { notepad } from 'reducers/notepad'
 import { Title, DayTitle, SubTitle } from 'library/Text'
 import { TopContainer } from 'library/Container'
 import { RemoveAllButton } from 'library/Button'
+import { TitleEmoji } from 'library/Emoji'
 
 export const TaskSummary = () => {
   const items = useSelector((state) => state.notepad.items.filter((item) => item.done === false))
@@ -17,7 +18,7 @@ export const TaskSummary = () => {
 
   return (
     <TopContainer>
-      <Title>Just do it.</Title>
+      <Title>Just do it. <TitleEmoji ariaLabel='checkmark'>✔️</TitleEmoji></Title>
       <DayTitle>{todayName}</DayTitle>
       <SubTitle>There are {items.length} things left to do.</SubTitle>
       <RemoveAllButton onClick={clearAll}>Clear All Tasks</RemoveAllButton>

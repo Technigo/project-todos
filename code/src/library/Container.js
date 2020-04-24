@@ -20,7 +20,7 @@ export const ListContainer = styled.div`
   align-items: baseline;
   justify-content: flex-start;
   background-color: #FCFCFC;
-  font-size: 20px;
+  font-size: 16px;
   color: #a3a3a3;
 
   &:hover {
@@ -48,7 +48,7 @@ export const FormContainer = styled.div`
   align-items: center;
   justify-content: center;
   background-color: #FCFCFC;
-  font-size: 20px;
+  font-size: 16px;
   color: #a3a3a3;
 `
 export const AddTaskContainer = styled.div`
@@ -59,6 +59,6 @@ export const AddTaskContainer = styled.div`
   align-items: center;
   justify-content: flex-start;
   background-color: #FCFCFC;
-  font-size: 20px;
+  font-size: 16px;
   color: #a3a3a3;
 `
