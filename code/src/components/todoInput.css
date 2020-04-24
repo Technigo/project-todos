@@ -69,8 +69,8 @@ outline: none;
   .todo-input-button {
     width: 2em;
     height: 2em;
-    font-size: 14px;
-    margin-top: 25px;
+    font-size: 22px;
+    margin-top: 15px;
     border: 2px solid palevioletred;
     border-radius: 100px;
     text-align: center;
@@ -79,8 +79,7 @@ outline: none;
     opacity: 1;
   }
   .todo-input-button:active {
-    box-shadow: none;
+    box-shadow: inherit;
     background: palevioletred;
-    color: black;
   }
 }
