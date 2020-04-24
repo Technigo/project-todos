@@ -22,7 +22,7 @@
 }
 
 .todo-input-text:focus {
-  border: 3px solid #ff5464;
+  border: 3px solid #F2AEB4;
 }
 
 .todo-input-button {
@@ -31,12 +31,12 @@
   font-size: 32px;
   margin-left: 16px;
   margin-top: 10px;
-  background-color: #F24957;
+  background-color: #F2AEB4;
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
-  opacity: 0.7;
+  opacity: 0.9;
   transition: 0.3s;
 }
 
@@ -48,7 +48,7 @@
   box-shadow: inset 20px 20px 60px #ce3e4a, 
   inset -20px -20px 60px #ff5464;
   transform: translateY(2px);
-  background: #F24957;
+  background: #D93D4A;
 }
 
 .todo-input-button:focus {

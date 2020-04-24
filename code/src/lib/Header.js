@@ -22,7 +22,7 @@ const TotalTasks = styled.section`
   font-family: 'Manrope', sans-serif;
   text-align: center;
   font-size: 25px;
-  color: #04D9B2;
+  color: #1C1740;
   background: transparent;
   padding: 20px;
   margin: 5px;

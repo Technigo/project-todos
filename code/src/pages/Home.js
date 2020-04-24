@@ -51,5 +51,5 @@ const TodoWrapper = styled.section`
   flex-direction: column;
   justify-content: center;
   background-color: white;
-  border-radius: 7px;
+  border-radius: 2px;
 `

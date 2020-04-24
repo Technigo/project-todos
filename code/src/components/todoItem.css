@@ -11,7 +11,7 @@
 
 .todo-item.done {
   text-decoration: line-through;
-  color: grey;
+  color: #1C1740;
 }
 
 .todo-item-check {
@@ -33,7 +33,7 @@
   font-family: 'Manrope', sans-serif;
   font-weight: 1000;
   border-radius: 8px;
-  background: #F27405;
+  background: #3A3959;
   opacity: 0.7;
   transition: 0.3s;
 }
@@ -43,9 +43,9 @@
 }
 
 .todo-item-remove:active {
-  background: #F27405;
-  box-shadow: inset 20px 20px 60px #ce6304, 
-  inset -20px -20px 60px #ff8506;
+  background: #3A3959;
+  box-shadow: inset 20px 20px 60px #E9F2F0, 
+  inset -20px -20px 60px #E9F2F0;
   transform: translateY(2px);
 }
 
