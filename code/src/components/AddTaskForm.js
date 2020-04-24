@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { list, todolist } from 'reducers/todolist'
 import { taskContainer } from 'components/taskContainer.css'
+import { button } from 'components/button.css'
 
 
 
@@ -24,21 +25,23 @@ export const AddTaskForm = () => {
     }
 
 return (
-    <section className='task-container'>
+    <section className=''>
+    <h2>Add task</h2> 
+    <div>  
     <form onSubmit={handleOnSubmit}>         
-        <lable>
-            Add task   
+        <lable> 
             <input
             type='text'
             onChange={e => setInputValue(e.target.value)}
             value={inputValue}
             />
         </lable>
-        <button 
+        <button className="button"
         type='submit'
         value='Add task*'
         >+</button>
     </form>
+    </div>
 </section>
 )
 }

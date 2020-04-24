@@ -9,7 +9,7 @@ export const ListSummary = () => {
     const numDone =list.items.filter(item => item.done).length
 
     return <section>
-        <h2>
-            {numDone}/{list.items.length} tasks complete</h2>
+        <h4>
+            {numDone} of {list.items.length} tasks complete</h4>
     </section>
 }

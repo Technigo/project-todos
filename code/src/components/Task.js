@@ -26,12 +26,19 @@ export const Task = ({ itemIndex }) => {
         )
     }
   
- return <div className="task-container" className={`task ${item.done ? "done" : ""}`}>
-     <input type="checkbox"
-        onChange={handleOnChange}
-        className="todo-item-check"
-        checked={item.done ? "checked" : "" }></input>
-    <span className="text">{item.description}</span>
-    <a className="remove" onClick={onRemoveClicked}>[Remove]</a>
- </div>
-  };
+ return <section>
+    <div className="card">
+        <div className="checkbox-container">
+            <label className="checkbox-label">
+                <input type="checkbox"
+                    onChange={handleOnChange}
+                    checked={item.done ? "checked" : "" }></input>
+            <span class="checkbox-custom rectangular"></span>
+            </label>
+        </div>
+        <span className="text">{item.description}</span>
+        <button className="remove" onClick={onRemoveClicked}>X</button>
+    </div>
+ </section>
+  }
+
