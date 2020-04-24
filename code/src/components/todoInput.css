@@ -67,8 +67,8 @@ outline: none;
     width: 100%;
   }
   .todo-input-button {
-    width: 2vh;
-    height: 3vh;
+    width: 2em;
+    height: 2em;
     font-size: 14px;
     margin-top: 25px;
     padding-right: 15px;
