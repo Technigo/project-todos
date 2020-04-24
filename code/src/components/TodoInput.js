@@ -4,7 +4,7 @@ import { todos } from 'reducers/todos'
 import { Container } from 'lib/Container'
 import styled from 'styled-components'
 import { Button } from 'lib/Button'
-import DatePicker from 'react-datepicker'
+import DatePicker from 'react-datepicker' // Not used but keep for future iteration
 
 const InputForm = styled.form`
 padding: 10px;
@@ -26,18 +26,18 @@ export const TodoInput = () => {
   // State for input from text box
   const [inputValue, setInputValue] = useState("")
 
-  // Create handle submit function to dispatch addTodo
+  // Function to dispatch addTodo
   const handleOnSubmit = (event) => {
     event.preventDefault()
 
-    // This is where we will dispatch the action to save the new todo item
+    // Dispatch action to save the new todo item
     dispatch(
       todos.actions.addTodo({
         description: inputValue,
         done: false
       })
     )
-    // Clear the text fields after we save it
+    // Clear the text fields after save
     setInputValue("")
   }
 
@@ -51,9 +51,7 @@ export const TodoInput = () => {
             value={inputValue}
           />
         </label>
-        <Button background='lightgray'>Add
-
-        </Button>
+        <Button background='lightgray'>Add</Button>
       </InputForm>
     </Container>
   )

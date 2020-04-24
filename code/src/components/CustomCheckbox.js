@@ -26,7 +26,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   `
 
   // This is the checkmark
-  // Needs to be difined before using it
+  // Needs to be defined before using it
   const Icon = styled.svg`
   fill: none;
   stroke: white;

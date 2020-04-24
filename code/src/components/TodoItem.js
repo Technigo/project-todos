@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
-import { CustomCheckbox } from 'components/CustomCheckbox'
+import { CustomCheckbox } from './CustomCheckbox'
 
 const TodoListItem = styled.li`
 list-style: none;
@@ -28,12 +28,12 @@ cursor: pointer;
 `
 
 export const TodoItem = ({ itemIndex }) => {
-  // get the item from the store based on the index
+  // Get the item from the store based on the index
   const item = useSelector(store => store.todos.list.items[itemIndex])
 
   const dispatch = useDispatch()
 
-  // Create the onRemoveClicked handler
+  // Function to handle remove item
   const onRemoveClicked = event => {
     dispatch(
       todos.actions.removeTodo({
@@ -42,7 +42,7 @@ export const TodoItem = ({ itemIndex }) => {
     )
   }
 
-  // Create the onChange handler for handling the done status
+  // Function to handle the done state
   const handleOnChange = event => {
     dispatch(todos.actions.setDone({
       itemIndex: itemIndex,
@@ -50,6 +50,7 @@ export const TodoItem = ({ itemIndex }) => {
     }))
   }
 
+  // Custom Checkbox mounted here
   return (
     <TodoListItem>
       <CustomCheckbox isChecked={item.done} onChangeHandler={handleOnChange} />
@@ -59,8 +60,3 @@ export const TodoItem = ({ itemIndex }) => {
   )
 }
 
-{/*   <input
-        type='checkbox'
-        onChange={handleOnChange}
-        checked={item.done ? "checked" : ""}
-      ></input> */}

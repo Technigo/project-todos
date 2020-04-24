@@ -11,6 +11,10 @@ const initialState = {
       {
         description: "No, this is not done. Yet.",
         done: false
+      },
+      {
+        description: "Do this. Just do it.",
+        done: false
       }
     ]
   }
