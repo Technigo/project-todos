@@ -4,7 +4,7 @@ export const OuterContainer = styled.main`
   width: 80%;
   margin: 0px auto;
 
-  @media (min width: 430px) {
+  @media (min-width: 430px) {
     width: 90%;
   }
 `
@@ -14,20 +14,34 @@ export const ProjectCard = styled.section`
   justify-content: center;
 `
 export const ProjectForm = styled.form`
-  max-width: 340px;
+  max-width: 256px;
   display: flex;
   justify-content: space-around;
   align-items: flex-end;
   margin: 40px auto 20px auto;
   border-bottom: 2px solid #f4f7f7;
   padding-bottom: 10px;
+
+  @media (min-width: 374px) {
+    max-width: 300px;
+  }
+  @media (min-width: 424px) {
+    max-width: 340px;
+  }
 `
 export const ProjectInput = styled.input`
   border: none;
-  width: 300px;
+  width: 216px;
   background-color: #1f4e5f;
   font-size: 25px;
   color: #f4f7f7;
+
+  @media (min-width: 374px) {
+    width: 260px;
+  }
+  @media (min-width: 424px) {
+    width: 300px;
+  }  
 `
 export const TodoLists = styled.section`
   background-color: #f4f7f7;

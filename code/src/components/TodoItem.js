@@ -2,13 +2,14 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 import moment from 'moment';
-import { TodoItems } from '../lib/Containers'
-import { TodoItemContainer } from '../lib/Containers'
-import { TodoItemContent } from '../lib/Containers'
-import { SpanText } from '../lib/Texts'
-import { SpanTextItem } from '../lib/Texts'
-import { SpanTextBold } from '../lib/Texts'
-import { RemoveButton } from '../lib/Buttons'
+import { TodoItems } from '../lib/Containers';
+import { TodoItemContainer } from '../lib/Containers';
+import { TodoItemContent } from '../lib/Containers';
+import { SpanText } from '../lib/Texts';
+import { SpanTextItem } from '../lib/Texts';
+import { SpanTextBold } from '../lib/Texts';
+import { RemoveButton } from '../lib/Buttons';
+import { Checkbox } from '../lib/Checkbox';
 
 export const TodoItem = ({ projectName, item, itemIndex }) => {
   const dispatch = useDispatch();
@@ -16,8 +17,7 @@ export const TodoItem = ({ projectName, item, itemIndex }) => {
   const statusStyling = () => {
     if (item.done) {
       return 'done'
-    } else if (item.date > moment().format('L')) {
-      
+    } else if (item.date < moment().format('YYYY-MM-DD') && item.date !== '') {
       return 'over-due'
     } else {
       return 'normal'
@@ -45,13 +45,7 @@ export const TodoItem = ({ projectName, item, itemIndex }) => {
 
   return (
     <TodoItems>
-      <label>
-          <input 
-            type='checkbox'
-            onChange={handleOnChange}
-            checked={item.done ? 'checked' : ''}
-          ></input>
-      </label>
+      <Checkbox isChecked={item.done ? 'checked' : ''} onChangeHandler={handleOnChange} /> 
       <TodoItemContainer>
         <TodoItemContent>
           <SpanTextBold className={statusStyling()}>

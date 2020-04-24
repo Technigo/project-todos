@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A project which pulls together all the parts od Redux in a todo app. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The aim of the project was to practice writing a reducers and actions as well as structuring a redux store. To interact with the Redux store I practiced using selectors and dispatching actions. To add some more versatility to the app I added the option of creating projects for the user to group tasks in different todo lists. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://lucid-kepler-9acbb0.netlify.app
