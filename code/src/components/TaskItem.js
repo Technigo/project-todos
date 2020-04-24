@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { tasks } from '../reducers/tasks'
 import moment from 'moment';
+import { CustomCheckbox } from './CustomCheckbox';
 
 /*tasks.actions.addTask({
   listId: listId,
@@ -32,15 +33,19 @@ export const TaskItem = ({ startDate, itemIndex }) => {
   return (
     <section className="taskItem">
       <div className="taskSection">
-        <span className="category" >{item.category}: </span>
+        <span className="category" >{item.category} </span>
         <span className="task-item-text">{item.text}</span>
       </div>
-      <input
+      <CustomCheckbox
+        isChecked={item.complete ? "checked" : ""}
+        onChangeHandler={handleOnChange}
+      />
+      {/*  <input
         type="checkbox"
         onChange={handleOnChange}
         className='task-item-check'
         checked={item.complete ? "checked" : ""}
-      ></input>
+      ></input>*/}
       <div className="dateSection">ADDED:
         <span className="datePicker"> {moment(startDate).format('MMM Do YYYY')}</span>
         DUE: {item.dueDate && <span className="datePicker"> {moment(item.dueDate).format('MMM Do YYYY')}</span>}
