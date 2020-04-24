@@ -1,13 +1,21 @@
-# Project Todos
+# Todos app
 
-Replace this readme with your own information about your project.
+A todo app made using React Redux. Thoughts can be added, marked as completed and removed from the list.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Learning
 
-## The problem
+- How to structure a redux store
+- How to write reducers and actions
+- How to interact with your store using selectors or by dispatching actions
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Tech
 
-## View it live
+- JavaScript ES6
+- React
+- React Redux
+- React Toolkit
+- Styled Components
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+## View live
+
+https://project-todoapp.netlify.app/
