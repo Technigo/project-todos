@@ -33,7 +33,7 @@ const removeAll = () => {
         </article>
         <article>
           <TodoSummary />
-          <ClearButton onClick={removeAll}> Clear all</ClearButton>
+          <ClearButton onClick={removeAll}>Clear</ClearButton>
         </article>
       </SectionFormat>
       <TodoInput />
