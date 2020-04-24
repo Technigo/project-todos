@@ -72,7 +72,7 @@ const Button = styled.input`
   padding: 5px 15px;
 
   border: none;
-  border-radius: 4px
+  border-radius: 4px;
 
   height: 30px;
   width: 45%;
