@@ -17,7 +17,6 @@ export const HeaderToDo = () => {
 
   return (  
     <HeaderContainer>
-      
       <Title>Get Started!</Title>
       <HeaderRight>
         <ToDoSummary />
