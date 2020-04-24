@@ -28,12 +28,14 @@
 .todo-input-button {
   width: 8vh;
   height: 8vh;
-  font-size: 32px;
-  margin-left: 16px;
+  font-size: 40px;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 14px;
   margin-top: 10px;
   background-color: #F2AEB4;
   color: white;
-  border: none;
+  border: 2px solid #F2AEB4;
   border-radius: 8px;
   cursor: pointer;
   opacity: 0.9;
@@ -64,8 +66,9 @@ outline: none;
   .todo-input-button {
     width: 3vh;
     height: 3vh;
-    font-size: 12px;
+    font-size: 9px;
     margin-top: 25px;
+    border: 2px solid palevioletred;
     border-radius: 100px;
     text-align: center;
     vertical-align: middle;
