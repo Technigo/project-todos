@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 
 
-export const CustomCheckbox = ({isChecked, onChangeHandler}) => {
+export const CustomCheckbox = ({isChecked, onChangeHandler }) => {
     const [checked, setChecked] = useState(isChecked);
 
     const HandleOnChange = e => {
@@ -37,12 +37,12 @@ export const CustomCheckbox = ({isChecked, onChangeHandler}) => {
        background: ${(props) => (props.checked ? '#7487AD' : '#E6F5FF')};
        border-radius: 50%;
        transition: all 150ms;
+      
 
        ${Icon} {
             visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
        }
 
-       text-decoration: line-through;
 
      `;
 

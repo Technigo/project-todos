@@ -23,7 +23,7 @@ export const TodoSummary = () => {
 
 
 const Title = styled.h2`
-    margin-left: 16px;
+    margin-left: 32px;
     text-align: left;
     font-size: 15px;
     font-family: "Courier New", Courier, monospace;

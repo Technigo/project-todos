@@ -6,8 +6,9 @@ const initialState = {
     name: 'list',
     items: [
         {
-            description: "Go to the gym",
+            description: "",
             done: false
+            
         }
     ]
   }
@@ -38,7 +39,7 @@ export const todos = createSlice({
             const { itemIndex, done } = action.payload;
             state.list.items[itemIndex].done = done;
         },
-        
+            
     }
 
 });

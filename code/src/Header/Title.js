@@ -1,18 +1,24 @@
 import React from "react";
 import { TodoSummary } from "../components/TodoSummary"
 import styled from 'styled-components'
+import moment from 'moment'
 
 
 
-export const Title = () => {
+export const Title = (today) => {
 
     return (
 
         <Header>
+
+ 
             <Section>
-            <HeaderText>My Tasks</HeaderText>
+               <HeaderText>My Tasks</HeaderText>
+               <Hedertextdate>{moment(today).format('MMM Do YYYY')}</Hedertextdate>
+            </Section>
+    
             <TodoSummary /> 
-             </Section>
+
         </Header>
 
     )
@@ -22,16 +28,20 @@ export const Title = () => {
 
 const Header = styled.header` 
    width: 100%;
-   padding: 0px;
+   padding-top: 0px;
 `
+
 const Section = styled.section` 
-   margin: 0px;
+   display: flex;
 `
 
 const HeaderText = styled.h2`
-    margin-bottom: 0px;
-    margin-left: 16px;
-    text-align: left;
-    font-size: 30px;
-    font-family: Tahoma, Geneva, sans-serif;
+    display: inline-block;
+    margin-left: 30px;
+    margin-right: 160px;
+    margin-top: 40px;
+`
+const Hedertextdate = styled.h2`
+    margin-top: 20px;
+    font-size: 15px;
 `

@@ -31,19 +31,28 @@ export const TodoItem = ({ itemIndex }) => {
         );
     };
 
+
+    const Itemtext = styled.text`
+       padding-left: 10px;
+       padding-right: 10px;
+       text-decoration: ${prop => prop.isChecked ? 'line-through' : ''};
+       color: ${prop => prop.isChecked ? '#D3D3D3' : 'black'};
+    `;
+
+
     return (
 
         <ItemArea>
 
-       
             <Item>
-            <CustomCheckbox 
-            isChecked={item.done ? "checked" : ""}
+            <CustomCheckbox
+            isChecked={item.done ? "checked" : ""} 
             onChangeHandler={handleOnChange}
             /> 
-            <Itemtext>{item.description}</Itemtext>
-  
-
+            <Itemtext
+            isChecked={item.done}
+            >{item.description}</Itemtext>
+          
             <Button
                 onClick={onRemoveClicked}
             >
@@ -67,15 +76,8 @@ const Item = styled.div `
      display: flex;
      justify-content: left;
      margin-top: 20px;
-     margin-left: 20px;
-     width: 30%;
-
-`
-
-const Itemtext = styled.text`
-    padding-left: 10px;
-    padding-right: 10px;
-
+     margin-left: 30px;
+     width: 100%;
 `
 
 

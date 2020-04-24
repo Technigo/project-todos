@@ -4,13 +4,10 @@ import { useSelector } from "react-redux"
 import { Title } from "../Header/Title"
 import { TodoItem } from "./TodoItem.js"
 import { TodoInput } from "./TodoInput.js"
+import { TodoRemoveall } from "./TodoRemoveall"
 
 
 import styled from 'styled-components'
-import img from '../assets/water.jpg'
-
-
-// import img from './img/bg.gif';
 
 export const TodoList = () => {
 
@@ -21,6 +18,10 @@ export const TodoList = () => {
 
         <ArticleWrapper>
             <Title /> 
+
+            <Section >
+              <TodoRemoveall /> 
+            </ Section >
       
 
             <TodoInput />
@@ -29,6 +30,7 @@ export const TodoList = () => {
             ))}
         
         </ArticleWrapper>
+
     
         </Article>
 
@@ -40,22 +42,26 @@ export const TodoList = () => {
 const Article = styled.div `
      display: flex;
      justify-content: center;
-     text-align: center;
-     width: 100%;
-     height: 800px;
-     background-image: url(${img});
-     background-size: cover;
-     
 `
 
 const ArticleWrapper = styled.div `
+     overflow: scroll;
      margin-top: 60px;
      text-align: center;
      width: 30%;
      height: 600px;
-     background-color: white;
-     box-shadow: 10px 10px;
-     
+     background-color: white; 
+     border-left: solid 20px transparent; 
+     border-right: solid 20px transparent; 
+     border-bottom: solid 20px #fff;
+     box-shadow: 0 0 20px #2F4F4F;
+`
+
+const Section = styled.section `
+     display: block;
+     text-align: right;
+     margin-right: 30px;
+     margin-bottom: 20px;  
 `
 
 
