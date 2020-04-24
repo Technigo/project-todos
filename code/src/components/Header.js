@@ -1,5 +1,4 @@
 import React from 'react'
-import { CustomCheckbox } from 'components/CustomCheckbox'
 import styled from 'styled-components'
 
 export const Header = () => {
@@ -9,7 +8,6 @@ export const Header = () => {
       <Title>
         Do this, do that
     </Title>
-      <CustomCheckbox />
     </HeaderContainer>
   )
 }

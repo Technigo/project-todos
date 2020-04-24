@@ -30,7 +30,7 @@ export const AddTask = () => {
       onSubmit={handleOnSubmit}>
       <TaskInputField
         type='text'
-        //FATTAR INTE DETTA att inputvalue sätts till det som jag skriver 
+        //att inputvalue sätts till det som jag skriver 
         //och när det skrivs något känner statet av den
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
@@ -49,6 +49,7 @@ export const AddTask = () => {
 const TodoInputForm = styled.form`
   display:flex;
   justify-content: space-between;
+  align-items: center;
   margin: 14px 14px 0 14px;
   padding-bottom: 14px;
   border-bottom: 1px #502F4C solid;

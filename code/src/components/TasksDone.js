@@ -20,6 +20,7 @@ const TasksDoneSection = styled.section`
   display: flex;
   flex-direction:column;
   align-items:center;
+  min-width: 40%;
 `
 const GoodJob = styled.h2`
   margin: 0;
