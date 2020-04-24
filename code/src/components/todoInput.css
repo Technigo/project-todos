@@ -71,11 +71,10 @@ outline: none;
     height: 2em;
     font-size: 14px;
     margin-top: 25px;
-    padding-right: 25px;
     border: 2px solid palevioletred;
     border-radius: 100px;
     text-align: center;
-    vertical-align: middle;
+    justify-content: center;
     background-color: palevioletred;
     opacity: 1;
   }
