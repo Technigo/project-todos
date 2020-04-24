@@ -12,7 +12,7 @@ export const TaskList = () => {
   const allTasks = useSelector(store => store.tasks.taskArray)
 
   const displayLenght = () => {
-    return allTasks.filter((item) => !item.complete).length
+    return allTasks.filter((item) => item.complete).length
   }
 
   return (
@@ -20,7 +20,7 @@ export const TaskList = () => {
       {allTasks.map(task => (
         <Task key={task.id} task={task} />
       ))}
-      Uncompleted: {displayLenght()}/{allTasks.length}
+      Completed: {displayLenght()}/{allTasks.length}
     </div>
   )
 }
