@@ -31,6 +31,11 @@ const DeleteAllButton = styled.button`
   border-radius: 5px;
   background-color:#502F4C;
   color:#F9F4F5;
-  font-family: 'Segoe UI';
+  font-family: 'Noto Sans';
+  font-size: 16px;
   cursor: pointer;
+  transition: border-color .4s ease-out;
+  &:hover {
+    background-color: #70587C;
+  }
 `

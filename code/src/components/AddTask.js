@@ -49,13 +49,15 @@ export const AddTask = () => {
 const TodoInputForm = styled.form`
   display:flex;
   justify-content: space-between;
-  margin: 20px;
+  margin: 14px 14px 0 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px #502F4C solid;
 `
 
 const TaskInputField = styled.input`
   margin: 0;
   padding-left: 5px;
-  width: 200px;
+  width: 210px;
   height: 40px;
   box-sizing: border-box;
   border: 1px solid #502F4C;
@@ -63,19 +65,25 @@ const TaskInputField = styled.input`
   border-right: 3px solid #502F4C;
   border-radius: 5px;
   transition: border-color .4s ease-out;
-  font-family: 'Segoe UI';
+  font-family: 'Noto Sans';
+  font-size: 16px;
   &:focus {
     border-color: #F9F4F5;
   }
 `
-const SubmitButton = styled.button`
+const SubmitButton = styled.input`
   margin: 0;
   padding: 10px;
   box-sizing: border-box;
   border: none;
   border-radius: 5px;
-  background-color: #70587C;
+  background-color: #502F4C;
   color:#F9F4F5;
-  font-family: 'Segoe UI';
+  font-family: 'Noto Sans';
+  font-size: 16px;
   cursor: pointer;
+  transition: border-color .4s ease-out;
+  &:hover {
+    background-color: #70587C;
+  }
 `

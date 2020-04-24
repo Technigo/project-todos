@@ -30,9 +30,16 @@ export const Task = ({ itemIndex }) => {
   }
 
   return (
-    //om den är done så blir classen sådär och överstruken
-    // <div className={`todo-item ${item.done ? 'done' : ''}`}>
+
     <TaskItem>
+      <CheckBoxLabel>
+        <input type="checkbox"
+          onChange={handleOnChange}
+          className="todo-item-check"
+          checked={item.done ? true : ""}>
+        </input>
+        <span className="check-new" />
+      </CheckBoxLabel>
       <input type='checkbox'
         onChange={handleOnChange}
         checked={item.done ? 'checked' : ''}>
@@ -46,12 +53,68 @@ export const Task = ({ itemIndex }) => {
   )
 }
 
+const CheckBoxLabel = styled.label`
+ input{
+   opacity: 0;
+  }
+ margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+ `
+
+
+//   .checkbox - container {
+
+//   }
+
+// .check - new {
+//   position: absolute;
+//   border- radius: 50 %;
+// height: 25px;
+// width: 25px;
+// background - color: #ff4f70;
+// margin - top: 3px;
+// }
+
+// .check - new: after {
+//   content: "";
+//   position: absolute;
+//   display: none;
+// }
+
+// .checkbox - container input: checked~.check - new: after {
+//   display: block;
+// }
+
+// .checkbox - container.check - new: after {
+//   left: 9px;
+//   top: 5px;
+//   width: 5px;
+//   height: 10px;
+//   border: solid white;
+//   border - width: 0 3px 3px 0;
+//   -webkit - transform: rotate(45deg);
+//   -ms - transform: rotate(45deg);
+//   transform: rotate(45deg);
+// }
+
+
+
+
+
+
+
+
+
+
+
 const TaskItem = styled.div`
   display: flex;
   justify-content: space-between;
-  
-  padding: 20px;
-  border-top: 1px #502F4C solid;
+  font-family: 'Noto Sans';
+  margin: 14px;
+  padding-bottom: 14px;
+  border-bottom: 1px #502F4C solid;
 `
 
 const RemoveLink = styled.a`
