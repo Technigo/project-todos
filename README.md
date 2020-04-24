@@ -6,10 +6,10 @@ In this todo app, you can add tasks, list tasks and toggle whether a task is don
 
 ## Learnings
 
-How to structure a redux store
-How to write reducers and actions
-How to interact with the store using selectors or by dispatching actions
-Using Styled components
+- How to structure a redux store
+- How to write reducers and actions
+- How to interact with the store using selectors or by dispatching actions
+- Using Styled components
 
 ## View it live
 
