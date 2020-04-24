@@ -35,9 +35,9 @@ export const App = () => {
   return (
     <div>
       <Provider store={store} >
-        {/* <Summary /> */}
-        <TaskList />
+        {/* <Header /> */}
         <AddTask />
+        <TaskList />
       </Provider>
     </div>
   )

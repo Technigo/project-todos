@@ -1,7 +1,8 @@
-import React, { Component } from 'react'
+import React from 'react'
 // import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 import { Task } from './Task'
+import { HandleTasks } from './HandleTasks'
 
 // import { tasks } from 'reducers/tasks'
 
@@ -11,16 +12,14 @@ import { Task } from './Task'
 export const TaskList = () => {
   const allTasks = useSelector(store => store.tasks.taskArray)
 
-  const displayLenght = () => {
-    return allTasks.filter((item) => item.complete).length
-  }
-
-  return (
-    <div>
-      {allTasks.map(task => (
-        <Task key={task.id} task={task} />
-      ))}
-      Completed: {displayLenght()}/{allTasks.length}
-    </div>
-  )
+  if (allTasks.length) {
+    return (
+      <div>
+        {allTasks.map(task => (
+          <Task key={task.id} task={task} />
+        ))}
+        <HandleTasks />
+      </div>
+    )
+  } else return <>Lottie Please Add Tasks</>
 }

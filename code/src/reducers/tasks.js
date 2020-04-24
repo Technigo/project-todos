@@ -24,16 +24,14 @@ export const tasks = createSlice({
     removeAllTasks: (state) => {
       state.taskArray = []
     },
-    hideTasks: (state, action) => {
+    filterTasks: (state, action) => {
       if (action.payload === "complete") {
         state.taskArray.forEach((item) => {
-          if (item.complete) item.display = true;
-          else item.display = false;
+          item.complete ? item.display = true : item.display = false;
         });
       } else if (action.payload === "un-complete") {
         state.taskArray.forEach((item) => {
-          if (!item.complete) item.display = true;
-          else item.display = false;
+          !item.complete ? item.display = true : item.display = false;
         });
       } else {
         state.taskArray.forEach((item) => {

@@ -35,14 +35,7 @@ export const AddTask = () => {
         type="submit">
         Add task
     </button>
-      <button type="button" onClick={() => {
-        dispatch(
-          tasks.actions.removeAllTasks())
-      }}>Remove All</button>
-      <button type="button" onClick={() => {
-        dispatch(
-          tasks.actions.hideTasks("un-complete"))
-      }}>Filter</button>
+
     </form >
   )
 }
