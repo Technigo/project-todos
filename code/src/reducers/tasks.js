@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const tasks = createSlice({
   name: 'task',
   initialState: {
+    user: "Olle",
     taskArray: [
       { id: 1, text: 'clean up', complete: true, display: true },
       { id: 2, text: 'get groceries', complete: true, display: true },
@@ -11,6 +12,9 @@ export const tasks = createSlice({
     ]
   },
   reducers: {
+    changeUser: (state, action) => {
+      state.user = action.payload
+    },
     addTask: (state, action) => {
       state.taskArray.push({ id: Date.now(), ...action.payload, display: true, date: new Date() })
     },

@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { combineReducers, createStore } from '@reduxjs/toolkit'
 import { TaskList } from 'components/TaskList'
 import { AddTask } from 'components/AddTask'
+import { Header } from 'components/Header'
 
 import { tasks } from 'reducers/tasks'
 // another reducer 
@@ -35,7 +36,7 @@ export const App = () => {
   return (
     <div>
       <Provider store={store} >
-        {/* <Header /> */}
+        <Header />
         <AddTask />
         <TaskList />
       </Provider>

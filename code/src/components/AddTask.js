@@ -30,12 +30,15 @@ export const AddTask = () => {
         onChange={event => setInputValue(event.target.value)}
         value={inputValue}
         className="task-input-text"
-      ></input>
+        placeholder="Add task"
+        aria-label="Type task here"
+        required
+      />
       <button
-        type="submit">
+        type="submit"
+        aria-label="Add task">
         Add task
-    </button>
-
+      </button>
     </form >
   )
 }
