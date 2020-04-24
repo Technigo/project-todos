@@ -1,13 +1,17 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+We did a todo project - mine has a simple design.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Had a lot of small issues, 
+
+Using style components is very new to me, so the resposiveness is not the best
+
+I have not worked with Redux before, I still think is quite tricky to understand.
+
+In this project I follow the code alongs closely 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://vigilant-bohr-5533a0.netlify.app/
