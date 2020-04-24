@@ -6,14 +6,9 @@ import MomentLocaleUtils, {
   formatDate,
   parseDate,
 } from 'react-day-picker/moment';
-
-import moment from 'moment';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-
 import 'react-day-picker/lib/style.css';
-
 import 'moment/locale/it';
-import { CompletedTasks } from './completedtodolist.js';
 
 export const ToDoInput = ({ itemsId }) => {
   const dispatch = useDispatch();

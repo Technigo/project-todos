@@ -2,16 +2,9 @@ import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos.js';
 import '../index.css';
-import MomentLocaleUtils, {
-  formatDate,
-  parseDate,
-} from 'react-day-picker/moment';
-
-import moment from 'moment';
+import { formatDate, parseDate } from 'react-day-picker/moment';
 import DayPickerInput from 'react-day-picker/DayPickerInput';
-
 import 'react-day-picker/lib/style.css';
-
 import 'moment/locale/it';
 
 export const ToShopInput = ({ itemsId }) => {
