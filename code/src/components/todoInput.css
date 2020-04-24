@@ -59,6 +59,9 @@ outline: none;
 
 /* ******* MEDIA QUERIES ****** */
 @media(max-width:768px){
+  .todo-input {
+    margin: 0;
+  }
   .todo-input-text {
     font-size: 20px;
     width: 100%;
