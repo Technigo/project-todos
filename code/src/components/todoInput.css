@@ -62,21 +62,14 @@ outline: none;
     width: 90%;
   }
   .todo-input-button {
-    width: 6vh;
-    height: 6vh;
-    font-size: 32px;
-    margin-left: 16px;
-    margin-top: 10px;
-    background-color: #F2AEB4;
-    color: white;
-    border: inherit;
-    border-radius: inherit;
-    cursor: pointer;
-    opacity: 0.9;
-    transition: 0.3s;
+    width: 3vh;
+    height: 3vh;
+    font-size: 12px;
+    margin-top: 25px;
   }
   .todo-input-button:active {
     box-shadow: none;
-    background: white;
+    background: grey;
+    color: pink;
   }
 }
