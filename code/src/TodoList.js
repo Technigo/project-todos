@@ -19,10 +19,7 @@ const TodoList = () => {
         ))}
       
       </ul>
-      <div>
-        Highlight Query for incomplete items:
-        <input value={state.query} onChange={setQuery} />
-      </div>
+     
     </div>
   );
 };
