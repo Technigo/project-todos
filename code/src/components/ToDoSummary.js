@@ -23,7 +23,6 @@ export const ToDoSummary = () => {
         </span>
       </h2>
       
-
       {showShoppingList && (
         <ul>
           {doneItem.map(item => (
