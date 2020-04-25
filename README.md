@@ -11,6 +11,7 @@ This project is built in react and redux. I planned which components to use and 
  2. used styled components
  3. styled the dropdown input fields
  4. styled the datepicker
+ 5. made it responsive for bigger screens
 
 ## View it live
 
