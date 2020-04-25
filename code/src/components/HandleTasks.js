@@ -15,22 +15,41 @@ export const HandleTasks = () => {
     return allTasks.filter((item) => item.complete).length
   }
 
+  const filter = () => {
+    return allTasks.filter((item) => item.complete).length
+  }
+
+
+  /* Array includes hidden -> show all */
+  const showAll = allTasks.some(item => item.display === false)
+
+  /* Array includes completed and visible -> show uncompleted */
+  const showUncompleted = allTasks.some(item => item.display === true && item.complete === true)
+
+  /* Array includes uncompleted and visible -> show completed */
+  const showCompleted = allTasks.some(item => item.display === true && item.complete === false)
+
+
   return (
     <Wrapper>
       Completed: {displayLenght()}/{allTasks.length}
       <div>
-        <Button type="button" onClick={() => {
-          dispatch(
-            tasks.actions.filterTasks("un-complete"))
-        }}>Filter To do</Button>
-        <Button type="button" onClick={() => {
-          dispatch(
-            tasks.actions.filterTasks("complete"))
-        }}>Filter completed</Button>
-        <Button type="button" onClick={() => {
-          dispatch(
-            tasks.actions.filterTasks(""))
-        }}>Show All</Button>
+        {showUncompleted && (
+          <Button type="button" onClick={() => {
+            dispatch(
+              tasks.actions.filterTasks("un-complete"))
+          }}>Filter To do</Button>)}
+        {showCompleted && (
+          <Button type="button" onClick={() => {
+            dispatch(
+              tasks.actions.filterTasks("complete"))
+          }}>Filter completed</Button>)}
+        {showAll && (
+          <Button
+            type="button" onClick={() => {
+              dispatch(
+                tasks.actions.filterTasks(""))
+            }}>Show All</Button>)}
       </div>
       <div>
         <Button type="button" onClick={() => {
@@ -54,3 +73,4 @@ const Wrapper = styled.div`
 const Button = styled.button`
   margin: 10px 10px 0 0;
 `;
+

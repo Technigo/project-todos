@@ -39,7 +39,7 @@ export const AddTask = () => {
       <button
         type="submit"
         aria-label="Add task">
-        Add task
+        +
       </button>
     </Form >
   )
