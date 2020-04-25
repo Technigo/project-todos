@@ -1,7 +1,7 @@
 import React from "react"
 import {useDispatch} from "react-redux"
 import {ToDo} from "reducers/ToDo"
-
+import {Button} from "library/Button"
 
 export const ClearButton = () => {
     const dispatch = useDispatch()
@@ -10,8 +10,8 @@ export const ClearButton = () => {
       }
 
     return (
-        <button type="button" onClick={handleRemoveAllClick}>
+        <Button type="button" onClick={handleRemoveAllClick}>
             Remove All
-        </button>
+        </Button>
     )
 }

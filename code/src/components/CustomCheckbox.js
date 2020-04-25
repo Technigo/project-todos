@@ -35,7 +35,7 @@ export const CustomCheckbox =({isChecked, onChangeHandler}) => {
     display: inline-block;
     width: 32px;
     height: 32px;
-    background: ${(props) => (props.checked ? "blue" : "grey")};
+    background: ${(props) => (props.checked ? "yellow" : "grey")};
     border-radius: ${(props) => (props.checked ? "2px" : "30px")};
     transition: all 150ms;
     ${Icon} {

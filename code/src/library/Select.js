@@ -3,16 +3,17 @@ import styled from "styled-components"
 
 export const Select = styled.select`
 height: 1.4rem;
-background-color: lightyellow;
+background-color: white;
 color:#3d3d3d;
 font-size: 1rem;
-margin:0.5rem;
+margin:0.6rem;
 
-    option {
-        color: #3d3d3d;
-        background-color: red;
-        padding: 3px;
-        display: flex;
-        
-    }
+option { /*  why is this not working??? */
+    color: black;
+    background: orange;
+    display: flex;
+    white-space: pre;
+    min-height: 20px;
+    padding: 0px 2px 1px;
+  }
 `

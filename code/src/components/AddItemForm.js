@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { ToDo } from 'reducers/ToDo'
 import {Select } from "library/Select"
-/* import DatePicker from "react-date-picker"https://reactdatepicker.com/ */
+/* import DatePicker from "react-date-picker"https://reactdatepicker.com/  still working on it :)*/
 import {Form} from "library/Form"
+import {Button}from "library/Button"
+import {Title, Subtitle} from "library/Text"
+
 
 
 export const AddItemForm = () => {
@@ -21,9 +24,10 @@ export const AddItemForm = () => {
     setName('')
   }
 
+
   return (
     <>
-    <h1>Celebrate the journey!</h1><h2>There will always be things to do, make sure to balance work and play! </h2>
+    <Title>Celebrate the journey!</Title><Subtitle> Remember to balance work and play </Subtitle>
     <Form onSubmit={handleSubmit}>
       <label>
         Add a To-Do:
@@ -44,7 +48,7 @@ export const AddItemForm = () => {
             <option value= "play">Play</option>
         </Select>
       </label>
-      <button type="submit">Add it</button>
+      <Button type="submit">ADD NEW</Button>
     </Form>
     </>
   )
