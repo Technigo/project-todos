@@ -34,9 +34,8 @@ export const Task = ({ task }) => {
 
 const TaskContainer = styled.div`
   display: flex;
-  margin: 15px 0;
+  margin: 20px 0;
 `;
-
 
 const TaskText = styled.label`
   display: flex;
@@ -71,39 +70,34 @@ const Input = styled.input`
   &::after {
       position: absolute;
       content: '';
-
       border: solid #000;
       border-width: 0 1px 1px 0;
       transition: 0.1s;
-
       top: 2px;
-      left: 7px;
+      left: 6px;
       height: 13px;
-      width: 5px;
+      width: 7px;
       transform: rotate(30deg);
-
       opacity: 0;
     }
 
   &:checked {
-    /* background-color: #000; */
+    border: 1px solid #ccc;
     &::after {
       opacity: 1;
+      border: solid #ccc;
+      border-width: 0 1px 1px 0;
     }
-    
-  }
-
-  &:active {
-    /* background: black; */
-    /* transition: 0.1s; */
-
   }
 
   &:focus {
     border: 1px solid #000;
-    background: ;
     box-shadow: 0 0 2px 2px #bbb;
     outline: none;
+    &::after {
+      border: solid #000;
+      border-width: 0 1px 1px 0;
+    }
   }
 `;
 
@@ -123,7 +117,6 @@ const Remove = styled.a`
   color: #bbb;
 
   &:hover {
-    /* text-decoration: underline; */
     color: black;
   }
 `;

@@ -27,7 +27,7 @@ export const AddTask = () => {
     <Form
       className="task-input"
       onSubmit={handleOnSubmit}>
-      <input
+      <Input
         type="text"
         onChange={event => setInputValue(event.target.value)}
         value={inputValue}
@@ -47,5 +47,24 @@ export const AddTask = () => {
 
 
 const Form = styled.form`
-  margin: 20px 0;
+  margin: 30px 0 30px 0;
+`;
+
+const Input = styled.input`
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-right: 10px;
+  padding: 10px;
+  width: 200px;
+  height: 40px;
+  font-size: 16px;
+  box-sizing: border-box;
+  &:focus {
+    border: 1px solid #000;
+    box-shadow: 0 0 2px 2px #bbb;
+    outline: none;
+  }
+  &::placeholder {
+    color: #ccc;
+  }
 `;

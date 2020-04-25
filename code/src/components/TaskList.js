@@ -24,3 +24,4 @@ export const TaskList = () => {
     )
   } else return <EmptyList />
 }
+
