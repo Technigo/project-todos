@@ -66,7 +66,7 @@ export const HandleTasks = ({ completed, remove, show }) => {
       {/* returning completed if completed prop */}
       {completed && (
         <Div>
-          Completed {displayLenght()}/{allTasks.length}
+          Completed {displayLenght()} out of {allTasks.length} tasks
         </Div>
       )}
 
