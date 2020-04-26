@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 import styled from "styled-components";
-
+import { ButtonBracket } from 'elements/Buttons';
 
 export const Header = () => {
   const user = useSelector(store => store.tasks.user)
@@ -11,10 +11,10 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <TodoHeader>{user && `${user}'s`} Todo list</TodoHeader>
-      <ChangeName className="change-name" onClick={() => {
+      <ButtonBracket role="button" onClick={() => {
         dispatch(
           tasks.actions.changeUser(prompt("Välj namn")))
-      }}>[{user ? "+" : "Add user name"}]</ChangeName>
+      }}>{user ? "+" : "Add user name"}</ButtonBracket>
     </HeaderContainer>
   )
 }
@@ -26,17 +26,6 @@ const HeaderContainer = styled.section`
 
 const TodoHeader = styled.h1`
   font-size: 28px;
-  margin: 0;
-`;
-
-const ChangeName = styled.span`
-  font-size: 12px;
-  color: #bbb;
-  margin-left: 10px;
-  cursor: pointer;
-
-  &:hover {
-    color: black;
-  }
-
+  margin: 0 5px 0 0;
+  font-weight: normal;
 `;

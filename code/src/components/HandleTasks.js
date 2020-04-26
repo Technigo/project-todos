@@ -3,22 +3,16 @@ import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 import styled from "styled-components";
+import { Button, ButtonBracket } from 'elements/Buttons';
 
 
-
-export const HandleTasks = () => {
-
+export const HandleTasks = ({ completed, remove, show }) => {
   const allTasks = useSelector(store => store.tasks.taskArray)
   const dispatch = useDispatch()
 
   const displayLenght = () => {
     return allTasks.filter((item) => item.complete).length
   }
-
-  const filter = () => {
-    return allTasks.filter((item) => item.complete).length
-  }
-
 
   /* Array includes hidden -> show all */
   const showAll = allTasks.some(item => item.display === false)
@@ -31,46 +25,65 @@ export const HandleTasks = () => {
 
 
   return (
+
     <Wrapper>
-      Completed: {displayLenght()}/{allTasks.length}
-      <div>
-        {showUncompleted && (
-          <Button type="button" onClick={() => {
-            dispatch(
-              tasks.actions.filterTasks("un-complete"))
-          }}>Filter To do</Button>)}
-        {showCompleted && (
-          <Button type="button" onClick={() => {
-            dispatch(
-              tasks.actions.filterTasks("complete"))
-          }}>Filter completed</Button>)}
-        {showAll && (
-          <Button
-            type="button" onClick={() => {
+
+      {/* returning show buttons if show prop */}
+      {show && (
+        <Div>
+          {showUncompleted && (
+            <Button type="button" onClick={() => {
               dispatch(
-                tasks.actions.filterTasks(""))
-            }}>Show All</Button>)}
-      </div>
-      <div>
-        <Button type="button" onClick={() => {
-          dispatch(
-            tasks.actions.removeComplete())
-        }}>Remove Complete</Button>
-        <Button type="button" onClick={() => {
-          dispatch(
-            tasks.actions.removeAllTasks())
-        }}>Remove All</Button>
-      </div>
+                tasks.actions.filterTasks("un-complete"))
+            }}>To do</Button>)}
+          {showCompleted && (
+            <Button type="button" onClick={() => {
+              dispatch(
+                tasks.actions.filterTasks("complete"))
+            }}>Completed</Button>)}
+          {showAll && (
+            <Button
+              type="button" onClick={() => {
+                dispatch(
+                  tasks.actions.filterTasks(""))
+              }}>Show All</Button>)}
+        </Div>
+      )}
+
+      {/* returning remove buttons if remove prop */}
+      {remove && (
+        <Div>
+          <ButtonBracket type="button" onClick={() => {
+            dispatch(
+              tasks.actions.removeComplete())
+          }}>Remove Complete</ButtonBracket>
+          <ButtonBracket type="button" onClick={() => {
+            dispatch(
+              tasks.actions.removeAllTasks())
+          }}>Remove All</ButtonBracket>
+        </Div>
+      )}
+      {/* returning completed if completed prop */}
+      {completed && (
+        <Div>
+          Completed {displayLenght()}/{allTasks.length}
+        </Div>
+      )}
+
 
     </Wrapper>
   )
 }
 
 const Wrapper = styled.div`
-  margin-top: 50px;
+  margin-top: 0px;
 `;
 
-const Button = styled.button`
-  margin: 10px 10px 0 0;
+const Div = styled.div`
+  margin: 20px 0;
 `;
+
+// const Button = styled.button`
+//   margin: 10px 10px 0 0;
+// `;
 

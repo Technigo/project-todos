@@ -16,10 +16,11 @@ export const TaskList = () => {
   if (allTasks.length) {
     return (
       <div>
+        <HandleTasks show="true" />
         {allTasks.map(task => (
           <Task key={task.id} task={task} />
         ))}
-        <HandleTasks />
+        <HandleTasks completed="true" remove="true" />
       </div>
     )
   } else return <EmptyList />
