@@ -1,13 +1,7 @@
 import React from 'react'
-import '../styling/header.css'
-import moment from 'moment'
 import { useSelector } from 'react-redux'
-
-
-// Todo title
-// Date of today 
-// How many tasks in total 
-// Button to clear all tasks 
+import moment from 'moment'
+import '../styling/header.css'
 
 export const Header = () => {
   const list = useSelector(store => store.todos.list)

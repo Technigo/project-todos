@@ -1,6 +1,8 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
 import '../styling/todo-item.css'
 
 export const TodoItem = ({ itemIndex, dueDate }) => {
@@ -34,10 +36,11 @@ export const TodoItem = ({ itemIndex, dueDate }) => {
         className="todo-item-check"
         checked={item.done ? "checked" : ""}
       ></input>
-      <p className="item-text">
-        <span className={`${item.category === '' ? 'hide' : "todo-item-category"}`}>{item.category}</span>
-        <span className="todo-item-description">{item.description}</span></p>
-      <a aria-label="remove-button" className="todo-item-remove" onClick={handleRemove}>[Remove]</a>
+      <div className="text-wrapper">
+        <span className={`${item.category === '' ? 'hide' : "todo-item-category " + (item.category)}`}>{item.category}</span>
+        <span className="todo-item-description">{item.description}</span>
+        <a aria-label="remove-button" className="todo-item-remove" onClick={handleRemove}><FontAwesomeIcon icon={faTimesCircle} /></a>
+      </div>
     </div>
   )
 }

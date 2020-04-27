@@ -18,3 +18,11 @@ button {
   margin-top: 20px;
   color: white;
 }
+
+.text-wrapper {
+  width: 250px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}

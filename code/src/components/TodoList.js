@@ -1,7 +1,7 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 import { TodoItem } from '../components/TodoItem'
 import { TodoSummary } from '../components/TodoSummary'
-import { useSelector } from 'react-redux'
 import { ToggleButton } from '../components/ToggleButton'
 import { EmptyList } from '../components/EmptyList'
 import '../styling/todo-list.css'

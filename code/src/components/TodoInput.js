@@ -1,4 +1,4 @@
-import React, { useState, Component } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
 import '../styling/todo-input.css'
