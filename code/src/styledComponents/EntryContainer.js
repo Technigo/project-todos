@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 export const EntryContainer = styled.form`
   display: flex;
   flex-direction: row;

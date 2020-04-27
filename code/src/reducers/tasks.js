@@ -1,11 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
 const initialState = {
   list: {
-    name: "ToDo List",
+    name: 'ToDo List',
     items: [
       {
-        description: "Add tasks to the to-do list",
+        description: 'Add tasks to the to-do list',
         done: false,
       }
     ]

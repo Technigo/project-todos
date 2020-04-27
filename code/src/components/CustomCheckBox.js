@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { tasks } from 'reducers/tasks';
-import styled from 'styled-components';
+import React, { useState } from 'react'
+import styled from 'styled-components'
 
-export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
+
+export const CustomCheckBox = ({ isChecked, onChangeHandler }) => {
   const [checked, setChecked] = useState(isChecked);
 
   const handleOnChange = (event) => {
@@ -23,13 +22,11 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     white-space: nowrap;
     width: 1px;
   `
-
   const Icon = styled.svg`
     fill: none;
     stroke: black;
     stroke-width: 2px;
   `
-
   const StyledCheckbox = styled.div`
     width: 30px;
     height: 30px;
@@ -45,18 +42,15 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
    }
   `
 
-  const CheckboxContainer = styled.div`
-  `
-
   const Checkbox = ({ className, checked, ...props }) => (
-    <CheckboxContainer>
+    <section>
       <HiddenCheckbox checked={checked} {...props}></HiddenCheckbox>
       <StyledCheckbox checked={checked}>
-        <Icon viewBox="0 0 24 24">
-          <polyline points="20 7 9 17 4 12" />
+        <Icon viewBox='0 0 24 24'>
+          <polyline points='20 7 9 17 4 12' />
         </Icon>
       </StyledCheckbox>
-    </CheckboxContainer>
+    </section>
   )
 
   return (

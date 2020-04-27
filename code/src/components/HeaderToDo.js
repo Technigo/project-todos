@@ -4,6 +4,7 @@ import { ToDoSummary } from './ToDoSummary'
 import { HeaderContainer, Title } from '../styledComponents/Header'
 import { StyledLink } from 'styledComponents/StyledLink'
 
+
 const HeaderRight = styled.section`
   display: flex;
   flex-direction: column;
@@ -20,10 +21,8 @@ export const HeaderToDo = () => {
       <Title>Get Started!</Title>
       <HeaderRight>
         <ToDoSummary />
-        <StyledLink to="/shopping">Shopping List ➜	</StyledLink>
+        <StyledLink to='/shopping'>Shopping List ➜	</StyledLink>
       </HeaderRight>
-
     </HeaderContainer>
-    
   )
 }

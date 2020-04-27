@@ -6,6 +6,7 @@ import { Input } from '../styledComponents/Input'
 import { Button } from '../styledComponents/Button'
 import { Dropdown } from 'styledComponents/Dropdown'
 
+
 export const AddShopping = () => {
   const [newShop, setNewShop] = useState('')
   const [category, setCategory] = useState('')

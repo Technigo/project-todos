@@ -5,7 +5,8 @@ import { Button } from '../styledComponents/Button'
 import { DoubleButtons } from '../styledComponents/DoubleButtons'
 import { List } from '../styledComponents/List'
 import { ListItem } from '../styledComponents/ListItem'
-import { CustomCheckbox } from 'components/CustomCheckbox'  
+import { CustomCheckBox } from 'components/CustomCheckBox'  
+
 
 export const Shop = ({itemIndex}) => {
   const item = useSelector(store => store.shopping.list.items[itemIndex])
@@ -28,9 +29,9 @@ export const Shop = ({itemIndex}) => {
     <List>
       <ListItem isChecked={item.done ? 'checked' : ''}
         onChangeHandler={handleOnChange}>{item.description}</ListItem>
-      <ListItem>{item.category}</ListItem>
+      <ListItem isChecked={item.done ? 'checked' : ''}>{item.category}</ListItem>
       <DoubleButtons>
-        <CustomCheckbox
+        <CustomCheckBox
           isChecked={item.done ? 'checked' : ''}
           onChangeHandler={handleOnChange}
         />
