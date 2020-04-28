@@ -11,7 +11,7 @@ const item = useSelector(store => store.todos.list.items[itemIndex])
  
 const dispatch = useDispatch()
 
-const onClearClicked = event => {
+const onClearClicked = () => {
  dispatch(
     todos.actions.removeTodo({
     itemIndex: itemIndex
@@ -19,7 +19,7 @@ const onClearClicked = event => {
   ) 
 }
 
-const handleOnChange = event => {
+const handleOnChange = () => {
     dispatch(
     todos.actions.setDone({
     itemIndex: itemIndex,

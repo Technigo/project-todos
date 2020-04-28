@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const Button = styled.button`
   padding: 8px;
   margin-left: 36px;
-  background: ${(props) => props.background || '#6F6FE6'};
+  background:${(props) => props.background || '#6F6FE6'};
   cursor: pointer;
   border: none;
   font-size: 12px;

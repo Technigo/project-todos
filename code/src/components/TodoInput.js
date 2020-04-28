@@ -8,20 +8,20 @@ import { InputText } from 'lib/Text'
 export const TodoInput = () => {
   const dispatch = useDispatch()
 
-const [inputValue, setInputValue] = useState('')
+  const [inputValue, setInputValue] = useState('')
 
-const handleOnSubmit = (e) => {
-  e.preventDefault()
+  const handleOnSubmit = (e) => {
+    e.preventDefault()
 
-  dispatch(
-    todos.actions.addTodo({
+    dispatch(
+      todos.actions.addTodo({
         description: inputValue,
         done: false
-    })
-  )
+      })
+    )
 
-  setInputValue('')
-}
+    setInputValue('')
+  }
   
 return (
  <Form onSubmit={handleOnSubmit}>
