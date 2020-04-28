@@ -38,6 +38,7 @@ export const TodoInput = ({ listId }) => {
         className="todo-input-text"
       ></input>
       <input
+        disabled={!inputValue}
         type="submit"
         className="todo-input-button"
         value=" ➕ "
