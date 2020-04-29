@@ -50,7 +50,7 @@ export const TodoInput = () => {
         onChange={event => setInputValue(event.target.value)}
         value={inputValue}
         required
-      ></TextInput>
+      />
       <Button
         type="submit"
         background="#ED839D"

@@ -9,18 +9,18 @@ const Wrapper = styled.div`
 `
 
 const RemoveButton = styled.button`
-background: #E66032;
-color: #F5F0D7;
-border: none;
-height: 30px;
-width: 120px;
-border-radius: 7px;
-font-size: 16px;
-margin-top: 10px;
+  background: #E66032;
+  color: #F5F0D7;
+  border: none;
+  height: 30px;
+  width: 120px;
+  border-radius: 7px;
+  font-size: 16px;
+  margin-top: 10px;
 
-&:hover {
-  background: #ED839D;
-}
+  &:hover {
+    background: #ED839D;
+  }
 `
 
 export const RemoveAll = () => {
@@ -28,7 +28,6 @@ export const RemoveAll = () => {
   return (
     <Wrapper>
       <RemoveButton
-        background='#e45e69'
         onClick={() => {
           dispatch(todos.actions.removeAll())
         }}
