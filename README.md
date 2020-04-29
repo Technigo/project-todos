@@ -20,7 +20,7 @@
 * The app is able to add new tasks
 * The app is able to show a count of either all todos, or all uncomplete todos
 
-## Strech goals reached 
+## Strech goals reached 🧘
 
 
 
