@@ -8,4 +8,4 @@ The aim of the project was to practice writing a reducers and actions as well as
 
 ## View it live
 
-https://lucid-kepler-9acbb0.netlify.app
+https://er-project-todos.netlify.app
