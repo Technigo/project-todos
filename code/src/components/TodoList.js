@@ -7,20 +7,20 @@ import { ClearButton } from "./ClearButton"
 import { useSelector } from "react-redux"
 
 const TodoListContainer = styled.section`
-display: flex;
-flex-direction: column;
-font-family: 'Work Sans', sans-serif;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Work Sans', sans-serif;
 
-@media (min-width: 700px) {
-  margin: 0 15%;
-  border: 1px solid #535c68;
-}
+  @media (min-width: 700px) {
+    margin: 0 15%;
+    border: 1px solid #535c68;
+  }
 `
 const InputContainer = styled.section`
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
-padding: 4% 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 4% 8%;
 `
 
 export const TodoList = () => {

@@ -25,7 +25,7 @@ export const Home = () => {
   return (
     <Provider store={store}>
       <main>
-        <TodoList></TodoList>
+        <TodoList />
       </main>
     </Provider>)
 }

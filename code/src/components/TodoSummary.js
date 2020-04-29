@@ -3,14 +3,14 @@ import styled from "styled-components"
 import { useSelector } from "react-redux"
 
 const Header = styled.section`
-display: flex;
-justify-content: space-between;
-align-items: center;
-padding: 0 10%;
-height: 120px;
-border-bottom: 1px solid #535c68;
-background: #34ace0;
-font-family: 'Work Sans', sans-serif;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10%;
+  height: 120px;
+  border-bottom: 1px solid #535c68;
+  background: #34ace0;
+  font-family: 'Work Sans', sans-serif;
 `
 
 

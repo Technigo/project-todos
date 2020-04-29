@@ -5,14 +5,14 @@ import { todos } from "../reducers/todos.js"
 import { Checkbox } from "../library/Checkbox"
 
 const ItemContainer = styled.section`
-margin: 8px;
-display: flex;
-justify-content: space-between;
-font-size: 18px;
+  margin: 8px;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
 
-span {
-  color: ${(props) => (props.checked ? "#535c68" : "black")};
-}
+  span {
+    color: ${(props) => (props.checked ? "#535c68" : "black")};
+  }
 
   button {
     padding: 6px;
@@ -24,12 +24,12 @@ span {
     border-radius: 6px;
     background: #f5f6fa;
     font-family: 'Work Sans', sans-serif;
-  }
+    }
 `
 
 const Item = styled.div`
-display: flex;
-align-items: center;
+  display: flex;
+  align-items: center;
 `
 
 export const TodoItem = ({ itemIndex }) => {
@@ -39,14 +39,14 @@ export const TodoItem = ({ itemIndex }) => {
   const dispatch = useDispatch()
 
   //Creates onRemove that handles remove of a todo item
-  const handleRemove = event => {
+  const handleRemove = () => {
     dispatch(todos.actions.removeTodo({
       itemIndex: itemIndex
     }))
   }
 
   //Creates handleOnChange that handles the done status
-  const handleOnChange = event => {
+  const handleOnChange = () => {
     dispatch(todos.actions.setDone({
       itemIndex: itemIndex,
       done: !item.done
@@ -55,9 +55,9 @@ export const TodoItem = ({ itemIndex }) => {
 
   return <ItemContainer checked={item.done}>
     <Item>
-      <Checkbox 
-         onChange={handleOnChange}
-         isChecked={item.done ? "checked" : ""}
+      <Checkbox
+        onChange={handleOnChange}
+        isChecked={item.done ? "checked" : ""}
       />
       <span>{item.description}</span>
     </Item>
