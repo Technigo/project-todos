@@ -2,9 +2,8 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 import { AddButtonWhite } from '../lib/Buttons';
-import { ProjectInput } from 'lib/Containers';
+import { ProjectInput, ProjectForm } from 'lib/Containers';
 import { InputTitle } from 'lib/Texts';
-import { ProjectForm } from 'lib/Containers';
 import swal from 'sweetalert';
 
 export const AddProject = () => {

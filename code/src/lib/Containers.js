@@ -13,6 +13,17 @@ export const ProjectCard = styled.section`
   flex-wrap: wrap;
   justify-content: center;
 `
+export const ProjectImageContainer = styled.div`
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+`
+export const Image = styled.img`
+  width: 100%;
+  max-width: 400px;
+  border-radius: 12px;
+`
 export const ProjectForm = styled.form`
   max-width: 256px;
   display: flex;

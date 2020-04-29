@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
-import { TodoForm } from 'lib/Containers';
-import { TodoInputContainer } from 'lib/Containers';
-import { TodoInput } from 'lib/Containers';
+import { TodoForm, TodoInputContainer, TodoInput } from 'lib/Containers';
 import { AddButtonColor } from '../lib/Buttons';
 
 export const AddTodo = ({projectName}) => {

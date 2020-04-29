@@ -2,12 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 import moment from 'moment';
-import { TodoItems } from '../lib/Containers';
-import { TodoItemContainer } from '../lib/Containers';
-import { TodoItemContent } from '../lib/Containers';
-import { SpanText } from '../lib/Texts';
-import { SpanTextItem } from '../lib/Texts';
-import { SpanTextBold } from '../lib/Texts';
+import { TodoItems, TodoItemContainer, TodoItemContent } from '../lib/Containers';
+import { SpanText, SpanTextItem, SpanTextBold } from '../lib/Texts';
 import { RemoveButton } from '../lib/Buttons';
 import { Checkbox } from '../lib/Checkbox';
 

@@ -22,3 +22,12 @@ export const SpanTextBold = styled.span`
 export const SpanTextItem = styled.span`
   font-size: 14px;
 `
+export const Attribute = styled.a`
+  color: #f4f7f7;
+  text-decoration: none;
+  font-size: 12px;
+
+  &:visited {
+    color: #f4f7f7;
+  }
+`
