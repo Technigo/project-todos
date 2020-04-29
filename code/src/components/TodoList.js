@@ -26,14 +26,15 @@ const InputContainer = styled.section`
 export const TodoList = () => {
 
   // Gets information about todo list from the store
-  const list = useSelector(store => store.todos.list)
+  // const list = useSelector(store => store.todos.list)
+  const items = useSelector(store => store.todos.list.items)
 
   return (
     <TodoListContainer>
       <TodoSummary />
       <InputContainer>
         <TodoInput />
-        {list.items.map((item, index) => (<TodoItem itemIndex={index}></TodoItem>))}
+        {items.map((item, index) => (<TodoItem key={index} item={item} itemIndex={index} />))}
         <ClearButton />
       </InputContainer>
     </TodoListContainer>

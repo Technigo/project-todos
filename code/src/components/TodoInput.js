@@ -8,32 +8,33 @@ const Form = styled.form`
   display: flex;
   align-items: center;
   justify-content: space-between;
-
-    input {
-      font-size: 18px;
-      width: 50%;
-      height: 44px;
-      border: 1px solid #535c68;
-      border-radius: 6px;
-      font-family: 'Work Sans', sans-serif;
-    }
-
-    button {
-      padding: 12px;
-      margin: 6px; 
-      font-size: 18px;
-      border: 1px solid #535c68;
-      border-radius: 6px;
-      background: #f5f6fa;
-      font-family: 'Work Sans', sans-serif;
-    }
-
-    @media (min-width: 668px) {
-      input {
-        width: 60%;
-      }
-    }
 `
+
+const Input = styled.input`
+  font-size: 18px;
+  width: 50%;
+  height: 44px;
+  border: 1px solid #535c68;
+  border-radius: 6px;
+  font-family: 'Work Sans', sans-serif;
+
+  @media (min-width: 668px) {
+    input {
+      width: 60%;
+    }
+  }
+  `
+
+const Button = styled.button`
+  padding: 12px;
+  margin: 6px; 
+  font-size: 18px;
+  border: 1px solid #535c68;
+  border-radius: 6px;
+  background: #f5f6fa;
+  font-family: 'Work Sans', sans-serif;
+`
+
 
 export const TodoInput = () => {
   const dispatch = useDispatch()
@@ -57,12 +58,13 @@ export const TodoInput = () => {
   }
 
   return <Form onSubmit={handleSubmit}>
-    <input
+    <Input
       type="text"
       value={inputValue}
       onChange={event => setInputValue(event.target.value)}
-    ></input>
-    <button
-      type="submit">Add Todo</button>
+      required
+    />
+    <Button
+      type="submit">Add Todo</Button>
   </Form>
 }

@@ -16,17 +16,14 @@ const Header = styled.section`
 
 export const TodoSummary = () => {
   //Gets information from the store for todo list
-  const list = useSelector(store => store.todos.list)
+  // const list = useSelector(store => store.todos.list)
+  const items = useSelector(store => store.todos.list.items)
 
   //Counts the number of todos that are done using filter
-  const numberDone = list.items.filter(item => item.done).length
+  const numberDone = items.filter(item => item.done).length
 
   return <Header>
     <h2>Todo</h2>
-
-    <p>{numberDone}/{list.items.length} tasks done</p>
-
+    <p>{numberDone}/{items.length} tasks done</p>
   </Header>
-
-
 }
