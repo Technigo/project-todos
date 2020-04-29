@@ -1,13 +1,19 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+This is a website that works as a todo app. The functionality is that you can see what day it is, add tasks, tick off the task once completed, remove a task and also a button to remove all tasks. The remove all button comes with an alert message telling the user that the action is irretrievable. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Tech
+React
+Redux
+JSX
+JavaScript
+Flexbox
+CSS
+(moment and SweetAlert)
 
-## The problem
+The ToDo app is using React and Redux Toolkit. The code is divided in to a number of components and the project was constructed by working on the components and their functionality one at a time.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://practical-torvalds-64a6e7.netlify.app
