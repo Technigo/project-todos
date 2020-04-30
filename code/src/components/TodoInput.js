@@ -49,6 +49,7 @@ export const TodoInput = () => {
   const handleOnSubmit = (e) => {
     e.preventDefault()
     dispatch(todos.actions.addTodo({
+      id: Date.now(),
       description: inputValue,
       done: false,
       show: true

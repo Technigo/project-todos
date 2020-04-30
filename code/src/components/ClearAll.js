@@ -10,11 +10,17 @@ export const ClearAll = () => {
   //Clears all todos by returning the initial empty state
   const onClick = () => dispatch(todos.actions.clearAll())
 
+  if (itemsLength === 0) {
+    return null
+  }
+
   return (
-    <>
-      {itemsLength > 0 &&
-        <Button aria-label='Clear all tasks' onClick={onClick} width={'90%'} margin={'5px auto'}>Clear all</Button>
-      }
-    </>
+    <Button
+      aria-label='Clear all tasks'
+      onClick={onClick}
+      width='90%'
+      margin='5px auto'>
+      Clear all
+    </Button>
   )
 }
