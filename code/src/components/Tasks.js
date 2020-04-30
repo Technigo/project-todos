@@ -25,8 +25,8 @@ export const Tasks = () => {
         </select>
       </label>
       <ul>
-        {items.map((item) => (
-          <Task key={item.id} item={item} />
+        {items.map((item, index) => (
+          <Task key={index} item={item} />
         ))}
       </ul>
     </>
