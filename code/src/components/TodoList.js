@@ -12,7 +12,7 @@ export const TodoList = () => {
     <section className="todo-list">
       <TodoInput />
       {list.items.map((item, index) => (
-        <TodoItem item={item} itemIndex={index} />
+        <TodoItem key={index} item={item} itemId={item.id} index={index} />
       ))}
       <RemoveAll />
       <TodoSummary />

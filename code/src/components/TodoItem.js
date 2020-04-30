@@ -5,13 +5,15 @@ import moment from 'moment'
 import { CustomCheckbox } from './CustomCheckbox';
 
 
-export const TodoItem = ({ itemIndex }) => {
-  const item = useSelector((store) => store.todos.list.items[itemIndex]);
+export const TodoItem = ({ itemId, index }) => {
+  const item = useSelector((store) => store.todos.list.items[index]);
+
+
   const dispatch = useDispatch();
 
   const handleCheckboxClick = (e) => {
     dispatch(todos.actions.setDone({
-      itemIndex: itemIndex,
+      itemId: itemId,
       done: !item.done,
     })
     );
@@ -20,7 +22,7 @@ export const TodoItem = ({ itemIndex }) => {
   const onRemoveClicked = (e) => {
     dispatch(
       todos.actions.removeTodo({
-        itemIndex,
+        itemId,
       })
     );
   };
