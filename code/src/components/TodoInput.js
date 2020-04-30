@@ -72,8 +72,8 @@ export const TodoInput = () => {
         aria-label='Submit task'
         type='submit'
         disabled={inputValue < 1 ? true : false}
-        background={'#3e3e2d'}
-        size={'1.5em'}
+        background='#3e3e2d'
+        size='1.5em'
       >+</Button>
 
     </TodoForm >
