@@ -68,17 +68,17 @@ const TodoText = styled.p`
   }
 `
 
-export const TodoItem = ({ itemIndex }) => {
-  const item = useSelector(store => store.todos.items[itemIndex])
+export const TodoItem = ({ itemId }) => {
+  const item = useSelector(store => store.todos.items[itemId])
   const itemChecked = item.done
 
   const dispatch = useDispatch()
 
   //Removes todo from array
-  const onRemoveClicked = () => dispatch(todos.actions.removeTodo({ itemIndex }))
+  const onRemoveClicked = () => dispatch(todos.actions.removeTodo({ itemId }))
 
   //Marks todo as done
-  const onCheckClick = () => dispatch(todos.actions.setDone({ itemIndex }))
+  const onCheckClick = () => dispatch(todos.actions.setDone({ itemId }))
 
   if (!item.show) {
     return null

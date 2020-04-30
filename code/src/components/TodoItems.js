@@ -35,8 +35,8 @@ export const TodoItems = () => {
 
       {items.length > 0 &&
         <>
-          {items.map((item, index) => (
-            <TodoItem key={index} item={item} itemIndex={index}></TodoItem>
+          {items.map((item, id) => (
+            <TodoItem key={id} item={item} itemId={id}></TodoItem>
           ))}
         </>
       }

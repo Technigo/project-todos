@@ -13,16 +13,16 @@ export const todos = createSlice({
       state.items.push(itemInfo)
     },
     setDone: (state, action) => {
-      const { itemIndex } = action.payload
+      const { itemId } = action.payload
       const item = state.items.find(
-        (item, index) => index === itemIndex
+        (item, id) => id === itemId
       )
       item.done = !item.done
     },
     removeTodo: (state, action) => {
-      const { itemIndex } = action.payload
+      const { itemId } = action.payload
       state.items = state.items.filter(
-        (item, index) => index !== itemIndex
+        (item, id) => id !== itemId
       )
     },
     clearAll: () => {
