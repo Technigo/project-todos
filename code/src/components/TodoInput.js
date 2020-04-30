@@ -65,8 +65,7 @@ export const TodoInput = () => {
         onChange={e => setInputValue(e.target.value)}
         value={inputValue}
         placeholder='Add task...'
-        maxLength={50}
-      ></TodoInputField>
+        maxLength={50} />
 
       <Button
         aria-label='Submit task'
