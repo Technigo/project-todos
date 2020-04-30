@@ -3,7 +3,7 @@ import React from 'react'
 export const ClearTasks = () => {
   return (
     <>
-      <button>Clear all</button>
+      <button onClick={() => { }}>Clear all</button>
     </>
   )
 }
