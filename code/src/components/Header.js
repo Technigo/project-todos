@@ -2,7 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 
 const HeaderContainer = styled.header`
-    background-image: url('./images/stroke.png');
+    background-image: url('./images/banner.png');
     background-size: cover;
     width: 100%;
     min-height: 250px;
@@ -10,11 +10,12 @@ const HeaderContainer = styled.header`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    border-radius: 20px 20px 0 0;
 `;
 
 const HeadLine = styled.h1`
-    font-family: 'Bosk';
-    font-size: 110px;
+    font-family: 'Malina1';
+    font-size: 90px;
     color: white;
     text-align: center;
 `;
@@ -26,7 +27,7 @@ const Paragraph = styled.em`
     text-align: center;
     font-size: 14px;
     max-width: 80%;
-    margin-top: -25px;
+    margin-top: -55px;
     margin-right: -15px;
 `;
 
@@ -34,7 +35,7 @@ export const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <HeadLine>just do it </HeadLine>
+        <HeadLine>workflow</HeadLine>
         <Paragraph>you are what you do, not what you say you'll do.</Paragraph>
       </HeaderContainer>
     </>

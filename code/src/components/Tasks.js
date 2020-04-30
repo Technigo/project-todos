@@ -1,16 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
+import { Task } from './Task'
 
 export const Tasks = () => {
+  const [category, setCategory] = useState('')
+  const items = useSelector((store) => {
+    if (!category) return store.todo.items
+    else return store.todo.items.filter((item) => item.category === category)
+  })
+
   return (
     <>
-      <h2>tasks</h2>
-      <form action="">
-        <label>
-          Is going:
-          <input
-            name="isGoing" type="checkbox" />
-        </label>
-      </form>
+      <label>
+        Show by Category:
+        <select
+          value={category}
+          onChange={(event) => setCategory(event.target.value)}
+        >
+          <option value=''>All</option>
+          <option value='To-Do'>To-Do</option>
+          <option value='Shopping'>Shopping</option>
+          <option value='Work'>Work</option>
+          <option value='Family'>Family</option>
+        </select>
+      </label>
+      <ul>
+        {items.map((item) => (
+          <Task key={item.id} item={item} />
+        ))}
+      </ul>
     </>
   )
 }

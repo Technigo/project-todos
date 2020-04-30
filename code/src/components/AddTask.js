@@ -10,11 +10,10 @@ export const AddTask = () => {
             value={{}}
             onChange={() => { }}
           >
-            <option value="">select</option>
-            <option value="To-Do">To-Do</option>
-            <option value="Shopping">Shopping</option>
-            <option value="Work">Work</option>
-            <option value="Family">Family</option>
+            <option value='To-Do'>To-Do</option>
+            <option value='Shopping'>Shopping</option>
+            <option value='Work'>Work</option>
+            <option value='Family'>Family</option>
           </select>
         </label>
         <label>

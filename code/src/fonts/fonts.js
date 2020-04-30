@@ -1,18 +1,18 @@
 import { createGlobalStyle } from 'styled-components'
 
-import BoskWoff from './bosk.woff'
-import BoskWoff2 from './bosk.woff2'
 import AvenirWoff from './avenir-next-light.woff'
 import AvenirWoff2 from './avenir-next-light.woff2'
 import AvenirRegularWoff from './avenir-next-regular.woff'
 import AvenirRegularWoff2 from './avenir-next-regular.woff2'
+import Malina1Woff from './malina1.woff'
+import Malina1Woff2 from './malina1.woff2'
 
 export default createGlobalStyle`
     @font-face {
-        font-family: 'Bosk';
-        src: local('Bosk'), local('Bosk'),
-        url(${BoskWoff2}) format('woff2'),
-        url(${BoskWoff}) format('woff');
+        font-family: 'Malina1';
+        src: local('Malina1'), local('Malina1'),
+        url(${Malina1Woff2}) format('woff2'),
+        url(${Malina1Woff}) format('woff');
         font-weight: 300;
         font-style: normal;
     }

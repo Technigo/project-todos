@@ -8,7 +8,7 @@ export const TotalTasks = () => {
   return (
     <>
       <Title>you have {(items.length === 0) ? 'no' : items.length} things to do</Title>
-      {(items.length === 0) ? <Paragraph>Let's be creative and make some new tasks!</Paragraph> : <Paragraph>What's stopping you, just do it!</Paragraph>}
+      {(items.length === 0) ? <Paragraph>Let's be creative and make some new tasks!</Paragraph> : <Paragraph>What's stopping you? Just do it!</Paragraph>}
     </>
   )
 }

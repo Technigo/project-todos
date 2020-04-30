@@ -32,17 +32,17 @@ const Main = styled.main`
 `;
 
 const AppContainer = styled.div`
+    border: 1px solid white;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     background-color: white;
     height: 80vh;
     width: 500px;
     border-radius: 20px;
-    -webkit-box-shadow: -4px 4px 41px -16px rgba(0,0,0,0.75);
-    -moz-box-shadow: -4px 4px 41px -16px rgba(0,0,0,0.75);
-    box-shadow: -4px 4px 41px -16px rgba(0,0,0,0.75);
+    -webkit-box-shadow: -4px 4px 41px -16px rgb(207, 207, 209);
+    -moz-box-shadow: -4px 4px 41px -16px rgb(207, 207, 209);
+    box-shadow: -4px 4px 41px -16px rgb(207, 207, 209);
 `;
 
 export const App = () => {
