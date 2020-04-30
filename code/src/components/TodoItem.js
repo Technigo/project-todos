@@ -80,41 +80,41 @@ export const TodoItem = ({ itemIndex }) => {
   //Marks todo as done
   const onCheckClick = () => dispatch(todos.actions.setDone({ itemIndex }))
 
+  if (!item.show) {
+    return null
+  }
+
   return (
-    <>
-      {item.show &&
-        <TodoItemContainer>
+    <TodoItemContainer>
 
-          <CheckboxContainer>
-            <HiddenCheckbox
-              aria-label={`Mark ${item.description} as done`}
-              type='checkbox'
-              onClick={onCheckClick}
-            ></HiddenCheckbox>
-            <NewCheckbox
-              aria-hidden='true'
-              itemChecked={itemChecked} />
-          </CheckboxContainer>
+      <CheckboxContainer>
+        <HiddenCheckbox
+          aria-label={`Mark ${item.description} as done`}
+          type='checkbox'
+          onClick={onCheckClick}
+        ></HiddenCheckbox>
+        <NewCheckbox
+          aria-hidden='true'
+          itemChecked={itemChecked} />
+      </CheckboxContainer>
 
-          <TodoText
-            onClick={onCheckClick}
-            itemChecked={itemChecked}>
-            {item.description}
-          </TodoText>
+      <TodoText
+        onClick={onCheckClick}
+        itemChecked={itemChecked}>
+        {item.description}
+      </TodoText>
 
-          <Button
-            aria-label={`Delete ${item.description}`}
-            type="button"
-            onClick={onRemoveClicked}
-            background={'none'}
-            color={'#78786c'}
-            size={'1.3em'}
-          >
-            <FontAwesomeIcon icon={faTrashAlt} />
-          </Button>
+      <Button
+        aria-label={`Delete ${item.description}`}
+        type="button"
+        onClick={onRemoveClicked}
+        background={'none'}
+        color={'#78786c'}
+        size={'1.3em'}
+      >
+        <FontAwesomeIcon icon={faTrashAlt} />
+      </Button>
 
-        </TodoItemContainer>
-      }
-    </>
+    </TodoItemContainer>
   )
 }
