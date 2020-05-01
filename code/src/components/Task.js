@@ -1,6 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch } from 'react-redux'
 import { todo } from '../reducers/todo'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { TrashButton } from '../styles/Button'
 
 export const Task = (props) => {
   const { id, task, category, completed, dueDate, startDate } = props.item
@@ -27,7 +29,7 @@ export const Task = (props) => {
           isChecked={completed}
           onChangeHandler={handleCheckboxClick}
         />
-        <button onClick={handleRemoveButton}>remove</button>
+        <TrashButton onClick={handleRemoveButton}><FontAwesomeIcon icon="trash-alt" /></TrashButton>
       </li>
     </>
   )

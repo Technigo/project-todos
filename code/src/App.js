@@ -7,10 +7,10 @@ import { TotalTasks } from './components/TotalTasks'
 import { Tasks } from './components/Tasks'
 import { todo } from 'reducers/todo'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTasks, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt, faCheckCircle } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 
-library.add(faTasks, faCheckCircle)
+library.add(faTrashAlt, faCheckCircle)
 
 
 const reducer = combineReducers({
@@ -35,7 +35,6 @@ const AppContainer = styled.div`
     flex-direction: column;
     align-items: center;
     background-color: white;
-    height: 80vh;
     width: 1108px;
     border-radius: 20px;
     -webkit-box-shadow: -4px 4px 41px -16px rgb(207, 207, 209);

@@ -3,6 +3,9 @@ import { useDispatch } from 'react-redux'
 import { todo } from '../reducers/todo'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import styled from 'styled-components'
+import { Button } from '../styles/Button'
+import { Subtitle } from '../styles/Text'
 
 export const AddTask = () => {
   const [task, setTask] = useState('')
@@ -21,10 +24,15 @@ export const AddTask = () => {
 
   const enabled = task.length > 0 && dueDate > 0 && category.length > 0
 
+  const Container = styled.form`
+    display: flex;
+    flex-direction: column;
+  `;
+
   return (
     <>
-      <form onSubmit={handleSubmit}>
-
+      <Container onSubmit={handleSubmit}>
+        <Subtitle>Add a new task</Subtitle>
         <label>
           Category:
           <select
@@ -55,8 +63,8 @@ export const AddTask = () => {
           <DatePicker onChange={(date) => setDueDate(date)} selected={dueDate} />
         </label>
 
-        <button type='submit' disabled={!enabled}>Add task</button>
-      </form>
+        <Button type='submit' disabled={!enabled}>Add task</Button>
+      </Container>
     </>
   )
 }

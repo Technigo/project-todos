@@ -1,9 +1,10 @@
 import React from 'react'
+import { Button } from '../styles/Button'
 
 export const ClearTasks = () => {
   return (
     <>
-      <button onClick={() => { }}>Clear all</button>
+      <Button onClick={() => { }}>Clear all</Button>
     </>
   )
 }

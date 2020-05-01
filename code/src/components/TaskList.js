@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Task } from './Task'
+import { Subtitle } from '../styles/Text'
 
 export const TaskList = () => {
   const [category, setCategory] = useState('')
@@ -9,8 +10,12 @@ export const TaskList = () => {
     else return store.todo.items.filter((item) => item.category === category)
   })
 
+  const tasks = useSelector((state) => state.todo.items)
+
+
   return (
     <>
+      <Subtitle>{(tasks.length === 0) ? 'You have no tasks' : 'Current tasks'} </Subtitle>
       <label>
         Show by Category:
         <select
