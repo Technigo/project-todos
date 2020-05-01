@@ -11,6 +11,9 @@
 * How to structure a redux store
 * How to write reducers and actions
 * How to interact with the store using selectors or by dispatching actions
+* How to use Font-face with React
+* How to use Framer Motion with styled components
+* How to use React Datepicker
 
 ## Requirements reached 🧪
 
@@ -22,5 +25,8 @@
 
 ## Strech goals reached 🧘
 
-
-
+* Added a 'clear all' button
+* Added a due date to a task
+* Used styled-components
+* Added categories for tasks 
+* Added a filter and a drop down to change the task list is displayed

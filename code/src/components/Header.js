@@ -4,8 +4,9 @@ import styled from 'styled-components'
 const HeaderContainer = styled.header`
     background-image: url('./images/banner.png');
     background-size: cover;
+    background-position-y: bottom;
     width: 100%;
-    min-height: 250px;
+    min-height: 300px;
     display: flex;
     flex-direction: column;
     justify-content: center;
