@@ -27,6 +27,7 @@ export const TaskList = () => {
           <option value='Shopping'>Shopping</option>
           <option value='Work'>Work</option>
           <option value='Family'>Family</option>
+          <option value='Personal'>Personal</option>
         </select>
       </Label>
       <ul>

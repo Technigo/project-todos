@@ -22,7 +22,7 @@ export const todo = createSlice({
         icon: (category === 'To-Do') ? "circle"
           : (category === 'Shopping') ? "shopping-cart"
             : (category === 'Work') ? "briefcase"
-              : (category === 'Family') ? "user-friends"
+              : (category === 'Family') ? "heart"
                 : "user"
       })
     },

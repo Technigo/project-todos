@@ -10,16 +10,16 @@ export const Button = styled.button`
   color: white;
   text-transform: lowercase;
   text-align: center;
-  margin-top: 1rem;
+  margin: 1rem auto 0 auto;
+  cursor: pointer;
+
+  &:hover {
+    background: rgb(66, 146, 132);
+  }
 `
 
 export const TrashButton = styled.button`
   all: unset;
   cursor: pointer;
-  color: rgb(39, 94, 97);
-`
-
-export const Subtitle = styled.h3`
-  font-family: 'Malina1';
-  color: rgb(40, 95, 98);
+  color: white;
 `

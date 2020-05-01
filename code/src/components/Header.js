@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { HeadLine } from '../styles/Text'
 
 const HeaderContainer = styled.header`
     background-image: url('./images/banner.png');
@@ -12,13 +13,6 @@ const HeaderContainer = styled.header`
     justify-content: center;
     align-items: center;
     border-radius: 20px 20px 0 0;
-`;
-
-const HeadLine = styled.h1`
-    font-family: 'Malina1';
-    font-size: 90px;
-    color: white;
-    text-align: center;
 `;
 
 const Paragraph = styled.em`
