@@ -45,11 +45,15 @@ export const TodoInput = () => {
   //Handle submit function to dispatch addTodo
   const handleSubmit = event => {
     event.preventDefault()
+    const date = new Date()
+    const currentDate = date.getTime()
 
     //Dispatches action to save new todo item
     dispatch(todos.actions.addTodo({
       description: inputValue,
-      done: false
+      done: false,
+      date: currentDate,
+      display: true
     })
     )
 

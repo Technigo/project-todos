@@ -49,7 +49,7 @@ export const TodoItem = ({ itemId, index }) => {
   //Creates onRemove that handles remove of a todo item
   const handleRemove = () => {
     dispatch(todos.actions.removeTodo({
-      itemId,
+      itemId: itemId
     }))
   }
 
