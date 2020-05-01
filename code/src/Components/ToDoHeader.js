@@ -44,7 +44,6 @@ export const ToDoHeader = () => {
       <div className="header-right">
         <p>{allItems.length} tasks</p>
         <button onClick={() => warningAlert()}>Clear all</button>
-        {/* <button onClick={() => dispatch(todoitem.actions.removeAll())}>Clear all</button> */}
       </div>
     </header>
   )

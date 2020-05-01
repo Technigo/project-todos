@@ -12,7 +12,6 @@ export const InputToDo = () => {
     setInput('')
   }
 
-  //Add todoitems by mapping the items in the todolist in the store
   return (
     <form onSubmit={handleSubmit}>
       <button
@@ -27,6 +26,5 @@ export const InputToDo = () => {
       >
       </input>
        </form>
-
   )
 }
