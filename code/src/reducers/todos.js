@@ -23,7 +23,7 @@ export const todos = createSlice({
       state.list.items.push(itemInfo)
     },
     removeTodo: (state, action) => {
-      const itemId = action.payload
+      const { itemId } = action.payload
       state.list.items = state.list.items.filter(
         (item) => item.id !== itemId)
     },
