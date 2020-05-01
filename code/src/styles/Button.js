@@ -16,6 +16,10 @@ export const Button = styled.button`
   &:hover {
     background: rgb(66, 146, 132);
   }
+
+  &:disabled {
+    background: rgb(208, 235, 233);
+  }
 `
 
 export const TrashButton = styled.button`
