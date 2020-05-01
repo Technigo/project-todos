@@ -25,7 +25,7 @@ export const Title = styled.h2`
 export const Subtitle = styled.h3`
   font-family: 'Malina1';
   color: rgb(40, 95, 98);
-  font-size: 24px;
+  font-size: 28px;
   text-align: center;
 `
 
@@ -59,12 +59,17 @@ export const List = styled.li`
   font-family: 'Avenir-Next-Regular';
   color: ${(props) => props.color || 'white'};
   text-transform: lowercase;
-  background-color: rgb(66, 146, 132);
+  background-color: ${(props) => props.background || 'rgb(66, 146, 132)'};
   margin-bottom: 3px;
   padding: 2px;
 `
 
 export const Category = styled.span`
-  color: white;
+  color: ${(props) => props.color || 'white'};
   margin-right: 3px;
+`
+
+export const TaskText = styled.span`
+  text-decoration: ${(props) => props.line || 'none'};
+  min-width: 100%;
 `

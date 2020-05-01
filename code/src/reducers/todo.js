@@ -5,7 +5,7 @@ export const todo = createSlice({
   initialState: {
     items: [
       { id: 1, task: 'Shower', completed: false, category: 'To-Do', icon: "calendar-check" },
-      { id: 2, task: 'Clean', completed: true, category: 'To-Do', icon: "calendar-check" },
+      { id: 2, task: 'Clean', completed: false, category: 'To-Do', icon: "calendar-check" },
       { id: 3, task: 'Assignment', completed: false, category: 'Work', icon: "briefcase" }
     ]
   },

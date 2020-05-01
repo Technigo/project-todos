@@ -22,13 +22,27 @@ export const Button = styled.button`
   }
 `
 
-export const TrashButton = styled.button`
+export const Checkbox = styled.button`
   all: unset;
   cursor: pointer;
-  color: white;
   float: right;
 
   &:hover svg{
     color: rgb(39, 94, 97);
   }
 `
+
+export const TrashButton = styled.button`
+  all: unset;
+  cursor: pointer;
+  color: ${(props) => props.color || 'white'};
+  float: right;
+  margin-right: 5px;
+
+  &:hover svg{
+    color: rgb(39, 94, 97);
+  }
+`
+
+
+

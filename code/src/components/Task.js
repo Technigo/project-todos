@@ -2,8 +2,8 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { todo } from '../reducers/todo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { TrashButton } from '../styles/Button'
-import { List, Category } from '../styles/Text'
+import { TrashButton, Checkbox } from '../styles/Button'
+import { List, Category, TaskText } from '../styles/Text'
 
 export const Task = (props) => {
   const { id, task, category, completed, dueDate, startDate, icon } = props.item
@@ -21,17 +21,19 @@ export const Task = (props) => {
 
   return (
     <>
-      <List>
-        <Category title={category}><FontAwesomeIcon icon={icon} /> </Category>
-        <span>{task}</span>
+      <List background={completed ? 'rgb(235, 254, 255)' : null} color={completed ? 'rgb(157, 215, 208)' : null}>
+        <Category title={category} color={completed ? 'rgb(157, 215, 208)' : null}><FontAwesomeIcon icon={icon} /> </Category>
+        <TaskText line={completed ? 'line-through' : null}>{task}</TaskText>
         <span>{startDate}</span>
         {/* <span>{dueDate}</span> */}
-        <input
-          type="checkbox"
-          isChecked={completed}
-          onChangeHandler={handleCheckboxClick}
-        />
-        <TrashButton title="Remove task" onClick={handleRemoveButton}><FontAwesomeIcon icon="trash-alt" /></TrashButton>
+        <Checkbox
+          type="button"
+          onClick={handleCheckboxClick}
+          title={completed ? "Uncomplete task" : "Complete task"}
+        >
+          {completed ? <FontAwesomeIcon icon="check-circle" /> : <FontAwesomeIcon icon="circle" />}
+        </Checkbox>
+        <TrashButton title="Remove task" onClick={handleRemoveButton} color={completed ? 'rgb(157, 215, 208)' : null}><FontAwesomeIcon icon="trash-alt" /></TrashButton>
       </List>
     </>
   )

@@ -57,7 +57,7 @@ export const AddTask = () => {
           <TextInput
             type='text'
             value={task}
-            placeholder='+ add a new task'
+            placeholder='write a new task'
             onChange={(event) => setTask(event.target.value)}
           />
         </Label>
