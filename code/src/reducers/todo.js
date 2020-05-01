@@ -4,9 +4,9 @@ export const todo = createSlice({
   name: 'todo',
   initialState: {
     items: [
-      { id: 1, task: 'Shower', completed: false, category: 'To-Do' },
-      { id: 2, task: 'Clean', completed: true, category: 'To-Do' },
-      { id: 3, task: 'Assignment', completed: false, category: 'Work' }
+      { id: 1, task: 'Shower', completed: false, category: 'To-Do', icon: "calendar-check" },
+      { id: 2, task: 'Clean', completed: true, category: 'To-Do', icon: "calendar-check" },
+      { id: 3, task: 'Assignment', completed: false, category: 'Work', icon: "briefcase" }
     ]
   },
   reducers: {
@@ -19,7 +19,7 @@ export const todo = createSlice({
         category,
         startDate: Date.now(),
         dueDate,
-        icon: (category === 'To-Do') ? "circle"
+        icon: (category === 'To-Do') ? "calendar-check"
           : (category === 'Shopping') ? "shopping-cart"
             : (category === 'Work') ? "briefcase"
               : (category === 'Family') ? "heart"

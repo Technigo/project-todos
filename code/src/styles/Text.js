@@ -31,7 +31,7 @@ export const Subtitle = styled.h3`
 
 export const Paragraph = styled.p`
   font-family: 'Avenir-Next-Regular';
-  color: ${(props) => props.color || 'darkgrey'};
+  color: rgb(40, 95, 98);
   text-transform: lowercase;
 `
 
@@ -59,10 +59,12 @@ export const List = styled.li`
   font-family: 'Avenir-Next-Regular';
   color: ${(props) => props.color || 'white'};
   text-transform: lowercase;
-  background-color: rgb(39, 94, 97);
-  margin-bottom: 2px;
+  background-color: rgb(66, 146, 132);
+  margin-bottom: 3px;
+  padding: 2px;
 `
 
 export const Category = styled.span`
   color: white;
+  margin-right: 3px;
 `

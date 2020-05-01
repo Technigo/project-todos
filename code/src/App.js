@@ -7,10 +7,10 @@ import { TotalTasks } from './components/TotalTasks'
 import { Tasks } from './components/Tasks'
 import { todo } from 'reducers/todo'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import { faTrashAlt, faCheckCircle, faShoppingCart, faCircle, faBriefcase, faHeart, faUser } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt, faCheckCircle, faShoppingCart, faCalendarCheck, faBriefcase, faHeart, faUser } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 
-library.add(faTrashAlt, faCheckCircle, faShoppingCart, faCircle, faBriefcase, faHeart, faUser)
+library.add(faTrashAlt, faCheckCircle, faShoppingCart, faCalendarCheck, faBriefcase, faHeart, faUser)
 
 
 const reducer = combineReducers({

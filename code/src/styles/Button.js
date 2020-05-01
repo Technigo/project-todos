@@ -26,4 +26,9 @@ export const TrashButton = styled.button`
   all: unset;
   cursor: pointer;
   color: white;
+  float: right;
+
+  &:hover svg{
+    color: rgb(39, 94, 97);
+  }
 `
