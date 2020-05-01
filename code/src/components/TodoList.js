@@ -1,10 +1,10 @@
 import React from "react"
+import { useSelector } from "react-redux"
 import styled from "styled-components"
 import { TodoItem } from "./TodoItem.js"
 import { TodoInput } from "./TodoInput.js"
 import { TodoSummary } from "./TodoSummary.js"
 import { ClearButton } from "./ClearButton"
-import { useSelector } from "react-redux"
 
 const TodoListContainer = styled.section`
   display: flex;
@@ -26,7 +26,6 @@ const InputContainer = styled.section`
 export const TodoList = () => {
 
   // Gets information about todo list from the store
-  // const list = useSelector(store => store.todos.list)
   const items = useSelector(store => store.todos.list.items)
 
   return (
@@ -34,7 +33,7 @@ export const TodoList = () => {
       <TodoSummary />
       <InputContainer>
         <TodoInput />
-        {items.map((item, index) => (<TodoItem key={index} item={item} itemIndex={index} />))}
+        {items.map((item, index) => (<TodoItem key={index} item={item} itemId={item.id} index={index} />))}
         <ClearButton />
       </InputContainer>
     </TodoListContainer>

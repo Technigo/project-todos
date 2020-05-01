@@ -32,26 +32,27 @@ const Item = styled.div`
   align-items: center;
 `
 
-export const TodoItem = ({ itemIndex }) => {
+export const TodoItem = ({ itemId, index }) => {
   //Gets item from store based on its index
-  const item = useSelector(store => store.todos.list.items[itemIndex])
+  const item = useSelector(store => store.todos.list.items[index])
 
   const dispatch = useDispatch()
-
-  //Creates onRemove that handles remove of a todo item
-  const handleRemove = () => {
-    dispatch(todos.actions.removeTodo({
-      itemIndex: itemIndex
-    }))
-  }
 
   //Creates handleOnChange that handles the done status
   const handleOnChange = () => {
     dispatch(todos.actions.setDone({
-      itemIndex: itemIndex,
+      itemId: itemId,
       done: !item.done
     }))
   }
+
+  //Creates onRemove that handles remove of a todo item
+  const handleRemove = () => {
+    dispatch(todos.actions.removeTodo({
+      itemId,
+    }))
+  }
+
 
   return <ItemContainer checked={item.done}>
     <Item>
