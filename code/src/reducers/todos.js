@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 
 const initialState = {
   list: {
-    name: "Test list",
+    name: "Todo list",
     items: [
       {
         description: "This is your first todo",

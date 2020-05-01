@@ -33,7 +33,7 @@ export const TodoList = () => {
       <TodoSummary />
       <InputContainer>
         <TodoInput />
-        {items.map((item, index) => (<TodoItem key={index} item={item} itemId={item.id} index={index} />))}
+        {items.map((item, index) => (<TodoItem key={item.id} item={item} itemId={item.id} index={index} />))}
         <ClearButton />
       </InputContainer>
     </TodoListContainer>

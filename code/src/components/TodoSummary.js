@@ -16,7 +16,6 @@ const Header = styled.section`
 
 export const TodoSummary = () => {
   //Gets information from the store for todo list
-  // const list = useSelector(store => store.todos.list)
   const items = useSelector(store => store.todos.list.items)
 
   //Counts the number of todos that are done using filter
