@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import styled from 'styled-components'
 import { Button } from '../styles/Button'
-import { Subtitle } from '../styles/Text'
+import { Subtitle, Label } from '../styles/Text'
 
 export const AddTask = () => {
   const [task, setTask] = useState('')
@@ -33,22 +33,22 @@ export const AddTask = () => {
     <>
       <Container onSubmit={handleSubmit}>
         <Subtitle>Add a new task</Subtitle>
-        <label>
+        <Label>
           Category:
           <select
             value={category}
             onChange={(event) => setCategory(event.target.value)}
           >
             <option value='' selected>select...</option>
-            <option value='To-Do' selected>To-Do</option>
-            <option value='Shopping'>Shopping</option>
-            <option value='Work'>Work</option>
-            <option value='Family'>Family</option>
-            <option value='Personal'>Personal</option>
+            <option value="circle" selected>To-Do</option>
+            <option value="shopping-cart">Shopping</option>
+            <option value="briefcase">Work</option>
+            <option value="users-friends">Family</option>
+            <option value="user">Personal</option>
           </select>
-        </label>
+        </Label>
 
-        <label>
+        <Label>
           Task:
           <input
             type='text'
@@ -56,12 +56,12 @@ export const AddTask = () => {
             placeholder='+ add a new task'
             onChange={(event) => setTask(event.target.value)}
           />
-        </label>
+        </Label>
 
-        <label>
+        <Label>
           Due date:
           <DatePicker onChange={(date) => setDueDate(date)} selected={dueDate} />
-        </label>
+        </Label>
 
         <Button type='submit' disabled={!enabled}>Add task</Button>
       </Container>

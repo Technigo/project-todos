@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 import { Task } from './Task'
-import { Subtitle } from '../styles/Text'
+import { Subtitle, Label } from '../styles/Text'
 
 export const TaskList = () => {
   const [category, setCategory] = useState('')
@@ -16,7 +16,7 @@ export const TaskList = () => {
   return (
     <>
       <Subtitle>{(tasks.length === 0) ? 'You have no tasks' : 'Current tasks'} </Subtitle>
-      <label>
+      <Label>
         Show by Category:
         <select
           value={category}
@@ -28,7 +28,7 @@ export const TaskList = () => {
           <option value='Work'>Work</option>
           <option value='Family'>Family</option>
         </select>
-      </label>
+      </Label>
       <ul>
         {items.map((item, index) => (
           <Task key={index} item={item} />

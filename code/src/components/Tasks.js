@@ -7,7 +7,7 @@ import styled from 'styled-components'
 export const Tasks = () => {
 
   const Container = styled.section`
-    width: 100%;
+    width: 80%;
     padding: 1rem;
     display: grid;
     grid-gap: 2rem;

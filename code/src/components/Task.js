@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import { todo } from '../reducers/todo'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { TrashButton } from '../styles/Button'
+import { List, Category } from '../styles/Text'
 
 export const Task = (props) => {
   const { id, task, category, completed, dueDate, startDate } = props.item
@@ -19,8 +20,8 @@ export const Task = (props) => {
 
   return (
     <>
-      <li>
-        <span>{category}: </span>
+      <List>
+        <Category title='category'><FontAwesomeIcon icon={category} /> </Category>
         <span>{task}</span>
         <span>{startDate}</span>
         {/* <span>{dueDate}</span> */}
@@ -29,8 +30,8 @@ export const Task = (props) => {
           isChecked={completed}
           onChangeHandler={handleCheckboxClick}
         />
-        <TrashButton onClick={handleRemoveButton}><FontAwesomeIcon icon="trash-alt" /></TrashButton>
-      </li>
+        <TrashButton title="Remove task" onClick={handleRemoveButton}><FontAwesomeIcon icon="trash-alt" /></TrashButton>
+      </List>
     </>
   )
 }
