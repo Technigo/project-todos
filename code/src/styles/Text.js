@@ -26,6 +26,7 @@ export const Subtitle = styled.h3`
   font-family: 'Malina1';
   color: rgb(40, 95, 98);
   font-size: 24px;
+  text-align: center;
 `
 
 export const Paragraph = styled.p`
@@ -34,10 +35,24 @@ export const Paragraph = styled.p`
   text-transform: lowercase;
 `
 
+export const ItalicParagraph = styled.em`
+    font-family: 'Avenir-Next-Light';
+    text-transform: lowercase;
+    color: white;
+    text-align: center;
+    font-size: 14px;
+    max-width: 80%;
+    margin-top: -55px;
+    margin-right: -15px;
+`;
+
 export const Label = styled.label`
   font-family: 'Avenir-Next-Regular';
   color: ${(props) => props.color || 'rgb(39, 94, 97)'};
   text-transform: lowercase;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
 `
 
 export const List = styled.li`

@@ -5,6 +5,8 @@ import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
 import { Button } from '../styles/Button'
 import { Subtitle, Label } from '../styles/Text'
+import { TextInput, DropDown } from '../styles/Input'
+import { CategoryDateContainer } from '../styles/Container'
 
 export const AddTask = () => {
   const [task, setTask] = useState('')
@@ -27,34 +29,37 @@ export const AddTask = () => {
     <>
       <form onSubmit={handleSubmit}>
         <Subtitle>Add a new task</Subtitle>
-        <Label>
-          Category:
-          <select
-            value={category}
-            onChange={(event) => setCategory(event.target.value)}
-          >
-            <option value='' selected>select...</option>
-            <option value='To-Do' selected>To-Do</option>
-            <option value='Shopping'>Shopping</option>
-            <option value='Work'>Work</option>
-            <option value='Family'>Family</option>
-            <option value='Personal'>Personal</option>
-          </select>
-        </Label>
+
+        <CategoryDateContainer>
+          <Label>
+            Category:
+          <DropDown
+              value={category}
+              onChange={(event) => setCategory(event.target.value)}
+            >
+              <option value='' selected>select...</option>
+              <option value='To-Do' selected>To-Do</option>
+              <option value='Shopping'>Shopping</option>
+              <option value='Work'>Work</option>
+              <option value='Family'>Family</option>
+              <option value='Personal'>Personal</option>
+            </DropDown>
+          </Label>
+
+          <Label>
+            Due date:
+          <DatePicker onChange={(date) => setDueDate(date)} selected={dueDate} />
+          </Label>
+        </CategoryDateContainer>
 
         <Label>
           Task:
-          <input
+          <TextInput
             type='text'
             value={task}
             placeholder='+ add a new task'
             onChange={(event) => setTask(event.target.value)}
           />
-        </Label>
-
-        <Label>
-          Due date:
-          <DatePicker onChange={(date) => setDueDate(date)} selected={dueDate} />
         </Label>
 
         <Button type='submit' disabled={!enabled}>Add task</Button>
