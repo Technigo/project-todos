@@ -9,7 +9,8 @@ const Header = styled.section`
   padding: 0 10%;
   height: 120px;
   border-bottom: 1px solid #535c68;
-  background: #34ace0;
+  background: #40407a;
+  color: #ffffff;
   font-family: 'Work Sans', sans-serif;
 `
 

@@ -9,11 +9,16 @@ import { ClearButton } from "./ClearButton"
 const TodoListContainer = styled.section`
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  height: 100vh;
   font-family: 'Work Sans', sans-serif;
+  background: #fff;
 
   @media (min-width: 700px) {
-    margin: 0 15%;
-    border: 1px solid #535c68;
+    margin: 30px 15%;
+    height: auto;
+    border: 2px solid #2d3755;
+    border-radius: 12px;
   }
 `
 const InputContainer = styled.section`

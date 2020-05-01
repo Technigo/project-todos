@@ -22,7 +22,7 @@ const ItemContainer = styled.section`
     font-size: 16px;
     border: 1px solid #535c68;
     border-radius: 6px;
-    background: #f5f6fa;
+    background: #ffffff;
     font-family: 'Work Sans', sans-serif;
     }
 `
