@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux'
 import { todo } from '../reducers/todo'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import styled from 'styled-components'
 import { Button } from '../styles/Button'
 import { Subtitle, Label } from '../styles/Text'
 
@@ -24,14 +23,9 @@ export const AddTask = () => {
 
   const enabled = task.length > 0 && dueDate > 0 && category.length > 0
 
-  const Container = styled.form`
-    display: flex;
-    flex-direction: column;
-  `;
-
   return (
     <>
-      <Container onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <Subtitle>Add a new task</Subtitle>
         <Label>
           Category:
@@ -40,11 +34,11 @@ export const AddTask = () => {
             onChange={(event) => setCategory(event.target.value)}
           >
             <option value='' selected>select...</option>
-            <option value="circle" selected>To-Do</option>
-            <option value="shopping-cart">Shopping</option>
-            <option value="briefcase">Work</option>
-            <option value="users-friends">Family</option>
-            <option value="user">Personal</option>
+            <option value='To-Do' selected>To-Do</option>
+            <option value='Shopping'>Shopping</option>
+            <option value='Work'>Work</option>
+            <option value='Family'>Family</option>
+            <option value='Personal'>Personal</option>
           </select>
         </Label>
 
@@ -64,7 +58,7 @@ export const AddTask = () => {
         </Label>
 
         <Button type='submit' disabled={!enabled}>Add task</Button>
-      </Container>
+      </form>
     </>
   )
 }

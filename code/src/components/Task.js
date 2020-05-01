@@ -6,7 +6,7 @@ import { TrashButton } from '../styles/Button'
 import { List, Category } from '../styles/Text'
 
 export const Task = (props) => {
-  const { id, task, category, completed, dueDate, startDate } = props.item
+  const { id, task, category, completed, dueDate, startDate, icon } = props.item
 
   const dispatch = useDispatch()
 
@@ -18,10 +18,11 @@ export const Task = (props) => {
     dispatch(todo.actions.removeItem(id))
   }
 
+
   return (
     <>
       <List>
-        <Category title='category'><FontAwesomeIcon icon={category} /> </Category>
+        <Category title={category}><FontAwesomeIcon icon={icon} /> </Category>
         <span>{task}</span>
         <span>{startDate}</span>
         {/* <span>{dueDate}</span> */}
