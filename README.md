@@ -1,10 +1,10 @@
 # A todo app using React.js and Redux
 
-
+A to-do app with different functionalities such as adding tasks with a category and a due date. The app can remove all tasks or individually and list different tasks depending on the category. 
 
 ## View it live
 
-
+https://rautellin-todos.netlify.app/
 
 ## What I got to learn 🧠
 
@@ -12,8 +12,10 @@
 * How to write reducers and actions
 * How to interact with the store using selectors or by dispatching actions
 * How to use Font-face with React
-* How to use Framer Motion with styled components
 * How to use React Datepicker
+* How to use React Select
+* Hot to use `localStorage`
+* How to use `Intl.DateTimeFormat`
 
 ## Requirements reached 🧪
 
@@ -28,5 +30,8 @@
 * Added a 'clear all' button
 * Added a due date to a task
 * Used styled-components
-* Added categories for tasks 
+* Added categories and different icons for tasks 
 * Added a filter and a drop down to change the task list is displayed
+* Added React Select
+* Added `localStorage`
+* Used Font-face with React
