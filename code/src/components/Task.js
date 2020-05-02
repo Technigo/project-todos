@@ -6,7 +6,7 @@ import { TrashButton, Checkbox } from '../styles/Button'
 import { List, Category, TaskText, Date } from '../styles/Text'
 
 export const Task = (props) => {
-  const { id, task, category, completed, dueDate, startDate, icon } = props.item
+  const { id, task, category, completed, dueDate, icon } = props.item
 
   const dispatch = useDispatch()
 
@@ -17,7 +17,6 @@ export const Task = (props) => {
   const handleRemoveButton = () => {
     dispatch(todo.actions.removeItem(id))
   }
-
 
   return (
     <>
@@ -32,7 +31,7 @@ export const Task = (props) => {
           {completed ? <FontAwesomeIcon icon="check-circle" /> : <FontAwesomeIcon icon="circle" />}
         </Checkbox>
         <TrashButton title="Remove task" onClick={handleRemoveButton} color={completed ? 'rgb(157, 215, 208)' : null}><FontAwesomeIcon icon="trash-alt" /></TrashButton>
-        <Date><strong>due:</strong> {startDate}</Date>
+        <Date><strong>due:</strong>{dueDate}</Date>
       </List>
     </>
   )
