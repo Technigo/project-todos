@@ -7,7 +7,6 @@ export const Header = () => {
     <>
       <HeaderContainer>
         <HeadLine>workflow</HeadLine>
-        <ItalicParagraph>you are what you do, not what you say you'll do.</ItalicParagraph>
       </HeaderContainer>
     </>
   )

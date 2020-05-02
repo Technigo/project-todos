@@ -2,7 +2,8 @@ import styled from 'styled-components'
 
 export const HeadLine = styled.h1`
     font-family: 'Malina1';
-    font-size: 90px;
+    font-size: 110px;
+    text-shadow: 1px 2px 3px rgba(0,0,0,0.36);
     color: white;
     text-align: center;
 
@@ -14,8 +15,8 @@ export const HeadLine = styled.h1`
 export const Title = styled.h2`
   font-family: 'Malina1';
   color: rgb(40, 95, 98);
-  font-size: 30px;
-  margin: -30px 0 -10px 0;
+  font-size: 35px;
+  margin: -30px 0 -15px 0;
 
   @media (max-width: 500px){
     font-size: 24px;
@@ -34,17 +35,6 @@ export const Paragraph = styled.p`
   color: rgb(40, 95, 98);
   text-transform: lowercase;
 `
-
-export const ItalicParagraph = styled.em`
-    font-family: 'Avenir-Next-Light';
-    text-transform: lowercase;
-    color: white;
-    text-align: center;
-    font-size: 14px;
-    max-width: 80%;
-    margin-top: -55px;
-    margin-right: -15px;
-`;
 
 export const Label = styled.label`
   font-family: 'Avenir-Next-Regular';

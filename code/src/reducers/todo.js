@@ -4,9 +4,24 @@ export const todo = createSlice({
   name: 'todo',
   initialState: {
     items: [
-      { id: 1, task: 'Shower', completed: false, category: 'To-Do', icon: "calendar-check" },
-      { id: 2, task: 'Clean', completed: false, category: 'To-Do', icon: "calendar-check" },
+      { id: 1, task: 'Shower', completed: false, category: 'to-do', icon: "calendar-check" },
+      { id: 2, task: 'Clean', completed: false, category: 'to-do', icon: "calendar-check" },
       { id: 3, task: 'Assignment', completed: false, category: 'Work', icon: "briefcase" }
+    ],
+    options: [
+      { value: 'show-all', label: 'show all' },
+      { value: 'to-do', label: 'to-do' },
+      { value: 'Shopping', label: 'Shopping' },
+      { value: 'Work', label: 'Work' },
+      { value: 'Family', label: 'Family' },
+      { value: 'Personal', label: 'Personal' },
+    ],
+    categories: [
+      { value: 'to-do', label: 'to-do' },
+      { value: 'Shopping', label: 'Shopping' },
+      { value: 'Work', label: 'Work' },
+      { value: 'Family', label: 'Family' },
+      { value: 'Personal', label: 'Personal' },
     ]
   },
   reducers: {
@@ -19,7 +34,7 @@ export const todo = createSlice({
         category,
         startDate: Date.now(),
         dueDate,
-        icon: (category === 'To-Do') ? "calendar-check"
+        icon: (category === 'to-do') ? "calendar-check"
           : (category === 'Shopping') ? "shopping-cart"
             : (category === 'Work') ? "briefcase"
               : (category === 'Family') ? "heart"

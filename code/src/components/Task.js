@@ -18,13 +18,12 @@ export const Task = (props) => {
     dispatch(todo.actions.removeItem(id))
   }
 
-
   return (
     <>
       <List background={completed ? 'rgb(235, 254, 255)' : null} color={completed ? 'rgb(157, 215, 208)' : null}>
         <Category title={category} color={completed ? 'rgb(157, 215, 208)' : null}><FontAwesomeIcon icon={icon} /> </Category>
         <TaskText line={completed ? 'line-through' : null}>{task}</TaskText>
-        <span>{startDate}</span>
+        <span></span>
         {/* <span>{dueDate}</span> */}
         <Checkbox
           type="button"

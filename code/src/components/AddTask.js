@@ -1,14 +1,17 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { todo } from '../reducers/todo'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import Select from 'react-select'
 import { Button } from '../styles/Button'
 import { Subtitle, Label } from '../styles/Text'
-import { TextInput, DropDown } from '../styles/Input'
-import { CategoryDateContainer } from '../styles/Container'
+import { TextInput } from '../styles/Input'
 
 export const AddTask = () => {
+  const options = useSelector((store) => store.todo.categories)
+
   const [task, setTask] = useState('')
   const [category, setCategory] = useState('')
   const [dueDate, setDueDate] = useState()
@@ -23,6 +26,10 @@ export const AddTask = () => {
     setDueDate('')
   }
 
+  const handleChange = category => {
+    setCategory(category.value)
+  }
+
   const enabled = task.length > 0 && dueDate > 0 && category.length > 0
 
   return (
@@ -30,27 +37,20 @@ export const AddTask = () => {
       <form onSubmit={handleSubmit}>
         <Subtitle>Add a new task</Subtitle>
 
-        <CategoryDateContainer>
-          <Label>
-            Category:
-          <DropDown
-              value={category}
-              onChange={(event) => setCategory(event.target.value)}
-            >
-              <option value='' selected>select...</option>
-              <option value='To-Do' selected>To-Do</option>
-              <option value='Shopping'>Shopping</option>
-              <option value='Work'>Work</option>
-              <option value='Family'>Family</option>
-              <option value='Personal'>Personal</option>
-            </DropDown>
-          </Label>
+        <Label>
+          Category:
+            <Select
+            value={(category === '') ? null : category.value}
+            onChange={handleChange}
+            options={options}
+          />
+        </Label>
 
-          <Label>
-            Due date:
-          <DatePicker onChange={(date) => setDueDate(date)} selected={dueDate} />
-          </Label>
-        </CategoryDateContainer>
+        <Label>
+          Due date:
+          <DatePicker onChange={(date) => setDueDate(date)} selected={dueDate} placeholderText='select a due date' />
+        </Label>
+
 
         <Label>
           Task:

@@ -1,7 +1,7 @@
 import React from 'react'
 import GlobalFonts from './fonts/fonts'
 import { Provider } from 'react-redux'
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { combineReducers, createStore } from '@reduxjs/toolkit'
 import { Header } from './components/Header'
 import { TotalTasks } from './components/TotalTasks'
 import { Tasks } from './components/Tasks'
@@ -17,7 +17,25 @@ const reducer = combineReducers({
   todo: todo.reducer
 })
 
-const store = configureStore({ reducer })
+// Retrieve the localstorage and use it as our initial state
+const persistedStateJSON = localStorage.getItem('may2020-reduxState')
+let persistedState = {}
+
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON)
+}
+
+// Create the store using the initial state
+const store = createStore(
+  reducer,
+  persistedState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
+
+// Store the state in localstorage on ANY redux state change
+store.subscribe(() => {
+  localStorage.setItem('may2020-reduxState', JSON.stringify(store.getState()));
+})
 
 const Main = styled.main`
     display: flex;
