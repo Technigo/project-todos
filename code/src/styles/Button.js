@@ -20,6 +20,10 @@ export const Button = styled.button`
   &:disabled {
     background: rgb(208, 235, 233);
   }
+
+  @media (max-width: 500px){
+    font-size: 14px;
+  }
 `
 
 export const Checkbox = styled.button`

@@ -8,7 +8,7 @@ export const HeadLine = styled.h1`
     text-align: center;
 
     @media (max-width: 500px){
-    font-size: 50px;
+    font-size: 58px;
   }
 `;
 
@@ -19,7 +19,8 @@ export const Title = styled.h2`
   margin: -30px 0 -15px 0;
 
   @media (max-width: 500px){
-    font-size: 24px;
+    font-size: 20px;
+    margin: -10px 0 -10px 0;
   }
 `
 
@@ -28,12 +29,20 @@ export const Subtitle = styled.h3`
   color: rgb(40, 95, 98);
   font-size: 28px;
   text-align: center;
+
+  @media (max-width: 500px){
+    font-size: 20px;
+  }
 `
 
 export const Paragraph = styled.p`
   font-family: 'Avenir-Next-Regular';
   color: rgb(40, 95, 98);
   text-transform: lowercase;
+
+  @media (max-width: 500px){
+    font-size: 14px;
+  }
 `
 
 export const Label = styled.label`
@@ -43,6 +52,10 @@ export const Label = styled.label`
   width: 100%;
   display: flex;
   flex-direction: column;
+
+  @media (max-width: 500px){
+    font-size: 14px;
+  }
 `
 
 export const List = styled.li`
@@ -50,8 +63,13 @@ export const List = styled.li`
   color: ${(props) => props.color || 'white'};
   text-transform: lowercase;
   background-color: ${(props) => props.background || 'rgb(66, 146, 132)'};
-  margin-bottom: 3px;
+  margin-top: 4px;
   padding: 2px;
+  border-radius: 4px;
+
+  @media (max-width: 500px){
+    font-size: 14px;
+  }
 `
 
 export const Category = styled.span`
@@ -70,6 +88,10 @@ export const Date = styled.p`
 
   strong {
     margin: 0 4px 0 2px;
+  }
+
+  @media (max-width: 500px){
+    font-size: 10px;
   }
 `
 

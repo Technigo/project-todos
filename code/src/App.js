@@ -8,7 +8,7 @@ import { Tasks } from './components/Tasks'
 import { todo } from 'reducers/todo'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faTrashAlt, faCheckCircle, faShoppingCart, faCalendarCheck, faBriefcase, faHeart, faUser, faCircle } from '@fortawesome/free-solid-svg-icons'
-import styled from 'styled-components'
+import { Main, AppContainer } from './styles/Container'
 
 library.add(faTrashAlt, faCheckCircle, faShoppingCart, faCalendarCheck, faBriefcase, faHeart, faUser, faCircle)
 
@@ -37,28 +37,7 @@ store.subscribe(() => {
   localStorage.setItem('may2020-reduxState', JSON.stringify(store.getState()));
 })
 
-const Main = styled.main`
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-image: url('./images/wallpaper.jpg');
-    background-size: cover;
-    height: 100vh;
-    width: 100vw;
-`;
 
-const AppContainer = styled.div`
-    border: 1px solid white;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: white;
-    width: 1108px;
-    border-radius: 20px;
-    -webkit-box-shadow: -4px 4px 41px -16px rgb(207, 207, 209);
-    -moz-box-shadow: -4px 4px 41px -16px rgb(207, 207, 209);
-    box-shadow: -4px 4px 41px -16px rgb(207, 207, 209);
-`;
 
 export const App = () => {
   return (
