@@ -7,13 +7,17 @@ import { ColorButton } from 'shared/shared';
 
 // styled components
 const Wrapper = styled.div`
-	width: ${(props) => (props.width < 500 ? props.width - 1 : props.width * 0.5 - 2)}px;
+  width: 100%;
+  box-sizing: border-box;
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	justify-content: space-between;
 	border-right: 1px dotted white;
 	box-size: border-box;
+  @media (min-width: 576px) {
+    width: 50%;
+  }
 `;
 
 const TodoItem = styled.button`
@@ -39,7 +43,6 @@ const MediumText = styled.p`
 
 export const TaskItem = ({ todo }) => {
 	const dispatch = useDispatch();
-  const theWidth = useSelector((state)=>state.size.screenSize)
   const todayDate = new Date()
   const deadline = new Date(todo.dueDate)
   const compareOntime = (todayDate < deadline)
@@ -54,7 +57,7 @@ export const TaskItem = ({ todo }) => {
 	};
 
 	return (
-		<Wrapper width={theWidth}>
+		<Wrapper>
 			<TodoItem todoDone={todo.taskDone} onClick={handleStatusChange}>
 				<MediumText todoDone={todo.taskDone}>{todo.task}</MediumText>
 

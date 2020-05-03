@@ -2,12 +2,10 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from '@reduxjs/toolkit';
 import { todoStore } from 'reducers/todoStore';
-import { size } from 'reducers/sizes';
 import { Home } from 'components/Home';
 
 const reducer = combineReducers({
-	todoStore: todoStore.reducer,
-	size: size.reducer
+	todoStore: todoStore.reducer
 });
 // Retrieve the existing state from localstorage if it exists
 const persistedState = localStorage.getItem('reduxState') ? JSON.parse(localStorage.getItem('reduxState')) : {};

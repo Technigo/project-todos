@@ -10,7 +10,6 @@ const StyledForm = styled.form`
 	flex-direction: column;
 `;
 const Wrapper = styled.div`
-	width: ${(props) => props.width}px;
 	display: flex;
 	flex: auto;
 	flex-direction: row;
@@ -19,11 +18,14 @@ const Wrapper = styled.div`
 `;
 
 const StyledInput = styled.input`
-	width: ${(props) => props.width * 0.8}px;
-	height: ${(props) => (props.width < 500 ? 60 : 40)}px;
+  width: 70%;
+  height: 48px;
 	border: 1px solid black;
 	background-color: #c7d3d4;
 	box-shadow: none;
+    @media (min-width: 576px) {
+    height: 32px;
+  }
 `;
 
 const DateInput = styled.input`
@@ -38,7 +40,7 @@ export const NewTask = () => {
 	const dispatch = useDispatch();
 	const [ taskInput, setTaskInput ] = useState('');
 	const [ startDate, setStartDate ] = useState(new Date());
-	const theWidth = useSelector((state) => state.size.screenSize);
+
 
 	const handleNewTask = (event) => {
 		event.preventDefault();
@@ -49,14 +51,13 @@ export const NewTask = () => {
 
 	return (
 		<StyledSection>
-			<SectionHeader width={theWidth}>Make a new Todo</SectionHeader>
+			<SectionHeader>Make a new Todo</SectionHeader>
 			<StyledForm onSubmit={handleNewTask}>
 				<label for="todoInput">
 					<Paragraf> Write the task</Paragraf>
 				</label>
-				<Wrapper width={theWidth}>
+				<Wrapper>
 					<StyledInput
-						width={theWidth}
 						type="text"
 						name="todoInput"
 						onChange={(e) => setTaskInput(e.target.value)}

@@ -8,12 +8,14 @@ import { TaskItem } from './TaskItem'
 
 // Styled components
 const StyledGrid = styled.section`
-	width: ${(props) => props.width}px;
 	display: flex;
 	flex-wrap: wrap;
-	flex-direction: ${(props) => (props.width < 500 ? 'column' : 'row')};
+	flex-direction: column;
 	align-items: center;
 	justify-content: flex-start;
+  @media (min-width: 576px){
+    flex-direction: row;
+  }
 `;
 const ClearButton = styled.button`
 	background-color: black;
@@ -27,7 +29,6 @@ const ClearButton = styled.button`
 
 export const TaskList = () => {
 	const allTasks = useSelector((state) => state.todoStore.todos);
-	const theWidth = useSelector((state) => state.size.screenSize);
 	const dispatch = useDispatch();
 
 	const handleClear = () => {
@@ -36,8 +37,8 @@ export const TaskList = () => {
 
 	return (
 		<StyledSection>
-			<SectionHeader width={theWidth}>Todo List</SectionHeader>
-			<StyledGrid width={theWidth}>{allTasks.map((task) => <TaskItem todo={task} />)}</StyledGrid>
+			<SectionHeader>Todo List</SectionHeader>
+			<StyledGrid>{allTasks.map((task) => <TaskItem todo={task} />)}</StyledGrid>
 			<ClearButton onClick={handleClear}>clear</ClearButton>
 		</StyledSection>
 	);

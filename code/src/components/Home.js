@@ -8,29 +8,25 @@ import { Header } from './Header';
 
 //Styled components
 const ParentContainer = styled.div`
-	max-width: 900px;
+	width: 100vw;
+  min-height: 80vh;
 	margin: 0 auto;
 	background-color: #02485e;
-	padding: 16px 0;
+  @media (min-width: 992px) {
+    width: 992px;
+  }
 `;
 const MainSection = styled.section`
-	width: ${(props) => props.size}px;
+	width: 90%;
 	margin: 0 auto;
 	flex: 1;
 `;
 
 export const Home = () => {
-	const dispatch = useDispatch();
-	const myScreen = () => {
-		dispatch(size.actions.changeSize(window.screen.width)); // change size based on window-size
-	};
-	myScreen();
-
-	const boxsize = useSelector((state) => state.size.screenSize); // use size from store
 
 	return (
 		<ParentContainer>
-			<MainSection size={boxsize}>
+			<MainSection>
 				<Header />
 				<NewTask />
 				<TaskList />
