@@ -1,7 +1,8 @@
 import React, {useState} from "react"
 import {useDispatch} from "react-redux"
 import {ToDo} from "reducers/ToDo"
-import styled from "styled-components"
+import styled, { css } from 'styled-components'
+import Emoji from 'a11y-react-emoji'
 
 
 export const CustomCheckbox =({isChecked, onChangeHandler}) => {
@@ -25,6 +26,13 @@ export const CustomCheckbox =({isChecked, onChangeHandler}) => {
     width: 1px;
     `;
 
+const StyledEmoji = styled(({ isSpinning, ...props }) => <Emoji {...props} />)`
+font-size: 32px;
+${props => props.isSpinning && css`
+    animation: spinning 1s linear infinite;
+`}
+`
+
     const Icon = styled.svg`
     fill: none;
     stroke: white;
@@ -35,10 +43,11 @@ export const CustomCheckbox =({isChecked, onChangeHandler}) => {
     display: inline-block;
     width: 32px;
     height: 32px;
-    background: ${(props) => (props.checked ? "yellow" : "grey")};
+    background: ${(props) => (props.checked ? " " : "grey")};
     border-radius: ${(props) => (props.checked ? "2px" : "30px")};
     transition: all 150ms;
-    ${Icon} {
+    cursor: pointer;
+    ${StyledEmoji} {
         visibility: ${(props) => (props.checked ? "visible" : "hidden")};
     }
     `;
@@ -51,9 +60,8 @@ export const CustomCheckbox =({isChecked, onChangeHandler}) => {
         <CheckboxContainer>
             <HiddenCheckbox checked={checked} {...props}></HiddenCheckbox>
             <StyledCheckbox checked ={checked}>
-                <Icon viewBox=" 0 0 24 24">
-                    <polyline points=" 20 3 9 17 4 12"/>
-                </Icon>
+                <StyledEmoji symbol="⭐️" />
+               
             </StyledCheckbox>
         </CheckboxContainer>
     )

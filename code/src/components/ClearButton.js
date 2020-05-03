@@ -10,7 +10,7 @@ export const ClearButton = () => {
       }
 
     return (
-        <Button type="button" onClick={handleRemoveAllClick}>
+        <Button type="button"  onClick={handleRemoveAllClick}>
             Remove All
         </Button>
     )

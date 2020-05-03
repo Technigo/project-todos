@@ -43,7 +43,6 @@ store.subscribe(() => {
 export const App = () => {
   return (
    <Provider store= {store}>
-    <CustomCheckbox/>
      <AddItemForm/>
      <ItemList/>
      <ClearButton/>

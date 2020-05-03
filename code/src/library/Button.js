@@ -8,9 +8,9 @@ width: ${(props) => props.width || "max-content"};
 font-size: 1.1rem;
 border: 1px solid lightslategrey;
 border-radius: 3px;
- 
 &:hover {
-    background: black;
-    color: white;
+    background: slategray;
+    color: lemonchiffon;
+    cursor: pointer;
   }
 `;

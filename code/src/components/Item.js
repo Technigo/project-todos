@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { ToDo } from 'reducers/ToDo'
 import moment from 'moment'
 import {Button} from "library/Button"
-import styled from "styled-components"
+import styled from "styled-components/macro"
 import {CustomCheckbox} from "./CustomCheckbox"
 import {Title, Subtitle, P,} from "library/Text"
 
@@ -22,12 +22,11 @@ export const Item = (props) => {
   return (
     <ListItem>
       <TheName>
-        
         <span><P>{name}</P> </span>
         <span>({category}) </span>
       </TheName>
       <CheckLabel>
-         - Done!
+        <P> - Done! </P>
         <CustomCheckbox
         isChecked={completed}
         onChangeHandler = {handleCheckboxClick}/>
@@ -47,7 +46,7 @@ const ListItem = styled.li`
   display: flex;
   flex-direction:column;
   align-items:center;
-  padding: 3px;
+  padding: 15px;
   margin: 5px;
   color: ${(props) => (props.checked ? "lightgrey" : "#3d3d3d")};
   transition: all 150ms;
@@ -56,11 +55,12 @@ const ListItem = styled.li`
 
 const CheckLabel = styled.div`
   display:inline-flex;
-`
+  margin:2px;
+`;
 const TheName = styled.div`
 
 `
 
 const Details = styled.div`
 font-size:12px;
-`
+`;
