@@ -26,12 +26,12 @@ export const CustomCheckbox =({isChecked, onChangeHandler}) => {
     width: 1px;
     `;
 
-const StyledEmoji = styled(({ isSpinning, ...props }) => <Emoji {...props} />)`
-font-size: 32px;
-${props => props.isSpinning && css`
+    const StyledEmoji = styled(({ isSpinning, ...props }) => <Emoji {...props} />)`
+    font-size: 32px;
+    ${props => props.isSpinning && css`
     animation: spinning 1s linear infinite;
-`}
-`
+    `}
+    `;
 
     const Icon = styled.svg`
     fill: none;
