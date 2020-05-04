@@ -6,7 +6,7 @@ import {Select } from "library/Select"
 import {Button}from "library/Button"
 import {Title, Subtitle} from "library/Text"
 import styled from "styled-components/macro"
-
+/* import {goldback} from "./goldback" */
 
 export const AddItemForm = () => {
   const [name, setName] = useState('')
@@ -29,7 +29,7 @@ export const AddItemForm = () => {
     <Title>Celebrate the journey!</Title>
     <Subtitle> Remember to balance work and play </Subtitle>
     <Form onSubmit={handleSubmit}>
-    
+    {/*   <goldback> */}
       <Label>
         
         Add a To-Do: 
@@ -51,7 +51,7 @@ export const AddItemForm = () => {
         </Select>
       </Label>
       <Button type="submit">ADD NEW</Button>
-    
+     {/*  </goldback> */}
     </Form>
     </Main>
   )
@@ -63,8 +63,8 @@ width:70%;
 padding: 2rem;
 display: flex;
 flex-direction:column;
-background-color: lemonchiffon;
 align-items: center;
+background-color: lemonchiffon;
 line-height: 50px;
 `;
 
