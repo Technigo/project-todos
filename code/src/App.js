@@ -29,18 +29,17 @@ const day = moment().format('HH:mm | D/M')
       <main>
         <header>
           <h1>TODO</h1>
-        <section className="daysummary">
-          <p>{day}</p>
-          
-          <TaskSummary />
+          <section className="daysummary">
+            <p>{day}</p>
+            <TaskSummary />
           </section>
-            <Divider light />
-      </header>
-    
-      <section className="tasklist">
-      <TaskList />
-      </section>
-    </main>
+          <Divider light />
+        </header>
+
+        <section className="tasklist">
+         <TaskList />
+        </section>
+      </main>
     </Provider>
   )
 }

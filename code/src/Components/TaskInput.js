@@ -23,21 +23,20 @@ const handleOnSubmit = e => {
  }
 
 
-  return(
+  return (
      <form className="task-input" 
-    onSubmit={handleOnSubmit}>
+        onSubmit={handleOnSubmit}>
       <input
-      type="text"
-      onChange={e => setInputValue(e.target.value)}
-      value= {inputValue}
-      className="task-input-text"
-      ></input>
+        type="text"
+        onChange={e => setInputValue(e.target.value)}
+        value= {inputValue}
+        className="task-input-text">
+      </input>
       <input
-      type="submit"
-      className="button"
-      value="Add task"
-      ></input>
+        type="submit"
+        className="button"
+        value="Add task">
+      </input>
      </form>
-  
   )
 }
