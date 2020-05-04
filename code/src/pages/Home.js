@@ -7,15 +7,15 @@ import { Header } from "../components/Header";
 
 export const Home = () => {
   const reducer = combineReducers({ todos: todos.reducer });
-  
+
   const store = configureStore({ reducer });
 
   return (
     <Provider store={store}>
       <div className="home-page">
-        <Header/>
-        <TodoList/>
-      </div> 
+        <Header />
+        <TodoList />
+      </div>
     </Provider>
   );
 };
