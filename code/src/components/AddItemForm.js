@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { ToDo } from 'reducers/ToDo'
+import {ToDo}from "reducers/toDo"
 import {Select } from "library/Select"
 /* import DatePicker from "react-date-picker"https://reactdatepicker.com/  still working on it :)*/
 import {Button}from "library/Button"

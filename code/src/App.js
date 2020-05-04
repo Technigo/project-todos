@@ -1,7 +1,7 @@
 import React from 'react'
 import {Provider} from "react-redux"
 import { configureStore, combineReducers, createStore} from "@reduxjs/toolkit"
-import {ToDo}from "reducers/ToDo"
+import {ToDo}from "reducers/toDo"
 import {AddItemForm} from "components/AddItemForm"
 import {ToDoSummary} from "components/ToDoSummary"
 import { ItemList} from "components/ItemList"

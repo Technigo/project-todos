@@ -1,6 +1,6 @@
 import React, {useState} from "react"
 import {useDispatch} from "react-redux"
-import {ToDo} from "reducers/ToDo"
+import {ToDo}from "reducers/toDo"
 import styled, { css } from 'styled-components'
 import Emoji from 'a11y-react-emoji'
 
