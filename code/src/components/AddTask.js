@@ -19,11 +19,11 @@ export const AddTask = () => {
   const dispatch = useDispatch()
 
   const handleSubmit = (event) => {
-    event.preventDefault()
     dispatch(todo.actions.addItem({ task, category, dueDate })) // name, category, duedate as payload
     setTask('')
     setCategory('')
     setDueDate('')
+    event.preventDefault()
   }
 
   const handleChange = category => {
