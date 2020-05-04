@@ -31,7 +31,7 @@ export const Task = (props) => {
           {completed ? <FontAwesomeIcon icon="check-circle" /> : <FontAwesomeIcon icon="circle" />}
         </Checkbox>
         <TrashButton title="Remove task" onClick={handleRemoveButton} color={completed ? 'rgb(157, 215, 208)' : null}><FontAwesomeIcon icon="trash-alt" /></TrashButton>
-        <Date><strong>due:</strong>{dueDate}</Date>
+        <Date><strong>due:</strong>{JSON.stringify(dueDate)}</Date>
       </List>
     </>
   )
