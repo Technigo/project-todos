@@ -39,16 +39,15 @@ export const TaskItem = ({ itemIndex }) => {
     display: flex;
     justify-content: space-between;
   &:hover .my__unique__button {
-    transform: scale(1.8);
-    
-  }
-`
+    transform: scale(1.8);   
+  `
   const Button = styled.button`
   background-color: #FF4960;
   border:0px;
   margin:5px;
   cursor: pointer;
   `
+
   
   return(
     
