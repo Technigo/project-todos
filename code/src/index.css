@@ -9,12 +9,9 @@ code {
   font-family: 'Roboto', sans-serif;
 }
 
-
 .done {
   color: grey;
- 
 }
-
 
 textarea::placeholder {
   padding-top: 20px;
