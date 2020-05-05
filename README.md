@@ -3,7 +3,7 @@
 In this week's project, I have built an todo application using redux.
 
 ## The problem
-In this todo app, have created some different tools for the user, such as adding todos, list the tasks and toggle whether a task is done or not. Each task have a remove button and at the top of the page there's a delete all button. 
+In this todo app, I have created some different tools for the user, such as adding todos, list the tasks and toggle whether a task is done or not. Each task have a remove button and at the top of the page there's a 'delete all' button. 
 
 Some strech goals I aimed for: 
 - add a 'clear all' button
