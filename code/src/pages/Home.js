@@ -14,12 +14,11 @@ const store = configureStore({ reducer })
 
 export const Home = () => {
   return (
-  <Provider store={store}>
-    <main className='list-container'>
-        <Header />
-        <ItemList></ItemList>
-
-    </main>
-  </Provider>
+    <Provider store={store}>
+      <main className='list-container'>
+          <Header />
+          <ItemList />
+      </main>
+    </Provider>
   )
 }

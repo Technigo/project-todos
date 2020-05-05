@@ -33,7 +33,7 @@ export const Task = ({ itemIndex }) => {
                 <input type="checkbox"
                     onChange={handleOnChange}
                     checked={item.done ? "checked" : "" }></input>
-            <span class="checkbox-custom rectangular"></span>
+                <span class="checkbox-custom rectangular"></span>
             </label>
         </div>
         <span className="text">{item.description}</span>

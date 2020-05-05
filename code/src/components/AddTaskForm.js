@@ -26,22 +26,22 @@ export const AddTaskForm = () => {
 
 return (
     <section className=''>
-    <h2>Add task</h2> 
-    <div>  
-    <form onSubmit={handleOnSubmit}>         
-        <lable> 
-            <input
-            type='text'
-            onChange={e => setInputValue(e.target.value)}
-            value={inputValue}
-            />
-        </lable>
-        <button className="button"
-        type='submit'
-        value='Add task*'
-        >+</button>
-    </form>
-    </div>
+        <h2>Add task</h2> 
+        <div>  
+            <form onSubmit={handleOnSubmit}>         
+                <lable> 
+                    <input
+                    type='text'
+                    onChange={e => setInputValue(e.target.value)}
+                    value={inputValue}
+                    />
+                </lable>
+                <button className="button"
+                    type='submit'
+                    value='Add task*'
+                >+</button>
+            </form>
+        </div>
 </section>
 )
 }

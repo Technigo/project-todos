@@ -5,7 +5,7 @@ const initialState = {
     name:"Test List",
     items: [
       {
-        description: "Coading!",
+        description: "Call mum!",
         done: false
       }
     ]
@@ -19,6 +19,7 @@ export const todolist = createSlice ({
     addTodo: (state, action) => {
       const itemInfo = action.payload
       state.list.items.push(itemInfo)
+
     },
     setDone: (state, action) => {
       const { itemIndex, done } =action.payload
@@ -29,7 +30,6 @@ export const todolist = createSlice ({
       const { itemIndex } =action.payload
       state.list.items = state.list.items.filter((item, index) => index !== itemIndex )
     }
-
 
   }
 })

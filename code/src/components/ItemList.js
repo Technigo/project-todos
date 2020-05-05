@@ -10,12 +10,12 @@ export const ItemList = () => {
     const list = useSelector(store => store.todolist.list)
          
     return (
-   <section className="task-container"> 
-   <AddTaskForm />
-   {list.items.map((item, index) => (
-       <Task itemIndex={index}></Task>   
-   ))}
-   <ListSummary />
-   </section>
-    )
+        <section className="task-container"> 
+            <AddTaskForm />
+                {list.items.map((item, index) => (
+                    <Task itemIndex={index}></Task>   
+                ))}
+            <ListSummary />
+        </section>
+        )
 }
