@@ -22,12 +22,12 @@ export const todolist = createSlice ({
 
     },
     setDone: (state, action) => {
-      const { itemIndex, done } =action.payload
+      const { itemIndex, done } = action.payload
       state.list.items[itemIndex].done = done
 
     },
     remove: (state, action) => {
-      const { itemIndex } =action.payload
+      const { itemIndex } = action.payload
       state.list.items = state.list.items.filter((item, index) => index !== itemIndex )
     }
 

@@ -13,7 +13,6 @@ export const AddTaskForm = () => {
     const [inputValue, setInputValue] = useState("")
 
     const handleOnSubmit = (e) => {
-        console.log(inputValue)
         e.preventDefault()
 
         dispatch(todolist.actions.addTodo({
@@ -25,7 +24,7 @@ export const AddTaskForm = () => {
     }
 
 return (
-    <section className=''>
+    <section>
         <h2>Add task</h2> 
         <div>  
             <form onSubmit={handleOnSubmit}>         

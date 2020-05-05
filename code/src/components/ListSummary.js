@@ -11,5 +11,5 @@ export const ListSummary = () => {
     return <section>
         <h4>
             {numDone} of {list.items.length} tasks complete</h4>
-    </section>
+        </section>
 }
