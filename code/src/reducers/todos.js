@@ -3,13 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
   list: {
     name:'Test List',
-    items: [
-      // {
-      //   description: 'hello',
-      //   done: false
-      // }
-      
-    ]
+    items: []
   }
 }
 
@@ -36,7 +30,5 @@ export const todos = createSlice({
       state.list.items = []
     }
 
-    //addTodo
-    //removeTodo
   }
 })
