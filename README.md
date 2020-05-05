@@ -1,6 +1,6 @@
 # Project Todos
 
-A project which pulls together all the parts od Redux in a todo app. 
+A project which pulls together all the parts of Redux in a todo app. 
 
 ## The problem
 
