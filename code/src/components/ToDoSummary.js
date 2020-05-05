@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import {Emoji} from "../library/Emoji"
-import {Title, Subtitle, P} from "library/Text"
+import { Emoji } from "../library/Emoji"
+import { Title, Subtitle, P} from "library/Text"
 
 export const ToDoSummary = () => {
   const items = useSelector(state => state.ToDo.items)

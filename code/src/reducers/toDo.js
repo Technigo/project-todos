@@ -21,12 +21,10 @@ export const ToDo = createSlice({
     removeAll: (state, action) => {
       state.items = []
     },
-    toggleCompleted: (state, action) => {
-      console.log(action.payload)
-      // find 'cheese'
-      const foundItem = state.items.find(item => item.id === action.payload)
+    toggleCompleted: (state, action) => {   
+    const foundItem = state.items.find(item => item.id === action.payload)
 
-      // toggle the value of completed
+    
       if (foundItem) {
         foundItem.completed = !foundItem.completed
       }

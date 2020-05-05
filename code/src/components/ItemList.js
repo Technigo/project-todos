@@ -1,8 +1,8 @@
 import React, { useState } from "react"
-import {useSelector} from "react-redux"
-import {Item} from "components/Item"
-import {Select} from "library/Select"
-import {ToDo}from "reducers/toDo"
+import { useSelector } from "react-redux"
+import { Item } from "components/Item"
+import { Select } from "library/Select"
+import { ToDo }from "reducers/toDo"
 import { Main } from "./AddItemForm"
 import styled from "styled-components/macro"
 

@@ -1,12 +1,12 @@
 import React from 'react'
-import {Provider} from "react-redux"
+import { Provider } from "react-redux"
 import { configureStore, combineReducers, createStore} from "@reduxjs/toolkit"
-import {ToDo}from "reducers/toDo"
-import {AddItemForm} from "components/AddItemForm"
-import {ToDoSummary} from "components/ToDoSummary"
-import { ItemList} from "components/ItemList"
-import {ClearButton} from "components/ClearButton"
-import {CustomCheckbox} from "components/CustomCheckbox"
+import { ToDo}from "reducers/toDo"
+import { AddItemForm } from "components/AddItemForm"
+import { ToDoSummary } from "components/ToDoSummary"
+import { ItemList } from "components/ItemList"
+import { ClearButton } from "components/ClearButton"
+import { CustomCheckbox } from "components/CustomCheckbox"
 
 
 
@@ -14,16 +14,7 @@ import {CustomCheckbox} from "components/CustomCheckbox"
 const reducer = combineReducers({
   ToDo: ToDo.reducer,
 });
-/*
-old store:
-const reducer = combineReducers ({
- ToDo: ToDo.reducer
-})
- Create new storage code:
-- Retrive local storage and use as inital state
-- create store using initial state
--store state in local storage on any Redux state ChannelMergerNode.
- */
+
 const persistedStateJSON = localStorage.getItem("rememberReduxState")
 let persistedState={}
 

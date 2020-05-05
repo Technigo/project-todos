@@ -1,11 +1,11 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import {ToDo}from "reducers/toDo"
+import { ToDo }from "reducers/toDo"
 import moment from 'moment'
-import {Button} from "library/Button"
+import { Button } from "library/Button"
 import styled from "styled-components/macro"
-import {CustomCheckbox} from "./CustomCheckbox"
-import {Title, Subtitle, P,} from "library/Text"
+import { CustomCheckbox } from "./CustomCheckbox"
+import { Title, Subtitle, P,} from "library/Text"
 
 export const Item = (props) => {
   const { id, name, dueDate, category, completed, startDate } = props.item
@@ -21,10 +21,10 @@ export const Item = (props) => {
 
   return (
     <ListItem>
-      <TheName>
+      <div>
         <span><P>{name}</P> </span>
         <span>({category}) </span>
-      </TheName>
+      </div>
       <CheckLabel>
         <P> - Done! </P>
         <CustomCheckbox
@@ -57,9 +57,6 @@ const CheckLabel = styled.div`
   display:inline-flex;
   margin:2px;
 `;
-const TheName = styled.div`
-
-`
 
 const Details = styled.div`
 font-size:12px;

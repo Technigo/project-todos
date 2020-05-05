@@ -20,11 +20,3 @@ export const P = styled.h3`
   margin: 10px;
 `
 
-/* Roboto:
-<link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&family=Roboto&display=swap" rel="stylesheet">
-font-family: 'Roboto', sans-serif;
-
-Script: 
-<link href="https://fonts.googleapis.com/css2?family=Petit+Formal+Script&display=swap" rel="stylesheet">
-font-family: 'Petit Formal Script', cursive;
-*/

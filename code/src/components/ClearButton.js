@@ -1,7 +1,7 @@
 import React from "react"
-import {useDispatch} from "react-redux"
-import {ToDo}from "reducers/toDo"
-import {Button} from "library/Button"
+import { useDispatch } from "react-redux"
+import { ToDo }from "reducers/toDo"
+import { Button } from "library/Button"
 
 export const ClearButton = () => {
     const dispatch = useDispatch()

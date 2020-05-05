@@ -1,4 +1,6 @@
-/* import gold from "library/gold.jpg"
+/* Svaing for later fix
+
+import gold from "library/gold.jpg"
 import styled from "styled-components"
 
 export const goldback = styled.div`
