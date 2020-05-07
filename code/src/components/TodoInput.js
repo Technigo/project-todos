@@ -1,5 +1,4 @@
-import React from 'react'
-import { useState } from "react"
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
 
@@ -21,17 +20,18 @@ export const TodoInput = () => {
     <form className='todo-input' onSubmit={handleOnSubmit}>
       <input
         Type='text'
+        required
         placeholder='Add Todo'
         onChange={event => setInputValue(event.target.value)}
         value={inputValue}
         className='todo-input-text'
-      ></input>
-      <input
+      />
+      <button
         Type='submit'
-        className='todo-input-button'
-        value='+'
-      ></input>
+        className='todo-input-button'>
+        +
+      </button>
 
-    </form>
+    </form >
   )
 }

@@ -1,11 +1,10 @@
 
 
 body {
-margin: 0;
- font-family: 🇲ontserrat Alternates;
--webkit-font-smoothing: antialiased;
--moz-osx-font-smoothing: grayscale;
-
+  margin: 0;
+  font-family: 🇲ontserrat Alternates;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 main {
@@ -18,7 +17,6 @@ main {
   border-width: thin;
   margin: 50px;
 }
-
 
 .header {
   display: flex;
@@ -56,6 +54,7 @@ h4 {
   background: purple;
   color: rgb(247, 214, 234);
   border: none;
+  width: 24px;
   border-radius: 50px;
   margin-left: 5px;
   padding: 5px;
@@ -102,13 +101,13 @@ h4 {
 
 .todo-item-check {
   width: 15px;
-    height: 15px;
-    position: relative;
-    margin: 20px auto;
-    margin-right: 5px;
-    background: #fcfff4;
-    background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
-    border-radius: 50px;
+  height: 15px;
+  position: relative;
+  margin: 20px auto;
+  margin-right: 5px;
+  background: #fcfff4;
+  background: linear-gradient(top, #fcfff4 0%, #dfe5d7 40%, #b3bead 100%);
+  border-radius: 50px;
   }
 
 .todo-item-remove {
@@ -131,18 +130,15 @@ h4 {
 }
 
 @media screen and (min-width: 600px) {
-    .todo-item {
-      margin-left: 200px;
-    }
-
-    .input-remove {
-      justify-content: center;
-    }
-
-    .todo-input-button {
-      margin-right: 50px;
-}
-    
+  .todo-item {
+    margin-left: 200px;
+  }
+  .input-remove {
+    justify-content: center;
+  }
+  .todo-input-button {
+     margin-right: 50px;
+  }
 }
 
 @media screen and (min-width: 770px) {

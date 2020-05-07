@@ -1,6 +1,4 @@
 import React from 'react'
-import { TodoItem } from 'components/TodoItem'
-import { TodoInput } from 'components/TodoInput'
 import { useSelector } from 'react-redux'
 
 export const TodoSummery = () => {

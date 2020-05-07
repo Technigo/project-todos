@@ -7,8 +7,6 @@ export const ShowDate = () => {
   const today = d.toDateString()
 
   return (
-    <>
-      <h1>{today}</h1>
-    </>
+    <h1>{today}</h1>
   )
 }
