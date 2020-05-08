@@ -14,14 +14,14 @@ export const Shop = ({itemIndex}) => {
 
   const handleOnChange = event => {
     dispatch(shoppings.actions.setDoneShop({
-      itemIndex: itemIndex,
+      itemIndex,
       done: !item.done
     }))
   }
 
   const onRemoveClicked = event => {
     dispatch(shoppings.actions.removeShop({
-      itemIndex: itemIndex,
+      itemIndex,
     }))
   }
 
@@ -37,7 +37,7 @@ export const Shop = ({itemIndex}) => {
         />
         <Button onClick={onRemoveClicked}>
           Remove
-      </Button>
+        </Button>
       </DoubleButtons>
     </List>
   )

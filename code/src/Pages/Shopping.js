@@ -4,12 +4,9 @@ import { HeaderShopping } from '../components/HeaderShopping'
 import { ShoppingList } from '../components/ShoppingList'
 
 
-export const Shopping = () => {
-
-  return (
-    <>
-      <HeaderShopping />
-      <ShoppingList />
-    </>
-  )
-}
+export const Shopping = () => (
+  <>
+    <HeaderShopping />
+    <ShoppingList />
+  </>
+)

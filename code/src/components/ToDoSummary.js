@@ -16,8 +16,6 @@ export const ToDoSummary = () => {
   const tasksDone = list.items.filter(item => item.done).length
 
   return (
-    <section>
-      <TaskSummary> Done: {tasksDone}/{list.items.length}</TaskSummary>
-    </section>
+    <TaskSummary> Done: {tasksDone}/{list.items.length}</TaskSummary>
   )
 }
