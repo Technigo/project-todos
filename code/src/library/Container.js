@@ -8,7 +8,7 @@ export const TopContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-color: #FCFCFC;
+  background-color: beige;
   font-size: 20px;
   color: #a3a3a3;
 `
@@ -17,9 +17,9 @@ export const ListContainer = styled.div`
   border-bottom: 3px solid #f0f0f0;
   padding: 16px;  
   display: flex;
-  align-items: baseline;
-  justify-content: flex-start;
-  background-color: #FCFCFC;
+  align-items: center;
+  justify-content: space-between;
+  background-color: beige;
   font-size: 16px;
   color: #a3a3a3;
 
@@ -47,7 +47,7 @@ export const FormContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #FCFCFC;
+  background-color: beige;
   font-size: 16px;
   color: #a3a3a3;
 `
@@ -58,7 +58,7 @@ export const AddTaskContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  background-color: #FCFCFC;
+  background-color: beige;
   font-size: 16px;
   color: #a3a3a3;
 `

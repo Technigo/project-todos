@@ -17,7 +17,10 @@ if (persistedStateJSON) {
 }
 console.log(`persistedState: ${persistedState}`)
 
-const store = configureStore({ reducer, persistedState })
+const store = configureStore({
+  reducer,
+  preloadedState: persistedState
+})
 
 store.subscribe(() => {
   localStorage.setItem('reduxState', JSON.stringify(store.getState()))

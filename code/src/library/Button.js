@@ -22,7 +22,7 @@ export const AddButton = styled.button`
   color: #d0c9d6;
   font-size: 30px;
   border: none;
-  margin-right: 8px;
+  margin-right: 15px;
 
   &:hover {
     background: navy;
@@ -31,7 +31,7 @@ export const AddButton = styled.button`
   }
 `
 export const RemoveButton = styled.button`
-  background: #FCFCFC;
+  background: beige;
   padding: 0 10px 8px 10px;
   border-radius: 8px;
   color: #d0c9d6;
