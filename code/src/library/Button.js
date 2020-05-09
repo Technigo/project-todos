@@ -37,7 +37,7 @@ export const RemoveButton = styled.button`
   color: #d0c9d6;
   font-size: 30px;
   border: none;
-  margin: 0px 8px 0px 8px;
+  margin: 0px 20px;
 
   &:hover {
     cursor: pointer;
