@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { todo } from '../reducers/todo'
+import moment from 'moment'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { TrashButton, Checkbox } from '../styles/Button'
 import { List, Category, TaskText, Date } from '../styles/Text'
@@ -31,7 +32,7 @@ export const Task = (props) => {
           {completed ? <FontAwesomeIcon icon="check-circle" /> : <FontAwesomeIcon icon="circle" />}
         </Checkbox>
         <TrashButton title="Remove task" onClick={handleRemoveButton} color={completed ? 'rgb(157, 215, 208)' : null}><FontAwesomeIcon icon="trash-alt" /></TrashButton>
-        <Date><strong>due:</strong>{JSON.stringify(dueDate)}</Date>
+        <Date><strong>due:</strong>{moment(dueDate).format('MMM Do YYYY')}</Date>
       </List>
     </>
   )

@@ -80,6 +80,7 @@ export const Category = styled.span`
 export const TaskText = styled.span`
   text-decoration: ${(props) => props.line || 'none'};
   min-width: 100%;
+  text-transform: none;
 `
 
 export const Date = styled.p`

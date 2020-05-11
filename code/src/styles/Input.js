@@ -7,6 +7,7 @@ export const TextInput = styled.input`
    border-radius: 4px;
    border: 1px solid rgb(208, 208, 208);
    padding: 0 8px; 
+   text-transform: none;
 
    ::placeholder{
       color: rgb(30, 30, 30);
