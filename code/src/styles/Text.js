@@ -86,6 +86,7 @@ export const TaskText = styled.span`
 export const Date = styled.p`
   font-size: 12px;
   font-style: italic;
+  text-transform: none;
 
   strong {
     margin: 0 4px 0 2px;
