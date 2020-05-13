@@ -31,9 +31,8 @@ export const Item = ({ itemIndex, text }) => {
           type="checkbox"
           onChange={completeItem}
           className="item-check"
-          checked={item.completed ? "checked" : ""}
-        ></input>
-        <span className="checkbox-custom"></span>
+          checked={item.completed ? "checked" : ""} />
+        <span className="checkbox-custom" />
       </label>
 
       <span className="item-desc">{text}</span>

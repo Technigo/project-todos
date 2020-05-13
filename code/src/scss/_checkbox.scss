@@ -60,15 +60,15 @@
 
     // Checkmark
     &::after {
-        top: 2px;
-        left: 7px;
-        height: 10px;
-        width: 5px;
+      top: 2px;
+      left: 7px;
+      height: 10px;
+      width: 5px;
 
-        -webkit-transform: rotate(45deg) scale(1);
-        -ms-transform: rotate(45deg) scale(1);
-        transform: rotate(45deg) scale(1);
-      }
+      -webkit-transform: rotate(45deg) scale(1);
+      -ms-transform: rotate(45deg) scale(1);
+      transform: rotate(45deg) scale(1);
+    }
   } 
 }
 
