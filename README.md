@@ -14,12 +14,13 @@ The initial structure is made following the example from our teacher. I have add
 
 ## Tech
 
+* React.js
+* Redux
+* Redux Toolkit
+* JSX
 * JavaScript ES6
-* React
-* React Redux
-* React Toolkit
 * Styled Components
 
 ## View it live
 
-View site here: https://fridamaria-todos.netlify.app/
+https://fridamaria-todos.netlify.app/
