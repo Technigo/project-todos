@@ -15,15 +15,3 @@ code {
 body {
   background-color: #1f4e5f;
 }
-
-.done {
-  color: rgba(121, 168, 169, 0.4);
-}
-
-.over-due {
-  color: #ff4d4d;
-}
-
-.normal {
-  color: #79a8a9;
-}

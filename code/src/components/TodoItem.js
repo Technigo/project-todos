@@ -12,11 +12,11 @@ export const TodoItem = ({ projectName, item, itemIndex }) => {
 
   const statusStyling = () => {
     if (item.done) {
-      return 'done'
+      return 'rgba(121, 168, 169, 0.4)'
     } else if (item.date < moment().format('YYYY-MM-DD') && item.date !== '') {
-      return 'over-due'
+      return '#ff4d4d'
     } else {
-      return 'normal'
+      return '#79a8a9'
     }
   }
 
@@ -44,17 +44,17 @@ export const TodoItem = ({ projectName, item, itemIndex }) => {
       <Checkbox isChecked={item.done ? 'checked' : ''} onChangeHandler={handleOnChange} /> 
       <TodoItemContainer>
         <TodoItemContent>
-          <SpanTextBold className={statusStyling()}>
+          <SpanTextBold color={statusStyling()}>
             {item.description}
           </SpanTextBold>
           {item.date === '' ? <SpanText></SpanText> :
-            <SpanTextItem className={statusStyling()}>
+            <SpanTextItem color={statusStyling()}>
             Due: {item.date}
             </SpanTextItem>
           }
         </TodoItemContent>
         <TodoItemContent>
-          <SpanTextItem className={statusStyling()}>
+          <SpanTextItem color={statusStyling()}>
             {moment(item.createdAt).fromNow()}
           </SpanTextItem>
           <RemoveButton

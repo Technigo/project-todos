@@ -18,9 +18,11 @@ export const SpanText = styled.span`
 export const SpanTextBold = styled.span`
   font-size: 14px;
   font-weight: bold;
+  color: ${props => props.color}
 `
 export const SpanTextItem = styled.span`
   font-size: 14px;
+  color: ${props => props.color}
 `
 export const Attribute = styled.a`
   color: #f4f7f7;
