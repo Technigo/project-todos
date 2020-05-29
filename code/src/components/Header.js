@@ -14,10 +14,12 @@ const HeaderContainer = styled.div`
 
 export const Header = () => {
   const todos = useSelector((store) => store.todos.list)
+  const completedTasks = todos.items.filter((item) => item.complete)
+  console.log(completedTasks)
     return (
       <HeaderContainer>
-        <h3>Your list of to dos </h3>
-        <p>You have completed x / {todos.items.length} things to do!</p>
+        <h3>Your todo app</h3>
+    <p>You have completed  {completedTasks.length} / {todos.items.length} things to do!</p>
       </HeaderContainer>
     )
   }

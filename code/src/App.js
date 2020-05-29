@@ -4,7 +4,7 @@ import { TodoList } from './components/TodoList'
 import { TodoInput } from './components/TodoInput'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { todos } from 'reducers/reducer'
+import { todos } from './reducers/reducer'
 import styled from 'styled-components'
 
 
@@ -26,9 +26,9 @@ export const App = () => {
   return (
     <Provider store={store}>
       <AppContainer>
-      <Header />
-      <TodoList />
-      <TodoInput />
+        <Header />
+        <TodoList />
+        <TodoInput />
       </AppContainer>
     </Provider>
   )
