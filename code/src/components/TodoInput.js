@@ -4,15 +4,28 @@ import styled from 'styled-components'
 import { todos } from '../reducers/reducer'
 import { Button } from '../library/Button'
 
-const InputContainer = styled.div`
+const InputContainer = styled.form`
   border: 2px solid navy; 
   padding: 2em;
 `
 
-export const TodoInput = ({todo}) => {
+export const TodoInput = ({id}) => {
   const dispatch = useDispatch()
-  const {task, setTask} = useState()
+  const [inputValue, setInputValue] = useState('')
 
+
+  const handleOnSubmit = event => { 
+    event.preventDefault()
+    dispatch(todos.actions.addTodo({
+      id: id,
+      itemInfo: {
+        text: inputValue,
+        complete: false
+      }
+    })
+    )
+    setInputValue('')
+  }
 
   const handleRemoveClick = () => {
     dispatch(
@@ -20,22 +33,25 @@ export const TodoInput = ({todo}) => {
     )
   }
 
-
     return (
-      <InputContainer>
+      <>
+      <InputContainer onSubmit={handleOnSubmit}>
         Hello this is Todo input
-        <input type="text"
-        value={task}
-        // onChange={(event) => setTask(event.target.value)}
-        ></input> 
-        <Button 
-        type="button"
-        // onClick={}
-        disabled={task === ''}
-        onClick={() => dispatch(todos.actions.addTodo(todo))}
-        >
-        Add task</Button>
-        <Button type="submit" onClick={handleRemoveClick}>Remove All</Button>
+        <input
+          type='text'
+          onChange={e => setInputValue(e.target.value)} 
+          value={inputValue}
+          className='todo-input-text'
+          placeholder='Drink another coffee..'>
+        </input> 
+        <input
+          type='submit'
+          className='button'
+          value='add to list'
+          disabled={inputValue === ''}>
+        </input>
       </InputContainer>
+      <Button onClick={handleRemoveClick}>Remove All</Button>
+    </>
     )
   }
