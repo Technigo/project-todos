@@ -12,6 +12,7 @@ export const TodoItem = ({ itemIndex }) => {
 
 
   const removeTodo = event => {
+    event.preventDefault()
     dispatch(
     todos.actions.removeTodo({ itemIndex })
     )
@@ -26,6 +27,7 @@ export const TodoItem = ({ itemIndex }) => {
   }
     
   return (
+    <>
     <TodoContainer>
       <Input 
         type="checkbox"
@@ -33,9 +35,9 @@ export const TodoItem = ({ itemIndex }) => {
         onChange={handleCheckboxClick}
       ></Input>
       <Task>{todo.text}</Task>
-      <Button onClick={removeTodo}>Remove</Button>
     </TodoContainer>    
-
+    <Button onClick={removeTodo}>Remove</Button>
+    </>
   )
 
 }

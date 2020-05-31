@@ -15,7 +15,6 @@ const HeaderContainer = styled.div`
 export const Header = () => {
   const todos = useSelector((store) => store.todos.list)
   const completedTasks = todos.items.filter((item) => item.complete)
-  console.log(completedTasks)
     return (
       <HeaderContainer>
         <h3>Your todo app</h3>

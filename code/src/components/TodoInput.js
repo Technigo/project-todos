@@ -46,7 +46,7 @@ export const TodoInput = ({id}) => {
         </input> 
         <input
           type='submit'
-          className='button'
+          className='submit-button'
           value='add to list'
           disabled={inputValue === ''}>
         </input>

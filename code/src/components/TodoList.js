@@ -24,7 +24,7 @@ export const TodoList = () => {
         <List>
           {console.log(todos)}
           {todos.items.map((item, index) => (
-          <TodoItem key={index} itemIndex={index} item={item}/>
+          <TodoItem key={index} item={item} itemIndex={index}/>
           ))}
         </List>        
       </ListContainer>

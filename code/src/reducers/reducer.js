@@ -4,10 +4,10 @@ const initialState = {
   list: {
     name: 'todo list',
     items: [
-  { text: 'Watch video on actions & reducers', complete: true },
-  { text: 'Follow redux codealong', complete: true },
-  { text: 'Fork weekly assignment', complete: false },
-  { text: 'Create a todo app', complete: false }
+  // { text: 'Watch video on actions & reducers', complete: true },
+  // { text: 'Follow redux codealong', complete: true },
+  // { text: 'Fork weekly assignment', complete: false },
+  // { text: 'Create a todo app', complete: false }
   ]
 }
 }
@@ -24,7 +24,7 @@ export const todos = createSlice({
     },
     //remove all tasks
     removeAll: (state, action) => {
-      state.items = []
+      state.list.items = []
     },
     removeTodo: (state, action) => {
       const { itemIndex } = action.payload
