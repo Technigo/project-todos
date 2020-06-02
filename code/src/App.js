@@ -5,7 +5,7 @@ import { TodoInput } from './components/TodoInput'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { todos } from './reducers/reducer'
-import styled from 'styled-components/macro'
+import styled from 'styled-components'
 
 
 const AppContainer = styled.div`
