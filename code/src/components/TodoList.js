@@ -4,10 +4,10 @@ import styled from 'styled-components'
 import { TodoItem } from './TodoItem'
 
 
+
 const ListContainer = styled.form`
-  border: 2px solid navy; 
-  padding: 2em;
   margin: auto;
+  width: 100%;
   list-style-type: none;
 `
 const List = styled.ul`
@@ -20,7 +20,6 @@ export const TodoList = () => {
 
     return (
       <ListContainer>
-        <h1>My todos:</h1>
         <List>
           {console.log(todos)}
           {todos.items.map((item, index) => (

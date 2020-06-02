@@ -5,15 +5,17 @@ import { TodoInput } from './components/TodoInput'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { todos } from './reducers/reducer'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
   width: 50%;
-  margin: 2em auto;
-  background-color: lightblue;
+  border-radius: 6px;
+  margin: 5em auto;
+  background-color: white;
+  font-family: 'Helvetica';
 `
 const reducer = combineReducers({
   todos: todos.reducer

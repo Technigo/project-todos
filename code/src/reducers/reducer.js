@@ -4,10 +4,6 @@ const initialState = {
   list: {
     name: 'todo list',
     items: [
-  // { text: 'Watch video on actions & reducers', complete: true },
-  // { text: 'Follow redux codealong', complete: true },
-  // { text: 'Fork weekly assignment', complete: false },
-  // { text: 'Create a todo app', complete: false }
   ]
 }
 }

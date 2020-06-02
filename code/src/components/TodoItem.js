@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useDispatch, useSelector } from 'react-redux'
-import { Button } from '../library/Button'
+import { RemoveItemButton } from '../library/Button'
 import { todos } from '../reducers/reducer'
 
 
@@ -35,25 +35,25 @@ export const TodoItem = ({ itemIndex }) => {
         onChange={handleCheckboxClick}
       ></Input>
       <Task>{todo.text}</Task>
+      <RemoveItemButton onClick={removeTodo}>Remove</RemoveItemButton>
     </TodoContainer>    
-    <Button onClick={removeTodo}>Remove</Button>
     </>
   )
 
 }
 
 const TodoContainer = styled.div`
-  margin: 20px;
+  margin: 0 5em;
   display: flex;
+  align-items: baseline;
   justify-content: space-between;
-  width: 80%;
 `
 
 const Input = styled.input`
-  color: pink;
+  
 `
 
-const Task = styled.h3`
+const Task = styled.h5`
   font-family: "Helvetica";
-  font-size: 22px;
+  font-size: 16px;
 `

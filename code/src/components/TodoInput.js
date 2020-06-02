@@ -2,11 +2,17 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { todos } from '../reducers/reducer'
-import { Button } from '../library/Button'
+import { RemoveButton, SubmitButton } from '../library/Button'
 
 const InputContainer = styled.form`
-  border: 2px solid navy; 
   padding: 2em;
+  display: flex;
+  margin: 0 2em;
+  justify-content: space-between; 
+`
+
+const InputField = styled.input`
+  padding: .5em 1em;
 `
 
 export const TodoInput = ({id}) => {
@@ -36,22 +42,20 @@ export const TodoInput = ({id}) => {
     return (
       <>
       <InputContainer onSubmit={handleOnSubmit}>
-        Hello this is Todo input
-        <input
+        <InputField
           type='text'
           onChange={e => setInputValue(e.target.value)} 
           value={inputValue}
-          className='todo-input-text'
-          placeholder='Drink another coffee..'>
-        </input> 
-        <input
+          placeholder='What do you need to do...'>
+        </InputField> 
+        <SubmitButton
           type='submit'
-          className='submit-button'
           value='add to list'
-          disabled={inputValue === ''}>
-        </input>
+          disabled={inputValue === ''}
+          >
+        </SubmitButton>
       </InputContainer>
-      <Button onClick={handleRemoveClick}>Remove All</Button>
+      <RemoveButton onClick={handleRemoveClick}>Remove All</RemoveButton>
     </>
     )
   }
