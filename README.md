@@ -1,13 +1,16 @@
-# Project Todos
+# Your Todos&ensp;|&ensp;[View Live &#10555;](https://olle-todo.netlify.app/)
 
-Replace this readme with your own information about your project.
+Todo web app using React Redux and localStorage to store data.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Core Tech
+* React
+* React Redux
+* Redux Toolkit
+* Styled Components
+* Reusable Elements
 
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Screenshot
+![Screenshot](screenshot.jpg)
 
 ## View it live
-
 https://olle-todo.netlify.app/
