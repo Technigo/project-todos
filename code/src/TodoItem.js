@@ -1,8 +1,11 @@
 import React from 'react';
 import { useDispatch, useTrackedState } from './store';
 import { useFlasher } from './utils';
-import { Button, Checkbox, ListItem } from "@material-ui/core";
-import { green } from '@material-ui/core/colors';
+import './app.css'
+//import  { Button } from "@material-ui/core/Button";
+//import Checkbox from "@material-ui/core/Checkbox";
+//import ListItem from "@material-ui/core/ListItem";
+//import { green } from '@material-ui/core/colors';
 
 const renderHighlight = (title, query) => {
   if (!query) return title;
@@ -26,8 +29,8 @@ const TodoItem = ({ id, title, completed }) => {
 
 
   return (
-    <ListItem ref={useFlasher()}>
-      <Checkbox style={{ color: green[400] }}  checked={!!completed}  onChange={() => dispatch({ type: 'TOGGLE_TODO', id })} />
+    <listItem className="box" ref={useFlasher()}>
+      <checkbox checked={!!completed}  onChange={() => dispatch({ type: 'TOGGLE_TODO', id })} />
      
       <span
         style={{
@@ -36,8 +39,8 @@ const TodoItem = ({ id, title, completed }) => {
       >
         {completed ? title : renderHighlight(title, state.query)}
       </span>
-      <Button onClick={delTodo}>X</Button>
-    </ListItem>
+      <button onClick={delTodo}>X</button>
+    </listItem>
   );
 };
 

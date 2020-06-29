@@ -38,4 +38,7 @@ body, html, #root {
         padding-bottom: 10px;
         font-size: 2vw;
       }
-      
+      .box {
+        display: flex;
+        flex-direction: column;
+      }

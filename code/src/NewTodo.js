@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { List } from "@material-ui/core";
-import { green } from '@material-ui/core/colors';
+///import List from "@material-ui/core/List";
+
 import { useDispatch } from './store';
 import { useFlasher } from './utils';
 
@@ -12,14 +12,14 @@ const NewTodo = () => {
     setText('');
   };
   return (
-    <List ref={useFlasher()}>
+    <list ref={useFlasher()}>
       <input
         value={text}
         placeholder="Enter title..."
         onChange={(e) => setText(e.target.value)}
       />
       <button onClick={addTodo}>Add</button>
-    </List>
+    </list>
   );
 };
 
