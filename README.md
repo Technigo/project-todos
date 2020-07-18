@@ -8,4 +8,4 @@ Started by creating reducers and the store. Building a basic To-Do list and then
 
 ## View it live
 
-https://lucid-shannon-efd276.netlify.app/
+https://todo-project-technigo.netlify.app/
