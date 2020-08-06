@@ -3,11 +3,11 @@ import styled from 'styled-components'
 
 
 export const CustomCheckBox = ({ isChecked, onChangeHandler }) => {
-  const [checked, setChecked] = useState(isChecked);
+  const [checked, setChecked] = useState(isChecked)
 
   const handleOnChange = (event) => {
     onChangeHandler();
-    setChecked(event.target.checked);
+    setChecked(event.target.checked)
   }
 
   const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
@@ -54,7 +54,6 @@ export const CustomCheckBox = ({ isChecked, onChangeHandler }) => {
   )
 
   return (
-    
       <label>
         <Checkbox checked={checked} onChange={handleOnChange} />  
       </label>

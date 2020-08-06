@@ -4,9 +4,9 @@ import { StyledLink } from 'styledComponents/StyledLink'
 
 
 export const HeaderShopping = () => (
-<HeaderContainer>
+  <HeaderContainer>
     <Title>Shopping List</Title>
-    <StyledLink to="/">
+    <StyledLink to='/'>
       To-Do List ➜
     </StyledLink> 
   </HeaderContainer>

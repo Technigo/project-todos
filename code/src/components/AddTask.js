@@ -12,14 +12,14 @@ export const AddTask = () => {
   const dispatch = useDispatch()
 
   const handleSubmit = event => {
-    event.preventDefault();
+    event.preventDefault()
 
     dispatch(
       tasks.actions.addTodo({
         description: newTask,
         done: false
       })
-    );
+    )
     setNewTask('')
   }
 
@@ -29,11 +29,11 @@ export const AddTask = () => {
         type='text' required
         placeholder='Add things to do'
         value={newTask}
-        onChange={(event) => setNewTask(event.target.value)}
+        onChange={event => setNewTask(event.target.value)}
       />
       <Button type='submit'>
         Add
-        </Button>
+      </Button>
     </EntryContainer>
   )
 }

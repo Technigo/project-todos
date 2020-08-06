@@ -12,7 +12,7 @@ const initialState = {
       }
     ]
   }
-};
+}
 
 export const shoppings = createSlice({
   name: 'shoppings',

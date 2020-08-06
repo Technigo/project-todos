@@ -32,10 +32,10 @@ export const AddShopping = () => {
         type='text' required
         placeholder='Add to shopping list'
         value={newShop}
-        onChange={(event) => setNewShop(event.target.value)} />
+        onChange={event => setNewShop(event.target.value)} />
       <Dropdown
         value={category}
-        onChange={(event) => setCategory(event.target.value)}
+        onChange={event => setCategory(event.target.value)}
       >
         <option value=''>Category</option>
         <option value='Groceries'>Groceries</option>
