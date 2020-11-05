@@ -1,11 +1,9 @@
 # Project Todos
 
-Project for Technigo Remote Bootcamp to practice Redux, creating store with reducers and actions, making a To-Do-App.
+An app to organise your tasks, add your to-dos, mark them as done and/or delete them. You can also use the sibling Shopping-app to make your customised shopping-list.
 
-## The problem
-
-Started by creating reducers and the store. Building a basic To-Do list and then making a "sibling" shopping list with categories.
+## Technology
+Created with JavaScript in React with React Router and CSS for styling.
 
 ## View it live
-
 https://todo-project-technigo.netlify.app/
