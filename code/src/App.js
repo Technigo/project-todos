@@ -1,9 +1,28 @@
-import React from 'react'
+import React from 'react';
+import { Provider } from 'react-redux';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+
+// Reducers
+import { todos } from './reducers/todos';
+
+// Components
+import { ListOfTodos } from './components/ListOfTodos';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+
+const reducer = combineReducers({
+  todos: todos.reducer,
+});
+const store = configureStore({ reducer });
+
+// ----------------------------------------------------------------
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
-}
+    <Provider store={store}>
+      <Header />
+      <ListOfTodos />
+      <Footer />
+    </Provider>
+  );
+};
