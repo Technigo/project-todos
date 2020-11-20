@@ -13,11 +13,13 @@ const initialState = {
         description: "my second todo",
         complete: false
       },
-    ]
+    ],
+    homePage: false,
   }
 };
 
 //Skapa en landning sida som visar alla todos 
+//visa dagens datum 
 //filtrera på kategori och eller due date (första sidan)
 //möjlighet att makerar klar, ta bort alt ta bort alla
 //När jag vill lägga till todo skickas jag till sida 2
@@ -53,6 +55,13 @@ export const todos = createSlice({
     // removeAllTodos: (state, action) => {
     //   state.items[]
     // }
+    createTodo: (state) => {
+      state.homePage = true;
+    },
+    
+    navHomePage: (state) => {
+      state.homePage = false
+    }
  
 
   }

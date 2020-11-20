@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
+import Button from './Button';
 
 
 const TodoInput = () => {
   const dispatch = useDispatch();
   const [todoInput, setTodoInput] = useState('');
-
 
   const handleOnSubmit = (event) => {
     event.preventDefault()
@@ -22,6 +22,7 @@ const TodoInput = () => {
       })
     )
     setTodoInput('');
+    dispatch(todos.actions.navHomePage())  
   };
  
 return (
@@ -31,13 +32,15 @@ return (
       placeholder="Add a todo!"
       onChange={event => setTodoInput(event.target.value)}
       value={todoInput}
-      className="todo__input"
+      className="todo__input" 
     />
-    <input 
-      type="submit"
-      className="todo__submit"
-      value="Add Todo"
+    <Button 
+    type="submit"
+    disabled={!todoInput}
+    className="todo__submit"
+    text="Add todo"
     />
+    
   </form>
 )
 }
