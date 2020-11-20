@@ -19,6 +19,7 @@ const initialState = {
 //lägg till mer filter möjligheter DUE DATE(är detta möjligt), COMPLETE/NOT COMPLETE
 //möjlighet att makerar klar, ta bort alt ta bort alla
 //Välja Due Date på sida två när jag skapar min kategori (datepicker)
+//Ta bort category och description i initialState. (starta tomt) (null???)
 
 /*HAR VI GJORT*/
 //Skapa en landning sida som visar alla todos (check)
