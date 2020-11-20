@@ -38,6 +38,7 @@ const TodoItem = ({ itemIndex }) => {
       >
       </input>
       <span className="todo__item-description">{item.description}</span> 
+      <span className="todo__item-category">{item.category}</span> 
       <a className="todo__item-delete" onClick={onRemoveTodo}>
         Remove
       </a>

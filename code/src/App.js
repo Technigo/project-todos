@@ -11,23 +11,24 @@ const reducer = combineReducers({ todos: todos.reducer, })
 
 // StoreCreation - Create the store using our reducers and the retrieved state
 //
-//const store = configureStore({ reducer })
+const store = configureStore({ reducer })
 
-const persistedStateJSON = localStorage.getItem('reduxState')
-let persistedState = {}
-if (persistedStateJSON) {
-  persistedState = JSON.parse(persistedStateJSON)
-}
-console.log(`persistedState: ${persistedState}`)
+//ÖPPNA UPP SEN NÄR ALLT ÄR KLART 
+// const persistedStateJSON = localStorage.getItem('reduxState1')
+// let persistedState = {}
+// if (persistedStateJSON) {
+//   persistedState = JSON.parse(persistedStateJSON)
+// }
+// console.log(`persistedState: ${persistedState}`)
 
-const store = configureStore({
-  reducer,
-  preloadedState: persistedState
-})
+// const store = configureStore({
+//   reducer,
+//   preloadedState: persistedState
+// })
 
-store.subscribe(() => {
-  localStorage.setItem('reduxState', JSON.stringify(store.getState()))
-})
+// store.subscribe(() => {
+//   localStorage.setItem('reduxState1', JSON.stringify(store.getState()))
+// })
 
 const App = () => {
   return (

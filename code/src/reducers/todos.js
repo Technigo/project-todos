@@ -7,31 +7,27 @@ const initialState = {
       {
         description: "my first todo",
         complete: false,
-        //category: 
-      },
-      {
-        description: "my second todo",
-        complete: false
+        category: 'Personal',
       },
     ],
+    categories: ['Personal', 'School', 'Work', 'Home', 'All'],
     homePage: false,
   }
 };
 
-//Skapa en landning sida som visar alla todos 
-//visa dagens datum 
-//filtrera på kategori och eller due date (första sidan)
+/*ATT GÖRA*/
+//lägg till mer filter möjligheter DUE DATE(är detta möjligt), COMPLETE/NOT COMPLETE
 //möjlighet att makerar klar, ta bort alt ta bort alla
-//När jag vill lägga till todo skickas jag till sida 2
-//sida två väljer kateogir, due date och task name.
-//när jag lägger till todo skickas tillbaka till första sidan 
+//Välja Due Date på sida två när jag skapar min kategori (datepicker)
 
-// lägg till kategorier 
-//filtrera på kategorier (på första sidan)
-//Radera alla todos
-//Lägg till datum (när jag skapar)
-//Styla checkbox (custom checkbox)'
-//
+/*HAR VI GJORT*/
+//Skapa en landning sida som visar alla todos (check)
+//visa dagens datum (check)
+//filtrera på kategori  (första sidan) (check)
+//När jag vill lägga till todo skickas jag till sida 2 (check)
+//när jag lägger till todo skickas tillbaka till första sidan (check)
+
+
 
 export const todos = createSlice({
   name: "todos",

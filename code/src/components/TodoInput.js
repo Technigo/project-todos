@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { todos } from '../reducers/todos';
 import Button from './Button';
 
@@ -7,6 +7,11 @@ import Button from './Button';
 const TodoInput = () => {
   const dispatch = useDispatch();
   const [todoInput, setTodoInput] = useState('');
+  const [category, setCategory] = useState('');
+
+
+  const categories = useSelector(store => store.todos.list.categories)
+  console.log(categories)
 
   const handleOnSubmit = (event) => {
     event.preventDefault()
@@ -18,6 +23,7 @@ const TodoInput = () => {
         todoItemInfo: {
           description: todoInput,
           complete: false,
+          category: category,
         },  
       })
     )
@@ -34,11 +40,23 @@ return (
       value={todoInput}
       className="todo__input" 
     />
+
+    <label htmlFor="category">Choose a category:</label>
+    <select 
+      name="category" 
+      id="category" 
+      onChange={(event) => setCategory(event.target.value)} 
+      value={category}>
+      {categories.map(option => (
+        <option key={option} value={option}>{option}</option>
+      ))}
+    </select>
+    
     <Button 
-    type="submit"
-    disabled={!todoInput}
-    className="todo__submit"
-    text="Add todo"
+      type="submit"
+      disabled={!todoInput}
+      className="todo__submit"
+      text="Add todo"
     />
     
   </form>

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import TodoInput from './TodoInput';
@@ -11,8 +11,17 @@ import { todos } from '../reducers/todos';
 
 
 const TodoList = () => {
-  const list = useSelector(store => store.todos.list);
+  const [category, setCategory] = useState('')
+
+  const list = useSelector((store) => {
+    if (!category) return store.todos.list.items
+    else return store.todos.list.items.filter((item) => item.category === category)
+  });
   console.log(list)
+
+  //fattar inte riktigt denna... 
+  const categories = useSelector(store => store.todos.list.categories)
+  console.log(`TodoList ${categories}`)
 
   const homePage = useSelector((store) => store.todos.homePage); 
 
@@ -26,8 +35,8 @@ const TodoList = () => {
     <section>
       {!homePage ? (
       <>
-      <h1>My Todo list</h1>
-      <Button 
+        <h1>My Todo list</h1>
+        <Button 
           onClick = {() => handleClick()}
           text="Create a todo"
           type="button" 
@@ -35,19 +44,27 @@ const TodoList = () => {
         />
         {/* <TodoInput/>  */}
         {/* {list.items.map(item => item.description)} */}
-        {list.items.map((item, index) => (
+        {list.map((item, index) => (
           <TodoItem key={index} itemIndex={index} />
         ))}
         {/* <TodoItem />  */}
+      
+        <label htmlFor="category">Choose a category:</label>
+        <select 
+          name="category" 
+          id="category" 
+          onChange={(event) => setCategory(event.target.value)} 
+          value={category}>
+          {categories.map(option => (
+            <option key={option} value={option}>{option}</option>
+          ))}
+        </select>
         <TodoSummary /> 
-        
       </>
       ):(
         <CreateTodo /> 
       )
     }
-
-   
     </section>
   )
 }
