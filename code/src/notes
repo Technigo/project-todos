@@ -1,0 +1,36 @@
+
+The Slice concept is when you divide logic into different files instead of having all of it in the same file. 
+That means one file can contain logic that only concerns a loging functionality for example,
+while another file contains logic only concerning a todo-functionality
+A slice is a bit of code with it's own state, it's own reducers and it's own actions
+Then the two slices are combined in one store that later can be used in the application
+
+Example of a slice:
+user: {
+  name: 'Jennie',
+  subscribeToNewsLetter: false
+},
+
+example of other slice:
+todos: [
+  {id: 1, text: 'Buy carrots'},
+  {id: 2, text: 'Do dishes'}
+] 
+
+Actions:
+An action by itself doesn't do that much. But combined with an identifier and a payload it helps 
+Redux understand that something is happening. The action is used by the reducer.
+When clicking a button you could trigger an action that could look like this:
+identifier: {'ADD_TODO'}
+payload: {user input text: 'Do the laundry'}
+When clicking the button Redux figures out what reducer that should act on the action
+That reducer then takes the payload to update the state
+
+We dispatch actions in our components and pass along payloads of data to the reducers
+
+Reducers:
+The reducers responsibility is to look for the indetifier that matches itself and acts on it.
+Then the reducers takes the payload that comes with the action and updates the store with it.
+
+Selectors:
+Takes whatever is in the store and renders that in the components
