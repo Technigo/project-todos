@@ -1,12 +1,16 @@
 import React from "react"
 
-const AddTodo = () => {
+export const AddTodo = () => {
 
   return (
     <section>
-      <button type="button">+</button>
+      <form>
+        <button type="button">+</button>
+        <label>
+          <input type="text" />
+        </label>
+      </form>
+      <p>Add todo here ...</p>
     </section>
   )
 }
-
-export default AddTodo;
