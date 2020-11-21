@@ -12,7 +12,7 @@ import { HeaderWrapper } from '../styling/GlobalStyling';
 export const Header = () => {
   return (
     <HeaderWrapper>
-      <HeaderImage
+      {/* <HeaderImage
         category="Fun"
         source="https://img.icons8.com/pastel-glyph/2x/like--v2.png"
       />
@@ -23,7 +23,7 @@ export const Header = () => {
       <HeaderImage
         category="Shop"
         source="https://img.icons8.com/pastel-glyph/2x/like--v2.png"
-      />
+      /> */}
     </HeaderWrapper>
   );
 };

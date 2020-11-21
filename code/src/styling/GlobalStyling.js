@@ -26,6 +26,26 @@ export const TaskWrapper = styled.div`
   }
 `;
 
+export const NewTodoWrapper = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin: 20px 50px;
+  background: #f5f0ea;
+  padding: 20px;
+  // transform: translateY(-200px);
+  // transition: transform .5s ease;
+`;
+
 export const TaskDragImage = styled.img`
   width: 20px;
+`;
+
+export const FooterWrapper = styled.footer`
+  text-align: center;
+  margin-top: 50px;
+
+  & p {
+    font-size: 10px;
+    margin: 5px;
+  }
 `;

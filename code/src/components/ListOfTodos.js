@@ -10,16 +10,22 @@ import {
 export const ListOfTodos = () => {
   const allTasks = useSelector((store) => store.todos);
 
-  const onlyFun = allTasks.filter((item) => item.category === 'Fun');
+  // const onlyFun = allTasks.filter((item) => item.category === 'Fun');
 
   return (
     <MainWrapper>
       {allTasks.map((task, index) => {
         return (
           <TaskWrapper key={task.id}>
-            <input type="checkbox" name="gender" id={index} value="male" />
+            <input
+              type="checkbox"
+              name="finished"
+              id={index}
+              value="finished"
+            />
             <label htmlFor={index}>{task.task}</label>
-            <TaskDragImage src="https://img.icons8.com/android/2x/menu.png" />
+            {/* <TaskDragImage src="https://img.icons8.com/android/2x/menu.png" /> */}
+            <p>{task.category}</p>
           </TaskWrapper>
         );
       })}
