@@ -22,11 +22,11 @@ export const App = () => {
       <section className="lists-container">
         <StudiesTasks />
         <HouseChoreTasks />
-        <OtherTasks />
         <ShoppingList />
+        <OtherTasks />
       </section>
     </Provider>
   );
 };
 
-// Fix favicon
+// Add explanatory comments

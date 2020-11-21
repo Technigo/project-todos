@@ -5,7 +5,7 @@ import { ListItem } from 'components/ListItem';
 
 export const StudiesTasks = () => {
   const todoList = useSelector((store) => store.todolist);
-  const onlyStudyTasks = todoList.list.items.filter((item) => item.category === "Studies");
+  const onlyStudyTasks = todoList.items.filter((item) => item.category === "Studies");
 
   // console.log(onlyStudyTasks);
   // console.log(todoList.length);

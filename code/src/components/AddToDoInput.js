@@ -3,14 +3,15 @@ import { useDispatch, useSelector } from 'react-redux';
 import { todolist } from 'reducers/todolist';
 
 export const AddToDoInput = () => {
-  const todoList = useSelector((store) => store.todolist.list.items);
+  const todoList = useSelector((store) => store.todolist.items);
   const [newTodoItem, setNewTodoItem] = useState('');
+  const [category, setCategory] = useState('');
 
   const dispatch = useDispatch();
 
   const setNewToDoId = todoList.length + 1;
 
-  // console.log(setNewToDoId);
+  // console.log(category);
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -19,13 +20,14 @@ export const AddToDoInput = () => {
       id: setNewToDoId,
       text: newTodoItem,
       complete: false,
-      // category: 
+      category: category
     })
   );
 
     // Clear input field
     setNewTodoItem('');
-  };
+    setCategory('');
+};
 
   return (
     <form onSubmit={handleOnSubmit}>
@@ -34,10 +36,21 @@ export const AddToDoInput = () => {
         <input 
           type="text"
           onChange={event => setNewTodoItem(event.target.value)}
-          value={newTodoItem}>
+          value={newTodoItem}
+          required >
         </input>
-        <button type="submit">Add To Do</button>
       </label>
+      <label>
+        Category for this task:
+        <select value={category} onChange={(event) => setCategory(event.target.value)} required>
+          <option value="">Select category...</option>
+          <option value="Studies">Studies</option>
+          <option value="House Chores">House Chores</option>
+          <option value="Shopping List">Shopping List</option>
+          <option value="Other">Other</option>
+        </select>
+      </label>
+      <button type="submit">Add To Do</button>
     </form>
   )
 };
