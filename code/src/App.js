@@ -7,6 +7,7 @@ import { StudiesTasks } from 'components/StudiesTasks';
 import { HouseChoreTasks } from 'components/HouseChoreTasks';
 import { ShoppingList } from 'components/ShoppingList';
 import { OtherTasks } from 'components/OtherTasks';
+import { AddToDoInput } from 'components/AddToDoInput';
 
 const reducer = combineReducers({
   todolist: todolist.reducer
@@ -17,10 +18,13 @@ const store = configureStore({ reducer });
 export const App = () => {
   return (
     <Provider store={store}>
-      <StudiesTasks />
-      <HouseChoreTasks />
-      <ShoppingList />
-      <OtherTasks />
+      <AddToDoInput />
+      <section className="lists-container">
+        <StudiesTasks />
+        <HouseChoreTasks />
+        <OtherTasks />
+        <ShoppingList />
+      </section>
     </Provider>
   );
 };

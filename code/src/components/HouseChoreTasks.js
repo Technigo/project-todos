@@ -5,7 +5,7 @@ import { ListItem } from 'components/ListItem';
 
 export const HouseChoreTasks = () => {
   const todoList = useSelector((store) => store.todolist);
-  const onlyChoreTasks = todoList.filter((item) => item.category === "House Chores");
+  const onlyChoreTasks = todoList.list.items.filter((item) => item.category === "House Chores");
 
   //console.log(onlyChoreTasks);
 

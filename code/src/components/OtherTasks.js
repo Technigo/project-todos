@@ -5,7 +5,7 @@ import { ListItem } from 'components/ListItem';
 
 export const OtherTasks = () => {
   const todoList = useSelector((store) => store.todolist);
-  const otherTasksList = todoList.filter((item) => item.category === "Other");
+  const otherTasksList = todoList.list.items.filter((item) => item.category === "Other");
 
   //console.log(otherTasksList);
 
