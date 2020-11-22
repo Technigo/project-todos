@@ -12,17 +12,25 @@ export const todoTasks = createSlice({
 
   //name of the slice
   name: "todoTasks",
-  initialState: allTodoTasks
-  // reducers: {
-  //   //adds a task to allTodoTasks array
-  //   addTask: (store) => {
+  initialState: allTodoTasks,
+  reducers: {
+    toggleComplete: (state, action) => {
+      console.log(action.payload)
 
-  //   }
+      //find a checked task
+      const taskChecked = state.allTodoTasks.find((item) => item.id === action.payload)
+      console.log(taskChecked)
 
-  //   //removes the task from 
-  //   removeTask: (store) => {
+      //toggle between true/false from the key *complete*
+      if (taskChecked) {
+        taskChecked.complete = !taskChecked.complete
+      }
+    }
+    //adds a task to allTodoTasks array
+    // addTask: (store) => {}
 
-  //   }
-  // }
+    //removes the task from 
+    // removeTask: (store) => {}
+  }
 
 }) 
