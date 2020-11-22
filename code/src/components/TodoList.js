@@ -9,11 +9,11 @@ export const TodoList = () => {
   const tasks = useSelector((store) => store.todoTasks)
 
   return (
-    <div>
+    <ul>
       {tasks.map((task) => (
-        <SingleTodo key={task.id} taskText={task.text} />
+        <SingleTodo key={task.id} {...task} />
       ))}
-    </div>
+    </ul>
   )
 }
 

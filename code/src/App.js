@@ -9,6 +9,7 @@ import { TodoList } from "./components/TodoList"
 
 //creating a single reducer from several reducers
 export const reducer = combineReducers({
+  //referring to the key *name* of the reducer
   todoTasks: todoTasks.reducer
 })
 
