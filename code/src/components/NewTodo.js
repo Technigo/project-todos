@@ -21,17 +21,22 @@ export const NewTodo = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(
-      todos.actions.addTodo({
-        id: 5,
-        task: todo,
-        category: category,
-        prio: prio,
-      })
-    );
-    setTodo('');
-    setCategory('Fun');
-    setPrio(false);
+
+    if (todo) {
+      dispatch(
+        todos.actions.addTodo({
+          id: 5, // TODO: Fix conditional variable here
+          task: todo,
+          category: category,
+          prio: prio,
+        })
+      );
+      setTodo('');
+      setCategory('Fun');
+      setPrio(false);
+    } else {
+      alert('Please write a task first');
+    }
   };
 
   return (

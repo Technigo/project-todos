@@ -24,6 +24,14 @@ export const TaskWrapper = styled.div`
   &:last-child {
     border-bottom: none;
   }
+
+  & input:hover {
+    cursor: pointer;
+  }
+
+  & label:hover {
+    cursor: pointer;
+  }
 `;
 
 export const NewTodoWrapper = styled.form`
@@ -48,4 +56,9 @@ export const FooterWrapper = styled.footer`
     font-size: 10px;
     margin: 5px;
   }
+`;
+
+export const CompletedTime = styled.p`
+  font-size: 10px;
+  font-style: italic;
 `;

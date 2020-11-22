@@ -7,6 +7,8 @@ const todoList = [
   { id: 4, task: 'Bake a cake', category: 'Nom' },
 ];
 
+const completedTasks = [];
+
 export const todos = createSlice({
   name: 'todos',
   initialState: todoList,
@@ -16,5 +18,16 @@ export const todos = createSlice({
         ? state.splice(0, 0, action.payload)
         : state.push(action.payload);
     },
+    checkTodo: (state, action) => {
+      completedTasks.push(action.payload);
+      state.splice(action.payload, 1);
+
+      console.log(completedTasks);
+    },
   },
+});
+
+export const completed = createSlice({
+  name: 'completed',
+  initialState: completedTasks,
 });

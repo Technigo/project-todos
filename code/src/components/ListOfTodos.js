@@ -1,44 +1,28 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Todo } from './Todo';
+import { CompletedTodo } from './CompletedTodo';
 
-import {
-  MainWrapper,
-  TaskWrapper,
-  TaskDragImage,
-} from '../styling/GlobalStyling';
+import { MainWrapper } from '../styling/GlobalStyling';
+
+// -----------------------------------------------------------------------------
 
 export const ListOfTodos = () => {
   const allTasks = useSelector((store) => store.todos);
+  const completedTasks = useSelector((store) => store.completed);
 
   // const onlyFun = allTasks.filter((item) => item.category === 'Fun');
 
   return (
     <MainWrapper>
       {allTasks.map((task, index) => {
-        return (
-          <TaskWrapper key={task.id}>
-            <input
-              type="checkbox"
-              name="finished"
-              id={index}
-              value="finished"
-            />
-            <label htmlFor={index}>{task.task}</label>
-            {/* <TaskDragImage src="https://img.icons8.com/android/2x/menu.png" /> */}
-            <p>{task.category}</p>
-          </TaskWrapper>
-        );
+        return <Todo task={task} index={index} key={task.id} />;
       })}
-      {/* <p>Only Fun-category: </p>
-      {onlyFun.map((task, index) => {
-        return (
-          <TaskWrapper key={task.id}>
-            <input type="checkbox" name="gender" id={index} value="male" />
-            <label htmlFor={index}>{task.task}</label>
-            <TaskDragImage src="https://img.icons8.com/material-two-tone/2x/drag-reorder.png" />
-          </TaskWrapper>
-        );
-      })} */}
+
+      <h4>Completed</h4>
+      {completedTasks.map((task, index) => {
+        return <CompletedTodo task={task} index={index} key={task.id} />;
+      })}
     </MainWrapper>
   );
 };
