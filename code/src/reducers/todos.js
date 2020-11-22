@@ -13,13 +13,13 @@ const initialState = {
       {
         description: 'Follow redux codealong',
         complete: true,
-        category: 'Home',
+        category: 'Personal',
         dueDate: '',
       },
       {
         description: 'Fork weekly assignment',
         complete: true,
-        category: 'Home',
+        category: 'School',
         dueDate: '',
       },
       {
@@ -29,7 +29,7 @@ const initialState = {
         dueDate: '',
       },
     ],
-    categories: ['Home', 'School', 'Work', 'Personal', 'All'],
+    categories: ['All', 'School', 'Work', 'Personal', 'Home'],
     startPage: false,
   },
 };

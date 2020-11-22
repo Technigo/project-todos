@@ -1,4 +1,5 @@
 import React from 'react';
+import { Paragraph } from 'library/Text';
 //import Moment from 'react-moment';
 
 const TodaysDate = () => {
@@ -9,6 +10,6 @@ const TodaysDate = () => {
     day: 'numeric',
   });
 
-  return <p>{date}</p>;
+  return <Paragraph>{date}</Paragraph>;
 };
 export default TodaysDate;

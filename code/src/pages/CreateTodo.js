@@ -13,7 +13,7 @@ const CreateTodo = () => {
   };
 
   return (
-    <div>
+    <main>
       <TodoInput />
       <Button
         onClick={() => handleGoBackClick()}
@@ -22,7 +22,7 @@ const CreateTodo = () => {
       >
         Go Back
       </Button>
-    </div>
+    </main>
   );
 };
 export default CreateTodo;

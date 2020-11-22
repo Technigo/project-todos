@@ -71,6 +71,10 @@ import { todos } from '../reducers/todos';
 //   );
 // };
 
+const CheckboxLabel = styled.label`
+  margin-right: 10px;
+`;
+
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
@@ -79,7 +83,7 @@ const CheckboxContainer = styled.div`
 const Icon = styled.svg`
   fill: none;
   stroke: white;
-  stroke-width: 2px;
+  stroke-width: 3px;
 `;
 // Hide checkbox visually but remain accessible to screen readers.
 // Source: https://polished.js.org/docs/#hidevisually
@@ -94,15 +98,16 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   position: absolute;
   white-space: nowrap;
   width: 1px;
-  pointer: cursor;
+  cursor: pointer;
 `;
 
 const StyledCheckbox = styled.div`
   display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: ${props => (props.checked ? 'salmon' : 'papayawhip')};
-  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid salmon;
+  background: ${props => (props.checked ? 'salmon' : 'white')};
+  border-radius: 50%;
   transition: all 150ms;
 
   ${HiddenCheckbox}:focus + & {
@@ -115,14 +120,16 @@ const StyledCheckbox = styled.div`
 `;
 
 const CustomCheckbox = ({ className, checked, ...props }) => (
-  <CheckboxContainer className={className}>
-    <HiddenCheckbox className="hiddencheck" checked={checked} {...props} />
-    <StyledCheckbox checked={checked}>
-      <Icon viewBox="0 0 24 24">
-        <polyline points="20 6 9 17 4 12" />
-      </Icon>
-    </StyledCheckbox>
-  </CheckboxContainer>
+  <CheckboxLabel>
+    <CheckboxContainer className={className}>
+      <HiddenCheckbox className="hiddencheck" checked={checked} {...props} />
+      <StyledCheckbox checked={checked}>
+        <Icon viewBox="0 0 24 24">
+          <polyline points="20 3 9 17 4 12" />
+        </Icon>
+      </StyledCheckbox>
+    </CheckboxContainer>
+  </CheckboxLabel>
 );
 
 export default CustomCheckbox;

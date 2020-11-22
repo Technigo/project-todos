@@ -12,12 +12,7 @@ import TodaysDate from 'components/TodaysDate';
 const Home = () => {
   const startPage = useSelector(store => store.todos.startPage);
   console.log(!startPage ? 'true' : 'false');
-  return (
-    <main>
-      <TodaysDate />
-      {!startPage ? <TodoList /> : <CreateTodo />}
-    </main>
-  );
+  return <>{!startPage ? <TodoList /> : <CreateTodo />}</>;
 };
 
 export default Home;

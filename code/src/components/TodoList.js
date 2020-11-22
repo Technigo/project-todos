@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
+import Header from './Header';
 import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
 import TodoSummary from './TodoSummary';
@@ -13,7 +15,7 @@ const TodoList = () => {
   const [category, setCategory] = useState('');
 
   const list = useSelector(store => {
-    if (!category) return store.todos.list.items;
+    if (!category || category === 'All') return store.todos.list.items;
     else
       return store.todos.list.items.filter(item => item.category === category);
   });
@@ -32,40 +34,43 @@ const TodoList = () => {
   };
 
   return (
-    <section>
-      <h1>My Todo list</h1>
-      <Button onClick={() => handleClick()} type="button">
-        Create a Todo
-      </Button>
-      {/* <TodoInput/>  */}
-      {/* {list.items.map(item => item.description)} */}
-      {list.map((item, index) => (
-        <TodoItem key={index} itemIndex={index} />
-      ))}
-      {/* <TodoItem />  */}
-
-      <label htmlFor="category">Choose a category:</label>
-      <select
-        name="category"
-        id="category"
-        onChange={event => setCategory(event.target.value)}
-        value={category}
-      >
-        {categories.map(option => (
-          <option key={option} value={option}>
-            {option}
-          </option>
+    <>
+      <Header />
+      <Main>
+        <label htmlFor="category">Choose a category:</label>
+        <select
+          name="category"
+          id="category"
+          onChange={event => setCategory(event.target.value)}
+          value={category}
+        >
+          {categories.map(option => (
+            <option key={option} value={option}>
+              {option}
+            </option>
+          ))}
+        </select>
+        {/* <TodoInput/>  */}
+        {/* {list.items.map(item => item.description)} */}
+        {list.map((item, index) => (
+          <TodoItem key={index} itemIndex={index} />
         ))}
-      </select>
+        {/* <TodoItem />  */}
 
-      {/* <TodoInput />
+        {/* <TodoInput />
       {list.items.map((item, index) => (
         <TodoItem key={index} itemIndex={index} />
       ))} */}
-      <TodoSummary />
-      <RemoveButton />
-    </section>
+        <RemoveButton />
+      </Main>
+    </>
   );
 };
 
 export default TodoList;
+
+const Main = styled.main`
+  display: grid;
+  grid-gap: 20px;
+  padding: 25px;
+`;

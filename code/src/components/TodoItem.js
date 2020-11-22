@@ -40,14 +40,17 @@ const TodoItem = ({ itemIndex }) => {
         onChange={handleOnChange}
         checked={item.complete ? 'checked' : ''}
       ></input> */}
-      <label>
-        <CustomCheckbox
-          checked={checked}
-          onChange={handleOnChange}
-        ></CustomCheckbox>
-      </label>
-      <p>{item.description}</p>
-      <p>{moment(item.dueDate).format('MMM Do YYYY')}</p>
+
+      <CustomCheckbox
+        checked={checked}
+        onChange={handleOnChange}
+      ></CustomCheckbox>
+      <TodoContainer>
+        <p>{item.description}</p>
+        <p>{item.category}</p>
+      </TodoContainer>
+      {/* <p>{moment(item.dueDate).format('MMM Do YYYY')}</p>
+      <p>Created: {moment(item.date).fromNow()}</p> */}
       <Image src="../assets/recycle-bin.svg" onClick={onRemoveClicked} />
       {/* <a onClick={onRemoveClicked}>[Remove]</a> */}
     </Container>
@@ -61,6 +64,11 @@ const Container = styled.div`
   width: 100%;
   justify-content: space-between;
   align-items: center;
+`;
+
+const TodoContainer = styled(Container)`
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 const Image = styled.img`
