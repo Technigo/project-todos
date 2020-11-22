@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
 import { tasks } from 'reducers/tasks'
+import Header from 'components/Header'
 import TaskList from 'components/TaskList'
 import AddTask from 'components/AddTask'
 
@@ -15,7 +16,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      Find me in src/app.js!
+      <Header />
       <AddTask />
       <TaskList />
     </Provider>

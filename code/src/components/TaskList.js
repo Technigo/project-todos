@@ -11,7 +11,7 @@ const TaskList = () => {
     <div>
       {allTasksArray.map(task => {
         return (
-        <Task key={task.id} taskText={task.text} />
+        <Task key={task.id} task={task} />
         )
       })}
     </div>

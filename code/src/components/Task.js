@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Task = ({taskText}) => {
+const Task = ({ task }) => {
   return (
     <div>
-      {taskText}
+      {task.id}{task.text}
     </div>
   )
 }
