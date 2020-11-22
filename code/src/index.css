@@ -11,3 +11,27 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* BUTTONS */
+.remove-button button {
+  background-color: aquamarine;
+  color: black;
+}
+
+.add-items-button button {
+  background-color: coral;
+  color: black;
+}
+
+.remove-all-button button {
+  background-color: royalblue;
+  color: black;
+}
+
+.added-items {
+  border: solid red 2px;
+}
+
+.items-list {
+  border: solid blue 2px;
+}

@@ -1,5 +1,9 @@
 import React from 'react'
 
 export const ClearButton = () => {
-    return <button onClick={() => {}}>Remove All</button>
+    return (
+        <div className="remove-all-button">
+        <button onClick={() => {}}>Remove All</button>
+        </div>
+    )
 }

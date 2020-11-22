@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
+import '../index.css'
 
 export const AddItemForm = () => {
     const [name, setName] = useState('')
@@ -11,7 +12,7 @@ export const AddItemForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        dispatch(todos.action.addItem({ name, category, dueDate }))
+        dispatch(todos.actions.addItem({ name, category,  dueDate }))
         setName('')
 
     }
@@ -26,9 +27,28 @@ export const AddItemForm = () => {
                 onChange={(event) => setName(event.target.value)
                 }
                 />
-
-                <button type='submit'>Add Item</button>
+                
             </label>
+            <label>
+                Category:
+                <select
+                value={category}
+                onChange={(event) => setCategory(event.target.value)
+                }>
+                    <option value='🧃'>Drinks</option>
+                    <option value='🥕'>Veggies</option>
+                    <option value='🍌'>Fruits</option>
+                    <option value='🍬'>Candy</option>
+                    <option value='🥩'>Meats</option>
+                    <option value='🧀'>Dairy</option>
+
+
+
+                </select>
+            </label>
+            <div className="add-items-button">
+                <button type='submit'>Add Item</button>
+                </div>
         </form>
     )
 }

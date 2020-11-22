@@ -2,7 +2,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-import { todos } from 'reducers/fridge'
+import { todos } from 'reducers/todos'
 
 import { AddItemForm } from './components/AddItemForm'
 import { ItemList } from './components/ItemList'

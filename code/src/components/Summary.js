@@ -11,13 +11,13 @@ export const Summary = () => {
         <div>
             <h1>In my fridge i have {items.length} items.</h1>
             <h2>
-                I nedd to buy {buyMoreItems.length} item
+                I need to buy {buyMoreItems.length} item
                 {buyMoreItems.length === 1 ? '.' : 's.'}
                 <span
                 type='button'
                 onClick={() => setShowShoppingList(!showShoppingList)}
             >
-                💡
+                
             </span>
                 </h2>
                 {showShoppingList && (
