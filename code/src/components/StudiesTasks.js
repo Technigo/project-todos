@@ -9,12 +9,11 @@ export const StudiesTasks = () => {
 
   // console.log(onlyStudyTasks);
   // console.log(todoList.length);
-  // When adding a new item, item id can be todoList.length + 1 ??
 
   return (
     <>
       <h1>Study related Tasks</h1>
-      {onlyStudyTasks.map((item) => (
+      {onlyStudyTasks.map(item => (
         <ListItem key={item.id} listItem={item} />
       ))}
     </>

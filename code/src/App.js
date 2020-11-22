@@ -30,4 +30,5 @@ export const App = () => {
 };
 
 // Add explanatory comments
+// Remove all console.logs and unused variables
 // when task is done CSS: text-decoration: line-through;

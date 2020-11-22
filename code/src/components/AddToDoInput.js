@@ -1,23 +1,20 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { todolist } from 'reducers/todolist';
 
 export const AddToDoInput = () => {
-  const todoList = useSelector((store) => store.todolist.items);
   const [newTodoItem, setNewTodoItem] = useState('');
   const [category, setCategory] = useState('');
 
   const dispatch = useDispatch();
 
-  const setNewToDoId = todoList.length + 1;
-
-  // console.log(category);
-
   const handleOnSubmit = (event) => {
     event.preventDefault();
     
+    // Setting the id for the new tasks to be added by creating a Date this
+    // makes the id be super unique and chances of it repeating are super low
     dispatch(todolist.actions.addToDo({
-      id: setNewToDoId,
+      id: Date.now(),
       text: newTodoItem,
       complete: false,
       category: category

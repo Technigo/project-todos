@@ -3,25 +3,25 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   items: [
     {
-      id: 1,
+      id: 0,
       text: 'Continue with code along',
       complete: false,
       category: 'Studies'
     },
     {
-      id: 2,
+      id: 1,
       text: 'Clean the office room',
       complete: false,
       category: 'House Chores'
     },
     {
-      id: 3,
+      id: 2,
       text: 'Buy more bread',
       complete: false,
       category: 'Shopping List'
     },
     {
-      id: 4,
+      id: 3,
       text: '30 minutes cardio!',
       complete: false,
       category: 'Other'
@@ -39,7 +39,15 @@ export const todolist = createSlice({
     },
     changeComplete: (state, action) => {
       const { itemId, complete } = action.payload;
-      state.items[itemId - 1].complete = complete;
+      const matchingTask = state.items.find((item) => item.id === itemId );
+
+      if(matchingTask) {
+        matchingTask.complete = complete;
+      }
+    },
+    removeToDo: (state, action) => {
+      const { itemId } = action.payload;
+      state.items = state.items.filter(x => x.id !== itemId);
     }
   }
 });
