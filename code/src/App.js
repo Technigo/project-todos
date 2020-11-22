@@ -8,6 +8,7 @@ import { HouseChoreTasks } from 'components/HouseChoreTasks';
 import { ShoppingList } from 'components/ShoppingList';
 import { OtherTasks } from 'components/OtherTasks';
 import { AddToDoInput } from 'components/AddToDoInput';
+import { MissingCount } from 'components/MissingCount';
 
 const reducer = combineReducers({
   todolist: todolist.reducer
@@ -25,6 +26,7 @@ export const App = () => {
         <ShoppingList />
         <OtherTasks />
       </section>
+      <MissingCount />
     </Provider>
   );
 };
