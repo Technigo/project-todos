@@ -30,3 +30,4 @@ export const App = () => {
 };
 
 // Add explanatory comments
+// when task is done CSS: text-decoration: line-through;

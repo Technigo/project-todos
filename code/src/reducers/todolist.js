@@ -36,6 +36,10 @@ export const todolist = createSlice({
     addToDo: (state, action) => {
       const newToDo = action.payload;
       state.items.push(newToDo);
+    },
+    changeComplete: (state, action) => {
+      const { itemId, complete } = action.payload;
+      state.items[itemId - 1].complete = complete;
     }
   }
 });
