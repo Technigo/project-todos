@@ -15,7 +15,12 @@ export const tasks = createSlice({
 
   reducers: {
     addTask: (state, action) => {
+      //const {text, category, dueDate} = action.payload
+      // state.tasks.push({name, category, dueDate})
       state.tasks.push(action.payload);
+    },
+    removeAll: (state, action) => {
+      state.tasks = []
     }
   }
 })
