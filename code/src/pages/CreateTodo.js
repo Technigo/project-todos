@@ -3,7 +3,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import TodoInput from '../components/TodoInput';
-import Button from '../components/Button';
+//import Button from '../components/Button';
+import { Button } from '../lib/Button'
 import { todos } from '../reducers/todos';
 
 const CreateTodo = () => {
@@ -17,11 +18,12 @@ const CreateTodo = () => {
     <div>
       <TodoInput /> 
       <Button 
-      onClick = {() => handleClick()}
-      text="Go back"
-      type="button" 
-      className="go-back-button"
-      />
+        onClick = {() => handleClick()}
+        type="button" 
+        className="go-back-button"
+      >
+        Go Back
+      </Button>
     </div>
   )
 }

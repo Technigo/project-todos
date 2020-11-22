@@ -7,11 +7,9 @@ const Button =  ({ onClick, text, type, className, disabled}) => {
         onClick={onClick}
         disabled={disabled}
         className={className}
-        
       >
         {text}
       </button>
-    
   )
 }
 export default Button; 

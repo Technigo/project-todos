@@ -33,9 +33,9 @@ const store = configureStore({ reducer })
 const App = () => {
   return (
     <Provider store={store}>
-      <div>
+      <main>
         <Home/>
-      </div>
+      </main>
     </Provider>
   )
 }

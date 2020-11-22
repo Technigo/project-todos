@@ -2,12 +2,16 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { todos } from '../reducers/todos';
 import Button from './Button';
+import DatePicker from 'react-date-picker';
+//import DatePicker from 'react-datepicker';
 
 
 const TodoInput = () => {
   const dispatch = useDispatch();
   const [todoInput, setTodoInput] = useState('');
   const [category, setCategory] = useState('');
+  const [dueDate, setDueDate] = useState(new Date());
+  //console.log(dueDate)
 
 
   const categories = useSelector(store => store.todos.list.categories)
@@ -24,11 +28,13 @@ const TodoInput = () => {
           description: todoInput,
           complete: false,
           category: category,
+          dueDate: dueDate,
         },  
       })
     )
     setTodoInput('');
     dispatch(todos.actions.navHomePage())  
+
   };
  
 return (
@@ -40,7 +46,15 @@ return (
       value={todoInput}
       className="todo__input" 
     />
-
+    <label>
+      Due Date:
+    <DatePicker 
+      onChange={(date) => setDueDate(date)}
+      value={dueDate}
+      //selected={dueDate}
+      //onChange={date => setDueDate(date)}
+    /> 
+    </label>
     <label htmlFor="category">Choose a category:</label>
     <select 
       name="category" 

@@ -1,78 +1,105 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import TodoInput from './TodoInput';
+//import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
 import TodoSummary from './TodoSummary';
 import Button from './Button';
-import CreateTodo from 'pages/CreateTodo';
+//import CreateTodo from 'pages/CreateTodo';
 import { todos } from '../reducers/todos';
+import RemoveAll from './RemoveAll';
+import Header from './Header';
+import styled from 'styled-components';
 
 
 
 const TodoList = () => {
-  const [category, setCategory] = useState('')
+  const [filteredCategory, setFilteredCategory] = useState('')
+  const [filteredComplete, setFilteredComplete] = useState('')
 
-  const list = useSelector((store) => {
-    if (!category) return store.todos.list.items
-    else return store.todos.list.items.filter((item) => item.category === category)
+  //const [filter, setFilter] = useState('')
+  
+  const list = useSelector(store => {
+    if (filteredComplete === 'completed') return store.todos.list.items.filter(item => item.complete)
+    else if (filteredComplete === 'not completed') return (store.todos.list.items.filter(item => !item.complete))
+    else if (filteredCategory) return store.todos.list.items.filter(item => item.category === filteredCategory)
+    else return store.todos.list.items 
+    
+
+    //if (!filteredComplete || filteredComplete === 'all') return store.todos.list.items 
+    
+    
   });
   console.log(list)
+  console.log(filteredComplete)
+  console.log(filteredCategory)
 
-  //fattar inte riktigt denna... 
+  // const list = useSelector((store) => {
+  //   if (!filteredCategory || filteredCategory === 'All') return store.todos.list.items 
+  //   else return store.todos.list.items.filter((item) => item.category === filteredCategory)
+  // });
+  // console.log(list)
+
+
+  //skrivs inte ut
+  // const completedTodos = useSelector((store) => {
+  //   if (!filteredComplete || filteredComplete === 'all') return store.todos.list.items 
+  //   else if (filteredComplete === 'completed') return store.todos.list.items.filter((item) => item.complete)
+  //   else return (store.todos.list.items.filter((item) => !item.complete))
+  // })
+  // console.log(completedTodos)
+
+
+  //fattar inte riktigt denna... var pga local storage som just nu är utkommenterad
   const categories = useSelector(store => store.todos.list.categories)
   console.log(`TodoList ${categories}`)
 
-  const homePage = useSelector((store) => store.todos.homePage); 
+  
 
-  const dispatch = useDispatch();
+  //const homePage = useSelector((store) => store.todos.homePage); 
 
-  const handleClick = () => {
-    dispatch(todos.actions.createTodo())
-  }
+  //const dispatch = useDispatch();
+
+  // const handleClick = () => {
+  //   dispatch(todos.actions.createTodo())
+  // }
 
   return (
-    <section>
-      {!homePage ? (
-      <>
-        <h1>My Todo list</h1>
-        <Button 
-          onClick = {() => handleClick()}
-          text="Create a todo"
-          type="button" 
-          className="create-todo-button"
-        />
-        {/* <TodoInput/>  */}
-        {/* {list.items.map(item => item.description)} */}
-        {list.map((item, index) => (
-          <TodoItem key={index} itemIndex={index} />
-        ))}
-        {/* <TodoItem />  */}
-      
+    <>
+    <Header />
+    <Container>
         <label htmlFor="category">Choose a category:</label>
         <select 
           name="category" 
           id="category" 
-          onChange={(event) => setCategory(event.target.value)} 
-          value={category}>
+          onChange={(event) => setFilteredCategory(event.target.value)} 
+          value={filteredCategory}>
           {categories.map(option => (
             <option key={option} value={option}>{option}</option>
           ))}
         </select>
-        <TodoSummary /> 
-      </>
-      ):(
-        <CreateTodo /> 
-      )
-    }
-    </section>
+
+        <label htmlFor="status">Filter on status</label>
+        <select 
+          name="status" 
+          id="status" 
+          onChange={(event) => setFilteredComplete(event.target.value)} 
+          value={filteredComplete}>
+          <option value='all'>All</option>
+          <option value='completed'>Completed</option>
+          <option value='not completed'>Not completed</option>
+        </select>
+        {list.map((item, index) => (
+          <TodoItem key={index} itemIndex={index} />
+        ))}   
+        <RemoveAll />
+    </Container>
+    </>
   )
 }
 export default TodoList;
 
-/*
-- show TodoInput
-- show each TodoItem in the list
-- show TodoSummary 
-
-*/ 
+const Container = styled.div `
+  padding: 20px;
+  display: grid;
+`
