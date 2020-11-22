@@ -4,10 +4,10 @@ import { useSelector } from 'react-redux';
 import { ListItem } from 'components/ListItem';
 
 export const HouseChoreTasks = () => {
+  // Get the complete to do list from the global state and filter out just the tasks
+  // under the House Chores category
   const todoList = useSelector((store) => store.todolist);
   const onlyChoreTasks = todoList.items.filter((item) => item.category === "House Chores");
-
-  //console.log(onlyChoreTasks);
 
   return (
     <>
