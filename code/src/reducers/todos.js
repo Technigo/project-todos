@@ -13,23 +13,23 @@ export const todos = createSlice({
     ]
   },
   reducers: {
-    addItem: (state, action) => {
+    addItem: (store, action) => {
       const { text, dueDate } = action.payload
       //state or store below? Jennie has state.
-      state.items.push({ id: Date.now(), text, dueDate })
+      store.items.push({ id: Date.now(), text, dueDate })
     },
-    removeTodo: (state, action) => {
+    removeTodo: (store, action) => {
       // find item/ filter item
       // remove it from the items array
       // id = 3 (what does this mean?)
-      state.items = state.items.filter((item) => item.id !== action.payload)
+      store.items = store.items.filter((item) => item.id !== action.payload)
     },
-    removeAll: (state, action) => {
-      state.items = []
+    removeAll: (store, action) => {
+      store.items = []
     },
-    toggleCompleted: (state, action) => {
+    toggleCompleted: (store, action) => {
       // find item with the item id that matches the payload with find-method:
-      const foundItem = state.items.find((item) => item.id === action.payload)
+      const foundItem = store.items.find((item) => item.id === action.payload)
       // toggle the value of completed
       if (foundItem) {
         foundItem.complete = !foundItem.complete

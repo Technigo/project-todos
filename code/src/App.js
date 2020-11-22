@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import { todos } from './reducers/todos'
-// import { TodoSummary } from 'components/TodoSummary'
+import { TodoSummary } from 'components/TodoSummary'
 import { AddTodoForm } from 'components/AddTodoForm'
 import { TodoList } from 'components/TodoList'
 // import components here later!
@@ -18,7 +18,7 @@ export const App = () => {
   return (
     <Provider store={store}> 
     <div>
-      {/* <TodoSummary /> */}
+      <TodoSummary />
       <AddTodoForm />
       <TodoList />
       Components can be mounted here in the provider!

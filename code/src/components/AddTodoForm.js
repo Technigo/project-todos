@@ -21,14 +21,14 @@ export const AddTodoForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Add todo:
+        Add todo: {' '}
         <input
           type='text'
           value={text}
           onChange={(event) => setText(event.target.value)}
         />
       </label>
-      <button type='submit'>Add todo</button>
+      <button type='submit' disabled={text.length < 3}>Add todo</button>
     </form>
   )
 }
