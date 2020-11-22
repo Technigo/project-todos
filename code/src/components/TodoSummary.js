@@ -1,24 +1,28 @@
 // This component is shown in the top of the app between heading and add todo.
-// This should be a summary like: Todays date: You have X todos today ( x out of x todos are done)
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 
+import { Title, Subtitle } from 'library/Text'
+
 export const TodoSummary = () => {
-  const items = useSelector((store) => store.todos.items) // or state.todos.items? or state.todos.todos?
+  const items = useSelector((store) => store.todos.items)
   const completedItems = items.filter((item) => item.complete)
   
-  //What is this referring to?? (from Jennies lecture)
+  //What is this referring to?? (from Jennies lecture):
   //const [showTodoList, setShowTodoList] = useState(false)
+
+  if (items.length === 0) {
+    return <Title>No todos added yet! Add todos below:</Title>
+  }
 
   return (
     <div>
-      <h1>On your todo-list today, you have {items.length} todo{items.length > 1 ? 's' : ''}</h1>
-      {/* Write if-statement so that if {items.length - completedItems.length} > 0 show: */}
-      <h2>
-        You have completed {completedItems.length} todo{completedItems.length > 1 ? 's' : ''}.
-        {' '}{items.length - completedItems.length} more to go!
-      </h2>
-      {/* Or else, show: Well done, you have completed all tasks for today! */}
+      <Title>On your todo-list today, you have {items.length} todo{items.length > 1 ? 's.' : '.'}</Title>
+      {completedItems.length === items.length 
+      ? <Subtitle>Well done, you have completed all tasks for today!</Subtitle>
+      : <Subtitle>You have completed {completedItems.length} todo{completedItems.length === 1 ? '.' : 's.'}
+      {' '}{items.length - completedItems.length} more to go!</Subtitle>
+      }
     </div>
   )
 }

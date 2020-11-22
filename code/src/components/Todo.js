@@ -1,13 +1,10 @@
 // This component should return a list item that is rendered with map in TodoList
-// There will be a checkbox on each todo to mark when task is done
-// There will be a remove-button to remove the task also.
-//Here I need to return <li></li>?
+
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
 // import moment from 'moment'
-// import { Button } from 'lib/Button' --> 
-// if I want to make button into generic reusable component using styled components
+import { Button } from 'library/Button'
 
 export const Todo = (props) => {
   const dispatch = useDispatch()
@@ -33,9 +30,13 @@ export const Todo = (props) => {
         onChange={handleCheckboxClick}
       />
       </label>
-      <button type='button' onClick={handleRemoveButtonClick}>
-        Remove todo
-      </button>
+      <Button 
+        type='button' 
+        onClick={handleRemoveButtonClick} 
+        background='#f9adae'
+      >
+        Remove
+      </Button>
     </li>
   )
 }

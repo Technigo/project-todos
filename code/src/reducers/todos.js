@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 
 // Add dueDate to each todo in the list?
+// Add category to items also below? See AddTodoForm/Select
 export const todos = createSlice({
   name: 'todos',
   initialState: {

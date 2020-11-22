@@ -21,7 +21,6 @@ export const App = () => {
       <TodoSummary />
       <AddTodoForm />
       <TodoList />
-      Components can be mounted here in the provider!
     </div>
     </Provider>
   )
