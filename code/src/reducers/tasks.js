@@ -16,12 +16,22 @@ export const tasks = createSlice({
     initialState: taskList,
     reducers: {
         addTask: (state, action) => {
-            console.log('test')
-            const newId = state.todos.length + 1
+            //use this to make sure new is + 1 from the largest current element in the array
+            const newId = Math.max(...state.todos.map(todo => todo.id)) + 1
             state.todos.push({ id:newId, task:action.payload, done:false })
-        }
+        },
         //mark done
-        //remove task
-        //remove all
+        markDone: (state, action) => {
+            
+            state.todos[action.payload].done = true
+        },
+        removeTask: (state, action) => {
+            state.todos.splice(action.payload, 1)
+            console.log('length', state.todos.length)
+
+        },
+        removeAll: (state) => {
+            state.todos.splice(0, state.todos.length)
+        }
     }
 })

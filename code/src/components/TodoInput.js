@@ -7,6 +7,7 @@ import { TextField,
     Divider, 
     Button } 
     from "@material-ui/core";
+import { Add } from '@material-ui/icons';
 
 import { tasks } from "reducers/tasks";
 
@@ -23,6 +24,7 @@ export const TodoInput = () => {
   return (
       <>
     <ListItem>
+        <Add/>
       <TextField
         type="text"
         variant='standard'
@@ -36,6 +38,9 @@ export const TodoInput = () => {
       <Button
       variant='contained'
       onClick={handleSubmit}>Add</Button>
+      <Button
+      variant='contained'
+      onClick={() => dispatch(tasks.actions.removeAll())}>remove all</Button>
     </ListItem>
     <Divider/>
     </>

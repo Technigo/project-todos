@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { AppBar } from "@material-ui/core";
+import { AppBar, Badge } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -21,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export const Header = () => {
+
+  const allTasks = useSelector((store) => store.tasks);
 
     const classes = useStyles();
   return (
@@ -38,6 +41,9 @@ export const Header = () => {
         <Typography variant="h6" className={classes.title}>
           News
         </Typography>
+        <Badge badgeContent={allTasks.todos.length} color="secondary">
+        <AssignmentTurnedInIcon />
+        </Badge>
         <Button color="inherit">Login</Button>
       </Toolbar>
     </AppBar>

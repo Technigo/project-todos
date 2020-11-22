@@ -1,8 +1,9 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { Container } from "@material-ui/core";
-import { styled } from '@material-ui/core/styles';
+import { Container, Paper } from "@material-ui/core";
+import styled from "styled-components";
+import { createMuiTheme, ThemeProvider, } from '@material-ui/core/styles';
 
 import { tasks } from "reducers/tasks";
 import { TodoList } from "components/TodoList";
@@ -14,19 +15,32 @@ const reducer = combineReducers({ tasks: tasks.reducer });
 
 const store = configureStore({ reducer });
 
-const MyContainer = styled(Container)({
-  padding: '0',
-});
+//special syntax needed to override styling of MUI (&&)
+const MyContainer = styled(Container)`
+  && {
+  padding: 0;
+  }`;
 
+export function App() {
 
-export const App = () => {
+  const theme = createMuiTheme({
+    palette: {
+      type: 'dark',
+    }
+  })
+
+  
   return (
     <Provider store={store}>
+      <ThemeProvider theme={theme}>
+      <Paper>
       <MyContainer maxWidth="xs">
         <Header/>
         <TodoInput />
         <TodoList />
       </MyContainer>
+      </Paper>
+      </ThemeProvider>
     </Provider>
   );
 };
