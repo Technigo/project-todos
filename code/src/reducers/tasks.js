@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const tasks = createSlice({
   name: 'tasks',
+  
   initialState: [
     { id: 1, text: 'Create a store', complete: true },
     { id: 2, text: 'Create components', complete: false },
@@ -12,7 +13,7 @@ export const tasks = createSlice({
 
   reducers: {
     addTask: (state, action) => {
-      console.log(action)
+      console.log('heellloooo')
     }
   }
 })
