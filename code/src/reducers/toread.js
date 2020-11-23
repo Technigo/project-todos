@@ -4,6 +4,6 @@ export const toread = createSlice({
   name: "toread",
   initialState: {
     username: "Caroline",
-    items: ["hello", "hello", "hello"],
+    books: ["hello", "hello", "hello"],
   },
 });
