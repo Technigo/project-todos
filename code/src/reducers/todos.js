@@ -1,10 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const todoList = [
-  { id: 1, task: 'Eat candy', category: 'Nom', prio: true },
-  { id: 2, task: 'Dance', category: 'Fun' },
-  { id: 3, task: 'Jump', category: 'Fun', prio: true },
-  { id: 4, task: 'Bake a cake', category: 'Nom' },
+  { id: 1, task: 'Eat candy', category: 'Nom', prio: true, isCompleted: false },
+  { id: 2, task: 'Dance', category: 'Fun', isCompleted: false },
+  { id: 3, task: 'Jump', category: 'Fun', prio: true, isCompleted: false },
+  { id: 4, task: 'Bake a cake', category: 'Nom', isCompleted: false },
 ];
 
 const completedTasks = [];

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 
 import { NewTodoWrapper } from '../styling/GlobalStyling';
@@ -18,17 +18,21 @@ export const NewTodo = () => {
   const [buttonColor, setButtonColor] = useState('gray');
 
   const dispatch = useDispatch();
+  const amountOfTodos = useSelector((store) => store.todos.length + 1);
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    console.log(amountOfTodos);
+
     if (todo) {
       dispatch(
         todos.actions.addTodo({
-          id: 5, // TODO: Fix conditional variable here
+          id: amountOfTodos,
           task: todo,
           category: category,
           prio: prio,
+          isCompleted: false,
         })
       );
       setTodo('');
