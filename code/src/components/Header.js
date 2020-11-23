@@ -1,8 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { tasks } from 'reducers/tasks';
-
 import { HeaderContainer } from '../styling/styling';
 
 const Header = () => {
