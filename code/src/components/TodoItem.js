@@ -5,6 +5,7 @@ import styled from 'styled-components';
 
 import { todos } from '../reducers/todos';
 import CustomCheckbox from 'library/CustomCheckbox';
+import { Button } from 'library/Button';
 
 const TodoItem = ({ itemIndex }) => {
   // const handleOnChange = event => {
@@ -12,6 +13,9 @@ const TodoItem = ({ itemIndex }) => {
   // };
   const item = useSelector(store => store.todos.list.items[itemIndex]);
   const [checked, setChecked] = useState(item.complete);
+  const [active, setActive] = useState('');
+  const [height, setHeight] = useState('0px');
+  const [rotate, setRotate] = useState('');
 
   const dispatch = useDispatch();
 
@@ -32,28 +36,41 @@ const TodoItem = ({ itemIndex }) => {
     );
     setChecked(event.target.checked);
   };
+
+  const toggleAccordion = () => {
+    setActive(active === '' ? 'active' : '');
+    setHeight(active === 'active' ? '0px' : '50px');
+    setRotate(active === 'active' ? '' : 'rotate');
+  };
+
   return (
-    <Container>
-      {/* Checkbox to replace with CustomCheckbox */}
-      {/* <input
+    <>
+      <Button className={`accordion ${active}`} onClick={toggleAccordion}>
+        {/* Checkbox to replace with CustomCheckbox */}
+        {/* <input
         type="checkbox"
         onChange={handleOnChange}
         checked={item.complete ? 'checked' : ''}
       ></input> */}
 
-      <CustomCheckbox
-        checked={checked}
-        onChange={handleOnChange}
-      ></CustomCheckbox>
-      <TodoContainer>
-        <p>{item.description}</p>
-        <p>{item.category}</p>
-      </TodoContainer>
-      {/* <p>{moment(item.dueDate).format('MMM Do YYYY')}</p>
+        <CustomCheckbox
+          checked={checked}
+          onChange={handleOnChange}
+        ></CustomCheckbox>
+        <TodoContainer>
+          <p>{item.description}</p>
+          <p>{item.category}</p>
+        </TodoContainer>
+        {/* <p>{moment(item.dueDate).format('MMM Do YYYY')}</p>
       <p>Created: {moment(item.date).fromNow()}</p> */}
-      <Image src="../assets/recycle-bin.svg" onClick={onRemoveClicked} />
-      {/* <a onClick={onRemoveClicked}>[Remove]</a> */}
-    </Container>
+        <Image src="../assets/recycle-bin.svg" onClick={onRemoveClicked} />
+        {/* <a onClick={onRemoveClicked}>[Remove]</a> */}
+      </Button>
+      <Open style={{ height: `${height}` }}>
+        <p>Created: {moment(item.date).fromNow()}</p>
+        <p>Due: {moment(item.dueDate).format('MMM Do YYYY')}</p>
+      </Open>
+    </>
   );
 };
 
@@ -73,4 +90,9 @@ const TodoContainer = styled(Container)`
 
 const Image = styled.img`
   width: 20px;
+`;
+
+const Open = styled.div`
+  background-color: papayawhip;
+  overflow: hidden;
 `;

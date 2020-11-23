@@ -9,7 +9,7 @@ const TodoInput = () => {
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState('');
   const [category, setCategory] = useState('');
-  const [dueDate, setDueDate] = useState('');
+  const [dueDate, setDueDate] = useState(new Date());
 
   const categories = useSelector(store => store.todos.list.categories);
   console.log(categories);

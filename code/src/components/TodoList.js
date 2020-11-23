@@ -50,17 +50,11 @@ const TodoList = () => {
             </option>
           ))}
         </select>
-        {/* <TodoInput/>  */}
-        {/* {list.items.map(item => item.description)} */}
-        {list.map((item, index) => (
-          <TodoItem key={index} itemIndex={index} />
-        ))}
-        {/* <TodoItem />  */}
-
-        {/* <TodoInput />
-      {list.items.map((item, index) => (
-        <TodoItem key={index} itemIndex={index} />
-      ))} */}
+        <section>
+          {list.map((item, index) => (
+            <TodoItem key={index} itemIndex={index} />
+          ))}
+        </section>
         <RemoveButton />
       </Main>
     </>
