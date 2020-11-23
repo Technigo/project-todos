@@ -29,14 +29,19 @@ export const TodoInput = () => {
 
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
-      <input className="todo-input" type="text" onChange={e => setInputValue(e.target.value)} value ={inputValue} className = "todo-form-input"></input>
+      <label>
+      <input className="todo-input" type="text" onChange={e => setInputValue(e.target.value)} value ={inputValue} className = "todo-form-input" placeholder="Add a new task"></input>
+      </label>
+      <div className="todo-wrapper">
+    
       <input className="todo-date-picker" type="date" id="dueDate" name="due-date"
        value={dateValue}
       // min={moment().format('YYYY-MM-DD')} 
        max={moment().add(1,'years').format('YYYY-MM-DD')}
        onChange={e => setDateValue(e.target.value)}
        />
-      <input className="todo-form-submit-button" type="submit" className={"todo-form-submit-button"}></input>
+      <input className="todo-form-submit-button" type="submit" value="+ Add" className={"todo-form-submit-button"}></input></div> 
+     
     </form>
   )
 }

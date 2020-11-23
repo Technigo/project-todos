@@ -18,17 +18,20 @@ export const List = () =>{
 
   return (
     <section className="todo-list-wrapper">
- 
       <TodoInput />
-       {listLength === 0 ? <EmptyList /> : 
+       {listLength === 0 ? <EmptyList /> : <>
         <ul className="todo-list">
           <ListActionBar />
         {
           itemsList.items.map((item,index) => 
           <TodoItem itemIndex={index} />)
         }
-        <TodoSummary />
-        </ul>}
+        
+       
+        </ul>
+         <TodoSummary /></>
+        }
+       
     </section>
   )
 }

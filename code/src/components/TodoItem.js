@@ -24,17 +24,31 @@ export const TodoItem = ({itemIndex}) =>{
 
   return(
     <li className={item.done ? "todo-item-done" : "todo-item"}>
-      <input 
-      type="checkbox"
-      onChange={handleOnChange}
-      className="todo-item-checkbox"
-      checked={item.done ? "checked" : "" }
-      >
-      </input>
-      <span className="todo-item-text">{item.text}</span>
-       <button className="todo-item-remove-button" type="button" onClick={handleRemoveClick}>Remove Item</button>
+      <div className="item-text-wrapper">
+
+   
+      <div className="item-wrapper">
+          <label className="item-label">
+            <input 
+          type="checkbox"
+          onChange={handleOnChange}
+          className="todo-item-checkbox"
+          checked={item.done ? "checked" : "" }
+          >
+          </input>
+          <span className="todo-item-text">{item.text}</span></label>   
+         
+      </div>
+
+     <div className="item-dates">
        <span className="todo-date-created">Created: {moment(item.created).fromNow()}</span>
        <span className={moment(item.dueDate).endOf('day') < moment() ? 'todo-past-due': 'todo-pre-due'}>Due: {moment(item.dueDate).endOf('day').fromNow()}</span>
+     </div>
+     </div>
+     <div className="item-button-wrapper">
+      <button className="todo-item-remove-button" type="button" onClick={handleRemoveClick}>-</button>
+     </div>
+    
     </li>
   )
 }
