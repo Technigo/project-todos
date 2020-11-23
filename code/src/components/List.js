@@ -1,48 +1,38 @@
 
-import React from 'react'
-import { useSelector } from 'react-redux' 
-import styled from 'styled-components'; 
-
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { Item } from  './Item.js'
-
+import styled from 'styled-components'; 
+import { todos } from 'reducers/todos';
 
 const ListContainer = styled.ul`
 display: flex;
 width: 100%;
-flex-direction: columns;
+flex-direction: column;
 word-wrap: wrap;
 `;
 
-
-
-// store lika med nedan =
-
-// export const todos = createSlice({
-//   name: 'todos',
-//   initialState: {
-//     username: 'Van',
-//     items: [ 
-//       {
-//         id:1 ,
-//         text: 'todo 1', 
-//         id:2 ,
-//         text: 'todo 1', 
-//         id:3 ,
-//         text: 'todo 1', 
-//     }
-//      ],
-//   },
-// });
+const listActionButton = styled.button`
+align-self:center;
+padding:4px;
+margin:2px;
+font-size: 22px;
+color: #3f3f3f;
+`;
 
 
 export const List = () => {
+  const dispatch = useDispatch();
   const items = useSelector((store) => store.todos.items);
 
   return (
   <ListContainer > 
     {items.map((item, index) => (
-    <Item  key={index} item={item.text}></Item>
+    <Item  key={index} item={item}></Item>
   ))}
+<listActionButton onClick={() => dispatch(todos.actions.removeOne())}>
+Remove one
+</listActionButton>
   </ListContainer>
 
  );

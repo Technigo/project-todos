@@ -7,14 +7,13 @@ const ItemContainer = styled.li`
 align-self: flex-start;
 padding:8px;
 margin: 8px;
-font-size: 32px;
+font-size: 36px;
 color: #3f3f3f;
 background-color: #8f4ff;
-
 `;
 
 export const Item = ({ item }) => {
- return  <ItemContainer>{item} </ItemContainer>;
+ return  <ItemContainer>{item.text} </ItemContainer>;
 
 };
 

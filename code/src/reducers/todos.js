@@ -9,14 +9,21 @@ export const todos = createSlice({
     username: 'Van',
     items: [ 
        {id:1 ,
-        text: 'todo 1'} , 
+        text: 'todo blanana'} , 
         {id:2 ,
-        text: 'todo 2'}, 
+        text: ' knvmm nmm'}, 
        {id:3 ,
-        text: 'todo 3'} , 
+        text: 'tjkjkgjeknewbkv'} , 
     
      ],
   },
+  reducers: {
+    removeOne: (state, action) => {
+      state.items.pop();
+
+
+    }
+  }
 });
 
 
