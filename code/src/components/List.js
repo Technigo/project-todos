@@ -24,10 +24,9 @@ export const List = () =>{
           <ListActionBar />
         {
           itemsList.items.map((item,index) => 
-          <TodoItem itemIndex={index} />)
+          <TodoItem key={index} itemIndex={index} />)
         }
-        
-       
+           
         </ul>
          <TodoSummary /></>
         }

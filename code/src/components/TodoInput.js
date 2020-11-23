@@ -19,7 +19,8 @@ export const TodoInput = () => {
       itemInfo: {
         text: inputValue,
         done: false,
-        created : Date.now(),
+        //created : Date.now(),
+        created : moment(),
         dueDate : (moment(dateValue).toDate())
       }
     }));
@@ -30,17 +31,23 @@ export const TodoInput = () => {
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
       <label>
-      <input className="todo-input" type="text" onChange={e => setInputValue(e.target.value)} value ={inputValue} className = "todo-form-input" placeholder="Add a new task"></input>
+      <input 
+        //className="todo-input" 
+        type="text" 
+        onChange={e => setInputValue(e.target.value)} 
+        value ={inputValue} 
+        className = "todo-form-input" 
+        placeholder="Add a new task"></input>
       </label>
       <div className="todo-wrapper">
     
       <input className="todo-date-picker" type="date" id="dueDate" name="due-date"
        value={dateValue}
-      // min={moment().format('YYYY-MM-DD')} 
+       min={moment().format('YYYY-MM-DD')} 
        max={moment().add(1,'years').format('YYYY-MM-DD')}
        onChange={e => setDateValue(e.target.value)}
        />
-      <input className="todo-form-submit-button" type="submit" value="+ Add" className={"todo-form-submit-button"}></input></div> 
+      <input className="todo-form-submit-button" type="submit" value="+ Add" ></input></div> 
      
     </form>
   )
