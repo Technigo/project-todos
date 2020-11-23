@@ -1,9 +1,22 @@
 import React from "react"
+import styled from "styled-components";
+
+const HeaderContainer = styled.section`
+  display: flex;
+  justify-content: center;
+  background: blue;
+`;
+
+const Heading = styled.h1`
+  font-size: 72px;
+  align-self: center;
+  text-transform: uppercase;
+`;
 
 export const Header = () => {
   return (
-    <>
-    <h1>What to read</h1>
-  </>
+  <HeaderContainer>
+    <Heading>To read</Heading>
+  </HeaderContainer>
   )
 }
