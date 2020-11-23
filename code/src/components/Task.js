@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
 import { tasks } from 'reducers/tasks';
 
@@ -15,21 +16,46 @@ export const Task = ({ task }) => {
   };
 
   return (
-    <li>
-      <p><span>{task.complete}</span>{task.text} Category: {task.category}</p>
+    <List>
       <label>
-        Done?
-        <input 
+        <Checkbox
           type='checkbox'
           checked={task.complete}
           onChange={handleCheckboxClick}
         />
       </label>
-      <button 
+      <TheTask>{task.category}: {task.text}</TheTask>
+      <RemoveButton 
         type="button" 
         onClick={handleRemoveButtonClick}>
-          <span role='img' aria-label='Bin'>🗑</span>
-      </button>
-    </li>
+          <Emoji role='img' aria-label='Bin'>🗑</Emoji>
+      </RemoveButton>
+    </List>
   );
 };
+
+const List = styled.li`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
+
+const Checkbox = styled.input`
+  margin-right: 6px;
+`
+
+const TheTask = styled.p`
+  font-size: 14px;
+  width: 100%;
+`
+
+const RemoveButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+`
+
+const Emoji = styled.span`
+  font-size: 28px;
+  color: #6e6e6e;
+`
