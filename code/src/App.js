@@ -6,6 +6,7 @@ import { Provider } from 'react-redux'
 import { tasks } from 'reducers/Tasks'
 import { Header } from './components/Header'
 import { TaskList } from './components/TaskList'
+import { AddTask } from './components/AddTask'
 
 
 // set up reducers combineReducers
@@ -21,6 +22,7 @@ export const App = () => {
     <Provider store={store}>
       <Header />
       <TaskList />
+      <AddTask />
   </Provider>
   )
 }

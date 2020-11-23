@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+// import moment from "moment"
+
 export const tasks = createSlice({
   name: 'tasks',
   initialState: {
@@ -9,6 +11,9 @@ export const tasks = createSlice({
     ],
   },
   reducers: {
+    addTask: (state, action) => {
+      state.items.push({ id: Date.now(), name: action.payload})
+    },
     removeItem: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload)
     }, 

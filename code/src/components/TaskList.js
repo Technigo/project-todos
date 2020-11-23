@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 
 import { TaskItems } from './TaskItems'
 
+import './TaskList.css'
+
 export const TaskList = () => {
   const items = useSelector((state) => state.tasks.items)
 

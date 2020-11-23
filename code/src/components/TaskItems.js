@@ -2,6 +2,21 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/Tasks'
 
+// import styled from 'styled-components'
+
+import { Button } from '../shared/Button'
+
+import './TaskItems.css'
+
+// const Container = styled.View`
+//   flex: 0.5;
+//   width: 100%;
+//   background-color: #000;
+//   justify-content: center;
+//   align-items: center;
+// `
+
+
 export const TaskItems = (props) => {
   const dispatch = useDispatch()
 
@@ -14,7 +29,7 @@ export const TaskItems = (props) => {
   }
 
   return (
-    <li>
+    <li className='list-task'>
       <div className='checkbox-and-name'>
       <label>
       <input
@@ -27,11 +42,9 @@ export const TaskItems = (props) => {
       </div>
       <div className='remove-things'>
         {/* Import a styled button in here using styled components  */}
-        <button
-        type='button'
-        onClick={handleRemoveButtonClick}>
-          Remove
-        </button>
+        <Button onClick={handleRemoveButtonClick}>
+          <span role ='img' aria-label = 'checked'>✔</span>
+        </Button>
       </div>
     </li>
   )
