@@ -10,13 +10,13 @@ const Task = ({ task }) => {
     dispatch(tasks.actions.removeTask(task.id));
   }
 
-  const handleCompleteTask = ({task}) => {
+  const handleCheckboxChange = ({task}) => {
     dispatch(tasks.actions.toggleCompleteStatus(task.id));
   }
   
   return (
     <div>
-      <button onClick={() => handleCompleteTask({ task })}>COMPLETE</button>
+      <input type='checkbox' onChange={() => handleCheckboxChange({task})}></input>
       {task.id}{task.text}
       <button onClick={() => handleRemoveTask({ task })}>Remove me</button>
     </div>

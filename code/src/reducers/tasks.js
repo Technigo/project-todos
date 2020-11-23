@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   items: [
-    { id: 1, text: 'Create a store', complete: true },
-    { id: 2, text: 'Create components', complete: false },
-    { id: 3, text: 'Mobile first', complete: false },
-    { id: 4, text: 'Buy Pepsi Max', complete: true }
+    { id: 1, text: 'Create a store', isComplete: true },
+    { id: 2, text: 'Create components', isComplete: false },
+    { id: 3, text: 'Mobile first', isComplete: false },
+    { id: 4, text: 'Buy Pepsi Max', isComplete: true }
   ]
 }
 
@@ -25,11 +25,12 @@ export const tasks = createSlice({
       state.items = state.items.filter(item => item.id !== action.payload)
     },
     toggleCompleteStatus: (state, action) => {
-
+      // Finds the task/item with same id as payload (the task that was clicked)
       const choosenTask = state.items.find(item => item.id === action.payload)
 
+      // Toggles between true and false
       if (choosenTask) {
-        choosenTask.complete = !choosenTask.complete; 
+        choosenTask.isComplete = !choosenTask.isComplete; 
       };
 
 

@@ -6,7 +6,7 @@ import { tasks } from 'reducers/tasks';
 const AddTask = () => {
   const [text, setText] = useState('');
   const [id, setId] = useState(1);
-  const complete = false;
+  const isComplete = false;
 
   const allTasksArray = useSelector((store) => store.tasks.items)
 
@@ -15,7 +15,7 @@ const AddTask = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(tasks.actions.addTask({ id, text, complete }));
+    dispatch(tasks.actions.addTask({ id, text, isComplete }));
     setText('');
   }
 
