@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { todos } from '../reducers/todos';
+import moment from "moment";
 
 export const TodoItem = ({itemIndex}) =>{
 
@@ -30,8 +31,8 @@ export const TodoItem = ({itemIndex}) =>{
       >
       </input>
       <span>{item.text}</span>
-       {itemIndex} 
        <button type="button" onClick={handleRemoveClick}>Remove Item</button>
+       <span>{moment(item.created).fromNow()}</span>
     </li>
   )
 }

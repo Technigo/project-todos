@@ -27,7 +27,19 @@ export const todos = createSlice({
        (item,index) => 
         index !== itemIndex
       )
-
+    },
+    removeAllTasks : () => {
+      return initialState;
+    },
+    setAllTasksDone : (state) => {
+        state.list.items = state.list.items.map(item => {
+            return{
+              ...item,
+              done : true
+            }
+        }
+        
+          );
     }
   }
  

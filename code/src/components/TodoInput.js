@@ -16,7 +16,8 @@ export const TodoInput = () => {
     dispatch(todos.actions.addToDo({
       itemInfo: {
         text: inputValue,
-        done: false
+        done: false,
+        created : Date.now()
       }
     }));
     //Clear the textField
