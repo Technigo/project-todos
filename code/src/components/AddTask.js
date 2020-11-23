@@ -25,8 +25,8 @@ export const AddTask = () => {
           onChange={(event) => setCategory(event.target.value)}
         >
           <option value=''>Choose Category</option>
-          <option value='School'>School</option>
-          <option value='Private'>Private</option>
+          <option value='School:'>School</option>
+          <option value='Private:'>Private</option>
         </Selector>
       </Category>
 

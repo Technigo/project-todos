@@ -17,14 +17,14 @@ export const Task = ({ task }) => {
 
   return (
     <List>
-      <label>
+      <CheckboxContainer>
         <Checkbox
           type='checkbox'
           checked={task.complete}
           onChange={handleCheckboxClick}
         />
-      </label>
-      <TheTask>{task.category}: {task.text}</TheTask>
+      </CheckboxContainer>
+      <TheTask>{task.category} {task.text}</TheTask>
       <RemoveButton 
         type="button" 
         onClick={handleRemoveButtonClick}>
@@ -39,6 +39,8 @@ const List = styled.li`
   flex-direction: row;
   align-items: center;
 `
+
+const CheckboxContainer = styled.label``
 
 const Checkbox = styled.input`
   margin-right: 6px;
