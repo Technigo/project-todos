@@ -1,4 +1,3 @@
-// This component is shown in the top of the app between heading and add todo.
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
 

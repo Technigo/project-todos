@@ -17,11 +17,11 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}> 
-    <div>
-      <TodoSummary />
-      <AddTodoForm />
-      <TodoList />
-    </div>
+      <div>
+        <TodoSummary />
+        <AddTodoForm />
+        <TodoList />
+      </div>
     </Provider>
   )
 }

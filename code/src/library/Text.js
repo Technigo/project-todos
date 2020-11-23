@@ -1,13 +1,14 @@
 import styled from 'styled-components'
 
 //Should this be a textarea-tag instead of input maybe?
-{/* <textarea
+/* <textarea
           placeholder="Type here..."
           tabIndex="0"
-          rows="2" */}
+          rows="2" */
 export const InputText = styled.input`
   font-size: 20px;
   width: 300px;
+  height: 40px;
   border-top: none;
   border-left: none;
   border-right: none;

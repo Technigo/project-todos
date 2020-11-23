@@ -1,32 +1,31 @@
-// This component should return a list item that is rendered with map in TodoList
-
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import moment from 'moment'
+
 import { todos } from 'reducers/todos'
-// import moment from 'moment'
-import { Button } from 'library/Button'
+import { Button } from 'library/Buttons'
 
 export const Todo = (props) => {
+  const { id, text, dueDate, category, complete, startDate } = props.item;
   const dispatch = useDispatch()
 
-  //These handle-functions don't work now. Error: toggleCompleted is not a function
-  // This must be because I have not defined any function yet, or?
   const handleCheckboxClick = () => {
-    dispatch(todos.actions.toggleCompleted(props.item.id))
+    dispatch(todos.actions.toggleCompleted(id))
   }
 
   const handleRemoveButtonClick = () => {
-    dispatch(todos.actions.removeTodo(props.item.id))
+    dispatch(todos.actions.removeTodo(id))
   }
 
   return (
     <li>
-      <span>{props.item.text} - </span>
+      <span>{category}: </span>
+      <span>{text} - </span>
       <label>
         completed:
         <input
         type='checkbox'
-        checked={props.item.complete}
+        checked={complete}
         onChange={handleCheckboxClick}
       />
       </label>
@@ -37,6 +36,8 @@ export const Todo = (props) => {
       >
         Remove
       </Button>
+      <span>ADDED: {moment(startDate).format('MMM Do YYYY')}</span>
+      {dueDate && <span> DUE: {moment(dueDate).format('MMM Do YYYY')}</span>}
     </li>
   )
 }

@@ -7,22 +7,20 @@ export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-    { id: 1, text: 'Watch video on actions & reducers', complete: true },
-    { id: 2, text: 'Follow redux codealong', complete: true },
-    { id: 3, text: 'Fork weekly assignment', complete: true },
-    { id: 4, text: 'Create a todo app', complete: false },
+    // { id: 1, category: 'study', text: 'Watch video on actions & reducers', complete: true },
+    // { id: 2, category: 'study', text: 'Follow redux codealong', complete: true },
+    // { id: 3, category: 'study', text: 'Fork weekly assignment', complete: true },
+    // { id: 4, category: 'study', text: 'Create a todo app', complete: false },
     ]
   },
   reducers: {
     addItem: (store, action) => {
-      const { text, dueDate } = action.payload
-      //state or store below? Jennie has state.
-      store.items.push({ id: Date.now(), text, dueDate })
+      const { text, category, dueDate } = action.payload
+      store.items.push({ id: Date.now(), text, category, dueDate })
     },
     removeTodo: (store, action) => {
       // find item/ filter item
       // remove it from the items array
-      // id = 3 (what does this mean?)
       store.items = store.items.filter((item) => item.id !== action.payload)
     },
     removeAll: (store, action) => {

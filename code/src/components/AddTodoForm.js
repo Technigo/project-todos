@@ -1,35 +1,38 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import DatePicker from 'react-date-picker';
+// import styled fron 'styled-components'
+
 import { todos } from 'reducers/todos'
-import { Button } from 'library/Button'
+import { AddButton } from 'library/Buttons'
 import { AddTodoEmoji } from 'library/Emojis'
 import { InputText } from 'library/Text'
 import { Select } from 'library/Select'
-// import styled fron 'styled-components'
+import '../styles/AddTodoForm.css'
 
 export const AddTodoForm = () => {
   const [text, setText] = useState('')
   const [category, setCategory] = useState('')
-  // What does dueDate do here? 
-  const [dueDate, setDueDate] = useState()
+  const [dueDate, setDueDate] = useState(new Date())
 
   const dispatch = useDispatch()
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(todos.actions.addItem({ text, dueDate }))
-    setText('')
+    dispatch(todos.actions.addItem({ text, category, dueDate }))
+    // text, category & dueDate as payloads
+    setText('') // clears input
+    setCategory('') // clears input
+    setDueDate('') // clears input
   }
 
   //✍︎✎
   return (
     <form onSubmit={handleSubmit}>
-      <AddTodoEmoji>
-        📝 {' '}
-      </AddTodoEmoji>
+      <AddTodoEmoji>📝</AddTodoEmoji>
       <label aria-label='add todo'>
         <InputText
-          placeholder='Type your todo here...'
+          placeholder='New task'
           type='text'
           value={text}
           onChange={(event) => setText(event.target.value)}
@@ -49,13 +52,22 @@ export const AddTodoForm = () => {
           <option value='other'>other</option>
         </Select>
       </label>
-      <Button 
+      
+      {/* date-picker to set dueDate below 
+      (don't know if it's fully implemented right now? Looks really strange) */}
+      <label>
+        <DatePicker 
+          selected={dueDate}
+          onChange={(date) => setDueDate(date)} 
+          value={dueDate} 
+        />
+      </label>
+      <AddButton 
         type='submit' 
         disabled={text.length < 3}
-        background='#7797be'
       >
-        Add
-      </Button>
+        +
+      </AddButton>
     </form>
   )
 }
