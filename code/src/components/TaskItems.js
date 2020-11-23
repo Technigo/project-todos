@@ -4,20 +4,7 @@ import { tasks } from 'reducers/Tasks'
 
 import moment from "moment"
 
-// import styled from 'styled-components'
-
-import { Button } from '../shared/Button'
-
 import './TaskItems.css'
-
-// const Container = styled.View`
-//   flex: 0.5;
-//   width: 100%;
-//   background-color: #000;
-//   justify-content: center;
-//   align-items: center;
-// `
-
 
 export const TaskItems = (props) => {
   const dispatch = useDispatch()
@@ -33,21 +20,23 @@ export const TaskItems = (props) => {
   return (
     <li className='list-task'>
       <div className='checkbox-and-name'>
-      <label>
+      <label className='checkbox-label'>
       <input
           type="checkbox"
           checked={props.item.checkedTask}
           onChange={handleCheckedBoxClick}
         />
       </label>
-      <p>{props.item.todo}</p>
+      <p className='task-name-p'>{props.item.todo}</p>
       </div>
-      <div className='remove-things'>
-        {/* Import a styled button in here using styled components  */}
-        <Button onClick={handleRemoveButtonClick}>
+      <div className='remove-and-date'>
+        <button
+        className='remove-task-button'
+        type='button'
+        onClick={handleRemoveButtonClick}>
           <span role ='img' aria-label = 'checked'>✔</span>
-        </Button>
-        <p> Added {moment(props.item.createdAt).calendar()}</p>
+        </button>
+        <p className='task-added-date'> Added {moment(props.item.createdAt).calendar()}</p>
       </div>
     </li>
   )
