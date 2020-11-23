@@ -145,7 +145,7 @@ main {
 }
 
 .todo-item-done {
-	background-color: #cee9dd;
+	background-color: #bacdc4;
 	display: flex;
 	justify-content: space-between;
 }
