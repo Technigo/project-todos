@@ -1,0 +1,20 @@
+import React from 'react'
+import {useSelector} from 'react-redux'
+
+import {tasks} from '../reducers/tasks'
+import {Task} from './Task'
+
+export const TaskList = () => {
+  const todos = useSelector(store => store.tasks)
+
+  return (
+    <div>
+      {todos.map((task) => {
+        return (
+          <Task key={task.id} taskData={task} /> 
+        )
+      })}
+
+    </div>
+  )
+}
