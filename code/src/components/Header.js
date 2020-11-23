@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { AppBar, Badge } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
 import Toolbar from "@material-ui/core/Toolbar";
@@ -8,6 +8,9 @@ import Button from "@material-ui/core/Button";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
+import DoneAllIcon from '@material-ui/icons/DoneAll';
+
+import { tasks } from "reducers/tasks";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -24,6 +27,7 @@ const useStyles = makeStyles((theme) => ({
 export const Header = () => {
 
   const allTasks = useSelector((store) => store.tasks);
+  const dispatch = useDispatch();
 
     const classes = useStyles();
   return (
@@ -41,6 +45,7 @@ export const Header = () => {
         <Typography variant="h6" className={classes.title}>
           News
         </Typography>
+        <DoneAllIcon onClick={() => dispatch(tasks.actions.markAll())}/>
         <Badge badgeContent={allTasks.todos.length} color="secondary">
         <AssignmentTurnedInIcon />
         </Badge>

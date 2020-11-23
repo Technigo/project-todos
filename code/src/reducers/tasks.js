@@ -23,8 +23,11 @@ export const tasks = createSlice({
         //mark done
         markDone: (state, action) => {
             
-            state.todos[action.payload].done = true
+            state.todos[action.payload].done = !state.todos[action.payload].done
         },
+        markAll: (state) => {
+            state.todos.map(todo => todo.done = true)
+        }, 
         removeTask: (state, action) => {
             state.todos.splice(action.payload, 1)
             console.log('length', state.todos.length)

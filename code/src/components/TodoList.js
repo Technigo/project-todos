@@ -12,7 +12,7 @@ export const TodoList = () => {
   return (
     <List>
       {allTasks.todos.map((task, index) => (
-        <TodoItem key={task.id} task={task.task} index={index}></TodoItem>
+        <TodoItem key={task.id} task={task.task} index={index} done={task.done}></TodoItem>
       ))}
     </List>
   );
