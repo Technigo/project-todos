@@ -8,6 +8,7 @@ import { Header } from './components/Header'
 import { TaskList } from './components/TaskList'
 import { AddTask } from './components/AddTask'
 
+import 'App.css'
 
 // set up reducers combineReducers
 const reducer = combineReducers({

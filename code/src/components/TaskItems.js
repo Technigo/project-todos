@@ -2,6 +2,8 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/Tasks'
 
+import moment from "moment"
+
 // import styled from 'styled-components'
 
 import { Button } from '../shared/Button'
@@ -45,6 +47,7 @@ export const TaskItems = (props) => {
         <Button onClick={handleRemoveButtonClick}>
           <span role ='img' aria-label = 'checked'>✔</span>
         </Button>
+        <p> Added {moment(props.item.createdAt).calendar()}</p>
       </div>
     </li>
   )

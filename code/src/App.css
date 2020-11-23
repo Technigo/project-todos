@@ -1,0 +1,19 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: min-content;
+  max-width: 700px;
+  grid-gap: 12px;
+  margin: 0 auto;
+  padding: 50px 25px;
+}
+
+p {
+  font-family: Oxygen;
+}
