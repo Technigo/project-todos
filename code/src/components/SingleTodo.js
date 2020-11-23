@@ -17,6 +17,10 @@ export const SingleTodo = ({ id, text, complete }) => {
     dispatch(todoTasks.actions.toggleComplete(id))
   }
 
+  const handleRemoveButtonClick = () => {
+    dispatch(todoTasks.actions.removeTask(id))
+  }
+
   return (
 
     <li>
@@ -30,7 +34,9 @@ export const SingleTodo = ({ id, text, complete }) => {
 
       {text}
 
-      <button type="button">
+      <button
+        type="button"
+        onClick={handleRemoveButtonClick}>
         Remove
       </button>
     </li>
