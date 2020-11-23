@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { todos } from '../reducers/todos';
 import moment from "moment";
 
+ 
 export const TodoItem = ({itemIndex}) =>{
 
   const item = useSelector(store => store.todos.list.items[itemIndex]);
@@ -31,8 +32,10 @@ export const TodoItem = ({itemIndex}) =>{
       >
       </input>
       <span>{item.text}</span>
+
        <button type="button" onClick={handleRemoveClick}>Remove Item</button>
-       <span>{moment(item.created).fromNow()}</span>
+       <span>Created: {moment(item.created).fromNow()}</span>
+       <span>Due: {moment(item.dueDate).endOf('day').fromNow()}</span>
     </li>
   )
 }

@@ -1,11 +1,13 @@
 import React, {useState} from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
+import moment from "moment";
 
 export const TodoInput = () => {
  
   const dispatch = useDispatch();
   const [inputValue, setInputValue] = useState("");
+  const[dateValue, setDateValue] = useState(moment().format('YYYY-MM-DD'));
 
   //Create a handle submit function to dispatch add Todo
   const handleSubmit = (e) => {
@@ -17,7 +19,8 @@ export const TodoInput = () => {
       itemInfo: {
         text: inputValue,
         done: false,
-        created : Date.now()
+        created : Date.now(),
+        dueDate : (moment(dateValue).toDate())
       }
     }));
     //Clear the textField
@@ -27,6 +30,12 @@ export const TodoInput = () => {
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
       <input type="text" onChange={e => setInputValue(e.target.value)} value ={inputValue} className = "todo-form-input"></input>
+      <input type="date" id="dueDate" name="due-date"
+       value={dateValue}
+       min={moment().format('YYYY-MM-DD')} 
+       max={moment().add(1,'years').format('YYYY-MM-DD')}
+       onChange={e => setDateValue(e.target.value)}
+       />
       <input type="submit" className={"todo-form-submit-button"}></input>
     </form>
   )
