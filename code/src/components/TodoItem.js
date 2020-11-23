@@ -1,13 +1,16 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { todos } from '../reducers/todos';
 
 export const TodoItem = ({itemIndex}) =>{
 
   const item = useSelector(store => store.todos.list.items[itemIndex]);
   const dispatch = useDispatch();
-  
-  const handleRemoveClick = (e) =>{
 
+  const handleRemoveClick = (e) =>{
+    dispatch(todos.actions.removeTask({
+      itemIndex : itemIndex
+    }))
   }
 
   const handleOnChange = (e) => {
@@ -18,12 +21,12 @@ export const TodoItem = ({itemIndex}) =>{
   }
 
   return(
-    <li className="todo-item">
+    <li className={item.done ? "todo-item-done" : "todo-item"}>
       <input 
       type="checkbox"
       onChange={handleOnChange}
       className="todo-item-checkbox"
-      checked="checked"
+      checked={item.done ? "checked" : "" }
       >
       </input>
       <span>{item.text}</span>

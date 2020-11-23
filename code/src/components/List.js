@@ -4,6 +4,8 @@ import {useSelector} from 'react-redux';
 
 import { TodoInput } from './TodoInput';
 import { TodoItem } from './TodoItem';
+import { TodoSummary } from './TodoSummary';
+
 
 export const List = () =>{
 
@@ -19,6 +21,7 @@ export const List = () =>{
         itemsList.items.map((item,index) => 
         <TodoItem itemIndex={index} />)
       }
+      <TodoSummary />
       </ul>
     </section>
   )
