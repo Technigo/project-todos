@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit';
 
 import { todolist } from 'reducers/todolist';
 import { StudiesTasks } from 'components/StudiesTasks';
@@ -17,7 +17,31 @@ const reducer = combineReducers({
   todolist: todolist.reducer
 });
 
-const store = configureStore({ reducer });
+// This is the store setup if I don't want to use the local storage
+// const store = configureStore({ reducer });
+
+// Setup in order to use local storage to save our to do list and not delete
+// everything when refreshing the page - super handy! We create this variable
+// persistedStateJSON that will check if we have anything saved in the local
+// storage by method getItem, the data for this project is named in the local
+// storage as "reduxState". If reduxState is found: we need to parse it and this
+// parsed version is assigned to persistedState, which will now work as our
+// initial state
+const persistedStateJSON = localStorage.getItem("reduxState");
+let persistedState = {};
+
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON);
+};
+
+// so now we setup the store with the reducer we defined and the persistedState
+// as the initial state. The store subscribes to any actions performed on the state
+// so that it always stores the most updated data
+const store = createStore(reducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
+store.subscribe(() => {
+  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+});
 
 export const App = () => {
   return (
@@ -37,3 +61,6 @@ export const App = () => {
     </Provider>
   );
 };
+
+// localStorage.clear in the console in order to clear the local storage and once more start
+// again with our pre-defined initial stata

@@ -44,3 +44,4 @@ export const ListItem = ({ listItem }) => {
 };
 
 // Remove display flex from list-item and fix that with CSS later
+// Add explanatory comments to CustomCheckbox component
