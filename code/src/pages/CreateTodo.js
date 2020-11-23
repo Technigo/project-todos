@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import TodoInput from '../components/TodoInput';
+import TodayDate from 'components/TodayDate';
+
 //import Button from '../components/Button';
 import { Button } from '../lib/Button'
 import { todos } from '../reducers/todos';
@@ -15,6 +17,7 @@ const CreateTodo = () => {
 
   return (
     <div>
+      {/* <TodayDate /> */}
       <TodoInput /> 
       <Button 
         onClick = {() => handleClick()}

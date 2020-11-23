@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Button } from '../lib/Button';
+import { Button, AccordionButton } from '../lib/Button';
 import { Image } from '../lib/Image';
 import styled from 'styled-components';
 import CustomCheckbox from '../lib/CustomCheckbox'
@@ -22,7 +22,7 @@ const TodoAccordion = ({
   const toggleAccordion = () => {
     setActive(active === "" ? "open" : "");
     setHeight(
-      active === "open" ? "0px" : '50px'
+      active === "open" ? "0px" : '70px'
     );
     setRotate(
       active === "open" ? "" : "rotate"
@@ -30,7 +30,7 @@ const TodoAccordion = ({
   }
     return (
       <>
-        <Button
+        <AccordionButton
           className={`accordion ${active}`} 
           onClick={toggleAccordion}
         >
@@ -42,18 +42,19 @@ const TodoAccordion = ({
           </label>
           {/* <p>{props.title}</p> */}
           <p>{accordionText}</p>
-          <p>{accordionCategory}</p>
-          <p>{accordionDueDate}</p>
+          
           
           <Img src="../assets/chevron-right-solid.svg" alt="arrow" className={rotate}/>
           <div className="todo__item-delete" onClick={onRemoveTodo}>
           <Image src="./assets/garbage.svg" alt="trash bin"/>
         </div>
-        </Button>    
+        </AccordionButton>    
         <Open
           style={{ height: `${height}` }} 
         >
-          <p>{accordionCreated}</p>          
+          <p>Created: {accordionCreated}</p>  
+          <p>Due: {accordionDueDate}</p>
+          <p>Category: {accordionCategory}</p>        
         </Open> 
       </>
     )

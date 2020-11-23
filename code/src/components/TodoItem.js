@@ -9,8 +9,10 @@ import TodoAccordion from './TodoAccordion';
 
 
 
-const TodoItem = ({ itemIndex }) => {
-  const item = useSelector(store => store.todos.list.items[itemIndex])
+const TodoItem = ({ item }) => {
+  //const item = useSelector(store => store.todos.list.items.find(item => item.id === id))//find 
+  //const item = useSelector((store) => store.todos.list.items[id])
+  //console.log(item)
   const [checked, setChecked] = useState(item.complete);
 
   const dispatch = useDispatch();
@@ -19,20 +21,32 @@ const TodoItem = ({ itemIndex }) => {
   const onRemoveTodo = () => {
     dispatch(
       todos.actions.removeTodo({
-        itemIndex: itemIndex,
+        id: item.id,
       })
     )
+    console.log(item.id)
   }
 
   //Mark todo as complete 
+  // const handleOnChange = (event) => {
+  //   dispatch (
+  //     todos.actions.setComplete({
+        /////itemIndex: itemIndex,
+        /////complete: !item.complete
+        //id: item.id,
+        //complete: !item.complete,
+      //}) 
+  //   );  
+  //   setChecked(event.target.checked);
+  //   console.log(item.complete)
+  //   console.log(item.id)
+  // }
+
   const handleOnChange = (event) => {
-    dispatch (
-      todos.actions.setComplete({
-        itemIndex: itemIndex,
-        complete: !item.complete
-      }) 
-    );  
+    dispatch(todos.actions.setComplete(item.id))
     setChecked(event.target.checked);
+    //console.log(item.complete)
+    //console.log(item.id)
   }
 
   return (

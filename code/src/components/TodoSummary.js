@@ -10,7 +10,7 @@ import styled from 'styled-components';
 
 const TodoSummary = () => {
   const list = useSelector(store => store.todos.list);
-  console.log(`summary ${list}`)
+  //console.log(`summary ${list}`)
 
   const todosCompleted = list.items.filter(item => item.complete).length
 

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid'; //uniqe ID
+
 import { todos } from '../reducers/todos';
-import Button from './Button';
+//import Button from './Button';
+import { Button } from '../lib/Button';
 import DatePicker from 'react-date-picker';
 //import DatePicker from 'react-datepicker';
 
@@ -13,9 +16,8 @@ const TodoInput = () => {
   const [dueDate, setDueDate] = useState(new Date());
   //console.log(dueDate)
 
-
   const categories = useSelector(store => store.todos.list.categories)
-  console.log(categories)
+  //console.log(categories)
 
   const handleOnSubmit = (event) => {
     event.preventDefault()
@@ -25,10 +27,12 @@ const TodoInput = () => {
     dispatch (
       todos.actions.addTodo({
         todoItemInfo: {
+          id: uuidv4(), 
           description: todoInput,
           complete: false,
           category: category,
-          dueDate: dueDate,
+          dueDate: dueDate.getTime(),
+          // display: true,
         },  
       })
     )
@@ -36,25 +40,30 @@ const TodoInput = () => {
     dispatch(todos.actions.navHomePage())  
 
   };
- 
+ //console.log(uuidv4)
 return (
-  <form onSubmit={handleOnSubmit}>  
+  <form onSubmit={handleOnSubmit}>
+    <label htmlFor="text">Enter a todo:</label>
     <textarea 
+      name="text"
+      id="text"
       rows="4"
       placeholder="Add a todo!"
       onChange={event => setTodoInput(event.target.value)}
       value={todoInput}
       className="todo__input" 
     />
-    <label>
-      Due Date:
+    <div>
+    <p>Due Date:</p>
     <DatePicker 
+      name="due"
+      id="due"
       onChange={(date) => setDueDate(date)}
       value={dueDate}
       //selected={dueDate}
       //onChange={date => setDueDate(date)}
     /> 
-    </label>
+    </div>
     <label htmlFor="category">Choose a category:</label>
     <select 
       name="category" 
@@ -69,9 +78,12 @@ return (
     <Button 
       type="submit"
       disabled={!todoInput}
-      className="todo__submit"
-      text="Add todo"
-    />
+      //className="todo__submit"
+      //text="Add todo"
+    >
+      <p>Add Todo</p>
+    </Button>
+  
     
   </form>
 )

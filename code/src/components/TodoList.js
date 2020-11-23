@@ -12,8 +12,6 @@ import Header from './Header';
 import styled from 'styled-components';
 import TodoAccordion from "./TodoAccordion";
 
-
-
 const TodoList = () => {
   const [filteredCategory, setFilteredCategory] = useState('')
   const [filteredComplete, setFilteredComplete] = useState('')
@@ -32,8 +30,8 @@ const TodoList = () => {
     
   });
   console.log(list)
-  console.log(filteredComplete)
-  console.log(filteredCategory)
+  //console.log(filteredComplete)
+  //console.log(filteredCategory)
 
   // const list = useSelector((store) => {
   //   if (!filteredCategory || filteredCategory === 'All') return store.todos.list.items 
@@ -98,8 +96,8 @@ const TodoList = () => {
       {/* <TodoAccordion 
         accordionText='Hello'
       /> */}
-        {list.map((item, index) => (
-          <TodoItem key={index} itemIndex={index} />
+        {list.map((item) => (
+          <TodoItem key={item.id} item={item} />
         ))}   
         <RemoveAll />
     </Container>

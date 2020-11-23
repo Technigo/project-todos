@@ -4,30 +4,65 @@ const initialState = {
   list: {
     name: "Todo list",
     items: [
-      {
-        description: "my first todo",
-        complete: false,
-        category: 'School',
-        dueDate: '',
-      },
-      {
-        description: "my second todo",
-        complete: false,
-        category: 'Personal',
-        dueDate: '',
-      },
-      {
-        description: "my third todo",
-        complete: false,
-        category: 'Work',
-        dueDate: '',
-      },
-    
+      // {
+      //   id: null,
+      //   description: null,
+      //   complete: null,
+      //   category: null,
+      //   dueDate: null,
+      // },
     ],
     categories: ['All' ,'Personal', 'School', 'Work', 'Home' ],
     homePage: false,
   }
 };
+
+export const todos = createSlice({
+  name: "todos",
+  initialState: initialState,
+  reducers: {
+    addTodo: (state, action) => {
+      const { todoItemInfo } = action.payload;
+      state.list.items.push(todoItemInfo)
+    },
+
+    // setComplete: (state, action) => {
+    //   const { id, complete } = action.payload;
+    //   state.list.items[id].complete = complete;
+    //   console.log(id)
+    // },
+
+    setComplete: (state, action) => {
+      //const { id, complete } = action.payload;
+      const foundItem = state.list.items.find(item => item.id === action.payload)
+      //console.log(action.payload)
+      //console.log(`innan if ${foundItem}`)
+      if(foundItem) {
+        foundItem.complete = !foundItem.complete
+      }
+      //console.log(`efter if ${foundItem}`)
+    },
+
+    removeTodo: (state, action) => {
+      const { id } = action.payload;
+      state.list.items = state.list.items.filter(
+        item => item.id !== id
+      )
+    },
+
+    removeAllTodos: (state) => {
+      state.list.items = []
+    },
+
+    createTodo: (state) => {
+      state.homePage = true;
+    },
+    
+    navHomePage: (state) => {
+      state.homePage = false;
+    }
+  }
+})
 
 /*ATT GÖRA*/
 //lägg till mer filter möjligheter DUE DATE(är detta möjligt), COMPLETE/NOT COMPLETE
@@ -48,40 +83,3 @@ const initialState = {
 
 
 
-
-
-export const todos = createSlice({
-  name: "todos",
-  initialState: initialState,
-  reducers: {
-    addTodo: (state, action) => {
-      const { todoItemInfo } = action.payload;
-      state.list.items.push(todoItemInfo)
-    },
-
-    setComplete: (state, action) => {
-      const { itemIndex, complete } = action.payload;
-      state.list.items[itemIndex].complete = complete;
-      console.log(itemIndex)
-    },
-
-    removeTodo: (state, action) => {
-      const { itemIndex } = action.payload;
-      state.list.items = state.list.items.filter(
-        (item, index) => index !== itemIndex
-      )
-    },
-
-    removeAllTodos: (state) => {
-      state.list.items = []
-    },
-
-    createTodo: (state) => {
-      state.homePage = true;
-    },
-    
-    navHomePage: (state) => {
-      state.homePage = false;
-    }
-  }
-})

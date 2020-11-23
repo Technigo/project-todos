@@ -35,7 +35,7 @@ export default Header;
 
 const HeaderContainer = styled.header `
   height: 40vh;
-  background-image: linear-gradient(25deg, #003443, #0e645a, #119971, #00d288);
+  background-image: linear-gradient(25deg, #003443, #0e645a, #119971, #00d288); 
   display: grid;
   align-content: space-evenly;
   justify-content: center;
