@@ -1,7 +1,10 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import Icon from '../assests/icons8-trash-can-100.png';
+
 import { tasks } from 'reducers/tasks';
+import { TaskContainer, RemoveButton, Checkbox, TaskText } from '../styling/styling';
 
 const Task = ({ task }) => {
   const dispatch = useDispatch();
@@ -15,11 +18,11 @@ const Task = ({ task }) => {
   }
   
   return (
-    <div>
-      <input type='checkbox' onChange={() => handleCheckboxChange({task})}></input>
-      {task.id}{task.text}
-      <button onClick={() => handleRemoveTask({ task })}>Remove me</button>
-    </div>
+    <TaskContainer>
+      <Checkbox type='checkbox' onChange={() => handleCheckboxChange({ task })}></Checkbox>
+      <TaskText>{task.text}</TaskText>
+      <RemoveButton src={Icon} onClick={() => handleRemoveTask({ task })}></RemoveButton>
+    </TaskContainer>
   )
 }
 

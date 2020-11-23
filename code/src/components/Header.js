@@ -1,26 +1,19 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { useDispatch } from 'react-redux';
 
 import { tasks } from 'reducers/tasks';
 
+import { HeaderContainer } from '../styling/styling';
 
 const Header = () => {
   const tasksArray = useSelector((store) => store.tasks.items);
-  const completedTasks = tasksArray.filter((task) => task.complete);
-  const dispatch = useDispatch();
-
-  const handleRemoveAll = () => {
-    dispatch(tasks.actions.removeAll());
-  }
+  const completedTasks = tasksArray.filter((task) => task.isComplete);
 
   return (
-    <div>
-      TODO
-      <p>Number of tasks: {tasksArray.length} </p>
-      <p>Finished tasks: {completedTasks.length} </p>
-      <button onClick={handleRemoveAll}>Remove all</button>
-    </div>
+    <HeaderContainer>
+      <h1>My todo list</h1>
+      <p>You have completed: {completedTasks.length} / {tasksArray.length} </p>
+    </HeaderContainer>
   )
 };
 
