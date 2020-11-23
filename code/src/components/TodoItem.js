@@ -31,11 +31,10 @@ export const TodoItem = ({itemIndex}) =>{
       checked={item.done ? "checked" : "" }
       >
       </input>
-      <span>{item.text}</span>
-
-       <button type="button" onClick={handleRemoveClick}>Remove Item</button>
-       <span>Created: {moment(item.created).fromNow()}</span>
-       <span>Due: {moment(item.dueDate).endOf('day').fromNow()}</span>
+      <span className="todo-item-text">{item.text}</span>
+       <button className="todo-item-remove-button" type="button" onClick={handleRemoveClick}>Remove Item</button>
+       <span className="todo-date-created">Created: {moment(item.created).fromNow()}</span>
+       <span className={moment(item.dueDate).endOf('day') < moment() ? 'todo-past-due': 'todo-pre-due'}>Due: {moment(item.dueDate).endOf('day').fromNow()}</span>
     </li>
   )
 }
