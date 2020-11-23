@@ -3,6 +3,8 @@ import { useSelector } from "react-redux"
 
 import moment from "moment"
 
+import { ClearButton } from './ClearButton'
+
 import './Header.css'
 
 export const Header = () => {
@@ -17,7 +19,7 @@ export const Header = () => {
         </h1>
       <p className='current-date-p'>{moment().format('MMMM Do')}</p>
       <p className='completed-p'>Completed {completed.length} out of {items.length}</p>
-      <button>clear all</button>
+      <ClearButton></ClearButton>
     </header>
   )
 }

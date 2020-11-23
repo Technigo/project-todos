@@ -1,0 +1,15 @@
+.clear-button{
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: none;
+  height: 40px;
+  width: 50%;
+  background-color: rgba(252, 66, 162, 0.3);
+  box-shadow: 2px 3px 3px rgba(0, 0, 0, 0.5);
+
+}
+
+.p-remove-button{
+  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+}

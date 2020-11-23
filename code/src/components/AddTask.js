@@ -26,7 +26,7 @@ export const AddTask = () => {
           type='text'
           value={taskInput}
           onChange={(event) => SetTaskInput(event.target.value)}
-          placeholder="Add task..."/>
+          placeholder="Add a to-do"/>
         </label>
       </form>
 

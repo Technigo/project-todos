@@ -23,6 +23,9 @@ export const tasks = createSlice({
       if (checkedItem) {
         checkedItem.checkedTask = !checkedItem.checkedTask
       }
+    },
+    removeAll: (state, action) => {
+      state.items = []
     }
   }
 
