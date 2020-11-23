@@ -7,6 +7,7 @@ import { tasks } from './Reducers/tasks'
 import { List } from './Components/List'
 
 const reducer = combineReducers({tasks: tasks.reducer,})
+//Here we'll use localstorage to save the current state
 const store = configureStore({ reducer })
 
 export const App = () => {

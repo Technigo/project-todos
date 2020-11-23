@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+//Add multiple lists
 
 export const tasks = createSlice({
   name: 'tasks',
@@ -26,7 +27,7 @@ export const tasks = createSlice({
     addItem: (state, action) => {
       const{ taskInfo }=action.payload
       console.log(taskInfo)
-      state.items.push({taskInfo})
+      state.items.push(taskInfo)
     },
     removeItem: (state, action) => {
       state.items.pop()
