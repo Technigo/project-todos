@@ -21,17 +21,18 @@ export const tasks = createSlice({
     },
     removeTask: (state, action) => {
       console.log(action.payload);
-      console.log(state.items[1]);
-
-
+      // takes the items array and filters all items with id that is not equal to payload.
       state.items = state.items.filter(item => item.id !== action.payload)
-
-
-      //const removedTask = state.tasks.tasks.find((task) => task.id === action.payload.task.task.id)
-      // console.log(removedTask)
-
     },
     toggleCompleteStatus: (state, action) => {
+
+      const choosenTask = state.items.find(item => item.id === action.payload)
+
+      if (choosenTask) {
+        choosenTask.complete = !choosenTask.complete; 
+      };
+
+
 
     },
     removeAll: (state, action) => {

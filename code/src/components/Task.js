@@ -9,9 +9,14 @@ const Task = ({ task }) => {
   const handleRemoveTask = ({ task }) => {
     dispatch(tasks.actions.removeTask(task.id));
   }
+
+  const handleCompleteTask = ({task}) => {
+    dispatch(tasks.actions.toggleCompleteStatus(task.id));
+  }
   
   return (
     <div>
+      <button onClick={() => handleCompleteTask({ task })}>COMPLETE</button>
       {task.id}{task.text}
       <button onClick={() => handleRemoveTask({ task })}>Remove me</button>
     </div>
