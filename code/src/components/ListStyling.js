@@ -2,14 +2,19 @@ import styled from 'styled-components';
 
 export const ListContainer = styled.ul`
 display: flex;
-width: 100%;
+border-radius: 16px;
+margin-left: 25%;
+margin-top: 25%;
+align-items: center;
+background-color: #ffadad;
+width: 50%;
 flex-direction: column;
 `;
 
 export const ListActionButton = styled.button`
 align-self: center;
-padding: 4px;
-margin: 2px;
-font-size: 22px;
-color: #3f3f3f;
+font-size:30px;
+border-radius: 20px;
+padding: 20px;
+margin: 50px;
 `;

@@ -4,6 +4,7 @@ import { Item } from './Item.js';
 
 import { todos } from 'reducers/todos';
 import { ListContainer, ListActionButton } from './ListStyling'
+import { AddTodo } from 'components/AddTodo';
 
 export const TodosList = () => {
   const dispatch = useDispatch();
@@ -11,6 +12,7 @@ export const TodosList = () => {
 
   return (
     <ListContainer>
+      <AddTodo></AddTodo>
       {items.map((item, index) => (
         <Item key={index} item={item}></Item>
       ))}

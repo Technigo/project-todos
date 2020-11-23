@@ -12,15 +12,14 @@ export const todos = createSlice({
   name:"todos",
     initialState, 
     reducers: {
-      // adding to do 
+      // adding to-do 
       addTodo: (state, action) => { 
         const { todoInfo } = action.payload
         state.items.push(todoInfo);
       },
-      // removing to do
+      // removing to-do
       removeTodo: (state, action) => {
         state.items.pop();
       },
   }
-
 });
