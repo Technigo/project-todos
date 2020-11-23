@@ -4,6 +4,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { toread } from "./reducers/toread"
 
 import { Header } from "./components/Header"; 
+import { AddBook } from "./components/AddBook"
 import { BookList } from "./components/BookList"
 
 const reducer = combineReducers({ toread: toread.reducer }); //specifices the reducer
@@ -13,6 +14,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
+      <AddBook />
       <BookList />
     </Provider>
   )

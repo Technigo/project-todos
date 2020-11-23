@@ -10,6 +10,6 @@ const HandleBookContainer = styled.li`
 
 export const HandleBook = ({ book }) => {
   return (
-    <HandleBookContainer>{book}</HandleBookContainer>
+    <HandleBookContainer>{book.title}</HandleBookContainer>
   );
 };  

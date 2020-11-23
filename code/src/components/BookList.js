@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 import { useSelector } from "react-redux";
-import { toread } from "../reducers/toread";
+import { toread } from "../reducers/toread"
 
 import { HandleBook } from "./HandleBook"
+import { DeleteBooks } from "./DeleteBooks"
 
 const ListContainer = styled.ul`
   display: flex;
@@ -20,8 +21,8 @@ export const BookList = () => {
 
   return (
   <ListContainer>
-    {books.map((book) => (
-      <HandleBook book={book}></HandleBook>
+    {books.map((book, index) => (
+      <HandleBook book={book} key={index} ></HandleBook>
     ))}
   </ListContainer>
   );
