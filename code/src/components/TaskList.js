@@ -1,6 +1,28 @@
 import React from 'react'
-import { Task } from './Task'
 import { useSelector } from 'react-redux'
+
+import styled from 'styled-components'
+
+import { Header } from './Header'
+import { Task } from './Task'
+import { Footer } from './Footer'
+
+const Section = styled.section`
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`
+
+const TasksContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 80%;
+  background-color: orange;
+`
 
 export const TaskList = () => {
 
@@ -8,18 +30,22 @@ export const TaskList = () => {
     (state) => state.tasks
   )
 
-  console.log(task)
+  console.log(task) //remove later
 
   return (
-    <div className="tasklist-container">
-      {task.map(task => {
-        return (
-          <Task
-            key={task.id}
-            {...task}
-          />
-        )
-      })}
-    </div>
+    <Section>
+      <Header />
+      <TasksContainer>
+        {task.map(task => {
+          return (
+            <Task
+              key={task.id}
+              {...task}
+            />
+          )
+        })}
+      </TasksContainer>
+      <Footer />
+    </Section>
   )
 }

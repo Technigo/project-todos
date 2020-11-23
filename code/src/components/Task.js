@@ -1,8 +1,14 @@
 import React from 'react'
 
+import styled from 'styled-components'
+
+const TaskContainer = styled.div`
+  padding: 10px;
+`
+
 export const Task = ({id, text, complete}) => {
   return (
-    <div className="task-container">
+    <TaskContainer>
       <input
         type="radio"
         name="task"
@@ -14,6 +20,6 @@ export const Task = ({id, text, complete}) => {
       >
         {text}
       </label>
-    </div>
+    </TaskContainer>
   )
 }
