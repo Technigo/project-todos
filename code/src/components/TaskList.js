@@ -5,7 +5,7 @@ import Task from './Task';
 
 const TaskList = () => {
   // fetch the tasks from the store
-  const allTasksArray = useSelector((store) => store.tasks.tasks)
+  const allTasksArray = useSelector((store) => store.tasks.items)
 
   return (
     <div>

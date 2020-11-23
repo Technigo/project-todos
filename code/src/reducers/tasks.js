@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  tasks: [
+  items: [
     { id: 1, text: 'Create a store', complete: true },
     { id: 2, text: 'Create components', complete: false },
     { id: 3, text: 'Mobile first', complete: false },
@@ -17,10 +17,25 @@ export const tasks = createSlice({
     addTask: (state, action) => {
       //const {text, category, dueDate} = action.payload
       // state.tasks.push({name, category, dueDate})
-      state.tasks.push(action.payload);
+      state.items.push(action.payload);
+    },
+    removeTask: (state, action) => {
+      console.log(action.payload);
+      console.log(state.items[1]);
+
+
+      state.items = state.items.filter(item => item.id !== action.payload)
+
+
+      //const removedTask = state.tasks.tasks.find((task) => task.id === action.payload.task.task.id)
+      // console.log(removedTask)
+
+    },
+    toggleCompleteStatus: (state, action) => {
+
     },
     removeAll: (state, action) => {
-      state.tasks = []
+      state.items = []
     }
   }
 })

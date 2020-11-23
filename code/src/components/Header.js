@@ -6,7 +6,7 @@ import { tasks } from 'reducers/tasks';
 
 
 const Header = () => {
-  const tasksArray = useSelector((store) => store.tasks.tasks);
+  const tasksArray = useSelector((store) => store.tasks.items);
   const completedTasks = tasksArray.filter((task) => task.complete);
   const dispatch = useDispatch();
 

@@ -7,11 +7,9 @@ import Header from 'components/Header'
 import TaskList from 'components/TaskList'
 import AddTask from 'components/AddTask'
 
-const reducer = combineReducers({
-  tasks: tasks.reducer
-})
+const reducer = combineReducers({ tasks: tasks.reducer });
 
-const store = configureStore({ reducer })
+const store = configureStore({ reducer });
 
 export const App = () => {
   return (
