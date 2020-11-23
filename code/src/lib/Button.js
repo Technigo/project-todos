@@ -1,7 +1,10 @@
 import styled from 'styled-components';
 
 export const Button = styled.button `
-
+  width: 100%;
+  background-color: transparent; 
+  border: none;
+  display: flex;
 `
 export const RoundButton = styled(Button) `
   height: 50px;

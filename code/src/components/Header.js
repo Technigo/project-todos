@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <Title>Do something!</Title>
+      <Title>Structure your life, please</Title>
       <TodayDate />
       {/* <RoundButton
       onClick = {() => handleClick()}
@@ -26,11 +26,8 @@ const Header = () => {
       > */}
 
       {/* hur kan jag tabba till denna? */}
-      <PlusIcon src="../assets/plus-icon.svg" alt="plus icon" role="button" onClick = {() => handleClick()}/>
-    
-      
+      <PlusIcon src="../assets/plus-icon.svg" alt="plus icon" role="button" onClick = {() => handleClick()}/> 
       <TodoSummary /> 
-
     </HeaderContainer>
   )
 }

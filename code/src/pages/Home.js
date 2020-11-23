@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 
 import TodoList  from '../components/TodoList';
-import TodayDate from '../components/TodayDate';
+//import TodayDate from '../components/TodayDate';
 import CreateTodo from './CreateTodo';
 
 

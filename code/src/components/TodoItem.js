@@ -5,6 +5,7 @@ import { todos } from '../reducers/todos';
 import { Image } from '../lib/Image';
 import styled from 'styled-components';
 import CustomCheckbox from '../lib/CustomCheckbox';
+import TodoAccordion from './TodoAccordion';
 
 
 
@@ -24,7 +25,7 @@ const TodoItem = ({ itemIndex }) => {
   }
 
   //Mark todo as complete 
-  const handleChange = (event) => {
+  const handleOnChange = (event) => {
     dispatch (
       todos.actions.setComplete({
         itemIndex: itemIndex,
@@ -35,13 +36,13 @@ const TodoItem = ({ itemIndex }) => {
   }
 
   return (
-    <Container>
-      <label>
+    <>
+      {/* <label>
         <CustomCheckbox
           checked={checked}
           onChange={handleChange}
         ></CustomCheckbox>
-      </label>
+      </label> */}
       {/* <input 
         type="Checkbox"
         onChange={handleChange}
@@ -49,23 +50,32 @@ const TodoItem = ({ itemIndex }) => {
         checked={item.complete ? "checked" : ""}
       >
       </input> */}
-      
-        <p className="todo__item-description">{item.description}</p> 
-        <p className="todo__item-category">{item.category}</p> 
-        <p>Created: {moment(item.date).fromNow()}</p>
-        <p>{moment(item.dueDate).format('MMM Do YYYY')}</p> 
+        <TodoAccordion 
+          accordionText={item.description}
+          accordionCategory={item.category}
+          accordionDueDate={moment(item.dueDate).format('MMM Do YYYY')}
+          accordionCreated={moment(item.date).fromNow()}
+          checked={checked}
+          handleOnChange={handleOnChange}
+          onRemoveTodo={onRemoveTodo}>
+                  
+        </TodoAccordion>
+        {/* <p className="todo__item-description">{item.description}</p>  */}
+        {/* <p className="todo__item-category">{item.category}</p>  */}
+        {/* <p>Created: {moment(item.date).fromNow()}</p> */}
+        {/* <p>{moment(item.dueDate).format('MMM Do YYYY')}</p>  */}
 
-        <div className="todo__item-delete" onClick={onRemoveTodo}>
+        {/* <div className="todo__item-delete" onClick={onRemoveTodo}>
           <Image src="./assets/garbage.svg" alt="trash bin"/>
-        </div>
-    </Container>
+        </div> */}
+    </>
   )
 }
 export default TodoItem
 
-const Container = styled.div `
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-`
+// const Container = styled.div `
+//   display: flex;
+//   width: 100%;
+//   justify-content: space-between;
+//   align-items: center;
+// `

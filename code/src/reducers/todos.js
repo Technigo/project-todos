@@ -12,7 +12,7 @@ const initialState = {
       },
       {
         description: "my second todo",
-        complete: true,
+        complete: false,
         category: 'Personal',
         dueDate: '',
       },

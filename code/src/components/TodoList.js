@@ -10,6 +10,7 @@ import { todos } from '../reducers/todos';
 import RemoveAll from './RemoveAll';
 import Header from './Header';
 import styled from 'styled-components';
+import TodoAccordion from "./TodoAccordion";
 
 
 
@@ -67,28 +68,36 @@ const TodoList = () => {
   return (
     <>
     <Header />
+    
     <Container>
-        <label htmlFor="category">Choose a category:</label>
-        <select 
-          name="category" 
-          id="category" 
-          onChange={(event) => setFilteredCategory(event.target.value)} 
-          value={filteredCategory}>
-          {categories.map(option => (
-            <option key={option} value={option}>{option}</option>
-          ))}
-        </select>
+      <div>
+        <label htmlFor="category">Category:
+          <select 
+            name="category" 
+            id="category" 
+            onChange={(event) => setFilteredCategory(event.target.value)} 
+            value={filteredCategory}>
+            {categories.map(option => (
+              <option key={option} value={option}>{option}</option>
+            ))}
+          </select>
+        </label>
 
-        <label htmlFor="status">Filter on status</label>
-        <select 
-          name="status" 
-          id="status" 
-          onChange={(event) => setFilteredComplete(event.target.value)} 
-          value={filteredComplete}>
-          <option value='all'>All</option>
-          <option value='completed'>Completed</option>
-          <option value='not completed'>Not completed</option>
-        </select>
+        <label htmlFor="status">Status:
+          <select 
+            name="status" 
+            id="status" 
+            onChange={(event) => setFilteredComplete(event.target.value)} 
+            value={filteredComplete}>
+            <option value='all'>All</option>
+            <option value='completed'>Completed</option>
+            <option value='not completed'>Not completed</option>
+          </select>
+        </label>
+      </div>
+      {/* <TodoAccordion 
+        accordionText='Hello'
+      /> */}
         {list.map((item, index) => (
           <TodoItem key={index} itemIndex={index} />
         ))}   

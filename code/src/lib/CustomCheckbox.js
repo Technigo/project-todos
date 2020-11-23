@@ -32,13 +32,14 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 
 const StyledCheckbox = styled.div`
   display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: ${props => (props.checked ? '#0e645a' : 'papayawhip')};
-  border-radius: 3px;
+  width: 20px;
+  height: 20px;
+  border: 2px solid ${props => (props.checked ? '#0e645a' : '#C3BBAE')};
+  background: ${props => (props.checked ? '#0e645a' : '#fff')};
+  border-radius: 50%;
   transition: all 150ms;
   ${HiddenCheckbox}:focus + & {
-    box-shadow: 0 0 0 3px #119971;
+    box-shadow: 0 0 0 2px pink;
   }
   ${Icon} {
     visibility: ${props => (props.checked ? 'visible' : 'hidden')};
@@ -50,7 +51,7 @@ const CustomCheckbox = ({ className, checked, ...props }) => (
     <HiddenCheckbox className="hiddencheck" checked={checked} {...props} />
     <StyledCheckbox checked={checked}>
       <Icon viewBox="0 0 24 24">
-        <polyline points="20 6 9 17 4 12" />
+        <polyline points="20 6 9 17 4 12"/>
       </Icon>
     </StyledCheckbox>
   </CheckboxContainer>
