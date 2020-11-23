@@ -10,12 +10,12 @@ export const Subtitle = styled.h2`
   font-size: 20px;
 `;
 
-export const ParagrafText = styled.p`
+export const Paragraf = styled.p`
   color: ${(props) => props.color || 'black'};
   font-size: 18px;
 `;
 
-export const SpanText = styled.span`
+export const Span = styled.span`
   color: ${(props) => props.color || 'black'};
   font-size: 16px;
 `;

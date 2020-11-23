@@ -5,6 +5,7 @@ import { todos } from './reducers/todos';
 
 import { Summary } from './components/Summary';
 import { TodoList } from './components/TodoList';
+import { FilterTodo } from 'components/FilterTodo';
 
 const reducer = combineReducers({
   todos: todos.reducer
@@ -17,6 +18,7 @@ export const App = () => {
     <Provider store={store}>
       <Summary />
       <TodoList />
+      <FilterTodo />
     </Provider>
   );
 };

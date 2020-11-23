@@ -4,13 +4,14 @@ import { todos } from 'reducers/todos';
 import styled from 'styled-components';
 
 import { Button } from '../lib/Button';
-import { Title, SpanText } from '../lib/Text';
+import { Title, Span } from '../lib/Text';
 
 const Container = styled.header`
-  margin: 20px;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: lightgrey;
 `;
 
 export const Summary = () => {
@@ -27,10 +28,10 @@ export const Summary = () => {
   return (
     <Container>
       <Title>My Todo App</Title>
-      <SpanText>{allTodos.length} todos</SpanText>
-      <SpanText>
+      <Span>{allTodos.length} todos</Span>
+      <Span>
         {leftTodos.length} todo{leftTodos.length === 1 ? '' : 's'} left
-      </SpanText>
+      </Span>
       <Button onClick={handleClearAll}>Clear all</Button>
     </Container>
   );

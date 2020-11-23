@@ -11,6 +11,20 @@ export const todos = createSlice({
     ]
   },
   reducers: {
+    addTodo: (state, action) => {
+      const { text } = action.payload;
+      state.items.push({
+        id: Date.now(),
+        text,
+        completed: false,
+        startDate: Date.now() // When added
+      });
+    },
+    removeTodo: (state, action) => {
+      // Find whatever item
+      // remove it from the items array
+      state.items = state.items.filter((item) => item.id !== action.payload);
+    },
     toggleCompleted: (state, action) => {
       // Find item to toggle
       const foundItem = state.items.find((item) => item.id === action.payload);
@@ -20,6 +34,14 @@ export const todos = createSlice({
         foundItem.completed = !foundItem.completed;
       }
     },
+    // showActive: (state) => {
+    //   // Filter out the active Todos
+    //   state.items = state.items.filter((item) => !item.completed);
+    // },
+    // showCompleted: (state) => {
+    //   // Filter out the completed Todos
+    //   state.items = state.items.filter((item) => item.completed);
+    // },
     clearAll: (state) => {
       state.items = [];
     }

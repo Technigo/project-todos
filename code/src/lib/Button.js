@@ -7,6 +7,7 @@ export const Button = styled.button`
   font-size: 20px;
   border: none;
   border-radius: 6px;
+  width: ${(props) => props.width};
   &:hover {
     background: black;
     color: white;
