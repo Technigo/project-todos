@@ -24,9 +24,9 @@ export const tasks = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      const{text}=action.payload
-      console.log(text)
-      state.items.push({text})
+      const{ taskInfo }=action.payload
+      console.log(taskInfo)
+      state.items.push({taskInfo})
     },
     removeItem: (state, action) => {
       state.items.pop()
