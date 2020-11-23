@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit';
+import { combineReducers, createStore } from '@reduxjs/toolkit';
 
 import { todolist } from 'reducers/todolist';
 import { StudiesTasks } from 'components/StudiesTasks';
@@ -18,6 +18,7 @@ const reducer = combineReducers({
 });
 
 // This is the store setup if I don't want to use the local storage
+// import configureStore again if I want to use it again
 // const store = configureStore({ reducer });
 
 // Setup in order to use local storage to save our to do list and not delete
