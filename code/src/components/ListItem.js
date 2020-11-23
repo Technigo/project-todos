@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { todolist } from 'reducers/todolist';
+import { CustomCheckbox } from 'styled-components/CustomCheckbox';
 
 // Component to render each item on the to do list individually, this component
 // will provide a checkbox to mark the task as complete or incomplete, the text
@@ -33,14 +34,7 @@ export const ListItem = ({ listItem }) => {
 
   return (
     <div className="list-item" style={{display: "flex"}}>
-      <input 
-        type="checkbox"
-        onChange={handleOnChange}
-        // The checked attribute value depends on the complete property of the item
-        // this property has an initial value of false, but will change to true
-        // when clicked on which calls the handleOnChange function
-        checked={listItem.complete ? "checked" : ""}
-      ></input>
+      <CustomCheckbox isChecked={listItem.complete ? "checked" : ""} onChangeHandler={handleOnChange} />
       <p style={{textDecoration: listItem.complete ? "line-through" : ""}}>
         {listItem.text} / {listItem.category}
       </p>
