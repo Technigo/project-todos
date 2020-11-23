@@ -7,9 +7,15 @@ body {
 	font-family: "Ubuntu", sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background-color: rgb(232 232 232 / 87%);
+	background-color: #74ebd5;
+	background-image: linear-gradient(180deg, #24c1a4 0%, #9face6 100%);
+	min-height: 100vh;
 }
 
+.root {
+	display: flex;
+	flex-direction: column;
+}
 code {
 	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
 		monospace;
@@ -18,11 +24,13 @@ code {
 main {
 	display: flex;
 	flex-direction: column;
+	/* margin: auto 0; */
+	/* align-self: center; */
 }
 
 .header {
 	padding: 10px;
-	background-color: #8d5664;
+	/* background-color: #8d5664; */
 	color: white;
 }
 
@@ -33,7 +41,7 @@ main {
 
 .header-title {
 	font-size: 16px;
-	margin: 0;
+	margin: 10px 0;
 }
 
 .header-day {
@@ -68,7 +76,7 @@ main {
 
 .todo-date-picker {
 	height: 50px;
-	width: 48%;
+	flex: 1;
 	font-size: 18px;
 	border: none;
 	font-family: "Ubuntu", sans-serif;
@@ -76,13 +84,14 @@ main {
 }
 
 .todo-form-submit-button {
-	width: 48%;
+	flex: 1;
 	border: none;
 	cursor: pointer;
 	font-weight: 700;
 	background-color: white;
 	font-family: "Ubuntu", sans-serif;
 	font-size: 16px;
+	color: #333;
 }
 
 .todo-form-submit-button:hover {
@@ -100,12 +109,21 @@ main {
 .reset-button,
 .set-done-button {
 	height: 50px;
-	width: 48%;
+	/* width: 48%; */
 	border: none;
-	margin: 2px;
+	/* margin: 2px; */
 	font-size: 16px;
 	box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
 	font-family: "Ubuntu", sans-serif;
+	flex: 1;
+	background: rgba(255, 255, 255, 0.8);
+}
+
+.set-done-button {
+	margin-left: 1px;
+}
+.reset-button {
+	margin-right: 1px;
 }
 
 .reset-button:hover,
@@ -134,20 +152,25 @@ main {
 }
 
 .todo-item {
-	background-color: white;
+	background: rgba(255, 255, 255, 0.5);
 	display: flex;
 	justify-content: space-between;
+
+	border-left: 6px solid transparent;
 }
 
 .todo-item-text {
 	font-weight: 700;
 	margin-left: 10px;
+	color: #333;
 }
 
 .todo-item-done {
-	background-color: #bacdc4;
+	/* background-color: #009688; */
+	background: rgba(255, 255, 255, 0.5);
 	display: flex;
 	justify-content: space-between;
+	border-left: 6px solid #068367;
 }
 
 .item-wrapper {
@@ -190,6 +213,7 @@ main {
 	font-size: 18px;
 	border-radius: 50%;
 	border: none;
+	background-color: white;
 }
 
 .todo-list-wrapper {
@@ -204,7 +228,7 @@ main {
 .todo-summary-text {
 	font-size: 16px;
 	padding: 0 15px;
-	color: gray;
+	color: #333;
 }
 
 .empty-todo-list {
@@ -212,5 +236,12 @@ main {
 	flex-direction: column;
 	align-items: center;
 	padding: 0 20px;
-	color: #5f5f5f;
+	color: #333;
+}
+
+@media only screen and (min-width: 768px) {
+	main {
+		width: 768px;
+		align-self: center;
+	}
 }
