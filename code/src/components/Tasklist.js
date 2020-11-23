@@ -7,23 +7,27 @@ import {tasks} from '../reducers/tasks'
 
 const Tasklist = () => {
     const Listedtasks = useSelector(store => store.tasks.items)
-    console.log(Listedtasks)
     const dispatch = useDispatch()
+    const completedTasks = Listedtasks.filter(task => task.complete === true)
+    
 
     return(
         <section>
+            <p>Completed: {completedTasks.length}/{Listedtasks.length}</p>
             {Listedtasks.map(task => {
                 return (
-                    <Task text={task.text} key={task.id} complete={task.complete}/>
+                    <div key={task.id}>
+                        <Task text={task.text}  complete={task.complete} task={task}/>
+                        <button onClick={()=>dispatch(tasks.actions.removeThisTask(task))}>Remove</button>
+                        {console.log(task.text)}
+                    </div>
                     )
             })}
            
            <NewTask />
-           <button onClick={()=>dispatch(tasks.actions.removeTask())}>Remove</button>
+           <button onClick={()=>dispatch(tasks.actions.clearTasks())}>Clear All</button>
         </section>
     )
 }
 
 export default Tasklist
-
-{/* <p key={task.id}>{task.text}</p> */}

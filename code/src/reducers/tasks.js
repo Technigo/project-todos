@@ -1,4 +1,3 @@
-import React from 'react'
 import {createSlice} from '@reduxjs/toolkit'
 
 const taskList = [
@@ -14,11 +13,32 @@ export const tasks = createSlice({
         items: taskList},
     reducers: {
         addTask: (state, action) => {
-            state.items.push(action.payload);
+            const latestTaskId = state.items.map(task => task.id)
+            state.items.push({
+                id: (state.items.length > 0 ? Math.max(...latestTaskId) +1 : 1), 
+                text: action.payload, 
+                complete: false});
         },
 
-        removeTask: (state, action) => {
-            state.items.pop();
+        clearTasks: (state) => {
+            state.items.length = 0;
+        },
+
+        removeThisTask: (state, action) => {
+            const {id} = action.payload;
+            const task = state.items.find(t => t.id === id)
+            state.items.splice(state.items.indexOf(task),1);
+        },
+
+        markComplete: (state, action) => {
+            const {id} = action.payload;
+            // task.complete = true;
+            // action.payload.splice(2,1,"false")
+            state.items.map((task) => (
+            task.id === id ? { ...task, complete: true } : task 
+            ))
+            return 
+            
         }
     }
 })
