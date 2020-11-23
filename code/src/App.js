@@ -8,7 +8,7 @@ import { HouseChoreTasks } from 'components/HouseChoreTasks';
 import { ShoppingList } from 'components/ShoppingList';
 import { OtherTasks } from 'components/OtherTasks';
 import { AddToDoInput } from 'components/AddToDoInput';
-import { MissingCount } from 'components/MissingCount';
+import { Header } from 'components/Header';
 
 // I have set up one main reducer with an initial state and actions
 // Here I create variables for accessing the reducer data and
@@ -26,6 +26,7 @@ export const App = () => {
     // are called within this provider will have access to the data
     // in the store
     <Provider store={store}>
+      <Header />
       <AddToDoInput />
       <section className="lists-container">
         <StudiesTasks />
@@ -33,7 +34,6 @@ export const App = () => {
         <ShoppingList />
         <OtherTasks />
       </section>
-      <MissingCount />
     </Provider>
   );
 };
