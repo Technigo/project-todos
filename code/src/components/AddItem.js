@@ -2,14 +2,12 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
 
-import  Add  from '../assets/add.png'
-import { AddButton } from '../styling/AddItemStyling'
+import { Button, TextInput, Form } from '../styling/AddItemStyling'
 
 
 
 export const AddItem = () => {
     const [text, setText] = useState ('')
-
     const dispatch = useDispatch()
 
     const handleSubmit = (event) => {
@@ -18,26 +16,19 @@ export const AddItem = () => {
         setText('')
     }
     return(
-        <form onSubmit ={handleSubmit}>
+        <Form onSubmit ={handleSubmit}>
             <label>
-                <input
-                  className="new"
+                <TextInput
                   placeholder="New todo"
                   type="text"
                   value={text}
                   onChange={(event) => setText(event.target.value)}
                 />
             </label> 
-                <button
-                  className ="add"
+                <Button
                   type="submit">
-                  <img src={Add} alt="plus" />
-                </button>
-        </form>
+                  +
+                </Button>
+        </Form>
     )
 }
-/*
-
-<ListAddButton onClick={() => dispatch(todos.actions.addItem({text}))}>Add one</ListAddButton>
-
-*/

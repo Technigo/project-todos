@@ -18,7 +18,6 @@ export const App = () => {
      <Header></Header>
      <List></List>
      <AddItem></AddItem>
-     <Summary></Summary>
    </Provider>
   )
 }

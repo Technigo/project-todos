@@ -1,20 +1,20 @@
+/*
+
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
 
 import { Container } from '../shared/Container'
-
+import Trash from '../assets/trash-can.png'
 import styled from 'styled-components'
 
 
 const RemoveAll = styled.div`
   display:flex;
-  flex-direction:column;
+  justify-content:center;
 `
 
 export const Summary = () => {
-    const items = useSelector((store) => store.todos.items)
-    const completedItems = items.filter((item) => item.completedTask)
     const dispatch = useDispatch()
 
     const handleRemoveAll = () => {
@@ -24,13 +24,16 @@ export const Summary = () => {
     return (
         <Container>
             <RemoveAll>
-                <p>completed tasks: {completedItems.length}</p>
-                    <button type="button"
-                      onClick ={handleRemoveAll}>
-                      Delete All!
-                    </button>
+                <button
+                    className="remove-all"
+                    type="button"
+                    onClick ={handleRemoveAll}>
+                    Delete All!
+                    <img src={Trash} alt="trashcan"/>
+                </button>
             </RemoveAll>
         </Container>
     )
 }
 
+*/

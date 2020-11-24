@@ -34,9 +34,7 @@ export const Item = ({ item }) => {
           type="button"
           className="remove"
           onClick={handleRemoveButtonClick}>
-          
-          <img src={Trash} alt="trashcan" />
-          
+          <img src={Trash} alt="trashcan"/>
         </button>
     </TodoContainer>
   </Container>

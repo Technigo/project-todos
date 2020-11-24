@@ -5,10 +5,10 @@ export const TodoContainer = styled.li`
   flex-direction:row; 
   justify-content: space-between;
   padding:20px;
-  margin:10px;
+  margin:5px;
   font-size: 18px;
   background-color:#F4F4F4;
-  border-radius: 10px;
+  border-radius: 10px 0px;
   width:80%;
   border-bottom-style: solid;
 
