@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { Container, Paper, Box } from "@material-ui/core";
+import { Container, Paper, Box, Fab, Dialog } from "@material-ui/core";
 import styled from "styled-components";
 import { createMuiTheme, ThemeProvider, useTheme } from '@material-ui/core/styles';
 
@@ -17,10 +17,18 @@ const reducer = combineReducers({ tasks: tasks.reducer });
 const store = configureStore({ reducer });
 
 //special syntax needed to override styling of MUI (&&)
-// const MyContainer = styled(Container)`
-//   && {
-//   padding: 0;
-//   }`;
+const MyContainer = styled(Container)`
+   && {
+   padding: 0;
+   }`;
+
+const MyFab = styled(Fab)`
+&& {
+  position: fixed;
+  bottom: 20px;
+  right: 30px;
+}
+`
 
   // const theme = createMuiTheme({
   //   palette: {
@@ -29,19 +37,28 @@ const store = configureStore({ reducer });
   // })
 
 export const App = () => {
+
+  const [open, setOpen] = React.useState(false);
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
+
+  const handleClose = () => {
+    setOpen(false);}
   
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
-        
-      <Paper> 
-      {/* <MyContainer maxWidth="xs"> */}
+      <MyContainer maxWidth="xs">
         <Header/>
-        <TodoInput />
+        <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
+        <TodoInput onClose={handleClose}/>
+        </Dialog>
         <TodoList />
-      {/* </MyContainer> */}
-      </Paper>
-      
+        <MyFab color="primary" aria-label="add" onClick={handleClickOpen}>       
+      </MyFab>
+      </MyContainer>
       </ThemeProvider>
     </Provider>
   );
