@@ -25,19 +25,38 @@ h1 {
 /* HEADER */
 
 .header-container {
-  border: 2px solid black;
-  margin: 40px;
+  margin: 40px 40px 0;
   padding: 20px;
   width: 600px;
   display: flex;
- 
-
+  background-color: #ffffff73;
+  border-bottom: 2px solid black;
 }
 
-
-
 .header-date {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+}
+
+/* LIST */
+
+.task-container{
+align-self: flex-start;
+padding: 13px;
+margin: 0 40px;
+font-size: 22px;
+background-color: #ffffff73;
+display: flex;
+justify-content: center;
+flex-direction: column;
+}
+
+/* REMOVE BUTTON */
+.task-list-button {
+align-self: center;
+padding: 4px;
+margin: 22px;
 font-size: 18px;
-font-weight: bold;
-text-align: left;
+color: #3f3f3f;
 }
