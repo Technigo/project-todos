@@ -11,14 +11,13 @@ export const AddTodo = () => {
   const [text, setText] = useState("")
   const [complete, setComplete] = useState(false)
 
-
   const dispatch = useDispatch()
 
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(todoTasks.actions.addTask({ id, text, complete }))
     //not sure
-    setId(Date.now())
+    setId()
     setText("")
     // not sure
     setComplete()
