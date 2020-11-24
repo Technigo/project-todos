@@ -1,0 +1,41 @@
+/* CSS file for a list item and its contents */
+
+.list-item {
+  /* border: 1px dashed greenyellow; */
+  padding: 16px;
+  display: flex;
+  align-items: center;
+}
+
+.list-item button {
+  height: 24px;
+  width: 24px;
+  padding: 0;
+  /* REMOVE BEFORE SUBMISSION */
+  outline: 0;
+  border: none;
+  background: none;
+  margin-right: 8px;
+  border-radius: 12px;
+}
+
+.list-item button:hover {
+  background: rgba(0,0,0,0.1);
+}
+
+.list-item button:active {
+  background: rgba(0,0,0,0.2);
+}
+
+.list-item p {
+  flex-grow: 1;
+}
+
+.p-is-done-true {
+  color: rgba(0,0,0,0.4);
+  text-decoration: line-through;
+}
+
+.p-is-done-false {
+  color: rgba(0,0,0,0.87);
+}
