@@ -1,13 +1,14 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const ItemContainer = styled.li`
+const ItemContainer = styled.p`
 align-self: flex-start;
 padding:8px;
 margin:8px;
 font-size:32px;
 color:#fff;
 background-color:#000;
+width: 50%;
 `;
 
 export const Item = ({item}) => {

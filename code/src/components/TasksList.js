@@ -1,5 +1,6 @@
 import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
+
 import {Item} from './Item'
 import styled from 'styled-components'
 import {tasks} from 'reducers/tasks'
@@ -15,7 +16,11 @@ align-self:center;
 padding:4px;
 margin:2px;
 font-size:22px;
-color:#000;
+background-color:#B0D0D3;
+border: none;
+color: #C08497;
+cursor:pointer;
+text-align:center;
 ;`
 
 export const TasksList = () => {
@@ -27,7 +32,7 @@ return (
 	{items.map((item, index)=> (
 	<Item key={index} item={item}></Item>
 	))}
-	<ListActionButton onClick={() => dispatch(tasks.actions.removeOne())}>Remove one</ListActionButton>
+	<ListActionButton onClick={() => dispatch(tasks.actions.removeOne())}>remove one</ListActionButton>
 	</ListContainer>
 )
 }
