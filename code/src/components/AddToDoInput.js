@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todolist } from 'reducers/todolist';
 
+import { AddToDoForm, AddToDoInputField, LabelText, Select, AddButton } from '../styled-components/AddToDoComponents';
+
 // This is the component where user can add a new item to the list
 export const AddToDoInput = () => {
   // The text describing the new task to add and the chosen category for this task
@@ -40,27 +42,27 @@ export const AddToDoInput = () => {
   // on the Add to do buttton, the item will be added to the todolist global state which contains
   // all items in the to do list
   return (
-    <form onSubmit={handleOnSubmit}>
-      <label>
-        Add To do Item
-        <input 
+    <AddToDoForm onSubmit={handleOnSubmit}>
+      <LabelText>
+        Add To Do: 
+        <AddToDoInputField 
           type="text"
           onChange={event => setNewTodoItem(event.target.value)}
           value={newTodoItem}
           required >
-        </input>
-      </label>
-      <label>
-        Category for this task:
-        <select value={category} onChange={(event) => setCategory(event.target.value)} required>
+        </AddToDoInputField>
+      </LabelText>
+      <LabelText>
+        Category:
+        <Select value={category} onChange={(event) => setCategory(event.target.value)} required>
           <option value="">Select category...</option>
           <option value="Studies">Studies</option>
           <option value="House Chores">House Chores</option>
           <option value="Shopping List">Shopping List</option>
           <option value="Other">Other</option>
-        </select>
-      </label>
-      <button type="submit">Add To Do</button>
-    </form>
+        </Select>
+      </LabelText>
+      <AddButton type="submit">+</AddButton>
+    </AddToDoForm>
   )
 };

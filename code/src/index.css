@@ -10,6 +10,7 @@ body {
   max-width: 500px;
   margin: auto;
   margin-top: 50px;
+  margin-bottom: 50px;
   background-color: white;
   border-radius: 10px;
 }

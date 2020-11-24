@@ -6,7 +6,6 @@ export const HeaderContainer = styled.header`
   border-top-right-radius: 10px;
   padding: 10px 25px;
   border-bottom: 1px solid #CED0D6;
-  margin-bottom: 30px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
