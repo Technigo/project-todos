@@ -6,10 +6,14 @@ import { tasks } from 'reducers/tasks'
 export const Task = ({ taskData }) => {
   const dispatch = useDispatch()
   return (
-    <div>{taskData.text}
+    <div>
+
+      <input type='checkbox' checked={taskData.complete} onChange={() => dispatch(tasks.actions.toggleItem(taskData.id))} />
+
+      {taskData.text}
 
       <button className="deleteItem" onClick={() => dispatch(tasks.actions.deleteItem(taskData.id))}>
-        Delete task
+        Delete
     </button>
 
     </div>

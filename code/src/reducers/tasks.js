@@ -33,18 +33,28 @@ export const tasks = createSlice({
     },
 
     deleteItem: (state, action) => {
-      const taskToDelete = action.payload
+      const taskId = action.payload
 
       const newState = state
-      const newTodos = state.todos.filter((task) => task.id !== taskToDelete)
+      const newTodos = state.todos.filter((task) => task.id !== taskId)
       newState.todos = newTodos
+
+      return newState
+
+    },
+
+    toggleItem: (state, action) => {
+      const taskId = action.payload
+
+      const newState = state
+      const toggleTask = newState.todos.find((task) => task.id === taskId) 
+      
+      toggleTask.complete = !toggleTask.complete
 
       return newState
 
     }
 
+
   }
-
-
-
 })
