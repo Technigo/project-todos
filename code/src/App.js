@@ -6,7 +6,6 @@ import {todos} from 'reducers/todos'
 import { Header } from 'components/Header'
 import { List } from 'components/List'
 import { AddItem } from 'components/AddItem'
-import { Summary } from 'components/Summary'
  
 const reducer = combineReducers({ todos: todos.reducer })
 const store = configureStore({ reducer })
