@@ -7,11 +7,18 @@ export const Title = styled.h1 `
 
 export const LabelTitle = styled.label `
   font-size: 20px;
+  color: #fff;
 `
 export const Paragraph = styled.p `
   font-size: 20px;
   color: #fff;
 `
-export const InputParagraph = styled(Paragraph) `
+export const TodoParagraph = styled.p`
   color: #000;
+  font-size: 16px;
 `
+
+
+// export const InputParagraph = styled(Paragraph) `
+//   color: #000;
+// `

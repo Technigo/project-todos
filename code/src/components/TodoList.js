@@ -1,19 +1,13 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
-//import TodoInput from './TodoInput';
 import TodoItem from './TodoItem';
-import TodoSummary from './TodoSummary';
-import Button from './Button';
-//import CreateTodo from 'pages/CreateTodo';
-import { todos } from '../reducers/todos';
-import RemoveAll from './RemoveAll';
-import Header from './Header';
 import styled from 'styled-components';
-import TodoAccordion from "./TodoAccordion";
+import { FilterSelect } from '../lib/Select';
+import ActionButtons from './ActionButtons';
 
 const TodoList = () => {
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
   const [filteredCategory, setFilteredCategory] = useState('')
   const [filteredComplete, setFilteredComplete] = useState('')
 
@@ -43,32 +37,17 @@ const TodoList = () => {
     //if (!filteredComplete || filteredComplete === 'all') return store.todos.list.items 
   });
   console.log(list)
-  console.log(filteredComplete)
-  console.log(filteredCategory)
+  // console.log(filteredComplete)
+  // console.log(filteredCategory)
 
-
-
-  //fattar inte riktigt denna... var pga local storage som just nu är utkommenterad
   const categories = useSelector(store => store.todos.list.categories)
-  console.log(`TodoList ${categories}`)
-
-  
-
-  //const homePage = useSelector((store) => store.todos.homePage); 
-
-  //const dispatch = useDispatch();
-
-  // const handleClick = () => {
-  //   dispatch(todos.actions.createTodo())
-  // }
+  console.log(`TodoList: ${categories}`)
 
   return (
-    <>
-    {/* <Header /> */}
     <Container>
       <Filter>
-        <label htmlFor="category">Category:
-          <select 
+        {/* <FilterLabel htmlFor="category">Category: */}
+          <FilterSelect 
             name="category" 
             id="category" 
             onChange={(event) => setFilteredCategory(event.target.value)} 
@@ -76,37 +55,32 @@ const TodoList = () => {
             {categories.map(option => (
               <option key={option} value={option}>{option}</option>
             ))}
-          </select>
-        </label>
+          </FilterSelect>
+        {/* </FilterLabel> */}
 
-        <label htmlFor="status">Status:
-          <select 
+        {/* <FilterLabel htmlFor="status">Status: */}
+          <FilterSelect 
             name="status" 
             id="status" 
             onChange={(event) => setFilteredComplete(event.target.value)} 
             //onChange={(event) => onChangeFilter(event.target.value)}
             value={filteredComplete}>
-            <option value='all'>All</option>
+            <option value='status'>Status</option>
             <option value='completed'>Completed</option>
             <option value='not completed'>Not completed</option>
-          </select>
-        </label>
+          </FilterSelect>
+        {/* </FilterLabel> */}
       </Filter>
-      {/* <TodoAccordion 
-        accordionText='Hello'
-      /> */}
         {list.map((item) => (
           <TodoItem key={item.id} item={item} />
-        ))}   
-        
+        ))}           
+        <ActionButtons />
     </Container>
-    <RemoveAll />
-    </>
   )
 }
 export default TodoList;
 
-const Container = styled.div `
+const Container = styled.section `
   padding: 20px;
   display: grid;
   grid-row-gap: 20px;
@@ -115,4 +89,9 @@ const Container = styled.div `
 const Filter = styled.div `
   display: flex;
   justify-content: space-between;
+`
+const FilterLabel = styled.label `
+  &:first-child {
+    margin-right: 10px;
+  }
 `

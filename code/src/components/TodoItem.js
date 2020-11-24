@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
 import moment from 'moment';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 import { todos } from '../reducers/todos';
 import CustomCheckbox from '../lib/CustomCheckbox';
-import { Button, AccordionButton } from '../lib/Button';
+import { Image } from '../lib/Image';
+import { TodoParagraph } from '../lib/Text'
 
 const TodoItem = ({ item }) => {
   const [checked, setChecked] = useState(item.complete);
   const [active, setActive] = useState('');
   const [height, setHeight] = useState('0px');
-  const [rotate, setRotate] = useState('');
+  //const [rotate, setRotate] = useState('');
 
   const dispatch = useDispatch();
 
@@ -24,7 +25,6 @@ const TodoItem = ({ item }) => {
     console.log(item.id)
   }
   
-
   const handleOnChange = event => {
     dispatch(todos.actions.setComplete(item.id))
     // dispatch(
@@ -39,55 +39,71 @@ const TodoItem = ({ item }) => {
 
   const toggleAccordion = () => {
     setActive(active === '' ? 'active' : '');
-    setHeight(active === 'active' ? '0px' : '50px');
-    setRotate(active === 'active' ? '' : `${rotate}`);
+    setHeight(active === 'active' ? '0px' : 'auto');
+    //setRotate(active === 'active' ? '' : `${rotate}`);
   };
 
   return (
-    <>
-      <AccordionButton className={`accordion ${active}`} onClick={toggleAccordion}>
+    <Container>
+      <MyTodos className={`accordion ${active}`} onClick={toggleAccordion}>
         <label>
         <CustomCheckbox
-          checked={checked}
+          //checked={checked}
+          checked={item.complete ? true : ""}
           onChange={handleOnChange}
         ></CustomCheckbox>
         </label>
         <TodoContainer>
-          <p>{item.description}</p>
-          <p>{item.category}</p>
+          <TodoParagraph>
+              {item.description}
+          </TodoParagraph> 
         </TodoContainer>
-        <Image src="../assets/garbage.svg" onClick={onRemoveTodo} />
-      </AccordionButton>
+        <Image src="../assets/garbage.svg" onClick={onRemoveTodo} /> 
+      </MyTodos>
+
       <Open style={{ height: `${height}` }}>
-        <p>Created: {moment(item.date).fromNow()}</p>
-        <p>Due: {moment(item.dueDate).format('MMM Do YYYY')}</p>
-      </Open>
-    </>
+          <TodoParagraph><Span>Category:</Span> {item.category}</TodoParagraph>
+          <TodoParagraph><Span>Created:</Span> {moment(item.date).fromNow()}</TodoParagraph>
+          <TodoParagraph><Span>Due:</Span> {moment(item.dueDate).format('MMM Do YYYY')}</TodoParagraph>
+        </Open>
+    </Container>
   );
 };
 
 export default TodoItem;
 
 const Container = styled.div`
-  display: flex;
+`
+
+export const MyTodos = styled.li `
   width: 100%;
-  justify-content: space-between;
+  background-color: transparent; 
+  border: none;
+  border-bottom: 1px solid #3d5f6b;
+  display: flex;
   align-items: center;
-`;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 16px;
+  padding: 10px;
+`
 
-const TodoContainer = styled(Container)`
-  flex-direction: column;
+const TodoContainer = styled.div `
+  width: 100%;  
+  display: flex;
+  justify-content: space-between;  
+  flex-direction: column; 
   align-items: flex-start;
-`;
-
-const Image = styled.img`
-  width: 20px;
+  margin-left: 10px;
 `;
 
 const Open = styled.div`
-  background-color: papayawhip;
+  padding: 4px;
   overflow: hidden;
 `;
+
+const Span = styled.span`
+  font-weight: bold;
+`
 
 
 

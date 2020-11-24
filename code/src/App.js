@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { Provider } from 'react-redux';
-import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit';
-import { BrowserRouter, Switch, Route, Router } from 'react-router-dom';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { todos } from './reducers/todos';
 import  Home  from './pages/Home';
 import styled from 'styled-components'

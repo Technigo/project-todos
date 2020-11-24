@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
-//import { useDispatch } from 'react-redux';
-import styled from 'styled-components';
+import React from 'react';
 
-//import { todos } from '../reducers/todos';
+import styled from 'styled-components';
 
 const CheckboxContainer = styled.div`
   display: inline-block;
@@ -34,8 +32,8 @@ const StyledCheckbox = styled.div`
   display: inline-block;
   width: 20px;
   height: 20px;
-  border: 2px solid ${props => (props.checked ? '#0e645a' : '#C3BBAE')};
-  background: ${props => (props.checked ? '#0e645a' : '#fff')};
+  border: 2px solid ${props => (props.checked ? '#3d5f6b' : '#3d5f6b')};
+  background: ${props => (props.checked ? '#3d5f6b' : '#fff')};
   border-radius: 50%;
   transition: all 150ms;
   ${HiddenCheckbox}:focus + & {

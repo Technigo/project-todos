@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid'; //uniqe ID
 
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import { useHistory } from 'react-router-dom'
 import { todos } from '../reducers/todos';
 //import Button from './Button';
 import { Button } from '../lib/Button';
-import { LabelTitle, InputParagraph } from '../lib/Text'
+import { LabelTitle, Paragraph } from '../lib/Text'
+import { Select } from '../lib/Select';
 import DatePicker from 'react-date-picker';
 //import DatePicker from 'react-datepicker';
 import styled from 'styled-components'
@@ -26,7 +27,7 @@ const TodoInput = () => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault()
-    console.log(todoInput)
+    //console.log(todoInput)
 
     //use dispatch to dispatch the action to save my new todo item
     dispatch (
@@ -46,22 +47,23 @@ const TodoInput = () => {
     //dispatch(todos.actions.navHomePage())  
     //console.log(handleOnSubmit)
   };
- console.log(handleOnSubmit)
- console.log(todoInput)
+ //console.log(handleOnSubmit)
+ //console.log(todoInput)
 
 return (
   <Form onSubmit={handleOnSubmit}>
-    <LabelTitle htmlFor="text">Enter a todo:</LabelTitle>
-    <textarea 
+    {/* <LabelTitle htmlFor="text">Enter a todo:</LabelTitle> */}
+    <Input 
+      type="text"
       name="text"
       id="text"
-      rows="4"
-      placeholder="Add a todo!"
+      placeholder="Enter todo..."
       onChange={event => setTodoInput(event.target.value)}
       value={todoInput}
       className="todo__input" 
     />
-    <InputParagraph>Due Date:</InputParagraph>
+
+    <LabelTitle htmlFor="due">Due Date:</LabelTitle>
     <DatePicker 
       name="due"
       id="due"
@@ -70,8 +72,8 @@ return (
       //selected={dueDate}
       //onChange={date => setDueDate(date)}
     /> 
-    <LabelTitle htmlFor="category">Choose a category:</LabelTitle>
-    <select 
+    <LabelTitle htmlFor="category">Choose category:</LabelTitle>
+    <Select 
       name="category" 
       id="category" 
       onChange={(event) => setCategory(event.target.value)} 
@@ -79,13 +81,13 @@ return (
       {categories.map(option => (
         <option key={option} value={option}>{option}</option>
       ))}
-    </select>
+    </Select>
       <Button 
         type="submit"
         disabled={!todoInput}
         //onClick={() => history.goBack()}
       >
-        <InputParagraph>Add Todo</InputParagraph>
+        <Paragraph>Add Todo</Paragraph>
       </Button>   
   </Form>
 )
@@ -93,16 +95,19 @@ return (
 export default TodoInput;
 
 export const Form = styled.form `
-height: 50vh;
-display: flex;
-flex-direction: column; 
-justify-content: space-evenly;
-padding: 20px;
+  height: 50vh;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-evenly;
 `
-/*
-
-- Recieves listId as input 
-- state for input from text box 
-- create handle submit function to dispatch addTodo 
-
- */
+export const Input = styled.input.attrs({ type: 'text' }) `
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #3d5f6b;
+  height: 30px;
+    ::placeholder {
+      font-size: 20px;
+      font-family: 'Architects Daughter', cursive;
+      color: #fff;
+    }
+`

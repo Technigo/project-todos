@@ -1,18 +1,15 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+//import { useDispatch } from 'react-redux';
 
 import { useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom'
 
 import TodoInput from '../components/TodoInput';
-import TodayDate from 'components/TodayDate';
-
-//import Button from '../components/Button';
-import { Button } from '../lib/Button'
-import { todos } from '../reducers/todos';
+import styled from 'styled-components'
+import { BackArrow } from '../lib/Image';
 
 const CreateTodo = () => {
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
   const history = useHistory();
   console.log(history)
 
@@ -20,27 +17,26 @@ const CreateTodo = () => {
   //   dispatch(todos.actions.navHomePage())
   // }
 
-  const handleClick = () => {
-    history.goBack();
-    console.log(handleClick)  
-  }
+  // const handleClick = () => {
+  //   history.goBack();
+  //   console.log(handleClick)  
+  // }
  
 
   return (
-    <div>
-      {/* <TodayDate /> */}
-      <TodoInput /> 
+    <CreateContainer>
       <Link to='/'>
-        <Button 
-          //onClick = {() => handleClick()}
-          //onclick = {() => history.goBack()}
-          type="button" 
-          className="go-back-button"
-        >
-          Go Back
-        </Button>
+        <BackArrow src="../assets/back-arrow-white.svg" alt="back arrow icon" role="button"/>  
       </Link>
-    </div>
+      <TodoInput /> 
+    </CreateContainer>
   )
 }
 export default CreateTodo;
+
+const CreateContainer = styled.main `
+  height: 100vh;
+  //background-image: linear-gradient(180deg, #590015, #793935, #98685a, #b49881);
+  background-image: linear-gradient(180deg, #05324b, #3d5f6b, #6c908c, #9cc5ae);
+  padding: 20px;
+`

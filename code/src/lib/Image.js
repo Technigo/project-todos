@@ -6,3 +6,5 @@ export const Image = styled.img `
 export const PlusIcon = styled.img `
   height: 50px;
 `
+export const BackArrow = styled(PlusIcon) `
+`

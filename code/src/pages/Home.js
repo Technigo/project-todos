@@ -1,25 +1,25 @@
 import React from 'react';
-import { useSelector } from "react-redux";
+//import { useSelector } from "react-redux";
 
 import TodoList  from '../components/TodoList';
 import Header from '../components/Header'
 //import TodayDate from '../components/TodayDate';
-import CreateTodo from './CreateTodo';
+//import CreateTodo from './CreateTodo';
 
 
 const Home = () => {
-  const homePage = useSelector((store) => store.todos.homePage); 
+  //const homePage = useSelector((store) => store.todos.homePage); 
 
- console.log(homePage ? 'true' : 'false')
+ // console.log(homePage ? 'true' : 'false')
   return (   
-    <>      
+    <main>      
       {/* <TodayDate /> 
       {!homePage 
       ? <TodoList /> 
       : <CreateTodo />}  */}
       <Header />
       <TodoList />
-    </>
+    </main>
   )
 };
 export default Home;

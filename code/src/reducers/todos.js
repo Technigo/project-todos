@@ -3,16 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   list: {
     name: "Todo list",
-    items: [
-      // {
-      //   id: null,
-      //   description: null,
-      //   complete: null,
-      //   category: null,
-      //   dueDate: null,
-      // },
-    ],
-    categories: ['All' ,'Personal', 'School', 'Work', 'Home' ],
+    items: [],
+    categories: ['Categories' ,'Personal', 'School', 'Work', 'Home', 'Other' ],
     //homePage: false,
   }
 };
@@ -49,6 +41,14 @@ export const todos = createSlice({
       console.log(`efter if ${foundItem}`)
     },
 
+    setAllComplete: (state) => {
+      state.list.items.map(item => item.complete = true)
+    },
+
+    setAllUnComplete: (state) => {
+      state.list.items.map(item => item.complete = false)
+    },
+
     removeTodo: (state, action) => {
       const { id } = action.payload;
       state.list.items = state.list.items.filter(
@@ -64,20 +64,20 @@ export const todos = createSlice({
       state.homePage = true;
     },
 
-    filterTodoStatus: (state, action) => {
-      const filter = action.payload;
-      switch (filter) {
-        case filter === "completed":
-          return state.list.items.filter(item => item.complete) //if item is equal to true
-          break;
-        case filter === "not completed":
-          return state.list.items.filter(item => !item.complete) //if item is equal to false
-          break;
-        default:
-          return state.list.items
-          break;
-      }
-    },
+    // filterTodoStatus: (state, action) => {
+    //   const filter = action.payload;
+    //   switch (filter) {
+    //     case filter === "completed":
+    //       return state.list.items.filter(item => item.complete) //if item is equal to true
+    //       break;
+    //     case filter === "not completed":
+    //       return state.list.items.filter(item => !item.complete) //if item is equal to false
+    //       break;
+    //     default:
+    //       return state.list.items
+    //       break;
+    //   }
+    // },
     
     // navHomePage: (state) => {
     //   state.homePage = false;
