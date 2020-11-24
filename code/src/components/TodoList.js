@@ -12,8 +12,6 @@ export const TodoList = () => {
   const tomorrowTasks = allTasks.todos.filter(task => task.due === 'Tomorrow')
   const laterTasks = allTasks.todos.filter(task => task.due != 'Today' && task.due != 'Tomorrow')
 
-  console.log(laterTasks);
-
   return (
     <>
     <Accordion>
@@ -26,8 +24,9 @@ export const TodoList = () => {
         </AccordionSummary>
     <AccordionDetails>
     <List>
-      {todayTasks.map((task, index) => (
-        <TodoItem key={task.id} task={task.task} index={index} done={task.done}></TodoItem>
+      {allTasks.todos.map((task, index) => (
+        task.due === 'Today' ? <TodoItem key={task.id} task={task.task} index={index} done={task.done}></TodoItem> : null
+        // <TodoItem key={task.id} task={task.task} index={task.id} done={task.done}></TodoItem>
       ))}
     </List>
     </AccordionDetails>
@@ -41,8 +40,9 @@ export const TodoList = () => {
         </AccordionSummary>
     <AccordionDetails>
     <List>
-      {tomorrowTasks.map((task, index) => (
-        <TodoItem key={task.id} task={task.task} index={index} done={task.done}></TodoItem>
+      {allTasks.todos.map((task, index) => (
+        task.due === 'Tomorrow' ? <TodoItem key={task.id} task={task.task} index={index} done={task.done}></TodoItem> : null
+        //<TodoItem key={task.id} task={task.task} index={task.id} done={task.done}></TodoItem>
       ))}
     </List>
     </AccordionDetails>
@@ -56,8 +56,9 @@ export const TodoList = () => {
         </AccordionSummary>
     <AccordionDetails>
     <List>
-      {laterTasks.map((task, index) => (
-        <TodoItem key={task.id} task={task.task} index={index} done={task.done}></TodoItem>
+      {allTasks.todos.map((task, index) => (
+        task.due != 'Today' && task.due != 'Tomorrow' ? <TodoItem key={task.id} task={task.task} index={index} done={task.done}></TodoItem> : null
+        //<TodoItem key={task.id} task={task.task} index={task.id} done={task.done}></TodoItem>
       ))}
     </List>
     </AccordionDetails>

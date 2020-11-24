@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { Container, Paper, Box, Fab, Dialog, Tooltip } from "@material-ui/core";
+import { Container, Paper, Box, Fab, Dialog, Tooltip, Snackbar, Alert } from "@material-ui/core";
 import styled from "styled-components";
 import {
   createMuiTheme,
@@ -43,9 +43,18 @@ const MyFab = styled(Fab)`
 
 export const App = () => {
   const [open, setOpen] = React.useState(false);
+  const [openSnack, setOpenSnack] = React.useState(false);
 
   const handleClickOpen = () => {
     setOpen(true);
+  };
+
+  const handleSnackOpen = () => {
+    setOpenSnack(true);
+  };
+
+  const handleSnackClose = (event, reason) => {
+    setOpenSnack(false);
   };
 
   const handleClose = () => {
@@ -62,16 +71,21 @@ export const App = () => {
             onClose={handleClose}
             aria-labelledby="form-dialog-title"
           >
-            <TodoInput onClose={handleClose} />
+            <TodoInput onClose={handleClose} handleSnack={handleSnackOpen} />
           </Dialog>
           <TodoList />
-          <Tooltip title='Add Todo'>
-          <MyFab
-            color="primary"
-            aria-label="add"
-            onClick={handleClickOpen}
-          ></MyFab>
+          <Tooltip title="Add Todo">
+            <MyFab
+              color="primary"
+              aria-label="add"
+              onClick={handleClickOpen}
+            ></MyFab>
           </Tooltip>
+          <Snackbar open={openSnack} autoHideDuration={3000} onClose={handleSnackClose}>
+            <Alert onClose={handleSnackClose} severity="success">
+              Task Created!
+            </Alert>
+          </Snackbar>
         </MyContainer>
       </ThemeProvider>
     </Provider>

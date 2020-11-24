@@ -22,7 +22,7 @@ export const tasks = createSlice({
         },
         //mark done
         markDone: (state, action) => {
-            
+            //state.todos.find(element => element.id === action.payload).done = !state.todos.find(element => element.id === action.payload).done
             state.todos[action.payload].done = !state.todos[action.payload].done
         },
         markAll: (state) => {

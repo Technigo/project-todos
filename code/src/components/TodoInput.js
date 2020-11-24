@@ -39,6 +39,7 @@ export const TodoInput = (props) => {
       sameElse: 'DD/MM/YYYY'
   })}));
     props.onClose()
+    props.handleSnack()
   };
 
   return (

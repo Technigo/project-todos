@@ -43,13 +43,12 @@ export const Header = () => {
           <MenuIcon />
         </IconButton>
         <Typography variant="h6" className={classes.title}>
-          News
+          ToDos
         </Typography>
         <DoneAllIcon onClick={() => dispatch(tasks.actions.markAll())}/>
         <Badge badgeContent={allTasks.todos.length} color="secondary">
         <AssignmentTurnedInIcon />
         </Badge>
-        <Button color="inherit">Login</Button>
       </Toolbar>
     </AppBar>
     </div>
