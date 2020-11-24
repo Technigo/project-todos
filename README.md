@@ -1,6 +1,6 @@
 # Project Todos 📝✅
 
-This project's goal is to apply my Redux knowdledge and build an application which pulls together all the parts of Redux by building a To Do app 💪 In this app, the user should be able to: add/ remove tasks, list tasks and toggle whether a task is done or not.
+This project's goal is to apply my Redux knowledge and build an application which pulls together all the parts of Redux by building a To Do app 💪 In this app, the user should be able to: add/ remove tasks, list tasks and toggle whether a task is done or not.
 
 The idea is to take advantage of Redux's state managing features and create my own Store with reducers and actions from scratch. I achieved this by using the **Redux Toolkit**.
 
