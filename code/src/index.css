@@ -11,3 +11,39 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.checkBox {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkBox > input {
+  height: 30px;
+  width: 30px;
+  outline: none;
+  transition-duration: 0.3s;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+
+/*
+This makes the box - ROUND
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  
+   border-radius: 50%;
+  */
+
+.checkBox > input:checked {
+  background-color: rgb(228, 74, 125);
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
