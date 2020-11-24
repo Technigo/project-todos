@@ -4,17 +4,20 @@ import styled from 'styled-components';
 
 import { todos } from '../reducers/todos';
 
-export const AddTodo = ({ todoId }) => { 
+export const AddTodo = () => { 
   const dispatch = useDispatch();
   const [addTodo, setAddTodo] = useState('');
 
   const handleSubmit = event => {
     event.preventDefault()
     dispatch(
-      todos.actions.addTodo({
-        todoId: todoId,
-        todoInfo: { text: addTodo }
-      })
+      todos.actions.addTodo(
+        {
+          id: Date.now(),
+          text: addTodo,
+          complete:false,
+        }
+      )
     );
     setAddTodo ('');
   };

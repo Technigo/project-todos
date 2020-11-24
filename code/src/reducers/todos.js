@@ -14,12 +14,15 @@ export const todos = createSlice({
     reducers: {
       // adding to-do 
       addTodo: (state, action) => { 
-        const { todoInfo } = action.payload
-        state.items.push(todoInfo);
+        const item  = action.payload
+        state.items.push(item);
       },
-      // removing to-do
+      // removing to-do, pop only removed the last item added to the list. 
+      // change to a specific task 
+
       removeTodo: (state, action) => {
-        state.items.pop();
+        const { todoId } = action.payload;
+        state.items = state.items.filter(a => a.id !==todoId);
       },
   }
 });
