@@ -7,7 +7,6 @@ export const SingleTodo = ({ id, text, complete }) => {
 
   // TODO:
   //add done/undone functionality
-  //add checkbox
   //add delete button
   //styled component for done and undone state
 

@@ -34,7 +34,33 @@ const initialState = {
   ]
 }
 
-
+// store =
+// {
+//   todoTasks: {
+//     allTodoTasks: [
+//       {
+//         id: 1,
+//         text: 'Watch video on actions & reducers',
+//         complete: false
+//       },
+//       {
+//         id: 2,
+//         text: 'Follow redux codealong',
+//         complete: false
+//       },
+//       {
+//         id: 3,
+//         text: 'Fork weekly assignment',
+//         complete: false
+//       },
+//       {
+//         id: 4,
+//         text: 'Create a todo app',
+//         complete: false
+//       }
+//     ]
+//   }
+// }
 
 export const todoTasks = createSlice({
 
@@ -47,7 +73,7 @@ export const todoTasks = createSlice({
       console.log(`Type: ${action.type}`)
 
       //find a checked task
-      //NOT WORKING AS EXPECTED ...
+      //WHY IS IT STORE.ALLTODOTASKS?
       const taskChecked = state.allTodoTasks.find((task) => task.id === action.payload)
       console.log(`print taskChecked: ${taskChecked.text}`)
 
@@ -57,7 +83,14 @@ export const todoTasks = createSlice({
       }
     },
     //adds a task to allTodoTasks array
-    // addTask: (store) => {}
+    addTask: (state, action) => {
+      const { id, text, complete } = action.payload
+      const timeStamp = Date.now()
+      console.log(`Time stamp: ${timeStamp}`)
+      //write Date.now() instead of timeStamp if not working
+      //WHY IS IT STORE.ALLTODOTASKS?
+      state.allTodoTasks.push({ id, text, complete })
+    },
 
     //removes the task from all todos
     //TODO:
