@@ -1,20 +1,15 @@
 import {createSlice} from '@reduxjs/toolkit'
 
+const initialState = [
+		{id: 1, text: 'Read a book', category: 'Self Care', complete: true},
+		{id: 2, text: 'Take the dog out', category: 'Household', complete: true},
+		{id: 3, text: 'Do laundry', category: 'Household', complete: true},
+		{id: 4, text: 'Make dinner', category: 'Household', complete: false},
+		{id: 5, text: 'Do some more coding', category:'Coding', complete: false}
+]
+
 export const tasks = createSlice({
-	name: 'task',
-	initialState: {
-		username: 'Katsiez',
-		items: [
-		{id: 1, text: 'Read a book', complete: true},
-		{id: 2, text: 'Take the dog out', complete: true},
-		{id: 3, text: 'Do laundry', complete: true},
-		{id: 4, text: 'Make dinner', complete: false},
-	],
-},
-	reducers: {
-		removeOne: (state, action) => {
-			state.items.pop()
-		}
-	}
+	name: 'tasks',
+	initialState: initialState
 	
 })
