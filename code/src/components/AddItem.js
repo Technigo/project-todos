@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { todoList } from '../reducers/todoList'
+import styled from 'styled-components'
 
 const AddItem = () => {
   const dispatch = useDispatch()
@@ -14,17 +15,27 @@ const AddItem = () => {
   }
   
   return (
-    <form className="add-item collection" onSubmit={(e) => submitTodo(e)}>
+    <Form className="add-item collection" onSubmit={(e) => submitTodo(e)}>
       <label htmlFor="addItem"></label>
-      <input 
+      <Input 
         id="addItem" 
         type="text" 
-        placeholder=" + Add new task"
         onChange={(e) => setTodoValue(e.target.value)}
+        placeholder="+ Add new task"
         value={todoValue}
       />
-    </form>
+    </Form>
     )
 }
- 
+
+const Form = styled.form`
+  border: 0;
+  background: transparent;
+`
+const Input = styled.input`
+&::placeholder {
+  font-size: 14px;
+}
+  `
+
 export default AddItem

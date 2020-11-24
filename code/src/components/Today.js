@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components'
 
 const Today = () => {
   let today = new Date()
@@ -10,11 +11,21 @@ const Today = () => {
   today = dd +'/'+dd+'/'+yyyy
 
   return (
-    <div>
-      <p>Today</p>
-      <p>{today}</p>
-    </div>
+    <TodaySection>
+      <TodayStyle>Today</TodayStyle>
+      <TodayStyle>{today}</TodayStyle>
+    </TodaySection>
     );
 }
+
+const TodaySection = styled.div`
+  display: flex;
+  flex-direction: column;
+  `
+const TodayStyle = styled.p`
+  color: #a8dadc;  
+  margin: 0;
+  font-weight: 600;
+  ` 
  
 export default Today;
