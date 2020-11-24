@@ -18,7 +18,8 @@ const ListActionButton = styled.button`
 
 export const List = () => {
     const [userCategory, setUserCategory] = useState([])
-    const [userNoteInput, setUserNoteInput] = useState("")
+    const [userTodoHeaderInput, setUserTodoHeaderInput] = useState("")
+    const [userTodoTextInput, setUserTodoTextInput] = useState("")
     const dispatch = useDispatch();
     const items = useSelector(store => store.todos.items)
     const form = useSelector((store) => store.todos.form);    
@@ -32,16 +33,12 @@ export const List = () => {
 
     //THIS IS FOR THE CHECKBOX ON FORM
     const handleCategoryChange = (categoryValue) => {
-        console.log(userCategory)
         userCategory.includes(categoryValue)
             ? setUserCategory(userCategory.filter((item) => item !== categoryValue))
             : setUserCategory([...userCategory, categoryValue]);
-        console.log(userCategory)
     };
 
-  ;
-    console.log(userCategory)
-
+    console.log(userTodoTextInput);
     return (
         <ListContainer>
             <ListActionButton onClick={() => dispatch(todos.actions.goToForm())}>
@@ -51,23 +48,22 @@ export const List = () => {
               <Item key={item.id} item={item}></Item>
               ))}  
             <form>
-            {/* <label htmlFor="todoHeadingInput">
+             <label htmlFor="todoHeadingInput">
                 <input
-                  value="todoheadinginput"
                   type="text"
                   aria-label="Write your task heading here"
-                  onChange={((event) => setUserNoteInput(event.target.value))}
+                  onChange={((event) => setUserTodoHeaderInput(event.target.value))}
                 />
             H1    
             </label>
             <label>
-                <input
-                  value="todotextinput"
+                <textarea
                   type="textarea"
                   aria-label="Write your task here"
-                  rows={10}
+                  rows='10'
+                  onChange={((event) => setUserTodoTextInput(event.target.value))}
                 />
-            </label> */}
+            </label>
             {/* THIS IS FOR THE CHECKBOX ON*/}
             {categories.map((category, index) => (
                 <div key={category.id}>
