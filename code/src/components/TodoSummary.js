@@ -2,31 +2,29 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import { TodoItem } from './TodoItem';
-import { TodoInput } from './TodoInput';
 import { SubTitle } from '../library/Text';
 import { Paragraph } from '../library/Text';
 
 const TodoSummary = () => {
-  const list = useSelector(store => store.todos.list);
-  const complete = list.items.filter(item => item.complete).length;
+  const listArray = useSelector(store => store.todos.list);
+  const todosCompleted = listArray.items.filter(item => item.complete).length;
   return (
     <SummaryContainer>
-      <SummaryContainer>
-        <SubTitle>{list.items.length}</SubTitle>
+      <SummaryTaskContainer>
+        <SummaryTaskNumber>{listArray.items.length}</SummaryTaskNumber>
         <div>
-          <Paragraph>Created</Paragraph>
-          <Paragraph>Tasks</Paragraph>
+          <SummaryTask>Created</SummaryTask>
+          <SummaryTask>Tasks</SummaryTask>
         </div>
-      </SummaryContainer>
+      </SummaryTaskContainer>
 
-      <SummaryContainer>
-        <SubTitle>{complete}</SubTitle>
+      <SummaryTaskContainer>
+        <SummaryTaskNumber>{todosCompleted}</SummaryTaskNumber>
         <div>
-          <Paragraph>Completed</Paragraph>
-          <Paragraph>Tasks</Paragraph>
+          <SummaryTask>Completed</SummaryTask>
+          <SummaryTask>Tasks</SummaryTask>
         </div>
-      </SummaryContainer>
+      </SummaryTaskContainer>
     </SummaryContainer>
   );
 };
@@ -35,4 +33,26 @@ export default TodoSummary;
 
 const SummaryContainer = styled.section`
   display: flex;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  height: 10vh;
+`;
+
+const SummaryTaskContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 10px;
+`;
+
+const SummaryTaskNumber = styled.h2`
+  margin: 0 10px 8px 0;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.8);
+`;
+
+const SummaryTask = styled.p`
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.8rem;
 `;
