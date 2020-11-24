@@ -1,8 +1,17 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const ListContainer = styled.section`
   background-color: #f7f7f7;
   padding: 20px 20px 0 20px;
+
+  ${props => props.white && css`
+    background-color: white;
+  `}
+
+  ${props => props.borderbottom && css`
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  `}
 `;
 
 export const ListTitle = styled.h3`
@@ -12,7 +21,7 @@ export const ListTitle = styled.h3`
   text-align: center;
 
   @media (min-width: 768px) {
-    font-size: 35px;
+    font-size: 30px;
   }
 `;
 
@@ -46,4 +55,10 @@ export const RemoveButton = styled.button`
   color: white;
   padding: 4px;
   border-radius: 3px;
+  cursor: pointer;
+  transition: all 150ms;
+
+  &:hover {
+    background-color: #808080;
+  }
 `;

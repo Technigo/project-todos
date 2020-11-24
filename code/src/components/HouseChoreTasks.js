@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { ListItem } from 'components/ListItem';
+import { ListContainer, ListTitle } from '../styled-components/ListsComponents';
 
 export const HouseChoreTasks = () => {
   // Get the complete to do list from the global state and filter out just the tasks
@@ -10,11 +11,11 @@ export const HouseChoreTasks = () => {
   const onlyChoreTasks = todoList.items.filter((item) => item.category === "House Chores");
 
   return (
-    <>
-      <h1>House Chore related Tasks</h1>
+    <ListContainer white>
+      <ListTitle>House Chores <span role="img" aria-label="book emoji">🧹</span></ListTitle>
       {onlyChoreTasks.map((item) => (
         <ListItem key={item.id} listItem={item} />
       ))}
-    </>
+    </ListContainer>
   )
 };

@@ -45,6 +45,8 @@ export const AddButton = styled.button`
   color: white;
   font-size: 30px;
   margin-top: 8px;
+  cursor: pointer;
+  transition: all 150ms;
 
   &:hover {
     background-color: #808080;

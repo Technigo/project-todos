@@ -38,6 +38,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     background: ${props => props.checked ? '#fe97a7' : 'white'};
     border-radius: 3px;
     transition: all 150ms;
+    cursor: pointer;
     ${Icon} {
       visibility: ${props => props.checked ? 'visible' : 'hidden'};
     }

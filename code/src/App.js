@@ -63,5 +63,5 @@ export const App = () => {
   );
 };
 
-// localStorage.clear in the console in order to clear the local storage and once more start
+// Type localStorage.clear in the console in order to clear the local storage and once more start
 // again with our pre-defined initial stata
