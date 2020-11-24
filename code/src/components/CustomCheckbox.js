@@ -52,7 +52,7 @@ export const CustomCheckbox = ({ isChecked, onChange }) => {
       <HiddenCheckbox checked={checked} {...props}></HiddenCheckbox>
       <StyledCheckbox checked={checked}>
         <Icon viewBox="0 0 24 24">
-          <polyline points="20 7 9 17 4 12" />
+          <polyline points="20 7 10 17 4 12" />
         </Icon>
       </StyledCheckbox>
     </CheckboxContainer>

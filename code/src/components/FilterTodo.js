@@ -1,6 +1,6 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
-import { todos } from 'reducers/todos';
+// import { useDispatch } from 'react-redux';
+// import { todos } from 'reducers/todos';
 import styled from 'styled-components';
 
 import { Button } from '../lib/Button';
@@ -15,7 +15,7 @@ const Container = styled.footer`
 `;
 
 export const FilterTodo = () => {
-  const dispatch = useDispatch();
+  //   const dispatch = useDispatch();
 
   //   const handleShowAll = () => {
   //     dispatch(todos.actions.showAll());
