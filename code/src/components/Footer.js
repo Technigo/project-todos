@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 
 import { tasks } from 'reducers/tasks';
 
-import { FooterContainer, ButtonStyle, FooterText } from '../styling/styling';
+import { FooterContainer, ButtonStyle, FooterText, FooterWrapper } from '../styling/styling';
 
 const Footer = () => {
   const dispatch = useDispatch();
@@ -15,9 +15,11 @@ const Footer = () => {
 
   return (
     <FooterContainer>
-      <ButtonStyle onClick={handleRemoveAll}>Remove all tasks</ButtonStyle>
-      <FooterText>Project 15 - Todo App</FooterText>
-      <FooterText>Anna Hellqvist @ Technigo Bootcamp 2020</FooterText>
+      <FooterWrapper>
+        <ButtonStyle onClick={handleRemoveAll}>Remove all tasks</ButtonStyle>
+        <FooterText>Project 15 - Todo App</FooterText>
+        <FooterText>Anna Hellqvist @ Technigo Bootcamp 2020</FooterText>
+      </FooterWrapper>
     </FooterContainer>
   )
 };

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { tasks } from 'reducers/tasks';
 
-import { FormContainer, ButtonStyle, InputField } from '../styling/styling';
+import { FormContainer, ButtonStyle, InputField, FormWrapper } from '../styling/styling';
 
 const AddTask = () => {
   const [text, setText] = useState('');
@@ -29,14 +29,16 @@ const AddTask = () => {
   }
 
   return (
-    <FormContainer onSubmit={handleSubmit}>
-      <InputField
-        type='text'
-        value={text}
-        placeholder='Input task here...'
-        onChange={event => onChangeEvent(event.target.value)}>  
-      </InputField>
-      <ButtonStyle type='submit'>Submit</ButtonStyle>
+    <FormContainer>
+      <FormWrapper onSubmit={handleSubmit}>
+        <InputField
+          type='text'
+          value={text}
+          placeholder='Input task here...'
+          onChange={event => onChangeEvent(event.target.value)}>  
+        </InputField>
+        <ButtonStyle type='submit'>Add task</ButtonStyle>
+      </FormWrapper>
     </FormContainer>
   )
 };

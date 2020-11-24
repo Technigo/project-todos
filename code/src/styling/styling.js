@@ -16,25 +16,61 @@ export const ButtonStyle = styled.button`
   cursor: pointer;
   outline: none;
   font-family: 'Roboto', sans-serif;
+
+  @media (min-width: 667px) {
+    width: 50%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 350px;
+  }
 `;
 // HEADER
 
 export const HeaderContainer = styled.header`
-  background: pink;
+  display: flex;
+  justify-content: center;
   width: 100%;
-  padding: 20px;
   box-sizing: border-box;
-  border-bottom: 2px solid white;
 `;
 
+export const HeaderWrapper = styled.div`
+  width: 100%;
+  background: pink;
+  padding: 20px;
+
+  @media (min-width: 667px) {
+    width: 50%;
+    justify-content: center;
+  }
+
+  @media (min-width: 1024px) {
+    width: 350px;
+  }
+`;
 // TASK FORM
 
-export const FormContainer = styled.form`
+export const FormContainer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+`;
+
+export const FormWrapper = styled.form`
+  width: 100%;
   background: pink;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 20px;
+
+  @media (min-width: 667px) {
+    width: 50%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 350px;
+  }
 `;
 
 export const InputField = styled.input`
@@ -46,18 +82,50 @@ export const InputField = styled.input`
   border: none;
   margin: 10px 0 20px 0;
   box-sizing: border-box;
+
+  @media (min-width: 667px) {
+    width: 50%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 350px;
+  }
 `;
-// TASKLIST
+// TASKLIST - PLACEHOLDER IMAGE
+
+export const PlaceholderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 0;
+`;
 
 // TASK
 
 export const TaskContainer = styled.div`
   background: white;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
   width: 100%;
+`;
+
+export const TaskWrapper = styled.div`
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 80%;
   border-bottom: 1px solid lightblue;
+
+  @media (min-width: 667px) {
+    width: 50%;
+    justify-content: center;
+  }
+
+  @media (min-width: 1024px) {
+    width: 350px;
+  }
 `;
 
 export const Checkbox = styled.input`
@@ -78,13 +146,27 @@ export const RemoveButton = styled.img`
 // FOOTER
 
 export const FooterContainer = styled.footer`
-  background: pink;
   width: 100%;
-  padding: 20px;
   box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+`;
+
+export const FooterWrapper = styled.div`
+  width: 100%;
+  background: pink;
+  padding: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  @media (min-width: 667px) {
+    width: 50%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 350px;
+  }
 `;
 
 export const FooterText = styled.p`
