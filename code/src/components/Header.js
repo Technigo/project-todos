@@ -7,4 +7,4 @@ export const Header = () => {
 
 const HeaderText = styled.h1`
   color: #869D7A;
-`
+`;

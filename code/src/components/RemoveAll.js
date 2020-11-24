@@ -31,10 +31,10 @@ const RemoveAllButton = styled.button`
   align-items: center;
   font-family: Segoe UI;
   font-weight: bold;
-`
+`;
 
 const Emoji = styled.span`
   font-size: 28px;
   color: #6e6e6e;
   padding-right: 3px;
-`
+`;

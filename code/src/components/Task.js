@@ -1,10 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import moment from 'moment';
 
 import { tasks } from 'reducers/tasks';
 
-export const Task = ({ task }) => {
+import { CustomCheckbox } from './CustomCheckbox';
+
+import { TaskText } from 'styles/styles';
+
+export const Task = ({ task, complete }) => {
   const dispatch = useDispatch();
 
   const handleCheckboxClick = () => {
@@ -17,14 +22,12 @@ export const Task = ({ task }) => {
 
   return (
     <List>
-      <CheckboxContainer>
-        <Checkbox
-          type='checkbox'
-          checked={task.complete}
-          onChange={handleCheckboxClick}
-        />
-      </CheckboxContainer>
-      <TheTask>{task.category} {task.text}</TheTask>
+      <CustomCheckbox 
+        isChecked={task.complete} 
+        onChangeHandler={handleCheckboxClick}
+      />
+      <TaskText line={task.complete ? 'line-through' : null}>{task.category} {task.text}</TaskText>
+      <Date>Due: {moment(task.dueDate).format('MMM Do YYYY')}</Date>
       <RemoveButton 
         type="button" 
         onClick={handleRemoveButtonClick}>
@@ -38,26 +41,22 @@ const List = styled.li`
   display: flex;
   flex-direction: row;
   align-items: center;
-`
-
-const CheckboxContainer = styled.label``
-
-const Checkbox = styled.input`
-  margin-right: 6px;
-`
-
-const TheTask = styled.p`
-  font-size: 14px;
+  justify-content: space-between;
   width: 100%;
-`
+`;
+
+const Date = styled.p`
+  font-size: 10px;
+  color: #8f8f8f;
+`;
 
 const RemoveButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-`
+`;
 
 const Emoji = styled.span`
   font-size: 28px;
   color: #6e6e6e;
-`
+`;

@@ -7,12 +7,14 @@ export const tasks = createSlice({
   }, 
   reducers: {
     addTask: (state, action) => {
-      const { text, category } = action.payload
+      const { text, category, dueDate } = action.payload
       state.items.push({ 
-        id: Date.now(), 
+        id: Date.now(), /* To just get a specific id when adding new tasks */
         text, 
         complete: false,
-        category })
+        category,
+        dueDate, 
+      })
     },
     removeTask: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload)
@@ -25,7 +27,7 @@ export const tasks = createSlice({
         foundTask.complete = !foundTask.complete
       };
     },
-    removeAll: (state, action) => {
+    removeAll: (state) => {
       state.items = []
     },
   }

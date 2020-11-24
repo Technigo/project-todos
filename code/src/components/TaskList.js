@@ -12,6 +12,12 @@ export const TaskList = () => {
   const tasks = useSelector((store) => store.tasks);
   const tasksTodo = tasks.items.filter((task) => task.complete === false)
 
+  /*const [category, setCategory] = useState('');
+  const tasks = useSelector((state) => {
+    if (!category) return state.tasks.items
+    else return state.tasks.items.filter((item) => item.category === category)
+  });
+*/
   return (
     <div>
       <CounterText>{tasksTodo.length}/{tasks.items.length} tasks uncompleted</CounterText>
@@ -29,7 +35,8 @@ export const TaskList = () => {
 const CounterText = styled.p`
   font-size: 10px;
   color: #8f8f8f;
-`
+`;
+
 const ListofTasks = styled.ul`
   padding: 0;
-`
+`;
