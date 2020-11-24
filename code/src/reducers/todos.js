@@ -13,13 +13,20 @@ const initialState = {
       // },
     ],
     categories: ['All' ,'Personal', 'School', 'Work', 'Home' ],
-    homePage: false,
+    //homePage: false,
   }
 };
+
+const filters = {
+  ALL: "all",
+  COMPLETED: "completed",
+  NOT_COMPLETED: "not completed",
+}
 
 export const todos = createSlice({
   name: "todos",
   initialState: initialState,
+  filters: filters,
   reducers: {
     addTodo: (state, action) => {
       const { todoItemInfo } = action.payload;
@@ -28,19 +35,18 @@ export const todos = createSlice({
 
     // setComplete: (state, action) => {
     //   const { id, complete } = action.payload;
-    //   state.list.items[id].complete = complete;
+    //   //state.list.items[id].complete = complete;
     //   console.log(id)
     // },
 
     setComplete: (state, action) => {
-      //const { id, complete } = action.payload;
       const foundItem = state.list.items.find(item => item.id === action.payload)
-      //console.log(action.payload)
-      //console.log(`innan if ${foundItem}`)
+      console.log(action.payload)
+      console.log(`innan if ${foundItem}`)
       if(foundItem) {
         foundItem.complete = !foundItem.complete
       }
-      //console.log(`efter if ${foundItem}`)
+      console.log(`efter if ${foundItem}`)
     },
 
     removeTodo: (state, action) => {
@@ -57,16 +63,31 @@ export const todos = createSlice({
     createTodo: (state) => {
       state.homePage = true;
     },
+
+    filterTodoStatus: (state, action) => {
+      const filter = action.payload;
+      switch (filter) {
+        case filter === "completed":
+          return state.list.items.filter(item => item.complete) //if item is equal to true
+          break;
+        case filter === "not completed":
+          return state.list.items.filter(item => !item.complete) //if item is equal to false
+          break;
+        default:
+          return state.list.items
+          break;
+      }
+    },
     
-    navHomePage: (state) => {
-      state.homePage = false;
-    }
+    // navHomePage: (state) => {
+    //   state.homePage = false;
+    // }
   }
 })
 
 /*ATT GÖRA*/
 //lägg till mer filter möjligheter DUE DATE(är detta möjligt), COMPLETE/NOT COMPLETE
-//Ta bort category och description i initialState. (starta tomt) (null???)
+
 //confirmation alert när man klickar på "remove all"
 
 
@@ -79,7 +100,7 @@ export const todos = createSlice({
 //möjlighet att makerar klar, ta bort alt ta bort alla
 //Välja Due Date på sida två när jag skapar min kategori (datepicker)
 //möjlighet att filterar på ALL kategorier
-
+//Ta bort category och description i initialState. (starta tomt) (null???)
 
 
 

@@ -1,6 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import { useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom'
+
 import TodoInput from '../components/TodoInput';
 import TodayDate from 'components/TodayDate';
 
@@ -10,22 +13,33 @@ import { todos } from '../reducers/todos';
 
 const CreateTodo = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
+  console.log(history)
+
+  // const handleClick = () => {
+  //   dispatch(todos.actions.navHomePage())
+  // }
 
   const handleClick = () => {
-    dispatch(todos.actions.navHomePage())
+    history.goBack();
+    console.log(handleClick)  
   }
+ 
 
   return (
     <div>
       {/* <TodayDate /> */}
       <TodoInput /> 
-      <Button 
-        onClick = {() => handleClick()}
-        type="button" 
-        className="go-back-button"
-      >
-        Go Back
-      </Button>
+      <Link to='/'>
+        <Button 
+          //onClick = {() => handleClick()}
+          //onclick = {() => history.goBack()}
+          type="button" 
+          className="go-back-button"
+        >
+          Go Back
+        </Button>
+      </Link>
     </div>
   )
 }

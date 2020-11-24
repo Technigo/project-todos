@@ -2,8 +2,11 @@ import React from 'react';
 
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit';
+import { BrowserRouter, Switch, Route, Router } from 'react-router-dom';
 import { todos } from './reducers/todos';
 import  Home  from './pages/Home';
+import styled from 'styled-components'
+import CreateTodo from 'pages/CreateTodo';
 
 
 // StoreCreation - tell redux about my reducers 
@@ -19,7 +22,7 @@ let persistedState = {}
 if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON)
 }
-console.log(`persistedState: ${persistedState}`)
+//console.log(`persistedState: ${persistedState}`)
 
 const store = configureStore({
   reducer,
@@ -58,14 +61,37 @@ const App = () => {
   // store.subscribe(() => saveToLocalStorage(store.getState()));
   
   return (
-    <Provider store={store}>
-      <main>
-        <Home/>
-      </main>
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+      <Switch>
+        <Route exact path="/">
+          <Home />
+        </Route>
+
+        <Route exact path="/create">
+          <CreateTodo />
+        </Route>  
+      
+        {/* <Container>
+          <Home/>
+        </Container> */}
+      
+      </Switch>
+      </Provider>
+    </BrowserRouter>
+  // <Provider store={store}>
+  //   <Container>
+  //     <Home/>
+  //   </Container>
+  // </Provider>
   )
 }
 export default App
+
+export const Container = styled.main `
+// padding: 20px;
+
+`
 
 // import React from 'react';
 

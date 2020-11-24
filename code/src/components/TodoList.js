@@ -13,40 +13,39 @@ import styled from 'styled-components';
 import TodoAccordion from "./TodoAccordion";
 
 const TodoList = () => {
+  const dispatch = useDispatch();
   const [filteredCategory, setFilteredCategory] = useState('')
   const [filteredComplete, setFilteredComplete] = useState('')
 
+  ////const FILTER_COMPLETE = "completed"
+  ////const FILTER_NOT_COMPLETE = "not completed"
   //const [filter, setFilter] = useState('')
+
+  //const list = useSelector(store => store.todos.list.items)
+
+  // const onChangeFilter = (event) => {
+  //   dispatch (
+  //     todos.actions.filterTodoStatus({
+  //       filter: filteredComplete,
+  //     })
+  //   ) 
+  // }
+
+
+
+  //const filterTodo = useSelector(store => )
   
   const list = useSelector(store => {
     if (filteredComplete === 'completed') return store.todos.list.items.filter(item => item.complete)
     else if (filteredComplete === 'not completed') return (store.todos.list.items.filter(item => !item.complete))
     else if (filteredCategory) return store.todos.list.items.filter(item => item.category === filteredCategory)
     else return store.todos.list.items 
-    
-
     //if (!filteredComplete || filteredComplete === 'all') return store.todos.list.items 
-    
-    
   });
   console.log(list)
-  //console.log(filteredComplete)
-  //console.log(filteredCategory)
+  console.log(filteredComplete)
+  console.log(filteredCategory)
 
-  // const list = useSelector((store) => {
-  //   if (!filteredCategory || filteredCategory === 'All') return store.todos.list.items 
-  //   else return store.todos.list.items.filter((item) => item.category === filteredCategory)
-  // });
-  // console.log(list)
-
-
-  //skrivs inte ut
-  // const completedTodos = useSelector((store) => {
-  //   if (!filteredComplete || filteredComplete === 'all') return store.todos.list.items 
-  //   else if (filteredComplete === 'completed') return store.todos.list.items.filter((item) => item.complete)
-  //   else return (store.todos.list.items.filter((item) => !item.complete))
-  // })
-  // console.log(completedTodos)
 
 
   //fattar inte riktigt denna... var pga local storage som just nu är utkommenterad
@@ -65,10 +64,9 @@ const TodoList = () => {
 
   return (
     <>
-    <Header />
-    
+    {/* <Header /> */}
     <Container>
-      <div>
+      <Filter>
         <label htmlFor="category">Category:
           <select 
             name="category" 
@@ -86,21 +84,23 @@ const TodoList = () => {
             name="status" 
             id="status" 
             onChange={(event) => setFilteredComplete(event.target.value)} 
+            //onChange={(event) => onChangeFilter(event.target.value)}
             value={filteredComplete}>
             <option value='all'>All</option>
             <option value='completed'>Completed</option>
             <option value='not completed'>Not completed</option>
           </select>
         </label>
-      </div>
+      </Filter>
       {/* <TodoAccordion 
         accordionText='Hello'
       /> */}
         {list.map((item) => (
           <TodoItem key={item.id} item={item} />
         ))}   
-        <RemoveAll />
+        
     </Container>
+    <RemoveAll />
     </>
   )
 }
@@ -109,4 +109,10 @@ export default TodoList;
 const Container = styled.div `
   padding: 20px;
   display: grid;
+  grid-row-gap: 20px;
+`
+
+const Filter = styled.div `
+  display: flex;
+  justify-content: space-between;
 `

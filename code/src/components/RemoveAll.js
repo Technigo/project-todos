@@ -9,7 +9,6 @@ const RemoveAll = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
       <Button 
       type="button"
       //text="Delete all todos"
@@ -17,7 +16,6 @@ const RemoveAll = () => {
       >
         <p>Delete all todos</p>
       </Button>
-    </div>
   )
 }
 export default RemoveAll;

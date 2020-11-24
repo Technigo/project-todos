@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
+import { Link } from 'react-router-dom';  
 import TodayDate from './TodayDate';
 import TodoSummary from './TodoSummary';
 import { todos } from '../reducers/todos';
@@ -26,7 +27,9 @@ const Header = () => {
       > */}
 
       {/* hur kan jag tabba till denna? */}
-      <PlusIcon src="../assets/plus-icon.svg" alt="plus icon" role="button" onClick = {() => handleClick()}/> 
+      <Link to={'/create'}>
+        <PlusIcon src="../assets/plus-icon.svg" alt="plus icon" role="button" onClick = {() => handleClick()}/> 
+      </Link>
       <TodoSummary /> 
     </HeaderContainer>
   )
@@ -35,7 +38,7 @@ export default Header;
 
 const HeaderContainer = styled.header `
   height: 40vh;
-  background-image: linear-gradient(25deg, #003443, #0e645a, #119971, #00d288); 
+  background-image: linear-gradient(25deg, #590015, #793935, #98685a, #b49881);
   display: grid;
   align-content: space-evenly;
   justify-content: center;

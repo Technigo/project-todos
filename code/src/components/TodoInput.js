@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid'; //uniqe ID
 
+import { Link } from 'react-router-dom';
+import { useHistory } from 'react-router-dom'
 import { todos } from '../reducers/todos';
 //import Button from './Button';
 import { Button } from '../lib/Button';
+import { LabelTitle, InputParagraph } from '../lib/Text'
 import DatePicker from 'react-date-picker';
 //import DatePicker from 'react-datepicker';
+import styled from 'styled-components'
 
 
 const TodoInput = () => {
@@ -15,6 +19,7 @@ const TodoInput = () => {
   const [category, setCategory] = useState('');
   const [dueDate, setDueDate] = useState(new Date());
   //console.log(dueDate)
+  const history = useHistory();
 
   const categories = useSelector(store => store.todos.list.categories)
   //console.log(categories)
@@ -37,13 +42,16 @@ const TodoInput = () => {
       })
     )
     setTodoInput('');
-    dispatch(todos.actions.navHomePage())  
-
+    history.goBack();
+    //dispatch(todos.actions.navHomePage())  
+    //console.log(handleOnSubmit)
   };
- //console.log(uuidv4)
+ console.log(handleOnSubmit)
+ console.log(todoInput)
+
 return (
-  <form onSubmit={handleOnSubmit}>
-    <label htmlFor="text">Enter a todo:</label>
+  <Form onSubmit={handleOnSubmit}>
+    <LabelTitle htmlFor="text">Enter a todo:</LabelTitle>
     <textarea 
       name="text"
       id="text"
@@ -53,8 +61,7 @@ return (
       value={todoInput}
       className="todo__input" 
     />
-    <div>
-    <p>Due Date:</p>
+    <InputParagraph>Due Date:</InputParagraph>
     <DatePicker 
       name="due"
       id="due"
@@ -63,8 +70,7 @@ return (
       //selected={dueDate}
       //onChange={date => setDueDate(date)}
     /> 
-    </div>
-    <label htmlFor="category">Choose a category:</label>
+    <LabelTitle htmlFor="category">Choose a category:</LabelTitle>
     <select 
       name="category" 
       id="category" 
@@ -74,22 +80,25 @@ return (
         <option key={option} value={option}>{option}</option>
       ))}
     </select>
-    
-    <Button 
-      type="submit"
-      disabled={!todoInput}
-      //className="todo__submit"
-      //text="Add todo"
-    >
-      <p>Add Todo</p>
-    </Button>
-  
-    
-  </form>
+      <Button 
+        type="submit"
+        disabled={!todoInput}
+        //onClick={() => history.goBack()}
+      >
+        <InputParagraph>Add Todo</InputParagraph>
+      </Button>   
+  </Form>
 )
 }
 export default TodoInput;
 
+export const Form = styled.form `
+height: 50vh;
+display: flex;
+flex-direction: column; 
+justify-content: space-evenly;
+padding: 20px;
+`
 /*
 
 - Recieves listId as input 

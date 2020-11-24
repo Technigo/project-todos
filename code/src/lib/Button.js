@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Button = styled.button `
-  width: 200px;
-  border: 2px solid #0e645a;
+  width: 100%;
+  border: 2px solid #98685a;
   border-radius: 10px;
   background: transparent;
   padding: 10px;
@@ -10,21 +10,21 @@ export const Button = styled.button `
   font-family: 'Architects Daughter', cursive;
   display: flex;
   justify-content: center;
-
    &:hover {
-    background-image: linear-gradient(25deg, #003443, #0e645a, #119971, #00d288); 
+    background-color: #98685a; 
     color: #fff;
    }
 `
 
-export const AccordionButton = styled.button `
+export const AccordionButton = styled(Button) `
   width: 100%;
   background-color: transparent; 
   border: none;
+  border-bottom: 1px solid #98685a;
   display: flex;
+  align-items: center;
   font-family: 'Architects Daughter', cursive;
   font-size: 16px;
-
 `
 export const RoundButton = styled(AccordionButton) `
   height: 50px;

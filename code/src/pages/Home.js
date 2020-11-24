@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from "react-redux";
 
 import TodoList  from '../components/TodoList';
+import Header from '../components/Header'
 //import TodayDate from '../components/TodayDate';
 import CreateTodo from './CreateTodo';
 
@@ -12,10 +13,12 @@ const Home = () => {
  console.log(homePage ? 'true' : 'false')
   return (   
     <>      
-      {/* <TodayDate />  */}
+      {/* <TodayDate /> 
       {!homePage 
       ? <TodoList /> 
-      : <CreateTodo />} 
+      : <CreateTodo />}  */}
+      <Header />
+      <TodoList />
     </>
   )
 };
