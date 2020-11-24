@@ -42,11 +42,9 @@ export const todos = createSlice({
         (item, index) => index !== itemIndex
       );
     },
-    /*
     clearAll: () => {
       return initialState // Does not need a state or action(payload)
     }
-    */
   }
 });
 

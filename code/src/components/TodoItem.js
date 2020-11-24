@@ -1,7 +1,10 @@
 import React from 'react';
-
 import { useSelector, useDispatch } from "react-redux";
-import { todos } from '../reducers/todos.js';
+
+import { todos } from '../reducers/todos';
+
+import { CustomCheckbox } from './CustomCheckbox';
+import { StyledDiv, DeleteButton, Section } from '../styledComponents/styled_components';
 
 export const TodoItem = ({ itemIndex }) => {
   // Get the item from the store based on the index
@@ -30,16 +33,15 @@ export const TodoItem = ({ itemIndex }) => {
     );
   };
 
-  return <div className={`todo-item ${item.done ? 'done' : ''}`}>
-    <input
-      type='checkbox'
-      onChange={handleOnChange}
-      className='todo-item-check'
-      checked={item.done ? 'checked' : ''}
-    ></input>
-    <span className='todo-item-text'>{item.description}</span>
-    <a className='todo-item-remove' onClick={onRemoveClicked}>
-      [Remove]
-    </a>
-  </div>;
+  return (
+  <Section className={`todo-item ${item.done ? 'done' : ''}`}>
+    <StyledDiv>
+      <CustomCheckbox />
+      <span className='todo-item-text'>{item.description}</span>
+      <DeleteButton className='todo-item-remove' onClick={onRemoveClicked}>
+        {'x'}
+      </DeleteButton>
+    </StyledDiv>
+  </Section>
+  )
 };
