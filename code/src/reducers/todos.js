@@ -24,7 +24,6 @@ export const todos = createSlice({
           state.items = []
       },
       toggleCompleted: (state, action) => {
-          console.log(action.payload)
           const foundItem = state.items.find((item) => item.id === action.payload)
 
           if (foundItem) {

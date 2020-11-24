@@ -12,7 +12,6 @@ const RemoveAll = styled.div`
   flex-direction:column;
 `
 
-
 export const Summary = () => {
     const items = useSelector((store) => store.todos.items)
     const completedItems = items.filter((item) => item.completedTask)

@@ -2,6 +2,10 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
 
+import  Add  from '../assets/add.png'
+import { AddButton } from '../styling/AddItemStyling'
+
+
 
 export const AddItem = () => {
     const [text, setText] = useState ('')
@@ -17,6 +21,7 @@ export const AddItem = () => {
         <form onSubmit ={handleSubmit}>
             <label>
                 <input
+                  className="new"
                   placeholder="New todo"
                   type="text"
                   value={text}
@@ -24,8 +29,9 @@ export const AddItem = () => {
                 />
             </label> 
                 <button
+                  className ="add"
                   type="submit">
-                  Button
+                  <img src={Add} alt="plus" />
                 </button>
         </form>
     )

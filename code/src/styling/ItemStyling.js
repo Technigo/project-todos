@@ -10,6 +10,7 @@ export const TodoContainer = styled.li`
   background-color:#F4F4F4;
   border-radius: 10px;
   width:80%;
+  border-bottom-style: solid;
 
   @media (min-width: 700px) and (max-width: 1024px) {
     width: 40%

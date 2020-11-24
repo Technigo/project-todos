@@ -1,19 +1,24 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
+import moment from 'moment'
 
+import { Container, Text, DateText, Section, TaskCount } from '../styling/HeaderStyling'
 import styled from 'styled-components'
-import { Container } from '../shared/Container'
 
-const Text = styled.text`
-  color:white;
-  font-size:40px;
-  padding: 20px 0px;
-`
+
 
 
 export const Header = () => {
+    const items = useSelector((store) => store.todos.items)
+    const completedItems = items.filter((item) => item.completedTask)
+
     return (
         <Container background ='#14274e'>
-            <Text> Todo App!</Text>
+            <Text>Todo</Text> 
+            <DateText>{moment().format("MMM Do ")} </DateText>
+            <Section>
+            <TaskCount>{completedItems.length} tasks</TaskCount>
+            </Section>
         </Container>
     )
 }

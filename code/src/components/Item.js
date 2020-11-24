@@ -20,8 +20,6 @@ export const Item = ({ item }) => {
   return (
   <Container>
     <TodoContainer>
-     
-    
       <label className ="checkBox"> 
         <input
           type="checkbox"
