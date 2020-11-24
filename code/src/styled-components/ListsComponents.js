@@ -20,6 +20,10 @@ export const ListTitle = styled.h3`
   margin-top: 0;
   text-align: center;
 
+  @media (max-width: 375px) {
+    font-size: 22px;
+  }
+
   @media (min-width: 768px) {
     font-size: 30px;
   }

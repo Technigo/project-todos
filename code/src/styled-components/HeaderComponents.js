@@ -17,6 +17,10 @@ export const AppTitle = styled.h1`
   font-size: 20px;
   margin-top: 0;
 
+  @media (max-width: 375px) {
+    font-size: 16px;
+  }
+
   @media (min-width: 768px) {
     font-size: 30px;
   }
@@ -28,6 +32,10 @@ export const DateText = styled.p`
   margin-bottom: 7px;
   margin-top: 15px;
   color: #5395b0;
+
+  @media (max-width: 375px) {
+    font-size: 20px;
+  }
 
   @media (min-width: 768px) {
     font-size: 35px;
@@ -53,4 +61,8 @@ export const TasksCountContainer = styled.div`
 export const TasksCountText = styled.p`
   color: white;
   margin: 0;
+
+  @media (max-width: 375px) {
+    font-size: 14px;
+  }
 `;
