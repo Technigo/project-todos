@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import DatePicker from 'react-date-picker';
-// import styled fron 'styled-components'
 
 import { todos } from 'reducers/todos'
 import { AddButton } from 'library/Buttons'
@@ -26,7 +25,6 @@ export const AddTodoForm = () => {
     setDueDate('') // clears input
   }
 
-  //✍︎✎
   return (
     <form onSubmit={handleSubmit}>
       <AddTodoEmoji>📝</AddTodoEmoji>
@@ -43,18 +41,17 @@ export const AddTodoForm = () => {
           value={category}
           onChange={(event) => setCategory(event.target.value)}
         >
-          <option value=''>category</option>
-          <option value='work'>work</option>
-          <option value='study'>study</option>
-          <option value='household'>household</option>
-          <option value='shopping'>shopping</option>
-          <option value='fun'>fun</option>
-          <option value='other'>other</option>
+          <option value=''>Category</option>
+          <option value='Work'>Work</option>
+          <option value='Study'>Study</option>
+          <option value='Household'>Household</option>
+          <option value='Shopping'>Shopping</option>
+          <option value='Fun'>Fun</option>
+          <option value='Other'>Other</option>
         </Select>
       </label>
       
-      {/* date-picker to set dueDate below 
-      (don't know if it's fully implemented right now? Looks really strange) */}
+      {/* date-picker to set dueDate below */}
       <label>
         <DatePicker 
           selected={dueDate}

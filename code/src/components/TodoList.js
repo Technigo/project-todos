@@ -7,10 +7,11 @@ import { ClearButton } from 'components/ClearButton'
 
 export const TodoList = () => {
   const [category, setCategory] = useState('')
-  
+  const items = useSelector((store) => store.todos.items)
+
   const todos = useSelector((store) => {
-    if (!category) return store.todos.items
-    else return store.todos.items.filter(item => item.category === category)
+    if (!category) return store.todos.items //if no category, show all items in list
+    else return store.todos.items.filter(item => item.category === category) // else we want to filter the list on category choosen
   })
 
   return (
@@ -24,12 +25,12 @@ export const TodoList = () => {
           onChange={(event) => setCategory(event.target.value)}
         >
           <option value=''>Filter by category:</option>
-          <option value='work'>work</option>
-          <option value='study'>study</option>
-          <option value='household'>household</option>
-          <option value='shopping'>shopping</option>
-          <option value='fun'>fun</option>
-          <option value='other'>other</option>
+          <option value='Work'>Work</option>
+          <option value='Study'>Study</option>
+          <option value='Household'>Household</option>
+          <option value='Shopping'>Shopping</option>
+          <option value='Fun'>Fun</option>
+          <option value='Other'>Other</option>
         </Select>
       </label>
     {/* List that maps through the todos in the global state and renders todos from todo component */}
@@ -38,8 +39,8 @@ export const TodoList = () => {
         <Todo key={item.id} item={item} />
       ))}
     </ul>
-    <ClearButton />
+    {items.length > 0 &&
+    <ClearButton />} 
     </>
-    // Here I should add a button to clear list (remove all todo's)
   )
 }

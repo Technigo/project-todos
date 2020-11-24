@@ -1,16 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 
-// Add dueDate to each todo in the list?
-// Add category to items also below? See AddTodoForm/Select
 export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-    // { id: 1, category: 'study', text: 'Watch video on actions & reducers', complete: true },
-    // { id: 2, category: 'study', text: 'Follow redux codealong', complete: true },
-    // { id: 3, category: 'study', text: 'Fork weekly assignment', complete: true },
-    // { id: 4, category: 'study', text: 'Create a todo app', complete: false },
+    { id: 1, category: 'Study', text: 'Watch video on actions & reducers', complete: true },
+    { id: 2, category: 'Study', text: 'Follow redux codealong', complete: true },
+    { id: 3, category: 'Study', text: 'Fork weekly assignment', complete: true },
+    { id: 4, category: 'Study', text: 'Create a todo app', complete: false },
     ]
   },
   reducers: {

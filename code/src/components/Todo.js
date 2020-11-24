@@ -23,6 +23,8 @@ export const Todo = (props) => {
       <span>{text} - </span>
       <label>
         completed:
+        {/* this checkbox will be replaced by a custom one */}
+        {/* <CustomCheckbox> */}
         <input
         type='checkbox'
         checked={complete}

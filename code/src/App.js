@@ -6,6 +6,7 @@ import { todos } from './reducers/todos'
 import { TodoSummary } from 'components/TodoSummary'
 import { AddTodoForm } from 'components/AddTodoForm'
 import { TodoList } from 'components/TodoList'
+import { CustomCheckbox } from 'components/CustomCheckbox'
 // import components here later!
 
 const reducer = combineReducers({
@@ -21,6 +22,7 @@ export const App = () => {
         <TodoSummary />
         <AddTodoForm />
         <TodoList />
+        <CustomCheckbox />
       </div>
     </Provider>
   )
