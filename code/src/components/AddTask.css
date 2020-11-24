@@ -18,8 +18,8 @@ form {
 
 input[type=text]{
   width: 210px;
-  padding: 8px;
   font-size: 16px;
   border: none;
   background: transparent;
+  font-family: "Montserrat", sans-serif;
 }

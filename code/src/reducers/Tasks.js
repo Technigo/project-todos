@@ -2,12 +2,12 @@ import { createSlice } from '@reduxjs/toolkit'
 
 import moment from "moment"
 
+
 export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      { id: 1, todo: 'Create a todo app', checkedTask: false, createdAt: "" },
-      { id: 2, todo: 'test', checkedTask: true,  createdAt: "" },
+      { id: 1, todo: 'Wake up 👌', checkedTask: true, createdAt: moment()},
     ],
   },
   reducers: {

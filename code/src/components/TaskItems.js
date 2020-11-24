@@ -26,6 +26,7 @@ export const TaskItems = (props) => {
           checked={props.item.checkedTask}
           onChange={handleCheckedBoxClick}
         />
+        <span className="checkmark"></span>
       </label>
       <p className='task-name-p'>{props.item.todo}</p>
       </div>
@@ -36,7 +37,7 @@ export const TaskItems = (props) => {
         onClick={handleRemoveButtonClick}>
           <span role ='img' aria-label = 'checked'>✔</span>
         </button>
-        <p className='task-added-date'> Added {moment(props.item.createdAt).calendar()}</p>
+        <p className='task-added-date'> Added: {moment(props.item.createdAt).calendar()}</p>
       </div>
     </li>
   )
