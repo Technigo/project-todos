@@ -33,6 +33,7 @@ export const TodoInput = () => {
       <label>
       <input 
         //className="todo-input" 
+        required
         type="text" 
         onChange={e => setInputValue(e.target.value)} 
         value ={inputValue} 
