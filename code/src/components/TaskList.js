@@ -1,11 +1,10 @@
 import React from 'react'
-import {useSelector} from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
-import {tasks} from '../reducers/tasks'
 import {Task} from './Task'
 
 export const TaskList = () => {
-  const todos = useSelector(store => store.tasks)
+  const todos = useSelector(store => store.tasks.todos)
 
   return (
     <div>
