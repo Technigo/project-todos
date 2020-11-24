@@ -3,11 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
 import moment from 'moment'
 
-import Trash from '../assets/trash-can.png'
 import { Container, Text, DateText, Section, SectionOne, TaskCount, Button } from '../styling/HeaderStyling'
 
 export const Header = () => {
     const dispatch = useDispatch()
+    
     const items = useSelector((store) => store.todos.items)
     const completedItems = items.filter((item) => item.completedTask)
 

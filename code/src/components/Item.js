@@ -20,6 +20,16 @@ export const Item = ({ item }) => {
   return (
   <Container>
     <TodoContainer>
+    <div className="round">
+      <input
+        type="checkbox"
+        id="checkbox"
+        checked = {item.completed}
+        onChange= {handleCheckboxClick}
+      />
+      <label htmlFor="checkbox"></label>
+    </div>
+
       <label className ="checkBox"> 
         <input
           type="checkbox"
