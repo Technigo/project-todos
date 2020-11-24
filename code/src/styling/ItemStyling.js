@@ -4,11 +4,11 @@ export const TodoContainer = styled.li`
   display:flex;
   flex-direction:row; 
   justify-content: space-between;
-  padding:10px;
+  padding:20px;
   margin:10px;
   font-size: 18px;
-  background-color:green;
-  border-radius: 3px;
+  background-color:#F4F4F4;
+  border-radius: 10px;
   width:80%;
 
   @media (min-width: 700px) and (max-width: 1024px) {

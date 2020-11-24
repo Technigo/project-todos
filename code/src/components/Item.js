@@ -1,9 +1,10 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { todos } from 'reducers/todos'
+import  { todos } from 'reducers/todos'
 
 import { Container } from '../shared/Container'
 import { TodoContainer, TodoText } from '../styling/ItemStyling'
+import Trash from '../assets/trash-can.png'
 
 export const Item = ({ item }) => {
   const dispatch = useDispatch()
@@ -19,9 +20,7 @@ export const Item = ({ item }) => {
   return (
   <Container>
     <TodoContainer>
-      <TodoText>
-        {item.text}
-      </TodoText>
+     
     
       <label className ="checkBox"> 
         <input
@@ -29,11 +28,17 @@ export const Item = ({ item }) => {
           checked = {item.completed}
           onChange= {handleCheckboxClick}/>
       </label>
+      <TodoText>
+        {item.text}
+      </TodoText>
 
         <button 
           type="button"
+          className="remove"
           onClick={handleRemoveButtonClick}>
-          Remove
+          
+          <img src={Trash} alt="trashcan" />
+          
         </button>
     </TodoContainer>
   </Container>
