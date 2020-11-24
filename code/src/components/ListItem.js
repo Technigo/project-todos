@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import { todolist } from 'reducers/todolist';
 import { CustomCheckbox } from 'styled-components/CustomCheckbox';
+import { SingleTaskContainer, CheckboxTextContainer, TaskText, RemoveButton } from '../styled-components/ListsComponents';
 
 // Component to render each item on the to do list individually, this component
 // will provide a checkbox to mark the task as complete or incomplete, the text
@@ -33,15 +34,16 @@ export const ListItem = ({ listItem }) => {
   };
 
   return (
-    <div className="list-item" style={{display: "flex"}}>
-      <CustomCheckbox isChecked={listItem.complete ? "checked" : ""} onChangeHandler={handleOnChange} />
-      <p style={{textDecoration: listItem.complete ? "line-through" : ""}}>
-        {listItem.text} / {listItem.category}
-      </p>
-      <button type="button" onClick={removeTask}>Remove Task</button>
-    </div>
+    <SingleTaskContainer>
+      <CheckboxTextContainer>
+        <CustomCheckbox isChecked={listItem.complete ? "checked" : ""} onChangeHandler={handleOnChange} />
+        <TaskText style={{textDecoration: listItem.complete ? "line-through" : ""}}>
+          {listItem.text}
+        </TaskText>
+      </CheckboxTextContainer>
+      <RemoveButton type="button" onClick={removeTask}>Remove</RemoveButton>
+    </SingleTaskContainer>
   );
 };
 
-// Remove display flex from list-item and fix that with CSS later
 // Add explanatory comments to CustomCheckbox component

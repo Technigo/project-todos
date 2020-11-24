@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.header`
-  background-color: #efefef;
+  background-color: #f7f7f7;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   padding: 10px 25px;
-  border-bottom: 1px solid #CED0D6;
+  border-bottom: 1px solid #efefef;
   display: flex;
   flex-direction: row;
   justify-content: space-between;

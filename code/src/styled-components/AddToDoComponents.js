@@ -5,7 +5,7 @@ export const AddToDoForm = styled.form`
   flex-direction: column;
   align-items: center;
   padding: 30px 0;
-  border-bottom: 1px solid #CED0D6;
+  border-bottom: 1px solid #efefef;
 `;
 
 export const AddToDoInputField = styled.input`
@@ -21,6 +21,10 @@ export const LabelText = styled.label`
   font-size: 17px;
   font-weight: bold;
   margin-bottom: 15px;
+
+  @media (min-width: 768px) {
+    font-size: 21px;
+  }
 `;
 
 export const Select = styled.select`
