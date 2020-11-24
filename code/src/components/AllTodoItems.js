@@ -3,12 +3,17 @@ import { useSelector } from 'react-redux';
 
 const AllTodoItems = () => {
   const todoItems = useSelector((store) => store.todolist)
-
   return (
-    <div className="todo-container collection">
+    <div className="todo-container">
+      {todoItems.length > 0 ? (
+      <> 
       {todoItems.map((todo) => (
-        todo.task
+        <div key={todo.id}>
+          {todo.task}
+        </div>
       ))}
+      </>
+      ) : (<p>You have no tasks left today</p>)}
     </div>
   );
 }
