@@ -1,14 +1,12 @@
-import {createSlice} from '@reduxjs/toolkit'
-
+import { createSlice } from '@reduxjs/toolkit'
 
 export const todos = createSlice({
     name: 'todos',
     initialState: {
-      username: 'moa',
       items: [
-        { id: 1,text: 'The first todo', completedTask: false},
-        { id: 2, text: 'The second todo', completedTask: false },
-        { id: 3, text: 'The third todo', completedTask: false },
+        { id: 1,text: 'Wake up', completedTask: false},
+        { id: 2, text: 'Kick ass', completedTask: false },
+        { id: 3, text: 'Repeat', completedTask: false },
       ],
     },
     reducers: {
@@ -20,12 +18,12 @@ export const todos = createSlice({
         state.items = state.items.filter((item) => item.id !== action.payload)
       },
     
-      removeAll: (state, action) => {
-          state.items = []
+      removeAll: (state) => {
+        state.items = []
       },
       toggleCompleted: (state, action) => {
-          const foundItem = state.items.find((item) => item.id === action.payload)
-
+        const foundItem = state.items.find((item) => item.id === action.payload)
+        console.log( state, action, foundItem)
           if (foundItem) {
               foundItem.completedTask = ! foundItem.completedTask
           }
@@ -35,23 +33,13 @@ export const todos = createSlice({
 
 
 /*
-const tasks = [
-  {
-    id:1, 
-    text:'todo',
-    complete: true,
-  },
-  {
-    id:2, 
-    text:'todo2',
-    complete: false,    
-  }
-]
-
-const initialState = {
-    tasks,
-    completedTasks: false   
-}
+const initalState = {
+  items: [
+        { id: 1,text: 'Wake up', completedTask: false},
+        { id: 2, text: 'Kick ass', completedTask: false },
+        { id: 3, text: 'Repeat', completedTask: false },
+      ],
+    }
 
 
 export const todos = createSlice({

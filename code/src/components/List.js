@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
 import { Item } from './Item'
 import styled from 'styled-components'
@@ -13,14 +13,13 @@ const ListContainer = styled.ul`
 `
 
 export const List = () => {
-    const dispatch = useDispatch()
-    const items = useSelector((store) => store.todos.items)
-  
-    return (
-      <ListContainer>
-        {items.map((item, index) => (
-          <Item key={index} item={item}></Item>
-        ))}
-      </ListContainer>
+  const items = useSelector((store) => store.todos.items)
+
+  return (
+    <ListContainer>
+      {items.map((item, index) => (
+        <Item key={index} item={item}></Item>
+      ))}
+    </ListContainer>
     )
   }

@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+
 import { todos } from '../reducers/todos'
-
 import { Button, TextInput, Form } from '../styling/AddItemStyling'
-
-
 
 export const AddItem = () => {
     const [text, setText] = useState ('')

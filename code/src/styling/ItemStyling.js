@@ -21,8 +21,8 @@ export const TodoContainer = styled.li`
   }
 `
 
-export const TodoText = styled.text `
-  font-size: 18px;
+export const TodoText = styled.p `
+  font-size: 16px;
 `
 
 export const ListActionButton = styled.button `

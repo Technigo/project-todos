@@ -10,7 +10,7 @@ export const Item = ({ item }) => {
   const dispatch = useDispatch()
 
   const handleCheckboxClick = () => {
-    dispatch(todos.actions.toggleCompleted(item.id))
+  dispatch(todos.actions.toggleCompleted(item.id))
   }
 
   const handleRemoveButtonClick = () => {
@@ -21,21 +21,17 @@ export const Item = ({ item }) => {
   <Container>
     <TodoContainer>
     <div className="round">
+    <label > 
       <input
         type="checkbox"
         id="checkbox"
-        checked = {item.completed}
+        checked = {item.completed} 
         onChange= {handleCheckboxClick}
       />
-      <label htmlFor="checkbox"></label>
-    </div>
-
-      <label className ="checkBox"> 
-        <input
-          type="checkbox"
-          checked = {item.completed}
-          onChange= {handleCheckboxClick}/>
+      <label htmlFor="checkbox" ></label>
       </label>
+    </div>
+       
       <TodoText>
         {item.text}
       </TodoText>
@@ -53,4 +49,12 @@ export const Item = ({ item }) => {
 
 /*
 {item.id}
+
+ <label className ="checkBox"> 
+        <input
+          type="checkbox"
+          checked = {item.completed}
+          onChange= {handleCheckboxClick}
+          />
+      </label>
 */

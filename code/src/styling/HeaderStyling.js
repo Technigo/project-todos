@@ -4,18 +4,19 @@ export const Container = styled.div`
   display:flex;
   flex-direction:column;
   background-color:#F4F4F4;
-  padding:20px;
+  padding:15px;
 `
-export const Text = styled.text`
+export const Text = styled.h1`
   font-size:22px;
-  margin-bottom:5px;
+  margin:0px;
+
 
   @media (min-width: 700px){
     display:flex;
     justify-content:center;
 } 
 `
-export const DateText = styled.text`
+export const DateText = styled.p`
   font-size: 16px;
 
   @media (min-width: 700px){
@@ -34,7 +35,7 @@ export const Section = styled.div`
   margin-top: 5px;
 } 
 `
-export const TaskCount = styled.text`
+export const TaskCount = styled.p`
  text-decoration: underline;
  margin-bottom:6px;
 `
@@ -54,7 +55,7 @@ export const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color:pink;
+    background-color:black;
     transition-duration: 0.3s;
   }
 `

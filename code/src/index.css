@@ -27,19 +27,6 @@ code {
   cursor: pointer;
 }
 
-/*
-This makes the box - ROUND
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  
-   border-radius: 50%;
-  */
-
-.checkBox > input:checked {
-  background-color: rgb(228, 74, 125);
-}
 
 .remove {
   width: 12%;
