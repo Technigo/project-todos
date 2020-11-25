@@ -30,6 +30,7 @@ const TodoInput = () => {
           complete: false,
           category: category,
           dueDate: dueDate.getTime(),
+          createdAt: new Date().getTime(),
         },
       })
     );
@@ -38,12 +39,13 @@ const TodoInput = () => {
 
   return (
     <Main>
-      <form onSubmit={onSubmit}>
-        <input
+      <Form onSubmit={onSubmit}>
+        <Input
           type="text"
           onChange={event => setInputValue(event.target.value)}
           value={inputValue}
-        ></input>
+          placeholder="Add todo"
+        ></Input>
         <label>
           Due Date
           <DatePicker onChange={date => setDueDate(date)} value={dueDate} />
@@ -62,7 +64,7 @@ const TodoInput = () => {
           ))}
         </select>
         <Button type="submit">Add Todo</Button>
-      </form>
+      </Form>
     </Main>
   );
 };
@@ -71,4 +73,29 @@ export default TodoInput;
 
 const Main = styled.main`
   display: flex;
+`;
+
+const Form = styled.form`
+  height: 50vh;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 25px;
+`;
+
+export const Input = styled.input.attrs({ type: 'text' })`
+  background-color: transparent;
+  border: none;
+  border-bottom: 0.5px solid lightgray;
+  height: 30px;
+  width: 100%;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.7);
+  ::placeholder {
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    color: rgba(255, 255, 255, 0.4);
+    padding-left: 5px;
+  }
 `;

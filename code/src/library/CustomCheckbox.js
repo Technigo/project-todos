@@ -1,10 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const CheckboxLabel = styled.label`
-  margin-right: 10px;
-`;
-
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
@@ -49,16 +45,14 @@ const StyledCheckbox = styled.div`
 `;
 
 const CustomCheckbox = ({ className, checked, ...props }) => (
-  <CheckboxLabel>
-    <CheckboxContainer className={className}>
-      <HiddenCheckbox className="hiddencheck" checked={checked} {...props} />
-      <StyledCheckbox checked={checked}>
-        <Icon viewBox="0 0 24 24">
-          <polyline points="20 3 9 17 4 12" />
-        </Icon>
-      </StyledCheckbox>
-    </CheckboxContainer>
-  </CheckboxLabel>
+  <CheckboxContainer className={className}>
+    <HiddenCheckbox className="hiddencheck" checked={checked} {...props} />
+    <StyledCheckbox checked={checked}>
+      <Icon viewBox="0 0 24 24">
+        <polyline points="20 3 9 17 4 12" />
+      </Icon>
+    </StyledCheckbox>
+  </CheckboxContainer>
 );
 
 export default CustomCheckbox;

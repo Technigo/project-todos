@@ -46,6 +46,7 @@ const HeaderContainer = styled.header`
   justify-content: space-evenly;
   background-image: linear-gradient(138deg, #352189, #443da6, #5259c4, #6075e3);
   background-image: linear-gradient(138deg, #4a036f, #59117e, #6e2296, #8a36b5);
+  background-image: linear-gradient(#3b2f7d, #483c90, #5c52ac);
 `;
 
 const HeaderTitleContainer = styled.div`
@@ -70,7 +71,6 @@ const HeaderTitle = styled.h1`
   font-weight: lighter;
   font-size: 3.5rem;
   margin-top: -10px;
-}
 `;
 
 const HeaderDate = styled.p`

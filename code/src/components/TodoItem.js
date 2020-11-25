@@ -8,7 +8,6 @@ import CustomCheckbox from '../library/CustomCheckbox';
 import { Button } from '../library/Button';
 
 const TodoItem = ({ item }) => {
-  const [checked, setChecked] = useState(item.complete);
   const [active, setActive] = useState('');
   const [height, setHeight] = useState('0px');
 
@@ -26,51 +25,134 @@ const TodoItem = ({ item }) => {
 
   const handleOnChange = event => {
     dispatch(todos.actions.setComplete(item.id));
-    setChecked(event.target.checked);
+    //setChecked(event.target.checked);
   };
 
   const toggleAccordion = () => {
     setActive(active === '' ? 'active' : '');
-    setHeight(active === 'active' ? '0px' : '50px');
+    //setHeight(active === 'active' ? '0px' : '40px');
   };
 
   return (
     <>
-      <Button className={`accordion ${active}`} onClick={toggleAccordion}>
-        <CustomCheckbox
-          checked={item.complete ? true : ''}
-          onChange={handleOnChange}
-        ></CustomCheckbox>
-        <TodoContainer>
-          <div>
-            <Description checked={item.complete ? true : ''}>
-              {item.description}
-            </Description>
-            <p>{item.category}</p>
-          </div>
-          <div>
-            <Image src="../assets/recycle-bin.svg" onClick={onRemoveTodo} />
-          </div>
-        </TodoContainer>
-      </Button>
-      <Open style={{ height: `${height}` }}>
-        <p>Created: {moment(item.date).fromNow()}</p>
-        <p>Due: {moment(item.dueDate).format('MMM Do YYYY')}</p>
-      </Open>
+      {/* <ItemWrapper> */}
+      <ItemWrapper onClick={toggleAccordion}>
+        {/* <ItemButton> */}
+        <CheckboxLabel>
+          <CustomCheckbox
+            checked={item.complete ? true : ''}
+            onChange={handleOnChange}
+          ></CustomCheckbox>
+        </CheckboxLabel>
+        {/* <div> */}
+        <Item>
+          <ItemContainer>
+            <ItemDescriptionContainer>
+              <ItemDescription isComplete={item.complete}>
+                {item.description}
+              </ItemDescription>
+              <ItemCategory isComplete={item.complete}>
+                {item.category}
+              </ItemCategory>
+            </ItemDescriptionContainer>
+            {/* <ItemImageContainer> */}
+            {(item.complete || active) && (
+              <ItemImage src="../assets/cancel.svg" onClick={onRemoveTodo} />
+            )}
+
+            {/* </ItemImageContainer> */}
+          </ItemContainer>
+          {/* </ItemButton> */}
+          {/* style={{ height: `${height}` }} */}
+          <ItemAccordion active={active}>
+            {/* <ItemDescriptionContainer> */}
+            <ItemDate isComplete={item.complete}>
+              Created: {moment(item.createdAt).fromNow()}
+            </ItemDate>
+            <ItemDate isComplete={item.complete}>
+              Due: {moment(item.dueDate).format('MMM Do YYYY')}
+            </ItemDate>
+            {/* </ItemDescriptionContainer> */}
+          </ItemAccordion>
+        </Item>
+        {/* </div> */}
+      </ItemWrapper>
+      {/* </ItemWrapper> */}
     </>
   );
 };
 
 export default TodoItem;
 
-const Description = styled.p`
-  color: #000;
+const ItemWrapper = styled.article`
+  display: flex;
+`;
 
-  ${({ checked }) =>
-    checked &&
+// const ItemButton = styled.button`
+//   width: 100%;
+//   background-color: transparent;
+//   border: none;
+//   display: flex;
+//   border-bottom: 1px solid lightgray;
+//   padding: 20px;
+// `;
+
+const CheckboxLabel = styled.label`
+  margin: 10px 10px 0 0;
+`;
+
+const Item = styled.section`
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.5px solid lightgray;
+  border-bottom: 1.5px solid rgb(230, 230, 230);
+  width: 100%;
+`;
+
+const ItemContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  /* border-bottom: 1px solid lightgray; */
+`;
+
+const ItemDescriptionContainer = styled.div``;
+
+const ItemDescription = styled.p`
+  color: #404040;
+
+  ${({ isComplete }) =>
+    isComplete &&
     `
-    text-decoration: underline;
+    color: lightgray; 
+    color: #b0b0b0; 
   `}
+`;
+
+const ItemCategory = styled(ItemDescription)`
+  font-size: 0.7rem;
+  margin-top: 3px;
+  color: gray;
+  color: #808080;
+
+  ${({ isComplete }) =>
+    isComplete &&
+    `
+    color: lightgray; 
+    color: #b0b0b0; 
+  `}
+`;
+
+const ItemDate = styled(ItemCategory)`
+  font-size: 0.8rem;
+`;
+
+const ItemImage = styled.img`
+  width: 15px;
+  align-self: center;
 `;
 
 const Container = styled.div`
@@ -80,16 +162,18 @@ const Container = styled.div`
   align-items: center;
 `;
 
-const TodoContainer = styled(Container)`
-  flex-direction: column;
-  align-items: flex-start;
-`;
-
-const Image = styled.img`
-  width: 20px;
-`;
-
-const Open = styled.div`
-  background-color: papayawhip;
+const ItemAccordion = styled.div`
+  display: flex;
+  justify-content: space-between;
   overflow: hidden;
+  width: 100%;
+  padding-top: 10px;
+  height: 0;
+  transition: height 0.4s ease;
+
+  ${({ active }) =>
+    active === 'active' &&
+    `
+    height: 40px;
+  `}
 `;

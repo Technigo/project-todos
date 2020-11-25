@@ -29,6 +29,6 @@ const CreateTodo = () => {
 export default CreateTodo;
 
 const Wrapper = styled.div`
-  background-image: linear-gradient(138deg, #4a036f, #59117e, #6e2296, #8a36b5);
+  background-image: linear-gradient(#5c52ac, #483c90, #3b2f7d);
   height: 100vh;
 `;

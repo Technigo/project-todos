@@ -14,7 +14,9 @@ const TodoSummary = () => {
         <SummaryTaskNumber>{listArray.items.length}</SummaryTaskNumber>
         <div>
           <SummaryTask>Created</SummaryTask>
-          <SummaryTask>Tasks</SummaryTask>
+          <SummaryTask>
+            Task{listArray.items.length === 1 ? '' : 's'}
+          </SummaryTask>
         </div>
       </SummaryTaskContainer>
 
@@ -22,7 +24,7 @@ const TodoSummary = () => {
         <SummaryTaskNumber>{todosCompleted}</SummaryTaskNumber>
         <div>
           <SummaryTask>Completed</SummaryTask>
-          <SummaryTask>Tasks</SummaryTask>
+          <SummaryTask>Task{todosCompleted === 1 ? '' : 's'}</SummaryTask>
         </div>
       </SummaryTaskContainer>
     </SummaryContainer>
@@ -34,7 +36,7 @@ export default TodoSummary;
 const SummaryContainer = styled.section`
   display: flex;
   width: 100%;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.2);
   height: 10vh;
 `;
 
