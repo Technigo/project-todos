@@ -20,7 +20,7 @@ export const Header = () => {
     `
 
     const HeaderText = styled.text `
-    color: #000;
+    color: #fff;
     font-size: 22px;
     font-style: italic;
     position: absolute;
@@ -44,7 +44,7 @@ export const Header = () => {
     return (
         <HeaderContainer>
         <Image src={headerImage} />
-        <HeaderText>What to do?</HeaderText>
+        <HeaderText>TO DO LIST</HeaderText>
         </HeaderContainer>
     )
 
