@@ -4,16 +4,18 @@ import { Header } from './Header'
 import { TaskList } from './TaskList'
 import { AddTask } from './AddTask'
 import { ClearAllButton } from './ClearAllButton'
+import { MainContainer, AppContainer } from './styled/todoscreen'
 
 export const TodoScreen = () => {
   return (
-    <div>
-      <div>
+    <MainContainer>
+      <AppContainer>
         <Header />
         <TaskList />
+        <hr/>
         <AddTask />
         <ClearAllButton />
-      </div>
-    </div>
+      </AppContainer>
+    </MainContainer>
   )
 }

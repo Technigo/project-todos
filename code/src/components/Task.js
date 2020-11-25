@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import { tasklist } from '../reducers/tasklist'
 import { Checkbox } from './Checkbox'
+import { TaskContainer } from './styled/tasks'
 
 export const Task = ({ id, text, complete }) => {
   const dispatch = useDispatch()
@@ -16,17 +17,15 @@ export const Task = ({ id, text, complete }) => {
   }
 
   return (
-    <div>
-      <label>
-        <div>
+    <>
+      <TaskContainer>
           <Checkbox 
             isChecked={complete}
             onChangeHandler={handleCheckToggle}
           />
           <p>{text}</p>
-        </div>
         <button onClick={handleRemove}>X</button>
-      </label>
-    </div>
+      </TaskContainer>
+    </>
   )
 }

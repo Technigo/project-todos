@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { tasklist } from '../reducers/tasklist'
+import { AddTaskContainer, InputField, AddTaskButton } from './styled/addtask'
+
 
 export const AddTask = () => {
   const dispatch = useDispatch()
@@ -16,22 +18,22 @@ export const AddTask = () => {
   }
 
   return (
-    <div>
+    <AddTaskContainer>
       <form onSubmit={handleAddTask}>
-        <input 
+        <InputField 
           placeholder='What do you want to do?'
           type='text'
           onChange={event => setInputValue(event.target.value)}
           value={inputValue}>
-        </input>
-        <button 
+        </InputField>
+        <AddTaskButton 
           disabled={!inputValue}
           type='submit'
           value='Add task'
         >
           <span>Add Task</span>
-        </button>
+        </AddTaskButton>
       </form>
-    </div>
+    </AddTaskContainer>
   )
 }
