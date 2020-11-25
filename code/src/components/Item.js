@@ -25,14 +25,18 @@ export const Item = ({ itemIndex }) => {
 /*van video 1.09 ternary operator className */
   return (
     <TodoContainer>
-        <CustomCheckbox />
-        <input
-          type='checkbox'
-          onChange={handleOnChange}
-          checked={item.done ? 'checked' : ''}
-        />
+      <CustomCheckbox 
+        onChangeHandler={handleOnChange} 
+        isChecked={item.done ? 'checked' : ''}
+      />
       <p>{item.description}</p>
       <button onClick={onRemoveClicked}>X</button>
     </TodoContainer>
   )
 }
+
+/*    <input
+          type='checkbox'
+          onChange={handleOnChange}
+          checked=
+        /> */
