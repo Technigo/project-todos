@@ -46,9 +46,16 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     border-radius: 3px;
     transition: all 150ms;
     cursor: pointer;
+
     ${Icon} {
       visibility: ${props => props.checked ? 'visible' : 'hidden'};
     }
+
+    // Makes sure custom checkbox is focusable with keyboard and add a border
+    // to make that visible
+    ${HiddenCheckbox}:focus + & {
+      border: 2px solid black;
+  }
   `;
 
   const CheckboxContainer = styled.div`
