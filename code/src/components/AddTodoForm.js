@@ -105,6 +105,7 @@ const FormTextInputWrapper = styled.div`
 const FormCategoryDateWrapper = styled.div`
   display: flex;
   align-items: flex-end;
+  justify-content: center;
 `;
 
 const DueDateLabel = styled.label`
