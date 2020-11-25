@@ -10,12 +10,12 @@ padding:0px;
 `;
 
 export const TaskListInputContainer = styled.div`
-  width: 70%;
+  width: 325px;
   border-radius: 16px;
   margin: 7%;
   margin-top: 25%;
   background-color:#ffffff;
-  box-shadow: rgba(171,167,177,0.8) 0 0 10px;
+  box-shadow: rgba(51,51,51,0.5) 0 0 10px;
 `
 export const ItemContainer = styled.li`
   display: flex;
