@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
 import {tasks} from 'reducers/tasks'
+import styled from 'styled-components'
 
 export const TasksInput = () => {
 	const [todoTask, setTodoTask] = useState('')
@@ -23,9 +24,18 @@ export const TasksInput = () => {
 				placeholder="Add a todo..."
 				>
 				</input>
-				<button type="submit">add</button>
+				<Button type="submit">add</Button>
 			</label>
 		</form>
 	)
 
 }
+const Button = styled.button`
+border: 1px solid white;
+padding:8px;
+margin:8px;
+font-size:15px;
+color:#F7AF9D;
+cursor:pointer;
+background-color:#B0D0D3; 
+`;
