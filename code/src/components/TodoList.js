@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import  NoteAddIcon from '@material-ui/icons/NoteAddRounded';
-
+import { Link } from 'react-router-dom'
 import { Item } from './Item.js';
 import { todos } from 'reducers/todos';
 
@@ -33,7 +33,10 @@ export const TodoList = () => {
 
            
             {items.map((item) => (
+                <div>
               <Item key={item.id} item={item}></Item>
+              </div>
+
               ))}  
             
     

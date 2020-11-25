@@ -35,8 +35,10 @@ export const AddTodoForm = () => {
           isCompleted: false,
           createdAt: Date.now()
         })
-        );
-
+      );
+        setTodoTitle('');
+        setTodoContent('');
+        setUserCategory([]);
     } else {
       alert('Please write note first')
     }

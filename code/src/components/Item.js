@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components';
 import { todos } from 'reducers/todos';
-
+import { Link } from 'react-router-dom'
 
 const ItemContainer = styled.li`
     align-self: flex-start;
@@ -23,7 +23,9 @@ export const Item = ({ item }) => {
 
     return (
         <ItemContainer>
-            {item.name}{item.dueDate}  <button onClick={() => onItemRemove(item.id)} >Delete</button>
+            {item.name}{item.dueDate}
+            <Link to={`/todo/${item.id}`}>View</Link>  
+            <button onClick={() => onItemRemove(item.id)} >Delete</button>
         </ItemContainer>
     )
 };
