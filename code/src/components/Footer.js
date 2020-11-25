@@ -13,7 +13,7 @@ const TotalTasks = styled.p`
   font-size: 16px;
 `
 
-const AddTask = styled.p`
+const ClearButton = styled.button`
   font-size: 16px;
 `
 
@@ -23,9 +23,11 @@ export const Footer = () => {
       <TotalTasks>
         0/4 tasks completed
       </TotalTasks>
-      <AddTask>
-        Add new +
-      </AddTask>
+      <ClearButton
+        onClick={() => {}}
+      >
+        Clear all
+      </ClearButton>
     </Container>
   )
 }

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 import { Header } from './Header'
+import { AddTask } from './AddTask'
 import { Task } from './Task'
 import { Footer } from './Footer'
 
@@ -20,27 +21,29 @@ const TasksContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  padding: 0 20px 20px 20px;
   width: 80%;
   background-color: orange;
 `
 
 export const TaskList = () => {
 
-  const task = useSelector (
-    (state) => state.tasks
+  const items = useSelector (
+    (store) => store.tasks.items
   )
 
-  console.log(task) //remove later
+  console.log(items) //remove later
 
   return (
     <Section>
       <Header />
+      <AddTask />
       <TasksContainer>
-        {task.map(task => {
+        {items.map(task => {
           return (
             <Task
               key={task.id}
-              {...task}
+              task={task}
             />
           )
         })}

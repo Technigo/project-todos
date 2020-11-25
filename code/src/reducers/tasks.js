@@ -2,10 +2,25 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const tasks = createSlice({
   name: 'tasks',
-  initialState: [
-    {id: 1, text: 'Make breakfast', complete: false},
-    {id: 2, text: 'Go to work', complete: false},
-    {id: 3, text: 'Pay bills', complete: false},
-    {id: 4, text: 'Call mom', complete: false}
-  ]
+  initialState: {
+    items: [
+      {id: 1, text: 'Make breakfast', complete: false, category: 'home'},
+      {id: 2, text: 'Go to work', complete: false, category: 'work'},
+      {id: 3, text: 'Pay the bills', complete: false, category: 'finance'},
+      {id: 4, text: 'Get some eggs from the store', complete: false, category: 'shopping'}
+    ]
+  },
+  reducers: {
+    toggleTaskCompleted: (state, action) => {
+      console.log(action.payload) //remove later
+
+      // to find the item id that matches.
+      const foundItem = state.items.find(task => task.id === action.payload)
+
+      // if item is found, the value of initial state will be inverted, go from false to true
+      if (foundItem) {
+        foundItem.complete = !foundItem.complete
+      }
+    }
+  }
 })
