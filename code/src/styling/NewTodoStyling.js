@@ -5,7 +5,7 @@ export const NewTodoInput = styled.input`
   border: none;
   border-bottom: 1px solid #000;
   margin: 5px 0 20px 0;
-  background: #f5f0ea;
+  background: #fff;
 `;
 
 export const NewTodoInnerWrapper = styled.div`

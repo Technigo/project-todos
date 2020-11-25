@@ -2,7 +2,7 @@ import React from 'react';
 // import { useSelector } from 'react-redux';
 
 // Components
-import { HeaderImage } from './HeaderImage';
+// import { HeaderImage } from './HeaderImage';
 
 // Styling
 import { HeaderWrapper } from '../styling/GlobalStyling';

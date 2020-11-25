@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Provider } from 'react-redux';
-import { configureStore, combineReducers, createStore } from '@reduxjs/toolkit';
+import { combineReducers, createStore } from '@reduxjs/toolkit';
 
 // Reducers
-import { todos, completed } from './reducers/todos';
+import { todos } from './reducers/todos';
 
 // Components
 import { ListOfTodos } from './components/ListOfTodos';
@@ -11,11 +11,10 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { NewTodo } from './components/NewTodo';
 
+import { AddTaskButton } from './styling/GlobalStyling';
 const reducer = combineReducers({
   todos: todos.reducer,
-  completed: completed.reducer,
 });
-// const store = configureStore({ reducer });
 
 // New storage
 const persistedStateJSON = localStorage.getItem('reduxState');
@@ -37,10 +36,13 @@ store.subscribe(() => {
 // ----------------------------------------------------------------
 
 export const App = () => {
+  const [addTaskVisible, setAddTaskVisible] = useState(false);
+
   return (
     <Provider store={store}>
+      <AddTaskButton onClick={() => setAddTaskVisible(true)}>+</AddTaskButton>
       <Header />
-      <NewTodo />
+      {addTaskVisible && <NewTodo />}
       <ListOfTodos />
       <Footer />
     </Provider>

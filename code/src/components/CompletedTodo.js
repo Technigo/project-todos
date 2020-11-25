@@ -1,33 +1,37 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
+import moment from 'moment';
+import styled from 'styled-components';
 
 // Reducers
 import { todos } from '../reducers/todos';
 
 // Styling
-import { TaskWrapper, CompletedTime } from '../styling/GlobalStyling';
+import { TaskWrapper, Button } from '../styling/GlobalStyling';
+
+const CompletedTime = styled.p`
+  font-size: 10px;
+  font-style: italic;
+  margin: 0;
+`;
 
 // -----------------------------------------------------------------------------
 
 export const CompletedTodo = ({ task, index }) => {
-  const [checked, setChecked] = useState(false);
-
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    return setChecked(false);
-  }, [checked]);
-
-  const handleChecked = (event) => {
-    setChecked(event.target.checked);
-    dispatch(todos.actions.checkTodo(task));
+  const handleClick = () => {
+    dispatch(todos.actions.removeTodo(task.id));
   };
 
   return (
     <TaskWrapper>
-      <CompletedTime>Completed at xxx</CompletedTime>
-      <label htmlFor={index}>{task.task}</label>
+      <CompletedTime>
+        Completed {moment(task.completedAt).startOf('second').fromNow()}
+      </CompletedTime>
+      <p>{task.task}</p>
       <p>{task.category}</p>
+      <Button onClick={handleClick}>✕</Button>
     </TaskWrapper>
   );
 };

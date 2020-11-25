@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 
 import { NewTodoWrapper } from '../styling/GlobalStyling';
@@ -15,24 +15,24 @@ export const NewTodo = () => {
   const [todo, setTodo] = useState('');
   const [category, setCategory] = useState('Fun');
   const [prio, setPrio] = useState(false);
-  const [buttonColor, setButtonColor] = useState('gray');
 
   const dispatch = useDispatch();
-  const amountOfTodos = useSelector((store) => store.todos.length + 1);
+  // const amountOfTodos = useSelector((store) => store.todos.tasks.length + 1);
+  const createID = Math.floor(Math.random() * 10000) + 1;
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log(amountOfTodos);
-
+    const createdAt = new Date();
     if (todo) {
       dispatch(
         todos.actions.addTodo({
-          id: amountOfTodos,
+          id: createID,
           task: todo,
           category: category,
           prio: prio,
           isCompleted: false,
+          createdAt: createdAt,
         })
       );
       setTodo('');
@@ -72,12 +72,7 @@ export const NewTodo = () => {
           />
         </div>
 
-        <NewTodoButton
-          color={buttonColor}
-          type="submit"
-          value="submit"
-          onClick={handleSubmit}
-        >
+        <NewTodoButton type="submit" value="submit" onClick={handleSubmit}>
           +
         </NewTodoButton>
       </NewTodoInnerWrapper>
