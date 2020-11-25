@@ -6,7 +6,7 @@ import { TodoScreen } from './components/TodoScreen'
 import { tasklist } from './reducers/tasklist'
 
 const reducer = combineReducers({
-  tasklist = tasklist.reducer
+  tasklist : tasklist.reducer
 })
 
 const store = configureStore({ reducer })
