@@ -18,6 +18,7 @@ export const Item = ({ item }) => {
   }
 
   return (
+
   <Container>
     <TodoContainer>
     <div className="round">
@@ -26,10 +27,9 @@ export const Item = ({ item }) => {
         type="checkbox"
         id="checkbox"
         checked = {item.completed} 
-        onChange= {handleCheckboxClick}
-      />
+        onChange= {handleCheckboxClick}/>
       <label htmlFor="checkbox" ></label>
-      </label>
+  </label>
     </div>
        
       <TodoText>
@@ -44,6 +44,7 @@ export const Item = ({ item }) => {
         </button>
     </TodoContainer>
   </Container>
+  
   )
 }
 
@@ -56,5 +57,5 @@ export const Item = ({ item }) => {
           checked = {item.completed}
           onChange= {handleCheckboxClick}
           />
-      </label>
+  </label>
 */

@@ -12,6 +12,8 @@ code {
     monospace;
 }
 
+
+/*
 .checkBox {
   display: inline-flex;
   cursor: pointer;
@@ -26,7 +28,7 @@ code {
   background-color: rgb(255, 255, 255);
   cursor: pointer;
 }
-
+*/
 
 .remove {
   width: 12%;
@@ -38,7 +40,6 @@ code {
   width: 100%;
   height: 100%;
 }
-
 
 .round {
   position: relative;
@@ -82,4 +83,3 @@ code {
 .round input[type="checkbox"]:checked + label:after {
   opacity: 1;
 }
-

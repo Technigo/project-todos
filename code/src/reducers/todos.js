@@ -23,7 +23,7 @@ export const todos = createSlice({
       },
       toggleCompleted: (state, action) => {
         const foundItem = state.items.find((item) => item.id === action.payload)
-        console.log( state, action, foundItem)
+        console.log( action)
           if (foundItem) {
               foundItem.completedTask = ! foundItem.completedTask
           }

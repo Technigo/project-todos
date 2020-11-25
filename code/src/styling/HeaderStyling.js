@@ -1,10 +1,26 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
+@media (min-width: 700px){
+  display:flex;
+  justify-content:center;
+}
+`
+
+export const Background  = styled.div`
   display:flex;
   flex-direction:column;
   background-color:#F4F4F4;
   padding:15px;
+
+  @media (min-width: 700px){
+    width:320px;
+  }
+  @media (min-width: 1024px){
+    width:440px;
+  }
+
+
 `
 export const Text = styled.h1`
   font-size:22px;
@@ -12,19 +28,18 @@ export const Text = styled.h1`
 
 
   @media (min-width: 700px){
-    display:flex;
-    justify-content:center;
+    
 } 
 `
 export const DateText = styled.p`
   font-size: 16px;
 
   @media (min-width: 700px){
-    display:flex;
-    justify-content:center;
+    
+    
 } 
 `
-export const Section = styled.div`
+export const SectionTwo = styled.div`
  display:flex;
  flex-direction:column;
  align-items: flex-end;
