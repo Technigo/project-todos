@@ -45,6 +45,12 @@ export const Header = () => {
         <Typography variant="h6" className={classes.title}>
           ToDos
         </Typography>
+        <Button
+            variant="contained"
+            onClick={() => dispatch(tasks.actions.removeAll())}
+          >
+            remove all
+          </Button>
         <DoneAllIcon onClick={() => dispatch(tasks.actions.markAll())}/>
         <Badge badgeContent={allTasks.todos.length} color="secondary">
         <AssignmentTurnedInIcon />

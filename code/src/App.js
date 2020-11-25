@@ -8,6 +8,7 @@ import {
   ThemeProvider,
   useTheme,
 } from "@material-ui/core/styles";
+import CssBaseline from '@material-ui/core/CssBaseline';
 
 import { tasks } from "reducers/tasks";
 import { TodoList } from "components/TodoList";
@@ -24,6 +25,8 @@ const store = configureStore({ reducer });
 const MyContainer = styled(Container)`
   && {
     padding: 0;
+    background-color: black;
+    height: 100%;
   }
 `;
 

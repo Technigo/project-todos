@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { List, Accordion, AccordionSummary, AccordionDetails, Typography } from "@material-ui/core";
+import { List, Accordion, AccordionSummary, AccordionDetails, Typography, Paper } from "@material-ui/core";
 import { ExpandMore } from '@material-ui/icons';
 
 import { TodoItem } from "components/TodoItem";
@@ -13,7 +13,7 @@ export const TodoList = () => {
   const laterTasks = allTasks.todos.filter(task => task.due != 'Today' && task.due != 'Tomorrow')
 
   return (
-    <>
+    <><Paper>
     <Accordion>
       <AccordionSummary
           aria-controls="panel1a-content"
@@ -63,6 +63,7 @@ export const TodoList = () => {
     </List>
     </AccordionDetails>
     </Accordion>
+    </Paper>
     </>
   );
 };
