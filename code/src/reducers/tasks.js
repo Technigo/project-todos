@@ -32,13 +32,11 @@ export const tasks = createSlice({
 
         markComplete: (state, action) => {
             const {id} = action.payload;
-            // task.complete = true;
-            // action.payload.splice(2,1,"false")
-            state.items.map((task) => (
-            task.id === id ? { ...task, complete: true } : task 
-            ))
-            return 
-            
-        }
+            const task = state.items.find(t => t.id === id)
+            if (task) {
+                task.complete = !task.complete;
+            }
+        },
+    
     }
 })
