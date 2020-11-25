@@ -11,7 +11,6 @@ const ItemContainer = styled.li`
   flex-direction: row;
   padding: 8px;
   margin: 8px;
-  font-size: 20px;
   color: #3f3f3f;
 `;
 

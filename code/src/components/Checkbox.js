@@ -10,6 +10,7 @@ export const CheckBox = ({ isChecked, onChange }) => {
     setChecked(event.target.checked);
   };
 
+  //for the checkbox styling I checked an article on medium and adapted it to my code
   const CheckboxContainer = styled.div`
     display: inline-block;
     vertical-align: middle;
