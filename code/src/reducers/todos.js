@@ -8,5 +8,13 @@ export const todos = createSlice({
       {id: 2, text: 'put up christmas decoration', done: false},
       {id: 3, text: 'call mum', done: true}
     ]
+  }, 
+  reducers: {
+    removeItem: (store, action) => {
+      const itemId = action.payload;
+      const filteredList = store.tasks.filter((item) => item.id !== itemId)
+      
+      store.tasks = filteredList
+    }
   }
 });
