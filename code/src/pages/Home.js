@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import { configureStore, combineReducers, createStore } from '@reduxjs/toolkit';
 
 import { todos } from '../reducers/todos';
 
@@ -13,18 +13,30 @@ import { ClearAllButton } from 'components/ClearAllButton';
 // StoreCreation: Tell Redux about our reducers. createSlice adds a field called 'reducer'. 
 // 'combineReducer()' is a function that takes the todo object as an argument and turn it into a variable
 // called reducer to be used when setting up the store.
-// Old store code:
+
 const reducer = combineReducers({ todos: todos.reducer });
 
 
-// configureStore: Create store to using our reducers and the retrieved state
-const store = configureStore({ reducer });
+// Old store code: configureStore: Create store to using our reducers and the retrieved state
+//const store = configureStore({ reducer });
 
 // Persistence: Tell the store to persist the state in localstorage after every action
 // New store code:
 // 1. Retrieve the localstorage and use it as our initial state
-// 2. Create the store using the initial state
+const persistedStateJSON = localStorage.getItem("reduxState");
+let persistedState = {};
+
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON);
+};
+  
+// 2. Create the store using the initial state, Checks for the devtools extension - if there, give access to browser.
+const store = createStore(reducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+
 // 3. Store the state in localstorage on ANY redux state change
+store.subscribe(() => {
+  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+});
 
 export const Home = () => {
   return (

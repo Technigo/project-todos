@@ -1,29 +1,41 @@
 import styled from 'styled-components';
 
 
-export const Section = styled.section`
-  width: 100%;
+// Header
+// TodoSummary
+// Date
+// TodoInput
+// CustomCheckbox
+// TodoList
+
+// TodoItem, DeleteButton
+export const DeleteContainer = styled.div`
   display: flex;
-`
-export const StyledDiv = styled.div`
-  display: flex;
-  font-size: 16px;
+  font-size: 18px;
   text-align: left;
   width: 80%;
   margin: auto;
-  font-weight: 300;
+  font-weight: 400;
   margin-top: 10px;
   margin-bottom: 10px;
   align-items: center;
+  justify-content: center;
+
 `
 export const DeleteButton = styled.button`
-  border-radius: 5px;
+  border-radius: 50%;
   color: white;
   font-size: 18px;
+  padding: 0;
   width: 25px;
   height: 25px;
   border: solid grey .5px;
   color: grey;
-  justify-content: right;
+
+    &:last-child {
+      margin-left: auto;
+    }
 `;
+
+// ClearAllButton
 

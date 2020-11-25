@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import Datepicker from 'react-datepicker';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+
+import 'react-datepicker/dist/react-datepicker.css';
 
 import { todos } from '../reducers/todos';
 
@@ -41,16 +44,20 @@ export const TodoInput = () => {
   const [inputValue, setInputValue] = useState('');
   // State for date
   const [date, setDate] = useState(new Date());
+  // State for Due Date
+  //const [dueDate, setDueDate] = useState();
 
-  useEffect(() => {
+  //useEffect(()
+  
+  const addDate = () => {
     const timer = setInterval(() => {
       return setDate(new Date());
-    }, 1000 )
+    }, 1000);
     return function cleanup() {
-        clearInterval(timer)
-    }
-
-});
+      clearInterval(timer);
+    };
+  }
+addDate()
 
   // Create handle submit function to dispatch addTodo
   const handleOnSubmit = (event) => {
@@ -63,7 +70,8 @@ export const TodoInput = () => {
     dispatch(
       todos.actions.addTodo({
         description: inputValue,
-        done: false
+        done: false,
+        //dueDate: dueDate
       })
     );
     
@@ -84,12 +92,16 @@ export const TodoInput = () => {
           onChange={event => setInputValue(event.target.value)}
           value={inputValue}
           className='todo-input-text'
-        ></InputField>        
+        ></InputField>  
         <InputAdd 
           type='submit'
           className='todo-input-button'
           value='+'
         ></InputAdd>
+        {/*<label>
+          Due date
+          <Datepicker onChange={(date) => setDueDate(date)} value={dueDate} />
+        </label>*/}   
       </Form>
     </>
   );

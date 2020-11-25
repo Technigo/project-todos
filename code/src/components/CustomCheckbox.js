@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
+
+import { todos } from '../reducers/todos'
 
 // A nested component. A function that takes in props and renders an input type = checkbox. 
 // It is rendering a TYPE checkbox and not a STYLED checkbox. We will eventually return a styled
@@ -30,17 +32,17 @@ const HiddenCheckBox = styled.input.attrs({ type: 'checkbox' })`
 const Icon = styled.svg`
   fill: none;
   stroke: white;
-  stroke-width: 2px;
+  stroke-width: 4px;
 `;
 
 // Need both for accessibility.
 const StyledCheckBox = styled.div`
   display: inline-block;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   margin-right: 10px;
   background: ${props => props.checked ? 'pink' : 'grey'};
-  border-radius: 3px;
+  border-radius: 50%;
   transition: all 150ms;
   ${Icon} {
     visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
@@ -55,13 +57,16 @@ const CheckboxContainer = styled.div`
 // Tripple-nested div with two components inside. Re-building a checkbox.
 
 // Normal functional component
-export const CustomCheckbox = () => {
-  const dispatch = useDispatch();
-  const [checked, setChecked] = useState(false);
+export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
+  //const dispatch = useDispatch();
+  const [checked, setChecked] = useState(isChecked);
+
 
   // Updating the state on change
   const handleOnChange = (event) => {
+    onChangeHandler();
     setChecked(event.target.checked);
+    
   };
 
   // Drawing a line with the svg.
@@ -70,7 +75,7 @@ export const CustomCheckbox = () => {
       <HiddenCheckBox checked={checked} {...props}></HiddenCheckBox>
         <StyledCheckBox checked={checked}>
           <Icon viewBox='0 0 24 24'>
-            <polyline points='20 6 9 17 4 12'/>
+            <polyline points='18 5 9 17 4 12'/>
           </Icon>
         </StyledCheckBox>
     </CheckboxContainer>

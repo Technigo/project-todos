@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   list: {
-    name: 'Test List',
+    name: 'List',
     items: [
       {
-        description: 'Buy milk',
+        description: '',
         done: false
       }
     ]
@@ -24,8 +24,7 @@ export const todos = createSlice({
       state.list.items.push(itemInfo); // Use existing state. Get the list (from above)
       // from the existing state. Look at the items array in the list. Push new item to array/list.
       // 'itemInfo' is what is inside the action.payload - the payload needs the same structure: 'text' property and 'done'
-      // property. The value from 
-      // TodoInput.js
+      // property. The value from TodoInput.js
     },
 
     // The payload contains the info on which was checked as done. Using the index of that
