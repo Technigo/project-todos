@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 
 import styled from 'styled-components'
 
@@ -18,10 +19,13 @@ const ClearButton = styled.button`
 `
 
 export const Footer = () => {
+  const items = useSelector(store => store.tasks.items)
+  const completedItems = items.filter(item => item.complete)
+
   return (
     <Container>
       <TotalTasks>
-        0/4 tasks completed
+        {completedItems.length}/{items.length} tasks completed
       </TotalTasks>
       <ClearButton
         onClick={() => {}}
