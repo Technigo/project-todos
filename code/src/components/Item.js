@@ -1,6 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
+
 import { todos } from 'reducers/todos'
+import { CustomCheckbox } from './CustomCheckbox'
+import { TodoContainer } from '../styledComponents/containers'
 
 export const Item = ({ itemIndex }) => {
   const dispatch = useDispatch()
@@ -21,14 +24,15 @@ export const Item = ({ itemIndex }) => {
   }
 /*van video 1.09 ternary operator className */
   return (
-    <div>
-      <input
-        type='checkbox'
-        onChange={handleOnChange}
-        checked={item.done ? 'checked' : ''}
-      />
+    <TodoContainer>
+        <CustomCheckbox />
+        <input
+          type='checkbox'
+          onChange={handleOnChange}
+          checked={item.done ? 'checked' : ''}
+        />
       <p>{item.description}</p>
-      <button onClick={onRemoveClicked}>remove</button>
-    </div>
+      <button onClick={onRemoveClicked}>X</button>
+    </TodoContainer>
   )
 }
