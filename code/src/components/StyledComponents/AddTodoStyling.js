@@ -10,7 +10,7 @@ export const NewTodo = styled.div`
 `
 export const TodoText = styled.textarea`
   border-radius: 16px;
-  box-shadow: rgba(0,0,0,0.8) 0 0 10px;
+  box-shadow: rgba(171,167,177,0.8) 0 0 10px;
   border-collapse: collapse;
   text-align: center;
   overflow-wrap: break-word;
@@ -21,8 +21,8 @@ export const TodoText = styled.textarea`
 
 export const AddButton = styled.button`
   align-self: center;
-  background-color: #f2f0f0 ;
-  border-color:#8b144e;
+  background-color: #ffffff;
+  border:none;
   font-size: 20px;
   border-radius: 80%;
   margin-top: 17px;

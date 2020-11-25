@@ -1,18 +1,9 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import styled from 'styled-components';
 import { todos } from '../Reducers/todos';
-import { RemoveButton } from './StyledComponents/ListStyling';
+import { RemoveButton, ItemContainer, TasksContainer, TaskText } from './StyledComponents/ListStyling';
 import  { CheckBox } from './Checkbox';
-
-const ItemContainer = styled.li`
-  align-self: flex-start;
-  flex-direction: row;
-  padding: 8px;
-  margin: 8px;
-  color: #3f3f3f;
-`;
 
 export const Item = ({ item }) => {
   const dispatch = useDispatch();
@@ -37,8 +28,8 @@ export const Item = ({ item }) => {
   return (
       <ItemContainer>
         <CheckBox isChecked={item.complete ? 'checked' : "" } onChange={handleSetComplete}/>
-        {item.text}
-        <RemoveButton onClick={handleRemoveTodo}> 🗑 </RemoveButton>
+        <TaskText>{item.text}</TaskText>
+        <RemoveButton onClick={handleRemoveTodo}> ❌ </RemoveButton>
       </ItemContainer>
   );
 };
