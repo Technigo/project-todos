@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+
 import { todos } from '../reducers/todos'
+import { Form, InputField, Label, InputWrapper } from '../styledComponents/formElements'
+import { FormContainer } from '../styledComponents/containers'
+import { AddButton } from '../styledComponents/buttons'
 
 export const Input = () => {
   const [inputValue, setInputValue] = useState('')
@@ -20,20 +24,24 @@ export const Input = () => {
   }
 
   return (
-    <form onSubmit={handleOnSubmit}>
-      <input
-      type='text'
-      onChange={event => setInputValue(event.target.value)}
-      value={inputValue}
-      />
-
-      <button
-        type='submit'
-        value='add todo'
-      >
-      Click
-      </button>
-      
-    </form>
+    <FormContainer>
+      <Form onSubmit={handleOnSubmit}>
+        <Label> Add Todo
+          <InputWrapper>
+            <InputField
+            type='text'
+            onChange={event => setInputValue(event.target.value)}
+            value={inputValue}
+            />
+            <AddButton
+              type='submit'
+              value='add todo'
+            >
+            +
+            </AddButton>
+          </InputWrapper>
+        </Label>
+      </Form>
+    </FormContainer>
   )
 }

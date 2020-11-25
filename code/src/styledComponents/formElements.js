@@ -1,5 +1,7 @@
 import styled from 'styled-components'
-/*Hidden checkbox with actual input. kolla upp attrs */
+
+/*Checkboxes */
+/*Hidden checkbox with actual input.*/
 export const HiddenCheckBox = styled.input.attrs({type:'checkbox'})`
   border: 0;
   clip: rect(0 0 0 0 );
@@ -21,9 +23,9 @@ export const Icon = styled.svg`
 /*New styled checkbox */
 export const StyledCheckbox = styled.div`
   display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: ${props => (props.checked ? 'green' : 'red')};
+  width: 20px;
+  height: 20px;
+  background: ${props => (props.checked ? 'black' : 'grey')};
   border-radius: 3px;
   transition: all 150ms;
   ${Icon} { /* displays depending on if the state variable is checked or not*/
@@ -33,4 +35,29 @@ export const StyledCheckbox = styled.div`
 export const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
+`
+/* Inputfield */
+export const Form = styled.form`
+  width: 100%;
+  padding-left: 5px;
+  padding-right: 5px;
+`
+export const Label = styled.label`
+  display: flex;
+  flex-direction: column;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: bold;
+  font-size: 20px;
+`
+export const InputField = styled.input`
+  height: 40px;
+  width: 80%;
+  font-size: 20px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: lighter;
+  padding-left: 10px;
+`
+export const InputWrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
 `

@@ -3,24 +3,20 @@ import { List } from '../components/List'
 import { Input } from '../components/Input'
 import { Summary } from '../components/Summary'
 import { Header } from '../components/Header'
-import { Date } from '../components/Date'
+import { DateInfo } from '../components/DateInfo'
 
-import { TopContainer, ListContainer } from '../styledComponents/containers'
+import { TopContainer, MainContainer } from '../styledComponents/containers'
 
 export const Home = () => {
   return(
-    <main>
+    <MainContainer>
       <Header />
       <TopContainer>
-        <Date />
+        <DateInfo />
         <Summary />
       </TopContainer>
-      <ListContainer>
-        <List />
-      </ListContainer>
-      <section>
-        <Input />
-      </section>
-    </main>
+      <List />
+      <Input />
+    </MainContainer>
   )
 }

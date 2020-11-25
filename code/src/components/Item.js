@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import { todos } from 'reducers/todos'
 import { CustomCheckbox } from './CustomCheckbox'
-import { TodoContainer } from '../styledComponents/containers'
+import { TodoContainer, TodoItem } from '../styledComponents/listElements'
+import { DeleteButton } from '../styledComponents/buttons'
 
 export const Item = ({ itemIndex }) => {
   const dispatch = useDispatch()
@@ -29,8 +30,8 @@ export const Item = ({ itemIndex }) => {
         onChangeHandler={handleOnChange} 
         isChecked={item.done ? 'checked' : ''}
       />
-      <p>{item.description}</p>
-      <button onClick={onRemoveClicked}>X</button>
+      <TodoItem>{item.description}</TodoItem>
+      <DeleteButton onClick={onRemoveClicked}>X</DeleteButton>
     </TodoContainer>
   )
 }

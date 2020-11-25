@@ -1,7 +1,12 @@
 import React from 'react';
 
+import { Title } from '../styledComponents/texts'
+import { HeaderSection } from '../styledComponents/containers'
+
 export const Header = () => {
   return (
-    <h1>TODO</h1>
+    <HeaderSection>
+      <Title>TODO</Title>
+    </HeaderSection>
   )
 }

@@ -5,17 +5,9 @@ const initialState = {
     name: 'todos',
     todoItems: [
       {
-        description: 'The first',
+        description: 'This is your first todo',
         done: false
       },
-      {
-        description: 'The second',
-        done: false
-      },
-      { 
-        description: 'The third',
-        done: false
-      }
     ],
   }
 }
@@ -32,8 +24,8 @@ export const todos = createSlice({
       )
     },
     addTodoItem: (state, action) => {
-      const itemInfo = action.payload 
-      state.list.todoItems.push(itemInfo)
+      const newTodoList = [...state.list.todoItems, action.payload]
+      state.list.todoItems = newTodoList
     },
     setDone: (state, action) => {
       const { itemIndex, done } = action.payload
