@@ -16,13 +16,16 @@ const TaskTextWrapper = styled.div`
 
 const TaskText = styled.label`
   font-size: 18px;
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  font-weight: bold;
+  color: #4300ca;
 `;
 
 const CategoryText = styled.p`
   font-size: 10px;
   margin-bottom: 5px;
   text-transform: uppercase;
+  color: #4300ca;
 `;
 
 const TaskCheckbox = styled.input`
@@ -37,6 +40,7 @@ const CompletedTime = styled.p`
   font-size: 10px;
   margin-top: 5px;
   text-transform: uppercase;
+  opacity: 0.7;
 `;
 
 // -----------------------------------------------------------------------------
@@ -56,21 +60,32 @@ export const Todo = ({ task, index, prio }) => {
 
   return (
     <TaskWrapper important={prio === true ? 'important' : ''}>
-      <TaskCheckbox
-        type="checkbox"
-        name="finished"
-        id={index}
-        checked={checked}
-        onChange={handleChecked}
-      />
       <TaskTextWrapper>
         <CategoryText>{task.category}/</CategoryText>
-        <TaskText htmlFor={index}>{task.task}</TaskText>
+        <TaskText htmlFor={index}>
+          {task.prio === true ? (
+            <span role="img" aria-label="important">
+              🔥
+            </span>
+          ) : (
+            ''
+          )}{' '}
+          {task.task}
+        </TaskText>
         <CompletedTime>
           Created {moment(task.createdAt).startOf('second').fromNow()}
         </CompletedTime>
       </TaskTextWrapper>
-      <RemoveTaskButton onClick={handleRemoveTask}>✕</RemoveTaskButton>
+      <div>
+        <RemoveTaskButton onClick={handleRemoveTask}>✕</RemoveTaskButton>
+        <TaskCheckbox
+          type="checkbox"
+          name="finished"
+          id={index}
+          checked={checked}
+          onChange={handleChecked}
+        />
+      </div>
     </TaskWrapper>
   );
 };

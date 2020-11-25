@@ -1,24 +1,48 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import Select from 'react-select';
+import styled from 'styled-components';
+
+// Reducers
 import { todos } from '../reducers/todos';
 
-import { NewTodoWrapper } from '../styling/GlobalStyling';
+// Styling
 import {
-  NewTodoInput,
-  NewTodoInnerWrapper,
-  NewTodoButton,
-} from '../styling/NewTodoStyling';
+  NewTodoWrapper,
+  InnerFlexWrapper,
+  Button,
+  InfoText,
+} from '../styling/GlobalStyling';
 
 // -----------------------------------------------------------------------------
 
-export const NewTodo = () => {
+export const NewTodo = ({ setAddTaskVisible }) => {
+  const dispatch = useDispatch();
+
   const [todo, setTodo] = useState('');
   const [category, setCategory] = useState('Fun');
   const [prio, setPrio] = useState(false);
 
-  const dispatch = useDispatch();
-  // const amountOfTodos = useSelector((store) => store.todos.tasks.length + 1);
-  const createID = Math.floor(Math.random() * 10000) + 1;
+  const options = [
+    { value: 'Fun', label: 'Fun' },
+    { value: 'Nom', label: 'Nom' },
+    { value: 'Shop', label: 'Shop' },
+  ];
+
+  const handleSelectChange = (selectedOption) => {
+    setCategory(selectedOption.value);
+  };
+
+  const createdId = Math.floor(Math.random() * 10000) + 1;
+
+  const handleToggleCheckbox = () => {
+    !prio ? setPrio(true) : setPrio(false);
+  };
+
+  // Close popup
+  const handleCloseNewTask = () => {
+    setAddTaskVisible(false);
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -27,7 +51,7 @@ export const NewTodo = () => {
     if (todo) {
       dispatch(
         todos.actions.addTodo({
-          id: createID,
+          id: createdId,
           task: todo,
           category: category,
           prio: prio,
@@ -38,6 +62,7 @@ export const NewTodo = () => {
       setTodo('');
       setCategory('Fun');
       setPrio(false);
+      setAddTaskVisible(false);
     } else {
       alert('Please write a task first');
     }
@@ -51,31 +76,81 @@ export const NewTodo = () => {
         onChange={(event) => setTodo(event.target.value)}
         value={todo}
       />
-
-      <NewTodoInnerWrapper>
+      <CategoryAndPrioWrapper>
         <div>
-          <label>Set category:</label>
-          <select onChange={(event) => setCategory(event.target.value)}>
-            <option value="Fun">Fun</option>
-            <option value="Nom">Nom</option>
-            <option value="Shop">Shop</option>
-          </select>
+          <Label>Set category:</Label>
+          <CustomSelect
+            value={category.value}
+            onChange={handleSelectChange}
+            options={options}
+            placeholder="Select a category"
+          />
         </div>
         <div>
-          <label htmlFor="newTask">Prioritized?</label>
+          <Label htmlFor="newTask">Prioritized?</Label>
           <input
             type="checkbox"
             name="prioritized"
             id="newTask"
             checked={prio}
-            onChange={() => setPrio(true)}
+            onChange={handleToggleCheckbox}
           />
         </div>
-
+      </CategoryAndPrioWrapper>
+      <ButtonWrapper>
+        <Button type="button" onClick={handleCloseNewTask}>
+          ✕
+        </Button>
         <NewTodoButton type="submit" value="submit" onClick={handleSubmit}>
           +
         </NewTodoButton>
-      </NewTodoInnerWrapper>
+      </ButtonWrapper>
     </NewTodoWrapper>
   );
 };
+
+// Local styles -------------------------------------------
+const NewTodoInput = styled.input`
+  padding: 10px 20px 10px 5px;
+  border: none;
+  border-bottom: 1px solid #000;
+  margin: 5px 0 20px 0;
+  background: #fff;
+`;
+
+const CategoryAndPrioWrapper = styled(InnerFlexWrapper)`
+  @media (max-width: 500px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+`;
+
+const CustomSelect = styled(Select)`
+  width: 280px;
+  margin-bottom: 10px;
+`;
+
+const Label = styled.label`
+  font-size: 10px;
+  margin-top: 5px;
+  text-transform: uppercase;
+`;
+
+const ButtonWrapper = styled(InnerFlexWrapper)`
+  margin-top: 10px;
+`;
+
+const NewTodoButton = styled.button`
+  background: #4300ca;
+  color: #fff;
+  border-radius: 25px;
+  padding: 5px;
+  height: 30px;
+  width: 30px;
+  border: none;
+  border: 1px solid #000;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;

@@ -1,29 +1,28 @@
 import React from 'react';
-// import { useSelector } from 'react-redux';
-
-// Components
-// import { HeaderImage } from './HeaderImage';
+import styled from 'styled-components';
 
 // Styling
-import { HeaderWrapper } from '../styling/GlobalStyling';
+import { OuterFlexWrapper } from '../styling/GlobalStyling';
+
+const HeaderWrapper = styled(OuterFlexWrapper)`
+  justify-content: center;
+`;
+
+const Logo = styled.img`
+  width: 50px;
+  align-self: center;
+  margin-top: 10px;
+  z-index: 2;
+`;
 
 // ----------------------------------------------------------------
 
 export const Header = () => {
   return (
     <HeaderWrapper>
-      {/* <HeaderImage
-        category="Fun"
-        source="https://img.icons8.com/pastel-glyph/2x/like--v2.png"
+      <Logo
+        src={process.env.PUBLIC_URL + '/images/noun_tasklist_1212192.png'}
       />
-      <HeaderImage
-        category="Nom"
-        source="https://img.icons8.com/pastel-glyph/2x/like--v2.png"
-      />
-      <HeaderImage
-        category="Shop"
-        source="https://img.icons8.com/pastel-glyph/2x/like--v2.png"
-      /> */}
     </HeaderWrapper>
   );
 };

@@ -11,7 +11,7 @@ import { Header } from './components/Header';
 import { Footer } from './components/Footer';
 import { NewTodo } from './components/NewTodo';
 
-import { AddTaskButton } from './styling/GlobalStyling';
+import { AddTaskButton, BackgroundLayer } from './styling/GlobalStyling';
 const reducer = combineReducers({
   todos: todos.reducer,
 });
@@ -42,7 +42,12 @@ export const App = () => {
     <Provider store={store}>
       <AddTaskButton onClick={() => setAddTaskVisible(true)}>+</AddTaskButton>
       <Header />
-      {addTaskVisible && <NewTodo />}
+      {addTaskVisible && (
+        <>
+          <BackgroundLayer></BackgroundLayer>
+          <NewTodo setAddTaskVisible={setAddTaskVisible} />
+        </>
+      )}
       <ListOfTodos />
       <Footer />
     </Provider>

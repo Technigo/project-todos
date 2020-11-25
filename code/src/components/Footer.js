@@ -9,7 +9,7 @@ export const Footer = () => {
 
   return (
     <FooterWrapper>
-      <p>A website made by Karin Nordkvist </p>
+      <p>A web app made by Karin Nordkvist </p>
       <p>@ Technigo - 14/24 - Copyright 2020</p>
       <span onClick={handleReload}>▴</span> {/* To clear the local storage */}
     </FooterWrapper>

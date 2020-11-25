@@ -1,14 +1,18 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import styled from 'styled-components';
+
+// Components
 import { Todo } from './Todo';
 import { CompletedTodo } from './CompletedTodo';
-import styled from 'styled-components';
+import { CounterAndSorter } from './CounterAndSorter';
+import { NoTasksFound } from './NoTasksFound';
 
 // Reducers
 import { todos } from '../reducers/todos';
 
 // Styling
-import { MainWrapper, Button } from '../styling/GlobalStyling';
+import { Wrapper, Button } from '../styling/GlobalStyling';
 
 const ControlTasks = styled.div`
   margin: 20px;
@@ -20,26 +24,14 @@ const ControlTasks = styled.div`
 
   & p {
     padding: 0 10px;
-  }
-`;
-
-const Categories = styled.div`
-  display: flex;
-
-  & p {
-    width: 25%;
-    text-align: center;
-    padding: 5px;
-    background: #f5f0ea;
-    margin: 2px;
+    text-transform: uppercase;
     font-size: 12px;
-    color: #000;
   }
 `;
 
 const CompletedHeadline = styled.h2`
   font-size: 16px;
-  margin: 50px 0 15px 0;
+  margin: 50px 0 15px 10px;
   text-transform: uppercase;
 `;
 
@@ -53,6 +45,21 @@ export const ListOfTodos = () => {
   const nonCompletedTasks = allTodos.filter((todo) => !todo.isCompleted);
   const completedTasks = allTodos.filter((todo) => todo.isCompleted);
 
+  // Set what category should be listed in the main list
+  // Initial state = All incompleted tasks
+  const [showingCategory, setShowingCategory] = useState('All');
+  // Variable that is used for mapping over all tasks and display in list
+  let categoryTasks = undefined;
+
+  if (showingCategory === 'All') {
+    categoryTasks = nonCompletedTasks;
+  } else {
+    categoryTasks = nonCompletedTasks.filter(
+      (todo) => todo.category === showingCategory
+    );
+  }
+
+  // Complete / remove functions
   const handleCompleteAll = () => {
     dispatch(todos.actions.completeAllTodos());
   };
@@ -62,17 +69,15 @@ export const ListOfTodos = () => {
   };
 
   return (
-    <MainWrapper>
-      {/* <Categories>
-        <p>Category 1</p>
-        <p>Category 2</p>
-        <p>Category 3</p>
-        <p>Category 4</p>
-      </Categories> */}
-      {nonCompletedTasks.length === 0 && <p>Add a task...</p>}
+    <Wrapper>
+      <CounterAndSorter
+        showingCategory={showingCategory}
+        setShowingCategory={setShowingCategory}
+      />
 
-      {nonCompletedTasks.reverse().map((task, index) => {
-        console.log(task);
+      {nonCompletedTasks.length === 0 && <NoTasksFound />}
+
+      {categoryTasks.reverse().map((task, index) => {
         return (
           <Todo task={task} index={index} key={task.id} prio={task.prio} />
         );
@@ -84,14 +89,17 @@ export const ListOfTodos = () => {
       {completedTasks.map((task, index) => {
         return <CompletedTodo task={task} index={index} key={task.id} />;
       })}
-      <ControlTasks>
-        <p>
-          Complete all tasks <Button onClick={handleCompleteAll}>✓</Button>
-        </p>
-        <p>
-          Remove all tasks <Button onClick={handleRemoveAll}>✕</Button>
-        </p>
-      </ControlTasks>
-    </MainWrapper>
+
+      {nonCompletedTasks.length !== 0 && (
+        <ControlTasks>
+          <p>
+            Complete all tasks <Button onClick={handleCompleteAll}>✓</Button>
+          </p>
+          <p>
+            Remove all tasks <Button onClick={handleRemoveAll}>✕</Button>
+          </p>
+        </ControlTasks>
+      )}
+    </Wrapper>
   );
 };
