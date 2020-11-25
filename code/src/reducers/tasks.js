@@ -3,10 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const tasks = createSlice({
   name: 'tasks',
   initialState: { items: [
-    { id: 1, text: 'Watch video on actions & reducers', complete: false },
-    { id: 2, text: 'Follow redux codealong', complete: false },
-    { id: 3, text: 'Fork weekly assignment', complete: false },
-    { id: 4, text: 'Create a todo app', complete: false }
+    { id: 1, text: 'Add a todo!'},
   ] },
   reducers: {
     addItem: (state, action) => {

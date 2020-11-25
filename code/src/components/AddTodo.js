@@ -14,7 +14,6 @@ export const AddTodo = () => {
       tasks.actions.addItem({
         id, 
         text,
-        complete: false
       })
     )
     setaddId(id + 1)
