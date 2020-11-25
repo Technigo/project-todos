@@ -20,4 +20,5 @@ const Button = styled.button`
   border: 1px solid grey;
   color: #222222;
   font-size: 12px;
+  margin-top: 5px;
   ` 

@@ -1,19 +1,22 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { todoList } from 'reducers/todoList'
 import styled from 'styled-components'
 
 const AllTodoItems = () => {
-  const todoItems = useSelector((store) => store.todolist)
-  const [isChecked, setIsCheck] = useState(false)
+  const todoItems = useSelector((store) => {
+    console.log("store", store);
+    return store.todolist.list;
+  });
+  console.log(todoItems, "todoItems")
   const dispatch = useDispatch()
 
-  const checkedItemId = useSelector((state) => state.id)
+  const handleCheck = ({ todoId }) => {
+    dispatch(todoList.actions.handleChecked({ todoId }))
+  }
 
-  const handleCheck = () => {
-    setIsCheck(true)
-
-    dispatch(todoList.actions.handleChecked({ItemId: checkedItemId, isCompleted: true}))
+  const handleDelete = ({ todoId }) => {
+    dispatch(todoList.actions.handleDeleted({ todoId }))
   }
 
   return (
@@ -21,13 +24,24 @@ const AllTodoItems = () => {
       {todoItems.length > 0 ? (
       <> 
       {todoItems.map((todo) => (
-        <>
-          <Label key={todo.id} htmlFor={todo.id}>
-            <Input id={todo.id} type="checkbox" name={todo.task} onClick={() => handleCheck()}/>
-            <span>{todo.task}</span>
-            <span>{todo.delete}</span>
-          </Label>
-        </>
+        <CheckboxItem key={todo.id}>
+          <CheckboxDisplay>
+            <Input
+              id={todo.id}
+              type="checkbox"
+              name={todo.task}
+              checked={todo.isCompleted}
+              onChange={() => handleCheck({ todoId: todo.id })}
+            />
+            <Label htmlFor={todo.id}>
+              <span>{todo.task}</span>
+            </Label>
+          </CheckboxDisplay>
+          <button
+            onClick={()=> handleDelete({ todoId: todo.id })}>
+            {todo.delete}
+          </button>
+        </CheckboxItem>
       ))}
       </>
       ) : (<p>You have no tasks left today</p>)}
@@ -36,14 +50,25 @@ const AllTodoItems = () => {
 }
 export default AllTodoItems
 
-const Input = styled.div`
+const Input = styled.input`
   display: inline-block;
 `
 const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-top: 30px;
   `
-const Label = styled.div`
+const CheckboxItem = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+const CheckboxDisplay = styled.div`
+  display: flex;
+  justify-item: flex-start;
+  `
+
+const Label = styled.label`
   display: flex;
   justify-content: space-between;
   `

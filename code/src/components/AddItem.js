@@ -11,7 +11,6 @@ const AddItem = () => {
     e.preventDefault()
     dispatch(todoList.actions.addTask(todoValue))
     setTodoValue("")
-
   }
   
   return (
@@ -33,8 +32,15 @@ const Form = styled.form`
   background: transparent;
 `
 const Input = styled.input`
-&::placeholder {
-  font-size: 14px;
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 5px;
+  width: 100%;
+
+  &::placeholder {
+    font-size: 14px;
+    color: #fff;
 }
   `
 
