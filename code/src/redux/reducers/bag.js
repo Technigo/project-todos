@@ -10,10 +10,10 @@ export const bag = createSlice({
     ]
   },
   reducers: {
-    //addItem: (state, action) => {
-      //const { name, category } = action.payload
-      //state.items.push({ id: Date.now(), name, category })
-    //},
+    addThings: (state, action) => {
+      const { name } = action.payload
+      state.items.push({ name })
+    },
     removeItem: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload)
     },
