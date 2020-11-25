@@ -5,9 +5,7 @@ header {
   align-items: end;
   width: 100%;
   margin-bottom: 20px;
-  /* background-color: rgba(165, 165, 165, 0.3); */
   background-color: rgba(194, 141, 93, 0.3);
-  /* background-image: linear-gradient(25deg, #1e3f2f, #2f5c34, #3f7b38, #4f9c3b) */
 }
 
 h1 {
