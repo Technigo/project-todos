@@ -14,11 +14,11 @@ export const Header = () => {
 
   return(
     <header>
-        <h1> TO-DO:s 
-          <p className='todo-of-p'>of</p>
+        <h1 tabIndex='0'> TO-DO:s 
+          <p tabIndex='0' className='todo-of-p'>of</p>
         </h1>
-      <p className='current-date-p'>{moment().format('MMMM Do')}</p>
-      <p className='completed-p'>Completed {completed.length} / {items.length}</p>
+      <p tabIndex='0' className='current-date-p'>{moment().format('MMMM Do')}</p>
+      <p tabIndex='0' className='completed-p'>Completed {completed.length} / {items.length}</p>
       <ClearButton></ClearButton>
     </header>
   )

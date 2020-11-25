@@ -1,5 +1,5 @@
 form {
-  background-color: rgba(165, 165, 165, 0.3);
+  background-color: rgba(206, 177, 119, 0.3); 
   margin: 5px;
 }
 
@@ -16,7 +16,6 @@ form {
 .add-task-button{
   background-color: transparent;
   border: none;
-  /* font-size: 20px; */
   margin-left : 5px;
   color: rgba(165, 165, 165, 0.3);
 }
@@ -27,4 +26,11 @@ input[type=text]{
   border: none;
   background: transparent;
   font-family: "Montserrat", sans-serif;
+}
+
+@media screen and (min-width:500px) {
+  .input-label{
+    display: grid;
+    grid-template-columns: 0.05fr 1fr;
+  }
 }

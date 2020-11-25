@@ -30,7 +30,7 @@ export const TaskItems = (props) => {
         />
         <span className="checkmark"></span>
       </label>
-      <p className='task-name-p'>{props.item.todo}</p>
+      <p tabIndex='0' className='task-name-p'>{props.item.todo}</p>
       </div>
       <div className='remove-and-date'>
         <button
@@ -39,7 +39,7 @@ export const TaskItems = (props) => {
         onClick={handleRemoveButtonClick}>
           <span role ='img' aria-label = 'checked'>✔</span>
         </button>
-        <p className='task-added-date'> Added: {moment(props.item.createdAt).calendar()}</p>
+        <p tabIndex='0' className='task-added-date'> Added: {moment(props.item.createdAt).calendar()}</p>
       </div>
     </li>
   )

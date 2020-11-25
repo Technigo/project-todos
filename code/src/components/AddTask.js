@@ -27,6 +27,7 @@ export const AddTask = () => {
         <label className='input-label'>
         <button type="submit" className="add-task-button"><span role="img" aria-label="add-button" className='plus-sign'>➕</span></button>
         <input
+          tabIndex='0'
           type='text'
           value={taskInput}
           onChange={(event) => SetTaskInput(event.target.value)}

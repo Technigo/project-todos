@@ -1,6 +1,4 @@
 ul {
   list-style: none;
-  /* display: grid;
-  grid-template-rows: min-content auto min-content; */
   padding: 0;
 }
