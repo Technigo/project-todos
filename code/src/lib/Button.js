@@ -10,6 +10,9 @@ export const Button = styled.button `
   font-family: 'Architects Daughter', cursive;
   display: flex;
   justify-content: center;
+  &:first-child {
+    margin-right: 10px;
+  }
    &:hover {
     background-color: #3d5f6b; 
     border: none;

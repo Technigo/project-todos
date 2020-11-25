@@ -3,13 +3,13 @@ import styled from 'styled-components';
 export const Select = styled.select`
   width: 100%;
   border: 1px solid #3d5f6b;
-  border-radius: 10px;
-  padding: 10px;
+  border-radius: 3px;
+  padding: 5px;
   background-color: transparent;
   color: #fff;
   font-size: 16px;
   font-family: 'Architects Daughter', cursive;
-  -webkit-appearance: none;
+  //-webkit-appearance: none;
   
     option {
       color: #3d5f6b;
@@ -20,10 +20,11 @@ export const Select = styled.select`
       padding: 0px 2px 1px;
       font-family: 'Architects Daughter', cursive;
     }
-`
+`;
+
 export const FilterSelect = styled(Select)`
   color: #000;
-  &:first-child {
-    margin-right: 10px;
-  }
-`
+    &:first-child {
+      margin-right: 10px;
+    }
+`;

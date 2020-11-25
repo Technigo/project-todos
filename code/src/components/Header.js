@@ -1,13 +1,15 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { Link } from 'react-router-dom';  
+import { Link } from 'react-router-dom'; 
+import { todos } from '../reducers/todos';
+import styled from 'styled-components';
+
 import TodayDate from './TodayDate';
 import TodoSummary from './TodoSummary';
-import { todos } from '../reducers/todos';
+
 import { PlusIcon } from '../lib/Image';
 import { Title } from '../lib/Text';
-import styled from 'styled-components';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -38,4 +40,5 @@ const HeaderContainer = styled.header `
   align-content: space-evenly;
   justify-content: center;
   text-align: center;
+
 `

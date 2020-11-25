@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-import { Paragraph } from '../lib/Text';
 import styled from 'styled-components'; 
+import { Paragraph } from '../lib/Text';
 
 const TodoSummary = () => {
   const list = useSelector(store => store.todos.list);

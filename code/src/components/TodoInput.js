@@ -1,35 +1,29 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router-dom'
+import DatePicker from 'react-date-picker';
 import { v4 as uuidv4 } from 'uuid'; //uniqe ID
 
-//import { Link } from 'react-router-dom';
-import { useHistory } from 'react-router-dom'
 import { todos } from '../reducers/todos';
-//import Button from './Button';
+
 import { Button } from '../lib/Button';
-import { LabelTitle, Paragraph } from '../lib/Text'
+import { LabelTitle, Paragraph } from '../lib/Text';
 import { Select } from '../lib/Select';
-import DatePicker from 'react-date-picker';
-//import DatePicker from 'react-datepicker';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 
 const TodoInput = () => {
-  const dispatch = useDispatch();
   const [todoInput, setTodoInput] = useState('');
   const [category, setCategory] = useState('');
   const [dueDate, setDueDate] = useState(new Date());
-  //console.log(dueDate)
+  const dispatch = useDispatch();
   const history = useHistory();
+  const createdDate = new Date();
 
   const categories = useSelector(store => store.todos.list.categories)
-  //console.log(categories)
 
   const handleOnSubmit = (event) => {
     event.preventDefault()
-    //console.log(todoInput)
-
-    //use dispatch to dispatch the action to save my new todo item
     dispatch (
       todos.actions.addTodo({
         todoItemInfo: {
@@ -37,59 +31,49 @@ const TodoInput = () => {
           description: todoInput,
           complete: false,
           category: category,
+          createdAt: createdDate.getTime(),
           dueDate: dueDate.getTime(),
-          // display: true,
         },  
       })
     )
     setTodoInput('');
     history.goBack();
-    //dispatch(todos.actions.navHomePage())  
-    //console.log(handleOnSubmit)
   };
- //console.log(handleOnSubmit)
- //console.log(todoInput)
 
-return (
-  <Form onSubmit={handleOnSubmit}>
-    {/* <LabelTitle htmlFor="text">Enter a todo:</LabelTitle> */}
-    <Input 
-      type="text"
-      name="text"
-      id="text"
-      placeholder="Enter todo..."
-      onChange={event => setTodoInput(event.target.value)}
-      value={todoInput}
-      className="todo__input" 
-    />
+  return (
+    <Form onSubmit={handleOnSubmit}>
+      {/* <LabelTitle htmlFor="text">Enter a todo:</LabelTitle> */}
+      <Input 
+        type="text"
+        id="text"
+        placeholder="Enter todo..."
+        onChange={event => setTodoInput(event.target.value)}
+        value={todoInput}
+        className="todo__input" 
+      />
 
-    <LabelTitle htmlFor="due">Due Date:</LabelTitle>
-    <DatePicker 
-      name="due"
-      id="due"
-      onChange={(date) => setDueDate(date)}
-      value={dueDate}
-      //selected={dueDate}
-      //onChange={date => setDueDate(date)}
-    /> 
-    <LabelTitle htmlFor="category">Choose category:</LabelTitle>
-    <Select 
-      name="category" 
-      id="category" 
-      onChange={(event) => setCategory(event.target.value)} 
-      value={category}>
-      {categories.map(option => (
-        <option key={option} value={option}>{option}</option>
-      ))}
-    </Select>
+      <LabelTitle htmlFor="due">Due Date:</LabelTitle>
+      <DatePicker 
+        id="due"
+        onChange={(date) => setDueDate(date)}
+        value={dueDate}
+      /> 
+      <LabelTitle htmlFor="category">Choose category:</LabelTitle>
+      <Select 
+        id="category" 
+        onChange={(event) => setCategory(event.target.value)} 
+        value={category}>
+        {categories.map(option => (
+          <option key={option} value={option}>{option}</option>
+        ))}
+      </Select>
       <Button 
         type="submit"
         disabled={!todoInput}
-        //onClick={() => history.goBack()}
       >
         <Paragraph>Add Todo</Paragraph>
       </Button>   
-  </Form>
+    </Form>
 )
 }
 export default TodoInput;
@@ -99,6 +83,9 @@ export const Form = styled.form `
   display: flex;
   flex-direction: column; 
   justify-content: space-evenly;
+
+  max-width: 700px;
+  width: 100%;
 `
 export const Input = styled.input.attrs({ type: 'text' }) `
   background-color: transparent;

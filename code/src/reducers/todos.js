@@ -4,21 +4,21 @@ const initialState = {
   list: {
     name: "Todo list",
     items: [],
-    categories: ['Categories' ,'Personal', 'School', 'Work', 'Home', 'Other' ],
+    categories: ['Personal', 'School', 'Work', 'Home', 'Other' ],
     //homePage: false,
   }
 };
 
-const filters = {
-  ALL: "all",
-  COMPLETED: "completed",
-  NOT_COMPLETED: "not completed",
-}
+// const filters = {
+//   ALL: "all",
+//   COMPLETED: "completed",
+//   NOT_COMPLETED: "not completed",
+// }
 
 export const todos = createSlice({
   name: "todos",
   initialState: initialState,
-  filters: filters,
+  //filters: filters,
   reducers: {
     addTodo: (state, action) => {
       const { todoItemInfo } = action.payload;
@@ -30,15 +30,16 @@ export const todos = createSlice({
     //   //state.list.items[id].complete = complete;
     //   console.log(id)
     // },
-
+    
+    
     setComplete: (state, action) => {
       const foundItem = state.list.items.find(item => item.id === action.payload)
-      console.log(action.payload)
-      console.log(`innan if ${foundItem}`)
+      //console.log(action.payload)
+      //console.log(`innan if ${foundItem}`)
       if(foundItem) {
         foundItem.complete = !foundItem.complete
       }
-      console.log(`efter if ${foundItem}`)
+      //console.log(`efter if ${foundItem}`)
     },
 
     setAllComplete: (state) => {
@@ -88,7 +89,6 @@ export const todos = createSlice({
 /*ATT GÖRA*/
 //lägg till mer filter möjligheter DUE DATE(är detta möjligt), COMPLETE/NOT COMPLETE
 
-//confirmation alert när man klickar på "remove all"
 
 
 /*HAR VI GJORT*/
@@ -101,6 +101,7 @@ export const todos = createSlice({
 //Välja Due Date på sida två när jag skapar min kategori (datepicker)
 //möjlighet att filterar på ALL kategorier
 //Ta bort category och description i initialState. (starta tomt) (null???)
+//confirmation alert när man klickar på "remove all"
 
 
 

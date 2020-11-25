@@ -1,6 +1,7 @@
 import React from 'react';
 
 import styled from 'styled-components';
+//import { TodoParagraph } from '../lib/Text'
 
 const CheckboxContainer = styled.div`
   display: inline-block;

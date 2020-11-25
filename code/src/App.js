@@ -3,21 +3,18 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import { todos } from './reducers/todos';
 import  Home  from './pages/Home';
-import styled from 'styled-components'
 import CreateTodo from 'pages/CreateTodo';
+import { todos } from './reducers/todos';
 
 
 // StoreCreation - tell redux about my reducers 
 const reducer = combineReducers({ todos: todos.reducer, })
 
 // StoreCreation - Create the store using our reducers and the retrieved state
-//
 //const store = configureStore({ reducer })
-
-//ÖPPNA UPP SEN NÄR ALLT ÄR KLART 
-const persistedStateJSON = localStorage.getItem('reduxState1')
+ 
+const persistedStateJSON = localStorage.getItem('reduxState')
 let persistedState = {}
 if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON)
@@ -30,36 +27,10 @@ const store = configureStore({
 })
 
 store.subscribe(() => {
-  localStorage.setItem('reduxState1', JSON.stringify(store.getState()))
+  localStorage.setItem('reduxState', JSON.stringify(store.getState()))
 })
 
 const App = () => {
-  // const saveToLocalStorage = (state) => {
-  //   try {
-  //     const serializedState = JSON.stringify(state);
-  //     localStorage.setItem("state", serializedState);
-  //   } catch (e) {
-  //     console.log(e);
-  //   }
-  // };
-
-  // const loadFromLocalStorage = () => {
-  //   try {
-  //     const serializedState = localStorage.getItem("state");
-  //     if (serializedState === null) return undefined;
-  //     return JSON.parse(serializedState);
-  //   } catch (e) {
-  //     console.log(e);
-  //     return undefined;
-  //   }
-  // };
-
-  // const reducer = combineReducers({ todos: todos.reducer });
-  // const persistedState = loadFromLocalStorage();
-
-  // const store = createStore(reducer, persistedState);
-  // store.subscribe(() => saveToLocalStorage(store.getState()));
-  
   return (
     <BrowserRouter>
       <Provider store={store}>
@@ -67,41 +38,13 @@ const App = () => {
         <Route exact path="/">
           <Home />
         </Route>
-
         <Route exact path="/create">
           <CreateTodo />
         </Route>  
-      
-        {/* <Container>
-          <Home/>
-        </Container> */}
-      
       </Switch>
       </Provider>
     </BrowserRouter>
-  // <Provider store={store}>
-  //   <Container>
-  //     <Home/>
-  //   </Container>
-  // </Provider>
   )
 }
-export default App
+export default App;
 
-export const Container = styled.main `
-// padding: 20px;
-
-`
-
-// import React from 'react';
-
-// import  Home  from './pages/Home';
-
-// const App = () => {
-//   return (
-//     <div>
-//       <Home />
-//     </div>
-//   )
-// };
-// export default App;
