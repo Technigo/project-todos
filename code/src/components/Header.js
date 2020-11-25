@@ -18,7 +18,7 @@ export const Header = () => {
           <p className='todo-of-p'>of</p>
         </h1>
       <p className='current-date-p'>{moment().format('MMMM Do')}</p>
-      <p className='completed-p'>Completed {completed.length} out of {items.length}</p>
+      <p className='completed-p'>Completed {completed.length} / {items.length}</p>
       <ClearButton></ClearButton>
     </header>
   )

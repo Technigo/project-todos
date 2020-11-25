@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux"
 
 import { tasks } from 'reducers/Tasks'
 
+
 import './AddTask.css'
 
 // can add due data here too
@@ -10,18 +11,21 @@ import './AddTask.css'
 export const AddTask = () => {
   const [taskInput, SetTaskInput] = useState('')
   const dispatch = useDispatch()
+  const date = new Date()
 
   const handleSubmit = (event) => {
     event.preventDefault()
     if (taskInput.length > 0) { //have to have a message longer than 0
-      dispatch(tasks.actions.addTask(taskInput))
+      // dispatch(tasks.actions.addTask(taskInput))
+      dispatch(tasks.actions.addTask({ todo: taskInput, createdAt: date.getTime() }))
       SetTaskInput('')  //emptying input field after submitting
     }
+
   }
     return (
       <form onSubmit={handleSubmit}>
         <label className='input-label'>
-        <button type="submit" className="add-task-button"><span role="img" aria-label="add-button">➕</span></button>
+        <button type="submit" className="add-task-button"><span role="img" aria-label="add-button" className='plus-sign'>➕</span></button>
         <input
           type='text'
           value={taskInput}
