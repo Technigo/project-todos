@@ -23,7 +23,7 @@ export const Item = ({ item }) => {
 
     return (
         <ItemContainer>
-            {item.name}{item.dueDate}
+            {item.title}{item.dueDate}
             <Link to={`/todo/${item.id}`}>View</Link>  
             <button onClick={() => onItemRemove(item.id)} >Delete</button>
         </ItemContainer>

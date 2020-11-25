@@ -1,11 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { BrowserRouter, Switch, Route, useParams } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { todos } from './reducers/todos';
 import { TodoList } from './components/TodoList';
 //import { AddTodoForm } from './components/AddTodoForm';
-import { SingleTodoPage } from './components/SingleTodoPage';
+import { EditTodoForm } from './components/EditTodoForm';
 
 const reducer = combineReducers({ todos: todos.reducer })
 const store = configureStore({ reducer })
@@ -22,7 +22,7 @@ export const App = () => {
           </Route>
          
           <Route exact path="/todo/:id">
-            <SingleTodoPage />
+            <EditTodoForm />
           </Route>
         </Switch>
       </BrowserRouter>

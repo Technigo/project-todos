@@ -11,12 +11,6 @@ export const AddTodoForm = () => {
   const category = useSelector((store) => store.todos.items.category);
   const categories = useSelector((store) => store.todos.categories);
 
-  // const submitTodo = (userTodoHeaderInput, index) => {
-  //     dispatch(todos.actions.submitTodo(userTodoHeaderInput))
-  // }
-
-  //THIS IS FOR THE CATEGORY CHECKBOX GROUP
-
   const onCategoryChange = (categoryValue) => {
     userCategory.includes(categoryValue)
       ? setUserCategory(userCategory.filter((item) => item !== categoryValue))
@@ -27,15 +21,15 @@ export const AddTodoForm = () => {
     event.preventDefault();
     if (todoTitle && todoContent) {
       dispatch(
-        todos.actions.addItem({
-          id: Date.now(),
-          category: userCategory, 
-          name: todoTitle, 
-          text: todoContent,
-          isCompleted: false,
-          createdAt: Date.now()
-        })
-      );
+        todos.actions.addItem(title, content, category))
+        //   id: Date.now(),
+        //   category: userCategory, 
+        //   title: todoTitle, 
+        //   content: todoContent,
+        //   isCompleted: false,
+        //   createdAt: Date.now()
+        // })
+    
         setTodoTitle('');
         setTodoContent('');
         setUserCategory([]);
