@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { todolist } from 'reducers/todolist';
 
 import { AddToDoForm, AddToDoInputField, LabelText, Select, AddButton } from '../styled-components/AddToDoComponents';
 
 // This is the component where user can add a new item to the list
 export const AddToDoInput = () => {
+  const todoList = useSelector((store) => store.todolist);
+
   // The text describing the new task to add and the chosen category for this task
   // are saved as a local state and then this data is passed on to the global
   // state in the store when dispatching the addToDo action
@@ -21,11 +23,11 @@ export const AddToDoInput = () => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     
-    // Setting the id for the new tasks to be added by creating a Date: this
-    // makes the id be super unique and chances of it repeating are super low
+    // Setting the id for the new tasks to be added by finding the id with the max
+    // value in the existing array and adding + 1
     // the only tasks with a set id are the ones included in the initial state
     dispatch(todolist.actions.addToDo({
-      id: Date.now(),
+      id: Math.max(...todoList.items.map(item => item.id)) + 1,
       text: newTodoItem,
       complete: false,
       category: category
