@@ -4,17 +4,15 @@ import {useSelector} from 'react-redux'
 import {Item} from 'components/Item'
 
 export const HouseholdTasks = () => {
-	const tasks = useSelector((store) => store.tasks)
-	const houseTasks = tasks.filter((item) => item.category === "Household")
-
-	console.log(houseTasks)
-
+	const tasksHome = useSelector((store) => store.tasks);
+	const houseTasks = tasksHome.items.filter((item) => item.category === "Shopping List");
+	
 	return (
-		<>
-		<h2>Household</h2>
+	  <>
+	  <h2>Household</h2>
 		{houseTasks.map((item) => (
-			<Item key={item.id} item={item}/>
+		  <Item key={item.id} listItem={item} />
 		))}
 		</>
 	)
-}
+	}

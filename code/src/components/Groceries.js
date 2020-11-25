@@ -4,10 +4,9 @@ import {useSelector} from 'react-redux'
 import {Item} from 'components/Item'
 
 export const Groceries = () => {
-	const tasks = useSelector((store) => store.tasks)
-	const groceriesTasks = tasks.filter((item) => item.category === "Groceries")
+	const tasksGroceries = useSelector((store) => store.tasks)
+	const groceriesTasks = tasksGroceries.items.filter((item) => item.category === "Groceries")
 
-	console.log(tasks.length)
 
 	return (
 		<>

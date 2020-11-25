@@ -4,10 +4,8 @@ import {useSelector} from 'react-redux'
 import {Item} from 'components/Item'
 
 export const SelfCare = () => {
-	const tasks = useSelector((store) => store.tasks)
-	const selfCareTasks = tasks.filter((item) => item.category === "Self Care")
-
-	console.log(selfCareTasks)
+	const tasksSelfCare = useSelector((store) => store.tasks)
+	const selfCareTasks = tasksSelfCare.items.filter((item) => item.category === "Self Care")
 
 	return (
 		<>

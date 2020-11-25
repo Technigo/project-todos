@@ -4,10 +4,8 @@ import {useSelector} from 'react-redux'
 import {Item} from 'components/Item'
 
 export const CodingTasks = () => {
-	const tasks = useSelector((store) => store.tasks)
-	const codingTasksList = tasks.filter((item) => item.category === "Coding")
-
-	console.log(codingTasksList)
+	const tasksCoding = useSelector((store) => store.tasks)
+	const codingTasksList = tasksCoding.items.filter((item) => item.category === "Coding")
 
 	return (
 		<>

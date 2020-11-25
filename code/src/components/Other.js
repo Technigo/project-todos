@@ -4,8 +4,8 @@ import {useSelector} from 'react-redux'
 import {Item} from 'components/Item'
 
 export const Other = () => {
-	const tasks = useSelector((store) => store.tasks)
-	const otherTasks = tasks.filter((item) => item.category === "Other")
+	const tasksOther = useSelector((store) => store.tasks)
+	const otherTasks = tasksOther.items.filter((item) => item.category === "Other")
 
 	console.log(otherTasks)
 

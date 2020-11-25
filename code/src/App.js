@@ -22,11 +22,11 @@ export const App = () => {
   return (
     <Provider store={store}>
       <TasksInput/>
-      <HouseholdTasks/>
+      <HouseholdTasks/> 
       <SelfCare/>
       <CodingTasks/>
       <Groceries/>
-      <Other/>
+      <Other/>    
     </Provider>
   )
 }
