@@ -11,7 +11,7 @@ export const CodingTasks = () => {
 
 	return (
 		<>
-		<h2>Coding Tasks list</h2>
+		<h2>Coding</h2>
 		{codingTasksList.map((item) => (
 			<Item key={item.id} item={item}/>
 		))}

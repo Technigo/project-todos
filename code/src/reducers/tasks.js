@@ -5,7 +5,10 @@ const initialState = [
 		{id: 2, text: 'Take the dog out', category: 'Household', complete: true},
 		{id: 3, text: 'Do laundry', category: 'Household', complete: true},
 		{id: 4, text: 'Make dinner', category: 'Household', complete: false},
-		{id: 5, text: 'Do some more coding', category:'Coding', complete: false}
+		{id: 5, text: 'Do some more coding', category:'Coding', complete: false},
+		{id: 6, text: 'Buy carrots', category:'Groceries', complete: false},
+		{id: 7, text: 'Wash hair', category:'Other', complete: false}
+
 ]
 
 export const tasks = createSlice({

@@ -11,7 +11,7 @@ export const SelfCare = () => {
 
 	return (
 		<>
-		<h2>Self Care list</h2>
+		<h2>Self Care</h2>
 		{selfCareTasks.map((item) => (
 			<Item key={item.id} item={item}/>
 		))}

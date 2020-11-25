@@ -6,11 +6,13 @@ align-self: flex-start;
 padding:8px;
 margin:8px;
 font-size:32px;
-color:#fff;
-background-color:#000;
+color:#F7AF9D;
 width: 50%;
+background-color:#F7E3AF; 
 `;
 
 export const Item = ({item}) => {
-return <ItemContainer>{item.text}</ItemContainer>
+return (
+<ItemContainer>{item.text}</ItemContainer>
+)
 }

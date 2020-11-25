@@ -5,13 +5,13 @@ import {Item} from 'components/Item'
 
 export const Groceries = () => {
 	const tasks = useSelector((store) => store.tasks)
-	const groceriesTasks = tasks.filter((item) => item.category === "Grocery list")
+	const groceriesTasks = tasks.filter((item) => item.category === "Groceries")
 
 	console.log(tasks.length)
 
 	return (
 		<>
-		<h2>Grocery list</h2>
+		<h2>Groceries</h2>
 		{groceriesTasks.map((item) => (
 			<Item key={item.id} item={item}/>
 		))}
