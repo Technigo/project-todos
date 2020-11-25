@@ -7,7 +7,7 @@ export const SingleTodo = ({ id, text, complete }) => {
 
   // TODO:
   //add done/undone functionality
-  //add delete button
+  //add functioning delete button
   //styled component for done and undone state
 
   const dispatch = useDispatch()
@@ -17,6 +17,7 @@ export const SingleTodo = ({ id, text, complete }) => {
   }
 
   const handleRemoveButtonClick = () => {
+    //dispatch(todoTasks.actions.removeTask(id)) - in the video
     dispatch(todoTasks.actions.removeTask(id))
   }
 
@@ -35,6 +36,7 @@ export const SingleTodo = ({ id, text, complete }) => {
 
       <button
         type="button"
+
         onClick={handleRemoveButtonClick}>
         Remove
       </button>

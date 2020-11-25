@@ -1,13 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-// const allTodoTasks = [
-//   //more categories can be added as keys (dueDate, category ...)
-//   { id: 1, text: 'Watch video on actions & reducers', complete: false },
-//   { id: 2, text: 'Follow redux codealong', complete: false },
-//   { id: 3, text: 'Fork weekly assignment', complete: true },
-//   { id: 4, text: 'Create a todo app', complete: false },
-// ]
-
 const initialState = {
   allTodoTasks: [
     //more categories can be added as keys (dueDate, category ...)
@@ -92,11 +84,17 @@ export const todoTasks = createSlice({
       state.allTodoTasks.push({ id, text, complete })
     },
 
-    //removes the task from all todos
-    //TODO:
-    //create a remove button
     removeTask: (state, action) => {
-      state.initialState.filter((task) => task.id !== action.payload)
+
+      //id of the removed task
+      const id = action.payload;
+      console.log(`Id: ${id}`)
+
+      //finds id of a removed task in an array of all tasks
+      const tasks = state.allTodoTasks.find(task => task.id === id)
+
+      //removes the object (task) with an id of the removed task in an array of tasks
+      state.allTodoTasks.splice(state.allTodoTasks.indexOf(tasks), 1);
     }
   }
 
