@@ -14,29 +14,18 @@ export const Background  = styled.div`
   padding:15px;
 
   @media (min-width: 700px){
-    width:320px;
+    min-width:320px;
   }
   @media (min-width: 1024px){
-    width:440px;
+    min-width:440px;
   }
-
-
 `
 export const Text = styled.h1`
   font-size:22px;
-  margin:0px;
-
-
-  @media (min-width: 700px){
-    
-} 
+  margin:0px; 
 `
 export const DateText = styled.p`
-  font-size: 16px;
-
-  @media (min-width: 700px){
-    
-    
+  font-size: 16px;    
 } 
 `
 export const SectionTwo = styled.div`
@@ -44,6 +33,7 @@ export const SectionTwo = styled.div`
  flex-direction:column;
  align-items: flex-end;
  margin:0px;
+ 
  @media (min-width: 700px){
   display:flex;
   justify-content:center;
