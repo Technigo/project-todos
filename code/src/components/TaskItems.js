@@ -23,6 +23,8 @@ export const TaskItems = (props) => {
       <label className='checkbox-label'>
       <input
           type="checkbox"
+          // || false fixes the issues of going from controlled to uncontrolled value
+          // here https://github.com/facebook/react/issues/6779
           checked={props.item.checkedTask || false}
           onChange={handleCheckboxClick}
         />
