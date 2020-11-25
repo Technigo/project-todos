@@ -3,19 +3,31 @@ import { useSelector } from 'react-redux'
 
 import styled from 'styled-components'
 
-const Container = styled.section`
+const Container = styled.div`
   display: flex;
   justify-content: space-between;
-  background-color: yellow;
-  padding: 20px;
-  width: 80%;
+  width: 100%;
 `
 const TotalTasks = styled.p`
   font-size: 16px;
 `
 
 const ClearButton = styled.button`
-  font-size: 16px;
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  background-color: #ffffff;
+  border: none;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+  }
+
+  &:focus {
+    outline: 2px solid #9576A5;
+  }
 `
 
 export const Footer = () => {
@@ -30,7 +42,7 @@ export const Footer = () => {
       <ClearButton
         onClick={() => {}}
       >
-        Clear all
+        clear all
       </ClearButton>
     </Container>
   )

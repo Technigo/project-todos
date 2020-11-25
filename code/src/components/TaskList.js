@@ -9,11 +9,15 @@ import { Task } from './Task'
 import { Footer } from './Footer'
 
 const Section = styled.section`
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 10px 5px 38px -6px rgba(0,0,0,0.49);
+  padding: 40px;
+  margin: 40px 0;
+  max-width: 1000px;
 `
 
 const TasksContainer = styled.div`
@@ -21,9 +25,7 @@ const TasksContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 0 20px 20px 20px;
-  width: 80%;
-  background-color: orange;
+  width: 100%;
 `
 
 export const TaskList = () => {
@@ -37,7 +39,6 @@ export const TaskList = () => {
   return (
     <Section>
       <Header />
-      <AddTask />
       <TasksContainer>
         {items.map(task => {
           return (
@@ -48,6 +49,7 @@ export const TaskList = () => {
           )
         })}
       </TasksContainer>
+      <AddTask />
       <Footer />
     </Section>
   )
