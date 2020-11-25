@@ -12,9 +12,16 @@ export const todos = createSlice({
   reducers: {
     removeItem: (store, action) => {
       const itemId = action.payload;
-      const filteredList = store.tasks.filter((item) => item.id !== itemId)
-      
+      const filteredList = store.tasks.filter(item => item.id !== itemId);
+
       store.tasks = filteredList
+    },
+    toggleDone: (store, action) => {
+      const itemId = action.payload;
+      const currentItem = store.tasks.find(item => item.id === itemId);
+      
+      currentItem.done === true ? currentItem.done = false : currentItem.done = true;
+      
     }
   }
 });
