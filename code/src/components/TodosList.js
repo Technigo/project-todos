@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Item } from './Item';
 
-import { ListContainer } from './ListStyling';
+import { ListContainer } from './StyledComponents/ListStyling';
 import { AddTodo } from './AddTodo';
 
 export const TodosList = () => {

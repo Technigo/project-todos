@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 
 import styled from 'styled-components';
 import { todos } from '../Reducers/todos';
-import { RemoveButton } from './ListStyling';
+import { RemoveButton } from './StyledComponents/ListStyling';
 import  { CheckBox } from './Checkbox';
 
 const ItemContainer = styled.li`
