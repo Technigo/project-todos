@@ -10,4 +10,19 @@ export const TasksInput = () => {
 	const setTodoTaskId = tasks.length+1 
 
 	console.log(setTodoTaskId)
+
+	return (
+		<form>
+			<label>
+				Add task
+				<input type="text"
+				onChange={event => setTodoTask(event.target.value)}
+				value={todoTask}
+				>
+				</input>
+				<button type="submit">add</button>
+			</label>
+		</form>
+	)
+
 }
