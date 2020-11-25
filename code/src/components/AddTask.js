@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { todos } from "reducers/todos";
+import { v4 as uuid } from "uuid";
 
 export const AddTask = () => {
   const dispatch = useDispatch();
@@ -12,8 +13,10 @@ export const AddTask = () => {
     if (inputValue.match(/\S+/)) {
       dispatch(
         todos.actions.addTask({
+          id: uuid(),
           text: inputValue,
           complete: false,
+          time: Date.now(),
         })
       );
     }

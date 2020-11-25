@@ -1,19 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { v4 as uuid } from "uuid";
 
 export const todos = createSlice({
   name: "todos",
   initialState: {
     username: "Jonna",
     tasks: [
-      { id: 1, text: "Get a dog", complete: false },
-      { id: 2, text: "Drink beer", complete: false },
-      { id: 3, text: "Work out", complete: true },
+      { id: 1, text: "Get a dog", complete: false, time: "1606335505869" },
+      { id: 2, text: "Drink beer", complete: false, time: Date.now() },
+      { id: 3, text: "Work out", complete: true, time: Date.now() },
     ],
   },
   reducers: {
     addTask: (state, action) => {
-      state.tasks.push({ id: uuid(), ...action.payload });
+      state.tasks.push(action.payload);
     },
     doneTask: (state, action) => {
       const taskDone = state.tasks.find((item) => item.id === action.payload);
@@ -24,6 +23,11 @@ export const todos = createSlice({
     },
     removeAllTasks: (state) => {
       state.tasks = [];
+    },
+    completeAllTasks: (state) => {
+      state.tasks = state.tasks.map((item) => {
+        return { ...item, complete: true };
+      });
     },
   },
 });

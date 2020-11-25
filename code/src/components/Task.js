@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { todos } from "reducers/todos";
 import { useDispatch } from "react-redux";
+import moment from "moment";
 
 const TaskContainer = styled.li`
   /* align-items: flex-start; */
@@ -45,6 +46,7 @@ export const Task = ({ task }) => {
           }}
         />
         {task.text}
+        {moment(task.time).fromNow()}
       </TaskLabel>
       <RemoveTaskButton
         type="button"

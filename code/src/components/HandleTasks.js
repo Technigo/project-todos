@@ -21,6 +21,14 @@ export const HandleTasks = () => {
       >
         Remove all
       </button>
+      <button
+        type="button"
+        onClick={() => {
+          dispatch(todos.actions.completeAllTasks());
+        }}
+      >
+        Complete all
+      </button>
       <div>
         {displayLenght()}/{allTasks.length} completed
       </div>
