@@ -12,13 +12,25 @@ const TaskContainer = styled.div`
 const Checkbox = styled.input`
   width: 15px;
   height: 15px;
+  cursor: pointer;
 `
 const TaskText = styled.label`
   font-size: 16px;
+  cursor: pointer;
+
+  &:hover {
+    color: red;
+  }
 `
 const RemoveButton = styled.button`
   background-color: orange;
   margin-left: 10px;
+  cursor: pointer;
+`
+
+const RemoveIcon = styled.img`
+  width: 15px;
+  height: 15px;
 `
 
 export const Task = ({task}) => {
@@ -37,11 +49,13 @@ export const Task = ({task}) => {
     <TaskContainer>
       <Checkbox
         type="checkbox"
+        id={task.id}
         checked={task.completed}
         onChange={handleCheckboxClick}
       />
       <TaskText
         className="task-text"
+        htmlFor={task.id}
       >
         {task.text}
         <span>
@@ -51,7 +65,9 @@ export const Task = ({task}) => {
       <RemoveButton
         onClick={handleRemoveButton}
       >
-        Remove
+        <RemoveIcon
+          src="https://www.flaticon.com/svg/static/icons/svg/1342/1342016.svg"
+        />
       </RemoveButton>
     </TaskContainer>
   )

@@ -11,6 +11,11 @@ export const tasks = createSlice({
     ]
   },
   reducers: {
+    addItem: (state, action) => {
+      const { newTask, category } = action.payload
+      console.log(action.payload)
+      state.items.push({ id: Date.now(), text: newTask, category, complete: false})
+    },
     removeItem: (state, action) => {
       state.items = state.items.filter(task => task.id !== action.payload)
 
