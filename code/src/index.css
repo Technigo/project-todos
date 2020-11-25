@@ -3,6 +3,10 @@
 body {
   margin: 0;
   font-family: 'Barlow', sans-serif;
+  background-color: #D0A7BC;
+  color: #4D1C39;
+  display: flex;
+  justify-content: center;
 }
 
 code {

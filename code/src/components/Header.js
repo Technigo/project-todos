@@ -1,15 +1,35 @@
 import React from 'react'
-import Datepicker from '@reduxjs/toolkit'
+import styled from 'styled-components'
+
+import { TaskCounter } from './TaskCounter'
+
+const HeaderContainer = styled.div`
+  padding: 15px;
+`
+
+const TodaysDate = styled.div`
+
+`
+const TopRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+`
+
 
 export const Header = () => {
   return (
-  <h1>TO-DO</h1>
+    <HeaderContainer>
+
+      <TopRow>
+        <h1>TO-DO</h1>
+        <TodaysDate>
+          {new Date().toLocaleDateString("en-US", { day: "numeric", month: "short", weekday: "short" })}
+        </TodaysDate>
+      </TopRow>
+
+      <TaskCounter />
+    </HeaderContainer>
   )
 }
 
-// export const Date = () => {
-//   const [startDate, setStartDate] = useState(new Date());
-//   return (
-//     <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
-//   );
-// };
