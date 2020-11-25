@@ -4,16 +4,32 @@ import {useSelector, useDispatch} from 'react-redux'
 import {todos} from 'reducer/todos'
 
 const ItemContainer = styled.li`
+    width: 100%
     align-self: flex-end;
-    padding: 8px;
+    padding: 20px;
     margin: 8px;
-    font-size: 32px;
+    font-size: 20px;
     color: #3f3f3f;
-    background-color: #b8f4ff;
+    background-color: #E1C9FD;
+    border-radius: 45px;
+    list-style-type:none;
+
+    ::first-letter {
+        text-transform: uppercase;
+    }
+
+    
 `
+
+
 
 export const Item = ({ item }) => {
     const dispatch = useDispatch();
+
+    const taskCompleted  = useSelector(store => store.todos.items.isComplete)
+    console.log(taskCompleted)
+    
+    
 
     return (
         <ItemContainer>{item.text}

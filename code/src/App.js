@@ -5,6 +5,7 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import {todos} from 'reducer/todos'
 
+import { StartHeading } from 'component/StartHeading'
 import {TaskList} from './component/TaskList'
 import { TaskForm } from 'component/TaskForm'
 
@@ -15,6 +16,7 @@ export const App = () => {
   return (
     // We can't useDispatch here or useSelector
     <Provider store={store}>
+      <StartHeading />
       <TaskForm />
       <TaskList />
     </Provider>
