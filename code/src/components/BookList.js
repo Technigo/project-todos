@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { toread } from "../reducers/toread"
 
 import { HandleBook } from "./HandleBook"
@@ -18,8 +18,14 @@ const ListContainer = styled.ul`
 `;
 
 export const BookList = () => {
+
   const books = useSelector( store => store.toread.books ); //what we are using => how we are using it
-  console.log(toread)
+
+  const dispatch = useDispatch();
+
+  const deleteOneBook = id => {
+    dispatch(toread.actions.deleteBook(id)) //the value we pass here is the value that's gonna show "payload" in the console.
+  }
 
   return (
   <ListContainer>
@@ -27,9 +33,15 @@ export const BookList = () => {
       <div key={index}>
         <HandleBook book={book} key={index} />
         <FilterBooks book={book}/>
+        <button onClick={() => deleteOneBook(book.id)}>
+        Delete book
+      </button>
       </div>
     ))}
   </ListContainer>
+
   );
 };
+
+
 

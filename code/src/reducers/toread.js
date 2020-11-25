@@ -30,8 +30,12 @@ export const toread = createSlice({
       //state.books = state.books.push({ title })
     //},
 
-    //deleteOne: (state, action) => { // the parameter "state" represents the books-objects in the array. The "const toread" is the entire store. 
-      //state.books.filter((book) => book.id !== action.payload) // pop makes them diseapear
-    //}
+    deleteBook: (store, action) => { // the parameter "state" represents the books-objects in the array. The "const toread" is the entire store. 
+      console.log(store, action) //state.books.filter((book) => book.id !== action.payload) // pop makes them diseapear
+      const bookId = action.payload;
+
+      const filteredList = store.books.filter(book => book.id !== bookId)
+      console.log(filteredList)
+    }
   }
 });
