@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import Datepicker from 'react-date-picker';
+import 'index.css';
 
 import { tasks } from 'reducers/tasks';
 
@@ -42,20 +43,18 @@ export const AddTask = () => {
           placeholder=' Add new task...'
         />
       </label>
-      <label>
-        Set a due date
+      <Bottom>
+        <Label>Due:</Label>  
         <Datepicker 
           onChange={(date) => setDueDate(date)} 
           selected={dueDate}
           value={dueDate}
           placeholderText='Click to set a due date'  
         />
-      
         <span>
-          <AddTaskButton type='submit'><span role="img" aria-label="Add">➕</span></AddTaskButton>
+          <AddTaskButton type='submit'><span role="img" aria-label="Add">Add task  ➕</span></AddTaskButton>
         </span>
-      </label>
-      
+      </Bottom>
     </FormWrapper>
   );
 };
@@ -72,23 +71,38 @@ const TaskInput = styled.input`
   border-bottom: 1px solid #869D7A;
   padding: 6px 0;
   margin: 6px 0 16px;
-  width: 70vw;
-  max-width: 363px;
+  width: 80vw;
+  max-width: 400px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
 `;
 
 const Category = styled.label`
-  font-size: 12px;
+  font-size: 14px;
 `;
 
 const Selector = styled.select`
   margin: 0 6px 10px 0;
-  font-family: Segoe UI;
-  font-size: 12px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
   padding: 6px 0;
   border: none;
   border-bottom: 1px solid #869D7A;
   width: 80vw;
   max-width: 400px;
+  cursor: pointer;
+`;
+
+const Bottom = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+  margin-left: 3px;
+`;
+
+const Label = styled.p`
+  margin-right: 6px;
 `;
 
 const AddTaskButton = styled.button`
@@ -98,4 +112,10 @@ const AddTaskButton = styled.button`
   cursor: pointer;
   padding: 6px;
   margin-left: 3px;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+
+  &:hover {
+    border: 1px solid #000;
+  }
 `;

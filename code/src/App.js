@@ -49,12 +49,15 @@ export const App = () => {
 };
 
 const MainContainer = styled.div`
-  margin: 0;  
-  padding: 0;
+  margin: 20px 10px;  
+  padding: 10px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 100vw;
+  width: 90vw;
   height: auto;
+  border-radius: 8px;
+  border: 1px solid #BBE1C3;
+  background: #fff;
 `;

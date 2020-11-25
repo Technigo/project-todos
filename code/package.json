@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@datepicker-react/styled": "^2.7.0",
     "@reduxjs/toolkit": "^1.4.0",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.1",

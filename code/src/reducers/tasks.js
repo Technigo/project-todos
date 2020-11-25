@@ -30,5 +30,8 @@ export const tasks = createSlice({
     removeAll: (state) => {
       state.items = []
     },
+    markAll: (state) => {
+     state.items.map((item) => (item.complete = true));
+    },
   }
 });

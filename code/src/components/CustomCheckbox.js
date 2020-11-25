@@ -36,7 +36,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   border: 0;
   clip: rect(0 0 0 0 );
-  clippath: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;
@@ -57,6 +57,7 @@ const StyledCheckbox = styled.div`
   width: 16px;
   height: 16px;
   margin: 3px;
+  cursor: pointer;
   background: ${props => props.checked ? '#869D7A' : '#BBE1C3'};
   border-radius: 3px;
   transition: all 150ms;

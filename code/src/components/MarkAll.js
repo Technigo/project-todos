@@ -4,25 +4,26 @@ import styled from 'styled-components';
 
 import { tasks } from 'reducers/tasks';
 
-export const RemoveAll = () => {
+export const MarkAll = () => {
   const items = useSelector((store) => store.tasks.items);
   const enabled = items.length > 0;
 
   const dispatch = useDispatch();
 
-  const handleRemoveButton = () => {
-    dispatch(tasks.actions.removeAll())
-  }
+  const handleMarkButton = () => {
+    dispatch(tasks.actions.markAll())
+  };
 
   return (
-    <RemoveAllButton onClick={handleRemoveButton} disabled={!enabled}>
-      <Emoji role="img" aria-label="Bin">🗑</Emoji> 
-      Remove all tasks!
-    </RemoveAllButton>
+    <MarkAllButton onClick={handleMarkButton} disabled={!enabled}>
+      
+      <Emoji role="img" aria-label="Bin">✔</Emoji> 
+      Mark all tasks!
+    </MarkAllButton>
   );
 };
 
-const RemoveAllButton = styled.button`
+const MarkAllButton = styled.button`
   background: none;
   border: 1px solid #869D7A;
   border-radius: 4px;

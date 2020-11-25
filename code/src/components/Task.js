@@ -9,7 +9,7 @@ import { CustomCheckbox } from './CustomCheckbox';
 
 import { TaskText } from 'styles/styles';
 
-export const Task = ({ task, complete }) => {
+export const Task = ({ task }) => {
   const dispatch = useDispatch();
 
   const handleCheckboxClick = () => {
@@ -22,27 +22,40 @@ export const Task = ({ task, complete }) => {
 
   return (
     <List>
-      <CustomCheckbox 
-        isChecked={task.complete} 
-        onChangeHandler={handleCheckboxClick}
-      />
-      <TaskText line={task.complete ? 'line-through' : null}>{task.category} {task.text}</TaskText>
-      <Date>Due: {moment(task.dueDate).format('MMM Do YYYY')}</Date>
-      <RemoveButton 
-        type="button" 
-        onClick={handleRemoveButtonClick}>
-          <Emoji role='img' aria-label='Bin'>🗑</Emoji>
-      </RemoveButton>
+      <LeftWrapper>
+        <CustomCheckbox 
+          isChecked={task.complete} 
+          onChangeHandler={handleCheckboxClick}
+        />
+        <TaskText line={task.complete ? 'line-through' : null}>{task.category} {task.text}</TaskText>
+      </LeftWrapper>
+      <RightWrapper>
+        <Date>Due: {moment(task.dueDate).format('MMM Do YYYY')}</Date>
+        <RemoveButton 
+          type="button" 
+          onClick={handleRemoveButtonClick}>
+            <Emoji role='img' aria-label='Bin'>🗑</Emoji>
+        </RemoveButton>
+      </RightWrapper>
     </List>
   );
 };
 
 const List = styled.li`
   display: flex;
-  flex-direction: row;
   align-items: center;
   justify-content: space-between;
   width: 100%;
+`;
+
+const LeftWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
+
+const RightWrapper = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const Date = styled.p`
@@ -59,4 +72,8 @@ const RemoveButton = styled.button`
 const Emoji = styled.span`
   font-size: 28px;
   color: #6e6e6e;
+
+  &:hover {
+    color: #000;
+  }
 `;

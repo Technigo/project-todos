@@ -7,4 +7,6 @@ export const Header = () => {
 
 const HeaderText = styled.h1`
   color: #869D7A;
+  font-weight: bold;
+  font-size: 42px;
 `;

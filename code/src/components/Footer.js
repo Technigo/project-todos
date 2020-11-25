@@ -18,7 +18,7 @@ export const Footer = () => {
 
 const FooterDiv = styled.div`
   text-align: center;
-  position: absolute;
+  position: relative;
   bottom: 0;
   padding-bottom: 15px;
   font-size: 10px;
