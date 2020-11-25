@@ -9,12 +9,12 @@ import './TaskItems.css'
 export const TaskItems = (props) => {
   const dispatch = useDispatch()
 
-  const handleCheckedBoxClick = () => {
+  const handleCheckboxClick = () => {
     dispatch(tasks.actions.toggleCheckedTask(props.item.id))
   }
 
   const handleRemoveButtonClick = () => {
-    dispatch(tasks.actions.removeItem(props.item.id))
+    dispatch(tasks.actions.removeTask(props.item.id))
   }
 
   return (
@@ -23,8 +23,8 @@ export const TaskItems = (props) => {
       <label className='checkbox-label'>
       <input
           type="checkbox"
-          checked={props.item.checkedTask}
-          onChange={handleCheckedBoxClick}
+          checked={props.item.checkedTask || false}
+          onChange={handleCheckboxClick}
         />
         <span className="checkmark"></span>
       </label>
@@ -41,5 +41,4 @@ export const TaskItems = (props) => {
       </div>
     </li>
   )
-
 }

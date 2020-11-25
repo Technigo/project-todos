@@ -4,7 +4,7 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      { id: 1, todo: 'Wake up 👌', checkedTask: true},
+      { id: 1, todo: 'Wake up 👌', checkedTask: false},
     ],
   },
   reducers: {
