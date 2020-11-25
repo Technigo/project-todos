@@ -25,12 +25,18 @@ export const tasks = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      const{ taskInfo }=action.payload
-      console.log(taskInfo)
+      const { taskInfo } = action.payload
       state.items.push(taskInfo)
     },
     removeItem: (state, action) => {
-      state.items.pop()
+      const { id } = action.payload
+      state.items = state.items.filter(task=>task.id!==id)
+      //state.items.filter(task=>task.id !== action.payload)
+      //state.items.filter(task => task.id !== action.payload) //Don't remove anything yet?
+      //state.items.pop() only removes latest item in list
+    },
+    removeAll: (state) => {
+      state.items = []
     }
   }
 });

@@ -13,10 +13,10 @@ export const UserInput = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    console.log(task)
     dispatch(
       tasks.actions.addItem({
         taskInfo: {
+            id: Date.now(),
           text: task,
           done: false,
         },
