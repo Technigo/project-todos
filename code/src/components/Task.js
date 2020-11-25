@@ -30,6 +30,7 @@ export const Task = ({task}) => {
   }
 
   const handleRemoveButton = () => {
+    dispatch(tasks.actions.removeItem(task.id))
   }
 
   return (

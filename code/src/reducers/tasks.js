@@ -11,12 +11,14 @@ export const tasks = createSlice({
     ]
   },
   reducers: {
+    removeItem: (state, action) => {
+      state.items = state.items.filter(task => task.id !== action.payload)
+
+    },
     toggleTaskCompleted: (state, action) => {
       console.log(action.payload) //remove later
-
       // to find the item id that matches.
       const foundItem = state.items.find(task => task.id === action.payload)
-
       // if item is found, the value of initial state will be inverted, go from false to true
       if (foundItem) {
         foundItem.complete = !foundItem.complete
