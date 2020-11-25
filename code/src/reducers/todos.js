@@ -11,6 +11,9 @@ export const todos = createSlice({
     ],
   },
   reducers: {
+    setUserName: (state, action) => {
+      state.username = action.payload;
+    },
     addTask: (state, action) => {
       state.tasks.push(action.payload);
     },

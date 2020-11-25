@@ -6,6 +6,7 @@ import { todos } from "./reducers/todos";
 import { TaskList } from "./components/TaskList";
 import { AddTask } from "./components/AddTask";
 import { HandleTasks } from "./components/HandleTasks";
+import { Header } from "./components/Header";
 import styled from "styled-components";
 
 const reducer = combineReducers({ todos: todos.reducer });
@@ -36,6 +37,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Wrapper>
+        <Header />
         <AddTask />
         <TaskList />
         <HandleTasks />
