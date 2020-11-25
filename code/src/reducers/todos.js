@@ -53,7 +53,8 @@ const initialState = {
         date: Date.now(),
         name: "first",
         text: "",
-        category: "welcome",
+        isComplete: false,
+        category: "Work",
         dueDate: "2020-12-24",
       },
       {
@@ -61,7 +62,8 @@ const initialState = {
         date: Date.now(),
         name: "second",
         text: "",
-        category: "pro",
+        isComplete: false,
+        category: "Free time",
         dueDate: "2020-12-20",
       },
       {
@@ -69,34 +71,52 @@ const initialState = {
         date: Date.now(),
         name: "third",
         text: "",
-        category: "organize",
+        isComplete: false,
+        category: "Shop",
         dueDate: "2020-12-01",
       },
     ],
     addItem: false,
-    form: [{}],
     categories,
-}
+} 
 
 export const todos = createSlice({
   name: "todos",
   initialState,
   reducers: {
-    // Here I'm trying to figure out how to render "form state"
     // goToForm: (state) => {
-    //     addItem === false
+    //     addTodo === false
     // },
-
-    removeOne: (store, action) => {
-      store.items.filter((item) => item.id !== action.payload); 
+    
+    removeItem: (store, action) => {
+      const filteredList = store.items.filter((item) => item.id !== action.payload); 
+      store.items = filteredList; //!!!
     },
     // In Jennies video, this is attached to an AddItemForm -> submitbutton
-    submitTodo: (store, action) => {
-      const { category, categoryIndex } = action.payload;
-      store.items.push({
-        id: Date.now(),
-        categories: todos.categories[categoryIndex],
-      });
-    }
-  }
-})
+    addItem: (store, action) => {
+        console.log("This is action payload" + action.payload)
+        const newItem = action.payload;
+        const newItemsList = [...store.items, newItem];
+        store.items = newItemsList;
+        console.log("I am newitemslist" + newItemsList);
+
+      }
+//     updateItem: (store, action) => {
+   }
+
+})      
+
+
+
+
+
+// reducer(store, action) {
+      //   store.items = [...store.items, action.payload];
+      // },
+      // prepare(name) {
+      //   return {
+      //     payload: {
+      //       name,
+      //       isComplete: false 
+      //     }
+      //   };
