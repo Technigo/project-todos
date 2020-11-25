@@ -35,12 +35,24 @@ export const toread = createSlice({
       const bookId = action.payload;
 
       const filteredList = store.books.filter(book => book.id !== bookId) 
-      //This filter checks if the item id, of each element inside our store.books-array is not equal to variable bookId. 
+      // This filter checks if the item id, of each element inside our store.books-array is not equal to variable bookId. 
       // We should allow every element that has not the id,
       // and every element that has the same id as the payload should be filtered out.
       console.log(filteredList)
 
       store.books = filteredList;
+    },
+
+    addBook: (store, action) => {
+      const newBook = {
+        id: Math.max(store.books.map(book => book.id)) + 1,
+        title: action.payload,
+        isRead: false
+      }
+      const newBookList = [...store.books, newBook]
+      store.books = newBookList
     }
+
+
   }
 });

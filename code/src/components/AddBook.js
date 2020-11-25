@@ -1,4 +1,8 @@
-import React from "react"
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { toread } from "../reducers/toread"
+
 import styled from "styled-components";
 
 const AddContainer = styled.section`
@@ -18,9 +22,21 @@ const AddButton = styled.button`
 `
 
 export const AddBook = () => {
+  const [value, setValue] = useState("")
+  const dispatch = useDispatch();
+
+  const onBookAdd = () => {
+    dispatch(toread.actions.addBook(value))
+  }
+
   return (
     <AddContainer>
-      <AddButton>Add book</AddButton>
+      <input 
+        type="text"
+        value={value}
+        onChange={event => setValue(event.target.value)}
+      />
+      <AddButton onClick={onBookAdd}>Add book</AddButton>
     </AddContainer>
   )
 }
