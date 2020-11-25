@@ -1,5 +1,5 @@
 import React from 'react'
-import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit'
+import { combineReducers, createStore } from '@reduxjs/toolkit'
 
 import { Provider } from 'react-redux'
 
