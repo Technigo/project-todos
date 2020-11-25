@@ -17,6 +17,7 @@ export const AddTodo = () => {
       })
     )
     setaddId(id + 1)
+    setAddItem('')
   }
 
   return (
