@@ -15,24 +15,29 @@
   outline: 0;
   border: none;
   background: none;
-  margin-right: 8px;
   border-radius: 12px;
+  box-shadow: 0;
+}
+
+.list-item button:focus {
+  box-shadow: 0 0 0 2px #1890FF;
 }
 
 .list-item button:hover {
-  background: rgba(0,0,0,0.1);
+  background: rgba(22,130,230,0.1);
 }
 
 .list-item button:active {
-  background: rgba(0,0,0,0.2);
+  background: rgba(22,130,230,0.2);
 }
 
 .list-item p {
   flex-grow: 1;
+  margin-left: 8px;
 }
 
 .p-is-done-true {
-  color: rgba(0,0,0,0.4);
+  color: #b7b7b7;
   text-decoration: line-through;
 }
 

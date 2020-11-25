@@ -8,33 +8,23 @@ import ic_check_true from '../assets/ic_check_true.svg'
 import ic_check_false from '../assets/ic_check_false.svg'
 import ic_delete from '../assets/ic_delete.svg'
 
-
 export const Item = (props) => {
-
   const dispatch = useDispatch()
-  // Defining "items" in which we'realling a function, and inside the parenthesis, we're giving another function. 
+  // Defining "items" in which we're calling a function, and inside the parenthesis, we're giving another function. 
   const items = useSelector(store => store.todos.items)
 
-  // FUNCTIONS FOR THE ITEM
-
-  // >>> TOGGLE CHECKBOX
+  // # FUNCTIONS FOR THE ITEM
+  // ## TOGGLE CHECKBOX
   const isDone = () => {
     dispatch(
-      todos.actions.toggleDone()
+      todos.actions.toggleDone(props)
     )
   }
 
-  // >>> REMOVE THE LAST ONE
-  const removeOne = () => {
+  // ## DELETE TASK
+  const deleteTodo = () => {
     dispatch(
-      todos.actions.removeOne()
-    )
-  }
-
-  // >>> DELETE TASK
-  const deleteTask = () => {
-    dispatch(
-      todos.actions.deleteTask(props.index)
+      todos.actions.deleteTodo(props.index)
     )
   }
   
@@ -48,12 +38,12 @@ export const Item = (props) => {
           alt="task is done"></img>
       </button>
 
-      <p className={props.isDone === true ? "p-isDone" : "p-unisDone"}>
+      <p className={props.isDone === true ? "p-is-done-true" : "p-unis-done-false"}>
         {props.text}
       </p>
 
       {/* DELETE TASK BUTTON */}
-      <button onClick={deleteTask}>
+      <button onClick={deleteTodo}>
         <img
           src={ic_delete}
           alt="task isn't done"></img>

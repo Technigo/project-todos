@@ -1,19 +1,23 @@
 import React from 'react';
 
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import { Item } from './Item'
+import { EmptyState } from './EmptyState'
 
-import { todos } from 'reducers/todos'
+
 
 import './list.css'
 
 export const List = () => {
-  const dispatch = useDispatch()
-
   const items = useSelector(store => store.todos.items)
 
   return (
-    <div className="list-container">
+
+    <main className="list-container">
+
+      { items.length < 1 && 
+        <EmptyState/>
+      }
       {items.map((item, index) => (
         <Item
           key={index}
@@ -22,8 +26,6 @@ export const List = () => {
           text={item.text}>
         </Item>
       ))}
-      <button 
-        onClick={() =>  dispatch(todos.actions.removeOne())}>Remove one</button>
-    </div >
+    </main >
   )
 }

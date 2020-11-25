@@ -1,0 +1,70 @@
+.input-footer {
+  display: flex;
+  padding: 16px;
+  box-shadow: 0 -4px 8px rgba(0,0,0,0.1);
+}
+
+.input-footer form {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.input-footer button {
+  height: 40px;
+  width: 40px;
+  padding: 0;
+  background: #1890FF;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, 0.043);
+  border-radius: 20px;
+  border: 0;
+  margin-left: 8px;
+  outline: 0;
+}
+
+.input-footer button:hover {
+  background: #2F9BFF;
+}
+
+.input-footer button:active {
+  background: #1682E6;
+}
+
+.input-footer button:focus {
+  box-shadow: inset 0px 0px 0px 2px #1890FF, inset 0px 0px 0px 4px #FFFFFF;
+}
+
+.input-footer button:disabled {
+  background: #8BC7FF;
+  cursor: not-allowed;
+}
+.input-footer button:disabled:hover {
+}
+
+.input-footer button img {
+  margin: 0 auto;
+  position: relative;
+  top: 1px
+}
+
+.todo-input {
+  height: 38px;
+  border-radius: 100px;
+  border: 1px solid rgba(0,0,0,0.2);
+  flex-grow: 1;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgba(0,0,0,0.87);
+  font-size: 16px;
+  padding: 0 16px 0 16px;
+  outline: 0;
+}
+
+.todo-input:active {
+  box-shadow: 0 0 0 2px #1890FF;
+}
+
+.todo-input:focus {
+  box-shadow: 0 0 0 2px #1890FF;
+  border: 1px solid #1890FF;
+}

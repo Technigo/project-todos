@@ -6,6 +6,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import { Provider } from "react-redux"
 import { List } from "components/List"
+import { Footer } from "components/Footer"
+import { Header } from "components/Header"
 
 import { todos } from './reducers/todos'
 
@@ -17,9 +19,9 @@ export const App = () => {
   return (
     <Provider store={store}>
     <div className="main-container">
-      <List>
-
-      </List>
+      <Header></Header>
+      <List></List>
+      <Footer></Footer>
     </div>
 
     </Provider>

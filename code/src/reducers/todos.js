@@ -27,7 +27,7 @@ const initialState = {
     },
     {
       isDone: false, 
-      text: "Celebrate"
+      text: "Celebrate 🥳"
     }
   ]
 }
@@ -39,28 +39,61 @@ export const todos = createSlice({
   initialState,
   reducers: {
     // Every action will contain the state and action. removeOne is an action. 'state' represents the 'todo' object. 
-    // REMOVE THE LATEST
-    removeOne: (state, action) => {
-      console.log("remove one")
-    },
 
-    // DELETE TASK
-    deleteTask: (state, action) => {
+    // >>> DELETE TODO <<<
+    deleteTodo: (state, action) => {
       // The action.payload is WHATEVER WE SEND IN to the function. Looking at the item.js file, we're sending in (props.index)
       // This defines the "index" variable as the PAYLOAD, which is the props.index. Breakthrough, yeeeah!
       const index = action.payload
-      // We have the index, now we need to remove it. From the state.
-      
       // Removes the item from the array
-      state.items.splice(index, 1);
-
-      
-
+      state.items.splice(index, 1)
     },
 
-    // TOGGLE IS-DONE
+    // >>> ADD TODO <<<
+    addTodo: (state, action) => {
+      // Define "newTask" as an object – not done, and with "text" as the payload (what's being sent in to the function).
+      const newTask = {
+        isDone: false, 
+        text: action.payload
+      }
+      console.log(action.payload)
+      state.items.push(newTask)
+    },
+
+    // >>> REMOVE COMPLETED <<<
+    removeCompleted: (state, action) => {
+      console.log(action.payload)
+      // Filter the list and return only what's "not done".
+      state.items = state.items.filter(item => item.isDone === false)
+    },
+
+    // >>> ADD RANDOM TODO <<<
+    addRandomTodo: (state, action) => {
+      console.log("Add random todo")
+            // Define "newTask" as an object – not done, and with "text" as the payload (what's being sent in to the function).
+            const newTask = {
+              isDone: false, 
+              text: action.payload
+            }
+            console.log(action.payload)
+            state.items.push(newTask)
+    },
+
+    // >>> TOGGLE IS-DONE <<<
     toggleDone: (state, action) => {
-      console.log("Toggle 'is done'")
+      const index = action.payload.index
+      const isDone = action.payload.isDone
+      console.log("Inside the 'Toggle isDone' function")
+      
+      // Point to the state and set the isDone property to "true"
+
+      if (state.items[index].isDone === true) {
+        state.items[index].isDone = false
+      } else {
+        state.items[index].isDone = true
+      }
+      
+      
     }
   }
 })
