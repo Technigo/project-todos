@@ -1,5 +1,14 @@
 import { combineReducers, createSlice } from '@reduxjs/toolkit'
 
+const initialState = {
+  items: [
+    { id: 1, name: 'My first task', isComplete: false },
+    { id: 2, name: 'My second task', isComplete: true },
+    { id: 3, name: 'My third task', isComplete: false },
+
+  ]
+}
+
 export const todos = createSlice ({
   name: 'todos',
   initialState: {
