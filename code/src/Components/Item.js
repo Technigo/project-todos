@@ -1,21 +1,28 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { tasks } from '../Reducers/tasks'
 
 import { Button } from '../library/Button'
+import { Listelement } from '../Styles/Listelement'
+import { Checkbox } from './Checkbox'
 
 export const Item = ({ item }) => {
   const dispatch = useDispatch()
+  const [removeBtn, setRemoveBtn] = useState(true)
 
   return (
-    <li>
+    <Listelement>
+      <Checkbox />
       {item.text}
       <Button
-        onClick={() => dispatch(tasks.actions.removeItem({ id: item.id }))} /* item here is the prop referring to taskInfo*/
+        removebtn={removeBtn}
+        onClick={() =>
+          dispatch(tasks.actions.removeItem({ id: item.id }))
+        } /* item here is the prop referring to taskInfo*/
       >
         -
       </Button>
-    </li>
+    </Listelement>
   )
 }

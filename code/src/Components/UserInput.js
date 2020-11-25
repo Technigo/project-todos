@@ -4,6 +4,8 @@ import { useDispatch } from 'react-redux'
 
 import { tasks } from '../Reducers/tasks'
 
+import { Button } from '../library/Button'
+
 //This will be sent to the array inside tasks.js
 
 export const UserInput = () => {
@@ -32,7 +34,7 @@ export const UserInput = () => {
         onChange={(event) => setTask(event.target.value)}
         value={task}
       ></textarea>
-      <button type='submit'>Add Task</button>
+      <Button type='submit'>Add Task</Button>
     </form>
   )
 }

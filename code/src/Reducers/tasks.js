@@ -31,9 +31,6 @@ export const tasks = createSlice({
     removeItem: (state, action) => {
       const { id } = action.payload
       state.items = state.items.filter(task=>task.id!==id)
-      //state.items.filter(task=>task.id !== action.payload)
-      //state.items.filter(task => task.id !== action.payload) //Don't remove anything yet?
-      //state.items.pop() only removes latest item in list
     },
     removeAll: (state) => {
       state.items = []

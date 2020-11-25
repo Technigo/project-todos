@@ -5,6 +5,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { tasks } from './Reducers/tasks'
 
 import { List } from './Components/List'
+import { Summary } from './Pages/Summary'
 
 const reducer = combineReducers({tasks: tasks.reducer,})
 //Here we'll use localstorage to save the current state
@@ -13,7 +14,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <List/>
+      <Summary/>
     </Provider>
   )
 }
