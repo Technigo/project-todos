@@ -34,11 +34,13 @@ export const todolist = createSlice({
   initialState,
   reducers: {
     // addToDo receives a payload when dispatched: this payload includes an object including
-    // all the data for a new task to be added to the to do list. So this action just pushes
-    // this newToDo object to the global state array, so we end up with a new to do in the list
+    // all the data for a new task to be added to the to do list. So this action just adds
+    // this newToDo object to the global state array, and then we reassign the current to do
+    // list, to the newList containing the new task we just added.
     addToDo: (state, action) => {
       const newToDo = action.payload;
-      state.items.push(newToDo);
+      const newList = [...state.items, newToDo];
+      state.items = newList;
     },
     // changeComplete receives a payload with the itemId and what the complete property should 
     // be changed to: so I need first need to find the specific task we are referring to, by
