@@ -1,24 +1,26 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
 import { tasks } from 'reducers/tasks';
 
-import { Button, Emoji } from 'styles/styles';
+import { Button } from 'styles/styles';
 
-export const MarkAll = () => {
+export const unMarkAll = () => {
   const items = useSelector((store) => store.tasks.items);
   const enabled = items.length > 0;
 
   const dispatch = useDispatch();
 
-  const handleMarkButton = () => {
-    dispatch(tasks.actions.markAll())
+  const handleUnMarkButton = () => {
+    dispatch(tasks.actions.unMarkAll())
   };
 
   return (
-    <Button onClick={handleMarkButton} disabled={!enabled}>
+    <Button onClick={handleUnMarkButton} disabled={!enabled}>
       <Emoji role="img" aria-label="Bin">✔</Emoji> 
-      Mark all tasks!
+      Unmark all tasks!
     </Button>
   );
 };
+

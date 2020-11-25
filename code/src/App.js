@@ -54,9 +54,10 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 90vw;
+  max-width: 450px;
   height: auto;
+  min-height: 85vh;
   border-radius: 8px;
   border: 1px solid #BBE1C3;
   background: #fff;

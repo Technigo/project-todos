@@ -1,8 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import styled from 'styled-components';
 
 import { tasks } from 'reducers/tasks';
+
+import { Button, Emoji } from 'styles/styles';
 
 export const RemoveAll = () => {
   const items = useSelector((store) => store.tasks.items);
@@ -15,31 +16,9 @@ export const RemoveAll = () => {
   }
 
   return (
-    <RemoveAllButton onClick={handleRemoveButton} disabled={!enabled}>
+    <Button onClick={handleRemoveButton} disabled={!enabled}>
       <Emoji role="img" aria-label="Bin">🗑</Emoji> 
       Remove all tasks!
-    </RemoveAllButton>
+    </Button>
   );
 };
-
-const RemoveAllButton = styled.button`
-  background: none;
-  border: 1px solid #869D7A;
-  border-radius: 4px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  font-family: 'PT Sans', sans-serif;
-  font-size: 14px;
-  margin-top: 6px;
-
-  &:hover {
-    border: 1px solid #000;
-  }
-`;
-
-const Emoji = styled.span`
-  font-size: 28px;
-  color: #6e6e6e;
-  padding-right: 3px;
-`;

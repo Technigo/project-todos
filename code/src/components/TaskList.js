@@ -7,6 +7,8 @@ import { Task } from './Task';
 import { RemoveAll } from './RemoveAll';
 import { MarkAll } from './MarkAll';
 
+import { SmallText, Emoji } from 'styles/styles';
+
 export const TaskList = ({ category }) => {
 
   // Fetch the list of todos
@@ -32,14 +34,19 @@ export const TaskList = ({ category }) => {
   
   return (
     <div>
-      <CounterText>{tasksTodo.length}/{tasks.items.length} tasks uncompleted</CounterText>
+      <SmallText>{tasksTodo.length}/{tasks.items.length} tasks uncompleted</SmallText>
       <AddTask />
+      {nonCompletedTasks.length === 0 && (
+          <DoneText>
+            <Emoji>💥 </Emoji>
+            Yeeay, no more tasks todo! All are done! 
+          </DoneText>
+        )}
       <ListofTasks>
         {tasks.items.map((task) => (
           <Task key={task.id} task={task} />
         ))}
       </ListofTasks>
-      <button>Show uncompleted tasks</button>
       <ButtonWrapper>
         <RemoveAll />
         <MarkAll />
@@ -48,30 +55,13 @@ export const TaskList = ({ category }) => {
   );
 };
 
-const CounterText = styled.p`
-  font-size: 10px;
-  color: #8f8f8f;
-`;
+const DoneText = styled.p`
+  font-size: 14px;
+  font-weight: bold;
+`
 
 const ListofTasks = styled.ul`
   padding: 0;
-`;
-
-
-const Category = styled.label`
-  font-size: 14px;
-`;
-
-const Selector = styled.select`
-  margin: 0 6px 10px 0;
-  font-family: 'PT Sans', sans-serif;
-  font-size: 14px;
-  padding: 6px 0;
-  border: none;
-  border-bottom: 1px solid #869D7A;
-  width: 80vw;
-  max-width: 400px;
-  cursor: pointer;
 `;
 
 const ButtonWrapper = styled.div`

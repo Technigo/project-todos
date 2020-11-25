@@ -20,7 +20,7 @@ const FooterDiv = styled.div`
   text-align: center;
   position: relative;
   bottom: 0;
-  padding-bottom: 15px;
+  margin: 50px 0 20px 0;
   font-size: 10px;
-  width: 260px;
+  width: 80%;
 `;

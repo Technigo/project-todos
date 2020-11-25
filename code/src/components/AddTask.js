@@ -6,6 +6,8 @@ import 'index.css';
 
 import { tasks } from 'reducers/tasks';
 
+import { Button } from 'styles/styles';
+
 export const AddTask = () => {
   const [text, addTask] = useState('');
   const [category, setCategory] = useState('');
@@ -51,9 +53,9 @@ export const AddTask = () => {
           value={dueDate}
           placeholderText='Click to set a due date'  
         />
-        <span>
-          <AddTaskButton type='submit'><span role="img" aria-label="Add">Add task  ➕</span></AddTaskButton>
-        </span>
+        <Button type='submit'>Add task 
+          <AddEmoji role="img" aria-label="Add emoji"> ➕</AddEmoji>
+        </Button>
       </Bottom>
     </FormWrapper>
   );
@@ -78,7 +80,6 @@ const TaskInput = styled.input`
 `;
 
 const Category = styled.label`
-  font-size: 14px;
 `;
 
 const Selector = styled.select`
@@ -105,17 +106,12 @@ const Label = styled.p`
   margin-right: 6px;
 `;
 
-const AddTaskButton = styled.button`
-  background: none;
-  border: 1px solid #869D7A;
-  border-radius: 4px;
-  cursor: pointer;
-  padding: 6px;
-  margin-left: 3px;
-  font-family: 'PT Sans', sans-serif;
+const AddEmoji = styled.span`
   font-size: 14px;
+  color: #6e6e6e;
+  padding: 6px;
 
   &:hover {
-    border: 1px solid #000;
+    color: #000;
   }
 `;

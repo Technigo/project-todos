@@ -7,7 +7,7 @@ import { tasks } from 'reducers/tasks';
 
 import { CustomCheckbox } from './CustomCheckbox';
 
-import { TaskText } from 'styles/styles';
+import { TaskText, Emoji, SmallText } from 'styles/styles';
 
 export const Task = ({ task }) => {
   const dispatch = useDispatch();
@@ -22,21 +22,21 @@ export const Task = ({ task }) => {
 
   return (
     <List>
-      <LeftWrapper>
+      <Wrapper>
         <CustomCheckbox 
           isChecked={task.complete} 
           onChangeHandler={handleCheckboxClick}
         />
         <TaskText line={task.complete ? 'line-through' : null}>{task.category} {task.text}</TaskText>
-      </LeftWrapper>
-      <RightWrapper>
-        <Date>Due: {moment(task.dueDate).format('MMM Do YYYY')}</Date>
+      </Wrapper>
+      <Wrapper>
+      <SmallText>Due: {moment(task.dueDate).format('MMM Do YYYY')}</SmallText>
         <RemoveButton 
           type="button" 
           onClick={handleRemoveButtonClick}>
             <Emoji role='img' aria-label='Bin'>🗑</Emoji>
         </RemoveButton>
-      </RightWrapper>
+      </Wrapper>
     </List>
   );
 };
@@ -48,32 +48,13 @@ const List = styled.li`
   width: 100%;
 `;
 
-const LeftWrapper = styled.div`
+const Wrapper = styled.div`
   display: flex;
   align-items: center;
-`;
-
-const RightWrapper = styled.div`
-  display: flex;
-  align-items: center;
-`;
-
-const Date = styled.p`
-  font-size: 10px;
-  color: #8f8f8f;
 `;
 
 const RemoveButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-`;
-
-const Emoji = styled.span`
-  font-size: 28px;
-  color: #6e6e6e;
-
-  &:hover {
-    color: #000;
-  }
 `;
