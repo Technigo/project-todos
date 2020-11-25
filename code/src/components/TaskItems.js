@@ -14,7 +14,7 @@ export const TaskItems = (props) => {
   }
 
   const handleRemoveButtonClick = () => {
-    dispatch(tasks.actions.removeTask(props.item.id))
+    dispatch(tasks.actions.removeItem(props.item.id))
   }
 
   return (
