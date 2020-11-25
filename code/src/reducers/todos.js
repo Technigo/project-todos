@@ -34,6 +34,10 @@ export const todos = createSlice({
           const itemInfo = action.payload;
           state.items.push(itemInfo)
         }
+
+       /*  clearAll: (state, action) => {
+
+        } */
     },
 
 })
