@@ -1,11 +1,11 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
-
-import { todoList } from 'reducers/todoList'
+import { todoList } from '../reducers/todoList'
 
 const ClearAll = () => {
   const dispatch = useDispatch()
+
   return (
     <Button onClick={() => dispatch(todoList.actions.clearAllTask())}>
       Clear all

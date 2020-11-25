@@ -13,7 +13,7 @@ const Today = () => {
   return (
     <TodaySection>
       <TodayStyle>Today</TodayStyle>
-      <TodayStyle>{today}</TodayStyle>
+      <Day>{today}</Day>
     </TodaySection>
     );
 }
@@ -26,6 +26,9 @@ const TodayStyle = styled.p`
   color: #a8dadc;  
   margin: 0;
   font-weight: 600;
-  ` 
+  `
+const Day = styled.p` 
+  margin-top: 10px;
+`
  
 export default Today;

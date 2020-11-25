@@ -40,8 +40,18 @@ const Input = styled.input`
 
   &::placeholder {
     font-size: 14px;
-    color: #fff;
-}
+    color: #ffb703;
+  }
+  &:focus {
+      opacity: 0.5;
+      border-bottom: 1px solid ##a8dadc;
+      outline: none;
+      background: transparent;
+      color: #fff;
+      font-size: 16px;
+      transition: ease 0.5s;
+    }
+  }
   `
 
 export default AddItem

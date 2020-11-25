@@ -6,19 +6,16 @@ const initialState = {
       id: 1,
       task: 'Work with todo project',
       isCompleted: false,
-      delete: '🗑'
     },
     {
       id: 2,
       task: 'Cook dinner',
       isCompleted: false,
-      delete: '🗑'
     },
     {
       id: 3,
       task: 'Do laundry',
       isCompleted: false,
-      delete: '🗑'
     }
   ]
 }
@@ -40,8 +37,11 @@ export const todoList = createSlice({
     },
 
     clearAllTask: (state, action) => {
-      const removeAll = state.list.splice(0, state.length)
-      state.list = removeAll
+      state.list = state.list.map((item) => {
+        return {
+          ...item, isCompleted: true 
+        }
+      })
     },
 
     handleChecked: (state, action) => {
