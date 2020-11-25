@@ -5,23 +5,29 @@ export const todos = createSlice({
     initialState: {
         title: 'todo-list',
         items: [
-        { text: 'Watch video on actions & reducers', 
-          complete: true },
-/* 
-        { text: 'Follow redux codealong', 
+        { id: 1,
+          text: 'Watch video on actions & reducers', 
+          complete: false },
+
+        { id: 2,
+          text: 'Follow redux codealong', 
           complete: true },
 
-        { text: 'Fork weekly assignment',
+        { id: 3,
+          text: 'Fork weekly assignment',
           complete: true },
 
-        { text: 'Create a todo app', 
-          complete: false }, */
+        { id: 4,
+          text: 'Create a todo app', 
+          complete: false },
       ]
     },
     reducers: {
         //state here is the objects inside the todos
         removeOne: (state, action) => {
-            state.items.pop() 
+          const itemId = action.payload;
+          const filteredList = state.items.filter(item => item.id !== itemId)
+          state.items = filteredList;
         },
         
         addOne: (state, action) => {

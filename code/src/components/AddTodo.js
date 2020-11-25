@@ -10,8 +10,8 @@ export const AddTodo = () => {
     const handleOnSubmit = e => {
         e.preventDefault()
         //What we add within the curly braces is the payload:
-        dispatch(todos.actions.addOne({
-                text: inputValue,
+        dispatch(todos.actions.addOne({    
+            text: inputValue,
                 complete: false
         })
         )
