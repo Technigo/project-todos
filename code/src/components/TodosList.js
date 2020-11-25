@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Item } from './Item.js';
+import { Item } from './Item';
 
-import { ListContainer } from './ListStyling'
-import { AddTodo } from 'components/AddTodo';
+import { ListContainer } from './ListStyling';
+import { AddTodo } from './AddTodo';
 
 export const TodosList = () => {
   const items = useSelector((store) => store.todos.items);

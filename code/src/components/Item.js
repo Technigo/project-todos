@@ -2,14 +2,16 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import styled from 'styled-components';
-import { todos } from 'reducers/todos';
-import { ListActionButton } from './ListStyling';
+import { todos } from '../Reducers/todos';
+import { RemoveButton } from './ListStyling';
+import  { CheckBox } from './Checkbox';
 
 const ItemContainer = styled.li`
   align-self: flex-start;
+  flex-direction: row;
   padding: 8px;
   margin: 8px;
-  font-size: 32px;
+  font-size: 20px;
   color: #3f3f3f;
 `;
 
@@ -23,12 +25,21 @@ export const Item = ({ item }) => {
       })
     );
   };
+
+  const handleSetComplete = () => {
+    dispatch(
+      todos.actions.setComplete({
+        todoId:item.id,
+        complete: !item.complete
+      })
+    );
+  };
+
   return (
-    <>
-      <ItemContainer>{item.text}</ItemContainer>
-      <ListActionButton onClick={handleRemoveTodo}>
-            Remove To-do
-      </ListActionButton>
-    </>
+      <ItemContainer>
+        <CheckBox isChecked={item.complete ? 'checked' : "" } onChange={handleSetComplete}/>
+        {item.text}
+        <RemoveButton onClick={handleRemoveTodo}> 🗑 </RemoveButton>
+      </ItemContainer>
   );
 };
