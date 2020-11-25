@@ -19,5 +19,5 @@ export const StudiesTasks = () => {
         <ListItem key={item.id} listItem={item} />
       ))}
     </ListContainer>
-  )
+  );
 };

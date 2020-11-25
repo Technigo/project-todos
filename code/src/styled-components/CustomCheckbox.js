@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
+  // The checked value on the checkbox is initialized with the isChecked value
+  // we got sent as a prop from ListItem. This state will change to its opposite
+  // once the checkbox is changed again and the handleOnChange action is dispatched
   const [checked, setChecked] = useState(isChecked);
 
+  // handleOnChange calls the onChangeHandler function we got sent as a prop from 
+  // ListItem. This onChangeHandler is the action being dispatched in order to change
+  // the complete property on the task
   const handleOnChange = event => {
     onChangeHandler();
     setChecked(event.target.checked);
@@ -14,7 +20,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
     border: 0;
     clip: rect(0 0 0 0);
-    clippath: inset(50%);
+    clip-path: inset(50%);
     height: 1px;
     margin: -1px;
     overflow: hidden;
@@ -30,6 +36,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     stroke-width: 2px;
   `;
 
+  // This is the styled checkbox that will be displayed
   const StyledCheckbox = styled.div`
     display: inline-block;
     width: 16px;
@@ -54,8 +61,8 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
       <HiddenCheckbox checked={checked} {...props}></HiddenCheckbox>
       <StyledCheckbox checked={checked}>
         <Icon viewBox="0 0 24 24">
-            <polyline points="20 5 9 17 4 12" />
-          </Icon>
+          <polyline points="20 5 9 17 4 12" />
+        </Icon>
       </StyledCheckbox>
     </CheckboxContainer>
   );
@@ -66,5 +73,5 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
         <Checkbox checked={checked} onChange={handleOnChange}></Checkbox>
       </label>
     </div>
-  )
+  );
 };

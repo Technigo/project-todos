@@ -35,7 +35,7 @@ if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON);
 };
 
-// so now we setup the store with the reducer we defined and the persistedState
+// So now we setup the store with the reducer we defined and the persistedState
 // as the initial state. The store subscribes to any actions performed on the state
 // so that it always stores the most updated data
 const store = createStore(reducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
@@ -53,12 +53,12 @@ export const App = () => {
     <Provider store={store}>
       <Header />
       <AddToDoInput />
-      <section className="lists-container">
-        <StudiesTasks />
-        <HouseChoreTasks />
-        <ShoppingList />
-        <OtherTasks />
-      </section>
+      
+      <StudiesTasks />
+      <HouseChoreTasks />
+      <ShoppingList />
+      <OtherTasks />
+      
     </Provider>
   );
 };

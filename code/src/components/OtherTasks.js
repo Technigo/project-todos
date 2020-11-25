@@ -17,5 +17,5 @@ export const OtherTasks = () => {
         <ListItem key={item.id} listItem={item} />
       ))}
     </ListContainer>
-  )
+  );
 };

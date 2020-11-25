@@ -17,5 +17,5 @@ export const HouseChoreTasks = () => {
         <ListItem key={item.id} listItem={item} />
       ))}
     </ListContainer>
-  )
+  );
 };

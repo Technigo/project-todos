@@ -17,5 +17,5 @@ export const ShoppingList = () => {
         <ListItem key={item.id} listItem={item} />
       ))}
     </ListContainer>
-  )
+  );
 };

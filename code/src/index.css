@@ -1,3 +1,6 @@
+/* Global styling: Setting a font family for the whole body
+and some basic styling for the main <div> root component which
+renders the whole app */
 body {
   margin: 0;
   font-family: 'Raleway', sans-serif;

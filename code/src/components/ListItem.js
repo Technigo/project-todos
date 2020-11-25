@@ -45,5 +45,3 @@ export const ListItem = ({ listItem }) => {
     </SingleTaskContainer>
   );
 };
-
-// Add explanatory comments to CustomCheckbox component
