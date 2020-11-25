@@ -4,25 +4,39 @@ import { todos } from "reducers/todos";
 import { useDispatch } from "react-redux";
 
 const TaskContainer = styled.li`
-  align-items: flex-start;
-  padding: 8px;
-  margin: 8px;
+  /* align-items: flex-start; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* margin: 8px; */
+  /* padding: 10; */
   font-size: 32px;
-  color: white;
+  color: blue;
   background: pink;
+  list-style: none;
+`;
+
+const TaskLabel = styled.label`
+  display: flex;
+  align-items: center;
+  margin: 10px;
+`;
+
+const CheckBox = styled.input`
+  margin-right: 20px;
+`;
+
+const RemoveTaskButton = styled.button`
+  margin-right: 10px;
 `;
 
 export const Task = ({ task }) => {
   const dispatch = useDispatch();
 
-  // const handleCheckboxClick = () {
-  //   dispatch(todos.actions.)
-  // }
-
   return (
     <TaskContainer>
-      <label>
-        <input
+      <TaskLabel>
+        <CheckBox
           type="checkbox"
           role="checkbox"
           checked={task.complete}
@@ -31,15 +45,15 @@ export const Task = ({ task }) => {
           }}
         />
         {task.text}
-      </label>
-      <button
+      </TaskLabel>
+      <RemoveTaskButton
         type="button"
         onClick={() => {
           dispatch(todos.actions.removeTask(task.id));
         }}
       >
         -
-      </button>
+      </RemoveTaskButton>
     </TaskContainer>
   );
 };

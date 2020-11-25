@@ -6,9 +6,9 @@ export const todos = createSlice({
   initialState: {
     username: "Jonna",
     tasks: [
-      { id: 1, text: "The first todo", complete: true },
-      { id: 2, text: "The second todo", complete: true },
-      { id: 3, text: "The third todo", complete: false },
+      { id: 1, text: "Get a dog", complete: false },
+      { id: 2, text: "Drink beer", complete: false },
+      { id: 3, text: "Work out", complete: true },
     ],
   },
   reducers: {
@@ -21,6 +21,9 @@ export const todos = createSlice({
     },
     removeTask: (state, action) => {
       state.tasks = state.tasks.filter((item) => item.id !== action.payload);
+    },
+    removeAllTasks: (state) => {
+      state.tasks = [];
     },
   },
 });

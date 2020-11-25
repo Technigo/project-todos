@@ -24,17 +24,13 @@ export const AddTask = () => {
 
   return (
     <form onSubmit={handleOnSubmit}>
-      <label>
-        Add task
-        <input
-          type="text"
-          onChange={(event) => setInputValue(event.target.value)}
-          value={inputValue}
-          placeholder="new task"
-          area-label="Type task here"
-          // required
-        />
-      </label>
+      <input
+        type="text"
+        onChange={(event) => setInputValue(event.target.value)}
+        value={inputValue}
+        placeholder="new task"
+        area-label="Type task here"
+      />
       <button type="submit" aria-label="Add task">
         +
       </button>
