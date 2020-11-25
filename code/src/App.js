@@ -79,5 +79,5 @@ const MainContainer = styled.main`
   margin-left: auto;
   margin-right: auto;
   padding: 30px;
-  width: 100vw;
+  width: 100%;
 `
