@@ -39,8 +39,7 @@ export const Header = () => {
                 padding-left: 20px;
             }
     `
-
-
+    
     return (
         <HeaderContainer>
         <Image src={headerImage} />
