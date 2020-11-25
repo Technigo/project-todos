@@ -15,6 +15,9 @@ const StyledInput = styled.input`
   background: #ffca00;
   font-size: 16px;
   color: black; 
+  margin-top: 30px;
+  border: none;
+  border-radius: 3px;
 `;
 
 export const ClearAllButton = () => {
@@ -30,6 +33,7 @@ export const ClearAllButton = () => {
       <StyledInput className='clear-all-button' onClick={handleOnClick}
         type='submit'
         value='Clear all'
+        aria-label='{ClearButton}'
       ></StyledInput>
     </Section>
   )

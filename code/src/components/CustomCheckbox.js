@@ -1,8 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-
-import { todos } from '../reducers/todos'
 
 // A nested component. A function that takes in props and renders an input type = checkbox. 
 // It is rendering a TYPE checkbox and not a STYLED checkbox. We will eventually return a styled
@@ -16,7 +13,7 @@ import { todos } from '../reducers/todos'
 
 // A nested function? Creates a styled, hidden but accessible checkbox. Accessible
 // since it is rendered off screen. ??
-const HiddenCheckBox = styled.input.attrs({ type: 'checkbox' })`
+const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   border: 0;
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
@@ -36,17 +33,21 @@ const Icon = styled.svg`
 `;
 
 // Need both for accessibility.
-const StyledCheckBox = styled.div`
+const StyledCheckbox = styled.div`
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  border: none;
+  width: 35px;
+  height: 35px;
   margin-right: 10px;
-  background: ${props => props.checked ? 'pink' : 'grey'};
+  background: ${props => props.checked ? '#FF6395' : '#393857'};
   border-radius: 50%;
   transition: all 150ms;
-  ${Icon} {
-    visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
-  }
+    ${HiddenCheckbox}:focus + & {
+      box-shadow: 0 0 0 3px grey;
+    }
+    ${Icon} {
+      visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
+    }
 `;
 
 const CheckboxContainer = styled.div`
@@ -72,12 +73,12 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   // Drawing a line with the svg.
   const Checkbox = ({ className, checked, ...props }) => (
     <CheckboxContainer>
-      <HiddenCheckBox checked={checked} {...props}></HiddenCheckBox>
-        <StyledCheckBox checked={checked}>
+      <HiddenCheckbox tabindex='0' role='checkbox' checked={checked} {...props}></HiddenCheckbox>
+        <StyledCheckbox tabindex='0' role='checkbox' checked={checked}>
           <Icon viewBox='0 0 24 24'>
-            <polyline points='18 5 9 17 4 12'/>
+            <polyline points='18 7 9 17 4 12'/>
           </Icon>
-        </StyledCheckBox>
+        </StyledCheckbox>
     </CheckboxContainer>
   )
 

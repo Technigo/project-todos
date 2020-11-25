@@ -39,7 +39,7 @@ export const TodoItem = ({ itemIndex }) => {
 
   return (
     <DeleteContainer className={`todo-item ${item.done ? 'done' : ''}`}>
-      <CustomCheckbox isChecked={checked} onChangeHandler={handleCheckboxClick}/>
+      <CustomCheckbox tabindex='0' isChecked={checked} onChangeHandler={handleCheckboxClick} />
       <span className='todo-item-text'>{item.description}</span>
       <DeleteButton className='todo-item-remove' onClick={onRemoveClicked}>
         {'x'}

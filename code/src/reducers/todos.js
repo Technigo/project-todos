@@ -3,12 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   list: {
     name: 'List',
-    items: [
-      {
-        description: '',
-        done: false
-      }
-    ]
+    items: []
   }
 };
 

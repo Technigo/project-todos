@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Datepicker from 'react-datepicker';
+//import Datepicker from 'react-datepicker';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
@@ -27,6 +27,7 @@ const InputField = styled.input`
   padding: 10px;
   width: 65%;
   border: none;
+  border-radius: 3px;
 `
 const InputAdd = styled(InputField)`
   font-size: 40px;
@@ -82,19 +83,23 @@ addDate()
 
   return (
     <>
-      <StyledLabel>
+      <StyledLabel htmlFor='todo-input'>
         {/*<p> Time : {date.toLocaleTimeString()}</p>*/}
         date: {date.toLocaleDateString()}      
       </StyledLabel>
       <Form className='todo-input' onSubmit={handleOnSubmit}>
         <InputField
           type='text'
+          aria-label='{labelText}'
+          aria-required='true'
+          placeholder='My next todo'
           onChange={event => setInputValue(event.target.value)}
           value={inputValue}
           className='todo-input-text'
         ></InputField>  
         <InputAdd 
           type='submit'
+          aria-label='labelAddButton'
           className='todo-input-button'
           value='+'
         ></InputAdd>

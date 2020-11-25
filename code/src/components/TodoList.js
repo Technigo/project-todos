@@ -1,7 +1,12 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import styled from 'styled-components';
 
 import { TodoItem } from './TodoItem'
+
+const SectionTodoList = styled.section`
+  margin-top: 30px;
+`
 
 export const TodoList = () => {
   // Get list info for this list form the (global) redux store
@@ -10,11 +15,11 @@ export const TodoList = () => {
   // Look in state tree for path!!!
 
   return (
-    <section className='todo-list'>
+    <SectionTodoList className='todo-list'>
       {list.items.map((item, index) => (
         <TodoItem item={item.text} key={index} itemIndex={index}></TodoItem>
       ))}
-    </section>
+    </SectionTodoList>
   );
 };
 

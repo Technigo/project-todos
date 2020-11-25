@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { configureStore, combineReducers, createStore } from '@reduxjs/toolkit';
+import { combineReducers, createStore } from '@reduxjs/toolkit';
 
 import { todos } from '../reducers/todos';
 
@@ -9,6 +9,7 @@ import { TodoInput } from '../components/TodoInput';
 import { Header } from '../components/Header';
 import { TodoSummary } from 'components/TodoSummary';
 import { ClearAllButton } from 'components/ClearAllButton';
+import { LottieAnimation } from '../components/LottieAnimation';
 
 // StoreCreation: Tell Redux about our reducers. createSlice adds a field called 'reducer'. 
 // 'combineReducer()' is a function that takes the todo object as an argument and turn it into a variable
@@ -40,16 +41,14 @@ store.subscribe(() => {
 
 export const Home = () => {
   return (
-    <main>
       <Provider store={store}>
         <Header />
         <TodoSummary />
         <TodoInput />
         <TodoList />
         <ClearAllButton />
-      </Provider>
-    </main>
-    
+        <LottieAnimation />
+      </Provider>    
   );
 };
 

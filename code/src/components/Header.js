@@ -6,6 +6,7 @@ const Title = styled.h1`
   text-align: center;
   font-size: 36px;
   color: white;
+  padding-top: 30px;
 `
 const Emoji = styled.span.attrs(({ ariaLabel }) => ({
   role: 'img',
@@ -16,6 +17,7 @@ const Emoji = styled.span.attrs(({ ariaLabel }) => ({
 
 export const Header = () => {
   return (
-    <Title className='title'>My ToDo List<Emoji ariaLabel = 'pen'> ✏️</Emoji></Title>
+    <Title className='title'> My ToDo List<Emoji role='img' ariaLabel='pen'> ✏️</Emoji></Title>
     )
 };
+
