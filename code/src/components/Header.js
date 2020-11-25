@@ -1,11 +1,11 @@
 import React from 'react'
 
-import {HeaderContainer} from './StyledComponents'
+import {HeaderContainer, HeaderTitle} from './StyledComponents'
 
 const Header = () => {
     return (
         <HeaderContainer>
-        <h1>To Do</h1>
+        <HeaderTitle>To Do</HeaderTitle>
         </HeaderContainer>
     )
 }

@@ -4,7 +4,7 @@ import {useSelector, useDispatch} from 'react-redux'
 import {Task} from './Task'
 import {NewTask} from './NewTask'
 import {tasks} from '../reducers/tasks'
-import {TasksContainer} from './StyledComponents'
+import {TasksContainer, ClearButton} from './StyledComponents'
 
 
 const Tasklist = () => {
@@ -15,7 +15,15 @@ const Tasklist = () => {
 
     return(
         <TasksContainer>
-            <p>Completed: {completedTasks.length}/{Listedtasks.length}</p>
+            <p>
+                Completed: {completedTasks.length}/{Listedtasks.length} 
+                <span>
+                    <ClearButton onClick={()=>dispatch(tasks.actions.clearTasks())}>
+                        Clear All
+                    </ClearButton>
+                </span>
+            </p>
+            
             {Listedtasks.map(task => {
                 return (
                     <div key={task.id}>
@@ -26,7 +34,7 @@ const Tasklist = () => {
             })}
            
            <NewTask />
-           <button onClick={()=>dispatch(tasks.actions.clearTasks())}>Clear All</button>
+           
         </TasksContainer>
     )
 }

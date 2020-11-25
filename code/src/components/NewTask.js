@@ -1,6 +1,8 @@
 import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
+
 import {tasks} from '../reducers/tasks'
+import {SubmitButton, Input, Form} from './StyledComponents'
 
 export const NewTask = () => {
     const dispatch = useDispatch()
@@ -13,14 +15,15 @@ export const NewTask = () => {
     }
 
     return(
-        <form>
-            <input
+        <Form>
+            <Input
             type='text'
             onChange={event => setNewTask(event.target.value)}
             value={newTask}
             required
+            placeholder= 'Add new task'
             />
-            <button type='submit' onClick={onSubmit}>Submit</button>
-        </form>
+            <SubmitButton type='submit' onClick={onSubmit}>+</SubmitButton>
+        </Form>
     )
 }
