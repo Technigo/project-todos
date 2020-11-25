@@ -1,24 +1,21 @@
-import React from 'react'
+import React from "react"
+import { useSelector } from "react-redux"
 
-import { useSelector, useDispatch } from 'react-redux'
-import { TaskItem } from './TaskItem'
-import { todo } from 'Reducers/todo'
-
+import { TaskItem } from "./TaskItem"
+import { ClearButton } from "../Library/ClearButton"
 
 export const TaskList = () => {
-  const dispatch = useDispatch()
-  const items = useSelector(store => store.todo.items)  
-  
+  const items = useSelector((store) => store.todo.items)
+
   return (
-  <>
-    {items.map((item, index) => (
-      <TaskItem key={index} item={item.text}></TaskItem>
-    ))}
-      <button className="task-list-button" 
-      onClick={() => dispatch(todo.actions.removeOne())}>
-        Remove One
-      </button>
-  </>
+    <ul>
+      {items.map((item) => (
+        <TaskItem key={item.id} item={item.text}>
+          {" "}
+        </TaskItem>
+      ))}
+
+      <ClearButton></ClearButton>
+    </ul>
   )
 }
-

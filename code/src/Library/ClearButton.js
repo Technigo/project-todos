@@ -1,7 +1,19 @@
-/*import React from 'react'
+import React from "react"
+import { useDispatch } from "react-redux"
+
+import { todo } from "../Reducers/todo"
 
 export const ClearButton = () => {
+  const dispatch = useDispatch()
+
   return (
-    <button onClick={() => {}}>Remove All</button>
+    <button
+      className="clear-button"
+      onClick={() => {
+        dispatch(todo.action.removeAll())
+      }}
+    >
+      Remove All
+    </button>
   )
-} */
+}

@@ -18,6 +18,12 @@ code {
     monospace;
 }
 
+main {
+  background-color: #ffffff73;
+  border-radius: 20px;
+  margin: 40px;
+}
+
 h1 {
   text-align: center;
 }
@@ -25,12 +31,10 @@ h1 {
 /* HEADER */
 
 .header-container {
-  margin: 40px 40px 0;
   padding: 20px;
-  width: 600px;
+  width: 500px;
   display: flex;
-  background-color: #ffffff73;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid #00000029;
 }
 
 .header-date {
@@ -41,22 +45,58 @@ h1 {
 
 /* LIST */
 
-.task-container{
-align-self: flex-start;
-padding: 13px;
-margin: 0 40px;
-font-size: 22px;
-background-color: #ffffff73;
-display: flex;
-justify-content: center;
-flex-direction: column;
+ul {
+  padding: 0;
 }
 
-/* REMOVE BUTTON */
-.task-list-button {
-align-self: center;
-padding: 4px;
-margin: 22px;
-font-size: 18px;
-color: #3f3f3f;
+.task-container{
+  align-self: flex-start;
+  padding: 20px;
+  font-size: 22px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.task-item {
+  margin: 0 10px;
+}
+
+/*  BUTTONS */
+
+.remove-button {
+  width: 65px;
+  text-align: center;
+  background-color: #c779d070;
+  border: outset;
+  margin-left: 20px;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.clear-button {
+  align-self: center;
+  padding: 4px;
+  margin: 20px;
+  font-size: 18px;
+  color: #3f3f3f;
+  background-color: #c779d070;
+  border: outset;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+/* QUANTITY */
+
+.task-quantity {
+  padding-left: 20px;
+}
+
+/* INPUT */
+
+form {
+  margin: 30px;
+}
+
+.task-input {
+  margin-right: 10px
 }
