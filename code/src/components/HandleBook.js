@@ -4,11 +4,9 @@ import styled from "styled-components";
 const HandleBookContainer = styled.li`
   padding: 8px 0;
   font-size: 24px;
-  color: black;
+  color: white;
 `;
 
 export const HandleBook = ({ book }) => {
-  return (
-    <HandleBookContainer>{book.title}</HandleBookContainer>
-  );
-};  
+  return <HandleBookContainer>{book.title}</HandleBookContainer>;
+};

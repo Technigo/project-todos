@@ -1,16 +1,16 @@
-import React from "react"
+import React from "react";
 import styled from "styled-components";
 
 const FilterBooksContainer = styled.a`
   padding: 8px 0;
   font-size: 24px;
-  color: black;
+  color: white;
 `;
-
 
 export const FilterBooks = ({ book }) => {
   return (
-    <FilterBooksContainer>{book.isRead ? "Read" : "Want to read"}</FilterBooksContainer>
-  
-  )
-}
+    <FilterBooksContainer>
+      {book.isRead ? "Read" : "Want to read"}
+    </FilterBooksContainer>
+  );
+};
