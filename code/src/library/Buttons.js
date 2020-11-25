@@ -5,14 +5,15 @@
 // background: ${(props) => props.background || 'yellow'};
 //background-color: #f9adae;
 export const Button = styled.button`
-  padding: 12px;
+  padding: 5px;
   margin: 6px;
-  background: ${(props) => props.background || '#f5b851'};
-  font-size: 20px;
+  background: ${(props) => props.background || '#d3947a'};
+  font-size: 16px;
   border: none;
-  border-radius: 6px;
+  border-radius: 3px;
   color: #fff;
   font-weight: 600;
+  cursor: pointer;
 
   &:hover {
     background: grey;
@@ -21,15 +22,16 @@ export const Button = styled.button`
 `;
 
 export const AddButton = styled.button`
-  height: 40px;
-  width: 40px;
-  margin: 6px;
-  background: #7797be;
-  color: #fff;
+  padding: 8px;
+  margin: 3px;
+  background: #757f9e;
+  color: #ffffff;
   font-size: 20px;
   font-weight: 600;
   border: none;
   border-radius: 6px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
 
   &:hover {
     background: grey;

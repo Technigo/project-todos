@@ -4,11 +4,13 @@ import moment from 'moment'
 
 import { todos } from 'reducers/todos'
 import { Button } from 'library/Buttons'
+import { CustomCheckbox } from 'components/CustomCheckbox'
 
 export const Todo = (props) => {
   const { id, text, dueDate, category, complete, startDate } = props.item;
   const dispatch = useDispatch()
 
+  //checkbox click dispatches a toggle completed action to Redux:
   const handleCheckboxClick = () => {
     dispatch(todos.actions.toggleCompleted(id))
   }
@@ -19,17 +21,19 @@ export const Todo = (props) => {
 
   return (
     <li>
-      <span>{category}: </span>
-      <span>{text} - </span>
+      {/* <span>{category}: </span> */}
+      <span>{text}</span>
       <label>
-        completed:
-        {/* this checkbox will be replaced by a custom one */}
-        {/* <CustomCheckbox> */}
-        <input
+        <CustomCheckbox 
+          isChecked={complete} 
+          onChangeHandler={handleCheckboxClick}/>
+        {/* <input
         type='checkbox'
-        checked={complete}
+        // || false fixes the issues of going from controlled to uncontrolled value
+          // here https://github.com/facebook/react/issues/6779
+        checked={props.item.complete || false}
         onChange={handleCheckboxClick}
-      />
+        /> */}
       </label>
       <Button 
         type='button' 

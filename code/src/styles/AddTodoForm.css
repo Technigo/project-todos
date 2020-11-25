@@ -1,8 +1,15 @@
-form {
-  display: flex;
-  align-items: center;
-}
 
-ul {
-  list-style: none;
+/* I didn't know how to style the datepicker 
+with styled components, so I put it in a css-file instead.
+Still haven't figured out how to style the 
+input/placeholder so that 'Due Date' is displayed
+on the datepicker (just as in the select dropdown)*/
+.react-date-picker__wrapper {
+  height: 40px;
+  background: #d3947a;
+  color: #606060;
+  font-size: 16px;
+  border: none;
+  margin: 5px 8px 10px 0;
+  cursor: pointer;
 }

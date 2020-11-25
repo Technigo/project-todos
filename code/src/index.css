@@ -5,6 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(25deg, #1473b1, #807f9c, #b78c87, #e7996f);
+  width: 100vw;
+  min-height: 100vh;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
 }
 
 code {
@@ -14,4 +22,15 @@ code {
 
 * {
   box-sizing: border-box;
+}
+
+.react-date-picker__wrapper {
+  height: 40px;
+  background: #d3947a;
+  color: #606060;
+  padding-left: 5px;
+  font-size: 16px;
+  border: none;
+  margin: 10px 8px;
+  cursor: pointer;
 }

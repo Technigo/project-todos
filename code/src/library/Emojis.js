@@ -6,6 +6,5 @@ export const AddTodoEmoji = styled.span.attrs({
   role: 'img', 
   'aria-label': 'write-emoji',
 })`
-  font-size: 40px;
-  margin-left: 15px;
+  font-size: 30px;
 `;

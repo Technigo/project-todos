@@ -5,12 +5,13 @@ import styled from 'styled-components'
 
 export const Select = styled.select`
   height: 40px;
-  background: pink;
+  background: #d3947a;
   color: #606060;
   padding-left: 5px;
   font-size: 16px;
   border: none;
-  margin-left: 8px;
+  margin: 10px 8px;
+  cursor: pointer;
 
   option {
     color: #000;

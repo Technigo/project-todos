@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+// Should i define this const below Like Van/Maks do in he lecture??
+// const initialState = {
+//   items: []
+// }
 
 export const todos = createSlice({
   name: 'todos',
@@ -11,10 +15,13 @@ export const todos = createSlice({
     { id: 4, category: 'Study', text: 'Create a todo app', complete: false },
     ]
   },
+  //The functions that handles the data to put in the store
   reducers: {
     addItem: (store, action) => {
-      const { text, category, dueDate } = action.payload
-      store.items.push({ id: Date.now(), text, category, dueDate })
+      const { text, category, complete, dueDate } = action.payload
+      // se wed lecture about push being bad practice (something with immutability)
+      // use spread operator instead???
+      store.items.push({ id: Date.now(), text, category, complete, dueDate })
     },
     removeTodo: (store, action) => {
       // find item/ filter item
