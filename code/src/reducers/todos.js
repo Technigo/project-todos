@@ -24,7 +24,8 @@ export const todos = createSlice({
   },
   reducers: {
     addTodo: (state, action) => {
-      state.tasks.push(action.payload);
+      const newTodosList = [...state.tasks, action.payload];
+      state.tasks = newTodosList;
     },
     checkTodo: (state, action) => {
       const selectedTask = state.tasks.find(

@@ -9,6 +9,38 @@ import { todos } from '../reducers/todos';
 // Styling
 import { TaskWrapper, Button } from '../styling/GlobalStyling';
 
+// -----------------------------------------------------------------------------
+
+export const CompletedTodo = ({ task, index }) => {
+  const dispatch = useDispatch();
+
+  const handleRemoveTaskButton = () => {
+    dispatch(todos.actions.removeTodo(task.id));
+  };
+
+  // Reusing the same action as when to check a task,
+  // since it reverses the isComplete - value
+  const handleCheckedButton = () => {
+    dispatch(todos.actions.checkTodo(task));
+  };
+
+  return (
+    <CompletedTaskWrapper>
+      <div>
+        <CompletedTaskText>{task.task}</CompletedTaskText>
+        <CompletedTime>
+          Completed {moment(task.completedAt).startOf('second').fromNow()}
+        </CompletedTime>
+      </div>
+      <div>
+        <RemoveTaskButton onClick={handleRemoveTaskButton}>✕</RemoveTaskButton>
+        <CheckedButton onClick={handleCheckedButton}>↩︎</CheckedButton>
+      </div>
+    </CompletedTaskWrapper>
+  );
+};
+
+// Local styling ----------------------------------------------------------------
 const CompletedTaskWrapper = styled(TaskWrapper)`
   background: #f5f1fc;
 `;
@@ -38,39 +70,9 @@ const CheckedButton = styled(Button)`
   background: #4300ca;
   color: #fff;
   margin: 0 10px;
+  transform: rotate(90deg);
 `;
 
 const RemoveTaskButton = styled(Button)`
   background: #fff;
 `;
-
-// -----------------------------------------------------------------------------
-
-export const CompletedTodo = ({ task, index }) => {
-  const dispatch = useDispatch();
-
-  const handleRemoveTaskButton = () => {
-    dispatch(todos.actions.removeTodo(task.id));
-  };
-
-  // Reusing the same action as when to check a task,
-  // since it reverses the isComplete - value
-  const handleCheckedButton = () => {
-    dispatch(todos.actions.checkTodo(task));
-  };
-
-  return (
-    <CompletedTaskWrapper>
-      <div>
-        <CompletedTaskText>{task.task}</CompletedTaskText>
-        <CompletedTime>
-          Completed {moment(task.completedAt).startOf('second').fromNow()}
-        </CompletedTime>
-      </div>
-      <div>
-        <RemoveTaskButton onClick={handleRemoveTaskButton}>✕</RemoveTaskButton>
-        <CheckedButton onClick={handleCheckedButton}>✓</CheckedButton>
-      </div>
-    </CompletedTaskWrapper>
-  );
-};

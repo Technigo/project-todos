@@ -14,27 +14,6 @@ import { todos } from '../reducers/todos';
 // Styling
 import { Wrapper, Button } from '../styling/GlobalStyling';
 
-const ControlTasks = styled.div`
-  margin: 20px;
-  text-align: center;
-  font-size: 14px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  & p {
-    padding: 0 10px;
-    text-transform: uppercase;
-    font-size: 12px;
-  }
-`;
-
-const CompletedHeadline = styled.h2`
-  font-size: 16px;
-  margin: 50px 0 15px 10px;
-  text-transform: uppercase;
-`;
-
 // -----------------------------------------------------------------------------
 
 export const ListOfTodos = () => {
@@ -70,26 +49,45 @@ export const ListOfTodos = () => {
 
   return (
     <Wrapper>
+      {/* Display a selector to choose to sort by category + count completed tasks */}
       <CounterAndSorter
         showingCategory={showingCategory}
         setShowingCategory={setShowingCategory}
       />
 
+      {/* If there are no tasks, display NoTasksFound-component */}
       {nonCompletedTasks.length === 0 && <NoTasksFound />}
 
-      {categoryTasks.reverse().map((task, index) => {
-        return (
-          <Todo task={task} index={index} key={task.id} prio={task.prio} />
-        );
-      })}
+      {/* Display all tasks based on category, filtered on prio/not prio. */}
+      {/* Prio */}
+      {categoryTasks
+        .reverse()
+        .filter((task) => task.prio)
+        .map((task, index) => {
+          return (
+            <Todo task={task} index={index} key={task.id} prio={task.prio} />
+          );
+        })}
+      {/* Not prio */}
+      {categoryTasks
+        .filter((task) => !task.prio)
+        .map((task, index) => {
+          return (
+            <Todo task={task} index={index} key={task.id} prio={task.prio} />
+          );
+        })}
 
+      {/* Display headline if there are completed tasks */}
       {completedTasks.length !== 0 && (
         <CompletedHeadline>Completed tasks</CompletedHeadline>
       )}
+
+      {/* List all completed tasks */}
       {completedTasks.map((task, index) => {
         return <CompletedTodo task={task} index={index} key={task.id} />;
       })}
 
+      {/* Show complete all/remove all only if there are thoughts available */}
       {nonCompletedTasks.length !== 0 && (
         <ControlTasks>
           <p>
@@ -103,3 +101,25 @@ export const ListOfTodos = () => {
     </Wrapper>
   );
 };
+
+// Local styles -----------------------------
+const ControlTasks = styled.div`
+  margin: 20px;
+  text-align: center;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & p {
+    padding: 0 10px;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+`;
+
+const CompletedHeadline = styled.h2`
+  font-size: 16px;
+  margin: 50px 0 15px 10px;
+  text-transform: uppercase;
+`;

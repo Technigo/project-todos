@@ -11,7 +11,6 @@ import {
   NewTodoWrapper,
   InnerFlexWrapper,
   Button,
-  InfoText,
 } from '../styling/GlobalStyling';
 
 // -----------------------------------------------------------------------------
@@ -98,9 +97,9 @@ export const NewTodo = ({ setAddTaskVisible }) => {
         </div>
       </CategoryAndPrioWrapper>
       <ButtonWrapper>
-        <Button type="button" onClick={handleCloseNewTask}>
+        <CloseButton type="button" onClick={handleCloseNewTask}>
           ✕
-        </Button>
+        </CloseButton>
         <NewTodoButton type="submit" value="submit" onClick={handleSubmit}>
           +
         </NewTodoButton>
@@ -139,16 +138,21 @@ const Label = styled.label`
 const ButtonWrapper = styled(InnerFlexWrapper)`
   margin-top: 10px;
 `;
+const CloseButton = styled(Button)`
+  width: 50px;
+  height: 50px;
+`;
 
 const NewTodoButton = styled.button`
   background: #4300ca;
   color: #fff;
   border-radius: 25px;
   padding: 5px;
-  height: 30px;
-  width: 30px;
+  height: 50px;
+  width: 50px;
   border: none;
   border: 1px solid #000;
+  font-size: 24px;
 
   &:hover {
     cursor: pointer;

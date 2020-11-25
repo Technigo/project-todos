@@ -25,7 +25,7 @@ export const BackgroundLayer = styled.div`
   width: 100vw;
   height: 100vh;
   background: #eae0ff;
-  opacity: 0.9;
+  opacity: 0.8;
   z-index: 1;
 `;
 
@@ -116,6 +116,7 @@ export const AddTaskButton = styled(Button)`
   font-size: 40px;
   border-radius: 50%;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 2;
 `;
 
 // Footer -------------------------------
