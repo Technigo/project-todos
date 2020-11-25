@@ -1,4 +1,4 @@
-import React, {useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
 import styled from 'styled-components'
@@ -6,16 +6,20 @@ import styled from 'styled-components'
 const Container = styled.div`
     display: flex;
     text-align: center;
-    `
+`
 const Form = styled.form`
     flex-direction: column;
 `
 
 const Textarea = styled.textarea`
     margin-top: 20px;
-    `
-const Input = styled.input`
+`
+const Button = styled.button`
     margin-top: 20px;
+    border-radius: 10%;
+    border: none;
+    box-shadow: 10px 5px 5px grey;
+    padding: 5px;
 `
 
 //state for input
@@ -26,14 +30,14 @@ export const AddTodo = () => {
     const handleOnSubmit = e => {
         e.preventDefault()
         //What we add within the curly braces is the payload:
-        dispatch(todos.actions.addOne({    
+        dispatch(todos.actions.addOne({   
+            id: Date.now(), 
             text: inputValue,
             complete: false
         })
         )
-
         setInputValue('')
-    }
+}
 
     return (
         <Container>
@@ -48,10 +52,10 @@ export const AddTodo = () => {
                 value={inputValue}
                 ></Textarea>
                 
-                <Input 
+                <Button 
                 type="submit"
-                value="Add Todo"
-                ></Input>
+                >Add todo
+                </Button>
             </Form>
         </Container>
     )

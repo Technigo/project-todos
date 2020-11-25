@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { todos } from 'reducers/todos'
 
 const Button = styled.button`
     border: none;
@@ -8,17 +9,10 @@ const Button = styled.button`
     background: none;
 `
 
-
 export const ClearAll = () => {
     const dispatch = useDispatch()
 
-    const handleClearAll = () => {
-      /*   dispatch(todos.actions.clearAll) */
-    }
-
-    return (
-       <div> 
-           <Button onClick={handleClearAll}>[Clear All]</Button>
-        </div>
+    return ( 
+           <Button onClick={() => { dispatch(todos.actions.clearAll())}}>[Clear All]</Button>
     )
 }

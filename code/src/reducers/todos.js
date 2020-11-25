@@ -10,15 +10,11 @@ export const todos = createSlice({
           complete: false },
 
         { id: 2,
-          text: 'Follow redux codealong', 
-          complete: true },
+          text: 'Fork weekly assignment', 
+          complete: false },
 
         { id: 3,
-          text: 'Fork weekly assignment',
-          complete: true },
-
-        { id: 4,
-          text: 'Create a todo app', 
+          text: 'Create a todo app',
           complete: false },
       ]
     },
@@ -33,12 +29,18 @@ export const todos = createSlice({
         addOne: (state, action) => {
           const itemInfo = action.payload;
           state.items.push(itemInfo)
+        },
+
+        clearAll: (state, action) => {
+          state.items = []
+        },
+
+        toggleComplete: (state, action) => {
+          const foundItem = state.items.find((item) => item.id === action.payload)
+            if (foundItem) {
+          foundItem.complete = ! foundItem.complete          
         }
-
-       /*  clearAll: (state, action) => {
-
-        } */
-    },
-
+      }
+    }     
 })
 

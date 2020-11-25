@@ -22,7 +22,7 @@ export const List = () => {
     return (
     <ListContainer>
         {items.map((item) => (
-        <Item key={item.key} item={item}></Item>
+        <Item key={item.id} item={item}></Item>
         ))}      
         <AddTodo />  
     </ListContainer>

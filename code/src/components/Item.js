@@ -29,13 +29,24 @@ export const Item = ({ item }) => {
     const handleRemoveItem = () => {
         dispatch(todos.actions.removeOne(item.id))
     }
+
+    const handleCheckbox = () => {
+        dispatch(todos.actions.toggleComplete(item.id))
+    }
     
     
     return (
     <ItemContainer>{item.text}
+    <input 
+        type="checkbox"  
+        name="checkbox" 
+        value="check"
+        onChange={handleCheckbox}>
+    </input>
     <ListActionButton 
-        onClick={handleRemoveItem}>[Remove task]
+        onClick={handleRemoveItem}>[Remove]
     </ListActionButton>
+    
     <Line></Line>
     </ItemContainer>
     )
