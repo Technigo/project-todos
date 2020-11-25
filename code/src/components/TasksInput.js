@@ -3,21 +3,24 @@ import {useDispatch} from 'react-redux'
 import {tasks} from 'reducers/tasks'
 
 export const TasksInput = () => {
-	const tasks = useSelector((store) => store.tasks)
 	const [todoTask, setTodoTask] = useState('')
-
 	const dispatch = useDispatch()
-	const setTodoTaskId = tasks.length+1 
 
-	console.log(setTodoTaskId)
-
+	const handleSubmit = (event) => {
+		event.preventDefault()
+		if(todoTask.length>0) {
+			dispatch(tasks.actions.addTask(todoTask))
+			setTodoTask("")
+		}
+	}
 	return (
-		<form>
+		<form onSubmit={handleSubmit}>
 			<label>
 				Add task
 				<input type="text"
-				onChange={event => setTodoTask(event.target.value)}
 				value={todoTask}
+				onChange={(event) => setTodoTask(event.target.value)}
+				placeholder="Add a todo..."
 				>
 				</input>
 				<button type="submit">add</button>

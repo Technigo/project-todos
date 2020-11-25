@@ -9,6 +9,7 @@ import {SelfCare} from './components/SelfCare'
 import {CodingTasks} from './components/CodingTasks'
 import {Groceries} from './components/Groceries'
 import {Other} from './components/Other'
+import {TasksInput} from './components/TasksInput'
 
 
 const reducer = combineReducers({
@@ -20,6 +21,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
+      <TasksInput/>
       <HouseholdTasks></HouseholdTasks>
       <SelfCare></SelfCare>
       <CodingTasks></CodingTasks>
