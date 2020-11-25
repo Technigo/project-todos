@@ -9,8 +9,6 @@ const ItemContainer = styled.li`
   padding: 8px;
   margin: 8px;
   font-size: 32px;
-  color: #3f3f3f;
-  background-color: #b8f4ff;
 `
 
 export const Item = ({ item }) => {
@@ -22,6 +20,7 @@ export const Item = ({ item }) => {
       <span className="actions">
         <button type="button" onClick={() => { dispatch(tasks.actions.removeItem(item)) }}>Remove todo</button>
       </span>
+      <input type="checkbox" id="button" name="button" value="button" checked={item.complete}/>
     </ItemContainer>
   )
 }
