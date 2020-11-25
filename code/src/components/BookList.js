@@ -5,14 +5,16 @@ import { useSelector } from "react-redux";
 import { toread } from "../reducers/toread"
 
 import { HandleBook } from "./HandleBook"
+import { FilterBooks } from "./FilterBooks"
 import { DeleteBooks } from "./DeleteBooks"
 
 const ListContainer = styled.ul`
   display: flex;
   flex-direction: column;
+  align-items: center;
   background: pink;
   margin: 0;
-  padding: 20px;
+  padding: 20px 0;
 `;
 
 export const BookList = () => {
@@ -22,7 +24,10 @@ export const BookList = () => {
   return (
   <ListContainer>
     {books.map((book, index) => (
-      <HandleBook book={book} key={index} ></HandleBook>
+      <div key={index}>
+        <HandleBook book={book} key={index} />
+        <FilterBooks book={book}/>
+      </div>
     ))}
   </ListContainer>
   );

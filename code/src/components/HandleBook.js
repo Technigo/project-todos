@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 
 const HandleBookContainer = styled.li`
-  align-self: center;
-  padding: 8px;
-  font-size: 42px;
+  padding: 8px 0;
+  font-size: 24px;
   color: black;
 `;
 
