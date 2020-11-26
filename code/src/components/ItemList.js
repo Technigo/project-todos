@@ -19,8 +19,7 @@ export const ItemList = () => {
 	return (
 		<section>
 			{allTasks.tasks.map((task, index ) => (
-				<ItemsAll task={task} taskIndex={index}/>
-			))}
+				<ItemsAll key={task.id} task={task} taskIndex={index}/>			))}
 		</section>
 	)
 }

@@ -6,7 +6,7 @@ export const ItemsAll = ({taskIndex}) => {
 	const dispatch = useDispatch()
 	const task = useSelector((store) => store.tasks.list.tasks[taskIndex])
 
-	const handleRemove = (event) => {
+	const handleRemove = () => {
 		dispatch(
 			tasks.actions.taskRemoved({
 				taskIndex,
@@ -14,7 +14,7 @@ export const ItemsAll = ({taskIndex}) => {
 		)
 	}
 
-	const handleCheckbox = (event) => {
+	const handleCheckbox = () => {
 		dispatch(
 			tasks.actions.checkTodoTask({
 				taskIndex:taskIndex,
