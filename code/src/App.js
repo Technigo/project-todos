@@ -32,7 +32,7 @@ if (persistedStateJSON) {
 }
 console.log(`persistedState: ${persistedState}`)
 //2. Create the storage using the initial state
-const store = createStore(reducer, persistedState)
+const store = createStore(reducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
 //3. Store the state in localstorage on ANY redux state change
 store.subscribe(() => {
