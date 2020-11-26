@@ -12,7 +12,7 @@ My project contains these folders:
 - Components 
    * List of todos where is use map() to show each item and it's costume made checkbox and delete button. Here is also the logic for my empty state styling.  
    * Item is the individual Todo on the list. Here i use Dispatch to trigger the reducer action toggleCompleted and the reducer action RemoveItem.
-   * Header is where i display todays date using moment.js, i also display how many todos you have completed VS how many todos you have in the app. 
+   * Header is where i use useSelector and then filter() to display how many todos you have completed VS how many todos you have in the app.I also show todays date using moment.js.  
    * AddItem is where i use a form and input tag to add new todos to the List. Here i have a local state and also i use Dispatch to activate my reducers action called AddItem. 
    * Checkbox is where you find all the code for the costume made checkbox, including a local state.
 
