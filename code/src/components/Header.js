@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
-import { AppBar, Badge } from "@material-ui/core"
+import { AppBar, Badge, Tooltip } from "@material-ui/core"
 import { makeStyles } from "@material-ui/core/styles"
 import Toolbar from "@material-ui/core/Toolbar"
 import Typography from "@material-ui/core/Typography"
@@ -50,7 +50,9 @@ export const Header = () => {
           >
             remove all
           </Button>
-          <DoneAllIcon onClick={() => dispatch(tasks.actions.markAll())} />
+          <Tooltip title="Check all those tasks as done!">
+            <DoneAllIcon onClick={() => dispatch(tasks.actions.markAll())} />
+          </Tooltip>
           <Badge badgeContent={allTasks.todos.length} color="secondary">
             <AssignmentTurnedInIcon />
           </Badge>

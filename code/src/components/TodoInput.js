@@ -45,6 +45,10 @@ export const TodoInput = (props) => {
     props.handleSnack()
   }
 
+  const handleCancel = (e) => {
+    props.onClose()
+  }
+
   return (
     <>
       <DialogTitle id="form-dialog-title">Add a new task</DialogTitle>
@@ -79,7 +83,7 @@ export const TodoInput = (props) => {
           <Button onClick={handleSubmit}>
             Done
           </Button>
-          <Button onClick={handleSubmit}>
+          <Button onClick={handleCancel}>
             Cancel
           </Button>
         </DialogActions>
