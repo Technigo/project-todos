@@ -7,8 +7,8 @@ export const Header = () => {
 
 	return (
 		<>
-		<h4 className="taskDate">Today's date:{currentDate}</h4> 
-		<h4 className="taskTime">Current time:{currentTime}</h4>
+		<h4 className="taskDate"><p className="date">Today's date:</p>{currentDate}</h4> 
+		<h4 className="taskTime"><p className="time">Current time:</p>{currentTime}</h4>
 		</>
 	)
 }

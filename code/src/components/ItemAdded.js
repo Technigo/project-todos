@@ -32,6 +32,17 @@ return (
 			onChange={(event)=>
 			setNewTask(event.target.value)}/>
 
+		{/* <label for="task-select">Choose a category:</label>
+{/* 
+		<select name="pets" id="pet-select">
+			<option value="">categories</option>
+			<option value="Self Care">Self Care</option>
+			<option value="Household">Household</option>
+			<option value="Coding">Coding</option>
+			<option value="Groceries">Groceries</option>
+			<option value="Other">Other</option>
+		</select> */} 
+
 			<button type="submit" 
 				disabled={newTask.length < 5 || newTask.length >140 || emptyTask(newTask)}>
 					<p>{newTask.length} / 140</p>
