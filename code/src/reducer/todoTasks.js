@@ -58,7 +58,11 @@ export const todoTasks = createSlice({
       if (taskChecked) {
         taskChecked.complete = !taskChecked.complete
       }
-    }
+    },
+
+    // countTasks: (store, action) => {
+    //   const
+    // }
   }
 
 }) 

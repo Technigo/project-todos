@@ -9,8 +9,9 @@ export const TodoList = () => {
 
   //fetch all tasks from the store
   const tasks = useSelector(store => store.todoTasks.allTodoTasks)
-  // console.log(`Printing tasks ${tasks[0].text.text}`)
-  // console.log(`Drugi ${tasks[0].text.text}`)
+  const nrOfTasks = tasks.length
+
+  console.log(`Nr of all todos: ${nrOfTasks}`)
 
   return (
     <ul>
