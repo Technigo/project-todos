@@ -1,4 +1,4 @@
-//Item.js handles posting of todos/tasks
+//ItemAdded.js handles posting of todos/tasks
 
 import React, {useState} from 'react'
 import{useDispatch } from 'react-redux'
