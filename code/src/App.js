@@ -7,6 +7,7 @@ import { TaskInput } from './Components/TaskInput'
 import { TaskList } from './Components/TaskList'
 import { TaskSummary } from './Components/TaskSummary'
 import { todo } from 'Reducers/todo'
+import { ClearButton } from 'Library/ClearButton'
 
 const reducer = combineReducers({ todo: todo.reducer })
 const store = configureStore({ reducer })
@@ -17,8 +18,8 @@ export const App = () => {
     <Provider store={store}>
     <Header /> 
     <TaskInput />
-    <TaskSummary/>
     <TaskList />
+    <ClearButton />
     </Provider>
   </main>
   )

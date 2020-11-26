@@ -13,10 +13,7 @@ body {
   justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+
 
 main {
   background-color: #ffffff73;
@@ -34,13 +31,17 @@ h1 {
   padding: 20px;
   width: 500px;
   display: flex;
+  flex-direction: column;
   border-bottom: 2px solid #00000029;
+}
+.header-details {
+  display: flex;
+  justify-content: space-between;
 }
 
 .header-date {
   font-size: 18px;
   font-weight: bold;
-  text-align: left;
 }
 
 /* LIST */
@@ -50,27 +51,39 @@ ul {
 }
 
 .task-container{
-  align-self: flex-start;
-  padding: 20px;
+  margin: 0 20px;
+  padding-bottom: 25px;
   font-size: 22px;
   display: flex;
-  justify-content: flex-start;
+  align-items: flex-end;
+  justify-content: space-between;
 }
 
 .task-item {
   margin: 0 10px;
 }
 
+.task-checkbox {
+  cursor: pointer;
+}
+
 /*  BUTTONS */
 
 .remove-button {
-  width: 65px;
-  text-align: center;
-  background-color: #c779d070;
-  border: outset;
-  margin-left: 20px;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  width: 70px;
+  background-color: transparent;
+  padding: 0;
+  border-style: none;
+  height: 100%;
+  outline: none;
+  margin-right: 11px;
+  cursor: pointer;
+}
+
+.remove-icon {
+  font-size: 40px;
+  height: 100%;
+  color: #00000029;;
 }
 
 .clear-button {
@@ -78,17 +91,36 @@ ul {
   padding: 4px;
   margin: 20px;
   font-size: 18px;
-  color: #3f3f3f;
-  background-color: #c779d070;
-  border: outset;
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: right;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Indie Flower', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.clear-button:hover {
+  font-size: 19px;
+}
+
+.task-add-button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #00000029;
+  margin: 20px 20px 0 20px;
+  cursor: pointer;
 }
 
 /* QUANTITY */
 
 .task-quantity {
-  padding-left: 20px;
+  margin-right: 20px;
+  font-size: 18px;
+  font-weight: 500;
 }
 
 /* INPUT */
@@ -98,5 +130,19 @@ form {
 }
 
 .task-input {
-  margin-right: 10px
+  margin-right: 10px;
+  }
+
+.task-input-field {
+  width: 400px;
+  height: 90px;
+  font-size: larger;
+  padding: 12px 20px;
+  margin: 8px 0;
+  background-color: transparent;
+  border-radius: 4px;
+  box-sizing: border-box;
+  border: 1px solid #00000029;
 }
+
+

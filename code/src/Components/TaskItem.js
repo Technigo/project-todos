@@ -22,19 +22,20 @@ export const TaskItem = ({ item }) => {
 
   return (
     <section className="task-container">
-     <span className="task-item">{item.text}</span>
-
-     <label>
+      <div className="task-box">
+        <label>
+          <input
+          className="task-checkbox"
+          type='checkbox'
+          checked={checked}
+          onChange={handleCheckboxClick}
+          />
+        </label>
+        <span className="task-item">{item.text}</span>
+      </div>
       
-        <input
-        type='checkbox'
-        checked={checked}
-        onChange={handleCheckboxClick}
-        />
-      </label>
-
       <button className="remove-button" type='button' 
-      onClick={() => onItemDelete(item.id)}>Delete</button>
+      onClick={() => onItemDelete(item.id)}> <span className="remove-icon" role="button" aria-label="remove">-</span></button>
         
       
     </section>

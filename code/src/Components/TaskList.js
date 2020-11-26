@@ -14,8 +14,7 @@ console.log(items)
           {" "}
         </TaskItem>
       ))}
-
-      <ClearButton></ClearButton>
     </ul>
   )
 }
+

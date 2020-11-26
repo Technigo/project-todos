@@ -4,10 +4,10 @@ export const todo = createSlice ({
   name: 'todo',
     initialState: {
       items: [
-        { id: 1, text: 'Eat', isComplete: false },
+        { id: 1, text: 'Eat', isComplete: true },
         { id: 2, text: 'Sleep', isComplete: false },
         { id: 3, text: 'Yoga', isComplete: false },
-        { id: 4, text: 'Repeat', isComplete: true },
+        { id: 4, text: 'Repeat', isComplete: false },
       ],
   },
   reducers: {
@@ -21,15 +21,13 @@ export const todo = createSlice ({
       const newItemList = [...store.items, newItem]
       store.items = newItemList
     },
-
+    // 
     setComplete: (state, action) => {
       const foundItem = state.items.find(item => item.id === action.payload)
       //console.log(action.payload)
-      //console.log(`innan if ${foundItem}`)
       if(foundItem) {
         foundItem.isComplete = !foundItem.isComplete
       }
-      //console.log(`efter if ${foundItem}`)
     },
 
     // Removes one item in the list

@@ -19,6 +19,7 @@ export const TaskInput = () => {
     <form onSubmit={handleSubmit}>
       <label className="task-input">
         <input
+        className="task-input-field"
           placeholder="Add a new task..."
           type="text"
           value={input}
@@ -26,7 +27,7 @@ export const TaskInput = () => {
         />
       </label>
       <button className="task-add-button" type="submit" onClick={handleSubmit}>
-        Add
+      <span className="remove-icon" role="button" aria-label="remove">+</span>
       </button>
     </form>
   )
