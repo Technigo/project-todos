@@ -22,7 +22,9 @@ export const AddButton = styled.button`
   align-self: center;
   background-color: #fcbfc1;
   border:none;
-  font-size: 25px;
+  font-size: 30px;
+  color: #ffffff;
   border-radius: 80%;
+  padding:2px 10px;
   margin-top: 17px;
 `

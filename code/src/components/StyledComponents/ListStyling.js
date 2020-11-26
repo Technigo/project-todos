@@ -35,10 +35,12 @@ font-size: 18px;
 `
 
 export const RemoveButton = styled.button`
-font-size:15px;
+font-size:20px;
 margin-left:auto;
 border:none;
 background-color:#ffffff;
+color:#dd0743;
+font-weight:700;
 cursor:pointer;
 `;
 

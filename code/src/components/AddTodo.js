@@ -32,9 +32,7 @@ export const AddTodo = () => {
         placeholder='Add a to-do!'
         onChange={(event)=> 
         setAddTodo(event.target.value)}/>
-        <AddButton type='submit' disabled={ addTodo.length < 5 }>
-            ➕
-        </AddButton>
+        <AddButton type='submit' disabled={ addTodo.length < 5 }> + </AddButton>
       </NewTodo>
     </AddTodoForm>
   );

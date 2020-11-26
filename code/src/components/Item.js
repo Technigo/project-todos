@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { todos } from '../Reducers/todos';
-import { RemoveButton, ItemContainer, TasksContainer, TaskText } from './StyledComponents/ListStyling';
+import { RemoveButton, ItemContainer, TaskText } from './StyledComponents/ListStyling';
 import  { CheckBox } from './Checkbox';
 
 export const Item = ({ item }) => {
@@ -29,7 +29,7 @@ export const Item = ({ item }) => {
       <ItemContainer>
         <CheckBox isChecked={item.complete ? 'checked' : "" } onChange={handleSetComplete}/>
         <TaskText>{item.text}</TaskText>
-        <RemoveButton onClick={handleRemoveTodo}> ❌ </RemoveButton>
+        <RemoveButton onClick={handleRemoveTodo}> X </RemoveButton>
       </ItemContainer>
   );
 };
