@@ -18,6 +18,7 @@ export const todos = createSlice({
 		addItem: (store, action) => {
 			const newItem = {
 				id: uuidv4(),
+				timestamp: Date.now(),
 				text: action.payload,
 				isCompleted: false,
 			};

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
+import moment from 'moment';
 
 import { todos } from '../reducers/todos';
 
@@ -12,7 +13,7 @@ const CheckBox = styled.input`
 	color: red;
 `;
 
-export const Item = ({ id, text, isCompleted }) => {
+export const Item = ({ id, text, isCompleted, timestamp }) => {
 	const dispatch = useDispatch();
 	const [completed, setCompleted] = useState(false);
 	const handleCheckbox = (id) => {
@@ -24,6 +25,7 @@ export const Item = ({ id, text, isCompleted }) => {
 	return (
 		<ItemContainer style={{ opacity: `${isCompleted ? '0.3' : '1'} ` }}>
 			<p>{text}</p>
+			<p>{moment(timestamp).format('MMM Do YY')}</p>
 
 			<CheckBox
 				type="checkbox"
