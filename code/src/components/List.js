@@ -23,7 +23,7 @@ export const List = () => {
         <section className ="empty-state-container">
           <div className="empty-state">
             <p className="amountOf">Great job! you are done!</p>
-            <img className="winner" src = {Winner} /> 
+            <img className="winner" src = {Winner} alt="gold trophy"/> 
           </div> 
         </section>    
         )
