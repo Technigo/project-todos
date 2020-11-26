@@ -18,7 +18,7 @@ const theme = createMuiTheme({
         fontFamily: 'Comic Sans MS'
       },
       shape: {
-        borderRadius: 20
+        borderRadius: 5
       }
 });
 

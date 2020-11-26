@@ -31,6 +31,7 @@ export const tasks = createSlice({
         removeTask: (state, action) => {
             state.todos.splice(action.payload, 1)
             console.log('length', state.todos.length)
+            console.log(state.todos)
 
         },
         removeAll: (state) => {

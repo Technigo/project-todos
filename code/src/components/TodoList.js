@@ -14,7 +14,7 @@ export const TodoList = () => {
 
   return (
     <><Paper>
-    <Accordion>
+    <Accordion defaultExpanded>
       <AccordionSummary
           aria-controls="panel1a-content"
           id="panel1a-header"
@@ -35,6 +35,7 @@ export const TodoList = () => {
       <AccordionSummary
           aria-controls="panel1a-content"
           id="panel1a-header"
+          expandIcon={<ExpandMore />}
         >
           <Typography>Tomorrow</Typography>
         </AccordionSummary>
@@ -51,6 +52,7 @@ export const TodoList = () => {
       <AccordionSummary
           aria-controls="panel1a-content"
           id="panel1a-header"
+          expandIcon={<ExpandMore />}
         >
           <Typography>Later</Typography>
         </AccordionSummary>

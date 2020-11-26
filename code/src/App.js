@@ -9,6 +9,7 @@ import {
   useTheme,
 } from "@material-ui/core/styles";
 import CssBaseline from '@material-ui/core/CssBaseline';
+import { Add } from '@material-ui/icons';
 
 import { tasks } from "reducers/tasks";
 import { TodoList } from "components/TodoList";
@@ -25,8 +26,8 @@ const store = configureStore({ reducer });
 const MyContainer = styled(Container)`
   && {
     padding: 0;
-    background-color: black;
-    height: 100%;
+    background-color: #212121;
+    height: 100vh;
   }
 `;
 
@@ -82,7 +83,9 @@ export const App = () => {
               color="primary"
               aria-label="add"
               onClick={handleClickOpen}
-            ></MyFab>
+            >
+              <Add/>
+            </MyFab>
           </Tooltip>
           <Snackbar open={openSnack} autoHideDuration={3000} onClose={handleSnackClose}>
             <Alert onClose={handleSnackClose} severity="success">
