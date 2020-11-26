@@ -18,27 +18,25 @@ width: 1px;
 
 const StyledCheckbox = styled.div` 
   display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: ${props => props.checked ? 'yellow' : 'black'}
-  border-radius: 3px;
+  width: 18px;
+  height: 18px;
+  background: ${props => props.checked ? 'yellow' : 'black'};
+  border-radius: 50%;
   transition: all 150ms;
 `
 
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
-
 `
-export const CheckboxStyled = () => {
-  const dispatch = useDispatch()
-  const [checked, setChecked] = useState(false)
+
+export const CheckboxStyled = ({checked, onChange}) => {
+  const [isChecked, setChecked] = useState(checked)
 
   const handleOnChange = event => {
     setChecked(event.target.checked)
+    onChange()
   }
-
-
 
   const Checkbox = ({ className, checked, ...props }) => (
     <CheckboxContainer>
@@ -50,7 +48,7 @@ export const CheckboxStyled = () => {
   return (
     <div>
       <label>
-        <Checkbox checked={checked} onChange={handleOnChange} />
+        <Checkbox checked={isChecked} onChange={handleOnChange} />
       </label>
     </div>
   )

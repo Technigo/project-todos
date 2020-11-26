@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
 import { tasks } from 'reducers/tasks'
+import { CheckboxStyled } from './CheckboxStyled'
 
 const TaskContainer = styled.div`
   display: flex;
@@ -22,10 +23,8 @@ export const Task = ({ taskData }) => {
   const dispatch = useDispatch()
   return (
     <TaskContainer>
-      
-      {/* Change this to a styled version */}
-      {/* <CheckboxStyled />  */}
-      <input type='checkbox' checked={taskData.complete} onChange={() => dispatch(tasks.actions.toggleItem(taskData.id))} />
+
+      <CheckboxStyled checked={taskData.complete} onChange={() => dispatch(tasks.actions.toggleItem(taskData.id))} />
 
       {taskData.text}
 
