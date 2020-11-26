@@ -16,7 +16,8 @@ export const TaskListInputContainer = styled.div`
   margin-top: 25%;
   background-color:#ffffff;
   box-shadow: rgba(51,51,51,0.5) 0 0 10px;
-`
+`;
+
 export const ItemContainer = styled.li`
   display: flex;
   flex-direction:row;
@@ -30,17 +31,34 @@ export const ItemContainer = styled.li`
 `;
 
 export const TaskText = styled.p`
-margin: 0 20px 2px 8px;
-font-size: 18px;
-`
+  margin: 0 20px 2px 8px;
+  font-size: 18px;
+`;
 
 export const RemoveButton = styled.button`
-font-size:20px;
-margin-left:auto;
-border:none;
-background-color:#ffffff;
-color:#dd0743;
-font-weight:700;
-cursor:pointer;
+  font-size:20px;
+  margin-left:auto;
+  border:none;
+  background-color:#ffffff;
+  color:#dd0743;
+  font-weight:700;
+  cursor:pointer;
 `;
+
+export const EmptyStateImage = styled.img`
+  width: 200px;
+  height: 200px;
+  margin: 30px 60px 0px 60px;
+`;
+
+export const EmptyStateText = styled.div`
+  display:flex;
+  justify-content:center;
+  padding:20px;
+  font-size:35px;
+  font-family:"Didot", sans-serif;
+  font-weight:700;
+  color: #be648c;
+`
+
 
