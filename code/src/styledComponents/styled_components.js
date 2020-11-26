@@ -81,12 +81,11 @@ export const DeleteButton = styled.button`
   appearance: none;  
   border-radius: 50%;
   background-color: white;
-  font-size: 18px;
-  padding: 0;
-  width: 25px;
-  height: 25px;
+  font-size: 14px;
+  width: 26px;
+  height: 26px;
   border: solid grey 2px;
-  color: black;
+  color: grey;
     &:last-child {
       margin-left: auto;
     }

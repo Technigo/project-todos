@@ -37,7 +37,7 @@ export const TodoItem = ({ itemIndex }) => {
       <CustomCheckbox tabindex='0' isChecked={item.done} onChangeHandler={handleCheckboxClick} />
       <span className='todo-item-text'>{item.description}</span>
       <DeleteButton className='todo-item-remove' onClick={onRemoveClicked}>
-        {'x'}
+        {'X'}
       </DeleteButton>
     </DeleteContainer>
   )
