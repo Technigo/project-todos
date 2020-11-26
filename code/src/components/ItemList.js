@@ -2,16 +2,25 @@
 
 import React from 'react'
 import {useSelector} from 'react-redux'
-import {ItemAdded} from 'components/ItemAdded'
+import {ItemsAll} from 'components/ItemsAll'
 
 export const ItemList = () => {
-	const allTasks = useSelector((store) => store.tasks.tasks)
+	const allTasks = useSelector((store) => store.tasks.list)
+	const wholeList = useSelector((store) => store.tasks.list.tasks)
 
+	if (wholeList.length === 0) {
+		return (
+			<>
+			<h1 className="listEmpty"> no tasks</h1>
+			{/* ADD AN IMG HERE? */}
+			</>
+		)
+	}
 	return (
-		<div>
-			{allTasks.map((task) => (
-				<ItemAdded key={task.id} task={task}/>
+		<section>
+			{allTasks.tasks.map((task, index ) => (
+				<ItemsAll task={task} taskIndex={index}/>
 			))}
-		</div>
+		</section>
 	)
 }

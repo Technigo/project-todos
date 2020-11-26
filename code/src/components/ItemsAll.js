@@ -18,7 +18,7 @@ export const ItemsAll = ({taskIndex}) => {
 		dispatch(
 			tasks.actions.checkTodoTask({
 				taskIndex:taskIndex,
-				complete: !todo.complete
+				complete: !task.complete
 			})
 		)
 	}
