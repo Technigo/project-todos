@@ -5,6 +5,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import {tasks}  from './reducers/tasks'
 import {ItemAdded} from './components/ItemAdded'
 import { ItemList } from 'components/ItemList'
+import {ItemRemoved} from './components/ItemRemoved'
 
 
 
@@ -20,6 +21,7 @@ export const App = () => {
     <Provider store={store}>
       <ItemList/>
       <ItemAdded/>
+      <ItemRemoved/>
     </Provider>
   )
 }
