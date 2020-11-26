@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
 export const RemoveButton = styled.button`
-  padding: 8px;
   margin: 6px;
   width: 32px;
   height: 32px;

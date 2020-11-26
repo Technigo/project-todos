@@ -47,7 +47,10 @@ export const TodoItem = ({ todo }) => {
             isChecked={todo.completed}
             onChange={handleCheckboxClick}
           />
-          <Paragraf>{todo.text}</Paragraf>
+          <Paragraf
+            style={{ textDecoration: todo.completed ? 'line-through' : '' }}>
+            {todo.text}
+          </Paragraf>
         </WrapperTodoText>
         <RemoveButton onClick={handleRemoveTodo}>X</RemoveButton>
       </WrapperTodo>
