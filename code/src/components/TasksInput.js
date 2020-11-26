@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 export const TasksInput = () => {
 	const [todoTask, setTodoTask] = useState('')
+	const [category, setCategory] = useState('')
 	const dispatch = useDispatch()
 
 	const handleSubmit = (event) => {
@@ -24,6 +25,17 @@ export const TasksInput = () => {
 				placeholder="Add a todo..."
 				>
 				</input>
+				<label>
+				Category:
+				<SelectOption value={category} onChange={(event) => setCategory(event.target.value)} required>
+				<option value="">Select a category...</option>
+				<option value="Self Care">Self Care</option>
+				<option value="Household">Household</option>
+				<option value="Coding">Coding</option>
+				<option value="Groceries">Groceries</option>
+				<option value="Other">Other</option>
+				</SelectOption>
+				</label>
 				<Button type="submit">add</Button>
 			</label>
 		</form>
@@ -38,4 +50,12 @@ font-size:15px;
 color:#F7AF9D;
 cursor:pointer;
 background-color:#B0D0D3; 
+`;
+export const SelectOption = styled.select`
+  background:#F3EEC3;
+  height: 30px;
+  border: 2px solid #B0D0D3;
+  border-radius: 3px;
+  font-size: 18px;
+  display: inline-flex;
 `;

@@ -1,17 +1,19 @@
 import {createSlice} from '@reduxjs/toolkit'
-import moment from "moment"
-const initialState = {
-	
-	items: [
-		{id: 1, name: 'Read a book', category: 'Self Care', complete: true, checked: true},
-		{id: 2, name: 'Take the dog out', category: 'Household', complete: true, checked: false},
-		{id: 3, name: 'Do laundry', category: 'Household', complete: true, checked: true},
-		{id: 4, name: 'Make dinner', category: 'Household', complete: false, checked: true},
-		{id: 5, name: 'Do some more coding', category:'Coding', complete: false, checked: false},
-		{id: 6, name: 'Buy carrots', category:'Groceries', complete: false, checked: true},
-		{id: 7, name: 'Wash hair', category:'Other', complete: false, checked: false}
 
-]}
+const initialState = {
+	list: {
+		name: 'Task',
+		tasks: [
+		{id: 0, text: 'Read a book', category: 'Self Care', complete: true, checkedTodo: true},
+		{id: 1, text: 'Take the dog out', category: 'Household', complete: true, checkedTodo: false},
+		{id: 2, text: 'Do laundry', category: 'Household', complete: true, checkedTodo: true},
+		{id: 3, text: 'Make dinner', category: 'Household', complete: false, checkedTodo: true},
+		{id: 4, text: 'Do some more coding', category:'Coding', complete: false, checkedTodo: false},
+		{id: 5, text: 'Buy carrots', category:'Groceries', complete: false, checkedTodo: true},
+		{id: 6, text: 'Wash hair', category:'Other', complete: false, checkedTodo: false}
+
+]}}
+	
 
 export const tasks = createSlice({
 	name: 'tasks',
@@ -19,21 +21,24 @@ export const tasks = createSlice({
 
 	reducers: {
 		taskAdded: (state, action) => {
-			state.items.push({id: Date.now(), name: action.payload, createdAt:moment()})
+			const {taskInfo} = action.payload
+			state.list.tasks.push(taskInfo)
 		},
-		taskRemoved: (state, action) => {
-			state.items=state.items.filter((item)=> item.id!==action.payload)
-		},
-		removeAllTasks: (state) => {
-			state.items=[]
-		},
-		checkTodoTask: (state,action) => {
-			const checkedTask = state.items.find((item) => item.id===action.payload)
 
-			if(checkedTask){
-				checkedTask.checked = !checkedTask.checked
-			}
+		taskRemoved: (state, action) => {
+			const {taskIndex} = action.payload
+			state.list.tasks=state.list.tasks.filter(
+				(task, index) => index !==taskIndex
+			)
+		},
+
+		checkTodoTask: (state,action) => {
+			const{taskIndex, complete} = action.payload
+			state.list.tasks[taskIndex].complete=complete
+		},
+
+		removeAllTasks: (state, action) => {
+			state.list.tasks = []
 		}
-	}
-	
+	}	
 })

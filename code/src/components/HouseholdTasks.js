@@ -5,7 +5,7 @@ import {Item} from 'components/Item'
 
 export const HouseholdTasks = () => {
 	const tasksHome = useSelector((store) => store.tasks);
-	const houseTasks = tasksHome.items.filter((item) => item.category === "Shopping List");
+	const houseTasks = tasksHome.items.filter((item) => item.category === "Household");
 	
 	return (
 	  <>
