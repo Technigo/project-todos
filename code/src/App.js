@@ -22,8 +22,8 @@ export const App = () => {
      <Header />
       <AddItemForm />
       <ItemList />
-      <ClearButton />
       <Summary />
+      <ClearButton />
     </Provider>
   )
 }

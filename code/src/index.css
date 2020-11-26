@@ -13,10 +13,15 @@ code {
 }
 /*HEADER*/
 
-.header {
-  background-color: red;
-  margin-top:0;
+.header { 
+  background-color: #819c68;
+  margin: 20px;
   height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  border-radius: 10px;
 }
 
 .form {
@@ -70,13 +75,16 @@ font-size: 15px
   font-size: 20px;
 }
 /* BUTTONS */
+.remove-button {
+  /* border: solid red 2px; */
+}
 .remove-button button {
   background-color: #9cbe7f;
   color: white;
   font-weight: bold;
   border-radius: 10px;
   border:none;
-  
+
 }
 
 .added-items {
@@ -84,9 +92,10 @@ font-size: 15px
   display: flex;
   align-items: center;
   width: 280px;
+  color: white;
   padding-left: 10px;
-  border-bottom: solid 1px #9cbe7f;
-
+  background-color: #819c681c;
+  margin-bottom:5px;
   
 }
 
@@ -94,11 +103,15 @@ font-size: 15px
   border: solid #9cbe7f 2px;
   margin: 20px;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   border-radius: 10px;
+  padding:20px;
 }
-
+.items{
+  display: flex;
+  flex-direction: row;
+}
 .added-category {
   /* border: solid blue 2px; */
 
@@ -107,16 +120,35 @@ font-size: 15px
   /* border: solid blue 2px; */
 margin-left: 10px;
 font-size: 20px;
-color: #819c68
+color: #9cbe7f;
 }
 
-.items-list {
-  border: solid black 2px;
+/* .items-list {
+  border: solid #9cbe7f 2px;
   display: flex;
   flex-direction: column;
+} */
+.remove-all-button {
+  /* border: solid #9cbe7f 2px; */
+  display: flex;
+  justify-content: center;
+}
+.remove-all-button button {
+  background-color: #9cbe7f;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  border:none;
+  padding: 10px;
+  font-size: 20px;
+
 }
 
-.remove-all-button button {
-  background-color: royalblue;
-  color: black;
+.item-buy {
+  border: solid #819c68 2px;
+  margin: 20px;
+  border-radius: 10px;
+  font-size: 10px;
+  color: #9cbe7f;
+  text-align: center;
 }

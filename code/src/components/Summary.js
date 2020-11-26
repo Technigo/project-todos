@@ -8,8 +8,8 @@ export const Summary = () => {
     const [showShoppingList, setShowShoppingList] = useState(false)
 
     return (
-        <div>
-            <h1>Items to buy  {items.length}</h1>
+        <div className="item-buy">
+            <h1>Buy {items.length} items  </h1>
         </div>
     )
 }

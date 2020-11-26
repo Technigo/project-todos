@@ -19,6 +19,7 @@ export const Item = (props) => {
     return (
         <>
             <div className="item-list">
+            <div className="items">
                 <div className="added-items">
                     <div className="added-category">
                         <span>{props.item.category}  </span>
@@ -40,7 +41,7 @@ export const Item = (props) => {
                         <button type='button' onClick={handleRemoveButtonClick}>
                             X
         </button>
-                    
+                    </div>
                 </div>
             </div>
         </>
