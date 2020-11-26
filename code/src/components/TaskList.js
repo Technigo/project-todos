@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { TaskListItem } from './TaskListItem';
+import { ListContainer } from '../styles/taskListStyles';
 
 export const TaskList = () => {
   const allTasks = useSelector((store) => store.todos.tasks);
@@ -12,13 +13,13 @@ export const TaskList = () => {
     )
   } else {
     return (
-      <ul>
+      <ListContainer>
         {allTasks.map((task) => (
           <TaskListItem 
             key={task.id}
             task={task} />
         ))}
-      </ul>
+      </ListContainer>
     )
   }
 };

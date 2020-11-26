@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { SummaryContainer } from 'styles/headerStyles';
+import { SummaryContainer, SummaryItem } from 'styles/headerStyles';
 
 export const Summary = () => {
   const allTasks = useSelector((store) => store.todos.tasks)
@@ -8,9 +8,9 @@ export const Summary = () => {
 
   return(
     <SummaryContainer>
-      <p>{allTasks.length} total</p>
-      <p>{doneTasks.length} done</p>
-      <p>{allTasks.length - doneTasks.length} left</p>
+      <SummaryItem>{allTasks.length} total</SummaryItem>
+      <SummaryItem>{doneTasks.length} done</SummaryItem>
+      <SummaryItem>{allTasks.length - doneTasks.length} left</SummaryItem>
     </SummaryContainer>
   )
 }
