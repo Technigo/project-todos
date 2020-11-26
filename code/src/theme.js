@@ -1,16 +1,11 @@
-import { Typography } from '@material-ui/core';
 import { createMuiTheme } from '@material-ui/core/styles';
+
+//This file is for overriding the default theme of material UI 
 
 const theme = createMuiTheme({
     palette: {
-        // background: {
-        //   default: '#303030',
-        //   paper: '#424242'
-        // },
         primary: {
            main: '#000',
-        //   dark: '#303f9f',
-        //   contrastText: '#fff'
         },
         type: 'dark',
       },

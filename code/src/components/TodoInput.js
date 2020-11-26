@@ -87,11 +87,3 @@ export const TodoInput = (props) => {
     </>
   );
 };
-
-// return (
-//     <form onSubmit={handleSubmit}>
-//       <TextField type="text" name="name" value={value} onChange={e => setValue(e.target.value)} />
-//       <TextField type="submit" value="Submit" />
-//     </form>
-//   );
-// };
