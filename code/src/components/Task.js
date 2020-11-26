@@ -14,6 +14,7 @@ export const Task = ({ id, text, complete }) => {
 
   const handleRemove = () => {
     dispatch(tasklist.actions.removeTodo(id))
+    {text}
   }
 
   return (
@@ -24,7 +25,7 @@ export const Task = ({ id, text, complete }) => {
             onChangeHandler={handleCheckToggle}
           />
           <TaskText>{text}</TaskText>
-        <Button onClick={handleRemove}>🗑️</Button>
+        <Button onClick={handleRemove}><span role='img' aria-label='Delete'>🗑️</span></Button>
       </TaskContainer>
     </>
   )
