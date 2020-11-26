@@ -41,5 +41,10 @@ export const todos = createSlice({
 			});
 			store.items = updatedArray;
 		},
+
+		cleanItems: (store, action) => {
+			const cleanArray = [];
+			store.items = cleanArray;
+		},
 	},
 });
