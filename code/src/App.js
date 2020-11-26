@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, createStore } from '@reduxjs/toolkit'
+import { combineReducers,createStore } from '@reduxjs/toolkit'
 
 import {tasks}  from './reducers/tasks'
 import {Header} from './components/Header'
@@ -12,10 +12,17 @@ const reducer = combineReducers({
   tasks: tasks.reducer
 })
 
-const persistedState = localStorage()
+const persistedState = localStorage.getItem("reduxState") 
+? JSON.parse(localStorage.getItem("reduxState"))
+: {}
 
 const store = createStore(reducer, persistedState)
 
+store.subscribe(() => {
+  persistedState({
+    tasks: store.getState().tasks
+  });
+});
 export const App = () => {
   return (
     <Provider store={store}>
@@ -26,3 +33,5 @@ export const App = () => {
     </Provider>
   )
 }
+
+//reference for persisted state in Redux: https://medium.com/@jrcreencia/persisting-redux-state-to-local-storage-f81eb0b90e7e
