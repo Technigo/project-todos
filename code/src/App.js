@@ -19,10 +19,10 @@ const persistedState = localStorage.getItem("reduxState")
 const store = createStore(reducer, persistedState)
 
 store.subscribe(() => {
-  persistedState({
-    tasks: store.getState().tasks
-  });
-});
+  localStorage.setItem("reduxState",
+  JSON.stringify(store.getState()))
+  })
+  
 export const App = () => {
   return (
     <Provider store={store}>
