@@ -5,6 +5,31 @@ import styled from 'styled-components'
 
 import { tasks } from '../reducers/tasks'
 
+const AddTaskContainer = styled.form`
+display: flex;
+padding: 10px;
+height: 40px;
+`
+
+const TaskInput = styled.input.attrs({ type: 'text' })`
+background-color: #F6D1E5;
+border: none; 
+flex-grow: 1;
+padding: 10px;
+&:focus {
+  outline: none;
+  background-color: #f7e1ed;
+}
+`
+
+const PlusButton = styled.button`
+background-color: #F6D1E5;
+border: none; 
+margin-left: auto;
+font-size: 18px;
+color: #6E355C;
+padding: 10px;
+`
 
 export const AddTask = () => {
   const [task, setTask] = useState('')
@@ -17,40 +42,18 @@ export const AddTask = () => {
     setTask('')
   }
 
-  const AddTaskContainer = styled.form`
-    display: flex;
-    padding: 10px;
-    height: 40px;
-  `
 
-  const TaskInput = styled.input`
-    background-color: #F6D1E5;
-    border: none; 
-    flex-grow: 1;
-    padding: 10px;
-  `
 
-  const PlusButton = styled.button`
-    background-color: #F6D1E5;
-    border: none; 
-    margin-left: auto;
-    font-size: 18px;
-    color: #6E355C;
-    padding: 10px;
-    
-    `
-  
 
   return (
-      <AddTaskContainer onSubmit={handleSubmit}>
-        <TaskInput
-          type='text'
-          placeholder="Add task"
-          value={task}
-          onChange={(event) => setTask(event.target.value)
-          } />
+    <AddTaskContainer onSubmit={handleSubmit}>
+      <TaskInput
+        type='text'
+        placeholder="Add task"
+        value={task}
+        onChange={(event) => setTask(event.target.value)}/>
 
-        <PlusButton type='submit'> + </PlusButton>
-      </AddTaskContainer>
+      <PlusButton type='submit'> + </PlusButton>
+    </AddTaskContainer>
   )
 }
