@@ -1,48 +1,48 @@
-import React from 'react'
+import React, {useState} from 'react'
 import{useDispatch } from 'react-redux'
-import moment from "moment"
 
 import {tasks} from 'reducers/tasks'
-import styled from 'styled-components'
 
-export const Item = (items) => {
-
+export const Item = ({itemId}) => {
+const [newTask, setNewTask] = useState('')
 const dispatch = useDispatch()
 
-const handleChecked = () => {
-	dispatch(tasks.actions.checkTodoTask(items.item.id))
-}
-const handleRemoved = () => {
-	dispatch(tasks.actions.taskRemoved(items.item.id))
-}
-return (
-	<ItemContainer>
-        <label>
-          <input type="checkbox"
-            checked={items.item.checkedTodo}
-            onChange={handleChecked} />
-        </label>
-        <p>
-          {items.item.name}
-        </p>
-        <button
-          type="button"
-          onClick={handleRemoved}>
-          <span role="img" aria-label="remove-button">❌</span>
-        </button>
-        <p>
-          Added {moment(items.item.createdAt).fromNow()}
-        </p>
-		</ItemContainer>
-  )
+
+const handleSubmit = event => {
+	event.preventDefault()
+	dispatch(
+		tasks.actions.taskAdded({
+			itemId:itemId,
+			taskInfo:{text: newTask, complete: false}
+		})
+	)
+	setNewTask('')
 }
 
-const ItemContainer = styled.p`
-align-self: flex-start;
-padding:8px;
-margin:8px;
-font-size:32px;
-color:#F7AF9D;
-width: 50%;
-background-color:#F7E3AF; 
-`;
+return (
+	<form className="addTask"  onSubmit={handleSubmit}>
+		<div className="taskAdded">
+			<textarea type="text" required
+			value={newTask}
+			placeholder="Do next . . ."
+			onChange={(event)=>
+			setNewTask(event.target.value)}/>
+
+			<button type="submit" 
+				disabled={newTask.length < 2}>
+				add
+			</button>
+		</div>
+	</form>
+)
+}
+
+// const ItemContainer = styled.p`
+// align-self: flex-start;
+// padding:8px;
+// margin:8px;
+// font-size:32px;
+// color:#F7AF9D;
+// width: 50%;
+// background-color:#F7E3AF; 
+// `;
