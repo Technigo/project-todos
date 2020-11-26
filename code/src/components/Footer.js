@@ -1,6 +1,6 @@
 import React from 'react'
 
-import TechnigoLogo from '../img/technigo.svg'
+import technigoLogo from '../img/technigo.svg'
 import './footer.css'
 
 export const Footer = () => {
@@ -12,7 +12,7 @@ export const Footer = () => {
           |
           <a href='https://github.com/karanmann' target='_blank' rel='noopener noreferrer' >GitHub</a>
       </p>
-      <img src= {TechnigoLogo} alt='technigo logo' />
+      <img src= {technigoLogo} alt='technigo logo' />
       <p>Project developed during the Technigo Frontend development bootcamp</p>
     </footer>
   )
