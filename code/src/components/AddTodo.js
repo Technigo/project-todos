@@ -7,20 +7,16 @@ export const AddTodo = () => {
   //  TODO:
   //  on enter/onClick dispatch the data to todoTasks reducer
   //id = timestamp and complete = false by default
-  const [id, setId] = useState(Date.now())
-  const [text, setText] = useState("")
-  const [complete, setComplete] = useState(false)
+
+  //local state property -> will be used only in this component
+  const [value, setValue] = useState("")
 
   const dispatch = useDispatch()
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(todoTasks.actions.addTask({ id, text, complete }))
-    //not sure
-    setId()
-    setText("")
-    // not sure
-    setComplete()
+    dispatch(todoTasks.actions.addTask(value))
+    setValue("")
   }
 
   return (
@@ -31,9 +27,9 @@ export const AddTodo = () => {
           {/* on enter dispatch the data to todoTasks reducer */}
           <input
             type="text"
-            value={text}
+            value={value}
             placeholder="Add your to-do here ..."
-            onChange={(event) => setText(event.target.value)}
+            onChange={(event) => setValue(event.target.value)}
           />
         </label>
       </form>

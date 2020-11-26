@@ -36,7 +36,6 @@ export const SingleTodo = ({ id, text, complete }) => {
 
       <button
         type="button"
-
         onClick={handleRemoveButtonClick}>
         Remove
       </button>
