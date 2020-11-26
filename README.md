@@ -1,13 +1,15 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Assignment was to create a Todo app managing the global state with Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Since Redux was to be used it took me a while initially to figure out how to use the global state, but after that it was quite smooth to get all the basic functionality working (adding tasks, mark done etc etc.)
+
+For the second time in the course I decided to use Material UI (MUI). This time I got to understand it much better and happy that I made the decision because it's so powerful! Things like responsivity are (mostly) taken care of and setting up accordions for the different due dates of the todos was now a breeze compared to if I would have hard coded it.
+
+Styling is still a bit tricky with MUI - I wanted to add a dark theme but couldn't get it to work after hours of hours of trying, in the end used mostly styled components to customize the look and feel.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://mui-simple-todo.netlify.app/
