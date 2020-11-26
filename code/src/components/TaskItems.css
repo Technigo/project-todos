@@ -84,4 +84,8 @@ input:checked + .checkmark::after {
   .list-task{
     grid-template-columns: 0.7fr 0.3fr;
   }
+
+  .task-added-date{
+    font-size: 0.8em;
+  }
 }
