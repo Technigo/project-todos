@@ -1,9 +1,41 @@
 import React from 'react'
+import styled from 'styled-components';
+
+import { Provider } from 'react-redux';
+import {combineReducers, configureStore } from '@reduxjs/toolkit';
+
+import { todos } from './reducers/todos';
+import Header from './components/Header';
+import  ToDoList  from './components/ToDoList';
+import AddTodo from 'components/AddTodo';
+
+import backgroundImage from './assets/backgroundImage.png'
+
+//boiler plate for store creation
+const reducer = combineReducers({ todos: todos.reducer });
+const store = configureStore({ reducer });
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
-}
+    <Container>
+      <Provider store={store}>
+        <Header />
+          <AddTodo />
+          <ToDoList />
+      </Provider>
+      </Container>
+  );
+};
+
+
+const Container = styled.div`
+    width: 80%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+    background-image: url(${backgroundImage});
+    color: #fff
+`;
