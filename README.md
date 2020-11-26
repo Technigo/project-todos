@@ -1,11 +1,14 @@
-# Project Todos
+# Project Todos ✏️
+
+## View it live 👀
+
 
 Replace this readme with your own information about your project.
 
 Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
-## The problem
-Lottie and SweetAlert custom checkbox. localStorage
+## The problem 🤓
+Lottie and SweetAlert custom checkbox. localStorage, accessibilty Waive, screenreader, responsive mobile first
 The role redux-toolkit plays
 How to create new slices
 How to create new reducers
@@ -25,12 +28,18 @@ What immutability means and how to work with it
 
 Use styled-components instead of vanilla CSS to do your styling
 Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
+🛠
 sketch and structure
 started with store
 Added components
 reducers
 separateing logick from styling - styled components structured in 
+
+checkboxes difficult to understand 
+nested components
+
+🧠
+like to learn more about conditional styling and global styling
 
 
 ## View it live
