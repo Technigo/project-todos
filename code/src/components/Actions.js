@@ -23,6 +23,10 @@ const AllDoneBtn = styled.button`
 
 const AllUndoneBtn = styled(AllDoneBtn)``;
 
+const Img = styled.img`
+    width: 100%;
+`;
+
 const DeleteAllItems = styled(AllDoneBtn)`
     background-color: #ff0000c9;
     &:hover {
@@ -30,7 +34,7 @@ const DeleteAllItems = styled(AllDoneBtn)`
     }
 `;
 
-export const Btns = () => {
+export const Actions = () => {
     const dispatch = useDispatch();
     const items = useSelector(store => store.todos.items)
 
@@ -45,11 +49,12 @@ export const Btns = () => {
     const handleDeleteAll = () => {
         dispatch(todos.actions.deleteAll());
     }
+
     return (
         <>
             <AllDoneBtn onClick={handleAllDone}>Mark as all done</AllDoneBtn>
-            {items.filter(item => item.checked === false).length === 0 &&
-                <img src={goodjob} alt="Good job smile" />
+            {!items.filter(item => !item.checked).length &&
+                <Img src={goodjob} alt="Good job smile" />
             }
             <AllUndoneBtn onClick={handleAllUndone}>Mark as all undone</AllUndoneBtn>
             <DeleteAllItems onClick={handleDeleteAll}>Delete All items</DeleteAllItems>

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-
 import { todos } from "../reducers/todos";
 
 const AddItemBtn = styled.button`
@@ -26,23 +25,33 @@ const Input = styled.input`
     border-radius: 6px;
 `;
 
+const Form = styled.form`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+`;
+
 export const AddItem = () => {
     const dispatch = useDispatch();
     const [value, setValue] = useState("");
 
-    const handleAddItem = () => {
+    const handleAddItem = (event) => {
+        event.preventDefault();
         dispatch(todos.actions.addItemFunc(value));
         setValue("");
     }
 
     return (
         <>
-            <Input
-                type="text"
-                value={value}
-                onChange={e => setValue(e.target.value)}
-            />
-            <AddItemBtn onClick={handleAddItem}>Add Item</AddItemBtn>
+            <Form onSubmit={handleAddItem}>
+                <Input
+                    type="text"
+                    value={value}
+                    required
+                    onChange={e => setValue(e.target.value)}
+                />
+                <AddItemBtn type="submit">Add Item</AddItemBtn>
+            </Form>
         </>
     );
 };

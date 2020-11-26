@@ -43,10 +43,7 @@ const ItemContainer = styled.div`
     margin: 10px 0px;
     border-radius: 6px;
     box-shadow: 5px 10px #888888;
-
-    
 `;
-
 
 export const Item = ({ item }) => {
     const dispatch = useDispatch();
@@ -62,12 +59,14 @@ export const Item = ({ item }) => {
     return (
         <ItemContainer>
             <CheckboxContainer>
-                <Input
-                    type="checkbox"
-                    checked={item.checked}
-                    onChange={handleChandeItem}>
-                </Input>
-                <label>{item.text}</label>
+                <label>
+                    <Input
+                        type="checkbox"
+                        checked={item.checked}
+                        onChange={handleChandeItem}>
+                    </Input>
+                    {item.text}
+                </label>
             </CheckboxContainer>
             <Date>Created: {item.date.format('MMMM Do YYYY, h:mm:ss a')}</Date>
             <RemoveItemButton onClick={handleDeleteItem}>Delete Item</RemoveItemButton>
