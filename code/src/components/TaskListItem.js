@@ -1,5 +1,6 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import moment from 'moment';
 
 import { DoneButton } from './DoneButton';
 import { ListItem } from '../styles/taskListStyles';
@@ -18,6 +19,7 @@ export const TaskListItem = ({ task }) => {
         task={task}
       />
       <p>{task.text}</p>
+      <p>{moment(task.created).fromNow()}</p>
       <button onClick={onItemDelete}>delete</button>
     </ListItem>
   )

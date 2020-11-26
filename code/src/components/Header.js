@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 
 import { HeaderContainer, Date, Logo } from '../styles/headerStyles';
 import { Summary } from './Summary';
@@ -6,7 +7,7 @@ import { Summary } from './Summary';
 export const Header = () => {
   return (
     <HeaderContainer>
-      <Date>25/11/2020</Date>
+      <Date>{moment().format('L')}</Date>
       <Logo>ToDo</Logo>
       <Summary />
     </HeaderContainer>

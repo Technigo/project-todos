@@ -28,7 +28,8 @@ export const todos = createSlice({
       const newTask = {
         id: Math.max(...store.tasks.map(item => item.id)) + 1,
         text: action.payload,
-        done: false
+        done: false,
+        created: new Date 
       };
 
       const newTaskList = [...store.tasks, newTask];
