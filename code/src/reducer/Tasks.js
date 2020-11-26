@@ -30,6 +30,7 @@ export const Tasks = createSlice({
                 text: action.payload,
                 done: false,
             };
+            console.log(newItem);
             const newItemList = [...state.list.items, newItem];      
             state.list.items = newItemList;
         },

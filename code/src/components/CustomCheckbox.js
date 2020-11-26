@@ -27,7 +27,7 @@ const StyledCheckbox = styled.div`
  display: inline-block;
  width: 18px;
  height: 18px;
- background: ${(props) => (props.checked ? "pink" : "white")};
+ background: ${(props) => (props.checked ? "#fce4d7" : "#ffffff")};
  border-radius: 50%;
  border: 2px solid rgb(36, 90, 92);
  transition: all 150ms;

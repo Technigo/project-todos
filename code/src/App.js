@@ -25,8 +25,7 @@ const MainArea = styled.main`
     flex-direction: column;
     align-items: center;
     justfiy-content: center;
-    min-height: 525px;
-    border: 1px solid blue;
+    min-height: 500px;
 `
 
 export const App = () => {

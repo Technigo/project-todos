@@ -5,32 +5,52 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Tasks } from '../reducer/Tasks';
 import { CustomCheckbox } from './CustomCheckbox';
 
-const TaskContainer = styled.article`
+const Article = styled.article`
     display: flex;
     align-items: center;
-    justfiy-content: space-between;
+    justfiy-content: center;
     margin-bottom: 5px;
     background: rgba(255, 255, 255, .8);
-    width: 100%;
+    min-width: 100%;
+`;
+
+const TaskContainer = styled.div`
+    display: flex;
+    align-items: center;
+    min-width: 290px;
+`;
+
+const CheckboxTextContainer = styled.div`
+    display: flex;
+    align-items: center;   
+    margin: 20px;
+    width: 190px;
 `;
 
 const TaskText = styled.p`
     margin-left: 10px;
-    font-family: 'Sacramento', cursive;
-    font-size: 30px;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 17px;
     color: rgb(36, 90, 92);
+    word-wrap: break-word;
+    align-self: flex-start;
+`;
+
+const ButtonContainer = styled.div`
+    align-self: flex-right;
+    background-colour: blue;
+    padding: 10px;
 `;
 
 const RemoveButton = styled.button`
-    background-color: rgb(255, 255, 255);
-    margin-left: 20px;
+    background-color: rgb(252, 228, 215);
     border: none;
-    border-radius: 50%;
-    font-size: 20px;
+    border-radius: 12px;
+    font-size: 15px;
+    padding: 7px;
+    font-family: 'Open Sans', sans-serif;
     color: rgb(36, 90, 92);
-    padding: 3px 11px;
     cursor: pointer;
-    border: 2px solid rgb(36, 90, 92);
 `;
 
 export const TaskItem = ({ todoItem, itemIndex }) => {
@@ -55,12 +75,16 @@ export const TaskItem = ({ todoItem, itemIndex }) => {
     };
 
     return (
-        <TaskContainer className={`"task-item" ${todoItem.done ? "done" : ""}`}>
-            <div>
-                <CustomCheckbox isChecked={todoItem.done ? "checked" : ""} onChangeHandler={handleOnChange}/>
-            </div>
-            <TaskText>{todoItem.text}</TaskText>
-            <RemoveButton onClick={() => onClickRemove(todoItem.id)}>-</RemoveButton>
-        </TaskContainer>
+        <Article className={`"task-item" ${todoItem.done ? "done" : ""}`}>
+            <TaskContainer>
+                <CheckboxTextContainer>
+                    <CustomCheckbox isChecked={todoItem.done ? "checked" : ""} onChangeHandler={handleOnChange}/>            
+                    <TaskText>{todoItem.text}</TaskText>
+                </CheckboxTextContainer>
+                <ButtonContainer>
+                    <RemoveButton onClick={() => onClickRemove(todoItem.id)}>remove</RemoveButton>
+                </ButtonContainer>
+            </TaskContainer>
+        </Article>
     );
 };
