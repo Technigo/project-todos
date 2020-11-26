@@ -44,6 +44,9 @@ export const InputField = styled.input`
   border-radius: 3px;
 `
 export const InputAdd = styled(InputField)`
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;  
   font-size: 40px;
   width: 15%;
   background: white;
@@ -58,6 +61,9 @@ export const SectionTodoList = styled.section`
 
 // TodoItem, DeleteButton
 export const DeleteContainer = styled.div`
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;  
   display: flex;
   font-size: 18px;
   text-align: left;
@@ -70,14 +76,17 @@ export const DeleteContainer = styled.div`
   justify-content: center;
 `
 export const DeleteButton = styled.button`
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;  
   border-radius: 50%;
   color: white;
   font-size: 18px;
   padding: 0;
   width: 25px;
   height: 25px;
-  border: solid grey .5px;
-  color: grey;
+  border: grey .5px;
+  color: black;
     &:last-child {
       margin-left: auto;
     }
@@ -105,9 +114,6 @@ export const StyledInput = styled.input`
 `
 
   
-  
-  //[... your styling here ]
-  //}
 
 
 
