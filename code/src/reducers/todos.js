@@ -30,26 +30,3 @@ export const todos = createSlice({
       },
     },
 })
-
-
-/*
-const initalState = {
-  items: [
-        { id: 1,text: 'Wake up', completedTask: false},
-        { id: 2, text: 'Kick ass', completedTask: false },
-        { id: 3, text: 'Repeat', completedTask: false },
-      ],
-    }
-
-
-export const todos = createSlice({
-    name:'todos',
-    initialState, 
-    reducers: {
-      removeOne: (state, action) => {
-          state.items.pop();
-      },
-    },  
-})
-
-*/

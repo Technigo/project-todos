@@ -24,10 +24,10 @@ export const Item = ({ item }) => {
       <CheckBox isChecked={item.complete ? 'checked' : "" } onChange={handleCheckboxClick}/>
         <TodoText>{item.text}</TodoText>
           <button 
-            type="button"
-            className="remove"
+            type='button'
+            className='remove'
             onClick={handleRemoveButtonClick}>
-            <img src={Trash} alt="trashcan"/>
+            <img src={Trash} alt='trashcan'/>
           </button>
     </TodoContainer>
   </Container>
