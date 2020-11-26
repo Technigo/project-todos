@@ -80,12 +80,12 @@ export const DeleteButton = styled.button`
   -moz-appearance: none;
   appearance: none;  
   border-radius: 50%;
-  color: white;
+  background-color: white;
   font-size: 18px;
   padding: 0;
   width: 25px;
   height: 25px;
-  border: grey .5px;
+  border: solid grey 2px;
   color: black;
     &:last-child {
       margin-left: auto;
