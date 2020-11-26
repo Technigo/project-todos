@@ -22,6 +22,17 @@ export const todos = createSlice({
       
       currentItem.done === true ? currentItem.done = false : currentItem.done = true;
       
+    },
+    addItem: (store, action) => {
+      console.log(action.payload)
+      const newTask = {
+        id: Math.max(...store.tasks.map(item => item.id)) + 1,
+        text: action.payload,
+        done: false
+      };
+
+      const newTaskList = [...store.tasks, newTask];
+      store.tasks = newTaskList;
     }
   }
 });
