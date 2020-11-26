@@ -2,8 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import  NoteAddIcon from '@material-ui/icons/NoteAddRounded';
-import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom';
 import { Item } from './Item.js';
+import { TimeAgo } from './TimeAgo';
 import { todos } from 'reducers/todos';
 
 const TodoListContainer = styled.ul`
@@ -27,9 +28,13 @@ export const TodoList = () => {
      
     return (
         <TodoListContainer>
-            <TodoListActionButton onClick={() => dispatch(todos.actions.goToForm())}>
+            <Link to={`/todo/`}>
                 <NoteAddIcon></NoteAddIcon>
-            </TodoListActionButton>
+            </Link>  
+
+            {/* <TodoListActionButton onClick={() => dispatch(todos.actions.goToForm())}>
+                
+            </TodoListActionButton> */}
 
            
             {items.map((item) => (

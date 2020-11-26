@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { todos } from "reducers/todos";
+import { useHistory } from 'react-router-dom';
+import uniqid from 'uniqid'
+
 
 export const AddTodoForm = () => {
   const [userCategory, setUserCategory] = useState([]);
@@ -10,7 +13,8 @@ export const AddTodoForm = () => {
   const dispatch = useDispatch();
   const category = useSelector((store) => store.todos.items.category);
   const categories = useSelector((store) => store.todos.categories);
-
+  const history = useHistory();
+const todo = useSelector(store => store.todos.items)
   const onCategoryChange = (categoryValue) => {
     userCategory.includes(categoryValue)
       ? setUserCategory(userCategory.filter((item) => item !== categoryValue))
@@ -21,18 +25,19 @@ export const AddTodoForm = () => {
     event.preventDefault();
     if (todoTitle && todoContent) {
       dispatch(
-        todos.actions.addItem(title, content, category))
-        //   id: Date.now(),
-        //   category: userCategory, 
-        //   title: todoTitle, 
-        //   content: todoContent,
-        //   isCompleted: false,
-        //   createdAt: Date.now()
-        // })
-    
+        todos.actions.addItem({
+          id: uniqid(),
+          category: userCategory, 
+          title: todoTitle, 
+          content: todoContent,
+          isCompleted: false,
+          createdAt: Date.now()
+        })
+      );
         setTodoTitle('');
         setTodoContent('');
         setUserCategory([]);
+        history.push('/')
     } else {
       alert('Please write note first')
     }

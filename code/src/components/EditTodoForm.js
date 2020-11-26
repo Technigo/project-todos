@@ -11,7 +11,7 @@ export const EditTodoForm = () => {
   const [userCategory, setUserCategory] = useState(todo.category);
   const [todoTitle, setTodoTitle] = useState(todo.title);
   const [todoContent, setTodoContent] = useState(todo.content);
-
+  console.log(todo.content);
   const dispatch = useDispatch();
   const history = useHistory();
   const category = useSelector((store) => store.todos.items.category);
