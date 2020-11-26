@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { Item } from './Item.js'
 import { AddTodo } from 'components/AddTodo'
+import { Summary } from 'components/Summary'
 
 
 const ListContainer = styled.ul`
@@ -20,11 +21,12 @@ export const List = () => {
     const items = useSelector(store => store.todos.items)
 
     return (
-    <ListContainer>
-        {items.map((item) => (
-        <Item key={item.id} item={item}></Item>
-        ))}      
+        <ListContainer>
+            {items.map((item) => (
+            <Item key={item.id} item={item}></Item>
+            ))}   
+         <Summary />      
         <AddTodo />  
-    </ListContainer>
+        </ListContainer>
     )
 }

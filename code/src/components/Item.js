@@ -10,6 +10,11 @@ const ItemContainer = styled.li`
     font-size: 20px;
     font-weight: 300;
 `
+const Input = styled.input`
+    width: 20px; 
+    height: 20px;
+    margin-right: 30px; 
+`
 
 const ListActionButton = styled.button`
     align-self: center;
@@ -36,18 +41,18 @@ export const Item = ({ item }) => {
     
     
     return (
-    <ItemContainer>{item.text}
-    <input 
-        type="checkbox"  
-        name="checkbox" 
-        value="check"
-        onChange={handleCheckbox}>
-    </input>
-    <ListActionButton 
-        onClick={handleRemoveItem}>[Remove]
-    </ListActionButton>
-    
-    <Line></Line>
-    </ItemContainer>
+        <ItemContainer>
+            <Input 
+                type="checkbox"  
+                name="checkbox" 
+                value="check"
+                onChange={handleCheckbox}>
+            </Input>
+                {item.text}
+            <ListActionButton 
+                onClick={handleRemoveItem}>[Remove]
+                </ListActionButton>
+            <Line></Line>
+        </ItemContainer>
     )
 }

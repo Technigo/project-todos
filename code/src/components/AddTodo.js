@@ -43,18 +43,18 @@ export const AddTodo = () => {
         <Container>
             <Form onSubmit={handleOnSubmit}>
                 <Textarea 
-                aria-label="text area"
-                type="text"
-                rows= "2"
-                cols= "30"
-                placeholder="What to do next?"
-                onChange={e => setInputValue(e.target.value)}
-                value={inputValue}
+                    aria-label="text area"
+                    type="text"
+                    rows= "2"
+                    cols= "30"
+                    placeholder="What to do next?"
+                    onChange={e => setInputValue(e.target.value)}
+                    value={inputValue}
                 ></Textarea>
                 
                 <Button 
-                type="submit"
-                >Add todo
+                    type="submit"
+                    >Add todo
                 </Button>
             </Form>
         </Container>
