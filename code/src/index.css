@@ -7,11 +7,10 @@ body {
   color: #4D1C39;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-/* color https://pigment.shapefactory.co/?a=F3D90D&b=F6E790 */

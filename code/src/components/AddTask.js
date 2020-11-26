@@ -19,6 +19,7 @@ padding: 10px;
 &:focus {
   outline: none;
   background-color: #f7e1ed;
+  transition: background-color 1s ease;
 }
 `
 
