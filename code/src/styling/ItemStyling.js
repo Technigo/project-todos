@@ -17,6 +17,7 @@ export const TodoContainer = styled.li`
   border-radius: 10px 0px;
   width:80%;
   border-bottom-style: solid;
+  overflow-wrap: break-word;
 
   @media (min-width: 700px) and (max-width: 1024px) {
     width: 40%

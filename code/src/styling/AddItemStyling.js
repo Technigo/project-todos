@@ -24,7 +24,7 @@ export const Button = styled.button`
   }
 `
 
-export const TextInput = styled.input`
+export const TextInput = styled.textarea`
   width: 230px;
   height: 30px;
   margin: 20px 0;
@@ -33,7 +33,8 @@ export const TextInput = styled.input`
   border-radius: 7px;
   background: #F4F4F4;
   font-size: 16px;
-
+  overflow-wrap: break-word;
+  
   @media (min-width: 667px){
     width: 320px;
   }
