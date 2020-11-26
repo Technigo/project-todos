@@ -19,3 +19,8 @@ export const Span = styled.span`
   color: ${(props) => props.color || '#495464;'};
   font-size: 16px;
 `;
+
+export const SpanDate = styled.span`
+  color: ${(props) => props.color || '#495464;'};
+  font-size: 12px;
+`;

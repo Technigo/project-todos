@@ -58,9 +58,13 @@ export const CustomCheckbox = ({ isChecked, onChange }) => {
     </CheckboxContainer>
   );
 
+  const Wrapper = styled.label`
+    margin-right: 10px;
+  `;
+
   return (
-    <label>
+    <Wrapper>
       <Checkbox checked={checked} onChange={handleOnChange}></Checkbox>
-    </label>
+    </Wrapper>
   );
 };

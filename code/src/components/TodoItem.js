@@ -5,16 +5,28 @@ import styled from 'styled-components';
 import moment from 'moment';
 
 import { RemoveButton } from '../lib/RemoveButton';
-import { Span } from '../lib/Text';
+import { SpanDate, Paragraf } from '../lib/Text';
 import { CustomCheckbox } from './CustomCheckbox';
 
 const Wrapper = styled.article`
   display: flex;
+  flex-direction: column;
   padding: 10px 0;
   border-bottom: 2px solid #e8e8e8;
+`;
+
+const WrapperTodo = styled.div`
+  display: flex;
+  align-items: center;
   justify-content: space-between;
+`;
+
+const WrapperTodoText = styled.div`
+  display: flex;
   align-items: center;
 `;
+
+const WrapperTime = styled.div``;
 
 export const TodoItem = ({ todo }) => {
   const dispatch = useDispatch();
@@ -29,21 +41,19 @@ export const TodoItem = ({ todo }) => {
 
   return (
     <Wrapper>
-      {/* <input
-          className="toggle"
-          type="checkbox"
-          checked={todo.completed}
-          onChange={handleCheckboxClick}
-        /> */}
-      {/* <label> */}
-      <CustomCheckbox
-        isChecked={todo.completed}
-        onChange={handleCheckboxClick}
-      />
-      {/* </label> */}
-      <Span>{todo.text}</Span>
-      <Span>{moment(todo.startDate).format('l')}</Span>
-      <RemoveButton onClick={handleRemoveTodo}>X</RemoveButton>
+      <WrapperTodo>
+        <WrapperTodoText>
+          <CustomCheckbox
+            isChecked={todo.completed}
+            onChange={handleCheckboxClick}
+          />
+          <Paragraf>{todo.text}</Paragraf>
+        </WrapperTodoText>
+        <RemoveButton onClick={handleRemoveTodo}>X</RemoveButton>
+      </WrapperTodo>
+      <WrapperTime>
+        <SpanDate>Added: {moment(todo.startDate).format('l')}</SpanDate>
+      </WrapperTime>
     </Wrapper>
   );
 };

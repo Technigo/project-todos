@@ -26,9 +26,7 @@ const getVisibleTodos = (todos, filter) => {
 };
 
 export const TodoList = () => {
-  // Fetch all todos from the store
-  //   const allTodos = useSelector((state) => state.todos.items);
-
+  // Fetch all todos from the store in combination with filter
   const allTodos = useSelector((state) =>
     getVisibleTodos(state.todos.items, state.visibilityFilter)
   );
