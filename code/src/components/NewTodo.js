@@ -127,11 +127,14 @@ const CategoryAndPrioWrapper = styled(InnerFlexWrapper)`
 const CustomSelect = styled(Select)`
   width: 280px;
   margin-bottom: 10px;
+
+  & react-select__control {
+    border-color: #000;
+  }
 `;
 
 const Label = styled.label`
   font-size: 10px;
-  margin-top: 5px;
   text-transform: uppercase;
 `;
 

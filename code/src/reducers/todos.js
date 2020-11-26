@@ -46,5 +46,9 @@ export const todos = createSlice({
     removeAllTodos: (state, action) => {
       state.tasks = [];
     },
+    removeAllCompletedTodos: (state, action) => {
+      const noCompletedTodos = state.tasks.filter((task) => !task.isCompleted);
+      state.tasks = noCompletedTodos;
+    },
   },
 });

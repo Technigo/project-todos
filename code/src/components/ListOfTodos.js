@@ -46,6 +46,9 @@ export const ListOfTodos = () => {
   const handleRemoveAll = () => {
     dispatch(todos.actions.removeAllTodos());
   };
+  const handleRemoveCompleted = () => {
+    dispatch(todos.actions.removeAllCompletedTodos());
+  };
 
   return (
     <Wrapper>
@@ -88,13 +91,17 @@ export const ListOfTodos = () => {
       })}
 
       {/* Show complete all/remove all only if there are thoughts available */}
-      {nonCompletedTasks.length !== 0 && (
+      {allTodos.length !== 0 && (
         <ControlTasks>
           <p>
             Complete all tasks <Button onClick={handleCompleteAll}>✓</Button>
           </p>
           <p>
             Remove all tasks <Button onClick={handleRemoveAll}>✕</Button>
+          </p>
+          <p>
+            Remove all completed tasks{' '}
+            <Button onClick={handleRemoveCompleted}>✕</Button>
           </p>
         </ControlTasks>
       )}

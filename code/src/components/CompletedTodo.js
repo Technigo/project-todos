@@ -34,7 +34,7 @@ export const CompletedTodo = ({ task, index }) => {
       </div>
       <div>
         <RemoveTaskButton onClick={handleRemoveTaskButton}>✕</RemoveTaskButton>
-        <CheckedButton onClick={handleCheckedButton}>↩︎</CheckedButton>
+        <CheckedButton onClick={handleCheckedButton}>↖︎</CheckedButton>
       </div>
     </CompletedTaskWrapper>
   );
@@ -70,7 +70,7 @@ const CheckedButton = styled(Button)`
   background: #4300ca;
   color: #fff;
   margin: 0 10px;
-  transform: rotate(90deg);
+  /* transform: rotate(90deg); */
 `;
 
 const RemoveTaskButton = styled(Button)`
