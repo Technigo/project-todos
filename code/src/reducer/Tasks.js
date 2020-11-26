@@ -25,12 +25,18 @@ export const Tasks = createSlice({
         6.Then we're setting the items array in intital state to the variable newItemsList, which is the new array. 
         */
         addTask: (state, action) => {
+            // Math.max operation turned out to be an infinite loop as the items array doesn't have any tasks assigned to it when the first task is added. Decided to pass the Math.max operation into the idNumber variable. Then check if the items array has a length of 0 then and the idNumber will be changed to equals to 1 to break the infinite loop and the incrementing of the id number can occur. newItem is passed as the id value which will enable the new number for the id to be created. 
+            let idNumber = Math.max(...state.list.items.map(item => item.id)) +1; 
+
+            if (state.list.items.length === 0) {
+               idNumber = 1;                 
+            }            
+
             const newItem = {
-                id: Math.max(...state.list.items.map(item => item.id)) +1,
+                id: idNumber,
                 text: action.payload,
                 done: false,
-            };
-            console.log(newItem);
+            };            
             const newItemList = [...state.list.items, newItem];      
             state.list.items = newItemList;
         },
