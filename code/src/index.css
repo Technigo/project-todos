@@ -16,4 +16,5 @@ code {
 #root {
   max-width: 800px;
   margin: auto;
+  cursor: pointer;
 }

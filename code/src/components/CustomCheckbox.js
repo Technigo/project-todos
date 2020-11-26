@@ -24,13 +24,13 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   position: absolute;  
   white-space: nowrap;
   width: 1px;
-`;
+`
     
 const Icon = styled.svg`
   fill: none;
   stroke: white;
   stroke-width: 4px;
-`;
+`
 
 // Need both for accessibility.
 const StyledCheckbox = styled.div`
@@ -48,12 +48,12 @@ const StyledCheckbox = styled.div`
     ${Icon} {
       visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
     }
-`;
+`
 
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
-`;
+`
 
 // Tripple-nested div with two components inside. Re-building a checkbox.
 
@@ -62,15 +62,12 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   //const dispatch = useDispatch();
   const [checked, setChecked] = useState(isChecked);
 
-
   // Updating the state on change
   const handleOnChange = (event) => {
     onChangeHandler();
-    setChecked(event.target.checked);
-    
+    setChecked(event.target.checked); 
   };
 
-  // Drawing a line with the svg.
   const Checkbox = ({ className, checked, ...props }) => (
     <CheckboxContainer>
       <HiddenCheckbox tabindex='0' role='checkbox' checked={checked} {...props}></HiddenCheckbox>
@@ -84,11 +81,9 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
 
   // {...props} allow us to add properties directly to the HiddenCheckBox. 
   // Remember! The HiddenCheckBox is the INPUT TYPE checkbox.
-
-  // {} means that there is a function inside. 
   return (
     <label>
-      <Checkbox checked={checked} onChange={handleOnChange}></Checkbox> 
+      <Checkbox tabindex='0' checked={checked} onChange={handleOnChange}></Checkbox> 
     </label>
   )
 };

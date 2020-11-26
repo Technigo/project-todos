@@ -1,41 +1,8 @@
 import React, { useState } from 'react';
-//import Datepicker from 'react-datepicker';
 import { useDispatch } from 'react-redux';
-import styled from 'styled-components';
-
-import 'react-datepicker/dist/react-datepicker.css';
 
 import { todos } from '../reducers/todos';
-
-
-const Form = styled.form`
-  display: flex;
-  justify-content: center;
-`
-
-const StyledLabel = styled.h3`
-  font-size: 16px;
-  text-align: right;
-  width: 80%;
-  margin: auto;
-  padding: 10px;
-  font-weight: 300;
-`
-
-const InputField = styled.input`
-  font-size: 20px;
-  padding: 10px;
-  width: 65%;
-  border: none;
-  border-radius: 3px;
-`
-const InputAdd = styled(InputField)`
-  font-size: 40px;
-  width: 15%;
-  background: white;
-  border: none;
-  margin-left: -1px;
-`
+import { Form, StyledLabel, InputField, InputAdd } from '../styledComponents/styled_components';
 
 // Receives listId as input
 export const TodoInput = () => {
@@ -75,7 +42,6 @@ addDate()
         //dueDate: dueDate
       })
     );
-    
 
     // Clear text field after saved and component re-renders
     setInputValue('');
@@ -103,10 +69,6 @@ addDate()
           className='todo-input-button'
           value='+'
         ></InputAdd>
-        {/*<label>
-          Due date
-          <Datepicker onChange={(date) => setDueDate(date)} value={dueDate} />
-        </label>*/}   
       </Form>
     </>
   );

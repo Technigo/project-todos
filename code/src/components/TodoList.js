@@ -1,12 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
 
-import { TodoItem } from './TodoItem'
-
-const SectionTodoList = styled.section`
-  margin-top: 30px;
-`
+import { TodoItem } from './TodoItem';
+import { SectionTodoList } from '../styledComponents/styled_components';
 
 export const TodoList = () => {
   // Get list info for this list form the (global) redux store
@@ -23,10 +19,5 @@ export const TodoList = () => {
   );
 };
 
-/*
-- Show TodoInput
-- Show each TodoItem in the List
-- Show TodoSummary
-*/
 
 
