@@ -45,6 +45,18 @@ export const RemoveButton = styled.button`
   cursor:pointer;
 `;
 
+export const RemoveAllButton = styled.button`
+  align-self: center;
+  background-color: #dd0743;
+  border:none;
+  font-size: 20px;
+  color: #ffffff;
+  border-radius: 16px;
+  padding:2px 10px;
+  margin-bottom:30px;
+  cursor:pointer;
+`
+
 export const EmptyStateImage = styled.img`
   width: 200px;
   height: 200px;

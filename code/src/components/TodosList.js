@@ -7,6 +7,7 @@ import { AddTodo } from './AddTodo';
 import { Counter } from './Counter';
 import { Header } from './Header';
 import  Yay from '../assets/yay.png'
+import { RemoveAll } from './RemoveAll';
 
 export const TodosList = () => {
   const items = useSelector((store) => store.todos.items);
@@ -24,8 +25,6 @@ export const TodosList = () => {
       </TaskListInputContainer>
     );
   };
-
-
   return (
     <TaskListInputContainer>
       <Header></Header>
@@ -35,6 +34,7 @@ export const TodosList = () => {
         <Item key={index} item={item}></Item>
       ))}
       <Counter></Counter>
+      <RemoveAll></RemoveAll>
       </ListContainer>
     </TaskListInputContainer>
   );

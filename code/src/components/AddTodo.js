@@ -27,11 +27,12 @@ export const AddTodo = () => {
   return (
     <AddTodoForm onSubmit={handleSubmit}>
       <NewTodo>
-      <TodoText type='text' required
+      <TodoText 
+        type='text' required
         value={addTodo}
         placeholder='Add a to-do!'
-        onChange={(event)=> 
-        setAddTodo(event.target.value)}/>
+        onChange={(event)=> setAddTodo(event.target.value)}
+      />
         <AddButton type='submit' disabled={ addTodo.length < 5 }> + </AddButton>
       </NewTodo>
     </AddTodoForm>

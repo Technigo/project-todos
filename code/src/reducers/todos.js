@@ -3,15 +3,15 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   items: [
     { id: 1, 
-      text: 'The first todo', 
+      text: 'Code 👾', 
       complete: false
     },
     { id: 2, 
-      text: 'The second todo', 
+      text: ' Dream ✨ ', 
       complete: false
     },
     { id: 3, 
-      text: 'The third todo', 
+      text: 'Love 🎈', 
       complete: false
     },
   ],
@@ -48,7 +48,11 @@ export const todos = createSlice({
         if(matchingTodoId) {
           matchingTodoId.complete = complete;
         }
-
+      },
+      
+      //Clears the to dos list
+      removeAll: (state) => { 
+        state.items = []
       }
   }
 });
