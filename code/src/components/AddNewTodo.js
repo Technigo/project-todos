@@ -22,6 +22,7 @@ export const AddNewTodo = () => {
             placeholder="Add new todo..."
             required
             />
+            
             <AddTodoButton type="submit"
             onClick={onSubmit}
             disabled={ newTodo.length < 5 }> ➕ </AddTodoButton>
