@@ -7,24 +7,18 @@ import  Home  from './pages/Home';
 import CreateTodo from 'pages/CreateTodo';
 import { todos } from './reducers/todos';
 
+const reducer = combineReducers({ todos: todos.reducer, });
 
-// StoreCreation - tell redux about my reducers 
-const reducer = combineReducers({ todos: todos.reducer, })
-
-// StoreCreation - Create the store using our reducers and the retrieved state
-//const store = configureStore({ reducer })
- 
-const persistedStateJSON = localStorage.getItem('reduxState')
-let persistedState = {}
+const persistedStateJSON = localStorage.getItem('reduxState');
+let persistedState = {};
 if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON)
-}
-//console.log(`persistedState: ${persistedState}`)
+};
 
 const store = configureStore({
   reducer,
   preloadedState: persistedState
-})
+});
 
 store.subscribe(() => {
   localStorage.setItem('reduxState', JSON.stringify(store.getState()))
@@ -44,7 +38,7 @@ const App = () => {
       </Switch>
       </Provider>
     </BrowserRouter>
-  )
-}
+  );
+};
 export default App;
 

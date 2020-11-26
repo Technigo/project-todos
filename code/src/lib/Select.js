@@ -9,7 +9,6 @@ export const Select = styled.select`
   color: #fff;
   font-size: 16px;
   font-family: 'Architects Daughter', cursive;
-  //-webkit-appearance: none;
   
     option {
       color: #3d5f6b;
@@ -19,6 +18,7 @@ export const Select = styled.select`
       min-height: 20px;
       padding: 0px 2px 1px;
       font-family: 'Architects Daughter', cursive;
+      font-size: 16px;
     }
 `;
 

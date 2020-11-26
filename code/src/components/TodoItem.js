@@ -3,34 +3,31 @@ import { useDispatch } from 'react-redux';
 
 import moment from 'moment';
 import styled from 'styled-components';
-
 import { todos } from '../reducers/todos';
 import { Image } from '../lib/Image';
-import { TodoParagraph } from '../lib/Text'
+import { TodoParagraph } from '../lib/Text';
 import CustomCheckbox from '../lib/CustomCheckbox';
 
 const TodoItem = ({ item }) => {
   const [active, setActive] = useState('');
-  const [height, setHeight] = useState('0px');
+  //const [height, setHeight] = useState('0px');
   const dispatch = useDispatch();
 
-  const onRemoveTodo = () => {
+  const handleRemoveTodo = () => {
     dispatch(
       todos.actions.removeTodo({
         id: item.id,
       })
-    )
-    console.log(item.id)
-  }
+    );
+  };
   
-  const handleOnChange = () => {
-    dispatch(todos.actions.setComplete(item.id))
-    console.log(item.id)
+  const toggleComplete = () => {
+    dispatch(todos.actions.setComplete(item.id));
   };
 
   const toggleAccordion = () => {
     setActive(active === '' ? 'active' : '');
-    setHeight(active === 'active' ? '0px' : 'auto');
+    //setHeight(active === 'active' ? '0px' : 'auto');
   };
 
   return (
@@ -39,7 +36,7 @@ const TodoItem = ({ item }) => {
         <label>
         <CustomCheckbox
           checked={item.complete ? true : ""}
-          onChange={handleOnChange}
+          onChange={toggleComplete}
         ></CustomCheckbox>
         </label>
         <TodoContainer>
@@ -47,14 +44,15 @@ const TodoItem = ({ item }) => {
               {item.description}
           </Description> 
         </TodoContainer>
-        <Image src="../assets/garbage.svg" onClick={onRemoveTodo} /> 
+        <Image src="../assets/garbage.svg" onClick={handleRemoveTodo} /> 
       </MyTodos>
 
-      <Open style={{ height: `${height}` }}>
-          <TodoParagraph><Span>Category:</Span> {item.category}</TodoParagraph>
-          <TodoParagraph><Span>Created:</Span> {moment(item.createdAt).fromNow()}</TodoParagraph>
-          <TodoParagraph><Span>Due:</Span> {moment(item.dueDate).format('MMM Do YYYY')}</TodoParagraph>
-        </Open>
+      {/* <Open style={{ height: `${height}` }}> */}
+      <Open active={active}>
+        <TodoParagraph><Span>Category:</Span> {item.category}</TodoParagraph>
+        <TodoParagraph><Span>Created:</Span> {moment(item.createdAt).fromNow()}</TodoParagraph>
+        <TodoParagraph><Span>Due:</Span> {moment(item.dueDate).format('MMM Do YYYY')}</TodoParagraph>
+      </Open>
     </Container>
   );
 };
@@ -100,6 +98,12 @@ const Description = styled.p`
 const Open = styled.div`
   padding: 4px;
   overflow: hidden;
+  height: 0;
+  ${({ active }) =>
+    active === 'active' &&
+    `
+    height: auto;
+  `}
 `;
 
 const Span = styled.span`

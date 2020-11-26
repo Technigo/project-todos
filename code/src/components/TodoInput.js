@@ -2,14 +2,13 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import DatePicker from 'react-date-picker';
-import { v4 as uuidv4 } from 'uuid'; //uniqe ID
+import { v4 as uuidv4 } from 'uuid'; 
+import styled from 'styled-components';
 
 import { todos } from '../reducers/todos';
-
 import { Button } from '../lib/Button';
-import { LabelTitle, Paragraph } from '../lib/Text';
+import { Label, Paragraph } from '../lib/Text';
 import { Select } from '../lib/Select';
-import styled from 'styled-components';
 
 
 const TodoInput = () => {
@@ -20,10 +19,10 @@ const TodoInput = () => {
   const history = useHistory();
   const createdDate = new Date();
 
-  const categories = useSelector(store => store.todos.list.categories)
+  const categories = useSelector(store => store.todos.list.categories);
 
   const handleOnSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
     dispatch (
       todos.actions.addTodo({
         todoItemInfo: {
@@ -38,7 +37,6 @@ const TodoInput = () => {
     )
     setTodoInput('');
     history.goBack();
-    console.log(todoInput)
   };
 
   return (
@@ -52,22 +50,25 @@ const TodoInput = () => {
         value={todoInput}
         className="todo__input" 
       />
+      <Label>Due Date:
+        <DatePicker 
+          id="due"
+          onChange={(date) => setDueDate(date)}
+          value={dueDate}
+        />
+      </Label>   
 
-      <LabelTitle htmlFor="due">Due Date:</LabelTitle>
-      <DatePicker 
-        id="due"
-        onChange={(date) => setDueDate(date)}
-        value={dueDate}
-      /> 
-      <LabelTitle htmlFor="category">Choose category:</LabelTitle>
-      <Select 
-        id="category" 
-        onChange={(event) => setCategory(event.target.value)} 
-        value={category}>
-        {categories.map(option => (
-          <option key={option} value={option}>{option}</option>
-        ))}
-      </Select>
+      <Label>
+        <Select 
+          //id="category" 
+          onChange={(event) => setCategory(event.target.value)} 
+          value={category}>
+          <option value="">Category</option>
+          {categories.map(option => (
+            <option key={option} value={option}>{option}</option>
+          ))}
+        </Select>
+      </Label>
       <Button 
         type="submit"
         disabled={!todoInput}
@@ -75,19 +76,19 @@ const TodoInput = () => {
         <Paragraph>Add Todo</Paragraph>
       </Button>   
     </Form>
-)
-}
+  );
+};
 export default TodoInput;
 
 export const Form = styled.form `
-  height: 50vh;
+  height: 65vh;
   display: flex;
   flex-direction: column; 
   justify-content: space-evenly;
-
   max-width: 700px;
   width: 100%;
-`
+`;
+
 export const Input = styled.input.attrs({ type: 'text' }) `
   background-color: transparent;
   border: none;
@@ -98,4 +99,4 @@ export const Input = styled.input.attrs({ type: 'text' }) `
       font-family: 'Architects Daughter', cursive;
       color: #fff;
     }
-`
+`;

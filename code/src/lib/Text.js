@@ -9,9 +9,11 @@ export const SubTitle = styled.h2 `
   font-size: 20px;
 `
 
-export const LabelTitle = styled.label `
+export const Label = styled.label `
   font-size: 20px;
   color: #fff;
+  display: flex;
+  flex-direction: column;
 `;
 
 export const Paragraph = styled.p `

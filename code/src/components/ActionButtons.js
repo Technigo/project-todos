@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import swal from 'sweetalert';
 import styled from 'styled-components';
 
@@ -17,7 +16,7 @@ const ActionButtons = () => {
   }
 
   const handleUnsetComplete = () => {
-    dispatch(todos.actions.setAllUnComplete())
+    dispatch(todos.actions.setAllInComplete())
     setIsAllComplete(false)
   }
 
@@ -26,18 +25,18 @@ const ActionButtons = () => {
       title: "Are you sure?",
       text: "Do you want to delete all your todos?",
       icon: "warning",
-      dangerMode: true, //mark "delete" red and set focus to "cancel" if buttons are used
-      buttons: true, //gives us two buttons 
+      dangerMode: true, 
+      buttons: true,  
     })
     .then(willDelete => {
       if (willDelete) {
         dispatch(todos.actions.removeAllTodos())
-        swal("Deleted!", "Your todos has been deleted", "success");
+        swal("Deleted!", "Your todos has been deleted", "warning");
       } else {
         swal("They are still there!", "Your todos are in working progress")
       }
     });
-  }
+  };
 
   return (
     <ButtonContainer>
@@ -54,8 +53,8 @@ const ActionButtons = () => {
         <ButtonText>Delete all todos</ButtonText>
       </Button>
     </ButtonContainer>
-  )
-}
+  );
+};
 export default ActionButtons;
 
 const ButtonContainer = styled.div `

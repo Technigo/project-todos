@@ -7,41 +7,28 @@ const initialState = {
     categories: ['Personal', 'School', 'Work', 'Home', 'Other' ],
     selectedFilterStatus: "",
     selectedFilterCategory: "",
+    homePage: true,
   }
 };
-
 
 export const todos = createSlice({
   name: "todos",
   initialState: initialState,
   reducers: {
+    createTodo: (state) => {
+      state.homePage = false;
+    },
+
     addTodo: (state, action) => {
       const { todoItemInfo } = action.payload;
       state.list.items.push(todoItemInfo)
     },
 
-    // setComplete: (state, action) => {
-    //   const { id, complete } = action.payload;
-    //   //state.list.items[id].complete = complete;
-    //   console.log(id)
-    // },
-    
     setComplete: (state, action) => {
       const foundItem = state.list.items.find(item => item.id === action.payload)
-      //console.log(action.payload)
-      //console.log(`innan if ${foundItem}`)
       if(foundItem) {
         foundItem.complete = !foundItem.complete
       }
-      //console.log(`efter if ${foundItem}`)
-    },
-
-    setAllComplete: (state) => {
-      state.list.items.map(item => item.complete = true)
-    },
-
-    setAllUnComplete: (state) => {
-      state.list.items.map(item => item.complete = false)
     },
 
     removeTodo: (state, action) => {
@@ -51,12 +38,16 @@ export const todos = createSlice({
       )
     },
 
-    removeAllTodos: (state) => {
-      state.list.items = []
+    setAllComplete: (state) => {
+      state.list.items.map(item => item.complete = true)
     },
 
-    createTodo: (state) => {
-      state.homePage = true;
+    setAllInComplete: (state) => {
+      state.list.items.map(item => item.complete = false)
+    },
+
+    removeAllTodos: (state) => {
+      state.list.items = []
     },
 
     filteredStatus: (state, action) => {
@@ -66,35 +57,5 @@ export const todos = createSlice({
     filteredCategory: (state, action) => {
       state.list.selectedFilterCategory = action.payload
     },
-
-    // filterTodoStatus: (state, action) => {
-    //   const { filter } = action.payload; 
-    //   if (filter === "not complete") {
-    //     console.log("filter not complete")
-    //     return state.list.items.filter(item => !item.complete)
-    //   } else if (filter === "complete" ) {
-    //     console.log("filter complete")
-    //     return state.list.items.filter(item => item.complete) 
-    //   } else return state
-    // },
-
-
-
-    // filterTodoStatus: (state, action) => {
-    //   const filter = action.payload;
-    //   switch (filter) {
-    //     case filter === "completed":
-    //       return state.list.items.filter(item => item.complete) //if item is equal to true
-    //       break;
-    //     case filter === "not completed":
-    //       return state.list.items.filter(item => !item.complete) //if item is equal to false
-    //       break;
-    //     default:
-    //       return state.list.items
-    //       break;
-    //   }
-    // },
-    
-  
   }
-})
+});
