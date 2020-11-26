@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { tasks } from 'reducers/tasks';
 
-import { Button, Emoji } from 'styles/styles';
+import { Button, Emoji } from 'styles/GlobalStyles';
 
 export const RemoveAll = () => {
   const items = useSelector((store) => store.tasks.items);

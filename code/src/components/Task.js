@@ -7,7 +7,7 @@ import { tasks } from 'reducers/tasks';
 
 import { CustomCheckbox } from './CustomCheckbox';
 
-import { TaskText, Emoji, SmallText } from 'styles/styles';
+import { TaskText, Emoji, SmallText } from 'styles/GlobalStyles';
 
 export const Task = ({ task }) => {
   const dispatch = useDispatch();

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 import { tasks } from 'reducers/tasks';
 
-import { Button } from 'styles/styles';
+import { Button } from 'styles/GlobalStyles';
 
 export const unMarkAll = () => {
   const items = useSelector((store) => store.tasks.items);

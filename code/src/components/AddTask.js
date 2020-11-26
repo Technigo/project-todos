@@ -6,8 +6,6 @@ import 'index.css';
 
 import { tasks } from 'reducers/tasks';
 
-import { Button } from 'styles/styles';
-
 export const AddTask = () => {
   const [text, addTask] = useState('');
   const [category, setCategory] = useState('');
@@ -53,9 +51,9 @@ export const AddTask = () => {
           value={dueDate}
           placeholderText='Click to set a due date'  
         />
-        <Button type='submit'>Add task 
+        <AddButton type='submit'>Add task 
           <AddEmoji role="img" aria-label="Add emoji"> ➕</AddEmoji>
-        </Button>
+        </AddButton>
       </Bottom>
     </FormWrapper>
   );
@@ -104,6 +102,25 @@ const Bottom = styled.div`
 
 const Label = styled.p`
   margin-right: 6px;
+`;
+
+const AddButton = styled.button`
+  background: none;
+  border: 1px solid #869D7A;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: 'PT Sans', sans-serif;
+  font-size: 14px;
+
+  &:hover {
+    border: 1px solid #000;
+  }
+
+  @media (max-width: 321px) {
+    width: 60px;
+  }
 `;
 
 const AddEmoji = styled.span`

@@ -19,6 +19,10 @@ export const Button = styled.button`
   &:hover {
     border: 1px solid #000;
   }
+
+  @media (max-width: 321px) {
+    width: 125px;
+  }
 `;
 
 export const Emoji = styled.span`
@@ -28,6 +32,10 @@ export const Emoji = styled.span`
 
   &:hover {
     color: #000;
+  }
+
+  @media (max-width: 321px) {
+    font-size: 24px;
   }
 `;
 

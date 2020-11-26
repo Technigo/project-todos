@@ -7,7 +7,7 @@ import { Task } from './Task';
 import { RemoveAll } from './RemoveAll';
 import { MarkAll } from './MarkAll';
 
-import { SmallText, Emoji } from 'styles/styles';
+import { SmallText, Emoji } from 'styles/GlobalStyles';
 
 export const TaskList = ({ category }) => {
 
@@ -30,13 +30,23 @@ export const TaskList = ({ category }) => {
 */
   // Filter on completed / uncompleted tasks
   const nonCompletedTasks = tasks.items.filter((task) => !task.complete);
-  const completedTasks = tasks.items.filter((task) => task.complete)
+  const completedTasks = tasks.items.filter((task) => task.complete);
+
+  const [filter, setFilter] = useState('');
+  const handleSubmit = () => {
+    setFilter('');
+  };
   
   return (
     <div>
       <SmallText>{tasksTodo.length}/{tasks.items.length} tasks uncompleted</SmallText>
       <AddTask />
-      {nonCompletedTasks.length === 0 && (
+      {tasks.items.length === 0 ? (
+        <DoneText>
+          <Emoji>⭐ </Emoji>
+          No todo's right now!
+        </DoneText>
+      ): nonCompletedTasks.length === 0 && (
           <DoneText>
             <Emoji>💥 </Emoji>
             Yeeay, no more tasks todo! All are done! 
@@ -51,6 +61,17 @@ export const TaskList = ({ category }) => {
         <RemoveAll />
         <MarkAll />
       </ButtonWrapper>
+
+      <label>
+        <select
+          value={filter.value}
+          onChange={handleSubmit}
+        >
+          <option value=''>Show all</option>
+          <option value={nonCompletedTasks}>Uncompleted tasks</option>
+          <option value={completedTasks}>Completed tasks</option>
+        </select>
+      </label>
     </div>
   );
 };
