@@ -6,7 +6,7 @@ import { TodoItem } from './TodoItem'
 
 export const TodoList = () => {
   
-  const allTodos = useSelector((store) => store.todos.allTodoItems);
+  const allTodos = useSelector(store => store.todos);
   
   return (
     <>

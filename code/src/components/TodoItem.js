@@ -1,4 +1,5 @@
 import React from "react"
+import styled from 'styled-components'
 import { useDispatch } from "react-redux"
 
 import { todos } from '../reducers/todos'
@@ -16,7 +17,8 @@ export const TodoItem = ({ id, text, complete }) => {
     }
 
     return (
-        <li>
+        <TodoContainer>
+        <List>
             <label>
                 <input type="checkbox"
                 checked={complete}
@@ -26,10 +28,33 @@ export const TodoItem = ({ id, text, complete }) => {
 
             {text}
 
-            <button type="button"
+            <DeleteButton type="button"
             onClick={handleDelete}>
-                🗑
-            </button>
-        </li>
+                <RemoveText>Delete</RemoveText>
+            </DeleteButton>
+        </List>
+        </TodoContainer>
     )
 }
+
+const RemoveText = styled.text`
+    font-size: 10px;
+    color: #fff;
+    background-color:  rgb(192, 171, 171);
+    border-radius: 10%;
+    padding: 2px;
+    
+`
+
+const List = styled.li`
+    list-style-type: none;
+`
+
+const TodoContainer = styled.div`
+    padding: 5px;
+`
+
+const DeleteButton = styled.button`
+    background-color: rgb(228, 220, 220);
+    border: none;  
+`
