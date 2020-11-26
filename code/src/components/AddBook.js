@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import styled from "styled-components";
 
 import { toread } from "../reducers/toread";
 
-import styled from "styled-components";
 
 const AddContainer = styled.section`
   display: flex;
@@ -15,15 +15,15 @@ const AddContainer = styled.section`
 `;
 
 const Input = styled.input`
-border: none;
-border-bottom: 6px solid #2A3330;
-background: white;
-font-size: 24px;
-width: 75%;
-margin-bottom: 20px;
-padding-bottom: 5px;
-text-align: center;
-`
+  border: none;
+  border-bottom: 6px solid #2a3330;
+  background: white;
+  font-size: 20px;
+  width: 75%;
+  margin-bottom: 20px;
+  padding-bottom: 5px;
+  text-align: center;
+`;
 
 const AddButton = styled.button`
   font-size: 18px;
@@ -45,7 +45,7 @@ export const AddBook = () => {
     <AddContainer>
       <Input
         type="text"
-        placeholder="What will you read?"
+        placeholder="What do you want to read?"
         value={value}
         onChange={(event) => setValue(event.target.value)}
       />
