@@ -13,8 +13,7 @@ export const Task = ({ id, text, complete }) => {
   }
 
   const handleRemove = () => {
-    dispatch(tasklist.actions.removeTodo(id)) 
-    { text }
+    dispatch(tasklist.actions.removeTodo(id))
   }
 
   return (
