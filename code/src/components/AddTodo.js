@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { todos } from 'reducers/todos'
 import styled from 'styled-components'
+
+import { todos } from 'reducers/todos'
 
 
 const Form = styled.form`
@@ -13,6 +14,8 @@ const Form = styled.form`
 
 const Textarea = styled.textarea`
     margin-top: 20px;
+    font-family: 'Roboto';
+    border: none;
 `
 const Button = styled.button`
     margin-top: 20px;
@@ -42,17 +45,17 @@ export const AddTodo = () => {
     return (
             <Form onSubmit={handleOnSubmit}>
                 <Textarea 
-                    aria-label="text area"
-                    type="text"
-                    rows= "2"
-                    cols= "30"
-                    placeholder="What to do next?"
+                    aria-label='text area'
+                    type= 'text'
+                    rows= '2'
+                    cols= '30'
+                    placeholder= 'What to do next?'
                     onChange={e => setInputValue(e.target.value)}
                     value={inputValue}
                 ></Textarea>
                 
                 <Button 
-                    type="submit"
+                    type='submit'
                     >Add todo
                 </Button>
             </Form>

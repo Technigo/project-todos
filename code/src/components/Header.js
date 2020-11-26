@@ -1,9 +1,10 @@
 import React from 'react'
-import { ClearAll } from './ClearAll'
 import styled from 'styled-components'
 
+import { ClearAll } from './ClearAll'
+
 const Container = styled.div`
-    background-color: #84a9ac;
+    background-color: #ffadad;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -18,7 +19,7 @@ export const Header = () => {
 
     return (
         <Container>
-                <TodoHeader>Todo list</TodoHeader>
+            <TodoHeader>Todo list</TodoHeader>
                 <ClearAll />
         </Container>
         

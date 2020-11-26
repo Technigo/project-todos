@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
+
 import { todos } from 'reducers/todos'
 
 const ItemContainer = styled.li`
@@ -15,7 +16,6 @@ const Input = styled.input`
     height: 20px;
     margin-right: 30px;
 `
-
 const ListActionButton = styled.button`
     align-self: center;
     padding: 4px;
@@ -45,15 +45,15 @@ export const Item = ({ item }) => {
     return (
         <ItemContainer>
             <Input 
-                type="checkbox"  
-                name="checkbox" 
-                value="check"
+                type= 'checkbox'  
+                name= 'checkbox' 
+                value= 'check'
                 onChange={handleCheckbox}>
             </Input>
                 {item.text}
             <ListActionButton 
                 onClick={handleRemoveItem}>[Remove]
-                </ListActionButton>
+            </ListActionButton>
             <Line></Line>
         </ItemContainer>
     )
