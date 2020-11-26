@@ -32,10 +32,10 @@ export const Header = () => {
       <Background background ='#14274e'>
         <SectionOne>
           <Text>Todo</Text> 
-            <DateText>{moment().format("MMM Do ")} </DateText>
+            <DateText>{moment().format('MMM Do' )} </DateText>
         </SectionOne>    
           <SectionTwo>
-            <TaskCount>{completedItems.length} tasks</TaskCount>
+            <TaskCount> {completedItems.length}/{items.length} Done</TaskCount>
               <Button
                 className="remove-all"
                 type="button"

@@ -2,6 +2,8 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { Item } from './Item'
+import Winner from '../assets/winner.png'
+
 import styled from 'styled-components'
 
 
@@ -18,7 +20,12 @@ export const List = () => {
 
     if (moreTodos.length === 0) {
         return (
-            <p className="amountOf">Keep it up, here there will be an animation!</p>
+        <section className ="empty-state-container">
+          <div className="empty-state">
+            <p className="amountOf">Great job! you are done!</p>
+            <img className="winner" src = {Winner} /> 
+          </div> 
+        </section>    
         )
     }
 
@@ -31,5 +38,8 @@ export const List = () => {
     )
   }
 
+  /*
+ 
 
+*/
 
