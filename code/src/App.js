@@ -30,7 +30,7 @@ const MyContainer = styled(Container)`
     padding: 0;
     background-color: #212121;
     height: 100vh;
-    @media (min-width: 480px) {
+    @media (min-width: 600px) {
       height: 70vh;
     }
   }
