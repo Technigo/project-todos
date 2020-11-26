@@ -1,9 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
  const taskList = {todos: [
-     { id: 1, task: 'Do your task1', due:'Today', done: false},
-     { id: 2, task: 'Do your task2', due:'Tomorrow', done:false},
-     { id: 3, task: 'Do your task3', due:'Yesterday', done: false}
+     { id: 1, task: 'Fix some styling issues', due:'Today', done: false},
+     { id: 2, task: 'Watch videos for next week', due:'Today', done:false},
+     { id: 3, task: 'Do pull request', due:'Today', done: false},
+     { id: 4, task: 'Have fun', due:'Tomorrow', done: false},
+     { id: 5, task: 'Have even more fun', due:'Tomorrow', done: false},
+     { id: 6, task: 'Survive Monday', due:'Monday', done: false}
  ]}
 
 //const taskList = ['task1', 'task2']

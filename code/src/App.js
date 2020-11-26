@@ -1,14 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Provider } from "react-redux";
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import { Container, Paper, Box, Fab, Dialog, Tooltip, Snackbar, Alert } from "@material-ui/core";
+import { Container, Fab, Dialog, Tooltip, Snackbar, Alert } from "@material-ui/core";
 import styled from "styled-components";
 import {
-  createMuiTheme,
   ThemeProvider,
-  useTheme,
 } from "@material-ui/core/styles";
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { Add } from '@material-ui/icons';
 
 import { tasks } from "reducers/tasks";
@@ -28,6 +25,9 @@ const MyContainer = styled(Container)`
     padding: 0;
     background-color: #212121;
     height: 100vh;
+    @media (min-width: 480px) {
+      height: 70vh;
+    }
   }
 `;
 
@@ -39,23 +39,19 @@ const MyFab = styled(Fab)`
   }
 `;
 
-// const theme = createMuiTheme({
-//   palette: {
-//     type: 'dark',
-//   }
-// })
-
 export const App = () => {
-  const [open, setOpen] = React.useState(false);
-  const [openSnack, setOpenSnack] = React.useState(false);
+  
+  //local state and some functions just to manage some UI elements of the app
+  const [open, setOpen] = useState(false)
+  const [openSnack, setOpenSnack] = useState(false)
 
   const handleClickOpen = () => {
     setOpen(true);
-  };
+  }
 
   const handleSnackOpen = () => {
     setOpenSnack(true);
-  };
+  }
 
   const handleSnackClose = (event, reason) => {
     setOpenSnack(false);
@@ -92,6 +88,7 @@ export const App = () => {
               Task Created!
             </Alert>
           </Snackbar>
+
         </MyContainer>
       </ThemeProvider>
     </Provider>

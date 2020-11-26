@@ -13,8 +13,8 @@ export const TodoList = () => {
   const laterTasks = allTasks.todos.filter(task => task.due != 'Today' && task.due != 'Tomorrow')
 
   return (
-    <><Paper>
-    <Accordion defaultExpanded>
+    <><Paper style={{ 'backgroundColor': '#212121' }}>
+    <Accordion defaultExpanded >
       <AccordionSummary
           aria-controls="panel1a-content"
           id="panel1a-header"
