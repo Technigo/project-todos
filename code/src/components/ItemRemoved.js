@@ -14,7 +14,7 @@ export const ItemRemoved = props => {
 return (
 	<>
 	<button type="button" onClick={() => removeItem(props.tasks.id)}>
-        <span role="img" aria-label="remove">❌</span>
+        <span role="button" aria-label="remove">❌</span>
       </button>
 	</>
 )

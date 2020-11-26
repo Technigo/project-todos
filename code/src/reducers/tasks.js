@@ -37,10 +37,10 @@ export const tasks = createSlice({
 			state.list.tasks[taskIndex].complete=complete
 		},
 
-		removeOne: (state, action) => {
-			state.list.tasks = state.list.tasks.find((task)=>
-			task.id!==action.payload)
-		},
+		// removeOne: (state, action) => {
+		// 	state.list.tasks = state.list.tasks.find((task)=>
+		// 	task.id!==action.payload)
+		// },
 
 		removeAllTasks: (state, action) => {
 			state.list.tasks = []
