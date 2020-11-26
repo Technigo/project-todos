@@ -4,10 +4,8 @@ export const tasklist = createSlice({
   name: 'tasklist',
   initialState: {
     tasks: [
-        { id:1, text: 'Work on Todo', complete: true },
-        { id:2, text: 'Have Fun', complete: false },
-        { id:3, text: 'Eat Burger', complete: false },
-        { id:4, text: 'Make some food', complete: false }
+        { id:1, text: 'What do you want to do today?', complete: true },
+        { id:2, text: 'I am the next task on the list', complete: false }
     ]
   },
   reducers: {

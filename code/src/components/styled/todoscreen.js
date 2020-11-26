@@ -8,8 +8,9 @@ export const MainContainer = styled.div `
 `
 
 export const AppContainer = styled.div`
-  background: orange;
+  background: #66C5EA;
   padding: 20px;
   border-radius: 20px;
-  width: 40%
+  width: 500px;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.7);
 `

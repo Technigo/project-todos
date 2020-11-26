@@ -5,5 +5,6 @@ export const TaskContainer = styled.div `
   border: 1px solid grey;
   border-radius: 10px;
   padding: 10px;
-  box-shadow: 0 0 10px 0 rgba(0,0,0,.7)
+  box-shadow: 0 0 10px 0 rgba(0,0,0,.7);
+  font-family: 'Courier New', Courier, monospace
 `

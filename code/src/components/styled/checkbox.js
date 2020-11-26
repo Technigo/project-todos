@@ -1,8 +1,11 @@
 import styled from 'styled-components'
 
 export const Dot = styled.svg`
+  &:hover {
+    opacity: 0.7
+  }
   `
-  
+
  export const HiddenCheckBox = styled.input.attrs({ type: 'checkbox' })`
   border: 0;
   clip: rect(0 0 0 0);
@@ -23,9 +26,9 @@ export const StyledCheckBox = styled.div`
   display: inline-block;
   width: 22px;
   height: 22px;
-  background: ${(props) => (props.checked ? '#f25849' : '#F9EFE5')};
+  background: ${(props) => (props.checked ? '#f25849' : '#16F712')};
   border-radius: 50%;
-  transition: all 150ms;
+  transition: all 180ms;
   cursor: pointer;
   ${Dot} {
   visibility: ${props => props.checked ? 'visible' : 'hidden'}
