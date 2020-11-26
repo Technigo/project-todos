@@ -28,6 +28,7 @@ export const StyledCheckbox = styled.div`
   display: inline-block;
   width: 30px;
   height: 30px;
+  cursor:pointer;
   background: ${props => (props.checked ? '#66bb6a' : 'white')};
   border-radius: 50%;
   transition: all 1500ms;

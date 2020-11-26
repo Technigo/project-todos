@@ -15,7 +15,7 @@ export const List = () => {
         return (
         <EmptyStateContainer>
           <EmptyState>
-            <Text className="amountOf">Great job! you are done!</Text>
+            <Text className="amountOf"> You have no more todos!</Text>
             <img className="winner" src = {Winner} alt="gold trophy"/> 
           </EmptyState> 
         </EmptyStateContainer>    

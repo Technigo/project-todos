@@ -1,6 +1,5 @@
 import styled from 'styled-components'
 
-
 export const ListContainer = styled.ul`
   display:flex;
   width:100%;
@@ -19,7 +18,7 @@ export const EmptyState = styled.div`
   display: flex;
   flex-direction: column;
   width:70%;
-  margin-bottom:30px;
+  margin-bottom:20px;
 
   @media (min-width: 700px) {
     width: 20%;
