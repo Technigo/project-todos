@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from '../Reducers/tasks'
 
 import { Item } from './Item';
-import { UserInput } from './UserInput';
+import { ListWrapper } from '../library/Containers';
 
 export const List = () => {
   //This useSelector helps us get a hold of the items inside our store (tasks)
@@ -13,13 +13,13 @@ export const List = () => {
 
   return (
     <>
-      <ul>
+      <ListWrapper>
         {items.map((item) => {
             return(
               <Item key={item.id} item={item} />  
             )
         })}
-      </ul>
+      </ListWrapper>
     </>
   );
 };

@@ -21,7 +21,7 @@ export const Item = ({ item }) => {
         removebtn={removeBtn}
         onClick={() =>
           dispatch(tasks.actions.removeItem({ id: item.id }))
-        } /* item here is the prop referring to taskInfo*/
+        } //item here is the prop referring to taskInfo
       >
         -
       </Button>

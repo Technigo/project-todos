@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux'
 import { tasks } from '../Reducers/tasks'
 
 import { Button } from '../library/Button'
+import { UserInputBox, InputText } from '../library/Containers'
 
 //This will be sent to the array inside tasks.js
 
@@ -19,7 +20,7 @@ export const UserInput = () => {
     dispatch(
       tasks.actions.addItem({
         taskInfo: {
-            id: Date.now(),
+          id: Date.now(),
           text: task,
           done: false,
         },
@@ -29,13 +30,15 @@ export const UserInput = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <textarea
-        placeholder='Add task'
-        onChange={(event) => setTask(event.target.value)}
-        value={task}
-      ></textarea>
-      <Button addBtn={addBtn} type='submit'>Add Task</Button>
-    </form>
+      <UserInputBox onSubmit={handleSubmit}>
+        <InputText
+          placeholder='Add task'
+          onChange={(event) => setTask(event.target.value)}
+          value={task}
+        ></InputText>
+        <Button addBtn={addBtn} type='submit'>
+          Add Task
+        </Button>
+      </UserInputBox>
   )
 }
