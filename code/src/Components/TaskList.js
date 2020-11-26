@@ -6,11 +6,11 @@ import { ClearButton } from "../Library/ClearButton"
 
 export const TaskList = () => {
   const items = useSelector((store) => store.todo.items)
-
+console.log(items)
   return (
     <ul>
       {items.map((item) => (
-        <TaskItem key={item.id} item={item.text}>
+        <TaskItem key={item.id} item={item}>
           {" "}
         </TaskItem>
       ))}

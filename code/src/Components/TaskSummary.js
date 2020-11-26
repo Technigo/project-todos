@@ -3,16 +3,17 @@ import { useSelector } from "react-redux"
 
 export const TaskSummary = () => {
   const items = useSelector((state) => state.todo.items)
-  const completedTasks = items.filter((item) => item.complete === true)
-
+  const completedTasks = items.filter((item) => item.isComplete).length
+console.log(items)
+console.log(completedTasks)
   return (
     <>
       {" "}
-      {items.length !== 0 && (
+      
         <span className="task-quantity">
-          {completedTasks.length}/{items.length} Done
+          {completedTasks}/{items.length} Done
         </span>
-      )}
+      
     </>
   )
 }

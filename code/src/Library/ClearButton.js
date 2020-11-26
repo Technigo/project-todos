@@ -10,7 +10,7 @@ export const ClearButton = () => {
     <button
       className="clear-button"
       onClick={() => {
-        dispatch(todo.action.removeAll())
+        dispatch(todo.actions.removeAll())
       }}
     >
       Remove All

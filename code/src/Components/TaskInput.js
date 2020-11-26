@@ -12,6 +12,7 @@ export const TaskInput = () => {
     dispatch(todo.actions.addItem(input))
 
     setInput("")
+    console.log(input)
   };
 
   return (
@@ -30,4 +31,3 @@ export const TaskInput = () => {
     </form>
   )
 }
-

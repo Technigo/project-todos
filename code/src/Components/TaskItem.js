@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { todo } from '../Reducers/todo'
 
 export const TaskItem = ({ item }) => {
   const dispatch = useDispatch()
-
+  const [checked, setChecked] = useState(item.isComplete)
   const handleCheckboxClick = () => {
-    dispatch(todo.actions.toggledone(''))
+    setChecked()
+    dispatch(todo.actions.setComplete(item.id))
   }
 
    //deleting one element from the redux store
    const onItemDelete = (id) => {
-    dispatch(todo.actions.removeItem(id))
-  }
+    dispatch(todo.actions.removeItem({id: item.id}))
+  console.log(item.id)}
   //const handleRemoveButton = (id) => {
     //dispatch(todo.actions.removeItem(id))
  // }
@@ -21,13 +22,13 @@ export const TaskItem = ({ item }) => {
 
   return (
     <section className="task-container">
-     <span className="task-item">{item}</span>
+     <span className="task-item">{item.text}</span>
 
      <label>
       
         <input
         type='checkbox'
-        checked={''}
+        checked={checked}
         onChange={handleCheckboxClick}
         />
       </label>
@@ -39,40 +40,3 @@ export const TaskItem = ({ item }) => {
     </section>
   )
 }
-
-
-/*
-export const TaskItem = (props) => {
-  const { id, text } = props
-
-  const dispatch = useDispatch()
-
-  const handleCheckboxClick = () => {
-    dispatch(todo.actions.toggledone(id))
-  }
-
-  const handleRemoveButton = () => {
-    dispatch(todo.actions.removeItem(id))
-  }
-  return (
-    
-    <li>
-      <span>{text}</span>hello
-      
-      <label>
-      
-        <input
-        type='checkbox'
-        checked={props.item.done}
-        onChange={handleCheckboxClick}
-        />
-      </label>
-
-      <button type='button' onClick={handleRemoveButton}>
-        X
-      </button>
-    
-    </li>
-    
-  )
-}*/
