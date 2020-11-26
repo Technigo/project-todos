@@ -1,28 +1,19 @@
 import React from 'react';
-import Lottie from 'react-lottie';
+import { Lottie } from '@crello/react-lottie';
 import animationData from '../lotties/calender';
 import styled from 'styled-components';
 
-const div = styled.div`
-  margin-right: 40px;
+const LottieContainer = styled.div`
+ display: flex;
+ justify-content: center;
 `
-export const LottieAnimation = () => {
-  const defaultOptions = {
-    loop: true,
-    autoplay: true,
-    animationData: animationData,
-    rendererSettings: {
-    preserveAspectRatio: "xMidYMid slice"
-    }
-  }
-    
-return (
-  <div>
-    <Lottie
-      options={defaultOptions}
-      height={300}
-      width={300}
-    />
-  </div>
-    );
-  };
+
+export const LottieAnimation = () => (
+  <LottieContainer className="lottie-container-basic">
+      <Lottie
+          width="300px"
+          height="300px"
+          config={{ animationData: animationData, loop: true, autoplay: true }}>
+      </Lottie>
+  </LottieContainer>
+)

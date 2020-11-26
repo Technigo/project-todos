@@ -7,7 +7,6 @@ const initialState = {
   }
 };
 
-
 // 'createSlice' "communicates" with redux when setting up store"
 // The name of reducer: addTodo will match the action.
 export const todos = createSlice({
@@ -35,14 +34,10 @@ export const todos = createSlice({
       state.list.items = state.list.items.filter(
         (item, index) => index !== itemIndex
       );
+      // 'item' above is not read, but if I remove it, the DeleteButton will not work. Why?
     },
     clearAll: () => {
       return initialState // Does not need a state or action(payload)
     }
   }
 });
-
-// Reducers:
-     // - addTodo
-     // - removeTodo
-     // - setDone

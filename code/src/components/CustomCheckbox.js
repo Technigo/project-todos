@@ -2,14 +2,9 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 
 // A nested component. A function that takes in props and renders an input type = checkbox. 
-// It is rendering a TYPE checkbox and not a STYLED checkbox. We will eventually return a styled
-// checkbox.
-// Anything we send in as an attribute below in styled Checkbox, comes out at 
-// props the function Checkbox can use.
+// It is rendering a TYPE checkbox and not a STYLED checkbox. Anything we send in as an attribute 
+// below in styled Checkbox, comes out at props - that function Checkbox can use.
 // {...props} = add these props inside the input.
-
-// This next line of code was replaced with the const Checkbox below:
-//const Checkbox = (props) => <input type='checkbox'{...props}></input>
 
 // A nested function? Creates a styled, hidden but accessible checkbox. Accessible
 // since it is rendered off screen. ??
@@ -32,7 +27,7 @@ const Icon = styled.svg`
   stroke-width: 4px;
 `
 
-// Need both for accessibility.
+// Need both kinds of checkboxes for accessibility.
 const StyledCheckbox = styled.div`
   display: inline-block;
   border: none;
@@ -49,15 +44,12 @@ const StyledCheckbox = styled.div`
       visibility: ${(props) => (props.checked ? 'visible' : 'hidden')};
     }
 `
-
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
 `
-
 // Tripple-nested div with two components inside. Re-building a checkbox.
 
-// Normal functional component
 export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   //const dispatch = useDispatch();
   const [checked, setChecked] = useState(isChecked);

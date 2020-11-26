@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from "react-redux";
 
 import { todos } from '../reducers/todos';
@@ -10,11 +10,8 @@ export const TodoItem = ({ itemIndex }) => {
   const item = useSelector((store) => store.todos.list.items[itemIndex]);
   const dispatch = useDispatch();
 
-  const [checked, setChecked] = useState();
-
-  // Create the onRemoveClicked handler
+  // Create the onRemoveClicked handler and dispatch action.
   const onRemoveClicked = () => {
-    setChecked()
     dispatch(
       todos.actions.removeTodo({
         itemIndex: itemIndex
@@ -25,9 +22,8 @@ export const TodoItem = ({ itemIndex }) => {
   // Create the onChange handler for handling the done status. Dispatch the action
   // called setDone and sends with it two pieces of info: the index of the item
   // and the value of onChangeValue. Done or not. This new value is listened to
-  // by the setDone reducer in todos, and sets the new value in the global state.
+  // by the setDone reducer in todos, and sets the new value in the global/local state.
   const handleCheckboxClick = () => {
-
     dispatch(
       todos.actions.setDone({
         itemIndex: itemIndex,
@@ -38,7 +34,7 @@ export const TodoItem = ({ itemIndex }) => {
 
   return (
     <DeleteContainer className={`todo-item ${item.done ? 'done' : ''}`}>
-      <CustomCheckbox tabindex='0' isChecked={checked} onChangeHandler={handleCheckboxClick} />
+      <CustomCheckbox tabindex='0' isChecked={item.done} onChangeHandler={handleCheckboxClick} />
       <span className='todo-item-text'>{item.description}</span>
       <DeleteButton className='todo-item-remove' onClick={onRemoveClicked}>
         {'x'}

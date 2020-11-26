@@ -11,19 +11,13 @@ import { TodoSummary } from 'components/TodoSummary';
 import { ClearAllButton } from 'components/ClearAllButton';
 import { LottieAnimation } from '../components/LottieAnimation';
 
-// StoreCreation: Tell Redux about our reducers. createSlice adds a field called 'reducer'. 
-// 'combineReducer()' is a function that takes the todo object as an argument and turn it into a variable
+// StoreCreation: Tell Redux about the reducers. createSlice adds a field called 'reducer'. 
+// 'combineReducers()' is a function that takes the todo object as an argument and turn it into a variable
 // called reducer to be used when setting up the store.
-
 const reducer = combineReducers({ todos: todos.reducer });
 
-
-// Old store code: configureStore: Create store to using our reducers and the retrieved state
-//const store = configureStore({ reducer });
-
-// Persistence: Tell the store to persist the state in localstorage after every action
-// New store code:
-// 1. Retrieve the localstorage and use it as our initial state
+// Persistence: Tell the store to persist the state in localStorage after every action
+// Retrieve the localstorage (if there is one, else use global initialState) and use it as our initial state
 const persistedStateJSON = localStorage.getItem("reduxState");
 let persistedState = {};
 
@@ -31,10 +25,10 @@ if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON);
 };
   
-// 2. Create the store using the initial state, Checks for the devtools extension - if there, give access to browser.
+// Create the store using the initial state, Checks for the devtools extension - if there, give access to browser.
 const store = createStore(reducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
-// 3. Store the state in localstorage on ANY redux state change
+// Store the state in localStorage on all redux state changes
 store.subscribe(() => {
   localStorage.setItem("reduxState", JSON.stringify(store.getState()));
 });
@@ -52,13 +46,4 @@ export const Home = () => {
   );
 };
 
-/*
-PLAN
-- create TodoInput
-- create Store
-- use Provider
-- create TodoList
-- create TodoItem
-- create Summary
-*/
 

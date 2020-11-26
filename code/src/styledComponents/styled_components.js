@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-
 // Header
 export const Title = styled.h1`
   text-align: center;

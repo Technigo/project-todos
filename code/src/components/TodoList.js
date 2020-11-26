@@ -7,8 +7,8 @@ import { SectionTodoList } from '../styledComponents/styled_components';
 export const TodoList = () => {
   // Get list info for this list form the (global) redux store
   const list = useSelector((store) => store.todos.list) 
-  // That is the object we want the variable 'list' to be.
-  // Look in state tree for path!!!
+  // store.todos.list - this is the object we want the variable 'list' to be.
+  // Look in state tree for correct path.
 
   return (
     <SectionTodoList className='todo-list'>

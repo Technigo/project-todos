@@ -8,24 +8,11 @@ import { Form, StyledLabel, InputField, InputAdd } from '../styledComponents/sty
 export const TodoInput = () => {
   const dispatch = useDispatch();
   
-  // State for input from text box
+  // State for input from text-box
   const [inputValue, setInputValue] = useState('');
   // State for date
-  const [date, setDate] = useState(new Date());
-  // State for Due Date
-  //const [dueDate, setDueDate] = useState();
-
-  //useEffect(()
   
-  const addDate = () => {
-    const timer = setInterval(() => {
-      return setDate(new Date());
-    }, 1000);
-    return function cleanup() {
-      clearInterval(timer);
-    };
-  }
-addDate()
+  const date = new Date();
 
   // Create handle submit function to dispatch addTodo
   const handleOnSubmit = (event) => {
