@@ -1,8 +1,8 @@
-.clear-button{
+.clear-button {
   margin-bottom: 10px;
   border-radius: 5px;
   border: none;
-  height: 40px;
+  height: 70%;
   width: 50%;
   color: rgb(242, 241, 241);
   background-color: #AC866F;
@@ -10,13 +10,8 @@
 
 }
 
-.p-remove-button{
+.p-remove-button {
   font-family: Arial, Helvetica, sans-serif;
   margin: 0;
-}
-
-@media screen and (min-width:500px) {
-  .p-remove-button {
-    font-size: 1.2em;
-  }
+  font-size: 1.2em;
 }

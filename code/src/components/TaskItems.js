@@ -37,7 +37,7 @@ export const TaskItems = (props) => {
         className='remove-task-button'
         type='button'
         onClick={handleRemoveButtonClick}>
-          <span role ='img' aria-label = 'checked'>✔</span>
+          <span role='img' aria-label='checked'>✔</span>
         </button>
         <p tabIndex='0' className='task-added-date'> Added: {moment(props.item.createdAt).calendar()}</p>
       </div>

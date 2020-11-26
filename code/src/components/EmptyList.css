@@ -1,0 +1,29 @@
+.gif-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 0px 0px;
+  justify-items: center;
+  align-items: center;
+}
+
+.empty-list-gif {
+  width: 70%;
+}
+
+h2{
+  font-size: 1.5em;
+  text-align: center;
+  margin: 0;
+}
+
+.sub-title {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 900;
+  margin: 20px 0 40px 0;
+}
+
+@media screen and (min-width:500px) {
+  .empty-list-gif {
+    width: 50%;
+  }
+}

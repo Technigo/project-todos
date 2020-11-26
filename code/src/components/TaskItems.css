@@ -1,24 +1,23 @@
-.list-task{
+.list-task {
   display: grid;
   grid-template-columns: 0.6fr 0.4fr;
   background-color: rgba(206, 177, 119, 0.3); 
   margin: 5px;
 }
 
-.checkbox-and-name{
+.checkbox-and-name {
   display:flex;
   align-items: center;
   margin-left: 10px;
   justify-content: flex-start;
 }
 
-.checkbox-label{
+.checkbox-label {
   display: inline-flex;
   align-items: center;
   justify-content:center;
   position: relative;
   cursor: pointer;
-  font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -40,7 +39,7 @@
   background-color: #eee;
 }
 
-input:checked + .checkmark::after{
+input:checked + .checkmark::after {
   content: '';
   width: 6px;
   height: 6px;
@@ -53,12 +52,12 @@ input:checked + .checkmark::after{
   transform: rotate(45deg);
 }
 
-.task-name-p{
-  margin: 0;
+.task-name-p {
+  margin: 3px 0 0 5px;
   font-family: "Montserrat", sans-serif;
 }
 
-.remove-and-date{
+.remove-and-date {
   display:flex;
   flex-direction: column;
   align-items: flex-end;
@@ -66,15 +65,15 @@ input:checked + .checkmark::after{
   padding: 10px 0 0 0;
 }
 
-.remove-task-button{
+.remove-task-button {
   padding: 2px;
   background-color: transparent;
   border: none;
-  font-size: 20px;
+  font-size: 1.5em;
   margin-right: 10px;
 }
 
-.task-added-date{
+.task-added-date {
   font-family: "Montserrat", sans-serif;
   font-size: 0.6em;
   margin: 0;
