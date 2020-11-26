@@ -4,10 +4,11 @@ import styled from 'styled-components'
 
 import { Item } from './Item.js'
 
-const ListContainer = styled.ul`
+const ListContainer = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+  list-style-type:none;
 `
 
 export const List = () => {
