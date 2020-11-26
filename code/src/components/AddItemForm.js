@@ -12,43 +12,67 @@ export const AddItemForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        dispatch(todos.actions.addItem({ name, category,  dueDate }))
+        dispatch(todos.actions.addItem({ name, category, dueDate }))
         setName('')
-
     }
 
     return (
+        <div className="form">
         <form onSubmit={handleSubmit}>
+            <div className="form-name">
             <label>
                 Name:
                 <input
-                type='text'
-                value={name}
-                onChange={(event) => setName(event.target.value)
-                }
+                    type='text'
+                    value={name}
+                    onChange={(event) => setName(event.target.value)
+                    }
                 />
-                
+
             </label>
+            </div>
+            <div className="form-category">
             <label>
                 Category:
                 <select
-                value={category}
-                onChange={(event) => setCategory(event.target.value)
-                }>
+                    value={category}
+                    onChange={(event) => setCategory(event.target.value)
+                    }>
+                    <option value=''>select...</option>
                     <option value='🧃'>Drinks</option>
                     <option value='🥕'>Veggies</option>
                     <option value='🍌'>Fruits</option>
                     <option value='🍬'>Candy</option>
                     <option value='🥩'>Meats</option>
                     <option value='🧀'>Dairy</option>
-
-
-
                 </select>
             </label>
+            </div>
+            {/* <lable>
+                Due dueDate
+                <DatePicker onChange={(date) => setDueDate(date)} value={dueDate} />
+            </lable> */}
             <div className="add-items-button">
                 <button type='submit'>Add Item</button>
-                </div>
+            </div>
+            <div className="form-select">
+            {/* <lable>
+                Show by category : 
+                <select
+                    value={category}
+                    onChange={(event) => setCategory(event.target.value)
+                    }>
+                    <option value=''>All</option>
+                    <option value='🧃'>Drinks</option>
+                    <option value='🥕'>Veggies</option>
+                    <option value='🍌'>Fruits</option>
+                    <option value='🍬'>Candy</option>
+                    <option value='🥩'>Meats</option>
+                    <option value='🧀'>Dairy</option>
+                </select>
+            </lable> */}
+            </div>
         </form>
+        </div>
     )
 }

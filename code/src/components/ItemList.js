@@ -7,13 +7,13 @@ export const ItemList = () => {
 
     return (
         <>
-        <div className="items-list">
-        <ul>
-            {items.map((item) => (
-                <Item key={item.id} item={item} />
-            ))}
-        </ul>
-        </div>
+            <div className="items-list">
+              
+                    {items.map((item, index) => (
+                        <Item key={index} item={item} />
+                    ))}
+                
+            </div>
         </>
     )
 }

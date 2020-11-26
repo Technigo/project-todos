@@ -18,25 +18,30 @@ export const Item = (props) => {
 
     return (
         <>
-            <div className="added-items">
-                <span>{props.item.category}: </span>
-                <span>{props.item.name} - </span>
-
-
-                <label>
+            <div className="item-list">
+                <div className="added-items">
+                    <div className="added-category">
+                        <span>{props.item.category}  </span>
+                    </div>
+                    <div className="added-name">
+                        <span>{props.item.name}  </span>
+                    </div>
+                    </div>
+                    {/* <label>
                     buy more
+                 
             <input
                         type='checkbox'
                         checked={props.item.needsMore}
                         onChange={handleCheckboxClick}
                     />
-                </label>
-                <div className="remove-button">
-                    <button type='button' onClick={handleRemoveButtonClick}>
-                        Remove
+                </label> */}
+                    <div className="remove-button">
+                        <button type='button' onClick={handleRemoveButtonClick}>
+                            X
         </button>
+                    
                 </div>
-
             </div>
         </>
     )

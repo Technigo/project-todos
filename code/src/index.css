@@ -11,27 +11,112 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/*HEADER*/
 
-/* BUTTONS */
-.remove-button button {
-  background-color: aquamarine;
-  color: black;
+.header {
+  background-color: red;
+  margin-top:0;
+  height: 100px;
 }
 
+.form {
+border: solid #9cbe7f 2px;
+display: flex;
+justify-content: center;
+margin: 20px;
+padding:30px 0 0 0;
+border-radius: 10px;
+}
+
+.form-name input {
+margin-bottom: 20px;
+border: none;
+border-bottom: solid #9cbe7f 1px;
+color: #9cbe7f;
+font-size: 15px
+}
+.form-name {
+  color: #9cbe7f;
+  font-size: 20px;
+  font-weight: bold;
+;
+  }
+.form-category{
+  color: #9cbe7f;
+  font-size: 20px;
+  font-weight: bold;
+}
+.form-category select{
+  color: #9cbe7f;
+  border: #9cbe7f solid 1px;
+  font-size: 15px;
+  margin-left: 5px;
+  width: 110px;
+  border-radius: 10px;
+  text-align: center;
+}
+.form-select{
+  margin-top: 40px;
+}
 .add-items-button button {
-  background-color: coral;
-  color: black;
+  background-color: #9cbe7f;
+  color: white;
+  font-weight: bold;
+  margin-top: 40px;
+  margin-left: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  border:none;
+  font-size: 20px;
+}
+/* BUTTONS */
+.remove-button button {
+  background-color: #9cbe7f;
+  color: white;
+  font-weight: bold;
+  border-radius: 10px;
+  border:none;
+  
+}
+
+.added-items {
+  /* border: solid red 2px; */
+  display: flex;
+  align-items: center;
+  width: 280px;
+  padding-left: 10px;
+  border-bottom: solid 1px #9cbe7f;
+
+  
+}
+
+.items-list {
+  border: solid #9cbe7f 2px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 10px;
+}
+
+.added-category {
+  /* border: solid blue 2px; */
+
+}
+.added-name{
+  /* border: solid blue 2px; */
+margin-left: 10px;
+font-size: 20px;
+color: #819c68
+}
+
+.items-list {
+  border: solid black 2px;
+  display: flex;
+  flex-direction: column;
 }
 
 .remove-all-button button {
   background-color: royalblue;
   color: black;
-}
-
-.added-items {
-  border: solid red 2px;
-}
-
-.items-list {
-  border: solid blue 2px;
 }
