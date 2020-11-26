@@ -1,0 +1,38 @@
+.add-todo {
+  display: flex;
+  width: 100%;
+  margin: 15px 0;
+  box-shadow: 3px 5px 6px 1px rgba(0, 0, 0, 0.3);
+}
+
+.add-todo-text {
+  width: 80%;
+  flex-grow: 1;
+  padding: 20px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.add-todo-button {
+  cursor: pointer;
+  width: 58px;
+  background: linear-gradient(#6c7a89, #333);
+  color: #e5e5e5;
+  border: none;
+  outline: none;
+}
+
+.add-todo-button:disabled {
+    cursor: auto;
+    opacity: 0.8;
+}
+
+.add-todo-button:enabled:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+.plus-sign {
+  font-size: 16px;
+}
