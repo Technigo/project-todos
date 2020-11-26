@@ -6,7 +6,7 @@ import { HeaderSection } from '../styledComponents/containers'
 export const Header = () => {
   return (
     <HeaderSection>
-      <Title>TODO</Title>
+      <Title>TO-DO LIST</Title>
     </HeaderSection>
   )
 }

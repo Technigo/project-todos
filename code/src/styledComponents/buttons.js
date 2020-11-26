@@ -6,22 +6,21 @@ export const AddButton = styled.button`
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  font-size: 30px;
+  font-size: 20px;
   margin-left: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `
 export const DeleteButton = styled.button`
   background: black;
   color: white;
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   display: flex;
-  place-content: center;
+  align-items: center;
   border-radius: 3px;
 `
 export const DeleteAllButton = styled(DeleteButton)`
-  width: 35px;
-  height: 35px;
-  font-size: 20px;
-  align-items: center;
   margin-left: 20px;
 `

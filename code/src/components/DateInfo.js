@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import DatePicker from 'react-datepicker'
+import React from 'react'
+
+import { Text } from '../styledComponents/texts'
 
 export const DateInfo = () => {
-  const [startDate, setStartDate] = useState(new Date());
+  const todaysDate = new Date()
+  const todaysDateString = todaysDate.toLocaleDateString()
+  
   return (
-    <DatePicker 
-      selected={startDate}
-      onChange={date => setStartDate(date)} 
-    />
+    <Text>{todaysDateString}</Text>
   )
 } 

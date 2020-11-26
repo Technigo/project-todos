@@ -1,15 +1,16 @@
 import styled from 'styled-components'
 
-export const TodoContainer = styled.ul`
-  border-bottom: 1px solid black;
-  width: 80%;
+export const ListContainer = styled.ul`
+  background: white;
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin: 4px;
-  padding: 20px;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30px;
   list-style-type: none;
-`
+  justify-content: center;
+  padding-left: 0;
+` 
+
 export const TodoItem = styled.li`
   font-size: 20px;
   font-family: 'Space Grotesk', sans-serif;

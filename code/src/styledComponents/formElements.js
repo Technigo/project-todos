@@ -32,6 +32,9 @@ export const StyledCheckbox = styled.div`
   ${Icon} { /* displays depending on if the state variable is checked or not*/
     visibility: ${(props) => (props.checked ? 'visible' : 'hidden')}
   }
+  ${HiddenCheckBox}:focus + & {
+    outline: 2px dotted black;
+  }
 `
 export const CheckboxContainer = styled.div`
   display: inline-block;
@@ -49,6 +52,7 @@ export const Label = styled.label`
   font-family: 'Space Grotesk', sans-serif;
   font-weight: bold;
   font-size: 20px;
+  padding-top: 10px;
 `
 export const InputField = styled.input`
   height: 40px;
@@ -57,7 +61,4 @@ export const InputField = styled.input`
   font-family: 'Space Grotesk', sans-serif;
   font-weight: lighter;
   padding-left: 10px;
-`
-export const InputWrapper = styled.div`
-  display: flex;
 `

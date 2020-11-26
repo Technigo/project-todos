@@ -1,29 +1,28 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import { todos } from 'reducers/todos'
 import { CustomCheckbox } from './CustomCheckbox'
-import { TodoContainer, TodoItem } from '../styledComponents/listElements'
+import { TodoItem } from '../styledComponents/listElements'
+import { TodoContainer } from '../styledComponents/containers'
 import { DeleteButton } from '../styledComponents/buttons'
 
-export const Item = ({ itemIndex }) => {
+export const Item = ({ item }) => {
   const dispatch = useDispatch()
 
-  const item = useSelector((store) => store.todos.list.todoItems[itemIndex])
-
-  const onRemoveClicked = event => {
+  const onRemoveClicked = () => {
    dispatch(todos.actions.removeTodoItem({
-     itemIndex: itemIndex
+     itemId: item.id
    }))
   }
 
-  const handleOnChange = event => {
+  const handleOnChange = () => {
     dispatch(todos.actions.setDone({ 
-      itemIndex: itemIndex,
+      itemId: item.id,
       done: !item.done
     }))
   }
-/*van video 1.09 ternary operator className */
+  
   return (
     <TodoContainer>
       <CustomCheckbox 
@@ -36,8 +35,3 @@ export const Item = ({ itemIndex }) => {
   )
 }
 
-/*    <input
-          type='checkbox'
-          onChange={handleOnChange}
-          checked=
-        /> */

@@ -14,20 +14,27 @@ export const Input = () => {
 
   const handleOnSubmit = event => {
     event.preventDefault()
-    console.log(inputValue)
     dispatch(
       todos.actions.addTodoItem({
+        id: Date.now(),
         description: inputValue,
         done: false
       })
     )
+    dispatch(
+      todos.actions.showList()
+    )
     setInputValue('')
+  }
+
+  const onRemoveClick = () => {
+    dispatch(todos.actions.removeAll())
   }
 
   return (
     <FormContainer>
       <Form onSubmit={handleOnSubmit}>
-        <Label> Add Todo
+        <Label> ADD TO-DO
           <Wrapper>
             <InputField
             type='text'
@@ -45,7 +52,7 @@ export const Input = () => {
             <Text>
               Delete All
             </Text>
-            <DeleteAllButton>
+            <DeleteAllButton onClick={onRemoveClick}>
               X
             </DeleteAllButton>
           </Wrapper>
