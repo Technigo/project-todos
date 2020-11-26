@@ -10,6 +10,8 @@ import { Checkbox } from './Checkbox'
 export const Item = ({ item }) => {
   const dispatch = useDispatch()
   const [removeBtn, setRemoveBtn] = useState(true)
+  //Where to put this?
+  const [complete, setComplete] = useState(false)
 
   return (
     <Listelement>

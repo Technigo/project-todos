@@ -10,6 +10,7 @@ import { Button } from '../library/Button'
 
 export const UserInput = () => {
   const [task, setTask] = useState('')
+  const [addBtn, setAddBtn] = useState(true)
 
   const dispatch = useDispatch()
 
@@ -34,7 +35,7 @@ export const UserInput = () => {
         onChange={(event) => setTask(event.target.value)}
         value={task}
       ></textarea>
-      <Button type='submit'>Add Task</Button>
+      <Button addBtn={addBtn} type='submit'>Add Task</Button>
     </form>
   )
 }

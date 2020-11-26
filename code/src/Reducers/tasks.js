@@ -26,7 +26,7 @@ export const tasks = createSlice({
   reducers: {
     addItem: (state, action) => {
       const { taskInfo } = action.payload
-      state.items.push(taskInfo)
+      state.items= [... state.items, taskInfo]
     },
     removeItem: (state, action) => {
       const { id } = action.payload
