@@ -17,7 +17,7 @@ export const ItemsAll = ({taskIndex}) => {
 	const handleCheckbox = () => {
 		dispatch(
 			tasks.actions.checkTodoTask({
-				taskIndex:taskIndex,
+				taskIndex: taskIndex,
 				complete: !task.complete
 			})
 		)
@@ -39,11 +39,10 @@ export const ItemsAll = ({taskIndex}) => {
 						{task.text}
 					</p>
 				</div>
-
 				<button type="button"
 				className="taskRemoved"
 				onClick={handleRemove}>
-					X
+					<span role='img' aria-label='x'>❌</span>
 				</button>
 			</div>
 

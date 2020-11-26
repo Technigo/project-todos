@@ -28,7 +28,7 @@ return (
 		<div className="taskAdded">
 			<textarea type="text" required
 			value={newTask}
-			placeholder="Do next . . ."
+			placeholder="Do next . . .✏️"
 			onChange={(event)=>
 			setNewTask(event.target.value)}/>
 
