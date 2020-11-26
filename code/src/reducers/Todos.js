@@ -11,17 +11,28 @@ const initialState = {
 
 export const todos = createSlice ({
   name: 'todos',
-  initialState: {
-    username: "Johanna",
-    items: [
-      { id: 1, text: 'The first todo' },
-      { id: 2, text: 'The second todo' },
-      { id: 3, text: 'The third todo' },
-    ]
-  },
+  initialState,
   reducers: {
-    removeOne: (state, action) => {
-      state.items.pop()
+    removeItem: (store, action) => {
+      console.log(store, action)
+      const itemId = action.payload
+
+      const filteredList = store.items.filter(item => item.id !== itemId)
+      console.log(filteredList)
+
+      store.items = filteredList
+    },
+
+    addItem: (store, action) => {
+      const newItem = {
+        id: Math.max(...store.items.map(item => item.id)) +1,
+        name: action.payload,
+        isComplete: false
+      }
+
+      const newItemsList = [...store.items, newItem]
+
+      store.items = newItemsList
     }
   }
 })
