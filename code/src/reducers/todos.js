@@ -1,28 +1,32 @@
 import { createSlice } from "@reduxjs/toolkit";
-import uniqid from "uniqid"
-
+import uniqid from "uniqid";
+import moment from "moment";
 
 const initialState = {
     items: [
         {
             id: uniqid(),
             text: "Wash the dishes",
-            checked: true
+            checked: true,
+            date: moment()
         },
         {
             id: uniqid(),
             text: "Buy grocery",
-            checked: true
+            checked: true,
+            date: moment()
         },
         {
             id: uniqid(),
             text: "Make dinner",
-            checked: false
+            checked: false,
+            date: moment()
         },
         {
             id: uniqid(),
             text: "Go to sleep",
-            checked: false
+            checked: false,
+            date: moment()
         }
     ]
 }
@@ -52,10 +56,28 @@ export const todos = createSlice({
                     payload: {
                         id: uniqid(),
                         text: text,
-                        checked: false
+                        checked: false,
+                        date: moment()
                     }
                 };
             }
+        },
+        allDone: (state, action) => {
+            state.items = state.items
+                .map((item) => {
+                    item.checked = true
+                    return item
+                })
+        },
+        allUndone: (state, action) => {
+            state.items = state.items
+                .map((item) => {
+                    item.checked = false
+                    return item
+                })
+        },
+        deleteAll: (state, action) => {
+            state.items = []
         }
     }
-});
+})

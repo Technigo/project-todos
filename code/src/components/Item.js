@@ -9,11 +9,18 @@ const CheckboxContainer = styled.div`
     flex-direction: row;
     align-items: baseline;
     padding: 20px;
+    text-decoration: underline;
 `;
 
 const Input = styled.input`
     margin-right: 15px;
 `;
+
+const Date = styled.div`
+    font-size: 20px;
+    padding: 20px;
+`;
+
 const RemoveItemButton = styled.button`
     align-self: center;
     padding: 8px;
@@ -21,7 +28,7 @@ const RemoveItemButton = styled.button`
     font-size: 20px;
     color: black;
     border-radius: 25px;
-    background-color: red;
+    background-color: #ff0000c9;
     box-shadow: 0 16px 32px 0;
     &:hover {
         background-color:  #961111;
@@ -62,6 +69,7 @@ export const Item = ({ item }) => {
                 </Input>
                 <label>{item.text}</label>
             </CheckboxContainer>
+            <Date>Created: {item.date.format('MMMM Do YYYY, h:mm:ss a')}</Date>
             <RemoveItemButton onClick={handleDeleteItem}>Delete Item</RemoveItemButton>
         </ItemContainer>
 

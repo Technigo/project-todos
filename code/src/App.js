@@ -7,6 +7,7 @@ import { todos } from "./reducers/todos";
 import { List } from "./components/List";
 import { AddItem } from "./components/AddItem";
 import { CountItems } from "./components/CountItems";
+import { Btns } from "./components/Btns";
 
 const reducer = combineReducers({ todos: todos.reducer });
 const store = configureStore({ reducer });
@@ -25,6 +26,7 @@ export const App = () => {
       <Container>
         <AddItem />
         <CountItems />
+        <Btns />
         <List />
       </Container>
     </Provider>

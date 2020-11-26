@@ -8,12 +8,12 @@ const AllTodos = styled.div`
 `;
 
 const Complited = styled(AllTodos)`
-    color: #25e025;
+    color: #2caf2c;
     text-shadow: 2px 2px #0e0d0d;
 `;
 
 const Uncomplite = styled(AllTodos)`
-    color: red;
+    color: #d42929;
     text-shadow: 2px 2px #0e0d0d;
 `;
 
@@ -26,7 +26,6 @@ export const CountItems = () => {
     return (
         <div>
             <AllTodos>All Todos: {items.length}</AllTodos>
-
             <Complited>Complited Todos: {complited}</Complited>
             <Uncomplite>Uncoplite Todos: {uncomplite}</Uncomplite>
         </div>

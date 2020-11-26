@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
+
 import { todos } from "../reducers/todos";
 
 const AddItemBtn = styled.button`
@@ -11,7 +12,7 @@ const AddItemBtn = styled.button`
     font-size: 22px;
     color: black;
     border-radius: 25px;
-    background-color: #25e025;
+    background-color: #1fbf1fd6;
     box-shadow: 0 16px 32px 0;
     &:hover {
         background-color:  #2a772a;
