@@ -5,20 +5,13 @@ const initialState = {
     name: "Todo list",
     items: [],
     categories: ['Personal', 'School', 'Work', 'Home', 'Other' ],
-    //homePage: false,
   }
 };
 
-// const filters = {
-//   ALL: "all",
-//   COMPLETED: "completed",
-//   NOT_COMPLETED: "not completed",
-// }
 
 export const todos = createSlice({
   name: "todos",
   initialState: initialState,
-  //filters: filters,
   reducers: {
     addTodo: (state, action) => {
       const { todoItemInfo } = action.payload;
@@ -65,6 +58,20 @@ export const todos = createSlice({
       state.homePage = true;
     },
 
+    filterTodoStatus: (state, action) => {
+      const { filter } = action.payload; 
+      if (filter === "not complete") {
+        console.log("filter not complete")
+        return state.list.items.filter(item => !item.complete)
+      } else if (filter === "complete" ) {
+        console.log("filter complete")
+        return state.list.items.filter(item => item.complete) 
+      } else return state.list.items
+    }
+    
+    
+
+
     // filterTodoStatus: (state, action) => {
     //   const filter = action.payload;
     //   switch (filter) {
@@ -80,28 +87,6 @@ export const todos = createSlice({
     //   }
     // },
     
-    // navHomePage: (state) => {
-    //   state.homePage = false;
-    // }
+  
   }
 })
-
-/*ATT GÖRA*/
-//lägg till mer filter möjligheter DUE DATE(är detta möjligt), COMPLETE/NOT COMPLETE
-
-
-
-/*HAR VI GJORT*/
-//Skapa en landning sida som visar alla todos (check)
-//visa dagens datum (check)
-//filtrera på kategori  (första sidan) (check)
-//När jag vill lägga till todo skickas jag till sida 2 (check)
-//när jag lägger till todo skickas tillbaka till första sidan (check)
-//möjlighet att makerar klar, ta bort alt ta bort alla
-//Välja Due Date på sida två när jag skapar min kategori (datepicker)
-//möjlighet att filterar på ALL kategorier
-//Ta bort category och description i initialState. (starta tomt) (null???)
-//confirmation alert när man klickar på "remove all"
-
-
-

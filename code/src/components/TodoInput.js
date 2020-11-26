@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 import DatePicker from 'react-date-picker';
 import { v4 as uuidv4 } from 'uuid'; //uniqe ID
 
@@ -38,6 +38,7 @@ const TodoInput = () => {
     )
     setTodoInput('');
     history.goBack();
+    console.log(todoInput)
   };
 
   return (

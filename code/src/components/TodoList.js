@@ -1,58 +1,61 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import styled from 'styled-components';
 import ActionButtons from './ActionButtons';
 import TodoItem from './TodoItem';
+import { todos } from '../reducers/todos';
 
 import { FilterSelect } from '../lib/Select';
 import EmptyTodoList from './EmptyTodoList';
 
 const TodoList = () => {
-  //const dispatch = useDispatch();
+  const dispatch = useDispatch();
   const [filteredCategory, setFilteredCategory] = useState('')
   const [filteredComplete, setFilteredComplete] = useState('')
 
-  ////const FILTER_COMPLETE = "completed"
-  ////const FILTER_NOT_COMPLETE = "not completed"
-  //const [filter, setFilter] = useState('')
+//filterStatus
+  useEffect(() => {
+    dispatch (
+      todos.actions.filterTodoStatus({
+        filter: filteredComplete
+      })
+    ) 
+  },[filteredComplete])
 
-  //const list = useSelector(store => store.todos.list.items)
-
-  // const onChangeFilter = (event) => {
-  //   dispatch (
-  //     todos.actions.filterTodoStatus({
-  //       filter: filteredComplete,
-  //     })
-  //   ) 
-  // }
+  const onChangeFilter = (value) => {
+    setFilteredComplete(value);    
+  }
+  console.log(filteredComplete)
 
 
 
   //const filterTodo = useSelector(store => )
   
-  const list = useSelector(store => {
-    if (filteredComplete === 'completed') return store.todos.list.items.filter(item => item.complete)
-    else if (filteredComplete === 'not completed') return (store.todos.list.items.filter(item => !item.complete))
-    else if (filteredCategory) return store.todos.list.items.filter(item => item.category === filteredCategory)
-    else if (filteredCategory === 'all') return store.todos.list.items 
-    else return store.todos.list.items 
-  });
+  // const list = useSelector(store => {
+  //   if (filteredComplete === 'completed') return store.todos.list.items.filter(item => item.complete)
+  //   else if (filteredComplete === 'not completed') return (store.todos.list.items.filter(item => !item.complete))
+  //   else if (filteredCategory) return store.todos.list.items.filter(item => item.category === filteredCategory)
+  //   else if (filteredCategory === 'all') return store.todos.list.items 
+  //   else return store.todos.list.items 
+  // });
+  // console.log(list)
+
+  const list = useSelector(store => store.todos.list.items);
   console.log(list)
 
   const todoList = useSelector((store) => store.todos.list);
   console.log(todoList)
+
   const listLength = todoList.items.length;
   console.log(todoList.items.length)
 
-  const categories = useSelector(store => store.todos.list.categories)
+  const categories = useSelector((store) => store.todos.list.categories)
   console.log(`TodoList: ${categories}`)
 
   return (
     <Container>
-      {listLength === 0 
-      ? <EmptyTodoList /> 
-      : 
+      {listLength === 0 ? <EmptyTodoList /> : 
       <>
       <Filter>
         {/* <FilterLabel htmlFor="category">Category: */}
@@ -73,12 +76,13 @@ const TodoList = () => {
         <FilterSelect 
           name="status" 
           id="status" 
-          onChange={(event) => setFilteredComplete(event.target.value)} 
-          //onChange={(event) => onChangeFilter(event.target.value)}
+          //onChange={(event) => setFilteredComplete(event.target.value)}
+          
+          onChange={(event) => onChangeFilter(event.target.value)}
           value={filteredComplete}>
           <option value='status'>Status</option>
-          <option value='completed'>Completed</option>
-          <option value='not completed'>Not completed</option>
+          <option value='complete'>Completed</option>
+          <option value='not complete'>Not completed</option>
         </FilterSelect>
         {/* </FilterLabel> */}
       </Filter>
