@@ -33,6 +33,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   );
 };
 
+// Hides the real checkbox
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   border: 0;
   clip: rect(0 0 0 0 );
@@ -46,12 +47,14 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   width: 1px;
 `;
 
+// Svg for creating the 'ticker'
 const Icon = styled.svg`
   fill: none;
   stroke: white;
   stroke-width: 2px;
 `;
 
+// The styled Checkbox
 const StyledCheckbox = styled.div`
   display: inline-block;
   width: 16px;

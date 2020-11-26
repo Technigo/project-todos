@@ -23,8 +23,7 @@ export const AddTask = () => {
 
   return (
     <FormWrapper onSubmit={handleSubmit}>
-
-      <Category>
+      <label>
         <Selector
           value={category}
           onChange={(event) => setCategory(event.target.value)}
@@ -33,8 +32,7 @@ export const AddTask = () => {
           <option value='School:'>School</option>
           <option value='Private:'>Private</option>
         </Selector>
-      </Category>
-
+      </label>
       <label>
         <TaskInput
           type='text'
@@ -43,7 +41,7 @@ export const AddTask = () => {
           placeholder=' Add new task...'
         />
       </label>
-      <Bottom>
+      <BottomWrapper>
         <Label>Due:</Label>  
         <Datepicker 
           onChange={(date) => setDueDate(date)} 
@@ -54,7 +52,7 @@ export const AddTask = () => {
         <AddButton type='submit'>Add task 
           <AddEmoji role="img" aria-label="Add emoji"> ➕</AddEmoji>
         </AddButton>
-      </Bottom>
+      </BottomWrapper>
     </FormWrapper>
   );
 };
@@ -77,9 +75,6 @@ const TaskInput = styled.input`
   font-size: 14px;
 `;
 
-const Category = styled.label`
-`;
-
 const Selector = styled.select`
   margin: 0 6px 10px 0;
   font-family: 'PT Sans', sans-serif;
@@ -92,7 +87,7 @@ const Selector = styled.select`
   cursor: pointer;
 `;
 
-const Bottom = styled.div`
+const BottomWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -118,6 +113,9 @@ const AddButton = styled.button`
     border: 1px solid #000;
   }
 
+  @media (max-width: 380px) {
+    width: 80px;
+  }
   @media (max-width: 321px) {
     width: 60px;
   }

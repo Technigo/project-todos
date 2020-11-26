@@ -5,6 +5,9 @@ import { tasks } from 'reducers/tasks';
 
 import { Button, Emoji } from 'styles/GlobalStyles';
 
+// This component is not used right now due to problems with the customized checkboxes, 
+// I will keep the component to see if I have time to fix it later on
+
 export const MarkAll = () => {
   const items = useSelector((store) => store.tasks.items);
   const enabled = items.length > 0;

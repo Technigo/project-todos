@@ -9,13 +9,11 @@ import { Footer } from 'components/Footer';
 
 import { tasks } from 'reducers/tasks';
 
-// Old store code
 const reducer = combineReducers({
   tasks: tasks.reducer
 });
 
-// Setup of the store - with local storage
-// Retrieves the localStorage and use it as our initial state
+// Retrieves the localStorage and use it as the initial state
 const persistedStateJSON = localStorage.getItem('task-list');
 let persistedState = {};
 
@@ -23,14 +21,14 @@ if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON);
 }
 
-// 2. Create the store using initital state
+// Creates the store using initital state
 const store = createStore(
   reducer, 
   persistedState, 
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
-// 3. Store the state in localStorage on any redux state change
+// Stores the state in localStorage on any change in the redux state 
 store.subscribe(() => {
   localStorage.setItem('task-list', JSON.stringify(store.getState()));
 });

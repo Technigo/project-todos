@@ -22,7 +22,7 @@ export const tasks = createSlice({
     markCompleted: (state, action) => {
       const foundTask = state.items.find((item) => item.id === action.payload)
     
-      // Toogles between completed and not completed
+      // Toogles between completed and not completed for the specific task
       if (foundTask) {
         foundTask.complete = !foundTask.complete
       };
@@ -30,10 +30,11 @@ export const tasks = createSlice({
     removeAll: (state) => {
       state.items = []
     },
-    markAll: (state) => {
-      state.items.map((item) => (item.complete = true));
-      state.items.map((task) => (task.complete = true));
-    },
+    // Mark All button is not used right now
+      //markAll: (state) => {
+        //state.items.map((item) => (item.complete = true));
+        //state.items.map((task) => (task.complete = true));
+      //},
     unMarkAll: (state) => {
       state.items.map((item) => (item.complete = false));
     },

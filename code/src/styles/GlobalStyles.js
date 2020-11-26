@@ -13,8 +13,10 @@ export const Button = styled.button`
   cursor: pointer;
   display: flex;
   align-items: center;
+  justify-content: center;
   font-family: 'PT Sans', sans-serif;
   font-size: 14px;
+  width: 40%;
 
   &:hover {
     border: 1px solid #000;
