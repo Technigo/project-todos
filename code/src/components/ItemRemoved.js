@@ -17,7 +17,7 @@ export const ItemRemoved = () => {
 	}
 return (
 	<>
-	<button type="button" onClick={removeItems}>
+	<button type="button" onClick={removeItems} disabled={clearTasks===0}>
         remove all tasks
       </button>
 	</>
