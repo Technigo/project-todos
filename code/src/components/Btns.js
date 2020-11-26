@@ -27,6 +27,7 @@ const DeleteAllItems = styled(AllDoneBtn)`
     background-color: #ff0000c9;
     &:hover {
         background-color:  #961111;
+    }
 `;
 
 export const Btns = () => {
