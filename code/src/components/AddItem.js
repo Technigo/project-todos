@@ -30,7 +30,8 @@ export const AddItem = () => {
     const [value, setValue] = useState("");
 
     const handleAddItem = () => {
-        dispatch(todos.actions.addItemFunc(value))
+        dispatch(todos.actions.addItemFunc(value));
+        setValue("");
     }
 
     return (

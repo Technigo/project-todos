@@ -45,7 +45,7 @@ export const todos = createSlice({
         },
         addItemFunc: {
             reducer(state, action) {
-                state.items = [...state.items, action.payload];
+                state.items = [action.payload, ...state.items];
             },
             prepare(text) {
                 return {
