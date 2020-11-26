@@ -4,21 +4,32 @@ import {useSelector, useDispatch} from 'react-redux'
 import {todos} from 'reducer/todos'
 
 const ItemContainer = styled.li`
-    width: 100%
-    align-self: flex-end;
-    padding: 20px;
-    margin: 8px;
-    font-size: 20px;
+
+    width: 100%;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    padding: 26px;
+    margin-bottom: 15px;
+    font-size: 16px;
     color: #3f3f3f;
     background-color: #E1C9FD;
     border-radius: 45px;
-    list-style-type:none;
+    list-style-type: none;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
 
     ::first-letter {
         text-transform: uppercase;
-    }
-
+    } // Funkar inte på flex
     
+`
+
+const RemoveButton = styled.button`
+    background-color: Transparent;
+    border: none;  
+    color: #fff;
+    font-size: 50px;
 `
 
 
@@ -33,7 +44,7 @@ export const Item = ({ item }) => {
 
     return (
         <ItemContainer>{item.text}
-            <button onClick={() => dispatch(todos.actions.removeOne(item.id))}>Remove One</button>
+            <RemoveButton onClick={() => dispatch(todos.actions.removeOne(item.id))}>-</RemoveButton>
         </ItemContainer>
     )
 }

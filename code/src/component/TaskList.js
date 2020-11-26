@@ -6,10 +6,23 @@ import {todos} from 'reducer/todos'
 import {Item} from './Item'
 
 const TaskListContainer = styled.div`
-    width: 80%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-content: center;
+    padding: 35px;
+    box-sizing: border-box;
+`
+
+const RemoveAllButton = styled.button`
+    width: 140px;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #2D2D2C;
+    border: none;  
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
 `
 
 export const TaskList = () => {
@@ -23,7 +36,7 @@ export const TaskList = () => {
                 {items.map((item, index) => (
                     <Item key={index} item={item}></Item>
                 ))}
-                <button onClick={() => dispatch(todos.actions.removeAll())}>Remove All</button>
+                <RemoveAllButton onClick={() => dispatch(todos.actions.removeAll())}>Remove All</RemoveAllButton>
             </TaskListContainer> 
         )
 }

@@ -7,19 +7,19 @@ export const todos = createSlice({
         items: [
             {
                 id: 1, 
-                text: 'the first',
+                text: 'Add your first task',
                 category: 'task',
                 isComlete: false
             },
             {
                 id: 2, 
-                text: 'the secord',
+                text: 'Walk the dog',
                 category: 'task',
                 isComlete: false
             },
             {
                 id: 3, 
-                text: 'the third',
+                text: 'Treat yourself',
                 category: 'task',
                 isComlete: false
             },

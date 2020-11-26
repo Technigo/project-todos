@@ -4,29 +4,39 @@ import { injectGlobal } from 'styled-components'
 import {useSelector, useDispatch} from 'react-redux'
 import {todos} from 'reducer/todos'
 
-// injectGlobal`
-//   @import url(‘https://fonts.googleapis.com/css?family=Montserrat:400,900|Roboto');
-//   body {
-//     padding: 0;
-//     margin: 0;
-//     font-family: Roboto, sans-serif;
-//   }
-//   h1 {
-//     font-family: Montserrat;
-//   }
-// `
+
 
 const HeadingContainer = styled.div`
-
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  padding: 45px 35px 0 35px;
+  box-sizing: border-box;
 `
+
+const Heading = styled.h1`
+  font-size: 48px;
+  font-weight: 600;
+  margin: 50px 0 0 0;
+`
+
+const TodosCount = styled.h2`
+  font-size: 18px;
+  font-weight: 400;
+  margin: 10px 0 40px 0;
+`
+
+
+
 export const StartHeading = () => {
   const items = useSelector(store => store.todos.items)
   const todosCount = items.length
 
     return (
-      <div>
-          <h1>Your what to do</h1>
-          <h2>{todosCount} things to do</h2>
-      </div>
+      <HeadingContainer>
+          <Heading>Your<br/>what to do</Heading>
+          <TodosCount>{todosCount} things to do</TodosCount>
+      </HeadingContainer>
     )
   }
