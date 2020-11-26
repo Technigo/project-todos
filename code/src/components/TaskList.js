@@ -6,13 +6,19 @@ import { TaskListItem } from './TaskListItem';
 export const TaskList = () => {
   const allTasks = useSelector((store) => store.todos.tasks);
 
-  return (
-    <ul>
-      {allTasks.map((task) => (
-        <TaskListItem 
-          key={task.id}
-          task={task} />
-      ))}
-    </ul>
-  )
-}
+  if (allTasks.length === 0) {
+    return (
+      <p>Nothing to do? Great, go enjoy life! 🎷</p>
+    )
+  } else {
+    return (
+      <ul>
+        {allTasks.map((task) => (
+          <TaskListItem 
+            key={task.id}
+            task={task} />
+        ))}
+      </ul>
+    )
+  }
+};

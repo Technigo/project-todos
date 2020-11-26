@@ -1,10 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import { BottomContainer } from '../styles/bottomStyles';
 import { todos } from '../reducers/todos';
 
 export const Bottom = () => {
+  const allTasks = useSelector((store) => store.todos.tasks);
   const dispatch = useDispatch();
 
   const onMarkAllDone = () => {
@@ -17,8 +18,16 @@ export const Bottom = () => {
 
   return(
     <BottomContainer>
-      <button onClick={onMarkAllDone}>Mark all as done</button>
-      <button onClick={onClearList}>Clear list</button>
+      <button 
+        onClick={onMarkAllDone}
+        disabled={allTasks.length === 0 ? true : false}
+      >Mark all as done
+      </button>
+      <button 
+        onClick={onClearList}
+        disabled={allTasks.length === 0 ? true : false}
+      >Clear list
+      </button>
     </BottomContainer>
   )
 }
