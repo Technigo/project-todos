@@ -7,9 +7,7 @@ export const Title = styled.h1`
   color: white;
   padding-top: 30px;
 `
-export const Emoji = styled.span.attrs({ 
-  ariaLabel: 'emoji'
- })`
+export const Emoji = styled.span`
   font-size: 40px;
 `
 

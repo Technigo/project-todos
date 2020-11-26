@@ -11,10 +11,11 @@ export const ClearAllButton = () => {
   
   const handleOnClick = () => {
     swal({
-      title:'Clear my todos!',
+      title:'Clearing your todos!',
       text:'Are you sure?',
       buttons: ['No!', 'Oh yes!'], 
       dangerMode: true,
+      icon: 'success'
     })
       .then((willDelete) => {
           if (willDelete) {
