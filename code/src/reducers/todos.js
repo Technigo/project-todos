@@ -24,7 +24,7 @@ export const todos = createSlice({
       store.items = filteredList;
     },
 
-    removeAll: (store, action) => {
+    removeAll: store => {
       store.items = [];
       //return initialState;
     },
@@ -49,7 +49,14 @@ export const todos = createSlice({
       if (foundItem) {
         foundItem.isComplete = !foundItem.isComplete;
       }
-      //store.items.isComplete = !store.items.isComplete;
+    },
+
+    setAllComplete: store => {
+      store.items.map(item => (item.isComplete = true));
+    },
+
+    setAllIncomplete: store => {
+      store.items.map(item => (item.isComplete = false));
     },
   },
 });
