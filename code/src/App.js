@@ -6,13 +6,12 @@ import {todos} from 'reducers/todos'
 import { Header } from 'components/Header'
 import { List } from 'components/List'
 import { AddItem } from 'components/AddItem'
- 
+
 const reducer = combineReducers({ todos: todos.reducer })
 const store = configureStore({ reducer })
 
 export const App = () => {
   return (
-    //we cant use dispatch here or useselector 
    <Provider store={store}>
      <Header></Header>
      <List></List>

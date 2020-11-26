@@ -2,9 +2,10 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import  { todos } from 'reducers/todos'
 
-import { Container } from '../shared/Container'
-import { TodoContainer, TodoText } from '../styling/ItemStyling'
+import { CheckBox } from './Checkbox'
+import { TodoContainer, TodoText, Container } from '../styling/ItemStyling'
 import Trash from '../assets/trash-can.png'
+
 
 export const Item = ({ item }) => {
   const dispatch = useDispatch()
@@ -16,46 +17,21 @@ export const Item = ({ item }) => {
   const handleRemoveButtonClick = () => {
     dispatch(todos.actions.removeItem(item.id))
   }
-
+    
   return (
-
   <Container>
-    <TodoContainer>
-    <div className="round">
-    <label > 
-      <input
-        type="checkbox"
-        id="checkbox"
-        checked = {item.completed} 
-        onChange= {handleCheckboxClick}/>
-      <label htmlFor="checkbox" ></label>
-  </label>
-    </div>
-       
-      <TodoText>
-        {item.text}
-      </TodoText>
-
-        <button 
-          type="button"
-          className="remove"
-          onClick={handleRemoveButtonClick}>
-          <img src={Trash} alt="trashcan"/>
-        </button>
+    <TodoContainer> 
+      <CheckBox isChecked={item.complete ? 'checked' : "" } onChange={handleCheckboxClick}/>
+        <TodoText>{item.text}</TodoText>
+          <button 
+            type="button"
+            className="remove"
+            onClick={handleRemoveButtonClick}>
+            <img src={Trash} alt="trashcan"/>
+          </button>
     </TodoContainer>
   </Container>
-  
   )
 }
 
-/*
-{item.id}
 
- <label className ="checkBox"> 
-        <input
-          type="checkbox"
-          checked = {item.completed}
-          onChange= {handleCheckboxClick}
-          />
-  </label>
-*/

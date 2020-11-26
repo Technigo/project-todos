@@ -1,5 +1,11 @@
 import styled from 'styled-components'
 
+export const Container = styled.div`
+  display:flex;
+  justify-content:center;
+  background: ${(props) =>props.background || '#fff'}
+`
+
 export const TodoContainer = styled.li`
   display:flex;
   flex-direction:row; 
@@ -26,8 +32,8 @@ export const TodoText = styled.p `
 `
 
 export const ListActionButton = styled.button `
-   align-self: center; 
-   padding: 4px;
-   margin: 2px; 
-   font-size: 22px; 
+  align-self: center; 
+  padding: 4px;
+  margin: 2px; 
+  font-size: 22px; 
 `

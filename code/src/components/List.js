@@ -14,6 +14,13 @@ const ListContainer = styled.ul`
 
 export const List = () => {
   const items = useSelector((store) => store.todos.items)
+  const moreTodos = items.filter((item) => item.id !== true)
+
+    if (moreTodos.length === 0) {
+        return (
+            <p className="amountOf">Keep it up, here there will be an animation!</p>
+        )
+    }
 
   return (
     <ListContainer>
@@ -23,3 +30,6 @@ export const List = () => {
     </ListContainer>
     )
   }
+
+
+

@@ -18,22 +18,24 @@ export const Button = styled.button`
   font-size: 16px;
   transition: all 150ms;
   color:white;
+
   &:hover {
     background: black;
   }
 `
 
 export const TextInput = styled.input`
-width: 230px;
-height: 30px;
-margin: 20px 0;
-padding: 5px;
-border: none;
-border-radius: 7px;
-background: #F4F4F4;
-font-size: 16px;
-@media (min-width: 667px){
-  width: 320px;
-}
+  width: 230px;
+  height: 30px;
+  margin: 20px 0;
+  padding: 5px;
+  border: none;
+  border-radius: 7px;
+  background: #F4F4F4;
+  font-size: 16px;
+
+  @media (min-width: 667px){
+    width: 320px;
+  }
 `
  

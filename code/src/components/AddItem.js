@@ -9,24 +9,24 @@ export const AddItem = () => {
     const dispatch = useDispatch()
 
     const handleSubmit = (event) => {
-        event.preventDefault()
-        dispatch(todos.actions.addItem({text}))
-        setText('')
+      event.preventDefault()
+      dispatch(todos.actions.addItem({text}))
+      setText('')
     }
     return(
-        <Form onSubmit ={handleSubmit}>
-            <label>
-                <TextInput
-                  placeholder="New todo"
-                  type="text"
-                  value={text}
-                  onChange={(event) => setText(event.target.value)}
-                />
-            </label> 
-                <Button
-                  type="submit">
-                  +
-                </Button>
-        </Form>
+      <Form onSubmit ={handleSubmit}>
+        <label>
+          <TextInput
+            placeholder="New todo"
+            type="text"
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+          />
+        </label> 
+          <Button
+            type="submit">
+            +
+          </Button>
+      </Form>
     )
 }
