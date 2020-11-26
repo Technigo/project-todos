@@ -7,6 +7,7 @@ export const AddButton = styled.button`
   width: 40px;
   height: 40px;
   font-size: 30px;
+  margin-left: 20px;
 `
 export const DeleteButton = styled.button`
   background: black;
@@ -16,4 +17,11 @@ export const DeleteButton = styled.button`
   display: flex;
   place-content: center;
   border-radius: 3px;
+`
+export const DeleteAllButton = styled(DeleteButton)`
+  width: 35px;
+  height: 35px;
+  font-size: 20px;
+  align-items: center;
+  margin-left: 20px;
 `

@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector } from 'react-redux'
 
+import { Text } from '../styledComponents/texts'
+
 export const Summary = () => {
   const list = useSelector((store) => store.todos.list)
 
@@ -8,7 +10,7 @@ export const Summary = () => {
 
   return (
     <div>
-      <p>{numOfCompleted}/{list.todoItems.length} completed</p>
+      <Text>{numOfCompleted}/{list.todoItems.length} completed</Text>
     </div>
   )
 }

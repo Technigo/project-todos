@@ -3,11 +3,19 @@ import styled from 'styled-components'
 export const MainContainer = styled.main`
   background: white;
   width: 100%;
-  padding: 10px;
+  padding: 15px;
+  border: 2px solid black;
+  box-shadow: 0 2px 2px 2px black;
 
   @media (min-width: 667px){
-    width: 80%;
+    width: 50%;
+    margin: auto;
+    margin-top: 20px;
   }
+  @media (min-width: 1024px){
+    width: 30%;
+  }
+
 `
 
 export const HeaderSection = styled.header`
@@ -40,4 +48,9 @@ export const FormContainer = styled.section`
   width: 100%;
   border-top: 2px solid black;
   border-bottom: 2px solid black;
+  padding-bottom: 20px;
+`
+export const Wrapper = styled.div`
+  display: flex;
+  align-items: baseline;
 `

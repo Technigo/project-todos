@@ -25,7 +25,8 @@ export const StyledCheckbox = styled.div`
   display: inline-block;
   width: 20px;
   height: 20px;
-  background: ${props => (props.checked ? 'black' : 'grey')};
+  background: ${props => (props.checked ? 'black' : 'lightgrey')};
+  border: ${props => (props.checked ? 'none' : 'black 0.5px solid')};
   border-radius: 3px;
   transition: all 150ms;
   ${Icon} { /* displays depending on if the state variable is checked or not*/
@@ -59,5 +60,4 @@ export const InputField = styled.input`
 `
 export const InputWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
 `

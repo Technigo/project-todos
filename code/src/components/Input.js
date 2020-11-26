@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { todos } from '../reducers/todos'
-import { Form, InputField, Label, InputWrapper } from '../styledComponents/formElements'
-import { FormContainer } from '../styledComponents/containers'
-import { AddButton } from '../styledComponents/buttons'
+import { Form, InputField, Label } from '../styledComponents/formElements'
+import { FormContainer, Wrapper } from '../styledComponents/containers'
+import { AddButton, DeleteAllButton } from '../styledComponents/buttons'
+import { Text } from '../styledComponents/texts'
 
 export const Input = () => {
   const [inputValue, setInputValue] = useState('')
@@ -27,7 +28,7 @@ export const Input = () => {
     <FormContainer>
       <Form onSubmit={handleOnSubmit}>
         <Label> Add Todo
-          <InputWrapper>
+          <Wrapper>
             <InputField
             type='text'
             onChange={event => setInputValue(event.target.value)}
@@ -39,7 +40,15 @@ export const Input = () => {
             >
             +
             </AddButton>
-          </InputWrapper>
+          </Wrapper>
+          <Wrapper>
+            <Text>
+              Delete All
+            </Text>
+            <DeleteAllButton>
+              X
+            </DeleteAllButton>
+          </Wrapper>
         </Label>
       </Form>
     </FormContainer>
