@@ -26,7 +26,7 @@ const Header = () => {
       <Link to={'/create'}>
         <PlusIcon src="../assets/plus-icon.svg" alt="plus icon" role="button" onClick = {() => handleClick()}/> 
       </Link>
-     {/* <TodoSummary />  */}
+     <TodoSummary /> 
     </HeaderContainer>
   )
 }

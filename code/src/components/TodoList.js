@@ -11,47 +11,52 @@ import EmptyTodoList from './EmptyTodoList';
 
 const TodoList = () => {
   const dispatch = useDispatch();
-  const [filteredCategory, setFilteredCategory] = useState('')
-  const [filteredComplete, setFilteredComplete] = useState('')
-
-//filterStatus
-  useEffect(() => {
-    dispatch (
-      todos.actions.filterTodoStatus({
-        filter: filteredComplete
-      })
-    ) 
-  },[filteredComplete])
-
-  const onChangeFilter = (value) => {
-    setFilteredComplete(value);    
-  }
-  console.log(filteredComplete)
-
-
-
-  //const filterTodo = useSelector(store => )
-  
-  // const list = useSelector(store => {
-  //   if (filteredComplete === 'completed') return store.todos.list.items.filter(item => item.complete)
-  //   else if (filteredComplete === 'not completed') return (store.todos.list.items.filter(item => !item.complete))
-  //   else if (filteredCategory) return store.todos.list.items.filter(item => item.category === filteredCategory)
-  //   else if (filteredCategory === 'all') return store.todos.list.items 
-  //   else return store.todos.list.items 
-  // });
-  // console.log(list)
 
   const list = useSelector(store => store.todos.list.items);
   console.log(list)
 
+  const filteredTodoStatus = useSelector(store => store.todos.list.selectedFilterStatus)
+  console.log(filteredTodoStatus)
+
+  const filteredTodoCategory = useSelector(store => store.todos.list.selectedFilterCategory)
+  console.log(filteredTodoCategory)
+
+  const filteredTodos = (value) => {
+    dispatch (
+      todos.actions.filteredStatus(value)
+    )
+  }
+
+  const filteredTodosCategory = (value) => {
+    dispatch (
+      todos.actions.filteredCategory(value)
+    )
+  }
+
+  const filteredList = list.filter(item => {
+    if (filteredTodoCategory) {
+      if (filteredTodoStatus === 'not complete') {
+        console.log(filteredTodoCategory, filteredTodoStatus)
+        return item.category === filteredTodoCategory && !item.complete
+      } else if (filteredTodoStatus === 'complete') {
+        return item.category === filteredTodoCategory && item.complete
+      } else return item.category === filteredTodoCategory
+
+    } else if (filteredTodoStatus === 'complete') {
+      return item.complete
+    } else if (filteredTodoStatus === 'not complete') {
+      return !item.complete
+    } else return item
+  })
+
   const todoList = useSelector((store) => store.todos.list);
-  console.log(todoList)
+  //console.log(todoList)
 
   const listLength = todoList.items.length;
-  console.log(todoList.items.length)
+  //console.log(todoList.items.length)
 
   const categories = useSelector((store) => store.todos.list.categories)
-  console.log(`TodoList: ${categories}`)
+  //console.log(`TodoList: ${categories}`)
 
   return (
     <Container>
@@ -62,10 +67,10 @@ const TodoList = () => {
         <FilterSelect 
           name="category" 
           id="category" 
-          onChange={(event) => setFilteredCategory(event.target.value)} 
-          value={filteredCategory}
+          onChange={(event) => filteredTodosCategory(event.target.value)} 
+          value={filteredTodoCategory}
           >
-          <option value="all">All</option>
+          <option value="">All</option>
           {categories.map(option => (
             <option key={option} value={option}>{option}</option>
           ))}
@@ -76,17 +81,18 @@ const TodoList = () => {
         <FilterSelect 
           name="status" 
           id="status" 
-          //onChange={(event) => setFilteredComplete(event.target.value)}
+          value={filteredTodoStatus}
+          onChange={(event) => filteredTodos(event.target.value)}
           
-          onChange={(event) => onChangeFilter(event.target.value)}
-          value={filteredComplete}>
+          //onChange={(event) => onChangeFilter(event.target.value)}
+          >
           <option value='status'>Status</option>
           <option value='complete'>Completed</option>
           <option value='not complete'>Not completed</option>
         </FilterSelect>
         {/* </FilterLabel> */}
       </Filter>
-      {list.map((item) => (
+      {filteredList.map((item) => (
         <TodoItem key={item.id} item={item} />
       ))}           
       <ActionButtons />

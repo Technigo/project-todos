@@ -5,6 +5,8 @@ const initialState = {
     name: "Todo list",
     items: [],
     categories: ['Personal', 'School', 'Work', 'Home', 'Other' ],
+    selectedFilterStatus: "",
+    selectedFilterCategory: "",
   }
 };
 
@@ -23,7 +25,6 @@ export const todos = createSlice({
     //   //state.list.items[id].complete = complete;
     //   console.log(id)
     // },
-    
     
     setComplete: (state, action) => {
       const foundItem = state.list.items.find(item => item.id === action.payload)
@@ -58,18 +59,25 @@ export const todos = createSlice({
       state.homePage = true;
     },
 
-    filterTodoStatus: (state, action) => {
-      const { filter } = action.payload; 
-      if (filter === "not complete") {
-        console.log("filter not complete")
-        return state.list.items.filter(item => !item.complete)
-      } else if (filter === "complete" ) {
-        console.log("filter complete")
-        return state.list.items.filter(item => item.complete) 
-      } else return state.list.items
-    }
-    
-    
+    filteredStatus: (state, action) => {
+      state.list.selectedFilterStatus = action.payload
+    },
+
+    filteredCategory: (state, action) => {
+      state.list.selectedFilterCategory = action.payload
+    },
+
+    // filterTodoStatus: (state, action) => {
+    //   const { filter } = action.payload; 
+    //   if (filter === "not complete") {
+    //     console.log("filter not complete")
+    //     return state.list.items.filter(item => !item.complete)
+    //   } else if (filter === "complete" ) {
+    //     console.log("filter complete")
+    //     return state.list.items.filter(item => item.complete) 
+    //   } else return state
+    // },
+
 
 
     // filterTodoStatus: (state, action) => {
