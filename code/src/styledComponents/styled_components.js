@@ -92,15 +92,22 @@ export const SectionDeleteButton = styled.section`
 `
 
 export const StyledInput = styled.input`
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
   padding: 8px;
   background: #ffca00;
-  font-size: 16px;
+  font-size: 20px;
   color: black; 
   margin-top: 30px;
   border: none;
   border-radius: 3px;
 `
 
+  
+  
+  //[... your styling here ]
+  //}
 
 
 
