@@ -19,6 +19,11 @@ const DeleteButton = styled.button`
   color: #B4889E;
 `
 
+const TaskText = styled.div`
+  text-decoration: ${props => props.checked ? 'line-through' : 'none'};
+  padding-left: 10px;
+`
+
 export const Task = ({ taskData }) => {
   const dispatch = useDispatch()
   return (
@@ -26,7 +31,9 @@ export const Task = ({ taskData }) => {
 
       <CheckboxStyled checked={taskData.complete} onChange={() => dispatch(tasks.actions.toggleItem(taskData.id))} />
 
-      {taskData.text}
+      <TaskText checked={taskData.complete}>
+        {taskData.text}
+      </TaskText>
 
       <DeleteButton className="deleteItem" onClick={() => dispatch(tasks.actions.deleteItem(taskData.id))}>
         x
