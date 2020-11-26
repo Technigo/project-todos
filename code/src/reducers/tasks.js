@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+
   const initialState= {
   
     items: [
@@ -14,12 +15,13 @@ import { createSlice } from '@reduxjs/toolkit'
         done: false 
         
       },
-      { id: 3, 
+      {
+        id: 3,
         text: 'Send in report', 
         done: false 
-
       },
-      { id: 4, 
+      {  
+        id: 4, 
         text: 'Exercise',
         done: false     
       },
@@ -32,6 +34,15 @@ import { createSlice } from '@reduxjs/toolkit'
     reducers: {
       addTask:(state, action) =>{
         state.items.push(action.payload)
+      },
+      removeTask: (state, action) => {
+        const itemId = action.payload;
+        const filteredList = state.items.filter((item) => item.id !== itemId);
+        state.items = filteredList;
       }
+      // setDone: (state, action) => {
+      //   const {index} = action.payload
+      //   state.items[index].done = done
+      // }
     }
-} )
+})
