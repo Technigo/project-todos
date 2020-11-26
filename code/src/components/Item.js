@@ -4,16 +4,9 @@ import styled from 'styled-components';
 import { todos } from 'reducers/todos';
 import { Link } from 'react-router-dom';
 import {TimeAgo} from './TimeAgo';
+import { ListItem } from '../lib/ListStyle';
+import { TimeText } from '../lib/ItemStyle';
 
-const ItemContainer = styled.li`
-    align-self: flex-start;
-    padding: 8px;
-    margin: 8px;
-    font-size: 32px;
-    color: #3f3f3f;
-    background-color: #b8f4ff;
-    list-style: none;    
-`;
 
 export const Item = ({ item }) => {
     const dispatch = useDispatch();
@@ -23,12 +16,15 @@ export const Item = ({ item }) => {
     }
     console.log("item created at " +item)
     return (
-        <ItemContainer>
-
-           <TimeAgo createdAt={item.createdAt} >{item.createdAt}</TimeAgo>
+        <ListItem>
+            <TimeText>
+           <TimeAgo createdAt={item.createdAt} >
+               {item.createdAt}
+            </TimeAgo>
+            </TimeText>
             {item.title}
             <Link to={`/todo/${item.id}`}>View</Link>  
             <button onClick={() => onItemRemove(item.id)} >Delete</button>
-        </ItemContainer>
+        </ListItem>
     )
 };

@@ -1,50 +1,22 @@
-import React from 'react';
-import styled from 'styled-components';
-import { useSelector, useDispatch } from 'react-redux';
-import  NoteAddIcon from '@material-ui/icons/NoteAddRounded';
-import { Link } from 'react-router-dom';
-import { Item } from './Item.js';
-import { TimeAgo } from './TimeAgo';
-import { todos } from 'reducers/todos';
+import React from "react";
+import { useSelector, useDispatch } from "react-redux";
 
-const TodoListContainer = styled.ul`
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-`
 
-const TodoListActionButton = styled.button`
-    align-self: center;
-    padding: 4px;
-`
+import { Item } from "./Item.js";
+import { AddTodoIcon } from "../lib/AddTodoIcon";
+import { Wrapper, TodoListContainer } from "../lib/ListStyle";
 
 export const TodoList = () => {
+  const items = useSelector((store) => store.todos.items);
 
-    const dispatch = useDispatch();
-    const items = useSelector(store => store.todos.items)
-//    const form = useSelector((store) => store.todos.form);  
- 
-
-     
-    return (
-        <TodoListContainer>
-            <Link to={`/todo/`}>
-                <NoteAddIcon></NoteAddIcon>
-            </Link>  
-
-            {/* <TodoListActionButton onClick={() => dispatch(todos.actions.goToForm())}>
-                
-            </TodoListActionButton> */}
-
-           
-            {items.map((item) => (
-                <div>
-              <Item key={item.id} item={item}></Item>
-              </div>
-
-              ))}  
-            
-    
-        </TodoListContainer>
-    );
+  return (
+    <Wrapper>
+      <TodoListContainer>
+        {items.map((item) => (
+          <Item key={item.id} item={item}></Item>
+        ))}
+      </TodoListContainer>
+            <AddTodoIcon />
+    </Wrapper>
+  );
 };
