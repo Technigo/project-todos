@@ -16,7 +16,13 @@ export const AddItem = () => {
 				value={newItem}
 				onChange={(e) => setNewItem(e.target.value)}
 			/>
-			<button onClick={() => handleAddItem()}>Add to my list</button>
+			<button
+				onClick={() => {
+					handleAddItem();
+					setNewItem('');
+				}}>
+				Add to my list
+			</button>
 		</div>
 	);
 };

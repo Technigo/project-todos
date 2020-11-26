@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 
 const ItemContainer = styled.div`
-	background-color: grey;
+	background-color: grey; ;
 `;
 
 const CheckBox = styled.input`
@@ -22,7 +22,7 @@ export const Item = ({ id, text, isCompleted }) => {
 		dispatch(todos.actions.removeItem(id));
 	};
 	return (
-		<ItemContainer>
+		<ItemContainer style={{ opacity: `${isCompleted ? '0.3' : '1'} ` }}>
 			<p>{text}</p>
 
 			<CheckBox

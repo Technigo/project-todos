@@ -6,11 +6,21 @@ import { AddItem } from './AddItem';
 
 export const HabitTracker = () => {
 	const items = useSelector((store) => store.todos.items);
-	console.log(items);
+
+	const completedItems = items.filter((item) => item.isCompleted);
+	const notCompletedItems = items.filter((item) => !item.isCompleted);
+
 	return (
 		<>
+			<div>Total posts on todo-list: {items.length}</div>
+			<div>Completed posts: {completedItems.length}</div>
+			<div>Not completed posts: {notCompletedItems.length}</div>
 			<AddItem />
-			{items.map((item) => (
+			{notCompletedItems.map((item) => (
+				<Item key={item.id} id={item.id} {...item} />
+			))}
+			<div>Completed posts:</div>
+			{completedItems.map((item) => (
 				<Item key={item.id} id={item.id} {...item} />
 			))}
 		</>
