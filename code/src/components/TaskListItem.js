@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import moment from 'moment';
 
 import { DoneButton } from './DoneButton';
-import { ListItem } from '../styles/taskListStyles';
+import { ListItem, DeleteButtonContainer, TextContainer, Timestamp } from '../styles/taskListStyles';
 import { todos } from '../reducers/todos';
 
 export const TaskListItem = ({ task }) => {
@@ -18,9 +18,13 @@ export const TaskListItem = ({ task }) => {
       <DoneButton 
         task={task}
       />
-      <p>{task.text}</p>
-      <p>{moment(task.created).fromNow()}</p>
-      <button onClick={onItemDelete}>delete</button>
+      <TextContainer>
+        <p>{task.text}</p>
+        <Timestamp>{moment(task.created).fromNow()}</Timestamp>
+      </TextContainer>
+      <DeleteButtonContainer onClick={onItemDelete}>
+        <img src={require('assets/delete.svg')} alt='' style={{width: '20px'}}/>
+      </DeleteButtonContainer>
     </ListItem>
   )
 };
