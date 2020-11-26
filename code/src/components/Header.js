@@ -7,6 +7,7 @@ const Container = styled.div`
     display: flex;
     flex-direction: column;
     text-align: center;
+    border-bottom: solid rgba(71, 71, 71, 0.514) 1px;
 `
 const TodoHeader = styled.h1`
     font-size: 30px;

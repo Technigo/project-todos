@@ -37,6 +37,8 @@ export const todos = createSlice({
 
         toggleComplete: (state, action) => {
           const foundItem = state.items.find((item) => item.id === action.payload)
+
+          //Toggle the value of complete, so it changes to true when you click the checkbox and false if you uncheck.
             if (foundItem) {
           foundItem.complete = ! foundItem.complete          
         }

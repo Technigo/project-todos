@@ -1,5 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import styled from 'styled-components'
+
+const SummaryText = styled.p`
+    font-size: 16px;
+    font-weight: 300;
+    text-align: center;
+`
 
 
 export const Summary = () => {
@@ -8,7 +15,7 @@ export const Summary = () => {
 
     return (
         <div>
-            <p>You have done {completedTasks.length} out of {items.length} tasks</p>
+            <SummaryText>You have done {completedTasks.length} out of {items.length} tasks</SummaryText>
         </div>
     )
 }

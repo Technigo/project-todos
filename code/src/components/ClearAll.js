@@ -7,6 +7,7 @@ const Button = styled.button`
     border: none;
     margin-bottom: 10px;
     background: none;
+    font-weight: 300;
 `
 
 export const ClearAll = () => {

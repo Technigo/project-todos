@@ -3,11 +3,11 @@ import { useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
 import styled from 'styled-components'
 
-const Container = styled.div`
-    display: flex;
-    text-align: center;
-`
+
 const Form = styled.form`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
 `
 
@@ -40,7 +40,6 @@ export const AddTodo = () => {
 }
 
     return (
-        <Container>
             <Form onSubmit={handleOnSubmit}>
                 <Textarea 
                     aria-label="text area"
@@ -57,6 +56,5 @@ export const AddTodo = () => {
                     >Add todo
                 </Button>
             </Form>
-        </Container>
     )
 } 
