@@ -8,4 +8,4 @@ In this project I used Styled components, JS, React, useSelector, useDispatch, u
 
 ## View it live
 
-
+https://todos-sandra-shumanteva.netlify.app/
