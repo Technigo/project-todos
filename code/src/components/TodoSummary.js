@@ -12,7 +12,7 @@ export const TodoSummary = () => {
 
   return (
     <SectionSummary className='todo-summary'>
-      <Styledh2>
+      <Styledh2 tabIndex='0'>
         {numDone}/{list.items.length} done
       </Styledh2>
     </SectionSummary>

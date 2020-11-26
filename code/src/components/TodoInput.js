@@ -46,6 +46,7 @@ export const TodoInput = () => {
           aria-label='{labelText}'
           aria-required='true'
           placeholder='My next todo'
+          maxLength='20'
           onChange={event => setInputValue(event.target.value)}
           value={inputValue}
           className='todo-input-text'
