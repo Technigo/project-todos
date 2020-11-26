@@ -22,7 +22,9 @@ export const Task = ({ taskData }) => {
   const dispatch = useDispatch()
   return (
     <TaskContainer>
-
+      
+      {/* Change this to a styled version */}
+      {/* <CheckboxStyled />  */}
       <input type='checkbox' checked={taskData.complete} onChange={() => dispatch(tasks.actions.toggleItem(taskData.id))} />
 
       {taskData.text}
