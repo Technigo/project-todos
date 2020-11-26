@@ -20,6 +20,7 @@ const handleSubmit = event => {
 	)
 	setNewTask('')
 }
+
 const emptyTask = (value) => value.replace(/\s/g, "").length === 0;
 
 return (
@@ -34,7 +35,7 @@ return (
 			<button type="submit" 
 				disabled={newTask.length < 5 || newTask.length >140 || emptyTask(newTask)}>
 					<p>{newTask.length} / 140</p>
-				add
+				add task
 			</button>
 		</div>
 	</form>

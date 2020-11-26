@@ -1,5 +1,4 @@
 //ItemList.js stores all tasks/todos
-
 import React from 'react'
 import {useSelector} from 'react-redux'
 import {ItemsAll} from 'components/ItemsAll'
@@ -19,7 +18,8 @@ export const ItemList = () => {
 	return (
 		<section>
 			{allTasks.tasks.map((task, index ) => (
-				<ItemsAll key={task.id} task={task} taskIndex={index}/>			))}
+				<ItemsAll key={task.id} task={task} taskIndex={index}/>	
+			))}
 		</section>
 	)
 }
