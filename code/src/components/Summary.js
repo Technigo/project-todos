@@ -3,13 +3,16 @@ import { useSelector } from 'react-redux'
 
 export const Summary = () => {
     const items = useSelector((state) => state.todos.items)
-    const buyMoreItems = items.filter((item) => item.needsMore)
 
-    const [showShoppingList, setShowShoppingList] = useState(false)
 
     return (
-        <div className="item-buy">
-            <h1>Buy {items.length} items  </h1>
-        </div>
+        // <div className="item-buy">
+        //     <h1>Buy items  </h1>
+        // </div>
+        <div className="header">
+           <h1> Groceries </h1>
+           <h2>{items.length} items</h2>
+        </div >
     )
 }
+
