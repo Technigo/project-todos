@@ -33,6 +33,24 @@ export const todos = createSlice({
 
       const newTaskList = [...store.tasks, newTask];
       store.tasks = newTaskList;
+    },
+    markAllDone: (store, action) => {
+      const doneList = store.tasks.map((task) => {
+        const container = {}
+
+        container.id = task.id;
+        container.text = task.text;
+        container.done = true;
+
+        return container
+      });
+
+      store.tasks = doneList;
+    },
+    clearList: (store, action) => {
+      const emptyList = [];
+
+      store.tasks = emptyList;
     }
   }
 });
