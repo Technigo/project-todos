@@ -4,10 +4,30 @@ export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      { id: 1, text: 'Watch video on actions & reducers', completed: true },
-      { id: 2, text: 'Follow redux codealong', completed: true },
-      { id: 3, text: 'Fork weekly assignment', completed: true },
-      { id: 4, text: 'Create a todo app', completed: false }
+      {
+        id: 1,
+        text: 'Watch video on actions & reducers',
+        completed: true,
+        startDate: 1606383658465
+      },
+      {
+        id: 2,
+        text: 'Follow redux codealong',
+        completed: true,
+        startDate: 1606383658465
+      },
+      {
+        id: 3,
+        text: 'Fork weekly assignment',
+        completed: true,
+        startDate: 1606383658465
+      },
+      {
+        id: 4,
+        text: 'Create a todo app',
+        completed: false,
+        startDate: 1606383658465
+      }
     ]
   },
   reducers: {

@@ -1,6 +1,6 @@
-import React from 'react';
-// import { useDispatch } from 'react-redux';
-// import { todos } from 'reducers/todos';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { visibilityFilter, VisibilityFilter } from 'reducers/visibilityFilter';
 import styled from 'styled-components';
 
 import { Button } from '../lib/Button';
@@ -11,33 +11,48 @@ const Container = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: lightgrey;
+  background-color: #e8e8e8;
 `;
 
 export const FilterTodo = () => {
-  //   const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const [filter, setFilter] = useState(VisibilityFilter.ShowAll);
 
-  //   const handleShowAll = () => {
-  //     dispatch(todos.actions.showAll());
-  //   };
+  // const currentvisibilityFilter = useSelector(
+  //   (state) => state.visibilityFilter
+  // );
 
-  //   const handleShowActive = () => {
-  //     dispatch(todos.actions.showActive());
-  //   };
+  console.log(VisibilityFilter.ShowAll);
 
-  //   const handleShowCompleted = () => {
-  //     dispatch(todos.actions.showCompleted());
-  //   };
+  const handleShowAll = (event) => {
+    event.preventDefault();
+    setFilter(VisibilityFilter.ShowAll);
+    dispatch(visibilityFilter.actions.setVisibilityFilter({ filter }));
+  };
+
+  const handleShowActive = (event) => {
+    event.preventDefault();
+    setFilter(VisibilityFilter.ShowActive);
+    console.log(filter);
+    dispatch(visibilityFilter.actions.setVisibilityFilter({ filter }));
+  };
+
+  const handleShowCompleted = (event) => {
+    event.preventDefault();
+    setFilter(VisibilityFilter.ShowCompleted);
+    dispatch(visibilityFilter.actions.setVisibilityFilter({ filter }));
+  };
 
   return (
     <Container>
       <Subtitle>Show</Subtitle>
-      {/* <Button onClick={handleShowAll}>All</Button>
+      <Button
+        // disabled={currentvisibilityFilter === filter}
+        onClick={handleShowAll}>
+        All
+      </Button>
       <Button onClick={handleShowActive}>Active</Button>
-      <Button onClick={handleShowCompleted}>Completed</Button> */}
-      <Button width="120px">All</Button>
-      <Button width="120px">Active</Button>
-      <Button width="120px">Completed</Button>
+      <Button onClick={handleShowCompleted}>Completed</Button>
     </Container>
   );
 };

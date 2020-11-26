@@ -4,13 +4,14 @@ import { todos } from 'reducers/todos';
 import styled from 'styled-components';
 import moment from 'moment';
 
-import { Button } from '../lib/Button';
+import { RemoveButton } from '../lib/RemoveButton';
 import { Span } from '../lib/Text';
 import { CustomCheckbox } from './CustomCheckbox';
 
 const Wrapper = styled.article`
   display: flex;
-  border-bottom: 2px solid lightgrey;
+  padding: 10px 0;
+  border-bottom: 2px solid #e8e8e8;
   justify-content: space-between;
   align-items: center;
 `;
@@ -42,7 +43,7 @@ export const TodoItem = ({ todo }) => {
       {/* </label> */}
       <Span>{todo.text}</Span>
       <Span>{moment(todo.startDate).format('l')}</Span>
-      <Button onClick={handleRemoveTodo}>X</Button>
+      <RemoveButton onClick={handleRemoveTodo}>X</RemoveButton>
     </Wrapper>
   );
 };

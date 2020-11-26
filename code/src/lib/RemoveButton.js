@@ -1,16 +1,17 @@
 import styled from 'styled-components';
 
-export const Button = styled.button`
+export const RemoveButton = styled.button`
   padding: 8px;
-  margin: 6px 0px;
-  width: 110px;
+  margin: 6px;
+  width: 32px;
+  height: 32px;
   background: ${(props) => props.background || '#bbbfca'};
   color: #495464;
   font-size: 18px;
   border: none;
-  border-radius: 20px;
+  border-radius: 50%;
   &:hover {
-    background: #026873;
+    background: #ec5858;
     color: white;
     cursor: pointer;
   }
