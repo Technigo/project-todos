@@ -4,10 +4,10 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      {id: 1, text: 'make breakfast', complete: false, category: 'home'},
-      {id: 2, text: 'go to work', complete: false, category: 'work'},
-      {id: 3, text: 'pay the bills', complete: false, category: 'finance'},
-      {id: 4, text: 'get some eggs from the store', complete: false, category: 'shopping'}
+      {id: 1, text: 'meditate 10 minutes', complete: false, category: 'self-care'},
+      {id: 2, text: 'book meeting with my manager', complete: false, category: 'work'},
+      {id: 3, text: 'clean the house', complete: false, category: 'household'},
+      {id: 4, text: 'buy milk from the store', complete: false, category: 'shopping'}
     ]
   },
   reducers: {
@@ -19,12 +19,13 @@ export const tasks = createSlice({
       state.items = state.items.filter(task => task.id !== action.payload)
     },
     toggleTaskCompleted: (state, action) => {
-      // to find the item id that matches.
       const foundItem = state.items.find(task => task.id === action.payload)
-      // if item is found, the value of initial state will be inverted, go from false to true
       if (foundItem) {
         foundItem.complete = !foundItem.complete
       }
+    },
+    removeAll: (state) => {
+      state.items = []
     }
   }
 })

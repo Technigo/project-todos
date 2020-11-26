@@ -6,26 +6,32 @@ import styled from 'styled-components'
 
 import Logo from './assets/delete.svg'
 
-const TaskContainer = styled.label`
-  display: flex;
-  align-items: center;
-  background-color: white;
-  padding: 10px;
-  //border-radius: 10px;
-  margin: 10px 0;
-  transition: 0.3s ease;
-  word-break: break-word;
-
-  &:hover {
-    opacity: 0.6;
-  }
-`
 const Checkbox = styled.input`
   width: 15px;
   height: 15px;
   margin: 0 6px 0 0;
   cursor: pointer;
 `
+
+const TaskContainer = styled.label`
+  display: flex;
+  align-items: center;
+  background-color: white;
+  padding: 10px;
+  margin: 10px 0;
+  transition: 0.3s ease;
+  word-break: break-word;
+  box-shadow: 10px 13px 21px -18px rgba(158,158,158,1);
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  ${Checkbox}:checked & {
+    opacity: 0.4;
+  }
+`
+
 const RemoveButton = styled.button`
   background-color: transparent;
   border: none;

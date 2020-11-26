@@ -7,6 +7,7 @@ import { Header } from './Header'
 import { AddTask } from './AddTask'
 import { Task } from './Task'
 import { Footer } from './Footer'
+import { NoTasks } from './NoTasks'
 
 const Section = styled.section`
   display: flex;
@@ -34,21 +35,20 @@ export const TaskList = () => {
     (store) => store.tasks.items
   )
 
-  console.log(items) //remove later
-
   return (
     <Section>
       <Header />
+      {items.length === 0 ? <NoTasks /> : 
       <TasksContainer>
-        {items.map(task => {
-          return (
-            <Task
-              key={task.id}
-              task={task}
-            />
-          )
-        })}
-      </TasksContainer>
+      {items.map(task => {
+        return (
+          <Task
+            key={task.id}
+            task={task}
+          />
+        )
+      })}
+      </TasksContainer>}
       <AddTask />
       <Footer />
     </Section>

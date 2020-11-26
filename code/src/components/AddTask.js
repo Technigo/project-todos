@@ -13,6 +13,8 @@ const Container = styled.form`
   background-color: #ffffff;
   padding: 10px 10px;
   margin: 10px 0;
+  box-shadow: 10px 13px 21px -18px rgba(158,158,158,1);
+  width: 100%;
 `
 
 const TextField = styled.input`
@@ -22,6 +24,7 @@ const TextField = styled.input`
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
   font-size: 18px;
+  width: 100%;
 
   &:focus {
     outline: 2px solid #9576A5;
@@ -29,7 +32,7 @@ const TextField = styled.input`
 `
 
 const CategoryField = styled.select`
-  display: none;
+  display: none; 
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #000000;
@@ -47,11 +50,14 @@ const CategoryField = styled.select`
     display: flex;
   }
 `
-
 const TaskButton = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
+
+  &:disabled {
+    opacity: 0.4;
+  }
 `
 
 const AddIcon = styled.img`
@@ -66,7 +72,7 @@ const AddIcon = styled.img`
 `
 
 export const AddTask = () => {
-  const [newTask, setNewTask] = useState()
+  const [newTask, setNewTask] = useState('')
   const [category, setCategory] = useState()
 
   const dispatch = useDispatch()
@@ -84,6 +90,7 @@ export const AddTask = () => {
     >
       <TaskButton
         type="submit"
+        disabled={newTask.length < 5 ? true : false}
       >
         <AddIcon
           src={Logo}
@@ -94,19 +101,17 @@ export const AddTask = () => {
         type="text"
         value={newTask}
         placeholder="add new task.."
-        required
         onChange={event => setNewTask(event.target.value)}
       />
-      <CategoryField
+      <CategoryField // CATEGORIES ARE NOT USED AT THE MOMENT. 
         value={category}
-        required
         onChange={event => setCategory(event.target.value)}
       >
-        <option value selected disabled>select category...</option>
-        <option value="todo">to do</option>
-        <option value="activity">activity</option>
-        <option value="finance">finance</option>
+        <option value disabled>select category...</option>
         <option value="appointment">appointment</option>
+        <option value="household">household</option>
+        <option value="self-care">self-care</option>
+        <option value="shopping">shopping</option>
       </CategoryField>
     </Container>
   )
