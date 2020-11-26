@@ -19,7 +19,7 @@ export const Checkbox = ({ isChecked, onChangeHandler }) => {
       <HiddenCheckBox checked={checked} {...props}></HiddenCheckBox>
       <StyledCheckBox checked={checked}>
         <Dot viewBox='0 0 24 24'>
-          <circle cx='12' cy='12' r='6' stroke='none' fill='#F9EFE5'></circle>
+          <circle cx='12' cy='12' r='4' stroke='none' fill='#F9EFE5'></circle>
         </Dot>
       </StyledCheckBox>
     </CheckboxContainer>
@@ -32,6 +32,4 @@ export const Checkbox = ({ isChecked, onChangeHandler }) => {
       </label>
     </div>
   )
-
-
 }
