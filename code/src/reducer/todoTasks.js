@@ -1,30 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit"
+import uniqid from "uniqid"
 
 const initialState = {
   allTodoTasks: []
-  //more categories can be added as keys (dueDate, category ...)
-  // {
-  //   id: 1,
-  //   text: 'Watch video on actions & reducers',
-  //   complete: false
-  // },
-  // {
-  //   id: 2,
-  //   text: 'Follow redux codealong',
-  //   complete: false
-  // },
-  // {
-  //   id: 3,
-  //   text: 'Fork weekly assignment',
-  //   complete: true
-  // },
-  // {
-  //   id: 4,
-  //   text: 'Create a todo app',
-  //   complete: false
-  // }
 }
-
 
 export const todoTasks = createSlice({
 
@@ -35,20 +14,15 @@ export const todoTasks = createSlice({
 
     //adds a task to allTodoTasks array
     addTask: (store, action) => {
-      console.log(`Track action.payload: ${action}`)
 
-      // --- MAKSY APPROACH ---
       //initial state of every new task
       const newTodo = {
-        //returns an array of numbers - max amount of ids (= length of the array)
-        //+1 is for the new item, not in the array yet
-        //...state -> spreading array into Math.max
-        id: Math.max(...store.allTodoTasks.map(task => task.id)) + 1,
+        id: uniqid(),
         text: action.payload,
         complete: false
       }
 
-      //adding new object to an existing array of objects 
+      //adding new task (object) to an existing array of tasks (objects) 
       const newTodoList = [...store.allTodoTasks, newTodo]
 
       store.allTodoTasks = newTodoList
@@ -59,7 +33,7 @@ export const todoTasks = createSlice({
 
       //id of the removed task
       const id = action.payload;
-      console.log(`Id: ${id}`)
+      console.log(`what is here: ${id}`)
 
       //finds id of a removed task in an array of all tasks
       const tasks = store.allTodoTasks.find(task => task.id === id)

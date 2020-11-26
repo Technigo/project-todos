@@ -1,13 +1,11 @@
 import React from "react"
 import { useDispatch } from "react-redux"
 
-import { todoTasks } from "reducer/todoTasks"
+import { todoTasks } from "../reducer/todoTasks"
 
 export const SingleTodo = ({ id, text, complete }) => {
 
   // TODO:
-  //add done/undone functionality
-  //add functioning delete button
   //styled component for done and undone state
 
   const dispatch = useDispatch()
@@ -17,9 +15,9 @@ export const SingleTodo = ({ id, text, complete }) => {
   }
 
   const handleRemoveButtonClick = () => {
-    //dispatch(todoTasks.actions.removeTask(id)) - in the video
     dispatch(todoTasks.actions.removeTask(id))
   }
+  //console.log(`Text in single todo: ${text.text}`)
 
   return (
 
