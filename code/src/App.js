@@ -5,7 +5,6 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit' // lets compo
 import { Header } from './Components/Header'
 import { TaskInput } from './Components/TaskInput'
 import { TaskList } from './Components/TaskList'
-import { TaskSummary } from './Components/TaskSummary'
 import { todo } from 'Reducers/todo'
 import { ClearButton } from 'Library/ClearButton'
 
