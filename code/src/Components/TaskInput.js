@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
+
 import { todo } from "../Reducers/todo"
 
 export const TaskInput = () => {
@@ -12,14 +13,13 @@ export const TaskInput = () => {
     dispatch(todo.actions.addItem(input))
 
     setInput("")
-    console.log(input)
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label className="task-input">
         <input
-        className="task-input-field"
+          className="task-input-field"
           placeholder="Add a new task..."
           type="text"
           value={input}
@@ -27,7 +27,9 @@ export const TaskInput = () => {
         />
       </label>
       <button className="task-add-button" type="submit" onClick={handleSubmit}>
-      <span className="remove-icon" role="button" aria-label="remove">+</span>
+        <span className="button-icon" role="button" aria-label="remove">
+          +
+        </span>
       </button>
     </form>
   )

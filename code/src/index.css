@@ -5,15 +5,12 @@ body {
   font-family: 'Indie Flower', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
   background: #FEAC5E;  /* fallback for old browsers */
   background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   display: flex;
   justify-content: center;
 }
-
-
 
 main {
   background-color: #ffffff73;
@@ -23,6 +20,7 @@ main {
 
 h1 {
   text-align: center;
+  font-size: 30px;
 }
 
 /* HEADER */
@@ -34,6 +32,7 @@ h1 {
   flex-direction: column;
   border-bottom: 2px solid #00000029;
 }
+
 .header-details {
   display: flex;
   justify-content: space-between;
@@ -44,79 +43,7 @@ h1 {
   font-weight: bold;
 }
 
-/* LIST */
-
-ul {
-  padding: 0;
-}
-
-.task-container{
-  margin: 0 20px;
-  padding-bottom: 25px;
-  font-size: 22px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-}
-
-.task-item {
-  margin: 0 10px;
-  word-break: break-word;
-}
-
-.task-checkbox {
-  cursor: pointer;
-}
-
-/*  BUTTONS */
-
-.remove-button {
-  width: 70px;
-  background-color: transparent;
-  padding: 0;
-  border-style: none;
-  height: 100%;
-  outline: none;
-  margin-right: 11px;
-  cursor: pointer;
-}
-
-.remove-icon {
-  font-size: 40px;
-  height: 100%;
-  color: #00000029;;
-}
-
-.clear-button {
-  align-self: center;
-  padding: 4px;
-  margin: 20px;
-  font-size: 18px;
-  font-weight: bold;
-  text-decoration: underline;
-  text-align: right;
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  font-family: 'Indie Flower', cursive;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.clear-button:hover {
-  font-size: 19px;
-}
-
-.task-add-button {
-  background-color: transparent;
-  outline: none;
-  border: none;
-  color: #00000029;
-  margin: 20px 20px 0 20px;
-  cursor: pointer;
-}
-
-/* QUANTITY */
+/* TASK QUANTITY */
 
 .task-quantity {
   margin-right: 20px;
@@ -124,7 +51,7 @@ ul {
   font-weight: 500;
 }
 
-/* INPUT */
+/* INPUT*/
 
 form {
   margin: 30px;
@@ -146,13 +73,116 @@ form {
   border: 1px solid #00000029;
 }
 
+/* ADD BUTTON */
+
+.task-add-button {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  color: #00000029;
+  margin: 20px 20px 0 20px;
+  cursor: pointer;
+}
+
+/* LIST ITEMS */
+
+ul {
+  padding: 0;
+}
+
+.task-container{
+  margin: 0 20px;
+  padding-bottom: 25px;
+  font-size: 22px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.task-box {
+  display: inline-flex
+}
+
+.task-item {
+  margin: 0 30px;
+  word-break: break-word;
+}
+/* CHECKBOX */
+
+.custom-checkbox {
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.custom-checkbox .checkmark {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #00000000;
+  display: inline-block;
+  border-radius: 25px;
+  background: #00000000 url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png) center/1250% no-repeat;
+  transition: background-size 0.3s ease;
+}
+
+.custom-checkbox input:checked + .checkmark {
+  background-size: 60%;
+  transition: background-size 0.35s cubic-bezier(0.7, 0, 0.18, 1.24);
+}
+
+.custom-checkbox input {
+  display: none;
+}
+
+/*  REMOVE BUTTON */
+
+.remove-button {
+  width: 70px;
+  background-color: transparent;
+  padding: 0;
+  border-style: none;
+  height: 100%;
+  outline: none;
+  margin-right: 11px;
+  cursor: pointer;
+}
+
+.button-icon {
+  font-size: 40px;
+  height: 100%;
+  color: #00000029;;
+}
+
+/* REMOVE ALL BUTTON */
+
+.clear-button {
+  align-self: center;
+  padding: 4px;
+  margin: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: underline;
+  text-align: right;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: 'Indie Flower', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.clear-button:hover {
+  font-size: 19px;
+}
+
 /* MEDIA */
 
 @media (min-width: 600px)  {
-.header-container {
-  width: 500px;
-}
-.task-input-field {
-  width: 400px;
-}
+  .header-container {
+    width: 500px;
+  }
+
+  .task-input-field {
+    width: 400px;
+  }
 }
