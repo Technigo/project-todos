@@ -10,7 +10,7 @@ export const ItemList = () => {
 	if (wholeList.length === 0) {
 		return (
 			<>
-			<h1 className="listEmpty"> no tasks</h1>
+			<h1 className="listEmpty"> You are clear of duties for now, good on you!</h1>
 			{/* ADD AN IMG HERE? */}
 			</>
 		)
