@@ -1,33 +1,33 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react"
+import { useDispatch } from "react-redux"
 import {
   TextField,
   DialogTitle,
   DialogContent,
   DialogActions,
   Button,
-} from "@material-ui/core";
-import MomentUtils from "@date-io/moment";
+} from "@material-ui/core"
+import MomentUtils from "@date-io/moment"
 import {
   MuiPickersUtilsProvider,
   KeyboardDatePicker,
-} from "@material-ui/pickers";
-import moment from "moment";
+} from "@material-ui/pickers"
+import moment from "moment"
 
-import { tasks } from "reducers/tasks";
+import { tasks } from "reducers/tasks"
 
 export const TodoInput = (props) => {
-  const dispatch = useDispatch();
-  const [description, setDescription] = useState("");
+  const dispatch = useDispatch()
+  const [description, setDescription] = useState("")
 
-  const [selectedDate, setSelectedDate] = useState(Date.now());
+  const [selectedDate, setSelectedDate] = useState(Date.now())
 
   const handleDateChange = (date) => {
-    setSelectedDate(date);
-  };
+    setSelectedDate(date)
+  }
 
   const handleSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
     dispatch(
       tasks.actions.addTask({
         description,
@@ -40,10 +40,10 @@ export const TodoInput = (props) => {
           sameElse: "DD/MM/YYYY",
         }),
       })
-    );
-    props.onClose();
-    props.handleSnack();
-  };
+    )
+    props.onClose()
+    props.handleSnack()
+  }
 
   return (
     <>
@@ -85,5 +85,5 @@ export const TodoInput = (props) => {
         </DialogActions>
       </DialogContent>
     </>
-  );
-};
+  )
+}

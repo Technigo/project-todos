@@ -1,5 +1,5 @@
-import React from "react";
-import { useSelector } from "react-redux";
+import React from "react"
+import { useSelector } from "react-redux"
 import {
   List,
   Accordion,
@@ -7,13 +7,13 @@ import {
   AccordionDetails,
   Typography,
   Paper,
-} from "@material-ui/core";
+} from "@material-ui/core"
 import { ExpandMore } from "@material-ui/icons"
 
 import { TodoItem } from "components/TodoItem"
 
 export const TodoList = () => {
-  const allTasks = useSelector((store) => store.tasks);
+  const allTasks = useSelector((store) => store.tasks)
 
   return (
     <>
@@ -89,5 +89,5 @@ export const TodoList = () => {
         </Accordion>
       </Paper>
     </>
-  );
-};
+  )
+}

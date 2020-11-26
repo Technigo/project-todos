@@ -1,16 +1,16 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { AppBar, Badge } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Button from "@material-ui/core/Button";
-import IconButton from "@material-ui/core/IconButton";
-import MenuIcon from "@material-ui/icons/Menu";
-import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn";
-import DoneAllIcon from "@material-ui/icons/DoneAll";
+import React from "react"
+import { useSelector, useDispatch } from "react-redux"
+import { AppBar, Badge } from "@material-ui/core"
+import { makeStyles } from "@material-ui/core/styles"
+import Toolbar from "@material-ui/core/Toolbar"
+import Typography from "@material-ui/core/Typography"
+import Button from "@material-ui/core/Button"
+import IconButton from "@material-ui/core/IconButton"
+import MenuIcon from "@material-ui/icons/Menu"
+import AssignmentTurnedInIcon from "@material-ui/icons/AssignmentTurnedIn"
+import DoneAllIcon from "@material-ui/icons/DoneAll"
 
-import { tasks } from "reducers/tasks";
+import { tasks } from "reducers/tasks"
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -22,13 +22,13 @@ const useStyles = makeStyles((theme) => ({
   title: {
     flexGrow: 1,
   },
-}));
+}))
 
 export const Header = () => {
-  const allTasks = useSelector((store) => store.tasks);
-  const dispatch = useDispatch();
+  const allTasks = useSelector((store) => store.tasks)
+  const dispatch = useDispatch()
 
-  const classes = useStyles();
+  const classes = useStyles()
   return (
     <div className={classes.root}>
       <AppBar position="static">
@@ -57,5 +57,5 @@ export const Header = () => {
         </Toolbar>
       </AppBar>
     </div>
-  );
-};
+  )
+}
