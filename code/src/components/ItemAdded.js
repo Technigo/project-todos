@@ -1,9 +1,11 @@
+//Item.js handles posting of todos/tasks
+
 import React, {useState} from 'react'
 import{useDispatch } from 'react-redux'
 
 import {tasks} from 'reducers/tasks'
 
-export const Item = ({itemId}) => {
+export const ItemAdded = ({itemId}) => {
 const [newTask, setNewTask] = useState('')
 const dispatch = useDispatch()
 
@@ -36,13 +38,3 @@ return (
 	</form>
 )
 }
-
-// const ItemContainer = styled.p`
-// align-self: flex-start;
-// padding:8px;
-// margin:8px;
-// font-size:32px;
-// color:#F7AF9D;
-// width: 50%;
-// background-color:#F7E3AF; 
-// `;

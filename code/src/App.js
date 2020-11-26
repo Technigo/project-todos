@@ -3,13 +3,8 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import {tasks}  from './reducers/tasks'
-// import {TasksList} from './components/TasksList'
-import {HouseholdTasks} from './components/HouseholdTasks'
-import {SelfCare} from './components/SelfCare'
-import {CodingTasks} from './components/CodingTasks'
-import {Groceries} from './components/Groceries'
-import {Other} from './components/Other'
-import {TasksInput} from './components/TasksInput'
+import {ItemAdded} from './components/ItemAdded'
+
 
 
 const reducer = combineReducers({
@@ -21,12 +16,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <TasksInput/>
-      <HouseholdTasks/> 
-      <SelfCare/>
-      <CodingTasks/>
-      <Groceries/>
-      <Other/>    
+      <ItemAdded/>
     </Provider>
   )
 }

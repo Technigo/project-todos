@@ -1,7 +1,7 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 
-import {Item} from 'components/Item'
+import {Item} from 'components/ItemAdded'
 
 export const Groceries = () => {
 	const tasksGroceries = useSelector((store) => store.tasks)
