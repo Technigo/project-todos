@@ -35,4 +35,4 @@ I have used styled components mainly to learn that fully. Some of the styling th
 
 ## View it live
 
-Link to see the project live and to use to TODO functions: 💥
+Link to see the project live and to use to TODO functions: https://tasks-todo-list.netlify.app/ 💥
