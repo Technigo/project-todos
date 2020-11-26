@@ -78,14 +78,8 @@ export const DeleteContainer = styled.div`
 export const DeleteButton = styled.button`
   -webkit-appearance: none;
   -moz-appearance: none;
-  appearance: none;  
-  border-radius: 50%;
-  background-color: white;
-  font-size: 14px;
-  width: 26px;
-  height: 26px;
-  border: solid grey 2px;
-  color: grey;
+  appearance: none; 
+  border: none;
     &:last-child {
       margin-left: auto;
     }

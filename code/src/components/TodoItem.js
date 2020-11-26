@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { todos } from '../reducers/todos';
 import { CustomCheckbox } from './CustomCheckbox';
 import { DeleteContainer, DeleteButton } from '../styledComponents/styled_components';
+import  bin  from '../assets/bin.png';
 
 export const TodoItem = ({ itemIndex }) => {
   // Get the item from the store based on the index
@@ -36,8 +37,11 @@ export const TodoItem = ({ itemIndex }) => {
     <DeleteContainer className={`todo-item ${item.done ? 'done' : ''}`}>
       <CustomCheckbox tabindex='0' isChecked={item.done} onChangeHandler={handleCheckboxClick} />
       <span className='todo-item-text'>{item.description}</span>
-      <DeleteButton className='todo-item-remove' onClick={onRemoveClicked}>
-        {'X'}
+      <DeleteButton 
+        className='todo-item-remove' 
+        type='button'
+        onClick={onRemoveClicked}>
+          <img src={bin} alt='bin' />
       </DeleteButton>
     </DeleteContainer>
   )
