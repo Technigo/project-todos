@@ -19,7 +19,7 @@ export const Header = () => {
   return (
     <header className="header">
       <img src={logo}></img>
-      <button onClick={removeCompleted}>Remove done</button>
+      {/* <button onClick={removeCompleted}>Remove done</button> */}
     </header>
   )
 }

@@ -23,6 +23,7 @@ export const App = () => {
       <List></List>
       <Footer></Footer>
     </div>
+    
 
     </Provider>
   )

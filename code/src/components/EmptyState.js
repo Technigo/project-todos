@@ -7,7 +7,7 @@ export const EmptyState = () => {
 
   return (
     <main className="empty-state-container">
-      <p className="p-empty-state">Well done.<br />You've deserved some rest. </p>
+      <p className="p-empty-state">Well done! 🏆<br />You've deserved some rest. </p>
      
         <Player
           autoplay

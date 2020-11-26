@@ -32,18 +32,19 @@ export const Item = (props) => {
     <div className="list-item">
 
       {/* TOGGLE IS-DONE BUTTON */}
-      <button onClick={isDone}>
+      <button className="list-button-blue" onClick={isDone}>
         <img
           src={props.isDone === true ? ic_check_true : ic_check_false}
           alt="task is done"></img>
       </button>
 
-      <p className={props.isDone === true ? "p-is-done-true" : "p-unis-done-false"}>
+      {/* Set the Class name of the text depending on if the task is done or not */}
+      <p className={props.isDone === true ? "p-is-done-true" : "p-is-done-false"}>
         {props.text}
       </p>
 
       {/* DELETE TASK BUTTON */}
-      <button onClick={deleteTodo}>
+      <button className="list-button-gray" onClick={deleteTodo}>
         <img
           src={ic_delete}
           alt="task isn't done"></img>

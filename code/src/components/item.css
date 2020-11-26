@@ -8,28 +8,47 @@
 }
 
 .list-item button {
-  height: 24px;
-  width: 24px;
+  height: 32px;
+  /* If it's "width" instead of "min-width", the checkbox gets squashed by the growing text.  */
+  min-width: 32px;
   padding: 0;
-  /* REMOVE BEFORE SUBMISSION */
   outline: 0;
   border: none;
   background: none;
-  border-radius: 12px;
+  border-radius: 16px;
   box-shadow: 0;
 }
 
-.list-item button:focus {
-  box-shadow: 0 0 0 2px #1890FF;
+.list-button-blue:focus {
+  box-shadow: inset 0 0px 0 2px #1890FF;
 }
 
-.list-item button:hover {
+.list-button-blue:hover {
   background: rgba(22,130,230,0.1);
 }
 
-.list-item button:active {
+.list-button-blue:active {
   background: rgba(22,130,230,0.2);
 }
+
+.list-button-gray:focus {
+  box-shadow: inset 0 0px 0 2px rgba(0,0,0,0.2);
+}
+
+.list-button-gray:hover {
+  background: rgba(0,0,0,0.05);
+}
+
+.list-button-gray:active {
+  background: rgba(0,0,0,0.2);
+}
+
+
+.list-item button img {
+  position: relative;
+  top: 1px;
+}
+
 
 .list-item p {
   flex-grow: 1;

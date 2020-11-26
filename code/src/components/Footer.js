@@ -46,14 +46,15 @@ export const Footer = () => {
         </input>
 
         <button 
+          className="button-primary"
           // Disable button if its too short
           disabled={newTaskText < 2}
           onClick={addTodo}
         >
           <img src={ic_plus}></img>
         </button>
-        <button 
-          // Disable button if its too short
+        <button
+          className="button-secondary" 
           onClick={addRandomTodo}
         >
           <img src={ic_random}></img>
