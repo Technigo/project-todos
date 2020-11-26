@@ -5,23 +5,31 @@ import headerImage from '../header.jpg'
 
 export const Header = () => {
 
-    const HeaderContainer = styled.section `
+    return (
+        <HeaderContainer>
+        <Image src={headerImage} />
+        <HeaderText>TO DO LIST</HeaderText>
+        </HeaderContainer>
+    )
+}
+
+const HeaderContainer = styled.section `
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
     width: 100%;
     height: auto;
-    `
+`
 
-    const Image = styled.img`
+const Image = styled.img`
     width: 100%;
     height: auto;
-    `
+`
 
-    const HeaderText = styled.text `
+const HeaderText = styled.text `
     color: #fff;
-    font-size: 22px;
+    font-size: 17px;
     font-style: italic;
     position: absolute;
     top: 50;
@@ -30,21 +38,13 @@ export const Header = () => {
     left: 0;
     padding-left: 10px;
     padding-bottom: 2px;
-        @media (min-width: 768px) { /* TABLET VIEW */
-            font-size: 45px;
-            padding-left: 20px;
-        }
-            @media (min-width: 1024px) { /* DESKTOP VIEW */
-                font-size: 60px;
-                padding-left: 20px;
-            }
-    `
     
-    return (
-        <HeaderContainer>
-        <Image src={headerImage} />
-        <HeaderText>TO DO LIST</HeaderText>
-        </HeaderContainer>
-    )
-
-}
+    @media (min-width: 768px) { /* Tablet view */
+        font-size: 20px;
+    }
+    
+    @media (min-width: 1024px) { /* Desktop view */
+        font-size: 20px;
+        padding-left: 10px;
+    }
+`

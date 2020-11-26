@@ -4,22 +4,7 @@ import styled from 'styled-components'
 
 import { todos } from '../reducers/todos'
 
-export const ToDoInput = () => {
-
-    const AddTodoContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color:  #F4F4F4;
-    border-top: #baa8a8 solid 2px;
-    `
-
-    const AddTodoButton = styled.button`
-    background-color: #F4F4F4;
-    width: 50px;
-    border: none;
-    `
+export const AddNewTodo = () => {
 
     const dispatch = useDispatch()
     const [newTodo, setNewTodo] = useState('')
@@ -31,7 +16,7 @@ export const ToDoInput = () => {
 
     return(
         <AddTodoContainer>
-            <input type="text"
+            <Input type="text"
             onChange={event => setNewTodo(event.target.value)}
             value={newTodo}
             placeholder="Add new todo..."
@@ -43,3 +28,23 @@ export const ToDoInput = () => {
         </AddTodoContainer>
     )
 }
+
+const AddTodoContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color:  #F4F4F4;
+    border-top: #baa8a8 solid 2px;
+`
+
+const AddTodoButton = styled.button`
+    background-color: #F4F4F4;
+    width: 50px;
+    border: none;
+    cursor: pointer;
+`
+
+const Input = styled.input`
+width: 150px;
+`
