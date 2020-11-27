@@ -13,6 +13,10 @@ const store = configureStore({ reducer });
 
 const Main = styled.main`
   background-color: blue;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 const HeaderContainer = styled.nav`

@@ -9,14 +9,22 @@ import todos from 'reducers/todos';
 
 const ListContainer = styled.ul`
     display: flex;
-    width: 100%;
     flex-direction: column;
     list-style: none;
+    width: 100%;
+
+@media (min-width: 768px) {
+    justify-content: center;
+}
 `;
 
 const SummaryContainer =styled.div`
     display: flex;
     flex-direction: column;
+
+@media (min-width: 768px) {
+   align-items: center;
+}
 `;
 const Summary = styled.p`
     font-size: 20px;
@@ -24,7 +32,7 @@ const Summary = styled.p`
     font-weight: bold;
 `;
 
-const RemoveAllButton = styled.p`
+const RemoveAllButton = styled.button`
     font-size: 15px;
     width: 90px;
     height: 30px;
@@ -33,6 +41,11 @@ const RemoveAllButton = styled.p`
     background-color: yellow;
     color: red;
     cursor: pointer;
+
+@media (min-width: 768px) {
+    width: 150px;
+    height: 50px;
+}
 `
 
 const TodoList = () => {
@@ -57,21 +70,22 @@ const TodoList = () => {
     }
 
         return (
-            <ListContainer>
-                <TodoInput />
-                {items.map((item) => (
-                    <Item key={item.id} 
-                        item={item.text} 
-                        id={item.id}
-                        isComplete={item.isComplete}
-                />
-                ))}
-                <SummaryContainer>
-                    <Summary>Finished: {finishedTasks.length} / {items.length} tasks</Summary>
-                    <RemoveAllButton onClick={onRemoveAll}>Remove all</RemoveAllButton>
-                </SummaryContainer>
-                
-            </ListContainer>
+            <>
+                  <TodoInput />
+                  <ListContainer>
+                    {items.map((item) => (
+                        <Item key={item.id} 
+                            item={item.text} 
+                            id={item.id}
+                            isComplete={item.isComplete}
+                        />
+                    ))}
+                    <SummaryContainer>
+                        <Summary>Finished: {finishedTasks.length} / {items.length} tasks</Summary>
+                        <RemoveAllButton onClick={onRemoveAll}>Remove all</RemoveAllButton>
+                    </SummaryContainer>
+                </ListContainer>
+            </>
         );
     };
 

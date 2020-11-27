@@ -60,8 +60,9 @@ const CustomCheckBox = ({ isChecked, onChangeHandler }) => {
     return (
         <div>
             <label>
-                <Checkbox checked={checked} onChange={OnChangeChecked}>
-
+                <Checkbox 
+                    checked={checked} 
+                    onChange={OnChangeChecked}>
                 </Checkbox>
             </label>
         </div>

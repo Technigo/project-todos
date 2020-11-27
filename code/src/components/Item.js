@@ -5,7 +5,6 @@ import { useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 import CustomCheckBox from 'components/CustomCheckbox';
 
-
 const ItemList = styled.li`
     font-size: 25px;
     color: black;
@@ -16,6 +15,10 @@ const ItemList = styled.li`
     margin: 5px;
     display: flex;
     justify-content: space-between;
+
+@media (min-width: 768px) {
+    margin-left: 11%;
+}
 `;
 
 const RemoveItemButton = styled.button`
@@ -31,7 +34,6 @@ const Item = ({ id, item, isComplete }) => {
 
     const onCheckBoxClick = () => {  
         dispatch(todos.actions.changeItem({id}))
-        console.log(isComplete.toString);
     }
 
     const onItemDelete = () => {
@@ -40,13 +42,15 @@ const Item = ({ id, item, isComplete }) => {
 
     return (
         <ItemList>
-             <CustomCheckBox isChecked={isComplete} onChangeHandler={onCheckBoxClick}/>
+             <CustomCheckBox 
+                isChecked={isComplete} 
+                onChangeHandler={onCheckBoxClick}/>
              {item}
              <RemoveItemButton onClick={onItemDelete}>
                    <span>🗑</span> 
             </RemoveItemButton>
         </ItemList>
-    )
+    );
 };
 
 export default Item;
