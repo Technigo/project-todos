@@ -7,10 +7,10 @@ export const tasks = createSlice({
   initialState: {
     counter: 4,
     todos: [
-      { id: 1, text: 'Watch video on actions & reducers', complete: false },
-      { id: 2, text: 'Follow redux codealong', complete: false },
-      { id: 3, text: 'Fork weekly assignment', complete: false },
-      { id: 4, text: 'Create a todo app', complete: false }
+      { id: 1, text: 'Submit the project', complete: false },
+      { id: 2, text: 'Go for a run', complete: false },
+      { id: 3, text: 'Watch the lecture from Wednesday', complete: false },
+      { id: 4, text: 'Buy wine', complete: false }
     ]
   },
 
