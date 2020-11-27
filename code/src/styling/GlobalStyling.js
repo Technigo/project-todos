@@ -91,17 +91,14 @@ export const Button = styled.button`
   height: 30px;
   width: 30px;
   border: none;
-  /* border: 1px solid #000; */
   background: #f5f1fc;
   color: #4300ca;
 
   &:hover {
     cursor: pointer;
+    background: #4300ca;
+    color: #fff;
   }
-`;
-
-export const TaskDragImage = styled.img`
-  width: 20px;
 `;
 
 export const AddTaskButton = styled(Button)`

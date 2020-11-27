@@ -40,7 +40,7 @@ export const CompletedTodo = ({ task, index }) => {
   );
 };
 
-// Local styling ----------------------------------------------------------------
+// Local styles -----------------------------
 const CompletedTaskWrapper = styled(TaskWrapper)`
   background: #f5f1fc;
 `;
@@ -50,7 +50,7 @@ const CompletedTime = styled.p`
   font-style: italic;
   margin: 0;
   opacity: 0.5;
-  margin-left: 10px;
+  margin: 5px 0 0 10px;
 `;
 
 const TaskText = styled.label`
@@ -70,9 +70,17 @@ const CheckedButton = styled(Button)`
   background: #4300ca;
   color: #fff;
   margin: 0 10px;
-  /* transform: rotate(90deg); */
+  transform: rotate(45deg);
+  &:hover {
+    background: #fff;
+    color: #4300ca;
+  }
 `;
 
 const RemoveTaskButton = styled(Button)`
   background: #fff;
+  &:hover {
+    background: #4300ca;
+    color: #fff;
+  }
 `;

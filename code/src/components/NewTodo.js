@@ -23,9 +23,11 @@ export const NewTodo = ({ setAddTaskVisible }) => {
   const [prio, setPrio] = useState(false);
 
   const options = [
-    { value: 'Fun', label: 'Fun' },
-    { value: 'Nom', label: 'Nom' },
+    { value: 'Home', label: 'Home' },
+    { value: 'Work', label: 'Work' },
+    { value: 'Love', label: 'Love' },
     { value: 'Shop', label: 'Shop' },
+    { value: 'Fix', label: 'Fix' },
   ];
 
   const handleSelectChange = (selectedOption) => {
@@ -108,7 +110,7 @@ export const NewTodo = ({ setAddTaskVisible }) => {
   );
 };
 
-// Local styles -------------------------------------------
+// Local styles -----------------------------
 const NewTodoInput = styled.input`
   padding: 10px 20px 10px 5px;
   border: none;
@@ -127,10 +129,6 @@ const CategoryAndPrioWrapper = styled(InnerFlexWrapper)`
 const CustomSelect = styled(Select)`
   width: 280px;
   margin-bottom: 10px;
-
-  & react-select__control {
-    border-color: #000;
-  }
 `;
 
 const Label = styled.label`
@@ -156,8 +154,11 @@ const NewTodoButton = styled.button`
   border: none;
   border: 1px solid #000;
   font-size: 24px;
+  border: none;
 
   &:hover {
     cursor: pointer;
+    background: #eae0ff;
+    color: #4300ca;
   }
 `;

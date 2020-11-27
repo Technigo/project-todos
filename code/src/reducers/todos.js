@@ -1,27 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 import moment from 'moment';
 
+const initialState = {
+  tasks: [],
+};
+
 export const todos = createSlice({
   name: 'todos',
-  initialState: {
-    tasks: [
-      {
-        id: 1,
-        task: 'Eat candy',
-        category: 'Nom',
-        prio: true,
-        isCompleted: false,
-      },
-      {
-        id: 2,
-        task: 'Dance',
-        category: 'Fun',
-        isCompleted: false,
-      },
-      { id: 3, task: 'Jump', category: 'Fun', prio: true, isCompleted: false },
-      { id: 4, task: 'Bake a cake', category: 'Nom', isCompleted: false },
-    ],
-  },
+  initialState: initialState,
   reducers: {
     addTodo: (state, action) => {
       const newTodosList = [...state.tasks, action.payload];

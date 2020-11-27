@@ -6,42 +6,15 @@ import styled from 'styled-components';
 // Reducers
 import { todos } from '../reducers/todos';
 
+// Components
+import { CustomCheckbox } from '../components/CustomCheckbox';
+
 // Styling
-import { TaskWrapper, Button } from '../styling/GlobalStyling';
-
-const TaskTextWrapper = styled.div`
-  flex-grow: 2;
-  margin-left: 20px;
-`;
-
-const TaskText = styled.label`
-  font-size: 18px;
-  /* text-transform: uppercase; */
-  font-weight: bold;
-  color: #4300ca;
-`;
-
-const CategoryText = styled.p`
-  font-size: 10px;
-  margin-bottom: 5px;
-  text-transform: uppercase;
-  color: #4300ca;
-`;
-
-const TaskCheckbox = styled.input`
-  margin: 0 10px;
-`;
-
-const RemoveTaskButton = styled(Button)`
-  margin: 0 20px;
-`;
-
-const CompletedTime = styled.p`
-  font-size: 10px;
-  margin-top: 5px;
-  text-transform: uppercase;
-  opacity: 0.7;
-`;
+import {
+  InnerFlexWrapper,
+  TaskWrapper,
+  Button,
+} from '../styling/GlobalStyling';
 
 // -----------------------------------------------------------------------------
 
@@ -76,16 +49,54 @@ export const Todo = ({ task, index, prio }) => {
           Created {moment(task.createdAt).startOf('second').fromNow()}
         </CompletedTime>
       </TaskTextWrapper>
-      <div>
+      <ButtonWrapper>
         <RemoveTaskButton onClick={handleRemoveTask}>✕</RemoveTaskButton>
-        <TaskCheckbox
-          type="checkbox"
-          name="finished"
-          id={index}
-          checked={checked}
-          onChange={handleChecked}
+
+        <CustomCheckbox
+          isChecked={checked}
+          onChangeHandler={(event) => handleChecked(event)}
         />
-      </div>
+      </ButtonWrapper>
     </TaskWrapper>
   );
 };
+
+// Local styles -----------------------------
+const TaskTextWrapper = styled.div`
+  flex-grow: 2;
+  margin-left: 20px;
+`;
+
+const TaskText = styled.label`
+  font-size: 18px;
+  /* text-transform: uppercase; */
+  font-weight: bold;
+  color: #4300ca;
+`;
+
+const CategoryText = styled.p`
+  font-size: 10px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: #4300ca;
+`;
+
+const RemoveTaskButton = styled(Button)`
+  margin: 0 10px;
+  &:hover {
+    background: #4300ca;
+    color: #fff;
+  }
+`;
+
+const CompletedTime = styled.p`
+  font-size: 10px;
+  margin-top: 5px;
+  text-transform: uppercase;
+  opacity: 0.7;
+`;
+
+const ButtonWrapper = styled(InnerFlexWrapper)`
+  align-content: center;
+  margin-right: 10px;
+`;

@@ -10,7 +10,7 @@ import { OuterFlexWrapper, InfoText } from '../styling/GlobalStyling';
 export const NoTasksFound = () => {
   return (
     <NoTasksFoundWrapper>
-      {/* <NoTasksFoundHeading>No tasks!</NoTasksFoundHeading> */}
+      <NoTasksFoundHeading>No tasks!</NoTasksFoundHeading>
       <NoTasksFoundInfoText>
         Add a new task by clicking "+".
       </NoTasksFoundInfoText>
@@ -18,7 +18,7 @@ export const NoTasksFound = () => {
   );
 };
 
-// Local Styles
+// Local styles -----------------------------
 const NoTasksFoundWrapper = styled(OuterFlexWrapper)`
   height: 400px;
   justify-content: center;

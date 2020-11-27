@@ -12,7 +12,7 @@ import { NoTasksFound } from './NoTasksFound';
 import { todos } from '../reducers/todos';
 
 // Styling
-import { Wrapper, Button } from '../styling/GlobalStyling';
+import { Wrapper, InnerFlexWrapper, Button } from '../styling/GlobalStyling';
 
 // -----------------------------------------------------------------------------
 
@@ -32,6 +32,8 @@ export const ListOfTodos = () => {
 
   if (showingCategory === 'All') {
     categoryTasks = nonCompletedTasks;
+  } else if (showingCategory === 'Prioritized') {
+    categoryTasks = nonCompletedTasks.filter((task) => task.prio);
   } else {
     categoryTasks = nonCompletedTasks.filter(
       (todo) => todo.category === showingCategory
@@ -92,30 +94,40 @@ export const ListOfTodos = () => {
 
       {/* Show complete all/remove all only if there are thoughts available */}
       {allTodos.length !== 0 && (
-        <ControlTasks>
-          <p>
-            Complete all tasks <Button onClick={handleCompleteAll}>✓</Button>
-          </p>
-          <p>
-            Remove all tasks <Button onClick={handleRemoveAll}>✕</Button>
-          </p>
-          <p>
-            Remove all completed tasks{' '}
+        <ControlTasksWrapper>
+          <ControllerWrapper>
+            <p>Complete all tasks</p>
+            <Button onClick={handleCompleteAll}>✓</Button>
+          </ControllerWrapper>
+
+          <ControllerWrapper>
+            <p>Remove all tasks</p>
+            <Button onClick={handleRemoveAll}>✕</Button>
+          </ControllerWrapper>
+
+          <ControllerWrapper>
+            <p>Remove all completed tasks</p>
             <Button onClick={handleRemoveCompleted}>✕</Button>
-          </p>
-        </ControlTasks>
+          </ControllerWrapper>
+        </ControlTasksWrapper>
       )}
     </Wrapper>
   );
 };
 
 // Local styles -----------------------------
-const ControlTasks = styled.div`
-  margin: 20px;
+const CompletedHeadline = styled.h2`
+  font-size: 16px;
+  margin: 50px 0 15px 10px;
+  text-transform: uppercase;
+`;
+
+const ControlTasksWrapper = styled.div`
+  margin: 50px 20px 20px;
   text-align: center;
   font-size: 14px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 
   & p {
@@ -123,10 +135,18 @@ const ControlTasks = styled.div`
     text-transform: uppercase;
     font-size: 12px;
   }
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
 `;
 
-const CompletedHeadline = styled.h2`
-  font-size: 16px;
-  margin: 50px 0 15px 10px;
-  text-transform: uppercase;
+const ControllerWrapper = styled(InnerFlexWrapper)`
+  flex-direction: column;
+  width: 33%;
+
+  @media (max-width: 450px) {
+    width: 100%;
+    flex-direction: row;
+  }
 `;
