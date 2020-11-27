@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import { AddTask } from './AddTask';
 import { Task } from './Task';
 import { RemoveAll } from './RemoveAll';
+import { RemoveCompleted } from './RemoveCompleted';
 
 import { SmallText, Emoji } from 'styles/GlobalStyles';
 
@@ -39,6 +40,7 @@ export const TaskList = () => {
       </ListofTasks>
       <ButtonWrapper>
         <RemoveAll />
+        <RemoveCompleted />
       </ButtonWrapper>
     </div>
   );

@@ -30,13 +30,14 @@ export const tasks = createSlice({
     removeAll: (state) => {
       state.items = []
     },
+    removeCompleted: (state) => {
+      const filteredList = state.items.filter((item) => !item.complete);
+      state.items = filteredList
+    },
     // Mark All button is not used right now
       //markAll: (state) => {
         //state.items.map((item) => (item.complete = true));
         //state.items.map((task) => (task.complete = true));
       //},
-    unMarkAll: (state) => {
-      state.items.map((item) => (item.complete = false));
-    },
   }
 });

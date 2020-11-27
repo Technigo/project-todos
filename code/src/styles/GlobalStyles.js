@@ -16,7 +16,7 @@ export const Button = styled.button`
   justify-content: center;
   font-family: 'PT Sans', sans-serif;
   font-size: 14px;
-  width: 60%;
+  width: 48%;
 
   &:hover {
     border: 1px solid #000;
