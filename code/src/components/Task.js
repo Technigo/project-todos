@@ -17,6 +17,7 @@ const TaskContainer = styled.div`
   margin: 10px 0;
   transition: 0.3s ease;
   box-shadow: 10px 13px 21px -18px rgba(158,158,158,1);
+  opacity: ${props => props.checked ? '0.4' : '1'};
 
   &:hover {
     opacity: 0.6;
@@ -85,7 +86,7 @@ export const Task = ({task}) => {
   }
 
   return (
-    <TaskContainer>
+    <TaskContainer checked={task.complete}>
       <Checkbox
           type="checkbox"
           id={task.id}

@@ -62,7 +62,6 @@ const TaskButton = styled.button`
     opacity: 0.4;
   }
 `
-
 const AddIcon = styled.img`
   width: 12px;
   height: 12px;
