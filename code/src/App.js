@@ -16,8 +16,8 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
-      <AddTodo />
       <StatusBar />
+      <AddTodo />
       <TodoList />
     </Provider>
   );

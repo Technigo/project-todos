@@ -1,28 +1,57 @@
 .status-bar {
-  background: linear-gradient(#6c7a89, #a6afb8);
+  /* background: linear-gradient(#6c7a89, #a6afb8); */
+  background: #5c7c99;
   color: #eee;
-  padding: 15px;
+  padding: 10px 10px 10px 15px;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
   box-shadow: 3px 4px 8px 0 rgba(0, 0, 0, 0.3);
-margin-bottom: 15px;
+  margin-top: 15px;
 }
 
-.clear-all-button {
-    cursor: pointer;
-    padding: 10px;
-    border-radius: 15px;
-    border: none;
-    text-transform: uppercase;
-    font-size: 12px;
-    background: linear-gradient(#6c7a89, #333);
-    color: #eee;
-    outline: none;
+.button-container {
+  display: flex;
+  flex-direction: column;  
 }
 
-.clear-all-button:active {
-    transform: translateY(1px);
-    box-shadow: none;
+.clear-complete-button {
+  margin-bottom: 5px;
+}
+
+.clear-all-button,
+.clear-complete-button {
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 12px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  background: linear-gradient(#395873, #063053);
+  color: #eee;
+  outline: none;
+  font-weight: 400;
+  transition: letter-spacing 500ms ease;
+}
+
+.clear-all-button:hover,
+.clear-complete-button:hover {
+  color: #fff;
+  letter-spacing: 0.7px;
+}
+
+.clear-all-button:active,
+.clear-complete-button:active {
+  transform: translateY(1px);
+}
+
+@media (min-width: 500px) {
+  .button-container {
+    flex-direction: row;  
   }
+  .clear-complete-button {
+    margin-bottom: 0;
+  }
+}

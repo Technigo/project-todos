@@ -1,11 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  items: [
-    { id: 1, name: "my first todo", isComplete: false },
-    { id: 2, name: "my second todo", isComplete: true },
-    { id: 3, name: "my third todo", isComplete: false },
-  ],
+  items: [],
 };
 
 export const todos = createSlice({
@@ -14,13 +10,17 @@ export const todos = createSlice({
   reducers: {
     removeItem: (store, action) => {
       const itemId = action.payload;
-      // console.log({itemId})
       const filteredList = store.items.filter((item) => item.id !== itemId);
       store.items = filteredList;
     },
 
     removeAllItems: (store, action) => {
       store.items = [];
+    },
+
+    removeCompleted: (store, action) => {
+      const filteredList = store.items.filter((item) => !item.isComplete);
+      store.items = filteredList;
     },
 
     addItem: (store, action) => {
@@ -40,10 +40,10 @@ export const todos = createSlice({
     },
 
     toggleComplete: (store, action) => {
-      const itemId = action.payload;      
-      const currentTodo = store.items.find((item) => item.id === itemId)
+      const itemId = action.payload;
+      const currentTodo = store.items.find((item) => item.id === itemId);
       // If the task is already completed set isCompleted to false, otherwise to true
-      currentTodo.isComplete = !currentTodo.isComplete
+      currentTodo.isComplete = !currentTodo.isComplete;
     },
   },
 });

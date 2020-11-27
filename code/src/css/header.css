@@ -1,5 +1,6 @@
 header {
-  background: linear-gradient(#333, #6c7a89);
+  /* background: linear-gradient(#333, #6c7a89); */
+  background: linear-gradient(#063053, #395873, #5c7c99);
   color: #eee;
   padding: 15px;
   width: 100%;

@@ -9,17 +9,32 @@ export const StatusBar = () => {
   const items = useSelector((store) => store.todos.items);
   const completedItems = items.filter((item) => item.isComplete === true);
 
-  const onItemsDelete = () => {
+  const onAllItemsDelete = () => {
     dispatch(todos.actions.removeAllItems());
+  };
+
+  const onCompleteItemsDelete = () => {
+    dispatch(todos.actions.removeCompleted());
   };
 
   return (
     <section className="status-bar">
       <p className="nr-of-tasks">
-          {items.length === 0 ? "Yay! Your todo list is empty" : `${completedItems.length}/${items.length} tasks done`}
-        {/* {completedItems.length}/{items.length} tasks done */}
+        {items.length === 0
+          ? "Your todo list is empty"
+          : `${completedItems.length}/${items.length} tasks done`}
       </p>
-      <button className="clear-all-button" onClick={onItemsDelete}>Clear all</button>
+      <div className="button-container">
+        <button
+          className="clear-complete-button"
+          onClick={onCompleteItemsDelete}
+        >
+          Clear completed
+        </button>
+        <button className="clear-all-button" onClick={onAllItemsDelete}>
+          Clear all
+        </button>
+      </div>
     </section>
   );
 };
