@@ -16,7 +16,7 @@ export const EmptyStateText = styled.div`
   justify-content:center;
   padding:20px;
   font-size:35px;
-  font-family:"Didot", sans-serif;
+  font-family:"GFS Didot", serif;
   font-weight:700;
   color: #be648c;
 `
