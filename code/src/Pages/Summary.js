@@ -9,8 +9,8 @@ import { Button } from '../library/Button'
 import { Main, Wrapper } from '../library/Containers'
 
 export const Summary = () => {
-  const [clearBtn, setClearBtn] = useState(true)
-  const [outerWrapper, setOuterWrapper] = useState(true)
+  const [clearBtn] = useState(true)
+  const [outerWrapper] = useState(true)
 
   const dispatch = useDispatch()
 

@@ -12,7 +12,7 @@ import moment from 'moment'
 
 export const Item = ({ item }) => {
   const dispatch = useDispatch()
-  const [removeBtn, setRemoveBtn] = useState(true)
+  const [removeBtn] = useState(true)
 
   const handleCheckboxClick = () => {
     dispatch(tasks.actions.toggleDone({ id: item.id}))

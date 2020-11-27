@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
 
 import {
   HiddenCheckbox,
@@ -10,8 +9,6 @@ import {
 
 export const Checkbox = ({ done, onChangeHandler }) => {
   const [checked, setChecked] = useState(done)
-
-  console.log(checked)
 
   const handleOnChange = (event) => {
     onChangeHandler()

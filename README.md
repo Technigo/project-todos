@@ -6,7 +6,9 @@ It's really nifty!
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This Todo-app lists tasks which you are able to mark as complete or uncomplete. You can remove tasks and add new ones, these are stored in the local storage is your browser. At the top you can see how many tasks you have in you list and how many you've completed.
+
+Each task has a timestamp on when it was created using moment. The list also contains a 'Clear All'- button, on which you can remove all tasks from the list. The whole project is styled using styled components.
 
 ## View it live
 

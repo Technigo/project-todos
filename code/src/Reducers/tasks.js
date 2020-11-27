@@ -1,7 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-
-import moment from 'moment'
-
 //Add multiple lists
 
 export const tasks = createSlice({
@@ -32,7 +29,7 @@ export const tasks = createSlice({
   reducers: {
     addItem: (state, action) => {
       const { taskInfo } = action.payload
-      state.items = [... state.items, taskInfo]
+      state.items = [...state.items, taskInfo]
     },
     removeItem: (state, action) => {
       const { id } = action.payload
