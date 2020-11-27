@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { visibilityFilter, VisibilityFilter } from 'reducers/visibilityFilter';
 import styled from 'styled-components';
 
@@ -15,44 +15,60 @@ const Container = styled.footer`
 `;
 
 export const FilterTodo = () => {
-  const dispatch = useDispatch();
-  const [filter, setFilter] = useState(VisibilityFilter.ShowAll);
+  const currentvisibilityFilter = useSelector(
+    (state) => state.visibilityFilter
+  );
 
-  // const currentvisibilityFilter = useSelector(
-  //   (state) => state.visibilityFilter
-  // );
-
+  console.log(currentvisibilityFilter);
   console.log(VisibilityFilter.ShowAll);
+
+  const dispatch = useDispatch();
 
   const handleShowAll = (event) => {
     event.preventDefault();
-    setFilter(VisibilityFilter.ShowAll);
-    dispatch(visibilityFilter.actions.setVisibilityFilter({ filter }));
+    dispatch(
+      visibilityFilter.actions.setVisibilityFilter({
+        filter: VisibilityFilter.ShowAll
+      })
+    );
   };
 
   const handleShowActive = (event) => {
     event.preventDefault();
-    setFilter(VisibilityFilter.ShowActive);
-    console.log(filter);
-    dispatch(visibilityFilter.actions.setVisibilityFilter({ filter }));
+    dispatch(
+      visibilityFilter.actions.setVisibilityFilter({
+        filter: VisibilityFilter.ShowActive
+      })
+    );
   };
 
   const handleShowCompleted = (event) => {
     event.preventDefault();
-    setFilter(VisibilityFilter.ShowCompleted);
-    dispatch(visibilityFilter.actions.setVisibilityFilter({ filter }));
+    dispatch(
+      visibilityFilter.actions.setVisibilityFilter({
+        filter: VisibilityFilter.ShowCompleted
+      })
+    );
   };
 
   return (
     <Container>
       <Subtitle>Show</Subtitle>
       <Button
-        // disabled={currentvisibilityFilter === filter}
+        disabled={currentvisibilityFilter === VisibilityFilter.ShowAll}
         onClick={handleShowAll}>
         All
       </Button>
-      <Button onClick={handleShowActive}>Active</Button>
-      <Button onClick={handleShowCompleted}>Completed</Button>
+      <Button
+        disabled={currentvisibilityFilter === VisibilityFilter.ShowActive}
+        onClick={handleShowActive}>
+        Active
+      </Button>
+      <Button
+        disabled={currentvisibilityFilter === VisibilityFilter.ShowCompleted}
+        onClick={handleShowCompleted}>
+        Completed
+      </Button>
     </Container>
   );
 };
