@@ -1,8 +1,8 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+This is a Todo-site. Here you can create lists, add tasks to each list and mark tasks as done or clear a list.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+It's really nifty!
 
 ## The problem
 

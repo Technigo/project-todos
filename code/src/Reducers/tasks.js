@@ -26,7 +26,7 @@ export const tasks = createSlice({
   reducers: {
     addItem: (state, action) => {
       const { taskInfo } = action.payload
-      state.items= [... state.items, taskInfo]
+      state.items = [... state.items, taskInfo]
     },
     removeItem: (state, action) => {
       const { id } = action.payload
@@ -34,6 +34,12 @@ export const tasks = createSlice({
     },
     removeAll: (state) => {
       state.items = []
-    }
+    },
+    /*toggleDone: (state, action) => {
+      const foundItem = store.items.find(item => item.id === action.payload)
+      if (foundItem) {
+        foundItem.done = !foundItem.done
+      } 
+    }*/
   }
 });
