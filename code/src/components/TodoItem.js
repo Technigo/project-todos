@@ -1,6 +1,8 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import { todos } from '../reducers/todos';
+
 import { CustomCheckbox } from './CustomCheckbox';
 import { DeleteContainer, DeleteButton } from '../styledComponents/styled_components';
 import  bin  from '../assets/bin.png';
