@@ -1,10 +1,10 @@
 import {createSlice} from '@reduxjs/toolkit'
 
 const taskList = [
-    {id: 1, text: 'my first todo', complete: true},
-    {id: 2, text: 'my second todo', complete: false},
-    {id: 3, text: 'my third todo', complete: true},
-    {id: 4, text: 'my fourth todo', complete: false}
+    {id: 1, text: 'My first todo', complete: true, date: new Date().getTime()},
+    {id: 2, text: 'My second todo', complete: false, date: new Date().getTime()},
+    {id: 3, text: 'My third todo', complete: true, date: new Date().getTime()},
+    {id: 4, text: 'My fourth todo', complete: false, date: new Date().getTime()}
 ]
 
 export const tasks = createSlice({
@@ -17,7 +17,8 @@ export const tasks = createSlice({
             state.items.push({
                 id: (state.items.length > 0 ? Math.max(...latestTaskId) +1 : 1), 
                 text: action.payload, 
-                complete: false});
+                complete: false,
+                date: new Date().getTime()});
         },
 
         clearTasks: (state) => {

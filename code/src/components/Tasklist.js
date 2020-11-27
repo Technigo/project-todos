@@ -1,10 +1,11 @@
 import React from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 
+
 import {Task} from './Task'
 import {NewTask} from './NewTask'
 import {tasks} from '../reducers/tasks'
-import {TasksContainer, ClearButton} from './StyledComponents'
+import {TasksContainer, ClearButton, TopInfo, TaskTitle} from './StyledComponents'
 
 
 const Tasklist = () => {
@@ -15,15 +16,14 @@ const Tasklist = () => {
 
     return(
         <TasksContainer>
-            <p>
-                Completed: {completedTasks.length}/{Listedtasks.length} 
-                <span>
-                    <ClearButton onClick={()=>dispatch(tasks.actions.clearTasks())}>
-                        Clear All
-                    </ClearButton>
-                </span>
-            </p>
-            
+            <TopInfo>
+            Completed: {completedTasks.length}/{Listedtasks.length}
+                
+            <ClearButton onClick={()=>dispatch(tasks.actions.clearTasks())}>
+                Clear All
+            </ClearButton>
+            </TopInfo>
+ 
             {Listedtasks.map(task => {
                 return (
                     <div key={task.id}>

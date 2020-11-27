@@ -39,19 +39,19 @@ height: 50px;
 margin: 10px 0;
 
 `
-export const Todo = styled.div`
+export const Todo = styled.label`
 display: flex;
+position: relative;
 flex-direction: row;
 align-items: center;
+justify-content: space-between;
 box-sizing: border-box;
-width: 85%;
+width: 87%;
 height: 50px; 
-margin: 10px 0;
+margin: 10px 0; 
 padding: 10px;
 background-color: #EFEDFF;
 border-radius: 15px;
-color: ${props => props.checked ? "#D1C4F6" : "#7F2AEC"};
-font-weight: bold;
 `
 
 export const RemoveButton = styled.button`
@@ -62,11 +62,22 @@ border: 2px solid lightgrey;
 background-color: white;
 color: lightgrey;
 font-weight: bold;
+cursor: pointer;
 `
 
 export const TaskTitle = styled.p`
 margin: 0 10px;
-text-transform: capitalize;
+margin-left: 35px;
+color: ${props => props.checked ? "#D1C4F6" : "#7F2AEC"};
+text-decoration: ${props => props.checked ? "line-through" : "none"};
+font-weight: bold;
+` 
+export const DateStamp = styled.p`
+margin: 2px 10px;
+margin-left: 35px;
+color: #D1C4F6;
+font-size: 10px;
+text-align: right;
 ` 
 
 export const SubmitButton = styled.button`
@@ -78,6 +89,7 @@ background-color: #7F2AEC;
 color: white;
 font-weight: bold;
 font-size: 20px;
+cursor: pointer;
 `
 
 export const Input = styled.input`
@@ -87,7 +99,12 @@ height: 50px;
 border-radius: 15px;
 border: 2px solid #7F2AEC;
 padding: 10px;
-font-size: 14px;
+font-size: 16px;
+&::placeholder {
+    color: #D1C4F6;
+}
+
+
 `
 export const Form = styled.form`
 display: flex;
@@ -105,4 +122,16 @@ background-color: #7F2AEC;
 color: white;
 font-size: 14px;
 border-radius: 10px;
+cursor: pointer;
+margin: 10px 0;
+`
+
+export const TopInfo = styled.div`
+width: 100%;
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+color: #D1C4F6;
+font-size: 14px;
 `
