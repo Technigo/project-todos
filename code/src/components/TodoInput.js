@@ -63,7 +63,7 @@ const TodoInput = () => {
             </option>
           ))}
         </select>
-        <Button type="submit">Add Todo</Button>
+        <AddButton type="submit">Add Todo</AddButton>
       </Form>
     </Main>
   );
@@ -84,7 +84,7 @@ const Form = styled.form`
   padding: 25px;
 `;
 
-export const Input = styled.input.attrs({ type: 'text' })`
+const Input = styled.input.attrs({ type: 'text' })`
   background-color: transparent;
   border: none;
   border-bottom: 0.5px solid lightgray;
@@ -92,10 +92,46 @@ export const Input = styled.input.attrs({ type: 'text' })`
   width: 100%;
   font-size: 1.1rem;
   color: rgba(255, 255, 255, 0.7);
+
   ::placeholder {
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
     color: rgba(255, 255, 255, 0.4);
     padding-left: 5px;
   }
+`;
+
+const AddButton = styled.button`
+  /* background: #28e177;
+  border-radius: 30px;
+  color: #fff;
+  padding: 20px;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  border: none; */
+
+  width: 140px;
+  height: 45px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 2.5px;
+  font-weight: 500;
+  color: #28e177;
+  background-color: transparent;
+  border: 2px solid #28e177;
+  border-radius: 45px;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+  }
+
+:hover {
+  background-color: #2EE59D;
+  box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+  color: #fff;
+  transform: translateY(-7px);
+}
 `;

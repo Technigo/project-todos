@@ -30,7 +30,6 @@ const TodoItem = ({ item }) => {
 
   const toggleAccordion = () => {
     setActive(active === '' ? 'active' : '');
-    //setHeight(active === 'active' ? '0px' : '40px');
   };
 
   return (
@@ -40,7 +39,7 @@ const TodoItem = ({ item }) => {
         {/* <ItemButton> */}
         <CheckboxLabel>
           <CustomCheckbox
-            checked={item.complete ? true : ''}
+            checked={item.isComplete ? true : ''}
             onChange={handleOnChange}
           ></CustomCheckbox>
         </CheckboxLabel>
@@ -48,15 +47,15 @@ const TodoItem = ({ item }) => {
         <Item>
           <ItemContainer>
             <ItemDescriptionContainer>
-              <ItemDescription isComplete={item.complete}>
+              <ItemDescription isComplete={item.isComplete}>
                 {item.description}
               </ItemDescription>
-              <ItemCategory isComplete={item.complete}>
+              <ItemCategory isComplete={item.isComplete}>
                 {item.category}
               </ItemCategory>
             </ItemDescriptionContainer>
             {/* <ItemImageContainer> */}
-            {(item.complete || active) && (
+            {(item.isComplete || active) && (
               <ItemImage src="../assets/cancel.svg" onClick={onRemoveTodo} />
             )}
 
@@ -66,10 +65,10 @@ const TodoItem = ({ item }) => {
           {/* style={{ height: `${height}` }} */}
           <ItemAccordion active={active}>
             {/* <ItemDescriptionContainer> */}
-            <ItemDate isComplete={item.complete}>
+            <ItemDate isComplete={item.isComplete}>
               Created: {moment(item.createdAt).fromNow()}
             </ItemDate>
-            <ItemDate isComplete={item.complete}>
+            <ItemDate isComplete={item.isComplete}>
               Due: {moment(item.dueDate).format('MMM Do YYYY')}
             </ItemDate>
             {/* </ItemDescriptionContainer> */}

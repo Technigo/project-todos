@@ -7,7 +7,7 @@ import { Paragraph } from '../library/Text';
 
 const TodoSummary = () => {
   const listArray = useSelector(store => store.todos.list);
-  const todosCompleted = listArray.items.filter(item => item.complete).length;
+  const todosCompleted = listArray.items.filter(item => item.isComplete).length;
   return (
     <SummaryContainer>
       <SummaryTaskContainer>

@@ -29,8 +29,9 @@ const initialState = {
       //   dueDate: '',
       // },
     ],
-    categories: ['School', 'Work', 'Personal', 'Home'],
-    startPage: false,
+    categories: ['School', 'Work', 'Personal', 'Home', 'Other'],
+    selectedStatusFilter: '',
+    selectedCategoryFilter: '',
   },
 };
 
@@ -42,36 +43,39 @@ export const todos = createSlice({
       const { todoItemInfo } = action.payload;
       state.list.items.push(todoItemInfo);
     },
-    // setComplete: (state, action) => {
-    //   const { itemIndex, complete } = action.payload;
-    //   state.list.items[itemIndex].complete = complete;
-    // },
+
     setComplete: (state, action) => {
       const foundItem = state.list.items.find(
         item => item.id === action.payload
       );
       if (foundItem) {
-        foundItem.complete = !foundItem.complete;
+        foundItem.isComplete = !foundItem.isComplete;
       }
     },
+
     setAllComplete: state => {
-      state.list.items.map(item => (item.complete = true));
+      state.list.items.map(item => (item.isComplete = true));
     },
+
     setAllNotComplete: state => {
-      state.list.items.map(item => (item.complete = false));
+      state.list.items.map(item => (item.isComplete = false));
     },
+
     removeTodo: (state, action) => {
       const { id } = action.payload;
       state.list.items = state.list.items.filter(item => item.id !== id);
     },
+
     removeAllTodos: state => {
       state.list.items = [];
     },
-    // goToAddTodo: state => {
-    //   state.startPage = true;
-    // },
-    // goToStartPage: state => {
-    //   state.startPage = false;
-    // },
+
+    filterByStatus: (state, action) => {
+      state.list.selectedStatusFilter = action.payload;
+    },
+
+    filterByCategory: (state, action) => {
+      state.list.selectedCategoryFilter = action.payload;
+    },
   },
 });

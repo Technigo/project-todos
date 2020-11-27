@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const CreateHeader = () => {
   return (
-    <header>
+    <Header>
       <Link to="/">
         <BackButton
           src="../assets/left-arrow.svg"
@@ -12,12 +12,26 @@ const CreateHeader = () => {
           role="button"
         />
       </Link>
-    </header>
+      <P>Add New Task</P>
+    </Header>
   );
 };
 
 export default CreateHeader;
 
+const Header = styled.header`
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  padding: 15px;
+`;
+
 const BackButton = styled.img`
-  height: 30px;
+  height: 25px;
+`;
+
+const P = styled.p`
+  color: #fff;
+  font-size: 1rem;
+  align-self: center;
 `;
