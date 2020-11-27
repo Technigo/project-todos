@@ -83,25 +83,16 @@ const TodoList = () => {
 export default TodoList;
 
 const Container = styled.section `
-  //padding: 20px;
-  //display: grid;
-  //grid-row-gap: 20px;
-  //height: 40vh; */
-    /* background-image: linear-gradient(180deg,#05324b,#3d5f6b,#6c908c,#9cc5ae); */
-    display: grid;
-    /* -webkit-align-content: space-evenly; */
-    -ms-flex-line-pack: space-evenly;
-    /* align-content: space-evenly; */
-    /* -webkit-box-pack: center; */
-    /* -webkit-justify-content: center; */
-    -ms-flex-pack: center;
-    justify-content: center;
-    /* text-align: center;
+  display: grid;
+  -ms-flex-line-pack: space-evenly;
+  -ms-flex-pack: center;
+  justify-content: center;
 `;
 
 const TodoListWrapper = styled.div `
 
-`
+`;
+
 const Filter = styled.div `
   display: flex;
   justify-content: space-between;
