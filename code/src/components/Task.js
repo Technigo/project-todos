@@ -2,41 +2,58 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks' 
 
+import moment from 'moment'
+
 import styled from 'styled-components'
 
 import Logo from './assets/delete.svg'
 
-const Checkbox = styled.input`
-  width: 15px;
-  height: 15px;
-  margin: 0 6px 0 0;
-  cursor: pointer;
-`
-
-const TaskContainer = styled.label`
+const TaskContainer = styled.div`
   display: flex;
+  justify-content: flex-start;
   align-items: center;
   background-color: white;
   padding: 10px;
   margin: 10px 0;
   transition: 0.3s ease;
-  word-break: break-word;
   box-shadow: 10px 13px 21px -18px rgba(158,158,158,1);
 
   &:hover {
     opacity: 0.6;
   }
 
-  ${Checkbox}:checked & {
-    opacity: 0.4;
+  @media (max-width: 280px) {
+    padding: 8px;
   }
+`
+const TextContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+`
+const Checkbox = styled.input`
+  width: 15px;
+  height: 15px;
+  margin: 0 6px 0 0;
+  cursor: pointer;
+
+  &:checked ${TaskContainer} {
+    opacity: 0.3;
+  }
+`
+const Label = styled.label`
+  word-break: break-word;
 
   @media (max-width: 280px) {
     font-size: 14px;
     padding: 8px;
   }
 `
-
+const Date = styled.p`
+  display: inline-block;
+  text-transform: uppercase;
+  font-size: 8px;
+  margin: 5px 0 0 0;
+`
 const RemoveButton = styled.button`
   background-color: transparent;
   border: none;
@@ -68,24 +85,27 @@ export const Task = ({task}) => {
   }
 
   return (
-    <TaskContainer
-      htmlFor={task.id}
-    >
+    <TaskContainer>
       <Checkbox
-        type="checkbox"
-        id={task.id}
-        checked={task.completed}
-        onChange={handleCheckboxClick}
-      />
-      {task.text}
-      <RemoveButton
-        onClick={handleRemoveButton}
-      >
-        <RemoveIcon
-          src={Logo}
-          alt="delete task"
+          type="checkbox"
+          id={task.id}
+          checked={task.completed}
+          onChange={handleCheckboxClick}
         />
-      </RemoveButton>
+      <TextContainer>
+        <Label htmlFor={task.id}>
+          {task.text}
+          <RemoveButton onClick={handleRemoveButton}>
+            <RemoveIcon
+              src={Logo}
+              alt="delete task"
+            />
+        </RemoveButton>
+        </Label>
+        <Date>
+        created: {moment(task.id).fromNow()}
+      </Date>
+      </TextContainer>
     </TaskContainer>
   )
 }
