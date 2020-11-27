@@ -54,12 +54,10 @@ h1 {
 /* INPUT*/
 
 form {
-  margin: 30px;
+  margin: 20px;
+  justify-content: space-evenly;
+  display: flex;
 }
-
-.task-input {
-  margin-right: 10px;
-  }
 
 .task-input-field {
   width: 194px;
@@ -171,13 +169,13 @@ ul {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.clear-button .clearbutton-after {
+.clear-button .clear-button-after {
   display: none;
 }
-.clear-button:hover .clearbutton-after {
+.clear-button:hover .clear-button-after {
   display: inline;
 }
-.clear-button:hover .clearbutton-before {
+.clear-button:hover .clear-button-before {
   display: none;
 }
 
