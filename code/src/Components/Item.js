@@ -6,25 +6,27 @@ import { tasks } from '../Reducers/tasks'
 import { Button } from '../library/Button'
 import { Listelement } from '../Styles/Listelement'
 import { Checkbox } from './Checkbox'
+import { Text, Span } from '../Styles/Texts'
+
+import moment from 'moment'
 
 export const Item = ({ item }) => {
   const dispatch = useDispatch()
   const [removeBtn, setRemoveBtn] = useState(true)
 
   const handleCheckboxClick = () => {
-    console.log('This works!')
     dispatch(tasks.actions.toggleDone({ id: item.id}))
   }
 
   return (
     <Listelement>
       <Checkbox done={item.done} onChangeHandler={handleCheckboxClick}/>
-      {item.text}
+      <Text stroke={item.done ? true : ''}>{item.text}<Span>Created: {moment(item.created).fromNow()}</Span></Text> {/* I get an error when the stroke is set to true, but don't know how to solve it */}
       <Button
         removebtn={removeBtn}
         onClick={() =>
           dispatch(tasks.actions.removeItem({ id: item.id }))
-        } //item here is the prop referring to taskInfo
+        }
       >
         -
       </Button>

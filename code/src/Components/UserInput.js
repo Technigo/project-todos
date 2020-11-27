@@ -7,8 +7,6 @@ import { tasks } from '../Reducers/tasks'
 import { Button } from '../library/Button'
 import { UserInputBox, InputText } from '../library/Containers'
 
-//This will be sent to the array inside tasks.js
-
 export const UserInput = () => {
   const [task, setTask] = useState('')
   const [addBtn, setAddBtn] = useState(true)
@@ -32,6 +30,7 @@ export const UserInput = () => {
   return (
       <UserInputBox onSubmit={handleSubmit}>
         <InputText
+          rows={4}
           placeholder='Add task'
           onChange={(event) => setTask(event.target.value)}
           value={task}

@@ -1,4 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
+
+import moment from 'moment'
+
 //Add multiple lists
 
 export const tasks = createSlice({
@@ -10,16 +13,19 @@ export const tasks = createSlice({
         id: 1,
         text: 'First task',
         done: false,
+        created: 'Some day'
       },
       {
         id: 2,
         text: 'Second task',
         done: false,
+        created: 'Some day'
       },
       {
         id: 3,
         text: 'Third task',
         done: false,
+        created: 'Some day'
       },
     ],
   },

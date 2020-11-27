@@ -16,6 +16,7 @@ align-items: center;
 ${({outerWrapper}) => outerWrapper ? `
 justify-content: end;`:`justify-content: center;`}
 width: 100%;
+margin: 5px;
 `
 
 export const UserInputBox = styled.form`

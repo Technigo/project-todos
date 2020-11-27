@@ -1,17 +1,25 @@
 import styled from 'styled-components'
 
 export const Button = styled.button`
-    ${({removebtn}) => removebtn && `
+  ${({ removebtn }) =>
+    removebtn &&
+    `
     border-radius: 50%;
     margin: auto;
     background: #FAFAE5;`}
-    ${({addBtn}) => addBtn && `
+  ${({ addBtn }) =>
+    addBtn &&
+    `
     background: #63C6B4;
     border-radius: 10px;
     margin: 5px;`}
-    ${({clearBtn}) => clearBtn && `
-    background: #63C6B4;
-    width: 70%;`}
-    border: none;
-    
+    ${({ clearBtn }) =>
+    clearBtn &&
     `
+    background: #63C6B4;
+    border-radius: 10px;
+    width: 70%;
+    font-weight: 600;
+    margin: 10px;`}
+    border: none;
+`
