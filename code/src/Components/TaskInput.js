@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 
 import { todo } from "../Reducers/todo"
+import { v4 as uuidv4 } from 'uuid' // for unique id
 
 export const TaskInput = () => {
   const [input, setInput] = useState("")
@@ -10,10 +11,16 @@ export const TaskInput = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    dispatch(todo.actions.addItem(input))
-
+  dispatch(todo.actions.addItem({
+    newItem: {
+      id: uuidv4(), 
+      text: input,
+      isComplete: false,
+    }
+  })
+  )
     setInput("")
-  };
+  }
   
   return (
     <form onSubmit={handleSubmit}>

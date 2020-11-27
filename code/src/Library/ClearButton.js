@@ -2,7 +2,7 @@ import React from "react"
 import { useDispatch } from "react-redux"
 
 import { todo } from "../Reducers/todo"
-import Swal from 'sweetalert2'
+import Swal from 'sweetalert2' // The alertfunction
 
 export const ClearButton = () => {
   const dispatch = useDispatch()

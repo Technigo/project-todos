@@ -11,7 +11,7 @@ export const TaskItem = ({ item }) => {
     dispatch(todo.actions.setComplete(item.id))
   }
 
-  //deleting one element from the redux store
+  //Deleting one element from the redux store
   const onItemDelete = (id) => {
     dispatch(todo.actions.removeItem({ id: item.id }))
   }

@@ -13,22 +13,17 @@ export const todo = createSlice({
   reducers: {
     // Add tasks in the TaskInput
     addItem: (store, action) => {
-      const newItem = {
-        id: Math.max(...store.items.map((item) => item.id)) + 1,
-        text: action.payload,
-        isComplete: false,
-      };
-      const newItemList = [...store.items, newItem]
-      store.items = newItemList
+      const {newItem} = action.payload
+      console.log(action.payload)
+      store.items.push(newItem)
     },
-    //
+    // Completes task in checkbox
     setComplete: (state, action) => {
       const foundItem = state.items.find((item) => item.id === action.payload)
       if (foundItem) {
         foundItem.isComplete = !foundItem.isComplete
       }
     },
-
     // Removes one item in the list
     removeItem: (store, action) => {
       const { id } = action.payload
