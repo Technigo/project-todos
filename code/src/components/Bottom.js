@@ -1,5 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import swal from 'sweetalert';
+import '../index.css';
 
 import { BottomContainer, BottomButton } from '../styles/bottomStyles';
 import { todos } from '../reducers/todos';
@@ -13,7 +15,19 @@ export const Bottom = () => {
   };
 
   const onClearList = () => {
-    dispatch(todos.actions.clearList())
+    swal({
+      title: 'Are you sure?',
+      text:'Do you want to delete all your todo\'s?',
+      buttons: ['No, cancel!', 'Yes, delete!'],
+      dangerMode: true,
+      closeOnClickOutside: false,
+      className:'alert-window'
+    })
+    .then((willDelete) => {
+      if (willDelete) {
+        dispatch(todos.actions.clearList());
+      }
+    })
   }
 
   return(
