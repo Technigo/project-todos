@@ -21,7 +21,7 @@ export const ToDo = styled.h1`
 export const TodaysDate = styled.p`
     font-size: 18px;
     font-family: 'Open Sans', sans-serif;
-    padding: 10px;
+    padding: 5px;
     margin: 0;
     color: rgb(255, 255, 255);
     background-color: rgb(174, 179, 149);

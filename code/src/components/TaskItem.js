@@ -27,11 +27,11 @@ export const TaskItem = ({ todoItem, itemIndex }) => {
     };
 
     return (
-        <Article className={`"task-item" ${todoItem.done ? "done" : ""}`}>
+        <Article>
             <TaskContainer>
                 <CheckboxTextContainer>
                     <CustomCheckbox isChecked={todoItem.done ? "checked" : ""} onChangeHandler={handleOnChange}/>            
-                    <TaskText>{todoItem.text}</TaskText>
+                    <TaskText className={`"task-item" ${todoItem.done ? "done" : ""}`}>{todoItem.text}</TaskText>
                 </CheckboxTextContainer>
                 <ButtonContainer>
                     <RemoveButton onClick={() => onClickRemove(todoItem.id)}>remove</RemoveButton>
