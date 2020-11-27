@@ -16,6 +16,10 @@ export const TaskListInputContainer = styled.div`
   margin-top: 25%;
   background-color:#ffffff;
   box-shadow: rgba(51,51,51,0.5) 0 0 10px;
+  
+  @media (min-width: 768px) {
+    width: 400px;
+  }
 `;
 
 export const ItemContainer = styled.li`
@@ -33,6 +37,10 @@ export const ItemContainer = styled.li`
 export const TaskText = styled.p`
   margin: 0 20px 2px 8px;
   font-size: 18px;
+
+  @media (min-width: 768px) {
+    font-size: 22px;
+  }
 `;
 
 export const RemoveButton = styled.button`
@@ -43,6 +51,11 @@ export const RemoveButton = styled.button`
   color:#dd0743;
   font-weight:700;
   cursor:pointer;
+  &:hover {
+    background-color: #dd0743;
+    color: #ffffff;
+    border-radius:10px;
+  }
 `;
 
 export const RemoveAllButton = styled.button`
@@ -55,7 +68,11 @@ export const RemoveAllButton = styled.button`
   padding:2px 10px;
   margin-bottom:30px;
   cursor:pointer;
-`
+  &:hover {
+    background-color: #f2f0f0;
+    color: #dd0743;
+  }
+`;
 
 export const EmptyStateImage = styled.img`
   width: 200px;

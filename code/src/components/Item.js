@@ -26,10 +26,10 @@ export const Item = ({ item }) => {
   };
 
   return (
-      <ItemContainer>
-        <CheckBox isChecked={item.complete ? 'checked' : "" } onChange={handleSetComplete}/>
-        <TaskText>{item.text}</TaskText>
-        <RemoveButton onClick={handleRemoveTodo}> X </RemoveButton>
-      </ItemContainer>
+    <ItemContainer>
+      <CheckBox isChecked={item.complete ? 'checked' : "" } onChange={handleSetComplete}/>
+      <TaskText>{item.text}</TaskText>
+      <RemoveButton onClick={handleRemoveTodo}> X </RemoveButton>
+    </ItemContainer>
   );
 };

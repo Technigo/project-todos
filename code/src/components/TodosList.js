@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Item } from './Item';
 
+import { Item } from './Item';
 import { ListContainer, TaskListInputContainer, EmptyStateImage, EmptyStateText } from './StyledComponents/ListStyling';
 import { AddTodo } from './AddTodo';
 import { Counter } from './Counter';
 import { Header } from './Header';
-import  Yay from '../assets/yay.png'
 import { RemoveAll } from './RemoveAll';
+import  Yay from '../assets/yay.png'
 
 export const TodosList = () => {
   const items = useSelector((store) => store.todos.items);
