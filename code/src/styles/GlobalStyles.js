@@ -17,6 +17,7 @@ export const Button = styled.button`
   font-family: 'PT Sans', sans-serif;
   font-size: 14px;
   width: 48%;
+  padding: 3px;
 
   &:hover {
     border: 1px solid #000;
