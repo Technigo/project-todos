@@ -21,11 +21,12 @@ export const todos = createSlice({
       // property. The value from TodoInput.js
     },
 
-    // The payload contains the info on which was checked as done. Using the index of that
+    // The payload contains the info on which was checked as done. Using the id of that
     // item.
     setDone: (state, action) => {
-      const { itemId, done } = action.payload;
-      state.list.items[itemId].done = done;
+      const { item, done } = action.payload;
+      state.list.items[item].done = done;
+      
     },
     // Filter away the one we want to delete. Since we know the index of the one we do not want to keep, we can keep everything else.
     // The payload contains the index of the one we want do remove. The onClick.

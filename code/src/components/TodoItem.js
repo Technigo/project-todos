@@ -7,7 +7,6 @@ import { DeleteContainer, DeleteButton } from '../styledComponents/styled_compon
 import  bin  from '../assets/bin.png';
 
 export const TodoItem = ({ item }) => {
-  // Get the item from the store based on the index
   //const item = useSelector((store) => store.todos.list.items[item]);
   const dispatch = useDispatch();
 
@@ -27,7 +26,7 @@ export const TodoItem = ({ item }) => {
   const handleOnChange = () => {
     dispatch(
       todos.actions.setDone({
-        itemId: item.id,
+        item: item,
         done: !item.done
       })
     );
@@ -37,7 +36,7 @@ export const TodoItem = ({ item }) => {
     <DeleteContainer className={`todo-item ${item.done ? 'done' : ''}`}>
       <CustomCheckbox 
         tabIndex='0' 
-        isChecked={item.done ? 'checked' : ''}
+        isChecked={item.done}
         onChangeHandler={handleOnChange}>
       </CustomCheckbox> 
       <span className='todo-item-text'>{item.description}</span>
