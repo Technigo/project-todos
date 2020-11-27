@@ -35,11 +35,11 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   // This is the styled checkbox that will show on the page:
   const StyledCheckbox = styled.div`
     display: inline-block;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     background: ${(props) => (props.checked ? '#034D88' : '#fff')};
-    border-radius: 8px;
-    border: 1px solid #606060;
+    border-radius: 9px;
+    border: 2px solid #606060;
     cursor: pointer;
     transition: all 150ms;
     ${Icon} {

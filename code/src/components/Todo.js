@@ -23,10 +23,10 @@ export const Todo = (props) => {
 
   return (
     <ListItem>
-      {/* <span>{category}: </span> */}
       <TextLineWrapper> 
         <label>
-          <CustomCheckbox 
+          <CustomCheckbox
+          //What is this isChecked and why is it here? My state is 'complete' and it doesn't change???
             isChecked={complete} 
             onChangeHandler={handleCheckboxClick}/>
           {/* <input
@@ -37,17 +37,16 @@ export const Todo = (props) => {
           onChange={handleCheckboxClick}
           /> */}
         </label>
-        <TextLine>{text}</TextLine>
+        <TextLine checked={complete ? true : ''}>{text}</TextLine>
         <Button 
           type='button' 
           onClick={handleRemoveButtonClick} 
-          background='#f9adae'
+          background='#d3947a'
         >
           Remove
         </Button>
       </TextLineWrapper>
-      {/* Implement functionality so that text turns red if duedate is passed */}
-      {/* WHY DOESN'T THE CLOCK-ICON WORK??? */}
+      {/* Implement functionality so that text turns red if duedate is passed? */}
       <TimeLineWrapper> 
         <span> <TimeIcon src="../assets/clock.svg" /> {moment(startDate).format('MMM Do YYYY')}</span>
         {dueDate && <span> <TimeIcon src="../assets/hourglass.svg" /> {moment(dueDate).format('MMM Do YYYY')}</span>}
@@ -71,9 +70,24 @@ const TextLineWrapper = styled.div`
   margin-bottom: 10px;
 `;
 
-const TextLine = styled.span`
+// If I want text to be striked-through here?
+// { textDecoration: complete ? 'line-through' : '' }
+// ${({ checked }) => checked && `
+//     opacity: 0.3;
+//     `
+//text-decoration: ${(props) => (props.checked ? 'line-through' : '')};
+// ${({ complete }) => complete && `
+//     opacity: 0.3;
+//   `
+//   }  
+const TextLine = styled.p`
   word-wrap: wrap;
   height: auto;
+  ${({ checked }) => checked && `
+    text-decoration: line-through;  
+    opacity: 0.3;
+    `
+  }  
 `;
 
 const TimeLineWrapper = styled.div`

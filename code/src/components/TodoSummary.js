@@ -22,7 +22,7 @@ export const TodoSummary = () => {
     <HeaderContainer>
       <Title>On your todo-list today, you have {items.length} todo{items.length > 1 ? 's.' : '.'}</Title>
       {completedItems.length === items.length 
-      ? <Subtitle>Well done, you have completed all tasks for today!</Subtitle>
+      ? <Subtitle>Well done, you have completed all your tasks!</Subtitle>
       : <Subtitle>You have completed {completedItems.length} todo{completedItems.length === 1 ? '.' : 's.'}
       {' '}{items.length - completedItems.length} more to go!</Subtitle>
       }
