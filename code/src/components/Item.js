@@ -10,12 +10,17 @@ const ItemContainer = styled.li`
     margin: 8px;
     font-size: 20px;
     font-weight: 300;
+    border-bottom: solid rgba(71, 71, 71, 0.514) 1px;
+    min-width: 90%;
+    display: flex;
 `
 const Input = styled.input`
-    width: 20px; 
+    min-width: 20px; 
     height: 20px;
-    margin-right: 30px;
+    margin-right: 20px;
+    margin-block: auto;
 `
+
 const ListActionButton = styled.button`
     align-self: center;
     padding: 4px;
@@ -24,10 +29,6 @@ const ListActionButton = styled.button`
     font-size: 11px;
     color: grey;
     border: none;
-`
-const Line = styled.hr`
-    border: 0,5px solid rgba(71, 71, 71, 0.514);
-    max-width: 350px;
 `
 
 export const Item = ({ item }) => {
@@ -50,11 +51,10 @@ export const Item = ({ item }) => {
                 value= 'check'
                 onChange={handleCheckbox}>
             </Input>
-                {item.text}
+            <p>{item.text}</p>
             <ListActionButton 
                 onClick={handleRemoveItem}>[Remove]
             </ListActionButton>
-            <Line></Line>
         </ItemContainer>
     )
 }

@@ -6,7 +6,7 @@ export const todos = createSlice({
         title: 'todo-list',
         items: [
         { id: 1,
-          text: 'Watch video on actions & reducers', 
+          text: 'Watch videos on reducers', 
           complete: false },
 
         { id: 2,
