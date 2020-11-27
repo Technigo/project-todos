@@ -39,7 +39,7 @@ export const SingleTodo = ({ id, text, complete }) => {
         <Button
           type="button"
           onClick={handleRemoveButtonClick}>
-          ❌
+          <span role="img" aria-label="red cross">❌</span>
         </Button>
       </div>
     </TaskContainer>
@@ -63,7 +63,7 @@ const TaskContainer = styled.li`
 `
 
 const Label = styled.label`
-  
+
 `
 
 const Button = styled.button`
