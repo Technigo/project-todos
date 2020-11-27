@@ -12,7 +12,7 @@ const initialState = {
     },
     { id: 3, 
       text: 'Love 🎈', 
-      complete: false
+      complete: false,
     },
   ],
 };
@@ -24,26 +24,26 @@ export const todos = createSlice({
       // adding to-do receives a payload when dispatched, which inludes the whole
       // item object and uses push to add the new item to the array. Function 
       // button defined in AddTodo.js
-      addTodo: (state, action) => { 
+      addTodo: (store, action) => { 
         const item  = action.payload
-        state.items.push(item);
+        store.items.push(item);
       },
       // removing to-do, pop only removed the last item added to the list. 
       // changed this by having an item id based on the date and time it was created 
       // and then doing a filter() which returns all the tasks in the array, except the one 
       // matching with the payload. The function button is defined in Item.js
-      removeTodo: (state, action) => {
+      removeTodo: (store, action) => {
         const { todoId } = action.payload;
-        state.items = state.items.filter(a => a.id !==todoId);
+        store.items = store.items.filter(a => a.id !==todoId);
       },
       // mark a task as completed and change it back to uncompleted 
       // setComplete as a payload that has the id and what the complete property
       //should be set to. First step: use find() that compares the id from the global array
       //to the one in the payload, then it changest he complete property.
 
-      setComplete: (state, action) => {
+      setComplete: (store, action) => {
         const { todoId, complete } = action.payload 
-        const matchingTodoId = state.items.find((item) => item.id === todoId);
+        const matchingTodoId = store.items.find((item) => item.id === todoId);
 
         if(matchingTodoId) {
           matchingTodoId.complete = complete;
@@ -51,8 +51,8 @@ export const todos = createSlice({
       },
       
       //Clears the to dos list
-      removeAll: (state) => { 
-        state.items = []
+      removeAll: (store) => { 
+        store.items = []
       }
   }
 });
