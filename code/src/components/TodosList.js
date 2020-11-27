@@ -10,7 +10,6 @@ import { ListContainer, TaskListInputContainer } from './StyledComponents/ListSt
 import { EmptyStateImage, EmptyStateText } from './StyledComponents/EmptyStateStyling';
 import  Yay from '../assets/yay.png'
 
-
 export const TodosList = () => {
   const items = useSelector((store) => store.todos.items);
   //filters the array
@@ -27,7 +26,7 @@ export const TodosList = () => {
       </TaskListInputContainer>
     );
   };
-  
+
   return (
     <TaskListInputContainer>
        <Header/>
