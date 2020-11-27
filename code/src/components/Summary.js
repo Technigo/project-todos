@@ -11,7 +11,7 @@ export const Summary = () => {
 
   return (
     <RoundedContainer>
-      <RoundedContainer background="papayawhip">
+      <RoundedContainer>
         <Title><Icon />Remember</Title>
       </RoundedContainer>
       <Container background="#5692ff">
@@ -21,3 +21,5 @@ export const Summary = () => {
     </RoundedContainer>
   )
 }
+
+// background="papayawhip"

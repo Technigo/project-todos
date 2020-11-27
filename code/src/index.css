@@ -10,8 +10,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  background: navy;
-  /* background: #f8f8ff; */
+  /* background: navy; */
+  background: #f8f8ff;
 }
 
 code {
