@@ -21,7 +21,7 @@ export const HandleThings = (list, packed) => {
       type="checkbox"
       unchecked={packed}
       onChange={handleCheckboxClick}/>
-      <span>{list.item.name}</span>
+      <h4>{list.item.name}</h4>
       <button 
         type='button' 
         onClick={handleRemoveButtonClick}>

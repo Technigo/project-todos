@@ -3,24 +3,26 @@ import { useDispatch } from 'react-redux'
 import { bag } from '../redux/reducers/bag'
 
 export const AddThings = () => {
-  const [name, setName] = useState('')
+  const [value, setValue] = useState('')
   const dispatch = useDispatch()
   
   const handleSubmit = (event) => {
-    event.preventDefault()
-    dispatch(bag.actions.addThings({ name }))
-    setName('')
+    event.preventDefault();
+    dispatch(bag.actions.addThings( value ))
   }
+  
   return (
-    <form onSubmit={handleSubmit}>
+    <form>
     <label>
-      Do not forget anything
+      Make sure you wont forget anything
       <input
       type='text'
-      value={name}
-      onChange={(event) => setName(event.target.value)}
+      value={value}
+      onChange={(event) => setValue(event.target.value)}
+      placeholder="add things"
       />
     </label>
+    <button onClick={handleSubmit}>Add Thing</button> 
     </form>
   )
 }
