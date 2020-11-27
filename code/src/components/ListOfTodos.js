@@ -28,8 +28,10 @@ export const ListOfTodos = () => {
   // Initial state = All incompleted tasks
   const [showingCategory, setShowingCategory] = useState('All');
   // Variable that is used for mapping over all tasks and display in list
-  let categoryTasks = undefined;
+  let categoryTasks = nonCompletedTasks;
 
+  // Had to create an if statement to display all tasks, and
+  // to be able to sort on prioritized tasks
   if (showingCategory === 'All') {
     categoryTasks = nonCompletedTasks;
   } else if (showingCategory === 'Prioritized') {
@@ -40,11 +42,10 @@ export const ListOfTodos = () => {
     );
   }
 
-  // Complete / remove functions
+  // Complete all/remove all functions
   const handleCompleteAll = () => {
     dispatch(todos.actions.completeAllTodos());
   };
-
   const handleRemoveAll = () => {
     dispatch(todos.actions.removeAllTodos());
   };
@@ -63,7 +64,7 @@ export const ListOfTodos = () => {
       {/* If there are no tasks, display NoTasksFound-component */}
       {nonCompletedTasks.length === 0 && <NoTasksFound />}
 
-      {/* Display all tasks based on category, filtered on prio/not prio. */}
+      {/* List all completed tasks based on category, filtered on prio/not prio. */}
       {/* Prio */}
       {categoryTasks
         .reverse()
@@ -82,7 +83,7 @@ export const ListOfTodos = () => {
           );
         })}
 
-      {/* Display headline if there are completed tasks */}
+      {/* Display headline - if there are completed tasks */}
       {completedTasks.length !== 0 && (
         <CompletedHeadline>Completed tasks</CompletedHeadline>
       )}

@@ -9,29 +9,26 @@ import { InnerFlexWrapper, InfoText } from '../styling/GlobalStyling';
 // ----------------------------------------------------------------
 
 export const CounterAndSorter = ({ showingCategory, setShowingCategory }) => {
-  // All tasks
-  const amountOfTasks = useSelector((store) => store.todos.tasks.length);
-  // All incomplete tasks
-  const allUncompletedTasks = useSelector((store) =>
-    store.todos.tasks.filter((task) => task.isCompleted === false)
-  );
-  // All completed tasks
-  const allCompletedTasks = useSelector((store) =>
-    store.todos.tasks.filter((task) => task.isCompleted === true)
-  );
+  const allTodos = useSelector((store) => store.todos.tasks);
+
+  //Filtering by completed/not completed
+  const nonCompletedTasks = allTodos.filter((todo) => !todo.isCompleted);
+  const completedTasks = allTodos.filter((todo) => todo.isCompleted);
+
   // Amount of prioritized tasks
-  const amountOfPrioritized = allUncompletedTasks.filter(
+  const amountOfPrioritized = nonCompletedTasks.filter(
     (task) => task.prio === true
   ).length;
 
-  // Count how many incomplete tasks there are in a category
+  // Count how many incomplete tasks there are in selected category
   const amountOfItems = (category) => {
-    return allUncompletedTasks.filter((task) => task.category === category)
+    return nonCompletedTasks.filter((task) => task.category === category)
       .length;
   };
 
+  // Category options
   const options = [
-    { value: 'All', label: `All (${allUncompletedTasks.length})` },
+    { value: 'All', label: `All (${nonCompletedTasks.length})` },
     { value: 'Prioritized', label: `🔥 Prioritized (${amountOfPrioritized})` },
     { value: 'Home', label: `Home (${amountOfItems('Home')})` },
     { value: 'Work', label: `Work (${amountOfItems('Work')})` },
@@ -57,7 +54,7 @@ export const CounterAndSorter = ({ showingCategory, setShowingCategory }) => {
         />
       </InnerFlexWrapperColumn>
       <InfoTextCounter>
-        Completed: {allCompletedTasks.length} / {amountOfTasks}
+        Completed: {completedTasks.length} / {allTodos.length}
       </InfoTextCounter>
     </CounterAndSorterWrapper>
   );

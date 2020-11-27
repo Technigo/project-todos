@@ -25,5 +25,5 @@ const Logo = styled.img`
   width: 50px;
   align-self: center;
   margin-top: 10px;
-  z-index: 2;
+  z-index: 2; // To show above background layer when creating new task
 `;

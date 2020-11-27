@@ -22,6 +22,7 @@ export const Todo = ({ task, index, prio }) => {
   const [checked, setChecked] = useState(false);
   const dispatch = useDispatch();
 
+  // Set task to completed
   const handleChecked = (event) => {
     setChecked(event.target.checked);
     dispatch(todos.actions.checkTodo(task));
@@ -32,6 +33,7 @@ export const Todo = ({ task, index, prio }) => {
   };
 
   return (
+    // Set border to purple if task is prioritized
     <TaskWrapper important={prio === true ? 'important' : ''}>
       <TaskTextWrapper>
         <CategoryText>{task.category}/</CategoryText>
@@ -69,7 +71,6 @@ const TaskTextWrapper = styled.div`
 
 const TaskText = styled.label`
   font-size: 18px;
-  /* text-transform: uppercase; */
   font-weight: bold;
   color: #4300ca;
 `;

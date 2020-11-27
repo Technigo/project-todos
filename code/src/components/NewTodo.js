@@ -14,10 +14,12 @@ import { InnerFlexWrapper, Button } from '../styling/GlobalStyling';
 export const NewTodo = ({ setAddTaskVisible }) => {
   const dispatch = useDispatch();
 
+  // New task contents
   const [todo, setTodo] = useState('');
-  const [category, setCategory] = useState('Fun');
+  const [category, setCategory] = useState('');
   const [prio, setPrio] = useState(false);
 
+  // Categories
   const options = [
     { value: 'Home', label: 'Home' },
     { value: 'Work', label: 'Work' },
@@ -30,22 +32,24 @@ export const NewTodo = ({ setAddTaskVisible }) => {
     setCategory(selectedOption.value);
   };
 
-  const createdId = Math.floor(Math.random() * 10000) + 1;
-
   const handleToggleCheckbox = () => {
-    !prio ? setPrio(true) : setPrio(false);
+    prio ? setPrio(false) : setPrio(true);
   };
 
-  // Close popup
-  const handleCloseNewTask = () => {
+  // Close new task-popup
+  const handleCloseNewTaskButton = () => {
     setAddTaskVisible(false);
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
+    // Set a creation date
     const createdAt = new Date();
-    if (todo) {
+    // Create a unique id
+    const createdId = Math.floor(Math.random() * 10000) + 1;
+
+    if (todo && category !== '') {
       dispatch(
         todos.actions.addTodo({
           id: createdId,
@@ -56,12 +60,13 @@ export const NewTodo = ({ setAddTaskVisible }) => {
           createdAt: createdAt,
         })
       );
+      // Reset all states to default after submit
       setTodo('');
-      setCategory('Fun');
+      setCategory('');
       setPrio(false);
       setAddTaskVisible(false);
     } else {
-      alert('Please write a task first');
+      alert('Please write a task and/or select a category first');
     }
   };
 
@@ -69,7 +74,7 @@ export const NewTodo = ({ setAddTaskVisible }) => {
     <NewTodoWrapper>
       <NewTodoInput
         type="text"
-        placeholder="Add new task..."
+        placeholder="Write your new task here..."
         onChange={(event) => setTodo(event.target.value)}
         value={todo}
       />
@@ -95,7 +100,7 @@ export const NewTodo = ({ setAddTaskVisible }) => {
         </div>
       </CategoryAndPrioWrapper>
       <ButtonWrapper>
-        <CloseButton type="button" onClick={handleCloseNewTask}>
+        <CloseButton type="button" onClick={handleCloseNewTaskButton}>
           ✕
         </CloseButton>
         <NewTodoButton type="submit" value="submit" onClick={handleSubmit}>
@@ -111,19 +116,19 @@ export const NewTodo = ({ setAddTaskVisible }) => {
 const NewTodoWrapper = styled.div`
   position: fixed;
   display: flex;
+  flex-direction: column;
+  width: 77%;
+  max-width: 400px;
   z-index: 2;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   padding: 20px;
-  width: 77%;
-  max-width: 400px;
+  border: 2px solid #fff;
   border-radius: 10px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-  flex-direction: column;
   background: #fff;
   color: #000;
-  border: 2px solid #fff;
 
   @media (min-width: 350px) {
     flex-direction: column;
@@ -135,10 +140,10 @@ const NewTodoWrapper = styled.div`
 `;
 
 const NewTodoInput = styled.input`
-  padding: 10px 20px 10px 5px;
+  margin: 5px 0 20px 0;
+  padding: 20px 20px 10px 5px;
   border: none;
   border-bottom: 1px solid #000;
-  margin: 5px 0 20px 0;
   background: #fff;
 `;
 
@@ -163,22 +168,21 @@ const Label = styled.label`
 const ButtonWrapper = styled(InnerFlexWrapper)`
   margin-top: 10px;
 `;
+
 const CloseButton = styled(Button)`
   width: 50px;
   height: 50px;
 `;
 
 const NewTodoButton = styled.button`
-  background: #4300ca;
-  color: #fff;
-  border-radius: 25px;
-  padding: 5px;
   height: 50px;
   width: 50px;
+  padding: 5px;
   border: none;
-  border: 1px solid #000;
+  border-radius: 25px;
+  background: #4300ca;
+  color: #fff;
   font-size: 24px;
-  border: none;
 
   &:hover {
     cursor: pointer;

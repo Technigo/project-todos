@@ -51,10 +51,6 @@ const CheckboxContainer = styled.div`
 
 const CheckedSign = styled.p`
   color: ${(props) => (props.checked ? 'white' : '#4300ca')};
-
-  &:hover {
-    color: #fff;
-  }
 `;
 
 const StyledCheckbox = styled.div`
@@ -65,6 +61,7 @@ const StyledCheckbox = styled.div`
   height: 30px;
   background: ${(props) => (props.checked ? '#4300ca' : '#f5f1fc')};
   border-radius: 50%;
+
   &:hover {
     background: #4300ca;
     ${CheckedSign} {

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 // Wrappers ----------------------------------------------------------------
 
 export const Wrapper = styled.div`
-  margin: 20px auto;
   max-width: 600px;
+  margin: 20px auto;
 `;
 
 export const InnerFlexWrapper = styled.div`
@@ -21,27 +21,25 @@ export const OuterFlexWrapper = styled.div`
 `;
 
 export const BackgroundLayer = styled.div`
-  position: fixed;
-  top: 0;
   width: 100vw;
   height: 100vh;
+  position: fixed;
+  top: 0;
   background: #eae0ff;
   opacity: 0.8;
   z-index: 1;
 `;
 
-// -------------------------------
-
 export const TaskWrapper = styled(InnerFlexWrapper)`
-  padding: 15px;
-  border-radius: 10px;
-
-  border: 2px solid ${(props) => (props.important ? '#4300CA' : 'transparent')};
-  background: #fff;
-  /* border: 1px solid #000; */
-  margin: 15px 20px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
   max-width: 600px;
+  margin: 15px 20px;
+  padding: 15px;
+
+  // Set border to purple if task is prioritized
+  border: 2px solid ${(props) => (props.important ? '#4300CA' : 'transparent')};
+  border-radius: 10px;
+  background: #fff;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 
   & input:hover {
     cursor: pointer;
@@ -54,19 +52,18 @@ export const TaskWrapper = styled(InnerFlexWrapper)`
 
 // Text ----------------------------------------------------------------
 export const InfoText = styled.p`
-  font-size: 10px;
   margin-top: 5px;
+  font-size: 10px;
   text-transform: uppercase;
   opacity: 0.7;
 `;
 
 // Buttons ----------------------------------------------------------------
 export const Button = styled.button`
-  background: none;
-  border-radius: 25px;
-  padding: 5px;
   height: 30px;
   width: 30px;
+  padding: 5px;
+  border-radius: 25px;
   border: none;
   background: #f5f1fc;
   color: #4300ca;
@@ -79,27 +76,16 @@ export const Button = styled.button`
 `;
 
 export const AddTaskButton = styled(Button)`
+  width: 90px;
+  height: 90px;
   position: fixed;
   bottom: 30px;
   right: 20px;
   border: none;
-  background: #4300ca;
-  color: #fff;
-  width: 90px;
-  height: 90px;
-  font-size: 40px;
   border-radius: 50%;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  background: #4300ca;
+  color: #fff;
+  font-size: 40px;
   z-index: 2;
-`;
-
-// Footer -------------------------------
-export const FooterWrapper = styled.footer`
-  text-align: center;
-  margin: 50px 0 30px 0;
-
-  & p {
-    font-size: 10px;
-    margin: 5px;
-  }
 `;

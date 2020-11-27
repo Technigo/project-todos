@@ -17,10 +17,11 @@ export const todos = createSlice({
       const selectedTask = state.tasks.find(
         (task) => task.id === action.payload.id
       );
-      selectedTask.isCompleted = !selectedTask.isCompleted;
 
       // Set timestamp for when task is completed
       const checkedAt = moment(new Date());
+
+      selectedTask.isCompleted = !selectedTask.isCompleted;
       selectedTask.completedAt = checkedAt;
     },
     removeTodo: (state, action) => {
@@ -30,11 +31,14 @@ export const todos = createSlice({
       state.tasks.map((task) => (task.isCompleted = true));
     },
     removeAllTodos: (state, action) => {
-      state.tasks = [];
+      const removedAllTodos = [];
+      state.tasks = removedAllTodos;
     },
     removeAllCompletedTodos: (state, action) => {
-      const noCompletedTodos = state.tasks.filter((task) => !task.isCompleted);
-      state.tasks = noCompletedTodos;
+      const removedCompletedTodos = state.tasks.filter(
+        (task) => !task.isCompleted
+      );
+      state.tasks = removedCompletedTodos;
     },
   },
 });
