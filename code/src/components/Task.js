@@ -1,30 +1,47 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components/'
+
+import { tasks } from 'reducers/tasks'
 
 const TaskContainer = styled.div`
   display: grid;
   grid-template-columns: 40px 1fr;
   align-items: center;
-  padding: 20px 20px 30px 20px;
+  padding: 20px;
   font-size: 20px;
   border-bottom: 1px solid #dcd7e1;
 `;
 
-const CompleteButton = styled.button`
+const CompleteButton = styled.input`
   width: 20px;
   height: 20px;
-  border-radius: 50%;
+  justify-self: center;
+  // border-radius: 50%;
 `;
 
 const TaskText = styled.p`
   margin: 0;
+  color: ${props => props.completed ? "#dcd7e1" : ""};
+  text-decoration-line: ${props => props.completed ? "line-through" : ""};
 `;
 
-export const Task = () => {
+export const Task = ({ item }) => {
+  const dispatch = useDispatch()
+
+  const handleCheckBoxClick = () => {
+    dispatch(tasks.actions.toggleCompleted(item.id))
+  }
+
   return (
     <TaskContainer>
-      <CompleteButton></CompleteButton>
-      <TaskText>Test task</TaskText>
+      <CompleteButton
+        type="checkbox"
+        checked={item.completed}
+        onChange={handleCheckBoxClick}
+      >
+      </CompleteButton>
+      <TaskText completed={item.completed}>{item.description}</TaskText>
     </TaskContainer>
   )
 }
