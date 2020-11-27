@@ -36,5 +36,5 @@ export const App = () => {
         <TaskList />
       </MainArea>
     </Provider>
-  )
+  );
 };

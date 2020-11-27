@@ -24,5 +24,5 @@ export const TaskSummary = () => {
         <>
             <TasksDone>{numberOfTasksDone} / {list.items.length} completed</TasksDone>
         </>
-    )
-}
+    );
+};

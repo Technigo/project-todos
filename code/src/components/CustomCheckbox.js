@@ -68,7 +68,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
                 </Icon>
             </StyledCheckbox>
         </CheckboxContainer>
-    ) ;
+    );
 
     return(
         <div>
