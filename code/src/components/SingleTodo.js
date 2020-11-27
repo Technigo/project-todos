@@ -39,10 +39,12 @@ export const SingleTodo = ({ id, text, complete }) => {
         <Button
           type="button"
           onClick={handleRemoveButtonClick}>
-          <Emoji
-            role="img"
-            aria-label="red cross">
-            ❌
+          <Emoji>
+            <span
+              role="img"
+              aria-label="red-cross">
+              ❌
+            </span>
           </Emoji>
         </Button>
       </div>
