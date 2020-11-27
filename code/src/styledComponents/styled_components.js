@@ -74,12 +74,19 @@ export const DeleteContainer = styled.div`
   margin-bottom: 10px;
   align-items: center;
   justify-content: center;
+  background-color: teal;
+  color: teal;
+
 `
 export const DeleteButton = styled.button`
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none; 
+  color: teal;
   border: none;
+  background-color: teal;
+  border-radius: 10px;
+
     &:last-child {
       margin-left: auto;
     }
