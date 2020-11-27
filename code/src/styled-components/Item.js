@@ -37,7 +37,7 @@ export const ButtonContainer = styled.div`
 `;
 
 export const RemoveButton = styled.button`
-    background-color: rgb(252, 228, 215);
+    background-color: rgb(249, 207, 185);
     border: none;
     font-size: 15px;
     padding: 7px;
@@ -45,6 +45,6 @@ export const RemoveButton = styled.button`
     color: rgb(36, 90, 92);
     cursor: pointer;
     &:hover {
-            background: rgb(253, 239, 231);
+            background: rgb(252, 228, 215);
         }
 `;

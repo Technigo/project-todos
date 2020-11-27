@@ -12,7 +12,7 @@ export const TaskItem = ({ todoItem, itemIndex }) => {
     const dispatch = useDispatch();
 
     //Function to remove tasks using the task id
-    const onClickRemove = id  => {
+    const onClickRemove = id => {
         dispatch(Tasks.actions.removeTask(id));        
     };
 
@@ -34,7 +34,7 @@ export const TaskItem = ({ todoItem, itemIndex }) => {
                     <TaskText tabIndex="0" className={` ${todoItem.done ? "done" : ""}`}>{todoItem.text}</TaskText>
                 </CheckboxTextContainer>
                 <ButtonContainer>
-                    <RemoveButton onClick={() => onClickRemove(todoItem.id)}>remove</RemoveButton>
+                    <RemoveButton onClick={() => onClickRemove(todoItem.id)}>Remove</RemoveButton>
                 </ButtonContainer>
             </TaskContainer>
         </Article>

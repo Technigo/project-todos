@@ -6,7 +6,6 @@ import { Tasks } from 'reducer/Tasks';
 import { TaskHeader } from 'components/TaskHeader';
 import { TaskInput } from 'components/TaskInput';
 import { TaskList } from 'components/TaskList';
-
 import { MainArea } from './styled-components/MainArea';
 
 /* 

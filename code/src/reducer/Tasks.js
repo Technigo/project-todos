@@ -52,6 +52,9 @@ export const Tasks = createSlice({
                 item => item.id !== itemId
             );
             state.list.items = filteredList;
+        },
+        clearAllTasks: (state) => {
+            state.list.items = [];            
         }
     },
 });
