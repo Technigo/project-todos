@@ -23,7 +23,7 @@ const store = configureStore({ reducer });
 export const App = () => {
   return (
     <Provider store={store}>
-      <MainArea>
+      <MainArea tabIndex="0">
         <TaskHeader />
         <TaskInput />
         <TaskList />

@@ -11,8 +11,8 @@ export const TaskHeader = () => {
 
     return (
         <Header>
-            <ToDo>Things to do</ToDo>
-            <TodaysDate>{todaysDateFormat}</TodaysDate>
+            <ToDo tabIndex="0">Things to do</ToDo>
+            <TodaysDate tabIndex="0">{todaysDateFormat}</TodaysDate>
             <TaskSummary />
         </Header>
     );

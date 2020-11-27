@@ -4,8 +4,8 @@ import styled from 'styled-components';
  // Overwriting the default checkbox style so it's not visible but still accessible
  const HiddenCheckbox = styled.input.attrs({type:"checkbox"})`
  border: 0;
- clip: rect(0 0 0 0):
- clippath: inset(50%);
+ clip: rect(0 0 0 0);
+ clip-path: inset(50%);
  height: 1px;
  margin: -1px;
  overflow: hidden;
@@ -35,10 +35,10 @@ const StyledCheckbox = styled.div`
  cursor: pointer;
  ${Icon} {
      visibility: ${(props) => (props.checked ? "visible" : "hidden")}
- };
+ }
  ${HiddenCheckbox}: focus + & {
      box-shadow: 0 0 0 3px pink;
- };
+ }
 `;
 
 //Creating a div around the checkbox

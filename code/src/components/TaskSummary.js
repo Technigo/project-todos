@@ -12,7 +12,7 @@ export const TaskSummary = () => {
 
     return (
         <>
-            <TasksDone>{numberOfTasksDone} / {list.items.length} completed</TasksDone>
+            <TasksDone tabIndex="0">{numberOfTasksDone} / {list.items.length} completed</TasksDone>
         </>
     );
 };

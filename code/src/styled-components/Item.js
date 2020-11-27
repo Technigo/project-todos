@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Article = styled.article`
     display: flex;
     align-items: center;
-    justfiy-content: center;
+    justify-content: center;
     margin-bottom: 5px;
     background: rgba(255, 255, 255, .8);
     min-width: 100%;
@@ -33,7 +33,6 @@ export const TaskText = styled.p`
 
 export const ButtonContainer = styled.div`
     align-self: flex-right;
-    background-colour: blue;
     padding: 10px;
 `;
 
