@@ -3,7 +3,7 @@ import React from 'react'
 import {useSelector} from 'react-redux'
 import {ItemsAll} from 'components/ItemsAll'
 
-import './style/task-list.css'
+import styled from 'styled-components'
 
 
 export const ItemList = () => {
@@ -12,11 +12,13 @@ export const ItemList = () => {
 
 	if (wholeList.length === 0) {
 		return (
-			<>
+
+			<ListEmpty>
+			<div>
 			<h1 className="listEmpty"> You are clear of duties for now, good on you!</h1>
-			<img className="tasksDone" alt="yay" 
-          src='yay.png' />
-			</>
+			<img className="tasksDone" alt="yay" src='yay.png' width="180px"/>
+			</div>
+			</ListEmpty>
 		)
 	}
 	return (
@@ -27,3 +29,11 @@ export const ItemList = () => {
 		</section>
 	)
 }
+
+export const ListEmpty = styled.div`
+	text-align: center;
+	margin-top: 2px;
+	color: #93dece;
+	font-size:11px;
+	font-family: 'Inconsolata', monospace;
+	`;

@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers,createStore } from '@reduxjs/toolkit'
+import { combineReducers,configureStore } from '@reduxjs/toolkit'
 
 import {tasks}  from './reducers/tasks'
 
@@ -14,7 +14,10 @@ const persistedState = localStorage.getItem("reduxState")
 ? JSON.parse(localStorage.getItem("reduxState"))
 : {}
 
-const store = createStore(reducer, persistedState)
+const store = configureStore({
+  reducer,
+  preloadedState: persistedState,
+});
 
 store.subscribe(() => {
   localStorage.setItem("reduxState",

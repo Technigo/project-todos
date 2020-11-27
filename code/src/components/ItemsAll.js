@@ -2,6 +2,8 @@ import React from 'react'
 import {useDispatch, useSelector} from 'react-redux'
 import {tasks} from 'reducers/tasks'
 
+import styled from 'styled-components'
+
 export const ItemsAll = ({taskIndex}) => {
 	const dispatch = useDispatch()
 	const task = useSelector((store) => store.tasks.list.tasks[taskIndex])
@@ -22,9 +24,8 @@ export const ItemsAll = ({taskIndex}) => {
 			})
 		)
 	}
-
 	return (
-		<div className="tasksPoster">
+		<TaskList>
 			<div className="taskByTask">
 				<label className="checkBox">
 					<input type="checkbox"
@@ -33,19 +34,41 @@ export const ItemsAll = ({taskIndex}) => {
 						onChange={handleCheckbox}/>
 				</label>
 
-				<div className="timeAndCheck">
+				<TaskChecked>
+					<div className="timeAndCheck">
 					<p className={task.complete===true?
-					"taskCheck check" : "taskCheck"}>
-						{task.text}
+					"taskCheck check" : "taskCheck"}>∘ {task.text}
 					</p>
 				</div>
-				<button type="button"
+				</TaskChecked>
+				
+				<ButtonX type="button"
 				className="taskRemoved"
-				onClick={handleRemove}>
-					<span role='img' aria-label='x'>❌</span>
-				</button>
+				onClick={handleRemove}>X
+				</ButtonX>
 			</div>
-
-		</div>
+			</TaskList>
 	)
 }
+
+export const TaskList = styled.div`
+	display:flex;
+	flex-direction:row;
+	border-bottom:1px solid #b39adb;
+	background-color:#fcfcfc;
+	margin-top:5px;
+	padding:2px;
+`;
+export const TaskChecked = styled.div`
+	display:inline;
+	flex-direction:row;
+	font-family:'Menlo';
+`;
+export const ButtonX = styled.button`
+	background-color:#df92a3;
+	text-decoration:none;
+	border:2px solid #df92a3;
+	color:white;
+	font-weight:bold;
+	display:block;
+`;
