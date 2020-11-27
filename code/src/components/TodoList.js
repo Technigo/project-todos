@@ -46,42 +46,36 @@ const TodoList = () => {
       {list.length === 0 ? (
         <EmptyTodoList /> 
       ) : (
-        <>
+        <TodoListWrapper>
           <Filter>
-            {/* <FilterLabel htmlFor="category">Category: */}
             <FilterSelect 
               name="category" 
               id="category" 
               onChange={(event) => filteredTodosCategory(event.target.value)} 
               value={filteredTodoCategory}
               >
-              <option value="">All</option>
+              <option value="">Category</option>
               {categories.map(option => (
                 <option key={option} value={option}>{option}</option>
               ))}
             </FilterSelect>
-            {/* </FilterLabel> */}
 
-            {/* <FilterLabel htmlFor="status">Status: */}
             <FilterSelect 
               name="status" 
               id="status" 
               value={filteredTodoStatus}
               onChange={(event) => filteredTodosStatus(event.target.value)}
-              
-              //onChange={(event) => onChangeFilter(event.target.value)}
-              >
+            >
               <option value='status'>Status</option>
-              <option value='complete'>Completed</option>
-              <option value='not complete'>Not completed</option>
+              <option value='complete'>Complete</option>
+              <option value='not complete'>Not complete</option>
             </FilterSelect>
-            {/* </FilterLabel> */}
           </Filter>
           {filteredList.map((item) => (
             <TodoItem key={item.id} item={item} />
           ))}           
           <ActionButtons />
-        </>
+        </TodoListWrapper>
       )} 
     </Container>
   );
@@ -89,11 +83,25 @@ const TodoList = () => {
 export default TodoList;
 
 const Container = styled.section `
-  padding: 20px;
-  display: grid;
-  grid-row-gap: 20px;
+  //padding: 20px;
+  //display: grid;
+  //grid-row-gap: 20px;
+  //height: 40vh; */
+    /* background-image: linear-gradient(180deg,#05324b,#3d5f6b,#6c908c,#9cc5ae); */
+    display: grid;
+    /* -webkit-align-content: space-evenly; */
+    -ms-flex-line-pack: space-evenly;
+    /* align-content: space-evenly; */
+    /* -webkit-box-pack: center; */
+    /* -webkit-justify-content: center; */
+    -ms-flex-pack: center;
+    justify-content: center;
+    /* text-align: center;
 `;
 
+const TodoListWrapper = styled.div `
+
+`
 const Filter = styled.div `
   display: flex;
   justify-content: space-between;

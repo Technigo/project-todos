@@ -3,10 +3,14 @@ import styled from 'styled-components';
 export const Title = styled.h1 `
   font-size: 28px;
   color: #fff;
+
+  @media (min-width: 668px) {
+    font-size: 40px;
+  }
 `;
 
 export const SubTitle = styled.h2 `
-  font-size: 20px;
+  font-size: 36px;
 `
 
 export const Label = styled.label `
@@ -17,7 +21,7 @@ export const Label = styled.label `
 `;
 
 export const Paragraph = styled.p `
-  font-size: 20px;
+  font-size: 28px;
   color: #fff;
 `;
 

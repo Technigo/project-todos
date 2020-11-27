@@ -44,7 +44,7 @@ const ActionButtons = () => {
         type="button"
         onClick={!isAllComplete ? () => handleOnComplete() : () => handleUnsetComplete()}
         >
-          <ButtonText>{!isAllComplete ? "Mark all complete" : "Unset completed"}</ButtonText>
+          <ButtonText>{!isAllComplete ? "Mark all complete" : "Unset"}</ButtonText>
       </Button>
       <Button 
       type="button"
@@ -65,7 +65,3 @@ const ButtonContainer = styled.div `
 const ButtonText = styled.p`
   font-size: 16px;
 `;
-  
- 
-      
- 
