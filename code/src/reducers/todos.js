@@ -9,10 +9,10 @@ export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-    { id: 1, category: 'Study', text: 'Watch video on actions & reducers', complete: true },
-    { id: 2, category: 'Study', text: 'Follow redux codealong', complete: true },
-    { id: 3, category: 'Study', text: 'Fork weekly assignment', complete: true },
-    { id: 4, category: 'Study', text: 'Create a todo app', complete: false },
+    { id: 1, category: 'Study', text: 'Watch video on actions & reducers', complete: true, dueDate: Date.now() },
+    { id: 2, category: 'Study', text: 'Follow redux codealong', complete: true, dueDate: Date.now() },
+    { id: 3, category: 'Study', text: 'Fork weekly assignment', complete: true, dueDate: Date.now() },
+    { id: 4, category: 'Study', text: 'Create a todo app', complete: false, dueDate: Date.now() },
     ]
   },
   //The functions that handles the data to put in the store
