@@ -23,21 +23,15 @@ export const Todo = (props) => {
 
   return (
     <ListItem>
-      <TextLineWrapper> 
-        <label>
-          <CustomCheckbox
-          //What is this isChecked and why is it here? My state is 'complete' and it doesn't change???
-            isChecked={complete} 
-            onChangeHandler={handleCheckboxClick}/>
-          {/* <input
-          type='checkbox'
-          // || false fixes the issues of going from controlled to uncontrolled value
-            // here https://github.com/facebook/react/issues/6779
-          checked={props.item.complete || false}
-          onChange={handleCheckboxClick}
-          /> */}
-        </label>
-        <TextLine checked={complete ? true : ''}>{text}</TextLine>
+      <ItemLineWrapper> 
+        <ItemTextWrapper>
+          <label>
+            <CustomCheckbox
+              isChecked={complete} 
+              onChangeHandler={handleCheckboxClick}/>
+          </label>
+          <TextLine checked={complete}>{text}</TextLine>
+        </ItemTextWrapper>
         <Button 
           type='button' 
           onClick={handleRemoveButtonClick} 
@@ -45,12 +39,13 @@ export const Todo = (props) => {
         >
           Remove
         </Button>
-      </TextLineWrapper>
+      </ItemLineWrapper>
       {/* Implement functionality so that text turns red if duedate is passed? */}
-      <TimeLineWrapper> 
-        <span> <TimeIcon src="../assets/clock.svg" /> {moment(startDate).format('MMM Do YYYY')}</span>
-        {dueDate && <span> <TimeIcon src="../assets/hourglass.svg" /> {moment(dueDate).format('MMM Do YYYY')}</span>}
-      </TimeLineWrapper>
+      <ItemLineWrapper> 
+        {/* <TimeLine> <TimeIcon src="../assets/clock.svg" /> {moment(startDate).format('MMM Do YYYY')}</TimeLine> */}
+        <TimeLine> <TimeIcon src="../assets/clock.svg" /> {moment(startDate).fromNow()}</TimeLine>
+      {' '}{dueDate && <TimeLine> <TimeIcon src="../assets/hourglass.svg" /> {moment(dueDate).format('MMM Do YYYY')}</TimeLine>}
+      </ItemLineWrapper>
     </ListItem>
   )
 }
@@ -63,23 +58,13 @@ const ListItem = styled.li`
   border-bottom: 1px solid #fff;
 `;
 
-const TextLineWrapper = styled.div`
+const ItemLineWrapper = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 10px;
 `;
 
-// If I want text to be striked-through here?
-// { textDecoration: complete ? 'line-through' : '' }
-// ${({ checked }) => checked && `
-//     opacity: 0.3;
-//     `
-//text-decoration: ${(props) => (props.checked ? 'line-through' : '')};
-// ${({ complete }) => complete && `
-//     opacity: 0.3;
-//   `
-//   }  
 const TextLine = styled.p`
   word-wrap: wrap;
   height: auto;
@@ -90,20 +75,16 @@ const TextLine = styled.p`
   }  
 `;
 
-const TimeLineWrapper = styled.div`
+const ItemTextWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 10px;
+  
+  
 `;
 
-// const TimeLine = styled.span`
+const TimeLine = styled.span`
+  display: flex;
+  align-items: center;
+  font-size: 12px;
   
-// `
-
-
-
-// const Icon = styled.img`
-//   width: 16px;
-//   height: 16px;
-// `
+`;

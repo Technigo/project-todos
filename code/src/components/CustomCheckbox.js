@@ -12,7 +12,29 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     setChecked(event.target.checked)
   }
     
-  // This CSS will result in a hidden checkbox that is accessible 
+  
+  const Checkbox = ({ className, checked, ...props }) => (
+    <CheckboxContainer>
+      <HiddenCheckbox checked={checked} {...props}></HiddenCheckbox>
+      <StyledCheckbox checked={checked}>
+        <Icon viewBox=" 0 0 24 24">
+          <polyline points="20 4 9 17 4 12"></polyline>
+        </Icon>
+      </StyledCheckbox>
+    </CheckboxContainer>
+  )
+
+  return (
+     <>
+      <label>
+        <Checkbox checked={checked} onChange={handleOnChange}></Checkbox>
+      </label>
+      {/* The state is {checked.toString()} */}
+    </>
+  )
+}
+
+// This CSS will result in a hidden checkbox that is accessible 
   //by a screenreader. It is rendered off-screen.
   const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
     border: 0;
@@ -53,23 +75,3 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     margin: 10px;
   `;
   
-  const Checkbox = ({ className, checked, ...props }) => (
-    <CheckboxContainer>
-      <HiddenCheckbox checked={checked} {...props}></HiddenCheckbox>
-      <StyledCheckbox checked={checked}>
-        <Icon viewBox=" 0 0 24 24">
-          <polyline points="20 4 9 17 4 12"></polyline>
-        </Icon>
-      </StyledCheckbox>
-    </CheckboxContainer>
-  )
-
-  return (
-     <>
-      <label>
-        <Checkbox checked={checked} onChange={handleOnChange}></Checkbox>
-      </label>
-      {/* The state is {checked.toString()} */}
-    </>
-  )
-}
