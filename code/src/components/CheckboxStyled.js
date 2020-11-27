@@ -1,8 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
-
-import { tasks } from 'reducers/tasks'
 
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 border: none;
@@ -30,7 +27,7 @@ const CheckboxContainer = styled.div`
   vertical-align: middle;
 `
 
-export const CheckboxStyled = ({checked, onChange}) => {
+export const CheckboxStyled = ({ checked, onChange }) => {
   const [isChecked, setChecked] = useState(checked)
 
   const handleOnChange = event => {

@@ -16,6 +16,7 @@ const TaskContainer = styled.div`
     border: solid 1px #f7e1ed;
   }
 `
+
 const DeleteButton = styled.button`
   margin-left: auto;
   background-color: #F6D1E7;
@@ -32,11 +33,9 @@ export const Task = ({ taskData }) => {
   const dispatch = useDispatch()
   return (
     <TaskContainer>
-
       <CheckboxStyled checked={taskData.complete} onChange={() => dispatch(tasks.actions.toggleItem(taskData.id))} />
       <TaskText checked={taskData.complete}>{taskData.text}</TaskText>
       <DeleteButton className="deleteItem" onClick={() => dispatch(tasks.actions.deleteItem(taskData.id))}>x</DeleteButton>
-
     </TaskContainer>
   )
 }

@@ -1,6 +1,4 @@
-import React from 'react'
 import { createSlice } from '@reduxjs/toolkit'
-
 
 export const tasks = createSlice({
   name: 'tasks',
@@ -47,14 +45,12 @@ export const tasks = createSlice({
       const taskId = action.payload
 
       const newState = state
-      const toggleTask = newState.todos.find((task) => task.id === taskId) 
-      
+      const toggleTask = newState.todos.find((task) => task.id === taskId)
+
       toggleTask.complete = !toggleTask.complete
 
       return newState
 
     }
-
-
   }
 })

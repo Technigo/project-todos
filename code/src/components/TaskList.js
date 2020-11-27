@@ -1,7 +1,7 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 
-import {Task} from './Task'
+import { Task } from './Task'
 
 export const TaskList = () => {
   const todos = useSelector(store => store.tasks.todos)
@@ -10,10 +10,9 @@ export const TaskList = () => {
     <div>
       {todos.map((task) => {
         return (
-          <Task key={task.id} taskData={task} /> 
+          <Task key={task.id} taskData={task} />
         )
       })}
-
     </div>
   )
 }

@@ -6,7 +6,6 @@ import { tasks } from './reducers/tasks'
 import { Header } from './components/Header'
 import { AddTask } from './components/AddTask'
 import { TaskList } from './components/TaskList'
-import { CheckboxStyled } from './components/CheckboxStyled'
 
 
 const reducer = combineReducers ({

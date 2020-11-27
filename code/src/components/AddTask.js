@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { combineReducers } from '@reduxjs/toolkit'
 import styled from 'styled-components'
 
 import { tasks } from '../reducers/tasks'
@@ -43,16 +42,13 @@ export const AddTask = () => {
     setTask('')
   }
 
-
-
-
   return (
     <AddTaskContainer onSubmit={handleSubmit}>
       <TaskInput
         type='text'
         placeholder="Add task"
         value={task}
-        onChange={(event) => setTask(event.target.value)}/>
+        onChange={(event) => setTask(event.target.value)} />
 
       <PlusButton type='submit'> + </PlusButton>
     </AddTaskContainer>

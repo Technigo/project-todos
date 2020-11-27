@@ -6,8 +6,8 @@ export const TaskCounter = () => {
 
   return (
     <div>
-    <div> todos done: {todos.filter((task) => task.complete === true).length} </div>
-    <div> todos to do: {todos.filter((task) => task.complete === false).length} </div>
+    <div> done: {todos.filter((task) => task.complete === true).length} </div>
+    <div> to do: {todos.filter((task) => task.complete === false).length} </div>
     </div>
   )
 }
