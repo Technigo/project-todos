@@ -8,7 +8,7 @@ export const Summary = () => {
 
   return (
     <section>
-      <h3><span role='img' aria-label='Done'>📝  </span>{todoDone}/{list.length} tasks done</h3>
+      <h3><span role='img' aria-label='Done'>📝 </span>{todoDone}/{list.length} tasks done</h3>
     </section>
   )
 }

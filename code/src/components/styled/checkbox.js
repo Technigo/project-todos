@@ -6,7 +6,7 @@ export const Dot = styled.svg`
   }
   `
 
- export const HiddenCheckBox = styled.input.attrs({ type: 'checkbox' })`
+ export const CheckBox = styled.input.attrs({ type: 'checkbox' })`
   border: 0;
   clip: rect(0 0 0 0);
   clippath: inset(50%);

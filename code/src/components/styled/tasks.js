@@ -25,3 +25,9 @@ export const Button = styled.button`
     opacity: 1
   }
 `
+
+export const Time = styled.div`
+  text-align: right;
+  font-weight: 600;
+  font-size: 14px
+`
