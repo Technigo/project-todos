@@ -1,16 +1,77 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
+import { todos } from 'reducers/todos';
+import { CheckedCheckbox } from 'components/CheckedCheckbox';
 
 
 const Container = styled.li`
-  align-self: flex-start;
-  padding: 8px;
-  margin: 8px;
-  font-size: 32px;
-  color: #3f3f3f;
-  background-color: red;
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
 `;
 
-export const Item = ({ item }) => {
-  return <Container>{item.text}</Container>
+const Div = styled.div`
+  display: flex;
+  align-items: center;
+  margin: 10px 0 0 12px;
+  border-radius: 5px;
+`;
+
+const Button = styled.button`
+  font-size: 13px;
+  font-weight: 800;
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 2px 0 0 4px;
+  margin-right: 5px;
+`;
+
+const Text = styled.text`
+  font-family: monospace;
+  font-size: 18px;
+  text-transform: uppercase;
+`;
+
+export const Item = ({ itemIndex }) => {
+  const dispatch = useDispatch();
+  const item = useSelector(store => store.todos.list.items[itemIndex]);
+
+  const handleOnChange = event => {
+    dispatch(
+      todos.actions.setDone({
+        itemIndex: itemIndex,
+        done: !item.done
+      })
+    );
+  };
+
+  const onDelete = event => {
+    dispatch(
+      todos.actions.deleteTodo({
+        itemIndex: itemIndex
+      })
+    );
+  };
+
+  return (
+    <Container>
+      <Div>
+      <CheckedCheckbox
+          isDone={item.done}
+          onChangeHandler={handleOnChange} 
+        >
+        </CheckedCheckbox>
+        <Text>{item.description}</Text>
+        
+        <Button
+          onClick={onDelete}
+
+        >
+          ⌫
+        </Button>
+      </Div>
+    </Container>
+  )
 };  
