@@ -8,9 +8,7 @@ export const Summary = () => {
 
   return(
     <SummaryContainer>
-      <SummaryItem>{allTasks.length} total</SummaryItem>
-      <SummaryItem>{doneTasks.length} done</SummaryItem>
-      <SummaryItem>{allTasks.length - doneTasks.length} left</SummaryItem>
+      <SummaryItem>{doneTasks.length}/{allTasks.length} done</SummaryItem>
     </SummaryContainer>
   )
 }

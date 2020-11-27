@@ -7,6 +7,8 @@ export const HeaderContainer = styled.div`
   flex-wrap: wrap;
   justify-content: space-between;
   background-color: #F4F4F4;
+  border-bottom: 2px solid #F0F0F0;
+  height: 22vh;
 `
 
 export const Date = styled.p`
@@ -28,6 +30,7 @@ export const SummaryContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  justify-content: center;
 `
 
 export const SummaryItem = styled.p`

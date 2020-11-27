@@ -8,7 +8,7 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <Date>{moment().format('L')}</Date>
-      <Logo>ToDo</Logo>
+      <Logo>Todo</Logo>
       <Summary />
     </HeaderContainer>
   )

@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { BottomContainer } from '../styles/bottomStyles';
+import { BottomContainer, BottomButton } from '../styles/bottomStyles';
 import { todos } from '../reducers/todos';
 
 export const Bottom = () => {
@@ -18,16 +18,16 @@ export const Bottom = () => {
 
   return(
     <BottomContainer>
-      <button 
+      <BottomButton 
         onClick={onMarkAllDone}
         disabled={allTasks.length === 0 ? true : false}
       >Mark all as done
-      </button>
-      <button 
+      </BottomButton>
+      <BottomButton 
         onClick={onClearList}
         disabled={allTasks.length === 0 ? true : false}
       >Clear list
-      </button>
+      </BottomButton>
     </BottomContainer>
   )
 }

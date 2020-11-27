@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { todos } from '../reducers/todos';
-import { ListItem } from '../styles/taskListStyles';
+import { ListItem, AddForm, NewTaskInput, AddButton } from '../styles/taskListStyles';
 
 export const AddTask = () => {
   const [value, setValue] = useState('');
@@ -16,21 +16,22 @@ export const AddTask = () => {
 
   return (
     <ListItem>
-      <form onSubmit={onAddTask}>
+      <AddForm onSubmit={onAddTask}>
         <label htmlFor='newTask'>
         <img src={require('assets/plus.svg')} alt='' style={{width: '20px'}}/>
         </label>
-        <input 
+        <NewTaskInput 
           type='text' 
           id='newTask'
+          placeholder={'Add task'}
           value={value}
           onChange={event => setValue(event.target.value)}
           />
-        <input 
+        <AddButton 
           type='submit' 
           value='Add'
         />
-      </form>
+      </AddForm>
     </ListItem>
   )
 }

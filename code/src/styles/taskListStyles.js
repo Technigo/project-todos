@@ -4,7 +4,7 @@ import styled from 'styled-components';
 export const ListItem = styled.li`
   width: 100%;
   height: 14vh;
-  border-top: 2px solid #F0F0F0;
+  border-bottom: 2px solid #F0F0F0;
   padding: 15px;
   display: flex;
   justify-content: space-between;
@@ -17,7 +17,29 @@ export const ListContainer = styled.ul`
 
 // Components for add list form
 
+export const AddForm = styled.form`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-left: 5px;
+`
 
+export const NewTaskInput = styled.input`
+  width: 100%;
+  margin: 0 15px;
+  border: none;
+  font-size: 2.5vh;
+`
+
+export const AddButton = styled.input`
+  background-color: #28065b;
+  color: white;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  border: none;
+  border-radius: 1vh;
+  padding: 1vh 2vh;
+`
 
 // Components for list items
 
