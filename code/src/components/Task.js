@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import moment from 'moment'
 
 import {tasks} from '../reducers/tasks'
-import {TaskContainer, RemoveButton, TaskTitle, Todo, DateStamp} from './StyledComponents'
+import {TaskContainer, RemoveButton, TaskTitle, Todo, TimeStamp} from './StyledComponents'
 import {Checkbox, CustomCheckbox} from './CheckboxStyling'
 
 
@@ -22,7 +22,7 @@ export const Task = ({text, complete, task}) => {
                 onChange={check}/>
                 <CustomCheckbox checked={complete}></CustomCheckbox>
                 <TaskTitle checked={complete}>{text}</TaskTitle>
-                <DateStamp>{moment(task.date).format("MMM Do")}</DateStamp>
+                <TimeStamp>{moment(task.date).format("MMM Do")}</TimeStamp>
             </Todo>
             <RemoveButton onClick={()=>dispatch(tasks.actions.removeThisTask(task))}>X</RemoveButton>
             

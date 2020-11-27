@@ -1,18 +1,22 @@
-import React from 'react'
+import React, {useState} from 'react'
 import {useSelector, useDispatch} from 'react-redux'
 
 
 import {Task} from './Task'
 import {NewTask} from './NewTask'
 import {tasks} from '../reducers/tasks'
-import {TasksContainer, ClearButton, TopInfo, TaskTitle} from './StyledComponents'
+import {TasksContainer, ClearButton, TopInfo, AddTaskButton} from './StyledComponents'
 
 
 const Tasklist = () => {
     const Listedtasks = useSelector(store => store.tasks.items)
     const dispatch = useDispatch()
     const completedTasks = Listedtasks.filter(task => task.complete === true)
+    const [addTask, setAddTask] = useState(false)
     
+    const showInput = () => {
+        setAddTask(!addTask)
+    }
 
     return(
         <TasksContainer>
@@ -23,7 +27,7 @@ const Tasklist = () => {
                 Clear All
             </ClearButton>
             </TopInfo>
- 
+            <NewTask addTask={addTask} setAddTask={setAddTask}/>
             {Listedtasks.map(task => {
                 return (
                     <div key={task.id}>
@@ -32,8 +36,9 @@ const Tasklist = () => {
                     </div>
                     )
             })}
-           
-           <NewTask />
+
+        <AddTaskButton type='submit' onClick={showInput}>{addTask ? "-" : "+"}</AddTaskButton>
+
            
         </TasksContainer>
     )

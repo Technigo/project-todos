@@ -47,7 +47,7 @@ align-items: center;
 justify-content: space-between;
 box-sizing: border-box;
 width: 87%;
-height: 50px; 
+min-height: 55px; 
 margin: 10px 0; 
 padding: 10px;
 background-color: #EFEDFF;
@@ -66,15 +66,16 @@ cursor: pointer;
 `
 
 export const TaskTitle = styled.p`
-margin: 0 10px;
+margin: 0;
 margin-left: 35px;
 color: ${props => props.checked ? "#D1C4F6" : "#7F2AEC"};
 text-decoration: ${props => props.checked ? "line-through" : "none"};
 font-weight: bold;
 ` 
-export const DateStamp = styled.p`
-margin: 2px 10px;
-margin-left: 35px;
+export const TimeStamp = styled.p`
+position: absolute;
+bottom: 0;
+right: 10px;
 color: #D1C4F6;
 font-size: 10px;
 text-align: right;
@@ -91,6 +92,15 @@ font-weight: bold;
 font-size: 20px;
 cursor: pointer;
 `
+export const AddTaskButton = styled(SubmitButton)`
+position: fixed;
+bottom: 30px;
+right: 20px;
+width: 50px;
+height: 50px;
+box-shadow: 2px 2px 10px 2px #D1C4F6;
+`
+
 
 export const Input = styled.input`
 box-sizing: border-box;
