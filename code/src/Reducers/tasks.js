@@ -35,11 +35,12 @@ export const tasks = createSlice({
     removeAll: (state) => {
       state.items = []
     },
-    /*toggleDone: (state, action) => {
-      const foundItem = store.items.find(item => item.id === action.payload)
+    toggleDone: (state, action) => {
+      const { id } = action.payload
+      const foundItem = state.items.find(item => item.id === id)
       if (foundItem) {
         foundItem.done = !foundItem.done
       } 
-    }*/
+    }
   }
 });

@@ -10,21 +10,24 @@ import { Main, Wrapper } from '../library/Containers'
 
 export const Summary = () => {
   const [clearBtn, setClearBtn] = useState(true)
+  const [outerWrapper, setOuterWrapper] = useState(true)
 
   const dispatch = useDispatch()
 
   return (
     <Main>
-      <Header/>
-      <UserInput />
-      <Wrapper>
-        <List />
-        <Button
-          clearBtn={clearBtn}
-          onClick={() => dispatch(tasks.actions.removeAll())}
-        >
-          Clear List
-        </Button>
+      <Header />
+      <Wrapper outerWrapper={outerWrapper}>
+        <UserInput />
+        <Wrapper>
+          <List />
+          <Button
+            clearBtn={clearBtn}
+            onClick={() => dispatch(tasks.actions.removeAll())}
+          >
+            Clear List
+          </Button>
+        </Wrapper>
       </Wrapper>
     </Main>
   )

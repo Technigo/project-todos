@@ -10,12 +10,15 @@ import { Checkbox } from './Checkbox'
 export const Item = ({ item }) => {
   const dispatch = useDispatch()
   const [removeBtn, setRemoveBtn] = useState(true)
-  //Where to put this?
-  const [complete, setComplete] = useState(false)
+
+  const handleCheckboxClick = () => {
+    console.log('This works!')
+    dispatch(tasks.actions.toggleDone({ id: item.id}))
+  }
 
   return (
     <Listelement>
-      <Checkbox />
+      <Checkbox done={item.done} onChangeHandler={handleCheckboxClick}/>
       {item.text}
       <Button
         removebtn={removeBtn}

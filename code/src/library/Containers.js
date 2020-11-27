@@ -13,7 +13,8 @@ export const Wrapper = styled.section`
 display: flex;
 flex-direction: column;
 align-items: center;
-justify-content: center;
+${({outerWrapper}) => outerWrapper ? `
+justify-content: end;`:`justify-content: center;`}
 width: 100%;
 `
 
@@ -26,6 +27,7 @@ flex-direction: column;
 
 export const InputText = styled.textarea`
 margin: 5px;
+border: none;
 `
 
 export const ListWrapper = styled.ul`
