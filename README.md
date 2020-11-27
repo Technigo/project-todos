@@ -1,13 +1,15 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+A Todo application where you can list all the things you need to take care of.
+You can then check them off your list an later on even delete them. It will also show how many tasks you have left todo and
+counts the one you checked off as 'done'
+An app built with React Redux with focus on creating reducers and new actions.  
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## The Approach 
 
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I tried to sketch this as thoroughly as I possible could. 
+Then I started with the header and worked my way from there.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://ssundblom-todo.netlify.app/
