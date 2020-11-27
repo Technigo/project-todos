@@ -51,7 +51,7 @@ export default AllTodoItems
 
 const Input = styled.input`
   display: inline-block;
-  // background-color: ${checked => checked ? 'blue' : 'green'}
+  }
 `
 const CheckboxContainer = styled.div`
   display: flex;
