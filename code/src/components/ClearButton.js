@@ -9,6 +9,7 @@ export const ClearButton = () => {
 
   return (
     <Button
+      background="#fff"
       onClick={() => {
         dispatch(remember.actions.clearAll())
       }}>

@@ -3,10 +3,10 @@ import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
 import { remember } from 'reducers/remember'
-import { Container } from 'lib/Container'
 import { Summary } from 'components/Summary'
 import { List } from 'components/List'
 import { AddTask } from 'components/AddTask'
+import { AppShell } from 'lib/Container'
 
 const reducer = combineReducers({
   remember: remember.reducer
@@ -17,12 +17,12 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <Container background="#ccc">
+      <AppShell>
         <Summary />
         <AddTask />
         <List />
         {/* <Footer /> */}
-      </Container>
+      </AppShell>
     </Provider>
   )
 }

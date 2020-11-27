@@ -31,10 +31,10 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   `
 
   const StyledCheckbox = styled.div`
-    margin-left: 11px;
+    margin: 7px;
     display: inline-block;
-    width: 32px;
-    height: 32px;
+    width: 30px;
+    height: 30px;
     background: ${(props) => (props.checked ? '#ccc' : 'salmon')};
     border-radius: 3px;
     transition: all 150ms;

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { Container, SummaryContainer } from 'lib/Container'
+import { Container, RoundedContainer } from 'lib/Container'
 import { Icon } from 'lib/Icon'
 import { Title, Subtitle, H3 } from 'lib/Text'
 
@@ -10,14 +10,14 @@ export const Summary = () => {
   const toDo = items.filter((item) => item.done !== true)
 
   return (
-    <Container background="papayawhip">
-      <SummaryContainer background="#fff">
+    <RoundedContainer>
+      <RoundedContainer background="papayawhip">
         <Title><Icon />Remember</Title>
-      </SummaryContainer>
-      <SummaryContainer background="#5692ff">
+      </RoundedContainer>
+      <Container background="#5692ff">
         <Subtitle>{items.length} Total</Subtitle>
         <H3>{toDo.length} more to go</H3>
-      </SummaryContainer>
-    </Container>
+      </Container>
+    </RoundedContainer>
   )
 }

@@ -1,20 +1,23 @@
 import styled from 'styled-components'
 
 export const Select = styled.select`
-  height: 35px;
-  margin-left: 10px;
-  padding-left: 5px;
-  background: pink;
-  font-size: 14px;
-  color: #4d4d4d;
+  height: 31px;
+  margin: 0 6px;
+  padding: 0 7px;
+  background: #fff;
+  font-size: 12px;
+  color: #2e3338;
   border: none;
+  border-radius: 6px;
+  cursor: pointer;
 
   option {
     min-height: 20px;
     padding: 0 2px 1px;
-    color: black;
+    color: #2e3338;
     background: green;
     display: flex;
     white-space: pre;
+    cursor: pointer;
   }
 `

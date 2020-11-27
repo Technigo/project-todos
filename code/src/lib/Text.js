@@ -5,6 +5,7 @@ export const Title = styled.h1`
   color: #5692ff;
   font-size: 40px;
   align-self: flex-start;
+  line-height: 20px;
 
   @media (min-width: 500px) {
     font-size: 88px;

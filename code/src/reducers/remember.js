@@ -6,10 +6,10 @@ export const remember = createSlice({
   name: 'remember',
   initialState: {
     items: [
-      { id: 1, text: 'laundry', done: false, priority: 'medium' },
-      { id: 2, text: 'get groceries', done: true, priority: 'high' },
-      { id: 3, text: 'feed cat', done: false, priority: 'high' },
-      { id: 4, text: 'check mailbox', done: false, priority: 'low' }
+      { id: 1, text: 'laundry', done: false, priority: 'Medium' },
+      { id: 2, text: 'get groceries', done: true, priority: 'High' },
+      { id: 3, text: 'feed cat', done: false, priority: 'High' },
+      { id: 4, text: 'check mailbox', done: false, priority: 'Low' }
     ]
   },
   reducers: {

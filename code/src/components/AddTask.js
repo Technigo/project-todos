@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { remember } from 'reducers/remember'
-import { Container } from 'lib/Container'
+import { RoundedContainer } from 'lib/Container'
 import { Button } from 'lib/Button'
 import { Select } from 'lib/Select'
 
@@ -20,7 +20,7 @@ export const AddTask = () => {
   }
 
   return (
-    <Container>
+    <RoundedContainer background="#cce5ff">
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -34,14 +34,14 @@ export const AddTask = () => {
           <Select
             value={priority}
             onChange={(event) => setPriority(event.target.value)}>
-            <option value="">select...</option>
-            <option value="high">high</option>
-            <option value="medium">medium</option>
-            <option value="low">low</option>
+            <option value="">Select...</option>
+            <option value="High">High</option>
+            <option value="Medium">Medium</option>
+            <option value="Low">Low</option>
           </Select>
         </label>
         <Button type="submit">Add Item</Button>
       </form>
-    </Container>
+    </RoundedContainer>
   )
 }

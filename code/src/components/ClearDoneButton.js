@@ -9,6 +9,7 @@ export const ClearDone = () => {
 
   return (
     <Button
+      background="#fff"
       onClick={() => {
         dispatch(remember.actions.clearDone())
       }}>
@@ -16,3 +17,5 @@ export const ClearDone = () => {
     </Button>
   )
 }
+
+// sort out functionality here

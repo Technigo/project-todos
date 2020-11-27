@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 
 import { remember } from 'reducers/remember'
 import { TaskContainer } from 'lib/Container'
-import { RemoveButton } from 'lib/Button'
+import { Button } from 'lib/Button'
 import { Priority } from 'lib/Text'
 import { CustomCheckbox } from 'components/CustomCheckbox'
 
@@ -26,9 +26,9 @@ export const Task = (props) => {
         onChangeHandler={handleToggle} />
       <span>&nbsp; {props.item.text} &nbsp;</span>
       <Priority>{props.item.priority}</Priority>
-      <RemoveButton text="remove" onClick={handleRemove}>
-        remove
-      </RemoveButton>
+      <Button text="remove" onClick={handleRemove}>
+        Remove
+      </Button>
     </TaskContainer>
   )
 }
