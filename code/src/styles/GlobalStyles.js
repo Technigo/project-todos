@@ -16,14 +16,10 @@ export const Button = styled.button`
   justify-content: center;
   font-family: 'PT Sans', sans-serif;
   font-size: 14px;
-  width: 40%;
+  width: 60%;
 
   &:hover {
     border: 1px solid #000;
-  }
-
-  @media (max-width: 321px) {
-    width: 125px;
   }
 `;
 

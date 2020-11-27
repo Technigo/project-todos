@@ -53,7 +53,7 @@ const MainContainer = styled.div`
   flex-direction: column;
   align-items: center;
   width: 90vw;
-  max-width: 450px;
+  max-width: 650px;
   height: auto;
   min-height: 85vh;
   border-radius: 8px;
