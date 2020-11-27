@@ -28,7 +28,7 @@ const MainWrapper = styled.main`
   display: flex;
   flex-direction: column;
   width: 90%;
-  min-height: 90vh;
+  min-height: 93vh;
   border-radius: 5px;
   margin: 20px auto;
   padding: 5px;

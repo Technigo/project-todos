@@ -1,6 +1,7 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
+import swal from "sweetalert";
 
 import { todos } from "reducers/todos";
 
@@ -8,11 +9,25 @@ export const ClearAllButton = () => {
   // const items = useSelector(store => store.todos.items);
   const dispatch = useDispatch();
 
+  const handleOnDelete = () => {
+    swal({
+      title: "Delete all To-Do's?",
+      text: "Are you sure you want to delete all of your To-Do's?",
+      icon: "warning",
+      dangerMode: true,
+      buttons: true,
+    }).then(willDelete => {
+      if (willDelete) {
+        dispatch(todos.actions.removeAll());
+        swal("Deleted!", "Your To-Do's have been deleted", "warning");
+      } else {
+        swal("Cancelled", "Your To-Do's are still a work in progress!");
+      }
+    });
+  };
+
   return (
-    <ClearButton
-      type="reset"
-      onClick={() => dispatch(todos.actions.removeAll())}
-    >
+    <ClearButton type="reset" onClick={() => handleOnDelete()}>
       Clear All
     </ClearButton>
   );

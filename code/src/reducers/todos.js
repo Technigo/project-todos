@@ -18,7 +18,7 @@ const initialState = {
       id: 3,
       text: "Buy eggs",
       isComplete: false,
-      createdDate: 1606383658465,
+      createdDate: 1606493967957,
     },
   ],
 };

@@ -5,7 +5,6 @@ import styled from "styled-components";
 import { todos } from "../reducers/todos";
 
 export const DeleteTodoButton = ({ item }) => {
-  //const items = useSelector(store => store.todos.items);
   const dispatch = useDispatch();
 
   const onTodoDelete = id => {
