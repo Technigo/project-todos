@@ -12,11 +12,10 @@ const Container = styled.div`
     margin-left: auto;
     margin-right: auto;
 
-    @media (min-width: 700px) {
+    @media (min-width: 667px) {
         max-width: 450px;
     }
 `
-
 const ListContainer = styled.ul`
     display: flex; 
     width: 100%;
@@ -30,11 +29,37 @@ const ListContainer = styled.ul`
 
     @media (min-width: 700px) {
         margin-top: 40px;
+        min-height: 95vh;
     }
 `
+const Image = styled.image`
+    width: 100%;
+    font-size: 30px;
+`
+const ImageText = styled.p`
+    margin: 20px;
+`
+
 
 export const List = () => {
     const items = useSelector(store => store.todos.items)
+
+    //If all tasks are removed ,an image will appear
+    if (items.length === 0) {
+        return (
+            <Container>
+                <ListContainer>
+                    <Header />
+                         <Image>
+                            <img src={require('assets/Cozy.svg')} alt='Woman relaxing'/>
+                            <ImageText>You have completed all your tasks, just relax and calm down.</ImageText>     
+                        </Image>      
+                    <AddTodo />  
+                </ListContainer>
+        </Container>
+        )
+        
+      } else {
 
     return (
         <Container>
@@ -48,4 +73,5 @@ export const List = () => {
             </ListContainer>
         </Container>
     )
+}
 }

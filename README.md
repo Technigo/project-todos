@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project is a todo app built in React using Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started the project by planning which components to use and what the reducers should contain. The planning is a key factor to make a well structured code that you can easily follow. I have learned how to structure a redux store by setting up reducers and actions, and how to interact with the store by using selectors or by dispatching actions in the components. 
+
+Next step would be to place the styled components in separate files. I have kept them in the components since I found it useful, but in some components there is too much styling.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://todolist-ingela.netlify.app/

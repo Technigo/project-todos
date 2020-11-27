@@ -13,6 +13,10 @@ const ItemContainer = styled.li`
     border-bottom: solid rgba(71, 71, 71, 0.514) 1px;
     min-width: 90%;
     display: flex;
+
+    @media (min-width: 667px) {
+        font-size: 24px;
+    }
 `
 const Input = styled.input`
     min-width: 20px; 
@@ -29,6 +33,7 @@ const ListActionButton = styled.button`
     font-size: 11px;
     color: grey;
     border: none;
+    cursor: grab;
 `
 
 export const Item = ({ item }) => {
@@ -41,8 +46,7 @@ export const Item = ({ item }) => {
     const handleCheckbox = () => {
         dispatch(todos.actions.toggleComplete(item.id))
     }
-    
-    
+     
     return (
         <ItemContainer>
             <Input 
@@ -51,7 +55,8 @@ export const Item = ({ item }) => {
                 value= 'check'
                 onChange={handleCheckbox}>
             </Input>
-            <p>{item.text}</p>
+            <p style={{ textDecoration: item.complete ? 'line-through' : '' }}>
+            {item.text}</p>
             <ListActionButton 
                 onClick={handleRemoveItem}>[Remove]
             </ListActionButton>

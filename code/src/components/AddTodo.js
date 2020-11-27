@@ -14,7 +14,7 @@ const Form = styled.form`
 
 const Textarea = styled.textarea`
     margin-top: 20px;
-    font-family: 'Roboto';
+    font:inherit;
     border: none;
 `
 const Button = styled.button`
@@ -23,6 +23,17 @@ const Button = styled.button`
     border: none;
     box-shadow: 10px 5px 5px grey;
     padding: 5px;
+    font:inherit;
+    cursor: grab;
+    outline:none;
+
+    :hover {background-color: #ccced2}
+
+    :active {transform: translateY(4px)}
+
+    @media (min-width: 667px) {
+        font-size: 20px;
+    }
 `
 
 //state for input
@@ -34,7 +45,7 @@ export const AddTodo = () => {
         e.preventDefault()
         //What we add within the curly braces is the payload:
         dispatch(todos.actions.addOne({   
-            id: Date.now(), 
+            id: Math.random(), 
             text: inputValue,
             complete: false
         })

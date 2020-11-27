@@ -3,7 +3,7 @@ import styled from 'styled-components'
 
 import { ClearAll } from './ClearAll'
 
-const Container = styled.div`
+export const Container = styled.div`
     background-color: #ffadad;
     display: flex;
     flex-direction: column;
@@ -13,6 +13,10 @@ const Container = styled.div`
 const TodoHeader = styled.h1`
     font-size: 30px;
     font-weight: 300;
+
+    @media (min-width: 667px) {
+        font-size: 34px;
+    }
 `
 
 export const Header = () => {

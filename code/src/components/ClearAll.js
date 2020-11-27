@@ -8,6 +8,8 @@ const Button = styled.button`
     margin-bottom: 10px;
     background: none;
     font-weight: 300;
+    cursor: grab;
+    outline: none;
 `
 
 export const ClearAll = () => {

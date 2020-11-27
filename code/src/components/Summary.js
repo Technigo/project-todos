@@ -7,6 +7,10 @@ const SummaryText = styled.p`
     font-size: 16px;
     font-weight: 300;
     text-align: center;
+
+    @media (min-width: 667px) {
+        font-size: 20px;
+    }
 `
 
 export const Summary = () => {
