@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, /* configureStore, */ createStore } from '@reduxjs/toolkit'
+import { combineReducers, createStore } from '@reduxjs/toolkit'
 
 import { tasks } from './Reducers/tasks'
 
@@ -8,7 +8,6 @@ import { Summary } from './Pages/Summary'
 
 const reducer = combineReducers({tasks: tasks.reducer,})
 //Here we'll use localstorage to save the current state
-//const store = configureStore({ reducer })
 
 const persistedStateJSON = localStorage.getItem('taskState')
 let persistedState = {}

@@ -5,26 +5,7 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     name: 'Emelies List',
-    items: [
-      {
-        id: 1,
-        text: 'First task',
-        done: false,
-        created: 'Some day'
-      },
-      {
-        id: 2,
-        text: 'Second task',
-        done: false,
-        created: 'Some day'
-      },
-      {
-        id: 3,
-        text: 'Third task',
-        done: false,
-        created: 'Some day'
-      },
-    ],
+    items: [],
   },
   reducers: {
     addItem: (state, action) => {
