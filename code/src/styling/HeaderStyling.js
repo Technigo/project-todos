@@ -28,6 +28,11 @@ export const DateText = styled.p`
   font-size: 16px;    
 } 
 `
+export const SectionOne = styled.div`
+display:flex;
+flex-direction: column;
+`
+
 export const SectionTwo = styled.div`
  display:flex;
  flex-direction:column;
@@ -45,10 +50,6 @@ export const TaskCount = styled.p`
  margin-bottom:6px;
 `
 
-export const SectionOne = styled.div`
-  display:flex;
-  flex-direction: column;
-`
 export const Button = styled.button`
   width: 80px;
   background-color:#ff9900;

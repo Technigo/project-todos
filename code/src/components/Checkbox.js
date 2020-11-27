@@ -7,8 +7,8 @@ export const CheckBox = ({ isChecked, onChange }) => {
   const [checked, setChecked] = useState(isChecked)
 
   const handleChange = event => {
-    onChange();
-    setChecked(event.target.checked);
+    onChange()
+    setChecked(event.target.checked)
   }
 
   const Checkbox = ({ className, checked, ...props }) => (
@@ -21,7 +21,6 @@ export const CheckBox = ({ isChecked, onChange }) => {
       </StyledCheckbox>
     </CheckboxContainer>
   )
-
   return( 
     <label>
       <Checkbox checked={checked} onChange={handleChange}></Checkbox>

@@ -37,8 +37,8 @@ export const Header = () => {
           <SectionTwo>
             <TaskCount> {completedItems.length}/{items.length} Done</TaskCount>
               <Button
-                className="remove-all"
-                type="button"
+                className='remove-all'
+                type='button'
                 onClick ={handleRemoveAll}>
                 Delete All!
               </Button>
