@@ -3,7 +3,8 @@ import styled from 'styled-components';
 // Wrappers ----------------------------------------------------------------
 
 export const Wrapper = styled.div`
-  margin: 20px 20px;
+  margin: 20px auto;
+  max-width: 600px;
 `;
 
 export const InnerFlexWrapper = styled.div`
@@ -38,8 +39,9 @@ export const TaskWrapper = styled(InnerFlexWrapper)`
   border: 2px solid ${(props) => (props.important ? '#4300CA' : 'transparent')};
   background: #fff;
   /* border: 1px solid #000; */
-  margin: 15px 0;
+  margin: 15px 20px;
   box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
 
   & input:hover {
     cursor: pointer;
@@ -47,31 +49,6 @@ export const TaskWrapper = styled(InnerFlexWrapper)`
 
   & label:hover {
     cursor: pointer;
-  }
-`;
-
-export const NewTodoWrapper = styled.div`
-  position: fixed;
-  display: flex;
-  z-index: 2;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  padding: 20px;
-  width: 77%;
-  border-radius: 10px;
-  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
-  flex-direction: column;
-  background: #fff;
-  color: #000;
-  border: 2px solid #fff;
-
-  @media (min-width: 350px) {
-    flex-direction: column;
-  }
-
-  & input {
-    background: transparent;
   }
 `;
 

@@ -66,6 +66,7 @@ export const CounterAndSorter = ({ showingCategory, setShowingCategory }) => {
 // Local styles -----------------------------
 const CounterAndSorterWrapper = styled(InnerFlexWrapper)`
   align-items: flex-end;
+  margin: auto 20px;
 `;
 
 const CustomSelect = styled(Select)`

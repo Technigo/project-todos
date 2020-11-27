@@ -118,7 +118,7 @@ export const ListOfTodos = () => {
 // Local styles -----------------------------
 const CompletedHeadline = styled.h2`
   font-size: 16px;
-  margin: 50px 0 15px 10px;
+  margin: 50px 20px 15px 20px;
   text-transform: uppercase;
 `;
 

@@ -7,11 +7,7 @@ import styled from 'styled-components';
 import { todos } from '../reducers/todos';
 
 // Styling
-import {
-  NewTodoWrapper,
-  InnerFlexWrapper,
-  Button,
-} from '../styling/GlobalStyling';
+import { InnerFlexWrapper, Button } from '../styling/GlobalStyling';
 
 // -----------------------------------------------------------------------------
 
@@ -111,6 +107,33 @@ export const NewTodo = ({ setAddTaskVisible }) => {
 };
 
 // Local styles -----------------------------
+
+const NewTodoWrapper = styled.div`
+  position: fixed;
+  display: flex;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  width: 77%;
+  max-width: 400px;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+  flex-direction: column;
+  background: #fff;
+  color: #000;
+  border: 2px solid #fff;
+
+  @media (min-width: 350px) {
+    flex-direction: column;
+  }
+
+  & input {
+    background: transparent;
+  }
+`;
+
 const NewTodoInput = styled.input`
   padding: 10px 20px 10px 5px;
   border: none;
@@ -134,6 +157,7 @@ const CustomSelect = styled(Select)`
 const Label = styled.label`
   font-size: 10px;
   text-transform: uppercase;
+  padding-bottom: 20px;
 `;
 
 const ButtonWrapper = styled(InnerFlexWrapper)`
