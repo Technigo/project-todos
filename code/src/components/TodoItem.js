@@ -6,16 +6,16 @@ import { CustomCheckbox } from './CustomCheckbox';
 import { DeleteContainer, DeleteButton } from '../styledComponents/styled_components';
 import  bin  from '../assets/bin.png';
 
-export const TodoItem = ({ itemIndex }) => {
+export const TodoItem = ({ item }) => {
   // Get the item from the store based on the index
-  const item = useSelector((store) => store.todos.list.items[itemIndex]);
+  //const item = useSelector((store) => store.todos.list.items[item]);
   const dispatch = useDispatch();
 
   // Create the onRemoveClicked handler and dispatch action.
   const onRemoveClicked = () => {
     dispatch(
       todos.actions.removeTodo({
-        itemIndex: itemIndex
+        itemId: item.id
       })
     );
   };
@@ -24,10 +24,10 @@ export const TodoItem = ({ itemIndex }) => {
   // called setDone and sends with it two pieces of info: the index of the item
   // and the value of onChangeValue. Done or not. This new value is listened to
   // by the setDone reducer in todos, and sets the new value in the global/local state.
-  const handleCheckboxClick = () => {
+  const handleOnChange = () => {
     dispatch(
       todos.actions.setDone({
-        itemIndex: itemIndex,
+        itemId: item.id,
         done: !item.done
       })
     );
@@ -35,7 +35,11 @@ export const TodoItem = ({ itemIndex }) => {
 
   return (
     <DeleteContainer className={`todo-item ${item.done ? 'done' : ''}`}>
-      <CustomCheckbox tabindex='0' isChecked={item.done} onChangeHandler={handleCheckboxClick} />
+      <CustomCheckbox 
+        tabIndex='0' 
+        isChecked={item.done ? 'checked' : ''}
+        onChangeHandler={handleOnChange}>
+      </CustomCheckbox> 
       <span className='todo-item-text'>{item.description}</span>
       <DeleteButton 
         className='todo-item-remove' 

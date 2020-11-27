@@ -24,15 +24,15 @@ export const todos = createSlice({
     // The payload contains the info on which was checked as done. Using the index of that
     // item.
     setDone: (state, action) => {
-      const { itemIndex, done } = action.payload;
-      state.list.items[itemIndex].done = done;
+      const { itemId, done } = action.payload;
+      state.list.items[itemId].done = done;
     },
     // Filter away the one we want to delete. Since we know the index of the one we do not want to keep, we can keep everything else.
     // The payload contains the index of the one we want do remove. The onClick.
     removeTodo: (state, action) => { 
-      const { itemIndex } = action.payload;
+      const { itemId } = action.payload;
       state.list.items = state.list.items.filter(
-        (item, index) => index !== itemIndex
+        (item) => item.id !== itemId
       );
       // 'item' above is not read, but if I remove it, the DeleteButton will not work. Why?
     },

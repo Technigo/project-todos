@@ -13,7 +13,7 @@ export const TodoList = () => {
   return (
     <SectionTodoList className='todo-list'>
       {list.items.map((item) => (
-        <TodoItem item={item.text} key={item.id}></TodoItem>
+        <TodoItem item={item.text} item={item} key={item.id}></TodoItem>
       ))}
     </SectionTodoList>
   );
