@@ -26,7 +26,7 @@ export const TodoItem = ({ item }) => {
   const handleOnChange = () => {
     dispatch(
       todos.actions.setDone({
-        item: item,
+        itemId: item.id,
         done: !item.done
       })
     );
