@@ -103,7 +103,7 @@ export const Task = ({task}) => {
         </RemoveButton>
         </Label>
         <Date>
-        created: {moment(task.id).fromNow()}
+        created: {moment(task.id).format('LT')}
       </Date>
       </TextContainer>
     </TaskContainer>

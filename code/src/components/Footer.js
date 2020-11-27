@@ -1,9 +1,11 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 
-import { tasks } from 'reducers/tasks' 
+import { tasks } from 'reducers/tasks'
 
 import styled from 'styled-components'
+import swal from 'sweetalert';
+
 
 const Container = styled.footer`
   display: flex;
@@ -52,7 +54,18 @@ export const Footer = () => {
   const completedItems = items.filter(item => item.complete)
 
   const handleRemoveAll = () => {
-    dispatch(tasks.actions.removeAll())
+    swal({
+      title: "here's the title",
+      text: "you're about to delete all tasks, are you sure?",
+      icon: "info",
+      buttons: ["nope..", "yes, delete em"],
+      dangerMode: true,
+    })
+    .then ((willDelete) => {
+      if (willDelete) {
+        dispatch(tasks.actions.removeAll())
+      }
+    })
   }
 
   return (
