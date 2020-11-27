@@ -14,7 +14,7 @@ export const toread = createSlice({
         id: 2,
         title: "Book 2",
         category: "want to read",
-        isRead: false,
+        isRead: true,
       },
       {
         id: 3,
@@ -52,14 +52,17 @@ export const toread = createSlice({
     },
 
     toggleIsRead: (store, action) => {
-      console.log(action.payload);
-      const handleCheckBox = store.books.find(
-        (book) => book.id === action.payload
-      );
-
-      if (handleCheckBox) {
-        handleCheckBox.isRead = !handleCheckBox.isRead;
-      }
-    },
+      const updatedStatus = store.books.map(book => {
+        if (book.id === action.payload) {
+          return {
+            ...book,
+            isRead: !book.isRead
+          };
+        } else {
+          return book;
+        }
+    })
+    store.books = updatedStatus
   },
+},
 });

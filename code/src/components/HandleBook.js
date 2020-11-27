@@ -13,20 +13,26 @@ const HandleBookContainer = styled.li`
 `;
 
 const BookTitle = styled.p`
-  padding-right: 20px;
-  margin: 15px;
+  margin: 10px;
 `;
 const Checkbox = styled.label`
   margin: 15px;
 `;
 
 const DeleteButton = styled.button`
-  font-size: 18px;
+  font-size: 16px;
   justify-content: center;
-  border: none;
+  border: 1px solid white;
+  color: white;
   border-radius: 25px;
-  padding: 0 10px;
+  padding: 5px;
+  background: transparent;
+  margin: 0 5px;
 `;
+
+const Input = styled.input`
+  padding: 40px;
+`
 
 export const HandleBook = ({ book }) => {
   const [showReadBooks, setShowReadBooks] = useState(false);
@@ -45,13 +51,13 @@ export const HandleBook = ({ book }) => {
     <HandleBookContainer>
       <BookTitle>{book.title}</BookTitle>
       <Checkbox>
-        Read
-        <input
+        Have read
+        <Input
           type="checkbox"
           checked={book.isRead}
           onClick={() => setShowReadBooks(!showReadBooks)}
           onChange={handleCheckboxClick}
-        />
+        ></Input>
       </Checkbox>
       <DeleteButton onClick={() => deleteOneBook(book.id)}>
         Delete book
