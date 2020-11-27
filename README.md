@@ -1,13 +1,22 @@
-# Project Todos
+# Project Todos 📝
 
-Replace this readme with your own information about your project.
+A project made during the Technigo Boot Camp to practice Redux. 
+A todo app where you can add tasks, remove one, remove all and allso see how many tasks that are completed. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## The project
 
-## The problem
+The project consists of:
+- App.js - The provider and store
+- Reducer - Where I store my reducer and my Initialstate.
+- Components: for header, input field, task item, the list and the summary. 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Tech
+* Redux
+* React
+* CSS
+* JSX
+* Javascript
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Try out the [To do app](https://todos-today.netlify.app/)

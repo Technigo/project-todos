@@ -35,7 +35,7 @@ export const ClearButton = () => {
       onClick={hanlderemoveAll} 
     >
       <span className="clear-button-before">Remove All</span>
-      <span className="clear-button-after">Are you sure?</span>
+      <span className="clear-button-after">Are your really done?</span>
     </button>
   )
 }
