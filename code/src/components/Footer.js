@@ -35,7 +35,7 @@ const ClearButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: rgba(255, 255, 255, 0.4);
+    background-color: rgba(143, 99, 148, 0.2);
   }
 
   &:focus {

@@ -6,7 +6,7 @@ export const tasks = createSlice({
     items: [
       {id: 1606460400000, text: 'meditate 10 minutes', complete: false, category: 'self-care'},
       {id: 1606462200000, text: 'think about five positive things', complete: false, category: 'self-care'},
-      {id: 1606463100000, text: 'give a hug', complete: false, category: 'self-care'},
+      {id: 1606463100000, text: 'gift a free hug', complete: false, category: 'self-care'},
     ]
   },
   reducers: {

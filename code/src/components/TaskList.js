@@ -9,8 +9,6 @@ import { AddTask } from './AddTask'
 import { Footer } from './Footer'
 import { NoTasks } from './NoTasks'
 
-import { CustomCheckbox } from './CustomCheckbox'
-
 // STYLING
 const Section = styled.section`
   display: flex;
@@ -65,7 +63,6 @@ export const TaskList = () => {
       </TasksContainer>}
       <AddTask />
       <Footer />
-      <CustomCheckbox />
     </Section>
   )
 }

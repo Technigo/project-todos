@@ -8,6 +8,8 @@ import styled from 'styled-components'
 
 import Logo from './assets/delete.svg'
 
+import { CustomCheckbox } from './CustomCheckbox'
+
 const TaskContainer = styled.div`
   display: flex;
   justify-content: flex-start;
@@ -19,10 +21,6 @@ const TaskContainer = styled.div`
   box-shadow: 10px 13px 21px -18px rgba(158,158,158,1);
   opacity: ${props => props.checked ? '0.4' : '1'};
 
-  &:hover {
-    opacity: 0.6;
-  }
-
   @media (max-width: 280px) {
     padding: 8px;
   }
@@ -30,18 +28,10 @@ const TaskContainer = styled.div`
 const TextContainer = styled.div`
   display: flex;
   flex-direction: column;
+  margin-left: 8px;
 `
-const Checkbox = styled.input`
-  width: 15px;
-  height: 15px;
-  margin: 0 6px 0 0;
-  cursor: pointer;
 
-  &:checked ${TaskContainer} {
-    opacity: 0.3;
-  }
-`
-const Label = styled.label`
+const TaskName = styled.label`
   word-break: break-word;
 
   @media (max-width: 280px) {
@@ -88,14 +78,12 @@ export const Task = ({task}) => {
 
   return (
     <TaskContainer checked={task.complete}>
-      <Checkbox
-          type="checkbox"
-          id={task.id}
-          checked={task.completed}
-          onChange={handleCheckboxClick}
-        />
+      <CustomCheckbox 
+        isChecked={task.complete} 
+        onChangeHandler={handleCheckboxClick}
+      />
       <TextContainer>
-        <Label htmlFor={task.id}>
+        <TaskName>
           {task.text}
           <RemoveButton onClick={handleRemoveButton}>
             <RemoveIcon
@@ -103,7 +91,7 @@ export const Task = ({task}) => {
               alt="delete task"
             />
         </RemoveButton>
-        </Label>
+        </TaskName>
         <Date>
         created at {moment(task.id).format('LT')}
       </Date>

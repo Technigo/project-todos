@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-export const CustomCheckbox = props => {
+export const CustomCheckbox = ({isChecked, onChangeHandler}) => {
   
-  const [checked, setChecked] = useState(false)
+  const [checked, setChecked] = useState(isChecked)
 
   const handleOnChange = event => {
+    onChangeHandler()
     setChecked(event.target.checked)
   }
 
@@ -22,28 +23,31 @@ export const CustomCheckbox = props => {
     width: 1px;
   `
 
-const Icon = styled.svg`
-fill: none;
-stroke: white;
-stroke-width: 3px;
-`
+  const Icon = styled.svg`
+  fill: none;
+  stroke: white;
+  stroke-width: 3px;
+  `
 
   const StyledCheckbox = styled.div`
     display: inline-block;
-    width: 16px;
-    height: 16px;
-    background-color: ${props => props.checked ? "#5b3f5e" : "#A986AD" };
-    border-radius: 3px;
+    width: 18px;
+    height: 18px;
+    border: 1px solid #dedede;
+    background-color: ${props => props.checked ? "#A986AD" : "#ececec" };
     transition: all 150ms;
+    cursor: pointer;
+
+    &:hover {
+      background-color: rgba(143, 99, 148, 0.3)
+    }
     
     ${Icon} {
       visibility: ${props => props.checked ? "visible" : "hidden"}
-
     }
   `
   const CheckboxContainer = styled.div`
-    display: inline-block;
-    vertical-align: middle;
+    display: flex;
   `
 
 const Checkbox = ({className, checked, ...props}) => (
@@ -66,7 +70,6 @@ const Checkbox = ({className, checked, ...props}) => (
           onChange={handleOnChange}
         >
         </Checkbox>
-        The state is now {checked.toString()}
       </label>
     </div>
   )
