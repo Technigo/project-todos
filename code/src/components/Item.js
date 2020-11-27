@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { todos } from '../Reducers/todos';
+import { todos } from '../reducers1/todos';
 import { RemoveButton, ItemContainer, TaskText } from './StyledComponents/ListStyling';
 import  { CheckBox } from './Checkbox';
 

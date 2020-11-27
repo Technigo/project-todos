@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import swal from 'sweetalert';
 
-import { todos } from '../Reducers/todos';
+import { todos } from '../reducers1/todos';
 import { RemoveAllButton } from './StyledComponents/ListStyling';
 
 export const RemoveAll = () => { 

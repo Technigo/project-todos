@@ -1,7 +1,7 @@
 import React, { useState } from 'react'; 
 import { useDispatch } from 'react-redux';
 
-import { todos } from '../Reducers/todos';
+import { todos } from '../reducers1/todos';
 import { AddTodoForm, NewTodo, TodoText, AddButton } from './StyledComponents/AddTodoStyling';
 
 export const AddTodo = () => { 
