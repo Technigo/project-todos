@@ -18,3 +18,10 @@ code {
   margin: auto;
   cursor: pointer;
 }
+
+.swal-button--danger {
+  background-color: #FF6395;
+}
+.swal-modal {
+  border-radius: 20px;
+}

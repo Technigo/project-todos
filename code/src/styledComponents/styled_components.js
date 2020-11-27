@@ -6,9 +6,19 @@ export const Title = styled.h1`
   font-size: 36px;
   color: white;
   padding-top: 30px;
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  
+    @media (min-width: 768px) {
+      font-size: 66px;
+    }
 `
 export const Emoji = styled.span`
   font-size: 40px;
+
+    @media (min-width: 768px) {
+      font-size: 66px;
+    }
 `
 
 // TodoSummary
@@ -42,6 +52,7 @@ export const InputField = styled.input`
   width: 65%;
   border: none;
   border-radius: 3px;
+  color: black;
 `
 export const InputAdd = styled(InputField)`
   -webkit-appearance: none;
@@ -74,9 +85,6 @@ export const DeleteContainer = styled.div`
   margin-bottom: 10px;
   align-items: center;
   justify-content: center;
-  background-color: teal;
-  color: teal;
-
 `
 export const DeleteButton = styled.button`
   -webkit-appearance: none;

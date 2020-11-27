@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuidv4 } from 'uuid';
 
 import { todos } from '../reducers/todos';
 import { Form, StyledLabel, InputField, InputAdd } from '../styledComponents/styled_components';
@@ -25,7 +26,8 @@ export const TodoInput = () => {
     dispatch(
       todos.actions.addTodo({
         description: inputValue,
-        done: false,
+        id: uuidv4(),
+        done: false
         //dueDate: dueDate
       })
     );

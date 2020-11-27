@@ -56,7 +56,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
 
   // Updating the state on change
   const handleOnChange = (event) => {
-    onChangeHandler();
+    onChangeHandler(event);
     setChecked(event.target.checked); 
   };
 
