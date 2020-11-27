@@ -17,8 +17,8 @@ export const ClearButton = () => {
       cancelButtonColor: '#FEAC5E',
       confirmButtonText: 'Yes, delete all!'
     })
-    .then((removeAll) => {
-      if (removeAll) {
+    .then((willDelete) => {
+      if (willDelete.isConfirmed) {
         dispatch (todo.actions.removeAll())
         Swal.fire({
           background: 'url(https://images.pexels.com/photos/1831234/pexels-photo-1831234.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940)',
