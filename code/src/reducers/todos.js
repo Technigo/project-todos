@@ -29,7 +29,13 @@ const initialState = {
       //   dueDate: '',
       // },
     ],
-    categories: ['School', 'Work', 'Personal', 'Home', 'Other'],
+    options: [
+      { value: 'school', label: 'School' },
+      { value: 'work', label: 'Work' },
+      { value: 'personal', label: 'Personal' },
+      { value: 'other', label: 'Other' },
+      //
+    ],
     selectedStatusFilter: '',
     selectedCategoryFilter: '',
   },

@@ -1,12 +1,8 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import moment from 'moment';
 import styled from 'styled-components';
 
-import { todos } from '../reducers/todos';
-import { Button } from '../library/Button';
-import { Title, Paragraph } from '../library/Text';
 import TodoSummary from './TodoSummary';
 
 const ListHeader = () => {

@@ -2,9 +2,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-import { SubTitle } from '../library/Text';
-import { Paragraph } from '../library/Text';
-
 const TodoSummary = () => {
   const listArray = useSelector(store => store.todos.list);
   const todosCompleted = listArray.items.filter(item => item.isComplete).length;

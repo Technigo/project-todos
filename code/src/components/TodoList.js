@@ -1,10 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 import EmptyList from './EmptyList';
 import TodoItem from './TodoItem';
-import RemoveButton from './RemoveButton';
 import ActionBar from './ActionBar';
 import { todos } from '../reducers/todos';
 import { Button } from '../library/Button';
@@ -15,10 +14,10 @@ const TodoList = () => {
   const filterStatus = useSelector(
     store => store.todos.list.selectedStatusFilter
   );
-  const filterCategory = useSelector(
-    store => store.todos.list.selectedCategoryFilter
-  );
-  const categories = useSelector(store => store.todos.list.categories);
+  // const filterCategory = useSelector(
+  //   store => store.todos.list.selectedCategoryFilter
+  // );
+  // const categories = useSelector(store => store.todos.list.categories);
   //const [category, setCategory] = useState('');
 
   const onFilterByStatus = value => {
@@ -26,9 +25,9 @@ const TodoList = () => {
     dispatch(todos.actions.filterByStatus(value));
   };
 
-  const onFilterByCategory = value => {
-    dispatch(todos.actions.filterByCategory(value));
-  };
+  // const onFilterByCategory = value => {
+  //   dispatch(todos.actions.filterByCategory(value));
+  // };
 
   const filteredList = list.filter(item => {
     if (filterStatus === 'complete') {
@@ -66,21 +65,21 @@ const TodoList = () => {
           <ActionBarButton
             type="button"
             value="all"
-            onClick={event => onFilterByStatus(event.target.value)}
+            onClick={() => onFilterByStatus('all')}
           >
             <ActionBarText>All</ActionBarText>
           </ActionBarButton>
           <ActionBarButton
             type="button"
             value="complete"
-            onClick={event => onFilterByStatus(event.target.value)}
+            onClick={() => onFilterByStatus('complete')}
           >
             <ActionBarText>Complete</ActionBarText>
           </ActionBarButton>
           <ActionBarButton
             type="button"
             value="not complete"
-            onClick={event => onFilterByStatus(event.target.value)}
+            onClick={() => onFilterByStatus('not complete')}
           >
             <ActionBarText>Not Complete</ActionBarText>
           </ActionBarButton>

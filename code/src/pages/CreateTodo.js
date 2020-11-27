@@ -29,6 +29,10 @@ const CreateTodo = () => {
 export default CreateTodo;
 
 const Wrapper = styled.div`
+  display: grid;
+  /* display: flex;
+  flex-direction; ce
+  align-items: center; */
   background-image: linear-gradient(#5c52ac, #483c90, #3b2f7d);
   height: 100vh;
 `;

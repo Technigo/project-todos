@@ -58,6 +58,9 @@ export default ActionBar;
 const ActionBarContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
   background: #fff;
 `;
 

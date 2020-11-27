@@ -5,11 +5,9 @@ import styled from 'styled-components';
 
 import { todos } from '../reducers/todos';
 import CustomCheckbox from '../library/CustomCheckbox';
-import { Button } from '../library/Button';
 
 const TodoItem = ({ item }) => {
   const [active, setActive] = useState('');
-  const [height, setHeight] = useState('0px');
 
   const dispatch = useDispatch();
   //const item = useSelector(store => store.todos.list.items[itemIndex]);
@@ -152,13 +150,6 @@ const ItemDate = styled(ItemCategory)`
 const ItemImage = styled.img`
   width: 15px;
   align-self: center;
-`;
-
-const Container = styled.div`
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
 `;
 
 const ItemAccordion = styled.div`
