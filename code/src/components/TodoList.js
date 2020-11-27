@@ -1,14 +1,13 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import { TodoItem } from "./TodoItem";
-import { todos } from "../reducers/todos";
 import { DeleteTodoButton } from "./DeleteTodoButton";
 
 export const TodoList = () => {
   const items = useSelector(store => store.todos.items);
-  const dispatch = useDispatch();
+  //const dispatch = useDispatch();
 
   // const onTodoDelete = id => {
   // dispatch(todos.actions.removeTodoItem(id));
