@@ -5,9 +5,9 @@ export const todos = createSlice({
   name: 'todos',
   initialState: {
     tasks: [
-      {id: 1, text: 'bake bread', done: false, created: moment(new Date).format()},
-      {id: 2, text: 'put up christmas decoration', done: false, created: moment(new Date).format()},
-      {id: 3, text: 'call mum', done: true, created: moment(new Date).format()}
+      {id: 1, text: 'bake bread', done: false, created: moment(new Date()).format()},
+      {id: 2, text: 'put up christmas decoration', done: false, created: moment(new Date()).format()},
+      {id: 3, text: 'call mum', done: true, created: moment(new Date()).format()}
     ]
   }, 
   reducers: {
@@ -30,7 +30,7 @@ export const todos = createSlice({
         id: store.tasks.length === 0 ? 0 : Math.max(...store.tasks.map(item => item.id)) + 1,
         text: action.payload,
         done: false,
-        created: moment(new Date).format()
+        created: moment(new Date()).format()
       };
 
       const newTaskList = [...store.tasks, newTask];

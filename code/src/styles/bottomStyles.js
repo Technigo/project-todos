@@ -1,4 +1,3 @@
-import React from 'react';
 import styled from 'styled-components';
 
 export const BottomContainer = styled.div`
@@ -22,5 +21,6 @@ width: 13vh;
 
 &:disabled {
   background-color: #ddd6e8;
+  border: 1px solid #28065b;
 }
 `
