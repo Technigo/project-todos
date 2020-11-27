@@ -1,22 +1,13 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
 
 import { Link } from 'react-router-dom'; 
-//import { todos } from '../reducers/todos';
 import styled from 'styled-components';
-
 import TodayDate from './TodayDate';
 import TodoSummary from './TodoSummary';
 import { PlusIcon } from '../lib/Image';
 import { Title } from '../lib/Text';
 
 const Header = () => {
-  const dispatch = useDispatch();
-
-  // const handleClick = () => {
-  //   dispatch(todos.actions.createTodo());
-  // };
-
   return (
     <HeaderContainer>
       <Title>Add a todo!</Title>
@@ -26,7 +17,6 @@ const Header = () => {
             src="../assets/plus-icon.svg" 
             alt="plus icon" 
             role="button" 
-            //onClick = {() => handleClick()}
           /> 
         </Link>
      <TodoSummary /> 

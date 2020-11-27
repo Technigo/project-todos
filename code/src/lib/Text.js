@@ -33,6 +33,7 @@ export const Label = styled.label `
 
 export const Paragraph = styled.p `
   color: #fff;
+  font-size: 20px;
 
   @media (min-width: 668px) {
     font-size: 26px;
@@ -41,6 +42,7 @@ export const Paragraph = styled.p `
 
 export const ParagraphBlack = styled(Paragraph)`
   color: #000;
+  text-align: center
 `;
 
 export const Span = styled.span`

@@ -9,18 +9,18 @@ import { ParagraphBlack } from '../lib/Text';
 import { todos } from '../reducers/todos';
 
 const ActionButtons = () => {
-  const [isAllComplete, setIsAllComplete] = useState(false)
+  const [isAllComplete, setIsAllComplete] = useState(false);
   const dispatch = useDispatch();
 
   const handleAllComplete = () => {
-    dispatch(todos.actions.setAllComplete())
-    setIsAllComplete(true)
-  }
+    dispatch(todos.actions.setAllComplete());
+    setIsAllComplete(true);
+  };
 
   const handleUnsetComplete = () => {
-    dispatch(todos.actions.setAllInComplete())
-    setIsAllComplete(false)
-  }
+    dispatch(todos.actions.setAllInComplete());
+    setIsAllComplete(false);
+  };
 
   const handleOnDelete = () => {
     swal({
@@ -32,10 +32,10 @@ const ActionButtons = () => {
     })
     .then(willDelete => {
       if (willDelete) {
-        dispatch(todos.actions.removeAllTodos())
+        dispatch(todos.actions.removeAllTodos());
         swal("Deleted!", "Your todos has been deleted", "warning");
       } else {
-        swal("They are still there!", "Your todos are in working progress")
+        swal("They are still there!", "Your todos are in working progress");
       }
     });
   };
@@ -46,7 +46,7 @@ const ActionButtons = () => {
         type="button"
         onClick={!isAllComplete ? () => handleAllComplete() : () => handleUnsetComplete()}
         >
-          <ParagraphBlack>{!isAllComplete ? "Mark all complete" : "Unset"}</ParagraphBlack>
+        <ParagraphBlack>{!isAllComplete ? "Mark all complete" : "Unset"}</ParagraphBlack>
       </Button>
       <Button 
         type="button"
@@ -64,4 +64,3 @@ const ButtonContainer = styled.div `
   justify-content: space-between;
   margin-top: 40px;
 `;
-

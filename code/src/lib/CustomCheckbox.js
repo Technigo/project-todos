@@ -2,6 +2,18 @@ import React from 'react';
 
 import styled from 'styled-components';
 
+const CustomCheckbox = ({ className, checked, ...props }) => (
+  <CheckboxContainer className={className}>
+    <HiddenCheckbox className="hiddencheck" checked={checked} {...props} />
+    <StyledCheckbox checked={checked}>
+      <Icon viewBox="0 0 24 24">
+        <polyline points="20 6 9 17 4 12"/>
+      </Icon>
+    </StyledCheckbox>
+  </CheckboxContainer>
+);
+export default CustomCheckbox;
+
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
@@ -50,16 +62,3 @@ const StyledCheckbox = styled.div`
   height: 30px;
   }
 `;
-
-const CustomCheckbox = ({ className, checked, ...props }) => (
-  <CheckboxContainer className={className}>
-    <HiddenCheckbox className="hiddencheck" checked={checked} {...props} />
-    <StyledCheckbox checked={checked}>
-      <Icon viewBox="0 0 24 24">
-        <polyline points="20 6 9 17 4 12"/>
-      </Icon>
-    </StyledCheckbox>
-  </CheckboxContainer>
-);
-
-export default CustomCheckbox;

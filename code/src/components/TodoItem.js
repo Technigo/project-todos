@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
 
+import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import styled from 'styled-components';
 import { todos } from '../reducers/todos';
 import { TrashBin } from '../lib/Image';
-import { ParagraphBlack, Span } from '../lib/Text';
+import { Span } from '../lib/Text';
 import CustomCheckbox from '../lib/CustomCheckbox';
 
 const TodoItem = ({ item }) => {
@@ -31,25 +31,23 @@ const TodoItem = ({ item }) => {
   return (
     <Container>
       <Todo className={`accordion ${active}`} onClick={toggleAccordion}>
-        <label>
+        <Label>
         <CustomCheckbox
           checked={item.complete ? true : ""}
           onChange={toggleComplete}
         ></CustomCheckbox>
-        </label>
+        </Label>
         <TodoContainer>
           <Description checked={item.complete ? true : ''}>
-              {item.description}
+            {item.description}
           </Description> 
         </TodoContainer>
         <TrashBin src="../assets/garbage.svg" onClick={handleRemoveTodo} /> 
       </Todo>
-
-      {/* <Open style={{ height: `${height}` }}> */}
       <Open active={active}>
-        <ParagraphBlack><Span>Category:</Span> {item.category}</ParagraphBlack>
-        <ParagraphBlack><Span>Created:</Span> {moment(item.createdAt).fromNow()}</ParagraphBlack>
-        <ParagraphBlack><Span>Due:</Span> {moment(item.dueDate).format('MMM Do YYYY')}</ParagraphBlack>
+        <AccordionText><Span>Category:</Span> {item.category}</AccordionText>
+        <AccordionText><Span>Created:</Span> {moment(item.createdAt).fromNow()}</AccordionText>
+        <AccordionText><Span>Due:</Span> {moment(item.dueDate).format('MMM Do YYYY')}</AccordionText>
       </Open>
     </Container>
   );
@@ -57,11 +55,13 @@ const TodoItem = ({ item }) => {
 export default TodoItem;
 
 //LOCAL STYLES
-//to get rid of the space between todo text and description 
-//when accordion is active
 const Container = styled.article`
-
+  margin-bottom: 20px;
 `;
+
+//To be able to click the custom checkbox
+const Label = styled.label `
+`
 
 const Todo = styled.li `
   width: 100%;
@@ -73,10 +73,13 @@ const Todo = styled.li `
   font-family: 'Architects Daughter', cursive;
   font-size: 16px;
   padding: 10px;
+`;
 
-  ${({ active }) => active === 'active' &&
-    `background-color: red;
-    `
+const AccordionText = styled.p`
+  color: #000;
+
+  @media (min-width: 668px) {
+    font-size: 26px;
   }
 `;
 
@@ -88,13 +91,14 @@ const TodoContainer = styled.div `
   align-items: flex-start;
   margin-left: 10px;
 
-  &:checked + ${ParagraphBlack} {
+  &:checked + ${AccordionText} {
     text-decoration: line-through;
   }
 `;
 
 const Description = styled.p`
   color: #000;
+  font-size: 20px;
   ${({ checked }) => checked && `
     opacity: 0.3;
     `
@@ -110,7 +114,7 @@ const Open = styled.div`
   height: 0;
   ${({ active }) => active === 'active' &&
     `height: auto;
+    background-color: papayawhip;
     `
   }
 `;
-

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
+
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import DatePicker from 'react-date-picker';
 import { v4 as uuidv4 } from 'uuid'; 
 import styled from 'styled-components';
-
 import { todos } from '../reducers/todos';
 import { Button } from '../lib/Button';
 import { Label, Paragraph } from '../lib/Text';
@@ -16,10 +16,9 @@ const TodoInput = () => {
   const [category, setCategory] = useState('');
   const [dueDate, setDueDate] = useState(new Date());
   const dispatch = useDispatch();
+  const categories = useSelector(store => store.todos.list.categories);
   const history = useHistory();
   const createdDate = new Date();
-
-  const categories = useSelector(store => store.todos.list.categories);
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -43,8 +42,7 @@ const TodoInput = () => {
     <Form onSubmit={handleOnSubmit}>
       <Input 
         type="text"
-        id="text"
-        placeholder="Enter todo..."
+        placeholder="Enter todo...."
         onChange={event => setTodoInput(event.target.value)}
         value={todoInput}
         className="todo__input" 
@@ -56,7 +54,6 @@ const TodoInput = () => {
           value={dueDate}
         />
       </Label>   
-
       <Label>
         <Select 
           onChange={(event) => setCategory(event.target.value)} 
@@ -80,7 +77,7 @@ export default TodoInput;
 
 //Local styles
 export const Form = styled.form `
-  height: 65vh;
+  height: 50vh;
   display: flex;
   flex-direction: column; 
   justify-content: space-evenly;
@@ -97,5 +94,9 @@ export const Input = styled.input.attrs({ type: 'text' }) `
       font-size: 20px;
       font-family: 'Architects Daughter', cursive;
       color: #fff;
+      
+      @media (min-width: 668px) {
+        font-size: 26px;
+      }
     }
 `;

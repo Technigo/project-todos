@@ -4,7 +4,7 @@ export const TrashBin = styled.img `
   width: 20px;
   
   @media (min-width: 668px) {
-    width: 40px;
+    width: 35px;
   }
 `;
 

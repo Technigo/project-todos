@@ -1,7 +1,6 @@
 import React from 'react';
 
 import { Link } from 'react-router-dom';
-
 import TodoInput from '../components/TodoInput';
 import styled from 'styled-components';
 import { BackArrow } from '../lib/Image';
@@ -9,12 +8,14 @@ import { BackArrow } from '../lib/Image';
 const CreateTodo = () => {
   return (
     <CreateContainer>
-      <BackButtonWrapper> 
-        <Link to='/'>
-          <BackArrow src="../assets/back-arrow-white.svg" alt="back arrow icon" role="button"/>  
-        </Link>
-      </BackButtonWrapper>
-      <TodoInput /> 
+      <CreateInput>
+        <BackButtonWrapper> 
+          <Link to='/'>
+            <BackArrow src="../assets/back-arrow-white.svg" alt="back arrow icon" role="button"/>  
+          </Link>
+        </BackButtonWrapper>
+        <TodoInput />
+      </CreateInput> 
     </CreateContainer>
   );
 };
@@ -30,6 +31,13 @@ const CreateContainer = styled.main `
   flex-direction: column;
   align-items: center;
 `;
+
+const CreateInput = styled.section`
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+`
 
 const BackButtonWrapper = styled.div `
   align-self: flex-start;

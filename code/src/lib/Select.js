@@ -7,7 +7,7 @@ export const Select = styled.select`
   padding: 5px;
   background-color: transparent;
   color: #fff;
-  font-size: 16px;
+  font-size: 20px;
   font-family: 'Architects Daughter', cursive;
   opacity: 0.7;
   
@@ -19,7 +19,6 @@ export const Select = styled.select`
       min-height: 20px;
       padding: 0px 2px 2px;
       font-family: 'Architects Daughter', cursive;
-      font-size: 16px;
       margin: 0;
     }
   
