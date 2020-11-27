@@ -1,26 +1,26 @@
 .taskContent {
-	width: 300px;
-	margin: 50px 0px;
+	width: 350px;
+	margin: 20% 0px;
 	display: flex;
 	flex-direction: column;
-	/* align-items: center; */
+	align-items: center;
 	justify-content: flex-start;
-	background-color: #e5989b79;
-	padding: 20px 40px;
-	border-radius: 30px;
+	background-color: #fff ;
+	padding: 25px 20px;
+	border-radius: 10px;
 	font-family: 'Inconsolata', monospace;
-	box-shadow:   0 3px 2px #6D6875,
-	0 7px 15px #6D6875,
-	0 13px 10px #6d6875dc,
-	0 23px 18px #6d6875b6,
-	0 42px 40px #6d6875b4,
-	0 100px 80px #6d6875b4;
+	box-shadow:   0 3px 20px #b39adb,
+	0 7px 25px #b39adb,
+	0 10px 10px #b39adb,
+	0 13px 18px #b39adbd0,
+	0 40px 40px #b39adb,
+	0 10px 80px #b39adb9f;
   }
   .header{
-	border-bottom: 2px solid #B5838D;
+	border-bottom: 2px solid #8ea0e1;
 	width: 300px;
 	margin-bottom: 15px;
-	margin-top: 1px;
+	margin-top: 5px;
 
   }
   .date-n-time {
@@ -31,9 +31,14 @@
 	  margin-top: 2px;
 	  margin-bottom: 20px;
 	  }
-  h2 {
+  h2, h1 {
 	  text-align: center;
 	  margin-top: 2px;
+  }
+  h2 {
+	  color: #e18ea0;
+	  font-size: 25px;
+	  letter-spacing: 2px;
   }
   /* MEDIA QUERIES */
   @media (max-width: 670px) {

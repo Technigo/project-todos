@@ -1,5 +1,5 @@
 import {createSlice} from '@reduxjs/toolkit'
-// import moment from 'moment'
+import moment from 'moment'
 
 const initialState = {
 	list: {
@@ -23,9 +23,8 @@ export const tasks = createSlice({
 	reducers: {
 		taskAdded: (state, action) => {
 			const {taskInfo} = action.payload
-			state.list.tasks.push(taskInfo)
+			state.list.tasks.push({...taskInfo, createdAt:moment()})
 			//state.list.tasks.push({id:Date.now(), name: taskInfo, createdAt:moment()})
-
 		},
 
 		taskRemoved: (state, action) => {

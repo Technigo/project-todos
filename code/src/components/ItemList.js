@@ -3,6 +3,9 @@ import React from 'react'
 import {useSelector} from 'react-redux'
 import {ItemsAll} from 'components/ItemsAll'
 
+import './style/task-list.css'
+
+
 export const ItemList = () => {
 	const allTasks = useSelector((store) => store.tasks.list)
 	const wholeList = useSelector((store) => store.tasks.list.tasks)
@@ -11,7 +14,8 @@ export const ItemList = () => {
 		return (
 			<>
 			<h1 className="listEmpty"> You are clear of duties for now, good on you!</h1>
-			{/* ADD AN IMG HERE? */}
+			<img className="tasksDone" alt="yay" 
+          src='yay.png' />
 			</>
 		)
 	}

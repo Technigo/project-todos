@@ -1,7 +1,7 @@
-body,
+ body,
 html {
   scroll-behavior: smooth;	
-  background-image: url("/code/public/desk.jpg");
+  background: #a2ddfc;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -12,7 +12,7 @@ html {
   font-family: 'Menlo', sans-serif;
 }
 
-/* Adjusted for mobile */
+/* MEDIA QUERY */
 @media (max-width: 668px) {
   body,
   html {
@@ -31,4 +31,4 @@ html {
     width: 100%;
     margin: 30px 0px;
   }
-}
+} 
