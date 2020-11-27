@@ -39,7 +39,11 @@ export const SingleTodo = ({ id, text, complete }) => {
         <Button
           type="button"
           onClick={handleRemoveButtonClick}>
-          <span role="img" aria-label="red cross">❌</span>
+          <Emoji
+            role="img"
+            aria-label="red cross">
+            ❌
+          </Emoji>
         </Button>
       </div>
     </TaskContainer>
@@ -62,13 +66,17 @@ const TaskContainer = styled.li`
   width: 100%;
 `
 
-const Label = styled.label`
-
+const Emoji = styled.span`
+  font-size: 12px;
 `
 
 const Button = styled.button`
   background: white;
   border: none;
+`
+
+const Label = styled.label`
+
 `
 
 const TextContainer = styled.div`
