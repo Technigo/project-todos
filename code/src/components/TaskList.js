@@ -9,9 +9,9 @@ export const TaskList = () => {
 
     return (
         <>
-            {tasks.map((todoItem, index) => (
+            {tasks.map(todoItem => (
                 /* Passing the index from the items array allows us to retrive and re-render the task inputted based on the index number. */
-                <TaskItem key={todoItem.id} todoItem={todoItem} itemIndex={index}/>
+                <TaskItem key={todoItem.id} item={todoItem} />
             ))}
         </>
     );

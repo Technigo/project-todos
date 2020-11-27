@@ -40,10 +40,11 @@ export const Tasks = createSlice({
             const newItemList = [...state.list.items, newItem];      
             state.list.items = newItemList;
         },
-        /*2. 2nd reducer setDone takes the index number of the task the user has checked as done via the payload and set's it to done by accessing the object property done */ 
+        /*2. 2nd reducer setDone takes the id of the task the user has checked as done or not done via the payload. We find that id by comparing it with the other id's that weren't checked and pass the that id into the item variable. We then assign the object property done to done for that id. */ 
         setDone: (state, action) => {
-            const { itemIndex, done } = action.payload;
-            state.list.items[itemIndex].done = done;
+            const { itemId, done } = action.payload;
+            const item = state.list.items.find((item) => item.id === itemId);
+            item.done = done;
         },
         /* 3rd Reducer: RemoveTask removes the specific task the user has clicked on to remove. The id of that specific task is dispatched into the removeTask reducer using the payload. Filter is used to filter the tasks tht should be shown as they don't match the id of the task that has been clicked on to be removed. The items array is then set to this new filtered array . */     
         removeTask: (state, action) => {
