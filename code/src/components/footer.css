@@ -41,11 +41,14 @@
 }
 
 .button-primary:disabled {
-  /* background: #1890ff; */
-  /* Disabled bg color */
   background: #8BC7FF;
   cursor: not-allowed;
 }
+
+.button-primary:disabled:hover {
+  cursor: not-allowed;
+}
+
 /* Secondary button styles */
 .button-secondary {
   background: white;

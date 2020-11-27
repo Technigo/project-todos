@@ -50,10 +50,32 @@ const randomTasks = [
   "Ask that person you like out",
   "Hug a stranger",
   "Yell at a cloud",
-  "Burn all your pants"
+  "Burn all your pants",
+  "Turn on the stove",
+  "Smell a baby",
+  "Water your plants",
+  "Recycle",
+  "Clear out your cupboard",
+  "Get a new nemesis",
+  "Cancel someone you don't like",
+  "Defund the police",
+  "Call a relative",
+  "Learn crochet",
+  "Flip your mattress",
+  "Flee the country",
+  "Download Tiktok and see what these darned kids are up to these days",
+  "Take a walk in the rain",
+  "Spoil the ending of a movie for someone",
+  "Floss",
+  "Go commando for a day",
+  "Lick a wall and see what it tastes like",
+  "Run with scissors",
+  "Visit the Bermuda Triangle",
+  "Run through an airport to stop someone you love from leaving",
+  "Walk away from an explosion",
+  "Fight a bear",
+  "Hack into the mainframe"
 ]
-
-
 
 export const todos = createSlice({
   name: "todos",
