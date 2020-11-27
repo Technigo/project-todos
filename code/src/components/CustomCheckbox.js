@@ -1,10 +1,7 @@
 import React, { useState } from 'react'
-//import { useDispatch } from 'react-redux'
-import { todos } from 'reducers/todos'
 import styled from 'styled-components'
 
 export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
-  //const dispatch = useDispatch()
   const [checked, setChecked] = useState(isChecked)
   
   const handleOnChange = event => {
@@ -12,7 +9,6 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     setChecked(event.target.checked)
   }
     
-  
   const Checkbox = ({ className, checked, ...props }) => (
     <CheckboxContainer>
       <HiddenCheckbox checked={checked} {...props}></HiddenCheckbox>
@@ -29,13 +25,12 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
       <label>
         <Checkbox checked={checked} onChange={handleOnChange}></Checkbox>
       </label>
-      {/* The state is {checked.toString()} */}
     </>
   )
 }
 
 // This CSS will result in a hidden checkbox that is accessible 
-  //by a screenreader. It is rendered off-screen.
+//by a screenreader. It is rendered off-screen.
   const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
     border: 0;
     clip: rect(0 0 0 0);
@@ -48,12 +43,14 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     position: absolute;
     white-space: nowrap;
   `;
+
   //The checkmark:
   const Icon = styled.svg`
     fill: none; 
     stroke: white;
     stroke-width: 2px;
   `;
+
   // This is the styled checkbox that will show on the page:
   const StyledCheckbox = styled.div`
     display: inline-block;

@@ -1,6 +1,3 @@
-// This is for a dropdown in the AddTodoForm to be able to choose from 
-// different categories.
-//And also for the Fliter by category dropdown
 import styled from 'styled-components'
 
 export const Select = styled.select`

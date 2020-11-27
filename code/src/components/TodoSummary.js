@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import { Title, Subtitle } from 'library/Text'
@@ -6,9 +6,6 @@ import { Title, Subtitle } from 'library/Text'
 export const TodoSummary = () => {
   const items = useSelector((store) => store.todos.items)
   const completedItems = items.filter((item) => item.complete)
-  
-  //What is this referring to?? (from Jennies lecture):
-  //const [showTodoList, setShowTodoList] = useState(false)
 
   if (items.length === 0) {
     return ( 

@@ -9,7 +9,7 @@ import { CustomCheckbox } from 'components/CustomCheckbox'
 import { TimeIcon } from 'library/Icons'
 
 export const Todo = (props) => {
-  const { id, text, dueDate, category, complete, startDate } = props.item;
+  const { id, text, dueDate, complete, startDate } = props.item;
   const dispatch = useDispatch()
 
   //checkbox click dispatches a toggle completed action to Redux:

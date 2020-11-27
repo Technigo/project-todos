@@ -1,6 +1,7 @@
 
 /* I didn't know how to style the datepicker 
-with styled components, so I put it in a css-file instead.
+with styled components (since it is an automatically created class), 
+so I put it in a css-file instead.
 Still haven't figured out how to style the 
 input/placeholder so that 'Due Date' is displayed
 on the datepicker (just as in the select dropdown)*/

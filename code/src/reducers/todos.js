@@ -22,14 +22,14 @@ export const todos = createSlice({
       // se wed lecture about push being bad practice (something with immutability)
       // use spread operator instead???
      // store.items.push({ id: Date.now(), text, category, complete, dueDate })
-     store.items = [... store.items, { id: Date.now(), text, category, complete, dueDate }]
+      store.items = [ ...store.items, { id: Date.now(), text, category, complete, dueDate }]
     },
     removeTodo: (store, action) => {
       // find item/ filter item
       // remove it from the items array
       store.items = store.items.filter((item) => item.id !== action.payload)
     },
-    removeAll: (store, action) => {
+    removeAll: (store) => {
       store.items = []
     },
     toggleCompleted: (store, action) => {

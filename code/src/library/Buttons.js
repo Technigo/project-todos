@@ -2,8 +2,6 @@
 
 //props: if you send props on button in component regarding background 
 //it will take that color, otherwise have default color.
-// background: ${(props) => props.background || 'yellow'};
-//background-color: #f9adae;
 export const Button = styled.button`
   padding: 5px;
   margin: 6px;

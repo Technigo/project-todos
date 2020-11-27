@@ -25,6 +25,7 @@ export const AddTodoForm = () => {
     setText('') // clears input
     setCategory('') // clears input
     setDueDate('') // clears input
+    setComplete()
   }
 
   return (
@@ -87,6 +88,9 @@ const ToDoForm = styled.form`
   align-items: center;
   justify-content: space-around;
   width: 85vw;
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const FormElementsWrapper = styled.div`
@@ -116,6 +120,7 @@ const DueDateLabel = styled.label`
   margin-left: 10px;
   color: #606060;
 `;
+
 const AddButtonWrapper = styled.div`
   margin-top: 2vh;
 `;
