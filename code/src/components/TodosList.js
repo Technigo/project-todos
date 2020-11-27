@@ -2,7 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { Item } from './Item';
-import { ListContainer, TaskListInputContainer, EmptyStateImage, EmptyStateText } from './StyledComponents/ListStyling';
+import { ListContainer, TaskListInputContainer } from './StyledComponents/ListStyling';
+import { EmptyStateImage, EmptyStateText } from './StyledComponents/EmptyStateStyling';
 import { AddTodo } from './AddTodo';
 import { Counter } from './Counter';
 import { Header } from './Header';

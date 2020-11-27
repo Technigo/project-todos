@@ -74,20 +74,4 @@ export const RemoveAllButton = styled.button`
   }
 `;
 
-export const EmptyStateImage = styled.img`
-  width: 200px;
-  height: 200px;
-  margin: 30px 60px 0px 60px;
-`;
-
-export const EmptyStateText = styled.div`
-  display:flex;
-  justify-content:center;
-  padding:20px;
-  font-size:35px;
-  font-family:"Didot", sans-serif;
-  font-weight:700;
-  color: #be648c;
-`
-
 
