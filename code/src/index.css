@@ -13,4 +13,8 @@ body {
   background-size: cover;
 }
 
+.done {
+  text-decoration: line-through;
+}
+
 

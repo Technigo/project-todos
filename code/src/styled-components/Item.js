@@ -28,7 +28,7 @@ export const TaskText = styled.p`
     font-size: 17px;
     color: rgb(36, 90, 92);
     word-wrap: break-word;
-    align-self: flex-start;
+    align-self: flex-start;    
 `;
 
 export const ButtonContainer = styled.div`
