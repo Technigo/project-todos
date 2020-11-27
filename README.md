@@ -1,6 +1,6 @@
 # Project To-dos
 
-##### This project was made during Technigo's Front-end developer bootcamp
+#### This project was made during Technigo's Front-end developer bootcamp
 
 In this to-do app, you can add tasks, list tasks and toggle whether a task is done or not. Also, you will see when the task was added and when there is no more tasks an styled empty list page is displayed.
 
