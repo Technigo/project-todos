@@ -7,6 +7,7 @@ import { todos } from "./reducers/todos";
 import { Header } from "./components/Header";
 import { TodoList } from "./components/TodoList";
 import { Footer } from "./components/Footer";
+import { CustomCheckbox } from "./components/CustomCheckbox";
 
 const reducer = combineReducers({ todos: todos.reducer });
 const store = configureStore({ reducer });
@@ -28,17 +29,18 @@ const MainWrapper = styled.main`
   display: flex;
   flex-direction: column;
   width: 90%;
-  /*height: 90%;*/
   min-height: 90vh;
   border-radius: 5px;
   margin: 20px auto;
   padding: 5px;
+  max-width: 500px;
 
   @media (min-width: 768px) {
     width: 65%;
   }
 
   @media (min-width: 1024px) {
-    width: 35%;
+    width: 40%;
+    max-width: 450px;
   }
 `;

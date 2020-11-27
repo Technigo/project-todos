@@ -2,9 +2,27 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   items: [
-    { id: 1, text: "Complete Project", isComplete: false, category: "work" },
-    { id: 2, text: "Send Email", isComplete: false, category: "work" },
-    { id: 3, text: "Buy eggs", isComplete: false, category: "shopping" },
+    {
+      id: 1,
+      text: "Complete Project",
+      isComplete: false,
+      category: "work",
+      createdDate: 1606383658465,
+    },
+    {
+      id: 2,
+      text: "Send Email",
+      isComplete: false,
+      category: "work",
+      createdDate: 1606383658465,
+    },
+    {
+      id: 3,
+      text: "Buy eggs",
+      isComplete: false,
+      category: "shopping",
+      createdDate: 1606383658465,
+    },
   ],
 };
 

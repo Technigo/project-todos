@@ -76,7 +76,7 @@ const HeaderContainer = styled.header`
 `;
 
 const Title = styled.h1`
-  font-size: 22px;
+  font-size: 26px;
   color: #010101;
 
   @media (min-width: 1024px) {

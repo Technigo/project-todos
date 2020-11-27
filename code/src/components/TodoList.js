@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import { TodoItem } from "./TodoItem";
 import { DeleteTodoButton } from "./DeleteTodoButton";
+import { NoTodos } from "./NoTodos";
 
 export const TodoList = () => {
   const items = useSelector(store => store.todos.items);
@@ -14,16 +15,25 @@ export const TodoList = () => {
   //};
 
   //<DeleteButton onClick={() => onTodoDelete(item.id)}>X</DeleteButton>
-  return (
-    <MainSection>
-      {items.map(item => (
-        <TodoContainer key={item.id}>
-          <TodoItem item={item}></TodoItem>
-          <DeleteTodoButton item={item} />
-        </TodoContainer>
-      ))}
-    </MainSection>
-  );
+
+  if (items.length <= 0) {
+    return (
+      <MainSection>
+        <NoTodos />
+      </MainSection>
+    );
+  } else {
+    return (
+      <MainSection>
+        {items.map(item => (
+          <TodoContainer key={item.id}>
+            <TodoItem item={item}></TodoItem>
+            <DeleteTodoButton item={item} />
+          </TodoContainer>
+        ))}
+      </MainSection>
+    );
+  }
 };
 
 const MainSection = styled.section`

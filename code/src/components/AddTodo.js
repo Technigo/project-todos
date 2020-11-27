@@ -21,7 +21,7 @@ export const AddTodo = () => {
         type="text"
         value={input}
         onChange={event => setInput(event.target.value)}
-        placeholder="New To-Do"
+        placeholder=" Add New To-Do"
       />
       <AddButton type="submit" onClick={onItemAdd} disabled={!input}>
         +
@@ -61,7 +61,7 @@ const TextInput = styled.input`
   &::placeholder {
     font-size: 15px;
     font-weight: lighter;
-    color: #999999;
+    color: #b3b2b2;
   }
 
   @media (min-width: 768px) {
