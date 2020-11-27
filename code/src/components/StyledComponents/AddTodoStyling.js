@@ -38,8 +38,5 @@ export const AddButton = styled.button`
   &:hover {
     background-color: #b4c2d8;
     color: #ffffff;
-    -webkit-transform: scale(1.5);
-    -ms-transform: scale(1.5);
-    transform: scale(1.5);
   };
 `;
