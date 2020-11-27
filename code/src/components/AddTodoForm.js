@@ -24,7 +24,7 @@ export const AddTodoForm = () => {
     // text, category & dueDate as payloads
     setText('') // clears input
     setCategory('') // clears input
-    setDueDate('') // clears input
+    setDueDate(new Date()) // clears input
     setComplete()
   }
 

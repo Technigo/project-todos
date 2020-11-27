@@ -76,6 +76,8 @@ const ListWrapper = styled.div`
 const ToDoList = styled.ul`
   list-style: none;
   padding: 0;
+  width: 95%;
+  max-width: 500px;
 `;
 
 const CatGif = styled.img`
