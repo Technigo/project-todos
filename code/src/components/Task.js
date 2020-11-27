@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 
-import { tasks } from '../reducers/tasks'
+import { tasks } from 'reducers/tasks'
+import trashcan from '../assets/trashcan.png'
 
 
 export const Task = ({ item }) => {
@@ -10,36 +11,37 @@ export const Task = ({ item }) => {
 
   // const items = useSelector((store) => store.tasks.items)
 
-  const onDeleteClicked = (id) => {
-     dispatch(tasks.actions.removeTask(id))
+  const handleDelete = (id) => {
+    dispatch(tasks.actions.removeTask(id))
   }
+
+  
   return (
-   
     <TaskContainer>
-      
-        {/* <Checkbox
+
+       {/* <Checkbox
           type="checkbox"
           // onChange={handleOnChange}
           checked="checked">
-        </Checkbox> */}
-        <TextWrapper>
+        </Checkbox>  */}
+      <TextWrapper>
         <TaskText>{item.text}</TaskText>
-        </TextWrapper>
-        <DeleteButton
-        onClick={() => onDeleteClicked(item.id)} >
+      </TextWrapper>
+      <DeleteButton
+        onClick={() => handleDelete(item.id)} > 
         <span role="img" aria-label="Delete">🗑️</span>
-        </DeleteButton>  
+      </DeleteButton>
     </TaskContainer>
-   
+
   )
 }
 
 
-
 const DeleteButton = styled.button`
-width: 30px;
-height: 30px;
+width: 40px;
+height: 40px;
 margin-left: 10px;
+border: none;
 `
 
 // const Checkbox = styled.input`
@@ -49,12 +51,11 @@ margin-left: 10px;
 // `
 
 const TaskContainer = styled.section`
-  display: flex; 
-  
+  display: flex;  
   justify-content: flex-start;
   align-items: center; 
   margin-left: 30px;
- margin-top: 30px;
+  margin-top: 30px;
 `
 const TextWrapper = styled.div`
   /* background-color: #fdc1c5; */

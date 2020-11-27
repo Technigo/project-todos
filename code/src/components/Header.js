@@ -3,29 +3,34 @@ import styled from 'styled-components'
 import moment from 'moment'
 
 export const Header = () => {
-   
+   const date= moment().format("dddd MMM Do") 
   
   return (
   <HeaderWrapper>
     <Text>Todos</Text>
-    <Date>{moment().format("dddd MMM Do")}</Date>
+    <Date>{date}</Date>
     
   </HeaderWrapper>
   )
 } 
 
 const HeaderWrapper = styled.section`
-width: 600px;
+width:500px;
 height: 100px;
 background: #f1f1f1;
 display: flex;
-flex-direction: column;
+justify-content: center;
 align-items: center;
+align-items: center;
+padding: 10px;
+opacity:0.5;
 `
 
-const Text = styled.text`
+const Text = styled.p`
 Font-size: 30px;
+font-weight: bold;
 `
-const Date = styled.text`
-Font-size: 30px;
+const Date = styled.p`
+Font-size: 20px;
+margin-left: 20px;
 `
