@@ -21,7 +21,6 @@ export const Home = () => {
         <Summary />
       </TopContainer>
       <List />
-      <EmptyList />
       <Input />
     </MainContainer>
   )
