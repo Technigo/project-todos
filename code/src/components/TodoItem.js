@@ -1,22 +1,32 @@
-
+import { Container } from 'lib/Container';
 import React from 'react';
-import styled from 'styled-components'; 
+import { useDispatch } from 'react-redux';
 
+import { todos } from '../reducers/todos';
 
-const ItemContainer = styled.li`
-align-self: flex-start;
-padding:8px;
-margin: 8px;
-font-size: 36px;
-color: #3f3f3f;
-background-color: #8f4ff;
-`;
+export const TodoItem = ({ id, name, isCompleted }) => {
+    const dispatch = useDispatch();
 
-export const Item = ({ item }) => {
- return  <ItemContainer>{item.text} </ItemContainer>;
+    const onTodoDelete = () => {
+        dispatch(todos.actions.removeItem(id));
+    }
 
+    const onIsCompletedChange = () => {
+        dispatch(todos.actions.toggleComplete(id));
+    };
+
+    return (
+        <Container>
+        <div>
+            <div>{name}</div>
+            <div onClick={onIsCompletedChange}>
+                {isCompleted ? "☒" : "☑︎"}
+            </div>
+            <div onClick={onTodoDelete}>ⓧ</div>
+        </div>
+        </Container>
+    );
 };
-
 
 
 
