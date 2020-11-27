@@ -8,7 +8,7 @@ export const TaskSummary = () => {
   return (
     <>
       {" "}
-        <span className="task-quantity">
+        <span className="task-quantity" tabindex="0">
           {completedTasks}/{items.length} Done
         </span>
     </>

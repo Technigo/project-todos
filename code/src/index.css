@@ -43,7 +43,7 @@ h1 {
   font-weight: bold;
 }
 
-/* TASK QUANTITY */
+/* TASKQUANTITY */
 
 .task-quantity {
   margin-right: 20px;
@@ -121,7 +121,7 @@ ul {
   border: 2px solid #00000000;
   display: inline-block;
   border-radius: 25px;
-  background: #00000000 url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png) center/1250% no-repeat;
+  background: #00000000 url(https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/White_check.svg/1200px-White_check.svg.png) center/1500% no-repeat;
   transition: background-size 0.3s ease;
 }
 
@@ -171,8 +171,14 @@ ul {
   -moz-osx-font-smoothing: grayscale;
 }
 
-.clear-button:hover {
-  font-size: 19px;
+.clear-button .clearbutton-after {
+  display: none;
+}
+.clear-button:hover .clearbutton-after {
+  display: inline;
+}
+.clear-button:hover .clearbutton-before {
+  display: none;
 }
 
 /* MEDIA */

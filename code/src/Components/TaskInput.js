@@ -27,7 +27,7 @@ export const TaskInput = () => {
         />
       </label>
       <button className="task-add-button" type="submit" onClick={handleSubmit}>
-        <span className="button-icon" role="button" aria-label="remove">
+        <span className="button-icon" role="button" aria-label="remove" tabindex="0">
           +
         </span>
       </button>

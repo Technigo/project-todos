@@ -13,7 +13,8 @@ export const ClearButton = () => {
         dispatch(todo.actions.removeAll())
       }}
     >
-      Remove All
+      <span className="clearbutton-before">Remove All</span>
+      <span className="clearbutton-after">Are you sure?</span>
     </button>
   )
 }

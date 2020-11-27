@@ -25,9 +25,9 @@ export const TaskItem = ({ item }) => {
             checked={checked}
             onChange={handleCheckboxClick}
           />
-          <span class="checkmark"></span>
+          <span class="checkmark" tabindex="0"></span>
         </label>
-        <span className="task-item">{item.text}</span>
+        <span className="task-item" tabindex="0">{item.text}</span>
       </div>
       <button
         className="remove-button"
@@ -35,7 +35,7 @@ export const TaskItem = ({ item }) => {
         onClick={() => onItemDelete(item.id)}
       >
         {" "}
-        <span className="button-icon" role="button" aria-label="remove">
+        <span className="button-icon" role="button" aria-label="remove" tabindex="0">
           -
         </span>
       </button>
