@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 
 import { tasks } from '../reducers/tasks'
 
+
 export const Task = ({ item }) => {
   const dispatch = useDispatch()
 
@@ -13,13 +14,14 @@ export const Task = ({ item }) => {
      dispatch(tasks.actions.removeTask(id))
   }
   return (
+   
     <TaskContainer>
       
-        <Checkbox
+        {/* <Checkbox
           type="checkbox"
           // onChange={handleOnChange}
           checked="checked">
-        </Checkbox>
+        </Checkbox> */}
         <TextWrapper>
         <TaskText>{item.text}</TaskText>
         </TextWrapper>
@@ -28,8 +30,11 @@ export const Task = ({ item }) => {
         <span role="img" aria-label="Delete">🗑️</span>
         </DeleteButton>  
     </TaskContainer>
+   
   )
 }
+
+
 
 const DeleteButton = styled.button`
 width: 30px;
@@ -37,28 +42,29 @@ height: 30px;
 margin-left: 10px;
 `
 
-const Checkbox = styled.input`
-  width: 30px;
-  height: 30px;
- margin-right: 20px,
-`
+// const Checkbox = styled.input`
+//   width: 30px;
+//   height: 30px;
+//  margin-right: 20px,
+// `
 
 const TaskContainer = styled.section`
   display: flex; 
+  
   justify-content: flex-start;
   align-items: center; 
-  margin: 20px;
+  margin-left: 30px;
+ margin-top: 30px;
 `
 const TextWrapper = styled.div`
-  background-color: #fdc1c5;
+  /* background-color: #fdc1c5; */
+  background-color: #e6e6e6;
   border: 1px solid grey;
   border-radius: 5px;
   width: auto;
-  margin-left: 10px;
-  /* display: flex; */
+  
   padding: 0 10px;
-  /* align-items: flex-start;
-  justify-content: flex-start; */
+  
   
 `
 const TaskText = styled.p`

@@ -43,10 +43,14 @@ export const AddTask = () => {
 }
 
 const Form = styled.form`
-margin-left: 10px;
+display: flex;
+justify-content: center;
+padding-top: 20px;
 `
 const InputArea = styled.input`
-margin-left: 10px;
+/* margin-left: 20px; */
+/* margin-top: 20px; */
+height: 30px;
 `
 const AddButton = styled.button`
   background-color: #e6e6e6; 

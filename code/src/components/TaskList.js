@@ -10,13 +10,14 @@ export const TaskList = () => {
   const items = useSelector((store) => store.tasks.items)
 
   return (
-    <>
-      {items.map((item, index) => (
+   <>
+      {items.map((item) => (
         <Task 
-        key={index} 
+        key={item.id} 
         item={item} 
-        index={index}/>
+       />
       ))}
-    </>
+     </>
   )
 }
+
