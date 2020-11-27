@@ -4,13 +4,12 @@ import { useDispatch } from 'react-redux';
 import moment from 'moment';
 import styled from 'styled-components';
 import { todos } from '../reducers/todos';
-import { Image } from '../lib/Image';
-import { TodoParagraph } from '../lib/Text';
+import { TrashBin } from '../lib/Image';
+import { ParagraphBlack, Span } from '../lib/Text';
 import CustomCheckbox from '../lib/CustomCheckbox';
 
 const TodoItem = ({ item }) => {
   const [active, setActive] = useState('');
-  //const [height, setHeight] = useState('0px');
   const dispatch = useDispatch();
 
   const handleRemoveTodo = () => {
@@ -27,12 +26,11 @@ const TodoItem = ({ item }) => {
 
   const toggleAccordion = () => {
     setActive(active === '' ? 'active' : '');
-    //setHeight(active === 'active' ? '0px' : 'auto');
   };
 
   return (
     <Container>
-      <MyTodos className={`accordion ${active}`} onClick={toggleAccordion}>
+      <Todo className={`accordion ${active}`} onClick={toggleAccordion}>
         <label>
         <CustomCheckbox
           checked={item.complete ? true : ""}
@@ -44,24 +42,28 @@ const TodoItem = ({ item }) => {
               {item.description}
           </Description> 
         </TodoContainer>
-        <Image src="../assets/garbage.svg" onClick={handleRemoveTodo} /> 
-      </MyTodos>
+        <TrashBin src="../assets/garbage.svg" onClick={handleRemoveTodo} /> 
+      </Todo>
 
       {/* <Open style={{ height: `${height}` }}> */}
       <Open active={active}>
-        <TodoParagraph><Span>Category:</Span> {item.category}</TodoParagraph>
-        <TodoParagraph><Span>Created:</Span> {moment(item.createdAt).fromNow()}</TodoParagraph>
-        <TodoParagraph><Span>Due:</Span> {moment(item.dueDate).format('MMM Do YYYY')}</TodoParagraph>
+        <ParagraphBlack><Span>Category:</Span> {item.category}</ParagraphBlack>
+        <ParagraphBlack><Span>Created:</Span> {moment(item.createdAt).fromNow()}</ParagraphBlack>
+        <ParagraphBlack><Span>Due:</Span> {moment(item.dueDate).format('MMM Do YYYY')}</ParagraphBlack>
       </Open>
     </Container>
   );
 };
 export default TodoItem;
 
-const Container = styled.div`
+//LOCAL STYLES
+//to get rid of the space between todo text and description 
+//when accordion is active
+const Container = styled.article`
+
 `;
 
-export const MyTodos = styled.li `
+const Todo = styled.li `
   width: 100%;
   background-color: transparent; 
   border: none;
@@ -71,6 +73,11 @@ export const MyTodos = styled.li `
   font-family: 'Architects Daughter', cursive;
   font-size: 16px;
   padding: 10px;
+
+  ${({ active }) => active === 'active' &&
+    `background-color: red;
+    `
+  }
 `;
 
 const TodoContainer = styled.div `
@@ -80,32 +87,30 @@ const TodoContainer = styled.div `
   flex-direction: column; 
   align-items: flex-start;
   margin-left: 10px;
-    &:checked + ${TodoParagraph} {
-      text-decoration: line-through;
-    }
+
+  &:checked + ${ParagraphBlack} {
+    text-decoration: line-through;
+  }
 `;
 
 const Description = styled.p`
   color: #000;
-  ${({ checked }) => 
-    checked && `
+  ${({ checked }) => checked && `
     opacity: 0.3;
     `
-  }   
-}
+  }  
+  @media (min-width: 668px) {
+    font-size: 26px;
+  } 
 `;
 
 const Open = styled.div`
   padding: 4px;
   overflow: hidden;
   height: 0;
-  ${({ active }) =>
-    active === 'active' &&
+  ${({ active }) => active === 'active' &&
+    `height: auto;
     `
-    height: auto;
-  `}
+  }
 `;
 
-const Span = styled.span`
-  font-weight: bold;
-`;

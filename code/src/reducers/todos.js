@@ -7,17 +7,20 @@ const initialState = {
     categories: ['Personal', 'School', 'Work', 'Home', 'Other' ],
     selectedFilterStatus: "",
     selectedFilterCategory: "",
-    homePage: true,
-  }
+    //homePage: true,
+  },
 };
 
 export const todos = createSlice({
   name: "todos",
   initialState: initialState,
   reducers: {
-    createTodo: (state) => {
-      state.homePage = false;
-    },
+    // createTodo: (state, action) => {
+    //   console.log(action.payload)
+    //   state.homePage = action.payload;
+    //   console.log(action.payload)
+    //   state.homePage = false;
+    // },
 
     addTodo: (state, action) => {
       const { todoItemInfo } = action.payload;

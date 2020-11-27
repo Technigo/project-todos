@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import swal from 'sweetalert';
 import styled from 'styled-components';
 
 import { Button } from '../lib/Button';
+import { ParagraphBlack } from '../lib/Text';
 import { todos } from '../reducers/todos';
 
 const ActionButtons = () => {
   const [isAllComplete, setIsAllComplete] = useState(false)
   const dispatch = useDispatch();
 
-  const handleOnComplete = () => {
+  const handleAllComplete = () => {
     dispatch(todos.actions.setAllComplete())
     setIsAllComplete(true)
   }
@@ -20,7 +22,7 @@ const ActionButtons = () => {
     setIsAllComplete(false)
   }
 
-  const handleOnRemove = () => {
+  const handleOnDelete = () => {
     swal({
       title: "Are you sure?",
       text: "Do you want to delete all your todos?",
@@ -42,15 +44,15 @@ const ActionButtons = () => {
     <ButtonContainer>
       <Button 
         type="button"
-        onClick={!isAllComplete ? () => handleOnComplete() : () => handleUnsetComplete()}
+        onClick={!isAllComplete ? () => handleAllComplete() : () => handleUnsetComplete()}
         >
-          <ButtonText>{!isAllComplete ? "Mark all complete" : "Unset"}</ButtonText>
+          <ParagraphBlack>{!isAllComplete ? "Mark all complete" : "Unset"}</ParagraphBlack>
       </Button>
       <Button 
-      type="button"
-      onClick={() => handleOnRemove()}
+        type="button"
+        onClick={() => handleOnDelete()}
       >
-        <ButtonText>Delete all todos</ButtonText>
+        <ParagraphBlack>Delete all todos</ParagraphBlack>
       </Button>
     </ButtonContainer>
   );
@@ -60,8 +62,6 @@ export default ActionButtons;
 const ButtonContainer = styled.div `
   display: flex; 
   justify-content: space-between;
+  margin-top: 40px;
 `;
 
-const ButtonText = styled.p`
-  font-size: 16px;
-`;

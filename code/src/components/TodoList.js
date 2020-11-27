@@ -2,11 +2,13 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 import styled from 'styled-components';
-import ActionButtons from './ActionButtons';
-import TodoItem from './TodoItem';
 import { todos } from '../reducers/todos';
-import { FilterSelect } from '../lib/Select';
+
 import EmptyTodoList from './EmptyTodoList';
+import TodoItem from './TodoItem';
+import ActionButtons from './ActionButtons';
+
+import { FilterSelect } from '../lib/Select';
 
 const TodoList = () => {
   const dispatch = useDispatch();
@@ -46,7 +48,7 @@ const TodoList = () => {
       {list.length === 0 ? (
         <EmptyTodoList /> 
       ) : (
-        <TodoListWrapper>
+        <>
           <Filter>
             <FilterSelect 
               name="category" 
@@ -75,22 +77,20 @@ const TodoList = () => {
             <TodoItem key={item.id} item={item} />
           ))}           
           <ActionButtons />
-        </TodoListWrapper>
+      </>
       )} 
     </Container>
   );
 };
 export default TodoList;
 
-const Container = styled.section `
+const Container = styled.main `
   display: grid;
+  grid-row-gap: 15px;
   -ms-flex-line-pack: space-evenly;
   -ms-flex-pack: center;
   justify-content: center;
-`;
-
-const TodoListWrapper = styled.div `
-
+  padding: 20px;
 `;
 
 const Filter = styled.div `

@@ -1,7 +1,6 @@
 import React from 'react';
 
 import styled from 'styled-components';
-//import { TodoParagraph } from '../lib/Text'
 
 const CheckboxContainer = styled.div`
   display: inline-block;
@@ -13,8 +12,7 @@ const Icon = styled.svg`
   stroke: white;
   stroke-width: 2px;
 `;
-// Hide checkbox visually but remain accessible to screen readers.
-// Source: https://polished.js.org/docs/#hidevisually
+
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
   border: 0;
   clip: rect(0 0 0 0);
@@ -37,11 +35,19 @@ const StyledCheckbox = styled.div`
   background: ${props => (props.checked ? '#3d5f6b' : '#fff')};
   border-radius: 50%;
   transition: all 150ms;
+  cursor: pointer;
+  
   ${HiddenCheckbox}:focus + & {
     box-shadow: 0 0 0 2px pink;
   }
+
   ${Icon} {
     visibility: ${props => (props.checked ? 'visible' : 'hidden')};
+  }
+
+  @media (min-width: 668px) {
+    width: 30px;
+  height: 30px;
   }
 `;
 

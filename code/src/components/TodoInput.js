@@ -41,7 +41,6 @@ const TodoInput = () => {
 
   return (
     <Form onSubmit={handleOnSubmit}>
-      {/* <LabelTitle htmlFor="text">Enter a todo:</LabelTitle> */}
       <Input 
         type="text"
         id="text"
@@ -60,7 +59,6 @@ const TodoInput = () => {
 
       <Label>
         <Select 
-          //id="category" 
           onChange={(event) => setCategory(event.target.value)} 
           value={category}>
           <option value="">Category</option>
@@ -80,6 +78,7 @@ const TodoInput = () => {
 };
 export default TodoInput;
 
+//Local styles
 export const Form = styled.form `
   height: 65vh;
   display: flex;

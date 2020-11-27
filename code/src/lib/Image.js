@@ -1,11 +1,19 @@
 import styled from 'styled-components';
 
-export const Image = styled.img `
+export const TrashBin = styled.img `
   width: 20px;
+  
+  @media (min-width: 668px) {
+    width: 40px;
+  }
 `;
 
 export const PlusIcon = styled.img `
   height: 50px;
+
+  @media (min-width: 668px) {
+    height: 80px;
+  }
 `;
 
 export const BackArrow = styled(PlusIcon) `
