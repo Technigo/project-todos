@@ -52,6 +52,7 @@ const Label = styled.label`
 const Date = styled.p`
   display: inline-block;
   text-transform: uppercase;
+  color: #514d4d;
   font-size: 8px;
   margin: 5px 0 0 0;
 `
@@ -104,7 +105,7 @@ export const Task = ({task}) => {
         </RemoveButton>
         </Label>
         <Date>
-        created: {moment(task.id).format('LT')}
+        created at {moment(task.id).format('LT')}
       </Date>
       </TextContainer>
     </TaskContainer>

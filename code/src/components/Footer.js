@@ -55,10 +55,9 @@ export const Footer = () => {
 
   const handleRemoveAll = () => {
     swal({
-      title: "here's the title",
-      text: "you're about to delete all tasks, are you sure?",
-      icon: "info",
-      buttons: ["nope..", "yes, delete em"],
+      text: "are you sure you want to clear the list?",
+      //icon: "info",
+      buttons: ["no", "yes"],
       dangerMode: true,
     })
     .then ((willDelete) => {
