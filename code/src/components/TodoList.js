@@ -69,6 +69,8 @@ const ListWrapper = styled.div`
   font-weight: 600;
   margin-top: 3vh;
   margin-bottom: 3vh;
+  margin-left: auto;
+  margin-right: auto;
   border-radius: 10px;
 `
 const ToDoList = styled.ul`

@@ -24,7 +24,7 @@ export const Todo = (props) => {
   return (
     <ListItem>
       {/* <span>{category}: </span> */}
-      <LineWrapper> 
+      <TextLineWrapper> 
         <label>
           <CustomCheckbox 
             isChecked={complete} 
@@ -37,7 +37,7 @@ export const Todo = (props) => {
           onChange={handleCheckboxClick}
           /> */}
         </label>
-        <span>{text}</span>
+        <TextLine>{text}</TextLine>
         <Button 
           type='button' 
           onClick={handleRemoveButtonClick} 
@@ -45,13 +45,13 @@ export const Todo = (props) => {
         >
           Remove
         </Button>
-      </LineWrapper>
+      </TextLineWrapper>
       {/* Implement functionality so that text turns red if duedate is passed */}
       {/* WHY DOESN'T THE CLOCK-ICON WORK??? */}
-      <LineWrapper> 
+      <TimeLineWrapper> 
         <span> <TimeIcon src="../assets/clock.svg" /> {moment(startDate).format('MMM Do YYYY')}</span>
-        {dueDate && <span>  {moment(dueDate).format('MMM Do YYYY')}</span>}
-      </LineWrapper>
+        {dueDate && <span> <TimeIcon src="../assets/hourglass.svg" /> {moment(dueDate).format('MMM Do YYYY')}</span>}
+      </TimeLineWrapper>
     </ListItem>
   )
 }
@@ -60,15 +60,34 @@ const ListItem = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+  margin-bottom: 10px;
+  border-bottom: 1px solid #fff;
+`;
+
+const TextLineWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 10px;
 `;
 
-const LineWrapper = styled.div`
+const TextLine = styled.span`
+  word-wrap: wrap;
+  height: auto;
+`;
+
+const TimeLineWrapper = styled.div`
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  margin-bottom: 10px;
 `;
+
+// const TimeLine = styled.span`
+  
+// `
+
+
 
 // const Icon = styled.img`
 //   width: 16px;

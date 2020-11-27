@@ -42,4 +42,6 @@ const HeaderContainer = styled.header`
   margin-top: 5vh;
   margin-bottom: 3vh;
   border-radius: 10px;
+  margin-left: auto;
+  margin-right: auto;
 `;
