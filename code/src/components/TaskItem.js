@@ -45,7 +45,6 @@ const ButtonContainer = styled.div`
 const RemoveButton = styled.button`
     background-color: rgb(252, 228, 215);
     border: none;
-    border-radius: 12px;
     font-size: 15px;
     padding: 7px;
     font-family: 'Open Sans', sans-serif;

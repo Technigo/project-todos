@@ -1,22 +1,21 @@
+html {
+  height: 100%;
+}
+
 body {
+  height: 100%;
   margin: 0;
   margin-top: 20px;
-  background-image: url("images/background.png");
-  background-image: 800px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  min-height: 800px;
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
   justify-content: center;
-}
-
-@media (min-height: 1024px) {
-  body{
-    min-height: 1100px;
-  }
+  background-image: url("images/background.png");
+  height: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 
