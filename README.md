@@ -1,13 +1,14 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
 Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The project is to create a To do app which allows users to add, remove tasks and check if they are completed or not. Todo web app is developed with React-Redux and styled-components.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+At first, it was hard to understand Reducers, payload as well as to decide which to put in the local state. After practising readux with similar project: shopping-cart, Redux, reducers become clearer now.
+It is very helpful too learn how to use spread operator and immutability concept. To make the project better, I should have put a timestamp into each task.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://taratodo.netlify.app/
+
