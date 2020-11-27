@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const Article = styled.article`
+export const Article = styled.li`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -44,4 +44,7 @@ export const RemoveButton = styled.button`
     font-family: 'Open Sans', sans-serif;
     color: rgb(36, 90, 92);
     cursor: pointer;
+    &:hover {
+            background: rgb(253, 239, 231);
+        }
 `;
