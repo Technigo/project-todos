@@ -30,8 +30,16 @@ const MainWrapper = styled.main`
   flex-direction: column;
   width: 90%;
   /*height: 90%;*/
-  min-height: 600px;
+  min-height: 90vh;
   border-radius: 5px;
   margin: 20px auto;
   padding: 5px;
+
+  @media (min-width: 768px) {
+    width: 65%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 35%;
+  }
 `;

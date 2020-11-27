@@ -21,7 +21,7 @@ export const ClearAllButton = () => {
 const ClearButton = styled.button`
   align-self: center;
   height: 30px;
-  width: 300px;
+  width: 95%;
   margin: 10px;
   font-size: 20px;
   background: ${props => props.background || "black"};
@@ -30,5 +30,16 @@ const ClearButton = styled.button`
   border-radius: 5px;
   &:hover {
     background: #474747;
+    cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    width: 50%;
+    height: 40px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 60%;
+    height: 50px;
   }
 `;

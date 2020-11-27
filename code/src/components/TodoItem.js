@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 
 import { todos } from "../reducers/todos";
@@ -7,6 +7,7 @@ import { DeleteTodoButton } from "./DeleteTodoButton";
 
 export const TodoItem = ({ item }) => {
   const dispatch = useDispatch();
+  const items = useSelector(store => store.todos.items);
 
   const handleCheckboxClick = isComplete => {
     dispatch(todos.actions.toggleIsComplete(item.id));
@@ -22,30 +23,30 @@ export const TodoItem = ({ item }) => {
         onChange={() => handleCheckboxClick(item.isComplete)}
       />
       <TodoText>{item.text} </TodoText>
-      <Span>{item.isComplete ? "Completed" : "ToDo"}</Span>
+      <Span>{item.isComplete ? "Completed" : "To-Do"}</Span>
     </ItemContainer>
   );
 };
 
 const ItemContainer = styled.article`
-  /*align-self: flex-start;*/
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: flex-start;
   padding: 5px;
-  margin: 2px;
+  margin: 4px 0;
   font-size: 16px;
-  color: #3f3f3f;
   background-color: #fff;
-  border-top: 1px solid #474747;
-  border-bottom: 1px solid #474747;
   position: relative;
 `;
 
 const TodoText = styled.p`
-  margin-left: 15px;
+  margin-left: 5px;
   font-weight: 500;
+
+  @media (min-width: 1024px) {
+    font-size: 18px;
+  }
 `;
 
 const Span = styled.span`
@@ -54,4 +55,8 @@ const Span = styled.span`
   color: #0075ff;
   position: absolute;
   right: 10px;
+
+  @media (min-width: 1024px) {
+    font-size: 16px;
+  }
 `;

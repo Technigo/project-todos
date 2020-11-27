@@ -30,42 +30,7 @@ const DeleteButton = styled.button`
   border: none;
   border-radius: 5px;
   &:hover {
-    background: black;
+    background: #b22222;
+    cursor: pointer;
   }
 `;
-
-const AddButton = styled.button`
-  align-self: center;
-  width: 30px;
-  height: 30px;
-  margin-left: 10px;
-  font-size: 20px;
-  background: ${props => props.background || "#0099ff"};
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  &:hover {
-    background: black;
-  }
-`;
-
-/*import styled from "styled-components";
-
-export const Button = styled.button`
-  padding: 10px;
-  margin: 5px;
-  background: ${(props) => props.background || "yellow"};
-  font-size: 18px;
-  border: none;
-  border-radius: 10px;
-
-  &:hover {
-    background: black;
-    color: white;
-    #b8f4ff - blue
-  }
-
-  @media (min-width: 600px){
-    width: 100%;
-  }
-`; */

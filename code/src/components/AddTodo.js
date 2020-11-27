@@ -21,7 +21,7 @@ export const AddTodo = () => {
         type="text"
         value={input}
         onChange={event => setInput(event.target.value)}
-        placeholder="Add To Do..."
+        placeholder="New To-Do"
       />
       <AddButton type="submit" onClick={onItemAdd} disabled={!input}>
         +
@@ -42,12 +42,19 @@ const AddButton = styled.button`
   border-radius: 5px;
   &:hover {
     background: #4dbfed;
+    cursor: pointer;
+  }
+
+  @media (min-width: 768px) {
+    height: 40px;
+    width: 40px;
   }
 `;
 
 const TextInput = styled.input`
   border: 2px solid #0099ff;
   height: 28px;
+  width: 80%;
   border-radius: 5px;
   font-size: 16px;
   font-weight: 500;
@@ -55,6 +62,16 @@ const TextInput = styled.input`
     font-size: 15px;
     font-weight: lighter;
     color: #999999;
+  }
+
+  @media (min-width: 768px) {
+    width: 350px;
+    height: 38px;
+  }
+
+  @media (min-width: 1024px) {
+    width: 250px;
+    height: 38px;
   }
 `;
 

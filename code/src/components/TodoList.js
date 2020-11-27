@@ -36,18 +36,7 @@ const MainSection = styled.section`
 
 const TodoContainer = styled.article`
   display: flex;
+  background-color: #fff;
+  border-bottom: 1px solid #474747;
+  padding: 2px 5px;
 `;
-
-/*const DeleteButton = styled.button`
-  align-self: center;
-  padding: 8px;
-  margin: 2px;
-  font-size: 16px;
-  background: ${props => props.background || "red"};
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  &:hover {
-    background: black;
-  }
-`;*/

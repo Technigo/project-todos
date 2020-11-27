@@ -18,4 +18,5 @@ const FooterContainer = styled.footer`
   background: #e8e8e8;
   padding: 10px;
   margin: 20px 0;
+  width: 90%;
 `;
