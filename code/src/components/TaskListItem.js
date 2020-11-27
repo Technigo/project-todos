@@ -18,7 +18,7 @@ export const TaskListItem = ({ task }) => {
       <DoneButton 
         task={task}
       />
-      <TextContainer>
+      <TextContainer done={task.done}>
         <p>{task.text}</p>
         <Timestamp>{moment(task.created).fromNow()}</Timestamp>
       </TextContainer>

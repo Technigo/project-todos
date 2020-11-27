@@ -17,6 +17,10 @@ color: white;
 font-family: 'Open Sans', Arial, Helvetica, sans-serif;
 border: none;
 border-radius: 1vh;
-padding: 1vh 2vh;
-width: 20vh;
+padding: 1vh;
+width: 13vh;
+
+&:disabled {
+  background-color: #ddd6e8;
+}
 `

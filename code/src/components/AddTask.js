@@ -26,6 +26,7 @@ export const AddTask = () => {
           placeholder={'Add task'}
           value={value}
           onChange={event => setValue(event.target.value)}
+          required
           />
         <AddButton 
           type='submit' 

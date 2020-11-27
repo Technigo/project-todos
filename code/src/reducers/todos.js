@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
+import moment from 'moment';
 
 export const todos = createSlice({
   name: 'todos',
   initialState: {
     tasks: [
-      {id: 1, text: 'bake bread', done: false},
-      {id: 2, text: 'put up christmas decoration', done: false},
-      {id: 3, text: 'call mum', done: true}
+      {id: 1, text: 'bake bread', done: false, created: moment(new Date).format()},
+      {id: 2, text: 'put up christmas decoration', done: false, created: moment(new Date).format()},
+      {id: 3, text: 'call mum', done: true, created: moment(new Date).format()}
     ]
   }, 
   reducers: {
@@ -26,10 +27,10 @@ export const todos = createSlice({
     addItem: (store, action) => {
       console.log(action.payload)
       const newTask = {
-        id: Math.max(...store.tasks.map(item => item.id)) + 1,
+        id: store.tasks.length === 0 ? 0 : Math.max(...store.tasks.map(item => item.id)) + 1,
         text: action.payload,
         done: false,
-        created: new Date 
+        created: moment(new Date).format()
       };
 
       const newTaskList = [...store.tasks, newTask];
@@ -45,8 +46,13 @@ export const todos = createSlice({
 
         return container
       });
-
+      console.log(doneList)
       store.tasks = doneList;
+    },
+    clearDoneTasks: (store, action) => {
+      const notDoneList = store.tasks.filter(task => task.done === false);
+
+      store.tasks = notDoneList;
     },
     clearList: (store, action) => {
       const emptyList = [];

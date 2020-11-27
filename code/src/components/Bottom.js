@@ -8,10 +8,15 @@ import { todos } from '../reducers/todos';
 
 export const Bottom = () => {
   const allTasks = useSelector((store) => store.todos.tasks);
+  const notDoneTasks = allTasks.filter(task => task.done === false);
   const dispatch = useDispatch();
 
   const onMarkAllDone = () => {
     dispatch(todos.actions.markAllDone())
+  };
+
+  const onClearDone = () => {
+    dispatch(todos.actions.clearDoneTasks())
   };
 
   const onClearList = () => {
@@ -28,14 +33,19 @@ export const Bottom = () => {
         dispatch(todos.actions.clearList());
       }
     })
-  }
+  };
 
   return(
     <BottomContainer>
       <BottomButton 
         onClick={onMarkAllDone}
-        disabled={allTasks.length === 0 ? true : false}
+        disabled={allTasks.length === 0 || notDoneTasks.length === 0 ? true : false}
       >Mark all as done
+      </BottomButton>
+      <BottomButton 
+        onClick={onClearDone}
+        disabled={allTasks.length === 0 ? true : false}
+      >Remove done tasks
       </BottomButton>
       <BottomButton 
         onClick={onClearList}

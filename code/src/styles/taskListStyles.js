@@ -73,6 +73,7 @@ export const TextContainer = styled.div`
   width: 100%;
   padding-right: 20px;
   font-size: 2.5vh;
+  text-decoration: ${props => props.done ? 'line-through' : 'none'}
 `
 
 export const Timestamp = styled.p`
