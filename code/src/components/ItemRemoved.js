@@ -6,6 +6,8 @@ import {useDispatch, useSelector} from 'react-redux'
 import Swal from 'sweetalert2'
 //reference: https://sweetalert2.github.io/
 
+import './style/task-content.css'
+
 import {tasks} from 'reducers/tasks'
 import {NumberofTasks} from 'components/NumberofTasks'
 

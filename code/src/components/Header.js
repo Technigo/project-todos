@@ -8,7 +8,7 @@ export const Header = () => {
 	return (
 		<div className="header">
 		<h2>MY TASKS</h2>
-		<p className="date-n-time">{currentDate} at {currentTime}</p>
+		<p className="date-n-time">{currentDate} - {currentTime}</p>
 		</div>
 	)
 }

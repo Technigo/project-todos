@@ -1,6 +1,8 @@
 import React from 'react'
 import {useSelector} from 'react-redux'
 
+import './style/task-content.css'
+
 export const NumberofTasks = ()=> {
 	const tasks = useSelector(state=>state.tasks.list.tasks)
 	const remainingTask = tasks.filter(task=>task.complete===false)
@@ -8,8 +10,7 @@ export const NumberofTasks = ()=> {
 	if (remainingTask.length === 0){
 		return (
 			<div>
-			<p className="xTasks">Good job, you are all done!</p>
-			<p className="xTasks numb">Go enjoy your day.</p>
+			<p className="xTasks">Go enjoy your day, or create a new task!</p>
 			</div>
 		)
 	}
