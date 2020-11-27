@@ -13,7 +13,7 @@ export const Summary = () => {
 
   return (
     <div>
-      <Text>{finishedTodos}/{list.items.length} Done</Text>
+      <Text tabindex='0'>{finishedTodos}/{list.items.length} Done</Text>
     </div>
   )
 }

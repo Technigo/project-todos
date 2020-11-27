@@ -25,7 +25,7 @@ export const todos = createSlice({
      state.list.items[itemIndex].done = done;
    },
    deleteTodo: (state, action) => {
-     const { itemIndex, done } = action.payload;
+     const { itemIndex } = action.payload;
      state.list.items = state.list.items.filter(
       (item, index) => index !== itemIndex
     )

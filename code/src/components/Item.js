@@ -14,7 +14,7 @@ const Container = styled.li`
 const Div = styled.div`
   display: flex;
   align-items: center;
-  margin: 10px 0 0 12px;
+  margin: 10px 0 0 0;
   border-radius: 5px;
 `;
 
@@ -26,12 +26,15 @@ const Button = styled.button`
   cursor: pointer;
   padding: 2px 0 0 4px;
   margin-right: 5px;
+
+  &:focus {
+    outline: 0
+  }
 `;
 
 const Text = styled.text`
   font-family: monospace;
-  font-size: 18px;
-  text-transform: uppercase;
+  font-size: 16px;
 `;
 
 export const Item = ({ itemIndex }) => {
@@ -61,13 +64,13 @@ export const Item = ({ itemIndex }) => {
       <CheckedCheckbox
           isDone={item.done}
           onChangeHandler={handleOnChange} 
+          tabIndex='0'
         >
         </CheckedCheckbox>
         <Text>{item.description}</Text>
         
         <Button
           onClick={onDelete}
-
         >
           ⌫
         </Button>

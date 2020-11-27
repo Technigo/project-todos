@@ -21,6 +21,7 @@ const Container = styled.ul`
   background-color: #f2bdcd;
   border: 1px solid black;
   border-radius: 10px;
+
   @media (min-width: 667px){
     width: 350px;
   }
@@ -30,14 +31,13 @@ const Header = styled.h1`
   font-size: 32px;
 `;
 
-
 export const List = () => {
   const list = useSelector(store => store.todos.list);
 
   return (
     <Main>
       <Container>
-        <Header>Todo-list:</Header>
+        <Header>To-Do List</Header>
         <TodoInput />
         {list.items.map((item, index) => (
           <Item key={index} itemIndex={index}></Item>

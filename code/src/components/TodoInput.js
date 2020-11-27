@@ -16,6 +16,11 @@ const Input = styled.input`
   color: black;
   background-color: whitesmoke;
   border: none;
+
+  &:focus,
+  &:active {
+    outline: 0;
+  }
 `;
 
 const Button = styled.button`
@@ -27,6 +32,10 @@ const Button = styled.button`
   border none;
   border-radius: 50%;
   cursor: pointer;
+
+  &:focus {
+    outline: 0;
+  }
 `;
 
 
