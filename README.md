@@ -1,13 +1,16 @@
-# Project Todos
+# Project To-dos
 
-Replace this readme with your own information about your project.
+##### This project was made during Technigo's Front-end developer bootcamp
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In this to-do app, you can add tasks, list tasks and toggle whether a task is done or not. Also, you will see when the task was added and when there is no more tasks an styled empty list page is displayed.
 
-## The problem
+## Tech used
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+* React
+* Redux
+* JSX
+* CSS
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Need a to-do app? Check it out <a href="https://to-do-todayapp.netlify.app">here.</a>
