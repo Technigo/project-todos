@@ -25,17 +25,14 @@ const todos = createSlice({
     //The actions match the names of the reducers
     reducers: {
         removeItem: (state, action) => {
-            console.log(state, action);
             const itemId = action.payload;
             const filteredList = state.items.filter((item => item.id !== itemId));
             state.items = filteredList;
 
         },
         changeItem: (state, action) => {
-            console.log(action.payload);
             state.items = state.items.map((item => {
                 if (item.id === action.payload.id) {
-                    console.log(item);
                     item.isComplete = !item.isComplete;
                 } return item;
             }));
@@ -55,7 +52,7 @@ const todos = createSlice({
             }
         },
         removeAll: (state) => {
-            state.items = []
+            state.items = [];
         },
     }
 }); 
