@@ -1,10 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import moment from 'moment'
+import styled from 'styled-components'
 
 import { todos } from 'reducers/todos'
 import { Button } from 'library/Buttons'
 import { CustomCheckbox } from 'components/CustomCheckbox'
+import { TimeIcon } from 'library/Icons'
 
 export const Todo = (props) => {
   const { id, text, dueDate, category, complete, startDate } = props.item;
@@ -20,30 +22,55 @@ export const Todo = (props) => {
   }
 
   return (
-    <li>
+    <ListItem>
       {/* <span>{category}: </span> */}
-      <span>{text}</span>
-      <label>
-        <CustomCheckbox 
-          isChecked={complete} 
-          onChangeHandler={handleCheckboxClick}/>
-        {/* <input
-        type='checkbox'
-        // || false fixes the issues of going from controlled to uncontrolled value
-          // here https://github.com/facebook/react/issues/6779
-        checked={props.item.complete || false}
-        onChange={handleCheckboxClick}
-        /> */}
-      </label>
-      <Button 
-        type='button' 
-        onClick={handleRemoveButtonClick} 
-        background='#f9adae'
-      >
-        Remove
-      </Button>
-      <span>ADDED: {moment(startDate).format('MMM Do YYYY')}</span>
-      {dueDate && <span> DUE: {moment(dueDate).format('MMM Do YYYY')}</span>}
-    </li>
+      <LineWrapper> 
+        <label>
+          <CustomCheckbox 
+            isChecked={complete} 
+            onChangeHandler={handleCheckboxClick}/>
+          {/* <input
+          type='checkbox'
+          // || false fixes the issues of going from controlled to uncontrolled value
+            // here https://github.com/facebook/react/issues/6779
+          checked={props.item.complete || false}
+          onChange={handleCheckboxClick}
+          /> */}
+        </label>
+        <span>{text}</span>
+        <Button 
+          type='button' 
+          onClick={handleRemoveButtonClick} 
+          background='#f9adae'
+        >
+          Remove
+        </Button>
+      </LineWrapper>
+      {/* Implement functionality so that text turns red if duedate is passed */}
+      {/* WHY DOESN'T THE CLOCK-ICON WORK??? */}
+      <LineWrapper> 
+        <span> <TimeIcon src="../assets/clock.svg" /> {moment(startDate).format('MMM Do YYYY')}</span>
+        {dueDate && <span>  {moment(dueDate).format('MMM Do YYYY')}</span>}
+      </LineWrapper>
+    </ListItem>
   )
 }
+
+const ListItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  margin-bottom: 10px;
+`;
+
+const LineWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+// const Icon = styled.img`
+//   width: 16px;
+//   height: 16px;
+// `

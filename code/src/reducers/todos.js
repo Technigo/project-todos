@@ -21,7 +21,8 @@ export const todos = createSlice({
       const { text, category, complete, dueDate } = action.payload
       // se wed lecture about push being bad practice (something with immutability)
       // use spread operator instead???
-      store.items.push({ id: Date.now(), text, category, complete, dueDate })
+     // store.items.push({ id: Date.now(), text, category, complete, dueDate })
+     store.items = [... store.items, { id: Date.now(), text, category, complete, dueDate }]
     },
     removeTodo: (store, action) => {
       // find item/ filter item
