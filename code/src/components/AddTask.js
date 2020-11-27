@@ -14,6 +14,7 @@ export const AddTask = () => {
     event.preventDefault()
     if (taskInput.length > 0) { //have to have a message longer than 0
       dispatch(tasks.actions.addTask({ todo: taskInput, createdAt: date.getTime(), dueTime: date.getTime()}))
+      // dispatch(tasks.actions.addTask({taskInput:{todo: taskInput, createdAt: date.getTime()}}))
       SetTaskInput('')  //emptying input field after submitting
     }
 

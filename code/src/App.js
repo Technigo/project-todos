@@ -19,7 +19,7 @@ const reducer = combineReducers({
 // local storage
 // 1. retrieve local storage and use it as initial state
 
-const persistentStateJSON = localStorage.getItem('reduxState')
+const persistentStateJSON = localStorage.getItem('reduxState-1')
 let persistentState = {}
 
 if (persistentStateJSON) {
@@ -31,7 +31,7 @@ const store = createStore(reducer, persistentState, window.__REDUX_DEVTOOLS_EXTE
 
 // // 3. Store the state in local storage at ANY redux state change
 store.subscribe(() => {
-  localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+  localStorage.setItem('reduxState-1', JSON.stringify(store.getState()))
 })
 
 export const App = () => {
