@@ -8,8 +8,10 @@ import { todoTasks } from './reducer/todoTasks'
 
 //--- components ---
 import { Header } from "./components/Header"
+import { Counter } from "./components/Counter"
 import { AddTodo } from "./components/AddTodo"
 import { TodoList } from "./components/TodoList"
+import styled from 'styled-components'
 
 
 //creating a single reducer from several reducers
@@ -42,9 +44,28 @@ export const App = () => {
   return (
     //store is passed to provider as a prop
     <Provider store={store}>
-      <Header />
-      <TodoList />
-      <AddTodo />
+      <Wrap>
+        <Header />
+        <Counter />
+        <AddTodo />
+        <TodoList />
+      </Wrap>
     </Provider>
   )
 }
+
+// --- STYLED COMPONENTS ---
+
+const Wrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: linear-gradient(#F2E0C9, #04BFBF);
+  /* background: #F2E0C9; */
+  border: 2px solid #025959;
+  /* padding: 15px 5px; */
+  margin: 4px;
+  border-radius: 10px;
+  min-height: 98.5vh;
+`
+

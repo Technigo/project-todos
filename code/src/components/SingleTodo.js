@@ -23,23 +23,24 @@ export const SingleTodo = ({ id, text, complete }) => {
 
     <TaskContainer>
       <TextContainer>
-        <label>
+        <Label>
           <input
             type="checkbox"
             checked={complete}
             onChange={handleCheckboxClick}
           />
-        </label>
+          <span></span>
+        </Label>
         <Text>
           {text}
         </Text>
       </TextContainer>
       <div>
-        <button
+        <Button
           type="button"
           onClick={handleRemoveButtonClick}>
-          Remove
-        </button>
+          ❌
+        </Button>
       </div>
     </TaskContainer>
   )
@@ -51,15 +52,25 @@ const TaskContainer = styled.li`
   justify-content: space-between;
   /* completed: background: #CCE8FF; */
   /* darker blue: background: #0F3593; */
-  background:#DFE1E5;
+  background: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   list-style-type: none;
   border: 1px solid #808080;
   padding: 3px;
   margin-bottom: 5px;
-
+  width: 100%;
 `
+
+const Label = styled.label`
+  
+`
+
+const Button = styled.button`
+  background: white;
+  border: none;
+`
+
 const TextContainer = styled.div`
 display: flex;
 flex-direction: row;

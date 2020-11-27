@@ -1,12 +1,10 @@
 import React, { useState } from "react"
+import styled from "styled-components"
 
 import { useDispatch } from "react-redux"
 import { todoTasks } from "reducer/todoTasks"
 
 export const AddTodo = () => {
-  //  TODO:
-  //  on enter/onClick dispatch the data to todoTasks reducer
-  //id = timestamp and complete = false by default
 
   //local state property -> will be used only in this component
   const [value, setValue] = useState("")
@@ -21,7 +19,7 @@ export const AddTodo = () => {
 
   return (
     <section>
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <button type="submit">+</button>
         <label>
           {/* on enter dispatch the data to todoTasks reducer */}
@@ -32,7 +30,12 @@ export const AddTodo = () => {
             onChange={(event) => setValue(event.target.value)}
           />
         </label>
-      </form>
+      </Form>
     </section>
   )
 }
+
+const Form = styled.form`
+margin: 10px 0;
+
+`

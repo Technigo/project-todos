@@ -1,20 +1,16 @@
 import React from "react"
 import { useSelector } from "react-redux"
+import styled from "styled-components"
 
 import { SingleTodo } from "./SingleTodo"
 
 export const TodoList = () => {
-  // TODO:
-  // nr of all todos: lenghts of allTodoTasks array
 
   //fetch all tasks from the store
   const tasks = useSelector(store => store.todoTasks.allTodoTasks)
-  const nrOfTasks = tasks.length
-
-  console.log(`Nr of all todos: ${nrOfTasks}`)
 
   return (
-    <ul>
+    <List>
       {tasks.map((task) => (
         <SingleTodo
           key={task.id}
@@ -23,7 +19,13 @@ export const TodoList = () => {
           complete={task.complete}
         />
       ))}
-    </ul>
+    </List>
   )
 }
 
+// --- STYLED COMPONENTS ---
+const List = styled.ul`
+  margin: 0;
+  padding: 0;
+
+`
