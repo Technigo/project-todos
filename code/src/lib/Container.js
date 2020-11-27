@@ -34,7 +34,7 @@ export const TaskContainer = styled.div`
 
 export const AppShell = styled.section`
   width: 95%;
-  background: ${(props) => props.background || 'lavender'};
+  ${'' /* background: ${(props) => props.background || 'lavender'}; */}
   margin-bottom: 3px;
   padding: 0 16px;
   border-radius: 4px;
