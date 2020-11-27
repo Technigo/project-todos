@@ -90,7 +90,7 @@ export const NewTodo = ({ setAddTaskVisible }) => {
         </div>
         <div>
           <Label htmlFor="newTask">Prioritized?</Label>
-          <input
+          <Checkbox
             type="checkbox"
             name="prioritized"
             id="newTask"
@@ -140,8 +140,8 @@ const NewTodoWrapper = styled.div`
 `;
 
 const NewTodoInput = styled.input`
-  margin: 5px 0 20px 0;
-  padding: 20px 20px 10px 5px;
+  margin: 20px 0 20px 2px;
+  padding: 10px 20px 10px 5px;
   border: none;
   border-bottom: 1px solid #000;
   background: #fff;
@@ -163,6 +163,10 @@ const Label = styled.label`
   font-size: 10px;
   text-transform: uppercase;
   padding-bottom: 20px;
+`;
+
+const Checkbox = styled.input`
+  transform: translateY(3px);
 `;
 
 const ButtonWrapper = styled(InnerFlexWrapper)`

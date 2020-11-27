@@ -16,7 +16,7 @@ import { Wrapper, InnerFlexWrapper, Button } from '../styling/GlobalStyling';
 
 // -----------------------------------------------------------------------------
 
-export const ListOfTodos = () => {
+export const ListOfTodos = ({ setAddTaskVisible }) => {
   const dispatch = useDispatch();
   const allTodos = useSelector((store) => store.todos.tasks);
 
@@ -62,7 +62,9 @@ export const ListOfTodos = () => {
       />
 
       {/* If there are no tasks, display NoTasksFound-component */}
-      {nonCompletedTasks.length === 0 && <NoTasksFound />}
+      {nonCompletedTasks.length === 0 && (
+        <NoTasksFound setAddTaskVisible={setAddTaskVisible} />
+      )}
 
       {/* List all completed tasks based on category, filtered on prio/not prio. */}
       {/* Prio */}

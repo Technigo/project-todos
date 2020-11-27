@@ -48,7 +48,7 @@ export const App = () => {
           <NewTodo setAddTaskVisible={setAddTaskVisible} />
         </>
       )}
-      <ListOfTodos />
+      <ListOfTodos setAddTaskVisible={setAddTaskVisible} />
       <Footer />
     </Provider>
   );
