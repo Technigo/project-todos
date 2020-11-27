@@ -35,7 +35,7 @@ export const ItemContainer = styled.li`
 `;
 
 export const TaskText = styled.p`
-  margin: 0 20px 2px 8px;
+  margin: 0px 20px 2px 8px;
   font-size: 18px;
 
   @media (min-width: 768px) {

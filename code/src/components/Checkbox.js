@@ -38,6 +38,7 @@ export const CheckBox = ({ isChecked, onChange }) => {
   const StyledCheckbox = styled.div`
     width: 20px;
     height: 20px;
+    margin-top:5px;
     background: ${props => (props.checked ? '#1ba341' : '#e6e6e6')};
     border-radius: 3px;
     transition: all 150ms;
