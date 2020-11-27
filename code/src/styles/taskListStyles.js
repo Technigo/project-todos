@@ -15,6 +15,14 @@ export const ListContainer = styled.ul`
   margin: 0;
 `
 
+export const CelebrationContainer = styled.section`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4vh 0;
+`
+
 // Components for add list form
 
 export const AddForm = styled.form`
