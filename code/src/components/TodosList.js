@@ -2,13 +2,14 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 import { Item } from './Item';
-import { ListContainer, TaskListInputContainer } from './StyledComponents/ListStyling';
-import { EmptyStateImage, EmptyStateText } from './StyledComponents/EmptyStateStyling';
 import { AddTodo } from './AddTodo';
 import { Counter } from './Counter';
 import { Header } from './Header';
 import { RemoveAll } from './RemoveAll';
+import { ListContainer, TaskListInputContainer } from './StyledComponents/ListStyling';
+import { EmptyStateImage, EmptyStateText } from './StyledComponents/EmptyStateStyling';
 import  Yay from '../assets/yay.png'
+
 
 export const TodosList = () => {
   const items = useSelector((store) => store.todos.items);
@@ -19,23 +20,24 @@ export const TodosList = () => {
   if(removedTodos.length === 0) { 
     return(
       <TaskListInputContainer>
-        <Header></Header>
-        <AddTodo></AddTodo>
+        <Header/>
+        <AddTodo/>
         <EmptyStateImage src={Yay} alt="yay image"/>
         <EmptyStateText>ALL DONE!</EmptyStateText>
       </TaskListInputContainer>
     );
   };
+  
   return (
     <TaskListInputContainer>
-      <Header></Header>
-      <AddTodo></AddTodo>
+       <Header/>
+        <AddTodo/>
       <ListContainer>
         {items.map((item, index) => (
         <Item key={index} item={item}></Item>
       ))}
-      <Counter></Counter>
-      <RemoveAll></RemoveAll>
+        <Counter/>
+        <RemoveAll/>
       </ListContainer>
     </TaskListInputContainer>
   );

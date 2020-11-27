@@ -7,10 +7,11 @@ import { TodosList } from './components/TodosList'
 
 const reducer = combineReducers({ todos: todos.reducer , });
 const store = configureStore({ reducer });
+
 export const App = () => {
   return (
     <Provider store={store}>
-      <TodosList></TodosList>
+      <TodosList />
     </Provider>
   );
 };

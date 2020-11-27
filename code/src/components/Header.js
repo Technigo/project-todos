@@ -1,7 +1,7 @@
-import React from 'react'
+import React from 'react';
 import moment from 'moment'
 
-import { DateText } from './StyledComponents/DateTextStyling'
+import { DateText } from './StyledComponents/DateTextStyling';
 
 export const Header = () => { 
   return (
