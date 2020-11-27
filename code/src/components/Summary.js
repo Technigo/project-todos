@@ -6,13 +6,13 @@ const SummaryContainer = styled.section`
 display: flex;
 justify-content: center;
 padding: 40px 0;
-background: #4D5E58;
+background: white;
 margin: 0;
 `;
 
 const BookSummary = styled.h2`
   padding: 15px 0;
-  color: white;
+  color: #4D5E58;
   text-transform: uppercase;
   margin: 0;
 `;
@@ -30,7 +30,7 @@ export const Summary = () => {
     <>
       <SummaryContainer>
         <BookSummary>
-          You have read {selectedBooksRead.length} books
+          You have read {selectedBooksRead.length} books <span role="img" aria-label="book emoji">📚</span>
         </BookSummary>
       </SummaryContainer>
       <Footer>    
