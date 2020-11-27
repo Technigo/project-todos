@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 
 import { todos } from 'reducers/todos'
 import { CustomCheckbox } from './CustomCheckbox'
-import { TodoItem } from '../styledComponents/listElements'
+import { TodoItem } from '../styledComponents/list'
 import { TodoContainer } from '../styledComponents/containers'
 import { DeleteButton } from '../styledComponents/buttons'
 

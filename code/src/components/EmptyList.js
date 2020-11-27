@@ -1,7 +1,12 @@
 import React from 'react';
 
+import { Text } from '../styledComponents/texts'
+import { EmptyListContainer } from '../styledComponents/containers'
+
 export const EmptyList = () => {
   return (
-    <p>hello</p>
+    <EmptyListContainer>
+      <Text>No to-dos yet!</Text>
+    </EmptyListContainer>
   )
 }

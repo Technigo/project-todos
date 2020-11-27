@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import { todos } from '../reducers/todos'
-import { Form, InputField, Label } from '../styledComponents/formElements'
+import { Form, InputField, Label } from '../styledComponents/form'
 import { FormContainer, Wrapper } from '../styledComponents/containers'
 import { AddButton, DeleteAllButton } from '../styledComponents/buttons'
 import { Text } from '../styledComponents/texts'
@@ -29,21 +29,26 @@ export const Input = () => {
 
   const onRemoveClick = () => {
     dispatch(todos.actions.removeAll())
+    dispatch(
+      todos.actions.showList()
+    )
   }
 
   return (
     <FormContainer>
-      <Form onSubmit={handleOnSubmit}>
+      <Form onSubmit={handleOnSubmit} >
         <Label> ADD TO-DO
           <Wrapper>
             <InputField
             type='text'
             onChange={event => setInputValue(event.target.value)}
             value={inputValue}
+            placeholder="Walk the dog"
             />
             <AddButton
               type='submit'
               value='add todo'
+              disabled={inputValue.length < 1}
             >
             +
             </AddButton>

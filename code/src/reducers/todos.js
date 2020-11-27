@@ -30,8 +30,8 @@ export const todos = createSlice({
         matchingId.done = done
       }
     },
-    removeAll: () => {
-      return initialState
+    removeAll: (state) => {
+      state = initialState
     },
     showList: (state) => {
       state.showList = true

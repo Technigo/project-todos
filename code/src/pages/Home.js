@@ -20,7 +20,8 @@ export const Home = () => {
         <DateInfo />
         <Summary />
       </TopContainer>
-      <List />
+      {!showList && <EmptyList />}
+      {showList && <List />}
       <Input />
     </MainContainer>
   )

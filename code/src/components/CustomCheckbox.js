@@ -5,7 +5,7 @@ import {
   CheckboxContainer, 
   HiddenCheckBox, 
   Icon 
-} from 'styledComponents/formElements';
+} from 'styledComponents/form';
 
 export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   const [checked, setChecked] = useState(isChecked) 
@@ -14,6 +14,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     onChangeHandler()
     setChecked(event.target.checked)
   }
+
   /*creates the checkbox component below*/
   const Checkbox = ({className, checked, ...props}) => (
     <CheckboxContainer>

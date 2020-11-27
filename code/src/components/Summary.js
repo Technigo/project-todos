@@ -10,7 +10,7 @@ export const Summary = () => {
 
   return (
     <div>
-      <Text>{numOfCompleted}/{list.todoItems.length} completed</Text>
+      <Text>{numOfCompleted}/{list.todoItems.length} done</Text>
     </div>
   )
 }

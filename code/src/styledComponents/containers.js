@@ -54,3 +54,9 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
 `
+export const EmptyListContainer = styled(TodoContainer)`
+  border: 5px black solid;
+  font-weight: bold;
+  justify-content: center;
+  margin: 20px auto 20px;
+`
