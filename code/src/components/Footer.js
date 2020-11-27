@@ -5,7 +5,7 @@ import { tasks } from 'reducers/tasks'
 
 import styled from 'styled-components'
 
-const Container = styled.div`
+const Container = styled.footer`
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
@@ -14,6 +14,10 @@ const Container = styled.div`
 const TotalTasks = styled.p`
   font-size: 16px;
   margin: 10px 10px 10px 0px;
+
+  @media (max-width: 280px) {
+    font-size: 14px;
+  }
 `
 
 const ClearButton = styled.button`
@@ -34,6 +38,10 @@ const ClearButton = styled.button`
 
   &:focus {
     outline: 2px solid #9576A5;
+  }
+
+  @media (max-width: 280px) {
+    font-size: 14px;
   }
 `
 

@@ -30,6 +30,11 @@ const TaskContainer = styled.label`
   ${Checkbox}:checked & {
     opacity: 0.4;
   }
+
+  @media (max-width: 280px) {
+    font-size: 14px;
+    padding: 8px;
+  }
 `
 
 const RemoveButton = styled.button`

@@ -29,10 +29,13 @@ const TextField = styled.input`
   &:focus {
     outline: 2px solid #9576A5;
   }
-`
 
+  @media (max-width: 280px) {
+    font-size: 14px;
+  }
+`
 const CategoryField = styled.select`
-  display: none; 
+  display: none; //categories are not used at the moment
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #000000;
