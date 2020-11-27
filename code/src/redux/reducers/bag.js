@@ -30,9 +30,9 @@ export const bag = createSlice({
       }
     },
     showTheBag: (state, action) => {
-      state.items = state.items.filter((item) => item === action.payload)
+      
+     
     }
-    
     //removeAll: (state) => {
       //state.items = []
    //}

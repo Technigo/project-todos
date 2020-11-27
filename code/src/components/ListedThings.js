@@ -27,6 +27,8 @@ export const ListedThings = () => {
         <HandleThings key={item.id} item={item}/>
       ))}
     </ul>
+    <h5>Things in the bag {items.length}</h5>
+    
     </>
   )
 }
