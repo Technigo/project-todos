@@ -25,7 +25,7 @@ const Container = styled.ul`
   @media (min-width: 667px){
     width: 350px;
   }
-`;
+`; 
 
 const Header = styled.h1`
   font-size: 32px;
