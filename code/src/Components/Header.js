@@ -6,9 +6,9 @@ import { TaskSummary } from "./TaskSummary"
 export const Header = () => {
   return (
     <section className="header-container">
-      <h1 tabindex="0">To-do Today</h1>
+      <h1 tabIndex="0">To-do Today</h1>
       <div className="header-details">
-        <span className="header-date" tabindex="0">{moment().format("dddd Do MMM")}</span>
+        <span className="header-date" tabIndex="0">{moment().format("dddd Do MMM")}</span>
         <TaskSummary></TaskSummary>
       </div>
     </section>

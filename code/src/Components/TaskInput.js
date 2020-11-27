@@ -10,11 +10,11 @@ export const TaskInput = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    dispatch(todo.actions.addItem({input}))
+    dispatch(todo.actions.addItem(input))
 
     setInput("")
   };
-
+  
   return (
     <form onSubmit={handleSubmit}>
       <label className="task-input">
@@ -27,7 +27,7 @@ export const TaskInput = () => {
         />
       </label>
       <button className="task-add-button" type="submit" onClick={handleSubmit}>
-        <span className="button-icon" role="button" aria-label="remove" tabindex="0">
+        <span className="button-icon" role="button" aria-label="remove" tabIndex="0">
           +
         </span>
       </button>
