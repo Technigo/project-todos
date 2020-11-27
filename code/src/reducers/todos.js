@@ -5,9 +5,9 @@ export const todos = createSlice({
   name: 'todos',
   initialState: {
     tasks: [
-      {id: 1, text: 'bake bread', done: false, created: moment(new Date()).format()},
-      {id: 2, text: 'put up christmas decoration', done: false, created: moment(new Date()).format()},
-      {id: 3, text: 'call mum', done: true, created: moment(new Date()).format()}
+      {id: 1, text: 'enjoy life', done: false, created: moment(new Date()).format()},
+      {id: 2, text: 'spread love', done: false, created: moment(new Date()).format()},
+      {id: 3, text: 'relax', done: false, created: moment(new Date()).format()}
     ]
   }, 
   reducers: {
