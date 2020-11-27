@@ -2,8 +2,6 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import { todos } from "../reducers/todos";
-
 export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
@@ -28,6 +26,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     <div>
       <label>
         <Checkbox checked={checked} onChange={handleOnChange}></Checkbox>
+        {/* {label} */}
       </label>
     </div>
   );
@@ -36,7 +35,7 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
 const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
   border: 0;
   clip: rect(0 0 0 0);
-  clippath: inset(50%);
+  clip-path: inset(50%);
   height: 1px;
   margin: -1px;
   overflow: hidden;

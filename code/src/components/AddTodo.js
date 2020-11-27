@@ -9,7 +9,7 @@ export const AddTodo = () => {
   const dispatch = useDispatch();
 
   const onItemAdd = () => {
-    dispatch(todos.actions.AddTodoItem(input));
+    dispatch(todos.actions.addTodoItem(input));
     setInput("");
   };
 
@@ -74,27 +74,3 @@ const TextInput = styled.input`
     height: 38px;
   }
 `;
-
-/*
-  const dispatch = useDispatch();
-  const [input, setInput] = useState("");
-
-  const handleSubmit = event => {
-    event.preventDefault();
-    //if (tt.lenght >= 0) {
-    dispatch(todos.actions.addItem({ input }));
-    setInput("");
-  };
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Create task:
-        <input type="text" value={input} onChange={setInput()} />
-      </label>
-      <button type="submit">Add New Task</button>
-    </form>
-  );
-};
-
-*/

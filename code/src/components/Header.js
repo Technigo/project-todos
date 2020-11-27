@@ -25,10 +25,6 @@ export const Header = () => {
 
   const filteredisComplete = items.filter(item => item.isComplete).length;
 
-  //const todaysDate = useSelector(store => store.todos.todaysDate);
-  const incompleteTasks = items.filter(item => item.isComplete === true).length;
-  //var today = new Date();
-  console.log("incompleteTasks" + incompleteTasks);
   return (
     <HeaderContainer>
       <TextWrapper>
@@ -78,10 +74,6 @@ const HeaderContainer = styled.header`
 const Title = styled.h1`
   font-size: 26px;
   color: #010101;
-
-  @media (min-width: 1024px) {
-    font-size: 28px;
-  }
 `;
 
 const CompleteButton = styled.button`
@@ -104,14 +96,15 @@ const CompleteButton = styled.button`
   }
 
   @media (min-width: 1024px) {
-    width: 60%;
+    width: 150px;
     height: 50px;
   }
 `;
 
-const DateText = styled.span`
+const DateText = styled.h2`
   color: #474747;
   font-weight: 600;
+  margin: 0;
 
   @media (min-width: 1024px) {
     font-size: 20px;
@@ -124,7 +117,7 @@ const HeadingParagraph = styled.p`
   margin: 5px 0;
 
   @media (min-width: 1024px) {
-    font-size: 20px;
+    font-size: 17px;
   }
 `;
 
@@ -135,6 +128,7 @@ const TextWrapper = styled.div`
 
   @media (min-width: 1024px) {
     width: 50%;
+    padding: 0 0 0 10px;
   }
 `;
 

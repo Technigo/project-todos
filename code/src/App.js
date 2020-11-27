@@ -7,7 +7,6 @@ import { todos } from "./reducers/todos";
 import { Header } from "./components/Header";
 import { TodoList } from "./components/TodoList";
 import { Footer } from "./components/Footer";
-import { CustomCheckbox } from "./components/CustomCheckbox";
 
 const reducer = combineReducers({ todos: todos.reducer });
 const store = configureStore({ reducer });

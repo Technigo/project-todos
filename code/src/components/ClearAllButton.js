@@ -39,7 +39,7 @@ const ClearButton = styled.button`
   }
 
   @media (min-width: 1024px) {
-    width: 60%;
+    width: 150px;
     height: 50px;
   }
 `;

@@ -15,30 +15,23 @@ export const TodoItem = ({ item }) => {
   };
 
   return (
-    <>
-      <ItemContainer>
-        <label htmlFor="is-task-complete"></label>
-        {/*} <input
+    <ItemContainer>
+      <CustomCheckbox
         id="is-task-complete"
-        type="checkbox"
-        checked={item.isComplete}
-        onChange={() => handleCheckboxClick(item.isComplete)}
-  /> */}
-        <CustomCheckbox
-          isChecked={item.isComplete}
-          onChangeHandler={() => handleCheckboxClick(item.isComplete)}
-        />
-        <TodoText>{item.text} </TodoText>
-        <Span>{item.isComplete ? "Completed" : "To-Do"}</Span>
-        <DateStamp>
-          Created: {moment(item.createdDate).format("ddd Do MMM")}
-        </DateStamp>
-      </ItemContainer>
-    </>
+        isChecked={item.isComplete}
+        onChangeHandler={() => handleCheckboxClick(item.isComplete)}
+        label={item.text}
+      />
+      <TodoText>{item.text} </TodoText>
+      <Span>{item.isComplete ? "Completed" : "To-Do"}</Span>
+      <DateStamp>
+        Created: {moment(item.createdDate).format("ddd Do MMM")}
+      </DateStamp>
+    </ItemContainer>
   );
 };
 
-const ItemContainer = styled.article`
+const ItemContainer = styled.div`
   width: 100%;
   display: flex;
   align-items: center;
