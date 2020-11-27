@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 
+import { v4 as uuidv4 } from 'uuid'; 
 import { todo } from "../Reducers/todo"
 
 export const TaskInput = () => {
@@ -10,7 +11,7 @@ export const TaskInput = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    dispatch(todo.actions.addItem(input))
+    dispatch(todo.actions.addItem({input, id: uuidv4()}))
 
     setInput("")
   };
