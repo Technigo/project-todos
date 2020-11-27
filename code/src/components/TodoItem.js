@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector, useDispatch } from "react-redux";
 
 import { todos } from '../reducers/todos';
 import { CustomCheckbox } from './CustomCheckbox';
@@ -7,7 +6,6 @@ import { DeleteContainer, DeleteButton } from '../styledComponents/styled_compon
 import  bin  from '../assets/bin.png';
 
 export const TodoItem = ({ item }) => {
-  //const item = useSelector((store) => store.todos.list.items[item]);
   const dispatch = useDispatch();
 
   // Create the onRemoveClicked handler and dispatch action.
