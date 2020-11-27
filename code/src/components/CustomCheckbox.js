@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import todos from 'reducers/todos';
-
-const CustomCheckBox = ({isChecked, onChangeHandler}) => {
+const CustomCheckBox = ({ isChecked, onChangeHandler }) => {
     const [checked, setChecked] = useState(isChecked);
 
-    const handleOnChange = e => {  //onChangeChecked
+    const OnChangeChecked = e => {  
         onChangeHandler();
         setChecked(e.target.checked);
     }
@@ -48,8 +46,6 @@ const CustomCheckBox = ({isChecked, onChangeHandler}) => {
         vertical-align: middle;
     `;
 
-    
-
     const Checkbox = ({ className, checked, ...props }) => (
         <CheckBoxContainer>
             <HiddenCheckBox checked={checked} {...props}></HiddenCheckBox>
@@ -61,12 +57,10 @@ const CustomCheckBox = ({isChecked, onChangeHandler}) => {
         </CheckBoxContainer>
     );
         
-
-
     return (
         <div>
             <label>
-                <Checkbox checked={checked} onChange={handleOnChange}>
+                <Checkbox checked={checked} onChange={OnChangeChecked}>
 
                 </Checkbox>
             </label>

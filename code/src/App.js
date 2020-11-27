@@ -11,6 +11,10 @@ import Header from './components/Header';
 const reducer = combineReducers({ todos: todos.reducer });
 const store = configureStore({ reducer });
 
+const Main = styled.main`
+  background-color: blue;
+`
+
 const HeaderContainer = styled.nav`
   display: flex;
   justify-content: center;
@@ -20,10 +24,12 @@ export const App = () => {
 
   return (
     <Provider store={store}>
-      <HeaderContainer>
-        <Header />
-      </HeaderContainer>
-      <TodoList />
+      <Main>
+        <HeaderContainer>
+          <Header />
+        </HeaderContainer>
+        <TodoList />
+      </Main>
     </Provider>
   );
 };

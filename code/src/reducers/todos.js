@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import Moment from 'moment';
 import uniqid from 'uniqid';
 
 const todos = createSlice({
@@ -8,24 +7,22 @@ const todos = createSlice({
         items: [
             {
                 id: uniqid(),
-                text:'The first todo',
+                text:'Submit project',
                 isComplete: false,
-                // timeStamp: Moment(createdAt).fromNow()
             },
             {
                 id: uniqid(),
-                text:'The second todo',
+                text:'Clean the house',
                 isComplete: false,
-                // timeStamp: Moment(createdAt).fromNow()
             },
             {
                 id: uniqid(),
-                text:'The third todo',
+                text:'Do the dishes',
                 isComplete: false,
-                //timeStamp: Moment(createdAt).fromNow()
             } 
         ],
     },
+    //The actions match the names of the reducers
     reducers: {
         removeItem: (state, action) => {
             console.log(state, action);
@@ -35,10 +32,11 @@ const todos = createSlice({
 
         },
         changeItem: (state, action) => {
-            console.log(state.action);
+            console.log(action.payload);
             state.items = state.items.map((item => {
                 if (item.id === action.payload.id) {
-                    item.checked = !item.checked
+                    console.log(item);
+                    item.isComplete = !item.isComplete;
                 } return item;
             }));
         },
@@ -55,11 +53,11 @@ const todos = createSlice({
                     }
                 }
             }
-        }
+        },
+        removeAll: (state) => {
+            state.items = []
+        },
     }
-        // addTodo: (state, action) => {
-        //     const { itemInfo } =action.payload;
-        //     state.items.push(itemInfo);
 }); 
 
 export default todos;

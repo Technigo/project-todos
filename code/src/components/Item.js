@@ -8,17 +8,21 @@ import CustomCheckBox from 'components/CustomCheckbox';
 
 const ItemList = styled.li`
     font-size: 25px;
-    color: gray;
+    color: black;
     background-color: pink;
     align-self: flex-start;
     padding: 10px;
     width: 75%;
     margin: 5px;
+    display: flex;
+    justify-content: space-between;
 `;
 
 const RemoveItemButton = styled.button`
-    color: gray;
     margin: 5px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 `;
 
 const Item = ({ id, item, isComplete }) => {
@@ -26,7 +30,8 @@ const Item = ({ id, item, isComplete }) => {
     const dispatch = useDispatch();
 
     const onCheckBoxClick = () => {  
-        dispatch(todos.actions.changeItem(id))
+        dispatch(todos.actions.changeItem({id}))
+        console.log(isComplete.toString);
     }
 
     const onItemDelete = () => {
@@ -34,12 +39,12 @@ const Item = ({ id, item, isComplete }) => {
     }
 
     return (
-        <ItemList>{item}
+        <ItemList>
+             <CustomCheckBox isChecked={isComplete} onChangeHandler={onCheckBoxClick}/>
+             {item}
              <RemoveItemButton onClick={onItemDelete}>
-                    🗑
+                   <span>🗑</span> 
             </RemoveItemButton>
-            <CustomCheckBox isChecked={isComplete} onChangeHandler={onCheckBoxClick}/>
-               
         </ItemList>
     )
 };
