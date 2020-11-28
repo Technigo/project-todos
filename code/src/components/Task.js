@@ -3,7 +3,7 @@ import {useDispatch} from 'react-redux'
 import moment from 'moment'
 
 import {tasks} from '../reducers/tasks'
-import {TaskContainer, RemoveButton, TaskTitle, Todo, TimeStamp} from './StyledComponents'
+import {TaskContainer, RemoveButton, TaskTitle, Todo, TimeStamp, DueDate} from './StyledComponents'
 import {Checkbox, CustomCheckbox} from './CheckboxStyling'
 
 
@@ -22,6 +22,7 @@ export const Task = ({text, complete, task}) => {
                 <CustomCheckbox checked={complete}></CustomCheckbox>
                 <TaskTitle checked={complete}>{text}</TaskTitle>
                 <TimeStamp>{moment(task.date).format("MMM Do")}</TimeStamp>
+                <DueDate>{task.due ? `Due ${moment(task.due).fromNow()}` : ' '}</DueDate>
             </Todo>
             <RemoveButton onClick={()=>dispatch(tasks.actions.removeThisTask(task))}>X</RemoveButton>
             

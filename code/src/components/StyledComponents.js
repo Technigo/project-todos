@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const HeaderContainer = styled.section`
 display: flex;
+flex-direction:column;
+justify-content: space-between;
 box-sizing: border-box;
 margin: 0;
 padding: 20px;
@@ -11,11 +13,34 @@ background-color: #7F2AEC;
 color: white;
 border-bottom-right-radius: 20px;
 border-bottom-left-radius: 20px;
+font-family: 'Poppins', sans-serif;
+
 `
 export const HeaderTitle = styled.h1`
 margin: 0 10px;
-text-transform: capitalize;
-font-size: 40px;
+font-size: 20px;
+font-weight: 400;
+`
+
+export const CategoryTitle = styled.h1`
+margin: 0 10px;
+font-size: 30px;
+font-weight: 700;
+`
+
+export const FilterButton = styled.button`
+width: auto;
+height: auto;
+border: none;
+background-color: #EFEDFF;
+font-family: 'Poppins', sans-serif;
+font-size: 14px;
+font-weight: 600;
+color: #7F2AEC;
+border-radius: 15px;
+cursor: pointer;
+margin: 0 10px;
+padding: 3px 9px;
 `
 
 export const TasksContainer = styled.section`
@@ -25,7 +50,7 @@ box-sizing: border-box;
 padding: 20px;
 width: 100%;
 height: auto;
-
+font-family: 'Poppins', sans-serif;
 `
 
 export const TaskContainer = styled.div`
@@ -81,6 +106,15 @@ font-size: 10px;
 text-align: right;
 ` 
 
+export const DueDate = styled.p`
+position: absolute;
+top: 0;
+right: 10px;
+color: #D1C4F6;
+font-size: 10px;
+text-align: right;
+` 
+
 export const SubmitButton = styled.button`
 border-radius:50%;
 width: 35px;
@@ -126,9 +160,10 @@ margin: 10px 0;
 
 export const ClearButton = styled.button`
 width: 90px;
-height: 20px;
+height: auto;
 border: none;
 background-color: #7F2AEC;
+font-family: 'Poppins', sans-serif;
 color: white;
 font-size: 14px;
 border-radius: 10px;

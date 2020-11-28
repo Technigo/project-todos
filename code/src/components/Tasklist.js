@@ -8,10 +8,11 @@ import {tasks} from '../reducers/tasks'
 import {TasksContainer, ClearButton, TopInfo, AddTaskButton} from './StyledComponents'
 
 
-const Tasklist = () => {
-    const Listedtasks = useSelector(store => store.tasks.items)
+const Tasklist = ({completed, uncompleted, all}) => {
+    const listedtasks = useSelector(store => store.tasks.items)
     const dispatch = useDispatch()
-    const completedTasks = Listedtasks.filter(task => task.complete === true)
+    const completedTasks = listedtasks.filter(task => task.complete === true)
+    const uncompletedTasks = listedtasks.filter(task => task.complete === false)
     const [addTask, setAddTask] = useState(false)
     
     const showInput = () => {
@@ -21,19 +22,29 @@ const Tasklist = () => {
     return(
         <TasksContainer>
             <TopInfo>
-            Completed: {completedTasks.length}/{Listedtasks.length}
+            Completed: {completedTasks.length}/{listedtasks.length}
                 
             <ClearButton onClick={()=>dispatch(tasks.actions.clearTasks())}>
                 Clear All
             </ClearButton>
             </TopInfo>
             <NewTask addTask={addTask} setAddTask={setAddTask}/>
-            {Listedtasks.map(task => {
+
+            {all && listedtasks.map(task => {
                 return (
-                    <div key={task.id}>
-                        <Task text={task.text}  complete={task.complete} task={task}/>
-                        {console.log(task.text)}
-                    </div>
+                        <Task text={task.text} key={task.id} complete={task.complete} task={task}/>
+                    )
+            })}
+
+            {completed && completedTasks.map(task => {
+                return (
+                        <Task text={task.text} key={task.id} complete={task.complete} task={task}/>
+                    )
+            })}
+
+            {uncompleted && uncompletedTasks.map(task => {
+                return (
+                        <Task text={task.text} key={task.id} complete={task.complete} task={task}/>
                     )
             })}
 
