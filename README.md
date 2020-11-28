@@ -16,7 +16,7 @@ The requirements for the todo app are:
 6. Implemented the clear all todos button by creating a reducer that takes the current global state and replaces it with an empty array. Also implemented an empty state design which the user see's when the clear all button is clicked and there are no tasks.
 7. Added the time stamp for each todo by using the moment.js Library. 
 8. I also decided to use styled components and started out by writing them in each of the components they related to. Then once I was finised with the styling I created a file for each of the styled components which I import into their specific component file. 
-
+9. Implemented using local storage in the browser so whatever the initial state is it'll be retrieved from there rather than the global store. Thus enables the user to still see todo's added when the page is reloaded.
 
 ## View it live
 Check out my todo list here https://epic-blackwell-4f00c6.netlify.app/ 
