@@ -1,13 +1,19 @@
-# Project Todos
+# Project Todos✏️📋
 
-Replace this readme with your own information about your project.
+This week's project was to build a To-do app using the Redux Toolkit!
+By creating a Store for this project, I was able to manipulate the state, in order to add, remove and clear all tasks. Doing this from scratch was pretty cool.😎
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Code
 
-## The problem
+After creating my Store, I went ahead and created different components for each individual section of my To-do app. 
+Since the components were plenty, I kept all of my styled-components in respective files but one (Checkbox), since it seemed more manigable due to the app size I was working with. I ended up with a manigable amount of code per component. I was pretty happy to have decided to transition from CSS to using Styled-components. Felt like an accomplishment!
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+For this project, I have used:
+
+🧩 React
+🧠 Redux
+💅 Styled components
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+
