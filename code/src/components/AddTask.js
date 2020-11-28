@@ -23,7 +23,7 @@ const TextField = styled.input`
   border-bottom: 1px solid #dddddd;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 300;
-  font-size: 18px;
+  font-size: 16px;
   width: 100%;
 
   &:focus {
@@ -33,9 +33,13 @@ const TextField = styled.input`
   @media (max-width: 280px) {
     font-size: 14px;
   }
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
 `
 const CategoryField = styled.select`
-  display: none; //categories are not used at the moment
+  display: none; //display: none because categories are not used at the moment
   background-color: transparent;
   border: none;
   border-bottom: 1px solid #000000;
@@ -109,7 +113,7 @@ export const AddTask = () => {
         placeholder="add new task.."
         onChange={event => setNewTask(event.target.value)}
       />
-      <CategoryField // CATEGORIES ARE NOT USED AT THE MOMENT. 
+      <CategoryField // CATEGORIES ARE NOT USED AT THE MOMENT - display: none in css
         value={category}
         onChange={event => setCategory(event.target.value)}
       >

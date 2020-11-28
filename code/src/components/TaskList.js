@@ -9,7 +9,6 @@ import { AddTask } from './AddTask'
 import { Footer } from './Footer'
 import { NoTasks } from './NoTasks'
 
-// STYLING
 const Section = styled.section`
   display: flex;
   flex-direction: column;
@@ -39,7 +38,6 @@ const TasksContainer = styled.div`
   justify-content: center;
   width: 100%;
 `
-// END OF STYLING
 
 export const TaskList = () => {
 

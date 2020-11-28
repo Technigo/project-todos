@@ -14,7 +14,7 @@ const Container = styled.header`
   }
 `
 const Title = styled.h1`
-  font-size: 26px;
+  font-size: 24px;
   margin: 0;
   color: #5b3f5e;
   text-transform: uppercase;

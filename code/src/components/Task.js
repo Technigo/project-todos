@@ -3,11 +3,9 @@ import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks' 
 
 import moment from 'moment'
-
 import styled from 'styled-components'
 
 import Logo from './assets/delete.svg'
-
 import { CustomCheckbox } from './CustomCheckbox'
 
 const TaskContainer = styled.div`
@@ -33,9 +31,14 @@ const TextContainer = styled.div`
 
 const TaskName = styled.label`
   word-break: break-word;
+  font-size: 16px;
 
   @media (max-width: 280px) {
     font-size: 14px;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 18px;
   }
 `
 const Date = styled.p`
