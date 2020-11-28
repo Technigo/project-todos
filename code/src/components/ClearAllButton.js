@@ -2,9 +2,9 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Tasks } from '../reducer/Tasks';
-import { RemoveTasksButton } from '../styled-components/RemoveButton';
+import { ClearTasksButton } from '../styled-components/ClearButton';
 
-export const RemoveAllButton = () => {
+export const ClearAllButton = () => {
 
     const dispatch = useDispatch();
 
@@ -14,9 +14,9 @@ export const RemoveAllButton = () => {
 
     return (
         <>
-            <RemoveTasksButton onClick={onClearAllTasks}>
-                Remove all                  
-            </RemoveTasksButton>
+            <ClearTasksButton onClick={onClearAllTasks}>
+                Clear all                  
+            </ClearTasksButton>
         </>
     );
 };

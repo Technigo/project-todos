@@ -27,9 +27,9 @@ export const TaskInput = () => {
                         name="task"
                         value={newTask}
                         onChange={event => setNewTask(event.target.value)}
-                        placeholder="Add task"
+                        placeholder="Add todo"
                     />
-                    <ButtonInput onClick={onAddItem} type="submit" value="+" disabled={newTask.length < 1}></ButtonInput>
+                    <ButtonInput onClick={onAddItem} type="submit" disabled={newTask.length < 1}>+</ButtonInput>
                 </InputContainer>
         </FormContainer>
     );

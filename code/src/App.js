@@ -25,7 +25,7 @@ export const App = () => {
       <MainArea tabIndex="0">
         <TaskHeader />
         <TaskInput />
-        <TaskList />
+        <TaskList />        
       </MainArea>
     </Provider>
   );

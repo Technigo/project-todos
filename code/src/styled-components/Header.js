@@ -16,7 +16,8 @@ export const ToDo = styled.h1`
     font-weight: 500;
     margin: 10px 0px;
     color: rgb(36, 90, 92);    
-    border-bottom: 2px solid rgb(36, 90, 92);
+    border: 2px solid rgb(249, 207, 185);
+    padding: 10px;
 `;
 
 export const DateCompletedContainer = styled.div`
@@ -31,4 +32,6 @@ export const TodaysDate = styled.p`
     padding: 5px;
     margin: 0;
     color: rgb(36, 90, 92);
+    font-weight: 600;
+    text-decoration: underline;
 `;

@@ -7,13 +7,16 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
-   sodipodi:docname="checkbox-icon.svg"
-   id="svg849"
-   version="1.1"
-   width="24"
+   inkscape:export-ydpi="1400"
+   inkscape:export-xdpi="1400"
+   inkscape:export-filename="C:\Users\Claire\bitmap.png"
+   height="24"
    viewBox="0 0 24 24"
-   height="24">
+   width="24"
+   version="1.1"
+   id="svg849"
+   sodipodi:docname="checkbox-icon.svg"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
   <metadata
      id="metadata855">
     <rdf:RDF>
@@ -22,38 +25,45 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
   <defs
      id="defs853" />
   <sodipodi:namedview
-     inkscape:current-layer="svg849"
-     inkscape:window-maximized="1"
-     inkscape:window-y="-9"
-     inkscape:window-x="-9"
-     inkscape:cy="12"
-     inkscape:cx="12"
-     inkscape:zoom="7.7472117"
-     showgrid="false"
-     id="namedview851"
-     inkscape:window-height="1001"
-     inkscape:window-width="1920"
-     inkscape:pageshadow="2"
-     inkscape:pageopacity="0"
-     guidetolerance="10"
-     gridtolerance="10"
-     objecttolerance="10"
-     borderopacity="1"
+     inkscape:document-rotation="0"
+     pagecolor="#ffffff"
      bordercolor="#666666"
-     pagecolor="#ffffff" />
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview851"
+     showgrid="false"
+     inkscape:zoom="7.4635385"
+     inkscape:cx="12"
+     inkscape:cy="12"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg849" />
   <path
-     id="path845"
+     inkscape:export-ydpi="1400"
+     inkscape:export-xdpi="1400"
+     inkscape:export-filename="C:\Users\Claire\Desktop\15. Week 15\project-todos\code\src\images\checkbox-icon.png"
+     d="M0 0h24v24H0z"
      fill="none"
-     d="M0 0h24v24H0z" />
+     id="path845" />
   <path
-     style="fill:#ebbba4;fill-opacity:1"
+     inkscape:export-ydpi="1400"
+     inkscape:export-xdpi="1400"
+     inkscape:export-filename="C:\Users\Claire\Desktop\15. Week 15\project-todos\code\src\images\checkbox-icon.png"
+     d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
      id="path847"
-     d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+     style="fill:#ebbba4;fill-opacity:1" />
 </svg>

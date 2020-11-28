@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { TaskSummary } from './TaskSummary';
-import { RemoveAllButton } from './RemoveAllButton';
+import { ClearAllButton } from './ClearAllButton';
 import { Header, ToDo, TodaysDate, DateCompletedContainer } from '../styled-components/Header';
 
 export const TaskHeader = () => {
@@ -17,7 +17,7 @@ export const TaskHeader = () => {
                 <TodaysDate tabIndex="0">{todaysDateFormat}</TodaysDate>
                 <TaskSummary />
             </DateCompletedContainer>
-            <RemoveAllButton />
+            <ClearAllButton />
         </Header>
     );
 ;}

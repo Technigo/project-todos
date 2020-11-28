@@ -1,9 +1,19 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import moment from 'moment';
 
 import { Tasks } from '../reducer/Tasks';
 import { CustomCheckbox } from './CustomCheckbox';
-import { Article, TaskContainer, CheckboxTextContainer, TaskText, ButtonContainer, RemoveButton } from '../styled-components/Item';
+import { 
+    ListItem, 
+    TaskContainer,
+    CheckboxTextContainer, 
+    TaskText, 
+    ButtonContainer, 
+    ClearButton, 
+    TimeStampContainer, 
+    TimeText
+} from '../styled-components/Item';
 
 export const TaskItem = ({ item }) => {
     // The below useSelector directly get's the task based on the index number of the task from the array: items - will get the most recent task to replace the one that was shown before it. 
@@ -11,7 +21,7 @@ export const TaskItem = ({ item }) => {
     const dispatch = useDispatch();
 
     //Function to remove tasks using the task id
-    const onClickRemove = id => {
+    const onClickClear = id => {
         dispatch(Tasks.actions.removeTask(id));        
     };
 
@@ -25,17 +35,22 @@ export const TaskItem = ({ item }) => {
         );        
     };
 
+    let timeStamp = moment().format(" Do MMM YYYY");
+
     return (
-        <Article>
+        <ListItem>
             <TaskContainer>
                 <CheckboxTextContainer>
                     <CustomCheckbox isChecked={item.done} onChangeHandler={handleOnChange}/>            
                     <TaskText tabIndex="0" className={` ${item.done ? "done" : ""}`}>{item.text}</TaskText>
                 </CheckboxTextContainer>
-                <ButtonContainer>
-                    <RemoveButton onClick={() => onClickRemove(item.id)}>Remove</RemoveButton>
-                </ButtonContainer>
-            </TaskContainer>
-        </Article>
+                <TimeStampContainer>
+                    <TimeText>Created: {timeStamp}</TimeText>
+                </TimeStampContainer> 
+            </TaskContainer> 
+            <ButtonContainer>
+                <ClearButton onClick={() => onClickClear(item.id)}>Clear</ClearButton>
+            </ButtonContainer>         
+        </ListItem>
     );
 };

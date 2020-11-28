@@ -20,6 +20,7 @@ export const Input = styled.input`
     padding: 20px;
     font-size: 17px;
     background-color: rgb(252, 228, 215);
+    border-radius: 3px;
     &::-webkit-input-placeholder {
         color: rgb(36, 90, 92);
         font-weight: 400;
@@ -27,15 +28,19 @@ export const Input = styled.input`
     };
 `;
 
-export const ButtonInput = styled.input`
-    background-color: rgba(255, 255, 255);
-    margin-left: 20px;
-    border: 2px solid rgb(36, 90, 92);
+export const ButtonInput = styled.button`
+    width: 33px;
+    height: 33px;
     border-radius: 50%;
+    border: 2px solid rgb(36, 90, 92);
     font-size: 20px;
     color: rgb(36, 90, 92);
-    padding: 3px 10px;
-    cursor: pointer;
     font-family: 'Open Sans', sans-serif;
     font-weight: 600;
+    margin-left: 20px;
+    transition: all 150ms;
+    cursor: pointer;
+        &:hover {
+            background-color: rgba(255, 255, 255);
+        }
 `;
