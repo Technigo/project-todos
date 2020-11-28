@@ -11,7 +11,7 @@ const initialState = {
 
 export const todos = createSlice ({
   name: 'todos',
-  initialState,
+  initialState,  
   reducers: {
     removeItem: (store, action) => {
       console.log(store, action)

@@ -1,0 +1,19 @@
+.delete-button {
+  color: black;
+  background-color: #cccccc;
+  border-color: black;
+  border-width: 1px;
+  border-radius: 50px;
+  font-size: 12px;
+}
+
+.task-text {
+  font-size: 14px;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: blue;
+}
