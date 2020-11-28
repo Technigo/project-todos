@@ -19,24 +19,24 @@ const Tasks = styled.div`
   text-align: end;
 `;
 
-const Date = styled.div`
-  // font-size: 16px;
-`;
+// const Date = styled.div`
+//   // font-size: 16px;
+// `;
 
-const ClearButton = styled.button`
-  padding: 6px 12px;
-  justify-self: end;
-  width: fit-content;
-  color: ${(props) => props.color || 'inherit'};
-  background: ${(props) => props.background || 'none'};
-  border-radius: 6px;
-  border: none;
+// const ClearButton = styled.button`
+//   padding: 6px 12px;
+//   justify-self: end;
+//   width: fit-content;
+//   color: ${(props) => props.color || 'inherit'};
+//   background: ${(props) => props.background || 'none'};
+//   border-radius: 6px;
+//   border: none;
 
-  &:hover {
-  background: black;
-  color: white;
-  }
-`;
+//   &:hover {
+//   background: black;
+//   color: white;
+//   }
+// `;
 
 export const Header = () => {
   const items = useSelector((store) => store.tasks.items);
@@ -46,8 +46,8 @@ export const Header = () => {
     <HeaderContainer>
       <Title>Todo</Title>
       <Tasks>{numberOfItemsToDo.length}/{items.length} {numberOfItemsToDo.length < 2 ? 'task' : 'tasks'} left</Tasks>
-      <Date>Today</Date>
-      <ClearButton background='#6979f8' color='white'>CLEAR DONE</ClearButton>
+      {/* <Date>Today</Date>
+      <ClearButton background='#6979f8' color='white'>CLEAR DONE</ClearButton> */}
     </HeaderContainer>
   )
 } 
