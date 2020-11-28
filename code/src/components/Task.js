@@ -32,6 +32,7 @@ const DeleteButton = styled.button`
   margin: 0;
   padding: 5px;
   background: none;
+  color: ${props => props.completed ? "#dcd7e1" : ""};
   border: none;
   border-radius: 6px;
   height: 30px;
@@ -67,6 +68,7 @@ export const Task = ({ item }) => {
         type="button"
         background="none"
         onClick={handleRemoveButtonClick}
+        completed={item.completed}
       >
         <Trash />
       </DeleteButton>
