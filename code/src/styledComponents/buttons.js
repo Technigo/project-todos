@@ -6,7 +6,7 @@ export const AddButton = styled.button`
   border-radius: 50%;
   width: 40px;
   height: 40px;
-  font-size: 20px;
+  font-size: 30px;
   margin-left: 20px;
   display: flex;
   align-items: center;
@@ -18,6 +18,7 @@ export const DeleteButton = styled.button`
   width: 22px;
   height: 22px;
   display: flex;
+  justify-content: center;
   align-items: center;
   border-radius: 3px;
 `
