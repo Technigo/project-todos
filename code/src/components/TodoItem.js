@@ -1,10 +1,13 @@
 
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Button } from 'lib/Button';
 
-import { todos } from '../reducers/todos';
 import { Container } from 'lib/Container';
+import { Button } from 'lib/Button';
+import { CustomCheckbox } from './CustomCheckbox';
+import { todos } from '../reducers/todos';
+import styled from 'styled-components'
+
 
 export const TodoItem = ({ id, name, isCompleted }) => {
     const dispatch = useDispatch();
@@ -18,17 +21,13 @@ export const TodoItem = ({ id, name, isCompleted }) => {
     };
 
     return (
-    <Container>
-        <div>
-          <div>
+
+        <Container>
         <div>{name}</div>
-            <div onClick={onIsCompletedChange}>
-                {isCompleted ? "☑️" : "🔲 "}
-                <Button onClick={onTodoDelete}>Remove</Button>
-            </div>
-            </div>
-        </div>
+                 <CustomCheckbox checked={isCompleted}/>
+                <Button  onClick={onTodoDelete}>Remove</Button>
         </Container>
+    
     );
 }
 
@@ -37,3 +36,17 @@ export const TodoItem = ({ id, name, isCompleted }) => {
 
 
 
+// return (
+//     <Container>
+//         <div>
+//           <div>
+         
+//         <div>{name}</div>
+//             <div onClick={onIsCompletedChange}>
+//                 {isCompleted ? "☑️" : "🔲 "}
+//                 <Button onClick={onTodoDelete}>Remove</Button>
+//             </div>
+//             </div>
+//         </div>
+//         </Container>
+//     );

@@ -5,14 +5,14 @@ import uniqid from 'uniqid';
 
 const initialState = {
     items: [
-        {
-            name: "Yes, this task is done now!",
-            isCompleted: true
-          },
-          {
-            name: "No, this is task is not done",
-            isCompleted: false
-          }
+        // {
+        //     name: "Yes, this task is done now!",
+        //     isCompleted: true
+        //   },
+        //   {
+        //     name: "No, this is task is not done",
+        //     isCompleted: false
+        //   }
     ]
 }
 

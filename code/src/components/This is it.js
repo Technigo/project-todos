@@ -42,7 +42,6 @@ export const TodoInput = () => {
   }
 
   return (
-    <Container>
       <InputForm onSubmit={handleOnSubmit}>
         <label>
           <TextInput
@@ -53,6 +52,6 @@ export const TodoInput = () => {
         </label>
         <Button background='lightgray'>Add</Button>
       </InputForm>
-    </Container>
+   
   )
 }
