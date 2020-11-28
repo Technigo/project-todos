@@ -4,9 +4,10 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      {id: 1606460400000, text: 'meditate 10 minutes', complete: false, category: 'self-care'},
-      {id: 1606462200000, text: 'think about five positive things', complete: false, category: 'self-care'},
-      {id: 1606463100000, text: 'gift a free hug', complete: false, category: 'self-care'},
+      {id: 1606460400000, text: 'eat well and excercise', complete: false, category: 'self-care'},
+      {id: 1606547700000, text: 'spend time with friends and family', complete: false, category: 'self-care'},
+      {id: 1606548600000, text: 'express gratitude', complete: false, category: 'self-care'},
+      {id: 1606463100000, text: 'laugh', complete: false, category: 'self-care'}
     ]
   },
   reducers: {
