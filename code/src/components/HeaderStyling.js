@@ -50,6 +50,8 @@ font-size: 30px;
 font-weight: 700;
 `
 export const Buttons = styled.div`
+/* display: flex;
+justify-content: center; */
 ` 
 
 export const FilterButton = styled.button`
@@ -64,5 +66,5 @@ color: ${props => props.active ? "#fff" : "#D1C4F6"};
 border-radius: 15px;
 cursor: pointer;
 margin: 0 10px;
-padding: 3px 9px;
+/* padding: 3px 9px; */
 `

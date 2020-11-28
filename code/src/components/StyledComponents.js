@@ -155,7 +155,7 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 align-items: center;
-margin: 10px 0;
+margin-top: 10px;
 `
 
 export const ClearButton = styled.button`
@@ -178,5 +178,28 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 color: #D1C4F6;
+font-size: 14px;
+`
+
+export const DueButton = styled.button`
+width: auto;
+height: auto;
+border: none;
+background-color: #7F2AEC;
+font-family: 'Poppins', sans-serif;
+color: white;
+font-size: 14px;
+border-radius: 15px;
+cursor: pointer;
+padding: 5px 10px;
+margin: 10px 0;
+`
+
+export const DueDateContainer = styled.div`
+display: flex;
+align-items: center;
+justify-content: space-between;
+width: 85%;
+color: red;
 font-size: 14px;
 `

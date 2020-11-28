@@ -2,9 +2,10 @@ import React, {useState} from 'react'
 import {useDispatch} from 'react-redux'
 import DatePicker from 'react-datepicker'
 import "react-datepicker/dist/react-datepicker.css";
+import moment from 'moment'
 
 import {tasks} from '../reducers/tasks'
-import {SubmitButton, Input, Form} from './StyledComponents'
+import {SubmitButton, Input, Form, DueButton, DueDateContainer} from './StyledComponents'
 
 export const NewTask = ({addTask}) => {
     const dispatch = useDispatch()
@@ -17,15 +18,19 @@ export const NewTask = ({addTask}) => {
         event.preventDefault()
         dispatch(tasks.actions.addTask({newTask, startDate}))
         setNewTask('')
+        setStartDate(null)
     }
 
-    const pickTime = () => {
-        setShowDatePicker(true)
-    }
+    const ExampleCustomInput = ({ value, onClick }) => (
+            <DueButton onClick={onClick}>
+              Add due date
+            </DueButton>
+    )
     
     return(
         <>
         {addTask &&
+        <>
         <Form>
             <Input
             type='text'
@@ -36,12 +41,20 @@ export const NewTask = ({addTask}) => {
             />
 
             <SubmitButton type='submit' onClick={onSubmit}>+</SubmitButton>
-            <SubmitButton type='button' onClick={pickTime}>D</SubmitButton>
+            
             
         </Form>
+        <DueDateContainer>
+        <DatePicker 
+            selected={startDate} 
+            onChange={date => setStartDate(date)} 
+            customInput={<ExampleCustomInput />} 
+        />
+        <span>{startDate ? `Due ${moment(startDate).format('MMM Do YYYY')}` : ' '}</span>
+        </DueDateContainer>
+        </>
         }
-        {showDatePicker &&
-            <DatePicker selected={startDate} onChange={date => setStartDate(date)} />}
+
         </>
     )
 }
