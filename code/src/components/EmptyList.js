@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 import { Text } from '../styledComponents/texts'
 import { EmptyListContainer } from '../styledComponents/containers'

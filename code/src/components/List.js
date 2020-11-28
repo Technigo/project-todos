@@ -8,18 +8,17 @@ import { EmptyList } from './EmptyList.js'
 export const List = () => {
   const todoItems = useSelector((store) => store.todos.list.todoItems)
 
-  
   if (todoItems.length < 1) {
     return (
       <EmptyList />
     )
   } else {
-  return (
+    return (
       <ListContainer>
         {todoItems.map((item) => (
           <Item key={item.id} item={item}/>
         ))}
       </ListContainer>
-  )
+    )
   }
 }

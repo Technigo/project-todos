@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 
 import { Title } from '../styledComponents/texts'
 import { HeaderSection } from '../styledComponents/containers'

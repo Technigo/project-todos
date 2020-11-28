@@ -7,7 +7,7 @@ import { Home } from './pages/Home'
 
 const reducer = combineReducers({ todos: todos.reducer })
 
-//Retrieve the local storage and use it as our inital state
+//Retrieve the local storage and use it as the inital state
 const persistedStateJSON = localStorage.getItem('reduxState')
 let persistedState = {}
 
@@ -25,6 +25,7 @@ const store = createStore(
 store.subscribe(() => {
   localStorage.setItem('reduxState', JSON.stringify(store.getState()))
 })
+
 export const App = () => {
   return (
     <Provider store={store}>

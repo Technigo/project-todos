@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import { useDispatch } from 'react-redux'
 
 import { todos } from 'reducers/todos'
@@ -30,7 +30,9 @@ export const Item = ({ item }) => {
         isChecked={item.done ? 'checked' : ''}
       />
       <TodoItem>{item.description}</TodoItem>
-      <DeleteButton onClick={onRemoveClicked}>X</DeleteButton>
+      <DeleteButton onClick={onRemoveClicked}>
+        X
+      </DeleteButton>
     </TodoContainer>
   )
 }

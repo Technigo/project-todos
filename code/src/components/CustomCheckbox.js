@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 import { 
   StyledCheckbox,
   CheckboxContainer, 
   HiddenCheckBox, 
   Icon 
-} from 'styledComponents/form';
+} from 'styledComponents/checkbox'
 
 export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   const [checked, setChecked] = useState(isChecked) 
