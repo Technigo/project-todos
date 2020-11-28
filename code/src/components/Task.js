@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+
 import { tasks } from 'reducers/tasks' 
 
 import moment from 'moment'
@@ -7,6 +8,42 @@ import styled from 'styled-components'
 
 import Logo from './assets/delete.svg'
 import { CustomCheckbox } from './CustomCheckbox'
+
+export const Task = ({task}) => {
+
+  const dispatch = useDispatch()
+
+  const handleCheckboxClick = () => {
+    dispatch(tasks.actions.toggleTaskCompleted(task.id))
+  }
+
+  const handleRemoveButton = () => {
+    dispatch(tasks.actions.removeItem(task.id))
+  }
+
+  return (
+    <TaskContainer checked={task.complete}>
+      <CustomCheckbox 
+        isChecked={task.complete} 
+        onChangeHandler={handleCheckboxClick}
+      />
+      <TextContainer>
+        <TaskName>
+          {task.text}
+        </TaskName>
+        <Date>
+        created at {moment(task.id).format('LT')}
+      </Date>
+      </TextContainer>
+        <RemoveButton onClick={handleRemoveButton}>
+          <RemoveIcon
+            src={Logo}
+            alt='delete task'
+          />
+        </RemoveButton>
+    </TaskContainer>
+  )
+}
 
 const TaskContainer = styled.div`
   display: flex;
@@ -65,39 +102,3 @@ const RemoveIcon = styled.img`
     transform: scale(1.4);
   }
 `
-
-export const Task = ({task}) => {
-
-  const dispatch = useDispatch()
-
-  const handleCheckboxClick = () => {
-    dispatch(tasks.actions.toggleTaskCompleted(task.id))
-  }
-
-  const handleRemoveButton = () => {
-    dispatch(tasks.actions.removeItem(task.id))
-  }
-
-  return (
-    <TaskContainer checked={task.complete}>
-      <CustomCheckbox 
-        isChecked={task.complete} 
-        onChangeHandler={handleCheckboxClick}
-      />
-      <TextContainer>
-        <TaskName>
-          {task.text}
-        </TaskName>
-        <Date>
-        created at {moment(task.id).format('LT')}
-      </Date>
-      </TextContainer>
-        <RemoveButton onClick={handleRemoveButton}>
-          <RemoveIcon
-            src={Logo}
-            alt='delete task'
-          />
-        </RemoveButton>
-    </TaskContainer>
-  )
-}

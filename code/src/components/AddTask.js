@@ -6,6 +6,40 @@ import styled from 'styled-components'
 
 import Logo from './assets/plus.svg'
 
+export const AddTask = () => {
+  const [newTask, setNewTask] = useState('')
+
+  const dispatch = useDispatch()
+
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    dispatch(tasks.actions.addItem(newTask))
+    setNewTask('')
+  }
+
+  return (
+    <Container
+      onSubmit={handleSubmit}
+    >
+      <TaskButton
+        type="submit"
+        disabled={newTask.length < 5 ? true : false}
+      >
+        <AddIcon
+          src={Logo}
+          alt="add task"
+        />
+      </TaskButton>
+      <TextField
+        type="text"
+        value={newTask}
+        placeholder="add new task.."
+        onChange={event => setNewTask(event.target.value)}
+      />
+    </Container>
+  )
+}
+
 const Container = styled.form`
   display: flex;
   justify-content: flex-start;
@@ -38,25 +72,7 @@ const TextField = styled.input`
     font-size: 18px;
   }
 `
-const CategoryField = styled.select`
-  display: none; //display: none because categories are not used at the moment
-  background-color: transparent;
-  border: none;
-  border-bottom: 1px solid #000000;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
 
-  &:focus {
-    outline: 2px solid #9576A5;
-  }
-
-  option {
-    color: red;
-    font-size: 20px;
-    background: blue;
-    display: flex;
-  }
-`
 const TaskButton = styled.button`
   background-color: transparent;
   border: none;
@@ -80,49 +96,3 @@ const AddIcon = styled.img`
     transform: scale(1.4);
   }
 `
-
-export const AddTask = () => {
-  const [newTask, setNewTask] = useState('')
-  const [category, setCategory] = useState()
-
-  const dispatch = useDispatch()
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    dispatch(tasks.actions.addItem({ newTask, category }))
-    setNewTask('')
-    setCategory('')
-  }
-
-  return (
-    <Container
-      onSubmit={handleSubmit}
-    >
-      <TaskButton
-        type="submit"
-        disabled={newTask.length < 5 ? true : false}
-      >
-        <AddIcon
-          src={Logo}
-          alt="add task"
-        />
-      </TaskButton>
-      <TextField
-        type="text"
-        value={newTask}
-        placeholder="add new task.."
-        onChange={event => setNewTask(event.target.value)}
-      />
-      <CategoryField // CATEGORIES ARE NOT USED AT THE MOMENT - display: none in css
-        value={category}
-        onChange={event => setCategory(event.target.value)}
-      >
-        <option value disabled>select category...</option>
-        <option value="appointment">appointment</option>
-        <option value="household">household</option>
-        <option value="self-care">self-care</option>
-        <option value="shopping">shopping</option>
-      </CategoryField>
-    </Container>
-  )
-}

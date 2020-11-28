@@ -4,6 +4,23 @@ import styled from 'styled-components'
 
 import Logo from './assets/relax.png'
 
+export const NoTasks = () => {
+  return (
+   <Container>
+     <Image
+      src={Logo}
+      alt="clouds"
+     />
+     <Title>
+       just relax, you have nothing to do right now. 
+     </Title>
+     <Text>
+       create your daily to do list by adding new tasks below.
+     </Text>
+   </Container>
+  )
+}
+
 const Container = styled.section`
   display: flex;
   flex-direction: column;
@@ -60,20 +77,3 @@ const Text = styled.p`
     font-size: 14px;
   }
 `
-
-export const NoTasks = () => {
-  return (
-   <Container>
-     <Image
-      src={Logo}
-      alt="clouds"
-     />
-     <Title>
-       just relax, you have nothing to do right now. 
-     </Title>
-     <Text>
-       create your daily to do list by adding new tasks below.
-     </Text>
-   </Container>
-  )
-}

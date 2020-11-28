@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-
 import { combineReducers, createStore} from '@reduxjs/toolkit'
+
 import { tasks } from './reducers/tasks'
 
 import { TaskList } from './components/TaskList'

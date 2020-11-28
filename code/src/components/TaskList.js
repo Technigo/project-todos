@@ -9,6 +9,32 @@ import { AddTask } from './AddTask'
 import { Footer } from './Footer'
 import { NoTasks } from './NoTasks'
 
+export const TaskList = () => {
+
+  const items = useSelector (
+    (store) => store.tasks.items
+  )
+
+  return (
+    <Section>
+      <Header />
+      {items.length === 0 ? <NoTasks /> : 
+      <TasksContainer>
+      {items.map(task => {
+        return (
+          <Task
+            key={task.id}
+            task={task}
+          />
+        )
+      })}
+      </TasksContainer>}
+      <AddTask />
+      <Footer />
+    </Section>
+  )
+}
+
 const Section = styled.section`
   display: flex;
   flex-direction: column;
@@ -38,29 +64,3 @@ const TasksContainer = styled.div`
   justify-content: center;
   width: 100%;
 `
-
-export const TaskList = () => {
-
-  const items = useSelector (
-    (store) => store.tasks.items
-  )
-
-  return (
-    <Section>
-      <Header />
-      {items.length === 0 ? <NoTasks /> : 
-      <TasksContainer>
-      {items.map(task => {
-        return (
-          <Task
-            key={task.id}
-            task={task}
-          />
-        )
-      })}
-      </TasksContainer>}
-      <AddTask />
-      <Footer />
-    </Section>
-  )
-}

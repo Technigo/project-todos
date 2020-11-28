@@ -6,82 +6,6 @@ import { tasks } from 'reducers/tasks'
 import styled from 'styled-components'
 import swal from 'sweetalert';
 
-
-const Container = styled.footer`
-  display: flex;
-  flex-wrap:wrap;
-  justify-content: space-between;
-  margin-top: 10px;
-  width: 100%;
-`
-const TotalTasks = styled.p`
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #514d4d;
-  margin: 20px 0 0 0;
-
-  @media (max-width: 280px) {
-    font-size: 10px;
-  }
-`
-const FilterContainer = styled.div`
-  display: flex;
-  width: 50%;
-`
-
-const FilterButton = styled.button`
-  display: inline-block;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
-  background-color: #ffffff;
-  border: none;
-  box-shadow: 10px 13px 21px -18px rgba(158,158,158,1);
-  padding: 10px;
-  margin-right: 10px;
-  transition: 0.3s ease;
-  cursor: pointer;
-
-  &:hover {
-    background-color: rgba(143, 99, 148, 0.2);
-  }
-
-  &:focus {
-    outline: 2px solid #9576A5;
-  }
-
-  @media (max-width: 280px) {
-    font-size: 10px;
-  }
-`
-
-const ClearButton = styled.button`
-  display: inline-block;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-family: 'Josefin Sans', sans-serif;
-  font-weight: 300;
-  background-color: #ffffff;
-  border: none;
-  box-shadow: 10px 13px 21px -18px rgba(158,158,158,1);
-  padding: 10px;
-  transition: 0.3s ease;
-  cursor: pointer;
-
-  &:hover {
-    background-color: rgba(143, 99, 148, 0.2);
-  }
-
-  &:focus {
-    outline: 2px solid #9576A5;
-  }
-
-  @media (max-width: 280px) {
-    font-size: 10px;
-  }
-`
-
 export const Footer = () => {
   const dispatch = useDispatch()
 
@@ -122,3 +46,77 @@ export const Footer = () => {
     </Container>
   )
 }
+
+const Container = styled.footer`
+  display: flex;
+  flex-wrap:wrap;
+  justify-content: space-between;
+  margin-top: 10px;
+  width: 100%;
+`
+const TotalTasks = styled.p`
+  font-size: 12px;
+  text-transform: uppercase;
+  color: #514d4d;
+  margin: 20px 0 0 0;
+  width: 100%;
+
+  @media (max-width: 280px) {
+    font-size: 10px;
+  }
+`
+const FilterContainer = styled.div` //DISPLAY IS SET TO NONE SINCE I HAVE NOT COMPLETED THE FILTER FUNCTION YET
+  display: none; 
+  width: 50%;
+`
+const FilterButton = styled.button`
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 10px 13px 21px -18px rgba(158,158,158,1);
+  padding: 10px;
+  margin-right: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(143, 99, 148, 0.2);
+  }
+
+  &:focus {
+    outline: 2px solid #9576A5;
+  }
+
+  @media (max-width: 280px) {
+    font-size: 10px;
+  }
+`
+const ClearButton = styled.button`
+  display: inline-block;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-family: 'Josefin Sans', sans-serif;
+  font-weight: 300;
+  background-color: #ffffff;
+  border: none;
+  box-shadow: 10px 13px 21px -18px rgba(158,158,158,1);
+  padding: 10px;
+  transition: 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba(143, 99, 148, 0.2);
+  }
+
+  &:focus {
+    outline: 2px solid #9576A5;
+  }
+
+  @media (max-width: 280px) {
+    font-size: 10px;
+  }
+`

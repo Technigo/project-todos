@@ -1,6 +1,17 @@
 import React from 'react'
+
 import moment from 'moment'
 import styled from 'styled-components'
+
+export const Header = () => {
+  return (
+    <Container>
+      <Title>
+        things to do <Span>{moment().format('D[/]M')}</Span>
+      </Title>
+    </Container>
+  )
+}
 
 const Container = styled.header`
   display: flex;
@@ -30,13 +41,3 @@ const Title = styled.h1`
 const Span = styled.span`
   font-weight: 300;
 `
-
-export const Header = () => {
-  return (
-    <Container>
-      <Title>
-        things to do <Span>{moment().format('D[/]M')}</Span>
-      </Title>
-    </Container>
-  )
-}
