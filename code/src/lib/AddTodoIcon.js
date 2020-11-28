@@ -18,7 +18,6 @@ const CustomLinkIcon = styled.button`
   border: none;
   cursor: pointer;
   color: white;
-
 `;
 
 export const AddTodoIcon = () => {

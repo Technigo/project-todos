@@ -1,12 +1,27 @@
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { useParams, useHistory } from 'react-router-dom';
-import { todos } from 'reducers/todos'
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { useParams, useHistory } from "react-router-dom";
+import { todos } from "reducers/todos";
+import {
+  TodoFormWrapper,
+  TodoForm,
+  TodoInputGroupWrapper,
+  TodoHeaderLabel,
+  TodoContentLabel,
+  TodoHeaderInput,
+  TodoTextarea,
+  TodoCheckboxGroupWrapper,
+  CheckboxWrapper,
+  CheckboxLabel,
+  CheckboxInput,
+  AddTodoButton,
+} from "../lib/FormStyle";
 
 export const EditTodoForm = () => {
   const { id } = useParams();
-  const todo = useSelector(store => 
-       store.todos.items.find(item => item.id === parseInt(id)));
+  const todo = useSelector((store) =>
+    store.todos.items.find((item) => item.id === parseInt(id))
+  );
 
   const [userCategory, setUserCategory] = useState(todo.category);
   const [todoTitle, setTodoTitle] = useState(todo.title);
@@ -22,63 +37,66 @@ export const EditTodoForm = () => {
       ? setUserCategory(userCategory.filter((item) => item !== categoryValue))
       : setUserCategory([...userCategory, categoryValue]);
   };
-  
+
   const onTodoEditSubmit = (event) => {
     event.preventDefault();
-    
-    if (todoTitle && todoContent) {
+
+    if (todoTitle) {
       dispatch(
         todos.actions.updateItem({
           id,
-          category: userCategory, 
-          title: todoTitle, 
+          category: userCategory,
+          title: todoTitle,
           content: todoContent,
           isCompleted: false,
-          createdAt: Date.now()
+          createdAt: Date.now(),
         })
       );
-  
-        history.push('/')
-        
+
+      history.push("/");
     } else {
-      alert('Please write note first')
+      alert("Please write note first");
     }
   };
-    
-    if (!todo) {
-        return (
-            <section>
-                <h2>Todo not found!</h2>
-            </section>
-        )
-    };
 
+  if (!todo) {
     return (
-        <form>
-          <label htmlFor="todoTitle">
-            <input
-              type="text"
-              id="todoTitle"
-              value={todoTitle}
-              aria-label="Write your task heading here"
-              onChange={(e) => setTodoTitle(e.target.value)}
-            />
-            H1
-          </label>
-          <label htmlFor="todoContent">
-            <textarea
-              type="textarea"
-              ic="todoContent"
-              value={todoContent}
-              aria-label="Write your task here"
-              rows="10"
-              onChange={(e) => setTodoContent(e.target.value)}
-            />
-          </label>
+      <section>
+        <h2>Todo not found!</h2>
+      </section>
+    );
+  }
+
+  return (
+    <TodoFormWrapper>
+      <TodoForm>
+        <TodoInputGroupWrapper>
+          <TodoHeaderLabel htmlFor="todoTitle">H1</TodoHeaderLabel>
+          <TodoHeaderInput
+            type="text"
+            id="todoTitle"
+            value={todoTitle}
+            aria-label="Write your task heading here"
+            onChange={(e) => setTodoTitle(e.target.value)}
+          />
+        </TodoInputGroupWrapper>
+
+        <TodoInputGroupWrapper>
+          <TodoContentLabel htmlFor="todoContent">p</TodoContentLabel>
+          <TodoTextarea
+            type="textarea"
+            id="todoContent"
+            value={todoContent}
+            aria-label="Write your task here"
+            rows="10"
+            onChange={(e) => setTodoContent(e.target.value)}
+          />
+        </TodoInputGroupWrapper>
+        <TodoCheckboxGroupWrapper>
           {categories.map((category, index) => (
-            <div key={category.id}>
-              <label htmlFor={category.name[index]}>
-                <input
+            <CheckboxWrapper key={category.id}>
+              <CheckboxLabel htmlFor={category.name[index]}>
+                <CheckboxInput
                   type="checkbox"
                   name={category.name[index]}
                   value={category.name}
@@ -86,14 +104,14 @@ export const EditTodoForm = () => {
                   onChange={() => onCategoryChange(category.name)}
                 />
                 {category.name}
-              </label>
-            </div>
+              </CheckboxLabel>
+            </CheckboxWrapper>
           ))}
-          <button 
-            type="button" 
-            onClick={onTodoEditSubmit}
-            > Add todo
-            </button>
-        </form>
-      );
-    };
+          <AddTodoButton type="button" onClick={onTodoEditSubmit}>
+            Edit todo
+          </AddTodoButton>
+        </TodoCheckboxGroupWrapper>
+      </TodoForm>
+    </TodoFormWrapper>
+  );
+};

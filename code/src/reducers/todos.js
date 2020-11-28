@@ -99,7 +99,7 @@ export const todos = createSlice({
         dueDate,
         isComplete,
       } = action.payload;
-      const currentTodo = store.items.find((item) => item.id == parseInt(id));
+      const currentTodo = store.items.find((item) => item.id === parseInt(id));
 
       if (currentTodo) {
         currentTodo.title = title;
