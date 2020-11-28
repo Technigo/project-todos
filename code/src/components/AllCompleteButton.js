@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import { todos } from "../reducers/todos";
 
 export const AllCompleteButton = () => {
-  const items = useSelector(store => store.todos.items);
   const dispatch = useDispatch();
 
   const [isAllComplete, setIsAllComplete] = useState(false);
