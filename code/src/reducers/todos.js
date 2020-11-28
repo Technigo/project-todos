@@ -1,8 +1,8 @@
 // src/reducers/tasks.js
 import { createSlice } from '@reduxjs/toolkit'
 
-export const tasks = createSlice({
-  name: 'tasks',
+export const todos = createSlice({
+  name: 'todos',
   initialState: [
     { id: 1, text: 'Watch video on actions & reducers', complete: true },
     { id: 2, text: 'Follow redux codealong', complete: true },

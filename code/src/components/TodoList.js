@@ -2,11 +2,11 @@ import React from 'react'
 //import useSelector here
 
 // TaskList component
-export const TaskList = () => {
+export const TodoList = () => {
 
     return (
         <div>
-            Here is where the tasklist will be. 
+            Here is where the todolist will be. 
         </div>
     )
 }
