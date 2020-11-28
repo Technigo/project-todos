@@ -40,8 +40,6 @@ const HeaderContainer = styled.header`
   flex-direction: column;
   align-items: center;
   justify-content: space-evenly;
-  background-image: linear-gradient(138deg, #352189, #443da6, #5259c4, #6075e3);
-  background-image: linear-gradient(138deg, #4a036f, #59117e, #6e2296, #8a36b5);
   background-image: linear-gradient(#3b2f7d, #483c90, #5c52ac);
 `;
 
@@ -60,6 +58,11 @@ const HeaderLinkContainer = styled.div`
 const HeaderIcon = styled.img`
   height: 30px;
   align-self: flex-end;
+  opacity: 0.85;
+
+  :hover {
+    opacity: 1;
+  }
 `;
 
 const HeaderTitle = styled.h1`

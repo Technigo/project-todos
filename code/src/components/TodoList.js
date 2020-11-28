@@ -6,6 +6,7 @@ import EmptyList from './EmptyList';
 import TodoItem from './TodoItem';
 import ActionBar from './ActionBar';
 import { todos } from '../reducers/todos';
+import { visibilityFilter } from '../reducers/visibilityFilter';
 import { Button } from '../library/Button';
 
 const TodoList = () => {
@@ -14,9 +15,14 @@ const TodoList = () => {
   const filterStatus = useSelector(
     store => store.todos.list.selectedStatusFilter
   );
-  // const filterCategory = useSelector(
-  //   store => store.todos.list.selectedCategoryFilter
+
+  // const visibilityFilters = useSelector(
+  //   store => store.visibilityFilter.list.options
   // );
+  //console.log(visibilityFilters);
+  const filterCategory = useSelector(
+    store => store.todos.list.selectedCategoryFilter
+  );
   // const categories = useSelector(store => store.todos.list.categories);
   //const [category, setCategory] = useState('');
 
@@ -122,6 +128,10 @@ export default TodoList;
 const Main = styled.main`
   display: grid;
   grid-gap: 20px;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 600px;
+  background-color: #f4f5fa;
 `;
 
 const ListSection = styled.section`
@@ -138,5 +148,24 @@ const ActionBarContainer = styled.div`
 const ActionBarButton = styled(Button)`
   background: #fff;
   border-radius: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  box-sizing: border-box;
+  transition: all 0.1s ease 0s;
+
+  :hover {
+    border-bottom: 2px solid red;
+    color: red;
+  }
+
+  :focus {
+    border-bottom: 2px solid red;
+    color: red;
+  }
+
+  :active {
+    border-bottom: 2px solid red;
+    color: red;
+  }
 `;
 const ActionBarText = styled.p``;

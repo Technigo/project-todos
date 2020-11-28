@@ -2,39 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   list: {
-    name: 'To Do',
-    items: [
-      // {
-      //   description: 'Watch video on actions & reducers',
-      //   complete: true,
-      //   category: 'Home',
-      //   dueDate: '',
-      // },
-      // {
-      //   description: 'Follow redux codealong',
-      //   complete: true,
-      //   category: 'Personal',
-      //   dueDate: '',
-      // },
-      // {
-      //   description: 'Fork weekly assignment',
-      //   complete: true,
-      //   category: 'School',
-      //   dueDate: '',
-      // },
-      // {
-      //   description: 'Create a todo app',
-      //   complete: false,
-      //   category: 'Home',
-      //   dueDate: '',
-      // },
-    ],
+    name: 'todos',
+    items: [],
     options: [
       { value: 'school', label: 'School' },
       { value: 'work', label: 'Work' },
       { value: 'personal', label: 'Personal' },
       { value: 'other', label: 'Other' },
-      //
     ],
     selectedStatusFilter: '',
     selectedCategoryFilter: '',

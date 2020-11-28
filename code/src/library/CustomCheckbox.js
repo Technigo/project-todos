@@ -36,7 +36,11 @@ const StyledCheckbox = styled.div`
   transition: all 150ms;
 
   ${HiddenCheckbox}:focus + & {
-    box-shadow: 0 0 0 3px pink;
+    box-shadow: 0 0 0 3px #1890ff;
+  }
+  ${HiddenCheckbox}:hover + & {
+    background: rgba(40, 225, 119, 0.5);
+    border: 2px solid rgba(40, 225, 119, 0.5);
   }
 
   ${Icon} {

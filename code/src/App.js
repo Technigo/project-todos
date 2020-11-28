@@ -4,11 +4,13 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import { todos } from './reducers/todos';
-import ListTodos from 'pages/ListTodos';
-import CreateTodo from 'pages/CreateTodo';
+import { visibilityFilter } from './reducers/visibilityFilter';
+import ListTodos from './pages/ListTodos';
+import CreateTodo from './pages/CreateTodo';
 
 const reducer = combineReducers({
   todos: todos.reducer,
+  visibilityFilter: visibilityFilter.reducer,
 });
 
 //const store = configureStore({ reducer });

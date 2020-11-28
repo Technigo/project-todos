@@ -43,11 +43,11 @@ const ActionBar = () => {
         }
       >
         <ActionBarText>
-          {!isAllComplete ? 'Check All Todos' : 'Uncheck All Todos'}
+          {!isAllComplete ? 'Check All' : 'Uncheck All'}
         </ActionBarText>
       </ActionBarButton>
       <ActionBarButton type="button" onClick={() => handleOnRemove()}>
-        <ActionBarText>Delete All Todos</ActionBarText>
+        <ActionBarText>Delete All</ActionBarText>
       </ActionBarButton>
     </ActionBarContainer>
   );
@@ -55,16 +55,35 @@ const ActionBar = () => {
 
 export default ActionBar;
 
-const ActionBarContainer = styled.div`
+const ActionBarContainer = styled.section`
   display: flex;
   justify-content: space-evenly;
-  position: absolute;
-  bottom: 0;
+  /* position: absolute; */
+  /* bottom: 0; */
   width: 100%;
-  background: #fff;
+  padding: 25px;
+  margin: 0 auto;
+  max-width: 600px;
+  background: transparent;
 `;
 
 const ActionBarButton = styled(Button)`
   background: #fff;
+  border: 2px solid #5c52ac;
+  color: #3b2f7d;
+  color: #fff;
+  background: #5c52ac;
+  border-radius: 45px;
+  font-weight: 500;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease 0s;
+
+  :hover {
+    color: #fff;
+    background: #5c52ac;
+    box-shadow: 0px 15px 20px rgba(92, 82, 172, 0.4);
+    transform: translateY(-5px);
+  }
 `;
 const ActionBarText = styled.p``;

@@ -107,6 +107,10 @@ const Item = styled.section`
   border-bottom: 0.5px solid lightgray;
   border-bottom: 1.5px solid rgb(230, 230, 230);
   width: 100%;
+
+  &:hover {
+    background: rgba(0, 0, 0, 0.02);
+  }
 `;
 
 const ItemContainer = styled.div`

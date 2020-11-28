@@ -10,6 +10,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f4f5fa;
+  background-image: linear-gradient(#edc0ed, #daaada, #be89be, #a369a3);
+  background-repeat: no-repeat;
+  height: 100vh;
 }
 
 code {
@@ -18,8 +21,8 @@ code {
 }
 
 .react-date-picker__wrapper {
-  border-bottom: 0.5px solid lightgray;
   border: none;
+  border-bottom: 0.5px solid lightgray;
 }
 
 .react-date-picker__inputGroup__input {
