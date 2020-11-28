@@ -3,28 +3,43 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components/';
 
 import { tasks } from 'reducers/tasks';
-import { Button } from 'lib/Button';
-import { Emoji } from 'lib/Emoji';
+import { Trash } from 'components/Trash';
 
-const TaskContainer = styled.div`
+const TaskContainer = styled.li`
   display: grid;
-  grid-template-columns: 40px 1fr 40px;
+  grid-template-columns: 30px 1fr 80px 30px;
   align-items: center;
   padding: 20px;
-  font-size: 20px;
   border-bottom: 1px solid #dcd7e1;
 `;
 
 const CompleteButton = styled.input`
-  width: 20px;
-  height: 20px;
-  justify-self: left;
+  margin: 0;  
+  width: 16px;
+  height: 16px;
+  justify-self: start;
+  border-radius: 50%;
 `;
 
 const TaskText = styled.p`
   margin: 0;
   color: ${props => props.completed ? "#dcd7e1" : ""};
   text-decoration-line: ${props => props.completed ? "line-through" : ""};
+`;
+
+const DeleteButton = styled.button`
+  justify-self: end;
+  margin: 0;
+  padding: 5px;
+  background: none;
+  border: none;
+  border-radius: 6px;
+  height: 30px;
+  
+  &:hover {
+    background: black;
+    color: white;
+    }
 `;
 
 export const Task = ({ item }) => {
@@ -47,13 +62,14 @@ export const Task = ({ item }) => {
       >
       </CompleteButton>
       <TaskText completed={item.completed}>{item.description}</TaskText>
-      <Button
+      <div>{item.priority}</div>
+      <DeleteButton
         type="button"
         background="none"
         onClick={handleRemoveButtonClick}
       >
-        <Emoji ariaLabel="Delete task">🗑</Emoji>
-      </Button>
+        <Trash />
+      </DeleteButton>
     </TaskContainer>
   )
 }
