@@ -8,7 +8,6 @@ import { CustomCheckbox } from "./CustomCheckbox";
 
 export const TodoItem = ({ item }) => {
   const dispatch = useDispatch();
-  //const items = useSelector(store => store.todos.items);
 
   const handleCheckboxClick = isComplete => {
     dispatch(todos.actions.toggleIsComplete(item.id));

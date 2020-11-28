@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
-  const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
 
   const handleOnChange = event => {
@@ -26,7 +25,6 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
     <div>
       <label>
         <Checkbox checked={checked} onChange={handleOnChange}></Checkbox>
-        {/* {label} */}
       </label>
     </div>
   );
@@ -61,6 +59,9 @@ const StyledCheckbox = styled.div`
   transition: all 150ms;
   ${Icon} {
     visibility: ${props => (props.checked ? "visible" : "hidden")};
+  }
+  &:hover {
+    cursor: pointer;
   }
 `;
 

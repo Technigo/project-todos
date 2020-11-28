@@ -8,13 +8,6 @@ import { NoTodos } from "./NoTodos";
 
 export const TodoList = () => {
   const items = useSelector(store => store.todos.items);
-  //const dispatch = useDispatch();
-
-  // const onTodoDelete = id => {
-  // dispatch(todos.actions.removeTodoItem(id));
-  //};
-
-  //<DeleteButton onClick={() => onTodoDelete(item.id)}>X</DeleteButton>
 
   if (items.length <= 0) {
     return (

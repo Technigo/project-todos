@@ -3,25 +3,25 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import moment from "moment";
 
-import { todos } from "../reducers/todos";
+// import { todos } from "../reducers/todos";
 import { ClearAllButton } from "./ClearAllButton";
+import { AllCompleteButton } from "./AllCompleteButton";
 
 export const Header = () => {
   const items = useSelector(store => store.todos.items);
-
   const dispatch = useDispatch();
 
-  const [isAllComplete, setIsAllComplete] = useState(false);
+  // const [isAllComplete, setIsAllComplete] = useState(false);
 
-  const handleAllComplete = () => {
-    dispatch(todos.actions.setAllComplete());
-    setIsAllComplete(true);
-  };
+  // const handleAllComplete = () => {
+  //   dispatch(todos.actions.setAllComplete());
+  //   setIsAllComplete(true);
+  // };
 
-  const handleAllIncomplete = () => {
-    dispatch(todos.actions.setAllIncomplete());
-    setIsAllComplete(false);
-  };
+  // const handleAllIncomplete = () => {
+  //   dispatch(todos.actions.setAllIncomplete());
+  //   setIsAllComplete(false);
+  // };
 
   const filteredisComplete = items.filter(item => item.isComplete).length;
 
@@ -36,7 +36,8 @@ export const Header = () => {
       </TextWrapper>
       <ButtonWrapper>
         <ClearAllButton />
-        <CompleteButton
+        <AllCompleteButton />
+        {/* <CompleteButton
           type="button"
           onClick={
             !isAllComplete
@@ -45,7 +46,7 @@ export const Header = () => {
           }
         >
           {!isAllComplete ? "Mark All Complete" : "Mark All Incomplete"}
-        </CompleteButton>
+        </CompleteButton> */}
       </ButtonWrapper>
     </HeaderContainer>
   );
@@ -76,30 +77,30 @@ const Title = styled.h1`
   color: #010101;
 `;
 
-const CompleteButton = styled.button`
-  align-self: center;
-  height: 30px;
-  width: 95%;
-  font-size: 20px;
-  background: ${props => props.background || "#0099ff"};
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  &:hover {
-    background: #4dbfed;
-    cursor: pointer;
-  }
+// const CompleteButton = styled.button`
+//   align-self: center;
+//   height: 30px;
+//   width: 95%;
+//   font-size: 20px;
+//   background: ${props => props.background || "#0099ff"};
+//   color: #fff;
+//   border: none;
+//   border-radius: 5px;
+//   &:hover {
+//     background: #4dbfed;
+//     cursor: pointer;
+//   }
 
-  @media (min-width: 768px) {
-    width: 50%;
-    height: 40px;
-  }
+//   @media (min-width: 768px) {
+//     width: 50%;
+//     height: 40px;
+//   }
 
-  @media (min-width: 1024px) {
-    width: 150px;
-    height: 50px;
-  }
-`;
+//   @media (min-width: 1024px) {
+//     width: 150px;
+//     height: 50px;
+//   }
+// `;
 
 const DateText = styled.h2`
   color: #474747;
