@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 
 
-export const Footer = () => {
+export const RemoveTasks = () => {
 
   const items = useSelector((store) => store.tasks.items);
   const enabled = items.length > 0;
@@ -25,12 +25,6 @@ export const Footer = () => {
     </ButtonWrapper>
   );
 };
-//   const dispatch = useDispatch()
-//   const items = useSelector((store) => store.tasks.items)
-
-//   const handleDeleteAll = () => {
-//     dispatch(tasks.actions.removeAll());
-//   }
 
 //   return (
 //     <FooterWrapper>
@@ -45,7 +39,11 @@ const ButtonWrapper = styled.section`
  /* background: #f1f1f1; */
   position: absolute;
     align-items: center;
-    bottom: 0;
+    bottom: 10px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     /* width: 600px;
     height: 2.5rem; */
  `

@@ -1,12 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { Task } from './Task'
 
+import { Task } from './Task'
 
 export const TaskList = () => {
   
- 
   const items = useSelector((store) => store.tasks.items)
 
   return (
@@ -16,6 +15,7 @@ export const TaskList = () => {
         key={item.id} 
         item={item} 
        />
+       
       ))}
      </>
   )

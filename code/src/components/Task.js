@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 
 import { tasks } from 'reducers/tasks'
-import trashcan from '../assets/trashcan.png'
+// import trashcan from '../assets/trashcan.png'
 
 
 export const Task = ({ item }) => {
