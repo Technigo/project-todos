@@ -86,7 +86,7 @@ export const AddTodoForm = () => {
             id="todoContent"
             value={todoContent}
             aria-label="Write your task here"
-            rows={10}
+            rows={width < breakpoint? 10 : 15}
             onChange={(e) => setTodoContent(e.target.value)}
           />
         </TodoInputGroupWrapper>
@@ -103,9 +103,8 @@ export const AddTodoForm = () => {
                 />
                 {category.name}
               </CheckboxLabel>
-              <div>
                 {width > breakpoint ? (
-                  <div>
+                  <SubCheckboxWrapper>
                     {category.subcategories.map((subcategory, index) => (
                       <SubCheckboxWrapper key={subcategory.name}>
                         <CheckboxLabel htmlFor={subcategory.name[index]}>
@@ -120,14 +119,13 @@ export const AddTodoForm = () => {
                         </CheckboxLabel>
                       </SubCheckboxWrapper>
                     ))}
-                  </div>
+                  </SubCheckboxWrapper>
                 ) : null}
-              </div>
             </CheckboxWrapper>
           ))}
         </TodoCheckboxGroupWrapper>
-        <ButtonWrapper>
-          <AddTodoButton type="submit" onClick={onTodoAdd}>
+        <ButtonWrapper >
+          <AddTodoButton type="submit" onClick={onTodoAdd} >
             Add todo
           </AddTodoButton>
         </ButtonWrapper>

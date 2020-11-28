@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 import { todos } from "reducers/todos";
@@ -15,6 +15,8 @@ import {
   CheckboxLabel,
   CheckboxInput,
   AddTodoButton,
+  SubCheckboxWrapper,
+  ButtonWrapper,
 } from "../lib/FormStyle";
 
 export const EditTodoForm = () => {
@@ -26,11 +28,17 @@ export const EditTodoForm = () => {
   const [userCategory, setUserCategory] = useState(todo.category);
   const [todoTitle, setTodoTitle] = useState(todo.title);
   const [todoContent, setTodoContent] = useState(todo.content);
-  console.log(todo.content);
+  const [width, setWidth] = useState(window.innerWidth);
+  const breakpoint = 767;
+
   const dispatch = useDispatch();
   const history = useHistory();
   const category = useSelector((store) => store.todos.items.category);
   const categories = useSelector((store) => store.todos.categories);
+
+  useEffect(() => {
+    window.addEventListener("resize", () => setWidth(window.innerWidth));
+  }, []);
 
   const onCategoryChange = (categoryValue) => {
     userCategory.includes(categoryValue)
@@ -105,11 +113,34 @@ export const EditTodoForm = () => {
                 />
                 {category.name}
               </CheckboxLabel>
+              {width > breakpoint ? (
+                  <SubCheckboxWrapper>
+                    {category.subcategories.map((subcategory, index) => (
+                      <SubCheckboxWrapper key={subcategory.name}>
+                        <CheckboxLabel htmlFor={subcategory.name[index]}>
+                          <CheckboxInput
+                            type="checkbox"
+                            name={subcategory.name[index]}
+                            value={subcategory.name}
+                            checked={userCategory.includes(subcategory.name)}
+                            onChange={() => onCategoryChange(subcategory.name)}
+                          />
+                          {subcategory.name}
+                        </CheckboxLabel>
+                      </SubCheckboxWrapper>
+                    ))}
+                  </SubCheckboxWrapper>
+                ) : null}
             </CheckboxWrapper>
           ))}
+          <ButtonWrapper
+            buttonTop={width > breakpoint ? "75%" : "70%"}
+            buttonLeft={width > breakpoint ? "75%" : "70%"}
+          >
           <AddTodoButton type="button" onClick={onTodoEditSubmit}>
             Edit todo
           </AddTodoButton>
+          </ButtonWrapper>
         </TodoCheckboxGroupWrapper>
       </TodoForm>
     </TodoFormWrapper>
