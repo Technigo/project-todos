@@ -3,14 +3,14 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { tasks } from "reducers/tasks";
 
-import {Checkbox} from './styled/Checkbox'
-import styled from 'styled-components'
+import { Checkbox } from "./styled/Checkbox";
+import styled from "styled-components";
 
 export const ItemsAll = ({ taskIndex }) => {
   const dispatch = useDispatch();
   const task = useSelector((store) => store.tasks.list.tasks[taskIndex]);
-  
-//Function to add a task
+
+  //Function to add a task
   const handleCheckbox = () => {
     dispatch(
       tasks.actions.checkTodoTask({
@@ -29,15 +29,22 @@ export const ItemsAll = ({ taskIndex }) => {
     );
   };
 
-return (
+  return (
     <TaskList>
       <TaskChecked>
-        <Checkbox checked={task.complete ? "checked" : ""} onChangeHandler={handleCheckbox} />
-        <TaskText style={{textDecoration: task.complete ? "line-through" : ""}}>
+        <Checkbox
+          checked={task.complete ? "checked" : ""}
+          onChangeHandler={handleCheckbox}
+        />
+        <TaskText
+          style={{ textDecoration: task.complete ? "line-through" : "" }}
+        >
           {task.text}
         </TaskText>
       </TaskChecked>
-      <ButtonX type="button" onClick={handleRemove}>X</ButtonX>
+      <ButtonX type="button" onClick={handleRemove}>
+        X
+      </ButtonX>
     </TaskList>
   );
 };
@@ -47,9 +54,14 @@ export const TaskList = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-  padding: 12px 5px;
+  padding: 10px 5px;
   border-bottom: 1px solid #8ea0e1;
   background-color: #ffffe8;
+
+  @media (max-width: 668px) {
+    margin: 8px;
+    font-size: 13px;
+  } ;
 `;
 
 export const TaskChecked = styled.div`
@@ -61,9 +73,15 @@ export const TaskChecked = styled.div`
 export const TaskText = styled.p`
   margin: 0 20px 2px 8px;
   font-size: 18px;
-  @media (min-width: 768px) {
-    font-size: 20px;
+
+  @media (max-width: 668px) {
+    font-size: 13px;
   }
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+    width: 100%;
+  } ;
 `;
 
 export const ButtonX = styled.button`
@@ -74,6 +92,7 @@ export const ButtonX = styled.button`
   border-radius: 3px;
   cursor: pointer;
   transition: all 150ms;
+
   &:hover {
     background-color: #8ea0e1;
   }

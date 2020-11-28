@@ -1,18 +1,18 @@
-import React from 'react'
-import { Provider } from 'react-redux'
-import { combineReducers,configureStore } from '@reduxjs/toolkit'
+import React from "react";
+import { Provider } from "react-redux";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
-import {tasks}  from './reducers/tasks'
+import { tasks } from "./reducers/tasks";
 
-import {TaskContent} from './components/TaskContent'
+import { TaskContent } from "./components/TaskContent";
 
 const reducer = combineReducers({
-  tasks: tasks.reducer
-})
+  tasks: tasks.reducer,
+});
 
-const persistedState = localStorage.getItem("reduxState") 
-? JSON.parse(localStorage.getItem("reduxState"))
-: {}
+const persistedState = localStorage.getItem("reduxState")
+  ? JSON.parse(localStorage.getItem("reduxState"))
+  : {};
 
 const store = configureStore({
   reducer,
@@ -20,16 +20,14 @@ const store = configureStore({
 });
 
 store.subscribe(() => {
-  localStorage.setItem("reduxState",
-  JSON.stringify(store.getState()))
-  })
-  
+  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+});
+
 export const App = () => {
   return (
     <Provider store={store}>
-      <TaskContent/>
+      <TaskContent />
     </Provider>
-  )
-}
-
+  );
+};
 //reference for persisted state in Redux: https://medium.com/@jrcreencia/persisting-redux-state-to-local-storage-f81eb0b90e7e
