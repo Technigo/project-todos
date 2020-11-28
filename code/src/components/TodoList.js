@@ -1,3 +1,4 @@
+import { Container } from 'lib/Container';
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -7,7 +8,7 @@ export const TodoList = () => {
     const items = useSelector(store => store.todos.items);
 
     return (
-        <>
+        <Container>
             {items.map(item => (
                 <TodoItem
                     key={item.id}
@@ -16,7 +17,7 @@ export const TodoList = () => {
                     isCompleted={item.isCompleted}
                 />
             ))}
-        </>
+        </Container>
     );
 };
 

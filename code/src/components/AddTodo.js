@@ -1,7 +1,8 @@
 import { Container } from 'lib/Container';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
+import styled from 'styled-components'
+import { Button } from 'lib/Button';
 import { todos } from '../reducers/todos';
 
 export const AddTodo = () => {
@@ -16,12 +17,12 @@ export const AddTodo = () => {
         <Container>
         <div>
             <input
-                type="text"
+                type="text" 
                 placeholder="this needs to get done....."
                 value={value}
                 onChange={e => setValue(e.target.value)}
             />
-            <button onClick={onTodoAdd}>Add todo</button>
+            <Button onClick={onTodoAdd}>Add todo</Button>
         </div>
         </Container>
     );
