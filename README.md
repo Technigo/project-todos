@@ -29,7 +29,7 @@ https://app.netlify.com/sites/quirky-kepler-b954a8
 - mobile first
 - accessibility - aria-labels and tabindex. Tested using the Apple screenreader, Lighthouse and WAIVE
 
-## Tools, method and workflow 🛠
+## Tools, methods and workflow 🛠
 
 1. I started with sketching and structuring the app along lines of logic and styling (components), and actions and reducers required
 2. After inital planning I started to code and set up the store first
@@ -40,7 +40,7 @@ https://app.netlify.com/sites/quirky-kepler-b954a8
 - Creating and understanding custom checkboxes proved to be challenge. Which one is the hidden one and which one is the input type one? And how are they related to each other?
 - Also the nesting of components was tricky to understand.
 
-## If I had had more time 🧠
+## If I have had more time 🧠
 I understand that styled components can be very powerful so I would really like to learn more about conditional styling and global styling. My plan was to also add various filtering options but I did not manage that this time. 
 
 
