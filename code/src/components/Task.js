@@ -36,7 +36,6 @@ const TaskName = styled.label`
 
   @media (max-width: 280px) {
     font-size: 14px;
-    padding: 8px;
   }
 `
 const Date = styled.p`
@@ -49,8 +48,8 @@ const Date = styled.p`
 const RemoveButton = styled.button`
   background-color: transparent;
   border: none;
-  padding: 0 6px;
-  margin-left: 10px;
+  padding: 0;
+  margin: 0 5px 0 15px;
   cursor: pointer;
 `
 const RemoveIcon = styled.img`
@@ -85,17 +84,17 @@ export const Task = ({task}) => {
       <TextContainer>
         <TaskName>
           {task.text}
-          <RemoveButton onClick={handleRemoveButton}>
-            <RemoveIcon
-              src={Logo}
-              alt="delete task"
-            />
-        </RemoveButton>
         </TaskName>
         <Date>
         created at {moment(task.id).format('LT')}
       </Date>
       </TextContainer>
+        <RemoveButton onClick={handleRemoveButton}>
+          <RemoveIcon
+            src={Logo}
+            alt='delete task'
+          />
+        </RemoveButton>
     </TaskContainer>
   )
 }

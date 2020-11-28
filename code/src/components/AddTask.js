@@ -61,6 +61,10 @@ const TaskButton = styled.button`
   &:disabled {
     opacity: 0.4;
   }
+
+  @media (max-width: 280px) {
+    padding: 0 8px 0 0;
+  }
 `
 const AddIcon = styled.img`
   width: 12px;

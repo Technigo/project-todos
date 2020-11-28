@@ -1,16 +1,7 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-export const CustomCheckbox = ({isChecked, onChangeHandler}) => {
-  
-  const [checked, setChecked] = useState(isChecked)
-
-  const handleOnChange = event => {
-    onChangeHandler()
-    setChecked(event.target.checked)
-  }
-
-  const HiddenCheckbox = styled.input.attrs({type: "checkbox"})`
+const HiddenCheckbox = styled.input.attrs({type: "checkbox"})`
     border: 0;
     clip: rect(0 0 0 0);
     clip-path: inset(50%);
@@ -45,10 +36,24 @@ export const CustomCheckbox = ({isChecked, onChangeHandler}) => {
     ${Icon} {
       visibility: ${props => props.checked ? "visible" : "hidden"}
     }
+
+    @media (max-width: 280px) {
+      width: 15px;
+      height: 15px;
+  }
   `
   const CheckboxContainer = styled.div`
     display: flex;
   `
+
+export const CustomCheckbox = ({isChecked, onChangeHandler}) => {
+  
+  const [checked, setChecked] = useState(isChecked)
+
+  const handleOnChange = event => {
+    onChangeHandler()
+    setChecked(event.target.checked)
+  }
 
 const Checkbox = ({className, checked, ...props}) => (
   <CheckboxContainer>
