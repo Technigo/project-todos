@@ -1,11 +1,10 @@
 # Project Todos ✏️
 
+A todo-app built with React and Redux. The app lists all todo tasks - completed or uncompleted. A state of each todo can be shown as either done or not done with a checkbox. New todos are added using a text field. Todos can be removed one by one or all at once using the clear-all button. After pressing clear-all, a warning alert box appears asking if user wants to clear all or cancel that action. The app also counts and shows how many of the listed todos are done.
+
 ## View it live 👀
 
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+https://app.netlify.com/sites/quirky-kepler-b954a8
 
 ## The problem 🤓
 Lottie and SweetAlert custom checkbox. localStorage, accessibilty Waive, screenreader, responsive mobile first
@@ -19,10 +18,7 @@ What immutability means and how to work with it
 - How to write reducers and actions
 - How to interact with your store using selectors or by dispatching actions
 
-- Your app should list all todo tasks - completed or uncompleted
-- You should be able to mark an uncompleted task as complete (and change it back to uncomplete)
-- You should be able to add and remove tasks
-- Your app should show a count of either all todos, or all uncomplete todos (or both)
+- 
 - Add a **clear all** button to set all tasks to *done* status. You could also use this opportunity to make your app look nice when there's no data. See [empty states UX design](https://www.toptal.com/designers/ux/empty-state-ux-design) for some ideas.
 
 
