@@ -14,8 +14,8 @@ export const DeleteAllButton = styled(DeleteButton)`
   margin-left: 20px;
 `
 export const AddButton = styled(DeleteButton)`
-  width: 40px;
-  height: 40px;
+  width: fit-content;
+  height: fit-content;
   font-size: 30px;
   margin-left: 20px;
 `
