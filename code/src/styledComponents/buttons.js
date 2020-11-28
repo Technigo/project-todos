@@ -13,9 +13,10 @@ export const DeleteButton = styled.button`
 export const DeleteAllButton = styled(DeleteButton)`
   margin-left: 20px;
 `
-export const AddButton = styled(DeleteButton)`
-  width: 30px;
-  height: 30px;
-  font-size: 30px;
-  margin-left: 20px;
+export const AddButton = styled.button`
+  font-size: 40px;
+  margin-left: 10px;
+  color: black;
+  background: white;
+  border: none;
 `
