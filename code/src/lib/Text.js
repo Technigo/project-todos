@@ -10,8 +10,9 @@ export const Subtitle = styled.h2`
   font-size: 20px;
 `;
 
-export const Paragraf = styled.p`
+export const Paragraph = styled.p`
   color: ${(props) => props.color || '#495464;'};
+  text-decoration: ${(props) => (props.isChecked ? 'line-through' : '')};
   font-size: 18px;
 `;
 

@@ -5,7 +5,39 @@ import moment from 'moment';
 import styled from 'styled-components';
 
 import { Button } from '../lib/Button';
-import { Title, Paragraf } from '../lib/Text';
+import { Title, Paragraph } from '../lib/Text';
+
+export const Header = () => {
+  // Fetch all todos from the store
+  const allTodos = useSelector((state) => state.todos.items);
+
+  // Filter out the one that isn't completed
+  const leftTodos = allTodos.filter((todo) => !todo.completed);
+
+  const dispatch = useDispatch();
+
+  const handleClearAll = () => {
+    dispatch(todos.actions.clearAll());
+  };
+
+  return (
+    <Container>
+      <WrapperTitle>
+        <Title>My Todos</Title>
+        <Paragraph>{moment().format('MMM Do ')}</Paragraph>
+      </WrapperTitle>
+      <WrapperSummary>
+        <Paragraph>
+          {leftTodos.length}/{allTodos.length} todo
+          {leftTodos.length <= 1 ? '' : 's'} left
+        </Paragraph>
+        <Button disabled={allTodos.length === 0} onClick={handleClearAll}>
+          Clear all
+        </Button>
+      </WrapperSummary>
+    </Container>
+  );
+};
 
 const Container = styled.header`
   padding: 20px;
@@ -23,31 +55,3 @@ const WrapperSummary = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-export const Header = () => {
-  // Fetch all todos from the store
-  const allTodos = useSelector((state) => state.todos.items);
-  const leftTodos = allTodos.filter((todo) => !todo.completed);
-
-  const dispatch = useDispatch();
-
-  const handleClearAll = () => {
-    dispatch(todos.actions.clearAll());
-  };
-
-  return (
-    <Container>
-      <WrapperTitle>
-        <Title>My Todos</Title>
-        <Paragraf>{moment().format('MMM Do ')}</Paragraf>
-      </WrapperTitle>
-      <WrapperSummary>
-        <Paragraf>
-          {leftTodos.length}/{allTodos.length} todo
-          {leftTodos.length <= 1 ? '' : 's'} left
-        </Paragraf>
-        <Button onClick={handleClearAll}>Clear all</Button>
-      </WrapperSummary>
-    </Container>
-  );
-};

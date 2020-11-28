@@ -6,21 +6,10 @@ import styled from 'styled-components';
 import { Button } from '../lib/Button';
 import { Subtitle } from '../lib/Text';
 
-const Container = styled.footer`
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background-color: #e8e8e8;
-`;
-
 export const FilterTodo = () => {
   const currentvisibilityFilter = useSelector(
     (state) => state.visibilityFilter
   );
-
-  console.log(currentvisibilityFilter);
-  console.log(VisibilityFilter.ShowAll);
 
   const dispatch = useDispatch();
 
@@ -72,3 +61,11 @@ export const FilterTodo = () => {
     </Container>
   );
 };
+
+const Container = styled.footer`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #e8e8e8;
+`;

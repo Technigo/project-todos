@@ -54,14 +54,6 @@ export const todos = createSlice({
         foundItem.completed = !foundItem.completed;
       }
     },
-    // showActive: (state) => {
-    //   // Filter out the active Todos
-    //   state.items = state.items.filter((item) => !item.completed);
-    // },
-    // showCompleted: (state) => {
-    //   // Filter out the completed Todos
-    //   state.items = state.items.filter((item) => item.completed);
-    // },
     clearAll: (state) => {
       state.items = [];
     }

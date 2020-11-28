@@ -5,6 +5,37 @@ import styled from 'styled-components';
 
 import { Button } from 'lib/Button';
 
+export const AddTodoForm = () => {
+  const [text, setText] = useState('');
+
+  const dispatch = useDispatch();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    dispatch(todos.actions.addTodo({ text }));
+    setText(''); // Clearing the input
+  };
+
+  return (
+    <Wrapper>
+      <Form onSubmit={handleSubmit}>
+        <Button disabled={!text} type="submit">
+          Add
+        </Button>
+        <Label>
+          <InputField
+            type="text"
+            placeholder="Add todo"
+            required
+            value={text}
+            onChange={(event) => setText(event.target.value)}
+          />
+        </Label>
+      </Form>
+    </Wrapper>
+  );
+};
+
 const Wrapper = styled.article`
   padding: 10px 0;
   border-bottom: 2px solid #e8e8e8;
@@ -26,32 +57,3 @@ const InputField = styled.input`
     width: 340px;
   }
 `;
-
-export const AddTodoForm = () => {
-  const [text, setText] = useState('');
-
-  const dispatch = useDispatch();
-
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    dispatch(todos.actions.addTodo({ text }));
-    setText(''); // Clearing the input
-  };
-
-  return (
-    <Wrapper>
-      <Form onSubmit={handleSubmit}>
-        <Button type="submit">Add</Button>
-        <Label>
-          <InputField
-            type="text"
-            placeholder="Add todo"
-            required
-            value={text}
-            onChange={(event) => setText(event.target.value)}
-          />
-        </Label>
-      </Form>
-    </Wrapper>
-  );
-};

@@ -6,12 +6,6 @@ import styled from 'styled-components';
 import { AddTodoForm } from './AddTodoForm';
 import { TodoItem } from './TodoItem';
 
-const Container = styled.main`
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-`;
-
 const getVisibleTodos = (todos, filter) => {
   switch (filter) {
     case VisibilityFilter.ShowAll:
@@ -40,3 +34,9 @@ export const TodoList = () => {
     </Container>
   );
 };
+
+const Container = styled.main`
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+`;
