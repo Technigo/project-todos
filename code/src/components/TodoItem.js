@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { Button } from 'lib/Button';
 
 import { todos } from '../reducers/todos';
+import { Container } from 'lib/Container';
 
 export const TodoItem = ({ id, name, isCompleted }) => {
     const dispatch = useDispatch();
@@ -17,15 +18,17 @@ export const TodoItem = ({ id, name, isCompleted }) => {
     };
 
     return (
-    
+    <Container>
         <div>
-            <div>{name}</div>
+          <div>
+        <div>{name}</div>
             <div onClick={onIsCompletedChange}>
                 {isCompleted ? "☑️" : "🔲 "}
+                <Button onClick={onTodoDelete}>Remove</Button>
             </div>
-            <Button onClick={onTodoDelete}>Remove</Button>
+            </div>
         </div>
-       
+        </Container>
     );
 }
 

@@ -1,10 +1,12 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-width: 350px;
+width: 400px;
 height: auto;
-background: #bdbf00;
-margin: 4px 16px;
-padding 5px;
+background: #e8f0ba;
+margin: 6px 25px;
+padding: 10px;
+border: solid 2px #786253;
+box-shadow: 8px 5px;
 border-radius: 5px;
 `
