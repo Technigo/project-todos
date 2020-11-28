@@ -8,6 +8,7 @@ const initialState = {
       { value: 'school', label: 'School' },
       { value: 'work', label: 'Work' },
       { value: 'personal', label: 'Personal' },
+      { value: 'home', label: 'Home' },
       { value: 'other', label: 'Other' },
     ],
     selectedStatusFilter: '',

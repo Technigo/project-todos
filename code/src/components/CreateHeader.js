@@ -36,6 +36,11 @@ const BackButton = styled.img`
   top: 30px;
   left: 15px;
   height: 20px;
+  opacity: 0.8;
+
+  :hover {
+    opacity: 1;
+  }
 `;
 
 const P = styled.p`

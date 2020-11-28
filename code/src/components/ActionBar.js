@@ -70,7 +70,6 @@ const ActionBarContainer = styled.section`
 const ActionBarButton = styled(Button)`
   background: #fff;
   border: 2px solid #5c52ac;
-  color: #3b2f7d;
   color: #fff;
   background: #5c52ac;
   border-radius: 45px;

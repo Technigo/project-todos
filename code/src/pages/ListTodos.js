@@ -21,4 +21,5 @@ const Wrapper = styled.section`
   margin: 0 auto;
   max-width: 600px;
   margin-top: 30px;
+  height: 80vh;
 `;
