@@ -56,7 +56,7 @@ const Title = styled.h1`
 const DateText = styled.h2`
   color: #474747;
   font-weight: 600;
-  margin: 0;
+  margin: 3px 0;
 
   @media (min-width: 1024px) {
     font-size: 20px;
@@ -66,7 +66,7 @@ const DateText = styled.h2`
 const HeadingParagraph = styled.p`
   color: #0099ff;
   font-weight: 600;
-  margin: 5px 0;
+  margin: 2px 0;
 
   @media (min-width: 1024px) {
     font-size: 17px;
@@ -80,7 +80,8 @@ const TextWrapper = styled.div`
 
   @media (min-width: 1024px) {
     width: 50%;
-    padding: 0 0 0 10px;
+    margin-left: 20px;
+    padding: 0;
   }
 `;
 

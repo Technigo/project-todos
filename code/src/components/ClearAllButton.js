@@ -36,7 +36,7 @@ const ClearButton = styled.button`
   align-self: center;
   height: 30px;
   width: 95%;
-  margin: 10px;
+  margin: 5px;
   font-size: 20px;
   background: ${props => props.background || "black"};
   color: #fff;

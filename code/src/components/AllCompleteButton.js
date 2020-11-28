@@ -33,6 +33,7 @@ export const AllCompleteButton = () => {
 
 const MarkAllButton = styled.button`
   align-self: center;
+  margin: 5px;
   height: 30px;
   width: 95%;
   font-size: 20px;
