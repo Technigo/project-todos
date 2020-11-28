@@ -1,13 +1,16 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Todo application with react and redux
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+JS, React, Redux, Styled components, material-ui
+
+The biggest challenge was to understand redux. With the help of codealongs and class lectures I could make a todo list where I could add and remove tasks
+I then worked on the checkbox
+Styling is hard but it was more fun with material-ui
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://frosty-montalcini-b50721.netlify.app
+https://github.com/monkeybusiness101/project-todos

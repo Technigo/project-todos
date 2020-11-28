@@ -1,36 +1,27 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
+import Card from '@material-ui/core/Card'
+import Checkbox from '@material-ui/core/Checkbox'
+import Delete from '@material-ui/icons/Delete'
+
 
 import { tasks } from '../reducers/tasks'
 
-const ItemContainer = styled.li`
-  display: flex;
-  flex-wrap: wrap;
+const Box = styled.div`
+  display:flex;
   justify-content: center;
-  padding: 8px;
-  margin-top: 8px;
-  margin-bottom: 8px;
-  font-size: 32px;
-  border: 4px solid tomato;
-  border-radius: 3px;
-  color: tomato;
+  align-items: center;
+  height: 42px;
+  width: 42px;
+`
+
+const StyledCard = styled(Card)`
+  display: flex;
   width: 100%;
-`
-
-const Button = styled.button`
-  background-color: white; 
-  border: none;
-  color: tomato;
-  padding: 6px 12px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 18px;
-`
-
-const Checkbox = styled.input`
-  margin: 12px;
+  align-items: center;
+  justify-content: space-between;
+  margin: 5px;
 `
 
 export const Item = ({ item }) => {
@@ -39,10 +30,14 @@ export const Item = ({ item }) => {
   
 
   return (
-    <ItemContainer>
+    <StyledCard>
       {item.text}
-      <Checkbox type="checkbox" id="button" name="button" value="button" checked={check} onChange={() =>setCheck(prev => !prev)}/>
-      <Button type="button" onClick={() => { dispatch(tasks.actions.removeItem(item)) }}>X</Button>
-    </ItemContainer>
+      <div>
+        <Checkbox type="checkbox" id="button" name="button" value="button" checked={check} onChange={() =>setCheck(prev => !prev)}/>
+        <Box>
+          <Delete type="button" onClick={() => { dispatch(tasks.actions.removeItem(item)) }} />
+        </Box>
+      </div>
+    </StyledCard>
   )
 }

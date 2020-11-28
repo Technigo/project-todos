@@ -8,7 +8,9 @@ const ListContainer = styled.div`
   display: flex;
   width: 100%;
   flex-direction: column;
+  align-items: center;
   list-style-type:none;
+  margin-bottom: 10px;
 `
 
 export const List = () => {
@@ -16,10 +18,8 @@ export const List = () => {
 
   return (
     <ListContainer>
-      {items.map((item, index) => (
-        <div>
-          <Item key={index} item={item} />
-        </div>
+      {items.map((item, index) => (  
+        <Item key={index} item={item} />  
       ))}
     </ListContainer>
   );
