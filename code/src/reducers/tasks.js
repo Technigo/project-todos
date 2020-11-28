@@ -4,16 +4,16 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      {id: 1606460400000, text: 'eat well and excercise', complete: false, category: 'self-care'},
-      {id: 1606547700000, text: 'spend time with friends and family', complete: false, category: 'self-care'},
-      {id: 1606548600000, text: 'express gratitude', complete: false, category: 'self-care'},
-      {id: 1606463100000, text: 'laugh', complete: false, category: 'self-care'}
+      {id: 1606460400000, text: 'eat well and excercise', complete: false},
+      {id: 1606547700000, text: 'spend time with friends and family', complete: false},
+      {id: 1606548600000, text: 'express gratitude', complete: false},
+      {id: 1606463100000, text: 'laugh', complete: false}
     ]
   },
   reducers: {
     addItem: (state, action) => {
-      const { newTask, category } = action.payload
-      state.items.push({ id: Date.now(), text: newTask, category, complete: false})
+      const { newTask } = action.payload
+      state.items.push({ id: Date.now(), text: newTask, complete: false})
     },
     removeItem: (state, action) => {
       state.items = state.items.filter(task => task.id !== action.payload)

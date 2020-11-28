@@ -13,7 +13,7 @@ export const AddTask = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(tasks.actions.addItem(newTask))
+    dispatch(tasks.actions.addItem({newTask}))
     setNewTask('')
   }
 
