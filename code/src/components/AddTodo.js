@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components'
 
 import { todos } from '../reducers/todos';
-import { Container } from 'lib/Container';
+import { InputContainer } from 'lib/InputContainer';
 import { Button } from 'lib/Button';
 
 const TextInput = styled.input`
@@ -33,19 +33,15 @@ export const AddTodo = () => {
 
 
     return (
-        <Container>
-        <div>
-            <label>
+        <InputContainer>
             <TextInput
                 type="text" 
                 placeholder="This needs to get done....."
                 value={value}
                 onChange={e => setValue(e.target.value)}
             />
-            </label>
-            <Button onClick={onTodoAdd}>Add todo</Button>
-        </div>
-        </Container>
+            <Button type="submit" onClick={onTodoAdd}>Add todo</Button>
+        </InputContainer>
     );
 };
 

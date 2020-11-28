@@ -1,6 +1,8 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
-export const Container = styled.div`
+export const InputContainer = styled.form`
+display: flex;
+justify-content: space-between;
 width: 400px;
 height: auto;
 background: #e8f0ba;
@@ -10,3 +12,4 @@ border: solid 2px #786253;
 box-shadow: 8px 5px;
 border-radius: 5px;
 `;
+

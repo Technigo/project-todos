@@ -57,6 +57,7 @@ stroke-width: 2px;
   height: 24px;
   background: ${(props) => (props.checked ? 'lightgreen' : 'papayawhip')};
   border: solid 1px;
+  border-radius: 4px;
   transition: all 150ms;
   ${Svg} {
       visibility: ${(props) => (props.checked ? 'visible' : 'hidden')}

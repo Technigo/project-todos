@@ -2,7 +2,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { Container } from 'lib/Container';
+import { ItemList } from 'lib/ItemList';
 import { Button } from 'lib/Button';
 import { CustomCheckbox } from './CustomCheckbox';
 import { todos } from '../reducers/todos';
@@ -22,11 +22,11 @@ export const TodoItem = ({ id, name, isCompleted }) => {
 
     return (
 
-        <Container>
-        <div>{name}</div>
+        <ItemList>
                  <CustomCheckbox checked={isCompleted}/>
+                 <div>{name}</div>
                 <Button  onClick={onTodoDelete}>Remove</Button>
-        </Container>
+        </ItemList>
     
     );
 }

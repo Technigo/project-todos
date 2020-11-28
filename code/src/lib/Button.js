@@ -21,4 +21,4 @@ text-align: center;
   color: white;
   cursor: pointer;
 }
-`
+`;
