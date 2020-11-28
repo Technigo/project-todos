@@ -1,4 +1,5 @@
 import React from 'react';
+
 import { Lottie } from '@crello/react-lottie';
 import animationData from '../lotties/calender';
 import styled from 'styled-components';
@@ -16,4 +17,4 @@ export const LottieAnimation = () => (
           config={{ animationData: animationData, loop: true, autoplay: true }}>
       </Lottie>
   </LottieContainer>
-)
+);

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { v4 as uuidv4 } from 'uuid';
 
 import { todos } from '../reducers/todos';
@@ -28,7 +29,6 @@ export const TodoInput = () => {
         description: inputValue,
         id: uuidv4(),
         done: false
-        //dueDate: dueDate
       })
     );
 
@@ -39,7 +39,6 @@ export const TodoInput = () => {
   return (
     <>
       <StyledLabel htmlFor='todo-input'>
-        {/*<p> Time : {date.toLocaleTimeString()}</p>*/}
         date: {date.toLocaleDateString()}      
       </StyledLabel>
       <Form className='todo-input' onSubmit={handleOnSubmit}>
@@ -51,14 +50,14 @@ export const TodoInput = () => {
           maxLength='20'
           onChange={event => setInputValue(event.target.value)}
           value={inputValue}
-          className='todo-input-text'
-        ></InputField>  
+          className='todo-input-text'>
+        </InputField>  
         <InputAdd 
           type='submit'
           aria-label='labelAddButton'
           className='todo-input-button'
-          value='+'
-        ></InputAdd>
+          value='+'>
+        </InputAdd>
       </Form>
     </>
   );

@@ -8,14 +8,12 @@ export const Title = styled.h1`
   padding-top: 30px;
   font-family: 'Nunito', sans-serif;
   font-weight: 700;
-  
     @media (min-width: 768px) {
       font-size: 66px;
     }
 `
 export const Emoji = styled.span`
   font-size: 40px;
-
     @media (min-width: 768px) {
       font-size: 66px;
     }
@@ -107,7 +105,6 @@ export const SectionDeleteButton = styled.section`
   justify-content: center;
   align-items: center;
 `
-
 export const StyledInput = styled.input`
   -webkit-appearance: none;
   -moz-appearance: none;

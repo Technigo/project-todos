@@ -26,11 +26,12 @@ export const ClearAllButton = () => {
 
   return (
     <SectionDeleteButton className='clear-all-container'>
-      <StyledInput className='clear-all-button' onClick={handleOnClick}
+      <StyledInput className='clear-all-button' 
+        onClick={handleOnClick}
         type='submit'
         value='Clear all'
-        aria-label='{ClearButton}'
-      ></StyledInput>
+        aria-label='{ClearButton}'>
+      </StyledInput>
     </SectionDeleteButton>
   )
 };

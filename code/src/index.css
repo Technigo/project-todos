@@ -19,6 +19,7 @@ code {
   cursor: pointer;
 }
 
+/* Clear all alert box*/
 .swal-button--danger {
   background-color: #FF6395;
 }

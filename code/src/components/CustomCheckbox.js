@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+
 import styled from 'styled-components';
 
 // A nested component. A function that takes in props and renders an input type = checkbox. 
@@ -62,20 +63,32 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
 
   const Checkbox = ({ className, checked, ...props }) => (
     <CheckboxContainer>
-      <HiddenCheckbox tabIndex='0' role='checkbox' checked={checked} {...props}></HiddenCheckbox>
-        <StyledCheckbox tabIndex='0' role='checkbox' checked={checked}>
+      <HiddenCheckbox 
+        tabIndex='0' 
+        role='checkbox' 
+        checked={checked} 
+        {...props}>
+      </HiddenCheckbox>
+      <StyledCheckbox 
+        tabIndex='0' 
+        role='checkbox' 
+        checked={checked}>
           <Icon viewBox='0 0 24 24'>
             <polyline points='18 7 9 17 4 12'/>
           </Icon>
-        </StyledCheckbox>
+      </StyledCheckbox>
     </CheckboxContainer>
-  )
+  );
 
   // {...props} allow us to add properties directly to the HiddenCheckBox. 
   // Remember! The HiddenCheckBox is the INPUT TYPE checkbox.
   return (
     <label>
-      <Checkbox tabIndex='0' checked={checked} onChange={handleOnChange}></Checkbox> 
+      <Checkbox 
+        tabIndex='0' 
+        checked={checked} 
+        onChange={handleOnChange}>
+      </Checkbox> 
     </label>
   )
 };

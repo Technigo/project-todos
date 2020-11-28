@@ -44,7 +44,7 @@ export const TodoItem = ({ item }) => {
         className='todo-item-remove' 
         type='button'
         onClick={onRemoveClicked}>
-          <img src={bin} alt='bin' />
+        <img src={bin} alt='bin' />
       </DeleteButton>
     </DeleteContainer>
   )

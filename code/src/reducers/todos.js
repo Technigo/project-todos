@@ -22,7 +22,7 @@ export const todos = createSlice({
     },
 
     // The payload contains the info on which was checked as done. Using the id of that
-    // item.
+    // item. Find() - finds todo and set state done or not done.
     setDone: (state, action) => {
       const { itemId, done } = action.payload;
       const item = state.list.items.find((item) => item.id === itemId);
