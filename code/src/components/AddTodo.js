@@ -14,7 +14,7 @@ export const AddTodo = () => {
   };
 
   return (
-    <form>
+    <Form>
       <label htmlFor="todo-task"></label>
       <TextInput
         id="todo-task"
@@ -26,20 +26,25 @@ export const AddTodo = () => {
       <AddButton type="submit" onClick={onItemAdd} disabled={!input}>
         +
       </AddButton>
-    </form>
+    </Form>
   );
 };
+
+const Form = styled.form`
+  display: flex;
+  align-items: center;
+`;
 
 const AddButton = styled.button`
   align-self: center;
   width: 30px;
   height: 30px;
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 25px;
   background: ${props => props.background || "#0099ff"};
   color: #fff;
   border: none;
-  border-radius: 5px;
+  border-radius: 50%;
   &:hover {
     background: #4dbfed;
     cursor: pointer;
