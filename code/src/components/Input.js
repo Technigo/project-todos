@@ -1,5 +1,8 @@
-import React from 'react'
-import styled from 'styled-components/'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import styled from 'styled-components/';
+
+import { tasks } from 'reducers/tasks';
 
 const InputContainer = styled.div`
   display: grid;
@@ -14,7 +17,7 @@ const InputContainer = styled.div`
 const PlusSign = styled.button`
   font-size: 30px;
   font-weight: bold;
-  justify-self: center;
+  justify-self: left;
   margin: 0;
   border: none;
   background: none;
@@ -28,15 +31,30 @@ const InputText = styled.input`
 
 
 export const Input = () => {
+  const [value, setValue] = useState('');
+  const dispatch = useDispatch();
+
+  const onValueChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const onItemAdd = () => {
+    dispatch(tasks.actions.addItem(value));
+    setValue('');
+  };
+
   return (
-    <form>
-      <InputContainer>
-        <PlusSign type="submit">+</PlusSign>
-        <InputText
-          type="text"
-          placeholder="Enter new task"
-        />
-      </InputContainer>
-    </form>
+    <InputContainer>
+      <PlusSign
+        type='submit'
+        onClick={onItemAdd}
+      >+</PlusSign>
+      <InputText
+        type='text'
+        placeholder='Add task'
+        value={value}
+        onChange={onValueChange}
+      />
+    </InputContainer>
   )
 }

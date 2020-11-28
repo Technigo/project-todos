@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components/';
 
+import { Button } from 'lib/Button';
+
 const HeaderContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -23,23 +25,16 @@ const Date = styled.div`
   font-size: 16px;
 `;
 
-const ClearButton = styled.button`
-  font-size: 16px;
-  justify-self: end;
-  width: fit-content;
-`;
-
 export const Header = () => {
   const items = useSelector((store) => store.tasks.items);
   const numberOfItemsToDo = items.filter((item) => !item.completed);
-  console.log(items, numberOfItemsToDo);
 
   return (
     <HeaderContainer>
       <Title>Todo</Title>
       <Tasks>{numberOfItemsToDo.length} {numberOfItemsToDo.length < 2 ? 'task' : 'tasks'} left</Tasks>
       <Date>Today</Date>
-      <ClearButton>Clear</ClearButton>
+      <Button>CLEAR ALL</Button>
     </HeaderContainer>
   )
 } 

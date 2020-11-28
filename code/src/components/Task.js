@@ -1,8 +1,10 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import styled from 'styled-components/'
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import styled from 'styled-components/';
 
-import { tasks } from 'reducers/tasks'
+import { tasks } from 'reducers/tasks';
+import { Button } from 'lib/Button';
+import { Emoji } from 'lib/Emoji';
 
 const TaskContainer = styled.div`
   display: grid;
@@ -16,19 +18,13 @@ const TaskContainer = styled.div`
 const CompleteButton = styled.input`
   width: 20px;
   height: 20px;
-  justify-self: center;
+  justify-self: left;
 `;
 
 const TaskText = styled.p`
   margin: 0;
   color: ${props => props.completed ? "#dcd7e1" : ""};
   text-decoration-line: ${props => props.completed ? "line-through" : ""};
-`;
-
-const RemoveButton = styled.button`
-  font-size: 16px;
-  justify-self: end;
-  width: fit-content;
 `;
 
 export const Task = ({ item }) => {
@@ -51,12 +47,13 @@ export const Task = ({ item }) => {
       >
       </CompleteButton>
       <TaskText completed={item.completed}>{item.description}</TaskText>
-      <RemoveButton
+      <Button
         type="button"
+        background="none"
         onClick={handleRemoveButtonClick}
       >
-        Remove
-      </RemoveButton>
+        <Emoji ariaLabel="Delete task">🗑</Emoji>
+      </Button>
     </TaskContainer>
   )
 }

@@ -24,9 +24,15 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
-    // addItem: (state, action) => {
-    //   state.items.push({ id: Date.now()})
-    // },
+    addItem: (state, action) => {
+      const newItem = {
+        id: Date.now(),
+        description: action.payload,
+        isCompleted: false
+      };
+      const newItemsList = [...state.items, newItem];
+      state.items = newItemsList;
+    },
 
     toggleCompleted: (state, action) => {
       const clickedItem = state.items.find((item) => item.id === action.payload);
@@ -36,7 +42,6 @@ export const tasks = createSlice({
     },
 
     removeItem: (state, action) => {
-      console.log(action.payload);
       state.items = state.items.filter((item) => item.id !== action.payload);
     }
   }
