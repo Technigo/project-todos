@@ -11,21 +11,22 @@ export const AddNewTodo = () => {
 
     const onSubmit = event => {
         event.preventDefault()
-        dispatch(todos.actions.addTodo(newTodo))   
-    }
+        dispatch(todos.actions.addNewTodo(newTodo))   
+    } 
 
     return(
         <AddTodoContainer>
             <Input type="text"
-            onChange={event => setNewTodo(event.target.value)}
-            value={newTodo}
-            placeholder="Add new todo..."
-            required
+                value={newTodo}
+                placeholder="Add new todo..."
+                required
+                onChange={event => setNewTodo(event.target.value)}
             />
-            
+
             <AddTodoButton type="submit"
-            onClick={onSubmit}
-            disabled={ newTodo.length < 5 }> ➕ </AddTodoButton>
+                onClick={onSubmit}
+                disabled={ newTodo.length < 5 }> ➕
+            </AddTodoButton>
         </AddTodoContainer>
     )
 }
