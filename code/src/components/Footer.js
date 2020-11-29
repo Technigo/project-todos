@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState } from 'react'
 
 // Mental note: useSelector reads from the store, and useDispatch makes it possible to dispatch actions to it.
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { todos } from '../reducers/todos'
 
 import './footer.css'
@@ -51,13 +51,13 @@ export const Footer = () => {
           disabled={newTaskText < 2}
           onClick={addTodo}
         >
-          <img src={ic_plus}></img>
+          <img src={ic_plus} alt="Add todo"></img>
         </button>
         <button
           className="button-secondary" 
           onClick={addRandomTodo}
         >
-          <img src={ic_random}></img>
+          <img src={ic_random} alt="Add random todo"></img>
         </button>
 
       </form>

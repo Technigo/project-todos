@@ -12,7 +12,6 @@ export const ListFilter = () => {
   // Defining "items" in which we're calling a function, and inside the parenthesis, we're giving another function. 
   // "items" is the list of todo items. 
   const items = useSelector(store => store.todos.items)
-  let doneItems = items.filter(item => item.isDone === true)
 
   // ## REMOVE COMPLETED
   const removeCompleted = () => {

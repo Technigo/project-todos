@@ -1,9 +1,7 @@
 .input-footer {
   display: flex;
   padding: 16px;
-  /* Shadow */
   box-shadow: 0 -1px 0px rgba(0,0,0,0.1);
-  /* box-shadow: 0 -4px 8px rgba(0,0,0,0.1); */
 }
 
 .input-footer form {
@@ -68,7 +66,7 @@
   border: 2px solid #1890ff;
 }
 
-
+/* Input styles */
 .input-footer button img {
   margin: 0 auto;
   position: relative;

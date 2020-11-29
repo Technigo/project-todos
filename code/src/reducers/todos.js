@@ -1,8 +1,6 @@
-// This is our reducer. 
-
 import { createSlice } from "@reduxjs/toolkit"
 
-// Initial state of the object. Think about how you wanna do this.
+// Initial state of the object.
 const initialState = {
   items: [
     {
@@ -84,7 +82,7 @@ export const todos = createSlice({
   name: "todos",
   initialState,
   reducers: {
-    // Every action will contain the state and action. removeOne is an action. 'state' represents the 'todo' object. 
+    // Note: Most reducer will contain 'state' and 'action'. 'state' represents the 'todo' OBJECT.
 
     // >>> DELETE TODO <<<
     deleteTodo: (state, action) => {
@@ -102,29 +100,25 @@ export const todos = createSlice({
         isDone: false,
         text: action.payload
       }
-      console.log(action.payload)
       state.items.push(newTask)
     },
 
     // >>> REMOVE COMPLETED <<<
-    removeCompleted: (state, action) => {
-      console.log(action.payload)
+    removeCompleted: (state) => {
       // Filter the list and return only what's "not done".
       state.items = state.items.filter(item => item.isDone === false)
     },
+    
     // >>> REMOVE ALL <<<
-    removeAll: (state, action) => {
-      console.log(action.payload)
+    removeAll: (state) => {
       // Filter the list and return only what's "not done".
       state.items.splice(0, state.items.length)
     },
 
     // >>> ADD RANDOM TODO <<<
     addRandomTodo: (state) => {
-      console.log("Add random todo")
       // Define "text" as a random string from the randomTasks array.
       const text = randomTasks[Math.floor(Math.random()*randomTasks.length)];
-      console.log(text)
       const newTask = {
         isDone: false,
         text: text
@@ -135,17 +129,13 @@ export const todos = createSlice({
     // >>> TOGGLE IS-DONE <<<
     toggleDone: (state, action) => {
       const index = action.payload.index
-      const isDone = action.payload.isDone
-      console.log("Inside the 'Toggle isDone' function")
 
-      // Point to the state and set the isDone property to "true"
-
+      // Point to the state and set the isDone property to "true".
       if (state.items[index].isDone === true) {
         state.items[index].isDone = false
       } else {
         state.items[index].isDone = true
       }
-
 
     }
   }
