@@ -4,34 +4,32 @@ import { combineReducers, createStore } from "@reduxjs/toolkit"
 import styled from 'styled-components'
 
 //--- reducer ---
-import { todoTasks } from './reducer/todoTasks'
+import { todos } from './reducer/todos'
 
 //--- components ---
 import { Header } from "./components/Header"
 import { Counter } from "./components/Counter"
 import { AddTodo } from "./components/AddTodo"
-import { TodoList } from "./components/TodoList"
+import { List } from "./components/List"
 
 
-
-//creating a single reducer from several reducers
+//creating a reducer
 export const reducer = combineReducers({
   //referring to the key *name* of the reducer
-  todoTasks: todoTasks.reducer
+  todos: todos.reducer
 })
 
 //1. Retrieve the local storage (from the browser?) and use it as our initial state
 // store sth over several different sessions; 
 //reduxState = what value am I supposed to get from the local storage
 const persistedStateJSON = localStorage.getItem("RebekasState")
-console.log(`persistedStateJSON: ${persistedStateJSON}`)
 
 let persistedState = {}
 
 if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON)
 }
-console.log(`persistedState: ${persistedState}`)
+
 //2. Create the storage using the initial state
 const store = createStore(reducer, persistedState, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
 
@@ -42,13 +40,13 @@ store.subscribe(() => {
 
 export const App = () => {
   return (
-    //store is passed to provider as a prop
+
     <Provider store={store}>
       <Wrap>
         <Header />
         <Counter />
         <AddTodo />
-        <TodoList />
+        <List />
       </Wrap>
     </Provider>
   )
@@ -71,7 +69,7 @@ const Wrap = styled.div`
     margin: 0 auto;  
   }
 
-  //-- desktiop --
+  //-- desktop --
   @media (min-width: 1024px) {
     font-size: 24px;
     margin: 0 auto;    

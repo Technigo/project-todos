@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 
-//counting the number of all todos
 export const Header = () => {
 
   return (
@@ -22,11 +21,19 @@ const TitleContainer = styled.div`
 const Title = styled.h1`
   color: #323E40;
   font-size: 28px;
-  margin: 0;
+  margin: 6% 0 0 0;
   border-bottom: 2px dashed #323E40;
 
-  @media (min-width: 1024px) {
+  //-- tablet --
+  @media (min-width: 677px) {
     font-size: 36px;
+    margin: 12% 0 0 0;
+  }
+
+  //-- desktop --
+  @media (min-width: 1024px) {
+    font-size: 42px;
+    margin: 15% 0 0 0;
   }
 
 `

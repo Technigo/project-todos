@@ -4,10 +4,10 @@ import styled from "styled-components"
 
 import { SingleTodo } from "./SingleTodo"
 
-export const TodoList = () => {
+export const List = () => {
 
   //fetch all tasks from the store
-  const tasks = useSelector(store => store.todoTasks.allTodoTasks)
+  const tasks = useSelector(store => store.todos.allTodoTasks)
 
   return (
     <List>

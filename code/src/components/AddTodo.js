@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import styled from "styled-components"
-
 import { useDispatch } from "react-redux"
-import { todoTasks } from "reducer/todoTasks"
+
+import { todos } from "reducer/todos"
 
 export const AddTodo = () => {
 
@@ -13,7 +13,7 @@ export const AddTodo = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(todoTasks.actions.addTask(value))
+    dispatch(todos.actions.addTask(value))
     setValue("")
   }
 
@@ -60,6 +60,11 @@ const Button = styled.button`
     border: 2px solid #819FA6;
     margin-left: 7px;
   }
+
+  //-- tablet --
+  @media (min-width: 677px) {
+    font-size: 16px;
+  }
 `
 
 const Input = styled.input`
@@ -68,4 +73,14 @@ const Input = styled.input`
   outline: none;
   background: #F2F2EB;
   font-size: 14px;
+
+  //-- tablet --
+  @media (min-width: 677px) {
+    font-size: 18px;
+  }
+
+  //-- desktop --
+  @media (min-width: 1023px) {
+    font-size: 22px;
+  }
 ` 

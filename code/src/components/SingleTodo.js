@@ -2,21 +2,18 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import styled from "styled-components"
 
-import { todoTasks } from "../reducer/todoTasks"
+import { todos } from "../reducer/todos"
 
 export const SingleTodo = ({ id, text, complete }) => {
-
-  // TODO:
-  //styled component for done and undone state
 
   const dispatch = useDispatch()
 
   const handleCheckboxClick = () => {
-    dispatch(todoTasks.actions.toggleComplete(id))
+    dispatch(todos.actions.toggleComplete(id))
   }
 
   const handleRemoveButtonClick = () => {
-    dispatch(todoTasks.actions.removeTask(id))
+    dispatch(todos.actions.removeTask(id))
   }
 
   return (
@@ -62,20 +59,25 @@ const TaskContainer = styled.li`
   padding: 10px;
   margin: 0 auto 5px auto;
   max-width: 80%;
+  align-items: center;
+`
+const Label = styled.label`
+  align-self: center;
 `
 
 const Emoji = styled.span`
   font-size: 12px;
   cursor: pointer;
+
+  //-- tablet --
+  @media (min-width: 677px) {
+    font-size: 16px;
+  }
 `
 
 const Button = styled.button`
   background: #F2F2EB;
   border: none;
-`
-
-const Label = styled.label`
-  //REMOVE IF NOT STYLED
 `
 
 const Input = styled.input`
@@ -98,6 +100,12 @@ const Input = styled.input`
     background: #898C1C;
     transition-duration: 0.8s;
   }
+
+  //-- tablet --
+  @media (min-width: 677px) {
+    height: 20px;
+    width: 20px;
+  }
 `
 
 const TextContainer = styled.div`
@@ -110,8 +118,21 @@ const TextContainer = styled.div`
 const Text = styled.p`
   font-size: 14px;
   margin: 0;
-  padding-left: 5px;
+  padding-left: 7px;
   color: #323232;
+
+
+  //-- tablet --
+  @media (min-width: 677px) {
+    font-size: 18px;
+    padding-left: 10px;
+  }
+
+  //-- desktop --
+  @media (min-width: 1024px) {
+    font-size: 24px;
+    padding-left: 13px;
+  }
 `
 
 const TextCompleted = styled.p`
@@ -119,4 +140,16 @@ const TextCompleted = styled.p`
   padding-left: 5px;
   text-decoration: line-through;
   color: #323232;
+
+  //-- tablet --
+  @media (min-width: 677px) {
+    font-size: 18px;
+    padding-left: 10px;
+  }
+
+  //-- desktop --
+  @media (min-width: 1024px) {
+    font-size: 24px;
+    padding-left: 13px;
+  }
 `
