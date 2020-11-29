@@ -40,9 +40,8 @@ export const Todo = (props) => {
           Remove
         </Button>
       </ItemLineWrapper>
-      {/* Implement functionality so that text turns red if duedate is passed? */}
+      {/* Note to self: Implement functionality so that text turns red if duedate is passed */}
       <ItemLineWrapper> 
-        {/* <TimeLine> <TimeIcon src="../assets/clock.svg" /> {moment(startDate).format('MMM Do YYYY')}</TimeLine> */}
         <TimeLine> <TimeIcon src="../assets/clock.svg" /> {moment(startDate).fromNow()}</TimeLine>
       {' '}{dueDate && <TimeLine> <TimeIcon src="../assets/hourglass.svg" /> {moment(dueDate).format('MMM Do YYYY')}</TimeLine>}
       </ItemLineWrapper>
@@ -78,13 +77,10 @@ const TextLine = styled.p`
 const ItemTextWrapper = styled.div`
   display: flex;
   align-items: center;
-  
-  
 `;
 
 const TimeLine = styled.span`
   display: flex;
   align-items: center;
   font-size: 12px;
-  
 `;

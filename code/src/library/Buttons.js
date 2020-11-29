@@ -1,6 +1,6 @@
  import styled from 'styled-components'
 
-//props: if you send props on button in component regarding background 
+//props: if props is sent on button in component regarding background 
 //it will take that color, otherwise have default color.
 export const Button = styled.button`
   padding: 5px;

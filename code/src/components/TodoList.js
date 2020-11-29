@@ -9,12 +9,11 @@ import logo from '../assets/bored-cat.gif'
 
 export const TodoList = () => {
   const [category, setCategory] = useState('')
-  //we select (get) from the store in to the component here:
   const items = useSelector((store) => store.todos.items)
 
   const todos = useSelector((store) => {
     if (!category) return store.todos.items //if no category, show all items in list
-    else return store.todos.items.filter(item => item.category === category) // else we want to filter the list on category choosen
+    else return store.todos.items.filter(item => item.category === category) // else filter the list on category choosen
   })
   
   if (items.length === 0) {
@@ -27,8 +26,7 @@ export const TodoList = () => {
   return (
     <ListWrapper>
       {/* dropdown to filter by categories: */}
-      {/* I don't want all categories to show if no task has that category.
-    How do I do that? */}
+      {/* Note to self: How can I make it so that only choosen categories show? */}
       {items.length > 0 && <label>
         <Select
           value={category}
@@ -43,14 +41,13 @@ export const TodoList = () => {
           <option value='Other'>Other</option>
         </Select>
       </label>}
-    {/* List that maps through the todos in the global state and renders todos from todo component */}
-    <ToDoList>
-      {todos.map((item) => (
-        <Todo key={item.id} item={item} />
-      )).reverse()}
-    </ToDoList>
-    {items.length > 0 &&
-    <ClearButton />} 
+      <ToDoList>
+        {todos.map((item) => (
+          <Todo key={item.id} item={item} />
+        )).reverse()}
+      </ToDoList>
+      {items.length > 0 &&
+      <ClearButton />} 
     </ListWrapper>
   )
 }

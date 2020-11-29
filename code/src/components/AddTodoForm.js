@@ -15,16 +15,14 @@ export const AddTodoForm = () => {
   const [category, setCategory] = useState('')
   const [dueDate, setDueDate] = useState(new Date())
   const [complete, setComplete] = useState(false)
-  //const date = new Date()
   const dispatch = useDispatch()
 
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(todos.actions.addItem({ text, category, complete, dueDate: dueDate.getTime() }))
-    // text, category & dueDate as payloads
     setText('') // clears input
-    setCategory('') // clears input
-    setDueDate(new Date()) // clears input
+    setCategory('') 
+    setDueDate(new Date()) 
     setComplete()
   }
 
@@ -58,7 +56,6 @@ export const AddTodoForm = () => {
             </Select>
           </label>
           
-          {/* date-picker to set dueDate below */}
           <DueDateLabel>
             Choose Due Date
             <DatePicker 
