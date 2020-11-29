@@ -6,27 +6,7 @@ export const tasks = createSlice({
     name: "tasks",
     initialState: {
     items: [],
-      // {
-      //   id: 1,
-      //   text: 'Write an article', 
-      //   done: false   
-      // },
-      // {
-      //   id: 2,
-      //   text: 'Add styled components',
-      //   done: false 
-        
-      // },
-      // {
-      //   id: 3,
-      //   text: 'Send in report', 
-      //   done: false 
-      // },
-      // {  
-      //   id: 4, 
-      //   text: 'Exercise',
-      //   done: false     
-      // },
+     
    
   },
  
@@ -40,12 +20,26 @@ export const tasks = createSlice({
         })
         
       },
-      removeTask: (state, action) => {
-         state.items = state.items.filter(item => item.id !== action.payload)
-      },
-
+     
       removeAll: (state) => {
         state.items = []
+      },
+
+      removeChecked: (state) => {
+        const filteredList = state.items.filter((item) => !item.complete);
+        state.items = filteredList
+      },
+
+      removeTask: (state, action) => {
+        state.items = state.items.filter((item) => item.id !== action.payload)
+      },
+      
+      setChecked: (state, action) => {
+        const matchTask = state.items.find((item) => item.id === action.payload)
+      
+             if (matchTask) {
+              matchTask.complete = !matchTask.complete
+        };
       },
     }
 })
