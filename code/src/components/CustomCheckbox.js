@@ -53,7 +53,7 @@ const StyledCheckbox = styled.div`
   width: 18px;
   height: 18px;
   background: ${props => (props.checked ? "#0099ff" : "#fff")};
-  border: 1px solid #0099ff;
+  border: 2px solid #0099ff;
   border-radius: 50%;
   transition: all 150ms;
   ${Icon} {
