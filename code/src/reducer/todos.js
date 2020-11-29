@@ -5,7 +5,7 @@ const initialState = {
   allTodoTasks: []
 }
 
-export const todoTasks = createSlice({
+export const todos = createSlice({
 
   //name of the slice
   name: "todos",
