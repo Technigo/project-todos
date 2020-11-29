@@ -12,8 +12,10 @@ For this project, I have used:
 
 🧩 React
 🧠 Redux
-💅 Styled components
+💅 Styled components😇
 
 ## View it live
+#Please disregard all commits done one Nov 29, those represent my war with Netlify.😇
 
+Here is the live project: https://katas-todos.netlify.app/ 
 
