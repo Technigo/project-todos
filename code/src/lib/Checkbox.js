@@ -33,11 +33,9 @@ export const InputCheckbox = styled.input`
     box-shadow: inset 2px 2px 5px #c4c4c4, inset -2px -2px 5px #ffffff;
     &::after {
       opacity: 1;
-      border-color: #ccc;
     }
   }
   &:focus, :active {
-    border-color: #000;
     outline: none;  
     &::after {
       /* border-color: #000; */
