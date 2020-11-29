@@ -24,16 +24,14 @@ export const SingleTodo = ({ id, text, complete }) => {
     <TaskContainer>
       <TextContainer>
         <Label>
-          <input
+          <Input
             type="checkbox"
             checked={complete}
             onChange={handleCheckboxClick}
           />
           <span></span>
         </Label>
-        <Text>
-          {text}
-        </Text>
+        {complete ? (<TextCompleted>{text}</TextCompleted>) : (<Text>{text}</Text>)}
       </TextContainer>
       <div>
         <Button
@@ -43,7 +41,7 @@ export const SingleTodo = ({ id, text, complete }) => {
             <span
               role="img"
               aria-label="red-cross">
-              ❌
+              ✖️
             </span>
           </Emoji>
         </Button>
@@ -61,15 +59,17 @@ const TaskContainer = styled.li`
   background: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
+  color: #323E40;
   list-style-type: none;
   border: 1px solid #808080;
-  padding: 3px;
+  padding: 10px;
   margin-bottom: 5px;
   width: 100%;
 `
 
 const Emoji = styled.span`
   font-size: 12px;
+  cursor: pointer;
 `
 
 const Button = styled.button`
@@ -78,6 +78,29 @@ const Button = styled.button`
 `
 
 const Label = styled.label`
+  
+`
+
+const Input = styled.input`
+  cursor: pointer;
+  //removes the default checkbox style 
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+
+  border: 3px solid #5D732D;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  outline: none;
+  margin: 0;
+
+  &:checked {
+    border: 2px solid #898C1C;
+    background: #5D732D;
+    transition-duration: 0.7s;
+  }
 
 `
 
@@ -89,5 +112,10 @@ flex-direction: row;
 const Text = styled.p`
   margin: 0;
   padding-left: 5px;
+`
 
+const TextCompleted = styled.p`
+  margin: 0;
+  padding-left: 5px;
+  text-decoration: line-through;
 `

@@ -9,17 +9,19 @@ A web to-do application built with Redux. :pencil:
 - what immutability means and how to work with it
 
 ## :heavy_check_mark: Features
-
+- listing all todo tasks
+- toggle between completed & uncompleted tasks
+- can add/remove tasks
+- total count of tasks
 
 ## :chart_with_upwards_trend: Future improvements
 
  
 ## :robot: Tech used 
-- HTML5
-- CSS3
-- React
 - JavaScript
+- React
 - Redux
+- styled components
 
 ## :eyes: View it live
-
+https://rebeka-todo-app.netlify.app/ 

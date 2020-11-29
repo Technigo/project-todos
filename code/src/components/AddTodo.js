@@ -20,7 +20,7 @@ export const AddTodo = () => {
   return (
     <section>
       <Form onSubmit={handleSubmit}>
-        <button type="submit">+</button>
+        <Button type="submit">+</Button>
         <label>
           {/* on enter dispatch the data to todoTasks reducer */}
           <input
@@ -39,3 +39,6 @@ const Form = styled.form`
 margin: 10px 0;
 
 `
+const Button = styled.button`
+  cursor: pointer;
+` 
