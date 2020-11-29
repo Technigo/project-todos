@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import Select from 'react-select';
 import styled from 'styled-components';
 import Datepicker from 'react-date-picker';
 import 'index.css';
@@ -13,6 +14,16 @@ export const AddTask = () => {
 
   const dispatch = useDispatch();
 
+  // Categories
+  const options = [
+    { value: 'School:', label: 'School'},
+    { value: 'Private:', label: 'Private'},
+  ];
+
+  const handleSelectChange = (selectedOption) => {
+    setCategory(selectedOption.value);
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(tasks.actions.addTask({ text, category, dueDate }))
@@ -23,24 +34,18 @@ export const AddTask = () => {
 
   return (
     <FormWrapper onSubmit={handleSubmit}>
-      <label>
-        <Selector
-          value={category}
-          onChange={(event) => setCategory(event.target.value)}
-        >
-          <option value=''>Choose Category</option>
-          <option value='School:'>School</option>
-          <option value='Private:'>Private</option>
-        </Selector>
-      </label>
-      <label>
-        <TaskInput
-          type='text'
-          value={text}
-          onChange={(event) => addTask(event.target.value)}
-          placeholder=' Add new task...'
-        />
-      </label>
+      <CustomSelect 
+        value={category.value}
+        onChange={handleSelectChange}
+        options={options}
+        placeholder='Choose category'
+      />
+      <TaskInput
+        type='text'
+        value={text}
+        onChange={(event) => addTask(event.target.value)}
+        placeholder=' Add new task...'
+      />
       <BottomWrapper>
         <Label>Due:</Label>  
         <Datepicker 
@@ -67,7 +72,7 @@ const FormWrapper = styled.form`
 const TaskInput = styled.input`
   border: none;
   border-bottom: 1px solid #869D7A;
-  padding: 6px 0;
+  padding: 6px;
   margin: 6px 0 16px;
   width: 80vw;
   max-width: 400px;
@@ -75,16 +80,11 @@ const TaskInput = styled.input`
   font-size: 14px;
 `;
 
-const Selector = styled.select`
+const CustomSelect = styled(Select)`
+  max-width: 400px:
   margin: 0 6px 10px 0;
   font-family: 'PT Sans', sans-serif;
   font-size: 14px;
-  padding: 6px 0;
-  border: none;
-  border-bottom: 1px solid #869D7A;
-  width: 80vw;
-  max-width: 400px;
-  cursor: pointer;
 `;
 
 const BottomWrapper = styled.div`

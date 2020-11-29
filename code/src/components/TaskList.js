@@ -20,7 +20,7 @@ export const TaskList = () => {
 
   return (
     <div>
-      <SmallText>{tasksTodo.length}/{tasks.items.length} tasks uncompleted</SmallText>
+      <SmallText>{tasksTodo.length}/{tasks.items.length} tasks left to complete</SmallText>
       <AddTask />
       {tasks.items.length === 0 ? (
         <DoneText>
