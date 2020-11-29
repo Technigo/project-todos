@@ -45,7 +45,7 @@ export const todos = createSlice({
       });
       state.items = updatedArray;
     },
-      removeAll: (state, action) => {
+      removeAll: (state) => {
       state.items = [];
     }
   },

@@ -37,22 +37,22 @@ const Input = styled.input`
 
 
 export const Form = () => {
-  const[value, setValue] = useState('');
-  const dispatch = useDispatch();
-  
-  const handleSubmitTask = (event) => {
-  event.preventDefault()
-  dispatch(todos.actions.addItem(value))
-  setValue(" "); 
-}
+const [value, setValue] = useState("")
+  const dispatch = useDispatch()
+  const onSubmitTask = event => {
+    event.preventDefault()
+    dispatch(todos.actions.addItem(value))
+    setValue("")
+  }
 
 return(
     <>
-      <FormAdd className="add-task" onSubmit={handleSubmitTask}>
+      <FormAdd className="add-task" onSubmit={onSubmitTask}>
         <Input type="text"  
               onChange={event => setValue(event.target.value)}
               className="form-text"
-              placeholder="add task">
+              placeholder="add task"
+              value={value}>
         </Input>
         <Button type="submit"
           className="form-button"

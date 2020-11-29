@@ -92,7 +92,8 @@ export const Info = () => {
       <Input type="text"
               placeholder="your name"
               onChange={event => setName(event.target.value)}
-              className="form-text">
+              className="form-text"
+              value={name}>
       </Input>
       <Button type="submit"
               className="form-button"
