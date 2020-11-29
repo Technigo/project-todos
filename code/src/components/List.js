@@ -10,7 +10,7 @@ export const List = () => {
   const tasks = useSelector(store => store.todos.allTodoTasks)
 
   return (
-    <List>
+    <Todos>
       {tasks.map((task) => (
         <SingleTodo
           key={task.id}
@@ -19,13 +19,13 @@ export const List = () => {
           complete={task.complete}
         />
       ))}
-    </List>
+    </Todos>
   )
 }
 
 // --- STYLED COMPONENTS ---
 
-const List = styled.ul`
+const Todos = styled.ul`
   margin: 0;
   padding: 0;
   width: 80%;
