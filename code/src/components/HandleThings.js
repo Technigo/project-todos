@@ -10,8 +10,18 @@ const Things = styled.li`
   justify-content: center;
   align-items: center;
   justify-content: space-between;
-  margin-left: 500px;
-  margin-right: 500px;
+  margin-left: 50px;
+  margin-right: 50px;
+  
+  @media (min-width: 811px, max-width: 812px ) {
+    margin-left: 150px;
+    margin-right: 150px;
+  }
+
+  @media (min-width: 1023px) {
+    margin-left: 500px;
+    margin-right: 500px;
+  }
 `
 
 const Remove = styled.button`
