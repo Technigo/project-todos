@@ -1,4 +1,6 @@
 body {
+  display: flex;
+  justify-content: center;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -85,10 +87,7 @@ font-size: 15px
   border:none;
   font-size: 20px;
 }
-/* BUTTONS */
-.remove-button {
-  /* border: solid red 2px; */
-}
+
 .remove-button button {
   background-color: #9cbe7f;
   color: white;
@@ -97,8 +96,7 @@ font-size: 15px
   border:none;
 }
 
-.added-items {
-  /* border: solid red 2px; */
+.added-items {  
   display: flex;
   align-items: center;
   width: 280px;
@@ -107,10 +105,12 @@ font-size: 15px
   background-color: #819c681c;
   margin-bottom:5px;
 }
+
 /*For the selecotor area in the item list*/
 .select-category{
   margin-left: 45px;
 }
+
 /*For the selecotor-text in the item list*/
 .form-select{
   color: #9cbe7f;
@@ -118,6 +118,7 @@ font-size: 15px
   font-weight: bold;
   margin-bottom: 20px;
 }
+
 /*For the selecotr in the item list*/
 .form-select select{
   color: #9cbe7f;
@@ -128,6 +129,7 @@ font-size: 15px
   border-radius: 10px;
   text-align: center;
 }
+
 .items-list {
   border: solid #9cbe7f 2px;
   margin: 20px;
@@ -138,20 +140,24 @@ font-size: 15px
   padding:20px;
   box-shadow: 5px 10px 18px #8f8f8f;
 }
+
 .items{
   display: flex;
   flex-direction: row;
 }
+
 .added-name{
   /* border: solid blue 2px; */
 margin-left: 10px;
 font-size: 20px;
 color: #819c68;
 }
+
 .remove-all-button {
   display: flex;
   justify-content: center;
 }
+
 .remove-all-button button {
   background-color: #9cbe7f;
   color: white;
@@ -161,6 +167,7 @@ color: #819c68;
   padding: 10px;
   font-size: 20px;
 }
+
 button:hover {
   background-color: #819c68
 }
@@ -170,6 +177,7 @@ button:hover {
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
 .item-buy {
   border: solid #819c68 2px;
   margin: 20px;
@@ -178,4 +186,3 @@ button:hover {
   color: #9cbe7f;
   text-align: center;
 }
-
