@@ -1,4 +1,3 @@
-
 import { createSlice } from "@reduxjs/toolkit";
 import uniqid from "uniqid";
 
@@ -46,21 +45,4 @@ export const todos = createSlice({
       state.items = updatedArray;
     },
   },
-
-
 });
-
-// ------------------------
-// import uniqid from 'uniqid';
-
-// how our state will look like, empty array, this will start with tree things inside. array of objects
-// this is a slice.....
-
-// {
-//     name: "Yes, this task is done now!",
-//     isCompleted: true
-//   },
-//   {
-//     name: "No, this is task is not done",
-//     isCompleted: false
-//   }
