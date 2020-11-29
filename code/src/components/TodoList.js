@@ -6,7 +6,7 @@ import { Todo } from 'components/Todo'
 import { Select } from 'library/Select'
 import { ClearButton } from 'components/ClearButton'
 import logo from '../assets/bored-cat.gif'
-
+// It is a bit confusing that I use both items and todos below:
 export const TodoList = () => {
   const [category, setCategory] = useState('')
   const items = useSelector((store) => store.todos.items)
