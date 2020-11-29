@@ -37,7 +37,6 @@ const Form = styled.form`
 
 const AddButton = styled.button`
   align-self: center;
-  padding: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
