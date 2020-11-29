@@ -5,7 +5,6 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { AddTodo } from "./components/AddTodo";
 import { TodoList } from "./components/TodoList";
 import { TodoSummary } from "./components/TodoSummary";
-import { TodoItem } from "./components/TodoItem";
 import { todos } from "./reducers/todos";
 
 // Here we combine all the reducers with key and a value
