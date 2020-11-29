@@ -37,18 +37,18 @@ const Form = styled.form`
 
 const AddButton = styled.button`
   align-self: center;
-  padding: 20px;
+  padding: 15px;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 30px;
   height: 30px;
   margin-left: 10px;
-  font-size: 25px;
+  font-size: 20px;
   background: ${props => props.background || "#0099ff"};
   color: #fff;
   border: none;
-  border-radius: 20px;
+  border-radius: 15px;
   &:hover {
     background: #4dbfed;
     cursor: pointer;
