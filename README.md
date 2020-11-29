@@ -1,13 +1,18 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Todo app built in React and Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Started off in Figma analyzing the requirements, where I designed the todo app and created the flow for the user stories: add todo, update todo to completed, delete todo and update todo to uncompleted.
+https://www.figma.com/file/SVSUTC2GEtDS5HH7dDLpI2/Annika's-to-dos?node-id=6%3A0
+
+Thereafter I started to plan and discuss the store and reducer: what actions should be there looking at the requirements. I ended up with three actions: add todo, delete todo and update todo to either complete or uncomplete depending on the current complete value. Next was planning of the component structure, and styling approach.
+
+Now coding! After rendering the initial state todos, I coded one action at a time until they were all in place. Styling happened last with a mobile first approach and using styled components.
+
+Next up: put more time into styling and make it responsive (look better on desktop and tablet), create custom alerts using Sweet Alert when clicking on the removal button for a todo.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://angry-goldberg-3ffa30.netlify.app/
