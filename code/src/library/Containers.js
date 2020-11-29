@@ -7,6 +7,7 @@ display: grid;
 grid-template-column: 1fr;
 grid-template-rows: min-content;
 justify-content: center;
+padding: 10px;
 `
 
 export const Wrapper = styled.section`
