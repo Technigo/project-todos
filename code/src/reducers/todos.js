@@ -2,7 +2,14 @@ import { createSlice } from '@reduxjs/toolkit';
 import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
-	items: [],
+	items: [
+		{
+			id: uuidv4(),
+			timestamp: Date.now(),
+			text: 'Drink 2 l of water to stay hydrated',
+			isCompleted: false,
+		},
+	],
 };
 
 export const todos = createSlice({
@@ -43,6 +50,8 @@ export const todos = createSlice({
 		},
 
 		cleanItems: (store, action) => {
+			//is there a better way to do this? array splice?
+			// that cleans the array, not makes a new one
 			const cleanArray = [];
 			store.items = cleanArray;
 		},

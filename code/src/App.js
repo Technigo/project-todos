@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { styled } from 'styled-components';
 
 import { HabitTracker } from './components/HabitTracker';
 import { todos } from './reducers/todos';
