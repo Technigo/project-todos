@@ -1,13 +1,14 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The purpose of this project was to create a todo app using redux and a global state.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started with the App.js file and a tasks.js reducer file and set up my store. I moved on to create the components I needed.
+An input form for the user to write and publish new tasks, a list for the tasks and a header and footer. 
+Then I created my different actions, add task, remove task, change between completed/not completed and a remove all action.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://annas-todo-list.netlify.app/
+
