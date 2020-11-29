@@ -9,10 +9,9 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f4f5fa;
-  background-image: linear-gradient(#edc0ed, #daaada, #be89be, #a369a3);
-  background-repeat: no-repeat;
-  height: 100vh;
+  background: linear-gradient(#edc0ed, #daaada, #be89be, #a369a3) no-repeat 50%
+    fixed;
+  background-size: cover;
 }
 
 code {

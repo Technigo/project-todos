@@ -165,6 +165,6 @@ const ItemAccordion = styled.div`
   ${({ active }) =>
     active === 'active' &&
     `
-    height: 40px;
+    height: 45px;
   `}
 `;

@@ -155,10 +155,10 @@ const TodoList = () => {
               ))}
             </ListSection>
             {/* <RemoveButton /> */}
-            <ActionBar />
           </>
         )}
       </Main>
+      <ActionBar />
     </>
   );
 };
@@ -167,16 +167,19 @@ export default TodoList;
 
 const Main = styled.main`
   display: grid;
-  grid-gap: 20px;
   width: 100%;
-  margin: 0 auto;
-  max-width: 600px;
-  background-color: #f4f5fa;
+  max-height: 100%;
+  overflow-y: scroll;
 `;
 
 const ListSection = styled.section`
   display: grid;
-  padding: 25px;
+  padding: 0 25px;
+  margin: 0 auto;
+  max-width: 600px;
+  background-color: #f4f5fa;
+  max-height: 100%;
+  overflow-y: scroll;
 `;
 
 const ActionBarContainer = styled.div`

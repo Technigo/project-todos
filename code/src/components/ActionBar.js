@@ -55,22 +55,23 @@ const ActionBar = () => {
 
 export default ActionBar;
 
-const ActionBarContainer = styled.section`
+const ActionBarContainer = styled.footer`
   display: flex;
   justify-content: space-evenly;
   /* position: absolute; */
   /* bottom: 0; */
   width: 100%;
-  padding: 25px;
+  padding: 16px;
   margin: 0 auto;
   max-width: 600px;
-  background: transparent;
+  background: #fff;
 `;
 
 const ActionBarButton = styled(Button)`
   background: #fff;
   border: 2px solid #5c52ac;
   color: #fff;
+  font-size: 0.6rem;
   background: #5c52ac;
   border-radius: 45px;
   font-weight: 500;
