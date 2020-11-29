@@ -8,6 +8,7 @@ import { Provider } from "react-redux"
 import { List } from "components/List"
 import { Footer } from "components/Footer"
 import { Header } from "components/Header"
+import { ListFilter } from './components/ListFilter'
 
 import { todos } from './reducers/todos'
 
@@ -20,6 +21,7 @@ export const App = () => {
     <Provider store={store}>
     <div className="main-container">
       <Header></Header>
+      <ListFilter></ListFilter>
       <List></List>
       <Footer></Footer>
     </div>

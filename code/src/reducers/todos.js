@@ -57,7 +57,7 @@ const randomTasks = [
   "Recycle",
   "Clear out your cupboard",
   "Get a new nemesis",
-  "Cancel someone you don't like",
+  "Cancel someone",
   "Defund the police",
   "Call a relative",
   "Learn crochet",
@@ -70,11 +70,14 @@ const randomTasks = [
   "Go commando for a day",
   "Lick a wall and see what it tastes like",
   "Run with scissors",
+  "Overthrow the government",
+  "Read a book",
   "Visit the Bermuda Triangle",
   "Run through an airport to stop someone you love from leaving",
   "Walk away from an explosion",
   "Fight a bear",
-  "Hack into the mainframe"
+  "Hack into the mainframe",
+  "(╯°□°）╯︵ ┻━┻"
 ]
 
 export const todos = createSlice({
@@ -109,9 +112,15 @@ export const todos = createSlice({
       // Filter the list and return only what's "not done".
       state.items = state.items.filter(item => item.isDone === false)
     },
+    // >>> REMOVE ALL <<<
+    removeAll: (state, action) => {
+      console.log(action.payload)
+      // Filter the list and return only what's "not done".
+      state.items.splice(0, state.items.length)
+    },
 
     // >>> ADD RANDOM TODO <<<
-    addRandomTodo: (state, action) => {
+    addRandomTodo: (state) => {
       console.log("Add random todo")
       // Define "text" as a random string from the randomTasks array.
       const text = randomTasks[Math.floor(Math.random()*randomTasks.length)];

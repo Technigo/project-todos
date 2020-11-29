@@ -2,9 +2,8 @@ import React from 'react';
 
 import { useSelector } from 'react-redux'
 import { Item } from './Item'
+
 import { EmptyState } from './EmptyState'
-
-
 
 import './list.css'
 
@@ -14,7 +13,7 @@ export const List = () => {
   return (
 
     <main className="list-container">
-
+      
       { items.length < 1 && 
         <EmptyState/>
       }
