@@ -2,6 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
+import { Paragraph } from 'library/Text';
+
 const CreateHeader = () => {
   return (
     <Header>
@@ -43,8 +45,7 @@ const BackButton = styled.img`
   }
 `;
 
-const P = styled.p`
+const P = styled(Paragraph)`
   color: #fff;
-  font-size: 1rem;
   align-self: center;
 `;

@@ -5,7 +5,6 @@ const EmptyList = () => {
   return (
     <EmptySection>
       <h2>Nothing to do!</h2>
-      {/* <img src="https://i.gifer.com/K9o2.gif" alt="Lazy cat" /> */}
       <img src="https://i.gifer.com/ZIb4.gif" alt="Dancing Carlton" />
     </EmptySection>
   );
@@ -21,7 +20,7 @@ const EmptySection = styled.section`
   height: 40vh;
 
   & h2 {
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: 400;
     color: rgba(0, 0, 0, 0.65);
     margin-bottom: 20px;

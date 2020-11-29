@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { todos } from '../reducers/todos';
 import { Button } from '../library/Button';
 
-const ActionBar = () => {
+const ListFooter = () => {
   const [isAllComplete, setIsAllComplete] = useState(false);
   const dispatch = useDispatch();
 
@@ -35,56 +35,46 @@ const ActionBar = () => {
   };
 
   return (
-    <ActionBarContainer>
-      <ActionBarButton
+    <Footer>
+      <FooterButton
         type="button"
         onClick={
           isAllComplete ? () => handleOnNotComplete() : () => handleOnComplete()
         }
       >
-        <ActionBarText>
-          {!isAllComplete ? 'Check All' : 'Uncheck All'}
-        </ActionBarText>
-      </ActionBarButton>
-      <ActionBarButton type="button" onClick={() => handleOnRemove()}>
-        <ActionBarText>Delete All</ActionBarText>
-      </ActionBarButton>
-    </ActionBarContainer>
+        {!isAllComplete ? 'Check All' : 'Uncheck All'}
+      </FooterButton>
+      <FooterButton type="button" onClick={() => handleOnRemove()}>
+        Delete All
+      </FooterButton>
+    </Footer>
   );
 };
 
-export default ActionBar;
+export default ListFooter;
 
-const ActionBarContainer = styled.footer`
+const Footer = styled.footer`
   display: flex;
   justify-content: space-evenly;
-  /* position: absolute; */
-  /* bottom: 0; */
   width: 100%;
   padding: 16px;
   margin: 0 auto;
-  max-width: 600px;
   background: #fff;
 `;
 
-const ActionBarButton = styled(Button)`
+const FooterButton = styled(Button)`
   background: #fff;
   border: 2px solid #5c52ac;
   color: #fff;
   font-size: 0.6rem;
+  letter-spacing: 1.5px;
   background: #5c52ac;
-  border-radius: 45px;
   font-weight: 500;
-  cursor: pointer;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-  text-transform: uppercase;
-  transition: all 0.3s ease 0s;
 
   :hover {
     color: #fff;
     background: #5c52ac;
     box-shadow: 0px 15px 20px rgba(92, 82, 172, 0.4);
-    transform: translateY(-5px);
   }
 `;
-const ActionBarText = styled.p``;

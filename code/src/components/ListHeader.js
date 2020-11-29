@@ -4,38 +4,31 @@ import moment from 'moment';
 import styled from 'styled-components';
 
 import TodoSummary from './TodoSummary';
+import { Title, Paragraph, Span } from '../library/Text';
 
 const ListHeader = () => {
-  //const dispatch = useDispatch();
-
-  // const handleClick = () => {
-  //   dispatch(todos.actions.createTodo);
-  // };
   return (
-    <HeaderContainer>
-      <HeaderTitleContainer>
-        <HeaderLinkContainer>
+    <Header>
+      <Container>
+        <LinkContainer>
           <Link to={'/create_todo'}>
             <HeaderIcon src="../assets/plus.svg" />
           </Link>
-        </HeaderLinkContainer>
-        <HeaderTitle>Do it</HeaderTitle>
-        <HeaderTitle>tomorrow</HeaderTitle>
-        <HeaderDate>
-          <HeaderDateBold>{moment().format('dddd')}</HeaderDateBold>,{' '}
-          {moment().format('Do MMMM')}
-        </HeaderDate>
-      </HeaderTitleContainer>
-
-      {/* <Button type="button">+</Button> */}
+        </LinkContainer>
+        <Title>Do it</Title>
+        <Title>tomorrow</Title>
+        <Paragraph>
+          <Span>{moment().format('dddd')}</Span>, {moment().format('Do MMMM')}
+        </Paragraph>
+      </Container>
       <TodoSummary />
-    </HeaderContainer>
+    </Header>
   );
 };
 
 export default ListHeader;
 
-const HeaderContainer = styled.header`
+const Header = styled.header`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +36,7 @@ const HeaderContainer = styled.header`
   background-image: linear-gradient(#3b2f7d, #483c90, #5c52ac);
 `;
 
-const HeaderTitleContainer = styled.div`
+const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -51,7 +44,7 @@ const HeaderTitleContainer = styled.div`
   padding: 25px;
 `;
 
-const HeaderLinkContainer = styled.div`
+const LinkContainer = styled.div`
   align-self: flex-end;
 `;
 
@@ -65,17 +58,17 @@ const HeaderIcon = styled.img`
   }
 `;
 
-const HeaderTitle = styled.h1`
-  color: rgba(255, 255, 255, 0.6);
-  font-weight: lighter;
-  font-size: 3.5rem;
-  margin-top: -10px;
-`;
+// const HeaderTitle = styled(Title)`
+//   color: rgba(255, 255, 255, 0.6);
+//   font-weight: lighter;
+//   font-size: 3.5rem;
+//   margin-top: -10px;
+// `;
 
-const HeaderDate = styled.p`
-  color: rgba(255, 255, 255, 0.6);
-`;
+// const HeaderDate = styled.p`
+//   color: rgba(255, 255, 255, 0.6);
+// `;
 
-const HeaderDateBold = styled.span`
-  font-weight: bold;
-`;
+// const HeaderDateBold = styled.span`
+//   font-weight: bold;
+// `;

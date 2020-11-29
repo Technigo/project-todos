@@ -12,7 +12,6 @@ const initialState = {
       { value: 'other', label: 'Other' },
     ],
     selectedStatusFilter: '',
-    selectedCategoryFilter: '',
   },
 };
 
@@ -53,10 +52,6 @@ export const todos = createSlice({
 
     filterByStatus: (state, action) => {
       state.list.selectedStatusFilter = action.payload;
-    },
-
-    filterByCategory: (state, action) => {
-      state.list.selectedCategoryFilter = action.payload;
     },
   },
 });

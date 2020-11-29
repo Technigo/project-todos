@@ -4,13 +4,12 @@ import moment from 'moment';
 import styled from 'styled-components';
 
 import { todos } from '../reducers/todos';
-import CustomCheckbox from '../library/CustomCheckbox';
+import CustomCheckbox from './CustomCheckbox';
 
 const TodoItem = ({ item }) => {
   const [active, setActive] = useState('');
 
   const dispatch = useDispatch();
-  //const item = useSelector(store => store.todos.list.items[itemIndex]);
 
   const onRemoveTodo = () => {
     dispatch(
@@ -23,7 +22,6 @@ const TodoItem = ({ item }) => {
 
   const handleOnChange = event => {
     dispatch(todos.actions.setComplete(item.id));
-    //setChecked(event.target.checked);
   };
 
   const toggleAccordion = () => {
@@ -31,51 +29,37 @@ const TodoItem = ({ item }) => {
   };
 
   return (
-    <>
-      {/* <ItemWrapper> */}
-      <ItemWrapper onClick={toggleAccordion}>
-        {/* <ItemButton> */}
-        <CheckboxLabel>
-          <CustomCheckbox
-            checked={item.isComplete ? true : ''}
-            onChange={handleOnChange}
-          ></CustomCheckbox>
-        </CheckboxLabel>
-        {/* <div> */}
-        <Item>
-          <ItemContainer>
-            <ItemDescriptionContainer>
-              <ItemDescription isComplete={item.isComplete}>
-                {item.description}
-              </ItemDescription>
-              <ItemCategory isComplete={item.isComplete}>
-                {item.category}
-              </ItemCategory>
-            </ItemDescriptionContainer>
-            {/* <ItemImageContainer> */}
-            {(item.isComplete || active) && (
-              <ItemImage src="../assets/cancel.svg" onClick={onRemoveTodo} />
-            )}
-
-            {/* </ItemImageContainer> */}
-          </ItemContainer>
-          {/* </ItemButton> */}
-          {/* style={{ height: `${height}` }} */}
-          <ItemAccordion active={active}>
-            {/* <ItemDescriptionContainer> */}
-            <ItemDate isComplete={item.isComplete}>
-              Created: {moment(item.createdAt).fromNow()}
-            </ItemDate>
-            <ItemDate isComplete={item.isComplete}>
-              Due: {moment(item.dueDate).format('MMM Do YYYY')}
-            </ItemDate>
-            {/* </ItemDescriptionContainer> */}
-          </ItemAccordion>
-        </Item>
-        {/* </div> */}
-      </ItemWrapper>
-      {/* </ItemWrapper> */}
-    </>
+    <ItemWrapper onClick={toggleAccordion}>
+      <CheckboxLabel>
+        <CustomCheckbox
+          checked={item.isComplete ? true : ''}
+          onChange={handleOnChange}
+        ></CustomCheckbox>
+      </CheckboxLabel>
+      <Item>
+        <ItemContainer>
+          <div>
+            <ItemDescription isComplete={item.isComplete}>
+              {item.description}
+            </ItemDescription>
+            <ItemCategory isComplete={item.isComplete}>
+              {item.category}
+            </ItemCategory>
+          </div>
+          {(item.isComplete || active) && (
+            <ItemImage src="../assets/cancel.svg" onClick={onRemoveTodo} />
+          )}
+        </ItemContainer>
+        <ItemAccordion active={active}>
+          <ItemDate isComplete={item.isComplete}>
+            Created: {moment(item.createdAt).fromNow()}
+          </ItemDate>
+          <ItemDate isComplete={item.isComplete}>
+            Due: {moment(item.dueDate).format('MMM Do YYYY')}
+          </ItemDate>
+        </ItemAccordion>
+      </Item>
+    </ItemWrapper>
   );
 };
 
@@ -84,15 +68,6 @@ export default TodoItem;
 const ItemWrapper = styled.article`
   display: flex;
 `;
-
-// const ItemButton = styled.button`
-//   width: 100%;
-//   background-color: transparent;
-//   border: none;
-//   display: flex;
-//   border-bottom: 1px solid lightgray;
-//   padding: 20px;
-// `;
 
 const CheckboxLabel = styled.label`
   margin: 10px 10px 0 0;
@@ -117,10 +92,7 @@ const ItemContainer = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  /* border-bottom: 1px solid lightgray; */
 `;
-
-const ItemDescriptionContainer = styled.div``;
 
 const ItemDescription = styled.p`
   color: #404040;
@@ -132,7 +104,7 @@ const ItemDescription = styled.p`
   `}
 `;
 
-const ItemCategory = styled(ItemDescription)`
+const ItemCategory = styled.p`
   font-size: 0.7rem;
   margin-top: 3px;
   color: #808080;

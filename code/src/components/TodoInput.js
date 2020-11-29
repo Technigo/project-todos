@@ -7,6 +7,7 @@ import Select from 'react-select';
 import styled from 'styled-components';
 
 import { todos } from '../reducers/todos';
+import { Button } from '../library/Button';
 
 const TodoInput = () => {
   const [inputValue, setInputValue] = useState('');
@@ -51,14 +52,6 @@ const TodoInput = () => {
           value={inputValue}
           placeholder="Add New Task"
         ></Input>
-        {/* <DateInput
-          type="date"
-          name="due-date"
-          value={dueDate}
-          min={moment().format('YYYY-MM-DD')}
-          max={moment().add(1, 'years').format('YYYY-MM-DD')}
-          onChange={event => setDueDate(event.target.value)}
-        /> */}
         <CustomDatePicker onChange={date => setDueDate(date)} value={dueDate} />
         <CustomSelect
           options={options}
@@ -97,8 +90,6 @@ const Form = styled.form`
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
-  max-width: 600px;
-  height: 70vh;
   padding: 25px;
 `;
 
@@ -119,18 +110,6 @@ const Input = styled.input.attrs({ type: 'text' })`
   }
 `;
 
-// const DateInput = styled.input.attrs({ type: 'date' })`
-//   height: 40px;
-//   width: 100%;
-//   font-size: 1.1rem;
-//   border: none;
-//   border-bottom: 0.5px solid lightgray;
-//   background: transparent;
-//   font-family: 'Montserrat', sans-serif;
-//   color: rgba(255, 255, 255, 0.4);
-//   cursor: pointer;
-// `;
-
 const CustomSelect = styled(Select)`
   width: 100%;
 `;
@@ -141,40 +120,18 @@ const CustomDatePicker = styled(DatePicker)`
   height: 40px;
 `;
 
-// const customStyles = {
-//   option: (provided, state) => ({
-//     ...provided,
-//     borderBottom: '2px dotted green',
-//     color: state.isSelected ? 'white' : 'black',
-//     backgroundColor: state.isSelected ? '#7E77CC' : 'white',
-//   }),
-//   control: provided => ({
-//     ...provided,
-//     marginTop: '5%',
-//   }),
-// };
-
-const AddButton = styled.button`
+const AddButton = styled(Button)`
   width: 140px;
   height: 45px;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
-  text-transform: uppercase;
-  letter-spacing: 2.5px;
-  font-weight: 500;
   color: #28e177;
+  letter-spacing: 2.5px;
   background-color: transparent;
   border: 2px solid #28e177;
-  border-radius: 45px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease 0s;
-  cursor: pointer;
-  outline: none;
 
   :hover {
     background-color: #2ee59d;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #3b2f7d;
-    transform: translateY(-5px);
   }
 `;
