@@ -4,10 +4,12 @@ import breakpoints from "./Breakpoints";
 export const TodoFormWrapper = styled.section`
   width: 100vw;
   height: 100vh;
-  @media only screen and ${breakpoints.device.computer} {
+  @media only screen and ${breakpoints.device.tablet} {
     display: flex;
-    justify-content: center;
     align-items: center;
+  }
+  @media only screen and ${breakpoints.device.tablet} {
+    justify-content: center;
   }
 `;
 
@@ -67,7 +69,7 @@ export const TodoHeaderInput = styled.input`
   @media only screen and ${breakpoints.device.tablet} {
     font-size: 32px;
     margin-top: 38px;
-    padding-left: 12px; 
+    padding-left: 12px;
   }
   @media only screen and ${breakpoints.device.computer} {
     font-size: 18px;
@@ -105,11 +107,10 @@ export const TodoTextarea = styled.textarea`
   &:hover {
     cursor: pointer;
   }
-
   @media only screen and ${breakpoints.device.tablet} {
     font-size: 22px;
     margin-top: 16px;
-    padding-left: 12px; 
+    padding-left: 12px;
   }
   @media only screen and ${breakpoints.device.computer} {
     font-size: 16px;
@@ -163,7 +164,7 @@ export const ButtonWrapper = styled.div`
   left: 75%;
   @media only screen and ${breakpoints.device.tablet} {
     top: 82%;
-    left: 80%;
+    left: 85%;
   }
 `;
 

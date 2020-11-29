@@ -9,7 +9,7 @@ const CustomLinkIconContainer = styled.div`
 position: absolute;
 top: 85%;
 left: 75%;
-@media only screen and ${breakpoints.device.computer} {
+@media only screen and ${breakpoints.device.tablet} {
   left: 87%;
   top: 80%;
 `;
