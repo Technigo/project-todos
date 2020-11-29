@@ -9,14 +9,14 @@ const initialState = {
         id: 0,
         text: "Read a book",
         category: "Self Care",
-        complete: true,
+        complete: false,
         createdAt: "",
       },
       {
         id: 1,
         text: "Take the dog out",
         category: "Household",
-        complete: true,
+        complete: false,
         createdAt: "",
       },
       {
@@ -37,7 +37,7 @@ const initialState = {
         id: 4,
         text: "Do some more coding",
         category: "Coding",
-        complete: true,
+        complete: false,
         createdAt: "",
       },
       {
