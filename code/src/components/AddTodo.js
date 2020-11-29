@@ -48,7 +48,7 @@ const AddButton = styled.button`
   background: ${props => props.background || "#0099ff"};
   color: #fff;
   border: none;
-  border-radius: 50%;
+  border-radius: 15px;
   &:hover {
     background: #4dbfed;
     cursor: pointer;
