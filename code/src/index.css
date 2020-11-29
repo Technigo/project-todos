@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("./assets/mobile.png");
@@ -10,20 +8,74 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .todo-list {
   background-color: rgb(250, 231, 255, 0.7);
-  border-radius: 20%;
+  border-radius: 10%;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 50%;
+  margin: 60% 0 0 0;
   margin-left: 10%;
   margin-right: 10%;
-  padding: 10%; 
-  padding-top: 20%;
-  padding-bottom: 60%;
+  padding: 10%;
+  padding-top: 10%;
+  padding-bottom: 80%;
+}
+
+.todo-input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  padding: 5%;
+}
+
+.todo-input-text {
+  border: 2px solid white;
+  padding-right: 10%;
+}
+
+.todo-input-bottom {
+  font-weight: bold;
+  color: rgb(212, 124, 198);
+  padding-top: 5%;
+  padding-right: 10%;
+  padding-bottom: 5%;
+  padding-left: 10%;
+  text-align: center;
+  border: none;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.todo-item-remove {
+  display: inline;
+  color: rgb(86, 0, 97);
+  font-weight: bold;
+  padding-left: 3%;
+}
+
+span {
+  color: rgb(129, 113, 61);
+  font-weight: bold;
+  font-size: larger;
+}
+
+.todo-item {
+padding-top: 4%;
+}
+
+.todo-summary h1 {
+  margin: 0;
+  text-align: center;
+  color: rgb(108, 83, 116);
+}
+
+.todo-summary h2 {
+  margin: 0;
+  text-align: center;
+  padding: 5%;
+  color: rgb(86, 0, 97);
+  border-bottom: 2px solid white;
 }

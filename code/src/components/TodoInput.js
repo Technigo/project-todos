@@ -30,7 +30,7 @@ export const TodoInput = () => {
       <input
         type="submit"
         className="todo-input-bottom"
-        value="Add Todo"
+        value="Add"
       ></input>
     </form>
   )
