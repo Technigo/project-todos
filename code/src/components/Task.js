@@ -4,13 +4,11 @@ import { useDispatch } from 'react-redux'
 
 import { tasks } from 'reducers/tasks'
 import { CheckBox } from './CheckBox'
-// import trashcan from '../assets/trashcan.png'
+import trashCan from '../assets/trashcan.png'
 
 
 export const Task = ({ item }) => {
   const dispatch = useDispatch()
-  
-  // const items = useSelector((store) => store.tasks.items)
 
   const handleDelete = (id) => {
     dispatch(tasks.actions.removeTask(id))
@@ -20,56 +18,41 @@ export const Task = ({ item }) => {
     dispatch(tasks.actions.setChecked(item.id))
   };
 
-  // const handleDeleteChecked = () => {
-  //   dispatch(tasks.actions.removeTask(task.id))
-  // };
 
- 
   return (
     <TaskContainer>
       <CheckBox
-      isChecked={item.complete}
-      onChangeHandler={handleCheckboxClick}
+        isChecked={item.complete}
+        onChangeHandler={handleCheckboxClick}
       />
-      <TextWrapper>                                                                                                                                                                                                                                                  
-        <TaskText line={item.complete ? 'line-through' : null}>{item.text}</TaskText>
-      
-      </TextWrapper>
-      <DeleteButton
-        onClick={() => handleDelete(item.id)} >
-        <span role="img" aria-label="Delete">🗑️</span>
-      </DeleteButton>
+      <TaskText line={item.complete ? 'line-through' : null}>{item.text}</TaskText>
+      <DeleteImg
+        src={trashCan} alt="trashcan"
+        onClick={() => handleDelete(item.id)}>
+      </DeleteImg>
     </TaskContainer>
   )
 }
 
-
-const DeleteButton = styled.button`
-width: 40px;
-height: 40px;
-margin-left: 10px;
-border: none;
+const DeleteImg = styled.img`
+    width: 30px;
+    height: 30px;
+    margin-left: 15px;
 `
-
 const TaskContainer = styled.section`
   display: flex;  
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center; 
   margin-left: 30px;
-  /* margin-top: 30px; */
-`
-const TextWrapper = styled.div`
-  /* background-color: #fdc1c5; */
-  background-color: #e6e6e6;
-  border: 1px solid grey;
-  border-radius: 5px;
-  width: auto;
-  /* padding: 0 10px;   */
-`
+  margin-top: 30px;
+ `
+
 const TaskText = styled.p`
   font-size: 20px;
   font-weight: bold;
   text-decoration: ${(props) => props.line || 'none'};
   text-transform: none;
+  margin-right: 20px;
+  font-family: 'Roboto Mono', monospace;
 `
 

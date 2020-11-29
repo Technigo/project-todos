@@ -24,7 +24,7 @@ export const CheckBox = ({ isChecked, onChangeHandler }) => {
   return (
     <div>
       <label>
-        <Checkbox 
+        <Checkbox
           checked={checked}
           onChange={handleOnChange}>
         </Checkbox>
@@ -34,10 +34,10 @@ export const CheckBox = ({ isChecked, onChangeHandler }) => {
 };
 
 const Icon = styled.svg`
-    fill: none;
-    stroke: white;
-    stroke-width: 2px;
-    `
+  fill: none;
+  stroke: white;
+  stroke-width: 2px;
+ `
 
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })` 
   border: 0;
@@ -56,12 +56,13 @@ const StyledCheckbox = styled.div`
   display: inline-block;
   width: 25px;
   height: 25px;
-  margin: 3px;
-  background: ${(props) => (props.checked) ? '#fdc1c5' : '#f1dbda' };
+  margin-right: 20px;
+  border: 1px solid grey;
+  background: ${(props) => (props.checked) ? '#3CB371' : '#fdc1c5'};
   transition: all 150ms; 
   ${Icon} {
       visibility: ${props => (props.checked ? 'visible' : 'hidden')}
-    };
+    }
 `
 const CheckboxContainer = styled.div`
   display: inline-block;

@@ -3,34 +3,35 @@ import styled from 'styled-components'
 import moment from 'moment'
 
 export const Header = () => {
-   const date= moment().format("dddd MMM Do") 
-  
+  const date = moment().format("dddd MMM Do")
+
   return (
-  <HeaderWrapper>
-    <Text>Todos</Text>
-    <Date>{date}</Date>
-    
-  </HeaderWrapper>
+    <HeaderWrapper>
+      <Text>Todos</Text>
+      <Date>{date}</Date>
+    </HeaderWrapper>
   )
-} 
+}
 
 const HeaderWrapper = styled.section`
-width:500px;
-height: 100px;
-background: #f1f1f1;
-display: flex;
-justify-content: center;
-align-items: center;
-align-items: center;
-padding: 10px;
-opacity:0.5;
+  width:600px;
+  height: 100px;
+  background: #f1f1f1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-items: center;
+  padding: 10px;
+  opacity:0.5;
 `
 
 const Text = styled.p`
-Font-size: 30px;
-font-weight: bold;
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Acme', sans-serif;
 `
 const Date = styled.p`
-Font-size: 20px;
-margin-left: 20px;
+  font-size: 25px;
+  margin-left: 25px;
+  font-family: 'Roboto Mono', monospace;
 `

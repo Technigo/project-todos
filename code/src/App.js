@@ -24,17 +24,15 @@ export const App = () => {
         <TaskList />
         <RemoveTasks />
       </Wrapper>
-
     </Provider>
   )
 }
 
 const Wrapper = styled.main`
- background-image: url(${backgroundImg});
- background-size: cover;
-  width:500px;
-  height:700px;
+  background-image: url(${backgroundImg});
+  background-size: cover;
+  width:600px;
+  height:800px;
   margin-top: 40px;
-  /* align-items: center; */ 
   position: relative; 
 `

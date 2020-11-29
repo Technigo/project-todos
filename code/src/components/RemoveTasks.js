@@ -22,11 +22,11 @@ export const RemoveTasks = () => {
 
   return (
     <ButtonWrapper>
-    <DeleteAllButton onClick={handleRemoveAll} disabled={!enabled}> 
-      Delete all!
+      <DeleteAllButton onClick={handleRemoveAll} disabled={!enabled}>
+        Delete all!
     </DeleteAllButton>
-    <DeleteCheckedButton onClick={handleRemoveChecked}>
-      Delete completed tasks
+      <DeleteCheckedButton onClick={handleRemoveChecked} disabled={!enabled}>
+        Delete completed tasks
     </DeleteCheckedButton>
     </ButtonWrapper>
   );
@@ -34,26 +34,21 @@ export const RemoveTasks = () => {
 
 
 const ButtonWrapper = styled.section`
- /* background: #f1f1f1; */
+  width: 100%;
   position: absolute;
-    align-items: center;
-    bottom: 10px;
-    /* height: 30px; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    /* width: 600px;
-    height: 2.5rem; */
+  align-items: center;
+  bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;     
  `
 const DeleteAllButton = styled.button`
-width: 100px;
-height: 40px;
-background: #fdc1c5;
-margin-left: 10px;
+  width: 100px;
+  height: 40px;
+  background: #fdc1c5;
+  border-radius: 5px;
 `
-const DeleteCheckedButton = styled.button`
-width: 150px;
-height: 40px;
-background: #fdc1c5;
-margin-left: 40px;
+const DeleteCheckedButton = styled(DeleteAllButton)`
+  width: 150px;
+  margin-left: 40px;
 `
