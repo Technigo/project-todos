@@ -1,12 +1,10 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a todo-app built with React and Redux för statemanagement.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started with sketching out on paper the components I needed, and then creating them in code. I focused at first of the functionality, then I used styled components for the appearance.
 
 ## View it live
 

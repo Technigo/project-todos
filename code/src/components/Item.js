@@ -8,7 +8,7 @@ import { todos } from '../reducers/todos';
 export const Item = ({ id, text, isCompleted, timestamp }) => {
 	const dispatch = useDispatch();
 	const [completed, setCompleted] = useState(false);
-	const handleCheckbox = (id) => {
+	const handleCompleted = (id) => {
 		dispatch(todos.actions.toggleCompleted(id));
 	};
 	const handleDeleteItem = (id) => {
@@ -16,17 +16,16 @@ export const Item = ({ id, text, isCompleted, timestamp }) => {
 	};
 	return (
 		<ItemContainer style={{ opacity: `${isCompleted ? '0.3' : '1'} ` }}>
-			<p>{text}</p>
+			<ItemText>{text}</ItemText>
 			<p>Added: {moment(timestamp).format('MMM Do YY')}</p>
 			<CompleteDeleteContainer>
 				<Button
 					onClick={(e) => {
 						setCompleted(id);
-						handleCheckbox(id);
+						handleCompleted(id);
 					}}>
 					Click to complete
 				</Button>
-
 				<Button onClick={() => handleDeleteItem(id)}>Delete</Button>
 			</CompleteDeleteContainer>
 		</ItemContainer>
@@ -39,6 +38,10 @@ const ItemContainer = styled.div`
 	padding: 20px;
 	margin-top: 5px;
 	margin-bottom: 5px;
+`;
+
+const ItemText = styled.p`
+	font-weight: bold;
 `;
 
 const CompleteDeleteContainer = styled.div`

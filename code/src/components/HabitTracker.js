@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import '@lottiefiles/lottie-player';
 
 import { Item } from './Item';
 import { AddItem } from './AddItem';
@@ -20,12 +21,6 @@ export const HabitTracker = () => {
 	return (
 		<NotesContainer>
 			<h1>Handy todo-list & habit-tracker</h1>
-			<NotesCounter
-				style={items.length === 0 ? { display: 'none' } : { display: 'block' }}>
-				<div>Total notes on todo-list: {items.length}</div>
-				<div>Completed notes: {completedItems.length}</div>
-				<div>Not completed notes: {notCompletedItems.length}</div>
-			</NotesCounter>
 
 			<Notes>
 				<AddItem />
@@ -34,14 +29,42 @@ export const HabitTracker = () => {
 				))}
 				<div
 					style={
-						items.length === 0 ? { display: 'none' } : { display: 'block' }
+						completedItems.length === 0
+							? { display: 'none' }
+							: { display: 'block' }
 					}>
 					Completed posts:
 				</div>
 				{completedItems.map((item) => (
 					<Item key={item.id} id={item.id} {...item} />
 				))}
-				<Button onClick={() => handleClearNotes()}>Clear all notes</Button>
+				<Button
+					onClick={() => handleClearNotes()}
+					style={
+						completedItems.length === 0 && notCompletedItems.length === 0
+							? { display: 'none' }
+							: { display: 'block' }
+					}>
+					Clear all notes
+				</Button>
+				<lottie-player
+					autoplay
+					loop
+					mode="normal"
+					src="https://assets7.lottiefiles.com/packages/lf20_h59xofz0.json"
+					style={
+						completedItems.length < 1 && notCompletedItems.length < 1
+							? { display: 'block', width: '300px' }
+							: { display: 'none' }
+					}></lottie-player>
+				<NotesCounter
+					style={
+						items.length === 0 ? { display: 'none' } : { display: 'block' }
+					}>
+					<div>Total notes on todo-list: {items.length}</div>
+					<div>Completed notes: {completedItems.length}</div>
+					<div>Not completed notes: {notCompletedItems.length}</div>
+				</NotesCounter>
 			</Notes>
 		</NotesContainer>
 	);
@@ -55,7 +78,6 @@ const NotesContainer = styled.section`
 
 const NotesCounter = styled.section`
 	margin-top: 50px;
-	background-color: #03506f;
 	width: 80%;
 	margin: 5px;
 	padding: 20px;

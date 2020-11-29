@@ -16,6 +16,7 @@ export const AddItem = () => {
 				type="text"
 				value={newItem}
 				onChange={(e) => setNewItem(e.target.value)}
+				placeholder="What do you need to do today?"
 			/>
 			<Button
 				onClick={() => {

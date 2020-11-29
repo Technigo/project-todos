@@ -9,6 +9,18 @@ const initialState = {
 			text: 'Drink 2 l of water to stay hydrated',
 			isCompleted: false,
 		},
+		{
+			id: uuidv4(),
+			timestamp: Date.now(),
+			text: 'Go for a 20 minute walk, breathe and get some fresh air!',
+			isCompleted: false,
+		},
+		{
+			id: uuidv4(),
+			timestamp: Date.now(),
+			text: 'Meditate or do yoga. ',
+			isCompleted: false,
+		},
 	],
 };
 
