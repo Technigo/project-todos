@@ -15,6 +15,7 @@ export const AddTodo = () => {
 
   const handleSubmit = () => {
     dispatch(todos.actions.addTask(value))
+    setValue("")
   }
 
   return (
