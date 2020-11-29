@@ -40,10 +40,10 @@ const AddButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 25px;
   background: ${props => props.background || "#0099ff"};
   color: #fff;
   border: none;
