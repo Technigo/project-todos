@@ -1,12 +1,9 @@
-import React, {useState} from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-
+import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import swal from 'sweetalert';
+
 
 import { Item } from './Item';
-import { todos } from 'reducers/todos';
-
 
 const ListContainer = styled.ul`
   display: flex;
@@ -16,43 +13,9 @@ const ListContainer = styled.ul`
   padding: 0;
   color: #3f3f3f;
 `;
-const Button = styled.button`
-  color: #3f3f3f;
-  font-size: 18px;
-  margin: 6px;
-  padding: 6px;
-  border: 1.5px solid #3f3f3f;
-  border-radius: 1.5px;
-    &:hover {
-      background-color:#b83b5e;
-      color:white;
-      border:white
-    }
-`
 
 export const List = () => {
   const items = useSelector(store => store.todos.items);
-  const dispatch = useDispatch();
-
-
-  // const handleRemoveAll = () => {
-  //   swal({
-  //     title: 'DANGER ZONE! Are you sure you want to clear all tasks?',
-  //     text: "Once cleared, you can't recover your list!",
-  //     buttons: true,
-  //     dangerMode: true,
-  //     icon: "warning"
-  //   })
-  //   .then((result) => {
-  //     if (result) {
-  //       dispatch(
-  //         todos.actions.removeAll()
-  //       );
-  //     };
-  //   });
-  // };
-
-
 
   return (
     <>
@@ -63,9 +26,6 @@ export const List = () => {
                 id={item.id}
                 isComplete={item.isComplete}></Item>
         ))}
-        {/* <Button onclick={handleRemoveAll}>
-                {/* //onclick={() => dispatch(todos.actions.removeAll())}> 
-                Clear all</Button> */}
       </ListContainer>
     </>
   );
