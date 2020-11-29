@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [
@@ -15,14 +15,12 @@ export const tasks = createSlice({
 
   reducers: {
     addTask: (state, action) => {
-      //const {text, category, dueDate} = action.payload
-      // state.tasks.push({name, category, dueDate})
       state.items.push(action.payload);
     },
     removeTask: (state, action) => {
-      console.log(action.payload);
       // takes the items array and filters all items with id that is not equal to payload.
-      state.items = state.items.filter(item => item.id !== action.payload)
+      const filteredItems = state.items.filter(item => item.id !== action.payload);
+      state.items = filteredItems;
     },
     toggleCompleteStatus: (state, action) => {
       // Finds the task/item with same id as payload (the task that was clicked)
@@ -32,11 +30,8 @@ export const tasks = createSlice({
       if (choosenTask) {
         choosenTask.isComplete = !choosenTask.isComplete; 
       };
-
-
-
     },
-    removeAll: (state, action) => {
+    removeAll: (state) => {
       state.items = []
     }
   }

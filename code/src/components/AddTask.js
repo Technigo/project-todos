@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import { tasks } from 'reducers/tasks';
-
 import { FormContainer, ButtonStyle, InputField, FormWrapper } from '../styling/styling';
 
 const AddTask = () => {
@@ -11,7 +10,6 @@ const AddTask = () => {
   const isComplete = false;
 
   const allTasksArray = useSelector((store) => store.tasks.items)
-
 
   const dispatch = useDispatch();
 

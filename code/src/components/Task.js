@@ -2,7 +2,6 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import Icon from '../assests/icons8-trash-can-100.png';
-
 import { tasks } from 'reducers/tasks';
 import { RemoveButton, Checkbox, TaskText, TaskWrapper } from '../styling/styling';
 
