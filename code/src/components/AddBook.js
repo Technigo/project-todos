@@ -27,6 +27,7 @@ const Input = styled.input`
 
 const AddButton = styled.button`
   font-size: 18px;
+  color: #2a3330; 
   justify-content: center;
   border: none;
   border-radius: 25px;

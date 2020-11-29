@@ -23,7 +23,6 @@ const DeleteButton = styled.button`
   border: none;
   color: white;
   background: transparent;
-  padding-left: 60px;
 `;
 
 export const HandleBook = ({ book }) => {
@@ -40,14 +39,14 @@ export const HandleBook = ({ book }) => {
 
   return (
     <HandleBookContainer>
-      <BookTitle>{book.title}</BookTitle>
       <CustomCheckbox 
         isChecked={book.isRead} 
         onChangeHandler={handleCheckboxClick} 
       />
+      <BookTitle>{book.title}</BookTitle>
       <DeleteButton onClick={() => deleteOneBook(book.id)}>
-          Delete book
-        </DeleteButton>
+        x
+      </DeleteButton>
     </HandleBookContainer>
   );
 };

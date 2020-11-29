@@ -6,17 +6,17 @@ export const toread = createSlice({
     books: [
       {
         id: 1,
-        title: "Den svavelgula himlen",
+        title: "Nocturner",
         isRead: true,
       },
       {
         id: 2,
-        title: "Fågeln som vred upp världen",
+        title: "The white book",
         isRead: true,
       },
       {
         id: 3,
-        title: "Arlington Park",
+        title: "Transit",
         isRead: false,
       },
     ],
