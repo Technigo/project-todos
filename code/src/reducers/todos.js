@@ -2,10 +2,10 @@ import {  createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   list: {
-    name: 'albla',
+    name: 'start',
     items: [
       {
-        description: 'dessss',
+        description: '',
         done: false
       }
     ]
