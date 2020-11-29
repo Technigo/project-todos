@@ -1,13 +1,12 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project is built with React and Redux. It's a todo app where the user can create their own todo list as well as edit it by deleting individual elements, all finished tasks or all entries. In the background, there is a reducer that is called from the various components and handles the requested actions.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+After taking part in a lot of training material to learn how to create the reducer I started with a predefined array that consisted of some tasks and made sure that these were presented in the browser. Then I created the ID of the todo elements to have something to compare with when I would delete them. I created a function in the reducer that removed an element when the user clicked on it and then one to add new data. After that I added more functions such as removing more than one element at a time.
+To present the date I used moment.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://project-todos.netlify.app/
