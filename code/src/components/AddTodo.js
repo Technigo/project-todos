@@ -20,10 +20,14 @@ export const AddTodo = () => {
   return (
     <section>
       <Form onSubmit={handleSubmit}>
-        <Button type="submit">+</Button>
+        <Button type="submit">
+          <span role="img"
+            aria-label="plus-sign">
+            ➕
+          </span>
+        </Button>
         <label>
-          {/* on enter dispatch the data to todoTasks reducer */}
-          <input
+          <Input
             type="text"
             value={value}
             placeholder="Add your to-do here ..."
@@ -36,9 +40,21 @@ export const AddTodo = () => {
 }
 
 const Form = styled.form`
-margin: 10px 0;
+margin: 25px 0;
 
 `
 const Button = styled.button`
   cursor: pointer;
+  margin-right: 8px;
+  padding: 7px;
+  border-radius: 50%;
+  border: 1px solid #819FA6;
+  background: #F2F2EB;
+  outline: none;
+`
+
+const Input = styled.input`
+  border: none;
+  border-bottom: 2px solid #819FA6;
+  outline: none;
 ` 

@@ -56,12 +56,13 @@ const TaskContainer = styled.li`
   justify-content: space-between;
   /* completed: background: #CCE8FF; */
   /* darker blue: background: #0F3593; */
+
   background: white;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
   color: #323E40;
   list-style-type: none;
-  border: 1px solid #808080;
+  border-bottom: 2px solid #819FA6;
   padding: 10px;
   margin-bottom: 5px;
   width: 100%;
@@ -78,7 +79,7 @@ const Button = styled.button`
 `
 
 const Label = styled.label`
-  
+  //REMOVE IF NOT STYLED
 `
 
 const Input = styled.input`
