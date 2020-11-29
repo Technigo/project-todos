@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-
-import "../css/addTodo.css";
-
 import { useDispatch } from "react-redux";
 
 import { todos } from "../reducer/todos";
+import "../css/addTodo.css";
 
 export const AddTodo = () => {
   const [value, setValue] = useState("");
@@ -41,7 +39,13 @@ export const AddTodo = () => {
         disabled={value.length < 2 || value.length > 150}
         onClick={onItemAdd}
       >
-        <span className="plus-sign" role="img" aria-label="click to add to the list">➕</span>
+        <span
+          className="plus-sign"
+          role="img"
+          aria-label="click to add to the list"
+        >
+          ➕
+        </span>
       </button>
     </section>
   );

@@ -1,0 +1,38 @@
+.button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.clear-complete-button {
+  margin-bottom: 5px;
+}
+
+.clear-all-button,
+.clear-complete-button {
+  cursor: pointer;
+  padding: 10px;
+  margin-left: 10px;
+  border-radius: 12px;
+  border: none;
+  text-transform: uppercase;
+  font-size: 12px;
+  background: linear-gradient(#395873, #063053);
+  color: #eee;
+  outline: none;
+  font-weight: 400;
+  transition: letter-spacing 500ms ease;
+}
+
+.clear-all-button:active,
+.clear-complete-button:active {
+  transform: translateY(1px);
+}
+
+@media (min-width: 500px) {
+  .button-container {
+    flex-direction: row;
+  }
+  .clear-complete-button {
+    margin-bottom: 0;
+  }
+}

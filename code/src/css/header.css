@@ -1,5 +1,4 @@
 header {
-  /* background: linear-gradient(#333, #6c7a89); */
   background: linear-gradient(#063053, #395873, #5c7c99);
   color: #eee;
   padding: 15px;
@@ -20,8 +19,3 @@ h1 {
   letter-spacing: 1.2px;
 }
 
-@media (min-width: 330px) {
-}
-
-@media (min-width: 600px) {
-}
