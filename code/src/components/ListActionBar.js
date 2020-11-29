@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 
 export const ListActionBar = () => {
-  
   const dispatch = useDispatch();
 
   const handleClickReset = () => {

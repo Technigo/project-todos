@@ -24,13 +24,10 @@ code {
 main {
 	display: flex;
 	flex-direction: column;
-	/* margin: auto 0; */
-	/* align-self: center; */
 }
 
 .header {
 	padding: 10px;
-	/* background-color: #8d5664; */
 	color: #470951;
 }
 
@@ -103,16 +100,13 @@ main {
 .action-bar {
 	width: 100%;
 	display: flex;
-	/* align-items: center; */
 	justify-content: center;
 }
 
 .reset-button,
 .set-done-button {
 	height: 50px;
-	/* width: 48%; */
 	border: none;
-	/* margin: 2px; */
 	font-size: 16px;
 	box-shadow: 0 2px 16px 0 rgba(0, 0, 0, 0.08);
 	font-family: "Ubuntu", sans-serif;
@@ -147,8 +141,6 @@ main {
 .todo-item-done {
 	list-style: none;
 	padding: 10px;
-	/* border-bottom: 1px solid gray; */
-	/* border-top: 1px solid gray; */
 	margin-top: 10px;
 }
 
@@ -156,7 +148,6 @@ main {
 	background: rgba(255, 255, 255, 0.6);
 	display: flex;
 	justify-content: space-between;
-
 	border-left: 6px solid transparent;
 }
 
@@ -167,7 +158,6 @@ main {
 }
 
 .todo-item-done {
-	/* background-color: #009688; */
 	background: rgba(255, 255, 255, 0.5);
 	display: flex;
 	justify-content: space-between;
@@ -216,9 +206,6 @@ main {
 	border-radius: 50%;
 	border: none;
 	background-color: white;
-}
-
-.todo-list-wrapper {
 }
 
 .todo-summary {

@@ -1,8 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
 
-//import {todos} from '../reducers/todos';
-
 import { TodoInput } from './TodoInput';
 import { TodoItem } from './TodoItem';
 import { TodoSummary } from './TodoSummary';
@@ -11,7 +9,6 @@ import { ListActionBar } from './ListActionBar';
 
 export const List = () =>{
 
-  //All the items in the store
   const itemsList = useSelector((store) => store.todos.list);
   const listLength = itemsList.items.length;
   console.log(itemsList.items.length)
@@ -30,7 +27,6 @@ export const List = () =>{
         </ul>
          <TodoSummary /></>
         }
-       
     </section>
   )
 }

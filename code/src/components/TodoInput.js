@@ -9,22 +9,17 @@ export const TodoInput = () => {
   const [inputValue, setInputValue] = useState("");
   const[dateValue, setDateValue] = useState(moment().format('YYYY-MM-DD'));
 
-  //Create a handle submit function to dispatch add Todo
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(inputValue);
 
-    //Dispatch the action to save the new todoItem.
     dispatch(todos.actions.addToDo({
       itemInfo: {
         text: inputValue,
         done: false,
-        //created : Date.now(),
         created : moment(),
         dueDate : (moment(dateValue).toDate())
       }
     }));
-    //Clear the textField
     setInputValue("");
   }
 
@@ -32,7 +27,6 @@ export const TodoInput = () => {
     <form className="todo-form" onSubmit={handleSubmit}>
       <label>
       <input 
-        //className="todo-input" 
         required
         type="text" 
         onChange={e => setInputValue(e.target.value)} 
