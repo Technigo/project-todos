@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-import { FilterBooks } from "./FilterBooks"
-
 const HeaderContainer = styled.section`
   display: flex;
   justify-content: center;

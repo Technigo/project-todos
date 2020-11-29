@@ -15,7 +15,7 @@ const ListContainer = styled.ul`
 
 export const BookList = () => {
   const books = useSelector((store) => store.toread.books); //what we are using => how we are using it
-  const totalBooksYouHaveRead = books.filter((book) => book.isRead);
+  
 
   return (
     <ListContainer>

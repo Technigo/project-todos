@@ -4,7 +4,6 @@ import styled from "styled-components";
 
 import { toread } from "../reducers/toread";
 
-
 const AddContainer = styled.section`
   display: flex;
   flex-direction: column;
@@ -23,6 +22,7 @@ const Input = styled.input`
   margin-bottom: 20px;
   padding-bottom: 5px;
   text-align: center;
+
 `;
 
 const AddButton = styled.button`
@@ -39,6 +39,7 @@ export const AddBook = () => {
 
   const onBookAdd = () => {
     dispatch(toread.actions.addBook(value));
+    setValue("")
   };
 
   return (
@@ -49,7 +50,7 @@ export const AddBook = () => {
         value={value}
         onChange={(event) => setValue(event.target.value)}
       />
-      <AddButton onClick={onBookAdd}>Add book</AddButton>
+      <AddButton onClick={onBookAdd}>Add book to your list</AddButton>
     </AddContainer>
   );
 };

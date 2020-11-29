@@ -1,41 +1,32 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
+import { CustomCheckbox } from "./CustomCheckbox";
 import { toread } from "../reducers/toread";
 
 const HandleBookContainer = styled.li`
   display: flex;
-  flex-direction: row;
+  align-items: center;
   padding: 8px;
   font-size: 24px;
   color: white;
 `;
 
 const BookTitle = styled.p`
-  margin: 10px;
-`;
-const Checkbox = styled.label`
-  margin: 15px;
+  padding: 0 10px;
 `;
 
 const DeleteButton = styled.button`
   font-size: 16px;
   justify-content: center;
-  border: 1px solid white;
+  border: none;
   color: white;
-  border-radius: 25px;
-  padding: 5px;
   background: transparent;
-  margin: 0 5px;
+  padding-left: 60px;
 `;
 
-const Input = styled.input`
-  padding: 40px;
-`
-
 export const HandleBook = ({ book }) => {
-  const [showReadBooks, setShowReadBooks] = useState(false);
 
   const dispatch = useDispatch();
 
@@ -50,18 +41,13 @@ export const HandleBook = ({ book }) => {
   return (
     <HandleBookContainer>
       <BookTitle>{book.title}</BookTitle>
-      <Checkbox>
-        Have read
-        <Input
-          type="checkbox"
-          checked={book.isRead}
-          onClick={() => setShowReadBooks(!showReadBooks)}
-          onChange={handleCheckboxClick}
-        ></Input>
-      </Checkbox>
+      <CustomCheckbox 
+        isChecked={book.isRead} 
+        onChangeHandler={handleCheckboxClick} 
+      />
       <DeleteButton onClick={() => deleteOneBook(book.id)}>
-        Delete book
-      </DeleteButton>
+          Delete book
+        </DeleteButton>
     </HandleBookContainer>
   );
 };
