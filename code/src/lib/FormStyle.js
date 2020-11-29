@@ -4,6 +4,11 @@ import breakpoints from "./Breakpoints";
 export const TodoFormWrapper = styled.section`
   width: 100vw;
   height: 100vh;
+  @media only screen and ${breakpoints.device.computer} {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 `;
 
 export const TodoForm = styled.form`
@@ -12,6 +17,9 @@ height: 100%;
   background-color: #fafafa;
   @media only screen and ${breakpoints.device.tablet} {
     padding-top: 40px:
+  }
+  @media only screen and ${breakpoints.device.computer} {
+    width: 85%;
   }
 `;
 
@@ -31,7 +39,9 @@ export const TodoHeaderLabel = styled.label`
   @media only screen and ${breakpoints.device.tablet} {
     font-size: 32px;
     margin: 50px 10px 20px 30px;
-  
+  }
+  @media only screen and ${breakpoints.device.computer} {
+    font-size: 18px;
   }
 `;
 
@@ -59,6 +69,9 @@ export const TodoHeaderInput = styled.input`
     margin-top: 38px;
     padding-left: 12px; 
   }
+  @media only screen and ${breakpoints.device.computer} {
+    font-size: 18px;
+  }
 `;
 
 export const TodoContentLabel = styled.label`
@@ -68,6 +81,9 @@ export const TodoContentLabel = styled.label`
   @media only screen and ${breakpoints.device.tablet} {
     font-size: 22px;
     margin: 10px 14px 0 30px;
+  }
+  @media only screen and ${breakpoints.device.computer} {
+    font-size: 16px;
   }
 `;
 
@@ -94,7 +110,9 @@ export const TodoTextarea = styled.textarea`
     font-size: 22px;
     margin-top: 16px;
     padding-left: 12px; 
-
+  }
+  @media only screen and ${breakpoints.device.computer} {
+    font-size: 16px;
   }
 `;
 export const TodoCheckboxGroupWrapper = styled.div`
@@ -107,11 +125,14 @@ export const TodoCheckboxGroupWrapper = styled.div`
     flex-direction: row;
     align-items: flex-start;
   }
+  @media only screen and ${breakpoints.device.computer} {
+    margin-top: 30px;
+    justify-content: center;
+  }
 `;
 
 export const CheckboxWrapper = styled.div`
   margin: 6px;
-  flex-wrap: wrap; 
 `;
 
 export const CheckboxLabel = styled.label`
@@ -119,6 +140,9 @@ export const CheckboxLabel = styled.label`
   padding: 8px 3px;
   @media only screen and ${breakpoints.device.tablet} {
     font-size: 22px;
+  }
+  @media only screen and ${breakpoints.device.computer} {
+    font-size: 16px;
   }
 `;
 

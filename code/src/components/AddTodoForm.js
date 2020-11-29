@@ -86,7 +86,7 @@ export const AddTodoForm = () => {
             id="todoContent"
             value={todoContent}
             aria-label="Write your task here"
-            rows={width < breakpoint? 10 : 15}
+            rows={10}
             onChange={(e) => setTodoContent(e.target.value)}
           />
         </TodoInputGroupWrapper>

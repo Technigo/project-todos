@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import breakpoints from "./Breakpoints";
 
 export const Wrapper = styled.section`
   width: 100vw;
@@ -15,6 +16,10 @@ export const TodoListContainer = styled.ul`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: center;
+  @media only screen and ${breakpoints.device.computer} {
+    margin-top: 50px;
+  }
 `;
 export const ListItem = styled.li`
   width: 92%;
@@ -28,6 +33,10 @@ export const ListItem = styled.li`
   align-content: flex-start;
   justify-content: space-between;
   border-bottom: 2px dotted #bdb9b9;
+  @media only screen and ${breakpoints.device.computer} {
+    width: 85%;
+    align-self: center;
+  }
 `;
 
 export const TimeText = styled.div`

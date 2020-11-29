@@ -3,10 +3,15 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import PostAddIcon from "@material-ui/icons/PostAddRounded";
 
+import breakpoints from "./Breakpoints";
+
 const CustomLinkIconContainer = styled.div`
 position: absolute;
 top: 85%;
 left: 75%;
+@media only screen and ${breakpoints.device.computer} {
+  left: 87%;
+  top: 80%;
 `;
 
 const CustomLinkIcon = styled.button`
@@ -17,7 +22,7 @@ const CustomLinkIcon = styled.button`
   border-radius: 50%;
   border: none;
   cursor: pointer;
-  color: white;
+  color: white;   
 `;
 
 export const AddTodoIcon = () => {
