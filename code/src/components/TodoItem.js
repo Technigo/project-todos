@@ -16,7 +16,7 @@ export const ItemList = styled.li`
   border: solid 2px #786253;
   box-shadow: 8px 5px;
   border-radius: 5px;
-  width: 350px;
+  width: 320px;
   height: auto;
   margin: 6px 25px;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
