@@ -96,6 +96,7 @@ const ItemContainer = styled.div`
 
 const ItemDescription = styled.p`
   color: #404040;
+  word-break: break-word;
 
   ${({ isComplete }) =>
     isComplete &&
