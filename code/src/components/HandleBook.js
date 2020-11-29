@@ -10,7 +10,7 @@ const HandleBookContainer = styled.li`
   align-items: center;
   padding: 8px;
   font-size: 24px;
-  color: white;
+  color: #FDFFF3;
 `;
 
 const BookTitle = styled.p`
@@ -21,7 +21,7 @@ const BookTitle = styled.p`
 const DeleteButton = styled.button`
   margin-left: auto;
   border: none;
-  color: white;
+  color: #FDFFF3;
   font-size: 16px;
   background: transparent;
   cursor: pointer;

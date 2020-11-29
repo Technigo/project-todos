@@ -7,14 +7,14 @@ const SummaryContainer = styled.section`
   justify-content: center;
   flex-wrap: wrap;
   padding: 40px 0;
-  background: #4d5e58;
+  background: #3C4A6B;
   margin: 0;
 `;
 
 const BookSummary = styled.h2`
   padding: 15px 0;
-  background: #4d5e58;
-  color: white;
+  background: #3C4A6B;
+  color: #FDFFF3;
   text-transform: uppercase;
   margin: 0;
   font-size: 22px;
@@ -23,9 +23,9 @@ const BookSummary = styled.h2`
 const Footer = styled.section`
   display: flex;
   justify-content: center;
-  background: white;
+  background: #E6E6E6;
   padding: 60px 0;
-  color: #4d5e58;
+  color: #3C4A6B;
 `;
 
 export const Summary = () => {

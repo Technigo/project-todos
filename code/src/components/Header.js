@@ -4,14 +4,14 @@ import styled from "styled-components";
 const HeaderContainer = styled.section`
   display: flex;
   justify-content: center;
-  background: #2a3330;
+  background: #2A344A;
 `;
 
 const Heading = styled.h1`
   font-size: 72px;
   align-self: center;
   text-transform: uppercase;
-  color: white;
+  color: #FDFFF3;
 `;
 
 export const Header = () => {
