@@ -10,7 +10,6 @@ export const HandleThings = (list, packed) => {
   const handleCheckboxClick = () => {
     dispatch(bag.actions.tooglePacked(list.item.id));
   }
-
   const handleRemoveButtonClick = () => {
     dispatch(bag.actions.removeItem(list.item.id))
   }

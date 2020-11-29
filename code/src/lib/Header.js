@@ -2,6 +2,8 @@ import styled from 'styled-components'
 
 export const HeaderBlock = styled.header`
   display: flex;
+  flex-direction: column;
+  align-items: center;
   widht: 100%;
   height: 200px;
   background-color: #0E3932;
