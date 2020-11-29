@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+A mobile-first todo app. To add, remove, check, and uncheck tasks. Made with react and redux toolkit. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## The process
 
-## The problem
+The first time writing my own reducers in redux I of course stumbled upon a few tricky parts but I started with sketching and designing in Figma to get a clear picture of what I needed. That helped me see what components to create and what properties needed to be included in the state. 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I would like to fix the issues displayed in the console of not sending a serialized value to the state from the due date picker. If I had more time I would also make it responsive, add the possibility of adding different categories for different tasks, and a message when there are no tasks in the list. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+View it live here: https://cornelia-todos.netlify.app/
