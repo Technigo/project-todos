@@ -23,14 +23,14 @@ const initialState = {
         id: 2,
         text: "Do laundry",
         category: "Household",
-        complete: true,
+        complete: false,
         createdAt: "",
       },
       {
         id: 3,
         text: "Make dinner",
         category: "Household",
-        complete: true,
+        complete: false,
         createdAt: "",
       },
       {
