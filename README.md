@@ -4,13 +4,17 @@ A todo application! Add tasks! Mark them as done! Remove them! Wow!
 
 But wait – theres more! Are you out of things to do? No worries – press the "Random task" button to add tasks such as "Flip your mattress", "Sign those adoption papers", or why not "Recycle"? You'll never have to rest again!
 
+[👉 **View it live** 👈](https://todo-axel.netlify.app/)
+
+---
+
 **Tech used**
 * HTML/CSS
 * Javascript
 * React
 * Redux
 
-![Todo logo](https://github.com/AxelHammarback/project-todos/blob/master/assets_readme/todo-screenshot.png)
+![Todo screenshot](https://github.com/AxelHammarback/project-todos/blob/master/assets_readme/todo-screenshot.png)
 
 ---
 
