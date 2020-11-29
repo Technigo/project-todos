@@ -7,9 +7,6 @@ import {todos} from 'reducer/todos'
 
 import { StartHeading } from 'component/StartHeading'
 import {TaskList} from './component/TaskList'
-import { TaskForm } from 'component/TaskForm'
-
-
 
 const reducer = combineReducers({todos: todos.reducer})
 const store = configureStore({reducer})
@@ -19,7 +16,6 @@ export const App = () => {
     // We can't useDispatch here or useSelector
     <Provider store={store}>
       <StartHeading />
-      <TaskForm />
       <TaskList />
     </Provider>
   )

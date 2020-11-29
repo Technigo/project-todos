@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import {useSelector, useDispatch} from 'react-redux'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
-import {todos} from 'reducer/todos'
+import { todos } from 'reducer/todos'
 
 const FormContainer = styled.form`
     width: 100%;
@@ -35,6 +35,11 @@ const AddButton = styled.button`
     color: #fff;
     font-size: 16px;
     font-weight: 600;
+
+    :disabled {
+        opacity: 0.5;
+    }
+
     
 `
 
@@ -42,9 +47,8 @@ const AddButton = styled.button`
 const TaskInput = styled.textarea`
     width: 100%;
     padding: 15px;
-    /* margin-left: 35px; */
     border: none;
-    border-radius: 10px;
+    border-radius: 20px;
     box-sizing: border-box;
     background-color: #F0F0F0;
     margin-bottom: 15px;
@@ -54,7 +58,6 @@ export const TaskForm = () => {
     const dispatch = useDispatch()
     const [text, setText] = useState('')
     const [category, setCategory] = useState('')
-    
 
     const handleSubmit = (event) => {
         event.preventDefault(
@@ -73,7 +76,7 @@ export const TaskForm = () => {
                     onChange={(event) => setText(event.target.value)}
                 ></TaskInput>
             
-            <AddButton onClick={handleSubmit}>Add</AddButton>
+            <AddButton disabled={!text} onClick={handleSubmit}>Add</AddButton>
         </FormContainer>
     )
 }

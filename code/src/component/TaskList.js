@@ -4,6 +4,8 @@ import styled from 'styled-components'
 import {todos} from 'reducer/todos'
 
 import {Item} from './Item'
+import { NoTask } from 'component/NoTask'
+import { TaskForm } from 'component/TaskForm'
 
 const TaskListContainer = styled.div`
     width: 100%;
@@ -14,7 +16,7 @@ const TaskListContainer = styled.div`
     box-sizing: border-box;
 `
 
-const RemoveAllButton = styled.button`
+const ClearAllButton = styled.button`
     width: 140px;
     height: 40px;
     border-radius: 20px;
@@ -25,18 +27,31 @@ const RemoveAllButton = styled.button`
     font-weight: 600;
 `
 
-export const TaskList = () => {
+export const TaskList = ({addTask}) => {
     const dispatch = useDispatch()
     const items = useSelector(store => store.todos.items)
-    console.log(items)
+    const todosCount = items.length
 
+    // if(addTask || !todosCount) 
+    // return <TaskForm />
 
+    if (todosCount) 
     return (
+        <>
+            <TaskForm />
             <TaskListContainer> 
                 {items.map((item, index) => (
-                    <Item key={index} item={item}></Item>
+                    <Item key={index} item={item}></Item>  
                 ))}
-                <RemoveAllButton onClick={() => dispatch(todos.actions.removeAll())}>Remove All</RemoveAllButton>
+                <ClearAllButton onClick={() => dispatch(todos.actions.removeAll())}>Clear All</ClearAllButton>
+
             </TaskListContainer> 
+        </>
         )
+    
+        
+
+    return (
+        <NoTask />
+    )
 }
