@@ -36,6 +36,9 @@ export const ListItem = styled.li`
   @media only screen and ${breakpoints.device.computer} {
     width: 85%;
     align-self: center;
+    font-size: 24px;
+    margin: 4px;
+    padding: 4px;
   }
 `;
 
@@ -56,6 +59,9 @@ export const TextWrapper = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   padding-bottom: 20px;
+  @media only screen and ${breakpoints.device.computer} {
+    padding-bottom: 10px;
+  }
 `;
 export const Title = styled.h3`
   width: 100%;
