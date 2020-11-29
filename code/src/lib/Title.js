@@ -4,7 +4,7 @@ export const Title = styled.h1`
   color: ${(props) => props.color || "black"};
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-  font-size: 18px;
+  font-size: 22px;
   padding: 0px 10px;
   margin: ${(props) => props.margin || "16px 0px"};
 `;
