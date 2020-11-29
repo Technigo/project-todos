@@ -40,14 +40,14 @@ const AddButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   margin-left: 10px;
   font-size: 20px;
   background: ${props => props.background || "#0099ff"};
   color: #fff;
   border: none;
-  border-radius: 15px;
+  border-radius: 50%;
   &:hover {
     background: #4dbfed;
     cursor: pointer;
