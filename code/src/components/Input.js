@@ -1,8 +1,28 @@
+import IconButton from '@material-ui/core/IconButton'
+import TextField from '@material-ui/core/TextField'
+import AddIcon from '@material-ui/icons/Add'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { v4 as uuidv4 } from 'uuid';
-
 import { todos } from 'reducers/todos'
+import styled from 'styled-components'
+import { v4 as uuidv4 } from 'uuid'
+
+const Form = styled.form`
+  max-width: 400px;
+  width: 100%;
+  margin-bottom: 0.5rem;
+`
+
+const Container = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 0 0.5rem;
+`
+
+const StyledTextField = styled(TextField)`
+  flex: 1;
+  background-color: #fff;
+`
 
 export const Input = () => {
   const dispatch = useDispatch();
@@ -22,16 +42,20 @@ export const Input = () => {
   }
 
   return (
-    <form onSubmit={handleOnSubmit}>
-      <input
-        type="text"
-        onChange={(event) => setInput(event.target.value)}
-        placeholder="new item"
-        value={input}
-      />
-      <button type="submit" aria-label="Add item">
-        +
-      </button>
-    </form>
+    <Form onSubmit={handleOnSubmit}>
+      <Container>
+        <StyledTextField
+          size="small"
+          variant="outlined"
+          label="Add todo"
+          value={input}
+          onChange={(event) => setInput(event.target.value)}
+        />
+
+        <IconButton type="submit">
+          <AddIcon />
+        </IconButton>
+      </Container>
+    </Form>
   )
-} 
+}

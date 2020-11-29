@@ -1,11 +1,11 @@
+import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import React from 'react'
 import { Provider } from 'react-redux'
-import { List } from './components/List'
-import { Input } from './components/Input'
+import styled from "styled-components"
 import { Header } from './components/Header'
-import { combineReducers, configureStore } from "@reduxjs/toolkit"
+import { Input } from './components/Input'
+import { List } from './components/List'
 import { todos } from "./reducers/todos"
-import styled from "styled-components";
 
 const reducer = combineReducers({ todos: todos.reducer })
 
@@ -23,19 +23,28 @@ store.subscribe(() => {
 })
 
 const Wrapper = styled.section`
+  background-color: #FAFAFC;
+  min-width: 100vw;
+  min-height: 100vh;
+`
+
+const Container = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0 1rem;
 `
 
 export const App = () => {
   return (
     <Provider store={store}>
       <Wrapper>
-        <Header />
-        <Input />
-        <List />
+        <Container>
+          <Header />
+          <Input />
+          <List />
+        </Container>
       </Wrapper>
     </Provider>
   )
