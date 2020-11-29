@@ -6,9 +6,9 @@ export const todos = createSlice({
   initialState: {
     username: "Joel",
     items: [
-      { id: 1, text: "This is a todo" },
-      { id: 2, text: "Click the ⓧ to remove" },
-      { id: 3, text: "Click the ☑ to check it!" },
+      { id: 1, text: "This is a todo", isCompleted: false },
+      { id: 2, text: "Click the ⓧ to remove", isCompleted: false },
+      { id: 3, text: "Click the ☑ to check it!", isCompleted: false },
     ],
   },
   reducers: {

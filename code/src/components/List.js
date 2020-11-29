@@ -5,16 +5,16 @@ import styled from "styled-components";
 import { todos } from "reducers/todos";
 import moment from "moment";
 
-const ItemContainer = styled.ul`
-  display: flex;
-  width: 100%;
-  flex-direction: column;
+const RemoveButton = styled.button`
+  width: 100px;
+
+  border-radius: 5px;
+  border: none;
 `;
 
-const RemoveButton = styled.button`
+const ButtonContainer = styled.div`
   display: flex;
   justify-content: center;
-  align-content: center;
 `;
 
 export const List = () => {
@@ -26,9 +26,11 @@ export const List = () => {
       {items.map((item) => (
         <TodoItem key={item.id} id={item.id} item={item} />
       ))}
-      <RemoveButton onClick={() => dispatch(todos.actions.removeAll())}>
-        Remove all todos
-      </RemoveButton>
+      <ButtonContainer>
+        <RemoveButton onClick={() => dispatch(todos.actions.removeAll())}>
+          Remove all todos
+        </RemoveButton>
+      </ButtonContainer>
     </>
   );
 };

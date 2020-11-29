@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
 import { todos } from "reducers/todos";
+import moment from "moment";
 
 const ItemContainer = styled.div`
   padding: 8px;
@@ -16,7 +17,13 @@ const ItemContainer = styled.div`
   cursor: pointer;
 `;
 
-const RemoveButton = styled.button``;
+const ItemText = styled.div``;
+
+const TodoComplete = styled.input`
+  :after {
+    text-decoration: line-through;
+  }
+`;
 
 export const TodoItem = ({ id, item, isCompleted }) => {
   const dispatch = useDispatch();
@@ -29,10 +36,16 @@ export const TodoItem = ({ id, item, isCompleted }) => {
   };
 
   return (
-    <ItemContainer>
-      <div>{item.text}</div>
-      <div onClick={onIsCompletedChange}>{isCompleted ? "☒" : "☑"}</div>
-      <div onClick={onItemDelete}>ⓧ</div>
-    </ItemContainer>
+    <>
+      <ItemContainer>
+        <ItemText>{item.text}</ItemText>
+        <TodoComplete
+          type="checkbox"
+          onClick={onIsCompletedChange}
+        ></TodoComplete>
+        <div onClick={onItemDelete}>ⓧ</div>
+      </ItemContainer>
+      <span>{moment(item.createdAt).fromNow()}</span>
+    </>
   );
 };

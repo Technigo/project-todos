@@ -12,13 +12,14 @@ const FooterContainer = styled.div`
   align-items: center;
   display: flex;
   justify-content: center;
+  color: #266150;
 `;
 
 const FooterInfo = styled.a`
   text-decoration: none;
-
+  color: #266150;
   :visited {
-    color: black;
+    color: color: #266150;;
   }
 `;
 
