@@ -28,7 +28,6 @@ export const InputCheckbox = styled.input`
   } 
 }
   &:checked {
-    border-color: #333333;
     background: #e6e6e6;
     box-shadow: inset 2px 2px 5px #c4c4c4, inset -2px -2px 5px #ffffff;
     &::after {
@@ -46,7 +45,6 @@ export const InputCheckbox = styled.input`
     box-shadow:  2px 2px 5px #c4c4c4, -2px -2px 5px #ffffff; transition: 0.1s;
     &::after {
       opacity: 1;
-      border-color: #000;
     }
   }
 `;
