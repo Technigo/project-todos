@@ -12,10 +12,16 @@ A web to-do application built with Redux. :pencil:
 - listing all todo tasks
 - toggle between completed & uncompleted tasks
 - can add/remove tasks
+- counting of completed tasks
 - total count of tasks
 
 ## :chart_with_upwards_trend: Future improvements
-
+- add timestamp indicating when the task was created
+- display message when all tasks are completed
+- filter & display completed and uncompleted tasks separately
+- clear all button
+- set due date on tasks
+- create categories for tasks
  
 ## :robot: Tech used 
 - JavaScript

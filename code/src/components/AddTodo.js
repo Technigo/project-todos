@@ -2,7 +2,9 @@ import React, { useState } from "react"
 import styled from "styled-components"
 import { useDispatch } from "react-redux"
 
+//--- reducer ---
 import { todos } from "reducer/todos"
+
 
 export const AddTodo = () => {
 
@@ -11,10 +13,8 @@ export const AddTodo = () => {
 
   const dispatch = useDispatch()
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
+  const handleSubmit = () => {
     dispatch(todos.actions.addTask(value))
-    setValue("")
   }
 
   return (
@@ -30,12 +30,14 @@ export const AddTodo = () => {
             onChange={(event) => setValue(event.target.value)}
           />
         </label>
+
         <Button type="submit">
           <span role="img"
             aria-label="plus-sign">
             ➕
           </span>
         </Button>
+
       </Form>
     </section>
   )

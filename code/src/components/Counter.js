@@ -2,15 +2,17 @@ import React from "react"
 import { useSelector } from "react-redux"
 import styled from "styled-components"
 
+
 export const Counter = () => {
-  const tasks = useSelector(store => store.todos.allTodoTasks)
+
+  const tasks = useSelector(store => store.todos.allTasks)
 
   //array of 1s or 0s
   const completedTasks = tasks.map(task => {
     return (task.complete ? 1 : 0)
   })
 
-  //defining reducer for reduce function
+  //defining reducer for reduce()
   const reducer = (accumulator, currentValue) => {
     return accumulator + currentValue
   }
@@ -19,7 +21,6 @@ export const Counter = () => {
 
   return (
     <div>
-      {/* { tasks.length === 0 ? } */}
       <Text>{sum} of {tasks.length} completed</Text>
     </div>
   )

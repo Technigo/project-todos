@@ -2,7 +2,9 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import styled from "styled-components"
 
+//--- reducer ---
 import { todos } from "../reducer/todos"
+
 
 export const SingleTodo = ({ id, text, complete }) => {
 
@@ -20,15 +22,17 @@ export const SingleTodo = ({ id, text, complete }) => {
 
     <TaskContainer>
       <TextContainer>
+
         <Label>
           <Input
             type="checkbox"
             checked={complete}
             onChange={handleCheckboxClick}
           />
-          <span></span>
         </Label>
+
         {complete ? (<TextCompleted>{text}</TextCompleted>) : (<Text>{text}</Text>)}
+
       </TextContainer>
       <div>
         <Button
@@ -61,6 +65,7 @@ const TaskContainer = styled.li`
   max-width: 80%;
   align-items: center;
 `
+
 const Label = styled.label`
   align-self: center;
 `
@@ -82,6 +87,7 @@ const Button = styled.button`
 
 const Input = styled.input`
   cursor: pointer;
+
   //removes the default checkbox style 
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -120,7 +126,6 @@ const Text = styled.p`
   margin: 0;
   padding-left: 7px;
   color: #323232;
-
 
   //-- tablet --
   @media (min-width: 677px) {

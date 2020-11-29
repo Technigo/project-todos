@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit"
 import uniqid from "uniqid"
 
 const initialState = {
-  allTodoTasks: []
+  allTasks: []
 }
 
 export const todos = createSlice({
@@ -12,7 +12,7 @@ export const todos = createSlice({
   initialState,
   reducers: {
 
-    //adds a task to allTodoTasks array
+    //adds a task to allTasks array
     addTask: (store, action) => {
 
       //initial state of every new task
@@ -23,9 +23,9 @@ export const todos = createSlice({
       }
 
       //adding new task (object) to an existing array of tasks (objects) 
-      const newTodoList = [...store.allTodoTasks, newTodo]
+      const newList = [...store.allTasks, newTodo]
 
-      store.allTodoTasks = newTodoList
+      store.allTasks = newList
 
     },
 
@@ -35,16 +35,16 @@ export const todos = createSlice({
       const id = action.payload;
 
       //finds an id of a removed task
-      const taskId = store.allTodoTasks.find(task => task.id === id)
+      const taskId = store.allTasks.find(task => task.id === id)
 
       //removes the object (task) with the correct id
-      store.allTodoTasks.splice(store.allTodoTasks.indexOf(taskId), 1);
+      store.allTasks.splice(store.allTasks.indexOf(taskId), 1);
     },
 
     toggleComplete: (store, action) => {
 
       //find a checked task
-      const taskChecked = store.allTodoTasks.find(task => task.id === action.payload)
+      const taskChecked = store.allTasks.find(task => task.id === action.payload)
 
       //toggle between true/false from the key *complete*
       //if find() returns sth else than null, the if statement will execute

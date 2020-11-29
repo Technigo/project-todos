@@ -37,7 +37,7 @@ const store = createStore(reducer, persistedState, window.__REDUX_DEVTOOLS_EXTEN
 store.subscribe(() => {
   localStorage.setItem("RebekasState", JSON.stringify(store.getState()))
 })
-
+localStorage.clear();
 export const App = () => {
   return (
 

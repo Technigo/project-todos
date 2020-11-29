@@ -2,12 +2,13 @@ import React from "react"
 import { useSelector } from "react-redux"
 import styled from "styled-components"
 
+//--- component ---
 import { SingleTodo } from "./SingleTodo"
 
 export const List = () => {
 
   //fetch all tasks from the store
-  const tasks = useSelector(store => store.todos.allTodoTasks)
+  const tasks = useSelector(store => store.todos.allTasks)
 
   return (
     <Todos>
