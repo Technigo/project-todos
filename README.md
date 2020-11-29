@@ -1,13 +1,23 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+The assignment was to create a todo app with React and React Redux, using useSelect to get data from and useDispatch to dispatch actions to the store, and to style the app using styled components.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Learning Objectives
 
-## The problem
+- To create a store in Redux
+- To create reducers in the store
+- To access data from the store using selectors
+- To dispatch actions to the store
+- To style using styled components
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Tech
+
+- React
+- Redux
+- JSX
+- Redux Toolkit
+- Styled Components
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://todo-sara.netlify.app/
