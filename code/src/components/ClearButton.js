@@ -3,9 +3,7 @@ import { useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
 import { Button } from 'library/Buttons'
 
-
 export const ClearButton = () => {
-
   const dispatch = useDispatch()
 
   return (
