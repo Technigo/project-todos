@@ -1,13 +1,29 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This weeks project was to build a to-do app by using React toolkit. In the app you can add todos, remove tasks, toggle todos depending if it's completed or not and also see how many todos you have completed and how many you have left to do. There is also buttons for remove all tasks and to remove all completed tasks. 
+By using local storage the local browser remembers all the todos you have listed in the app.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This weeks project was lots of fun but also very challenging. I started to structure how the code should look like and later on by sketching what design I would like.
+The 'List' component stores all the other components are listed and that component maps through the tasks :point_right: that gets added by the 'AddTodo', and it's in this component the user adds their todos, and :point_right: it's in the 'Item' component the maped data from the 'List' file displays each todo. On each todo the user have the option to toggle the task as completed/not completed and to remove the task. The 'List' component maps through the tasks and show some other information regarding the tasks and the buttons.
+I styled the document with styled components.
+
+This weeks biggest challeng has been related to struggles with visual studio code which has taken a lot of time from building the app itself but it is also a great learning.  
+
+## Learning Objectives
+How to structure a Redux store
+How to write reducers and actions
+How to work with Redux toolkit 
+How to interact with your store using selectors or by dispatching actions
+Styled components
+
+## Tech
+React JS
+Redux
+Styled components
+Moment
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://agnestodos.netlify.app/ :star2:
