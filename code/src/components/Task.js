@@ -3,8 +3,8 @@ import { todos } from "reducers/todos";
 import { useDispatch } from "react-redux";
 
 import moment from "moment";
-import styled from "styled-components";
 
+import styled from "styled-components";
 import { BinButton } from "lib/Buttons";
 import { InputCheckbox } from "lib/Checkbox";
 
@@ -28,12 +28,12 @@ const TaskLabel = styled.label`
   align-items: center;
   font-style: italic;
   margin: 10px;
-  color: #333333;
   font-size: 24px;
   font-weight: 700;
 
+  color: ${(props) => (props.done ? "#999999" : "#333333")};
   text-decoration: ${(props) =>
-    props.lineTrough ? "2px line-through black" : "none"};
+    props.done ? "2px line-through #999999" : "none"};
 `;
 const Time = styled.p`
   text-align: right;
@@ -48,7 +48,7 @@ export const Task = ({ task }) => {
   return (
     <Container>
       <TaskContainer>
-        <TaskLabel lineTrough={task.complete}>
+        <TaskLabel done={task.complete}>
           <InputCheckbox
             type="checkbox"
             checked={task.complete}

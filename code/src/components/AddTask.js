@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { todos } from "reducers/todos";
+
 import { v4 as uuid } from "uuid";
 
 import styled from "styled-components";
@@ -25,7 +26,6 @@ const AddTaskInput = styled.input`
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-size: 16px;
-    outline: none;
   }
 `;
 

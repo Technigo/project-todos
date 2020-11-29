@@ -1,6 +1,7 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import { Task } from "./Task";
+
 import styled from "styled-components";
 
 const ListContainer = styled.ul`

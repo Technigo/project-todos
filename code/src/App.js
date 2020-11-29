@@ -1,13 +1,25 @@
 import React from "react";
 import { Provider } from "react-redux";
-
 import { combineReducers, createStore } from "@reduxjs/toolkit";
+
 import { todos } from "./reducers/todos";
 import { TaskList } from "./components/TaskList";
 import { AddTask } from "./components/AddTask";
 import { HandleTasks } from "./components/HandleTasks";
 import { Header } from "./components/Header";
+
 import styled from "styled-components";
+
+const Wrapper = styled.section`
+  padding: 10px;
+  background: #d3d3d3;
+
+  @media (min-width: 668px) {
+    width: 500px;
+    margin: auto;
+    margin-top: 100px;
+  }
+`;
 
 const reducer = combineReducers({ todos: todos.reducer });
 
@@ -28,17 +40,6 @@ const store = createStore(
 store.subscribe(() => {
   localStorage.setItem("toDoState", JSON.stringify(store.getState()));
 });
-
-const Wrapper = styled.section`
-  padding: 10px;
-  background: #d3d3d3;
-
-  @media (min-width: 668px) {
-    width: 500px;
-    margin: auto;
-    margin-top: 100px;
-  }
-`;
 
 export const App = () => {
   return (

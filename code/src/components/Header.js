@@ -1,23 +1,20 @@
 import React from "react";
-import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
 import { todos } from "reducers/todos";
-import { Button, CircleButton } from "lib/Buttons";
+import { useDispatch, useSelector } from "react-redux";
+
 import swal from "sweetalert";
+
+import styled from "styled-components";
+import { Button, CircleButton } from "lib/Buttons";
 
 const HeaderContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
 `;
-
 const HeaderHeading = styled.h1`
   color: black;
   font-size: 28px;
-`;
-
-const UserNameButton = styled.button`
-  height: 20px;
 `;
 
 export const Header = () => {

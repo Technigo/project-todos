@@ -6,7 +6,6 @@ export const Button = styled.button`
   width: 110px;
   margin-bottom: 10px;
   color: #000;
-  /* border: 2px solid #000; */
   border-radius: 4px;
   border: none;
   outline: none;
@@ -24,8 +23,6 @@ export const Button = styled.button`
 
 export const BinButton = styled.button`
   background: none;
-
-  /* width: 100%; */
   margin-right: 10px;
   height: 24px;
   width: 24px;
@@ -38,12 +35,12 @@ export const BinButton = styled.button`
 `;
 
 export const CircleButton = styled.button`
+  flex: none;
   background: #d3d3d3;
   box-shadow: 3px 3px 5px #bebebe, -3px -3px 5px #e8e8e8;
-  flex: none;
-  padding: 0;
   height: 24px;
   width: 24px;
+  padding: 0;
   border-radius: 50%;
   border: none;
   background-image: url(../assets/plus-.svg);
