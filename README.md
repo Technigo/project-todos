@@ -18,5 +18,5 @@ If I had more time, I would spend it on a more responsive layout, a component to
 ## View it live
 
 You can take a look at the result on https://sandrines-todo.netlify.app/
-You are welcome to visit my pull request  and leave some comments about my code.
+You are welcome to visit my pull request https://github.com/Technigo/project-todos/pull/113 and leave some comments about my code.
 Enjoy!
