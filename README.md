@@ -1,13 +1,22 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+The purpose of this project was to build a todo app where it was possible to add tasks, list them and toggle whether a task is copleted or not.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In this project, I pulled together all parts of redux, creating own slices and writing reducers and actions with redux-toolkit.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by creating different components, using styled-component to follow the layout proposed by Technigo.
+Then I configured a Redux store and decided that the initalState should contain 3 initial tasks for testing purposes.
+The first reducer I created made it possible to toggle whether the task is completed or not. Thanks to the styled components, it was easy to change the appearance of the task elements based on the task status.
+After that, I created a reducer for removing tasks and a reducer for adding a task. I added a counter in the header.
+
+When I was done with the minimum requirements, I added a "Clear done" button and a priority drop list and I gave a hover effect to the delete and clear buttons.
+
+If I had more time, I would spend it on a more responsive layout, a component to display when the state is empty, some filters and a local storage.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+You can take a look at the result on https://sandrines-todo.netlify.app/
+You are welcome to visit my pull request  and leave some comments about my code.
+Enjoy!
