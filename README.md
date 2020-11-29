@@ -14,7 +14,7 @@ Thereafter I started to plan and discuss the store and reducer: what actions sho
 
 Now coding! After rendering the initial state todos, I coded one action at a time until they were all in place. Styling happened last with a mobile first approach and using styled components.
 
-Next up: put more time into styling and make it responsive (look better on desktop and tablet), create custom alerts using Sweet Alert when clicking on the removal button for a todo.
+Next up: put more time into styling and make it responsive (look better on desktop and tablet), create custom alerts using Sweet Alert when clicking on the removal button for a todo, and when trying to add an empty todo.
 
 ## View it live
 
