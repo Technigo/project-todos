@@ -1,47 +1,5 @@
 import styled from 'styled-components'
 
-export const HeaderContainer = styled.section`
-display: flex;
-flex-direction:column;
-justify-content: space-between;
-box-sizing: border-box;
-margin: 0;
-padding: 20px;
-width: 100%;
-height: 200px;
-background-color: #7F2AEC;
-color: white;
-border-bottom-right-radius: 20px;
-border-bottom-left-radius: 20px;
-font-family: 'Poppins', sans-serif;
-
-`
-export const HeaderTitle = styled.h1`
-margin: 0 10px;
-font-size: 20px;
-font-weight: 400;
-`
-
-export const CategoryTitle = styled.h1`
-margin: 0 10px;
-font-size: 30px;
-font-weight: 700;
-`
-
-export const FilterButton = styled.button`
-width: auto;
-height: auto;
-border: none;
-background-color: #EFEDFF;
-font-family: 'Poppins', sans-serif;
-font-size: 14px;
-font-weight: 600;
-color: #7F2AEC;
-border-radius: 15px;
-cursor: pointer;
-margin: 0 10px;
-padding: 3px 9px;
-`
 
 export const TasksContainer = styled.section`
 display: flex;
@@ -60,7 +18,7 @@ align-items: center;
 justify-content: space-between;
 box-sizing: border-box;
 width: 100%;
-height: 50px; 
+height: auto;
 margin: 10px 0;
 
 `
@@ -73,8 +31,8 @@ justify-content: space-between;
 box-sizing: border-box;
 width: 87%;
 min-height: 55px; 
-margin: 10px 0; 
-padding: 10px;
+margin: 0; 
+padding: 15px 10px;
 background-color: #EFEDFF;
 border-radius: 15px;
 `
@@ -105,12 +63,13 @@ color: #D1C4F6;
 font-size: 10px;
 text-align: right;
 ` 
+const now = new Date()
 
 export const DueDate = styled.p`
 position: absolute;
 top: 0;
 right: 10px;
-color: #D1C4F6;
+color: ${props => props.due < now ? 'red' : '#D1C4F6'};
 font-size: 10px;
 text-align: right;
 ` 
@@ -203,3 +162,4 @@ width: 85%;
 color: red;
 font-size: 14px;
 `
+

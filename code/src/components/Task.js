@@ -22,7 +22,7 @@ export const Task = ({text, complete, task}) => {
                 <CustomCheckbox checked={complete}></CustomCheckbox>
                 <TaskTitle checked={complete}>{text}</TaskTitle>
                 <TimeStamp>{moment(task.date).format("MMM Do")}</TimeStamp>
-                <DueDate>{task.due ? `Due ${moment(task.due).fromNow()}` : ' '}</DueDate>
+                <DueDate due={task.due}>{task.due ? `Due ${moment(task.due).fromNow()}` : ' '}</DueDate>
             </Todo>
             <RemoveButton onClick={()=>dispatch(tasks.actions.removeThisTask(task))}>X</RemoveButton>
             

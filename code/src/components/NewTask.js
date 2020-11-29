@@ -10,7 +10,6 @@ import {SubmitButton, Input, Form, DueButton, DueDateContainer} from './StyledCo
 export const NewTask = ({addTask}) => {
     const dispatch = useDispatch()
     const [newTask, setNewTask] = useState('')
-    const [showDatePicker, setShowDatePicker] = useState(false)
     const [startDate, setStartDate] = useState();
 
 
@@ -21,7 +20,7 @@ export const NewTask = ({addTask}) => {
         setStartDate(null)
     }
 
-    const ExampleCustomInput = ({ value, onClick }) => (
+    const ExampleCustomInput = ( {onClick} ) => (
             <DueButton onClick={onClick}>
               Add due date
             </DueButton>
