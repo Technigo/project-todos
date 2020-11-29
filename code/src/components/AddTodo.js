@@ -32,6 +32,12 @@ const Button = styled.button`
   margin-top 5px;
   border-radius: 5px;
   border: none;
+  cursor: pointer;
+`;
+
+const TextCount = styled.span`
+  color: #266150;
+  margin: 10px;
 `;
 
 export const AddTodo = () => {
@@ -56,7 +62,7 @@ export const AddTodo = () => {
         onChange={(event) => setValue(event.target.value)}
         style={{ color: value.length > 18 ? "red" : "black" }}
       />
-      <span>{value.length}/18</span>
+      <TextCount>{value.length}/18</TextCount>
       <Button
         onClick={handleSubmit}
         disabled={value.length < 1 || value.length > 18 ? true : false}

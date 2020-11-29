@@ -7,9 +7,10 @@ import moment from "moment";
 
 const RemoveButton = styled.button`
   width: 100px;
-
+  cursor: pointer;
   border-radius: 5px;
   border: none;
+  margin: 25px;
 `;
 
 const ButtonContainer = styled.div`
@@ -28,7 +29,7 @@ export const List = () => {
       ))}
       <ButtonContainer>
         <RemoveButton onClick={() => dispatch(todos.actions.removeAll())}>
-          Remove all todos
+          Clear all todos
         </RemoveButton>
       </ButtonContainer>
     </>

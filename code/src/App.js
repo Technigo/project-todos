@@ -17,7 +17,7 @@ export const App = () => {
       <Header />
       <AddTodo />
       <List />
-      <Footer />
+      {/* <Footer /> */}
     </Provider>
   );
 };

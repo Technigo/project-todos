@@ -6,7 +6,8 @@ import moment from "moment";
 
 const ItemContainer = styled.div`
   padding: 8px;
-  margin: 8px;
+  margin: 25px;
+  margin-bottom: 2px;
   font-size: 24px;
   color: #ffff;
   background-color: #266150;
@@ -20,9 +21,22 @@ const ItemContainer = styled.div`
 const ItemText = styled.div``;
 
 const TodoComplete = styled.input`
-  :after {
+  :checked {
     text-decoration: line-through;
   }
+`;
+
+const TimeStamp = styled.span`
+  display: flex;
+  justify-content: flex-end;
+  color: #266150;
+  margin-right: 25px;
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 5px;
 `;
 
 export const TodoItem = ({ id, item, isCompleted }) => {
@@ -39,13 +53,15 @@ export const TodoItem = ({ id, item, isCompleted }) => {
     <>
       <ItemContainer>
         <ItemText>{item.text}</ItemText>
-        <TodoComplete
-          type="checkbox"
-          onClick={onIsCompletedChange}
-        ></TodoComplete>
-        <div onClick={onItemDelete}>ⓧ</div>
+        <ButtonContainer>
+          <TodoComplete
+            type="checkbox"
+            onClick={onIsCompletedChange}
+          ></TodoComplete>
+          <span onClick={onItemDelete}>ⓧ</span>
+        </ButtonContainer>
       </ItemContainer>
-      <span>{moment(item.createdAt).fromNow()}</span>
+      <TimeStamp>{moment(item.createdAt).fromNow()}</TimeStamp>
     </>
   );
 };

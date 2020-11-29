@@ -58,13 +58,7 @@ export const todos = createSlice({
     removeAll: (store, action) => {
       store.items = [];
     },
-    // addItem: (state, action) => {
-    //   const newItem = {
-    //     id: Math.max(...state.items.map((item) => item.id)),
-    //     text: action.payload,
-    //   };
-    //   const newItemsList = [...state.items, newItem];
-    //   state.items = newItemsList;
-    // },
+
+    selectAll: (state, action) => {},
   },
 });

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { todos } from "reducers/todos";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const HeaderContent = styled.div`
   display: flex;
@@ -27,8 +27,7 @@ font-size 22px;
 
 export const Header = () => {
   const items = useSelector((state) => state.todos.items);
-  //   const todosLeft = store.todos.items.filter((x) => x.isCompleted === false);
-  //   const todosCount = todosLeft.length;
+
   return (
     <>
       <HeaderContent>
