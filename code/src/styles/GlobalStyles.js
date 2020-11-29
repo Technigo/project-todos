@@ -17,10 +17,15 @@ export const Button = styled.button`
   font-family: 'PT Sans', sans-serif;
   font-size: 14px;
   width: 48%;
+  height: 50px;
   padding: 3px;
 
   &:hover {
     border: 1px solid #000;
+  }
+
+  @media (max-width: 325px) {
+    height: 60px;
   }
 `;
 

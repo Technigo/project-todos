@@ -39,8 +39,8 @@ export const TaskList = () => {
         ))}
       </ListofTasks>
       <ButtonWrapper>
-        <RemoveAll />
         <RemoveCompleted />
+        <RemoveAll />
       </ButtonWrapper>
     </div>
   );
