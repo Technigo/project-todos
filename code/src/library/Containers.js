@@ -13,8 +13,22 @@ export const Wrapper = styled.section`
 display: flex;
 flex-direction: column;
 align-items: center;
-${({outerWrapper}) => outerWrapper ? `
-justify-content: end;`:`justify-content: center;`}
+${({outerWrapper}) => outerWrapper && `
+background: white;
+-webkit-box-shadow: 5px 4px 15px -1px #000000;
+box-shadow: 5px 4px 15px -1px #000000;
+padding: 10px;
+justify-self: center;
+align-self: baseline;
+height: 90%;
+justify-content: end;
+overflow-y: scroll;
+box-sizing: content-box;
+display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: min-content;
+`}
+justify-content: center;
 width: 100%;
 margin: 5px;
 `
