@@ -22,6 +22,10 @@ const DeleteButton = styled.button`
   align-self: center;
   width: 30px;
   height: 30px;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-left: 4px;
   font-size: 16px;
   background: ${props => props.background || "red"};
