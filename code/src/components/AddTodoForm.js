@@ -12,7 +12,16 @@ export const AddTodoForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(todos.actions.addTodo({ text }));
+    dispatch(
+      todos.actions.addTodo({
+        todoInfo: {
+          id: Date.now(),
+          text: text,
+          completed: false,
+          startDate: Date.now()
+        }
+      })
+    );
     setText(''); // Clearing the input
   };
 

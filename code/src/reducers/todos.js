@@ -32,13 +32,8 @@ export const todos = createSlice({
   },
   reducers: {
     addTodo: (state, action) => {
-      const { text } = action.payload;
-      state.items.push({
-        id: Date.now(),
-        text,
-        completed: false,
-        startDate: Date.now() // When added
-      });
+      const { todoInfo } = action.payload;
+      state.items = [...state.items, todoInfo];
     },
     removeTodo: (state, action) => {
       // Find whatever item
