@@ -12,10 +12,6 @@ export const todos = createSlice({
     ],
   },
   reducers: {
-    // removeOne: (state, action) => {
-    // //   state.listItems.pop();
-    // },
-
     addItem: {
       reducer(store, action) {
         store.items = [...store.items, action.payload];
@@ -26,6 +22,7 @@ export const todos = createSlice({
             id: uniqid(),
             text: text,
             isCompleted: false,
+            created: Date.now(),
           },
         };
       },

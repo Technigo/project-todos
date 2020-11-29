@@ -6,7 +6,6 @@ import { todos } from "reducers/todos";
 import { List } from "components/List";
 import { AddTodo } from "components/AddTodo";
 import { Header } from "components/Header";
-import { Footer } from "components/Footer";
 
 const reducer = combineReducers({ todos: todos.reducer });
 const store = configureStore({ reducer });

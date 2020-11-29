@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { TodoItem } from "components/TodoItem";
 import styled from "styled-components";
 import { todos } from "reducers/todos";
-import moment from "moment";
 
 const RemoveButton = styled.button`
   width: 100px;
@@ -11,6 +10,11 @@ const RemoveButton = styled.button`
   border-radius: 5px;
   border: none;
   margin: 25px;
+
+  :hover {
+    background-color: #266150;
+    color: #ffff;
+  }
 `;
 
 const ButtonContainer = styled.div`

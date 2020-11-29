@@ -33,6 +33,11 @@ const Button = styled.button`
   border-radius: 5px;
   border: none;
   cursor: pointer;
+
+  :hover {
+      background-color: #266150;
+      color: #ffff;
+  }
 `;
 
 const TextCount = styled.span`
@@ -48,8 +53,8 @@ export const AddTodo = () => {
   //     dispatch(todos.actions.addItem(value));
   //   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault(dispatch(todos.actions.addItem(value)), setValue(""));
+  const handleSubmit = (event) => {
+    event.preventDefault(dispatch(todos.actions.addItem(value)), setValue(""));
   };
 
   return (

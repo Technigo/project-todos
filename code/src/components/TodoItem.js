@@ -26,6 +26,8 @@ const TodoComplete = styled.input`
   }
 `;
 
+const DeleteButton = styled.span``;
+
 const TimeStamp = styled.span`
   display: flex;
   justify-content: flex-end;
@@ -52,16 +54,20 @@ export const TodoItem = ({ id, item, isCompleted }) => {
   return (
     <>
       <ItemContainer>
-        <ItemText>{item.text}</ItemText>
+        <ItemText
+          style={{ textDecoration: item.isCompleted ? "line-through" : "" }}
+        >
+          {item.text}
+        </ItemText>
         <ButtonContainer>
           <TodoComplete
             type="checkbox"
             onClick={onIsCompletedChange}
           ></TodoComplete>
-          <span onClick={onItemDelete}>ⓧ</span>
+          <DeleteButton onClick={onItemDelete}>ⓧ</DeleteButton>
         </ButtonContainer>
       </ItemContainer>
-      <TimeStamp>{moment(item.createdAt).fromNow()}</TimeStamp>
+      <TimeStamp>{moment(item.created).fromNow()}</TimeStamp>
     </>
   );
 };
