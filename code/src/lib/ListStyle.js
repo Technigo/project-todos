@@ -59,9 +59,6 @@ export const TextWrapper = styled.div`
   align-items: flex-start;
   justify-content: flex-start;
   padding-bottom: 20px;
-  @media only screen and ${breakpoints.device.computer} {
-    padding-bottom: 10px;
-  }
 `;
 export const Title = styled.h3`
   width: 100%;
