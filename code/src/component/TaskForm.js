@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import styled from 'styled-components'
 import { todos } from 'reducer/todos'
+import styled from 'styled-components'
 
 const FormContainer = styled.form`
     width: 100%;
@@ -11,20 +11,6 @@ const FormContainer = styled.form`
     padding: 0 35px 0 35px;
     box-sizing: border-box;
 `
-
-// const AddButton = styled.button`
-//     width: 50px;
-//     height: 50px;
-//     border-radius: 50%;
-//     border: none;
-//     color: #fff;
-//     font-size: 40px;
-//     font-weight: 700;
-//     background-color: #FBC2EB;
-
-// style={{background: 'linear-gradient(120deg, #FBC2EB 0%, #ABC1EE 80%'}}
-// +
-// `
 
 const AddButton = styled.button`
     width: 90px;
@@ -39,10 +25,7 @@ const AddButton = styled.button`
     :disabled {
         opacity: 0.5;
     }
-
-    
 `
-
 
 const TaskInput = styled.textarea`
     width: 100%;
@@ -57,7 +40,6 @@ const TaskInput = styled.textarea`
 export const TaskForm = () => {
     const dispatch = useDispatch()
     const [text, setText] = useState('')
-    const [category, setCategory] = useState('')
 
     const handleSubmit = (event) => {
         event.preventDefault(
@@ -68,14 +50,13 @@ export const TaskForm = () => {
 
     return (
         <FormContainer>
-            
                 <TaskInput
                     rows='3'
                     value={text}
                     placeholder='Your next task'
                     onChange={(event) => setText(event.target.value)}
-                ></TaskInput>
-            
+                >
+                </TaskInput>
             <AddButton disabled={!text} onClick={handleSubmit}>Add</AddButton>
         </FormContainer>
     )

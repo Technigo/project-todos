@@ -11,7 +11,6 @@ export const todos = createSlice({
                 category: 'task',
                 isComplete: false,
                 created: 1606387233993
-                
             },
             {
                 id: 2, 
@@ -29,6 +28,7 @@ export const todos = createSlice({
             },
         ]
     }, 
+    
     reducers: {
         removeOne: (store, action) => {
             store.items = store.items.filter((item) => item.id !== action.payload)
@@ -44,9 +44,7 @@ export const todos = createSlice({
             }
 
             const newTaskList = [...store.items, newTask]
-
             store.items = newTaskList
-            // setAddTask=(false)
         },
 
         removeAll: (store, action) => {

@@ -1,9 +1,9 @@
 import React from 'react'
-import {useSelector, useDispatch} from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
-import {todos} from 'reducer/todos'
+import { todos } from 'reducer/todos'
 
-import {Item} from './Item'
+import { Item } from './Item'
 import { NoTask } from 'component/NoTask'
 import { TaskForm } from 'component/TaskForm'
 
@@ -27,13 +27,10 @@ const ClearAllButton = styled.button`
     font-weight: 600;
 `
 
-export const TaskList = ({addTask}) => {
+export const TaskList = () => {
     const dispatch = useDispatch()
     const items = useSelector(store => store.todos.items)
     const todosCount = items.length
-
-    // if(addTask || !todosCount) 
-    // return <TaskForm />
 
     if (todosCount) 
     return (
@@ -44,14 +41,15 @@ export const TaskList = ({addTask}) => {
                     <Item key={index} item={item}></Item>  
                 ))}
                 <ClearAllButton onClick={() => dispatch(todos.actions.removeAll())}>Clear All</ClearAllButton>
-
             </TaskListContainer> 
         </>
         )
-    
-        
 
+    // Returns when there is no ongoing tasks.
     return (
-        <NoTask />
+        <>
+            <TaskForm />
+            <NoTask />
+        </>
     )
 }

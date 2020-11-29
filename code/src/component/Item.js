@@ -1,16 +1,14 @@
 import React from 'react'
-import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
-import {todos} from 'reducer/todos'
+import { todos } from 'reducer/todos'
 import moment from 'moment'
+import styled from 'styled-components'
 
 
 const ItemContainer = styled.div`
     margin-bottom: 15px;
-    
 `
 const TaskContainer = styled.li`
-
     width: 100%;
     height: 18px;
     display: flex;
@@ -19,22 +17,17 @@ const TaskContainer = styled.li`
     margin-bottom: 5px;
     font-size: 16px;
     color: #3f3f3f;
-    background-color: #E1C9FD;
+    background-color: ${props => props.checked ? "#F0F0F0" : "#E1C9FD"};
+    text-decoration: ${props => props.checked ? "line-through" : "none"};
     border-radius: 45px;
     list-style-type: none;
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
     justify-content: space-between;
-
-    ::first-letter {
-        text-transform: uppercase;
-    } // Funkar inte på flex
-    
 `
 
 const Task = styled.div`
     display: flex;
-
 `
 
 const RemoveButton = styled.button`
@@ -54,7 +47,6 @@ const CheckboxContainer = styled.label`
     display: flex;  
     align-items: center;
     margin-right: 30px;
-
 `
 const Checkbox = styled.input`
     position: absolute;
@@ -72,15 +64,16 @@ const CustomCheckbox = styled.span`
     height: 20px;
     width: 20px;
     background-color: ${props => props.checked ? "#7F2AEC" : "#fff"};
-
+    opacity: 1;
     border-radius: 50%;
     cursor: pointer;
-    opacity:1;
+
     :hover {
         background-color: ${props => props.checked ? "#7F2AEC" : "#D1C4F6"};
     }
+
     :after {
-        content:"";
+        content: "";
         position: absolute;
         width: 4px;
         height: 9px;
@@ -102,7 +95,7 @@ export const Item = ({ item }) => {
 
     return (
             <ItemContainer>
-                <TaskContainer>
+                <TaskContainer checked={item.isComplete}>
                     <Task>
                         <CheckboxContainer>
                             <Checkbox 
@@ -116,7 +109,6 @@ export const Item = ({ item }) => {
                         {item.text}
                     </Task>
                     <RemoveButton onClick={() => dispatch(todos.actions.removeOne(item.id))}>-</RemoveButton>
-                   
                 </TaskContainer>
                 <TimeStamp>{moment(item.created).startOf().fromNow()}</TimeStamp>
             </ItemContainer>

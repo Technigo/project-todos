@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 
-
 const HeadingContainer = styled.div`
   width: 100%;
   display: flex;
@@ -24,33 +23,15 @@ const TodosCount = styled.h2`
   margin: 10px 0 40px 0;
 `
 
-const AddButton = styled.button`
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    color: #fff;
-    font-size: 40px;
-    font-weight: 700;
-    background-color: #FBC2EB;
-
-`
-
-
-export const StartHeading = ({ setAddTask }) => {
+export const StartHeading = () => {
   const items = useSelector(store => store.todos.items)
-  const todosCount = items.length
+  const notCompleted = items.filter(item => !item.isComplete)
+  const todosCount = notCompleted.length 
 
     return (
       <HeadingContainer>
           <Heading>Your<br/>what to do</Heading>
           <TodosCount>{todosCount} things to do</TodosCount>
-          <AddButton 
-            onClick={() => setAddTask(true)}
-            style={{background: 'linear-gradient(120deg, #FBC2EB 0%, #ABC1EE 80%'}}
-          >
-            +
-          </AddButton>
       </HeadingContainer>
     )
   }
