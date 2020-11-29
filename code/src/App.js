@@ -9,15 +9,12 @@ import { todos } from "./reducers/todos"
 
 const reducer = combineReducers({ todos: todos.reducer })
 
-// Get persisted state from localStorage
 const persistedState = localStorage.getItem('reduxState')
   ? JSON.parse(localStorage.getItem('reduxState'))
   : {}
 
-// Initialize Redux store with persisted state
 const store = configureStore({ reducer, preloadedState: persistedState })
 
-// Every time store updates, run this function: To persist the state to localStorage
 store.subscribe(() => {
   localStorage.setItem('reduxState', JSON.stringify(store.getState()))
 })

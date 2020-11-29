@@ -17,6 +17,6 @@ export const Header = () => {
   const numCompletedIems = items.filter(item => item.isComplete).length
 
   return <HeaderContainer>
-    All tasks &ndash; {numCompletedIems} of {numTotalItems} completed
+    My Todos &ndash; {numCompletedIems} of {numTotalItems} completed
   </HeaderContainer>
 }

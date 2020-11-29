@@ -4,17 +4,17 @@ const initialState = {
   items: [
     {
       id: 1,
-      text: 'The first todo',
+      text: 'Answer emails',
       isComplete: false,
     },
     {
       id: 2,
-      text: 'The second todo',
-      isComplete: false,
+      text: 'Workout',
+      isComplete: true,
     },
     {
       id: 3,
-      text: 'The third todo',
+      text: 'Eat icecream',
       isComplete: false,
     },
   ],
