@@ -3,10 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 export const todos = createSlice({
   name: "todos",
   initialState: {
-    username: "Jonna",
+    username: "",
     tasks: [
-      { id: 1, text: "Get a dog", complete: false, time: "1606335505869" },
-      { id: 2, text: "Drink beer", complete: false, time: Date.now() },
+      { id: 1, text: "Get a dog", complete: false, time: 1606335505869 },
+      { id: 2, text: "Drink beer", complete: false, time: 1606420536320 },
       { id: 3, text: "Work out", complete: true, time: Date.now() },
     ],
   },

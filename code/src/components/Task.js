@@ -1,61 +1,71 @@
 import React from "react";
-import styled from "styled-components";
 import { todos } from "reducers/todos";
 import { useDispatch } from "react-redux";
+
 import moment from "moment";
+import styled from "styled-components";
 
-const TaskContainer = styled.li`
-  /* align-items: flex-start; */
+import { BinButton } from "lib/Buttons";
+import { InputCheckbox } from "lib/Checkbox";
+
+const Container = styled.li`
   display: flex;
-  align-items: center;
+  flex-direction: column;
   justify-content: space-between;
-  /* margin: 8px; */
-  /* padding: 10; */
   font-size: 32px;
-  color: blue;
-  background: pink;
+  color: black;
+  background: #e6e6e6;
   list-style: none;
+  margin-bottom: 5px;
 `;
-
+const TaskContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`;
 const TaskLabel = styled.label`
   display: flex;
   align-items: center;
+  font-style: italic;
   margin: 10px;
-`;
+  color: #333333;
+  font-size: 24px;
+  font-weight: 700;
 
-const CheckBox = styled.input`
-  margin-right: 20px;
+  text-decoration: ${(props) =>
+    props.lineTrough ? "2px line-through black" : "none"};
 `;
-
-const RemoveTaskButton = styled.button`
-  margin-right: 10px;
+const Time = styled.p`
+  text-align: right;
+  margin: 6px;
+  font-size: 12px;
+  color: #404040;
 `;
 
 export const Task = ({ task }) => {
   const dispatch = useDispatch();
 
   return (
-    <TaskContainer>
-      <TaskLabel>
-        <CheckBox
-          type="checkbox"
-          role="checkbox"
-          checked={task.complete}
-          onChange={() => {
-            dispatch(todos.actions.doneTask(task.id));
+    <Container>
+      <TaskContainer>
+        <TaskLabel lineTrough={task.complete}>
+          <InputCheckbox
+            type="checkbox"
+            checked={task.complete}
+            onChange={() => {
+              dispatch(todos.actions.doneTask(task.id));
+            }}
+          />
+          {task.text}
+        </TaskLabel>
+        <BinButton
+          type="button"
+          onClick={() => {
+            dispatch(todos.actions.removeTask(task.id));
           }}
-        />
-        {task.text}
-        {moment(task.time).fromNow()}
-      </TaskLabel>
-      <RemoveTaskButton
-        type="button"
-        onClick={() => {
-          dispatch(todos.actions.removeTask(task.id));
-        }}
-      >
-        -
-      </RemoveTaskButton>
-    </TaskContainer>
+        ></BinButton>
+      </TaskContainer>
+      <Time>{moment(task.time).fromNow()}</Time>
+    </Container>
   );
 };

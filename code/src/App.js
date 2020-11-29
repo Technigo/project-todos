@@ -30,7 +30,14 @@ store.subscribe(() => {
 });
 
 const Wrapper = styled.section`
-  margin: 10px;
+  padding: 10px;
+  background: #d3d3d3;
+
+  @media (min-width: 668px) {
+    width: 500px;
+    margin: auto;
+    margin-top: 100px;
+  }
 `;
 
 export const App = () => {

@@ -11,7 +11,6 @@ const ListContainer = styled.ul`
 `;
 
 export const TaskList = () => {
-  const dispatch = useDispatch();
   const tasks = useSelector((store) => store.todos.tasks);
 
   return (
