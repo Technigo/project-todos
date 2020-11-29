@@ -10,7 +10,6 @@ const initialState = {
         text: "Read a book",
         category: "Self Care",
         complete: true,
-        checkedTodo: true,
         createdAt: "",
       },
       {
@@ -18,7 +17,6 @@ const initialState = {
         text: "Take the dog out",
         category: "Household",
         complete: true,
-        checkedTodo: false,
         createdAt: "",
       },
       {
@@ -26,7 +24,6 @@ const initialState = {
         text: "Do laundry",
         category: "Household",
         complete: true,
-        checkedTodo: true,
         createdAt: "",
       },
       {
@@ -34,7 +31,6 @@ const initialState = {
         text: "Make dinner",
         category: "Household",
         complete: true,
-        checkedTodo: true,
         createdAt: "",
       },
       {
@@ -42,7 +38,6 @@ const initialState = {
         text: "Do some more coding",
         category: "Coding",
         complete: true,
-        checkedTodo: true,
         createdAt: "",
       },
       {
@@ -50,7 +45,6 @@ const initialState = {
         text: "Buy carrots",
         category: "Groceries",
         complete: true,
-        checkedTodo: true,
         createdAt: "",
       },
       {
@@ -58,7 +52,6 @@ const initialState = {
         text: "Wash hair",
         category: "Other",
         complete: true,
-        checkedTodo: true,
         createdAt: "",
       },
     ],
