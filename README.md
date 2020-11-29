@@ -1,13 +1,19 @@
-# Project Todos
+![Todo logo](https://github.com/AxelHammarback/project-todos/blob/master/assets_readme/todo-logo.png)
 
-Replace this readme with your own information about your project.
+A todo application! Add tasks! Mark them as done! Remove them! Wow!
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+But wait – theres more! Are you out of things to do? No worries – press the "Random task" button to add tasks such as "Flip your mattress", "Sign those adoption papers", or why not "Recycle"? You'll never have to rest again!
 
-## The problem
+**Tech used**
+* HTML/CSS
+* Javascript
+* React
+* Redux
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+![Todo logo](https://github.com/AxelHammarback/project-todos/blob/master/assets_readme/todo-screenshot.png)
 
-## View it live
+---
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+### Learnings
+
+This week was all about diving deeper into Redux and read from/write to the global state. Started out being extremely confused about everything regarding reducers, action, state, store, selector, provider, and god knows what. Still very confused about these things, but I managed to piece something together and (sort of) understand how it's all tied together. 
