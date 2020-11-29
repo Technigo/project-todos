@@ -20,7 +20,7 @@ export const AddTask = () => {
   }
 
   return (
-    <RoundedContainer background="#cce5ff">
+    <RoundedContainer>
       <form onSubmit={handleSubmit}>
         <input
           type="text"

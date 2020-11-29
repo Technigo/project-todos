@@ -18,7 +18,7 @@ export const List = () => {
 
   return (
     <>
-      <RoundedContainer background="pink">
+      <RoundedContainer>
         <label>
           Filter by:
           <Select
@@ -30,7 +30,7 @@ export const List = () => {
             <option value="">Show All</option>
           </Select>
         </label>
-        <ClearDone />
+        {/* <ClearDone /> */}
         <ClearButton />
       </RoundedContainer>
       <span>

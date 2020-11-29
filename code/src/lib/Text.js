@@ -15,7 +15,7 @@ export const Title = styled.h1`
 
 export const Subtitle = styled.h2`
   margin: 0;
-  color: #fff;
+  color: #5692ff;
   font-size: 20px;
   text-align: right;
 
@@ -25,7 +25,7 @@ export const Subtitle = styled.h2`
 `
 export const H3 = styled.h3`
   margin: 0;
-  color: #fff;
+  color: #5692ff;
   font-size: 18px;
   text-align: right;
 `

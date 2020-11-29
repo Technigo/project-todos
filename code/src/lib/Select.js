@@ -4,7 +4,7 @@ export const Select = styled.select`
   height: 31px;
   margin: 0 6px;
   padding: 0 7px;
-  background: #fff;
+  background: #cce5ff;
   font-size: 12px;
   color: #2e3338;
   border: none;

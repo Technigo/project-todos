@@ -14,12 +14,10 @@ export const Summary = () => {
       <RoundedContainer>
         <Title><Icon />Remember</Title>
       </RoundedContainer>
-      <Container background="#5692ff">
+      <Container>
         <Subtitle>{items.length} Total</Subtitle>
         <H3>{toDo.length} more to go</H3>
       </Container>
     </RoundedContainer>
   )
 }
-
-// background="papayawhip"
