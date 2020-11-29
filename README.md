@@ -1,8 +1,6 @@
 # Todos App
-A responsive Todo App react components and using reducers and actions. Built with web accessibility in mind.
+A responsive Todo App using styled react components, reducers and actions. Built with web accessibility in mind.
 
-## The process
-  I used a main component App where I show two diffrent components InputForm (where the user can input a happy tought) and a MessageList (where all messages are diplayed and  can be liked). The MessageList component is generating information using props and updating status using react hooks. I used the map method to iterate through the data to generate the all the messages.
 
 ## Accessibility and cross-browser testing 
 
@@ -13,9 +11,15 @@ Testing has been done in different browsers such as Edge, FireFox and Chrome in 
 
 ## Limitations
 
-None aware of. 
+All blue level requirements achived: 
+- Your app should list all todo tasks - completed or uncompleted
+- You should be able to mark an uncompleted task as complete (and change it back to uncomplete)
+- You should be able to add and remove tasks
+- Your app should show a count of either all todos, or all uncomplete todos (or both)
+
+No limitations that I am aware of. 
 
 ## View it live
 
-View the project live here: https://thehappythoughts.netlify.app/
+View the project live here: https://happy-hoover-656091.netlify.app/
 
