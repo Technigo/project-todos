@@ -1,13 +1,17 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Create a todo list using React and Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Started looking for inspiration using Dribble and Pinterest.
+Sketch a prototype on Figma.
+Started building the redux store and connecting the store with the app component.
+Created all basic components like TaskList and Task. 
+Added more actions in reducers, like removeAll and addTask.
+Style the components using Styled Component.
+
+If I had more time: I would like to export the different styled-components to separate files instead of it being in the same component. And I would like to add a category selector and filter through the different the category. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
