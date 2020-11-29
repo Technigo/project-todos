@@ -74,7 +74,7 @@ const TodoInput = () => {
             colors: {
               ...theme.colors,
               primary25: '#7E77CC',
-              primary: '##5C52AC',
+              primary: '#5C52AC',
             },
           })}
         />
@@ -166,7 +166,7 @@ const AddButton = styled.button`
   background-color: transparent;
   border: 2px solid #28e177;
   border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease 0s;
   cursor: pointer;
   outline: none;
@@ -174,7 +174,7 @@ const AddButton = styled.button`
   :hover {
     background-color: #2ee59d;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
+    color: #3b2f7d;
+    transform: translateY(-5px);
   }
 `;

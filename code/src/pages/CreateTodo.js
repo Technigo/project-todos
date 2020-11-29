@@ -17,9 +17,13 @@ export default CreateTodo;
 const Wrapper = styled.section`
   display: grid;
   background-image: linear-gradient(#5c52ac, #483c90, #3b2f7d);
-  height: 90vh;
+  height: 100vh;
   width: 100%;
   max-width: 600px;
   margin: 0 auto;
-  margin-top: 30px;
+
+  @media (min-width: 768px) {
+    height: 90vh;
+    margin-top: 30px;
+  }
 `;

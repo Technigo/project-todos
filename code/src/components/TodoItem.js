@@ -128,7 +128,6 @@ const ItemDescription = styled.p`
   ${({ isComplete }) =>
     isComplete &&
     `
-    color: lightgray; 
     color: #b0b0b0; 
   `}
 `;
@@ -136,13 +135,11 @@ const ItemDescription = styled.p`
 const ItemCategory = styled(ItemDescription)`
   font-size: 0.7rem;
   margin-top: 3px;
-  color: gray;
   color: #808080;
 
   ${({ isComplete }) =>
     isComplete &&
     `
-    color: lightgray; 
     color: #b0b0b0; 
   `}
 `;

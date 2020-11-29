@@ -4,7 +4,9 @@ import styled from 'styled-components';
 const EmptyList = () => {
   return (
     <EmptySection>
-      <p>Do it another day</p>
+      <h2>Nothing to do!</h2>
+      {/* <img src="https://i.gifer.com/K9o2.gif" alt="Lazy cat" /> */}
+      <img src="https://i.gifer.com/ZIb4.gif" alt="Dancing Carlton" />
     </EmptySection>
   );
 };
@@ -12,5 +14,20 @@ const EmptyList = () => {
 export default EmptyList;
 
 const EmptySection = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   height: 40vh;
+
+  & h2 {
+    font-size: 20px;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.65);
+    margin-bottom: 20px;
+  }
+
+  & img {
+    height: 25vh;
+  }
 `;

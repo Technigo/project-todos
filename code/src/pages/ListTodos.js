@@ -20,6 +20,8 @@ const Wrapper = styled.section`
   width: 100%;
   margin: 0 auto;
   max-width: 600px;
-  margin-top: 30px;
-  height: 80vh;
+
+  @media (min-width: 768px) {
+    margin-top: 30px;
+  }
 `;

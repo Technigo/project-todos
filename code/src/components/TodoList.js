@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import Select from 'react-select';
 import styled from 'styled-components';
 
 import EmptyList from './EmptyList';
@@ -16,13 +17,19 @@ const TodoList = () => {
     store => store.todos.list.selectedStatusFilter
   );
 
-  // const visibilityFilters = useSelector(
-  //   store => store.visibilityFilter.list.options
-  // );
-  //console.log(visibilityFilters);
   const filterCategory = useSelector(
     store => store.todos.list.selectedCategoryFilter
   );
+
+  const options = useSelector(store => store.todos.list.options);
+
+  // const visibilityFilters = useSelector(
+  //   store => store.visibilityFilter.list.options
+  // );
+  // console.log(visibilityFilters);
+  // const filterCategory = useSelector(
+  //   store => store.todos.list.selectedCategoryFilter
+  // );
   // const categories = useSelector(store => store.todos.list.categories);
   //const [category, setCategory] = useState('');
 
@@ -31,9 +38,10 @@ const TodoList = () => {
     dispatch(todos.actions.filterByStatus(value));
   };
 
-  // const onFilterByCategory = value => {
-  //   dispatch(todos.actions.filterByCategory(value));
-  // };
+  const onFilterByCategory = value => {
+    dispatch(todos.actions.filterByCategory(value.label));
+    console.log(value.label);
+  };
 
   const filteredList = list.filter(item => {
     if (filterStatus === 'complete') {
@@ -45,6 +53,8 @@ const TodoList = () => {
 
   // const filteredList = list.filter(item => {
   //   if (filterCategory) {
+  //     console.log(filterCategory);
+  //     console.log(item.category);
   //     if (filterStatus === 'not complete') {
   //       return item.category === filterCategory && !item.isComplete;
   //     } else if (filterStatus === 'complete') {
@@ -54,7 +64,7 @@ const TodoList = () => {
   //     return item.isComplete;
   //   } else if (filterStatus === 'not complete') {
   //     return !item.isComplete;
-  //   } else return item;
+  //   } else ifreturn item;
   // });
 
   // const list = useSelector(store => {
@@ -67,6 +77,18 @@ const TodoList = () => {
   return (
     <>
       <Main>
+        {/* {options.map(option => (
+          <>
+            <ActionBarButton
+              type="button"
+              key={option.value}
+              onClick={() => onFilterByStatus(option.value)}
+            >
+              {console.log(option)}
+              <ActionBarText>{option.label}</ActionBarText>
+            </ActionBarButton>
+          </>
+        ))} */}
         <ActionBarContainer>
           <ActionBarButton
             type="button"
@@ -105,6 +127,24 @@ const TodoList = () => {
             </option>
           ))}
         </select> */}
+        {/* <CustomSelect
+          options={options}
+          onChange={onFilterByCategory}
+          placeholder="Select a category"
+          //styles={customStyles}
+          theme={theme => ({
+            ...theme,
+            border: 'none',
+            borderRadius: 0,
+            backgroundColor: 'transparent',
+            color: '#fff',
+            colors: {
+              ...theme.colors,
+              primary25: '#7E77CC',
+              primary: '#5C52AC',
+            },
+          })}
+        /> */}
         {list.length === 0 ? (
           <EmptyList />
         ) : (
@@ -152,20 +192,26 @@ const ActionBarButton = styled(Button)`
   font-weight: 500;
   box-sizing: border-box;
   transition: all 0.1s ease 0s;
+  color: #808080;
 
   :hover {
-    border-bottom: 2px solid red;
+    border-bottom: 1px solid red;
     color: red;
   }
 
   :focus {
-    border-bottom: 2px solid red;
+    border-bottom: 1px solid red;
     color: red;
   }
 
   :active {
-    border-bottom: 2px solid red;
+    border-bottom: 1px solid red;
     color: red;
   }
 `;
+
 const ActionBarText = styled.p``;
+
+const CustomSelect = styled(Select)`
+  /* width: 100%; */
+`;
