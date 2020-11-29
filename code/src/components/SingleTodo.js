@@ -54,18 +54,14 @@ export const SingleTodo = ({ id, text, complete }) => {
 const TaskContainer = styled.li`
   display: flex;
   justify-content: space-between;
-  /* completed: background: #CCE8FF; */
-  /* darker blue: background: #0F3593; */
-
-  background: white;
+  background: #F2F2EB;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 14px;
-  color: #323E40;
   list-style-type: none;
   border-bottom: 2px solid #819FA6;
   padding: 10px;
-  margin-bottom: 5px;
-  width: 100%;
+  margin: 0 auto 5px auto;
+  max-width: 80%;
 `
 
 const Emoji = styled.span`
@@ -74,7 +70,7 @@ const Emoji = styled.span`
 `
 
 const Button = styled.button`
-  background: white;
+  background: #F2F2EB;
   border: none;
 `
 
@@ -91,32 +87,36 @@ const Input = styled.input`
   appearance: none;
 
   border: 3px solid #5D732D;
-  height: 16px;
-  width: 16px;
+  height: 17px;
+  width: 17px;
   border-radius: 50%;
   outline: none;
   margin: 0;
 
   &:checked {
-    border: 2px solid #898C1C;
-    background: #5D732D;
-    transition-duration: 0.7s;
+    border: 2px solid #5D732D;
+    background: #898C1C;
+    transition-duration: 0.8s;
   }
-
 `
 
 const TextContainer = styled.div`
-display: flex;
-flex-direction: row;
+  display: flex;
+  flex-direction: row;
+  word-wrap: break-word;
+  color: #F2F2EB;
 `
 
 const Text = styled.p`
+  font-size: 14px;
   margin: 0;
   padding-left: 5px;
+  color: #323232;
 `
 
 const TextCompleted = styled.p`
   margin: 0;
   padding-left: 5px;
   text-decoration: line-through;
+  color: #323232;
 `

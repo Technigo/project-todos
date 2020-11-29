@@ -24,8 +24,14 @@ export const TodoList = () => {
 }
 
 // --- STYLED COMPONENTS ---
+
 const List = styled.ul`
   margin: 0;
   padding: 0;
+  width: 80%;
+  
 
+  @media (max-width: 1023px) {
+    width: 80%;
+  }
 `

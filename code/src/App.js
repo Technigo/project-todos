@@ -60,17 +60,18 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* background: #F2E0C9; */
   border: 2px solid #025959;
-  /* padding: 15px 5px; */
   margin: 3px auto;
   border-radius: 10px;
   min-height: 98.5vh;
+  background: #F2F2EB;
 
-  @media (min-width: 678px) (max-width: 1023px) {
+  //-- tablet --
+  @media (max-width: 1023px) {
     margin: 0 auto;  
   }
 
+  //-- desktiop --
   @media (min-width: 1024px) {
     font-size: 24px;
     margin: 0 auto;    

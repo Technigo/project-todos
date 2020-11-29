@@ -1,5 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
+import styled from "styled-components"
 
 export const Counter = () => {
 
@@ -7,7 +8,14 @@ export const Counter = () => {
 
   return (
     <div>
-      <p>Completed: of {allTasks}</p>
+      <Text> of {allTasks} completed</Text>
     </div>
   )
 }
+
+// --- STYLED COMPONENTS ---
+
+const Text = styled.p`
+  font-size: 14px;
+  font-weight: bold;
+`
