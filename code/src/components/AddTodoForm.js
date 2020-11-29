@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { todos } from "reducers/todos";
 import { useHistory } from "react-router-dom";
 import uniqid from "uniqid";
+
+import { todos } from "reducers/todos";
 import {
   TodoFormWrapper,
   ButtonWrapper,

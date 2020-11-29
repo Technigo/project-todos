@@ -1,6 +1,6 @@
 const size = {
     tablet: "768px",
-    computer: "1200px",
+    computer: "1198px",
    }
    const device = {
     tablet: `(min-width: ${size.tablet})`,

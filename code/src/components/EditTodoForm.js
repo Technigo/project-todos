@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
+
 import { todos } from "reducers/todos";
 import {
   TodoFormWrapper,
@@ -22,7 +23,7 @@ import {
 export const EditTodoForm = () => {
   const { id } = useParams();
 
-  const todo = useSelector((store) => 
+  const todo = useSelector((store) =>
     store.todos.items.find((item) => item.id === id)
   );
 
@@ -30,8 +31,8 @@ export const EditTodoForm = () => {
   const [todoTitle, setTodoTitle] = useState(todo.title);
   const [todoContent, setTodoContent] = useState(todo.content);
   const [width, setWidth] = useState(window.innerWidth);
-  const breakpoint = 767;
 
+  const breakpoint = 767;
   const dispatch = useDispatch();
   const history = useHistory();
   const categories = useSelector((store) => store.todos.categories);
@@ -99,6 +100,7 @@ export const EditTodoForm = () => {
             onChange={(e) => setTodoContent(e.target.value)}
           />
         </TodoInputGroupWrapper>
+
         <TodoCheckboxGroupWrapper>
           {categories.map((category, index) => (
             <CheckboxWrapper key={category.id}>
@@ -112,33 +114,35 @@ export const EditTodoForm = () => {
                 />
                 {category.name}
               </CheckboxLabel>
-              {width > breakpoint ? (
-                  <SubCheckboxWrapper>
-                    {category.subcategories.map((subcategory, index) => (
-                      <SubCheckboxWrapper key={subcategory.name}>
-                        <CheckboxLabel htmlFor={subcategory.name[index]}>
-                          <CheckboxInput
-                            type="checkbox"
-                            name={subcategory.name[index]}
-                            value={subcategory.name}
-                            checked={userCategory.includes(subcategory.name)}
-                            onChange={() => onCategoryChange(subcategory.name)}
-                          />
-                          {subcategory.name}
-                        </CheckboxLabel>
-                      </SubCheckboxWrapper>
-                    ))}
-                  </SubCheckboxWrapper>
-                ) : null}
+             
+              {width > breakpoint  ? (
+                <SubCheckboxWrapper>
+                  {category.subcategories.map((subcategory, index) => (
+                    <SubCheckboxWrapper key={subcategory.name}>
+                      <CheckboxLabel htmlFor={subcategory.name[index]}>
+                        <CheckboxInput
+                          type="checkbox"
+                          name={subcategory.name[index]}
+                          value={subcategory.name}
+                          checked={userCategory.includes(subcategory.name)}
+                          onChange={() => onCategoryChange(subcategory.name)}
+                        />
+                        {subcategory.name}
+                      </CheckboxLabel>
+                    </SubCheckboxWrapper>
+                  ))}
+                </SubCheckboxWrapper>
+              ) : null}
             </CheckboxWrapper>
           ))}
+
           <ButtonWrapper
-            buttonTop={width > breakpoint ? "75%" : "70%"}
+            buttonTop={width > breakpoint? "75%" : "70%"}
             buttonLeft={width > breakpoint ? "75%" : "70%"}
           >
-          <AddTodoButton type="button" onClick={onTodoEditSubmit}>
-            Edit todo
-          </AddTodoButton>
+            <AddTodoButton type="button" onClick={onTodoEditSubmit}>
+              Edit todo
+            </AddTodoButton>
           </ButtonWrapper>
         </TodoCheckboxGroupWrapper>
       </TodoForm>

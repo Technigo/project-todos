@@ -5,7 +5,14 @@ import { Link } from "react-router-dom";
 import DeleteOutlinedIcon from "@material-ui/icons/DeleteOutlined";
 
 import { TimeAgo } from "./TimeAgo";
-import { ListItem, TimeText, ButtonWrapper, TextWrapper, Title, ItemText } from "../lib/ListStyle";
+import {
+  ListItem,
+  TimeText,
+  ButtonWrapper,
+  TextWrapper,
+  Title,
+  ItemText,
+} from "../lib/ListStyle";
 import { EditIcon } from "../lib/EditIcon";
 import { RemoveTodoIcon } from "../lib/RemoveIcon";
 
@@ -26,10 +33,10 @@ export const Item = ({ item }) => {
       </TextWrapper>
       <ButtonWrapper>
         <Link to={`/todo/${item.id}`}>
-            <EditIcon />
+          <EditIcon />
         </Link>
         <RemoveTodoIcon onClick={() => onItemRemove(item.id)}>
-            <DeleteOutlinedIcon />
+          <DeleteOutlinedIcon />
         </RemoveTodoIcon>
       </ButtonWrapper>
     </ListItem>
