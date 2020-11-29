@@ -10,7 +10,6 @@ export const AddTodo = () => {
 
   const onItemAdd = () => {
     dispatch(todos.actions.addItem(value))
-    // SetValue('')  //empty input after submitting
   }
 
   return ( 

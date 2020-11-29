@@ -2,9 +2,9 @@ import { combineReducers, createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   items: [
-    { id: 1, name: 'My first task', isComplete: false },
-    { id: 2, name: 'My second task', isComplete: true },
-    { id: 3, name: 'My third task', isComplete: false },
+    { id: 1, name: 'Wake up', isComplete: false },
+    { id: 2, name: 'Snooze', isComplete: false },
+    { id: 3, name: 'Eat breakfast', isComplete: false },
 
   ]
 }
@@ -14,11 +14,9 @@ export const todos = createSlice ({
   initialState,  
   reducers: {
     removeItem: (store, action) => {
-      console.log(store, action)
       const itemId = action.payload
 
       const filteredList = store.items.filter(item => item.id !== itemId)
-      console.log(filteredList)
 
       store.items = filteredList
     },
