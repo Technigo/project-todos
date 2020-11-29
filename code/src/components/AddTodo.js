@@ -5,16 +5,17 @@ import { todos } from '../reducers/Todos'
 import './AddTodo.css'
 
 export const AddTodo = () => {
-  const [value, setValue] = useState("")
+  const [value, setValue] = useState('')
   const dispatch = useDispatch()
 
   const onItemAdd = () => {
     dispatch(todos.actions.addItem(value))
+    // SetValue('')  //empty input after submitting
   }
 
   return ( 
     <div className="add-todo-container">
-      <input 
+      <input className="input-field"
       type="text" 
       value={value} 
       onChange={e => setValue(e.target.value)}  

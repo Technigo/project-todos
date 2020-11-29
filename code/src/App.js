@@ -4,6 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import { AddTodo } from './components/AddTodo'
 import { List } from 'components/List'
+import { Header } from 'components/Header'
 import { todos } from './reducers/Todos'
 
 
@@ -15,6 +16,7 @@ export const App = () => {
   //  or useSelector
   return (
     <Provider store={store}>
+      <Header />
       <AddTodo />
       <List />
     </Provider>

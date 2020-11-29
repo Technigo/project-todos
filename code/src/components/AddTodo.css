@@ -3,15 +3,20 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: green;
+  margin: 10px;
 }
 
 .add-button {
   color: black;
-  background-color: #ff80ff;
+  background-color: white;
   border-color: black;
   border-width: 1px;
   border-radius: 50px;
   font-size: 12px;
-  margin-left: 10px;
+}
+
+.input-field {
+  border: 2px;
+  border-color: black;
+  margin-bottom: 10px;
 }
