@@ -16,7 +16,17 @@ export const toread = createSlice({
       },
       {
         id: 3,
-        title: "Transit",
+        title: "The Great Gatsby",
+        isRead: false,
+      },
+      {
+        id: 4,
+        title: "Swede Hollow",
+        isRead: true,
+      },
+      {
+        id: 5,
+        title: "In the fold",
         isRead: false,
       },
     ],
@@ -34,29 +44,24 @@ export const toread = createSlice({
     },
 
     deleteBook: (store, action) => {
-      //action is passed from react-app, store/state is a default value like "event" therefor you don't need to pass it) => { // the parameter "state" represents the books-objects in the array. The "const toread" is the entire store.
       const bookId = action.payload;
-
       const filteredList = store.books.filter((book) => book.id !== bookId);
-      // This filter checks if the item id, of each element inside our store.books-array is not equal to variable bookId.
-      // We should allow every element that has not the id,
-      // and every element that has the same id as the payload should be filtered out.
 
       store.books = filteredList;
     },
 
     toggleIsRead: (store, action) => {
-      const updatedStatus = store.books.map(book => {
+      const updatedStatus = store.books.map((book) => {
         if (book.id === action.payload) {
           return {
             ...book,
-            isRead: !book.isRead
+            isRead: !book.isRead,
           };
         } else {
           return book;
         }
-    })
-    store.books = updatedStatus
+      });
+      store.books = updatedStatus;
+    },
   },
-},
 });

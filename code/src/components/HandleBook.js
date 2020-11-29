@@ -15,18 +15,24 @@ const HandleBookContainer = styled.li`
 
 const BookTitle = styled.p`
   padding: 0 10px;
+  text-decoration: ${(props) => (props.checked ? "line-through" : "none")};
 `;
 
 const DeleteButton = styled.button`
-  font-size: 16px;
-  justify-content: center;
+  margin-left: auto;
   border: none;
   color: white;
+  font-size: 16px;
   background: transparent;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.2);
+    font-weight: bold;
+  }
 `;
 
 export const HandleBook = ({ book }) => {
-
   const dispatch = useDispatch();
 
   const handleCheckboxClick = () => {
@@ -39,14 +45,12 @@ export const HandleBook = ({ book }) => {
 
   return (
     <HandleBookContainer>
-      <CustomCheckbox 
-        isChecked={book.isRead} 
-        onChangeHandler={handleCheckboxClick} 
+      <CustomCheckbox
+        isChecked={book.isRead}
+        onChangeHandler={handleCheckboxClick}
       />
-      <BookTitle>{book.title}</BookTitle>
-      <DeleteButton onClick={() => deleteOneBook(book.id)}>
-        x
-      </DeleteButton>
+      <BookTitle checked={book.isRead}>{book.title}</BookTitle>
+      <DeleteButton onClick={() => deleteOneBook(book.id)}>x</DeleteButton>
     </HandleBookContainer>
   );
 };

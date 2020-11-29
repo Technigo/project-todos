@@ -4,7 +4,7 @@ import styled from "styled-components";
 const HeaderContainer = styled.section`
   display: flex;
   justify-content: center;
-  background: #2A3330;
+  background: #2a3330;
 `;
 
 const Heading = styled.h1`

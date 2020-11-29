@@ -1,13 +1,17 @@
-# Project Todos
+# Project Todos - Week 15 at Technigos bootcamp
 
-Replace this readme with your own information about your project.
+The brief was to create a todo app. In the app you should be able to add tasks, list tasks and toggle weather a task is done or not. I choosed to create a toread app, with books I want to read and have read.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+During this week we learned:
+- How to structure a redux store
+- How to write reducers and actions
+- How to interact with your store using selectors or by dispatching actions
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+ I started this project by creating a clear sketch in Figma, with all the components written down before the start, which made it easier to visualize the flow of Redux. It was a good way for getting to know my vision and the result ended up pretty similar to the sketch. I learned how to customize the input style by transforming it to a div, which I'm glad for and will apply to future projects.
+
+ If I had more time I would have created a library with reusable components. I will save that thought for a bigger project.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
