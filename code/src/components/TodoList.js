@@ -1,13 +1,13 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import Select from 'react-select';
+//import Select from 'react-select';
 import styled from 'styled-components';
 
 import EmptyList from './EmptyList';
 import TodoItem from './TodoItem';
 import ActionBar from './ActionBar';
 import { todos } from '../reducers/todos';
-import { visibilityFilter } from '../reducers/visibilityFilter';
+//import { visibilityFilter } from '../reducers/visibilityFilter';
 import { Button } from '../library/Button';
 
 const TodoList = () => {
@@ -17,11 +17,11 @@ const TodoList = () => {
     store => store.todos.list.selectedStatusFilter
   );
 
-  const filterCategory = useSelector(
-    store => store.todos.list.selectedCategoryFilter
-  );
+  // const filterCategory = useSelector(
+  //   store => store.todos.list.selectedCategoryFilter
+  // );
 
-  const options = useSelector(store => store.todos.list.options);
+  //const options = useSelector(store => store.todos.list.options);
 
   // const visibilityFilters = useSelector(
   //   store => store.visibilityFilter.list.options
@@ -38,10 +38,10 @@ const TodoList = () => {
     dispatch(todos.actions.filterByStatus(value));
   };
 
-  const onFilterByCategory = value => {
-    dispatch(todos.actions.filterByCategory(value.label));
-    console.log(value.label);
-  };
+  // const onFilterByCategory = value => {
+  //   dispatch(todos.actions.filterByCategory(value.label));
+  //   console.log(value.label);
+  // };
 
   const filteredList = list.filter(item => {
     if (filterStatus === 'complete') {
@@ -212,6 +212,6 @@ const ActionBarButton = styled(Button)`
 
 const ActionBarText = styled.p``;
 
-const CustomSelect = styled(Select)`
-  /* width: 100%; */
-`;
+// const CustomSelect = styled(Select)`
+//   /* width: 100%; */
+// `;
