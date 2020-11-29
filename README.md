@@ -7,6 +7,7 @@ Todo app built in React and Redux.
 Started off in Figma analyzing the requirements, where I designed the todo app and created the flow for the user stories: add todo, update todo to completed, delete todo and update todo to uncompleted.
 
 Figma sketch: https://www.figma.com/file/SVSUTC2GEtDS5HH7dDLpI2/Annika's-to-dos?node-id=6%3A0
+Figma user story flow: https://www.figma.com/proto/SVSUTC2GEtDS5HH7dDLpI2/Annika's-to-dos?node-id=29%3A117&scaling=min-zoom
 
 Thereafter I started to plan and discuss the store and reducer: what actions should be there looking at the requirements. I ended up with three actions: add todo, delete todo and update todo to either complete or uncomplete depending on the current complete value. Next was planning of the component structure, and styling approach.
 
