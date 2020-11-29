@@ -31,7 +31,6 @@ export const bag = createSlice({
     },
     showTheBag: (state, action) => {
       
-     
     }
     //removeAll: (state) => {
       //state.items = []

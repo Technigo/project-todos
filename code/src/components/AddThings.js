@@ -3,11 +3,12 @@ import { useDispatch } from 'react-redux'
 import { bag } from '../redux/reducers/bag'
 
 import styled from 'styled-components'
-import { AddButton } from 'lib/Button'
+import { AddButton } from 'lib/AddButton'
 
 const AddForm = styled.form`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
   aling-content: column;
   flex-wrap: wrap;
@@ -21,11 +22,13 @@ const AddForm = styled.form`
 const AddReminder = styled.label`
   color: #478A72;
   margin-top: 55px;
+  font-size: 15px;
 ` 
 
 const TextInput = styled.input`
   border: none;
   display: block;
+  padding-top: 20px;
   background-color: #0E3932;
   border-bottom: 1.5px solid #C8F9F0;
   color: #C8F9F0;
