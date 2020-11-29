@@ -5,8 +5,8 @@ export const Button = styled.button`
   justify-content: space-between;
   align-items: center;
   padding: 0px 10px;
-  background: ${(props) => props.background || "lightpink"};
-  color: ${(props) => props.color || "black"};
+  background: ${(props) => props.background || "#FFB6C1"};
+  color: ${(props) => props.color || "#000000"};
   font-size: 15px;
   font-weight: normal;
   border: 1px solid #888;

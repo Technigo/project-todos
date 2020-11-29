@@ -48,7 +48,7 @@ export const CustomCheckbox = () => {
     display: inline-block;
     width: 24px;
     height: 24px;
-    background: ${(props) => (props.checked ? "lightgreen" : "lightpink")};
+    background: ${(props) => (props.checked ? "#90ee90" : "#FFB6C1")};
     border: solid 1px;
     border-radius: 4px;
     transition: all 150ms;
