@@ -30,10 +30,6 @@ export const TodoItem = ({ id, name, isCompleted }) => {
     dispatch(todos.actions.removeItem(id));
   };
 
-//   Might use this later, hade to mark it out before deployment.
-// const onIsCompletedChange = () => {
-//     dispatch(todos.actions.toggleComplete(id));
-//   };
 
   return (
     <ItemList>
@@ -43,3 +39,8 @@ export const TodoItem = ({ id, name, isCompleted }) => {
     </ItemList>
   );
 };
+
+//   Might use this later, hade to mark it out before deployment.
+// const onIsCompletedChange = () => {
+//     dispatch(todos.actions.toggleComplete(id));
+//   };

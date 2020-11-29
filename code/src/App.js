@@ -20,7 +20,6 @@ export const App = () => {
         <TodoSummary />
         <AddTodo />
         <TodoList />
-        <TodoItem />
       </main>
     </Provider>
   );
