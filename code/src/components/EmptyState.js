@@ -4,11 +4,9 @@ import { Player, Controls } from '@lottiefiles/react-lottie-player'
 import './emptystate.css'
 
 export const EmptyState = () => {
-
   return (
     <main className="empty-state-container">
       <p className="p-empty-state">Well done! 🏆<br />You've deserved some rest. </p>
-     
         <Player
           autoplay
           loop
@@ -17,8 +15,6 @@ export const EmptyState = () => {
         >
           <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
         </Player>
-      
-
     </main>
   )
 }
