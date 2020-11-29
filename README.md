@@ -1,13 +1,24 @@
-# Project Todos
+## Project 13: To Do list app with Redux
 
-Replace this readme with your own information about your project.
+This is a ToDo app built with React and Redux.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## The process
 
-## The problem
+- I visualized my app on paper and decided on the components, reducers and features I was going to use.
+- Built reducers and components.
+- Styled my app with styled components.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Focus
+
+- How to structure a redux store
+- How to write reducers and actions
+- How to interact with your store using selectors or by dispatching actions
+- Styled components
+
+## Challenges to solve
+
+Add time at what a task was added and also distribute them by categories.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://todo-list-liza.netlify.app
