@@ -21,6 +21,7 @@ export const UserInput = () => {
           id: Date.now(),
           text: task,
           done: false,
+          created: Date.now(),
         },
       })
     )

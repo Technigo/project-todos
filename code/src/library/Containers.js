@@ -1,8 +1,8 @@
 import styled from 'styled-components'
 
 export const Main = styled.main`
-background: #FAFAE5;
-height: 100vh;
+${({noList}) => noList?`height: 100vh;`:`height:100%;`}
+background-image: linear-gradient(45deg, #4e6048, #70836d, #93a895, #b8cebf);
 display: grid;
 grid-template-column: 1fr;
 grid-template-rows: min-content;
@@ -19,18 +19,19 @@ background: white;
 box-shadow: 5px 4px 15px -1px #000000;
 padding: 10px;
 justify-self: center;
-align-self: baseline;
-height: 90%;
+align-self: center;
+height: 100%;
 justify-content: end;
-overflow-y: scroll;
-box-sizing: content-box;
 display: grid;
 grid-template-columns: 1fr;
-grid-template-rows: min-content;
+grid-template-rows: min-content; 
+border-radius: 10px;
 `}
 justify-content: center;
 width: 100%;
-margin: 5px;
+margin: 15px;
+max-width: 90%;
+}
 `
 
 export const UserInputBox = styled.form`
@@ -43,6 +44,7 @@ flex-direction: column;
 export const InputText = styled.textarea`
 margin: 5px;
 border: none;
+text-align: center;
 `
 
 export const ListWrapper = styled.ul`

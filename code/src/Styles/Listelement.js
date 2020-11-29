@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const Listelement = styled.li`
 list-style: none;
-background: #89e3d4;
+background: #B8CEBF;
 width: 100%;
 display: grid;
 grid-template-columns: repeat(4, 1fr);

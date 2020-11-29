@@ -25,7 +25,7 @@ height: 16px;
 margin: 5px;
 border: 1px solid #FAFAE5;
 ${({checked}) => checked && `
-background:  #3DA994;`}
+background: #34442F;`}
 border-radius: 3px;
 transition: all 150ms;
 ${Icon} {

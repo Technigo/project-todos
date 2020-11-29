@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { tasks } from '../Reducers/tasks'
 
 import { List } from '../Components/List'
@@ -11,13 +11,19 @@ import { Main, Wrapper } from '../library/Containers'
 export const Summary = () => {
   const [clearBtn] = useState(true)
   const [outerWrapper] = useState(true)
+  const [noList] = useState(true)
 
   const dispatch = useDispatch()
+  const items = useSelector((store) => store.tasks.items);
+
+  if(items.length<0){
+    return noList
+  }
 
   return (
-    <Main>
-      <Header />
+    <Main noList={noList}>
       <Wrapper outerWrapper={outerWrapper}>
+        <Header />
         <UserInput />
         <Wrapper>
           <List />

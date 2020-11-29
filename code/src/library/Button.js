@@ -15,13 +15,15 @@ export const Button = styled.button`
   ${({ addBtn }) =>
     addBtn &&
     `
-    background: #63C6B4;
+    background: #34442F;
+    color: #CEE3D5;
     border-radius: 10px;
     margin: 5px;`}
     ${({ clearBtn }) =>
     clearBtn &&
     `
-    background: #63C6B4;
+    background: #34442F;
+    color: #CEE3D5;
     border-radius: 10px;
     width: 70%;
     font-weight: 600;
