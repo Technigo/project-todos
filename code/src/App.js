@@ -4,7 +4,6 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import { todos } from 'reducers/todos'
 
-import { Header } from './components/Header'
 import { AddItemForm } from './components/AddItemForm'
 import { ItemList } from './components/ItemList'
 import { ClearButton } from './components/ClearButton'
@@ -22,7 +21,6 @@ export const App = () => {
      <Summary />
       <AddItemForm />
       <ItemList />
-
       <ClearButton />
     </Provider>
   )

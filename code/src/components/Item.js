@@ -1,21 +1,20 @@
 
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
-import moment from 'moment'
 import '../index.css'
 
 export const Item = (props) => {
     const dispatch = useDispatch()
-    const [category, setCategory] = useState('')
+    // const [category, setCategory] = useState('')
     // const handleCheckboxClick = () => {
     //     dispatch(todos.actions.toggleNeedsMore(props.item.id))
     // }
-    const handleSubmit = (event) => {
-        event.preventDefault()
-        dispatch(todos.actions.addItem({ category }))
-        setCategory('')
-    }
+    // const handleSubmit = (event) => {
+    //     event.preventDefault()
+    //     dispatch(todos.actions.addItem({ category }))
+    //     setCategory('')
+    // }
 
     const handleRemoveButtonClick = () => {
         dispatch(todos.actions.removeItem(props.item.id))
@@ -23,6 +22,8 @@ export const Item = (props) => {
 
     return (
         <>
+            {/* I have not figured out how to sort out the items in the list after category, 
+            but saved this so I could solve it later on  */}
 
             {/* <form onSubmit={handleSubmit}>
                 <div className="form-select">
