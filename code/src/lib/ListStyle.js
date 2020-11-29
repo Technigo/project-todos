@@ -2,8 +2,8 @@ import styled from "styled-components";
 import breakpoints from "./Breakpoints";
 
 export const Wrapper = styled.section`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background-color: #fafafa;
   display: flex;
   justify-content: center;

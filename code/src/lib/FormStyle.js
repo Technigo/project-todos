@@ -2,8 +2,8 @@ import styled from "styled-components";
 import breakpoints from "./Breakpoints";
 
 export const TodoFormWrapper = styled.section`
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   @media only screen and ${breakpoints.device.tablet} {
     display: flex;
     align-items: center;
