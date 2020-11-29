@@ -24,4 +24,3 @@ export const TodoList = () => {
 
 
 
-// Local state in react vs global store in Redux, but you could call the the same

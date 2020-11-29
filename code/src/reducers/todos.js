@@ -1,67 +1,54 @@
 
-import { createSlice } from '@reduxjs/toolkit';
-import uniqid from 'uniqid';
-
+import { createSlice } from "@reduxjs/toolkit";
+import uniqid from "uniqid";
 
 const initialState = {
-    items: [
-        // {
-        //     name: "Yes, this task is done now!",
-        //     isCompleted: true
-        //   },
-        //   {
-        //     name: "No, this is task is not done",
-        //     isCompleted: false
-        //   }
-    ]
-}
+  items: [],
+};
 
 export const todos = createSlice({
-    name: "todos",
-    initialState,
-    reducers: {
-        addItem: {
-            reducer(state, action) {
-                state.items = [...state.items, action.payload];
-            },
-            prepare(name) {
-                return {
-                    payload: {
-                        id: uniqid(),
-                        name: name,
-                        isCompleted: false
-                    }
-                };
-            }
-        },
-        removeItem: (state, action) => {
-            const filteredItems = state.items
-                .filter(item => item.id !== action.payload);
+  name: "todos",
+  initialState,
+  reducers: {
+    addItem: {
+      reducer(state, action) {
+        state.items = [...state.items, action.payload];
+      },
+      prepare(name) {
+        return {
+          payload: {
+            id: uniqid(),
+            name: name,
+            isCompleted: false,
+          },
+        };
+      },
+    },
+    removeItem: (state, action) => {
+      const filteredItems = state.items.filter(
+        (item) => item.id !== action.payload
+      );
 
-            state.items = filteredItems;
-        },
-        toggleComplete: (state, action) => {
-            const updatedArray = state.items.map(item => {
-                if (item.id === action.payload) {
-                    return {
-                        ...item,
-                        isCompleted: !item.isCompleted
-                    };
-                } else {
-                    return item;
-                }
-            });
+      state.items = filteredItems;
+    },
+    toggleComplete: (state, action) => {
+      const updatedArray = state.items.map((item) => {
+        if (item.id === action.payload) {
+          return {
+            ...item,
+            isCompleted: !item.isCompleted,
+          };
+        } else {
+          return item;
+        }
+      });
 
-            state.items = updatedArray;
-        },
-     },
+      state.items = updatedArray;
+    },
+  },
+
+
 });
-
-
-
-
-
-
 
 // ------------------------
 // import uniqid from 'uniqid';
@@ -69,12 +56,11 @@ export const todos = createSlice({
 // how our state will look like, empty array, this will start with tree things inside. array of objects
 // this is a slice.....
 
-
-
-
-
-
-
-
-
-
+// {
+//     name: "Yes, this task is done now!",
+//     isCompleted: true
+//   },
+//   {
+//     name: "No, this is task is not done",
+//     isCompleted: false
+//   }

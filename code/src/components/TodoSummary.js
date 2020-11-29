@@ -16,16 +16,16 @@ export const TodoSummary = (props) => {
   // Get list information from the store, for this list
   const items = useSelector(store => store.todos.items)
 
-  // Count the number of items that are done using filter
-  const numDone = items.filter(item => item.done).length
+  // Count the number of items that are done using filter, now just showing todos left.
+  const todosleft = items.filter(item => item.isCompleted).length
  
   return (
     <Container>
       <Header>
-        <Title color='#24292e'>Do do list</Title>
+        <Title color='#24292e'>Happy Todos App</Title>
         <Subtitle color='#24292e'>{moment(today).format('MMM Do YYYY')}</Subtitle>
       </Header>
-      <Subtitle color='#888' margin='5px 0px 11px 0px'>{numDone} done / {items.length} left</Subtitle>
+      <Subtitle color='#888'margin='5px 0px 11px 0px'> {items.length} happy todos left! </Subtitle>
     </Container>
   )
 }

@@ -6,7 +6,6 @@ import { AddTodo }from './components/AddTodo';
 import { TodoList } from './components/TodoList';
 import { TodoSummary } from './components/TodoSummary';
 import { TodoItem } from './components/TodoItem';
-import { CustomCheckbox } from 'components/CustomCheckbox';
 import { todos } from './reducers/todos';
 
 

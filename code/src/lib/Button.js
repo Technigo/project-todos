@@ -5,20 +5,20 @@ display: flex;
 justify-content: space-between;
 align-items: center;
 padding: 0px 10px;
-margin: 0 0 0 5px;
-background: ${(props) => props.background || 'gray'};
+background: ${(props) => props.background || 'lightpink'};
 color: ${(props) => props.color || 'black'};
-font-size: 14px;
+font-size: 15px;
 font-weight: normal;
 border: 1px solid #888;
 border-radius: 5px;
-height: 24px;
+height: 40px;
 width: auto;
 text-align: center;
+font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+monospace;
 
 &:hover {
-  background: green;
-  color: white;
+  background: lightgreen;
   cursor: pointer;
 }
 `;

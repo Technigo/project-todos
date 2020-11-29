@@ -6,14 +6,19 @@ import { todos } from '../reducers/todos';
 import { InputContainer } from 'lib/InputContainer';
 import { Button } from 'lib/Button';
 
+
 const TextInput = styled.input`
-width: 250px;
-font-size: 16px;
-margin-right: 5px;
+width: 290px;
+overflow: auto;
+margin-right: 15px;
+font-size: 15px;
+font-weight: normal;
 border: 1px solid #888;
 border-radius: 5px;
-padding: 4px;
-`
+padding: 3px;
+font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+monospace;
+`;
 
     // Receives Id as input
 export const AddTodo = () => {
@@ -36,11 +41,11 @@ export const AddTodo = () => {
         <InputContainer>
             <TextInput
                 type="text" 
-                placeholder="This needs to get done....."
+                placeholder="Write what will make you happy....."
                 value={value}
                 onChange={e => setValue(e.target.value)}
             />
-            <Button type="submit" onClick={onTodoAdd}>Add todo</Button>
+            <Button type="submit" onClick={onTodoAdd}>Add it</Button>
         </InputContainer>
     );
 };

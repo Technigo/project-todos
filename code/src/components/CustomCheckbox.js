@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { todos } from "reducers/todos";
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 
 
@@ -55,7 +54,7 @@ stroke-width: 2px;
   display: inline-block;
   width: 24px;
   height: 24px;
-  background: ${(props) => (props.checked ? 'lightgreen' : 'papayawhip')};
+  background: ${(props) => (props.checked ? 'lightgreen' : 'lightpink')};
   border: solid 1px;
   border-radius: 4px;
   transition: all 150ms;
