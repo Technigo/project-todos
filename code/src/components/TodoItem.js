@@ -16,7 +16,7 @@ export const ItemList = styled.li`
   border: solid 2px #786253;
   box-shadow: 8px 5px;
   border-radius: 5px;
-  width: 400px;
+  width: 350px;
   height: auto;
   margin: 6px 25px;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -30,7 +30,8 @@ export const TodoItem = ({ id, name, isCompleted }) => {
     dispatch(todos.actions.removeItem(id));
   };
 
-//   const onIsCompletedChange = () => {
+//   Might use this later, hade to mark it out before deployment.
+// const onIsCompletedChange = () => {
 //     dispatch(todos.actions.toggleComplete(id));
 //   };
 

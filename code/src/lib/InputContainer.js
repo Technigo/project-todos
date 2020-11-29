@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const InputContainer = styled.form`
 display: flex;
 justify-content: space-between;
-width: 400px;
+width: 350px;
 height: auto;
 background:   background: #fff;;
 margin: 6px 25px;
