@@ -1,14 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This weeks project was about using Redux to create a simple to-do app. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I followed some code-alongs provided by technigo to get the main structure of the app up and running. Then when I had the logic in place i did the styling. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-https://jolly-montalcini-e2a7c7.netlify.app/ not done yet
+https://jolly-montalcini-e2a7c7.netlify.app/ 
