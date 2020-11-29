@@ -30,10 +30,10 @@ const categories = [
     name: "#Shop",
     subcategories: [
       {
-        name: "# For the kids",
+        name: "#For the kids",
       },
       {
-        name: "# Groceries",
+        name: "#Groceries",
       },
     ],
   },
@@ -43,30 +43,24 @@ const initialState = {
   username: "name",
   items: [
     {
-      id: 1,
+      id: "1a",
       title: "first",
       content: "",
-      isComplete: false,
-      category: "Work",
-      dueDate: "2020-12-24",
+      category: ["#Work"],
       createdAt: 1606318113000,
     },
     {
-      id: 2,
+      id: "2a",
       title: "second",
       content: "",
-      isComplete: false,
-      category: "Free time",
-      dueDate: "2020-12-20",
+      category: ["#Free time"],
       createdAt: 1604676513000,
     },
     {
-      id: 3,
+      id: "3a",
       title: "third",
       content: "Bake cookies with kids",
-      isComplete: false,
-      category: "Shop",
-      dueDate: "2020-12-01",
+      category: ["#Shop"],
       createdAt: 1606318113000,
     },
   ],
@@ -96,17 +90,13 @@ export const todos = createSlice({
         content,
         category,
         createdAt,
-        dueDate,
-        isComplete,
       } = action.payload;
-      const currentTodo = store.items.find((item) => item.id === parseInt(id));
-
+      const currentTodo = store.items.find((item) => item.id === id);
       if (currentTodo) {
         currentTodo.title = title;
         currentTodo.content = content;
         currentTodo.category = category;
         currentTodo.createdAt = createdAt;
-        console.log(currentTodo.title + title);
       }
     },
   },

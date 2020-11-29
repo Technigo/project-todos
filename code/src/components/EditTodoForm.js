@@ -21,8 +21,9 @@ import {
 
 export const EditTodoForm = () => {
   const { id } = useParams();
-  const todo = useSelector((store) =>
-    store.todos.items.find((item) => item.id === parseInt(id))
+
+  const todo = useSelector((store) => 
+    store.todos.items.find((item) => item.id === id)
   );
 
   const [userCategory, setUserCategory] = useState(todo.category);
@@ -33,7 +34,6 @@ export const EditTodoForm = () => {
 
   const dispatch = useDispatch();
   const history = useHistory();
-  const category = useSelector((store) => store.todos.items.category);
   const categories = useSelector((store) => store.todos.categories);
 
   useEffect(() => {
@@ -56,7 +56,6 @@ export const EditTodoForm = () => {
           category: userCategory,
           title: todoTitle,
           content: todoContent,
-          isCompleted: false,
           createdAt: Date.now(),
         })
       );
