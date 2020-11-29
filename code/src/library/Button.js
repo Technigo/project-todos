@@ -6,7 +6,12 @@ export const Button = styled.button`
     `
     border-radius: 50%;
     margin: auto;
-    background: #FAFAE5;`}
+    background: #FAFAE5;
+    @-moz-document url-prefix(){
+      width: 10%;
+      display: flex;
+      justify-content: center;
+   }`}
   ${({ addBtn }) =>
     addBtn &&
     `
