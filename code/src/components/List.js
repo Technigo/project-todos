@@ -30,7 +30,6 @@ const Todos = styled.ul`
   padding: 0;
   width: 80%;
   
-
   @media (max-width: 1023px) {
     width: 80%;
   }

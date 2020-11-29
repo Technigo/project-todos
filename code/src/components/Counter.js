@@ -15,10 +15,11 @@ export const Counter = () => {
     return accumulator + currentValue
   }
 
-  const sum = completedTasks.reduce(reducer)
+  const sum = completedTasks.reduce(reducer, 0)
 
   return (
     <div>
+      {/* { tasks.length === 0 ? } */}
       <Text>{sum} of {tasks.length} completed</Text>
     </div>
   )
