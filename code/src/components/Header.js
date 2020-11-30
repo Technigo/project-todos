@@ -8,7 +8,7 @@ export const Header = () => {
     return (
         <HeaderContainer>
         <Image src={headerImage} />
-        <HeaderText>TO DO LIST</HeaderText>
+        <HeaderText>MY TO-DO'S</HeaderText>
         </HeaderContainer>
     )
 }
@@ -29,8 +29,8 @@ const Image = styled.img`
 
 const HeaderText = styled.text `
     color: #fff;
-    font-size: 17px;
-    font-style: italic;
+    font-size: 20px;
+    font-weight: bold;
     position: absolute;
     top: 50;
     right: 0;
@@ -38,13 +38,5 @@ const HeaderText = styled.text `
     left: 0;
     padding-left: 10px;
     padding-bottom: 2px;
-    
-    @media (min-width: 768px) { /* Tablet view */
-        font-size: 20px;
-    }
-    
-    @media (min-width: 1024px) { /* Desktop view */
-        font-size: 20px;
-        padding-left: 10px;
-    }
+
 `

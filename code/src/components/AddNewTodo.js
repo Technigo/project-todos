@@ -37,7 +37,6 @@ const AddTodoContainer = styled.div`
     padding-top: 20px;
     padding-bottom: 20px;
     background-color:  #F4F4F4;
-    border-top: #baa8a8 solid 2px;
 `
 
 const AddTodoButton = styled.button`
@@ -48,5 +47,9 @@ const AddTodoButton = styled.button`
 `
 
 const Input = styled.input`
+background-color: #F4F4F4;
+font-family: 'Josefin Sans', sans-serif;
 width: 150px;
+border: none;
+border-bottom: solid 2px #baa8a8;
 `

@@ -16,9 +16,9 @@ export const TodoList = () => {
 
   
   return (
-    <TodoContainer>
+    <>
             {items.map(item => (
-        <div key={items.id}>
+        <TodoContainer key={items.id}>
           <List>
       <label>
           <input type="checkbox"
@@ -27,37 +27,45 @@ export const TodoList = () => {
           />
       </label>
   </List>
-          <div>{item.text}</div>
-            <div>{item.complete ? "Complete" : "Not complete"}</div>
+          <TodoItem>{item.text}</TodoItem>
+            {/* <div>{item.complete ? "Complete" : "Not complete"}</div> */}
             
               <DeleteButton type="button" onClick={() => onClickDelete(item.id)}>
-                <RemoveText>Delete</RemoveText>
+                <RemoveText>X</RemoveText>
               </DeleteButton>
-        </div>
+        </TodoContainer>
       ))}
-    </TodoContainer> 
+    </> 
 
     
   )
 }
 
+const TodoContainer = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+margin: auto;
+padding: 10px;
+`
+
+const TodoItem = styled.div`
+margin: 0 10px 0 10px;
+`
+
 const List = styled.li`
 list-style-type: none;
 `
 
-const TodoContainer = styled.div`
-padding: 5px;
-`
-
 const RemoveText = styled.text`
     font-size: 10px;
+    font-weight: bold;
     color: #fff;
-    background-color:  rgb(192, 171, 171);
-    border-radius: 10%;
-    padding: 2px; 
+    background-color: rgba(193, 146, 146, 0.892);
 `
 
 const DeleteButton = styled.button`
-    background-color: rgb(228, 220, 220);
-    border: none;  
+    background-color: rgba(193, 146, 146, 0.892);
+    border-radius: 10%;
+    border: none;
 `
