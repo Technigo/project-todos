@@ -10,11 +10,11 @@ This project was about building a todo-app using React and Redux. I've created f
 
 I started by defining what components I needed and what the flow of the app would be. Then I set upp the store and reducer component in the App and task components. I created an input filed to add new todos, and after that I added the functionality for the other components - checking and deliting todos. 
 
-##Tech used
+## Tech used
 
-*React JS
-*Redux
-*Styled components
+* React JS
+* Redux
+* Styled components
 
 ## View it live
 
