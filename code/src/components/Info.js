@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Moment from 'react-moment';
 
 import { todos } from 'reducers/todos';
+import { Button } from 'styling/Button';
 
 const Name = styled.span `
 color:#b83b5e;
@@ -31,19 +32,6 @@ const Input = styled.input`
   border-bottom: 2px solid rgba(0, 0, 0, 0.055);
   text-align: left;
 `;
-const Button = styled.button`
-  color: #3f3f3f;
-  font-size: 18px;
-  margin: 6px 20px;
-  padding: 6px;
-  border: 1.5px solid #3f3f3f;
-  border-radius: 1.5px;
-    &:hover {
-      background-color:#b83b5e;
-      color:white;
-      border:white
-    }
-`
 
 const Text1 = styled.p`
   text-align:center;
