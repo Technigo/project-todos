@@ -1,12 +1,17 @@
-import React from 'react'
-//import useSelector here
+import React from 'react';
+import { useSelector } from 'react-redux';
 
-// TaskList component
+import { TodoItem } from './TodoItem.js';
+
 export const TodoList = () => {
+    //Get todo list from the store
+    const list = useSelector(store => store.todos.list);
 
     return (
-        <div>
-            Here is where the todolist will be. 
-        </div>
-    )
-}
+        <section>
+            {list.items.map((item, index) => (
+                <TodoItem itemIndex={index}/>  
+            ))}
+        </section>
+    );
+};
