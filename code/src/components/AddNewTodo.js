@@ -25,7 +25,7 @@ export const AddNewTodo = () => {
             <AddTodoButton type="submit"
                 onClick={() => {
                     onSubmit();
-                    setNewTodo(''); /* clears input field after adding new task */
+                    setNewTodo(''); /* clears input field after adding a new task */
                 }}
                 disabled={ newTodo.length < 5 }> ➕
             </AddTodoButton>
