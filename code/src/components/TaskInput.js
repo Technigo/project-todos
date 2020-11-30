@@ -7,24 +7,24 @@ import { todos } from '../reducers/todos.js'
 
 const InputField = styled.textarea`
   padding: 10px 0;
-  font-size: 20px;
   height: 24px;
   width: 300px;
-  background-color: #E5E5E5;
   border: none;
   border-bottom: 1px solid black;
+  background-color: #E5E5E5;
+  font-size: 20px;
 `
 
 const SubmitButton = styled.input`
-  border-radius: 50px;
-  padding: 10px 20px;  
-  width: 200px;
-  font-size: 16px;
   display: block;
   margin: 10px 50px;
+  padding: 10px 20px; 
   height: 50px;
+  width: 200px;
   border: none;
+  border-radius: 50px;
   background-color: #00CFC3;
+  font-size: 16px;
   color: white;
   font-weight: 700;
   

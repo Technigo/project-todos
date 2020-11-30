@@ -13,10 +13,10 @@ import { TaskCount } from './components/TaskCount.js'
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; 
   margin: 20px 0;
-  text-align: center;
   height: calc(100vh - 100px);
+  text-align: center;
 `
 
 const reducer = combineReducers({

@@ -6,17 +6,15 @@ import { todos } from '../reducers/todos'
 // need to import the reducer we dispatch our action to
 
 const ListItem = styled.li`
-  padding: 10px 0;
-  font-size: 20px;
-  height: 24px;
-  width: 300px;
-  border-bottom: 1px solid black;
-
-  list-style: none;
-  text-align: left;
-
   display: flex;
   justify-content: space-between;
+  padding: 10px 0;
+  height: 24px;
+  width: 300px;
+  list-style: none;
+  border-bottom: 1px solid black;
+  text-align: left;
+  font-size: 20px;
 `
 
 const Wrapper = styled.div`
@@ -28,10 +26,10 @@ const Text = styled.p`
 `
 
 const CompleteButton = styled.button`
-  border-radius: 50px;
+  margin-right: 10px;
   width: 25px;
   height: 25px;
-  margin-right: 10px;
+  border-radius: 50px;
   border: none;
   color: white;
 
@@ -42,11 +40,11 @@ const CompleteButton = styled.button`
 `
 
 const DeleteButton = styled.button`
+  margin-top: 5px;  
   border-radius: 50px;
   border: none;
-  color: red;
   background-color: #E5E5E5;
-  margin-top: 5px;
+  color: red;
 
   &:hover {cursor: pointer};
 `
