@@ -28,7 +28,7 @@ export const AddNewTodo = () => {
                     setNewTodo(''); /* clears input field after adding a new task */
                 }}
                 disabled={ newTodo.length < 5 }> 
-                <AddText> + </AddText>
+                <Icon> + </Icon>
             </AddTodoButton>
         </AddTodoContainer>
     )
@@ -49,7 +49,7 @@ border: none;
 cursor: pointer;
 `
 
-const AddText = styled.text`
+const Icon = styled.text`
 font-size: 20px;
 font-weight: bold;
 `

@@ -34,7 +34,7 @@ export const TodoList = () => {
             <TimeStamp>(added {moment(item.date).format("MMM Do HH:mm")})</TimeStamp>
               <DeleteButton type="button" onClick={() => onClickDelete(item.id)}>
                 <DeleteIcon>X</DeleteIcon>
-              </DeleteButton>   
+              </DeleteButton> 
         </TodoContainer> 
       ))}
     </>    
@@ -55,11 +55,12 @@ list-style-type: none;
 `
 
 const TodoText = styled.div`
+font-size: 20px;
 margin: 0 10px 0 10px;
 `
 
 const TimeStamp = styled.text`
-font-size: 10px;
+font-size: 12px;
 color: #F4F4F4;
 font-style: italic; 
 `

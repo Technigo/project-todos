@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components' 
+import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 
 export const Counter = () => {
@@ -24,5 +24,5 @@ padding-bottom: 20px;
 `
 
 const CounterText = styled.text`
-font-size: 15px;
+font-size: 18px;
 `

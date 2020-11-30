@@ -17,7 +17,7 @@ export const Header = () => {
         <HeaderContainer>
             <Image src={headerImage} />
                 <HeaderText>MY TO-DO'S</HeaderText>
-                    <DateText>{weekday},{month} {dd}</DateText>
+                    <DateText>{weekday}, {month} {dd}</DateText>
         </HeaderContainer>
     )
 }
@@ -51,7 +51,7 @@ padding-bottom: 2px;
 
 const DateText = styled.text`
 color: #fff;
-font-size: 14px;
+font-size: 18px;
 font-style: italic;
 position: absolute;
 top: 0;
