@@ -38,6 +38,10 @@ const ItemContainer = styled.div`
 	padding: 20px;
 	margin-top: 5px;
 	margin-bottom: 5px;
+
+	&:hover {
+		box-shadow: -1px -1px 5px 1px #ffe3d8;
+	}
 `;
 
 const ItemText = styled.p`
