@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { useDispatch } from 'react-redux'
 
 import { todos } from '../reducers/todos'
 
@@ -34,18 +34,18 @@ export const AddNewTodo = () => {
 }
 
 const AddTodoContainer = styled.div`
-    display: flex;
-    justify-content: center;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    background-color:  #F4F4F4;
+display: flex;
+justify-content: center;
+padding-top: 20px;
+padding-bottom: 20px;
+background-color:  #F4F4F4;
 `
 
 const AddTodoButton = styled.button`
-    background-color: #F4F4F4;
-    width: 50px;
-    border: none;
-    cursor: pointer;
+background-color: #F4F4F4;
+width: 50px;
+border: none;
+cursor: pointer;
 `
 
 const Input = styled.input`

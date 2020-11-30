@@ -1,7 +1,7 @@
 import React from 'react'
+import moment from 'moment'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
-import moment from 'moment'
 
 import { todos } from '../reducers/todos' 
 
@@ -13,25 +13,29 @@ export const TodoList = () => {
   const onClickDelete = id => {
     dispatch(todos.actions.removeItem(id))
   }
+
+  const onChecked = id => {
+    dispatch(todos.actions.toggleComplete(id))
+  }
   
   return (
     <>
             {items.map(item => (
-        <TodoContainer key={items.id}>
+        <TodoContainer key={item.id}>
           <List>
       <label>
           <input type="checkbox"
-          /* checked={item.complete}
-          onChange={onChecked} */
+          checked={item.complete}
+          onChange={() => onChecked(item.id)}
           />
       </label>
   </List>
           <TodoText>{item.text}</TodoText>
             <TimeStamp>(added {moment(item.date).format("MMM Do HH:mm")})</TimeStamp>
               <DeleteButton type="button" onClick={() => onClickDelete(item.id)}>
-                <RemoveText>X</RemoveText>
+                <DeleteIcon>X</DeleteIcon>
               </DeleteButton>   
-        </TodoContainer>
+        </TodoContainer> 
       ))}
     </>    
   )
@@ -60,17 +64,17 @@ color: #F4F4F4;
 font-style: italic; 
 `
 
-const RemoveText = styled.text`
-    font-size: 10px;
-    font-weight: bold;
-    color: #fff;
-    background-color: rgba(193, 146, 146, 0.892);
+const DeleteIcon = styled.span`
+font-size: 10px;
+font-weight: bold;
+color: #fff;
+background-color: rgba(193, 146, 146, 0.892);
 `
 
 const DeleteButton = styled.button`
-    background-color: rgba(193, 146, 146, 0.892);
-    border-radius: 10%;
-    border: none;
-    margin-left: 10px;
+background-color: rgba(193, 146, 146, 0.892);
+border-radius: 10%;
+border: none;
+margin-left: 10px;
 `
 
