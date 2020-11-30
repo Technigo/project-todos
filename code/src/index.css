@@ -63,7 +63,7 @@ span {
 }
 
 .todo-item {
-padding-top: 4%;
+  padding-top: 4%;
 }
 
 .todo-summary h1 {
@@ -78,4 +78,21 @@ padding-top: 4%;
   padding: 5%;
   color: rgb(86, 0, 97);
   border-bottom: 2px solid white;
+}
+
+/* Media Queries */
+
+@media only screen and (min-width: 768px) {
+  body {
+    background-image: url("./assets/website.png");
+    background-size: auto;
+  }
+  .todo-list {
+    margin: 5% 0 0 0;
+    margin-left: 30%;
+    margin-right: 30%;
+    padding: 10%;
+    padding-top: 10%;
+    padding-bottom: 20%;
+  }
 }
