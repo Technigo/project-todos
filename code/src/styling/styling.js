@@ -1,3 +1,3 @@
 import styled from 'styled-components';
 
-//Global styling
+//Global styling will go here...

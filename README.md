@@ -13,9 +13,8 @@ The project for this week was to build a Todo List using Redux. In the Todo List
 ## Tech
 - React
 - Redux
-- JSX 
-- Styled components
+- JSX
 
 ## View it live
 
-Link to the deployed project on Netlify: 
+Link to the deployed project on Netlify: https://emmas-todolist.netlify.app/
