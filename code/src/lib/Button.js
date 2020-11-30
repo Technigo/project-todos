@@ -16,9 +16,8 @@ export const Button = styled.button`
   text-align: center;
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-
   &:hover {
-    background: lightgreen;
+    background: #90ee90;
     cursor: pointer;
   }
 `;

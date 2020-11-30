@@ -4,13 +4,13 @@ import { useDispatch } from "react-redux";
 import { Button } from "lib/Button";
 import { CustomCheckbox } from "./CustomCheckbox";
 import { todos } from "../reducers/todos";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
-export const ItemList = styled.li`
+const ItemList = styled.li`
   display: flex;
   justify-content: space-between;
   background: #fff;
-  margin-top: 20px;
+
   font-size: 18px;
   padding: 10px;
   border: solid 2px #786253;
@@ -23,6 +23,10 @@ export const ItemList = styled.li`
     monospace;
 `;
 
+const TodoInputText = styled.div`
+  padding: 5px;
+`;
+
 export const TodoItem = ({ id, name, isCompleted }) => {
   const dispatch = useDispatch();
 
@@ -30,11 +34,10 @@ export const TodoItem = ({ id, name, isCompleted }) => {
     dispatch(todos.actions.removeItem(id));
   };
 
-
   return (
     <ItemList>
       <CustomCheckbox checked={isCompleted} />
-      <div>{name}</div>
+      <TodoInputText>{name}</TodoInputText>
       <Button onClick={onTodoDelete}>Done it</Button>
     </ItemList>
   );
