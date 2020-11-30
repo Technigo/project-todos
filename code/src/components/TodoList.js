@@ -10,7 +10,10 @@ export const TodoList = () => {
     return (
         <section>
             {list.items.map((item, index) => (
-                <TodoItem itemIndex={index}/>  
+                <TodoItem 
+                key={index}
+                itemIndex={index}
+                />  
             ))}
         </section>
     );
