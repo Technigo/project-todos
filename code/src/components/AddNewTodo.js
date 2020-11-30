@@ -5,12 +5,11 @@ import styled from 'styled-components'
 import { todos } from '../reducers/todos'
 
 export const AddNewTodo = () => {
-
     const dispatch = useDispatch()
     const [newTodo, setNewTodo] = useState('')
 
     const onSubmit = event => {
-        event.preventDefault()
+        
         dispatch(todos.actions.addNewTodo(newTodo))   
     } 
 
@@ -24,7 +23,10 @@ export const AddNewTodo = () => {
             />
 
             <AddTodoButton type="submit"
-                onClick={onSubmit}
+                onClick={() => {
+                    onSubmit();
+                    setNewTodo(''); /* clears input field after adding new task */
+                }}
                 disabled={ newTodo.length < 5 }> ➕
             </AddTodoButton>
         </AddTodoContainer>

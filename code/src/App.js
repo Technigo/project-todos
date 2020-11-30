@@ -6,7 +6,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { Header } from './components/Header'
 import { AddNewTodo } from './components/AddNewTodo'
 import { todos } from 'reducers/todos'
-import { TodoList } from './components/TodoList'   
+import { TodoList } from './components/TodoList'  
+import { Counter } from './components/Counter' 
 
 const reducer = combineReducers({todos: todos.reducer})
 const store = configureStore({reducer})
@@ -19,6 +20,7 @@ export const App = () => {
           <Header />
             <AddNewTodo />
               <TodoList />  
+                <Counter />
         </Wrapper>
     </Provider>
   )

@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 
-
+import { Header } from './Header'
+import { AddNewTodo } from './AddNewTodo'
 import { todos } from '../reducers/todos' 
 
 export const TodoList = () => {
@@ -12,10 +13,7 @@ export const TodoList = () => {
 
   const onClickDelete = id => {
     dispatch(todos.actions.removeItem(id))
-    
   }
-
-
   
   return (
     <>
