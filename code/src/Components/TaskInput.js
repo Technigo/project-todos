@@ -10,15 +10,13 @@ export const TaskInput = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-
-  dispatch(todo.actions.addItem({
-    newItem: {
-      id: uuidv4(), 
-      text: input,
-      isComplete: false,
-    }
-  })
-  )
+      dispatch(todo.actions.addItem({
+      newItem: {
+        id: uuidv4(), 
+        text: input,
+        isComplete: false,
+      }
+    }))
     setInput("")
   }
   

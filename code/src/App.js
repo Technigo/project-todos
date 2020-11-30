@@ -12,7 +12,7 @@ import { ClearButton } from 'Library/ClearButton'
 //const reducer = combineReducers({ todo: todo.reducer })
 //const store = configureStore({ reducer })
 
-// This code keeps the new tasks in the list
+// This code keeps the new tasks in the list, if removing all the tasks localStorage.clear() in the console to restore 
 const reducer = combineReducers({ todo: todo.reducer, })
 const persistedStateJSON = localStorage.getItem('reduxState')
 let persistedState = {}

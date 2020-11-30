@@ -18,8 +18,8 @@ export const todo = createSlice({
       store.items.push(newItem)
     },
     // Completes task in checkbox
-    setComplete: (state, action) => {
-      const foundItem = state.items.find((item) => item.id === action.payload)
+    setComplete: (store, action) => {
+      const foundItem = store.items.find((item) => item.id === action.payload)
       if (foundItem) {
         foundItem.isComplete = !foundItem.isComplete
       }
