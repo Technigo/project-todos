@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit"
+import { v4 as uuidv4 } from 'uuid';
 
 const initialState = {
     items: [
         { id: 1, text: 'Laundry', complete: true },
         { id: 2, text: 'Gor for a walk', complete: false },
-        /*  { id: 3, text: 'Stretch', complete: false },
+        /* { id: 3, text: 'Stretch', complete: false },
         { id: 4, text: 'Make dinner', complete: false }, */
     ]
 }
@@ -23,7 +24,7 @@ export const todos = createSlice({
 
         addNewTodo: (store, action) => {
             const newItem = {
-                id: Math.max(...store.items.map(item => item.id)) +1, 
+                id: uuidv4(), /* with a uniqe id for each added ToDo, only one ToDo will be checked or deleted at once */
                 text: action.payload,
                 complete: false
             }

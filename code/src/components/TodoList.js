@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 
+
 import { todos } from '../reducers/todos' 
 
 export const TodoList = () => {
@@ -11,6 +12,7 @@ export const TodoList = () => {
 
   const onClickDelete = id => {
     dispatch(todos.actions.removeItem(id))
+    
   }
 
 
@@ -28,8 +30,6 @@ export const TodoList = () => {
       </label>
   </List>
           <TodoItem>{item.text}</TodoItem>
-            {/* <div>{item.complete ? "Complete" : "Not complete"}</div> */}
-            
               <DeleteButton type="button" onClick={() => onClickDelete(item.id)}>
                 <RemoveText>X</RemoveText>
               </DeleteButton>
@@ -40,6 +40,7 @@ export const TodoList = () => {
     
   )
 }
+
 
 const TodoContainer = styled.div`
 display: flex;
