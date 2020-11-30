@@ -1,13 +1,20 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+This project was about building a todo-app using React and Redux. I've created functions that allows the user to add and delete todos, mark completed and delete either the marks todos or all todos. The learnig objetives for this project was to:
+* Understand and use Redux store to update the app with new inputs.
+* Create reducers and use actions and selectors.
+* Use styled components.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by defining what components I needed and what the flow of the app would be. Then I set upp the store and reducer component in the App and task components. I created an input filed to add new todos, and after that I added the functionality for the other components - checking and deliting todos. 
+
+##Tech used
+*React JS
+*Redux
+*Styled components
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://saras-todo-list.netlify.app/
