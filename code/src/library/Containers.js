@@ -1,14 +1,14 @@
 import styled from 'styled-components'
 
 export const Main = styled.main`
-    height: 100%;
+    min-height: 100vh;
     background-image: linear-gradient(45deg, #4e6048, #70836d, #93a895, #b8cebf);
     display: grid;
     grid-template-rows: min-content;
     justify-content: center;
     padding: 10px;
     `
-//${({noList}) => noList?`height: 100vh;`:`height:100%;`}
+
 export const Wrapper = styled.section`
     display: flex;
     flex-direction: column;
