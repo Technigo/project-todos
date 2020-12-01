@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
 
 import { todos } from '../reducers/todos';
+import { InputContainer, Input, InputButton, InputHeading } from '../styled-components/AddTodo';
 
 const AddTodo = () => {
     const [value, setValue]= useState ('');
@@ -13,14 +14,16 @@ const AddTodo = () => {
 
 
     return (
-        <div>
-            <input 
+        <InputContainer>
+        <InputHeading> Todo list </InputHeading>
+            <Input
                 type= "text" 
                 value={value} 
-                onChange={e =>setValue(e.target.value)} 
+                onChange={e =>setValue(e.target.value)}
+                placeholder="Add todo" 
             />
-            <button onClick={OnItemAdd} > Add new todo </button>
-        </div>
+            <InputButton onClick={OnItemAdd} type="submit" disabled={value.length < 1}>+ </InputButton>
+        </InputContainer>
     )
 }
 
