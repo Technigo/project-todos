@@ -117,7 +117,7 @@ const Input = styled.input`
 const TextContainer = styled.div`
   display: flex;
   flex-direction: row;
-  word-wrap: break-word;
+  overflow-wrap: anywhere;
   color: #F2F2EB;
 `
 
