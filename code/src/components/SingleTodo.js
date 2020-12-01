@@ -41,7 +41,7 @@ export const SingleTodo = ({ id, text, complete }) => {
           <Emoji>
             <span
               role="img"
-              aria-label="red-cross">
+              aria-label="grey-cross">
               ✖️
             </span>
           </Emoji>
