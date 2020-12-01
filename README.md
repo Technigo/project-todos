@@ -1,5 +1,5 @@
 # Todos App
-A responsive Todo App using styled react components, reducers and actions. Built with web accessibility in mind.
+A responsive Todo App using styled react components, reducers and actions. 
 
 
 ## Accessibility and cross-browser testing 
@@ -21,5 +21,5 @@ No limitations that I am aware of.
 
 ## View it live
 
-View the project live here: https://happy-hoover-656091.netlify.app/
+View the project live here: https://marjaanatodoapp.netlify.app/
 
