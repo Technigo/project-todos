@@ -1,5 +1,5 @@
 # Todos App
-A responsive Todo App using styled react components, reducers and actions. Built with web accessibility in mind.
+A responsive Todo App using styled react components, reducers and actions. 
 
 
 ## Accessibility and cross-browser testing 
