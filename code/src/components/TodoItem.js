@@ -10,7 +10,6 @@ const ItemList = styled.li`
   display: flex;
   justify-content: space-between;
   background: #fff;
-
   font-size: 18px;
   padding: 10px;
   border: solid 2px #786253;
