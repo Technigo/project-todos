@@ -16,7 +16,6 @@ const TodoList = () => {
   );
 
   const onFilterByStatus = value => {
-    console.log(value);
     dispatch(todos.actions.filterByStatus(value));
   };
 

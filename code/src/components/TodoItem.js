@@ -17,7 +17,6 @@ const TodoItem = ({ item }) => {
         id: item.id,
       })
     );
-    console.log(item.id);
   };
 
   const handleOnChange = event => {

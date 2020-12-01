@@ -57,18 +57,3 @@ const HeaderIcon = styled.img`
     opacity: 1;
   }
 `;
-
-// const HeaderTitle = styled(Title)`
-//   color: rgba(255, 255, 255, 0.6);
-//   font-weight: lighter;
-//   font-size: 3.5rem;
-//   margin-top: -10px;
-// `;
-
-// const HeaderDate = styled.p`
-//   color: rgba(255, 255, 255, 0.6);
-// `;
-
-// const HeaderDateBold = styled.span`
-//   font-weight: bold;
-// `;

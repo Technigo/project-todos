@@ -25,7 +25,6 @@ const TodoInput = () => {
 
   const onSubmit = event => {
     event.preventDefault();
-    console.log(inputValue);
     dispatch(
       todos.actions.addTodo({
         todoItemInfo: {
@@ -41,7 +40,6 @@ const TodoInput = () => {
     history.goBack();
   };
 
-  console.log(dueDate);
   return (
     <Main>
       <Form onSubmit={onSubmit}>
