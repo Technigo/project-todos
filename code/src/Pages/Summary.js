@@ -9,9 +9,8 @@ import { Button } from '../library/Button'
 import { Main, Wrapper, OuterWrapper } from '../library/Containers'
 
 export const Summary = () => {
-  const [clearBtn] = useState(true)
-  //const [outerWrapper] = useState(true)
-  const [noList] = useState(true)
+  const clearBtn = true
+  const noList = true
 
   const dispatch = useDispatch()
   const items = useSelector((store) => store.tasks.items)
@@ -19,8 +18,6 @@ export const Summary = () => {
   if(items.length<0){
     return noList
   }
-
-  /*${({outerWrapper}) => outerWrapper &&  */
 
   return (
     <Main noList={noList}>

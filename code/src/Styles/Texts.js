@@ -12,6 +12,7 @@ export const SubHeading = styled.h2`
 export const Text = styled.p`
     grid-column: span 2;
     margin: 0;
+    font-size: 1em;
     ${({stroke}) => stroke && `
     text-decoration: line-through;
     font-style: italic; `}
@@ -20,4 +21,5 @@ export const Text = styled.p`
 export const Span = styled.span`
     font-size: 10px;
     display: flex;
+    font-size: 0.7em;
     `

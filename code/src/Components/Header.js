@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import { Image } from '../Styles/Image'
-
 import { Heading, SubHeading } from '../Styles/Texts'
 import { Wrapper } from '../library/Containers'
 

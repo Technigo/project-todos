@@ -1,6 +1,7 @@
 import styled from 'styled-components'
 
 export const Button = styled.button`
+    font-size: 1em;
   ${({ removebtn }) =>
     removebtn &&
     `
@@ -8,7 +9,7 @@ export const Button = styled.button`
     margin: auto;
     background: #FAFAE5;
     @-moz-document url-prefix(){
-      width: 10%;
+      width: 25%;
       display: flex;
       justify-content: center;
    }`}
