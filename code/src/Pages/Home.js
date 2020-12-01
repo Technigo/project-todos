@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { tasks } from '../Reducers/tasks'
 
 import { List } from '../Components/List'
@@ -12,7 +12,6 @@ export const Home = () => {
   const clearBtn = true
 
   const dispatch = useDispatch()
-  const items = useSelector((store) => store.tasks.items)
 
   return (
     <Main>
