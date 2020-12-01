@@ -1,5 +1,5 @@
 import styled from 'styled-components'
 
 export const Image = styled.img`
-width: 250px;
-`
+    width: 250px;
+    `

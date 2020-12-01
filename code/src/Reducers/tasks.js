@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 //Add multiple lists
 
 export const tasks = createSlice({
@@ -27,4 +27,4 @@ export const tasks = createSlice({
       } 
     }
   }
-});
+})

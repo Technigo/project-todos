@@ -13,9 +13,12 @@ export const Header = () => {
   return (
     <>
       <Heading>Todo's</Heading>
-      {completedTasks.length<items.length ? <SubHeading>You have completed {completedTasks.length} out of {items.length} tasks</SubHeading>
-      : <Wrapper><SubHeading>You have done all your tasks! Grab an icecream and celebrate!</SubHeading>
-      <Image src={'./lottieanimation.gif'} alt='animation of Icecream'/></Wrapper>}
+      {completedTasks.length < items.length ?
+        <SubHeading>You have completed {completedTasks.length} out of {items.length} tasks</SubHeading>
+        : <Wrapper>
+          <SubHeading>You have done all your tasks! Grab an icecream and celebrate!</SubHeading>
+          <Image src={'./lottieanimation.gif'} alt='animation of Icecream' />
+        </Wrapper>}
     </>
   )
 }
