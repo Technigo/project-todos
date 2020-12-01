@@ -8,12 +8,13 @@ The project for this week was to build a Todo List using Redux. In the Todo List
 
 - The todolist also contains a checkbox for marking a task as completed, a button in the shape of a paper bin to delete an item from the list, and also a button to clear the whole todolist from tasks. The header also shows a summary of how many tasks that are done out of the total number of tasks in the list. 
 
--  If I had more time I would have done more to the styling and also created a local storage to add more functionality to the app. I would also like to add more functionality like timestamps for each task, style  forthe empty state when all tasks are removed, add date input to the form to set a due date on a task and maybe style it differently depending on the date, add categories to tasks and the possibility to group tasks together as a project. 
+-  If I had more time I would have styled the app a bit more, and also created a local storage to add more functionality to the app. I would also like to add more functionality like timestamps for each task, added some styling/effects for when all tasks are removed and when all tasks are completed, add date input to the form to set a due date on a task and maybe style it differently depending on the date, add categories to tasks and the possibility to group tasks together as a project. 
 
 ## Tech
 - React
 - Redux
 - JSX
+- Styled components
 
 ## View it live
 

@@ -1,14 +1,20 @@
 import React from 'react' 
-import { TodoSummary } from './TodoSummary.js';
+import styled from 'styled-components';
+
+const HeaderContainer = styled.section`
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-top: 30px;
+`;
 
 export const Header = () => {
     //const items = useSelector((store) => store.todos.items)
     //const finishedTodos = items.filter((item) => item.isComplete)
 
     return (
-        <div>
+        <HeaderContainer>
             <h1>Todo List</h1>
-            <TodoSummary />
-        </div>
+        </HeaderContainer>
     )
 }

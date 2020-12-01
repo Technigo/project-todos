@@ -1,3 +1,0 @@
-import styled from 'styled-components';
-
-//Global styling will go here...

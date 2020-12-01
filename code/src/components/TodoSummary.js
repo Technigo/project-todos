@@ -1,6 +1,13 @@
 import React from 'react' 
 import { useSelector } from 'react-redux';
 
+import styled from 'styled-components';
+
+const Summary = styled.div`
+text-align: right;
+font-size: 12px;
+font-weight: bold;
+`;
 
 export const TodoSummary = () => {
     //Get information from list from the store
@@ -10,8 +17,8 @@ export const TodoSummary = () => {
     const finishedTodos = list.items.filter(item => item.isComplete).length;
 
     return (
-        <div>
-            <h2>{finishedTodos}/{list.items.length} tasks complete</h2>
-        </div>
+        <Summary>
+            <p>{finishedTodos}/{list.items.length} tasks complete</p>
+        </Summary>
     )
 }

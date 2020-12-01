@@ -1,7 +1,29 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
 import { todos } from '../reducers/todos.js';
+
+const FormContainer = styled.form`
+  padding: 20px;
+  text-align: center;
+`;
+
+const FormInput = styled.input`
+  padding: 10px 0px 5px 3px;
+  font-size: 16px;
+`;
+
+const AddButton = styled.input`
+background: #000000;
+color: #ffffff;
+font-size: 16px;
+padding: 10px;
+margin-left: 20px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+`;
 
 export const TodoInput = () => {
     const dispatch = useDispatch();
@@ -26,16 +48,17 @@ export const TodoInput = () => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input
+        <FormContainer onSubmit={handleSubmit}>
+            <FormInput
                 type='text'
+                placeholder='Add todo here...'
                 onChange={event => setInputText(event.target.value)}
                 value={inputText}
-            />
-            <input
+            /> 
+            <AddButton
                 type='submit'
                 value='Add Todo'
             />
-        </form>
+        </FormContainer>
     );
 };

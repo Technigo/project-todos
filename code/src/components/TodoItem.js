@@ -1,6 +1,16 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import styled from 'styled-components';
+
 import { todos } from '../reducers/todos';
+
+const DeleteButton = styled.span`
+background: #EFEAFD;
+font-size: 12px;
+padding: 3px;
+border-radius: 5px;
+cursor: pointer;
+`;
 
 export const TodoItem = ({ itemIndex }) => {
     //Get correct item from store based on index
@@ -31,8 +41,8 @@ export const TodoItem = ({ itemIndex }) => {
                 onChange={handleCheckbox}
                 checked={item.isComplete ? 'checked' : ''}
             />
-            <span> {item.text} </span>
-            <span onClick={handleDelete} role="img" aria-label="paper bin"> 🗑 </span>
+             <span>{item.text} | </span>
+            <DeleteButton onClick={handleDelete}> Delete </DeleteButton>
         </div>
     );
 };
