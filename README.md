@@ -21,5 +21,5 @@ No limitations that I am aware of.
 
 ## View it live
 
-View the project live here: https://happy-hoover-656091.netlify.app/
+View the project live here: https://marjaanatodoapp.netlify.app/
 
