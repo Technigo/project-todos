@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch } from 'react-redux'
 
 import { tasks } from '../Reducers/tasks'
@@ -12,7 +12,7 @@ import moment from 'moment'
 
 export const Item = ({ item }) => {
   const dispatch = useDispatch()
-  const [removeBtn] = useState(true)
+  const removeBtn = true
 
   const handleCheckboxClick = () => {
     dispatch(tasks.actions.toggleDone({ id: item.id}))

@@ -6,11 +6,9 @@ import { ListWrapper } from '../library/Containers'
 
 export const List = () => {
   //This useSelector helps us get a hold of the items inside our store (tasks)
-
   const items = useSelector((store) => store.tasks.items)
 
   return (
-    <>
       <ListWrapper>
         {items.map((item) => {
             return(
@@ -18,6 +16,5 @@ export const List = () => {
             )
         })}
       </ListWrapper>
-    </>
   )
 }

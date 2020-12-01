@@ -17,7 +17,8 @@ export const Wrapper = styled.section`
     width: 90%;
     margin: 15px;
     `
-    export const OuterWrapper = styled.section`
+
+export const OuterWrapper = styled.section`
     background: white;
     -webkit-box-shadow: 5px 4px 15px -1px #000000;
     box-shadow: 5px 4px 15px -1px #000000;

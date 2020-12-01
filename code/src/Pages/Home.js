@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { tasks } from '../Reducers/tasks'
 
@@ -8,7 +8,7 @@ import { UserInput } from '../Components/UserInput'
 import { Button } from '../library/Button'
 import { Main, Wrapper, OuterWrapper } from '../library/Containers'
 
-export const Summary = () => {
+export const Home = () => {
   const clearBtn = true
 
   const dispatch = useDispatch()

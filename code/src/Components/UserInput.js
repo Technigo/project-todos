@@ -9,7 +9,7 @@ import { UserInputBox, InputText } from '../library/Containers'
 
 export const UserInput = () => {
   const [task, setTask] = useState('')
-  const [addBtn] = useState(true)
+  const addBtn = true
 
   const dispatch = useDispatch()
 
