@@ -5,7 +5,7 @@ A responsive Todo App using styled react components, reducers and actions.
 ## Accessibility and cross-browser testing 
 
 Html validated with W3C validation service (http://validator.w3.org/) with no errors found.
-Chrome lighthouse report was generated with the result: 100% Accessibility, 100% Best Practices and 100% SEO. 
+Chrome lighthouse report was generated with the result: 78% Accessibility, 100% Best Practices and 100% SEO. 
 Accessibility checked with Wave chrome plugin and no errors raised and with screenreader chromeVox with no errors.
 Testing has been done in different browsers such as Edge, FireFox and Chrome in mobile, tablet and desktop views.
 
