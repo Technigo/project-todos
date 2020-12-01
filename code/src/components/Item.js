@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import { todos } from '../reducers/todos';
+import { TodoItem, RemoveButton, ClickedButton } from 'styled-components/Item';
 
 const Item = ({ id, name, isComplete}) => {
     const dispatch = useDispatch();
@@ -14,13 +15,13 @@ const Item = ({ id, name, isComplete}) => {
     };
 
     return (
-        <div>
+        <TodoItem>
             <div>{name}</div>
-            <div onClick={onIsCompletedChange}>
+            <ClickedButton onClick={onIsCompletedChange}>
                 {isComplete ? "☒" : "☑︎"}
-            </div>
-            <div onClick={itemDelete}>ⓧ</div>   
-        </div>
+            </ClickedButton>
+            <RemoveButton onClick={itemDelete}>x</RemoveButton>   
+        </TodoItem>
     );
 };
     export default Item;

@@ -1,28 +1,29 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { todos } from '../reducers/todos';
-import { InputContainer, Input, InputButton, InputHeading } from '../styled-components/AddTodo';
+import { InputContainer,InputNrOfTask, Input, InputButton, InputHeading } from '../styled-components/AddTodo';
 
 const AddTodo = () => {
     const [value, setValue]= useState ('');
     const dispatch = useDispatch();
+    const items = useSelector(store => store.todos.items);
 
     const OnItemAdd = () =>{
         dispatch(todos.actions.addItem(value))
     }
-
-
+    
     return (
         <InputContainer>
         <InputHeading> Todo list </InputHeading>
+        <InputNrOfTask>You have added {items.length}{' '}{items.length ===1 ? 'task' : 'tasks' }</InputNrOfTask>
             <Input
                 type= "text" 
                 value={value} 
                 onChange={e =>setValue(e.target.value)}
                 placeholder="Add todo" 
             />
-            <InputButton onClick={OnItemAdd} type="submit" disabled={value.length < 1}>+ </InputButton>
+            <InputButton onClick={OnItemAdd} type="submit" disabled={value.length < 1}> + </InputButton>
         </InputContainer>
     )
 }
