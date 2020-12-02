@@ -38,7 +38,7 @@ export const TaskList = () => {
           <Task key={task.id} task={task} />
         ))}
       </ListofTasks>
-      {tasksTodo.length > 0 && (
+      {tasks.items.length > 0 && (
         <ButtonWrapper>
           <RemoveCompleted />
           <RemoveAll />
