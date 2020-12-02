@@ -11,9 +11,7 @@ export const AddTask = () => {
 
   const handleAddTask = event => {
     event.preventDefault()
-
     dispatch(tasklist.actions.addTodo(inputValue))
-
     setInputValue('')
   }
 

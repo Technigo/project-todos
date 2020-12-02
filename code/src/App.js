@@ -15,7 +15,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <TodoScreen></TodoScreen>
+      <TodoScreen/>
       <Footer/>
     </Provider>
   )

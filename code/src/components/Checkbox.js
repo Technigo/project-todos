@@ -17,9 +17,9 @@ export const Checkbox = ({ isChecked, onChangeHandler }) => {
   const Checkbox = ({ className, checked, ...props }) => (
     <CheckboxContainer>
       <CheckBox checked={checked} {...props}></CheckBox>
-      <StyledCheckBox checked={checked}>
+      <StyledCheckBox checked={!checked}>
         <Dot viewBox='0 0 24 24'>
-          <circle cx='12' cy='12' r='4' stroke='none' fill='#F9EFE5'></circle>
+          <circle cx='12' cy='12' r='4' stroke='none' fill='#16F712'></circle>
         </Dot>
       </StyledCheckBox>
     </CheckboxContainer>

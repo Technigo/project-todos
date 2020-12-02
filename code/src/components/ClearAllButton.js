@@ -6,7 +6,6 @@ import { ClearButton, ButtonContainer } from './styled/clearallbutton'
 
 export const ClearAllButton = (id) => {
   const dispatch = useDispatch()
-  
   const handleClearAll = () => dispatch(tasklist.actions.removeAll(id))
 
   return ( 
