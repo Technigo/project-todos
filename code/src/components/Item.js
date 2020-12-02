@@ -71,6 +71,5 @@ export const Item = ({ item }) => {
             <Date>Created: {item.date.format('MMMM Do YYYY, h:mm:ss a')}</Date>
             <RemoveItemButton onClick={handleDeleteItem}>Delete Item</RemoveItemButton>
         </ItemContainer>
-
     )
 }

@@ -7,12 +7,12 @@ const AllTodos = styled.div`
     text-shadow: 2px 2px white;
 `;
 
-const Complited = styled(AllTodos)`
+const Complete = styled(AllTodos)`
     color: #2caf2c;
     text-shadow: 2px 2px #0e0d0d;
 `;
 
-const Uncomplite = styled(AllTodos)`
+const Uncomplete = styled(AllTodos)`
     color: #d42929;
     text-shadow: 2px 2px #0e0d0d;
 `;
@@ -20,14 +20,14 @@ const Uncomplite = styled(AllTodos)`
 export const CountItems = () => {
     const items = useSelector(store => store.todos.items);
 
-    const complited = items.filter(item => item.checked).length;
-    const uncomplite = items.length - complited;
+    const complete = items.filter(item => item.checked).length;
+    const uncomplete = items.length - complete;
 
     return (
         <div>
             <AllTodos>All Todos: {items.length}</AllTodos>
-            <Complited>Complited Todos: {complited}</Complited>
-            <Uncomplite>Uncoplite Todos: {uncomplite}</Uncomplite>
+            <Complete>Complete Todos: {complete}</Complete>
+            <Uncomplete>Uncomplete Todos: {uncomplete}</Uncomplete>
         </div>
     )
 

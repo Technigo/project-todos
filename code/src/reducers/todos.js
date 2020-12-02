@@ -62,14 +62,14 @@ export const todos = createSlice({
                 };
             }
         },
-        allDone: (state, action) => {
+        setAllDone: (state, action) => {
             state.items = state.items
                 .map((item) => {
                     item.checked = true
                     return item
                 })
         },
-        allUndone: (state, action) => {
+        setAllUndone: (state, action) => {
             state.items = state.items
                 .map((item) => {
                     item.checked = false

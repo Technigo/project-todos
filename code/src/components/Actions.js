@@ -1,12 +1,11 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 
-import { todos } from "../reducers/todos"
-import goodjob from "../assets/goodJob.png"
+import { todos } from "../reducers/todos";
+import goodjob from "../assets/goodJob.png";
 
-const AllDoneBtn = styled.button`
-    align-self: center;
+const Buttons = styled.button`
     padding: 8px;
     margin: 15px;
     font-size: 20px;
@@ -21,13 +20,11 @@ const AllDoneBtn = styled.button`
   }
 `;
 
-const AllUndoneBtn = styled(AllDoneBtn)``;
-
 const Img = styled.img`
     width: 100%;
 `;
 
-const DeleteAllItems = styled(AllDoneBtn)`
+const DeleteAllButton = styled(Buttons)`
     background-color: #ff0000c9;
     &:hover {
         background-color:  #961111;
@@ -39,11 +36,11 @@ export const Actions = () => {
     const items = useSelector(store => store.todos.items)
 
     const handleAllDone = () => {
-        dispatch(todos.actions.allDone());
+        dispatch(todos.actions.setAllDone());
     }
 
     const handleAllUndone = () => {
-        dispatch(todos.actions.allUndone());
+        dispatch(todos.actions.setAllUndone());
     }
 
     const handleDeleteAll = () => {
@@ -52,12 +49,12 @@ export const Actions = () => {
 
     return (
         <>
-            <AllDoneBtn onClick={handleAllDone}>Mark as all done</AllDoneBtn>
+            <Buttons onClick={handleAllDone}>Mark as all done</Buttons>
             {!items.filter(item => !item.checked).length &&
                 <Img src={goodjob} alt="Good job smile" />
             }
-            <AllUndoneBtn onClick={handleAllUndone}>Mark as all undone</AllUndoneBtn>
-            <DeleteAllItems onClick={handleDeleteAll}>Delete All items</DeleteAllItems>
+            <Buttons onClick={handleAllUndone}>Mark as all undone</Buttons>
+            <DeleteAllButton onClick={handleDeleteAll}>Delete All items</DeleteAllButton>
         </>
     )
 }
