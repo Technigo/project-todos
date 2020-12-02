@@ -1,8 +1,8 @@
 import React from 'react';
-
 import { Link } from 'react-router-dom';
 import TodoInput from '../components/TodoInput';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
+
 import { BackArrow } from '../lib/Image';
 
 const CreateTodo = () => {

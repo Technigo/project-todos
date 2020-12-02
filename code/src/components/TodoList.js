@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { useSelector, useDispatch } from 'react-redux';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
+
 import { todos } from '../reducers/todos';
 import EmptyTodoList from './EmptyTodoList';
 import TodoItem from './TodoItem';

@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-
 import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import DatePicker from 'react-date-picker';
 import { v4 as uuidv4 } from 'uuid'; 
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
+
 import { todos } from '../reducers/todos';
 import { Button } from '../lib/Button';
 import { Label, Paragraph } from '../lib/Text';

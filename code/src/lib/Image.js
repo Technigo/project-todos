@@ -1,7 +1,8 @@
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 export const TrashBin = styled.img `
   width: 20px;
+  cursor: pointer;
   
   @media (min-width: 668px) {
     width: 35px;

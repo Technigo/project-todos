@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
+
 import { todos } from '../reducers/todos';
 import { TrashBin } from '../lib/Image';
 import { Span } from '../lib/Text';
@@ -32,10 +32,10 @@ const TodoItem = ({ item }) => {
     <Container>
       <Todo className={`accordion ${active}`} onClick={toggleAccordion}>
         <Label>
-        <CustomCheckbox
-          checked={item.complete ? true : ""}
-          onChange={toggleComplete}
-        ></CustomCheckbox>
+          <CustomCheckbox
+            checked={item.complete ? true : ""}
+            onChange={toggleComplete}>
+          </CustomCheckbox>
         </Label>
         <TodoContainer>
           <Description checked={item.complete ? true : ''}>

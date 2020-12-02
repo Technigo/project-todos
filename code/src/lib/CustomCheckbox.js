@@ -1,6 +1,5 @@
 import React from 'react';
-
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const CustomCheckbox = ({ className, checked, ...props }) => (
   <CheckboxContainer className={className}>

@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import swal from 'sweetalert';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import { Button } from '../lib/Button';
 import { ParagraphBlack } from '../lib/Text';
