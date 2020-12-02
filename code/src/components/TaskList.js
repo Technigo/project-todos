@@ -38,10 +38,12 @@ export const TaskList = () => {
           <Task key={task.id} task={task} />
         ))}
       </ListofTasks>
-      <ButtonWrapper>
-        <RemoveCompleted />
-        <RemoveAll />
-      </ButtonWrapper>
+      {tasksTodo.length > 0 && (
+        <ButtonWrapper>
+          <RemoveCompleted />
+          <RemoveAll />
+        </ButtonWrapper>
+        )}
     </div>
   );
 };
