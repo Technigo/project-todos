@@ -27,8 +27,8 @@ const StyledTextField = styled(TextField)`
 
 export const AddTodo = () => {
   const dispatch = useDispatch()
-  const [ text, setAddItem ] = useState('')
-  const [ id, setaddId ] = useState(0)
+  const [ text, setText ] = useState('')
+  const [ id, setId ] = useState(1)
 
   const handleSubmit = (event) => {
     event.preventDefault()
@@ -38,13 +38,13 @@ export const AddTodo = () => {
         text,
       })
     )
-    setaddId(id + 1)
-    setAddItem('')
+    setId(id + Math.floor(Math.random()*1024))
+    setText('')
   }
 
   return (
     <Form onSubmit={handleSubmit}>
-      <StyledTextField type="text" value={text} placeholder="Insert task here.." onChange={(event) => setAddItem(event.target.value)} variant="outlined" />
+      <StyledTextField type="text" value={text} placeholder="Insert task here.." onChange={(event) => setText(event.target.value)} variant="outlined" />
       <StyledButton type="submit" value="Submit">ADD</StyledButton>
     </Form>
   )

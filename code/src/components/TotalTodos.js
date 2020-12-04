@@ -15,12 +15,6 @@ const Container = styled.div`
   color: white;
   font-size: 24px;
 `
-const Title = styled.div`
-
-`
-const Total = styled.p`
-
-`
 
 export const TotalTodos = () => {
   const totalTodos = useSelector((store) => store.tasks.items.length)
@@ -28,8 +22,8 @@ export const TotalTodos = () => {
 return (
   <Container>
     <Image src="https://www.svgrepo.com/show/263286/frog.svg" alt="image toad"/>
-    <Title>toado list</Title>
-    <Total>{totalTodos} left</Total>
+    <div>toado list</div>
+    <p>{totalTodos} total toados!</p>
   </Container>
 )
 }

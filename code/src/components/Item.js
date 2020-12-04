@@ -1,10 +1,9 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { useDispatch } from 'react-redux'
 import Card from '@material-ui/core/Card'
 import Checkbox from '@material-ui/core/Checkbox'
 import Delete from '@material-ui/icons/Delete'
-
 
 import { tasks } from '../reducers/tasks'
 
@@ -15,7 +14,6 @@ const Box = styled.div`
   height: 42px;
   width: 42px;
 `
-
 const StyledCard = styled(Card)`
   display: flex;
   width: 100%;
@@ -23,15 +21,18 @@ const StyledCard = styled(Card)`
   justify-content: space-between;
   margin: 5px;
 `
+const TextContainer = styled.p`
+  padding: 10px;
+
+`
 
 export const Item = ({ item }) => {
   const dispatch = useDispatch()
   const [check, setCheck] = useState(false)
   
-
   return (
     <StyledCard>
-      {item.text}
+     <TextContainer>{item.text}</TextContainer> 
       <div>
         <Checkbox type="checkbox" id="button" name="button" value="button" checked={check} onChange={() =>setCheck(prev => !prev)}/>
         <Box>
