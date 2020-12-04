@@ -1,10 +1,11 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import styled from "styled-components/macro";
 
 import { Button } from "lib/Button";
 import { CustomCheckbox } from "./CustomCheckbox";
 import { todos } from "../reducers/todos";
-import styled from "styled-components/macro";
+
 
 const ItemList = styled.li`
   display: flex;

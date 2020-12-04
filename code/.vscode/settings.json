@@ -1,9 +1,18 @@
 {
     "cSpell.words": [
+        "reduxstae",
         "todos",
         "uniqid"
     ],
     "cSpell.ignoreWords": [
+        "consolas",
+        "localstorage",
+        "menlo",
+        "menlon",
+        "monospace",
+        "reduxjs",
+        "reduxstate",
+        "todosleft",
         "toolkit"
     ]
 }

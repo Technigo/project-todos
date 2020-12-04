@@ -1,10 +1,8 @@
 import React, { useState } from "react";
-// import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 // normal functional comp
 export const CustomCheckbox = () => {
-  // const dispatch = useDispatch();
   const [checked, setChecked] = useState(false);
 
   //  this is a functional component in a component, custom made checkbox
@@ -21,7 +19,6 @@ export const CustomCheckbox = () => {
 
   const handleOnChange = (event) => {
     setChecked(event.target.checked);
-    //   console.log(checked)
   };
 
   const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
@@ -37,7 +34,7 @@ export const CustomCheckbox = () => {
     width: 1px;
   `;
 
-  //  The checkmark, is defined here
+  //  The check mark, is defined here
   const Svg = styled.svg`
     fill: none;
     stroke: black;

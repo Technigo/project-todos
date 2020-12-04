@@ -1,9 +1,10 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { Container } from "lib/Container";
-import { Title, Subtitle } from "lib/Title";
 import moment from "moment";
 import styled from "styled-components";
+
+import { Container } from "lib/Container";
+import { Title, Subtitle } from "lib/Title";
 
 const Header = styled.section`
   display: flex;
@@ -16,8 +17,8 @@ export const TodoSummary = (props) => {
 
   const items = useSelector((store) => store.todos.items);
 
-  // this should count the number of items that are done using filter, didnt get it to work yet,
-  // const todosleft = items.filter((item) => item.isCompleted).length;
+  // this should count the number of items that are done using filter, did not get it to work yet,
+  const todosleft = items.filter((item) => item.isCompleted).length;
   // now I just showing todos left.
 
   return (
@@ -30,7 +31,7 @@ export const TodoSummary = (props) => {
       </Header>
       <Subtitle color="#888" margin="5px 0px 11px 0px">
         {" "}
-        {items.length} happy todos left!{" "}
+        {items.length - todosleft} happy todos left!{" "}
       </Subtitle>
     </Container>
   );

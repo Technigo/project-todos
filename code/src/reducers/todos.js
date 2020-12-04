@@ -9,7 +9,7 @@ export const todos = createSlice({
   name: "todos",
   initialState,
   reducers: {
-    addItem: {
+     addItem: {
       reducer(state, action) {
         state.items = [...state.items, action.payload];
       },
