@@ -4,7 +4,7 @@ A todo-app built with React and Redux. The app lists all todo tasks - completed 
 
 ## View it live 👀
 
-https://app.netlify.com/sites/quirky-kepler-b954a8
+https://quirky-kepler-b954a8.netlify.app/
 
 ## Learnings 🤓
 
