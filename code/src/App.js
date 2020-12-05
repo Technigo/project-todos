@@ -29,9 +29,7 @@ store.subscribe(() => {
 });
 
 export const App = () => {
-  return (
-    // Can't use useDispatch / useSelector outside of Provider
-    
+  return (    
     <Provider store={store}>
       <BrowserRouter>
         <Switch>
