@@ -22,7 +22,7 @@ export const TaskItem = ({ item }) => {
         <label className="custom-checkbox">
           <input
             type="checkbox"
-            checked={checked}
+            checked={item.isCompleted}
             onChange={handleCheckboxClick}
           />
           <span className="checkmark" tabIndex="0"></span>
