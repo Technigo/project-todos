@@ -10,11 +10,11 @@ Learning Objectives:
 - How to write reducers and actions
 - How to interact with your store using selectors or by dispatching actions
 
-## Approach
+<!-- ## Approach-->
 
 
-## Core Tech
-<!-- - CSS
+<!-- ## Core Tech
+- CSS
 - API
 - React
 - React Hooks
