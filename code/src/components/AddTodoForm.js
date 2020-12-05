@@ -35,14 +35,11 @@ export const AddTodoForm = () => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, []);
 
-  console.log(categories[1].subcategories);
-
   const onCategoryChange = (categoryValue) => {
     userCategory.includes(categoryValue)
       ? setUserCategory(userCategory.filter((item) => item !== categoryValue))
       : setUserCategory([...userCategory, categoryValue]);
   };
-  console.log(userCategory);
 
   const onTodoAdd = (event) => {
     event.preventDefault();

@@ -14,8 +14,8 @@ export const TodoFormWrapper = styled.section`
 `;
 
 export const TodoForm = styled.form`
-width: 100%;
-height: 100%;
+  width: 100%;
+  height: 100%;
   background-color: #fafafa;
   @media only screen and ${breakpoints.device.tablet} {
     padding-top: 40px:
@@ -66,11 +66,13 @@ export const TodoHeaderInput = styled.input`
   &:hover {
     cursor: pointer;
   }
+
   @media only screen and ${breakpoints.device.tablet} {
     font-size: 32px;
     margin-top: 38px;
     padding-left: 12px;
   }
+  
   @media only screen and ${breakpoints.device.computer} {
     font-size: 18px;
   }
