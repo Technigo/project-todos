@@ -8,7 +8,6 @@ import { AddTodoForm } from './components/AddTodoForm';
 import { EditTodoForm } from './components/EditTodoForm';
 
 const reducer = combineReducers({ todos: todos.reducer })
-const store = configureStore({ reducer })
 
 // New storage
 const persistedStateJSON = localStorage.getItem('reduxState');
@@ -18,7 +17,7 @@ if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON);
 }
 
-const store = createStore(
+const store = configureStore(
   reducer,
   persistedState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
