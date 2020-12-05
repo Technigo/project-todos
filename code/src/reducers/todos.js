@@ -44,24 +44,17 @@ const initialState = {
   items: [
     {
       id: "1a",
-      title: "first",
-      content: "",
+      title: "Welcome",
+      content: "Let's get on with it, right?",
       category: ["#Work"],
       createdAt: 1606318113000,
     },
     {
       id: "2a",
-      title: "second",
-      content: "",
+      title: "Get it out of your chest...",
+      content: "...make room for play",
       category: ["#Free time"],
       createdAt: 1604676513000,
-    },
-    {
-      id: "3a",
-      title: "third",
-      content: "Bake cookies with kids",
-      category: ["#Shop"],
-      createdAt: 1606318113000,
     },
   ],
   addItem: false,

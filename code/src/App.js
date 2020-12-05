@@ -10,6 +10,24 @@ import { EditTodoForm } from './components/EditTodoForm';
 const reducer = combineReducers({ todos: todos.reducer })
 const store = configureStore({ reducer })
 
+// New storage
+const persistedStateJSON = localStorage.getItem('reduxState');
+let persistedState = {};
+
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON);
+}
+
+const store = createStore(
+  reducer,
+  persistedState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+store.subscribe(() => {
+  localStorage.setItem('reduxState', JSON.stringify(store.getState()));
+});
+
 export const App = () => {
   return (
     // Can't use useDispatch / useSelector outside of Provider
