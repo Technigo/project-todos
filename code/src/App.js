@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { combineReducers, createStore } from '@reduxjs/toolkit';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { todos } from './reducers/todos';
 import { TodoList } from './components/TodoList';
@@ -17,7 +17,7 @@ if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON);
 }
 
-const store = configureStore(
+const store = createStore(
   reducer,
   persistedState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -43,8 +43,6 @@ export const App = () => {
           </Route>
         </Switch>
       </BrowserRouter>
-      {/* <AddTodoForm></AddTodoForm>
-      <TodoList /> */}
     </Provider>
   )
 };
