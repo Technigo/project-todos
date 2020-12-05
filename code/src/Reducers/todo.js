@@ -14,8 +14,7 @@ export const todo = createSlice({
     // Add tasks in the TaskInput
     addItem: (store, action) => {
       const {newItem} = action.payload
-      console.log(action.payload)
-      store.items.push(newItem)
+      store.items = [...store.items, newItem]
     },
     // Completes task in checkbox
     setComplete: (store, action) => {

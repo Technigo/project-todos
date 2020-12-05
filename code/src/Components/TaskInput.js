@@ -31,7 +31,7 @@ export const TaskInput = () => {
           onChange={(event) => setInput(event.target.value)}
         />
       </label>
-      <button className="task-add-button" type="submit" onClick={handleSubmit}>
+      <button className="task-add-button" type="submit" >
         <span className="button-icon" role="button" aria-label="remove" tabIndex="0">
           +
         </span>
@@ -39,3 +39,4 @@ export const TaskInput = () => {
     </form>
   )
 }
+

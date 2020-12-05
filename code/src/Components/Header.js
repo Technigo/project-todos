@@ -9,7 +9,7 @@ export const Header = () => {
       <h1 tabIndex="0">To-do Today</h1>
       <div className="header-details">
         <span className="header-date" tabIndex="0">{moment().format("dddd Do MMM")}</span>
-        <TaskSummary></TaskSummary>
+        <TaskSummary />
       </div>
     </section>
   )
