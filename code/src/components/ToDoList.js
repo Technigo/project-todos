@@ -14,35 +14,25 @@ const Select = styled.select`
 `
 
 export const ToDoList = () => {
-    
-    const [category, setCategory] = useState('');
-    const items = useSelector((store) => {    
-        if (!category) return store.todos.items
-        else store.todos.items.filter(item => item.category === category)
-    });
+   
+    const items = useSelector(store => store.todos.items);
+    const todoCount = items.length
+ 
   
     
         return (
             <Container>
-                <label>
-                    Category:
-                <Select
-                    value={category}
-                    onchange={(e) => setCategory(e.target.value)}>
-                        <option value = 'fun'>Fun</option>
-                        <option value = 'work'>Work</option>
-                        <option value = 'home'>Home</option>
-                    </Select>
-                </label>
-                <ul>
+                
                 {items.map(item => (
                     <ToDoItem
                         key={item.id}
                         id={item.id}
-                        name={item.text}
+                        text={item.text}
+                        done={item.isCompleted}
                     />
+                    
                 ))}
-                </ul>
+      {todoCount}
          
             </Container>
         )

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import moment from 'moment';
+// import moment from 'moment';
 import styled from 'styled-components';
-import DatePicker from 'react-datepicker';
+// import DatePicker from 'react-datepicker';
 
 
 
@@ -28,14 +28,12 @@ const Input = styled.input`
 
 const AddTodo = () => {
     const [value, setValue] = useState('');
-    const [dueDate, setDueDate] = useState('');
     const dispatch = useDispatch();
 
     const onTodoAdd = () => {
         setValue('');
-        dispatch(todos.actions.addItem({value, dueDate}));
+        dispatch(todos.actions.addItem(value));
        
-        // moment().subtract(6, 'days').calendar(); 
     }
 
     return (
@@ -55,10 +53,6 @@ const AddTodo = () => {
                     ➕
                 </span> 
             </ButtonAdd>
-            <label>
-                Due date
-                <DatePicker onchange={(date) => setDueDate(date)} value={dueDate} />
-            </label>
                 </div>
         </Container>
     );

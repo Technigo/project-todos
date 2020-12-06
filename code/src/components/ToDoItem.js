@@ -1,11 +1,11 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 
 import { todos } from '../reducers/todos';
 
-const Container = styled.form`
+const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -13,15 +13,17 @@ const Container = styled.form`
 `
 
 const Text = styled.div`
-  height: auto;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
+  /* height: auto; */
+  /* width: 80%; */
+  /* display: flex; */
+  /* flex-direction: column; */
+  /* justify-content: space-around; */
   font-size: 20px;
   border: 1px solid red;
   border-radius: 5px;
   padding: 10px;
+  background-color: white;
+  color: black;
 `;
 
 const Button = styled.button`
@@ -38,26 +40,32 @@ const Button = styled.button`
 
 // `
 
-const ToDoItem = ({ id, text, isCompleted }) => {
+const ToDoItem = ({ id, text, done }) => {
+    
     const dispatch = useDispatch();
+    console.log(`Text: ${text}`)
 
     const onTodoDelete = () => {
         dispatch(todos.actions.removeItem(id));
     };
 
-    const onCompletedChange = () => {
+    const onIsCompletedChange = () => {
         dispatch(todos.actions.checkCompleted(id));
     };
 
     return (
         <Container>
-            <Text> {text}</Text>
-            <Button type="button" onClick={onCompletedChange}>
-            {isCompleted ? "☒" : "☑"}
-            </Button>
-            <Button type="button" onClick={onTodoDelete}>
-                ⓧ
-                </Button>
+                        <Text>
+                            {text}
+                            </Text>
+                        <Button type="button" onClick={onIsCompletedChange}>
+                        {(done) ? "☒" : "☑"}
+                        </Button>
+
+                        <Button type="button" onClick={onTodoDelete}>
+                        ⓧ
+                        </Button>
+
         </Container>
     );
 };

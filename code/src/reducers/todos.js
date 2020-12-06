@@ -4,9 +4,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
     items: [
-        {id: 0, text:"call queen mother", category: 'fun', created: '', isCompleted: false},
-        {id: 1, text:"make the app work", category: 'work', created: '', isCompleted: false},
-        {id: 2, text:"groceries and bolaget", category: 'home', created: '', isCompleted: false}
+        {id: 0, text:"call queen mother", isCompleted: false},
+        {id: 1, text:"make the app work", isCompleted: false},
+        {id: 2, text:"groceries and bolaget", isCompleted: false}
     ]
 };
 
@@ -21,8 +21,6 @@ export const todos = createSlice({
                 // spread the current store and return maximum value of array +1 
                 id: Math.max(...store.items.map(item => item.id)) + 1,
                 text: action.payload,
-                category: '',
-                created: Date.now(),
                 isCompleted: false        
                 
         }

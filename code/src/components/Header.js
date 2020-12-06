@@ -11,12 +11,6 @@ const Header = () => {
 
         <Container>
             <Text>Stuff 2 Do</Text>
-             {/* <button>Calender</button>
-                <ul>Category
-                    <li>Work</li>
-                    <li>Home</li>
-                    <li>Fun</li>
-                </ul> */}
         </Container>
     )
 }

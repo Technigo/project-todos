@@ -7,7 +7,7 @@ import { todos } from './reducers/todos';
 import Header from './components/Header';
 import { ToDoList }   from './components/ToDoList';
 import AddTodo from 'components/AddTodo';
-// import ToDoSummary from './components/ToDoSummary';
+
 
 import backgroundImage from './assets/backgroundImage.png'
 
@@ -23,7 +23,7 @@ export const App = () => {
       <Provider store={store}>
           <AddTodo />
           <ToDoList />
-          {/* <ToDoSummary /> */}
+
       </Provider>
       </Container>
   );
