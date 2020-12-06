@@ -1,17 +1,21 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import moment from 'moment';
 import styled from 'styled-components';
+import DatePicker from 'react-datepicker';
+
 
 
 import { todos } from '../reducers/todos';
 
 const ButtonAdd = styled.button`
+    align-items: center;
     padding: 10px;
     border-radius: 50%;
     border: 1px solid red;
     margin: 15px;
     background-color: #fff;
-`
+`;
 
 const Input = styled.input`
   height: 50px;
@@ -24,31 +28,37 @@ const Input = styled.input`
 
 const AddTodo = () => {
     const [value, setValue] = useState('');
+    const [dueDate, setDueDate] = useState('');
     const dispatch = useDispatch();
 
     const onTodoAdd = () => {
         setValue('');
-        dispatch(todos.actions.addItem(value));
+        dispatch(todos.actions.addItem({value, dueDate}));
+       
+        // moment().subtract(6, 'days').calendar(); 
     }
 
     return (
         <Container>
             <div>
-         
             <Input
-                type="Text"
+                type="text"
                 placeholder="What's next?"
-                maxLength="200"
                 value={value}
                 required
                 onChange={e => setValue(e.target.value)}
             />
             <ButtonAdd 
-            onClick={onTodoAdd} >
-                <span role="img" aria-labelledby="jsx-ally/accessible-emoji">
+                type="button"
+                onClick={onTodoAdd}>
+                <span role="img" aria-labelledby="plus sign emoji">
                     ➕
                 </span> 
             </ButtonAdd>
+            <label>
+                Due date
+                <DatePicker onchange={(date) => setDueDate(date)} value={dueDate} />
+            </label>
                 </div>
         </Container>
     );
@@ -56,7 +66,7 @@ const AddTodo = () => {
 
 export default AddTodo;
 
-const Container = styled.div`
+const Container = styled.form`
     width: 80%;
     height: 500px;
     display: flex;

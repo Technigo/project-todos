@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Text = styled.text`
+const Text = styled.div`
     color: red;
     font-size: 50px;
 `
@@ -10,14 +10,13 @@ const Header = () => {
     return (
 
         <Container>
-            <Text>Stuff 2 do</Text>
-             <button>Calender</button>
+            <Text>Stuff 2 Do</Text>
+             {/* <button>Calender</button>
                 <ul>Category
                     <li>Work</li>
                     <li>Home</li>
                     <li>Fun</li>
-                </ul>
-
+                </ul> */}
         </Container>
     )
 }

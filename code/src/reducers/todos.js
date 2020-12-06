@@ -1,48 +1,64 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 
-const initialState = {
-    items: []
-}
 
-//slice is always composed of name, initialstate and reducers
+const initialState = {
+    items: [
+        {id: 0, text:"call queen mother", category: 'fun', created: '', isCompleted: false},
+        {id: 1, text:"make the app work", category: 'work', created: '', isCompleted: false},
+        {id: 2, text:"groceries and bolaget", category: 'home', created: '', isCompleted: false}
+    ]
+};
+
+//slice is always composed of input, initialstate and reducers
 export const todos = createSlice({
     name: "todos",
     initialState,
     reducers: {
         addItem: (store, action) => {
-             // console.log(action);
-            const newItem = {
-                // spread the current store and return maximum value of array
+        
+            const newItem = { 
+                // spread the current store and return maximum value of array +1 
                 id: Math.max(...store.items.map(item => item.id)) + 1,
-                name: action.payload,
-                isCompleted: false
-            }
+                text: action.payload,
+                category: '',
+                created: Date.now(),
+                isCompleted: false        
+                
+        }
+
+
             const newItemsList = [...store.items, newItem];  
-            store.items = newItemsList
+                store.items = newItemsList
+                // console.log(newItemsList);
+                // console.log(newItem);
         },
-/*store is todos object inside of slice, can also be named state as the same*/ 
+
         removeItem: (store, action) => {
-              // conslole.log(store.action)
+            const itemId = action.payload
             const filteredItems = store.items
              // filter to update store w/ current data without the removed item
-                .filter(item => item.id !== action.payload);
+                .filter(item => item.id !== itemId);
 
                 store.items = filteredItems;
         },
-        toggleComplete: (store, action) => {
-            const updatedArray = store.items.map(item => {
-                if (item.id === action.payload) {
-                    return {
-                        ...item,
-                        isCompleted: !item.isCompleted
-                    };
-                } else {
-                    return item;
-                }
-            });
 
-            store.items = updatedArray;
+        removeAll: (store) => {
+            store.items = []
         },
+
+      
+        checkCompleted: (store, action) => {
+            const id = action.payload
+            const todo = store.items.find(items => items.id === id)
+
+                if (todo) {
+                    todo.isCompleted = !todo.isCompleted;
+                    };
+            
+
+                }
+               
+        
     },
 });
