@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import {Provider} from 'react-redux'
 import {combineReducers, configureStore} from '@reduxjs/toolkit'
+import styled from 'styled-components'
 
 import Header from './components/Header'
 import Tasklist from './components/Tasklist'
@@ -17,8 +18,18 @@ export const App = () => {
 
   return (
     <Provider store={store}>
-      <Header completed={completed} uncompleted={uncompleted} all={all} setCompleted={setCompleted} setUncompleted={setUncompleted} setAll={setAll}/>
-      <Tasklist completed={completed} uncompleted={uncompleted} all={all}/>
+      <Container>
+        <Header completed={completed} uncompleted={uncompleted} all={all} setCompleted={setCompleted} setUncompleted={setUncompleted} setAll={setAll}/>
+        <Tasklist completed={completed} uncompleted={uncompleted} all={all}/>
+      </Container>
     </Provider>
   )
 }
+
+
+const Container = styled.section`
+display:flex;
+justify-content: center;
+align-items: center;
+flex-direction:column;
+`

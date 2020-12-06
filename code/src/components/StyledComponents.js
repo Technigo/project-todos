@@ -9,6 +9,16 @@ padding: 20px;
 width: 100%;
 height: auto;
 font-family: 'Poppins', sans-serif;
+background-color: white;
+
+
+@media (min-width: 764px) {
+    max-width: 800px;
+    box-shadow: 5px 5px 5px #efefef;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px; 
+    position: relative;
+}
 `
 
 export const TaskContainer = styled.div`
@@ -92,6 +102,13 @@ right: 20px;
 width: 50px;
 height: 50px;
 box-shadow: 2px 2px 10px 2px #D1C4F6;
+
+@media (min-width: 764px) {
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+}
+
 `
 
 

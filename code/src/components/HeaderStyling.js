@@ -14,6 +14,16 @@ border-bottom-left-radius: 20px;
 background-color: #7F2AEC;
 color: white;
 padding: 20px 0;
+
+@media (min-width: 764px) {
+    max-width: 800px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0; 
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px; 
+    margin-top: 20px;
+}
+
 `
 export const TitleContainer = styled.div`
 box-sizing: border-box;
