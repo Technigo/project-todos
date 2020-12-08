@@ -33,7 +33,8 @@ export const Task = ({ task }) => {
       <SmallText>Due: {moment(task.dueDate).format('MMM Do YYYY')}</SmallText>
         <RemoveButton 
           type="button" 
-          onClick={handleRemoveButtonClick}>
+          onClick={handleRemoveButtonClick}
+        >
             <Emoji role='img' aria-label='Bin'>🗑</Emoji>
         </RemoveButton>
       </Wrapper>

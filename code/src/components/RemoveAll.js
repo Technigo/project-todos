@@ -6,7 +6,7 @@ import { tasks } from 'reducers/tasks';
 import { Button, Emoji } from 'styles/GlobalStyles';
 
 export const RemoveAll = () => {
-  const items = useSelector((store) => store.tasks.items);
+  const items = useSelector(store => store.tasks.items);
   const enabled = items.length > 0;
 
   const dispatch = useDispatch();

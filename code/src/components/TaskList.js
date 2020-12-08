@@ -12,11 +12,11 @@ import { SmallText, Emoji } from 'styles/GlobalStyles';
 export const TaskList = () => {
 
   // Fetch the list of todos
-  const tasks = useSelector((store) => store.tasks);
-  const tasksTodo = tasks.items.filter((task) => task.complete === false)
+  const tasks = useSelector(store => store.tasks);
+  const tasksTodo = tasks.items.filter(task => task.complete === false)
 
   // Variable for getting the uncompleted tasks
-  const nonCompletedTasks = tasks.items.filter((task) => !task.complete);
+  const nonCompletedTasks = tasks.items.filter(task => !task.complete);
 
   return (
     <div>
