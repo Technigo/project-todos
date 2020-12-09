@@ -46,32 +46,20 @@ font-size: 15px;
 font-style: italic;
 `;
 
-// const EmptyState = styled.p`
-// `;
-
 export const List = () => {
     // Get list information for this list from the store
     const list = useSelector((store) => store.todos.list);
-    // const todosCompleted = list.filter((item) => item.id !== true)
-
-    //     if (todosCompleted.length === 0){
-    //         return (
-    //             <EmptyState>
-    //                 All tasks completed!
-    //             </EmptyState>
-    //         )
-    //     }
 
     return (
-       
-        <ListContainer> 
+
+        <ListContainer>
             <Header>Todo today
-                <DateText> 
+                <DateText>
                     ({moment().format("MMM Do YY")})
                 </DateText>
             </Header>
             <EmptyState />
-             <AddTodo />
+            <AddTodo />
             {list.items.map((item) => {
                 return (
                     <Item key={item.id} item={item} />
@@ -79,7 +67,7 @@ export const List = () => {
             })}
             <RemoveAll />
             <RemoveCompleted />
-           <TodoSummary />           
+            <TodoSummary />
         </ListContainer>
     );
 };

@@ -6,12 +6,11 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
 
     //  Handles the value change. Set the state whenever the value of the checked changes. Whatever the value of the checkbox is from the checkbox we're updating the state 
     const handleOnChange = (event) => {
-        console.log(checked)
         onChangeHandler();
         setChecked(event.target.checked);
     };
 
-    //Hidden checkbox but still accesible (attrs=attributes)
+    // Hidden checkbox but still accesible (attrs=attributes)
     const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
     border: 0;
     clip: rect(0 0 0 0);

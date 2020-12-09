@@ -21,19 +21,19 @@ cursor: pointer;
 
 export const RemoveAll = () => {
     const items = useSelector((store) => store.todos.list.items)
-    const enable = items.length > 0; 
-    
+    const enable = items.length > 0;
+
     const dispatch = useDispatch();
 
     const handleRemoveButton = () => {
         dispatch(todos.actions.removeAll())
-      }
+    }
 
     return (
-        <Button 
-        onClick={handleRemoveButton} 
-        disabled={!enable}>
-        Remove all
+        <Button
+            onClick={handleRemoveButton}
+            disabled={!enable}>
+            Remove all
         </Button>
     );
- };
+};

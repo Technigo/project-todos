@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { todos } from 'reducers/todos';
 import styled from 'styled-components';
 
@@ -20,19 +20,18 @@ cursor: pointer;
 `;
 
 export const RemoveCompleted = () => {
-    // const items = useSelector((store) => store.todos.list.items)
-    
+
     const dispatch = useDispatch();
 
     const handleRemoveButton = () => {
         dispatch(todos.actions.removeAllCompleted());
-      };
+    };
 
     return (
-        <Button 
-        onClick={handleRemoveButton} 
+        <Button
+            onClick={handleRemoveButton}
         >
-        Remove completed tasks
+            Remove completed tasks
         </Button>
     );
- };
+};

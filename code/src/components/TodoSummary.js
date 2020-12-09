@@ -16,13 +16,13 @@ color: #fceef5;
 export const TodoSummary = () => {
     //Get list information from the store, for this list 
     const list = useSelector(store => store.todos.list);
-    
+
     //Count the number of items that are done using filter 
     const numComplete = list.items.filter(item => item.complete).length;
-    
+
     return (
         <SummaryText>
-                {numComplete}/{list.items.length} tasks complete
+            {numComplete}/{list.items.length} tasks complete
         </SummaryText>
     );
 };

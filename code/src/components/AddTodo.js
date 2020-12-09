@@ -32,21 +32,16 @@ const TextInput = styled.input`
   }
   `;
 
-//   const DatePicker = styled.label`
-//   `;
-
 export const AddTodo = () => {
     //State for input from text box 
     const [task, setTask] = useState("");
     const [id, setId] = useState(1);
-    // const [dueDate, setDueDate]
     const todosArray = useSelector((store) => store.todos.list.items);
 
     const dispatch = useDispatch();
 
     // Create handle submit function to dispatch AddTodo
     const handleSubmit = (event) => {
-        console.log(task);
         event.preventDefault();
         //This is where we will dispatch the action to save the new todo item 
         dispatch(
@@ -56,7 +51,6 @@ export const AddTodo = () => {
                 complete: false,
             })
         );
-
 
         //Clear the text field
         setTask('');
@@ -76,10 +70,6 @@ export const AddTodo = () => {
                 onChange={event => onChangeEvent(event.target.value)}
                 placeholder="Add a new task..."
             />
-
-            {/* <label>
-                <DatePicker onChange={(date) => setDueDate(date)} value={dueDate}/>
-            </label> */}
 
             <Button
                 type="submit"
