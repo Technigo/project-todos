@@ -43,9 +43,9 @@ export const todos = createSlice({
                 .map(item => {
                     if (item.id === action.payload.id) {
                         item.checked = !item.checked
-                    }
+                    };
                     return item
-                })
+                });
         },
         addItemFunc: {
             reducer(state, action) {
@@ -67,17 +67,17 @@ export const todos = createSlice({
                 .map((item) => {
                     item.checked = true
                     return item
-                })
+                });
         },
         setAllUndone: (state, action) => {
             state.items = state.items
                 .map((item) => {
                     item.checked = false
                     return item
-                })
+                });
         },
         deleteAll: (state, action) => {
             state.items = []
         }
     }
-})
+});

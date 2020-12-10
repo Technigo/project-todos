@@ -29,6 +29,5 @@ export const CountItems = () => {
             <Complete>Complete Todos: {complete}</Complete>
             <Uncomplete>Uncomplete Todos: {uncomplete}</Uncomplete>
         </div>
-    )
-
-}
+    );
+};

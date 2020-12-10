@@ -1,8 +1,8 @@
 import React from "react";
-import { useDispatch } from "react-redux"
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import { todos } from "../reducers/todos"
+import { todos } from "../reducers/todos";
 
 const CheckboxContainer = styled.div`
     display: flex;
@@ -33,7 +33,7 @@ const RemoveItemButton = styled.button`
     &:hover {
         background-color:  #961111;
         box-shadow: none;
-  }
+  };
 `;
 
 const ItemContainer = styled.div`
@@ -50,11 +50,11 @@ export const Item = ({ item }) => {
 
     const handleDeleteItem = () => {
         dispatch(todos.actions.removeOne(item))
-    }
+    };
 
     const handleChandeItem = () => {
         dispatch(todos.actions.changeItem(item))
-    }
+    };
 
     return (
         <ItemContainer>
@@ -71,5 +71,5 @@ export const Item = ({ item }) => {
             <Date>Created: {item.date.format('MMMM Do YYYY, h:mm:ss a')}</Date>
             <RemoveItemButton onClick={handleDeleteItem}>Delete Item</RemoveItemButton>
         </ItemContainer>
-    )
-}
+    );
+};

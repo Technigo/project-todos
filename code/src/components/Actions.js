@@ -5,7 +5,7 @@ import styled from "styled-components";
 import { todos } from "../reducers/todos";
 import goodjob from "../assets/goodJob.png";
 
-const Buttons = styled.button`
+const Button = styled.button`
     padding: 8px;
     margin: 15px;
     font-size: 20px;
@@ -24,7 +24,7 @@ const Img = styled.img`
     width: 100%;
 `;
 
-const DeleteAllButton = styled(Buttons)`
+const DeleteAllButton = styled(Button)`
     background-color: #ff0000c9;
     &:hover {
         background-color:  #961111;
@@ -33,28 +33,28 @@ const DeleteAllButton = styled(Buttons)`
 
 export const Actions = () => {
     const dispatch = useDispatch();
-    const items = useSelector(store => store.todos.items)
+    const items = useSelector(store => store.todos.items);
 
     const handleAllDone = () => {
         dispatch(todos.actions.setAllDone());
-    }
+    };
 
     const handleAllUndone = () => {
         dispatch(todos.actions.setAllUndone());
-    }
+    };
 
     const handleDeleteAll = () => {
         dispatch(todos.actions.deleteAll());
-    }
+    };
 
     return (
         <>
-            <Buttons onClick={handleAllDone}>Mark as all done</Buttons>
+            <Button onClick={handleAllDone}>Mark as all done</Button>
             {!items.filter(item => !item.checked).length &&
                 <Img src={goodjob} alt="Good job smile" />
             }
-            <Buttons onClick={handleAllUndone}>Mark as all undone</Buttons>
+            <Button onClick={handleAllUndone}>Mark as all undone</Button>
             <DeleteAllButton onClick={handleDeleteAll}>Delete All items</DeleteAllButton>
         </>
-    )
-}
+    );
+};

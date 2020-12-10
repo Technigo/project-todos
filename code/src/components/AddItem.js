@@ -39,7 +39,7 @@ export const AddItem = () => {
         event.preventDefault();
         dispatch(todos.actions.addItemFunc(value));
         setValue("");
-    }
+    };
 
     return (
         <>
