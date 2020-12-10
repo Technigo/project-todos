@@ -13,9 +13,9 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
    <Provider store={store}>
-     <Header></Header>
-     <List></List>
-     <AddItem></AddItem>
+     <Header />
+     <List />
+     <AddItem />
    </Provider>
   )
 }

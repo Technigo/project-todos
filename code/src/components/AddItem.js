@@ -17,8 +17,9 @@ export const AddItem = () => {
       <Form onSubmit ={handleSubmit}>
         <label>
           <TextInput
-            placeholder="New todo"
             type="text"
+            placeholder="New todo"
+            required
             value={text}
             onChange={(event) => setText(event.target.value)}
           />

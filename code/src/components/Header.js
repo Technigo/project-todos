@@ -32,7 +32,7 @@ export const Header = () => {
       <Background background ='#14274e'>
         <SectionOne>
           <Text>Todo</Text> 
-            <DateText>{moment().format('MMM Do')} </DateText>
+            <DateText>{moment().format(' D/M | HH:mm')} </DateText>
         </SectionOne>    
           <SectionTwo>
             <TaskCount> {completedItems.length}/{items.length} Done</TaskCount>

@@ -7,9 +7,7 @@ export const Container = styled.div`
 `
 
 export const TodoContainer = styled.li`
-  display:flex;
-  flex-direction:row; 
-  justify-content: space-between;
+  list-style-type: none;
   padding:20px;
   margin:5px;
   font-size: 18px;
@@ -27,9 +25,24 @@ export const TodoContainer = styled.li`
     width:30%
   }
 `
+export const DateWrapper = styled.div`
+  display:flex;
+  justify-content: flex-start;
+`
+
+export const Content = styled.div`
+  display:flex;
+  flex-direction:row; 
+  justify-content: space-between;
+  align-items: center;
+`
 
 export const TodoText = styled.p `
+  display:flex;
   font-size: 16px;
+`
+export const DateText = styled.span `
+  font-size:10px;
 `
 
 export const ListActionButton = styled.button `
