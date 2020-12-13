@@ -8,7 +8,7 @@ const ButtonContainer = styled.div`
  display: flex;
  justify-content: center;
  margin: 10px;
- `;
+`;
 
 const ClearAllButton = styled.button`
  display: flex;
@@ -21,7 +21,7 @@ const ClearAllButton = styled.button`
  margin-top: 20px;
  text-align: center;
  width: 80%;
- `;
+`;
 
 export const ClearButton = () => {
     //Get correct item from store based on index
@@ -33,7 +33,7 @@ export const ClearButton = () => {
     
     return (
         <ButtonContainer>
-            <ClearAllButton onClick={clearAllTodos} role="img" aria-label="paper bin">Clear All 🗑</ClearAllButton>
+            <ClearAllButton onClick={clearAllTodos}>Clear All <span role="img" aria-label="paper bin">🗑</span></ClearAllButton>
         </ButtonContainer>
     )
 }

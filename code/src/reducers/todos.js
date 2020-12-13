@@ -9,7 +9,6 @@ const initialState = {
             { id: 3, text: 'Fork weekly assignment', isComplete: true },
             { id: 4, text: 'Create a todo app', isComplete: true },
             { id: 5, text: 'Celebrate with chocolate 🍫', isComplete: false }
-
         ]
     }
 }
