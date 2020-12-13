@@ -14,7 +14,7 @@ export const Header = () => {
 
     return (
         <HeaderContainer>
-            <h1>Todo List</h1>
+            <h1>Todo List <span role="img" aria-label="checkmark">✓</span></h1>
         </HeaderContainer>
     )
 }
