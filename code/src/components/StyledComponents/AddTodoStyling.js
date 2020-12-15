@@ -27,7 +27,6 @@ export const TodoText = styled.textarea`
 
 export const AddButton = styled.button`
   align-self: center;
-  background-color: #fcbfc1;
   border:none;
   font-size: 30px;
   color: #ffffff;
@@ -39,4 +38,6 @@ export const AddButton = styled.button`
     background-color: #b4c2d8;
     color: #ffffff;
   };
+  ${props =>
+    props.disabled ?` background: #b4c2d8 `:` background: #fcbfc1`};
 `;
