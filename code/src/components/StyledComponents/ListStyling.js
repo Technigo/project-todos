@@ -13,7 +13,8 @@ export const TaskListInputContainer = styled.div`
   width: 325px;
   border-radius: 16px;
   margin: 7%;
-  margin-top: 25%;
+  margin-top: 20%;
+  margin-bottom:50px;
   background-color:#ffffff;
   box-shadow: rgba(51,51,51,0.5) 0 0 10px;
   
