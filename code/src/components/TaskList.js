@@ -1,5 +1,5 @@
 import React from 'react';
-import { useSelector} from 'react-redux';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 import { AddTask } from './AddTask';
@@ -27,12 +27,12 @@ export const TaskList = () => {
           <Emoji>⭐ </Emoji>
           No todo's right now!
         </DoneText>
-      ): nonCompletedTasks.length === 0 && (
-          <DoneText>
-            <Emoji>💥 </Emoji>
-            Yeeay, no more tasks todo! All are done! 
-          </DoneText>
-        )}
+      ) : nonCompletedTasks.length === 0 && (
+        <DoneText>
+          <Emoji>💥 </Emoji>
+            Yeeay, no more tasks todo! All are done!
+        </DoneText>
+      )}
       <ListofTasks>
         {tasks.items.map((task) => (
           <Task key={task.id} task={task} />
@@ -43,7 +43,7 @@ export const TaskList = () => {
           <RemoveCompleted />
           <RemoveAll />
         </ButtonWrapper>
-        )}
+      )}
     </div>
   );
 };

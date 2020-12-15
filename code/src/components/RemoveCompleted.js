@@ -6,7 +6,7 @@ import { tasks } from 'reducers/tasks';
 import { Button, Emoji } from 'styles/GlobalStyles';
 
 export const RemoveCompleted = () => {
-  const items = useSelector((store) => store.tasks.items);
+  const items = useSelector((store) => store.tasks.items.filter(item => item.complete));
   const enabled = items.length > 0;
 
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ export const RemoveCompleted = () => {
 
   return (
     <Button onClick={handleRemoveCompletedButton} disabled={!enabled}>
-      <Emoji role="img" aria-label="Bin">🗑</Emoji> 
+      <Emoji role="img" aria-label="Bin">🗑</Emoji>
       Remove completed tasks!
     </Button>
   );

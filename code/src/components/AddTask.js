@@ -8,7 +8,7 @@ import 'index.css';
 import { tasks } from 'reducers/tasks';
 
 export const AddTask = () => {
-  const [text, addTask] = useState('');
+  const [text, addText] = useState('');
   const [category, setCategory] = useState('');
   const [dueDate, setDueDate] = useState();
 
@@ -16,8 +16,8 @@ export const AddTask = () => {
 
   // Categories
   const options = [
-    { value: 'School:', label: 'School'},
-    { value: 'Private:', label: 'Private'},
+    { value: 'School:', label: 'School' },
+    { value: 'Private:', label: 'Private' },
   ];
 
   const handleSelectChange = (selectedOption) => {
@@ -27,14 +27,14 @@ export const AddTask = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(tasks.actions.addTask({ text, category, dueDate }))
-    addTask('');
+    addText('');
     setCategory('');
     setDueDate('');
   };
 
   return (
     <FormWrapper onSubmit={handleSubmit}>
-      <CustomSelect 
+      <CustomSelect
         value={category.value}
         onChange={handleSelectChange}
         options={options}
@@ -43,18 +43,18 @@ export const AddTask = () => {
       <TaskInput
         type='text'
         value={text}
-        onChange={(event) => addTask(event.target.value)}
+        onChange={(event) => addText(event.target.value)}
         placeholder=' Add new task...'
       />
       <BottomWrapper>
-        <Label>Due:</Label>  
-        <Datepicker 
-          onChange={(date) => setDueDate(date)} 
+        <Label>Due:</Label>
+        <Datepicker
+          onChange={(date) => setDueDate(date)}
           selected={dueDate}
           value={dueDate}
-          placeholderText='Click to set a due date'  
+          placeholderText='Click to set a due date'
         />
-        <AddButton type='submit'>Add task 
+        <AddButton type='submit'>Add task
           <AddEmoji role="img" aria-label="Add emoji"> ➕</AddEmoji>
         </AddButton>
       </BottomWrapper>

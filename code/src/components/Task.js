@@ -23,19 +23,18 @@ export const Task = ({ task }) => {
   return (
     <List>
       <Wrapper>
-        <CustomCheckbox 
-          isChecked={task.complete} 
+        <CustomCheckbox
+          isChecked={task.complete}
           onChangeHandler={handleCheckboxClick}
         />
         <TaskText line={task.complete ? 'line-through' : null}>{task.category} {task.text}</TaskText>
       </Wrapper>
       <Wrapper>
-      <SmallText>Due: {moment(task.dueDate).format('MMM Do YYYY')}</SmallText>
-        <RemoveButton 
-          type="button" 
-          onClick={handleRemoveButtonClick}
-        >
-            <Emoji role='img' aria-label='Bin'>🗑</Emoji>
+        {task.dueDate && <SmallText>Due: {moment(task.dueDate).format('MMM Do YYYY')}</SmallText>}
+        <RemoveButton
+          type="button"
+          onClick={handleRemoveButtonClick}>
+          <Emoji role='img' aria-label='Bin'>🗑</Emoji>
         </RemoveButton>
       </Wrapper>
     </List>

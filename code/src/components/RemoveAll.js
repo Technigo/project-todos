@@ -17,7 +17,7 @@ export const RemoveAll = () => {
 
   return (
     <Button onClick={handleRemoveButton} disabled={!enabled}>
-      <Emoji role="img" aria-label="Bin">🗑</Emoji> 
+      <Emoji role="img" aria-label="Bin">🗑</Emoji>
       Remove all tasks!
     </Button>
   );
