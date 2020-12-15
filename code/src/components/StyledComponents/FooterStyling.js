@@ -11,9 +11,8 @@ export const FooterContainer = styled.footer`
   justify-content: center;
   flex-wrap: wrap;
   padding: 0px;
-
+  margin-top:50px;
 `
-
 export const FooterText = styled.p`
   width: 100%;
   text-align: center;
@@ -29,7 +28,6 @@ export const Links = styled.a`
   color: rgb(160, 160, 162);
   }
 `
-
 export const FooterImage = styled.img`
   width: 50px;
 `
