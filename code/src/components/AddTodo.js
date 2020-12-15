@@ -16,6 +16,7 @@ const Textarea = styled.textarea`
     margin-top: 20px;
     font:inherit;
     border: none;
+    resize: none;
 `
 const Button = styled.button`
     margin-top: 20px;
@@ -62,12 +63,11 @@ export const AddTodo = () => {
                     cols= '30'
                     placeholder= 'What to do next?'
                     onChange={e => setInputValue(e.target.value)}
-                    value={inputValue}
-                ></Textarea>
+                    value={inputValue} required
+                />
                 
-                <Button 
-                    type='submit'
-                    >Add todo
+                <Button type='submit'>
+                    Add todo
                 </Button>
             </Form>
     )

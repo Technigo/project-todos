@@ -5,15 +5,18 @@ export const todos = createSlice({
     initialState: {
         title: 'todo-list',
         items: [
-        { id: 1,
+        { 
+          id: 1,
           text: 'Watch videos on reducers', 
           complete: false },
 
-        { id: 2,
+        { 
+          id: 2,
           text: 'Fork weekly assignment', 
           complete: false },
 
-        { id: 3,
+        { 
+          id: 3,
           text: 'Create a todo app',
           complete: false },
       ]
@@ -31,7 +34,7 @@ export const todos = createSlice({
           state.items.push(itemInfo)
         },
 
-        clearAll: (state, action) => {
+        clearAll: (state) => {
           state.items = []
         },
 
@@ -40,7 +43,7 @@ export const todos = createSlice({
 
           //Toggle the value of complete, so it changes to true when you click the checkbox and false if you uncheck.
             if (foundItem) {
-          foundItem.complete = ! foundItem.complete          
+              foundItem.complete = ! foundItem.complete          
         }
       }
     }     
