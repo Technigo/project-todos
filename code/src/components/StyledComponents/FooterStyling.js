@@ -4,14 +4,16 @@ export const FooterContainer = styled.footer`
   position: fixed;
   width:100%;
   bottom: 0;
-  height: 150px;
   background-color: rgb(242,240,240, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   padding: 0px;
-  margin-top:50px;
+
+  @media (max-width: 768px) {
+    display:none;
+  }
 `
 export const FooterText = styled.p`
   width: 100%;
