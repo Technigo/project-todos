@@ -35,7 +35,7 @@ export const AddButton = styled.button`
   margin-top: 17px;
   cursor:pointer;
   &:hover {
-    background-color: #b4c2d8;
+    background-color:#c593c5;
     color: #ffffff;
   };
   ${props =>
