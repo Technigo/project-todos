@@ -10,11 +10,9 @@ export const List = () => {
 
   return (
       <ListWrapper>
-        {items.map((item) => {
-            return(
+        {items.map((item) => 
               <Item key={item.id} item={item} />  
-            )
-        })}
+            )}
       </ListWrapper>
   )
 }

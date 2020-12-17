@@ -12,7 +12,6 @@ import moment from 'moment'
 
 export const Item = ({ item }) => {
   const dispatch = useDispatch()
-  const removeBtn = true
 
   const handleCheckboxClick = () => {
     dispatch(tasks.actions.toggleDone({ id: item.id}))
@@ -23,7 +22,7 @@ export const Item = ({ item }) => {
       <Checkbox done={item.done} onChangeHandler={handleCheckboxClick}/>
       <Text stroke={item.done ? true : ''}>{item.text}<Span>Created: {moment(item.created).fromNow()}</Span></Text> {/* I get an error when the stroke is set to true, but don't know how to solve it */}
       <Button
-        removebtn={removeBtn}
+        removebtn={true}
         onClick={() =>
           dispatch(tasks.actions.removeItem({ id: item.id }))
         }

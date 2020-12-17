@@ -9,7 +9,6 @@ import { UserInputBox, InputText } from '../library/Containers'
 
 export const UserInput = () => {
   const [task, setTask] = useState('')
-  const addBtn = true
 
   const dispatch = useDispatch()
 
@@ -36,7 +35,7 @@ export const UserInput = () => {
           onChange={(event) => setTask(event.target.value)}
           value={task}
         ></InputText>
-        <Button addBtn={addBtn} type='submit'>
+        <Button addBtn={true} type='submit'>
           Add Task
         </Button>
       </UserInputBox>

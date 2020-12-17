@@ -9,8 +9,6 @@ import { Button } from '../library/Button'
 import { Main, Wrapper, OuterWrapper } from '../library/Containers'
 
 export const Home = () => {
-  const clearBtn = true
-
   const dispatch = useDispatch()
 
   return (
@@ -21,7 +19,7 @@ export const Home = () => {
         <Wrapper>
           <List />
           <Button
-            clearBtn={clearBtn}
+            clearBtn={true}
             onClick={() => dispatch(tasks.actions.removeAll())}
           >
             Clear List

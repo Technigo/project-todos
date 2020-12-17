@@ -32,7 +32,7 @@ export const Checkbox = ({ done, onChangeHandler }) => {
         <CustomizedCheckbox
           checked={checked}
           onChange={handleOnChange}
-        ></CustomizedCheckbox>
+        />
       </label>
     </div>
   )
