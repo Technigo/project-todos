@@ -16,9 +16,9 @@ export const DeleteAllButton = styled(DeleteButton)`
 export const AddButton = styled.button`
   font-size: 40px;
   margin-left: 5px;
-  color: black;
   background: white;
   border: none;
   justify-content: center;
   align-items: center;
+  color: ${props => (props.disabled ? 'grey' : 'black')};
 `
