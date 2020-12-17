@@ -11,9 +11,7 @@ export const DeleteAll = () => {
 
   const onRemoveClick = () => {
     dispatch(todos.actions.removeAll())
-    dispatch(
-      todos.actions.showList()
-    )
+    dispatch(todos.actions.showList())
   }
 
   return (

@@ -11,7 +11,6 @@ import { TopContainer, MainContainer } from '../styledComponents/containers'
 
 export const Home = () => {
   const showList = useSelector((store) => store.todos.showList)
-  console.log(showList)
 
   return(
     <MainContainer>

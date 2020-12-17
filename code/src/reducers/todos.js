@@ -31,10 +31,11 @@ export const todos = createSlice({
       }
     },
     removeAll: (state) => {
+      console.log(state)
       state.list.todoItems.splice(0, state.list.todoItems.length)
     },
-    showList: (state) => {
-      state.showList = true
+    showList: (state, action) => {
+      state.showList = action.payload
     }
   }
 })

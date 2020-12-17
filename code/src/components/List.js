@@ -1,18 +1,18 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
+import { todos } from '../reducers/todos'
 import { Item } from './Item.js'
 import { ListContainer } from '../styledComponents/list'
-import { EmptyList } from './EmptyList.js'
 
 export const List = () => {
+  const dispatch = useDispatch()
   const todoItems = useSelector((store) => store.todos.list.todoItems)
 
   if (todoItems.length < 1) {
-    return (
-      <EmptyList />
-    )
-  } else {
+    dispatch(todos.actions.showList(false))
+  }
+   
     return (
       <ListContainer>
         {todoItems.map((item) => (
@@ -20,5 +20,5 @@ export const List = () => {
         ))}
       </ListContainer>
     )
-  }
+  
 }

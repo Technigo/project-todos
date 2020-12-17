@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 
 import { todos } from '../reducers/todos'
 import { DeleteAll } from './DeleteAll'
@@ -9,6 +9,8 @@ import { AddButton } from '../styledComponents/buttons'
 
 export const Input = () => {
   const [inputValue, setInputValue] = useState('')
+
+  const showList = useSelector((store) => store.todos.showList)
 
   const dispatch = useDispatch()
 
@@ -22,7 +24,7 @@ export const Input = () => {
       })
     )
     dispatch(
-      todos.actions.showList()
+      todos.actions.showList(true)
     )
     setInputValue('')
   }
@@ -34,10 +36,10 @@ export const Input = () => {
           ADD TO-DO
           <Wrapper>
             <InputField
-            type='text'
-            onChange={event => setInputValue(event.target.value)}
-            value={inputValue}
-            placeholder="Walk the dog"
+              type='text'
+              onChange={event => setInputValue(event.target.value)}
+              value={inputValue}
+              placeholder="Walk the dog"
             />
             <AddButton
               type='submit'
@@ -47,7 +49,7 @@ export const Input = () => {
             +
             </AddButton>
           </Wrapper>
-          <DeleteAll />
+          {showList && <DeleteAll />}
         </Label>
       </Form>
     </FormContainer>
