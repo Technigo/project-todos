@@ -17,9 +17,7 @@ export const TodoSummary = (props) => {
 
   const items = useSelector((store) => store.todos.items);
 
-  // this should count the number of items that are done using filter, did not get it to work yet,
   const todosleft = items.filter((item) => item.isCompleted).length;
-  // now I just showing todos left.
 
   return (
     <Container>
@@ -30,8 +28,7 @@ export const TodoSummary = (props) => {
         </Subtitle>
       </Header>
       <Subtitle color="#888" margin="5px 0px 11px 0px">
-        {" "}
-        {items.length - todosleft} happy todos left!{" "}
+        You have done {todosleft} out of {items.length} todos!
       </Subtitle>
     </Container>
   );

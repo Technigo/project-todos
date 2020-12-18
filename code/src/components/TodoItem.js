@@ -34,16 +34,20 @@ export const TodoItem = ({ id, name, isCompleted }) => {
     dispatch(todos.actions.removeItem(id));
   };
 
+  const onIsCompletedChange = () => {
+    console.log(todos)
+    dispatch(todos.actions.toggleComplete(id));
+  };
+
   return (
     <ItemList>
-      <CustomCheckbox checked={isCompleted} />
+      <CustomCheckbox checked={isCompleted} onCheckboxClick={onIsCompletedChange} />
       <TodoInputText>{name}</TodoInputText>
       <Button onClick={onTodoDelete}>Done it</Button>
     </ItemList>
   );
+ 
 };
 
-//   Might use this later, hade to mark it out before deployment.
-// const onIsCompletedChange = () => {
-//     dispatch(todos.actions.toggleComplete(id));
-//   };
+
+

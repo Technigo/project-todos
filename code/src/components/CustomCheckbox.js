@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 
 // normal functional comp
-export const CustomCheckbox = () => {
-  const [checked, setChecked] = useState(false);
+export const CustomCheckbox = (props) => {
+  
 
   //  this is a functional component in a component, custom made checkbox
   const Checkbox = ({ className, checked, ...props }) => (
@@ -16,10 +16,6 @@ export const CustomCheckbox = () => {
       </StyledCheckbox>
     </CheckboxContainer>
   );
-
-  const handleOnChange = (event) => {
-    setChecked(event.target.checked);
-  };
 
   const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
     border: 0;
@@ -62,7 +58,7 @@ export const CustomCheckbox = () => {
   return (
     <div>
       <label>
-        <Checkbox checked={checked} onChange={handleOnChange}></Checkbox>
+        <Checkbox checked={props.checked} onChange={props.onCheckboxClick}/>
       </label>
     </div>
   );

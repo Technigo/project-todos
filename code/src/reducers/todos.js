@@ -9,7 +9,7 @@ export const todos = createSlice({
   name: "todos",
   initialState,
   reducers: {
-     addItem: {
+    addItem: {
       reducer(state, action) {
         state.items = [...state.items, action.payload];
       },
@@ -31,6 +31,7 @@ export const todos = createSlice({
       state.items = filteredItems;
     },
     toggleComplete: (state, action) => {
+    
       const updatedArray = state.items.map((item) => {
         if (item.id === action.payload) {
           return {
