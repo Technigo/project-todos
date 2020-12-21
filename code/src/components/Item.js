@@ -28,13 +28,22 @@ const TextContainer = styled.p`
 
 export const Item = ({ item }) => {
   const dispatch = useDispatch()
-  const [check, setCheck] = useState(false)
-  
+  const [check, setCheck] = useState(item.checked)
+  const toggleChecked = () => {
+    setCheck(prev => !prev)
+    dispatch(
+      tasks.actions.changeChecked({
+        id: item.id, 
+        checked: !check
+      })
+    )
+  }
+
   return (
     <StyledCard>
      <TextContainer>{item.text}</TextContainer> 
       <div>
-        <Checkbox type="checkbox" id="button" name="button" value="button" checked={check} onChange={() =>setCheck(prev => !prev)}/>
+        <Checkbox type="checkbox" id={`${item.id}`} name={`${item.id}`} value={`${item.id}`} checked={check} onChange={() => { toggleChecked() }}/>
         <Box>
           <Delete type="button" onClick={() => { dispatch(tasks.actions.removeItem(item)) }} />
         </Box>

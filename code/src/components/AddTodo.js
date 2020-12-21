@@ -36,6 +36,7 @@ export const AddTodo = () => {
       tasks.actions.addItem({
         id, 
         text,
+        checked: false
       })
     )
     setId(id + Math.floor(Math.random()*1024))
@@ -44,7 +45,7 @@ export const AddTodo = () => {
 
   return (
     <Form onSubmit={handleSubmit}>
-      <StyledTextField type="text" value={text} placeholder="Insert task here.." onChange={(event) => setText(event.target.value)} variant="outlined" />
+      <StyledTextField type="text" value={text} placeholder="Insert task here.." onChange={(event) => setText(event.target.value)} variant="outlined" required />
       <StyledButton type="submit" value="Submit">ADD</StyledButton>
     </Form>
   )
