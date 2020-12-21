@@ -35,7 +35,7 @@ export const AddTask = () => {
           value={text}>
         </InputArea>
         <AddButton
-          type="submit" disabled={text.length < 2} ><span role="img" aria-label="Add">➕</span>
+          type="submit" disabled={text.length<2} ><span role="img" aria-label="Add">➕</span>
         </AddButton>
       </Form>
     </>
