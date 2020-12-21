@@ -8,8 +8,7 @@ import { Task } from './Task'
 export const TaskList = () => {
 
   const items = useSelector((store) => store.tasks.items)
-  const date = moment().format("dddd MMM Do")
-
+  
   return (
     <>
       {items.map((item) => (
