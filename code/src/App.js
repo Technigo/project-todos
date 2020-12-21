@@ -7,8 +7,7 @@ import { tasks } from 'reducers/tasks'
 import { TaskList } from 'components/TaskList'
 import { AddTask } from 'components/AddTask'
 import { Header } from 'components/Header'
-import { RemoveTasks } from 'components/RemoveTasks'
-
+import { RemoveAndCount } from 'components/RemoveAndCount'
 import backgroundImg from 'assets/background.jpg'
 
 const reducer = combineReducers({ tasks: tasks.reducer })
@@ -19,10 +18,10 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Wrapper>
-        <Header />
+        <Header /> 
         <AddTask />
         <TaskList />
-        <RemoveTasks />
+        <RemoveAndCount />
       </Wrapper>
     </Provider>
   )
@@ -31,8 +30,8 @@ export const App = () => {
 const Wrapper = styled.main`
   background-image: url(${backgroundImg});
   background-size: cover;
-  width:600px;
-  height:800px;
-  margin-top: 40px;
+  width:100vw;
+  height:100vh;
   position: relative; 
+  overflow: auto; 
 `

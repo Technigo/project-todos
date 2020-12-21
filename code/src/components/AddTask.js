@@ -1,14 +1,13 @@
 import React, { useState } from 'react'
-import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 
 import { tasks } from 'reducers/tasks'
+import { InputArea, Form, AddButton } from "../styling/styleAddTask"
 
 export const AddTask = () => {
   const dispatch = useDispatch()
   //State for input from textbox
-  const [value, setValue] = useState("")
-
+  const [text, setText] = useState("")
 
   //Handle submit function to dispatch task
   const handleSubmit = (event) => {
@@ -17,13 +16,13 @@ export const AddTask = () => {
     //Dispatch the action to save the new task.
     dispatch(
       tasks.actions.addTask({
-        text: value,
+        text: text,
         done: false
       })
     )
 
     //Clear the text field
-    setValue("")
+    setText("")
   }
 
   return (
@@ -32,31 +31,14 @@ export const AddTask = () => {
         <InputArea
           type="text"
           placeholder="Add task"
-          onChange={event => setValue(event.target.value)}
-          value={value}>
+          onChange={event => setText(event.target.value)}
+          value={text}>
         </InputArea>
         <AddButton
-          type="submit"><span role="img" aria-label="Add">➕</span></AddButton>
+          type="submit" disabled={text.length < 2} ><span role="img" aria-label="Add">➕</span>
+        </AddButton>
       </Form>
     </>
   )
 }
 
-const Form = styled.form`
-  display: flex;
-  justify-content: center;
-  padding-top: 20px;
-`
-const InputArea = styled.input`
-  height: 30px;
-`
-const AddButton = styled.button`
-  background-color: #e6e6e6; 
-  padding: 5px;
-  border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  align-items: center;
-  justify-content: center;
-  margin-left: 10px;
-`
