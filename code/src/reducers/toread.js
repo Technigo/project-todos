@@ -34,7 +34,7 @@ export const toread = createSlice({
   reducers: {
     addBook: (store, action) => {
       const newBook = {
-        id: Math.max(...store.books.map((book) => book.id)) + 1,
+        id: Math.max(...store.books.map(book => book.id)) + 1,
         title: action.payload,
         isRead: false,
       };
@@ -45,13 +45,13 @@ export const toread = createSlice({
 
     deleteBook: (store, action) => {
       const bookId = action.payload;
-      const filteredList = store.books.filter((book) => book.id !== bookId);
+      const filteredList = store.books.filter(book => book.id !== bookId);
 
       store.books = filteredList;
     },
 
     toggleIsRead: (store, action) => {
-      const updatedStatus = store.books.map((book) => {
+      const updatedStatus = store.books.map(book => {
         if (book.id === action.payload) {
           return {
             ...book,

@@ -14,12 +14,12 @@ const ListContainer = styled.ul`
 `;
 
 export const BookList = () => {
-  const books = useSelector((store) => store.toread.books); //what we are using => how we are using it
+  const books = useSelector(store => store.toread.books);
 
   return (
     <ListContainer>
-      {books.map((book, index) => (
-        <div key={index}>
+      {books.map(book => (
+        <div key={book.id}>
           <HandleBook book={book} />
         </div>
       ))}
