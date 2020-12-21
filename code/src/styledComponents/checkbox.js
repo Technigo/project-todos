@@ -37,7 +37,7 @@ export const StyledCheckbox = styled.div`
     visibility: ${(props) => (props.checked ? 'visible' : 'hidden')}
   }
   ${HiddenCheckBox}:focus + & {
-    outline: 2px dotted #293a80;
+    outline: 2px dotted #f39422;
   }
 `
 export const CheckboxContainer = styled.div`

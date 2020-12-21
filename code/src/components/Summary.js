@@ -7,8 +7,14 @@ export const Summary = () => {
   const list = useSelector((store) => store.todos.list.todoItems)
 
   const numOfCompleted = list.filter(item => item.done).length
-   
-  return (
-    <Text>{numOfCompleted}/{list.length} done</Text>
-  )
+  
+  if(numOfCompleted === list.length) {
+    return (
+      <Text>All done!</Text>
+    )
+  } else {
+    return (
+      <Text>{numOfCompleted}/{list.length} done</Text>
+    )
+  }
 }

@@ -39,7 +39,6 @@ export const Input = () => {
               type='text'
               onChange={event => setInputValue(event.target.value)}
               value={inputValue}
-              placeholder="new to-do"
             />
             <AddButton
               type='submit'

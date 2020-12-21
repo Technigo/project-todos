@@ -28,6 +28,7 @@ export const AddButton = styled.button`
   align-items: center;
   color: ${props => (props.disabled ? 'grey' : '#010038')};
   background: #293a80;
+  outline: none;
   cursor: pointer;
   :hover {
     transform: scale(1.2, 1.2);
