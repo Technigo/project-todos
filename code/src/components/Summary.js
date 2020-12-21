@@ -8,8 +8,7 @@ export const Summary = () => {
 
   const numOfCompleted = list.filter(item => item.done).length
    
-
   return (
-  <Text>{numOfCompleted}/{list.length}done</Text>
+    <Text>{numOfCompleted}/{list.length} done</Text>
   )
 }

@@ -39,7 +39,7 @@ export const Input = () => {
               type='text'
               onChange={event => setInputValue(event.target.value)}
               value={inputValue}
-              placeholder="Walk the dog"
+              placeholder="new to-do"
             />
             <AddButton
               type='submit'

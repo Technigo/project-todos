@@ -25,16 +25,19 @@ export const StyledCheckbox = styled.div`
   display: inline-block;
   width: 20px;
   height: 20px;
-  /*changes styling depending on if box is checked or not */
-  background: ${props => (props.checked ? 'black' : 'lightgrey')};
-  border: ${props => (props.checked ? 'none' : 'black 0.5px solid')};
   border-radius: 3px;
+  cursor: pointer;
+  background: ${props => (props.checked ? '#f39422' : 'lightgrey')};
+  border: ${props => (props.checked ? '#537ec5 0.5px solid' : '#010038 0.5px solid')};
   transition: all 150ms;
+  :active {
+    background: ${props => (props.checked ? 'transparent' : 'whitesmoke')};
+  }
   ${Icon} { /* displays depending on if the state variable is checked or not*/
     visibility: ${(props) => (props.checked ? 'visible' : 'hidden')}
   }
   ${HiddenCheckBox}:focus + & {
-    outline: 2px dotted black;
+    outline: 2px dotted #293a80;
   }
 `
 export const CheckboxContainer = styled.div`
