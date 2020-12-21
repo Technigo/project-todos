@@ -6,26 +6,26 @@ const SummaryContainer = styled.section`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  padding: 40px 0;
-  background: #3C4A6B;
   margin: 0;
+  padding: 40px 0;
+  background: #3c4a6b;
 `;
 
 const BookSummary = styled.h2`
-  padding: 15px 0;
-  background: #3C4A6B;
-  color: #FDFFF3;
-  text-transform: uppercase;
   margin: 0;
+  padding: 15px 0;
   font-size: 22px;
+  color: #fdfff3;
+  text-transform: uppercase;
+  background: #3c4a6b;
 `;
 
 const Footer = styled.section`
   display: flex;
   justify-content: center;
-  background: #E6E6E6;
   padding: 60px 0;
-  color: #3C4A6B;
+  color: #3c4a6b;
+  background: #e6e6e6;
 `;
 
 export const Summary = () => {

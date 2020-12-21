@@ -8,9 +8,9 @@ const ListContainer = styled.ul`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: #2A344A;
-  padding: 20px 0;
   margin: 0;
+  padding: 20px 0;
+  background: #2a344a;
 `;
 
 export const BookList = () => {

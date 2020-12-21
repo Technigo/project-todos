@@ -10,7 +10,7 @@ const HandleBookContainer = styled.li`
   align-items: center;
   padding: 8px;
   font-size: 24px;
-  color: #FDFFF3;
+  color: #fdfff3;
 `;
 
 const BookTitle = styled.p`
@@ -20,10 +20,10 @@ const BookTitle = styled.p`
 
 const DeleteButton = styled.button`
   margin-left: auto;
-  border: none;
-  color: #FDFFF3;
+  color: #fdfff3;
   font-size: 16px;
   background: transparent;
+  border: none;
   cursor: pointer;
 
   &:hover {

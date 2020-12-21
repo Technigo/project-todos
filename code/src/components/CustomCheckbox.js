@@ -2,44 +2,48 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const HiddenCheckbox = styled.input.attrs({ type: "checkbox" })`
+  position: absolute;
+  overflow: hidden;
+  white-space: nowrap;
   border: 0;
   clip: rect(0 0 0 0);
   clippath: inset(50%);
   height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
-  white-space: nowrap;
   width: 1px;
+  margin: -1px;
+  padding: 0;
 `;
+
 const Icon = styled.svg`
   fill: none;
-  stroke: #FDFFF3;
+  stroke: #fdfff3;
   stroke-width: 3px;
 `;
+
 const StyledCheckbox = styled.div`
   display: inline-block;
   width: 20px;
   height: 20px;
+  padding: 2px;
   background: ${(props) => (props.checked ? "#3C4A6B" : "#FDFFF3")};
   border-radius: 25px;
   transition: all 150ms;
-  padding: 2px;
   cursor: pointer;
 
   &:hover {
-    background-color: #3C4A6B;
+    background: #3c4a6b;
   }
 
   ${Icon} {
     visibility: ${(props) => (props.checked ? "visibile" : "hidden")};
   }
 `;
+
 const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
 `;
+
 export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
   const [checked, setChecked] = useState(isChecked);
 
