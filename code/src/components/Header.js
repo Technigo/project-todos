@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { todos } from '../reducers/Todos.js'
+// import { todos } from '../reducers/Todos.js'
 import './Header.css'
 
 export const Header = () => {
