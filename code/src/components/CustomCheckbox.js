@@ -35,7 +35,7 @@ const StyledCheckbox = styled.div`
   }
 
   ${Icon} {
-    visibility: ${props => (props.checked ? "visibile" : "hidden")};
+    visibility: ${props => (props.checked ? "visible" : "hidden")};
   }
 `;
 
