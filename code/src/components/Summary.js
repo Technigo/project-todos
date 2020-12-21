@@ -8,7 +8,7 @@ export const Summary = () => {
 
   const numOfCompleted = list.filter(item => item.done).length
   
-  if(numOfCompleted === list.length) {
+  if(numOfCompleted === list.length && numOfCompleted > 0) {
     return (
       <Text>All done!</Text>
     )

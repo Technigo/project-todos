@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import swal from '@sweetalert/with-react'
 
 import { todos } from '../reducers/todos'
 import { Wrapper } from '../styledComponents/containers'
@@ -10,8 +11,17 @@ export const DeleteAll = () => {
   const dispatch = useDispatch()
 
   const onRemoveClick = () => {
-    dispatch(todos.actions.removeAll())
-    dispatch(todos.actions.showList())
+    swal ({
+      title:'Deleting all of your to-dos!',
+      text:'Are you sure?',
+      buttons: ['No, thanks!', 'Yes, very sure!']
+    })
+    .then((willRemove) => {
+      if (willRemove) {
+        dispatch(todos.actions.removeAll())
+        dispatch(todos.actions.showList())
+      }
+    }) 
   }
 
   return (
