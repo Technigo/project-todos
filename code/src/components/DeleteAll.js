@@ -14,7 +14,8 @@ export const DeleteAll = () => {
     swal ({
       title:'Deleting all of your to-dos!',
       text:'Are you sure?',
-      buttons: ['No, thanks!', 'Yes, very sure!']
+      buttons: ['No, thanks!', 'Yes, very sure!'],
+      className: 'swal-box'
     })
     .then((willRemove) => {
       if (willRemove) {

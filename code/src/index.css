@@ -12,3 +12,30 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.swal-box {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Space Grotesk',sans-serif;
+  border-radius: 0;
+  margin-bottom: 250px;
+}
+
+.swal-box button {
+  color: white;
+  font-family: 'Space Grotesk',sans-serif;
+  background: #293a80;
+  border-radius: 0;
+}
+
+.swal-box button:focus {
+  background: #f39422;
+}
+
+@media (min-width: 667px) {
+  .swal-box {
+    width: 30%;
+  }
+}
