@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import styled from 'styled-components/macro'
 import { useDispatch } from 'react-redux'
 import Card from '@material-ui/core/Card'
@@ -30,21 +30,20 @@ export const Item = ({ item }) => {
   const dispatch = useDispatch()
   const [check, setCheck] = useState(item.checked)
 
-  const toggleChecked = () => {
-    setCheck(prev => !prev)
+  useEffect(() => {
     dispatch(
       tasks.actions.changeChecked({
         id: item.id, 
-        checked: !check
+        checked: check
       })
     )
-  }
+}, [check])
 
   return (
     <StyledCard>
      <TextContainer>{item.text}</TextContainer> 
       <div>
-        <Checkbox type="checkbox" checked={item.checked} onChange={() => { toggleChecked() }}/>
+        <Checkbox type="checkbox" checked={item.checked} onChange={() => { setCheck(prev => !prev) }}/>
         <Box>
           <Delete type="button" onClick={() => { dispatch(tasks.actions.removeItem(item)) }} />
         </Box>
