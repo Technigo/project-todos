@@ -9,13 +9,13 @@ import { createSlice } from '@reduxjs/toolkit';
 
     export const todos = createSlice({
     name: "todos",
-    initialState: initialState, //kan ta bort initialstate till initialstate, 
+    initialState: initialState,
     
     reducers: {
         addTodo: (state, action) => {
             state.list.items.push(action.payload);
         },
-        markCompleted: (state, action) => {
+        toggleComplete: (state, action) => {
             const completedTask = state.list.items.find(item => item.id === action.payload);
             if (completedTask) {
                 completedTask.complete = !completedTask.complete;

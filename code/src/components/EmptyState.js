@@ -3,16 +3,15 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 const EmptyStateText = styled.p`
-font-size: 13px;
-font-weight: bold;
-color: #fceef5;
-margin-top: -15px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #fceef5;
+    margin-top: -15px;
 
-@media (min-width: 667px){
-    font-size: 16px;
-  }
+    @media (min-width: 667px){
+        font-size: 16px;
+    }
 `;
-
 
 export const EmptyState = () => {
     const list = useSelector((store) => store.todos.list);

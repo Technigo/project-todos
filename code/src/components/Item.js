@@ -6,34 +6,34 @@ import { useDispatch } from 'react-redux';
 import { Button } from 'Lib/Button';
 
 const ItemContainer = styled.div`
-padding: 8px;
-margin: 12px;
-color: #3f3f3f;
-background-color: #ffb6d3;
-width: 230px;
-border-radius: 25px;
-display: flex;
-align-items: center;
-justify-content: space-between;
+    padding: 8px;
+    margin: 12px;
+    color: #3f3f3f;
+    background-color: #ffb6d3;
+    width: 230px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-@media (min-width: 667px){
-    width: 350px;
-  }
+    @media (min-width: 667px){
+        width: 350px;
+    }
 `;
 
 const DescriptionContainer = styled.div`
-display: flex;
-align-items: center;
-margin-left: 5px;
+    display: flex;
+    align-items: center;
+    margin-left: 5px;
 `;
 
 const Description = styled.p`
-font-size: 13px;
-font-weight: bold;
+    font-size: 13px;
+    font-weight: bold;
 
-@media (min-width: 667px){
-    font-size: 16px;
-  }
+    @media (min-width: 667px){
+        font-size: 16px;
+    }
 `;
 
 export const Item = ({ item }) => {
@@ -43,7 +43,7 @@ export const Item = ({ item }) => {
 
     // Create the onchange handler for handling the done status
     const handleCheckboxClick = () => {
-        dispatch(todos.actions.markCompleted(item.id));
+        dispatch(todos.actions.toggleComplete(item.id));
     };
 
     // Create the onRemoveClicked handler

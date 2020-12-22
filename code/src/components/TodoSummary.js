@@ -3,14 +3,14 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 const SummaryText = styled.h2`
-font-family: 'Arial';
-align-self: center;
-font-size: 24px;
-color: #fceef5;
+    font-family: 'Arial';
+    align-self: center;
+    font-size: 24px;
+    color: #fceef5;
 
-@media (min-width: 667px) {
-    font-size: 28px;
-}
+    @media (min-width: 667px) {
+        font-size: 28px;
+    }
 `;
 
 export const TodoSummary = () => {

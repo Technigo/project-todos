@@ -5,31 +5,31 @@ import { todos } from 'reducers/todos';
 import { Button } from 'Lib/Button';
 
 const Form = styled.form`
-display: flex;
-align-items: center;
-justify-content: space-between;
-width: 230px;
-margin: 12px;
-padding: 8px;
-background: #ffb6d3;
-border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 230px;
+    margin: 12px;
+    padding: 8px;
+    background: #ffb6d3;
+    border-radius: 25px;
 
-@media (min-width: 667px){
-    width: 350px;
-  }
+    @media (min-width: 667px){
+        width: 350px;
+    }
 `;
 
 const TextInput = styled.input`
-  padding: 8px;
-  border: none;
-  border-radius: 15px;
-  background: #ffb6d3;
-  font-size: 13px;
-  color: #000;
+    padding: 8px;
+    border: none;
+    border-radius: 15px;
+    background: #ffb6d3;
+    font-size: 13px;
+    color: #000;
 
-  @media (min-width: 667px){
-    font-size: 16px;
-  }
+    @media (min-width: 667px){
+        font-size: 16px;
+    }
   `;
 
 export const AddTodo = () => {
@@ -69,6 +69,7 @@ export const AddTodo = () => {
                 value={task}
                 onChange={event => onChangeEvent(event.target.value)}
                 placeholder="Add a new task..."
+                required
             />
 
             <Button
