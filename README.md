@@ -3,11 +3,11 @@ This project is done as a part of Technigo boot camp. The task for this week was
 
 ## Tech
 
-JavaScript
-React
-Redux
-Styled Components
-JSX
+- JavaScript
+- React
+- Redux
+- Styled Components
+- JSX
 
 ## View it live
 https://projecttodos.netlify.app/
