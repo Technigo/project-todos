@@ -19,8 +19,8 @@ export const List = () => {
   return (
     <ListContainer>
       {items.map((item, index) => (  
-        <Item key={index} item={item} />  
+        <Item key={items.id} item={item} />  
       ))}
     </ListContainer>
-  );
-};
+  )
+}
