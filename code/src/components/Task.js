@@ -1,10 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-
 import { tasks } from 'reducers/tasks'
 import { CheckBox } from './CheckBox'
 import trashCan from '../assets/trashcan.png'
-import { DeleteImg, TaskContainer, TaskText } from "../styling/styleTask"
+import { DeleteImg, TaskContainer, TaskText, TaskWrapper } from "../styling/styleTask"
 
 export const Task = ({ item }) => {
   const dispatch = useDispatch()
@@ -18,8 +17,8 @@ export const Task = ({ item }) => {
   }
 
   return (
-    <>
-      <TaskContainer>
+    <TaskWrapper>
+       <TaskContainer>
         <CheckBox
           isChecked={item.complete}
           onChangeHandler={handleCheckboxClick}
@@ -30,10 +29,10 @@ export const Task = ({ item }) => {
           onClick={() => handleDelete(item.id)}>
         </DeleteImg>
       </TaskContainer>
-    </>
+    </TaskWrapper>
   )
 }
-
+ 
 
 
 
