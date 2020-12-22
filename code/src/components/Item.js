@@ -44,7 +44,7 @@ export const Item = ({ item }) => {
     <StyledCard>
      <TextContainer>{item.text}</TextContainer> 
       <div>
-        <Checkbox type="checkbox" id={`${item.id}`} name={`${item.id}`} value={`${item.id}`} checked={item.checked} onChange={() => { toggleChecked() }}/>
+        <Checkbox type="checkbox" checked={item.checked} onChange={() => { toggleChecked() }}/>
         <Box>
           <Delete type="button" onClick={() => { dispatch(tasks.actions.removeItem(item)) }} />
         </Box>

@@ -18,8 +18,8 @@ export const List = () => {
 
   return (
     <ListContainer>
-      {items.map((item, index) => (  
-        <Item key={items.id} item={item} />  
+      {items.map((item) => (  
+        <Item key={item.id} item={item} />  
       ))}
     </ListContainer>
   )
