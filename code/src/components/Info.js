@@ -7,16 +7,16 @@ import { todos } from 'reducers/todos';
 import { Button } from 'styling/Button';
 
 const Name = styled.span `
-color:#b83b5e;
+  color:#b83b5e;
 `
 const Time = styled.div`
-color:#b83b5e;
-font-weight:600;
-margin-left:110px;
-margin-top:50px;
+  color:#b83b5e;
+  font-weight:600;
+  margin-left:110px;
+  margin-top:50px;
 `
 const FormName = styled.form`
-text-align:center;
+  text-align:center;
 `;
 const Input = styled.input`
   padding: 5px 0;
@@ -40,10 +40,10 @@ const Text1 = styled.p`
   color: #3f3f3f;
 `;
 const Wrapper = styled.div`
-display:flex;
-flex-direction:row;
-align-items:center;
-justify-content:center;
+  display:flex;
+  flex-direction:row;
+  align-items:center;
+  justify-content:center;
 `
 const Text2 = styled.p`
   margin-right:20px;
@@ -71,6 +71,7 @@ export const Info = () => {
   }
 
   const date = new Date();
+  const invalidName = (value) => value.replace(/\s/g, "").length === 0;
   return (
     <>
     <Time>
@@ -86,6 +87,9 @@ export const Info = () => {
       <Button type="submit"
               className="form-button"
               value={"Post"} 
+              disabled={
+                name.length < 1 || invalidName(name)
+              }
       >Post
       </Button>
     </FormName>

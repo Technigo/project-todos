@@ -30,7 +30,7 @@ const ListCompleteButton = styled.button`
   background-color:#e5c5b5;
 `;
 const Text = styled.text`
-align-self: center;
+  align-self: center;
 `;
 
 export const Item = ({ id,text,isComplete }) => {

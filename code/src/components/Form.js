@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { Button } from 'styling/Button';
 
 const FormAdd = styled.form`
-text-align:center;
+  text-align:center;
 `;
 
 const Input = styled.input`
@@ -25,15 +25,15 @@ const Input = styled.input`
 `;
 
 export const Form = () => {
-const [value, setValue] = useState("")
+  const [value, setValue] = useState("")
   const dispatch = useDispatch()
   const onSubmitTask = event => {
     event.preventDefault()
     dispatch(todos.actions.addItem(value))
     setValue("")
   }
-
-return(
+  const emptyTask = (value) => value.replace(/\s/g, "").length === 0;
+  return(
     <>
       <FormAdd className="add-task" onSubmit={onSubmitTask}>
         <Input type="text"  
@@ -45,10 +45,13 @@ return(
         <Button type="submit"
           className="form-button"
           value={"Add"} 
+          disabled={
+            value.length < 3 || emptyTask(value)
+          }
         >Add
         </Button>
       </FormAdd>
     </>
-)
+  )
 }
 

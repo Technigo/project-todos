@@ -9,7 +9,19 @@ import { RemoveAll } from './components/RemoveAll';
 import { todos } from './reducers/todos';
 
 const reducer = combineReducers({ todos: todos.reducer });
-const store = configureStore({ reducer });
+
+const persistedState = localStorage.getItem("reduxState")
+? JSON.parse(localStorage.getItem("reduxState"))
+: {};
+
+const store = configureStore({
+reducer,
+preloadedState: persistedState,
+});
+
+store.subscribe(() => {
+localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+}); 
 
 export const App = () => {
     return (
@@ -21,4 +33,3 @@ export const App = () => {
         </Provider>
     );
 };
-
