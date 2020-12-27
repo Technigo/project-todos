@@ -4,17 +4,20 @@ export const DeleteImg = styled.img`
     width: 30px;
     height: 30px;
     margin-left:0;
+    margin-right: 10px;
    `
 export const TaskContainer = styled.section`
-  width: 30%; 
+  width: 20%; 
   display: flex;  
   justify-content: flex-start;  
    margin-left: 30px;
   margin-top: 20px;
   word-wrap: break-word;
+  @media (max-width: 617px) {
+    width: 50%; 
+  }
   @media (max-width: 415px) {
     width: 90%; 
-    height: 20px;
   }
  `
 
@@ -32,5 +35,5 @@ export const TaskWrapper=styled.div`
  display: flex;
  justify-content: center;
  align-items: center;
- width: 100vw;
+ width: 100%;
  `
