@@ -23,27 +23,35 @@ export const Todo = (props) => {
 
   return (
     <ListItem>
-      <ItemLineWrapper> 
+      <ItemLineWrapper>
         <ItemTextWrapper>
           <label>
             <CustomCheckbox
-              isChecked={complete} 
-              onChangeHandler={handleCheckboxClick}/>
+              isChecked={complete}
+              onChangeHandler={handleCheckboxClick} />
           </label>
           <TextLine checked={complete}>{text}</TextLine>
         </ItemTextWrapper>
-        <Button 
-          type='button' 
-          onClick={handleRemoveButtonClick} 
+        <Button
+          type='button'
+          onClick={handleRemoveButtonClick}
           background='#d3947a'
         >
           Remove
         </Button>
       </ItemLineWrapper>
       {/* Note to self: Implement functionality so that text turns red if duedate is passed */}
-      <ItemLineWrapper> 
-        <TimeLine> <TimeIcon src="../assets/clock.svg" /> {moment(startDate).fromNow()}</TimeLine>
-      {' '}{dueDate && <TimeLine> <TimeIcon src="../assets/hourglass.svg" /> {moment(dueDate).format('MMM Do YYYY')}</TimeLine>}
+      <ItemLineWrapper>
+        <TimeLine>
+          {/* Comment in code-review: The startDate property does not exist on the todos so this will always say "a few seconds ago" */}
+          <TimeIcon src="../assets/clock.svg" />
+          {moment(startDate).fromNow()} 
+        </TimeLine>
+        {' '}{dueDate &&
+          <TimeLine>
+            <TimeIcon src="../assets/hourglass.svg" />
+            {moment(dueDate).format('MMM Do YYYY')}
+          </TimeLine>}
       </ItemLineWrapper>
     </ListItem>
   )

@@ -20,9 +20,6 @@ export const Title = styled.h1`
   text-align: center;
   margin: 1vh;
   font-family: 'Pacifico', cursive; 
-  // font-family: 'Cookie', cursive;
-  // font-family: 'Berkshire Swash', cursive;
-  //font-family: 'Julius Sans One', sans-serif;
 `
 export const Subtitle = styled.h2`
   color: ${(props) => props.color || '#fff'};

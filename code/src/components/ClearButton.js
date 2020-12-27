@@ -12,7 +12,7 @@ export const ClearButton = () => {
       dispatch(todos.actions.removeAll())
     }}
     >
-      REMOVE ALL
+      Remove all
     </Button>
   )
 }

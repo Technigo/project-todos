@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import DatePicker from 'react-date-picker';
+import DatePicker from 'react-date-picker'
 import styled from 'styled-components'
 
 import { todos } from 'reducers/todos'
@@ -19,7 +19,13 @@ export const AddTodoForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault()
-    dispatch(todos.actions.addItem({ text, category, complete, dueDate: dueDate.getTime() }))
+    dispatch(
+      todos.actions.addItem({ 
+        text, 
+        category, 
+        complete, 
+        dueDate: dueDate.getTime() 
+      }))
     setText('') // clears input
     setCategory('') 
     setDueDate(new Date()) 

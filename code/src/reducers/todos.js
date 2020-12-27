@@ -1,20 +1,30 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+//Maks lecture week 16 wednesday @1.32
+//const initialTodos = localStorage.getItem('todos')
+//? JSON.parse(localStorage.getItem('todos'))
+//: {}
+//And also update initial state so that items: initialTodos
+//see in App.js Vans way to implement local storage
+
 export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-    { id: 1, category: 'Study', text: 'Watch video on actions & reducers', complete: true, dueDate: Date.now() },
-    { id: 2, category: 'Study', text: 'Follow redux codealong', complete: true, dueDate: Date.now() },
-    { id: 3, category: 'Study', text: 'Fork weekly assignment', complete: true, dueDate: Date.now() },
-    { id: 4, category: 'Study', text: 'Create a todo app', complete: false, dueDate: Date.now() },
+      {
+        id: 1,
+        category: 'Study',
+        text: 'Watch video on actions & reducers',
+        complete: true,
+        dueDate: Date.now()
+      }
     ]
   },
   //The functions that handles the data to put in the store:
   reducers: {
     addItem: (store, action) => {
       const { text, category, complete, dueDate } = action.payload
-      store.items = [ ...store.items, { id: Date.now(), text, category, complete, dueDate }]
+      store.items = [...store.items, { id: Date.now(), text, category, complete, dueDate }]
     },
     removeTodo: (store, action) => {
       //filter item, remove it from the items array
