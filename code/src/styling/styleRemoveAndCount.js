@@ -8,7 +8,7 @@ export const FooterWrapper = styled.section`
   justify-content: center;   
   margin-top: 40px;  
 
-  @media (max-width: 535px) {
+  @media (max-width: 571px) {
     flex-direction: column; 
   }
  `
