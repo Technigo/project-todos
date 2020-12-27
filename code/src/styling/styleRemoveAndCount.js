@@ -2,21 +2,20 @@ import styled from 'styled-components'
 
 export const FooterWrapper = styled.section`
   width: 100%;
-  position: absolute;
   align-items: center;
-  bottom: 10px;
   display: flex;
   align-items: center;
   justify-content: center;   
-  margin-bottom: 40px;
+  margin-top: 40px;  
 
   @media (max-width: 535px) {
-    flex-direction: column;   
+    flex-direction: column; 
   }
  `
 export const ButtonWrapper = styled.div`
   display: flex;
-`
+  bottom: 0;
+ `
 export const DeleteAllButton = styled.button`
   width: 100px;
   height: 40px;
