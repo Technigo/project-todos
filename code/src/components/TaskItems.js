@@ -6,7 +6,7 @@ import moment from "moment"
 
 import './TaskItems.css'
 
-export const TaskItems = (props) => {
+export const TaskItems = props => {
   const dispatch = useDispatch()
 
   const handleCheckboxClick = () => {

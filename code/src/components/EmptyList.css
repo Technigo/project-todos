@@ -1,9 +1,6 @@
 .gif-wrapper {
   display: grid;
-  grid-template-columns: 1fr;
-  grid-gap: 0px 0px;
   justify-items: center;
-  align-items: center;
 }
 
 .empty-list-gif {

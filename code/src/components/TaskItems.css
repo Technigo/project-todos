@@ -61,7 +61,6 @@ input:checked + .checkmark::after {
   display:flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: flex-end;
   padding: 10px 0 0 0;
 }
 
@@ -71,6 +70,7 @@ input:checked + .checkmark::after {
   border: none;
   font-size: 1.5em;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .task-added-date {

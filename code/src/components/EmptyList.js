@@ -13,5 +13,5 @@ export const EmptyList = () => {
       <h2>There is nothing left to do!</h2>
       <p className='sub-title'>Take a break or add another to-do!</p>
     </div>
-  );
-};
+  )
+}
