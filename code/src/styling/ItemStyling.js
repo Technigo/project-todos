@@ -21,4 +21,5 @@ export const RemoveItemButton = styled.button`
     border: none;
     padding: 0;
     cursor: pointer;
+    background-color: pink;
 `;

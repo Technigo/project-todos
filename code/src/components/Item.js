@@ -10,12 +10,12 @@ const Item = ({ id, item, isComplete }) => {
     const dispatch = useDispatch();
 
     const onCheckBoxClick = () => {  
-        dispatch(todos.actions.changeItem({id}))
-    }
+        dispatch(todos.actions.changeCompleteStatus({id}));
+    };
 
     const onItemDelete = () => {
         dispatch(todos.actions.removeItem(id));
-    }
+    };
 
     return (
         <ItemList>

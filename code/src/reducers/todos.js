@@ -30,7 +30,7 @@ const todos = createSlice({
             state.items = filteredList;
 
         },
-        changeItem: (state, action) => {
+        changeCompleteStatus: (state, action) => {
             state.items = state.items.map((item => {
                 if (item.id === action.payload.id) {
                     item.isComplete = !item.isComplete;

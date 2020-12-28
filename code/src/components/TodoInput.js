@@ -15,18 +15,18 @@ const TodoInput = () => {
     //This is where we dispatch the action to save the new todo item
         dispatch(todos.actions.addItem(inputValue));
         setInputValue('');
-    }
+    };
 
     return (
         <InputContainer>
             <ItemInput
-                type="text"
+                type="text" required
                 placeholder="Add task"
                 value={inputValue}
                 onChange={e => setInputValue(e.target.value)}
             >
             </ItemInput>
-            <AddItemButton onClick={onTodoInputAdd}>
+            <AddItemButton onClick={onTodoInputAdd} disabled={inputValue.length < 5}>
                 ✚
             </AddItemButton> 
         </InputContainer>

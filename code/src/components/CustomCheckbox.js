@@ -8,7 +8,7 @@ const CustomCheckBox = ({ isChecked, onChangeHandler }) => {
     const OnChangeChecked = e => {  
         onChangeHandler();
         setChecked(e.target.checked);
-    }
+    };
 
     const Checkbox = ({ className, checked, ...props }) => (
         <CheckBoxContainer>
