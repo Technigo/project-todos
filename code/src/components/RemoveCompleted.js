@@ -7,6 +7,7 @@ import { Button, Emoji } from 'styles/GlobalStyles';
 
 export const RemoveCompleted = () => {
   const items = useSelector((store) => store.tasks.items.filter(item => item.complete));
+  // Button only enabled if any tasks are completed
   const enabled = items.length > 0;
 
   const dispatch = useDispatch();

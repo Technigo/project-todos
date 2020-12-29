@@ -16,7 +16,7 @@ export const Footer = () => {
   );
 };
 
-const FooterWrapper = styled.div`
+const FooterWrapper = styled.footer`
   text-align: center;
   position: relative;
   bottom: 0;
