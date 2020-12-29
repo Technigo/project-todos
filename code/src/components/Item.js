@@ -8,7 +8,7 @@ const Item = ({ id, name, isComplete}) => {
     const dispatch = useDispatch();
 
     const itemDelete = () => {
-        dispatch(todos.actions.removeItem(id))
+        dispatch(todos.actions.removeItem(id));
     }
     const onIsCompletedChange = () => {
         dispatch(todos.actions.toggleComplete(id));
@@ -24,4 +24,4 @@ const Item = ({ id, name, isComplete}) => {
         </TodoItem>
     );
 };
-    export default Item;
+export default Item;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 
 import { todos } from '../reducers/todos';
 import { InputContainer,InputNrOfTask, Input, InputButton, InputHeading, SetInputContainer } from '../styled-components/AddTodo';
@@ -10,7 +10,7 @@ const AddTodo = () => {
     const items = useSelector(store => store.todos.items);
 
     const OnItemAdd = () =>{
-        dispatch(todos.actions.addItem(value))
+        dispatch(todos.actions.addItem(value));
     }
     
     return (
@@ -27,6 +27,6 @@ const AddTodo = () => {
         <InputButton onClick={OnItemAdd} type="submit" disabled={value.length < 1}> + </InputButton>
         </InputContainer>
     )
-}
+};
 
 export default AddTodo;

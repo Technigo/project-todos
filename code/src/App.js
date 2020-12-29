@@ -19,4 +19,4 @@ export const App = () => {
       </MainContainer>
     </Provider>
   )
-}
+};
