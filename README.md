@@ -1,6 +1,6 @@
 # Project Todos
 
-The assignment was to build a todo app to add tasks, list tasks and toggle whether a task is done or not. 
+The assignment was to build a todo app to which the user could add tasks, list tasks and toggle whether a task is done or not. 
 Required techniques were Redux and React.
 
 ## The problem
