@@ -5,14 +5,14 @@ import styled from 'styled-components'
 import { Todo } from 'components/Todo'
 import { Select } from 'library/Select'
 import { ClearButton } from 'components/ClearButton'
+import { CompleteAllButton } from 'components/CompleteAllButton'
 import logo from '../assets/bored-cat.gif'
-// It is a bit confusing that I use both items and todos below (need to look at this when I have time).
+
 export const TodoList = () => {
   const [category, setCategory] = useState('')
-  const items = useSelector((store) => store.todos.items)
 
-  const todos = useSelector((store) => {
-    if (!category) return store.todos.items //if no category, show all items in list
+  const items = useSelector((store) => {
+    if (!category) return store.todos.items //if no category chosen, show all items in list
     else return store.todos.items.filter(item => item.category === category) // else filter the list on category choosen
   })
   
@@ -23,11 +23,12 @@ export const TodoList = () => {
       </ListWrapper>
     )
   }
+
   return (
     <ListWrapper>
-      {/* dropdown to filter by categories: */}
-      {/* Note to self: How can I make it so that only choosen categories show? */}
-      {items.length > 0 && <label>
+      {/* Note to self: How to make it so that only choosen categories show? */}
+      {items.length > 0 && 
+      <label>
         <Select
           value={category}
           onChange={(event) => setCategory(event.target.value)}
@@ -42,12 +43,16 @@ export const TodoList = () => {
         </Select>
       </label>}
       <ToDoList>
-        {todos.map((item) => (
+        {items.map((item) => (
           <Todo key={item.id} item={item} />
         )).reverse()}
       </ToDoList>
       {items.length > 0 &&
-      <ClearButton />} 
+      <>
+      <ClearButton />
+      <CompleteAllButton />
+      </>
+      } 
     </ListWrapper>
   )
 }

@@ -12,7 +12,6 @@ export const Todo = (props) => {
   const { id, text, dueDate, complete, startDate } = props.item;
   const dispatch = useDispatch()
 
-  //checkbox click dispatches a toggle completed action to Redux:
   const handleCheckboxClick = () => {
     dispatch(todos.actions.toggleCompleted(id))
   }
@@ -27,8 +26,9 @@ export const Todo = (props) => {
         <ItemTextWrapper>
           <label>
             <CustomCheckbox
-              isChecked={complete}
-              onChangeHandler={handleCheckboxClick} />
+              checked={complete ? true : ''}
+              onChange={handleCheckboxClick} 
+              />
           </label>
           <TextLine checked={complete}>{text}</TextLine>
         </ItemTextWrapper>
@@ -43,7 +43,7 @@ export const Todo = (props) => {
       {/* Note to self: Implement functionality so that text turns red if duedate is passed */}
       <ItemLineWrapper>
         <TimeLine>
-          {/* Comment in code-review: The startDate property does not exist on the todos so this will always say "a few seconds ago" */}
+          {/* To fix: Comment in code-review: The startDate property does not exist on the todos so this will always say "a few seconds ago" */}
           <TimeIcon src="../assets/clock.svg" />
           {moment(startDate).fromNow()} 
         </TimeLine>

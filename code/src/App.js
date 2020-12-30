@@ -1,29 +1,30 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit'
-//import createStore above from toolkit when implementing local storage
+import { combineReducers, createStore } from '@reduxjs/toolkit'
+// removed configureStore when implemented localStorage
+//imported createStore above from toolkit when implementing local storage
 import { todos } from './reducers/todos'
 import { TodoSummary } from 'components/TodoSummary'
 import { AddTodoForm } from 'components/AddTodoForm'
 import { TodoList } from 'components/TodoList'
 
-//Comment out old store code below when implementing local storage (comment out the store, keep the reducer!)
+
 const reducer = combineReducers({
   todos: todos.reducer
 })
-
+//Commented out old store code below when implementing local storage
 //const store = configureStore({ reducer })
 
-// Local storage, Vans lecture last term 22/4 @51 mins:
+// Local storage, lecture 22/4 @51 mins:
 // New store code:
 // 1. Retrieve the local storage and use it as our initial state
 const persistedStateJSON = localStorage.getItem('todos_reduxState')
-console.log(`persistedStateJSON: ${persistedStateJSON}`)
+//console.log(`persistedStateJSON: ${persistedStateJSON}`)
 let persistedState = {}
 if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON)
 }
-console.log(`persistedState: ${JSON.stringify(persistedState)}`)
+//console.log(`persistedState: ${JSON.stringify(persistedState)}`)
   // 2. Create the store using the initial state
   const store = createStore(
     reducer,
@@ -37,8 +38,7 @@ console.log(`persistedState: ${JSON.stringify(persistedState)}`)
   store.subscribe(() => {
     localStorage.setItem('todos_reduxState', JSON.stringify(store.getState()))
   })
-  // If we want to clear what has been stored in Local Storage we can print localStorage.clear() in the console and hit enter.
-
+  // To clear: localStorage.clear() in console.
 
   export const App = () => {
     return (

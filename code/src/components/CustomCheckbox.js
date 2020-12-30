@@ -1,15 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components'
-
-export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
-  const [checked, setChecked] = useState(isChecked)
-  
-  const handleOnChange = event => {
-    onChangeHandler()
-    setChecked(event.target.checked)
-  }
     
-  const Checkbox = ({ className, checked, ...props }) => (
+  export const CustomCheckbox = ({ className, checked, ...props }) => (
     <CheckboxContainer>
       <HiddenCheckbox checked={checked} {...props}></HiddenCheckbox>
       <StyledCheckbox checked={checked}>
@@ -19,15 +11,6 @@ export const CustomCheckbox = ({ isChecked, onChangeHandler }) => {
       </StyledCheckbox>
     </CheckboxContainer>
   )
-
-  return (
-     <>
-      <label>
-        <Checkbox checked={checked} onChange={handleOnChange}></Checkbox>
-      </label>
-    </>
-  )
-}
 
 // This CSS will result in a hidden checkbox that is accessible 
 //by a screenreader. It is rendered off-screen.

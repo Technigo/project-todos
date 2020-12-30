@@ -1,25 +1,23 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-//Maks lecture week 16 wednesday @1.32
-//const initialTodos = localStorage.getItem('todos')
-//? JSON.parse(localStorage.getItem('todos'))
-//: {}
-//And also update initial state so that items: initialTodos
-//see in App.js Vans way to implement local storage
+// lecture 1 week 15 @24mins on creating initial state.
+// I need to change the initial state to nothing & add startdate
+const initialState = {
+  items: [
+    {
+      id: 1,
+      category: 'Study',
+      text: 'Tweak the start date on todo in todo-app',
+      complete: false,
+      dueDate: Date.now()
+
+    }
+  ]
+}
 
 export const todos = createSlice({
   name: 'todos',
-  initialState: {
-    items: [
-      {
-        id: 1,
-        category: 'Study',
-        text: 'Watch video on actions & reducers',
-        complete: true,
-        dueDate: Date.now()
-      }
-    ]
-  },
+  initialState,
   //The functions that handles the data to put in the store:
   reducers: {
     addItem: (store, action) => {
@@ -40,6 +38,12 @@ export const todos = createSlice({
       if (foundItem) {
         foundItem.complete = !foundItem.complete
       }
+    },
+    setAllComplete: (store, action) => {
+      store.items.map((item) => (item.complete = true) === action.payload)
+    },
+    setAllIncomplete: (store, action) => {
+      store.items.map((item) => (item.complete = false) === action.payload)
     }
   }
 })
