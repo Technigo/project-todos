@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 import { todos } from "../reducers/todos";
 
@@ -81,5 +81,6 @@ const TextInput = styled.input`
   @media (min-width: 1024px) {
     width: 250px;
     height: 38px;
+    font-size: 18px;
   }
 `;
