@@ -1,28 +1,27 @@
 import React from 'react';
-import styled from 'styled-components';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 
-const Text = styled.div`
-    color: red;
-    font-size: 50px;
-`
-
+const useStyles = makeStyles({
+    toolbar: {
+        textAlign: "center",
+        height: 80
+    },
+    heading: {
+        margin: "auto"
+    }
+});
 const Header = () => {
+    const classes = useStyles();
     return (
-
-        <Container>
-            <Text>Stuff 2 Do</Text>
-        </Container>
+        <AppBar position="static">
+            <Toolbar className={classes.toolbar}>
+                <Typography className={classes.heading} variant="h5" align="center">Todo App</Typography>
+            </Toolbar>
+        </AppBar>
     )
 }
-
-const Container = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin: 10px
-`
-
-
 
 export default Header;

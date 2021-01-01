@@ -1,78 +1,62 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-// import moment from 'moment';
 import styled from 'styled-components';
-// import DatePicker from 'react-datepicker';
-
-
+import Button from '@material-ui/core/Button';
+import TextField from '@material-ui/core/TextField';
+import { makeStyles } from '@material-ui/core/styles';
 
 import { todos } from '../reducers/todos';
 
-const ButtonAdd = styled.button`
-    align-items: center;
-    padding: 10px;
-    border-radius: 50%;
-    border: 1px solid red;
-    margin: 15px;
-    background-color: #fff;
-`;
+const useStyles = makeStyles((theme) => ({
+    root: {
+      '& .MuiTextField-root': {
+        margin: theme.spacing(1),
+        width: '25ch',
+        display: 'flex, column',
+      },
+    },
+  }));
 
-const Input = styled.input`
-  height: 50px;
-  min-width: 70%;
-  font-size: 24px;
-  border: 1px solid red;
-  border-radius: 5px;
-  padding: 10px;
-`;
+const Container = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: left;
+align-items: center;
+padding: 0.5em;
+margin-top: 100;
+`
 
 const AddTodo = () => {
     const [value, setValue] = useState('');
     const dispatch = useDispatch();
 
+    const classes = useStyles();
+
     const onTodoAdd = () => {
         setValue('');
-        dispatch(todos.actions.addItem(value));
-       
+        dispatch(todos.actions.addItem(value));  
     }
 
     return (
         <Container>
-            <div>
-            <Input
-                type="text"
-                placeholder="What's next?"
+            <form className={classes.root} noValidate autoComplete="off">
+            <TextField 
+                id="standard-required" 
+                label="Figma and chill" 
+                defaultValue=""
                 value={value}
-                required
                 onChange={e => setValue(e.target.value)}
             />
-            <ButtonAdd 
-                type="button"
-                onClick={onTodoAdd}>
-                <span role="img" aria-labelledby="plus sign emoji">
-                    ➕
-                </span> 
-            </ButtonAdd>
-                </div>
+            <Button 
+            variant='outlined' 
+            color='primary'
+            onClick={onTodoAdd}>
+                Add
+            </Button>
+            </form>
         </Container>
     );
 };
 
 export default AddTodo;
-
-const Container = styled.form`
-    width: 80%;
-    height: 500px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    margin-left: 10px;
-    color: #fff
-`;
-
-
-
-
-
 

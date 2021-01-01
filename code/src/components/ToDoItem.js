@@ -1,7 +1,11 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
-
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import CheckCircleOutlineIcon from '@material-ui/icons/CheckCircleOutline';
+import AnnouncementIcon from '@material-ui/icons/Announcement';
+import TextField from '@material-ui/core/TextField';
 
 import { todos } from '../reducers/todos';
 
@@ -9,65 +13,41 @@ const Container = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    align-items: center;
     padding: 10px;
 `
 
-const Text = styled.div`
-  /* height: auto; */
-  /* width: 80%; */
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* justify-content: space-around; */
-  font-size: 20px;
-  border: 1px solid red;
-  border-radius: 5px;
-  padding: 10px;
-  background-color: white;
-  color: black;
-`;
-
-const Button = styled.button`
-    padding: 10px;
-    border-radius: 50%;
-    border: 1px solid red;
-    margin: 5px;
-    background-color: #fff;
-`
-
-// const Input = styled.div`
-//     color: #fff;
-//     border: 1px solid red;
-
-// `
-
-const ToDoItem = ({ id, text, done }) => {
-    
+const ToDoItem = ({ id, title, createdAt, isCompleted }) => {
     const dispatch = useDispatch();
-    console.log(`Text: ${text}`)
 
     const onTodoDelete = () => {
         dispatch(todos.actions.removeItem(id));
-    };
+    }
 
     const onIsCompletedChange = () => {
-        dispatch(todos.actions.checkCompleted(id));
+        dispatch(todos.actions.toggleComplete(id));
     };
-
     return (
         <Container>
-                        <Text>
-                            {text}
-                            </Text>
-                        <Button type="button" onClick={onIsCompletedChange}>
-                        {(done) ? "☒" : "☑"}
-                        </Button>
-
-                        <Button type="button" onClick={onTodoDelete}>
-                        ⓧ
-                        </Button>
-
+            <TextField 
+                id="filled-read-only-input"
+                label={createdAt}
+                defaultValue={title}
+                variant='filled'
+                color='secondary'
+                >
+             </TextField >
+            <IconButton 
+            aria-label="buttons" 
+            onClick={onIsCompletedChange}>
+                {isCompleted ? <CheckCircleOutlineIcon  fontSize="large" color="primary"/> : <AnnouncementIcon fontSize="large" color="secondary"/> }
+            <DeleteIcon 
+            fontSize="large" 
+            onClick={onTodoDelete} />
+            </IconButton>
         </Container>
     );
 };
 
 export default ToDoItem;
+
