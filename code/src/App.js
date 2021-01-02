@@ -6,7 +6,7 @@ import styled from 'styled-components';
 import { todos } from './reducers/todos';
 import Header from './components/Header';
 import ToDoList from './components/ToDoList';
-import AddTodo from './components/AddTodo';
+import Form from './components/AddTodo';
 
 
 const reducer = combineReducers({ todos: todos.reducer });
@@ -17,7 +17,7 @@ export const App = () => {
     <Container>
          <Header />
       <Provider store={store}>
-          <AddTodo />
+          <Form />
           <ToDoList />
       </Provider>
       </Container>

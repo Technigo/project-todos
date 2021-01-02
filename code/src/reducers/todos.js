@@ -18,11 +18,18 @@ export const todos = createSlice({
                 id: uuid(),
                 title: action.payload,
                 createdAt: moment(),
-                isCompleted: false        
+                isCompleted: false,       
             }
 
             const newItemsList = [...store.items, newItem];  
                 store.items = newItemsList
+        },
+
+        editItem: (store, action) => {
+            const filteredItems = store.items
+            .filter(item => item.id !== action.payload)
+
+            store.items = filteredItems
         },
 
         removeItem: (store, action) => {

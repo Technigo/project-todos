@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
@@ -15,48 +15,79 @@ const useStyles = makeStyles((theme) => ({
         display: 'flex, column',
       },
     },
+    button: {
+        marginTop: 16
+    }
   }));
 
-const Container = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: left;
-align-items: center;
-padding: 0.5em;
-margin-top: 100;
-`
+// const Container = styled.div`
+// display: flex;
+// flex-direction: column;
+// justify-content: left;
+// align-items: center;
+// padding: 0.5em;
+// margin-top: 100;
+// `
 
-const AddTodo = () => {
+const Form = ({ edit }) => {
     const [value, setValue] = useState('');
+    const [error, setError] = useState('');
+    const [title, setTitle] = useState('');
     const dispatch = useDispatch();
 
     const classes = useStyles();
+    
+    const handleChange = (e) => {
+        const title = e.target.value;
 
-    const onTodoAdd = () => {
-        setValue('');
-        dispatch(todos.actions.addItem(value));  
+        setTitle(title);
+        if(title.length === 0) {
+            setError("Please enter title");
+        } else {
+            setError("");
+        }
+    }
+
+    const editItem = () => {
+        dispatch(todos.actions.editItem(title))
+    }
+
+    const addItem = () => {
+        dispatch(todos.actions.addItem(title));
+    }
+
+    const handleClick = () => {
+        if(title.length === 0){
+            setError("Please enter title");
+            return;
+        }
+        if (edit) {
+            editItem();
+        } else {
+            addItem();
+        }
     }
 
     return (
-        <Container>
+        <>
             <form className={classes.root} noValidate autoComplete="off">
             <TextField 
                 id="standard-required" 
-                label="Figma and chill" 
-                defaultValue=""
-                value={value}
-                onChange={e => setValue(e.target.value)}
+                title={value}
+                onChange={handleChange}
+                error={!!error} helperText={error} id="outlined-basic" fullWidth label="Figma and chill" multiline variant="outlined" 
             />
             <Button 
-            variant='outlined' 
+            className={classes.button}
+            variant='contained' 
             color='primary'
-            onClick={onTodoAdd}>
-                Add
+            onClick={handleClick}>
+            {edit ? "Edit" : "Add"}
             </Button>
             </form>
-        </Container>
+        </>
     );
 };
 
-export default AddTodo;
+export default Form;
 
