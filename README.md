@@ -1,13 +1,10 @@
-# Project Todos
 
-Replace this readme with your own information about your project.
+https://grocerys-list.netlify.app
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
-## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I made a todo-app with the theme of food. An app to write down what to buy when grocery shopping. 
+In the header it says "Grocerys" and then "0 items". The zero will change according to how many items are listed on the list.
+Then you can categorize your item. The thing I did not solve was the "show by category". When you have filled up your list your should be able to click on, veggies, and only the veggies on the list would show. Now one could answer my question about that in slack so I´m trying to get the answer somewhere els. Then when you have bought everything you can push the "Remove all" button, or delete the items one by one.
 
-## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+I would love to be more creative in this project but I wanted to get things right first, and things I wanted to do I could not because of lake of knowledge of it. 
