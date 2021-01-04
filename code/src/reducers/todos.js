@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import uuid from 'react-uuid';
-import moment from 'moment';
+// import moment from 'moment';
 
 const initialState = {
     items: [
@@ -17,7 +17,7 @@ export const todos = createSlice({
             const newItem = { 
                 id: uuid(),
                 title: action.payload,
-                createdAt: moment(),
+                createdAt: Date.now(),
                 isCompleted: false,       
             }
 
@@ -57,5 +57,7 @@ export const todos = createSlice({
 
             store.items = updatedArray;
         },
+       
     },
+    
 });

@@ -4,6 +4,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
+
 const useStyles = makeStyles({
     toolbar: {
         textAlign: "center",
@@ -13,6 +14,10 @@ const useStyles = makeStyles({
         margin: "auto"
     }
 });
+
+
+
+
 const Header = () => {
     const classes = useStyles();
     return (

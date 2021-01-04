@@ -30,13 +30,13 @@ const ToDoItem = ({ id, title, createdAt, isCompleted }) => {
     return (
         <Container>
             <TextField 
-                id="filled-read-only-input"
-                label={createdAt}
+                id={createdAt}
+                label= 'to do'
                 defaultValue={title}
                 variant='filled'
                 color='secondary'
                 >
-             </TextField >
+            </TextField >
             <IconButton 
             aria-label="buttons" 
             onClick={onIsCompletedChange}>

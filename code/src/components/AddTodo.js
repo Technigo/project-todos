@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 // import styled from 'styled-components';
+import Container from '@material-ui/core/Container';
 import Button from '@material-ui/core/Button';
 import TextField from '@material-ui/core/TextField';
 import { makeStyles } from '@material-ui/core/styles';
@@ -16,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
       },
     },
     button: {
-        marginTop: 16
+        marginTop: 20
     }
   }));
 
@@ -30,23 +31,12 @@ const useStyles = makeStyles((theme) => ({
 // `
 
 const Form = ({ edit }) => {
-    const [value, setValue] = useState('');
+    const [value] = useState('');
     const [error, setError] = useState('');
     const [title, setTitle] = useState('');
     const dispatch = useDispatch();
 
     const classes = useStyles();
-    
-    const handleChange = (e) => {
-        const title = e.target.value;
-
-        setTitle(title);
-        if(title.length === 0) {
-            setError("Please enter title");
-        } else {
-            setError("");
-        }
-    }
 
     const editItem = () => {
         dispatch(todos.actions.editItem(title))
@@ -55,8 +45,19 @@ const Form = ({ edit }) => {
     const addItem = () => {
         dispatch(todos.actions.addItem(title));
     }
+    
+    const handleChange = (e) => {
+        const title = e.target.value;
+        setTitle(title);
+        if(title.length === 0) {
+            setError("Please enter title");
+        } else {
+            setError("");
+        }
+    }
 
-    const handleClick = () => {
+
+    const handleSubmit = () => {
         if(title.length === 0){
             setError("Please enter title");
             return;
@@ -69,25 +70,26 @@ const Form = ({ edit }) => {
     }
 
     return (
-        <>
-            <form className={classes.root} noValidate autoComplete="off">
+        <Container maxWidth="sm" className={classes.root}>
             <TextField 
+                rows="2"
                 id="standard-required" 
                 title={value}
                 onChange={handleChange}
+                // eslint-disable-next-line
                 error={!!error} helperText={error} id="outlined-basic" fullWidth label="Figma and chill" multiline variant="outlined" 
             />
             <Button 
             className={classes.button}
             variant='contained' 
             color='primary'
-            onClick={handleClick}>
-            {edit ? "Edit" : "Add"}
+            onClick={handleSubmit}>
+                Add
+            {/* {edit ? "Edit" : "Add"} */}
             </Button>
-            </form>
-        </>
+        </Container>
     );
-};
+}; 
 
 export default Form;
 

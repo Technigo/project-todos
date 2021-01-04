@@ -22,7 +22,7 @@ const ToDoList = () => {
  
     return (
         <Container>
-            To be done:  {numItems}
+            To be done: {numItems}
             {items.map(item => (
                 <ToDoItem
                     key={item.id}
