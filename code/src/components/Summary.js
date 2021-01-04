@@ -6,9 +6,6 @@ export const Summary = () => {
 
 
     return (
-        // <div className="item-buy">
-        //     <h1>Buy items  </h1>
-        // </div>
         <div className="header">
            <h1> Groceries </h1>
            <h2>{items.length} items</h2>

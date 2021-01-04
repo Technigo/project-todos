@@ -24,8 +24,7 @@ export const AddItemForm = () => {
                 <input
                     type='text'
                     value={name}
-                    onChange={(event) => setName(event.target.value)
-                    }
+                    onChange={(event) => setName(event.target.value)}
                 />
 
             </label>
@@ -35,8 +34,8 @@ export const AddItemForm = () => {
                 Category:
                 <select
                     value={category}
-                    onChange={(event) => setCategory(event.target.value)
-                    }>
+                    onChange={(event) => setCategory(event.target.value)}
+                    >
                     <option value=''>select...</option>
                     <option value='🧃'>Drinks</option>
                     <option value='🥕'>Veggies</option>
