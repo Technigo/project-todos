@@ -11,7 +11,7 @@ export const AddItemForm = () => {
 
     const handleSubmit = (event) => {
         event.preventDefault()
-        dispatch(todos.actions.addItem({ name, category }))
+        dispatch(todos.actions.addItem({ text:name, category:category }))
         setName('')
     }
 
