@@ -77,20 +77,16 @@ export const todos = createSlice({
       store.items = newItemsList;
     },
     updateItem: (store, action) => {
-      const {
-        id,
-        title,
-        content,
-        category,
-        createdAt,
-      } = action.payload;
-      const currentTodo = store.items.find((item) => item.id === id);
-      if (currentTodo) {
-        currentTodo.title = title;
-        currentTodo.content = content;
-        currentTodo.category = category;
-        currentTodo.createdAt = createdAt;
+      const { id, title, content, category, createdAt } = action.payload;
+      const editedTodos = store.items.find(item => item.id === id);
+      
+          if (editedTodos) {
+          editedTodos.title = title;
+          editedTodos.content = content;
+          editedTodos.category = category;
+          editedTodos.createdAt = createdAt;
       }
     },
-  },
+    
+  }
 });

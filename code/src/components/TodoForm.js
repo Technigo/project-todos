@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
 
 import { todos } from "reducers/todos";
+import AddTodo from "./AddTodo"
 import {
   TodoFormWrapper,
-  TodoFormStyled,
+  ButtonWrapper,
+  SubCheckboxWrapper,
   TodoInputGroupWrapper,
   TodoHeaderLabel,
   TodoContentLabel,
@@ -16,69 +18,31 @@ import {
   CheckboxLabel,
   CheckboxInput,
   AddTodoButton,
-  SubCheckboxWrapper,
-  ButtonWrapper,
+  TodoFormStyled,
 } from "../lib/FormStyle";
 
-export const EditTodoForm = () => {
-  const { id } = useParams();
+export const TodoForm = ({ todo, handle }) => {
 
-  const todo = useSelector((store) =>
-    store.todos.items.find((item) => item.id === id)
-  );
-
-  const [userCategory, setUserCategory] = useState(todo.category);
-  const [todoTitle, setTodoTitle] = useState(todo.title);
-  const [todoContent, setTodoContent] = useState(todo.content);
-  const [width, setWidth] = useState(window.innerWidth);
 
   const breakpoint = 767;
+  const [width, setWidth] = useState(window.innerWidth);
 
-  const dispatch = useDispatch();
-  const history = useHistory();
-  const categories = useSelector((store) => store.todos.categories);
+  const [todoTitle, setTodoTitle] = useState(todo.title ? todo.title : "");
+  const [todoContent, setTodoContent] = useState(todo.content ? todo.content : "");
 
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, []);
 
-  const onCategoryChange = (categoryValue) => {
-    userCategory.includes(categoryValue)
-      ? setUserCategory(userCategory.filter((item) => item !== categoryValue))
-      : setUserCategory([...userCategory, categoryValue]);
-  };
-
-  const onTodoEditSubmit = (event) => {
+  const handleSubmit = event => {
     event.preventDefault();
-
-    if (todoTitle) {
-      dispatch(
-        todos.actions.updateItem({
-          id,
-          category: userCategory,
-          title: todoTitle,
-          content: todoContent,
-          createdAt: Date.now(),
-        })
-      );
-
-      history.push("/");
-    } else {
-      alert("Please write note first");
-    }
-  };
-
-  if (!todo) {
-    return (
-      <section>
-        <h2>Todo not found!</h2>
-      </section>
-    );
+    setTodoTitle("");
+    setTodoContent("");
+    handle(todoTitle, todoContent);
   }
 
   return (
-    <TodoFormWrapper>
-      <TodoFormStyled>
+      <TodoFormStyled onSubmit={handleSubmit}>
         <TodoInputGroupWrapper>
           <TodoHeaderLabel htmlFor="todoTitle">H1</TodoHeaderLabel>
           <TodoHeaderInput
@@ -97,12 +61,11 @@ export const EditTodoForm = () => {
             id="todoContent"
             value={todoContent}
             aria-label="Write your task here"
-            rows="10"
+            rows={10}
             onChange={(e) => setTodoContent(e.target.value)}
           />
         </TodoInputGroupWrapper>
-
-        <TodoCheckboxGroupWrapper>
+        {/* <TodoCheckboxGroupWrapper>
           {categories.map((category, index) => (
             <CheckboxWrapper key={category.id}>
               <CheckboxLabel htmlFor={category.name[index]}>
@@ -115,9 +78,7 @@ export const EditTodoForm = () => {
                 />
                 {category.name}
               </CheckboxLabel>
-             
-              {width > breakpoint  ? (
-                <SubCheckboxWrapper>
+              {width > breakpoint && <SubCheckboxWrapper>
                   {category.subcategories.map((subcategory, index) => (
                     <SubCheckboxWrapper key={subcategory.name}>
                       <CheckboxLabel htmlFor={subcategory.name[index]}>
@@ -132,21 +93,15 @@ export const EditTodoForm = () => {
                       </CheckboxLabel>
                     </SubCheckboxWrapper>
                   ))}
-                </SubCheckboxWrapper>
-              ) : null}
+                </SubCheckboxWrapper>}
             </CheckboxWrapper>
           ))}
-
-          <ButtonWrapper
-            buttonTop={width > breakpoint? "75%" : "70%"}
-            buttonLeft={width > breakpoint ? "75%" : "70%"}
-          >
-            <AddTodoButton type="button" onClick={onTodoEditSubmit}>
-              Edit todo
-            </AddTodoButton>
-          </ButtonWrapper>
-        </TodoCheckboxGroupWrapper>
+        </TodoCheckboxGroupWrapper> */}
+        <ButtonWrapper>
+          <AddTodoButton type="submit">
+            Add todo
+          </AddTodoButton>
+        </ButtonWrapper>
       </TodoFormStyled>
-    </TodoFormWrapper>
   );
 };

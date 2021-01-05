@@ -13,7 +13,7 @@ export const TodoFormWrapper = styled.section`
   }
 `;
 
-export const TodoForm = styled.form`
+export const TodoFormStyled = styled.form`
   width: 100%;
   height: 100%;
   background-color: #fafafa;
