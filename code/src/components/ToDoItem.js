@@ -40,7 +40,10 @@ const ToDoItem = ({ id, title, createdAt, isCompleted }) => {
             <IconButton 
             aria-label="buttons" 
             onClick={onIsCompletedChange}>
-                {isCompleted ? <CheckCircleOutlineIcon  fontSize="large" color="primary"/> : <AnnouncementIcon fontSize="large" color="secondary"/> }
+                {isCompleted ? 
+                    <CheckCircleOutlineIcon  fontSize="large" color="primary"/> 
+                :   <AnnouncementIcon fontSize="large" color="secondary"/>
+                }
             <DeleteIcon 
             fontSize="large" 
             onClick={onTodoDelete} />

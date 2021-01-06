@@ -19,7 +19,7 @@ const Container = styled.div`
 const ToDoList = () => {
     const items = useSelector(store => store.todos.items);
     const numItems = items.length;
- 
+
     return (
         <Container>
             To be done: {numItems}
@@ -32,7 +32,6 @@ const ToDoList = () => {
                     isCompleted={item.isCompleted}
                 />
             ))}
-          
         </Container>
     );
 };
