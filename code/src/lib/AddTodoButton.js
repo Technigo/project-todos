@@ -9,6 +9,13 @@ const CustomLinkIconContainer = styled.div`
 position: absolute;
 top: 85%;
 left: 75%;
+
+& :hover {
+  transform: scaleX(1.2) scaleY(1.2);
+  background-color: #006972;
+  transition: .3s ease-in-out;
+}
+
 @media only screen and ${breakpoints.device.tablet} {
   left: 87%;
   top: 80%;
@@ -25,7 +32,7 @@ const CustomLinkIcon = styled.button`
   color: white;   
 `;
 
-export const AddTodoIcon = () => {
+export const AddTodoButton = () => {
   return (
     <CustomLinkIconContainer>
       <Link to={`/todo/`}>

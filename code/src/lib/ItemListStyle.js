@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import breakpoints from "./Breakpoints";
+import { IconButton } from "./IconButton";
 
 export const Wrapper = styled.section`
   width: 100%;
@@ -28,6 +29,7 @@ export const ListItem = styled.li`
   margin: 8px;
   font-size: 32px;
   color: #3f3f3f;
+  text-decoration: ${props => props.strikeThrough};
   list-style: none;
   display: flex;
   align-content: flex-start;
@@ -51,6 +53,16 @@ export const TimeText = styled.div`
 `;
 export const ButtonWrapper = styled.div`
   margin-right: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  & ${IconButton}:hover {
+      transform: scaleX(1.2) scaleY(1.2);
+      transition:  .3s ease-in-out;
+      background-color: #006972;
+      color: #fff !important;
+  }
 `;
 export const TextWrapper = styled.div`
   width: 50%;

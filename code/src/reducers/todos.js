@@ -47,6 +47,7 @@ const initialState = {
       title: "Welcome",
       content: "Let's get on with it, right?",
       category: ["#Work"],
+      isDone: false,
       createdAt: 1606318113000,
     },
     {
@@ -54,10 +55,10 @@ const initialState = {
       title: "Get it out of your chest...",
       content: "...make room for play",
       category: ["#Free time"],
+      isDone: false,
       createdAt: 1604676513000,
     },
   ],
-  addItem: false,
   categories,
 };
 
@@ -67,7 +68,7 @@ export const todos = createSlice({
   reducers: {
     removeItem: (store, action) => {
       const filteredList = store.items.filter(
-        (item) => item.id !== action.payload
+        item => item.id !== action.payload
       );
       store.items = filteredList;
     },
@@ -76,15 +77,20 @@ export const todos = createSlice({
       const newItemsList = [...store.items, newItem];
       store.items = newItemsList;
     },
+    toggleDoneItem: (store, action) => {
+      const toggleTodo = store.items.find(item => item.id === action.payload);
+      if (toggleTodo) {
+        toggleTodo.isDone = !toggleTodo.isDone;
+      }
+    },
     updateItem: (store, action) => {
-      const { id, title, content, category, createdAt } = action.payload;
-      const editedTodos = store.items.find(item => item.id === id);
-      
-          if (editedTodos) {
-          editedTodos.title = title;
-          editedTodos.content = content;
-          editedTodos.category = category;
-          editedTodos.createdAt = createdAt;
+      const editedTodo = action.payload;
+      const currentTodo = store.items.find(item => item.id === editedTodo.id);
+      if (currentTodo) {
+          currentTodo.title = editedTodo.title;
+          currentTodo.content = editedTodo.content;
+          currentTodo.category = editedTodo.category;
+          currentTodo.createdAt = editedTodo.createdAt;
       }
     },
     

@@ -2,23 +2,26 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 import { Item } from "./Item.js";
-import { AddTodoIcon } from "../lib/AddTodoIcon";
-import { Wrapper, TodoListContainer } from "../lib/ListStyle";
+import { AddTodoButton } from "../lib/AddTodoButton";
+import { Wrapper, TodoListContainer } from "../lib/ItemListStyle";
 import { ListHeader } from "../lib/ListHeader";
 
 export const TodoList = () => {
-  const items = useSelector((store) => store.todos.items);
-
+  const ongoingItems = useSelector(store => store.todos.items.filter(item => !item.isDone));
+  const doneItems = useSelector(store => store.todos.items.filter(item => item.isDone));
   return (
     <>
       <ListHeader />
       <Wrapper>
         <TodoListContainer>
-          {items.map((item) => (
+          {ongoingItems.map(item => (
             <Item key={item.id} item={item}></Item>
           ))}
+          {doneItems.map(item => (
+            <Item key={item.id} item={item} strikethrough="line-through"></Item>
+          ))}
         </TodoListContainer>
-        <AddTodoIcon />
+        <AddTodoButton />
       </Wrapper>
     </>
   );

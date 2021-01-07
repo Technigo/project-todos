@@ -1,13 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams, useHistory } from "react-router-dom";
+import uniqid from 'uniqid';
 
 import { todos } from "reducers/todos";
-import AddTodo from "./AddTodo"
 import {
   TodoFormWrapper,
-  ButtonWrapper,
-  SubCheckboxWrapper,
+  TodoFormStyled,
   TodoInputGroupWrapper,
   TodoHeaderLabel,
   TodoContentLabel,
@@ -17,31 +16,74 @@ import {
   CheckboxWrapper,
   CheckboxLabel,
   CheckboxInput,
-  AddTodoButton,
-  TodoFormStyled,
+  SaveTodoButton,
+  SubCheckboxWrapper,
+  ButtonWrapper,
 } from "../lib/FormStyle";
 
-export const TodoForm = ({ todo, handle }) => {
+export const TodoForm = () => {
+  const { id } = useParams();
 
+  const todo = useSelector((store) =>
+    store.todos.items.find((item) => item.id === id)
+  );
 
-  const breakpoint = 767;
+  const [userCategory, setUserCategory] = useState(id ? todo.category : []);
+  const [todoTitle, setTodoTitle] = useState(id ? todo.title : "");
+  const [todoContent, setTodoContent] = useState(id ? todo.content : "");
   const [width, setWidth] = useState(window.innerWidth);
 
-  const [todoTitle, setTodoTitle] = useState(todo.title ? todo.title : "");
-  const [todoContent, setTodoContent] = useState(todo.content ? todo.content : "");
+  const breakpoint = 767;
+
+  const dispatch = useDispatch();
+  const history = useHistory();
+  const categories = useSelector((store) => {
+    return store.todos.categories
+  });
 
   useEffect(() => {
     window.addEventListener("resize", () => setWidth(window.innerWidth));
   }, []);
 
-  const handleSubmit = event => {
+  const handleCategoryChange = categoryValue => {
+    userCategory.includes(categoryValue)
+      ? setUserCategory(userCategory.filter(item => item !== categoryValue))
+      : setUserCategory([...userCategory, categoryValue]);
+  };
+
+  const handleSubmit = (event) => {
     event.preventDefault();
-    setTodoTitle("");
-    setTodoContent("");
-    handle(todoTitle, todoContent);
+    const todoItem = {
+      category: userCategory,
+      title: todoTitle,
+      content: todoContent,
+      createdAt: Date.now(),
+    };
+    if (todoTitle) {
+      if(id) {
+        todoItem.id = id;
+        dispatch(todos.actions.updateItem(todoItem));
+      } else {
+        todoItem.id = uniqid();
+        todoItem.isDone = false;
+        dispatch(todos.actions.addItem(todoItem))};
+      setTodoTitle("");
+      setTodoContent("");
+      setUserCategory([]);
+      history.push("/");
+    } 
+  };
+
+  if (id && !todo) {
+    return (
+      <section>
+        <h2>Todo not found!</h2>
+      </section>
+    );
   }
 
   return (
+    <TodoFormWrapper>
       <TodoFormStyled onSubmit={handleSubmit}>
         <TodoInputGroupWrapper>
           <TodoHeaderLabel htmlFor="todoTitle">H1</TodoHeaderLabel>
@@ -61,11 +103,12 @@ export const TodoForm = ({ todo, handle }) => {
             id="todoContent"
             value={todoContent}
             aria-label="Write your task here"
-            rows={10}
+            rows="10"
             onChange={(e) => setTodoContent(e.target.value)}
           />
         </TodoInputGroupWrapper>
-        {/* <TodoCheckboxGroupWrapper>
+
+        <TodoCheckboxGroupWrapper>
           {categories.map((category, index) => (
             <CheckboxWrapper key={category.id}>
               <CheckboxLabel htmlFor={category.name[index]}>
@@ -74,10 +117,11 @@ export const TodoForm = ({ todo, handle }) => {
                   name={category.name[index]}
                   value={category.name}
                   checked={userCategory.includes(category.name)}
-                  onChange={() => onCategoryChange(category.name)}
+                  onChange={() => handleCategoryChange(category.name)}
                 />
                 {category.name}
               </CheckboxLabel>
+             
               {width > breakpoint && <SubCheckboxWrapper>
                   {category.subcategories.map((subcategory, index) => (
                     <SubCheckboxWrapper key={subcategory.name}>
@@ -87,7 +131,7 @@ export const TodoForm = ({ todo, handle }) => {
                           name={subcategory.name[index]}
                           value={subcategory.name}
                           checked={userCategory.includes(subcategory.name)}
-                          onChange={() => onCategoryChange(subcategory.name)}
+                          onChange={() => handleCategoryChange(subcategory.name)}
                         />
                         {subcategory.name}
                       </CheckboxLabel>
@@ -95,13 +139,15 @@ export const TodoForm = ({ todo, handle }) => {
                   ))}
                 </SubCheckboxWrapper>}
             </CheckboxWrapper>
-          ))}
-        </TodoCheckboxGroupWrapper> */}
+          ))}       
+        </TodoCheckboxGroupWrapper>
+  
         <ButtonWrapper>
-          <AddTodoButton type="submit">
-            Add todo
-          </AddTodoButton>
+          <SaveTodoButton type="submit" >
+           {id ? "Edit todo" : "Add todo"}
+          </SaveTodoButton>          
         </ButtonWrapper>
       </TodoFormStyled>
+    </TodoFormWrapper>
   );
 };

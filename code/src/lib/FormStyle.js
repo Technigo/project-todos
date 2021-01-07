@@ -4,6 +4,7 @@ import breakpoints from "./Breakpoints";
 export const TodoFormWrapper = styled.section`
   width: 100%;
   height: 100%;
+
   @media only screen and ${breakpoints.device.tablet} {
     display: flex;
     align-items: center;
@@ -15,8 +16,9 @@ export const TodoFormWrapper = styled.section`
 
 export const TodoFormStyled = styled.form`
   width: 100%;
-  height: 100%;
   background-color: #fafafa;
+  display: flex;
+  flex-wrap: wrap;
   @media only screen and ${breakpoints.device.tablet} {
     padding-top: 40px:
   }
@@ -26,6 +28,7 @@ export const TodoFormStyled = styled.form`
 `;
 
 export const TodoInputGroupWrapper = styled.div`
+  width: 100%;
   margin: 30px 22px 10px 22px;
   display: flex;
   align-items: center;
@@ -119,18 +122,19 @@ export const TodoTextarea = styled.textarea`
   }
 `;
 export const TodoCheckboxGroupWrapper = styled.div`
+  width: 100%;
+  margin: 60px 30px 40px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin: 60px 30px 30px 0;
+  align-items: center;
+
   @media only screen and ${breakpoints.device.tablet} {
     flex-direction: row;
+    justify-content: center;
     align-items: flex-start;
   }
   @media only screen and ${breakpoints.device.computer} {
-    margin-top: 30px;
-    justify-content: center;
+    margin: 20px 30px 0;
   }
 `;
 
@@ -157,23 +161,25 @@ export const CheckboxInput = styled.input`
 export const SubCheckboxWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin: 6px 2px 4px 12px;
 `;
 
 export const ButtonWrapper = styled.div`
   position: absolute;
-  top: 75%;
-  left: 75%;
-  @media only screen and ${breakpoints.device.tablet} {
-    top: 82%;
-    left: 85%;
+  top: 80%;
+  right: 10%;
+  & :hover {
+    transform: scaleX(1.2) scaleY(1.2);
+    background-color: #006972;
+    transition: .3s ease-in-out;
   }
 `;
 
-export const AddTodoButton = styled.button`
+export const SaveTodoButton = styled.button`
   width: 60px;
   height: 60px;
-  margin: 30px 10px;
+  margin: 10px 40px 0;
   padding: 10px;
   background-color: #00838f;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.4), 0 0 11px rgba(0, 0, 0, 0.4);

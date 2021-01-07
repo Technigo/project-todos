@@ -4,8 +4,7 @@ import { combineReducers, createStore } from '@reduxjs/toolkit';
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import { todos } from './reducers/todos';
 import { TodoList } from './components/TodoList';
-import  AddTodo from './components/AddTodo';
-import { EditTodoForm } from './components/EditTodoForm';
+import { TodoForm } from './components/TodoForm';
 
 const reducer = combineReducers({ todos: todos.reducer })
 
@@ -36,10 +35,10 @@ export const App = () => {
             <TodoList />
           </Route>
           <Route exact path="/todo">
-            <AddTodo />
+            <TodoForm />
           </Route>
           <Route path="/todo/:id">
-            <EditTodoForm />
+            <TodoForm />
           </Route>
         </Switch>
       </BrowserRouter>
