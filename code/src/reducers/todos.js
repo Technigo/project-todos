@@ -93,6 +93,5 @@ export const todos = createSlice({
           currentTodo.createdAt = editedTodo.createdAt;
       }
     },
-    
   }
 });

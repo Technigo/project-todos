@@ -16,7 +16,7 @@ import { DoneTodoIcon } from "../lib/DoneTodoIcon";
 import { EditTodoIcon } from "../lib/EditTodoIcon";
 import { DeleteTodoIcon } from "../lib/DeleteTodoIcon";
 
-export const Item = ({ item, strikethrough }) => {
+export const Item = ({ item }) => {
   const dispatch = useDispatch();
 
   const onItemDone = (id) => {
@@ -27,21 +27,20 @@ export const Item = ({ item, strikethrough }) => {
     dispatch(todos.actions.removeItem(id));
   };
   return (
-    <ListItem>
+    <ListItem strikethrough={item.isDone} isdone={item.isDone}>
       <TimeText>
         <TimeAgo createdAt={item.createdAt}>{item.createdAt}</TimeAgo>
       </TimeText>
       <TextWrapper>
         <Title>{item.title}</Title>
         <ItemText>{item.content}</ItemText>
-        <ItemText>Is done: {item.isDone ? "yes" : "no"}</ItemText>
       </TextWrapper>
       <ButtonWrapper>
-        <DoneTodoIcon onClick={() => onItemDone(item.id)}/>
+        <DoneTodoIcon isdone={item.isDone} onClick={() => onItemDone(item.id)}/>
         <Link to={`/todo/${item.id}`}>
-          <EditTodoIcon />
+          <EditTodoIcon isdone={item.isDone}/>
         </Link>
-        <DeleteTodoIcon onClick={() => onItemRemove(item.id)} />
+        <DeleteTodoIcon isdone={item.isDone} onClick={() => onItemRemove(item.id)} />
       </ButtonWrapper>
     </ListItem>
   );

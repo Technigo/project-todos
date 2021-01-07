@@ -28,8 +28,9 @@ export const ListItem = styled.li`
   padding: 8px;
   margin: 8px;
   font-size: 32px;
-  color: #3f3f3f;
-  text-decoration: ${props => props.strikeThrough};
+  background-color: ${props => props.isdone ? "#E1E4E7" : "inherit"};
+  color: "#3f3f3f";
+  text-decoration: ${props => props.strikethrough ? "line-through" : "none"};
   list-style: none;
   display: flex;
   align-content: flex-start;

@@ -8,7 +8,7 @@ import { TodoForm } from './components/TodoForm';
 
 const reducer = combineReducers({ todos: todos.reducer })
 
-// New storage
+// Local storage
 const persistedStateJSON = localStorage.getItem('reduxState');
 let persistedState = {};
 

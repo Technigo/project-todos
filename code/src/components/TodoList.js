@@ -18,7 +18,7 @@ export const TodoList = () => {
             <Item key={item.id} item={item}></Item>
           ))}
           {doneItems.map(item => (
-            <Item key={item.id} item={item} strikethrough="line-through"></Item>
+            <Item key={item.id} item={item} ></Item>
           ))}
         </TodoListContainer>
         <AddTodoButton />
