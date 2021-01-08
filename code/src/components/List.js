@@ -40,7 +40,7 @@ export const List = () => {
         <Header>To-Do List</Header>
         <TodoInput />
         {list.items.map((item, index) => (
-          <Item key={index} itemIndex={index}></Item>
+          <Item key={todokey} itemIndex={index}></Item>
         ))}
         <Summary />
         <DeleteTodos />
