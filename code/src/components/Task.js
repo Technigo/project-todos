@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 
 import Icon from '../assests/icons8-trash-can-100.png';
-import { tasks } from 'reducers/tasks';
+import { tasks } from '../reducers/tasks';
 import { RemoveButton, Checkbox, TaskText, TaskWrapper } from '../styling/styling';
 
 const Task = ({ task }) => {
@@ -18,8 +18,8 @@ const Task = ({ task }) => {
   
   return (
       <TaskWrapper>
-        <Checkbox type='checkbox' onChange={() => handleCheckboxChange({ task })}></Checkbox>
-        <TaskText>{task.text}</TaskText>
+        <Checkbox id={task.id} type='checkbox' onChange={() => handleCheckboxChange({ task })}></Checkbox>
+        <TaskText htmlFor={task.id}>{task.text}</TaskText>
         <RemoveButton src={Icon} onClick={() => handleRemoveTask({ task })}></RemoveButton>
       </TaskWrapper>
   )

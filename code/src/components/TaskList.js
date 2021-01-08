@@ -11,11 +11,7 @@ const TaskList = () => {
 
   return (
     <TaskContainer>
-      {allTasksArray.map(task => {
-        return (
-        <Task key={task.id} task={task} />
-        )
-      })}
+      {allTasksArray.map(task => <Task key={task.id} task={task} />)}
       {allTasksArray.length === 0 && (
         <PlaceholderWrapper>
           <img src={Rocket} alt='rocket placeholder'></img>

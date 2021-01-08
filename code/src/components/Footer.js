@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { tasks } from 'reducers/tasks';
+import { tasks } from '../reducers/tasks';
 import { FooterContainer, ButtonStyle, FooterText, FooterWrapper } from '../styling/styling';
 
 const Footer = () => {

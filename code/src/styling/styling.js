@@ -132,7 +132,7 @@ export const Checkbox = styled.input`
   margin: 20px;
 `;
 
-export const TaskText = styled.p`
+export const TaskText = styled.label`
   width: 100%;
   font-family: 'Merriweather Sans', Sans-Serif;
 `;

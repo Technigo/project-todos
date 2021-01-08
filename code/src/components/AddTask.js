@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { tasks } from 'reducers/tasks';
+import { tasks } from '../reducers/tasks';
 import { FormContainer, ButtonStyle, InputField, FormWrapper } from '../styling/styling';
 
 const AddTask = () => {
@@ -31,6 +31,7 @@ const AddTask = () => {
       <FormWrapper onSubmit={handleSubmit}>
         <InputField
           type='text'
+          required
           value={text}
           placeholder='Input task here...'
           onChange={event => onChangeEvent(event.target.value)}>  
