@@ -19,6 +19,7 @@ export const AddItem = () => {
 				placeholder="What do you need to do today?"
 			/>
 			<Button
+				style={newItem === '' ? { display: 'none' } : { display: 'block' }}
 				onClick={() => {
 					handleAddItem();
 					setNewItem('');
@@ -32,7 +33,6 @@ export const AddItem = () => {
 const TextInput = styled.input`
 	width: 80%;
 	padding: 5px;
-
 	margin-bottom: 5px;
 	border-radius: 9px;
 `;
@@ -51,7 +51,7 @@ const Button = styled.button`
 	font-weight: bold;
 	padding: 6px 24px;
 	text-decoration: none;
-	text-shadow: 0px 1px 0px #ffffff;
+	text-shadow: 0 1px 0 #ffffff;
 	margin: 5px;
 
 	&:hover {

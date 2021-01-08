@@ -18,7 +18,7 @@ const initialState = {
 		{
 			id: uuidv4(),
 			timestamp: Date.now(),
-			text: 'Meditate or do yoga. ',
+			text: 'Meditate or do yoga.',
 			isCompleted: false,
 		},
 	],
