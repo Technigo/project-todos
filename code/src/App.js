@@ -2,11 +2,11 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
-import { tasks } from 'reducers/tasks'
-import Header from 'components/Header'
-import TaskList from 'components/TaskList'
-import AddTask from 'components/AddTask'
-import Footer from 'components/Footer'
+import { tasks } from './reducers/tasks'
+import Header from './components/Header'
+import TaskList from './components/TaskList'
+import AddTask from './components/AddTask'
+import Footer from './components/Footer'
 
 const reducer = combineReducers({ tasks: tasks.reducer });
 
