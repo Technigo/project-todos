@@ -10,6 +10,8 @@ import { InputText } from 'library/Text'
 import { Select } from 'library/Select'
 import 'styles/AddTodoForm.css'
 
+//How to add startdate/added date to an added task?
+
 export const AddTodoForm = () => {
   const [text, setText] = useState('')
   const [category, setCategory] = useState('')
@@ -24,7 +26,7 @@ export const AddTodoForm = () => {
         text, 
         category, 
         complete, 
-        dueDate: dueDate.getTime() 
+        dueDate: dueDate.getTime()
       }))
     setText('') // clears input
     setCategory('') 

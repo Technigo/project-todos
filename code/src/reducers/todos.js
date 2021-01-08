@@ -4,17 +4,17 @@ import { createSlice } from '@reduxjs/toolkit'
 // I need to change the initial state to nothing & add startdate
 const initialState = {
   items: [
-    {
-      id: 1,
-      category: 'Study',
-      text: 'Tweak the start date on todo in todo-app',
-      complete: false,
-      dueDate: Date.now()
+    //{
+      //id: 1,
+      //category: 'Study',
+      //text: 'Tweak the start date on todo in todo-app',
+      //complete: false,
+      //dueDate: Date.now()
 
-    }
+    //}
   ]
 }
-
+//How to add startdate/date added when new todo is added?
 export const todos = createSlice({
   name: 'todos',
   initialState,

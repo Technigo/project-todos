@@ -27,7 +27,6 @@ export const TodoList = () => {
   return (
     <ListWrapper>
       {/* Note to self: How to make it so that only choosen categories show? */}
-      {items.length > 0 && 
       <label>
         <Select
           value={category}
@@ -41,7 +40,7 @@ export const TodoList = () => {
           <option value='Fun'>Fun</option>
           <option value='Other'>Other</option>
         </Select>
-      </label>}
+      </label>
       <ToDoList>
         {items.map((item) => (
           <Todo key={item.id} item={item} />
