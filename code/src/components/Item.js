@@ -12,7 +12,7 @@ import {
   Title,
   ItemText,
 } from "../lib/ItemListStyle";
-import { DoneTodoIcon } from "../lib/DoneTodoIcon";
+import { CheckedTodoIcon } from "../lib/CheckedTodoIcon";
 import { EditTodoIcon } from "../lib/EditTodoIcon";
 import { DeleteTodoIcon } from "../lib/DeleteTodoIcon";
 
@@ -36,7 +36,7 @@ export const Item = ({ item }) => {
         <ItemText>{item.content}</ItemText>
       </TextWrapper>
       <ButtonWrapper>
-        <DoneTodoIcon isdone={item.isDone} onClick={() => onItemDone(item.id)}/>
+        <CheckedTodoIcon isDone={item.isDone} onClick={() => onItemDone(item.id)}/>
         <Link to={`/todo/${item.id}`}>
           <EditTodoIcon isdone={item.isDone}/>
         </Link>
