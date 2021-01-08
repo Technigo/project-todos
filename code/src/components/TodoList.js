@@ -6,6 +6,7 @@ import { Todo } from 'components/Todo'
 import { Select } from 'library/Select'
 import { ClearButton } from 'components/ClearButton'
 import { CompleteAllButton } from 'components/CompleteAllButton'
+import { Subtitle } from 'library/Text'
 import logo from '../assets/bored-cat.gif'
 
 export const TodoList = () => {
@@ -16,10 +17,30 @@ export const TodoList = () => {
     else return store.todos.items.filter(item => item.category === category) // else filter the list on category choosen
   })
   
-  if (items.length === 0) {
+  if (items.length === 0 && !category) {
     return (
       <ListWrapper>
         <CatGif src={logo} alt='bored cat' />
+      </ListWrapper>
+    )
+  } else if (items.length === 0 && category) {
+    return (
+      <ListWrapper>
+        <label>
+          <Select
+            value={category}
+            onChange={(event) => setCategory(event.target.value)}
+          >
+            <option value=''>Filter by category:</option>
+            <option value='Work'>Work</option>
+            <option value='Study'>Study</option>
+            <option value='Household'>Household</option>
+            <option value='Shopping'>Shopping</option>
+            <option value='Fun'>Fun</option>
+            <option value='Other'>Other</option>
+          </Select>
+        </label>
+        <Subtitle>No tasks in this category</Subtitle>
       </ListWrapper>
     )
   }
@@ -62,7 +83,7 @@ const ListWrapper = styled.div`
   min-height: 35vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   background: rgba(3, 77, 136, .4);
   color: #fff;
