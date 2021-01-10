@@ -10,6 +10,11 @@ An app built with React Redux with focus on creating reducers and new actions.
 I tried to sketch this as thoroughly as I possible could. 
 Then I started with the header and worked my way from there.
 
+# Tech
+React
+Redux Toolkit
+Styled Components
+
 ## View it live
 
 https://ssundblom-todo.netlify.app/
