@@ -11,7 +11,7 @@ height: 40px;
 `
 
 const TaskInput = styled.input.attrs({ type: 'text' })`
-background-color: #F6D1E5;
+background-color: #feb59b;
 border: none; 
 flex-grow: 1;
 padding: 10px;
@@ -50,7 +50,9 @@ export const AddTask = () => {
         value={task}
         onChange={(event) => setTask(event.target.value)} />
 
-      <PlusButton type='submit'> + </PlusButton>
+      <PlusButton 
+        type='submit'
+        disabled={ task.length < 1} >  + </PlusButton>
     </AddTaskContainer>
   )
 }

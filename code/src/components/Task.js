@@ -7,7 +7,7 @@ import { CheckboxStyled } from './CheckboxStyled'
 
 const TaskContainer = styled.div`
   display: flex;
-  background-color: #F6D1E5;
+  background-color: #feb59b;
   padding: 10px;
   margin: 10px;
   border-radius: 4px;
@@ -28,7 +28,7 @@ const TaskText = styled.div`
   text-decoration: ${props => props.checked ? 'line-through' : 'none'};
   padding-left: 10px;
   overflow: hidden;
-  
+
   text-overflow: ellipsis;
 `
 
