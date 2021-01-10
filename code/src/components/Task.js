@@ -19,16 +19,15 @@ const TaskContainer = styled.div`
 
 const DeleteButton = styled.button`
   margin-left: auto;
-  background-color: #F6D1E7;
+  background-color: #feb59b;
   border: none;
-  color: #B4889E;
+  color: white;
 `
 
 const TaskText = styled.div`
   text-decoration: ${props => props.checked ? 'line-through' : 'none'};
   padding-left: 10px;
   overflow: hidden;
-
   text-overflow: ellipsis;
 `
 

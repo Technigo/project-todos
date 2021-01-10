@@ -17,7 +17,7 @@ const StyledCheckbox = styled.div`
   display: inline-block;
   width: 18px;
   height: 18px;
-  background: ${props => props.checked ? '#4D1C39' : '#9A6A80'};
+  background: ${props => props.checked ? '#fa9ce9' : '#e85bce'};
   border-radius: 50%;
   transition: all 150ms;
 `

@@ -17,17 +17,17 @@ flex-grow: 1;
 padding: 10px;
 &:focus {
   outline: none;
-  background-color: #f7e1ed;
+  background-color: #f5c29d;
   transition: background-color 1s ease;
 }
 `
 
 const PlusButton = styled.button`
-background-color: #F6D1E5;
+background-color: #feb59b;
 border: none; 
 margin-left: auto;
 font-size: 18px;
-color: #6E355C;
+color: white;
 padding: 10px;
 `
 
