@@ -3,7 +3,8 @@
 body {
   margin: 0;
   font-family: 'Barlow', sans-serif;
-  background-color: #D0A7BC;
+  background: rgb(223,178,252)linear-gradient(0deg, rgba(223,178,252,1) 6%, rgba(250,156,233,1) 27%, rgba(254,181,155,1) 64%);
+  background-repeat: no-repeat;
   color: #4D1C39;
   display: flex;
   justify-content: center;
