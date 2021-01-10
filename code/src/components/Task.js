@@ -27,6 +27,9 @@ const DeleteButton = styled.button`
 const TaskText = styled.div`
   text-decoration: ${props => props.checked ? 'line-through' : 'none'};
   padding-left: 10px;
+  overflow: hidden;
+  
+  text-overflow: ellipsis;
 `
 
 export const Task = ({ taskData }) => {
