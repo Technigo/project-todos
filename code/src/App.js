@@ -42,8 +42,8 @@ export const App = () => {
         <Wrapper>
           <Header />
             <AddNewTodo />
-              <TodoList />  
-                <Counter />
+            <TodoList />  
+            <Counter />
         </Wrapper>
     </Provider>
   )

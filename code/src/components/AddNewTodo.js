@@ -10,7 +10,7 @@ export const AddNewTodo = () => {
 
     const onSubmit = event => {
         
-        dispatch(todos.actions.addNewTodo(newTodo))   
+        dispatch(todos.actions.addNewTodo(newTodo))
     } 
 
     return(
@@ -24,10 +24,10 @@ export const AddNewTodo = () => {
 
             <AddTodoButton type="submit"
                 onClick={() => {
-                    onSubmit();
-                    setNewTodo(''); /* clears input field after adding a new task */
+                    onSubmit()
+                    setNewTodo('') //clears input field after adding a new task
                 }}
-                disabled={ newTodo.length < 5 }> 
+                disabled={ newTodo.length < 4 }> 
                 <Icon> + </Icon>
             </AddTodoButton>
         </AddTodoContainer>
@@ -35,29 +35,30 @@ export const AddNewTodo = () => {
 }
 
 const AddTodoContainer = styled.div`
-display: flex;
-justify-content: center;
-padding-top: 20px;
-padding-bottom: 20px;
-background-color:  #F4F4F4;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color:  #F4F4F4;
 `
 
 const AddTodoButton = styled.button`
-background-color: #F4F4F4;
-width: 50px;
-border: none;
-cursor: pointer;
+    background-color: #F4F4F4;
+    width: 50px;
+    border: none;
+    cursor: pointer;
 `
 
-const Icon = styled.text`
-font-size: 20px;
-font-weight: bold;
+const Icon = styled.p`
+    font-size: 20px;
+    font-weight: bold;
 `
 
 const Input = styled.input`
-background-color: #F4F4F4;
-font-family: 'Josefin Sans', sans-serif;
-width: 150px;
-border: none;
-border-bottom: solid 2px #baa8a8;
+    background-color: #F4F4F4;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    width: 150px;
+    border: none;
+    border-bottom: solid 2px #baa8a8;
 `

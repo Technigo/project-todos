@@ -16,13 +16,13 @@ export const Counter = () => {
 };
 
 const CounterContainer = styled.section`
-display: flex;
-justify-content: center;
-background-color: #F4F4F4;
-padding-top: 20px;
-padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    background-color: #F4F4F4;
+    padding-top: 20px;
+    padding-bottom: 20px;
 `
 
-const CounterText = styled.text`
-font-size: 18px;
+const CounterText = styled.p`
+    font-size: 18px;
 `

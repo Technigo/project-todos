@@ -20,18 +20,19 @@ export const TodoList = () => {
   
   return (
     <>
-            {items.map(item => (
+      {items.map(item => (
         <TodoContainer key={item.id}>
           <List>
-      <label>
-          <input type="checkbox"
-          checked={item.complete}
-          onChange={() => onChecked(item.id)}
-          />
-      </label>
-  </List>
+            <label>
+            <input type="checkbox"
+            checked={item.complete}
+            onChange={() => onChecked(item.id)}
+            />
+            </label>
+          </List>
+
           <TodoText>{item.text}</TodoText>
-            <TimeStamp>(added {moment(item.date).format("MMM Do HH:mm")})</TimeStamp>
+            <TimeStamp>Added: {moment(item.date).format("MMM Do, YYYY")}</TimeStamp>
               <DeleteButton type="button" onClick={() => onClickDelete(item.id)}>
                 <DeleteIcon>X</DeleteIcon>
               </DeleteButton> 
@@ -42,40 +43,39 @@ export const TodoList = () => {
 }
 
 const TodoContainer = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
-margin: auto;
-padding-top: 5px;
-padding-bottom: 5px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
 `
 
 const List = styled.li`
-list-style-type: none;
+  list-style-type: none;
 `
 
 const TodoText = styled.div`
-font-size: 20px;
-margin: 0 10px 0 10px;
+  font-size: 20px;
+  margin: 0 10px 0 10px;
 `
 
-const TimeStamp = styled.text`
-font-size: 12px;
-color: #F4F4F4;
-font-style: italic; 
+const TimeStamp = styled.p`
+  font-size: 12px;
+  color: #F4F4F4;
 `
 
 const DeleteIcon = styled.span`
-font-size: 10px;
-font-weight: bold;
-color: #fff;
-background-color: rgba(193, 146, 146, 0.892);
+  font-size: 10px;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(193, 146, 146, 0.892);
 `
 
 const DeleteButton = styled.button`
-background-color: rgba(193, 146, 146, 0.892);
-border-radius: 10%;
-border: none;
-margin-left: 10px;
+  background-color: rgba(193, 146, 146, 0.892);
+  border-radius: 10%;
+  border: none;
+  margin-left: 10px;
 `
 

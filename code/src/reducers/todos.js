@@ -17,7 +17,7 @@ export const todos = createSlice({
 
         addNewTodo: (store, action) => {
             const newItem = {
-                id: uuidv4(), /* adds a uniqe id for each ToDo */
+                id: uuidv4(), //adds a uniqe id for each ToDo
                 text: action.payload,
                 complete: false,
                 date: Date.now()
