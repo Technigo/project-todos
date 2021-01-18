@@ -30,7 +30,7 @@ export const todoList = createSlice({
         id: id,
         task: action.payload,
         isCompleted: false,
-      };
+      }
       const updatedList= [...state.list,todo]
       state.list = updatedList
     },

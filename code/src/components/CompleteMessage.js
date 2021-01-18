@@ -8,7 +8,7 @@ const CompleteMessage = () => {
 
   useEffect(() => {
     const hasInComplete = todos.find((item) => item.isCompleted === false)
-    setIsCompleted(!hasInComplete);
+    setIsCompleted(!hasInComplete)
   }, [todos])
 
   return (
@@ -16,15 +16,15 @@ const CompleteMessage = () => {
     <Message>
       Good job! You have completed all the tasks today. It's time to celebrate! <span role="img" aria-label="happyface">🎉🎉🥳🥳</span>
     </Message>
-   );
+   )
 }
  
-export default CompleteMessage;
+export default CompleteMessage
 
 const Message = styled.div`
   color: #ffb703;
   font-size: 22px;   
   margin-top: 50px;
   text-align: center
-  `
+`
 

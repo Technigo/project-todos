@@ -5,8 +5,8 @@ import styled from 'styled-components'
 
 const AllTodoItems = () => {
   const todoItems = useSelector((store) => {
-    return store.todolist.list;
-  });
+    return store.todolist.list
+  })
   const dispatch = useDispatch()
 
   const handleCheck = ({ todoId }) => {
@@ -45,19 +45,18 @@ const AllTodoItems = () => {
       </>
       ) : (<p>You have no tasks left today</p>)}
     </CheckboxContainer>
-  );
+  )
 }
 export default AllTodoItems
 
 const Input = styled.input`
   display: inline-block;
-  }
 `
 const CheckboxContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 30px;
-  `
+`
 const CheckboxItem = styled.div`
   display: flex;
   justify-content: space-between;
@@ -68,12 +67,12 @@ const CheckboxItem = styled.div`
 const CheckboxDisplay = styled.div`
   display: flex;
   justify-item: flex-start;
-  `
+`
 
 const Label = styled.label`
   display: flex;
   justify-content: space-between;
-  `
+`
 const Button = styled.button`
   background:
   linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,

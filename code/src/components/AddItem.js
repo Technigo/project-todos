@@ -52,6 +52,6 @@ const Input = styled.input`
       transition: ease 0.5s;
     }
   }
-  `
+`
 
 export default AddItem

@@ -20,4 +20,4 @@ const TaskCount = styled.div`
   color: #a8dadc;
   display: flex
   font-weight: 600;
-  `
+`

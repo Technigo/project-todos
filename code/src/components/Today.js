@@ -1,4 +1,4 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components'
 
 const Today = () => {
@@ -15,20 +15,20 @@ const Today = () => {
       <TodayStyle>Today</TodayStyle>
       <Day>{today}</Day>
     </TodaySection>
-    );
+    )
 }
 
 const TodaySection = styled.div`
   display: flex;
   flex-direction: column;
-  `
+`
 const TodayStyle = styled.p`
   color: #a8dadc;  
   margin: 0;
   font-weight: 600;
-  `
+`
 const Day = styled.p` 
   margin-top: 10px;
 `
  
-export default Today;
+export default Today

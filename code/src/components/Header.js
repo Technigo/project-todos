@@ -1,10 +1,10 @@
-import React from 'react';
+import React from 'react'
 import styled from 'styled-components'
 
 const Header = () => {
   return (
     <Title>TASKS TO DO</Title>
-    );
+    )
 }
 
 const Title = styled.h1`
@@ -13,4 +13,4 @@ const Title = styled.h1`
   color: #ffb703;
   text-align: center;
 `
-export default Header;
+export default Header

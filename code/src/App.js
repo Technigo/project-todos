@@ -48,18 +48,18 @@ const TopSection = styled.section`
   align-items: flex-start;
   display: flex;
   justify-content: space-between;
-  `
+`
 
 const TaskSummary = styled.div`
   display: flex;
   flex-direction: column;
-  `
+`
 const MainSection = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin-top: 40px;
-  `
+`
 const MainContainer = styled.main`
   background:
   linear-gradient(27deg, #151515 5px, transparent 5px) 0 5px,
@@ -79,5 +79,4 @@ const MainContainer = styled.main`
   margin-left: auto;
   margin-right: auto;
   padding: 30px;
-  width: 100%;
 `

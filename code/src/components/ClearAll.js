@@ -10,10 +10,10 @@ const ClearAll = () => {
     <Button onClick={() => dispatch(todoList.actions.clearAllTask())}>
       Clear all
     </Button>
-    );
+    )
 }
  
-export default ClearAll;
+export default ClearAll
 
 const Button = styled.button`
   background-color: #a8dadc;
@@ -21,4 +21,4 @@ const Button = styled.button`
   color: #222222;
   font-size: 12px;
   margin-top: 5px;
-  ` 
+` 
