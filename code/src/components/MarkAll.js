@@ -20,7 +20,7 @@ export const MarkAll = () => {
 
   return (
     <Button onClick={handleMarkButton} disabled={!enabled}>
-      <Emoji role="img" aria-label="Bin">✔</Emoji> 
+      <Emoji role="img" aria-label="Bin">✔</Emoji>
       Mark all tasks!
     </Button>
   );

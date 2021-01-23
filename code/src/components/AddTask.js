@@ -15,9 +15,10 @@ export const AddTask = () => {
   const dispatch = useDispatch();
 
   // Categories
-  const options = [
-    { value: 'School:', label: 'School' },
-    { value: 'Private:', label: 'Private' },
+  const taskCategories = [
+    { value: '', label: 'Choose category' },
+    { value: 'School', label: 'School' },
+    { value: 'Private', label: 'Private' },
   ];
 
   const handleSelectChange = (selectedOption) => {
@@ -37,7 +38,7 @@ export const AddTask = () => {
       <CustomSelect
         value={category.value}
         onChange={handleSelectChange}
-        options={options}
+        options={taskCategories}
         placeholder='Choose category'
       />
       <TaskInput

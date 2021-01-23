@@ -45,5 +45,5 @@ export const Emoji = styled.span`
 
 export const SmallText = styled.p`
   font-size: 10px;
-  color: #8f8f8f;
+  /* color: #8f8f8f; */
 `;

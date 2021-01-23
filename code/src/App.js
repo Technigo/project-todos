@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Provider } from 'react-redux';
 import { combineReducers, createStore } from '@reduxjs/toolkit';
 import styled from 'styled-components';
 
 import { Header } from 'components/Header';
+import { FilterButton } from 'components/FilterButton';
 import { TaskList } from 'components/TaskList';
 import { Footer } from 'components/Footer';
 
@@ -23,8 +24,8 @@ if (persistedStateJSON) {
 
 // Creates the store using initital state
 const store = createStore(
-  reducer, 
-  persistedState, 
+  reducer,
+  persistedState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
@@ -35,11 +36,16 @@ store.subscribe(() => {
 
 
 export const App = () => {
+  const [completed, setCompleted] = useState(false);
+  const [uncompleted, setUnCompleted] = useState(false);
+  const [all, setAll] = useState(true);
+
   return (
     <MainContainer>
       <Header />
-      <Provider store={store}> 
-        <TaskList />
+      <Provider store={store}>
+        <FilterButton completed={completed} uncompleted={uncompleted} all={all} setCompleted={setCompleted} setUnCompleted={setUnCompleted} setAll={setAll} />
+        <TaskList completed={completed} uncompleted={uncompleted} all={all} />
       </Provider>
       <Footer />
     </MainContainer>

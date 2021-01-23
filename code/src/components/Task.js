@@ -20,6 +20,10 @@ export const Task = ({ task }) => {
     dispatch(tasks.actions.removeTask(task.id))
   };
 
+  // Prints the date to be able to see if the task is due or not
+  const currentDate = new Date();
+  const formattedCurrentDate = currentDate.toJSON();
+
   return (
     <List>
       <Wrapper>
@@ -30,7 +34,7 @@ export const Task = ({ task }) => {
         <TaskText line={task.complete ? 'line-through' : null}>{task.category} {task.text}</TaskText>
       </Wrapper>
       <Wrapper>
-        {task.dueDate && <SmallText>Due: {moment(task.dueDate).format('MMM Do YYYY')}</SmallText>}
+        {task.dueDate && <SmallText><span style={{ color: task.dueDate < formattedCurrentDate ? '#ba0713' : '#8f8f8f' }}>Due: {moment(task.dueDate).format('MMM Do YYYY')}</span></SmallText>}
         <RemoveButton
           type="button"
           onClick={handleRemoveButtonClick}>
