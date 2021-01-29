@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { tasks } from 'reducers/tasks';
 
-import { Button, Emoji } from 'styles/GlobalStyles';
+import { Emoji } from 'styles/textstyles';
+import { Button } from 'styles/button';
 
 export const RemoveCompleted = () => {
   const items = useSelector((store) => store.tasks.items.filter(item => item.complete));

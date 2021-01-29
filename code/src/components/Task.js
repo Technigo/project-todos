@@ -7,7 +7,7 @@ import { tasks } from 'reducers/tasks';
 
 import { CustomCheckbox } from './CustomCheckbox';
 
-import { TaskText, Emoji, SmallText } from 'styles/GlobalStyles';
+import { TaskText, Emoji, SmallText } from 'styles/textstyles';
 
 export const Task = ({ task }) => {
   const dispatch = useDispatch();
@@ -34,7 +34,13 @@ export const Task = ({ task }) => {
         <TaskText line={task.complete ? 'line-through' : null}>{task.category} {task.text}</TaskText>
       </Wrapper>
       <Wrapper>
-        {task.dueDate && <SmallText><span style={{ color: task.dueDate < formattedCurrentDate ? '#ba0713' : '#8f8f8f' }}>Due: {moment(task.dueDate).format('MMM Do YYYY')}</span></SmallText>}
+        {task.dueDate && (
+          <SmallText>
+            <span style={{ color: task.dueDate < formattedCurrentDate ? '#ba0713' : '#8f8f8f' }}>
+              Due: {moment(task.dueDate).format('MMM Do YYYY')}
+            </span>
+          </SmallText>
+        )}
         <RemoveButton
           type="button"
           onClick={handleRemoveButtonClick}>

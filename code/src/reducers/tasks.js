@@ -35,9 +35,9 @@ export const tasks = createSlice({
       state.items = filteredList
     },
     // Mark All button is not used right now
-    // markAll: (state) => {
-    //   state.items.map((item) => (item.complete = true));
-    //   state.items.map((task) => (task.complete = true));
-    // },
+    markAll: (state) => {
+      state.items.map((item) => (item.complete = !item.complete));
+      state.items.map((task) => (task.complete = !task.complete));
+    },
   }
 });

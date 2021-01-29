@@ -31,6 +31,7 @@ export const AddTask = () => {
     addText('');
     setCategory('');
     setDueDate('');
+    window.location.reload();
   };
 
   return (

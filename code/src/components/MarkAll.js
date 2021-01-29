@@ -3,7 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { tasks } from 'reducers/tasks';
 
-import { Button, Emoji } from 'styles/GlobalStyles';
+import { Emoji } from 'styles/textstyles';
+import { Button } from 'styles/button';
 
 // This component is not used right now due to problems with the customized checkboxes, 
 // I will keep the component to see if I have time to fix it later on

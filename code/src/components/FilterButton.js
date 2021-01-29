@@ -1,42 +1,30 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import styled from 'styled-components/macro';
-import { SmallText } from 'styles/GlobalStyles';
 
-export const FilterButton = ({ completed, uncompleted, all, setCompleted, setUnCompleted, setAll }) => {
-  const showCompleted = () => {
-    setCompleted(true)
-    setUnCompleted(false)
-    setAll(false)
+export const FilterButton = ({ displayedStatus, setDisplayedStatus }) => {
+  // const [value, setValue] = useState();
+
+  const setActiveStatus = (status) => {
+    setDisplayedStatus(status);
   }
 
-  const showUnCompleted = () => {
-    setCompleted(false)
-    setUnCompleted(true)
-    setAll(false)
-  }
 
-  const showAll = () => {
-    setCompleted(false)
-    setUnCompleted(false)
-    setAll(true)
-  }
 
   return (
-    <ButtonWrapper>
-      <FilteringButton active={completed} onClick={showCompleted}>Show completed tasks</FilteringButton>
-      <FilteringButton active={uncompleted} onClick={showUnCompleted}>Show uncompleted tasks</FilteringButton>
-      <FilteringButton active={all} onClick={showAll}>Show all tasks</FilteringButton>
-    </ButtonWrapper>
-
-    // {/* <select onChange={setFilterFunction}>
-    //   <option value={showAll} >
-    //     completed
-    // </option>
-    // <option value={showCompleted} >
-    //     completed
-    // </option>
-    // </select> */}
+    <>
+      <select onChange={event => setActiveStatus(event.target.value)} >
+        <option value="all">
+          All
+        </option>
+        <option value="completed" >
+          Completed
+        </option>
+        <option value="uncompleted" >
+          Un-completed
+        </option>
+      </select>
+    </>
   );
 };
 
@@ -60,6 +48,10 @@ const FilteringButton = styled.button`
 
   padding: 4px 8px;
   margin: 0 3px;
+
+  &.active {
+    border-color: red !important;
+  }
 
   &:hover {
     border: 2px solid #000;

@@ -36,16 +36,14 @@ store.subscribe(() => {
 
 
 export const App = () => {
-  const [completed, setCompleted] = useState(false);
-  const [uncompleted, setUnCompleted] = useState(false);
-  const [all, setAll] = useState(true);
+  const [displayedStatus, setDisplayedStatus] = useState('all');
 
   return (
     <MainContainer>
       <Header />
       <Provider store={store}>
-        <FilterButton completed={completed} uncompleted={uncompleted} all={all} setCompleted={setCompleted} setUnCompleted={setUnCompleted} setAll={setAll} />
-        <TaskList completed={completed} uncompleted={uncompleted} all={all} />
+        <FilterButton displayedStatus={displayedStatus} setDisplayedStatus={setDisplayedStatus} />
+        <TaskList displayedStatus={displayedStatus} />
       </Provider>
       <Footer />
     </MainContainer>

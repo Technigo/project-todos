@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import Select from 'react-select';
+// import Select from 'react-select';
 
 import { AddTask } from './AddTask';
 import { Task } from './Task';
@@ -9,9 +9,9 @@ import { RemoveAll } from './RemoveAll';
 import { RemoveCompleted } from './RemoveCompleted';
 // import { MarkAll } from './MarkAll';
 
-import { SmallText, Emoji } from 'styles/GlobalStyles';
+import { SmallText, Emoji } from 'styles/textstyles';
 
-export const TaskList = ({ completed, uncompleted, all }) => {
+export const TaskList = ({ displayedStatus }) => {
   // Fetch the list of todos
   const tasks = useSelector(store => store.tasks.items);
 
@@ -42,13 +42,13 @@ export const TaskList = ({ completed, uncompleted, all }) => {
         </DoneText>
       )}
       <ListofTasks id="tasklist">
-        {all && tasks.map((task) => (
+        {displayedStatus === 'all' && tasks.map((task) => (
           <Task key={task.id} task={task} complete={task.complete} />
         ))}
-        {completed && completedTasks.map((task) => (
+        {displayedStatus === 'completed' && completedTasks.map((task) => (
           <Task key={task.id} task={task} complete={task.complete} />
         ))}
-        {uncompleted && nonCompletedTasks.map((task) => (
+        {displayedStatus === 'uncompleted' && nonCompletedTasks.map((task) => (
           <Task key={task.id} task={task} complete={task.complete} />
         ))}
       </ListofTasks>
@@ -68,12 +68,12 @@ const DoneText = styled.p`
   font-weight: bold;
 `;
 
-const CustomSelect = styled(Select)`
-  max-width: 400px:
-  margin: 0 6px 10px 0;
-  font-family: 'PT Sans', sans-serif;
-  font-size: 14px;
-`;
+// const CustomSelect = styled(Select)`
+//   max-width: 400px:
+//   margin: 0 6px 10px 0;
+//   font-family: 'PT Sans', sans-serif;
+//   font-size: 14px;
+// `;
 
 const ListofTasks = styled.ul`
   padding: 0;
