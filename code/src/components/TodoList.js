@@ -13,8 +13,8 @@ export const TodoList = () => {
   const [category, setCategory] = useState('')
 
   const items = useSelector((store) => {
-    if (!category) return store.todos.items //if no category chosen, show all items in list
-    else return store.todos.items.filter(item => item.category === category) // else filter the list on category choosen
+    if (!category) return store.todos.items //if no category chosen, show all items 
+    else return store.todos.items.filter(item => item.category === category) // else filter the list on category 
   })
   
   if (items.length === 0 && !category) {
@@ -47,7 +47,6 @@ export const TodoList = () => {
 
   return (
     <ListWrapper>
-      {/* Note to self: How to make it so that only choosen categories show? */}
       <label>
         <Select
           value={category}

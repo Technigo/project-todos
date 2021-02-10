@@ -28,7 +28,7 @@ export const AddTodoForm = () => {
         complete, 
         dueDate: dueDate.getTime()
       }))
-    setText('') // clears input
+    setText('') 
     setCategory('') 
     setDueDate(new Date()) 
     setComplete()
