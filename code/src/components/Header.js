@@ -1,5 +1,5 @@
-import React from 'react' 
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
 const HeaderContainer = styled.section`
   display: flex;
@@ -9,12 +9,17 @@ const HeaderContainer = styled.section`
 `;
 
 export const Header = () => {
-    //const items = useSelector((store) => store.todos.items)
-    //const finishedTodos = items.filter((item) => item.isComplete)
+  //const items = useSelector((store) => store.todos.items)
+  //const finishedTodos = items.filter((item) => item.isComplete)
 
-    return (
-        <HeaderContainer>
-            <h1>Todo List <span role="img" aria-label="checkmark">✓</span></h1>
-        </HeaderContainer>
-    )
-}
+  return (
+    <HeaderContainer>
+      <h1>
+        Todo List{" "}
+        <span role="img" aria-label="checkmark">
+          ✓
+        </span>
+      </h1>
+    </HeaderContainer>
+  );
+};
