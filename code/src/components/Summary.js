@@ -11,4 +11,4 @@ export const Summary = () => {
       <SummaryItem>{doneTasks.length}/{allTasks.length} done</SummaryItem>
     </SummaryContainer>
   )
-}
+};

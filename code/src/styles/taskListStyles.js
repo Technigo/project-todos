@@ -29,8 +29,11 @@ export const AddForm = styled.form`
   align-items: center;
   justify-content: space-between;
   width: 100%;
+  height: 14vh;
+  border-bottom: 2px solid #F0F0F0;
   margin-left: 5px;
-`
+  padding: 15px;
+  `
 
 export const NewTaskInput = styled.input`
   width: 100%;

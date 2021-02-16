@@ -10,7 +10,7 @@ export const TaskList = () => {
   if (allTasks.length === 0) {
     return (
       <CelebrationContainer>
-        <img src={require('assets/Party.svg')} alt='' style={{width: '45vh'}}/>
+        <img src={require('assets/Party.svg')} alt='confetti explosion' style={{width: '45vh'}}/>
         <p>Nothing to do? Great, go enjoy life!</p>
       </CelebrationContainer>
     )
@@ -20,7 +20,8 @@ export const TaskList = () => {
         {allTasks.map((task) => (
           <TaskListItem 
             key={task.id}
-            task={task} />
+            task={task}
+          />
         ))}
       </ListContainer>
     )

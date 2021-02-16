@@ -11,16 +11,16 @@ export const BottomContainer = styled.div`
 `
 
 export const BottomButton = styled.button`
-background-color: #28065b;
-color: white;
-font-family: 'Open Sans', Arial, Helvetica, sans-serif;
-border: none;
-border-radius: 1vh;
-padding: 1vh;
-width: 13vh;
+  background-color: #28065b;
+  color: white;
+  font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+  border: none;
+  border-radius: 1vh;
+  padding: 1vh;
+  width: 13vh;
 
-&:disabled {
-  background-color: #ddd6e8;
-  border: 1px solid #28065b;
-}
+  &:disabled {
+    background-color: #ddd6e8;
+    border: 1px solid #28065b;
+  }
 `

@@ -12,4 +12,4 @@ export const Header = () => {
       <Summary />
     </HeaderContainer>
   )
-}
+};

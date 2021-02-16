@@ -15,15 +15,13 @@ export const TaskListItem = ({ task }) => {
 
   return (
     <ListItem>
-      <DoneButton 
-        task={task}
-      />
+      <DoneButton task={task}/>
       <TextContainer done={task.done}>
         <p>{task.text}</p>
         <Timestamp>{moment(task.created).fromNow()}</Timestamp>
       </TextContainer>
       <DeleteButtonContainer onClick={onItemDelete}>
-        <img src={require('assets/delete.svg')} alt='' style={{width: '20px'}}/>
+        <img src={require('assets/delete.svg')} alt='trash can' style={{width: '20px'}}/>
       </DeleteButtonContainer>
     </ListItem>
   )

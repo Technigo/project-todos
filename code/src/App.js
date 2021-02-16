@@ -20,4 +20,4 @@ export const App = () => (
     <Tasks />
     <Bottom />
   </Provider>
-)
+);

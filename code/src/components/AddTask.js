@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { todos } from '../reducers/todos';
-import { ListItem, AddForm, NewTaskInput, AddButton } from '../styles/taskListStyles';
+import { AddForm, NewTaskInput, AddButton } from '../styles/taskListStyles';
 
 export const AddTask = () => {
   const [value, setValue] = useState('');
@@ -12,13 +12,12 @@ export const AddTask = () => {
     dispatch(todos.actions.addItem(value));
     setValue('');
     event.preventDefault();
-  }
+  };
 
   return (
-    <ListItem>
       <AddForm onSubmit={onAddTask}>
         <label htmlFor='newTask'>
-        <img src={require('assets/plus.svg')} alt='' style={{width: '20px'}}/>
+          <img src={require('assets/plus.svg')} alt='plus symbol' style={{width: '20px'}}/>
         </label>
         <NewTaskInput 
           type='text' 
@@ -27,12 +26,12 @@ export const AddTask = () => {
           value={value}
           onChange={event => setValue(event.target.value)}
           required
-          />
+        />
         <AddButton 
           type='submit' 
+          role= 'button'
           value='Add'
         />
       </AddForm>
-    </ListItem>
   )
-}
+};

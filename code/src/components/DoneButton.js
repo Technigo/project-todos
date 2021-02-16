@@ -15,7 +15,7 @@ export const DoneButton = ({ task }) => {
   if (task.done === true) {
     return (
       <DoneButtonContainer onClick={onItemDone}>
-        <img src={require('assets/check.svg')} alt='' style={{width: '20px'}}/>
+        <img src={require('assets/check.svg')} alt='check sign' style={{width: '20px'}}/>
       </DoneButtonContainer>
     ) 
   } else {
