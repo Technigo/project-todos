@@ -29,8 +29,8 @@ export const todos = createSlice({
       item.done = done;
       
     },
-    // Filter away the one we want to delete. Since we know the index of the one we do not want to keep, we can keep everything else.
-    // The payload contains the index of the one we want do remove. The onClick.
+    // Filter away the one we want to delete. Since we know the id of the one we do not want to keep, we can keep everything else.
+    // The payload contains the id of the one we want do remove. The onClick.
     removeTodo: (state, action) => { 
       const { itemId } = action.payload;
       state.list.items = state.list.items.filter(

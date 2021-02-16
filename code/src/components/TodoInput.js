@@ -1,19 +1,22 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
+// Generates random id to each input
 import { v4 as uuidv4 } from 'uuid';
 
 import { todos } from '../reducers/todos';
 import { Form, StyledLabel, InputField, InputAdd } from '../styledComponents/styled_components';
 
-// Receives listId as input
+// Responsible for dispatching the value of the input field as new todo to the Redux store.
+// First store the state of inputValue locally, then dispatch inputValue to Redux store.
+// Responsible for setting initial done-state of todo-input to false.
+
 export const TodoInput = () => {
   const dispatch = useDispatch();
   
   // State for input from text-box
   const [inputValue, setInputValue] = useState('');
   // State for date
-  
   const date = new Date();
 
   // Create handle submit function to dispatch addTodo
