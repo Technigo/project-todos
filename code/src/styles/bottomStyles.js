@@ -8,6 +8,7 @@ export const BottomContainer = styled.div`
   padding: 4vh;
   position: absolute;
   bottom: 0;
+  height: 14vh
 `
 
 export const BottomButton = styled.button`
