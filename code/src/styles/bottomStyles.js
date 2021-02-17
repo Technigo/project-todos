@@ -17,7 +17,7 @@ export const BottomButton = styled.button`
   font-family: 'Open Sans', Arial, Helvetica, sans-serif;
   border: none;
   border-radius: 1vh;
-  padding: 1vh;
+  padding: 0vh 1vh;
   width: 13vh;
 
   &:disabled {
