@@ -40,6 +40,8 @@ export const Input = () => {
     )
     setInput('')
   }
+  const emptyTodo = (input) => input.replace(/\s/g, '').length === 0;
+
 
   return (
     <Form onSubmit={handleOnSubmit}>
@@ -52,7 +54,11 @@ export const Input = () => {
           onChange={(event) => setInput(event.target.value)}
         />
 
-        <IconButton type="submit">
+        <IconButton
+          type="submit"
+          disabled={
+            input.length < 3 || emptyTodo(input)
+          }>
           <AddIcon />
         </IconButton>
       </Container>

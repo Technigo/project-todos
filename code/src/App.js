@@ -2,6 +2,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit"
 import React from 'react'
 import { Provider } from 'react-redux'
 import styled from "styled-components"
+
 import { Header } from './components/Header'
 import { Input } from './components/Input'
 import { List } from './components/List'

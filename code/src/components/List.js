@@ -1,8 +1,9 @@
 import Button from '@material-ui/core/Button'
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { todos } from 'reducers/todos'
 import styled from 'styled-components'
+
+import { todos } from 'reducers/todos'
 import { Item } from './Item'
 
 const ListContainer = styled.div`
@@ -31,7 +32,7 @@ export const List = () => {
     <ListContainer>
       <Items>
         {items.map((item, index) => (
-          <Item key={index} item={item}></Item>
+          <Item key={item.id} item={item}></Item>
         ))}
       </Items>
 
