@@ -45,8 +45,7 @@ jobs:
         working-directory: code
         
       - name: Saving code linting report to JSON
-        run: eslint --output-file eslint_report.json --format json
-        working-directory: code
+        run: eslint --output-file eslint_report.json --format json code
         
       - name: Uploading ESLint report
         uses: actions/upload-artifact@v1
