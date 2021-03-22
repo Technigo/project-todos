@@ -44,12 +44,12 @@ jobs:
         run: npm run lint
         working-directory: code
         
-      - name: Saving code linting report to JSON
-        run: npm run lint --output-file eslint_report.json --format json
-        working-directory: code
+#       - name: Saving code linting report to JSON
+#         run: npm run lint --output-file eslint_report.json --format json
+#         working-directory: code
         
-      - name: Uploading ESLint report
-        uses: actions/upload-artifact@v1
-        with:
-          name: eslint_report.json
-          path: eslint_report.json
+#       - name: Uploading ESLint report
+#         uses: actions/upload-artifact@v1
+#         with:
+#           name: eslint_report.json
+#           path: eslint_report.json
