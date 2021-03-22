@@ -34,6 +34,6 @@ jobs:
         run: npm install
         working-directory: code
         
-      - name: Running eslint
+      - name: Running ESLint
         run: npm run lint
         working-directory: code
