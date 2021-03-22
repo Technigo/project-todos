@@ -1,6 +1,6 @@
 import React from 'react'
 
-import ReactDOM from 'react-react'
+import ReactDOM from 'react-dom'
 
 export const App = () => {
   return (
