@@ -24,11 +24,7 @@ export const tasks = createSlice({
             state.items.push(newTask)
         },
         toggleTaskCompleted: (state, action) => {
-          const taskCompleted = {
-              id: action.payload.id,
-              completed: true
-          }
-          state.items.completed(taskCompleted)
+         
             
         },
         removeTask: (state, action) => {
