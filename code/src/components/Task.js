@@ -19,7 +19,7 @@ export const Task = ({ id, task, completed }) => {
     const onCheckedCompleted = () => {
         dispatch(
             tasks.actions.toggleTaskCompleted(
-                {completed: task.completed}
+                {id: task.id, completed: !completed}
             )
         )
     }

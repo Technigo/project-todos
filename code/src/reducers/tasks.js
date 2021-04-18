@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
+import { TodoApp } from 'components/TodoApp'
 
 const initialState = {
-    // NextId: 0,
     items: [
     // hard coded data to test app. 
     // {id: 1, content: 'Wash clothes', completed: false},
@@ -10,22 +10,26 @@ const initialState = {
 ]
 }
 
+const nextId = (items) => {
+    const maxId = items.reduce((maxId, task) => Math.max(task.id, maxId), -1)
+    return maxId + 1 
+}
+
 export const tasks = createSlice({
     name: 'tasks', //what the object in the store will be called 
     initialState,
     reducers: {
         addTask: (state, action) => {
             const newTask = {
-                id: Date.now(),
-                // id: state.NextId +1,
+                id: nextId(state.items),
                 content: action.payload.content,
                 completed: false
             }
             state.items.push(newTask)
         },
         toggleTaskCompleted: (state, action) => {
-         
-            
+            const index = state.items.findIndex((task) => task.id === action.payload.id)
+			state.items[index].completed = action.payload.completed
         },
         removeTask: (state, action) => {
             const existingTask = state.items.find((task) => task.id === action.payload.id)
