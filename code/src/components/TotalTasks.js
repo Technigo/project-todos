@@ -1,9 +1,15 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import { tasks } from '../reducers/tasks'
 
 export const TotalTasks = () => {
     const dispatch = useDispatch()
+
+    const totalNumberOfTasks = useSelector((store) => (
+        store.tasks.items.length
+        ))
+    
+
 
     const onClickClearAll = (event) => {
 		event.preventDefault();
@@ -13,7 +19,7 @@ export const TotalTasks = () => {
 	};
     return (
         <>
-        <p>Total tasks: </p>
+        <p>Total tasks: {totalNumberOfTasks}</p>
         <button onClick={onClickClearAll}>Clear all!</button>
         </>
 

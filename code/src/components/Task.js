@@ -16,12 +16,21 @@ export const Task = ({ id, task, completed }) => {
         )
 	};
 
+    const onCheckedCompleted = () => {
+        dispatch(
+            tasks.actions.toggleTaskCompleted(
+                {completed: task.completed}
+            )
+        )
+    }
+
+
     return (
         <TodoTask>
             <input 
                 type='checkbox' 
-                // checked={completed} 
-                // onChange={}
+                checked={completed} 
+                onChange={onCheckedCompleted}
             ></input>
                 {task.content}
             <RemoveTodo onClick={onClickRemove}>✖️</RemoveTodo>

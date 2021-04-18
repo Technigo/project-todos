@@ -1,12 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    
+    // NextId: 0,
     items: [
     // hard coded data to test app. 
-    // {id: 1, content: 'Wash clothes', complete: true},
-    // {id: 2, content: 'code Todo app', complete: true},
-    // {id: 3, content: 'Enjoy the sun', complete: false},
+    // {id: 1, content: 'Wash clothes', completed: false},
+    // {id: 2, content: 'code Todo app', completed: false},
+    // {id: 3, content: 'Enjoy the sun', completed: false},
 ]
 }
 
@@ -17,20 +17,25 @@ export const tasks = createSlice({
         addTask: (state, action) => {
             const newTask = {
                 id: Date.now(),
+                // id: state.NextId +1,
                 content: action.payload.content,
                 completed: false
             }
             state.items.push(newTask)
         },
-        toggleTask: (state, action) => {
-
-
+        toggleTaskCompleted: (state, action) => {
+          const taskCompleted = {
+              id: action.payload.id,
+              completed: true
+          }
+          state.items.completed(taskCompleted)
+            
         },
         removeTask: (state, action) => {
             const existingTask = state.items.find((task) => task.id === action.payload.id)
             
             if(existingTask) {
-                state.items = state.items.filter((task) => task.id !==action.payload.id)
+                state.items = state.items.filter((task) => task.id !== action.payload.id)
                 // this line will return a new array of items, except the item that was in the payload
             }
         },
