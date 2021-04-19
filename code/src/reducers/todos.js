@@ -7,3 +7,5 @@ const todos = createSlice({
   },
   reducers: {},
 });
+
+export default todos;
