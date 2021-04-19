@@ -1,13 +1,13 @@
 import React from "react"
 
-import { AddButton } from "./AddButton"
-import { Task } from "./Task"
+import { AddContainer } from "./AddContainer"
+import { TaskContainer } from "./TaskContainer"
 
 export const Container = () => {
   return (
-    <section>
-      <AddButton />
-      <Task />
-    </section>
+    <main>
+      <AddContainer />
+      <TaskContainer />
+    </main>
   )
 }
