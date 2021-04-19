@@ -7,9 +7,9 @@
     overflow-y:auto;
 }
 
-button {
+.new-task-btn {
     padding: 0;
-    margin-right: 10px;
+    margin: 0 10px;
     font-size: 30px;
     width: 40px;
     height: 40px;
@@ -19,20 +19,23 @@ button {
     outline: none;
 }
 
-input[type="textarea"] {
+.new-task-input {
     width: 100%;
     min-height: 100px;
     flex: 1 1 auto;
     border: none;
     font-size: 20px;
     outline: none;
+    color: rgb(40, 91, 104);
 }
 
-input[type="textarea"]::placeholder {
+.new-task-input::placeholder {
+    font-family: 'Raleway', sans-serif;
+    padding-top: 38px;
     color:  rgb(196, 232, 241);
 }
 
-input[type="textarea"]:focus, input[type="textarea"]:hover{
+.new-task-input:focus, .new-task-input:hover{
     background-color:rgb(196, 232, 241);
 }
 

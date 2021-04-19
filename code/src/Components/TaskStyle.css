@@ -1,0 +1,78 @@
+input[type=checkbox] {
+    margin-right: 10px;
+}
+
+.task-label input:checked{
+    color:rgb(196, 232, 241);
+}
+
+/* Customize the label (the container) */
+.task-label {
+    display: block;
+    position: relative;
+    padding-left: 45px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .task-label input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .task-checkbox {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+    background-color: rgb(255, 255, 255);
+    border: solid rgb(112, 128, 158) 0.5px;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .task-label:hover input ~ .task-checkbox {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .task-label input:checked ~ .task-checkbox {
+    background-color:rgb(196, 232, 241);
+    border: none;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .task-checkbox:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .task-label input:checked ~ .task-checkbox:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .task-label .task-checkbox:after {
+    left: 9px;
+    top: 5px;
+    width: 8px;
+    height: 13px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

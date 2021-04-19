@@ -4,7 +4,8 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit'
 
 import { todos } from './Reducers/todos'
 import { TodoList } from './Components/TodoList'
-import { CreateTodo } from './Components/CreateTodo'
+import { CreateNewTask } from './Components/CreateNewTask'
+import { Header } from './Components/Header'
 
 export const App = () => {
   const reducer = combineReducers({
@@ -15,7 +16,8 @@ export const App = () => {
 
   return (
     <Provider store={store}>
-      <CreateTodo />
+      <Header />
+      <CreateNewTask />
       <TodoList />
     </Provider>
   )

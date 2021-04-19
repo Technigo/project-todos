@@ -1,20 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+   items: [],
+   updatedTodos: []
+  };
+
 export const todos = createSlice({
   name: "todos",
-  initialState: {
-    items: [
-      { id: 1, description: "First task", isComplete: false },
-      { id: 2, description: "Second task", isComplete: false },
-      { id: 3, description: "Third task", isComplete: false },
-    ],
-    updatedTodos: [],
-  },
+  initialState,
   reducers: {
-    toggleComplete: (state, action) => {
+    toggleComplete: (store, action) => {
       const { id } = action.payload;
 
-      state.updatedTodos = state.items.map((item) => {
+      store.updatedTodos = store.items.map((item) => {
         if (item.id === id) {
           item.isComplete = !item.isComplete;
           return item;
@@ -22,14 +20,22 @@ export const todos = createSlice({
           return item;
         }
       });
-      state.items = state.updatedTodos;
+      store.items = store.updatedTodos;
     },
-    createNewTodo: (state, action) => {
+    createNewTodo: (store, action) => {
       const { task } = action.payload;
-      state.items.push({
-        id: state.items.length + 1, 
+      store.items.push({
+        id: store.items.length + 1, 
         description: task, 
         isComplete: false }) 
     },
+    removeTodo: (store, action) => {
+        const { task } = action.payload;
+        store.updatedTodos = store.items.filter(item => item.id !== task)
+        store.items = store.updatedTodos;
+    },
+    clearAll: () => {
+        return initialState;
+    }
   },
 });
