@@ -1,15 +1,30 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+
+//import slice
+import todos from '../reducers/todos'
 
 const TodoList = () => {
     //Same name as property name in reducer.
-    //useSelector hook with access to whole store
+    //useSelector hook with access to whole store - only reaching for data in items[]
     const  items = useSelector((store) => store.todos.items)
     console.log(items)
 
+    //Create instance of useDispatch hook.
+    const dispatch = useDispatch()
+
     return (
         <div>
-            <p>This is where the todo list will show</p>
+            {items.map(todo =>(
+                <div key={todo.id}>
+                    <p>{todo.description}</p>
+                    <input 
+                        type="checkbox"
+                        checked={todo.isComplete}
+                        onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+                    />
+                </div>
+            ))}
         </div>
     )
 }
