@@ -5,7 +5,7 @@ import { Task } from './Task';
 export const TaskList = () => {
   const allTasks = useSelector((store) => (store.tasks))
   return (
-    <div>
+    <div className="task-list">
       {allTasks.map((task) => (
         <Task key={task.id} task={task} />
        ))}

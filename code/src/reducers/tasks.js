@@ -3,10 +3,10 @@ import { createSlice } from '@reduxjs/toolkit'
 export const tasks = createSlice({
   name: 'tasks',
   initialState: [
-    { id: 1, text:'read a book', complete: true },
-    { id: 2, text:'do dishes', complete: false },
-    { id: 3, text:'clean windows', complete: false},
-    { id: 4, text:'eat chocolate', complete: false },
+    { id: 1618850133385, text:'read a book', complete: true },
+    { id: 1618850133386, text:'do dishes', complete: false },
+    { id: 1618850133387, text:'clean windows', complete: false},
+    { id: 1618850133388, text:'eat chocolate', complete: false },
   ],
   reducers: {
     deleteTask: (state, action) => {

@@ -4,18 +4,25 @@ import { tasks } from '../reducers/tasks';
 
 export const Task = ({task}) => {
   const dispatch = useDispatch()
+
   return (
-    <div>
-      <input
+    <div className="task">
+      <input className="task-colomn-10 checkbox-round" id={task.id}
         type='checkbox'
         checked={task.complete}
-        onClick={() => dispatch(tasks.actions.toggleCompleted(task))}>
+        onChange={() => dispatch(tasks.actions.toggleCompleted(task))}>
       </input>
-      {task.text}
-      <button
+
+      <label htmlFor={task.id} className="task-colomn-60">
+        {task.text}
+
+      </label>
+
+      <p className="task-colomn-10">{new Date(task.id).getDate()}/{new Date(task.id).getMonth()+1}</p>
+      <button className="task-colomn-10"
         type="button"
         onClick={() => dispatch(tasks.actions.deleteTask(task))}>
-        Delete
+        <span role="img" aria-label="trash-can">{"🗑️"}</span>
       </button>
     </div>
   )

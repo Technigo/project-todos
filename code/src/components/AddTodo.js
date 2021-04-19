@@ -11,10 +11,12 @@ export const AddTodoForm = () => {
 		event.preventDefault();
 		if (value) {
       dispatch(tasks.actions.addTask({text: value}))
+      setValue("")
 		}
+
 	};
   return (
-    <form onSubmit={onSubmit}>
+    <form className="form" onSubmit={onSubmit}>
 			<input
 				type='text'
 				placeholder='Add todo...'
