@@ -4,7 +4,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import todos from "./reducers/todos";
 
-const reducers = combineReducers({
+const reducer = combineReducers({
   todos: todos.reducer,
 });
 
@@ -12,7 +12,7 @@ const store = configureStore({ reducer });
 
 export const App = () => {
   return (
-    <Provider>
+    <Provider store={store}>
       <div>Find me in src/app.js!</div>;
     </Provider>
   );
