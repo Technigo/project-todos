@@ -4,9 +4,9 @@ export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      { id: 1, description: 'Test', isComplete: false },
-      { id: 2, description: 'Test2', isComplete: false },
-      { id: 3, description: 'Test3', isComplete: false }
+      { id: 1, description: 'Buy toilet paper', isComplete: false },
+      { id: 2, description: 'Call Nuttis', isComplete: false },
+      { id: 3, description: 'Make dinner', isComplete: false }
     ],
   },
   reducers: {
