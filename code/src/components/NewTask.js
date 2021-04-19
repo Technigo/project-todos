@@ -35,7 +35,7 @@ const NewTask = () => {
     <div className="border">
       <form>
         <input type="text" value={inputValue} onChange={handleChange} />
-        <button onClick={handleOnClick}>Add Task</button>
+        <button onClick={handleOnClick}>Add New Task</button>
       </form>
     </div>
   );
