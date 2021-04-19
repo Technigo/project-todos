@@ -1,13 +1,22 @@
 import React from 'react';
+import styled from 'styled-components';
+
+const Form = styled.form`
+width: 250px;
+border: 2px solid blue;
+margin: 10px;
+padding: 20px 0;
+`
 
 const TaskCreator = () => {
   return (
-    <form>
+    <Form>
       <input
         type="text"
         id="taskInput"
+        placeholder="+ Add task"
       />
-    </form>
+    </Form>
 
   )
 };
