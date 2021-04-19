@@ -16,7 +16,11 @@ export const tasks = createSlice({
       state.allTasks.push({ title: action.payload, isCompleted: false })
     },
     removeTask: (state, action) => {
-      state.allTasks = []
+      if (action.payload) {
+        state.allTasks = state.allTasks.filter(task => task.title !== action.payload.title)
+      } else {
+        state.allTasks = []
+      }
     },
     toggleTask: (state, action) => {
       const completedTask = state.allTasks.find(task => task.title === action.payload.title)

@@ -14,7 +14,7 @@ export const Task = ({ task }) => {
         !task.isCompleted &&
         <button onClick={() => dispatch(tasks.actions.toggleTask(task))} > O</button>}
       <p>{task.title}</p>
-      <button>Remove from list</button>
+      <button onClick={() => dispatch(tasks.actions.removeTask(task))} >Remove from list</button>
     </div >
   )
 }
