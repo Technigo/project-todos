@@ -1,5 +1,9 @@
 import React from "react"
 import { useSelector } from "react-redux"
+import styled from 'styled-components'
+
+const StyledParagraph = styled.p`
+`
 
 export const Counter = () => {
   const tasks = useSelector(store => store.tasks.allTasks)
@@ -8,6 +12,6 @@ export const Counter = () => {
   const totalCompletedTasks = tasks.filter(task => task.isCompleted).length
 
   return (
-    <p>{totalCompletedTasks}/{totalTasks} tasks completed</p>
+    <StyledParagraph>{totalCompletedTasks}/{totalTasks} completed</StyledParagraph>
   )
 }
