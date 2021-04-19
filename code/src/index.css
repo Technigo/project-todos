@@ -11,3 +11,94 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+/* 
+* {
+
+} */
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+p {
+  padding-left: 10%;
+}
+
+main {
+  height: 100vh;
+  background-color: #ffd5cd;
+  padding-top: 15px;
+}
+
+.task-box {
+  width: 80%;
+  margin: auto;
+  /* background-color: #fcf1f1; */
+}
+
+.single-task-box {
+  display: flex;
+  align-items: center;
+  background-color: #fcf1f1;
+  height: 80px;
+  margin: 1px;
+}
+
+/* custom checkbox */
+
+.checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 15px;
+}
+
+.checkbox input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  height: 30px;
+  width: 30px;
+  background-color: #ffd5cd;
+  border-radius: 20px;
+}
+
+.checkbox input:checked ~ .checkmark {
+  background-color: #f9813a;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox .checkmark:after {
+  left: 11px;
+  top: 5px;
+  width: 6px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  border-radius: 2px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
