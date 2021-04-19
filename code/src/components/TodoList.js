@@ -6,6 +6,7 @@ import todos from "../reducers/todos";
 const TodoList = () => {
   const dispatch = useDispatch();
   const items = useSelector((store) => store.todos.items);
+  console.log(items);
 
   return (
     <div>
