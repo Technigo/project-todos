@@ -1,16 +1,16 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
+// import React from 'react'
+// import { useDispatch } from 'react-redux'
 
 
-export const Todo =({ todo }) => {
-    const dispatch = useDispatch()
+// export const Todo =({ todo }) => {
+//     const dispatch = useDispatch()
 
-    return (
-        <article className="todo">
-              <p>{todo.text}</p>
-            <input>
-            </input>
-        </article>
+//     return (
+//         <article className="todo">
+//               <p>{todo.text}</p>
+//             <input>
+//             </input>
+//         </article>
 
-    )
-}
+//     )
+// }

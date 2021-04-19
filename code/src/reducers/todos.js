@@ -1,11 +1,33 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 //TASKLIST
-export const todos  = createSlice ({
+const todos  = createSlice({
     name: 'todos',
-    initialState: [
-        { id: 1, text: 'bla bla bla 1', complete: true },
-        { id: 2, text: 'bla bla 2', complete: true },
-        { id: 3, text: 'bla 3', complete: false },
-    ]
-})
+    initialState: {
+    items: [
+            { id: 1, text: 'bla bla bla 1', isComplete: false },
+        ]
+    },
+    reducers: {
+        
+        toggleComplete: (store, action) => {
+
+            const updatedItems = store.items.map(todo => {
+                if (todo.id === action.payload) {
+                    return {
+                        ...todo,
+                        isComplete: !todo.isComplete
+                    }                   
+                } else {
+                    return todo;
+
+                }
+            });
+            store.items = updatedItems;
+        }
+
+}
+
+});
+
+export default todos;
