@@ -1,10 +1,19 @@
 import React from "react"
+import { useDispatch } from "react-redux"
 
-export const Task = () => {
+import { tasks } from "reducers/tasks"
+
+export const Task = ({ task }) => {
+  const dispatch = useDispatch()
+
   return (
     <div>
-      <span>✔</span>
-      <p>Take a nap</p>
-    </div>
+      {task.isCompleted &&
+        <button onClick={() => dispatch(tasks.actions.toggleTask(task))} > X</button >}
+      {
+        !task.isCompleted &&
+        <button onClick={() => dispatch(tasks.actions.toggleTask(task))} > O</button>}
+      <p>{task.title}</p>
+    </div >
   )
 }
