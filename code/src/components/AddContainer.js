@@ -21,7 +21,6 @@ export const AddContainer = () => {
 
   return (
     <section>
-
       <button onClick={handleClick}>Add task</button>
 
       {isClicked &&
@@ -30,9 +29,6 @@ export const AddContainer = () => {
           <button onClick={() => dispatch(tasks.actions.addTask(newTask))} >Add to list</button>
         </>
       }
-
-
-
     </section>
   )
 }
