@@ -4,17 +4,21 @@ import { Header } from './Header'
 import { AddTaskForm } from './AddTaskForm'
 import { Tasks } from './Tasks'
 import { TotalTasks } from './TotalTasks'
-import { MainAppContainer, FormListContainer } from './styled components/TodoAppStyling'
+import { MainAppContainer, AppHeader, FormListContainer, TotalTaskContainer } from './styled components/TodoAppStyling'
 
 export const TodoApp = () => {
     return (
         <MainAppContainer>
-            <Header />
+            <AppHeader>
+                <Header />
+            </AppHeader>
             <FormListContainer>
                 <AddTaskForm />
                 <Tasks />
             </FormListContainer>
-            <TotalTasks />
+            <TotalTaskContainer>
+                <TotalTasks />
+            </TotalTaskContainer>
         </MainAppContainer>
     )
 }

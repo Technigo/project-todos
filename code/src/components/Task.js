@@ -14,7 +14,7 @@ export const Task = ({ id, task, completed }) => {
                 id: task.id
             })
         )
-	};
+	}
 
     const onCheckedCompleted = () => {
         dispatch(
@@ -28,7 +28,8 @@ export const Task = ({ id, task, completed }) => {
     return (
         <TodoTask>
             <input 
-                type='checkbox' 
+                type='checkbox'  
+                id="checkbox1"
                 checked={completed} 
                 onChange={onCheckedCompleted}
             ></input>

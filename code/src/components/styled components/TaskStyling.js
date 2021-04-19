@@ -13,7 +13,7 @@ export const TodoTask = styled.li`
 
 export const RemoveTodo = styled.button`
     border-radius: 50%;
-    background-color: whitesmoke;
+    background-color: white;
     // background-color: #a5aefa;
     border: none;
 `

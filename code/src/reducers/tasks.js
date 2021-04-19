@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { TodoApp } from 'components/TodoApp'
+import { TodoApp } from 'components/TodoApp' 
 
 const initialState = {
     items: [
@@ -19,23 +19,24 @@ export const tasks = createSlice({
     name: 'tasks', //what the object in the store will be called 
     initialState,
     reducers: {
-        addTask: (state, action) => {
+        addTask: (store, action) => {
             const newTask = {
-                id: nextId(state.items),
+                id: nextId(store.items),
                 content: action.payload.content,
                 completed: false
             }
-            state.items.push(newTask)
+            store.items.push(newTask)
         },
-        toggleTaskCompleted: (state, action) => {
-            const index = state.items.findIndex((task) => task.id === action.payload.id)
-			state.items[index].completed = action.payload.completed
+        //reducers are objects to update the store
+        toggleTaskCompleted: (store, action) => {
+            const index = store.items.findIndex((task) => task.id === action.payload.id)
+			store.items[index].completed = action.payload.completed
         },
-        removeTask: (state, action) => {
-            const existingTask = state.items.find((task) => task.id === action.payload.id)
+        removeTask: (store, action) => {
+            const existingTask = store.items.find((task) => task.id === action.payload.id)
             
             if(existingTask) {
-                state.items = state.items.filter((task) => task.id !== action.payload.id)
+                store.items = store.items.filter((task) => task.id !== action.payload.id)
                 // this line will return a new array of items, except the item that was in the payload
             }
         },

@@ -28,7 +28,6 @@ export const AddTaskForm = () => {
 				value={value}
 				onChange={(event) => setValue(event.target.value)}
 			></FormTextArea>
-
 			<SubmitButton type='submit'>
 				➕
 			</SubmitButton>
