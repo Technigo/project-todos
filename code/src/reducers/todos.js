@@ -24,6 +24,8 @@ const todos = createSlice({
 
       store.items = updatedItems;
     },
+    removeItem: () => {},
+    addItem: () => {},
   },
 });
 
