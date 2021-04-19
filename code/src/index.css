@@ -5,9 +5,53 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(https://images.pexels.com/photos/612252/pexels-photo-612252.jpeg?auto=compress&cs=tinysrgb&h=1280&w=1920);
+  background-size: cover;
+  font-family: 'PT Sans Narrow', sans-serif;
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+h1 {
+  font-family: 'Dancing Script', cursive;
+}
+
+.add-button {
+  cursor: pointer;
+  border: 4px solid floralwhite;
+  background: transparent;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.add-button:hover {
+  background-color: rgb(255, 250, 240, 0.6);
+}
+
+.list-container {
+  border: 4px solid floralwhite;
+  background-color: rgb(255, 250, 240, 0.6);
+  border-radius: 10px;
+}
+
+.todo-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.done {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+
+
+/**Media**/
