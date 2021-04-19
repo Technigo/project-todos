@@ -24,7 +24,13 @@ const TodoList = () => {
                 dispatch(todos.actions.toggleComplete(todo.id));
               }}
             />
-            <p>{todo.description}</p>
+            <p
+              onClick={() => {
+                dispatch(todos.actions.toggleComplete(todo.id));
+              }}
+            >
+              {todo.description}
+            </p>
             <button
               onClick={() => {
                 dispatch(todos.actions.removeItem(todo.id));
