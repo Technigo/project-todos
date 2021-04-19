@@ -13,8 +13,8 @@ const StyledMain = styled.main`
 export const Container = () => {
   return (
     <StyledMain>
-      <AddContainer />
       <TaskContainer />
+      <AddContainer />
     </StyledMain>
   )
 }

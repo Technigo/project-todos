@@ -7,6 +7,7 @@ import { tasks } from "reducers/tasks"
 const StyledDiv = styled.div`
   display: flex;
   justify-content: space-between;
+  margin: 16px 0;
 `
 
 const StyledButton = styled.button`
@@ -16,6 +17,10 @@ const StyledButton = styled.button`
 `
 const Icon = styled.img`
   width: 24px;
+`
+const StyledParagraph = styled.p`
+  margin: 0 10px;
+  font-size: 24px;
 `
 
 export const Task = ({ task }) => {
@@ -31,7 +36,7 @@ export const Task = ({ task }) => {
         <StyledButton onClick={() => dispatch(tasks.actions.toggleTask(task))}>
           <Icon src="./assets/square-icon.svg" alt="empty square icon" />
         </StyledButton>}
-      <p>{task.title}</p>
+      <StyledParagraph>{task.title}</StyledParagraph>
       <StyledButton onClick={() => dispatch(tasks.actions.removeTask(task))} >
         <Icon src="./assets/bin-icon.svg" alt="bin icon" />
       </StyledButton>

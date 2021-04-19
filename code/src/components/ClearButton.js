@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import { tasks } from "reducers/tasks"
 
 const StyledButton = styled.button`
+@import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
   border: none;
   background-color: transparent;
   display: flex;
@@ -23,9 +24,17 @@ const Icon = styled.img`
 
 export const ClearButton = () => {
   const dispatch = useDispatch()
+
+  const handleClick = () => {
+    const deleteAll = window.confirm("Are you sure you want to delete all tasks?")
+    if (deleteAll) {
+      dispatch(tasks.actions.removeTask())
+    }
+  }
+
   return (
-    <StyledButton onClick={() => dispatch(tasks.actions.removeTask())} >
-      <StyledParagraph>Clear all</StyledParagraph>
+    <StyledButton onClick={handleClick} >
+      <StyledParagraph>Delete all</StyledParagraph>
       <Icon src="./assets/bin-icon.svg" alt="bin icon" />
     </StyledButton>
   )
