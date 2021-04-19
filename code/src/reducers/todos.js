@@ -10,9 +10,20 @@ const todos = createSlice({
     ]
   },
   reducers: {//methods/actions to manipulate the store
-
+    toggleComplete: (store, action) => {//store is passed by default by Redux
+      const updatedTasks = store.tasks.map(task => {
+        if (task.id === action.payload) {
+          return {
+            ...task,
+            isComplete: !task.isComplete
+          }
+        } else {
+          return task
+        }
+      })
+      store.tasks = updatedTasks
   }
-})
+}})
 
 export default todos
 
