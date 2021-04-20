@@ -10,7 +10,20 @@ const todos = createSlice({
     ]
   },
   reducers: {
+    toggleComplete: (store, action) => {
+      const updatedItems = store.items.map(todo => {
+        if (todo.id === action.payload) {
+          return {
+            ...todo,
+            isComplete: !todo.isComplete
+          }
+        } else {
+          return todo
 
+        }
+      })
+      store.items = updatedItems
+    }
   }
 
 })
