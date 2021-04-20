@@ -1,35 +1,40 @@
 import React, { useState } from 'react'         
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
+import todos from 'reducers/todos'
 
 const AddTodo = () => {
-  const [newToDo, setNewTodo] = useState('')
+  const [newTodo, setNewTodo] = useState('')
 
-  // this one is slightly weird!!! 
-  const onNewAddTodoChange = (e) => {
-    setNewTodo(e.target.value)}
+  const onSubmit = (event) => {
+		event.preventDefault();
+		console.log('user entry: ' + newTodo)
+    dispatch (
+      todos.actions.addToDo({
+        description: newTodo
+      })
+    )
+    setNewTodo('') //clears input after user submit
+	}
 
   const dispatch = useDispatch()
 
-  const items = useSelector((store) => store.todos.items) // I actually do not need to get something here. I just want to add. But I do need to be able to use dispatch and hint at "todos"
-  console.log(items) //the right now 3 existing items
-{/*  does textarea need an id now? no label for */}
   return (
-    <div>
+    <form onSubmit={onSubmit}>
       <textarea
         type="text"
         maxLength="60"
-        placeholder="Add task"
-        onChange={onNewAddTodoChange}
-        value={newToDo}        
+        placeholder="Add your todo..."
+        onChange={(event) => setNewTodo(event.target.value)}
+        value={newTodo}        
       >
       </textarea>
       <button 
-        type="button"
-/*         onClick={() => dispatch(todos.actions.addToDo('Something will be here'))} */
+        type='submit'
       > 
           +
       </button>
-    </div>
+    </form>
   )
 }
 

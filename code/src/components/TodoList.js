@@ -1,23 +1,19 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import moment from 'moment'
 
 import todos from '../reducers/todos'
 import AddToDo from './AddToDo'
+import Counter from './Counter'
 
 // convention: Name the variable useSelector the same thing as we call it in reducer todos
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
 //  console.log(items)
-//  console.log(todos) // no initialState property in our object todos slice
 
-//const wholeStore = useSelector((store) => store)
-
-// create an instance of useDispatch() in every component. Why? QnA friday
+// need to create an instance of useDispatch() hook in every component. Under the hood useDispatch is constructed in a complex way. Why? QnA friday
   const dispatch = useDispatch()
-//make a list out of this !
-// all of the other features of this week will be repetition of this, the same flow 
-/*   console.log(todos)
-  console.log(wholeStore) */
+
   return (
     <div>
       {items.map(todo => (
@@ -26,12 +22,20 @@ const TodoList = () => {
           <input
             type="checkbox"
             checked={todo.isComplete}
-            //todos from import todos above
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
           />
+          <p className="completed-time"> 
+            Created {moment(todo.createdAt).startOf('second').fromNow()}
+          </p>
+          <button
+            type="button"
+            onClick={() => dispatch(todos.actions.removeToDo(todo.id))}>
+              x
+          </button>
         </div>
       ))}
       <AddToDo />
+      <Counter /> 
     </div>
   )
 }
