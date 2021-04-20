@@ -21,6 +21,13 @@ const TodoList = () => {
              // Dispatch (send) an action toggleComplete with one argument - id of a task
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
           />
+          <button 
+            className="delete-button"
+            onClick={() => dispatch(todos.actions.deleteItem(todo.id))}
+          >
+            🗑️
+          </button>
+            <p>Created: {todo.createdAt}</p>
         </div>
       ))}
     </div>

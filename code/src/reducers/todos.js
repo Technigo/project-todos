@@ -1,5 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+import moment from 'moment'
+
 const todos = createSlice ({
   name: 'todos',
   initialState: {
@@ -45,11 +47,36 @@ const todos = createSlice ({
     })
       // Finally, update whole store.items property and assign it new value - updatedItems array
        store.items = updatedItems;
-      }
+      },
 
-    // addNewTodo: (store, action) => {
-    //   const newTodoArray
-    // }
+    addNewTodo: (store, action) => {
+
+    const newTask = {
+      id: (store.items.length)+1,
+      description: action.payload,
+      isComplete: false,
+      createdAt: moment().format('dddd MMMM Do YYYY')
+    } 
+    store.items.push(newTask)
+    
+    },
+
+  deleteItem: (store, action) => {
+  const updatedItems = store.items.map(todo => {
+    if (todo.id === action.payload) {
+
+        return {
+        
+        }
+    } else {
+
+      return todo
+    }
+  })
+
+     store.items = updatedItems;
+    },
+    
   }
 })
 
