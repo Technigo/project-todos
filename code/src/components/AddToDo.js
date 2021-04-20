@@ -1,7 +1,7 @@
 import React, { useState } from 'react'         
 import { useDispatch } from 'react-redux'
 import { Select } from '@material-ui/core'
-import { v4 as uuidv4 } from 'uuid' // to create a unique id
+import { v4 as uuidv4 } from 'uuid'
 
 import styled from 'styled-components'
 
@@ -28,6 +28,7 @@ const AddTodo = () => {
 
   const onSelectChange = (optionSelected) => {
     setCategory(optionSelected.value)
+    return optionSelected
   }
   
   const onFormSubmit = (event) => {
@@ -45,16 +46,16 @@ const AddTodo = () => {
       )
       setNewTodo('') // clear input 
       setCategory('') // clear category
-    } /* else {
+    } else {
       alert ('Please type your todo and/or select a category first')
-    } */
+    } 
 	}
 
   return (
     <form onSubmit={onFormSubmit}>
       <textarea
         type="text"
-        maxLength="60"
+        maxLength="40"
         placeholder="Add your todo..."
         onChange={(event) => setNewTodo(event.target.value)}
         value={newTodo}        
