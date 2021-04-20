@@ -5,7 +5,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { Todos } from './components/Todos'
 import { AddTodo } from './components/AddTodo'
 
-import todos from './reducers/todos'
+import { todos } from './reducers/todos'
 import { Header } from './components/Header'
 import './App.css'
 

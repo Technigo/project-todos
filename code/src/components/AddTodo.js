@@ -1,34 +1,41 @@
 import React, { useState } from 'react'
+import { v4 as uuidv4 } from 'uuid';
+import { useDispatch } from 'react-redux'
 
-// import { useDispatch } from 'react-redux'
+// import DatePicker from 'react-date-picker';
+
+import { todos } from '../reducers/todos'
 // import saveTodo from '../reducers/todoSlice'
 
 // import './Input.css'
 
 
 export const AddTodo = () => {
+    const [inputValue, setInputValue] = useState(''); 
+    const dispatch = useDispatch();
+ 
+    const onItemAdd = () => {
+        dispatch(todos.actions.addTodoItem(inputValue));
+        setInputValue('');
+    };
+    
 
 
     return (
-        <div className="input">
-            {/* <input
-                required
-                type="text"
-                // onChange={event => setInput(event.target.value)}
-                // value={input}
-                placeholder="Add New Task"
-            />    */}
-         
-            <input 
-            required
-            type="text"
-            placeholder="Add New Task"  />
-
-            {/* <input type="submit" value="Submit" /> */}
-            
-            {/* <button onClick={}>Add!</button> */}
-            <button>Add!</button>
-        </div>
+            <form>
+                <div className="input">
+                    <input 
+                        required
+                        id="todo-task"
+                        type="text"
+                        placeholder="Add New Stuff" 
+                        onChange={event => setInputValue(event.target.value)}
+                        value={inputValue}
+                    />
+                    <button type="submit" onClick={onItemAdd} disabled={!inputValue}>
+                        +
+                    </button>
+                </div>
+            </form>
     )
 }
-  
