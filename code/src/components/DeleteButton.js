@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 
 import { todos } from "../reducers/todos";
 
-export const DeleteButton = ({ item }) => {
+export const DeleteButton = ({ todo }) => {
     const dispatch = useDispatch();
 
     const onDelete = id => {
@@ -12,7 +12,7 @@ export const DeleteButton = ({ item }) => {
     };
 
     return (
-        <button type="button" onClick={() => onDelete(item.id)}>
+        <button type="button" onClick={() => onDelete(todo.id)}>
             X
         </button>
     );

@@ -9,7 +9,6 @@ import { todos } from '../reducers/todos'
 
 // import './Input.css'
 
-
 export const AddTodo = () => {
     const [inputValue, setInputValue] = useState(''); 
     const dispatch = useDispatch();
@@ -18,6 +17,7 @@ export const AddTodo = () => {
         dispatch(todos.actions.addTodoItem(inputValue));
         setInputValue('');
     };
+    
     
 
 

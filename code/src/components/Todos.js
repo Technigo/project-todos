@@ -15,6 +15,7 @@ export const Todos = () => {
     if (allTodos.lenght <= 0) {
         return(
 
+            
             // ADD PAGE WITH GIF?
             <p>No todods!</p>
         );
@@ -33,6 +34,14 @@ export const Todos = () => {
                         <DeleteButton todo={todo}/>
                     </div>
                 ))}
+                <iframe 
+        src="https://giphy.com/embed/Gjnpx6nps0yS4" 
+        width="480" 
+        height="339" 
+        frameBorder="0" 
+        class="giphy-embed" 
+        >
+    </iframe>
             </div>
         )
     }
