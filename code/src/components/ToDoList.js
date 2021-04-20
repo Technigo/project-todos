@@ -10,8 +10,8 @@ const ToDoList = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
-      {items.map(task => (
+    <div>{
+      items.map((task) => 
         <TaskCard 
           key={task.id}
           id={task.id}
@@ -19,8 +19,9 @@ const ToDoList = () => {
           isComplete={task.isComplete}
           createdAt={task.createdAt}
           onChangeAction={() => dispatch(tasks.actions.toggleComplete(task.id))}
+          onClickAction={() => dispatch(tasks.actions.removeTask(task.id))}
         />
-      ))}
+      )}
     </div>
   )
 };

@@ -1,14 +1,9 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';    
 
 const tasks = createSlice({
   name: 'tasks',
   initialState: {
-    items: [
-      {id: 1, title: 'Clean cupboard', createdAt: undefined, isComplete: false},
-      {id: 2, title: 'Feed cat', createdAt: undefined, isComplete: false},
-      {id: 3, title: 'Eat lunch', createdAt: undefined, isComplete: false},
-      {id: 4, title: 'Water flowers', createdAt: undefined, isComplete: false},
-    ],
+    items: [],
   },
   reducers: {
     toggleComplete: (store, action) => {
@@ -23,8 +18,22 @@ const tasks = createSlice({
         }
       });
       store.items = updatedItems;
+    },
+    addNewTask: (store, action) => {
+      let newTask = {
+        id:Date.now(), 
+        title: action.payload, 
+        createdAt: new Date().toISOString(), 
+        isComplete: false}
+      store.items.push(newTask);
+    },
+    removeTask: (store, action) => {
+      let eraseTaskIndex = store.items.find(item => item.id = action.payload).indexOf;
+      store.items.splice(eraseTaskIndex, 1)
     }
   }
 });
 
 export default tasks;
+
+//addNewTask should pick up added title as the payload and update store with new task

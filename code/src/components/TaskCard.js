@@ -1,4 +1,5 @@
 import React from 'react';
+import DayJS from 'react-dayjs';
 import styled from 'styled-components';
 
 const Container = styled.div`
@@ -16,7 +17,7 @@ text-align: center;
 `
 
 const TaskCard = (props) => {
-  const {id, title,  isComplete, createdAt, onChangeAction} = props;
+  const {id, title,  isComplete, createdAt, onChangeAction, onClickAction} = props;
 
   return (
     <Container>
@@ -27,8 +28,8 @@ const TaskCard = (props) => {
       onChange={onChangeAction}
     />
     <Title>{title}</Title>
-    <button>🗑</button>
-    <p>{createdAt}</p>
+    <button onClick={onClickAction}>🗑</button>
+    <DayJS element="span" format="YYYY-MM-DD H:mm">{createdAt}</DayJS>
     </Container>
   )
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import DayJS from 'react-dayjs';
 
 const Container = styled.div`
 width: 250px;
@@ -11,7 +12,7 @@ const Header = () => {
   return (
     <Container>
       <h1>To Do</h1>
-      <p>Today's Date</p>
+      <DayJS format="YYYY-MM-DD H:mm"/>
       <p>Task Summary component</p>
     </Container>
   )
