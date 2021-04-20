@@ -1,10 +1,11 @@
 import React from 'react'
-import { Container, Typography } from '@material-ui/core'
+import { Container } from '@material-ui/core'
+import Header from 'components/Header'
 
 export default () => {
   return (
     <Container component="main" maxWidth="sm">
-      <Typography variant="h4">Hello</Typography>
+      <Header />
     </Container>
   )
 }
