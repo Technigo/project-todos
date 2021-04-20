@@ -6,7 +6,12 @@ const todos = createSlice({
         tasks: [
             { id: 1, description: 'Test 1', isComplete: false },
             { id: 2, description: 'Test 2', isComplete: true },
-            { id: 3, description: 'Test 3', isComplete: false }
+            { id: 3, description: 'Test 3', isComplete: false },
+            { id: 4, description: 'Test 4', isComplete: false },
+            { id: 5, description: 'Test 1', isComplete: false },
+            { id: 6, description: 'Test 2', isComplete: true },
+            { id: 7, description: 'Test 3', isComplete: false },
+            { id: 8, description: 'Test 4', isComplete: false }
         ]
     },
     reducers: {

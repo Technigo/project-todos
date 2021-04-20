@@ -12,8 +12,9 @@ const ToDoList = () => {
     return(
         <div className='task-box'>
             {tasks.map(todo => (
-                <div key={todo.id}
-                className='single-task-box'>
+                <div
+                  key={todo.id}
+                  className='single-task-box'>
                   <label className='checkbox'>
                   <input
                     type='checkbox'
@@ -22,8 +23,9 @@ const ToDoList = () => {
                     />
                     <span className='checkmark'>
                     </span>
-                  </label>
+                    </label>
                   <p>{todo.description}</p>
+                  
                 </div>
             ))}
         </div>

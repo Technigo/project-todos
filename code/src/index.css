@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -11,28 +14,69 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-/* 
+
 * {
-
-} */
-
-html {
-  box-sizing: border-box;
   margin: 0;
+  box-sizing: border-box;
 }
 
-p {
+html {
+  font-family: 'Montserrat Alternates', sans-serif;
+/*   box-sizing: border-box;
+  margin: 0; */
+}
+
+.header-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background-color:  #1b2021; */
+  background-image: url('images/vacay.jpg');
+  background-size: cover;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  width: 80%;
+  margin: auto;
+  color: #1b2021;
+}
+
+.info-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: #5f939a;
+  width: 100%;
+  color: white;
+}
+
+.header-container h1 {
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-weight: 300;
+  font-size: 30px;
+  padding: 35px 10px;
+}
+
+.info-container p {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  padding: 5px 10px;
+}
+
+.task-box p {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
   padding-left: 10%;
 }
 
 main {
-  height: 100vh;
-  background-color: #ffd5cd;
-  padding-top: 15px;
+  min-height: 100vh;
+  background-color: #eac8af;
+  padding: 30px 0;
 }
 
 .task-box {
   width: 80%;
+  min-height: 80px;
   margin: auto;
   /* background-color: #fcf1f1; */
 }
@@ -40,7 +84,7 @@ main {
 .single-task-box {
   display: flex;
   align-items: center;
-  background-color: #fcf1f1;
+  background-color: white;
   height: 80px;
   margin: 1px;
 }
@@ -72,12 +116,12 @@ main {
   left: 15px;
   height: 30px;
   width: 30px;
-  background-color: #ffd5cd;
+  background-color: #d8ac9c;
   border-radius: 20px;
 }
 
 .checkbox input:checked ~ .checkmark {
-  background-color: #f9813a;
+  background-color: #5f939a;
 }
 
 .checkmark:after {
@@ -101,4 +145,78 @@ main {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+/* input field */
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  color: white;
+}
+
+.task-label {
+  width: 80%;
+  border-radius: 25px;
+  margin-top: 15px;
+}
+
+.task {
+  width: 100%;
+  height: 60px;
+  background-color:rgb(95,147,154);
+  border-radius: 25px;
+  padding: 5px 10px;
+  border: none;
+}
+
+::placeholder {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+.input-container input {
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 16px;
+}
+
+
+@media (min-width: 768px) {
+
+  .header-container h1 {
+    font-size: 45px;
+    padding: 45px 10px;
+  }
+
+  .info-container p {
+    font-size: 20px;
+    padding: 10px 15px;
+  }
+
+  .task-box p {
+    font-size: 20px;
+  }
+
+}
+
+@media (min-width: 1024px) {
+
+.header-container {
+  width: 50%;
+}
+
+.task-box {
+  width: 50%;
+}
+
+.task-label{
+  width:50%;
+} 
+
 }
