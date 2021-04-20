@@ -5,7 +5,6 @@ import  todos from './reducers/todos'
 
 import { Container } from './components/Container'
 
-//combine is a method, slice is one part of the store 
 const reducer = combineReducers({
   todos: todos.reducer
 })
