@@ -1,5 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
+import moment from 'moment'
 
 const TopHeader = styled.header`
   display: flex;
@@ -21,6 +23,10 @@ const ListHeading = styled.h2`
   margin: 0;
 `
 
+const Date = styled.p`
+
+`
+
 const ClearBtn = styled.button`
   border-radius: 8px;
   background-color: #8B98F9;
@@ -33,16 +39,20 @@ const Span = styled.span`
   text-align: right;
 `
 
-
 const Header = () => {
+  const items = useSelector((store) => store.tasks.items)
+  const completedItems = items.filter(items => items.complete).length
+
+  const today = moment().format('MMMM Do')
   
   return (
     <TopHeader>
       <ListInfo>
         <ListHeading>To do</ListHeading>
+        <Date>{today}</Date>
       </ListInfo>
       <ListInfo>
-        <Span>4 tasks</Span>
+        <Span>{completedItems}/{items.length} tasks</Span>
         <ClearBtn className="clear-btn" type="button">CLEAR ALL</ClearBtn>
       </ListInfo>
     </TopHeader>

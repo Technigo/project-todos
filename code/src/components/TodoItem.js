@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
+import moment from 'moment'
 
 import { tasks } from '../reducers/tasks'
 
@@ -19,6 +20,7 @@ const Input = styled.input`
   width: 35px;
   z-index: 1;
   opacity: 0;
+  cursor: pointer;
 `
 
 const Indicator = styled.div`
@@ -67,11 +69,19 @@ const Indicator = styled.div`
 
 const Description = styled.p`
   font-size: 20px;
+  width: 60%;
+  margin-left: 10px;
+`
+
+const Date = styled.span`
+  margin-left: auto;
+  font-size: 16px;
 `
 
 
-const TodoItem = ({ id, text, complete }) => {
+const TodoItem = ({ id, text, complete, created }) => {
   const dispatch = useDispatch()
+  const taskCreated = moment(created).format('MMM Do')
 
   return (
     <Container key={id}>
@@ -82,6 +92,7 @@ const TodoItem = ({ id, text, complete }) => {
       />
       <Indicator />
       <Description>{text}</Description>
+      <Date>{taskCreated}</Date>
     </Container>
   )     
 }

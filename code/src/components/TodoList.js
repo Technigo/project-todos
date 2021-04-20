@@ -15,6 +15,7 @@ const TodoList = () => {
           id={item.id}
           text={item.text}
           complete={item.complete}
+          created={item.created}
         />
       ))}
     </section>

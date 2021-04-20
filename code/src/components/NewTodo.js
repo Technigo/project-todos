@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import DatePicker from 'react-datepicker'
+
+import 'react-datepicker/dist/react-datepicker.css'
 
 import { tasks } from '../reducers/tasks'
 
@@ -33,10 +36,15 @@ const TodoInput = styled.input`
   font-size: 20px;
 `
 
+const DatePickerContainer = styled.div`
+  margin-left: auto;
+`
+
 const NewTodo = () => {
   const dispatch = useDispatch()
 
   const [newTodoInput, setNewTodoInput] = useState('')
+  const [dueDate, setDueDate] = useState(new Date())
 
   const handleInputChange = (event) => {
     setNewTodoInput(event.target.value)
@@ -44,7 +52,10 @@ const NewTodo = () => {
 
   const handleButtonPress = () => {
     dispatch(tasks.actions.postNewTodo(newTodoInput))
+    setNewTodoInput('')
   }
+
+  console.log(dueDate)
 
   return (
     <Container>
@@ -59,6 +70,14 @@ const NewTodo = () => {
         placeholder="New task"
         onChange={handleInputChange}
       />
+      <DatePickerContainer>
+        <DatePicker
+          selected={dueDate}
+          onChange={date => setDueDate(date)}
+          dateFormat='yyyy/MM/dd'
+          isClearable
+        />
+      </DatePickerContainer>
     </Container>
   )
 }
