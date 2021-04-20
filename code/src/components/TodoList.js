@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import ListItem from '@material-ui/core/ListItem';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Checkbox } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 
 
 import todos from '../reducers/todos'
@@ -30,8 +31,9 @@ const TodoList = () => {
                     //Dispatch, enables us to send an action toogle with an argument(the id of the task), to update the store
                     onChange={() => dispatch(todos.actions.toggleDone(todo.id))}
                 />
-                <p>tasks: {todo.description}</p>
+                <p style={{textDecoration: todo.isComplete ? "line-through" : ""}}>task: {todo.description}</p>
                 <DeleteIcon type="button" onClick={() => dispatch(todos.actions.removeTodo(todo.id))} />
+                {/* <Button onClick={() => dispatch(todos.actions.leftTodo())}>left </Button>  */}
             </ListItem>
             )}
             hej

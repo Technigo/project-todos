@@ -12,7 +12,6 @@ const AddNewTodo = () => {
     //this data will be passed on to the global store through dispatch
     
     const [newTodo, setNewTodo] = useState ('')
-
     const dispatch = useDispatch()
 
     // Function that is triggered when user click on submit new todo
@@ -30,7 +29,7 @@ const AddNewTodo = () => {
         }))
  
         //clearing input field on submit
-        setNewTodo('')
+        setNewTodo('') 
     }
 
     return (

@@ -72,13 +72,23 @@ const todos = createSlice({
             store.items.push(addItem)
         },
 
-        // Filtering out all ID's which is not mapping 
+        // Filtering out all Id's which is not mapping 
         //we are passing in the payload todoId in TodoList 
 
         removeTodo: (store, action) => {
           const todoId = action.payload
           store.items = store.items.filter(e => e.id !==todoId)
-        }
+        },
+
+        //Clearing all the todos in the list 
+        removeAll: (store) => {
+            store.items = []
+        },
+
+        // leftTodo: (store) => {
+        //     store.items = store.items.filter(e => e.isComplete === false)
+        // }
+
 
     }
 })
