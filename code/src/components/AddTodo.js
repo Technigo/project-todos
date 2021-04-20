@@ -13,7 +13,6 @@ export const AddTodoForm = () => {
       dispatch(tasks.actions.addTask({text: value}))
       setValue("")
 		}
-
 	};
   return (
     <form className="form" onSubmit={onSubmit}>
@@ -23,8 +22,8 @@ export const AddTodoForm = () => {
 				value={value}
 				onChange={(event) => setValue(event.target.value)}>
       </input>
-			<button type='submit'>
-				Submit
+			<button className="button" type='submit' disabled={value.length<2} ><span role="img" aria-label="Add">+</span>
+
 			</button>
 		</form>
   )

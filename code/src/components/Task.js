@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from '../reducers/tasks';
 
+import  trashcan  from '../assets/icons8-trash-can-100.png';
+
 export const Task = ({task}) => {
   const dispatch = useDispatch()
 
@@ -14,16 +16,18 @@ export const Task = ({task}) => {
       </input>
 
       <label htmlFor={task.id} className="task-colomn-60">
-        {task.text}
-
+        <p className="task-text">{task.text}</p>
       </label>
 
-      <p className="task-colomn-10">{new Date(task.id).getDate()}/{new Date(task.id).getMonth()+1}</p>
-      <button className="task-colomn-10"
-        type="button"
-        onClick={() => dispatch(tasks.actions.deleteTask(task))}>
-        <span role="img" aria-label="trash-can">{"🗑️"}</span>
-      </button>
+      <p className="task-colomn-10 date-text">{new Date(task.id).getDate()}/{new Date(task.id).getMonth()+1}</p>
+
+      <img src={trashcan}
+      alt="trash-can"
+      className="trash-can"
+      onClick={() => dispatch(tasks.actions.deleteTask(task))}
+      >
+
+      </img>
     </div>
   )
 }

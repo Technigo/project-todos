@@ -26,6 +26,31 @@ code {
   justify-content: center;
 }
 
+.button {
+  /* border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  align-items: stretch;
+  justify-content: stretch;
+  margin-left:5px;
+  outline: none;
+  background-color:#00c281;
+  color: white;
+  font-size: 30px;
+  padding:4px; */
+  background-color: #00c281;
+  color: WHITE;
+  padding: 5px;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+}
+
+
+
 .task-list {
   display: flex;
   flex-direction: column;
@@ -50,6 +75,11 @@ code {
   justify-content: space-between;
   width: 10%;
   }
+
+  .date-text {
+    font-size: 12px;
+  }
+
 .task-colomn-60 {
   display: flex;
   flex-direction: column;
@@ -71,6 +101,10 @@ code {
   }
 
   .checkbox-round:checked {
-    background-color: green;
+    background-color: #00c281;
+}
 
+.trash-can {
+  width: 30px;
+  height:30px;
 }
