@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import todos from '../reducers/todos'
 
+import Header from 'components/Header'
+import Footer from 'components/Footer'
+
 const TodoList = () => {
     const items = useSelector((store) => store.todos.items)
 
@@ -12,9 +15,11 @@ const TodoList = () => {
 
 
     return (
+        <>
+        <Header />
         <div>
         {items.map(todo => (
-            <div key={todo.id}>
+            <div className="container" key={todo.id}>
                 <p>{todo.description}</p>
                 <input
                 type="checkbox"
@@ -24,6 +29,8 @@ const TodoList = () => {
                 </div>
         ))}
         </div>
+        <Footer />
+        </>
         
     )
 }
