@@ -1,25 +1,28 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux'
 import { Paper, InputAdornment, Input, Button } from '@material-ui/core';
 import { CheckCircleOutline, Add } from '@material-ui/icons';
+import { addTask } from 'store/tasks'
 import { useStyles } from './style';
 
 export default () => {
   const classes = useStyles();
+  const dispatch = useDispatch();
   const [value, setValue] = useState('');
   const [focused, setFocused] = useState(false);
 
   const handleAddTask = (event) => {
     if (event.key === 'Enter' || event.type === 'click') {
       event.preventDefault();
-      // TODO: dispatch addItem action
-      // dispatch(addItem(value))
-      console.log(value);
+      dispatch(addTask(value));
+      setValue('');
     }
   };
 
   return (
     <Paper component="form" className={classes.root}>
       <Input
+        value={value}
         className={classes.input}
         placeholder="Add task"
         type="text"

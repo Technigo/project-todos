@@ -2,8 +2,9 @@ import { makeStyles } from '@material-ui/styles';
 
 export const useStyles = makeStyles((theme) => ({
   root: {
-    margin: 10,
+    margin: theme.spacing(1),
     display: "flex",
+    flexFlow: 'row wrap',
     alignItems: "center",
     justifyContent: "space-between"
   },
@@ -13,5 +14,9 @@ export const useStyles = makeStyles((theme) => ({
     "&:hover": {
       backgroundColor: theme.palette.background.default
     }
+  },
+  bottomRow: {
+    width: "100%",
+    textAlign: "right"
   }
 }))
