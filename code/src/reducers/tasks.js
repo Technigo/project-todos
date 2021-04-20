@@ -1,16 +1,32 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const tasks = createSlice({
+const tasks = createSlice({
   name: 'tasks',
   initialState: {
-    items: []
+    items: [
+      { id: 1, description: 'First Task', isCompleted: false },
+      { id: 2, description: 'Second Task', isCompleted: true },
+      { id: 3, description: 'Third Task', isCompleted: false }
+    ]
   },
   reducers: {
-    addItem: (state, action) => {
-      state.items.push({ ...action.payload, quantity: 1 })
-    }, 
-    removeItem: (state, action) => {
-      state.items.push({ ...action.payload, quantity: 1 })
+    toggleCheckbox: (store, action) => {
+      const updatedItems = store.items.map(task => {
+				if (task.id === action.payload) {
+					return {	
+						...task,
+						isCompleted: !task.isCompleted
+					}
+				} else {
+					return task
+				}
+			})
+			store.items = updatedItems
+    },
+    addTask: (store, action) => {
+      store.items.push({ ...action.payload, isCompleted: false})
     }
   }
 })
+
+export default tasks
