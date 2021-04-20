@@ -5,14 +5,13 @@ const todo = createSlice({
   initialState: {
     items: [
       { id: 1, description: 'Watch JavaScript videos', isComplete: false },
-      { id: 2, description: 'Watch JavaScript videos', isComplete: false },
-      { id: 3, description: 'Watch JavaScript videos', isComplete: true },
+      { id: 2, description: 'Learn JavaScript', isComplete: false },
+      { id: 3, description: 'Train your brain', isComplete: true },
     ]
 
   },
   reducers: {
     toggleChecked: (store, action) => {
-      console.log(action.payload)
       const updatedItems = store.items.map( item => {
         if(item.id === action.payload) {
           return {
@@ -26,7 +25,10 @@ const todo = createSlice({
       store.items = updatedItems
     },
     deleteItem: (store, action) => {
-      
+      store.items = store.items.filter(item => item.id !== action.payload ) 
+    },
+    addItem: (store, action) => {
+      store.items.push({...action.payload})
     }
   }
 
