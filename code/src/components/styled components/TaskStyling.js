@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const TodoTask = styled.li`
     width: 100%;
-    margin: 3px;
+    // margin-left: 10px;
     box-sizing: border-box;
     display: flex;
     justify-content: space-between;
@@ -16,4 +16,5 @@ export const RemoveTodo = styled.button`
     background-color: white;
     // background-color: #a5aefa;
     border: none;
+    // margin-right: 10px;
 `

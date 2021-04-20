@@ -6,12 +6,18 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   height: 100vh;
-  background: whitesmoke;
+  background:whitesmoke;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
   
+}
+
+.icecream-image {
+  width: 60px;
+  height: auto;
+  margin: 20px auto;
 }
 

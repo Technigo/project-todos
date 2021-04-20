@@ -4,6 +4,7 @@ export const AddTodoForm = styled.form`
     display: flex;
     flex-direction: row;
     align-items: center;
+    margin-left: 10px;
 `
 
 export const FormTextArea = styled.input`
@@ -11,14 +12,13 @@ export const FormTextArea = styled.input`
     width: 100%;
     border-radius: 8px;
     border: 1px solid black;
-    // background-color: #e1e4fd;
-    background-color: whitesmoke;
-    margin-right: 12px;
+    background-color: rgba(123,104,238,0.1);
+    margin-right: 10px;
 `
 
 export const SubmitButton = styled.button`
     border: none;
     border-radius: 50%;
-    // background-color: #a5aefa;
     background-color: white;
+    margin-right: 10px;
 `
