@@ -2,7 +2,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 
-//Variable. Object with three properties: name, initialstate, reducers
+//Object with three properties: name, initialstate, reducers
 const todos = createSlice({
     name: 'todos',
     initialState: {
@@ -13,7 +13,18 @@ const todos = createSlice({
         ]
     },
     reducers: {
-        //method to manipulate our store
+
+        //to push in the new user input? 
+        addTodo: ( store, action) => {
+            //New object
+            const newTodo =  {
+                // id: uniqueID(), //Make a function to give each object a unique id? 
+                description: action.payload.description,
+                isComplete: false
+            }
+            store.items.push(newTodo)
+        },
+
         //Redux is always passing store as argument in order to update it
         //add action to know which task to toggle.
         toggleComplete: (store, action) => {
