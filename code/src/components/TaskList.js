@@ -60,15 +60,16 @@ const TaskList = () => {
 
   const dispatch = useDispatch()
 
-  const onTaskSubmit = (e, id, description) => {
-    e.preventDefault()
-    dispatch(tasks.actions.addTask(id, description))
+  const onTaskSubmit = (event) => {
+    event.preventDefault()
+    dispatch(tasks.actions.addTask({ description: description }))
+    setDescription('')
   }
 
   return (
     <TaskWrapper>
       <Form>
-        <Button onClick={() => onTaskSubmit(items.length + 1)}>+</Button>
+        <Button onClick={(e) => onTaskSubmit(e)}>+</Button>
         <TaskInput 
         type="text"
         placeholder="Add Task"

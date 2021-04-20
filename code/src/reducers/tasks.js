@@ -24,7 +24,13 @@ const tasks = createSlice({
 			store.items = updatedItems
     },
     addTask: (store, action) => {
-      store.items.push({ ...action.payload, isCompleted: false})
+      const { description } = action.payload
+      console.log(action)
+      store.items.push({
+        id: store.items.length + 1,
+        description: description,
+        isCompleted: false
+      })
     }
   }
 })
