@@ -63,7 +63,7 @@ const todos = createSlice({
                 store.items = updateTodo
 
             },
-        //Add to do item
+        //Add todo item
         //When todo is dispatched with a new payload including the item object and 
         //pushes to a new array, defined in AddTodo.js
 
@@ -71,7 +71,16 @@ const todos = createSlice({
             const addItem = action.payload
             store.items.push(addItem)
         },
+
+        // Filtering out all ID's which is not mapping 
+        //we are passing in the payload todoId in TodoList 
+
+        removeTodo: (store, action) => {
+          const todoId = action.payload
+          store.items = store.items.filter(e => e.id !==todoId)
         }
+
+    }
 })
 
 export default todos;

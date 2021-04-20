@@ -15,9 +15,9 @@ const TodoList = () => {
     const items = useSelector((store) => store.todos.items)
 
     //To be able to dispatch the action (changes) we want to do with the todos, we need to create dispatch hook
-
     const dispatch = useDispatch()
 
+  
     //Map over each item in the array to display the desciption: 
     console.log(items)
     return (
@@ -31,7 +31,7 @@ const TodoList = () => {
                     onChange={() => dispatch(todos.actions.toggleDone(todo.id))}
                 />
                 <p>tasks: {todo.description}</p>
-                <DeleteIcon />
+                <DeleteIcon type="button" onClick={() => dispatch(todos.actions.removeTodo(todo.id))} />
             </ListItem>
             )}
             hej
