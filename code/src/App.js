@@ -6,6 +6,7 @@ import { todos } from './Reducers/todos'
 import { TodoList } from './Components/TodoList'
 import { CreateNewTask } from './Components/CreateNewTask'
 import { Header } from './Components/Header'
+import { Footer } from './Components/Footer'
 
 export const App = () => {
   const reducer = combineReducers({
@@ -19,6 +20,7 @@ export const App = () => {
       <Header />
       <CreateNewTask />
       <TodoList />
+      <Footer />
     </Provider>
   )
 }

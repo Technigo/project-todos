@@ -1,9 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-   items: [],
-   updatedTodos: []
-  };
+  items: [],
+  updatedTodos: [],
+};
 
 export const todos = createSlice({
   name: "todos",
@@ -23,19 +23,39 @@ export const todos = createSlice({
       store.items = store.updatedTodos;
     },
     createNewTodo: (store, action) => {
-      const { task } = action.payload;
+      const { task, time } = action.payload; 
       store.items.push({
-        id: store.items.length + 1, 
-        description: task, 
-        isComplete: false }) 
+        id: store.items.length + 1,
+        description: task,
+        isComplete: false,
+        createdAt: time
+      });
     },
     removeTodo: (store, action) => {
-        const { task } = action.payload;
-        store.updatedTodos = store.items.filter(item => item.id !== task)
-        store.items = store.updatedTodos;
+      const { task } = action.payload;
+      let i = 1;
+      store.updatedTodos = store.items.filter((item) => item.id !== task);
+      store.updatedTodos = store.updatedTodos.map((item) => {
+        item.id = i++;
+        return item;
+      });
+      store.items = store.updatedTodos;
     },
-    clearAll: () => {
-        return initialState;
-    }
+    completeAll: (store) => {
+      store.updatedTodos = store.items.map((item) => {
+        item.isComplete = true;
+        return item;
+      });
+      store.items = store.updatedTodos;
+    },
+    clearAllCompleted: (store) => {
+      let i = 1;
+      store.updatedTodos = store.items.filter((item) => !item.isComplete);
+      store.updatedTodos = store.updatedTodos.map((item) => {
+        item.id = i++;
+        return item;
+      });
+      store.items = store.updatedTodos;
+    },
   },
 });

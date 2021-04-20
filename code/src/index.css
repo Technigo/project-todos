@@ -8,6 +8,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: 'Raleway', sans-serif;
+  position:relative;
+  padding-bottom: 50px;
+  min-height: calc(100vh - 50px);
 }
 
 code {

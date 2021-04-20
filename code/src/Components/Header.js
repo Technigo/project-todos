@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 
 import "./HeaderStyle.css";
 import { RoundedButton } from "./RoundedButton";
@@ -23,7 +23,7 @@ export const Header = () => {
         <p>
           {completedTasks.length} / {tasks.length} tasks completed
         </p>
-        <RoundedButton type={"ClearAll"} id={""} />
+        <RoundedButton type={"CompleteAll"} id={""} />
       </div>
     </header>
   );

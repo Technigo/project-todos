@@ -1,19 +1,46 @@
 .todo-list {
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .todo-list-item {
+ width: 98%;
+  position: relative;
+  background-color: rgb(196, 232, 241);
+  margin-bottom: 5px;
+  box-shadow: 0.5px 0.5px 1px 1px rgb(88, 88, 102);
+}
+
+.todo-list-item p {
+  padding: 5px 10px;
+  color: rgb(110, 157, 168);
+  text-align: right;
+  background-color: rgb(233, 233, 233);
+}
+
+.todo-list-item__inner {
+  background-color: white;
   display: flex;
   align-items: center;
   padding: 10px;
   min-height: 100px;
   border-bottom: dashed rgb(196, 232, 241) 0.5px;
   font-size: 20px;
-  position: relative;
 }
 
-.todo-list-item__button-container {
+.todo-list-item__inner-deadline {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; 
+}
+
+.todo-list-item__inner-deadline p {
+    background-color: rgb(196, 232, 241);
+}
+
+.todo-list-item__inner-button-container {
   position: absolute;
   right: 0;
   bottom: 0;
