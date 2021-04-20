@@ -6,6 +6,7 @@ import todos from '../reducers/todos'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
+
 const TodoList = () => {
     const items = useSelector((store) => store.todos.items)
 
@@ -26,8 +27,8 @@ const TodoList = () => {
                 checked={todo.isComplete}
                 onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
                 />
-                </div>
-        ))}
+                </div>                
+        ))} 
         </div>
         <Footer />
         </>
