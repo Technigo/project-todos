@@ -13,6 +13,7 @@ const TodoForm = () => {
   const handleSubmit = (event) => {
     event.preventDefault()
     dispatch(todo.actions.addItem({id: Date.now(), description: newTask, isComplete: false}))
+    setNewTask("")
   }
   
   return (

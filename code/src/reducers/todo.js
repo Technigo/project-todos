@@ -4,9 +4,9 @@ const todo = createSlice({
   name: 'todo',
   initialState: {
     items: [
-      { id: 1, description: 'Watch JavaScript videos', isComplete: false },
-      { id: 2, description: 'Learn JavaScript', isComplete: false },
-      { id: 3, description: 'Train your brain', isComplete: true },
+      // { id: 1, description: 'Watch JavaScript videos', isComplete: false },
+      // { id: 2, description: 'Learn JavaScript', isComplete: false },
+      // { id: 3, description: 'Train your brain', isComplete: true },
     ]
 
   },
