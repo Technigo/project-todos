@@ -1,15 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const allTasks = [
-  { id: 1, title: "Take a nap", isCompleted: false },
-  { id: 2, title: "Eat cake", isCompleted: false },
-  { id: 3, title: "Take a walk", isCompleted: true },
+  { id: 1, title: "Take a nap", isCompleted: false, isHidden: false },
+  { id: 2, title: "Eat cake", isCompleted: false, isHidden: false },
+  { id: 3, title: "Take a walk", isCompleted: true, isHidden: false },
 ]
 
 export const tasks = createSlice({
   name: "tasks",
   initialState: {
-    allTasks
+    allTasks,
+    isFiltered: false
   },
   reducers: {
     addTask: (state, action) => {
@@ -34,6 +35,32 @@ export const tasks = createSlice({
       for (let task of state.allTasks) {
         task.isCompleted = true
       }
+    },
+    filterCompleted: (state, action) => {
+      for (let task of state.allTasks) {
+        if (!task.isCompleted) {
+          task.isHidden = true
+        } else if (task.isCompleted) {
+          task.isHidden = false
+        }
+      }
+      state.isFiltered = true
+    },
+    filterUncompleted: (state, action) => {
+      for (let task of state.allTasks) {
+        if (task.isCompleted) {
+          task.isHidden = true
+        } else if (!task.isCompleted) {
+          task.isHidden = false
+        }
+      }
+      state.isFiltered = true
+    },
+    resetFilter: (state, action) => {
+      for (let task of state.allTasks) {
+        task.isHidden = false
+      }
+      state.isFiltered = false
     }
   }
 })

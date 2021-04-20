@@ -18,14 +18,18 @@ const NoTasksMessage = styled.p`
 
 export const TaskContainer = () => {
   const tasks = useSelector((store) => store.tasks.allTasks)
+  const isFiltered = useSelector((store) => store.tasks.isFiltered)
 
   return (
     <TaskSection>
-      {tasks.length === 0 && <NoTasksMessage>It looks like your to do list is empty. Why don't you add a new task?</NoTasksMessage>}
+      {(!isFiltered && tasks.length === 0) && <NoTasksMessage>It looks like your to do list is empty. Why don't you add a new task?</NoTasksMessage>}
 
-      {tasks.length > 0 && tasks.map(task => (
-        <Task key={task.id} task={task} />
-      ))}
+      {(isFiltered && tasks.filter(task => !task.isHidden).length === 0) && <NoTasksMessage>There are no results that match this filter. Try another one!</NoTasksMessage>}
+
+      {tasks.length > 0 &&
+        tasks.filter(task => !task.isHidden).map(task => (
+          <Task key={task.id} task={task} />
+        ))}
     </TaskSection>
   )
 }

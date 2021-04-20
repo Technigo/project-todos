@@ -1,8 +1,6 @@
 import React, { useState } from "react"
 import styled from 'styled-components'
 
-import { Counter } from "./Counter"
-import { ClearButton } from "./ClearButton"
 import { HeaderOverview } from "./HeaderOverview"
 import { HeaderActions } from "./HeaderActions"
 import { HeaderFilter } from "./HeaderFilter"
