@@ -22,6 +22,21 @@ export const todos = createSlice({
         }
       });
       store.items = updatedItems;
+    },
+    addTodo: (store, action) => {
+      store.items.push(action.payload)
+    },
+    deleteItem: (store, action) => {
+      store.items = store.items.filter((item) => item.id !== action.payload.id)
+    },
+    clearAll: (store, action) => {
+      store.items = store.items.filter((item) => item.id === action.payload.id)
+    },
+    countAll: (store, action) => {
+      return updatedItems.lenght
     }
   }
 })
+
+
+
