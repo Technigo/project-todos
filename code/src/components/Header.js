@@ -2,8 +2,9 @@ import React from 'react'
 
 const Header = () => {
     return (
+
         <div className='header-container'>
-            <h1>Vacay Planner</h1>
+            <h1>Vacay Planner!</h1>
             <div className='info-container'>
                 <p>
                 April 4th
@@ -13,6 +14,7 @@ const Header = () => {
                 </p>
             </div>
         </div>
+
     )
 }
 

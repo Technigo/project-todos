@@ -20,12 +20,16 @@ const ToDoList = () => {
                     type='checkbox'
                     checked={todo.isComplete}
                     onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+                    tabIndex='0'
                     />
-                    <span className='checkmark'>
+                    <span className='checkmark' tabIndex='0'>
                     </span>
                     </label>
                   <p>{todo.description}</p>
-                  
+                  <button
+                    type='button'
+                    className='remove'
+                    >X</button>
                 </div>
             ))}
         </div>
