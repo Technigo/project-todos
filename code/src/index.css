@@ -6,9 +6,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background-color: #fe5bb1;
-  background-image: linear-gradient(150deg, #ffffff, rgba(255,255,255,0));
-	height: 100vh;
+  background-image: url(https://images.unsplash.com/photo-1607457516676-055ef951e64e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80);
+ 
+  overflow-x: hidden;
+  overflow-y: hidden;
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 code {
@@ -16,9 +20,4 @@ code {
     monospace;
 }
 
-.circle {
-  height: 50px;
-  width: 50px;
-  border-radius: 50%;
-  background-color: aqua;
-}
+
