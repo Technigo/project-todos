@@ -30,6 +30,9 @@ const tasks = createSlice({
     removeTask: (store, action) => {
       let eraseTaskIndex = store.items.find(item => item.id = action.payload).indexOf;
       store.items.splice(eraseTaskIndex, 1)
+    },
+    removeAllTasks: (store, action) => {
+      store.items = []
     }
   }
 });
