@@ -11,7 +11,23 @@ const todo = createSlice({
 
   },
   reducers: {
-
+    toggleChecked: (store, action) => {
+      console.log(action.payload)
+      const updatedItems = store.items.map( item => {
+        if(item.id === action.payload) {
+          return {
+            ...item,
+            isComplete: !item.isComplete
+          } 
+        } else {
+          return item
+        }
+      })
+      store.items = updatedItems
+    },
+    deleteItem: (store, action) => {
+      
+    }
   }
 
 })
