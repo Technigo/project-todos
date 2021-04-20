@@ -4,10 +4,12 @@ import Checkbox from '@material-ui/core/Checkbox'
 import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
+
 import { tasks } from '../reducers/tasks'
 
-import { TodoTask } from './styled components/TaskStyling'
+import { TodoTask, TaskCheckboxContainer } from './styled components/TaskStyling'
 
+//material ui
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -48,14 +50,15 @@ export const Task = ({ id, task, completed }) => {
                 checked={completed} 
                 onChange={onCheckedCompleted}
             ></input> */}
-            <Checkbox
-                checked={completed}
-                onChange={onCheckedCompleted}
-                color="default"
-                inputProps={{ 'aria-label': 'checkbox with default color' }}
-            />
-                {task.content}
-            
+            <TaskCheckboxContainer>
+                <Checkbox
+                    checked={completed}
+                    onChange={onCheckedCompleted}
+                    color="default"
+                    inputProps={{ 'aria-label': 'checkbox with default color' }}
+                />
+                    {task.content}
+            </TaskCheckboxContainer>
             {/* <RemoveTodo onClick={onClickRemove}>✖️</RemoveTodo> */}
             
             <IconButton onClick={onClickRemove} aria-label="delete">

@@ -13,15 +13,13 @@ export const MainAppContainer = styled.div`
     justify-content: space-between;
 `
 export const AppHeader = styled.div`
-    // background-color: #6979f8;
     background-color: rgba(123,104,238,1);
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 `
 
 export const FormListContainer = styled.div`
     width 95%;
-    
 `
 
 export const TotalTaskContainer = styled.div`

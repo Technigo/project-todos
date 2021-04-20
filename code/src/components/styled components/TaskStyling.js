@@ -10,6 +10,13 @@ export const TodoTask = styled.li`
     border-bottom: 1px solid black;
     padding: 15px 5px 15px 0;
 `
+export const TaskCheckboxContainer = styled.div`
+    justify-content: flex-start;
+`
+
+export const TaskDate = styled.p`
+    font-size: 12px;
+`
 
 export const RemoveTodo = styled.button`
     border-radius: 50%;
