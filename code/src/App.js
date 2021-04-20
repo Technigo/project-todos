@@ -4,7 +4,8 @@ import { configureStore, combineReducers } from "@reduxjs/toolkit"
 import styled, { createGlobalStyle } from 'styled-components'
 
 import { Header } from "./components/Header"
-import { Container } from 'components/Container'
+import { AddContainer } from "./components/AddContainer"
+import { TaskContainer } from "./components/TaskContainer"
 
 import { tasks } from "reducers/tasks"
 
@@ -26,6 +27,9 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 100vh;
+  min-height: 100%
+  background: linear-gradient(0deg, rgba(236,219,199,0.8) 26%, rgba(185,191,186,0.8) 100%);
 `
 
 const reducer = combineReducers({
@@ -40,7 +44,8 @@ export const App = () => {
       <GlobalStyle />
       <StyledContainer>
         <Header />
-        <Container />
+        <TaskContainer />
+        <AddContainer />
       </StyledContainer>
     </Provider>
   )

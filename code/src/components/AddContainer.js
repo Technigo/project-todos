@@ -6,33 +6,36 @@ import styled from 'styled-components'
 import { tasks } from "reducers/tasks"
 
 const StyledSection = styled.section`
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  padding: 10px;
+  padding: 30px;
+  margin-top: auto;
 `
 
 const StyledButton = styled.button`
-  border: none;
-  background-color: transparent;
-  display: flex;
-  align-items: center;
-  padding: 0;
+border: none;
+background-color: transparent;
+display: flex;
+align-items: center;
+padding: 0;
 `
 
 const Icon = styled.img`
-  width: 24px;
+width: 24px;
 `
 
 const StyledParagraph = styled.p`
-  margin: 0 0 0 10px;
+margin: 0 0 0 10px;
 `
 
 const StyledInput = styled.input`
-  width: 100%;
-  box-sizing: border-box;
-  margin: 20px 0;
-  padding: 10px;
-  font-size: 20px;
+width: 100 %;
+box-sizing: border - box;
+margin: 20px 0;
+padding: 10px;
+font-size: 20px;
 `
 
 export const AddContainer = () => {
