@@ -16,6 +16,9 @@ code {
 .todo-information-container {
   margin: 30px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 10px;
 }
 
 .todo-list {
@@ -23,4 +26,8 @@ code {
   text-align: center;
   margin: 30px;
   background-color: white;
+}
+
+.task-number-container {
+  text-align: right;
 }
