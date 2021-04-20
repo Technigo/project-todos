@@ -10,11 +10,12 @@
   background-color: rgb(196, 232, 241);
   margin-bottom: 5px;
   box-shadow: 0.5px 0.5px 1px 1px rgb(88, 88, 102);
+  color: rgb(110, 157, 168);
 }
 
 .todo-list-item p {
   padding: 5px 10px;
-  color: rgb(110, 157, 168);
+ 
   text-align: right;
   background-color: rgb(233, 233, 233);
 }

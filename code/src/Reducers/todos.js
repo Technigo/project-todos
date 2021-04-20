@@ -23,12 +23,13 @@ export const todos = createSlice({
       store.items = store.updatedTodos;
     },
     createNewTodo: (store, action) => {
-      const { task, time } = action.payload; 
+      const { task, time, deadline } = action.payload; 
       store.items.push({
         id: store.items.length + 1,
         description: task,
         isComplete: false,
-        createdAt: time
+        createdAt: time,
+        deadline: deadline
       });
     },
     removeTodo: (store, action) => {
