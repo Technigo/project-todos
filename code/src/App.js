@@ -10,16 +10,15 @@ import { TaskContainer } from "./components/TaskContainer"
 import { tasks } from "reducers/tasks"
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
   body {
     font-family: 'Poiret One', cursive;
     background: linear-gradient(0deg, rgba(236,219,199,0.8) 26%, rgba(185,191,186,0.8) 100%);
-    height: 100vh;
     margin: 0;
     color: #03011f;
   }
   button {
-    font-family: 'Poiret One', cursive;
+    font-family: 'Poppins', sans-serif;
+    color: #03011f;
   }
 `
 
@@ -28,8 +27,6 @@ const StyledContainer = styled.div`
   flex-direction: column;
   align-items: center;
   height: 100vh;
-  min-height: 100%
-  background: linear-gradient(0deg, rgba(236,219,199,0.8) 26%, rgba(185,191,186,0.8) 100%);
 `
 
 const reducer = combineReducers({

@@ -4,6 +4,19 @@ import styled from 'styled-components'
 
 import { tasks } from "reducers/tasks"
 
+const HeaderButton = styled.button`
+  background-color: transparent;
+  border: none;
+  font-size: 12px;
+  font-weight: 400;
+  margin: 5px 0;
+  border: 1px solid #8d8f96;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
 const Icon = styled.img`
   width: 16px;
 `
@@ -24,15 +37,18 @@ export const HeaderFilter = () => {
 
   return (
     <>
-      <button onClick={filterCompleted} >completed
+      <HeaderButton onClick={filterCompleted} >
+        completed
         <Icon src="./assets/check-icon.svg" alt="check icon" />
-      </button>
-      <button onClick={filterUncompleted}>uncompleted
+      </HeaderButton>
+      <HeaderButton onClick={filterUncompleted}>
+        uncompleted
         <Icon src="./assets/square-icon.svg" alt="square icon" />
-      </button>
-      <button onClick={resetFilter}>reset
-        <Icon src="./assets/square-icon.svg" alt="square icon" />
-      </button>
+      </HeaderButton>
+      <HeaderButton onClick={resetFilter}>
+        reset
+        <Icon src="./assets/filter-icon.svg" alt="filter icon" />
+      </HeaderButton>
     </>
   )
 }

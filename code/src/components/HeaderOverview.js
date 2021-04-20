@@ -3,7 +3,6 @@ import { useSelector } from "react-redux"
 import styled from 'styled-components'
 
 const StyledParagraph = styled.p`
-  @import url('https://fonts.googleapis.com/css2?family=Poiret+One&display=swap');
   margin: 0;
 `
 
