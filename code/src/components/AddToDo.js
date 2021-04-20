@@ -1,11 +1,16 @@
 import React, { useState } from 'react'         
 import { useDispatch } from 'react-redux'
+import { Select } from '@material-ui/core'
+import { v4 as uuidv4 } from 'uuid' // to create a unique id
+
 import styled from 'styled-components'
 
 import todos from 'reducers/todos'
 
+
 const AddTodo = () => {
   const dispatch = useDispatch()
+  const id = uuidv4()
 
   const [newTodo, setNewTodo] = useState('')
   const [category, setCategory] = useState('')
@@ -18,7 +23,7 @@ const AddTodo = () => {
     {value: 'Love', label: 'Love'},
     {value: 'Hobbies', label: 'Hobbies'},
     {value: 'Fitness', label: 'Fitness'},
-    {value: 'Other', label: 'Other'},
+    {value: 'Other', label: 'Other'}
   ]
 
   const onSelectChange = (optionSelected) => {
@@ -40,9 +45,9 @@ const AddTodo = () => {
       )
       setNewTodo('') // clear input 
       setCategory('') // clear category
-    } else {
+    } /* else {
       alert ('Please type your todo and/or select a category first')
-    }
+    } */
 	}
 
   return (
@@ -61,16 +66,27 @@ const AddTodo = () => {
           +
       </button>
       <div>
-      <label>Set category:</label>
-        <select
-            value={category.value}
-            onChange={onSelectChange}
-            options={options} //vad är detta? 
-            placeholder="Select a category"
-          />
+      <Label>Set category:</Label>
+        <CustomSelect
+          value={category.value}
+          onChange={onSelectChange}
+          options={options} 
+          placeholder="Select a category"
+        />
         </div>
     </form>
   )
 }
+
+const Label = styled.label`
+  font-size: 10px;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+`;
+
+const CustomSelect = styled.select`
+  width: 200px;
+  margin-bottom: 10px;
+`;
 
 export default AddTodo

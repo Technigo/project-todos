@@ -26,7 +26,7 @@ const TodoList = () => {
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
           />
           <p className="completed-time"> 
-            Created {moment(todo.createdAt).startOf('second').fromNow()}
+            Created {moment(todo.createdAt).format('dddd, MMMM Do YYYY')}
           </p>
           <button
             type="button"
