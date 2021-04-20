@@ -18,10 +18,10 @@ const StyledParagraph = styled.p`
 `
 
 const Icon = styled.img`
-  width: 24px;
+  width: 16px;
 `
 
-export const ClearButton = () => {
+export const ActionDelete = () => {
   const dispatch = useDispatch()
 
   const handleClick = () => {

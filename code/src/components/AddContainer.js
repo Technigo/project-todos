@@ -12,6 +12,7 @@ const StyledSection = styled.section`
   flex-direction: column;
   padding: 30px;
   margin-top: auto;
+  box-shadow: 0 0 10px #8d8f96;
 `
 
 const StyledButton = styled.button`

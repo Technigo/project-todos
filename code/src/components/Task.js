@@ -21,6 +21,7 @@ const Icon = styled.img`
 const StyledParagraph = styled.p`
   margin: 0 10px;
   font-size: 24px;
+  font-weight: 600;
 `
 
 export const Task = ({ task }) => {

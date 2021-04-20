@@ -18,10 +18,10 @@ const StyledParagraph = styled.p`
 `
 
 const Icon = styled.img`
-  width: 24px;
+  width: 16px;
 `
 
-export const ClearButton = () => {
+export const ActionComplete = () => {
   const dispatch = useDispatch()
 
   const handleClick = () => {
@@ -33,8 +33,8 @@ export const ClearButton = () => {
 
   return (
     <StyledButton onClick={handleClick} >
-      <StyledParagraph>Delete all</StyledParagraph>
-      <Icon src="./assets/bin-icon.svg" alt="bin icon" />
+      <StyledParagraph>Complete all</StyledParagraph>
+      <Icon src="./assets/check-icon.svg" alt="check icon" />
     </StyledButton>
   )
 }
