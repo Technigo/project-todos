@@ -25,9 +25,9 @@ export const ActionComplete = () => {
   const dispatch = useDispatch()
 
   const handleClick = () => {
-    const deleteAll = window.confirm("Are you sure you want to delete all tasks?")
-    if (deleteAll) {
-      dispatch(tasks.actions.removeTask())
+    const completeAll = window.confirm("Are you sure you want to complete all tasks?")
+    if (completeAll) {
+      dispatch(tasks.actions.completeAllTasks())
     }
   }
 

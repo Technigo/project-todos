@@ -29,6 +29,11 @@ export const tasks = createSlice({
       } else if (!action.payload.isCompleted) {
         completedTask.isCompleted = true
       }
+    },
+    completeAllTasks: (state, action) => {
+      for (let task of state.allTasks) {
+        task.isCompleted = true
+      }
     }
   }
 })
