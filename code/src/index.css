@@ -24,3 +24,21 @@ code {
   background-color: white;
   border-radius: 10px;
 }
+
+.list-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: whitesmoke;
+  margin-top: 100px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.app-title {
+  display: flex;
+  text-align:center;
+  color: red;
+}

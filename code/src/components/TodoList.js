@@ -11,7 +11,10 @@ const TodoList = () => {
 
 
     return(
-        <div>
+        <>
+        
+        <div className="list-container">
+        <h1 className="app-title">My Pretty TODOs App</h1>
             {items.map(todo => (
                 <div key={todo.id}>
                    <p>{todo.description}</p>
@@ -23,6 +26,7 @@ const TodoList = () => {
         </div>
         ))}
     </div>
+    </>
     )
 }
 

@@ -4,9 +4,10 @@ const todos = createSlice({
     name:'todos',
     initialState: {
         items: [
-            { id: 1, description: 'First task', isComplete: false },
-            { id: 2, description: 'Second task', isComplete: true },
-            { id: 3, description: 'Third task', isComplete: false }
+            { id: 1, description: 'Groceries🍎', isComplete: false },
+            { id: 2, description: 'Coding💻', isComplete: true },
+            { id: 3, description: 'Housekeeping🏠', isComplete: false },
+            { id: 4, description: 'Workout🤸‍♀️', isComplete: false }
         ],
 
     },
@@ -29,4 +30,4 @@ const todos = createSlice({
     }
 });
 
-export default todos;
+export default todos
