@@ -21,7 +21,6 @@ const todos = createSlice({
     },
     toggleComplete: (store, action) => {
       // console.log(store, action)
-      // console.log(action)
       const updatedItems = store.items.map(todo => {
         if (todo.id === action.payload) {
           return {
