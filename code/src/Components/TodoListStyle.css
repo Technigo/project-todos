@@ -7,7 +7,7 @@
 .todo-list-item {
  width: 98%;
   position: relative;
-  background-color: rgb(196, 232, 241);
+  background-color: rgb(217, 234, 238);
   margin-bottom: 5px;
   box-shadow: 0.5px 0.5px 1px 1px rgb(88, 88, 102);
   color: rgb(110, 157, 168);

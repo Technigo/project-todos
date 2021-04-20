@@ -1,39 +1,34 @@
 import React from "react";
-import {  useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
+import styled from "styled-components";
 
-import { todos } from "../Reducers/todos";
-import './RoundedButtonStyle.css'
+export const RoundedButton = ({ buttonText, action }) => {
+  const dispatch = useDispatch();
 
-export const RoundedButton = ({type, id}) => {
-    const dispatch= useDispatch();
+  return (
+    <Button
+      className="rounded-button"
+      type="button"
+      onClick={() => dispatch(action)}
+    >
+      {buttonText}
+    </Button>
+  );
+};
 
-if(type==="CompleteAll"){
-return (<button
-    className="rounded-button"
-    type="button"
-    onClick={() => dispatch(todos.actions.completeAll())}
-  >
-    Complete all
-  </button>)
-} 
+const Button = styled.button`
+  width: fit-content;
+  height: 20px;
+  background-color: rgb(137, 177, 187);
+  border: solid white 0.5px;
+  border-radius: 10px;
+  color: white;
+  margin-top: 10px;
+  outline: none;
 
-if(type==="ClearAll"){
-    return (<button
-        className="rounded-button"
-        type="button"
-        onClick={() => dispatch(todos.actions.clearAllCompleted())}
-      >
-        Clear all completed
-      </button>)
-    } 
-
-return (
-    (<button
-        className="rounded-button"
-        type="button"
-        onClick={() => dispatch(todos.actions.removeTodo({task: id}))}
-      >
-        Remove
-      </button>)
-)}
-       
+  &::hover,
+  &::focus {
+    background-color: white;
+    color: rgb(30, 81, 93);
+  }
+`;

@@ -1,6 +1,7 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import { useSelector} from "react-redux";
 
+import {todos} from '../Reducers/todos'
 import "./HeaderStyle.css";
 import { RoundedButton } from "./RoundedButton";
 
@@ -23,7 +24,7 @@ export const Header = () => {
         <p>
           {completedTasks.length} / {tasks.length} tasks completed
         </p>
-        <RoundedButton type={"CompleteAll"} id={""} />
+        <RoundedButton buttonText="Complete all" action={todos.actions.completeAll()} />
       </div>
     </header>
   );

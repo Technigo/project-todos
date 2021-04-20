@@ -6,6 +6,8 @@ import { Task } from "./Task";
 import { RoundedButton } from "./RoundedButton";
 import { DeadlineCountdown } from "./DeadlineCountdown";
 
+import {todos} from '../Reducers/todos'
+
 export const TodoList = () => {
   const tasks = useSelector((store) => store.todos.items);
 
@@ -26,7 +28,7 @@ export const TodoList = () => {
             <DeadlineCountdown deadline={task.deadline} />
           </div>
           <div className="todo-list-item__inner-button-container">
-            <RoundedButton type={"Delete"} id={task.id} />
+            <RoundedButton buttonText="Delete" action={todos.actions.removeTodo({task: task.id})}/>
           </div>
         </div>
       ))}

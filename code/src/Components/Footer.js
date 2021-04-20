@@ -1,13 +1,24 @@
 import React from "react";
-import { useSelector } from "react-redux";
+import styled from 'styled-components'
 
-import "./FooterStyle.css";
+import {todos} from '../Reducers/todos'
 import { RoundedButton } from "./RoundedButton";
 
 export const Footer = () => {
   return (
-    <footer>
-      <RoundedButton type="ClearAll" id="" />
-    </footer>
+    <Container>
+      <RoundedButton buttonText="Clear completed" action={todos.actions.clearAllCompleted()}/>
+    </Container>
   );
 };
+
+const Container = styled.footer`
+width: 100%;
+height: 50px;
+position:absolute;
+bottom: 0;
+display: flex;
+justify-content: center;
+align-items: center;
+background-color: rgb(238, 238, 238);
+`
