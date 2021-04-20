@@ -15,11 +15,16 @@ const todos = createSlice({
             const updatedItems = store.items.map(todo => {
                 if(todo.id === action.payload) {
                     //update iscOMPLETE property
+                    return {
+                        ...todo,
+                        isComplete: !todo.isComplete
+                    }
                 } else {
+                    return todo;
                     //leave it as it was
                 }
-            })
-
+            });
+            store.items = updatedItems;
         }
     }
 });
