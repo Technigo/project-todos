@@ -62,7 +62,15 @@ const todos = createSlice({
                 //To update the store-items property and assign a new value:
                 store.items = updateTodo
 
-            }
+            },
+        //Add to do item
+        //When todo is dispatched with a new payload including the item object and 
+        //pushes to a new array, defined in AddTodo.js
+
+        addToDo: (store, action) => {
+            const addItem = action.payload
+            store.items.push(addItem)
+        },
         }
 })
 

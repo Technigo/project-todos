@@ -3,14 +3,13 @@ import { useSelector, useDispatch } from 'react-redux'
 // import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import DeleteIcon from '@material-ui/icons/Delete';
-
-
-import todos from '../reducers/todos'
 import { Checkbox } from '@material-ui/core';
 
 
-  
-function TodoList() {
+import todos from '../reducers/todos'
+
+
+const TodoList = () => {
     //A useSelector so we can reach for the items array in the todo's store
     //Reaching for the store(reducer), then the todos, then the items 
     const items = useSelector((store) => store.todos.items)
