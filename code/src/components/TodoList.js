@@ -15,7 +15,7 @@ const TodoList = () => {
       {items.map(todo => (
         <div key={todo.id}>
           <p>{todo.description}</p>
-          <input
+          <input className='checkbox'
             type='checkbox'
             checked={todo.isComplete}
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id)) }

@@ -5,7 +5,7 @@ const todos = createSlice({
   initialState: {
     items: [
       { id: 1, description: 'Test one', isComplete: false },
-      { id: 2, description: 'Test two', isComplete: true },
+      { id: 2, description: 'Test two', isComplete: false },
       { id: 3, description: 'Test three', isComplete: false }
     ]
   },

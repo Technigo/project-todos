@@ -4,7 +4,9 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import todos from './reducers/todos'
 // import users from './reducers/users' example if more slices
+import { Header } from './components/Header'
 import TodoList from './components/TodoList'
+import { AddTask } from 'components/AddTask'
 
 
 const reducer = combineReducers({
@@ -17,7 +19,9 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
+      <Header />
       <TodoList />
+      <AddTask />
     </Provider>
   )
 }
