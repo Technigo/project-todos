@@ -11,7 +11,7 @@ import { tasks } from "reducers/tasks"
 
 const GlobalStyle = createGlobalStyle`
   body {
-    font-family: 'Poiret One', cursive;
+    font-family: 'Poppins', sans-serif;
     background: linear-gradient(0deg, rgba(236,219,199,0.8) 26%, rgba(185,191,186,0.8) 100%);
     margin: 0;
     color: #03011f;

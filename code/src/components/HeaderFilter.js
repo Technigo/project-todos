@@ -27,8 +27,17 @@ export const HeaderFilter = () => {
   const filterCompleted = () => {
     dispatch(tasks.actions.filterCompleted())
   }
+
   const filterUncompleted = () => {
     dispatch(tasks.actions.filterUncompleted())
+  }
+
+  const filterDueSoon = () => {
+    dispatch(tasks.actions.filterDueSoon())
+  }
+
+  const filterOverdue = () => {
+    dispatch(tasks.actions.filterOverdue())
   }
 
   const resetFilter = () => {
@@ -43,6 +52,14 @@ export const HeaderFilter = () => {
       </HeaderButton>
       <HeaderButton onClick={filterUncompleted}>
         uncompleted
+        <Icon src="./assets/square-icon.svg" alt="square icon" />
+      </HeaderButton>
+      <HeaderButton onClick={filterDueSoon}>
+        due soon
+        <Icon src="./assets/square-icon.svg" alt="square icon" />
+      </HeaderButton>
+      <HeaderButton onClick={filterOverdue}>
+        overdue
         <Icon src="./assets/square-icon.svg" alt="square icon" />
       </HeaderButton>
       <HeaderButton onClick={resetFilter}>

@@ -4,8 +4,6 @@ import { useDispatch } from "react-redux"
 import styled from 'styled-components'
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
-import dayjs from 'dayjs'
-import { nanoid } from 'nanoid'
 
 import { tasks } from "reducers/tasks"
 
@@ -52,8 +50,6 @@ export const AddContainer = () => {
   const [newTask, setNewTask] = useState("")
   const [dueDate, setDueDate] = useState(null)
 
-  const payload = [newTask, dueDate]
-
   const dispatch = useDispatch()
 
   const handleClick = () => {
@@ -74,6 +70,7 @@ export const AddContainer = () => {
     if (newTask) {
       dispatch(tasks.actions.addTask(newTask, dueDate))
       setNewTask("")
+      setDueDate(null)
     }
   }
 
