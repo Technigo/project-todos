@@ -19,17 +19,23 @@ export const tasks = createSlice({
       }
     },
     addTask: (state, action) => {
-      const newTask = {
-        id: Date.now(),
-        text: action.payload.text,
-        complete: false}
-      state.push(newTask)
+      // const newTask = {
+      //   id: Date.now(),
+      //   text: action.payload.text,
+      //   complete: false}
+     // state.push(action)
+     return [...state, action.payload];
     },
     removeAll: () => {
       return []
     },
     removeCompleted: (state) => {
       return state.filter((item) => !item.complete)
+    },
+    completeAll: (state) => {
+      state.map((task) => (
+        task.complete = true
+      ))
     }
   }
 })

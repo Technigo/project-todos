@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#ccb79f;
+
 }
 
 code {
@@ -19,39 +21,29 @@ code {
 main {
   max-width: 500px;
   margin: 0 auto;
-  background-color: rgb(204,183,159);
 }
-/* .header-section {
-  /* width:90%; */
-  /* display: flex; */
-  /* align-items: center; */
- /* justify-content: center; */
- /* justify-content: space-between; */
 
-
-/* .header-container {
-  display: flex;
-  width: 90%;
- justify-content: space-between;
-  align-items: center;
-   justify-content: center;
-} */
 
 .header {
-  text-align: center;
+  text-align: left;
   background-image: url(./assets/todo.jpg);
   background-size: cover;
   background-position: center;
   height: 250px;
+
 }
 .header h1 {
   margin:0;
+  margin-left:10px;
+  font-size: 45px;
   padding-top: 15px;
 }
 
 .header p {
-  margin-top: 20px;
+  margin-top: 10px;
+  margin-left:10px;
   font-weight: bold;
+  font-size: 20px;
 }
 
 .completed-and-clear {
@@ -74,13 +66,26 @@ main {
 .remove-button {
   border-radius: 8px;
   padding:5px;
-  background:#705946;
+  background:#b0a38a;
+  outline:none;
 }
 
 .form {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
+}
+input {
+  background-color: inherit;
+  border: hidden;
+  font-size: 20px;
+  color: #58739e;
+  align-items: center;
+}
+
+input:focus,
+textarea {
+  outline: none;
 }
 
 .button {
@@ -146,7 +151,7 @@ main {
   width: 60%;
   }
 
-  .checkbox-round {
+ .checkbox-round {
     width: 1.3em;
     height: 1.3em;
     background-color: white;

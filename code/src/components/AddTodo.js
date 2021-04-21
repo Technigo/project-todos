@@ -13,7 +13,11 @@ const AddTodoForm = () => {
 
     //To prevent to add an empty task
 		if (value) {
-      dispatch(tasks.actions.addTask({text: value}))
+      const newTask = {
+        id: Date.now(),
+        text: value,
+        complete: false}
+      dispatch(tasks.actions.addTask(newTask))
       setValue("")
 		}
 	};

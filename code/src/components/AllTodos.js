@@ -27,7 +27,7 @@ const AllTodos = () => {
           </button>
           <button
             className="remove-button"
-            onClick={() => dispatch(tasks.actions.removeCompleted())}>
+            onClick={() => dispatch(tasks.actions.completeAll())}>
             Complete all
           </button>
         </div>
