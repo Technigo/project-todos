@@ -13,9 +13,6 @@ const TodoList = () => {
       {items.map((todo) => (
         <div className="todo-list-item-container" key={todo.id}>
           <div className="todo-list-item-section border">
-            <div className="todo-list-item-title">
-              <h3>{todo.title}</h3>
-            </div>
             <div className="todo-list-item-content">
               <input
                 className="input-style"
