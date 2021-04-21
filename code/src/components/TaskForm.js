@@ -16,6 +16,10 @@ const Form = styled.form`
   padding: 20px 20px 80px 20px;
   background-color: white;
   box-sizing: border-box;
+  @media (min-width: 769px) {
+    max-width: 700px;
+    margin-left: 35%;
+  }
 `;
 
 const Input = styled.input`

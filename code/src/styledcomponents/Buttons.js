@@ -8,6 +8,9 @@ export const SettingsButton = styled.button`
   :hover {
     color: ${props => props.theme.primary};
   }
+  @media (min-width: 769px) {
+    font-size: 48px;
+  }
 `;
 
 const ColorButton = styled.button`
@@ -72,12 +75,20 @@ const ThemeColors = styled.button`
 `;
 
 export const AddTaskButton = styled(ThemeColors)`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 48px;
   width: 80px;
   height: 80px;
   margin-top: -90px;
   border-radius: 50%;
   border: 4px solid ${props => props.theme.backgroundColor};
+  @media (min-width: 769px) {
+    width: 120px;
+    height: 120px;
+    font-size: 68px;
+  }
 `;
 
 export const SubmitButton = styled(ThemeColors)`

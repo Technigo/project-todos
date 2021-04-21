@@ -20,16 +20,23 @@ const TitleTop = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px;
-  width: 92%;
+  padding: 10px 20px;
+  width: 100%;
   background-color: ${props => props.theme.backgroundColor};
+  @media (min-width: 769px) {
+    max-width: 600px;
+    padding: 20px 0;
+  }
 `;
 
 const Title = styled.h1`
-  font-size: 36px;
+  font-size: 40px;
   margin: 0;
   font-family: ${props => props.theme.fontFamily};
   color: ${props => props.theme.primary};
+  @media (min-width: 769px) {
+    font-size: 58px;
+  }
 `;
 
 const DrawerContainer = styled.aside`

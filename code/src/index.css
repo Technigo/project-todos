@@ -48,6 +48,19 @@ button {
   padding: 4px;
 }
 
+.progress-bar {
+  height: 20px;
+  width: 85%;
+  border: 1px solid #ead3cb;
+}
+
+.progress-filler {
+  background: #973a3a;
+  height: 100%;
+  width: 100%;
+  transition: width 0.5s linear;
+}
+
 
 
 

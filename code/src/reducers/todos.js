@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit"
 const todos = createSlice({
   name: "todos",
   initialState: {
-      filter: "",
     tasks: [],
     categories: [
         { value: "to-do", label: "to-do", icon: "calendar-check" },
@@ -18,6 +17,7 @@ const todos = createSlice({
         { value: "work", label: "work", icon: "briefcase" },
         { value: "housework", label: "housework", icon: "laptop-house" },
     ],
+    progress: 0,
   },
   reducers: {
     addTask: (state, action) => {
@@ -45,7 +45,7 @@ const todos = createSlice({
         if (todo.id === action.payload) {
           return {
             ...todo,
-            isComplete: !todo.isComplete
+            isComplete: !todo.isComplete,
           }
         } else {
             return todo;

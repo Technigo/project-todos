@@ -15,7 +15,7 @@ margin-top: 100px;
 
 const CompletedText = styled.h1`
   text-align: center;
-  font-size: 38px;
+  font-size: 30px;
   font-family: ${props => props.theme.fontFamily};
 `;
 
