@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
+import uniqid from 'uniqid'
 
 import todos from '../reducers/todos'
 
@@ -12,13 +13,15 @@ const TodoForm = () => {
     //Create instance of useDispatch hook.
     const dispatch = useDispatch()
 
-    const onSubmit = (event) => {
+    const onFormSubmit = (event) => {
         event.preventDefault();
         console.log('Your first task: ' + value)
         //dispatch an action to add new todo item
         dispatch(
             todos.actions.addTodo({
-                description: value
+                id: uniqid(),
+                description: value,
+                isComplete: false
             })
         )
         //Clear input
@@ -26,7 +29,7 @@ const TodoForm = () => {
     }
 
     return (
-        <form onSubmit={onSubmit}>
+        <form onSubmit={onFormSubmit}>
             <input
                 type="text"
                 placeholder="Add new task.."

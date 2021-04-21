@@ -20,15 +20,7 @@ const todos = createSlice({
     reducers: {
 
         addTodo: ( store, action) => {
-            //New object
-            const newTodo =  {
-                //Give a unique ID to the new object
-                id: nextTodoItemId(store.items), 
-                description: action.payload.description,
-                isComplete: false
-            }
-            //push newTodo to the end of the items array = mutate fix this? 
-            store.items.push(newTodo)
+            store.items = [...store.items, action.payload]
         },
 
         removeTodo: (store, action) => {

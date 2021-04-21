@@ -5,6 +5,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import todos from './reducers/todos'
 
 import TodoList from './components/TodoList'
+import TodoForm from './components/TodoForm'
 
 //Combine reducer method
 const reducer = combineReducers({
@@ -18,6 +19,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <TodoList />
+      <TodoForm />
     </Provider>
   )
 }

@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 
 //import slice
 import todos from '../reducers/todos'
-import TodoForm from './TodoForm'
 
 
 const TodoList = () => {
@@ -27,7 +26,6 @@ const TodoList = () => {
                     <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>Delete</button>
                 </div>
             ))}
-            <TodoForm />
         </div>
     )
 }
