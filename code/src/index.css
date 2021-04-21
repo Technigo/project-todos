@@ -1,15 +1,15 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: mintcream;
+  background-color: #F6F4F3;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
@@ -19,15 +19,39 @@ code {
   align-items: center;
   justify-content: space-between;
   font-size: 10px;
+  color: #af5b5b;
+}
+
+.task-number-container {
+  text-align: right;
+}
+
+.todo-form {
+  margin: auto 30px;
 }
 
 .todo-list {
-  border: 2px solid black;
+  border: 2px solid #276fbf;
   text-align: center;
   margin: 30px;
   background-color: white;
 }
 
-.task-number-container {
-  text-align: right;
+.todo-item {
+  display: flex;
+  align-items: center;
+  padding: 5px 20px;
+  border: 2px solid #f03a47;
+}
+
+.delete-button {
+  padding: 5px;
+  border: none;
+  border-radius: 30px;
+  background-color: #183059;
+  color: white;
+}
+
+.delete-button:hover {
+  cursor: pointer;
 }

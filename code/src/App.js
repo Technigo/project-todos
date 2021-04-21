@@ -6,17 +6,19 @@ import todos from './reducers/todos'
 
 import TodoList from './components/TodoList'
 import TodoInformation from './components/TodoInformation'
+import TodoForm from './components/TodoForm'
 
 const reducer = combineReducers({
   todos: todos.reducer,
 })
 
-const store = configureStore({ reducer: reducer })
+const store = configureStore({ reducer }) // shortcut for ({ reducer: reducer })
 
 export const App = () => {
   return (
     <Provider store={store}>
       <TodoInformation />
+      <TodoForm />
       <TodoList />
     </Provider>
   )

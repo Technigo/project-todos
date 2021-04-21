@@ -1,30 +1,54 @@
 import { createSlice } from '@reduxjs/toolkit'
+import uniqid from 'uniqid'
 
 const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-        { id: 1, description: 'Test', isComplete: false },
-        { id: 2, description: 'Test2', isComplete: true },
-        { id: 3, description: 'Test3', isComplete: false }
-    ]
+      {
+        id: uniqid(),
+        description: 'Wow, you have done all your tasks!',
+        isComplete: false,
+      },
+    ],
   },
   reducers: {
-      toggleComplete: (store, action) => {
-          const updatedItems = store.items.map(todo => {
-              if (todo.id === action.payload) {
-                  return {
-                      ...todo,
-                      isComplete: !todo.isComplete
-                  }
-              } else {
-                  return todo
-              }
-          })
+    toggleComplete: (store, action) => {
+      // create a new array - immutability
+      const updatedItems = store.items.map((todo) => {
+        if (todo.id === action.payload) {
+          return {
+            ...todo,
+            isComplete: !todo.isComplete,
+          }
+        } else {
+          return todo
+        }
+      })
 
-          store.items = updatedItems
-      }
-  }
+      store.items = updatedItems
+
+      /* // mutability 
+      store.items.forEach((todo) => {
+        if (todo.id === action.payload) {
+          todo.isComplete = !todo.isComplete
+        }
+      }) */
+    },
+    removeTodo: (store, action) => {
+      const decreasedItems = store.items.filter(
+        (todo) => todo.id !== action.payload
+      )
+      store.items = decreasedItems
+
+      // mutability (add and change id -> index in TodoList.js )
+      // store.items.splice(action.payload, 1)
+    },
+    addTodo: (store, action) => {
+      // immutability
+      store.items = [...store.items, action.payload]
+    },
+  },
 })
 
-export default todos 
+export default todos

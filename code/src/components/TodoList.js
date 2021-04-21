@@ -10,16 +10,17 @@ const TodoList = () => {
 
   return (
     <div className="todo-list">
-      {items.map((todo) => (
-        <div key={todo.id}>
+      {items.map((todo) => (  // mutability -> (todo, index)
+        <div key={todo.id} className="todo-item">
           <p>{todo.description}</p>
           <input
             type="checkbox"
             checked={todo.isComplete}
-            onChange={() =>
-              dispatch(todos.actions.toggleComplete(todo.id))
-            }
-          />
+            onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+          /> 
+          <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))} className="delete-button">
+            delete
+          </button> 
         </div>
       ))}
     </div>
