@@ -1,11 +1,6 @@
 import React from 'react';
-import { useDispatch } from 'react-redux'
-import {
-  Paper,
-  FormControlLabel,
-  Checkbox,
-  IconButton
-} from '@material-ui/core';
+import { useDispatch } from 'react-redux';
+import { Paper, FormControlLabel, Checkbox, IconButton } from '@material-ui/core';
 import {
   RadioButtonUncheckedOutlined,
   CheckCircleRounded,
@@ -14,7 +9,7 @@ import {
 import { toggleTask, deleteTask } from 'store/tasks';
 import { useStyles } from './style';
 
-export default ({ value, id, complete }) => {
+export default ({ value, id, complete, listSlug }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   return (
@@ -24,16 +19,15 @@ export default ({ value, id, complete }) => {
         control={
           <Checkbox
             color="primary"
-            // disabled={complete}
             checked={complete}
-            onChange={() => dispatch(toggleTask(id))}
+            onChange={() => dispatch(toggleTask({ id, listSlug }))}
             icon={<RadioButtonUncheckedOutlined />}
             checkedIcon={<CheckCircleRounded />}
             name="checkedH" />
         }
         label={value} />
       <IconButton
-        onClick={() => dispatch(deleteTask(id))}
+        onClick={() => dispatch(deleteTask({ id, listSlug }))}
         aria-label="delete task">
         <CancelOutlined />
       </IconButton>

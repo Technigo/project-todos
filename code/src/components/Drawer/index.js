@@ -7,7 +7,8 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
-  Divider
+  Divider,
+  Button
 } from '@material-ui/core';
 import {
   Menu,
@@ -15,21 +16,20 @@ import {
   WbSunnyOutlined,
   FolderOpenOutlined
 } from '@material-ui/icons';
+import { useDispatch, useSelector } from 'react-redux';
+import { addList } from 'store/tasks';
 import { useStyles } from './style';
 
-const Test = ({ page, toggleDrawer }) => {
+const DrawerItem = ({ name, slug, toggleDrawer }) => {
   const classes = useStyles();
   const [linkProps, setLinkProps] = useState({ path: '/' });
   React.useEffect(() => {
-    switch (page) {
-      case 'Settings':
-        setLinkProps({ text: 'Settings', path: '/settings', icon: 'cog' });
-        break;
-      default:
-        setLinkProps({ text: 'MyDay', path: '/', icon: 'sun' });
-        break;
+    if (name) {
+      setLinkProps({ text: name, path: `/projects/${slug}`, icon: 'cog' });
+    } else {
+      setLinkProps({ text: 'My Day', path: '/', icon: 'sun' });
     }
-  }, [page]);
+  }, [name, slug]);
   return (
     <ListItem
       button
@@ -49,6 +49,8 @@ const Test = ({ page, toggleDrawer }) => {
 };
 
 export default () => {
+  const dispatch = useDispatch();
+  const projects = useSelector((store) => store.tasks.lists.slice(1));
   const classes = useStyles();
   const [open, setOpen] = useState(false);
   const toggleDrawer = () => {
@@ -70,9 +72,14 @@ export default () => {
           </IconButton>
         </div>
         <List className={classes.drawer}>
-          <Test toggleDrawer={toggleDrawer} />
+          <DrawerItem toggleDrawer={toggleDrawer} />
           <Divider />
-          <Test toggleDrawer={toggleDrawer} page="Settings" />
+          {projects.map((project) => (
+            <DrawerItem key={project.slug} toggleDrawer={toggleDrawer} {...project} />
+          ))}
+          <Button onClick={() => dispatch(addList('projectsssss'))}>
+              new Project1
+          </Button>
         </List>
       </Drawer>
     </>

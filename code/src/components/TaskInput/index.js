@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
+import { useParams } from 'react-router-dom'
 import { Paper, InputAdornment, Input, Button } from '@material-ui/core';
 import { CheckCircleOutline, Add } from '@material-ui/icons';
 import { addTask } from 'store/tasks'
@@ -8,13 +9,15 @@ import { useStyles } from './style';
 export default () => {
   const classes = useStyles();
   const dispatch = useDispatch();
+  const { slug } = useParams();
   const [value, setValue] = useState('');
   const [focused, setFocused] = useState(false);
 
   const handleAddTask = (event) => {
     if (event.key === 'Enter' || event.type === 'click') {
       event.preventDefault();
-      dispatch(addTask(value));
+      const listname = !slug ? 'my-day' : slug;
+      dispatch(addTask({ value, slug: listname }));
       setValue('');
     }
   };
