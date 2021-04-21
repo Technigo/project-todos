@@ -38,8 +38,8 @@ export const tasks = createSlice({
             store.items=decreasedItems
 
         },
-        clearAllTasks: () => {
-            //Since we start with an empty array, to clear all tasks we can reset the state to the initial state the page had 
+        deleteAllTasks: () => {
+            //Since we start with an empty array, to delete all tasks we can reset the state to the initial state the page had 
             //when it was loaded. This action does not require a payload.
             return initialState
         }

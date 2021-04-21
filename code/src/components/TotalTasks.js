@@ -17,21 +17,22 @@ export const TotalTasks = () => {
         store.tasks.items.filter((task => task.completed)).length
         ))
     
-    const onClickClearAll = (event) => {
+    const onClickDeleteAll = (event) => {
 		event.preventDefault();
         dispatch(
-            tasks.actions.clearAllTasks()
+            tasks.actions.deleteAllTasks()
         )
-	};
+	}
+
     return (
         <>
         <CompletedTasksText>
             Completed: {completedTasks}/{totalNumberOfTasks}
         </CompletedTasksText>
         <ClearButton 
-            onClick={onClickClearAll}
+            onClick={onClickDeleteAll}
         >   
-            Clear all!
+            Delete All!
         </ClearButton>
         </>
 
