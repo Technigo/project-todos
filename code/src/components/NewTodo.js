@@ -1,12 +1,14 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'; 
 import { useDispatch } from 'react-redux';
+import uniqid from 'uniqid';
 
 import todos from '../reducers/todos';
 
 import SubmitButton from './SubmitButton';
+import ErrorMessage from './ErrorMessage';
 
-const Container = styled.div`
+const Form = styled.form`
   background: transparent;
 `;
 
@@ -21,30 +23,60 @@ const Textarea = styled.textarea`
 
 const NewTodo = () => {
   const [todo, setTodo] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+  
   const dispatch = useDispatch();
 
-  const handleInputChange = (event) => {
-    setTodo(event.target.value);
+  const validateFormInput = () => {
+    let isFormValid = true;
+
+    if (todo.length < 1) {
+      setErrorMessage('You did not write any characters. Try again!'); 
+      isFormValid = false;
+    } else {
+      setErrorMessage('');
+      isFormValid = true;
+    }
+
+    return isFormValid;
   };
 
-  const handleTodoSubmit = () => {
-    dispatch(todos.actions.addTodo(todo));
+  const onTodoSubmit = (e) => {
+    e.preventDefault();
+
+    if (!validateFormInput()) {
+      return;
+    }
+
+    const newTodo = {
+      id: uniqid(),
+      content: todo,
+      isComplete: false,
+    };
+
+    dispatch(todos.actions.addTodo(newTodo));
+    setTodo('');
   };
 
   return (
-    <Container>
-      <SubmitButton onTodoSubmit={handleTodoSubmit} />
+    <Form
+      onSubmit={onTodoSubmit}
+    >
+      <SubmitButton />
       <Label>
         <Textarea
           id="newTodo"
           type="text"
           placeholder="Add todo"
           value={todo}
-          onChange={handleInputChange}
+          onChange={e => setTodo(e.target.value)}
         >
         </Textarea>
       </Label>
-    </Container>
+      <ErrorMessage 
+        errorMessage={errorMessage}
+      />
+    </Form>
   );
 };
 

@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components'; 
 import moment from 'moment';
 
+import CompleteAllTasksButton from './CompleteAllTasksButton';
+
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
@@ -24,11 +26,10 @@ const Paragraph = styled.p`
   margin: 0;
 `;
 
-const ClearAllButton = styled.button`
-`;
 
 const Header = () => {
   const tasks = useSelector((store) => store.todos.tasks);
+
   const completedTasks = tasks.filter(t => t.isComplete);
 
   return (
@@ -39,9 +40,8 @@ const Header = () => {
       </Container>
 
       <Container>
-        <Paragraph>Completed: {completedTasks.length} </Paragraph>
-        <Paragraph>Total: {tasks.length} </Paragraph>
-        <ClearAllButton>CLEAR ALL</ClearAllButton>
+        <Paragraph>Completed: {completedTasks.length} / {tasks.length}</Paragraph>
+        <CompleteAllTasksButton />
       </Container>
     </HeaderContainer>
   );

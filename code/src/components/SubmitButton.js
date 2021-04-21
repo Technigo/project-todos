@@ -7,7 +7,9 @@ const Button = styled.button`
 
 const SubmitButton = () => {
   return (
-    <Button>
+    <Button
+      type="submit"
+    >
       +
     </Button>
   );
