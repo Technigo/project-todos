@@ -10,7 +10,9 @@ const Number = styled.h2`
 `;
 
 export const Counter = () => {
-  const items = useSelector((store) => store.todos.items);
+  const items = useSelector((store) => store.todos.items.filter((item) => !item.isComplete));
   
-  return <Number>{items.todos.counter.length()}</Number>
+  return (
+    <Number>{items.length}</Number>
+  )
 }

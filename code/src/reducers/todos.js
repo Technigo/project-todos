@@ -40,24 +40,12 @@ export const todos = createSlice({
       const completedItems = store.items.filter(todo => todo.isComplete !== true)
       store.items = completedItems;
     },
-    counter: (store) => {
-      const countNotCompletedItems = store.items.filter(todo => todo.isComplete !== true)
-      store.items = countNotCompletedItems
+    markAllComplete: (store) => {
+      store.items = store.items.map(todo => ({
+        ...todo,
+        isComplete: true
+      }))
     }
-    // markAllComplete: (store, action) => {
-    //   const markComplete = store.items.filter(todo => {
-    //     if (todo.isComplete !== true) {
-    //       return {
-    //         isComplete: true
-    //       }
-    //     }
-    //     store.items = markComplete;    
-    //   })
-      // store.items = markComplete;
-      
-      // store.items.push({
-      //   isComplete: true
-    // }  // })
   }
 })
 

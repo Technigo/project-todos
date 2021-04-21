@@ -41,7 +41,7 @@ const BtnTry = styled.button`
 `;
 
 export const TodoList = () => {
-  const items = useSelector((store) => store.todos.items);
+  const items = useSelector((store) => store.todos.items.filter(item => !item.isComplete));
   const dispatch = useDispatch();
   
   return (

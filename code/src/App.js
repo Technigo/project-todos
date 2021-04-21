@@ -9,10 +9,10 @@ import { AddBtn } from './components/AddBtn';
 import { AddTodo } from './components/AddTodo';
 import { Counter } from './components/Counter';
 import { ClearAllBtn } from 'components/ClearAllBtn';
+import { CompletedItems } from 'components/CompletedItems';
 
 const Container = styled.div`
   position: relative;
-  height: 100vh;
 `;
 
 const reducer = combineReducers({
@@ -37,6 +37,7 @@ export const App = () => {
           </div>
         }
         {addView && <AddTodo setAddView={setAddView} />}
+        <CompletedItems />
       </Container>
     </Provider>
   )
