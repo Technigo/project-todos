@@ -1,23 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
 import uniqid from 'uniqid';
 
-const debugTasks = [
-  {
-    id: 1,
-    value: 'Lorem ipsum dolor sit amet, consectetur adi',
-    complete: false
-  },
-  {
-    id: 2,
-    value: 'Lorem ipsum dolor sit amet, consectetur adip',
-    complete: true
-  }
-];
-
 export const taskSlice = createSlice({
   name: 'tasks',
   initialState: {
-    list: debugTasks
+    list: []
   },
   reducers: {
     addTask(state, action) {
