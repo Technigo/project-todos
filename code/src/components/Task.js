@@ -6,7 +6,6 @@ import IconButton from '@material-ui/core/IconButton';
 import DeleteIcon from '@material-ui/icons/Delete';
 
 import { tasks } from '../reducers/tasks'
-
 import { TodoTask, TaskCheckboxContainer } from './styled components/TaskStyling'
 
 //code for material ui - styling for checkbox and delete icon

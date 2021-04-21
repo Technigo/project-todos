@@ -1,15 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { Header } from './Header'
-import { AddTaskForm } from './AddTaskForm'
-import { ClearedPage } from './ClearedPage'
-import { Tasks } from './Tasks'
-import { TotalTasks } from './TotalTasks'
+import Header from './Header'
+import AddTaskForm from './AddTaskForm'
+import ClearedPage from './ClearedPage'
+import TaskList from './TaskList'
+import TotalTasks from './TotalTasks'
 import { MainAppContainer, AppHeader, FormListContainer, TotalTaskContainer } from './styled components/TodoAppStyling'
 
-export const TodoApp = () => {
-
+const TodoApp = () => {
     const totalNumberOfTasks = useSelector((store) => (
         store.tasks.items.length
     ))
@@ -21,7 +20,7 @@ export const TodoApp = () => {
             </AppHeader>
             <FormListContainer>
                 <AddTaskForm />
-                {totalNumberOfTasks === 0 ? <ClearedPage /> : <Tasks />}
+                {totalNumberOfTasks === 0 ? <ClearedPage /> : <TaskList />}
             </FormListContainer>
             <TotalTaskContainer>
                 {totalNumberOfTasks === 0 ? !<TotalTasks /> : <TotalTasks />}
@@ -29,3 +28,5 @@ export const TodoApp = () => {
         </MainAppContainer>
     )
 }
+
+export default TodoApp

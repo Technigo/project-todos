@@ -1,13 +1,10 @@
 import styled from 'styled-components'
 
-export const CompletedTasksText = styled.p`
-    font-weight: bold:
-`
-
-export const ClearButton = styled.button`
+export const DeleteAllButton = styled.button`
+    right: 15px;
+    bottom: 0;
     padding: 5px;
     margin-bottom: 15px;
-    // border: 2px solid #95d5b2;
     border: none;
     border-radius: 10px;
     background-color: #6979f8;

@@ -5,7 +5,7 @@ import uniqid from 'uniqid';
 import { tasks } from '../reducers/tasks'
 import { AddTodoForm, FormTextArea, SubmitButton } from './styled components/AddTaskFormStyling'
 
-export const AddTaskForm = () => {
+const AddTaskForm = () => {
 	const [value, setValue] = useState('')
 
     const dispatch = useDispatch()
@@ -13,7 +13,6 @@ export const AddTaskForm = () => {
 	const onSubmit = (event) => {
 		event.preventDefault()
 		// console.log('user entered: ' + value);
-
 		const newTask = {
             id: uniqid(),
             content: value,
@@ -21,7 +20,7 @@ export const AddTaskForm = () => {
         };
 
         dispatch(tasks.actions.addTask(newTask))
-        setValue('') //to clear input after submit 
+        setValue('')
 	};
 
 	return (
@@ -38,3 +37,5 @@ export const AddTaskForm = () => {
 		</AddTodoForm>
 	);
 };
+
+export default AddTaskForm
