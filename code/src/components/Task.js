@@ -1,6 +1,7 @@
 import React from "react"
 import { useDispatch } from "react-redux"
 import styled from 'styled-components'
+import dayjs from 'dayjs'
 
 import { tasks } from "reducers/tasks"
 
@@ -18,9 +19,15 @@ const StyledButton = styled.button`
 const Icon = styled.img`
   width: 24px;
 `
-const StyledParagraph = styled.p`
+const TaskTitle = styled.p`
   margin: 0 10px;
   font-size: 24px;
+  font-weight: 600;
+`
+
+const TaskDueDate = styled.p`
+  margin: 0 10px;
+  font-size: 20px;
   font-weight: 600;
 `
 
@@ -37,7 +44,10 @@ export const Task = ({ task }) => {
         <StyledButton onClick={() => dispatch(tasks.actions.toggleTask(task))}>
           <Icon src="./assets/square-icon.svg" alt="empty square icon" />
         </StyledButton>}
-      <StyledParagraph>{task.title}</StyledParagraph>
+      <TaskTitle>{task.title}</TaskTitle>
+      {task.dueDate && <TaskDueDate>{dayjs(task.dueDate).format("D/M")}</TaskDueDate>}
+
+
       <StyledButton onClick={() => dispatch(tasks.actions.removeTask(task))} >
         <Icon src="./assets/bin-icon.svg" alt="bin icon" />
       </StyledButton>

@@ -2,6 +2,10 @@ import React from "react"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
 import styled from 'styled-components'
+import DatePicker from "react-datepicker"
+import "react-datepicker/dist/react-datepicker.css"
+import dayjs from 'dayjs'
+import { nanoid } from 'nanoid'
 
 import { tasks } from "reducers/tasks"
 
@@ -31,10 +35,14 @@ const StyledParagraph = styled.p`
 margin: 0 0 0 10px;
 `
 
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+`
+
 const StyledInput = styled.input`
 width: 100 %;
 box-sizing: border - box;
-margin: 20px 0;
 padding: 10px;
 font-size: 20px;
 `
@@ -42,6 +50,9 @@ font-size: 20px;
 export const AddContainer = () => {
   const [isClicked, setIsClicked] = useState(false)
   const [newTask, setNewTask] = useState("")
+  const [dueDate, setDueDate] = useState(null)
+
+  const payload = [newTask, dueDate]
 
   const dispatch = useDispatch()
 
@@ -53,10 +64,17 @@ export const AddContainer = () => {
     setNewTask(event.target.value)
   }
 
+  const handleDateChange = (event) => {
+    setDueDate(event)
+    console.log(dueDate)
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(tasks.actions.addTask(newTask))
-    setNewTask("")
+    if (newTask) {
+      dispatch(tasks.actions.addTask(newTask, dueDate))
+      setNewTask("")
+    }
   }
 
   return (
@@ -67,13 +85,30 @@ export const AddContainer = () => {
       </StyledButton>
 
       {isClicked &&
-        <form onSubmit={handleSubmit}>
-          <StyledInput type="text" value={newTask} onChange={handleChange} />
+        <Form onSubmit={handleSubmit}>
+          <label htmlFor="textinput">
+            Your task (required)
+            </label>
+          <StyledInput
+            type="text"
+            value={newTask}
+            onChange={handleChange}
+            id="textinput"
+          />
+          <label htmlFor="datepicker">
+            Due date (optional)
+            </label>
+          <DatePicker
+            dateFormat="dd/MM/yyyy"
+            selected={dueDate}
+            onChange={handleDateChange}
+            id="datepicker"
+          />
           <StyledButton onClick={handleSubmit} >
             <Icon src="./assets/add-icon.svg" alt="add icon" />
             <StyledParagraph>Add to list</StyledParagraph>
           </StyledButton>
-        </form>
+        </Form>
       }
     </StyledSection>
   )
