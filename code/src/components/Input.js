@@ -8,7 +8,7 @@ const Input = () => {
     return (
       <>
       <div className='fillout-div'></div>
-        <form className='input-container'>
+        <div className='input-container'>
           <label
             htmlFor='task'
             className='task-label'
@@ -29,7 +29,7 @@ const Input = () => {
             /* onClick={() => dispatch()} */>
             Add to planner
           </button>
-        </form>
+        </div>
         </>
     )
 }

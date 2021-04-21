@@ -5,8 +5,8 @@ const todos = createSlice({
     initialState: {
         tasks: [
             { id: 1, description: 'Book flight', isComplete: false },
-            { id: 2, description: 'Get new passports', isComplete: true },
-            { id: 3, description: 'Decide which rental to get! Nothing too big.', isComplete: false },
+            { id: 2, description: 'Get new passports', isComplete: false },
+            { id: 3, description: 'Decide which rental to get!', isComplete: false },
             { id: 4, description: 'Buy sunscreen!!', isComplete: false },
             { id: 5, description: 'Maybe some new books?', isComplete: false },
         ]
@@ -25,16 +25,17 @@ const todos = createSlice({
         })
         store.tasks = updatedTasks
       },
-      /* addTask: (state, action) => {
-        const 
-      } */
+     /*testar*/ addTask: (state, action) => {
+        const newTask  = action.payload
+        state.tasks.push(...action.payload)
+      }
     }
 
 })
 
 export default todos
 
-/* import { createSlice } from '@reduxjs/toolkit'
+/*
 
 export const cart = createSlice({
   name: 'cart',
