@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { PlaceholderPage, BoldSpan, ImageSpan, ExtraTextClearPage } from './styled components/ClearedPage.js'
+import { PlaceholderPage, BoldSpan, ExtraTextClearPage } from './styled components/ClearedPage.js'
 
 const ClearedPage = () => {
     return (

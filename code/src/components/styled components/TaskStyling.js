@@ -17,5 +17,3 @@ export const TaskCheckboxContainer = styled.div`
     flex-direction: row;
     align-items: center;
 `
-export const TaskText = styled.div`
-`

@@ -49,7 +49,9 @@ export const AddTaskForm = () => {
 				onChange={(event) => setValue(event.target.value)}
 				 />
 			<SubmitButton type='submit'>
-				➕
+				<span role="img" aria-label="add button">
+					➕
+				</span>
 			</SubmitButton>
 		</AddTodoForm>
 	);
