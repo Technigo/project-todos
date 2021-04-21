@@ -1,28 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid';
-import { makeStyles } from '@material-ui/core/styles'
 import TextField from '@material-ui/core/TextField'
 
 import { tasks } from '../reducers/tasks'
 import { AddTodoForm, SubmitButton } from './styled components/AddTaskFormStyling'
 
-//material ui styling
-const useStyles = makeStyles((theme) => ({
-	root: {
-	  '& > *': {
-		margin: theme.spacing(1),
-		width: '25ch',
-	  },
-	},
-  }))
-
 export const AddTaskForm = () => {
 	const [value, setValue] = useState('')
     const dispatch = useDispatch()
-
-	//For material ui styling
-	const classes = useStyles();
 
 	const onSubmit = (event) => {
 		event.preventDefault()

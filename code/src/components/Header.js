@@ -25,8 +25,8 @@ const Header = () => {
     return (
         <HeaderContainer>
             <HeaderTitleDateContainer>
-                <MainHeader>My To-Do List</MainHeader>
-                <HeaderDate>{moment().format('dddd, MMMM Do YYYY')}</HeaderDate>
+                <MainHeader>Todo</MainHeader>
+                <HeaderDate>{moment().format('MMMM Do')}</HeaderDate>
             </HeaderTitleDateContainer>
             <HeaderCounterButtonContainer>
                 <CompletedTasksText>
