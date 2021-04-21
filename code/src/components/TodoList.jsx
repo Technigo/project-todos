@@ -28,16 +28,6 @@ const DeleteBtn = styled.button`
   border: none;
 `;
 
-// const FaTrashAlt = styled.p`
-//   color: red;
-// `;
-
-
-
-// const FaPlus = styled.p`
-//   color: red;
-// `;
-
 export const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
   const dispatch = useDispatch();
@@ -56,7 +46,7 @@ export const TodoList = () => {
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
           />
           <DeleteBtn
-            onClick={() => dispatch(todos.actions.deleteItem(items))}
+            onClick={() => dispatch(todos.actions.deleteItem(todo.id))}
             aria-label="Delete item"
           >
             <FaTrashAlt />

@@ -24,16 +24,18 @@ export const todos = createSlice({
       store.items = updatedItems;
     },
     addTodo: (store, action) => {
-      store.items.push(action.payload)
+      store.items.push({
+        id: store.items.length + 1,
+        description: action.payload,
+        isComplete: false
+      })
     },
     deleteItem: (store, action) => {
-      store.items = store.items.filter((item) => item.id !== action.payload.id)
+      const { questIndex } = action.payload
+      store.items.splice(questIndex, 1)
     },
-    clearAll: (store, action) => {
-      store.items = store.items.filter((item) => item.id === action.payload.id)
-    },
-    countAll: (store, action) => {
-      return updatedItems.lenght
+    clearAll: (store) => {
+      store.items = []
     }
   }
 })

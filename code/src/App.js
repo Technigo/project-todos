@@ -7,13 +7,19 @@ import { TodoList } from './components/TodoList';
 import { Header } from './components/Header';
 import { AddBtn } from './components/AddBtn';
 import { AddTodo } from './components/AddTodo';
-import { FaPlus } from "react-icons/fa";
+import { Counter } from './components/Counter';
 import { ClearAllBtn } from 'components/ClearAllBtn';
 
 const Container = styled.div`
   position: relative;
   height: 90vh;
 `;
+
+// const Counter = styled.h2`
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+// `;
 
 const reducer = combineReducers({
   todos: todos.reducer
@@ -28,6 +34,7 @@ export const App = () => {
     <Provider store={store}>
       <Container>
         <Header />
+        <Counter />
         {!addView && 
           <div>
             <TodoList />

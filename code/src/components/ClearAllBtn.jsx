@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 import styled from 'styled-components';
 import { FaTrashAlt } from "react-icons/fa";
@@ -14,13 +14,12 @@ const Btn = styled.button`
 `;
 
 export const ClearAllBtn = () => {
-  const items = useSelector((store) => store.todos.items);
   const dispatch = useDispatch();
 
   return (
     <Btn
       type="button"  
-      onClick={() => dispatch(todos.actions.clearAll(items))}
+      onClick={() => dispatch(todos.actions.clearAll())}
       aria-label="Clear all items"
     >
       <FaTrashAlt />

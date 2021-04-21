@@ -1,5 +1,5 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 import styled from 'styled-components';
 // import { AddBtn } from './AddBtn'
@@ -41,19 +41,22 @@ const CancelBtn = styled.button`
 `;
 
 export const AddTodo = ({ setAddView }) => {
-  const items = useSelector((store) => store.todos.items);
   const dispatch = useDispatch();
+  const [description, setDescription] = useState('')
 
   return (
     <Container>
       <h2>Add Todo</h2>
       <InputContainer>
-        <input type="text"></input>
+        <input 
+          type="text"
+          onChange={(event) => setDescription(event.target.value)}
+        ></input>
         <ButtonContainer>
           <AddButton
             type="submit"  
             onClick={() => {
-              dispatch(todos.actions.addTodo(items));
+              dispatch(todos.actions.addTodo(description));
               setAddView(false);
             }}
           >
