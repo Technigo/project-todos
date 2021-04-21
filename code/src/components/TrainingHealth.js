@@ -7,7 +7,8 @@ import { makeStyles } from "@material-ui/styles"
 const useStyles = makeStyles({
   container: {
       minWidth: 275,
-      margin: "10px"
+      margin: "10px",
+      backgroundColor: "blue"
   },
   heading: {
   marginLeft: "20px"

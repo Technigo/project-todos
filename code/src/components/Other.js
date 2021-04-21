@@ -7,7 +7,8 @@ import { makeStyles } from "@material-ui/styles"
 const useStyles = makeStyles({
   container: {
       minWidth: 275,
-      margin: "10px"
+      margin: "10px",
+      backgroundColor: 'pink', 
   },
   heading: {
     marginLeft: "20px"
@@ -20,7 +21,7 @@ const Other = () => {
     const filteredTasksList = todoList.items.filter((item) => item.category === "Other");
   
     return (
-      <Container className={classes.containter}>
+      <Container className={classes.container}>
         <h2 className={classes.heading}>Other 🎨</h2>
         {filteredTasksList.map((item) => (
           <TodoCard todo={item}></TodoCard>

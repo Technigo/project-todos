@@ -16,7 +16,7 @@ import { makeStyles } from "@material-ui/styles"
 
 const useStyles = makeStyles({
     root: {
-        backgroundColor: 'pink', 
+        backgroundColor: '#ECECEC', 
         width: '500px',
     },
     container: {
