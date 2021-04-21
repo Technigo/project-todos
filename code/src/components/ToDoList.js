@@ -3,14 +3,20 @@ import { useSelector, useDispatch } from 'react-redux'
 import moment from 'moment'
 
 import todos from 'reducers/todos'
+import NoToDos from 'components/NoToDos'
 
 const ToDoList = () => {
 
   const tasks = useSelector((store) => store.todos.tasks)
+  const noTasks = (tasks.length === 0)
+  console.log(noTasks)
   
   const dispatch = useDispatch()
 
     return(
+    <>
+      {noTasks ?
+      <NoToDos /> : (
       <div className='task-box'>
         {tasks.map(todo => (
           <div
@@ -45,6 +51,8 @@ const ToDoList = () => {
           </div>
         ))}
       </div>
+      )}
+    </>
     )
 }
 

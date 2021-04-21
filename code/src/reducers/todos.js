@@ -4,11 +4,11 @@ const todos = createSlice({
   name: 'todos',
   initialState: {
     tasks: [
-      { id: 1, description: 'Book flight', time: Date.now(), isComplete: false },
+/*       { id: 1, description: 'Book flight', time: Date.now(), isComplete: false },
       { id: 2, description: 'Get new passports', time: Date.now(), isComplete: false },
       { id: 3, description: 'Decide which rental to get!', time: Date.now(), isComplete: false },
       { id: 4, description: 'Buy sunscreen!!', time: Date.now(), isComplete: false },
-      { id: 5, description: 'Maybe some new books?', time: Date.now(), isComplete: false },
+      { id: 5, description: 'Maybe some new books?', time: Date.now(), isComplete: false }, */
     ]
   },
   reducers: {
@@ -33,8 +33,13 @@ const todos = createSlice({
       store.tasks = [...store.tasks, action.payload]
     },
     allDone: (store) => {
-      store.map((task) => (
+      store.tasks.map((task) => (
         task.isComplete = true
+      ))
+    },
+    allUndone: (store) => {
+      store.tasks.map((task) => (
+        task.isComplete = false
       ))
     }
   }

@@ -29,8 +29,14 @@ const Input = () => {
         <button
           type='button'
           onClick={() => dispatch(todos.actions.allDone())}
-          className='all-done-button'>
+          className='done-button'>
             All done
+        </button>
+        <button
+          type='button'
+          onClick={() => dispatch(todos.actions.allUndone())}
+          className='done-button'>
+            Reset
         </button>
       </div>
 

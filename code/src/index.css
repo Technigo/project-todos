@@ -71,7 +71,8 @@ main {
 
 .task-box {
   width: 80%;
-  min-height: 60px;
+  min-height: 320px;
+  background-color: white;
   margin: auto;
 }
 
@@ -151,7 +152,6 @@ height: 18px;
   width: 32px;
 }
 
-
 .checkmark:after {
   content: '';
   position: absolute;
@@ -199,6 +199,7 @@ height: 18px;
 .ending-div {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   
   width: 80%;
   padding: 20px 0;
@@ -206,7 +207,7 @@ height: 18px;
   margin: auto;
 }
 
-.all-done-button {
+.done-button {
   background-color: #d8ac9c;
   color: white;
   font-family: 'Montserrat', sans-serif;
@@ -216,7 +217,7 @@ height: 18px;
   width: 55px;
   height: 55px;
   box-shadow: 1px 2px 2px #646666;
-  margin-left: 10px;
+  margin: 0 10px;
 }
 
 .input-container {
@@ -268,11 +269,25 @@ input:focus::placeholder {
   color: white;
 }
 
+/* NO TASKS */
+
+.no-task-container {
+  width: 80%;
+  height: 320px;
+  margin: auto;
+  background-color: white;
+}
+
+lottie-player {
+  margin: auto;
+}
+
 @media (min-width: 768px) {
 
   .header-container,
   .task-box,
-  .task-label {
+  .task-label,
+  .no-task-container {
     width: 60%;
   }
 
@@ -318,6 +333,7 @@ input:focus::placeholder {
     height: 80px;
     font-size: 30px;
   }
+
 }
 
 @media (min-width: 1024px) {
@@ -325,7 +341,8 @@ input:focus::placeholder {
   .header-container,
   .task-box,
   .task-label,
-  .button {
+  .button,
+  .no-task-container {
     width: 50%;
   }
 
@@ -336,4 +353,5 @@ input:focus::placeholder {
   .ending-div {
     width: 50%;
   }
+
 }
