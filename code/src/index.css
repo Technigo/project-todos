@@ -12,7 +12,26 @@ code {
     monospace;
 }
 .header-container{
-  background-color: pink;
+  background-color: rgb(141, 167, 254);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  padding: 10px;
+  color: #f5f5f5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.header-heading {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.week-day{
+  font-weight: bold;
+}
+.empty-todo-container {
+  width: 100%;
+  padding: 10px;
+}
+.image {
+  width: 100%;
 }
 
 .item-container {

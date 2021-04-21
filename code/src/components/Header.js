@@ -1,39 +1,24 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import moment from 'moment'
 
 const Header = () => {
   const items = useSelector(store => store.todo.items)
-  const [counterDone, setCounterDone] = useState()
-  const [counterNotDone, setCounterNotDone] = useState()
+  const itemsDone = items.filter(item => item.isComplete)
+  const itemsNotDone = items.filter(item => !item.isComplete)
 
-  const counterCalculator = (items) => {
-    let counterDone = 0
-    let counterNotDone = 0
-    items.forEach(item => {
-      if (item.isComplete) {
-        counterDone++
-      } else {
-        counterNotDone++
-      }
-      setCounterDone(counterDone)
-      setCounterNotDone(counterNotDone)
-    })
-  }
-  useEffect(() => {
-    counterCalculator(items)
-  }, [items])
+
   return (
     <div className="header-container">
-      <h1>To do</h1>
       <div className="date-wrapper">
-        <p>{moment().format('dddd')} </p>
+        <h1 className="header-heading">To do</h1>
+        <p className="week-day">{moment().format('dddd')} </p>
         <p>{moment().format('MMMM Do')} </p>
       </div>
 
       <div className="done-undone-wrapper">
-        <p>{items.length > 0 && counterDone} Items done</p>
-        <p>{items.length > 0 && counterNotDone} Items  not done</p>
+        <p>{itemsDone.length} items done</p>
+        <p>{itemsNotDone.length} items to do</p>
       </div>
     </div>
   )
