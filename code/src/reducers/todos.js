@@ -15,7 +15,7 @@ const todos = createSlice({
         items: [
         { id: 1, description: 'Learn Redux in 3 weeks', isComplete: false, category: "Studies and work"},
         { id: 2, description: 'Second task', isComplete: false, category: "Training and health"},
-        { id: 3, description: 'Second task', isComplete: false, category: "Shopping list"},
+        { id: 3, description: 'Second task', isComplete: false, category: "Admin stuff"},
         { id: 4, description: 'Second task', isComplete: false, category: "Other"}
         ]
     },

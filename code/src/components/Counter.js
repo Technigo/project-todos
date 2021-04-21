@@ -1,15 +1,23 @@
 import React from 'react';
 import { useSelector } from 'react-redux'
+import Button from '@material-ui/core/Button';
+import { makeStyles } from "@material-ui/styles"
+
+const useStyles = makeStyles({
+    button: {
+        color: "black"
+    }
+  });
 
 
 const Counter = () => {
+    const classes = useStyles()
     const items = useSelector((store) => store.todos.items)
     const leftTodo = items.filter(todo => todo.isComplete === false )
 
     return (
-        <div>
-            <p>you have {leftTodo.length} out of {items.length} todos remaining </p>
-        </div>
+        <Button className={classes.button} variant="contained">{leftTodo.length} / {items.length} todos left
+        </Button>
     )
 }
 

@@ -18,18 +18,20 @@ const useStyles = makeStyles({
     root: {
         backgroundColor: 'pink', 
         width: '500px',
-        height: '100vh'
     },
     container: {
         display: "flex",
         flexDirection: "column",
         justifyContent: "center",
         alignItems: "center"
+    }, wrapper: {
+        display: "flex",
+        justifyContent: "space-between",
+        alignItems: "center",
+        margin: "20px"
     }
   });
   
-
-
 const TodoWrapper = () => {
 
     const classes = useStyles()
@@ -43,8 +45,10 @@ return(
         <TrainingHealth />
         <AdminStuff />
         <Other />
-        <Counter/>
-        <ClearTodo />
+        <Container className={classes.wrapper}>
+            <ClearTodo />
+            <Counter/>  
+        </Container>
     </Grid>
 </Container>
 )
