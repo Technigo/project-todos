@@ -1,17 +1,34 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import uniqid from 'uniqid'
+
+import todos from '../reducers/todos'
 
 const AddTodo = () => {
+  const [value, setValue] = useState('')
+  const dispatch = useDispatch()
+
+  const onFormSubmit = (event) => {
+    event.preventDefault()
+
+    const newTodo = {
+      id: uniqid(),
+      decription: value,
+      isComplete: false
+    }
+    dispatch(todos.actions.addTodo(newTodo))
+    setValue('')
+  }
 
   return (
-    <form className="todo-input-form" onSubmit={0}>
-      <label className="" htmlFor="thoughts">
+    <form className="todo-input-form" onSubmit={onFormSubmit}>
+      <label className="">
         Add todo
         </label>
       <input className="input-thought"
-        id=""
         type="text"
-        value={0}
-        onChange={0}
+        value={value}
+        onChange={event => setValue(event.target.value)}
       />
       <button className="send-button" type="submit">+</button>
     </form>
