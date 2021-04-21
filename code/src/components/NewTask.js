@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import uniqid from "uniqid";
 
 import "./NewTaskStyle.css";
 import todos from "../reducers/todos";
@@ -17,17 +18,15 @@ const NewTask = () => {
 
   const handleOnClick = (event) => {
     event.preventDefault();
-    const newId = Math.random() * 99999999999;
     if (inputValue === "") {
       alert("You can't add an empty todo.");
     } else {
       newTodo = {
-        id: newId,
+        id: uniqid(),
         description: inputValue,
         isComplete: false,
       };
     }
-
     dispatch(todos.actions.addItem(newTodo));
     setInputValue("");
   };
