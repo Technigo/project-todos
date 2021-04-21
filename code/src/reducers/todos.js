@@ -3,7 +3,11 @@ import { createSlice } from '@reduxjs/toolkit' // We always import this one when
 const todos = createSlice({ // A createSlice should always have a name, initialState & reducers (3 parts)
     name: 'todos',
     initialState: {
-        items: []
+        items: [
+            {id: 1, description: "heey", isComplete: false},
+            {id: 2, description: "teee", isComplete: false},
+            {id: 3, description: "etetete", isComplete: false}
+        ]
     },
     reducers: { // Here we need to find the item we chose and change from true to false and vs
         toggleComplete: (store, action) => {
