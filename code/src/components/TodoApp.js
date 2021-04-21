@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 import Header from './Header'
-import AddTaskForm from './AddTaskForm'
+import { AddTaskForm } from './AddTaskForm'
 import ClearedPage from './ClearedPage'
 import TaskList from './TaskList'
 import TotalTasks from './TotalTasks'

@@ -1,14 +1,28 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid';
+import { makeStyles } from '@material-ui/core/styles'
+import TextField from '@material-ui/core/TextField'
 
 import { tasks } from '../reducers/tasks'
-import { AddTodoForm, FormTextArea, SubmitButton } from './styled components/AddTaskFormStyling'
+import { AddTodoForm, SubmitButton } from './styled components/AddTaskFormStyling'
 
-const AddTaskForm = () => {
+//material ui styling
+const useStyles = makeStyles((theme) => ({
+	root: {
+	  '& > *': {
+		margin: theme.spacing(1),
+		width: '25ch',
+	  },
+	},
+  }))
+
+export const AddTaskForm = () => {
 	const [value, setValue] = useState('')
-
     const dispatch = useDispatch()
+
+	//For material ui styling
+	const classes = useStyles();
 
 	const onSubmit = (event) => {
 		event.preventDefault()
@@ -25,17 +39,18 @@ const AddTaskForm = () => {
 
 	return (
 		<AddTodoForm onSubmit={onSubmit}>
-			<FormTextArea
-				type='text'
-				placeholder='Add todo...'
+			 <TextField 
+			 	id="outlined-basic" 
+				required
+				label="Add todo..." 
+				variant="outlined"
+				fullWidth
 				value={value}
 				onChange={(event) => setValue(event.target.value)}
-			></FormTextArea>
+				 />
 			<SubmitButton type='submit'>
 				➕
 			</SubmitButton>
 		</AddTodoForm>
 	);
 };
-
-export default AddTaskForm

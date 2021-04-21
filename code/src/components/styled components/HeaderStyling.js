@@ -42,7 +42,6 @@ export const AllDoneButton = styled.button`
     width: fit-content;
     padding: 4px;
     margin-bottom: 15px;
-    // border: 1px solid black;
     border: none;
     border-radius: 10px;
     background-color: whitesmoke;
