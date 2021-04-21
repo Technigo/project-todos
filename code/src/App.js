@@ -10,6 +10,7 @@ import styled from 'styled-components'
 const Main = styled.main`
   background-color: #fffff;
   height: 100vh;
+  width: 100vw;
   display: flex;
   align-items: center;
   flex-direction: column;

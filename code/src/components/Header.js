@@ -5,22 +5,44 @@ import styled from 'styled-components'
 import tasks from '../reducers/tasks'
 
 const HeaderWrapper = styled.section`
-  background-color: #fffff;
+  background-color: #48cc94;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  flex-direction: row;
+  color: white;
+  margin-bottom: 20px;
+  padding: 10px;
+  max-width: 100%;
+  box-sizing: border-box;
+`
+
+const DateWrapper = styled.div`
+  display: flex;
+  justify-content: baseline;
+`
+
+const MonthYear = styled.div`
+  display: flex;
   flex-direction: column;
-  color: black;
+  justify-content: center;
+`
+
+const DateText = styled.p`
+  margin: 0;
+  font-size: 16px;
 `
 
 const Heading = styled.h1`
   padding: 15px;
   margin: 0;
-  margin-top: 10px;
+  font-size: 45px;
+  padding-right: 5px;
 `
 
 const BottomWrapper = styled.div`
   display: flex;
+  justify-content: center;
 `
 
 const TaskCount = styled.p`
@@ -30,7 +52,7 @@ const TaskCount = styled.p`
 `
 const ClearButton = styled.button`
   border: 1px solid #6c757d;
-  box-shadow: 0px 1px 10px rgba(0,0,0,0.07);
+  box-shadow: 0px 1px 15px rgba(0,0,0,0.1);
   background-color: white;
   font-size: 14px;
   color: #6c757d;
@@ -45,13 +67,24 @@ export const Header = () => {
 
   const dispatch = useDispatch()
 
+  const today = new Date()
+
   return (
-    <HeaderWrapper>
-      <Heading>WHAT'S ON MY TODO?</Heading>
+    <>
+      <HeaderWrapper>
+        <DateWrapper>
+        <Heading>{today.getDay()}</Heading>
+        <MonthYear>
+          <DateText>{today.toLocaleString('default', {month: 'short'}).toUpperCase()}</DateText>
+          <DateText>{today.getFullYear()}</DateText>
+        </MonthYear>
+        </DateWrapper>
+        <DateText>{today.toLocaleString('default', {weekday: 'long'}).toUpperCase()}</DateText>
+      </HeaderWrapper>
       <BottomWrapper>
         <TaskCount>{itemsCompleted.length} / {items.length} tasks completed</TaskCount>
         <ClearButton onClick={() => dispatch(tasks.actions.clearAll())}>Clear all</ClearButton>
       </BottomWrapper>
-    </HeaderWrapper>
+    </>
   )
 }
