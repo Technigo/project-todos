@@ -4,13 +4,12 @@ const todos = createSlice({
   name: "todos",
   initialState: {
     items: [
-      { id: 1, description: "First task", isComplete: false},
-      { id: 2, description: "Second task", isComplete: false},
-      { id: 3, description: "Third task", isComplete: false}
+      { id: 1, description: "Add new tasks", isComplete: false}
     ],
   },
   reducers: {
     toggleComplete: (store, action) => {
+      // Immutability version
       const updatedItems = store.items.map(todo => {
         if (todo.id === action.payload) {
           return {
@@ -23,6 +22,13 @@ const todos = createSlice({
       })
       
       store.items = updatedItems
+    },
+    removeTask: (store, action) => {
+      const decreacedItems = store.items.filter(todo => todo.id !== action.payload)
+      store.items = decreacedItems
+    },
+    addTask: (store, action) => {
+      store.items = [...store.items, action.payload]
     }
   }
 })
