@@ -3,11 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const todo = createSlice({
   name: 'todo',
   initialState: {
-    items: [
-      // { id: 1, description: 'Watch JavaScript videos', isComplete: false },
-      // { id: 2, description: 'Learn JavaScript', isComplete: false },
-      // { id: 3, description: 'Train your brain', isComplete: true },
-    ]
+    items: []
 
   },
   reducers: {
@@ -28,7 +24,7 @@ const todo = createSlice({
       store.items = store.items.filter(item => item.id !== action.payload ) 
     },
     addItem: (store, action) => {
-      store.items.push({...action.payload})
+      store.items = [...store.items, action.payload]
     }
   }
 

@@ -20,3 +20,15 @@ code {
   align-items: center;
   justify-content: space-around;
 }
+
+.form {
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+.visible{
+  max-height: 400px;
+}

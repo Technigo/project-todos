@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
-import {useDispatch} from 'react-redux'
+import React, { useState } from 'react'
+import uniqid from 'uniqid'
+import { useDispatch } from 'react-redux'
 
 import todo from '../reducers/todo'
 
@@ -7,27 +8,47 @@ const TodoForm = () => {
   const dispatch = useDispatch()
 
   const [newTask, setNewTask] = useState("")
+  const [deadline, setDeadline] = useState("")
+  const [visible, setVisible] = useState(false)
+
   const onTaskAdd = (event) => {
     setNewTask(event.target.value)
   }
-  const handleSubmit = (event) => {
+  const onSubmit = (event) => {
     event.preventDefault()
-    dispatch(todo.actions.addItem({id: Date.now(), description: newTask, isComplete: false}))
+    const newToDo = {
+      id: uniqid(),
+      description: newTask,
+      isComplete: false,
+      dateCreated: Date.now(),
+      deadline: deadline
+    }
+    dispatch(todo.actions.addItem(newToDo))
     setNewTask("")
+    setDeadline("")
   }
-  
+
   return (
     <div className="form-container">
-      <form onSubmit={handleSubmit}>
-        <input 
+      <button
+        onClick={() => setVisible(!visible)}
+      >
+        {visible ? 'close' : '+ Add'}
+      </button>
+      <form onSubmit={onSubmit} className={`form ${visible && 'visible'}`} >
+        <input
           type="text"
           value={newTask}
           onChange={onTaskAdd}
         />
+        <input
+          type="date"
+          value={deadline}
+          onChange={(e) => setDeadline(e.target.value)}
+        />
         <button type="submit"> Add </button>
       </form>
-    
-    </div> 
+    </div>
   )
 
 }
