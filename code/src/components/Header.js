@@ -12,7 +12,7 @@ const Header = () => {
     <>
       <h1>What's up!</h1>
       {completedTodos.length > 0 &&
-      <p>Done: {completedTodos.length}/{items.length}</p>
+      <p>{completedTodos.length}/{items.length} tasks</p>
       } 
       <button onClick={()=> dispatch(todos.actions.removeAll())}>Remove all</button> 
       <button onClick={()=> dispatch(todos.actions.removeComplete())}>Remove comp</button> 

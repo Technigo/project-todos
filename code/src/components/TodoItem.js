@@ -28,7 +28,7 @@ const TodoItem = ({ checked, id, text }) => {
         className="checked"
         onChange={() => dispatch(todos.actions.toggleComplete(id))}
       />
-      <p>{text}</p>
+      <p className={checked ? 'done' : null}>{text}</p>
       <div className='delete-btn'>
         <DeleteIcon onClick={() => dispatch(todos.actions.removeTodo(id))}/>
       </div>

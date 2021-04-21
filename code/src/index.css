@@ -5,12 +5,31 @@ body {
   color: #3D47AF;
 }
 
-main {
-  height: 100vh;
+.header {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100px;
+}
+
+.remove-btn {
+  font-size: 10px;
+}
+
+.header-btn {
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.todo {
+  height: 100%;
+  margin-top: 30px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  border-top: 2px solid #3D47AF;
 }
 
 .todo-container {
@@ -29,6 +48,11 @@ main {
   position: relative;
 }
 
+.done {
+  text-decoration: line-through 2px;
+  opacity: 0.5;
+}
+
 .delete-btn {
   position: absolute;
   right: 30px;
@@ -43,3 +67,4 @@ main {
   position: absolute;
   right: 0;
 }
+
