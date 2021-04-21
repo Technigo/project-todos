@@ -19,6 +19,7 @@ code {
 main {
   max-width: 500px;
   margin: 0 auto;
+  background-color: rgb(204,183,159);
 }
 /* .header-section {
   /* width:90%; */
@@ -47,9 +48,11 @@ main {
   margin:0;
   padding-top: 15px;
 }
-/* .header {
-  text-align: center;
-}  */
+
+.header p {
+  margin-top: 20px;
+  font-weight: bold;
+}
 
 .completed-and-clear {
   text-align: right;
@@ -71,7 +74,7 @@ main {
 .remove-button {
   border-radius: 8px;
   padding:5px;
-  background: rgb(39, 144, 230);
+  background:#705946;
 }
 
 .form {
@@ -96,8 +99,8 @@ main {
   color: WHITE;
   padding: 5px;
   border-radius: 50%;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   align-items: center;
   justify-content: center;
   margin-left: 10px;
@@ -156,7 +159,7 @@ main {
   }
 
   .checkbox-round:checked {
-    background-color: rgb(39, 144, 230);
+    background-color:#705946;
 }
 
 .trash-can {
