@@ -19,20 +19,24 @@ const todos = createSlice({
     },
     reducers: {
 
-        //to push in the new user input? 
         addTodo: ( store, action) => {
             //New object
             const newTodo =  {
-                id: nextTodoItemId(store.items), //Make a function to give each object a unique id? 
+                //Give a unique ID to the new object
+                id: nextTodoItemId(store.items), 
                 description: action.payload.description,
                 isComplete: false
             }
+            //push newTodo to the end of the items array = mutate fix this? 
             store.items.push(newTodo)
         },
 
-        deleteTodo: (store, action) => {
+        removeTodo: (store, action) => {
             //if action.payload.id === todo.items.id the todo should remain the same
             //else if action.payload.id !== todo.items.id remove todo item
+            //Accepting everything except the one that does not match
+            const decreasedItems = store.items.filter(todo => todo.id !== action.payload)
+            store.items = decreasedItems
         },
 
         //Redux is always passing store as argument in order to update it
@@ -42,7 +46,7 @@ const todos = createSlice({
             // console.log(action)
 
             const updatedItems = store.items.map(todo => {
-                if (todo.id === action.payload){
+                if (todo.id === action.payload) {
                     //change false to true
                     //return current todo as it was (id and description) but with isComplete oposite to what previous state was. 
                     return {

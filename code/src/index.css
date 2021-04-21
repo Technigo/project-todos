@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+.todolist-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}
+
+.todo-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}

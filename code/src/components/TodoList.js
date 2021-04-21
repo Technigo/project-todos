@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 //import slice
 import todos from '../reducers/todos'
-import AddTodoItem from './AddTodoItem'
+import TodoForm from './TodoForm'
 
 
 const TodoList = () => {
@@ -15,18 +15,19 @@ const TodoList = () => {
     const dispatch = useDispatch()
 
     return (
-        <div>
+        <div className="todolist-wrapper">
             {items.map(todo =>(
-                <div key={todo.id}>
+                <div key={todo.id} className="todo-item">
                     <input 
                         type="checkbox"
                         checked={todo.isComplete}
                         onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
                     />
                     <p>{todo.description}</p>
+                    <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>Delete</button>
                 </div>
             ))}
-            <AddTodoItem />
+            <TodoForm />
         </div>
     )
 }

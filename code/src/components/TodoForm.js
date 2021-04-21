@@ -5,7 +5,7 @@ import { useState } from 'react'
 import todos from '../reducers/todos'
 
 
-const AddTodoItem = () => {
+const TodoForm = () => {
     //user input state 
     const [value, setValue] = useState('')
 
@@ -38,4 +38,4 @@ const AddTodoItem = () => {
     )
 }
 
-export default AddTodoItem
+export default TodoForm
