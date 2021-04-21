@@ -13,14 +13,9 @@ export const TodoTask = styled.li`
 `
 export const TaskCheckboxContainer = styled.div`
     justify-content: flex-start;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 `
-
-export const TaskDate = styled.p`
-    font-size: 12px;
-`
-
-export const RemoveTodo = styled.button`
-    border-radius: 50%;
-    background-color: white;
-    border: none;
+export const TaskText = styled.div`
 `

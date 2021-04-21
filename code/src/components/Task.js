@@ -32,7 +32,9 @@ export const Task = ({ task, completed }) => {
                     color="default"
                     inputProps={{ 'aria-label': 'checkbox with default color' }}
                 />
+                <p>
                     {task.content}
+                </p>
             </TaskCheckboxContainer>
             <IconButton onClick={() => dispatch(tasks.actions.removeTask(task.id))} aria-label="delete">
                 <DeleteIcon />

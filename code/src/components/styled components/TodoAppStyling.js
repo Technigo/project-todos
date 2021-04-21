@@ -11,6 +11,7 @@ export const MainAppContainer = styled.div`
     margin: 100px auto;
     background-color: white;
     justify-content: space-between;
+    word-break: break-word;
 `
 export const AppHeader = styled.div`
     background-color: rgba(123,104,238,1);
