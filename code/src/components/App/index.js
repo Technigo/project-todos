@@ -1,9 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import store from 'store';
-import Main from 'components/Main';
+// import Main from 'components/Main';
+// import MyDay from 'pages/MyDay';
+// import Settings from 'pages/Settings';
+import Pages from 'pages'
 
 const theme = createMuiTheme({
   overrides: {
@@ -35,10 +39,16 @@ const theme = createMuiTheme({
 export default () => {
   return (
     <Provider store={store}>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Main />
-      </ThemeProvider>
+      <Router>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          {/* <Switch>
+            <Route exact path="/settings" component={Settings} />
+            <Route path="/" component={MyDay} />
+          </Switch> */}
+          <Pages />
+        </ThemeProvider>
+      </Router>
     </Provider>
   );
 };

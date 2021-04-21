@@ -3,6 +3,7 @@ import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import { Container, Box, Typography, IconButton } from '@material-ui/core';
 import { Delete } from '@material-ui/icons';
+import Drawer from 'components/Drawer';
 import { clearList } from 'store/tasks';
 import { useStyles } from './style';
 
@@ -13,6 +14,9 @@ export default () => {
   return (
     <>
       <Container component="header" className={classes.root}>
+        <Box className={classes.topRow}>
+          <Drawer />
+        </Box>
         <Box>
           <Typography variant="h4">My Day</Typography>
           <Typography variant="subtitle1">{moment().format('dddd, DD MMMM')}</Typography>
