@@ -1,20 +1,24 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+
 import styled from 'styled-components';
 
 import tasks from '../reducers/tasks';
 
 const TaskSummary = () => {
+  const allTasks = useSelector(store => store.tasks.items)
   const dispatch = useDispatch();
   
-  const handleClear = () => {
-    dispatch(tasks.actions.removeAllTasks())
-  }
+  const onClear = () => {
+    dispatch(tasks.actions.setAllTaskstoCompleted());
+  };
+
+  const uncompleteTasks = allTasks.filter(item => item.isComplete===false).length;
 
   return (
     <div>
-      <p>X unfinished tasks</p>
-      <button onClick={handleClear}>Clear all tasks</button>
+      <p>{uncompleteTasks} unfinished tasks</p>
+      <button onClick={onClear}>I have done it all!</button>
     </div> 
   )
 }

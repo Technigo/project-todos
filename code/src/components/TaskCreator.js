@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import uniqid from 'uniqid';
 
 import styled from 'styled-components';
 
@@ -19,29 +20,35 @@ justify-content: space-evenly;
 `
 
 const TaskCreator = () => {
-  const [newTask, setNewTask] = useState("");
+  const [value, setValue] = useState("");
   const dispatch = useDispatch();
 
-  const handleSubmit = (event) => {
+  const onFormSubmit = (event) => {
     event.preventDefault();
     dispatch(tasks.actions.addNewTask(newTask));
-    setNewTask("");
+    setValue("");
   };
 
+  const newTask = {
+    id:uniqid(), 
+    title: value, 
+    createdAt: new Date().toISOString(), 
+    isComplete: false}
+
   const handleChange = (event) => {
-    setNewTask(event.target.value)
+    setValue(event.target.value)
   }
   
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={onFormSubmit}>
       <input
         type="text"
         id="taskInput"
-        value={newTask}
+        value={value}
         onChange={handleChange}
         placeholder="+ Add task"
       />
-      <button type="submit" onClick={handleSubmit}>Add</button>
+      <button type="submit">Add</button>
     </Form>
 
   )

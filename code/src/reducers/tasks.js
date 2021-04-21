@@ -20,23 +20,19 @@ const tasks = createSlice({
       store.items = updatedItems;
     },
     addNewTask: (store, action) => {
-      let newTask = {
-        id:Date.now(), 
-        title: action.payload, 
-        createdAt: new Date().toISOString(), 
-        isComplete: false}
-      store.items.push(newTask);
+      store.items = [...store.items, action.payload];
     },
     removeTask: (store, action) => {
-      let eraseTaskIndex = store.items.find(item => item.id = action.payload).indexOf;
-      store.items.splice(eraseTaskIndex, 1)
+      const itemsAfterRemoval = store.items.filter(task => 
+        task.id !== action.payload);
+        store.items = itemsAfterRemoval;
     },
-    removeAllTasks: (store, action) => {
-      store.items = []
-    }
+    setAllTaskstoCompleted: (store, action) => {
+      const itemsAllCompleted = store.items.forEach (task => task.isComplete = true);
+      store.items = itemsAllCompleted;
+    },
   }
 });
 
 export default tasks;
 
-//addNewTask should pick up added title as the payload and update store with new task
