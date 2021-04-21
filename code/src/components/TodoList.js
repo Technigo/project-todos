@@ -8,7 +8,7 @@ const TodoList = () => {
 
     const dispatch = useDispatch();
 
-    console.log(items.length)
+    //console.log(items.length)
 
     return (
         <div>
