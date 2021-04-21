@@ -2,7 +2,9 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
-import { TaskForm } from './TaskForm'
+import Checkbox from "react-custom-checkbox";
+import { FiCheck } from "react-icons/fi";
+import { TiDeleteOutline } from "react-icons/ti";
 
 import tasks from '../reducers/tasks'
 
@@ -12,7 +14,9 @@ const TaskWrapper = styled.section`
   align-items: center;
   flex-direction: column;
   width: 100vw;
-  background-color: #ced4da;
+  @media (min-width: 1024px) {
+    max-width: 700px;
+  }
 `
 
 const Task = styled.div`
@@ -20,10 +24,13 @@ const Task = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: baseline;
-  width: 100%;
+  width: 86%;
   border: 1px solid #fafafa;
+  border-radius: 50px;
   padding: 10px;
-  box-sizing: border-box;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+  margin-bottom: 15px;
+  padding-right: 20px;
 `
 
 const DescriptionCheckbox = styled.div`
@@ -31,6 +38,7 @@ const DescriptionCheckbox = styled.div`
   flex-direction: row;
   align-items: baseline;
   justify-content: flex-start;
+  margin-left: 10px;
 `
 
 const TaskDescription = styled.p`
@@ -41,10 +49,17 @@ const TaskDescription = styled.p`
 `
 
 const RemoveButton = styled.button`
-  border: none;
+  border: 1px solid black;
   background-color: inherit;
   font-size: 20px;
   color: #757575;
+  margin-right: 10px;
+  text-align: center;
+`
+
+const IconContainer = styled.div`
+  display: flex;
+  background-color: #50E3A4;
 `
 
 const TaskList = () => {
@@ -54,18 +69,26 @@ const TaskList = () => {
 
   return (
     <TaskWrapper>
-      <TaskForm />
       {items.map(task => (
         <Task key={task.id}>
           <DescriptionCheckbox>
-            <input 
-                  type="checkbox"
-                  checked={task.isCompleted}
-                  onChange={() => dispatch(tasks.actions.toggleCheckbox(task.id))}
-                />
+            <Checkbox
+              checked={task.isCompleted}
+              onChange={() => dispatch(tasks.actions.toggleCheckbox(task.id))}
+              icon={
+                <IconContainer>
+                  <FiCheck color="white" size={20} />
+                </IconContainer>
+              }
+              borderColor="#50E3A4"
+              borderRadius={20}
+              style={{ overflow: "hidden"}}
+              containerStyle={{alignSelf: "center"}}
+              size={20}
+            />
               <TaskDescription>{task.description}</TaskDescription>
           </DescriptionCheckbox>
-            <RemoveButton onClick={() => dispatch(tasks.actions.removeTask(task.id))}>🚫</RemoveButton>
+          <TiDeleteOutline onClick={() => dispatch(tasks.actions.removeTask(task.id))} />
         </Task>
       ))}
     </TaskWrapper>

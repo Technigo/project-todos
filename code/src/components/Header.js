@@ -5,12 +5,12 @@ import styled from 'styled-components'
 import tasks from '../reducers/tasks'
 
 const HeaderWrapper = styled.section`
-  background-color: #6c757d;
+  background-color: #fffff;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  color: white;
+  color: black;
 `
 
 const Heading = styled.h1`
@@ -29,12 +29,14 @@ const TaskCount = styled.p`
   margin-bottom: 20px;
 `
 const ClearButton = styled.button`
-  border: none;
+  border: 1px solid #6c757d;
+  box-shadow: 0px 1px 10px rgba(0,0,0,0.07);
   background-color: white;
   font-size: 14px;
   color: #6c757d;
   height: 20px;
   margin-left: 10px;
+  border-radius: 5px;
 `
 
 export const Header = () => {

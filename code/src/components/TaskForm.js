@@ -7,9 +7,15 @@ import tasks from '../reducers/tasks'
 
 const SubmitButton = styled.button`
   border: none;
-  background-color: inherit;
-  font-size: 22px;
-  color: #757575;
+  width: 30px;
+  height: 30px;
+  background-color: #50E3A4;
+  padding: 0;
+  margin: 0;
+  font-size: 25px;
+  color: #ffffff;
+  border-radius: 50%;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
 `
 
 const Form = styled.form`
@@ -17,16 +23,19 @@ const Form = styled.form`
   flex-direction: row;
   justify-content: flex-start;
   align-items: baseline;
-  width: 100%;
-  border: 1px solid #fafafa;
+  width: 90%;
   padding: 10px;
   box-sizing: border-box;
+  @media (min-width: 1024px) {
+    max-width: 700px;
+    padding-left: 50px;
+  }
 `
 
 const TaskInput = styled.input`
   border: none;
   background-color: inherit;
-  width: 100%;
+  width: 90%;
   font-size: 18px;
   box-sizing: border-box;
   padding: 10px;
@@ -61,7 +70,7 @@ export const TaskForm = () => {
       <SubmitButton type="submit" onClick={onTaskSubmit}>+</SubmitButton>
       <TaskInput 
       type="text"
-      placeholder="Add Task"
+      placeholder="Add task"
       onChange={e => setDescription(e.target.value)}
       value={description}
       />
