@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import moment from 'moment'
+import { FaTrashAlt, FaEdit, FaRegWindowClose, FaCheck } from 'react-icons/fa'
 
 import { tasks } from '../reducers/tasks'
 
@@ -57,7 +58,6 @@ const Indicator = styled.div`
     display: none;
   }
 
-  
   ${Input}:checked + &::after {
     display: block;
   }
@@ -73,15 +73,54 @@ const Description = styled.p`
   margin-left: 10px;
 `
 
+const TodoInput = styled.input`
+  box-sizing: border-box;
+  margin: 0;
+  padding: 5px;
+  width: 80%;
+  height: 38px;
+  border: none;
+  border-bottom: 2px solid #8B98F9;
+  margin-left: 10px;
+  font-size: 20px;
+`
+
+const DeleteBtn = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+`
+
+const EditBtn = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+`
+
+const SaveButton = styled.button`
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+`
+
 const Date = styled.span`
   margin-left: auto;
   font-size: 16px;
 `
 
 
-const TodoItem = ({ id, text, complete, created }) => {
+const TodoItem = ({ id, text, complete, created, editMode }) => {
+  const [description, setDescription] = useState(text)
   const dispatch = useDispatch()
   const taskCreated = moment(created).format('MMM Do')
+
+  const onInputChange = (event) => {
+    setDescription(event.target.value)
+  }
+
+  const onSaveEdit = () => {
+    dispatch(tasks.actions.editItemDescription({id: id, description: description}))
+  }
 
   return (
     <Container key={id}>
@@ -91,8 +130,17 @@ const TodoItem = ({ id, text, complete, created }) => {
         onChange={() => dispatch(tasks.actions.toggleComplete(id))}
       />
       <Indicator />
-      <Description>{text}</Description>
-      <button type="button" onClick={() => dispatch(tasks.actions.removeTodo(id))}>Delete</button>
+      {editMode ? <TodoInput type="text" value={description} onChange={onInputChange}/> : <Description>{text}</Description>}
+      
+      <EditBtn type="button" onClick={() => dispatch(tasks.actions.toggleEdit(id))}>
+        {editMode ? <FaRegWindowClose color="#8B98F9" size="30px" /> : <FaEdit color="#8B98F9" size="30px" />}
+      </EditBtn>
+      
+      {!editMode ? <DeleteBtn type="button" onClick={() => dispatch(tasks.actions.removeTodo(id))}>
+                    <FaTrashAlt color="#8B98F9"size="30px"/> 
+                  </DeleteBtn> : <SaveButton type="button" onClick={onSaveEdit}>
+                                    <FaCheck color="#8B98F9" size="30px" />
+                                  </SaveButton>}
       <Date>{taskCreated}</Date>
     </Container>
   )     

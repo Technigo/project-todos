@@ -19,12 +19,13 @@ const Form = styled.form`
 `
 
 const TodoBtn = styled.button`
-  width: 40px;
+  width: 60px;
   height: 40px;
   border-radius: 8px;
   background-color: #8B98F9;
   border: none;
   font-size: 30px;
+  line-height: 30px;
   color: #fff;
 `
 const TodoInput = styled.input`

@@ -16,6 +16,7 @@ const TodoList = () => {
           text={item.text}
           complete={item.complete}
           created={item.created}
+          editMode={item.editMode}
         />
       ))}
     </section>

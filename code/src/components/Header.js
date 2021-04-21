@@ -35,6 +35,7 @@ const ClearBtn = styled.button`
   color: #fff;
   border: none;
   padding: 5px;
+  cursor: pointer;
 `
 
 const Span = styled.span`
