@@ -7,16 +7,18 @@ import todos from '../reducers/todos'
 import AddToDo from './AddToDo'
 import Counter from './Counter'
 
+import { Background } from '../styling/GlobalStyles'
+
 // convention: Name the variable useSelector the same thing as we call it in reducer todos
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
 //  console.log(items)
 
-// need to create an instance of useDispatch() hook in every component. Under the hood useDispatch is constructed in a complex way. Why? QnA friday
+// need to create an instance of useDispatch() hook in every component.
   const dispatch = useDispatch()
 
   return (
-    <div>
+    <Background>
       {items.map(todo => (
         <div key={todo.id}>
           <p>{todo.description}</p>
@@ -26,7 +28,7 @@ const TodoList = () => {
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
           />
           <p className="completed-time"> 
-            Created {moment(todo.createdAt).format('dddd, MMMM Do YYYY')}
+            {moment(todo.createdAt).format('LT, MMMM Do YYYY')}
           </p>
           <button
             type="button"
@@ -37,7 +39,7 @@ const TodoList = () => {
       ))}
       <AddToDo />
       <Counter /> 
-    </div>
+    </Background>
   )
 }
 
