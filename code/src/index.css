@@ -1,3 +1,9 @@
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -13,5 +19,16 @@ code {
 }
 
 .todo-list {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
   margin: 40px;
+  background-color: lightblue;
+  padding: 30px;
+  width: auto;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
 }

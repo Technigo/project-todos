@@ -11,9 +11,9 @@ const TodoList = () => {
     const dispatch = useDispatch();
 
     return (
-        <div className="todo-list">
+        <div>
             {items.map(todo => (
-                <div key={todo.id}>
+                <div key={todo.id} className="todo-item">
                     <p>{todo.description}</p>
                     <input
                         type="checkbox"
@@ -21,6 +21,9 @@ const TodoList = () => {
                         // Dispatch (send) an action toggleComplete with one argument - id of a task
                         onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
                     />
+                    <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))} >
+                    X
+                    </button>
                 </div>
             ))}
         </div>
