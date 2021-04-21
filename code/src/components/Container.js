@@ -1,15 +1,15 @@
 import React from 'react'
 
-import  TodoHeader  from 'components/TodoHeader'
-import  TodoList  from 'components/TodoList'
-import Todoinput from 'components/TodoInput'
+import Header  from 'components/Header'
+import TodoList  from 'components/TodoList'
+import Input from 'components/Input'
 
 export const Container = () => {
   return (
     <main>
-      <TodoHeader />
+      <Header />
       <TodoList />
-      <Todoinput />
+      <Input />
     </main>
   )
 }

@@ -1,16 +1,15 @@
 import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import TextField from '@material-ui/core/TextField'
 //import { makeStyles } from '@material-ui/core/styles'
 import AddIcon from '@material-ui/icons/Add'
 import Fab from '@material-ui/core/Fab'
 import Button from '@material-ui/core/Button'
-
-import { useDispatch } from 'react-redux'
+import uniqid from 'uniqid'
 
 import todos from '../reducers/todos'
 
-
-const Todoinput = () => {
+const Input = () => {
   const [newTodo, setNewTodo] = useState('')
   const [label, setLabel] = useState('New task')
   const [visible, setvisible] = useState(true)
@@ -35,15 +34,20 @@ const Todoinput = () => {
         dispatch(todos.actions.addTodo({
           description: newTodo,
           isComplete: false, 
-          id: Date.now()
+          id: uniqid(), 
         }))
         setLabel('New task')
       }
       setNewTodo('')
       
-      /* dispatch(todos.actions.addTodo(newTodo))
-      const data = JSON.parse(localStorage.getItem('todos'))
-      localStorage.setItem('todos', JSON.stringify([data, newTodo])); */
+      const data = localStorage.getItem('todos')
+      ? JSON.parse(localStorage.getItem('todos'))
+      : []
+      localStorage.setItem('todos', JSON.stringify([...data, {
+        description: newTodo,
+        isComplete: false, 
+        id: Date.now()
+      } ])) 
   }
 
   return (
@@ -58,27 +62,27 @@ const Todoinput = () => {
           Add task
         </Button> 
       </div> : 
-     <>
-      <TextField 
-       id="standard-basic" 
-       label={label}
-       value={newTodo} 
-       onChange={handleChange}
-      /> 
-      <div className= "add-btn">
-        <Fab  
-          onClick={handleClick} 
-          size="medium" 
-          color="secondary" 
-          aria-label="add"
-        >
-          <AddIcon />
-        </Fab>
-      </div> 
+      <>
+        <TextField 
+          id="standard-basic" 
+          label={label}
+          value={newTodo} 
+          onChange={handleChange}
+        /> 
+        <div className= "add-btn">
+          <Fab  
+            onClick={handleClick} 
+            size="medium" 
+            color="secondary" 
+            aria-label="add"
+          >
+            <AddIcon />
+          </Fab>
+        </div> 
       </>
     }
     </div>
   )
 }
 
-export default Todoinput
+export default Input

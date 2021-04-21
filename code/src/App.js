@@ -9,7 +9,7 @@ const reducer = combineReducers({
   todos: todos.reducer
 })
 
-const store = configureStore({ reducer})
+const store = configureStore({ reducer })
 
 export const App = () => {
   return (

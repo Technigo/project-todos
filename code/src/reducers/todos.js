@@ -1,31 +1,29 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-//const [state, setState] = useSate()
 const initialState = {
-  items: []
+  items: localStorage.getItem('todos')
+          ? JSON.parse(localStorage.getItem('todos'))
+          : []
 }
 
 const todos = createSlice({
   name: 'todos', 
   initialState, 
   reducers: {
-     addTodo: (store, action) => {
-        store.items.push(action.payload)
-     },
-     removeTodo: (store, action) => {
-        store.items.pop(action.payload)
-
-        //if (existingProduct && existingProduct.length > 0) {
-        
-        //  store.items.pop(action.payload)
-        //store.items = store.items.filter((item) => item.id !== action.payload.id)
-
-        //}
-     },
-     removeAll: (store, action) => {
-      const existingProduct = store.items.findIndex((item) => item.id === store.id)
-      store.items.splice(existingProduct)
-     },
+      addTodo: (store, action) => {
+        store.items = [...store.items, action.payload]
+      },
+      removeTodo: (store, action) => {
+        const decreaseItems = store.items.filter(item => item.id !== action.payload)
+        store.items = decreaseItems
+      },
+      removeComplete: (store) => {
+        const decreaseComplete = store.items.filter((complete) => complete.isComplete === false) 
+        store.items =  decreaseComplete
+      },
+      removeAll: (store) => {
+        store.items = []
+      },
       toggleComplete: (store, action) => {
         const updatedItems = store.items.map((todo) => {
           if (todo.id === action.payload) {
