@@ -3,6 +3,11 @@ import Header from './Header'
 import TodoList from './TodoList'
 import ClearTodo from './ClearTodo'
 import AddNewTodo from './AddNewTodo'
+import Counter from './Counter'
+import WorkStudies from './WorkStudies'
+import TrainingHealth from './TrainingHealth'
+import AdminStuff from './AdminStuff'
+import Other from './Other'
 import { Container, Grid } from '@material-ui/core';
 import { makeStyles } from "@material-ui/styles"
 
@@ -34,7 +39,11 @@ return(
     <Grid className={classes.container}>
         <Header />
         <AddNewTodo />
-        <TodoList />
+        <WorkStudies />
+        <TrainingHealth />
+        <AdminStuff />
+        <Other />
+        <Counter/>
         <ClearTodo />
     </Grid>
 </Container>

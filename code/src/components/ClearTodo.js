@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux'
 import todos from '../reducers/todos'
 import Button from '@material-ui/core/Button';
 import { makeStyles } from "@material-ui/styles"
+import CheckIcon from '@material-ui/icons/Check';
 
 const useStyles = makeStyles({
     button: {
@@ -19,7 +20,13 @@ function ClearTodo() {
 
     return (
         <div>
-            <Button className={classes.button} type="submit" variant="contained" onClick={() => dispatch(todos.actions.removeAll())}>Clear todos </Button>  
+            <Button
+        variant="contained"
+        color="secondary"
+        className={classes.button}
+        startIcon={<CheckIcon />}
+        className={classes.button} type="submit" variant="contained" onClick={() => dispatch(todos.actions.removeAll())}>
+            Clear todos </Button>  
         </div>
     )
 }

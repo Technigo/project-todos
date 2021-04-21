@@ -13,9 +13,10 @@ const todos = createSlice({
     name: 'todos',
     initialState: {
         items: [
-        { id: 1, description: 'First task', isComplete: false },
-        { id: 2, description: 'Second task', isComplete: false },
-        { id: 3, description: 'Second task', isComplete: false },
+        { id: 1, description: 'Learn Redux in 3 weeks', isComplete: false, category: "Studies and work"},
+        { id: 2, description: 'Second task', isComplete: false, category: "Training and health"},
+        { id: 3, description: 'Second task', isComplete: false, category: "Shopping list"},
+        { id: 4, description: 'Second task', isComplete: false, category: "Other"}
         ]
     },
     reducers: {
