@@ -5,9 +5,49 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #050505;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+.datepicker {
+  padding: 9px;
+  font-family: "Nunito";
+  width: 60%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.MuiSvgIcon-root {
+  color: black;
+}
+
+.MuiIconButton-root {
+  color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.MuiIconButton-root:hover, .MuiIconButton-root:focus {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+  color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.PrivateSwitchBase-root-1 {
+  padding: 4px;
+}
+
+
+
+

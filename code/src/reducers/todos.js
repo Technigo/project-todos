@@ -3,20 +3,45 @@ import { createSlice } from "@reduxjs/toolkit"
 const todos = createSlice({
   name: "todos",
   initialState: {
-    tasks: [
-      { id: 1, task: "First task", isComplete: false },
-      { id: 2, task: "Second task", isComplete: true },
-      { id: 3, task: "Third task", isComplete: false },
+      filter: "",
+    tasks: [],
+    categories: [
+        { value: "to-do", label: "to-do", icon: "calendar-check" },
+        { value: "shopping", label: "shopping", icon: "shopping-cart" },
+        { value: "work", label: "work", icon: "briefcase" },
+        { value: "housework", label: "housework", icon: "laptop-house" },
+    ],
+    filterCategories: [
+        { value: "all", label: "all", icon: "calendar-check" },
+        { value: "to-do", label: "to-do", icon: "calendar-check" },
+        { value: "shopping", label: "shopping", icon: "shopping-cart" },
+        { value: "work", label: "work", icon: "briefcase" },
+        { value: "housework", label: "housework", icon: "laptop-house" },
     ],
   },
   reducers: {
     addTask: (state, action) => {
-        const newId = Math.max(...state.tasks.map((todo) => todo.id)) + 1;
-        state.tasks.push({ id: newId, task: action.payload, isComplete: false })
-
+        const { task, category, dueDate } = action.payload;
+        state.tasks.push({ 
+            id: Date.now(), 
+            task,
+            category,
+            dueDate,
+            isComplete: false })
     },
-    toggleComplete: (store, action) => {
-      const updatedTasks = store.tasks.map(todo => {
+    removeTask: (state, action) => {
+        // const decreasedTasks = store.tasks.filter(todo => { todo.id !== action.payload} state.tasks = decreasedTasks)
+        const removedTasks = action.payload;
+        state.tasks = state.tasks.filter((task) => task.id !== removedTasks)
+    },
+    removeAllTasks: (state) => {
+        state.tasks = [];
+    },
+    removeCompletedTasks: (state) => {
+        state.tasks = state.tasks.filter((task) => task.isComplete !== true)
+    },
+    toggleComplete: (state, action) => {
+      const updatedTasks = state.tasks.map(todo => {
         if (todo.id === action.payload) {
           return {
             ...todo,
@@ -26,11 +51,8 @@ const todos = createSlice({
             return todo;
           }
       });
-        
-      store.tasks = updatedTasks;
-
-      }
-  },
-});
+      state.tasks = updatedTasks;
+    },
+}});
 
 export default todos;
