@@ -27,6 +27,10 @@ export const PickDate = ({ onChange, selected }) => {
         selected={selected} 
         dateFormat="yyyy/MM/dd"
         className="datepicker"
+        popperModifiers={{
+            preventOverflow: {
+              enabled: true,
+            }}}
         withPortal
       />
     </DateContainer>

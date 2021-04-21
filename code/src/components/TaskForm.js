@@ -103,6 +103,7 @@ export const TaskForm = () => {
                 value={category.icon}
                 onChange={category => setCategory(category.icon)}
                 options={categories}
+                required="true"
               />
             </Options>
             <PickDate 

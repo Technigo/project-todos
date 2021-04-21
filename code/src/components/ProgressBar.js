@@ -15,21 +15,21 @@ const ProgressText = styled.p`
   font-family: ${props => props.theme.fontFamily};
 `;
 
-const ProgressOuter = styled.div`
-  height: 8px;
-  border-radius: 10px;
-  border: 1px solid black;
-  margin: 0;
-`;
+// const ProgressOuter = styled.div`
+//   height: 8px;
+//   border-radius: 10px;
+//   border: 1px solid black;
+//   margin: 0;
+// `;
 
-const ProgressFiller = styled.div`
-  background-color: ${props => props.theme.primary};
-  height: 100%;
-  transition: width 0.5s linear;
-  border-radius: 10px;
-  min-width: 10%;
-  margin: 0;
-`;
+// const ProgressFiller = styled.div`
+//   background-color: ${props => props.theme.primary};
+//   height: 100%;
+//   transition: width 0.5s linear;
+//   border-radius: 10px;
+//   min-width: 10%;
+//   margin: 0;
+// `;
 
 export const ProgressBar = () => {
   const tasks = useSelector((state) => state.todos.tasks);
@@ -42,7 +42,7 @@ export const ProgressBar = () => {
   return (
     <ProgressContainer>
       <ProgressText>Tasks completed: {onCountCompleted()} / {tasks.length}</ProgressText>
-      <ProgressOuter><ProgressFiller style={{ width: onCountCompleted()/tasks.length*100 }}></ProgressFiller></ProgressOuter>
+      {/* <ProgressOuter><ProgressFiller style={{ width: onCountCompleted()/tasks.length*100 }}></ProgressFiller></ProgressOuter> */}
     </ProgressContainer>
   )
 };
