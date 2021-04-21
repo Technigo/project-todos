@@ -7,8 +7,7 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
-  Divider,
-  Button
+  Divider
 } from '@material-ui/core';
 import {
   Menu,
@@ -16,8 +15,8 @@ import {
   WbSunnyOutlined,
   FolderOpenOutlined
 } from '@material-ui/icons';
-import { useDispatch, useSelector } from 'react-redux';
-import { addList } from 'store/tasks';
+import { useSelector } from 'react-redux';
+import Dialog from 'components/Dialog'
 import { useStyles } from './style';
 
 const DrawerItem = ({ name, slug, toggleDrawer }) => {
@@ -49,7 +48,6 @@ const DrawerItem = ({ name, slug, toggleDrawer }) => {
 };
 
 export default () => {
-  const dispatch = useDispatch();
   const projects = useSelector((store) => store.tasks.lists.slice(1));
   const classes = useStyles();
   const [open, setOpen] = useState(false);
@@ -77,9 +75,10 @@ export default () => {
           {projects.map((project) => (
             <DrawerItem key={project.slug} toggleDrawer={toggleDrawer} {...project} />
           ))}
-          <Button onClick={() => dispatch(addList('projectsssss'))}>
+          {/* <Button onClick={() => dispatch(addList('projectsssss'))}>
               new Project1
-          </Button>
+          </Button> */}
+          <Dialog />
         </List>
       </Drawer>
     </>
