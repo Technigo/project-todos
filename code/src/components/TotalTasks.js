@@ -24,6 +24,15 @@ export const TotalTasks = () => {
         )
 	}
 
+    const onClickClearAll = (event) => {
+		event.preventDefault();
+        dispatch(
+            tasks.actions.clearAllTasks()
+        )
+	}
+
+
+
     return (
         <>
         <CompletedTasksText>
@@ -32,8 +41,11 @@ export const TotalTasks = () => {
         <ClearButton 
             onClick={onClickDeleteAll}
         >   
-            Delete All!
+            Delete all!
         </ClearButton>
+        <button onClick={onClickClearAll}>
+            All done!
+        </button>
         </>
 
     )

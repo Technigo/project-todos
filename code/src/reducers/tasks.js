@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { TodoApp } from 'components/TodoApp' 
+// import { TodoApp } from 'components/TodoApp' 
 
 const initialState = {
     items: []
@@ -35,13 +35,23 @@ export const tasks = createSlice({
             // Immutable approach
             const decreasedItems= store.items.filter(task => task.id !== action.payload)
             // this line will return a new array of items, except the item that was in the payload
-            store.items=decreasedItems
+            store.items = decreasedItems
 
         },
         deleteAllTasks: () => {
             //Since we start with an empty array, to delete all tasks we can reset the state to the initial state the page had 
             //when it was loaded. This action does not require a payload.
             return initialState
+        }, 
+        clearAllTasks: (store) => {
+            //Button to check all tasks as completed
+            const clearAll = store.items.map((task) => {
+                return {
+                    ...task, 
+                    completed: !task.completed
+                }
+            })
+            store.items = clearAll
         }
     }
 })
