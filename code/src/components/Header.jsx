@@ -5,7 +5,8 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   align-items: center;
-  margin: 40px 0;
+  margin-bottom: 40px;
+  padding-top: 40px;
 `;
 
 const TodoHeader = styled.h1`

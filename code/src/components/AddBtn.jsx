@@ -11,6 +11,12 @@ const Btn = styled.button`
   left: 5%;
 `;
 
+const Plus = styled(FaPlus)`
+  color: red;
+  margin-right: 5px;
+  font-size: 20px;
+`;
+
 export const AddBtn = ({ setAddView }) => {
 
   return (
@@ -18,7 +24,7 @@ export const AddBtn = ({ setAddView }) => {
       type="button"  
       onClick={() => setAddView(true)}
     >
-      <FaPlus />
+      <Plus />
         ADD TODO
     </Btn>
   )

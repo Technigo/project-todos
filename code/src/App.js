@@ -12,14 +12,8 @@ import { ClearAllBtn } from 'components/ClearAllBtn';
 
 const Container = styled.div`
   position: relative;
-  height: 90vh;
+  height: 100vh;
 `;
-
-// const Counter = styled.h2`
-//   position: absolute;
-//   top: 0;
-//   right: 0;
-// `;
 
 const reducer = combineReducers({
   todos: todos.reducer

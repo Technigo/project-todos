@@ -1,4 +1,5 @@
 import React from 'react';
+import moment from 'moment';
 import { useSelector, useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 import styled from 'styled-components';
@@ -14,6 +15,7 @@ const Todo = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  border-bottom: 1px solid gray;  
 `;
 
 const InputContainer = styled.div`
@@ -28,32 +30,50 @@ const DeleteBtn = styled.button`
   border: none;
 `;
 
+const TimeStamp = styled.p`
+  color: gray;
+`;
+
+const BtnTry = styled.button`
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 30px;
+`;
+
 export const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
   const dispatch = useDispatch();
-
-  // const wholeStore = useSelector((store) => store)
   
   return (
     <TodoContainer>
       {items.map(todo => 
      <Todo key={todo.id}>
-       <p>{todo.description}</p>
-        <InputContainer>
-          <input
-            type="checkbox"
-            checked={todo.isComplete}
-            onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-          />
-          <DeleteBtn
-            onClick={() => dispatch(todos.actions.deleteItem(todo.id))}
-            aria-label="Delete item"
-          >
-            <FaTrashAlt />
-          </DeleteBtn>
-        </InputContainer>
+       <div>
+        <p>{todo.description}</p>
+        <TimeStamp>{moment(items.createdAt).fromNow()}</TimeStamp>
+       </div>
+      <InputContainer>
+        <input
+          type="checkbox"
+          checked={todo.isComplete}
+          onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+        />
+        <DeleteBtn
+          onClick={() => dispatch(todos.actions.deleteItem(todo.id))}
+          aria-label="Delete item"
+        >
+          <FaTrashAlt />
+        </DeleteBtn>
+      </InputContainer>
      </Todo> 
      )}
+      <BtnTry
+        type="button"  
+        onClick={() => dispatch(todos.actions.markAllComplete())}
+        aria-label="Mark all items as completed"
+        >
+        Mark all complete
+      </BtnTry>
     </TodoContainer>
   )
 }

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import uniqid from 'uniqid';
 
 export const todos = createSlice({
   name: 'todos',
@@ -25,18 +26,38 @@ export const todos = createSlice({
     },
     addTodo: (store, action) => {
       store.items.push({
-        id: store.items.length + 1,
+        id: uniqid(),
         description: action.payload,
         isComplete: false
       })
     },
     deleteItem: (store, action) => {
-      const { questIndex } = action.payload
-      store.items.splice(questIndex, 1)
+      const removedItem = store.items.filter(todo => todo.id !== action.payload)
+      store.items = removedItem;
     },
-    clearAll: (store) => {
-      store.items = []
+    clearCompleted: (store) => {
+      // store.items = [] change name to clearCompleted
+      const completedItems = store.items.filter(todo => todo.isComplete !== true)
+      store.items = completedItems;
+    },
+    counter: (store) => {
+      const countNotCompletedItems = store.items.filter(todo => todo.isComplete !== true)
+      store.items = countNotCompletedItems
     }
+    // markAllComplete: (store, action) => {
+    //   const markComplete = store.items.filter(todo => {
+    //     if (todo.isComplete !== true) {
+    //       return {
+    //         isComplete: true
+    //       }
+    //     }
+    //     store.items = markComplete;    
+    //   })
+      // store.items = markComplete;
+      
+      // store.items.push({
+      //   isComplete: true
+    // }  // })
   }
 })
 

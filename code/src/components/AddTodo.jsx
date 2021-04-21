@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
 import styled from 'styled-components';
@@ -40,27 +40,46 @@ const CancelBtn = styled.button`
   padding: 10px 20px;
 `;
 
+const Input = styled.input`
+  border: 0;
+  border-bottom: 1px solid black;  
+  background: transparent;
+  width: 100%;
+  padding: 8px 0 5px 0;
+  font-size: 16px;
+  color: #fff;
+`;
+
+const Plus = styled(FaPlus)`
+  color: white;
+  margin-right: 5px;
+`;
+
 export const AddTodo = ({ setAddView }) => {
   const dispatch = useDispatch();
-  const [description, setDescription] = useState('')
+  const [value, setValue] = useState('')
 
   return (
     <Container>
       <h2>Add Todo</h2>
       <InputContainer>
-        <input 
+        <Input 
           type="text"
-          onChange={(event) => setDescription(event.target.value)}
-        ></input>
+          placeholder="Type here"
+          value={value}
+          onChange={(event) => setValue(event.target.value)}
+        >
+        </Input>
         <ButtonContainer>
           <AddButton
             type="submit"  
             onClick={() => {
-              dispatch(todos.actions.addTodo(description));
+              dispatch(todos.actions.addTodo(value));
               setAddView(false);
             }}
+            required
           >
-          <FaPlus />
+          <Plus />
             ADD
           </AddButton>
           <CancelBtn
