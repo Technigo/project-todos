@@ -29,9 +29,11 @@ const Label = styled.label`
   margin-left: 10px;
   overflow-wrap: break-word;
   word-wrap: break-word;
-  max-width: 100%;
+  width: 100%;
 `;
 
 const Text = styled.span`
-  margin-left: 20px;
+ float: right;
+  width: 85%;
+  margin-top: 5px;
 `;

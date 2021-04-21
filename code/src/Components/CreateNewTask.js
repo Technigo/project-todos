@@ -70,7 +70,7 @@ export const CreateNewTask = () => {
           ))}
         </CheckboxWrapper>
         {checkvalue === "deadline" ? (
-          <SelectDeadline setDueTime={setDueTime} />
+          <SelectDeadline dueTime={dueTime} setDueTime={setDueTime}/>
         ) : (
           <></>
         )}
@@ -81,7 +81,6 @@ export const CreateNewTask = () => {
 
 //styled components
 const Section = styled.div`
-  margin: 10px 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -89,7 +88,6 @@ const Section = styled.div`
 
 const Container = styled.div`
   width: 98%;
-  background-color: rgb(196, 232, 241);
   box-shadow: 0.5px 0.5px 1px 1px rgb(88, 88, 102);
 `;
 

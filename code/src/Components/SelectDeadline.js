@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-export const SelectDeadline = ({ setDueTime }) => {
+export const SelectDeadline = ({ dueTime, setDueTime }) => {
   const moment = require("moment");
   const initialTime = moment().format("YYYY-MM-DD");
   return (
@@ -9,7 +9,7 @@ export const SelectDeadline = ({ setDueTime }) => {
       type="date"
       id="deadline"
       name="deadline"
-      value={initialTime}
+      value={dueTime}
       min={initialTime}
       max="2025-01-01"
       onChange={(e) => setDueTime(e.target.value)}
