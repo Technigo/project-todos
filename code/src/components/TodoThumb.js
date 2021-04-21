@@ -10,19 +10,23 @@ const TodoThumb = ({ item }) => {
   const dispatch = useDispatch()
   return (
     <div className="item-container">
-      {/* <input className="item-checkbox"
-        type="checkbox"
-        checked={item.isComplete}
-        onChange={() => dispatch(todo.actions.toggleChecked(item.id))}
-      /> */}
-      <Checkbox 
-      checked={item.isComplete}
-      onChange = {() => dispatch(todo.actions.toggleChecked(item.id))}
-      />
-      <p className="item-description">{item.description}</p>
-      <p className="date-created">{format(item.dateCreated, 'dd MMMM  YYY')}</p>
-      <p className="deadline">{item.deadline !== "" && format(item.deadline, 'dd MMMM  YYY HH:mm')}</p>
-      <DeleteButton item={item} />
+      <div className="todo-main">
+        <Checkbox
+          color="primary"
+          checked={item.isComplete}
+          onChange={() => dispatch(todo.actions.toggleChecked(item.id))}
+          inputProps={{ 'aria-label': 'Checkbox' }}
+        />
+        <p className="item-description">{item.description}</p>
+        <div className="delete-button">
+          <DeleteButton item={item} />
+        </div>
+      </div>
+      <div className="todo-details">
+        <p className="date-created">Created: {format(item.dateCreated, 'dd MMMM YYY')}</p>
+        <p className="deadline">Deadline: {item.deadline === "" ? "No set deadline" : format(new Date(item.deadline), 'dd MMMM YYY')}</p>
+      </div>
+
     </div>
   )
 }

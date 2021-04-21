@@ -4,17 +4,18 @@ import { useDispatch } from 'react-redux'
 import { Fab } from '@material-ui/core'
 import { Add, Close } from '@material-ui/icons'
 import todo from '../reducers/todo'
-import { MuiPickersUtilsProvider, DateTimePicker } from '@material-ui/pickers'
-import DateFnsUtils from '@date-io/date-fns';
-import enLocale from "date-fns/locale/en-GB";
+// import { MuiPickersUtilsProvider, DateTimePicker } from '@material-ui/pickers'
+// import DateFnsUtils from '@date-io/date-fns';
+// import enLocale from "date-fns/locale/en-GB";
 
 const TodoForm = () => {
   const dispatch = useDispatch()
 
   const [newTask, setNewTask] = useState("")
-  const [deadline, setDeadline] = useState(new Date())
+  const [deadline, setDeadline] = useState("")
   const [visible, setVisible] = useState(false)
 
+  console.log(deadline)
   const onTaskAdd = (event) => {
     setNewTask(event.target.value)
   }
@@ -29,37 +30,48 @@ const TodoForm = () => {
     }
     dispatch(todo.actions.addItem(newToDo))
     setNewTask("")
+    setDeadline("")
   }
 
   return (
     <div className="form-container">
-      <Fab
-        color="primary"
-        aria-label="add"
-        onClick={() => setVisible(!visible)}
-      >
-        {visible ? <Close /> : <Add />}
+      <div className="fab-button">
+        <Fab
+          color="primary"
+          aria-label="add"
+          onClick={() => setVisible(!visible)}
+        >
+          {visible ? <Close /> : <Add />}
       </Fab>
+      </div>
       <form onSubmit={onSubmit} className={`form ${visible && 'visible'}`} >
         <input
+          className="text-input"
           type="text"
           value={newTask}
           onChange={onTaskAdd}
+          placeholder="✎ Write here ..."
         />
-        {/* <input
+        <label htmlFor="date-picker" className="date-label">
+          Set the deadline (optional)
+        </label>
+        <input
+          id="date-picker"
+          className="date-input"
           type="date"
           value={deadline}
           onChange={(e) => setDeadline(e.target.value)}
-        /> */}
-
-        <MuiPickersUtilsProvider utils={DateFnsUtils} locale={enLocale}>
+        />
+        <div className="calendar-container">
+        {/* <MuiPickersUtilsProvider utils={DateFnsUtils} locale={enLocale}>
           <DateTimePicker
             value={deadline}
             onChange={setDeadline}
             label="Pick the deadline"
           />
-        </MuiPickersUtilsProvider>
-        <button type="submit"> Add </button>
+        </MuiPickersUtilsProvider> */}
+        </div>
+        <button className="submit-button" type="submit"> Add </button>
       </form>
     </div>
   )
