@@ -12,6 +12,14 @@ code {
     monospace;
 }
 
+button {
+  border: none;
+  margin: 0;
+  text-decoration: none;
+  background-color: transparent;
+  cursor: pointer;
+
+}
 
 .task-item {
   display: flex;

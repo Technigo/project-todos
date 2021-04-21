@@ -27,6 +27,9 @@ const tasks = createSlice({
     removeTask: (store, action) => {
       const decreasedItems = store.items.filter(todo => todo.id !== action.payload)
         store.items = decreasedItems
+    },
+    addTask: (store, action) => {
+      store.items = [...store.items, action.payload]
     }
   }
 })

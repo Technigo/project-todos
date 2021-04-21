@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { FaTrashAlt } from 'react-icons/fa';
 
 import tasks from '../reducers/tasks'
 
@@ -19,7 +20,7 @@ const TodoList = () => {
               onChange={() => dispatch(tasks.actions.toggleComplete(task.id)) }
             />
             <button onClick={() => dispatch(tasks.actions.removeTask(task.id))}>
-              Delete
+              <FaTrashAlt />
             </button>
           </div>
         ))}
