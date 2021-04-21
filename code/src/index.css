@@ -16,14 +16,68 @@ code {
   box-sizing: border-box;
 }
 
+main {
+  max-width: 500px;
+  margin: 0 auto;
+}
+/* .header-section {
+  /* width:90%; */
+  /* display: flex; */
+  /* align-items: center; */
+ /* justify-content: center; */
+ /* justify-content: space-between; */
+
+
+/* .header-container {
+  display: flex;
+  width: 90%;
+ justify-content: space-between;
+  align-items: center;
+   justify-content: center;
+} */
 
 .header {
   text-align: center;
+  background-image: url(./assets/todo.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+}
+.header h1 {
+  margin:0;
+  padding-top: 15px;
+}
+/* .header {
+  text-align: center;
+}  */
+
+.completed-and-clear {
+  text-align: right;
+  margin-bottom: 20px;
+  /* margin-right: 10px; */
+}
+
+.completed-and-clear p {
+  margin-right: 15px;
+}
+.remove-buttons {
+  /* width: 90%; */
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+  padding-top: 10px;
+}
+
+.remove-button {
+  border-radius: 8px;
+  padding:5px;
+  background: rgb(39, 144, 230);
 }
 
 .form {
   display: flex;
   justify-content: center;
+  margin-bottom: 15px;
 }
 
 .button {
@@ -38,7 +92,7 @@ code {
   color: white;
   font-size: 30px;
   padding:4px; */
-  background-color: #00c281;
+  /* background-color: #00c281; */
   color: WHITE;
   padding: 5px;
   border-radius: 50%;
@@ -47,6 +101,7 @@ code {
   align-items: center;
   justify-content: center;
   margin-left: 10px;
+  border: 1px solid grey;
 }
 
 
@@ -101,7 +156,7 @@ code {
   }
 
   .checkbox-round:checked {
-    background-color: #00c281;
+    background-color: rgb(39, 144, 230);
 }
 
 .trash-can {

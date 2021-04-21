@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { Task } from './Task';
 
-export const TaskList = () => {
+const TaskList = () => {
   const allTasks = useSelector((store) => (store.tasks))
   return (
     <div className="task-list">
@@ -12,3 +12,5 @@ export const TaskList = () => {
     </div>
   )
 }
+
+export default TaskList;

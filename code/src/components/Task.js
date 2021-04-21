@@ -24,9 +24,7 @@ export const Task = ({task}) => {
       <img src={trashcan}
       alt="trash-can"
       className="trash-can"
-      onClick={() => dispatch(tasks.actions.deleteTask(task))}
-      >
-
+      onClick={() => dispatch(tasks.actions.deleteTask(task.id))}>
       </img>
     </div>
   )
