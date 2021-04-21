@@ -3,11 +3,7 @@ import { createSlice } from '@reduxjs/toolkit' // We always import this one when
 const todos = createSlice({ // A createSlice should always have a name, initialState & reducers (3 parts)
     name: 'todos',
     initialState: {
-        items: [
-            { id: 1, description: 'First task', isComplete: false },
-            { id: 2, description: 'Second task', isComplete: true },
-            { id: 3, description: 'Third task', isComplete: false }
-        ]
+        items: []
     },
     reducers: { // Here we need to find the item we chose and change from true to false and vs
         toggleComplete: (store, action) => {
@@ -23,6 +19,24 @@ const todos = createSlice({ // A createSlice should always have a name, initialS
             })
 
             store.items = updatedItems // Genom att göra såhär så updaterar vi vår store.items på rad 6 med nya värden som vi tryckt in på updatedItems
+        },
+
+        removeTodo: (store,action) => {
+            
+            // V1 Immutability
+            //const decreasedItems = store.items.filter(todo => todo.id !== action.payload) // Jag tror detta är en if, man kan även skriva så. Fråga KAtya
+            //store.items = decreasedItems
+        
+            // V2 mutability
+            store.items.splice(action.payload,1)
+        },
+
+        addTodo: (store,action) => {
+            // V1 Immutability
+            store.items = [...store.items, action.payload]
+
+            // V2 mutability
+            
         }
     }
 });
