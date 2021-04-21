@@ -23,7 +23,7 @@ const StyledParagraph = styled.p`
 `
 
 const Icon = styled.img`
-  width: 16px;
+  width: 12px;
 `
 
 export const ActionDelete = () => {

@@ -18,7 +18,7 @@ const HeaderButton = styled.button`
 `
 
 const Icon = styled.img`
-  width: 16px;
+  width: 12px;
 `
 
 export const HeaderFilter = () => {
