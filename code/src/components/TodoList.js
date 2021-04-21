@@ -11,33 +11,35 @@ const TodoList = () => {
   return (
     <div>
       {items.map((todo) => (
-        <div className="border todo-list-item-container" key={todo.id}>
-          <div className="todo-list-item-title">
-            <h3>{todo.title}</h3>
-          </div>
-          <div className="todo-list-item-content">
-            <input
-              className="input-style"
-              type="checkbox"
-              checked={todo.isComplete}
-              onChange={() => {
-                dispatch(todos.actions.toggleComplete(todo.id));
-              }}
-            />
-            <p
-              onClick={() => {
-                dispatch(todos.actions.toggleComplete(todo.id));
-              }}
-            >
-              {todo.description}
-            </p>
-            <button
-              onClick={() => {
-                dispatch(todos.actions.removeItem(todo.id));
-              }}
-            >
-              Delete Task
-            </button>
+        <div className="todo-list-item-container" key={todo.id}>
+          <div className="todo-list-item-section border">
+            <div className="todo-list-item-title">
+              <h3>{todo.title}</h3>
+            </div>
+            <div className="todo-list-item-content">
+              <input
+                className="input-style"
+                type="checkbox"
+                checked={todo.isComplete}
+                onChange={() => {
+                  dispatch(todos.actions.toggleComplete(todo.id));
+                }}
+              />
+              <p
+                onClick={() => {
+                  dispatch(todos.actions.toggleComplete(todo.id));
+                }}
+              >
+                {todo.description}
+              </p>
+              <button
+                onClick={() => {
+                  dispatch(todos.actions.removeItem(todo.id));
+                }}
+              >
+                Delete Task
+              </button>
+            </div>
           </div>
         </div>
       ))}

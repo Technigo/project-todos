@@ -2,3 +2,26 @@
   display: flex;
   justify-content: center;
 }
+
+.header-section {
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  height: 100px;
+  background-color: #f4f4f4;
+}
+
+.header-left-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.header-right-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  width: 50%;
+}
