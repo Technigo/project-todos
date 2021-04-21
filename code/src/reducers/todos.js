@@ -13,9 +13,9 @@ const todos = createSlice({
     name: 'todos',
     initialState: {
         items: [
-        { id: 1, desciption: 'First Task', isComplete: false },
-        { id: 2, desciption: 'Second Task', isComplete: false },
-        { id: 3, desciption: 'Third Task', isComplete: false },
+        { id: 1, description: 'First task', isComplete: false },
+        { id: 2, description: 'Second task', isComplete: false },
+        { id: 3, description: 'Second task', isComplete: false },
         ]
     },
     reducers: {
