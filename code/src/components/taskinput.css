@@ -2,21 +2,24 @@
 .header {
   display: flex;
   flex-direction: column;
+  background-color: royalblue;
+  
 }
 
 .input-wrapper {
   padding: 10px;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
+  
+  
 }
 
 h1 {
   font-family: 'Faune';
   font-size: 50px;
-  margin: 5px 0 5px 0;
+  margin: 5px 0 5px 10px;
   color: #fae97e;
-  text-align: center;
-  
 }
 
 input {
@@ -26,6 +29,8 @@ input {
   font-size: 25px;
   border-bottom: 1px solid rgba(48, 44, 48, 0.7);
   color: rgba(48, 44, 48, 0.9);
+  
+  width: 70%;
 }
 
 input:focus {
@@ -45,12 +50,14 @@ button:hover {
   background-color: #eed661;
 }
 
-@media (min-width: 768px) {
+/** Media queries **/
+
+@media (min-width: 768px ) {
 
   .header {
    flex-direction: row;
    justify-content: space-between;
-   padding: 0 10px 0 10px;
+   padding: 50px 10px 0 10px;
   }
 
   input {
@@ -60,35 +67,14 @@ button:hover {
     width: 400px;
     flex: 1;
   }
-
-
-
-
-
-
-
-
-
 }
 
+@media (min-width: 992px) {
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  .input-wrapper {
+    width: 50%;
+  }
+}
 
 
 

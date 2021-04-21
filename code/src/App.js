@@ -5,7 +5,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import todos from './reducers/todos'
 import TodoList from './components/TodoList'
-import TaskInput from './components/TaskInput'
+import Header from './components/Header'
 
 const reducer = combineReducers({
   todos: todos.reducer
@@ -17,7 +17,7 @@ export const App = () => {
   return (
     <Provider store={store}>
        <GlobalFonts />
-       <TaskInput/>
+       <Header />
        <TodoList />
     </Provider>
   )

@@ -14,12 +14,15 @@ const TodoList = () => {
     <DraggableBox>
       {tasks.map(task => (
         <div key={task.id}>
-          <AwesomeHeadline>{task.description}</AwesomeHeadline>
+          <h2>{task.description}</h2>
           <input
             type="checkbox"
             checked={task.isComplete}
             onChange={() => dispatch(todos.actions.toggleComplete(task.id))}
           />
+          <button onClick={() => dispatch(todos.actions.removeTask(task.id))}>
+            Delete
+          </button>
         </div>
       ))}
     </DraggableBox>
@@ -30,10 +33,7 @@ const TodoList = () => {
 
 //Style
 
-const AwesomeHeadline = styled.h1`
-    font-family: 'Faune';
-    font-size: 55;
-`
+
 
 const DraggableBox = styled.div`
   Background-color: pink;
