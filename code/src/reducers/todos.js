@@ -1,6 +1,11 @@
 //Slice method
 import { createSlice } from '@reduxjs/toolkit'
 
+//Function to create new unique id for new todo
+const nextTodoItemId = (items) => {
+    const maxId = items.reduce((maxId, todo) => Math.max(todo.id, maxId), -1)
+    return maxId + 1
+}
 
 //Object with three properties: name, initialstate, reducers
 const todos = createSlice({
@@ -18,7 +23,7 @@ const todos = createSlice({
         addTodo: ( store, action) => {
             //New object
             const newTodo =  {
-                // id: uniqueID(), //Make a function to give each object a unique id? 
+                id: nextTodoItemId(store.items), //Make a function to give each object a unique id? 
                 description: action.payload.description,
                 isComplete: false
             }
