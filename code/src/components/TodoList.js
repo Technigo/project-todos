@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { useState } from 'react'
 
 //import slice
 import todos from '../reducers/todos'
+import AddTodoItem from './AddTodoItem'
 
 
 const TodoList = () => {
@@ -11,27 +11,11 @@ const TodoList = () => {
     //useSelector hook with access to whole store - only reaching for data in items[]
     const  items = useSelector((store) => store.todos.items)
 
-    //user input state 
-    const [value, setValue] = useState('')
-
     //Create instance of useDispatch hook.
     const dispatch = useDispatch()
 
-    const onSubmit = (event) => {
-        event.preventDefault()
-        console.log('Your first task: ' + value)
-        //dispatch an action to add new todo item
-        dispatch(
-            todos.actions.addTodo({
-                description: value
-            })
-        )
-        //Clear input
-        setValue('')
-    }
-
     return (
-        <form onSubmit={onSubmit}>
+        <div>
             {items.map(todo =>(
                 <div key={todo.id}>
                     <input 
@@ -42,14 +26,8 @@ const TodoList = () => {
                     <p>{todo.description}</p>
                 </div>
             ))}
-            <input
-                type="text"
-                placeholder="Add new task.."
-                value={value}
-                onChange={event => setValue(event.target.value)}
-            />
-            <button type="submit">Add Task</button>
-        </form>
+            <AddTodoItem />
+        </div>
     )
 }
 

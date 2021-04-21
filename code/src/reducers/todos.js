@@ -30,6 +30,11 @@ const todos = createSlice({
             store.items.push(newTodo)
         },
 
+        deleteTodo: (store, action) => {
+            //if action.payload.id === todo.items.id the todo should remain the same
+            //else if action.payload.id !== todo.items.id remove todo item
+        },
+
         //Redux is always passing store as argument in order to update it
         //add action to know which task to toggle.
         toggleComplete: (store, action) => {
