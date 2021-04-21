@@ -9,7 +9,7 @@ import { tasks } from '../reducers/tasks'
 
 import { TodoTask, TaskCheckboxContainer } from './styled components/TaskStyling'
 
-//material ui
+//code for material ui - styling for checkbox and delete icon
 const useStyles = makeStyles((theme) => ({
     root: {
       '& > *': {
@@ -18,50 +18,24 @@ const useStyles = makeStyles((theme) => ({
     },
   }));
 
-export const Task = ({ id, task, completed }) => {
+export const Task = ({ task, completed }) => {
     const dispatch = useDispatch()
-
-    const onClickRemove = (event) => {
-		event.preventDefault();
-        dispatch(
-            tasks.actions.removeTask({
-                id: task.id
-            })
-        )
-	}
-
-    const onCheckedCompleted = () => {
-        dispatch(
-            tasks.actions.toggleTaskCompleted(
-                {id: task.id, completed: !completed}
-            )
-        )
-    }
 
     //needed for icon 
     const classes = useStyles();
 
-
     return (
         <TodoTask>
-            {/* <input 
-                type='checkbox'  
-                id="checkbox1"
-                checked={completed} 
-                onChange={onCheckedCompleted}
-            ></input> */}
             <TaskCheckboxContainer>
                 <Checkbox
                     checked={completed}
-                    onChange={onCheckedCompleted}
+                    onChange={() => dispatch(tasks.actions.toggleTaskCompleted(task.id))}
                     color="default"
                     inputProps={{ 'aria-label': 'checkbox with default color' }}
                 />
                     {task.content}
             </TaskCheckboxContainer>
-            {/* <RemoveTodo onClick={onClickRemove}>✖️</RemoveTodo> */}
-            
-            <IconButton onClick={onClickRemove} aria-label="delete">
+            <IconButton onClick={() => dispatch(tasks.actions.removeTask(task.id))} aria-label="delete">
                 <DeleteIcon />
             </IconButton>
         </TodoTask>
