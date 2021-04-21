@@ -3,11 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const tasks = createSlice({
   name: 'tasks',
   initialState: {
-    items: [
-      { id: 1, description: 'First Task', isCompleted: false },
-      { id: 2, description: 'Second Task', isCompleted: true },
-      { id: 3, description: 'Third Task', isCompleted: false }
-    ]
+    items: []
   },
   reducers: {
     toggleCheckbox: (store, action) => {
@@ -23,14 +19,15 @@ const tasks = createSlice({
 			})
 			store.items = updatedItems
     },
+    removeTask: (store, action) => {
+      const decreasedItems = store.items.filter(task => task.id !== action.payload)
+      store.items = decreasedItems
+    },
     addTask: (store, action) => {
-      const { description } = action.payload
-      console.log(action)
-      store.items.push({
-        id: store.items.length + 1,
-        description: description,
-        isCompleted: false
-      })
+      store.items = [...store.items, action.payload]
+    },
+    clearAll: (store) => {
+      store.items = []
     }
   }
 })
