@@ -15,7 +15,6 @@ import {
 import { addTask, deleteTask } from 'store/tasks';
 
 export default ({ open, setOpen, listSlug, ...taskData }) => {
-  // const [open, setOpen] = React.useState(dialog);
   const lists = useSelector((store) => store.tasks.lists);
   const [value, setValue] = React.useState(listSlug);
   const dispatch = useDispatch();

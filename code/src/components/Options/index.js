@@ -25,7 +25,7 @@ export default ({ type, listSlug, ...taskData }) => {
         dispatch(deleteTask({ id: taskData.id, listSlug }));
       }
       if (type === 'project') {
-        dispatch(deleteList(taskData.listSlug));
+        dispatch(deleteList(listSlug));
       }
     }
     if (action === 'move') {
