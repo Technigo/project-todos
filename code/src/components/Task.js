@@ -16,6 +16,7 @@ export const Task = ({task}) => {
       </input>
 
       <label htmlFor={task.id} className="task-colomn-60">
+
         <p className="task-text">{task.text}</p>
       </label>
 
