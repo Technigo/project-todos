@@ -12,7 +12,5 @@ Describe how you approached to problem, and what tools and techniques you used t
 
 Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
 
-## TODO:
-
-    - [ ] Color todo card 
-    - [x] Color todo card 
+- [ ] Color todo card 
+- [x] Color todo card 
