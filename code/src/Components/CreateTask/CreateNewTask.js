@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import { todos } from "../Reducers/todos";
-import { Checkbox } from "./Checkbox";
+import { todos } from "../../Reducers/todos";
+import { Checkbox } from "../Selects/Checkbox";
 import { SelectDeadline } from "./SelectDeadline";
 
 export const CreateNewTask = () => {
@@ -50,7 +50,7 @@ export const CreateNewTask = () => {
           <Button type="button" onClick={() => handleClick()}>
             +
           </Button>
-          <Textarea 
+          <Textarea
             placeholder="Add task"
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
@@ -70,7 +70,7 @@ export const CreateNewTask = () => {
           ))}
         </CheckboxWrapper>
         {checkvalue === "deadline" ? (
-          <SelectDeadline dueTime={dueTime} setDueTime={setDueTime}/>
+          <SelectDeadline dueTime={dueTime} setDueTime={setDueTime} />
         ) : (
           <></>
         )}
@@ -84,6 +84,7 @@ const Section = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-top: 10px;
 `;
 
 const Container = styled.div`
@@ -103,7 +104,6 @@ const ContainerInner = styled.div`
 `;
 
 const Button = styled.button`
-
   margin: 0 10px;
   margin-top: -18px;
   font-size: 30px;
@@ -123,7 +123,7 @@ const Textarea = styled.textarea`
   outline: none;
   color: rgb(40, 91, 104);
   padding: 40px 0;
-  
+
   &::placeholder {
     font-family: "Raleway", sans-serif;
     color: rgb(196, 232, 241);

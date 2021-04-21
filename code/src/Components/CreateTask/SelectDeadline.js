@@ -18,4 +18,5 @@ export const SelectDeadline = ({ dueTime, setDueTime }) => {
 };
 
 const Calendar = styled.input.attrs({ type: "date" })`
-margin-left: 100px;`;
+  margin-left: 100px;
+`;

@@ -9,6 +9,17 @@ export const todos = createSlice({
   name: "todos",
   initialState,
   reducers: {
+    createNewTodo: (store, action) => {
+        const { task, time, deadline } = action.payload;
+        store.items.push({
+          id: store.items.length + 1,
+          description: task,
+          isComplete: false,
+          hidden: false,
+          createdAt: time,
+          deadline: deadline,
+        });
+      },
     toggleComplete: (store, action) => {
       const { id } = action.payload;
 
@@ -24,7 +35,9 @@ export const todos = createSlice({
     },
     sortTodos: (store, action) => {
       const { sortBy, order } = action.payload;
-      store.updatedTodos = store.items.map((item) => item);
+      store.updatedTodos = store.items.map((task) => {
+        return task;
+      });
 
       if (order) {
         if (sortBy === "isComplete") {
@@ -40,7 +53,7 @@ export const todos = createSlice({
             (a, b) => Number(a[sortBy]) - Number(b[sortBy])
           );
         } else {
-          store.updatedTodos.sort((a, b) => (a[sortBy] > b[sortBy] ? -1 : 1));
+          store.updatedTodos.sort((a, b) => (b[sortBy] > a[sortBy] ? 1 : -1));
         }
       }
 
@@ -60,17 +73,6 @@ export const todos = createSlice({
         return task;
       });
       store.items = store.updatedTodos;
-    },
-    createNewTodo: (store, action) => {
-      const { task, time, deadline } = action.payload;
-      store.items.push({
-        id: store.items.length + 1,
-        description: task,
-        isComplete: false,
-        hidden: false,
-        createdAt: time,
-        deadline: deadline,
-      });
     },
     removeTodo: (store, action) => {
       const { task } = action.payload;

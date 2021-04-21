@@ -13,20 +13,17 @@ export const DeadlineCountdown = ({ deadline }) => {
   if (diff > 100000000) {
     return (
       <Text textColor="green">
-        {" "}
         {moment(duedate).diff(today, "days")} days left
       </Text>
     );
   } else if (diff > 10000000) {
     return (
       <Text textColor="orange">
-        {" "}
         {moment(duedate).diff(today, "hours")} hours left
       </Text>
     );
-  } else if (diff < 0)
-  {
-  return <Text textColor="red">over due :(</Text>
+  } else if (diff < 0) {
+    return <Text textColor="red">over due </Text>;
   }
 
   return <Text textColor="red"> due now!</Text>;

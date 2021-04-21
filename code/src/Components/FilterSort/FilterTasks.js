@@ -1,8 +1,8 @@
 import React from "react";
 import { useDispatch } from "react-redux";
 
-import { todos } from "../Reducers/todos";
-import {HamburgerMenu} from './HamburgerMenu'
+import { todos } from "../../Reducers/todos";
+import { HamburgerMenu } from "../Selects/HamburgerMenu";
 
 export const FilterTasks = () => {
   const filterArr = [
@@ -20,11 +20,9 @@ export const FilterTasks = () => {
             value: item.valueIs,
           })
         );
-  }
+  };
   const dispatch = useDispatch();
   return (
     <HamburgerMenu array={filterArr} name="Filter" handleClick={handleClick}/>
-
   );
 };
-
