@@ -92,6 +92,7 @@ const TodoItem = ({ id, text, complete, created }) => {
       />
       <Indicator />
       <Description>{text}</Description>
+      <button type="button" onClick={() => dispatch(tasks.actions.removeTodo(id))}>Delete</button>
       <Date>{taskCreated}</Date>
     </Container>
   )     

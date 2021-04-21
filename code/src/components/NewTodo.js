@@ -14,6 +14,9 @@ const Container = styled.div`
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
 `
+const Form = styled.form`
+  display: flex;
+`
 
 const TodoBtn = styled.button`
   width: 40px;
@@ -46,11 +49,12 @@ const NewTodo = () => {
   const [newTodoInput, setNewTodoInput] = useState('')
   const [dueDate, setDueDate] = useState(new Date())
 
-  const handleInputChange = (event) => {
+  const onInputChange = (event) => {
     setNewTodoInput(event.target.value)
   }
 
-  const handleButtonPress = () => {
+  const onButtonPress = (event) => {
+    event.preventDefault()
     dispatch(tasks.actions.postNewTodo(newTodoInput))
     setNewTodoInput('')
   }
@@ -59,25 +63,28 @@ const NewTodo = () => {
 
   return (
     <Container>
-      <TodoBtn 
-        type="button"
-        onClick={handleButtonPress}
-        >
-          +
-      </TodoBtn>
-      <TodoInput 
-        type="text"
-        placeholder="New task"
-        onChange={handleInputChange}
-      />
-      <DatePickerContainer>
-        <DatePicker
-          selected={dueDate}
-          onChange={date => setDueDate(date)}
-          dateFormat='yyyy/MM/dd'
-          isClearable
+      <Form>
+        <TodoBtn 
+          type="button"
+          onClick={onButtonPress}
+          >
+            +
+        </TodoBtn>
+        <TodoInput 
+          type="text"
+          placeholder="New task"
+          value={newTodoInput}
+          onChange={onInputChange}
         />
-      </DatePickerContainer>
+        <DatePickerContainer>
+          <DatePicker
+            selected={dueDate}
+            onChange={date => setDueDate(date)}
+            dateFormat='yyyy/MM/dd'
+            isClearable
+          />
+        </DatePickerContainer>
+      </Form>
     </Container>
   )
 }

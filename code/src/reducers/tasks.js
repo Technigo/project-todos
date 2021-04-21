@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import moment from 'moment'
+import uniqid from 'uniqid'
 
 export const tasks = createSlice({
   name: 'tasks',
@@ -10,7 +11,6 @@ export const tasks = createSlice({
     { id: 3, text: 'Fork week 15 repo', complete: true, created: '2021-04-19T18:30:23+02:00' },
     { id: 4, text: 'Create a todo app', complete: false, created: '2021-04-19T22:14:23+02:00' }
     ],
-    idGenerator: 5
 },
   reducers: {
     toggleComplete: (store, action) => {
@@ -30,11 +30,14 @@ export const tasks = createSlice({
     postNewTodo: (store, action) => {
       const description = action.payload
 
-      store.items.push({ id: store.idGenerator, text: description, complete: false, created: moment().format() })
+      store.items = [...store.items, { id: uniqid(), text: description, complete: false, created: moment().format() }]
+    }, 
 
-      store.idGenerator += 1
+    removeTodo: (store, action) => {
+      const decreasedItems = store.items.filter(todo => todo.id !== action.payload)
 
-    } 
+      store.items = decreasedItems
+    }
 
     /*completedTasks: (store, action) => {
       store.items.map(item => {
