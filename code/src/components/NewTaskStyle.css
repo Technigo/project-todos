@@ -1,3 +1,8 @@
 .border {
   border: 2px solid red;
 }
+
+.new-task-container {
+  display: flex;
+  justify-content: center;
+}

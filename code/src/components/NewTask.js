@@ -32,7 +32,7 @@ const NewTask = () => {
     setInputValue("");
   };
   return (
-    <div className="border">
+    <div className="border new-task-container">
       <form>
         <input type="text" value={inputValue} onChange={handleChange} />
         <button onClick={handleOnClick}>Add New Task</button>
