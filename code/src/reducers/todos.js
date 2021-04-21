@@ -24,8 +24,6 @@ const todos = createSlice({
         },
 
         removeTodo: (store, action) => {
-            //if action.payload.id === todo.items.id the todo should remain the same
-            //else if action.payload.id !== todo.items.id remove todo item
             //Accepting everything except the one that does not match
             const decreasedItems = store.items.filter(todo => todo.id !== action.payload)
             store.items = decreasedItems
@@ -54,6 +52,5 @@ const todos = createSlice({
         }
     }
 })
-
 //Export slice
 export default todos
