@@ -14,7 +14,6 @@ export default () => {
     const listname = !slug ? 'my-day' : slug;
     return store.tasks.lists.find((list) => list.slug === listname);
   });
-  console.log(currentList);
   const uncomplTasks = currentList.tasks.filter((t) => !t.complete);
   const complTasks = currentList.tasks.filter((t) => t.complete);
 

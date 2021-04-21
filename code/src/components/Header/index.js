@@ -12,7 +12,6 @@ export default () => {
   const { slug } = useParams();
   const dispatch = useDispatch();
   const currentList = useSelector((store) => {
-    console.log(slug);
     const listname = !slug ? 'my-day' : slug;
     return store.tasks.lists.find((list) => list.slug === listname);
   });

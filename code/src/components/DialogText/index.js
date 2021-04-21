@@ -1,5 +1,4 @@
 import React from 'react';
-// import slugify from 'slugify';
 import { useDispatch } from 'react-redux';
 import {
   Button,
@@ -17,12 +16,15 @@ export default () => {
   const dispatch = useDispatch();
 
   const toggleDialog = () => {
+    setValue('');
     setOpen(!open);
   };
 
-  const handleSubmit = () => {
-    toggleDialog();
-    dispatch(addList(value));
+  const handleSubmit = (event) => {
+    if (event.key === 'Enter' || event.type === 'click') {
+      toggleDialog();
+      dispatch(addList(value));
+    }
   };
 
   return (
@@ -37,6 +39,7 @@ export default () => {
             autoFocus
             value={value}
             onChange={(e) => setValue(e.target.value)}
+            onKeyPress={handleSubmit}
             margin="dense"
             id="name"
             label="Project name"

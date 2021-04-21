@@ -7,6 +7,7 @@ import {
   ListItem,
   ListItemText,
   ListItemIcon,
+  ListItemSecondaryAction,
   Divider
 } from '@material-ui/core';
 import {
@@ -16,7 +17,8 @@ import {
   FolderOpenOutlined
 } from '@material-ui/icons';
 import { useSelector } from 'react-redux';
-import Dialog from 'components/Dialog'
+import Dialog from 'components/DialogText';
+import Options from 'components/Options';
 import { useStyles } from './style';
 
 const DrawerItem = ({ name, slug, toggleDrawer }) => {
@@ -43,6 +45,11 @@ const DrawerItem = ({ name, slug, toggleDrawer }) => {
         {linkProps.icon === 'cog' && <FolderOpenOutlined />}
       </ListItemIcon>
       <ListItemText primary={linkProps.text} />
+      {name && (
+        <ListItemSecondaryAction>
+          <Options type="project" listSlug={slug} />
+        </ListItemSecondaryAction>
+      )}
     </ListItem>
   );
 };

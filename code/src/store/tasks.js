@@ -9,13 +9,14 @@ export const taskSlice = createSlice({
       {
         name: 'My Day',
         slug: 'my-day',
+        type: 'primary',
         tasks: []
       }
     ]
   },
   reducers: {
     addTask(state, action) {
-      const index = state.lists.findIndex((list) => list.slug === action.payload.slug)
+      const index = state.lists.findIndex((list) => list.slug === action.payload.slug);
       state.lists[index].tasks.unshift({
         id: uniqid(),
         value: action.payload.value,
@@ -36,15 +37,26 @@ export const taskSlice = createSlice({
       list.tasks = list.tasks.filter((task) => task.id !== action.payload.id);
     },
     addList(state, action) {
-      const slug = slugify(action.payload);
+      const slug = slugify(action.payload, { lower: true, strict: true });
       state.lists.push({
         name: action.payload,
         slug,
+        type: 'project',
         tasks: []
-      })
+      });
+    },
+    deleteList(state, action) {
+      state.lists = state.lists.filter((list) => list.slug !== action.payload);
     }
   }
 });
 
-export const { addTask, clearList, toggleTask, deleteTask, addList } = taskSlice.actions;
+export const {
+  addTask,
+  clearList,
+  toggleTask,
+  deleteTask,
+  addList,
+  deleteList
+} = taskSlice.actions;
 export default taskSlice.reducer;

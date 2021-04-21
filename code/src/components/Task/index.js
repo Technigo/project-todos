@@ -1,15 +1,16 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Paper, FormControlLabel, Checkbox, IconButton } from '@material-ui/core';
+import { Paper, FormControlLabel, Checkbox } from '@material-ui/core';
 import {
   RadioButtonUncheckedOutlined,
-  CheckCircleRounded,
-  CancelOutlined
+  CheckCircleRounded
+  // CancelOutlined
 } from '@material-ui/icons';
-import { toggleTask, deleteTask } from 'store/tasks';
+import { toggleTask } from 'store/tasks';
+import Options from 'components/Options';
 import { useStyles } from './style';
 
-export default ({ value, id, complete, listSlug }) => {
+export default ({ listSlug, ...taskData }) => {
   const dispatch = useDispatch();
   const classes = useStyles();
   return (
@@ -19,18 +20,14 @@ export default ({ value, id, complete, listSlug }) => {
         control={
           <Checkbox
             color="primary"
-            checked={complete}
-            onChange={() => dispatch(toggleTask({ id, listSlug }))}
+            checked={taskData.complete}
+            onChange={() => dispatch(toggleTask({ id: taskData.id, listSlug }))}
             icon={<RadioButtonUncheckedOutlined />}
             checkedIcon={<CheckCircleRounded />}
             name="checkedH" />
         }
-        label={value} />
-      <IconButton
-        onClick={() => dispatch(deleteTask({ id, listSlug }))}
-        aria-label="delete task">
-        <CancelOutlined />
-      </IconButton>
+        label={taskData.value} />
+      <Options type="task" listSlug={listSlug} {...taskData} />
     </Paper>
   );
 };
