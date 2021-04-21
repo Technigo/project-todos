@@ -29,7 +29,7 @@ const AddTodoForm = () => {
 				value={value}
 				onChange={(event) => setValue(event.target.value)}>
       </input>
-			<button className="button"
+			<button className="add-button"
         type='submit'
         disabled={value.length<2}>
         <span role="img" aria-label="Add">➕ </span>

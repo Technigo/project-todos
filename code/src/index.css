@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color:#ccb79f;
-
+  @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap')
 }
 
 code {
@@ -23,7 +23,6 @@ main {
   margin: 0 auto;
 }
 
-
 .header {
   text-align: left;
   background-image: url(./assets/todo.jpg);
@@ -33,6 +32,7 @@ main {
 
 }
 .header h1 {
+  font-family: 'Inconsolata', monospace;
   margin:0;
   margin-left:10px;
   font-size: 45px;
@@ -40,6 +40,7 @@ main {
 }
 
 .header p {
+  font-family: 'Inconsolata', monospace;
   margin-top: 10px;
   margin-left:10px;
   font-weight: bold;
@@ -49,18 +50,19 @@ main {
 .completed-and-clear {
   text-align: right;
   margin-bottom: 20px;
-  /* margin-right: 10px; */
 }
 
 .completed-and-clear p {
   margin-right: 15px;
+  font-family: 'Inconsolata', monospace;
 }
+
 .remove-buttons {
-  /* width: 90%; */
   display: flex;
   justify-content: space-evenly;
   padding-bottom: 20px;
   padding-top: 10px;
+  font-family: 'Inconsolata', monospace;
 }
 
 .remove-button {
@@ -70,17 +72,21 @@ main {
   outline:none;
 }
 
+
+
 .form {
   display: flex;
   justify-content: center;
   margin-bottom: 15px;
 }
+
 input {
   background-color: inherit;
   border: hidden;
   font-size: 20px;
   color: #58739e;
   align-items: center;
+  font-family: 'Inconsolata', monospace;
 }
 
 input:focus,
@@ -88,7 +94,7 @@ textarea {
   outline: none;
 }
 
-.button {
+.add-button {
   /* border-radius: 50%;
   height: 30px;
   width: 30px;
@@ -101,7 +107,7 @@ textarea {
   font-size: 30px;
   padding:4px; */
   /* background-color: #00c281; */
-  color: WHITE;
+  background-color: #b0a38a;
   padding: 5px;
   border-radius: 50%;
   height: 40px;
@@ -110,8 +116,12 @@ textarea {
   justify-content: center;
   margin-left: 10px;
   border: 1px solid grey;
+  cursor: pointer;
 }
 
+/* .add-button:active {
+
+} */
 
 
 .task-list {
@@ -129,6 +139,10 @@ textarea {
   justify-content: space-between;
   border-bottom: 1px solid grey;
   width: 90%;
+  }
+
+  .task-text {
+    font-family: 'Inconsolata', monospace;
   }
 
 .task-colomn-10 {
