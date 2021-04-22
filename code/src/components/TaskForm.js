@@ -75,7 +75,7 @@ export const TaskForm = () => {
 
   return (
     <Form>
-      <SubmitButton type="submit" onClick={description !== "" ? onTaskSubmit : null}><AiOutlinePlus size={20} /></SubmitButton>
+      <SubmitButton type="submit" onClick={description !== "" ? onTaskSubmit : (e) => e.preventDefault()}><AiOutlinePlus size={20} /></SubmitButton>
       <TaskInput 
       type="text"
       placeholder="Add task"
