@@ -14,7 +14,8 @@ import todos from '../reducers/todos'
 const useStyles = makeStyles({
     root: {
         minWidth: 275,
-        margin: "10px"
+        margin: "10px",
+        backgroundColor: "rgba(241,194,27,0.5)"
     },
     list: {
         display: "flex",

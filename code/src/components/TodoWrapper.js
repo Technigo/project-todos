@@ -16,7 +16,9 @@ import { makeStyles } from "@material-ui/styles"
 
 const useStyles = makeStyles({
     root: {
-        backgroundColor: '#ECECEC', 
+        backgroundColor: '#ECECEC',
+        boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
+        borderRadius: "25px",
         width: '500px',
     },
     container: {
