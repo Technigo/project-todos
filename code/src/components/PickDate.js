@@ -11,10 +11,12 @@ const DateContainer = styled.div`
 `;
 
 const Label = styled.label`
-  font-family: ${props => props.theme.fontFamily};
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 5px;
+  @media (min-width: 768px) {
+    font-size: 17px;
+  }
 `;
 
 

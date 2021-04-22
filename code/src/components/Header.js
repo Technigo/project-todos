@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import Drawer from '@material-ui/core/Drawer';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tooltip from '@material-ui/core/Tooltip';
@@ -16,15 +16,24 @@ import {
   GrayButton, 
   BoldButton,
   WhiteButton, } from "../styledcomponents/StyledButtons";
-  import { 
-    TitleTop, 
-    Title, 
-    DrawerContainer, 
-    DrawerContainerText } from "../styledcomponents/StyledHeader";
+import { 
+  TitleTop, 
+  Title, 
+  DrawerContainer, 
+  DrawerContainerText } from "../styledcomponents/StyledHeader";
+import { 
+  blueTheme, 
+  redTheme, 
+  greenTheme, 
+  yellowTheme, 
+  pinkTheme, 
+  purpleTheme, 
+  boldTheme,
+  grayTheme,
+  whiteTheme } from "../styledcomponents/StyledTheme";
 
 
 export const Header = () => {
-  const theme = useSelector((state) => state.themes.theme);
   const [open, setOpen] = useState(false);
   const dispatch = useDispatch();
 
@@ -42,15 +51,15 @@ export const Header = () => {
           onOpen={() => setOpen(true)}>
           <DrawerContainer>
             <DrawerContainerText>Choose Color Theme: </DrawerContainerText>
-            <BlueButton onClick={() => dispatch(themes.actions.changeBlueTheme(theme))}></BlueButton>
-            <RedButton onClick={() => dispatch(themes.actions.changeRedTheme(theme))}></RedButton>
-            <GreenButton onClick={() => dispatch(themes.actions.changeGreenTheme(theme))}></GreenButton>
-            <YellowButton onClick={() => dispatch(themes.actions.changeYellowTheme(theme))}></YellowButton>
-            <PinkButton onClick={() => dispatch(themes.actions.changePinkTheme(theme))}></PinkButton>
-            <PurpleButton onClick={() => dispatch(themes.actions.changePurpleTheme(theme))}></PurpleButton>
-            <GrayButton onClick={() => dispatch(themes.actions.changeGrayTheme(theme))}></GrayButton>
-            <BoldButton onClick={() => dispatch(themes.actions.changeBoldTheme(theme))}></BoldButton>
-            <WhiteButton onClick={() => dispatch(themes.actions.changeWhiteTheme(theme))}></WhiteButton>
+            <BlueButton onClick={() => dispatch(themes.actions.changeTheme(blueTheme))}></BlueButton>
+            <RedButton onClick={() => dispatch(themes.actions.changeTheme(redTheme))}></RedButton>
+            <GreenButton onClick={() => dispatch(themes.actions.changeTheme(greenTheme))}></GreenButton>
+            <YellowButton onClick={() => dispatch(themes.actions.changeTheme(yellowTheme))}></YellowButton>
+            <PinkButton onClick={() => dispatch(themes.actions.changeTheme(pinkTheme))}></PinkButton>
+            <PurpleButton onClick={() => dispatch(themes.actions.changeTheme(purpleTheme))}></PurpleButton>
+            <GrayButton onClick={() => dispatch(themes.actions.changeTheme(grayTheme))}></GrayButton>
+            <BoldButton onClick={() => dispatch(themes.actions.changeTheme(boldTheme))}></BoldButton>
+            <WhiteButton onClick={() => dispatch(themes.actions.changeTheme(whiteTheme))}></WhiteButton>
           </DrawerContainer>
         </Drawer>   
     </TitleTop>

@@ -4,10 +4,18 @@ import { useDispatch, useSelector } from "react-redux";
 import Select from "react-select";
 import Drawer from "@material-ui/core/Drawer";
 
-import { PickDate } from "./PickDate";
 import todos from "../reducers/todos";
+import { PickDate } from "./PickDate";
 import { AddTaskButton, SubmitButton } from "../styledcomponents/StyledButtons";
-import { AddText, FormContainer, Form, Input, BottomContainer, Options, LabelText, CategoryDate } from "../styledcomponents/StyledTodoForm";
+import { 
+  AddText, 
+  DrawerContainer, 
+  Form, 
+  Input, 
+  BottomContainer, 
+  Options, 
+  LabelText, 
+  CategoryDate } from "../styledcomponents/StyledTodoForm";
 
 
 export const TodoForm = () => {
@@ -37,33 +45,33 @@ export const TodoForm = () => {
         open={openForm}         
         onClose={() => setOpenForm(false)}
         onOpen={() => setOpenForm(true)}>
-          <FormContainer>
-        <Form onSubmit={onFormSubmit}>
-          <CategoryDate>
-            <Options>
-              <LabelText>Choose category:</LabelText>
-              <Select
-                value={category.value}
-                onChange={category => setCategory(category.value)}
-                options={categories}
+        <DrawerContainer>
+          <Form onSubmit={onFormSubmit}>
+            <CategoryDate>
+              <Options>
+                <LabelText>Choose category:</LabelText>
+                <Select
+                  value={category.value}
+                  onChange={category => setCategory(category.value)}
+                  options={categories}
+                />
+              </Options>
+              <PickDate 
+                onChange={dueDate => setDueDate(dueDate)}
+                selected={dueDate}
               />
-            </Options>
-            <PickDate 
-              onChange={dueDate => setDueDate(dueDate)}
-              selected={dueDate}
-            />
-          </CategoryDate>
-          <Input
-            type="text"
-            placeholder="Task description"
-            value={task}
-            onChange={e => setTask(e.target.value)}
-            minLength="3"
-            maxLength="30"
-            required />
-          <SubmitButton type="submit">Add Task</SubmitButton>
-        </Form>
-        </FormContainer>
+            </CategoryDate>
+            <Input
+              type="text"
+              placeholder="Task description"
+              value={task}
+              onChange={e => setTask(e.target.value)}
+              minLength="3"
+              maxLength="30"
+              required />
+            <SubmitButton type="submit">Add Task</SubmitButton>
+          </Form>
+        </DrawerContainer>
       </Drawer>
     </>
   )

@@ -18,7 +18,6 @@ export const TitleTop = styled.header`
 export const Title = styled.h1`
   font-size: 40px;
   margin: 0;
-  font-family: ${props => props.theme.fontFamily};
   color: ${props => props.theme.primary};
   @media (min-width: 768px) {
     font-size: 58px;
@@ -36,7 +35,6 @@ export const DrawerContainer = styled.aside`
 
 export const DrawerContainerText = styled.p`
   font-size: 14px;
-  font-family: ${props => props.theme.fontFamily};
   color: ${props => props.theme.buttonText};
   font-weight: bold;
   margin-right: 10px;

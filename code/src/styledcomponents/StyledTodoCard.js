@@ -17,21 +17,20 @@ export const TextDeleteBox = styled.div`
   align-items: center;
 `;
 
-export const IconBox = styled.div`
+export const IconBox = styled(TextDeleteBox)`
   width: 20px;
   height: 20px;
   margin-right: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   @media (min-width: 768px) {
     width: 25px;
     height: 25px;
+    margin-right: 7px;
   }
 `;
 
 export const CheckDeleteBox = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 export const TextDateBox = styled.div`
@@ -41,7 +40,6 @@ export const TextDateBox = styled.div`
 `;
 
 export const TaskText = styled.p`
-  font-family: ${props => props.theme.fontFamily};
   font-size: 14px;
   font-weight: bold;
   margin: 0;
@@ -58,7 +56,6 @@ export const DateBox = styled.div`
 
 export const DateText = styled.p`
   font-size: 11px;
-  font-family: ${props => props.theme.fontFamily};
   margin: 0 7px 0 0;
   display: flex;
   align-items: center;

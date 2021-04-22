@@ -3,10 +3,14 @@ import styled from "styled-components";
 export const AddText = styled.p`
   font-size: 48px;
   color: ${props => props.theme.buttonText};
-  text-align: center;
+  margin: 0 0 6px 0;
+  @media (min-width: 768px) {
+    font-size: 80px;
+    margin: 0 0 10px 0;
+  }
 `;
 
-export const FormContainer = styled.form`
+export const DrawerContainer = styled.form`
   display: flex;
   width: 100%;
   justify-content: center;
@@ -18,6 +22,7 @@ export const Form = styled.form`
   align-items: flex-start;
   flex-direction: column;
   padding: 20px 20px 110px 20px;
+  width: 100%;
   background-color: ${props => props.theme.backgroundColor};
   @media (min-width: 768px) {
     width: 700px;
@@ -32,7 +37,7 @@ export const Input = styled.input`
   background-color: #f2f2f2;
   border: none;
   width: 95%;
-  font-family: ${props => props.theme.fontFamily};
+  font-family: "Playfair Display";
 `;
 
 export const BottomContainer = styled.div`
@@ -65,7 +70,6 @@ export const LabelText = styled.p`
   margin-bottom: 5px;
   font-weight: bold;
   font-size: 14px;
-  font-family: ${props => props.theme.fontFamily};
   @media (min-width: 768px) {
     font-size: 17px;
   }

@@ -1,10 +1,11 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import todos from "../reducers/todos";
-import { ClearAllButton } from "../styledcomponents/StyledButtons";
 import swal from "sweetalert";
 
 import styled from "styled-components";
+import todos from "../reducers/todos";
+
+import { ClearAllButton } from "../styledcomponents/StyledButtons";
 
 const ButtonContainer = styled.div`
   display: flex;
@@ -25,7 +26,7 @@ export const ClearButtons = () => {
     })
     .then((confirm) => {
       if (confirm) {
-      swal("Poof! Your tasks have been deleted!", {
+      swal("Your tasks have been deleted!", {
         icon: "success",
       });
       dispatch(todos.actions.removeAllTasks());
@@ -45,7 +46,7 @@ export const ClearButtons = () => {
     })
     .then((confirm) => {
       if (confirm) {
-        swal("Poof! Your tasks have been deleted!", {
+        swal("Your tasks have been deleted!", {
           icon: "success",
         });
       dispatch(todos.actions.removeCompletedTasks());

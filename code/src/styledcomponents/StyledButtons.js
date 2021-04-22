@@ -112,17 +112,15 @@ export const SubmitButton = styled(ThemeColors)`
   padding: 7px 10px 10px 10px;
   font-size: 20px;
   font-weight: bold;
-  font-family: ${props => props.theme.fontFamily};
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 5px;
 `;
 
 // For To Do List component
 export const ClearAllButton = styled(ThemeColors)`
-  padding: 2px 5px;
+  padding: 2px 5px 4px 5px;
   border-radius: 5px;
   font-size: 14px;
-  font-family: ${props => props.theme.fontFamily};
   margin: 10px 0 20px 5px;
   ${props =>
     props.disabled ?

@@ -7,11 +7,21 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 import todos from "../reducers/todos";
 import { RemoveButton } from "../styledcomponents/StyledButtons";
-import { Task, TextDeleteBox, IconBox, CheckDeleteBox, TextDateBox, TaskText, DateBox, DateText, DateTextDue, BoldText } from "../styledcomponents/StyledTodoCard";
+import { 
+  Task, 
+  TextDeleteBox, 
+  IconBox, 
+  CheckDeleteBox, 
+  TextDateBox, 
+  TaskText, 
+  DateBox, 
+  DateText, 
+  DateTextDue, 
+  BoldText } from "../styledcomponents/StyledTodoCard";
 
 
 export const TodoCard = (props) => {
-  const { id, task, category, isComplete, dueDate, icon } = props.taskInfo
+  const { id, task, category, isComplete, dueDate, icon } = props.taskInfo;
   const dispatch = useDispatch();
 
   const dateCreated = moment().format("DD/MM YYYY");
@@ -20,9 +30,11 @@ export const TodoCard = (props) => {
   return (
     <Task>
       <TextDeleteBox>
-        <IconBox title={category}>
-          <FontAwesomeIcon icon={icon} className="icon" />
-        </IconBox>
+        <Tooltip title={category}>
+          <IconBox>
+            <FontAwesomeIcon icon={icon} className="icon" />
+          </IconBox>
+        </Tooltip>
         <TextDateBox>
           <TaskText>{task}</TaskText>
           <DateBox>
@@ -43,7 +55,9 @@ export const TodoCard = (props) => {
         />
         </Tooltip>
         <Tooltip title="Delete">
-          <RemoveButton onClick={() => dispatch(todos.actions.removeTask(id))}><FontAwesomeIcon icon="trash-alt" /></RemoveButton>
+          <RemoveButton onClick={() => dispatch(todos.actions.removeTask(id))}>
+            <FontAwesomeIcon icon="trash-alt" />
+          </RemoveButton>
         </Tooltip>
       </CheckDeleteBox>
     </Task>

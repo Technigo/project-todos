@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #050505;
+  font-family: "Playfair Display";
 }
 
 * {
@@ -21,6 +22,7 @@ button {
   cursor: pointer;
   outline: none;
   border: none;
+  font-family: "Playfair Display";
 }
 
 .datepicker {
@@ -46,7 +48,7 @@ button {
 
 .PrivateSwitchBase-root-1 {
   padding: 5px !important;;
-  margin: 0;
+  margin-top: 3px !important;
 }
 
 .filter {
