@@ -22,7 +22,7 @@ export const App = () => {
     
       
     <div>
-   <Header />
+      <Header />
      <TodoForm />
      <TodoList />
 
