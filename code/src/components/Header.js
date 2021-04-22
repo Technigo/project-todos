@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import tasks from '../reducers/tasks'
 
-const HeaderWrapper = styled.section`
+const TopWrapper = styled.section`
   background-color: #48cc94;
   display: flex;
   justify-content: space-between;
@@ -12,7 +12,7 @@ const HeaderWrapper = styled.section`
   flex-direction: row;
   color: white;
   margin-bottom: 20px;
-  padding: 10px;
+  padding: 20px 30px;
   max-width: 100%;
   box-sizing: border-box;
 `
@@ -35,6 +35,7 @@ const DateText = styled.p`
 
 const Heading = styled.h1`
   padding: 15px;
+  padding-left: 0;
   margin: 0;
   font-size: 45px;
   padding-right: 5px;
@@ -49,12 +50,13 @@ const TaskCount = styled.p`
   font-size: 14px;
   margin: 0;
   margin-bottom: 20px;
+  color: #757575;
 `
 const ClearButton = styled.button`
-  border: 1px solid #6c757d;
-  box-shadow: 0px 1px 15px rgba(0,0,0,0.1);
+  border: none;
+  box-shadow: 0px 1px 3px rgba(0,0,0,0.3);
   background-color: white;
-  font-size: 14px;
+  font-size: 12px;
   color: #6c757d;
   height: 20px;
   margin-left: 10px;
@@ -71,7 +73,7 @@ export const Header = () => {
 
   return (
     <>
-      <HeaderWrapper>
+      <TopWrapper>
         <DateWrapper>
         <Heading>{today.getDay()}</Heading>
         <MonthYear>
@@ -80,11 +82,13 @@ export const Header = () => {
         </MonthYear>
         </DateWrapper>
         <DateText>{today.toLocaleString('default', {weekday: 'long'}).toUpperCase()}</DateText>
-      </HeaderWrapper>
+      </TopWrapper>
+      {items.length !== 0 && (
       <BottomWrapper>
         <TaskCount>{itemsCompleted.length} / {items.length} tasks completed</TaskCount>
         <ClearButton onClick={() => dispatch(tasks.actions.clearAll())}>Clear all</ClearButton>
       </BottomWrapper>
+      )}
     </>
   )
 }

@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const tasks = createSlice({
   name: 'tasks',
   initialState: {
-    items: [ {id: 1, description: "test", isCompleted: true} ]
+    items: []
   },
   reducers: {
     toggleCheckbox: (store, action) => {

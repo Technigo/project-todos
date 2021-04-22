@@ -46,15 +46,7 @@ const TaskDescription = styled.p`
   margin-left: 15px;
   padding: 10px;
   font-size: 18px;
-`
-
-const RemoveButton = styled.button`
-  border: 1px solid black;
-  background-color: inherit;
-  font-size: 20px;
   color: #757575;
-  margin-right: 10px;
-  text-align: center;
 `
 
 const IconContainer = styled.div`
@@ -86,9 +78,9 @@ const TaskList = () => {
               containerStyle={{alignSelf: "center"}}
               size={20}
             />
-              <TaskDescription>{task.description}</TaskDescription>
+            <TaskDescription>{task.description}</TaskDescription>
           </DescriptionCheckbox>
-          <TiDeleteOutline onClick={() => dispatch(tasks.actions.removeTask(task.id))} />
+          <TiDeleteOutline size={20} onClick={() => dispatch(tasks.actions.removeTask(task.id))} />
         </Task>
       ))}
     </TaskWrapper>
