@@ -33,12 +33,12 @@ const TodoThumb = ({ item }) => {
       </div>
       <div className="todo-details">
         <p className="date-created">
-          Created:
+        <span className="span">Created:</span>
           {format(item.dateCreated, 'dd MMMM YYY')}
         </p>
         <p className={`deadline ${determineDeadlineClass(item.deadline)}`}>
-          {(determineDeadlineClass(item.deadline)=== "past-deadline") && <span role="img" aria-label="alarm clock">⏰</span>}
-          Deadline:
+          {(determineDeadlineClass(item.deadline)=== "past-deadline") && <span className="span" role="img" aria-label="alarm clock">⏰</span>}
+          <span className="span">Deadline:</span>
           {item.deadline === "" ? "No set deadline" : format(new Date(item.deadline), 'dd MMMM YYY')}
         </p>
       </div>

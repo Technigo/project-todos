@@ -33,6 +33,7 @@ const TodoList = () => {
 
       {items.length > 0 &&
         <div className="filters-container">
+          <p>Filter your to do list!</p>
           {filters.map((filter) => <FilterThumb key={filter.id} filter={filter} />)}
         </div>
       }

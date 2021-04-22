@@ -6,6 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Comfortaa;
+  /* background-color: #f5f5f5; */
 }
 
 code {
@@ -68,6 +69,9 @@ code {
   border:none;
   border-bottom: #5d80ff 2px solid;
   outline: #8da7fe;
+  background-color: #f5f5f5;
+  color: #596267;
+  font-family: Comfortaa;
 }
 
 .calendar-container {
@@ -89,6 +93,7 @@ code {
   outline: #8da7fe;
   color: #596267;
   font-family: Comfortaa;
+  background-color: #f5f5f5;
 }
 .submit-button {
   border: #5d80ff 2px solid;
@@ -142,6 +147,8 @@ code {
 .past-deadline {
   color: red;
 }
-
+.span {
+  margin-right: 5px;
+}
 
 

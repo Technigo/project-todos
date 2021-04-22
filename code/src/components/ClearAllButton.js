@@ -8,7 +8,7 @@ const ClearAllButton = () => {
   const dispatch = useDispatch()
   const style = {
     marginRight: "5px",
-    fontSize: "10px",
+    fontSize: "9px",
     padding: "2px"
   }
   return (
