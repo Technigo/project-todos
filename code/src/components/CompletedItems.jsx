@@ -5,6 +5,12 @@ import { todos } from '../reducers/todos';
 import moment from 'moment';
 import { FaTrashAlt } from "react-icons/fa";
 
+const Container = styled.div`
+  padding-top: 40px;
+  width: 80%;
+  margin: 0 auto;
+`;
+
 const HeaderContainer = styled.div`
   display: flex;
   align-items: center;
@@ -16,11 +22,6 @@ const CompletedHeader = styled.h1`
   margin: 0 auto;
   font-size: 20px;
   color: white;
-`;
-
-const Container = styled.div`
-  width: 80%;
-  margin: 0 auto;
 `;
 
 const Todo = styled.div`
@@ -45,7 +46,7 @@ const InputContainer = styled.div`
 
 const DeleteBtn = styled.button`
   background-color: black;
-  color: red;
+  color: #D81159;
   border: none;
 `;
 

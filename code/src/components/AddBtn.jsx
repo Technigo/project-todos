@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { FaPlus } from "react-icons/fa";
 
 const Btn = styled.button`
-  background-color: red;
-  border: 1px solid red;
+  background-color: #5899E2;
+  border: 1px solid #5899E2;
   border-radius: 30px;
   margin-left: 8%;
   padding: 10px 20px;
@@ -13,6 +13,7 @@ const Btn = styled.button`
   left: 5%;
   text-align: center;
   font-size: 15px;
+  font-weight: bold;
   color: white;
 `;
 

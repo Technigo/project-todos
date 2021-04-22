@@ -13,8 +13,8 @@ const Button = styled.button`
 `;
 
 const Check = styled(FaCheckCircle)`
-  color: red;
-  font-size: 20px;
+  color: #5899E2;
+  font-size: 40px;
 `;
 
 export const MarkCompleteBtn = () => {

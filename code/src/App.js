@@ -15,6 +15,10 @@ const Container = styled.div`
   position: relative;
   height: 100vh;
   background-color: black;
+  @media (min-width: 1280px) {
+    width: 50vw;
+    margin: 0 auto;
+  }
 `;
 
 const reducer = combineReducers({

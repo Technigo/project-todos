@@ -11,7 +11,7 @@ const Div = styled.div`
 `;
 
 const Btn = styled.button`
-  background-color: red;
+  background-color: #D81159;
   color: white;
   border: none;
   margin-left: 8%;
@@ -20,7 +20,8 @@ const Btn = styled.button`
   right: 10%;
   margin-bottom: 5px;
   font-size: 15px;
-  border: 1px solid red;
+  font-weight: bold;
+  border: 2px solid #D81159;
   border-radius: 30px;
   padding: 10px 20px;
 `;

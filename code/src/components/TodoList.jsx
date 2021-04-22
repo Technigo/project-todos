@@ -29,7 +29,7 @@ const InputContainer = styled.div`
 
 const DeleteBtn = styled.button`
   background-color: black;
-  color: red;
+  color: #D81159;
   border: none;
 `;
 

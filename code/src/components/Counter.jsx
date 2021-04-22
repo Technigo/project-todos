@@ -6,9 +6,9 @@ const Number = styled.h2`
   position: absolute;
   top: 5%;
   left: 5%;
-  color: red;
+  color: #5899E2;
   margin: 0;
-  border: 1px solid red;
+  border: 1px solid #5899E2;
   border-radius: 50%;
   padding: 10px 15px;
 `;
