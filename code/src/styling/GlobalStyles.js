@@ -24,6 +24,7 @@ export const Header = styled.h1`
   color: #793dfc;
 `;
 
+/* try remove space between see what happens */
 export const TodoList = styled.ul`
   width: 50%;
   display: flex;

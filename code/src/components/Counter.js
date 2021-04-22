@@ -29,7 +29,7 @@ const Counter = () => {
             <Delete src="assets/doubletick.png"></Delete>
         </ClearAllButton>
         <AllDone>
-          Mark all as done
+          Mark / Unmark all as done
         </AllDone>
       </ClearAllContainer>
     </Container>
@@ -42,6 +42,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-bottom: 40px;
 `;
 
 const CompletedTodos = styled.p`

@@ -4,7 +4,7 @@ import moment from 'moment'
 import Checkbox from '@material-ui/core/Checkbox'
 
 import todos from '../reducers/todos'
-import { Header, DeleteButton, CheckboxContainer, TodoList, TrashIcon } from '../styling/GlobalStyles'
+import { Container, Header, DeleteButton, CheckboxContainer, TodoList, TrashIcon } from '../styling/GlobalStyles'
 
 const TodoStudies = () => {
   const allTodos = useSelector((store) => store.todos)
@@ -13,7 +13,7 @@ const TodoStudies = () => {
   const dispatch = useDispatch()
 
   return (
-    <>
+    <Container>
       <Header>Studies</Header>
       <TodoList>
         <CheckboxContainer>
@@ -35,7 +35,7 @@ const TodoStudies = () => {
         ))}
         </CheckboxContainer>
       </TodoList>
-    </>
+    </Container>
   )
 }
 

@@ -43,13 +43,14 @@ const AddTodoForm = () => {
         <UserInputTextarea
           type="text"
           maxLength="45"
-          placeholder="Add your todo..."
+          placeholder="Write your todo here..."
           onChange={(event) => setNewTodo(event.target.value)}
           value={newTodo}        
         >
         </UserInputTextarea>
           <AddButton
             type='submit'>
+              add todo
             <img src="/assets/plus.svg" alt="plus sign on button"/>
           </AddButton>
           <Label htmlFor="category">
@@ -86,18 +87,23 @@ const Form = styled.form`
 `;
 
 const UserInputTextarea = styled.textarea`
-  margin-top: 50px;
+  margin: 40px 0px;
   border-radius: 0.25em;
   border: 1px solid #793dfc; 
   background-color: transparent;
   resize: none;
   outline: 0; 
+  width: 200px;
 `;
 
 const AddButton = styled.button`
   border-radius: 50%;
-  margin: 20px 10px;
+  margin-bottom: 40px;
   background-color: #216dff;
+  color: #FF10F0;
+  width: 120px;
+  height: 120px;
+  text-transform: uppercase;
 `;
 
 const Label = styled.label`
@@ -115,7 +121,8 @@ const CustomSelect = styled.select`
   padding: 0.25em 0.5em;  
   cursor: pointer;
   background-color: transparent;
-  outline: 0; 
+  outline: 0;
+  margin-bottom: 40px;
 `;
 
 export default AddTodoForm

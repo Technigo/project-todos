@@ -41,7 +41,7 @@ const Logo = styled.img`
 const Heading = styled.h1`
   font-size: 20px; 
   text-transform: uppercase;
-  color: #deacff;
+  color: #216dff;
 `;
 
 const CounterContainer = styled(HeaderContainer)`
