@@ -54,7 +54,7 @@ const TodoList = () => {
             />
             <StyledParagraph>{todo.description}</StyledParagraph>
           <TrashButton onClick={() => dispatch(todos.actions.removeTask(todo.id))}>
-            🗑️
+          <span role="img" alt="trash can" aria-label="trach can icon">🗑️</span>
           </TrashButton>
       </Task>
     ))}

@@ -1,4 +1,3 @@
-import React from "react"
 import { createGlobalStyle } from "styled-components"
 
 import WrittenLiesWoff from "./WrittenLies.woff"
