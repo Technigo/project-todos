@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
+import TaskCounter from './TaskCounter'
 
 const TodoInformation = () => {
   const [startDate, setStartDate] = useState(new Date())
@@ -13,7 +14,7 @@ const TodoInformation = () => {
         />
       </div>
       <div className="task-number-container">
-        <h2>How many tasks</h2>
+        <TaskCounter />
         <button>clear all</button>
       </div>
     </div>
