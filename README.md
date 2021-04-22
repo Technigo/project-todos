@@ -14,8 +14,8 @@ Every project should be deployed somewhere. Be sure to include the link to the d
 
 
 ideas:
-Make it impossible to add an empty task
-make it possible to delete task
 Animation
 Möjligthet for the user to change theme in some way
+use uuid for listitems
+use form wrapper
 

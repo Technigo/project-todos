@@ -4,9 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import todos from './reducers/todos'
 
-import TodoList from './components/TodoList'
-import NewItem from 'components/NewItem'
-import Header from 'components/Header'
+import Content from 'components/Content'
 
 //Connect (combine) all of the slices into one group
 const reducer = combineReducers ({
@@ -22,9 +20,7 @@ export const App = () => {
     // Pass already created redux store into <Provider /> component,
     // so every component inside can reach for it
     < Provider store={store}>
-      < Header />
-      < NewItem />
-      < TodoList />
+      < Content />
     </Provider>
   )
 }

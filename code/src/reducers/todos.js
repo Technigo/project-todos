@@ -1,14 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 import moment from 'moment'
+import { v4 as uuidv4 } from 'uuid'
 
 const todos = createSlice ({
   name: 'todos',
   initialState: {
     items: [
-      {id: 1, description: 'Task 1', isComplete: false },
-      {id: 2, description: 'Task 2', isComplete: false },
-      {id: 3, description: 'Task 3', isComplete: false },
+      // {id: 1, description: 'Task 1', isComplete: false },
+      // {id: 2, description: 'Task 2', isComplete: false },
+      // {id: 3, description: 'Task 3', isComplete: false },
     ]
   },
   reducers: {
@@ -52,32 +53,24 @@ const todos = createSlice ({
     addNewTodo: (store, action) => {
 
     const newTask = {
-      id: (store.items.length)+1,
+      id: uuidv4(),
       description: action.payload,
       isComplete: false,
-      createdAt: moment().format('dddd MMMM Do YYYY')
+      createdAt: moment().fromNow() 
     } 
     store.items.push(newTask)
     
     },
 
   deleteItem: (store, action) => {
-  const updatedItems = store.items.map(todo => {
-    if (todo.id === action.payload) {
 
-        return {
-        
-        }
-    } else {
-
-      return todo
-    }
-  })
-
-     store.items = updatedItems;
-    },
+  const decreasedItems = store.items.filter(todo => 
+    todo.id !== action.payload)
     
-  }
+    store.items = decreasedItems
+    }  
+  }, 
+  
 })
 
 export default todos
