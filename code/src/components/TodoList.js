@@ -32,9 +32,9 @@ const TodoList = () => {
                     <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}> 
                         Delete
                     </button>
-            
-                    <p>{moment(todo.date).format('Do MMMM YYYY h:mm')}</p>
-                    <p>{todo.fromNow}</p>
+                    {(moment().calendar() === todo.fromNow) ? <p className="red">{moment(todo.date).format('Do MMMM YYYY h:mm')}</p> : <p className="blue">{moment(todo.date).format('Do MMMM YYYY h:mm')}</p>}
+                    {/*<p>{moment(todo.date).format('Do MMMM YYYY h:mm')}</p>*/}
+                    {/*<p>{todo.fromNow}</p>*/}
                     
                 </div>
 
