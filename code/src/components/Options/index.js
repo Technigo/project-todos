@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { useHistory } from 'react-router-dom'
 import { Menu, MenuItem, IconButton, ListItemIcon } from '@material-ui/core';
 import { MoreVert, Delete, MoveToInbox } from '@material-ui/icons/';
 import { deleteTask, deleteList } from 'store/tasks';
 import Dialog from 'components/DialogSelect';
 
 export default ({ type, listSlug, ...taskData }) => {
+  const history = useHistory();
   const [anchorEl, setAnchorEl] = useState(null);
   const [dialog, setDialog] = useState(false);
   const dispatch = useDispatch();
@@ -26,10 +28,10 @@ export default ({ type, listSlug, ...taskData }) => {
       }
       if (type === 'project') {
         dispatch(deleteList(listSlug));
+        history.push('/')
       }
     }
     if (action === 'move') {
-      // dispatch(moveTask());
       setDialog(true);
     }
   };
