@@ -7,7 +7,7 @@ import todos from '../reducers/todos'
 
 
 const TodoForm = () => {
-  const [inputValue, setInputValue] = useState('')
+  const [value, setvalue] = useState('')
 
   const dispatch = useDispatch()
 
@@ -16,21 +16,22 @@ const TodoForm = () => {
 
     const newTask = {
       id: uniqid(),
-      description: inputValue,
+      description: value,
       isComplete: false
     }
     dispatch(todos.actions.addTodo(newTask))
-    setInputValue('')
+    setvalue('')
   }
 
   return (
     <form className="form-wrapper" onSubmit={onFormSubmit}>
       <input
+        className="todo-input"
         type="text"
-        value={inputValue}
-        onChange={e => setInputValue(e.target.inputValue)}
+        value={value}
+        onChange={e => setvalue(e.target.value)}
       />
-      <button type="submit">Add Task!</button>
+      <button className="submit-button" type="submit">Add Task!</button>
     </form>
 
   )

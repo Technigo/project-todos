@@ -1,16 +1,17 @@
 import React from 'react'
 
+
 import '../index.css'
-import TodoForm from './TodoForm'
+
 
 
 const Header = () => {
 
   return (
-    <header className="header-wrapper">
-      <h1 className="title">To-Do List</h1>
-      <TodoForm />
-    </header>
+    <aside className="header-container">
+      <h1 className="title">TO-DO LIST</h1>
+      <div className="header-circle"></div>
+    </aside>
   )
 }
 
