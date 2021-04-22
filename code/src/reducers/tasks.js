@@ -30,7 +30,7 @@ const tasks = createSlice({
     },
     removeTask: (state, action) => {
       if (action.payload) {
-        state.allTasks = state.allTasks.filter(task => task.title !== action.payload.title)
+        state.allTasks = state.allTasks.filter(task => task.id !== action.payload.id)
       } else {
         state.allTasks = []
       }
