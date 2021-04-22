@@ -4,10 +4,78 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale;  
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  monospace;
+}
+
+.todo-container,
+.todo-form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.todo-form input[type="text"] {
+  margin-top: 20px;    
+}
+
+.todo-form input[type="checkbox"] {
+  margin: 0;
+}
+
+.todo-item {
+  display: grid;
+  grid-template-columns: 150px 100px 100px; 
+  grid-column-gap: 5px; 
+  border: 2px solid black;
+  margin: 10px;
+}
+
+.grid-item-1 {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-left: 15px;
+}
+
+.grid-item-2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.grid-item-3 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.grid-item-4 {
+  margin-left: 15px;
+}
+
+.remove-todo-btn {
+  border: 0;
+  padding: 0;
+  background-color: white;
+  width: fit-content;
+  cursor: pointer;
+  margin-right: 15px;
+}
+
+.trashbin-icon {
+  font-size: 30px;
+  background-color: white;
+}
+
+.add-todo-btn {
+  margin-top: 15px;
+  border-radius: 17px;
+  font-size: 20px;
+  cursor: pointer;
 }
