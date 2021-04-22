@@ -33,6 +33,16 @@ const todos = createSlice({
         },
         addTodo: (store, action) => {
             store.items = [...store.items, action.payload]         
+        },
+
+        allDone: (store) => {
+            const Done = store.items.map((todo) => {
+                return {
+                    ...todo,
+                    isComplete: true
+                }
+            })
+            store.items = Done
         }
 
     }

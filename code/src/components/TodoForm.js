@@ -28,7 +28,7 @@ const TodoForm = () => {
     }
 
     return (
-        <form onSubmit={onFormSubmit}>
+        <form nameclass="main" onSubmit={onFormSubmit}>
             <input
                 type="text"
                 value={value}
