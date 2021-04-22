@@ -8,12 +8,12 @@ const todo = createSlice({
   },
   reducers: {
     toggleChecked: (store, action) => {
-      const updatedItems = store.items.map( item => {
-        if(item.id === action.payload) {
+      const updatedItems = store.items.map(item => {
+        if (item.id === action.payload) {
           return {
             ...item,
             isComplete: !item.isComplete
-          } 
+          }
         } else {
           return item
         }
@@ -21,13 +21,17 @@ const todo = createSlice({
       store.items = updatedItems
     },
     deleteItem: (store, action) => {
-      store.items = store.items.filter(item => item.id !== action.payload ) 
+      store.items = store.items.filter(item => item.id !== action.payload)
     },
     addItem: (store, action) => {
       store.items = [...store.items, action.payload]
     },
     clearBoard: (store) => {
       store.items = []
+    },
+    markAllDone: store => {
+      const allDoneItems = store.items.map(item => ({...item, isComplete: true}) )
+      store.items = allDoneItems
     }
   }
 
