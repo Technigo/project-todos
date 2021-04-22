@@ -21,6 +21,7 @@ code {
 main {
   max-width: 500px;
   margin: 0 auto;
+  border: 2px solid #333;
 }
 
 .header {
@@ -41,10 +42,11 @@ main {
 
 .header p {
   font-family: 'Inconsolata', monospace;
-  margin-top: 10px;
-  margin-left:10px;
+  margin:0;
+  margin-top: 5px;
+  margin-left:15px;
   font-weight: bold;
-  font-size: 20px;
+  font-size: 18px;
 }
 
 .completed-and-clear {
