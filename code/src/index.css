@@ -26,6 +26,7 @@ code {
   background-color: lightblue;
   padding: 30px;
   width: auto;
+  border-radius: 5px;
 }
 
 .todo-item {

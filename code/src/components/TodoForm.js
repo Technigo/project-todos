@@ -31,7 +31,7 @@ const TodoForm = () => {
                 value={value}
                 onChange={e => setValue(e.target.value)}
             />
-            <button type="submit">Add todo</button>
+            <button type="submit">Add Task</button>
         </form>
         </>
     )
