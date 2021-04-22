@@ -12,8 +12,7 @@ export const Header =() => {
                     src="https://giphy.com/embed/Gjnpx6nps0yS4" 
                     width="109" 
                     height="78" 
-                    frameBorder="0" 
-                    class="giphy-embed" 
+                    frameBorder="0"  
                     >
                 </iframe>
             <Title>Get Up! You got stuff to do!</Title>
