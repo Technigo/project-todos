@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 import styled from "styled-components";
 
@@ -8,7 +8,6 @@ export const Header =() => {
 
     return (
         <HeaderContainer>
-            <div className="gif-animation">
                 <iframe 
                     src="https://giphy.com/embed/Gjnpx6nps0yS4" 
                     width="109" 
@@ -17,30 +16,42 @@ export const Header =() => {
                     class="giphy-embed" 
                     >
                 </iframe>
-            </div>      
-            <h1>Get Up! You got stuff to do!</h1>
-            <p>{new Date().toLocaleString()}</p>
+            <Title>Get Up! You got stuff to do!</Title>
+            <DateText>{new Date().toLocaleString()}</DateText>
         </HeaderContainer>       
     )
 }
 
+const Title = styled.p`
+    font-weight: 600;
+    font-size: 22px;
+    margin: 0;
+    margin-top: 15px;
+
+    @media (min-width: 768px) {
+            font-size: 30px;
+        }
+`;
+const DateText = styled.p`
+        margin-bottom: 10px;
+        @media (min-width: 768px) {
+            margin-top: 20px;
+        }
+`; 
 
 const HeaderContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top:20px;
-    justify-content: space-between;
-    border-bottom: grey 2px solid; 
-
+    margin-top: 10px;
+    justify-content: center;
+    border-bottom: #D8D8D8 2px solid; 
+    width: 300px;
+    height: 200px;
         @media (min-width: 768px) {
             justify-content: center;
             width: 500px;
             height: 300px;
         }
-
-        @media (min-width: 1024px) {   
-    } 
-
 `;

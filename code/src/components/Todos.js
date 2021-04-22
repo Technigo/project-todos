@@ -1,11 +1,10 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-
-import { DeleteButton } from './DeleteButton';
-import { TodoItem  } from './TodoItem';
-
+import { TodoCounter } from "./TodoCounter";
+import { TodoItem  } from "./TodoItem";
+import { NoTodo } from "./NoTodo";
 
 //TASKLIST
 export const Todos = () => {
@@ -14,47 +13,42 @@ export const Todos = () => {
 if (allTodos.length <= 0) {
     return (
         <MainSection>
-            <div>
-            <p>No To Do</p>
-            </div>
+            <NoTodo />
         </MainSection>
     );
     } else {
-    
     return (
         <MainSection>
         {allTodos.map(todo => (
             <TodosContainer key={todo.id}>
-            <TodoItem todo={todo}></TodoItem>
-            <DeleteButton todo={todo} />
+                <TodoItem todo={todo}></TodoItem>
             </TodosContainer>
         ))}
+        <TodoCounter />
         </MainSection>
     );
     }
 } 
 
-
 const MainSection = styled.section`
     display: flex;
-    width: 90%;
-    height: 300px;
+    width: 300px;
+    height: 170px;
     flex-direction: column;
-    padding: 0;
-
-        @media (min-width: 768px) {
-            height: 500px;
+        @media (min-height: 800px) {
+            height: 300px;
         }
-
-        @media (min-width: 1024px) {   
-    } 
+        @media (min-width: 768px) {
+            height: 400px;
+            width: 480px;
+        }
 `;
+
 const TodosContainer = styled.article`
     display: flex;
     width: 100%;
     background-color: #fff;
     border-bottom: 1px solid #474747;
-    padding: 2px 5px;
-    align-items: f;
+    padding: 5px;
 `;
 

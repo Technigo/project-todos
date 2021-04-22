@@ -1,14 +1,23 @@
-import React from 'react'
+import React from "react";
 
-import './footer.css'
+import styled from "styled-components";
 
 
 export const Footer =() => {
 
     return (
-        <article className="main-wrapper">
+        <Article>
             <p>Made by Ylva Landoff Lindberg</p>
-        </article>
+        </Article>
 
     )
 }
+
+const Article = styled.article`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    height: 90px;
+`; 

@@ -1,26 +1,30 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
+import uniqid from 'uniqid'
 import styled from "styled-components";
 
-// import DatePicker from 'react-date-picker';
-
 import { todos } from '../reducers/todos'
-
 
 
 export const AddTodo = () => {
     const [inputValue, setInputValue] = useState(''); 
     const dispatch = useDispatch();
  
-    const onItemAdd = () => {
-        dispatch(todos.actions.addTodoItem(inputValue));
-        setInputValue('');
-    
-
-
- };
-
+    const onItemAdd = (event) => {
+        event.preventDefault();
+        dispatch(
+            todos.actions.addTodoItem({
+                newTodo: {
+                id:uniqid(),          
+                text: inputValue,
+                isComplete: false
+            },
+        })
+                
+    );
+    setInputValue('');
+};
 
     return (
             <Form>
@@ -39,19 +43,18 @@ export const AddTodo = () => {
 }
 
 const Form = styled.form`
-
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    width: 90%;
+    width: 300px;
 
-      @media (min-width: 768px) {
-        width: 50%
+    @media (min-width: 768px) {
+        width: 400px;
     }
 
     @media (min-width: 1024px) {
-        width: 40%
+        width: 500px;
         font-size: 18px;
     }
 `;
@@ -63,16 +66,23 @@ const SubmitButton = styled.button`
     width: 100%;
     height: 40px;
     font-size: 25px;
+    border: none;
+    background-color: #F3E2A9;
     &:hover {
-            background-color: #A9E2F3;
+            background-color: #D8D8D8;
             cursor: pointer;
     }
+
+        @media (min-width: 768px) {
+        width: 480px;
+    }
+
   `
 const TextInput = styled.input`
     margin-top: 15px;
     border: none;
     border-bottom: dotted 2px grey;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
     height: 40px;
     width: 95%;
     font-size: 16px;
@@ -85,6 +95,7 @@ const TextInput = styled.input`
 
     @media (min-width: 768px) {
         height: 38px;
+        width: 480px;
     }
 
     @media (min-width: 1024px) {

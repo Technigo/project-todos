@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 import styled from "styled-components";
+
 import { todos } from "../reducers/todos";
 
 export const DeleteButton = ({ todo }) => {
@@ -19,11 +20,10 @@ const DeleteTodoButton = styled.button`
     width: 20px;
     height: 20px;
     padding: 2px;
-    padding-top: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 4px;
+    margin-left: 5px;
     font-size: 20px;
     background: ${props => props.background || "#fff"};
     color: grey;
