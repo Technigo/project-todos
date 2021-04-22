@@ -24,6 +24,7 @@ const TodoList = () => {
           complete={item.complete}
           created={item.created}
           editMode={item.editMode}
+          dueDate={item.dueDate}
         />
       ))}
     </Section>

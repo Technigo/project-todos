@@ -2,7 +2,6 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { FaTrashAlt, FaEdit, FaRegWindowClose, FaCheck } from 'react-icons/fa'
-import TodoItem from './TodoItem'
 
 import { tasks } from '../reducers/tasks'
 
@@ -12,17 +11,6 @@ const Wrapper = styled.div`
 `
 
 const Btn = styled.button`
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-`
-const DeleteBtn = styled.button`
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-`
-
-const SaveButton = styled.button`
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -37,10 +25,10 @@ const TodoItemBtns = ({ id, editMode, onSaveEdit }) => {
       {editMode && (
         <>
           <Btn type="button" onClick={onSaveEdit}>
-            <FaCheck color="#8B98F9" size="30px" />
+            <FaCheck color="#8B98F9" size="25px" />
           </Btn>
           <Btn type="button" onClick={() => dispatch(tasks.actions.toggleEdit(id))}>
-            <FaRegWindowClose color="#8B98F9" size="30px" />
+            <FaRegWindowClose color="#8B98F9" size="25px" />
           </Btn>
         </>
       )}

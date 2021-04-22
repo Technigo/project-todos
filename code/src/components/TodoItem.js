@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import moment from 'moment'
-import { FaTrashAlt, FaEdit, FaRegWindowClose, FaCheck } from 'react-icons/fa'
 
 import TodoItemBtns from './TodoItemBtns'
 import { tasks } from '../reducers/tasks'
@@ -84,6 +83,7 @@ const Description = styled.p`
 `
 
 const TodoInput = styled.input`
+  font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
   margin: 0;
   padding: 5px;
@@ -99,10 +99,10 @@ const Date = styled.span`
   font-size: 12px;
 `
 
-const TodoItem = ({ id, text, complete, created, editMode }) => {
+const TodoItem = ({ id, text, complete, created, editMode, dueDate }) => {
   const [description, setDescription] = useState(text)
   const dispatch = useDispatch()
-  const taskCreated = moment(created).format('MMM Do')
+  const taskDueDate = moment(dueDate).format('MMM Do')
 
   const onInputChange = (event) => {
     setDescription(event.target.value)
@@ -125,7 +125,7 @@ const TodoItem = ({ id, text, complete, created, editMode }) => {
       
       <Wrapper>
         <TodoItemBtns id={id} editMode={editMode} onSaveEdit={onSaveEdit} />
-        <Date>{taskCreated}</Date>
+        <Date>Due: {taskDueDate}</Date>
       </Wrapper>
 
     </Container>

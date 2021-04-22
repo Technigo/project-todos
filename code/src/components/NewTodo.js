@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { DatePicker, DatePickerInput } from 'carbon-components-react'
+import 'carbon-components/css/carbon-components.min.css'
 
-//import CustomDayPicker from './CustomDayPicker'
 import { tasks } from '../reducers/tasks'
 
 const Container = styled.div`
   display: flex;
-
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
 `
@@ -16,7 +16,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-end;
 `
 
 const TodoBtn = styled.button`
@@ -28,27 +28,52 @@ const TodoBtn = styled.button`
   font-size: 30px;
   line-height: 30px;
   color: #fff;
+  align-self: center;
+  margin-right: 10px;
 `
 const TodoInput = styled.input`
   box-sizing: border-box;
   margin: 0;
   padding: 5px;
-  width: 80%;
+  width: 288px;
   height: 38px;
   border: none;
   border-bottom: 2px solid #8B98F9;
-  margin-left: 10px;
   font-size: 20px;
+
+  &::placeholder {
+    color: #8B98F9;
+    padding-left: 5px;
+  }
+
+  @media (min-width: 998px) {
+    margin-left: 10px;
+    width: 60%;
+  }
 `
 
-const DatePickerContainer = styled.div`
-  margin-left: auto;
-  width: 50px;
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  
+
+  @media (min-width: 998px) {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
 `
 
+const DatePickerWrapper = styled.div`
+ @media (min-width: 998px) {
+    margin-right: 40px;
+ }
+`
 const NewTodo = () => {
   const dispatch = useDispatch()
 
+  const [dueDate, setDueDate] = useState(new Date())
   const [newTodoInput, setNewTodoInput] = useState('')
   
 
@@ -58,19 +83,40 @@ const NewTodo = () => {
 
   const onButtonPress = (event) => {
     event.preventDefault()
-    dispatch(tasks.actions.postNewTodo(newTodoInput))
+    dispatch(tasks.actions.postNewTodo({ description: newTodoInput, dueDate: dueDate }))
     setNewTodoInput('')
+  }
+
+  const onDateChange = (event) => {
+    setDueDate(event.target.value)
   }
 
   return (
     <Container>
       <Form>
-        <TodoInput 
-          type="text"
-          placeholder="New task"
-          value={newTodoInput}
-          onChange={onInputChange}
-        />
+        <Wrapper>
+          <TodoInput 
+            type="text"
+            placeholder="New task"
+            value={newTodoInput}
+            onChange={onInputChange}
+          />
+          <DatePickerWrapper>
+            <DatePicker light className="testing" dateFormat="m/d/Y" datePickerType="single">
+              <DatePickerInput
+                hideLabel
+                id="date-picker-default-id"
+                className="testing-input"
+                size="md"
+                placeholder="due date"
+                labelText="Due Date"
+                type="text"
+                //value={dueDate}
+                onChange={onDateChange}
+              />
+            </DatePicker>
+          </DatePickerWrapper>
+        </Wrapper>
         <TodoBtn 
           type="button"
           onClick={onButtonPress}
