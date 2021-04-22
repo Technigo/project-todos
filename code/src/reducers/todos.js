@@ -1,11 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  items: [
-/*     { id: 1, description: 'First task', isComplete: false },
-    { id: 2, description: 'Second task', isComplete: true },
-    { id: 3, description: 'Third task', isComplete: false } */
-  ],
+  items: []
 }
 
 const todos = createSlice({
@@ -35,6 +31,15 @@ const todos = createSlice({
     },
     removeToDo: (store, action) => {
       store.items = store.items.filter((todo) => todo.id !== action.payload)
+    },
+    removeAllTodos: (store) => {
+      const removeAll = store.items.map((todo) => {
+          return {
+              ...todo, 
+              isComplete: !todo.isComplete
+          }
+      })
+      store.items = removeAll
     }
   }
 })
