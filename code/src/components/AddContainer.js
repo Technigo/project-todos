@@ -14,7 +14,10 @@ const StyledSection = styled.section`
   flex-direction: column;
   padding: 30px;
   margin-top: auto;
-  box-shadow: 0 0 10px #8d8f96;
+  box-shadow: 
+  -6px 0  transparent,
+  6px 0 transparent,
+  0 -7px 10px -9px #8d8f96;
 `
 
 const StyledButton = styled.button`
@@ -62,7 +65,6 @@ const AddContainer = () => {
 
   const handleDateChange = (event) => {
     setDueDate(event)
-    console.log(dueDate)
   }
 
   const handleSubmit = (event) => {

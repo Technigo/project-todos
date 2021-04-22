@@ -12,7 +12,10 @@ const Container = styled.header`
   align-items: center;
   padding: 10px;
   box-sizing: border-box;
-  box-shadow: 0 0 10px #8d8f96;
+  box-shadow: 
+  -6px 0  transparent,
+  6px 0 transparent,
+  0 7px 10px -9px #8d8f96;
 `
 
 const HeaderBottom = styled.div`

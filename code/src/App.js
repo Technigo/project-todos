@@ -12,13 +12,26 @@ import tasks from "reducers/tasks"
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Poppins', sans-serif;
-    background: linear-gradient(0deg, rgba(236,219,199,0.8) 26%, rgba(185,191,186,0.8) 100%);
     margin: 0;
     color: #03011f;
+    display: flex;
+    justify-content: center;
+  }
+  body > div {
+    width: 100%;
+    background: linear-gradient(0deg, rgba(236,219,199,0.8) 26%, rgba(185,191,186,0.8) 100%);
   }
   button {
     font-family: 'Poppins', sans-serif;
     color: #03011f;
+  }
+  @media (min-width: 450px) {
+    body > div {
+      margin: 20px 0;
+      max-width: 450px;
+      border: 1px solid #03011f;
+      border-radius: 50px;
+    }
   }
 `
 
