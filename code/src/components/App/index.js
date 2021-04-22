@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { createMuiTheme, ThemeProvider } from '@material-ui/core/styles';
+import { createMuiTheme, ThemeProvider, responsiveFontSizes } from '@material-ui/core/styles';
 import { CssBaseline } from '@material-ui/core';
 import store from 'store';
 // import Main from 'components/Main';
@@ -9,7 +9,7 @@ import store from 'store';
 // import Settings from 'pages/Settings';
 import Pages from 'pages'
 
-const theme = createMuiTheme({
+let theme = createMuiTheme({
   overrides: {
     MuiCssBaseline: {
       '@global': {
@@ -35,7 +35,7 @@ const theme = createMuiTheme({
     type: 'dark'
   }
 });
-
+theme = responsiveFontSizes(theme)
 export default () => {
   return (
     <Provider store={store}>

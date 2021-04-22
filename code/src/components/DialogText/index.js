@@ -9,8 +9,10 @@ import {
   DialogTitle
 } from '@material-ui/core';
 import { addList } from 'store/tasks';
+import { useStyles } from './style'
 
 export default () => {
+  const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [value, setValue] = React.useState('');
   const dispatch = useDispatch();
@@ -29,7 +31,7 @@ export default () => {
 
   return (
     <>
-      <Button variant="contained" color="primary" onClick={toggleDialog}>
+      <Button className={classes.button} variant="contained" color="primary" onClick={toggleDialog}>
         New Project
       </Button>
       <Dialog open={open} onClose={toggleDialog} aria-labelledby="form-dialog-title">
@@ -37,6 +39,7 @@ export default () => {
         <DialogContent>
           <TextField
             autoFocus
+            className={classes.textField}
             value={value}
             onChange={(e) => setValue(e.target.value)}
             onKeyPress={handleSubmit}

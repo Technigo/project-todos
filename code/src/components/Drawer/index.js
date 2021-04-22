@@ -1,80 +1,58 @@
 import React, { useState } from 'react';
-import { NavLink } from 'react-router-dom';
+// import { NavLink } from 'react-router-dom';
+import { useTheme } from '@material-ui/core/styles';
 import {
   IconButton,
   Drawer,
   List,
-  ListItem,
-  ListItemText,
-  ListItemIcon,
-  ListItemSecondaryAction,
-  Divider
+  // ListItem,
+  // ListItemText,
+  // ListItemIcon,
+  // ListItemSecondaryAction,
+  Divider,
+  Hidden,
+  useMediaQuery
 } from '@material-ui/core';
 import {
   Menu,
-  ChevronLeft,
-  WbSunnyOutlined,
-  FolderOpenOutlined
+  ChevronLeft
+  // WbSunnyOutlined,
+  // FolderOpenOutlined
 } from '@material-ui/icons';
 import { useSelector } from 'react-redux';
-import Dialog from 'components/DialogText';
-import Options from 'components/Options';
+import NewProjectDialog from 'components/DialogText';
+import DrawerItem from 'components/DrawerItem';
+// import Options from 'components/Options';
 import { useStyles } from './style';
 
-const DrawerItem = ({ name, slug, toggleDrawer }) => {
-  const classes = useStyles();
-  const [linkProps, setLinkProps] = useState({ path: '/' });
-  React.useEffect(() => {
-    if (name) {
-      setLinkProps({ text: name, path: `/projects/${slug}`, icon: 'cog' });
-    } else {
-      setLinkProps({ text: 'My Day', path: '/', icon: 'sun' });
-    }
-  }, [name, slug]);
-  return (
-    <ListItem
-      button
-      onClick={toggleDrawer}
-      component={NavLink}
-      to={linkProps.path}
-      className={classes.link}
-      activeClassName={classes.activeLink}
-      exact>
-      <ListItemIcon>
-        {linkProps.icon === 'sun' && <WbSunnyOutlined />}
-        {linkProps.icon === 'cog' && <FolderOpenOutlined />}
-      </ListItemIcon>
-      <ListItemText primary={linkProps.text} />
-      {name && (
-        <ListItemSecondaryAction>
-          <Options type="project" listSlug={slug} />
-        </ListItemSecondaryAction>
-      )}
-    </ListItem>
-  );
-};
-
 export default () => {
-  const projects = useSelector((store) => store.tasks.lists.slice(1));
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
   const classes = useStyles();
+  const projects = useSelector((store) => store.tasks.lists.slice(1));
   const [open, setOpen] = useState(false);
+
   const toggleDrawer = () => {
     setOpen(!open);
   };
 
   return (
     <>
-      <IconButton
-        aria-label="open drawer"
-        onClick={toggleDrawer}
-        className={classes.menuButton}>
-        <Menu />
-      </IconButton>
-      <Drawer onClose={toggleDrawer} anchor="left" open={open}>
+      <Hidden mdUp>
+        <IconButton
+          aria-label="open drawer"
+          onClick={toggleDrawer}
+          className={classes.menuButton}>
+          <Menu />
+        </IconButton>
+      </Hidden>
+      <Drawer className={classes.root} onClose={toggleDrawer} anchor="left" open={open} variant={matches ? 'permanent' : 'temporary'}>
         <div className={classes.drawerHeader}>
-          <IconButton onClick={toggleDrawer}>
-            <ChevronLeft />
-          </IconButton>
+          <Hidden mdUp>
+            <IconButton onClick={toggleDrawer}>
+              <ChevronLeft />
+            </IconButton>
+          </Hidden>
         </div>
         <List className={classes.drawer}>
           <DrawerItem toggleDrawer={toggleDrawer} />
@@ -82,10 +60,7 @@ export default () => {
           {projects.map((project) => (
             <DrawerItem key={project.slug} toggleDrawer={toggleDrawer} {...project} />
           ))}
-          {/* <Button onClick={() => dispatch(addList('projectsssss'))}>
-              new Project1
-          </Button> */}
-          <Dialog />
+          <NewProjectDialog className={classes.newProject} />
         </List>
       </Drawer>
     </>
