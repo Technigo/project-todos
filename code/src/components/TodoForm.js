@@ -8,7 +8,7 @@ import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid'
 
 import todos from '../reducers/todos'
-
+import './todoForm.css'
 const TodoForm = () => {
     const [value, setValue] = useState('')
 
@@ -30,7 +30,7 @@ const TodoForm = () => {
     }
 
     return (
-        <form onSubmit={onFormSubmit}>
+        <form className="form" onSubmit={onFormSubmit}>
             <input
                 type="text"
                 value={value}
@@ -38,7 +38,7 @@ const TodoForm = () => {
 
 
             />
-            <button type="submit">Add todo</button>
+            <button nameClass="btn-submit" type="submit">Add task</button>
         </form>
     )
 }

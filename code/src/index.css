@@ -5,19 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./paper_wall.jpg');
+  background-image: url('./images/paper_wall51.jpg');
   background-repeat: no-repeat;
+  background-position: center;
+  height: 200vw;
   background-size: cover;
-  
-  height: 800px;
-  /*background-color: rgb(207, 240, 229);*/
+  overflow: hidden;
   color: navy;
-  
-
-
-  
-  
-
 }
 
 .main {
@@ -38,7 +32,7 @@ code {
 .todo-item {
   display: flex;
   align-items: center;
-  margin-left: 50px;
+  
 
   
   
@@ -46,17 +40,22 @@ code {
 
 .time {
   display: flex;
+  font-style: italic;
+  font-size: 12px;
 
 }
 
-.btn-delete {
-  background-color: rgb(245, 206, 248);
-  border-radius: 2px;
-  border: none;
+.task-description {
+  font-size: 20px;
+  font-weight: bold;
+
 }
-
-
 
 .counter {
   display: none;
+}
+
+p span {
+  color: red;
+  font-weight:700;
 }

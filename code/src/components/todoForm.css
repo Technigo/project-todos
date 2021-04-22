@@ -1,0 +1,15 @@
+.btn-delete {
+    background-color: rgb(242, 206, 245);
+    margin-left: 5px;
+    border-radius: 2px;
+    border: none;
+  }
+  
+  .form {
+    margin-top: 20px;
+  }
+  
+  .btn-submit {
+    background-color: aquamarine;
+  }
+  

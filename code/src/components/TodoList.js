@@ -32,7 +32,7 @@ const TodoList = () => {
                             
                             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
                         />
-                        <p>{todo.description}</p>
+                        <p className="task-description">{todo.description}</p>
                         
                         
 
@@ -66,9 +66,9 @@ const TodoList = () => {
                 
             <p>SUMMARY</p>    
             <p>You have {items.length} tasks on your todo list</p>   
-            <p>Undone: {count}</p>
+            <p><span>Tasks left: {count}</span></p>
 
-            <button onClick={onClickAllDone}>
+            <button nameClass="all-done" onClick={onClickAllDone}>
                 All Completed!
             </button>
 

@@ -18,13 +18,12 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <div className="main">
+      <h2>Todo list</h2>
+
       <Provider store={store}>
         <TodoForm />
         <TodoList />
-
       </Provider>
-
     </div>
-    
   )
 }
