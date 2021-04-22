@@ -2,6 +2,7 @@
 
 /* eslint-disable linebreak-style */
 
+import moment from 'moment'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid'
@@ -19,7 +20,8 @@ const TodoForm = () => {
         const newTodo = {
             id: uniqid(), 
             description: value,
-            isComplete: false
+            isComplete: false,
+            timeCreated: moment().format('MMMM Do YYYY, h:mm a')
         }
 
         dispatch(todos.actions.addTodo(newTodo))
@@ -28,7 +30,7 @@ const TodoForm = () => {
     }
 
     return (
-        <form nameclass="main" onSubmit={onFormSubmit}>
+        <form onSubmit={onFormSubmit}>
             <input
                 type="text"
                 value={value}

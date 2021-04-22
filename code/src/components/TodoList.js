@@ -12,28 +12,49 @@ const TodoList = () => {
     const dispatch = useDispatch()
 
     const onClickAllDone = () => {
-        dispatch(todos.actions.allDone())
+        const userChoice = confirm("Are just lazy or you worked really hard? Confirm if everything is done")
+        if (userChoice == true) {
+            dispatch(todos.actions.allDone())        
+        } else {
+            alert("Ok, keep working hard ...  ⚒")
+
+        }
     }
     
     return (
         <div>
             {items.map(todo => (
-                <div key={todo.id} className="todo-item">
-                    <input
-                        type="checkbox"
-                        checked={todo.isComplete}
+                <div key={todo.id} className="todo-items">
+                    <div className="todo-item">
+                        <input
+                            type="checkbox"
+                            checked={todo.isComplete}
+                            
+                            onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+                        />
+                        <p>{todo.description}</p>
                         
-                        onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-                    />
-                    <p>{todo.description}</p>
+                        
 
-                    <button className="btn-delete" onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
-                        <span className="trash-item">🗑</span>   
-                    </button>  
-                    <div className="counter">
-                        {todo.isComplete ? count = count: count+=1}
+                        <button className="btn-delete" onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
+                            <span className="trash-item">🗑</span>   
+                        </button>  
+
+                        
+                        
+
+                        <div className="counter">
+                            {todo.isComplete ? count = count: count+=1}
+                        </div>
+
 
                     </div>
+                    
+
+                    <div className ="time">
+                        task created: {todo.timeCreated}
+                    </div>
+
 
                 </div>
             ))}
@@ -42,7 +63,8 @@ const TodoList = () => {
            
 
                     
-
+                
+            <p>SUMMARY</p>    
             <p>You have {items.length} tasks on your todo list</p>   
             <p>Undone: {count}</p>
 

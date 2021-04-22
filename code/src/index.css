@@ -5,6 +5,14 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url('./paper_wall.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  
+  height: 800px;
+  /*background-color: rgb(207, 240, 229);*/
+  color: navy;
+  
 
 
   
@@ -12,6 +20,12 @@ body {
 
 }
 
+.main {
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
 
 code {
@@ -19,14 +33,20 @@ code {
     monospace;
 }
 
-.checkbox-style {
-  visibility: none;
-  border-radius: 50%;
-}
+
 
 .todo-item {
   display: flex;
   align-items: center;
+  margin-left: 50px;
+
+  
+  
+}
+
+.time {
+  display: flex;
+
 }
 
 .btn-delete {
