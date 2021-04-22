@@ -19,6 +19,16 @@ code {
   width: 60px;
   height: auto;
   margin: 20px auto;
+  animation: rotation 1s infinite alternate ease;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(-25deg);
+  }
+  to {
+    transform: rotate(25deg);
+  }
 }
 
 .task-complete {
