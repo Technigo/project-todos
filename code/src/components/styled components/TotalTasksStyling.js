@@ -7,7 +7,7 @@ export const DeleteAllButton = styled.button`
     margin-bottom: 15px;
     border: none;
     border-radius: 10px;
-    background-color: #6979f8;
+    background-color: rgba(53,80,82, 0.9);
     color: white;
     &:hover {
         transform: scale(1.1);

@@ -15,7 +15,7 @@ export const MainAppContainer = styled.div`
     word-break: break-word;
 `
 export const AppHeader = styled.div`
-    background-color: rgba(123,104,238,1);
+    background-color: rgba(34,51,59, 0.8);
     width: 100%;
     margin-bottom: 25px;
     border-radius: 5px 5px 0 0;

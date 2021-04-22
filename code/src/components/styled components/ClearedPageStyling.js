@@ -10,8 +10,9 @@ export const PlaceholderPage = styled.div`
     border-radius: 10px;
     width: 80%;
     padding: 10px;
-    background-color: whitesmoke;
+    background-color: rgba(234,224,213,0.3);
 `
+
 export const BoldSpan = styled.span`
     font-weight: bold;
 `

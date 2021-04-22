@@ -9,7 +9,7 @@ export const TodoTask = styled.li`
     border-radius: 5px;
     align-items: center;
     padding: 10px 0 10px 0;
-    background-color: whitesmoke;
+    background-color: rgba(234,224,213,0.3);
 `
 
 export const TaskCheckboxContainer = styled.div`
