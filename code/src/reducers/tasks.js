@@ -27,8 +27,13 @@ const tasks = createSlice({
         task.id !== action.payload);
         store.items = itemsAfterRemoval;
     },
-    setAllTaskstoCompleted: (store, action) => {
-      const itemsAllCompleted = store.items.forEach (task => task.isComplete = true);
+    setAllTaskstoCompleted: (store) => {
+      const itemsAllCompleted = store.items.map((task) => {
+        return {
+          ...task,
+          isComplete: !task.isComplete
+        }
+      })
       store.items = itemsAllCompleted;
     },
   }
