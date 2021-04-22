@@ -16,8 +16,7 @@ const Header = () => {
       <h1>Vacay Planner!</h1>
       <div className='info-container'>
         <p>{date}</p>
-        <p>{undoneTasks} to-do's</p>
-        
+        <p>{undoneTasks} to-do's</p> 
       </div>
     </div>
   )

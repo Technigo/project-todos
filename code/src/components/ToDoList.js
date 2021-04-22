@@ -8,7 +8,7 @@ import NoToDos from 'components/NoToDos'
 const ToDoList = () => {
 
   const tasks = useSelector((store) => store.todos.tasks)
-  
+
   const noTasks = (tasks.length === 0)
   
   const dispatch = useDispatch()
@@ -29,7 +29,8 @@ const ToDoList = () => {
                 checked={todo.isComplete}
                 onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
               />
-              <span className='checkmark'></span>
+              <span className='checkmark'>
+              </span>
             </label>
 
             <div className='text-box'>
