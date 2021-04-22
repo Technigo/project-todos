@@ -186,6 +186,11 @@ height: 18px;
   opacity: 0.8;
   color: white;
   font-size: 12px;
+  padding: 0;
+  text-align: center;
+  text-align: center !important;
+  text-align: -moz-center !important;
+  text-align: -webkit-center !important;
 }
 
 .remove:hover {
