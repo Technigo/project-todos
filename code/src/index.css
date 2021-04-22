@@ -41,16 +41,20 @@ code {
   padding: 0 50px;
 }
 
-.task-counter {  
+.counter-container p{  
   margin: 3px 0;
 }
 
 .todo-form input[type="text"] {
-  margin-top: 20px;    
+  margin-top: 20px; 
+  border-radius: 7px;
+  width: 200px;
+  height: 30px;
 }
 
-.todo-form input[type="checkbox"] {
+.checkbox-complete input[type=checkbox] {
   margin: 0;
+  cursor: pointer;
 }
 
 .item-container {
@@ -74,7 +78,7 @@ code {
 
 .todo-item:hover {  
   border-left: 5px solid #350bf0;
-  transform: scale(1.1);  
+  transform: scale(1.05);  
 }
 
 .grid-item-1 {
@@ -100,12 +104,16 @@ code {
   margin-left: 15px;
 }
 
-.remove-todo-btn {
-  border: 0;
-  padding: 0;  
+.remove-todo-btn {  
   width: fit-content;
   cursor: pointer;
   margin-right: 15px;
+  border: 0;
+  background-color: transparent;
+}
+
+.remove-todo-btn:hover {
+  transform: scale(1.1);
 }
 
 .delete-icon {
