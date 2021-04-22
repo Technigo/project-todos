@@ -10,6 +10,11 @@ const HeaderWrapper = styled.section`
   padding: 20px;
   width: 80%;
   text-align: center;
+  @media (min-width:768px) {
+    max-width: 500px;
+  }
+  
+  
 `
 const HeaderText = styled.h1`
   font-family: 'Shadows Into Light', cursive;

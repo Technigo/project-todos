@@ -6,10 +6,17 @@ import styled from 'styled-components'
 import todos from '../reducers/todos'
 
 const Form = styled.form`
-  width:80%;
+  width:90%;
   display:flex;
+  flex-direction:column;
   align-items:center;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  border: solid 1px red;
+  margin-top:30px;
+  @media (min-width:768px) {
+    max-width: 500px;
+  }
+  
 `
 
 const Todoinput = styled.input`
@@ -20,7 +27,8 @@ const Todoinput = styled.input`
   border-bottom: double #5c5756;
   color:#363232;
   font-family: 'Shadows Into Light', cursive;
-  font-size:20px;
+  font-size:30px;
+  text-align:center;
   padding:0px;
 `
 const AddButton = styled.button`
@@ -29,8 +37,13 @@ const AddButton = styled.button`
   border:solid 2px #b67764;
   height: 30px;
   border-radius:10px;
-  font-family: 'Mukta', sans-serif;
-  padding:3px;
+  font-family: 'Shadows Into Light', cursive;
+  font-size:20px;
+  padding:auto;
+  text-align:center;
+  width:80px;
+  height:30px;
+  margin-top:15px;
 `
 
 export const TodoForm = () => {
@@ -55,12 +68,12 @@ export const TodoForm = () => {
     <Form onSubmit={onFormSubmit}>
       <Todoinput
         type='text'
-        placeholder='Add todo'
+        placeholder='What todo?'
         value={value}
         onChange={e => setValue(e.target.value)}
       />
       
-      <AddButton type='submit'>Add todo</AddButton>
+      <AddButton type='submit'>Add it</AddButton>
     </Form>
   )
 }
