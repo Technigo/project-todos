@@ -24,13 +24,18 @@ export const TaskInput = () => {
 
   return (
     <>
-      <form onSubmit={onFormSubmit}>
+      <form onSubmit={onFormSubmit} className="input-wrapper">
         <input
+          placeholder="Add task..."
+          className="task-input"
           type="text"
           value={task}
+          maxLength="50"
           onChange={(e) => setTask(e.target.value)}
         />
-        <button type="submit">+</button>
+        <button className="add-button" type="submit">
+          +
+        </button>
       </form>
     </>
   );
