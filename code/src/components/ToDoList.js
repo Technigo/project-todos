@@ -8,8 +8,8 @@ import NoToDos from 'components/NoToDos'
 const ToDoList = () => {
 
   const tasks = useSelector((store) => store.todos.tasks)
+  
   const noTasks = (tasks.length === 0)
-  console.log(noTasks)
   
   const dispatch = useDispatch()
 

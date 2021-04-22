@@ -8,6 +8,7 @@ const Input = () => {
 
   const [value, setValue] = useState('')
 
+
   const dispatch = useDispatch()
 
   const onFormSubmit = (e) => {
@@ -26,18 +27,29 @@ const Input = () => {
   return (
     <>
       <div className='ending-div'>
+        <div className='button-wrapper'>
         <button
           type='button'
           onClick={() => dispatch(todos.actions.allDone())}
           className='done-button'>
             All done
         </button>
+
         <button
           type='button'
           onClick={() => dispatch(todos.actions.allUndone())}
           className='done-button'>
             Reset
         </button>
+        </div>
+
+        <button
+          type='button'
+          onClick={() => dispatch(todos.actions.clearAll())}
+          className='clear-button'>
+            Remove all
+        </button>
+
       </div>
 
       <form

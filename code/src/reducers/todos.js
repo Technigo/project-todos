@@ -41,7 +41,11 @@ const todos = createSlice({
       store.tasks.map((task) => (
         task.isComplete = false
       ))
-    }
+    },
+    clearAll: (store) => {
+      let emptyArray = store.tasks
+      emptyArray.length = 0
+    } 
   }
 })
 
