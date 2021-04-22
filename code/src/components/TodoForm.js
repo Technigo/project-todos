@@ -1,4 +1,3 @@
-import moment from 'moment'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid'
@@ -14,9 +13,9 @@ const TodoForm = () => {
     const newTodo = {
       id: uniqid(),
       description: value,
-      isComplete: false,
-      created: moment(Date)       
+      isComplete: false,           
     }
+
     dispatch(todos.actions.addTodo(newTodo))
     setValue('')
   }
@@ -26,11 +25,13 @@ const TodoForm = () => {
     <input 
       type="text"
       value={value}
-      onChange={e => setValue(e.target.value)}
+      onChange={e => setValue(e.target.value)} 
+      placeholder="Write your tasks here..."
     />
     <button
       className="add-todo-btn"
-      type="submit"      
+      type="submit" 
+      disabled={!value}     
     >Add todo
     </button> 
   </form>
