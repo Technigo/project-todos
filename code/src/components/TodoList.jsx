@@ -18,6 +18,7 @@ const Task = styled.div`
   border: 1px solid #2C2E73;
   border-radius: 10px;
   margin-top: 5px;
+  padding: 10px;
 `
 
 const StyledParagraph = styled.p`
@@ -32,6 +33,7 @@ const TrashButton = styled.button`
   background: transparent;
   border: none;
   padding: 5px;
+  font-size: 20px;
   &:hover {
     opacity: 0.5;
     cursor: pointer;
