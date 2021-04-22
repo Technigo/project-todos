@@ -13,4 +13,9 @@ code {
     monospace;
 }
 
+.todo-item {
+  display: flex;
+  align-items: center;
+}
+
 

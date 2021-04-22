@@ -6,7 +6,7 @@ import todos from './reducers/todos'
 // import users from './reducers/users' example if more slices
 import { Header } from './components/Header'
 import TodoList from './components/TodoList'
-import { AddTask } from 'components/AddTask'
+import { TodoForm } from 'components/TodoForm'
 
 
 const reducer = combineReducers({
@@ -20,8 +20,8 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
+      <TodoForm />
       <TodoList />
-      <AddTask />
     </Provider>
   )
 }
