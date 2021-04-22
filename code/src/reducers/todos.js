@@ -4,12 +4,12 @@ const todos = createSlice({
   name: 'todos', //good to name the same as a variable
   initialState: {
     tasks: [
-      { id: 1, description: 'First taskFirst task First taskFirst taskFirst task', isComplete: false },
-      { id: 2, description: 'Second task', isComplete: false },
-      { id: 3, description: 'Third task', isComplete: false },
-      { id: 4, description: 'Third task', isComplete: false },
-      { id: 5, description: 'Third task', isComplete: false },
-      { id: 6, description: 'Third task', isComplete: false }
+      { id: 1, description: '1aaaaaaaaaaaa', isComplete: false },
+      { id: 2, description: '2aaaaaaaaaaa', isComplete: false },
+      { id: 3, description: '3aaaaaaaaaaaaaaaaa', isComplete: false },
+      { id: 4, description: '4aaaaaaaaaaaaaaaaaaaaaaaaa', isComplete: false },
+      { id: 5, description: '5aaaaaaaaaaaa', isComplete: false },
+      { id: 6, description: '6aaaaaaaaaaaaaaaaaaa', isComplete: false }
     ]
   },
   reducers: {//methods/actions to manipulate the store
@@ -24,11 +24,16 @@ const todos = createSlice({
           return task
         }
       })
-      store.tasks = updatedTasks
-  },
-    addTask: (store, action) => {//store is passed by default by Redux
-      const addTask = store.tasks.push()
-    }
+      store.tasks = updatedTasks//immutable approach
+    },
+    addTask: (store, action) => {
+      store.tasks = [...store.tasks, action.payload]
+    },
+    deleteTask: (store, action) => {
+      const decreasedTasks = store.tasks.filter(task => action.payload !== task.id)
+      store.tasks = decreasedTasks//immutable approach
+      
+    },
 }})
 
 export default todos

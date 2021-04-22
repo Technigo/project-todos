@@ -2,10 +2,13 @@
 
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Roboto', sans-serif;;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #6bb9fe;
+  background-color: #f5cebe;
+  background-image: radial-gradient(#325288 2px, transparent 2px);
+  background-size: 40px 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -21,7 +24,7 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 25px;
-  box-shadow: 20px 20px 50px #3681c2;
+  box-shadow: 20px 20px 40px;
 }
 
 
@@ -37,6 +40,12 @@ body {
 
 .task-description {
   margin-left: 10px;
+}
+
+.task-description-done {
+  margin-left: 10px;
+  text-decoration: line-through;
+  color: #b7b7b7;
 }
 
 

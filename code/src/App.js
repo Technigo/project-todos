@@ -6,6 +6,7 @@ import todos from './reducers/todos'
 import TodoList from '../src/components/TodoList'
 import AddTodo from '../src/components/AddTodo'
 import Header from '../src/components/Header'
+import ProgressBar from '../src/components/ProgressBar'
 
 
 const reducer = combineReducers({
@@ -18,6 +19,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
+      <ProgressBar />
       <AddTodo />
       <TodoList />
     </Provider>

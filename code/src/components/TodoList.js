@@ -10,7 +10,7 @@ const DeleteButton = styled.button`
   width: 20px;
   height: 20px;
   border: none;
-  background-color: #ff3801;
+  background-color: #9c9c9c;
   color: #fff; 
   font-size: 22px;
   padding: 0;
@@ -35,10 +35,14 @@ const TodoList = () => {
               checked={task.isComplete}
               onChange={() => dispatch(todos.actions.toggleComplete(task.id))}
             />
-            <span className='task-description' key={task.id}>{task.description}</span>
+            <span className={task.isComplete === true ? 'task-description-done' : 'task-description'} key={task.id}>{task.description}</span>
           </div>
           <div>
-            <DeleteButton>-</DeleteButton>
+            <DeleteButton
+              onClick={() => dispatch(todos.actions.deleteTask(task.id))}
+            >
+              -
+            </DeleteButton>
           </div>
         </div>
       ))}
