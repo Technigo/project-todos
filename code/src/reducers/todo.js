@@ -25,6 +25,9 @@ const todo = createSlice({
     },
     addItem: (store, action) => {
       store.items = [...store.items, action.payload]
+    },
+    clearBoard: (store) => {
+      store.items = []
     }
   }
 

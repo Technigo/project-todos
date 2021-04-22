@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import uniqid from 'uniqid'
 import { useDispatch } from 'react-redux'
 import { Fab } from '@material-ui/core'
-import { Add, Close } from '@material-ui/icons'
+import { Add, Close, Schedule } from '@material-ui/icons'
 import todo from '../reducers/todo'
 // import { MuiPickersUtilsProvider, DateTimePicker } from '@material-ui/pickers'
 // import DateFnsUtils from '@date-io/date-fns';
@@ -11,11 +11,15 @@ import todo from '../reducers/todo'
 const TodoForm = () => {
   const dispatch = useDispatch()
 
+  const iconStyle = {
+     color: "#596267", 
+     marginRight: "3px",
+     fontSize: "16px"
+  }
   const [newTask, setNewTask] = useState("")
   const [deadline, setDeadline] = useState("")
   const [visible, setVisible] = useState(false)
 
-  console.log(deadline)
   const onTaskAdd = (event) => {
     setNewTask(event.target.value)
   }
@@ -42,7 +46,7 @@ const TodoForm = () => {
           onClick={() => setVisible(!visible)}
         >
           {visible ? <Close /> : <Add />}
-      </Fab>
+        </Fab>
       </div>
       <form onSubmit={onSubmit} className={`form ${visible && 'visible'}`} >
         <input
@@ -53,6 +57,7 @@ const TodoForm = () => {
           placeholder="✎ Write here ..."
         />
         <label htmlFor="date-picker" className="date-label">
+          <Schedule style={iconStyle} />
           Set the deadline (optional)
         </label>
         <input
@@ -63,7 +68,7 @@ const TodoForm = () => {
           onChange={(e) => setDeadline(e.target.value)}
         />
         <div className="calendar-container">
-        {/* <MuiPickersUtilsProvider utils={DateFnsUtils} locale={enLocale}>
+          {/* <MuiPickersUtilsProvider utils={DateFnsUtils} locale={enLocale}>
           <DateTimePicker
             value={deadline}
             onChange={setDeadline}
