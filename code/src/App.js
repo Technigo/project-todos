@@ -7,6 +7,7 @@ import todos from "./reducers/todos";
 import { ToDoList } from "./components/ToDoList";
 import { TaskInput } from "./components/TaskInput";
 import { Header } from "./components/Header";
+import { ClearButton } from "components/ClearButton";
 
 const reducer = combineReducers({
   todos: todos.reducer,
@@ -21,6 +22,7 @@ export const App = () => {
         <Header />
         <TaskInput />
         <ToDoList />
+        <ClearButton />
       </div>
     </Provider>
   );

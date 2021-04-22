@@ -15,8 +15,8 @@ code {
 .main {
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  background: no-repeat center/150% url("./assets/background.jpg");
+  background: url("./assets/background.jpg") no-repeat center fixed;
+  background-size: 100% 100%;
 }
 
 .header {
@@ -56,8 +56,6 @@ code {
 
 
 /* TASK */
-
-
 .task {
   background-color: #F2EEDA;
   display: flex;
@@ -88,6 +86,20 @@ code {
   font-weight: 600;
 }
 
+.dlt-completed-btn {
+  justify-content: center;
+  display: flex;
+  width: 20%;
+  border-radius: 5px;
+  background-color: #F2EEDA;
+  margin: 10px 20px 70px;
+  padding: 7px;
+  font-size: 10px;
+  background-color: #A91D20;
+  color: #ffffff;
+  font-weight: 600;
+}
+
 
 @media (min-width: 600px) {
   body {
@@ -96,7 +108,6 @@ code {
   .main {
     max-width: 600px;
     margin: 20px auto;
-    height: 90vh;
     box-shadow: 0 3px 3px rgba(0,0,0,0.5);
   }
 

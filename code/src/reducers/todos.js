@@ -37,6 +37,14 @@ const todos = createSlice({
       );
       store.tasks = decreasedTasks;
     },
+
+    // REMOVE COMPLETED TASKS
+    removeCompletedTasks: (store) => {
+      const removeCompletedTasks = store.tasks.filter(
+        (task) => task.isComplete !== true
+      );
+      store.tasks = removeCompletedTasks;
+    },
   },
 });
 
