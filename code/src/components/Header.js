@@ -6,18 +6,28 @@ import { TodosDone } from './TodosDone'
 
 const HeaderWrapper = styled.section`
   border: solid 1px #b67764;
+  margin: 10px;
   padding: 20px;
+  width: 80%;
+  text-align: center;
+`
+const HeaderText = styled.h1`
+  font-family: 'Shadows Into Light', cursive;
+  font-size: 40px;
+  margin:15px;
 `
 const DateWrapper = styled.div`
   padding:5px;
   align-items:center;
+  font-family: 'Mukta', sans-serif;
 `
 const DateText = styled.p`
-  margin:5px;
-  text-align:center;
+  margin:0px;
+  font-size: 20px;
 `
 const DateHeader = styled.h3`
-  text-align: center;
+  font-size: 30px;
+  margin:0px;
 `
 
 const today = new Date()
@@ -25,14 +35,13 @@ const today = new Date()
 export const Header = () => {
   return (
     <HeaderWrapper>
-      <h1>My daily Todo's ✍️ </h1>
+      <HeaderText>My daily Todo's ✍️ </HeaderText>
       <DateWrapper>
         <DateHeader>
           {format(new Date(), "cccc").toUpperCase()}
         </DateHeader>
-        <DateText>
-          <span> {format(new Date(), "LLLL d")}</span></DateText>
-          <DateText>{format(new Date(), "yyyy")}</DateText>
+           <DateText>{format(new Date(), "d 'of' LLLL")}</DateText>
+           <DateText>{format(new Date(), "yyyy")}</DateText>
       </DateWrapper>
         <TodosDone />
     </HeaderWrapper>
