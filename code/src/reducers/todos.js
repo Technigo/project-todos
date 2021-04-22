@@ -28,6 +28,7 @@ const todos = createSlice({
     addTodo: (store, action) => {
       store.items = [...store.items, action.payload]
     }
+
   }
 })
 

@@ -22,18 +22,15 @@ const AddTodo = () => {
 
   return (
     <form className="todo-input-form" onSubmit={onFormSubmit}>
-      <label className="">
-        Add todo
-        </label>
       <input className="input-thought"
         type="text"
         value={value}
         onChange={event => setValue(event.target.value)}
+        placeholder="Add todo"
       />
       <button className="send-button" type="submit">+</button>
     </form>
   )
-
 }
 
 export default AddTodo
