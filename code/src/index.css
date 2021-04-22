@@ -29,27 +29,24 @@ code {
 
 /* INPUT FIELD */
 .input-wrapper {
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   height: 40px;
+  padding: 0 20px;
+  justify-content: space-between;
 }
 
 .task-input {
   border: 1px solid #efeded;
   box-shadow: 0 3px 3px rgba(0,0,0,0.2);
-  margin-left: 20px;
-  width: 79%;
-  padding-left: 10px;
   background-color: rgba(0,0,0,0.5);
   color: #ffffff;
   font-size: 20px;
+  width: 80%;
 }
 
 .add-button {
   border: none;
   border-radius: 50%;
-  margin-right: 20px;
   width: 40px;
   background-color: #F2EEDA;
   font-size: 30px;
@@ -60,9 +57,6 @@ code {
 
 /* TASK */
 
-.task-wrapper {
-  width: 100%;
-}
 
 .task {
   background-color: #F2EEDA;
@@ -74,7 +68,6 @@ code {
   padding: 10px;
   box-shadow: 0 3px 3px rgba(0,0,0,0.2);
   color: black;
-  
 }
 
 .delete-button {
@@ -97,9 +90,17 @@ code {
 
 
 @media (min-width: 600px) {
+  body {
+    background-color: #e7eae3;
+  }
   .main {
     max-width: 600px;
     margin: 20px auto;
     height: 90vh;
+    box-shadow: 0 3px 3px rgba(0,0,0,0.5);
+  }
+
+  .header {
+    font-size: 45px;
   }
 }
