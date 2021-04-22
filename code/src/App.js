@@ -4,8 +4,9 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import todos from './reducers/todos';
 
-
-import TodoList from './components/TodoList.js';
+import  { Header }  from 'components/Header';
+import TodoList from './components/TodoList';
+import TodoForm from './components/TodoForm';
 
 //the first variable access the reducer data
 //the second one connects the store to that reducer variable
@@ -21,7 +22,10 @@ export const App = () => {
     
       
     <div>
-     <TodoList></TodoList>
+   <Header />
+     <TodoForm />
+     <TodoList />
+
     </div>
     </Provider>
   )

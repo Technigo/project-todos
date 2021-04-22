@@ -13,6 +13,7 @@ const todos = createSlice({
     },
     reducers: {
         toggleComplete: (store, action) => {
+            //v1 - immutability
             const updatedItems = store.items.map(todo => {
                 if(todo.id === action.payload) {
                     //update iscOMPLETE property
@@ -25,9 +26,37 @@ const todos = createSlice({
                     //leave it as it was
                 }
             });
+            //this store here is the main difference between mutability and immutability
+            // (this one is only valid for immutability)
             store.items = updatedItems;
+           //v2 mutability
+            //store.items.forEach(todo => {
+               // if (todo.id === action.payload) {
+                    //  todo.isComplete = !todo.isComplete;
+                //}
+           // })
+        },
+        removeTodo: (store, action) => {
+            // v1 - Immutability
+            // const decreasedItems = store.items.filter(todo => todo.id !== action.payload);
+
+            // store.items = decreasedItems;
+
+            //v2 - Mutability
+            store.items.splice(action.payload, 1);
+        },
+        addTodo: (store, action) => {
+            console.log(action);
+            // v1 - Immutability
+            // store.items = [...store.items, action.payload];
+
+            // v2 - Mutability
+            store.items.push(action.payload);
+
+           
         }
+
     }
 });
 
-export default todos
+export default todos;

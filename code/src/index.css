@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: 'Courier New', sans-serif;
+  font-family: 'Roboto', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url('./background-pic.jpg');
@@ -14,23 +14,14 @@ code {
 }
 
 
-.root-container {
-  width: 80%;
-  min-width: 320px;
-  max-width: 500px;
-  margin: auto;
-  margin-top: 50px;
-  margin-bottom: 50px;
-  background-color: white;
-  border-radius: 10px;
-}
+
 
 .list-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: whitesmoke;
+  background-color: #dec4a9;
   margin-top: 100px;
   margin-left: 10px;
   margin-right: 10px;
@@ -40,5 +31,36 @@ code {
 .app-title {
   display: flex;
   text-align:center;
+  color:white;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ffe135;
   color: red;
+  font-size: 30px;
+  margin-top: 8px;
+  cursor: pointer;
+  transition: all 150ms;
+}
+
+.button:hover {
+    background-color: #808080; 
 }

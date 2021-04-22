@@ -11,22 +11,22 @@ const TodoList = () => {
 
 
     return(
-        <>
-        
         <div className="list-container">
-        <h1 className="app-title">My Pretty TODOs App</h1>
-            {items.map(todo => (
-                <div key={todo.id}>
-                   <p>{todo.description}</p>
-                   <input
+              {items.map((todo, index) => (
+                  <div key={todo.id} className="todo-item">
+                     <p>{todo.description}</p>
+                     <input
                      type="checkbox"
                      checked={todo.isComplete}
                      onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
                    />
+                <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
+                Delete
+                </button>
         </div>
         ))}
     </div>
-    </>
+  
     )
 }
 
