@@ -3,7 +3,8 @@ import { createSlice } from '@reduxjs/toolkit'
 const todo = createSlice({
   name: 'todo',
   initialState: {
-    items: []
+    items: [],
+    filters: [{ id: 1, name: "all done", status: false}, {id: 2, name: "all undone", status: false}, {id: 3, name: "past deadline", status: false}]
 
   },
   reducers: {
@@ -32,7 +33,20 @@ const todo = createSlice({
     markAllDone: store => {
       const allDoneItems = store.items.map(item => ({...item, isComplete: true}) )
       store.items = allDoneItems
-    }
+    },
+    toggleFilter: (store, action) => {
+      const updatedFilters = store.filters.map(filter => {
+        if (filter.id === action.payload) {
+          return {
+            ...filter,
+            status: !filter.status
+          }
+        } else {
+          return filter
+        }
+      })
+      store.filters = updatedFilters
+    },
   }
 
 })

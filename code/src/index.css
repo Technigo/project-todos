@@ -90,6 +90,17 @@ code {
 .filters-container {
   margin: 20px 10px 10px 10px;
 }
+.filter-button {
+  border: rgb(141, 167, 254);
+  margin: 4px;
+}
+.on {
+  background-color: green;
+}
+.off {
+  background-color: hotpink;
+}
+
 .item-container {
   display: flex;
   flex-direction: column;
@@ -123,4 +134,6 @@ code {
   content: ⏰;
   font-size: 12px;
 }
+
+
 
