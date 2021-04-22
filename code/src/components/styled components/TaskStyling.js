@@ -11,6 +11,7 @@ export const TodoTask = styled.li`
     padding: 10px 0 10px 0;
     background-color: whitesmoke;
 `
+
 export const TaskCheckboxContainer = styled.div`
     justify-content: flex-start;
     display: flex;

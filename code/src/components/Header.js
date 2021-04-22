@@ -1,6 +1,6 @@
 import React from 'react'
-import moment from 'moment'
 import { useSelector, useDispatch } from 'react-redux'
+import { format } from 'date-fns'
 
 import { tasks } from '../reducers/tasks'
 import { HeaderContainer, HeaderDate, HeaderTitleDateContainer, HeaderCounterButtonContainer, MainHeader, CompletedTasksText, AllDoneButton } from './styled components/HeaderStyling'
@@ -25,7 +25,7 @@ const Header = () => {
         <HeaderContainer>
             <HeaderTitleDateContainer>
                 <MainHeader>Todo</MainHeader>
-                <HeaderDate>{moment().format('MMMM Do')}</HeaderDate>
+                <HeaderDate>{format(new Date(), 'MMMM do')}</HeaderDate>
             </HeaderTitleDateContainer>
             <HeaderCounterButtonContainer>
                 <CompletedTasksText>

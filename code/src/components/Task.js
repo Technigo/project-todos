@@ -19,7 +19,7 @@ export const Task = ({ task, completed }) => {
                     color="default"
                     inputProps={{ 'aria-label': 'checkbox with default color' }}
                 />
-                <p>
+                <p className={completed === true ? 'task-complete' : 'task-not-complete'}>
                     {task.content}
                 </p>
             </TaskCheckboxContainer>

@@ -21,3 +21,11 @@ code {
   margin: 20px auto;
 }
 
+.task-complete {
+  opacity: 0.5;
+}
+
+.task-not-complete {
+  opacity: 1;
+}
+
