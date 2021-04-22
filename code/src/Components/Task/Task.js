@@ -5,8 +5,9 @@ import styled from "styled-components";
 import { todos } from "../../Reducers/todos";
 import { Checkbox } from "../Selects/Checkbox";
 
-export const Task = ({ id, isComplete, description, createdAt }) => {
+export const Task = ({ id, isComplete, description, createdAt, category}) => {
   const dispatch = useDispatch();
+ const currentTime =  new Date(Date.now());
 
   return (
     <>
@@ -23,9 +24,9 @@ export const Task = ({ id, isComplete, description, createdAt }) => {
             type="task"
             className="task"
             checked={isComplete}
-            onChange={() => dispatch(todos.actions.toggleComplete({ id: id }))}
+            onChange={() => dispatch(todos.actions.toggleComplete({ id: id, time: currentTime.toLocaleString()}))}
           />
-          <TaskText>{description}</TaskText>
+          <TaskText>{description} {category}</TaskText>
         </Label>
       </TaskContainer>
     </>
@@ -51,6 +52,7 @@ const Text = styled.p`
   text-align: right;
   background-color: rgb(137, 177, 187);
   color: white;
+  font-family: 'Roboto', sans-serif;
 `;
 
 const TaskContainer = styled.div`

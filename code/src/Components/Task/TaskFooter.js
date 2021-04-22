@@ -5,18 +5,28 @@ import { todos } from "../../Reducers/todos";
 import { RoundedButton } from "../Selects/RoundedButton";
 import { DeadlineCountdown } from "./DeadlineCountdown";
 
-export const TaskFooter = ({ deadline, id }) => {
+export const TaskFooter = ({ deadline, id, isComplete, completedAt }) => {
+  const checkStatus = () => {
+    if (isComplete) {
+      return <DeadlineText>Completed: {completedAt}</DeadlineText>;
+    }
+    return (
+      <DeadlineText>
+        {deadline === "" ? "No deadline" : `Deadline: ${deadline}`}
+      </DeadlineText>
+    );
+  };
   return (
     <>
       <TextContainer>
         <DeadlineText>
-          {deadline === "" ? "No deadline" : `Deadline: ${deadline}`}
+          {checkStatus()}
         </DeadlineText>
-        <DeadlineCountdown deadline={deadline} />
+        <DeadlineCountdown deadline={deadline} isComplete={isComplete}/>
       </TextContainer>
       <ButtonContainer>
         <RoundedButton
-          buttonText="Delete"
+          buttonText="X"
           action={todos.actions.removeTodo({ task: id })}
         />
       </ButtonContainer>

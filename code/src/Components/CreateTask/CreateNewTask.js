@@ -3,42 +3,33 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import { todos } from "../../Reducers/todos";
-import { Checkbox } from "../Selects/Checkbox";
+import { SelectCategory } from "./SelectCategory";
 import { SelectDeadline } from "./SelectDeadline";
 
 export const CreateNewTask = () => {
   //variables
-  const moment = require("moment");
   const dispatch = useDispatch();
-  const currentTime = moment().format("MMMM Do YYYY");
-  const checkboxArr = [
-    { id: "no-deadline", text: "infinte" },
-    { id: "deadline", text: "set deadline" },
-  ];
+  const currentTime = new Date(Date.now()).toLocaleString();
   //states
   const [newTask, setNewTask] = useState("");
-  const [dueTime, setDueTime] = useState("");
-  const [checkvalue, setCheckvalue] = useState("");
+  const [due, setDue] = useState("");
+  const [category, setCategory] = useState("")
 
   //local functions
   const handleClick = () => {
-    dispatch(
-      todos.actions.createNewTodo({
-        task: newTask,
-        time: currentTime,
-        deadline: dueTime,
-      })
-    );
-    setNewTask("");
-    setCheckvalue("");
-  };
-
-  const handleChange = (id) => {
-    setCheckvalue(id);
-    if (id === "no-deadline") {
-      setDueTime("");
+    if (newTask === "") {
+      alert("You must add text!");
     } else {
-      setDueTime(moment().format("YYYY-MM-DD"));
+      dispatch(
+        todos.actions.createNewTodo({
+          task: newTask,
+          time: currentTime,
+          deadline: due,
+          category: category,
+        })
+      );
+      setNewTask("");
+      setCategory("other");
     }
   };
 
@@ -46,6 +37,11 @@ export const CreateNewTask = () => {
   return (
     <Section>
       <Container>
+        <Header>
+          <SelectCategory  
+            category={category}
+            setCategory={setCategory}/>
+        </Header>
         <ContainerInner>
           <Button type="button" onClick={() => handleClick()}>
             +
@@ -56,24 +52,9 @@ export const CreateNewTask = () => {
             onChange={(e) => setNewTask(e.target.value)}
           />
         </ContainerInner>
-        <CheckboxWrapper>
-          {checkboxArr.map((checkbox) => (
-            <Label htmlFor={checkbox.id}>
-              <Checkbox
-                checked={checkvalue === checkbox.id}
-                onChange={() => handleChange(checkbox.id)}
-                id={checkbox.id}
-                type="deadline"
-              />
-              {checkbox.text}
-            </Label>
-          ))}
-        </CheckboxWrapper>
-        {checkvalue === "deadline" ? (
-          <SelectDeadline dueTime={dueTime} setDueTime={setDueTime} />
-        ) : (
-          <></>
-        )}
+        <Footer>
+            <SelectDeadline due={due} setDue={setDue} />
+        </Footer>
       </Container>
     </Section>
   );
@@ -81,16 +62,25 @@ export const CreateNewTask = () => {
 
 //styled components
 const Section = styled.div`
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
+
+  @media (min-width: 768px) {
+    width: 500px;
+  }
 `;
 
 const Container = styled.div`
-  width: 98%;
+  width: 100%;
   box-shadow: 0.5px 0.5px 1px 1px rgb(88, 88, 102);
 `;
+
+const Header = styled.div`
+display: flex;
+`
 
 const ContainerInner = styled.div`
   display: flex;
@@ -135,11 +125,9 @@ const Textarea = styled.textarea`
   }
 `;
 
-const Label = styled.label`
-  margin-left: 10px;
-`;
-
-const CheckboxWrapper = styled.div`
+const Footer = styled.div`
+min-height: 25px;
   display: flex;
-  padding: 5px;
+  flex-direction: column;
+  justify-content: center;
 `;

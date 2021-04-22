@@ -18,7 +18,9 @@ export const HamburgerMenu = ({ name, array, handleClick, order }) => {
 
   return (
     <Wrapper>
-      <Menu onClick={() => setExpand(!expand)}>{name}:</Menu>
+      <Menu expand={expand} onClick={() => setExpand(!expand)}>
+        {name}
+      </Menu>
       <Container expand={expand}>
         {array.map((item) => (
           <Button
@@ -46,7 +48,7 @@ const Wrapper = styled.div`
 `;
 
 const Menu = styled.button`
-  width: 50px;
+  width: 60px;
   background-color: white;
   border: none;
   border-bottom-style: solid;
@@ -56,6 +58,24 @@ const Menu = styled.button`
   text-align: left;
   font-size: 14px;
   margin-top: 3px;
+
+  ${(props) =>
+    props.expand &&
+    `&::after{
+      color: rgb(196, 232, 241);
+      content: "◀";
+      text-align: right;
+    float:right;
+    }`}
+
+  ${(props) =>
+    !props.expand &&
+    `&::after{
+        color: rgb(196, 232, 241);
+        content:"▶" ;
+        text-align: right;
+        float:right;
+      }`}
 `;
 
 const Container = styled.div`
@@ -80,6 +100,7 @@ const Button = styled.button`
   ${(props) =>
     props.selected &&
     `&::after{
+      color: darkcyan;
       content: "${props.indicator}";
     }`}
 `;

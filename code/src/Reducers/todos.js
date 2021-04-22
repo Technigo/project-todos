@@ -10,22 +10,25 @@ export const todos = createSlice({
   initialState,
   reducers: {
     createNewTodo: (store, action) => {
-        const { task, time, deadline } = action.payload;
+        const { task, time, deadline, category } = action.payload;
         store.items.push({
           id: store.items.length + 1,
           description: task,
           isComplete: false,
+          completedAt: "",
           hidden: false,
           createdAt: time,
           deadline: deadline,
+          category: category
         });
       },
     toggleComplete: (store, action) => {
-      const { id } = action.payload;
+      const { id, time } = action.payload;
 
       store.updatedTodos = store.items.map((item) => {
         if (item.id === id) {
           item.isComplete = !item.isComplete;
+          item.completedAt = time;
           return item;
         } else {
           return item;
