@@ -14,19 +14,17 @@ import todos from '../reducers/todos'
 const useStyles = makeStyles({
     root: {
         minWidth: 275,
-        margin: "10px",
-        backgroundColor: "rgba(241,194,27,0.5)"
+        margin: "10px"
     },
     list: {
         display: "flex",
         justifyContent: "space-between",
     },
     checkbox: {
-       color: "pink",
+       color: "#FF0066",
     },
     delete: {
-        backgroundColor: "lightblue",
-        color: "blue"
+        color: "#FF0066"
     },
   });
 

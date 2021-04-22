@@ -10,7 +10,8 @@ const useStyles = makeStyles({
       margin: "10px"
   },
   heading: {
-      marginLeft: "20px"
+      marginLeft: "20px",
+      color: "#0a043c"
   }
  
 });

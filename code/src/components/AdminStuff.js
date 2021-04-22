@@ -11,7 +11,8 @@ const useStyles = makeStyles({
       margin: "10px"
   },
   heading: {
-      marginLeft: "20px"
+      marginLeft: "20px",
+      color: "#0a043c"
   }
    
  
@@ -21,7 +22,7 @@ const useStyles = makeStyles({
 const AdminStuff = () => {
     const classes = useStyles()
     const todoList = useSelector((store) => store.todos);
-    const filteredTasksList = todoList.items.filter((item) => item.category === "Studies and work");
+    const filteredTasksList = todoList.items.filter((item) => item.category === "Admin stuff");
   
     return (
       <Container className={classes.containter}>

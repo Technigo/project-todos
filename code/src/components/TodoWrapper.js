@@ -1,6 +1,5 @@
 import React from 'react'
 import Header from './Header'
-import TodoList from './TodoList'
 import ClearTodo from './ClearTodo'
 import AddNewTodo from './AddNewTodo'
 import Counter from './Counter'
@@ -20,6 +19,7 @@ const useStyles = makeStyles({
         boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
         borderRadius: "25px",
         width: '500px',
+        marginTop: "-50px"
     },
     container: {
         display: "flex",

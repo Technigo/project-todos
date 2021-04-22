@@ -7,8 +7,9 @@ import CheckIcon from '@material-ui/icons/Check';
 
 const useStyles = makeStyles({
     button: {
-        backgroundColor: "lightblue",
-        color: "black"
+        backgroundColor: "#FF0066",
+        color: "white",
+        fontWeight: "bold"
     }
   });
   

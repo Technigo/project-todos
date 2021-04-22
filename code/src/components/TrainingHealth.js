@@ -11,7 +11,8 @@ const useStyles = makeStyles({
       backgroundColor: "blue"
   },
   heading: {
-  marginLeft: "20px"
+    marginLeft: "20px",
+    color: "#0a043c"
   }
  
 });

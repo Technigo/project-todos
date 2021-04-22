@@ -7,11 +7,11 @@ import { makeStyles } from "@material-ui/styles"
 const useStyles = makeStyles({
   container: {
       minWidth: 275,
-      margin: "10px",
-      backgroundColor: 'pink', 
+      margin: "10px"
   },
   heading: {
-    marginLeft: "20px"
+    marginLeft: "20px",
+    color: "#0a043c"
   }
 });
 

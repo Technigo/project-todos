@@ -1,7 +1,9 @@
 import { TextField } from '@material-ui/core'
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { Button, Select, MenuItem , InputLabel, FormControl } from '@material-ui/core';
+import { Fab, Select, MenuItem , InputLabel, FormControl } from '@material-ui/core';
+import CreateIcon from '@material-ui/icons/Create';
+import AddIcon from '@material-ui/icons/Add';
 import { makeStyles } from "@material-ui/styles"
 
 import todos from '../reducers/todos'
@@ -9,16 +11,26 @@ import todos from '../reducers/todos'
 const useStyles = makeStyles({
     root: {
         minWidth: 275,
-        margin: "10px"
+        margin: "10px",
+        color: "#0a043c"
     }, containter: {
         display: "flex",
         justifyContent: "space-between"
     },  select: {
         marginRight: "10px",
-        minWidth: 275,
+        minWidth: 275
     }, input: {
         minWidth: 275,
-        marginBottom: "10px"
+        marginBottom: "10px",
+        color: "#FF0066"
+    }, add: {
+        backgroundColor: "#FF0066",
+    }, create: {
+        color: "#FF0066",
+        marginTop: "19px",
+        fontSize: "22px"
+    }, heading: {
+        display: "flex"
     }
    
   });
@@ -54,7 +66,10 @@ const AddNewTodo = () => {
 
     return (
         <div className={classes.root}>
-            <h3>Add new todo: </h3>
+            <div className={classes.heading}>
+                <h3>Add new todo</h3>
+                <CreateIcon className={classes.create} />
+            </div>
             <form onSubmit={handleSubmit}>
                 <TextField 
                 className={classes.input}
@@ -76,7 +91,9 @@ const AddNewTodo = () => {
                     <MenuItem value={"Other"}>Other</MenuItem>
                 </Select>
             </FormControl>
-            <Button type="submit" onClick={handleSubmit}variant="contained">Add</Button> 
+            <Fab className={classes.add} type="submit" color="primary" aria-label="add" onClick={handleSubmit}><AddIcon />
+            </Fab>
+            {/* <Button type="submit" onClick={handleSubmit}variant="contained">Add</Button>  */}
             </div>  
         </div>
     )
