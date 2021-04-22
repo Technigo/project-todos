@@ -71,6 +71,7 @@ main {
   background:#b0a38a;
   outline:none;
   font-family: 'Inconsolata', monospace;
+  border: 1px solid #333;
 }
 
 .form {
