@@ -4,9 +4,6 @@ import { useDispatch } from 'react-redux'
 import { Fab } from '@material-ui/core'
 import { Add, Close, Schedule } from '@material-ui/icons'
 import todo from '../reducers/todo'
-// import { MuiPickersUtilsProvider, DateTimePicker } from '@material-ui/pickers'
-// import DateFnsUtils from '@date-io/date-fns';
-// import enLocale from "date-fns/locale/en-GB";
 
 const TodoForm = () => {
   const dispatch = useDispatch()
@@ -64,17 +61,11 @@ const TodoForm = () => {
           id="date-picker"
           className="date-input"
           type="date"
+          placeholder="yyyy-mm-dd"
           value={deadline}
           onChange={(e) => setDeadline(e.target.value)}
         />
         <div className="calendar-container">
-          {/* <MuiPickersUtilsProvider utils={DateFnsUtils} locale={enLocale}>
-          <DateTimePicker
-            value={deadline}
-            onChange={setDeadline}
-            label="Pick the deadline"
-          />
-        </MuiPickersUtilsProvider> */}
         </div>
         <button className="submit-button" type="submit"> Add </button>
       </form>

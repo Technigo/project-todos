@@ -6,8 +6,14 @@ import todo from '../reducers/todo'
 
 const ClearAllButton = () => {
   const dispatch = useDispatch()
+  const style = {
+    marginRight: "5px",
+    fontSize: "10px",
+    padding: "2px"
+  }
   return (
     <Button
+      style= {style}
       size="small"
       variant="contained"
       color="primary"

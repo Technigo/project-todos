@@ -5,15 +5,20 @@ import {useDispatch} from 'react-redux'
 import todo from '../reducers/todo'
 const AllDoneButton = () => {
   const dispatch = useDispatch()
+  const style = {
+    marginRight: "5px",
+    fontSize: "10px",
+    padding: "2px"
+  }
   return (
     <Button
-      style={{margin: "5px"}}
+      style={style}
       size="small"
       variant="contained"
       color="primary"
       onClick={() => dispatch(todo.actions.markAllDone())}
     >
-      all done
+      mark all done
     </Button>
   )
 }
