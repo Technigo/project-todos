@@ -7,7 +7,7 @@ const todos = createSlice({
   },
   reducers: {
     toggleComplete: (store, action) => {
-      const updatedTasks = store.tasks.map(todo => {
+      const updatedTasks = store.tasks.map(todo => { 
         if (todo.id === action.payload) { 
           return {
             ...todo,
@@ -24,8 +24,17 @@ const todos = createSlice({
 
         store.tasks = removeTask
     },
-    addTodo: (store, action) => {
+    addTodo: (store, action) => { //store is state of the slice , empty array
       store.tasks = [...store.tasks, action.payload]
+    },
+    clearAllTodos: (store) => {
+      const clearAllTasks = store.tasks.map((todo) => {
+        return {
+          ...todo,
+          completed: !todo.completed
+        }
+      })
+      store.items = clearAllTasks
     }
   }
 }) 

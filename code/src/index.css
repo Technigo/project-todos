@@ -11,17 +11,22 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+input[type=checkbox]:checked + p {
+  text-decoration-line: line-through;
+  text-decoration-style: solid;
+  color: pink;
+}
 .todo-list {
   display: flex;
   align-items: center;
 }
-.app {
+ /* {
   height: 100vh;
   width: 1000vw;
   background-color: lightgray;
   display: grid;
   place-items: center;
-}
+} */
 .input-field {
   height: 50px;
   width: 80%;
