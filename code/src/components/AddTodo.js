@@ -47,7 +47,8 @@ const AddTodo = () => {
     const newTask = {
       id: uuidv4(),
       description: value,
-      isComplete: false
+      isComplete: false,
+      createdAt: Date.now()
     }
 
     dispatch(todos.actions.addTask(newTask))

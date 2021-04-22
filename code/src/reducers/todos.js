@@ -4,12 +4,9 @@ const todos = createSlice({
   name: 'todos', //good to name the same as a variable
   initialState: {
     tasks: [
-      { id: 1, description: '1aaaaaaaaaaaa', isComplete: false },
-      { id: 2, description: '2aaaaaaaaaaa', isComplete: false },
-      { id: 3, description: '3aaaaaaaaaaaaaaaaa', isComplete: false },
-      { id: 4, description: '4aaaaaaaaaaaaaaaaaaaaaaaaa', isComplete: false },
-      { id: 5, description: '5aaaaaaaaaaaa', isComplete: false },
-      { id: 6, description: '6aaaaaaaaaaaaaaaaaaa', isComplete: false }
+      { id: 1, description: '1aaaaaaaaaaaa', isComplete: false, createdAt: Date.now() },
+      { id: 2, description: '2aaaaaaaaaaa', isComplete: false, createdAt: Date.now() },
+      { id: 3, description: '3aaaaaaaaaaaaaaaaa', isComplete: false, createdAt: Date.now() },
     ]
   },
   reducers: {//methods/actions to manipulate the store

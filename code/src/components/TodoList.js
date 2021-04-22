@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import moment from 'moment'
 
 import todos from '../reducers/todos'
 
@@ -20,8 +21,15 @@ const DeleteButton = styled.button`
   margin-left: 10px;
 `
 
+const Timestamp = styled.p`
+  margin: 3px 0 0 30px;
+  font-size: 10px;
+  color: #767676;
+`
+
 const TodoList = () => {
   const tasks = useSelector(store => store.todos.tasks)
+  console.log(tasks)
 
   const dispatch = useDispatch()
 
@@ -36,6 +44,7 @@ const TodoList = () => {
               onChange={() => dispatch(todos.actions.toggleComplete(task.id))}
             />
             <span className={task.isComplete === true ? 'task-description-done' : 'task-description'} key={task.id}>{task.description}</span>
+            <Timestamp>added {moment(task.createdAt).startOf('hour').fromNow()}</Timestamp>
           </div>
           <div>
             <DeleteButton
