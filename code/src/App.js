@@ -8,11 +8,13 @@ import { Header } from './components/Header';
 import { AddBtn } from './components/AddBtn';
 import { AddTodo } from './components/AddTodo';
 import { Counter } from './components/Counter';
-import { ClearAllBtn } from 'components/ClearAllBtn';
+import { ClearCompletedBtn } from 'components/ClearCompletedBtn';
 import { CompletedItems } from 'components/CompletedItems';
 
 const Container = styled.div`
   position: relative;
+  height: 100vh;
+  background-color: black;
 `;
 
 const reducer = combineReducers({
@@ -32,12 +34,16 @@ export const App = () => {
         {!addView && 
           <div>
             <TodoList />
-            <AddBtn setAddView={setAddView}/>
-            <ClearAllBtn />
+            <CompletedItems />
           </div>
         }
         {addView && <AddTodo setAddView={setAddView} />}
-        <CompletedItems />
+        {!addView &&
+          <div>
+            <AddBtn setAddView={setAddView}/>
+            <ClearCompletedBtn /> 
+          </div>
+        }
       </Container>
     </Provider>
   )

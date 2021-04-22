@@ -11,6 +11,8 @@ const Container = styled.div`
 
 const TodoHeader = styled.h1`
   margin: 0 auto;
+  font-size: 30px;
+  color: white;
 `;
 
 export const Header = () => {

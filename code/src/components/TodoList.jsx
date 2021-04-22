@@ -2,6 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import { useSelector, useDispatch } from 'react-redux';
 import { todos } from '../reducers/todos';
+import { MarkCompleteBtn } from '../components/MarkCompleteBtn';
 import styled from 'styled-components';
 import { FaTrashAlt } from "react-icons/fa";
 
@@ -15,7 +16,8 @@ const Todo = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid gray;  
+  border-bottom: 1px solid gray; 
+  color: white;
 `;
 
 const InputContainer = styled.div`
@@ -26,7 +28,8 @@ const InputContainer = styled.div`
 `;
 
 const DeleteBtn = styled.button`
-  background-color: white;
+  background-color: black;
+  color: red;
   border: none;
 `;
 
@@ -34,10 +37,8 @@ const TimeStamp = styled.p`
   color: gray;
 `;
 
-const BtnTry = styled.button`
-  background-color: white;
-  border: 1px solid black;
-  border-radius: 30px;
+const Input = styled.input`
+  
 `;
 
 export const TodoList = () => {
@@ -53,7 +54,7 @@ export const TodoList = () => {
         <TimeStamp>{moment(items.createdAt).fromNow()}</TimeStamp>
        </div>
       <InputContainer>
-        <input
+        <Input
           type="checkbox"
           checked={todo.isComplete}
           onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
@@ -67,13 +68,7 @@ export const TodoList = () => {
       </InputContainer>
      </Todo> 
      )}
-      <BtnTry
-        type="button"  
-        onClick={() => dispatch(todos.actions.markAllComplete())}
-        aria-label="Mark all items as completed"
-        >
-        Mark all complete
-      </BtnTry>
+      <MarkCompleteBtn />
     </TodoContainer>
   )
 }

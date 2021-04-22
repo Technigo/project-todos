@@ -4,9 +4,13 @@ import styled from 'styled-components';
 
 const Number = styled.h2`
   position: absolute;
-  top: 0;
-  right: 5%;
+  top: 5%;
+  left: 5%;
   color: red;
+  margin: 0;
+  border: 1px solid red;
+  border-radius: 50%;
+  padding: 10px 15px;
 `;
 
 export const Counter = () => {

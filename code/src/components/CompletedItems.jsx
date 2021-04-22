@@ -5,6 +5,19 @@ import { todos } from '../reducers/todos';
 import moment from 'moment';
 import { FaTrashAlt } from "react-icons/fa";
 
+const HeaderContainer = styled.div`
+  display: flex;
+  align-items: center;
+  margin-bottom: 40px;
+  padding-top: 40px;
+`;
+
+const CompletedHeader = styled.h1`
+  margin: 0 auto;
+  font-size: 20px;
+  color: white;
+`;
+
 const Container = styled.div`
   width: 80%;
   margin: 0 auto;
@@ -15,7 +28,8 @@ const Todo = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid gray;  
+  border-bottom: 1px solid gray;
+  color: white;
 `;
 
 const TimeStamp = styled.p`
@@ -30,7 +44,8 @@ const InputContainer = styled.div`
 `;
 
 const DeleteBtn = styled.button`
-  background-color: white;
+  background-color: black;
+  color: red;
   border: none;
 `;
 
@@ -39,7 +54,9 @@ export const CompletedItems = () => {
   const dispatch = useDispatch();
   return (
     <Container>
-      <h2>Completed Tasks</h2>
+      <HeaderContainer>
+        <CompletedHeader>Completed Tasks</CompletedHeader>
+      </HeaderContainer>
       {items.map(todo => 
       <Todo key={todo.id}>
         <div> 

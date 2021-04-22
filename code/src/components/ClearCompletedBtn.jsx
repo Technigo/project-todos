@@ -11,22 +11,27 @@ const Div = styled.div`
 `;
 
 const Btn = styled.button`
-  background-color: white;
+  background-color: red;
+  color: white;
   border: none;
   margin-left: 8%;
   position: absolute;
-  bottom: 5%;
+  bottom: 4%;
   right: 10%;
   margin-bottom: 5px;
+  font-size: 15px;
+  border: 1px solid red;
+  border-radius: 30px;
+  padding: 10px 20px;
 `;
 
 const Bin = styled(FaTrashAlt)`
-  color: red;
+  color: white;
   margin-right: 5px;
-  font-size: 20px;
+  font-size: 15px;
 `;
 
-export const ClearAllBtn = () => {
+export const ClearCompletedBtn = () => {
   const dispatch = useDispatch();
 
   return (
@@ -37,7 +42,7 @@ export const ClearAllBtn = () => {
         aria-label="Clear all items"
       >
         <Bin />
-          Clear Completed Items
+          Clear
       </Btn>
     </Div>
   )
