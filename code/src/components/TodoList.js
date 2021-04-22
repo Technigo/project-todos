@@ -3,18 +3,21 @@ import { useSelector, useDispatch } from 'react-redux';
 import moment from 'moment'
 
 import todos from '../reducers/todos'
+import EmptyPage from './EmptyPage'
 
 const TodoList = () => {
     const items = useSelector((store) => store.todos.items);
 
     const dispatch = useDispatch();
 
-    const ab = moment().format('LLLL');
-    console.log(ab)
+    console.log(items.length)
 
     //console.log(items.length)
 
     return (
+        <>
+        {(items.length === 0) ? <EmptyPage /> : 
+
         <div>
             {items.map((todo, index) => (
           
@@ -29,13 +32,16 @@ const TodoList = () => {
                     <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}> 
                         Delete
                     </button>
+            
                     <p>{moment(todo.date).format('Do MMMM YYYY h:mm')}</p>
+                    <p>{todo.fromNow}</p>
                     
                 </div>
 
 
             ))}
-        </div>
+        </div> }
+        </>
     )
 }
 

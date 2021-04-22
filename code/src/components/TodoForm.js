@@ -19,7 +19,8 @@ const TodoForm = () => {
             description:value, //Value above in row 5
             isComplete:false,
             //date: moment().format('LLLL')
-            date: Date.now()
+            date: Date.now(),
+            fromNow: moment().add(3, 'days').calendar()
         }
 
         dispatch(todos.actions.addTodo(newTodo));

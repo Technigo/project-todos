@@ -44,7 +44,7 @@ const todos = createSlice({ // A createSlice should always have a name, initialS
             
         },
 
-        clearAll: (store,action) => {
+        clearAll: (store,action) => { // https://stackoverflow.com/questions/52206074/how-do-i-clear-array-in-redux-state-for-a-multi-select
             return {...store, items:[]}
         }
     }
