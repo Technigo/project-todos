@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import uniqid from 'uuid'
+import { AiOutlinePlus } from "react-icons/ai";
 
 import tasks from '../reducers/tasks'
 
@@ -12,10 +13,12 @@ const SubmitButton = styled.button`
   background-color: #50E3A4;
   padding: 0;
   margin: 0;
-  font-size: 25px;
   color: #ffffff;
   border-radius: 50%;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `
 
 const Form = styled.form`
@@ -72,7 +75,7 @@ export const TaskForm = () => {
 
   return (
     <Form>
-      <SubmitButton type="submit" onClick={onTaskSubmit}>+</SubmitButton>
+      <SubmitButton type="submit" onClick={description !== "" ? onTaskSubmit : null}><AiOutlinePlus size={20} /></SubmitButton>
       <TaskInput 
       type="text"
       placeholder="Add task"
