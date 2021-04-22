@@ -3,11 +3,7 @@ import { createSlice } from '@reduxjs/toolkit' // We always import this one when
 const todos = createSlice({ // A createSlice should always have a name, initialState & reducers (3 parts)
     name: 'todos',
     initialState: {
-        items: [
-            {id: 1, description: "heey", isComplete: false},
-            {id: 2, description: "teee", isComplete: false},
-            {id: 3, description: "etetete", isComplete: false}
-        ]
+        items: []
     },
     reducers: { // Here we need to find the item we chose and change from true to false and vs
         toggleComplete: (store, action) => {
@@ -28,19 +24,28 @@ const todos = createSlice({ // A createSlice should always have a name, initialS
         removeTodo: (store,action) => {
             
             // V1 Immutability
-            //const decreasedItems = store.items.filter(todo => todo.id !== action.payload) // Jag tror detta är en if, man kan även skriva så. Fråga KAtya
-            //store.items = decreasedItems
+            const decreasedItems = store.items.filter(todo => todo.id !== action.payload) // Jag tror detta är en if, man kan även skriva så. Fråga KAtya
+            store.items = decreasedItems // Ovan betyder att vi filtrerar och får alla värden på vår lista förutom den vi clickar på, todo.id !== action.payload betyder att vi hämtar alla som inte är den action.payload vi trycker på
         
             // V2 mutability
-            store.items.splice(action.payload,1)
+            //store.items.splice(action.payload,1)
+
+            
+            
+            
+        
         },
 
         addTodo: (store,action) => {
             // V1 Immutability
-            store.items = [...store.items, action.payload]
+            store.items = [...store.items, action.payload] // copy the whole array plus the action that I add 
 
             // V2 mutability
             
+        },
+
+        clearAll: (store,action) => {
+            return {...store, items:[]}
         }
     }
 });

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import uniqid from 'uniqid'
 import { useDispatch } from 'react-redux'
 
+import moment from 'moment'
+
 import todos from '../reducers/todos'
 
 const TodoForm = () => {
@@ -15,7 +17,9 @@ const TodoForm = () => {
         const newTodo = {
             id: uniqid(),
             description:value, //Value above in row 5
-            isComplete:false
+            isComplete:false,
+            //date: moment().format('LLLL')
+            date: Date.now()
         }
 
         dispatch(todos.actions.addTodo(newTodo));

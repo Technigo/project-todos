@@ -1,20 +1,15 @@
 import React, { useState } from 'react'
 import uniqid from 'uniqid'
 import { useDispatch, useSelector } from 'react-redux'
+import moment from 'moment'
 
 import todos from '../reducers/todos'
 
 const TopSection = () => {
-    // Good site https://phoenixnap.com/kb/how-to-get-the-current-date-and-time-javascript
-    // Date 
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December"
-];
 
-const myMonth = new Date().getMonth();
-const myDay = new Date().getDate()
+    const dispatch = useDispatch()
 
-
+const dateToday = moment().format('LL');
 
 
     const summary = useSelector((store) => store.todos.items.length)
@@ -38,25 +33,23 @@ const myDay = new Date().getDate()
     const today = new Date()
     const MyTest = today.toLocaleString('default', { month: 'long' })
     console.log(MyTest)
+
     
 
     return(
         <section>
         <div>
             <h4>Todo</h4>
-            <h6>{monthNames[myMonth]} {myDay}</h6>
+            <h6>{dateToday}</h6>
         </div>
         <div>
             <p>Total Todos: {summary}<span> {(summary === 2) ? "tasks" : "task"}</span></p>
 
 
             <p>Total uncompleted tasks: {amountOfNotCompleted}</p>
-
-        
-
-
-
-            <button>CLEAR ALL</button>
+            <button
+            onClick={() => dispatch(todos.actions.clearAll())} 
+            >CLEAR ALL</button>
         </div>
         </section>
     )
