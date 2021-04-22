@@ -182,7 +182,7 @@ height: 18px;
   background-color: #eac8af;
   width: 20px;
   height: 20px;
-  border-radius: 20px;
+  border-radius: 50%;
   opacity: 0.8;
   color: white;
   font-size: 12px;
@@ -221,6 +221,10 @@ height: 18px;
   height: 55px;
   box-shadow: 1px 2px 2px #646666;
   margin: 0 10px;
+  text-align: center;
+  text-align: center !important;
+  text-align: -moz-center !important;
+  text-align: -webkit-center !important;
 }
 
 .done-button:hover {
@@ -239,6 +243,10 @@ height: 18px;
   height: 55px;
   box-shadow: 1px 2px 2px #646666;
   margin: 0 10px;
+  text-align: center;
+  text-align: center !important;
+  text-align: -moz-center !important;
+  text-align: -webkit-center !important;
 }
 
 .clear-button:hover {
