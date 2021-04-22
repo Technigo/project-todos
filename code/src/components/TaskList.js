@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Checkbox from "react-custom-checkbox";
 import { FiCheck } from "react-icons/fi";
-import { TiDeleteOutline } from "react-icons/ti";
+import { TiAdjustBrightness, TiDeleteOutline } from "react-icons/ti";
 
 import tasks from '../reducers/tasks'
 
@@ -47,6 +47,7 @@ const TaskDescription = styled.p`
   padding: 10px;
   font-size: 18px;
   color: #757575;
+  text-decoration: ${props => props.checked ? "line-through" : "none"};
 `
 
 const IconContainer = styled.div`
@@ -74,11 +75,12 @@ const TaskList = () => {
               }
               borderColor="#50E3A4"
               borderRadius={20}
-              style={{ overflow: "hidden"}}
-              containerStyle={{alignSelf: "center"}}
+              style={{ overflow: "hidden" }}
+              containerStyle={{ alignSelf: "center" }}
               size={20}
             />
-            <TaskDescription>{task.description}</TaskDescription>
+            <TaskDescription checked={task.isCompleted}>{task.description}</TaskDescription>
+            {/* <p>{task.timeStamp.toLocaleString("HH:mm")}</p> */}
           </DescriptionCheckbox>
           <TiDeleteOutline size={20} onClick={() => dispatch(tasks.actions.removeTask(task.id))} />
         </Task>

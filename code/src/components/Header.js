@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { DateTime } from "luxon"
 
 import tasks from '../reducers/tasks'
 
@@ -69,19 +70,19 @@ export const Header = () => {
 
   const dispatch = useDispatch()
 
-  const today = new Date()
+  const today = DateTime.now()
 
   return (
     <>
       <TopWrapper>
         <DateWrapper>
-        <Heading>{today.getDay()}</Heading>
+        <Heading>{today.setLocale('en-GB').toLocaleString({day: 'numeric'})}</Heading>
         <MonthYear>
-          <DateText>{today.toLocaleString('default', {month: 'short'}).toUpperCase()}</DateText>
-          <DateText>{today.getFullYear()}</DateText>
+          <DateText>{today.setLocale('en-GB').toLocaleString({month: 'short'}).toUpperCase()}</DateText>
+          <DateText>{today.year}</DateText>
         </MonthYear>
         </DateWrapper>
-        <DateText>{today.toLocaleString('default', {weekday: 'long'}).toUpperCase()}</DateText>
+        <DateText>{today.setLocale('en-GB').toLocaleString({weekday: 'long'}).toUpperCase()}</DateText>
       </TopWrapper>
       {items.length !== 0 && (
       <BottomWrapper>

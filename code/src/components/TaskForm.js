@@ -35,6 +35,7 @@ const Form = styled.form`
 const TaskInput = styled.input`
   border: none;
   background-color: inherit;
+  color: #757575;
   width: 90%;
   font-size: 18px;
   box-sizing: border-box;
@@ -55,10 +56,14 @@ export const TaskForm = () => {
   const onTaskSubmit = (event) => {
     event.preventDefault()
 
+    const currentDate = new Date();
+    const timestamp = currentDate.getTime();
+
     const newTask = {
       id: uniqid(),
       description: description,
-      isCompleted: false
+      isCompleted: false,
+      timeStamp: timestamp
     }
 
     dispatch(tasks.actions.addTask(newTask))
