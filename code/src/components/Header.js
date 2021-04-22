@@ -17,8 +17,7 @@ const Header = () => {
         store.tasks.items.filter((task => task.completed)).length
         ))
 
-    const onClickClearAll = (event) => {
-        event.preventDefault();
+    const onClickClearAll = () => {
         dispatch(tasks.actions.clearAllTasks())
     }
 

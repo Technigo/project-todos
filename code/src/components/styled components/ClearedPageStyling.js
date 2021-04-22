@@ -8,7 +8,7 @@ export const PlaceholderPage = styled.div`
     border: 2px solid black;
     border-style: dotted;
     border-radius: 10px;
-    width: 60%;
+    width: 80%;
     padding: 10px;
     background-color: whitesmoke;
 `
