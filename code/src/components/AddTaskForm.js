@@ -22,13 +22,15 @@ export const AddTaskForm = () => {
   }
 
 return (
-  <form onSubmit={onFormSubmit}>
+  <form onSubmit={onFormSubmit} className='form'>
     <input
       type='text'
       value={value}
       onChange={e => setValue(e.target.value)}
+      className='text-input'
+      placeholder='Add todo'
     />
-    <button type='submit'>Add todo</button>
+    <button type='submit' className='btn-input'>+</button>
   </form>
 )
 

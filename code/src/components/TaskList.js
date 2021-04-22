@@ -17,9 +17,12 @@ export const TaskList = () => {
             type='checkbox'
             checked={task.isComplete}
             onChange={() => dispatch(tasks.actions.toggleComplete(task.id))}
+            id='text'
+            className='checkbox'
           />
-          <p>{task.text}</p>
-          <button onClick={() => dispatch(tasks.actions.deleteTask(task.id))}>🗑️</button>
+          {/* <label for='text'><p>{task.text}</p></label> */}
+           <p>{task.text}</p>
+          <button onClick={() => dispatch(tasks.actions.deleteTask(task.id))} className='btn-remove'>🗑️</button>
         </div>
       ))}
     </div>
