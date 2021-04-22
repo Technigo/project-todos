@@ -75,7 +75,7 @@ const tasks = createSlice({
     },
     filterDueSoon: (state, action) => {
       for (let task of state.allTasks) {
-        if (!task.dueDate || task.isCompleted || dayjs(new Date()).diff(dayjs(task.dueDate), "hour") > 0) {
+        if (!task.dueDate || task.isCompleted || dayjs(task.dueDate).isSameOrBefore(new Date())) {
           task.isHidden = true
         } else {
           task.isHidden = false
@@ -85,7 +85,7 @@ const tasks = createSlice({
     },
     filterOverdue: (state, action) => {
       for (let task of state.allTasks) {
-        if (!task.dueDate || task.isCompleted || dayjs(task.dueDate).diff(new Date(), "hour") > 0) {
+        if (!task.dueDate || task.isCompleted || !dayjs(task.dueDate).isSameOrBefore(new Date())) {
           task.isHidden = true
         } else {
           task.isHidden = false

@@ -2,6 +2,9 @@ import React from "react"
 import { useSelector } from "react-redux"
 import styled from 'styled-components'
 import dayjs from 'dayjs'
+import isSameOrBefore from 'dayjs/plugin/isSameOrBefore'
+
+dayjs.extend(isSameOrBefore)
 
 const StyledParagraph = styled.p`
   margin: 0;
@@ -13,8 +16,9 @@ const HeaderOverview = () => {
   const totalTasks = tasks.length
   const completedTasks = tasks.filter(task => task.isCompleted).length
 
-  const dueSoonTasks = tasks.filter(task => dayjs(task.dueDate).diff(new Date(), "hour") > 0).length // checks if due date is before now
-  const overdueTasks = tasks.filter(task => dayjs(new Date()).diff(dayjs(task.dueDate), "hour") > 0).length // checks if due date is after now
+  const dueSoonTasks = tasks.filter(task => !dayjs(task.dueDate).isSameOrBefore(new Date())).length
+
+  const overdueTasks = tasks.filter(task => dayjs(task.dueDate).isSameOrBefore(new Date())).length
 
   return (
     <>
