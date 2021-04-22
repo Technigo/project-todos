@@ -1,9 +1,9 @@
 import React, { useState } from "react"
 import styled from 'styled-components'
 
-import { HeaderOverview } from "./HeaderOverview"
-import { HeaderActions } from "./HeaderActions"
-import { HeaderFilter } from "./HeaderFilter"
+import HeaderOverview from "./HeaderOverview"
+import HeaderActions from "./HeaderActions"
+import HeaderFilter from "./HeaderFilter"
 
 const Container = styled.header`
   width: 100%;
@@ -45,7 +45,7 @@ const Icon = styled.img`
   width: 16px;
 `
 
-export const Header = () => {
+const Header = () => {
   const [showOverview, setShowOverview] = useState(true)
   const [showActions, setShowActions] = useState(false)
   const [showFilter, setShowFilter] = useState(false)
@@ -98,3 +98,5 @@ export const Header = () => {
     </Container>
   )
 }
+
+export default Header

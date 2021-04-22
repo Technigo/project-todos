@@ -2,13 +2,12 @@ import React from "react"
 import { useSelector } from "react-redux"
 import styled from 'styled-components'
 import dayjs from 'dayjs'
-import relativeTime from 'dayjs/plugin/relativeTime'
 
 const StyledParagraph = styled.p`
   margin: 0;
 `
 
-export const HeaderOverview = () => {
+const HeaderOverview = () => {
   const tasks = useSelector(store => store.tasks.allTasks)
 
   const totalTasks = tasks.length
@@ -25,3 +24,5 @@ export const HeaderOverview = () => {
     </>
   )
 }
+
+export default HeaderOverview

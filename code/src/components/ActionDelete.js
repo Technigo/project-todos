@@ -2,7 +2,7 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import styled from 'styled-components'
 
-import { tasks } from "reducers/tasks"
+import tasks from "reducers/tasks"
 
 const HeaderButton = styled.button`
   background-color: transparent;
@@ -26,7 +26,7 @@ const Icon = styled.img`
   width: 12px;
 `
 
-export const ActionDelete = () => {
+const ActionDelete = () => {
   const dispatch = useDispatch()
 
   const handleClick = () => {
@@ -43,3 +43,5 @@ export const ActionDelete = () => {
     </HeaderButton>
   )
 }
+
+export default ActionDelete

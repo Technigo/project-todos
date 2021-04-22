@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 
-import { tasks } from "reducers/tasks"
+import tasks from "reducers/tasks"
 
 const StyledSection = styled.section`
   width: 100%;
@@ -45,7 +45,7 @@ padding: 10px;
 font-size: 20px;
 `
 
-export const AddContainer = () => {
+const AddContainer = () => {
   const [isClicked, setIsClicked] = useState(false)
   const [newTask, setNewTask] = useState("")
   const [dueDate, setDueDate] = useState(null)
@@ -110,3 +110,5 @@ export const AddContainer = () => {
     </StyledSection>
   )
 }
+
+export default AddContainer

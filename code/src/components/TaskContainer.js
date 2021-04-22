@@ -2,21 +2,21 @@ import React from "react"
 import { useSelector } from "react-redux"
 import styled from "styled-components"
 
-import { Task } from "./Task"
+import Task from "./Task"
 
 const TaskSection = styled.section`
   width: 100%;
   box-sizing: border-box;
-  padding: 30px;
+  padding: 20px;
   overflow-y: scroll;
 `
 
 const NoTasksMessage = styled.p`
   margin: 0;
-  font-size: 24px;
+  font-size: 20px;
 `
 
-export const TaskContainer = () => {
+const TaskContainer = () => {
   const tasks = useSelector((store) => store.tasks.allTasks)
   const isFiltered = useSelector((store) => store.tasks.isFiltered)
 
@@ -33,3 +33,5 @@ export const TaskContainer = () => {
     </TaskSection>
   )
 }
+
+export default TaskContainer

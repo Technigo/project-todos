@@ -3,11 +3,11 @@ import { Provider } from "react-redux"
 import { configureStore, combineReducers } from "@reduxjs/toolkit"
 import styled, { createGlobalStyle } from 'styled-components'
 
-import { Header } from "./components/Header"
-import { AddContainer } from "./components/AddContainer"
-import { TaskContainer } from "./components/TaskContainer"
+import Header from "./components/Header"
+import AddContainer from "./components/AddContainer"
+import TaskContainer from "./components/TaskContainer"
 
-import { tasks } from "reducers/tasks"
+import tasks from "reducers/tasks"
 
 const GlobalStyle = createGlobalStyle`
   body {

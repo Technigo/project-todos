@@ -2,12 +2,12 @@ import { createSlice, nanoid } from '@reduxjs/toolkit'
 import dayjs from 'dayjs'
 
 const allTasks = [
-  { id: 1, title: "Take a nap", isCompleted: false, isHidden: false, dueDate: new Date("May 20, 2021") },
-  { id: 2, title: "Eat cake", isCompleted: false, isHidden: false, dueDate: new Date("April 1, 2021") },
-  { id: 3, title: "Take a walk", isCompleted: true, isHidden: false, dueDate: new Date("June 18, 2021") },
+  { id: 1, title: "Finish project", isCompleted: false, isHidden: false, dueDate: new Date("April 25, 2021") },
+  { id: 2, title: "Call mum", isCompleted: false, isHidden: false, dueDate: new Date("April 19, 2021") },
+  { id: 3, title: "Get a haircut", isCompleted: true, isHidden: false, dueDate: new Date("May 2, 2021") },
 ]
 
-export const tasks = createSlice({
+const tasks = createSlice({
   name: "tasks",
   initialState: {
     allTasks,
@@ -36,12 +36,17 @@ export const tasks = createSlice({
       }
     },
     toggleTask: (state, action) => {
-      const completedTask = state.allTasks.find(task => task.title === action.payload.title)
-      if (action.payload.isCompleted) {
-        completedTask.isCompleted = false
-      } else if (!action.payload.isCompleted) {
-        completedTask.isCompleted = true
-      }
+      const updatedItems = state.allTasks.map(task => {
+        if (task.id === action.payload.id) {
+          return {
+            ...task,
+            isCompleted: !task.isCompleted
+          }
+        } else {
+          return task
+        }
+      })
+      state.allTasks = updatedItems
     },
     completeAllTasks: (state, action) => {
       for (let task of state.allTasks) {
@@ -96,3 +101,5 @@ export const tasks = createSlice({
     }
   }
 })
+
+export default tasks

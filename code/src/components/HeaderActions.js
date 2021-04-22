@@ -1,9 +1,9 @@
 import React from "react"
 
-import { ActionComplete } from "./ActionComplete"
-import { ActionDelete } from "./ActionDelete"
+import ActionComplete from "./ActionComplete"
+import ActionDelete from "./ActionDelete"
 
-export const HeaderActions = () => {
+const HeaderActions = () => {
   return (
     <>
       <ActionDelete />
@@ -11,3 +11,5 @@ export const HeaderActions = () => {
     </>
   )
 }
+
+export default HeaderActions

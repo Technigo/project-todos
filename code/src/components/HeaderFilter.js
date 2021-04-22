@@ -2,7 +2,7 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import styled from 'styled-components'
 
-import { tasks } from "reducers/tasks"
+import tasks from "reducers/tasks"
 
 const HeaderButton = styled.button`
   background-color: transparent;
@@ -21,7 +21,7 @@ const Icon = styled.img`
   width: 12px;
 `
 
-export const HeaderFilter = () => {
+const HeaderFilter = () => {
   const dispatch = useDispatch()
 
   const filterCompleted = () => {
@@ -56,11 +56,11 @@ export const HeaderFilter = () => {
       </HeaderButton>
       <HeaderButton onClick={filterDueSoon}>
         due soon
-        <Icon src="./assets/square-icon.svg" alt="square icon" />
+        <Icon src="./assets/calendar-icon.svg" alt="calender icon" />
       </HeaderButton>
       <HeaderButton onClick={filterOverdue}>
         overdue
-        <Icon src="./assets/square-icon.svg" alt="square icon" />
+        <Icon src="./assets/calendar-overdue-icon.svg" alt="calender overdue icon" />
       </HeaderButton>
       <HeaderButton onClick={resetFilter}>
         reset
@@ -69,3 +69,5 @@ export const HeaderFilter = () => {
     </>
   )
 }
+
+export default HeaderFilter
