@@ -6,15 +6,31 @@ import moment from 'moment'
 import { tasks } from '../reducers/tasks'
 
 const TopHeader = styled.header`
+  box-sizing: border-box;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  justify-content: center;
+  width: 100%;
   padding: 20px;
   background-color: #F4F4F4;
   font-family: 'Montserrat', sans-serif;
   border-bottom: 1px solid #A9A4A6;
+
+  @media (min-width: 998px) {
+    justify-content: space-evenly;
+  }
 ` 
+
+const TopHeaderWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 998px) {
+    width: 60%;
+  }
+`
 
 const ListInfo = styled.div`
   display: flex;
@@ -26,7 +42,7 @@ const ListHeading = styled.h2`
 `
 
 const Date = styled.p`
-
+  
 `
 
 const ClearBtn = styled.button`
@@ -52,14 +68,16 @@ const Header = () => {
   
   return (
     <TopHeader>
-      <ListInfo>
-        <ListHeading>To do</ListHeading>
-        <Date>{today}</Date>
-      </ListInfo>
-      <ListInfo>
-        <Span>{completedItems}/{items.length} tasks</Span>
-        <ClearBtn className="clear-btn" type="button" onClick={() => dispatch(tasks.actions.clearAll())}>CLEAR ALL</ClearBtn>
-      </ListInfo>
+      <TopHeaderWrapper>
+        <ListInfo>
+          <ListHeading>To do</ListHeading>
+          <Date>{today}</Date>
+        </ListInfo>
+        <ListInfo>
+          <Span>{completedItems}/{items.length} tasks</Span>
+          <ClearBtn className="clear-btn" type="button" onClick={() => dispatch(tasks.actions.clearAll())}>CLEAR ALL</ClearBtn>
+        </ListInfo>
+      </TopHeaderWrapper>
     </TopHeader>
   )
 }

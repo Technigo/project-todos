@@ -1,14 +1,21 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import styled from 'styled-components'
 
 import TodoItem from './TodoItem'
 import NewTodo from './NewTodo'
+
+const Section = styled.section`
+  @media (min-width: 998px) {
+    width: 60%;
+  }
+`
 
 const TodoList = () => {
   const items = useSelector((store) => store.tasks.items)
 
   return (
-    <section>
+    <Section>
       <NewTodo />
       {items.map(item => (
         <TodoItem 
@@ -19,7 +26,7 @@ const TodoList = () => {
           editMode={item.editMode}
         />
       ))}
-    </section>
+    </Section>
   )
 }
 

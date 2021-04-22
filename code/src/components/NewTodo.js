@@ -1,25 +1,26 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
-import DatePicker from 'react-datepicker'
 
-import 'react-datepicker/dist/react-datepicker.css'
-
+//import CustomDayPicker from './CustomDayPicker'
 import { tasks } from '../reducers/tasks'
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
+
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
 `
 const Form = styled.form`
+  width: 100%;
   display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 `
 
 const TodoBtn = styled.button`
-  width: 60px;
+  width: 40px;
   height: 40px;
   border-radius: 8px;
   background-color: #8B98F9;
@@ -42,13 +43,14 @@ const TodoInput = styled.input`
 
 const DatePickerContainer = styled.div`
   margin-left: auto;
+  width: 50px;
 `
 
 const NewTodo = () => {
   const dispatch = useDispatch()
 
   const [newTodoInput, setNewTodoInput] = useState('')
-  const [dueDate, setDueDate] = useState(new Date())
+  
 
   const onInputChange = (event) => {
     setNewTodoInput(event.target.value)
@@ -60,31 +62,21 @@ const NewTodo = () => {
     setNewTodoInput('')
   }
 
-  console.log(dueDate)
-
   return (
     <Container>
       <Form>
-        <TodoBtn 
-          type="button"
-          onClick={onButtonPress}
-          >
-            +
-        </TodoBtn>
         <TodoInput 
           type="text"
           placeholder="New task"
           value={newTodoInput}
           onChange={onInputChange}
         />
-        <DatePickerContainer>
-          <DatePicker
-            selected={dueDate}
-            onChange={date => setDueDate(date)}
-            dateFormat='yyyy/MM/dd'
-            isClearable
-          />
-        </DatePickerContainer>
+        <TodoBtn 
+          type="button"
+          onClick={onButtonPress}
+          >
+            +
+        </TodoBtn>
       </Form>
     </Container>
   )

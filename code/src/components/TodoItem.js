@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux'
 import moment from 'moment'
 import { FaTrashAlt, FaEdit, FaRegWindowClose, FaCheck } from 'react-icons/fa'
 
+import TodoItemBtns from './TodoItemBtns'
 import { tasks } from '../reducers/tasks'
 
 const Container = styled.div`
@@ -14,6 +15,15 @@ const Container = styled.div`
   border-bottom: 1px solid #A9A4A6; 
   border-top: 1px solid #A9A4A6;
   font-family: 'Montserrat', sans-serif;
+`
+
+const Wrapper = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: auto;
 `
 
 const Input = styled.input`
@@ -85,29 +95,9 @@ const TodoInput = styled.input`
   font-size: 20px;
 `
 
-const DeleteBtn = styled.button`
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-`
-
-const EditBtn = styled.button`
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-`
-
-const SaveButton = styled.button`
-  border: none;
-  background-color: transparent;
-  cursor: pointer;
-`
-
 const Date = styled.span`
-  margin-left: auto;
-  font-size: 16px;
+  font-size: 12px;
 `
-
 
 const TodoItem = ({ id, text, complete, created, editMode }) => {
   const [description, setDescription] = useState(text)
@@ -124,6 +114,7 @@ const TodoItem = ({ id, text, complete, created, editMode }) => {
 
   return (
     <Container key={id}>
+
       <Input
         type="checkbox"
         checked={complete}
@@ -132,16 +123,11 @@ const TodoItem = ({ id, text, complete, created, editMode }) => {
       <Indicator />
       {editMode ? <TodoInput type="text" value={description} onChange={onInputChange}/> : <Description>{text}</Description>}
       
-      <EditBtn type="button" onClick={() => dispatch(tasks.actions.toggleEdit(id))}>
-        {editMode ? <FaRegWindowClose color="#8B98F9" size="30px" /> : <FaEdit color="#8B98F9" size="30px" />}
-      </EditBtn>
-      
-      {!editMode ? <DeleteBtn type="button" onClick={() => dispatch(tasks.actions.removeTodo(id))}>
-                    <FaTrashAlt color="#8B98F9"size="30px"/> 
-                  </DeleteBtn> : <SaveButton type="button" onClick={onSaveEdit}>
-                                    <FaCheck color="#8B98F9" size="30px" />
-                                  </SaveButton>}
-      <Date>{taskCreated}</Date>
+      <Wrapper>
+        <TodoItemBtns id={id} editMode={editMode} onSaveEdit={onSaveEdit} />
+        <Date>{taskCreated}</Date>
+      </Wrapper>
+
     </Container>
   )     
 }
