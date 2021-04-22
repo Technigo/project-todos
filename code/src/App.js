@@ -19,9 +19,11 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <TodoHeader />
-      <TodoList />
-      <TodoForm />
+      <section className="todo-wrapper">
+        <TodoHeader />
+        <TodoList />
+        <TodoForm />
+      </section>
     </Provider>
   )
 }

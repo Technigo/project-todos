@@ -12,11 +12,15 @@ code {
     monospace;
 }
 
+.todo-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin: 50px;
+}
 
 .todolist-wrapper {
   display: flex;
   flex-direction: column;
-  margin: 50px;
 }
 
 .todo-item {

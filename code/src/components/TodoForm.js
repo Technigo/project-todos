@@ -29,7 +29,7 @@ const TodoForm = () => {
     }
 
     return (
-        <form onSubmit={onFormSubmit}>
+        <form onSubmit={onFormSubmit} className="input-wrapper">
             <input
                 type="text"
                 placeholder="Add new task.."
