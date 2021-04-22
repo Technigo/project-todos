@@ -26,13 +26,25 @@ const todos = createSlice({
       })
       store.tasks = updatedTasks//immutable approach
     },
+    toggleCompleteAll: (store) => {//store is passed by default by Redux
+      const completedTasks = store.tasks.map(task => {
+        if (task.isComplete === false) {
+          return {
+            ...task,
+            isComplete: true
+          }
+        } else {
+          return task
+        }
+      })
+      store.tasks = completedTasks//immutable approach
+    },
     addTask: (store, action) => {
       store.tasks = [...store.tasks, action.payload]
     },
     deleteTask: (store, action) => {
       const decreasedTasks = store.tasks.filter(task => action.payload !== task.id)
       store.tasks = decreasedTasks//immutable approach
-      
     },
 }})
 

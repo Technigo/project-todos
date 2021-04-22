@@ -67,7 +67,7 @@ const AddTodo = () => {
         onClick={onFormSubmit}
         disabled={value < 2}
       >
-        + Add
+        ADD
       </SubmitButton>
     </Form>
   )
