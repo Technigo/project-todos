@@ -38,17 +38,13 @@ export default ({ open, setOpen, listSlug, ...taskData }) => {
 
   return (
     <>
-      <Dialog
-        open={open}
-        onClose={toggleDialog}
-        aria-labelledby="form-dialog-title"
-        fullWidth>
-        <DialogTitle id="form-dialog-title">Select new location for task</DialogTitle>
+      <Dialog open={open} onClose={toggleDialog} aria-labelledby="dialogTitle" fullWidth>
+        <DialogTitle id="dialogTitle">Select new location for task</DialogTitle>
         <DialogContent>
           <FormControl className={classes.select}>
             <Select
-              labelId="demo-dialog-select-label"
-              id="demo-dialog-select"
+              labelId="dialogSelectLabel"
+              id="dialogSelect"
               value={value}
               onChange={handleChange}
               input={<Input />}>

@@ -9,7 +9,7 @@ import {
   DialogTitle
 } from '@material-ui/core';
 import { addList } from 'store/tasks';
-import { useStyles } from './style'
+import { useStyles } from './style';
 
 export default () => {
   const classes = useStyles();
@@ -31,11 +31,15 @@ export default () => {
 
   return (
     <>
-      <Button className={classes.button} variant="contained" color="primary" onClick={toggleDialog}>
+      <Button
+        className={classes.button}
+        variant="contained"
+        color="primary"
+        onClick={toggleDialog}>
         New Project
       </Button>
-      <Dialog open={open} onClose={toggleDialog} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">New Project</DialogTitle>
+      <Dialog open={open} onClose={toggleDialog} aria-labelledby="dialogTitle">
+        <DialogTitle id="dialogTitle">New Project</DialogTitle>
         <DialogContent>
           <TextField
             autoFocus

@@ -16,6 +16,7 @@ export default () => {
     return store.tasks.lists.find((list) => list.slug === listname);
   });
   const classes = useStyles();
+
   return (
     <>
       <Container component="header" className={classes.root}>

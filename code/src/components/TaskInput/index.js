@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux'
 import { useParams } from 'react-router-dom'
-import { Paper, InputAdornment, Input, Button } from '@material-ui/core';
+import {
+  Paper,
+  InputAdornment,
+  Input,
+  Button
+} from '@material-ui/core';
 import { CheckCircleOutline, Add } from '@material-ui/icons';
 import { addTask } from 'store/tasks'
 import { useStyles } from './style';

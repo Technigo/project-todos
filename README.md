@@ -60,16 +60,18 @@ $ npm start
 
 ## 💭 Reflections 💭
 ***
-generally??
+I had a great time making this application. Since I already felt slightly comfortable with Redux I wanted to take the opportunity to use some new libraries in conjunction with redux. I knew I wanted to base my design off of Microsofts Todo application, so that meant that it would be a good idea to use material design. I found Material UI component-library and spent the first day just learning everything I could about that.
+In general there was no major issue with development. I had a clear vision from the start and spending time with pre-production was super helpful and made the work very easy to follow! 😄
 
 <br>
 
 Issues that came up:
-- ccc 
+- I was a bit unsure if I was in a good way accessing the state data in my reducer actions. I seem to be using a lot of find() functions. It works, but maybe there is a more streamlined way to do it?
 
 
 If I were to continue on this project / start over I would:
-- ccc
+- Add more functionality
+- Perhaps refactor the `tasks` store data structure. There may be a better way to do this so I avoid using to many find() functions. OR I actually did it in a best practice way and I just don't know it. 
 
 <br>
 

@@ -1,19 +1,7 @@
 import React from 'react';
 import { Route, Switch, Redirect } from 'react-router-dom';
 import { Container } from '@material-ui/core';
-import Header from 'components/Header';
-import TaskList from 'components/TaskList';
-import TaskInput from 'components/TaskInput';
-
-const TaskListPage = () => {
-  return (
-    <>
-      <Header />
-      <TaskList />
-      <TaskInput />
-    </>
-  );
-};
+import TaskListPage from './TaskList';
 
 export default () => {
   return (

@@ -1,8 +1,17 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Menu, MenuItem, IconButton, ListItemIcon } from '@material-ui/core';
-import { MoreVert, Delete, MoveToInbox } from '@material-ui/icons/';
+import {
+  Menu,
+  MenuItem,
+  IconButton,
+  ListItemIcon
+} from '@material-ui/core';
+import {
+  MoreVert,
+  Delete,
+  MoveToInbox
+} from '@material-ui/icons/';
 import { deleteTask, deleteList } from 'store/tasks';
 import Dialog from 'components/DialogSelect';
 
@@ -56,15 +65,14 @@ export default ({ type, listSlug, ...taskData }) => {
           </ListItemIcon>
           Delete
         </MenuItem>
-        {type === 'task'
-          && (!taskData.complete && (
-            <MenuItem onClick={() => handleSelect('move')}>
-              <ListItemIcon>
-                <MoveToInbox />
-              </ListItemIcon>
-              Move Task
-            </MenuItem>
-          ))}
+        {type === 'task' && !taskData.complete && (
+          <MenuItem onClick={() => handleSelect('move')}>
+            <ListItemIcon>
+              <MoveToInbox />
+            </ListItemIcon>
+            Move Task
+          </MenuItem>
+        )}
       </Menu>
       <Dialog open={dialog} setOpen={setDialog} listSlug={listSlug} {...taskData} />
     </>
