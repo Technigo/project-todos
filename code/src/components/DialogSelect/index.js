@@ -13,8 +13,10 @@ import {
   Typography
 } from '@material-ui/core';
 import { addTask, deleteTask } from 'store/tasks';
+import { useStyles } from './style';
 
 export default ({ open, setOpen, listSlug, ...taskData }) => {
+  const classes = useStyles();
   const lists = useSelector((store) => store.tasks.lists);
   const [value, setValue] = React.useState(listSlug);
   const dispatch = useDispatch();
@@ -36,10 +38,14 @@ export default ({ open, setOpen, listSlug, ...taskData }) => {
 
   return (
     <>
-      <Dialog open={open} onClose={toggleDialog} aria-labelledby="form-dialog-title">
-        <DialogTitle id="form-dialog-title">New Project</DialogTitle>
+      <Dialog
+        open={open}
+        onClose={toggleDialog}
+        aria-labelledby="form-dialog-title"
+        fullWidth>
+        <DialogTitle id="form-dialog-title">Select new location for task</DialogTitle>
         <DialogContent>
-          <FormControl>
+          <FormControl className={classes.select}>
             <Select
               labelId="demo-dialog-select-label"
               id="demo-dialog-select"
@@ -48,9 +54,7 @@ export default ({ open, setOpen, listSlug, ...taskData }) => {
               input={<Input />}>
               {lists.map((list) => (
                 <MenuItem key={list.slug} value={list.slug}>
-                  <Typography variant={list.type === 'primary' ? 'overline' : 'caption'}>
-                    {list.name}
-                  </Typography>
+                  <Typography variant="overline">{list.name}</Typography>
                 </MenuItem>
               ))}
             </Select>
@@ -58,7 +62,11 @@ export default ({ open, setOpen, listSlug, ...taskData }) => {
         </DialogContent>
         <DialogActions>
           <Button onClick={toggleDialog}>Cancel</Button>
-          <Button onClick={handleSubmit} variant="contained" color="primary">
+          <Button
+            onClick={handleSubmit}
+            variant="contained"
+            color="primary"
+            disabled={value === listSlug}>
             OK
           </Button>
         </DialogActions>

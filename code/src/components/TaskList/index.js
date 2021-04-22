@@ -22,14 +22,16 @@ export default () => {
       {uncomplTasks.map((task) => (
         <Task key={task.id} {...task} listSlug={currentList.slug} />
       ))}
-      <Button
-        variant="contained"
-        color="primary"
-        onClick={() => setComplListOpen(!complListOpen)}>
-        Complete
-        {complListOpen ? <ArrowDropDown /> : <ArrowDropUp />}
-        {complTasks.length}
-      </Button>
+      {complTasks.length > 0 && (
+        <Button
+          variant="contained"
+          color="primary"
+          onClick={() => setComplListOpen(!complListOpen)}>
+          Complete
+          {complListOpen ? <ArrowDropDown /> : <ArrowDropUp />}
+          {complTasks.length}
+        </Button>
+      )}
       {complListOpen
         && complTasks.map((task) => (
           <Task key={task.id} {...task} listSlug={currentList.slug} />

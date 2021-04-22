@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 import { Menu, MenuItem, IconButton, ListItemIcon } from '@material-ui/core';
 import { MoreVert, Delete, MoveToInbox } from '@material-ui/icons/';
 import { deleteTask, deleteList } from 'store/tasks';
@@ -28,7 +28,7 @@ export default ({ type, listSlug, ...taskData }) => {
       }
       if (type === 'project') {
         dispatch(deleteList(listSlug));
-        history.push('/')
+        history.push('/');
       }
     }
     if (action === 'move') {
@@ -56,14 +56,15 @@ export default ({ type, listSlug, ...taskData }) => {
           </ListItemIcon>
           Delete
         </MenuItem>
-        {type === 'task' && (
-          <MenuItem onClick={() => handleSelect('move')}>
-            <ListItemIcon>
-              <MoveToInbox />
-            </ListItemIcon>
-            Move Task
-          </MenuItem>
-        )}
+        {type === 'task'
+          && (!taskData.complete && (
+            <MenuItem onClick={() => handleSelect('move')}>
+              <ListItemIcon>
+                <MoveToInbox />
+              </ListItemIcon>
+              Move Task
+            </MenuItem>
+          ))}
       </Menu>
       <Dialog open={dialog} setOpen={setDialog} listSlug={listSlug} {...taskData} />
     </>

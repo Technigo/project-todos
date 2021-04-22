@@ -2,7 +2,7 @@ import { makeStyles } from '@material-ui/styles';
 
 export const useStyles = makeStyles((theme) => ({
   button: {
-    marginLeft: theme.spacing(1)
+    margin: theme.spacing(1)
   },
   textField: {
     '& label.Mui-focused': {

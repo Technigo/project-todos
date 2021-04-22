@@ -40,6 +40,7 @@ export default () => {
           </InputAdornment>
         } />
       <Button
+        disabled={value === ''}
         variant="contained"
         color="primary"
         type="click"
