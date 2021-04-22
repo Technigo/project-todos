@@ -25,7 +25,7 @@ const Form = styled.form`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: baseline;
+  align-items: center;
   width: 90%;
   padding: 10px;
   box-sizing: border-box;
