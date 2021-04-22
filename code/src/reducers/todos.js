@@ -4,9 +4,9 @@ const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      { id: 1, description: 'Göra klart veckans projekt.', time: Date.now(), isComplete: true },
-      { id: 2, description: 'Åka och träna på gymmet', time: Date.now(), isComplete: true },
-      { id: 3, description: 'Gå och handla godis.', time: Date.now(), isComplete: false }
+      { id: 1, description: 'Finish this weeks project', time: Date.now(), isComplete: false },
+      { id: 2, description: 'Workout at the gym', time: Date.now(), isComplete: true },
+      { id: 3, description: 'Shop my favorite candy', time: Date.now(), isComplete: false }
     ]
   },
   reducers: {
