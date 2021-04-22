@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
+export const AddText = styled.p`
+  font-size: 48px;
+  color: ${props => props.theme.buttonText};
+`;
+
 export const Form = styled.form`
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  padding: 20px 20px 80px 20px;
+  padding: 20px 20px 110px 20px;
   background-color: white;
   @media (min-width: 769px) {
     max-width: 700px;
@@ -33,7 +38,9 @@ export const BottomContainer = styled.div`
   height: 90px;
   width: 95%;
   border-top: 2px solid ${props => props.theme.secondary};
-  // background-color: #F4F4F4;
+  @media (min-width: 1025px) {
+    max-width: 800px;
+  }
 `;
 
 export const Options = styled.label`

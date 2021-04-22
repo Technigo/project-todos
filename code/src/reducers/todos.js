@@ -5,31 +5,36 @@ const todos = createSlice({
   initialState: {
     tasks: [],
     categories: [
-        { value: "to-do", label: "to-do", icon: "list-ul" },
-        { value: "shopping", label: "shopping", icon: "shopping-cart" },
-        { value: "work", label: "work", icon: "briefcase" },
-        { value: "housework", label: "housework", icon: "laptop-house" },
-        { value: "family", label: "family", icon: "heart" },
+        { value: "to-do", label: "to-do"},
+        { value: "shopping", label: "shopping"},
+        { value: "work", label: "work"},
+        { value: "housework", label: "housework"},
+        { value: "social", label: "social"},
     ],
     filterCategories: [
-        { value: "all", label: "all", icon: "calendar-check" },
-        { value: "to-do", label: "to-do", icon: "calendar-check" },
-        { value: "shopping", label: "shopping", icon: "shopping-cart" },
-        { value: "work", label: "work", icon: "briefcase" },
-        { value: "housework", label: "housework", icon: "laptop-house" },
-        { value: "family", label: "family", icon: "heart" },
+        { value: "all", label: "all"},
+        { value: "to-do", label: "to-do"},
+        { value: "shopping", label: "shopping"},
+        { value: "work", label: "work"},
+        { value: "housework", label: "housework"},
+        { value: "social", label: "social"},
     ],
-    progress: 0,
   },
   reducers: {
     addTask: (state, action) => {
-        const { task, category, dueDate } = action.payload;
+        const { task, category, dueDate} = action.payload;
         state.tasks.push({ 
             id: Date.now(), 
             task,
             category,
             dueDate,
-            isComplete: false })
+            isComplete: false,
+            icon: (category === "to-do") ? "list-ul"
+            : (category === "shopping") ? "shopping-cart"
+            : (category === "work") ? "briefcase"
+            : (category === "housework") ? "laptop-house"
+            : "heart",
+         })
     },
     removeTask: (state, action) => {
         // const decreasedTasks = store.tasks.filter(todo => { todo.id !== action.payload} state.tasks = decreasedTasks)

@@ -86,7 +86,6 @@ export const AddTaskButton = styled(ThemeColors)`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 48px;
   width: 80px;
   height: 80px;
   margin-top: -90px;

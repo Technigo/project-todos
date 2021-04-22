@@ -3,15 +3,14 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Select from "react-select";
 import Drawer from "@material-ui/core/Drawer";
-import Divider from '@material-ui/core/Divider';
 
 import { PickDate } from "./PickDate";
 import todos from "../reducers/todos";
 import { AddTaskButton, SubmitButton } from "../styledcomponents/StyledButtons";
-import { Form, Input, BottomContainer, Options, LabelText, CategoryDate } from "../styledcomponents/StyledTaskForm";
+import { AddText, Form, Input, BottomContainer, Options, LabelText, CategoryDate } from "../styledcomponents/StyledTodoForm";
 
 
-export const TaskForm = () => {
+export const TodoForm = () => {
   const categories = useSelector((state) => state.todos.categories);
   const [openForm, setOpenForm] = useState(false);
   const [dueDate, setDueDate] = useState(new Date());
@@ -31,7 +30,7 @@ export const TaskForm = () => {
   return (
     <>
       <BottomContainer>
-        <AddTaskButton onClick={() => setOpenForm(true)}>+</AddTaskButton>
+        <AddTaskButton onClick={() => setOpenForm(true)}><AddText>+</AddText></AddTaskButton>
       </BottomContainer>
       <Drawer 
         anchor="bottom"
@@ -43,19 +42,16 @@ export const TaskForm = () => {
             <Options>
               <LabelText>Choose category:</LabelText>
               <Select
-                value={category.icon}
-                onChange={category => setCategory(category.icon)}
+                value={category.value}
+                onChange={category => setCategory(category.value)}
                 options={categories}
-                required="true"
               />
             </Options>
-            <Divider variant="middle" />
             <PickDate 
               onChange={dueDate => setDueDate(dueDate)}
               selected={dueDate}
             />
           </CategoryDate>
-          <Divider variant="middle" />
           <Input
             type="text"
             placeholder="Task description"

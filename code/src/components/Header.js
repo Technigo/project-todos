@@ -23,12 +23,14 @@ const TitleTop = styled.header`
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  width: 90%;
+  width: 95%;
 //   background-color: #F4F4F4;
-  border-bottom: 1px solid ${props => props.theme.secondary};
+  border-bottom: 2px solid ${props => props.theme.secondary};
   @media (min-width: 769px) {
-    max-width: 600px;
     padding: 20px 0;
+  }
+  @media (min-width: 1025px) {
+    max-width: 800px;
   }
 `;
 
@@ -43,7 +45,7 @@ const Title = styled.h1`
 `;
 
 const DrawerContainer = styled.aside`
-  background-color: ${props => props.theme.primary};
+  background-color: ${props => props.theme.secondary};
   padding: 10px 20px;
   display: flex;
   flex-wrap: wrap;

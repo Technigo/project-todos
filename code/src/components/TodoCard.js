@@ -7,11 +7,11 @@ import Tooltip from '@material-ui/core/Tooltip';
 
 import todos from "../reducers/todos";
 import { RemoveButton } from "../styledcomponents/StyledButtons";
-import { Task, TextDeleteBox, IconBox, CheckDeleteBox, TextDateBox, TaskText, DateBox, DateText, DateTextDue, BoldText } from "../styledcomponents/StyledTaskCard";
+import { Task, TextDeleteBox, IconBox, CheckDeleteBox, TextDateBox, TaskText, DateBox, DateText, DateTextDue, BoldText } from "../styledcomponents/StyledTodoCard";
 
 
-export const TaskCard = (props) => {
-  const { id, task, category, isComplete, dueDate } = props.taskInfo
+export const TodoCard = (props) => {
+  const { id, task, category, isComplete, dueDate, icon } = props.taskInfo
   const dispatch = useDispatch();
 
   const dateCreated = moment().format("DD/MM YYYY");
@@ -20,8 +20,8 @@ export const TaskCard = (props) => {
   return (
     <Task>
       <TextDeleteBox>
-        <IconBox>
-          <FontAwesomeIcon icon={category} style={{ fontSize: 18 }} />
+        <IconBox title={category}>
+          <FontAwesomeIcon icon={icon} style={{ fontSize: 18 }} />
         </IconBox>
         <TextDateBox>
           <TaskText>{task}</TaskText>

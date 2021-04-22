@@ -1,13 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { useSelector } from "react-redux";
 
 import styled from "styled-components";
 
-import { TasksCompleted } from "./TasksCompleted";
-import { TaskCard } from "./TaskCard";
+import { TodoCompleted } from "./TodoCompleted";
+import { TodoCard } from "./TodoCard";
 import { ClearButtons } from "./ClearButtons";
-import { ProgressBar } from "./ProgressBar";
-
+import { TodoCounter } from "./TodoCounter";
+import { FilterTodos } from "./FilterTodos";
 
 const Main = styled.main`
   display: flex;
@@ -31,25 +31,44 @@ const TaskList = styled.section`
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
+const BottomContainer = styled.div`
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: 5px;
+`;
+
 export const ToDoList = () => {
-  const tasks = useSelector((state) => state.todos.tasks);
+  const [category, setCategory] = useState("");
+  const allTasks = useSelector((state) => state.todos.tasks)
+  const tasks = useSelector((state) => {
+    if (!category) return state.todos.tasks;
+    else if (category === "all") return state.todos.tasks
+    else return state.todos.tasks.filter((task) => task.category === category); 
+  });
+  
 
   return (
     <Main>
-      {tasks.length < 1 ? (
-        <TasksCompleted />
+      {allTasks.length < 1 ? (
+        <TodoCompleted />
       )
       :
       (
         <TaskList>
-          <ProgressBar />
+          <FilterTodos 
+            category={category.value} 
+            onChange={category => setCategory(category.value)} />
           {tasks.map((todo, index) => (
-            <TaskCard 
+            <TodoCard 
               key={index}
               taskInfo={todo} 
             />   
           ))}
-          <ClearButtons />
+          <BottomContainer>
+            <TodoCounter />
+            <ClearButtons />
+          </BottomContainer>
         </TaskList>
       )}
     </Main>

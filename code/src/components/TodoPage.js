@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components"
 
 import { Header } from "./Header";
-import { TaskForm } from "./TaskForm";
+import { TodoForm } from "./TodoForm";
 import { ToDoList } from "./ToDoList";
 
 const Main = styled.main`
@@ -20,11 +20,11 @@ top: 0;
 bottom: 0;
 `;
 
-export const WholePage = () => {
+export const TodoPage = () => {
   return (
     <Main>
       <Header />
-      <TaskForm />
+      <TodoForm />
       <ToDoList />
     </Main>
   )
