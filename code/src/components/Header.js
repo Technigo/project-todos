@@ -10,11 +10,9 @@ const Header = () => {
   return (
     <HeaderContainer>
       <HeaderText>MY TASKS</HeaderText>
-        <div>
           <DateTime>
             {currentDate} - {currentTime}
-          </DateTime>
-        </div>
+          </DateTime>  
     </HeaderContainer>
   )
 }

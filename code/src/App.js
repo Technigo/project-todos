@@ -49,6 +49,6 @@ box-sizing: border-box;
   width: 400px;
   margin: 70px 0px;
   padding: 20px 20px;
-  font-size: 18px;
+  font-size: 16px;
 }
   `

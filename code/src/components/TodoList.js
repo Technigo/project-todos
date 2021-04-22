@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import moment from 'moment'
 
 import todos from '../reducers/todos'
 import styled from 'styled-components'
@@ -16,11 +17,16 @@ const TodoList =() => {
             type='checkbox'
             checked={todo.isComplete}
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-            />
-            <p className='p'>{todo.description}</p>
-            <RemoveButton onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
+          />
+          <p style={{ textDecoration: todo.isComplete ? "line-through" : "" }}>
+            {todo.description}
+          </p>
+          <RemoveButton onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
             🗑 
-            </RemoveButton>
+          </RemoveButton>    
+          <TimeAdded>
+            {moment(todo.time).format('ddd HH:mm')}
+          </TimeAdded>
         </TodoItem>
       ))}
     </TodoListContainer>
@@ -35,6 +41,7 @@ min-height: 280px;
 background: #112d32;
 `
 const TodoItem = styled.div`
+position: relative;
 border-radius: 5px;
 display: flex;
 flex-direction: row;
@@ -43,15 +50,28 @@ justify-content: space-between;
 background: #88bdbc;
 color: #ffffff;
 margin: 3px;
+padding: 5px;
 `
+const TimeAdded = styled.p`
+font-size: 10px;
+position: absolute;
+left: 259px;
+top: 1px;
+margin: 2px;
+
+@media (min-width: 768px) {
+  font-size: 11px;
+  left: 292px;
+}`
+
 const Checkbox = styled.input`
 transform: scale(1.7);
 margin: 10px;
 cursor: pointer;
-
 filter: invert(90%);
-&:checked {
-  
+
+@media (min-width: 768px) {
+  transform: scale(1.9);
 }
 `
 const RemoveButton = styled.button`
@@ -66,6 +86,6 @@ margin-right: 8px;
   color: #112d32;
 }
 
-`
-
-
+@media (min-width: 768px) {
+  transform: scale(1.9);
+}`

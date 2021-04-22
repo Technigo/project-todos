@@ -7,7 +7,6 @@ import styled from 'styled-components'
 
 const AddTodo =() => {
   const [value, setValue] = useState ('')
-
   const dispatch = useDispatch()
 
   const onFormSubmit = (e) => {
@@ -16,6 +15,7 @@ const AddTodo =() => {
     const newTodo = {
       id: uuidv4(), 
       description: value, 
+      time: Date.now(),
       isComplete: false,
     }
     dispatch(todos.actions.addTodo(newTodo))
@@ -33,9 +33,9 @@ const AddTodo =() => {
         onChange={e => setValue (e.target.value)}
       />
       <AddButton type='submit' disabled={
-            value.length < 3 || value.length > 140 
-          }>{" "}
-          +{" "}</AddButton>
+        value.length < 3 || value.length > 140 }>
+        {" "}+{" "}
+      </AddButton>
     </TodoForm>
     </>
   )
@@ -45,54 +45,53 @@ export default AddTodo
 
 const AddTodoText = styled.p`
 color: #ffffff;
-padding-top: 10px;`
-
+padding-top: 10px;
+`
 const TodoForm = styled.form`
-padding: 5px 3px 20px 3px;
+padding: 5px 10px 20px 10px;
 display: flex;
 justify-content: space-between;
 align-items: center;
 `
-
 const TodoInput = styled.input`
 background-color: #fff;
 border-radius: 5px;
 border: solid 2px #88bdbc;
 overflow-wrap: break-word;
 resize: none;
-min-height: 55px;
+min-height: 45px;
 min-width: 240px;
 
-
 @media (min-width: 768px) {
-  min-height: 75px;
+  min-height: 60px;
   min-width: 265px;
+  font-size: 16px;
 } 
 `
 const AddButton = styled.button`
-height: 55px;
-width: 55px;
-border-radius: 50%;
-font-size: 30px;
+height: 50px;
+width: 50px;
+border-radius: 5px;
+font-size: 40px;
 cursor: pointer;
 border: none;
 background-color: #88bdbc;
 color: #ffffff;
-  &:hover {
-    background-color: #e58819;
-    color: #112d32;
-    border: none;
-  }
-  &:disabled {
-    background-color: #ffffff;
-    color: #112d32;
-    border: none;
-    cursor: arrow;
-  }
+&:hover {
+  background-color: #e58819;
+  color: #112d32;
+  border: none;
+}
+&:disabled {
+  background-color: #ffffff;
+  color: #112d32;
+  border: none;
+  cursor: arrow;
+}
 
-  @media (min-width: 768px) {
-    height: 65px;
-    width: 65px;
-    font-size: 45px
-  } 
+@media (min-width: 768px) {
+  height: 65px;
+  width: 65px;
+  font-size: 45px
+} 
 `

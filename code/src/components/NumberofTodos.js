@@ -9,13 +9,13 @@ const NumberofTodos = () => {
   return (
     <NumberTodoContainer>
       <p>
-      You have {todos} tasks in your list
-        </p>
+        You have {todos} tasks in your list
+      </p>
     </NumberTodoContainer>
   )
 }
 export default NumberofTodos
 
 const NumberTodoContainer = styled.div`
-
-color: #ffffff;`
+color: #ffffff;
+`

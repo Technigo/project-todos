@@ -1,18 +1,19 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import styled from 'styled-components'
+
 import todos from '../reducers/todos'
+import styled from 'styled-components'
 
 const RemoveAllTodos = () => {
   const dispatch = useDispatch()
 
   return(
     <RemoveAllButton
-    type='button'
-    onClick={() => dispatch(todos.actions.removeAll())}
-    className='clear-button'>
-      DELETE ALL
-  </RemoveAllButton>
+      type='button'
+      onClick={() => dispatch(todos.actions.removeAll())}
+      className='clear-button'>
+        DELETE ALL
+    </RemoveAllButton>
   )
 }
 export default RemoveAllTodos
@@ -24,4 +25,7 @@ margin: 15px 3px;
 border-radius: 5px;
 color: #ffffff;
 height: 30px;
+&:hover {
+  color: #112d32;
+}
 `

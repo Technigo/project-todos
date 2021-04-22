@@ -4,9 +4,9 @@ const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      { id: 1, description: 'Gå och handla godis.', isComplete: false },
-      { id: 2, description: 'Åka och träna ben på gymmet', isComplete: true },
-      { id: 3, description: 'Göra klart veckans projekt.', isComplete: false }
+      { id: 1, description: 'Göra klart veckans projekt.', time: Date.now(), isComplete: true },
+      { id: 2, description: 'Åka och träna på gymmet', time: Date.now(), isComplete: true },
+      { id: 3, description: 'Gå och handla godis.', time: Date.now(), isComplete: false }
     ]
   },
   reducers: {
@@ -34,9 +34,6 @@ const todos = createSlice({
       let emptyArray = store.items
       emptyArray.length = 0
     } 
-    // removeAllTodo: (store, action) => {
-    //   store.items = []
-    // }
   }
 })
 
