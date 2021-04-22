@@ -1,8 +1,9 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 import todos from 'reducers/todos'
+import EmptyState from './EmptyState'
 
 
 const Container = styled.div`
@@ -34,6 +35,7 @@ const ClearButton = styled.button`
 `
 
 const ClearTodo = () => {
+  const tasks = useSelector(store => store.todos.tasks)
   const dispatch = useDispatch()
 
   const handleOnClick = () => {
@@ -41,13 +43,20 @@ const ClearTodo = () => {
   } 
   
   return (
-    <Container>
-      <ClearButton
-        onClick={() => handleOnClick()}
-      >
-        ALL DONE
-      </ClearButton>
-    </Container>
+    <>
+      {tasks.length > 0 ?
+        <Container>
+          <ClearButton
+            onClick={() => handleOnClick()}
+          >
+            ALL DONE
+          </ClearButton>
+        </Container>
+      :
+      <EmptyState />
+      }
+    </>
+
   )
 }
 

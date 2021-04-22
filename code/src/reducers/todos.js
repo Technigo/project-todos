@@ -3,11 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const todos = createSlice({
   name: 'todos', //good to name the same as a variable
   initialState: {
-    tasks: [
-      { id: 1, description: '1aaaaaaaaaaaa', isComplete: false, createdAt: Date.now() },
-      { id: 2, description: '2aaaaaaaaaaa', isComplete: false, createdAt: Date.now() },
-      { id: 3, description: '3aaaaaaaaaaaaaaaaa', isComplete: false, createdAt: Date.now() },
-    ]
+    tasks: []
   },
   reducers: {//methods/actions to manipulate the store
     toggleComplete: (store, action) => {//store is passed by default by Redux
