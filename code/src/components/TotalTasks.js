@@ -7,11 +7,8 @@ import { DeleteAllButton } from './styled components/TotalTasksStyling'
 const TotalTasks = () => {
     const dispatch = useDispatch()
 
-    const onClickDeleteAll = (event) => {
-		event.preventDefault();
-        dispatch(
-            tasks.actions.deleteAllTasks()
-        )
+    const onClickDeleteAll = () => {
+        dispatch(tasks.actions.deleteAllTasks())
 	}
 
     return (

@@ -10,12 +10,11 @@ const Header = () => {
 
     const totalNumberOfTasks = useSelector((store) => (
         store.tasks.items.length
-        ))
+    ))
 
-     //number of completed tasks in the list
      const completedTasks = useSelector((store) => (
         store.tasks.items.filter((task => task.completed)).length
-        ))
+    ))
 
     const onClickClearAll = () => {
         dispatch(tasks.actions.clearAllTasks())

@@ -12,7 +12,6 @@ export const AddTaskForm = () => {
 
 	const onSubmit = (event) => {
 		event.preventDefault()
-		// console.log('user entered: ' + value);
 		const newTask = {
             id: uniqid(),
             content: value,
