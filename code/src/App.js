@@ -58,8 +58,8 @@ export const App = () => {
         {addView && <AddTodo setAddView={setAddView} />}
         {!addView &&
           <ButtonContainer>
-            <AddBtn setAddView={setAddView}/>
             <ClearCompletedBtn /> 
+            <AddBtn setAddView={setAddView}/>
           </ButtonContainer>
         }
       </Container>

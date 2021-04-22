@@ -19,7 +19,7 @@ const Btn = styled.button`
   border: 2px solid #D81159;
   border-radius: 30px;
   padding: 10px 20px;
-  margin: 30px 20px 20px 0;
+  margin: 30px 0 20px 20px;
 `;
 
 const Bin = styled(FaTrashAlt)`

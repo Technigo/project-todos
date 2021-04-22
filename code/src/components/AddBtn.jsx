@@ -11,7 +11,7 @@ const Btn = styled.button`
   font-size: 15px;
   font-weight: bold;
   color: white;
-  margin: 30px 0 20px 20px;
+  margin: 30px 20px 20px 0;
 `;
 
 const Plus = styled(FaPlus)`

@@ -30,7 +30,6 @@ const AddButton = styled.button`
   border: 1px solid #5899E2;
   border-radius: 30px;
   padding: 10px 20px;
-  margin-right: 10px;
 `;
 
 const CancelBtn = styled.button`
@@ -40,6 +39,7 @@ const CancelBtn = styled.button`
   padding: 10px 20px;
   color: white;
   font-weight: bold;
+  margin-right: 10px;
 `;
 
 const Input = styled.input`
@@ -74,6 +74,12 @@ export const AddTodo = ({ setAddView }) => {
         >
         </Input>
         <ButtonContainer>
+          <CancelBtn
+              type="button"
+              onClick={() => setAddView(false)}
+              >
+              Cancel
+          </CancelBtn>
           <AddButton
             type="submit"  
             onClick={() => {
@@ -85,12 +91,6 @@ export const AddTodo = ({ setAddView }) => {
           <Plus />
             ADD
           </AddButton>
-          <CancelBtn
-            type="button"
-            onClick={() => setAddView(false)}
-            >
-            Cancel
-        </CancelBtn>
       </ButtonContainer>
      </InputContainer>
     </Container>
