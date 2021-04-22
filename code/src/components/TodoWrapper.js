@@ -20,7 +20,7 @@ const useStyles = makeStyles({
         boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
         borderRadius: "25px",
         width: '500px',
-        marginTop: "-50px"
+        // marginTop: "-50px"
     },
     container: {
         display: "flex",
