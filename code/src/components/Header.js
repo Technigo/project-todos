@@ -16,50 +16,12 @@ import {
   PurpleButton, 
   GrayButton, 
   BoldButton,
-  WhiteButton } from "../styledcomponents/StyledButtons";
-
-const TitleTop = styled.header`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px;
-  width: 95%;
-//   background-color: #F4F4F4;
-  border-bottom: 2px solid ${props => props.theme.secondary};
-  @media (min-width: 769px) {
-    padding: 20px 0;
-  }
-  @media (min-width: 1025px) {
-    max-width: 800px;
-  }
-`;
-
-const Title = styled.h1`
-  font-size: 40px;
-  margin: 0;
-  font-family: ${props => props.theme.fontFamily};
-  color: ${props => props.theme.primary};
-  @media (min-width: 769px) {
-    font-size: 58px;
-  }
-`;
-
-const DrawerContainer = styled.aside`
-  background-color: ${props => props.theme.secondary};
-  padding: 10px 20px;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  box-sizing: border-box;
-`;
-
-const DrawerContainerText = styled.p`
-  font-size: 14px;
-  font-family: ${props => props.theme.fontFamily};
-  color: ${props => props.theme.buttonText};
-  font-weight: bold;
-  margin-right: 10px;
-`;
+  WhiteButton, } from "../styledcomponents/StyledButtons";
+  import { 
+    TitleTop, 
+    Title, 
+    DrawerContainer, 
+    DrawerContainerText } from "../styledcomponents/StyledHeader";
 
 
 export const Header = () => {
@@ -68,8 +30,8 @@ export const Header = () => {
   const dispatch = useDispatch();
 
   return (
-    <TitleTop>
-      <Title>TODO</Title>
+    <TitleTop>       
+      <Title>toDO</Title>
         <Tooltip title="Change theme">
         <SettingsButton
             onClick={() => setOpen(true)}><FontAwesomeIcon icon="cog" /></SettingsButton>

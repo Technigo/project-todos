@@ -7,7 +7,7 @@ import Drawer from "@material-ui/core/Drawer";
 import { PickDate } from "./PickDate";
 import todos from "../reducers/todos";
 import { AddTaskButton, SubmitButton } from "../styledcomponents/StyledButtons";
-import { AddText, Form, Input, BottomContainer, Options, LabelText, CategoryDate } from "../styledcomponents/StyledTodoForm";
+import { AddText, FormContainer, Form, Input, BottomContainer, Options, LabelText, CategoryDate } from "../styledcomponents/StyledTodoForm";
 
 
 export const TodoForm = () => {
@@ -37,6 +37,7 @@ export const TodoForm = () => {
         open={openForm}         
         onClose={() => setOpenForm(false)}
         onOpen={() => setOpenForm(true)}>
+          <FormContainer>
         <Form onSubmit={onFormSubmit}>
           <CategoryDate>
             <Options>
@@ -62,6 +63,7 @@ export const TodoForm = () => {
             required />
           <SubmitButton type="submit">Add Task</SubmitButton>
         </Form>
+        </FormContainer>
       </Drawer>
     </>
   )

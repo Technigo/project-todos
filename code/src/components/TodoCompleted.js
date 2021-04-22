@@ -11,8 +11,8 @@ align-items: center;
 font-size: 70px;
 color: ${props => props.theme.secondary};
 margin-top: 30px;
-@media (min-width: 769px) {
-  font-size: 90px;
+@media (min-width: 768px) {
+  font-size: 100px;
 }
 `;
 
@@ -22,7 +22,7 @@ width: 90%;
 padding: 50px;
 margin: 0;
 box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   padding: 100px 50px;
 }
 `;

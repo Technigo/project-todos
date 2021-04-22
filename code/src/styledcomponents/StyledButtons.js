@@ -10,7 +10,7 @@ export const SettingsButton = styled.button`
   :hover {
     opacity: 0.7;
   }
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     font-size: 48px;
   }
 `;
@@ -23,6 +23,11 @@ const ColorButton = styled.button`
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   :hover {
     opacity: 0.7;
+  }
+  @media (min-width: 768px) {
+    width: 32px;
+    height: 32px;
+    margin: 5px;
   }
 `;
 
@@ -88,36 +93,37 @@ export const AddTaskButton = styled(ThemeColors)`
   align-items: center;
   width: 80px;
   height: 80px;
-  margin-top: -90px;
+  margin-top: -75px;
   border-radius: 50%;
-  border: 3px solid ${props => props.theme.backgroundColor};
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   :hover {
     transform: scale(1.1);
     opacity: 1;
   }
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     width: 120px;
     height: 120px;
     font-size: 68px;
+    margin-top: -120px;
   }
 `;
 
 export const SubmitButton = styled(ThemeColors)`
-  padding: 7px;
+  padding: 7px 10px 10px 10px;
   font-size: 20px;
   font-weight: bold;
   font-family: ${props => props.theme.fontFamily};
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  border-radius: 5px;
 `;
 
 // For To Do List component
 export const ClearAllButton = styled(ThemeColors)`
-  padding: 5px 10px;
+  padding: 2px 5px;
   border-radius: 5px;
   font-size: 14px;
   font-family: ${props => props.theme.fontFamily};
-  margin: 10px 0 20px 10px;
+  margin: 10px 0 20px 5px;
   ${props =>
     props.disabled ?
     `
@@ -125,4 +131,9 @@ export const ClearAllButton = styled(ThemeColors)`
     `:  `
     opacity: 1;
   `};
+  @media (min-width: 768px) {
+    padding: 5px 10px;
+    margin: 10px 0 20px 10px;
+    font-size: 18px;
+  }
 `;

@@ -18,19 +18,22 @@ const LabelText = styled.p`
   font-family: ${props => props.fontFamily};
   font-weight: bold;
   margin: 2px;
+  @media (min-width: 768px) {
+    font-size: 17px;
+    margin: 5px;
+  }
 `;
 
-export const FilterTodos = ({ category, onChange }) => {
+export const FilterTodos = ({ category, onChange, onClick }) => {
   const filterCategories = useSelector((state) => state.todos.filterCategories)
-
-    return (
-        <FilterContainer>
-          <LabelText>Filter tasks:</LabelText>
-          <Select 
-            className="filter"
-            value={category}
-            onChange={onChange}
-            options={filterCategories} />
-        </FilterContainer>
-    )
-}
+  return (
+    <FilterContainer>
+      <LabelText>Filter tasks:</LabelText>
+      <Select 
+        className="filter"
+        value={category}
+        onChange={onChange}
+        options={filterCategories} />
+    </FilterContainer>
+  )
+};

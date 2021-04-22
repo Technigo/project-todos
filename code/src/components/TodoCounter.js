@@ -13,6 +13,9 @@ const CounterText = styled.p`
   font-size: 12px;
   margin: 0;
   font-family: ${props => props.theme.fontFamily};
+  @media (min-width: 768px) {
+    font-size: 17px;
+  }
 `;
 
 export const TodoCounter = () => {

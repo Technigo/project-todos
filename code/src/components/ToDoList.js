@@ -8,6 +8,7 @@ import { TodoCard } from "./TodoCard";
 import { ClearButtons } from "./ClearButtons";
 import { TodoCounter } from "./TodoCounter";
 import { FilterTodos } from "./FilterTodos";
+import todos from "../reducers/todos";
 
 const Main = styled.main`
   display: flex;
@@ -16,8 +17,8 @@ const Main = styled.main`
   width: 92%;
   background-color: ${props => props.theme.backgroundColor};
   height: 100vh;
-  @media (min-width: 769px) {
-    max-width: 600px;
+  @media (min-width: 768px) {
+    max-width: 800px;
   }
 `;
 
@@ -29,6 +30,9 @@ const TaskList = styled.section`
   border-radius: 20px;
   margin-top: 20px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  @media (min-width: 768px) {
+    padding: 20px;
+  }
 `;
 
 const BottomContainer = styled.div`
@@ -46,7 +50,6 @@ export const ToDoList = () => {
     else if (category === "all") return state.todos.tasks
     else return state.todos.tasks.filter((task) => task.category === category); 
   });
-  
 
   return (
     <Main>

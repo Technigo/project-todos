@@ -21,7 +21,7 @@ export const TodoCard = (props) => {
     <Task>
       <TextDeleteBox>
         <IconBox title={category}>
-          <FontAwesomeIcon icon={icon} style={{ fontSize: 18 }} />
+          <FontAwesomeIcon icon={icon} className="icon" />
         </IconBox>
         <TextDateBox>
           <TaskText>{task}</TaskText>
