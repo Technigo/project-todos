@@ -3,7 +3,6 @@ import styled from 'styled-components'
 // Background
 export const Background= styled.div`
   width: 100vw;
-  height: 100vh;
   background: rgb(238,174,202);
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
   opacity: 0.8;
