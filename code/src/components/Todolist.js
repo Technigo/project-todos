@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import moment from 'moment'
 
 import todos from '../reducers/todos'
 
@@ -16,13 +17,19 @@ const TodoList = () => {
         <div>
         {items.map((todo, index) => (
             <div key={todo.id} className="container">
-                <p>{todo.description}</p>
+                
+               
                 <input
+                className="description"
                 type="checkbox"
                 checked={todo.isComplete}
                 onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
                 />
-                <button className="button" onClick={() => dispatch(todos.actions.removeTodo(index))}>Delete</button>
+                <label htmlFor="description">
+               <p>{todo.description}</p>
+               </label>
+               <span className="date"> ✯ - {moment(todo.createdAt).fromNow()}</span>
+               <button className="button" onClick={() => dispatch(todos.actions.removeTodo(index))}>Delete</button>
                 </div>                
         ))}
         </div>     
