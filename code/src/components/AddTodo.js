@@ -1,0 +1,98 @@
+import React, {useState} from 'react'
+import { useDispatch } from 'react-redux'
+import { v4 as uuidv4 } from 'uuid';
+
+import todos from '../reducers/todos'
+import styled from 'styled-components'
+
+const AddTodo =() => {
+  const [value, setValue] = useState ('')
+
+  const dispatch = useDispatch()
+
+  const onFormSubmit = (e) => {
+    e.preventDefault()
+
+    const newTodo = {
+      id: uuidv4(), 
+      description: value, 
+      isComplete: false,
+    }
+    dispatch(todos.actions.addTodo(newTodo))
+    setValue('')
+  }
+  return(
+    <>
+    <AddTodoText>ADD A NEW TASK AND CLICK ON THE +</AddTodoText>
+    <TodoForm onSubmit={onFormSubmit}>
+      <TodoInput
+        type='text'
+        required
+        value={value}
+        placeholder="Do next . . .✏️"
+        onChange={e => setValue (e.target.value)}
+      />
+      <AddButton type='submit' disabled={
+            value.length < 3 || value.length > 140 
+          }>{" "}
+          +{" "}</AddButton>
+    </TodoForm>
+    </>
+  )
+}
+
+export default AddTodo
+
+const AddTodoText = styled.p`
+color: #ffffff;
+padding-top: 10px;`
+
+const TodoForm = styled.form`
+padding: 5px 3px 20px 3px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+`
+
+const TodoInput = styled.input`
+background-color: #fff;
+border-radius: 5px;
+border: solid 2px #88bdbc;
+overflow-wrap: break-word;
+resize: none;
+min-height: 55px;
+min-width: 240px;
+
+
+@media (min-width: 768px) {
+  min-height: 75px;
+  min-width: 265px;
+} 
+`
+const AddButton = styled.button`
+height: 55px;
+width: 55px;
+border-radius: 50%;
+font-size: 30px;
+cursor: pointer;
+border: none;
+background-color: #88bdbc;
+color: #ffffff;
+  &:hover {
+    background-color: #e58819;
+    color: #112d32;
+    border: none;
+  }
+  &:disabled {
+    background-color: #ffffff;
+    color: #112d32;
+    border: none;
+    cursor: arrow;
+  }
+
+  @media (min-width: 768px) {
+    height: 65px;
+    width: 65px;
+    font-size: 45px
+  } 
+`
