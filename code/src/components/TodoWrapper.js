@@ -19,7 +19,8 @@ const useStyles = makeStyles({
         backgroundColor: '#ECECEC',
         boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
         borderRadius: "25px",
-        width: '500px',
+        // minWidth: 50,
+        // width: '500px',
         // marginTop: "-50px"
     },
     container: {
@@ -41,7 +42,7 @@ const TodoWrapper = () => {
 
 return(
 <div className="blubs">
-    <Container className={classes.root}>
+    <Container maxWidth="sm" className={classes.root}>
         <Grid className={classes.container}>
             <Header />
             <AddNewTodo />
