@@ -11,11 +11,12 @@ const TodoInformation = () => {
         <DatePicker
           selected={startDate}
           onChange={(date) => setStartDate(date)}
+          className="date"
         />
       </div>
       <div className="task-number-container">
         <TaskCounter />
-        <button>clear all</button>
+        <button className="clear-all-button">clear all</button>
       </div>
     </div>
   )

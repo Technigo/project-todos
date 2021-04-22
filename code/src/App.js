@@ -8,7 +8,6 @@ import TodoList from './components/TodoList'
 import TodoInformation from './components/TodoInformation'
 import TodoForm from './components/TodoForm'
 
-
 const reducer = combineReducers({
   todos: todos.reducer,
 })
@@ -18,9 +17,11 @@ const store = configureStore({ reducer }) // shortcut for ({ reducer: reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <TodoInformation />
-      <TodoForm />
-      <TodoList />
+      <div className="container">
+        <TodoInformation />
+        <TodoForm />
+        <TodoList />
+      </div>
     </Provider>
   )
 }

@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #F6F4F3;
+  background-color: #f6f4f3;
 }
 
 code {
@@ -13,8 +13,14 @@ code {
     monospace;
 }
 
+.container {
+  margin: 30px auto;
+  width: 280px;
+  border: 2px solid #183059;
+}
+
 .todo-information-container {
-  margin: 30px;
+  margin: 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,36 +28,89 @@ code {
   color: #af5b5b;
 }
 
+.date {
+  margin-top: 10px;
+  border: none;
+  background-color: #f6f4f3;
+  color: #af5b5b;
+  font-family: Roboto;
+  font-weight: bold;
+}
+
 .task-number-container {
   text-align: right;
 }
 
-.todo-form {
-  margin: auto 30px;
+.input-field { 
+  padding-left: 5px;
+  border-color: #183059;
+  resize: none;
 }
 
-.todo-list, .no-todos {
+.todo-form {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-todo-button {
+  border: 2px solid #f18d93;
+  background-color: #f18d93;
+  transition-duration: 0.4s;
+  color: white;
+}
+
+.add-todo-button:hover {
+  border: 2px solid #f03a47;
+  background-color: #f03a47; 
+  color: white;
+  cursor: pointer;
+}
+
+.no-todos {
+  margin: 20px;
   border: 2px solid #183059;
-  text-align: center;
-  margin: 30px;
+  padding: 10px 5px;
   background-color: white;
+  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.todo-list {
+  margin: 20px;
+  background-color: white;
+  border: 2px solid #183059;
 }
 
 .todo-item {
   display: flex;
   align-items: center;
-  padding: 5px 20px;
-  border: 2px solid #f03a47;
+  justify-content: space-between;
+  padding: 5px;
 }
 
-.delete-button {
+.checkbox {
+  height: 20px;
+  width: 20px;
+  cursor: pointer;
+}
+
+.todo-text {
+  word-break: break-word;
+}
+
+.clear-all-button, .delete-button {
   padding: 5px;
   border: none;
-  border-radius: 30px;
-  background-color: #183059;
-  color: white;
+  background-color: white;
+  color: #183059;
+  font-weight: bolder;
 }
 
-.delete-button:hover {
+.clear-all-button {
+  background-color: #f6f4f3;
+}
+
+.clear-all-button:hover, .delete-button:hover {
   cursor: pointer;
 }

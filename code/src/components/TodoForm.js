@@ -24,12 +24,15 @@ const TodoForm = () => {
 
   return (
     <form onSubmit={onFormSubmit} className="todo-form">
-      <input
+      <textarea
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
+        className="input-field"
+        placeholder="Add todo!"
+        rows="2"
       />
-      <button type="submit">Add todo</button>
+      <button type="submit" className="add-todo-button">ADD</button>
     </form>
   )
 }

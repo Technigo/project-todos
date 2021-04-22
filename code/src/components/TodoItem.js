@@ -8,12 +8,13 @@ const TodoItem = (todo) => {
 
   return (
     <div className="todo-item">
-      <p>{todo.description}</p>
       <input
         type="checkbox"
         checked={todo.isComplete}
         onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+        className="checkbox"
       />
+      <p className="todo-text">{todo.description}</p>
       <button
         onClick={() => dispatch(todos.actions.removeTodo(todo.id))}
         className="delete-button"
