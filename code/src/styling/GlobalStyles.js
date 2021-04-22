@@ -1,5 +1,14 @@
 import styled from 'styled-components'
 
+// Background
+export const Background= styled.div`
+  width: 100vw;
+  height: 100vh;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+  opacity: 0.8;
+`;
+
 // Todo - categories
 export const Container = styled.section`
   width: 100vw; 
@@ -15,11 +24,36 @@ export const Header = styled.h1`
   color: #793dfc;
 `;
 
-// Background
-export const Background= styled.div`
-  width: 100vw;
-  height: 100vh;
-  background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-  opacity: 0.8;
+export const TodoList = styled.ul`
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin: 5px 0 5px 0;
+  align-items: center;
+  padding: 10px 0 10px 0;
+  list-style: none;
 `;
+
+export const CheckboxContainer = styled.div`
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+`;
+
+// Change these styles !! import material ui trash / delete icon - this one takes too long time to render. 
+export const DeleteButton = styled.button`
+  margin: 0;
+  padding: 0;
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none; 
+`;
+
+export const TrashIcon = styled.img`
+  margin: 0;
+  padding: 0;
+`;
+
+
