@@ -19,11 +19,6 @@ export const tasks = createSlice({
       }
     },
     addTask: (state, action) => {
-      // const newTask = {
-      //   id: Date.now(),
-      //   text: action.payload.text,
-      //   complete: false}
-     // state.push(action)
      return [...state, action.payload];
     },
     removeAll: () => {

@@ -6,9 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color:#ccb79f;
-
   @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
-
 }
 
 code {
@@ -31,8 +29,8 @@ main {
   background-size: cover;
   background-position: center;
   height: 250px;
-
 }
+
 .header h1 {
   font-family: 'Inconsolata', monospace;
   margin:0;
@@ -64,7 +62,7 @@ main {
   justify-content: space-evenly;
   padding-bottom: 20px;
   padding-top: 10px;
-  font-family: 'Inconsolata', monospace;
+
 }
 
 .remove-button {
@@ -72,9 +70,8 @@ main {
   padding:5px;
   background:#b0a38a;
   outline:none;
+  font-family: 'Inconsolata', monospace;
 }
-
-
 
 .form {
   display: flex;
@@ -96,18 +93,6 @@ textarea {
 }
 
 .add-button {
-  /* border-radius: 50%;
-  height: 30px;
-  width: 30px;
-  align-items: stretch;
-  justify-content: stretch;
-  margin-left:5px;
-  outline: none;
-  background-color:#00c281;
-  color: white;
-  font-size: 30px;
-  padding:4px; */
-  /* background-color: #00c281; */
   background-color: #b0a38a;
   padding: 5px;
   border-radius: 50%;
@@ -120,17 +105,10 @@ textarea {
   cursor: pointer;
 }
 
-/* .add-button:active {
-
-} */
-
-
 .task-list {
   display: flex;
   flex-direction: column;
-  /* width: 90%; */
   align-items: center;
-
 }
 
 .task {
@@ -142,9 +120,9 @@ textarea {
   width: 90%;
   }
 
-  .task-text {
-    font-family: 'Inconsolata', monospace;
-  }
+.task-text {
+   font-family: 'Inconsolata', monospace;
+ }
 
 .task-colomn-10 {
   display: flex;
@@ -180,7 +158,7 @@ textarea {
 
   .checkbox-round:checked {
     background-color:#705946;
-}
+ }
 
 .trash-can {
   width: 30px;

@@ -1,13 +1,21 @@
 # Project Todos
+The project was to build a Todo web-app using React and Redux.
 
-Replace this readme with your own information about your project.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+# My todo's
+This app is built using store, reducers and small components.
+Some of the functionalities:
+* The user can not add an empty message, because the add-button is not active until two letters are written.
+* The app keep track of how many of the tasks that is completed.
+* The user can delete completed tasks or delete all.
+* The user can set all tasks as completed.
+* The user can check and un-check a task, see the date it was created, and delete a single task.
 
-## The problem
+It's styled for use on mobile.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+# Tech used
+React, Redux, CSS, JSX
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://todo-app-2021.netlify.app/
