@@ -50,7 +50,7 @@ padding-top: 10px;
 const TodoForm = styled.form`
 padding: 5px 10px 20px 10px;
 display: flex;
-justify-content: space-between;
+justify-content: center;
 align-items: center;
 `
 const TodoInput = styled.input`
@@ -60,7 +60,8 @@ border: solid 2px #88bdbc;
 overflow-wrap: break-word;
 resize: none;
 min-height: 45px;
-min-width: 240px;
+min-width: 210px;
+margin 3px;
 
 @media (min-width: 768px) {
   min-height: 60px;
