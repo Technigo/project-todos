@@ -25,7 +25,7 @@ const EmptyState = () => {
 
   return (
     <Container>
-     <Lottie options={defaultOptions} height={400}/>
+     <Lottie options={defaultOptions} width={300}/>
     </Container>
   )
 }

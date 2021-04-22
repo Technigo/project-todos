@@ -21,6 +21,12 @@ const Input = styled.input`
   width: 180px;
   padding: 5px;
   border: 1px solid 114e60;
+  @media (min-width: 668px) {
+    width: 300px;
+  }
+  @media (min-width: 1024px) {
+    width: 400px;
+  }
 `
 
 const SubmitButton = styled.button`

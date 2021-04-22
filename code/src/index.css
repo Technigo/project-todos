@@ -48,5 +48,23 @@ body {
   color: #b7b7b7;
 }
 
+/*MEDIA QUERIES*/
+/*TABLET*/
+
+@media (min-width: 668px) {
+  .main-container {
+    min-width: 600px;
+    min-height: 500px;
+  }
+}
+
+/*DESKTOP*/
+
+@media (min-width: 1024px) {
+  .main-container {
+    min-width: 950px;
+  }
+}
+
 
 
