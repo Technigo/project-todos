@@ -9,8 +9,10 @@ const Number = styled.h2`
   color: #5899E2;
   margin: 0;
   border: 1px solid #5899E2;
-  border-radius: 50%;
-  padding: 10px 15px;
+  border-radius: 50px;
+  padding: 10px 10px;
+  width: 30px;
+  text-align: center;
 `;
 
 export const Counter = () => {
