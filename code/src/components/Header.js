@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import Drawer from '@material-ui/core/Drawer';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import Tooltip from '@material-ui/core/Tooltip';
 import styled from 'styled-components'
 
 import { themes } from '../reducers/themes';
@@ -14,15 +15,17 @@ import {
   PinkButton, 
   PurpleButton, 
   GrayButton, 
-  BoldButton } from "../styledcomponents/Buttons";
+  BoldButton,
+  WhiteButton } from "../styledcomponents/StyledButtons";
 
 const TitleTop = styled.header`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
-  width: 100%;
-  background-color: ${props => props.theme.backgroundColor};
+  padding: 10px;
+  width: 90%;
+//   background-color: #F4F4F4;
+  border-bottom: 1px solid ${props => props.theme.secondary};
   @media (min-width: 769px) {
     max-width: 600px;
     padding: 20px 0;
@@ -64,9 +67,11 @@ export const Header = () => {
 
   return (
     <TitleTop>
-      <Title>TODO's</Title>
+      <Title>TODO</Title>
+        <Tooltip title="Change theme">
         <SettingsButton
-            onClick={() => setOpen(true)}><FontAwesomeIcon icon="palette" /></SettingsButton>
+            onClick={() => setOpen(true)}><FontAwesomeIcon icon="cog" /></SettingsButton>
+        </Tooltip>
         <Drawer 
           anchor="top"
           open={open}         
@@ -82,6 +87,7 @@ export const Header = () => {
             <PurpleButton onClick={() => dispatch(themes.actions.changePurpleTheme(theme))}></PurpleButton>
             <GrayButton onClick={() => dispatch(themes.actions.changeGrayTheme(theme))}></GrayButton>
             <BoldButton onClick={() => dispatch(themes.actions.changeBoldTheme(theme))}></BoldButton>
+            <WhiteButton onClick={() => dispatch(themes.actions.changeWhiteTheme(theme))}></WhiteButton>
           </DrawerContainer>
         </Drawer>   
     </TitleTop>

@@ -3,69 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Select from "react-select";
 import Drawer from "@material-ui/core/Drawer";
-import styled from "styled-components";
+import Divider from '@material-ui/core/Divider';
 
 import { PickDate } from "./PickDate";
 import todos from "../reducers/todos";
-import { AddTaskButton, SubmitButton } from "../styledcomponents/Buttons";
-
-const Form = styled.form`
-  display: flex;
-  align-items: flex-start;
-  flex-direction: column;
-  padding: 20px 20px 80px 20px;
-  background-color: white;
-  box-sizing: border-box;
-  @media (min-width: 769px) {
-    max-width: 700px;
-    margin-left: 35%;
-  }
-`;
-
-const Input = styled.input`
-  font-size: 16px;
-  padding: 8px;
-  margin: 10px 0;
-  outline: none;
-  background-color: #f2f2f2;
-  border: none;
-  width: 95%;
-  font-family: ${props => props.theme.fontFamily};
-`;
-
-const BottomContainer = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: row;
-  align-items: center;
-  position: fixed;
-  bottom: 0;
-  height: 90px;
-  width: 100%;
-  border-top: 1px solid ${props => props.theme.primary};
-  background-color: ${props => props.theme.backgroundColor};
-`;
-
-const Options = styled.label`
-  display: flex;
-  flex-direction: column;
-  width: 50%;
-  font-size: 14px;
-`;
-
-const LabelText = styled.p`
-  margin-bottom: 5px;
-  font-weight: bold;
-  font-size: 14px;
-  font-family: ${props => props.theme.fontFamily};
-`;
-
-const CategoryDate = styled.div`
-  display: flex;
-  align-items: flex-end;
-  width: 100%;
-  margin: 0;
-`;
+import { AddTaskButton, SubmitButton } from "../styledcomponents/StyledButtons";
+import { Form, Input, BottomContainer, Options, LabelText, CategoryDate } from "../styledcomponents/StyledTaskForm";
 
 
 export const TaskForm = () => {
@@ -106,11 +49,13 @@ export const TaskForm = () => {
                 required="true"
               />
             </Options>
+            <Divider variant="middle" />
             <PickDate 
               onChange={dueDate => setDueDate(dueDate)}
               selected={dueDate}
             />
           </CategoryDate>
+          <Divider variant="middle" />
           <Input
             type="text"
             placeholder="Task description"

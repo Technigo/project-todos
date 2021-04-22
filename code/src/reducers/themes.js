@@ -7,7 +7,8 @@ import {
     pinkTheme, 
     purpleTheme, 
     boldTheme,
-    grayTheme } from "../styledcomponents/StyledTheme";
+    grayTheme,
+    whiteTheme } from "../styledcomponents/StyledTheme";
 
 const initialState = {
   theme: grayTheme
@@ -38,6 +39,9 @@ export const themes = createSlice({
     },
     changeBoldTheme: (state) => {
       state.theme = boldTheme;
+    },
+    changeWhiteTheme: (state) => {
+        state.theme = whiteTheme;
     },
     changeGrayTheme: () => {
       return initialState;

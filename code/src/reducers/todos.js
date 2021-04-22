@@ -5,10 +5,11 @@ const todos = createSlice({
   initialState: {
     tasks: [],
     categories: [
-        { value: "to-do", label: "to-do", icon: "calendar-check" },
+        { value: "to-do", label: "to-do", icon: "list-ul" },
         { value: "shopping", label: "shopping", icon: "shopping-cart" },
         { value: "work", label: "work", icon: "briefcase" },
         { value: "housework", label: "housework", icon: "laptop-house" },
+        { value: "family", label: "family", icon: "heart" },
     ],
     filterCategories: [
         { value: "all", label: "all", icon: "calendar-check" },
@@ -16,6 +17,7 @@ const todos = createSlice({
         { value: "shopping", label: "shopping", icon: "shopping-cart" },
         { value: "work", label: "work", icon: "briefcase" },
         { value: "housework", label: "housework", icon: "laptop-house" },
+        { value: "family", label: "family", icon: "heart" },
     ],
     progress: 0,
   },

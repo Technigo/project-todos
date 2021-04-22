@@ -28,6 +28,7 @@ const TaskList = styled.section`
   background-color: white;
   border-radius: 20px;
   margin-top: 20px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 `;
 
 export const ToDoList = () => {

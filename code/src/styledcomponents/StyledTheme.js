@@ -1,64 +1,73 @@
 export const blueTheme = {
-    backgroundColor: "#a7c5eb",
-    primary: "#709fb0",
-    secondary: "#221f3b",
-    fontFamily: "Nunito",
+    backgroundColor: "#C3DDE8",
+    primary: "#3D4A8A",
+    secondary: "#3D4A8A",
+    fontFamily: "Playfair Display",
     buttonText: "white"
   }
   
   export const redTheme = {
     backgroundColor: "#ec4646",
-    primary: "#2d132c",
-    secondary: "#f2f2f2",
-    fontFamily: "Poppins",
+    primary: "#fff",
+    secondary: "#96160F",
+    fontFamily: "Playfair Display",
     buttonText: "white"
   }
   
   export const greenTheme = {
-    backgroundColor: "#7eca9c",
-    primary: "#fff",
-    secondary: "#f9ffab",
+    backgroundColor: "#8FE3B7",
+    primary: "#1F8768",
+    secondary: "#1F8768",
     fontFamily: "Ubuntu",
     buttonText: "white"
   }
 
   export const yellowTheme = {
     backgroundColor: "#ffefa0",
-    primary: "#ffd57e",
-    secondary: "#403F3F",
-    fontFamily: "Rocknroll One",
+    primary: "#FFCB63",
+    secondary: "#FFCB63",
+    fontFamily: "Playfair Display",
     buttonText: "white"
   }
 
   export const pinkTheme = {
     backgroundColor: "#f6e6e4",
-    textColor: "#fff",
-    primary: "#e2bcb7",
-    secondary: "#bbbbbb",
-    fontFamily: "Nunito",
+    primary: "#c7004c",
+    secondary: "#c7004c",
+    fontFamily: "Playfair Display",
     buttonText: "white"
   }
 
   export const purpleTheme = {
-    backgroundColor: "#b4aee8",
+    backgroundColor: "#c1a1d3",
     primary: "#440a67",
-    secondary: "#ffe3fe",
-    fontFamily: "Nunito",
+    secondary: "#440a67",
+    fontFamily: "Playfair Display",
     buttonText: "white"
   }
 
   export const grayTheme = {
     backgroundColor: "#e8e8e8",
-    primary: "#495464",
-    secondary: "#ffe227",
+    primary: "#373a40",
+    secondary: "#aaa",
     fontFamily: "Raleway",
     buttonText: "white"
   }
 
   export const boldTheme = {
     backgroundColor: "#121013",
-    primary: "#eb596e",
-    secondary: "#f4f4f2",
-    fontFamily: "Nunito",
-    buttonText: "white"
+    primary: "#fff",
+    secondary: "#eb596e",
+    fontFamily: "Playfair Display",
+    buttonText: "#121013"
   }
+
+  export const whiteTheme = {
+    backgroundColor: "#fff",
+    primary: "#121013",
+    secondary: "#121013",
+    fontFamily: "Playfair Display",
+    buttonText: "#fff"
+  }
+
+//   "#eb596e",

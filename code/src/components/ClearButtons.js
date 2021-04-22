@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import todos from "../reducers/todos";
-import { ClearAllButton } from "../styledcomponents/Buttons";
+import { ClearAllButton } from "../styledcomponents/StyledButtons";
 import swal from "sweetalert";
 
 import styled from "styled-components";

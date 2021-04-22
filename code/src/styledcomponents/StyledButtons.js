@@ -2,11 +2,13 @@ import styled from "styled-components";
 
 // For Header component
 export const SettingsButton = styled.button`
-  font-size: 36px;
+  font-size: 28px;
   background-color: transparent;
-  color: ${props => props.theme.secondary};
+  border-radius: 50%;
+  padding: 0;
+  color: ${props => props.theme.primary};
   :hover {
-    color: ${props => props.theme.primary};
+    opacity: 0.7;
   }
   @media (min-width: 769px) {
     font-size: 48px;
@@ -18,6 +20,7 @@ const ColorButton = styled.button`
   width: 26px;
   height: 26px;
   margin: 3px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   :hover {
     opacity: 0.7;
   }
@@ -55,10 +58,15 @@ export const BoldButton = styled(ColorButton)`
   background-color: #121013;
 `;
 
+export const WhiteButton = styled(ColorButton)`
+  background-color: #fff;
+`;
+
 // For Task Card component
 export const RemoveButton = styled.button`
   background-color: transparent;
-  margin-right: 5px;
+  margin: 0;
+  padding: 0;
   font-size: 20px;
   :hover {
       opacity: 0.5;
@@ -67,10 +75,10 @@ export const RemoveButton = styled.button`
 
 // For Task Form component
 const ThemeColors = styled.button`
-  background-color: ${props => props.theme.primary};
+  background-color: ${props => props.theme.secondary};
   color: ${props => props.theme.buttonText};
   :hover {
-    background-color: ${props => props.theme.secondary};
+    opacity: 0.7;
   }
 `;
 
@@ -83,7 +91,12 @@ export const AddTaskButton = styled(ThemeColors)`
   height: 80px;
   margin-top: -90px;
   border-radius: 50%;
-  border: 4px solid ${props => props.theme.backgroundColor};
+  border: 3px solid ${props => props.theme.backgroundColor};
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  :hover {
+    transform: scale(1.1);
+    opacity: 1;
+  }
   @media (min-width: 769px) {
     width: 120px;
     height: 120px;
@@ -96,6 +109,7 @@ export const SubmitButton = styled(ThemeColors)`
   font-size: 20px;
   font-weight: bold;
   font-family: ${props => props.theme.fontFamily};
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 `;
 
 // For To Do List component

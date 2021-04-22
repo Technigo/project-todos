@@ -9,21 +9,39 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 font-size: 90px;
-color: ${props => props.theme.primary};
-margin-top: 100px;
+color: ${props => props.theme.secondary};
+margin-top: 50px;
+`;
+
+const CompletedCard = styled.div`
+background-color: #F4F4F4;
+width: 90%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+padding: 50px;
+box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+@media (min-width: 769px) {
+  padding: 100px 50px;
+}
 `;
 
 const CompletedText = styled.h1`
   text-align: center;
   font-size: 30px;
+  color: black;
+  margin-top: 30px;
   font-family: ${props => props.theme.fontFamily};
 `;
 
 export const TasksCompleted = () => {
   return (
     <CompletedContainer>
-      <FontAwesomeIcon icon="calendar-check" />
-      <CompletedText>You have no tasks! So take some time and relax and do something fun!</CompletedText>
+      <CompletedCard>
+        <FontAwesomeIcon icon="check-circle" />
+        <CompletedText>No tasks found! So take some time and relax and do something fun!</CompletedText>
+      </CompletedCard>  
     </CompletedContainer>
   )
 };

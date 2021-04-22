@@ -30,6 +30,7 @@ export const PickDate = ({ onChange, selected }) => {
         popperModifiers={{
             preventOverflow: {
               enabled: true,
+              boundariesElement: 'viewport',
             }}}
         withPortal
       />
