@@ -45,6 +45,8 @@ export const BottomContainer = styled.div`
   height: 75px;
   width: 95%;
   border-top: 2px solid ${props => props.theme.secondary};
+  background-color: ${props => props.theme.backgroundColor};
+  z-index: 1;
   @media (min-width: 768px) {
     height: 120px;
   }

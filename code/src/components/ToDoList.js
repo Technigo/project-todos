@@ -8,7 +8,6 @@ import { TodoCard } from "./TodoCard";
 import { ClearButtons } from "./ClearButtons";
 import { TodoCounter } from "./TodoCounter";
 import { FilterTodos } from "./FilterTodos";
-import todos from "../reducers/todos";
 
 const Main = styled.main`
   display: flex;

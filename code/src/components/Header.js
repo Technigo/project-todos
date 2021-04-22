@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 import Drawer from '@material-ui/core/Drawer';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Tooltip from '@material-ui/core/Tooltip';
-import styled from 'styled-components'
 
 import { themes } from '../reducers/themes';
 import { 
