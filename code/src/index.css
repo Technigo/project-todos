@@ -144,7 +144,7 @@ textarea {
   width: 60%;
   }
 
- .checkbox-round {
+ /* .checkbox-round {
     width: 1.3em;
     height: 1.3em;
     background-color: white;
@@ -158,9 +158,46 @@ textarea {
 
   .checkbox-round:checked {
     background-color:#705946;
- }
+ } */
 
 .trash-can {
   width: 30px;
   height:30px;
+}
+
+
+
+input[type="checkbox"] {
+  position: relative;
+  /* width: 0;
+  height: 0; */
+  width: 1.3em;
+  height: 1.3em;
+  /* background-color: white; */
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:after {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 13px;
+  /* color: #fff; */
+  border: 2px solid #333;
+  border-radius: 50%;
+  /* background: #fff; */
+}
+
+input[type="checkbox"]:checked:after {
+  content: '\2713';
+  /* background: #6979F8; */
+  background:#b0a38a;
 }
