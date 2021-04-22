@@ -62,7 +62,7 @@ export const CompletedItems = () => {
       <Todo key={todo.id}>
         <div> 
           <p>{todo.description}</p>
-          <TimeStamp>{moment(items.createdAt).fromNow()}</TimeStamp>
+          <TimeStamp>{moment().format('MMMM Do YYYY')}</TimeStamp>
         </div>
         <InputContainer>
           <input
