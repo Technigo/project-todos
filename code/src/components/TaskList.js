@@ -4,7 +4,7 @@ import styled from 'styled-components'
 
 import Checkbox from "react-custom-checkbox";
 import { FiCheck } from "react-icons/fi";
-import { TiAdjustBrightness, TiDeleteOutline } from "react-icons/ti";
+import { TiDeleteOutline } from "react-icons/ti";
 
 import tasks from '../reducers/tasks'
 
