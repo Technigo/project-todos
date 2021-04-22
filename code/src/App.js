@@ -13,12 +13,17 @@ import { CompletedItems } from 'components/CompletedItems';
 
 const Container = styled.div`
   position: relative;
-  height: 100vh;
+  height: auto;
   background-color: black;
   @media (min-width: 1280px) {
     width: 50vw;
     margin: 0 auto;
   }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 const reducer = combineReducers({
@@ -43,10 +48,10 @@ export const App = () => {
         }
         {addView && <AddTodo setAddView={setAddView} />}
         {!addView &&
-          <div>
+          <ButtonContainer>
             <AddBtn setAddView={setAddView}/>
             <ClearCompletedBtn /> 
-          </div>
+          </ButtonContainer>
         }
       </Container>
     </Provider>

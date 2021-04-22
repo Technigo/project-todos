@@ -25,29 +25,32 @@ const ButtonContainer = styled.div`
 `;
 
 const AddButton = styled.button`
-  background-color: red;
+  background-color: #5899E2;
   color: white;
-  border: 1px solid red;
+  border: 1px solid #5899E2;
   border-radius: 30px;
   padding: 10px 20px;
   margin-right: 10px;
 `;
 
 const CancelBtn = styled.button`
-  background-color: white;
-  border: 1px solid red;
+  background-color: #D81159;
+  border: 1px solid #D81159;
   border-radius: 30px;
   padding: 10px 20px;
+  color: white;
+  font-weight: bold;
 `;
 
 const Input = styled.input`
   border: 0;
-  border-bottom: 1px solid black;  
+  border-bottom: 1px solid white;  
   background: transparent;
   width: 100%;
   padding: 8px 0 5px 0;
   font-size: 16px;
-  color: black;
+  color: white;
+  margin-bottom: 40px;
 `;
 
 const Plus = styled(FaPlus)`

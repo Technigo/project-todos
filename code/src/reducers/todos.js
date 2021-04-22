@@ -5,9 +5,12 @@ export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      { id: 1, description: 'Buy toilet paper', isComplete: false },
-      { id: 2, description: 'Call Nuttis', isComplete: false },
-      { id: 3, description: 'Make dinner', isComplete: false }
+      { id: 1, description: 'Buy groceries', isComplete: false },
+      { id: 2, description: 'Take a walk', isComplete: false },
+      { id: 3, description: 'Make dinner', isComplete: false },
+      { id: 4, description: 'Clean', isComplete: false },
+      { id: 5, description: 'Code', isComplete: false },
+      { id: 6, description: 'Go for a run', isComplete: false }
     ],
   },
   reducers: {

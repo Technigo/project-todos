@@ -14,16 +14,12 @@ const Btn = styled.button`
   background-color: #D81159;
   color: white;
   border: none;
-  margin-left: 8%;
-  position: absolute;
-  bottom: 4%;
-  right: 10%;
-  margin-bottom: 5px;
   font-size: 15px;
   font-weight: bold;
   border: 2px solid #D81159;
   border-radius: 30px;
   padding: 10px 20px;
+  margin: 30px 20px 20px 0;
 `;
 
 const Bin = styled(FaTrashAlt)`
