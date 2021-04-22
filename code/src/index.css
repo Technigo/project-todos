@@ -12,6 +12,11 @@ code {
     monospace;
 }
 
+#root {
+  display: flex;
+  justify-content: center;
+}
+
 .todo-list {
   display: flex;
   align-items: center;
