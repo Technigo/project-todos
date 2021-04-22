@@ -6,14 +6,13 @@ const todos = createSlice({
     tasks: [
       { id: 1, description: 'First task', isComplete: false },
       { id: 2, description: 'Second task', isComplete: true },
-      { id: 3, description: 'Third task', isComplete: false }
+      { id: 3, description: 'Third task', isComplete: false } //ALL THIS CAN BE REMOVED AND JUST EMPTY ARRAY LATER
     ]
   },
   reducers: {
     toggleComplete: (store, action) => {
       const updatedTasks = store.tasks.map(todo => {
         if (todo.id === action.payload) {
-          //update isComplete property
           return {
             ...todo,
             isComplete: !todo.isComplete
@@ -24,6 +23,14 @@ const todos = createSlice({
       })
 
       store.tasks = updatedTasks
+    },
+    removeTodo: (store, action) => {
+      const decreasedTasks = store.tasks.filter(todo => todo.id !== action.payload) 
+
+      store.tasks = decreasedTasks
+    },
+    addTodo: (store, action) => {
+      store.tasks = [...store.tasks, action.payload]
     }
   }
 })

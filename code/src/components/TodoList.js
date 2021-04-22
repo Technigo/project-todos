@@ -18,6 +18,9 @@ const TodoList = () => {
             checked={todo.isComplete}
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
           />
+          <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
+            Delete
+          </button>
         </div>
       ))}
     </div>
