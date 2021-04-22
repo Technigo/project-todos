@@ -55,13 +55,13 @@ padding: 5px;
 const TimeAdded = styled.p`
 font-size: 10px;
 position: absolute;
-left: 259px;
+left: 252px;
 top: 1px;
 margin: 2px;
 
 @media (min-width: 768px) {
   font-size: 11px;
-  left: 292px;
+  left: 340px;
 }`
 
 const Checkbox = styled.input`

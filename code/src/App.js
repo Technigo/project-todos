@@ -40,13 +40,12 @@ justify-content: flex-start;
 background-color: #254e58;
 padding: 5px;
 border-radius: 10px;
-
 font-family: "Inconsolata", monospace;
 font-size: 14px;
 box-sizing: border-box;
 
 @media (min-width: 767px) {
-  width: 400px;
+  width: 450px;
   margin: 70px 0px;
   padding: 20px 20px;
   font-size: 16px;

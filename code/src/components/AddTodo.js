@@ -64,7 +64,7 @@ min-width: 240px;
 
 @media (min-width: 768px) {
   min-height: 60px;
-  min-width: 265px;
+  min-width: 313px;
   font-size: 16px;
 } 
 `
@@ -72,7 +72,10 @@ const AddButton = styled.button`
 height: 50px;
 width: 50px;
 border-radius: 5px;
-font-size: 40px;
+font-size: 43px;
+display: flex;
+justify-content: center;
+align-items: center;
 cursor: pointer;
 border: none;
 background-color: #88bdbc;
@@ -92,6 +95,6 @@ color: #ffffff;
 @media (min-width: 768px) {
   height: 65px;
   width: 65px;
-  font-size: 45px
+  font-size: 40px
 } 
 `
