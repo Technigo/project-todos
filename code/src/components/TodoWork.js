@@ -4,18 +4,18 @@ import styled from 'styled-components'
 import moment from 'moment'
 
 import todos from '../reducers/todos'
+import { Container, Header } from '../styling/GlobalStyles'
 
-// convention: Name the variable useSelector the same thing as we call it in reducer todos
-const TodoList = () => {
-  const items = useSelector((store) => store.todos.items)
-//  console.log(items)
+const TodoWork = () => {
+  const allTodos = useSelector((store) => store.todos)
+  const justWorkTodos = allTodos.items.filter((item) => item.category === "Work")
 
-// need to create an instance of useDispatch() hook in every component.
   const dispatch = useDispatch()
 
   return (
-    <div>
-      {items.map(todo => (
+    <Container>
+      <Header>Work</Header>
+      {justWorkTodos.map(todo => (
         <div key={todo.id}>
           <p>{todo.description}</p>
           <input
@@ -26,15 +26,25 @@ const TodoList = () => {
           <p className="completed-time"> 
             {moment(todo.createdAt).format('LT, MMMM Do YYYY')}
           </p>
-          <button
+          <ToggleTodo
             type="button"
             onClick={() => dispatch(todos.actions.removeToDo(todo.id))}>
-              x
-          </button>
+              <TrashIcon src="assets/delete.svg"></TrashIcon>
+          </ToggleTodo>
         </div>
       ))}
-    </div>
+    </Container>
   )
 }
 
-export default TodoList
+// Local styles
+const ToggleTodo = styled.button`
+  background-color: transparent; 
+  border: none; 
+`;
+
+const TrashIcon = styled.img`
+
+`;
+
+export default TodoWork

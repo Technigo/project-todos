@@ -1,8 +1,11 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import moment from 'moment'
 import styled from 'styled-components'
+import Checkbox from '@material-ui/core/Checkbox'
 
 import todos from '../reducers/todos'
+import { Container, Header } from '../styling/GlobalStyles'
 
 const TodoStudies = () => {
   const allTodos = useSelector((store) => store.todos)
@@ -10,59 +13,66 @@ const TodoStudies = () => {
 
   const dispatch = useDispatch()
 
-  // this one clears all instead of just clearing studies - can a payload look like this? 
-  const onClearAll = () => {
-    dispatch(todos.actions.removeAllTodos(todos.category === 'Studies'))
-  }
-
   return (
     <Container>
       <Header>Studies</Header>
-      {justStudiesTodos.map(todo => (
-        <div key={todo.id}>
-          <StudiesTodo>{todo.description}</StudiesTodo>
-        </div>
-      ))}
-      <RemoveAllButton
-        type="button"
-        onClick={onClearAll}>
-          <Delete src="assets/delete.svg">
-          </Delete>
-      </RemoveAllButton>
-      <div>
-      Clear all
-      </div>
+      <TodoList>
+        <CheckboxContainer>
+        {justStudiesTodos.map(todo => (
+          <div key={todo.id}>
+            <Checkbox
+              checked={todo.isComplete}
+              onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+              color="default"
+            />
+            <p>{todo.description}</p>
+            <p className="completed-time"> 
+              {moment(todo.createdAt).format('LT, MMMM Do YYYY')}
+            </p>
+            <ToggleTodoButton
+              type="button"
+              onClick={() => dispatch(todos.actions.removeToDo(todo.id))}>
+                <TrashIcon src="assets/delete.svg"></TrashIcon>
+            </ToggleTodoButton>
+          </div>
+        ))}
+        </CheckboxContainer>
+      </TodoList>
     </Container>
   )
 }
 
-// Local styles
-const Container = styled.div`
-  display: flex; 
-  justify-content: center;
+// Local styles 
+const TodoList = styled.ul`
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  margin: 5px 0 5px 0;
+  justify-content: space-between;
+  border-radius: 5px;
+  border: 1 px solid #793dfc;
+  padding: 10px 0 10px 0;
+  background-color: whitesmoke;
+  list-style: none;
+`;
+
+const CheckboxContainer = styled.div`
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
   align-items: center; 
-  flex-direction: column;
 `;
+/* const StudiesList = styled.p`
 
-const Header = styled.h1`
-  font-size: 20px; 
-  text-transform: uppercase;
-  color: #deacff;
 `;
-
-const StudiesTodo = styled.p`
-  font-size: 16px; 
-`;
-
-const RemoveAllButton = styled.button`
-  width: 40px;
-  height: 40px;
+ */
+const ToggleTodoButton = styled.button`
+  background-color: transparent; 
   border: none; 
-  /* background-color: transparent; */
 `;
 
-const Delete = styled.img`
-  margin: 0;
-`; 
+const TrashIcon = styled.img`
+  
+`;
 
 export default TodoStudies

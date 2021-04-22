@@ -5,6 +5,7 @@ import styled from 'styled-components'
 
 import todos from 'reducers/todos'
 import TodoStudies from './TodoStudies'
+import TodoWork from './TodoWork'
 
 const AddTodoForm = () => {
   const dispatch = useDispatch()
@@ -38,39 +39,40 @@ const AddTodoForm = () => {
 
   return (
     <>
-    <Form onSubmit={onFormSubmit}>
-      <UserInputTextarea
-        type="text"
-        maxLength="45"
-        placeholder="Add your todo..."
-        onChange={(event) => setNewTodo(event.target.value)}
-        value={newTodo}        
-      >
-      </UserInputTextarea>
-      <AddButton
-        type='submit'>
-        <img src="/assets/plus.svg" />
-      </AddButton>
-      <Label htmlFor="category">
-        Choose category
-      </Label>
-        <CustomSelect
-          id="category" 
-          value={category} 
-          onChange={onCategoryChange}
+      <Form onSubmit={onFormSubmit}>
+        <UserInputTextarea
+          type="text"
+          maxLength="45"
+          placeholder="Add your todo..."
+          onChange={(event) => setNewTodo(event.target.value)}
+          value={newTodo}        
         >
-          <option disabled value="">Categories</option>
-          <option value="Home">Home</option>
-          <option value="Work">Work</option>
-          <option value="Studies">Studies</option>
-          <option value="Friends">Friends</option>
-          <option value="Love">Love</option>
-          <option value="Hobbies">Hobbies</option>
-          <option value="Fitness">Fitness</option>
-          <option value="Other">Other</option>
-        </CustomSelect>
-    </Form>
-    <TodoStudies />
+        </UserInputTextarea>
+          <AddButton
+            type='submit'>
+            <img src="/assets/plus.svg" alt="plus sign on button"/>
+          </AddButton>
+          <Label htmlFor="category">
+            Choose category
+          </Label>
+          <CustomSelect
+            id="category" 
+            value={category} 
+            onChange={onCategoryChange}
+          >
+            <option disabled value="">Categories</option>
+            <option value="Home">Home</option>
+            <option value="Work">Work</option>
+            <option value="Studies">Studies</option>
+            <option value="Friends">Friends</option>
+            <option value="Love">Love</option>
+            <option value="Hobbies">Hobbies</option>
+            <option value="Fitness">Fitness</option>
+            <option value="Other">Other</option>
+          </CustomSelect>
+            <TodoStudies />
+            <TodoWork />
+      </Form>
     </>
   )
 }
@@ -86,9 +88,10 @@ const Form = styled.form`
 const UserInputTextarea = styled.textarea`
   margin-top: 50px;
   border-radius: 0.25em;
-  border: 1px solid hotpink; 
+  border: 1px solid #793dfc; 
   background-color: transparent;
   resize: none;
+  outline: 0; 
 `;
 
 const AddButton = styled.button`
@@ -107,7 +110,7 @@ const CustomSelect = styled.select`
   width: 200px;
   text-transform: uppercase;
   font-family: inherit; 
-  border: 1px solid hotpink;
+  border: 1px solid #793dfc;
   border-radius: 0.25em;
   padding: 0.25em 0.5em;  
   cursor: pointer;

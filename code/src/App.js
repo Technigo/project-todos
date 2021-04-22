@@ -3,7 +3,7 @@ import { Provider }  from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import todos from './reducers/todos'
-import TodoApp from './components/TodoList'
+import TodoApp from './components/TodoApp'
 import Header from './components/Header'
 
 import "./index.css";

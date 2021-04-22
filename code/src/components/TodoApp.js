@@ -3,22 +3,21 @@ import styled from 'styled-components'
 
 import { Background } from '../styling/GlobalStyles'
 
-import Header from './components/Header'
-import AddTodoForm from './components/AddToDoForm'
+import AddTodoForm from './AddToDoForm'
 
 const TodoApp = () => {
   return (
     <Background>
-    <MainContainer>
+      <MainContainer>
         <AddTodoForm /> 
-    </MainContainer>
+      </MainContainer>
     </Background>
   )
 }
 
-const MainContainer = styled.container`
+// Local styles
+const MainContainer = styled.div`
   display: flex;
-
 `;
 
 export default TodoApp
