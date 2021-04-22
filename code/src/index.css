@@ -20,17 +20,8 @@ code {
     monospace;
 }
 
-/***** Main  *****
 
-.main-container {
-  position: relative;
-  z-index: 1;
-  background-color: rgb(105, 44, 44);
-  min-height: 100vh;
-  transition: transform 0.5s;
-}
-
-***** HEADER *****/
+/***** HEADER *****/
 
 .header-closed {
   position: fixed;
@@ -49,7 +40,7 @@ code {
   width: 80px;
   height: 100vh;
   background-color:  #fe5bb1;
-  
+  z-index: 2;
 }
 
 h1 {
@@ -72,13 +63,24 @@ h1 {
   margin: auto;
 }
 
-.open-icon {
+.icon-open {
   display: flex;
   flex-direction: row;
   align-items: center;
   position: absolute;
   top: 400px;
   left: 20px;
+  cursor: pointer;
+}
+
+.icon-closed {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  position: absolute;
+  top: 400px;
+  left: 20px;
+  background-color: khaki;
 }
 
 .open-text {
@@ -89,8 +91,10 @@ h1 {
 }
 
 .menu-img {
+  background-image: url(/src/SVGs/arrow.svg);
   width: 25px;
   margin: 0 5px 0 5px;
+  
 }
 
 /***** TO-DO LIST *****/
