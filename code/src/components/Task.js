@@ -27,14 +27,14 @@ const IconBin = styled.img`
 `
 const TaskTitle = styled.p`
   margin: 0;
-  font-size: 20px;
+  font-size: 18px;
   font-weight: 600;
   text-align: left;
 `
 
 const TaskDueDate = styled.p`
   margin: 0 10px;
-  font-size: 16spx;
+  font-size: 14px;
   font-weight: 600;
 `
 
