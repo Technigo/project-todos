@@ -4,13 +4,7 @@ import uniqid from 'uniqid'
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: [
-      {
-        id: uniqid(),
-        description: 'Wow, you have done all your tasks!',
-        isComplete: false,
-      },
-    ],
+    items: [],
   },
   reducers: {
     toggleComplete: (store, action) => {

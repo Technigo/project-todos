@@ -30,7 +30,7 @@ code {
   margin: auto 30px;
 }
 
-.todo-list {
+.todo-list, .no-todos {
   border: 2px solid #183059;
   text-align: center;
   margin: 30px;
