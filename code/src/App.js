@@ -24,6 +24,15 @@ const Container = styled.div`
 const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
+  @media (min-width: 540px) {
+    width: 50vw;
+    justify-content: space-between;
+    margin: 0 auto;
+  }
+  @media (min-width: 1280px) {
+    width: 50vw;
+    justify-content: space-evenly;
+  }
 `;
 
 const reducer = combineReducers({
