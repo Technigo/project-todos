@@ -1,48 +1,60 @@
-import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import React from 'react';
+import { useSelector } from 'react-redux';
+import styled from "styled-components";
 
-import { todos } from '../reducers/todos'
-import './Todos.css'
+
 import { DeleteButton } from './DeleteButton';
+import { TodoItem  } from './TodoItem';
 
 
 //TASKLIST
 export const Todos = () => {
-    const allTodos = useSelector((store) => store.todos.items)
+    const allTodos = useSelector(store => store.todos.items)
 
-    const dispatch = useDispatch()
-
-    if (allTodos.lenght <= 0) {
-        return(
-
-            
-            // ADD PAGE WITH GIF?
-            <p>No todods!</p>
-        );
-    } else {
-
-        return (
+if (allTodos.length <= 0) {
+    return (
+        <MainSection>
             <div>
-                {allTodos.map(todo => (
-                    <div key={todo.id} className="task-container">
-                        <p>{todo.text}</p>
-                        <input
-                            type="checkbox"
-                            checked={todo.isComplete}
-                            onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-                        />
-                        <DeleteButton todo={todo}/>
-                    </div>
-                ))}
-                <iframe 
-        src="https://giphy.com/embed/Gjnpx6nps0yS4" 
-        width="480" 
-        height="339" 
-        frameBorder="0" 
-        class="giphy-embed" 
-        >
-    </iframe>
+            <p>No To Do</p>
             </div>
-        )
+        </MainSection>
+    );
+    } else {
+    
+    return (
+        <MainSection>
+        {allTodos.map(todo => (
+            <TodosContainer key={todo.id}>
+            <TodoItem todo={todo}></TodoItem>
+            <DeleteButton todo={todo} />
+            </TodosContainer>
+        ))}
+        </MainSection>
+    );
     }
-}
+} 
+
+
+const MainSection = styled.section`
+    display: flex;
+    width: 90%;
+    height: 300px;
+    flex-direction: column;
+    padding: 0;
+
+        @media (min-width: 768px) {
+            height: 500px;
+        }
+
+        @media (min-width: 1024px) {   
+    } 
+`;
+const TodosContainer = styled.article`
+    display: flex;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #474747;
+    padding: 2px 5px;
+    align-items: f;
+`;
+

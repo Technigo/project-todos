@@ -2,9 +2,16 @@
 
 import { createSlice } from "@reduxjs/toolkit";
 
+import uniqid from 'uniqid'
+
 const initialState = {
     items: []
 };
+
+// const initialItems = localStorage.getItem('todos')
+//     ? JSON.parse(localStorage.getItem('todos'))
+//     : [];
+
 
 export const todos = createSlice({
     name: "todos",
@@ -13,7 +20,7 @@ export const todos = createSlice({
 
         addTodoItem: (store, action) => {
             const newTodo = {
-                id: Math.max(...store.items.map(item => item.id)) + 1,
+                id:uniqid(),          
                 text: action.payload,
                 isComplete: false,
                 createdDate: Date.now(),
@@ -24,6 +31,7 @@ export const todos = createSlice({
             store.items = newTodoList;
         },
 
+            //IMMUTABILITY, RETURNS A NEW ARRAY
         toggleComplete: (store, action) => {
             const updatedItems = store.items.map(todo => {
                 if (todo.id === action.payload) {
@@ -39,10 +47,9 @@ export const todos = createSlice({
             store.items = updatedItems;
         },     
         
-        removeItem: (store, action) => {
-            const todoId = action.payload;
-            const filteredList = store.items.filter(item => item.id !== todoId);
-            store.items =filteredList;
+        removeTodo: (store,action) => {
+            const decreasedItems = store.items.filter(todo => todo.id !== action.payload);
+            store.items = decreasedItems;
         }
     },
 });
