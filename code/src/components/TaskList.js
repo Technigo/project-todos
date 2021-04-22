@@ -80,7 +80,6 @@ const TaskList = () => {
               size={20}
             />
             <TaskDescription checked={task.isCompleted}>{task.description}</TaskDescription>
-            {/* <p>{task.timeStamp.toLocaleString("HH:mm")}</p> */}
           </DescriptionCheckbox>
           <TiDeleteOutline size={20} onClick={() => dispatch(tasks.actions.removeTask(task.id))} />
         </Task>
@@ -89,6 +88,3 @@ const TaskList = () => {
   )
 }
 export default TaskList
-
-// {task.isCompleted ? 'checked' : ''}
-// text-decoration: ${props => props.checked ? "line-through" : "none"};
