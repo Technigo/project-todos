@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import moment from 'moment'
 
 const HeaderWrap = styled.header`
   background-color: #114e60;
@@ -23,7 +24,7 @@ const Header = () => {
   return (
     <HeaderWrap>
       <Title>Things To Do</Title>
-      <CurrentDate>19th Apr, 2021</CurrentDate>
+      <CurrentDate>{moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a')}</CurrentDate>
     </HeaderWrap>
   )
 }
