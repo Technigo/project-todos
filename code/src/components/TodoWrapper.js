@@ -12,6 +12,7 @@ import { makeStyles } from "@material-ui/styles"
 
 
 //The layout for the whole todo app 
+//the background styling is foind in index.css
 
 const useStyles = makeStyles({
     root: {
@@ -39,20 +40,22 @@ const TodoWrapper = () => {
     const classes = useStyles()
 
 return(
-<Container className={classes.root}>
-    <Grid className={classes.container}>
-        <Header />
-        <AddNewTodo />
-        <WorkStudies />
-        <TrainingHealth />
-        <AdminStuff />
-        <Other />
-        <Container className={classes.wrapper}>
-            <ClearTodo />
-            <Counter/>  
-        </Container>
-    </Grid>
-</Container>
+<div className="blubs">
+    <Container className={classes.root}>
+        <Grid className={classes.container}>
+            <Header />
+            <AddNewTodo />
+            <WorkStudies />
+            <TrainingHealth />
+            <AdminStuff />
+            <Other />
+            <Container className={classes.wrapper}>
+                <ClearTodo />
+                <Counter/>  
+            </Container>
+        </Grid>
+    </Container>
+</div>
 )
 }
 

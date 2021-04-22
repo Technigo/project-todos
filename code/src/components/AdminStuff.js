@@ -12,7 +12,7 @@ const useStyles = makeStyles({
   },
   heading: {
       marginLeft: "20px",
-      color: "#0a043c"
+      color: "#8A3FFC"
   }
    
  

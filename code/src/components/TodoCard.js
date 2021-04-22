@@ -1,10 +1,8 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-// import List from '@material-ui/core/List';
+import { useDispatch } from 'react-redux'
 import ListItem from '@material-ui/core/ListItem';
 import DeleteIcon from '@material-ui/icons/Delete';
 import { Checkbox, Card } from '@material-ui/core';
-// import Button from '@material-ui/core/Button';
 import { makeStyles } from "@material-ui/styles"
 
 

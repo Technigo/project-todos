@@ -16,7 +16,8 @@ const useStyles = makeStyles({
     }, calender: {
         display: "flex",
         fontSize: "17px",
-        marginTop: "5px"
+        marginTop: "5px",
+        color: "#FF0066"
     }, icon: {
         color: "#FF0066",
         fontSize: "22px"
