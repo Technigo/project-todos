@@ -20,3 +20,5 @@ Alternatively, if you don't want a new git repo on your account;
 
 
 problem med styled components
+kul att jag lyckades få in fonts som jag inte lyckades med förra veckan
+tog en redan given design för att testa om jag kunde göra en liknande

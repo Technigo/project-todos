@@ -25,13 +25,14 @@ const TodoForm = () => {
 
   return (
     <form className="form-wrapper" onSubmit={onFormSubmit}>
+      <button className="submit-button" type="submit">Add Task!</button>
       <input
         className="todo-input"
         type="text"
         value={value}
         onChange={e => setvalue(e.target.value)}
       />
-      <button className="submit-button" type="submit">Add Task!</button>
+      
     </form>
 
   )

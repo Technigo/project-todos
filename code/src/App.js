@@ -18,10 +18,10 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-       <GlobalFonts />
+      <GlobalFonts />
        <Header />
        <TodoList />
-       <Footer /> 
+       <Footer />
     </Provider>
   )
 }
