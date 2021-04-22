@@ -14,10 +14,10 @@ const TextInput = styled.input`
   border: none;
   border-bottom: 2px dotted #2C2E73;
   padding: 10px;
-  width: 80%;
   color: #2C2E73;
   font-family: "WrittenLies";
   font-size: 20px;
+  width: 80%;
 `
 
 const AddButton = styled.button`
