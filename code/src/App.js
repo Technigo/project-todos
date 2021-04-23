@@ -4,10 +4,10 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import styled from "styled-components";
 
 import { todos } from "./Reducers/todos";
-import { TodoList } from "./Components/TodoList";
-import { CreateNewTask } from "./Components/CreateTask/CreateNewTask";
-import { Header } from "./Components/Header";
-import { Footer } from "./Components/Footer";
+import { TodoList } from "./Components/TaskList/TodoList";
+import { CreateNewTask } from "./Components/AddTask/CreateNewTask";
+import { Header } from "./Components/Header/Header";
+import { Footer } from "./Components/Footer/Footer";
 
 export const App = () => {
   const reducer = combineReducers({
@@ -41,10 +41,15 @@ position: relative;
 
 @media (min-width: 768px) {
   min-height: calc(100vh - 300px);
+  padding-top: 250px;
 }
 `;
 
 const WrapperInner = styled.div`
 flex: 1 1 auto;
 width: calc(100% - 10px);
-padding: 0 5px;`
+padding: 0 5px;
+display: flex;
+flex-direction: column;
+align-items: center;
+`

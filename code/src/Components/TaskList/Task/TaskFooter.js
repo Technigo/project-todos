@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 
-import { todos } from "../../Reducers/todos";
-import { RoundedButton } from "../Selects/RoundedButton";
+import { todos } from "../../../Reducers/todos";
+import { RoundedButton } from "../../Selects/RoundedButton";
 import { DeadlineCountdown } from "./DeadlineCountdown";
 
 export const TaskFooter = ({ deadline, id, isComplete, completedAt }) => {

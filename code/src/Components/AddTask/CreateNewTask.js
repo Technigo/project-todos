@@ -14,6 +14,7 @@ export const CreateNewTask = () => {
   const [newTask, setNewTask] = useState("");
   const [due, setDue] = useState("");
   const [category, setCategory] = useState("")
+  const [checked, setChecked] = useState("")
 
   //local functions
   const handleClick = () => {
@@ -28,8 +29,11 @@ export const CreateNewTask = () => {
           category: category,
         })
       );
+      const initialArr = ["other", "/static/media/other.2d8f2f3d.svg"]
+
       setNewTask("");
-      setCategory("other");
+      setCategory(initialArr);
+      setChecked("")
     }
   };
 
@@ -40,7 +44,9 @@ export const CreateNewTask = () => {
         <Header>
           <SelectCategory  
             category={category}
-            setCategory={setCategory}/>
+            setCategory={setCategory}
+            checked={checked}
+            setChecked={setChecked}/>
         </Header>
         <ContainerInner>
           <Button type="button" onClick={() => handleClick()}>

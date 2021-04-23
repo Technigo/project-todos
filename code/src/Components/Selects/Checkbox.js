@@ -49,6 +49,7 @@ const StyledCheckbox = styled.div`
   border-radius: ${(props) => (props.type === "task" ? "50%" : "3px")};
   transition: all 150ms;
   margin: 5px;
+  margin-left:0;
 
   ${HiddenCheckbox}:focus + & {
     box-shadow: 0 0 0 3px rgb(110, 157, 168);

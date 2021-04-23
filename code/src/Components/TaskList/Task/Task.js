@@ -2,16 +2,16 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import { todos } from "../../Reducers/todos";
-import { Checkbox } from "../Selects/Checkbox";
+import { todos } from "../../../Reducers/todos";
+import { Checkbox } from "../../Selects/Checkbox";
 
-export const Task = ({ id, isComplete, description, createdAt, category}) => {
+
+export const Task = ({ id, isComplete, description, category}) => {
   const dispatch = useDispatch();
  const currentTime =  new Date(Date.now());
 
   return (
     <>
-      <Text> {createdAt}</Text>
       <TaskContainer>
         <Label
           htmlFor={id}
@@ -26,7 +26,7 @@ export const Task = ({ id, isComplete, description, createdAt, category}) => {
             checked={isComplete}
             onChange={() => dispatch(todos.actions.toggleComplete({ id: id, time: currentTime.toLocaleString()}))}
           />
-          <TaskText>{description} {category}</TaskText>
+          <TaskText>{description}</TaskText>
         </Label>
       </TaskContainer>
     </>
@@ -42,25 +42,18 @@ const Label = styled.label`
 
 const TaskText = styled.span`
   float: right;
-  width: 85%;
+  width: 87%;
   margin-top: 5px;
 `;
 
-const Text = styled.p`
-  padding: 5px 10px;
-  margin: 0;
-  text-align: right;
-  background-color: rgb(137, 177, 187);
-  color: white;
-  font-family: 'Roboto', sans-serif;
-`;
 
 const TaskContainer = styled.div`
   background-color: white;
   display: flex;
   align-items: center;
-  padding: 10px;
   min-height: 100px;
   border-bottom: dashed rgb(196, 232, 241) 0.5px;
   font-size: 20px;
 `;
+
+

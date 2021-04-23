@@ -2,10 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-import { todos } from "../Reducers/todos";
-import { RoundedButton } from "./Selects/RoundedButton";
-import headerBg1920px from "../Assets/headerBg1920px.jpg";
-import headerBg640px from "../Assets/headerBg640px.jpg";
+import { todos } from "../../Reducers/todos";
+import { RoundedButton } from "../Selects/RoundedButton";
+import headerBg1920px from "../..//Assets/headerBg1920px.jpg";
+import headerBg640px from "../../Assets/headerBg640px.jpg";
 
 export const Header = () => {
   const tasks = useSelector((store) => store.todos.items);

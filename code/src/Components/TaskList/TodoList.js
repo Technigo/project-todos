@@ -2,25 +2,31 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-import { LottieAnimation } from '../Animation/LottieAnimation'
-import noteIcon from '../Animation/noteIcon.json';
+import { LottieAnimation } from '../../Animation/LottieAnimation'
+import noteIcon from '../../Animation/noteIcon.json';
 import { Task } from "./Task/Task";
 import { TaskFooter } from "./Task/TaskFooter";
-import { SortTasks } from "./FilterSort/SortTasks";
-import { FilterTasks } from "./FilterSort/FilterTasks";
-import { Sidebar } from './Sidebar'
+import {TaskHeader} from './Task/TaskHeader'
+import { SortTasks } from "../FilterSort/SortTasks";
+import { FilterTasks } from "../FilterSort/FilterTasks";
 
 export const TodoList = () => {
   const tasks = useSelector((store) => store.todos.items);
   const [expand, setExpand] = useState(false);
+  
+
+  const handleEmptyState = () => {
+    const hidden = tasks.filter( task => task.hidden === true)
+    if(tasks.length === hidden.length || tasks.length === 0)
+    { return true}
+    console.log(hidden.length)
+  }
+
 
   return (
     <Section>
-      {tasks.length === 0 ? (
-        <EmptyState> <LottieAnimation lotti={noteIcon} height={300} width={300} /></EmptyState>
-      ) : (
+      {handleEmptyState()? <EmptyState> <LottieAnimation lotti={noteIcon} height={300} width={300} /></EmptyState>:
       <Main>
-        <Sidebar />
         <Column>
           <SortContainer>
             <Menu onClick={() => setExpand(!expand)}> sort and filter </Menu>
@@ -34,14 +40,14 @@ export const TodoList = () => {
               <></>
             ) : (
               <TaskContainer key={task.id}>
+                <TaskHeader {...task} />
                 <Task {...task} />
                 <TaskFooter {...task} />
               </TaskContainer>
             )
           )}
           </Column>
-        </Main>
-      )}
+        </Main>}
     </Section>
   );
 };
@@ -78,9 +84,9 @@ width: 100%;
 
 const Column = styled.div `
 flex: 1 1 auto;
-margin-left: 25px;
 display: flex;
-flex-direction: column` 
+flex-direction: column;
+align-items: center;` 
 
 const SortContainer = styled.div`
  width: 100%;
@@ -110,4 +116,8 @@ const TaskContainer = styled.div`
   margin-bottom: 10px;
   box-shadow: 0.5px 0.5px 1px 1px rgb(88, 88, 102);
   color: rgb(110, 157, 168);
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
 `;
