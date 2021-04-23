@@ -5,10 +5,10 @@ const RemoveTodo = ({ onClickRemove }) => {
 
 
   return (
-    <div>
+    <div className="remove-todo-container">
       <button onClick={onClickRemove}>
-        Delete
-  </button>
+        <img src="./icons/icons8-full-trash-48.png" />
+      </button>
     </div>
   )
 }

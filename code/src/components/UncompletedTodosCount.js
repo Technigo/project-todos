@@ -6,7 +6,9 @@ const UncompletedTodosCount = () => {
   const uncompletedTodos = todosComplete.filter(todo => todo.isComplete === false).length
 
   return (
-    <h2>Uncompleted todos{uncompletedTodos}</h2>
+    <div className="uncompleted-container">
+      <h2>Uncompleted todos: {uncompletedTodos}</h2>
+    </div>
   )
 }
 

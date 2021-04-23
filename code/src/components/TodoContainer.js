@@ -1,18 +1,15 @@
 import React from 'react'
+
 import TodoList from './TodoList'
-
-
 import Header from './Header'
-
 import AddTodo from './AddTodo'
 
 const TodoContainer = () => {
   return (
-    <div>
+    <div className="todo-container">
       <Header />
       <TodoList />
       <AddTodo />
-
     </div>
   )
 }

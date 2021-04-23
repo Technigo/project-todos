@@ -10,13 +10,13 @@ import TodoItem from './TodoItem'
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
   const dispatch = useDispatch()
+
   return (
 
-    <div>
+    <div >
       {items.map(todo => (
-        <div key={todo.id}>
+        <div className="todo-list-container" key={todo.id}>
           <TodoItem
-
             decription={todo.decription}
             checkedComplete={todo.isComplete}
             onChangeToggle={() => dispatch(todos.actions.toggleComplete(todo.id))}
@@ -25,9 +25,8 @@ const TodoList = () => {
         </div>
       ))}
     </div>
-
   )
-
 }
 
 export default TodoList
+

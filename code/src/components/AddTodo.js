@@ -21,15 +21,20 @@ const AddTodo = () => {
   }
 
   return (
-    <form className="todo-input-form" onSubmit={onFormSubmit}>
-      <input className="input-thought"
-        type="text"
-        value={value}
-        onChange={event => setValue(event.target.value)}
-        placeholder="Add todo"
-      />
-      <button className="send-button" type="submit">+</button>
-    </form>
+    <div className="form-container">
+      <form className="add-todo" onSubmit={onFormSubmit}>
+        <input
+
+          type="text"
+          value={value}
+          onChange={event => setValue(event.target.value)}
+          placeholder="Add todo"
+        />
+        <button className="add-button" type="submit">
+          <img src="./icons/icons8-plus-48.png" />
+        </button>
+      </form>
+    </div>
   )
 }
 

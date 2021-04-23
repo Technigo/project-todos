@@ -1,15 +1,24 @@
 import React from 'react'
 
-const TodoItem = ({ decription, checkComplete, onchangeToggle }) => {
+const TodoItem = ({ decription, checkComplete, onChangeToggle }) => {
   return (
-    <div className="todo-container" >
+    <>
+      <div className="container">
+        <div className="round">
+
+          <input
+            id="checkbox"
+            type="checkbox"
+            checked={checkComplete}
+            onChange={onChangeToggle}
+          />
+          <label htmlFor="checkbox"></label>
+
+
+        </div>
+      </div>
       <p>{decription}</p>
-      <input
-        type="checkbox"
-        checked={checkComplete}
-        onChange={onchangeToggle}
-      />
-    </div>
+    </>
   )
 }
 

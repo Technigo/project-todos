@@ -6,8 +6,9 @@ import UncompletedTodosCount from './UncompletedTodosCount'
 const Header = () => {
   return (
     <section className="header">
+      <h1>Todays todo's!</h1>
       <UncompletedTodosCount />
-      <h1>Todolist!</h1>
+
     </section>
   )
 }

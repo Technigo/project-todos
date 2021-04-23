@@ -2,8 +2,10 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-import TodoContainer from './components/TodoContainer'
 import todos from './reducers/todos'
+
+import TodoContainer from './components/TodoContainer'
+
 
 const reducer = combineReducers({
   todos: todos.reducer
