@@ -2,7 +2,6 @@ import React from 'react';
 
 const NoTodosLeft = () => {
 
-
     return (
       <div className="no-todos-left">
           <p>No todos left!</p>

@@ -21,7 +21,6 @@ code {
 main {
   max-width: 500px;
   margin: 0 auto;
-  /* border: 2px solid #333; */
   min-height: 700px;
 }
 
@@ -160,7 +159,6 @@ input[type="checkbox"] {
   height: 1.3em;
   border-radius: 50%;
   vertical-align: middle;
-  /* border: 1px solid #ddd; */
   -webkit-appearance: none;
   outline: none;
   cursor: pointer;

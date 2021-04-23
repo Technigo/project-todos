@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Task } from './Task';
 
+import { Task } from './Task';
 import NoTodosLeft from './NoTodosLeft';
 
 const TaskList = () => {
@@ -18,10 +18,9 @@ const TaskList = () => {
         <Task key={task.id} task={task} />
        ))}
     </div>
-    )
-    }
+    )}
     </>
   )
-}
+};
 
 export default TaskList;

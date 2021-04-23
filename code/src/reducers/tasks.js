@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 export const tasks = createSlice({
   name: 'tasks',
@@ -34,4 +34,4 @@ export const tasks = createSlice({
     }
   }
 })
-
+;
