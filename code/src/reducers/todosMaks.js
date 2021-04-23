@@ -1,18 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const todos = createSlice({
-    //name it the same as variable
     name: 'todos',
     initialState: {
         items: [
-            // { id: 1, description: 'First task', isComplete: false },
-            // { id: 2, description: 'Second task', isComplete: false},
-            // { id: 3, description: 'Third task', isComplete: false }
+            { id: 1, description: 'First task', isComplete: false },
+            { id: 2, description: 'Second task', isComplete: false},
+            { id: 3, description: 'Third task', isComplete: false }
         ],
         addLabel: ''
     },
     reducers: {
         toggleComplete: (store, action) => {
+           
+
+        //v1 - immutability   
             const updatedItems = store.items.map(todo => {
                 if (todo.id === action.payload) {
                     return {
@@ -24,6 +26,14 @@ const todos = createSlice({
                 }
             });
             store.items = updatedItems
+
+        // v2 - mutability
+            // store.items.forEach(todo => {
+            //     if(todo.id === action.payload) {
+            //         todo.isComplete = !todo.isComplete;
+            //     }
+            // })
+
         },
 
         //use underscore if not using the action

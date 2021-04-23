@@ -1,13 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const todos = createSlice({
-    //name it the same as variable
     name: 'todos',
     initialState: {
         items: [
-            // { id: 1, description: 'First task', isComplete: false },
-            // { id: 2, description: 'Second task', isComplete: false},
-            // { id: 3, description: 'Third task', isComplete: false }
+            { id: 1, description: 'First task', isComplete: false },
+            { id: 2, description: 'Second task', isComplete: false},
+            { id: 3, description: 'Third task', isComplete: false }
         ],
         addLabel: ''
     },
