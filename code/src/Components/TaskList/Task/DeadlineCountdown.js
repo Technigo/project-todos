@@ -33,7 +33,7 @@ export const DeadlineCountdown = ({ deadline, isComplete }) => {
     } else {
       setTextColor("red")
     }
-  }, [])
+  }, [diff])
 
   if (deadline === "" || isComplete) {
     return <p></p>;

@@ -24,6 +24,7 @@ export const HamburgerMenu = ({ name, array, handleClick, order }) => {
       <Container expand={expand}>
         {array.map((item) => (
           <Button
+            key={item.name}
             selected={selected === "Reset" ? false : selected === item.name}
             indicator={indicator}
             onClick={() => {

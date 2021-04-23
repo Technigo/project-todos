@@ -22,7 +22,7 @@ export const SelectCategory = ({ setCategory, checked, setChecked }) => {
   return (
     <CheckboxWrapper>
       {categoryArr.map((item) => (
-        <Label htmlFor={item.name}>
+        <Label key={item.name} htmlFor={item.name}>
           <Checkbox
             checked={checked === item.name}
             onChange={() => handleChange(item)}

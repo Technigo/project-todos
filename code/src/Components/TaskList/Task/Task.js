@@ -6,7 +6,7 @@ import { todos } from "../../../Reducers/todos";
 import { Checkbox } from "../../Selects/Checkbox";
 
 
-export const Task = ({ id, isComplete, description, category}) => {
+export const Task = ({ id, isComplete, description}) => {
   const dispatch = useDispatch();
  const currentTime =  new Date(Date.now());
 
