@@ -34,7 +34,7 @@ const todos = createSlice({
           isComplete: true
         }
       })
-      store.items = clearAllTasks
+      store.tasks = clearAllTasks
     }
   }
 }) 

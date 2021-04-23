@@ -1,8 +1,21 @@
 import React, { useState } from 'react'
 import uniqid from 'uniqid'
 import {useDispatch } from 'react-redux'
+import styled  from 'styled-components'
 
 import todos from '../reducers/todos'
+
+const InputField = styled.form `
+  height: 5vh;
+  width: 30vw;
+  border: 2px solid green;
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: pink;
+`
+
 
 const TodoInput = () => {
   const [newTask, setNewTask] = useState('')
@@ -22,8 +35,7 @@ const TodoInput = () => {
   }
 
   return (
-    <form 
-      className="input-field" 
+    <InputField
       onSubmit={onFormSubmit}
     >
       <input
@@ -34,7 +46,7 @@ const TodoInput = () => {
       <button type="submit">
         Add 
       </button>
-    </form>
+    </InputField>
   )
 
 }
