@@ -7,8 +7,8 @@ import { createSlice } from '@reduxjs/toolkit'
 const todos = createSlice({
 //set of methods we can manipulate the store
  //initial state, will be an object:
-  //what we want to store in redux store
-    // empty array, not to predefine any todos
+//what we want to store in redux store
+// empty array, not to predefine any todos
 
     name: 'todos',
     initialState: {
