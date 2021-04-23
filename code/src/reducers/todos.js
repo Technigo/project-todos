@@ -3,13 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    tasks: [
-/*       { id: 1, description: 'Book flight', time: Date.now(), isComplete: false },
-      { id: 2, description: 'Get new passports', time: Date.now(), isComplete: false },
-      { id: 3, description: 'Decide which rental to get!', time: Date.now(), isComplete: false },
-      { id: 4, description: 'Buy sunscreen!!', time: Date.now(), isComplete: false },
-      { id: 5, description: 'Maybe some new books?', time: Date.now(), isComplete: false }, */
-    ]
+    tasks: []
   },
   reducers: {
     toggleComplete: (store, action) => {

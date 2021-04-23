@@ -1,10 +1,12 @@
 import React from 'react'
+import styled from 'styled-components'
 
 const NoToDos = () => {
-
   return(
-    <div className='no-task-container'>
-      <h2 className='no-task-text'>Let's plan a new trip!</h2>
+    <NoTaskContainer>
+      <NoTaskText>
+        Let's plan a new trip!
+      </NoTaskText>
       <lottie-player
         src="https://assets10.lottiefiles.com/packages/lf20_6wuFVO.json" 
         background="transparent" 
@@ -13,8 +15,32 @@ const NoToDos = () => {
         loop
         autoplay>
       </lottie-player>
-    </div>
+    </NoTaskContainer>
   )
 }
 
 export default NoToDos
+
+const NoTaskContainer = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
+
+width: 80%;
+height: 320px;
+margin: auto;
+background-color: white;
+padding: 10px;
+ @media (min-width: 768px) {
+  width: 60%;
+ }
+ @media (min-width: 1024px) {
+  width: 40%;
+ }
+`
+const NoTaskText = styled.h2`
+font-family: 'Montserrat Alternates', sans-serif;
+font-size: 20px;
+font-weight: 200;
+margin: auto;
+`
