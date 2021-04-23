@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-
 //constructing the slice
 //difference between whole store and slice:
 //variable: 
