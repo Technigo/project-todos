@@ -1,15 +1,38 @@
 .btn-delete {
-    background-color: rgb(242, 206, 245);
+    background-color: rgb(243, 210, 246);
     margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    font-size: 20px;
+    font-weight: 600;
     border-radius: 2px;
     border: none;
+    transition: all 0.7s;
+  }
+
+  .btn-delete:hover {
+    background-color: red;
+    border: 1px solid blue;
+
+    cursor: pointer;
+  }
+
+  .trash-item {
+    width: 20px;
+    height: 50px;
   }
   
   .form {
     margin-top: 20px;
+    margin-bottom: 15px;
   }
   
   .btn-submit {
-    background-color: aquamarine;
+    background-color: rgb(197, 245, 229);
+    transition: all 0.7s;
   }
   
+  .btn-submit:hover {
+    background-color: aquamarine;
+    cursor: pointer;
+  }

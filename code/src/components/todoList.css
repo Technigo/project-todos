@@ -1,0 +1,129 @@
+
+.todo-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  /********** CHECHBOX **********/
+  .checkbox {
+      width: 1.3em;
+      height: 1.3em;
+      background-color: red;
+      border-radius: 50%;
+      vertical-align: middle;
+      border: 1px solid #ddd;
+      -webkit-appearance: none;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.5s;
+  }
+  
+  .checkbox:hover {
+      background-color: rgb(229, 255, 0);
+  }
+
+  .checkbox:checked {
+      background-color: rgb(4, 250, 25);
+  }
+  
+  .checkbox:checked:hover {
+    background-color: rgb(255, 179, 0);
+}
+
+  .time {
+    display: flex;
+    font-style: italic;
+    font-size: 12px;
+  }
+  
+  .task-description {
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .summary {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+  }
+  
+  h4, p {
+    margin: 5px;
+  }
+  
+  .counter {
+    display: none;
+  }
+  
+  p span {
+    color: red;
+    font-weight:700;
+  }
+  
+  /******************ALL DONE BUTTON**************/
+  .all-done {
+    content: '';
+    background-color: transparent;
+    width:200px;
+    height: 40px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 40px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    position: relative;
+    transition: all 0.5s;
+    color: transparent;
+  }
+  
+  .all-done:before {
+    content: 'all done';
+    color: rgb(238, 238, 245);
+    font-weight: 900;
+    position: absolute;
+    top: -3px;
+    left: -3px;
+    width: 100%;
+    height: 100%;
+    background-color: #54d0f6;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    transition: all 0.5s;
+    transform-origin: top;
+  }
+  
+  .all-done:after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 100%;
+    height: 100%;
+    background-color: #e964f5;
+    z-index: -1;
+    mix-blend-mode: multiply;
+    transition: all 0.5s;
+    transform-origin: bottom;
+  }
+  
+  .all-done:hover:before {
+    top: -6px;
+    left: 0;
+    transform: perspective(1000px) rotateX(75deg);
+  }
+  
+  .all-done:hover:after {
+    
+    top: 6px;
+    left: 0;
+    transform: perspective(1000px) rotateX(-77deg)
+  }
+  
+  .all-done:hover {
+    content: 'sure?';
+    color: #020355;
+    font-weight:900;
+    background-color: rgba(250, 4, 4, 0.137);
+    cursor: pointer;
+  }

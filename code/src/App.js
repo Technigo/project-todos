@@ -7,8 +7,6 @@ import todos from './reducers/todos'
 import TodoForm from './components/TodoForm'
 import TodoList from './components/TodoList'
 
-
-
 const reducer = combineReducers({
   todos: todos.reducer
 })
@@ -19,7 +17,6 @@ export const App = () => {
   return (
     <div className="main">
       <h2>Todo list</h2>
-
       <Provider store={store}>
         <TodoForm />
         <TodoList />
