@@ -3,8 +3,12 @@ import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
 import todos from 'reducers/todos'
+import Header from 'components/Header'
+import NewTodo from 'components/NewTodo'
 import TodoList from 'components/TodoList'
-import TodoForm from 'components/TodoForm'
+import Footer from 'components/Footer'
+
+
 
 //Combining our reducers and saving them in a variable
 const reducer = combineReducers({
@@ -20,8 +24,10 @@ export const App = () => {
   return (
     <Provider store={store}>   
       <div>
-        <TodoForm />
+        <Header />
+        <NewTodo />
         <TodoList />
+        <Footer />
       </div>
     </Provider>
   )
