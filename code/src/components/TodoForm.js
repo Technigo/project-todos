@@ -5,15 +5,15 @@ import uniqid from 'uniqid'
 
 import todos from '../reducers/todos'
 
-const TextContainer = styled.section`
+const AddContainer = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   font-family: Reenie Beanie;
   background: rgba(130 255 173 / 21%);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
 `;
 
 const AddButton = styled.button`
@@ -21,7 +21,7 @@ const AddButton = styled.button`
   height: 3rem;
   border: none;
   border-radius: 12px;
-  background: white;
+  background: transparent;
   font-size: 2rem;
 `;
 
@@ -31,10 +31,9 @@ const InputField = styled.input`
   background: transparent;
   border: none;
   outline: none;
-  font-family: Roboto;
-  font-size: 1.5rem;
+  font-family: Rock Salt;
+  font-size: 1.2rem;
   color: black;
-  margin-left: 1rem;
 `;
 
 const TodoForm = () => {
@@ -56,18 +55,18 @@ const TodoForm = () => {
   }
 
   return (
-    <TextContainer>
-      <form onSubmit={onFormSubmit}>
+    <AddContainer>
+      <form onSubmit={onFormSubmit} spellCheck="false">
         <AddButton type="submit">+
         </AddButton>
         <InputField  
           type="text"
-          placeholder="Add to list"
+          placeholder="Add to list" placeholderTextColor="white"
           value={value}
           onChange={event => setValue(event.target.value)}>
         </InputField>
       </form>
-    </TextContainer>
+    </AddContainer>
   )
 }
 

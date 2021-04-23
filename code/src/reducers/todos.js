@@ -3,11 +3,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    tasks: [
-      { id: 1, description: 'First task', isComplete: false },
-      { id: 2, description: 'Second task', isComplete: true },
-      { id: 3, description: 'Third task', isComplete: false } //ALL THIS CAN BE REMOVED AND JUST EMPTY ARRAY LATER
-    ]
+    tasks: []
   },
   reducers: {
     toggleComplete: (store, action) => {
