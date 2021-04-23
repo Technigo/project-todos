@@ -14,7 +14,7 @@ const TaskSummary = () => {
 
   return (
     <Summary>
-      <p>{uncompletedTasks} of {allTasks.length} left!</p>
+      <p>{uncompletedTasks} of {allTasks.length} task left to do!</p>
     </Summary>
   )
 }

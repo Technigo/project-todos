@@ -15,14 +15,18 @@ const TaskList = styled.div`
 const Task = styled.div`
   display: flex;
   justify-content: space-between;
-  border: 1px solid #2C2E73;
-  border-radius: 10px;
+  align-items: center;
   margin-top: 5px;
-  padding: 10px;
-`
-
-const StyledParagraph = styled.p`
-  padding: 10px;
+  margin: 10px;
+  padding-bottom: 0;
+  border-bottom: solid #2C2E73;
+  border-width: 0px 0px 2px 0px;
+  border-radius: 0% 0% 100% 0%/2% 0% 6% 0%;
+  transform: rotate(2deg);
+  `
+  
+  const StyledParagraph = styled.p`
+  margin: 0;
 `
 
 const Checkbox = styled.input`
@@ -56,7 +60,7 @@ const TodoList = () => {
             />
             <StyledParagraph>{todo.description}</StyledParagraph>
           <TrashButton onClick={() => dispatch(todos.actions.removeTask(todo.id))}>
-          <span role="img" alt="trash can" aria-label="trach can icon">🗑️</span>
+          <span role="img" alt="trash can" aria-label="trach can icon">❌</span>
           </TrashButton>
       </Task>
     ))}

@@ -16,8 +16,3 @@ code {
   display: flex;
   justify-content: center;
 }
-
-.todo-list {
-  display: flex;
-  align-items: center;
-}
