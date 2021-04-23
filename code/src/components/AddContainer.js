@@ -21,19 +21,21 @@ const StyledSection = styled.section`
 `
 
 const StyledButton = styled.button`
-border: none;
-background-color: transparent;
-display: flex;
-align-items: center;
-padding: 0;
+  border: none;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 5px 0;
+  cursor: pointer;
 `
 
 const Icon = styled.img`
-width: 24px;
+  width: 24px;
 `
 
 const StyledParagraph = styled.p`
-margin: 0 0 0 10px;
+  margin: 0 0 0 10px;
 `
 
 const Form = styled.form`
@@ -42,10 +44,10 @@ const Form = styled.form`
 `
 
 const StyledInput = styled.input`
-width: 100 %;
-box-sizing: border - box;
-padding: 10px;
-font-size: 20px;
+  width: 100 %;
+  box-sizing: border - box;
+  padding: 10px;
+  font-size: 20px;
 `
 
 const AddContainer = () => {
@@ -57,11 +59,8 @@ const AddContainer = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(dueDate)
-    console.log(dueDate.toJSON())
 
     if (newTaskTitle) {
-
       const newTask = {
         id: nanoid(),
         title: newTaskTitle,
@@ -69,7 +68,6 @@ const AddContainer = () => {
         isHidden: false,
         dueDate: dueDate.toJSON()
       }
-      console.log(newTask.dueDate)
 
       dispatch(tasks.actions.addTask(newTask))
       setNewTaskTitle("")
@@ -79,36 +77,43 @@ const AddContainer = () => {
 
   return (
     <StyledSection>
-      <StyledButton onClick={() => setIsClicked(prevState => !prevState)}>
-        <Icon src="./assets/plus-icon.svg" alt="plus icon" />
-        <StyledParagraph>Add task</StyledParagraph>
-      </StyledButton>
+      {!isClicked &&
+        <StyledButton onClick={() => setIsClicked(prevState => !prevState)}>
+          <Icon src="./assets/plus-icon.svg" alt="plus icon" />
+          <StyledParagraph>Add task</StyledParagraph>
+        </StyledButton>}
 
       {isClicked &&
-        <Form onSubmit={handleSubmit}>
-          <label htmlFor="textinput">
-            Your task (required)
-            </label>
-          <StyledInput
-            type="text"
-            value={newTaskTitle}
-            onChange={(e) => setNewTaskTitle(e.target.value)}
-            id="textinput"
-          />
-          <label htmlFor="datepicker">
-            Due date (optional)
-            </label>
-          <DatePicker
-            dateFormat="dd/MM/yyyy"
-            selected={dueDate}
-            onChange={(e) => setDueDate(e)}
-            id="datepicker"
-          />
-          <StyledButton onClick={handleSubmit} >
-            <Icon src="./assets/add-icon.svg" alt="add icon" />
-            <StyledParagraph>Add to list</StyledParagraph>
+        <>
+          <StyledButton onClick={() => setIsClicked(prevState => !prevState)}>
+            <Icon src="./assets/minus-icon.svg" alt="minus icon" />
+            <StyledParagraph>Hide input</StyledParagraph>
           </StyledButton>
-        </Form>
+          <Form onSubmit={handleSubmit}>
+            <label htmlFor="textinput">
+              Your task (required)
+            </label>
+            <StyledInput
+              type="text"
+              value={newTaskTitle}
+              onChange={(e) => setNewTaskTitle(e.target.value)}
+              id="textinput"
+            />
+            <label htmlFor="datepicker">
+              Due date (optional)
+            </label>
+            <DatePicker
+              dateFormat="dd/MM/yyyy"
+              selected={dueDate}
+              onChange={(e) => setDueDate(e)}
+              id="datepicker"
+            />
+            <StyledButton onClick={handleSubmit} >
+              <Icon src="./assets/add-icon.svg" alt="add icon" />
+              <StyledParagraph>Add to list</StyledParagraph>
+            </StyledButton>
+          </Form>
+        </>
       }
     </StyledSection>
   )

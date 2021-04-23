@@ -22,6 +22,7 @@ const HeaderButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 `
 
 const HeaderButtonText = styled.button`
@@ -38,6 +39,7 @@ const HeaderButtonText = styled.button`
   justify-content: space-between;
   align-items: center;
   grid-column: span 2;
+  cursor: pointer;
 `
 
 const Icon = styled.img`

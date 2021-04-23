@@ -21,9 +21,11 @@ const StyledButton = styled.button`
 `
 const Icon = styled.img`
   width: 24px;
+  cursor: pointer;
 `
 const IconBin = styled.img`
   width: 20px;
+  cursor: pointer;
 `
 const TaskTitle = styled.p`
   margin: 0;
