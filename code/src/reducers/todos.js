@@ -4,9 +4,7 @@ const todos = createSlice({
   name: "todos",
   initialState: {
     tasks: [
-      { id: 1, description: "First Task", isComplete: false },
-      { id: 2, description: "Second Task", isComplete: true },
-      { id: 3, description: "Third Task", isComplete: false },
+      { id: 1, description: "Finish React toDo project", isComplete: false },
     ],
   },
   reducers: {
