@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaTrashAlt } from 'react-icons/fa'
 
 import tasks from '../reducers/tasks'
 

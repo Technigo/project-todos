@@ -22,14 +22,17 @@ const TodoForm = () => {
         setValue('')
     }
     return (
-        <form onSubmit={onFormSubmit}>
-            <input
-                type="text"
-                value={value}
-                onChange={e => setValue(e.target.value)}
-            />
-            <button type="submit"><IoAddCircle /></button>
-        </form>
+        <section className="task-form">
+            <form onSubmit={onFormSubmit}>
+                <input
+                    type="text"
+                    value={value}
+                    placeholder="Add task"
+                    onChange={e => setValue(e.target.value)}
+                />
+                <button type="submit"><IoAddCircle /></button>
+            </form>
+        </section>
     )
 }
 
