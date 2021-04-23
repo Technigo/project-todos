@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div className="header-container">
       <div className="header-section">
-        <div className="header-left-container ">
+        <div className="header-section-content">
           <p>{items} Todo</p>
           <button className="header-button">Clear all</button>
         </div>

@@ -11,7 +11,7 @@
   background-color: #f4f4f4;
 }
 
-.header-left-container {
+.header-section-content {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
