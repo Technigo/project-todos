@@ -26,7 +26,17 @@ import { createSlice } from '@reduxjs/toolkit'
       removeTodo: (store, action) => { 
         const removedItems = store.items.filter(todo => todo.id !== action.payload)           
         store.items = removedItems
-          }     
+          },
+      completeAll: (store) => {
+        const allComplete = store.items.map((todo) => {
+          return {
+            ...todo,
+            isComplete: true
+          }
+        }          
+        )
+        store.items = allComplete        
+      }     
         }      
     })
 export default todos

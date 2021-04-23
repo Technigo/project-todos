@@ -120,7 +120,8 @@ code {
   font-size: 20px;  
 }
 
-.add-todo-btn {
+.add-todo-btn,
+.complete-all-btn {
   margin: 15px 0;
   border-radius: 7px;
   font-size: 20px;

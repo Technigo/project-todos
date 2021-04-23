@@ -5,7 +5,8 @@ import styled from 'styled-components'
 import todos from 'reducers/todos'
 
 const TodoList = () => {
-  const items = useSelector((store) => store.todos.items)  
+  const items = useSelector((store) => store.todos.items) 
+  const allItems = useSelector((store) => store.todos.items)
   const dispatch = useDispatch() 
 
   const incompleteTask = items.filter(todo => todo.isComplete !== true) 
@@ -18,7 +19,7 @@ const TodoList = () => {
       </div>
       <div className="item-container">
         {items.map(todo => (
-        <div key={todo.id} className="todo-item" style={ todo.isComplete ? {opacity: 0.5} : {opacity: 1}}>
+          <div key={todo.id} className="todo-item" style={ todo.isComplete ? {opacity: 0.5} : {opacity: 1}}>
           <p className="todo-task grid-item-1">{todo.description}</p>
           <div className="checkbox-complete grid-item-2">
             <label htmlFor="checkboxLabel">Complete: </label>
@@ -41,7 +42,8 @@ const TodoList = () => {
           </div>        
         </div>      
       ))}
-      </div>      
+      </div>         
+<button className="complete-all-btn" onClick={()=> dispatch(todos.actions.completeAll())}> Complete all tasks</button> 
     </div>
   )
 }
