@@ -14,7 +14,7 @@ const Counter = () => {
   }
 
   // filter unCompleted / completed todos
-  const uncompletedTodos = allToDos.filter((todo) => !todo.isComplete)
+//const uncompletedTodos = allToDos.filter((todo) => !todo.isComplete)
   const completedTodos = allToDos.filter((todo) => todo.isComplete)
 
   return (
