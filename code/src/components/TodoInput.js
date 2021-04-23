@@ -14,7 +14,7 @@ const TodoInput = () => {
 
       const newTodo = {
         id: uniqid(),
-        description: newTask, //local state value here, (useState)
+        description: newTask,
         isComplete: false 
       }
       dispatch(todos.actions.addTodo(newTodo))
@@ -22,14 +22,16 @@ const TodoInput = () => {
   }
 
   return (
-    <form className="input-field" onSubmit={onFormSubmit}>
+    <form 
+      className="input-field" 
+      onSubmit={onFormSubmit}
+    >
       <input
         type="text"
         value={newTask}
         onChange={e => setNewTask(e.target.value)}
       />
-      <button 
-        type="submit">
+      <button type="submit">
         Add 
       </button>
     </form>

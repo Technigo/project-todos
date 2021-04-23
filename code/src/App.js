@@ -7,7 +7,6 @@ import todos from "./reducers/todos";
 
 import TodoList from './components/TodoList'
 import TodoInput from './components/TodoInput'
-// import TotalTodos from './components/TotalTodos'
 import ClearAllTodos from './components/ClearAllTodos'
 
 const reducer = combineReducers({
@@ -21,7 +20,6 @@ export const App = () => {
     <Provider store = {store}>
         <TodoInput />
         <TodoList />
-        {/* <TotalTodos /> */}
         <ClearAllTodos />
     </Provider>
   )

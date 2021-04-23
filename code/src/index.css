@@ -20,16 +20,9 @@ input[type=checkbox]:checked + p {
   display: flex;
   align-items: center;
 }
- /* {
-  height: 100vh;
-  width: 1000vw;
-  background-color: lightgray;
-  display: grid;
-  place-items: center;
-} */
 .input-field {
-  height: 50px;
-  width: 80%;
+  height: 5vh;
+  width: 30vw;
   border: 2px solid green;
   border-radius: 12px;
   display: flex;
@@ -53,4 +46,9 @@ button {
   border-radius: 10px;
   height: 30px;
   width: 50px;
+}
+.todos-container {
+  width: 100vw;
+  height: 100vh;
+  border: 2px solid palevioletred;
 }

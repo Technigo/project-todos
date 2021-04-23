@@ -9,7 +9,7 @@ const ClearAllTodos = () => {
   return (
     <div>
       <button onClick={() => dispatch(todos.actions.clearAllTodos())}>
-        Remove All
+        Mark all done
       </button>
     </div>
   )

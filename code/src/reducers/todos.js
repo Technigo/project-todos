@@ -27,11 +27,11 @@ const todos = createSlice({
     addTodo: (store, action) => { //store is state of the slice , empty array
       store.tasks = [...store.tasks, action.payload]
     },
-    clearAllTodos: (store) => {
+    clearAllTodos: (store) => { //mark all as done! 
       const clearAllTasks = store.tasks.map((todo) => {
         return {
           ...todo,
-          completed: !todo.completed
+          isComplete: true
         }
       })
       store.items = clearAllTasks
