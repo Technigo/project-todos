@@ -1,0 +1,8 @@
+.form-input-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-input {
+    background-color: #fff;
+}

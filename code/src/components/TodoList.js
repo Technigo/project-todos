@@ -16,7 +16,7 @@ const TodoList = () => {
 
     return (
         <div className="todolist-wrapper">
-            <p>Your todos:</p>
+            <p className="todolist-title">YOUR TODOS:</p>
             {items.map(todo =>(
                 <div key={todo.id} className="todo-item">
                     <div className="todo-item-checkbox-container">

@@ -28,7 +28,7 @@ const TodoHeader = () => {
             <h1>What's up today?</h1>
             </div>
             <div className="header-text-container">
-                <p>{today.format('YYYY-MM-DD')}</p>
+                <p className="header-date">{today.format('YYYY-MM-DD')}</p>
                 <div className="header-complete-todo-container">
                     <p>Completed:{completedTodos.length}/{numberOfTodos}</p>
                     <Button

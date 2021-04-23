@@ -18,15 +18,14 @@
     color: #9D9AB4;
 }
 
-.header-text-container p {
+.header-date {
     margin: 0 0 0 10px;
 }
 
 .header-complete-todo-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 0 10px 0 0; 
+    align-items: flex-end;
 }
 
 .header-complete-todo-container p {

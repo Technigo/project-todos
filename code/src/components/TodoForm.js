@@ -6,6 +6,7 @@ import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
 import Icon from '@material-ui/core/Icon'
 import SaveIcon from '@material-ui/icons/Save'
+import '../css/TodoForm.css'
 
 import todos from '../reducers/todos'
 
@@ -32,9 +33,10 @@ const TodoForm = () => {
     }
 
     return (
-        <form onSubmit={onFormSubmit} className="input-wrapper">
+        <form onSubmit={onFormSubmit} className="form-input-wrapper">
             <TextField 
                 required
+                className="form-input"
                 id="outlined-basic"
                 label="Add new task"
                 variant="outlined"

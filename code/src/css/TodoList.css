@@ -1,6 +1,15 @@
 .todolist-wrapper {
     display: flex;
     flex-direction: column;
+    margin: 0 0 10px 0;
+  }
+
+  .todolist-title{
+    margin: 0 0 0 10px;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: #9D9AB4;
   }
   
   .todo-item {
@@ -12,6 +21,11 @@
     background-color: #fff;
     border-radius: 10px;
     color: #708090;
+    box-shadow: 0 1px 1px rgb(157,154,180,0.12), 
+                0 2px 2px rgb(157,154,180,0.12), 
+                0 4px 4px rgb(157,154,180,0.12), 
+                0 8px 8px rgb(157,154,180,0.12),
+                0 16px 16px rgb(157,154,180,0.12);          
   }
   
   .todo-item-completed {
