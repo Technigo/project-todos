@@ -1,12 +1,6 @@
 //Slice method
 import { createSlice } from '@reduxjs/toolkit'
 
-//Function to create new unique id for new todo
-const nextTodoItemId = (items) => {
-    const maxId = items.reduce((maxId, todo) => Math.max(todo.id, maxId), -1)
-    return maxId + 1
-}
-
 //Object with three properties: name, initialstate, reducers
 const todos = createSlice({
     name: 'todos',
@@ -29,6 +23,16 @@ const todos = createSlice({
             store.items = decreasedItems
         },
 
+        completeAllTodo: (store, action) => {
+            const completedItems = store.items.map(todo => {
+                return {
+                    ...todo,
+                    isComplete: !todo.isComplete
+                }
+            })
+            store.items = completedItems
+        },
+        
         //Redux is always passing store as argument in order to update it
         //add action to know which task to toggle.
         toggleComplete: (store, action) => {

@@ -2,9 +2,12 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useState } from 'react'
 import uniqid from 'uniqid'
+import TextField from '@material-ui/core/TextField'
+import Button from '@material-ui/core/Button'
+import Icon from '@material-ui/core/Icon'
+import SaveIcon from '@material-ui/icons/Save'
 
 import todos from '../reducers/todos'
-
 
 const TodoForm = () => {
     //user input state 
@@ -30,13 +33,24 @@ const TodoForm = () => {
 
     return (
         <form onSubmit={onFormSubmit} className="input-wrapper">
-            <input
+            <TextField 
+                id="outlined-basic"
+                label="Add new task"
+                variant="outlined"
                 type="text"
-                placeholder="Add new task.."
                 value={value}
                 onChange={event => setValue(event.target.value)}
             />
-            <button type="submit" aria-label="add todo">Add Task</button>
+            <Button
+                variant="contained"
+                color="primary"
+                type="submit"
+                size="small"
+                startIcon={<SaveIcon />}
+                aria-label="add todo"
+            >
+                Add Task
+            </Button>
         </form>
     )
 }
