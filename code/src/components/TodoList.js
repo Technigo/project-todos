@@ -3,7 +3,8 @@ import { useSelector } from 'react-redux'
 
 import EmptyTodoList from './EmptyTodoList'
 import TodoThumb from './TodoThumb'
-import FilterThumb from './FilterThumb'
+import FiltersList from './FiltersList'
+
 
 const TodoList = () => {
   const items = useSelector((store) => store.todo.items)
@@ -27,19 +28,12 @@ const TodoList = () => {
       }
     })
     setFilteredItems(newFilteredItems)
-  }, [filters, items])
+  }, [filters, items ])
 
   return (
     <div className="list-container">
       {items.length === 0 && <EmptyTodoList />}
-      {items.length > 0 &&
-        <>
-          <p className="filter-headline">Filter your to do list!</p>
-          <div className="filters-container">
-            {filters.map((filter) => <FilterThumb key={filter.id} filter={filter} />)}
-          </div>
-        </>
-      }
+      {items.length > 0 && <FiltersList filters={filters} />}
       <div className="tasks-container">
         {filteredItimes.map((item) => <TodoThumb key={item.id} item={item} />)}
       </div>
