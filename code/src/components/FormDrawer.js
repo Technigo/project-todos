@@ -3,7 +3,7 @@ import { useDispatch } from "react-redux";
 import Drawer from "@material-ui/core/Drawer";
 
 import todos from "../reducers/todos";
-import { ToDoForm } from "./ToDoForm";
+import { AddToDo } from "./AddToDo";
 
 import { AddTaskButton } from "../styledcomponents/StyledButtons";
 import { AddText, DrawerContainer, BottomContainer, } from "../styledcomponents/StyledForm";
@@ -36,7 +36,7 @@ export const FormDrawer= () => {
         onClose={() => setOpenForm(false)}
         onOpen={() => setOpenForm(true)}>
         <DrawerContainer>
-          <ToDoForm 
+          <AddToDo
             onSubmit={onFormSubmit}
             handleSelectChange={category => setCategory(category.value)}
             handleDateChange={dueDate => setDueDate(dueDate)}

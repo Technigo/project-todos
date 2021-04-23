@@ -12,7 +12,7 @@ import {
   CategoryDate } from "../styledcomponents/StyledForm";
 
 
-export const ToDoForm = ({ onSubmit, handleSelectChange, handleDateChange, handleInputChange, category, dueDate, task }) => {
+export const AddToDo = ({ onSubmit, handleSelectChange, handleDateChange, handleInputChange, category, dueDate, task }) => {
   const categories = useSelector((state) => state.todos.categories);
 
   return (
