@@ -21,8 +21,8 @@ export const TodoCounter = () => {
   const tasks = useSelector((state) => state.todos.tasks);
   
   const onCountCompleted = () => {
-    const completedTasks = tasks.filter(task => task.isComplete === true)
-    return completedTasks.length
+    const completedTasks = tasks.filter(task => task.isComplete === true);
+    return completedTasks.length;
   };
 
   return (

@@ -33,11 +33,11 @@ export const Header = () => {
         open={open}         
         onClose={() => setOpen(false)}
         onOpen={() => setOpen(true)}>
-          <DrawerContainer>
-            <DrawerContainerText>Choose Color Theme: </DrawerContainerText>
-            <ThemeButtons />
-          </DrawerContainer>
-        </Drawer>   
+        <DrawerContainer>
+          <DrawerContainerText>Choose Color Theme: </DrawerContainerText>
+          <ThemeButtons />
+        </DrawerContainer>
+      </Drawer>   
     </TitleTop>
   )
 };

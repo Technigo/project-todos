@@ -38,13 +38,13 @@ const todos = createSlice({
     },
     removeTask: (state, action) => {
       const removedTasks = action.payload;
-      state.tasks = state.tasks.filter((task) => task.id !== removedTasks)
+      state.tasks = state.tasks.filter((task) => task.id !== removedTasks);
     },
     removeAllTasks: (state) => {
       state.tasks = [];
     },
     removeCompletedTasks: (state) => {
-      state.tasks = state.tasks.filter((task) => task.isComplete !== true)
+      state.tasks = state.tasks.filter((task) => task.isComplete !== true);
     },
     toggleComplete: (state, action) => {
       const updatedTasks = state.tasks.map(todo => {
