@@ -1,25 +1,79 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components'; 
 import moment from 'moment';
+import * as Icon from "react-icons/fi";
+import Checkbox from "react-custom-checkbox";
 
 import todos from '../reducers/todos';
 
+import EditButton from './EditButton';
+import SaveButton from './SaveButton';
+import DeleteButton from './DeleteButton';
+
+const TodoContainer = styled.div`
+  display: flex;
+  align-items: center;
+  padding: 3vh;
+  border-bottom: solid 1px #e5e5e5;
+`;
+
+const IconDiv = styled.div`
+  display: flex;
+  flex: 1;
+  background: #ea9a96;
+  align-self: stretch;
+`;
+
+const ContentParagraph = styled.p`
+  margin: 0 0 0 15px;
+  font-size: 18px;
+`;
+
+const DateParagraph = styled.p`
+  margin: 0 0 0 auto;
+  font-size: 12px;
+`;
+
+const EditTodo = styled.input`
+  width: 50%;
+  font-size: 18px;
+  border: none;
+  margin-left: 10px;
+`
+
 const Todo = ({ todo }) => {
+  const [editContent, setEditContent] = useState(todo.content);
   const dispatch = useDispatch();
 
+  const onInputChange = (e) => {
+    setEditContent(e.target.value);
+  };
+
   return (
-    <div>
-      <input 
-        type="checkbox"
+    <TodoContainer>
+      <Checkbox
         checked={todo.isComplete}
         onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+        icon={
+          <IconDiv>
+            <Icon.FiCheck 
+              color="white" 
+              size={20} 
+            />
+          </IconDiv>
+        }
+        borderColor="#ea9a96"
+        borderRadius={20}
+        style={{ overflow: "hidden" }}
+        size={20}
       />
-      <p>{todo.content}</p> 
-      <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
-        Delete
-      </button>
-      <p>{moment(todo.content.createdAt).fromNow()}</p>
-    </div>
+
+      {todo.isEdit ? <EditTodo type="text" value={editContent} onChange={onInputChange} /> : <ContentParagraph>{todo.content}</ContentParagraph>}
+      <DateParagraph>{moment(todo.timeStamp).format('MMM D')}</DateParagraph>
+      <EditButton todo={todo} />
+      {todo.isEdit ? <SaveButton todo={todo} /> : <DeleteButton todo={todo} />}
+    </TodoContainer>
   );
 };
 

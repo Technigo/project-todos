@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components'; 
 import moment from 'moment';
 
-import CompleteAllTasksButton from './CompleteAllTasksButton';
+import CompleteAllTodosButton from './CompleteAllTodosButton';
 
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: space-between;
-  background: grey;
+  background: #e5e5e5;
   padding: 3vh;
 `;
 
@@ -17,31 +17,30 @@ const Container = styled.div`
 `;
 
 const MainHeading = styled.h1`
-  color: white;
+  color: #303960;
   margin: 0;
 `;
 
 const Paragraph = styled.p`
-  color: white;
+  color: #303960;
   margin: 0;
 `;
-
 
 const Header = () => {
   const tasks = useSelector((store) => store.todos.tasks);
 
-  const completedTasks = tasks.filter(t => t.isComplete);
+  // const completedTasks = tasks.filter(t => t.isComplete);   {completedTasks.length}  
 
   return (
     <HeaderContainer>
       <Container>
-        <MainHeading>TODO</MainHeading>
-        <Paragraph>{moment().format('YYYY-MM-DD')}</Paragraph>
+        <MainHeading>FRI</MainHeading>
+        <Paragraph>{moment().format('MMM D YYYY')}</Paragraph>
       </Container>
 
       <Container>
-        <Paragraph>Completed: {completedTasks.length} / {tasks.length}</Paragraph>
-        <CompleteAllTasksButton />
+        <Paragraph>{tasks.length} Todos</Paragraph>
+        <CompleteAllTodosButton />
       </Container>
     </HeaderContainer>
   );

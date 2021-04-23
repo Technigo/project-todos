@@ -6,7 +6,6 @@ import Todo from './Todo';
 
 const Section = styled.section`
   background: transparent;
-  padding: 3vh;
 `;
 
 const TodoList = () => {
