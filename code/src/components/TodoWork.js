@@ -5,7 +5,7 @@ import Checkbox from '@material-ui/core/Checkbox'
 import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined'
 
 import todos from '../reducers/todos'
-import { Container, Header, CheckboxContainer, TodoList } from '../styling/GlobalStyles'
+import { Container, Header, CheckboxContainer, TodoList, TodoDescription } from '../styling/GlobalStyles'
 
 const TodoWork = () => {
   const allTodos = useSelector((store) => store.todos)
@@ -24,7 +24,7 @@ const TodoWork = () => {
               onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
               color="default"
             />
-            <p>{todo.description}</p>
+            <TodoDescription>{todo.description}</TodoDescription>
             <p>{format(new Date(), 'MMMM do yyyy')}</p>
             <DeleteOutlinedIcon 
               onClick={() => dispatch(todos.actions.removeToDo(todo.id))} />

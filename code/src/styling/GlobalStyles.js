@@ -34,7 +34,8 @@ export const TodoList = styled.ul`
   align-items: center;
   padding: 10px 0 10px 0;
   list-style-type: none;
-  background-color: #e6c0d8;
+  background-color: #e6c0d8; /* ghostwhite */
+  box-shadow: 2px 5px 5px cornflowerblue;
   opacity: 0.7;
   border-radius: 0.25em
 `;
@@ -49,4 +50,8 @@ export const CheckboxContainer = styled.div`
   flex-wrap: wrap;
 `;
 
-
+export const TodoDescription = styled.p`
+  color: black;
+  font-weight: 700;
+  letter-spacing: 1px
+`;
