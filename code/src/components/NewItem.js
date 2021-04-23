@@ -25,8 +25,6 @@ const onSubmit = () => {
   setShowInput(false)
 }
 
-
-
   return (
     <>
     {showInput ? (

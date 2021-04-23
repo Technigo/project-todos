@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import Checkbox from 'react-custom-checkbox'
+// import Checkbox from 'react-custom-checkbox'
 
 import todos from '../reducers/todos'
 
@@ -24,15 +24,15 @@ const TodoList = () => {
           <div className="task-container"> 
             <p>{todo.description}</p>
             <div className="buttons">
-              <Checkbox
-                checked={todo.isComplete}
-                onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-              />
-              {/* <input
-                type="checkbox"
+              {/* <Checkbox
                 checked={todo.isComplete}
                 onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
               /> */}
+              <input
+                type="checkbox"
+                checked={todo.isComplete}
+                onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+              />
               <button 
                 className="delete-button"
                 onClick={() => dispatch(todos.actions.deleteItem(todo.id))}
