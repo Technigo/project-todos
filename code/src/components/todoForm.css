@@ -13,7 +13,6 @@
   .btn-delete:hover {
     background-color: red;
     border: 1px solid blue;
-
     cursor: pointer;
   }
 
