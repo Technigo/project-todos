@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux'
 import uniqid from 'uniqid'
 
 const CompletedSection = styled.section`
-    background-color: beige;
     margin: 30px 0 0 0;
     display: flex;
     flex-direction: column;
@@ -18,39 +17,42 @@ const TaskSection = styled.section`
 
 export const CompletedTasks = () => {
 
+
+    const CompletedSection = styled.section`
+        display: flex;
+        flex-direction: column;
+        margin: 20px;
+`
+
+const CompletedTitle = styled.p`
+    color: #0F1A84;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 4px 10px 4px 4px;
+`
+
+const CompletedText = styled.p`
+    color: #0F1A84;
+    font-size: 18px;
+    margin: 4px 10px 4px 4px;
+`
+
     const dispatch = useDispatch()
 
     const completedTasks = useSelector((store => store.tasks.completedTasks))
     const taskList = useSelector((store => store.tasks.taskList))
-    
-    // const displayCompleted = () => {
-    //         const moveCompletedTasks = taskList.map(task => {
-    //             if (task.isDone === true) {
-    //                 console.log('hurra')
-    //                 // return {
-    //                 //     ...task
-    //                 // }
-           
-    //             } else {
-    //                     console.log('not true')
-    //             }
-    //         })
 
-            // store.completedTasks = moveCompletedTasks
-    // }
 
     return (
         <CompletedSection>
-                <p>Completed tasks:</p>
+                <CompletedTitle>Completed tasks:</CompletedTitle>
                 {completedTasks.map(task => (
                     <div key={uniqid}>
                         <TaskSection>
-                            <input 
+                            {/* <input 
                                 type='checkbox'
-                                // checked={task.IsDone}
-                                // onChange={() => dispatch(tasks.actions.toggleIsDone(task.id))} 
-                            />
-                            <p>{task.taskText}</p>
+                            /> */}
+                            <CompletedText>{task.taskText}</CompletedText>
                         </TaskSection>
                     </div>
 ))}

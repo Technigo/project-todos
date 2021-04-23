@@ -1,37 +1,36 @@
 import React from 'react'
-// import { useSelector } from 'react-redux'
-// import { useDispatch } from 'react-redux'
 import { tasks } from '../reducers/tasks'
 import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 
 const HeaderSection = styled.section`
-    background-color: grey;
     margin: 0;
-    height: 100px;
+    height: 120px;
     display: flex;
     justify-content: space-between;
 `
 const LeftWrapper = styled.section`
-    margin: 15px;
+    margin: 20px;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    align-items: center;
 `
 const RightWrapper = styled.section`
-    margin: 15px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
 `
 const AppTitle = styled.h1`
-    margin: 0px 0px 4px 0px;
-    font-size: 25px;
+    font-size: 60px;
+    margin: 0;
+    color: #0F1A84;
 `
-const DateTitle = styled.p`
-    margin: 0px;
+const AmountTitle = styled.p`
+    color: #0F1A84;
+    font-size: 18px;
+    margin: 4px 10px 4px 4px;
 `
-
 export const Header = () => {
 
     const amountOfTasks = useSelector((store) => store.tasks.taskList.length)
@@ -40,10 +39,10 @@ export const Header = () => {
         <HeaderSection>
             <LeftWrapper>
                 <AppTitle>Todo</AppTitle>
-                <DateTitle>Date</DateTitle>
            </LeftWrapper>
            <RightWrapper>
-                <p>{amountOfTasks} tasks</p>
+                {/* <DateTitle>Date</DateTitle> */}
+                <AmountTitle>{amountOfTasks} tasks</AmountTitle>
             </RightWrapper>
         </HeaderSection>
     )

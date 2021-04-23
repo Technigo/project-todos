@@ -6,7 +6,6 @@ import { tasks } from 'reducers/tasks'
 import { TaskListView } from 'components/TaskListView'
 import { NewTaskForm } from 'components/NewTaskForm'
 import { Header } from 'components/Header'
-import { Summary } from 'components/Summary'
 import { CompletedTasks } from 'components/CompletedTasks'
 import styled from 'styled-components'
 
@@ -19,6 +18,9 @@ const store = configureStore({ reducer })
 const AppSection = styled.section`
   display: flex;
   flex-direction: column;
+  background-color: #E8E8DD;
+  height: 100vh;
+  width: 100vw;
 `
 
 export const App = () => {
@@ -32,11 +34,7 @@ export const App = () => {
               <TaskListView />
               <NewTaskForm />
               <CompletedTasks />
-              <Summary />
             </Route>
-            {/* <Route path='/FinishedTasks' exact>
-              <FinishedTasks />
-            </Route> */}
           </Switch>
         </AppSection>
       </BrowserRouter>

@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+import uniqid from 'uniqid'
 
 const taskList = [
     { id: 1, taskText: 'Get milk', isDone: false },
@@ -7,7 +8,7 @@ const taskList = [
 ]
 
 const completedTasks = [
-    { id: 4, taskText: 'Gheekrjer', isDone: true },
+    // { id: 4, taskText: 'Homework', isDone: true },
 ]
 
 const initialState = {
@@ -32,97 +33,32 @@ export const tasks = createSlice({
                 }
             })
             store.taskList = updatedTasks
+
+            // filter creates a new array with all items that pass the test.
+            //All tasks that are done will be displayed in completedTasks.
+            const doneTasks = store.taskList.filter(task => task.isDone === true) 
+            store.completedTasks = doneTasks
+ 
+            // Only the tasks marked as isDone: false will remain in the taskList.
+            // This doesnt work
+            // const activeTasks = store.taskList.filter(task => task.isDone === false) 
+            // store.taskList = activeTasks
         },
 
+        deleteTask: (store, action) => {
+            const leftTasks = store.taskList.filter(task => task.id !== action.payload) 
+            store.taskList = leftTasks
+        },
 
-
-        // toggleIsDone: (store, action) => {
-
-            // const updatedTasks = store.taskList.map(task => {
-            //     if (task.id === action.payload ) {
-            //         return {
-            //             task,
-            //             isDone: !task.isDone
-            //         }
-            //     } else {
-            //        return task
-            //     }
-            // })
-            // store.completedTasks = updatedTasks
-    
-            // const { taskId } = action.payload
-            // const completedTask = store.taskList.find((task) => (task.id === taskId))
-            // console.log(completedTask)
-
-            // store.taskList.push({
-            //     completedTask
-            //     // taskId,
-            //     // taskList,
-            //     // completedTasks,
-            //     // isFinished;
-            // })
-
-            // store.completedTasks.push({
-            //     ...store.completedTasks,
-            //     completedTask,
-            //     taskId
-            // })
-
-            // console.log(completedTasks)
-
-
-
-
-
-
-
-
-            // const remainingTasks = store.taskList.map(task => {
-            //     if (task.id === action.payload ) {
-            //         return {
-            //             ...task,
-            //             isDone: !task.isDone
-            //         }
-            //     } else {
-            //        return task
-            //     }
-            // })
-            // store.taskList = remainingTasks
-            // store.completedTasks = FinishedTasks
-
-            // const moveCompletedTasks = store.taskList.map(task => {
-            //     if (task.isDone === true) {
-            //         console.log('hurra')
-            //         return {
-            //             ...task
-            //         }
-           
-            //     } else {
-            //             console.log('not true')
-            //     }
-            // })
-
-            // store.completedTasks = moveCompletedTasks
-            
-
-        // },
-
-
-        // displayCompleted: (store, action) => {
-
-        //     const moveCompletedTasks = store.taskList.map(task => {
-        //         if (task.isDone === true) {
-        //                 console.log('hurra')
-        //         } else {
-        //                 console.log('not true')
-        //         }
-        //     })
-        //     // store.completedTasks = moveCompletedTasks
-        // },
-
+        
         addTask: (store, action) => {
-            store.taskList = [...store.taskList, action.payload]
+            // store.taskList = [...store.taskList, action.payload]
             // store.taskList.push(action.payload)
+            store.taskList.push({
+                id: uniqid(),
+                taskText: action.payload,
+                isDone: false
+            })
         }
     }
 })
