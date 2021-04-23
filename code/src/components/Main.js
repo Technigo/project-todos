@@ -14,16 +14,12 @@ const MainWrapper = styled.main`
  flex-direction: column;
  align-items:center; 
 `
-
-
 export const Main = () => {
   return (
-
     <MainWrapper>
       <Header />
       <TodoList />
       <TodoForm />
     </MainWrapper>
-    
   )
 }

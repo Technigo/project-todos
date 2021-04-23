@@ -13,8 +13,6 @@ const HeaderWrapper = styled.section`
   @media (min-width:768px) {
     max-width: 500px;
   }
-  
-  
 `
 const HeaderText = styled.h1`
   font-family: 'Shadows Into Light', cursive;
@@ -34,13 +32,10 @@ const DateHeader = styled.h3`
   font-size: 30px;
   margin:0px;
 `
-
-const today = new Date()
-
 export const Header = () => {
   return (
     <HeaderWrapper>
-      <HeaderText>My daily Todo's ✍️ </HeaderText>
+      <HeaderText>My daily Todo's <span role='img' aria-label='Todo'>✍️</span></HeaderText>
       <DateWrapper>
         <DateHeader>
           {format(new Date(), "cccc").toUpperCase()}

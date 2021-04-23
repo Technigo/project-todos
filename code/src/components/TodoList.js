@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { ImBin2 } from 'react-icons/im'
 
 import todos from '../reducers/todos'
 
@@ -17,7 +18,6 @@ const TodoListBox = styled.div`
   align-items:center;
   justify-content: space-evenly;
   margin-top:15px;
- 
 `
 
 const TextDescription = styled.p`
@@ -28,7 +28,6 @@ const TextDescription = styled.p`
   font-size:20px;
   width:60%;
   word-wrap: break-word;
-  
 `
 const TodoCheckBox = styled.input`
   cursor:pointer;
@@ -44,7 +43,6 @@ const DeleteButton = styled.button`
   border:none;
   border-radius:5px;
 `
-
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
   //when I want to reach for something= useSelector and the way to it store=handbag
@@ -56,7 +54,6 @@ const TodoList = () => {
     <TodoListWrapper> 
       {items.map(todo => (
         <TodoListBox key={todo.id}>
-          
           <TodoCheckBox
             type='checkbox'
             checked={todo.isComplete}
@@ -64,12 +61,11 @@ const TodoList = () => {
           />
           <TextDescription>{todo.description}</TextDescription>
           <DeleteButton onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
-            Delete
+            <ImBin2 />
           </DeleteButton>
         </TodoListBox>
       ))}
     </TodoListWrapper>
   )
 }
-
 export default TodoList

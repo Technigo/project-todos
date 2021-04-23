@@ -11,14 +11,12 @@ const Form = styled.form`
   flex-direction:column;
   align-items:center;
   justify-content: space-evenly;
-  border: solid 1px red;
   margin-top:30px;
+  padding:5px;
   @media (min-width:768px) {
     max-width: 500px;
   }
-  
 `
-
 const Todoinput = styled.input`
   width:70%;
   height:40px;
@@ -45,10 +43,8 @@ const AddButton = styled.button`
   height:30px;
   margin-top:15px;
 `
-
 export const TodoForm = () => {
   const [value, setValue] = useState('')
-
   const dispatch = useDispatch()
 
   const onFormSubmit = (e) => {
@@ -63,7 +59,6 @@ export const TodoForm = () => {
     dispatch(todos.actions.addTodo(newTodo))
     setValue('')
   }
-
   return (
     <Form onSubmit={onFormSubmit}>
       <Todoinput
@@ -72,7 +67,6 @@ export const TodoForm = () => {
         value={value}
         onChange={e => setValue(e.target.value)}
       />
-      
       <AddButton type='submit'>Add it</AddButton>
     </Form>
   )
