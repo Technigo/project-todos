@@ -14,10 +14,11 @@ code {
 
 .header {
   width: 100vw;
-  height: 10vh;
+  height: 20vh;
   border-bottom: 2px solid black;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
 
 .todo-container {

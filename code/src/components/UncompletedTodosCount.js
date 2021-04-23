@@ -6,7 +6,7 @@ const UncompletedTodosCount = () => {
   const uncompletedTodos = todosComplete.filter(todo => todo.isComplete === false).length
 
   return (
-    <h2>{uncompletedTodos}</h2>
+    <h2>Uncompleted todos{uncompletedTodos}</h2>
   )
 }
 
