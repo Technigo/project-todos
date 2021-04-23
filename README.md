@@ -1,13 +1,12 @@
-# Project Todos
+# About
+This is TODO list application which is built in the React/Redux Javascript in the framework of Technigo bootcamp for Front-end development.
 
-Replace this readme with your own information about your project.
+The user can input a task, mark it as done or delete it or mark all tasks as done.
+Each task carries a timestamp.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+# Problems
+Understanding how React and Redux work and how global state is controlled and accessed.
 
-## The problem
+# See project live on Netlify server:
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
-## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://youthful-gates-351c5c.netlify.app/
