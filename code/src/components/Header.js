@@ -66,7 +66,6 @@ const ClearButton = styled.button`
 
 export const Header = () => {
   const items = useSelector((store) => store.tasks.items)
-  const itemsCompleted = items.filter(items => items.isCompleted)
 
   const dispatch = useDispatch()
 
@@ -76,17 +75,17 @@ export const Header = () => {
     <>
       <TopWrapper>
         <DateWrapper>
-        <Heading>{today.setLocale('en-GB').toLocaleString({day: 'numeric'})}</Heading>
-        <MonthYear>
-          <DateText>{today.setLocale('en-GB').toLocaleString({month: 'short'}).toUpperCase()}</DateText>
-          <DateText>{today.year}</DateText>
-        </MonthYear>
+          <Heading>{today.setLocale('en-GB').toLocaleString({ day: 'numeric' })}</Heading>
+          <MonthYear>
+            <DateText>{today.setLocale('en-GB').toLocaleString({ month: 'short' }).toUpperCase()}</DateText>
+            <DateText>{today.year}</DateText>
+          </MonthYear>
         </DateWrapper>
-        <DateText>{today.setLocale('en-GB').toLocaleString({weekday: 'long'}).toUpperCase()}</DateText>
+        <DateText>{today.setLocale('en-GB').toLocaleString({ weekday: 'long' }).toUpperCase()}</DateText>
       </TopWrapper>
       {items.length !== 0 && (
       <BottomWrapper>
-        <TaskCount>{itemsCompleted.length} / {items.length} tasks completed</TaskCount>
+        <TaskCount>{itemsCompleted.isCompleted.length} / {items.length} tasks completed</TaskCount>
         <ClearButton onClick={() => dispatch(tasks.actions.clearAll())}>Clear all</ClearButton>
       </BottomWrapper>
       )}

@@ -17,7 +17,6 @@ const Heading = styled.h1`
 `
 
 export const EmptyState = () => {
-
   return (
     <Wrapper>
       <GiPartyPopper size={100} color="#48cc94" />
