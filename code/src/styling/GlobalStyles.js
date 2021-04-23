@@ -41,7 +41,7 @@ export const CheckboxContainer = styled.div`
   flex-direction: row;
 `;
 
-// Change these styles !! import material ui trash / delete icon - this one takes too long time to render. 
+// Change these styles !! 
 export const DeleteButton = styled.button`
   margin: 0;
   padding: 0;
@@ -51,7 +51,7 @@ export const DeleteButton = styled.button`
   border: none; 
 `;
 
-export const TrashIcon = styled.img`
+export const TrashIcon = styled.svg`
   margin: 0;
   padding: 0;
 `;

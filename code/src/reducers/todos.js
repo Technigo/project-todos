@@ -32,14 +32,14 @@ const todos = createSlice({
     removeToDo: (store, action) => {
       store.items = store.items.filter((todo) => todo.id !== action.payload)
     },
-    clearAllTodos: (store) => {
-      const clearAll = store.items.map((todo) => {
+    markAllTodos: (store) => {
+      const markAll = store.items.map((todo) => {
           return {
               ...todo, 
               isComplete: true
           }
       })
-      store.items = clearAll
+      store.items = markAll
     }
   }
 })

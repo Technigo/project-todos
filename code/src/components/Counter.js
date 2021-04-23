@@ -9,8 +9,8 @@ const Counter = () => {
   
   const dispatch = useDispatch()
   
-  const onClearAll = () => {
-    dispatch(todos.actions.clearAllTodos())
+  const onCheckAll = () => {
+    dispatch(todos.actions.markAllTodos())
   }
 
   // filter unCompleted / completed todos
@@ -25,7 +25,7 @@ const Counter = () => {
       <ClearAllContainer>
         <ClearAllButton
           type="button"
-          onClick={onClearAll}>
+          onClick={onCheckAll}>
             <Delete src="assets/doubletick.png"></Delete>
         </ClearAllButton>
         <AllDone>
