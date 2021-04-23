@@ -20,8 +20,6 @@ if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON);
 }
 
-// const store = configureStore({ reducer });
-
 const store = createStore(
   reducer,
   persistedState,
