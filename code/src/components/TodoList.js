@@ -4,6 +4,7 @@ import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton'
 import DeleteIcon from '@material-ui/icons/Delete'
 import '../css/TodoList.css'
+
 //import slice
 import todos from '../reducers/todos'
 
@@ -26,7 +27,7 @@ const TodoList = () => {
                             color="primary"
                             inputProps={{ "aria-label": "todo checkbox" }}
                         />
-                        <p className={todo.isComplete && "todo-item-completed"}>{todo.description}</p>
+                        <p className={todo.isComplete ? "todo-item-completed" : "todo-item-default"}>{todo.description}</p>
                     </div>
                     <IconButton
                         aria-label="remove"

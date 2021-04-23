@@ -18,7 +18,6 @@ const TodoForm = () => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
-        console.log('Your first task: ' + value)
         //dispatch an action to add new todo item
         dispatch(
             todos.actions.addTodo({

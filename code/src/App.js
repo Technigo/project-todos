@@ -4,9 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import todos from './reducers/todos'
 
-import TodoHeader from './components/TodoHeader'
-import TodoList from './components/TodoList'
-import TodoForm from './components/TodoForm'
+import TodoContainer from './components/TodoContainer'
 
 //Combine reducer method
 const reducer = combineReducers({
@@ -19,13 +17,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <main className="container">
-        <section className="todo-wrapper">
-          <TodoHeader />
-          <TodoList />
-          <TodoForm />
-        </section>
-      </main>
+      <TodoContainer />
     </Provider>
   )
 }

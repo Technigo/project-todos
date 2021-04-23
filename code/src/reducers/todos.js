@@ -24,13 +24,24 @@ const todos = createSlice({
         },
 
         completeAllTodo: (store, action) => {
-            const completedItems = store.items.map(todo => {
-                return {
-                    ...todo,
-                    isComplete: true
-                }
-            })
-            store.items = completedItems
+            const areAllTasksCompleted = !store.items.find(todo => !todo.isComplete)
+            if(areAllTasksCompleted) {
+                const completedItems = store.items.map(todo => {
+                    return {
+                        ...todo,
+                        isComplete: false
+                    }
+                })
+                store.items = completedItems
+            } else {
+                const completedItems = store.items.map(todo => {
+                    return {
+                        ...todo,
+                        isComplete: true
+                    }
+                })
+                store.items = completedItems
+            }
         },
         
         //Redux is always passing store as argument in order to update it
