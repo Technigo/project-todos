@@ -10,7 +10,7 @@ const CounterContainer = styled.div`
 `;
 
 const CounterText = styled.p`
-  font-size: 12px;
+  font-size: 14px;
   margin: 0;
   @media (min-width: 768px) {
     font-size: 17px;
