@@ -5,9 +5,6 @@ export const Background= styled.div`
   width: 100vw;
   background: rgb(238,174,202);
   background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-/*   background: rgb(255,255,255);
-  background: radial-gradient(circle, rgba(255,255,255,1) 63%, rgba(181,211,251,1) 100%); */
-  opacity: 0.8;
 `;
 
 // Todo - categories
@@ -26,6 +23,9 @@ export const Header = styled.h1`
 `;
 
 export const TodoList = styled.ul`
+  @media (max-width: 700px) {
+    width: 75%
+  }
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -34,7 +34,7 @@ export const TodoList = styled.ul`
   align-items: center;
   padding: 10px 0 10px 0;
   list-style-type: none;
-  background-color: #e6c0d8; /* ghostwhite */
+  background-color: #e6c0d8;
   box-shadow: 2px 5px 5px cornflowerblue;
   opacity: 0.7;
   border-radius: 0.25em
