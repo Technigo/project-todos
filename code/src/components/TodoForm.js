@@ -5,7 +5,14 @@ import uniqid from 'uniqid';
 import todos from '../reducers/todos';
 
 const TodoForm = () => {
+
+
+
+
+    
     const [value, setValue] = useState('');
+
+    const testVariable = 'Just testing';
 
     const dispatch = useDispatch();
 
@@ -24,10 +31,16 @@ const TodoForm = () => {
 
     return (
         <form onSubmit={onFormSubmit}>
+
+
+
+
             <input
                 type="text"
                 value={value}
-                onChange={e => setValue(e.target.value)}
+                onChange={e => setValue(e.target.value)
+                
+                }
             />
             <button type="submit">Add todo</button>
         </form>

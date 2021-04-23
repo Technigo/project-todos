@@ -3,7 +3,9 @@ import { createSlice } from '@reduxjs/toolkit';
 const todos = createSlice({
     name: 'todos',
     initialState: {
-        items: []
+        items: [
+            { id: 1, description: 'text', isComplete: false }
+        ]
     },
     reducers: {
         // "store" argument keeps inside all of the data from slice store (initialState)
