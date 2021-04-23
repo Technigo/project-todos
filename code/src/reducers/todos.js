@@ -3,11 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: [
-      { id: 1, description: 'Test', isComplete: false },
-      { id: 2, description: 'Test2', isComplete: true },
-      { id: 3, description: 'Test3', isComplete: false },
-    ],
+    items: [],
   },
   reducers: {
     toggleComplete: (store, action) => {
@@ -22,6 +18,18 @@ const todos = createSlice({
         }
       });
       store.items = updatedItems;
+    },
+
+    removeTodo: (store, action) => {
+      const decreasedItems = store.items.filter(
+        (todo) => todo.id !== action.payload
+      );
+
+      store.items = decreasedItems;
+    },
+
+    addTodo: (store, action) => {
+      store.items = [...store.items, action.payload];
     },
   },
 });
