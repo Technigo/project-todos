@@ -9,19 +9,22 @@ const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
 
   return (
-    <div>
+    <div className='todos-container'>
       {items.map((todo) => (
         <div key={todo.id} className='todo-item'>
-          <p>{todo.description}</p>
           <input
             type='checkbox'
             checked={todo.isComplete}
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
           />
+          <p className='todo-description'>{todo.description}</p>
           <p className='date'>
-            {moment(todo.createdAt).format('dddd, MMMM Do, k:mm')}
+            {moment(todo.createdAt).format('dddd, D/M, k:mm')}
           </p>
-          <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
+          <button
+            className='delete-button'
+            onClick={() => dispatch(todos.actions.removeTodo(todo.id))}
+          >
             Delete
           </button>
         </div>

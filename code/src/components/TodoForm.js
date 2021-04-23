@@ -23,11 +23,15 @@ const TodoForm = () => {
     <div className='form-container'>
       <form onSubmit={onFormSubmit}>
         <input
+          className='input-field'
           type='text'
           value={value}
           onChange={(e) => setValue(e.target.value)}
+          placeholder='To Do'
         />
-        <button type='submit'>Submit</button>
+        <button className='submit-button' type='submit'>
+          Submit
+        </button>
       </form>
     </div>
   );
