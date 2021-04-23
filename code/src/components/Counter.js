@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import { ClearAll } from '@material-ui/icons'
 import styled from 'styled-components'
 
 import todos from '../reducers/todos'
@@ -29,9 +30,13 @@ const Counter = () => {
             <Delete src="assets/doubletick.png"></Delete>
         </ClearAllButton>
         <AllDone>
-          Mark all as done
+          MARK ALL AS DONE  or  
         </AllDone>
       </ClearAllContainer>
+      <DeleteAllButton
+        onClick={() => dispatch(todos.actions.deleteAllTodos())}>
+        Delete all
+      </DeleteAllButton>
     </Container>
   )
 }
@@ -73,7 +78,17 @@ const Delete = styled.img`
 
 const AllDone = styled.p`
   font-size: 14px;
-  text-transform: uppercase; 
+`;
+
+const DeleteAllButton = styled(ClearAllButton)`
+  margin-top: 20px;
+  background-color: #4d8aff; 
+  border: none;
+  border-radius: 0.25em;
+  width: 70px;
+  height: 45px;
+  color: whitesmoke;
+  text-transform: uppercase;
 `;
 
 export default Counter

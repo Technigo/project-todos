@@ -91,7 +91,7 @@ const Form = styled.form`
 const UserInputTextarea = styled.textarea`
   margin: 40px 0px;
   border-radius: 0.25em;
-  border: 1px solid #793dfc; 
+  border: 1px solid #216dff; 
   background-color: transparent;
   resize: none;
   outline: 0; 
@@ -119,7 +119,7 @@ const CustomSelect = styled.select`
   width: 200px;
   text-transform: uppercase;
   font-family: inherit; 
-  border: 1px solid #793dfc;
+  border: 1px solid #216dff;
   border-radius: 0.25em;
   padding: 0.25em 0.5em;  
   cursor: pointer;

@@ -1,9 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
+import { useSelector } from 'react-redux'
 
 import Counter from './Counter'
+import ZeroTodos from './ZeroTodos'
 
 const Header = () => {
+  const allTodos = useSelector((store) => store.todos.items.length)
+
   return (
     <>
       <HeaderContainer>
@@ -15,7 +19,7 @@ const Header = () => {
         </Heading>
       </HeaderContainer>
       <CounterContainer>
-        <Counter />
+      {allTodos === 0 ? <ZeroTodos /> : <Counter /> }
       </CounterContainer>
     </>
   )
@@ -41,7 +45,7 @@ const Logo = styled.img`
 const Heading = styled.h1`
   font-size: 20px; 
   text-transform: uppercase;
-  color: #216dff;
+  color: #4d8aff;
 `;
 
 const CounterContainer = styled(HeaderContainer)`

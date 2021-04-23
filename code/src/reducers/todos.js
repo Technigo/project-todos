@@ -40,7 +40,10 @@ const todos = createSlice({
           }
       })
       store.items = markAll
-    }
+    },
+    deleteAllTodos: () => {
+      return initialState
+  },
   }
 })
 
