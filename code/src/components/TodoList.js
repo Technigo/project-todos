@@ -37,7 +37,7 @@ const TodoList = () => {
                 className="delete-button"
                 onClick={() => dispatch(todos.actions.deleteItem(todo.id))}
               >
-                🗑️
+                <span role="img" aria-label="bin-emoji">🗑️</span>
               </button>
             </div>
           </div>
@@ -49,7 +49,7 @@ const TodoList = () => {
     </div>
     ): (
       <div className="list-container">
-        <h4>Anything to do today 🤷‍♀️ ?</h4>
+        <h4>Anything to do today <span role="img" aria-label="emoji">🤷‍♀️</span> ?</h4>
       </div>
     )}
     </>
