@@ -21,7 +21,7 @@ code {
 main {
   max-width: 500px;
   margin: 0 auto;
-  border: 2px solid #333;
+  /* border: 2px solid #333; */
   min-height: 700px;
 }
 
@@ -71,6 +71,7 @@ main {
 .remove-button {
   border-radius: 8px;
   padding:5px;
+  padding-bottom: 3px;
   background:#b0a38a;
   outline:none;
   font-family: 'Inconsolata', monospace;
