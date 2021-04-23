@@ -5,11 +5,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const todos = createSlice({
     name: 'todos',
     initialState: {
-        items: [
-            { id: 1, description: 'Make a test task', isComplete: false},
-            { id: 2, description: 'Test if test task works', isComplete: false},
-            { id: 3, description: 'Be happy that test task works', isComplete: false}
-        ]
+        items: []
     },
     reducers: {
 

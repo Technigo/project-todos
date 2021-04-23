@@ -1,0 +1,29 @@
+.start-page-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.start-logo {
+    margin: 20px 0;
+    width: 200px;
+    height: auto;
+}
+
+.start-page-wrapper h1 {
+    margin: 10px 20px;
+    font-size: 20px;
+    text-align: center;
+    font-weight: 500px;
+    letter-spacing: 1px;
+    color: #444444;
+}
+
+.start-page-wrapper p {
+    margin: 10px 20px;
+    font-size: 14px;
+    text-align: center;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #444444;
+}
