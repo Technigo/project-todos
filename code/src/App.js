@@ -5,8 +5,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import todos from './reducers/todos'
 
-import TodoForm from './components/TodoForm'
-import TodoList from './components/TodoList'
+import AddTask from './components/AddTask'
+import TaskList from './components/TaskList'
 import Header from './components/Header'
 
 /*
@@ -33,8 +33,8 @@ export const App = () => {
       <Provider store={store}>
     
       <Header />
-      <TodoForm />
-      <TodoList />
+      <AddTask />
+      <TaskList />
    
     </Provider>
   )

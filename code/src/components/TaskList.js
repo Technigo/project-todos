@@ -20,7 +20,7 @@ const CheckButton = styled.input`
 const TodoDiv = styled.div`
   display: flex;
   justify-content: center;
- width: 100%;
+  width: 100%;
   border-bottom: 1px solid grey;
 `
 
@@ -28,6 +28,10 @@ const Todo = styled.p`
   font-size: 18px;
   padding: 0 10px 0 10px;
   width: 150px;
+  @media (min-width: 768px) {
+    width: 300px;
+  @media (min-width: 1024px) {
+    width: 400px;
 `
 
 const RemoveButton = styled.button`
@@ -41,7 +45,7 @@ const RemoveButton = styled.button`
   font-size: 15px;
 `
 
-const TodoList = () => {
+const TaskList = () => {
 
   const items = useSelector((store) => store.todos.items)
 
@@ -66,4 +70,4 @@ const TodoList = () => {
   )
 }
 
-export default TodoList
+export default TaskList

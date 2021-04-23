@@ -25,7 +25,7 @@ const FormButton = styled.button`
   height: 36px;
 ` 
 
-const TodoForm = () => {
+const AddTask = () => {
   const [value, setValue] = useState('')
 
   const dispatch = useDispatch()
@@ -55,4 +55,4 @@ const TodoForm = () => {
   )
 }
 
-export default TodoForm
+export default AddTask
