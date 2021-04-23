@@ -5,9 +5,7 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { Checkbox, Card } from '@material-ui/core';
 import { makeStyles } from "@material-ui/styles"
 
-
 import todos from '../reducers/todos'
-
 
 const useStyles = makeStyles({
     root: {
@@ -52,7 +50,6 @@ function TodoCard({todo}) {
             type="button"
             onClick={() => dispatch(todos.actions.removeTodo(todo.id))}
           />
-          {/* <Button onClick={() => dispatch(todos.actions.leftTodo())}>left </Button>  */}
         </ListItem>
       </Card>
     </div>

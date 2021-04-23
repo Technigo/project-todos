@@ -12,16 +12,13 @@ import { makeStyles } from "@material-ui/styles"
 
 
 //The layout for the whole todo app 
-//the background styling is foind in index.css
+//the background styling is found in index.css
 
 const useStyles = makeStyles({
     root: {
         backgroundColor: '#ECECEC',
         boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
         borderRadius: "25px",
-        // minWidth: 50,
-        // width: '500px',
-        // marginTop: "-50px"
     },
     container: {
         display: "flex",

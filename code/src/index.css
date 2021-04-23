@@ -17,13 +17,13 @@ code {
     monospace;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 770px) {
   .blubs{
     background-image: url(./assets/pinkbig.svg),
     url(./assets/pink.svg), url(./assets/yellow.svg),
     url(./assets/blue.svg), url(./assets/yellowsmall.svg), url(./assets/bluesmall.svg);
     /* left-top-small: pink, left-top-big: yellow ,right-top: blue*, middle-right: yellow*/
-    background-position: 90% 90%, 12% 10%, 10% 10%, 73% 4%, 80% 40%, 8% 80%; 
+    background-position: 100% 90%, 3% 10%, 3% 10%, 95% 5%, 90% 40%, 3% 75%; 
     background-repeat: no-repeat;
     padding: 100px 100px 180px 100px;
   }
