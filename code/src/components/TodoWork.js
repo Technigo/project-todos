@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import moment from 'moment'
+import { format } from 'date-fns'
 import Checkbox from '@material-ui/core/Checkbox'
 
 import todos from '../reducers/todos'
@@ -25,7 +25,7 @@ const TodoWork = () => {
               color="default"
             />
             {todo.description}
-            {moment(todo.createdAt).format('LT, MMMM Do YYYY')}
+            {format(new Date(), 'MMMM do yyyy')}
             <DeleteButton
               type="button"
               onClick={() => dispatch(todos.actions.removeToDo(todo.id))}>
