@@ -5,8 +5,7 @@ import { createSlice } from '@reduxjs/toolkit'
     initialState: {
       items: [],
     },
-    reducers: {
-      // store is always passed, dont need to write it, action we need to pass by ourself
+    reducers: {      
       toggleComplete: (store, action) => {        
         const updateItem = store.items.map(todo => {
           if (todo.id === action.payload) {
@@ -33,10 +32,9 @@ import { createSlice } from '@reduxjs/toolkit'
             ...todo,
             isComplete: true
           }
-        }          
-        )
+        })
         store.items = allComplete        
-      }     
-        }      
-    })
+      } 
+    }
+  })
 export default todos

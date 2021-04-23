@@ -54,7 +54,7 @@ code {
 
 .checkbox-complete input[type=checkbox] {
   margin: 0;
-  cursor: pointer;
+  cursor: pointer;  
 }
 
 .item-container {
@@ -86,6 +86,7 @@ code {
   justify-content: flex-start;
   align-items: center;
   margin-left: 15px;
+  word-break: break-all;
 }
 
 .grid-item-2 {
@@ -98,10 +99,6 @@ code {
   display: flex;
   justify-content: flex-end;
   align-items: center;
-}
-
-.grid-item-4 {
-  margin-left: 15px;
 }
 
 .remove-todo-btn {  
@@ -126,4 +123,31 @@ code {
   border-radius: 7px;
   font-size: 20px;
   cursor: pointer;
+}
+
+@media (min-width: 768px) {
+
+  .todo-item {
+    display: grid;
+    grid-template-columns: 300px 200px 200px; 
+    grid-column-gap: 10px;
+    height: 100px;
+  }
+
+  .delete-icon {
+    font-size: 30px;
+  }
+
+  .add-todo-btn,
+  .complete-all-btn {    
+    border-radius: 7px;
+    font-size: 30px;    
+}
+
+.todo-form input[type="text"] {  
+  width: 300px;
+  height: 60px;
+  font-size: 25px;
+}
+
 }
