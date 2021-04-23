@@ -7,34 +7,32 @@ import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined'
 import todos from '../reducers/todos'
 import { Container, Header, CheckboxContainer, TodoList } from '../styling/GlobalStyles'
 
-const TodoStudies = () => {
+const TodoLove = () => {
   const allTodos = useSelector((store) => store.todos)
-  const justStudiesTodos = allTodos.items.filter((item) => item.category === "Studies")
+  const justLoveTodos = allTodos.items.filter((item) => item.category === "Love")
 
   const dispatch = useDispatch()
 
   return (
     <Container>
-      <Header>Studies</Header>
+      <Header>Love</Header>
       <TodoList>
-        <CheckboxContainer>
-        {justStudiesTodos.map(todo => (
-          <div key={todo.id}>
+        {justLoveTodos.map(todo => (
+          <CheckboxContainer key={todo.id}>
             <Checkbox
               checked={todo.isComplete}
               onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
               color="default"
             />
-            {todo.description}
-            {format(new Date(), 'MMMM do yyyy')}   
+            <p>{todo.description}</p>
+            <p>{format(new Date(), 'MMMM do yyyy')}</p>
             <DeleteOutlinedIcon 
               onClick={() => dispatch(todos.actions.removeToDo(todo.id))} />
-          </div>
+          </CheckboxContainer>
         ))}
-        </CheckboxContainer>
       </TodoList>
     </Container>
   )
 }
 
-export default TodoStudies
+export default TodoLove

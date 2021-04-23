@@ -17,21 +17,19 @@ const TodoHome = () => {
     <Container>
       <Header>Home</Header>
       <TodoList>
-        <CheckboxContainer>
         {justHomeTodos.map(todo => (
-          <div key={todo.id}>
+          <CheckboxContainer key={todo.id}>
             <Checkbox
               checked={todo.isComplete}
               onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
               color="default"
             />
-            {todo.description}
-            {format(new Date(), 'MMMM do yyyy')}
+            <p>{todo.description}</p>
+            <p>{format(new Date(), 'MMMM do yyyy')}</p>
             <DeleteOutlinedIcon 
               onClick={() => dispatch(todos.actions.removeToDo(todo.id))} />
-          </div>
+          </CheckboxContainer>
         ))}
-        </CheckboxContainer>
       </TodoList>
     </Container>
   )

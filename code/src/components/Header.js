@@ -31,9 +31,6 @@ const HeaderContainer = styled.div`
   justify-content: center;
   align-items: center; 
   flex-direction: column;
-/*   background: rgb(255,255,255);
-  background: radial-gradient(circle, rgba(255,255,255,1) 47%, rgba(181,211,251,1) 100%);
-  background-repeat: no-repeat; */
 `;
 
 const Logo = styled.img`

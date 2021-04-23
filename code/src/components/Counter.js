@@ -12,9 +12,7 @@ const Counter = () => {
   const onCheckAll = () => {
     dispatch(todos.actions.markAllTodos())
   }
-
-  // filter unCompleted / completed todos
-//const uncompletedTodos = allToDos.filter((todo) => !todo.isComplete)
+  
   const completedTodos = allToDos.filter((todo) => todo.isComplete)
 
   return (
@@ -40,6 +38,7 @@ const Counter = () => {
   )
 }
 
+// Local styling
 const Container = styled.div`
   color: slategrey;
   display: flex;

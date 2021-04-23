@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid'
 import styled from 'styled-components'
 
 import todos from 'reducers/todos'
-import TodoStudies from './TodoStudies'
+import TodoLove from './TodoLove'
 import TodoWork from './TodoWork'
 import TodoHome from './TodoHome'
 
@@ -43,7 +43,7 @@ const AddTodoForm = () => {
       <Form onSubmit={onFormSubmit}>
         <UserInputTextarea
           type="text"
-          maxLength="45"
+          maxLength="30"
           placeholder="Write your todo here..."
           onChange={(event) => setNewTodo(event.target.value)}
           value={newTodo}        
@@ -65,22 +65,20 @@ const AddTodoForm = () => {
             <option disabled value="">Categories</option>
             <option value="Home">Home</option>
             <option value="Work">Work</option>
-            <option value="Studies">Studies</option>
-            <option value="Friends">Friends</option>
             <option value="Love">Love</option>
             <option value="Hobbies">Hobbies</option>
-            <option value="Fitness">Fitness</option>
             <option value="Other">Other</option>
           </CustomSelect>
             <TodoHome />
-            <TodoStudies />
             <TodoWork />
+            <TodoLove />
+
       </Form>
     </>
   )
 }
 
-// Local styles
+// Local styling
 const Form = styled.form`
   display: flex;
   justify-content: center;
