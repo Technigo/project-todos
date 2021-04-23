@@ -2,9 +2,10 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { format } from 'date-fns'
 import Checkbox from '@material-ui/core/Checkbox'
+import DeleteOutlinedIcon from '@material-ui/icons/DeleteOutlined'
 
 import todos from '../reducers/todos'
-import { Container, Header, DeleteButton, CheckboxContainer, TodoList, TrashIcon } from '../styling/GlobalStyles'
+import { Container, Header, CheckboxContainer, TodoList } from '../styling/GlobalStyles'
 
 const TodoStudies = () => {
   const allTodos = useSelector((store) => store.todos)
@@ -25,12 +26,9 @@ const TodoStudies = () => {
               color="default"
             />
             {todo.description}
-            {format(new Date(), 'MMMM do yyyy')}
-            <DeleteButton
-              type="button"
-              onClick={() => dispatch(todos.actions.removeToDo(todo.id))}>
-                <TrashIcon src="assets/delete.svg"></TrashIcon>
-            </DeleteButton>
+            {format(new Date(), 'MMMM do yyyy')}   
+            <DeleteOutlinedIcon 
+              onClick={() => dispatch(todos.actions.removeToDo(todo.id))} />
           </div>
         ))}
         </CheckboxContainer>
