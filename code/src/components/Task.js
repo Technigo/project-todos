@@ -9,7 +9,7 @@ export const Task = ({task}) => {
 
   return (
     <div className="task">
-      <input className="task-colomn-10 checkbox-round" id={task.id}
+      <input className="task-colomn-10" id={task.id}
         type='checkbox'
         checked={task.complete}
         onChange={() => dispatch(tasks.actions.toggleCompleted(task))}>
