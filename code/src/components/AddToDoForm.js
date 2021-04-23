@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import todos from 'reducers/todos'
 import TodoStudies from './TodoStudies'
 import TodoWork from './TodoWork'
+import TodoHome from './TodoHome'
 
 const AddTodoForm = () => {
   const dispatch = useDispatch()
@@ -71,6 +72,7 @@ const AddTodoForm = () => {
             <option value="Fitness">Fitness</option>
             <option value="Other">Other</option>
           </CustomSelect>
+            <TodoHome />
             <TodoStudies />
             <TodoWork />
       </Form>
@@ -96,11 +98,12 @@ const UserInputTextarea = styled.textarea`
   width: 200px;
 `;
 
+// or this color: #FF10F0; like hotpink but not really ***
 const AddButton = styled.button`
   border-radius: 50%;
   margin-bottom: 40px;
   background-color: #216dff;
-  color: #FF10F0;
+  color: #d5c2df;
   width: 120px;
   height: 120px;
   text-transform: uppercase;

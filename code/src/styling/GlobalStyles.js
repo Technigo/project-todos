@@ -41,7 +41,7 @@ export const CheckboxContainer = styled.div`
   flex-direction: row;
 `;
 
-// Change these styles !! 
+// Change these styles !! THESE ARE NOW REDUNDNAT IF I DONT NEED TO STYLE IT AGAIN ****
 export const DeleteButton = styled.button`
   margin: 0;
   padding: 0;
