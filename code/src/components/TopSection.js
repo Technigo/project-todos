@@ -4,6 +4,13 @@ import { useDispatch, useSelector } from 'react-redux'
 import moment from 'moment'
 
 import todos from '../reducers/todos'
+/* */
+import Button from '@material-ui/core/Button';
+import Icon from '@material-ui/core/Icon';
+import DeleteIcon from '@material-ui/icons/Delete';
+
+
+/* */
 
 const TopSection = () => {
 
@@ -38,16 +45,21 @@ const dateToday = moment().format('LL');
 
     return(
         <section className="header-section">
+        <div className="left-box-container">
         <div className="left-box">
-            <h4>Todo</h4>
-            <p>{dateToday}</p>
+            <h4 className="todo-header">Todo</h4>
+            <p className="header-text">{dateToday}</p>
         </div>
-        <div className="right-box">
-            {(summary === 0) ? "" : <p>Total Todos: {summary}<span> {(summary === 2) ? "tasks" : "task"}</span></p>}
+        </div>
+        <div className="right-box-container">
+            <div className="right-box">
+            {(summary === 0) ? "" : <p className="total-todos">Total Todos: {summary}<span> {(summary === 2) ? "tasks" : "task"}</span></p>}
             
-            {(summary === 0) ? "" : <p>{amountOfNotCompleted} uncompleted</p>}
+            {(summary === 0) ? "" : <p className="total-uncompleted">{amountOfNotCompleted}/{summary} uncompleted</p>}
 
-            {(summary === 0) ? "" : <button onClick={() => dispatch(todos.actions.clearAll())}>CLEAR ALL</button>}
+            {(summary === 0) ? "" : <Button variant="contained" color="secondary" startIcon={<DeleteIcon />} onClick={() => dispatch(todos.actions.clearAll())}>Delete all</Button>}
+            
+            </div>
             
         </div>
         </section>

@@ -15,35 +15,149 @@ code {
 .todo-items {
   display: flex;
   align-items: center;
-
-
 }
 
-.red {
-  color: red
+.todo-container {
+  border-bottom: 5px solid black;
+  padding: 10px 
+  
 }
 
-.blue {
-  color: blue
+
+
+.deadline-passed {
+  color: red;
+  padding: 0px;
+  margin: 0px
+}
+
+.within-deadline {
+  color: black;
+  padding: 0px;
+  margin: 0px;
+  font-style: italic;
+  font-size: 12px;
 }
 
 .header-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color: #fcecdd
+  
 }
 
-.left-box {
+.left-box-container {
   border: 2px solid black;
+  padding: 10px 0px 10px 10px;
+  display: flex;
+  justify-content: flex-start;
 
 }
 
-.right-box {
+.right-box-container {
   border: 2px solid blue;
+  padding: 10px 10px 10px 0px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.todo-header {
+  font-size: 26px;
+  margin: 0px;
+  padding-top: 10px
+}
+
+.total-todos {
+  padding: 0px;
+  margin: 0px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.total-uncompleted {
+  color: red
 }
 
 .form-section {
-  display: flex;
-  align-items: center;
-  margin: 10px 0px 0px 0px;
+padding: 10px;
+border: 3px black solid;
 }
 
+.text-field {
+  margin-bottom: 10px;
+}
+
+.empty-page {
+  margin: 0px 10px 0px 10px
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: green;
+
+}
+
+.not-completed-task {
+  color: red;
+
+}
+
+.list-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.remove-todo {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input {
+  word-break: break-word;
+  padding: 0px;
+  margin: 0px;
+  font-size: 26px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content {
+  width: 100%;
+  border: red solid 5px;
+}
+
+
+
+@media (min-width: 768px) {
+  .content {
+    width: 80%;
+  }
+}
+
+
+@media (min-width: 1300px) {
+  .content {
+    width: 50%;
+  }
+
+  .right-box-container {
+
+    justify-content: center;
+  }
+
+  .left-box-container {
+
+    justify-content: center;
+  
+  }
+}
