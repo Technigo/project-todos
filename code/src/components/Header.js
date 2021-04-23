@@ -85,7 +85,7 @@ export const Header = () => {
       </TopWrapper>
       {items.length !== 0 && (
       <BottomWrapper>
-        <TaskCount>{itemsCompleted.isCompleted.length} / {items.length} tasks completed</TaskCount>
+        <TaskCount>{items.isCompleted.length} / {items.length} tasks completed</TaskCount>
         <ClearButton onClick={() => dispatch(tasks.actions.clearAll())}>Clear all</ClearButton>
       </BottomWrapper>
       )}

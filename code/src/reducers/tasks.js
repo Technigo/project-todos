@@ -7,10 +7,10 @@ const tasks = createSlice({
   },
   reducers: {
     toggleCheckbox: (store, action) => {
-      const updatedItems = store.items.map(task => {
+      const updatedItems = store.items.map((task) => {
 				if (task.id === action.payload) {
 					return {	
-						...task,
+					  ...task,
 						isCompleted: !task.isCompleted
 					}
 				} else {
@@ -20,7 +20,7 @@ const tasks = createSlice({
 			store.items = updatedItems
     },
     removeTask: (store, action) => {
-      const decreasedItems = store.items.filter(task => task.id !== action.payload)
+      const decreasedItems = store.items.filter((task) => task.id !== action.payload)
       store.items = decreasedItems
     },
     addTask: (store, action) => {

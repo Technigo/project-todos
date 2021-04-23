@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import uniqid from 'uuid'
@@ -64,7 +64,7 @@ export const TaskForm = () => {
 
     const newTask = {
       id: uniqid(),
-      description: description,
+      description,
       isCompleted: false,
       timeStamp: timestamp
     }
@@ -76,12 +76,11 @@ export const TaskForm = () => {
   return (
     <Form>
       <SubmitButton type="submit" onClick={description !== "" ? onTaskSubmit : (e) => e.preventDefault()}><AiOutlinePlus size={20} /></SubmitButton>
-      <TaskInput 
-      type="text"
-      placeholder="Add task"
-      onChange={e => setDescription(e.target.value)}
-      value={description}
-      />
+      <TaskInput
+        type="text"
+        placeholder="Add task"
+        onChange={e => setDescription(e.target.value)}
+        value={description} />
   </Form>
-  )
-}
+    )
+  }

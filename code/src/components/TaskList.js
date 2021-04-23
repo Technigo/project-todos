@@ -47,7 +47,7 @@ const TaskDescription = styled.p`
   padding: 10px;
   font-size: 18px;
   color: #757575;
-  text-decoration: ${props => props.checked ? "line-through" : "none"};
+  text-decoration: ${props.checked ? "line-through" : "none"};
 `
 
 const IconContainer = styled.div`
@@ -62,7 +62,7 @@ const TaskList = () => {
 
   return (
     <TaskWrapper>
-      {items.map(task => (
+      {items.map((task) => (
         <Task key={task.id}>
           <DescriptionCheckbox>
             <Checkbox
@@ -77,8 +77,7 @@ const TaskList = () => {
               borderRadius={20}
               style={{ overflow: "hidden" }}
               containerStyle={{ alignSelf: "center" }}
-              size={20}
-            />
+              size={20} />
             <TaskDescription checked={task.isCompleted}>{task.description}</TaskDescription>
           </DescriptionCheckbox>
           <TiDeleteOutline size={20} onClick={() => dispatch(tasks.actions.removeTask(task.id))} />
