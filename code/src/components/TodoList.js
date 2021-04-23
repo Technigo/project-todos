@@ -1,18 +1,12 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-// import Checkbox from 'react-custom-checkbox'
 
 import todos from '../reducers/todos'
 
-
-
 const TodoList = () => {
-  // Reach from items array from redux store
   const items = useSelector((store) => store.todos.items)
   const emptyList = items.length > 0
 
-
-  // Create an instance of useDispatch hook
   const dispatch = useDispatch()
 
   return (
@@ -24,10 +18,7 @@ const TodoList = () => {
           <div className="task-container"> 
             <p>{todo.description}</p>
             <div className="buttons">
-              {/* <Checkbox
-                checked={todo.isComplete}
-                onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-              /> */}
+              
               <input
                 type="checkbox"
                 checked={todo.isComplete}
