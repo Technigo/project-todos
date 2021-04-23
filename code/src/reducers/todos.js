@@ -4,7 +4,7 @@ const todos = createSlice({
     name: 'todos',
     initialState: {
         items: [
-            { id: 1, description: 'text', isComplete: false }
+            {id: 1, description: 'text', isComplete: false}
         ]
     },
     reducers: {

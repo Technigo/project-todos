@@ -5,14 +5,7 @@ import uniqid from 'uniqid';
 import todos from '../reducers/todos';
 
 const TodoForm = () => {
-
-
-
-
-    
     const [value, setValue] = useState('');
-
-    const testVariable = 'Just testing';
 
     const dispatch = useDispatch();
 
