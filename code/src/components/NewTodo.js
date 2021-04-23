@@ -82,12 +82,12 @@ const NewTodo = () => {
 
   const onButtonPress = (event) => {
     event.preventDefault()
-    dispatch(tasks.actions.postNewTodo({ description: newTodoInput, dueDate: dueDate }))
+    dispatch(tasks.actions.postNewTodoAPI({ description: newTodoInput, dueDate: dueDate }))
     setNewTodoInput('')
   }
 
   const onDateChange = (date) => {
-    console.log(date)
+    setDueDate(date[0].toJSON())
   }
 
   return (
@@ -101,7 +101,7 @@ const NewTodo = () => {
             onChange={onInputChange}
           />
           <DatePickerWrapper>
-            <DatePicker light className="testing" dateFormat="m/d/Y" datePickerType="single">
+            <DatePicker light className="testing" dateFormat="m/d/Y" datePickerType="single" onChange={(date) => onDateChange(date)}>
               <DatePickerInput
                 hideLabel
                 id="date-picker-default-id"
@@ -111,7 +111,7 @@ const NewTodo = () => {
                 labelText="Due Date"
                 type="text"
                 //date={dueDate}
-                onChange={(date) => onDateChange(date)}
+                
               />
             </DatePicker>
           </DatePickerWrapper>

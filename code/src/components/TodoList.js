@@ -1,9 +1,10 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React, { useEffect } from 'react'
+import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
 import TodoItem from './TodoItem'
 import NewTodo from './NewTodo'
+import { fetchData } from '../reducers/tasks'
 
 const Section = styled.section`
   @media (min-width: 998px) {
@@ -12,6 +13,13 @@ const Section = styled.section`
 `
 
 const TodoList = () => {
+  const dispatch = useDispatch()
+  
+
+  useEffect(() => {
+    dispatch(fetchData())
+  }, [dispatch])
+
   const items = useSelector((store) => store.tasks.items)
 
   return (
