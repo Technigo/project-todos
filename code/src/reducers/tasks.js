@@ -7,8 +7,8 @@ const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      { id: 1, text: 'Test test test', isComplete: false },
-      { id: 2, text: 'This is a test todo', isComplete: false },
+      // { id: 1, text: 'Test test test', isComplete: false },
+      // { id: 2, text: 'This is a test todo', isComplete: false },
 
     ]
   },
@@ -30,6 +30,15 @@ const tasks = createSlice({
     },
     addTask: (store, action) => {
       store.items = [...store.items, action.payload]
+    },
+    completeAll: (store, action) => {
+      const allDone = store.items.map((task) => {
+        return {...task, isComplete: true}
+      })
+      store.items = allDone
+    },
+    deleteAll: (store, action) => {
+      store.items = []
     }
   }
 })

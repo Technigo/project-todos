@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import uniqid from 'uniqid'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 
 import tasks from '../reducers/tasks'
 
