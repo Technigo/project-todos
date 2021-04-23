@@ -1,8 +1,6 @@
 import React from 'react'
 import { Typography } from '@material-ui/core';
-import 'fontsource-roboto';
 import moment from 'moment'
-// import ListAltIcon from '@material-ui/icons/ListAlt';
 import { makeStyles } from "@material-ui/styles"
 import TodayRoundedIcon from '@material-ui/icons/TodayRounded';
 
@@ -12,7 +10,7 @@ const useStyles = makeStyles({
         flexDirection: "column",
         marginTop: "10px",
         padding: "10px",
-        color: "#0a043c"
+        color: "#0a043c",
     }, calender: {
         display: "flex",
         fontSize: "17px",
