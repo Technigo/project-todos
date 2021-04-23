@@ -11,7 +11,7 @@ const DateContainer = styled.div`
 `;
 
 const Label = styled.label`
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
   margin-bottom: 5px;
   color: ${props => props.theme.textColor};

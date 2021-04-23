@@ -68,7 +68,7 @@ export const Options = styled.label`
 export const LabelText = styled.p`
   margin-bottom: 5px;
   font-weight: bold;
-  font-size: 14px;
+  font-size: 15px;
   color: ${props => props.theme.textColor};
   @media (min-width: 768px) {
     font-size: 17px;

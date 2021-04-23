@@ -1,18 +1,28 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 // For Header component
+const spin = keyframes`
+from {
+  transform: rotate(0deg);
+}
+to {
+  transform: rotate(360deg);
+}`
+
 export const SettingsButton = styled.button`
   font-size: 28px;
   background-color: transparent;
   border-radius: 50%;
   padding: 0;
-  margin: 0 5px 0 0;
+  margin: 0;
   color: ${props => props.theme.primary};
   :hover {
     opacity: 0.7;
+    animation: ${spin} 0.6s linear;
   }
   @media (min-width: 768px) {
     font-size: 48px;
+    margin-right: 10px;
   }
 `;
 

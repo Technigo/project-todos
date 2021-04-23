@@ -27,11 +27,14 @@ button {
 }
 
 .datepicker {
-  padding: 9px;
+  padding: 8px;
   font-family: "Nunito";
-  width: 60%;
+  width: 80%;
   border: 1px solid #ccc;
   border-radius: 4px;
+  font-size: 15px;
+  font-family: "Roboto";
+  color: #949292;
 }
 
 .MuiSvgIcon-root {
@@ -63,6 +66,7 @@ button {
 
 .trash-icon {
   color: black;
+  margin-bottom: 1px;
 }
 
 @media (min-width: 768px) {

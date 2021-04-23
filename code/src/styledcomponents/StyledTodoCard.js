@@ -40,7 +40,7 @@ export const TextDateBox = styled.div`
 `;
 
 export const TaskText = styled.p`
-  font-size: 14px;
+  font-size: 15px;
   font-weight: bold;
   margin: 0;
   word-break: break-all;
@@ -50,7 +50,7 @@ export const TaskText = styled.p`
 `;
 
 export const DateTextDue = styled.p`
-  font-size: 11px;
+  font-size: 12px;
   margin: 0;
   display: flex;
   align-items: center;

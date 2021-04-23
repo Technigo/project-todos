@@ -24,7 +24,7 @@ export const Header = () => {
         <Title>toDO</Title>
         <DateTitle>{moment().format("Do MMM YYYY")}</DateTitle>
       </TitleDate> 
-      <Tooltip title="Change theme">
+      <Tooltip title="Change color theme">
         <SettingsButton
           onClick={() => setOpen(true)}><FontAwesomeIcon icon="cog" /></SettingsButton>
       </Tooltip>

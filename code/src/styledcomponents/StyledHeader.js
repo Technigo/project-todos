@@ -18,7 +18,11 @@ export const TitleTop = styled.header`
 export const TitleDate = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0 0 0 5px;
+  margin: 0;
+  @media (min-width: 768px) {
+    margin-left: 10px;
+  }
+
 `;
 
 export const Title = styled.h1`
