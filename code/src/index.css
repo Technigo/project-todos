@@ -5,9 +5,226 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:#ccb79f;
+  @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap');
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+main {
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 700px;
+}
+
+.header {
+  text-align: left;
+  background-image: url(./assets/todo.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 250px;
+}
+
+.header h1 {
+  font-family: 'Inconsolata', monospace;
+  margin:0;
+  margin-left:10px;
+  font-size: 45px;
+  padding-top: 15px;
+}
+
+.header p {
+  font-family: 'Inconsolata', monospace;
+  margin:0;
+  margin-top: 5px;
+  margin-left:15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.completed-and-clear {
+  text-align: right;
+  margin-bottom: 20px;
+}
+
+.completed-and-clear p {
+  margin-right: 15px;
+  font-family: 'Inconsolata', monospace;
+}
+
+.remove-buttons {
+  display: flex;
+  justify-content: space-evenly;
+  padding-bottom: 20px;
+  padding-top: 10px;
+
+}
+
+.remove-button {
+  border-radius: 8px;
+  padding:5px;
+  padding-bottom: 3px;
+  background:#b0a38a;
+  outline:none;
+  font-family: 'Inconsolata', monospace;
+  border: 1px solid #333;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+}
+
+input {
+  background-color: inherit;
+  border: hidden;
+  font-size: 20px;
+  align-items: center;
+  font-family: 'Inconsolata', monospace;
+}
+
+input:focus,
+textarea {
+  outline: none;
+}
+
+.add-button {
+  background-color: #b0a38a;
+  padding: 5px;
+  border-radius: 50%;
+  height: 40px;
+  width: 40px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  border: 1px solid grey;
+  cursor: pointer;
+}
+
+.task-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid grey;
+  width: 90%;
+  }
+
+.task-text {
+   font-family: 'Inconsolata', monospace;
+ }
+
+.task-colomn-10 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  width: 10%;
+  }
+
+  .date-text {
+    font-size: 12px;
+  }
+
+.task-colomn-60 {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: space-between;
+  width: 60%;
+  }
+
+.trash-can {
+  width: 30px;
+  height:30px;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+input[type="checkbox"]:after {
+  content: '';
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  font-size: 13px;
+  border: 2px solid #333;
+  border-radius: 50%;
+}
+
+input[type="checkbox"]:checked:after {
+  content: '\2713';
+  background:#b0a38a;
+}
+
+.no-todos-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Inconsolata', monospace;
+}
+
+.no-todos-left p {
+  font-weight: bold;
+  font-size: 18px;
+  margin:0;
+}
+
+@media (min-width: 1024px) {
+  main {
+    max-width: 800px;
+  }
+
+  .header h1 {
+    font-size: 55px;
+  }
+
+  .header p {
+    font-size: 25px;
+  }
+
+  .remove-button{
+    height: 50px;
+    padding:8px;
+  }
+
+  .task-text {
+    font-size: 20px;
+  }
+
+  .date-text {
+    font-size: 18px;
+  }
+
+  .completed-and-clear p {
+    font-size: 18px;
+  }
+
+  input {
+    font-size: 25px;
+  }
 }
