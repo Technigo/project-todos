@@ -21,6 +21,10 @@ button {
   font-size: 1rem;
 }
 
+.main-container {
+  width: 100vw;
+}
+
 .app-header {
   background-color: #BCD8C1;
   font-family: Menlo;
@@ -70,4 +74,16 @@ button {
 
 .task-item p {
   margin: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    margin:auto;
+    width: 60vh;
+  }
+  .task-form input {
+    max-width: 28vw;
+  }
 }
