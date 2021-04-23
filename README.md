@@ -1,12 +1,20 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+In this week's project, flex your redux muscles and build an application which pulls together all the parts of redux by building a todo app.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+- How to structure a redux store
+- How to write reducers and actions
+- How to interact with your store using selectors or by dispatching actions
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+With the help our code coach we broke down the given design of the web app and diveded it into components and initial structure of store, reducers
+
+- reducer, store, slice (tasks.js)
+- components, header, taskform, tasklist
+- css to pull it all toghether
+
+Some extra tweaks like importing currentdate with, day.js and created a filter for displaying number of completed tasks and made use of react icons
 
 ## View it live
 
