@@ -5,9 +5,37 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  background:whitesmoke;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  
 }
+
+.icecream-image {
+  width: 60px;
+  height: auto;
+  margin: 20px auto;
+  animation: rotation 1s infinite alternate ease;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(-25deg);
+  }
+  to {
+    transform: rotate(25deg);
+  }
+}
+
+.task-complete {
+  opacity: 0.3;
+}
+
+.task-not-complete {
+  opacity: 1;
+}
+

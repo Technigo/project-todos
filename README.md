@@ -1,13 +1,18 @@
 # Project Todos
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a project built during the Technigo Bootcamp. The project consisted in building a Todo-app to practise:
+- How to structure a redux store
+- How to write reducers and actions
+- How to interact with the store using selectors or by dispatching actions. 
 
 ## The problem
+I started off by thinking about what kind of structure I wanted in my todo app - what components I would need, what styling method I would go for and what my reducer should contain. 
+By reading about similar projects, watching tutorials and looking at redux own webpage I started building my application and getting the logic working. 
+However, for each lecture we had during the week I ended up modifying my code inside the reducers to change from mutable to immutable approach and simply to try to go for what is considered "best practise".
+I also chose to use styled components for most of my application for practise. 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Compared to previous projects I also started to use new packages from material.ui, uniqid and date fns.
 
+If I had more time I would have wanted to practise on local storage as well as adding more features to the app. 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+See it live at netlify: https://quirky-colden-bd6702.netlify.app/
