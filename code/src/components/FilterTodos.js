@@ -24,7 +24,7 @@ const LabelText = styled.p`
 
 export const FilterTodos = ({ category, onChange }) => {
   const filterCategories = useSelector((state) => state.todos.filterCategories);
-  
+
   return (
     <FilterContainer>
       <LabelText>Filter tasks:</LabelText>
