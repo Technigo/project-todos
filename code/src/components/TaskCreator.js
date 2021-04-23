@@ -10,13 +10,15 @@ import tasks from '../reducers/tasks';
 
 
 const Form = styled.form`
-width: 250px;
-border: 2px solid blue;
-margin: 10px;
+width: 100%;
 padding: 20px 0;
+margin: 10px 0;
 display: flex;
 flex-direction: row;
 justify-content: space-evenly;
+background-color: white;
+border-radius: 15px;
+box-shadow: 0  0 10px #aaaaaa;
 `
 
 const TaskCreator = () => {

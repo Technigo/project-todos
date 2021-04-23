@@ -31,7 +31,7 @@ const tasks = createSlice({
       const itemsAllCompleted = store.items.map((task) => {
         return {
           ...task,
-          isComplete: !task.isComplete
+          isComplete: true
         }
       })
       store.items = itemsAllCompleted;

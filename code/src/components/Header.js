@@ -5,21 +5,41 @@ import DayJS from 'react-dayjs';
 import TaskSummary from './TaskSummary'
 
 const Container = styled.div`
-width: 250px;
+width: 100%;
+padding: 30px 20px;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
-align-items: center;
-border: 2px solid blue;
-margin: 10px;
+align-items: flex-start;
+background-color: #F4F4F4;
+border-radius: 15px;
 `
+const DateContainer = styled.div`
+margin-left: 7px;
+display: flex;
+flex-direction: column;
+font-family: 'Noto Sans KR', sans-serif;
+`
+const Header1 = styled.h1`
+margin: 0;
+font-family: 'Rammetto One', cursive;
+color: white;
+background-color: #364547;
+padding: 5px;
+border-radius: 14px;
+`
+
 
 const Header = () => {
   return (
     <Container>
       <div>
-        <h1>To Do</h1>
-        <DayJS format="YYYY-MM-DD H:mm"/>
+        <Header1>ToDo</Header1>
+        <DateContainer>
+          <DayJS format="YYYY-MM-DD"/>
+          <DayJS format="HH:mm"/>
+        </DateContainer>
+        
       </div>
       <TaskSummary/>
     </Container>

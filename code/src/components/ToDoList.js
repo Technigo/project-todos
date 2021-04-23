@@ -1,16 +1,25 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
 import tasks from '../reducers/tasks';
 
 import TaskCard from './TaskCard';
+
+const Container = styled.div`
+width: 100%;
+display; flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
 
 const ToDoList = () => {
   const items = useSelector((store) => store.tasks.items);
   const dispatch = useDispatch();
 
   return (
-    <div>{
+    <Container>{
       items.map((task) => 
         <TaskCard 
           key={task.id}
@@ -22,10 +31,9 @@ const ToDoList = () => {
           onClickAction={() => dispatch(tasks.actions.removeTask(task.id))}
         />
       )}
-    </div>
+    </Container>
   )
 };
 
 export default ToDoList;
 
-//how to move TaskCard component , with the dispatch?

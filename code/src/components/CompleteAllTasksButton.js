@@ -4,6 +4,18 @@ import styled from 'styled-components';
 
 import tasks from '../reducers/tasks';
 
+const Button = styled.button`
+background-color: #2f5d62;
+color: white;
+border: none;
+font-family: 'Noto Sans KR', sans-serif;
+font-size: 20px;
+border-radius: 5px;
+padding: 5px 8px 5px 10px;
+
+`
+
+
 const ConmpleteAllTasksButton= () => {
   const dispatch = useDispatch();
   
@@ -13,7 +25,7 @@ const ConmpleteAllTasksButton= () => {
 
   return (
     <div>
-      <button onClick={onClear}>I have done it all!</button>
+      <Button onClick={onClear}>All done!</Button>
     </div> 
   )
 }
