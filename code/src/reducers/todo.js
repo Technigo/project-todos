@@ -1,11 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const filters = [
+  { id: 1, name: "done", status: false },
+  { id: 2, name: "to do", status: false },
+  { id: 3, name: "past deadline", status: false },
+  { id: 4, name: "priority", status: false }
+]
+
 const todo = createSlice({
   name: 'todo',
   initialState: {
     items: [],
-    filters: [{ id: 1, name: "all done", status: false}, {id: 2, name: "all undone", status: false}, {id: 3, name: "past deadline", status: false}]
-
+    filters
   },
   reducers: {
     toggleChecked: (store, action) => {
@@ -44,8 +50,12 @@ const todo = createSlice({
       store.items = []
     },
     markAllDone: store => {
-      const allDoneItems = store.items.map(item => ({...item, isComplete: true}) )
+      const allDoneItems = store.items.map(item => ({ ...item, isComplete: true }))
       store.items = allDoneItems
+    },
+    resetTasks: store => {
+      const resetItems = store.items.map(item => ({ ...item, isComplete: false }))
+      store.items = resetItems
     },
     toggleFilter: (store, action) => {
       const updatedFilters = store.filters.map(filter => {
@@ -61,7 +71,6 @@ const todo = createSlice({
       store.filters = updatedFilters
     },
   }
-
 })
 
 export default todo

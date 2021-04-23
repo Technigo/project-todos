@@ -4,12 +4,12 @@ import {useDispatch} from 'react-redux'
 
 import todo from '../reducers/todo'
 
-const AllDoneButton = () => {
+const ResetButton = () => {
   const dispatch = useDispatch()
   const style = {
     margin: "5px",
     fontSize: "9px",
-    padding: "2px"
+    padding: "2px",
   }
   return (
     <Button
@@ -17,10 +17,10 @@ const AllDoneButton = () => {
       size="small"
       variant="contained"
       color="primary"
-      onClick={() => dispatch(todo.actions.markAllDone())}
+      onClick={() => dispatch(todo.actions.resetTasks())}
     >
-      mark all done
+      reset
     </Button>
   )
 }
-export default AllDoneButton
+export default ResetButton

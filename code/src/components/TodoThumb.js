@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { format } from 'date-fns'
 import { Checkbox } from '@material-ui/core';
-import { ArrowDropDown, ArrowDropUp} from '@material-ui/icons'
+import { ArrowDropDown, ArrowDropUp } from '@material-ui/icons'
 
 import todo from '../reducers/todo'
 
@@ -32,7 +32,7 @@ const TodoThumb = ({ item }) => {
         />
         <p>{item.description}</p>
         <div onClick={() => setOpen(!isOpen)}>
-          {isOpen ? <ArrowDropUp color="primary" fontSize="large"/> : <ArrowDropDown color="primary" fontSize="large"/>}
+          {isOpen ? <ArrowDropUp color="primary" fontSize="large" /> : <ArrowDropDown color="primary" fontSize="large" />}
         </div>
       </div>
       <div className={`todo-details ${!isOpen ? "collapsed" : ""}`}>
@@ -41,21 +41,11 @@ const TodoThumb = ({ item }) => {
           {format(item.dateCreated, 'dd MMMM YYY')}
         </p>
         <p className={`deadline ${determineDeadlineClass(item.deadline)}`}>
-          {(determineDeadlineClass(item.deadline) === "past-deadline") &&
-            <span
-              className="span"
-              role="img"
-              aria-label="alarm clock">
-              ⏰
-          </span>}
           <span className="span">Deadline:</span>
           {item.deadline === "" ? "No set deadline" : format(new Date(item.deadline), 'dd MMMM YYY')}
         </p>
-          <DeleteButton item={item} />
-          <SetPriorityButton item={item} />
-        <div className="set-priority">
-
-        </div>
+        <DeleteButton item={item} />
+        <SetPriorityButton item={item} />
       </div>
 
     </div>

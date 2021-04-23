@@ -1,29 +1,26 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import Switch from '@material-ui/core/Switch'
-import FormControlLabel from '@material-ui/core/FormControlLabel';
+import FormControlLabel from '@material-ui/core/FormControlLabel'
 import { withStyles, ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
 
 
 import todo from '../reducers/todo'
 
 const BlueSwitch = withStyles(() => ({
-  root: {
-    fontFamily: "Comfortaa",
-  },
   switchBase: {
-    color: "rgb(141, 167, 254)",
+    color: "#415ab5",
     '&$checked': {
-      color: "#5d80ff",
+      color: "#3650af",
     },
     '&$checked + $track': {
-      backgroundColor: "#5d80ff",
+      backgroundColor: "#3650af",
     },
   },
   checked: {},
   track: {},
 }
-))(Switch);
+))(Switch)
 
 const theme = createMuiTheme({
   typography: {
@@ -51,7 +48,6 @@ const FilterThumb = ({ filter }) => {
         label={filter.name}
       />
     </ThemeProvider>
-
   )
 }
 export default FilterThumb

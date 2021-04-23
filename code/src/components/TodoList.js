@@ -13,33 +13,36 @@ const TodoList = () => {
   useEffect(() => {
     let newFilteredItems = [...items]
     filters.forEach(filter => {
-      if (filter.name === "all done" && filter.status) {
+      if (filter.name === "done" && filter.status) {
         newFilteredItems = (newFilteredItems.filter(item => item.isComplete))
       }
-      if (filter.name === "all undone" && filter.status) {
+      if (filter.name === "to do" && filter.status) {
         newFilteredItems = (newFilteredItems.filter(item => !item.isComplete))
       }
       if (filter.name === "past deadline" && filter.status) {
         newFilteredItems = (newFilteredItems.filter(item => (new Date(item.deadline) < Date.now())))
       }
+      if (filter.name === "priority" && filter.status) {
+        newFilteredItems = (newFilteredItems.filter(item => item.isPriority))
+      }
     })
     setFilteredItems(newFilteredItems)
   }, [filters, items])
 
-
   return (
     <div className="list-container">
       {items.length === 0 && <EmptyTodoList />}
-
       {items.length > 0 &&
-        <div className="filters-container">
-          <p>Filter your to do list!</p>
-          {filters.map((filter) => <FilterThumb key={filter.id} filter={filter} />)}
-        </div>
+        <>
+          <p className="filter-headline">Filter your to do list!</p>
+          <div className="filters-container">
+            {filters.map((filter) => <FilterThumb key={filter.id} filter={filter} />)}
+          </div>
+        </>
       }
-
-      {filteredItimes.map((item) => <TodoThumb key={item.id} item={item} />)}
-
+      <div className="tasks-container">
+        {filteredItimes.map((item) => <TodoThumb key={item.id} item={item} />)}
+      </div>
     </div>
   )
 }

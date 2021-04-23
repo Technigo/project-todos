@@ -3,23 +3,25 @@ import uniqid from 'uniqid'
 import { useDispatch } from 'react-redux'
 import { Fab } from '@material-ui/core'
 import { Add, Close, Schedule } from '@material-ui/icons'
+
 import todo from '../reducers/todo'
 
 const TodoForm = () => {
-  const dispatch = useDispatch()
-
-  const iconStyle = {
-     color: "#596267", 
-     marginRight: "3px",
-     fontSize: "16px"
-  }
   const [newTask, setNewTask] = useState("")
   const [deadline, setDeadline] = useState("")
   const [visible, setVisible] = useState(false)
+  const dispatch = useDispatch()
 
+  const iconStyle = {
+    color: "#596267",
+    marginRight: "3px",
+    fontSize: "16px"
+  }
+  
   const onTaskAdd = (event) => {
     setNewTask(event.target.value)
   }
+
   const onSubmit = (event) => {
     event.preventDefault()
     const newToDo = {
@@ -53,9 +55,10 @@ const TodoForm = () => {
           value={newTask}
           onChange={onTaskAdd}
           placeholder="✎ Write here ..."
+          required
         />
         <label htmlFor="date-picker" className="date-label">
-          <Schedule style={iconStyle} />
+          <Schedule style={iconStyle} aria-label="schedule icon"/>
           Set the deadline (optional)
         </label>
         <input
@@ -72,7 +75,5 @@ const TodoForm = () => {
       </form>
     </div>
   )
-
 }
-
 export default TodoForm

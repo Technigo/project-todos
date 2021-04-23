@@ -6,15 +6,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: Comfortaa;
-  /* background-color: #f5f5f5; */
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.content-container {
+  background-color: white;
+}
 .header-container{
-  background-color: rgb(141, 167, 254);
+  background-color: rgb(67, 110, 252);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: start;
@@ -35,9 +37,16 @@ code {
 .week-day{
   font-weight: bold;
 }
+
+.done-text, .undone-text {
+  margin-left: 5px;
+  margin-right: 5px;
+}
 .clear-buttons{
   display: flex;
+  flex-wrap: wrap;
 }
+
 .empty-todo-container {
   padding: 10px;
 }
@@ -46,7 +55,6 @@ code {
 }
 
 .form {
-  max-width: 400px;
   display: flex;
   flex-direction: column;
   max-height: 0;
@@ -67,7 +75,7 @@ code {
   margin: 10px;
   padding: 10px;
   border:none;
-  border-bottom: #5d80ff 2px solid;
+  border-bottom: rgb(67, 110, 252) 2px solid;
   outline: #8da7fe;
   color: #596267;
   font-family: Comfortaa;
@@ -88,43 +96,41 @@ code {
   margin: 0 10px 10px 10px;
   padding: 10px;
   border:none;
-  border-bottom: #5d80ff 2px solid;
+  border-bottom: rgb(67, 110, 252) 2px solid;
   outline: #8da7fe;
   color: #596267;
   font-family: Comfortaa;
 }
 .submit-button {
-  border: #5d80ff 2px solid;
+  border: rgb(67, 110, 252) 2px solid;
   border-radius: 10px;
   width: 100px;
   margin: 0 10px;
   padding: 10px;
-  background-color: #5d80ff;
+  background-color: rgb(67, 110, 252);
   color: #f5f5f5;
   font-weight: bold;
+  outline: none;
 }
 .filters-container {
   margin: 20px 10px 10px 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.filter-headline {
+  margin-left: 10px;
 }
 .filter-button {
   border: rgb(141, 167, 254);
   margin: 4px;
 }
-.on {
-  background-color: green;
-}
-.off {
-  background-color: hotpink;
-}
 
 .item-container {
   display: flex;
   flex-direction: column;
-  border: #8da7fe 1px solid;
-  background-color: rgb(181, 198, 255);
   border-radius: 5px;
   margin: 10px;
-  padding: 10px;
+  
 }
 
 .todo-main {
@@ -132,36 +138,76 @@ code {
   align-items: center;
   justify-content: space-between;
   font-weight: bold;
-  border: #3650af solid 2px;
-  border-radius: 5px;
+  border-bottom: #3650af solid 2px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
   background-color: white;
-}
-.delete-button {
-  justify-self: right;
+  color: #3650af;
 }
 
 .todo-details {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
   font-size: 12px;
+  background-color: #3650af;
   max-height: 200px;
-  transition: 0.3s ease-in-out;
-}
-.collapsed {
-  max-height: 0;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+  color: white;
+  transition: 0.5s;
   overflow: hidden;
 }
+
+.collapsed {
+  max-height: 0;
+  transition: 0.2s;
+}
 .date-created {
-  margin-top: 5px;
+  padding-top: 5px;
+  margin-left: 5px;
 }
 .deadline {
   margin-top: 5px;
+  margin-left: 5px;
 }
 .past-deadline {
   color: red;
 }
 .span {
   margin-right: 5px;
+  
 }
 
+.delete-button {
+  display: flex;
+  align-items: center;
+}
+.set-priority{
+  display: flex;
+  align-items: center;
+}
 
+@media (min-width: 700px) {
+  .list-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .filter-headline {
+    width: 100%;
+  }
+  .filters-container{
+    align-self: flex-start;
+    width: 40%;
+  }
+  .tasks-container {
+    width: 55%;
+  }
+  .done-undone-wrapper{
+    text-align: right;
+  }
+  .clear-buttons{
+    justify-content: flex-end;
+  }
+}
