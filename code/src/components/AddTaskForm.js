@@ -17,10 +17,9 @@ export const AddTaskForm = () => {
             content: value,
             completed: false
         };
-
         dispatch(tasks.actions.addTask(newTask))
         setValue('')
-	};
+	}
 
 	return (
 		<AddTodoForm onSubmit={onSubmit}>
@@ -32,12 +31,12 @@ export const AddTaskForm = () => {
 				fullWidth
 				value={value}
 				onChange={(event) => setValue(event.target.value)}
-				 />
+			/>
 			<SubmitButton type='submit'>
 				<span role="img" aria-label="add button">
 					➕
 				</span>
 			</SubmitButton>
 		</AddTodoForm>
-	);
-};
+	)
+}

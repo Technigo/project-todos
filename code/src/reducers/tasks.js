@@ -21,7 +21,6 @@ export const tasks = createSlice({
                         completed: !task.completed
                     }
                 } else {
-                    // Return whole element without changing it
                     return task
                 }
             })
@@ -41,7 +40,6 @@ export const tasks = createSlice({
             const clearAll = store.items.map((task) => {
                 return {
                     ...task, 
-                    // completed: !task.completed
                     completed: true
                 }
             })
