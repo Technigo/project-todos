@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #114e60;
 }
 
 code {
@@ -18,8 +19,10 @@ code {
 }
 
 .todo-container {
-  border-bottom: 5px solid black;
-  padding: 10px 
+  /*border-bottom: 5px solid black;*/
+  padding: 10px;
+  background-color: #f4eee8;
+  margin: 10px 0px 10px;
   
 }
 
@@ -42,12 +45,12 @@ code {
 .header-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  background-color: #fcecdd
+  background-color: #325288
   
 }
 
 .left-box-container {
-  border: 2px solid black;
+  /*border: 2px solid black;*/
   padding: 10px 0px 10px 10px;
   display: flex;
   justify-content: flex-start;
@@ -55,7 +58,7 @@ code {
 }
 
 .right-box-container {
-  border: 2px solid blue;
+  /*border: 2px solid blue;*/
   padding: 10px 10px 10px 0px;
   display: flex;
   justify-content: flex-end;
@@ -80,7 +83,8 @@ code {
 
 .form-section {
 padding: 10px;
-border: 3px black solid;
+/*border: 3px black solid;*/
+background-color: #f5cebe;
 }
 
 .text-field {
@@ -88,12 +92,15 @@ border: 3px black solid;
 }
 
 .empty-page {
-  margin: 0px 10px 0px 10px
+  padding: 0px 10px 0px 10px;
+  background-color: #f5cebe;
+  margin: 0px;
 }
 
 .checkbox {
   display: flex;
   align-items: center;
+  width: 200px;
 
 }
 
@@ -129,11 +136,16 @@ border: 3px black solid;
   display: flex;
   align-items: center;
   justify-content: center;
+  background-color: #114e60;
 }
 
 .content {
   width: 100%;
-  border: red solid 5px;
+  /*border: red solid 5px;*/
+
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 0px 0px 20px 0px;
 }
 
 
@@ -159,5 +171,11 @@ border: 3px black solid;
 
     justify-content: center;
   
+  }
+
+  .content {
+ 
+    margin-top: 20px;
+
   }
 }

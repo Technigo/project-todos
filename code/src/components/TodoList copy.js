@@ -9,11 +9,6 @@ import Button from '@material-ui/core/Button';
 import DeleteIcon from '@material-ui/icons/Delete';
 import IconButton from '@material-ui/core/IconButton';
 
-
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-
-
 const TodoList = () => {
     const items = useSelector((store) => store.todos.items);
 
@@ -46,20 +41,13 @@ const TodoList = () => {
                 </div>
                 <div className="list-bottom">
                 <div className="checkbox">
-                {/*<input
+                <input
                     
                         type="checkbox"
                         checked={todo.isComplete}
                         onChange={() => dispatch(todos.actions.toggleComplete(todo.id))} // Vi gör på detta sätt för att det finns en state eller actions i vår toggleComplete, vi tillkallar action delen
                         //minLength="5"
                     />{todo.isComplete ? <p className="completed-task">Completed</p> : <p className="not-completed-task">Mark as Completed</p>}
-                */}
-                <FormControlLabel
-        control={<Checkbox checked={todo.isComplete} onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}  />}
-        label={todo.isComplete ? <p className="completed-task">Completed</p> : <p className="not-completed-task">Mark as Completed</p>}
-      />
-                
-                
                 </div>
                 
                 <div className="remove-todo">
