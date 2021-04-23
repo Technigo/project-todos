@@ -7,38 +7,41 @@ import todos from '../reducers/todos'
 const TodoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  
+  justify-content: row;
+  align-items: center;
 `
 
 const CheckButton = styled.input`
   width: 20px;
   height: 20px;
-  justify-self: start; 
+ 
   margin: 20px;
 `
 
 const TodoDiv = styled.div`
   display: flex;
   flex-direction: row;
+  width: 100%;
+  border-bottom: 1px solid grey;
 `
 
 const Todo = styled.p`
-  margin: 20px;
+  
   padding: 0 10px 0 10px;
+  width: 150px;
 `
 
 const RemoveButton = styled.button`
-  justify-self: end;
+ 
   margin: 20px;
   width: 80px;
   height: 20px;
 `
 
 const TodoList = () => {
-  // Reach from items array from redux store
+
   const items = useSelector((store) => store.todos.items)
 
-   // Create an instance of useDispatch hook
   const dispatch = useDispatch()
 
   return (
@@ -48,7 +51,6 @@ const TodoList = () => {
           <CheckButton
             type="checkbox"
             checked={todo.isComplete}
-            // Dispatch (send) an action toggleComplete with one argument - id of a task
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
           />
           <Todo>{todo.description}</Todo>
