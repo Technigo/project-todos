@@ -4,7 +4,6 @@ import { useState } from 'react'
 import uniqid from 'uniqid'
 import TextField from '@material-ui/core/TextField'
 import Button from '@material-ui/core/Button'
-import Icon from '@material-ui/core/Icon'
 import SaveIcon from '@material-ui/icons/Save'
 import '../css/TodoForm.css'
 
