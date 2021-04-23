@@ -26,3 +26,24 @@ code {
 .blue {
   color: blue
 }
+
+.header-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.left-box {
+  border: 2px solid black;
+
+}
+
+.right-box {
+  border: 2px solid blue;
+}
+
+.form-section {
+  display: flex;
+  align-items: center;
+  margin: 10px 0px 0px 0px;
+}
+

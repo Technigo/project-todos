@@ -27,7 +27,7 @@ const dateToday = moment().format('LL');
 
 
     console.log(isCompleted.filter((x,i) => { return x.isComplete; }).length)
-    const amountOfNotCompleted = isCompleted.filter((x) => { return x.isComplete === false; }).length
+    const amountOfNotCompleted = isCompleted.filter((x) => { return x.isComplete === false; }).length // delete return 
 
 
     const today = new Date()
@@ -37,19 +37,18 @@ const dateToday = moment().format('LL');
     
 
     return(
-        <section>
-        <div>
+        <section className="header-section">
+        <div className="left-box">
             <h4>Todo</h4>
-            <h6>{dateToday}</h6>
+            <p>{dateToday}</p>
         </div>
-        <div>
-            <p>Total Todos: {summary}<span> {(summary === 2) ? "tasks" : "task"}</span></p>
+        <div className="right-box">
+            {(summary === 0) ? "" : <p>Total Todos: {summary}<span> {(summary === 2) ? "tasks" : "task"}</span></p>}
+            
+            {(summary === 0) ? "" : <p>{amountOfNotCompleted} uncompleted</p>}
 
-
-            <p>Total uncompleted tasks: {amountOfNotCompleted}</p>
-            <button
-            onClick={() => dispatch(todos.actions.clearAll())} 
-            >CLEAR ALL</button>
+            {(summary === 0) ? "" : <button onClick={() => dispatch(todos.actions.clearAll())}>CLEAR ALL</button>}
+            
         </div>
         </section>
     )

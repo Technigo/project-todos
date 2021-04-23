@@ -2,28 +2,11 @@ import React, { useState } from 'react'
 import uniqid from 'uniqid'
 import { useDispatch } from 'react-redux'
 
-import moment, { defaultFormatUtc } from 'moment'
+import moment from 'moment'
 
 import todos from '../reducers/todos'
-/* Start */
-
-import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-import DeleteIcon from '@material-ui/icons/Delete';
-import CloudUploadIcon from '@material-ui/icons/CloudUpload';
-import TextField from '@material-ui/core/TextField';
-
-
-
-
-
-
-/* End */
 
 const TodoForm = () => {
-
-
-
     const [value, setValue] = useState("")
 
     const dispatch = useDispatch()
@@ -37,8 +20,7 @@ const TodoForm = () => {
             isComplete:false,
             //date: moment().format('LLLL')
             date: Date.now(),
-            fromNow: moment().add(3, 'days').calendar(),
-            addDue: false
+            fromNow: moment().add(3, 'days').calendar()
         }
 
         dispatch(todos.actions.addTodo(newTodo));
@@ -47,27 +29,14 @@ const TodoForm = () => {
 
     return(
         
-        <form className="form-section">
-            <TextField 
+        <form onSubmit={onFormSubmit}>
+            <input 
                 type="text"
                 value={value}
                 onChange={e => setValue(e.target.value)}
-                label="+ Add Todo" 
-                variant="outlined"
             />
-          
             
-
-                  <Button
-                  onClick={onFormSubmit}
-        variant="contained"
-        color="primary"
-        endIcon={<CloudUploadIcon />}
-      >
-        Send
-      </Button>
-
-
+            <button type="submit">Add Todo</button>
         </form>
         
     )
