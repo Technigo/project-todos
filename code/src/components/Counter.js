@@ -29,7 +29,7 @@ const Counter = () => {
             <Delete src="assets/doubletick.png"></Delete>
         </ClearAllButton>
         <AllDone>
-          Mark / Unmark all as done
+          Mark all as done
         </AllDone>
       </ClearAllContainer>
     </Container>

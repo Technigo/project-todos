@@ -36,7 +36,7 @@ const todos = createSlice({
       const clearAll = store.items.map((todo) => {
           return {
               ...todo, 
-              isComplete: !todo.isComplete
+              isComplete: true
           }
       })
       store.items = clearAll
