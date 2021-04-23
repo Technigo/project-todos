@@ -1,5 +1,4 @@
-import React from "react"
-import { useState } from "react"
+import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import { nanoid } from '@reduxjs/toolkit'
 import styled from 'styled-components'
@@ -56,20 +55,10 @@ const AddContainer = () => {
 
   const dispatch = useDispatch()
 
-  const handleClick = () => {
-    setIsClicked(prevState => !prevState)
-  }
-
-  const handleChange = (event) => {
-    setNewTaskTitle(event.target.value)
-  }
-
-  const handleDateChange = (event) => {
-    setDueDate(event)
-  }
-
   const handleSubmit = (event) => {
     event.preventDefault();
+    console.log(dueDate)
+    console.log(dueDate.toJSON())
 
     if (newTaskTitle) {
 
@@ -78,8 +67,9 @@ const AddContainer = () => {
         title: newTaskTitle,
         isCompleted: false,
         isHidden: false,
-        dueDate
+        dueDate: dueDate.toJSON()
       }
+      console.log(newTask.dueDate)
 
       dispatch(tasks.actions.addTask(newTask))
       setNewTaskTitle("")
@@ -89,7 +79,7 @@ const AddContainer = () => {
 
   return (
     <StyledSection>
-      <StyledButton onClick={handleClick}>
+      <StyledButton onClick={() => setIsClicked(prevState => !prevState)}>
         <Icon src="./assets/plus-icon.svg" alt="plus icon" />
         <StyledParagraph>Add task</StyledParagraph>
       </StyledButton>
@@ -102,7 +92,7 @@ const AddContainer = () => {
           <StyledInput
             type="text"
             value={newTaskTitle}
-            onChange={handleChange}
+            onChange={(e) => setNewTaskTitle(e.target.value)}
             id="textinput"
           />
           <label htmlFor="datepicker">
@@ -111,7 +101,7 @@ const AddContainer = () => {
           <DatePicker
             dateFormat="dd/MM/yyyy"
             selected={dueDate}
-            onChange={handleDateChange}
+            onChange={(e) => setDueDate(e)}
             id="datepicker"
           />
           <StyledButton onClick={handleSubmit} >

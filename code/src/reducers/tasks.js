@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit'
 import dayjs from 'dayjs'
 
 const allTasks = [
-  { id: 1, title: "Finish project", isCompleted: false, isHidden: false, dueDate: new Date("April 25, 2021") },
-  { id: 2, title: "Call mum", isCompleted: false, isHidden: false, dueDate: new Date("April 19, 2021") },
-  { id: 3, title: "Get a haircut", isCompleted: true, isHidden: false, dueDate: new Date("May 2, 2021") },
+  { id: 1, title: "Finish project", isCompleted: false, isHidden: false, dueDate: new Date("April 25, 2021").toJSON() },
+  { id: 2, title: "Call mum", isCompleted: false, isHidden: false, dueDate: new Date("April 19, 2021").toJSON() },
+  { id: 3, title: "Get a haircut", isCompleted: true, isHidden: false, dueDate: new Date("May 2, 2021").toJSON() },
 ]
 
 const tasks = createSlice({
@@ -13,7 +13,7 @@ const tasks = createSlice({
     allTasks,
     isFiltered: false
   },
-  reducers: { // TODO: immutability
+  reducers: {
     addTask: (state, action) => {
       state.allTasks = [...state.allTasks, action.payload]
     },
