@@ -41,7 +41,8 @@ export const tasks = createSlice({
             const clearAll = store.items.map((task) => {
                 return {
                     ...task, 
-                    completed: !task.completed
+                    // completed: !task.completed
+                    completed: true
                 }
             })
             store.items = clearAll
