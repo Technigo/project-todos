@@ -19,12 +19,13 @@ const TodoList = () => {
         <div key={todo.id}>
           <p>{todo.description}</p>
           <input
+            className="checkbox"
             type="checkbox"
             checked={todo.isComplete}
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
          //onChange contains the action we are going to dispatch when we check a task as complete
           />
-          <button onClick={() => dispatch(todos.actions.removeTodos(todo.id))}>
+          <button className="remove-todo-btn" onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
             Delete
           </button>
         </div>

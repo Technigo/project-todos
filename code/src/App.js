@@ -11,13 +11,14 @@ const reducer = combineReducers({
   todos: todos.reducer
 })
 
-//creating our store 
+//created redux store from connected slices
 const store = configureStore({ reducer })
 
 export const App = () => {
-
+//Pass already created Redux store into <Provider /> component,
+//Store should always be passed as an argument 
   return (
-    <Provider store={store}>   {/* store should always be passed as an argument */}
+    <Provider store={store}>   
       <div>
         <TodoForm />
         <TodoList />

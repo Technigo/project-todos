@@ -1,21 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-// to-dos Slice
+//Slice
 const todos = createSlice ({
     name: 'todos',
     initialState: {
-    tasks: [
-      {id:1, description:'Cooking dinner', isComplete: false},
-      {id:2, description:'Doing dishes', isComplete: true},
-      {id:3, description:'Cleaning the rooms', isComplete: false}
-    ]
+    tasks: [],
+    inputValue:''
 },
+
     reducers: {
       //Creating the first action: a function-property inside our object reducer
       //"store"  should ALWAYS be passed as an argument, "action" only when needed
       toggleComplete: (store, action) => {
-      //we create a copy of the original array   
-        const updatedItems = store.tasks.map(todo => {
+      
+        //we create a copy of the original array   
+        const updatedTasks = store.tasks.map(todo => {
           if (todo.id === action.payload) {
            
             //If the task we are looping over is the same one as the one we just clicked 
@@ -30,12 +29,16 @@ const todos = createSlice ({
             return todo;
           }
         })
-        store.tasks = updatedItems
+        store.tasks = updatedTasks
       },
-      removeTodo: (store,action) =>{
-        const decreasedItems = store.items.filter(todo =>{
-          
-        })
+
+      removeTodo: (store, action) => {
+        const decreasedTasks = store.tasks.filter(todo => todo.id !== action.payload)
+        store.tasks = decreasedTasks
+      },
+
+      addTodo: (store, action) => {
+        store.tasks = [...store.tasks, action.payload]
       }
     }
 })
