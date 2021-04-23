@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f6f4f3;
 }
 
 code {
@@ -16,7 +15,13 @@ code {
 .container {
   margin: 30px auto;
   width: 280px;
-  border: 2px solid #183059;
+  padding: 5px;
+  background-color: #f6f4f3;
+  -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+  -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
 }
 
 .todo-information-container {
@@ -41,10 +46,11 @@ code {
   text-align: right;
 }
 
-.input-field { 
+.input-field {
   padding-left: 5px;
-  border-color: #183059;
+  border: none;
   resize: none;
+  outline: none;
 }
 
 .todo-form {
@@ -55,31 +61,32 @@ code {
 }
 
 .add-todo-button {
-  border: 2px solid #f18d93;
-  background-color: #f18d93;
+  border: 2px solid #305dc9;
+  background-color: #305dc9;
   transition-duration: 0.4s;
   color: white;
 }
 
 .add-todo-button:hover {
-  border: 2px solid #f03a47;
-  background-color: #f03a47; 
+  border: 2px solid #183059;
+  background-color: #183059;
   color: white;
   cursor: pointer;
 }
 
 .no-todos {
   margin: 20px;
-  border: 2px solid #183059;
+  border: 1px solid #c6d8f7;
   padding: 10px 5px;
   background-color: white;
-  font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
 }
 
 .todo-list {
   margin: 20px;
   background-color: white;
-  border: 2px solid #183059;
+  border: 1px solid #c6d8f7;
 }
 
 .todo-item {
@@ -99,7 +106,8 @@ code {
   word-break: break-word;
 }
 
-.clear-all-button, .delete-button {
+.clear-all-button,
+.delete-button {
   padding: 5px;
   border: none;
   background-color: white;
@@ -111,6 +119,7 @@ code {
   background-color: #f6f4f3;
 }
 
-.clear-all-button:hover, .delete-button:hover {
+.clear-all-button:hover,
+.delete-button:hover {
   cursor: pointer;
 }

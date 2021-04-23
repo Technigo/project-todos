@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import DatePicker from 'react-datepicker'
+
 import TaskCounter from './TaskCounter'
+// import ClearAll from './ClearAll'
 
 const TodoInformation = () => {
   const [startDate, setStartDate] = useState(new Date())
