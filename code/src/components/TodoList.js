@@ -8,8 +8,32 @@ import todos from '../reducers/todos'
 
 
 const TodoListContainer = styled.div`
-border-bottom: #6C4123 1px solid;
+  border-bottom: #6C4123 1px solid;
+  margin:1em;
+  
+  
 `
+
+const TaskWrapper = styled.div`
+
+`
+
+const Task = styled.text`
+  
+
+`
+
+const CheckboxAndButtonWrapper = styled.div`
+  
+
+`
+
+const Checkbox = styled.input`
+
+  
+`
+
+
 const Button = styled.button`
   background-color: #ece4b7;
   font-size: 1em;
@@ -18,7 +42,7 @@ const Button = styled.button`
   border: 3px solid #6C4123;
   border-radius: 10px;
   color: #6C4123;
-
+  
 `
 
 
@@ -35,19 +59,21 @@ const TodoList = () => {
     <div>
       {tasks.map(todo => (
         <TodoListContainer key={todo.id}>
-          
-            
-            <p>{todo.description}</p>
-            <input
-              className="checkbox"
-              type="checkbox"
-              checked={todo.isComplete}
-              onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-              //onChange contains the action we are going to dispatch when we check a task as complete
-            />
-            <Button  onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
-              Delete
-            </Button>
+          <TaskWrapper>
+            <Task>{todo.description}</Task>
+          </TaskWrapper>
+            <CheckboxAndButtonWrapper>
+              <Checkbox
+                className="checkbox"
+                type="checkbox"
+                checked={todo.isComplete}
+                onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+                //onChange contains the action we are going to dispatch when we check a task as complete
+              />
+              <Button  onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
+                Delete
+              </Button>
+            </CheckboxAndButtonWrapper>
           
         </TodoListContainer>
         

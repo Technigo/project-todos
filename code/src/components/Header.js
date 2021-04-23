@@ -9,7 +9,7 @@ height: 60px;
 border-radius: 10px;
 padding:10px;
 align-items: center;
-margin:
+
 ` 
 
 

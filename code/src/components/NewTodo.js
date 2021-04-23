@@ -7,6 +7,7 @@ import todos from '../reducers/todos'
 
 const NewTodoContainer = styled.form`
 margin: 15px 0;
+
 `
 
 const Input = styled.input`
