@@ -160,7 +160,7 @@ input[type="checkbox"] {
   height: 1.3em;
   border-radius: 50%;
   vertical-align: middle;
-  border: 1px solid #ddd;
+  /* border: 1px solid #ddd; */
   -webkit-appearance: none;
   outline: none;
   cursor: pointer;
@@ -194,4 +194,39 @@ input[type="checkbox"]:checked:after {
   font-weight: bold;
   font-size: 18px;
   margin:0;
+}
+
+@media (min-width: 1024px) {
+  main {
+    max-width: 800px;
+  }
+
+  .header h1 {
+    font-size: 55px;
+  }
+
+  .header p {
+    font-size: 25px;
+  }
+
+  .remove-button{
+    height: 50px;
+    padding:8px;
+  }
+
+  .task-text {
+    font-size: 20px;
+  }
+
+  .date-text {
+    font-size: 18px;
+  }
+
+  .completed-and-clear p {
+    font-size: 18px;
+  }
+
+  input {
+    font-size: 25px;
+  }
 }
