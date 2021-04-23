@@ -34,6 +34,7 @@ const TodoForm = () => {
     return (
         <form onSubmit={onFormSubmit} className="input-wrapper">
             <TextField 
+                required
                 id="outlined-basic"
                 label="Add new task"
                 variant="outlined"

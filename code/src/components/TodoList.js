@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton'
 import DeleteIcon from '@material-ui/icons/Delete'
+import '../css/TodoList.css'
 //import slice
 import todos from '../reducers/todos'
 
@@ -18,13 +19,15 @@ const TodoList = () => {
             <p>Your todos:</p>
             {items.map(todo =>(
                 <div key={todo.id} className="todo-item">
-                    <Checkbox
-                        checked={todo.isComplete}
-                        onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-                        color="primary"
-                        inputProps={{ "aria-label": "todo checkbox" }}
-                    />
-                    <p className={todo.isComplete && "todo-item-completed"}>{todo.description}</p>
+                    <div className="todo-item-checkbox-container">
+                        <Checkbox
+                            checked={todo.isComplete}
+                            onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+                            color="primary"
+                            inputProps={{ "aria-label": "todo checkbox" }}
+                        />
+                        <p className={todo.isComplete && "todo-item-completed"}>{todo.description}</p>
+                    </div>
                     <IconButton
                         aria-label="remove"
                         onClick={() => dispatch(todos.actions.removeTodo(todo.id))}

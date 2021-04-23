@@ -1,0 +1,26 @@
+.todolist-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .todo-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin: 10px;
+    background-color: #fff;
+    border-radius: 10px;
+    color: #708090;
+  }
+  
+  .todo-item-completed {
+    color: #9D9AB4;
+    text-decoration: line-through;
+  }
+  
+  .todo-item-checkbox-container {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+  }

@@ -26,18 +26,20 @@ const TodoHeader = () => {
         <header className="header-wrapper">
             <div className="header-title-container">
             <h1>What's up today?</h1>
-            <p>{today.format('YYYY-MM-DD')}</p>
             </div>
-            <div className="amount-todos-container">
-                <p>Completed:{completedTodos.length}/{numberOfTodos}</p>
-                <Button
-                    variant="outlined"
-                    size="small"
-                    onClick={onClickComplete}
-                    aria-label="check all"
-                >
-                    Check all
-                </Button>
+            <div className="header-text-container">
+                <p>{today.format('YYYY-MM-DD')}</p>
+                <div className="header-complete-todo-container">
+                    <p>Completed:{completedTodos.length}/{numberOfTodos}</p>
+                    <Button
+                        variant="outlined"
+                        size="small"
+                        onClick={onClickComplete}
+                        aria-label="check all"
+                    >
+                        Check all
+                    </Button>
+                </div>
             </div>
         </header>
     )

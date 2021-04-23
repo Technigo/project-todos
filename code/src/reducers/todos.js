@@ -27,7 +27,7 @@ const todos = createSlice({
             const completedItems = store.items.map(todo => {
                 return {
                     ...todo,
-                    isComplete: !todo.isComplete
+                    isComplete: true
                 }
             })
             store.items = completedItems

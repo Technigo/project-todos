@@ -18,6 +18,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.container{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
 
 .todo-wrapper {
   display: flex;
@@ -27,24 +32,4 @@ code {
   padding: 40px 10px 40px 10px;
   border-radius: 15px;
   background-color: #F4F6FD;
-}
-
-.todolist-wrapper {
-  display: flex;
-  flex-direction: column;
-}
-
-.todo-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.todo-item-completed{
-  color: blue;
-}
-
-.todo-item-completed{
-  color: #708090;
-  text-decoration: line-through;
 }
