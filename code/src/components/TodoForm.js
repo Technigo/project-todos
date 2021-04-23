@@ -27,7 +27,8 @@ const TodoForm = () => {
       description: newTask,
       isComplete: false,
       dateCreated: Date.now(),
-      deadline: deadline
+      deadline: deadline,
+      isPriority: false
     }
     dispatch(todo.actions.addItem(newToDo))
     setNewTask("")

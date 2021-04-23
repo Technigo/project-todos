@@ -6,11 +6,13 @@ import todo from '../reducers/todo'
 const DeleteButton = ({ item }) => {
   const dispatch = useDispatch()
   return (
-    <Delete
-      style={{ color:  "#8da7fe"}}
-      aria-label="delete"
-      onClick={() => dispatch(todo.actions.deleteItem(item.id))}
-    />
+    <div className="delete-button" onClick={() => dispatch(todo.actions.deleteItem(item.id))}>
+      <Delete
+        style={{ color: "white" }}
+        aria-label="delete"
+      />
+      <p>Delete task</p>
+    </div>
   )
 }
 export default DeleteButton

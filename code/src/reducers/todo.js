@@ -27,6 +27,19 @@ const todo = createSlice({
     addItem: (store, action) => {
       store.items = [...store.items, action.payload]
     },
+    togglePriority: (store, action) => {
+      const updatedItems = store.items.map(item => {
+        if (item.id === action.payload) {
+          return {
+            ...item,
+            isPriority: !item.isPriority
+          }
+        } else {
+          return item
+        }
+      })
+      store.items = updatedItems
+    },
     clearBoard: (store) => {
       store.items = []
     },
