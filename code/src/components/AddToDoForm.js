@@ -98,7 +98,6 @@ const UserInputTextarea = styled.textarea`
   width: 200px;
 `;
 
-// or this color: #FF10F0; like hotpink but not really ***
 const AddButton = styled.button`
   border-radius: 50%;
   margin-bottom: 40px;

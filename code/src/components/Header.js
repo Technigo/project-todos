@@ -18,9 +18,9 @@ const Header = () => {
           My to-do list
         </Heading>
       </HeaderContainer>
-      <CounterContainer>
+      <CounterAndZeroContainer>
       {allTodos === 0 ? <ZeroTodos /> : <Counter /> }
-      </CounterContainer>
+      </CounterAndZeroContainer>
     </>
   )
 }
@@ -31,9 +31,9 @@ const HeaderContainer = styled.div`
   justify-content: center;
   align-items: center; 
   flex-direction: column;
-  background: rgb(255,255,255);
+/*   background: rgb(255,255,255);
   background: radial-gradient(circle, rgba(255,255,255,1) 47%, rgba(181,211,251,1) 100%);
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 `;
 
 const Logo = styled.img`
@@ -48,7 +48,7 @@ const Heading = styled.h1`
   color: #4d8aff;
 `;
 
-const CounterContainer = styled(HeaderContainer)`
+const CounterAndZeroContainer = styled(HeaderContainer)`
 `;
 
 export default Header

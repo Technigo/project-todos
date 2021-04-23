@@ -1,6 +1,5 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { ClearAll } from '@material-ui/icons'
 import styled from 'styled-components'
 
 import todos from '../reducers/todos'
@@ -80,7 +79,7 @@ const AllDone = styled.p`
   font-size: 14px;
 `;
 
-const DeleteAllButton = styled(ClearAllButton)`
+const DeleteAllButton = styled.button`
   margin-top: 20px;
   background-color: #4d8aff; 
   border: none;

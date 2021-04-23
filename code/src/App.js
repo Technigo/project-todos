@@ -2,11 +2,13 @@ import React from 'react'
 import { Provider }  from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-import todos from './reducers/todos'
-import TodoApp from './components/TodoApp'
-import Header from './components/Header'
+import { Background } from './styling/GlobalStyles'
 
-import "./index.css";
+import todos from './reducers/todos'
+import Header from './components/Header'
+import AddTodoForm from './components/AddToDoForm'
+
+import "./index.css"
 
 const reducer = combineReducers({
   todos: todos.reducer
@@ -17,8 +19,10 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <Header /> 
-        <TodoApp /> 
+      <Background>
+        <Header /> 
+        <AddTodoForm />
+      </Background>
     </Provider>
   )
 }

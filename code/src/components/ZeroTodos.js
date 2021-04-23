@@ -5,7 +5,7 @@ const ZeroTodos = () => {
 
   return (
     <ZeroTodosContainer>
-      <img src="./assets/doubletick.png" />
+      <img src="./assets/doubletick.png" alt="double-tick"/>
       <ZeroTodosHeading>No tasks!</ZeroTodosHeading>
       <ZeroTodosInfoText>
         Add some new tasks and click the button below.
@@ -29,7 +29,7 @@ const ZeroTodosHeading = styled.h2`
 
 const ZeroTodosInfoText = styled.p`
   text-transform: uppercase; 
-  font-size: 14px;
+  font-size: 12px;
 `;
 
 export default ZeroTodos

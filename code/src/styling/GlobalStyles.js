@@ -4,8 +4,8 @@ import styled from 'styled-components'
 export const Background= styled.div`
   width: 100vw;
 /*   background: rgb(238,174,202);
-  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
-  opacity: 0.8; */
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%); */
+  opacity: 0.8; 
   background: rgb(255,255,255);
   background: radial-gradient(circle, rgba(255,255,255,1) 47%, rgba(181,211,251,1) 100%);
 `;
