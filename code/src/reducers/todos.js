@@ -31,6 +31,11 @@ const todos = createSlice ({
           }
         })
         store.tasks = updatedItems
+      },
+      removeTodo: (store,action) =>{
+        const decreasedItems = store.items.filter(todo =>{
+          
+        })
       }
     }
 })

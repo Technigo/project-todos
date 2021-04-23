@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux'
 //Importing the reducer that contains the action we are dispatching
 import todos from '../reducers/todos'
 
-
 const TodoList = () => {
 //we name this variable "tasks" the same as the property in the store -line 6 in the Slice todos
 //we select what we need from the store: the existing tasks  
@@ -14,20 +13,21 @@ const TodoList = () => {
 //The instance of useDistpatch in every component is writen the same way
   const dispatch = useDispatch();
   
-
   return (
     <div className="todo-list-container">
       {tasks.map(todo => (
         <div key={todo.id}>
-         <p>{todo.description}</p>
-         <input
-         type="checkbox"
-         checked={todo.isComplete}
-         onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+          <p>{todo.description}</p>
+          <input
+            type="checkbox"
+            checked={todo.isComplete}
+            onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
          //onChange contains the action we are going to dispatch when we check a task as complete
-         />
+          />
+          <button onClick={() => dispatch(todos.actions.removeTodos(todo.id))}>
+            Delete
+          </button>
         </div>
-
       ))}
     </div>
   )
