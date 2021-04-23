@@ -1,13 +1,16 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+From the Technigo BootCamp I got an assigment to create a ToDOo App.
+I can add and delete my tasks that I need to keep track of.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
+I have built the project with minor issues, but with some help from my team,
+the lectures, google, SO I solved them.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I did get stuck on styling the checkboxes and if I had more time I would continue to fix them.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://elated-gates-17548d.netlify.app/
+
