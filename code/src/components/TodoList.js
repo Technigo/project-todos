@@ -5,7 +5,6 @@ import todos from '../reducers/todos'
 
 const TodoList = () => {
     const items = useSelector((store) => store.todos.items) // reach for the items from the store todos by using useSelector
-    console.log(items) // now you can see the number of todo's in the console
 
     const dispatch = useDispatch() // always needed
 

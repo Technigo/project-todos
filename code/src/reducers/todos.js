@@ -4,11 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 const todos = createSlice({
     name: 'todos', // Good practice to name the slice as the varible itself
     initialState: { // An object with an array with an object with id, description and isComplete
-        items: [ // Name, initialState and recucers are standard names, items is not.
-            { id: 1, description: 'First Task', isComplete: false }, // We start from some todos but otherwise it should be an empty array
-            { id: 2, description: 'Second Task', isComplete: true },
-            { id: 3, description: 'Third Task', isComplete: false }
-        ]
+        items: [] // Name, initialState and recucers are standard names, items is not.
     },
     reducers: { // an object - therefore we need to write a property that's a function
         toggleComplete: (store, action) => { // redux is always passing an argument (store) here we also need an action property
@@ -34,7 +30,7 @@ const todos = createSlice({
         },
         addTodo: (store, action) => {
             store.items = [...store.items, action.payload]
-        },
+        }
     }
 })
 

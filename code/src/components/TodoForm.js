@@ -34,8 +34,7 @@ const TodoForm = () => {
                     onChange={event => setValue(event.target.value)}
                 />
             </section>
-        </form>
-        
+        </form>   
     )
 }
 
