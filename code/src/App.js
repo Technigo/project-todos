@@ -6,7 +6,6 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import todos from './reducers/todos'
 import Header from './components/Header'
 import TodoList from './components/TodoList'
-import Footer from './components/Footer'
 
 
 const reducer = combineReducers({
@@ -19,9 +18,8 @@ export const App = () => {
   return (
     <Provider store={store}>
       <GlobalFonts />
-       <Header />
-       <TodoList />
-       <Footer />
+      <Header />
+      <TodoList />
     </Provider>
   )
 }
