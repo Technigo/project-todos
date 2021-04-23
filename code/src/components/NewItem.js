@@ -27,39 +27,39 @@ const onSubmit = () => {
 
   return (
     <>
-    {showInput ? (
-      <div className= {showInput ? "" : "hide-inputfield"}>
-      <form className="add-container">
-        <input
-          type="text"
-          onChange={onNewTodo}
-          minLength="5"
-          maxLength="20"
-          value={newTodo}
-          placeholder="add new task"
-        />
+      {showInput ? (
+        <div className= {showInput ? "" : "hide-inputfield"}>
+          <form className="add-container">
+            <input
+              className="text-field"
+              type="text"
+              onChange={onNewTodo}
+              minLength="5"
+              maxLength="20"
+              value={newTodo}
+              placeholder="add new task"
+            />
+            <button 
+              type="sumbit"
+              className="add-button"
+              onClick={onSubmit}
+              disabled={newTodo === ''}
+            >
+              +
+            </button>
+          </form>
+        </div>
+      ):(
+      <div className="display-button-container">
         <button 
-          type="sumbit"
-          className="add-button"
-          onClick={onSubmit}
-          disabled={newTodo === ''}
+          type="button"
+          className="display-button"
+          onClick={onShowInput}
         >
           +
         </button>
-      </form>
-    </div>
-    ):(
-    <div className="display-button-container">
-      <button 
-        type="button"
-        className="display-button"
-        onClick={onShowInput}
-      >
-        +
-      </button>
-    </div>
-    )}
-    
+      </div>
+      )}
     </>
   )  
 }

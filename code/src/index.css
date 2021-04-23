@@ -5,8 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('https://images.pexels.com/photos/479444/pexels-photo-479444.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
   background-size: cover;
+  background-color: #ececec;
   font-family: 'PT Sans Narrow', sans-serif;
   display: flex;
   padding: 20px;
@@ -14,8 +14,6 @@ body {
   align-items: center;
   box-sizing: border-box;
   height: 100vh;
-  min-width: 200px;
-  max-width: 400px;
   color: #F4F3F3;
   font-weight: bold;
 }
@@ -26,20 +24,17 @@ code {
 }
 
 main {
-  border: 2px solid #F4F3F3;
+  border: 6px solid #F4F3F3;
   border-radius: 6px;
-  padding: 60px 20px;
   width: 300px;
+  padding: 80px 20px 40px 20px;
   box-sizing: border-box;
   background-image: linear-gradient(#74B2BD, #9ED1DA );
+  box-shadow: 0 0 18px #727272;
 }
 
 h1, h3, p {
   margin: 0;
-}
-
-h1 {
-  font-family: 'Dancing Script', cursive;
 }
 
 .statistics {
@@ -56,8 +51,6 @@ h1 {
 }
 
 .add-container {
-  /* display: flex;
-  flex-direction: row; */
   align-items: center;
 }
 
@@ -67,7 +60,7 @@ input {
   padding: 10px;
   background-color: #F4F3F3;
   box-shadow: 0 0 10px #F4F3F3;
-  margin: 12px 0;
+  margin: 12px 0 12px 2px;
 }
 
 .display-button-container {
@@ -82,7 +75,7 @@ input {
   background-color: #F4F3F3;
   border: none;
   border-radius: 50%;
-  margin-left: 10px;
+  margin: 6px 0 0 10px;
   color: #74B2BD;
   font-size: 20px;
   font-weight: bold;
@@ -97,10 +90,9 @@ input {
   font-size: 26px;
 }
 
-
 .add-button:hover,
 .display-button:hover {
-  background-color: rgba(243, 180, 227, 0.6);
+  background-color: rgba(236, 234, 234, 0.6);
 }
 
 .list-container {
@@ -146,6 +138,25 @@ input {
   cursor: pointer;
 }
 
-
-
 /**Media**/
+
+@media (min-width: 768px) {
+
+  body {
+    background-image: url('https://images.pexels.com/photos/479444/pexels-photo-479444.jpeg?auto=compress&cs=tinysrgb&h=650&w=940');
+  }
+
+}
+
+@media (min-width: 992px) {
+
+  main {
+    width: 400px;
+    padding: 100px 40px 80px 40px;
+  }
+
+  .text-field {
+    margin: 0 2px;
+    width: 230px;
+  }
+}

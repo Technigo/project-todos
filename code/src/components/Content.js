@@ -4,7 +4,6 @@ import TodoList from './TodoList'
 import NewItem from './NewItem'
 import Header from './Header'
 
-
 export const Content = () => {
   return (
     < main>

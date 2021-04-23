@@ -1,19 +1,23 @@
 # Project Todos
+This project was made during week 16 of the Technigo Bootcamp. The task was to build a Todo-app using Redux.
 
-Replace this readme with your own information about your project.
+Goals:
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+- How to structure a redux store
+- How to write reducers and actions
+- How to interact with your store using selectors or by dispatching actions
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started with building the basic functionality such as displaying tasks and checking them. Then I proceeded to styling which is a never ending story.. 
+
+Thereafter I did functionality such as being able to delete items, and making them crossed out after checking them.
+
+I am really happy about that I have learned to use ternary operators and conditional classes, so I practiced this a lot in this project. 
+
+If I had more time I would implement more functionalities, such as letting the user choose color-theme and maybe edit the todo:s. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
-
-
-ideas:
-Animation
-Möjligthet for the user to change theme in some way
+https://condescending-goldberg-167f53.netlify.app
 
