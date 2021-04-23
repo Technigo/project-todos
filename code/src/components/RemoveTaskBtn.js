@@ -12,7 +12,7 @@ return (
     <button
       className="remove-todo-btn"
       onClick={() => dispatch(todos.actions.removeTodo(props.todo.id))}>
-        <span className="delete-icon" role="img">❌</span>
+        <span className="delete-icon" role="img" aria-label="X sign">❌</span>
     </button>
 </div>
 )
