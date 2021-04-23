@@ -13,7 +13,7 @@ const FormContainer = styled.form`
 const InputForm = styled.input`
   display: flex;
   align-items: center;
-  width: 70%;
+ 
   height: 30px;
   margin: 20px 5px 20px 15px;
 `

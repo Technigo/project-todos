@@ -9,6 +9,7 @@ const TodoContainer = styled.div`
   flex-direction: column;
   justify-content: row;
   align-items: center;
+ 
 `
 
 const CheckButton = styled.input`
@@ -21,21 +22,25 @@ const CheckButton = styled.input`
 const TodoDiv = styled.div`
   display: flex;
   flex-direction: row;
-  width: 100%;
+ width: 100%;
   border-bottom: 1px solid grey;
 `
 
 const Todo = styled.p`
-  
+  font-size: 18px;
   padding: 0 10px 0 10px;
   width: 150px;
 `
 
 const RemoveButton = styled.button`
- 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-self: right;
   margin: 20px;
   width: 80px;
   height: 20px;
+  font-size: 15px;
 `
 
 const TodoList = () => {
