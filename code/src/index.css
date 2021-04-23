@@ -189,3 +189,9 @@ input[type="checkbox"]:checked:after {
   align-items: center;
   font-family: 'Inconsolata', monospace;
 }
+
+.no-todos-left p {
+  font-weight: bold;
+  font-size: 18px;
+  margin:0;
+}
