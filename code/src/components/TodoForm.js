@@ -7,19 +7,22 @@ import todos from '../reducers/todos'
 
 const FormContainer = styled.form`
   display: flex;
+  justify-content: center;
   border-bottom: 1px solid grey;
 `
 
 const InputForm = styled.input`
   display: flex;
   align-items: center;
- 
+  width: 230px;
   height: 30px;
-  margin: 20px 5px 20px 15px;
+  margin: 25px 5px 25px 10px;
 `
 
 const FormButton = styled.button`
-margin: 20px 2px 20px 2px;
+  margin: 25px 10px 25px 2px;
+  width: 70px;
+  height: 36px;
 ` 
 
 const TodoForm = () => {

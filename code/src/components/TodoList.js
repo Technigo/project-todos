@@ -7,21 +7,19 @@ import todos from '../reducers/todos'
 const TodoContainer = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: row;
-  align-items: center;
- 
+  justify-content: center;
+
 `
 
 const CheckButton = styled.input`
   width: 20px;
   height: 20px;
- 
   margin: 20px;
 `
 
 const TodoDiv = styled.div`
   display: flex;
-  flex-direction: row;
+  justify-content: center;
  width: 100%;
   border-bottom: 1px solid grey;
 `
