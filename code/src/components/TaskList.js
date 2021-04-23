@@ -47,7 +47,7 @@ const TaskDescription = styled.p`
   padding: 10px;
   font-size: 18px;
   color: #757575;
-  text-decoration: ${props.checked ? "line-through" : "none"};
+  text-decoration: ${(props) => props.checked ? "line-through" : "none"};
 `
 
 const IconContainer = styled.div`
