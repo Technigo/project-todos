@@ -3,14 +3,20 @@ import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 const HeaderContainer = styled.div`
-  color: green;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #c7ebde;
+  padding: 15px 0 15px 0;
 `
 
 const Title = styled.div`
-  color: green;
+  font-size: 25px;
+  
 `
 const Todo = styled.div`
-  color: green;
+  font-size: 15px;
+  
 `
 
 const Header = () => {

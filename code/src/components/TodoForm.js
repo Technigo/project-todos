@@ -1,8 +1,26 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid'
+import styled from 'styled-components'
 
 import todos from '../reducers/todos'
+
+const FormContainer = styled.form`
+  display: flex;
+  border-bottom: 1px solid black;
+`
+
+const InputForm = styled.input`
+  display: flex;
+  align-items: center;
+  width: 70%;
+  height: 30px;
+  margin: 20px 5px 20px 15px;
+`
+
+const FormButton = styled.button`
+margin: 20px 2px 20px 2px;
+` 
 
 const TodoForm = () => {
   const [value, setValue] = useState('')
@@ -23,14 +41,14 @@ const TodoForm = () => {
   }
 
   return (
-    <form onSubmit={e => onFormSubmit(e)}>
-      <input
+    <FormContainer onSubmit={e => onFormSubmit(e)}>
+      <InputForm
         type="text"
         value={value}
         onChange={e => setValue(e.target.value)}
       />
-      <button type="submit">Add todo</button>
-    </form>
+      <FormButton type="submit">Add task</FormButton>
+    </FormContainer>
   )
 }
 
