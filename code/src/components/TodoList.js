@@ -10,11 +10,14 @@ const ListContainer = styled.section`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  @media (min-width: 768px) {
+    flex-flow: wrap;
+  }
 `
 
 const PostIt = styled.div`
   width: 17rem;
-  height: 6rem;
+  height: 7rem;
   background: #e8d4e3;
   margin: 2rem;
   box-shadow: 5px 5px 7px rgb(33 33 33 / 39%);
@@ -35,6 +38,9 @@ const PostIt = styled.div`
         background-color: #212020;
     }
   }
+  @media (min-width: 1024px) {
+    height: 13rem;
+  }
 `
 
 const BinButton = styled.button`
@@ -54,6 +60,7 @@ const NoteText = styled.p`
   font-weight: 600;
   color: #171616;
   width: 9rem;
+  overflow: hidden;
 `
 
 const TodoList = () => {

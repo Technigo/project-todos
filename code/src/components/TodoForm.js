@@ -14,7 +14,10 @@ const AddContainer = styled.section`
   background: rgba(130 255 173 / 21%);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
-`;
+  @media (min-width: 1200px) {
+    margin: 0 30rem 0 30rem;
+  }
+`
 
 const AddButton = styled.button`
   width: 3rem;
@@ -23,7 +26,7 @@ const AddButton = styled.button`
   border-radius: 12px;
   background: transparent;
   font-size: 2rem;
-`;
+`
 
 const InputField = styled.input`
   width: 16rem;
@@ -32,9 +35,10 @@ const InputField = styled.input`
   border: none;
   outline: none;
   font-family: Rock Salt;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: black;
-`;
+  letter-spacing: 0.2rem;
+`
 
 const TodoForm = () => {
   const [value, setValue] = useState('')
@@ -61,7 +65,7 @@ const TodoForm = () => {
         </AddButton>
         <InputField  
           type="text"
-          placeholder="Add to list" placeholderTextColor="white"
+          placeholder="Add POST IT" placeholderTextColor="white"
           value={value}
           onChange={event => setValue(event.target.value)}>
         </InputField>
