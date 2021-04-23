@@ -40,7 +40,7 @@ const Logo = styled.img`
 `;
 
 const Heading = styled.h1`
-  font-size: 20px; 
+  font-size: 21px; 
   text-transform: uppercase;
   color: #4d8aff;
 `;

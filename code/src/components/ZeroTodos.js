@@ -5,7 +5,7 @@ const ZeroTodos = () => {
 
   return (
     <ZeroTodosContainer>
-      <img src="./assets/doubletick.png" alt="double-tick"/>
+      <img src="./assets/doubletick.png" alt="A doubletick"/>
       <ZeroTodosHeading>No tasks!</ZeroTodosHeading>
       <ZeroTodosInfoText>
         Add some new tasks and click the button below.
@@ -22,7 +22,7 @@ const ZeroTodosContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 40px;
-  color: slategrey;
+  color: #3b3d40;
 `;
 
 const ZeroTodosHeading = styled.h2`

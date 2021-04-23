@@ -7,6 +7,8 @@ import todos from 'reducers/todos'
 import TodoLove from './TodoLove'
 import TodoWork from './TodoWork'
 import TodoHome from './TodoHome'
+import TodoHobbies from './TodoHobbies'
+import TodoOther from './TodoOther'
 
 const AddTodoForm = () => {
   const dispatch = useDispatch()
@@ -72,7 +74,8 @@ const AddTodoForm = () => {
             <TodoHome />
             <TodoWork />
             <TodoLove />
-
+            <TodoHobbies />
+            <TodoOther />
       </Form>
     </>
   )
@@ -104,6 +107,9 @@ const AddButton = styled.button`
   width: 120px;
   height: 120px;
   text-transform: uppercase;
+  &:hover {
+    transform: scale(1.1);
+  }
 `;
 
 const Label = styled.label`
