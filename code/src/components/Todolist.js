@@ -8,6 +8,7 @@ import todos from '../reducers/todos'
 
 const TodoList = () => {
     const items = useSelector((store) => store.todos.items)
+    const completedItems = items.filter(singleTodo => singleTodo.isComplete)
     
 
     const dispatch = useDispatch()
@@ -15,11 +16,14 @@ const TodoList = () => {
 
     return (
         <div>
-        {items.map((todo, index) => (
+            <div className="amount">
+            <p>Total items: { items.length } </p>
+            <p>Completed items: { completedItems.length } / {items.length }</p>
+            <button className="button" onClick={() => dispatch(todos.actions.completeAllTodos())}>Mark all complete</button>
+            </div>
+            {items.map((todo, index) => (
             <div key={todo.id} className="container">
-                
-               
-                <input
+               <input
                 className="description"
                 type="checkbox"
                 checked={todo.isComplete}

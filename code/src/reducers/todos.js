@@ -45,7 +45,17 @@ const todos = createSlice({
 
             //Mutability
             store.items.push(action.payload)
-        } 
+        },
+        completeAllTodos: (store,action) => {
+
+            const itemsAllCompleted = store.items.map((task) => {
+                return {
+                    ...task,
+                    isComplete: true
+                }
+            })
+            store.items = itemsAllCompleted
+        }
     }
 })
 

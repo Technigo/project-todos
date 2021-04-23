@@ -26,6 +26,15 @@ code {
   align-items: center;
 }
 
+.amount {
+  background: #8F8681;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .header-container {
   background-color: rgb(26, 24, 24);
   color: rgb(225,220,217);
