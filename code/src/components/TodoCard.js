@@ -51,7 +51,7 @@ export const TodoCard = (props) => {
         </Tooltip>
         <Tooltip title="Delete">
           <RemoveButton onClick={() => dispatch(todos.actions.removeTask(id))}>
-            <FontAwesomeIcon icon="trash-alt" />
+            <FontAwesomeIcon className="trash-icon" icon="trash-alt" />
           </RemoveButton>
         </Tooltip>
       </CheckDeleteBox>

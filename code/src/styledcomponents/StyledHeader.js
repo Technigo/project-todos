@@ -18,7 +18,7 @@ export const TitleTop = styled.header`
 export const TitleDate = styled.div`
   display: flex;
   flex-direction: column;
-  margin: 0;
+  margin: 0 0 0 5px;
 `;
 
 export const Title = styled.h1`
@@ -42,7 +42,7 @@ export const DateTitle = styled.p`
 `;
 
 export const DrawerContainer = styled.aside`
-  background-color: ${props => props.theme.secondary};
+  background-color: ${props => props.theme.drawer};
   padding: 10px 20px;
   display: flex;
   flex-wrap: wrap;
@@ -52,7 +52,7 @@ export const DrawerContainer = styled.aside`
 
 export const DrawerContainerText = styled.p`
   font-size: 14px;
-  color: ${props => props.theme.buttonText};
+  color: ${props => props.theme.textColor};
   font-weight: bold;
   margin-right: 10px;
   @media (min-width: 768px) {

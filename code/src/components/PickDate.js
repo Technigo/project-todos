@@ -14,6 +14,7 @@ const Label = styled.label`
   font-size: 14px;
   font-weight: bold;
   margin-bottom: 5px;
+  color: ${props => props.theme.textColor};
   @media (min-width: 768px) {
     font-size: 17px;
   }

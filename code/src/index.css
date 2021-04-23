@@ -23,6 +23,7 @@ button {
   outline: none;
   border: none;
   font-family: "Playfair Display";
+  color: white;
 }
 
 .datepicker {
@@ -58,6 +59,10 @@ button {
 
 .icon {
   font-size: 18px;
+}
+
+.trash-icon {
+  color: black;
 }
 
 @media (min-width: 768px) {

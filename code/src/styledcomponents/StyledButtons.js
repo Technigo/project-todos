@@ -6,6 +6,7 @@ export const SettingsButton = styled.button`
   background-color: transparent;
   border-radius: 50%;
   padding: 0;
+  margin: 0 5px 0 0;
   color: ${props => props.theme.primary};
   :hover {
     opacity: 0.7;
@@ -81,7 +82,6 @@ export const RemoveButton = styled.button`
 // For Task Form component
 const ThemeColors = styled.button`
   background-color: ${props => props.theme.secondary};
-  color: ${props => props.theme.buttonText};
   :hover {
     opacity: 0.7;
   }

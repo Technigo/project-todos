@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const AddText = styled.p`
   font-size: 48px;
-  color: ${props => props.theme.buttonText};
   margin: 0 0 6px 0;
   @media (min-width: 768px) {
     font-size: 80px;
@@ -14,7 +13,7 @@ export const DrawerContainer = styled.section`
   display: flex;
   width: 100%;
   justify-content: center;
-  background-color: ${props => props.theme.backgroundColor};
+  background-color: ${props => props.theme.drawer};
 `;
 
 export const Form = styled.form`
@@ -23,7 +22,7 @@ export const Form = styled.form`
   flex-direction: column;
   padding: 20px 20px 110px 20px;
   width: 100%;
-  background-color: ${props => props.theme.backgroundColor};
+  background-color: ${props => props.theme.drawer};
   @media (min-width: 768px) {
     width: 700px;
   }
@@ -70,6 +69,7 @@ export const LabelText = styled.p`
   margin-bottom: 5px;
   font-weight: bold;
   font-size: 14px;
+  color: ${props => props.theme.textColor};
   @media (min-width: 768px) {
     font-size: 17px;
   }
