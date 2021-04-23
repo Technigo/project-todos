@@ -4,7 +4,7 @@ import { combineReducers, createStore } from "@reduxjs/toolkit";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTrashAlt, faShoppingCart, faCog, faHeart, faListUl, faCheckCircle, faBriefcase, faLaptopHouse } from "@fortawesome/free-solid-svg-icons";
 
-import { themes } from "./reducers/themes";
+import { themes } from "reducers/themes";
 import todos from "reducers/todos";
 
 import { Theme } from "./components/Theme";

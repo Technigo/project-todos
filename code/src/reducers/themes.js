@@ -5,7 +5,7 @@ import { grayTheme } from "../styledcomponents/StyledTheme";
 
 export const themes = createSlice({
   name: "themes",
-  initialState: grayTheme,
+  initialState: { theme: grayTheme },
   reducers: {
     changeTheme: (state, action) => {
         state.theme = action.payload;
