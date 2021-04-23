@@ -6,11 +6,12 @@ import styled from "styled-components"
 import GlobalFonts from "./fonts/fonts"
 
 import todos from "./reducers/todos"
+
 import TodoList from "./components/TodoList"
 import AddTask from "./components/AddTask"
 import TaskSummary from "./components/TaskSummary"
 import Header from "./components/Header"
-// import Footer from "./components/Footer"
+import Footer from "./components/Footer"
 
 const reducer = combineReducers({
   todos: todos.reducer
@@ -19,7 +20,6 @@ const reducer = combineReducers({
 const store = configureStore({ reducer })
 
 //Styled components
-
 const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,6 +29,12 @@ const StyledContainer = styled.div`
   background: #FDF4C9;
   box-shadow: 5px 5px 5px #0f0f0f;
   border-radius: 5px;
+  @media (min-width: 668px) {
+    width: 400px;
+  }
+  @media (min-width: 1024px) {
+    width: 500px;
+  }
 `
 
 export const App = () => {
@@ -40,8 +46,8 @@ export const App = () => {
         <TodoList/>
         <AddTask/>
         <TaskSummary/>
-        {/* <Footer/> */}
       </StyledContainer>
+        <Footer/>
     </Provider>
   )
 }

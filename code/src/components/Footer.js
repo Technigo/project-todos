@@ -1,12 +1,17 @@
 import React from "react"
 import styled from "styled-components"
 
+//Styled component
 const StyledFooter = styled.div`
   color: #2C2E73;
   font-family: "WrittenLies";
   font-size: 12px;
   margin-top: 30px;
   text-align: center;
+  width: 90%;
+  @media (min-width: 668px) {
+    width: 100%;
+  }
 `
 
 const Footer = () => {

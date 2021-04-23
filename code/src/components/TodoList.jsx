@@ -46,7 +46,6 @@ const TrashButton = styled.button`
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
-
   const dispatch = useDispatch()
 
   return (
@@ -57,13 +56,13 @@ const TodoList = () => {
             type="checkbox"
             checked={todo.isComplete}
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-            />
-            <StyledParagraph>{todo.description}</StyledParagraph>
+          />
+          <StyledParagraph>{todo.description}</StyledParagraph>
           <TrashButton onClick={() => dispatch(todos.actions.removeTask(todo.id))}>
-          <span role="img" alt="trash can" aria-label="trach can icon">❌</span>
+            <span role="img" alt="X mark" aria-label="X mark icon">❌</span>
           </TrashButton>
-      </Task>
-    ))}
+        </Task>
+      ))}
     </TaskList>
   )
 }

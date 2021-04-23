@@ -9,7 +9,7 @@ const todos = createSlice({
   },
   reducers: {
     toggleComplete: (store, action) => {
-      // Immutability version
+      // Immutability versions
       const updatedItems = store.items.map(todo => {
         if (todo.id === action.payload) {
           return {

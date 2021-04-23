@@ -5,25 +5,29 @@ import styled from "styled-components"
 
 import todos from "../reducers/todos"
 
+//Styled components
 const StyledForm = styled.form`
   display: flex;
   justify-content: space-between;
   box-sizing: border-box;
   border-bottom: solid #2C2E73;
   border-width: 0px 0px 2px 0px;
-  border-radius: 0% 0% 100% 0%/2% 0% 6% 0%;
-  transform: rotate(2deg);
+  border-radius: 5% 0% 40% 0%/2% 0% 10% 0%;
+  transform: rotate(1deg);
   margin: 10px 10px 0px 10px;
-`
-
-const TextInput = styled.input`
+  @media (min-width: 668px) {
+    width: 95%;
+  }
+  `
+  
+  const TextInput = styled.input`
   border: none;
+  background: #FDF4C9;
   padding: 10px;
   color: #2C2E73;
   font-family: "WrittenLies";
   font-size: 20px;
-  width: 70%;
-  background: #FDF4C9;
+  width: 80%;
 `
 
 const AddButton = styled.button`
@@ -44,7 +48,6 @@ const AddTask = () => {
 
   const onFormSubmit = (e) => {
     e.preventDefault()
-
     const newTask = {
       id: uniqid(),
       description: value,
@@ -61,6 +64,7 @@ const AddTask = () => {
         type="text"
         value={value}
         onChange={e => setValue(e.target.value)}
+        aria-label="text input"
       />
       <AddButton type="submit">
       <span role="img" alt="plus sign" aria-label="plus sign icon">➕</span>

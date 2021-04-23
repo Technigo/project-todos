@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components"
+import { createGlobalStyle } from "styled-components"  //Imported createGlobalStyle to be able to use it everywhere
 
 import WrittenLiesWoff from "./WrittenLies.woff"
 import WrittenLiesWoff2 from "./WrittenLies.woff2"

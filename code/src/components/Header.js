@@ -1,6 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 
+//Styled components
 const StyledHeader = styled.div`
   display: flex;
   justify-content: center;
@@ -9,6 +10,7 @@ const StyledHeader = styled.div`
   text-align: center;
   font-family: "WrittenLies";
   `
+
   const Title = styled.h1`
   border-bottom: solid #2C2E73;
   border-width: 0px 0px 2px 0px;
@@ -18,7 +20,6 @@ const StyledHeader = styled.div`
 `
 
 const Header = () => {
-
   return (
     <StyledHeader>
       <Title>ToDo!</Title>
