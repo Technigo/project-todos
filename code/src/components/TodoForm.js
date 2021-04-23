@@ -15,7 +15,8 @@ const TodoForm = () => {
         const newTodo = {
             id: uniqid(),
             description: value,
-            isComplete: false
+            isComplete: false,
+            dueDate: new Date().toJSON()
         };
 
         dispatch(todos.actions.addTodo(newTodo));
@@ -24,10 +25,6 @@ const TodoForm = () => {
 
     return (
         <form onSubmit={onFormSubmit}>
-
-
-
-
             <input
                 type="text"
                 value={value}

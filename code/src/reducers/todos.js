@@ -3,9 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const todos = createSlice({
     name: 'todos',
     initialState: {
-        items: [
-            {id: 1, description: 'text', isComplete: false}
-        ]
+        items: []
     },
     reducers: {
         // "store" argument keeps inside all of the data from slice store (initialState)
@@ -56,12 +54,12 @@ const todos = createSlice({
         },
         removeTodo: (store, action) => {
             // v1 - Immutability
-            // const decreasedItems = store.items.filter(todo => todo.id !== action.payload);
+            const decreasedItems = store.items.filter(todo => todo.id !== action.payload);
 
-            // store.items = decreasedItems;
+            store.items = decreasedItems;
 
             //v2 - Mutability
-            store.items.splice(action.payload, 1);
+            // store.items.splice(action.payload, 1);
         },
         addTodo: (store, action) => {
             console.log(action);
@@ -70,6 +68,18 @@ const todos = createSlice({
 
             // v2 - Mutability
             store.items.push(action.payload);
+        },
+        completeAllTodos: (store, action) => {
+            const itemsAllCompleted = store.items.map((task) => {
+                return {
+                    ...task,
+                    isComplete: true
+                }
+            });
+
+            store.items = itemsAllCompleted;
+
+            // store.items.forEach(task => task.isComplete = true);
         }
     }
 });
