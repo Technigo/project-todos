@@ -10,7 +10,7 @@ const NoTodosLeft = () => {
           src="https://assets3.lottiefiles.com/packages/lf20_rep49mth.json"
           background="transparent"
           speed="1"
-          style={{width: '300px', height: '300px'}}
+          style={{width: '200px', height: '200px'}}
           loop autoplay></lottie-player>
       </div>
     )
