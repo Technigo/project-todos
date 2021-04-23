@@ -14,10 +14,7 @@ const useStyles = makeStyles({
       marginLeft: "20px",
       color: "#8A3FFC"
   }
-   
- 
 });
-
 
 const AdminStuff = () => {
     const classes = useStyles()

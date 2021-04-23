@@ -31,7 +31,6 @@ const todos = createSlice({
         // if element from array has same id as id passed in action.payload, update the array 
 
         // This part of code is exactly the same as we would write :
-   // This part of code is exactly the same as we would write :
                 // {
                 //   todo.id,
                 //   todo.description,
@@ -62,12 +61,10 @@ const todos = createSlice({
                 })
                 //To update the store-items property and assign a new value:
                 store.items = updateTodo
-
             },
         //Add todo item
         //When todo is dispatched with a new payload including the item object and 
         //pushes to a new array, defined in AddTodo.js
-
         addToDo: (store, action) => {
             const addItem = action.payload
             store.items.push(addItem)
@@ -75,7 +72,6 @@ const todos = createSlice({
 
         // Filtering out all Id's which is not mapping 
         //we are passing in the payload todoId in TodoList 
-
         removeTodo: (store, action) => {
           const todoId = action.payload
           store.items = store.items.filter(e => e.id !==todoId)
@@ -85,12 +81,6 @@ const todos = createSlice({
         removeAll: (store) => {
             store.items = []
         },
-
-        // leftTodo: (store) => {
-        //     store.items = store.items.filter(e => e.isComplete === false)
-        // }
-
-
     }
 })
 

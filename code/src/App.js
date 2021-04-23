@@ -27,7 +27,6 @@ store.subscribe(() => {
   localStorage.setItem("reduxState", JSON.stringify(store.getState()));
 });
 
-
 export const App = () => {
   return (
     <Provider store={store}>

@@ -28,32 +28,33 @@ function TodoCard({todo}) {
     const dispatch = useDispatch()
 
     const classes = useStyles()
-  return (
-    <div>
-      <Card className={classes.root}>
-        <ListItem className={classes.list} key={todo.id}>
-          <Checkbox
-            className={classes.checkbox}
-            type="checkbox"
-            checked={todo.isComplete}
-            //Dispatch, enables us to send an action toogle with an argument(the id of the task), to update the store
-            onChange={() => dispatch(todos.actions.toggleDone(todo.id))}
-          />
-          <p
-            className={classes.text}
-            style={{ textDecoration: todo.isComplete ? "line-through" : "" }}
-          >
-            {todo.description}
-          </p>
-          <DeleteIcon
-            className={classes.delete}
-            type="button"
-            onClick={() => dispatch(todos.actions.removeTodo(todo.id))}
-          />
-        </ListItem>
-      </Card>
-    </div>
-  );
+    
+    return (
+      <div>
+        <Card className={classes.root}>
+          <ListItem className={classes.list} key={todo.id}>
+            <Checkbox
+              className={classes.checkbox}
+              type="checkbox"
+              checked={todo.isComplete}
+              //Dispatch, enables us to send an action toogle with an argument(the id of the task), to update the store
+              onChange={() => dispatch(todos.actions.toggleDone(todo.id))}
+            />
+            <p
+              className={classes.text}
+              style={{ textDecoration: todo.isComplete ? "line-through" : "" }}
+            >
+              {todo.description}
+            </p>
+            <DeleteIcon
+              className={classes.delete}
+              type="button"
+              onClick={() => dispatch(todos.actions.removeTodo(todo.id))}
+            />
+          </ListItem>
+        </Card>
+      </div>
+    );
 }
 
 export default TodoCard;

@@ -11,7 +11,6 @@ const useStyles = makeStyles({
     }
   });
 
-
 const Counter = () => {
     const classes = useStyles()
     const items = useSelector((store) => store.todos.items)

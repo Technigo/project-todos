@@ -21,19 +21,14 @@ const useStyles = makeStyles({
         fontSize: "22px"
     }
   });
-// import Counter from './Counter'
 
 function Header() {
-
     const classes = useStyles ();
     return (
         <div className={classes.heading}>
             <Typography variant="h3" component="h2">
                 Todo list
-                {/* <ListAltIcon/> */}
             </Typography>
-            
-            {/* <Counter /> */}
             <div className ={classes.calender}>
             <TodayRoundedIcon className={classes.icon}/>
                 {moment().format("dddd, Do MMMM")}

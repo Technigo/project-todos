@@ -32,15 +32,12 @@ const useStyles = makeStyles({
     }, heading: {
         display: "flex"
     }
-   
   });
 
 const AddNewTodo = () => {
     const classes = useStyles()
 
-    //adding a new todo to be fist saved in local state
     //this data will be passed on to the global store through dispatch
-    
     const [newTodo, setNewTodo] = useState ('')
     const [category, setCategory] = useState ('')
     const dispatch = useDispatch()
@@ -82,18 +79,17 @@ const AddNewTodo = () => {
                 />
             </form>
             <div className={classes.containter}>
-            <FormControl className={classes.select}variant="filled">
-                <InputLabel>Select category</InputLabel>
-                <Select name={'category'} value={category} onChange={event => setCategory(event.target.value)}>
-                    <MenuItem value={"Studies and work"}>Studies and work</MenuItem>
-                    <MenuItem value={"Training and health"}>Training and health</MenuItem>
-                    <MenuItem value={"Admin stuff"}>Admin stuff</MenuItem>
-                    <MenuItem value={"Other"}>Other</MenuItem>
-                </Select>
-            </FormControl>
-            <Fab className={classes.add} type="submit" color="primary" aria-label="add" onClick={handleSubmit}><AddIcon />
-            </Fab>
-            {/* <Button type="submit" onClick={handleSubmit}variant="contained">Add</Button>  */}
+                <FormControl className={classes.select}variant="filled">
+                    <InputLabel>Select category</InputLabel>
+                    <Select name={'category'} value={category} onChange={event => setCategory(event.target.value)}>
+                        <MenuItem value={"Studies and work"}>Studies and work</MenuItem>
+                        <MenuItem value={"Training and health"}>Training and health</MenuItem>
+                        <MenuItem value={"Admin stuff"}>Admin stuff</MenuItem>
+                        <MenuItem value={"Other"}>Other</MenuItem>
+                    </Select>
+                </FormControl>
+                <Fab className={classes.add} type="submit" color="primary" aria-label="add" onClick={handleSubmit}><AddIcon />
+                </Fab>
             </div>  
         </div>
     )

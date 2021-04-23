@@ -27,7 +27,7 @@ const Other = () => {
           <TodoCard todo={item}></TodoCard>
         ))}
         <Divider />
-        </Container>
+      </Container>
     );
   };
   

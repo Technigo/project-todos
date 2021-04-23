@@ -17,7 +17,6 @@ const useStyles = makeStyles({
  
 });
 
-
 const TrainingHealth = () => {
     const classes = useStyles()
     const todoList = useSelector((store) => store.todos);
@@ -30,7 +29,7 @@ const TrainingHealth = () => {
           <TodoCard todo={item}></TodoCard>
         ))}
        <Divider />
-       </Container>
+      </Container>
     );
   };
   

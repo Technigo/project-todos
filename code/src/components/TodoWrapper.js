@@ -37,24 +37,24 @@ const TodoWrapper = () => {
 
     const classes = useStyles()
 
-return(
-<div className="blubs">
-    <Container maxWidth="sm" className={classes.root}>
-        <Grid className={classes.container}>
-            <Header />
-            <AddNewTodo />
-            <WorkStudies />
-            <TrainingHealth />
-            <AdminStuff />
-            <Other />
-            <Container className={classes.wrapper}>
-                <ClearTodo />
-                <Counter/>  
+    return(
+        <div className="blubs">
+            <Container maxWidth="sm" className={classes.root}>
+                <Grid className={classes.container}>
+                    <Header />
+                    <AddNewTodo />
+                    <WorkStudies />
+                    <TrainingHealth />
+                    <AdminStuff />
+                    <Other />
+                    <Container className={classes.wrapper}>
+                        <ClearTodo />
+                        <Counter/>  
+                    </Container>
+                </Grid>
             </Container>
-        </Grid>
-    </Container>
-</div>
-)
+        </div>
+    )
 }
 
 export default TodoWrapper
