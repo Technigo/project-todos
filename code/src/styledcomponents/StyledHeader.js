@@ -8,11 +8,17 @@ export const TitleTop = styled.header`
   width: 95%;
   border-bottom: 2px solid ${props => props.theme.secondary};
   @media (min-width: 769px) {
-    padding: 20px 0;
+    padding: 20px 0 10px 0;
   }
   @media (min-width: 1025px) {
     max-width: 900px;
   }
+`;
+
+export const TitleDate = styled.div`
+  display: flex;
+  flex-direction: column;
+  margin: 0;
 `;
 
 export const Title = styled.h1`
@@ -21,6 +27,17 @@ export const Title = styled.h1`
   color: ${props => props.theme.primary};
   @media (min-width: 768px) {
     font-size: 58px;
+  }
+`;
+
+export const DateTitle = styled.p`
+  color: ${props => props.theme.primary};
+  margin: -3px 0 0 0;
+  font-weight: thin;
+  font-size: 16px;
+  @media (min-width: 768px) {
+    font-size: 22px;
+    margin-top: -7px;
   }
 `;
 

@@ -14,8 +14,6 @@ import {
   CheckDeleteBox, 
   TextDateBox, 
   TaskText, 
-  DateBox, 
-  DateText, 
   DateTextDue, 
   BoldText } from "../styledcomponents/StyledTodoCard";
 
@@ -37,10 +35,7 @@ export const TodoCard = (props) => {
         </Tooltip>
         <TextDateBox>
           <TaskText>{task}</TaskText>
-          <DateBox>
-            <DateText><BoldText>Created: </BoldText> {dateCreated}</DateText>
-            <DateTextDue due={dateCreated <= dateDue}><BoldText>Due: </BoldText> {dateDue}</DateTextDue>
-          </DateBox>
+          <DateTextDue due={dateCreated <= dateDue}><BoldText>Due: </BoldText> {dateDue}</DateTextDue>
         </TextDateBox>
       </TextDeleteBox>
       <CheckDeleteBox>

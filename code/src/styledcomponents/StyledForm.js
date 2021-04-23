@@ -10,7 +10,7 @@ export const AddText = styled.p`
   }
 `;
 
-export const DrawerContainer = styled.form`
+export const DrawerContainer = styled.section`
   display: flex;
   width: 100%;
   justify-content: center;

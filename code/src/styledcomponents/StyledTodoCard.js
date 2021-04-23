@@ -49,29 +49,21 @@ export const TaskText = styled.p`
   }
 `;
 
-export const DateBox = styled.div`
-  display: flex;
-  margin-top: 3px;
-`;
-
-export const DateText = styled.p`
+export const DateTextDue = styled.p`
   font-size: 11px;
-  margin: 0 7px 0 0;
+  margin: 0;
   display: flex;
   align-items: center;
-  @media (min-width: 768px) {
-    font-size: 16px;
-  }
-`;
-
-export const DateTextDue = styled(DateText)`
   ${props =>
     props.due ?
     `
     color: black;
     `:  `
     color: red;
-  `};
+  `}
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
 `;
 
 export const BoldText = styled.span`
