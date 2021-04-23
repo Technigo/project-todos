@@ -36,6 +36,10 @@ const todos = createSlice({
     addItem: (store, action) => {
       store.items = [...store.items, action.payload];
     },
+    removeAllItems: (store) => {
+      const updatedItems = [];
+      store.items = updatedItems;
+    },
   },
 });
 
