@@ -27,7 +27,6 @@ const GlobalStyle = createGlobalStyle`
   }
   @media (min-width: 450px) {
     body > div {
-      margin: 20px 0;
       max-width: 450px;
       border: 1px solid #03011f;
       border-radius: 50px;

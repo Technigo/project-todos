@@ -1,4 +1,4 @@
-import { createSlice, nanoid } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 import dayjs from 'dayjs'
 
 const allTasks = [
@@ -13,28 +13,20 @@ const tasks = createSlice({
     allTasks,
     isFiltered: false
   },
-  reducers: {
-    addTask: {
-      reducer(state, action) {
-        state.allTasks.push({ id: action.payload.id, title: action.payload.title, isCompleted: false, isHidden: false, dueDate: action.payload.content })
-      },
-      prepare(title, content) {
-        return {
-          payload: {
-            id: nanoid(),
-            title,
-            content
-          }
-        }
-      }
+  reducers: { // TODO: immutability
+    addTask: (state, action) => {
+      state.allTasks = [...state.allTasks, action.payload]
     },
+
     removeTask: (state, action) => {
       if (action.payload) {
-        state.allTasks = state.allTasks.filter(task => task.id !== action.payload.id)
+        const updatedItems = state.allTasks.filter(task => task.id !== action.payload.id)
+        state.allTasks = updatedItems
       } else {
         state.allTasks = []
       }
     },
+
     toggleTask: (state, action) => {
       const updatedItems = state.allTasks.map(task => {
         if (task.id === action.payload.id) {
@@ -48,12 +40,36 @@ const tasks = createSlice({
       })
       state.allTasks = updatedItems
     },
+
     completeAllTasks: (state, action) => {
-      for (let task of state.allTasks) {
-        task.isCompleted = true
-      }
+      const updatedItems = state.allTasks.map(task => {
+        return {
+          ...task,
+          isCompleted: true
+        }
+      })
+      state.allTasks = updatedItems
     },
+
     filterCompleted: (state, action) => {
+      // const filteredItems = state.allTasks.map(task => {
+      //   if (!task.isCompleted) {
+      //     return {
+      //       ...task,
+      //       isHidden: true
+      //     }
+      //   } else if (task.isCompleted) {
+      //     return {
+      //       ...task,
+      //       isHidden: false
+      //     }
+      //   }
+      // })
+
+      // const updatedItems = { allTasks: filteredItems, isFiltered: true }
+
+      // state = updatedItems
+
       for (let task of state.allTasks) {
         if (!task.isCompleted) {
           task.isHidden = true
@@ -63,41 +79,74 @@ const tasks = createSlice({
       }
       state.isFiltered = true
     },
-    filterUncompleted: (state, action) => {
-      for (let task of state.allTasks) {
+
+    filterUncompleted: (state) => {
+      const updatedItems = state.allTasks.map(task => {
         if (task.isCompleted) {
-          task.isHidden = true
+          return {
+            ...task,
+            isHidden: true
+          }
         } else if (!task.isCompleted) {
-          task.isHidden = false
+          return {
+            ...task,
+            isHidden: false
+          }
         }
-      }
+      })
+
+      state.allTasks = updatedItems
       state.isFiltered = true
     },
-    filterDueSoon: (state, action) => {
-      for (let task of state.allTasks) {
+
+    filterDueSoon: (state) => {
+      const updatedItems = state.allTasks.map(task => {
         if (!task.dueDate || task.isCompleted || dayjs(task.dueDate).isSameOrBefore(new Date())) {
-          task.isHidden = true
+          return {
+            ...task,
+            isHidden: true
+          }
         } else {
-          task.isHidden = false
+          return {
+            ...task,
+            isHidden: false
+          }
         }
-      }
+      })
+
+      state.allTasks = updatedItems
       state.isFiltered = true
     },
-    filterOverdue: (state, action) => {
-      for (let task of state.allTasks) {
+
+    filterOverdue: (state) => {
+      const updatedItems = state.allTasks.map(task => {
         if (!task.dueDate || task.isCompleted || !dayjs(task.dueDate).isSameOrBefore(new Date())) {
-          task.isHidden = true
+          return {
+            ...task,
+            isHidden: true
+          }
         } else {
-          task.isHidden = false
+          return {
+            ...task,
+            isHidden: false
+          }
         }
-      }
+      })
+
+      state.allTasks = updatedItems
       state.isFiltered = true
     },
-    resetFilter: (state, action) => {
-      for (let task of state.allTasks) {
-        task.isHidden = false
-      }
-      state.isFiltered = false
+
+    resetFilter: (state) => {
+      const updatedItems = state.allTasks.map(task => {
+        return {
+          ...task,
+          isHidden: false
+        }
+      })
+
+      state.allTasks = updatedItems
+      state.isFiltered = true
     }
   }
 })

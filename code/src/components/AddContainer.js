@@ -1,6 +1,7 @@
 import React from "react"
 import { useState } from "react"
 import { useDispatch } from "react-redux"
+import { nanoid } from '@reduxjs/toolkit'
 import styled from 'styled-components'
 import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
@@ -50,7 +51,7 @@ font-size: 20px;
 
 const AddContainer = () => {
   const [isClicked, setIsClicked] = useState(false)
-  const [newTask, setNewTask] = useState("")
+  const [newTaskTitle, setNewTaskTitle] = useState("")
   const [dueDate, setDueDate] = useState(null)
 
   const dispatch = useDispatch()
@@ -60,7 +61,7 @@ const AddContainer = () => {
   }
 
   const handleChange = (event) => {
-    setNewTask(event.target.value)
+    setNewTaskTitle(event.target.value)
   }
 
   const handleDateChange = (event) => {
@@ -69,9 +70,19 @@ const AddContainer = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (newTask) {
-      dispatch(tasks.actions.addTask(newTask, dueDate))
-      setNewTask("")
+
+    if (newTaskTitle) {
+
+      const newTask = {
+        id: nanoid(),
+        title: newTaskTitle,
+        isCompleted: false,
+        isHidden: false,
+        dueDate
+      }
+
+      dispatch(tasks.actions.addTask(newTask))
+      setNewTaskTitle("")
       setDueDate(null)
     }
   }
@@ -90,7 +101,7 @@ const AddContainer = () => {
             </label>
           <StyledInput
             type="text"
-            value={newTask}
+            value={newTaskTitle}
             onChange={handleChange}
             id="textinput"
           />
