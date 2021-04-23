@@ -11,6 +11,7 @@ export const tasks = createSlice({
     { id: 3, text: 'Fork week 15 repo', complete: true, created: '2021-04-19T18:30:23+02:00', editMode: false, dueDate: '2021-04-19T18:30:23+02:00' },
     { id: 4, text: 'Create a todo app', complete: false, created: '2021-04-19T22:14:23+02:00', editMode: false, dueDate: '2021-04-19T22:14:23+02:00' }
     ],
+    allChecked: false
   },
   reducers: {
     toggleComplete: (store, action) => {
@@ -26,6 +27,9 @@ export const tasks = createSlice({
       })
 
       store.items = updatedItems
+
+      const checkAllChecked = store.items.every(item => item.complete === true)
+      store.allChecked = checkAllChecked
     },
 
     postNewTodo: (store, action) => {
@@ -72,7 +76,7 @@ export const tasks = createSlice({
     }
     ,
 
-    clearAll: (store) => {
+    checkAll: (store) => {
       const updatedCompletion = store.items.map(item => {
         if (item.complete === false) {
           return {
@@ -84,7 +88,29 @@ export const tasks = createSlice({
         }
       })
 
+      
       store.items = updatedCompletion
+
+      const checkAllChecked = store.items.every(item => item.complete === true)
+      store.allChecked = checkAllChecked
+    },
+
+    uncheckAll: (store) => {
+      const updatedCompletion = store.items.map(item => {
+        if (item.complete === true) {
+          return {
+            ...item,
+            complete: false
+          }
+        } else {
+          return item
+        }
+      })
+
+      store.items = updatedCompletion
+
+      const checkAllChecked = store.items.every(item => item.complete === true)
+      store.allChecked = checkAllChecked
     }
   }
 })

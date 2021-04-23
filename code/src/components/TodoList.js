@@ -7,7 +7,7 @@ import NewTodo from './NewTodo'
 
 const Section = styled.section`
   @media (min-width: 998px) {
-    width: 60%;
+    width: 50%;
   }
 `
 

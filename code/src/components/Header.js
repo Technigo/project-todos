@@ -1,9 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import moment from 'moment'
 
 import { tasks } from '../reducers/tasks'
+
+import CheckAllBtn from './CheckAllBtn'
 
 const TopHeader = styled.header`
   box-sizing: border-box;
@@ -28,7 +30,7 @@ const TopHeaderWrapper = styled.div`
   align-items: center;
 
   @media (min-width: 998px) {
-    width: 60%;
+    width: 50%;
   }
 `
 
@@ -62,8 +64,6 @@ const Header = () => {
   const items = useSelector((store) => store.tasks.items)
   const completedItems = items.filter(items => items.complete).length
 
-  const dispatch = useDispatch()
-
   const today = moment().format('MMMM Do')
   
   return (
@@ -75,7 +75,7 @@ const Header = () => {
         </ListInfo>
         <ListInfo>
           <Span>{completedItems}/{items.length} tasks</Span>
-          <ClearBtn className="clear-btn" type="button" onClick={() => dispatch(tasks.actions.clearAll())}>CLEAR ALL</ClearBtn>
+          <CheckAllBtn />
         </ListInfo>
       </TopHeaderWrapper>
     </TopHeader>

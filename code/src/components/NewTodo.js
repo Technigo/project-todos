@@ -2,7 +2,6 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { DatePicker, DatePickerInput } from 'carbon-components-react'
-import 'carbon-components/css/carbon-components.min.css'
 
 import { tasks } from '../reducers/tasks'
 
@@ -73,7 +72,7 @@ const DatePickerWrapper = styled.div`
 const NewTodo = () => {
   const dispatch = useDispatch()
 
-  const [dueDate, setDueDate] = useState(new Date())
+  const [dueDate, setDueDate] = useState('')
   const [newTodoInput, setNewTodoInput] = useState('')
   
 
@@ -87,8 +86,8 @@ const NewTodo = () => {
     setNewTodoInput('')
   }
 
-  const onDateChange = (event) => {
-    setDueDate(event.target.value)
+  const onDateChange = (date) => {
+    console.log(date)
   }
 
   return (
@@ -111,8 +110,8 @@ const NewTodo = () => {
                 placeholder="due date"
                 labelText="Due Date"
                 type="text"
-                //value={dueDate}
-                onChange={onDateChange}
+                //date={dueDate}
+                onChange={(date) => onDateChange(date)}
               />
             </DatePicker>
           </DatePickerWrapper>
