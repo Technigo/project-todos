@@ -15,7 +15,7 @@ const store = configureStore({ reducer });
 
 export const App = () => {
   return (
-    <div className="todo-list">
+    <div className="todo-list-card">
       <Provider store={store}>
         <TodoForm />
         <TodoList />
