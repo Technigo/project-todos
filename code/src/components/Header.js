@@ -9,13 +9,9 @@ const Header = () => {
   return (
     <div className="header-container">
       <div className="header-section">
-        <div className="header-left-container border">
-          <p>Todo</p>
-          <p>Date</p>
-        </div>
-        <div className="header-right-container border">
-          <p>{items} tasks</p>
-          <button>Clear all</button>
+        <div className="header-left-container ">
+          <p>{items} Todo</p>
+          <button className="header-button">Clear all</button>
         </div>
       </div>
     </div>

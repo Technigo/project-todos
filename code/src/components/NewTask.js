@@ -32,10 +32,17 @@ const NewTask = () => {
   };
   return (
     <div className="new-task-container">
-      <div className="new-task-section border">
+      <div className="new-task-section ">
         <form>
-          <input type="text" value={inputValue} onChange={handleChange} />
-          <button onClick={handleOnClick}>Add New Task</button>
+          <input
+            className="new-task-input"
+            type="text"
+            value={inputValue}
+            onChange={handleChange}
+          />
+          <button className="new-task-button" onClick={handleOnClick}>
+            Add New Task
+          </button>
         </form>
       </div>
     </div>
