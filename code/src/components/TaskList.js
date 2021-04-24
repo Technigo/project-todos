@@ -27,13 +27,14 @@ export const TaskList = () => {
             <p>{task.text}</p>
           </div>
 
-          <button onClick={() => dispatch(tasks.actions.deleteTask(task.id))} className='btn-remove'>🗑️</button>
+          <button onClick={() => dispatch(tasks.actions.deleteTask(task.id))} className='btn-remove'>-</button>
 
         </div>
       ))}
-      <button onClick={() => dispatch(tasks.actions.completeAll())} className='btn-all-done'>Mark all as done</button>
-      <button onClick={() => dispatch(tasks.actions.deleteAll())} className='btn-all-delete'>Remove all todos</button>
-
+      <div className='btn-container'>
+        <button onClick={() => dispatch(tasks.actions.completeAll())} className='btn-all-done'>Mark all as done</button>
+        <button onClick={() => dispatch(tasks.actions.deleteAll())} className='btn-all-delete'>Remove all todos</button>
+      </div>
     </div>
   )
 }

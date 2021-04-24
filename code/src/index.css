@@ -4,7 +4,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f8f5f1;
+  background-color: #e5f3ffce;
 }
 
 code {
@@ -56,7 +56,7 @@ p {
   background-color: #f8e1f5;
   background-color: #f8f5f1;
   background-image: url('./assets/notice-board-2456210_1280.png');
-  background-size: 120%;
+  background-size: 110%;
   background-repeat: no-repeat;
   /* background-position-x: 40%; */
   background-position: center;
@@ -69,12 +69,13 @@ p {
   align-items: center;
   margin: 10px 20px;
   margin-bottom: 20px;
+  justify-content: center;
 }
 
 .text-input {
   height: 50px;
   width: 70%;
-  border: 1px solid #c9d2e4;
+  border: 1px solid #f8e1f5;
   border-radius: 5px;
   padding-left: 20px;
   outline: none;
@@ -90,12 +91,11 @@ input::placeholder {
 
 .btn-input {
   cursor: pointer;
-  background-color:#45526c;
+  background-color:#301a0c;
   display: inline-block;
   padding: 0;
   width: 61px;
-  /* margin:0 0.1em 0.1em 0;*/
-  border: 2px solid #41b8837e;
+  border: 2px solid #f8e1f5;
   border-radius: 100%;
   box-sizing: border-box;
   text-decoration: none;
@@ -119,8 +119,8 @@ input::placeholder {
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  background-color: #f8f5f1;
-  border: 1px solid #45526c5b;
+  background-color: #c89e6f;
+  border: 1px solid #301a0c;
   border-radius: 7px;
   margin: 20px 10px;
   padding: 0 10px;
@@ -131,15 +131,46 @@ input::placeholder {
   align-self: initial;
   flex-grow: 1;
   padding-left: 18px;
-
 }
 
 .btn-remove {
   border: none;
   border-radius: 50%;
   cursor: pointer;
+  font-size: 50px;
+  font-weight: 500;
+  background-color: #c89e6f;
+  padding: 0;
+  color:#301a0c;
 }
 
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-all-done, .btn-all-delete{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  border: 1px solid #301a0c;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 30px;
+  cursor: pointer;
+  width: 80px;
+}
+
+.btn-all-done {
+  background-color:#301a0c;
+  color: white;
+}
+
+.btn-all-delete {
+  background-color: #f8e1f5;
+  color: #301a0c;
+}
+
+/* CUSTOM CHECKBOX */ 
 .checkbox {
   display: inline-flex;
   cursor: pointer;
@@ -158,7 +189,7 @@ input::placeholder {
   -moz-appearance: none;
   -o-appearance: none;
   appearance: none;
-  border: 1px solid #34495E;
+  border: 1px solid #301a0c;
   border-radius: 20px;
   outline: none;
   transition-duration: 0.3s;
@@ -169,7 +200,7 @@ input::placeholder {
 }
 
 .checkbox > input:checked {
-  border: 1px solid #41B883;
+  border: 1px solid #301a0c;
   background-color: #34495E;
 }
 
