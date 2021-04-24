@@ -28,6 +28,7 @@ const ClearButton = styled.button`
 
   &:hover {
     background-color: #eead92;
+    cursor: pointer;
   }
 }
 `

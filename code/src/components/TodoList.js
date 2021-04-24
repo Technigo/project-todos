@@ -28,6 +28,12 @@ const DeleteButton = styled.button`
   align-items: center;
   justify-content: center;
   margin-left: 10px;
+  padding-bottom: 3px;
+  transition: background-color 0.4s;
+  &:hover {
+    background-color: #ea003a;
+    cursor: pointer;
+  }
 `
 
 const Timestamp = styled.p`
