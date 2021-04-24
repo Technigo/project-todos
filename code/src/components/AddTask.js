@@ -9,6 +9,7 @@ const FormContainer = styled.form`
   display: flex;
   justify-content: center;
   border-bottom: 1px solid grey;
+  background-color: #f0f0fc;
 `
 
 const InputForm = styled.input`
@@ -23,6 +24,7 @@ const FormButton = styled.button`
   margin: 25px 10px 25px 2px;
   width: 70px;
   height: 36px;
+  color: #032640;
 ` 
 
 const AddTask = () => {
@@ -36,7 +38,8 @@ const AddTask = () => {
     const newTodo = {
       id: uniqid(),
       description: value,
-      isComplete: false
+      isComplete: false,
+      dueDate: new Date().toJSON()
     }
 
     dispatch(todos.actions.addTodo(newTodo))

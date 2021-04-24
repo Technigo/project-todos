@@ -4,9 +4,9 @@ const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      { id: 1, description: 'First task', isComplete: false },
-      { id: 2, description: 'Second task', isComplete: false },
-      { id: 3, description: 'Third task', isComplete: false }
+   /* { id: 1, description: 'Task 1', isComplete: false },
+      { id: 2, description: 'Task 2', isComplete: false },
+      { id: 3, description: 'Task 3', isComplete: false }*/
     ]
   },
   reducers: {
@@ -23,10 +23,9 @@ const todos = createSlice({
         
         } else {
      
-            return todo
+          return todo
         }
       })
-
       store.items = updatedItems
     },
     removeTodo: (store, action) => {
@@ -36,9 +35,17 @@ const todos = createSlice({
     },
     addTodo: (store, action) => {
       store.items = [...store.items, action.payload]
-
+    },
+    completeAllTodos: (store, action) => {
+      const itemsAllCompleted = store.items.map((task) => {
+        return {
+          ...task,
+          isComplete: true
+        }
+      })
+      store.items = itemsAllCompleted
     }
   }
 })
 
-export default todos;
+export default todos
