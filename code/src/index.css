@@ -73,8 +73,8 @@ code {
 }
 
 .remove-todo-container img{
-  width: 28px;
-  height: 28px;
+  width: 30px;
+  height: 30px;
 }
 
 .checkbox {
@@ -90,38 +90,34 @@ code {
 
 .checkbox input {
   position: absolute;
-  top: 5px;
-  left: 14px;
-  width: 18px;
-  height: 18px;
 }
 
-.checkmark {
+.checkmark-round {
   position: absolute;
   top: 0;
   left: 10px;
   height: 30px;
   width: 30px;
   background-color:  rgba(232, 204, 232);
-  border-radius: 20px;
+  border-radius: 50%;
   border: 1px solid rgba(119, 40, 119)
 }
 
-.checkbox input:checked ~ .checkmark {
+.checkbox input:checked  ~ .checkmark-round{
   background-color: rgba(119, 40, 119);
 }
 
-.checkmark:after {
-  content: '';
+.checkmark-round:after {
+  content: ''; 
   position: absolute;
   display: none;
 }
 
-.checkbox input:checked ~ .checkmark:after {
+.checkbox input:checked ~ .checkmark-round:after {
   display: block;
 }
 
-.checkbox .checkmark:after {
+.checkbox .checkmark-round:after {
   left: 11px;
   top: 4px;
   width: 6px;
@@ -129,7 +125,7 @@ code {
   border: solid white;
   border-width: 0 4px 4px 0;
   border-radius: 2px;
-  -webkit-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg); 
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }

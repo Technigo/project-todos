@@ -2,14 +2,14 @@ import React from 'react'
 
 import TodoList from './TodoList'
 import Header from './Header'
-import AddTodo from './AddTodo'
+import AddTodoInput from './AddTodoInput'
 
 const TodoContainer = () => {
   return (
     <section className="todo-container">
       <Header />
       <TodoList />
-      <AddTodo />
+      <AddTodoInput />
     </section>
   )
 }

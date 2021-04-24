@@ -9,7 +9,7 @@ const TodoItem = ({ decription, checkComplete, onChangeToggle }) => {
           checked={checkComplete}
           onChange={onChangeToggle}
         />
-        <span className="checkmark"></span>
+        <span className="checkmark-round"></span>
       </label>
       <p tabIndex="0">{decription}</p>
     </>
