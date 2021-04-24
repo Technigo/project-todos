@@ -18,6 +18,7 @@ const Form = styled.form`
   flex-direction: column;
   background: #ffffff;
   padding: 3vh;
+  position: relative;
 
   @media (min-width: 768px) {
     padding: 4vh;
@@ -39,10 +40,6 @@ const Label = styled.label`
   background: transparent;
   width: 50%;
   margin-right: auto;
-
-  @media (min-width: 768px) {
-    width: 100%;
-  }
 `;
 
 const InputText = styled.input`
@@ -83,20 +80,24 @@ const NewTodo = () => {
   const dispatch = useDispatch();
   
   const [todo, setTodo] = useState('');
-  const [startDate, setStartDate] = useState(new Date());
+  const [dueDate, setDueDate] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
   const CustomInput = forwardRef(
-    ({ value, onClick }, ref) => (
+    ({ onClick }, ref) => (
       <DateButton 
         onClick={onClick} 
         ref={ref}
       >
-        {value}
+        Due date
       </DateButton>
     ),
   );
   
+  const onDateChange = (date) => {
+    setDueDate(date.toJSON());
+  };
+
   const validateFormInput = () => {
     let isFormValid = true;
 
@@ -121,6 +122,7 @@ const NewTodo = () => {
     const newTodo = {
       id: uniqid(),
       content: todo,
+      dueDate: dueDate,
       timeStamp: moment().format(),
       isComplete: false,
       isEdit: false
@@ -148,12 +150,10 @@ const NewTodo = () => {
               >
               </InputText>
             </Label>
-            <DatePicker 
-              selected={startDate}
-              placeholderText="Due date" 
-              onChange={date => setStartDate(date)} 
-              withPortal
+            <DatePicker
+              onChange={(date) => onDateChange(date)} 
               customInput={<CustomInput />}
+              withPortal
             >
             </DatePicker>
           </Container>

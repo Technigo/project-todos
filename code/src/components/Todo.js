@@ -82,6 +82,8 @@ const Todo = ({ todo }) => {
   const [editContent, setEditContent] = useState(todo.content);
   const dispatch = useDispatch();
 
+  const todoDueDate = moment(todo.dueDate).format('MMM D');
+
   const onInputChange = (e) => {
     setEditContent(e.target.value);
   };
@@ -128,7 +130,8 @@ const Todo = ({ todo }) => {
         </ContentParagraph>
       )}
 
-      <DateParagraph todoComplete={todo.isComplete}>{moment(todo.timeStamp).format('MMM D')}</DateParagraph>
+      {/* <DateParagraph todoComplete={todo.isComplete}>{moment(todo.timeStamp).format('MMM D')}</DateParagraph> */}
+      <DateParagraph todoComplete={todo.isComplete}>Due: {todoDueDate}</DateParagraph>
       {todo.isEdit ? <ExitButton todo={todo} /> : <EditButton todo={todo} />}
       {todo.isEdit ? <SaveButton onSaveEditedContent={onSaveEditedContent} /> : <DeleteButton todo={todo} />}
     </TodoContainer>

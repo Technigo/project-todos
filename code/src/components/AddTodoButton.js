@@ -7,24 +7,26 @@ import todos from '../reducers/todos';
 
 const Button = styled.button`
   display: flex;
-  background: transparent;
-  margin-right: 15px;
+  background: #ffffff;
   border: none;
   color: #ea9a96;
   padding: 0;
   position: absolute;
-  top: 5rem;
+  --button-size-sm: 4.5rem;
+  top: calc(var(--button-size-sm) / 2 * -1);
   right: 1.8rem;
-  font-size: 4.5rem;
+  font-size: var(--button-size-sm);
 
   @media (min-width: 768px) {
-    top: 8.9rem;
-    right: 7.8rem;
-    font-size: 5.5rem;
+    --button-size-md: 5.5rem;
+    top: calc(var(--button-size-md) / 2 * -1);
+    font-size: var(--button-size-md);
   }
   
   @media (min-width: 1200px) {
-    font-size: 6.5rem;
+    --button-size-lg: 6.5rem;
+    top: calc(var(--button-size-lg) / 2 * -1);
+    font-size: var(--button-size-lg);
   }
 `;
 
