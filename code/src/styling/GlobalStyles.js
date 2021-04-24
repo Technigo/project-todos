@@ -32,7 +32,7 @@ export const TodoList = styled.ul`
   justify-content: space-between;
   margin: 5px 0 5px 0;
   align-items: center;
-  padding: 10px 0 10px 0;
+  padding: 8px 0 8px 0;
   list-style-type: none;
   background-color: #e6c0d8;
   box-shadow: 2px 5px 5px cornflowerblue;

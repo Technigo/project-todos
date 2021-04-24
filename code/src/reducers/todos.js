@@ -39,7 +39,7 @@ const todos = createSlice({
     },
     deleteAllTodos: () => {
       return initialState
-  },
+  }
   }
 })
 

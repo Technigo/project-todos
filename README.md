@@ -24,12 +24,12 @@ And uses the following npm packages that are not included in the create-react-a
 ## Reflections
 I enjoyed the theme of this week's project and wanted to create an application that I would myself use and/or want to recommend to a friend. 
 
-I started out by learning more about Redux and Material UI, but I did not have a clear styling in mind for this project at the beginning of the week which made it more tricky to figure out the hierarchy logic of components. I would start by researching different applications that I am using in my daily life a bit, listing their pros and cons both in terms of features and design to plan it better if I did the project again.
+I started out by learning more about Redux and decided to practice using styled components, and introduce Material UI in the project. But I did not have a clear styling in mind at the beginning of the week which made it more tricky to figure out the hierarchy logic of components. I would start by researching different applications that I am using in my daily life a bit, listing their pros and cons both in terms of features and design to plan it better if I did it again.
 
 If I had more time I would also work with React datepicker so the user could choose a due date for their todos.
 If this project would have been with a fetch request I would make it more energy efficient, instead of getting data from global store in each component. And I am unsure if the approach that I took in this project is agreeable?
 
-If I were to re-do the project futurewise I would also test a different styling, where things would move dynamically on the page to give all the features space on an iPad for example. 
+Furthermore if I were to re-do the project in the future I would also test a different styling, where things would move dynamically on the page to give all the features space on an iPad for example. 
 ## View it live
 https://your-todo-app.netlify.app/
 
