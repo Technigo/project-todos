@@ -10,6 +10,7 @@ const TodoForm = () => {
   const [newTask, setNewTask] = useState("")
   const [deadline, setDeadline] = useState("")
   const [visible, setVisible] = useState(false)
+  const [category, setCategory] = useState("")
   const dispatch = useDispatch()
 
   const iconStyle = {
@@ -30,11 +31,13 @@ const TodoForm = () => {
       isComplete: false,
       dateCreated: Date.now(),
       deadline: deadline,
-      isPriority: false
+      isPriority: false,
+      category 
     }
     dispatch(todo.actions.addItem(newToDo))
     setNewTask("")
     setDeadline("")
+    setCategory("")
   }
 
   return (
@@ -71,6 +74,19 @@ const TodoForm = () => {
         />
         <div className="calendar-container">
         </div>
+        <select
+          required
+          className="selector"
+          value={category}
+          onChange={(event)=> setCategory(event.target.value)}
+        >
+        <option value="" disabled>Select category</option> 
+        <option value="Home">Home</option>
+        <option value="Personal">Personal</option>
+        <option value="Work">Work</option>
+      </select>
+
+
         <button className="submit-button" type="submit"> Add </button>
       </form>
     </div>
