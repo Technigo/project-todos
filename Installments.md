@@ -1,4 +1,4 @@
-## The Packages we have installed for this project
+## The Packages I have installed for this project
 
 1) npm install
 2) npm install @reduxjs/toolkit react-redux 
@@ -7,3 +7,4 @@
 5) npm install @material-ui/icons
 
  command = "npm run build"
+ command = "CI = npm run build"
