@@ -106,6 +106,7 @@ const AddButton = styled.button`
   color: #d5c2df;
   width: 120px;
   height: 120px;
+  transition: transform .5s;
   text-transform: uppercase;
   &:hover {
     transform: scale(1.1);
