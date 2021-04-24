@@ -15,7 +15,6 @@ const TaskItem = styled.div `
   align-items: center;
 `
 
-
 const DeleteButton = styled.button`
   border-radius: 50%;
   width: 20px;
@@ -87,7 +86,6 @@ const Checkbox = styled.label`
   cursor: pointer;
   position: relative;
 `
-
 
 const TodoList = () => {
   const tasks = useSelector(store => store.todos.tasks)

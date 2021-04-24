@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-
 const Container =styled.div`
   background-color: #f5cebe;
   padding: 10px;
@@ -36,8 +35,7 @@ const ProgressBar = () => {
 
   //Function to filter tasks done
   const countCompleted = () => {
-    const completedTasks = tasks.filter(task => task.isComplete === true)
-    
+    const completedTasks = tasks.filter(task => task.isComplete === true) 
     return completedTasks.length
   }
 

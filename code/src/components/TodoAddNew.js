@@ -5,7 +5,6 @@ import { v4 as uuidv4 } from 'uuid';
 
 import todos from '../reducers/todos'
 
-
 const Form = styled.form`
   display: flex;
   justify-content: center;
@@ -48,7 +47,6 @@ const TodoAddNew = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault()
-
     // Define newTask as an object – not done, and with "description" as the payload (what's being sent in to the function).
     const newTask = {
       id: uuidv4(),
@@ -56,7 +54,6 @@ const TodoAddNew = () => {
       isComplete: false,
       createdAt: new Date().toJSON()
     }
-
     dispatch(todos.actions.addTask(newTask))
     setValue('') // Clear the input field when entering
   }
