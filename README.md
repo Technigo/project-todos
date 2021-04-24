@@ -1,13 +1,15 @@
+This was an assignment made on the Technigo bootcamp. 
+
 # Project Todos
+The assignment was to make a todo app in React using Redux, learning how to structure a redux store, how to write reducers and actions, and how to interact with the store using selectors or by dispatching actions. 
 
-Replace this readme with your own information about your project.
+I made a todo app that is responsive, shows how many tasks are unfinished, and with buttons that can check all tasks and delete all checked tasks. When there aren't any tasks left a text and animation is shown.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Techniques used:
+* HTML
+* CSS/Styled Components
+* React/JSX
+* Redux/Redux Toolkit
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://zealous-ardinghelli-8278dd.netlify.app/
