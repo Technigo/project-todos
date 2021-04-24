@@ -22,13 +22,15 @@ const TaskForm = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form onSubmit={onFormSubmit} className='form'>
       <input
+        className='input'
         type="text"
         value={value}
         onChange={e => setValue(e.target.value)}
+        placeholder=' +  Add task'
       />
-      <button type="submit">Add a task</button>
+      <button type="submit" className='submit-button'>Add a task</button>
     </form>
   );
 };

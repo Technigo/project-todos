@@ -1,3 +1,9 @@
+html {
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -5,9 +11,94 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  max-width: 425px;
+  background-color: #fff;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* Header */
+
+.header {
+  background-image: url('./designs/background2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: bottom;
+  height: 35vh;
+  display: flex;
+  justify-content: space-between;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.left-header {
+  align-self: center;
+  width: 60%;
+}
+
+.left-header h1 {
+  font-weight: 100;
+  font-size: 35px;
+  margin: 0 0 0 30px;
+}
+
+.right-header {
+  align-self: flex-end;
+  background-color: rgba(0, 0, 0, 0.20);
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.right-header h2 {
+  margin: 0;
+  font-size: 25px;
+  font-weight: 400;
+}
+
+.right-header .count-paragraph {
+  margin: 0;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 25px;
+}
+
+.right-header .count-percentage {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.4);
+}
+
+/* Form, Task list */
+
+.task-item, .form {
+  padding: 20px;
+  border-bottom: 1px rgb(207, 205, 205) solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  width: 100%;
+  border: none;
+  height: 20px;
+  outline: none;
+  font-size: 15px;
+}
+
+.task-text {
+  display: inline;
+  font-size: 15px;
+  margin: 0;
+}
+
+.submit-button {
+  display: none;
+}
+
+
