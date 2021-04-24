@@ -36,7 +36,7 @@ const ProgressBar = () => {
 
   //Function to filter tasks done
   const countCompleted = () => {
-    let completedTasks = tasks.filter(task => task.isComplete === true)
+    const completedTasks = tasks.filter(task => task.isComplete === true)
     
     return completedTasks.length
   }

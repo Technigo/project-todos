@@ -24,7 +24,7 @@ const Header = () => {
   return (
     <HeaderWrap>
       <Title>Things To Do</Title>
-      <CurrentDate>{moment(Date.now()).format('MMMM Do YYYY, h:mm:ss a')}</CurrentDate>
+      <CurrentDate>{moment(new Date().toJSON()).format('MMMM Do YYYY')}</CurrentDate>
     </HeaderWrap>
   )
 }

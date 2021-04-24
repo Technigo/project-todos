@@ -54,7 +54,7 @@ const AddTodo = () => {
       id: uuidv4(),
       description: value,
       isComplete: false,
-      createdAt: Date.now()
+      createdAt: new Date().toJSON()
     }
 
     dispatch(todos.actions.addTask(newTask))
@@ -62,12 +62,14 @@ const AddTodo = () => {
   }
 
   return (
-    <Form>
+    <Form autocomplete='off'>
       <Input 
         placeholder='Enter new task'
+        id='check'
         type='text'
         value={value}
         onChange={(event) => setValue(event.target.value)}
+        autocomplete='off'
       />
       <SubmitButton
         type='submit'

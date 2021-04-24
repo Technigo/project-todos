@@ -39,11 +39,11 @@ body {
 }
 
 .task-description {
-  margin-left: 10px;
+  margin-left: 40px;
 }
 
 .task-description-done {
-  margin-left: 10px;
+  margin-left: 40px;
   text-decoration: line-through;
   color: #b7b7b7;
 }
