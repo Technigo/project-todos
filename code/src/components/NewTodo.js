@@ -14,11 +14,10 @@ const Input = styled.input`
   font-size: 18px;
   color: #555;
   padding:20px 10px 20px 5px;
-  margin-bottom: 30px;
+  margin: 30px 0 15px 0;
   border-radius: 25px;
   box-shadow: inset 8px 8px 8px #cbced1,
               inset -8px -8px 8px #ffffff;
-
 `
 const Button = styled.button`
   outline: none;
@@ -71,7 +70,7 @@ const NewTodo = () => {
         placeholder="Enter a new task"
         onChange={e => setValue(e.target.value)}
       />
-      <Button type="submit">Add todo</Button>
+      <Button type="submit">Add task</Button>
     </div>
   )
 }

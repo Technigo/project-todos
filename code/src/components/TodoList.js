@@ -6,10 +6,6 @@ import styled from 'styled-components'
 //Importing the reducer that contains the action we are dispatching
 import todos from '../reducers/todos'
 
-const TaskContainer= styled.div`
-
-
-`
 
 const TaskWrapper = styled.div`
   margin:30px 0;
@@ -58,8 +54,7 @@ const Button = styled.button`
   }
   &:active {
   background:#1da88a;
-  }
-  
+  }  
 `
 
 const TodoList = () => {
@@ -73,7 +68,7 @@ const TodoList = () => {
   return (
     <div>
       {tasks.map(todo => (
-        <TaskContainer key={todo.id}>
+        <div key={todo.id}>
           <TaskWrapper>
             <Text>{todo.description}</Text>
           </TaskWrapper>
@@ -88,12 +83,11 @@ const TodoList = () => {
               />
               <span className="checkbox-custom rectangular"></span>
             </label>
-             
-            <Button  onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
+            <Button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
                 Delete
             </Button>
           </CheckboxAndButtonWrapper>          
-        </TaskContainer>        
+        </div>        
       ))}
     </div>
   )

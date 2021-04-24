@@ -6,7 +6,6 @@ import todos from 'reducers/todos'
 import Header from 'components/Header'
 import NewTodo from 'components/NewTodo'
 import TodoList from 'components/TodoList'
-import Footer from 'components/Footer'
 import { AppContainer } from 'components/styled/home'
 
 //Combining our reducers and saving them in a variable
