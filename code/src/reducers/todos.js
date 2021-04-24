@@ -21,7 +21,7 @@ const todos = createSlice({
 
         completeAllTodo: (store, action) => {
             const areAllTasksCompleted = !store.items.find(todo => !todo.isComplete)
-            if(areAllTasksCompleted) {
+            if (areAllTasksCompleted) {
                 const completedItems = store.items.map(todo => {
                     return {
                         ...todo,
