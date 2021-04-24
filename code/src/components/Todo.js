@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components'; 
-import moment from 'moment';
+import dayjs from 'dayjs';
 import * as Icon from "react-icons/fi";
 import Checkbox from "react-custom-checkbox";
 
@@ -82,7 +82,7 @@ const Todo = ({ todo }) => {
   const [editContent, setEditContent] = useState(todo.content);
   const dispatch = useDispatch();
 
-  const todoDueDate = moment(todo.dueDate).format('MMM D');
+  const todoDueDate = dayjs(todo.dueDate).format('MMM D');
 
   const onInputChange = (e) => {
     setEditContent(e.target.value);
@@ -130,7 +130,7 @@ const Todo = ({ todo }) => {
         </ContentParagraph>
       )}
 
-      {/* <DateParagraph todoComplete={todo.isComplete}>{moment(todo.timeStamp).format('MMM D')}</DateParagraph> */}
+      {/* <DateParagraph todoComplete={todo.isComplete}>{dayjs(todo.timeStamp).format('MMM D')}</DateParagraph> */}
       <DateParagraph todoComplete={todo.isComplete}>Due: {todoDueDate}</DateParagraph>
       {todo.isEdit ? <ExitButton todo={todo} /> : <EditButton todo={todo} />}
       {todo.isEdit ? <SaveButton onSaveEditedContent={onSaveEditedContent} /> : <DeleteButton todo={todo} />}

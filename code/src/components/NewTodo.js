@@ -2,7 +2,7 @@ import React, { useState, forwardRef } from 'react';
 import styled from 'styled-components'; 
 import { useDispatch, useSelector } from 'react-redux';
 import uniqid from 'uniqid';
-import moment from 'moment';
+import dayjs from 'dayjs';
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
@@ -46,6 +46,7 @@ const InputText = styled.input`
   width: 50%;
   font-size: 16px;
   border: none;
+  border-bottom: 4px dotted #e5e5e5;
 
   @media (min-width: 768px) {
     width: 70%;
@@ -64,6 +65,12 @@ const DateButton = styled.button`
   border: none;
   border-radius: 5px;
   font-size: 16px;
+  padding: 8px;
+
+  &:hover {
+    background-color: #f3c6c3;
+    cursor: pointer;
+  }
 
   @media (min-width: 768px) {
     font-size: 20px;
@@ -123,7 +130,7 @@ const NewTodo = () => {
       id: uniqid(),
       content: todo,
       dueDate: dueDate,
-      timeStamp: moment().format(),
+      timeStamp: dayjs().format(),
       isComplete: false,
       isEdit: false
     };

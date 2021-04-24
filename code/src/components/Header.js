@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'; 
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 const HeaderContainer = styled.header`
   display: flex;
@@ -40,8 +40,8 @@ const Paragraph = styled.p`
 const Header = () => {
   return (
     <HeaderContainer>
-      <MainHeading>FRI</MainHeading>
-      <Paragraph>{moment().format('MMM D YYYY')}</Paragraph>
+      <MainHeading>{dayjs().format('dddd')}</MainHeading>
+      <Paragraph>{dayjs().format('MMM D YYYY')}</Paragraph>
     </HeaderContainer>
   );
 };

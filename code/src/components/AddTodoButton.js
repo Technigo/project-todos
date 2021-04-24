@@ -17,6 +17,11 @@ const Button = styled.button`
   right: 1.8rem;
   font-size: var(--button-size-sm);
 
+  &:hover {
+    color: #f3c6c3;
+    cursor: pointer;
+  }
+
   @media (min-width: 768px) {
     --button-size-md: 5.5rem;
     top: calc(var(--button-size-md) / 2 * -1);
