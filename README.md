@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The goal of this project was to build a todo app using Redux store.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I had no problem getting the basic functionalities to work, adding/removing tasks and toggling between completed/uncompleted. I have gotten into the habit of using a Trello board to keep track and structure my tasks, which works very well. I challenged myself to also add different filters. My approach for this worked, but it was overcomplicated and hard to read, even for myself. After I had gotten feedback from a code coach, I was able to refactor this part of the code. For me it was very giving and encouraging to be able to discuss my approach with a senior developer.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://tasks-to-do-project-todos.netlify.app/
