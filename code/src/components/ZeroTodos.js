@@ -5,7 +5,7 @@ const ZeroTodos = () => {
 
   return (
     <ZeroTodosContainer> 
-      <DoubleTick src="./assets/doubletick.png" alt="A doubletick"></DoubleTick>
+      <DoubleTick src="./assets/doubletick.png" alt="A doubletick that rotates one circle"></DoubleTick>
       <ZeroTodosHeading>No tasks!</ZeroTodosHeading>
       <ZeroTodosInfoText>
         Add some new tasks and click the button below.
