@@ -4,6 +4,8 @@ import uniqid from 'uniqid'
 
 import todos from '../reducers/todos'
 
+import AddButton from './AddButton'
+
 const AddTodo = () => {
   const [value, setValue] = useState('')
   const dispatch = useDispatch()
@@ -24,6 +26,13 @@ const AddTodo = () => {
     setValue(event.target.value)
   }
 
+  const isAddInputFilled = () => {
+    if (value === "") {
+      return false
+    }
+    return true
+  }
+
   return (
     <div className="form-container">
       <form className="add-todo" onSubmit={onFormSubmit}>
@@ -33,9 +42,8 @@ const AddTodo = () => {
           onChange={handleChange}
           placeholder="Add to do"
         />
-        <button className="add-button" type="submit">
-          <img src="./icons/icons8-plus-48.png" alt="A plus icon" />
-        </button>
+        <AddButton
+          isAddInputFilled={isAddInputFilled} />
       </form>
     </div>
   )
