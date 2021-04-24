@@ -34,8 +34,8 @@ export const App = () => {
         <Header/>
         <TaskCreator/>
         <ToDoList/>
+        <Footer/>
       </AppContainer>
-      <Footer/>
     </Provider>
   )
 };

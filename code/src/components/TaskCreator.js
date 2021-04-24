@@ -23,6 +23,7 @@ box-shadow: 0  0 10px #aaaaaa;
 const Input = styled.input`
 width: 200px;
 height: 30px;
+border-radius: 5px;
 background-color: #eee;
 border: none;
 font-size: 16px;
