@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { grayTheme } from "../styledcomponents/StyledTheme";
+import { boldTheme } from "../styledcomponents/StyledTheme";
 
 
 export const themes = createSlice({
   name: "themes",
-  initialState: { theme: grayTheme },
+  initialState: { theme: boldTheme },
   reducers: {
     changeTheme: (state, action) => {
         state.theme = action.payload;

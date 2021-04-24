@@ -47,17 +47,23 @@ const todos = createSlice({
       state.tasks = state.tasks.filter((task) => task.isComplete !== true);
     },
     toggleComplete: (state, action) => {
-      const updatedTasks = state.tasks.map(todo => {
-        if (todo.id === action.payload) {
+      const updatedTasks = state.tasks.map(task => {
+        if (task.id === action.payload) {
           return {
-            ...todo,
-            isComplete: !todo.isComplete,
+            ...task,
+            isComplete: !task.isComplete,
           }
         } else {
-            return todo;
+            return task;
           }
       });
       state.tasks = updatedTasks;
+    },
+    setAllComplete: (state) => {
+      state.tasks = state.tasks.map(task => ({
+        ...task,
+        isComplete: true
+      }))
     },
 }});
 

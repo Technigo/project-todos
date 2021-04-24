@@ -79,3 +79,9 @@ export const DialogContainer = styled.div`
   align-items: center;
   text-align: center;
 `;
+
+export const Buttons = styled(DialogContainer)`
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+`;

@@ -4,55 +4,44 @@ import { Dialog, DialogActions, DialogContent } from "@material-ui/core";
 
 import todos from "../../reducers/todos";
 import { ClearAllButton, DialogButton } from "../../styledcomponents/StyledButtons";
-import { ButtonContainer, DialogContainer } from "../../styledcomponents/StyledTaskList";
+import { ButtonContainer, DialogContainer, Buttons } from "../../styledcomponents/StyledTaskList";
 
 
 export const ClearButtons = () => {
   const [open, setOpen] = useState(false);
-  const [openCompleted, setOpenCompleted] = useState(false);
   const completed = useSelector((state) => state.todos.tasks.filter(task => task.isComplete === true));
   const dispatch = useDispatch();
 
-  const onClearAllDialog = () => {
+  const onToggleDialog = () => {
     setOpen(!open);
   };
 
-  const onClearCompletedDialog = () => {
-    setOpenCompleted(!openCompleted);
-  };
-
-  const onClearAll = () => {
+  const onDeleteAll = () => {
     dispatch(todos.actions.removeAllTasks());
-    onClearAllDialog();
+    onToggleDialog();
   };
 
-  const onClearCompleted = () => {
+  const onDeleteCompleted = () => {
     dispatch(todos.actions.removeCompletedTasks());
-    onClearCompletedDialog();
+    onToggleDialog();
   };
 
   return (
     <ButtonContainer>
-      <ClearAllButton onClick={onClearAllDialog}>Clear all</ClearAllButton>
-        <Dialog open={open} onClose={onClearAllDialog}>
+      <ClearAllButton onClick={onToggleDialog}>Delete all</ClearAllButton>
+        <Dialog open={open} onClose={onToggleDialog}>
           <DialogContainer>
             <DialogContent>Are you sure you want to delete all tasks?</DialogContent>
             <DialogActions>
-              <DialogButton onClick={onClearAllDialog}>Cancel</DialogButton>
-              <DialogButton onClick={onClearAll}>Yes, delete all!</DialogButton>
+              <Buttons>
+                <DialogButton onClick={onToggleDialog}>Cancel</DialogButton>
+                <DialogButton onClick={onDeleteCompleted} disabled={completed.length === 0}>Only completed</DialogButton>
+                <DialogButton onClick={onDeleteAll}>Yes, delete all!</DialogButton>
+              </Buttons>
             </DialogActions>
           </DialogContainer>
         </Dialog>
-      <ClearAllButton onClick={onClearCompletedDialog} disabled={completed.length === 0}>Clear completed</ClearAllButton>
-        <Dialog open={openCompleted} onClose={onClearCompletedDialog}>
-          <DialogContainer>
-            <DialogContent>Are you sure you want to delete all completed tasks?</DialogContent>
-            <DialogActions>
-              <DialogButton onClick={onClearCompletedDialog}>Cancel</DialogButton>
-              <DialogButton onClick={onClearCompleted}>Yes, delete!</DialogButton>
-            </DialogActions>
-          </DialogContainer>
-        </Dialog>
+      <ClearAllButton onClick={() => dispatch(todos.actions.setAllComplete())}>Complete all</ClearAllButton>
     </ButtonContainer>
   )
 };
