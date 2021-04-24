@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import moment from "moment";
-import Drawer from '@material-ui/core/Drawer';
+import { Tooltip, Drawer }  from '@material-ui/core/';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Tooltip from '@material-ui/core/Tooltip';
 
 import { ThemeButtons } from "./ThemeButtons";
-import { SettingsButton } from "../styledcomponents/StyledButtons";
+import { SettingsButton } from "../../styledcomponents/StyledButtons";
 import { 
   TitleTop, 
   TitleDate,
   Title, 
   DateTitle,
   DrawerContainer, 
-  DrawerContainerText } from "../styledcomponents/StyledHeader";
+  DrawerContainerText } from "../../styledcomponents/StyledHeader";
 
 
 export const Header = () => {
@@ -22,17 +21,18 @@ export const Header = () => {
     <TitleTop>
       <TitleDate>      
         <Title>toDO</Title>
-        <DateTitle>{moment().format("Do MMM YYYY")}</DateTitle>
+        <DateTitle>{moment().format("dddd DD MMMM")}</DateTitle>
       </TitleDate> 
       <Tooltip title="Change color theme">
         <SettingsButton
-          onClick={() => setOpen(true)}><FontAwesomeIcon icon="cog" /></SettingsButton>
+          onClick={() => setOpen(true)}>
+          <FontAwesomeIcon icon="cog" />
+        </SettingsButton>
       </Tooltip>
       <Drawer 
         anchor="top"
         open={open}         
-        onClose={() => setOpen(false)}
-        onOpen={() => setOpen(true)}>
+        onClose={() => setOpen(false)}>
         <DrawerContainer>
           <DrawerContainerText>Choose Color Theme: </DrawerContainerText>
           <ThemeButtons />

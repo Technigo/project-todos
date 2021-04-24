@@ -12,13 +12,15 @@ to {
 export const SettingsButton = styled.button`
   font-size: 28px;
   background-color: transparent;
-  border-radius: 50%;
   padding: 0;
   margin: 0;
   color: ${props => props.theme.primary};
   :hover {
     opacity: 0.7;
     animation: ${spin} 0.6s linear;
+  }
+  :focus {
+    border-bottom: 2px solid ${props => props.theme.primary};
   }
   @media (min-width: 768px) {
     font-size: 48px;
@@ -34,6 +36,9 @@ const ColorButton = styled.button`
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   :hover {
     opacity: 0.7;
+  }
+  :focus {
+    transform: scale(1.15);
   }
   @media (min-width: 768px) {
     width: 32px;
@@ -86,7 +91,10 @@ export const RemoveButton = styled.button`
   font-size: 20px;
   :hover {
       opacity: 0.5;
-  };
+  }
+  :focus {
+    border-bottom: 2px solid ${props => props.theme.primary};
+  }
 `;
 
 // For Task Form component
@@ -110,6 +118,10 @@ export const AddTaskButton = styled(ThemeColors)`
     transform: scale(1.1);
     opacity: 1;
   }
+  :focus {
+    transform: scale(1.1);
+    border: 4px solid ${props => props.theme.primary};
+  }
   @media (min-width: 768px) {
     width: 120px;
     height: 120px;
@@ -124,11 +136,14 @@ export const SubmitButton = styled(ThemeColors)`
   font-weight: bold;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
   border-radius: 5px;
+  :focus {
+    border: 4px solid ${props => props.theme.primary};
+  }
 `;
 
-// For To Do List component
+// For Task List component
 export const ClearAllButton = styled(ThemeColors)`
-  padding: 2px 5px 4px 5px;
+  padding: 3px 5px 4px 5px;
   border-radius: 5px;
   font-size: 14px;
   margin: 10px 0 20px 5px;
@@ -138,10 +153,17 @@ export const ClearAllButton = styled(ThemeColors)`
     opacity: 0.3;
     `:  `
     opacity: 1;
-  `};
+  `}
+  :focus {
+    background-color: ${props => props.theme.primary};
+  }
   @media (min-width: 768px) {
     padding: 5px 10px;
     margin: 10px 0 20px 10px;
     font-size: 18px;
   }
+`;
+
+export const DialogButton = styled(ClearAllButton)`
+  padding: 5px 10px;
 `;

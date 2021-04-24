@@ -22,7 +22,6 @@ export const TitleDate = styled.div`
   @media (min-width: 768px) {
     margin-left: 10px;
   }
-
 `;
 
 export const Title = styled.h1`

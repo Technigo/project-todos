@@ -2,27 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 import Select from "react-select";
 
-import styled from "styled-components";
+import { FilterContainer, LabelText } from "../../styledcomponents/StyledTaskList";
 
-const FilterContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  padding: 0 5px;
-  margin-bottom: 10px;
-  width: 100%;
-`;
 
-const LabelText = styled.p`
-  font-size: 14px;
-  font-weight: bold;
-  margin: 2px;
-  @media (min-width: 768px) {
-    font-size: 17px;
-    margin: 5px;
-  }
-`;
-
-export const FilterTodos = ({ category, onChange }) => {
+export const FilterTasks = ({ category, onChange }) => {
   const filterCategories = useSelector((state) => state.todos.filterCategories);
 
   return (

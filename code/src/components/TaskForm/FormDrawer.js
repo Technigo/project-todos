@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import Drawer from "@material-ui/core/Drawer";
 
-import todos from "../reducers/todos";
-import { AddToDo } from "./AddToDo";
-
-import { AddTaskButton } from "../styledcomponents/StyledButtons";
-import { AddText, DrawerContainer, BottomContainer, } from "../styledcomponents/StyledForm";
+import todos from "../../reducers/todos";
+import { AddTask } from "./AddTask";
+import { AddTaskButton } from "../../styledcomponents/StyledButtons";
+import { AddText, DrawerContainer, BottomContainer } from "../../styledcomponents/StyledTaskForm";
 
 
 export const FormDrawer= () => {
@@ -33,14 +32,13 @@ export const FormDrawer= () => {
       <Drawer 
         anchor="bottom"
         open={openForm}         
-        onClose={() => setOpenForm(false)}
-        onOpen={() => setOpenForm(true)}>
+        onClose={() => setOpenForm(false)}>
         <DrawerContainer>
-          <AddToDo
-            onSubmit={onFormSubmit}
-            handleSelectChange={category => setCategory(category.value)}
-            handleDateChange={dueDate => setDueDate(dueDate)}
-            handleInputChange={e => setTask(e.target.value)}
+          <AddTask
+            handleSubmit={onFormSubmit}
+            handleSelect={category => setCategory(category.value)}
+            handleDate={dueDate => setDueDate(dueDate)}
+            handleInput={e => setTask(e.target.value)}
             category={category.value}
             dueDate={dueDate}
             task={task} />

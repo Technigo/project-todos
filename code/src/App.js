@@ -2,13 +2,21 @@ import React from "react";
 import { Provider } from "react-redux";
 import { combineReducers, createStore } from "@reduxjs/toolkit";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faTrashAlt, faShoppingCart, faCog, faHeart, faListUl, faCheckCircle, faBriefcase, faLaptopHouse } from "@fortawesome/free-solid-svg-icons";
+import { 
+  faTrashAlt, 
+  faShoppingCart, 
+  faCog, 
+  faHeart, 
+  faListUl, 
+  faCheckCircle, 
+  faBriefcase, 
+  faLaptopHouse } from "@fortawesome/free-solid-svg-icons";
 
 import { themes } from "reducers/themes";
 import todos from "reducers/todos";
 
-import { Theme } from "./components/Theme";
-import { TodoPage } from "./components/TodoPage";
+import { Theme } from "./components/Main/Theme";
+import { TaskPage } from "./components/Main/TaskPage";
 
 library.add(faTrashAlt, faShoppingCart, faCog, faHeart, faListUl, faCheckCircle, faBriefcase, faLaptopHouse);
 
@@ -40,7 +48,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Theme>
-        <TodoPage />
+        <TaskPage />
       </Theme>
     </Provider>
   )

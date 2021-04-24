@@ -3,31 +3,39 @@ import { useSelector } from "react-redux";
 import Select from "react-select";
 
 import { PickDate } from "./PickDate";
-import { SubmitButton } from "../styledcomponents/StyledButtons";
+import { SubmitButton } from "../../styledcomponents/StyledButtons";
 import { 
   Form, 
   Input, 
   Options, 
   LabelText, 
-  CategoryDate } from "../styledcomponents/StyledForm";
+  CategoryDate } from "../../styledcomponents/StyledTaskForm";
 
 
-export const AddToDo = ({ onSubmit, handleSelectChange, handleDateChange, handleInputChange, category, dueDate, task }) => {
+export const AddTask = ({ 
+  handleSubmit, 
+  handleSelect, 
+  handleDate, 
+  handleInput, 
+  category, 
+  dueDate, 
+  task }) => {
+
   const categories = useSelector((state) => state.todos.categories);
 
   return (
-    <Form onSubmit={onSubmit}>
+    <Form onSubmit={handleSubmit}>
       <CategoryDate>
         <Options>
           <LabelText>Choose category:</LabelText>
           <Select
             value={category}
-            onChange={handleSelectChange}
+            onChange={handleSelect}
             options={categories}
           />
         </Options>
         <PickDate 
-          onChange={handleDateChange}
+          onChange={handleDate}
           selected={dueDate}
         />
       </CategoryDate>
@@ -35,7 +43,7 @@ export const AddToDo = ({ onSubmit, handleSelectChange, handleDateChange, handle
         type="text"
         placeholder="Task description"
         value={task}
-        onChange={handleInputChange}
+        onChange={handleInput}
         minLength="3"
         maxLength="30"
         required />

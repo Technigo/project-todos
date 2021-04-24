@@ -41,13 +41,16 @@ button {
   color: black;
 }
 
+.MuiCheckbox-root {
+  background-color: transparent !important;
+}
+
 .MuiIconButton-root {
   color: rgba(0, 0, 0, 0.04) !important;
 }
 
-.MuiIconButton-root:hover, .MuiIconButton-root:focus {
+.MuiCheckbox-root:hover, .MuiCheckbox-root:focus {
   background-color: rgba(0, 0, 0, 0.04) !important;
-  color: rgba(0, 0, 0, 0.04) !important;
 }
 
 .PrivateSwitchBase-root-1 {
@@ -58,6 +61,7 @@ button {
 .filter {
   width: 200px !important;
   font-size: 14px !important;
+  outline: none;
 }
 
 .icon {
@@ -68,6 +72,7 @@ button {
   color: black;
   margin-bottom: 1px;
 }
+
 
 @media (min-width: 768px) {
   .icon {

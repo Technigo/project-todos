@@ -70,3 +70,11 @@ export const BoldText = styled.span`
   font-weight: bold;
   margin: 0 3px 0 0;
 `;
+
+// For DeleteButton
+export const DialogContainer = styled.div`
+  padding: 0px;
+  display: flex;
+  flex-directioN: column;
+  align-items: center;
+`;
