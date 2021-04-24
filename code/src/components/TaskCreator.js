@@ -78,6 +78,7 @@ const TaskCreator = () => {
         value={value}
         onChange={handleChange}
         placeholder="Write to do here"
+        aria-label="to do input"
       />
       <Button type="submit"disabled={!value}><Image src="./assets/plus.png" alt="Add"/></Button>
     </Form>
