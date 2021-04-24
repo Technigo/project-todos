@@ -65,7 +65,7 @@ const TodoForm = () => {
         </AddButton>
         <InputField  
           type="text"
-          placeholder="Add POST IT" placeholderTextColor="white"
+          placeholder="Add POST IT" 
           value={value}
           onChange={event => setValue(event.target.value)}>
         </InputField>
