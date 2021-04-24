@@ -1,29 +1,14 @@
 import React, { useState } from 'react'
 import uniqid from 'uniqid'
 import { useDispatch } from 'react-redux'
-
-import moment from 'moment'
-
-import todos from '../reducers/todos'
-/* Start */
-
 import Button from '@material-ui/core/Button';
-import Icon from '@material-ui/core/Icon';
-import DeleteIcon from '@material-ui/icons/Delete';
 import CloudUploadIcon from '@material-ui/icons/CloudUpload';
 import TextField from '@material-ui/core/TextField';
 
-
-
-
-
-
-/* End */
+import moment from 'moment'
+import todos from '../reducers/todos'
 
 const TodoForm = () => {
-
-
-
     const [value, setValue] = useState("")
     const dispatch = useDispatch()
 
@@ -35,60 +20,40 @@ const TodoForm = () => {
         } else if (value.length > 2) {
             const newTodo = {
                 id: uniqid(),
-                description:value, //Value above in row 5
+                description:value,
                 isComplete:false,
-                //date: moment().format('LLLL')
                 date: Date.now(),
                 fromNow: moment().add(3, 'days').calendar(),
                 addDue: false
             }
             dispatch(todos.actions.addTodo(newTodo));
         }
-
-        
-
-        
-        setValue(''); // By writing this we clear are input after sending input
+        setValue('')
     }
 
     return(
-        
         <form className="form-section">
-
             <div className="text-field">
-            <TextField 
-                
-                type="text"
-                value={value}
-                onChange={e => setValue(e.target.value)}
-                label="+ Add Todo" 
-                variant="outlined"
-                fullWidth
-                //minlength="5"
-            />
+                <TextField 
+                    type="text"
+                    value={value}
+                    onChange={e => setValue(e.target.value)}
+                    label="+ Add Todo" 
+                    variant="outlined"
+                    fullWidth
+                />
             </div>
-            
             <div className="send-button">
                 <Button
-                onClick={onFormSubmit}
-                variant="contained"
-                color="primary"
-                endIcon={<CloudUploadIcon />}
+                    onClick={onFormSubmit}
+                    variant="contained"
+                    color="primary"
+                    endIcon={<CloudUploadIcon />}
                 >
-                Send
+                    Send
                 </Button>
             </div>
-  
-
-            
-          
-            
-
-        
-
-
-        </form>
-        
+        </form>  
     )
 }
 

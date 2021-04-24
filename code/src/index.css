@@ -81,6 +81,11 @@ code {
   color: red
 }
 
+.total-completed {
+  color: green;
+  font-weight: bold;
+}
+
 .form-section {
 padding: 10px;
 /*border: 3px black solid;*/
