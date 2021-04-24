@@ -27,6 +27,7 @@ const TodoForm = () => {
      
       <button className="submit-button" type="submit">Add +</button>
       <input
+        placeholder="Add your task"
         className="todo-input"
         type="text"
         value={value}

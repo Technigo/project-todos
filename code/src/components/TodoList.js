@@ -24,13 +24,14 @@ const TodoList = () => {
       {tasks.map(task => (
         <div className="todo-wrapper" key={task.id}>
           <input
+           
             type="checkbox"
             checked={task.isComplete}
             onChange={() => dispatch(todos.actions.toggleComplete(task.id))}
           />
-          <h2>{task.description}</h2>
-          <button onClick={() => dispatch(todos.actions.removeTask(task.id))}>
-            delete
+          <p className="todo-text">{task.description}</p>
+          <button className="delete-button" onClick={() => dispatch(todos.actions.removeTask(task.id))}>
+            delete -
           </button>
         </div>
         

@@ -23,3 +23,8 @@ problem med styled components
 kul att jag lyckades få in fonts som jag inte lyckades med förra veckan
 tog en redan given design för att testa om jag kunde göra en liknande
 inspirerad av designen och testar egna grejer
+kul att testa på att göra en styled input och checkbox
+jag ville använda mig av draggable som jag laddade ner
+jag hade velat få en fin transition på framsidan
+jag hade en knapp som clerade alla todos, men när jag skulle flytta över den i en ny component så gick något snett och jag hade inte tid att att fixa det jag har fortasatt googla mera och tycker det är kul att jag förstår mycket av det som står och vilka lösningar som jag kan testa att använda mig av i mitt projekt.
+Jag förstår att designen inte är särkillt användarvänlig, men jag ville mest bara testa

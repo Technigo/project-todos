@@ -54,8 +54,6 @@ code {
   display: flex;
   flex-direction: row;  
   margin-top: auto;
- 
-  
 }
 
 .todo-input {
@@ -65,12 +63,16 @@ code {
   font-family: 'Ibm Plex Mono';
   font-size: 20px;
   border-bottom: 1px solid #fae97e;
-  color: rgba(48, 44, 48, 0.9);
+  color: #fae97e;
   width: 50%;
 }
 
 input:focus {
   outline: none;
+}
+
+::placeholder {
+  color: #fae97e
 }
 
 .submit-button {
@@ -97,9 +99,59 @@ input:focus {
   width: 70vw;
   word-wrap: break-word;
   padding-left: 10px;
+  display: flex;
+  flex-direction: column;
 }
 
-/***** HEADER *****/
+input[type="checkbox"] {
+  position: relative;
+  top: 10px;
+  left: 200px;
+  
+  -webkit-appearance: none;
+  appearance: none;
+  width: 30px;
+  height: 30px;
+  
+  
+  
+  
+}
+
+input[type="checkbox"]:after {
+  
+  content: url('./SVGs/cross.svg');
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+}
+
+input[type="checkbox"]:checked:after {
+  content: url('./SVGs/checked.svg');
+  
+}
+
+.todo-text {
+  font-family: 'Ibm Plex Mono';
+  color: #fe5bb1;
+  font-size: 20px;
+}
+
+.delete-button {
+  background-color: #fe5bb1;
+  border: none;
+  font-family: 'Ibm Plex Mono';
+  padding: 10px;
+  color: #fae97e;
+  cursor: pointer;
+  margin-bottom: 10px;
+  align-self: start;
+}
+
+
+/***** HEADER/FRONT PAGE *****/
 
 .header-closed {
   position: fixed;
@@ -128,7 +180,6 @@ h1 {
   writing-mode: vertical-rl; 
   margin: auto;
   margin-top: 15px;
-  
 }
 
 .header-circle {
