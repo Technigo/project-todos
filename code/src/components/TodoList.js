@@ -8,14 +8,18 @@ const TodoList = () => {
 
     //todos items from initalState
     const items = useSelector((store) => store.todos.items);
+    const completedItems = items.filter(singleTodo => singleTodo.isComplete);
     //todos addLabael from initialState
     const addLabel = useSelector((store) => store.todos.addLabel);
     //go through dispatch to understand
     const dispatch = useDispatch();
+    
 
     return (
         <div>
             <h1>To do</h1>
+            <p>Total todo: {items.length}</p>
+            <p>Completed tasks: {completedItems.length}/{items.length}</p>
             <input
                 placeholder="Add to do here "
                 id="todoLabel"
