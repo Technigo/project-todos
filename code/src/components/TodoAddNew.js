@@ -41,7 +41,7 @@ const SubmitButton = styled.button`
   }
 `
 
-const AddTodo = () => {
+const TodoAddNew = () => {
   const [value, setValue] = useState('')
 
   const dispatch = useDispatch()
@@ -82,4 +82,4 @@ const AddTodo = () => {
   )
 }
 
-export default AddTodo 
+export default TodoAddNew 

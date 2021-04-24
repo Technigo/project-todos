@@ -27,17 +27,6 @@ body {
   box-shadow: 20px 20px 40px;
 }
 
-
-.task-item {
-  box-shadow: 0 3px 4px #d6d2d2, 0 -0.5px 1px #d6d2d2;
-  margin-bottom: 9px;
-  padding: 10px 10px;
-  background-color: #fff;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
 .task-description {
   margin-left: 40px;
 }
@@ -50,7 +39,6 @@ body {
 
 /*MEDIA QUERIES*/
 /*TABLET*/
-
 @media (min-width: 668px) {
   .main-container {
     min-width: 600px;
@@ -59,7 +47,6 @@ body {
 }
 
 /*DESKTOP*/
-
 @media (min-width: 1024px) {
   .main-container {
     min-width: 950px;

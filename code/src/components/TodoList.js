@@ -5,6 +5,16 @@ import moment from 'moment'
 
 import todos from '../reducers/todos'
 
+const TaskItem = styled.div `
+  box-shadow: 0 3px 4px #d6d2d2, 0 -0.5px 1px #d6d2d2;
+  margin-bottom: 9px;
+  padding: 10px 10px;
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+`
+
 
 const DeleteButton = styled.button`
   border-radius: 50%;
@@ -88,7 +98,7 @@ const TodoList = () => {
   return (
     <div className='todo-list'>
       {tasks.map(task => (
-        <div className='task-item' key={task.id}>
+        <TaskItem key={task.id}>
           <div>
             <CheckboxWrapper>
               <Checkbox for='checkbox'></Checkbox>
@@ -109,7 +119,7 @@ const TodoList = () => {
               -
             </DeleteButton>
           </div>
-        </div>
+        </TaskItem>
       ))}
     </div>
   )

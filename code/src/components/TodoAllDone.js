@@ -5,7 +5,6 @@ import styled from 'styled-components'
 import todos from 'reducers/todos'
 import EmptyState from './EmptyState'
 
-
 const Container = styled.div`
   background-color: #114e60;
   height: 100%;
@@ -14,7 +13,6 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
 `
-
 
 const ClearButton = styled.button`
   background-color: #f5cebe;
@@ -34,7 +32,7 @@ const ClearButton = styled.button`
 }
 `
 
-const ClearTodo = () => {
+const TodoAllDone = () => {
   const tasks = useSelector(store => store.todos.tasks)
   const dispatch = useDispatch()
 
@@ -60,4 +58,4 @@ const ClearTodo = () => {
   )
 }
 
-export default ClearTodo 
+export default TodoAllDone 

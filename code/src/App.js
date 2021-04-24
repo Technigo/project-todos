@@ -4,10 +4,10 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
 import todos from './reducers/todos'
 import TodoList from '../src/components/TodoList'
-import AddTodo from '../src/components/AddTodo'
+import TodoAddNew from './components/TodoAddNew'
 import Header from '../src/components/Header'
 import ProgressBar from '../src/components/ProgressBar'
-import ClearTodo from 'components/ClearTodo'
+import TodoAllDone from 'components/TodoAllDone'
 
 
 const reducer = combineReducers({
@@ -22,9 +22,9 @@ export const App = () => {
     <Provider store={store}>
       <Header />
       <ProgressBar />
-      <AddTodo />
+      <TodoAddNew />
       <TodoList />
-      <ClearTodo />
+      <TodoAllDone />
     </Provider>
   )
 }
