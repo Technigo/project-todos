@@ -24,6 +24,7 @@ export const Task = ({ id, isComplete, description}) => {
             type="task"
             className="task"
             checked={isComplete}
+            color={"darkcyan"}
             onChange={() => dispatch(todos.actions.toggleComplete({ id: id, time: currentTime.toLocaleString()}))}
           />
           <TaskText>{description}</TaskText>

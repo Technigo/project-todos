@@ -1,12 +1,14 @@
 import React from "react";
 import styled from "styled-components";
 
-import {CategoryFilter} from './CategoryFilter'
+import { CategoryFilter } from "./CategoryFilter";
 
 export const Footer = () => {
   return (
     <Container>
-            <CategoryFilter />
+      <CategoryFilter
+
+      />
     </Container>
   );
 };

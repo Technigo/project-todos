@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 export const SelectDeadline = ({ setDue }) => {
   const initialTime = new Date(Date.now()).toISOString().split("T")[0];
-  const [dueClock, setDueClock] = useState();
-  const [dueDate, setDueDate] = useState();
+  const [dueClock, setDueClock] = useState("");
+  const [dueDate, setDueDate] = useState("");
   const [expand, setExpand] = useState(false);
 
   const handleChange = (e, type) => {

@@ -29,13 +29,17 @@ export const CreateNewTask = () => {
           category: category,
         })
       );
-      const initialArr = ["other", "/static/media/other.2d8f2f3d.svg"]
-
-      setNewTask("");
-      setCategory(initialArr);
-      setChecked("")
+      clearAll();
+      dispatch(todos.actions.categorize({ categorizeBy: "all" }))   
+      dispatch(todos.actions.filterBy({type: "byCategory", value: "all"}))
     }
   };
+
+  const clearAll = () => {
+    setNewTask("");
+    setCategory("");
+    setChecked("");
+  }
 
   //render
   return (

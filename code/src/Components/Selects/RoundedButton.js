@@ -26,9 +26,8 @@ const Button = styled.button`
   margin-top: 10px;
   outline: none;
 
-  &::hover,
-  &::focus {
-    background-color: white;
-    color: rgb(30, 81, 93);
+  &:hover,
+  &:focus {
+    background: rgb(90, 150, 187);
   }
 `;
