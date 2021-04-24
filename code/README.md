@@ -1,19 +1,31 @@
-# Technigo React Starter App
+# Project TO DO
+The project assinment was to create a TODO web application using React and Redux.The application should have the following functionalities: 
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+- list all todo tasks - completed or uncompleted;
+- user should be able to mark an uncompleted task as complete (and change it back to uncomplete);
+- user should be able to add and remove tasks;
+- the app should show a count of either all todos, or all uncomplete todos (or both)
+- each task should have a time stamp indicating when it was created.
+- the app should have a date input in the form to set a due date on a task
+- the app should have filters to display completed/uncompleted tasks, tasks past deadline, and prioroty tasks 
+- mobile-first design 
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+## Technologies used to build the app
+React
+Redux
+Redux toolkit
+useState()
+useEffect()
+useDispatch()
+useSelector()
+combineReducers() 
+configureStore ()
 
-## Usage
+## Libraries
+Material UI
+moment.js
+date-fns
+uniqid
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
-
-Alternatively, if you don't want a new git repo on your account;
-
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+## View the app live
+Netlify : https://todos-planner-klimenko.netlify.app/

@@ -30,7 +30,7 @@ const TodoThumb = ({ item }) => {
           onChange={() => dispatch(todo.actions.toggleChecked(item.id))}
           inputProps={{ 'aria-label': 'Checkbox' }}
         />
-        <p>{item.description}</p>
+        <p className={`description ${item.isComplete && "strike-out"}`}>{item.description}</p>
         <div onClick={() => setOpen(!isOpen)}>
           {isOpen ? <ArrowDropUp color="primary" fontSize="large" /> : <ArrowDropDown color="primary" fontSize="large" />}
         </div>
