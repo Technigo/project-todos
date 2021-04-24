@@ -87,7 +87,7 @@ const AddContainer = () => {
         <>
           <StyledButton onClick={() => setIsClicked(prevState => !prevState)}>
             <Icon src="./assets/minus-icon.svg" alt="minus icon" />
-            <StyledParagraph>Hide input</StyledParagraph>
+            <StyledParagraph>Hide this</StyledParagraph>
           </StyledButton>
           <Form onSubmit={handleSubmit}>
             <label htmlFor="textinput">

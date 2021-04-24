@@ -52,31 +52,21 @@ const tasks = createSlice({
     },
 
     filterCompleted: (state, action) => {
-      // const filteredItems = state.allTasks.map(task => {
-      //   if (!task.isCompleted) {
-      //     return {
-      //       ...task,
-      //       isHidden: true
-      //     }
-      //   } else if (task.isCompleted) {
-      //     return {
-      //       ...task,
-      //       isHidden: false
-      //     }
-      //   }
-      // })
-
-      // const updatedItems = { allTasks: filteredItems, isFiltered: true }
-
-      // state = updatedItems
-
-      for (let task of state.allTasks) {
+      const updatedItems = state.allTasks.map(task => {
         if (!task.isCompleted) {
-          task.isHidden = true
-        } else if (task.isCompleted) {
-          task.isHidden = false
+          return {
+            ...task,
+            isHidden: true
+          }
+        } else {
+          return {
+            ...task,
+            isHidden: false
+          }
         }
-      }
+      })
+
+      state.allTasks = updatedItems
       state.isFiltered = true
     },
 
@@ -87,7 +77,7 @@ const tasks = createSlice({
             ...task,
             isHidden: true
           }
-        } else if (!task.isCompleted) {
+        } else {
           return {
             ...task,
             isHidden: false
@@ -146,7 +136,7 @@ const tasks = createSlice({
       })
 
       state.allTasks = updatedItems
-      state.isFiltered = true
+      state.isFiltered = false
     }
   }
 })

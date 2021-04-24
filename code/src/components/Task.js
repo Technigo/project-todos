@@ -45,17 +45,19 @@ const Task = ({ task }) => {
 
   return (
     <StyledDiv>
+
       {task.isCompleted &&
         <StyledButton onClick={() => dispatch(tasks.actions.toggleTask(task))}>
           <Icon src="./assets/check-icon.svg" alt="checked square icon" />
         </StyledButton >}
+
       {!task.isCompleted &&
         <StyledButton onClick={() => dispatch(tasks.actions.toggleTask(task))}>
           <Icon src="./assets/square-icon.svg" alt="empty square icon" />
         </StyledButton>}
+
       <TaskTitle>{task.title}</TaskTitle>
       {task.dueDate && <TaskDueDate>{dayjs(task.dueDate).format("D/M")}</TaskDueDate>}
-
 
       <StyledButton onClick={() => dispatch(tasks.actions.removeTask(task))} >
         <IconBin src="./assets/bin-icon.svg" alt="bin icon" />
