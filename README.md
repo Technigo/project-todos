@@ -4,8 +4,6 @@ As part of the TECHNIGO Boot Camp week 15 the assignment was to build a “Do To
 
 ## The problem
 
-As part of the TECHNIGO Boot Camp week 15 the assignment was to build a “Do To” application using Redux (Redux toolkit, Slices, Reduces & Actions).
-
 General requirements: Your app should be able to list “To Do” tasks, and with the ability to mark them as complete or incomplete. You should be able to add and remove tasks as well as showing some kind of task counter.
 
 This was my very first deep dive into Redux - creating slices, reducers and actions. I´m really fond of the idea of the store, and how useful it is to work with. I need to get more used to the flow and interaction between the functionalities and I am truly looking forward to practice this a bit more.
