@@ -4,8 +4,8 @@ import styled from 'styled-components';
 const ZeroTodos = () => {
 
   return (
-    <ZeroTodosContainer>
-      <img src="./assets/doubletick.png" alt="A doubletick"/>
+    <ZeroTodosContainer> 
+      <DoubleTick src="./assets/doubletick.png" alt="A doubletick"></DoubleTick>
       <ZeroTodosHeading>No tasks!</ZeroTodosHeading>
       <ZeroTodosInfoText>
         Add some new tasks and click the button below.
@@ -23,7 +23,18 @@ const ZeroTodosContainer = styled.div`
   align-items: center;
   margin-bottom: 40px;
   color: #3b3d40;
+  position: relative; 
 `;
+
+const DoubleTick = styled.img`
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: -40px;
+  transform-origin:110% center; 
+  animation:rotate 4s linear;
+  @keyframes rotate { 100% { transform:rotate(-360deg); } }
+`; 
 
 const ZeroTodosHeading = styled.h2`
 `;
