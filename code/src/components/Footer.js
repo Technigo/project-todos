@@ -9,7 +9,7 @@ const StyledFooter = styled.div`
   margin-top: 30px;
   text-align: center;
   width: 90%;
-  @media (min-width: 668px) {
+  @media (min-width: 420px) {
     width: 100%;
   }
 `

@@ -24,13 +24,13 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 300px;
-  margin-top: 30px;
   background: #FDF4C9;
-  box-shadow: 5px 5px 5px #0f0f0f;
-  border-radius: 5px;
-  @media (min-width: 668px) {
+  width: 100%;
+  margin-top: 30px;
+  @media (min-width: 420px) {
     width: 400px;
+    box-shadow: 5px 5px 5px #0f0f0f;
+    border-radius: 5px;
   }
   @media (min-width: 1024px) {
     width: 500px;

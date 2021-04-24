@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #FDF4C9;
 }
 
 code {
@@ -17,4 +18,10 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-width: 420px) {
+  body {
+    background-color: #fff;
+  }
 }

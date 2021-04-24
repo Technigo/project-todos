@@ -23,6 +23,9 @@ const Task = styled.div`
   border-width: 0px 0px 2px 0px;
   border-radius: 0% 0% 100% 0%/2% 0% 6% 0%;
   transform: rotate(2deg);
+  @media (min-width: 420px) {
+    margin: 5px 30px 10px 30px;
+  }
   `
   
   const StyledParagraph = styled.p`
@@ -31,6 +34,9 @@ const Task = styled.div`
 
 const Checkbox = styled.input`
   cursor: pointer;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
 `
 
 const TrashButton = styled.button`

@@ -15,8 +15,9 @@ const StyledForm = styled.form`
   border-radius: 5% 0% 40% 0%/2% 0% 10% 0%;
   transform: rotate(1deg);
   margin: 10px 10px 0px 10px;
-  @media (min-width: 668px) {
-    width: 95%;
+  width: 95%;
+  @media (min-width: 420px) {
+    width: 85%;
   }
   `
   
