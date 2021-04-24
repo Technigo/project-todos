@@ -10,6 +10,16 @@ const todos = createSlice({
     toggleShowForm: (store) => {
       store.showForm = !store.showForm;
     },    
+    addTodo: (store, action) => {
+      store.tasks = [...store.tasks, action.payload];
+
+      store.showForm = !store.showForm;
+    },
+    removeTodo: (store, action) => {
+      const decreasedTasks = store.tasks.filter(todo => todo.id !== action.payload);
+
+      store.tasks = decreasedTasks;
+    },
     toggleComplete: (store, action) => {
       const updatedTasks = store.tasks.map(todo => {
         if (todo.id === action.payload) {
@@ -24,16 +34,6 @@ const todos = createSlice({
 
       store.tasks = updatedTasks;
     }, 
-    addTodo: (store, action) => {
-      store.tasks = [...store.tasks, action.payload];
-
-      store.showForm = !store.showForm;
-    },
-    removeTodo: (store, action) => {
-      const decreasedTasks = store.tasks.filter(todo => todo.id !== action.payload);
-
-      store.tasks = decreasedTasks;
-    },
     completeAllTodos: (store) => {
       const updatedCompletion = store.tasks.map(todo => {
         if (todo.isComplete === false) {
@@ -63,21 +63,21 @@ const todos = createSlice({
       store.tasks = editedTask;
     }, 
     editTodoContent: (store, action) => {
-      const editedTodoContent = store.tasks.map(todo => {
-        if (todo.id === action.payload) {
-          console.log(todo.content)
+      console.log(action.payload)
 
-          return {
-            ...todo,
-            isEdit: !todo.isEdit,
-            content: todo.content
-          }
-        } else {
-          return todo;
-        }
-      });
+      // const editedTodoContent = store.tasks.map(todo => {
+      //   if (todo.id === action.payload) {
+      //     return {
+      //       ...todo,
+      //       isEdit: !todo.isEdit,
+      //       content: action.payload
+      //     }
+      //   } else {
+      //     return todo;
+      //   }
+      // });
 
-      store.tasks = editedTodoContent;
+      // store.tasks = editedTodoContent;
     }
   }
 });

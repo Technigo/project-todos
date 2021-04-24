@@ -18,13 +18,13 @@ const Form = styled.form`
   flex-direction: column;
   background: transparent;
   padding: 3vh;
-  border-bottom: solid 1px #e5e5e5;
 `;
 
 const Container = styled.div`
   display: flex;
   align-items: center;
   background: transparent;
+  padding-bottom: 20px;
 `;
 
 const Label = styled.label`
@@ -93,7 +93,7 @@ const NewTodo = () => {
       content: todo,
       timeStamp: moment().format(),
       isComplete: false,
-      isEdit: false,
+      isEdit: false
     };
 
     dispatch(todos.actions.addTodo(newTodo));

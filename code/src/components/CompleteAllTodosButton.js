@@ -9,9 +9,15 @@ const Button = styled.button`
   background: transparent;
   color: #ea9a96;
   border: none;
-  margin-left: 15px;
-  font-size: 25px;
+  margin-left: auto;
+  display: flex;
+  align-items: center;
 `;
+
+const Span = styled.span`
+  font-size: 15px;
+  margin-right: 5px;
+`
 
 const CompleteAllTodosButton = () => {
   const dispatch = useDispatch();
@@ -20,7 +26,10 @@ const CompleteAllTodosButton = () => {
     <Button
       onClick={() => dispatch(todos.actions.completeAllTodos())}
     >
-      <AiFillCheckCircle />
+      <Span>Check all</Span>
+      <AiFillCheckCircle 
+        size="1.5rem"
+      />
     </Button>
   );
 };
