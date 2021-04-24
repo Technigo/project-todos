@@ -29,7 +29,7 @@ I started out by learning more about Redux and decided to practice using styled 
 If I had more time I would also work with React datepicker so the user could choose a due date for their todos.
 If this project would have been with a fetch request I would make it more energy efficient, instead of getting data from global store in each component. And I am unsure if the approach that I took in this project is agreeable?
 
-Furthermore if I were to re-do the project in the future I would also test a different styling, where things would move dynamically on the page to give all the features space on an iPad for example. 
+Furthermore if I were to re-do the project in the future I would also test a different styling, where things would move dynamically on the page to give all the features space on an iPad for example. And I would change the animation as I could not get the second layer background on it to become transparent.
 ## View it live
 https://your-todo-app.netlify.app/
 
