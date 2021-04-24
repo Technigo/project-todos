@@ -22,6 +22,7 @@ code {
 
 .top-content-container {
  height: 230px;
+ max-width: 1200px;
 }
 
 .circle {
@@ -54,17 +55,18 @@ code {
   display: flex;
   flex-direction: row;  
   margin-top: auto;
+  width: 70%;
 }
 
 .todo-input {
   background: none;
   border: none;
-  margin: 0 0 0 17px;
+  margin: 0 0 0 10px;
   font-family: 'Ibm Plex Mono';
   font-size: 20px;
   border-bottom: 1px solid #fae97e;
   color: #fae97e;
-  width: 50%;
+  width: 70%;
 }
 
 input:focus {
@@ -91,12 +93,13 @@ input:focus {
 .todo-list-wrapper {
   display: flex;
   flex-direction: column-reverse;
+  width: 100%;
 }
 
 .todo-wrapper {
   background-color: #fae97e;
   margin-top: 15px;
-  width: 70vw;
+  width: 70%;
   word-wrap: break-word;
   padding-left: 10px;
   display: flex;
@@ -104,22 +107,16 @@ input:focus {
 }
 
 input[type="checkbox"] {
-  position: relative;
-  top: 10px;
-  left: 200px;
-  
+  align-self: flex-end;
   -webkit-appearance: none;
   appearance: none;
   width: 30px;
   height: 30px;
-  
-  
-  
-  
+  cursor: pointer;
+  margin: 15px 30px 0 0;
 }
 
 input[type="checkbox"]:after {
-  
   content: url('./SVGs/cross.svg');
   display: flex;
   align-items:center;
@@ -130,13 +127,13 @@ input[type="checkbox"]:after {
 
 input[type="checkbox"]:checked:after {
   content: url('./SVGs/checked.svg');
-  
 }
 
 .todo-text {
   font-family: 'Ibm Plex Mono';
   color: #fe5bb1;
   font-size: 20px;
+  margin: 10px 0 15px 0;
 }
 
 .delete-button {
@@ -149,7 +146,6 @@ input[type="checkbox"]:checked:after {
   margin-bottom: 10px;
   align-self: start;
 }
-
 
 /***** HEADER/FRONT PAGE *****/
 
@@ -209,7 +205,6 @@ h1 {
   position: absolute;
   top: 400px;
   left: 20px;
-  background-color: khaki;
 }
 
 .open-text {
@@ -223,4 +218,33 @@ h1 {
   width: 25px;
   margin: 0 5px 0 5px;
   color: #fe5bb1;
+}
+
+
+/* Desktop RESPONSIVE */
+@media (min-width: 769px) {
+
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  .main-wrapper {
+    width: 768px;
+    max-width: 768px;
+    padding-left: 200px;
+  }
+
+  .counter-wrapper {
+    position: relative;
+    top: -50px;
+  }
+
+  .form-wrapper {
+    padding: 0;
+  }
+
+  .todo-input{
+    width: 70%;
+  }
 }

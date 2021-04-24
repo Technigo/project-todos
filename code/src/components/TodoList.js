@@ -1,13 +1,11 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-
 import todos from '../reducers/todos'
 import TodoForm from './TodoForm'
 import Counter from './Counter'
 
 const TodoList = () => {
-  
   const tasks = useSelector((store) => store.todos.tasks)
   const dispatch = useDispatch()
 
@@ -24,7 +22,6 @@ const TodoList = () => {
       {tasks.map(task => (
         <div className="todo-wrapper" key={task.id}>
           <input
-           
             type="checkbox"
             checked={task.isComplete}
             onChange={() => dispatch(todos.actions.toggleComplete(task.id))}
@@ -34,13 +31,10 @@ const TodoList = () => {
             delete -
           </button>
         </div>
-        
       ))}
       </div>
     </main>
   )
-
 }
-
 
 export default TodoList

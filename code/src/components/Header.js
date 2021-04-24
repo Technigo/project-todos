@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 
-
 import '../index.css'
 import arrow from '../SVGs/arrow.svg'
 import cross from '../SVGs/cross.svg'
-
 
 const Header = () => {
   const [activeHeader, setActiveHeader] = useState('false')

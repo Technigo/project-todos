@@ -5,7 +5,6 @@ import uniqid from 'uniqid'
 import '../index.css'
 import todos from '../reducers/todos'
 
-
 const TodoForm = () => {
   const [value, setvalue] = useState('')
   const dispatch = useDispatch()
@@ -24,7 +23,6 @@ const TodoForm = () => {
 
   return (
     <form className="form-wrapper" onSubmit={onFormSubmit}>
-     
       <button className="submit-button" type="submit">Add +</button>
       <input
         placeholder="Add your task"
