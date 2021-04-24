@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project was part of Technigo Bootcamp and the assignment was to create a Todo app using React and Redux Toolkit. Basic requirements included ability to add remove and check tasks off the list.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Since this was the first time using React Toolkit and creating my first reducers I struggled a bit in the beginning to understand where to start and how to approach. Once I understood how to create one reducer I was able to create the rest quite quickly and was able to spend more time on creating nice styling and conditional rendering.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Find my todo app here: https://gracious-gates-44c449.netlify.app/
