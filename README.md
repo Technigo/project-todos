@@ -1,15 +1,35 @@
-# Project Todos
+# Redux project: ToDo app
+In this one week's project the focus was to learn:
+- How to structure a redux store
+- How to write reducers and actions
+- How to interact with your store using selectors or by dispatching actions
 
+The app has been generated using create-react-app.
 
+And uses the following npm packages that are not included in the create-react-app:
+	- styled-components
+	- date-fns
+	- material-UI - first time, spent some time reading up on that
+	- uuid
+	- react-redux
+	- reduxjs/toolkit
+## Features
+- User can:
+	- add tasks
+	- sort tasks by categories
+	- toggle completed status of each task
+	- delete one task
+	- toggle all tasks as done
+	- delete all tasks
+## Reflections
+I enjoyed the theme of this week's project and wanted to create an application that I would myself use and/or want to recommend to a friend. 
 
-## The problem
+I started out by learning more about Redux and Material UI, but I did not have a clear styling in mind for this project at the beginning of the week which made it more tricky to figure out the hierarchy logic of components. I would start by researching different applications that I am using in my daily life a bit, listing their pros and cons both in terms of features and design to plan it better if I did the project again.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+If I had more time I would also work with React datepicker so the user could choose a due date for their todos.
+If this project would have been with a fetch request I would make it more energy efficient, instead of getting data from global store in each component. And I am unsure if the approach that I took in this project is agreeable?
 
-If this project would have been with a fetch request I would make it more energy efficient, sending props from parent to child component instead of getting data from global store in each of the components for the different categories. And if I were to re-do the project I would choose a different styling, where things would move around on the page to get all the features to actually have space also on iPad etc. 
-
-I would also work with React datepicker so the user could choose a due date for their todos -----> jag vill ha detta förklarat i pull request!!
-## Tech
-
+If I were to re-do the project futurewise I would also test a different styling, where things would move dynamically on the page to give all the features space on an iPad for example. 
 ## View it live
+https://your-todo-app.netlify.app/
 
