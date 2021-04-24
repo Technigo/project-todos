@@ -1,0 +1,38 @@
+:root {
+  background-color: #D2D6D9;
+}
+
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 10px 0px;
+}
+
+.task {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 6px 0px;
+  padding: 15px 30px;
+  border-radius: 10px;
+  /* background-color: #53d3cf; */
+}
+
+.new-task-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0 0;
+  /* border: 2px solid black; */
+}
+
+.new-task-text {
+  margin: 8px;
+  flex-basis: 80%;
+}
+
+.new-task-submit {
+  display: flex;
+  justify-content: center;
+  margin: 0px 8px 0px 15px;
+}
