@@ -31,7 +31,7 @@ const TodoForm = () => {
         e.preventDefault();
 
         if(value.length < 3) {
-            setValue("You need to input text to save")
+            alert("You can't leave the input field empty!")
         } else if (value.length > 2) {
             const newTodo = {
                 id: uniqid(),
