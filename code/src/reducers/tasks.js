@@ -3,10 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const tasks = createSlice({
   name: "tasks",
   initialState: {
-    items: [
-      { id: 1, text: "Watch video on actions & reducers", complete: true },
-      { id: 2, text: "Create a todo app", complete: false },
-    ],
+    items: [],
   },
   reducers: {
     toggleComplete: (store, action) => {

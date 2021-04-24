@@ -8,7 +8,7 @@ const TaskList = () => {
   const dispatch = useDispatch();
 
   return (
-    <div className="task-container">
+    <div>
       {items.map((task) => (
         <div key={task.id} className="task-item">
           <input
