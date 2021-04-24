@@ -6,11 +6,11 @@ import AddTodo from './AddTodo'
 
 const TodoContainer = () => {
   return (
-    <div className="todo-container">
+    <section className="todo-container">
       <Header />
       <TodoList />
       <AddTodo />
-    </div>
+    </section>
   )
 }
 

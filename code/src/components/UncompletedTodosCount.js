@@ -7,7 +7,7 @@ const UncompletedTodosCount = () => {
 
   return (
     <div className="uncompleted-container">
-      <h2>Uncompleted todos: {uncompletedTodos}</h2>
+      <h2 tabIndex="0">Uncompleted to do's: {uncompletedTodos}</h2>
     </div>
   )
 }

@@ -2,17 +2,15 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import todos from '../reducers/todos'
+
 import RemoveTodo from './RemoveTodo'
 import TodoItem from './TodoItem'
-
-
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
   const dispatch = useDispatch()
 
   return (
-
     <div >
       {items.map(todo => (
         <div className="todo-list-container" key={todo.id}>

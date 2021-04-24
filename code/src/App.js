@@ -6,7 +6,6 @@ import todos from './reducers/todos'
 
 import TodoContainer from './components/TodoContainer'
 
-
 const reducer = combineReducers({
   todos: todos.reducer
 })

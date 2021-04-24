@@ -20,18 +20,21 @@ const AddTodo = () => {
     setValue('')
   }
 
+  const handleChange = (event) => {
+    setValue(event.target.value)
+  }
+
   return (
     <div className="form-container">
       <form className="add-todo" onSubmit={onFormSubmit}>
         <input
-
           type="text"
           value={value}
-          onChange={event => setValue(event.target.value)}
-          placeholder="Add todo"
+          onChange={handleChange}
+          placeholder="Add to do"
         />
         <button className="add-button" type="submit">
-          <img src="./icons/icons8-plus-48.png" />
+          <img src="./icons/icons8-plus-48.png" alt="A plus icon" />
         </button>
       </form>
     </div>

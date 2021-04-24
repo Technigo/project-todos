@@ -15,22 +15,18 @@ const todos = createSlice({
           }
         } else {
           return todo
-
         }
       })
       store.items = updatedItems
     },
     removeTodo: (store, action) => {
       const decreasedItems = store.items.filter(todo => todo.id !== action.payload)
-
       store.items = decreasedItems
     },
     addTodo: (store, action) => {
       store.items = [...store.items, action.payload]
     }
-
   }
 })
-
 
 export default todos
