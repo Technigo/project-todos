@@ -66,6 +66,7 @@ const ClearButton = styled.button`
 
 export const Header = () => {
   const items = useSelector((store) => store.tasks.items)
+  const completedItems = items.filter((task) => task.isCompleted === true)
 
   const dispatch = useDispatch()
 
@@ -85,7 +86,7 @@ export const Header = () => {
       </TopWrapper>
       {items.length !== 0 && (
       <BottomWrapper>
-        <TaskCount>{items.isCompleted.length} / {items.length} tasks completed</TaskCount>
+        <TaskCount>{completedItems.length} / {items.length} tasks completed</TaskCount>
         <ClearButton onClick={() => dispatch(tasks.actions.clearAll())}>Clear all</ClearButton>
       </BottomWrapper>
       )}
