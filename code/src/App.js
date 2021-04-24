@@ -4,7 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import todos from './reducers/todos';
 
-import  { Header }  from 'components/Header';
+import Header  from '../src/components/Header';
 import TodoList from './components/TodoList';
 import TodoForm from './components/TodoForm';
 
@@ -25,7 +25,6 @@ export const App = () => {
       <Header />
      <TodoForm />
      <TodoList />
-
     </div>
     </Provider>
   )
