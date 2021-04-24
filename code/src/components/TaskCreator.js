@@ -20,7 +20,35 @@ background-color: white;
 border-radius: 15px;
 box-shadow: 0  0 10px #aaaaaa;
 `
+const Input = styled.input`
+width: 200px;
+height: 30px;
+background-color: #eee;
+border: none;
+font-size: 16px;
+&::placeholder{
+  font-size: 16px;
+}`
 
+const Button = styled.button`
+width: 25px; 
+height: 25px;
+border-radius: 50%;
+background-color: #2f5d62;
+position: relative;
+border: none;
+&:hover { background-color: #6c9fa3;
+cursor: pointer;}
+&:active { background-color: #ffb037;}
+&:disabled {opacity: 0.6;
+cursor: not-allowed;}
+`
+const Image = styled.img`
+width: 25px;
+position: absolute;
+top: 0;
+left: 0;
+`
 const TaskCreator = () => {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
@@ -43,14 +71,14 @@ const TaskCreator = () => {
   
   return (
     <Form onSubmit={onFormSubmit}>
-      <input
+      <Input
         type="text"
         id="taskInput"
         value={value}
         onChange={handleChange}
-        placeholder="+ Add task"
+        placeholder="Write to do here"
       />
-      <button type="submit">Add</button>
+      <Button type="submit"disabled={!value}><Image src="./assets/plus.png" alt="Add"/></Button>
     </Form>
 
   )

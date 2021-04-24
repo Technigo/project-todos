@@ -72,10 +72,16 @@ const Wastebin = styled.img`
 width: 20px;
 `
 const Button = styled.button`
-width: 20px;
+position: relative;
+width: 33px;
+height: 33px;
 background-color: white;
 border: none;
+border-radius: 50%;
 text-decoration: none;
+&:hover { background-color: #6c9fa3;
+cursor: pointer};
+&:active { background-color: #ffb037;}
 `
 const Tick = styled.img`
 width: 20px;

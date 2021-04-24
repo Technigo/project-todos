@@ -12,7 +12,9 @@ font-family: 'Noto Sans KR', sans-serif;
 font-size: 20px;
 border-radius: 5px;
 padding: 5px 8px 5px 10px;
-
+&:hover { background-color: #6c9fa3;
+cursor: pointer};
+&:active { background-color: #ffb037;}
 `
 
 
