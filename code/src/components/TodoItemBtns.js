@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { FaTrashAlt, FaEdit, FaRegWindowClose, FaCheck } from 'react-icons/fa'
 
 import { tasks } from '../reducers/tasks'
+import { fetchData } from '../reducers/tasks'
 
 const Wrapper = styled.div`
   display: flex;
@@ -19,6 +20,11 @@ const Btn = styled.button`
 const TodoItemBtns = ({ id, editMode, onSaveEdit }) => {
 
   const dispatch = useDispatch()
+
+  const onDeleteTodo = () => {
+    dispatch(tasks.actions.removeTodo(id))
+    dispatch(fetchData())
+  } 
 
   return (
     <Wrapper>
@@ -37,7 +43,7 @@ const TodoItemBtns = ({ id, editMode, onSaveEdit }) => {
           <Btn type="button" onClick={() => dispatch(tasks.actions.toggleEdit(id))}>
             <FaEdit color="#8B98F9" size="28px" />
           </Btn>
-          <Btn type="button" onClick={() => dispatch(tasks.actions.removeTodo(id))}>
+          <Btn type="button" onClick={() => onDeleteTodo(id)}>
             <FaTrashAlt color="#8B98F9"size="25px"/> 
           </Btn>
         </>

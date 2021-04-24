@@ -1,19 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import moment from 'moment'
 
 import TodoItemBtns from './TodoItemBtns'
 import { tasks } from '../reducers/tasks'
+import { fetchData } from '../reducers/tasks'
 
 const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 10px;
-  border-bottom: 1px solid #A9A4A6; 
-  border-top: 1px solid #A9A4A6;
+  border: 1px solid #A9A4A6; 
+  border-radius: 12px;
   font-family: 'Montserrat', sans-serif;
+  margin: 10px 0;
 `
 
 const Wrapper = styled.div`
@@ -99,17 +101,26 @@ const Date = styled.span`
   font-size: 12px;
 `
 
-const TodoItem = ({ id, text, complete, created, editMode, dueDate }) => {
-  const [description, setDescription] = useState(text)
+const TodoItem = ({ id, text, complete, created, editMode, dueDate, description, setDescription }) => {
   const dispatch = useDispatch()
   const taskDueDate = moment(dueDate).format('MMM Do')
+
+  //useEffect(() => {
+  //  setDescription(text)
+  //}, [setDescription])
 
   const onInputChange = (event) => {
     setDescription(event.target.value)
   }
 
   const onSaveEdit = () => {
-    dispatch(tasks.actions.editItemDescription({id: id, description: description}))
+    dispatch(tasks.actions.editItemDescription({ id: id, description: description }))
+    dispatch(fetchData())
+  }
+
+  const onToggleComplete = () => {
+    dispatch(tasks.actions.toggleComplete(id))
+    dispatch(fetchData())
   }
 
   return (
@@ -118,7 +129,7 @@ const TodoItem = ({ id, text, complete, created, editMode, dueDate }) => {
       <Input
         type="checkbox"
         checked={complete}
-        onChange={() => dispatch(tasks.actions.toggleComplete(id))}
+        onChange={onToggleComplete}
       />
       <Indicator />
       {editMode ? <TodoInput type="text" value={description} onChange={onInputChange}/> : <Description>{text}</Description>}

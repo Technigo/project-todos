@@ -1,14 +1,31 @@
+import { useState } from 'react'
 import { createSlice } from '@reduxjs/toolkit'
 import moment from 'moment'
 import uniqid from 'uniqid'
+import $ from 'jquery'
 
-import { API_RAW, API_POST, API_DELETE, API_EDIT } from '../reusable/urls'
+import { API_TODO, API_POST, API_DELETE, API_EDIT } from '../reusable/urls'
+import { SkeletonPlaceholder } from 'carbon-components-react'
 
 export const fetchData = () => {
   return (dispatch) => {
-    fetch(API_RAW)
-      .then(res => res.json())
-      .then(data => dispatch(tasks.actions.handleFetchedData(data)))
+
+    const settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://todoapi-b7cf.restdb.io/rest/todo-api",
+      "method": "GET",
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": "6084310d28bf9b609975a622",
+        "cache-control": "no-cache"
+      }
+    }
+
+    $.ajax(settings).done((res) => {
+      console.log(res)
+      dispatch(tasks.actions.handleFetchedData(res))
+    })
   } 
 }
 
@@ -20,34 +37,53 @@ export const tasks = createSlice({
   },
   reducers: {
     handleFetchedData: (store, action) => {
-      const convertBooleans = (bool) => {
-        if (bool === "true") {
-          return true
-        } else if (bool === "false") {
-          return false
-        }
-      }
-        
       const addFetchedData = action.payload.map(item => {
-        return { id: item.id, text: item.text, complete: convertBooleans(item.complete), created: item.created, editMode: convertBooleans(item.editMode), dueDate: item.dueDate }
+        return { _id: item._id, id: item.id, text: item.text, complete: item.complete, created: item.created, editMode: item.editMode, dueDate: item.dueDate }
       })
 
       store.items = addFetchedData
     },
 
     toggleComplete: (store, action) => {
-      const updatedItems = store.items.map(item => {
+      let itemId 
+      let updateComplete
+
+      store.items.find(item => {
+        if (item.id === action.payload) {
+          itemId = item._id
+          updateComplete = !item.complete
+        } 
+      })
+      const jsonData = { "complete": `${updateComplete}` } 
+
+      const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `${API_EDIT(itemId)}`,
+        "method": "PUT",
+        "headers": {
+          "content-type": "application/json",
+          "x-apikey": "6084310d28bf9b609975a622",
+          "cache-control": "no-cache"
+        },
+        "processData": false,
+        "data": JSON.stringify(jsonData)
+      }
+      $.ajax(settings).done((res) => {
+        console.log(res)
+      })
+
+      const updatedCompletion = store.items.map((item) => {
         if (item.id === action.payload) {
           return {
             ...item,
-            complete: !item.complete,
+            complete: !item.complete
           }
         } else {
           return item
-        } 
+        }
       })
-
-      store.items = updatedItems
+      store.items = updatedCompletion
 
       const checkAllChecked = store.items.every(item => item.complete === true)
       store.allChecked = checkAllChecked
@@ -55,37 +91,54 @@ export const tasks = createSlice({
 
     postNewTodoAPI: (store, action) => {
       const {description, dueDate} = action.payload
-      const newTodo = { id: uniqid(), text: description, complete: "'false", created: moment().format(), editMode: "'false", dueDate: dueDate }
-
-      fetch(API_POST, {
-      method: "POST",
-      mode: "cors",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newTodo)
+      const newTodo = { "id": `${uniqid()}`, "text": `${description}`, "complete": `${false}`, "created": `${moment().format()}`, "editMode": `${false}`, "dueDate": `${dueDate}` }
+      const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `${API_TODO}`,
+        "method": "POST",
+        "headers": {
+          "content-type": "application/json",
+          "x-apikey": "6084310d28bf9b609975a622",
+          "cache-control": "no-cache"
+        }, 
+        "processData": false,
+        "data": JSON.stringify(newTodo)
+      }
+      $.ajax(settings).done((res) => {
+        console.log(res)
       })
-
-      fetch('https://sheet.best/api/sheets/aba1602e-a4b5-4108-81d5-285c53b6e8c2?_raw=1')
-        .then(res => res.json())
-        .then(data => tasks.actions.handleFetchedData(data))
 
     },
 
     removeTodo: (store, action) => {
-      let itemIndex
-      
+      let itemId
+
       store.items.find((item, index) => {
         if (item.id === action.payload) {
-          itemIndex = index
+          itemId = item._id
         } 
       })
 
-      fetch(API_DELETE(itemIndex), {
-        method: "DELETE",
+      const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `${API_DELETE(itemId)}`,
+        "method": "DELETE",
+        "headers": {
+          "content-type": "application/json",
+          "x-apikey": "6084310d28bf9b609975a622",
+          "cache-control": "no-cache"
+        }
+      }
+
+      $.ajax(settings).done((res) => {
+
       })
-        .then(res => res.json())
-        .then(data => console.log(data))
+
+      const filterList = store.items.filter(item => item.id !== action.payload)
+      store.items = filterList
+
     },
 
     toggleEdit: (store, action) => {
@@ -104,25 +157,46 @@ export const tasks = createSlice({
     },
 
     editItemDescription: (store, action) => {
-      let itemIndex 
+      let itemId
       let updatedValues
       
-      store.items.find((item, index) => {
+      store.items.find((item) => {
         if (item.id === action.payload.id) {
-          itemIndex = index
-          updatedValues = { text: action.payload.description, editMode: !item.editMode }
+          itemId = item._id
+          updatedValues = action.payload.description
         } 
       })
-      console.log(updatedValues)
 
-      fetch(API_EDIT(itemIndex), {
-        method: "PATCH",
-        mode: "cors",
-        headers: {
-          "Content-Type": "application/json",
+      const jsonData = { "text": `${updatedValues}` } 
+      const settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": `${API_EDIT(itemId)}`,
+        "method": "PUT",
+        "headers": {
+          "content-type": "application/json",
+          "x-apikey": "6084310d28bf9b609975a622",
+          "cache-control": "no-cache"
         },
-        body: JSON.stringify(updatedValues)
+        "processData": false,
+        "data": JSON.stringify(jsonData)
+      }
+      $.ajax(settings).done((res) => {
+        console.log(res)
       })
+
+      const updatedDescription = store.items.map((item) => {
+        if (item.id === action.payload.id) {
+          return {
+            ...item,
+            text: updatedValues,
+            editMode: !item.editMode
+          }
+        } else {
+          return item
+        }
+      })
+      store.items = updatedDescription
     }
     ,
 

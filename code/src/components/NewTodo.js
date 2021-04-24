@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { DatePicker, DatePickerInput } from 'carbon-components-react'
 
-import { tasks } from '../reducers/tasks'
+import { fetchData, tasks } from '../reducers/tasks'
 
 const Container = styled.div`
   display: flex;
@@ -84,6 +84,7 @@ const NewTodo = () => {
     event.preventDefault()
     dispatch(tasks.actions.postNewTodoAPI({ description: newTodoInput, dueDate: dueDate }))
     setNewTodoInput('')
+    dispatch(fetchData())
   }
 
   const onDateChange = (date) => {

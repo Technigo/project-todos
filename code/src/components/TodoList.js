@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
@@ -13,14 +13,13 @@ const Section = styled.section`
 `
 
 const TodoList = () => {
+  const [description, setDescription] = useState('')
   const dispatch = useDispatch()
+  const items = useSelector((store) => store.tasks.items)
   
-
   useEffect(() => {
     dispatch(fetchData())
   }, [dispatch])
-
-  const items = useSelector((store) => store.tasks.items)
 
   return (
     <Section>
@@ -33,6 +32,8 @@ const TodoList = () => {
           created={item.created}
           editMode={item.editMode}
           dueDate={item.dueDate}
+          description={description}
+          setDescription={setDescription}
         />
       ))}
     </Section>

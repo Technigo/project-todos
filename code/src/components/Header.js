@@ -47,15 +47,6 @@ const Date = styled.p`
   
 `
 
-const ClearBtn = styled.button`
-  border-radius: 8px;
-  background-color: #8B98F9;
-  color: #fff;
-  border: none;
-  padding: 5px;
-  cursor: pointer;
-`
-
 const Span = styled.span`
   text-align: right;
 `
