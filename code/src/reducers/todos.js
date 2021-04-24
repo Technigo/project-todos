@@ -1,9 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-  items: localStorage.getItem('todos')
-          ? JSON.parse(localStorage.getItem('todos'))
-          : []
+  items: []
 }
 
 const todos = createSlice({
@@ -21,8 +19,24 @@ const todos = createSlice({
         const decreaseComplete = store.items.filter((complete) => complete.isComplete === false) 
         store.items =  decreaseComplete
       },
-      removeAll: (store) => {
-        store.items = []
+      makeAllDone: (store) => {
+        const allDone = store.items.map((item) => {
+          return {
+            ...item,
+            isComplete: true
+          }
+        })
+        store.items = allDone
+      },
+      resetAll: (store) => {
+        //store.items = []
+        const unDone = store.items.map((item) => {
+          return {
+            ...item,
+            isComplete: false
+          }
+        })
+        store.items = unDone
       },
       toggleComplete: (store, action) => {
         const updatedItems = store.items.map((todo) => {

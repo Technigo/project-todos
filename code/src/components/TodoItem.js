@@ -1,39 +1,62 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import Checkbox from '@material-ui/core/Checkbox'
 import DeleteIcon from '@material-ui/icons/Delete'
-
-import { useDispatch } from 'react-redux'
+import EditIcon from '@material-ui/icons/Edit'
+import SaveIcon from '@material-ui/icons/Save'
 
 import todos from '../reducers/todos'
 
-const TodoItem = ({ checked, id, text }) => {
+const TodoItem = ({ checked, id, text, handleEditTodos }) => {
   const dispatch = useDispatch()
+  const [onEdit, setOnEdit] = useState(false)
+  const [editValue, setEditValue] = useState(text)
+  
+  const onHandleEdit = () => {
+    setOnEdit(true)
+  }
 
-/*   const handleDelete = (id) => {
-    const data = localStorage.getItem('todos')
-      ? JSON.parse(localStorage.getItem('todos'))
-      : []
-      localStorage.setItem('todos', JSON.stringify([...data, {
-        description: newTodo,
-        isComplete: false, 
-        id: Date.now()
-      } ])) 
-    dispatch(todos.actions.removeTodo(id))
-  } */
+  const onHandleSave = (id) => {
+    setOnEdit(false)
+    if (editValue) {
+      handleEditTodos(editValue, id)
+    } else {
+      setEditValue(text)
+    }
+  }
 
-  return (
-    <div className='todo-item'>
-      <Checkbox
-        checked={checked}
-        className="checked"
-        onChange={() => dispatch(todos.actions.toggleComplete(id))}
-      />
-      <p className={checked ? 'done' : null}>{text}</p>
-      <div className='delete-btn'>
-        <DeleteIcon onClick={() => dispatch(todos.actions.removeTodo(id))}/>
+  if(onEdit) {
+    return (
+      <div className='test'>
+        <input 
+          className='custom-select'
+          type='text' 
+          id='editValue' 
+          value={editValue} 
+          name='editValue'
+          onChange={e => setEditValue(e.target.value)}
+        />
+        <SaveIcon onClick={() => onHandleSave(id)} />
       </div>
-    </div>
-  )
+    )
+  } else {
+      return (
+        <div className='todo-item'>
+          <Checkbox
+            checked={checked}
+            className='checked'
+            onChange={() => dispatch(todos.actions.toggleComplete(id))}
+          />
+          <div className='todo-content'>
+            <p className={checked ? 'done' : null}> {editValue} </p>
+          </div>
+          <div className='todo-btn'>
+            <EditIcon onClick={onHandleEdit} />
+            <DeleteIcon onClick={() => dispatch(todos.actions.removeTodo(id))} />
+          </div>
+        </div>
+      )
+  }
 }
 
 export default TodoItem

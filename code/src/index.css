@@ -1,51 +1,86 @@
 body {
   margin: 0;
+  width: 100%;
   background: #F4F6FD;
   font-family: 'Nunito', sans-serif;
   color: #3D47AF;
 }
 
+.start-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: #3D47AF;
+  color: #F4F6FD;
+  padding-bottom: 30px;
+}
+
 .header {
   display: flex;
   justify-content: space-evenly;
-  height: 100px;
+  height: 120px;
+  background: #3D47AF;
+  color: #F4F6FD;
 }
 
-.remove-btn {
-  font-size: 10px;
-}
-
-.header-btn {
-  margin-top: 20px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+.header-title {
+  margin-bottom: -5px;
 }
 
 .todo {
-  height: 100%;
-  margin-top: 30px;
   padding-top: 30px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 2px solid #3D47AF;
 }
 
 .todo-container {
-  width: 300px;
+  width: 80%;
+  flex-wrap: wrap;
+}
+
+.todo-header {
+  margin-bottom: -10px;
+}
+
+.date {
+  font-size: 14px;
+  margin-bottom: 0px;
+}
+
+.select-container {
+  margin-bottom: 25px;
+}
+
+.custom-select {
+  border: 1px solid #3D47AF;
+  color: #3D47AF;
+  background: #F4F6FD;
 }
 
 .todo-item {
   display: flex;
+  flex-wrap: wrap;
+  align-items: center;
   margin: 10px 0;
   padding-left: 10px;
   background: #3D47AF;
   color: #F4F6FD;
-  font-size: 18px;
+  font-size: 16px;
   border-radius: 20px;
-  align-items: center;
   position: relative;
+  word-break: break-all;
+}
+
+.todo-content {
+  width: 100px;
+  word-break: break-all;
+}
+
+.todo-btn {
+  position: absolute;
+  right: 30px;
 }
 
 .done {
@@ -53,13 +88,19 @@ body {
   opacity: 0.5;
 }
 
-.delete-btn {
-  position: absolute;
-  right: 30px;
+.remove-btn {
+  font-size: 10px;
+}
+
+.header-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .input-container { 
-  width: 300px;
+  width: 80%;
   position: relative;
 }
 
@@ -68,3 +109,6 @@ body {
   right: 0;
 }
 
+.test {
+  display: flex;
+}
