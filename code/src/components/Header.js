@@ -1,11 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-
-
 const options = { weekday: 'long', month: 'long', day: 'numeric' };
 const date = new Date().toLocaleDateString("en-US", options)
-
 
 const Header = () => {
 
