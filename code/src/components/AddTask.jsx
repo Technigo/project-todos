@@ -15,7 +15,8 @@ const StyledForm = styled.form`
   border-radius: 5% 0% 40% 0%/2% 0% 10% 0%;
   transform: rotate(1deg);
   margin: 10px 10px 0px 10px;
-  width: 95%;
+  width: 90%;
+
   @media (min-width: 420px) {
     width: 85%;
   }
@@ -68,7 +69,7 @@ const AddTask = () => {
         aria-label="text input"
       />
       <AddButton type="submit">
-      <span role="img" alt="plus sign" aria-label="plus sign icon">➕</span>
+        <span role="img" alt="plus sign" aria-label="plus sign icon">➕</span>
       </AddButton>
     </StyledForm>
   )
