@@ -12,11 +12,26 @@ const Button = styled.button`
   margin-left: auto;
   display: flex;
   align-items: center;
+  font-size: 1.5rem;
+
+  
+  @media (min-width: 768px) {
+    font-size: 2.5rem;
+  }
 `;
 
 const Span = styled.span`
   font-size: 15px;
   margin-right: 5px;
+
+  @media (min-width: 768px) {
+    font-size: 16px;
+  }
+  
+  @media (min-width: 1200px) {
+    font-size: 20px;
+  }
+
 `
 
 const CompleteAllTodosButton = () => {
@@ -27,9 +42,7 @@ const CompleteAllTodosButton = () => {
       onClick={() => dispatch(todos.actions.completeAllTodos())}
     >
       <Span>Check all</Span>
-      <AiFillCheckCircle 
-        size="1.5rem"
-      />
+      <AiFillCheckCircle />
     </Button>
   );
 };

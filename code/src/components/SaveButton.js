@@ -9,6 +9,11 @@ const Button = styled.button`
   font-size: 25px;
   padding: 0;
   margin-left: 5px;
+
+  
+  @media (min-width: 768px) {
+    font-size: 30px;
+  }
 `;
 
   const SaveButton = ({ onSaveEditedContent }) => {

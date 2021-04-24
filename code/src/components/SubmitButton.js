@@ -11,6 +11,11 @@ const Button = styled.button`
   border: none;
   color: #ea9a96;
   padding: 0;
+
+  
+  @media (min-width: 768px) {
+    font-size: 60px;
+  }
 `;
 
 const SubmitButton = () => {

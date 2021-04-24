@@ -16,8 +16,16 @@ import ErrorMessage from './ErrorMessage';
 const Form = styled.form`
   display: flex;
   flex-direction: column;
-  background: transparent;
+  background: #ffffff;
   padding: 3vh;
+
+  @media (min-width: 768px) {
+    padding: 4vh;
+  }
+  
+  @media (min-width: 1200px) {
+    padding: 5vh;
+  }
 `;
 
 const Container = styled.div`
@@ -31,12 +39,26 @@ const Label = styled.label`
   background: transparent;
   width: 50%;
   margin-right: auto;
+
+  @media (min-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const InputText = styled.input`
   width: 50%;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
+
+  @media (min-width: 768px) {
+    width: 70%;
+    font-size: 20px;
+  }
+
+  @media (min-width: 1200px) {
+    width: 100%;
+    font-size: 28px;
+  }
 `;
 
 const DateButton = styled.button`
@@ -44,7 +66,15 @@ const DateButton = styled.button`
   color: #303960;
   border: none;
   border-radius: 5px;
-  font-size: 18px;
+  font-size: 16px;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
+  
+  @media (min-width: 1200px) {
+    font-size: 28px;
+  }
 `
 
 const NewTodo = () => {

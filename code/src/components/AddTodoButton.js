@@ -15,6 +15,17 @@ const Button = styled.button`
   position: absolute;
   top: 5rem;
   right: 1.8rem;
+  font-size: 4.5rem;
+
+  @media (min-width: 768px) {
+    top: 8.9rem;
+    right: 7.8rem;
+    font-size: 5.5rem;
+  }
+  
+  @media (min-width: 1200px) {
+    font-size: 6.5rem;
+  }
 `;
 
 const AddTodoButton = () => {
@@ -22,9 +33,7 @@ const AddTodoButton = () => {
 
   return (
     <Button onClick={() => dispatch(todos.actions.toggleShowForm())}>
-      <AiFillPlusCircle 
-        size="4.5rem"
-      />
+      <AiFillPlusCircle />
     </Button>
   );
 };

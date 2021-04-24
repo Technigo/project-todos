@@ -17,6 +17,14 @@ const TodoContainer = styled.div`
   align-items: center;
   padding: 3vh;
   border-bottom: solid 1px #e5e5e5;
+
+  @media (min-width: 768px) {
+    padding: 4vh;
+  }
+  
+  @media (min-width: 1200px) {
+    padding: 5vh;
+  }
 `;
 
 const IconDiv = styled.div`
@@ -28,22 +36,46 @@ const IconDiv = styled.div`
 
 const ContentParagraph = styled.p`
   margin: 0 0 0 15px;
-  font-size: 18px;
+  font-size: 16px;
   color: ${props => props.todoComplete ? '#a0a9cf' : '#303960'}; 
   text-decoration: ${props => props.strikethrough ? 'line-through' : '' };
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
+  
+  @media (min-width: 1200px) {
+    font-size: 28px;
+  }
 `;
 
 const DateParagraph = styled.p`
   margin: 0 0 0 auto;
   font-size: 12px;
   color: ${props => props.todoComplete ? '#a0a9cf' : '#303960'};
+
+  @media (min-width: 768px) {
+    font-size: 14px;
+  }
+  
+  @media (min-width: 1200px) {
+    font-size: 16px;
+  }
 `;
 
 const EditTodo = styled.input`
   width: 50%;
-  font-size: 18px;
+  font-size: 16px;
   border: none;
   margin-left: 10px;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
+  
+  @media (min-width: 1200px) {
+    font-size: 28px;
+  }
 `;
 
 const Todo = ({ todo }) => {

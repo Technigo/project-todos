@@ -12,6 +12,10 @@ const Button = styled.button`
   margin-left: 15px;
   font-size: 25px;
   padding: 0;
+
+  @media (min-width: 768px) {
+    font-size: 30px;
+  }
 `;
 
 const EditButton = ({ todo }) => {

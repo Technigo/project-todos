@@ -11,29 +11,67 @@ const EmptyStateSection = styled.section`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: transparent;
+  background: #ffffff;
+
+  @media (min-width: 768px) {
+    padding: 60px 100px 100px 100px;
+  }
 `;
 
 const EmptyStateParagraph = styled.p`
   font-size: 16px;
   color: #303960;
   text-align: center;
-`
+  padding: 0 60px;
+
+  @media (min-width: 768px) {
+    padding: 0 20px;
+    font-size: 20px;
+  }
+  
+  @media (min-width: 1200px) {
+    font-size: 28px;
+  }
+`;
 
 const Container = styled.div`
   display: flex;
   align-items: center;
-  background: transparent;
+  background: #ffffff;
   padding: 3vh;
+
+  @media (min-width: 768px) {
+    padding: 4vh;
+  }
+  
+  @media (min-width: 1200px) {
+    padding: 5vh;
+  }
 `;
 
 const Paragraph = styled.p`
   color: #303960;
   margin: 0;
+
+  @media (min-width: 768px) {
+    font-size: 20px;
+  }
+  
+  @media (min-width: 1200px) {
+    font-size: 28px;
+  }
 `;
 
 const TodosSection = styled.section`
-  background: transparent;
+  background: #ffffff;
+
+  @media (min-width: 768px) {
+    padding-bottom: 80px;
+  }
+  
+  @media (min-width: 1200px) {
+    padding-bottom: 120px;
+  }
 `;
 
 const TodoList = () => {
