@@ -6,46 +6,61 @@ import styled from 'styled-components'
 //Importing the reducer that contains the action we are dispatching
 import todos from '../reducers/todos'
 
+const TaskContainer= styled.div`
 
-const TodoListContainer = styled.div`
-  border-bottom: #6C4123 1px solid;
-  margin:1em;
-  
-  
+
 `
 
 const TaskWrapper = styled.div`
-
+  margin:30px 0;
+  width:300px;
+  border: none;
+  outline:none;
+  background: none;
+  color: #555;
+  padding:20px 10px 20px 5px;
+  border-radius: 25px;
+  box-shadow: inset 8px 8px 8px #cbced1,
+              inset -8px -8px 8px #ffffff;
 `
 
-const Task = styled.text`
-  
-
+const Text = styled.text`
+  font-size: 18px;
+  font-weight: 400;
 `
 
 const CheckboxAndButtonWrapper = styled.div`
-  
-
+  display:flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  width:180px;
 `
-
-const Checkbox = styled.input`
-
-  
-`
-
 
 const Button = styled.button`
-  background-color: #ece4b7;
-  font-size: 1em;
-  margin: 1em;
-  padding: 0.25em 1em;
-  border: 3px solid #6C4123;
-  border-radius: 10px;
-  color: #6C4123;
+  outline: none;
+  border:none;
+  cursor: pointer;
+  width:100px;
+  height: 60px;
+  border-radius: 30px;
+  font-size: 20px;
+  font-weight: 700;
+  font-family: 'Lato', sans-serif;
+  color:#fff;
+  text-align: center;
+  background: #24cfaa;
+  box-shadow: 3px 3px 8px #b1b1b1,
+              -3px -3px 8px #ffffff;
+  transition: 0.5s;
+  }
+  &:hover {
+  background:#2fdbb6;
+  }
+  &:active {
+  background:#1da88a;
+  }
   
 `
-
-
 
 const TodoList = () => {
 //we name this variable "tasks" the same as the property in the store -line 6 in the Slice todos
@@ -58,25 +73,27 @@ const TodoList = () => {
   return (
     <div>
       {tasks.map(todo => (
-        <TodoListContainer key={todo.id}>
+        <TaskContainer key={todo.id}>
           <TaskWrapper>
-            <Task>{todo.description}</Task>
+            <Text>{todo.description}</Text>
           </TaskWrapper>
-            <CheckboxAndButtonWrapper>
-              <Checkbox
+          <CheckboxAndButtonWrapper>
+            <label className="checkbox-label">
+              <input
                 className="checkbox"
                 type="checkbox"
                 checked={todo.isComplete}
                 onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
                 //onChange contains the action we are going to dispatch when we check a task as complete
               />
-              <Button  onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
+              <span className="checkbox-custom rectangular"></span>
+            </label>
+             
+            <Button  onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
                 Delete
-              </Button>
-            </CheckboxAndButtonWrapper>
-          
-        </TodoListContainer>
-        
+            </Button>
+          </CheckboxAndButtonWrapper>          
+        </TaskContainer>        
       ))}
     </div>
   )
