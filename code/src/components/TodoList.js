@@ -2,14 +2,17 @@ import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 
 import EmptyTodoList from './EmptyTodoList'
-import TodoThumb from './TodoThumb'
 import FiltersList from './FiltersList'
+import TasksContainer from './TasksContainer'
 
 
 const TodoList = () => {
   const items = useSelector((store) => store.todo.items)
   const filters = useSelector(store => store.todo.filters)
   const [filteredItimes, setFilteredItems] = useState([])
+  const homeItems = filteredItimes.filter(item => item.category === "Home")
+  const personalItems = filteredItimes.filter(item => item.category === "Personal")
+  const workItems = filteredItimes.filter(item => item.category === "Work")
 
   useEffect(() => {
     let newFilteredItems = [...items]
@@ -28,15 +31,13 @@ const TodoList = () => {
       }
     })
     setFilteredItems(newFilteredItems)
-  }, [filters, items ])
+  }, [filters, items])
 
   return (
     <div className="list-container">
       {items.length === 0 && <EmptyTodoList />}
       {items.length > 0 && <FiltersList filters={filters} />}
-      <div className="tasks-container">
-        {filteredItimes.map((item) => <TodoThumb key={item.id} item={item} />)}
-      </div>
+      {items.length > 0 && <TasksContainer homeItems={homeItems} workItems={workItems} personalItems={personalItems}  />}
     </div>
   )
 }
