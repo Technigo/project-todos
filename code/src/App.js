@@ -11,6 +11,7 @@ import Header from './components/Header'
 import TodoList from './components/TodoList'
 import TodoInput from './components/TodoInput'
 import ClearAllTodos from './components/ClearAllTodos'
+import Footer from './components/Footer'
 
 // const BackgroundImage = styled.img `
 //   background-position: cover; 
@@ -28,10 +29,11 @@ export const App = () => {
   return (
     <Provider store = {store}>
       <Header />
-      {/* <BackgroundImage src={ img }/> */}
+      {/* <BackgroundImage src={ img }/> */} 
       <TodoInput />
-      <TodoList />
+      <TodoList /> 
       <ClearAllTodos />
+      <Footer />
     </Provider>
   )
 }

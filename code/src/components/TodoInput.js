@@ -6,10 +6,9 @@ import styled  from 'styled-components'
 import todos from '../reducers/todos'
 
 const InputField = styled.form `
-  height: 5vh;
-  width: 30vw;
-  border: 2px solid green;
-  border-radius: 12px;
+  height: 30px;
+  width: 100%;
+  border-bottom: 2px solid gray;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -38,6 +37,7 @@ const TodoInput = () => {
       onSubmit={onFormSubmit}
     >
       <input
+        placeholder="Add new task.."
         type="text"
         value={newTask}
         onChange={e => setNewTask(e.target.value)}

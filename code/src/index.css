@@ -14,13 +14,14 @@ code {
     monospace;
 }
 .main-container {
-  /* margin: 50px; */
+  margin: 50px;
   display:flex;
   flex-direction: column;
   align-items: center;
-  border: 2px solid black;
-  height: 100vh; 
-  /* width: 300px; */
+  border: 2px solid gray;
+  box-shadow: 8px 8px 0px 3px gray;
+  height: 500px; 
+  width: 250px;
 } 
  input[type=checkbox]:checked + p {  /*how can this be written in styled-components? */
   text-decoration-line: line-through;
@@ -34,36 +35,40 @@ input[type="checkbox"] {
 }
 input[type="checkbox"]:after {
   content: '';
-  border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  width: 20px;
-  height: 20px;
-  
-  
+  justify-content: center; 
+  width: 100%;
+  height: 20px; 
   font-size: 20px;
-  color: white;
-  border: 1px solid pink;
-
+  color: gray;
+  content: '\2713';
+  padding-left: 15px;
 }
 input[type="checkbox"]:checked:after {
-  content: '\2713';
-  background: pink;
+  color: pink;
+}
+input[type="text"]{
+  border: none;
+  width: 100%;
+  padding-left: 10px;
 }
 input:focus {
   outline: none;
 }
-/* button {
-  margin-right: 8px;
-  background-color:rgb(237, 231, 231);
+p {
+  margin:  0; 
+  padding: 0; 
+  color: gray;
+}
+button {
+  background: none; 
   border: none;
-  border-radius: 10px;
-  height: 30px;
-  width: 50px;
-} */
-/* .todos-container {
-  width: 100vw;
-  height: 100vh;
-  border: 2px solid palevioletred;
-} 560,312520174568519+0,*/
+  outline: none;
+  color: gray;
+}
+/* how to stick footer to bottom? 
+how to remove button auto design 
+background pic around the container
+button modification
+flex, where divs*/
