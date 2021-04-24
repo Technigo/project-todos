@@ -1,5 +1,8 @@
 import React, { useState } from "react"
+import { useDispatch } from "react-redux"
 import styled from 'styled-components'
+
+import tasks from "reducers/tasks"
 
 import HeaderOverview from "./HeaderOverview"
 import HeaderActions from "./HeaderActions"
@@ -54,16 +57,20 @@ const Header = () => {
   const [showActions, setShowActions] = useState(false)
   const [showFilter, setShowFilter] = useState(false)
 
+  const dispatch = useDispatch()
+
   const handleClickOverview = () => {
     setShowOverview(true)
     setShowActions(false)
     setShowFilter(false)
+    dispatch(tasks.actions.changeFilter(null))
   }
 
   const handleClickActions = () => {
     setShowActions(true)
     setShowOverview(false)
     setShowFilter(false)
+    dispatch(tasks.actions.changeFilter(null))
   }
 
   const handleClickFilter = () => {

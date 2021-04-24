@@ -49,41 +49,25 @@ const Icon = styled.img`
 const HeaderFilter = () => {
   const dispatch = useDispatch()
 
-  const filterCompleted = () => {
-    dispatch(tasks.actions.filterCompleted())
-  }
-
-  const filterUncompleted = () => {
-    dispatch(tasks.actions.filterUncompleted())
-  }
-
-  const filterDueSoon = () => {
-    dispatch(tasks.actions.filterDueSoon())
-  }
-
-  const filterOverdue = () => {
-    dispatch(tasks.actions.filterOverdue())
-  }
-
-  const resetFilter = () => {
-    dispatch(tasks.actions.resetFilter())
+  const onFilterChange = (filter) => {
+    dispatch(tasks.actions.changeFilter(filter))
   }
 
   return (
     <ButtonContainer>
-      <HeaderButton onClick={filterCompleted} >
+      <HeaderButton onClick={() => onFilterChange("completed")} >
         <Icon src="./assets/check-icon.svg" alt="check icon" />
       </HeaderButton>
-      <HeaderButton onClick={filterUncompleted}>
+      <HeaderButton onClick={() => onFilterChange("uncompleted")}>
         <Icon src="./assets/square-icon.svg" alt="square icon" />
       </HeaderButton>
-      <HeaderButton onClick={filterDueSoon}>
+      <HeaderButton onClick={() => onFilterChange("due soon")}>
         <Icon src="./assets/calendar-icon.svg" alt="calender icon" />
       </HeaderButton>
-      <HeaderButton onClick={filterOverdue}>
+      <HeaderButton onClick={() => onFilterChange("overdue")}>
         <Icon src="./assets/calendar-overdue-icon.svg" alt="calender overdue icon" />
       </HeaderButton>
-      <HeaderButtonText onClick={resetFilter}>
+      <HeaderButtonText onClick={() => onFilterChange(null)}>
         reset filter
         <Icon src="./assets/filter-icon.svg" alt="filter icon" />
       </HeaderButtonText>

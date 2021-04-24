@@ -1,6 +1,7 @@
 import React from "react"
 import { useSelector } from "react-redux"
 import styled from "styled-components"
+import dayjs from 'dayjs'
 
 import Task from "./Task"
 
@@ -19,18 +20,56 @@ const NoTasksMessage = styled.p`
 
 const TaskContainer = () => {
   const tasks = useSelector((store) => store.tasks.allTasks)
-  const isFiltered = useSelector((store) => store.tasks.isFiltered)
+  const filter = useSelector((store) => store.tasks.filter)
+
+  const completedTasks = tasks.filter(task => task.isCompleted)
+  const unCompletedTasks = tasks.filter(task => !task.isCompleted)
+  const soonDueTasks = tasks.filter(task => !dayjs(task.dueDate).isSameOrBefore(new Date()))
+  const overdueTasks = tasks.filter(task => dayjs(task.dueDate).isSameOrBefore(new Date()))
 
   return (
     <TaskSection>
-      {(!isFiltered && tasks.length === 0) && <NoTasksMessage>It looks like your to do list is empty. Why don't you add a new task?</NoTasksMessage>}
 
-      {(isFiltered && tasks.filter(task => !task.isHidden).length === 0) && <NoTasksMessage>There are no results that match this filter. Try another one!</NoTasksMessage>}
-
-      {tasks.length > 0 &&
-        tasks.filter(task => !task.isHidden).map(task => (
+      {!filter &&
+        tasks.map(task =>
           <Task key={task.id} task={task} />
-        ))}
+        )}
+
+      {(!filter && tasks.length === 0) &&
+        <NoTasksMessage>It looks like your to do list is empty. Why don't you add a new task?</NoTasksMessage>}
+
+      {filter === "completed" &&
+        completedTasks.map(task =>
+          <Task key={task.id} task={task} />
+        )}
+
+      {(filter === "completed" && completedTasks.length === 0) &&
+        <NoTasksMessage>There are no results that match this filter. Try another one!</NoTasksMessage>}
+
+      {filter === "uncompleted" &&
+        unCompletedTasks.map(task =>
+          <Task key={task.id} task={task} />
+        )}
+
+      {(filter === "uncompleted" && unCompletedTasks.length === 0) &&
+        <NoTasksMessage>There are no results that match this filter. Try another one!</NoTasksMessage>}
+
+      {filter === "due soon" &&
+        soonDueTasks.map(task =>
+          <Task key={task.id} task={task} />
+        )}
+
+      {(filter === "completed" && soonDueTasks.length === 0) &&
+        <NoTasksMessage>There are no results that match this filter. Try another one!</NoTasksMessage>}
+
+      {filter === "overdue" &&
+        overdueTasks.map(task =>
+          <Task key={task.id} task={task} />
+        )}
+
+      {(filter === "completed" && overdueTasks.length === 0) &&
+        <NoTasksMessage>There are no results that match this filter. Try another one!</NoTasksMessage>}
+
     </TaskSection>
   )
 }
