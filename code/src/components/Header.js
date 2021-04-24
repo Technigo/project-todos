@@ -1,11 +1,20 @@
-// import React from 'react'
-// import styled from 'styled-components'
+import React from 'react'
+import styled from 'styled-components'
 
-// const header = styled.
+const HeaderSection = styled.section `
+  background: lightblue;
+  color: white;
+  height: 50px;
+  width: 100%;
+`
 
-// const Header = () => {
-//   return <header></header>
-// }
+const Header = () => {
+  return (
+    <HeaderSection>
+
+    </HeaderSection>
+    )
+}
 
 
-// export default Header 
+export default Header 

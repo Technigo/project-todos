@@ -2,19 +2,20 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import todos from '../reducers/todos'
-//  import TotalTodos from './components/TotalTodos'
+import TotalTodos from './TotalTodos'
 
 const TodoList = () => {
   const tasks = useSelector((store) => store.todos.tasks) //hook to get things out of the store , specify from where
   const completedTodos = tasks.filter(todo => todo.isComplete)
  
-
   const dispatch = useDispatch()  
 
   return (
     <div>
-      {/* <TotalTodos /> */}
-      <p>Tasks left todo:{completedTodos.length}/{tasks.length} </p>
+      <TotalTodos 
+        tasks={tasks}
+        completedTodos={completedTodos}
+      />
      {tasks.map(todo => (
         <div className="todo-list" key={todo.id}>
           <input

@@ -13,7 +13,6 @@ const InputField = styled.form `
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: pink;
 `
 
 
