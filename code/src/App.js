@@ -21,7 +21,7 @@ export const App = () => {
     <Provider store={store}>
     
       
-    <div>
+    <div className="main-container">
       <Header />
      <TodoForm />
      <TodoList />
