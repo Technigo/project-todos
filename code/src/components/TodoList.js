@@ -37,7 +37,10 @@ const TodoList = () => {
     <div className="list-container">
       {items.length === 0 && <EmptyTodoList />}
       {items.length > 0 && <FiltersList filters={filters} />}
-      {items.length > 0 && <TasksContainer homeItems={homeItems} workItems={workItems} personalItems={personalItems}  />}
+      {items.length > 0 && <TasksContainer
+        homeItems={homeItems}
+        workItems={workItems}
+        personalItems={personalItems} />}
     </div>
   )
 }
