@@ -11,7 +11,7 @@ I started by sketching out the basic structure for the components that I would n
 
 With the above functionality in place, I implemented the styling to the styled components and made the application responsive for mobile, tablet and desktop view.
 
-If I had more time, there are several features that I would've added! The ones on the top of the list would be to 
+If I had more time, there are several features that I would've added! The ones on the top of my list would be to 
 - connect the application to a REST API to store the todos so that the user can continue using the application,  
 - implement a functionality to make the todos dragable (i.e. the user could then move around and set the priorities), 
 - create categories/tags with colors for todos so they can be grouped,

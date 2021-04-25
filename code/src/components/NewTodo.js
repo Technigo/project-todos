@@ -102,9 +102,7 @@ const NewTodo = () => {
         onClick={onClick} 
         ref={ref}
       >
-        Due Date
-        {/* {dueDate && (JSON.stringify(dueDate) === '' ? 'Due date' : {dueDate})} */}
-        {/* {dueDate} */}
+        {dueDate ? dayjs(dueDate).format('MMM D YYYY') : 'Due Date'}
       </DateButton>
     ),
   );
