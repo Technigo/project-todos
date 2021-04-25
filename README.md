@@ -1,13 +1,14 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project was made with React and Redux by implementing a TODO list.
+You can add new task, remove it, selected as done and select all.
+All the local state is stored in LocalStorage to persist the info every time you reload the app
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+In this project I didn't have too many problems, I understood all the flow with Redux. In addition, I have added persistence with local storage to redux
+If I had more time I would like to reach Black Level and add unmark all selected tasks
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+...
