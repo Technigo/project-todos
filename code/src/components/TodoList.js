@@ -21,6 +21,7 @@ const DescriptionTask = styled.p `
 const DateStamp = styled.p `
   font-size: 10px; 
   color: pink; 
+  padding-top: 5px; 
 `
     
 const TodoList = () => {
