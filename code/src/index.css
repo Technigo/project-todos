@@ -14,7 +14,7 @@ code {
 
 .container {
   margin: 30px auto;
-  width: 80%;
+  width: 280px;
   padding: 5px;
   border-radius: 20px;
   background-color: #f6f4f3;
@@ -133,7 +133,7 @@ code {
 
 @media (min-width: 767px) {
   .container {
-    width: 50%;
+    width: 400px;
   }
 
   .main-title {
@@ -162,7 +162,7 @@ code {
   
   @media (min-width: 1200px) {
     .container {
-      width: 40%;
+      width: 500px;
     }
   
     .main-title {
