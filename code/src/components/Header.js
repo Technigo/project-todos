@@ -3,8 +3,6 @@ import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 import moment from 'moment'
 
-import { tasks } from '../reducers/tasks'
-
 import CheckAllBtn from './CheckAllBtn'
 
 const TopHeader = styled.header`

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import moment from 'moment'
@@ -124,7 +124,7 @@ const TodoItem = ({ id, text, complete, created, editMode, dueDate, description,
   }
 
   return (
-    <Container key={id}>
+    <Container>
 
       <Input
         type="checkbox"

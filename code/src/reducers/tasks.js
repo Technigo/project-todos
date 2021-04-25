@@ -1,11 +1,10 @@
-import { useState } from 'react'
 import { createSlice } from '@reduxjs/toolkit'
 import moment from 'moment'
 import uniqid from 'uniqid'
 import $ from 'jquery'
 
-import { API_TODO, API_POST, API_DELETE, API_EDIT } from '../reusable/urls'
-import { SkeletonPlaceholder } from 'carbon-components-react'
+import { API_TODO, API_DELETE, API_EDIT } from '../reusable/urls'
+
 
 export const fetchData = () => {
   return (dispatch) => {
@@ -41,25 +40,19 @@ export const tasks = createSlice({
         return { _id: item._id, id: item.id, text: item.text, complete: item.complete, created: item.created, editMode: item.editMode, dueDate: item.dueDate }
       })
 
-      store.items = addFetchedData
+      const sortFetchedData = addFetchedData.sort((a, b) => a.dueDate - b.dueDate)
+
+      store.items = sortFetchedData
     },
 
     toggleComplete: (store, action) => {
-      let itemId 
-      let updateComplete
+      const findItem = store.items.find(item => item.id === action.payload)
 
-      store.items.find(item => {
-        if (item.id === action.payload) {
-          itemId = item._id
-          updateComplete = !item.complete
-        } 
-      })
-      const jsonData = { "complete": `${updateComplete}` } 
-
+      const jsonData = { "complete": `${!findItem.complete}` } 
       const settings = {
         "async": true,
         "crossDomain": true,
-        "url": `${API_EDIT(itemId)}`,
+        "url": `${API_EDIT(findItem._id)}`,
         "method": "PUT",
         "headers": {
           "content-type": "application/json",
@@ -74,7 +67,7 @@ export const tasks = createSlice({
       })
 
       const updatedCompletion = store.items.map((item) => {
-        if (item.id === action.payload) {
+        if (item.id === findItem.id) {
           return {
             ...item,
             complete: !item.complete
@@ -112,18 +105,12 @@ export const tasks = createSlice({
     },
 
     removeTodo: (store, action) => {
-      let itemId
-
-      store.items.find((item, index) => {
-        if (item.id === action.payload) {
-          itemId = item._id
-        } 
-      })
+      const findItem = store.items.find(item => item.id === action.payload )
 
       const settings = {
         "async": true,
         "crossDomain": true,
-        "url": `${API_DELETE(itemId)}`,
+        "url": `${API_DELETE(findItem._id)}`,
         "method": "DELETE",
         "headers": {
           "content-type": "application/json",
@@ -157,21 +144,13 @@ export const tasks = createSlice({
     },
 
     editItemDescription: (store, action) => {
-      let itemId
-      let updatedValues
-      
-      store.items.find((item) => {
-        if (item.id === action.payload.id) {
-          itemId = item._id
-          updatedValues = action.payload.description
-        } 
-      })
+      const findItem = store.items.find(item => item.id === action.payload.id)
 
-      const jsonData = { "text": `${updatedValues}` } 
+      const jsonData = { "text": `${action.payload.description}` } 
       const settings = {
         "async": true,
         "crossDomain": true,
-        "url": `${API_EDIT(itemId)}`,
+        "url": `${API_EDIT(findItem._id)}`,
         "method": "PUT",
         "headers": {
           "content-type": "application/json",
@@ -189,7 +168,7 @@ export const tasks = createSlice({
         if (item.id === action.payload.id) {
           return {
             ...item,
-            text: updatedValues,
+            text: action.payload.description,
             editMode: !item.editMode
           }
         } else {
