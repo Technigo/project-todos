@@ -4,10 +4,9 @@ import { useSelector } from 'react-redux'
 const TaskCounter = () => {
   const items = useSelector((store) => store.todos.items)
   const completedItems = items.filter((singleTodo) => singleTodo.isComplete)
-  console.log(completedItems)
 
   return (
-    <h2>
+    <h2 className="task-counter">
       You have completed {completedItems.length} / {items.length} tasks
     </h2>
   )
