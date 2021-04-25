@@ -19,6 +19,7 @@ const TodoFrom = () => {
     };
 
     dispatch(todos.actions.addTodo(newTodo));
+    setValue(""); // empty input field after adding a task
   };
 
   return (

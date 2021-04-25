@@ -4,9 +4,9 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import todos from "./reducers/todos";
 
-import TodoForm from "./components/TodoForm"
+import TodoCountComplete from "components/TodoCountComplete";
+import TodoForm from "./components/TodoForm";
 import TodoList from "./components/TodoList";
-
 
 // Connect (combine) all of the slices into one group
 const reducer = combineReducers({
@@ -20,6 +20,7 @@ export const App = () => {
   return (
     // Pass store into <provider> so every component inside can reach for it
     <Provider store={store}>
+      <TodoCountComplete />
       <TodoForm />
       <TodoList />
     </Provider>

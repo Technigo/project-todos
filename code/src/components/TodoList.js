@@ -10,15 +10,15 @@ const TodoList = () => {
 
   return (
     <div>
-      {tasks.map((todo) => (
-        <div key={todo.id} className="todo-list">
-          <p>{todo.description}</p>
+      {tasks.map((task) => (
+        <div key={task.id} className="todo-list">
+          <p>{task.description}</p>
           <input
             type="checkbox"
-            checked={todo.isComplete}
-            onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+            checked={task.isComplete}
+            onChange={() => dispatch(todos.actions.toggleComplete(task.id))}
           />
-          <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
+          <button onClick={() => dispatch(todos.actions.removeTodo(task.id))}>
             Delete
           </button>
         </div>
