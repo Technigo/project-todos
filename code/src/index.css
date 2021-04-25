@@ -1,3 +1,27 @@
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flow-root;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root {
+  max-width: 415px;
+  background-image: url("./assets/background.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,4 +34,17 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media screen and (min-width: 415px) {
+  body {
+    background-image: url("./assets/background-blur.png");
+    background-repeat: no-repeat;
+  }
+  #root {
+    max-height: 770px;
+    border-radius: 15px;
+    position: relative;
+    border: #29292996 5px solid;
+  }
 }
