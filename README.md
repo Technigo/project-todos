@@ -1,5 +1,6 @@
 Project 15, Create a todo app with React and Reux
-🔵 
+
+Requirements
 
 - Your app should list all todo tasks - completed or uncompleted
 - You should be able to mark an uncompleted task as complete (and change it back to uncomplete)
@@ -7,7 +8,7 @@ Project 15, Create a todo app with React and Reux
 - Your app should show a count of either all todos, or all uncomplete todos (or both)
 
 
-🔴  Red Level (Intermediary Goals)**
+Strecth goals
 
 - Add a timestamp for each task indicating when it was created. 
 - Add a **clear all** button to set all tasks to *done* status. 
