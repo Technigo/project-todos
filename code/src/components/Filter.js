@@ -11,7 +11,7 @@ const Filter = ({ setFilter }) => {
  
   useEffect(()=> {
     filterHandler()
-  }, [ status])
+  }, [items, status])
 
   const filterHandler = () => {
     switch(status) {
