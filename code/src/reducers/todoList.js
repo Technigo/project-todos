@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit"
 
 const todoList = createSlice ({
-  name: 'todolist',
+  name: "todolist",
   initialState: {
     tasks: [
-      { id: 1, description: 'my first task!', isComplete: false },
+      { id: 1, description: "my first task!", isComplete: false },
     ]
   },
   reducers: {

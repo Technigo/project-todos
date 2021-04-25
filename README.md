@@ -1,15 +1,15 @@
 # Project Todos
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
+ 
+The assignment was to create a TO-DO list app using Redux.
+ 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
-As per Maria Pogosjan's recommendation, I used the very handy npm library Material-UI as a base for the interface.
-
+ 
+As per Maria Pogosjan's recommendation, I used the npm library Material-UI as a base. It took longer than expected to get into, but I think it was good practice and will help me in future projects. I hope to be more consistent about styling methods in the future, because here I mix CSS and styling with props a lot. If I had more time I would definitely go back and refactor the styling to use mainly one approach.
+ 
+I also wanted to add time estimates for how long the user thinks a new task might take, but I ran out of time. I unfortunately had little time this week, so I hope to return to this project to add functionality.
+ 
 ## View it live
+ 
+Netlify build:
+https://stoic-dubinsky-6740bc.netlify.app/ 
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.

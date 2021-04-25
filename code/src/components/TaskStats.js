@@ -1,12 +1,12 @@
 import React from "react"
-import { Container, Box, AppBar } from '@material-ui/core';
-import { positions, sizing } from '@material-ui/system'
-import { useSelector, useDispatch } from 'react-redux'
+import { Box, AppBar } from "@material-ui/core"
+import { positions, sizing } from "@material-ui/system"
+import { useSelector } from "react-redux"
 
-import todoList from '../reducers/todoList'
+
 
 const TaskStats = () => {
-  const tasks = useSelector((store) => store.todolist.tasks)
+  const tasks = useSelector((store) => store.todolist.tasks) //Redux won"t recognize "todoList" (camelCase) for some reason :/
   const completedTasks = tasks.filter(task => task.isComplete)
   return (
       <AppBar

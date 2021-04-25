@@ -1,20 +1,6 @@
-import { createMuiTheme }  from '@material-ui/core/styles'
+import { createMuiTheme }  from "@material-ui/core/styles"
 
 const theme = createMuiTheme ({
-  // overrides: {
-  //   MuiCheckbox: {
-  //     colorPrimary: {
-  //       '&$checked': {
-  //         color: "#00a19e",
-  //       }
-  //     },
-  //     colorSecondary: {
-  //       '&$checked': {
-  //         color: "#00a19e",
-  //       }
-  //     }
-  //   }
-  // },
   palette: {
     type: "light",
     common: { 
@@ -23,19 +9,18 @@ const theme = createMuiTheme ({
     },
     primary: { 
       light: "#fff",
-      main: "#F7F7F7",
-      dark: "#D9D9D9",
+      main: "#f7f7f7",
+      dark: "#d9d9d9",
       contrastText: "#000"
     },
     secondary: { 
       light: "#616161",
       main: "#333333",
-      dark: "#0F0F0F",
+      dark: "#0f0f0f",
       contrastText: "#fff"
     },
     action: {
       hoverOpacity: 0.10,
-
     }
   },
 })
