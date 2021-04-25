@@ -18,11 +18,11 @@ const Header = () => {
       <div className='header-number'>
         <div className='header-num'>
           <p>Total</p>
-          <p>{total}</p>
+          <p className='num'>{total}</p>
         </div> 
         <div className='header-num'>
           <p>Done</p>
-          <p>{itemsDone.length}</p>
+          <p className='num'>{itemsDone.length}</p>
         </div>  
       </div>  
     </div>

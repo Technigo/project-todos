@@ -6,8 +6,8 @@ const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-       { id: 1, text: 'Test test test', isComplete: false },
-       { id: 2, text: 'This is a test todo', isComplete: false },
+       { id: 1, text: 'Brew coffee', isComplete: false },
+       { id: 2, text: 'Do the dishes', isComplete: false },
     ]
   },
   reducers: {

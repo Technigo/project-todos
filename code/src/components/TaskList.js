@@ -10,7 +10,7 @@ export const TaskList = () => {
   const dispatch = useDispatch()
 
   return (
-    <div>
+    <div className='tasks-container'>
       {items.map(task => (
         <div key={task.id} className='task-item'>
 

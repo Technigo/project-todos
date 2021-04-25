@@ -1,13 +1,14 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a To-do web app built in React Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The App component renders three child components; header, input form and a task list. Each task added to the list can be marked as done and be removed from the list. 
+There are buttons to mark all tasks as done and to delete all tasks. 
+The store is in the tasks.js file where the reducers also are found. The initial state items array has two hard coded tasks for demonstration purpose.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://todo-aepera.netlify.app/
+

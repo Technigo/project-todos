@@ -1,6 +1,5 @@
 body {
   margin: 0;
-
   font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -30,7 +29,7 @@ p {
 .header-date {
   margin: 0;
   text-align: center;
-  padding-bottom: 20px; 
+  padding-bottom: 10px; 
   font-size: 16px;
 }
 
@@ -42,14 +41,18 @@ p {
 
 .header-num {
   text-align: center;
-  padding: 0 20px;
+  padding: 0 10px;
+  margin: 10px 38px;
   background-color: rgba(255, 255, 255, 0.425);
   border-radius: 10%;
 }
 
 .header-num p {
   margin: 0;
-  
+}
+
+.num {
+  font-weight: 900;
 }
 
 .header-container {
@@ -58,10 +61,7 @@ p {
   background-image: url('./assets/notice-board-2456210_1280.png');
   background-size: 110%;
   background-repeat: no-repeat;
-  /* background-position-x: 40%; */
   background-position: center;
-  /* filter: opacity(50%); */
-  /* height: 120px; */
 }
 
 .form {
@@ -98,20 +98,16 @@ input::placeholder {
   border: 2px solid #f8e1f5;
   border-radius: 100%;
   box-sizing: border-box;
-  text-decoration: none;
-  
   font-size: 50px;
   font-weight: 500;
   color:#FFFFFF;
   text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
   text-align:center;
   transition: all 0.2s;
-
 }
 
 .btn-input:hover {
-  /* border: 0.01em solid rgba(255,255,255,1);
-  border-radius:5px; */
+  background-color: #301a0c7a;
 }
 
 .task-item {
@@ -120,6 +116,7 @@ input::placeholder {
   flex-direction: row;
   justify-content: space-between;
   background-color: #c89e6f;
+  background-color: white;
   border: 1px solid #301a0c;
   border-radius: 7px;
   margin: 20px 10px;
@@ -139,7 +136,7 @@ input::placeholder {
   cursor: pointer;
   font-size: 50px;
   font-weight: 500;
-  background-color: #c89e6f;
+  background-color: white;
   padding: 0;
   color:#301a0c;
 }
@@ -193,15 +190,13 @@ input::placeholder {
   border-radius: 20px;
   outline: none;
   transition-duration: 0.3s;
-  /* background-color: #41B883; */
   background-color: #e7ebe9;
-
   cursor: pointer;
 }
 
 .checkbox > input:checked {
   border: 1px solid #301a0c;
-  background-color: #34495E;
+  background-color: #c89e6f;
 }
 
 .checkbox > input:checked + p::before {
@@ -215,5 +210,13 @@ input::placeholder {
 }
 
 .checkbox > input:active {
-  border: 2px solid #34495E;
+  border: 2px solid #c89e6f;
+}
+
+/* MEDIA QUERIES */ 
+@media screen and (min-width: 700px) {
+  .tasks-container, .form {
+    width: 700px;
+    margin: 0 auto;
+  }
 }
