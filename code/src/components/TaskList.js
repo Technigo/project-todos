@@ -72,8 +72,8 @@ const TaskList = () => {
             checked={todo.isComplete}
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
           />
-          <Todo>{todo.description}</Todo>
-          <Text>{new Date(todo.dueDate).toLocaleDateString()}</Text>
+          <Todo tabIndex="0">{todo.description}</Todo>
+          <Text tabIndex="0">{new Date(todo.dueDate).toLocaleDateString()}</Text>
           <RemoveButton onClick ={() => dispatch(todos.actions.removeTodo(todo.id))}>
             Remove
           </RemoveButton>

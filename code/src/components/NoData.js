@@ -21,7 +21,7 @@ const NoData = () => {
     <>
     {!items.length && (
       <Container>
-        <Text>No tasks here yet, add new tasks or just relax!</Text>
+        <Text tabIndex="0">No tasks here yet, add new tasks or just relax!</Text>
       </Container>
     )}
     </>

@@ -17,6 +17,7 @@ const Title = styled.div`
   font-size: 30px;
   margin-bottom: 10px;
 `
+
 const Todo = styled.div`
   font-size: 20px;
 `
@@ -40,8 +41,8 @@ const Header = () => {
   
    return (
     <HeaderContainer>
-      <Title>Your Todo List</Title>
-      <Todo>Completed tasks: {completedItems.length}/{items.length}</Todo>
+      <Title tabIndex="0">Your Todo List</Title>
+      <Todo tabIndex="0">Completed tasks: {completedItems.length}/{items.length}</Todo>
       <CompleteButton
         onClick={() => dispatch(todos.actions.completeAllTodos())}>
         Complete all tasks
