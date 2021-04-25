@@ -6,9 +6,7 @@ import { CategoryFilter } from "./CategoryFilter";
 export const Footer = () => {
   return (
     <Container>
-      <CategoryFilter
-
-      />
+      <CategoryFilter />
     </Container>
   );
 };

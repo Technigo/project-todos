@@ -107,12 +107,13 @@ const Menu = styled.button`
   font-family: "Raleway", sans-serif;
   color: darkcyan;
   border-radius: 5px;
-  margin-bottom: 10px;
 `;
 
 const SortInner = styled.div`
   display: ${(props) => (props.expand ? "flex" : "none")};
   flex-direction: column;
+  background: #5eaaa8;
+  color: white;
 `;
 
 const TaskContainer = styled.div`

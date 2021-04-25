@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import { todos } from "../../Reducers/todos";
-import { HamburgerMenu } from "../Selects/HamburgerMenu";
+import { MenuButtons } from "../Selects/MenuButtons";
 
 export const SortTasks = () => {
   const [order, setOrder] = useState(true);
@@ -19,6 +19,11 @@ export const SortTasks = () => {
   };
 
   return (
-    <HamburgerMenu name="Sort" array={sortArr} handleClick={handleClick} order={order}/>
+    <MenuButtons
+      name="Sort"
+      array={sortArr}
+      handleClick={handleClick}
+      order={order}
+    />
   );
 };

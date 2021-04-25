@@ -13,8 +13,9 @@ export const CreateNewTask = () => {
   //states
   const [newTask, setNewTask] = useState("");
   const [due, setDue] = useState("");
-  const [category, setCategory] = useState("")
-  const [checked, setChecked] = useState("")
+  const [category, setCategory] = useState("");
+  const [checked, setChecked] = useState("");
+  const [hasDeadline, setHasDeadline] = useState("false");
 
   //local functions
   const handleClick = () => {
@@ -27,11 +28,13 @@ export const CreateNewTask = () => {
           time: currentTime,
           deadline: due,
           category: category,
+          isTimed: hasDeadline,
+          overdue: new Date(due)-new Date(Date.now()) <= 0 ? true : false
         })
       );
       clearAll();
-      dispatch(todos.actions.categorize({ categorizeBy: "all" }))   
-      dispatch(todos.actions.filterBy({type: "byCategory", value: "all"}))
+      dispatch(todos.actions.categorize({ categorizeBy: "all" }));
+      dispatch(todos.actions.filterBy({ type: "byCategory", value: "all" }));
     }
   };
 
@@ -39,18 +42,19 @@ export const CreateNewTask = () => {
     setNewTask("");
     setCategory("");
     setChecked("");
-  }
+  };
 
   //render
   return (
     <Section>
       <Container>
         <Header>
-          <SelectCategory  
+          <SelectCategory
             category={category}
             setCategory={setCategory}
             checked={checked}
-            setChecked={setChecked}/>
+            setChecked={setChecked}
+          />
         </Header>
         <ContainerInner>
           <Button type="button" onClick={() => handleClick()}>
@@ -63,7 +67,11 @@ export const CreateNewTask = () => {
           />
         </ContainerInner>
         <Footer>
-            <SelectDeadline due={due} setDue={setDue} />
+          <SelectDeadline
+            due={due}
+            setDue={setDue}
+            setHasDeadline={setHasDeadline}
+          />
         </Footer>
       </Container>
     </Section>
@@ -89,8 +97,8 @@ const Container = styled.div`
 `;
 
 const Header = styled.div`
-display: flex;
-`
+  display: flex;
+`;
 
 const ContainerInner = styled.div`
   display: flex;
@@ -136,7 +144,7 @@ const Textarea = styled.textarea`
 `;
 
 const Footer = styled.div`
-min-height: 25px;
+  min-height: 25px;
   display: flex;
   flex-direction: column;
   justify-content: center;

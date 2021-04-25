@@ -7,8 +7,6 @@ export const DeadlineCountdown = ({ deadline, isComplete }) => {
   const duedate = new Date(deadline);
   const diff = duedate-today;
 
-  console.log(diff)
-
   const msToTime = (ms) => {
     let print = "";
    const minutes = Math.floor((ms / (1000 * 60))).toFixed(0);
@@ -16,8 +14,7 @@ export const DeadlineCountdown = ({ deadline, isComplete }) => {
    const days = Math.floor((hours / 24)).toFixed(0);
    const weeks = Math.floor((days / 7)).toFixed(0);
    
-   console.log(deadline)
-   if(weeks >= 1){print += ` ${weeks} Weeks `;}
+   if (weeks >= 1){print += ` ${weeks} Weeks `;}
    if (days-(weeks*7) >= 1) {print += `${days-(weeks*7)} Days`;}
    if (hours-(days*24) < 24 && hours-(days*24)>0)  {print += ` ${hours-(days*24)}h`;}
    if (minutes-(hours*60) < 60 && minutes-(hours*60)>0) {print += ` ${minutes-(hours*60)}min`;}
@@ -39,7 +36,7 @@ export const DeadlineCountdown = ({ deadline, isComplete }) => {
     return <p></p>;
   }
 
-  return <Text textColor={textColor}> Due in {msToTime(diff)} </Text>;
+  return <Text textColor={textColor}> {diff <=0 ? "Over due!" : `Due in ${msToTime(diff)}`} </Text>;
 };
 
 const Text = styled.p`

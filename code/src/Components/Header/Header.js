@@ -27,10 +27,18 @@ export const Header = () => {
           <Text>
             {completedTasks.length} / {tasks.length} tasks completed
           </Text>
-          <RoundedButton
-            buttonText="Complete all"
-            action={todos.actions.completeAll()}
-          />
+          <Row>
+            <RoundedButton
+              buttonSymbol="✔"
+              buttonText="Mark all"
+              action={todos.actions.completeAll()}
+            />
+            <RoundedButton
+              buttonSymbol="✘"
+              buttonText="Delete done"
+              action={todos.actions.clearAllCompleted()}
+            />
+          </Row>
         </Column>
       </ColumnWrapper>
     </Container>
@@ -58,14 +66,15 @@ const Container = styled.header`
 `;
 
 const ColumnWrapper = styled.div`
-width: 100%;
-display: flex;
-justify-content: space-between;
-align-items: flex-end;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
 
-@media (min-width: 768px){
-  width: 500px;
-}`;
+  @media (min-width: 768px) {
+    width: 500px;
+  }
+`;
 
 const Overlay = styled.div`
   position: absolute;
@@ -91,9 +100,14 @@ const Column = styled.div`
   margin: 20px;
   z-index: 1;
 
-  & > button {
-    align-self: flex-end;
+  &:nth-of-type(2) {
+    align-items: flex-end;
   }
+`;
+
+const Row = styled.div`
+  display: flex;
+  z-index: 1;
 `;
 
 const Header1 = styled.h1`

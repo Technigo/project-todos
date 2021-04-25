@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-export const HamburgerMenu = ({ name, array, handleClick, order }) => {
-  const [expand, setExpand] = useState(false);
+export const MenuButtons = ({ name, array, handleClick, order }) => {
   const [selected, setSelected] = useState();
   const [indicator, setIndicator] = useState();
 
@@ -18,10 +17,8 @@ export const HamburgerMenu = ({ name, array, handleClick, order }) => {
 
   return (
     <Wrapper>
-      <Menu expand={expand} onClick={() => setExpand(!expand)}>
-        {name}
-      </Menu>
-      <Container expand={expand}>
+      <Menu>{name}</Menu>
+      <Container>
         {array.map((item) => (
           <Button
             key={item.name}
@@ -50,58 +47,42 @@ const Wrapper = styled.div`
 
 const Menu = styled.button`
   width: 60px;
-  background-color: white;
   border: none;
-  border-bottom-style: solid;
-  border-bottom-color: grey;
-  border-bottom-width: 0.2px;
+  background: transparent;
   font-family: "Raleway", sans-serif;
   text-align: left;
   font-size: 14px;
   margin-top: 3px;
-
-  ${(props) =>
-    props.expand &&
-    `&::after{
-      color: rgb(196, 232, 241);
-      content: "◀";
-      text-align: right;
-    float:right;
-    }`}
-
-  ${(props) =>
-    !props.expand &&
-    `&::after{
-        color: rgb(196, 232, 241);
-        content:"▶" ;
-        text-align: right;
-        float:right;
-      }`}
+  margin-right: 20px;
+  color: white;
+  font-weight: 600;
 `;
 
 const Container = styled.div`
-  display: ${(props) => (props.expand ? "flex" : "none")};
-  border-bottom-style: solid;
-  border-bottom-color: grey;
-  border-bottom-width: 0.2px;
-  backgoround-color: white;
+  width: 100%;
   margin-right: 5px;
-  justify-content: space-evenly;
   flex: 1 1 auto;
+  padding-bottom: 10px;
 `;
 
 const Button = styled.button`
   border: none;
-  background-color: white;
+  border-right-style: solid;
+  border-right-color: white;
+  background: transparent;
   font-family: "Raleway", sans-serif;
   text-align: left;
   font-size: 14px;
   margin-top: 3px;
+  color: white;
+
+  &:last-of-type {
+    border: none;
+  }
 
   ${(props) =>
     props.selected &&
     `&::after{
-      color: darkcyan;
       content: "${props.indicator}";
     }`}
 `;

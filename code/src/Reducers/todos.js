@@ -14,7 +14,7 @@ export const todos = createSlice({
   initialState,
   reducers: {
     createNewTodo: (store, action) => {
-      const { task, time, deadline, category } = action.payload;
+      const { task, time, deadline, category, overdue, isTimed } = action.payload;
       store.items.push({
         id: store.items.length + 1, //sets id
         description: task, //task text
@@ -23,6 +23,8 @@ export const todos = createSlice({
         hidden: false, //task shown or not (used with filterings/categories)
         createdAt: time, //time created
         deadline: deadline, //if theere is a due time on the task it's stored here
+        overdue: overdue,
+        isTimed: isTimed,
         category: category, // if the task has a category it's stored here
       });
     },
@@ -113,7 +115,7 @@ export const todos = createSlice({
     },
     resetFilter: (store) => {
       store.updatedTodos = store.items.map((task) => {
-        return  {...task, hidden: false}
+        return { ...task, hidden: false };
       });
       store.items = store.updatedTodos;
     },
@@ -123,13 +125,13 @@ export const todos = createSlice({
         .filter((item) => item.id !== task)
         //using map  and index to reset the id's when tasks has been removed
         .map((item, i) => {
-          return {...item, id: i + 1}
+          return { ...item, id: i + 1 };
         });
       store.items = store.updatedTodos;
     },
     completeAll: (store) => {
       store.updatedTodos = store.items.map((item) => {
-        return {...item, isComplete: true}
+        return { ...item, isComplete: true };
       });
       store.items = store.updatedTodos;
     },
@@ -137,7 +139,7 @@ export const todos = createSlice({
       store.updatedTodos = store.items
         .filter((item) => !item.isComplete)
         .map((item, i) => {
-          return {...item, id: i + 1}
+          return { ...item, id: i + 1 };
         });
       store.items = store.updatedTodos;
     },
