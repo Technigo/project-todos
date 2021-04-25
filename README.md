@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Create a to-do list using React and Redux. Learn in more depth how to use actions and reducers to create the store.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This week was very much a code-along with Max. I have however learnt more about reducers and feel more confident in my knowledge. If I had more time I would have worked on more functionality: a list of completed tasks, completing all tasks at once and a prompt asking if you really want to delete a task.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+hannah-todo.netlify.app
