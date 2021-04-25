@@ -134,6 +134,7 @@ code {
 .remove-todo-container button {
   background-color: white;
   border:none;
+  outline: none;
 }
 
 .remove-todo-container img{
