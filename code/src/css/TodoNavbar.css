@@ -1,0 +1,10 @@
+.navbar-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 30px 15px 70px 20px;
+}
+
+.other-icon-container img {
+    padding-left: 15px;
+}

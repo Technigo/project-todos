@@ -15,6 +15,10 @@
     background-color: #F4F6FD;
   }
 
+  .footer-wrapper {
+    margin-bottom: 30px;
+  }
+
   .footer-wrapper p {
     color: #708090;
   }

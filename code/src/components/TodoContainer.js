@@ -6,6 +6,7 @@ import TodoHeader from './TodoHeader'
 import TodoForm from './TodoForm'
 import TodoList from './TodoList'
 import TodoStartPage from './TodoStartPage'
+import TodoNavbar from './TodoNavbar'
 
 const TodoContainer = () => {
     const totalCountTodo = useSelector((store) => store.todos.items.length) 
@@ -13,6 +14,7 @@ const TodoContainer = () => {
     return(
         <main className="container">
             <section className="todo-wrapper">
+                <TodoNavbar />
                 <TodoHeader />
                 <TodoForm />
                 {totalCountTodo === 0 ? <TodoStartPage /> : <TodoList />}
