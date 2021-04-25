@@ -13,6 +13,11 @@ const MainContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
+
+    @media (min-width: 768px) {
+      height: 80vh;
+      width: 50vw;
+    } 
 `
 
 const reducer = combineReducers({
@@ -31,7 +36,5 @@ export const App = () => {
         <NewTaskInput />
       </Provider>
     </MainContainer>
-
-
   )
 }

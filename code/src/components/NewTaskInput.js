@@ -15,6 +15,8 @@ const InputContainer = styled.form`
 const TaskInput = styled.input`
     margin: 30px 0 10px 0;
     width: 100%;
+    border: none;
+    border-bottom: 1px solid black;
 `
 
 const SubmitButton = styled.button`
@@ -43,6 +45,7 @@ const NewTaskInput = () => {
                 type='text'
                 value={task}
                 onChange={event => setTask(event.target.value)}
+                placeholder='type here ...'
             />
             <SubmitButton type='submit'>add task</SubmitButton>
         </InputContainer>
