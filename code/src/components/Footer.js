@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Container = styled.div`
-position: absolute;
-bottom: 20px;
 font-family: 'Noto Sans KR', sans-serif;
 font-size: 11px;
+margin-top: 30px;
 &.link:link, visited {
   cursor: pointer;
   color: black;
@@ -17,9 +16,15 @@ font-size: 11px;
 &.link:active {
   cursor: pointer;
   color: #ffb037;
-}`
+}
+@media (min-width: 768px){
+  font-size: 16px;
+  margin: 0 5px;
+}
+`
 
 const Link = styled.a`
+margin: 0 3px;
 &:link, &:visited {
   cursor: pointer;
   color: black;
@@ -33,9 +38,6 @@ const Link = styled.a`
   color: #ffb037;
 }
 `
-
-
-
 const Footer = () => {
   return (
     <Container>Icons made by 
