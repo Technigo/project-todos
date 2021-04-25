@@ -85,15 +85,3 @@ code {
 .counter-text {
   font-weight: bold;
 }
-
-/* @media (min-width: 768px) {
-} */
-
-@media (min-width: 1054px) {
-  .form-container {
-    width: 70%;
-  }
-  .input-field {
-    width: 50%;
-  }
-}
