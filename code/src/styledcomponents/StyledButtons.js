@@ -155,7 +155,7 @@ export const ClearAllButton = styled(ThemeColors)`
     opacity: 1;
   `}
   :focus {
-    background-color: ${props => props.theme.primary};
+    transform: scale(1.1);
   }
   @media (min-width: 768px) {
     padding: 5px 10px;
