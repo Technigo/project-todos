@@ -21,10 +21,13 @@ const tasks = createSlice({
         },
         addTask: (store, action) => {
             const { id, description, isComplete=false } = action.payload;
-            store.items = [...store.items, {id, description, isComplete}];
+            store.items = [{id, description, isComplete}, ...store.items];
         },
         removeTasks: (store, action) => {
             store.items = []
+        },
+        removeTask: (store, action) => {
+            store.items = store.items.filter(task => task.id !== action.payload)
         }
     }
 });

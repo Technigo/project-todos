@@ -6,6 +6,7 @@ import tasks from './reducers/tasks';
 import TodoList from './components/ToDoList';
 import AddTask from 'components/AddTask';
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 const App = () => {
   const reducer = combineReducers({
@@ -23,6 +24,7 @@ const App = () => {
       <AddTask />
       <TodoList />
         </div>
+      <Footer />
       </div>
     </Provider>
   )

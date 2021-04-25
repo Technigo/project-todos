@@ -1,5 +1,6 @@
-import React, {useState} from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React, {useState} from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import uniqid from 'uniqid';
 
 import tasks from '../reducers/tasks';
 
@@ -13,7 +14,7 @@ const AddTask = () => {
         event.preventDefault();
 
         const newTask = {
-            id: numberOfTasks,
+            id: uniqid(), 
             description: value
         }
 
@@ -22,14 +23,16 @@ const AddTask = () => {
     }
 
     return (
-        <form onSubmit={onFormSubmit}>
-            <button className="submit-button" type="submit"> + </button>
-            <input 
+        <form className="form-container" onSubmit={onFormSubmit}>
+            <input
+            className="input-box" 
             type="text"
-            placeholder="Add task" 
+            placeholder="Add a task..." 
             value={value}
             onChange = {event => setValue(event.target.value)}
+            required
             />
+            <button className="submit-button" type="submit"> + </button>
         </form>
     )
 }
