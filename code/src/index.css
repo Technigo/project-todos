@@ -34,7 +34,6 @@ code {
 
 .header h1 {
   font-size: 45px;
-  margin-bottom: 0;
 }
 
 .uncompleted-container {
@@ -46,12 +45,23 @@ code {
   justify-content: center;
   font-size: small;
   border-radius: 15px;
+  padding-bottom: 5px;
+  margin:0;
 }
 
 .todo-container {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+
+.todo-list-wrapper {
+  width: 100vw;
+  height: 100vh;
+  background-color:rgb(239, 239, 239);
+  overflow: scroll;
+  -ms-overflow-style: none;
+  overflow-x: hidden;
 }
 
 .todo-list-container {
@@ -64,17 +74,8 @@ code {
   border: 2px solid black;
   border-radius: 15px;
   font-family: 'Original Surfer', cursive;
-  font-size: 20px;
-}
-
-.remove-todo-container button {
+  font-size: 16px;
   background-color: white;
-  border:none;
-}
-
-.remove-todo-container img{
-  width: 30px;
-  height: 30px;
 }
 
 .checkbox {
@@ -92,7 +93,7 @@ code {
   position: absolute;
 }
 
-.checkmark-round {
+.checkmark {
   position: absolute;
   top: 0;
   left: 10px;
@@ -103,21 +104,21 @@ code {
   border: 1px solid rgba(119, 40, 119)
 }
 
-.checkbox input:checked  ~ .checkmark-round{
+.checkbox input:checked  ~ .checkmark{
   background-color: rgba(119, 40, 119);
 }
 
-.checkmark-round:after {
+.checkmark:after {
   content: ''; 
   position: absolute;
   display: none;
 }
 
-.checkbox input:checked ~ .checkmark-round:after {
+.checkbox input:checked ~ .checkmark:after {
   display: block;
 }
 
-.checkbox .checkmark-round:after {
+.checkbox .checkmark:after {
   left: 11px;
   top: 4px;
   width: 6px;
@@ -130,18 +131,28 @@ code {
   transform: rotate(45deg);
 }
 
+.remove-todo-container button {
+  background-color: white;
+  border:none;
+}
+
+.remove-todo-container img{
+  width: 30px;
+  height: 30px;
+}
+
 .add-todo {
   background-color: rgba(167, 89, 167, 0.73);
   display: flex;
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%;
+  width: 100vw;
   height: 12vh;
+  display:flex;
   justify-content: center;
   align-items: center;
-  border: 3px solid  rgb(122, 56, 122);
-  box-sizing: border-box;
+  border-top: 2px solid  rgb(122, 56, 122);
   padding: 10px;
 }
 
@@ -173,16 +184,30 @@ code {
 }
 
 @media (min-width: 768px) {
+  .header {
+    width: 400px;
+  }
+
+  .todo-list-wrapper{
+    width: 400px;
+    height: 400px;
+  }
+
+  .add-todo {
+    position: relative;
+    width: 380px;
+    height: 12vh;
+  }
+
   .uncompleted-container {
-    width:40vw;
+    width:300px;
   }
 
   .add-todo input {
     width: 40vw;
-   
   }
+
   .todo-list-container {
-    width:40vw;
-  }
-  
+    width:360px;
+  } 
 }

@@ -8,7 +8,7 @@ const AddTodoButton = ({ isAddInputFilled }) => {
       <button className="add-button" type="submit">
         <img src={assets} alt="A plus icon" />
       </button>
-    );
+    )
   } else {
     return (
       <button className="add-button" type="submit" disabled>

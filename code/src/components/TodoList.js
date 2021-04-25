@@ -11,7 +11,7 @@ const TodoList = () => {
   const dispatch = useDispatch()
 
   return (
-    <div >
+    <div className="todo-list-wrapper">
       {items.map(todo => (
         <div className="todo-list-container" key={todo.id}>
           <TodoItem

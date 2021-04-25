@@ -34,18 +34,16 @@ const AddTodoInput = () => {
   }
 
   return (
-    <div className="form-container">
-      <form className="add-todo" onSubmit={onFormSubmit}>
-        <input
-          type="text"
-          value={value}
-          onChange={handleChange}
-          placeholder="Add to do"
-        />
-        <AddTodoButton
-          isAddInputFilled={isAddInputFilled} />
-      </form>
-    </div>
+    <form className="add-todo" onSubmit={onFormSubmit}>
+      <input
+        type="text"
+        value={value}
+        onChange={handleChange}
+        placeholder="Add to do"
+      />
+      <AddTodoButton
+        isAddInputFilled={isAddInputFilled} />
+    </form>
   )
 }
 
