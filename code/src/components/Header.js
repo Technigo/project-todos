@@ -11,9 +11,6 @@ const Header = () => {
   return (
     <>
       <HeaderContainer>
-        <Logo
-          src={'/assets/laptop-closing3.gif'}>
-        </Logo>
         <Heading>
           My to-do list
         </Heading>
@@ -33,16 +30,11 @@ const HeaderContainer = styled.div`
   flex-direction: column;
 `;
 
-const Logo = styled.img`
-  width: 50px;
-  align-self: center;
-  margin-top: 10px;
-`;
-
 const Heading = styled.h1`
-  font-size: 21px; 
+  font-size: 22px; 
   text-transform: uppercase;
   color: #4d8aff;
+  margin: 40px 0;
 `;
 
 const CounterAndZeroContainer = styled(HeaderContainer)`

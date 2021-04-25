@@ -14,6 +14,7 @@ export const Container = styled.section`
   justify-content: center;
   align-items: center; 
   flex-direction: column;
+  margin-bottom: 20px; 
 `;
 
 export const Header = styled.h1`

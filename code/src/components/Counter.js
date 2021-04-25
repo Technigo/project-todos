@@ -27,25 +27,20 @@ const Counter = () => {
             <Delete src="assets/doubletick.png"></Delete>
         </ClearAllButton>
         <AllDone>
-          MARK ALL AS DONE  or  
+          MARK ALL AS DONE
         </AllDone>
       </ClearAllContainer>
-      <DeleteAllButton
-        onClick={() => dispatch(todos.actions.deleteAllTodos())}>
-        Delete all
-      </DeleteAllButton>
     </Container>
   )
 }
 
 // Local styling
 const Container = styled.div`
-  color: slategrey;
+  color: #565656;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  margin-bottom: 40px;
 `;
 
 const CompletedTodos = styled.p`
@@ -76,17 +71,6 @@ const Delete = styled.img`
 
 const AllDone = styled.p`
   font-size: 14px;
-`;
-
-const DeleteAllButton = styled.button`
-  margin-top: 20px;
-  background-color: #4d8aff; 
-  border: none;
-  border-radius: 0.25em;
-  width: 70px;
-  height: 45px;
-  color: whitesmoke;
-  text-transform: uppercase;
 `;
 
 export default Counter

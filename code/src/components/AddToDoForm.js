@@ -9,6 +9,7 @@ import TodoWork from './TodoWork'
 import TodoHome from './TodoHome'
 import TodoHobbies from './TodoHobbies'
 import TodoOther from './TodoOther'
+import FooterAndDeleteAll from './FooterAndDeleteAll'
 
 const AddTodoForm = () => {
   const dispatch = useDispatch()
@@ -76,6 +77,7 @@ const AddTodoForm = () => {
             <TodoLove />
             <TodoHobbies />
             <TodoOther />
+            <FooterAndDeleteAll />
       </Form>
     </>
   )
