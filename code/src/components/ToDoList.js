@@ -11,7 +11,7 @@ const TodoList = () => {
     const dispatch = useDispatch();
 
     return (
-        <div className="todo-container">
+        <div className="todo-wrapper">
             {items.map(task => (
                 <div key={task.id} className="todo">
                     <input
@@ -25,7 +25,7 @@ const TodoList = () => {
                         <label htmlFor={task.id}>{task.description}</label>
                     </div>
                         <img src={wastebin}
-                         alt="waste-bin"
+                         alt="Remove"
                          className="waste-bin"
                          onClick={() => dispatch(tasks.actions.removeTask(task.id))}>
                          </img>

@@ -11,12 +11,10 @@ const Header = () => {
     return (
         <div className="header">
             <h1>To do</h1>
-            <div className="h1-date-container">
-                
+            <div className="date-number-of-tasks-container">
                 <p>{new Date().toLocaleDateString('en-us', { month: 'long', day: 'numeric'})}</p>
-            
-            <div className="tasks-clear-container">
-                <p>{completedTasks} / {numberOfTasks} tasks completed!</p>
+            <div className="tasks-clear-button-container">
+                <p>{completedTasks} / {numberOfTasks} tasks completed</p>
             </div>
             </div>
         </div>
