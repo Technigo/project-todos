@@ -1,7 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import "./TodoList.css";
 
-import todos from "../reducers/todos";
+import todos from "../../reducers/todos";
 
 const TodoList = () => {
   const tasks = useSelector((store) => store.todos.tasks);

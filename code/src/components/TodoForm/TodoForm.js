@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import uniqid from "uniqid";
 
-import todos from "../reducers/todos";
+import todos from "../../reducers/todos";
 
 const TodoFrom = () => {
   const [value, setValue] = useState("");

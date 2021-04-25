@@ -4,9 +4,9 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import todos from "./reducers/todos";
 
-import TodoCountComplete from "components/TodoCountComplete";
-import TodoForm from "./components/TodoForm";
-import TodoList from "./components/TodoList";
+import TodoCountComplete from "components/TodoCountComplete/TodoCountComplete";
+import TodoForm from "./components/TodoForm/TodoForm";
+import TodoList from "./components/TodoList/TodoList";
 
 // Connect (combine) all of the slices into one group
 const reducer = combineReducers({
