@@ -14,7 +14,7 @@ const TodoList = () => {
       <div className="top-content-container">
         <div className="circle"></div>
         <div className="counter-wrapper">
-          <Counter/>
+          <Counter />
         </div>  
       </div>
       <TodoForm />
@@ -28,7 +28,7 @@ const TodoList = () => {
           />
           <p className="todo-text">{task.description}</p>
           <button className="delete-button" onClick={() => dispatch(todos.actions.removeTask(task.id))}>
-            delete -
+            Delete -
           </button>
         </div>
       ))}

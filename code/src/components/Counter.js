@@ -8,9 +8,9 @@ const Counter = () => {
   const tasksDone = tasks.filter(task => task.isComplete).length
 
   return (
-    <>
+    <div>
       <p className="counter-text">{tasksDone}/{tasks.length} tasks is done</p>
-    </>
+    </div>
   )
 }
 
