@@ -30,7 +30,7 @@ const TodoForm = () => {
         onChange={(e) => setValue(e.target.value)}
         className="input-field"
         placeholder="Add todo!"
-        rows="2"
+        rows="3"
       />
       <button type="submit" className="add-todo-button">ADD</button>
     </form>
