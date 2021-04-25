@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In this project we were supposed to build a todo list in React by using useDispatch and useSelector and useState hooks and we have learned how to use redux store, reducers and actions.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started to think about which components I would use for the project. I felt as usual that it was difficult to get started so I coded along with the lectures and made my best to understand everything I did. I made the code work after the lectures and then I added a header component and a no-data component. When I had achieved the blue goals I tried to implement a lottie-animtaion or an image which was going to show when the screen turned empty but that didn't work out. If I had more time I would have continue with that and search a bit more about how to make it work!
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Here you can see the project live: 
