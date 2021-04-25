@@ -11,7 +11,9 @@ Previous I´v also found styling a bit tricky, especially inputs. This week I pu
 I think I have become better at googling and finding solutions to my problems, I have discovered that I understand more in the articles that I find and what solutions to try.
 
 If I had more time it would have been nice to do a transition on my front page, but i could only get the transition to work one way, so i removed it.
-And also use "draggable" which I downloaded to be able to move my to-dos around on the page.
+And also use "draggable" which I downloaded to be able to move my to-dos around on the page. 
+
+I noticed when I deployed my page on netlify that in safari my checkbox disappears, this I would have fixed if I had had more time...
 
 
 ## View it live
