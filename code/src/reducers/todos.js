@@ -55,7 +55,7 @@ const todos = createSlice({
                         isComplete: !todo.isComplete
                     }
                 } else {
-                    //leave it as it was
+                    //leaves it as it was
                     return todo
                 }
             })
