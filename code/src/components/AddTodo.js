@@ -23,20 +23,20 @@ const AddTodo =() => {
   }
   return(
     <>
-    <AddTodoText>ADD A NEW TASK AND CLICK ON THE +</AddTodoText>
-    <TodoForm onSubmit={onFormSubmit}>
-      <TodoInput
-        type='text'
-        required
-        value={value}
-        placeholder="Do next . . .✏️"
-        onChange={e => setValue (e.target.value)}
-      />
-      <AddButton type='submit' disabled={
-        value.length < 3 || value.length > 140 }>
-        {" "}+{" "}
-      </AddButton>
-    </TodoForm>
+      <AddTodoText>ADD A NEW TASK AND CLICK ON THE +</AddTodoText>
+      <TodoForm onSubmit={onFormSubmit}>
+        <TodoInput
+          type='text'
+          required
+          value={value}
+          placeholder="Do next . . .✏️"
+          onChange={e => setValue (e.target.value)}
+        />
+        <AddButton type='submit' disabled={
+          value.length < 3 || value.length > 140 }>
+          {" "}+{" "}
+        </AddButton>
+      </TodoForm>
     </>
   )
 }
@@ -62,6 +62,7 @@ resize: none;
 min-height: 45px;
 min-width: 210px;
 margin 3px;
+outline: none;
 
 @media (min-width: 768px) {
   min-height: 60px;
@@ -81,6 +82,7 @@ cursor: pointer;
 border: none;
 background-color: #88bdbc;
 color: #ffffff;
+outline: none;
 &:hover {
   background-color: #e58819;
   color: #112d32;

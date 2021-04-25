@@ -7,7 +7,6 @@ import Header from './components/Header'
 import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
 import RemoveAllTodos from './components/RemoveAllTodos'
-import NumberofTodos from './components/NumberofTodos'
 import styled from 'styled-components'
 
 const reducer = combineReducers({
@@ -19,13 +18,12 @@ const store = configureStore ({ reducer })
 export const App = () => {
   return (
     <Main>
-    <Provider store={store}>
-      <Header/>
-      <AddTodo/>
-      <TodoList/>
-      <NumberofTodos/>
-      <RemoveAllTodos/>
-    </Provider>
+      <Provider store={store}>
+        <Header/>
+        <AddTodo/>
+        <TodoList/>
+        <RemoveAllTodos/>
+      </Provider>
     </Main>
   )
 }

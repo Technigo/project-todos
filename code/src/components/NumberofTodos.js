@@ -3,13 +3,13 @@ import { useSelector } from  'react-redux'
 
 import styled from 'styled-components'
 
-const NumberofTodos = () => {
+const NumberofTodos = ({completed}) => {
   const todos = useSelector((store) =>store.todos.items.length)
-
+  
   return (
     <NumberTodoContainer>
       <p>
-        You have {todos} tasks in your list
+        You have completed {completed} of {todos} tasks.
       </p>
     </NumberTodoContainer>
   )

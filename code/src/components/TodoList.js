@@ -3,33 +3,38 @@ import { useSelector, useDispatch } from 'react-redux'
 import moment from 'moment'
 
 import todos from '../reducers/todos'
+import NumberofTodos from './NumberofTodos'
 import styled from 'styled-components'
 
 const TodoList =() => {
   const items = useSelector((store) => store.todos.items)
+  const completedItems = items.filter(items => items.isComplete === true)
   const dispatch = useDispatch()
   
   return (
-    <TodoListContainer>
-      {items.map(todo => (
-        <TodoItem key={todo.id}>
-          <Checkbox
-            type='checkbox'
-            checked={todo.isComplete}
-            onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-          />
-          <p style={{ textDecoration: todo.isComplete ? "line-through" : "" }}>
-            {todo.description}
-          </p>
-          <RemoveButton onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
-            🗑 
-          </RemoveButton>    
-          <TimeAdded>
-            {moment(todo.time).format('ddd HH:mm')}
-          </TimeAdded>
-        </TodoItem>
-      ))}
-    </TodoListContainer>
+    <>
+      <TodoListContainer>
+        {items.map(todo => (
+          <TodoItem key={todo.id}>
+            <Checkbox
+              type='checkbox'
+              checked={todo.isComplete}
+              onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+            />
+            <p style={{ textDecoration: todo.isComplete ? "line-through" : "" }}>
+              {todo.description}
+            </p>
+            <RemoveButton onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
+              🗑 
+            </RemoveButton>    
+            <TimeAdded>
+              {moment(todo.time).format('ddd HH:mm')}
+            </TimeAdded>
+          </TodoItem>
+        ))}
+      </TodoListContainer>
+      <NumberofTodos completed={completedItems.length}/>
+    </>
   )
 }
 
@@ -82,6 +87,7 @@ cursor: pointer;
 border: none;
 border-radius: 3px;
 margin-right: 8px;
+outline: none;
 &:hover {
   color: #112d32;
 }

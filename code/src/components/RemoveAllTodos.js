@@ -25,6 +25,7 @@ margin: 15px 3px;
 border-radius: 5px;
 color: #ffffff;
 height: 30px;
+outline: none;
 &:hover {
   color: #112d32;
 }
