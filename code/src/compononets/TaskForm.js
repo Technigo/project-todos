@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import uniqid from "uniqid";
 
-import tasks from '../reducers/tasks';
+import tasks from "../reducers/tasks";
 
 const TaskForm = () => {
   const [value, setValue] = useState("");
@@ -22,15 +22,17 @@ const TaskForm = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit} className='form'>
+    <form onSubmit={onFormSubmit} className="form">
       <input
-        className='input'
+        className="input"
         type="text"
         value={value}
-        onChange={e => setValue(e.target.value)}
-        placeholder=' +  Add task'
+        onChange={(e) => setValue(e.target.value)}
+        placeholder=" +  Add task"
       />
-      <button type="submit" className='submit-button'>Add a task</button>
+      <button type="submit" className="submit-button">
+        <i className="fas fa-plus"></i>
+      </button>
     </form>
   );
 };

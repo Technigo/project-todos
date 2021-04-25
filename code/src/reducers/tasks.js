@@ -20,7 +20,7 @@ const tasks = createSlice({
       store.items = updatedItems;
     },
     addTask: (store, action) => {
-      store.items = [...store.items, action.payload];
+      store.items = [action.payload, ...store.items];
     },
     removeTask: (store, action) => {
       const decreasedItems = store.items.filter(task => task.id !== action.payload)

@@ -34,7 +34,7 @@ code {
 
 .left-header {
   width: 60%;
-  padding-left: 30px;
+  padding-left: 40px;
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -42,9 +42,10 @@ code {
 }
 
 .left-header h1 {
-  font-weight: 400;
-  font-size: 40px;
+  font-weight: 100;
+  font-size: 45px;
   margin: 0;
+  line-height: 50px;
 }
 
 .left-header .date {
@@ -52,7 +53,7 @@ code {
   color: rgba(255, 255, 255, 0.5);
   position: absolute;
   bottom: 0;
-  margin: 7px 0;
+  margin: 10px 0;
 }
 
 .right-header {
@@ -70,9 +71,9 @@ code {
 }
 
 .right-header h2 {
-  margin: 0;
+  margin: 5px;
   font-size: 30px;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .right-header .count-paragraph {
@@ -90,12 +91,31 @@ code {
 
 /* Form, Task list */
 
+.submit-button {
+  border: none;
+  outline: none;
+  background-color: Transparent;
+  font-size: 20px;
+  padding: 0;
+  display: inline-block;
+  position: absolute;
+  right: 0;
+}
+
+.fa-plus {
+  color: rgb(177, 175, 175);
+}
+
 .task-item,
 .form {
   padding: 20px;
   border-bottom: 1px rgb(207, 205, 205) solid;
+  position: relative;
   display: flex;
-  justify-content: space-between;
+}
+
+.task-item {
+  height: 20px;
 }
 
 .input {
@@ -104,14 +124,11 @@ code {
   height: 20px;
   outline: none;
   font-size: 15px;
-}
+} 
 
-.task-text {
-  display: inline;
-  font-size: 15px;
-  margin: 0;
-}
-
-.submit-button {
-  display: none;
-}
+.fa-trash-alt {
+  position: absolute;
+  right: 0;
+  font-size: 20px;
+  color: rgb(177, 175, 175);
+} 
