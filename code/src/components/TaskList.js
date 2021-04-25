@@ -8,12 +8,6 @@ import EmptyStateAnimation from './EmptyStateAnimation'
 const TaskContainer = styled.div`
     overflow: scroll;
     width: 240px;
-    @media (min-width: 768px) {
-        width: 384px;
-      } 
-      @media (min-width: 1200px) {
-        width: 600px;
-      } 
 `
 
 const SingleTaskContainer = styled.div`
