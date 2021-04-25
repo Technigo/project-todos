@@ -10,7 +10,7 @@ const Container = styled.div`
 const Text = styled.p`
   font-size: 25px;
   text-align: center;
-  margin: 60px 40px 0 40px;
+  margin: 60px 40px 0px 40px;
   color: #032640;
 `
 
