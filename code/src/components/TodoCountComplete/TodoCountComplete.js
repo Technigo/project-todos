@@ -9,7 +9,7 @@ const TodoCountComplete = () => {
 
   return (
     <div>
-      <p className="complete-text">complete{completedTasks.length}/{tasks.length}</p>
+      <p className="complete-text">Completed{completedTasks.length}/{tasks.length}</p>
     </div>
   );
 };

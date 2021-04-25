@@ -42,7 +42,6 @@ input[type="checkbox"]:after {
     color: #fff;
     border: 1px solid #333;
     background: #fff;
-    box-shadow: rgb(0 0 0 / 10%) 0px 4px 6px -1px, rgb(0 0 0 / 6%) 0px 2px 4px -1px;
 }
 
 input[type="checkbox"]:checked:after {
@@ -53,6 +52,7 @@ input[type="checkbox"]:checked:after {
 
 .checkbox-text {
     margin: 0 8px;
+    color:#333;
 }
 
 .delete-button {
