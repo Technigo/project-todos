@@ -5,13 +5,11 @@ import todos from '../reducers/todos'
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
-	//const completedItems = items.filter(item => item.isComplete)
   
 	const dispatch = useDispatch()
 
   return (
     <div className="todo-container">
-			{/*<p>Completed: {completedItems.length}/{items.length}</p>*/}
       {items.map(todo => (
         <div className="todos" key= {todo.id}>
           <p>{todo.description}</p>

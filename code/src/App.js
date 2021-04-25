@@ -24,6 +24,5 @@ export const App = () => {
       <TodoForm />
       <TodoList />  
     </Provider>
-
   )
 }
