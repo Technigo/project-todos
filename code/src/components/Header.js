@@ -1,9 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { useSelector } from 'react-redux'
 import moment from 'moment'
-
-import CheckAllBtn from './CheckAllBtn'
 
 const TopHeader = styled.header`
   box-sizing: border-box;
@@ -11,12 +8,12 @@ const TopHeader = styled.header`
   justify-content: center;
   width: 100%;
   padding: 20px;
-  background-color: #F4F4F4;
+  background-color: #8B98F9;
+  color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   border-bottom: 1px solid #A9A4A6;
 
   @media (min-width: 998px) {
-    justify-content: space-evenly;
   }
 ` 
 
@@ -27,14 +24,20 @@ const TopHeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+
   @media (min-width: 998px) {
     width: 50%;
   }
 `
 
 const ListInfo = styled.div`
+  height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-evenly;
 `
 
 const ListHeading = styled.h2`
@@ -45,26 +48,16 @@ const Date = styled.p`
   
 `
 
-const Span = styled.span`
-  text-align: right;
-`
-
 const Header = () => {
-  const items = useSelector((store) => store.tasks.items)
-  const completedItems = items.filter(items => items.complete).length
-
   const today = moment().format('MMMM Do')
+  const weekday = moment().format('dddd')
   
   return (
     <TopHeader>
       <TopHeaderWrapper>
         <ListInfo>
-          <ListHeading>To do</ListHeading>
+          <ListHeading>{weekday}</ListHeading>
           <Date>{today}</Date>
-        </ListInfo>
-        <ListInfo>
-          <Span>{completedItems}/{items.length} tasks</Span>
-          <CheckAllBtn />
         </ListInfo>
       </TopHeaderWrapper>
     </TopHeader>

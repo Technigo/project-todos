@@ -5,7 +5,6 @@ import $ from 'jquery'
 
 import { API_TODO, API_DELETE, API_EDIT } from '../reusable/urls'
 
-
 export const fetchData = () => {
   return (dispatch) => {
 
@@ -22,7 +21,6 @@ export const fetchData = () => {
     }
 
     $.ajax(settings).done((res) => {
-      console.log(res)
       dispatch(tasks.actions.handleFetchedData(res))
     })
   } 
@@ -32,7 +30,7 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [],
-    allChecked: false
+    allChecked: false,
   },
   reducers: {
     handleFetchedData: (store, action) => {
@@ -40,9 +38,7 @@ export const tasks = createSlice({
         return { _id: item._id, id: item.id, text: item.text, complete: item.complete, created: item.created, editMode: item.editMode, dueDate: item.dueDate }
       })
 
-      const sortFetchedData = addFetchedData.sort((a, b) => a.dueDate - b.dueDate)
-
-      store.items = sortFetchedData
+      store.items = addFetchedData
     },
 
     toggleComplete: (store, action) => {
@@ -63,7 +59,6 @@ export const tasks = createSlice({
         "data": JSON.stringify(jsonData)
       }
       $.ajax(settings).done((res) => {
-        console.log(res)
       })
 
       const updatedCompletion = store.items.map((item) => {
@@ -99,7 +94,6 @@ export const tasks = createSlice({
         "data": JSON.stringify(newTodo)
       }
       $.ajax(settings).done((res) => {
-        console.log(res)
       })
 
     },
@@ -120,12 +114,10 @@ export const tasks = createSlice({
       }
 
       $.ajax(settings).done((res) => {
-
       })
 
       const filterList = store.items.filter(item => item.id !== action.payload)
       store.items = filterList
-
     },
 
     toggleEdit: (store, action) => {
@@ -161,7 +153,6 @@ export const tasks = createSlice({
         "data": JSON.stringify(jsonData)
       }
       $.ajax(settings).done((res) => {
-        console.log(res)
       })
 
       const updatedDescription = store.items.map((item) => {
@@ -176,8 +167,7 @@ export const tasks = createSlice({
         }
       })
       store.items = updatedDescription
-    }
-    ,
+    },
 
     checkAll: (store) => {
       const updatedCompletion = store.items.map(item => {
@@ -190,7 +180,6 @@ export const tasks = createSlice({
           return item
         }
       })
-
       
       store.items = updatedCompletion
 

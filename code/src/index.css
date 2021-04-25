@@ -12,8 +12,11 @@ code {
     monospace;
 }
 
+/*STYLING CALENDAR*/
 .testing .bx--date-picker__input {
-  border-bottom: 2px solid #8B98F9;
+  border-bottom: 1px solid #8B98F9;
+  border-radius: 4px;
+  background-color: #fcfcfc;
   font-family: 'Montserrat', sans-serif;
   color: #8B98F9;
   padding-left: 10px;

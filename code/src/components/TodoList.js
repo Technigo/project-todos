@@ -2,20 +2,43 @@ import React, { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
-import TodoItem from './TodoItem'
-import NewTodo from './NewTodo'
 import { fetchData } from '../reducers/tasks'
 
+import TodoItem from './TodoItem'
+import NewTodo from './NewTodo'
+import CheckAllBtn from './CheckAllBtn'
+import EmptyState from './EmptyState'
+
+//Styled components
 const Section = styled.section`
+  width: 100%;
+
+  @media (min-width: 768px) {
+    width: 80%;
+  }
+
   @media (min-width: 998px) {
     width: 50%;
   }
+`
+
+const ListInfo = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  align-items: center;
+`
+
+const Span = styled.span`
+  text-align: center;
 `
 
 const TodoList = () => {
   const [description, setDescription] = useState('')
   const dispatch = useDispatch()
   const items = useSelector((store) => store.tasks.items)
+  const completedItems = items.filter(items => items.complete).length
   
   useEffect(() => {
     dispatch(fetchData())
@@ -30,13 +53,23 @@ const TodoList = () => {
           id={item.id}
           text={item.text}
           complete={item.complete}
-          created={item.created}
           editMode={item.editMode}
           dueDate={item.dueDate}
           description={description}
           setDescription={setDescription}
         />
       ))}
+      {items.length < 1 && (
+        <EmptyState />
+      )}
+        
+          {items.length >= 1 && (
+            <ListInfo>
+              <Span>{completedItems}/{items.length} tasks</Span>
+              <CheckAllBtn />
+            </ListInfo>
+          )}
+        
     </Section>
   )
 }

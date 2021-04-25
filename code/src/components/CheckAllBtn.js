@@ -5,11 +5,13 @@ import styled from 'styled-components'
 import { tasks } from '../reducers/tasks'
 
 const Btn = styled.button`
+  width: 95px;
   border-radius: 8px;
   background-color: #8B98F9;
-  color: #fff;
+  color: #ffffff;
   border: none;
   padding: 5px;
+  margin-top: 10px;
   cursor: pointer;
 `
 

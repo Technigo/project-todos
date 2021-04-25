@@ -5,9 +5,11 @@ import styled from 'styled-components'
 
 import { tasks } from './reducers/tasks'
 import { account } from './reducers/account'
+
 import TodoList from './components/TodoList'
 import Header from './components/Header'
 
+//Styled components
 const Main = styled.main`
   display: flex;
   flex-direction: column;
@@ -24,8 +26,8 @@ const store = configureStore({ reducer: reducer})
 export const App = () => {
   return (
     <Provider store={store}>
+      <Header />
       <Main>
-        <Header />
         <TodoList />
       </Main>
     </Provider>
