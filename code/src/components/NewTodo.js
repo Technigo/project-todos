@@ -75,7 +75,7 @@ const NewTodo = () => {
     event.preventDefault()
     dispatch(tasks.actions.postNewTodoAPI({ description: newTodoInput, dueDate: dueDate }))
     setNewTodoInput('')
-    dispatch(fetchData())
+    setTimeout(dispatch(fetchData()), 2000)
   }
 
   return (
