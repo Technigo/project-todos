@@ -36,9 +36,7 @@ const AddTodoForm = () => {
       )
       setNewTodo('')
       setCategory('')
-    } else {
-      alert ('Please type your todo and/or select a category first')
-    } 
+    }
 	}
 
   return (
@@ -49,7 +47,8 @@ const AddTodoForm = () => {
           maxLength="30"
           placeholder="Write your todo here..."
           onChange={(event) => setNewTodo(event.target.value)}
-          value={newTodo}        
+          value={newTodo}
+          required={true}        
         >
         </UserInputTextarea>
           <AddButton
@@ -64,6 +63,7 @@ const AddTodoForm = () => {
             id="category" 
             value={category} 
             onChange={onCategoryChange}
+            required={true}
           >
             <option disabled value="">Categories</option>
             <option value="Home">Home</option>
