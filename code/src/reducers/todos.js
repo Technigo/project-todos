@@ -31,6 +31,11 @@ const todos = createSlice({
 
       store.tasks = deleteTasks;
     },
+
+    addTodo: (store, action) => {
+      store.tasks = [...store.tasks, action.payload]
+
+    }
   },
 });
 
