@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
 import tasks from '../reducers/tasks'
+import EmptyStateAnimation from './EmptyStateAnimation'
 
 const TaskContainer = styled.div`
     overflow: scroll;
+    width: 100%
 `
 
 const SingleTaskContainer = styled.div`
@@ -52,24 +54,30 @@ const TaskList = () => {
     const dispatch = useDispatch()
 
     return (
-        <TaskContainer>
-            {items.map((task, index) => (
-                //separate component::
-                <SingleTaskContainer key={task.id} className='task-item'>
-                    <Checkbox
-                        type='checkbox'
-                        checked={task.isComplete}
-                        onChange={() => dispatch(tasks.actions.toggleComplete(task.id))}
-                    />
-                    <Normaltext>{task.description}</Normaltext>
-                    <DeleteButton 
-                        onClick={() => dispatch(tasks.actions.removeTask(task.id))}>
-                        <ButtonText>X</ButtonText>
-                    </DeleteButton>
-                </SingleTaskContainer>
-                //
-            ))}
-        </TaskContainer>
+        <>
+        {items.length > 0 ? 
+            <TaskContainer>
+                {items.map((task, index) => (
+                    //separate component::
+                    <SingleTaskContainer key={task.id}>
+                        <Checkbox
+                            type='checkbox'
+                            checked={task.isComplete}
+                            onChange={() => dispatch(tasks.actions.toggleComplete(task.id))}
+                        />
+                        <Normaltext>{task.description}</Normaltext>
+                        <DeleteButton 
+                            onClick={() => dispatch(tasks.actions.removeTask(task.id))}>
+                            <ButtonText>X</ButtonText>
+                        </DeleteButton>
+                    </SingleTaskContainer>
+                    //
+                ))}
+            </TaskContainer>
+            :
+            <EmptyStateAnimation />
+                }
+        </>
     )
 }
 

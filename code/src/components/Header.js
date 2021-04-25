@@ -28,7 +28,7 @@ const Header = () => {
                 <Normaltext>{moment(new Date().toJSON()).format('MMMM Do YYYY')}</Normaltext>
             </div>
             <div>
-                <Normaltext>taks done: {completedTasks.length}/{items.length}</Normaltext>
+                <Normaltext>tasks done: {completedTasks.length}/{items.length}</Normaltext>
             </div>
         </HeaderContainer>
     )

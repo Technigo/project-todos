@@ -20,7 +20,12 @@ const TaskInput = styled.input`
 `
 
 const SubmitButton = styled.button`
-    width: 35%
+    width: 35%;
+    height: 25px;
+    background-color: #BA2626;
+    color: white;
+    border-radius: 5px;
+    border: none
 `
 
 const NewTaskInput = () => {
