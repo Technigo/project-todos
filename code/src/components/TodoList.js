@@ -1,13 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-// import todos from './reducers/todos'
-
 import NoTodos from './NoTodos'
 import TodoItem from './TodoItem'
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
+  
   if (items.length === 0) {
     return <NoTodos />
   } else {
