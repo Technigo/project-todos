@@ -14,8 +14,8 @@
   font-size: 21px;
   background-color: rgb(255, 125, 102);
   padding-left: 10px;
-  width: inherit;
   color: white;
+  width: -webkit-fill-available; 
 }
 
 ::placeholder {
