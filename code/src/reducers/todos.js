@@ -12,20 +12,26 @@ const todos = createSlice({
   },
   reducers: {
     toggleComplete: (store, action) => {
-      const updatedTasks = store.tasks.map(todo => {
+      const updatedTasks = store.tasks.map((todo) => {
         if (todo.id === action.payload) {
           return {
             ...todo,
-            isComplete: !todo.isComplete
-          }
+            isComplete: !todo.isComplete,
+          };
         } else {
           return todo;
         }
-      })
+      });
       store.tasks = updatedTasks;
-    }
+    },
+    removeTodo: (store, action) => {
+      const deleteTasks = store.tasks.filter(
+        (todo) => todo.id !== action.payload
+      );
 
-  }
-  });
+      store.tasks = deleteTasks;
+    },
+  },
+});
 
 export default todos;
