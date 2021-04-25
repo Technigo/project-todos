@@ -10,7 +10,7 @@ const TodoList = () => {
   const dispatch = useDispatch();
 
   return (
-    <div>
+    <div className="todo-list-container">
       {tasks.map((task) => (
         <div key={task.id} className="todo-list">
           <p>{task.description}</p>
