@@ -16,7 +16,7 @@ I have created one slice for tasks and one for accounts, the accounts slice is n
 
 When there are no todos to be displayed an empty state component is mounted and x/x tasks + the check all/uncheck all button component is only mounted when there is items in the data base.
 
-# There are several features and tweekings that I will continue with
+### There are several features and tweekings that I will continue with
 - Investigating and fixing the sometimes occuring glitches in the API requests
 - Continue investigation on batch requests to the API
 - Updating the state locally also for when posting a new item
