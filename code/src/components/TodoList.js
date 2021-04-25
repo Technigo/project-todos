@@ -25,12 +25,14 @@ const TodoList = () => {
             </div>
             <div className="user-input">
                 <input
+                    className="add-todo"
                     placeholder="Add to do here "
                     id="todoLabel"
                     onChange={(e) => dispatch(todos.actions.setAddLabel(e.target.value))}
                     value={addLabel}
                 />
                 <input 
+                    className="add-todo-button"
                     type="button"
                     value="add to do"
                     onClick={() => {
@@ -40,14 +42,16 @@ const TodoList = () => {
             </div>
 
             {items.map(todo =>  (
-                <div key={todo.id}>
-                    <p>{todo.description}</p>
+                <div className="user-output" key={todo.id}>
                     <input
+                        className="checkbox"
                         type="checkbox"
                         checked={todo.isComplete}
                         onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
                     />
+                    <p className="todo-description">{todo.description}</p>
                     <input
+                        className="delete-button"
                         type="button"
                         value="delete"
                         onClick={() => dispatch(todos.actions.removeToDo(todo.id))}
