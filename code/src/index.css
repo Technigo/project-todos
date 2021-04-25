@@ -178,12 +178,8 @@ code {
       height: 20px;
       width: 20px;
     }
-  
-    .add-todo-button {
-      font-size: 20px;
-    }
-  
-    .input-field, .no-todos, .todo-list, .todo-item, .delete-button {
+    
+    .add-todo-button, .input-field, .no-todos, .todo-list, .todo-item, .delete-button {
       font-size: 20px;
     }  
    
