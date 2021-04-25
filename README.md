@@ -1,13 +1,12 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This weeks project was about creating an app using redux. The app was supposed to se a todo list were it is possible to add tasks, remove them, mark and unmark them as completed. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started my project by sketching out what components I wanted and what each of them should do and how they would be connected to each other. Then I continued by coding the reducers, actions and selectors. I then created the different components and conected most of them in the TodoList.js. I then finished by creating the styling with styled components. 
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://dazzling-swirles-b0f09e.netlify.app/ 
