@@ -50,7 +50,7 @@ const TodoForm = () => {
                     color="primary"
                     endIcon={<CloudUploadIcon />}
                 >
-                    Send
+                    ADD
                 </Button>
             </div>
         </form>  

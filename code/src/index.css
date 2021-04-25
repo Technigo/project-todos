@@ -19,14 +19,11 @@ code {
 }
 
 .todo-container {
-  /*border-bottom: 5px solid black;*/
   padding: 10px;
   background-color: #f4eee8;
   margin: 10px 0px 10px;
   
 }
-
-
 
 .deadline-passed {
   color: red;
@@ -42,23 +39,28 @@ code {
   font-size: 12px;
 }
 
+/* Header section when todo is empyt */
+.empty-todo-container {
+  padding: 10px 0px 10px 10px;
+  display: flex;
+  justify-content: center;
+  background-color: #325288
+}
+/*--------------*/
+
 .header-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
   background-color: #325288
-  
 }
 
 .left-box-container {
-  /*border: 2px solid black;*/
   padding: 10px 0px 10px 10px;
   display: flex;
   justify-content: flex-start;
-
 }
 
 .right-box-container {
-  /*border: 2px solid blue;*/
   padding: 10px 10px 10px 0px;
   display: flex;
   justify-content: flex-end;
@@ -88,7 +90,6 @@ code {
 
 .form-section {
 padding: 10px;
-/*border: 3px black solid;*/
 background-color: #f5cebe;
 }
 
@@ -106,18 +107,15 @@ background-color: #f5cebe;
   display: flex;
   align-items: center;
   width: 200px;
-
 }
 
 .completed-task {
   text-decoration: line-through;
   color: green;
-
 }
 
 .not-completed-task {
   color: red;
-
 }
 
 .list-bottom {
@@ -146,14 +144,10 @@ background-color: #f5cebe;
 
 .content {
   width: 100%;
-  /*border: red solid 5px;*/
-
   background-color: #fff;
   border-radius: 25px;
   padding: 0px 0px 20px 0px;
 }
-
-
 
 @media (min-width: 768px) {
   .content {
@@ -161,26 +155,20 @@ background-color: #f5cebe;
   }
 }
 
-
 @media (min-width: 1300px) {
   .content {
     width: 50%;
   }
 
   .right-box-container {
-
     justify-content: center;
   }
 
   .left-box-container {
-
     justify-content: center;
-  
   }
 
   .content {
- 
     margin-top: 20px;
-
   }
 }
