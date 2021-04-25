@@ -9,7 +9,6 @@ const Input = () => {
 
   const [value, setValue] = useState('')
 
-
   const dispatch = useDispatch()
 
   const onFormSubmit = (e) => {
@@ -62,7 +61,7 @@ const Input = () => {
           />
         </Label>
         <SubmitButton type='submit'>
-            Add to planner
+          Add to planner
         </SubmitButton>
       </Form>
     </>

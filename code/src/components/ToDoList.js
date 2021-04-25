@@ -13,41 +13,41 @@ const ToDoList = () => {
   
   const dispatch = useDispatch()
 
-    return(
-    <>
-      {noTasks ?
-      <NoToDos /> : (
-      <TaskContainer>
-        {tasks.map(todo => (
-          <SingleTaskContainer key={todo.id}>            
-            {/* Checkboxes are styled in CSS file*/}
-            <label className='checkbox'>
-              <input
-                type='checkbox'
-                checked={todo.isComplete}
-                onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-              />
-              <span className='checkmark'></span>
-            </label>
-            <TextContainer>
-              <Task>
-                {todo.description}
-              </Task>
-              <Time>
-                {moment(todo.time).format('ddd HH:mm')}
-              </Time>
-            </TextContainer>
-            <RemoveButton
-              type='button'
-              onClick={() => dispatch(todos.actions.removeToDo(todo.id))}>
-                X
-            </RemoveButton>
-          </SingleTaskContainer>
-        ))}
-      </TaskContainer>
-      )}
-    </>
-    )
+  return(
+  <>
+    {noTasks ?
+    <NoToDos /> : (
+    <TaskContainer>
+      {tasks.map(todo => (
+        <SingleTaskContainer key={todo.id}>            
+          {/* Checkboxes are styled in CSS file*/}
+          <label className='checkbox'>
+            <input
+              type='checkbox'
+              checked={todo.isComplete}
+              onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+            />
+            <span className='checkmark'></span>
+          </label>
+          <TextContainer>
+            <Task>
+              {todo.description}
+            </Task>
+            <Time>
+              {moment(todo.time).format('ddd HH:mm')}
+            </Time>
+          </TextContainer>
+          <RemoveButton
+            type='button'
+            onClick={() => dispatch(todos.actions.removeToDo(todo.id))}>
+              X
+          </RemoveButton>
+        </SingleTaskContainer>
+      ))}
+    </TaskContainer>
+    )}
+  </>
+  )
 }
 
 export default ToDoList
