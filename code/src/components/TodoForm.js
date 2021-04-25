@@ -15,22 +15,23 @@ const TodoForm = () => {
 		const newTodo = {
 			id: uniqid(),
 			description: value,
-			isComplete: false
+			isComplete: false,
 		}
-		
+
 		dispatch(todos.actions.addTodo(newTodo))
 		setValue('')
 	}
 
   return (
-		<form onSubmit={onFormSubmit}>
-			<input
+		<form className="form-container" onSubmit={onFormSubmit}>
+			<input 
+				className="form-input"
 				type="text"
 				value={value}
 				onChange={e => setValue(e.target.value)}
 			/>
-			<button type="submit">Add todo</button>
-		</form>
+			<button className="submit-btn" type="submit">Add todo</button>
+		</form>	
   )
 }
 

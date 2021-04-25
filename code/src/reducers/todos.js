@@ -1,10 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const initialItems = localStorage.getItem('todos')
+	? JSON.parse(localStorage.getItem('todos'))
+	: []
+
 const todos = createSlice({
   name: 'todos', 
   initialState: {
-    items: []
-  },
+		items: initialItems
+	},
   reducers: {
 		toggleComplete: (store, action) => {
 			const updatedItems = store.items.map(todo => {
