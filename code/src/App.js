@@ -20,11 +20,13 @@ const store = configureStore({ reducer });
 export const App = () => {
   return (
     // Pass store into <provider> so every component inside can reach for it
+    <div className="container">
     <Provider store={store}>
       <Header />
       <TodoForm />
       <TodoList />
       <TodoCountComplete />
     </Provider>
+    </div>
   );
 };
