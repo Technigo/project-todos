@@ -10,8 +10,6 @@ flex-direction: column;
 justify-contents: center;
 align-items: flex-end;
 `
-
-
 const TaskSummary = () => {
 
   return (

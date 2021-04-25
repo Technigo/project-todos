@@ -21,8 +21,7 @@ margin-top: 30px;
   font-size: 16px;
   margin: 0 5px;
 }
-`
-
+`;
 const Link = styled.a`
 margin: 0 3px;
 &:link, &:visited {
@@ -37,7 +36,7 @@ margin: 0 3px;
   cursor: pointer;
   color: #ffb037;
 }
-`
+`;
 const Footer = () => {
   return (
     <Container>Icons made by 

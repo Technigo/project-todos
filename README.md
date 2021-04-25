@@ -1,12 +1,12 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a to do app, made with React and Redux. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I got inspiration from teacher-led code sessions, Stack Overflow and some other articles I found on the web. I wanted a clean but also recognisable design so I created a simple logo for the app ToDo. 
+
+I used Styled components for the styling and Day JS to display dates and times. 
 
 ## View it live
 

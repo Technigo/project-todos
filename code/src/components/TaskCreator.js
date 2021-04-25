@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import uniqid from 'uniqid';
-
 import styled from 'styled-components';
 
 import tasks from '../reducers/tasks';
@@ -20,7 +19,7 @@ box-shadow: 0  0 10px #aaaaaa;
 @media (min-width: 768px){
   width: 680px;
 }
-`
+`;
 const Input = styled.input`
 width: 200px;
 height: 30px;
@@ -39,7 +38,7 @@ font-size: 16px;
     font-size: 22px;
   }
 }
-`
+`;
 const Button = styled.button`
 width: 25px; 
 height: 25px;
@@ -56,7 +55,7 @@ cursor: not-allowed;}
   width: 40px;
   height: 40px;
 }
-`
+`;
 const Image = styled.img`
 width: 25px;
 position: absolute;
@@ -65,7 +64,7 @@ left: 0;
 @media (min-width: 768px){
   width: 40px;
 }
-`
+`;
 const TaskCreator = () => {
   const [value, setValue] = useState("");
   const dispatch = useDispatch();
@@ -80,11 +79,11 @@ const TaskCreator = () => {
     id:uniqid(), 
     title: value, 
     createdAt: new Date().toISOString(), 
-    isComplete: false}
+    isComplete: false};
 
   const handleChange = (event) => {
     setValue(event.target.value)
-  }
+  };
   
   return (
     <Form onSubmit={onFormSubmit}>
@@ -104,5 +103,3 @@ const TaskCreator = () => {
 
 export default TaskCreator;
 
-//add ARIA-tag to inputform since no label?
-//action dispatched from here when new task is added!

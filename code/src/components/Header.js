@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import DayJS from 'react-dayjs';
 
-import TaskSummary from './TaskSummary'
+import TaskSummary from './TaskSummary';
 
 const Container = styled.div`
 width: 100%;
@@ -16,7 +16,7 @@ border-radius: 15px;
 @media (min-width: 768px){
   width: 680px;
 }
-`
+`;
 const DateContainer = styled.div`
 margin-left: 7px;
 display: flex;
@@ -25,7 +25,7 @@ font-family: 'Noto Sans KR', sans-serif;
 @media (min-width: 768px){
   font-size: 22px;
 }
-`
+`;
 const Header1 = styled.h1`
 margin: 0;
 font-family: 'Rammetto One', cursive;
@@ -36,7 +36,7 @@ border-radius: 14px;
 @media (min-width: 768px){
   font-size: 40px;
 }
-`
+`;
 const Header = () => {
   return (
     <Container>

@@ -18,7 +18,7 @@ cursor: pointer};
 @media (min-width: 768px){
   font-size: 26px;
 }
-`
+`;
 const ConmpleteAllTasksButton= () => {
   const dispatch = useDispatch();
   
@@ -31,5 +31,5 @@ const ConmpleteAllTasksButton= () => {
       <Button onClick={onClear}>All done!</Button>
     </div> 
   )
-}
+};
 export default ConmpleteAllTasksButton;

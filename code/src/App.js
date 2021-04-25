@@ -26,7 +26,7 @@ const AppContainer = styled.div`
   @media (min-width: 768px) {
     width: 750px;
   }
-`
+`;
 
 export const App = () => {
   return (
