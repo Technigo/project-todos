@@ -11,12 +11,17 @@
 
 .task {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: space-between;
+  align-items: center;
   margin: 6px 0px;
-  padding: 15px 30px;
+  padding: 15px;
   border-radius: 10px;
   /* background-color: #53d3cf; */
+}
+
+.checkbox-spacer {
+  margin-right: 10px;
 }
 
 .new-task-wrapper {
@@ -35,4 +40,20 @@
   display: flex;
   justify-content: center;
   margin: 0px 8px 0px 15px;
+}
+
+.stats, .time {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  text-align: center;
+}
+
+/*TOFIX: .total is unused for now*/
+.completed, .total {
+  color: teal;
+  padding-top: 15px;
+  line-height: 200%;
+}
+
+.completed {
+  color: teal;
 }

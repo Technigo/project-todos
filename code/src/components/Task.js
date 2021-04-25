@@ -33,35 +33,37 @@ const Task = (props) => {
       boxShadow={3}
       margin={1}
     >
-      <div
-        className="task"
-        key={props.task.id}
-      >
-        <FormControl component="fieldset">
-          <FormGroup aria-label="position" row>
-            <FormControlLabel
-              value="end"
-              control={
-                <Checkbox
-                  checked={props.task.isComplete}
-                  onChange={() => dispatch(todoList.actions.toggleComplete(props.task.id))}
-                  icon={<RadioButtonUncheckedOutlinedIcon />}
-                  checkedIcon={<CheckCircleIcon color="primary.main"/>}
-                  // style={{ color: "#000" }}
-                  inputProps={{ 'aria-label': 'primary checkbox' }}
-                />
-              }
-              label={props.task.description}
-              labelPlacement="end"
-            />
-          </FormGroup>
-        </FormControl>
-        <IconButton
-          onClick={() => dispatch(todoList.actions.removeTask(props.task.id))}
-          // https://bonsaiilabs.com/material-ui-remove-hover/
-        >
-          <DeleteIcon />
-        </IconButton>
+      <div className="task">
+        <Box marginLeft={2}>
+          <FormControl component="fieldset">
+            <FormGroup aria-label="position" row>
+              <FormControlLabel
+                value="end"
+                control={
+                  <div className="checkbox-spacer">
+                    <Checkbox
+                      checked={props.task.isComplete}
+                      onChange={() => dispatch(todoList.actions.toggleComplete(props.task.id))}
+                      icon={<RadioButtonUncheckedOutlinedIcon />}
+                      checkedIcon={<CheckCircleIcon color="secondary"/>}
+                      inputProps={{ 'aria-label': 'primary checkbox' }}
+                    />
+                  </div>
+                }
+                label={`${props.task.description.charAt(0).toUpperCase()}${props.task.description.substr(1)}`}
+                labelPlacement="end"
+                style={
+                  props.task.isComplete ? {color: "#acacac"} : {}
+                }
+              />
+            </FormGroup>
+          </FormControl>
+        </Box>
+          <IconButton
+            onClick={() => dispatch(todoList.actions.removeTask(props.task.id))}
+          >
+            <DeleteIcon />
+          </IconButton>
       </div>
     </Box>
   )

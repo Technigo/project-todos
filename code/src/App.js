@@ -2,11 +2,12 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import ReactDOM from 'react-dom';
-import { Container, ThemeProvider } from '@material-ui/core';
+import { Box, Container, ThemeProvider } from '@material-ui/core';
 
 import todoList from './reducers/todoList'
 import TaskList from './components/TaskList'
 import TaskForm from './components/TaskForm'
+import TaskStats from './components/TaskStats'
 import theme from './theme'
 
 //TO-DO huhhuehueh META:
@@ -31,6 +32,7 @@ export const App = () => {
         <Container maxWidth="sm">
           <TaskForm />
           <TaskList />
+          <TaskStats />
         </Container>
       </ThemeProvider>
     </Provider>

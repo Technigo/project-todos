@@ -1,22 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const todoList = createSlice({
-
-  //name
+const todoList = createSlice ({
   name: 'todolist',
-
-  //initial state
   initialState: {
     tasks: [
-      { id: 1, description: 'eat kitchen', isComplete: false },
-      { id: 2, description: 'destroy world', isComplete: false },
-      { id: 3, description: 'eat sandwich', isComplete: false },
-      { id: 4, description: 'remove hair', isComplete: false },
-      { id: 5, description: 'sleep', isComplete: false }
+      { id: 1, description: 'my first task!', isComplete: false },
     ]
   },
-
-  //reducers
   reducers: {
     toggleComplete: (store, action) => {
       const updatedTasks = store.tasks.map(task => {
@@ -29,13 +19,11 @@ const todoList = createSlice({
           return task
         }
       })
-
       store.tasks = updatedTasks
     },
 
     removeTask: (store, action) => {
       const remainingTasks = store.tasks.filter(task => task.id !== action.payload)
-
       store.tasks = remainingTasks
     },
 
