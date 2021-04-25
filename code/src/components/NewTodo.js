@@ -31,6 +31,7 @@ const TodoBtn = styled.button`
   align-self: center;
   margin-right: 10px;
   border-radius: 50%;
+  cursor: pointer;
 `
 const TodoInput = styled.input`
   box-sizing: border-box;
