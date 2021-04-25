@@ -27,7 +27,7 @@ const TodoFrom = () => {
     <form onSubmit={onFormSubmit} className="form">
       <input
         className="input-filed"
-        placeholder="Add task"
+        placeholder="Add new task"
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
