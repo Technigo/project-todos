@@ -11,18 +11,19 @@ const Filter = ({ setFilter }) => {
  
   useEffect(()=> {
     filterHandler()
-  }, [items, status])
+  }, [ status])
 
   const filterHandler = () => {
     switch(status) {
       case 'completed': 
-      setFilter(items.filter((todo) => todo.isComplete === true))
+      setFilter(items.filter((todo) => todo.isComplete))
         break;
       case 'uncompleted': 
-      setFilter(items.filter((todo) => todo.isComplete === false))
+      setFilter(items.filter((todo) => !todo.isComplete))
         break; 
-      case 'all':
+      default:
         setFilter(items)
+        break;
     }
   }
   
