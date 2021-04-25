@@ -1,5 +1,10 @@
 import React, { useEffect, useRef } from 'react'
 import lottie from 'lottie-web'
+import styled from 'styled-components'
+
+const LottieContainer = styled.div`
+  height: 40%
+`
 
 const EmptyStateAnimation = () => {
   const container = useRef(null)
@@ -15,7 +20,7 @@ const EmptyStateAnimation = () => {
   })
   
   return (
-     <div className='container' ref={container}/>
+     <LottieContainer className='container' ref={container}/>
   )
 }
 

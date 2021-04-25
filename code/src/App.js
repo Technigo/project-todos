@@ -18,7 +18,6 @@ const MainContainer = styled.div`
       width: 50vw;
     } 
     @media (min-width: 1200px) {
-      height: 80vh;
       width: 50vw;
     } 
 `
