@@ -2,11 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   items: [],
-  filters: [{ byCategory: "all" }],
-  sort: [],
+  filters: [{filterBy:"Reset"}],
+  sort: [{sortBy:""}],
+  category: [{categorizeBy: "all"}],
   updatedTodos: [],
   updateFilters: [],
   updateSort: [],
+  updateCategory: []
 };
 
 export const todos = createSlice({
@@ -33,42 +35,38 @@ export const todos = createSlice({
 
       store.updatedTodos = store.items.map((item) => {
         if (item.id === id) {
-          return { ...item, isComplete: !item.isComplete, completedAt: time };
+          item.isComplete = !item.isComplete;
+          item.completedAt = time;
+
+          /* if the filter is on "done" the new task will be hidden*/
+          store.filters[0].filterBy === "isComplete" && store.filters[0].value === item.isComplete
+          ? item.hidden= false
+          : item.hidden=true
+          return item;
+          
         } else {
           return item;
         }
       });
       store.items = store.updatedTodos;
     },
-    filterBy: (store, action) => {
-      const { value, type } = action.payload;
-      store.updateFilters = store.filters.map((item) => {
-        if (store.filters.includes(type)) {
-          return item;
-        } else {
-          return { ...item, [type]: value };
-        }
-      });
-      store.filters = store.updateFilters;
-    },
-    sortBy: (store, action) => {
-      const { value, order } = action.payload;
-      store.updateSort = [];
-      store.updateSort.push({ sortBy: value, order: order });
-      store.sort = store.updateSort;
-    },
     categorize: (store, action) => {
       const { categorizeBy } = action.payload;
       store.updatedTodos = store.items.map((task) => {
-        if (categorizeBy === "all") {
+        /*checking both category and filter to be sure both applies even on category update*/
+        if (categorizeBy === "all" && task[store.filters[0].filterBy] === store.filters[0].value) {
           return { ...task, hidden: false };
         }
-        task.category[0] === categorizeBy
+        task.category[0] === categorizeBy && task[store.filters[0].filterBy] === store.filters[0].value
           ? (task.hidden = false)
           : (task.hidden = true);
         return task;
       });
 
+      store.updateCategory = [];
+      store.updateCategory.push({ categorizeBy: categorizeBy });
+      
+      store.category = store.updateCategory;
       store.items = store.updatedTodos;
     },
     sortTodos: (store, action) => {
@@ -95,6 +93,10 @@ export const todos = createSlice({
         }
       }
 
+      store.updateSort = [];
+      store.updateSort.push({ sortBy: sortBy, order: order });
+      store.sort = store.updateSort;
+
       store.items = store.updatedTodos;
     },
     filterTodos: (store, action) => {
@@ -102,8 +104,8 @@ export const todos = createSlice({
       store.updatedTodos = store.items.map((task) => {
         if (
           task[filterBy] === value &&
-          (store.filters[0].byCategory === task.category[0] || //only apply on tasks in the active category
-            store.filters[0].byCategory === "all") //or if category is all then apply
+          (store.category[0].categorizeBy === task.category[0] || //only apply on tasks in the active category
+            store.category[0].categorizeBy === "all") //or if category is all then apply
         ) {
           task.hidden = false;
         } else {
@@ -111,12 +113,18 @@ export const todos = createSlice({
         }
         return task;
       });
+
+      store.updateFilters = [];
+      store.updateFilters.push({ filterBy: filterBy, value: value });
+
+      store.filters = store.updateFilters;
       store.items = store.updatedTodos;
     },
     resetFilter: (store) => {
       store.updatedTodos = store.items.map((task) => {
         return { ...task, hidden: false };
       });
+
       store.items = store.updatedTodos;
     },
     removeTodo: (store, action) => {

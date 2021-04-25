@@ -40,12 +40,11 @@ export const CategoryFilter = () => {
       color: "#f0a500",
     },
   ];
-  const filters = useSelector((store) => store.todos.filters);
+  const cat = useSelector((store) => store.todos.category);
   const tasks = useSelector((store) => store.todos.items);
 
   const handleClick = (name) => {
     dispatch(todos.actions.categorize({ categorizeBy: name }));
-    dispatch(todos.actions.filterBy({ type: "byCategory", value: name }));
   };
 
   return (
@@ -54,7 +53,7 @@ export const CategoryFilter = () => {
         <>
           <Button
             key={category.name}
-            active={category.name === filters[0].byCategory}
+            active={category.name === cat[0].categorizeBy}
             bgColor={category.color}
             onClick={() => handleClick(category.name)}
           >
@@ -70,7 +69,7 @@ export const CategoryFilter = () => {
               </TaskNumber>
             )}
             <Image
-              active={category.name === filters[0].byCategory}
+              active={category.name === cat[0].categorizeBy}
               src={category.symbol}
             />
           </Button>

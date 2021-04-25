@@ -16,7 +16,6 @@ export const FilterTasks = () => {
   const dispatch = useDispatch();
 
   const handleClick = (item) => {
-    dispatch(todos.actions.filterBy({ type: "byFilter", value: item.value }));
     return item.name === "Reset"
       ? dispatch(todos.actions.resetFilter())
       : dispatch(

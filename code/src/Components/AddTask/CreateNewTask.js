@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 
 import { todos } from "../../Reducers/todos";
@@ -9,13 +9,17 @@ import { SelectDeadline } from "./SelectDeadline";
 export const CreateNewTask = () => {
   //variables
   const dispatch = useDispatch();
+  const filters = useSelector(store => store.todos.filters)
+  const sort = useSelector(store => store.todos.sort)
+  const cat = useSelector(store => store.todos.category)
   const currentTime = new Date(Date.now()).toLocaleString();
+
   //states
   const [newTask, setNewTask] = useState("");
   const [due, setDue] = useState("");
   const [category, setCategory] = useState("");
   const [checked, setChecked] = useState("");
-  const [hasDeadline, setHasDeadline] = useState("false");
+  const [hasDeadline, setHasDeadline] = useState(false);
 
   //local functions
   const handleClick = () => {
@@ -32,9 +36,12 @@ export const CreateNewTask = () => {
           overdue: new Date(due)-new Date(Date.now()) <= 0 ? true : false
         })
       );
+
       clearAll();
-      dispatch(todos.actions.categorize({ categorizeBy: "all" }));
-      dispatch(todos.actions.filterBy({ type: "byCategory", value: "all" }));
+       dispatch(todos.actions.categorize({ categorizeBy: cat[0].categorizeBy}));
+       dispatch(todos.actions.filterTodos({ filterBy: filters[0].filterBy, value: filters[0].value }))
+       dispatch(todos.actions.sortTodos({ sortBy: sort[0].sortBy, order: sort[0].order }))
+       
     }
   };
 

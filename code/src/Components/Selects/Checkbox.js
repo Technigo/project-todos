@@ -1,9 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-export const Checkbox = ({ className, checked, id, type, color, ...props }) => {
+export const Checkbox = ({ checked, id, type, color, ...props }) => {
   return (
-    <CheckboxContainer className={className}>
+    <CheckboxContainer>
       <HiddenCheckbox checked={checked} id={id} {...props} />
       <StyledCheckbox checked={checked} color={color} type={type}>
         <Icon viewBox="1 1 22 26">

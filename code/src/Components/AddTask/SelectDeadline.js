@@ -1,22 +1,34 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+
+import { Checkbox } from "../../Components/Selects/Checkbox";
+
+let date, time;
 
 export const SelectDeadline = ({ setDue, setHasDeadline }) => {
   const initialTime = new Date(Date.now()).toISOString().split("T")[0];
-  const [dueClock, setDueClock] = useState("");
-  const [dueDate, setDueDate] = useState("");
   const [expand, setExpand] = useState(false);
+  const [checked, setChecked] = useState(false);
 
   const handleChange = (e, type) => {
-    setDueDate(initialTime)
-    setDueClock("08:00")
+    date = initialTime;
+    time = "08:00";
     if (type === "date") {
-      setDueDate(e.target.value);
+      date = e.target.value;
     } else {
-     setDueClock(e.target.value);
+      time = e.target.value;
     }
     setHasDeadline(true);
-    setDue(`${dueDate} ${dueClock}`);
+    setDue(`${date} ${time}`);
+    setChecked(false);
+  };
+
+  const handleCheck = () => {
+    setChecked(!checked);
+    date = "";
+    time = "";
+    setHasDeadline(false);
+    setDue("");
   };
 
   return (
@@ -28,17 +40,29 @@ export const SelectDeadline = ({ setDue, setHasDeadline }) => {
         <Calendar
           id="deadline"
           name="deadline"
-          value={dueDate}
+          value={date}
           min={initialTime}
           max="2025-01-01"
           onChange={(e) => handleChange(e, "date")}
         />
         <Time
+          step="3600"
+          min="00:00"
           id="deadline-clock"
           name="deadline-clock"
-          value={dueClock}
+          value={time}
           onChange={(e) => handleChange(e, "clock")}
         />
+        <Label htmlFor="NoDeadline">
+          <Checkbox
+            checked={checked}
+            id="NoDeadline"
+            type=""
+            color="darkcyan"
+            onChange={() => handleCheck()}
+          />
+          Infinite
+        </Label>
       </DateWrapper>
     </Container>
   );
@@ -80,3 +104,8 @@ const DateWrapper = styled.div`
 const Calendar = styled.input.attrs({ type: "date" })``;
 
 const Time = styled.input.attrs({ type: "time" })``;
+
+const Label = styled.label`
+  font-size: 12px;
+  padding-left: 10px;
+`;
