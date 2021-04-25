@@ -8,7 +8,7 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;  
+  -moz-osx-font-smoothing: grayscale;
 }
 
 #root {
@@ -62,7 +62,7 @@ code {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
-  font-family: 'Dancing Script', cursive; 
+  font-family: "Dancing Script", cursive;
 }
 
 .tasks-clear-button-container {
@@ -71,7 +71,7 @@ code {
 }
 
 h1 {
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 42px;
   margin-bottom: 20px;
 }
@@ -104,7 +104,7 @@ h1 {
 .clear-button {
   position: absolute;
   top: 78%;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   font-size: 16px;
   border-radius: 30px;
   padding: 7px 15px;
@@ -124,7 +124,7 @@ h1 {
 
 .submit-button {
   all: unset;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 24px;
   padding-right: 8px;
   cursor: pointer;
@@ -142,7 +142,7 @@ h1 {
 .form-container {
   display: flex;
   max-width: 50%;
-  font-family: 'Dancing Script', cursive;
+  font-family: "Dancing Script", cursive;
   border: 2px double #f8c7b5;
   background-color: #fff;
   border-radius: 7px;
@@ -166,7 +166,7 @@ h1 {
 }
 
 .checkbox:after {
-  content: '';
+  content: "";
   display: flex;
   align-items: center;
   justify-content: center;
@@ -178,7 +178,7 @@ h1 {
 }
 
 .checkbox:checked:after {
-  content: '\2713';
+  content: "\2713";
   border: 2px double #f8c7b5;
   background-color: #fce1de;
 }
@@ -190,16 +190,13 @@ h1 {
 .waste-bin {
   display: block;
   max-width: 11px;
-  max-height: 16px; 
+  max-height: 16px;
   cursor: pointer;
   position: relative;
   left: 90%;
 }
 
-
-
 @media (min-width: 768px) {
-
   .wrapper {
     width: 75%;
   }
@@ -226,7 +223,7 @@ h1 {
 
   .waste-bin {
     max-width: 14px;
-    max-height: 20px; 
+    max-height: 20px;
   }
 
   .todo-wrapper {
@@ -237,7 +234,7 @@ h1 {
     width: 1.7em;
     height: 1.7em;
   }
-  
+
   .checkbox:after {
     width: 16px;
     height: 16px;
@@ -248,10 +245,8 @@ h1 {
     padding: 9px 17px;
   }
 }
-  
 
 @media (min-width: 1024px) {
-
   .wrapper {
     width: 60%;
     max-width: 760px;
@@ -266,7 +261,7 @@ h1 {
     width: 44%;
     max-width: 680px;
   }
-  
+
   h1 {
     font-size: 56px;
   }
@@ -284,9 +279,12 @@ h1 {
     font-size: 18px;
   }
 
+  .waste-bin {
+    display: none;
+  }
+
   .clear-button {
     font-size: 18px;
     padding: 7px 15px;
   }
 }
-

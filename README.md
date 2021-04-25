@@ -12,4 +12,4 @@ Technologies: CSS3, JSX, React, Redux.
 
 ## View it live
 
-
+https://todo-carolinef.netlify.app/
