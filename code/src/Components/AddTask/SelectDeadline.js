@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import { Checkbox } from "../../Components/Selects/Checkbox";
 
-let date, time;
+let date, time, dateTime
 
 export const SelectDeadline = ({ setDue, setHasDeadline }) => {
   const initialTime = new Date(Date.now()).toISOString().split("T")[0];
@@ -18,18 +18,27 @@ export const SelectDeadline = ({ setDue, setHasDeadline }) => {
     } else {
       time = e.target.value;
     }
+    setTime(date, time)
     setHasDeadline(true);
-    setDue(`${date} ${time}`);
+    
     setChecked(false);
   };
 
   const handleCheck = () => {
     setChecked(!checked);
-    date = "";
-    time = "";
+   date =""
+   time =""
+   setTime(date, time)
     setHasDeadline(false);
     setDue("");
   };
+
+  const setTime = (date, time) => {
+    dateTime = `${date} ${time}`;
+    let d = new Date(dateTime.replace(/-/g, '/')).toLocaleString()
+    let printDateTime = d.slice(0, d.lastIndexOf(":"))
+    setDue(printDateTime);
+  }
 
   return (
     <Container>
