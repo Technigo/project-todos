@@ -44,7 +44,7 @@ box-sizing: border-box;
 
 @media (min-width: 767px) {
   width: 450px;
-  margin: 70px 0px;
+  margin: 20px 0px;
   padding: 20px 20px;
   font-size: 16px;
 }
