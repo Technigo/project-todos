@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import COLORS from './Colors'
 
 const Counter = ({ items, display }) => {
-  console.log(items)
   const incompleteItems = items.filter(todo => !todo.isComplete)
 
   return (

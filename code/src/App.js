@@ -13,7 +13,6 @@ const reducer = combineReducers({
 const store = configureStore({ reducer })
 
 export const App = () => {
-  // const items = useSelector((store) => store.todos.items)
 
   return (
     <Provider store={store}>

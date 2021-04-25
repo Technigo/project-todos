@@ -1,13 +1,8 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+https://jovial-johnson-b68dc6.netlify.app/
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+I was really stoked to do a To do app, because i think that is a really fun project. I didnt really have time to make it as great as i had wanted, but i hope to keep improving a bit on this project in the coming weeks. 
 
-## The problem
+I started by making a Figma (https://www.figma.com/file/LHMKTWW8diVvLhXntjU1rl/todo?node-id=0%3A1). I followed along and coded along with the lectures, so i feel like i understood the logic of the Redux implentation quite ok. I added some of my own features, like having the completed todos displayed in a separate container, and a counter for the number of todos. I had planned to try to add more features that interacts with the store, but hopefully i will return to that. I ended up spending more time on styling than i had thought, there are a few different options when it comes to styling in react and each option seems to have its own pros and cons. I want to decide which method fits me best but also I want to be comfortable working with all of them so i will be ok being thrown into any kind of project. For this project i went back and forth a little bit, started with separate css for each component, and then threw it out. Then i tried using Material UI combined with styled components, but threw it out because i wanted to override some MUI properties but looking into how to properly do that it felt a bit daunting. So i decided to just go with styled components. I still had some problems with styling though, for example when trying to override checkbox styling by addding pseudo selectors (there is some commented out code left in TodoList which i will come back to). I had to revert to default styling for the checkboxes for now. I'm also going to connect the Header to the store, so when you type something into the heading, that will be stored as the name of the Todolist. And then i want to make the todos editable by just clicking/tapping on them. And also to have the delete icons only appear on hover (mouse) or in todo-"edit mode" (on phone). If that makes sense. It would also be cool to make todos drag-and-droppable. How hard can that be? (The answer to that question is usually: "Harder than you think!")
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
-## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.

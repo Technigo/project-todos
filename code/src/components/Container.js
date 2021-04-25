@@ -2,12 +2,10 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-
 import Counter from './Counter'
 import TodoList from './TodoList'
 import TodoForm from './TodoForm'
 import Header from './Header'
-
 
 const Container = () => {
   const items = useSelector((store) => store.todos.items)
@@ -26,7 +24,7 @@ const Container = () => {
   )
 }
 
-const Body = styled.body`
+const Body = styled.div`
   height: 100vh;
   padding-top: 5vh;
   background-color: #E9E9EC;
@@ -37,7 +35,7 @@ const Wrapper = styled.div`
   padding: 60px 30px;
   background-color: white;
   max-width: 375px;
-  min-height: 80vh;
+  min-height: 70vh;
   margin: 0 auto;
   border-radius: 24px;
 `

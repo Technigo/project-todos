@@ -1,21 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
-import COLORS from './Colors'
-import { ReactComponent as Delete } from '../resources/delete.svg'
-
-// import Button from '@material-ui/core/Button'
-// import { makeStyles } from '@material-ui/core/styles';
-
-// import Checkbox from '@material-ui/core/Checkbox'
-// import IconButton from '@material-ui/core/IconButton'
-// import DeleteIcon from '@material-ui/icons/Delete'
 
 import todos from '../reducers/todos'
-// import './TodoList.css'
+import { ReactComponent as Delete } from '../resources/delete.svg'
+import COLORS from './Colors'
 
 const TodoList = ({ items, complete }) => {
-  // const items = useSelector((store) => store.todos.items)
   const dispatch = useDispatch()
 
   return (
@@ -28,7 +19,7 @@ const TodoList = ({ items, complete }) => {
               type="checkbox"
               checked={todo.isComplete}
               onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}/>
-            <Task for={todo.id}>
+            <Task htmlFor={todo.id}>
               {todo.description}
             </Task>
 
@@ -42,29 +33,28 @@ const TodoList = ({ items, complete }) => {
 }
 
 const Wrapper = styled.div`
-  min-height: 400px;
+  min-height: 300px;
 `
 
 const TodoContainer = styled.div`
   display: flex;
   height: 44px;
-  /* border: 1px solid pink; */
 `
 
+// There is some commented stuff below, i plan to come back to this when i figure out
+// how to override checkbox styling with styled components
 const Checkbox = styled.input`
   /* -webkit-appearance: none; */
-  /* border: 2px solid black; */
-  background: ${COLORS.lightGrey};
-  border-radius: 4px;
-  padding: 9px;
-  align-self: center;
-  cursor: pointer;
   height: 20px;
   width: 20px;
+  align-self: center;
+  cursor: pointer;
   box-shadow: 0 1px 2px ${COLORS.lightGrey};
-  display: inline-block;
-	position: relative;
-  transition: all .2s ease;
+  /* background: ${COLORS.lightGrey}; */
+  /* border-radius: 4px; */
+  /* padding: 9px; */
+	/* position: relative; */
+  /* transition: all .2s ease; */
 
   &:hover {
     background: ${COLORS.midGrey};
@@ -76,8 +66,7 @@ const Checkbox = styled.input`
     background: green;
     color: white;
   }
-  &:checked:after {
-    /* content: '?'; */
+  &:checked:after { // This is the thing that did not work at all. Why?
     content: '\2714';
     font-size: 14px;
     position: absolute;
@@ -92,10 +81,10 @@ const IconButton = styled.a`
   opacity: .6;
   &:hover {
     border: blue;
-    opacity: 1;
+    opacity: .4;
   }
   &:active {
-    opacity: .1;
+    opacity: 1;
   }
 
   `
@@ -109,13 +98,7 @@ const Task = styled.label`
   margin-bottom: auto;
   font-size: 16px;
   font-weight: 400;
-  /* display: flex; */
   color: ${COLORS.darkGrey};
-  /* &.hover {
-    border: blue;
-    opacity: .1;
-  } */
 `
-
 
 export default TodoList

@@ -6,32 +6,32 @@ const todos = createSlice({
     items: [
       {
         id: 1,
-        description: 'First',
+        description: 'Milk',
         isComplete: false
       },
       {
         id: 2,
-        description: 'Second',
+        description: 'Eggs',
         isComplete: true
       },
       {
         id: 3,
-        description: 'Third',
+        description: 'Flour',
         isComplete: true
       },
       {
         id: 4,
-        description: 'First',
+        description: 'Butter',
         isComplete: false
       },
       {
         id: 5,
-        description: 'Second',
+        description: 'Jam',
         isComplete: false
       },
       {
         id: 6,
-        description: 'Third',
+        description: 'Cream',
         isComplete: false
       }
     ]
@@ -48,9 +48,7 @@ const todos = createSlice({
           return todo
         }
       })
-
       store.items = updatedItems
-      console.log(store.items)
     },
     removeTodo: (store, action) => {
       const decreasedItems = store.items.filter(todo => todo.id !== action.payload)
