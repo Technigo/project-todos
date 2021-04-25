@@ -68,6 +68,7 @@ const EditTodo = styled.input`
   font-size: 16px;
   border: none;
   margin-left: 10px;
+  border-bottom: 4px dotted #e5e5e5;
 
   @media (min-width: 768px) {
     font-size: 20px;
@@ -92,8 +93,8 @@ const Todo = ({ todo }) => {
     dispatch(todos.actions.editTodoContent({
       ...todo,
       content: editContent,
+      isEdit: !todo.isEdit
     }));
-    console.log(editContent)
   }
 
   return (
@@ -129,9 +130,8 @@ const Todo = ({ todo }) => {
           {todo.content}
         </ContentParagraph>
       )}
-
-      {/* <DateParagraph todoComplete={todo.isComplete}>{dayjs(todo.timeStamp).format('MMM D')}</DateParagraph> */}
-      <DateParagraph todoComplete={todo.isComplete}>Due: {todoDueDate}</DateParagraph>
+     
+      {todo.dueDate ? <DateParagraph todoComplete={todo.isComplete}>Due: {todoDueDate}</DateParagraph> : '' }
       {todo.isEdit ? <ExitButton todo={todo} /> : <EditButton todo={todo} />}
       {todo.isEdit ? <SaveButton onSaveEditedContent={onSaveEditedContent} /> : <DeleteButton todo={todo} />}
     </TodoContainer>

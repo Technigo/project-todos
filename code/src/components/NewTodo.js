@@ -90,21 +90,25 @@ const NewTodo = () => {
   const [dueDate, setDueDate] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
 
+  const enablePortal = window.screen.width <= 767;
+
+  const onDateChange = (date) => {
+    setDueDate(date.toJSON());
+  };
+
   const CustomInput = forwardRef(
     ({ onClick }, ref) => (
       <DateButton 
         onClick={onClick} 
         ref={ref}
       >
-        Due date
+        Due Date
+        {/* {dueDate && (JSON.stringify(dueDate) === '' ? 'Due date' : {dueDate})} */}
+        {/* {dueDate} */}
       </DateButton>
     ),
   );
   
-  const onDateChange = (date) => {
-    setDueDate(date.toJSON());
-  };
-
   const validateFormInput = () => {
     let isFormValid = true;
 
@@ -137,6 +141,7 @@ const NewTodo = () => {
 
     dispatch(todos.actions.addTodo(newTodo));
     setTodo('');
+    setDueDate('');
   };
 
   return (
@@ -160,7 +165,7 @@ const NewTodo = () => {
             <DatePicker
               onChange={(date) => onDateChange(date)} 
               customInput={<CustomInput />}
-              withPortal
+              withPortal={enablePortal}
             >
             </DatePicker>
           </Container>

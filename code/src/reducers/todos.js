@@ -63,21 +63,18 @@ const todos = createSlice({
       store.tasks = editedTask;
     }, 
     editTodoContent: (store, action) => {
-      console.log(action.payload)
+      const editedTodoContent = store.tasks.map(todo => {
+        if (todo.id === action.payload.id) {
+          return {
+            ...todo,
+            ...action.payload
+          }
+        } else {
+          return todo;
+        }
+      });
 
-      // const editedTodoContent = store.tasks.map(todo => {
-      //   if (todo.id === action.payload) {
-      //     return {
-      //       ...todo,
-      //       isEdit: !todo.isEdit,
-      //       content: action.payload
-      //     }
-      //   } else {
-      //     return todo;
-      //   }
-      // });
-
-      // store.tasks = editedTodoContent;
+      store.tasks = editedTodoContent;
     }
   }
 });

@@ -9,7 +9,7 @@ const Button = styled.button`
   background: transparent;
   color: #ea9a96;
   border: none;
-  margin-left: 15px;
+  margin-left: ${props => props.margin ? 'auto' : '15px'};
   font-size: 25px;
   padding: 0;
 
@@ -27,7 +27,7 @@ const EditButton = ({ todo }) => {
   const dispatch = useDispatch();
 
   return (
-    <Button onClick={() => dispatch(todos.actions.toggleEdit(todo.id))}>
+    <Button onClick={() => dispatch(todos.actions.toggleEdit(todo.id))} margin={!todo.dueDate}>
       <AiFillEdit />
     </Button>
   );
