@@ -39,7 +39,7 @@ const MainSection = styled.section`
             height: 300px;
         }
         @media (min-width: 768px) {
-            height: 400px;
+            height: 300px;
             width: 480px;
         }
 `;
@@ -48,7 +48,5 @@ const TodosContainer = styled.article`
     display: flex;
     width: 100%;
     background-color: #fff;
-    border-bottom: 1px solid #474747;
-    padding: 5px;
 `;
 

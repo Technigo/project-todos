@@ -44,7 +44,7 @@ const HeaderContainer = styled.div`
     flex-direction: column;
     align-items: center;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 0;
     justify-content: center;
     border-bottom: #D8D8D8 2px solid; 
     width: 300px;
