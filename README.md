@@ -7,4 +7,4 @@ In this week's project I flexed my redux muscles and built an application which 
  - How to interact with the store using selectors or by dispatching actions
 
 ## View it live
- ✅ Add you to-do's here: https://poggis-todo.netlify.app/
+ ✅ Add you to-do's here: https://pogggis-todo.netlify.app/
