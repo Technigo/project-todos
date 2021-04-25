@@ -63,5 +63,5 @@ const todos = createSlice({
         }
     }
 })
-//Export slice
+
 export default todos
