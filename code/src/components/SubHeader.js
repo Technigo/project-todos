@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { MdDelete } from "react-icons/md";
 import { RiCheckboxMultipleFill } from "react-icons/ri";
@@ -7,7 +7,7 @@ import todos from "../reducers/todos";
 import {
   Paragraph,
   SendButton,
-  OptionsContainer,
+  OptionsContainer
 } from "../styled/StyledComponent";
 
 const SubHeader = ({ setRemoveItems, removeItems }) => {
@@ -25,15 +25,13 @@ const SubHeader = ({ setRemoveItems, removeItems }) => {
       </Paragraph>
       <SendButton
         style={{ textAlign: "end" }}
-        onClick={() => setRemoveItems(!removeItems)}
-      >
+        onClick={() => setRemoveItems(!removeItems)}>
         <MdDelete size={30} color="#b50000" />
       </SendButton>
 
       <SendButton
         style={{ textAlign: "end" }}
-        onClick={() => dispatch(todos.actions.selectAll())}
-      >
+        onClick={() => dispatch(todos.actions.selectAll())}>
         <RiCheckboxMultipleFill size={30} color="#0f4f8c" />
       </SendButton>
     </OptionsContainer>

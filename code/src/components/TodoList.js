@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import todos from "../reducers/todos";
-import EmptyList from "../assets/emptyList.png";
-import SubHeader from "../components/SubHeader";
 import { CgClose } from "react-icons/cg";
+
+import todos from "../reducers/todos";
+
+import EmptyList from "../assets/emptyList.png";
+import SubHeader from "./SubHeader";
 
 import {
   MainWrapper,
@@ -14,7 +16,7 @@ import {
   SendButton,
   ListWapper,
   ParagraphWrapper,
-  EmptyListImage,
+  EmptyListImage
 } from "../styled/StyledComponent";
 
 const TodoList = () => {
@@ -26,7 +28,7 @@ const TodoList = () => {
   ${new Date().toLocaleString("default", {
     weekday: "long",
     day: "2-digit",
-    month: "long",
+    month: "long"
   })}`;
 
   return (
@@ -42,29 +44,24 @@ const TodoList = () => {
               <ParagraphWrapper>
                 <Paragraph>{todo.taskDescription}</Paragraph>
                 <Paragraph
-                  style={{ fontSize: 10, marginTop: 0, marginBottom: 5 }}
-                >
+                  style={{ fontSize: 10, marginTop: 0, marginBottom: 5 }}>
                   {new Date(todo.timestamp).toLocaleString("default", {
                     day: "2-digit",
-                    month: "long",
+                    month: "long"
                   })}
                 </Paragraph>
               </ParagraphWrapper>
 
               {removeItems ? (
                 <SendButton
-                  onClick={() => dispatch(todos.actions.removeTask(index))}
-                >
+                  onClick={() => dispatch(todos.actions.removeTask(index))}>
                   <CgClose size={30} color="#cf3a3a" />
                 </SendButton>
               ) : (
                 <CompleteTask
                   type="checkbox"
                   checked={todo.isComplete}
-                  onChange={() =>
-                    dispatch(todos.actions.toggleComplete(todo.id))
-                  }
-                ></CompleteTask>
+                  onChange={() => dispatch(todos.actions.toggleComplete(todo.id))} />
               )}
             </ItemList>
           ))

@@ -27,8 +27,7 @@ const AddTask = () => {
         name="name"
         placeholder=" Add Task"
         onChange={handleOnChange}
-        value={text}
-      />
+        value={text} />
       <SendButton onClick={sendNewTask}>
         <IoIosAdd size={30} color="#8b8b8b" />
       </SendButton>
