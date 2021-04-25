@@ -12,8 +12,10 @@ display; flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+@media (min-width: 768px){
+  width: 680px;
+}
 `
-
 const ToDoList = () => {
   const items = useSelector((store) => store.tasks.items);
   const dispatch = useDispatch();

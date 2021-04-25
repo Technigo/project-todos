@@ -15,9 +15,10 @@ padding: 5px 8px 5px 10px;
 &:hover { background-color: #6c9fa3;
 cursor: pointer};
 &:active { background-color: #ffb037;}
+@media (min-width: 768px){
+  font-size: 26px;
+}
 `
-
-
 const ConmpleteAllTasksButton= () => {
   const dispatch = useDispatch();
   
