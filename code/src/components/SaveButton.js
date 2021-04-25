@@ -20,7 +20,7 @@ const Button = styled.button`
   }
 `;
 
-  const SaveButton = ({ onSaveEditedContent }) => {
+const SaveButton = ({ onSaveEditedContent }) => {
   return (
     <Button onClick={onSaveEditedContent}>
       <AiFillSave />

@@ -95,7 +95,7 @@ const Todo = ({ todo }) => {
       content: editContent,
       isEdit: !todo.isEdit
     }));
-  }
+  };
 
   return (
     <TodoContainer>

@@ -35,7 +35,6 @@ const Span = styled.span`
   @media (min-width: 1200px) {
     font-size: 20px;
   }
-
 `
 
 const CompleteAllTodosButton = () => {

@@ -49,6 +49,6 @@ const EmptyStateImage = () =>  {
       ></path>
     </svg>
   );
-}
+};
 
 export default EmptyStateImage;

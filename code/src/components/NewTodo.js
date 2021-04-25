@@ -126,7 +126,7 @@ const NewTodo = () => {
 
     if (!validateFormInput()) {
       return;
-    }
+    };
 
     const newTodo = {
       id: uniqid(),
@@ -172,8 +172,6 @@ const NewTodo = () => {
           />
         </>
       )}
-
-
     </Form>
   );
 };
