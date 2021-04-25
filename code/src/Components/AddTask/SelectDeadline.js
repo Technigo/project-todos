@@ -3,7 +3,9 @@ import styled from "styled-components";
 
 import { Checkbox } from "../../Components/Selects/Checkbox";
 
-let date, time, dateTime
+let dateTime;
+let date = new Date(Date.now()).toISOString().split("T")[0];
+let time = "08:00";
 
 export const SelectDeadline = ({ setDue, setHasDeadline }) => {
   const initialTime = new Date(Date.now()).toISOString().split("T")[0];
@@ -11,34 +13,32 @@ export const SelectDeadline = ({ setDue, setHasDeadline }) => {
   const [checked, setChecked] = useState(false);
 
   const handleChange = (e, type) => {
-    date = initialTime;
-    time = "08:00";
     if (type === "date") {
       date = e.target.value;
     } else {
       time = e.target.value;
     }
-    setTime(date, time)
+    setTime(date, time);
     setHasDeadline(true);
-    
     setChecked(false);
   };
 
   const handleCheck = () => {
     setChecked(!checked);
-   date =""
-   time =""
-   setTime(date, time)
+    date = "";
+    time = "";
+    setTime(date, time);
     setHasDeadline(false);
     setDue("");
   };
 
+  //modifies the format and makes it work on all ios. 
   const setTime = (date, time) => {
     dateTime = `${date} ${time}`;
-    let d = new Date(dateTime.replace(/-/g, '/')).toLocaleString()
-    let printDateTime = d.slice(0, d.lastIndexOf(":"))
+    let d = new Date(dateTime.replace(/-/g, "/")).toLocaleString();
+    let printDateTime = d.slice(0, d.lastIndexOf(":"));
     setDue(printDateTime);
-  }
+  };
 
   return (
     <Container>

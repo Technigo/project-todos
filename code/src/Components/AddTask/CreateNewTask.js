@@ -16,7 +16,7 @@ export const CreateNewTask = () => {
 
   //states
   const [newTask, setNewTask] = useState("");
-  const [due, setDue] = useState("");
+  const [due, setDue] = useState("3030-30-30");
   const [category, setCategory] = useState("");
   const [checked, setChecked] = useState("");
   const [hasDeadline, setHasDeadline] = useState(false);
@@ -30,7 +30,7 @@ export const CreateNewTask = () => {
         todos.actions.createNewTodo({
           task: newTask,
           time: currentTime,
-          deadline: due,
+          deadline: hasDeadline?due:"3030-30-30", //setting a very late date on the ones with no dadline to sort properly.
           category: category,
           isTimed: hasDeadline,
           overdue: new Date(due)-new Date(Date.now()) <= 0 ? true : false
@@ -40,8 +40,7 @@ export const CreateNewTask = () => {
       clearAll();
        dispatch(todos.actions.categorize({ categorizeBy: cat[0].categorizeBy}));
        dispatch(todos.actions.filterTodos({ filterBy: filters[0].filterBy, value: filters[0].value }))
-       dispatch(todos.actions.sortTodos({ sortBy: sort[0].sortBy, order: sort[0].order }))
-       
+       dispatch(todos.actions.sortTodos({ sortBy: sort[0].sortBy, order: sort[0].order }))  
     }
   };
 

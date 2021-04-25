@@ -13,7 +13,7 @@ export const TaskFooter = ({ deadline, id, isComplete, completedAt }) => {
     }
     return (
       <DeadlineText>
-        {deadline === "" ? "No deadline" : `Deadline: ${deadline}`}
+        {deadline === "3030-30-30" ? "No deadline" : `Deadline: ${deadline}`}
       </DeadlineText>
     );
   };

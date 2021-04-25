@@ -2,13 +2,13 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   items: [],
-  filters: [{filterBy:"Reset"}],
-  sort: [{sortBy:""}],
-  category: [{categorizeBy: "all"}],
+  filters: [{ filterBy: "Reset" }],
+  sort: [{ sortBy: "" }],
+  category: [{ categorizeBy: "all" }],
   updatedTodos: [],
   updateFilters: [],
   updateSort: [],
-  updateCategory: []
+  updateCategory: [],
 };
 
 export const todos = createSlice({
@@ -16,7 +16,14 @@ export const todos = createSlice({
   initialState,
   reducers: {
     createNewTodo: (store, action) => {
-      const { task, time, deadline, category, overdue, isTimed } = action.payload;
+      const {
+        task,
+        time,
+        deadline,
+        category,
+        overdue,
+        isTimed,
+      } = action.payload;
       store.items.push({
         id: store.items.length + 1, //sets id
         description: task, //task text
@@ -38,34 +45,53 @@ export const todos = createSlice({
           item.isComplete = !item.isComplete;
           item.completedAt = time;
 
+          /* if the filter is on reset the tasks should show*/
+          store.filters[0].filterBy === "Reset"
+            ? (item.hidden = false)
+            : (item.hidden = true);
+
           /* if the filter is on "done" the new task will be hidden*/
-          store.filters[0].filterBy === "isComplete" && store.filters[0].value === item.isComplete
-          ? item.hidden= false
-          : item.hidden=true
+          store.filters[0].filterBy === "isComplete" &&
+          store.filters[0].value === item.isComplete
+            ? (item.hidden = false)
+            : (item.hidden = true);
+
           return item;
-          
         } else {
           return item;
         }
       });
+
       store.items = store.updatedTodos;
     },
     categorize: (store, action) => {
       const { categorizeBy } = action.payload;
       store.updatedTodos = store.items.map((task) => {
         /*checking both category and filter to be sure both applies even on category update*/
-        if (categorizeBy === "all" && task[store.filters[0].filterBy] === store.filters[0].value) {
+
+        //if category is all and the filter matches, or the filter is Reset, show tasks
+        if (
+          categorizeBy === "all" &&
+          (task[store.filters[0].filterBy] === store.filters[0].value ||
+            store.filters[0].filterBy === "Reset")
+        ) {
           return { ...task, hidden: false };
         }
-        task.category[0] === categorizeBy && task[store.filters[0].filterBy] === store.filters[0].value
+
+        //if the category & the filter (or filter is reset) matches the task, show them, otherwise hide
+        task.category[0] === categorizeBy &&
+        (task[store.filters[0].filterBy] === store.filters[0].value ||
+          store.filters[0].filterBy === "Reset")
           ? (task.hidden = false)
           : (task.hidden = true);
         return task;
       });
 
+      //update the category 
       store.updateCategory = [];
       store.updateCategory.push({ categorizeBy: categorizeBy });
-      
+
+      //update individial tasks 
       store.category = store.updateCategory;
       store.items = store.updatedTodos;
     },
@@ -93,10 +119,12 @@ export const todos = createSlice({
         }
       }
 
+      //update sorting value
       store.updateSort = [];
       store.updateSort.push({ sortBy: sortBy, order: order });
       store.sort = store.updateSort;
 
+      //update items in a sorted order
       store.items = store.updatedTodos;
     },
     filterTodos: (store, action) => {
@@ -114,15 +142,22 @@ export const todos = createSlice({
         return task;
       });
 
+      //update filter value
       store.updateFilters = [];
       store.updateFilters.push({ filterBy: filterBy, value: value });
 
+      //update items show/hide depending on filter
       store.filters = store.updateFilters;
       store.items = store.updatedTodos;
     },
     resetFilter: (store) => {
       store.updatedTodos = store.items.map((task) => {
-        return { ...task, hidden: false };
+        if (
+          store.category[0].categorizeBy === task.category[0] ||
+          store.category[0].categorizeBy === "all"
+        )
+          return { ...task, hidden: false };
+        else return { ...task };
       });
 
       store.items = store.updatedTodos;

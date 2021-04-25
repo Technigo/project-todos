@@ -50,9 +50,8 @@ export const CategoryFilter = () => {
   return (
     <Categories>
       {categoryArr.map((category) => (
-        <>
+        <Wrapper key={category.name}>
           <Button
-            key={category.name}
             active={category.name === cat[0].categorizeBy}
             bgColor={category.color}
             onClick={() => handleClick(category.name)}
@@ -73,7 +72,7 @@ export const CategoryFilter = () => {
               src={category.symbol}
             />
           </Button>
-        </>
+        </Wrapper>
       ))}
     </Categories>
   );
@@ -82,9 +81,13 @@ export const CategoryFilter = () => {
 const Categories = styled.div`
   width: 100%;
   display: flex;
-  justify-content: space-evenly;
   height: 50px;
 `;
+
+const Wrapper = styled.div `
+width: 100%;
+display: flex;
+justify-content: space-evenly;`
 
 const Button = styled.button`
   flex: 1 1 auto;
