@@ -20,11 +20,12 @@ const Button = styled.button `
   outline: none;
   color: gray;
   margin-bottom: 15px;
+  padding-right: 10px; 
 `
 
 const TodoInput = () => {
   const [newTask, setNewTask] = useState('')
-
+  
   const dispatch = useDispatch()
 
   const onFormSubmit = (e) => {
@@ -37,6 +38,7 @@ const TodoInput = () => {
       }
       dispatch(todos.actions.addTodo(newTodo))
       setNewTask('')
+
   }
 
   return (
@@ -44,6 +46,7 @@ const TodoInput = () => {
       onSubmit={onFormSubmit}
     >
       <input
+        required
         placeholder="Add new task.."
         type="text"
         value={newTask}

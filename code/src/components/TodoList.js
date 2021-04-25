@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-
+import FlipMove from 'react-flip-move'
 import styled from 'styled-components'
 
 import todos from '../reducers/todos'
@@ -14,21 +14,36 @@ const ListView = styled.div `
   padding: 10px 0; 
   font-size: 15px; 
 `
+const DescriptionTask = styled.p `
+  text-align: center; 
+  align-items: center; 
+`
+const DateStamp = styled.p `
+  font-size: 10px; 
+  color: pink; 
+`
     
 const TodoList = () => {
   const tasks = useSelector((store) => store.todos.tasks) //hook to get things out of the store , specify from where
   const dispatch = useDispatch()  
-
+  const date = new Date().toLocaleDateString()
+  
   return (
     <>
      {tasks.map(todo => (
+     <FlipMove 
+       duration={250} 
+       easing="ease-out">
         <ListView key={todo.id}>
           <input
             type='checkbox'
             checked={todo.isComplete}
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
           /> 
-          <p>{todo.description}</p>
+          <DescriptionTask>
+            {todo.description}
+            <DateStamp>created {date}</DateStamp>
+          </DescriptionTask>
           <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
             <span
               role="img"
@@ -38,6 +53,7 @@ const TodoList = () => {
             </span> 
           </button>
         </ListView>
+      </FlipMove>
      ))}
     </>
   )

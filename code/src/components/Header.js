@@ -17,6 +17,12 @@ const HeaderSection = styled.section `
 const Title = styled.h1`
   font-size: 25px; 
 `
+const DateStamp = styled.p `
+  font-size: 15px; 
+  color: gray; 
+  float: left; 
+  padding-left: 10px; 
+` 
 
 const Header = () => {
   const tasks = useSelector((store) => store.todos.tasks)
@@ -25,6 +31,7 @@ const Header = () => {
   return (
     <HeaderSection>
       <Title>What ToDo?</Title>
+      <DateStamp>{new Date().toLocaleDateString()}</DateStamp>
       <TotalTodos 
         tasks={tasks}
         completedTodos={completedTodos}

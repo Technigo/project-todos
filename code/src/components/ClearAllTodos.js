@@ -11,16 +11,28 @@ const Button = styled.button `
   color: black; 
   padding: 8px;
   margin: 10px; 
+  width: 100px;
+  text-align: center;  
+  justify-content: center; 
 `
+const FooterApp = styled.div `
+  display: flex; 
+`
+
 const ClearAllTodos = () => {
   const dispatch = useDispatch()
 
   return (
-    <div>
-      <Button onClick={() => dispatch(todos.actions.clearAllTodos())}>
-       All completed 
-      </Button>
-    </div>
+    <>
+      <FooterApp>
+        <Button onClick={() => dispatch(todos.actions.clearAllTodos())}>
+        All completed 
+        </Button>
+        <Button  /* onClick={() => dispatch(todos.actions.removeAllTodos())}*/> 
+          Delete all
+        </Button>
+      </FooterApp>
+    </>
   )
 }
 

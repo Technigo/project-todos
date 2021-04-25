@@ -34,7 +34,6 @@ input[type="checkbox"] {
   height: 0;
 }
 input[type="checkbox"]:after {
-  content: '';
   display: flex;
   align-items: center;
   justify-content: center; 
@@ -42,7 +41,7 @@ input[type="checkbox"]:after {
   height: 20px; 
   font-size: 15px;
   color: gray;
-  content: '\2713';
+  content: '\2713'; /* why is this not working in firefox?  */
   padding-left: 15px;
 }
 input[type="checkbox"]:checked:after {
@@ -68,9 +67,8 @@ button {
   outline: none;
   color: gray;
 }
-/* how to stick footer to bottom? 
-how to remove button auto design 
-background pic around the container
-button modification
-flex, where divs
-chrome only works - if not looses the check box*/
+/* how to stick footer to bottom of APP? 
+background pic around the container, howTO? 
+chrome only works - if not looses the check box
+align text in different font sizes
+avoid buttons to be covered when looong texts written */

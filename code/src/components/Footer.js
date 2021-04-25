@@ -1,10 +1,10 @@
+
 import React from 'react'
 
 import styled from 'styled-components'
 
 const FooterSection = styled.div `
 margin-top: 20px;
-padding: 10px;
 background-color: rgb(235, 195, 64);
 position: fixed;
 bottom: 0;
