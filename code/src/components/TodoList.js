@@ -16,23 +16,28 @@ const TodoList = () => {
     
 
     return (
-        <div>
-            <h1>To do</h1>
-            <p>Total todo: {items.length}</p>
-            <p>Completed tasks: {completedItems.length}/{items.length}</p>
-            <input
-                placeholder="Add to do here "
-                id="todoLabel"
-                onChange={(e) => dispatch(todos.actions.setAddLabel(e.target.value))}
-                value={addLabel}
-            />
-            <input 
-                type="button"
-                value="add to do"
-                onClick={() => {
-                    dispatch(todos.actions.addToDo()) 
-                }}
-            />
+        <div className="todo-container">
+            <div className="todo-header">
+                <h1>To do list</h1>
+                <div className="completed-tasks">
+                    <p>Completed: {completedItems.length}/{items.length}</p>
+                </div>
+            </div>
+            <div className="user-input">
+                <input
+                    placeholder="Add to do here "
+                    id="todoLabel"
+                    onChange={(e) => dispatch(todos.actions.setAddLabel(e.target.value))}
+                    value={addLabel}
+                />
+                <input 
+                    type="button"
+                    value="add to do"
+                    onClick={() => {
+                        dispatch(todos.actions.addToDo()) 
+                    }}
+                />
+            </div>
 
             {items.map(todo =>  (
                 <div key={todo.id}>
