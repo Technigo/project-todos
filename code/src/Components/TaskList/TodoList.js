@@ -19,7 +19,6 @@ export const TodoList = () => {
     if (tasks.length === hidden.length || tasks.length === 0) {
       return true;
     }
-    console.log(hidden.length);
   };
 
   return (

@@ -46,13 +46,8 @@ export const todos = createSlice({
           item.completedAt = time;
 
           /* if the filter is on reset the tasks should show*/
-          store.filters[0].filterBy === "Reset"
-            ? (item.hidden = false)
-            : (item.hidden = true);
-
-          /* if the filter is on "done" the new task will be hidden*/
-          store.filters[0].filterBy === "isComplete" &&
-          store.filters[0].value === item.isComplete
+          store.filters[0].filterBy === "Reset" ||
+          item[store.filters[0].filterBy] === store.filters[0].value
             ? (item.hidden = false)
             : (item.hidden = true);
 
@@ -76,22 +71,22 @@ export const todos = createSlice({
             store.filters[0].filterBy === "Reset")
         ) {
           return { ...task, hidden: false };
+        } else if (
+          //if the category & the filter (or filter is reset) matches the task, show them, otherwise hide
+          task.category[0] === categorizeBy &&
+          (task[store.filters[0].filterBy] === store.filters[0].value ||
+            store.filters[0].filterBy === "Reset")
+        ) {
+          return { ...task, hidden: false };
         }
-
-        //if the category & the filter (or filter is reset) matches the task, show them, otherwise hide
-        task.category[0] === categorizeBy &&
-        (task[store.filters[0].filterBy] === store.filters[0].value ||
-          store.filters[0].filterBy === "Reset")
-          ? (task.hidden = false)
-          : (task.hidden = true);
-        return task;
+        return { ...task, hidden: true };
       });
 
-      //update the category 
+      //update the category
       store.updateCategory = [];
       store.updateCategory.push({ categorizeBy: categorizeBy });
 
-      //update individial tasks 
+      //update individial tasks
       store.category = store.updateCategory;
       store.items = store.updatedTodos;
     },
@@ -136,6 +131,8 @@ export const todos = createSlice({
             store.category[0].categorizeBy === "all") //or if category is all then apply
         ) {
           task.hidden = false;
+        } else if (filterBy === "Reset") {
+          task.hidden = false;
         } else {
           task.hidden = true;
         }
@@ -160,6 +157,11 @@ export const todos = createSlice({
         else return { ...task };
       });
 
+      //update filter value
+      store.updateFilters = [];
+      store.updateFilters.push({ filterBy: "Reset", value: "" });
+
+      store.filters = store.updateFilters;
       store.items = store.updatedTodos;
     },
     removeTodo: (store, action) => {

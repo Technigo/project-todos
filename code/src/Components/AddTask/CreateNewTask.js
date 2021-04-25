@@ -9,9 +9,9 @@ import { SelectDeadline } from "./SelectDeadline";
 export const CreateNewTask = () => {
   //variables
   const dispatch = useDispatch();
-  const filters = useSelector(store => store.todos.filters)
-  const sort = useSelector(store => store.todos.sort)
-  const cat = useSelector(store => store.todos.category)
+  const filters = useSelector((store) => store.todos.filters);
+  const sort = useSelector((store) => store.todos.sort);
+  const cat = useSelector((store) => store.todos.category);
   const currentTime = new Date(Date.now()).toLocaleString();
 
   //states
@@ -30,17 +30,27 @@ export const CreateNewTask = () => {
         todos.actions.createNewTodo({
           task: newTask,
           time: currentTime,
-          deadline: hasDeadline?due:"3030-30-30", //setting a very late date on the ones with no dadline to sort properly.
+          deadline: hasDeadline ? due : "3030-30-30", //setting a very late date on the ones with no dadline to sort properly.
           category: category,
           isTimed: hasDeadline,
-          overdue: new Date(due)-new Date(Date.now()) <= 0 ? true : false
+          overdue: new Date(due) - new Date(Date.now()) <= 0 ? true : false,
         })
       );
-
+   
+      dispatch(todos.actions.categorize({ categorizeBy: cat[0].categorizeBy }));
+      dispatch(
+        todos.actions.filterTodos({
+          filterBy: filters[0].filterBy,
+          value: filters[0].value,
+        })
+      );
+      dispatch(
+        todos.actions.sortTodos({
+          sortBy: sort[0].sortBy,
+          order: sort[0].order,
+        })
+      );
       clearAll();
-       dispatch(todos.actions.categorize({ categorizeBy: cat[0].categorizeBy}));
-       dispatch(todos.actions.filterTodos({ filterBy: filters[0].filterBy, value: filters[0].value }))
-       dispatch(todos.actions.sortTodos({ sortBy: sort[0].sortBy, order: sort[0].order }))  
     }
   };
 
