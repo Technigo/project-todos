@@ -3,11 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const todos = createSlice({
   name: "todos", //same name as the varible
   initialState: {
-    tasks: [
-      { id: 1, description: "First task", isComplete: false },
-      { id: 2, description: "Second task", isComplete: false },
-      { id: 3, description: "Third task", isComplete: false }
-    ],
+    tasks: [],
   },
   reducers: {
     toggleComplete: (store, action) => {

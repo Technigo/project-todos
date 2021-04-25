@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import uniqid from "uniqid";
 
+import "./TodoForm.css";
 import todos from "../../reducers/todos";
 
 const TodoFrom = () => {
@@ -23,13 +24,17 @@ const TodoFrom = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form onSubmit={onFormSubmit} className="form">
       <input
+        className="input-filed"
+        placeholder="add task"
         type="text"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />
-      <button type="submit"> Add task </button>
+      <button type="submit" className="submitt-button">
+        +
+      </button>
     </form>
   );
 };

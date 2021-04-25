@@ -1,0 +1,43 @@
+.form {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 85%;
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.input-filed {
+  height: 50px;
+  border: none;
+  font-size: 21px;
+  background-color: rgb(255, 125, 102);
+  padding-left: 10px;
+  width: inherit;
+}
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: #fff;
+}
+
+:-ms-input-placeholder {
+  /* Internet Explorer 10-11 */
+  color: #fff;
+}
+
+::-ms-input-placeholder {
+  /* Microsoft Edge */
+  color: #fff;
+}
+
+.submitt-button {
+  border: none;
+  width: 50px;
+  height: 50px;
+  background: tomato;
+  color: white;
+  font-weight: bold;
+  font-size: 21px;
+}

@@ -1,15 +1,16 @@
-import React from 'react'
-import { useSelector } from 'react-redux' 
+import React from "react";
+import { useSelector } from "react-redux";
+
+import "./TodoCounterComplete.css";
 
 const TodoCountComplete = () => {
-    const tasks = useSelector((store) => store.todos.tasks);
-    const completedTasks = tasks.filter(singelTask => singelTask.isComplete)
+  const tasks = useSelector((store) => store.todos.tasks);
+  const completedTasks = tasks.filter((singelTask) => singelTask.isComplete);
 
-    return (
-        <>
-        <div>Tasks:{tasks.length}</div>
-        <div>Completed tasks:{completedTasks.length}</div>
-        </>
-    )
-}
-export default TodoCountComplete
+  return (
+    <div>
+      <p className="complete-text">complete{completedTasks.length}/{tasks.length}</p>
+    </div>
+  );
+};
+export default TodoCountComplete;
