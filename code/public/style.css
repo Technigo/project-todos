@@ -1,0 +1,58 @@
+:root {
+  background-color: #d2d6d9;
+}
+
+/*___________ New Task Input ___________*/
+
+.new-task-wrapper {
+  display: flex;
+  align-items: center;
+  margin: 20px 0 0 0;
+}
+
+.new-task-text {
+  margin: 8px;
+  flex-basis: 80%;
+}
+
+.new-task-submit {
+  display: flex;
+  justify-content: center;
+  margin: 0px 8px 0px 15px;
+}
+
+/*___________ Tasks ___________*/
+
+.task-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  margin: 10px 0px;
+}
+
+.task {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin: 6px 0px;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.checkbox-spacer {
+  margin-right: 10px;
+}
+
+/*___________ Footer ___________*/
+
+.stats {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  text-align: center;
+}
+
+.completed {
+  color: teal;
+  padding-top: 15px;
+  line-height: 200%;
+}
