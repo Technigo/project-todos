@@ -11,4 +11,4 @@ If I had more time I would like to reach Black Level and add unmark all selected
 
 ## View it live
 
-...
+https://todos-board.netlify.app/
