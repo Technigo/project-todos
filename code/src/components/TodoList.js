@@ -1,5 +1,5 @@
 import React from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import COLORS from './Colors'
 import { ReactComponent as Delete } from '../resources/delete.svg'
@@ -99,10 +99,6 @@ const IconButton = styled.a`
   }
 
   `
-
-const DeleteIcon = styled.img`
-
-`
 
 const Task = styled.label`
   display: flex;
