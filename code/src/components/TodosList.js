@@ -8,8 +8,6 @@ import todos from '../reducers/todos';
 const TodosList = () => {
     const tasks = useSelector((store) => store.todos.tasks); 
 
-    const wholeStore = useSelector((store) => store);
-
     const dispatch = useDispatch();
 
 
