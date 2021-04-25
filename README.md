@@ -1,13 +1,15 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week's assigment was to build a todo list using Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started out by thinking about the design. I decided to work with a vintage, floral theme and spent some time picking out a background image and deciding on a color scheme. I continued by creating the components, adding a text input, a submit button, checkboxes and a button to remove all the tasks. I also added trash cans icons for removing individual tasks.
+
+If I had more time I would have added some extra features.
+
+Technologies: CSS3, JSX, React, Redux.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+
