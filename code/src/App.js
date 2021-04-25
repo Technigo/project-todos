@@ -13,8 +13,11 @@ const MainContainer = styled.div`
   flex-direction: column;
   height: 100vh;
   justify-content: space-between;
-
     @media (min-width: 768px) {
+      height: 80vh;
+      width: 50vw;
+    } 
+    @media (min-width: 1200px) {
       height: 80vh;
       width: 50vw;
     } 
@@ -25,7 +28,6 @@ const reducer = combineReducers({
 })
 
 const store = configureStore({ reducer })
-
 
 export const App = () => {
   return (

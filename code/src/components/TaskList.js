@@ -7,7 +7,13 @@ import EmptyStateAnimation from './EmptyStateAnimation'
 
 const TaskContainer = styled.div`
     overflow: scroll;
-    width: 100%
+    width: 240px;
+    @media (min-width: 768px) {
+        width: 384px;
+      } 
+      @media (min-width: 1200px) {
+        width: 600px;
+      } 
 `
 
 const SingleTaskContainer = styled.div`
@@ -18,6 +24,7 @@ const SingleTaskContainer = styled.div`
     margin-top: 4px;
     margin-bottom: 8px;
     border-bottom: 1px solid black;
+    word-break: break-word
 `
 
 const Checkbox = styled.input`
@@ -28,7 +35,6 @@ const Checkbox = styled.input`
 const Normaltext = styled.p`
     font-size: 12px;
     margin: 0;
-    width: 80%
 `
 
 const DeleteButton = styled.button`
@@ -55,28 +61,26 @@ const TaskList = () => {
 
     return (
         <>
-        {items.length > 0 ? 
-            <TaskContainer>
-                {items.map((task, index) => (
-                    //separate component::
-                    <SingleTaskContainer key={task.id}>
-                        <Checkbox
-                            type='checkbox'
-                            checked={task.isComplete}
-                            onChange={() => dispatch(tasks.actions.toggleComplete(task.id))}
-                        />
-                        <Normaltext>{task.description}</Normaltext>
-                        <DeleteButton 
-                            onClick={() => dispatch(tasks.actions.removeTask(task.id))}>
-                            <ButtonText>X</ButtonText>
-                        </DeleteButton>
-                    </SingleTaskContainer>
-                    //
-                ))}
-            </TaskContainer>
-            :
-            <EmptyStateAnimation />
-                }
+            {items.length > 0 ? 
+                <TaskContainer>
+                    {items.map((task, index) => (
+                        <SingleTaskContainer key={task.id}>
+                            <Checkbox
+                                type='checkbox'
+                                checked={task.isComplete}
+                                onChange={() => dispatch(tasks.actions.toggleComplete(task.id))}
+                            />
+                            <Normaltext>{task.description}</Normaltext>
+                            <DeleteButton 
+                                onClick={() => dispatch(tasks.actions.removeTask(task.id))}>
+                                <ButtonText>X</ButtonText>
+                            </DeleteButton>
+                        </SingleTaskContainer>
+                    ))}
+                </TaskContainer>
+                :
+                <EmptyStateAnimation />
+            }
         </>
     )
 }

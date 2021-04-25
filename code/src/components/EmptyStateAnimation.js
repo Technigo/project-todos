@@ -1,28 +1,21 @@
-import React from 'react'
-import Lottie from 'react-lottie'
-import styled from'styled-components'
-
-import * as animation from '../assets/lottieAnimation'
-
-const Container = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-`
-
-const defaultOptions = {
-  loop: true,
-  autoplay: true, 
-  animationData: animation.default,
-}
+import React, { useEffect, useRef } from 'react'
+import lottie from 'lottie-web'
 
 const EmptyStateAnimation = () => {
+  const container = useRef(null)
+
+  useEffect (() => {
+    lottie.loadAnimation({
+      container: container.current,
+      renderer: 'svg',
+      loop: true,
+      autoplay: true,
+      animationData: require('../assets/lottieAnimation.json')
+    })
+  })
+  
   return (
-    <Container>
-     <Lottie options={defaultOptions}/>
-    </Container>
+     <div className='container' ref={container}/>
   )
 }
 

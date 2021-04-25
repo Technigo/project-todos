@@ -25,10 +25,14 @@ const Header = () => {
         <HeaderContainer>
             <div>
                 <Titel>Todo</Titel>
-                <Normaltext>{moment(new Date().toJSON()).format('MMMM Do YYYY')}</Normaltext>
+                <Normaltext>
+                    {moment(new Date().toJSON()).format('MMMM Do YYYY')}
+                </Normaltext>
             </div>
             <div>
-                <Normaltext>tasks done: {completedTasks.length}/{items.length}</Normaltext>
+                <Normaltext>
+                    tasks done: {completedTasks.length}/{items.length}
+                </Normaltext>
             </div>
         </HeaderContainer>
     )
