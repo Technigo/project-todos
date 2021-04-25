@@ -8,4 +8,4 @@ In this project I used `React` and `typescript` and for state management I used 
 
 ## View it live
 
-You can see the project live on this link:
+You can see the project live on this link: https://silly-leavitt-c9a4e0.netlify.app
