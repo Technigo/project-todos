@@ -44,6 +44,8 @@ body {
   margin-bottom: -10px;
 }
 
+
+
 .date {
   font-size: 14px;
   margin-bottom: 0px;
@@ -100,15 +102,15 @@ body {
 }
 
 .input-container { 
-  width: 80%;
+  width: 50%;
   position: relative;
 }
 
 .add-btn {
   position: absolute;
-  right: 0;
+  right: -30px;
 }
 
-.test {
+.edit {
   display: flex;
 }

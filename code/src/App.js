@@ -10,7 +10,7 @@ const reducer = combineReducers({
   todos: todos.reducer
 })
 
-const persistedState = loadState();
+const persistedState = loadState()
 const store = createStore(reducer, persistedState)
 
 store.subscribe(() => {

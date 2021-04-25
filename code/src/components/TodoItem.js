@@ -27,7 +27,7 @@ const TodoItem = ({ checked, id, text, handleEditTodos }) => {
 
   if(onEdit) {
     return (
-      <div className='test'>
+      <div className='edit'>
         <input 
           className='custom-select'
           type='text' 

@@ -29,15 +29,6 @@ const Input = () => {
         setLabel('New task')
       }
       setNewTodo('')
-      
-      /* const data = localStorage.getItem('todos')
-      ? JSON.parse(localStorage.getItem('todos'))
-      : []
-      localStorage.setItem('todos', JSON.stringify([...data, {
-        description: newTodo,
-        isComplete: false, 
-        id: uniqid(),
-      } ]))  */
   }
 
   return (

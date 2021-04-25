@@ -29,7 +29,6 @@ const todos = createSlice({
         store.items = allDone
       },
       resetAll: (store) => {
-        //store.items = []
         const unDone = store.items.map((item) => {
           return {
             ...item,

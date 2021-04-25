@@ -24,7 +24,9 @@ const StartHeader = () => {
         >
           Add task
         </Button> : 
-      <Input /> }
+      
+        <Input />
+      }
     </header>
   )
 }
