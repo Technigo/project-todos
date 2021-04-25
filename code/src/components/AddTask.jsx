@@ -67,6 +67,7 @@ const AddTask = () => {
         value={value}
         onChange={e => setValue(e.target.value)}
         aria-label="text input"
+        required
       />
       <AddButton type="submit">
         <span role="img" alt="plus sign" aria-label="plus sign icon">➕</span>
