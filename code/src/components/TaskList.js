@@ -56,7 +56,6 @@ const ButtonText = styled.p`
 
 const TaskList = () => {
     const items = useSelector((store) => store.tasks.items)
-
     const dispatch = useDispatch()
 
     return (

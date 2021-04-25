@@ -23,10 +23,7 @@ const MainContainer = styled.div`
     } 
 `
 
-const reducer = combineReducers({
-  tasks: tasks.reducer
-})
-
+const reducer = combineReducers({ tasks: tasks.reducer })
 const store = configureStore({ reducer })
 
 export const App = () => {

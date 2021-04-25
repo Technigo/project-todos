@@ -54,6 +54,7 @@ const NewTaskInput = () => {
                 value={task}
                 onChange={event => setTask(event.target.value)}
                 placeholder='type here ...'
+                required
             />
             <SubmitButton type='submit'>add task</SubmitButton>
         </InputContainer>
