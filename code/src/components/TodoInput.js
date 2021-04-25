@@ -12,8 +12,15 @@ const InputField = styled.form `
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-bottom: 10px;
 `
-
+const Button = styled.button `
+  background: none; 
+  border: none;
+  outline: none;
+  color: gray;
+  margin-bottom: 15px;
+`
 
 const TodoInput = () => {
   const [newTask, setNewTask] = useState('')
@@ -42,9 +49,9 @@ const TodoInput = () => {
         value={newTask}
         onChange={e => setNewTask(e.target.value)}
       />
-      <button type="submit">
+      <Button type="submit">
         Add 
-      </button>
+      </Button>
     </InputField>
   )
 

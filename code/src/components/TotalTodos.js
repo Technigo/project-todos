@@ -11,7 +11,8 @@ const Tasks = styled.p `
 const TotalTodos = ({tasks, completedTodos}) => {
   return (
     <div>
-      <Tasks>Completed: {completedTodos.length}/{tasks.length} </Tasks>
+      <Tasks>Completed:   
+      {completedTodos.length}/{tasks.length} </Tasks>
     </div>
   )
 }

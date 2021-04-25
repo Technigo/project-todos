@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Provider } from 'react-redux'
 import {combineReducers, configureStore} from '@reduxjs/toolkit'
-// import styled from 'styled-components'
+import styled from 'styled-components'
 // import img from './assets/img.jpeg'
 
 import todos from './reducers/todos'
@@ -19,6 +19,12 @@ import Footer from './components/Footer'
 //   background-image: url(${img});
 //  `
 
+const Content = styled.a `
+  overflow: auto; 
+  width: 100%; 
+  margin: 0; 
+`
+
 const reducer = combineReducers({
   todos: todos.reducer
 })
@@ -29,9 +35,11 @@ export const App = () => {
   return (
     <Provider store = {store}>
       <Header />
-      {/* <BackgroundImage src={ img }/> */} 
+        {/* <BackgroundImage src={ img }/> */} 
       <TodoInput />
-      <TodoList /> 
+        <Content>
+          <TodoList /> 
+       </Content>
       <ClearAllTodos />
       <Footer />
     </Provider>

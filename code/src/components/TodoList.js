@@ -12,7 +12,7 @@ const ListView = styled.div `
   flex-direction: row; 
   justify-content: space-between; 
   padding: 10px 0; 
-  font-size: 20px; 
+  font-size: 15px; 
 `
     
 const TodoList = () => {

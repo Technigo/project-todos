@@ -10,7 +10,7 @@ const Button = styled.button `
   border-radius: 8px;
   color: black; 
   padding: 8px;
-  margin-top: 10px; 
+  margin: 10px; 
 `
 const ClearAllTodos = () => {
   const dispatch = useDispatch()
