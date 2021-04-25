@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import moment from "moment"
+import React from 'react'
+import styled from 'styled-components'
+import dayjs from 'dayjs'
 
 const HeaderWrapper = styled.header`
   height: 60px;
@@ -31,7 +31,7 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <Title>Today's tasks</Title>
-      <Date>{moment().format('LLLL')}</Date>
+      <Date>{dayjs().format('dddd D MMM YYYY')}</Date>
     </HeaderWrapper>
   );
 };
