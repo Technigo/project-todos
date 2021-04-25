@@ -1,13 +1,17 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The task was to create a todo app in Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I solved the problem by learning how to:
+* structure a redux store
+* create a slice
+* create reducers and actions
+* interact with the redux store by using selectors or dispatch actions
+
+If I had more time I would have looked into displaying date when the task was created and maybe set a due date for when it's supposed to be completed.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://cocky-galileo-15b920.netlify.app/  
