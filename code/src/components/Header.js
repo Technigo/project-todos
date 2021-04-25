@@ -66,7 +66,7 @@ const Day = styled.p`
 const Date = styled.p`
   font-weight: 200;
   font-size: 18px; 
-  margin-top: 7px;
+  margin: 7px 0 0;
 
   @media (min-width: 767px){
     font-size: 30px;
@@ -76,29 +76,29 @@ const Date = styled.p`
 const Tasks = styled.p`
   font-size: 16px;
   font-weight: bold;
-  position: absolute;
-  bottom: 25px;
-  right: 22px;
   margin: 0;
 
   @media (min-width: 767px){
     font-size: 24px;
-    bottom: 30px;
-    right: 55px;
-  }
-  @media (min-width: 1024px){
-    position: static;
   }
 `
 const Yellow = styled.div`
-  display: none;
+  position: absolute;
+  display: inline;
+  background-color: yellow;
+  width: fit-content;
+  padding: 5px 7px;
+  margin-top: 27px;
+  bottom: 25px;
+  right: 22px;
+
+  @media (min-width: 767px){
+    bottom: 30px;
+    right: 55px;
+  }
 
   @media (min-width: 1024px){
-    display: inline;
-    background-color: yellow;
-    width: fit-content;
-    padding: 5px 7px;
-    margin-top: 27px;
+    position: static;
   }
 `
 
