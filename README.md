@@ -1,13 +1,9 @@
 # Project Todos
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This weeks project was about pulling together all the parts of redux und building it's structure from scratch.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First of all I started by sketching the app on paper. Mondays lecture already gave a good idea how to start and set up everything. I had (still have) a bit of a hard time wraping my head around the whole thing. The concept is hard to grasp for me and at some point I just had to accept that I don't fully understand what's going on in my code otherwise I wouldn't be able to hand it in. 
+This week I wanted to work with styled components and as it turns out I prefer it this way. It makes the styling process more structured and quicker. I found all the answers in the recordings of the lectures, on stackoverflow and google. Also thanks to youtube I was able to implement a lottie animation. 
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://project-todo-noemi.netlify.app/
