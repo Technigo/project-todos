@@ -13,6 +13,7 @@ const TaskList = () => {
         <div key={task.id} className="task-item">
           <label className='task-text'>
             <input
+              className='checkbox'
               type="checkbox"
               checked={task.complete}
               onChange={() => dispatch(tasks.actions.toggleComplete(task.id))}
