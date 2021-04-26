@@ -44,7 +44,7 @@ export const CategoryFilter = () => {
   const tasks = useSelector((store) => store.todos.items);
 
   const handleClick = (name) => {
-    dispatch(todos.actions.categorize({ categorizeBy: name }));
+    dispatch(todos.actions.categorize(name));
   };
 
   const handleTaskNumber = (category) => {
@@ -66,15 +66,12 @@ export const CategoryFilter = () => {
       {categoryArr.map((category) => (
         <Wrapper key={category.name}>
           <Button
-            active={category.name === cat[0].categorizeBy}
+            active={category.name === cat}
             bgColor={category.color}
             onClick={() => handleClick(category.name)}
           >
             {handleTaskNumber(category.name)}
-            <Image
-              active={category.name === cat[0].categorizeBy}
-              src={category.symbol}
-            />
+            <Image active={category.name === cat} src={category.symbol} />
           </Button>
         </Wrapper>
       ))}
@@ -139,5 +136,5 @@ const TaskNumber = styled.div`
   font-weight: bold;
   background: #d45d79;
   border-radius: 50%;
-  z-index:1;
+  z-index: 1;
 `;

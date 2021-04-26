@@ -9,8 +9,8 @@ import { SelectDeadline } from "./SelectDeadline";
 export const CreateNewTask = () => {
   //variables
   const dispatch = useDispatch();
-  const filters = useSelector((store) => store.todos.filters);
-  const sort = useSelector((store) => store.todos.sort);
+  const filters = useSelector((store) => store.todos.filters[0]);
+  const sort = useSelector((store) => store.todos.sort[0]);
   const cat = useSelector((store) => store.todos.category);
   const currentTime = new Date(Date.now()).toLocaleString();
 
@@ -37,17 +37,17 @@ export const CreateNewTask = () => {
         })
       );
    
-      dispatch(todos.actions.categorize({ categorizeBy: cat[0].categorizeBy }));
+      dispatch(todos.actions.categorize( cat ));
       dispatch(
         todos.actions.filterTodos({
-          filterBy: filters[0].filterBy,
-          value: filters[0].value,
+          filterBy: filters.filterBy,
+          value: filters.value,
         })
       );
       dispatch(
         todos.actions.sortTodos({
-          sortBy: sort[0].sortBy,
-          order: sort[0].order,
+          sortBy: sort.sortBy,
+          order: sort.order,
         })
       );
       clearAll();

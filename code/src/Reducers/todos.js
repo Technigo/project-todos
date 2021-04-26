@@ -4,9 +4,9 @@ const initialState = {
   items: [],
   filters: [{ filterBy: "Reset" }],
   sort: [{ sortBy: "" }],
-  category: [{ categorizeBy: "all" }],
+  category: "all",
   updatedTodos: [],
-  updateFilters: [],
+  updatefilters: [],
   updateSort: [],
   updateCategory: [],
 };
@@ -45,7 +45,7 @@ export const todos = createSlice({
           item.isComplete = !item.isComplete;
           item.completedAt = time;
 
-          /* if the filter is on reset the tasks should show*/
+          /* if the filter is on reset or if the filter matches the tasks should show */
           store.filters[0].filterBy === "Reset" ||
           item[store.filters[0].filterBy] === store.filters[0].value
             ? (item.hidden = false)
@@ -60,34 +60,15 @@ export const todos = createSlice({
       store.items = store.updatedTodos;
     },
     categorize: (store, action) => {
-      const { categorizeBy } = action.payload;
+      store.category = action.payload;
       store.updatedTodos = store.items.map((task) => {
-        /*checking both category and filter to be sure both applies even on category update*/
-
-        //if category is all and the filter matches, or the filter is Reset, show tasks
-        if (
-          categorizeBy === "all" &&
-          (task[store.filters[0].filterBy] === store.filters[0].value ||
-            store.filters[0].filterBy === "Reset")
-        ) {
-          return { ...task, hidden: false };
-        } else if (
-          //if the category & the filter (or filter is reset) matches the task, show them, otherwise hide
-          task.category[0] === categorizeBy &&
-          (task[store.filters[0].filterBy] === store.filters[0].value ||
-            store.filters[0].filterBy === "Reset")
-        ) {
+        if (store.category === "all" || task.category[0] === store.category) {
           return { ...task, hidden: false };
         }
         return { ...task, hidden: true };
       });
 
-      //update the category
-      store.updateCategory = [];
-      store.updateCategory.push({ categorizeBy: categorizeBy });
-
       //update individial tasks
-      store.category = store.updateCategory;
       store.items = store.updatedTodos;
     },
     sortTodos: (store, action) => {
@@ -115,8 +96,9 @@ export const todos = createSlice({
       }
 
       //update sorting value
-      store.updateSort = [];
-      store.updateSort.push({ sortBy: sortBy, order: order });
+      store.updateSort = store.sort.map((sort) => {
+        return { ...sort, sortBy: sortBy, order: order };
+      });
       store.sort = store.updateSort;
 
       //update items in a sorted order
@@ -127,8 +109,8 @@ export const todos = createSlice({
       store.updatedTodos = store.items.map((task) => {
         if (
           task[filterBy] === value &&
-          (store.category[0].categorizeBy === task.category[0] || //only apply on tasks in the active category
-            store.category[0].categorizeBy === "all") //or if category is all then apply
+          (store.category === task.category[0] || //only apply on tasks in the active category
+            store.category === "all") //or if category is all then apply
         ) {
           task.hidden = false;
         } else if (filterBy === "Reset") {
@@ -140,28 +122,28 @@ export const todos = createSlice({
       });
 
       //update filter value
-      store.updateFilters = [];
-      store.updateFilters.push({ filterBy: filterBy, value: value });
+      store.updatefilters = store.filters.map((filter) => {
+        return { ...filter, filterBy: filterBy, value: value };
+      });
+      store.filters = store.updatefilters;
 
       //update items show/hide depending on filter
-      store.filters = store.updateFilters;
       store.items = store.updatedTodos;
     },
     resetFilter: (store) => {
       store.updatedTodos = store.items.map((task) => {
-        if (
-          store.category[0].categorizeBy === task.category[0] ||
-          store.category[0].categorizeBy === "all"
-        )
+        if (store.category === task.category[0] || store.category === "all")
           return { ...task, hidden: false };
         else return { ...task };
       });
 
       //update filter value
-      store.updateFilters = [];
-      store.updateFilters.push({ filterBy: "Reset", value: "" });
+      store.updatefilters = store.filters.map((filter) => {
+        return { ...filter, filterBy: "Reset", value: true };
+      });
+      store.filters = store.updatefilters;
 
-      store.filters = store.updateFilters;
+      //update filtered tasks
       store.items = store.updatedTodos;
     },
     removeTodo: (store, action) => {
