@@ -8,6 +8,7 @@ import { TodoList } from "./Components/TaskList/TodoList";
 import { CreateNewTask } from "./Components/AddTask/CreateNewTask";
 import { Header } from "./Components/Header/Header";
 import { Footer } from "./Components/Footer/Footer";
+import background from "./Assets/background.jpg";
 
 export const App = () => {
   const reducer = combineReducers({
@@ -50,7 +51,7 @@ const Sidebar = styled.div`
     flex: 1 1 auto;
     background-size: cover;
     background-attachment: fixed;
-    background-image: url("https://images.unsplash.com/photo-1457369804613-52c61a468e7d?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1350&q=80");
+    background-image: url("${background}");
     opacity: 0.2;
   }
 `;

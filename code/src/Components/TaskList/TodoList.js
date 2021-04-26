@@ -107,6 +107,15 @@ const Menu = styled.button`
   font-family: "Raleway", sans-serif;
   color: #6e5773;
   border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    border-style: solid;
+    border-color:  #d45d79;
+    border-width: 1px;
+  }
 `;
 
 const SortInner = styled.div`

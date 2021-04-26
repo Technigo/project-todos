@@ -22,7 +22,15 @@ const ButtonContainer = styled.button`
   margin-top: 10px;
   padding: 0;
   padding-left: 10px;
+  outline: none;
+  cursor: pointer;
+
+  &:hover > div,
+  &:focus > div{
+    background: #d45d79;
+  }
 `;
+
 const Button = styled.div`
   width: fit-content;
   height: 15px;
@@ -33,11 +41,6 @@ const Button = styled.div`
   color: white;
   outline: none;
   font-size: 11px;
-
-  &:hover,
-  &:focus {
-    background: #d45d79;
-  }
 `;
 
 const ButtonText = styled.p`

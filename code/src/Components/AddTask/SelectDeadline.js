@@ -82,6 +82,7 @@ const Button = styled.button`
   background: white;
   width: 60px;
   color: #2b2e4a;
+  cursor: pointer;
 
   ${(props) =>
     props.expand &&
@@ -117,4 +118,5 @@ const Time = styled.input.attrs({ type: "time" })``;
 const Label = styled.label`
   font-size: 12px;
   padding-left: 10px;
+  cursor: pointer;
 `;

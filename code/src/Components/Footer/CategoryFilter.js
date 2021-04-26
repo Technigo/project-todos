@@ -8,7 +8,7 @@ export const CategoryFilter = () => {
   const dispatch = useDispatch();
 
   const categoryArr = [
-    { name: "all", symbol: require("../../Assets/all.svg"), color: "#6e7c7c" },
+    { name: "all", symbol: require("../../Assets/all.svg"), color: "#6e5773" },
     {
       name: "travel",
       symbol: require("../../Assets/travel.svg"),
@@ -47,6 +47,20 @@ export const CategoryFilter = () => {
     dispatch(todos.actions.categorize({ categorizeBy: name }));
   };
 
+  const handleTaskNumber = (category) => {
+    const taskByCategory = tasks.filter(
+      (task) => category === task.category[0]
+    );
+    const allTasks = tasks.filter((task) => task);
+
+    if (category === "all" && allTasks.length !== 0) {
+      return <TaskNumber>{allTasks.length}</TaskNumber>;
+    } else if (taskByCategory.length !== 0) {
+      return <TaskNumber>{taskByCategory.length}</TaskNumber>;
+    }
+    return <></>;
+  };
+
   return (
     <Categories>
       {categoryArr.map((category) => (
@@ -56,17 +70,7 @@ export const CategoryFilter = () => {
             bgColor={category.color}
             onClick={() => handleClick(category.name)}
           >
-            {tasks.filter((task) => category.name === task.category[0])
-              .length === 0 ? (
-              <></>
-            ) : (
-              <TaskNumber>
-                {
-                  tasks.filter((task) => category.name === task.category[0])
-                    .length
-                }
-              </TaskNumber>
-            )}
+            {handleTaskNumber(category.name)}
             <Image
               active={category.name === cat[0].categorizeBy}
               src={category.symbol}
@@ -88,10 +92,11 @@ const Categories = styled.div`
   }
 `;
 
-const Wrapper = styled.div `
-width: 100%;
-display: flex;
-justify-content: space-evenly;`
+const Wrapper = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+`;
 
 const Button = styled.button`
   flex: 1 1 auto;
@@ -103,6 +108,7 @@ const Button = styled.button`
   border-radius: 5px;
   outline: none;
   position: relative;
+  cursor: pointer;
 
   &:hover,
   &:focus,
@@ -131,6 +137,7 @@ const TaskNumber = styled.div`
   left: 3px;
   color: white;
   font-weight: bold;
-  background: darkcyan;
+  background: #d45d79;
   border-radius: 50%;
+  z-index:1;
 `;

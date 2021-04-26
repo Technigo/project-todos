@@ -66,6 +66,7 @@ const Label = styled.label`
   align-items: center;
   font-size: 14px;
   color: grey;
+  cursor: pointer;
 `;
 
 const CheckboxWrapper = styled.div`

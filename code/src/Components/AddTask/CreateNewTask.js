@@ -138,6 +138,7 @@ const Button = styled.button`
   color: #ea9085;
   background: rgba(196, 232, 241, 0);
   outline: none;
+  cursor: pointer;
 `;
 
 const Textarea = styled.textarea`

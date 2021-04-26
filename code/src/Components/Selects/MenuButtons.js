@@ -56,6 +56,14 @@ const Menu = styled.button`
   margin-right: 20px;
   color: #d45d79;
   font-weight: 600;
+  outline: none;
+  
+  &:hover,
+  &:focus {
+    border-color:  #d45d79;
+    border-style: solid;
+    border-width: 1px;
+
 `;
 
 const Container = styled.div`
@@ -76,9 +84,17 @@ const Button = styled.button`
   font-size: 14px;
   margin-top: 3px;
   color: #ea9085;
+  outline: none;
+  cursor: pointer;
 
   &:last-of-type {
     border: none;
+  }
+
+  &:hover,
+  &:focus {
+    background: #d45d79;
+    color: white;
   }
 
   ${(props) =>
