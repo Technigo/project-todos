@@ -63,7 +63,7 @@ const NewTodo = () => {
   } 
 
   return (
-    <div onSubmit={onFormSubmit}> 
+    <form onSubmit={onFormSubmit}> 
       <Input
         type="text"
         value={value}
@@ -71,7 +71,7 @@ const NewTodo = () => {
         onChange={e => setValue(e.target.value)}
       />
       <Button type="submit">Add task</Button>
-    </div>
+    </form>
   )
 }
 
