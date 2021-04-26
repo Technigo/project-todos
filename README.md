@@ -1,4 +1,4 @@
-# Project Todos
+## Project Todos
 
 This week's project was aimed to pull together all the parts of redux by building a todo app in combination with React:💥
 - structuring a redux store
@@ -7,12 +7,20 @@ This week's project was aimed to pull together all the parts of redux by buildin
 - using Redux Toolkits
 - React components and styled components
 
+<<<<<<< HEAD
 
 The app functions:
 -to addd tasks
 -list tasks
 -toggle weather a task is done or not
 
+=======
+The app functions:
+-to addd tasks
+-list tasks
+-toggle weather a task is done or not
+
+>>>>>>> b5d94785996bfcf9f2542a12619f6128444c4895
 ## How I buit it
 
 1. Sketcked the design to visualize the components and features that would be needed to implement. This brought clearity about the actions that I would need to dispactch and the Redux flow that my app would follow. 
