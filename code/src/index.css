@@ -5,9 +5,82 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  color: #050505;
+  font-family: "Playfair Display";
+}
+
+* {
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+button {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-family: "Playfair Display";
+  color: white;
+}
+
+.datepicker {
+  padding: 8px;
+  font-family: "Nunito";
+  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: "Roboto";
+  color: #949292;
+}
+
+.MuiSvgIcon-root {
+  color: black;
+}
+
+.MuiCheckbox-root {
+  background-color: transparent !important;
+}
+
+.MuiIconButton-root {
+  color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.MuiCheckbox-root:hover, .MuiCheckbox-root:focus {
+  background-color: rgba(0, 0, 0, 0.04) !important;
+}
+
+.PrivateSwitchBase-root-1 {
+  padding: 5px !important;
+  margin-top: 3px !important;
+}
+
+.filter {
+  width: 200px !important;
+  font-size: 14px !important;
+  outline: none;
+}
+
+.icon {
+  font-size: 18px;
+}
+
+.trash-icon {
+  color: black;
+  margin-bottom: 1px;
+}
+
+
+@media (min-width: 768px) {
+  .icon {
+    font-size: 24px;
+  }
+}
+
+
+
+
+
