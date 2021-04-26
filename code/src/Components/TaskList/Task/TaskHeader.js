@@ -17,7 +17,7 @@ display: flex;
 height: 30px;
 justify-content: space-between;
 width: 100%;
-background-color: rgb(137, 177, 187);`
+background:#ea9085;`
 
 const ImageContainer=styled.div`
 height: 25px;

@@ -55,12 +55,13 @@ const Container = styled.header`
   display: flex;
   justify-content: center;
   background-size: cover;
-  background-position-y: center;
+  background-position: bottom;
   background-image: url("${headerBg640px}");
 
   @media (min-width: 768px) {
     background-image: url("${headerBg1920px}");
     height: 250px;
+    width: 510px;
     background-position: bottom;
   }
 `;
@@ -80,12 +81,7 @@ const Overlay = styled.div`
   position: absolute;
   height: 150px;
   width: 100%;
-  background: linear-gradient(
-    0deg,
-    rgb(28, 74, 114) 0%,
-    rgb(71, 148, 179) 35%,
-    rgb(255, 255, 255) 100%
-  );
+  background: linear-gradient(0deg, rgba(85,18,28,0.5662640056022409) 25%, rgba(247,216,247,0.3841911764705882) 100%);
   opacity: 0.5;
 
   @media (min-width: 768px) {

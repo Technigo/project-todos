@@ -54,7 +54,7 @@ const Menu = styled.button`
   font-size: 14px;
   margin-top: 3px;
   margin-right: 20px;
-  color: white;
+  color: #d45d79;
   font-weight: 600;
 `;
 
@@ -62,19 +62,20 @@ const Container = styled.div`
   width: 100%;
   margin-right: 5px;
   flex: 1 1 auto;
+  padding-top: 10px;
   padding-bottom: 10px;
 `;
 
 const Button = styled.button`
   border: none;
   border-right-style: solid;
-  border-right-color: white;
+  border-right-color: #ea9085;
   background: transparent;
   font-family: "Raleway", sans-serif;
   text-align: left;
   font-size: 14px;
   margin-top: 3px;
-  color: white;
+  color: #ea9085;
 
   &:last-of-type {
     border: none;

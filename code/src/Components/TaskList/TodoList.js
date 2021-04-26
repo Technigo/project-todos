@@ -86,6 +86,7 @@ const Main = styled.div`
 `;
 
 const Column = styled.div`
+margin-top: 20px;
   flex: 1 1 auto;
   display: flex;
   flex-direction: column;
@@ -101,18 +102,19 @@ const SortContainer = styled.div`
 
 const Menu = styled.button`
   height: 20px;
-  background: rgb(217, 234, 238);
+  background: #e9e2d0;
   border: none;
   font-family: "Raleway", sans-serif;
-  color: darkcyan;
+  color: #6e5773;
   border-radius: 5px;
 `;
 
 const SortInner = styled.div`
   display: ${(props) => (props.expand ? "flex" : "none")};
   flex-direction: column;
-  background: #5eaaa8;
-  color: white;
+  background: #e9e2d0;
+  color: #d45d79;
+  justify-content: center;
 `;
 
 const TaskContainer = styled.div`
@@ -121,6 +123,7 @@ const TaskContainer = styled.div`
   margin-bottom: 10px;
   box-shadow: 0.5px 0.5px 1px 1px rgb(88, 88, 102);
   color: rgb(110, 157, 168);
+  background: white;
 
   @media (min-width: 768px) {
     width: 100%;

@@ -24,10 +24,10 @@ export const Task = ({ id, isComplete, description}) => {
             type="task"
             className="task"
             checked={isComplete}
-            color={"darkcyan"}
+            color={"#d45d79"}
             onChange={() => dispatch(todos.actions.toggleComplete({ id: id, time: currentTime.toLocaleString()}))}
           />
-          <TaskText>{description}</TaskText>
+          <TaskText complete={isComplete}>{description}</TaskText>
         </Label>
       </TaskContainer>
     </>
@@ -45,11 +45,12 @@ const TaskText = styled.span`
   float: right;
   width: 87%;
   margin-top: 5px;
+  color: ${props => props.complete?  "#e9e2d0":"#d45d79"};
 `;
 
 
 const TaskContainer = styled.div`
-  background-color: white;
+  background: white;
   display: flex;
   align-items: center;
   min-height: 100px;

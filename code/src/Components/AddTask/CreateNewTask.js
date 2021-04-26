@@ -101,6 +101,7 @@ const Section = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 10px;
+  background: white;
 
   @media (min-width: 768px) {
     width: 500px;
@@ -134,8 +135,8 @@ const Button = styled.button`
   width: 40px;
   height: 40px;
   border: none;
-  color: rgb(196, 232, 241);
-  background-color: rgba(196, 232, 241, 0);
+  color: #ea9085;
+  background: rgba(196, 232, 241, 0);
   outline: none;
 `;
 
@@ -145,17 +146,17 @@ const Textarea = styled.textarea`
   border: none;
   font-size: 20px;
   outline: none;
-  color: rgb(40, 91, 104);
+  color: #6e5773;
   padding: 40px 0;
 
   &::placeholder {
     font-family: "Raleway", sans-serif;
-    color: rgb(196, 232, 241);
+    color: #ea9085;
   }
 
   &::focus,
   &::hover {
-    background-color: rgb(196, 232, 241);
+    background-color: #ea9085;
   }
 `;
 

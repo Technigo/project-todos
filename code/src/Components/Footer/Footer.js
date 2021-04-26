@@ -17,7 +17,12 @@ const Container = styled.footer`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(238, 238, 238);
+  background: #e9e2d0;
   position: fixed;
   bottom: 0;
+  
+
+  @media (min-width: 768px) {
+    width: 510px;
+  }
 `;

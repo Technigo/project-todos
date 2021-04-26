@@ -64,7 +64,6 @@ export const SelectCategory = ({ setCategory, checked, setChecked }) => {
 const Label = styled.label`
   display: flex;
   align-items: center;
-
   font-size: 14px;
   color: grey;
 `;
@@ -84,7 +83,6 @@ const ImageContainer = styled.div`
 
 const Image = styled.img`
   object-fit: cover;
-  filter: invert(58%) sepia(5%) saturate(3064%) hue-rotate(145deg)
-    brightness(95%) contrast(95%);
+  filter: invert(39%) sepia(19%) saturate(559%) hue-rotate(243deg) brightness(89%) contrast(92%);
   height: 60%;
 `;

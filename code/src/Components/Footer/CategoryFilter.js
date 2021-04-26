@@ -82,6 +82,10 @@ const Categories = styled.div`
   width: 100%;
   display: flex;
   height: 50px;
+
+  @media (min-width: 768px) {
+    width: 510px;
+  }
 `;
 
 const Wrapper = styled.div `
@@ -114,7 +118,7 @@ const Image = styled.img`
   filter: ${(props) =>
     props.active
       ? "invert(100%) sepia(100%) saturate(0%) hue-rotate(66deg) brightness(103%) contrast(103%)"
-      : "invert(58%) sepia(5%) saturate(3064%) hue-rotate(145deg) brightness(95%) contrast(95%)"};
+      : "invert(39%) sepia(19%) saturate(559%) hue-rotate(243deg) brightness(89%) contrast(92%)"};
   height: 60%;
 `;
 

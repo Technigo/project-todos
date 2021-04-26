@@ -36,11 +36,11 @@ export const DeadlineCountdown = ({ deadline, isComplete }) => {
 
   useEffect(() => {
     if (diff > 1000 * 60 * 60 * 24) {
-      setTextColor("green");
+      setTextColor("#6e5773");
     } else if (diff > 1000 * 60 * 60) {
-      setTextColor("orange");
+      setTextColor("#ea9085");
     } else {
-      setTextColor("red");
+      setTextColor("#d45d79");
     }
   }, [diff]);
 
@@ -57,6 +57,7 @@ export const DeadlineCountdown = ({ deadline, isComplete }) => {
 
 const Text = styled.p`
   color: ${(props) => props.textColor};
+  font-weight: 600;
   padding-left: 10px;
   margin: 5px 0;
   font-family: "Roboto", sans-serif;

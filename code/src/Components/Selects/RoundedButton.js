@@ -27,7 +27,7 @@ const Button = styled.div`
   width: fit-content;
   height: 15px;
   width: 15px;
-  background-color: rgb(137, 177, 187);
+  background: #6e5773;
   border: solid white 0.5px;
   border-radius: 10px;
   color: white;
@@ -36,7 +36,7 @@ const Button = styled.div`
 
   &:hover,
   &:focus {
-    background: rgb(90, 150, 187);
+    background: #d45d79;
   }
 `;
 

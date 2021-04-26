@@ -67,7 +67,7 @@ export const SelectDeadline = ({ setDue, setHasDeadline }) => {
             checked={checked}
             id="NoDeadline"
             type=""
-            color="darkcyan"
+            color="#ea9085"
             onChange={() => handleCheck()}
           />
           Infinite
@@ -81,12 +81,12 @@ const Button = styled.button`
   border: none;
   background: white;
   width: 60px;
-  color: darkcyan;
+  color: #2b2e4a;
 
   ${(props) =>
     props.expand &&
     `&::after{
-    color: rgb(196, 232, 241);
+    color: #ea9085;
     content: "◀";
     text-align: right;
    float:right;
@@ -95,7 +95,7 @@ const Button = styled.button`
   ${(props) =>
     !props.expand &&
     `&::after{
-      color: rgb(196, 232, 241);
+      color: #ea9085;
       content: "▶";
       text-align: right;
       float:right;

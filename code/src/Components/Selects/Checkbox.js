@@ -45,14 +45,14 @@ const StyledCheckbox = styled.div`
   width: ${(props) => (props.type === "task" ? "30px" : "15px")};
   height: ${(props) => (props.type === "task" ? "30px" : "15px")};
   background: ${(props) =>
-    props.checked ? props.color : "rgb(217, 234, 238)"};
+    props.checked ? props.color : "#e9e2d0"};
   border-radius: ${(props) => (props.type === "task" ? "50%" : "3px")};
   transition: all 150ms;
   margin: 5px;
   margin-left: 0;
 
   ${HiddenCheckbox}:focus + & {
-    box-shadow: 0 0 0 3px rgb(110, 157, 168);
+    box-shadow: 0 0 0 3px #6e5773;
   }
 
   ${Icon} {

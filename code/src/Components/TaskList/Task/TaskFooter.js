@@ -18,7 +18,7 @@ export const TaskFooter = ({ deadline, id, isComplete, completedAt }) => {
     );
   };
   return (
-    <>
+    <Wrapper>
       <TextContainer>
           {checkStatus()}
         <DeadlineCountdown deadline={deadline} isComplete={isComplete}/>
@@ -28,10 +28,14 @@ export const TaskFooter = ({ deadline, id, isComplete, completedAt }) => {
           onClick={() => dispatch(todos.actions.removeTodo({ task: id }))}
         ><Image src={require("../../../Assets/delete.svg")}/></Button>
       </ButtonContainer>
-    </>
+    </Wrapper>
   );
 };
 
+const Wrapper = styled.div`
+display: flex;
+background: #e9e2d0;
+`
 const TextContainer = styled.div`
   width: 100%;
   display: flex;
@@ -42,6 +46,7 @@ const TextContainer = styled.div`
 const DeadlineText = styled.p`
   padding-right: 10px;
   margin: 5px;
+  color: #6e5773;
 `;
 
 const ButtonContainer = styled.div`
@@ -55,7 +60,7 @@ const Button = styled.button`
 background: transparent;
 border:none;
 width: 30px;
-filter: invert(85%) sepia(11%) saturate(580%) hue-rotate(120deg) brightness(95%) contrast(88%);
+filter: invert(39%) sepia(19%) saturate(559%) hue-rotate(243deg) brightness(89%) contrast(92%);
 
 &:hover > img,
 &:focus > img,
