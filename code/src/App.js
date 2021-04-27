@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 import tasks from './reducers/tasks'
 import TaskList from './components/TaskList'
@@ -12,6 +12,7 @@ const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
   height: 100vh;
+  width: 100%;
   justify-content: space-between;
     @media (min-width: 768px) {
       height: 80vh;

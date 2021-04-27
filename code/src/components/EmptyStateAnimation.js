@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import lottie from 'lottie-web'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const LottieContainer = styled.div`
   height: 40%

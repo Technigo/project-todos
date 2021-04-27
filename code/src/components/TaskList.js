@@ -1,13 +1,13 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 import tasks from '../reducers/tasks'
 import EmptyStateAnimation from './EmptyStateAnimation'
 
 const TaskContainer = styled.div`
-    overflow: scroll;
-    width: 240px;
+    overflow: auto;
+    width: 100%;
 `
 
 const SingleTaskContainer = styled.div`

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 import tasks from '../reducers/tasks'
 
