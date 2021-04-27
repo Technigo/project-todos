@@ -42,7 +42,8 @@ input[type="checkbox"]:after {
   font-size: 15px;
   color: gray;
   content: '\2713'; /* why is this not working in firefox?  */
-  padding-left: 15px;
+  overflow-wrap: break-word; 
+  word-wrap: break-word;
 }
 input[type="checkbox"]:checked:after {
   color: pink;
@@ -52,6 +53,8 @@ input[type="text"]{
   width: 100%;
   padding-left: 10px;
   margin-bottom: 15px;
+  overflow-wrap: break-word; 
+  word-wrap: break-word;
 }
 input:focus {
   outline: none;

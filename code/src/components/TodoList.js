@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import FlipMove from 'react-flip-move'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 import todos from '../reducers/todos'
 
@@ -23,7 +23,8 @@ const DateStamp = styled.p `
   color: pink; 
   padding-top: 5px; 
 `
-    
+// https://reactdatepicker.com/
+
 const TodoList = () => {
   const tasks = useSelector((store) => store.todos.tasks) //hook to get things out of the store , specify from where
   const dispatch = useDispatch()  
@@ -36,11 +37,11 @@ const TodoList = () => {
        duration={250} 
        easing="ease-out">
         <ListView key={todo.id}>
-          <input
-            type='checkbox'
-            checked={todo.isComplete}
-            onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-          /> 
+            <input
+              type='checkbox'
+              checked={todo.isComplete}
+              onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+            /> 
           <DescriptionTask>
             {todo.description}
             <DateStamp>created {date}</DateStamp>
