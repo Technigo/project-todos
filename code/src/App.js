@@ -2,7 +2,7 @@ import React from 'react'
 
 import { Provider } from 'react-redux'
 import {combineReducers, configureStore} from '@reduxjs/toolkit'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 import todos from './reducers/todos'
 
