@@ -12,6 +12,8 @@ const reducer = combineReducers({
 
 const store = configureStore({ reducer })
 
+store.subscribe(() => localStorage.setItem('todos', JSON.stringify(store.getState().todo.items)))
+
 export const App = () => {
   return (
     <Provider store={store}>

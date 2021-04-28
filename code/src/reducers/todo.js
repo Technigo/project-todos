@@ -6,11 +6,12 @@ const filters = [
   { id: 3, name: "past deadline", status: false },
   { id: 4, name: "priority", status: false }
 ]
+const initialItems = localStorage.getItem('todos')? JSON.parse(localStorage.getItem('todos')) : []
 
 const todo = createSlice({
   name: 'todo',
   initialState: {
-    items: [],
+    items: initialItems,
     filters
   },
   reducers: {
