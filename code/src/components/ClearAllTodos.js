@@ -13,10 +13,15 @@ const Button = styled.button `
   margin: 10px; 
   width: 100px;
   text-align: center;  
-  justify-content: center; 
+  justify-content: space-between; 
+  flex-direction: flex-end;
+  display:flex;
 `
 const FooterApp = styled.div `
   display: flex; 
+  justify-content: space-between;
+  flex-direction: flex-end;
+  margin-top: auto; 
 `
 
 const ClearAllTodos = () => {

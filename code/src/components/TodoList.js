@@ -13,6 +13,7 @@ const ListView = styled.div `
   justify-content: space-between; 
   padding: 10px 0; 
   font-size: 15px; 
+  align-items: center; 
 `
 const DescriptionTask = styled.p `
   text-align: center; 
