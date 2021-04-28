@@ -8,7 +8,7 @@ import todos from '../reducers/todos'
 const FormContainer = styled.form`
   display: flex;
   justify-content: center;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #bebebe;
   background-color: #f0f0fc;
 `
 
@@ -39,7 +39,7 @@ const AddTask = () => {
       id: uniqid(),
       description: value,
       isComplete: false,
-      dueDate: new Date().toJSON()
+      addDate: new Date().toJSON()
     }
 
     dispatch(todos.actions.addTodo(newTodo))

@@ -9,7 +9,7 @@ const HeaderContainer = styled.div`
   flex-direction: column;
   align-items: center;
   background-color: #c7ebde;
-  padding: 15px 0 15px 0;
+  padding: 15px 0;
   color: #032640;
 `
 

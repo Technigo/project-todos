@@ -20,12 +20,12 @@ const TodoDiv = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
-  border-bottom: 1px solid grey;
+  border-bottom: 1px solid #bebebe;
 `
 
 const Todo = styled.p`
   font-size: 18px;
-  padding: 0 5px 0 5px;
+  padding: 0 5px;
   width: 150px;
   
   @media (min-width: 768px) {
@@ -73,7 +73,7 @@ const TaskList = () => {
             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
           />
           <Todo tabIndex="0">{todo.description}</Todo>
-          <Text tabIndex="0">{new Date(todo.dueDate).toLocaleDateString()}</Text>
+          <Text tabIndex="0">{new Date(todo.addDate).toLocaleDateString()}</Text>
           <RemoveButton onClick ={() => dispatch(todos.actions.removeTodo(todo.id))}>
             Remove
           </RemoveButton>
