@@ -24,14 +24,15 @@ const todos = createSlice({
 
         store.tasks = removeTask
     },
-    /*removeAllTodos: (store) => { 
-      const removeAllTodos = store.tasks.map((todo) => {
-        return {
-          []
-        }
-      }) 
-      store.tasks = removeAllTodos
-    },*/
+    // removeAllTodos: (store) => { //remove marked done todos
+    //   const removeAllTodos = store.tasks.filter(todo)
+    //   return {
+    //     ...todo,
+    //     isComplete: false
+    //   }
+    // }
+    // store.tasks = removeAllTodos
+// },
     addTodo: (store, action) => { //store is state of the slice , empty array
       store.tasks = [...store.tasks, action.payload]
     },

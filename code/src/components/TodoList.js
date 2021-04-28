@@ -24,6 +24,14 @@ const DateStamp = styled.p `
   color: pink; 
   padding-top: 5px; 
 `
+const Button = styled.button `
+  margin-right: 10px; 
+  border: none;
+  outline: none;
+  background: none;
+  color: gray; 
+`
+
 // https://reactdatepicker.com/
 
 const TodoList = () => {
@@ -47,14 +55,14 @@ const TodoList = () => {
             {todo.description}
             <DateStamp>created {date}</DateStamp>
           </DescriptionTask>
-          <button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
+          <Button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
             <span
               role="img"
               aria-label="delete"
             >
               x
             </span> 
-          </button>
+          </Button>
         </ListView>
       </FlipMove>
      ))}

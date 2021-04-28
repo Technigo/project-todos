@@ -9,36 +9,39 @@ const Button = styled.button `
   background: pink;
   border-radius: 8px;
   color: black; 
-  padding: 8px;
+  padding: 10px;
   margin: 10px; 
   width: 100px;
   text-align: center;  
-  justify-content: space-between; 
-  flex-direction: flex-end;
+  justify-content: center; 
   display:flex;
+  border: none;
+  outline: none;
+  font-size: 10px; 
+  cursor: pointer; 
 `
-const FooterApp = styled.div `
+const Footer = styled.div `
   display: flex; 
   justify-content: space-between;
   flex-direction: flex-end;
   margin-top: auto; 
 `
 
-const ClearAllTodos = () => {
+const FooterApp = () => {
   const dispatch = useDispatch()
 
   return (
     <>
-      <FooterApp>
+      <Footer>
         <Button onClick={() => dispatch(todos.actions.clearAllTodos())}>
         All completed 
         </Button>
-        <Button  /* onClick={() => dispatch(todos.actions.removeAllTodos())}*/> 
-          Delete all
+        <Button onClick={() => dispatch(todos.actions.removeAllTodos())}> 
+          Delete completed
         </Button>
-      </FooterApp>
+      </Footer>
     </>
   )
 }
 
-export default ClearAllTodos
+export default FooterApp

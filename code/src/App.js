@@ -9,7 +9,7 @@ import todos from './reducers/todos'
 import Header from './components/Header'
 import TodoList from './components/TodoList'
 import TodoInput from './components/TodoInput'
-import ClearAllTodos from './components/ClearAllTodos'
+import FooterApp from './components/FooterApp'
 import Footer from './components/Footer'
 
 const Content = styled.a `
@@ -32,7 +32,7 @@ export const App = () => {
         <Content>
           <TodoList /> 
        </Content>
-      <ClearAllTodos />
+      <FooterApp />
       <Footer />
     </Provider>
   )

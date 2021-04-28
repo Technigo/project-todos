@@ -65,14 +65,8 @@ p {
   padding: 0; 
   color: gray;
 }
-button {
-  background: none; 
-  border: none;
-  outline: none;
-  color: gray;
-}
-/* how to stick footer to bottom of APP? 
+
+/* 
 background pic around the container, howTO? 
 chrome only works - if not looses the check box
-align text in different font sizes
 avoid buttons to be covered when looong texts written */
