@@ -21,7 +21,7 @@ const Form = styled.form`
 `
 const TodoBtn = styled.button`
   box-sizing: border-box;
-  width: 55px;
+  width: 50px;
   height: 50px;
   border-radius: 8px;
   background-color: #8B98F9;
