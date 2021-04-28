@@ -79,7 +79,9 @@ export const tasks = createSlice({
 
     postNewTodoAPI: (store, action) => {
       const {description, dueDate} = action.payload
-      const newTodo = { "id": `${uniqid()}`, "text": `${description}`, "complete": `${false}`, "created": `${moment().format()}`, "editMode": `${false}`, "dueDate": `${dueDate}` }
+      const uniqId = uniqid()
+      const createdWhen = moment().format()
+      const newTodo = { "id": `${uniqId}`, "text": `${description}`, "complete": `${false}`, "created": `${createdWhen}`, "editMode": `${false}`, "dueDate": `${dueDate}` }
       const settings = {
         "async": true,
         "crossDomain": true,
@@ -95,7 +97,9 @@ export const tasks = createSlice({
       }
       $.ajax(settings).done((res) => {
       })
-
+      
+      const updateItems =  { id: uniqId, text: description, complete: false, created: createdWhen, editMode: false, dueDate: dueDate }
+      store.items = [...store.items, updateItems]
     },
 
     removeTodo: (store, action) => {

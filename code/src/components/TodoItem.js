@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import moment from 'moment'
 
-import { tasks, fetchData } from '../reducers/tasks'
+import { tasks } from '../reducers/tasks'
 
 import TodoItemBtns from './TodoItemBtns'
 import CustomCheckbox from './CustomCheckbox'
@@ -65,12 +65,10 @@ const TodoItem = ({ id, text, complete, editMode, dueDate, description, setDescr
 
   const onSaveEdit = () => {
     dispatch(tasks.actions.editItemDescription({ id: id, description: description }))
-    setTimeout(dispatch(fetchData()), 2000)
   }
 
   const onToggleComplete = () => {
     dispatch(tasks.actions.toggleComplete(id))
-    setTimeout(dispatch(fetchData()), 2000)
   }
 
   return (

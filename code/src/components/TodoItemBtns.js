@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { FaTrashAlt, FaEdit, FaRegWindowClose, FaCheck } from 'react-icons/fa'
 
-import { tasks, fetchData } from '../reducers/tasks'
+import { tasks } from '../reducers/tasks'
 
 //Styled components
 const Wrapper = styled.div`
@@ -26,7 +26,6 @@ const TodoItemBtns = ({ id, editMode, onSaveEdit }) => {
 
   const onDeleteTodo = () => {
     dispatch(tasks.actions.removeTodo(id))
-    setTimeout(dispatch(fetchData()), 2000)
   } 
 
   return (
