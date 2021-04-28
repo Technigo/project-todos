@@ -1,4 +1,4 @@
-Project 15, Create a todo app with React and Reux
+Project 15, Create a todo app with React and Redux
 
 Requirements
 
