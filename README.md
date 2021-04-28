@@ -1,6 +1,6 @@
 # Project Todos ✅
 
-I've built a todos application using React Native, Redux and styled components. 
+I've built a todos application using React, Redux and styled components. 
 
 
 ## The problem
