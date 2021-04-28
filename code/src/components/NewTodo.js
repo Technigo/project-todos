@@ -20,6 +20,7 @@ const Form = styled.form`
   align-items: flex-end;
 `
 const TodoBtn = styled.button`
+  box-sizing: border-box;
   width: 55px;
   height: 50px;
   border-radius: 8px;
@@ -71,7 +72,7 @@ const NewTodo = () => {
     setDueDate(date[0].toJSON())
   }
 
-  const onButtonPress = (event) => {
+  const onButtonClick = (event) => {
     event.preventDefault()
     dispatch(tasks.actions.postNewTodoAPI({ description: newTodoInput, dueDate: dueDate }))
     setNewTodoInput('')
@@ -94,7 +95,7 @@ const NewTodo = () => {
         </Wrapper>
         <TodoBtn 
           type="button"
-          onClick={onButtonPress}
+          onClick={onButtonClick}
         >
           +
         </TodoBtn>
