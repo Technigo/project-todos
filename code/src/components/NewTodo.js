@@ -11,6 +11,7 @@ const Container = styled.div`
   display: flex;
   padding: 10px;
   font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
 `
 const Form = styled.form`
   width: 100%;
