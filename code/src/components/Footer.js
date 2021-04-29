@@ -1,15 +1,14 @@
-
 import React from 'react'
 
 import styled from 'styled-components/macro'
 
 const FooterSection = styled.div `
-margin-top: 20px;
-background-color: rgb(235, 195, 64);
-position: fixed;
-bottom: 0;
-left: 0;
-width: 100%;
+  margin-top: 20px;
+  background-color: rgb(235, 195, 64);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 `
 const Text = styled.h2 `
   font-size: 15px;
@@ -24,7 +23,7 @@ const Footer = () => {
        <Text>Maria Sparre</Text>
      </FooterSection>
     </>
-    )
+  )
 }
 
 export default Footer 

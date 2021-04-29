@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+
 import FlipMove from 'react-flip-move'
 import styled from 'styled-components/macro'
 
@@ -32,39 +33,38 @@ const Button = styled.button `
   color: gray; 
 `
 
-// https://reactdatepicker.com/
-
 const TodoList = () => {
-  const tasks = useSelector((store) => store.todos.tasks) //hook to get things out of the store , specify from where
+  const tasks = useSelector((store) => store.todos.tasks)
   const dispatch = useDispatch()  
   const date = new Date().toLocaleDateString()
   
   return (
     <>
      {tasks.map(todo => (
-     <FlipMove 
-       duration={250} 
-       easing="ease-out">
-        <ListView key={todo.id}>
-            <input
-              type='checkbox'
-              checked={todo.isComplete}
-              onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
-            /> 
-          <DescriptionTask>
-            {todo.description}
-            <DateStamp>created {date}</DateStamp>
-          </DescriptionTask>
-          <Button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
-            <span
-              role="img"
-              aria-label="delete"
-            >
-              x
-            </span> 
-          </Button>
-        </ListView>
-      </FlipMove>
+       <FlipMove 
+         duration={250} 
+         easing="ease-out"
+       >
+         <ListView key={todo.id}>
+           <input
+             type='checkbox'
+             checked={todo.isComplete}
+             onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}
+           /> 
+           <DescriptionTask>
+             {todo.description}
+              <DateStamp>created {date}</DateStamp>
+           </DescriptionTask>
+           <Button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
+             <span
+               role="img"
+               aria-label="delete"
+             >
+               x
+             </span> 
+           </Button>
+         </ListView>
+       </FlipMove>
      ))}
     </>
   )

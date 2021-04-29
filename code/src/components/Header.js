@@ -37,7 +37,7 @@ const Header = () => {
         completedTodos={completedTodos}
       />
     </HeaderSection>
-    )
+  )
 }
 
 export default Header 

@@ -24,16 +24,12 @@ const todos = createSlice({
 
         store.tasks = removeTask
     },
-    // removeAllTodos: (store) => { //remove marked done todos
-    //   const removeAllTodos = store.tasks.filter(todo)
-    //   return {
-    //     ...todo,
-    //     isComplete: false
-    //   }
-    // }
-    // store.tasks = removeAllTodos
-// },
-    addTodo: (store, action) => { //store is state of the slice , empty array
+    removeAllTodos: (store) => { //remove marked done todos
+      const filteredTasks = store.tasks.filter(todo => !todo.isComplete)
+      
+      store.tasks = filteredTasks
+    },
+    addTodo: (store, action) => { 
       store.tasks = [...store.tasks, action.payload]
     },
     clearAllTodos: (store) => { //mark all as done! 

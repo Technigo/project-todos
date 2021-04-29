@@ -34,7 +34,7 @@ const FooterApp = () => {
     <>
       <Footer>
         <Button onClick={() => dispatch(todos.actions.clearAllTodos())}>
-        All completed 
+          All completed 
         </Button>
         <Button onClick={() => dispatch(todos.actions.removeAllTodos())}> 
           Delete completed
