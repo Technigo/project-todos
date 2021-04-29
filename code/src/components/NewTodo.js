@@ -20,7 +20,7 @@ const Form = styled.form`
   align-items: flex-end;
 `
 const TodoBtn = styled.button`
-  box-sizing: border-box;
+  //box-sizing: border-box;
   width: 50px;
   height: 50px;
   background-color: #8B98F9;
