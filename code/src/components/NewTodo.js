@@ -23,14 +23,11 @@ const TodoBtn = styled.button`
   box-sizing: border-box;
   width: 50px;
   height: 50px;
-  border-radius: 8px;
   background-color: #8B98F9;
   border: none;
   font-size: 45px;
   line-height: 45px;
   color: #fff;
-  align-self: center;
-  margin-right: 10px;
   border-radius: 50%;
   cursor: pointer;
 `
@@ -53,9 +50,16 @@ const TodoInput = styled.input`
   }
 `
 const Wrapper = styled.div`
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
+`
+
+const BtnWrapper = styled.div`
+  width: 50px;
+  height: 50px;
+  align-self: center;
+  margin-right: 10px;
 `
 
 const NewTodo = () => {
@@ -76,7 +80,7 @@ const NewTodo = () => {
     event.preventDefault()
     dispatch(tasks.actions.postNewTodoAPI({ description: newTodoInput, dueDate: dueDate }))
     setNewTodoInput('')
-    setTimeout(dispatch(fetchData()), 3000)
+    setTimeout(dispatch(fetchData()), 4000)
   }
 
   return (
@@ -86,6 +90,7 @@ const NewTodo = () => {
           <TodoInput 
             type="text"
             placeholder="New task"
+            minlenght="3"
             value={newTodoInput}
             onChange={onInputChange}
           />
@@ -93,12 +98,14 @@ const NewTodo = () => {
             onDateChange={onDateChange}
           />
         </Wrapper>
-        <TodoBtn 
-          type="button"
-          onClick={onButtonClick}
-        >
-          +
-        </TodoBtn>
+        <BtnWrapper>
+          <TodoBtn 
+            type="button"
+            onClick={dueDate !== '' && newTodoInput !== '' && (onButtonClick)}
+          >
+            +
+          </TodoBtn>
+        </BtnWrapper>
       </Form>
     </Container>
   )
