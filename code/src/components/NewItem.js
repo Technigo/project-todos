@@ -10,7 +10,6 @@ const [showInput , setShowInput] = useState(false)
 
 const onNewTodo = (event) => {
   setNewTodo(event.target.value)
-  console.log(newTodo)
 }
 
 const dispatch = useDispatch()
@@ -38,6 +37,7 @@ const onSubmit = () => {
               maxLength="20"
               value={newTodo}
               placeholder="add new task"
+              autoFocus
             />
             <button 
               type="sumbit"

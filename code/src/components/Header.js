@@ -15,7 +15,7 @@ const Header = () => {
       <br/>
       <div className="statistics">
         <p>Total: {items.length}</p>
-        <p className={items.length > 0 ? "" : "completedTodos-none"}>Completed: {completedItems.length}</p>
+        {items.length > 0 && (<p>Completed: {completedItems.length}</p>)}
       </div>
     </>
   )

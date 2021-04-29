@@ -42,10 +42,6 @@ h1, h3, p {
   justify-content: space-between;
 }
 
-.completedTodos-none {
-  display: none;
-}
-
 .hide-inputfield {
   display: none;
 }
@@ -61,6 +57,14 @@ input {
   background-color: #F4F3F3;
   box-shadow: 0 0 10px #F4F3F3;
   margin: 12px 0 12px 2px;
+  color: #585858;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+::placeholder {
+  color:rgb(149, 149, 149);
 }
 
 .display-button-container {
@@ -104,7 +108,7 @@ input {
   background-color: #F4F3F3;
   color: rgb(88, 88, 88);
   border-radius: 6px;
-  padding: 4px 10px;
+  padding: 10px;
   margin: 10px 0;
   box-shadow: 0 0 6px #F4F3F3;
 }

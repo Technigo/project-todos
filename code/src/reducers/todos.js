@@ -7,8 +7,8 @@ const todos = createSlice ({
   name: 'todos',
   initialState: {
     items: [
-      {id: 1, description: 'Completing project', isComplete: true, createdAt: moment().fromNow() },
-      {id: 2, description: 'Watch video on Redux', isComplete: false, createdAt: moment().fromNow() },
+      {id: 1, description: 'Completing project', isComplete: true, createdAt: moment().format('L') },
+      {id: 2, description: 'Watch video on Redux', isComplete: false, createdAt: moment().format('L') },
     ]
   },
   reducers: {
@@ -32,8 +32,9 @@ const todos = createSlice ({
       id: uuidv4(),
       description: action.payload,
       isComplete: false,
-      createdAt: moment().fromNow() 
+      createdAt: moment().format('L') 
     } 
+    
     store.items.push(newTask)
     
     },
