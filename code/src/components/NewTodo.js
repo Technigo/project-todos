@@ -37,7 +37,7 @@ const TodoInput = styled.input`
   margin: 0;
   margin-bottom: 10px;
   padding: 5px;
-  width: 95%;
+  width: 100%;
   height: 38px;
   border: none;
   border-bottom: 1px solid #8B98F9;
@@ -51,7 +51,7 @@ const TodoInput = styled.input`
   }
 `
 const Wrapper = styled.div`
-  width: 80%;
+  width: 70%;
   display: flex;
   flex-direction: column;
 `
