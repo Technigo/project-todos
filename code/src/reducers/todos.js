@@ -12,41 +12,64 @@ const todos = createSlice ({
     ]
   },
   reducers: {
-  toggleComplete: (store, action) => {
-    const updatedItems = store.items.map(todo => {
-      if (todo.id === action.payload) {
-          return {
-            ...todo,
-            isComplete: !todo.isComplete
-          }
-      } else {
-        return todo
-      }
-    })
-       store.items = updatedItems;
-      },
+    toggleComplete: (store, action) => {
+      const updatedItems = store.items.map(todo => {
+        if (todo.id === action.payload) {
+            return {
+              ...todo,
+              isComplete: !todo.isComplete
+            }
+        } else {
+          return todo
+        }
+      })
+        store.items = updatedItems;
+        },
 
     addNewTodo: (store, action) => {
+      const newTask = {
+        id: uuidv4(),
+        description: action.payload,
+        isComplete: false,
+        createdAt: moment().format('L') 
+      }     
+      store.items.push(newTask)    
+      },
 
-    const newTask = {
-      id: uuidv4(),
-      description: action.payload,
-      isComplete: false,
-      createdAt: moment().format('L') 
-    } 
+    deleteItem: (store, action) => {
+      const decreasedItems = store.items.filter(todo => 
+        todo.id !== action.payload)      
+        store.items = decreasedItems
+      },
     
-    store.items.push(newTask)
-    
+    completeAll: (store, action) => {
+      const completedItems = store.items.map(todo => {
+        if (!todo.isComplete) {
+          return {
+            ...todo,
+            isComplete: true
+          }
+        } else {
+          return todo
+        }
+      })
+      store.items = completedItems
     },
 
-  deleteItem: (store, action) => {
-
-  const decreasedItems = store.items.filter(todo => 
-    todo.id !== action.payload)
-    
-    store.items = decreasedItems
+    uncompleteAll: (store, action) => {
+      const uncompletedItems = store.items.map(todo => {
+        if (todo.isComplete) {
+          return {
+            ...todo,
+            isComplete: false
+          }
+        } else {
+          return todo
+        }
+      })
+      store.items = uncompletedItems
     }
-  }  
+    }  
 })
 
 export default todos

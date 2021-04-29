@@ -104,13 +104,21 @@ input {
   margin-top: 20px;
 }
 
-.todo-container {
+.todo-container, .complete-all-button {
   background-color: #F4F3F3;
   color: rgb(88, 88, 88);
   border-radius: 6px;
   padding: 10px;
   margin: 10px 0;
   box-shadow: 0 0 6px #F4F3F3;
+}
+
+.complete-all-button {
+  padding: 4px 8px;
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight: bold;
+  cursor: pointer;
+  border: 1px solid grey;
 }
 
 .task-container {
