@@ -17,7 +17,7 @@ const Indicator = styled.div`
   margin-left: 5px;
   position: absolute;
   border-radius: 50%;
-  border: 2px solid #8B98F9;
+  border: 2px solid #ca8a8b;
 
   &::before {
     content: '';
@@ -25,7 +25,7 @@ const Indicator = styled.div`
     height: 35px;
     position: absolute;
     border-radius: 50%;
-    background-color: #8B98F9;
+    background-color: #ca8a8b;
     display: none;
     top: -1.5px;
     left: -2px;

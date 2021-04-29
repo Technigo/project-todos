@@ -9,7 +9,7 @@ import { tasks } from '../reducers/tasks'
 const Wrapper = styled.div`
   display: flex;
   flex-direction: row;
-  width: 80%;
+  width: 50px;
   justify-content: space-evenly;
 `
 
@@ -37,7 +37,7 @@ const TodoItemBtns = ({ id, editMode, onSaveEdit }) => {
             onClick={onSaveEdit}
           >
             <FaCheck 
-              color="#8B98F9" 
+              color="#ca8a8b" 
               size="20px" 
             />
           </Btn>
@@ -46,7 +46,7 @@ const TodoItemBtns = ({ id, editMode, onSaveEdit }) => {
             onClick={() => dispatch(tasks.actions.toggleEdit(id))}
           >
             <FaRegWindowClose 
-              color="#8B98F9" 
+              color="#ca8a8b" 
               size="20px" 
             />
           </Btn>
@@ -59,7 +59,7 @@ const TodoItemBtns = ({ id, editMode, onSaveEdit }) => {
             onClick={() => dispatch(tasks.actions.toggleEdit(id))}
           >
             <FaEdit 
-              color="#8B98F9"  
+              color="#ca8a8b"  
               size="20px" 
             />
           </Btn>
@@ -68,7 +68,7 @@ const TodoItemBtns = ({ id, editMode, onSaveEdit }) => {
             onClick={() => onDeleteTodo(id)}
           >
             <FaTrashAlt 
-              color="#8B98F9"
+              color="#ca8a8b"
               size="18px"
             /> 
           </Btn>

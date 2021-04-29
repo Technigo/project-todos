@@ -18,7 +18,7 @@ const EmptyState = () => {
   return (
     <Container>
       <FaCocktail 
-        color="#8B98F9" 
+        color="#ca8a8b" 
         size="50px" 
       />
       <Text>Woop! You have no todos!</Text>

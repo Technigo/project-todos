@@ -24,13 +24,14 @@ const TodoBtn = styled.button`
   //box-sizing: border-box;
   width: 50px;
   height: 50px;
-  background-color: #8B98F9;
+  background-color: #ca8a8b;
   border: none;
   font-size: 45px;
   line-height: 45px;
   color: #fff;
   border-radius: 50px;
   cursor: pointer;
+  box-shadow: 2px 1px 15px rgb(148 124 124 / 68%);
 `
 const TodoInput = styled.input`
   box-sizing: border-box;
@@ -40,13 +41,14 @@ const TodoInput = styled.input`
   width: 100%;
   height: 38px;
   border: none;
-  border-bottom: 1px solid #8B98F9;
+  border-bottom: 1px solid #ca8a8b;
   border-radius: 4px;
   background-color: #fcfcfc;
   font-size: 20px;
+  box-shadow: 1px 1px 20px 0px rgb(177 153 153 / 68%);
 
   &::placeholder {
-    color: #8B98F9;
+    color: #ca8a8b;
     padding-left: 5px;
   }
 `
@@ -81,6 +83,7 @@ const NewTodo = () => {
     event.preventDefault()
     dispatch(tasks.actions.postNewTodoAPI({ description: newTodoInput, dueDate: dueDate }))
     setNewTodoInput('')
+    setDueDate('')
     setTimeout(dispatch(fetchData()), 4000)
   }
 

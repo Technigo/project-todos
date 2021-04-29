@@ -35,7 +35,7 @@ const Span = styled.span`
 `
 
 const TodoList = () => {
-  const [description, setDescription] = useState('')
+  
   const dispatch = useDispatch()
   const items = useSelector((store) => store.tasks.items)
   const completedItems = items.filter(items => items.complete).length
@@ -55,8 +55,6 @@ const TodoList = () => {
           complete={item.complete}
           editMode={item.editMode}
           dueDate={item.dueDate}
-          description={description}
-          setDescription={setDescription}
         />
       ))}
       {items.length < 1 && (

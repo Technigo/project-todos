@@ -14,7 +14,7 @@ code {
 
 /*STYLING CALENDAR*/
 .testing .bx--date-picker__input {
-  border-bottom: 1px solid #8B98F9;
+  border-bottom: 1px solid #ca8a8b;
   border-radius: 4px;
   background-color: #fcfcfc;
   font-family: 'Montserrat', sans-serif;
@@ -22,14 +22,15 @@ code {
   padding-left: 10px;
   padding-right: 10px;
   line-height: 1;
+  box-shadow: 1px 1px 20px 0px rgb(177 153 153 / 68%);
 }
 
 .testing .bx--date-picker__input::placeholder {
-  color: #8B98F9;
+  color: #ca8a8b;
 }
 
 .testing .bx--date-picker__icon {
-  fill: #8B98F9;
+  fill: #ca8a8b;
   padding-left: 0;
   margin-left: auto;
 }
@@ -39,15 +40,15 @@ code {
 }
 
 .flatpickr-weekday {
-  color: #8B98F9;
+  color: #ca8a8b;
 }
 
 .flatpickr-day.today::after {
-  background-color: #8B98F9;
+  background-color: #ca8a8b;
 }
 
 .flatpickr-day.today {
-  color: #8B98F9;
+  color: #ca8a8b;
 } 
 
 .flatpickr-calendar {

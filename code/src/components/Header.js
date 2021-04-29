@@ -8,7 +8,7 @@ const TopHeader = styled.header`
   justify-content: center;
   width: 100%;
   padding: 20px;
-  background-color: #8B98F9;
+  background-color: #926e6f;
   color: #ffffff;
   font-family: 'Montserrat', sans-serif;
   border-bottom: 1px solid #A9A4A6;

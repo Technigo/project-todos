@@ -14,6 +14,8 @@ const Main = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #f6e6e4;
+  height: 100vh;
 `
 
 const reducer = combineReducers({

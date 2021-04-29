@@ -7,12 +7,13 @@ import { tasks } from '../reducers/tasks'
 const Btn = styled.button`
   width: 95px;
   border-radius: 8px;
-  background-color: #8B98F9;
+  background-color: #ca8a8b;
   color: #ffffff;
   border: none;
   padding: 5px;
   margin-top: 10px;
   cursor: pointer;
+  box-shadow: 2px 1px 15px rgb(148 124 124 / 68%);
 `
 
 const CheckAllBtn = () => {

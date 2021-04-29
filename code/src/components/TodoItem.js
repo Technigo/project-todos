@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import moment from 'moment'
@@ -13,11 +13,13 @@ const Container = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+  height: 70px;
   padding: 10px;
-  border-radius: 50px;
+  border-radius: 20px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
   font-family: 'Montserrat', sans-serif;
   margin: 10px 0;
+  background-color: #ffffff;
 `
 
 const Wrapper = styled.div`
@@ -44,18 +46,19 @@ const TodoInput = styled.input`
   width: 60%;
   height: 38px;
   border: none;
-  border-bottom: 1px solid #8B98F9;
+  border-bottom: 1px solid #ca8a8b;
   border-radius: 4px;
   background-color: #fcfcfc;
   margin-left: 10px;
-  font-size: 20px;
+  font-size: 18px;
 `
 
 const Date = styled.span`
   font-size: 12px;
 `
 
-const TodoItem = ({ id, text, complete, editMode, dueDate, description, setDescription }) => {
+const TodoItem = ({ id, text, complete, editMode, dueDate }) => {
+  const [description, setDescription] = useState(text)
   const dispatch = useDispatch()
   const taskDueDate = moment(dueDate).format('MMM Do')
 
