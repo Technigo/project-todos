@@ -1,19 +1,13 @@
-# Technigo React Starter App
+# About
+This is TODO list application which is built in the React/Redux Javascript in the framework of Technigo bootcamp for Front-end development.
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+The user can input a task, mark it as done or delete it or mark all tasks as done.
+Each task carries a timestamp.
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+# Problems
+Understanding how React and Redux work and how global state is controlled and accessed.
 
-## Usage
+# See project live on Netlify server:
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+https://youthful-gates-351c5c.netlify.app/
 
-Alternatively, if you don't want a new git repo on your account;
-
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
