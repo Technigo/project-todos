@@ -30,13 +30,13 @@ const todos = createSlice({
     },
 
     allDone: (store) => {
-      const Done = store.items.map((todo) => {
+      const done = store.items.map((todo) => {
         return {
           ...todo,
           isComplete: true
         }
       })
-      store.items = Done
+      store.items = done
     }
 
   }
