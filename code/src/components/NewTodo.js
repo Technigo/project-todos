@@ -81,10 +81,12 @@ const NewTodo = () => {
 
   const onButtonClick = (event) => {
     event.preventDefault()
-    dispatch(tasks.actions.postNewTodoAPI({ description: newTodoInput, dueDate: dueDate }))
-    setNewTodoInput('')
-    setDueDate('')
-    setTimeout(dispatch(fetchData()), 4000)
+    if (dueDate !== '' && newTodoInput !== '') {
+      dispatch(tasks.actions.postNewTodoAPI({ description: newTodoInput, dueDate: dueDate }))
+      setNewTodoInput('')
+      setDueDate('')
+      setTimeout(dispatch(fetchData()), 4000)
+    }
   }
 
   return (
@@ -105,7 +107,7 @@ const NewTodo = () => {
         <BtnWrapper>
           <TodoBtn 
             type="button"
-            onClick={dueDate !== '' && newTodoInput !== '' && (onButtonClick)}
+            onClick={onButtonClick}
           >
             +
           </TodoBtn>

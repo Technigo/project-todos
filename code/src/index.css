@@ -18,7 +18,7 @@ code {
   border-radius: 4px;
   background-color: #fcfcfc;
   font-family: 'Montserrat', sans-serif;
-  color: #8B98F9;
+  color: #ca8a8b;
   padding-left: 10px;
   padding-right: 10px;
   line-height: 1;
@@ -50,6 +50,10 @@ code {
 .flatpickr-day.today {
   color: #ca8a8b;
 } 
+
+.flatpickr-day.selected {
+  background-color: #ca8a8b;
+}
 
 .flatpickr-calendar {
   font-family: 'Montserrat', sans-serif;
