@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import { BsFillPlusCircleFill } from 'react-icons/bs'
 
 import { fetchData, tasks } from '../reducers/tasks'
 
@@ -17,6 +18,7 @@ const Form = styled.form`
   width: 100%;
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
@@ -28,13 +30,13 @@ const TodoBtn = styled.button`
   display: inline-block;
   width: 50px;
   height: 50px;
-  background-color: #ca8a8b;
   border: none;
-  font-size: 45px;
-  line-height: 45px;
-  color: #fff;
-  //border-radius: 50px;
+  font-size: 50px;
+  border-radius: 50px;
   cursor: pointer;
+  align-self: center;
+  background-color: #ffffff;
+  margin-right: 10px; 
 `
 const TodoInput = styled.input`
   width: 90%;
@@ -53,13 +55,10 @@ const TodoInput = styled.input`
   }
 `
 const Wrapper = styled.div`
+  width: 80%;
   display: flex;
   flex-direction: column;
   margin-left: 10px;
-`
-
-const BtnWrapper = styled.div`
-  align-self: center;
 `
 
 const NewTodo = () => {
@@ -101,14 +100,14 @@ const NewTodo = () => {
             onDateChange={onDateChange}
           />
         </Wrapper>
-        <BtnWrapper>
           <TodoBtn 
             type="button"
             onClick={onButtonClick}
           >
-            +
+            <BsFillPlusCircleFill
+              color="#ca8a8b"
+            />
           </TodoBtn>
-        </BtnWrapper>
       </Form>
     </Container>
   )
