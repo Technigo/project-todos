@@ -19,7 +19,11 @@ const Form = styled.form`
   display: flex;
   flex-direction: row;
   //justify-content: space-between;
+  background-color: #fff;
+  border-radius: 20px;
+  box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
   align-items: flex-end;
+  margin: 20px 0;
 `
 const TodoBtn = styled.button`
   -webkit-appearance: none;
