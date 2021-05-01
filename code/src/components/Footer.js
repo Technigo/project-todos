@@ -17,12 +17,10 @@ const Text = styled.h2 `
 
 const Footer = () => {
   return (
-    <>
      <FooterSection>
        <Text>Project Todo week 15, Technigo Bootcamp</Text>
        <Text>Maria Sparre</Text>
      </FooterSection>
-    </>
   )
 }
 

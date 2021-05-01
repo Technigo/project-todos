@@ -27,7 +27,7 @@ const Footer = styled.div `
   margin-top: auto; 
 `
 
-const FooterApp = () => {
+const FooterAppButtons = () => {
   const dispatch = useDispatch()
 
   return (
@@ -44,4 +44,4 @@ const FooterApp = () => {
   )
 }
 
-export default FooterApp
+export default FooterAppButtons

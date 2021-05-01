@@ -15,10 +15,12 @@ const ListView = styled.div `
   padding: 10px 0; 
   font-size: 15px; 
   align-items: center; 
+  word-break: break-all;
 `
 const DescriptionTask = styled.p `
   text-align: center; 
   align-items: center; 
+  margin: 0 8px 0 17px; 
 `
 const DateStamp = styled.p `
   font-size: 10px; 
