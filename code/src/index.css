@@ -1,4 +1,7 @@
 body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -6,8 +9,64 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.main-container {
+  margin: 50px;
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+  border: 2px solid gray;
+  box-shadow: 8px 8px 0px 3px gray;
+  height: 500px; 
+  width: 300px;
+} 
+ input[type=checkbox]:checked + p {  /*how can this be written in styled-components? */
+  text-decoration-line: line-through;
+  text-decoration-style: solid;
+  color: pink;
+}
+input[type="checkbox"] {
+  position: relative;
+  width: 0;
+  height: 0;
+  display: flex; 
+  align-items: center; 
+  margin-left: 10px; 
+}
+input[type="checkbox"]:after {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  font-size: 15px;
+  color: gray;
+  content: '\2713'; /* why is this not working in firefox?  */
+  overflow-wrap: break-word; 
+  word-wrap: break-word;
+}
+input[type="checkbox"]:checked:after {
+  color: pink;
+}
+input[type="text"]{
+  border: none;
+  width: 100%;
+  padding-left: 10px;
+  margin-bottom: 15px;
+  overflow-wrap: break-word; 
+  word-wrap: break-word;
+}
+input:focus {
+  outline: none;
+}
+p {
+  margin:  0; 
+  padding: 0; 
+  color: gray;
+}
+
+/* 
+background pic around the container, howTO? 
+chrome only works - if not looses the check box
+avoid buttons to be covered when looong texts written */

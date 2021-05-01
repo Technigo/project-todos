@@ -1,19 +1,18 @@
-# Technigo React Starter App
+Project 15, Create a todo app with React and Reux
+🔵 
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+- Your app should list all todo tasks - completed or uncompleted
+- You should be able to mark an uncompleted task as complete (and change it back to uncomplete)
+- You should be able to add and remove tasks
+- Your app should show a count of either all todos, or all uncomplete todos (or both)
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
 
-## Usage
+🔴  Red Level (Intermediary Goals)**
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+- Add a timestamp for each task indicating when it was created. 
+- Add a **clear all** button to set all tasks to *done* status. 
+- Use styled-components instead of vanilla CSS to do your styling
 
-Alternatively, if you don't want a new git repo on your account;
+## Live site
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+Link to live site: https://confident-aryabhata-1eb380.netlify.app
