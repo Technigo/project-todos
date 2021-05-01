@@ -21,6 +21,9 @@ const Form = styled.form`
   align-items: flex-end;
 `
 const TodoBtn = styled.button`
+  -webkit-appearance: none;
+  -webkit-border-radius: none;
+  //-webkit-border: none;
   width: 50px;
   height: 50px;
   background-color: #ca8a8b;
@@ -28,9 +31,6 @@ const TodoBtn = styled.button`
   font-size: 45px;
   line-height: 45px;
   color: #fff;
-  -webkit-appearance: none;
-  -webkit-border-radius: none;
-  -webkit-border: none
   border-radius: 50px;
   cursor: pointer;
   box-shadow: 2px 1px 15px rgb(148 124 124 / 68%);
