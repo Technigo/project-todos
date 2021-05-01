@@ -18,7 +18,7 @@ const Form = styled.form`
   width: 90%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  //justify-content: space-between;
   align-items: flex-end;
 `
 const TodoBtn = styled.button`
