@@ -30,6 +30,7 @@ const TodoBtn = styled.button`
   color: #fff;
   -webkit-appearance: none;
   -webkit-border-radius: none;
+  -webkit-border: none
   border-radius: 50px;
   cursor: pointer;
   box-shadow: 2px 1px 15px rgb(148 124 124 / 68%);
