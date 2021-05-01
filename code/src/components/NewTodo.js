@@ -33,7 +33,7 @@ const TodoBtn = styled.button`
   font-size: 45px;
   line-height: 45px;
   color: #fff;
-  border-radius: 50px;
+  //border-radius: 50px;
   cursor: pointer;
 `
 const TodoInput = styled.input`
