@@ -9,7 +9,7 @@ import CustomDatePicker from './CustomDatePicker'
 //Styled components
 const Container = styled.div`
   display: flex;
-  padding: 10px;
+  //padding: 10px;
   font-family: 'Montserrat', sans-serif;
   box-sizing: border-box;
 `
@@ -61,8 +61,8 @@ const Wrapper = styled.div`
 `
 
 const BtnWrapper = styled.div`
-  width: 50px;
-  height: 50px;
+  //width: 50px;
+  //height: 50px;
   align-self: center;
   margin-right: 10px;
 `
