@@ -27,6 +27,10 @@ export const FilterTasks = () => {
   };
 
   return (
-    <MenuButtons array={filterArr} name="Filter" handleClick={handleClick} />
+    <MenuButtons 
+    array={filterArr} 
+    name="Filter" 
+    handleClick={handleClick} />
+    
   );
 };

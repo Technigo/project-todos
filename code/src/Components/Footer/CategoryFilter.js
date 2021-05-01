@@ -71,7 +71,9 @@ export const CategoryFilter = () => {
             onClick={() => handleClick(category.name)}
           >
             {handleTaskNumber(category.name)}
-            <Image active={category.name === cat} src={category.symbol} />
+            <Image 
+              active={category.name === cat} 
+              src={category.symbol} />
           </Button>
         </Wrapper>
       ))}

@@ -32,7 +32,10 @@ export const TodoList = () => {
       </SortContainer>
       {handleEmptyState() ? (
         <EmptyState>
-          <LottieAnimation lotti={noteIcon} height={300} width={300} />
+          <LottieAnimation 
+            lotti={noteIcon} 
+            height={300} 
+            width={300} />
         </EmptyState>
       ) : (
         <Main>

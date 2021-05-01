@@ -11,7 +11,6 @@ export const Task = ({ id, isComplete, description}) => {
  const currentTime =  new Date(Date.now());
 
   return (
-    <>
       <TaskContainer>
         <Label
           htmlFor={id}
@@ -30,7 +29,6 @@ export const Task = ({ id, isComplete, description}) => {
           <TaskText complete={isComplete}>{description}</TaskText>
         </Label>
       </TaskContainer>
-    </>
   );
 };
 

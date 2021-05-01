@@ -14,7 +14,7 @@ export const SortTasks = () => {
   const dispatch = useDispatch();
 
   const handleClick = (item) => {
-    setOrder(!order);
+    setOrder(!order)
     dispatch(todos.actions.sortTodos({ sortBy: item.value, order: order }));
   };
 
@@ -23,7 +23,6 @@ export const SortTasks = () => {
       name="Sort"
       array={sortArr}
       handleClick={handleClick}
-      order={order}
     />
   );
 };

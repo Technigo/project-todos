@@ -26,6 +26,7 @@ export const CreateNewTask = () => {
     if (newTask === "") {
       alert("You must add text!");
     } else {
+      console.log(due)
       dispatch(
         todos.actions.createNewTodo({
           task: newTask,

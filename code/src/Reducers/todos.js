@@ -72,28 +72,20 @@ export const todos = createSlice({
       store.items = store.updatedTodos;
     },
     sortTodos: (store, action) => {
-      const { sortBy, order } = action.payload;
+      const { sortBy, order} = action.payload;
       store.updatedTodos = store.items.map((task) => task);
 
-      //sort
-      if (order) {
+     const operator = (a,b) => {
+      return order
+      ? Number(a[sortBy]) - Number(b[sortBy])
+      : Number(b[sortBy]) - Number(a[sortBy]) 
+     } 
+       
         if (sortBy === "isComplete") {
-          store.updatedTodos.sort(
-            (a, b) => Number(b[sortBy]) - Number(a[sortBy])
-          );
+          store.updatedTodos.sort((a, b) => operator(a,b));
         } else {
-          store.updatedTodos.sort((a, b) => (a[sortBy] > b[sortBy] ? 1 : -1));
+          store.updatedTodos.sort((a, b) =>  a < b ? 1 : -1);
         }
-        //reverse sort
-      } else {
-        if (sortBy === "isComplete") {
-          store.updatedTodos.sort(
-            (a, b) => Number(a[sortBy]) - Number(b[sortBy])
-          );
-        } else {
-          store.updatedTodos.sort((a, b) => (b[sortBy] > a[sortBy] ? 1 : -1));
-        }
-      }
 
       //update sorting value
       store.updateSort = store.sort.map((sort) => {

@@ -21,7 +21,9 @@ export const TaskFooter = ({ deadline, id, isComplete, completedAt }) => {
     <Wrapper>
       <TextContainer>
           {checkStatus()}
-        <DeadlineCountdown deadline={deadline} isComplete={isComplete}/>
+        <DeadlineCountdown 
+          deadline={deadline} 
+          isComplete={isComplete}/>
       </TextContainer>
       <ButtonContainer>
         <Button

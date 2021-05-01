@@ -1,18 +1,21 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-export const MenuButtons = ({ name, array, handleClick, order }) => {
+export const MenuButtons = ({ name, array, handleClick, order}) => {
   const [selected, setSelected] = useState();
   const [indicator, setIndicator] = useState();
+  const [arrow, setArrow] = useState(true);
 
   const onClickEvent = (item) => {
     if (name === "Sort") {
-      order ? setIndicator("▲") : setIndicator("▼");
+      setArrow(!arrow)
+      arrow ? setIndicator("▲") : setIndicator("▼");  
     } else {
       setIndicator("✔");
     }
     setSelected(item.name);
     handleClick(item);
+
   };
 
   return (
@@ -24,9 +27,9 @@ export const MenuButtons = ({ name, array, handleClick, order }) => {
             key={item.name}
             selected={selected === "Reset" ? false : selected === item.name}
             indicator={indicator}
-            onClick={() => {
-              onClickEvent(item);
-            }}
+            onClick={() => 
+              onClickEvent(item)
+            }
           >
             {item.name}
           </Button>
@@ -63,7 +66,7 @@ const Menu = styled.button`
     border-color:  #d45d79;
     border-style: solid;
     border-width: 1px;
-
+  }
 `;
 
 const Container = styled.div`
