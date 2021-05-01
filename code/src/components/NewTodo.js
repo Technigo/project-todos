@@ -10,15 +10,12 @@ import CustomDatePicker from './CustomDatePicker'
 const Container = styled.div`
   display: flex;
   justify-content: center;
-  //padding: 10px;
   font-family: 'Montserrat', sans-serif;
-  //box-sizing: border-box;
 `
 const Form = styled.form`
   width: 100%;
   display: flex;
   flex-direction: row;
-  //justify-content: space-between;
   background-color: #fff;
   border-radius: 20px;
   box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
@@ -27,9 +24,6 @@ const Form = styled.form`
   padding: 10px;
 `
 const TodoBtn = styled.button`
-  -webkit-appearance: none;
-  -webkit-border-radius: none;
-  //-webkit-border: none;
   width: 50px;
   height: 50px;
   background-color: #ca8a8b;
@@ -39,7 +33,6 @@ const TodoBtn = styled.button`
   color: #fff;
   border-radius: 50px;
   cursor: pointer;
-  //box-shadow: 2px 1px 15px rgb(148 124 124 / 68%);
 `
 const TodoInput = styled.input`
   margin: 0;
@@ -63,10 +56,7 @@ const Wrapper = styled.div`
 `
 
 const BtnWrapper = styled.div`
-  //width: 50px;
-  //height: 50px;
   align-self: center;
-  //margin-right: 10px;
 `
 
 const NewTodo = () => {
