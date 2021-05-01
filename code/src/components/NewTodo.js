@@ -65,7 +65,7 @@ const BtnWrapper = styled.div`
   //width: 50px;
   //height: 50px;
   align-self: center;
-  margin-right: 10px;
+  //margin-right: 10px;
 `
 
 const NewTodo = () => {
@@ -95,6 +95,14 @@ const NewTodo = () => {
   return (
     <Container>
       <Form>
+      <BtnWrapper>
+          <TodoBtn 
+            type="button"
+            onClick={onButtonClick}
+          >
+            +
+          </TodoBtn>
+        </BtnWrapper>
         <Wrapper>
           <TodoInput 
             type="text"
@@ -107,14 +115,6 @@ const NewTodo = () => {
             onDateChange={onDateChange}
           />
         </Wrapper>
-        <BtnWrapper>
-          <TodoBtn 
-            type="button"
-            onClick={onButtonClick}
-          >
-            +
-          </TodoBtn>
-        </BtnWrapper>
       </Form>
     </Container>
   )
