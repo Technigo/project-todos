@@ -11,15 +11,16 @@ import Header from './components/Header'
 const MainContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  width: 100%;
+  height: 600px;
+  width: 280px;
   justify-content: space-between;
     @media (min-width: 768px) {
-      height: 80vh;
-      width: 50vw;
+      height: 400px;
+      width: 280px;
     } 
     @media (min-width: 1200px) {
-      width: 50vw;
+      width: 250px;
+      height: 400px;
     } 
 `
 

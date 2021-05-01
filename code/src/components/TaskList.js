@@ -7,7 +7,6 @@ import EmptyStateAnimation from './EmptyStateAnimation'
 
 const TaskContainer = styled.div`
     overflow: auto;
-    width: 100%;
 `
 
 const SingleTaskContainer = styled.div`
@@ -18,7 +17,7 @@ const SingleTaskContainer = styled.div`
     margin-top: 4px;
     margin-bottom: 8px;
     border-bottom: 1px solid black;
-    word-break: break-word
+    word-break: break-word;
 `
 
 const Checkbox = styled.input`
@@ -65,7 +64,7 @@ const TaskList = () => {
                             />
                             <Normaltext>{task.description}</Normaltext>
                             <DeleteButton 
-                                onClick={() => dispatch(tasks.actions.removeTask(task.id))}>
+                                onClick={() => dispatch(tasks.actions.removeTask(index))}>
                                 <ButtonText>X</ButtonText>
                             </DeleteButton>
                         </SingleTaskContainer>

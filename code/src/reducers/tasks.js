@@ -25,6 +25,9 @@ const tasks = createSlice({
         addTask: (store, action) => { //store is state of the slice , empty array
             store.items = [...store.items, action.payload]
         },
+        deleteAll: (store,action) => {
+            store.items=[]
+        }
     }
 })
 

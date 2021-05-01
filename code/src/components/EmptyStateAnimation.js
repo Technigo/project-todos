@@ -3,7 +3,8 @@ import lottie from 'lottie-web'
 import styled from 'styled-components/macro'
 
 const LottieContainer = styled.div`
-  height: 40%
+  height: 40%;
+  width: 100%;
 `
 
 const EmptyStateAnimation = () => {

@@ -9,17 +9,18 @@ const InputContainer = styled.form`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    margin-bottom: 20px;    
+    margin-bottom: 20px; 
+    width: 100%;
 `
 
 const TaskInput = styled.input`
     margin: 30px 0 10px 0;
-    width: 100%;
     border: none;
     border-bottom: 1px solid black;
     background-color: transparent;
-    padding: 5px;
-    outline: none
+    padding-bottom: 5px;
+    outline: none;
+    width: 100%;   
 `
 
 const SubmitButton = styled.button`
