@@ -15,7 +15,7 @@ const Container = styled.div`
   //box-sizing: border-box;
 `
 const Form = styled.form`
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   //justify-content: space-between;
@@ -24,6 +24,7 @@ const Form = styled.form`
   box-shadow: 0px 3px 15px rgba(0,0,0,0.1);
   align-items: flex-end;
   margin: 20px 0;
+  padding: 10px;
 `
 const TodoBtn = styled.button`
   -webkit-appearance: none;
@@ -38,21 +39,17 @@ const TodoBtn = styled.button`
   color: #fff;
   border-radius: 50px;
   cursor: pointer;
-  box-shadow: 2px 1px 15px rgb(148 124 124 / 68%);
+  //box-shadow: 2px 1px 15px rgb(148 124 124 / 68%);
 `
 const TodoInput = styled.input`
-  box-sizing: border-box;
   margin: 0;
   margin-bottom: 10px;
   padding: 5px;
-  width: 100%;
   height: 38px;
   border: none;
   border-bottom: 1px solid #ca8a8b;
   border-radius: 4px;
-  background-color: #fcfcfc;
   font-size: 20px;
-  box-shadow: 1px 1px 20px 0px rgb(177 153 153 / 68%);
 
   &::placeholder {
     color: #ca8a8b;
@@ -60,9 +57,9 @@ const TodoInput = styled.input`
   }
 `
 const Wrapper = styled.div`
-  width: 70%;
   display: flex;
   flex-direction: column;
+  margin-left: 10px;
 `
 
 const BtnWrapper = styled.div`
