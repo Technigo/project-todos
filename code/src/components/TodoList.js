@@ -11,7 +11,7 @@ import EmptyState from './EmptyState'
 
 //Styled components
 const Section = styled.section`
-  width: 100%;
+  width: 90%;
 
   @media (min-width: 768px) {
     width: 60%;

@@ -14,7 +14,7 @@ const Container = styled.div`
 `
 const Form = styled.form`
   box-sizing: border-box;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: row;
   background-color: #fff;

@@ -18,7 +18,7 @@ const TopHeader = styled.header`
 ` 
 
 const TopHeaderWrapper = styled.div`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
