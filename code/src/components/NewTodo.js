@@ -25,6 +25,7 @@ const Form = styled.form`
   padding: 10px;
 `
 const TodoBtn = styled.button`
+  display: block;
   width: 50px;
   height: 50px;
   background-color: #ca8a8b;
