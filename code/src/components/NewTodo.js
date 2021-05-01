@@ -9,12 +9,13 @@ import CustomDatePicker from './CustomDatePicker'
 //Styled components
 const Container = styled.div`
   display: flex;
+  justify-content: center;
   //padding: 10px;
   font-family: 'Montserrat', sans-serif;
-  box-sizing: border-box;
+  //box-sizing: border-box;
 `
 const Form = styled.form`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
