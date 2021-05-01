@@ -13,7 +13,7 @@ const Container = styled.div`
   font-family: 'Montserrat', sans-serif;
 `
 const Form = styled.form`
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-direction: row;
   background-color: #fff;
