@@ -14,11 +14,11 @@ const Section = styled.section`
   width: 100%;
 
   @media (min-width: 768px) {
-    width: 80%;
+    width: 60%;
   }
 
-  @media (min-width: 998px) {
-    width: 50%;
+  @media (min-width: 1440px) {
+    width: 30%;
   }
 `
 

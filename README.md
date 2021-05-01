@@ -29,7 +29,7 @@ When there are no todos to be displayed an empty state component is mounted and 
 
 ## View it live
 
-View the todo application live here: https://sandras-todos.netlify.app/
+View the todo application live here: https://elated-gates-0c365e.netlify.app/
 
 
 Thank you for reading! 
