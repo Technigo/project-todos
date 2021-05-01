@@ -1,7 +1,9 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
-import { FaTrashAlt, FaEdit, FaRegWindowClose, FaCheck } from 'react-icons/fa'
+import { FaRegWindowClose, FaCheck } from 'react-icons/fa'
+import { IoTrashBinOutline } from 'react-icons/io5'
+import { AiOutlineEdit, AiOutlineCheck, AiOutlineClose } from 'react-icons/ai'
 
 import { tasks } from '../reducers/tasks'
 
@@ -18,6 +20,12 @@ const Btn = styled.button`
   background-color: transparent;
   cursor: pointer;
   padding: 0;
+  color: #ca8a8b;
+  font-size: 22px;
+
+  &:hover {
+    color: #D6A1A2;
+  }
 `
 
 const TodoItemBtns = ({ id, editMode, onSaveEdit }) => {
@@ -36,19 +44,13 @@ const TodoItemBtns = ({ id, editMode, onSaveEdit }) => {
             type="button" 
             onClick={onSaveEdit}
           >
-            <FaCheck 
-              color="#ca8a8b" 
-              size="20px" 
-            />
+            <AiOutlineCheck />
           </Btn>
           <Btn 
             type="button" 
             onClick={() => dispatch(tasks.actions.toggleEdit(id))}
           >
-            <FaRegWindowClose 
-              color="#ca8a8b" 
-              size="20px" 
-            />
+            <AiOutlineClose />
           </Btn>
         </>
       )}
@@ -58,19 +60,13 @@ const TodoItemBtns = ({ id, editMode, onSaveEdit }) => {
             type="button" 
             onClick={() => dispatch(tasks.actions.toggleEdit(id))}
           >
-            <FaEdit 
-              color="#ca8a8b"  
-              size="20px" 
-            />
+            <AiOutlineEdit />
           </Btn>
           <Btn 
             type="button" 
             onClick={() => onDeleteTodo(id)}
           >
-            <FaTrashAlt 
-              color="#ca8a8b"
-              size="18px"
-            /> 
+            <IoTrashBinOutline /> 
           </Btn>
         </>
       )}  

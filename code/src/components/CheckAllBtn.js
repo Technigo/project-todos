@@ -14,6 +14,10 @@ const Btn = styled.button`
   margin-top: 10px;
   cursor: pointer;
   box-shadow: 2px 1px 15px rgb(148 124 124 / 68%);
+
+  &:hover {
+    background-color: #D6A1A2;
+  }
 `
 
 const CheckAllBtn = () => {

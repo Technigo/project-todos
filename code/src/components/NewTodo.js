@@ -37,6 +37,11 @@ const TodoBtn = styled.button`
   align-self: center;
   background-color: #ffffff;
   margin-right: 10px; 
+  color: #ca8a8b;
+  
+  &:hover {
+    color: #D6A1A2;
+  }
 `
 const TodoInput = styled.input`
   width: 90%;
@@ -104,9 +109,7 @@ const NewTodo = () => {
             type="button"
             onClick={onButtonClick}
           >
-            <BsFillPlusCircleFill
-              color="#ca8a8b"
-            />
+            <BsFillPlusCircleFill />
           </TodoBtn>
       </Form>
     </Container>

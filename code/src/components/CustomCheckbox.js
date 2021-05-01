@@ -17,7 +17,7 @@ const Indicator = styled.div`
   margin-left: 5px;
   position: absolute;
   border-radius: 50%;
-  border: 2px solid #ca8a8b;
+  border: 1px solid #ca8a8b;
 
   &::before {
     content: '';
@@ -47,6 +47,12 @@ const Indicator = styled.div`
   }
   ${Input}:checked + &::before {
     display: block;
+  }
+  ${Input}:hover + &::before{
+    background-color: #D6A1A2;
+  }
+  ${Input}:hover + & {
+    background-color: #f6e6e4;
   }
 `
 
