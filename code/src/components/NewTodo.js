@@ -88,14 +88,6 @@ const NewTodo = () => {
   return (
     <Container>
       <Form>
-      <BtnWrapper>
-          <TodoBtn 
-            type="button"
-            onClick={onButtonClick}
-          >
-            +
-          </TodoBtn>
-        </BtnWrapper>
         <Wrapper>
           <TodoInput 
             type="text"
@@ -108,6 +100,14 @@ const NewTodo = () => {
             onDateChange={onDateChange}
           />
         </Wrapper>
+        <BtnWrapper>
+          <TodoBtn 
+            type="button"
+            onClick={onButtonClick}
+          >
+            +
+          </TodoBtn>
+        </BtnWrapper>
       </Form>
     </Container>
   )
