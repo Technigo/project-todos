@@ -8,7 +8,7 @@ import Header from "./components/Header";
 import NewTask from "./components/NewTask";
 
 const reducer = combineReducers({
-  todos: todos.reducer,
+  todos: todos.reducer
 });
 
 const store = configureStore({ reducer });

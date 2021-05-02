@@ -20,23 +20,17 @@ const TodoList = () => {
                 checked={todo.isComplete}
                 onChange={() => {
                   dispatch(todos.actions.toggleComplete(todo.id));
-                }}
-              />
+                }}/>
 
-              <p
-                className="todo-list-item-text"
-                onClick={() => {
-                  dispatch(todos.actions.toggleComplete(todo.id));
-                }}
-              >
+              <p className="todo-list-item-text">
                 {todo.description}
               </p>
               <button
+                type="submit"
                 className="todo-list-item-button"
                 onClick={() => {
                   dispatch(todos.actions.removeItem(todo.id));
-                }}
-              >
+                }}>
                 Delete Task
               </button>
             </div>

@@ -19,12 +19,12 @@ const NewTask = () => {
   const handleOnClick = (event) => {
     event.preventDefault();
     if (inputValue === "") {
-      alert("You can't add an empty todo.");
+      // alert("You can't add an empty todo.");
     } else {
       newTodo = {
         id: uniqid(),
         description: inputValue,
-        isComplete: false,
+        isComplete: false
       };
     }
     dispatch(todos.actions.addItem(newTodo));
@@ -38,9 +38,8 @@ const NewTask = () => {
             className="new-task-input"
             type="text"
             value={inputValue}
-            onChange={handleChange}
-          />
-          <button className="new-task-button" onClick={handleOnClick}>
+            onChange={handleChange}/>
+          <button type="submit" className="new-task-button" onClick={handleOnClick}>
             Add New Task
           </button>
         </form>

@@ -14,11 +14,11 @@ const Header = () => {
         <div className="header-section-content">
           <p>{items} Todo</p>
           <button
+            type="submit"
             className="header-button"
             onClick={() => {
               dispatch(todos.actions.removeAllItems());
-            }}
-          >
+            }}>
             Clear all
           </button>
         </div>
