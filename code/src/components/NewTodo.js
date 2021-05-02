@@ -80,13 +80,18 @@ const NewTodo = () => {
     setDueDate(date[0].toJSON())
   }
 
+  const refetchList = () => {
+    console.log('refetch list')
+    dispatch(fetchData())
+  }
+
   const onButtonClick = (event) => {
     event.preventDefault()
     if (dueDate !== '' && newTodoInput !== '') {
-      dispatch(tasks.actions.postNewTodoAPI({ description: newTodoInput, dueDate: dueDate }))
+      dispatch(tasks.actions.postNewTodo({ description: newTodoInput, dueDate: dueDate }))
       setNewTodoInput('')
       setDueDate('')
-      setTimeout(dispatch(fetchData()), 4000)
+      setTimeout(refetchList, 6000)
     }
   }
 

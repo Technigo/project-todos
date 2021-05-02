@@ -27,8 +27,8 @@ const Indicator = styled.div`
     border-radius: 50%;
     background-color: #ca8a8b;
     display: none;
-    top: -1.5px;
-    left: -2px;
+    top: -1px;
+    left: -1px;
   }
   &::after {
     content: '';
@@ -38,7 +38,7 @@ const Indicator = styled.div`
     border: solid #fff;
     border-width: 0 4px 4px 0;
     top: 4px;
-    left: 10px;
+    left: 11px;
     transform: rotate(45deg);
     display: none;
   }

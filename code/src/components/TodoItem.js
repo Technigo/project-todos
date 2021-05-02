@@ -36,6 +36,8 @@ const Description = styled.p`
   font-size: 18px;
   width: 60%;
   margin-left: 10px;
+  color: ${props => props.complete ? '#ca8a8b' : '#000000'};
+  text-decoration: ${props => props.complete ? 'line-through' : ''};
 `
 
 const TodoInput = styled.input`
@@ -54,12 +56,15 @@ const TodoInput = styled.input`
 
 const Date = styled.span`
   font-size: 12px;
+  color: ${props => props.passedDue && !props.complete ? '#C90000' : '#000000'};
+  font-weight: ${props => props.passedDue && !props.complete ? '500' : '400'};
 `
 
 const TodoItem = ({ id, text, complete, editMode, dueDate }) => {
   const [description, setDescription] = useState(text)
   const dispatch = useDispatch()
   const taskDueDate = moment(dueDate).format('MMM Do')
+  const passedDue = moment().format() > dueDate
 
   const onInputChange = (event) => {
     setDescription(event.target.value)
@@ -79,14 +84,16 @@ const TodoItem = ({ id, text, complete, editMode, dueDate }) => {
         complete={complete}
         onToggleComplete={onToggleComplete}
       />
-      {editMode ? <TodoInput type="text" value={description} onChange={onInputChange}/> : <Description>{text}</Description>}
+      {editMode ? <TodoInput type="text" value={description} onChange={onInputChange}/> : <Description complete={complete}>{text}</Description>}
       <Wrapper>
         <TodoItemBtns 
           id={id} 
           editMode={editMode} 
           onSaveEdit={onSaveEdit} 
         />
-        <Date>{taskDueDate}</Date>
+        {!complete && (
+          <Date passedDue={passedDue} complete={complete}>{taskDueDate}</Date>
+        )} 
       </Wrapper>
     </Container>
   )     

@@ -1,7 +1,6 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
-import { FaRegWindowClose, FaCheck } from 'react-icons/fa'
 import { IoTrashBinOutline } from 'react-icons/io5'
 import { AiOutlineEdit, AiOutlineCheck, AiOutlineClose } from 'react-icons/ai'
 

@@ -38,7 +38,11 @@ export const tasks = createSlice({
         return { _id: item._id, id: item.id, text: item.text, complete: item.complete, created: item.created, editMode: item.editMode, dueDate: item.dueDate }
       })
 
-      store.items = addFetchedData
+      const sortedData = addFetchedData.sort((a, b) => {
+        return new Date(a.dueDate) - new Date(b.dueDate)
+      })
+
+      store.items = sortedData
     },
 
     toggleComplete: (store, action) => {
@@ -77,10 +81,11 @@ export const tasks = createSlice({
       store.allChecked = checkAllChecked
     }, 
 
-    postNewTodoAPI: (store, action) => {
+    postNewTodo: (store, action) => {
       const {description, dueDate} = action.payload
       const uniqId = uniqid()
       const createdWhen = moment().format()
+
       const newTodo = { "id": `${uniqId}`, "text": `${description}`, "complete": `${false}`, "created": `${createdWhen}`, "editMode": `${false}`, "dueDate": `${dueDate}` }
       const settings = {
         "async": true,
@@ -98,8 +103,11 @@ export const tasks = createSlice({
       $.ajax(settings).done((res) => {
       })
       
-      const updateItems =  { id: uniqId, text: description, complete: false, created: createdWhen, editMode: false, dueDate: dueDate }
-      store.items = [...store.items, updateItems]
+      const updateItems = [...store.items, { _id: '', id: uniqId, text: description, complete: false, created: createdWhen, editMode: false, dueDate: dueDate }]
+      const sortItems = updateItems.sort((a, b) => {
+        return new Date(a.dueDate) - new Date(b.dueDate)
+      })
+      store.items = sortItems
     },
 
     removeTodo: (store, action) => {
