@@ -28,16 +28,16 @@ export const App = () => {
 }
 
 const Main = styled.div`
-background-color: #d8ac9c;
-background-image:  radial-gradient(#1b2021 1px, transparent 1px), radial-gradient(#1b2021 1px, #d8ac9c 1px);
-background-size: 40px 40px;
-background-position: 0 0,20px 20px;
-min-height: 100vh;
-padding: 30px 0;
-  @media (min-width: 768px) {
-    padding: 60px 0;
-  }
-  @media (min-width: 1024px) {
-    padding: 15px 0;
-  }
+  background-color: #d8ac9c;
+  background-image:  radial-gradient(#1b2021 1px, transparent 1px), radial-gradient(#1b2021 1px, #d8ac9c 1px);
+  background-size: 40px 40px;
+  background-position: 0 0,20px 20px;
+  min-height: 100vh;
+  padding: 30px 0;
+    @media (min-width: 768px) {
+      padding: 60px 0;
+    }
+    @media (min-width: 1024px) {
+      padding: 15px 0;
+    }
 `

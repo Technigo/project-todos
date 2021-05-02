@@ -22,25 +22,25 @@ const NoToDos = () => {
 export default NoToDos
 
 const NoTaskContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 
-width: 80%;
-height: 320px;
-margin: auto;
-background-color: white;
-padding: 10px;
- @media (min-width: 768px) {
-  width: 60%;
- }
- @media (min-width: 1024px) {
-  width: 40%;
- }
+  width: 80%;
+  height: 320px;
+  margin: auto;
+  background-color: white;
+  padding: 10px;
+  @media (min-width: 768px) {
+    width: 60%;
+  }
+  @media (min-width: 1024px) {
+    width: 40%;
+  }
 `
 const NoTaskText = styled.h2`
-font-family: 'Montserrat Alternates', sans-serif;
-font-size: 20px;
-font-weight: 200;
-margin: auto;
+  font-family: 'Montserrat Alternates', sans-serif;
+  font-size: 20px;
+  font-weight: 200;
+  margin: auto;
 `
