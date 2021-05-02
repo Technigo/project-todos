@@ -11,3 +11,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/*STYLING CALENDAR*/
+.testing .bx--date-picker__input {
+  border-bottom: 1px solid #ca8a8b;
+  border-radius: 4px;
+  font-family: 'Montserrat', sans-serif;
+  color: #ca8a8b;
+  padding-left: 10px;
+  padding-right: 10px;
+  line-height: 1;
+}
+
+.testing .bx--date-picker__input::placeholder {
+  color: #ca8a8b;
+}
+
+.testing .bx--date-picker__icon {
+  fill: #ca8a8b;
+  padding-left: 0;
+  margin-left: auto;
+}
+
+.bx--date-picker.bx--date-picker--single .bx--date-picker__input {
+  width: 150px;
+}
+
+.flatpickr-weekday {
+  color: #ca8a8b;
+}
+
+.flatpickr-day.today::after {
+  background-color: #ca8a8b;
+}
+
+.flatpickr-day.today {
+  color: #ca8a8b;
+} 
+
+.flatpickr-day.selected {
+  background-color: #ca8a8b;
+}
+
+.flatpickr-calendar {
+  font-family: 'Montserrat', sans-serif;
+}
