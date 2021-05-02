@@ -96,7 +96,7 @@ const Text = styled.p`
   font-size: 18px;
   width: 75%;
   margin-left: 23px;
-  overflow: scroll;
+  overflow: auto;
   overflow-wrap: break-word;
 
   @media (min-width: 767px){
