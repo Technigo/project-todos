@@ -1,13 +1,23 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+This is TODOS -app project which contains a task list where user can add and remove tasks and mark tasks complete or uncomplete. The app shows a count of all and uncomplete todos. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Learning goals
 
-## The problem
+The purpose of this project was to learn:
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+* The role of Redux-toolkit 
+* How to create new slices, reducers and actions
+* What is immutability and how to work with it
+
+Techniques used:
+
+* React
+* Redux-toolkit
+* CSS3
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://honkoan-todo-app.netlify.app/
+
