@@ -1,9 +1,36 @@
-import React from 'react'
+import React from 'react';
+import { Provider } from 'react-redux';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import styled from 'styled-components';
+
+import { Todos } from './components/Todos';
+import { AddTodo } from './components/AddTodo';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { todos } from './reducers/todos';
+
+const reducer = combineReducers({
+  todos: todos.reducer
+})
+
+const store = configureStore({ reducer })
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <Provider store={store}>
+      <AppMainContainer>
+        <Header />
+        <Todos />
+        <AddTodo />
+        <Footer />
+      </AppMainContainer>
+    </Provider>
   )
 }
+
+const AppMainContainer = styled.div`
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    place-items: center;  
+`;
