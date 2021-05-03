@@ -39,7 +39,7 @@ code {
 .wrapper img {
   position: absolute;
   object-fit: cover;
-  height: 120%;
+  height: 110%;
   width: 90%;
 }
 
@@ -200,68 +200,17 @@ h1 {
 
 @media (min-width: 768px) {
   .wrapper {
-    width: 75%;
-  }
-
-  .wrapper img {
-    width: 75%;
-  }
-
-  .list-wrapper {
-    width: 65%;
-  }
-
-  h1 {
-    font-size: 54px;
-    margin-bottom: 15px;
-  }
-
-  .date-number-of-tasks-container {
-    font-size: 20px;
-  }
-
-  .input-box {
-    font-size: 20px;
-  }
-
-  .waste-bin {
-    max-width: 14px;
-    max-height: 20px;
-  }
-
-  .todo-wrapper {
-    margin-top: 12px;
-  }
-
-  .checkbox {
-    width: 1.7em;
-    height: 1.7em;
-  }
-
-  .checkbox:after {
-    width: 16px;
-    height: 16px;
-  }
-
-  .clear-button {
-    font-size: 22px;
-    padding: 9px 17px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .wrapper {
-    width: 50%;
+    width: 60%;
     max-width: 500px;
   }
 
   .wrapper img {
-    width: 50%;
+    width: 60%;
     max-width: 500px;
   }
 
   .list-wrapper {
-    width: 45%;
+    width: 50%;
     max-width: 400px;
   }
 
@@ -270,7 +219,7 @@ h1 {
   }
 
   .date-number-of-tasks-container {
-    font-size: 18px;
+    font-size: 20px;
   }
 
   .checkbox:after {
@@ -283,7 +232,6 @@ h1 {
   }
 
   .clear-button {
-    font-size: 18px;
-    padding: 7px 15px;
+    font-size: 20px;
   }
 }
