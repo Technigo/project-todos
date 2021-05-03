@@ -30,7 +30,7 @@ code {
   justify-content: center;
   align-items: center;
   box-sizing: content-box;
-  height: 95%;
+  height: 90%;
   width: 90%;
   border: 6px solid #aec3ab;
   background-color: #fcfaf8;
@@ -39,7 +39,7 @@ code {
 .wrapper img {
   position: absolute;
   object-fit: cover;
-  height: 110%;
+  height: 90%;
   width: 90%;
 }
 
@@ -103,7 +103,7 @@ h1 {
 
 .clear-button {
   position: absolute;
-  top: 78%;
+  top: 76%;
   font-family: "Dancing Script", cursive;
   font-size: 16px;
   border-radius: 30px;
