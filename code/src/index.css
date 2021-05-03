@@ -73,7 +73,7 @@ code {
 h1 {
   font-family: "Dancing Script", cursive;
   font-size: 42px;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
 }
 
 .todo-wrapper {
@@ -164,7 +164,6 @@ h1 {
   -webkit-appearance: none;
   -moz-appearance: none;
   -o-appearance: none;
-  appearance: none;
   cursor: pointer;
 }
 
@@ -214,6 +213,7 @@ h1 {
 
   h1 {
     font-size: 54px;
+    margin-bottom: 15px;
   }
 
   .date-number-of-tasks-container {
