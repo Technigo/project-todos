@@ -1,13 +1,32 @@
-# Project Todos
+# Project TO DO
+The project assinment was to create a TODO web application using React and Redux.The application should have the following functionalities: 
 
-Replace this readme with your own information about your project.
+- list all todo tasks - completed or uncompleted;
+- user should be able to mark an uncompleted task as complete (and change it back to uncomplete);
+- user should be able to add and remove tasks;
+- the app should show a count of either all todos, or all uncomplete todos (or both)
+- each task should have a time stamp indicating when it was created.
+- the app should have a date input in the form to set a due date on a task
+- the app should have filters to display completed/uncompleted tasks, tasks past deadline, and prioroty tasks 
+- mobile-first design 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Technologies used to build the app
+React
+Redux
+Redux toolkit
+useState()
+useEffect()
+useDispatch()
+useSelector()
+combineReducers() 
+configureStore ()
 
-## The problem
+## Libraries
+Material UI
+moment.js
+date-fns
+uniqid
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## View the app live
+Netlify : https://todos-planner-klimenko.netlify.app/
 
-## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
