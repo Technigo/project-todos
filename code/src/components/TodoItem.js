@@ -25,7 +25,7 @@ export const TodoItem =({ todo }) => {
             </TodoContainer> 
             <InfoTextContainer>
                 <Time>Added: {moment(todo.createdAt).fromNow()}</Time>
-                <Span>This task is: {todo.isComplete ? "Completed" : "Incompleted"}</Span>
+                <InfoText>This task is: {todo.isComplete ? "Completed" : "Incompleted"}</InfoText>
             </InfoTextContainer>
         </Main>
     )
@@ -69,7 +69,7 @@ const Time = styled.p`
     }
 `;
 
-const Span = styled.p`
+const InfoText = styled.p`
     font-size: 10px;
     color: #BDBDBD;
     padding-top: 7px;
