@@ -39,8 +39,7 @@ code {
 .wrapper img {
   position: absolute;
   object-fit: cover;
-  align-content: stretch;
-  height: 95%;
+  height: 100%;
   width: 90%;
 }
 
