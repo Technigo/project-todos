@@ -1,9 +1,9 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { todos } from "../reducers/todos";
+import { todos } from '../reducers/todos';
 
 export const DeleteButton = ({ todo }) => {
     const dispatch = useDispatch();

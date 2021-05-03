@@ -1,10 +1,11 @@
-import React from "react";
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
-import moment from "moment";
+import React from 'react';
+import { useDispatch } from 'react-redux';
 
-import { DeleteButton } from "./DeleteButton";
-import { todos } from "../reducers/todos";
+import styled from 'styled-components';
+import moment from 'moment';
+
+import { DeleteButton } from './DeleteButton';
+import { todos } from '../reducers/todos';
 
 
 export const TodoItem =({ todo }) => {
@@ -47,6 +48,7 @@ const TodoText = styled.p`
     margin: 5px;
     padding-left: 10px;
 `;
+
 const InfoTextContainer = styled.div`
     display: flex;
     width: 100%;
@@ -55,7 +57,6 @@ const InfoTextContainer = styled.div`
     border-bottom: 1px solid #474747;
     padding-bottom: 5px;
 `;
-
 
 const Time = styled.p`
     font-size: 10px;

@@ -1,15 +1,13 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { configureStore, combineReducers } from "@reduxjs/toolkit";
-import styled from "styled-components";
+import React from 'react';
+import { Provider } from 'react-redux';
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
+import styled from 'styled-components';
 
-
-import { Todos } from "./components/Todos";
-import { AddTodo } from "./components/AddTodo";
-
-import { todos } from "./reducers/todos";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
+import { Todos } from './components/Todos';
+import { AddTodo } from './components/AddTodo';
+import { Header } from './components/Header';
+import { Footer } from './components/Footer';
+import { todos } from './reducers/todos';
 
 const reducer = combineReducers({
   todos: todos.reducer

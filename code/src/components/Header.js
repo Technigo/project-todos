@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 
 
@@ -27,11 +27,11 @@ const Title = styled.p`
     font-size: 22px;
     margin: 0;
     margin-top: 15px;
-
     @media (min-width: 768px) {
             font-size: 30px;
         }
 `;
+
 const DateText = styled.p`
         margin-bottom: 10px;
         @media (min-width: 768px) {

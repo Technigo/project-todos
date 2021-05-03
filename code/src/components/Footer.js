@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import styled from "styled-components";
+import styled from 'styled-components';
 
 
 export const Footer =() => {
@@ -9,9 +9,8 @@ export const Footer =() => {
         <Article>
             <p>Made by Ylva Landoff Lindberg</p>
         </Article>
-
     )
-}
+};
 
 const Article = styled.article`
     display: flex;

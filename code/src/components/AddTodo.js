@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import uniqid from 'uniqid'
-import styled from "styled-components";
+import styled from 'styled-components';
 
 import { todos } from '../reducers/todos'
 
@@ -10,7 +10,7 @@ import { todos } from '../reducers/todos'
 export const AddTodo = () => {
     const [inputValue, setInputValue] = useState(''); 
     const dispatch = useDispatch();
- 
+
     const onItemAdd = (event) => {
         event.preventDefault();
         dispatch(
@@ -21,7 +21,6 @@ export const AddTodo = () => {
                 isComplete: false
             },
         })
-                
     );
     setInputValue('');
 };
@@ -48,11 +47,9 @@ const Form = styled.form`
     align-items: center;
     flex-direction: column;
     width: 300px;
-
     @media (min-width: 768px) {
         width: 400px;
     }
-
     @media (min-width: 1024px) {
         width: 500px;
         font-size: 18px;
@@ -69,15 +66,14 @@ const SubmitButton = styled.button`
     border: none;
     background-color: #F3E2A9;
     &:hover {
-            background-color: #D8D8D8;
-            cursor: pointer;
+        background-color: #D8D8D8;
+        cursor: pointer;
     }
-
         @media (min-width: 768px) {
         width: 480px;
     }
+`;
 
-  `
 const TextInput = styled.input`
     margin-top: 15px;
     border: none;
@@ -92,14 +88,12 @@ const TextInput = styled.input`
         font-weight: lighter;
         color: grey;
     }
-
     @media (min-width: 768px) {
         height: 38px;
         width: 480px;
     }
-
     @media (min-width: 1024px) {
         height: 38px;
         font-size: 18px;
     }
-    `;
+`;
