@@ -38,6 +38,7 @@ code {
 
 .wrapper img {
   position: absolute;
+  background-position: center center;
   object-fit: cover;
   height: 90%;
   width: 90%;
