@@ -1,11 +1,12 @@
-import React from 'react'
+import React, { useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import moment from 'moment'
 
 import todos from '../reducers/todos'
+import TodoAllDone from './TodoAllDone'
 
-const TaskItem = styled.div `
+const TaskItem = styled.div`
   box-shadow: 0 3px 4px #d6d2d2, 0 -0.5px 1px #d6d2d2;
   margin-bottom: 9px;
   padding: 10px 10px;
@@ -13,6 +14,19 @@ const TaskItem = styled.div `
   display: flex;
   justify-content: space-between;
   align-items: center;
+`
+
+const HideButton = styled.button`
+  padding: 7px;
+  background-color: #114e60;
+  color: #f4eee8;
+  border: none;
+  border-radius: 5px;
+  margin: 0 0 5px 5px;
+
+  &:hover {
+    background-color: #19718b;
+  }
 `
 
 const DeleteButton = styled.button`
@@ -93,38 +107,100 @@ const Checkbox = styled.label`
   position: relative;
 `
 
+const EmptyDivContainer = styled.div`
+  background-color: #114e60;
+  border-radius: 0 0 25px 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+`
+
+const EmptyDiv = styled.div`
+  background-color: #f5cebe;
+  padding: 10px 0;
+  text-align: center;
+  color: #767676;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 20px;
+`
+
 const TodoList = () => {
+  const [hideMode, setHideMode] = useState(false)
   const tasks = useSelector(store => store.todos.tasks)
-  console.log(tasks)
 
   const dispatch = useDispatch()
 
   return (
     <div className='todo-list'>
-      {tasks.map(task => (
-        <TaskItem key={task.id}>
-          <div>
-            <CheckboxWrapper>
-              <Checkbox for='checkbox'></Checkbox>
-              <Checkmark
-                type="checkbox"
-                id='checkbox'
-                checked={task.isComplete}
-                onChange={() => dispatch(todos.actions.toggleComplete(task.id))}
-              />
-            </CheckboxWrapper>
-            <span className={task.isComplete === true ? 'task-description-done' : 'task-description'} key={task.id}>{task.description}</span>
-            <Timestamp>added {moment(task.createdAt).startOf('hour').fromNow()}</Timestamp>
-          </div>
-          <div>
-            <DeleteButton
-              onClick={() => dispatch(todos.actions.deleteTask(task.id))}
-            >
-              -
-            </DeleteButton>
-          </div>
-        </TaskItem>
-      ))}
+      <HideButton
+        onClick={() => setHideMode(!hideMode)}
+      >
+        HIDE/SHOW COMPLITED
+      </HideButton>
+      <TodoAllDone />
+      {hideMode 
+        ? tasks.map(task => {
+          if(!task.isComplete) {
+            return(
+              <TaskItem key={task.id}>
+              <div>
+                <CheckboxWrapper>
+                  <Checkbox for='checkbox'></Checkbox>
+                  <Checkmark
+                    type="checkbox"
+                    id='checkbox'
+                    checked={task.isComplete}
+                    onChange={() => dispatch(todos.actions.toggleComplete(task.id))}
+                  />
+                </CheckboxWrapper>
+                <span className={task.isComplete === true ? 'task-description-done' : 'task-description'} key={task.id}>{task.description}</span>
+                <Timestamp>added {moment(task.createdAt).fromNow()}</Timestamp>
+              </div>
+              <div>
+                <DeleteButton
+                  onClick={() => dispatch(todos.actions.deleteTask(task.id))}
+                >
+                  -
+                </DeleteButton>
+              </div>
+            </TaskItem>
+            )
+          }
+      })    
+        : tasks.map(task => (
+            <TaskItem key={task.id}>
+              <div>
+                <CheckboxWrapper>
+                  <Checkbox for='checkbox'></Checkbox>
+                  <Checkmark
+                    type="checkbox"
+                    id='checkbox'
+                    checked={task.isComplete}
+                    onChange={() => dispatch(todos.actions.toggleComplete(task.id))}
+                  />
+                </CheckboxWrapper>
+                <span className={task.isComplete === true ? 'task-description-done' : 'task-description'} key={task.id}>{task.description}</span>
+                <Timestamp>added {moment(task.createdAt).fromNow()}</Timestamp>
+              </div>
+              <div>
+                <DeleteButton
+                  onClick={() => dispatch(todos.actions.deleteTask(task.id))}
+                >
+                  -
+                </DeleteButton>
+              </div>
+            </TaskItem>
+        ))
+        
+      }
+      <EmptyDivContainer>
+        <EmptyDiv></EmptyDiv>
+      </EmptyDivContainer>
     </div>
   )
 }

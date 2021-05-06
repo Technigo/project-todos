@@ -37,6 +37,12 @@ body {
   color: #b7b7b7;
 }
 
+.todo-list {
+  height: 100%;
+  border-radius: 0 0 25px 25px;
+  overflow: hidden;
+}
+
 /*MEDIA QUERIES*/
 /*TABLET*/
 @media (min-width: 668px) {

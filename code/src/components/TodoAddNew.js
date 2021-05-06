@@ -59,7 +59,7 @@ const TodoAddNew = () => {
   }
 
   return (
-    <Form autocomplete='off'>
+    <Form autoComplete='off'>
       <Input 
         placeholder='Enter new task'
         id='check'
