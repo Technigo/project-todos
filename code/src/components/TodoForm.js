@@ -23,7 +23,6 @@ const TodoForm = () => {
     }
 
     return(
-        <>
         <form className="form" onSubmit={onFormSubmit}>
             <input className="input"
                placeholder="Write your todo here..."
@@ -33,7 +32,6 @@ const TodoForm = () => {
             />
             <button className="button" type="submit">ADD</button>
         </form>
-       </>
     )
 };
 

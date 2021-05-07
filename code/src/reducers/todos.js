@@ -38,20 +38,19 @@ const todos = createSlice({
         },
         removeTodo: (store, action) => {
             // v1 - Immutability
-            // const decreasedItems = store.items.filter(todo => todo.id !== action.payload);
+             const decreasedItems = store.items.filter(todo => todo.id !== action.payload);
 
-            // store.items = decreasedItems;
+             store.items = decreasedItems;
 
             //v2 - Mutability
-            store.items.splice(action.payload, 1);
+            //store.items.splice(action.payload, 1);
         },
         addTodo: (store, action) => {
-            console.log(action);
             // v1 - Immutability
-            // store.items = [...store.items, action.payload];
+             store.items = [...store.items, action.payload];
 
             // v2 - Mutability
-            store.items.push(action.payload);
+            //store.items.push(action.payload);
 
            
         }
