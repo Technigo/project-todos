@@ -18,10 +18,6 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className='wrapper'>
-        <img
-          src={require("./images/floral-background.png")}
-          alt='floral-background'
-        />
         <div className='list-wrapper'>
           <Header />
           <AddTask />
@@ -32,5 +28,6 @@ const App = () => {
     </Provider>
   );
 };
-
+//<img src={require("./images/border-top.png")} alt='floral-border' />
+//<img src={require("./images/border-bottom.png")} alt='floral-border' />
 export default App;

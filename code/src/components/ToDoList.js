@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { IoTrashOutline } from "react-icons/io5";
 
 import tasks from "../reducers/tasks";
-import wastebin from "../images/wastebin.png";
 
 const TodoList = () => {
   const items = useSelector((store) => store.tasks.items);
@@ -22,12 +22,10 @@ const TodoList = () => {
           <div className='todo-text-container'>
             <label htmlFor={task.id}>{task.description}</label>
           </div>
-          <img
-            src={wastebin}
-            alt='Remove'
-            className='waste-bin'
+          <IoTrashOutline
+            className='trash-can'
             onClick={() => dispatch(tasks.actions.removeTask(task.id))}
-          ></img>
+          />
         </div>
       ))}
     </div>
