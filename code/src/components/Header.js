@@ -16,11 +16,9 @@ const Header = () => {
             day: "numeric",
           })}
         </p>
-        <div className='tasks-clear-button-container'>
-          <p>
-            {completedTasks} / {numberOfTasks} tasks completed
-          </p>
-        </div>
+        <p>
+          {completedTasks} / {numberOfTasks} tasks completed
+        </p>
       </div>
     </div>
   );
