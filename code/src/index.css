@@ -15,7 +15,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
   background-color: #f3e5e0;
 }
@@ -27,21 +27,23 @@ code {
 
 .wrapper {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
   box-sizing: content-box;
-  height: 90%;
+  margin-top: 2em;
+  margin-bottom: 2em;
   width: 90%;
   border: 6px solid #aec3ab;
   background-color: #fcfaf8;
 }
 
+.wrapper img {
+  max-width: 100%;
+}
+
 .list-wrapper {
-  position: absolute;
   width: 80%;
-  max-height: 60%;
-  top: 15%;
-  overflow: hidden;
+  min-height: 200px;
 }
 
 .header {
@@ -49,13 +51,15 @@ code {
   flex-direction: column;
   text-align: center;
   margin: 0 16px 15px 16px;
+  width: 80%;
 }
 
 .date-number-of-tasks-container {
   display: flex;
-  justify-content: space-between;
   flex-direction: row;
+  justify-content: space-between;
   font-family: "Dancing Script", cursive;
+  margin: 0 24px;
 }
 
 .tasks-clear-button-container {
@@ -67,6 +71,7 @@ h1 {
   font-family: "Dancing Script", cursive;
   font-size: 42px;
   margin-bottom: 5px;
+  margin-top: 0px;
 }
 
 .todo-wrapper {
@@ -93,9 +98,11 @@ h1 {
   width: 90%;
 }
 
+.footer {
+  margin-top: 2em;
+}
+
 .clear-button {
-  position: absolute;
-  top: 76%;
   font-family: "Dancing Script", cursive;
   font-size: 16px;
   border-radius: 30px;
@@ -190,16 +197,6 @@ h1 {
   .wrapper {
     width: 60%;
     max-width: 500px;
-  }
-
-  .wrapper img {
-    width: 60%;
-    max-width: 500px;
-  }
-
-  .list-wrapper {
-    width: 50%;
-    max-width: 400px;
   }
 
   h1 {

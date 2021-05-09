@@ -11,11 +11,11 @@ const Footer = () => {
   };
 
   return (
-    <>
+    <div className='footer'>
       <button className='clear-button' type='button' onClick={onRemoveTasks}>
         Clear All
       </button>
-    </>
+    </div>
   );
 };
 

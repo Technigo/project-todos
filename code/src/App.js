@@ -18,16 +18,17 @@ const App = () => {
   return (
     <Provider store={store}>
       <div className='wrapper'>
+        <img src={require("./images/border-top.png")} alt='floral-border' />
+        <Header />
         <div className='list-wrapper'>
-          <Header />
           <AddTask />
           <TodoList />
         </div>
         <Footer />
+        <img src={require("./images/border-bottom.png")} alt='floral-border' />
       </div>
     </Provider>
   );
 };
-//<img src={require("./images/border-top.png")} alt='floral-border' />
-//<img src={require("./images/border-bottom.png")} alt='floral-border' />
+
 export default App;
