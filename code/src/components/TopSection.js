@@ -33,9 +33,32 @@ const TopSection = () => {
                 </div>
                 <div className="right-box-container">
                     <div className="right-box">
-                        {(summary === 0) ? "" : <p className="total-todos">Total Todos: {summary}<span> {(summary === 2) ? "tasks" : "task"}</span></p>}
-                        {(summary === 0) ? "" : <p className="total-completed">{(amountOfNotCompleted === 0) ? "All Todos completed" :<p className="total-uncompleted"> {amountOfNotCompleted}/{summary} uncompleted </p> }</p>}
-                        {(summary === 0) ? "" : <Button variant="contained" color="secondary" startIcon={<DeleteIcon />} onClick={() => dispatch(todos.actions.clearAll())}>Delete all</Button>}  
+                        {(summary === 0) 
+                        ? "" : 
+                            <p className="total-todos">
+                                Total Todos: 
+                                    {summary}
+                                        <span>{(summary === 2) ? "tasks" : "task"}</span>
+                             </p>}
+                        {(summary === 0) 
+                        ? "" : 
+                            <p className="total-completed">
+                                {(amountOfNotCompleted === 0) 
+                                ? "All Todos completed" 
+                                    :<p className="total-uncompleted"> 
+                                        {amountOfNotCompleted}/{summary} uncompleted 
+                                    </p> 
+                                }
+                            </p>}
+                        {(summary === 0) 
+                        ? "" : 
+                            <Button 
+                                variant="contained" 
+                                color="secondary" 
+                                startIcon={<DeleteIcon />} 
+                                onClick={() => dispatch(todos.actions.clearAll())}>
+                                    Delete all
+                            </Button>}  
                     </div>
                 </div>
 

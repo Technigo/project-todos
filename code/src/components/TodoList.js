@@ -24,13 +24,27 @@ const TodoList = () => {
                                 <p className="input">{todo.description}</p>
                             </div>
                             <div className="date">
-                                {(moment().calendar() === todo.fromNow) ? <p className="deadline-passed"> Created: {moment(todo.date).format('Do MMMM YYYY')}</p> : <p className="within-deadline"> Created: {moment(todo.date).format('Do MMMM YYYY')}</p>}
+                                {(moment().calendar() === todo.fromNow) 
+                                    ? <p className="deadline-passed"> 
+                                        Created: {moment(todo.date).format('Do MMMM YYYY')}
+                                    </p> : <p className="within-deadline"> 
+                                    Created: {moment(todo.date).format('Do MMMM YYYY')}
+                                    </p>}
                             </div>
                             <div className="list-bottom">
                                 <div className="checkbox">
                                     <FormControlLabel
-                                        control={<Checkbox checked={todo.isComplete} onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}  />}
-                                        label={todo.isComplete ? <p className="completed-task">Completed</p> : <p className="not-completed-task">Mark as Completed</p>}
+                                        control={
+                                            <Checkbox checked={todo.isComplete} 
+                                            onChange={() => dispatch(todos.actions.toggleComplete(todo.id))}  
+                                            />}
+                                        label={
+                                            todo.isComplete 
+                                            ? <p className="completed-task">
+                                                Completed</p> 
+                                            : <p className="not-completed-task">
+                                                Mark as Completed
+                                            </p>}
                                     />
                                 </div>
                                 <div className="remove-todo">
