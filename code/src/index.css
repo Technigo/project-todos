@@ -1,13 +1,222 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Open Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #e5f3ffce;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  margin: 0;
+  color: #301a0c;
+  text-shadow: 1px 1px 1px #45526c5b;
+  font-family: 'Courgette', cursive;
+  font-size: 45px;
+  text-align: center;
+  padding: 20px 0 5px;
+}
+
+p {
+  font-size: 20px;
+  color: #301a0c;
+}
+
+.header-date {
+  margin: 0;
+  text-align: center;
+  padding-bottom: 10px; 
+  font-size: 16px;
+}
+
+.header-number {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.header-num {
+  text-align: center;
+  padding: 0 10px;
+  margin: 10px 38px;
+  background-color: rgba(255, 255, 255, 0.425);
+  border-radius: 10%;
+}
+
+.header-num p {
+  margin: 0;
+}
+
+.num {
+  font-weight: 900;
+}
+
+.header-container {
+  background-color: #f8e1f5;
+  background-color: #f8f5f1;
+  background-image: url('./assets/notice-board-2456210_1280.png');
+  background-size: 110%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  margin: 10px 20px;
+  margin-bottom: 20px;
+  justify-content: center;
+}
+
+.text-input {
+  height: 50px;
+  width: 70%;
+  border: 1px solid #f8e1f5;
+  border-radius: 5px;
+  padding-left: 20px;
+  outline: none;
+}
+
+input::placeholder {
+  color: rgba(128, 128, 128, 0.664);
+  font-size: 1.2em;
+  font-style: italic;
+  padding-left: 10px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.btn-input {
+  cursor: pointer;
+  background-color:#301a0c;
+  display: inline-block;
+  padding: 0;
+  width: 61px;
+  border: 2px solid #f8e1f5;
+  border-radius: 100%;
+  box-sizing: border-box;
+  font-size: 50px;
+  font-weight: 500;
+  color:#FFFFFF;
+  text-shadow: 0 0.04em 0.04em rgba(0,0,0,0.35);
+  text-align:center;
+  transition: all 0.2s;
+}
+
+.btn-input:hover {
+  background-color: #301a0c7a;
+}
+
+.task-item {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: space-between;
+  background-color: #c89e6f;
+  background-color: white;
+  border: 1px solid #301a0c;
+  border-radius: 7px;
+  margin: 20px 10px;
+  padding: 0 10px;
+}
+
+.task-details {
+  display: flex;
+  align-self: initial;
+  flex-grow: 1;
+  padding-left: 18px;
+}
+
+.btn-remove {
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  font-size: 50px;
+  font-weight: 500;
+  background-color: white;
+  padding: 0;
+  color:#301a0c;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.btn-all-done, .btn-all-delete{
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 600;
+  border: 1px solid #301a0c;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 20px 30px;
+  cursor: pointer;
+  width: 80px;
+}
+
+.btn-all-done {
+  background-color:#301a0c;
+  color: white;
+}
+
+.btn-all-delete {
+  background-color: #f8e1f5;
+  color: #301a0c;
+}
+
+/* CUSTOM CHECKBOX */ 
+.checkbox {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox > p {
+  color: #34495E;
+  padding: 0 0.25rem;
+}
+
+.checkbox > input {
+  height: 25px;
+  width: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #301a0c;
+  border-radius: 20px;
+  outline: none;
+  transition-duration: 0.3s;
+  background-color: #e7ebe9;
+  cursor: pointer;
+}
+
+.checkbox > input:checked {
+  border: 1px solid #301a0c;
+  background-color: #c89e6f;
+}
+
+.checkbox > input:checked + p::before {
+  content: '\2713';
+  display: block;
+  text-align: center;
+  color: #41B883;
+  position: absolute;
+  left: 0.7rem;
+  top: 0.2rem;
+}
+
+.checkbox > input:active {
+  border: 2px solid #c89e6f;
+}
+
+/* MEDIA QUERIES */ 
+@media screen and (min-width: 700px) {
+  .tasks-container, .form {
+    width: 700px;
+    margin: 0 auto;
+  }
 }
