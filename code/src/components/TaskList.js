@@ -21,8 +21,7 @@ export const TaskList = () => {
                 onChange={() => dispatch(tasks.actions.toggleComplete(task.id))}      
               />            
             </div>
-
-          {/* <label for='text'><p>{task.text}</p></label> */}
+        
           <div className='task-details'>
             <p>{task.text}</p>
           </div>

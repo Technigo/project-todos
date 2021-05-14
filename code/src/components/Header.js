@@ -9,7 +9,6 @@ const Header = () => {
   const items = useSelector((store) => store.tasks.items)
   const total = items.length
   const itemsDone = items.filter(task => task.isComplete === true)
-  // console.log(itemsDone.length)
 
   return (
     <div className='header-container'>
