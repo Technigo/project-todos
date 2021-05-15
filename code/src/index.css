@@ -14,6 +14,17 @@
   font-family:'Rammetto One' ;
   src: url(./fonts/RammettoOne-Regular.ttf) format("truetype");
 }
+@font-face {
+  font-family:'Arial Black' ;
+  src: local('Arial Black');
+  font-size: 45px;
+}
+@font-face {
+  font-family:'Arial' ;
+  src: local('Arial');
+  font-size: 50px;
+  font-weight: 900;
+}
 
 * {
   box-sizing: border-box;

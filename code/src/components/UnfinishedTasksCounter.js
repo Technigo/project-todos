@@ -3,11 +3,12 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 const Text = styled.p`
-font-family: 'Noto Sans KR', sans-serif;
-@media (min-width: 768px){
-  font-size: 22px;
-}
+  font-family: 'Noto Sans KR', sans-serif;
+  @media (min-width: 768px){
+    font-size: 22px;
+  }
 `;
+
 const UnfinishedTasksCounter = () => {
 const items = useSelector((store) => store.tasks.items);
 
