@@ -8,7 +8,6 @@ const taskList = [
 ]
 
 const completedTasks = [
-    // { id: 4, taskText: 'Homework', isDone: true },
 ]
 
 const initialState = {
@@ -52,8 +51,6 @@ export const tasks = createSlice({
 
         
         addTask: (store, action) => {
-            // store.taskList = [...store.taskList, action.payload]
-            // store.taskList.push(action.payload)
             store.taskList.push({
                 id: uniqid(),
                 taskText: action.payload,
