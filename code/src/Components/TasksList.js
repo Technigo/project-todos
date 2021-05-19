@@ -1,15 +1,12 @@
-import React from 'react'
-import { useSelector } from 'react-redux'
+import React from "react";
+import { useSelector } from "react-redux";
 
-
-import { CheckBox } from './CheckBox'
-import { RemoveButton } from './RemoveButton'
-import "./taskslist.css"
-
+import { CheckBox } from "./CheckBox";
+import { ClearButton } from "./ClearButton";
+import "./taskslist.css";
 
 export const TasksList = () => {
-
-  const allTasks = useSelector((store) => store.tasks)
+  const allTasks = useSelector((store) => store.tasks);
 
   return (
     <div className="tasks-container">
@@ -18,11 +15,11 @@ export const TasksList = () => {
           <CheckBox task={task} />
           <div className="task-detail">
             <div className="text"> {task.text} </div>
-            <span className="elapsed-time" > Added {task.createdAt} </span>
+            <span className="elapsed-time"> Added {task.createdAt} </span>
           </div>
-          <RemoveButton task={task} />
+          <ClearButton task={task} />
         </div>
       ))}
     </div>
-  )
-}
+  );
+};

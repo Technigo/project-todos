@@ -1,32 +1,39 @@
-import React, { useState } from "react"
-import { useDispatch } from "react-redux"
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
-import { tasks } from "reducers/tasks"
-import "./addnewtask.css"
+import { tasks } from "reducers/tasks";
+import "./addnewtask.css";
 
 export const AddNewTask = () => {
-
-  const [sendTask, setSendTask] = useState("")
-  const dispatch = useDispatch()
+  const [sendTask, setSendTask] = useState("");
+  const dispatch = useDispatch();
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
-
-    dispatch(tasks.actions.addTask(sendTask))
-    setSendTask("")
-  }
+    dispatch(tasks.actions.addTask(sendTask));
+    setSendTask("");
+  };
 
   return (
-
     <form className="new-task-form" onSubmit={handleSubmit}>
-      <input className="task-input" type="text" placeholder="Add a new task" value={sendTask} onChange={(event) => setSendTask(event.target.value)} />
+      <input
+        className="task-input"
+        type="text"
+        placeholder="Add a new task"
+        value={sendTask}
+        onChange={(event) => setSendTask(event.target.value)}
+      />
 
-      <button className="add-task-btn" disabled={sendTask.length === 0} type="submit"><span className="add-task-icon" role="img" aria-label="plus">+</span></button>
-    </form >
-
-
-
-  )
-
-}
+      <button
+        className="add-task-btn"
+        disabled={sendTask.length === 0}
+        type="submit"
+      >
+        <span className="add-task-icon" role="img" aria-label="plus">
+          +
+        </span>
+      </button>
+    </form>
+  );
+};
