@@ -1,12 +1,10 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A simple TODO app that can be used for adding new tasks and removing the old ones!
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I have faced probkems deploying the project on Netlify but with the help of my teammate got to solve it :)
 
 ## View it live
 
