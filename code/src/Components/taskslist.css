@@ -13,7 +13,6 @@
 .checkbox-label {
   position: relative;
   height: 100%;
-  width: 100px;
   cursor: pointer;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -23,7 +22,7 @@
 
 /* Hide the browser's default checkbox */
 
-.checkbox-label input[type=checkbox] {
+.checkbox-label input[type="checkbox"] {
   position: absolute;
   cursor: pointer;
   appearance: none;
@@ -53,7 +52,7 @@
 
 /* When the checkbox is checked, add a blue background */
 
-.checkbox-label input:checked~.checkmark {
+.checkbox-label input:checked ~ .checkmark {
   background-color: #6e5773;
 }
 
@@ -79,7 +78,7 @@
 
 /* Show the checkmark when checked */
 
-.checkbox-label input:checked~.checkmark:after {
+.checkbox-label input:checked ~ .checkmark:after {
   display: block;
 }
 
