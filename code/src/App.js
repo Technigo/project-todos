@@ -10,22 +10,14 @@ import { CompletedTasks } from 'components/CompletedTasks'
 import styled from 'styled-components'
 
 const reducer = combineReducers({
-  tasks: tasks.reducer
+    tasks: tasks.reducer
 })
 
 const store = configureStore({ reducer })
 
-const AppSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  background-color: #E8E8DD;
-  height: 100vh;
-  width: 100vw;
-`
-
 export const App = () => {
-  return (
-    <Provider store={store}>
+    return (
+      <Provider store={store}>
       <BrowserRouter>
         <AppSection>
           <Header />
@@ -39,5 +31,18 @@ export const App = () => {
         </AppSection>
       </BrowserRouter>
     </Provider>
-  )
+    )
 }
+
+const AppSection = styled.section`
+    display: flex;
+    flex-direction: column;
+    background-color: #E8E8DD;
+    height: 100vh;
+    width: 100vw;
+
+    @media (min-width: 992px) {
+      align-items: center;
+      
+  }
+`
