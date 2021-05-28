@@ -38,7 +38,6 @@ const FormSection = styled.section`
     display: flex;
     flex-direction: column;
     margin: 10px 20px 20px 20px;
-    // background-color: green;
     @media (min-width: 768px) {
         margin: 30px 140px 20px 140px;
     }

@@ -32,7 +32,6 @@ const ListSection = styled.section`
     display: flex;
     flex-direction: column;
     margin: 20px;
-    // background-color: red;
     @media (min-width: 768px) {
         margin: 30px 140px 20px 140px;
     }

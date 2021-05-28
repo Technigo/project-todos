@@ -33,20 +33,17 @@ export const tasks = createSlice({
             })
             store.taskList = updatedTasks
 
-            // filter creates a new array with all items that pass the test.
             //All tasks that are done will be displayed in completedTasks.
             const doneTasks = store.taskList.filter(task => task.isDone === true) 
             store.completedTasks = doneTasks
- 
-            // Only the tasks marked as isDone: false will remain in the taskList.
-            // This doesnt work
-            // const activeTasks = store.taskList.filter(task => task.isDone === false) 
-            // store.taskList = activeTasks
         },
 
         deleteTask: (store, action) => {
             const leftTasks = store.taskList.filter(task => task.id !== action.payload) 
             store.taskList = leftTasks
+            
+            const completedLeftTasks = store.completedTasks.filter(task => task.id !== action.payload)
+            store.completedTasks = completedLeftTasks
         },
 
         

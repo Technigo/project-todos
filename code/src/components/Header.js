@@ -22,7 +22,6 @@ const HeaderSection = styled.section`
     margin: 20px 20px 20px ;
     display: flex;
     justify-content: space-between;
-    // background-color: beige;
     @media (min-width: 768px) {
         margin: 50px 140px 20px 140px;
     }
