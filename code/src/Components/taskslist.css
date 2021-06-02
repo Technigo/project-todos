@@ -34,7 +34,7 @@
 .checkmark {
   position: absolute;
   left: 50%;
-  margin-left: -20px;
+  /* margin-left: -20px; */
   top: 50%;
   margin-top: -18px;
   height: 30px;
