@@ -1,13 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #0a043c;
+  font-family: 'Comfortaa', cursive;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media (min-width: 770px) {
+  .blubs{
+    background-image: url(./assets/pinkbig.svg),
+    url(./assets/pink.svg), url(./assets/yellow.svg),
+    url(./assets/blue.svg), url(./assets/yellowsmall.svg), url(./assets/bluesmall.svg);
+    /* left-top-small: pink, left-top-big: yellow ,right-top: blue*, middle-right: yellow*/
+    background-position: 100% 90%, 3% 10%, 3% 10%, 95% 5%, 90% 40%, 3% 75%; 
+    background-repeat: no-repeat;
+    padding: 100px 100px 180px 100px;
+  }
 }
