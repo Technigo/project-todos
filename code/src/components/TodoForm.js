@@ -45,6 +45,7 @@ const TodoForm = () => {
             </div>
             <div className="send-button">
                 <Button
+                    type="submit"
                     onClick={onFormSubmit}
                     variant="contained"
                     color="primary"
