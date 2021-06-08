@@ -5,9 +5,170 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #114e60;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.todo-items {
+  display: flex;
+  align-items: center;
+}
+
+.todo-container {
+  padding: 10px;
+  background-color: #f4eee8;
+  margin: 10px 0px 10px;
+  
+}
+
+.deadline-passed {
+  color: red;
+  padding: 0px;
+  margin: 0px
+}
+
+.within-deadline {
+  color: black;
+  padding: 0px;
+  margin: 0px;
+  font-style: italic;
+  font-size: 12px;
+}
+
+/* Header section when todo is empyt */
+.empty-todo-container {
+  padding: 10px 0px 10px 10px;
+  display: flex;
+  justify-content: center;
+  background-color: #325288
+}
+/*--------------*/
+
+.header-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: #325288
+}
+
+.left-box-container {
+  padding: 10px 0px 10px 10px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.right-box-container {
+  padding: 10px 10px 10px 0px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.todo-header {
+  font-size: 26px;
+  margin: 0px;
+  padding-top: 10px
+}
+
+.total-todos {
+  padding: 0px;
+  margin: 0px;
+  padding-top: 10px;
+  font-weight: bold;
+}
+
+.total-uncompleted {
+  color: red
+}
+
+.total-completed {
+  color: green;
+  font-weight: bold;
+}
+
+.form-section {
+padding: 10px;
+background-color: #f5cebe;
+}
+
+.text-field {
+  margin-bottom: 10px;
+}
+
+.empty-page {
+  padding: 0px 10px 0px 10px;
+  background-color: #f5cebe;
+  margin: 0px;
+}
+
+.checkbox {
+  display: flex;
+  align-items: center;
+  width: 200px;
+}
+
+.completed-task {
+  text-decoration: line-through;
+  color: green;
+}
+
+.not-completed-task {
+  color: red;
+}
+
+.list-bottom {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.remove-todo {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.input {
+  word-break: break-word;
+  padding: 0px;
+  margin: 0px;
+  font-size: 26px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #114e60;
+}
+
+.content {
+  width: 100%;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 0px 0px 20px 0px;
+}
+
+@media (min-width: 768px) {
+  .content {
+    width: 80%;
+  }
+}
+
+@media (min-width: 1300px) {
+  .content {
+    width: 50%;
+  }
+
+  .right-box-container {
+    justify-content: center;
+  }
+
+  .left-box-container {
+    justify-content: center;
+  }
+
+  .content {
+    margin-top: 20px;
+  }
 }
