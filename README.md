@@ -1,4 +1,4 @@
-Project done during the Technigo Bootcamp
+Project week 15 of Technigo bootcamp
 
 # Vacay Planner Project
 
