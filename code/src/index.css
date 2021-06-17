@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@200;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,4 +13,71 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* CUSTOM CHECKBOX */
+
+.checkbox {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  padding: 15px;
+}
+
+.checkbox input {
+position: absolute;
+top: 7px;
+left: 16px;
+width: 18px;
+height: 18px;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 10px;
+  height: 30px;
+  width: 30px;
+  background-color: #eac8af;
+  border-radius: 20px;
+}
+
+.checkbox input:checked ~ .checkmark {
+  background-color: #5f939a;
+}
+
+.checkbox input:focus {
+  outline: 4px solid #333;
+}
+
+.checkmark:after {
+  content: '';
+  position: absolute;
+  display: none;
+}
+
+.checkbox input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkbox .checkmark:after {
+  left: 11px;
+  top: 5px;
+  width: 6px;
+  height: 14px;
+  border: solid white;
+  border-width: 0 4px 4px 0;
+  border-radius: 2px;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
