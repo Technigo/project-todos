@@ -6,9 +6,9 @@ const HeaderWrapper = styled.header`
   height: 60px;
   border-radius: 10px;
   padding:10px;
-  margin-bottom:20px;
-  display:flex;
-  flex-direction:column; 
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column; 
  ` 
 
 const Title = styled.text`

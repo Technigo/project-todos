@@ -7,13 +7,13 @@ import todos from '../reducers/todos'
 
 
 const Input = styled.input`
-  width:100%;
+  width: 100%;
   border: none;
-  outline:none;
+  outline: none;
   background: none;
   font-size: 18px;
   color: #555;
-  padding:20px 10px 20px 20px;
+  padding: 20px 10px 20px 20px;
   margin: 30px 0 15px 0;
   border-radius: 25px;
   box-shadow: inset 8px 8px 8px #cbced1,
@@ -21,9 +21,9 @@ const Input = styled.input`
 `
 const Button = styled.button`
   outline: none;
-  border:none;
+  border: none;
   cursor: pointer;
-  width:100px;
+  width: 100px;
   height: 30px;
   border-radius: 30px;
   font-size: 20px;

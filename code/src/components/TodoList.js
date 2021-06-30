@@ -8,16 +8,19 @@ import todos from '../reducers/todos'
 
 
 const TaskWrapper = styled.div`
-  margin:30px 0;
-  width:300px;
+  margin: 30px 0;
+  width: 300px;
   border: none;
-  outline:none;
+  outline: none;
   background: none;
   color: #555;
-  padding:20px 10px 20px 20px;
+  padding: 20px 10px 20px 20px;
   border-radius: 25px;
   box-shadow: inset 8px 8px 8px #cbced1,
               inset -8px -8px 8px #ffffff;
+`
+const Counter = styled.p`
+  padding: 15px 0 15px 0;
 `
 
 const Text = styled.text`
@@ -26,17 +29,17 @@ const Text = styled.text`
 `
 
 const CheckboxAndButtonWrapper = styled.div`
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  width:180px;
+  width: 180px;
 `
 
 const Button = styled.button`
   outline: none;
-  border:none;
+  border: none;
   cursor: pointer;
-  width:100px;
+  width: 100px;
   height: 30px;
   border-radius: 30px;
   font-size: 20px;
@@ -61,12 +64,17 @@ const TodoList = () => {
 //we name this variable "tasks" the same as the property in the store -line 6 in the Slice todos
 //we select what we need from the store: the existing tasks  
   const tasks = useSelector((store) => store.todos.tasks)
-
+  const completedItems = tasks.filter((task) => task.isComplete);
 //The instance of useDistpatch in every component is writen the same way
   const dispatch = useDispatch();
   
   return (
     <div>
+     
+        <Counter>
+          Completed items: {completedItems.length} / {tasks.length}
+        </Counter>
+    
       {tasks.map(todo => (
         <div key={todo.id}>
           <TaskWrapper>
