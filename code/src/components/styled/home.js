@@ -5,7 +5,9 @@ export const AppContainer = styled.div`
   flex-direction: column;
   align-items:flex-start;
   justify-content:flex-start;
-  height: 667px;
+  min-height: 667px; 
+  max-height:1000px;
+  overflow:auto;
   width:375px;
   padding: 60px 35px 35px 35px;
   border-radius: 40px;

@@ -13,7 +13,7 @@ const Input = styled.input`
   background: none;
   font-size: 18px;
   color: #555;
-  padding:20px 10px 20px 5px;
+  padding:20px 10px 20px 20px;
   margin: 30px 0 15px 0;
   border-radius: 25px;
   box-shadow: inset 8px 8px 8px #cbced1,
@@ -23,8 +23,8 @@ const Button = styled.button`
   outline: none;
   border:none;
   cursor: pointer;
-  width:150px;
-  height: 60px;
+  width:100px;
+  height: 30px;
   border-radius: 30px;
   font-size: 20px;
   font-weight: 700;
@@ -70,7 +70,7 @@ const NewTodo = () => {
         placeholder="Enter a new task"
         onChange={e => setValue(e.target.value)}
       />
-      <Button type="submit">Add task</Button>
+      <Button type="submit">+</Button>
     </form>
   )
 }

@@ -14,7 +14,7 @@ const TaskWrapper = styled.div`
   outline:none;
   background: none;
   color: #555;
-  padding:20px 10px 20px 5px;
+  padding:20px 10px 20px 20px;
   border-radius: 25px;
   box-shadow: inset 8px 8px 8px #cbced1,
               inset -8px -8px 8px #ffffff;
@@ -37,7 +37,7 @@ const Button = styled.button`
   border:none;
   cursor: pointer;
   width:100px;
-  height: 60px;
+  height: 30px;
   border-radius: 30px;
   font-size: 20px;
   font-weight: 700;
@@ -84,7 +84,7 @@ const TodoList = () => {
               <span className="checkbox-custom rectangular"></span>
             </label>
             <Button onClick={() => dispatch(todos.actions.removeTodo(todo.id))}>
-                Delete
+                -
             </Button>
           </CheckboxAndButtonWrapper>          
         </div>        
