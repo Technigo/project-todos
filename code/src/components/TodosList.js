@@ -1,12 +1,17 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { Checkbox } from '@material-ui/core'
+import styled from 'styled-components/macro';
 import Checkbox from '@material-ui/core/Checkbox';
-import Favorite from '@material-ui/icons/Favorite';
-import FavoriteBorder from '@material-ui/icons/FavoriteBorder';
+import IconButton from '@material-ui/core/IconButton';
+import Star from '@material-ui/icons/Star';
+import StarBorder from '@material-ui/icons/StarBorder';
+import Clear from '@material-ui/icons/Clear';
+
 
 import todos from '../reducers/todos';
 
+const style = { color: '#FFC700', fontSize: '1.5em' };
+const otherStyle = { color: 'white', fontSize: '1.5em' };
 
 const TodosList = () => {
     const tasks = useSelector((store) => store.todos.tasks); 
@@ -16,34 +21,59 @@ const TodosList = () => {
 
     const dispatch = useDispatch();
 
-
-
     return (
-        <div className="tasks-container">
-           <p>Completed Tasks: {completedTasks.length}/{tasks.length}</p>
+        <Main className="tasks-container">
+           <Title>Completed Tasks: {completedTasks.length}/{tasks.length}</Title>
             {tasks.map(singleTask => (
-                <div key={singleTask.id} className="checkbox-container">
+                <CheckboxWrapper key={singleTask.id} className="checkbox-container">
                     <Checkbox
-                        color="Secondary"
-                        icon={<FavoriteBorder />}
-                        checkedIcon={<Favorite />}
+                        icon={<StarBorder style={style} />}
+                        checkedIcon={<Star style={style} />}
                         type="checkbox"
                         checked={singleTask.isComplete}
                         onChange={() => dispatch(todos.actions.toggleComplete(singleTask.id))}
                     />
-                    {/* <input
-                        type="checkbox"
-                        checked={singleTask.isComplete}
-                        onChange={() => dispatch(todos.actions.toggleComplete(singleTask.id))}
-                    /> */}
-                    <p>{singleTask.description}</p>
-                    <button onClick={() => dispatch(todos.actions.removeTodo(singleTask.id))}>
-                    Delete
-                    </button>
-                </div>
+                    <Text>{singleTask.description}</Text>
+                    <IconButton onClick={() => dispatch(todos.actions.removeTodo(singleTask.id))}>
+                    <Clear style={otherStyle} />
+                    </IconButton>
+                </CheckboxWrapper>
             ))}
-        </div>
+        </Main>
     )
 };
 
 export default TodosList;
+
+const Main = styled.main`
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    background-color: #2EC4B6;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    z-index: 1;
+   
+`
+const Title = styled.h1`
+    margin: 0;
+    color: white;
+    font-size: 22px;
+    font-weight: 400;
+`
+const CheckboxWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    border-bottom: 3px solid white;
+    margin-top: 2rem;
+`
+const Text = styled.p`
+    width: 100%;
+    word-wrap: break-word;
+    text-align: left;
+    color: white;
+`

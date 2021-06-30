@@ -1,11 +1,24 @@
 import React from 'react';
+import styled from 'styled-components/macro'
 
 const Header = () => {
     return (
-        <div>
-            <h1> Elaine's To Do's</h1>
-        </div>
+        <TextWrapper>
+            <Title> Elaine's To Do's</Title>
+        </TextWrapper>
     )
 };
 
 export default Header;
+
+const TextWrapper = styled.header`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`
+
+const Title = styled.h1`
+    margin-top: 3rem;
+    color: white;
+    font-size: 30px;
+`
