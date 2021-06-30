@@ -54,6 +54,9 @@ const Main = styled.main`
     height: 100vh;
     padding: 20px;
     z-index: 1;
+    @media (min-width: 768px) {
+        padding: 20px 26px;
+    }
    
 `
 const Title = styled.h1`
@@ -61,6 +64,9 @@ const Title = styled.h1`
     color: white;
     font-size: 22px;
     font-weight: 400;
+    @media (min-width: 768px) {
+        font-size: 28px;
+    }
 `
 const CheckboxWrapper = styled.div`
     display: flex;
@@ -72,8 +78,13 @@ const CheckboxWrapper = styled.div`
     margin-top: 2rem;
 `
 const Text = styled.p`
+    margin: 0 0 8px 0;
     width: 100%;
     word-wrap: break-word;
     text-align: left;
     color: white;
+    font-size: 20px;
+    @media (min-width: 768px) {
+        font-size: 28px;
+    }
 `

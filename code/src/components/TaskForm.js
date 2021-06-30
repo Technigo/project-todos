@@ -61,6 +61,10 @@ const InputWrapper = styled.div`
     flex-direction: row;
     justify-content: center;
     align-items: center;
+    @media (min-width: 768px) {
+        border-radius: 40px 40px 0 0;
+        padding: 18px;
+    }
 `
 
 const InputField = styled.input`
@@ -70,5 +74,11 @@ const InputField = styled.input`
     width: 75%;
     padding: 0 8px;
     font-family: "Josefin Sans", sans-serif;
+    font-size: 20px;
+    @media (min-width: 768px) {
+        font-size: 26px;
+        height: 3.5rem;
+    }
+    
 `
 
