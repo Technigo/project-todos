@@ -1,14 +1,14 @@
 # The Project: Todo List
 
-Goals:
-<ul>
-  <li>Understanding redux-toolkit plays</li>
-  <li>Creating Slices</li>
-  <li>Creating Reducers</li>
-  <li>Creating new actions</li>
-  <li>Understanding the Store and how immutability works</li>
-  <li>Add new tasks to list, delete tasks, and keep track of how many are completed.</li>
-</ul>
+* Goals:
+
+  * Understanding redux-toolkit plays
+  * Creating Slices
+  * Creating Reducers
+  * Creating new actions
+  * Understanding the Store and how immutability works
+  * Add new tasks to list, delete tasks, and keep track of how many are completed.
+
 
 # The Problem
 
