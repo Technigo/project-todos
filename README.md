@@ -1,13 +1,19 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Goal: To understand how to use Redux with React by building a to-list application in which I can add, remove, and tally the completed tasks.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Tools Used:
+React
+Redux
+Styled-Components
+Material UI Icons & Checkboxes
+
+Redux was hard to grasp at first, not fully understanding the store. However thought slow I was able build the project successfully for basic requirements. However I found styling overwhelming, not really understanding how styled-components worked. Coming back to it now I have a better understanding of it was able to style my application better as well as add in custom checkboxes and buttons using Material UI and Icons. 
+
+If I had more time I'd like to do some of the stretch goals like a Clear All button, time stamps, and even some kind of sorting for completed vs incomplete tasks. I'd also like to add catagories to sort into for tasks. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://doing-a-to-do.netlify.app
