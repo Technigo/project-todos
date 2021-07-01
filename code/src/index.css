@@ -14,11 +14,9 @@ code {
     monospace;
 }
 
-
 .todo-container {
   width: 100%;
   min-height: 400px;
-
 }
 
 .todo-header {
@@ -28,8 +26,6 @@ code {
   justify-content: space-between;
   border-bottom: solid grey 1px;
   padding: 50px;
-  
-
 }
 
 .add-todo {
@@ -49,7 +45,6 @@ code {
   border-bottom: solid grey 1px;
   height: 59px;
 }
-
 
 .delete-button {
   width: 28%;
