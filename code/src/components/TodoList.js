@@ -25,16 +25,16 @@ const TodoList = () => {
           <TodoHeader>
             <Title>Malin's To do list</Title>
             <CompletedSection>
-              <CompletedTasks>Completed: {completedItems.length}/{items.length}</CompletedTasks>
+              <CompletedTasks>Completed tasks: {completedItems.length}/{items.length}</CompletedTasks>
             </CompletedSection>
           </TodoHeader>
-            <div className="user-input">
+            <UserInput>
               <TextField
                 required
                 variant="standard"
                 type="text"
                 className="add-todo"
-                placeholder="Add to do here "
+                placeholder="Add to do "
                 id="todoLabel"
                 onChange={(e) => dispatch(todos.actions.setAddLabel(e.target.value))}
                 value={addLabel}
@@ -51,10 +51,10 @@ const TodoList = () => {
                 }}
               > Save
               </Button>
-            </div>
+            </UserInput>
 
             {items.map(todo =>  (
-              <UserInput key={todo.id}>
+              <UserOutput key={todo.id}>
                 <Checkbox
                   type="checkbox"
                   color="primary"
@@ -68,7 +68,7 @@ const TodoList = () => {
                   >
                     <DeleteIcon fontSize="small"/>
                   </IconButton>
-              </UserInput>
+              </UserOutput>
             ))}
         </TodoWrapper>
       </TodoContainer>
@@ -85,10 +85,18 @@ const TodoContainer = styled.div`
 
 const TodoWrapper = styled.section`
   background-color: #D8EEFE;
-  max-width: 400px;
   margin: 50px 20px;
-  padding: 30px 20px;
+  padding: 80px 60px;
   border-radius: 20px;
+  max-width: 300px;
+
+  @media (min-width: 768px) and (max-width:993px) {
+   max-width: 450px;
+  }
+
+  @media (min-width: 994px) {
+    max-width: 600px;
+   }
 `
 
 const TodoHeader = styled.header`
@@ -109,5 +117,22 @@ const CompletedTasks = styled.p`
 
 const UserInput = styled.section`
   display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) and (max-width:993px) {
+    flex-direction: row;
+   }
+ 
+  @media (min-width: 994px) {
+    flex-direction: row;
+  }
+`
+
+const UserOutput = styled.section`
+  display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  margin-top: 50px;
+  border-bottom: solid grey 1px;  
+
 `
