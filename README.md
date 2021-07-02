@@ -10,4 +10,4 @@ I have faced problems pushing the project to Github! So had to set a new branch 
 ## View it live
 
 You can find it live here:
-https://todosnazanin.netlify.app/
+https://todo-app-by-nazanin.netlify.app/
