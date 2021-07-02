@@ -1,0 +1,34 @@
+.remove-all-btn {
+  margin-top: 5px;
+  padding: 15px;
+  /* background-color: #ff8364; */
+  background-color: transparent;
+  border-radius: 10px;
+  border: solid 2px #ea9085;
+}
+
+.remove-all-btn:hover {
+  background-color: #ea9085;
+  cursor: pointer;
+}
+
+.remove-all-btn-text {
+  font-size: 12px;
+  font-weight: bold;
+  color: #e9e2d0;
+}
+
+.remove-task-btn {
+  width: 70px;
+  background-color: transparent;
+  padding: 0;
+  border-style: none;
+  height: 100%;
+  outline: none;
+}
+
+.remove-icon {
+  font-size: 40px;
+  color: #ff8364;
+  height: 100%;
+}
