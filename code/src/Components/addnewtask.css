@@ -1,0 +1,28 @@
+.new-task-form {
+  display: flex;
+  border-bottom: solid 2px #ffb677;
+}
+
+.task-input {
+  width: 100%;
+  font-size: 22px;
+  background-color: #edf7fa;
+  border-style: none;
+  padding-left: 18px;
+  outline: none;
+  height: 80px;
+  font-family: 'Kalam', cursive;
+}
+
+.add-task-btn {
+  width: 70px;
+  background-color: transparent;
+  padding: 0;
+  border-style: none;
+  outline: none;
+}
+
+.add-task-icon {
+  font-size: 40px;
+  color: #ff8364;
+}
