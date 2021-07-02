@@ -85,17 +85,18 @@ const TodoContainer = styled.div`
 
 const TodoWrapper = styled.section`
   background-color: #D8EEFE;
-  margin: 50px 20px;
+  margin: 30px auto;
   padding: 80px 60px;
   border-radius: 20px;
-  max-width: 300px;
+  width: 50%;
+  height: 70vh;
 
-  @media (min-width: 768px) and (max-width:993px) {
-   max-width: 450px;
+  @media (min-width: 425px) and (max-width:993px) {
+    width: 50%;
   }
 
   @media (min-width: 994px) {
-    max-width: 600px;
+    width: 20%;
    }
 `
 
@@ -112,20 +113,11 @@ const CompletedSection = styled.section`
 `
 
 const CompletedTasks = styled.p`
-
 `
 
 const UserInput = styled.section`
   display: flex;
   flex-direction: column;
-
-  @media (min-width: 768px) and (max-width:993px) {
-    flex-direction: row;
-   }
- 
-  @media (min-width: 994px) {
-    flex-direction: row;
-  }
 `
 
 const UserOutput = styled.section`
@@ -134,5 +126,4 @@ const UserOutput = styled.section`
   justify-content: space-between;
   margin-top: 50px;
   border-bottom: solid grey 1px;  
-
 `
