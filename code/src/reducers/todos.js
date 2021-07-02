@@ -20,8 +20,6 @@ const todos = createSlice({
       });
       store.items = updatedItems
     },
-
-      //use underscore if not using the action
     addToDo: (store, _) => {
       store.items = [
         ...store.items,
