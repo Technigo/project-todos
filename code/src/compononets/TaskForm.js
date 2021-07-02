@@ -22,20 +22,22 @@ const TaskForm = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit} className='form'>
-      <input
-        className='input'
-        type='text'
-        value={value}
-        maxLength='50'
-        required
-        onChange={(e) => setValue(e.target.value)}
-        placeholder='Add task'
-      />
-      <button type='submit' className='submit-button'>
-        <i className='fas fa-plus'></i>
-      </button>
-    </form>
+    <div className='form-wrapper'>
+      <form onSubmit={onFormSubmit} className='form'>
+        <input
+          className='input'
+          type='text'
+          value={value}
+          maxLength='50'
+          required
+          onChange={(e) => setValue(e.target.value)}
+          placeholder='Add task'
+        />
+        <button type='submit' className='submit-button'>
+          <i className='fas fa-plus'></i>
+        </button>
+      </form>
+    </div>
   );
 };
 

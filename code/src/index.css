@@ -12,7 +12,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 100%;
-  max-width: 425px;
+  /* max-width: 425px; */
   background-color: #fff;
 }
 
@@ -25,7 +25,7 @@ code {
 
 .header {
   background-image: url('./designs/background2.jpg');
-  background-repeat: no-repeat;
+  background-size: cover;
   background-position-y: bottom;
   height: 35vh;
   color: rgba(255, 255, 255, 0.9);
@@ -91,6 +91,13 @@ code {
 
 /* Form, Task list */
 
+.form-wrapper, .task-list-wrapper {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
 .submit-button {
   border: none;
   outline: none;
@@ -103,18 +110,15 @@ code {
   color: rgb(199 208 255);
 }
 
-.task-list-wrapper {
-  width: 100%;
-}
-
 .task-item,
 .form {
   padding: 15px;
   border-radius: 30px;
   display: flex;
-  margin: 15px 10px;
+  margin: 15px 10px 0 15px;
   box-shadow: 0px 0px 10px -1px #cac7d6b0;
   justify-content: space-between;
+  width: 100%;
 }
 
 .task-item {
@@ -146,4 +150,36 @@ code {
   font-size: 20px;
   color: rgb(255 207 178);
   margin-left: 4px;
+}
+
+@media (min-width: 768px) {
+  .left-header {
+    padding-left: 0px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .left-header h1 {
+    font-size: 60px;
+  }
+
+  .left-header .date {
+    font-size: 20px;
+  }
+
+  .right-header .count-percentage {
+    font-size: 18px;
+    margin: 13px;
+  }
+
+  .right-header h2 {
+    font-size: 37px;
+  }
+
+  .form, .task-item {
+    width: 70%;
+  }
 }
