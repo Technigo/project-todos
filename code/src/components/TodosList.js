@@ -57,19 +57,19 @@ const Main = styled.main`
   background-color: #2ec4b6;
   width: 100%;
   height: 100vh;
-  padding: 20px;
+  padding: 20px 60px;
   z-index: 1;
   @media (min-width: 768px) {
-    padding: 20px 26px;
+    padding: 20px 200px;
   }
 `;
 const Title = styled.h1`
   margin: 0;
   color: white;
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 400;
   @media (min-width: 768px) {
-    font-size: 28px;
+    font-size: 30px;
   }
 `;
 const CheckboxWrapper = styled.div`

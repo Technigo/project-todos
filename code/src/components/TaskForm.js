@@ -54,30 +54,31 @@ const Form = styled.form`
   top: 1px;
 `;
 const InputWrapper = styled.div`
-  border-radius: 20px 20px 0 0;
+  border-radius: 50px 50px 0 0;
   background-color: #2ec4b6;
   width: 100%;
-  padding: 10px;
+  padding: 60px 20px;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   @media (min-width: 768px) {
-    border-radius: 40px 40px 0 0;
-    padding: 18px;
+    border-radius: 60px 60px 0 0;    
+  }
+  @media (min-width: 991px) {
+    border-radius: 80px 80px 0 0;    
   }
 `;
 
 const InputField = styled.input`
   border: none;
   border-radius: 10px;
-  height: 2.5rem;
+  height: 3.5rem;
   width: 75%;
   padding: 0 8px;
   font-family: "Josefin Sans", sans-serif;
-  font-size: 20px;
+  font-size: 24px;
   @media (min-width: 768px) {
     font-size: 26px;
-    height: 3.5rem;
   }
 `;
