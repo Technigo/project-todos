@@ -23,7 +23,7 @@ const TodoList = () => {
       <TodoContainer>
         <TodoWrapper>
           <TodoHeader>
-            <Title>Malin's To do list</Title>
+            <Title>Today's To do list</Title>
             <CompletedSection>
               <CompletedTasks>Completed tasks: {completedItems.length}/{items.length}</CompletedTasks>
             </CompletedSection>
@@ -89,7 +89,6 @@ const TodoWrapper = styled.section`
   padding: 80px 60px;
   border-radius: 20px;
   width: 50%;
-  height: 70vh;
 
   @media (min-width: 425px) and (max-width:993px) {
     width: 50%;
@@ -107,12 +106,16 @@ const TodoHeader = styled.header`
 `
 
 const Title = styled.h1`
+  font-family: Arial;
+  font-size: 25px;
 `
 
 const CompletedSection = styled.section`
 `
 
 const CompletedTasks = styled.p`
+  font-family: Arial;
+  font-size: 16px;
 `
 
 const UserInput = styled.section`
