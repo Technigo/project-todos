@@ -178,7 +178,8 @@ h1 {
 }
 
 .clear-button:hover {
-  transform: scale(1.1);
+  filter: brightness(105%);
+  transition: ease-in-out;
 }
 
 @media (min-width: 768px) {
