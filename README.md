@@ -1,13 +1,14 @@
-# Project Todos
+# Bootcamp-Project #12: Project Todos
+This weeks project focused on Redux and was about building a todo-app by writing my own reducers and actions. The app lists all tasks, counts the compoleted out of the uncompleted tasks and allows to delete them.
 
-Replace this readme with your own information about your project.
+## Learning content and lessons learned:
+- The role redux-toolkit plays
+- How to create new slices, reducers, actions
+- What immutability means and how to work with it
+- How to structure a redux store
+- How to interact with your store using selectors or by dispatching actions
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This week I wanted to work with styled components and as it turns out I prefer it this way. It makes the styling process more structured and quicker. I found all the answers in the recordings of the lectures, on stackoverflow and google. Structuring this project in little steps was quite helpful. It helped me fou
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://project-todo-noemi.netlify.app/
