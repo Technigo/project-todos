@@ -50,6 +50,8 @@ const todos = createSlice({
     //Add todo item
     //When todo is dispatched with a new payload including the item object and
     //pushes to a new array, defined in AddTodo.js
+ 
+    
     addToDo: (store, action) => {
       const addItem = action.payload;
       store.items.push(addItem);
