@@ -25,4 +25,4 @@ The app also includes: Clear all function, input field and category selector for
 
 
 #### View it live👀
-https://saras-todos.netlify.app/
+https://pedantic-swanson-4bbd0d.netlify.app/
