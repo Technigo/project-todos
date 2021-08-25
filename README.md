@@ -1,6 +1,6 @@
 # Project Todos
 
-This week's assigment was to build a todo list using Redux.
+This week's assignment was to build a todo list using Redux.
 
 ## The problem
 
