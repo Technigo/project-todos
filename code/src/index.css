@@ -71,7 +71,7 @@ h1 {
 
 .form-container {
   display: flex;
-  max-width: 50%;
+  width: 87%;
   font-family: "Dancing Script", cursive;
   border: 2px double #f8c7b5;
   background-color: #fff;
@@ -184,16 +184,16 @@ h1 {
 
 @media (min-width: 768px) {
   .wrapper {
-    width: 60%;
-    max-width: 500px;
+    width: 45%;
+    max-width: 400px;
   }
 
   h1 {
-    font-size: 56px;
+    font-size: 48px;
   }
 
   .date-number-of-tasks-container {
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .checkbox:after {
@@ -206,6 +206,6 @@ h1 {
   }
 
   .clear-button {
-    font-size: 20px;
+    font-size: 18px;
   }
 }
