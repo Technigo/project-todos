@@ -111,8 +111,10 @@ h1 {
 }
 
 .todo-text-container {
-  width: 100%;
+  width: 80%;
+  margin-bottom: 8px;
   border-bottom: 1px dashed #808080;
+  overflow-wrap: break-word;
 }
 
 .todo-text-container label {
@@ -184,7 +186,6 @@ h1 {
 
 @media (min-width: 768px) {
   .wrapper {
-    width: 45%;
     max-width: 400px;
   }
 
