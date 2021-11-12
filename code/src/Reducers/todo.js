@@ -1,0 +1,56 @@
+import { createSlice } from "@reduxjs/toolkit";
+
+const initialState = {
+    today: new Date(),
+    tasks: [{
+        id: Date.now(),
+        content: "Buy milk in the suppermarket",
+        timeStamp: new Date(),
+        isComplete: false
+    }],
+    totalTasks: 1
+}
+
+export const todo = createSlice({
+    name: 'todo',
+    initialState,
+
+    reducers: {
+        //action to create a new task
+        addTask: (state, action) => {
+            const task = action.payload;
+
+            state.tasks.push({
+                id: Date.now(),
+                content: task,
+                timeStamp: new Date(),
+                isComplete: false,
+            })
+
+            state.totalTasks = state.totalTasks + 1;
+        },
+
+        //action to check task as complete
+        completeTaskToggle: () => {
+
+        },
+
+        // action to remove a task
+        removeTask: () => {
+
+        },
+
+        // action to clear all tasks
+        clearAllTasks: () => {
+
+        },
+        // action to clear all tasks
+        completeAllTasks: () => {
+
+        },
+    }
+
+
+
+
+})
