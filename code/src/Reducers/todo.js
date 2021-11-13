@@ -31,23 +31,33 @@ export const todo = createSlice({
         },
 
         //action to check task as complete
-        completeTaskToggle: () => {
+        completeTask: (state, action) => {
+            const { taskId } = action.payload;
 
+            const completeTask = state.tasks.find(task => task.id === taskId)
+            completeTask.isComplete = !completeTask.isComplete;
         },
 
         // action to remove a task
-        removeTask: () => {
+        removeTask: (state, action) => {
+            const { taskId } = action.payload;
 
+            const tasks = state.tasks.filter(task => task.id !== taskId)
+
+            state.tasks = tasks;
+        },
+
+
+
+        // action to complete all tasks
+        completeAllTasks: (state) => {
+            state.tasks.map(task => task.isComplete = true)
         },
 
         // action to clear all tasks
         clearAllTasks: () => {
-
-        },
-        // action to clear all tasks
-        completeAllTasks: () => {
-
-        },
+            return initialState
+        }
     }
 
 

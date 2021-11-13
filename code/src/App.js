@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { store } from 'store'
 import { Provider } from 'react-redux'
 import { Header } from 'Components/Header'
-import { Tasks } from 'Components/Task'
+import { Tasks } from 'Components/Tasks'
 import { AddTask } from 'Components/AddTask'
 
 const MainContainer = styled.section`

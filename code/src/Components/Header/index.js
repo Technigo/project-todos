@@ -1,6 +1,7 @@
 import React from "react";
 import moment from 'moment';
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { todo } from "Reducers/todo";
 import styled from 'styled-components';
 
 const HeaderContainer = styled.section`
@@ -30,8 +31,18 @@ const ButtonHeader = styled.button`
     `
 
 export const Header = () => {
+    const dispatch = useDispatch();
     const date = useSelector(store => store.todo.today)
     const tasks = useSelector(store => store.todo.tasks)
+
+    const handleOnClickClear = () => {
+        dispatch(todo.actions.clearAllTasks())
+    }
+
+    const handleOnClickComplete = () => {
+        dispatch(todo.actions.completeAllTasks())
+    }
+
 
     return (
         <HeaderContainer>
@@ -41,8 +52,8 @@ export const Header = () => {
             </LeftContainer>
             <RigthContainer>
                 <h1>{tasks.length} tasks</h1>
-                <ButtonHeader>clear</ButtonHeader>
-                <ButtonHeader>complete all</ButtonHeader>
+                <ButtonHeader onClick={handleOnClickClear}>Clear All</ButtonHeader>
+                <ButtonHeader onClick={handleOnClickComplete}>Complete all</ButtonHeader>
             </RigthContainer>
         </HeaderContainer>
     )

@@ -1,7 +1,8 @@
 import React from "react";
 import moment from 'moment';
 import styled from 'styled-components';
-import { useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
+import { todo } from "Reducers/todo";
 
 const TaskContainer = styled.section`
     color: white;
@@ -26,18 +27,36 @@ const TaskDate = styled.label`
     margin: auto 10px;
 `
 
-export const Tasks = () => {
-    const tasks = useSelector(store => store.todo.tasks)
+const TaskText = styled.p`
+ text-decoration: ${props => props.decoration};
+`
+
+export const Task = ({ task }) => {
+    const dispatch = useDispatch();
+
+    const handleOnChange = (id) => {
+        dispatch(todo.actions.completeTask({ taskId: id }));
+    }
+
+
+    const handleOnClickRemove = (id) => {
+        dispatch(todo.actions.removeTask({ taskId: id }));
+    }
 
     return (
-        tasks.map(task => {
-            return <TaskContainer>
-                <TaskLabel>
-                    <input type="checkbox"></input>
-                    <p>{task.content}</p>
-                </TaskLabel>
-                <TaskDate>{moment(task.timeStamp).format('lll')}</TaskDate>
-            </TaskContainer>
-        })
+        <TaskContainer key={task.id}>
+            <TaskLabel>
+                <input
+                    type="checkbox"
+                    name={task.id}
+                    value={task.id}
+                    checked={task.isComplete}
+                    onChange={() => handleOnChange(task.id)}
+                >
+                </input>
+                <TaskText decoration={task.isComplete ? "line-through" : "none"}>{task.content}</TaskText>
+            </TaskLabel>
+            <TaskDate>{moment(task.timeStamp).format('lll')}&nbsp; &nbsp;<i onClick={() => handleOnClickRemove(task.id)} class="fas fa-trash-alt"></i></TaskDate>
+        </TaskContainer >
     )
 }
