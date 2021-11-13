@@ -2,14 +2,16 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     today: new Date(),
-    tasks: [{
-        id: Date.now(),
-        content: "Buy milk in the suppermarket",
-        timeStamp: new Date(),
-        isComplete: false
-    }],
+    tasks: [],
     totalTasks: 1
 }
+
+// {
+//     id: Date.now(),
+//         content: "Buy milk in the suppermarket",
+//             timeStamp: new Date(),
+//                 isComplete: false
+// }
 
 export const todo = createSlice({
     name: 'todo',

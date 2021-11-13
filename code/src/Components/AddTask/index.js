@@ -9,21 +9,37 @@ const AddTaskContainer = styled.section`
     box-shadow: -4px 4px 2px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     margin: 20px auto;
-    height: 100px;
+    min-height: 100px;
+    height: auto;
     width: 90%;
     display: flex;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+
+    @media (min-width: 768px){
+        width: 70%;
+    }
+    @media (min-width: 992px) {
+        width: 50%;
+    }
 `
 
 const CreateTaskButton = styled.button`
     color: white;
-    background: blue;
-    border-radius: 20px;
+    background: black;
+    border-radius: 12px;
     margin: 0 auto;
     height: 40px;
+    border: 1px solid white;
+    width: 100%;
+    height: 100px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
 `
+
 const AddTaskLabel = styled.label`
-color: white;
+    color: white;
     display: flex;
     align-items: center;
     margin: 0 auto;
@@ -31,17 +47,21 @@ color: white;
     height: 80%;
     width: 90%;
 `
+
 const AddTaskInput = styled.textarea`
     color: white;
     border: 1px solid white;
-    min-height: 50px;
+    min-height: 90px;
+    max-height: 360px;
     height: auto;
-    width: 90%;
-    resize: none;
+    width: 100%;
     font-size: 16px;
-    resize: both;
+    resize: none;
     background: rgb(0 0 0 / 5%);
-    border: none;
+    border: 1px solid white;
+    margin: 1rem 0 0 0;
+    font-family: 'Roboto', sans-serif;
+    
        &:focus {
         outline: none !important;
     }
@@ -49,37 +69,72 @@ const AddTaskInput = styled.textarea`
 
 const AddTaskButton = styled.button`
     color: white;
+    border: 1px solid white;
+    font-weight: 700;
     background: rgb(0 0 0 / 5%);
-    border: none;
+    font-size: 1rem;
+    padding: 0.3rem 2rem;
+    border-radius: 10px;
+    margin: 1rem auto;
+
        &:focus {
         outline: none !important;
     }
 `
+
+const AddTaskSymbol = styled.span`
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+`
+
+
+const MaxLength = styled.span`
+    color: red;
+    text-shadow: -1px -1px 1px rgba(255,255,255,.1), 1px 1px 1px rgba(0,0,0,.5), 0px 5px 4px rgba(255,255,255,0.41);
+    font-weight: 400;
+    font-size: 0.7rem;
+    padding: 5px 0 1rem 0;
+`
+
 export const AddTask = () => {
     const dispatch = useDispatch();
     const [canWrite, setCanWrite] = useState(false);
+    const [maxLength, setMaxLength] = useState("")
     const [task, setTask] = useState("");
 
+    const maxLengthPermitted = 450;
     const handleCreateTask = () => {
         setCanWrite(true);
     }
 
     const handleAddTask = () => {
-        if (task) {
+        setCanWrite(false);
+        setTask("");
+        if (task && task.length < maxLengthPermitted) {
             dispatch(todo.actions.addTask(task));
             setTask("");
-            setCanWrite(false);
+        }
+    }
+
+    const handleOnChange = (e) => {
+        setTask(e.target.value)
+        if (e.target.value.length > maxLengthPermitted) {
+            setMaxLength(`Max ${maxLengthPermitted} characters`)
+        } else {
+            setMaxLength("")
         }
 
     }
 
     return (
         <AddTaskContainer>
-            {!canWrite && <CreateTaskButton onClick={() => handleCreateTask()}>+ Add a task</CreateTaskButton>}
+            {!canWrite && <CreateTaskButton onClick={() => handleCreateTask()}><AddTaskSymbol>+</AddTaskSymbol>&nbsp; Add a task</CreateTaskButton>}
             {canWrite && <AddTaskLabel>
-                <AddTaskInput rows="1" cols="1" placeholder="Write your task" onChange={event => setTask(event.target.value)} >
+                <AddTaskInput maxlength={maxLengthPermitted} placeholder="Write your task" onChange={(e) => handleOnChange(e)} >
                 </AddTaskInput>
-                <AddTaskButton onClick={() => handleAddTask()}>Add your task</AddTaskButton>
+                <MaxLength>{maxLength}</MaxLength>
+                <AddTaskButton onClick={() => handleAddTask()}>Done</AddTaskButton>
             </AddTaskLabel>}
         </AddTaskContainer>
     )
