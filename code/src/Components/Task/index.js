@@ -4,21 +4,16 @@ import styled from 'styled-components';
 import { useDispatch } from 'react-redux'
 import { todo } from "Reducers/todo";
 
-const TaskContainer = styled.section`
+const TaskContainer = styled.div`
     color: white;
     box-shadow: -4px 4px 2px rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     margin: 5px auto;
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     background: rgb(0 0 0 / 84%);
-    @media (min-width: 768px){
-        width: 70%;
-    }
-    @media (min-width: 992px) {
-        width: 50%;
-    }
+  
 `
 
 const TaskLabel = styled.label`
