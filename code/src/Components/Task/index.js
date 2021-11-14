@@ -51,6 +51,19 @@ const TaskText = styled.p`
 
 const TaskInput = styled.input`
     font-family: 'Roboto', sans-serif;
+    width: 1em;
+    height: 1em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+      &:checked{
+        background-color: gray;
+      }
 `
 
 export const Task = ({ task }) => {
