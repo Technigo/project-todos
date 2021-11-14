@@ -6,18 +6,12 @@ const initialState = {
     totalTasks: 1
 }
 
-// {
-//     id: Date.now(),
-//         content: "Buy milk in the suppermarket",
-//             timeStamp: new Date(),
-//                 isComplete: false
-// }
-
 export const todo = createSlice({
     name: 'todo',
     initialState,
 
     reducers: {
+
         //action to create a new task
         addTask: (state, action) => {
             const task = action.payload;
@@ -32,6 +26,7 @@ export const todo = createSlice({
             state.totalTasks = state.totalTasks + 1;
         },
 
+
         //action to check task as complete
         completeTask: (state, action) => {
             const { taskId } = action.payload;
@@ -39,6 +34,7 @@ export const todo = createSlice({
             const completeTask = state.tasks.find(task => task.id === taskId)
             completeTask.isComplete = !completeTask.isComplete;
         },
+
 
         // action to remove a task
         removeTask: (state, action) => {
@@ -50,19 +46,16 @@ export const todo = createSlice({
         },
 
 
-
         // action to complete all tasks
         completeAllTasks: (state) => {
             state.tasks.map(task => task.isComplete = true)
         },
+
 
         // action to clear all tasks
         clearAllTasks: () => {
             return initialState
         }
     }
-
-
-
 
 })

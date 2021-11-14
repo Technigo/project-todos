@@ -31,7 +31,7 @@ const TasksCompleted = styled.button`
     align-items: center;
     background: rgb(0 0 0 / 84%);
     font-size: 1.1rem;
-      @media (min-width: 768px){
+    @media (min-width: 768px){
         font-size: 1.2rem;
     }
   

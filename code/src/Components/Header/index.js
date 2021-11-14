@@ -12,7 +12,6 @@ const HeaderContainer = styled.section`
     width: 90%;
     margin: 0 auto;
     border-radius: 0 0 10px 10px;
-
     @media (min-width: 768px){
         width: 70%;
     }

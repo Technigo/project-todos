@@ -22,7 +22,7 @@ const TaskLabel = styled.label`
     margin: auto 10px;
     font-family: 'Roboto', sans-serif;
     font-size: 0.8rem;
-      @media (min-width: 768px){
+    @media (min-width: 768px){
         font-size: 0.9rem;
     }
     @media (min-width: 992px) {
@@ -35,7 +35,7 @@ const TaskDate = styled.label`
     align-items: center;
     margin: auto 10px;
     font-size: 0.8rem;
-     @media (min-width: 768px){
+    @media (min-width: 768px){
         font-size: 0.9rem;
     }
 `
@@ -44,7 +44,7 @@ const TaskText = styled.p`
     text-decoration: ${props => props.decoration};
     text-align: justify;
     font-size: 0.8rem;
-     @media (min-width: 768px){
+    @media (min-width: 768px){
         font-size: 0.9rem;
     }
 `
