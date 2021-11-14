@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "dependencies": {
+    "@kunukn/react-collapse": "^2.2.9",
     "@reduxjs/toolkit": "^1.6.2",
     "babel-eslint": "^10.0.3",
     "eslint": "^6.7.1",
