@@ -4,11 +4,12 @@ import { Provider } from 'react-redux';
 
 import { Input } from 'components/Input';
 import todoSlice from './reducers/todoSlice';
+import { TodoList } from 'components/TodoList';
 
 import './App.css';
 
 const reducer = combineReducers({
-  todoSlice: todoSlice
+  todoSlice: todoSlice.reducer,
 });
 
 const store = configureStore({ reducer });
@@ -17,8 +18,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <main className="app">
-        {/* Todolist */}
-        {/* done */}
+        <TodoList />
         <Input />
       </main>
     </Provider>
