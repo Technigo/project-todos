@@ -2,15 +2,15 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-import { Tasks } from 'components/Tasks'
+//import components
+import AddTodo from './components/AddTodo'
+
 //a reducer required for the store
+import todos  from './reducers/todos'
 
-import { tasks } from 'reducers/tasks'
-
-
-// This will combine all reducers
+// This will combine all reducers, combineReducers is a method which takes an object
 const reducer = combineReducers({
-  tasks: tasks.reducer,
+  todos: todos.reducer
 })
 
 //use the single reducer to create a Store
@@ -22,8 +22,7 @@ export const App = () => {
     // need to wrap everything in provider
   <Provider store={store}>
     Hey hey, we are ready for your tasks
-  <Tasks/>
-
+    <AddTodo />
   </Provider>
   
 )}
