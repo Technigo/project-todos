@@ -1,7 +1,16 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import React, { useState } from "react"
+import styled from "styled-components"
+import { useDispatch } from "react-redux"
 
-import todos from "../reducers/todos";
+import todos from "../reducers/todos"
+
+const AddTodoButton = styled.button`
+    padding: 10px 20px;
+    border: none;
+`
+const AddTodoInput = styled.input`
+    height: 30px;
+`
 
 const AddTodo = () => {
     const [input, setInput] = useState('')
@@ -14,10 +23,10 @@ const AddTodo = () => {
     }
 
     return (
-        <div className="add-todo">
-            <input type="text" value={input} onChange={(event) => setInput(event.target.value)}/>
-            <button onClick={onAddTodo}>Add Todo</button>
-        </div>
+        <>
+            <AddTodoInput type="text" value={input} onChange={(event) => setInput(event.target.value)}/>
+            <AddTodoButton onClick={onAddTodo}>Add Todo</AddTodoButton>
+        </>
     )
 }
 
