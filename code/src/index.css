@@ -18,6 +18,78 @@ code {
     monospace;
 }
 
+
+/* HEADER  */
+
+.header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 1rem;
+}
+
+.dateandcircles {
+  display: flex;
+  align-items: center;
+}
+
+.circles.container {
+  display: flex;
+  flex-direction: row;
+  height: 2rem;
+  margin: 0;
+}
+
+.circle1 {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 8px;
+  background-color: rgb(111, 182, 111);
+}
+
+.circle2 {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 8px;
+  background-color: rgb(72, 143, 72);
+}
+
+.circle3 {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 8px;
+  background-color: rgb(42, 92, 42);
+}
+
+.circle4 {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+  border-radius: 8px;
+  background-color: rgb(22, 66, 22);
+}
+
+.header h1 {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  padding: 0;
+}
+
+.header p {
+  font-weight: 400;
+  font-size: 14px;
+  padding: 0;
+  color: rgb(72, 143, 72);
+  margin: 0;
+}
+
 .main {
   padding: 0 1rem;
 }
@@ -31,29 +103,31 @@ p {
 
 .add-todo-container {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   margin: 0 auto;
-  padding-top: 0.5rem;
+  padding: 0.5rem 1rem 1rem 1rem;
   width: 100%;
 }
 
 h4 {
   font-size: 1rem;
   text-align: left;
-  padding-top: 2rem;
+  padding-top: 1rem;
+  padding-left: 1rem;
   width: 100%;
   margin: 0 auto;
 }
 
 .add-input {
   font-family: montserrat;
-  font-weight: 700;
+  font-weight: 500;
   height: 48px;
   width: 100%;
   border-radius: 24px;
   border: none;
-  background-color: #dedede;
+  background-color: #444;
   padding: 0 1rem 0 1rem;
+  color: #dedede;
 }
 
 .add-button {
@@ -70,7 +144,7 @@ h4 {
 }
 
 .fa-plus-circle {
-  color: #dedede;
+  color: #444;
   font-size: 2rem;
 }
 

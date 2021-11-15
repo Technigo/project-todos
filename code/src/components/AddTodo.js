@@ -14,7 +14,7 @@ const AddTodo = () => {
     }
 
     return (
-        <main className='main'>
+        <>
         <h4>Create new task</h4>
         <div className='add-todo-container'>
             <input 
@@ -27,7 +27,7 @@ const AddTodo = () => {
                 <i className="fas fa-plus-circle"/>
             </button>
         </div>
-        </main>
+        </>
     )
 }
 

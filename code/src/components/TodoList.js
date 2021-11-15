@@ -18,7 +18,7 @@ const TodoList = () => {
 
     return (
         <main className='main'>
-            <h1>You need to do this!</h1>
+            {/* <h1>You need to do this!</h1> */}
             {items.map((item, index) => (
                 <section className='todo-container' key={item.id}>
 
