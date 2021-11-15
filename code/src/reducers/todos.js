@@ -20,11 +20,7 @@ export const todos = createSlice({
 
       const updatedItems = store.items.map(item => {
         if (item.id === action.payload) {
-          const updatedTodo = {
-            ...item,
-            isComplete: !item.isComplete,
-          }
-          return updatedTodo
+          return { ...item, isComplete: !item.isComplete }
         } else {
           return item
         }
