@@ -26,4 +26,9 @@
     border-radius: 10px;
     height:30px;
     width:50px;
+    cursor: pointer;
+}
+
+.input button:hover {
+    background-color:#eeeeec;
 }

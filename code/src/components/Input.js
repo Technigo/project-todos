@@ -3,12 +3,14 @@ import './Input.css';
 
 import { useDispatch } from 'react-redux';
 import saveTodo from '../reducers/todoSlice'
+// import todoSlice from '../reducers/todoSlice';
 
 export const Input = () => {
   const [input, setInput] = useState('');
   const dispatch = useDispatch()
 
-  const addTodo = () => {
+  const addTodo = (event) => {
+      event.preventDefault();
       console.log(`Adding ${input}`)
       dispatch(saveTodo({
           item: input, 
@@ -17,9 +19,9 @@ export const Input = () => {
       }))
   };
   return (
-    <div className="input">
-      <input type="text" value={input} onChange={(e) => setInput(e.target.value)} />
-      <button onClick={addTodo}>Add</button>
-    </div>
+    <form className="input" onSubmit={addTodo}>
+      <input type="text" value={input} onChange={(event) => setInput(event.target.value)} />
+      <button type="submit">Add</button>
+    </form>
   );
 };
