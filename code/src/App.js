@@ -7,6 +7,7 @@ import AddTodo from './components/AddTodo'
 
 //a reducer required for the store
 import todos  from './reducers/todos'
+import TodoList from './components/TodoList'
 
 // This will combine all reducers, combineReducers is a method which takes an object
 const reducer = combineReducers({
@@ -23,6 +24,7 @@ export const App = () => {
   <Provider store={store}>
     Hey hey, we are ready for your tasks
     <AddTodo />
+    <TodoList />
   </Provider>
   
 )}
