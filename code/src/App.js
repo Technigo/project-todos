@@ -18,10 +18,11 @@ export const App = () => {
   return (
     <Provider store={store}>
       <section className="container">
+        <h3 className="header">Quick todo</h3>
         <article className="list-container">
           <TodosList />
         </article>
-        <article className="addtodo-container">
+        <article>
           <AddTodos />
         </article>
       </section>
