@@ -57,12 +57,19 @@ place-items: center;
 }
 
 
+
+
+
+
+/* Add todo content */
+
 .addTodo___text{
   width: 100%;
   height: 180px;
   border-radius: 10px;
-  background-color: cornsilk;
-padding: 5px;
+  background-color: rgba(196, 211, 197, 0.466);
+padding: 5px 5px 15px 5px;
+
 
 }
 
@@ -72,6 +79,9 @@ height: 25px;
 width: 100%;
 background-color: cornsilk;
 border-radius: 5px;
+border-style: none;
+border-color: transparent;
+outline: none;
 }
 
 .task{
@@ -79,9 +89,9 @@ width: 100%;
 height: 100px;
 border-radius: 10px;
 background-color: cornsilk;
-
-
-
+border-style: none;
+border-color: transparent;
+outline: none;
 }
 
 
@@ -99,6 +109,35 @@ justify-content: flex-end;
   background-color: cornsilk;
   border-radius: 5px;
   }
+
+
+
+/* Todo Counter */
+.TodoCountContent{
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 10px;
+width: 450px;
+border-radius: 10px;
+height: 40px;
+background-color: rgb(156, 196, 171);
+
+
+}
+
+.TodoCountContent p{
+width: 100%;
+  background-color: cornsilk;
+  border-radius: 5px;
+  text-align: center;
+
+}
+
+
+
 
 
 /* Todo-List */

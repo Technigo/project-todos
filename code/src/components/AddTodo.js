@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addTodo } from "reducers/todoData";
 
 const AddTodo = ({ todo }) => {
@@ -23,9 +23,11 @@ const AddTodo = ({ todo }) => {
     <article className="addTodoContainer" onSubmit={onSubmit}>
       <section className="addTodo___text">
         <label> Add titel: </label>
+
         <input
           className="titel"
           type="text"
+          maxlength="50"
           value={addTitel}
           onChange={(e) => setAddTitel(e.target.addTitel)}
         />
@@ -36,6 +38,7 @@ const AddTodo = ({ todo }) => {
           <input
             className="task"
             type="text"
+            maxlength="200"
             value={addTask}
             onChange={(e) => setAddTask(e.target.addTask)}
           />
