@@ -11,3 +11,45 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+:root {
+  --main-color: #e9967a;
+  --secondary-color: #944c4c;
+  --main-font: "Courier New",
+  monospace;
+  --secondary-font: monospace;
+  --button-font: 15px monospace;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--main-font);
+}
+
+h2{
+  border: 2px solid seagreen;
+  padding: 0px;
+  margin: 5px;
+}
+
+p {
+font-family: var(--secondary-font);
+margin: 10px;
+}
+p:hover {
+  color:black;
+}
+
+a {
+  text-decoration: none;
+  color: var(--secondary-color);
+  font-size: 1.5em;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-width: 334px;
+  max-width: 500px;
+  margin: 0 auto;
+  border: 2px solid pink;
+  margin: 20px;
+}
