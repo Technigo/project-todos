@@ -16,8 +16,10 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <AddTodo />
-      <TodoList />
+      <section className="main-section">
+        <AddTodo />
+        <TodoList />
+      </section>
     </Provider>
   )
 }

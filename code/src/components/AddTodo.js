@@ -10,10 +10,11 @@ const AddTodo = () => {
 
     const onAddTodo = () => {
         dispatch(todos.actions.addTodo(input))
+        setInput('')
     }
 
     return (
-        <div>
+        <div className="add-todo">
             <input type="text" value={input} onChange={(event) => setInput(event.target.value)}/>
             <button onClick={onAddTodo}>Add Todo</button>
         </div>
