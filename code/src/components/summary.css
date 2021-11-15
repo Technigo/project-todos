@@ -27,3 +27,24 @@
   color: var(--teal);
   width: 100%;
 }
+
+.summary-wrapper-empty h2 {
+  font-size: 4.5em;
+  color: var(--black);
+  padding: 0 5%;
+  margin-top: 0.5em;
+  margin-bottom: 0;
+}
+
+.summary-wrapper-empty h3 {
+  margin: 0;
+  padding: 0 5%;
+  font-size: 2.8em;
+  color: var(--orange);
+  width: 100%;
+}
+
+.summary-wrapper-empty p {
+  padding: 0 5%;
+  color: var(--teal);
+}
