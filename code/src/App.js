@@ -21,8 +21,10 @@ export const App = () => {
       <Header />
       <Provider store={store}>
         <Summary />
-        <AddTodo />
-        <TodoList />
+        <div className="app-wrapper">
+          <AddTodo />
+          <TodoList />
+        </div>
       </Provider>
     </>
   );

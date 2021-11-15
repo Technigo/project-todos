@@ -51,10 +51,30 @@ code {
     monospace;
 }
 
+.app-wrapper {
+  display: flex;
+  /* width: 100%; */
+  position: absolute;
+  top: 40%;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  /* top: 0
+px
+; */
+  /* justify-content: center; */
+  /* justify-items: center; */
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
 .input-wrapper {
+  display: flex;
+  /* padding: 20% 0; */
   position: relative;
-  top: 15%;
-  right: 30%;
-  left: 30%;
-  z-index: 1;
+  top: 8%;
+  /* right: 30%; */
+  /* left: 30%; */
+  z-index: 2;
+  justify-content: center;
 }
