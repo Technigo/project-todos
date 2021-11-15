@@ -71,6 +71,33 @@ const todos = createSlice({
       );
       store.items = decreasedItems;
     },
+    completeAll: (store, action) => {
+      const completedItems = store.items.map(todo => {
+        if (!todo.isComplete) {
+          return {
+            ...todo,
+            isComplete: true,
+          };
+        } else {
+          return todo;
+        }
+      });
+      store.items = completedItems;
+    },
+
+    uncompleteAll: (store, action) => {
+      const uncompletedItems = store.items.map(todo => {
+        if (todo.isComplete) {
+          return {
+            ...todo,
+            isComplete: false,
+          };
+        } else {
+          return todo;
+        }
+      });
+      store.items = uncompletedItems;
+    },
   },
 });
 export default todos;

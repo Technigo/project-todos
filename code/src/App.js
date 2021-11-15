@@ -20,12 +20,14 @@ const store = configureStore({
 
 export const App = () => {
   return (
-    <Provider store={store}>
+    <main>
       <div className='todo-container'>
-        <Header />
-        <AddTodo />
-        <TodoList />
+        <Provider store={store}>
+          <Header />
+          <AddTodo />
+          <TodoList />
+        </Provider>
       </div>
-    </Provider>
+    </main>
   );
 };

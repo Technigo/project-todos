@@ -16,7 +16,6 @@ const AddTodo = () => {
   const handleKeyPress = event => {
     // this makes it possible to enter input with enter key
     if (event.key === 'Enter') {
-      console.log('enter press here! ');
       onAddTodo();
     }
   };
@@ -26,11 +25,19 @@ const AddTodo = () => {
       <input
         type='text'
         value={input}
+        placeholder='5-20 characters '
         onChange={event => setInput(event.target.value)}
-        onKeyPress={handleKeyPress}
+        onKeyPress={input.length >= 5 ? handleKeyPress : ''}
+        minLength='5'
+        maxLength='20'
       />
-      <button type='button' onClick={onAddTodo}>
-        Add todo
+      <button
+        className='add-button'
+        type='button'
+        onClick={onAddTodo}
+        disabled={input.length < 5 || input.length > 20}
+      >
+        ➕
       </button>
     </div>
   );

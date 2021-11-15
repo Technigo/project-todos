@@ -1,10 +1,12 @@
 body {
-  margin: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  margin: 0;
+  font-family: 'Montserrat Alternates', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: #d3e4cd; */
+  text-align: center;
+  background-image: url(/todo-background.jpg);
+  width: 100%;
 }
 
 code {
@@ -15,17 +17,90 @@ code {
 .flex-item {
   display: flex;
   align-items: center;
-  border: 2px solid green;
+  width: 100%;
+  justify-content: space-evenly;
+  text-align: center;
+  background-color: #d3e4cd;
+  margin: 10px auto;
+  border-radius: 10px;
 }
 
-.todo-container {
-  border: 2px solid red;
-  /* position: absolute;
-  top: 50%;
+.todo-date {
+  font-size: 8px;
+}
+
+.todos-done {
+  font-size: 11px;
+}
+
+.input-text {
+  margin-right: 50px;
+
+  font-size: 10px;
+}
+
+.todos-added {
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #adc2a9;
+  padding: 20px;
+  margin: 10px auto;
+  box-shadow: 1px 1px 2px gray;
+
+  width: 70%;
+}
+
+button {
+  background-color: #99a799;
+  border: 1px solid rgb(199, 170, 8);
+  border-radius: 5px;
+}
+
+.add-button {
+  margin: 5px;
+  border: 1px solid black;
+}
+
+.delete-button {
+  font-size: 10px;
+  padding: 2px;
+}
+
+main {
+  position: absolute;
   left: 50%;
-  transform: translate(-50%, -50); */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border: 6px solid #737e73;
+
+  width: 40%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fef5ed;
+  /* background-image: linear-gradient(#fef5ed, #d8d2cc); */
+  box-shadow: 0 0 18px #727272;
+  border-radius: 10px;
+}
+
+input {
+  border-radius: 5px;
+  padding: 5px;
+  margin: 5px 0;
+}
+
+.done {
+  color: rgb(138, 136, 136);
+  text-decoration: line-through;
+}
+
+.not-done {
+  color: black;
+}
+
+.no-todos {
+  font-size: 18px;
+}
+
+.fas {
+  font-size: 38px;
 }

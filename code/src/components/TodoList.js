@@ -18,25 +18,42 @@ const TodoList = () => {
   };
   if (items.length > 0)
     return (
-      <section>
+      <section className='todos-added'>
         {items.map(item => (
           <div className='flex-item' key={item.id}>
-            <div>
-              {' '}
-              <p>{item.text}</p> {moment(item.createdAt).format('LL')}
-            </div>
             <input
               type='checkbox'
               checked={item.isComplete}
               onChange={() => onToggleTodo(item.id)}
             />
 
-            <button onClick={() => onDeleteTodo(item.id)}>X</button>
+            <p className={item.isComplete ? 'done ' : 'not-done '}>
+              {item.text}
+            </p>
+            <p
+              className={
+                item.isComplete ? 'done todo-date ' : 'not-done todo-date '
+              }
+            >
+              {moment(item.createdAt).format('LL')}
+            </p>
+
+            <button
+              className='delete-button'
+              onClick={() => onDeleteTodo(item.id)}
+            >
+              🗑️
+            </button>
           </div>
         ))}
       </section>
     );
-  return <p>NO TODOS</p>;
+  return (
+    <div className='no-todos'>
+      <p>NO TODOS</p>
+      <i className='fas fa-hand-peace'></i>
+    </div>
+  );
 };
 
 export default TodoList;
