@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import { Input } from 'components/Input';
+import './App.css';
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
-}
+    <main className="app">
+      {/* Todolist */}
+      {/* done */}
+      <Input />
+    </main>
+  );
+};
