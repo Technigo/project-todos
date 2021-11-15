@@ -1,0 +1,24 @@
+.myheader {
+    padding:20px;
+    margin-bottom:10px;
+    color:White;
+    background-size: cover !important;
+    background: url('../assets/gradient2.jpg');
+    top:0;
+    z-index: 0;
+}
+
+.myheader h1 {
+    margin:0;
+}
+
+.myheader p {
+    margin:0;
+}
+
+@media only screen and (min-width:599px) {
+    .myheader {
+        margin-bottom: 20px;
+        padding:30px;
+    }
+}

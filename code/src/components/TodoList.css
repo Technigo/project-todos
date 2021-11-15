@@ -1,0 +1,84 @@
+.list-of-items-container {
+  padding: 0px 10px;
+  overflow:scroll;
+  max-height: 370px;
+}
+
+@media only screen and (min-height:569px) {
+    .list-of-items-container {
+        max-height: 465px;
+    }
+}
+
+@media only screen and (min-height:668px) {
+    .list-of-items-container {
+        max-height: 530px;
+    }
+}
+
+@media only screen and (min-height:738px) {
+    .list-of-items-container {
+        max-height: 500px;
+    }
+}
+
+.list-of-items-container::-webkit-scrollbar {
+  display: none;
+}
+
+.list-of-items {
+  list-style-type: none;
+  padding: 0px;
+  height:100%;
+  place-items: end;
+  border-radius: 12px;
+  margin: 0px;
+}
+
+.item {
+  border-radius: 5px;
+  background: white;
+  padding: 15px 15px;
+  margin-bottom: 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.item:hover {
+  background-color: #eeeeec;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.item span {
+  display: block;
+}
+
+.date {
+  font-size: 12px;
+  margin-top: 10px;
+}
+
+.todo-header {
+  font-weight: 600;
+}
+
+@media only screen and (min-width: 599px) {
+  .item {
+    padding: 10px;
+    margin-bottom:20px;
+  }
+
+  .list-of-items-container {
+    overflow-y: scroll;
+    padding: 0px 20px;
+  }
+
+  .list-of-items-container::-webkit-scrollbar {
+    display: none;
+  }
+
+  .item,
+  .date {
+    margin-top: 20px;
+  }
+}

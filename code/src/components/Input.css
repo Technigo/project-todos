@@ -1,18 +1,23 @@
 .input {
     height:50px;
-    width:80%;
-    border-radius: 12px;
-    background-color:white;
+    border-radius: 5px;
     display:flex;
-    justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    place-items: center;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    position:absolute;
+    bottom:10px;
+    right:10px;
+    left:10px;
 }
 
 .input input {
-    background:none;
+    height:50px;
+    border-radius: 5px 0 0 5px;
     border:none;
-    margin-left: 12px;
     flex:1;
+    padding-left:20px;
+    
 }
 
 .input input:focus {
@@ -20,15 +25,27 @@
 }
 
 .input button {
-    margin-right:8px;
-    background-color: rgb(214, 213, 213);
+    background-color: #144b79;
+    color:white;
+    font-weight: 700;
+    font-size:16px;
     border:none;
-    border-radius: 10px;
-    height:30px;
-    width:50px;
+    border-radius: 0px 5px 5px 0px;
+    height:100%;
+    width:100px;
     cursor: pointer;
 }
 
 .input button:hover {
-    background-color:#eeeeec;
+    background-color:#3e7eb9;
+    transition: .2s;
+}
+
+@media only screen and (min-width:599px) {
+    .input {
+        bottom:20px;
+        right:20px;
+        left:20px;
+    }
+
 }
