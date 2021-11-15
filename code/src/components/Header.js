@@ -25,10 +25,18 @@ const HeaderDiv = styled.div`
   justify-content: space-between;
   width: 90%;
   height: 50px;
-  margin: auto;
+  margin: 10px auto;
 
   @media (min-width: 700px) {
     height: 100px;
+    width: 70%;
+    margin: 30px auto;
+  }
+
+  @media (min-width: 1100px) {
+    height: 100px;
+    width: 50%;
+    margin: 50px auto;
   }
 `;
 
@@ -36,10 +44,18 @@ const HeaderTitle = styled.h1`
   color: hotpink;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
+
+  @media (min-width: 700px) {
+    font-size: 34px;
+  }
 `;
 
 const DateText = styled.p`
   color: hotpink;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
+
+  @media (min-width: 700px) {
+    font-size: 34px;
+  }
 `;

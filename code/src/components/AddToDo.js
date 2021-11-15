@@ -56,18 +56,23 @@ const TextInput = styled.input`
 `;
 
 const StyledButton = styled.button`
+  color: hotpink;
+  border: none;
+  background-color: white;
+  /* 
   background-color: pink;
+  border: 1px solid pink;
   border: 1px solid hotpink;
   box-shadow: 3px 2px 3px hotpink;
-  border-radius: 60%;
-  width: 40px;
-  height: 40px;
-  margin: 10px;
-  font-size: 26px;
+  box-sizing: border-box;
+  border-radius: 100px; 
+  */
+  margin-right: 15px;
+  font-size: 28px;
 
   :hover {
-    background-color: pink;
-    box-shadow: 3px 3px 8px hotpink;
+    /* background-color: pink; */
+    box-shadow: 2px 2px 2px 1px hotpink;
     cursor: grab;
   }
 `;
