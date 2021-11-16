@@ -9,7 +9,7 @@ export const TodoList = () => {
 
   //Denna funktionen tar det som är i input statet och skickar till funktionen i the store. tror jag...
   const onAddToDo = () => {
-    dispatch(todo.actions.TodoList(input));
+    dispatch(todo.actions.addTodo(input));
   };
 
   return (

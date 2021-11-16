@@ -13,6 +13,7 @@ export const todo = createSlice({
         text: action.payload,
         isComplete: false
       };
+      store.items = [...store.items, newTodo];
     }
   }
 });

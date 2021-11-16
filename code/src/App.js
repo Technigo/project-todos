@@ -6,7 +6,7 @@ import { TodoList } from './Components/TodoList';
 import { Header } from 'Components/Header';
 import { Footer } from 'Components/Footer';
 
-import { todo } from 'reducers/todo';
+import { todo } from './reducers/todo';
 
 const reducer = combineReducers({
   todo: todo.reducers
