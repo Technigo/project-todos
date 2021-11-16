@@ -18,6 +18,13 @@ const todos = createSlice({
     },
     removeToDo: (state, action) => {
       state.items = state.items.filter((item) => item.id !== action.payload)
+    },
+    toggleIsComplete: (state, action) => {
+      const task = state.items.find((item) => item.id === action.payload)
+      task.isComplete = !task.isComplete
+    },
+    completeAll: (state) => {
+      state.items.forEach((item) => item.isComplete = true)
     }
   }
 })

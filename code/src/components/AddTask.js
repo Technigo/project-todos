@@ -20,6 +20,7 @@ const AddTask = () => {
       />
       <button 
         type='submit'
+        disabled = {!input}
         onClick={() => onAddToDo(input)}>Add new task
       </button>
     </div>
