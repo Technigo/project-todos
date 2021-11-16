@@ -11,3 +11,48 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* .checkbox {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox > span {
+  color: #34495e;
+  padding: 0.5rem 0.25rem;
+}
+
+.checkbox > input {
+  height: 25px;
+  width: 25px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  border: 1px solid #34495e;
+  border-radius: 50px;
+  outline: none;
+  transition-duration: 0.3s;
+  background-color: #41b883;
+  cursor: pointer;
+}
+
+.checkbox > input:checked + span::before {
+  border: 1px solid #41b883;
+  background-color: #34495e;
+}
+
+.checkbox > input:checked {
+  content: "\2713";
+  display: block;
+  text-align: center;
+  color: #41b883;
+  position: absolute;
+  left: 0.7rem;
+  top: 0.2rem;
+}
+
+.checkbox > input:active {
+  border: 2px solid #34495e;
+} */
