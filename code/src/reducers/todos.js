@@ -40,6 +40,11 @@ const todos = createSlice({
 
       store.items = updateItems;
     },
+
+    deleteTodo: (store, action) => {
+        const decreasedItems = store.items.filter(item => item.id !== action.payload);
+        store.items = decreasedItems;
+    },
   },
 });
 
