@@ -17,7 +17,6 @@ const TodoContainer = styled.div`
 
 const TodoList = () => {
   let store = useSelector((store) => store.todo.items);
-
   const dispatch = useDispatch();
 
   //   Function runs when checkbox is clicked
