@@ -1,10 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
-import styled from "styled-components"
-
 import todos from "reducers/todos";
 import moment from "moment";
+import { HeaderContainer, HeaderMainTitle, HeaderBodyContainer, LeftContainer, HeaderSubTitle,RigthContainer, ButtonHeader } from "./StyledComponents";
 
 const Header = () => {
 
@@ -12,19 +11,27 @@ const Header = () => {
   const onCompleteAll = () => {
     dispatch(todos.actions.completeAll())
   }
+  // const onDeleteAll = () => {
+  //   dispatch(todos.actions.clearAll())
+  // }
   const tasks = useSelector((store) => store.todos.items)
   // const completedTasks = tasks.filter((singleTask) => singleTask.isComplete)
   
   return(
     <>
-    <header>
-      <h1>Todo</h1>
-      <p>{moment().format('MMMM Do')}</p>
-      <div><p>{tasks.length} tasks</p>
-      {/* <div>Completed Tasks: {completedTasks.id}/{tasks.length}</div> */}
-      <button onClick={onCompleteAll}>Complete All</button>
-      </div>
-    </header>
+    <HeaderContainer>
+      <HeaderMainTitle>Todo</HeaderMainTitle>
+      <HeaderBodyContainer>
+        <LeftContainer>
+          <HeaderSubTitle>{moment().format('MMMM Do')}</HeaderSubTitle>
+        </LeftContainer>
+        <RigthContainer>
+          <HeaderSubTitle>{tasks.length} tasks</HeaderSubTitle>
+          <ButtonHeader onClick={onCompleteAll}>Complete All</ButtonHeader>
+          {/* <ButtonHeader onClick={onDeleteAll}>Clear All</ButtonHeader> */}
+        </RigthContainer>
+      </HeaderBodyContainer>
+    </HeaderContainer>
     </>
   )
 }

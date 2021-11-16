@@ -35,6 +35,10 @@ const todos = createSlice({
    completeAll: (store) => {
     store.items.map(item => item.isComplete = true)
   },
+   // action to clear all tasks
+  //   clearAllTasks: () => {
+  //     return todos.initialState()
+  // },
 
   // delete todos
   deleteTodo: (store, action) => {

@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 
 import todos from "reducers/todos";
-
+import { FlexItem } from "./StyledComponents";
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
@@ -30,7 +30,7 @@ const TodoList = () => {
         />
         <p>{moment(item.createdAt).fromNow()}</p>
         <button onClick={() => onDeleteTodo(item.id)}>
-          🗑️
+          <span role="img" aria-label="delete">🗑️</span>
         </button>
         </FlexItem>
       ))}
