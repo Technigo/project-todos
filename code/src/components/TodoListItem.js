@@ -1,49 +1,42 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { CategoryIcon } from "./CategoryIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faWavePulse,
-  faBusinessTime,
-  faFamily,
-} from "@fortawesome/pro-light-svg-icons";
+import { faTrash } from "@fortawesome/pro-light-svg-icons";
+import { useDispatch } from "react-redux";
+import { todo } from "reducers/todo";
 
-export const TodoListItem = ({ todo }) => {
+export const TodoListItem = ({ item }) => {
+  const dispatch = useDispatch();
   return (
     <Item>
-      <IconContainer>
-        {todo.category === "activity" && <FontAwesomeIcon icon={faWavePulse} />}
-        {todo.category === "business" && (
-          <FontAwesomeIcon icon={faBusinessTime} />
-        )}
-        {todo.category === "family" && <FontAwesomeIcon icon={faFamily} />}
-      </IconContainer>
+      <CategoryIcon
+        category={item.category}
+        completed={item.completed}
+        canClick={true}
+        id={item.id}
+      />
       <ItemHeaderLocationContainer>
-        <ItemHeader>{todo.title}</ItemHeader>
-        <ItemLocation>{todo.adress}</ItemLocation>
+        <ItemHeader>{item.title}</ItemHeader>
+        <ItemLocation>{item.place}</ItemLocation>
+        <ItemTimer>{item.time}</ItemTimer>
       </ItemHeaderLocationContainer>
-      <ItemTimer>{todo.time}</ItemTimer>
+      <FontAwesomeIcon
+        icon={faTrash}
+        onClick={() => dispatch(todo.actions.removeTodo({ id: item.id }))}
+      />
     </Item>
   );
 };
 
 const Item = styled.div`
-  border-bottom: solid 1px #c9cbd4;
+  border-bottom: solid 1px #d2d3db;
   padding-bottom: 10px;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: auto 1fr auto;
   justify-content: center;
   align-items: center;
-`;
-
-const IconContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #d2d3db;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
 `;
 
 const ItemHeaderLocationContainer = styled.div``;

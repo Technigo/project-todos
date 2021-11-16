@@ -26,7 +26,7 @@ const FlexBox = styled.div`
 
 const EmptyListBtn = styled.button`
   border: none;
-  background-color: lightgrey;
+  background-color: #d2d3db;
   padding: 10px;
 
   &:hover {

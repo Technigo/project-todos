@@ -2,11 +2,18 @@ import React from "react";
 import styled from "styled-components/macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/pro-light-svg-icons";
+import { todo } from "reducers/todo";
+import { useDispatch } from "react-redux";
 
 export const AddButton = () => {
+  const dispatch = useDispatch();
   return (
     <AddButtonContainer>
-      <AddButtonCircle>
+      <AddButtonCircle
+        onClick={() => {
+          dispatch(todo.actions.currentScreen({ screen: "newTodo" }));
+        }}
+      >
         <FontAwesomeIcon icon={faPlus} />
       </AddButtonCircle>
     </AddButtonContainer>

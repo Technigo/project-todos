@@ -12,8 +12,8 @@ export const TodoList = () => {
     <>
       <TodoListContainer>
         <TodoListTitle>Todos</TodoListTitle>
-        {todos.map((todo) => {
-          return <TodoListItem key={todo.id} todo={todo} />;
+        {todos.map((item) => {
+          return <TodoListItem key={item.id} item={item} />;
         })}
       </TodoListContainer>
       <EmptyListButton />

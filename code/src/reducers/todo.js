@@ -4,63 +4,32 @@ const todos = [
   {
     id: 1,
     title: "Walk in the park",
-    adress: "Trädgårdsföreningen, Gothenburg",
+    place: "Trädgårdsföreningen, Gothenburg",
     time: "09:00",
     category: "activity",
+    completed: false,
   },
   {
     id: 2,
     title: "Walk in the park",
-    adress: "Trädgårdsföreningen, Gothenburg",
+    place: "Trädgårdsföreningen, Gothenburg",
     time: "09:00",
     category: "activity",
+    completed: false,
   },
   {
     id: 3,
     title: "Walk in the park",
-    adress: "Trädgårdsföreningen, Gothenburg",
+    place: "Trädgårdsföreningen, Gothenburg",
     time: "09:00",
     category: "activity",
-  },
-  {
-    id: 4,
-    title: "Walk in the park",
-    adress: "Trädgårdsföreningen, Gothenburg",
-    time: "09:00",
-    category: "activity",
-  },
-  {
-    id: 5,
-    title: "Walk in the park",
-    adress: "Trädgårdsföreningen, Gothenburg",
-    time: "09:00",
-    category: "activity",
-  },
-  {
-    id: 6,
-    title: "Walk in the park",
-    adress: "Trädgårdsföreningen, Gothenburg",
-    time: "09:00",
-    category: "activity",
-  },
-  {
-    id: 7,
-    title: "Walk in the park",
-    adress: "Trädgårdsföreningen, Gothenburg",
-    time: "09:00",
-    category: "activity",
-  },
-  {
-    id: 8,
-    title: "Walk in the park",
-    adress: "Trädgårdsföreningen, Gothenburg",
-    time: "09:00",
-    category: "activity",
+    completed: false,
   },
 ];
 
 const initialState = {
   todos,
+  currentScreen: "todoList",
 };
 
 export const todo = createSlice({
@@ -69,6 +38,34 @@ export const todo = createSlice({
   reducers: {
     emptyList: (store) => {
       store.todos = [];
+    },
+    currentScreen: (store, action) => {
+      const { screen } = action.payload;
+      store.currentScreen = screen;
+    },
+    addNewTodo: (store, action) => {
+      const { category, title, place, time } = action.payload;
+      const id = store.todos.length + 1;
+      store.todos.push({ id, category, title, place, time });
+    },
+
+    setIsCompleted: (store, action) => {
+      const { id } = action.payload;
+      const index = store.todos.findIndex((todo) => todo.id === id);
+
+      const newTodos = [...store.todos];
+
+      newTodos[index].completed = !newTodos[index].completed;
+      store.todos = newTodos;
+    },
+
+    removeTodo: (store, action) => {
+      const { id } = action.payload;
+      const index = store.todos.findIndex((todo) => todo.id === id);
+
+      const newTodos = [...store.todos];
+      newTodos.splice(index, 1);
+      store.todos = newTodos;
     },
   },
 });
