@@ -9,6 +9,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: linear-gradient(
+    180deg,
+    rgb(255, 255, 255),
+    rgb(206, 195, 210)
+  );
+  height: 100vh;
 }
 
 code {
@@ -23,6 +29,8 @@ code {
   width: 80%;
   display: flex;
   justify-content: space-between;
+  margin-bottom: 20px;
+  background-color: white;
 }
 
 .input-text {
@@ -47,17 +55,28 @@ code {
   flex-direction: column;
 }
 
-.item-container {
+.item-container,
+.item-container-checked {
   display: flex;
   flex-direction: column;
   background-image: linear-gradient(
     72deg,
     rgb(255, 255, 255),
-    rgb(224, 190, 238)
+    rgb(206, 191, 211)
   );
   padding: 10px 20px;
   border-radius: 20px;
   width: 80%;
+  margin-bottom: 20px;
+}
+
+.item-container-checked {
+  background-image: linear-gradient(
+    72deg,
+    rgb(255, 255, 255),
+    rgb(206, 191, 211)
+  );
+  opacity: 0.5;
 }
 
 .delete-btn {
@@ -71,4 +90,10 @@ code {
   align-items: center;
   font-size: 20px;
   font-weight: 700;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
 }

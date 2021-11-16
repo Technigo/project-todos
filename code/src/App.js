@@ -6,6 +6,7 @@ import todos from "./reducers/todos"
 
 import AddTodo from "./components/AddTodos"
 import TodoList from "components/TodoList"
+import FirstText from "components/FirstText"
 
 const reducer = combineReducers({
   todos: todos.reducer,
@@ -16,8 +17,11 @@ const store = configureStore({ reducer: reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <AddTodo />
-      <TodoList />
+      <main className="main-container">
+        <FirstText />
+        <AddTodo />
+        <TodoList />
+      </main>
     </Provider>
   )
 }

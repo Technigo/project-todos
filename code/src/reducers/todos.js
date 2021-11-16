@@ -19,18 +19,11 @@ const todos = createSlice({
         isComplete: false,
       }
 
-      console.log(store)
-      console.log("action", action)
       store.items = [...store.items, newTodo]
       console.log("store.items", store.items)
-      //   console.log("newTodo", newTodo)
-
-      const counter = store.items.length
-      console.log("this is the counter", counter)
     },
 
     toggleTodo: (store, action) => {
-      console.log("this is the right checkbox", action)
       //   store.items.forEach(item => {
       //     if (item.id === action.payload) {
       //       item.isComplete = !item.isComplete
@@ -38,6 +31,11 @@ const todos = createSlice({
       //   })
 
       const updatedItems = store.items.map(item => {
+        if (item.isComplete) {
+          console.log("true")
+        } else {
+          console.log("not true")
+        }
         if (item.id === action.payload) {
           const updatedTodo = {
             ...item,

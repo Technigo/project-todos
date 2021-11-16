@@ -23,9 +23,13 @@ const TodoList = () => {
 
   return (
     <section className="list-container">
-      <p>You have {items.length} things to do!</p>
       {items.map((item, index) => (
-        <div className="item-container" key={item.id}>
+        <div
+          className={
+            item.isComplete ? "item-container-checked" : "item-container"
+          }
+          key={item.id}
+        >
           <div className="text-and-check-container">
             <p>{item.text}</p>
 
