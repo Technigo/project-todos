@@ -1,0 +1,9 @@
+# Blue Requirements
+# app should list all todo tasks  ---> DONE
+# you should be able to mark a task ---> DONE
+# you should be able to add and remove tasks ---> DONE
+# app should show a count of either all todoes, or all incomplete ones --->DONE
+
+# Red level 
+# add a timestamp for each tesk indicating when it was created, displayed as formatted date, but stored as raw date.
+# add a complete all button to seta all tasks complete, use empty states (user cleared)

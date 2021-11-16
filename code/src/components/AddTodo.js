@@ -8,7 +8,7 @@ const AddTodo = () => {
   const [input, setInput] = useState('');
   const dispatch = useDispatch();
   const date = Moment();
-  // const date = useSelector((store) => store.todo.today);
+  const items = useSelector((store) => store.todos.items);
 
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input));
@@ -25,6 +25,7 @@ const AddTodo = () => {
       <p>
         {Moment(date).format('dddd')},{Moment(date).format('ll')}
       </p>
+      <p>Number of tasks:{items.length}</p>
     </div>
   );
 };

@@ -20,6 +20,8 @@ const TodoList = () => {
   const onClearTodo = (id) => {
     dispatch(todos.actions.clearTodo(id));
   };
+  // const CurrentDate = Moment().valueOf();
+  // const CurrentDate = new Date(0);
 
   return (
     <section className='todo'>
@@ -38,9 +40,9 @@ const TodoList = () => {
             >
               <span>REMOVE</span>
             </button>
-            <p>
-              {Moment(date).format('dddd')},{Moment(date).format('ll')}
-            </p>
+            {/* <p>{CurrentDate}</p> */}
+            {/* {Moment().format('ddd, hA')}; */}
+            {/* <p>{Moment().format('MM/DD/YYYY')}</p> */}
           </div>
         </div>
       ))}
