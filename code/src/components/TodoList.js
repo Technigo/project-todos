@@ -11,13 +11,14 @@ export const TodoList = () => {
   const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id));
   };
-  console.log("done", items.isComplete);
+  //   const onCompleteAllTodo = () => {
+  //     dispatch(todos.actions.completeAll);
+  //   };
 
   return (
     <section>
-      {/* className={items.length <= 0 ? "clear-board" : "p"} */}
+      <p className={items.length <= 0 ? "clear-board" : "p"}>Hello</p>
 
-      <p>Tasks total: {items.length} </p>
       {items.map((item) => (
         <div key={item.id} className="task-wrapper">
           <input
@@ -32,6 +33,7 @@ export const TodoList = () => {
           <button onClick={() => onDeleteTodo(item.id)}>-</button>
         </div>
       ))}
+      {/* <button onClick={() => onCompleteAllTodo()}>check all</button> */}
     </section>
   );
 };
