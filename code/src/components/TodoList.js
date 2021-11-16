@@ -4,12 +4,22 @@ import styled from 'styled-components/macro';
 
 import todos from '../reducers/todos';
 import { StyledDeleteButton } from './StyledButtons';
+import emptystate from '../assets/emptystate.png';
 
 const StyledList = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin: 1vh 3vw;
+  &.no-items {
+    background-image: url(${emptystate});
+    height: 500px;
+    width: 95%;
+    object-fit: cover;
+    background-repeat: no-repeat;
+    display: block;
+    margin: 0 auto;
+  }
 `;
 
 const StyledListItem = styled.div`
@@ -17,11 +27,9 @@ const StyledListItem = styled.div`
   align-items: center;
 `;
 
-// const StyledDeleteBtn = styled.button`
-// `;
-
 const TodoList = () => {
   const todoListItems = useSelector((store) => store.todos.todoListItems);
+  const timePosted = useSelector((store) => store.todos.timePosted);
 
   const dispatch = useDispatch();
 
@@ -34,7 +42,7 @@ const TodoList = () => {
   };
 
   return (
-    <StyledList>
+    <StyledList className={todoListItems.length <= 0 && 'no-items'}>
       {todoListItems.map((listItem) => (
         <StyledListItem key={listItem.id}>
           <input
@@ -43,7 +51,7 @@ const TodoList = () => {
             onChange={() => onToggleCheckbox(listItem.id)}
           />
           <p>{listItem.text}</p>
-
+          <p>{timePosted}</p>
           <StyledDeleteButton onClick={() => onDeleteTodo(listItem.id)}>
             Delete
           </StyledDeleteButton>

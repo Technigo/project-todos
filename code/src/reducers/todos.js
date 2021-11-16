@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
 import uniqid from 'uniqid';
+import moment from 'moment';
 
 const todos = createSlice({
   name: 'todos',
   initialState: {
     todoListItems: [],
+    timePosted: moment().format('lll'),
   },
   reducers: {
     addTodo: (store, action) => {
