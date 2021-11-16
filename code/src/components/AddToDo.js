@@ -42,12 +42,12 @@ const StyledMainDiv = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: white;
+  background-color: #eddcff;
   width: 320px;
   height: 80px;
   margin: 50px auto 30px;
-  border: 1px solid hotpink;
-  box-shadow: 2px 2px 3px hotpink;
+  border: 1px solid #c690ff;
+  box-shadow: 2px 2px 3px #c690ff;
   border-radius: 5px;
 
   @media (min-width: 700px) {
@@ -61,8 +61,9 @@ const TextInput = styled.input`
   margin: 5px;
   width: 150px;
   height: 30px;
-  border: 2px solid pink;
-  caret-color: hotpink;
+  border: 2px solid #eddcff;
+  caret-color: #c690ff;
+  color: #c690ff;
   background-color: white;
   font-size: 16px;
 
@@ -72,16 +73,17 @@ const TextInput = styled.input`
 `;
 
 const StyledButton = styled.button`
-  color: hotpink;
+  color: #c690ff;
   border: none;
   border-radius: 8px;
-  background-color: white;
+  background-color: #eddcff;
   -webkit-appearance: none;
   margin-right: 15px;
   font-size: 28px;
 
   :hover {
-    background-color: pink;
+    background-color: #c690ff;
+    color: #eddcff;
     cursor: crosshair;
   }
 `;

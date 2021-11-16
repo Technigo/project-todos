@@ -27,7 +27,7 @@ const FooterDiv = styled.div`
 `;
 
 const Text = styled.h3`
-  color: hotpink;
+  color: #c690ff;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   margin: 20px auto;
