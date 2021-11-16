@@ -12,6 +12,7 @@ const TodoInfo = useSelector((store) => store.todo)
     
 
 <article className="todosListContainer">
+  
 {TodoInfo.map((todos) =>
 
  

@@ -1,35 +1,56 @@
 import React, { useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch} from "react-redux";
 import { addTodo } from "reducers/todoData";
 
-const AddTodo = ({ todo }) => {
-  const [addTitel, setAddTitel] = useState();
-  const [addTask, setAddTask] = useState();
+const AddTodo = () => {
+
+
+
+
+
+
+ 
+  const [addTask, setAddTask] = useState('');
+  const [addTitel, setAddTitel] = useState('');
 
   const dispatch = useDispatch();
 
-  const onSubmit = (e) => {
-    e.preventDefault();
+  const onSubmited = () => {
+    
+    if (addTitel === '' || addTask === '' )
+    {
+     
+  }
 
+
+
+else{
     dispatch(
-      addTodo({
-        titel: addTitel,
-        task: addTask
-      })
-    );
-  };
+     addTodo({titel:addTitel, task:addTask})
+
+    )
+
+    }
+
+
+
+    
+  
+    }
+  
 
   return (
-    <article className="addTodoContainer" onSubmit={onSubmit}>
+     
+    <article className="addTodoContainer" >
       <section className="addTodo___text">
-        <label> Add titel: </label>
+      <form>
+     <label> Add titel: </label>
 
         <input
           className="titel"
           type="text"
-          maxlength="50"
           value={addTitel}
-          onChange={(e) => setAddTitel(e.target.addTitel)}
+          onChange={(e) => setAddTitel(e.target.value)}
         />
 
         <label>
@@ -38,19 +59,20 @@ const AddTodo = ({ todo }) => {
           <input
             className="task"
             type="text"
-            maxlength="200"
             value={addTask}
-            onChange={(e) => setAddTask(e.target.addTask)}
+            onChange={(e) => setAddTask(e.target.value)}
           />
         </label>
+        </form>
       </section>
-      <div className="addTodo___btn">
-        <button type="submit" onSubmit={onSubmit}>
+      <div className="addTodo___btn" >
+        <button className={addTitel === '' || addTask === '' ? "btnRed" : "btnGreen" } type="submit" onClick={onSubmited}>
           {" "}
           Add{" "}
         </button>
       </div>
     </article>
+    
   );
 };
 

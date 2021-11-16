@@ -2,12 +2,17 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const TodoCount = () => {
-  const TodoCount = useSelector((state) => state.todo.length);
+  const TodoCount = useSelector((store) => store.todo.length);
+
+  const TodoCountCompleted = useSelector((store) => store.todo.filter((todos) => todos.completed === true));
+
 
   return (
-    <selection className="TodoCountContent">
-      <p>Todos: {TodoCount} </p>
-    </selection>
+    <section className="TodoCountContent">
+      <p>Total todos: {TodoCount} </p>
+      
+      <p> completed: {TodoCountCompleted.length} </p>
+    </section>
   );
 };
 

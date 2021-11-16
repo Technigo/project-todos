@@ -3,22 +3,26 @@ import { createSlice } from "@reduxjs/toolkit";
 const todoData = createSlice({
   name: "todo",
   initialState: [
-    { id: 1, titel: "Socks", task: "here we are", completed: false },
-    { id: 2, titel: "T-shirt", task: "200", completed: true },
-    { id: 3, titel: "Pants", task: "350", completed: false },
-    { id: 4, titel: "Dress", task: "550", completed: false }
+    { id: 1, titel: "todo1", task: "task1", completed: false },
+    { id: 2, titel: "todo2", task: "task2", completed: true },
+    { id: 3, titel: "todo3", task: "task3", completed: false },
+   
   ],
 
   reducers: {
-    addTodo: (state, action) => {
-      const newTodo = {
+    addTodo: (store, action) => {
+
+       const newTodo = {
         id: Date.now(),
         titel: action.payload.titel,
         task: action.payload.task,
         completed: false
-      };
+      }; 
+      const storeNew = [...store, newTodo];
 
-      action.payload.push(newTodo);
+      return storeNew
+
+      
     },
 
     toggleComplete: (state, action) => {
