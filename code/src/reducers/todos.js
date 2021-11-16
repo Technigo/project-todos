@@ -40,8 +40,14 @@ const todos = createSlice({
                 }
             })
             store.items=updatedItems
+        },
+        // This reducer is responsible for deleting a Todo
+        deleteTodo: (store, action) => {
+            // immuteable approach, will pass the id in action.payload, should use filter, prepare new array and pull most items, but
+            //leave behind the deleted element
+            const decreasedItems = store.items.filter((item) => item.id !== action.payload)
+            store.items = decreasedItems
         }
-
     }
 })
 export default todos
