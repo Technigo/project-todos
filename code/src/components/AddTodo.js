@@ -20,7 +20,9 @@ export const AddTodo = () => {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <AddButton onClick={onAddTodo}>+</AddButton>
+      <AddButton onClick={onAddTodo} disabled={input < 1}>
+        +
+      </AddButton>
     </div>
   );
 };

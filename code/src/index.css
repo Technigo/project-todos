@@ -19,7 +19,7 @@ p {
   text-decoration: line-through;
   text-decoration-color: red;
 }
-.task-wrapper {
+.small-task-wrapper {
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -27,19 +27,28 @@ p {
 }
 
 .clear-board {
-  background-color: black;
+  background-image: url(./assets/todov2.svg);
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  background-position: center;
+  object-fit: cover;
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  background-size: cover;
 }
+
 input {
   width: 80%;
   border-top: none;
   border-right: none;
   border-left: none;
-  border-bottom: 2px solid blue;
+  border-bottom: 2px solid lightgrey;
   font-size: 15px;
   padding: 5px;
 }
 input:focus {
-  border-bottom: lightpink;
+  background-color: lightpink;
 }
 .InputWrapper {
   margin: 20px 10px;

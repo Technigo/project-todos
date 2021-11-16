@@ -15,11 +15,11 @@ const store = configureStore({ reducer });
 export const App = () => {
   return (
     <Provider store={store}>
-      <div>
+      <>
         <Header />
         <AddTodo />
         <TodoList />
-      </div>
+      </>
     </Provider>
   );
 };

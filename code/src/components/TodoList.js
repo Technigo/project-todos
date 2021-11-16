@@ -16,11 +16,9 @@ export const TodoList = () => {
   //   };
 
   return (
-    <section>
-      <p className={items.length <= 0 ? "clear-board" : "p"}>Hello</p>
-
+    <section className={items.length <= 0 ? "clear-board" : "todo-wrapper"}>
       {items.map((item) => (
-        <div key={item.id} className="task-wrapper">
+        <div key={item.id} className="small-task-wrapper">
           <input
             type="checkbox"
             checked={item.isComplete}
