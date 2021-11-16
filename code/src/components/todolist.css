@@ -1,0 +1,25 @@
+.list-item-box {
+  display: flex;
+  background-color: #61d4fc;
+  align-items: center;
+  justify-content: center;
+  width: 90vw;
+  margin: 30px auto;
+  position: relative;
+}
+
+p {
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.delete-btn {
+  border: none;
+  background-color: transparent;
+  margin-left: 20px;
+  float: right;
+}
+
+.delete-sign {
+  font-size: 50px;
+}

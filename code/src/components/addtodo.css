@@ -1,0 +1,32 @@
+.todo-input {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.text-field {
+  border: none;
+  background: transparent;
+  border-bottom: 1px solid black;
+  width: 50%;
+  padding: 5px;
+  margin-right: 20px;
+}
+
+input:focus {
+  outline: none;
+}
+
+::placeholder {
+  font-size: 40px;
+}
+
+.plus-sign {
+  font-size: 20px;
+}
+
+.add-btn {
+  border: none;
+  border-radius: 5px;
+  background-color: pink;
+}
