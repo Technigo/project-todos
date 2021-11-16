@@ -1,16 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
+import uniqid from 'uniqid'
 
-const initialState = [
-  {id: 1, task: 'Aufraeumen', iscomplete: false},
-  {id: 2, task: 'Maulwurf rausschmeissen', iscomplete: false},
-  {id: 3, task: 'Muell rausbringen', iscomplete: false},
-  {id: 4, task: 'Coding', iscomplete: false},
-]
+const initialState = {
+  items: []
+}
 
 const todos = createSlice({
   name: 'todos',
   initialState,
-  reducers: {}
+  reducers: {
+    addToDo: (state, action) => {
+      state.items.push({
+        id: uniqid(),
+        task: action.payload,
+        isComplete: false
+      })
+    },
+    removeToDo: (state, action) => {
+      state.items = state.items.filter((item) => item.id !== action.payload)
+    }
+  }
 })
 
 export default todos
