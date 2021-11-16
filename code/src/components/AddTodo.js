@@ -18,7 +18,7 @@ export const AddTodo = () => {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={onAddTodo}>Add</button>
+      <button onClick={onAddTodo}>+</button>
     </div>
   );
 };

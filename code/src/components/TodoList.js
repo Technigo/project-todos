@@ -11,17 +11,25 @@ export const TodoList = () => {
   const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id));
   };
+  console.log("done", items.isComplete);
+
   return (
     <section>
+      {/* className={items.length <= 0 ? "clear-board" : "p"} */}
+
+      <p>Tasks total: {items.length} </p>
       {items.map((item) => (
-        <div key={item.id}>
-          <p>{item.text}</p>
+        <div key={item.id} className="task-wrapper">
           <input
             type="checkbox"
             checked={item.isComplete}
             onChange={() => onToggleTodo(item.id)}
           />
-          <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
+          <p>{item.timePosted}</p>
+          <p className={item.isComplete ? "task-completed" : "p"}>
+            {item.text}
+          </p>
+          <button onClick={() => onDeleteTodo(item.id)}>-</button>
         </div>
       ))}
     </section>
