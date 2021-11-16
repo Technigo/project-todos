@@ -10,17 +10,25 @@ const AddTodo = () => {
 
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input))
+    setInput("") // to clean the input box
   }
 
   return (
-    <div>
-      <input
-        type="text"
-        value={input}
-        onChange={(event) => setInput(event.target.value)}
-      />
-      <button onClick={onAddTodo}>Add todo</button>
-    </div>
+    <>
+      <div className="add-todo-wrap">
+        <input
+          required
+          className="input-box"
+          type="text"
+          placeholder="What will you do today?"
+          value={input}
+          onChange={(event) => setInput(event.target.value)}
+        />
+        <button className="add-todo-button" onClick={onAddTodo} type="submit">
+          Add todo
+        </button>
+      </div>
+    </>
   )
 }
 

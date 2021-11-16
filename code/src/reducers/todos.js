@@ -42,6 +42,16 @@ const todos = createSlice({
 
       store.items = decreasedItems
     },
+
+    setAllTodostoCompleted: (store) => {
+      const itemsAllCompleted = store.items.map((item) => {
+        return {
+          ...item,
+          isComplete: true,
+        }
+      })
+      store.items = itemsAllCompleted
+    },
   },
 })
 

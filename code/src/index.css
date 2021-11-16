@@ -5,9 +5,106 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url(); */
+  background-color: rgb(0, 0, 0);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+/* .add-todo-container {
+  border: 1px solid purple;
+  width: 600px;
+  height: 200px;
+} */
+
+.todo-list-container {
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 60%;
+  padding: 10px;
+}
+
+.flex-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgba(177, 177, 177, 0.194);
+  margin: 5px;
+  padding: 0 10px;
+  box-shadow: rgb(0 0 0 / 56%) 0px 22px 70px 4px;
+}
+
+.add-todo-wrap {
+  background: #fff;
+  max-width: 60%;
+  margin: 20px auto;
+  position: relative;
+  border-radius: 1px;
+  margin-top: 50px;
+  box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.3);
+  border: 1px solid purple;
+  display: flex;
+}
+/* 
+god morning evening 
+the time is vs  */
+
+/* .add-todo-input {
+  background: #fff;
+  padding: 0 120px 0 0;
+  border-radius: 1px;
+  margin-top: 200px;
+  box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.3);
+} */
+
+/* .fl-wrap {
+  float: left;
+  width: 100%;
+  position: relative;
+}*/
+
+/* .input-box:before {
+  content: "";
+  position: absolute;
+  bottom: -40px;
+  width: 50px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.41);
+  left: 50%;
+  margin-left: -25px;
+} */
+
+.input-box {
+  width: 100%;
+  float: left;
+  border: none;
+  height: 70px;
+  padding-left: 20px;
+}
+
+.add-todo-button {
+  background: #f94605;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin: 0 auto;
+  align-items: center;
+  width: 80px;
+}
+
+.delete-button {
+  border: none;
+  background-color: rgb(255 255 255 / 0%);
+}
+.item-text {
+  color: rgb(0, 255, 166);
+  padding-left: 10px;
+}
+.check-button {
+  display: flex;
+  align-items: center;
 }

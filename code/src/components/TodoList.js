@@ -17,17 +17,22 @@ const TodoList = () => {
   }
 
   return (
-    <section>
+    <section className="todo-list-container">
       {items.map((item, index) => (
         <div className="flex-item" key={item.id}>
-          <p>{item.text}</p>
-          <input
-            type="checkbox"
-            checked={item.isComplete}
-            onChange={() => onToggleTodo(item.id)}
-          />
-          <button onClick={() => onDeleteTodoImmutability(item.id)}>
-            Delete
+          <div className="check-button">
+            <input
+              type="checkbox"
+              checked={item.isComplete}
+              onChange={() => onToggleTodo(item.id)}
+            />
+            <p className="item-text">{item.text}</p>
+          </div>
+          <button
+            className="delete-button"
+            onClick={() => onDeleteTodoImmutability(item.id)}
+          >
+            🗑️
           </button>
         </div>
       ))}
