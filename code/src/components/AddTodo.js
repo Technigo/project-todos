@@ -8,14 +8,18 @@ export const AddTodo = () => {
 
   const dispatch = useDispatch();
 
-  const onAddTodo = () => {
+  const onAddTodo = (e) => {
     dispatch(todos.actions.addTodo(input));
+    setInput("");
+    e.preventDefault();
   };
 
   return (
-    <div>
-      <input type="text" value={input} onChange={(event) => setInput(event.target.value)} />
-      <button onClick={onAddTodo}>Add todo</button>
-    </div>
+    <form onSubmit={onAddTodo}>
+      <div className="todo-input">
+        <input type="text" value={input} onChange={(event) => setInput(event.target.value)} />
+        <button type="submit">Add todo</button>
+      </div>
+    </form>
   );
 };
