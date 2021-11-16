@@ -6,6 +6,8 @@ import todos from './reducers/todos'; //our slice
 
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
+import Header from 'components/Header';
+import Completed from 'components/CompletedTodos';
 
 //app.js are the origin component of our app.
 
@@ -19,7 +21,9 @@ export const App = () => {
 	return (
 		//Our components
 		<Provider store={store}> 
+      <Header />
 			<AddTodo />
+      <Completed />
 			<TodoList />
 		</Provider>
 	);
