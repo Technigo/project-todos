@@ -32,7 +32,7 @@ const TodosRemoveButton = styled.button`
 `
 const EmptyTodoDiv = styled.div`
     padding-top: 30px;
-    height: 50vh;
+    height: 250px;
     border-radius: 0 0 20px 20px;
     background-color: #F2F3F4;
     text-align: center;
