@@ -1,10 +1,11 @@
 * {
   box-sizing: border-box;
+  
 }
 
 body {
-  margin: 0;
-  padding: 20px;
+  margin: 0 auto;
+  padding: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -12,6 +13,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 
   background-color: rgb(220, 255, 223);
+
 }
 
 code {
@@ -22,14 +24,30 @@ code {
 /* Main container */
 
 main {
+  margin: 0 auto;
+  padding: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  max-width: 327px;
+  
+}
+
+.componentContainer{
+
   display: grid;
   grid-template-columns: 1fr;
-  grid-row: auto;
+    grid-row: 1fr 5fr;
+  grid-gap: 0px;
   grid-row-gap: 15px;
-  margin-top: 5px;
+  margin: 5px 0;
+padding: 5px;
 
-  place-items: center;
 }
+
+
+
 
 /* Add todo Container */
 
@@ -37,24 +55,28 @@ main {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  gap: 5px;
-  height: 220px;
-
+  gap: 0px;
+  height: 280px;
   background-color: rgb(156, 196, 171);
   padding: 10px;
   border-radius: 10px;
 
-  width: 450px;
+
+
+ 
 }
 
 /* Add todo content */
 
 .addTodo___text {
-  width: 100%;
-  height: 180px;
+
+  height:220px;
   border-radius: 10px;
   background-color: rgba(196, 211, 197, 0.466);
   padding: 5px 5px 15px 5px;
+
+  font-size: 21px;
+  font-weight: bolder;
 }
 
 .titel {
@@ -65,16 +87,23 @@ main {
   border-style: none;
   border-color: transparent;
   outline: none;
+
+  font-size: 20px;
 }
 
 .task {
+
   width: 100%;
-  height: 100px;
+  height: 125px;
+  padding: 5px;
   border-radius: 10px;
   background-color: cornsilk;
   border-style: none;
   border-color: transparent;
   outline: none;
+  resize: none;
+
+  font-size: 16px;
 }
 
 /* button */
@@ -104,8 +133,7 @@ main {
   justify-content: space-evenly;
 
   padding: 0 10px;
-  width: 450px;
-  border-radius: 10px;
+border-radius: 10px;
   height: 40px;
   background-color: rgb(156, 196, 171);
 }
@@ -121,33 +149,44 @@ main {
 
 .todosListContainer {
   display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  grid-row-gap: 15px;
+  grid-template-columns:  1fr;
+  grid-gap: 0px;
 
-  width: 450px;
+  grid-column: 1;
+grid-row: 3;
+grid-row-gap: 10px;
+  
 }
 
 .todoListContent {
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
-  padding: 10px;
+  padding: 15px;
   background-color: rgb(156, 196, 171);
-  height: 220px;
+  height: 250px;
   border-radius: 10px;
+
+
+ 
 }
 
 /* Text content */
 
 .todoListContent___text {
-  height: 150px;
+  height: 250px;
+  width: 100%;
   background-color: cornsilk;
   padding: 0 5px;
   border-radius: 10px;
+  word-break: normal;
+	overflow-wrap: break-word;
+  align-self: center;
 }
 .todoListContent___text h1 {
   text-align: center;
   margin: -1px 0 0 0;
+  font-size: 19px;
 }
 
 .todoListContent___text p {
@@ -166,4 +205,101 @@ main {
 .todoListContent___btnContainer button {
   background-color: cornsilk;
   border-radius: 5px;
+}
+
+
+
+/* Tablet */
+
+@media (min-width: 767px) {
+
+  main {
+
+  
+    max-width: 768px;
+    
+  }
+
+
+  .todosListContainer {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+  
+  
+    
+  }
+
+
+
+  
+
+  
+
+
+
+}
+
+@media (min-width: 1024px) {
+
+
+
+  main {
+
+  
+    max-width: 100%;
+    
+  }
+
+
+  .componentContainer{
+
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-row: auto;
+    grid-gap: 5px;
+    grid-row-gap: 15px;
+    margin: 5px 0;
+
+  
+  }
+
+
+  
+.addTodoContainer {
+grid-column: 2;
+grid-row: 1;
+margin-top: 55px;
+
+ }
+  
+
+ .TodoCountContent {
+margin-top: 5px;
+  grid-column: 2;
+grid-row: 1; 
+  }
+
+
+
+  .todosListContainer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 15px;
+    padding: 5px;
+  width: 100%;
+  
+    grid-column: 1;
+    grid-row: auto; 
+    
+  }
+
+  .todoListContent {
+   
+    width: 100%;
+   height: 370px;
+  }
+
+ 
+
 }

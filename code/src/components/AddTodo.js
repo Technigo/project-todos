@@ -30,6 +30,8 @@ else{
 
     )
 
+ 
+
     }
 
 
@@ -49,6 +51,7 @@ else{
         <input
           className="titel"
           type="text"
+          maxLength="25"
           value={addTitel}
           onChange={(e) => setAddTitel(e.target.value)}
         />
@@ -56,9 +59,10 @@ else{
         <label>
           {" "}
           Add a task
-          <input
+          <textarea
             className="task"
             type="text"
+            maxLength="150"
             value={addTask}
             onChange={(e) => setAddTask(e.target.value)}
           />

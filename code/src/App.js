@@ -15,9 +15,11 @@ const store = configureStore({ reducer });
 export const App = () => (
   <Provider store={store}>
     <main>
+      <article className="componentContainer">
       <AddTodo />
       <TodoCount />
       <TodoList />
+      </article>
     </main>
   </Provider>
 );
