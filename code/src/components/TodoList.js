@@ -5,7 +5,8 @@ import todos from '../reducers/todos'
 
 const TodoList =()=> {
 const items = useSelector ((store) => store.todos.items)
-
+const taskNumber = useSelector((store) => store.todos.items.length) // variable to obtain length of to-dos list
+const completed = useSelector ((store) => store.todos.items.isComplete)
 const dispatch = useDispatch()
 
 const onToggleTodo = (id) => {
@@ -14,7 +15,7 @@ const onToggleTodo = (id) => {
 const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id))
     }
-const taskNumber = useSelector((store) =>store.todos.items.length) // variable to obtain length of to-dos list
+
     return (
         <>
     <section> 
@@ -29,6 +30,7 @@ const taskNumber = useSelector((store) =>store.todos.items.length) // variable t
     
        
         <div>{taskNumber} tasks</div> {/*shows the number of tasks in total*/}
+        <div>{completed}</div>
         </>
     )
 }
