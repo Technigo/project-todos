@@ -3,9 +3,11 @@ import styled from "styled-components/macro";
 import moment from "moment";
 import "react-circular-progressbar/dist/styles.css";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
+import { useSelector } from "react-redux";
 
 export const Header = () => {
   const date = new Date();
+  const amountOfTodos = useSelector((store) => store.todo.todos.length);
   const percentage = 66;
 
   return (
@@ -16,7 +18,7 @@ export const Header = () => {
       </TitleDateContainer>
       <HeaderDetailContainer>
         <AmountOfTodos>
-          <span>10</span>
+          <AmountNumber>{amountOfTodos}</AmountNumber>
           <AmountText>Todo's</AmountText>
         </AmountOfTodos>
         <PercentageContainer>
@@ -24,18 +26,13 @@ export const Header = () => {
             <CircularProgressbar
               value={percentage}
               styles={buildStyles({
-                rotation: 0.25,
+                rotation: 0,
                 strokeLinecap: "butt",
-                pathTransitionDuration: 0.5,
-                // pathTransition: 'none',
-
-                // Colors
-                pathColor: `rgba(62, 152, 199, ${percentage / 100})`,
-                trailColor: "#d6d6d6",
-                backgroundColor: "#3e98c7",
+                pathTransition: "none",
+                pathColor: `#d98a60`,
+                trailColor: `#fcf4f0`,
               })}
             />
-            ;
           </ProgressbarContainer>
           <span>{percentage}% done</span>
         </PercentageContainer>
@@ -77,13 +74,19 @@ const HeaderDetailContainer = styled.div`
   display: grid;
   grid-template-rows: 1fr auto;
   background-color: rgb(0, 0, 0, 0.3);
-  padding: 0 10px 13px 10px;
+  padding: 0 10px 0px 10px;
+`;
+
+const AmountNumber = styled.span`
+  font-size: 30px;
 `;
 
 const AmountOfTodos = styled.div`
+  margin: 0 30px 0 0;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-end;
 `;
 
 const PercentageContainer = styled.div`
@@ -91,11 +94,13 @@ const PercentageContainer = styled.div`
   column-gap: 10px;
   grid-template-columns: auto 1fr;
   justify-content: flex-end;
-  margin-bottom: 20px;
+  align-items: center;
+  margin-bottom: 13px;
 `;
 
 const AmountText = styled.span`
   margin: 0 0 30px 0;
+  color: rgb(255, 255, 255, 0.5);
 `;
 
 const ProgressbarContainer = styled.div`
