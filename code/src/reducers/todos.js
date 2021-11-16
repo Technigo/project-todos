@@ -28,15 +28,30 @@ const todos = createSlice({
           return item;
         }
       });
-
       store.items = updatedItems;
     },
+    checkAllTodos: (store) => {
+      const add = store.items.map((item) => {
+        const check = {
+          ...item,
+          isComplete: true,
+        };
+        return check;
+      });
+      store.items = add;
+    },
+
     deleteTodo: (store, action) => {
       const decreasedItems = store.items.filter(
         (item) => item.id !== action.payload
       );
 
       store.items = decreasedItems;
+    },
+    deleteAllTodos: (store) => {
+      const decreasedAllItems = store.items.filter((item) => item);
+
+      store.items = decreasedAllItems;
     },
   },
 });

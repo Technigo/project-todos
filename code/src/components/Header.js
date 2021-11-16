@@ -1,8 +1,11 @@
-import React from "react";
-import { useSelector } from "react-redux";
-import Date from "./Date";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Dates from "./Date";
+
+import todos from "../reducers/todos";
 
 const Header = () => {
+  const dispatch = useDispatch();
   const items = useSelector((store) => store.todos.items);
   console.log(items.length);
 
@@ -12,10 +15,17 @@ const Header = () => {
   const left = items.filter((item) => item.isComplete === false);
   console.log(left);
 
+  const completeAll = () => {
+    dispatch(todos.actions.checkAllTodos());
+  };
+  const deleteAll = () => {
+    dispatch(todos.actions.deleteAllTodos());
+  };
+
   return (
     <>
       <h1>My planes!</h1>
-      <Date />
+      <Dates />
       <p>
         {items.length}{" "}
         {items.length === 0 || items.length > 1 ? "Tasks" : "Task"}
@@ -28,6 +38,9 @@ const Header = () => {
         {done.length} {done.length === 0 || done.length > 1 ? "Tasks" : "Task"}{" "}
         done!
       </p>
+
+      <button onClick={completeAll}>Complete all tasks!</button>
+      <button onClick={deleteAll}>Delete all Tasks</button>
     </>
   );
 };

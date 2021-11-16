@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from "react-redux";
 import todos from "../reducers/todos";
 import AddTodo from "./AddTodo";
 import Header from "./Header";
+import moment from "moment";
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
@@ -18,6 +19,10 @@ const TodoList = () => {
     dispatch(todos.actions.deleteTodo(id));
   };
 
+  const timestamp = new Date();
+  const momentTimestamp = moment(timestamp).format("MMM Do YY");
+  console.log(momentTimestamp);
+
   return (
     <>
       <Header />
@@ -25,6 +30,7 @@ const TodoList = () => {
       {items.map((item) => (
         <div className="flex-item" key={item.id}>
           <p>{item.text}</p>
+          <p>{momentTimestamp}</p>
           <input
             type="checkbox"
             checked={item.isComplete}
