@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import uniqid from 'uniqid'
+import moment from "moment";
 
 const todos = createSlice({
     name: 'todos',
@@ -11,7 +12,8 @@ const todos = createSlice({
             const newTodo = {
                 id: uniqid(),
                 text: action.payload,
-                isComplete: false
+                isComplete: false,
+                createdAt: moment().startOf('hour').fromNow()
             }
             // add to the state
             store.items = [...store.items, newTodo]
