@@ -24,6 +24,9 @@ const todos = createSlice({
       store.items = [...store.items, newTodo]
       console.log("store.items", store.items)
       //   console.log("newTodo", newTodo)
+
+      const counter = store.items.length
+      console.log("this is the counter", counter)
     },
 
     toggleTodo: (store, action) => {
@@ -45,6 +48,7 @@ const todos = createSlice({
           return item
         }
       })
+
       store.items = updatedItems
     },
     deleteTodo: (store, action) => {

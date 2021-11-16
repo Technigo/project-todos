@@ -8,7 +8,6 @@ const AddTodos = () => {
   const dispatch = useDispatch()
 
   const onAddTodo = () => {
-    console.log("hej")
     dispatch(todos.actions.addTodo(input))
   }
 

@@ -22,6 +22,7 @@ const TodoList = () => {
 
   return (
     <section>
+      <p>You have {items.length} things to do!</p>
       {items.map((item, index) => (
         <div className="item-container" key={item.id}>
           <p>{item.text}</p>
