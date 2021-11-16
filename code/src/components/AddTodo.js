@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
-import todos from '../reducers/todos';
+import todos from '../reducers/todos'
 
 const AddTodo = () => {
-	const [input, setInput] = useState('');
+	const [input, setInput] = useState('')
 
-	const dispatch = useDispatch();
+	const dispatch = useDispatch()
 
 	const onAddTodo = () => {
-		dispatch(todos.actions.addTodo(input));
-	};
+		dispatch(todos.actions.addTodo(input))
+	}
 
 	return (
 		<div>
@@ -21,7 +21,7 @@ const AddTodo = () => {
 			/>
 			<button onClick={onAddTodo}>Add todo</button>
 		</div>
-	);
-};
+	)
+}
 
-export default AddTodo;
+export default AddTodo
