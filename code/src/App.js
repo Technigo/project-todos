@@ -1,14 +1,14 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
-import styled from 'styled-components'
+import { createStore, combineReducers } from '@reduxjs/toolkit'
+import styled from 'styled-components/macro'
 import img from './assets/coolsky.jpg'
 
 import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
 import Header from './components/Header'
 import todos from './reducers/todos'
-import { GlobalStyle } from 'GlobalStyle'
+import { GlobalStyle } from './GlobalStyle'
 
 const MainWrapper = styled.main`
   background-image: url(${img});
@@ -21,21 +21,41 @@ const MainWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 `
 const MainSection = styled.section`
   display: flex;
+  align-items: center;
+  justify-content: center;
   flex-direction: column;
   margin: 20px 5px;
   width: 90%;
   height: 90%;
   border-radius: 25px;
+  @media (min-width: 768px) {
+    max-width: 600px;
+  }
+  @media (min-width: 992px) {
+    max-width: 1000px;
+  }
 `
 
 const reducer = combineReducers({
   todos: todos.reducer
 })
 
-const store = configureStore({ reducer })
+const persistedState = localStorage.getItem('reduxState')
+  ? JSON.parse(localStorage.getItem('reduxState'))
+  : {}
+
+const store = createStore(
+  reducer,
+  persistedState
+);
+
+store.subscribe(() => {
+  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+});
 
 export const App = () => {
   return (

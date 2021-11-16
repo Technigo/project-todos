@@ -1,55 +1,68 @@
 import React from "react"
 import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
-import styled from "styled-components";
+import styled from 'styled-components/macro'
 import { FaTrashAlt } from "react-icons/fa";
 
 import todos from "reducers/todos"
 import NoTasks from "./NoTasks";
+import TodoCard from "./TodoCard";
 
 const TodoSection = styled.section`
-    background-color: whitesmoke;
     color: black;
-    width: 100%;
+    width: 90%;
+    margin: 0;
+    min-height: 400px;
     display: flex;
     flex-direction: column;
     font-size: 18px;
-`
-const Main = styled.div`
-    background-color: whitesmoke;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 90%;
     padding: 15px;
     border-radius: 0px 0px 25px 25px;
+    background-color: whitesmoke;
+    @media (min-width: 768px) {
+    min-height: 500px;
+    }
+    @media (min-width: 992px) {
+    min-height: 600px;
+    }
 `
 const TaskCheckbox = styled.div`
     display: flex;
     justify-content: space-between;
     padding: 10px;
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid grey;
     align-items: center;
+    margin-bottom: 10px;
 `
-const TaskInfo = styled.div`
-    display: flex;
-    margin: 0px;
-    flex-direction: column;
-`
-const TaskText = styled.p`
-    font-size: 15px;
-    margin: 0px;
-`
+
 const CheckboxDelete = styled.div`
     display: flex;
     align-items: center;
+    background-color: rgba(245,245,245,0.622);
 `
 const DeleteButton = styled.button`
     border: none;
-    font-size: 25px;
-    background-color: whitesmoke;
+    font-size: 23px;
+    background-color: rgba(245,245,245,0.622);
+`
+const ButtonsCount = styled.div`
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+`
+const Buttons = styled.button`
+    padding: 7px 7px;
+    display: flex;
+    background-color: #768eb0;
+    color: whitesmoke;
+    font: 14px;
+    font-weight: bold;
+    margin: 10px 0px 20px 5px;
+    border: none;
+    border-radius: 5px;
+`
+const Count = styled.p`
+    margin: 0;
 `
 
 const TodoList = () => {
@@ -57,32 +70,25 @@ const TodoList = () => {
     const items = useSelector((store) => store.todos.items)
 
     const dispatch = useDispatch()
-    const onToggleTodo = (id) => {
-        dispatch(todos.actions.toggleTodo(id))
-    }
     const onDeleteTodo = (id) => {
         dispatch(todos.actions.deleteTodo(id))
     }
+    const onDeleteAllTodo = () => {
+        dispatch(todos.actions.deleteAllTodos())
+    }
+    const onCompleteAllTodo = () => {
+        dispatch(todos.actions.completeAllTodos())
+    }
+    const completed = useSelector((store) => store.todos.items.filter((item) => item.isComplete === true))
 
     return (
-        <Main>
+        <>
             {items.length < 1 && <NoTasks />}
-            <TodoSection>
-                {items.map((item) => (
-                    <>
+            {items.length > 0 && (
+                <TodoSection>
+                    {items.map((item) => (
                         <TaskCheckbox key={item.id}>
-                            <TaskInfo>
-                                <div className="box">
-                                    <input
-                                        id="one"
-                                        type="checkbox"
-                                        checked={item.isComplete}
-                                        onChange={() => onToggleTodo(item.id)} />
-                                    <span className="check"></span>
-                                    <label className={item.isComplete === true ? 'todo-done' : 'todo-not'} htmlFor="one">{item.text}</label>
-                                </div>
-                                <TaskText>added: {item.createdAt}</TaskText>
-                            </TaskInfo>
+                            <TodoCard item={item} />
                             <CheckboxDelete>
                                 <DeleteButton
                                     onClick={() => onDeleteTodo(item.id)}>
@@ -90,13 +96,22 @@ const TodoList = () => {
                                 </DeleteButton>
                             </CheckboxDelete>
                         </TaskCheckbox>
-                        <div>
-                            here will be completed or not
-                        </div>
-                    </>
-                ))}
-            </TodoSection>
-        </Main>
+                    ))}
+                    <ButtonsCount>
+                        <Buttons onClick={onDeleteAllTodo}>
+                            Delete all
+                        </Buttons>
+                        <Buttons
+                            onClick={onCompleteAllTodo}
+                            disabled={completed.length === items.length}
+                        >
+                            Complete all
+                        </Buttons>
+                    </ButtonsCount>
+                    <Count>Completed: {completed.length}/{items.length}</Count>
+                </TodoSection>
+            )}
+        </>
     )
 }
 
