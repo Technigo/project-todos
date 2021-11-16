@@ -1,11 +1,30 @@
 import { createSlice } from "@reduxjs/toolkit";
+import uniqid from "uniqid";
 
 const todos = createSlice({
   name: "todos",
   initialState: {
     items: [],
   },
-  reducers: {},
+  reducers: {
+    addTodo: (store, action) => {
+      const newTodo = {
+        id: uniqid(),
+        text: action.payload,
+        isComplete: false,
+      };
+
+      // v2 Immutability
+      store.items = [...store.items, newTodo];
+    },
+    toggleTodo: (store, action) => {
+      store.items.forEach(item => {
+        if (item.id === action.payload) {
+          item.isComplete = !item.isComplete;
+        }
+      });
+    },
+  },
 });
 
 export default todos;
