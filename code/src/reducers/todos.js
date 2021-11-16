@@ -9,7 +9,7 @@ const todos = createSlice({ //name the varibale as the slice
 		items: [], //empty array of our todos
 	},
 
-	//Reducers are always provided with two arguments, one is the store (or the current value of the store). The other is action, some information that we send from component. 
+	//Reducers are always provided with two arguments, one is the store (or the current value of the store). The other is action, some information that we send from the component. 
 
 
 	reducers: {
@@ -35,7 +35,7 @@ const todos = createSlice({ //name the varibale as the slice
 						// text: item.text,
 						// isComplete: item.isComplete,
 						...item,
-						isComplete: !item.isComplete,
+						isComplete: !item.isComplete, // ! = equal false
 					};
 					return updatedTodo;
 				} else {

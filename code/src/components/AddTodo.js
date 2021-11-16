@@ -1,43 +1,28 @@
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 
-import todos from '../reducers/todos';
+import todos from '../reducers/todos'; //slice imported
 
-const TodoList = () => {
-	const items = useSelector((store) => store.todos.items);
+const AddTodo = () => { //pass anonymus function
+	const [input, setInput] = useState(''); //our state property. We use setInput function in order to update the State.
 
-	const dispatch = useDispatch();
 
-	const onToggleTodo = (id) => {
-		dispatch(todos.actions.toggleTodo(id));
-	};
+	const dispatch = useDispatch(); //
 
-	const onDeleteTodoImmutability = (id) => {
-		dispatch(todos.actions.deleteTodo(id));
+	const onAddTodo = () => { //function for add a to do
+		dispatch(todos.actions.addTodo(input)); //here we dispatch our action
 	};
 
 	return (
-		<section>
-			{items.map((item, index) => (
-				<div className="flex-item" key={item.id}>
-					<p>{item.text}</p>
-					<input
-						type="checkbox"
-						checked={item.isComplete}
-						onChange={() => onToggleTodo(item.id)}
-					/>
-
-					{/* // v1 */}
-					{/* <button onClick={() => onDeleteTodoMutability(index)}>Delete</button> */}
-
-					{/* // v2 */}
-					<button onClick={() => onDeleteTodoImmutability(item.id)}>
-						Delete
-					</button>
-				</div>
-			))}
-		</section>
+		<div>
+			<input
+				type="text"
+				value={input}
+				onChange={(event) => setInput(event.target.value)}
+			/>
+			<button onClick={onAddTodo}>Add todo</button> 
+		</div>
 	);
 };
 
-export default TodoList;
+export default AddTodo;
