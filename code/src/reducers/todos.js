@@ -28,7 +28,15 @@ const todos = createSlice({
           return item;
         }
       });
+
       store.items = updatedItems;
+    },
+    deleteTodo: (store, action) => {
+      const decreasedItems = store.items.filter(
+        (item) => item.id !== action.payload
+      );
+
+      store.items = decreasedItems;
     },
   },
 });
