@@ -14,7 +14,7 @@ const StyledList = styled.section`
   &.no-items {
     background-image: url(${emptystate});
     height: 500px;
-    width: 95%;
+    width: 500px;
     object-fit: cover;
     background-repeat: no-repeat;
     display: block;
@@ -50,8 +50,8 @@ const TodoList = () => {
             checked={listItem.isComplete}
             onChange={() => onToggleCheckbox(listItem.id)}
           />
-          <p>{listItem.text}</p>
-          <p>{timePosted}</p>
+          <p className={listItem.isComplete && 'checked'}>{listItem.text}</p>
+          <p className={listItem.isComplete && 'checked'}>{timePosted}</p>
           <StyledDeleteButton onClick={() => onDeleteTodo(listItem.id)}>
             Delete
           </StyledDeleteButton>
