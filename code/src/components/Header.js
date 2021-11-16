@@ -27,6 +27,10 @@ const Header = () => {
     }
   };
 
+  const onCompleteAll = () => {
+    dispatch(todo.actions.compleatAll());
+  };
+
   return (
     <Wrapper>
       <p>Here are your todo's</p>
@@ -37,6 +41,7 @@ const Header = () => {
       </p>
       <p>{moment().format("MMMM Do")}</p>
       <button onClick={onClearClick}>Clear all</button>
+      <button onClick={onCompleteAll}>Mark all as complete</button>
     </Wrapper>
   );
 };

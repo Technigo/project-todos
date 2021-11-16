@@ -15,3 +15,16 @@ code {
 .completed {
   color: burlywood;
 }
+
+.empty-state {
+  width: 600px;
+  height: 400px;
+  border: dotted 3px cadetblue;
+  font-size: 30px;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.overdue {
+  color: coral;
+}
