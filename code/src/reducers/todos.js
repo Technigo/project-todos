@@ -19,20 +19,13 @@ const todos = createSlice({
 	reducers:{
 		// arguments are the data that you pass, this data is about a todo you want to add 
 		addTodo: (store, action) => {
-			//console.log(action)
 			// payload is like a variable 
-
 			const newTodo = {
 				id: uniqid(),
 				text: action.payload,
 				// need this to trigger todos if there are completed or not
 				isComplete: false
 			}
-
-			//v1
-			//store.items.push(data)
-
-			//v2
 			// ...(three dots) is spread what was before, plus add data
 			store.items = [...store.items, newTodo]
 		}, 

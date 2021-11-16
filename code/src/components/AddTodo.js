@@ -12,13 +12,16 @@ const AddTodo = () => {
 
 	const onAddTodo = () => {
 		// callinling action addTodo from the reducer
-		dispatch(todos.actions.addTodo(input))
+		dispatch(todos.actions.addTodo(input));
+		// setting input field to an empty string
+		setInput("");
 	};
 
 	return (
 		<div>
 			<input 
 				type="text" 
+				placeholder="Add todo here"
 				value={input} 
 				onChange={(event) => setInput(event.target.value)} />
 			<button onClick={onAddTodo}>Add</button>
