@@ -15,3 +15,11 @@ for some ideas.
 
 https://vane-todos.netlify.app/
 https://www.youtube.com/watch?v=ykuD2QOZkhc&t=245
+
+
+
+Some todo: 
+
+- visa upp dagens datum med moment.js 
+- sortera done todos så den sist gjorda hamnar överst 
+- lägg kategorier 

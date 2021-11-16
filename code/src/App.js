@@ -10,7 +10,9 @@ import todos from './reducers/todos';
 import Header from './components/Header';
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
-import FinishedTodo from 'components/FinishedTodo';
+import TodoSummary from './components/TodoSummary';
+import FinishedTodo from './components/FinishedTodo';
+import ClearAllButton from './components/ClearAllButton';
 
 /* SETTING THE STORE HERE */
 // putting all slices/reducers in one box here
@@ -29,10 +31,14 @@ const store = configureStore({ reducer });
 export const App = () => {
   return (
     <Provider store={store}>
-		<Header  />
-		<AddTodo  />
-		<TodoList  />
-		<FinishedTodo  />
+		<main className="main-content">
+			<Header  />
+			<AddTodo  />
+			<TodoSummary  />
+			<TodoList  />
+			<FinishedTodo />
+			<ClearAllButton />
+		</main>
 	</Provider>
   )
 };

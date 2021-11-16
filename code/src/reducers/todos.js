@@ -26,9 +26,12 @@ const todos = createSlice({
 				// need this to trigger todos if there are completed or not
 				isComplete: false
 			}
+			
 			// ...(three dots) is spread what was before, plus add data
 			store.items = [...store.items, newTodo]
+
 		}, 
+		// to check the checkbox 
 		toggleTodo: (store, action) => {
 			const updatedItems = store.items.map((item) => {
 				if (item.id === action.payload) {
@@ -36,8 +39,11 @@ const todos = createSlice({
 						...item,
 						isComplete: !item.isComplete
 					}
+
+					console.log(updatedTodo)
 					return updatedTodo;
 				} else {
+					console.log(item)
 					return item;
 				}
 			});
@@ -48,7 +54,10 @@ const todos = createSlice({
 			const decreasedItems = store.items.filter((item) => item.id !== action.payload)
 
 			store.items = decreasedItems;
-		}
+		},
+		clearAllTodos: (store) => {
+			store.items = [];
+		  },
 	},
 });
 
