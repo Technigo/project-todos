@@ -9,6 +9,7 @@ const AddTask = () => {
 
   const onAddToDo = (toDo) => {
     dispatch(todos.actions.addToDo(toDo))
+    setInput('')
   }
 
   return (
