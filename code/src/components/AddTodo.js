@@ -3,10 +3,11 @@ import React, { useState} from 'react';
 import { useDispatch } from 'react-redux';
 
 import todos from '../reducers/todos'
+import TodoSummary from '../components/TodoSummary'
 
 const AddTodo = () => {
 
-	const [input, setInput] = useState('')
+	const [input, setInput] = useState('');
 
 	const dispatch = useDispatch();
 
@@ -18,7 +19,8 @@ const AddTodo = () => {
 	};
 
 	return (
-		<div>
+		<div className="add-todo-container">
+			<TodoSummary  />
 			<input 
 				type="text" 
 				placeholder="Add todo here"

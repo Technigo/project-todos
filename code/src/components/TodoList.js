@@ -18,7 +18,8 @@ const TodoList = () => {
 	};
 
 	return(
-		<section>
+		<section className="todo-list-container">
+			<p>Todo list</p>
 			{/*mapping thought items array to display in the page */}
 			{items.map((item, index) => (
 				<div className="flex-item" key={item.id}>

@@ -16,3 +16,26 @@ code {
 	display: flex;
 	align-items: center;
 }
+
+/* header */ 
+.header {
+	background-color: aqua;
+	margin-bottom: 20px;
+}
+
+.add-todo-container {
+	background-color: aquamarine;
+	padding:20px 0;
+}
+
+.todo-list-container {
+	background-color: cadetblue;
+	padding:20px 0;
+	margin-top: 20px;
+}
+
+.finished-todo-container {
+	background-color: chocolate;
+	padding: 20px 0;
+	margin-top: 20px;
+}

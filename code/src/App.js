@@ -10,6 +10,7 @@ import todos from './reducers/todos';
 import Header from './components/Header';
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
+import FinishedTodo from 'components/FinishedTodo';
 
 /* SETTING THE STORE HERE */
 // putting all slices/reducers in one box here
@@ -31,6 +32,7 @@ export const App = () => {
 		<Header  />
 		<AddTodo  />
 		<TodoList  />
+		<FinishedTodo  />
 	</Provider>
   )
 };
