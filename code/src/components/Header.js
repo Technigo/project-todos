@@ -1,6 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
+import { RemoveAll } from './RemoveAll';
+
 import todos from '../reducers/todos';
 
 const Header = () => {
@@ -26,6 +28,7 @@ const Header = () => {
         <button className='complete-all-button' onClick={onButtonClick}>
           {completedTasks.length === items.length ? 'Uncheck all' : 'Check all'}
         </button>
+        <RemoveAll />
       </div>
     </div>
   );

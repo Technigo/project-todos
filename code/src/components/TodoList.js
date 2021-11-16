@@ -42,7 +42,9 @@ const TodoList = () => {
               className='delete-button'
               onClick={() => onDeleteTodo(item.id)}
             >
-              🗑️
+              <span role='img' aria-label='Delete'>
+                🗑️
+              </span>
             </button>
           </div>
         ))}

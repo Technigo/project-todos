@@ -98,6 +98,9 @@ const todos = createSlice({
       });
       store.items = uncompletedItems;
     },
+    removeAll: store => {
+      store.items = [];
+    },
   },
 });
 export default todos;
