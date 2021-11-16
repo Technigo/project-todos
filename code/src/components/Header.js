@@ -1,14 +1,15 @@
 import React from 'react';
 import moment from 'moment';
-import { useSelector, useDispatch } from 'react-redux';
-import styled from 'styled-components';
+import { useSelector } from 'react-redux';
+import styled from 'styled-components/macro';
 
-import todos from '../reducers/todos';
+// import todos from '../reducers/todos';
 
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  background-color: beige;
+  background-color: #b84c29ad;
+  color: #fff;
   padding: 0.5em;
 `;
 
