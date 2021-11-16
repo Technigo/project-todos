@@ -1,8 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import uniqid from "uniqid";
 
 import todos from "../reducers/todos";
+import AddTodo from "./AddTodo";
+import Header from "./Header";
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
@@ -18,9 +19,11 @@ const TodoList = () => {
   };
 
   return (
-    <section>
+    <>
+      <Header />
+      <AddTodo />
       {items.map((item) => (
-        <div className="flex-item" key={uniqid()}>
+        <div className="flex-item" key={item.id}>
           <p>{item.text}</p>
           <input
             type="checkbox"
@@ -32,7 +35,7 @@ const TodoList = () => {
           </button>
         </div>
       ))}
-    </section>
+    </>
   );
 };
 

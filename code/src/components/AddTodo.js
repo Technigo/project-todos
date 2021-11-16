@@ -8,8 +8,8 @@ const AddTodo = () => {
 
   const dispatch = useDispatch();
 
-  const onAddTodo = () => {
-    dispatch(todos.actions.addTodo({ input }));
+  const onAddTodo = (input) => {
+    dispatch(todos.actions.addTodo(input));
   };
 
   return (
@@ -19,7 +19,7 @@ const AddTodo = () => {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={onAddTodo}>Add todo</button>
+      <button onClick={() => onAddTodo(input)}>Add todo</button>
     </div>
   );
 };
