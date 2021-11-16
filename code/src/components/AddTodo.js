@@ -6,8 +6,8 @@ import todos from "../reducers/todos";
 const AddTodo = () => {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
-  const onAddTodo = () => {
-    dispatch(todos.actions.addTodo());
+  const onAddTodo = (input) => {
+    dispatch(todos.actions.addTodo(input));
   };
 
   return (
@@ -17,7 +17,7 @@ const AddTodo = () => {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={onAddTodo}>Add Todo</button>
+      <button onClick={() => onAddTodo(input)}>Add Todo</button>
     </div>
   );
 };
