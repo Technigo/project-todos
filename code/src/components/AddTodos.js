@@ -59,10 +59,12 @@ const AddTodos = () => {
             //   onchange={() => onToggleTodo(item.id)}
           />
         </div>
+        <div>
+          <button disabled={input < 1} className="add-btn" onClick={onAddTodo}>
+            Add todo
+          </button>
+        </div>
       </div>
-      <button className="add-btn" onClick={onAddTodo}>
-        Add todo
-      </button>
     </>
   )
 }

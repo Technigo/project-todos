@@ -40,8 +40,8 @@ code {
   width: 300px;
   padding: 1em;
   height: 100px;
-  bottom: 0;
   position: absolute;
+  bottom: 60px;
 }
 
 input {
@@ -102,7 +102,6 @@ input {
   width: 100%;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   border-bottom: 2px solid rgb(34, 27, 27);
   justify-content: space-between;
 }
@@ -110,16 +109,15 @@ input {
 .todo-text {
   display: inline-block;
   word-break: break-word;
-  max-width: 200px;
-
+  max-width: 180px;
   margin-right: 1em;
-  padding: 1em;
+  padding: 5px;
 }
 
 .flex-item {
   display: flex;
   flex-direction: row;
-  width: 350px;
+  width: 250px;
   justify-content: space-between;
   /* margin: 1em; */
 }

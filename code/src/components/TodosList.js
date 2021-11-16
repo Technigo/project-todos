@@ -27,14 +27,6 @@ const TodoList = () => {
       {items.map((item, index) => (
         <div className="flex-item" key={item.id}>
           <p className="todo-text">{item.text}</p>
-          <div className="todo-days">
-            <input
-              type="radio"
-              className="days"
-              checked={item.isComplete}
-              onchange={() => onToggleTodo(item.id)}
-            />
-          </div>
 
           <div className="verify-container">
             <input
