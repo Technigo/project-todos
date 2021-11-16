@@ -6,18 +6,20 @@ const FirstText = () => {
   console.log(items)
 
   const totalTodos = items.length
-  let counter = 0
-  const completedTodos = () => {
-    items.forEach(item => (item.isComplete ? (counter += 1) : (counter += 0)))
-    console.log("counter", counter)
+  //   let counter = 0
+  //   const completedTodos = () => {
+  //     items.forEach(item => (item.isComplete ? (counter += 1) : (counter += 0)))
+  //     console.log("counter", counter)
 
-    return counter
-  }
+  //     return counter
+  //   }
+
+  const filteredIsComplete = items.filter(item => item.isComplete).length
 
   return (
     <div>
-      <p>You have {totalTodos - completedTodos()} things to do!</p>
-      <p>You finished {counter} things to do!</p>
+      <p>You have {totalTodos - filteredIsComplete} things to do!</p>
+      <p>You finished {filteredIsComplete} things to do!</p>
     </div>
   )
 }
