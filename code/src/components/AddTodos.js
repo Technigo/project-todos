@@ -12,14 +12,18 @@ const AddTodos = () => {
   }
 
   return (
-    <div>
+    <section className="input-container">
       <input
         type="text"
+        className="input-text"
         value={input}
         onChange={event => setInput(event.target.value)}
+        placeholder="Add a todo"
       />
-      <button onClick={onAddTodo}>Add todo</button>
-    </div>
+      <button className="addTodo-btn" onClick={onAddTodo}>
+        +
+      </button>
+    </section>
   )
 }
 
