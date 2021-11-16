@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import todos from "reducers/todos";
-import { FlexItem, ButtonContainer, AddTaskButton } from "./StyledComponents";
+import { FlexItem, AddTaskButton, TextInput, InputButton, InputContainer } from "./StyledComponents";
 
 const AddTodo = () => {
   const dispatch = useDispatch()
@@ -13,25 +13,30 @@ const AddTodo = () => {
   } 
   const handleCreateTask = () => {
     setCanWrite(true);
-}
+  }
+  const handleFormSubmit = (event) => {
+		event.preventDefault()
+  }
 
   return (
     <>
-    <FlexItem>
-      <ButtonContainer>
+    <InputContainer>
       {!canWrite && <AddTaskButton onClick={() => handleCreateTask()}><span>+ Add task</span></AddTaskButton>}
-      
-      {canWrite && <label>
-      <input 
-      type="text" 
-      value={input}
-      onChange={(event) => setInput(event.target.value)}
-      placeholder="Write your task"
-      />
-      <button onClick={onAddTodo}>Add</button>
-      </label>}
-      </ButtonContainer>
-    </FlexItem>
+      {canWrite && 
+      <form onSubmit={handleFormSubmit}>
+        <label for="input">
+          <TextInput 
+            name="input"
+            type="text" 
+            value={input}
+            onChange={(event) => setInput(event.target.value)}
+            placeholder="Write your task"
+          />
+          <InputButton onClick={onAddTodo}>Add</InputButton>
+        </label>
+      </form>
+      }
+    </InputContainer>
     </>
   )
 }

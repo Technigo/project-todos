@@ -46,6 +46,7 @@ margin: 10px 0;
 border-radius: 10px;
 font-family: 'Roboto Condensed', sans-serif;
 font-size: 0.8rem;
+cursor: pointer;
 @media (min-width: 768px){
    font-size: 1.1rem;
 }
@@ -82,50 +83,125 @@ margin: 1.2rem 0 0 0;
 
 // Wrappers
   export const FlexItem = styled.div`
+  background: rgb(60, 60, 60);
   display: flex;
   margin: 10px;
-  align-items: center;
-  border: #bfbf solid 2px;
+  padding: 5px;
+  border: rgb(100, 100, 100) solid 2px;
+  border-radius: 25px;
+  word-break: break-word;
 `
 
-  export const ButtonContainer = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-  `
-
-
   export const AddTaskButton = styled.button `
-  position: relative;
-  display: block;
-  color: white;
-  font-size: 14px;
-  font-family: "montserrat";
-  text-decoration: none;
-  margin: 30px 0;
-  border: 2px solid #ff7675;
-  padding: 14px 60px;
-  text-transform: uppercase;
-  overflow: hidden;
-  transition: 1s all ease;
-
-  &::before
-    background: #ff7675;
-    content: "";
+    padding: 0.9em 2em;
+    border: 2px solid #17C3B2;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    background-color: transparent;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 16px;
+    color: #ddd;
+    transition: .3s;
+    z-index: 1;
+    font-family: inherit;
+    color: #17C3B2;
+   
+   &::before {
+    content: '';
+    width: 0;
+    height: 300%;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%) rotate(45deg);
+    background: #17C3B2;
+    transition: .5s ease;
+    display: block;
     z-index: -1;
-    transition: all 0.6s ease;
+   }
+   
+   &:hover::before {
+    width: 105%;
+   }
+   
+   &:hover {
+    color: #111;
+   }
+`
+// TextInput
+export const InputContainer = styled.div`
+   display: flex;
+   justify-content: center;
+   background: rgb(60, 60, 60);
+   margin: 10px;
+   padding: 5px;
+   align-items: center;
+   border: rgb(100, 100, 100) solid 2px;
+   border-radius: 10px;
+`
+
+export const TextInput = styled.input`
+  border: none;
+  padding: 0.5em 1em;
+  font-size: 12px;
+  border-radius: 10px 0 0 10px;
+  background: #e8e;
+  @media (min-width: 768px){
+    font-size: 1.1rem;
+  }
+  @media (min-width: 992px) {
+     font-size: 1.3rem;
+  }
+`
+
+// TextInput Button
+export const InputButton = styled.button`
+  border: none;
+  color: #090909;
+  padding: 0.5em 1em;
+  font-size: 12px;
+  border-radius:  0 10px 10px 0;
+  background: #e8e8e8;
   
-  &::before
-    width: 100%;
-    height: 0%;
-    transform: translate(-50%,-50%) rotate(-45deg);
+ @media (min-width: 768px){
+  font-size: 1.1rem;
+  }
+  @media (min-width: 992px) {
+   font-size: 1.3rem;
+  }
+`
+
+// Checkbox
+
+   export const TaskLabel = styled.label `
+   display: flex;
+   align-items: center;
+   margin: auto 10px;
+   font-family: 'Roboto', sans-serif;
+   font-size: 0.8rem;
+   @media (min-width: 768px){
+       font-size: 0.9rem;
+   }
+   @media (min-width: 992px) {
+       font-size: 1.1rem;
+   }
+   `
+   export const TaskInput = styled.input `
+   font-family: 'Roboto', sans-serif;
+   width: 1em;
+   height: 1em;
+   background-color: white;
+   border-radius: 50%;
+   vertical-align: middle;
+   border: 1px solid #ddd;
+   appearance: none;
+   -webkit-appearance: none;
+   outline: none;
+   cursor: pointer;
+     &:checked{
+       background-color: gray;
+     }
+   `
   
-  &:hover::before
-    height: 380%;
-  
- `

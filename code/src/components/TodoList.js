@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 
 import todos from "reducers/todos";
-import { FlexItem } from "./StyledComponents";
+import { TaskLabel, TaskInput, FlexItem } from "./StyledComponents";
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
@@ -23,15 +23,19 @@ const TodoList = () => {
       {items.map((item) => (
         <FlexItem key={item.id}>
         <p>{item.text}</p>
-        <input 
-          type="checkbox" 
-          checked={item.isComplete}
-          onChange={() => onToggleTodo(item.id)}
-        />
+          <TaskLabel>
+            <TaskInput 
+              name={item.id}
+              type="checkbox" 
+              value={item.id}
+              checked={item.isComplete}
+              onChange={() => onToggleTodo(item.id)}
+            />
+          </TaskLabel>
         <p>{moment(item.createdAt).fromNow()}</p>
-        <button onClick={() => onDeleteTodo(item.id)}>
-          <span role="img" aria-label="delete">🗑️</span>
-        </button>
+          <button onClick={() => onDeleteTodo(item.id)}>
+            <span role="img" aria-label="delete">🗑️</span>
+          </button>
         </FlexItem>
       ))}
     </section>
