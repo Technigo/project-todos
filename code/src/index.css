@@ -8,3 +8,7 @@ body {
   background-attachment: fixed;
   background-size: cover; */
 }
+
+html {
+  scroll-behavior: smooth;
+}

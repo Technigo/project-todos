@@ -43,13 +43,14 @@ export const TodoList = () => {
 };
 
 const TaskDiv = styled.div`
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
   background-color: white;
   width: 320px;
-  height: 80px;
+  height: fit-content;
   margin: 10px auto;
   border: 1px solid hotpink;
   box-shadow: 2px 2px 3px hotpink;
@@ -62,24 +63,36 @@ const TaskDiv = styled.div`
 `;
 
 const TaskText = styled.p`
+  width: 60%;
+  max-width: 60%;
+  word-wrap: break-word;
+  text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 16px;
-  margin-left: 10px;
+  font-size: 14px;
+  margin: 15px;
   display: inline-block;
+
+  @media (min-width: 700px) {
+    font-size: 22px;
+  }
 `;
 
 const CheckBox = styled.input`
-  width: 15px;
-  height: 15px;
+  width: 25px;
+  height: 25px;
+  margin: 15px;
 `;
 
 const Button = styled.button`
+  -webkit-appearance: none;
+  color: #000;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
-  margin-left: 15px;
+  margin: 15px;
   background-color: pink;
   border: 1px solid hotpink;
   box-shadow: 2px 2px 2px hotpink;
   border-radius: 5px;
-  padding: 5px;
+  padding: 10px;
+  cursor: crosshair;
 `;

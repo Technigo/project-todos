@@ -13,14 +13,25 @@ export const AddToDo = () => {
     dispatch(todos.actions.addToDo(input));
   };
 
+  const resetInput = () => {
+    setInput("");
+  };
+
   return (
     <StyledMainDiv>
-      <StyledButton onClick={onAddTodo}>+</StyledButton>
+      <StyledButton
+        onClick={() => {
+          onAddTodo();
+          resetInput();
+        }}
+      >
+        +
+      </StyledButton>
       <TextInput
         type="text"
         value={input}
         onChange={(event) => setInput(event.target.value)}
-        placeholder="add task here"
+        placeholder="add task"
       />
     </StyledMainDiv>
   );
@@ -42,7 +53,7 @@ const StyledMainDiv = styled.div`
   @media (min-width: 700px) {
     width: 500px;
     height: 100px;
-    margin: 150px auto 30px;
+    margin: 80px auto 30px;
   }
 `;
 
@@ -51,28 +62,26 @@ const TextInput = styled.input`
   width: 150px;
   height: 30px;
   border: 2px solid pink;
+  caret-color: hotpink;
   background-color: white;
   font-size: 16px;
+
+  @media (min-width: 700px) {
+    font-size: 22px;
+  }
 `;
 
 const StyledButton = styled.button`
   color: hotpink;
   border: none;
+  border-radius: 8px;
   background-color: white;
-  /* 
-  background-color: pink;
-  border: 1px solid pink;
-  border: 1px solid hotpink;
-  box-shadow: 3px 2px 3px hotpink;
-  box-sizing: border-box;
-  border-radius: 100px; 
-  */
+  -webkit-appearance: none;
   margin-right: 15px;
   font-size: 28px;
 
   :hover {
-    /* background-color: pink; */
-    box-shadow: 2px 2px 2px 1px hotpink;
-    cursor: grab;
+    background-color: pink;
+    cursor: crosshair;
   }
 `;

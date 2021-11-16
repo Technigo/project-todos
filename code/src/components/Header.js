@@ -36,7 +36,7 @@ const HeaderDiv = styled.div`
   @media (min-width: 1100px) {
     height: 100px;
     width: 50%;
-    margin: 50px auto;
+    margin: 30px auto;
   }
 `;
 
@@ -52,6 +52,7 @@ const HeaderTitle = styled.h1`
 
 const DateText = styled.p`
   color: hotpink;
+  font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
 
