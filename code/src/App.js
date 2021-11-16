@@ -10,14 +10,15 @@ import TodoList from './components/TodoList'
 import TodoCounter from 'components/TodoCounter'
 
 const TheHead = styled.section`
-  width: 350px;
+  max-width: 550px;
   margin: 0 auto;
   background-color: lightgrey;
   text-align: center;
+  border-radius: 20px 20px 0 0;
 `
 
 const TheBody = styled.section`
-  width: 350px;
+  max-width: 550px;
   margin: 0 auto;
 `
 
@@ -26,6 +27,7 @@ const reducer = combineReducers ({
 })
 
 const store = configureStore({ reducer })
+
 
 export const App = () => {
   return (

@@ -4,8 +4,7 @@ import moment from 'moment';
 import { useSelector } from 'react-redux'
 
 const TheHeader = styled.div `
-    margin-top: 20px;
-    border: 3px solid red;
+    padding-top: 20px;
 `
 const DateText = styled.p`
     color: grey;
@@ -19,7 +18,7 @@ const TodoCounter = () => {
         <TheHeader>
             <h1>Todo Today</h1>
             <h2>{items.length}</h2>
-            <DateText>{moment().format('MM/DD/YYYY')}</DateText>
+            <DateText>{moment().format('YYYY/MM/DD')}</DateText>
             <p>Complete:</p>
             <p>Incomplete:</p>
         </TheHeader>

@@ -1,11 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit"
 import uniqid from 'uniqid'
 
+const initialState = {
+    items: [],
+}
+
 const todos = createSlice({
     name: 'todos',
-    initialState: {
-        items: [],
-    },
+    initialState,
     reducers: {
         addTodo: (store, action) => {
             const newTodo = {
@@ -32,7 +34,10 @@ const todos = createSlice({
         deleteTodo: (store, action) => {
             const decreasedItems = store.items.filter((item) => item.id !== action.payload)
             store.items = decreasedItems
-        }
+        },
+        clear: () => {
+            return initialState
+          },
     },
 })
 
