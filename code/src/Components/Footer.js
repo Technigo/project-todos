@@ -5,7 +5,10 @@ export const Footer = () => {
   return (
     <StyledFooter>
       <h1>
-        Hedvig Mejstedt <span aria-label="lion">🦁</span>{' '}
+        Hedvig Mejstedt{' '}
+        <span aria-label="lion" role="img">
+          🦁
+        </span>
       </h1>
     </StyledFooter>
   );

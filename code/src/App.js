@@ -1,17 +1,24 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-/* import { configureStore, combineReducers } from '@reduxjs/toolkit'; */
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
 import { TodoList } from './Components/TodoList';
 import { Header } from 'Components/Header';
 import { Footer } from 'Components/Footer';
 
+import { todo } from 'reducers/todo';
+
+const reducer = combineReducers({
+  todo: todo.reducers
+});
+const store = configureStore({ reducer });
+
 export const App = () => {
   return (
-    <div>
+    <Provider store={store}>
       <Header />
       <TodoList />
       <Footer />
-    </div>
+    </Provider>
   );
 };

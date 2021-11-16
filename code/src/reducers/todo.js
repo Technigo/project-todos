@@ -3,7 +3,7 @@ import { uniqid } from 'uniqid';
 
 export const todo = createSlice({
   name: 'todo',
-  initialstate: {
+  initialState: {
     items: []
   },
   reducers: {
