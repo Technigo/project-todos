@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import uniqid from 'uniqid' // used to generate an absolutely unique id
+import uniqid, { time } from 'uniqid' // used to generate an absolutely unique id
 
 const todos = createSlice({
     // every slice needs 3 properties: name, initialState and reducer 
@@ -27,8 +27,21 @@ const todos = createSlice({
         // the next reducer is responsible for triggering the isComplete property from true to false or false to true
         toggleTodo: (store, action) => {
             // payload will be action.id
-            //immuteable approach
+            //immuteable approach, going to create a new array with all todos updated
+            const updatedItems = store.items.map(item => {
+                if (item.id === action.payload) {
+                    const updatedTodo = {
+                        ...item,
+                        isComplete: !item.isComplete
+                    }
+                    return updatedTodo
+                } else {
+                    return item
+                }
+            })
+            store.items=updatedItems
         }
+
     }
 })
 export default todos
