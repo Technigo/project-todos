@@ -9,8 +9,8 @@ DONE- You should be able to add and remove tasks
 red -
 DONE -Add a timestamp for each task indicating when it was created. Timestamp should be displayed as formatted date, but stored as raw date. You can either use built in JS functionalities or [moment.js](https://momentjs.com/)
 
-- Add a **complete all** button to set all tasks as completed. You could also use this opportunity to make your app look nice when there's no data. See [empty states UX design](https://www.toptal.com/designers/ux/empty-state-ux-design) for some ideas.
-- Use styled-components instead of vanilla CSS to do your styling
+DONE - Add a **complete all** button to set all tasks as completed. You could also use this opportunity to make your app look nice when there's no data. See [empty states UX design](https://www.toptal.com/designers/ux/empty-state-ux-design) for some ideas.
+DONE - Use styled-components instead of vanilla CSS to do your styling
 
 black
 

@@ -31,16 +31,19 @@ export const todos = createSlice({
       });
       store.items = updatedItem;
     },
-    // completeAll: (store, action) => {
-    //   const completeAllTodos = store.items.map((item) => {
-    //     if (item.isComplete === false) {
-    //       return item.isComplete === true;
-    //     } else {
-    //       return item;
-    //     }
-    //   });
-    //   store.items = completeAllTodos;
-    // },
+
+    clearAllTasks: (store) => {
+      const clearAll = store.items.map((task) => {
+        if (task.isComplete) {
+          return { ...task };
+        } else
+          return {
+            ...task,
+            isComplete: !task.isComplete,
+          };
+      });
+      store.items = clearAll;
+    },
     deleteTodo: (store, action) => {
       const decreasedItems = store.items.filter(
         (item) => item.id !== action.payload

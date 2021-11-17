@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { todos } from "../reducers/todos";
+import { CheckAllButton, DeleteButton } from "./Buttons";
 
 export const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
@@ -11,27 +12,39 @@ export const TodoList = () => {
   const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id));
   };
-  //   const onCompleteAllTodo = () => {
-  //     dispatch(todos.actions.completeAll);
-  //   };
+  // const onCompleteAllTodo = () => {
+  //   dispatch(todos.actions.completeAll());
+  // };
+
+  const onClickClearAll = () => {
+    dispatch(todos.actions.clearAllTasks());
+  };
 
   return (
-    <section className={items.length <= 0 ? "clear-board" : "todo-wrapper"}>
-      {items.map((item) => (
-        <div key={item.id} className="small-task-wrapper">
-          <input
-            type="checkbox"
-            checked={item.isComplete}
-            onChange={() => onToggleTodo(item.id)}
-          />
-          <p>{item.timePosted}</p>
-          <p className={item.isComplete ? "task-completed" : "p"}>
-            {item.text}
-          </p>
-          <button onClick={() => onDeleteTodo(item.id)}>-</button>
-        </div>
-      ))}
-      {/* <button onClick={() => onCompleteAllTodo()}>check all</button> */}
-    </section>
+    <>
+      <section className={items.length <= 0 ? "clear-board" : "todo-wrapper"}>
+        {items.length <= 0 && <p>Add a task</p>}
+        {items.map((item) => (
+          <div key={item.id} className="small-task-wrapper">
+            <input
+              className="checkbox"
+              type="checkbox"
+              checked={item.isComplete}
+              onChange={() => onToggleTodo(item.id)}
+            />
+            <div className="task-wrapper">
+              <p className="task-date">{item.timePosted}</p>
+              <p className={item.isComplete ? "task-completed" : "task-p"}>
+                {item.text}
+              </p>
+            </div>
+            <DeleteButton onClick={() => onDeleteTodo(item.id)}>
+              Delete
+            </DeleteButton>
+          </div>
+        ))}
+      </section>
+      <CheckAllButton onClick={onClickClearAll}>Complete all</CheckAllButton>
+    </>
   );
 };

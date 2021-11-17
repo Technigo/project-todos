@@ -17,6 +17,7 @@ export const AddTodo = () => {
     <div className="InputWrapper">
       <input
         type="text"
+        placeholder="Add"
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
