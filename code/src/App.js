@@ -13,12 +13,26 @@ const reducer = combineReducers({
 const store = configureStore({ reducer });
 
 export const App = () => (
+
+ 
+
+
+
+
+
+
   <Provider store={store}>
     <main>
       <article className="componentContainer">
+     
       <AddTodo />
-      <TodoCount />
+      
+      <section className="componentCountAndList">
+     
+      <TodoCount id="count" />
       <TodoList />
+     
+      </section>
       </article>
     </main>
   </Provider>

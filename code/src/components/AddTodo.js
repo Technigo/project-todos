@@ -1,82 +1,86 @@
 import React, { useState } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { addTodo } from "reducers/todoData";
-
+import { Link } from "react-scroll";
+import video from "images/background.mp4"
 const AddTodo = () => {
-
-
-
-
-
-
- 
-  const [addTask, setAddTask] = useState('');
-  const [addTitel, setAddTitel] = useState('');
+  const [addTask, setAddTask] = useState("");
+  const [addTitel, setAddTitel] = useState("");
 
   const dispatch = useDispatch();
 
   const onSubmited = () => {
-    
-    if (addTitel === '' || addTask === '' )
-    {
-     
-  }
-
-
-
-else{
-    dispatch(
-     addTodo({titel:addTitel, task:addTask})
-
-    )
-
- 
-
+    if (addTitel === "" || addTask === "") {
+    } else {
+      dispatch(addTodo({ titel: addTitel, task: addTask }));
     }
-
-
-
-    
-  
-    }
-  
+  };
 
   return (
-     
-    <article className="addTodoContainer" >
-      <section className="addTodo___text">
-      <form>
-     <label> Add titel: </label>
+    <article className="addTodoContainer" id="top" >
+        <video id="background-video" autoPlay loop muted>
+    <source src={video} type='video/mp4' />
+</video>
 
-        <input
-          className="titel"
-          type="text"
-          maxLength="25"
-          value={addTitel}
-          onChange={(e) => setAddTitel(e.target.value)}
-        />
+      <section className="addTodoContent">
+        
+        <section className="addTodo___text">
+       
+          <form>
+            <label>
+              {" "}
+              Add titel:
+              <input
+                className="titel"
+                type="text"
+                maxLength="25"
+                value={addTitel}
+                onChange={(e) => setAddTitel(e.target.value)}
+              />
+            </label>
 
-        <label>
-          {" "}
-          Add a task
-          <textarea
-            className="task"
-            type="text"
-            maxLength="150"
-            value={addTask}
-            onChange={(e) => setAddTask(e.target.value)}
-          />
-        </label>
-        </form>
+            <label>
+              {" "}
+              Add a task
+              <textarea
+                className="task"
+                type="text"
+                maxLength="150"
+                value={addTask}
+                onChange={(e) => setAddTask(e.target.value)}
+              />
+            </label>
+          </form>
+
+          <div className="addTodo___btn">
+            <button
+              className={
+                addTitel === "" || addTask === "" ? "btnRed" : "btnGreen"
+              }
+              type="submit"
+              onClick={onSubmited}
+            >
+              {" "}
+              Add{" "}
+            </button>
+          </div>
+           
+        </section>
       </section>
-      <div className="addTodo___btn" >
-        <button className={addTitel === '' || addTask === '' ? "btnRed" : "btnGreen" } type="submit" onClick={onSubmited}>
-          {" "}
-          Add{" "}
-        </button>
-      </div>
+
+      <Link
+        to="count"
+        smooth={true}
+        duration={1000}
+        className="seeAllTodo___btn"
+      >
+        <div className="seeAllTodoDiv___btn">
+          <button>
+            Todo´s <span>▼</span>{" "}
+          </button>
+        </div>
+      </Link>
     </article>
-    
   );
 };
 
