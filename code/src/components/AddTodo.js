@@ -12,6 +12,7 @@ const AddTodo = () => {
 
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input))
+    setInput("")
   }
 
   return (
@@ -20,7 +21,7 @@ const AddTodo = () => {
         className="text-field"
         type="text"
         value={input}
-        placeholder="🖊"
+        placeholder="Add task"
         onChange={(event) => setInput(event.target.value)}
       />
       <button className="add-btn" onClick={onAddTodo}>

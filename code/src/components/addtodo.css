@@ -2,6 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  border-bottom: 1px solid black;
 }
 
 .text-field {
@@ -10,7 +11,8 @@
   border-bottom: 1px solid black;
   width: 50%;
   padding: 5px;
-  margin-right: 20px;
+  margin: 10px 5px 20px 0px;
+  font-size: 18px;
 }
 
 input:focus {
@@ -18,15 +20,16 @@ input:focus {
 }
 
 ::placeholder {
-  font-size: 40px;
+  font-size: 15px;
 }
 
 .plus-sign {
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .add-btn {
   border: none;
   border-radius: 5px;
-  background-color: pink;
+  background-color: #fff;
+  margin-bottom: 20px;
 }
