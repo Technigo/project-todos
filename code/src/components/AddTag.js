@@ -36,16 +36,18 @@ const animatedComponents = makeAnimated();
 const AddTag = () => {
   return (
     <div>
-      <label htmlFor="tags">Tags</label>
-      <Select
-        isMulti
-        name="tags"
-        styles={styles}
-        options={options}
-        closeMenuOnSelect={false}
-        components={animatedComponents}
-        theme={theme}
-      />
+      <label>
+        Tags
+        <Select
+          isMulti
+          name="tags"
+          styles={styles}
+          options={options}
+          closeMenuOnSelect={false}
+          components={animatedComponents}
+          theme={theme}
+        />
+      </label>
     </div>
   );
 };

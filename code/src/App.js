@@ -16,6 +16,7 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   background-color: rgb(236, 229, 255);
+  font-family: "rubik";
 `;
 
 // by convention always called reducer
