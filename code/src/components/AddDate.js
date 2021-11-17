@@ -20,14 +20,13 @@ const AddDate = ({ setNewDate }) => {
   return (
     <Wrapper>
       <label>
-        Due date
+        Deadline
         <DatePicker
           selected={startDate}
           onChange={(date) => {
             setStartDate(date);
             setNewDate(date);
           }}
-          wrapperClassName="date_picker full-width"
         />
       </label>
     </Wrapper>

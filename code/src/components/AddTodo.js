@@ -29,8 +29,8 @@ const AddTodo = () => {
   const dispatch = useDispatch();
 
   const onAddTodo = () => {
-    let todoArray = [newTodo, newDate, newTags];
-    dispatch(todos.actions.addTodo(todoArray));
+    let todoObject = { newTodo, newDate, newTags };
+    dispatch(todos.actions.addTodo(todoObject));
   };
 
   return (
