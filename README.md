@@ -1,13 +1,12 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a todo-list project made with Redux, React, JSX and CSS. 
+In this app you can add tasks, check them off and delete them. It is made with a mobile first approach and design with a clean look. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The biggest issue during this project was understanding how the Redux works together with React to dispatch and get information between the store and the app. It was a very fun project to do and I really liked the creative freedom it gave us. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Find deployed application here: https://alisebrink-react-todolist.netlify.app/
