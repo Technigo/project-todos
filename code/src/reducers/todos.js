@@ -24,7 +24,7 @@ const todos = createSlice({
       task.isComplete = !task.isComplete
     },
     completeAll: (state) => {
-      state.items.forEach((item) => item.isComplete = true)
+      state.items = []
     }
   }
 })
