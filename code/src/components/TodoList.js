@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import styled from 'styled-components'
 
 import todos from '../reducers/todos'
 
@@ -15,24 +16,35 @@ const onToggleTodo = (id) => {
 const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id))
     }
+    
+   //styling
+   const Todo = styled.p `
+   margin:5px;
+   padding: 15px;` 
 
+   const Removebutton =styled.button `
+   border-radius: 5px;
+   `
     return (
         <>
-    <section> 
-        {items.map((item) => (
-            <div className ="flex-item" key={item.id}>
-                <p>{item.text}</p>
-                <input type="checkbox"checked={item.isComplete} onChange={() => onToggleTodo(item.id)}/> 
-                <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
-            </div>
-        ))}
-    </section>{/*// mapping over item to show the text inputs*/}
-    
+        {/*<div>{taskNumber} tasks</div> shows the number of tasks in total*/}
+        <section> 
+            {items.map((item) => (
+                <div className ="flex-item" key={item.id}>
+                   
+                    <input type="checkbox"checked={item.isComplete} onChange={() => onToggleTodo(item.id)}/> 
+                    <Todo>{item.text}</Todo>
+                    <Removebutton onClick={() => onDeleteTodo(item.id)}>Remove</Removebutton>
+                </div>
+            ))}
+        </section>{/*// mapping over item to show the text inputs*/}
+        
        
-        <div>{taskNumber} tasks</div> {/*shows the number of tasks in total*/}
-        <div>{completed}</div>
+        
+        
         </>
     )
+   
 }
 
 export default TodoList
