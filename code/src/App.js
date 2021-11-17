@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, createStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import todos from './reducers/todos'
 
@@ -12,7 +12,7 @@ const reducer = combineReducers({
   todos: todos.reducer, //specify all slices that we need to combine in this bigger bag
 })
 
-const store = createStore({reducer //reducer left is built in, reducer right is our variable.
+const store = configureStore({reducer
 })
 
 export const App = () => {

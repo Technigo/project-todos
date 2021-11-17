@@ -9,7 +9,6 @@ const todos = createSlice({
   },
   reducers: {
     addTodo: (store, action) => {
-      console.log(action)
       const data = action.payload 
 
       const newTodo = {
@@ -46,6 +45,15 @@ const todos = createSlice({
       })
       store.items = updatedItems
     },
+    deleteTodo: (store, action) => {
+      // v1 mutability approach (index: action.payload)
+      store.items.splice(action.payload, 0)
+
+      //v2 immutability approach (id in acrion.payload)
+      const decreasedItems = store.items.filter(item => item.id !== action.payload)
+
+      store.items = decreasedItems
+    }
   },
 })
 
