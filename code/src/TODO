@@ -11,4 +11,7 @@
 - Add a **complete all** button to set all tasks as completed. You could also use this opportunity to make your app look nice when there's no data. See [empty states UX design](https://www.toptal.com/designers/ux/empty-state-ux-design) for some ideas. ✅
 - Use styled-components instead of vanilla CSS to do your styling
 
-Add accordion to show filtered todos
+Add accordion to show filtered todos?
+https://react-bootstrap.github.io/components/accordion/
+
+Styled components?
