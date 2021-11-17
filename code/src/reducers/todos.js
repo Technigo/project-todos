@@ -27,7 +27,7 @@ export const todos = createSlice({
       // store.items.push(data)
 
       //v2 Immutability approach - Preferred in Redux but necessary in vanilla React
-      store.items = [...store.items, newTodo]
+      store.items = [newTodo, ...store.items]
     },
     toggleTodo: (store, action) => {
       console.log(action)
