@@ -12,17 +12,15 @@ const TodoList = () => {
   const onToggleTodo = (id) => {
     dispatch(todos.actions.toggleTodo(id));
   };
-
+  // delete one todo
   const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id));
   };
-  //   const onClickClearAll = () => {
-  //     dispatch(tasks.actions.clearAllTasks())
-  // }
 
-  // And inside the onClick:
-
-  // <AllDoneButton onClick={onClickClearAll}>All done!</AllDoneButton>;
+  // delete all todo
+  const onClickCompleteAll = () => {
+    dispatch(todos.actions.completeAllTodos());
+  };
 
   return (
     // <div className="todo-wrapper">
@@ -38,6 +36,9 @@ const TodoList = () => {
           <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
         </div>
       ))}
+      <button disabled={items.length < 1} onClick={onClickCompleteAll}>
+        Complete all!
+      </button>
     </section>
     // </div>
   );

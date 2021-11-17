@@ -45,6 +45,7 @@ const todos = createSlice({
       });
       store.items = updatedItems;
     },
+
     deleteTodo: (store, action) => {
       // v1 Mutability approach index in action.payload
       // store.items.splice(action.payload, 1);
@@ -57,16 +58,16 @@ const todos = createSlice({
       store.items = decreadedItems;
     },
 
-    // Delete all todos
-    //   clearAllTasks: (store) => {
-    //     const clearAll = store.items.map((task) => {
-    //         return {
-    //             ...task,
-    //             completed: !task.completed
-    //         }
-    //     })
-    //     store.items = clearAll
-    // }
+    // Complete all todos
+    completeAllTodos: (store, action) => {
+      const completeAll = store.items.map((todo) => {
+        return {
+          ...todo,
+          isComplete: true,
+        };
+      });
+      store.items = completeAll;
+    },
   },
 });
 
