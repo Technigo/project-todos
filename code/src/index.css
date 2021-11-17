@@ -20,16 +20,17 @@ body {
 }
 .small-task-wrapper {
   display: flex;
-  justify-content: space-around;
+
   align-items: center;
   padding: 10px 0px;
   border-bottom: 1px solid gray;
 }
-.task.wrapper {
+.task-wrapper {
   display: flex;
   flex-direction: column;
   margin: 0px 10px;
   align-self: center;
+  max-width: 200px;
 }
 .task-date {
   font-size: 10px;
@@ -56,11 +57,33 @@ body {
   background-size: contain;
 }
 .checkbox {
-  margin: 10px;
-  width: auto;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: black;
+  width: 2em;
+  height: 2em;
+  border: 0.15em solid #edac5f;
+  border-radius: 1em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+.checkbox::before {
+  content: "";
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #edac5f;
+}
+.checkbox:checked::before {
+  transform: scale(1);
 }
 
-input {
+.text-input {
   width: 80%;
   border-top: none;
   border-right: none;
@@ -69,9 +92,10 @@ input {
   font-size: 15px;
   padding: 5px;
 }
-input:focus {
-  background-color: lightpink;
+.text-input:focus {
+  outline: none;
 }
+
 .InputWrapper {
   margin: 20px 10px;
   display: flex;

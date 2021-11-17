@@ -12,9 +12,6 @@ export const TodoList = () => {
   const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id));
   };
-  // const onCompleteAllTodo = () => {
-  //   dispatch(todos.actions.completeAll());
-  // };
 
   const onClickClearAll = () => {
     dispatch(todos.actions.clearAllTasks());
@@ -44,7 +41,9 @@ export const TodoList = () => {
           </div>
         ))}
       </section>
-      <CheckAllButton onClick={onClickClearAll}>Complete all</CheckAllButton>
+      {items.length >= 1 && (
+        <CheckAllButton onClick={onClickClearAll}>Complete all</CheckAllButton>
+      )}
     </>
   );
 };
