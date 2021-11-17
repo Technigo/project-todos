@@ -16,6 +16,13 @@ const TodoList = () => {
   const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id));
   };
+  //   const onClickClearAll = () => {
+  //     dispatch(tasks.actions.clearAllTasks())
+  // }
+
+  // And inside the onClick:
+
+  // <AllDoneButton onClick={onClickClearAll}>All done!</AllDoneButton>;
 
   return (
     // <div className="todo-wrapper">

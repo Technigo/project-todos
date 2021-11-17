@@ -56,6 +56,17 @@ const todos = createSlice({
 
       store.items = decreadedItems;
     },
+
+    // Delete all todos
+    //   clearAllTasks: (store) => {
+    //     const clearAll = store.items.map((task) => {
+    //         return {
+    //             ...task,
+    //             completed: !task.completed
+    //         }
+    //     })
+    //     store.items = clearAll
+    // }
   },
 });
 
