@@ -52,9 +52,7 @@
   flex-grow: 2;
 }
 
-.item span {
-  display: block;
-}
+.item input[type="checkbox"] {}
 
 .item input[type='checkbox']:hover, .item button:hover {
   cursor: pointer;
