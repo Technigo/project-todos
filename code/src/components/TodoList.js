@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import './todolist.css';
+import moment from 'moment';
 
 import todos from '../reducers/todos';
 
@@ -22,12 +23,17 @@ const TodoList = () => {
     dispatch(todos.actions.completeAllTodos());
   };
 
+  const date = new Date();
+
   return (
     // <div className="todo-wrapper">
     <section className="todo-list">
       {items.map((item) => (
         <div className="checkbox-wrapper" key={item.id}>
           <p>{item.text}</p>
+          <div>
+            <span>{moment(date).format('ll')}</span>
+          </div>
           <input
             type="checkbox"
             checked={item.isComplete}
