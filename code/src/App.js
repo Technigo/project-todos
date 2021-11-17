@@ -4,6 +4,10 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import todos from "./reducers/todos";
 
+import AddTodo from "./components/AddTodo";
+import TodoList from "./components/TodoList";
+import TodoCount from "./components/TodoCount";
+
 //Always the same
 const reducer = combineReducers({
   // by convention it is always called reducer and we always use the same method to combine slices
@@ -15,7 +19,9 @@ const store = configureStore({ reducer }); // ({ reducer: reducer }) 1-property 
 export const App = () => {
   return (
     <Provider store={store}>
-      <div>Hi</div>
+      <AddTodo />
+      <TodoList />
+      <TodoCount />
     </Provider>
   );
 };
