@@ -52,8 +52,6 @@
   flex-grow: 2;
 }
 
-.item input[type="checkbox"] {}
-
 .item input[type='checkbox']:hover, .item button:hover {
   cursor: pointer;
 }
@@ -82,6 +80,10 @@
 .date {
   font-size: 12px;
   margin:0;
+}
+
+.done {
+  background-color:rgb(161, 208, 161);
 }
 
 .todo-header {

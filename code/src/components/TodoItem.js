@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import moment from 'moment';
 
- import todoSlice from '../reducers/todoSlice'
+import todoSlice from '../reducers/todoSlice';
 
 export const TodoItem = () => {
   const todos = useSelector((state) => state.todoSlice.todoList);
@@ -13,14 +13,13 @@ export const TodoItem = () => {
   };
 
   const handleDeleteTodo = (id) => {
-      dispatch(todoSlice.actions.deleteTodo(id));
+    dispatch(todoSlice.actions.deleteTodo(id));
   };
 
   return (
     <>
       {todos.map((item) => (
-        <article key={item.id} className="item not-done">
-          {console.log(item.id)}
+        <article key={item.id} className={`item ${item.done && 'done'}`}>
           <input
             className="update"
             type="checkbox"

@@ -10,6 +10,7 @@ export const Input = () => {
 
   const addTodo = () => {
     dispatch(todoSlice.actions.saveTodo(input));
+    setInput('');
   };
   return (
     <div className="input" onSubmit={addTodo}>
