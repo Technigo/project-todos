@@ -1,17 +1,15 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import './summary.css';
 
 export const Summary = () => {
   const todos = useSelector((store) => store.todos.items);
 
-  const uncompleteTodos = todos.filter((item) => !item.isComplete).length;
+  const uncompletedTodos = todos.filter((item) => !item.isComplete).length;
 
   const completeTodos = todos.filter((item) => item.isComplete).length;
 
-  console.log(completeTodos);
-
-  if (uncompleteTodos < 1) {
+  if (uncompletedTodos < 1) {
     return (
       <section className="summary-wrapper-empty">
         <h2>HOORAY </h2>
@@ -22,9 +20,13 @@ export const Summary = () => {
   } else {
     return (
       <section className="summary-wrapper">
-        <h2>{uncompleteTodos}</h2>
+        <h2>{uncompletedTodos}</h2>
         <h3>tasks for today</h3>
-        {completeTodos && <p>{completeTodos} tasks done</p>}
+        {completeTodos > 0 ? (
+          <p>{completeTodos} tasks done</p>
+        ) : (
+          <p>no tasks completed yet</p>
+        )}
       </section>
     );
   }
