@@ -42,5 +42,4 @@ const todoSlice = createSlice({
   },
 });
 
-export const { saveTodo, toggleComplete, deleteTodo } = todoSlice.actions;
 export default todoSlice;
