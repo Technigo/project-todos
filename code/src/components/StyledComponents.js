@@ -123,7 +123,8 @@ export const DateContainer = styled.div`
 `
 export const EmptyTodoDiv = styled.div`
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   background: rgb(150, 150, 150);
   margin: 10 0px;
   border: rgb(150, 150, 150) solid 2px;
@@ -133,11 +134,10 @@ export const EmptyTodoDiv = styled.div`
   .empty-image {
     width: 50%;
     opacity: 0.2;
-    position: relative;
   }
 
   .empty-h3{
-    position: absolute;
+    
   }
   
   @media (min-width: 768px){
