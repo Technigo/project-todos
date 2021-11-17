@@ -12,6 +12,9 @@ const TodoItem = styled.div`
   display: flex;
   justify-content: space-between;
   margin: 10px auto;
+  border: 1px solid grey;
+  padding: 10px 5px;
+  box-sizing: border-box;
 `
 const TodoText = styled.p`
   margin: 0;
@@ -34,8 +37,8 @@ export const TodoList = () => {
     <TodoSection>
       {items.map((item, index) => (
         <TodoItem key={item.id}>
-          <TodoText>{item.text}</TodoText>
           <input type='checkbox' checked={item.isComplete} onChange={() => onToggleTodo(item.id)} />
+          <TodoText>{item.text}</TodoText>
           <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
         </TodoItem>
       ))}
