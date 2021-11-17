@@ -1,6 +1,7 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
-import moment from "moment"
+import DayJS from "react-dayjs"
+// import moment from "moment"
 
 import todos from "../reducers/todos"
 
@@ -31,20 +32,22 @@ const TodoList = () => {
           key={item.id}
         >
           <div className="text-and-check-container">
-            <p>{item.text}</p>
-
             <input
               type="checkbox"
               checked={item.isComplete}
               onChange={() => onToggleTodo(item.id)}
             ></input>
+            <p className="list-input-text">{item.text}</p>
           </div>
+
+          <p>
+            Created at -<DayJS element="span" format="MMM D, YYYY H:mm" />
+          </p>
 
           {/* v1
           <button onClick={() => onDeleteTodoImmutability(index)}>Delete</button>
           v2 */}
 
-          <p> created at: {moment().format("MMMM Do YYYY, h:mm")}</p>
           <button
             className="delete-btn"
             onClick={() => onDeleteTodoImmutability(item.id)}

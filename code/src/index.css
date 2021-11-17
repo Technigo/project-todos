@@ -22,6 +22,15 @@ code {
     monospace;
 }
 
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .input-container {
   border: 1px solid grey;
   padding: 5px 5px;
@@ -51,8 +60,8 @@ code {
 }
 
 .list-container {
-  display: flex;
-  flex-direction: column;
+  width: 80%;
+  margin: 0 auto;
 }
 
 .item-container,
@@ -66,34 +75,69 @@ code {
   );
   padding: 10px 20px;
   border-radius: 20px;
-  width: 80%;
+  width: 100%;
   margin-bottom: 20px;
 }
 
 .item-container-checked {
-  background-image: linear-gradient(
-    72deg,
-    rgb(255, 255, 255),
-    rgb(206, 191, 211)
-  );
   opacity: 0.5;
 }
 
 .delete-btn {
-  display: inline;
+  width: 100px;
+  height: 35px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: rgb(62, 62, 62);
+  font-weight: 700;
+  position: relative;
+  transition: all 0.5s;
+  z-index: 1;
+  border: 1px solid rgb(62, 62, 62);
+  border-top-right-radius: 10px;
+}
+
+.delete-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  background-color: rgb(62, 62, 62);
+  border-top-right-radius: 10px;
+
+  z-index: -1;
+  transition: all 0.5s;
+}
+
+.delete-btn:hover::before {
+  width: 100%;
+}
+
+.delete-btn:hover {
+  color: white;
+}
+
+.delete-btn:active:before {
+  background: #b9b9b9;
+}
+
+.delete-all-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.list-input-text {
+  padding-left: 10px;
 }
 
 .text-and-check-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
   align-items: center;
   font-size: 20px;
   font-weight: 700;
-}
-
-.main-container {
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
 }

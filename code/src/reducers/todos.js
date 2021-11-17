@@ -19,7 +19,7 @@ const todos = createSlice({
         isComplete: false,
       }
 
-      store.items = [...store.items, newTodo]
+      store.items = [newTodo, ...store.items]
       console.log("store.items", store.items)
     },
 
@@ -31,15 +31,15 @@ const todos = createSlice({
       //   })
 
       const updatedItems = store.items.map(item => {
-        if (item.isComplete) {
-          console.log("true")
-        } else {
-          console.log("not true")
-        }
         if (item.id === action.payload) {
           const updatedTodo = {
             ...item,
             isComplete: !item.isComplete,
+          }
+          if (item.isComplete === true) {
+            alert("Here we go again")
+          } else {
+            alert("Good job doint things, now rest!")
           }
           return updatedTodo
         } else {
@@ -58,6 +58,10 @@ const todos = createSlice({
         item => item.id !== action.payload
       )
       store.items = decreasedItems
+    },
+    deleteAll: (store, action) => {
+      console.log("delete them allllll")
+      store.items = []
     },
   },
 })

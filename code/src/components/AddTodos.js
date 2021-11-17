@@ -11,8 +11,12 @@ const AddTodos = () => {
     dispatch(todos.actions.addTodo(input))
   }
 
+  const handleOnSubmit = e => {
+    e.preventDefault()
+  }
+
   return (
-    <section className="input-container">
+    <form onSubmit={handleOnSubmit} className="input-container">
       <input
         type="text"
         className="input-text"
@@ -20,10 +24,10 @@ const AddTodos = () => {
         onChange={event => setInput(event.target.value)}
         placeholder="Add a todo"
       />
-      <button className="addTodo-btn" onClick={onAddTodo}>
+      <button type="submit" className="addTodo-btn" onClick={onAddTodo}>
         +
       </button>
-    </section>
+    </form>
   )
 }
 

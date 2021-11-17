@@ -17,7 +17,7 @@ const FirstText = () => {
   const filteredIsComplete = items.filter(item => item.isComplete).length
 
   return (
-    <div>
+    <div className="intro-container">
       <p>You have {totalTodos - filteredIsComplete} things to do!</p>
       <p>You finished {filteredIsComplete} things to do!</p>
     </div>
