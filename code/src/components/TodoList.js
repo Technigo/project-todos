@@ -1,6 +1,25 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 import todos from "reducers/todos"
+import styled from "styled-components/macro";
+
+const StyledSection = styled.section`
+background-color: #143c55c0;
+border-radius: 5px;
+position: absolute;
+top: 25vh;
+left: 5vw;
+`;
+
+const TodosContainer = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+column-gap: 5px;
+width: 90vw;
+
+`;
 
 const TodoList = () => {
     const items = useSelector((store) => store.todos.items)
@@ -15,20 +34,19 @@ const TodoList = () => {
         dispatch(todos.actions.deleteTodo(id))
     }
 
-    console.log(items)
-
     return (
-        <section>
-            <p>Total todos: {items.length}</p>
+        <>
+        <StyledSection>
             {items.map((item) => (
-                <div key={item.id}>
-                    <p>{item.text}</p>
+                <TodosContainer key={item.id}>
                     <input type="checkbox" checked={item.isComplete} onChange={() => onToggleTodo(item.id)} />
+                    <p>{item.text}</p>
                     <p>{item.timePosted}</p>
-                    <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
-                </div>
+                    <button onClick={() => onDeleteTodo(item.id)}>-</button>
+                </TodosContainer>
             ))}
-        </section>
+        </StyledSection>
+        </>
     )
 }
 
