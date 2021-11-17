@@ -4,7 +4,10 @@ import React from "react";
 const Header = () => {
     return (
         <header className="header">
-            <h1>Things to do</h1>
+            <div className="header-container">
+                <h1>Todo list</h1>
+                <p>29/4/2021</p>
+            </div>
         </header>
     )
 }

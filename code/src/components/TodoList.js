@@ -22,11 +22,13 @@ const onDeleteTodo = (id) => {
   return (
     <section>
       {items.map((item, index) => (
-        <div className="task-wrapper" key={item.id}>
-          <p>{item.text}</p>
-          <input type="checkbox" checked={item.isComplete} onChange={() => onToggleTodo(item.id)} />
-          <button onClick={() => onDeleteTodo(item.id)}>delete</button>
-        </div>
+        <ul className="list-container" key={item.id}>
+          <li>{item.text}</li>
+          <input className = "check-btn" type="checkbox" checked={item.isComplete} onChange={() => onToggleTodo(item.id)} />
+          <button className="trash-btn" onClick={() => onDeleteTodo(item.id)}>
+          <i class="fas fa-trash"> </i>
+          </button>
+        </ul>
       ))}
     </section>
   );
