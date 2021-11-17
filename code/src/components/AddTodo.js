@@ -1,7 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+import styled from 'styled-components'
 
 import { todos } from '../reducers/todos'
+
+const StyledContainer = styled.div`
+  margin: 0 auto;
+  max-width: 400px;
+`
 
 export const AddTodo = () => {
   const [input, setInput] = useState('')
@@ -14,8 +20,7 @@ export const AddTodo = () => {
   }
 
   return (
-    <div>
-      <h1>Ready to check some boxes?</h1>
+    <StyledContainer>
       <input
         type="text"
         value={input}
@@ -29,6 +34,6 @@ export const AddTodo = () => {
         <option value="shopping">Shopping</option>
       </select>
       <button onClick={onAddTodo}>Add todo</button>
-    </div>
+    </StyledContainer>
   )
 }

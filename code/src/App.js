@@ -7,6 +7,7 @@ import { todos } from './reducers/todos'
 import { TodoList } from 'components/TodoList'
 import { AddTodo } from 'components/AddTodo'
 import { CategorySection } from 'components/CategorySection'
+import { Header } from 'components/Header'
 
 const reducer = combineReducers({
   todos: todos.reducer
@@ -20,7 +21,10 @@ if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON)
 }
 
-// const store = configureStore({ reducer }) - Doesn't work for this localStorage solution
+// const store = configureStore({ reducer })
+
+// The configureStore above doesn't work together with persistedState.
+// The solution is to use createStore, see below.
 
 const store = createStore(reducer, persistedState)
 
@@ -31,6 +35,7 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
+      <Header />
       <AddTodo />
       <CategorySection />
       <TodoList />

@@ -43,8 +43,10 @@ const StyledSmallHeadline = styled.h3`
   font-family: 'Inter', sans-serif;
   font-weight: 600;
   margin: 20px 0;
-  border-bottom: 1px solid;
   line-height: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 `
 
 const StyledStartText = styled.p`
@@ -62,9 +64,28 @@ const StyledParagraph = styled.p`
   margin: 0;
   color: white;
 `
+const ProgressbarWrapperStyled = styled.div`
+  height: 9px;
+  width: 35%;
+  overflow: hidden;
+  background-color: #21274e;
+  border-radius: 10px;
+
+  .progress {
+    background-color: tomato;
+    height: 100%;
+  }
+`
 
 export const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
+  const itemsChecked = useSelector(
+    (store) => store.todos.items.filter((item) => item.isComplete).length
+  )
+  // const itemsUnchecked = useSelector(
+  //   (store) =>
+  //     store.todos.items.filter((item) => item.isComplete === false).length
+  // )
 
   const dispatch = useDispatch()
 
@@ -92,8 +113,16 @@ export const TodoList = () => {
 
   return (
     <StyledSection>
-      <StyledSmallHeadline>Your list of todos</StyledSmallHeadline>
-      <StyledStartText>Add some todos to get started!</StyledStartText>
+      <StyledSmallHeadline>
+        Your to-do's
+        {/* Your to-do's ({itemsChecked} done, {itemsUnchecked} to go) */}
+        <ProgressbarWrapperStyled>
+          <div
+            className="progress"
+            style={{ width: `${itemsChecked * (100 / items.length)}%` }}></div>
+        </ProgressbarWrapperStyled>
+      </StyledSmallHeadline>
+      <StyledStartText>No to-dos today?</StyledStartText>
       {items.map((item) => (
         // <TodoItem key={item.id} item={item} />
         <StyledTodoItem key={item.id}>
