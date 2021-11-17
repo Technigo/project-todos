@@ -4,6 +4,7 @@ import { TodoListItem } from "./TodoListItem";
 import { AddButton } from "./AddButton";
 import { EmptyListButton } from "./EmptyListButton";
 import { useSelector } from "react-redux";
+import { FinishAllTasksButton } from "./FinishAllTaskButton";
 
 export const TodoList = () => {
   const todos = useSelector((store) => store.todo.todos);
@@ -16,7 +17,10 @@ export const TodoList = () => {
           return <TodoListItem key={item.id} item={item} />;
         })}
       </TodoListContainer>
-      <EmptyListButton />
+      <ButtonsContainer>
+        <FinishAllTasksButton />
+        <EmptyListButton />
+      </ButtonsContainer>
       <AddButton />
     </>
   );
@@ -36,4 +40,8 @@ const TodoListTitle = styled.h2`
   margin: 0;
   text-transform: uppercase;
   font-size: 15px;
+`;
+
+const ButtonsContainer = styled.div`
+  display: flex;
 `;

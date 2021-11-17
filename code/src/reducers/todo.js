@@ -39,10 +39,12 @@ export const todo = createSlice({
     emptyList: (store) => {
       store.todos = [];
     },
+
     currentScreen: (store, action) => {
       const { screen } = action.payload;
       store.currentScreen = screen;
     },
+
     addNewTodo: (store, action) => {
       const { category, title, place, time } = action.payload;
       const id = store.todos.length + 1;
@@ -56,6 +58,16 @@ export const todo = createSlice({
       const newTodos = [...store.todos];
 
       newTodos[index].completed = !newTodos[index].completed;
+      store.todos = newTodos;
+    },
+
+    setAllIsCompleted: (store) => {
+      const newTodos = [...store.todos];
+
+      newTodos.forEach((todo) => {
+        todo.completed = true;
+      });
+
       store.todos = newTodos;
     },
 
