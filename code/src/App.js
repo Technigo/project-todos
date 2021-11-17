@@ -9,7 +9,7 @@ import { Footer } from 'Components/Footer';
 import { todo } from './reducers/todo';
 
 const reducer = combineReducers({
-  todo: todo.reducers
+  todo: todo.reducer
 });
 const store = configureStore({ reducer });
 
