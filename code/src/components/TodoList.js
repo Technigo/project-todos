@@ -54,22 +54,24 @@ const TodoList = () => {
   };
 
   return (
-    <TodosContainer>
-      {items.map((item) => (
-        <TodoWrapper key={item.id}>
-          <CheckboxWrapper>
-            <CheckboxInput
-              type="checkbox"
-              checked={item.isComplete}
-              onChange={() => onToggleTodo(item.id)}
-            />
-          </CheckboxWrapper>
+    <>
+      <TodosContainer>
+        {items.map((item) => (
+          <TodoWrapper key={item.id}>
+            <CheckboxWrapper>
+              <CheckboxInput
+                type="checkbox"
+                checked={item.isComplete}
+                onChange={() => onToggleTodo(item.id)}
+              />
+            </CheckboxWrapper>
 
-          <p>{item.text}</p>
-          <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
-        </TodoWrapper>
-      ))}
-    </TodosContainer>
+            <p>{item.text}</p>
+            <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
+          </TodoWrapper>
+        ))}
+      </TodosContainer>
+    </>
   );
 };
 
