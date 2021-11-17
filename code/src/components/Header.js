@@ -1,6 +1,8 @@
 import React from 'react'
-// import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
+
+import { todos } from '../reducers/todos'
 
 const HeaderWrapper = styled.div`
   background-color: grey;
@@ -23,6 +25,13 @@ const Button = styled.button`
 `
 
 export const Header = () => {
+  const items = useSelector(store => store.todos.items)
+  const dispatch = useDispatch()
+
+  const onClearAll = () => {
+    dispatch(todos.actions.clearAllTodos())
+  }
+
   return (
     <HeaderWrapper>
       <div>
@@ -30,8 +39,8 @@ export const Header = () => {
         <Text>Today</Text>
       </div>
       <div>
-        <Text>number of tasks</Text>
-        <Button>clear all</Button>
+        <Text>{items.reduce((a, b) => a && b.isComplete, true)}</Text>
+        <Button onClick={onClearAll}>clear all</Button>
       </div>
     </HeaderWrapper>
   )
