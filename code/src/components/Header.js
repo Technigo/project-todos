@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
+import { lightTheme, darkTheme } from "./theme";
 
 const TopPage = styled.div`
   background: lightgreen;
@@ -15,8 +16,9 @@ const TopPage = styled.div`
 `;
 
 const Header = () => {
+  const [theme, setTheme] = useState("light");
   return (
-    <TopPage>
+    <TopPage theme={theme}>
       <h1>T O D O :</h1>
     </TopPage>
   );
