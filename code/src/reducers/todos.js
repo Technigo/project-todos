@@ -4,7 +4,7 @@ import uniqid from 'uniqid'
 const todos = createSlice({
     name: 'todos',
     initialState: {
-        items: [] //an empty array for our undefined amount of todo-tasks
+        items: [] //an empty array for unknown amount of todo-tasks (the store - store.items)
     },
     
     reducers: { //reducers is an object where each property is a method to update the store
@@ -25,7 +25,8 @@ const todos = createSlice({
         toggleTodo: (store, action) => {
              
             const updatedItems = store.items.map(item => {
-                if (item.id === action.payload) { //if item.id is passed as an action payload (??????)
+                console.log(item.id, action.payload)
+                if (item.id === action.payload) { //is item.id matching with the right todo (action.payload) 
                     const updatedTodo = {
                         ...item, // short for: "id: item.id, text: item.text, isComplete: item.isComplete"
                         isComplete: !item.isComplete,

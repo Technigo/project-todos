@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import moment from 'moment'
 
 import todos from '../reducers/todos'
 
@@ -16,7 +17,7 @@ const onToggleTodo = (id) => {
 const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id))
 }
-
+ 
     return (
         <section>
         {items.map((item) => (
@@ -30,6 +31,7 @@ const onDeleteTodo = (id) => {
                     />
                     <p>{item.text}</p>
                 </div>
+                <p className="date">Added {moment().format("MMM Do")}</p>
                 <button 
                 className="delete-btn"
                 onClick={() => onDeleteTodo(item.id)}>

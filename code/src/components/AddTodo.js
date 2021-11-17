@@ -8,24 +8,30 @@ const AddTodo = () => {
 
     const dispatch = useDispatch()
 
-    const AddTodo = () => { //When the AddTodo function is called, the action is triggered and it passes the input value
+    const addTodo = (event) => { //When the AddTodo function is called, the action is triggered and it passes the input value
+        event.preventDefault()
         dispatch(todos.actions.addTodo(input)) 
+        
     }
 
+
+
     return (
-        <section className="add-todo-section">
+        <form className="add-todo-section"
+            onSubmit={addTodo}>
             <button 
                 className="add-btn"
-                onClick={AddTodo}> 
+                onClick={addTodo}
+                type="submit"> 
                 <i class="fas fa-plus"></i>
             </button>
             <input 
                 type="text" 
                 placeholder="Add task"
                 value={input} 
-                onChange={(event) => setInput(event.target.value)}
+                onChange={(event) => setInput(event.target.value)} //submit input text when press enter
             />
-        </section>
+        </form>
     )
 }
 
