@@ -8,7 +8,7 @@ import styled from 'styled-components/macro';
 const StyledHeader = styled.header`
   display: flex;
   justify-content: space-between;
-  background-color: #b84c29ad;
+  background-color: #acbcc7;
   color: #fff;
   padding: 0.5em;
 `;

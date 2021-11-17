@@ -47,6 +47,18 @@ const todos = createSlice({
 
       store.todoListItems = decreasedItems;
     },
+    completeAllTasks: (store) => {
+      const completeAll = store.todoListItems.map((todoTask) => {
+        if (todoTask.isComplete) {
+          return { ...todoTask };
+        } else
+          return {
+            ...todoTask,
+            isComplete: !todoTask.isComplete,
+          };
+      });
+      store.todoListItems = completeAll;
+    },
   },
 });
 

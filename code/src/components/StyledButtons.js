@@ -2,9 +2,9 @@ import styled from 'styled-components';
 
 export const StyledAddTodoButton = styled.button`
   align-items: center;
-  background-color: #fee6e3;
-  border: 2px solid #111;
-  border-radius: 8px;
+  background-color: #ffde53;
+  border: 1.5px solid #111;
+  border-radius: 25%;
   box-sizing: border-box;
   color: #111;
   cursor: pointer;
@@ -12,6 +12,7 @@ export const StyledAddTodoButton = styled.button`
   font-family: Inter, sans-serif;
   font-size: 30px;
   height: 48px;
+  width: 48px;
   justify-content: center;
   line-height: 24px;
   max-width: 100%;
@@ -24,15 +25,16 @@ export const StyledAddTodoButton = styled.button`
   touch-action: manipulation;
   &:after {
     background-color: #111;
-    border-radius: 8px;
+    border-radius: 25%;
     content: '';
     display: block;
     height: 48px;
+    width: 48px;
     left: 0;
     width: 100%;
     position: absolute;
     top: -2px;
-    transform: translate(8px, 8px);
+    transform: translate(4px, 4px);
     transition: transform 0.2s ease-out;
     z-index: -1;
   }

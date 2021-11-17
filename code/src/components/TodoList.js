@@ -41,6 +41,10 @@ const TodoList = () => {
     dispatch(todos.actions.deleteTodo(id));
   };
 
+  const onClickCompleteAll = () => {
+    dispatch(todos.actions.completeAllTasks());
+  };
+
   return (
     <StyledList className={todoListItems.length <= 0 && 'no-items'}>
       {todoListItems.map((listItem) => (
@@ -57,6 +61,7 @@ const TodoList = () => {
           </StyledDeleteButton>
         </StyledListItem>
       ))}
+      <button onClick={onClickCompleteAll}>All done!</button>
     </StyledList>
   );
 };
