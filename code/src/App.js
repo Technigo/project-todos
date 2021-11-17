@@ -12,13 +12,13 @@ import AddTodo from "components/AddTodos";
 import TodoList from "components/TodoList";
 
 const LightTheme = {
-  pageBackground: "#CEE5D0",
-  titleColor: "#152A38",
+  pageBackground: "#FAF1E6",
+  titleColor: "#064420",
   tasksToComplete: "#152A38",
-  inputBackground: "#F3F0D7",
-  listItemBackground: "#F9CF93",
-  listItem: "#152A38",
-  buttonBackground: "#E99497",
+  inputBackground: "#E4EFE7",
+  listItemBackground: "#FDFAF6",
+  listItem: "#064420",
+  buttonBackground: "#9DBEB9",
 };
 
 const DarkTheme = {

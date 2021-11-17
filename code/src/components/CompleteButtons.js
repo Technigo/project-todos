@@ -7,7 +7,6 @@ import todos from "reducers/todos";
 const CompleteButtonStyle = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
   background-color: ${(props) => props.theme.inputBackground};
   padding: 10px;
   border-top-left-radius: 10px;
@@ -21,6 +20,7 @@ const CompleteButtonStyle = styled.div`
     border-radius: 10px;
     font-weight: bold;
     padding: 5px;
+    margin: 0 5px;
   }
 `;
 
