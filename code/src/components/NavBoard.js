@@ -1,5 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
+import { SelectionBtn } from "./styled/SelectionBtn";
 
 import todos from "../reducers/todos";
 
@@ -8,15 +9,9 @@ export const NavBoard = () => {
 
   return (
     <div className="nav-board-wrapper">
-      <button className="space-evenly" onClick={() => dispatch(todos.actions.changeFilter("all"))}>
-        All
-      </button>
-      <button className="space-evenly" onClick={() => dispatch(todos.actions.changeFilter("active"))}>
-        Active
-      </button>
-      <button className="space-evenly" onClick={() => dispatch(todos.actions.changeFilter("completed"))}>
-        Completed
-      </button>
+      <SelectionBtn onClick={() => dispatch(todos.actions.changeFilter("all"))}>all</SelectionBtn>
+      <SelectionBtn onClick={() => dispatch(todos.actions.changeFilter("active"))}>active</SelectionBtn>
+      <SelectionBtn onClick={() => dispatch(todos.actions.changeFilter("completed"))}>done</SelectionBtn>
     </div>
   );
 };

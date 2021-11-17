@@ -16,6 +16,8 @@ const reducer = combineReducers({
 const store = configureStore({ reducer, preloadedState: loadState() });
 
 store.subscribe(
+  // we use debounce to save the state once each 800ms
+  // for better performances in case multiple changes occur in a short time
   debounce(() => {
     saveState(store.getState());
   })

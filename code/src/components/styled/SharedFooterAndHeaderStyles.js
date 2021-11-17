@@ -1,24 +1,21 @@
-import styled from "styled-components";
+import { css } from "styled-components";
 
-export const Footer = styled.footer`
-  width: ${(props) => props.width}vw;
+export const SharedFooterAndHeaderStyles = css`
+  width: ${(props) => props.width}%;
   background-color: ${(props) => props.color};
   height: ${(props) => props.height}px;
-  bottom: 0;
+  font-size: 12px;
   display: flex;
-  position: fixed;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
   word-break: break-all;
   font-weight: 400;
-  color: black;
-  font-size: 12px;
-
+  color: grey;
+  box-sizing: border-box;
   @media (min-width: 769px) {
-    width: 100vw;
+    width: 100%;
     height: 60px;
-    padding: 20px;
     font-size: 16px;
   }
 `;

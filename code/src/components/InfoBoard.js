@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { SelectionBtn } from "./styled/SelectionBtn";
 
 import todos from "../reducers/todos";
 
@@ -18,12 +19,21 @@ export const InfoBoard = () => {
   return (
     <section className="todo-wrapper">
       <div className="info-wrapper">
-        <p className="space-evenly"> total: {items.length} </p>
-        <p className="space-evenly">task left: {uncompletedTasks} </p>
-
-        <button className="space-evenly" onClick={onDeleteCompletedTasks}>
-          Clear completed
-        </button>
+        <p>
+          total:{" "}
+          <span className="decoration" aria-label="decoration">
+            {items.length}
+          </span>{" "}
+        </p>
+        <p>
+          task left:{" "}
+          <span className="decoration" aria-label="decoration">
+            {uncompletedTasks}
+          </span>{" "}
+        </p>
+      </div>
+      <div className="clear-btn-wrapper">
+        <SelectionBtn onClick={onDeleteCompletedTasks}>Clear completed</SelectionBtn>
       </div>
     </section>
   );

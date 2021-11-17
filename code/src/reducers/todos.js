@@ -14,12 +14,9 @@ const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         isComplete: false,
+        creationDate: new Date(),
       };
 
-      // // v1 Mutability approach
-      // store.items.push(data);
-
-      // v2 Immutability approach
       store.items = [...store.items, newTodo];
     },
     toggleTodo: (store, action) => {
