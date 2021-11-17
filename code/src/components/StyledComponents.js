@@ -94,7 +94,7 @@ margin: 1.2rem 0 0 0;
 
   export const AddTaskButton = styled.button `
     padding: 0.9em 2em;
-    border: 2px solid #17C3B2;
+    border: 2px solid #ffcc67;
     border-radius: 20px;
     position: relative;
     overflow: hidden;
@@ -106,7 +106,7 @@ margin: 1.2rem 0 0 0;
     transition: .3s;
     z-index: 1;
     font-family: inherit;
-    color: #17C3B2;
+    color: #ffcc67;
    
    &::before {
     content: '';
@@ -116,7 +116,7 @@ margin: 1.2rem 0 0 0;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) rotate(45deg);
-    background: #17C3B2;
+    background: #ffcc67;
     transition: .5s ease;
     display: block;
     z-index: -1;
@@ -147,7 +147,8 @@ export const TextInput = styled.input`
   padding: 0.5em 1em;
   font-size: 12px;
   border-radius: 10px 0 0 10px;
-  background: #e8e;
+  background: rgb(100, 100, 100);
+  color: #ddd;
   @media (min-width: 768px){
     font-size: 1.1rem;
   }
@@ -159,12 +160,11 @@ export const TextInput = styled.input`
 // TextInput Button
 export const InputButton = styled.button`
   border: none;
-  color: #090909;
   padding: 0.5em 1em;
   font-size: 12px;
   border-radius:  0 10px 10px 0;
-  background: #e8e8e8;
-  
+  background: rgb(37, 37, 37);
+  color: #ddd;
  @media (min-width: 768px){
   font-size: 1.1rem;
   }

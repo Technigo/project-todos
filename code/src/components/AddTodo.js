@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import todos from "reducers/todos";
-import { FlexItem, AddTaskButton, TextInput, InputButton, InputContainer } from "./StyledComponents";
+import { AddTaskButton, TextInput, InputButton, InputContainer } from "./StyledComponents";
 
 const AddTodo = () => {
   const dispatch = useDispatch()
@@ -31,6 +31,7 @@ const AddTodo = () => {
             value={input}
             onChange={(event) => setInput(event.target.value)}
             placeholder="Write your task"
+            required
           />
           <InputButton onClick={onAddTodo}>Add</InputButton>
         </label>
