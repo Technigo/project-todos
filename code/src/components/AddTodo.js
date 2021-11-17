@@ -24,7 +24,7 @@ const AddTodo = () => {
       {!canWrite && <AddTaskButton onClick={() => handleCreateTask()}><span>+ Add task</span></AddTaskButton>}
       {canWrite && 
       <form onSubmit={handleFormSubmit}>
-        <label for="input">
+        <label htmlFor="input">
           <TextInput 
             name="input"
             type="text" 

@@ -4,7 +4,6 @@ import styled from "styled-components"
 export const HeaderContainer = styled.section`
 color: rgb(37, 37, 37);   
 background: #ffcc67;
-font-family: 'Roboto Condensed', sans-serif;
 width: 100%;
 margin: 0 auto;
 border-radius: 0 0 30px 30px;
@@ -44,7 +43,6 @@ border: none;
 padding: 10px;
 margin: 10px 0;
 border-radius: 10px;
-font-family: 'Roboto Condensed', sans-serif;
 font-size: 0.8rem;
 cursor: pointer;
 @media (min-width: 768px){
@@ -85,15 +83,36 @@ margin: 1.2rem 0 0 0;
   export const FlexItem = styled.div`
   background: rgb(60, 60, 60);
   display: flex;
-  margin: 10px;
+  margin: 10px 0 0;
   padding: 5px;
   border: rgb(100, 100, 100) solid 2px;
-  border-radius: 25px;
+  border-radius: 10px 10px 0 0;
   word-break: break-word;
+  font-size: 16px;
+  @media (min-width: 768px){
+    font-size: 1.1rem;
+  }
+  @media (min-width: 992px) {
+      font-size: 1.3rem;
+}
+`
+export const DateContainer = styled.div`
+  display: flex;
+  background: rgb(100, 100, 100);
+  margin: 10 0px;
+  border: rgb(100, 100, 100) solid 2px;
+  border-radius: 0 0 10px 10px;
+  font-size: 16px;
+  @media (min-width: 768px){
+    font-size: 1.1rem;
+  }
+  @media (min-width: 992px) {
+      font-size: 1.3rem;
+}
 `
 
-  export const AddTaskButton = styled.button `
-    padding: 0.9em 2em;
+export const AddTaskButton = styled.button `
+    padding: 0.7em 1.5em;
     border: 2px solid #ffcc67;
     border-radius: 20px;
     position: relative;
@@ -145,7 +164,7 @@ export const InputContainer = styled.div`
 export const TextInput = styled.input`
   border: none;
   padding: 0.5em 1em;
-  font-size: 12px;
+  font-size: 16px;
   border-radius: 10px 0 0 10px;
   background: rgb(100, 100, 100);
   color: #ddd;
@@ -161,7 +180,7 @@ export const TextInput = styled.input`
 export const InputButton = styled.button`
   border: none;
   padding: 0.5em 1em;
-  font-size: 12px;
+  font-size: 16px;
   border-radius:  0 10px 10px 0;
   background: rgb(37, 37, 37);
   color: #ddd;
@@ -175,7 +194,7 @@ export const InputButton = styled.button`
 
 // Checkbox
 
-   export const TaskLabel = styled.label `
+export const TaskLabel = styled.label `
    display: flex;
    align-items: center;
    margin: auto 10px;
@@ -187,8 +206,8 @@ export const InputButton = styled.button`
    @media (min-width: 992px) {
        font-size: 1.1rem;
    }
-   `
-   export const TaskInput = styled.input `
+`
+export const TaskInput = styled.input `
    font-family: 'Roboto', sans-serif;
    width: 1em;
    height: 1em;
@@ -203,5 +222,20 @@ export const InputButton = styled.button`
      &:checked{
        background-color: gray;
      }
-   `
+`
+// Delete button
+export const DeleteButton = styled.button`
+  color: white;
+  background: none;
+  border: none;
+  padding: 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  @media (min-width: 768px){
+    font-size: 1.1rem;
+  }
+  @media (min-width: 992px) {
+      font-size: 1.3rem;
+}
+`
   
