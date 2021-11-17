@@ -34,11 +34,9 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
-      <section>
       <Header />
       <AddTodo />
       <TodoList />
-      </section>
     </Provider>
   )
 }

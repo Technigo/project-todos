@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 
 import todos from "reducers/todos";
-import { TaskLabel, TaskInput, FlexItem, DeleteButton, DateContainer, TaskContainer, EmptyTodoDiv } from "./StyledComponents";
+import { TaskLabel, FlexItem, DeleteButton, DateContainer, TaskContainer, EmptyTodoDiv } from "./StyledComponents";
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
@@ -29,12 +29,13 @@ const TodoList = () => {
         <><FlexItem key={item.id}>
           <TaskContainer>
           <TaskLabel>
-            <TaskInput
+            <input className="task-input"
               name={item.id}
               type="checkbox"
               value={item.id}
               checked={item.isComplete}
               onChange={() => onToggleTodo(item.id)} />
+            <span className="checkmark"></span>
           </TaskLabel>
           <h2>{item.text}</h2>
           </TaskContainer>
