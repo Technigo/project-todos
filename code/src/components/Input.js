@@ -15,7 +15,7 @@ export const Input = () => {
   return (
     <div className="input" onSubmit={addTodo}>
       <input type="text" value={input} onChange={(event) => setInput(event.target.value)} />
-      <button onClick={addTodo}>Add todo</button>
+      <button disabled={input === ''} onClick={addTodo}>Add todo</button>
     </div>
   );
 };

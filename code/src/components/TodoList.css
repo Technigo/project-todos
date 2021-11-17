@@ -86,6 +86,10 @@
   background-color:rgb(161, 208, 161);
 }
 
+.done button {
+  background-color:rgb(90, 140, 90);
+}
+
 .todo-header {
   font-weight: 600;
   margin:0;
