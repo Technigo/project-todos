@@ -39,11 +39,8 @@ const todos = createSlice({
 						...item,
 						isComplete: !item.isComplete
 					}
-
-					console.log(updatedTodo)
 					return updatedTodo;
 				} else {
-					console.log(item)
 					return item;
 				}
 			});

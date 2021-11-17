@@ -19,7 +19,13 @@ https://www.youtube.com/watch?v=ykuD2QOZkhc&t=245
 
 
 Some todo: 
-
-- visa upp dagens datum med moment.js 
 - sortera done todos så den sist gjorda hamnar överst 
 - lägg kategorier 
+- styled components
+- fix text wrap i todolist div
+- fixa props till styled compo finishedTodos
+
+- responsive design - OK! 
+- visa dagens datum och tid - OK! 
+- local storage - OK! 
+- visa upp dagens datum med moment.js - ok!

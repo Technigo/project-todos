@@ -1,28 +1,43 @@
 import React, { useState} from 'react';
-
+import styled from "styled-components";
 // in order to send data nad update the store we need useDispatch
 import { useDispatch } from 'react-redux';
 
 import todos from '../reducers/todos';
-import styled from "styled-components";
 
 const AddTodoContainer = styled.section`
-	padding:10px 0;
 	text-align: center;
+	margin: 30px auto;
+
 `; 
 
 const Input = styled.input`
 	border: none;
-	border-bottom: 2px solid black;
-	margin-right: 10px;
-	font-size: 16px;
+	padding: 7px;
+	background-color: transparent;
+	border-bottom: 2px solid rgb(170, 170, 170);
+	font-size: 20px;
 
 	::placeholder {
 		font-family: "Montserrat"
 	}
-`
+`;
 
+const AddButton = styled.button`
+	background-color: green;
+	border:none;
+	border-radius: 5px;
+	height: 40px;
+	width: 50px;
 
+	font-size:20px;
+	color:white;
+
+	i:hover {
+		width: 26px;
+  		transform: scale(1.09);
+	}
+`;
 
 const AddTodo = () => {
 
@@ -41,12 +56,12 @@ const AddTodo = () => {
 		<AddTodoContainer>
 			<Input 
 				type="text" 
-				placeholder="Add todo here"
+				placeholder="Add todo here..."
 				value={input} 
 				onChange={(event) => setInput(event.target.value)} />
-			<button onClick={onAddTodo} disabled={input === ""}>
+			<AddButton onClick={onAddTodo} disabled={input === ""}>
 				<i className="fas fa-plus"></i>
-			</button>
+			</AddButton>
 		</AddTodoContainer>
 	)
 };

@@ -3,14 +3,14 @@ import React from 'react';
 // importing Provider componenet from redux
 import { Provider } from 'react-redux';
 // importing those two functions from redux 
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { combineReducers, createStore } from '@reduxjs/toolkit';
 // importing slice/reducer
 import todos from './reducers/todos';
 
 import Header from './components/Header';
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
-import TodoSummary from './components/TodoSummary';
+//import TodoSummary from './components/TodoSummary';
 import FinishedTodo from './components/FinishedTodo';
 import ClearAllButton from './components/ClearAllButton';
 
@@ -22,8 +22,21 @@ const reducer = combineReducers({
 	todos: todos.reducer
 });
 
+// set up for local store 
+const persistedStateJSON = localStorage.getItem("reduxState");
+let persistedState = {};
+
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON);
+};
+
 // reducer: reducer; ES6 short syntas is reducer because the same name of variable and value
-const store = configureStore({ reducer });
+const store = createStore(reducer, persistedState);
+
+store.subscribe(() => {
+  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+});
+
 
 // on line 11 - 19 we prepade our bag with slices 
 // now we need to add this bag to the application 
@@ -34,7 +47,7 @@ export const App = () => {
 		<main className="main-content">
 			<Header  />
 			<AddTodo  />
-			<TodoSummary  />
+			{/*<TodoSummary  />*/}
 			<TodoList  />
 			<FinishedTodo />
 			<ClearAllButton />
