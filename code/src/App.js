@@ -20,8 +20,10 @@ if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON);
 }
 
+// create store with initial state
 const store = createStore(reducer, persistedState);
 
+// store the state in local storage on Redux state change
 store.subscribe(() => {
   localStorage.setItem('todosReduxState', JSON.stringify(store.getState()));
 });
