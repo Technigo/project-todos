@@ -10,12 +10,12 @@ const todos = createSlice({
   },
   reducers: {
     addTodo: (store, action) => {
-      console.log("action: ", action);
       const newTodo = {
         id: uniqid(),
         text: action.payload.newTodo,
         date: action.payload.newDate,
         tags: action.payload.newTags,
+        added: action.payload.dateAdded,
         isComplete: false,
       };
 

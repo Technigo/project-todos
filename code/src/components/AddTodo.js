@@ -7,6 +7,8 @@ import todos from "../reducers/todos";
 import AddTag from "../components/AddTag";
 import AddDate from "../components/AddDate";
 
+const { DateTime } = require("luxon");
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -29,7 +31,10 @@ const AddTodo = () => {
   const dispatch = useDispatch();
 
   const onAddTodo = () => {
-    let todoObject = { newTodo, newDate, newTags };
+    const dateAdded = DateTime.now()
+      .setZone("Europe/Stockholm")
+      .toFormat("dd LLL yyyy");
+    let todoObject = { newTodo, newDate, newTags, dateAdded };
     dispatch(todos.actions.addTodo(todoObject));
   };
 
