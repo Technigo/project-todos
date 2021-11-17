@@ -24,6 +24,24 @@ const StyledTextInput = styled.input`
     color: #9aaedb;
   }
 `
+const StyledForm = styled.form`
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  margin: 0 15px 0 5px;
+  color: white;
+
+  .input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+`
+
 const StyledSmallHeadline = styled.h3`
   color: #9aaedb;
   font-size: 13px;
@@ -64,7 +82,7 @@ export const AddTodo = () => {
         }}
       />
 
-      <form>
+      <StyledForm>
         <input
           type="radio"
           id="personal"
@@ -92,7 +110,7 @@ export const AddTodo = () => {
         <button type="submit" onClick={onAddTodo}>
           Add todo
         </button>
-      </form>
+      </StyledForm>
     </StyledContainer>
   )
 }
