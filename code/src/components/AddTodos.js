@@ -6,7 +6,7 @@ import todos from "reducers/todos";
 
 const InputStyle = styled.div`
   width: 270px;
-  background: lightgrey;
+  background-color: ${(props) => props.theme.inputBackground};
   padding: 20px 0;
   display: flex;
   justify-content: center;
@@ -20,7 +20,8 @@ const InputStyle = styled.div`
 
   button {
     padding: 10px;
-    background: lightpink;
+    background-color: ${(props) => props.theme.titleColor};
+    color: ${(props) => props.theme.pageBackground};
     border: none;
     border-radius: 5px;
   }

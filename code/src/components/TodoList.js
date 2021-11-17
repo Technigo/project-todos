@@ -9,7 +9,7 @@ const ListItems = styled.div`
 
   div {
     width: 270px;
-    background: lightpink;
+    background-color: ${(props) => props.theme.listItemBackground};
     padding-bottom: 20px;
   }
 
@@ -19,6 +19,18 @@ const ListItems = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 0 10px;
+    color: ${(props) => props.theme.titleColor};
+  }
+
+  button {
+    background-color: ${(props) => props.theme.titleColor};
+    color: ${(props) => props.theme.pageBackground};
+    border: none;
+    border-radius: 5px;
+  }
+
+  h3 {
+    color: ${(props) => props.theme.listItem};
   }
 
   /* label {
