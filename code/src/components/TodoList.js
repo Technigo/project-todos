@@ -2,6 +2,8 @@ import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 
 import todos from '../reducers/todos'
+// import NumberOfCompleted from "./NumberOfCompleted"
+import NumberOfTodos from './NumberOfTodos'
 
 const TodoList = () => {
     const items = useSelector((store) => store.todos.items)
@@ -18,7 +20,7 @@ const TodoList = () => {
 
     return (
         <main className='main'>
-            {/* <h1>You need to do this!</h1> */}
+            <NumberOfTodos />
             {items.map((item, index) => (
                 <section className='todo-container' key={item.id}>
 
@@ -29,6 +31,7 @@ const TodoList = () => {
                             checked={item.isComplete}
                             onChange={() => onToggleTodo(item.id)}
                             />
+                            <div className="checkmark"></div>
                             <p>{item.text}</p>
                     </label>
 
@@ -38,8 +41,8 @@ const TodoList = () => {
                        <i className="fas fa-minus-circle"/>
 					</button>
                 </section>
-
             ))}
+            {/* <NumberOfCompleted /> */}
         </main>
     )
 }

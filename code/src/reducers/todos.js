@@ -1,16 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit"
 import uniqid  from 'uniqid'
 
-// a slice takes one argument - an object!
-// every slice contains of three properties, name initialState and reducers
-
 const todos = createSlice({
     name: 'todos',
     initialState:  { 
-        items: [],
+        items: [
+            { id: 1, text: 'Watch video on actions & reducers', isComplete: true },
+            { id: 2, text: 'Follow redux codealong', isComplete: true },
+            { id: 3, text: 'Fork weekly assignment', isComplete: true },
+            { id: 4, text: 'Create a todo app', isCcomplete: false },
+        ],
     },
-
-    // Three reducers- addTodo toggleTodo and deleteTodo
 
     reducers: {
         addTodo: (store, action) => {
@@ -22,7 +22,7 @@ const todos = createSlice({
                 text: action.payload,
                 isComplete: false
             }
-            // store.items.push(data)
+
             store.items = [...store.items, newTodo]
 
         },

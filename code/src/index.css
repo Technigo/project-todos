@@ -28,17 +28,19 @@ code {
   padding: 1rem;
 }
 
-.dateandcircles {
-  display: flex;
-  align-items: center;
-}
-
-.circles.container {
+.headlineandcircles {
   display: flex;
   flex-direction: row;
-  height: 2rem;
-  margin: 0;
+  align-items: center;
+  padding-bottom: 1rem;
 }
+
+.circles-container {
+  display: flex;
+  flex-direction: row;
+  margin: 0;
+  padding-right: 0.5rem;
+} 
 
 .circle1 {
   display: inline-block;
@@ -78,7 +80,6 @@ code {
 
 .header h1 {
   font-size: 1rem;
-  margin-top: 0.5rem;
   padding: 0;
 }
 
@@ -214,3 +215,11 @@ h1 {
   color: #dedede;
   font-size: 2rem;
 }
+
+main h4 {
+  padding-left: 0;
+  padding-bottom: 0.5rem;
+}
+
+
+

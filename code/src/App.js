@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { combineReducers, createStore } from '@reduxjs/toolkit'
 
 import todos from './reducers/todos'
 import Header from './components/Header'
@@ -8,14 +8,27 @@ import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
 
 
-// combining all the reducers (here we have only one) this is always called reducer and combineReducer, inside we specidly all of the slices that we need to combine!
 const reducer = combineReducers({
   todos: todos.reducer,
 })
 
-// This is always made like this!! It is a build in name, you can also write  { reducer } onlyn when it is the same word xx: xx!
-const store = configureStore({ reducer: reducer})
+// RETRIEVE LOCAL STORAGE
+const persistedStateJSON = localStorage.getItem('todosReduxState')
+let persistedState = {}
 
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON)
+}
+
+// const store = configureStore({ reducer: reducer})
+const store = createStore(reducer, persistedState)
+
+
+//LISTENING TO THE CHANGES, WHEN SOMETHING HAPPENS IN REDUX STORE,
+// ADDING OR REMOVING, THIS WILL UPDATE THE LOCALSTORAGE. getState is build in.
+store.subscribe(() => {
+  localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))
+})
 
 export const App = () => {
   return (
