@@ -41,7 +41,7 @@ const HeaderDiv = styled.div`
 `;
 
 const HeaderTitle = styled.h1`
-  color: #c690ff;
+  color: #ea86b6;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;
 
@@ -51,7 +51,7 @@ const HeaderTitle = styled.h1`
 `;
 
 const DateText = styled.p`
-  color: #c690ff;
+  color: #ea86b6;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 24px;

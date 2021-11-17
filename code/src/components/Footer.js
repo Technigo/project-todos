@@ -27,7 +27,7 @@ const FooterDiv = styled.div`
 `;
 
 const Text = styled.h3`
-  color: #c690ff;
+  color: #ea86b6;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 12px;
   margin: 20px auto;
