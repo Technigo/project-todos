@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-image: url(); */
-  background-color: rgb(0, 0, 0);
+  background-color: rgb(75, 75, 75);
 }
 
 code {
@@ -35,7 +35,6 @@ code {
   background-color: rgba(177, 177, 177, 0.194);
   margin: 5px;
   padding: 0 10px;
-  box-shadow: rgb(0 0 0 / 56%) 0px 22px 70px 4px;
 }
 
 .add-todo-wrap {
@@ -107,4 +106,19 @@ the time is vs  */
 .check-button {
   display: flex;
   align-items: center;
+}
+
+.tasks-button {
+  display: flex;
+  justify-content: center;
+}
+
+.checkbox {
+  width: 1.4em;
+  height: 1.4em;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin: 0 6px 0 0;
+  cursor: pointer;
+  color: #f94605;
 }

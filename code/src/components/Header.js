@@ -30,7 +30,7 @@ const Header = () => {
     <>
       <DateContainer>
         <Greeting />
-        <DayJS format="YYYY-MM-DD" />
+        <DayJS format="D MMMM YYYY" />
         <DayJS format="HH:mm" />
       </DateContainer>
       <CompletedTaskText>

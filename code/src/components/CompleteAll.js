@@ -1,17 +1,28 @@
 import React from "react"
 import { useDispatch } from "react-redux"
+import styled from "styled-components"
 
 import todos from "../reducers/todos"
+
+const AllTodoButtons = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+`
 
 const CompleteAll = () => {
   const dispatch = useDispatch()
 
   return (
-    <div>
-      <button onClick={() => dispatch(todos.actions.setAllTodostoCompleted())}>
+    <AllTodoButtons>
+      <button onClick={() => dispatch(todos.actions.completeAllTodos())}>
         Complete All
       </button>
-    </div>
+      <button onClick={() => dispatch(todos.actions.removeAllTodos())}>
+        Remove All
+      </button>
+    </AllTodoButtons>
   )
 }
 

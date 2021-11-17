@@ -13,21 +13,25 @@ const AddTodo = () => {
     setInput("") // to clean the input box
   }
 
+  const handleOnSubmit = (event) => {
+    event.preventDefault()
+  }
+
   return (
     <>
-      <div className="add-todo-wrap">
+      <form onSubmit={handleOnSubmit} className="add-todo-wrap">
         <input
-          required
+          minLength="4"
           className="input-box"
           type="text"
           placeholder="What will you do today?"
           value={input}
           onChange={(event) => setInput(event.target.value)}
         />
-        <button className="add-todo-button" onClick={onAddTodo} type="submit">
+        <button className="add-todo-button" onClick={onAddTodo}>
           Add todo
         </button>
-      </div>
+      </form>
     </>
   )
 }
