@@ -1,9 +1,26 @@
-import React from 'react';
+import React from 'react'
+import { useSelector, useDispatch } from 'react-redux'
+
+import todos from '../reducers/todos'
 
 const TodoList = () => {
+  const items = useSelector(store => store.todos.items) //reference the slice with store.todos
+
+  const dispatch = useDispatch()
+
+  const onToggleTodo = (id) => {
+    dispatch(todos.actions.toggleTodo(id))
+  }
 
   return (
-    <div></div>
+    <section>
+      {items.map(item => (
+        <div key={item.id}>
+          <p>{item.text}</p>
+          <input type="checkbox" checked={item.isComplete} onChange={() => onToggleTodo(item.id)} />
+        </div>
+      ))}
+    </section>
   ) 
 }
  
