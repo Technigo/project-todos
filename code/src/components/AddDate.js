@@ -14,7 +14,7 @@ const Wrapper = styled.div`
   }
 `;
 
-const AddDate = () => {
+const AddDate = ({ setNewDate }) => {
   const [startDate, setStartDate] = useState(new Date());
 
   return (
@@ -23,7 +23,10 @@ const AddDate = () => {
         Due date
         <DatePicker
           selected={startDate}
-          onChange={(date) => setStartDate(date)}
+          onChange={(date) => {
+            setStartDate(date);
+            setNewDate(date);
+          }}
           wrapperClassName="date_picker full-width"
         />
       </label>

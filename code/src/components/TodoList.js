@@ -20,12 +20,12 @@ const TodoList = () => {
     <div>
       {items.map((item) => (
         <div key={item.id}>
-          <p>{item.text}</p>
           <input
             type="checkbox"
             checked={item.isComplete}
             onChange={() => onToggleTodo(item.id)}
           />
+          <p>{item.text}</p>
           <button onClick={() => onDeleteTodo(item.id)}>
             delete
           </button>

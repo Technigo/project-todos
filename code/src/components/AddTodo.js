@@ -22,11 +22,15 @@ const InputField = styled.input`
 `;
 
 const AddTodo = () => {
-  const [input, setInput] = useState("");
+  const [newTodo, setNewTodo] = useState("");
+  const [newDate, setNewDate] = useState("");
+  const [newTags, setNewTags] = useState([]);
+
   const dispatch = useDispatch();
 
   const onAddTodo = () => {
-    dispatch(todos.actions.addTodo(input));
+    let todoArray = [newTodo, newDate, newTags];
+    dispatch(todos.actions.addTodo(todoArray));
   };
 
   return (
@@ -37,11 +41,11 @@ const AddTodo = () => {
           type="text"
           name="newTodo"
           placeholder="Add new todo here..."
-          onChange={(event) => setInput(event.target.value)}
+          onChange={(todo) => setNewTodo(todo.target.value)}
         />
       </label>
-      <AddDate />
-      <AddTag />
+      <AddDate setNewDate={setNewDate} />
+      <AddTag setNewTags={setNewTags} />
       <button onClick={onAddTodo}>Add Todo</button>
     </Wrapper>
   );
