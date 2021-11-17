@@ -18,6 +18,10 @@ const reducer = combineReducers({
 // then we need to create/ configure store with initial state
 const store = configureStore({ reducer });
 
+// store.subscribe(() => {
+//   localStorage.setItem("todosReduxState", JSON.stringify(store.getState()));
+// });
+
 export const App = () => {
   return (
     <Provider store={store}>

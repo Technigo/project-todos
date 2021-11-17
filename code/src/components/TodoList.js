@@ -70,6 +70,7 @@ const TodoList = () => {
             <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
           </TodoWrapper>
         ))}
+        {/* <p>You have {items.length.isComplete} completed tasks</p> */}
       </TodosContainer>
     </>
   );
