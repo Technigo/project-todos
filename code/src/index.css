@@ -41,8 +41,8 @@ main {
 }
 
 .componentCountAndList{
-  height: 100vh;
-  width: 100%;
+ height: 100vh;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -53,12 +53,14 @@ main {
 
 
 video{
-  
+
+  width: 100vw;
   float: left;
   top: 0;
   padding: none;
   position:fixed; /* optional depending on what you want to do in your app */
   background-clip: border-box;
+  background-size: cover;
 z-index: -1;
   
 }
@@ -90,7 +92,7 @@ z-index: -1;
 .addTodo___text {
   height: 330px;
   border-radius: 10px;
-  background-color: rgba(196, 211, 197, 0.466);
+  background-color: rgba(19, 134, 26, 0.466);
   padding: 5px 5px 15px 5px;
   font-size: 21px;
   font-weight: bolder;
@@ -101,7 +103,7 @@ form {
   flex-direction: column;
   justify-content: space-around;
   height: 300px;
-  color: #0D1835;
+  color: #d86a4f;
 }
 
 .titel {
@@ -154,9 +156,9 @@ form {
 .seeAllTodo___btn {
   width: 100%;
   top: 95vh;
-  height: 40px;
+ 
   position: absolute;
-  height: 50px;
+  height: 100px;
 }
 
 .seeAllTodo___btn button:hover {
@@ -165,21 +167,22 @@ form {
 
 .seeAllTodoDiv___btn {
   width: 100%;
-  background-color: #0D1835;
-  margin-top: 10px;
+ height: 110%;
+  background-color: #16350d;
+  
   display: flex;
   justify-content: center;
   position: relative;
 }
 
 .seeAllTodo___btn button {
-  background-color: cadetblue;
+  background-color: #16350d;
   border-radius: 60px;
-  height: 70px;
-  width: 70px;
+  height: 80px;
+  width: 80px;
   z-index: 10;
   border: none;
-  margin-top: -30px;
+  margin-top: -35px;
   transition: 0.2s ease-in;
   font-weight: 800;
   
@@ -245,7 +248,7 @@ font-size: 12px;
 
 .CountDiv___btn {
   width: 100%;
-  background-color: cadetblue;
+
   margin-top: -1px;
   display: flex;
   justify-content: center;
@@ -253,13 +256,13 @@ font-size: 12px;
 }
 
 .Count___btn button {
-  background-color: cadetblue;
+  background-color: #16350d;
   border-radius: 60px;
-  height: 70px;
-  width: 70px;
+  height: 80px;
+  width: 80px;
   z-index: 10;
   border: none;
-  margin-top: 0px;
+  margin-top: 10px;
   transition: 0.2s ease-in;
   font-weight: 800;
   font-size: 10px;
