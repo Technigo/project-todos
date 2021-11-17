@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 
 import { todos } from 'reducers/todos'
 
@@ -7,6 +7,8 @@ export const AddTodo = () => {
   const [input, setInput] = useState('')
 
   const dispatch = useDispatch()
+
+  // const numberOfTodos = useSelector((store) => store.todos.length)
 
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input))
