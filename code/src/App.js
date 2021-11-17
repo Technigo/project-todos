@@ -7,6 +7,7 @@ import todos from "./reducers/todos";
 
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
+import Counter from "components/Counter";
 
 // förbertt alla slices har
 const reducer = combineReducers({
@@ -21,6 +22,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
+      <Counter />
       <AddTodo />
       <TodoList />
     </Provider>

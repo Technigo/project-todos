@@ -5,10 +5,10 @@ import todos from "../reducers/todos";
 
 const AddTodo = () => {
   const [input, setInput] = useState("");
-  const dispach = useDispatch();
+  const dispatch = useDispatch();
 
   const onAddTodo = () => {
-    dispach(todos.actions.addTodo(input));
+    dispatch(todos.actions.addTodo(input));
   };
 
   return (
@@ -18,7 +18,7 @@ const AddTodo = () => {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={onAddTodo}>a</button>
+      <button onClick={onAddTodo}>Submit</button>
     </div>
   );
 };

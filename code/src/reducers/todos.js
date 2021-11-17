@@ -48,6 +48,10 @@ const todos = createSlice({
       store.items.splice(action.payload, 1);
 
       // v2 immutability approach
+      //   const decreasedItems = store.items.filter(
+      //     (item) => item.id !== action.payload
+      //   );
+      //   store.items = decreasedItems;
     },
   },
 });

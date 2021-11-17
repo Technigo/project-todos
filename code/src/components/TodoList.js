@@ -1,5 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import moment from "moment";
+import Counter from "./Counter";
 
 import todos from "../reducers/todos";
 
@@ -12,10 +14,19 @@ const TodoList = () => {
     dispatch(todos.actions.toggleTodo(id));
   };
 
-  //v1
-  const onDeleteTodo = (index) => {
+  //   //v1
+  const onDeleteTodoMutability = (index) => {
     dispatch(todos.actions.deleteTodo(index));
   };
+  //v2
+  //   const onDeleteTodoImmutability = (id) => {
+  //     dispatch(todos.actions.deleteTodo(index));
+  //   };
+  const date = new Date();
+  //   const todaysDate = date.toString().slice(0, 21);
+  {
+    /* ev kolla upp att använda moment.js här ovan */
+  }
 
   return (
     <section>
@@ -27,7 +38,14 @@ const TodoList = () => {
             checked={item.isComplete}
             onChange={() => onToggleTodo(item.id)}
           />
-          <button onClick={() => onDeleteTodo(index)}>Delete</button>
+          {/* // v1 */}
+          <button onClick={() => onDeleteTodoMutability(index)}>Delete</button>
+          {/* //v2 */}
+          {/* <button onClick={() => onDeleteTodoImmutability(item.id)}> */}
+          {/* Delete
+          </button> */}
+          <p>Posted: {moment(date.createdAt).fromNow()}</p>
+          {/* ev kolla upp att använda moment.js här ovan */}
         </div>
       ))}
     </section>
