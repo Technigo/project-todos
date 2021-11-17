@@ -9,8 +9,6 @@ export const Header = () => {
 };
 
 const HeaderStyle = styled.div`
+  background-color: white;
   border: 5px dotted black;
-  h1 {
-    text-align: center;
-  }
 `;

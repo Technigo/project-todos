@@ -13,31 +13,108 @@ export const TodoList = () => {
     dispatch(todo.actions.addTodo(input));
   };
   const listWithTodos = useSelector((store) => store.todo.items);
+  const onToggle = (index) => {
+    dispatch(todo.actions.toggle(index));
+  };
+  const onDelete = (id) => {
+    dispatch(todo.actions.delete(id));
+  };
 
   return (
     <>
-      <div className="container">
+      <InputField>
         <h1>TodoList</h1>
-        <input
-          type="text"
-          placeholder="write your Todo:"
-          onChange={(event) => setInput(event.target.value)}
-        />
-        <button onClick={onAddToDo}>Add ToDo</button>
-      </div>
-      <TheList>
+        <div className="input">
+          <input
+            type="text"
+            placeholder="write your Todo:"
+            onChange={(event) => setInput(event.target.value)}
+          />
+          <InputButton onClick={onAddToDo}>Add ToDo</InputButton>
+        </div>
+      </InputField>
+      <div className="container">
+        <h2>You have {listWithTodos.length} Todos left for today.</h2>
         {listWithTodos.map((item, index) => (
-          <>
-            <input type="radio"></input>
+          <TheList>
+            <input
+              type="checkbox"
+              checked={item.isComplete}
+              onChange={() => onToggle(item.id)}></input>
             <p>{item.text}</p>
-          </>
+            <DeleteButton onClick={() => onDelete(index)}>Delete</DeleteButton>
+          </TheList>
         ))}
-      </TheList>
+      </div>
     </>
   );
 };
 
+const InputField = styled.div`
+  background: var(--main-color);
+
+  .input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin: 10px 0px;
+  }
+`;
+
+const InputButton = styled.button`
+  border: 1px solid black;
+  background-color: var(--main-color);
+  color: black;
+  width: 100px;
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 4px;
+
+  transition-duration: 0.4s;
+  box-shadow: none;
+  margin: 10px;
+  font-family: var(--button-font);
+
+  &:hover {
+    background-color: white;
+    color: black;
+    transition-duration: 0.4s;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+`;
+
 const TheList = styled.div`
+  background-color: white;
   display: flex;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
+  flex-wrap: nowrap;
+  border: 1px solid black;
+  margin: 10px 0px;
+`;
+
+const DeleteButton = styled.button`
+  background-color: var(--main-color);
+  color: black;
+  width: 100px;
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 4px;
+  border: none;
+  transition-duration: 0.4s;
+  box-shadow: none;
+  margin: 10px;
+  font-family: var(--button-font);
+
+  &:hover {
+    background-color: white;
+    color: black;
+    transition-duration: 0.4s;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
 `;
