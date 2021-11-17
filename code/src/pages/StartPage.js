@@ -2,22 +2,28 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
+import Header from '../components/Header'
+import Buttons from '../components/Buttons'
+
 const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
 `
-const StyledHeader = styled.h1`
-  color: red;
+const StyledImg = styled.img`
+  width: 100%;
 `
+
 
 const StartPage = () => {
   return (
     <StyledMain>
-      <StyledHeader>My ToDo-List</StyledHeader>
-      <img src='/assets/noTasks-pic.png' alt='example' />
+      <Header />
+      <StyledImg src='/assets/highFive.webp' alt='two women giving high five' />
       <Link to='/tasks'>
-        <button>Start adding your ToDos</button>
+        <Buttons 
+          text='Start planning'
+        />
       </Link>
     </StyledMain>
   )

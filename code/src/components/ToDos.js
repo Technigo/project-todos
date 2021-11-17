@@ -9,13 +9,24 @@ import { faTrashAlt, faPen } from '@fortawesome/free-solid-svg-icons'
 import todos from '../reducers/todos'
 
 const ContainerDiv = styled.div `
-
 `
 const StyledForm = styled.form `
   width: 80vw;
   margin: 10px 0;
-  border: 1px solid grey;
+  padding: 5px;
+  font-size: 20px;
+  border: 1px solid var(--red);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 `
+const StyledParagraph = styled.p `
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  margin-bottom: 0;
+`
+
 
 const ToDos = () => {
   const tasks = useSelector((state) => state.todos.items)
@@ -27,15 +38,17 @@ const ToDos = () => {
     <ContainerDiv>
       {tasks.map((task) => (
         <StyledForm key={task.id}>
-          <label>
+          <label htmlFor='completed'>{task.task}</label>
+          <div>
             <input 
+              id='completed'
               type='checkbox' 
               onChange={() => dispatch(todos.actions.toggleIsComplete(task.id))}
-            />{task.task}
-          </label>
-          <button onClick={() => dispatch(todos.actions.removeToDo(task.id))}>{trashCanIcon}</button>
-          <button >{editIcon}</button>
-          <p>Created at: {moment().format("MMM Do YY")}</p>
+            />
+            <button >{editIcon}</button>
+            <button onClick={() => dispatch(todos.actions.removeToDo(task.id))}>{trashCanIcon}</button>
+          </div>
+          <StyledParagraph>{moment(task.newDate).format("D. MM. YYYY")}</StyledParagraph> 
         </StyledForm>
       ))}
     </ContainerDiv>

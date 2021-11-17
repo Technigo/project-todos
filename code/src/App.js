@@ -10,7 +10,20 @@ const reducer = combineReducers({
   todos: todos.reducer
 })
 
-const store = configureStore({ reducer })
+const preloadedStateJSON = localStorage.getItem('todosReduxState')
+let preloadedState = {}
+
+if (preloadedStateJSON) {
+  preloadedState = JSON.parse(preloadedStateJSON) 
+}
+
+//configures the store with the slices and the localstate
+const store = configureStore({ reducer, preloadedState })
+
+//Store the state in localstorage, when Redux state changes
+store.subscribe(() => {
+  localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))
+})
 
 export const App = () => {
   return (

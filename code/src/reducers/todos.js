@@ -13,7 +13,8 @@ const todos = createSlice({
       state.items.push({
         id: uniqid(),
         task: action.payload,
-        isComplete: false
+        isComplete: false,
+        newDate: new Date()
       })
     },
     removeToDo: (state, action) => {
