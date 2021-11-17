@@ -42,6 +42,38 @@ const todos = createSlice({
 
       store.items = decreasedItems;
     },
+
+    toggleAllTodo: (store, action) => {
+      const allDone = store.items.map((item) => {
+        if (item.isComplete === false) {
+          const allDoneItems = {
+            ...item,
+            isComplete: !item.isComplete,
+          };
+          return allDoneItems;
+        } else {
+          return item;
+        }
+      });
+
+      store.items = allDone;
+    },
+
+    removeAll: (store) => {
+      store.items = [];
+    },
+
+    // deleteAll: (store, action) => {
+    //   const deleteAllItems = store.items((item) => item.id !== action.payload);
+
+    //   store.items = deleteAllItems;
+    // },
+
+    // completeAll: (store) => {
+    //   const completeAllItems = store.items;
+
+    //   store.items = completeAllItems;
+    // },
   },
 });
 

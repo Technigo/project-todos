@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
+import moment from "moment";
 
 import todos from "reducers/todos";
 
@@ -8,17 +9,18 @@ const ListItems = styled.div`
   width: 270px;
 
   div {
-    width: 270px;
+    width: 260px;
     background-color: ${(props) => props.theme.listItemBackground};
-    padding-bottom: 20px;
+    margin: 10px 0;
+    padding: 5px;
+    border-radius: 10px;
   }
 
   section {
     display: flex;
     flex-direction: row;
-    align-items: center;
     justify-content: space-between;
-    padding: 0 10px;
+    align-items: center;
     color: ${(props) => props.theme.titleColor};
   }
 
@@ -29,8 +31,14 @@ const ListItems = styled.div`
     border-radius: 5px;
   }
 
-  h3 {
+  h3,
+  p {
     color: ${(props) => props.theme.listItem};
+    margin: 5px 5px;
+  }
+
+  p {
+    font-size: 10px;
   }
 
   /* label {
@@ -93,11 +101,13 @@ const TodoList = () => {
                 checked={item.isComplete}
                 onChange={() => onToggleTodo(item.id)}
               />
-              <span></span>
             </label>
           </section>
           <section>
-            <textarea rows="2" name="comments"></textarea>
+            {/* moment().calendar() 
+            moment().format("MMM Do YY")*/}
+            <p>{moment().format("MMM Do YY")}</p>
+            {/* <textarea rows="2" name="comments"></textarea> */}
             <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
           </section>
         </div>

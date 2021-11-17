@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import todos from "reducers/todos";
 import styled from "styled-components";
-import { GlobalStyles } from "./global";
 import { useSelector } from "react-redux";
+import { AmountOfTasks } from "./AmountOfTasks";
+import moment from "moment";
 
 const TopPage = styled.div`
   background-color: ${(props) => props.theme.pageBackground};
@@ -43,16 +44,18 @@ const Header = (props) => {
     }
   };
 
-  // const [theme, setTheme] = useState("light");
-
-  // const amount = useSelector(store => store.todos.length)
-  // const amount = useSelector(store => store.todos.filter(item => item.isComplete).length)
+  const amount = useSelector((store) => store.todos.length);
+  // const amount = useSelector(
+  //   (store) => store.todos.filter((item) => item.isComplete).length
+  // );
 
   return (
     <TopPage>
       <button onClick={changeTheme}>Dark/light</button>
       <h1>T O D O :</h1>
-      <p>you have this many tasks to complete</p>
+      <p>Today: {moment().format("MMM Do YY")}</p>
+
+      <AmountOfTasks />
       {/* {amount} */}
     </TopPage>
   );
