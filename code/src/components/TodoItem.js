@@ -2,18 +2,18 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import moment from 'moment';
 
-// import { todos } from '../reducers/todoSlice'
+ import todoSlice from '../reducers/todoSlice'
 
 export const TodoItem = () => {
   const todos = useSelector((state) => state.todoSlice.todoList);
   const dispatch = useDispatch();
 
   const handleCompleteClick = (id) => {
-    dispatch(todos.actions.toggleComplete(id));
+    dispatch(todoSlice.actions.toggleComplete(id));
   };
 
   const handleDeleteTodo = (id) => {
-      dispatch(todos.actions.deleteTodo(id));
+      dispatch(todoSlice.actions.deleteTodo(id));
   };
 
   return (
