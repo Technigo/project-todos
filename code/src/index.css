@@ -11,3 +11,95 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url("https://cdn.pixabay.com/photo/2020/06/30/12/45/paper-5356271_1280.jpg");
+  max-width: 800px;
+  height: 100vh;
+}
+
+h1 {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 60px;
+  border-bottom: black solid 2px;
+}
+
+p {
+  font-family: 'Reenie Beanie', cursive;
+  font-size: 35px;
+}
+
+.add-todo-section {
+  display: flex;
+  width: 260px;
+  background-color: whitesmoke;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+}
+
+.add-btn {
+  background-color: transparent;
+  border: none;
+  color: black;
+  font-size: 16px; 
+  cursor: pointer; 
+}
+
+
+.added-task-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.added-task {
+  display: flex;
+  align-items: center;
+}
+
+.checkbox {
+  -webkit-appearance: none;
+  border: 1px solid black;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 9px;
+  margin-right: 10px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+}
+
+.checkbox:active, .checkbox:checked:active {
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+.checkbox:checked {
+	border: 1px solid black;
+	box-shadow: 0 1px 2px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+
+.checkbox:checked:after {
+	content: '\2714';
+	font-size: 28px;
+	position: absolute;
+	top: -14px;
+	left: 1px;
+	color: black;
+}
+
+.delete-btn {
+  background-color: transparent;
+  border: none;
+  color: grey;
+  font-size: 16px; 
+  cursor: pointer; 
+}
+  
