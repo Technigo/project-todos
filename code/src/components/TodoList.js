@@ -5,7 +5,7 @@ import moment from 'moment';
 import todos from '../reducers/todos';
 
 const TodoList = () => {
-  const items = useSelector(store => store.todos.items); // store.the slice. items from slice
+  const items = useSelector(store => store.todos.items); // store."the slice". items from slice
 
   const dispatch = useDispatch();
 
@@ -16,12 +16,14 @@ const TodoList = () => {
   const onDeleteTodo = id => {
     dispatch(todos.actions.deleteTodo(id));
   };
+
   if (items.length > 0)
     return (
       <section className='todos-added'>
         {items.map(item => (
           <div className='flex-item' key={item.id}>
             <input
+              className='checkbox'
               type='checkbox'
               checked={item.isComplete}
               onChange={() => onToggleTodo(item.id)}

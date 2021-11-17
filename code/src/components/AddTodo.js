@@ -15,7 +15,7 @@ const AddTodo = () => {
 
   const handleKeyPress = event => {
     // this makes it possible to enter input with enter key
-    if (event.key === 'Enter' && input.length > 4) {
+    if (event.key === 'Enter' && input.length > 2) {
       onAddTodo();
     }
   };
@@ -25,17 +25,17 @@ const AddTodo = () => {
       <input
         type='text'
         value={input}
-        placeholder='5-20 characters '
+        placeholder='3-20 characters '
         onChange={event => setInput(event.target.value)}
         onKeyPress={handleKeyPress}
-        minLength='5'
+        minLength='3'
         maxLength='20'
       />
       <button
         className='add-button'
         type='button'
         onClick={onAddTodo}
-        disabled={input.length < 5 || input.length > 20}
+        disabled={input.length < 3 || input.length > 20}
       >
         <span role='img' aria-label='Add-plus'>
           ➕

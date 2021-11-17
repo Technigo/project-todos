@@ -51,8 +51,7 @@ code {
   padding: 20px;
   margin: 10px auto;
   box-shadow: 1px 1px 2px gray;
-
-  width: 70%;
+  width: 80%;
 }
 
 button {
@@ -61,6 +60,11 @@ button {
   border-radius: 5px;
   cursor: pointer;
   font-family: 'Montserrat Alternates', sans-serif;
+}
+
+button:hover {
+  background-color: black;
+  color: #99a799;
 }
 
 .add-button {
@@ -74,8 +78,9 @@ button {
   padding: 2px;
 }
 
-.remove-all-button {
-  margin-left: 4px;
+.remove-all-button,
+.complete-all-button {
+  margin: 2px 8px;
 }
 
 main {
@@ -83,8 +88,8 @@ main {
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  border: 6px solid black;
-  width: 80%;
+  border: 4px solid black;
+  width: 90%;
   padding: 20px;
   box-sizing: border-box;
   background-color: #fef5ed;
@@ -97,10 +102,10 @@ main::before {
   content: ' ';
   position: absolute;
   z-index: -1;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
+  top: 4px;
+  left: 4px;
+  right: 4px;
+  bottom: 4px;
   border: 4px solid rgb(199, 170, 8);
   border-radius: 5px;
 }
@@ -110,6 +115,10 @@ input {
   padding: 5px;
   margin: 5px 0;
   cursor: pointer;
+}
+
+input:focus {
+  border: 4px solid #d3e4cd;
 }
 
 .done {
@@ -127,4 +136,20 @@ input {
 
 .fas {
   font-size: 38px;
+}
+
+.checkbox {
+  filter: grayscale(100%);
+  margin-right: 10px;
+}
+
+.todo-title p {
+  margin: 0 25px;
+  font-weight: bold;
+}
+
+@media (min-width: 1023px) {
+  main {
+    width: 50%;
+  }
 }
