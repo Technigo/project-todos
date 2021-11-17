@@ -6,6 +6,7 @@ import todos from './reducers/todos';
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 import Header from './components/Header';
+import TodoAmount from './components/TodoAmount';
 
 //preparing bag of slices
 const reducer = combineReducers({
@@ -29,7 +30,9 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
+
       <AddTodo />
+      <TodoAmount />
       <TodoList />
     </Provider>
   );

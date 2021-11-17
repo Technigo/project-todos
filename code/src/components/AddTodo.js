@@ -18,12 +18,12 @@ const StyledInput = styled.input`
   font-family: 'Roboto', sans-serif;
   color: #333;
   font-size: 1.2rem;
-  margin: 0 auto;
-  padding: 1.5rem 2rem;
+  margin: 2vh auto;
+  padding: 1rem;
   border-radius: 0.2rem;
   background-color: rgb(255, 255, 255);
   border: none;
-  width: 90%;
+  width: 60vw;
   display: inline-block;
   border-bottom: 0.3rem solid transparent;
   transition: all 0.3s;
@@ -31,7 +31,6 @@ const StyledInput = styled.input`
 
 const AddTodo = () => {
   const [todoInput, setTodoInput] = useState('');
-  // const [startDate, setStartDate] = useState(new Date());
 
   const dispatch = useDispatch();
 
@@ -43,8 +42,6 @@ const AddTodo = () => {
 
   const onTodoInputChange = (event) => {
     setTodoInput(event.target.value);
-
-    // console.log(onTodoInputChange);
   };
 
   return (
@@ -59,10 +56,6 @@ const AddTodo = () => {
       <StyledAddTodoButton type='submit' disabled={todoInput === ''}>
         &#x0002B;
       </StyledAddTodoButton>
-      {/* <DatePicker
-        selected={startDate}
-        onChange={(date) => setStartDate(date)}
-      /> */}
     </StyledForm>
   );
 };

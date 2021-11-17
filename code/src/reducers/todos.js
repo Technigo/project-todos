@@ -6,16 +6,10 @@ const todos = createSlice({
   name: 'todos',
   initialState: {
     todoListItems: [],
-    timePosted: moment().format('lll'),
+    timePosted: moment().calendar(),
   },
   reducers: {
     addTodo: (store, action) => {
-      //   console.log(store);
-      //   console.log(action);
-
-      //getting the input text in the data. Either like this or line 19.
-      //   const data = action.payload;
-
       const newTodo = {
         id: uniqid(),
         text: action.payload,
@@ -25,8 +19,6 @@ const todos = createSlice({
       store.todoListItems = [newTodo, ...store.todoListItems];
     },
     toggleCheckbox: (store, action) => {
-      //   console.log(action);
-
       const updatedListItems = store.todoListItems.map((listItem) => {
         if (listItem.id === action.payload) {
           const updatedTodo = {
