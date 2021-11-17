@@ -42,7 +42,7 @@ const StyledSmallHeadline = styled.h3`
   letter-spacing: 1px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  margin: 20px 0;
+  margin: 30px 0 10px;
   line-height: 3;
   display: flex;
   align-items: center;
@@ -53,8 +53,6 @@ const StyledStartText = styled.p`
   font-size: 25px;
   line-height: 1.3;
   font-weight: 300;
-  /* text-align: center; */
-  /* margin: 70px auto; */
   color: white;
   width: 80%;
 `
@@ -65,15 +63,18 @@ const StyledParagraph = styled.p`
   color: white;
 `
 const ProgressbarWrapperStyled = styled.div`
-  height: 9px;
+  height: 8px;
   width: 35%;
   overflow: hidden;
-  background-color: #21274e;
+  /* background-color: #21274e; */
+  border: 1px solid #9aaedb;
   border-radius: 10px;
+  display: flex;
 
   .progress {
-    background-color: tomato;
+    background-color: #9aaedb;
     height: 100%;
+    transition: 0.3s ease-out;
   }
 `
 
@@ -82,6 +83,16 @@ export const TodoList = () => {
   const itemsChecked = useSelector(
     (store) => store.todos.items.filter((item) => item.isComplete).length
   )
+  // const businessItems = useSelector((store) =>
+  //   store.todos.items.filter((item) => item.category === 'business')
+  // )
+  // const personalItems = useSelector((store) =>
+  //   store.todos.items.filter((item) => item.category === 'personal')
+  // )
+  // const shoppingItems = useSelector((store) =>
+  //   store.todos.items.filter((item) => item.category === 'shopping')
+  // )
+
   // const itemsUnchecked = useSelector(
   //   (store) =>
   //     store.todos.items.filter((item) => item.isComplete === false).length
@@ -111,6 +122,22 @@ export const TodoList = () => {
     }
   }
 
+  const categoryColor = (category) => {
+    if (category === 'business') {
+      return '2px solid tomato'
+    } else if (category === 'shopping') {
+      return '2px solid limegreen'
+    } else {
+      return '2px solid darkviolet'
+    }
+  }
+
+  const startText = () => {
+    if (items.length) {
+      return 'none'
+    }
+  }
+
   return (
     <StyledSection>
       <StyledSmallHeadline>
@@ -122,33 +149,22 @@ export const TodoList = () => {
             style={{ width: `${itemsChecked * (100 / items.length)}%` }}></div>
         </ProgressbarWrapperStyled>
       </StyledSmallHeadline>
-      <StyledStartText>No to-dos today?</StyledStartText>
+      <StyledStartText style={{ display: startText() }}>
+        No to-dos today?
+      </StyledStartText>
       {items.map((item) => (
         // <TodoItem key={item.id} item={item} />
-        <StyledTodoItem key={item.id}>
+        <StyledTodoItem key={item.id} className={item.category}>
           <StyledTaskContainer>
-            {/* <input
-              type="checkbox"
-              checked={item.isComplete}
-              onChange={() => onToggleTodo(item.id)}
-            />
-            <div className="cntr">
-              <input
-                type="checkbox"
-                checked={item.isComplete}
-                onChange={() => onToggleTodo(item.id)}
-                id="cbx"
-                className="hidden-xs-up"
-              />
-              <label htmlFor="cbx" className="cbx"></label>
-            </div> */}
             <label className="container">
               <input
                 type="checkbox"
                 checked={item.isComplete}
                 onChange={() => onToggleTodo(item.id)}
               />
-              <div className="checkmark"></div>
+              <div
+                className="checkmark"
+                style={{ border: categoryColor(item.category) }}></div>
             </label>
             <StyledParagraph style={{ textDecoration: checkedLine(item) }}>
               {item.text}

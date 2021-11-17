@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 
 const StyledSection = styled.section`
@@ -12,7 +12,7 @@ const StyledCategoryWrapper = styled.section`
   position: relative;
 `
 
-const StyledCategory = styled.div`
+const StyledCategory = styled.button`
   height: 100%;
   width: 25%;
   color: #9aaedb;
@@ -21,11 +21,21 @@ const StyledCategory = styled.div`
   margin-top: 20px;
   font-size: 15px;
   border-radius: 8px;
-  border: 2px tomato solid;
+  border: 2px solid tomato;
   display: flex;
   justify-content: center;
   align-items: center;
   box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.15);
+
+  .business {
+    background-color: tomato;
+  }
+  .personal {
+    border: pink;
+  }
+  .shopping {
+    border: green;
+  }
 `
 const StyledSmallHeadline = styled.h3`
   color: #9aaedb;
@@ -38,15 +48,36 @@ const StyledSmallHeadline = styled.h3`
   border-bottom: 1px solid;
   line-height: 3;
 `
+// const onToggleCategory = (value) => {
+//     if (value) {
+//         return value = !value
+//     }
+//   }
 
 export const CategorySection = () => {
+  const [business, setBusiness] = useState(true)
+  const [personal, setPersonal] = useState(true)
+  const [shopping, setShopping] = useState(true)
+
   return (
     <StyledSection>
       <StyledSmallHeadline>Categories</StyledSmallHeadline>
       <StyledCategoryWrapper>
-        <StyledCategory>Business</StyledCategory>
-        <StyledCategory>Personal</StyledCategory>
-        <StyledCategory>Shopping</StyledCategory>
+        <StyledCategory
+          className="business"
+          type="button"
+          onClick={() => (business ? false : true)}
+        />
+        <StyledCategory
+          className="personal"
+          type="button"
+          onClick={() => (personal ? false : true)}
+        />
+        <StyledCategory
+          className="shopping"
+          type="button"
+          onClick={() => (shopping ? false : true)}
+        />
       </StyledCategoryWrapper>
     </StyledSection>
   )

@@ -1,13 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import uniqid from 'uniqid'
 
-// const todoData = [
-//   { id: 1, text: 'Code', complete: true },
-//   { id: 2, text: 'Eat', complete: true },
-//   { id: 3, text: 'Sleep', complete: true },
-//   { id: 4, text: 'Repeat', complete: false }
-// ]
-
 export const todos = createSlice({
   name: 'todos',
   initialState: {
@@ -17,10 +10,13 @@ export const todos = createSlice({
     addTodo: (store, action) => {
       console.log(action)
 
+      const { input, category } = action.payload
+
       const newTodo = {
         id: uniqid(),
-        text: action.payload,
-        isComplete: false
+        text: input,
+        isComplete: false,
+        category: category
       }
 
       //v1 Mutability approach - works in Redux because of Immer "under the hood" - but not in vanilla React
