@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components"
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { combineReducers, createStore } from '@reduxjs/toolkit'
 
 import todos from './reducers/todos'
 
@@ -21,12 +21,25 @@ const TheBody = styled.section`
   max-width: 550px;
   margin: 0 auto;
 `
+const persistedStateJSON = localStorage.getItem('todosReduxState')
+let persistedState ={}
+
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON)
+}
 
 const reducer = combineReducers ({
   todos: todos.reducer,
 })
 
-const store = configureStore({ reducer })
+const store = createStore (
+  reducer,
+  persistedState
+)
+
+store.subscribe(() => {
+  localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))
+})
 
 
 export const App = () => {

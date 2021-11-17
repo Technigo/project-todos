@@ -21,7 +21,7 @@ const TodosCheckbox = styled.input`
     width:30px;
     height:30px;
     margin: 10px;
-    filter: brightness(98%) contrast(105%);
+    filter: grayscale(50%) sepia(10%) brightness(150%);
 `
 const TodosRemoveButton = styled.button`
     padding: 10px 15px;

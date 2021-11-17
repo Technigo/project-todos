@@ -13,7 +13,7 @@ const AddTodoButton = styled.button`
     border: none;
     font-size: 1.1rem;
     border-radius: 0 20px 20px 0;
-    background-color: lightgreen;
+    background-color: PaleTurquoise;
 `
 const CheckAllButton = styled.button`
     border: none;
@@ -21,6 +21,7 @@ const CheckAllButton = styled.button`
     background-color: #0072FF;
     margin: 20px 20px 0 0;
     padding: 10px 15px;
+    filter: grayscale(50%) sepia(10%) brightness(150%);
 `
 const ClearAllButton = styled.button`
     border: none;
@@ -33,7 +34,7 @@ const AddTodoInput = styled.input`
     height: 36px;
     width: 250px;
     border-radius: 20px 0 0 20px;
-    border: 1px solid lightgreen;
+    border: 2px solid PaleTurquoise;
 `
 
 const AddTodo = () => {
