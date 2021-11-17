@@ -3,10 +3,10 @@ import { useSelector, useDispatch } from 'react-redux';
 import windowSize from 'react-window-size';
 
 import AddTasks from './AddTasks';
+import DeleteTask from './DeleteTask';
 
 import tasks from 'reducers/tasks';
 import styled from 'styled-components';
-import DeleteTask from './DeleteTask';
 
 const TaskCard = styled.section`
   background: rgb(255, 231, 231);

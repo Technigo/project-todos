@@ -39,6 +39,16 @@ export const tasks = createSlice({
         (item) => item.id !== action.payload
       );
       state.items = leftItems;
+    },
+    completeAllTask: (state, action) => {
+      const allItemsComplete = state.items.map((item) => {
+        const updatedCheck = {
+          ...item,
+          complete: true
+        };
+        return updatedCheck;
+      });
+      state.items = allItemsComplete;
     }
   }
 });
