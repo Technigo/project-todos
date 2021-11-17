@@ -10,6 +10,7 @@ const AddTodo = () => {
   const [canWrite, setCanWrite] = useState(false);
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input))
+    setInput('')
   } 
   const handleCreateTask = () => {
     setCanWrite(true);
@@ -33,7 +34,10 @@ const AddTodo = () => {
             placeholder="Write your task"
             required
           />
-          <InputButton onClick={onAddTodo}>Add</InputButton>
+          <InputButton 
+          onClick={onAddTodo}
+          disabled={input.length < 3}
+          >Add</InputButton>
         </label>
       </form>
       }

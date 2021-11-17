@@ -1,11 +1,12 @@
 import { createSlice } from "@reduxjs/toolkit";
 import uniqid from 'uniqid'
 
+const initialState = {
+  items: [],
+}
 const todos = createSlice({
   name: 'todos',
-  initialState: {
-    items: [],
-  },
+  initialState,
   reducers: {
     addTodo: (store, action) => {
       const newTodo = {
@@ -35,10 +36,9 @@ const todos = createSlice({
    completeAll: (store) => {
     store.items.map(item => item.isComplete = true)
   },
-   // action to clear all tasks
-  //   clearAllTasks: () => {
-  //     return todos.initialState()
-  // },
+    clear: () => {
+    return initialState
+  },
 
   // delete todos
   deleteTodo: (store, action) => {
@@ -47,7 +47,8 @@ const todos = createSlice({
     )
     store.items = decreasedItems
   }
-},
+  },
+  
 })
 
 export default todos

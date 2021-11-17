@@ -11,9 +11,9 @@ const Header = () => {
   const onCompleteAll = () => {
     dispatch(todos.actions.completeAll())
   }
-  // const onDeleteAll = () => {
-  //   dispatch(todos.actions.clearAll())
-  // }
+  const onDeleteAll = () => {
+    dispatch(todos.actions.clear())
+  }
   const tasks = useSelector((store) => store.todos.items)
   // const completedTasks = tasks.filter((singleTask) => singleTask.isComplete)
   
@@ -28,7 +28,7 @@ const Header = () => {
         <RigthContainer>
           <HeaderSubTitle>{tasks.length} tasks</HeaderSubTitle>
           <ButtonHeader onClick={onCompleteAll}>Complete All</ButtonHeader>
-          {/* <ButtonHeader onClick={onDeleteAll}>Clear All</ButtonHeader> */}
+          <ButtonHeader onClick={onDeleteAll}>Clear All</ButtonHeader>
         </RigthContainer>
       </HeaderBodyContainer>
     </HeaderContainer>
