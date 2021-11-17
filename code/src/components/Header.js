@@ -12,7 +12,7 @@ const HeaderWrapper = styled.div`
   height: 100px;
 `;
 const Paragraph = styled.p`
-  font-size: 15px;
+  font-size: 13px;
   margin: 5px 20px;
   color: white;
 `;

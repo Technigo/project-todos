@@ -20,7 +20,7 @@ export const CheckAllButton = styled.button`
   height: 40px;
   width: 250px;
   font-weight: 100;
-  margin: 20px 0px;
+  margin: 20px auto;
 `;
 export const DeleteButton = styled.button`
   border-radius: 20px;
