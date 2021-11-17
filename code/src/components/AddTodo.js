@@ -15,6 +15,7 @@ export const AddTodo = () => {
 
   return (
     <div>
+      <h1>Ready to check some boxes?</h1>
       <input
         type="text"
         value={input}
