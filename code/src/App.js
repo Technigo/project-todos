@@ -1,9 +1,13 @@
+// importing react components
 import React from 'react';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 
-import { Input } from 'components/Input';
+// importing reducers
 import todoSlice from './reducers/todoSlice';
+
+// importing components
+import { Input } from 'components/Input';
 import { TodoList } from 'components/TodoList';
 import { Header } from 'components/Header';
 
