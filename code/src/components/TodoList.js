@@ -25,10 +25,12 @@ const ListItems = styled.div`
   }
 
   button {
-    background-color: ${(props) => props.theme.titleColor};
-    color: ${(props) => props.theme.pageBackground};
+    background-color: ${(props) => props.theme.buttonBackground};
+    color: ${(props) => props.theme.listItemBackground};
     border: none;
-    border-radius: 5px;
+    border-radius: 10px;
+    font-weight: bold;
+    padding: 5px;
   }
 
   h3,
@@ -91,27 +93,32 @@ const TodoList = () => {
 
   return (
     <ListItems>
-      {items.map((item) => (
-        <div key={item.id}>
-          <section>
-            <h3>{item.text}</h3>
-            <label>
-              <input
-                type="checkbox"
-                checked={item.isComplete}
-                onChange={() => onToggleTodo(item.id)}
-              />
-            </label>
-          </section>
-          <section>
-            {/* moment().calendar() 
+      {items
+        // .sort(
+        //   (a, b) => a.isComplete(item.isComplete === true),
+        //   b.isComplete(item.isComplete === false)
+        // )
+        .map((item) => (
+          <div key={item.id}>
+            <section>
+              <h3>{item.text}</h3>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={item.isComplete}
+                  onChange={() => onToggleTodo(item.id)}
+                />
+              </label>
+            </section>
+            <section>
+              {/* moment().calendar() 
             moment().format("MMM Do YY")*/}
-            <p>{moment().format("MMM Do YY")}</p>
-            {/* <textarea rows="2" name="comments"></textarea> */}
-            <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
-          </section>
-        </div>
-      ))}
+              <p>{moment().format("MMM Do YY")}</p>
+              {/* <textarea rows="2" name="comments"></textarea> */}
+              <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
+            </section>
+          </div>
+        ))}
     </ListItems>
   );
 };

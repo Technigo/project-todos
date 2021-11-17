@@ -10,25 +10,24 @@ import todos from "./reducers/todos";
 import Header from "components/Header";
 import AddTodo from "components/AddTodos";
 import TodoList from "components/TodoList";
-import CompleteButtons from "components/CompleteButtons";
-// import Toggle from "components/Toggle";
 
 const LightTheme = {
   pageBackground: "#CEE5D0",
   titleColor: "#152A38",
   tasksToComplete: "#152A38",
   inputBackground: "#F3F0D7",
-  listItemBackground: "#FED2AA",
+  listItemBackground: "#F9CF93",
   listItem: "#152A38",
+  buttonBackground: "#E99497",
 };
 
 const DarkTheme = {
-  pageBackground: "#152A38",
-  titleColor: "#D1D4C9",
-  tasksToComplete: "#D1D4C9",
-  inputBackground: "#29435C",
-  listItemBackground: "#556E53",
-  listItem: "#D1D4C9",
+  pageBackground: "#413C69",
+  titleColor: "#A7C5EB",
+  tasksToComplete: "#709FB0",
+  inputBackground: "#4A47A3",
+  listItemBackground: "#709FB0",
+  listItem: "#4A47A3",
 };
 
 const themes = {
@@ -76,7 +75,6 @@ export const App = () => {
         {/* <Toggle theme={theme} toggleTheme={toggleTheme} /> */}
         <Header theme={theme} setTheme={setTheme} />
         <AddTodo />
-        <CompleteButtons />
         <TodoList />
       </Provider>
     </ThemeProvider>

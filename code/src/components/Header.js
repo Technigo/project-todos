@@ -11,14 +11,17 @@ const TopPage = styled.div`
   height: auto;
   text-align: center;
   border-radius: 10px;
+  padding-top: 10px;
+  margin-top: 10px;
 
   h1 {
     color: ${(props) => props.theme.titleColor};
-    padding-top: 30px;
   }
 
-  p {
+  h6 {
     color: ${(props) => props.theme.tasksToComplete};
+    margin: 1px;
+    margin-bottom: 5px;
   }
 
   button {
@@ -26,10 +29,12 @@ const TopPage = styled.div`
     cursor: pointer;
     height: auto;
     width: auto;
+    font-weight: bold;
     padding: 10px;
-    margin-top: 10px;
+    margin-left: 10px;
+    border: 1px solid;
     border-radius: 20px;
-    background-color: ${(props) => props.theme.titleColor};
+    background-color: ${(props) => props.theme.buttonBackground};
     color: ${(props) => props.theme.pageBackground};
     transition: all 0.5s ease;
   }
@@ -53,7 +58,7 @@ const Header = (props) => {
     <TopPage>
       <button onClick={changeTheme}>Dark/light</button>
       <h1>T O D O :</h1>
-      <p>Today: {moment().format("MMM Do YY")}</p>
+      <h6>Today: {moment().format("MMM Do YY")}</h6>
 
       <AmountOfTasks />
       {/* {amount} */}
