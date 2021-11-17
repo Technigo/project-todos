@@ -17,10 +17,11 @@ const AddTodo = () => {
     <div>
       <input
         type="text"
+        placeholder="Add new task"
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={onAddTodo}>add todo</button>
+      <button onClick={onAddTodo}>+</button>
     </div>
   );
 };

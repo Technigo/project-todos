@@ -1,13 +1,14 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { createStore } from '@reduxjs/toolkit';
+import { combineReducers, createStore } from '@reduxjs/toolkit';
+// removed configureStore
 
 import todos from './reducers/todos';
 
 import AddTodo from 'components/AddTodo';
 import TodoList from 'components/TodoList';
 import Summary from 'components/Summary';
+import Header from 'components/Header';
 
 const reducer = combineReducers({
   todos: todos.reducer,
@@ -38,9 +39,12 @@ export const App = () => {
     <div>
       <Provider store={store}>
         <>
+          <Header />
           <Summary />
-          <AddTodo />
-          <TodoList />
+          <div className="list-wrapper">
+            <AddTodo />
+            <TodoList />
+          </div>
         </>
       </Provider>
     </div>

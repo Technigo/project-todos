@@ -9,7 +9,8 @@ const todos = createSlice({
   reducers: {
     addTodo: (store, action) => {
       console.log(action);
-      const data = action.payload;
+      // const data = action.payload;
+      // above prob not necssesary, just needed for v1 muteability
 
       const newTodo = {
         id: uniqid(),
