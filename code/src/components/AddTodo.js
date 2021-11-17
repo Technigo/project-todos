@@ -19,7 +19,7 @@ const AddTodo = () => {
         className="todo-input"
         type="text"
         value={input}
-        placeholder="Write your task here..."
+        placeholder="write here..."
         onChange={(event) => setInput(event.target.value)}
       />
       <button onClick={onAddTodo} className="todo-btn">

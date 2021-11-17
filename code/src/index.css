@@ -41,6 +41,16 @@ main {
   padding-top: 30px;
 }
 
+.heading-one {
+  color:rgb(0, 30, 108);
+
+}
+.date {
+  color: rgb(253, 140, 4);
+  font-weight: bolder;
+
+}
+
 /* Input */
 .input-wrapper {
   position: absolute;
@@ -63,24 +73,22 @@ main {
 .todo-input {
   width: 300px;
   border-radius: 5px 0 0 5px;
+  color: rgb(0, 30, 108);
 }
 
 .todo-btn {
   cursor: pointer;
-  color: orange;
+  color: rgb(253, 140, 4);
   transition: all 0.3s ease;
   border-radius: 0 5px 5px 0;
 }
 .todo-btn:hover {
-  background-color: orange;
+  background-color:rgb(253, 140, 4);
   color: rgb(223, 212, 212);
-  transform: scale(1.1, 1.1);
 }
 
 /* Section */
-section {
-  /* box-shadow:  */
-}
+  /* box-shadow: */
 
 .list-container {
   list-style-type: none;
@@ -90,9 +98,10 @@ section {
   border: 1px solid;
   margin-top: 4px;
   font-size: 1rem;
+  color: rgb(0, 30, 108);
 }
 
-li {
+.item {
   flex-grow: 1;
   padding: 0 5px;
 }
@@ -106,13 +115,10 @@ input[type="checkbox"] {
 }
 
 .trash-btn {
-  color: rgb(228, 216, 220);
   padding: 10px;
   cursor: pointer;
   border: none;
-}
-
-.trash-btn {
+  transition: all 0.3s ease;
   background-color: rgb(228, 216, 220);
   color: rgb(0, 30, 108);
 }

@@ -23,10 +23,11 @@ const onDeleteTodo = (id) => {
     <section>
       {items.map((item, index) => (
         <ul className="list-container" key={item.id}>
-          <li>{item.text}</li>
+          <li className="item">{item.text}</li>
+          <p>{item.timeStamp}</p>
           <input className = "check-btn" type="checkbox" checked={item.isComplete} onChange={() => onToggleTodo(item.id)} />
           <button className="trash-btn" onClick={() => onDeleteTodo(item.id)}>
-          <i class="fas fa-trash"> </i>
+          <i class="fas fa-trash"></i>
           </button>
         </ul>
       ))}

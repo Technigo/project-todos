@@ -1,5 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 import uniqid from "uniqid";
+import moment from "moment";
+
 
 //Slice
 const todos = createSlice({
@@ -17,6 +19,7 @@ const todos = createSlice({
         id: uniqid(),
         text: data,
         isComplete: false,
+        timeStamp: moment().format("Do-MMM-YY")
       };
       // immutability approach; creating a new array with the existing array data comming from the addTodo component
       store.items = [...store.items, newTodo];
