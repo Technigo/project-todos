@@ -45,18 +45,17 @@ const reducer = combineReducers({
   todos: todos.reducer
 })
 
-const persistedState = localStorage.getItem('reduxState')
-  ? JSON.parse(localStorage.getItem('reduxState'))
+const persistedState = localStorage.getItem('redux')
+  ? JSON.parse(localStorage.getItem('redux'))
   : {}
 
 const store = createStore(
   reducer,
-  persistedState,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  persistedState
 )
 
 store.subscribe(() => {
-  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+  localStorage.setItem("redux", JSON.stringify(store.getState()));
 })
 
 

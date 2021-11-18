@@ -32,7 +32,8 @@ const StyledInput = styled.input`
     }
     @media (min-width: 768px) {
         &::placeholder{
-            font-size: 25px;
+            font-size: 16px;
+            margin: 0;
         }
     }
 `
