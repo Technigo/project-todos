@@ -12,21 +12,35 @@ const AddTodo = () => {
 
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input));
+    setInput(''); //cleares the input field after submit
   };
 
   return (
-    <div className='add-todo'>
-      <input
-        type='text'
-        value={input}
-        onChange={(event) => setInput(event.target.value)}
-      />
-      <button onClick={onAddTodo}>Add todo</button>
+    <section className='add-todo'>
+      <div>
+        <input
+          className='todo-input'
+          type='text'
+          value={input}
+          placeholder='new todo ---->'
+          minLength='3'
+          maxLength='50'
+          onChange={(event) => setInput(event.target.value)}
+        />
+        <button
+          className='add-todo-button'
+          onClick={onAddTodo}
+          disabled={input.length < 3 || input.length > 50}
+        >
+          <span className='plus'>+</span>
+        </button>
+      </div>
+      {/* <p>{Moment(task.time).fromNow()} </p> */}
       <p>
         {Moment(date).format('dddd')},{Moment(date).format('ll')}
       </p>
-      <p>Number of tasks:{items.length}</p>
-    </div>
+      <p>You have {items.length} tasks today</p>
+    </section>
   );
 };
 

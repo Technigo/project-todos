@@ -20,36 +20,66 @@ const TodoList = () => {
   const onClearTodo = (id) => {
     dispatch(todos.actions.clearTodo(id));
   };
-  // const CurrentDate = Moment().valueOf();
-  // const CurrentDate = new Date(0);
+  const onCheckAllTodo = (item) => {
+    dispatch(todos.actions.checkAllTodo());
+  };
 
-  return (
-    <section className='todo'>
-      {items.map((item) => (
-        <div className='todo-item' key={item.id}>
-          <p>{item.text}</p>
-          <div className='todo-container'>
-            <input
-              type='checkbox'
-              checked={item.isComplete}
-              onChange={() => onToggleTodo(item.id)}
-            />
-            <button
-              className='delete-todo'
-              onClick={() => onRemoveTodo(item.id)}
-            >
-              <span>REMOVE</span>
-            </button>
-            {/* <p>{CurrentDate}</p> */}
-            {/* {Moment().format('ddd, hA')}; */}
-            {/* <p>{Moment().format('MM/DD/YYYY')}</p> */}
+  if (items.length > 0)
+    return (
+      <section
+        className='todo'
+        // style={{
+        //   backgroundColor: 'rgb(68, 68, 68)',
+        // }}
+      >
+        {items.map((item) => (
+          <div className={item.isComplete ? 'done' : 'not-done'} key={item.id}>
+            <div className='todo-text'>
+              <p>{item.text}</p>
+            </div>
+            <div className='todo-container'>
+              <input
+                className='checkbox'
+                type='checkbox'
+                checked={item.isComplete}
+                onChange={() => onToggleTodo(item.id)}
+              />
+              <button
+                className='delete-todo'
+                onClick={() => onRemoveTodo(item.id)}
+              >
+                <span className='x'>x</span>
+              </button>
+              <p>
+                <span>
+                  {Moment(item.createdAt).format('hh:mm:ss')},
+                  {Moment(date).format('dddd')}
+                </span>
+              </p>
+            </div>
           </div>
+        ))}
+        <div className='delete-check'>
+          <button className='clear-todo' onClick={() => onClearTodo(items.id)}>
+            <span>delete all</span>
+          </button>
+          <button className='clear-todo' onClick={() => onClearTodo(items)}>
+            <span>check all</span>
+          </button>
         </div>
-      ))}
-      <button className='clear-todo' onClick={() => onClearTodo(items.id)}>
-        <span>CLEAR ALL</span>
-      </button>
-    </section>
+      </section>
+    );
+  return (
+    <div
+      className='no-todos'
+      style={{
+        backgroundColor: 'rgb(167, 225, 234)',
+      }}
+    >
+      <h2 className='no-todos-text'>
+        You dont have anything to do please add some todos!
+      </h2>
+    </div>
   );
 };
 

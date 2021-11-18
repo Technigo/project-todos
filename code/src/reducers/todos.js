@@ -21,6 +21,7 @@ const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         isComplete: false,
+        createdAt: new Date(),
       };
 
       //immutability approach
@@ -41,6 +42,9 @@ const todos = createSlice({
       });
       store.items = updatedItems;
     },
+    // checkAllTodo: (store) => {
+    //   store.items.map(item.isComplete === true);
+    // },
 
     removeToDo: (store, action) => {
       const decreasedItems = store.items.filter(

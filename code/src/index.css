@@ -1,33 +1,207 @@
 body {
-  margin: 30px;
+  margin: 0 auto;
+  height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  text-align: center;
+  width: 100%;
+  /* background-color: rgb(235, 243, 249); */
+  color: rgb(31, 43, 65);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-
-.add-todo {
-  border: pink solid 3px;
-  height: 100px;
-  background-color: pink;
+::placeholder {
+  padding-left: 20px;
+  color: rgb(251, 225, 20);
 }
 
-.todo-item {
-  border: 3px solid black;
-  height: 100px;
-  width: 80%;
-  border-radius: 3%;
-  margin: 10px;
+.no-todos-text {
+  color: rgb(92, 101, 117);
+  margin-top: 0;
+  font-size: 1.2rem;
+  padding-top: 50px;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.add-todo {
+  padding-top: 50px;
+  height: 25%;
+  background-color: rgb(235, 243, 249);
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  /* border-bottom: #444 solid 1px; */
+  /* background-color: rgb(235, 243, 249); */
+}
+
+.todo {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(235, 243, 249);
+
+  /* background-color: rgb(167, 255, 255); */
+  /* background-color: linear-gradient(
+    '135deg',
+    '#FDEB71',
+    '10%',
+    '#F8D800',
+    '100%'
+  ); */
+}
+
+.plus .x {
+  font-weight: bold;
+  width: 50px;
+}
+
+.done {
+  display: flex;
+  /* border-radius: 8px; */
+  width: 100%;
+  height: 50%;
+  height: 150px;
+  /* border-bottom: 2px solid whitesmoke; */
+  /* margin-top: 20px; */
+  background-color: rgb(202, 236, 167);
+  color: #444;
+  /* box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff; */
+}
+
+.delete-todo:done {
+  background-color: rgb(254, 100, 100);
+}
+
+.not-done {
+  display: flex;
+  width: 100%;
+  height: 50%;
+  /* border-radius: 8px; */
+  /* border-radius: 8%; */
+  height: 150px;
+  /* margin-top: 20px; */
+  background-color: #444;
+  /* background-color: rgb(204, 202, 242); */
+  color: rgb(235, 243, 249);
+  border-bottom: rgb(235, 243, 249);
+  /* box-shadow: 10px 10px 30px #bebebe, -10px -10px 30px #ffffff; */
+}
+
+/* .todo-item {
+  display: flex;
+  width: 90%;
+  height: 50%;
+  border-radius: 8%;
+  height: 150px;
+  margin-top: 20px;
+} */
+.todo-section {
   display: flex;
   align-items: center;
+  align-self: center;
+  position: absolute;
+}
+
+.no-todos {
+  font-family: montserrat;
+  font-size: 1.5rem;
+
+  height: 100vh;
+}
+
+.todo-input {
+  font-family: montserrat;
+  font-weight: 500;
+  height: 48px;
+  width: 65%;
+  border-radius: 24px;
+  border: none;
+  background-color: #444;
+  padding: 0 1rem 0 1rem;
+  color: #dedede;
+  outline: none;
+}
+
+.add-todo-button {
+  font-family: montserrat;
+  font-weight: 500;
+  height: 48px;
+  width: 48px;
+  margin-left: 8px;
+  border-radius: 50px;
+  border: none;
+  background-color: rgb(251, 225, 20);
+  padding: 0 1rem 0 1rem;
+  color: #444;
+}
+
+.clear-todo {
+  font-family: montserrat;
+  font-weight: 500;
+  height: 48px;
+  width: 100px;
+  margin-left: 8px;
+  border-radius: 50px;
+  border: none;
+  background-color: #444;
+  padding: 0 1rem 0 1rem;
+  color: #dedede;
+}
+
+.delete-check {
+  position: relative;
+  width: 80%;
+  /* background-color: rgb(255, 255, 255); */
+  display: flex;
+  flex-direction: row;
+  padding-top: 20px;
+  align-items: right;
+  padding-left: 80px;
 }
 
 .delete-todo {
-  border: red solid 2px;
+  font-family: montserrat;
+  font-weight: 500;
+  height: 40px;
+  width: 40px;
+  margin-left: 8px;
+  border-radius: 10px;
+  border: none;
+  background-color: rgb(254, 100, 100);
+  padding: 0 1rem 0 1rem;
+  color: rgb(255, 255, 255);
 }
+
+.regular-checbox {
+  display: none;
+}
+.checkbox {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  /* filter: invert() hue-rotate(18deg) brightness(1.7); */
+}
+.checkbox:active {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  /* filter: invert() hue-rotate(90deg) brightness(1.7); */
+}
+/* .checkbox {
+  background-color: #333;
+  border-radius: 8px;
+  min-height: 48px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding-left: 1rem;
+} */
