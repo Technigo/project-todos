@@ -136,7 +136,7 @@ p {
   font-size: 20px;
 }
 
-@media (min-width: 568px) and (max-width: 991px) {
+@media (min-width: 568px) and (max-width: 767px) {
   .task-p {
     max-width: 300px;
   }
