@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { todos } from "../reducers/todos";
-import styled from "styled-components/macro";
 import { AddButton } from "./Buttons";
 
 export const AddTodo = () => {
