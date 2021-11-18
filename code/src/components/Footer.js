@@ -1,6 +1,10 @@
 import React from "react"
 
-import { Icon, FooterContainer, FooterText, Image } from "./StyledComponents"
+import { 
+  Icon, 
+  FooterContainer, 
+  FooterText, 
+  Image } from "./StyledComponents"
 
 export const Footer = () => {
   return (

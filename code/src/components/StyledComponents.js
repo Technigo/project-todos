@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components/macro"
 
 // Header
 export const HeaderContainer = styled.section`
@@ -82,7 +82,7 @@ margin: 1.2rem 0 0 0;
 `
 
 // Wrappers
-  export const FlexItem = styled.div`
+export const FlexItem = styled.div`
   background: rgb(100, 100, 100);
   display: flex;
   justify-content: space-between;
@@ -97,6 +97,7 @@ margin: 1.2rem 0 0 0;
     opacity: 0.7;
     text-decoration: line-through;
     font-style: italic;
+    color: #ffcc67;
   }
  
   @media (min-width: 768px){
@@ -110,7 +111,7 @@ export const DateContainer = styled.div`
   display: flex;
   justify-content: end;
   background: rgb(150, 150, 150);
-  margin: 10 0px;
+  padding: 0 5px;  
   border: rgb(150, 150, 150) solid 2px;
   border-radius: 0 0 10px 10px;
   font-size: 12px;
@@ -323,7 +324,6 @@ export const Icon = styled.a`
   filter: grayscale(100%) contrast(50%);
 ` 
 export const FooterText = styled.h4`
-  width: 100%;
   color: #ddd;
   padding: 14px 0 0 60px;
 `

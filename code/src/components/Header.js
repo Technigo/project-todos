@@ -3,7 +3,14 @@ import { useSelector, useDispatch } from "react-redux";
 
 import todos from "reducers/todos";
 import moment from "moment";
-import { HeaderContainer, HeaderMainTitle, HeaderBodyContainer, LeftContainer, HeaderSubTitle,RigthContainer, ButtonHeader } from "./StyledComponents";
+import { 
+  HeaderContainer, 
+  HeaderMainTitle, 
+  HeaderBodyContainer, 
+  LeftContainer, 
+  HeaderSubTitle,
+  RigthContainer, 
+  ButtonHeader } from "./StyledComponents";
 
 const Header = () => {
 
@@ -20,7 +27,7 @@ const Header = () => {
   return(
     <section>
     <HeaderContainer>
-      <HeaderMainTitle>Todo</HeaderMainTitle>
+      <HeaderMainTitle>&#x2611; Todo-App</HeaderMainTitle>
       <HeaderBodyContainer>
         <LeftContainer>
           <HeaderSubTitle>{moment().format('MMMM Do')}</HeaderSubTitle>

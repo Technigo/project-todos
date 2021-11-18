@@ -3,7 +3,13 @@ import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 
 import todos from "reducers/todos";
-import { TodoLabel, FlexItem, DeleteButton, DateContainer, TodoContainer, EmptyTodoDiv } from "./StyledComponents";
+import { 
+  TodoLabel, 
+  FlexItem, 
+  DeleteButton, 
+  DateContainer, 
+  TodoContainer, 
+  EmptyTodoDiv } from "./StyledComponents";
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)

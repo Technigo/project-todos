@@ -2,7 +2,11 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import todos from "reducers/todos";
-import { AddTodoButton, TextInput, InputButton, InputContainer } from "./StyledComponents";
+import { 
+  AddTodoButton, 
+  TextInput, 
+  InputButton, 
+  InputContainer } from "./StyledComponents";
 
 const AddTodo = () => {
   const dispatch = useDispatch()
