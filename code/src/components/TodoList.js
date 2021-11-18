@@ -30,7 +30,7 @@ const StyledList = styled.section`
 
   .list-item {
     display: grid;
-    grid-template-columns: 9vw auto 45px;
+    grid-template-columns: 9vw auto 15vw;
     align-items: center;
     padding: 0.5vh 2vw;
     min-height: 13vh;

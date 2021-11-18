@@ -43,7 +43,7 @@ export const StyledDeleteButton = styled.button`
   transition: 0.4s;
   border: 0px;
   width: 40px;
-  height: 40px;
+  min-height: 40px;
   line-height: 40px;
   &:hover {
     cursor: pointer;
