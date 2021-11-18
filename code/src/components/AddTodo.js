@@ -18,6 +18,12 @@ const AddTodo = () => {
     }
   };
 
+
+  document.ontouchmove = function (e) {
+    e.preventDefault();
+  }
+
+
   return (
     <article className="addTodoContainer" id="top" >
         <video id="background-video" autoPlay loop muted>

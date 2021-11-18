@@ -22,7 +22,9 @@ dispatch(deleteTodo({id: todos.id }))
 
 }
 
-
+document.ontouchmove = function (e) {
+  return true;
+}
 
 return (
 
