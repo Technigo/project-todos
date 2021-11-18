@@ -9,24 +9,25 @@ import { AllTodoList } from "components/AllTodoList";
 
 export const Structure = () => {
   return (
-    <div className="main-grid">
-      <Header height={30} width={100} color={"transparent"} />
-
-      <div className="grid">
-        <h1>todos</h1>
-        <AddTodo />
-        <NavBoard />
-        <AllTodoList />
-        <InfoBoard />
+    <main>
+      <Header height={60} width={100} />
+      <div className="main-grid">
+        <div className="grid">
+          <h1>todos</h1>
+          <AddTodo />
+          <NavBoard />
+          <AllTodoList />
+          <InfoBoard />
+        </div>
       </div>
-      <Footer height={40} width={100} color={"transparent"}>
+      <Footer height={50} width={100}>
         <p>
-          Created and Developed by &#8203;
+          created and developed by &#8203;
           <a className="link" href="https://mary-snopok.com" target="_blank" rel="noopener noreferrer">
-            Mary Snopok
+            @marysnopok
           </a>
         </p>
       </Footer>
-    </div>
+    </main>
   );
 };

@@ -11,6 +11,7 @@ export const SelectionBtn = styled.button`
   color: grey;
   font-weight: bolder;
   transition: 0.1s ease-in;
+  margin-top: 6px;
 
   &:hover {
     border: 2px solid palevioletred;
@@ -18,6 +19,7 @@ export const SelectionBtn = styled.button`
   }
 
   @media (min-width: 769px) {
+    margin-top: 20px;
     font-size: 16px;
     padding: 16px;
   }

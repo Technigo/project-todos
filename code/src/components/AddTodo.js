@@ -15,15 +15,17 @@ export const AddTodo = () => {
   };
 
   const onAddTodo = (e) => {
-    dispatch(todos.actions.addTodo(input));
-    setInput("");
+    if (input.trim() !== "") {
+      dispatch(todos.actions.addTodo(input));
+      setInput("");
+    }
     e.preventDefault();
   };
 
   return (
     <form onSubmit={onAddTodo}>
       <div className="todo-input">
-        <TodoInput height={30} width={218} value={input} onChange={(event) => setInput(event.target.value)} />
+        <TodoInput height={30} width={218} value={input} type="input" min="1" onChange={(event) => setInput(event.target.value)} />
         <InputBtn onClick={switchToAll} type="submit">
           <img className="plus" src={plus} alt="plus" area-label="plus"></img>
         </InputBtn>

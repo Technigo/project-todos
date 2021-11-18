@@ -1,7 +1,7 @@
 body {
   margin: 0;
   padding: 0;
-  min-height: 100%;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -15,6 +15,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
+main {
+  height: 100%;
+}
+
 button,
 input,
 a {
@@ -22,8 +26,8 @@ a {
 }
 
 a {
-  text-decoration: underline;
-  color: white;
+  text-decoration: none;
+  color: var(--theme-color);
 }
 
 h1 {
@@ -55,7 +59,7 @@ h1 {
 
 .main-grid {
   display: flex;
-  margin-top: 100px;
+  /* margin-top: 100px; */
   margin-bottom: 100px;
   flex-direction: column;
   align-items: center;
@@ -71,6 +75,7 @@ h1 {
   max-width: 300px;
   width: 257px;
   font-size: 16px;
+  min-height: calc(100vh - 50px);
 }
 
 .todo-wrapper {
@@ -82,6 +87,17 @@ h1 {
   width: 257px;
 }
 
+.one-todo-wrapper {
+  border: 2px solid var(--sub-theme-color);
+  color: var(--theme-color);
+  border-radius: 6px;
+  margin-bottom: 6px;
+  padding-bottom: 2px;
+  margin-top: 2px;
+  padding: 6px;
+  width: 257px;
+}
+
 .flex-item {
   display: flex;
   justify-content: flex-start;
@@ -89,14 +105,6 @@ h1 {
   flex-direction: row;
   flex-wrap: wrap;
   word-break: break-all;
-  border: 2px solid var(--sub-theme-color);
-  padding-bottom: 2px;
-  margin-top: 2px;
-  padding: 6px;
-  width: 257px;
-  color: var(--theme-color);
-  border-radius: 6px;
-  margin-bottom: 6px;
 }
 
 .info-wrapper {
@@ -203,6 +211,48 @@ h1 {
   animation: spin 2s linear infinite;
 }
 
+.clear-btn-wrapper {
+  margin-top: 20px;
+}
+
+.set-date,
+.due-date {
+  color: var(--link-color);
+  font-size: smaller;
+}
+
+.due-date {
+  display: inline-flex;
+  margin-top: 0;
+}
+
+.active,
+.finished {
+  border-radius: 4px;
+  padding: 4px;
+  width: 40px;
+  height: 20px;
+  font-size: smaller;
+  display: inline-flex;
+  width: 64px;
+  background-color: white;
+  margin-left: 5px;
+  text-align: center;
+  padding: 2px;
+  margin-bottom: 16px;
+}
+
+.active {
+  border: 2px solid var(--theme-color);
+  color: var(--theme-color);
+  text-align: center;
+}
+
+.finished {
+  border: 2px solid var(--link-color);
+  color: var(--link-color);
+}
+
 @keyframes spin {
   from {
     transform: rotate(0deg);
@@ -211,10 +261,6 @@ h1 {
   to {
     transform: rotate(360deg);
   }
-}
-
-.clear-btn-wrapper {
-  margin-top: 20px;
 }
 
 @media (min-width: 769px) {
@@ -234,7 +280,7 @@ h1 {
     margin-bottom: 10px;
     margin-top: 20px;
   }
-  .flex-item,
+  .one-todo-wrapper,
   .info-wrapper {
     padding: 10px;
     width: 455px;
@@ -251,5 +297,11 @@ h1 {
     width: 18px;
     height: 18px;
     padding: 10px;
+  }
+  .finished,
+  .active {
+    width: 76px;
+    padding: 0;
+    margin-bottom: 18px;
   }
 }

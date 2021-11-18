@@ -4,6 +4,8 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { debounce } from "debounce";
 import { loadState, saveState } from "./localStorage";
 
+import "react-datepicker/dist/react-datepicker.css";
+
 import todos from "./reducers/todos";
 
 // components

@@ -58,6 +58,13 @@ const todos = createSlice({
     changeFilter: (store, action) => {
       store.filter = action.payload;
     },
+    setDueDate: (store, action) => {
+      const dueDate = action.payload.date;
+      const item = action.payload.item;
+      const itemInStore = store.items.find((el) => el.id === item.id);
+      itemInStore.dueDate = dueDate;
+      console.log("action", action);
+    },
   },
 });
 

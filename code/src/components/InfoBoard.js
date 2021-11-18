@@ -33,7 +33,7 @@ export const InfoBoard = () => {
         </p>
       </div>
       <div className="clear-btn-wrapper">
-        <SelectionBtn onClick={onDeleteCompletedTasks}>Clear completed</SelectionBtn>
+        <SelectionBtn onClick={onDeleteCompletedTasks}>clear completed</SelectionBtn>
       </div>
     </section>
   );

@@ -23,6 +23,7 @@ export const DeleteBtn = styled.button`
 
   &:hover {
     animation: ${rotate} 2s linear infinite;
+    border: 2px solid palevioletred;
   }
 
   @media (min-width: 769px) {

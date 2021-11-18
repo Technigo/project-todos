@@ -2,7 +2,6 @@ import { css } from "styled-components";
 
 export const SharedFooterAndHeaderStyles = css`
   width: ${(props) => props.width}%;
-  background-color: ${(props) => props.color};
   height: ${(props) => props.height}px;
   font-size: 12px;
   display: flex;
@@ -15,7 +14,6 @@ export const SharedFooterAndHeaderStyles = css`
   box-sizing: border-box;
   @media (min-width: 769px) {
     width: 100%;
-    height: 60px;
     font-size: 16px;
   }
 `;
