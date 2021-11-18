@@ -20,7 +20,7 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
   margin: 5px 0px;
   text-align: left;
-  max-width: 200px;
+  max-width: 300px;
 }
 .task-completed {
   text-decoration: line-through;
@@ -30,7 +30,7 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
   margin: 5px 0px;
   text-align: left;
-  max-width: 200px;
+  max-width: 300px;
 }
 .small-task-wrapper {
   display: flex;
@@ -44,7 +44,7 @@ body {
   flex-direction: column;
   margin: 0px 10px;
   align-self: center;
-  max-width: 200px;
+  max-width: 300px;
 }
 .task-date {
   font-size: 10px;
