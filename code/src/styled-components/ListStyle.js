@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const ListSection = styled.section`
 	padding: 10px;
-	margin: 10px;
-	background-color: rgb(170, 170, 170);
+	margin: 25px 10px;
+	background-color: rgb(192 192 192 / 54%);
 	border-radius: 5px;
 
 	h2 {
@@ -54,11 +54,11 @@ export const ButtonContainer = styled.div`
 `;
 
 /* combine those two in one*/
-export const ButtonDone = styled.button`
-	background-color: green;
+export const Button = styled.button`
+	background-color: ${props => props.red ? "red" : "green"};
 	border: none; 
-	height: 40px;
-	width: 50px;
+	height: 50px;
+	width: 60px;
 	color: white;
 	font-size: 20px;
 
@@ -72,8 +72,8 @@ export const ButtonDelete = styled.button`
 	background-color: red;
 	border: none; 
 	color: white;
-	height: 40px;
-	width: 50px;
+	height: 50px;
+	width: 60px;
 	font-size: 20px;
 
 	i:hover {
@@ -81,3 +81,15 @@ export const ButtonDelete = styled.button`
   		transform: scale(1.09);
 	}
 `;
+
+export const CategorySpan = styled.span`
+	background-color: black;
+	padding: 5px;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+`; 
+
+export const TextSpan = styled.span`
+	padding: 5px;
+`; 

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import moment from 'moment';
 
 // STYLE & IMAGES
 import { ListSection, ListDiv } from '../styled-components/ListStyle';
@@ -31,7 +30,7 @@ const FinishedTodo = () => {
 			{finishedTodo.map(item => (
 				// if item isComplete true it will dispaly line thought the text 
 				<ListDiv key={item.id} className={`${item.isComplete ? "complete" : ""}`}>
-					{item.text}, {moment(item.createdAt).fromNow()}
+					{item.text}
 				</ListDiv>
 			))}
 		</ListSection>

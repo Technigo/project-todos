@@ -1,13 +1,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import moment from 'moment';
-
 import { 
 	ListSection, 
 	TodoListDiv, 
-	ButtonDone, 
-	ButtonDelete, 
-	ButtonContainer 
+	Button, 
+	ButtonContainer,
+	CategorySpan,
+	TextSpan
 } from '../styled-components/ListStyle';
 
 import todos from '../reducers/todos';
@@ -31,14 +30,15 @@ const TodoList = () => {
 			<h2><i className="fas fa-list-alt"></i> Todo List</h2>
 			{items.filter(item => item.isComplete === false).map((item) => (
 				<TodoListDiv key={item.id} props={item.isComplete} >
-					<span>{item.text}<span>{moment(item.createdAt).fromNow()}</span></span>
+					<TextSpan>{item.text}</TextSpan>
+					<CategorySpan>{item.category}</CategorySpan>
 					<ButtonContainer>
-						<ButtonDone onClick={() => onToggleTodo(item.id)}>
+						<Button green onClick={() => onToggleTodo(item.id)}>
 							<i className="fas fa-check"></i>
-						</ButtonDone>
-						<ButtonDelete  onClick={() => onDeleteTodo(item.id)}>
+						</Button>
+						<Button red onClick={() => onDeleteTodo(item.id)}>
 							<i className="fas fa-trash"></i>
-						</ButtonDelete>
+						</Button>
 					</ButtonContainer>
 
 				</TodoListDiv>

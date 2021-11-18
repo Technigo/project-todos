@@ -2,13 +2,16 @@ import React, { useState} from 'react';
 import styled from "styled-components";
 // in order to send data nad update the store we need useDispatch
 import { useDispatch } from 'react-redux';
+import uniqid from 'uniqid';
 
+// slice 
 import todos from '../reducers/todos';
 
 const AddTodoContainer = styled.section`
 	text-align: center;
 	margin: 30px auto;
-
+	display:flex;
+	gap:10px;
 `; 
 
 const Input = styled.input`
@@ -39,30 +42,57 @@ const AddButton = styled.button`
 	}
 `;
 
+const SelectContainer = styled.div`
+	display: flex;
+	justify-content: center;
+`;
+
 const AddTodo = () => {
 
 	const [input, setInput] = useState('');
+	const [ category, setCategory ] = useState("")
+	console.log(category)
 
 	const dispatch = useDispatch();
 
 	const onAddTodo = () => {
 		// callinling action addTodo from the reducer
-		dispatch(todos.actions.addTodo(input));
+		dispatch(todos.actions.addTodo({
+			id: uniqid(),
+			text: input,
+			category: category,
+			// need this to trigger todos if there are completed or not
+			isComplete: false, 
+		}));
+
 		// setting input field to an empty string
 		setInput("");
+		setCategory("");
 	};
 
 	return (
+		<>
 		<AddTodoContainer>
 			<Input 
 				type="text" 
 				placeholder="Add todo here..."
 				value={input} 
 				onChange={(event) => setInput(event.target.value)} />
+			<SelectContainer>
+				<select value={category} onChange={(event) => setCategory(event.target.value)} required>
+				  <option value="">Select category...</option>
+                  <option value="Work">Work</option> 
+				  <option value="Studies">Studies</option>
+				  <option value="Family & Friends">Family & Friends</option>
+				  <option value="Health">Health</option>
+				  <option value="Other">Other</option>
+				</select>
+			</SelectContainer>
 			<AddButton onClick={onAddTodo} disabled={input === ""}>
 				<i className="fas fa-plus"></i>
 			</AddButton>
 		</AddTodoContainer>
+		</>
 	)
 };
 
