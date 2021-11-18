@@ -10,12 +10,13 @@ import todos from '../reducers/todos';
 const AddTodoContainer = styled.section`
 	text-align: center;
 	margin: 30px auto;
-	display:flex;
+
 	gap:10px;
 `; 
 
 const Input = styled.input`
 	border: none;
+	margin: 20px auto;
 	padding: 7px;
 	background-color: transparent;
 	border-bottom: 2px solid rgb(170, 170, 170);
@@ -28,6 +29,7 @@ const Input = styled.input`
 
 const AddButton = styled.button`
 	background-color: green;
+	margin: 20px auto;
 	border:none;
 	border-radius: 5px;
 	height: 40px;
@@ -45,6 +47,12 @@ const AddButton = styled.button`
 const SelectContainer = styled.div`
 	display: flex;
 	justify-content: center;
+`;
+
+const Select = styled.select`
+  width: 100%;
+  height: 35px;
+  color: black;
 `;
 
 const AddTodo = () => {
@@ -79,14 +87,14 @@ const AddTodo = () => {
 				value={input} 
 				onChange={(event) => setInput(event.target.value)} />
 			<SelectContainer>
-				<select value={category} onChange={(event) => setCategory(event.target.value)} required>
+				<Select value={category} onChange={(event) => setCategory(event.target.value)} required>
 				  <option value="">Select category...</option>
                   <option value="Work">Work</option> 
 				  <option value="Studies">Studies</option>
 				  <option value="Family & Friends">Family & Friends</option>
 				  <option value="Health">Health</option>
 				  <option value="Other">Other</option>
-				</select>
+				</Select>
 			</SelectContainer>
 			<AddButton onClick={onAddTodo} disabled={input === ""}>
 				<i className="fas fa-plus"></i>

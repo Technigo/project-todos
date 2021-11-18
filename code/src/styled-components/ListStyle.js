@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ListSection = styled.section`
 	padding: 10px;
-	margin: 25px 10px;
+	margin: 10px;
 	background-color: rgb(192 192 192 / 54%);
 	border-radius: 5px;
 
