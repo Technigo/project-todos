@@ -20,7 +20,7 @@ const TodoList = () => {
     <section>
       {items.map((item) => (
         <div className="added-task-container" key={item.id}>
-          <div className="added-task">
+          <div className="added-task-with-checkbox">
             <input
               className="checkbox"
               type="checkbox"

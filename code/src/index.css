@@ -27,20 +27,25 @@ main {
 }
 
 .header {
-  background-color: #A5DEE5;
+  background-color: #FFCFDF;
   width: 100%;
   text-align: center;
 }
 
 h1 {
-  font-family: "Reenie Beanie", cursive;
-  font-size: 60px;
+  /* font-family: "Reenie Beanie", cursive; */
+  font-family: 'Roboto', sans-serif;
+  font-size: 40px;
   margin-bottom: 20px;
+  background-color: #FFE67F;
+  width: max-content;
+  border-radius: 5px;
 }
 
 p {
-  font-family: "Reenie Beanie", cursive;
-  font-size: 35px;
+  /* font-family: "Reenie Beanie", cursive; */
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
   margin: 0;
 }
 
@@ -58,7 +63,7 @@ p {
   -webkit-backdrop-filter: blur(12px);
 }
 
-.added-task {
+.added-task-with-checkbox {
   display: flex;
   align-items: center;
 }
@@ -89,16 +94,18 @@ p {
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05),
     inset 0px -15px 10px -12px rgba(0, 0, 0, 0.05),
     inset 15px 10px -12px rgba(255, 255, 255, 0.1);
-  color: #99a1a7;
+  background-color: #FFE67F;
 }
 
 .checkbox:checked:after {
   content: "\2714";
-  font-size: 28px;
+  font-size: 18px;
   position: absolute;
-  top: -10px;
+  top: -4px;
   left: 1px;
   color: black;
+  
+  
 }
 
 .text-and-date {
@@ -127,10 +134,12 @@ p {
   color: grey;
   font-size: 16px;
   cursor: pointer;
+  position: absolute;
+  top: 82%;
 }
 
 .footer {
-  background-color: #A5DEE5;
+  background-color: #FFCFDF;
   width: 100%;
   height: 90px;
   position: fixed;
@@ -142,7 +151,7 @@ p {
 
 .add-todo-section {
   display: flex;
-  background-color: #A5DEE5;
+  background-color: #FFCFDF;
 }
 
 input {
@@ -151,7 +160,7 @@ input {
   border: none;
   border-radius: 5px;
   font-size: 20px;
-  width: 100%;
+  width: 65%;
   height: 60px;
   font-family: Arial, Helvetica, sans-serif;
   padding-left: 10px;
@@ -159,7 +168,7 @@ input {
 }
 
 .add-btn {
-  background-color: #FFCFDF;
+  background-color: #FFE67F;
   border: none;
   color: grey;
   width: 80px;
@@ -168,7 +177,7 @@ input {
   font-size: 20px;
   cursor: pointer;
   position: absolute;
-  right: 7%;
+  right: 5%;
   bottom: 30%;
   box-shadow: 0 0 0 rgba(255, 255, 255, 0.9);
   animation: pulse 2s infinite;
