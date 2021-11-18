@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components/macro";
 import moment from "moment";
@@ -23,7 +23,8 @@ const OuterHeaderContainer = styled.div`
     flex-direction: column;
     justify-content: flex-start;
     height: 500px;
-    width: 250px;
+    width: 200px;
+    margin: 0;
   }
 `;
 
@@ -55,6 +56,9 @@ const StyledDate = styled.div`
   @media (min-width: 768px) {
     font-size: 20px;
   }
+
+  @media (min-width: 992px) {
+    width: 150px;
 `;
 
 const RemoveButton = styled.div`

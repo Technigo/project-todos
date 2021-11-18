@@ -17,6 +17,11 @@ const TaskContainer = styled.div`
   @media (min-width: 768px) {
     width: 520px;
   }
+
+  @media (min-width: 992px) {
+    width: 700px;
+    margin-left: -18px;
+  }
 `;
 
 const TaskOuterContainer = styled.div`
@@ -30,6 +35,10 @@ const TaskInnerContainer = styled.div`
   align-items: center;
   width: 40px;
   padding-left: 5px;
+
+  @media (min-width: 768px) {
+    padding-left: 0;
+  }
 `;
 
 const StyledCheckbox = styled.input`
@@ -63,6 +72,10 @@ const ButtonContainer = styled.div`
 const DateTask = styled.p`
   font-style: italic;
   padding-left: 10px;
+
+  @media (min-width: 992px) {
+    padding-left: 3px;
+  }
 `;
 
 const TodoList = () => {
@@ -77,7 +90,7 @@ const TodoList = () => {
   const onRemoveTodo = (id) => {
     dispatch(todo.actions.removeTodo(id));
   };
-  console.log(MyList);
+
   return (
     <Section className="test">
       {MyList.length === 0 ? (

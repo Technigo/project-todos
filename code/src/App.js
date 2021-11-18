@@ -39,7 +39,6 @@ export const App = () => {
       <OuterSection>
         <AddTodo />
         <AddTask />
-        <TodoList />
       </OuterSection>
     </Provider>
   );

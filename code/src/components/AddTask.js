@@ -4,6 +4,7 @@ import styled from "styled-components/macro";
 
 import todo from "reducers/todo";
 import { Section, StyledButton } from "./GlobalStyledComponents";
+import TodoList from "./TodoList";
 
 const TodoContainer = styled.div`
   display: flex;
@@ -18,7 +19,7 @@ const TodoContainer = styled.div`
   }
 
   @media (min-width: 992px) {
-    margin-left: 30px;
+    width: 700px;
   }
 `;
 
@@ -62,6 +63,7 @@ const AddTask = () => {
           onChange={(event) => setTask(event.target.value)}
         />
       </TodoContainer>
+      <TodoList />
     </Section>
   );
 };

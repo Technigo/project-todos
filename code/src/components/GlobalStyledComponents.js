@@ -19,8 +19,8 @@ export const Section = styled.section`
   }
 
   @media (min-width: 992px) {
-    flex-direction: row;
     width: 900px;
+    margin-left: 20px;
   }
 `;
 

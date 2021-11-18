@@ -12,18 +12,22 @@ const NoTaskDiv = styled.div`
   border: 3px dashed #d9d9d9;
   margin: 15px auto;
   padding: 20px;
+
+  @media (min-width: 992px) {
+    margin: 50px 225px;
+  }
 `;
 
 const NoTask = () => {
   return (
-    <Section>
-      <NoTaskDiv>
-        <span className="emoji no-task" role="img" aria-label="palm tree">
-          🌴
-        </span>
-        <p>No tasks to do!</p>
-      </NoTaskDiv>
-    </Section>
+    // <Section>
+    <NoTaskDiv>
+      <span className="emoji no-task" role="img" aria-label="palm tree">
+        🌴
+      </span>
+      <p>No tasks to do!</p>
+    </NoTaskDiv>
+    // </Section>
   );
 };
 
