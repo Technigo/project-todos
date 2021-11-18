@@ -14,6 +14,8 @@ export const TodoList = () => {
   const todos = useSelector((store) => store.todo.todos);
   const ButtonsContainerRef = useRef();
 
+  // Filter the todos list after categories and if the todo is completed or not and
+  // then conditionally render the lists depending on category and if completed or not.
   const activities = todos.filter(
     (todo) => todo.category === "activity" && !todo.completed
   );
@@ -64,7 +66,7 @@ export const TodoList = () => {
               })}
             </>
           )}
-
+          {/* Only renders the title and map the array if the length of the array is larger then 0. */}
           {completed.length > 0 && (
             <>
               <TodoListTitle>Completed</TodoListTitle>
