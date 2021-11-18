@@ -1,5 +1,19 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import styled from "styled-components";
+
+const CompletedWrapper = styled.div`
+  display: flex;
+  background-color: #8fbfd7;
+  border: 1px solid #337b9e;
+  border-radius: 10px;
+  padding: 5px;
+`;
+
+const CompletedText = styled.p`
+  font-size: 10px;
+  margin: 0;
+`;
 
 const Counter = () => {
   const counter = useSelector((store) => store.todos.items.length);
@@ -10,13 +24,11 @@ const Counter = () => {
 
   return (
     <>
-      <div>
-        <p>You have {counter} tasks on your todo list</p>
-      </div>
-
-      <div>
-        <p>You have completed {completed.length} </p>
-      </div>
+      <CompletedWrapper>
+        <CompletedText>
+          Completed {completed.length}/{counter} tasks
+        </CompletedText>
+      </CompletedWrapper>
     </>
   );
 };

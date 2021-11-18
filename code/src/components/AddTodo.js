@@ -7,7 +7,22 @@ import todos from "../reducers/todos";
 const InputContainer = styled.div`
   display: flex;
   padding: 20px;
-  border: 1px solid grey;
+  justify-content: space-between;
+`;
+
+const StyledInput = styled.input`
+  width: 75%;
+  background-color: #8fbfd7;
+  border: 1px solid #337b9e;
+  border-radius: 20px;
+`;
+
+const AddButton = styled.button`
+  height: 25px;
+  width: 50px;
+  background-color: #3b8cb4;
+  border: 1px solid #337b9e;
+  border-radius: 20px;
 `;
 
 const AddTodo = () => {
@@ -21,12 +36,16 @@ const AddTodo = () => {
 
   return (
     <InputContainer>
-      <input
+      <StyledInput
         type="text"
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={() => onAddTodo(input)}>New Task</button>
+      <AddButton onClick={() => onAddTodo(input)}>
+        <span className="add-emoji" role="img" aria-label="add-emoji">
+          ➕
+        </span>
+      </AddButton>
     </InputContainer>
   );
 };
