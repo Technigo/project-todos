@@ -20,7 +20,7 @@ const Header = () => {
 
   return (
     <div>
-      <h1>TODO</h1>
+      <h1>TODOS</h1>
       <div className='todos-done'>
         tasks done: {completedTasks.length}/{items.length}
       </div>

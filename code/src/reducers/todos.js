@@ -11,8 +11,8 @@ const todos = createSlice({
   reducers: {
     addTodo: (store, action) => {
       // a property that is a function, always looks like this. Reducers always have TWO argument, store and action
-      console.log('STORE:', store);
-      console.log('ACTION', action); // action is ALWAYS type and payload. the action.payload is the data we want to send, action.type is added behind the scenes by redux itself. We don't have to worry about action.type at all. Focus on action.payload. connected to AddTodo.js useDispatch()
+
+      // action is ALWAYS type and payload. the action.payload is the data we want to send, action.type is added behind the scenes by redux itself. We don't have to worry about action.type at all. Focus on action.payload. connected to AddTodo.js useDispatch()
 
       // two ways to update the store mutable way/immutable way
 

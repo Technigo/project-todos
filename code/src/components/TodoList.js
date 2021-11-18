@@ -2,6 +2,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import moment from 'moment';
 
+import NoTodos from './NoTodos';
+
 import todos from '../reducers/todos';
 
 const TodoList = () => {
@@ -52,12 +54,7 @@ const TodoList = () => {
         ))}
       </section>
     );
-  return (
-    <div className='no-todos'>
-      <p>NO TODOS</p>
-      <i className='fas fa-hand-peace'></i>
-    </div>
-  );
+  return <NoTodos />;
 };
 
 export default TodoList;
