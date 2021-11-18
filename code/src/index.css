@@ -1,13 +1,43 @@
 body {
-  margin: 0;
+  margin: 20px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(./assets/josephine-bredehoft-KsAo8ouBn8A-unsplash.jpg);
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.add-todo {
+  display: flex;
+  justify-content: center;
+  margin: 50px;
+}
+
+/* ---------------todo-note:------------ */
+.todo-container {
+  background-color: rgb(252, 117, 223);
+  width: 300px;
+  height: 300px;
+  margin: auto;
+  box-shadow: rgba(0, 0, 0, 0.5) 2.4px 2.4px 3.2px;
+  display: flex;
+  transform: rotate(2deg);
+  margin-bottom: 20px;
+}
+
+.todo-content {
+  margin: auto;
+}
+
+.todo {
+  flex-direction: row;
+}
+.delete-button {
+  align-content: flex-end;
 }
