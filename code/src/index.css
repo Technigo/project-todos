@@ -1,3 +1,10 @@
+/* 
+#EA907A
+#FBC687
+#F4F7C5
+#AACDBE 
+#3f3d56*/
+
 * {
   box-sizing: border-box;
 }
@@ -34,7 +41,10 @@ code {
 .intro-container {
   width: 80%;
   display: flex;
+  justify-content: space-between;
   padding: 20px 0;
+  color: #3f3d56;
+  border-bottom: #3f3d56 1px solid;
 }
 
 h1 {
@@ -48,16 +58,16 @@ h1 {
   width: 80%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 20px;
+  margin: 20px 0;
   background-color: white;
 }
 
 .input-text {
   border-radius: 30px;
   border: none;
-  height: 24px;
+
   padding-left: 10px;
-  width: 80%;
+  width: 100%;
 }
 
 .addTodo-btn {
@@ -71,7 +81,8 @@ h1 {
 
 .list-container {
   width: 80%;
-  margin: 0 auto;
+  margin: 0 auto 10px auto;
+  border-bottom: #3f3d56 1px solid;
 }
 
 .item-container,
@@ -96,7 +107,7 @@ h1 {
 
 .delete-btn {
   width: 40px;
-  height: 20px;
+
   cursor: pointer;
   border: none;
   outline: none;
@@ -106,11 +117,14 @@ h1 {
   position: relative;
   transition: all 0.5s;
   z-index: 1;
+  font-size: 20px;
+  margin-top: 0;
 
   border-top-right-radius: 10px;
 }
 
 .delete-btn::before {
+  margin-top: 0;
   content: "";
   position: absolute;
   top: 0;

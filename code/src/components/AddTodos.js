@@ -13,11 +13,13 @@ const AddTodos = () => {
 
   const handleOnSubmit = e => {
     e.preventDefault()
+    setInput("")
   }
 
   return (
     <form onSubmit={handleOnSubmit} className="input-container">
       <input
+        id="todo-input"
         type="text"
         className="input-text"
         value={input}
