@@ -12,16 +12,17 @@ const StyledContainer = styled.div`
 
 const StyledToDoItem = styled.div`
     border-bottom: solid gray 1px;
-`;
-
-const StyledTaskInfo = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    gap: 5px;
+    gap: 10px;
 `;
 
+const StyledTaskText = styled.p`
+flex-grow: 1;
+
+`
 
 const ToDoList = () => {
     const allTodos = useSelector((state) => state.todos.items);
@@ -41,18 +42,15 @@ const ToDoList = () => {
             <h2>All tasks</h2>
             {allTodos.map((item) => (
                 <StyledToDoItem key={item.id}>
-                    <StyledTaskInfo>
-                        <p>{item.text}</p>
-                        <label>
-                            
-                                <Checkbox
-                                    checked={item.isComplete}
-                                    onChange={() => {
-                                        onCompletedToggle(item.id);
-                                    }}
-                                ></Checkbox>
-                        </label>
-                    </StyledTaskInfo>
+                    <label>
+                        <Checkbox
+                            checked={item.isComplete}
+                            onChange={() => {
+                                onCompletedToggle(item.id);
+                            }}
+                        ></Checkbox>
+                    </label>
+                    <StyledTaskText>{item.text}</StyledTaskText>
                     <button
                         onClick={() => {
                             onDelete(item.id);

@@ -27,8 +27,8 @@ const Icon = styled.svg`
 
 const StyledCheckbox = styled.div`
     display: inline-block;
-  width: 40px;
-  height: 40px;
+  width: 35px;
+  height: 35px;
   background: ${props => props.checked ? 'salmon' : 'papayawhip'};
   border-radius: 50%;
   transition: all 150ms;
