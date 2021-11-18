@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components/macro';
-// import ReactDatePicker from 'react-datepicker';
 
 import todos from '../reducers/todos';
 
@@ -56,7 +55,7 @@ const AddTodo = () => {
         required=''
       />
       <StyledAddTodoButton type='submit' disabled={todoInput === ''}>
-        <span>+</span>
+        <span className='button-text'>+</span>
       </StyledAddTodoButton>
     </StyledForm>
   );
