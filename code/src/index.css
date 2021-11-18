@@ -29,7 +29,7 @@ code {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
 }
 
@@ -81,7 +81,8 @@ h1 {
 }
 
 .item-container,
-.item-container-checked {
+.item-container-checked,
+.item-checked {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
@@ -95,6 +96,10 @@ h1 {
 }
 
 .item-container-checked {
+  display: none;
+}
+
+.item-checked {
   opacity: 0.5;
   background-image: linear-gradient(72deg, var(--yellow), var(--green));
   border-left: 3px solid var(--green);

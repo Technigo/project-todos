@@ -11,46 +11,74 @@ const TodoList = () => {
   const onToggleTodo = id => {
     dispatch(todos.actions.toggleTodo(id))
   }
-  // v1 onDeleteTodoMutability
-  //   const onDeleteTodoMutability = index => {
-  //     dispatch(todos.actions.deleteTodo(index))
-  //   }
 
   const onDeleteTodoImmutability = id => {
     dispatch(todos.actions.deleteTodo(id))
     console.log("onDeleteTodoTim")
   }
 
+  const filteredIsComplete = items.filter(item => item.isComplete)
+  console.log("isCompleteItem", filteredIsComplete)
+
   return (
     <section className="list-container">
       {items.map((item, index) => (
-        <div
-          className={
-            item.isComplete ? "item-container-checked" : "item-container"
-          }
-          key={item.id}
-        >
-          <input
-            type="checkbox"
-            checked={item.isComplete}
-            onChange={() => onToggleTodo(item.id)}
-          ></input>
-          <div className="list-input-text">
-            <p className="todo-text">{item.text}</p>
-
-            <p className="date">
-              Created at -<DayJS element="span" format="MMM D, YYYY H:mm" />
-            </p>
-          </div>
-
-          <button
-            className="delete-btn"
-            onClick={() => onDeleteTodoImmutability(item.id)}
+        <>
+          <div
+            className={
+              item.isComplete ? "item-container-checked" : "item-container"
+            }
+            key={item.id}
           >
-            &otimes;
-          </button>
-        </div>
+            <input
+              type="checkbox"
+              checked={item.isComplete}
+              onChange={() => onToggleTodo(item.id)}
+            ></input>
+            <div className="list-input-text">
+              <p className="todo-text">{item.text}</p>
+
+              <p className="date">
+                Created at -<DayJS element="span" format="MMM D, YYYY H:mm" />
+              </p>
+            </div>
+
+            <button
+              className="delete-btn"
+              onClick={() => onDeleteTodoImmutability(item.id)}
+            >
+              &otimes;
+            </button>
+          </div>
+        </>
       ))}
+      <div>
+        {filteredIsComplete.map(isCompleteItem => (
+          <>
+            <div className={"item-checked"} key={isCompleteItem.id}>
+              <input
+                type="checkbox"
+                checked={isCompleteItem.isComplete}
+                onChange={() => onToggleTodo(isCompleteItem.id)}
+              ></input>
+              <div className="list-input-text">
+                <p className="todo-text">{isCompleteItem.text}</p>
+
+                <p className="date">
+                  Created at -<DayJS element="span" format="MMM D, YYYY H:mm" />
+                </p>
+              </div>
+
+              <button
+                className="delete-btn"
+                onClick={() => onDeleteTodoImmutability(isCompleteItem.id)}
+              >
+                &otimes;
+              </button>
+            </div>
+          </>
+        ))}
+      </div>
     </section>
   )
 }

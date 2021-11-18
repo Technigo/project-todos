@@ -8,7 +8,7 @@ const FirstText = () => {
 
   const totalTodos = items.length
 
-  const filteredIsComplete = items.filter(item => item.isComplete).length
+  const filteredIsComplete = items.filter(item => item.isComplete)
 
   return (
     <section className="intro-container">
@@ -23,8 +23,9 @@ const FirstText = () => {
             <h1>Add another to do</h1>
             {/* <p>You have {totalTodos - filteredIsComplete} things to do!</p> */}
             <p>
-              You completed <span className="mark"> {filteredIsComplete}</span>{" "}
-              out of {totalTodos} things to do!
+              You completed{" "}
+              <span className="mark"> {filteredIsComplete.length}</span> out of{" "}
+              {totalTodos} things to do!
             </p>
             <p className="date">
               -<DayJS element="span" format="MMM D, YYYY H:mm" />
