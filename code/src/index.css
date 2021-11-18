@@ -1,20 +1,199 @@
 body {
-  margin: 20px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  width: 100%;
+  font-family: "Aclonica", sans-serif;
+  font-family: "Fredoka One", cursive;
+  font-family: "Nunito", sans-serif;
+  background-color: rgb(225, 220, 220);
+  color: white;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.header {
+  background-color: rgb(28, 102, 167);
+  justify-content: space-evenly;
+  height: 120 px;
+}
+
+.header-btn {
+  display: flex;
+
+  padding: 10px;
+  border-radius: 20px;
+  margin: 30px;
+  justify-content: space-around;
+  background-color: #ff0266;
+  color: white;
+}
+
+.btn-box {
+  display: flex;
+}
+
+.header-title {
+  text-align: center;
+  color: white;
+  padding-top: 20px;
+  font-weight: bolder;
+}
+
+/* todo-area */
+
+.todo-wrapper {
+  width: 100%;
+  display: flex;
+  background-color: rgb(28, 102, 167);
+  grid-gap: 30px;
+  border-radius: 50px;
+  padding: 5px;
+  color: white;
+  justify-content: center;
+}
 
 .flex-item {
   display: flex;
-  align-items: center;
-
+  justify-content: center;
   margin-top: 20px;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: 1px solid lighten(gray, 24%);
+  height: 48px;
+  padding: 0 24px 0 16px;
+  letter-spacing: 0.25px;
+  border-radius: 24px;
+  cursor: pointer;
+  background-color: #ff0266;
+  color: white;
+}
+
+.btn:focus {
+  outline: none;
+}
+.mdi {
+  margin-right: 8px;
+}
+.btn-delete {
+  font-size: 16px;
+  color: white;
+}
+.mdi-delete-empty {
+  display: none;
+}
+.mdi-delete-empty {
+  display: block;
+}
+.mdi-delete {
+  display: none;
+}
+
+.mdi-delete:focus {
+  box-shadow: 0 0 0 4px lighten(red, 40%);
+}
+
+.input-field {
+  border: solid black;
+  width: 100%;
+  height: 54px;
+  background: none;
+  border: 0;
+  padding: 0;
+  outline: none;
+}
+.container-input {
+  display: flex;
+  padding: 4px;
+  padding-left: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: #fce6ef;
+  border-radius: 50px;
+  border: 1px solid #ffc5dd;
+  margin-top: 25px;
+}
+.button-input {
+  height: 54px;
+  width: 94px;
+  background-color: #ff0266;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-style: none;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+}
+
+/* CHECKBOX */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  margin-top: 15px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+
+  border-radius: 15px;
+}
+
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196f3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }

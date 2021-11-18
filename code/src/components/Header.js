@@ -1,34 +1,52 @@
-import React from "react";
-import AppBar from "@material-ui/core/appBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import { makeStyles } from "@material-ui/core/styles";
-import { Button } from "@material-ui/core";
-import red from "@material-ui/core/colors/red";
+import React, { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import Button from "@material-ui/core/Button";
+import FlipMove from "react-flip-move";
 
-const useStyles = makeStyles({
-  toolbar: {
-    textAlign: "center",
-    height: 80,
-  },
-  heading: {
-    margin: "auto",
-  },
-});
+import todos from "../reducers/todos";
+
 const Header = () => {
-  const classes = useStyles();
-  const primary = red[500];
+  const [visible, setVisible] = useState(true);
+  const items = useSelector((store) => store.todos.items);
+  const completedTodos = items.filter((todo) => todo.isComplete);
+  const dispatch = useDispatch();
+
   return (
-    <AppBar position="static">
-      <Toolbar className={classes.toolbar}>
-        <Typography className={classes.heading} variant="h5" align="center">
-          Todo App
-        </Typography>
-      </Toolbar>
-      <Button variant="contained" color="Secondary">
-        Add task
-      </Button>
-    </AppBar>
+    <header className="header">
+      <div>
+        <h1 className="header-title">To-do's</h1>
+      </div>
+
+      <div className="btn-box">
+        {visible ? (
+          <button
+            className="header-btn"
+            onClick={() =>
+              dispatch(todos.actions.youAreAlldone(), setVisible())
+            }
+          >
+            I am all done!
+          </button>
+        ) : (
+          <>
+            <button
+              className="header-btn"
+              onClick={() => dispatch(todos.actions.removeComplete())}
+            >
+              Make a new list!
+            </button>
+            <button
+              className="header-btn"
+              onClick={() => dispatch(todos.actions.resetAll())}
+            >
+              Regret your done
+            </button>
+          </>
+        )}
+        <div>{items.length} / tasks </div>
+      </div>
+    </header>
   );
 };
+
 export default Header;

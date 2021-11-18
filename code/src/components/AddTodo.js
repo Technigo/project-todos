@@ -14,13 +14,16 @@ const AddTodo = () => {
   };
 
   return (
-    <div>
+    <div className="container-input">
       <input
+        className="input-field"
         type="text"
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={() => onAddTodo(input)}>Add todo</button>
+      <button className="button-input" onClick={() => onAddTodo(input)}>
+        Add todo
+      </button>
     </div>
   );
 };

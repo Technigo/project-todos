@@ -1,7 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import Button from "@material-ui/core/Button";
-import ListItemIcon from "@material-ui/core/ListItemIcon";
+
 import Checkbox from "@material-ui/core/Checkbox";
 // import CheckCircleIcon from "@material-ui/icons/CheckCircle";
 import todos from "../reducers/todos";
@@ -23,24 +22,31 @@ const TodoList = () => {
     <section>
       {items.map((item) => (
         <div className="flex-item">
-          <div key={item.id}>
+          <div className="todo-wrapper" key={item.id}>
             <p>{item.text}</p>
-            <input
+            <label class="container">
+              <input
+                type="checkbox"
+                checked={item.isComplete}
+                onChange={() => onToggleTodo(item.id)}
+              />
+              <span class="checkmark"></span>
+            </label>
+            {/* <input
               type="checkbox"
               checked={item.isComplete}
               onChange={() => onToggleTodo(item.id)}
-            />
-
-            <ListItemIcon>
-              {" "}
-              <Button
-                edge="end"
-                aria-label="edit"
-                onClick={() => onDeleteTodo(item.id)}
-              >
-                Delete
-              </Button>
-            </ListItemIcon>
+            />{" "} */}
+            <button
+              className="btn btn-delete"
+              edge="end"
+              aria-label="edit"
+              onClick={() => onDeleteTodo(item.id)}
+            >
+              <span className="mdi mdi-delete mdi-24px"></span>
+              <span class Name="mdi mdi-delete-empty mdi-24px"></span>
+              <span>Delete</span>
+            </button>
           </div>
         </div>
       ))}

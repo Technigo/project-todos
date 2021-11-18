@@ -16,6 +16,33 @@ const todos = createSlice({
 
       store.items = [...store.items, newTodo];
     },
+
+    youAreAlldone: (store) => {
+      const allDone = store.items.map((item) => {
+        return {
+          ...item,
+          isComplete: true,
+        };
+      });
+      store.items = allDone;
+    },
+    removeComplete: (store) => {
+      const decreaseComplete = store.items.filter(
+        (complete) => complete.isComplete === false
+      );
+      store.items = decreaseComplete;
+    },
+
+    resetAll: (store) => {
+      const unDone = store.items.map((item) => {
+        return {
+          ...item,
+          isComplete: false,
+        };
+      });
+      store.items = unDone;
+    },
+
     toggleTodo: (store, action) => {
       const updatedItems = store.items.map((item) => {
         if (item.id === action.payload) {
