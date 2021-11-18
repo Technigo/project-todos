@@ -9,16 +9,16 @@ export const BackgroundContainer = () => {
   return (
     <BackgroundSelection>
       <div className="background-pic-wrapper">
-        <img className="background-picture" src={watch} alt="background-picture"></img>
+        <img className="background-picture" src={watch} alt="watch"></img>
       </div>
       <div className="background-pic-wrapper">
-        <img className="background-picture" src={pencil} alt="background-picture"></img>
+        <img className="background-picture" src={pencil} alt="pencil"></img>
       </div>
       <div className="background-pic-wrapper">
-        <img className="background-picture" src={magnets} alt="background-picture"></img>
+        <img className="background-picture" src={magnets} alt="magnets"></img>
       </div>
       <div className="background-pic-wrapper">
-        <img className="background-picture" src={notes} alt="background-picture"></img>
+        <img className="background-picture" src={notes} alt="notes"></img>
       </div>
     </BackgroundSelection>
   );
