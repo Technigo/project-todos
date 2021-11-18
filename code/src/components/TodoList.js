@@ -64,7 +64,7 @@ const TodoList = () => {
 
   return (
     <section className="list-container">
-      <p>Your todos</p>
+      <p>Your to dos</p>
       {items.map((item, index) => (
         <>
           <div
