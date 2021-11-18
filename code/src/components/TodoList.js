@@ -24,12 +24,14 @@ export const TodoList = () => {
         {items.map((item) => (
           <div key={item.id} className="small-task-wrapper">
             <div className="check-text">
-              <input
-                className="checkbox"
-                type="checkbox"
-                checked={item.isComplete}
-                onChange={() => onToggleTodo(item.id)}
-              />
+              <div>
+                <input
+                  className="checkbox"
+                  type="checkbox"
+                  checked={item.isComplete}
+                  onChange={() => onToggleTodo(item.id)}
+                />
+              </div>
               <div className="task-wrapper">
                 <p className="task-date">{item.timePosted}</p>
                 <p className={item.isComplete ? "task-completed" : "task-p"}>

@@ -20,7 +20,8 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
   margin: 5px 0px;
   text-align: left;
-  max-width: 250px;
+  max-width: 200px;
+  word-break: break-word;
 }
 .task-completed {
   text-decoration: line-through;
@@ -30,7 +31,8 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
   margin: 5px 0px;
   text-align: left;
-  max-width: 250px;
+  max-width: 200px;
+  word-break: break-word;
 }
 .small-task-wrapper {
   display: flex;
@@ -44,7 +46,7 @@ body {
   flex-direction: column;
   margin: 0px 10px;
   align-self: center;
-  max-width: 250px;
+  max-width: 200px;
 }
 .task-date {
   font-size: 10px;
@@ -79,7 +81,7 @@ body {
 .checkbox {
   appearance: none;
   background-color: #fff;
-  margin: 10px;
+  margin: 0;
   font: inherit;
   color: black;
   width: 2em;
@@ -136,24 +138,24 @@ p {
 
 @media (min-width: 768px) and (max-width: 991px) {
   .task-p {
-    max-width: 400px;
+    max-width: 380px;
   }
   .task-completed {
-    max-width: 400px;
+    max-width: 380px;
   }
   .task-wrapper {
-    max-width: 400px;
+    max-width: 380px;
   }
 }
 
 @media (min-width: 992px) {
   .task-p {
-    max-width: 400px;
+    max-width: 380px;
   }
   .task-completed {
-    max-width: 400px;
+    max-width: 380px;
   }
   .task-wrapper {
-    max-width: 400px;
+    max-width: 380px;
   }
 }
