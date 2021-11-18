@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 import Header from '../components/Header'
+import Image from '../components/Image'
 import { StartBtn } from '../components/Buttons'
 
 const StyledMain = styled.main`
@@ -21,7 +22,7 @@ const StartPage = () => {
   return (
     <StyledMain>
       <Header />
-      <StyledImg src='/assets/toDo.webp' alt='two women giving high five' />
+      <Image />
       <Link to='/tasks'>
         <StartBtn 
           text='Start planning'

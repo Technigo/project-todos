@@ -10,7 +10,7 @@ const todos = createSlice({
   initialState,
   reducers: {
     addToDo: (state, action) => {
-      state.items.push({
+      state.items.unshift({
         id: uniqid(),
         task: action.payload.input,
         isComplete: false,
@@ -24,6 +24,7 @@ const todos = createSlice({
     toggleIsComplete: (state, action) => {
       const task = state.items.find((item) => item.id === action.payload)
       task.isComplete = !task.isComplete
+      state.items.sort((a,b) => a.isComplete > b.isComplete && 1 || -1)
     },
     completeAll: (state) => {
       state.items = []

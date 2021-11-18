@@ -3,9 +3,36 @@ import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
 import todos from '../reducers/todos'
+import { AddBtn } from './Buttons'
 
 const AddTaskForm = styled.form`
   margin-bottom: 30px;
+  width: inherit;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+
+  & input {
+    appearance: none;
+    padding: 0 5px;
+    height: 30px;
+    font-family: inherit;
+    font-size: 14px;
+    border-color: var(--lax);
+    border-radius: 5px;
+    border: 1px solid var(--brown);
+    width: 67%;
+  }
+
+  & select {
+    background: var(--lax);
+    color: var(--white);
+    font-family: inherit;
+    font-size: 14px;
+    border: 1px solid var(--brown);
+    border-radius: 0.4em;
+    padding: 0 3px;
+  }
 ` 
 
 const AddTask = () => {
@@ -40,11 +67,12 @@ const AddTask = () => {
           value={opt}>{opt}
         </option>))}
       </select>
-      <button 
+      <AddBtn 
         type='submit'
         disabled = {!input}
-        onClick={() => onAddToDo(input, category)}>Add new task
-      </button>
+        onClick={() => onAddToDo(input, category)}
+        text='Add task'>
+      </AddBtn>
     </AddTaskForm>
   )
 }

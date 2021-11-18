@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components/macro'
@@ -22,7 +22,17 @@ const StyledForm = styled.form `
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  background-color: ${props => props.category === 'Study' ? '#facdc5' : props.category === 'Work' ? '#bcc1a5' : props.category === 'Shopping' ? '#9e9dd9' : 'var(--lax)'};
+  border-radius: 5px;
+  opacity: ${props => props.completed ? 0.3 : 1};;
+  background-color: ${props => props.category === 'Study' ? 'var(--lax)' : props.category === 'Work' ? '#bcc1a5' : props.category === 'Shopping' ? '#9e9dd9' : '#facdc5'};
+
+  & button {
+    background-color: transparent;
+    border: none;
+    color: var(--brown);
+    font-size: 15px;
+    cursor: pointer;
+  }
 `
 
 const ToDoLabel = styled.label `
@@ -41,7 +51,7 @@ const ToDos = () => {
   const dispatch = useDispatch()
 
   const trashCanIcon = <FontAwesomeIcon icon={faTrashAlt} />
-  const editIcon = <FontAwesomeIcon icon={faPen} />
+  /* const editIcon = <FontAwesomeIcon icon={faPen} /> */
 
   const onToggleIsComplete = (id) => {
     dispatch(todos.actions.toggleIsComplete(id))
@@ -53,6 +63,7 @@ const ToDos = () => {
         <StyledForm 
           key={task.id}
           category={task.category}
+          completed={task.isComplete}
         >
           <ToDoLabel
             completed={task.isComplete} 
@@ -64,7 +75,7 @@ const ToDos = () => {
               type='checkbox' 
               onChange={() => onToggleIsComplete(task.id)}
             />
-            <button >{editIcon}</button>
+            {/* <button >{editIcon}</button> */}
             <button onClick={() => dispatch(todos.actions.removeToDo(task.id))}>{trashCanIcon}</button>
           </div>
           <StyledParagraph>{moment(task.newDate).format("D. MM. YYYY")}</StyledParagraph> 

@@ -14,6 +14,17 @@ const ContainerDiv = styled.div`
   & span {
     margin-right: 6px;
   }
+
+  & button {
+  background: var(--lax);
+  color: var(--white);
+  font-family: inherit;
+  font-size: 14px;
+  border: 1px solid var(--brown);
+  border-radius: 0.4em;
+  padding: 0 3px;
+  cursor: pointer;
+  }
 `
 
 const CompletedToDos = () => {
