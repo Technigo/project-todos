@@ -23,7 +23,7 @@ export const AddTodo = () => {
         onKeyDown={(e) => e.key === "Enter" && onAddTodo()}
       />
       <AddButton onClick={onAddTodo} disabled={input < 1}>
-        +
+        <span>+</span>
       </AddButton>
     </div>
   );
