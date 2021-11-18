@@ -36,7 +36,7 @@ export const AllTodoList = () => {
           </div>
           <CreationDate item={item} />
           <span className="due-date" aria-label="date picker" role="button">
-            due
+            due:
             <DatePick item={item} />
           </span>
         </div>

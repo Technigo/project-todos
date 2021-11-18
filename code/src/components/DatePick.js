@@ -19,7 +19,7 @@ export const DatePick = ({ item }) => {
   };
 
   const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
-    <button className={dueDateCheck ? "active" : "finished"} area-label="decoration" onClick={onClick} ref={ref}>
+    <button className={dueDateCheck ? "outdated" : "valid"} area-label="decoration" onClick={onClick} ref={ref}>
       {value ? value : "select"}
     </button>
   ));

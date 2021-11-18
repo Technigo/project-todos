@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const TodoInput = styled.input`
   height: ${(props) => props.height}px;
   width: ${(props) => props.width}px;
+  font-family: "Nunito", sans-serif;
   outline: none;
   border: transparent;
   text-decoration: none;
@@ -11,7 +12,7 @@ export const TodoInput = styled.input`
   font-size: 16px;
   padding: 4px;
   margin-left: 10px;
-  background-color: white;
+  background-color: transparent;
 
   @media (min-width: 769px) {
     width: 418px;

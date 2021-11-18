@@ -5,7 +5,7 @@ export const CreationDate = ({ item }) => {
   return (
     <p className="set-date">
       <span className="label" aria-label="decoration">
-        set:
+        created:
       </span>{" "}
       {dayjs(item.creationDate).format("DD MMM")}
     </p>

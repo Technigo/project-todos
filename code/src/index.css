@@ -2,17 +2,22 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: "Nunito", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   --link-color: grey;
   --theme-color: palevioletred;
-  /* --sub-theme-color: rgb(94, 203, 211); */
   --sub-theme-color: grey;
+  /* background-image: url("./assets/pencil.jpg"); */
+  /* background-image: url("./assets/notes.jpg"); */
+  /* background-image: url("./assets/magnets.jpg"); */
+  /* background-image: url("./assets/watch.jpg"); */
+
+  background-position: top;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: "Nunito", sans-serif;
 }
 
 main {
@@ -33,8 +38,9 @@ a {
 h1 {
   display: grid;
   place-self: center;
-  font-size: 40px;
+  font-size: 46px;
   color: var(--link-color);
+  font-weight: 900;
 }
 
 .link:hover {
@@ -191,7 +197,6 @@ h1 {
 }
 
 .switch input:checked ~ .custom-checkbox {
-  background-color: rgb(254 255 255);
   border: 2px solid var(--sub-theme-color);
 }
 
@@ -226,8 +231,8 @@ h1 {
   margin-top: 0;
 }
 
-.active,
-.finished {
+.outdated,
+.valid {
   border-radius: 4px;
   padding: 4px;
   width: 40px;
@@ -242,15 +247,40 @@ h1 {
   margin-bottom: 16px;
 }
 
-.active {
+.outdated {
   border: 2px solid var(--theme-color);
   color: var(--theme-color);
   text-align: center;
 }
 
-.finished {
+.valid {
   border: 2px solid var(--link-color);
   color: var(--link-color);
+}
+
+.open {
+  display: inline-flex;
+}
+
+.closed {
+  display: none;
+}
+
+.background-pic-wrapper {
+  display: flex;
+  width: 100px;
+  height: 60px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+.background-picture {
+  object-fit: contain;
+}
+
+.background-picture:hover {
+  box-shadow: 1px 1px 3px 3px rgba(182, 94, 123, 0.386);
+  transform: scale(1.1);
 }
 
 @keyframes spin {
@@ -270,7 +300,7 @@ h1 {
     font-size: 20px;
   }
   h1 {
-    font-size: 60px;
+    font-size: 70px;
   }
   .todo-wrapper,
   .nav-board-wrapper {
@@ -298,10 +328,16 @@ h1 {
     height: 18px;
     padding: 10px;
   }
-  .finished,
-  .active {
+  .outdated,
+  .valid {
     width: 76px;
     padding: 0;
     margin-bottom: 18px;
+  }
+  .background-pic-wrapper {
+    display: flex;
+    width: 200px;
+    height: 100px;
+    cursor: pointer;
   }
 }

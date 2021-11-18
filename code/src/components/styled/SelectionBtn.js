@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const SelectionBtn = styled.button`
-  background-color: white;
+  background-color: transparent;
   border: 2px solid grey;
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
@@ -11,6 +11,8 @@ export const SelectionBtn = styled.button`
   color: grey;
   font-weight: bolder;
   transition: 0.1s ease-in;
+  font-family: "Nunito", sans-serif;
+  font-weight: 900;
   margin-top: 6px;
 
   &:hover {

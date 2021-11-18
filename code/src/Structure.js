@@ -1,16 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
 
 import { AddTodo } from "./components/AddTodo";
 import { Header } from "./components/styled/Header";
 import { Footer } from "./components/styled/Footer";
 import { InfoBoard } from "components/InfoBoard";
 import { NavBoard } from "components/NavBoard";
+
 import { AllTodoList } from "components/AllTodoList";
+import { CustomizeBtn } from "components/styled/CustomizeBtn";
+import { BackgroundContainer } from "components/BackgroundsContainer";
 
 export const Structure = () => {
+  const [value, setValue] = useState("closed");
+
+  const toggleDiv = () => {
+    if (value === "open") {
+      setValue("closed");
+    }
+    if (value === "closed") {
+      setValue("open");
+    }
+  };
+
   return (
     <main>
-      <Header height={60} width={100} />
+      <Header height={100} width={100}>
+        <CustomizeBtn onClick={toggleDiv} />
+        {value === "open" ? <BackgroundContainer /> : null}
+      </Header>
       <div className="main-grid">
         <div className="grid">
           <h1>todos</h1>
