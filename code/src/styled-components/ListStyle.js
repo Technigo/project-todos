@@ -63,11 +63,6 @@ export const Button = styled.button`
 	margin: 5px;
 	color: white;
 	font-size: 20px;
-
-	i:hover {
-		width: 26px;
-  		transform: scale(1.09);
-	}
 `;
 
 export const ButtonDelete = styled.button`
@@ -78,10 +73,6 @@ export const ButtonDelete = styled.button`
 	width: 60px;
 	font-size: 20px;
 
-	i:hover {
-		width: 26px;
-  		transform: scale(1.09);
-	}
 `;
 
 export const CategorySpan = styled.span`
