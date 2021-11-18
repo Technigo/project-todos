@@ -86,9 +86,10 @@ h1 {
   padding: 10px 20px;
   border-radius: 20px;
   width: 100%;
-  margin-bottom: 20px;
+  margin-bottom: 5px;
   border-left: 3px solid var(--orange);
   border-bottom-left-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
 .item-container-checked {
@@ -177,7 +178,7 @@ h1 {
   font-size: larger;
 }
 
-.checkbox {
+/* .checkbox {
   position: relative;
   appearance: none;
   height: 24px;
@@ -187,8 +188,9 @@ h1 {
   transition: 0.1s;
   flex-shrink: 0;
   cursor: pointer;
-}
-
+  box-shadow: inset 2px 2px 5px var(--grey), inset -2px -2px 5px var(--orange);
+} */
+/* ::after ads ON content */
 .checkbox::after {
   content: "";
   position: absolute;
@@ -197,21 +199,28 @@ h1 {
   height: 17px;
   transition: 0.1s;
   width: 17px;
-  background: var(--red);
+  /* background-image: url(../public/check.svg); */
+  /* background: var(--red); */
   opacity: 0;
   border: var(--grey);
 }
 
 .checkbox:checked {
-  background: red;
-  box-shadow: inset 2px 2px 5px #c4c4c4, inset -2px -2px 5px #ffffff;
+  background: var(--green);
+  box-shadow: inset 2px 2px 5px var(--grey), inset -2px -2px 5px var(--orange);
 }
 
-.checkbox:checked {
+.checkbox:checked,
+.checkbox::after {
   opacity: 1;
 }
 
 .checkbox:focus,
-:active {
+.checkbox:active {
+  outline: none;
+}
+
+.checkbox:focus,
+.checkbox:active .checkbox::after {
   outline: none;
 }

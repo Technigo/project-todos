@@ -11,7 +11,7 @@ const DeleteAll = () => {
 
   const deleteAllTodos = () => {
     const deletingAll = window.confirm(
-      "Are you sure you want to complete all tasks?"
+      "Are you sure you want to delete all todos?"
     )
     if (deletingAll) {
       dispatch(todos.actions.deleteAll())
