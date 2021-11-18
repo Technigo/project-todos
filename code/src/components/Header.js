@@ -6,20 +6,20 @@ import moment from "moment";
 const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: space-around;
   background-color: #edac5f;
   box-shadow: 2px 2px 5px gray;
   height: 100px;
 `;
 const Paragraph = styled.p`
   font-size: 13px;
-  margin: 5px 20px;
+  margin: 5px 10px;
   color: white;
 `;
 const AlignP = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  justify-content: flex-end;
+  max-width: fit-content;
 `;
 const AlignText = styled.div`
   display: flex;
@@ -32,11 +32,11 @@ const HeaderText = styled.h1`
   margin: 10px 10px;
   color: white;
   font-weight: 200;
-  font-size: 20px;
+  font-size: 30px;
 `;
-const SmallHeaderText = styled.h1`
+const SmallHeaderText = styled.h2`
   align-self: flex-start;
-  margin: 10px 10px;
+  margin: 0px 10px;
   color: white;
   font-weight: 200;
   font-size: 15px;
@@ -54,9 +54,13 @@ export const Header = () => {
         <SmallHeaderText>{todaysDate}</SmallHeaderText>
       </AlignText>
       <AlignP>
-        <Paragraph>Tasks left to do: {uncompletedListItems.length}</Paragraph>
-        <Paragraph>Completed tasks: {completedListItems.length} </Paragraph>
-        <Paragraph>Tasks total: {items.length} </Paragraph>
+        <Paragraph>Tasks {items.length} </Paragraph>
+        {items.length >= 1 && (
+          <>
+            <Paragraph>Todo {uncompletedListItems.length}</Paragraph>
+            <Paragraph>Completed {completedListItems.length} </Paragraph>
+          </>
+        )}
       </AlignP>
     </HeaderWrapper>
   );

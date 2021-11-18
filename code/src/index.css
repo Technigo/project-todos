@@ -4,6 +4,15 @@ body {
   font-weight: 200;
 }
 
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+}
+
 .task-p {
   color: black;
   font-size: 20px;
@@ -47,7 +56,7 @@ body {
 }
 
 .clear-board {
-  background-image: url(./assets/todolist.png);
+  background-image: url(./assets/todov2.svg);
   background-repeat: no-repeat;
   background-position: center;
   object-fit: cover;

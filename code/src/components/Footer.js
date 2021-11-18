@@ -6,9 +6,6 @@ const FooterWrapper = styled.div`
   width: 100%;
   font-size: 20px;
   padding: 10px;
-  position: absolute;
-  bottom: 0;
-  height: 2.5rem;
 `;
 const FooterText = styled.p`
   font-size: 15px;
