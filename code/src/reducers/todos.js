@@ -23,13 +23,13 @@ const todos = createSlice({
       store.items = [...store.items, newTodo]; //Updating the store (immutability approach)
     },
 
-    //second method:
+    //second method: (Updating todo as completed when ticking the checkbox)
     toggleTodo: (store, action) => {
       const updatedItems = store.items.map((item) => {
         console.log(item.id, action.payload);
         if (item.id === action.payload) { //checking if item.id match with the right todo (action.payload)
           const updatedTodo = {
-            ...item, // short for: "id: item.id, text: item.text, isComplete: item.isComplete"
+            ...item, // spread, short for: "id: item.id, text: item.text, isComplete: item.isComplete"
             isComplete: !item.isComplete,
           };
           return updatedTodo;

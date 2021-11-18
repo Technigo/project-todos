@@ -31,12 +31,17 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
+      {/* <Header /> */}
       <main>
-        <Header />
-        <AddTodo />
-        <ClearAll />
+        <div className="header">
+          <h1>My to-do's</h1>
+        </div>
         <TodoList />
+        <ClearAll />
       </main>
+      <div className="footer">
+        <AddTodo />
+      </div>
     </Provider>
   );
 };

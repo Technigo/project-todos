@@ -14,8 +14,10 @@ const ClearAll = () => {
 
 return (
  
-    <button onClick={clearAll}>
-      Clear all tasks
+    <button 
+      className="clear-all-btn" 
+      onClick={clearAll}>
+      Clear all <i class="fas fa-folder-minus"></i>
     </button>
  
 )

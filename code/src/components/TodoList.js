@@ -27,11 +27,13 @@ const TodoList = () => {
               checked={item.isComplete}
               onChange={() => onToggleTodo(item.id)}
             />
-            <p>{item.text}</p>
+            <div className="text-and-date">
+              <p>{item.text}</p>
+              <p className="date">Added {moment().format("MMM Do")}</p>
+            </div>
           </div>
-          <p className="date">Added {moment().format("MMM Do")}</p>
           <button className="delete-btn" onClick={() => onDeleteTodo(item.id)}>
-            <i class="fas fa-trash-alt"></i>
+          <i class="fas fa-minus-circle"></i>
           </button>
         </div>
       ))}
