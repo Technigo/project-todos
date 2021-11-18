@@ -1,12 +1,9 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-
 // STYLE & IMAGES
 import { ListSection, ListDiv } from '../styled-components/ListStyle';
-
 // COMPONENTS 
 import NoTodos from '../components/NoTodos'
-
 
 const FinishedTodo = () => {
 	const items = useSelector((store) => store.todos.items);
@@ -20,16 +17,16 @@ const FinishedTodo = () => {
 		return (
 		  <NoTodos  />
 		);
-	  }
+	}
 
 	return (
 		<ListSection>
 			<h2>
-				<i className="fas fa-check-square"></i> {finishedTodoLength} of {items.length} is done!
+				<i className="fas fa-check-square"></i> {finishedTodoLength}/{items.length} is completed!
 			</h2>
 			{finishedTodo.map(item => (
 				// if item isComplete true it will dispaly line thought the text 
-				<ListDiv key={item.id} className={`${item.isComplete ? "complete" : ""}`}>
+				<ListDiv key={item.id} props={item.isComplete} >
 					{item.text}
 				</ListDiv>
 			))}
@@ -38,3 +35,5 @@ const FinishedTodo = () => {
 };
 
 export default FinishedTodo; 
+
+//className={`${item.isComplete ? "complete" : ""}`}

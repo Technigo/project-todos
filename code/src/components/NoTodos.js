@@ -3,6 +3,7 @@ import React from 'react';
 import img from '../img/favicon-32x32.png';
 import styled from "styled-components";
 
+// styling notodos
 const NotodosContainer = styled.div`
 	text-align: center;
 	margin: 20px auto;

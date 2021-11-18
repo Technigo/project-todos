@@ -4,6 +4,7 @@ import moment from 'moment';
 // imported react-moment to display real time, Moment is component
 import Moment from "react-moment";
 
+// styling header
 const HeaderContainer = styled.header`
 	text-align: center;
 
@@ -33,8 +34,8 @@ const Header = () => {
 			<Moment 
 			interval={1} 
 			unit="seconds" 
-			format="MMMM Do YYYY, HH:mm"
-			style={{ paddingLeft: '2px' , fontStyle: 'italic', fontSize: "20px" }}>
+			format="MMMM Do YYYY &#8226; HH:mm"
+			style={{ paddingLeft: '2px', fontSize: "20px" }}>
               {dateToFormat}
         	</Moment>
 		</HeaderContainer>

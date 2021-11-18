@@ -1,8 +1,6 @@
 // creating first slice here 
-
 // step 1 importing createSlice from toolkit
 import { createSlice } from "@reduxjs/toolkit";
-
 
 // name variables as name of the file
 // createSlice take in an argumnets, an object 
@@ -20,17 +18,7 @@ const todos = createSlice({
 		// arguments are the data that you pass, this data is about a todo you want to add 
 		addTodo: (store, action) => {
 			const newTodo = action.payload;
-
-			// payload is like a variable 
-			//console.log(action.payload)
-			//const newTodo = {
-			//	id: uniqid(),
-			//	text: action.payload.input,
-			//	caterogy: action.payload.category,
-			//	// need this to trigger todos if there are completed or not
-			//	isComplete: false, 
-			//}
-			
+			// payload is like a variable 	
 			// ...(three dots) is spread what was before, plus add data
 			store.items = [...store.items, newTodo]
 

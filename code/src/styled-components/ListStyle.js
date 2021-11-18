@@ -12,8 +12,6 @@ export const ListSection = styled.section`
 `; 
 
 export const TodoListDiv = styled.div`
-	${props => props ? "complete" : ""};
-
 	background-color: white;
 	border-radius: 5px;
 	margin-bottom: 10px;
@@ -32,7 +30,7 @@ export const TodoListDiv = styled.div`
 `;
 
 export const ListDiv = styled.div`
-	/*${props => props ? "complete" : ""};*/
+
 	display: flex;
 	align-items: center;
 	background-color: white;
@@ -41,11 +39,9 @@ export const ListDiv = styled.div`
 	margin-bottom: 10px;
 	word-wrap: break-word;
 	justify-content: space-between;
-
-	.complete {
-		text-decoration: line-through;
-		opacity: 0.7;
-	}
+	text-decoration: 	${props => props ? "line-through" : ""};;
+	opacity: 0.7;
+	
 `;
 
 /* lägg till något styling eller */ 
@@ -76,10 +72,9 @@ export const ButtonDelete = styled.button`
 `;
 
 export const CategorySpan = styled.span`
-	background-color: black;
 	padding: 5px;
 	border-radius: 5px;
-	color: white;
+	color: gray;
 	font-weight: bold;
 `; 
 

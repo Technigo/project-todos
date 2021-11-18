@@ -8,7 +8,6 @@ import {
 	CategorySpan,
 	TextSpan
 } from '../styled-components/ListStyle';
-
 import todos from '../reducers/todos';
 
 const TodoList = () => {
