@@ -13,6 +13,12 @@ body {
   padding-bottom: 100px;
   height: 100vh;
 }
+h3 {
+  text-align: center;
+  margin: 10px;
+  font-weight: 200;
+  font-size: 20px;
+}
 
 .task-p {
   color: black;

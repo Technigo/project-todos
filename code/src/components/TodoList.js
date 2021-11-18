@@ -20,30 +20,32 @@ export const TodoList = () => {
   return (
     <>
       <section className={items.length <= 0 ? "clear-board" : "todo-wrapper"}>
-        {items.length <= 0 && <p>Add a task</p>}
-        {items.map((item) => (
-          <div key={item.id} className="small-task-wrapper">
-            <div className="check-text">
-              <div>
-                <input
-                  className="checkbox"
-                  type="checkbox"
-                  checked={item.isComplete}
-                  onChange={() => onToggleTodo(item.id)}
-                />
+        <h3>Todo</h3>
+        {items
+          .filter((item) => item.isComplete === false)
+          .map((item) => (
+            <div key={item.id} className="small-task-wrapper">
+              <div className="check-text">
+                <div>
+                  <input
+                    className="checkbox"
+                    type="checkbox"
+                    checked={item.isComplete}
+                    onChange={() => onToggleTodo(item.id)}
+                  />
+                </div>
+                <div className="task-wrapper">
+                  <p className="task-date">{item.timePosted}</p>
+                  <p className={item.isComplete ? "task-completed" : "task-p"}>
+                    {item.text}
+                  </p>
+                </div>
               </div>
-              <div className="task-wrapper">
-                <p className="task-date">{item.timePosted}</p>
-                <p className={item.isComplete ? "task-completed" : "task-p"}>
-                  {item.text}
-                </p>
-              </div>
+              <DeleteButton onClick={() => onDeleteTodo(item.id)}>
+                Delete
+              </DeleteButton>
             </div>
-            <DeleteButton onClick={() => onDeleteTodo(item.id)}>
-              Delete
-            </DeleteButton>
-          </div>
-        ))}
+          ))}
         {items.length >= 1 && (
           <CheckAllButton onClick={onClickClearAll}>
             Complete all
