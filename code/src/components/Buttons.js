@@ -13,6 +13,7 @@ export const AddButton = styled.button`
   text-align: -webkit-center;
   display: flex;
   justify-content: center;
+  padding: 0px;
 `;
 export const CheckAllButton = styled.button`
   background-color: white;
