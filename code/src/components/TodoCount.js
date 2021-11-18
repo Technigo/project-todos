@@ -8,9 +8,7 @@ const TodoCount = () => {
     store.todo.filter((todos) => todos.completed === true)
   );
 
-  document.ontouchmove = function (e) {
-    e.preventDefault();
-  }
+ 
 
   return (
     <>

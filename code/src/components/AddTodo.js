@@ -19,9 +19,7 @@ const AddTodo = () => {
   };
 
 
-  document.ontouchmove = function (e) {
-    e.preventDefault();
-  }
+
 
 
   return (
