@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { combineReducers, createStore } from "@reduxjs/toolkit";
 
 import todos from "./reducers/todos";
 
@@ -14,7 +14,21 @@ const reducer = combineReducers({
   todos: todos.reducer, //slice
 });
 
-const store = configureStore({ reducer }); // ({ reducer: reducer }) 1-property that configure store expects from us, built in name. 2- the variable we created. ES6 shortage syntax
+// retrieve localstorage as inital state
+const todoStorageJSON = localStorage.getItem("todos");
+let todoStorage = {};
+
+if (todoStorageJSON) {
+  todoStorage = JSON.parse(todoStorageJSON);
+}
+
+// create store with initial state
+const store = createStore(reducer, todoStorage); // ({ reducer: reducer }) 1-property that configure store expects from us, built in name. 2- the variable we created. ES6 shortage syntax
+
+//store the state in localstorage on Redux state change
+store.subscribe(() => {
+  localStorage.setItem("todos", JSON.stringify(store.getState()));
+});
 
 export const App = () => {
   return (

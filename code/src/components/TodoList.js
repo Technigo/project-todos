@@ -20,6 +20,7 @@ const TodoList = () => {
       {items.map((item) => (
         <div className="flex-container" key={item.id}>
           <p>{item.text}</p>
+          <p>{item.postedTime}</p>
           <input
             type="checkbox"
             checked={item.isComplete}

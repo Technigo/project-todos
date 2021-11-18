@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import uniqid from "uniqid";
+import moment from "moment";
 
 const todos = createSlice({
   name: "todos",
@@ -15,6 +16,7 @@ const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         isComplete: false,
+        postedTime: moment().subtract(10, "days").calendar(),
       };
 
       store.items = [...store.items, newTodo];
