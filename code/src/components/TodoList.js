@@ -9,9 +9,8 @@ import todo from "../reducers/todo";
 // styled component that wraps the content
 const TodoContainer = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 20px;
-  background-color: cadetblue;
-  border: 2px solid black;
   padding: 20px;
 `;
 
@@ -38,35 +37,47 @@ const TodoList = () => {
   }
 
   return (
-    <div>
+    <TodoContainer>
       {store.map((item) => (
-        <TodoContainer key={item.id}>
+        <div key={item.id} className="todo-item">
           {/* We check if the task is marked as completed and change className */}
-          {item.completed ? (
-            <p className="completed">{item.text} </p>
-          ) : (
-            <p>{item.text}</p>
-          )}
-
-          <input
-            type="checkbox"
-            checked={item.completed}
-            onChange={() => onCheckChange(item.id)}
-          ></input>
-          <p>{moment(item.createdAt).fromNow()}</p>
+          <div className="on-same-line">
+            <input
+              type="checkbox"
+              className="checkbox"
+              checked={item.completed}
+              onChange={() => onCheckChange(item.id)}
+            ></input>
+            {item.completed ? (
+              <p className="todo-display completed">{item.text} </p>
+            ) : (
+              <p className="todo-display">{item.text}</p>
+            )}
+            <button
+              className="btn-remove"
+              onClick={() => onRemoveClick(item.id)}
+            >
+              Remove
+            </button>
+          </div>
+          <span className="task-info">{moment(item.createdAt).fromNow()}</span>
           {item.dueAt < new Date() ? (
-            <p className="overdue">
+            <span className="task-info overdue">
               {" "}
               Task is overdue {moment(item.dueAt).fromNow()}{" "}
-            </p>
+            </span>
           ) : (
-            <p> Task is due: {moment(item.dueAt).fromNow()}</p>
+            <span className="task-info">
+              {" "}
+              Task is due: {moment(item.dueAt).fromNow()}
+            </span>
           )}
-
-          <button onClick={() => onRemoveClick(item.id)}>Remove</button>
-        </TodoContainer>
+          {item.category && (
+            <span className={item.category}>{item.category}</span>
+          )}
+        </div>
       ))}
-    </div>
+    </TodoContainer>
   );
 };
 

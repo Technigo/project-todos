@@ -9,6 +9,7 @@ const Selector = () => {
 
   return (
     <select
+      className="sortby-selector"
       id="selector"
       onChange={(event) => {
         dispatch(todo.actions.setFilter(event.target.value));

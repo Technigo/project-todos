@@ -16,6 +16,7 @@ const todo = createSlice({
         completed: false,
         createdAt: action.payload.time,
         dueAt: action.payload.dueAt,
+        category: action.payload.category,
       };
 
       store.items = [...store.items, newTodo];
@@ -52,9 +53,8 @@ const todo = createSlice({
       // HERE I want to filter by boolean
       else if (action.payload === "uncompleted") {
         const sortedArr = store.items.slice().sort((a, b) => {
-          return a.completed === b.completed ? 0 : a ? 1 : -1;
+          return a.completed - b.completed;
         });
-
         store.items = [...sortedArr];
       } else {
         store.items = [...store.items];

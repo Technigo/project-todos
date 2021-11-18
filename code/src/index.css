@@ -1,10 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
 body {
-  margin: 30px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  margin: 0px;
+  font-family: "Lato" sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #fcfbfc;
 }
 
 code {
@@ -13,7 +18,7 @@ code {
 }
 
 .completed {
-  color: burlywood;
+  color: lightgrey;
 }
 
 .empty-state {
@@ -27,4 +32,177 @@ code {
 
 .overdue {
   color: coral;
+}
+
+.category {
+  width: 60px;
+  font-size: 10px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: khaki;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.todo-statistic {
+  font-size: 13px;
+  margin-top: 10px;
+}
+
+.task-count {
+  background-color: #f98c33;
+  display: inline;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.completed-count {
+  background-color: #03b736;
+  display: inline;
+  margin: 5px;
+  padding: 5px;
+  border-radius: 4px;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.btn-header {
+  background-color: transparent;
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 10px;
+  padding: 5px;
+}
+
+.btn-add {
+  background-color: transparent;
+}
+
+.btn-add:hover > .add-svg {
+  opacity: 1;
+}
+
+.add-svg {
+  fill: #ff445f;
+  opacity: 0.6;
+}
+
+.btn-header:hover {
+  background-color: #ff445f;
+  border-radius: 10px;
+}
+
+.add-task-wrapper {
+  margin: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.task-input {
+  line-height: 30px;
+  font-size: 30px;
+}
+
+.task-options-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.date-picker {
+  text-align: center;
+}
+.date-picker:hover {
+  background-color: #ff445f;
+}
+
+.category-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.btn-category {
+  padding: 5px;
+  color: white;
+  opacity: 0.6;
+}
+
+.btn-category:hover {
+  opacity: 1;
+}
+
+.btn-category:focus {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+.housework {
+  background-color: #a048da;
+  padding: 5px;
+  margin: 0 10px;
+}
+
+.shopping {
+  background-color: #03b736;
+  padding: 5px;
+  margin: 0 10px;
+}
+
+.work {
+  background-color: #f6ca4a;
+  padding: 5px;
+  margin: 0 10px;
+}
+
+.sortby-selector {
+  position: relative;
+  width: 100px;
+  left: 80%;
+}
+
+.on-same-line {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.todo-display {
+  display: inline;
+  width: 70%;
+  line-height: 44px;
+  font-size: 36px;
+  padding: 0 25px;
+}
+
+.todo-item {
+  width: 100%;
+  padding: 10px 30px;
+  margin: 5px;
+  border-bottom: 1px solid grey;
+}
+
+.btn-remove {
+  width: 100px;
+  margin-right: 0;
+  margin-left: auto;
+  text-align: center;
+  margin-top: 10px;
+  padding: 5px;
+  background-color: #ff445f;
+}
+
+.task-info {
+  background-color: #f0f0f0;
+  padding: 5px;
+  margin: 0 10px;
 }
