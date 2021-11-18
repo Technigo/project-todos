@@ -22,6 +22,9 @@ const Hamburger = styled.div`
   justify-content: space-between;
   align-items: center;
   padding: 5px 0 5px 0;
+  @media (min-width: 768px) {
+    padding: 5px 0 5px 70px;
+  }
 
   div {
     width: 30px;

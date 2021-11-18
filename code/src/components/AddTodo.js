@@ -6,11 +6,10 @@ import moment from "moment";
 import todos from "../reducers/todos"; //always
 
 const MainSection = styled.section`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: left;
   min-width: 250px;
+  @media (min-width: 768px) {
+    width: 500px;
+  }
   span {
     font-size: 12px;
     font-weight: 300;
@@ -21,22 +20,26 @@ const Button = styled.button`
   border: none;
   background-color: transparent;
   font-size: 30px;
-  opacity: 0.7;
+  /* opacity: 0.7; */
   color: #8fc9a3;
 `;
 
 const Container = styled.div`
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
+  margin-top: 45px;
 `;
 
 const TextInput = styled.input`
-  margin-right: 10px;
+  margin: 0;
   /* opacity: 0.7; */
   border: solid #8fc9a3;
   border-radius: 5px;
   padding: 10px;
+  @media (min-width: 768px) {
+    width: 300px;
+  }
 `;
 
 const AddTodo = () => {
