@@ -13,6 +13,8 @@ const AddTodo = () => {
     if (addTitel === "" || addTask === "") {
     } else {
       dispatch(addTodo({ titel: addTitel, task: addTask }));
+      setAddTitel('')
+      setAddTask('')
     }
   };
 

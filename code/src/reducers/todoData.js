@@ -3,9 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const todoData = createSlice({
   name: "todo",
   initialState: [
-    { id: 1, titel: "todo1", task: "task1", completed: false },
-    { id: 2, titel: "todo2", task: "task2", completed: true },
-    { id: 3, titel: "todo3", task: "task3", completed: false },
+    { id: 1, titel: "Food", task: "Go buy milk", completed: false },
+    { id: 2, titel: "Home", task: "Clean", completed: true },
+    { id: 3, titel: "Work", task: "Get the font and color right", completed: false },
+    { id: 4, titel: "Meet Carro", task: "Have ha coffe on Friday, yay", completed: false },
    
   ],
 
