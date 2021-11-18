@@ -5,7 +5,7 @@ import { debounce } from "debounce";
 import { loadState, saveState } from "./localStorage";
 
 import "react-datepicker/dist/react-datepicker.css";
-
+import custom from "./reducers/custom";
 import todos from "./reducers/todos";
 
 // components
@@ -13,6 +13,7 @@ import { Structure } from "Structure";
 
 const reducer = combineReducers({
   todos: todos.reducer,
+  custom: custom.reducer,
 });
 
 const store = configureStore({ reducer, preloadedState: loadState() });

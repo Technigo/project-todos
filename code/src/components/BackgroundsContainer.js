@@ -1,25 +1,22 @@
 import React from "react";
 import { BackgroundSelection } from "components/BackgroundSelection";
-import watch from "../assets/watch.jpg";
-import notes from "../assets/notes.jpg";
-import magnets from "../assets/magnets.jpg";
-import pencil from "../assets/pencil.jpg";
+import { useDispatch, useSelector } from "react-redux";
+import custom from "reducers/custom";
 
 export const BackgroundContainer = () => {
+  const dispatch = useDispatch();
+  const bgs = useSelector((store) => store.custom.bgs);
+  const changeBackground = (item) => {
+    dispatch(custom.actions.selectBackground(item));
+  };
+
   return (
     <BackgroundSelection>
-      <div className="background-pic-wrapper">
-        <img className="background-picture" src={watch} alt="watch"></img>
-      </div>
-      <div className="background-pic-wrapper">
-        <img className="background-picture" src={pencil} alt="pencil"></img>
-      </div>
-      <div className="background-pic-wrapper">
-        <img className="background-picture" src={magnets} alt="magnets"></img>
-      </div>
-      <div className="background-pic-wrapper">
-        <img className="background-picture" src={notes} alt="notes"></img>
-      </div>
+      {bgs.map((item) => (
+        <div key={item} className="background-pic-wrapper" onClick={() => changeBackground(item)}>
+          <img className="background-picture" src={item} alt={item}></img>
+        </div>
+      ))}
     </BackgroundSelection>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { AddTodo } from "./components/AddTodo";
 import { Header } from "./components/styled/Header";
@@ -9,9 +9,16 @@ import { NavBoard } from "components/NavBoard";
 import { AllTodoList } from "components/AllTodoList";
 import { CustomizeBtn } from "components/styled/CustomizeBtn";
 import { BackgroundContainer } from "components/BackgroundsContainer";
+import { useSelector } from "react-redux";
 
 export const Structure = () => {
   const [value, setValue] = useState("closed");
+  const selectedBackground = useSelector((store) => store.custom.selectedBackground);
+
+  useEffect(() => {
+    document.body.style.backgroundImage = `url(${selectedBackground})`;
+    console.log("use effect", selectedBackground);
+  }, [selectedBackground]);
 
   const toggleDiv = () => {
     if (value === "open") {
