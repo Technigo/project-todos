@@ -1,5 +1,6 @@
 # Project Todos
-This project is a todo app where the user can add tasks which will then be listed on the page. 
+This project is a todo app where the user can add tasks which will then be listed on the page.
+The user can not add a empty task, and after adding a todo the textfield is cleared.
 The user is able to delete, toggle between not complete/completed on every task.  
 Number of tasks and completed tasks is displayed on the page.
 
