@@ -32,9 +32,8 @@ const StyledList = styled.section`
     display: grid;
     grid-template-columns: 9vw auto 45px;
     align-items: center;
-    padding: 2vh 2vw;
-    height: 50%;
-    min-height: 6vh;
+    padding: 0.5vh 2vw;
+    min-height: 8.5vh;
 
     @media (min-width: 768px) {
       grid-template-columns: 6vw auto 7vw;

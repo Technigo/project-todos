@@ -20,11 +20,11 @@ export const StyledAddTodoButton = styled.button`
   &:hover {
     cursor: pointer;
   }
-  /* &.button-text {
+  &.button-text {
     display: flex;
     justify-content: center;
     align-items: center;
-  } */
+  }
 `;
 
 export const StyledDeleteButton = styled.button`
