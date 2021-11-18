@@ -5,15 +5,15 @@ import { Link } from "react-scroll";
 import video from "images/background.mp4"
 const AddTodo = () => {
   const [addTask, setAddTask] = useState("");
-  const [addTitel, setAddTitel] = useState("");
+  const [addTitle, setAddTitle] = useState("");
 
   const dispatch = useDispatch();
 
   const onSubmited = () => {
-    if (addTitel === "" || addTask === "") {
+    if (addTitle === "" || addTask === "") {
     } else {
-      dispatch(addTodo({ titel: addTitel, task: addTask }));
-      setAddTitel('')
+      dispatch(addTodo({ title: addTitle, task: addTask }));
+      setAddTitle('')
       setAddTask('')
     }
   };
@@ -31,13 +31,13 @@ const AddTodo = () => {
           <form>
             <label>
               {" "}
-              Add titel:
+              Add title:
               <input
                 className="titel"
                 type="text"
                 maxLength="25"
-                value={addTitel}
-                onChange={(e) => setAddTitel(e.target.value)}
+                value={addTitle}
+                onChange={(e) => setAddTitle(e.target.value)}
               />
             </label>
 
@@ -57,7 +57,7 @@ const AddTodo = () => {
           <div className="addTodo___btn">
             <button
               className={
-                addTitel === "" || addTask === "" ? "btnRed" : "btnGreen"
+                addTitle === "" || addTask === "" ? "btnRed" : "btnGreen"
               }
               type="submit"
               onClick={onSubmited}
