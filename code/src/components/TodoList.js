@@ -1,13 +1,14 @@
 import React from "react"
 import DayJS from "react-dayjs"
 import { useSelector, useDispatch } from "react-redux"
-// import styled from "styled-components"
+import styled from "styled-components"
 
 import todos from "../reducers/todos"
 
-// const Wastecan = styled.img`
-//   width: 25px;
-// `
+const CreatedTime = styled.div`
+  display: flex;
+  align-items: center;
+`
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
@@ -42,14 +43,20 @@ const TodoList = () => {
           </div>
 
           {/* <span> Created</span> */}
-          <DayJS element="span" format="MMM D, YYYY H:mm" />
+          <CreatedTime>
+            <DayJS
+              style={{ padding: "5px" }}
+              element="span"
+              format="MMM D, YYYY H:mm"
+            />
 
-          <button
-            className="delete-button"
-            onClick={() => onDeleteTodoImmutability(item.id)}
-          >
-            {/* <Wastecan src="./assets/wastecan.svg" /> */}-
-          </button>
+            <button
+              className="delete-button"
+              onClick={() => onDeleteTodoImmutability(item.id)}
+            >
+              {/* <Wastecan src="./assets/wastecan.svg" /> */}-
+            </button>
+          </CreatedTime>
         </div>
       ))}
     </section>

@@ -13,8 +13,8 @@ const Greeting = () => {
 
   return (
     <div>
-      {hour >= 10 ? (
-        hour >= 11 ? (
+      {hour >= 12 ? (
+        hour >= 16 ? (
           <>
             <Gif
               // src="https://media.giphy.com/media/p2PoRL1YVjh31Pnyj6/giphy.gif"
