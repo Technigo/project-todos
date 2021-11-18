@@ -20,50 +20,11 @@ const AddTodos = () => {
           type="text"
           value={input}
           onChange={(event) => setInput(event.target.value)}
+          onKeyDown={(e) => e.key === 'Enter' && onAddTodo()}
         />
-        <div className="todo-days">
-          <p> finish by: </p>
-          <label>M</label>
-          <input
-            type="radio"
-            className="days"
-            //   checked={item.isComplete}
-            //   onchange={() => onToggleTodo(item.id)}
-          />
-          <label>T</label>
-          <input
-            type="radio"
-            className="days"
-            //   checked={item.isComplete}
-            //   onchange={() => onToggleTodo(item.id)}
-          />
-          <label>W</label>
-          <input
-            type="radio"
-            className="days"
-            //   checked={item.isComplete}
-            //   onchange={() => onToggleTodo(item.id)}
-          />
-          <label>T</label>
-          <input
-            type="radio"
-            className="days"
-            //   checked={item.isComplete}
-            //   onchange={() => onToggleTodo(item.id)}
-          />
-          <label>F</label>
-          <input
-            type="radio"
-            className="days"
-            //   checked={item.isComplete}
-            //   onchange={() => onToggleTodo(item.id)}
-          />
-        </div>
-        <div>
-          <button disabled={input < 1} className="add-btn" onClick={onAddTodo}>
-            Add todo
-          </button>
-        </div>
+        <button disabled={input < 1} className="add-btn" onClick={onAddTodo}>
+          Add todo
+        </button>
       </div>
     </>
   )

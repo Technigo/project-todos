@@ -16,7 +16,12 @@ code {
     monospace;
 }
 
+header {
+  margin: 0 auto;
+}
+
 .header {
+  margin-bottom: 0px;
   align-self: center;
   border-bottom: 1px solid black;
 }
@@ -24,10 +29,10 @@ code {
 .container {
   margin: 0 auto;
   max-width: 350px;
-  min-height: 400px;
+  min-height: 550px;
   border-radius: 2%;
-  border: 1px dotted black;
-  background-color: rgba(28, 187, 215, 0.4);
+  border: 1px solid black;
+  background-color: rgba(242, 181, 90, 0.4);
 
   display: flex;
   flex-direction: column;
@@ -36,12 +41,14 @@ code {
 
 .addtodo-container {
   display: flex;
-  flex-direction: column;
-  width: 300px;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 350px;
   padding: 1em;
-  height: 100px;
+  height: 80px;
   position: absolute;
-  bottom: 60px;
+  bottom: 0;
+  z-index: 1;
 }
 
 input {
@@ -65,17 +72,17 @@ input {
 }
 
 .add-btn {
+  align-self: center;
   appearance: auto;
-  -webkit-writing-mode: horizontal-tb !important;
-  font-style: ;
+  /* font-style: ;
   font-variant-ligatures: ;
   font-variant-caps: ;
   font-variant-numeric: ;
   font-variant-east-asian: ;
   font-weight: ;
-  font-stretch: ;
+  font-stretch: ; */
   font-size: 1rem;
-  font-family: ;
+  /* font-family: ; */
   text-rendering: auto;
   color: -internal-light-dark(black, white);
   letter-spacing: normal;
@@ -99,11 +106,28 @@ input {
 }
 
 .list-container {
-  width: 100%;
   display: flex;
   flex-direction: row;
-  border-bottom: 2px solid rgb(34, 27, 27);
+  border-top: 1px solid rgb(34, 27, 27);
+  border-bottom: 1px solid rgb(34, 27, 27);
   justify-content: space-between;
+  height: 380px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px transparent;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1fac9e;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
 }
 
 .todo-text {
@@ -116,18 +140,26 @@ input {
 
 .flex-item {
   display: flex;
+  width: 90%;
+  margin: 0 auto;
+
   flex-direction: row;
-  width: 250px;
   justify-content: space-between;
   /* margin: 1em; */
 }
 
 .verify-container {
+  display: flex;
+  flex-direction: column;
   align-self: center;
-  margin-right: 1em;
+  justify-content: flex-end;
 }
 
 .todo-days {
   display: flex;
   flex-direction: row;
+}
+
+.todo-list-section {
+  width: 350px;
 }

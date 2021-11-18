@@ -12,18 +12,13 @@ const TodoList = () => {
     dispatch(todo.actions.toggleTodo(id))
   }
 
-  // v1
-  // const onDeleteTodoMutability = (index) => {
-  // 	dispatch(todos.actions.deleteTodo(index));
-  // };
-
-  // v2
+  // Immutability approach
   const onDeleteTodoImmutability = (id) => {
     dispatch(todo.actions.deleteTodo(id))
   }
 
   return (
-    <section>
+    <section className="todo-list-section">
       {items.map((item, index) => (
         <div className="flex-item" key={item.id}>
           <p className="todo-text">{item.text}</p>
@@ -36,15 +31,12 @@ const TodoList = () => {
               onChange={() => onToggleTodo(item.id)}
             />
 
-            {/* // v1 */}
-            {/* <button onClick={() => onDeleteTodoMutability(index)}>Delete</button> */}
-
             {/* // v2 */}
             <button
               className="delete-btn"
               onClick={() => onDeleteTodoImmutability(item.id)}
             >
-              Delete
+              Clear
             </button>
           </div>
         </div>
