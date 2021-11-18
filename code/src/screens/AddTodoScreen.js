@@ -93,18 +93,19 @@ export const AddTodoScreen = () => {
             value={todoPlace}
             onChange={(event) => setTodoPlace(event.target.value)}
           ></TodoInput>
-          <label htmlFor="dueDate">Due date</label>
-
-          <DatePicker
-            selected={startDate}
-            onChange={(date) => {
-              console.log(date);
-              setStartDate(date);
-            }}
-            minDate={new Date()}
-            showDisabledMonthNavigation
-            required
-          />
+          <LabelDatepickerContainer>
+            <Label htmlFor="dueDate">Due date</Label>
+            <DatePicker
+              selected={startDate}
+              onChange={(date) => {
+                console.log(date);
+                setStartDate(date);
+              }}
+              minDate={new Date()}
+              showDisabledMonthNavigation
+              required
+            />
+          </LabelDatepickerContainer>
           <SubmitButton type="submit">Add your Todo</SubmitButton>
         </Form>
       </ContentContainer>
@@ -185,4 +186,18 @@ const TodoInput = styled.input`
     font-size: 15px;
     font-weight: 100;
   }
+`;
+
+const Label = styled.label`
+  letter-spacing: 2px;
+  font-size: 15px;
+  color: black;
+  padding-left: 10px;
+  font-weight: 300;
+`;
+
+const LabelDatepickerContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr auto;
+  margin: 6px 0;
 `;
