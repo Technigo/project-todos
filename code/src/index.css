@@ -1,6 +1,9 @@
 html {
   height: 100%;
   width: 100%;
+  background-image: url(./assets/light-sky.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 body {
   margin: 0 auto;
@@ -19,4 +22,45 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+.complete-todo {
+  color: blueviolet;
+}
+
+.checkbox {
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: black;
+  width: 2em;
+  height: 2em;
+  border: 0.15em solid #edac5f;
+  border-radius: 1em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+}
+.checkbox::before {
+  content: '';
+  width: 1.3em;
+  height: 1.3em;
+  border-radius: 50%;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em #edac5f;
+}
+.checkbox:checked::before {
+  transform: scale(1);
+}
+
+.input-hidden,
+.button-hidden {
+  display: none;
+}
+
+.input-active,
+.button-active {
+  display: initial;
 }
