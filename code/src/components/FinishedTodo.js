@@ -2,17 +2,26 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 
-
+// STYLE & IMAGES
 import { ListSection, ListDiv } from '../styled-components/ListStyle';
+
+// COMPONENTS 
+import NoTodos from '../components/NoTodos'
 
 
 const FinishedTodo = () => {
 	const items = useSelector((store) => store.todos.items);
-	// filtering the array to fins all tasks that is completed, and then 
-	const finishedTodo = items.filter((item) => item.isComplete).sort((item) =>
-	item.isComplete);
+	// filtering the array to find all tasks that is completed
+	// and then reverse so the last task will be at the top of the list  
+	const finishedTodo = items.filter((item) => item.isComplete).reverse();
 	// filtering the array to fins all tasks that is completed, and then 
 	const finishedTodoLength = items.filter((item) => item.isComplete).length;
+
+	if (items.length === 0) {
+		return (
+		  <NoTodos  />
+		);
+	  }
 
 	return (
 		<ListSection>

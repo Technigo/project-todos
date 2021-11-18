@@ -1,5 +1,5 @@
 BLUE LEVEL
-- Your app should list all todo tasks - completed or uncompleted
+- Your app should list all todo tasks - completed or uncompleted OK!
 - You should be able to mark an uncompleted task as complete (and change it back to uncomplete) - OK!
 - You should be able to add and remove tasks - OK! 
 - Your app should show a count of either all todos, or all uncomplete todos (or both) - ok!
@@ -11,21 +11,23 @@ but stored as raw date. You can either use built in JS functionalities or [momen
 - Add a **complete all** button to set all tasks as completed. You could also use this opportunity to make your app 
 look nice when there's no data. See [empty states UX design](https://www.toptal.com/designers/ux/empty-state-ux-design) 
 for some ideas.
-- Use styled-components instead of vanilla CSS to do your styling
+- Use styled-components instead of vanilla CSS to do your styling OK!
 
 https://vane-todos.netlify.app/
 https://www.youtube.com/watch?v=ykuD2QOZkhc&t=245
 
-
-
 Some todo: 
-- sortera done todos så den sist gjorda hamnar överst 
+
 - lägg kategorier 
 - styled components
 - fix text wrap i todolist div
 - fixa props till styled compo finishedTodos
 
+
 - responsive design - OK! 
+- sortera done todos så den sist gjorda hamnar överst , https://stackoverflow.com/c/technigo/questions/3118 -ok! 
 - visa dagens datum och tid - OK! 
 - local storage - OK! 
+- no data at the moment fixed - ok! 
 - visa upp dagens datum med moment.js - ok!
+- netlify bug ok!, installed node modules outside code folder , https://stackoverflow.com/c/technigo/questions/971, https://stackoverflow.com/c/technigo/questions/2437?rq=1

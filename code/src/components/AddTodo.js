@@ -19,7 +19,7 @@ const Input = styled.input`
 	font-size: 20px;
 
 	::placeholder {
-		font-family: "Montserrat"
+		font-family: "Roboto",-apple-system;
 	}
 `;
 

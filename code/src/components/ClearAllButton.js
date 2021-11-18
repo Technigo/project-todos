@@ -18,12 +18,8 @@ const ClearButton = styled.button`
 	color: white;
 	border-radius: 5px;
 	padding: 10px;
-	font-family: "Montserrat";
+	font-family: "Roboto",-apple-system;
 	font-weight: bold;
-
-	:hover {
-		background-color: blue;
-	}
 `;
 
 
