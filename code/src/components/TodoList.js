@@ -33,7 +33,7 @@ const StyledList = styled.section`
     grid-template-columns: 9vw auto 45px;
     align-items: center;
     padding: 0.5vh 2vw;
-    min-height: 8.5vh;
+    min-height: 13vh;
 
     @media (min-width: 768px) {
       grid-template-columns: 6vw auto 7vw;
@@ -51,6 +51,7 @@ const StyledList = styled.section`
   .list-item-info > p {
     font-size: 16px;
     margin: 2px auto;
+    word-break: break-word;
   }
 
   .list-item-info > p.checked {
@@ -59,6 +60,7 @@ const StyledList = styled.section`
 
   .list-item-info > p:nth-child(2n + 2) {
     font-size: 12px;
+    word-break: break-word;
   }
 `;
 
