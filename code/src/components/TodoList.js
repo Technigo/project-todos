@@ -37,7 +37,7 @@ export const TodoList = () => {
     }
   }
 
-  document.getElementById('html').className = !isActive ? 'dark' : 'default'
+  document.getElementById('html').className = !isActive ? 'default' : 'dark'
 
   return (
     <>
