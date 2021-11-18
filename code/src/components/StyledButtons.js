@@ -1,14 +1,16 @@
 import styled from 'styled-components';
 
 export const StyledAddTodoButton = styled.button`
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #ffde53;
   color: #515214e3;
   font-size: 30px;
   font-weight: 500;
   border-radius: 50%;
-  text-align: center;
-  vertical-align: middle;
+  /* text-align: center;
+  vertical-align: middle; */
   overflow: hidden;
   transition: 0.4s;
   border: 0px;
