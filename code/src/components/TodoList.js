@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import moment from "moment";
 
 import todos from "reducers/todos";
-import { TaskLabel, FlexItem, DeleteButton, DateContainer, TaskContainer, EmptyTodoDiv } from "./StyledComponents";
+import { TodoLabel, FlexItem, DeleteButton, DateContainer, TodoContainer, EmptyTodoDiv } from "./StyledComponents";
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
@@ -26,9 +26,10 @@ const TodoList = () => {
         <h3 className="empty-h3">No todos found</h3>
       </EmptyTodoDiv>}
       {items.map((item) => (
-        <><FlexItem key={item.id}>
-          <TaskContainer>
-          <TaskLabel>
+        <div key={item.id}>
+          <FlexItem >
+          <TodoContainer>
+          <TodoLabel>
             <input className="task-input"
               name={item.id}
               type="checkbox"
@@ -36,16 +37,16 @@ const TodoList = () => {
               checked={item.isComplete}
               onChange={() => onToggleTodo(item.id)} />
             <span className="checkmark"></span>
-          </TaskLabel>
+          </TodoLabel>
           <h2>{item.text}</h2>
-          </TaskContainer>
+          </TodoContainer>
           <DeleteButton onClick={() => onDeleteTodo(item.id)}>
             <span><img src="images/favicon-16x16.png" alt="delete" aria-label="delete-button" /></span>
           </DeleteButton>
         </FlexItem>
           <DateContainer>
-            <p>Created at: {moment(item.createdAt).format('HH:MM:SS')}</p>
-          </DateContainer></>
+            <p>Created at: {moment(item.createdAt).format('MMM Do YYYY')}</p>
+          </DateContainer></div>
       ))}
     </section>
   )

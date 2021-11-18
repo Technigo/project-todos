@@ -12,7 +12,8 @@ const todos = createSlice({
       const newTodo = {
         id: uniqid(),
         text: action.payload,
-        isComplete: false
+        isComplete: false,
+        createdAt: new Date()
       }
 
       store.items = [...store.items, newTodo]
@@ -32,15 +33,16 @@ const todos = createSlice({
     })
     store.items = updatedItems
   },
-   // action to complete all 
+   // Complete all todos 
    completeAll: (store) => {
     store.items.map(item => item.isComplete = true)
   },
+  // Delete all todos
     clear: () => {
     return initialState
   },
 
-  // delete todos
+  // Delete one todo
   deleteTodo: (store, action) => {
     const decreasedItems = store.items.filter(
       (item) => item.id !== action.payload

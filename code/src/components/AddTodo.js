@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 
 import todos from "reducers/todos";
-import { AddTaskButton, TextInput, InputButton, InputContainer } from "./StyledComponents";
+import { AddTodoButton, TextInput, InputButton, InputContainer } from "./StyledComponents";
 
 const AddTodo = () => {
   const dispatch = useDispatch()
@@ -12,7 +12,7 @@ const AddTodo = () => {
     dispatch(todos.actions.addTodo(input))
     setInput('')
   } 
-  const handleCreateTask = () => {
+  const handleCreateTodo = () => {
     setCanWrite(true);
   }
   const handleFormSubmit = (event) => {
@@ -22,7 +22,7 @@ const AddTodo = () => {
   return (
     <>
     <InputContainer>
-      {!canWrite && <AddTaskButton onClick={() => handleCreateTask()}><span>+ Add task</span></AddTaskButton>}
+      {!canWrite && <AddTodoButton onClick={() => handleCreateTodo()}><span>+ Add todo</span></AddTodoButton>}
       {canWrite && 
       <form onSubmit={handleFormSubmit}>
         <label htmlFor="input">
@@ -31,7 +31,7 @@ const AddTodo = () => {
             type="text" 
             value={input}
             onChange={(event) => setInput(event.target.value)}
-            placeholder="Write your task"
+            placeholder="Add todo here"
             required
           />
           <InputButton 

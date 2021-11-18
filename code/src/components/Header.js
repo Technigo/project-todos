@@ -15,7 +15,7 @@ const Header = () => {
     dispatch(todos.actions.clear())
   }
   const tasks = useSelector((store) => store.todos.items)
-  // const completedTasks = tasks.filter((singleTask) => singleTask.isComplete)
+  const completedTasks = tasks.filter((singleTask) => singleTask.isComplete)
   
   return(
     <>
@@ -26,7 +26,7 @@ const Header = () => {
           <HeaderSubTitle>{moment().format('MMMM Do')}</HeaderSubTitle>
         </LeftContainer>
         <RigthContainer>
-          <HeaderSubTitle>{tasks.length} tasks</HeaderSubTitle>
+          <HeaderSubTitle>{completedTasks.length}/{tasks.length} todos completed</HeaderSubTitle>
           <ButtonHeader onClick={onCompleteAll}>Complete All</ButtonHeader>
           <ButtonHeader onClick={onDeleteAll}>Clear All</ButtonHeader>
         </RigthContainer>

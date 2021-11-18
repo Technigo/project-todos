@@ -29,7 +29,7 @@ const store = createStore(
 store.subscribe(() => {
   localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))
 })
-// const store = configureStore({ reducer })
+
 
 export const App = () => {
   return (

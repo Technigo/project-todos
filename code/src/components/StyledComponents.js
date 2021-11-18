@@ -11,32 +11,47 @@ border-radius: 0 0 30px 30px;
 
 `
 export const HeaderBodyContainer = styled.section`
-color: rgb(37, 37, 37);
-border-radius: 2px;
-margin: 0px auto;
-display: flex;
-align-items: flex-start;
-justify-content: space-between;
+  color: rgb(37, 37, 37);
+  border-radius: 2px;
+  margin: 0px auto;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
 `
 export const LeftContainer = styled.div`
-padding: 0 1rem;
+  padding: 0 1rem;
 `
 export const RigthContainer = styled.div`
-padding: 0 1rem;
-display: flex;
-flex-direction: column;
-text-align: center;
-align-self: self-end;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-self: self-end;
 `
 export const ButtonHeader = styled.button`
-color: white;
-background: rgb(37, 37, 37);
-border: none;
-padding: 10px;
-margin: 10px 0;
-border-radius: 10px;
-font-size: 0.8rem;
-cursor: pointer;
+  color: white;
+  background: rgb(37, 37, 37);
+  border: none;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+
+  &:hover, :focus {
+    -webkit-transform: scale(1.1) rotate(4deg);
+    transform: scale(1.1) rotate(4deg);
+  }
+  
 @media (min-width: 768px){
    font-size: 1.1rem;
 }
@@ -107,20 +122,15 @@ export const EmptyTodoDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: rgb(150, 150, 150);
+  color:rgb(100, 100, 100);
   margin: 10px auto;
   max-width: 750px;
-  border: rgb(150, 150, 150) solid 2px;
   border-radius: 10px;
   font-size: 16px;
 
   .empty-image {
     width: 50%;
     opacity: 0.2;
-  }
-
-  .empty-h3{
-    
   }
   
   @media (min-width: 768px){
@@ -129,7 +139,7 @@ export const EmptyTodoDiv = styled.div`
   @media (min-width: 992px) {
       font-size: 1.3rem;
 `
-export const TaskContainer = styled.div`
+export const TodoContainer = styled.div`
   display: flex;
 `
 
@@ -152,6 +162,7 @@ export const TextInput = styled.input`
   border-radius: 10px 0 0 10px;
   background: rgb(100, 100, 100);
   color: #ddd;
+  outline: none;
   @media (min-width: 768px){
     font-size: 1.1rem;
   }
@@ -166,6 +177,16 @@ export const DeleteButton = styled.button`
   padding: 10px;
   font-size: 0.8rem;
   cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+
+  &:hover {
+    -webkit-transform: scale(1.5) rotate(10deg);
+    transform: scale(1.5) rotate(10deg);
+  }
+
   @media (min-width: 768px){
     font-size: 1.1rem;
   }
@@ -175,7 +196,7 @@ export const DeleteButton = styled.button`
 `
 
 // Checkbox
-export const TaskLabel = styled.label `
+export const TodoLabel = styled.label `
   display: block;
   position: relative;
   padding-left: 35px;
@@ -229,21 +250,6 @@ export const TaskLabel = styled.label `
        font-size: 1.1rem;
    }
 `
-// export const TaskInput = styled.input `
-//    width: 1em;
-//    height: 1em;
-//    background-color: white;
-//    border-radius: 50%;
-//    vertical-align: middle;
-//    border: 1px solid #ddd;
-//    appearance: none;
-//    -webkit-appearance: none;
-//    outline: none;
-//    cursor: pointer;
-//      &:checked{
-//        background-color: gray;
-//      }
-// `
 
 // Buttons
 export const InputButton = styled.button`
@@ -253,6 +259,8 @@ export const InputButton = styled.button`
   border-radius:  0 10px 10px 0;
   background: rgb(37, 37, 37);
   color: #ddd;
+  cursor: pointer;
+
  @media (min-width: 768px){
   font-size: 1.1rem;
   }
@@ -260,7 +268,7 @@ export const InputButton = styled.button`
    font-size: 1.3rem;
   }
 `
-export const AddTaskButton = styled.button `
+export const AddTodoButton = styled.button `
 padding: 0.7em 1.5em;
 border: 2px solid #ffcc67;
 border-radius: 20px;
