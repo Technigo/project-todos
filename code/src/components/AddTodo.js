@@ -43,7 +43,7 @@ const AddTodo = () => {
 
             <label>
               {" "}
-              Add a task
+              Add a task:
               <textarea
                 className="task"
                 type="text"

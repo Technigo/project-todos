@@ -33,7 +33,7 @@ return (
 </section>
 
 <section className="todoListContent___btnAndCheckbox"> 
-<label >
+<label>
 <input type="checkbox"
 checked={todos.completed}
 onChange={handleToggle}
