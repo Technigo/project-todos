@@ -1,32 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --pink: #ed86be;
+  --blue: #869aed;
+  --grey: #a9a9a9;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Poppins', sans-serif;
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+    sans-serif; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
+/* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
-}
+} */
 
 .list-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 90%;
+  width: 100%;
   padding: 10% 5%;
   background-color: #fff;
   position: absolute;
-  top: 50%;
-  border-radius: 20px;
-  border: 1px solid blue;
+  top: 45%;
+  border-radius: 30px;
 }
 .flex-item {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+/* .checkbox-done {
+  position: absolute;
+}
+
+.checkbox-done input {
+  background-color: #ed86be;
+  height: 28px;
+  width: 28px;
+  left: 0;
+  top: 0;
+} */
+
+.delete-button {
+  padding: 2% 3%;
+  color: var(--blue);
+  background-color: var(--white);
+  border: 1px solid var(--blue);
+  border-radius: 10px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
 }

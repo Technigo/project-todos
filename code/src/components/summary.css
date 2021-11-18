@@ -1,8 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
 .summary {
   display: flex;
   flex-direction: column;
+  font-family: 'Nunito', sans-serif;
   position: absolute;
   width: 260px;
   left: 8%;
   top: 25%;
+}
+.summary h1 {
+  font-size: 35px;
+  margin: 0;
+  padding: 2% 0;
+}
+.summary h2 {
+  font-size: 25px;
+  margin: 0;
+  padding: 2% 0;
 }
