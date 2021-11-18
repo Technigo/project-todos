@@ -38,7 +38,7 @@ const TodoList = () => {
               onChange={() => onToggleTodo(item.id)} />
             <span className="checkmark"></span>
           </TodoLabel>
-          <h2>{item.text}</h2>
+          <h2 className={item.isComplete ? "done " : "not-done "}>{item.text}</h2>
           </TodoContainer>
           <DeleteButton onClick={() => onDeleteTodo(item.id)}>
             <span><img src="images/favicon-16x16.png" alt="delete" aria-label="delete-button" /></span>

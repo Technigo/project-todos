@@ -96,6 +96,12 @@ margin: 1.2rem 0 0 0;
   border-radius: 10px 10px 0 0;
   word-break: break-word;
   font-size: 16px;
+
+  & .done {
+    opacity: 0.7;
+    text-decoration: line-through;
+    font-style: italic;
+  }
  
   @media (min-width: 768px){
     font-size: 1.1rem;
@@ -306,6 +312,32 @@ width: 105%;
 &:hover {
 color: #111;
 }
+`
+// Icon links
+export const FooterContainer = styled.footer`
+  position: relative;
+  bottom: 0;
+  font-size: 12px;
+`
+
+export const Icon = styled.a`
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  width: 18px;
+  filter: grayscale(100%) contrast(50%);
+` 
+export const FooterText = styled.h4`
+  width: 100%;
+  color: #ddd;
+  padding: 14px 0 0 60px;
+`
+export const Image = styled.img`
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  width: 18px;
+  filter: grayscale(100%) contrast(50%);
 `
 
 
