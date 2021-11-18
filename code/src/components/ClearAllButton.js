@@ -29,8 +29,8 @@ const ClearAllButton = () => {
 
 	  // calling clearAllTodos with dispatch 
 	  const clearAllTodos = () => {
-		dispatch(todos.actions.clearAllTodos());
-		localStorage.clear();
+			dispatch(todos.actions.clearAllTodos());
+			localStorage.clear();
 	  };
 
 	return (

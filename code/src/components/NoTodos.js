@@ -17,7 +17,7 @@ const NoTodos = () => {
 		<NotodosContainer>
 			<p>No tasks at the moment!</p>
 			<img src={img} alt="notes-img" />
-	  	</NotodosContainer>
+	  </NotodosContainer>
 	)
 };
 

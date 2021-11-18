@@ -57,8 +57,10 @@ export const ButtonContainer = styled.div`
 export const Button = styled.button`
 	background-color: ${props => props.red ? "red" : "green"};
 	border: none; 
-	height: 50px;
-	width: 60px;
+	height: 40px;
+	width: 50px;
+	border-radius: 5px;
+	margin: 5px;
 	color: white;
 	font-size: 20px;
 

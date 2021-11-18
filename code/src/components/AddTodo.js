@@ -10,8 +10,11 @@ import todos from '../reducers/todos';
 const AddTodoContainer = styled.section`
 	text-align: center;
 	margin: 30px auto;
-
 	gap:10px;
+
+	@media(min-width: 768px) {
+		display: flex;
+	}
 `; 
 
 const Input = styled.input`
@@ -40,26 +43,28 @@ const AddButton = styled.button`
 
 	i:hover {
 		width: 26px;
-  		transform: scale(1.09);
+  	transform: scale(1.09);
 	}
 `;
 
 const SelectContainer = styled.div`
-	display: flex;
-	justify-content: center;
+
 `;
 
 const Select = styled.select`
   width: 100%;
   height: 35px;
   color: black;
+
+	@media(min-width: 768px) {
+		margin-top: 25px;
+	}
 `;
 
 const AddTodo = () => {
 
 	const [input, setInput] = useState('');
 	const [ category, setCategory ] = useState("")
-	console.log(category)
 
 	const dispatch = useDispatch();
 
