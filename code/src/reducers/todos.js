@@ -49,7 +49,7 @@ const todos = createSlice({
       store.items = decreasedItems;
     },
     deleteAllTodos: (store) => {
-      const decreasedAllItems = store.items.filter((item) => item);
+      const decreasedAllItems = (store.items = []);
 
       store.items = decreasedAllItems;
     },
