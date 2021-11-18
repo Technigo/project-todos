@@ -34,7 +34,6 @@ main {
   background-size: cover; /* Resize the background image to cover the entire container */
   background-position: center; /* Center the image */
   text-align: center;
-  text-transform: capitalize;
 }
 .header-container {
   margin-top: 40px;
@@ -44,6 +43,7 @@ main {
 .heading-one {
   color: rgb(0, 30, 108);
   font-family:'Indie Flower', cursive;
+  text-transform: capitalize;
 }
 
 .date {

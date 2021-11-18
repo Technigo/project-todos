@@ -14,7 +14,7 @@ const todos = createSlice({
     addTodo: (store, action) => {
       //data variable gets filled in with info sent by dispatch
       const data = action.payload;
-      // newTodo object goes inside the items array when the user adds thing to do in the input
+      // newTodo object goes inside the items asray when the user adds thing to do in the input
       const newTodo = {
         id: uniqid(),
         task: data,

@@ -31,7 +31,7 @@ const TodoList = () => {
           </div>
 
 
-          <div className="buttons-container">
+          <form className="buttons-container">
             <input
               className="check-btn"
               type="checkbox"
@@ -41,7 +41,7 @@ const TodoList = () => {
             <button className="trash-btn" onClick={() => onDeleteTodo(item.id)}>
               <i class="fas fa-trash"></i>
             </button>
-          </div>
+          </form>
 
         </section>
       ))}
