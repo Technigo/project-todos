@@ -138,13 +138,13 @@ p {
 
 @media (min-width: 568px) and (max-width: 767px) {
   .task-p {
-    max-width: 300px;
+    max-width: 350px;
   }
   .task-completed {
-    max-width: 300px;
+    max-width: 350px;
   }
   .task-wrapper {
-    max-width: 300px;
+    max-width: 350px;
   }
 }
 
