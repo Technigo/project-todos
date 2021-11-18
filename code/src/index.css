@@ -112,6 +112,7 @@ body {
   font-size: 20px;
   padding: 5px 5px 0px 5px;
   font-family: "Open Sans Condensed", sans-serif;
+  margin-left: 20px;
 }
 .text-input:focus {
   outline: none;

@@ -10,6 +10,7 @@ export const AddButton = styled.button`
   font-size: 25px;
   color: #b7cf9e;
   text-align: center;
+  text-align: -webkit-center;
 `;
 export const CheckAllButton = styled.button`
   background-color: white;
