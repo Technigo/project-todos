@@ -8,7 +8,7 @@ const todos = createSlice({
 	},
 	reducers: {
 		addTodo: (store, action) => {
-            console.log(store);
+            console.log(action);
             
 			const newTodo = {
 				id: uniqid(),
