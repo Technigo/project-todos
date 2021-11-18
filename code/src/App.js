@@ -4,7 +4,6 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import todo from "./reducers/todo";
 import AddTodo from "components/AddTodo";
-import TodoList from "components/TodoList";
 import AddTask from "components/AddTask";
 import { OuterSection } from "components/GlobalStyledComponents";
 

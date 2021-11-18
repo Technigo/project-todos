@@ -59,6 +59,7 @@ const StyledDate = styled.div`
 
   @media (min-width: 992px) {
     width: 150px;
+  }
 `;
 
 const RemoveButton = styled.div`
