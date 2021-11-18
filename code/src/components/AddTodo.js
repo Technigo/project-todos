@@ -9,17 +9,25 @@ const AddTodo = () => {
   const dispatch = useDispatch()
 
   const onAddTodo = () => {
-    dispatch(todos.actions.addTodo('input'))
+    dispatch(todos.actions.addTodo(input))
   }
+
+ 
+  // const onKeyDown = () => {
+  //   if (event.key === 'Enter') {
+  //     console.log('hej')
+  //   }
+  // }
 
   return (
     <div>
       <input 
         type="text" 
-        value={input} 
-        onChange={(event) => setInput(event.target.value)} 
+        value={input}
+        placeholder="make coffee" 
+        onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={onAddTodo}>Add todo</button>
+      <button onClick={onAddTodo}>+</button>
     </div>
   )
 }

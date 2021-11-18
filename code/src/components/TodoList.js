@@ -1,7 +1,20 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-
+import styled from 'styled-components'
 import todos from '../reducers/todos'
+
+
+const TodoContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: auto;
+  margin: 10px;
+`
+const Section = styled.section`
+  display: flex;
+  align-items: center;
+`
 
 const TodoList = () => {
   const items = useSelector(store => store.todos.items) //reference the slice with store.todos
@@ -18,24 +31,23 @@ const TodoList = () => {
   // }
 
   //v2
-  const onDeleteTodo = (id) => {
-    dispatch(todos.actions.deleteTodo(id))
-  }
+  // const onDeleteTodo = (id) => {
+  //   dispatch(todos.actions.deleteTodo(id))
+  // }
 
   return (
-    <section>
+    <TodoContainer>
       {items.map((item, index) => (
-        <div className="flex-item" key={item.id}>
-          <p>{item.text}</p>
-          <input 
-            type="checkbox" 
-            checked={item.isComplete} 
-            onChange={() => onToggleTodo(item.id)} 
-          />
-          <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
-        </div>
+          <Section key={item.id}>
+            <input 
+              type="checkbox" 
+              checked={item.isComplete} 
+              onChange={() => onToggleTodo(item.id)} 
+            />
+            <p>{item.text}</p> 
+          </Section>
       ))}
-    </section>
+    </TodoContainer>
   ) 
 }
  
