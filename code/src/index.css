@@ -4,12 +4,19 @@ html {
   background-image: url(./assets/light-sky.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  overflow: scroll;
+}
+
+.dark {
+  background-image: url('./assets/dark3.jpg');
+}
+
+.default {
+  background-image: url(./assets/light-sky.jpg);
 }
 body {
   margin: 0 auto;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -24,35 +31,18 @@ code {
     monospace;
 }
 
-.complete-todo {
-  color: blueviolet;
+h1 {
+  font-size: 20px;
 }
 
-.checkbox {
-  appearance: none;
-  background-color: #fff;
-  margin: 0;
-  font: inherit;
-  color: black;
-  width: 2em;
-  height: 2em;
-  border: 0.15em solid #edac5f;
-  border-radius: 1em;
-  transform: translateY(-0.075em);
-  display: grid;
-  place-content: center;
+p {
+  font-weight: 400px;
+  margin: 3px;
 }
-.checkbox::before {
-  content: '';
-  width: 1.3em;
-  height: 1.3em;
-  border-radius: 50%;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 1em 1em #edac5f;
-}
-.checkbox:checked::before {
-  transform: scale(1);
+
+.complete-todo {
+  color: #4398bf;
+  margin: 3px;
 }
 
 .input-hidden,
@@ -63,4 +53,104 @@ code {
 .input-active,
 .button-active {
   display: initial;
+}
+
+.date {
+  font-size: 10px;
+  margin: 0;
+  font-weight: 300px;
+}
+
+.todo-item {
+  margin: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4398bf;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #4398bf;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Scrollbar styling  */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+.scrollbar-hidden {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
 }

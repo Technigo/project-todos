@@ -1,8 +1,12 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-
+import { useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
-import { AddTaskButton } from './StyledTodoList'
+import {
+  AddTodoButton,
+  AddTodoContainer,
+  AddTodoInput,
+  SendButton,
+} from './StyledTodoList'
 
 export const AddTodo = () => {
   const [input, setInput] = useState('')
@@ -29,15 +33,16 @@ export const AddTodo = () => {
   }
 
   return (
-    <div>
-      <input
+    <AddTodoContainer>
+      <AddTodoInput
         className={isActive ? 'input-active' : 'input-hidden'}
         onKeyDown={(event) => onEnter(event)}
+        placeholder='Add todo..'
         type='text'
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button
+      <SendButton
         className={isActive ? 'button-active' : 'button-hidden'}
         disabled={input < 1}
         onClick={() => {
@@ -46,8 +51,13 @@ export const AddTodo = () => {
         }}
       >
         Add todo
-      </button>
-      <AddTaskButton onClick={toggleClass}>&#9547;</AddTaskButton>
-    </div>
+      </SendButton>
+      <AddTodoButton
+        className={isActive ? 'addtask-active' : 'default-button'}
+        onClick={toggleClass}
+      >
+        <p>&#9547;</p>
+      </AddTodoButton>
+    </AddTodoContainer>
   )
 }

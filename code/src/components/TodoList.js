@@ -1,19 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
-import { StyledCheckBox, TodoWrapper } from './StyledTodoList'
+import {
+  StyledCheckBox,
+  TodoWrapper,
+  DeleteButton,
+  TodoSection,
+} from './StyledTodoList'
+import Logo from '../assets/logo.png'
 
 export const TodoList = () => {
+  const [isActive, setActive] = useState(false)
   const items = useSelector((store) => store.todos.items)
-  const completeItems = useSelector((store) => store.todos.items.isComplete)
+  const completeItems = items.filter((listItem) => listItem.isComplete)
+  const numberOfCompleteItems = completeItems.length
+  // const uncompletedListItems = items.filter((listItem) => !listItem.isComplete)
+  // const todaysDate = moment().format('DD MMMM')
 
   const numberOfTodos = items.length
-  // let completeBox = document.getElementsByClassName('completed')
-  // const completeTodos = useSelector(
-  //   (store) => store.todos.items.isComplete === true.length
-  // )
-
-  // const numberOfCompleteTodos = completeTodos.length
 
   const dispatch = useDispatch()
 
@@ -25,31 +29,51 @@ export const TodoList = () => {
     dispatch(todos.actions.deleteTodo(id))
   }
 
-  return (
-    <div>
-      <div>
-        <p>You have {numberOfTodos} tasks to do!</p>
-      </div>
-      {items.map((item) => (
-        <TodoWrapper key={item.id}>
-          <div>
-            <StyledCheckBox
-              className='checkbox'
-              type='checkbox'
-              checked={item.isComplete}
-              onChange={() => onToggleTodo(item.id)}
-            />
-            <p
-              className={item.isComplete ? 'complete-todo' : 'uncomplete-todo'}
-            >
-              {item.text}
-            </p>
-          </div>
-          <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
-        </TodoWrapper>
-      ))}
+  const changeColorMode = () => {
+    if (setActive(!isActive)) {
+      return 'dark'
+    } else {
+      return 'default'
+    }
+  }
 
-      {/* <div>You have completed {completeTodos} tasks!</div> */}
-    </div>
+  document.getElementById('html').className = !isActive ? 'dark' : 'default'
+
+  return (
+    <>
+      <div className='header'>
+        <img src={Logo} alt='check-mark' width='80px' height='60px' />
+        <h1>You have {numberOfTodos - numberOfCompleteItems} tasks to do!</h1>
+        <label className='switch'>
+          <input type='checkbox' onClick={() => changeColorMode()} />
+          <span className='slider round'></span>
+        </label>
+      </div>
+      <TodoSection>
+        {items.map((item) => (
+          <TodoWrapper key={item.id}>
+            <div>
+              <StyledCheckBox
+                className='checkbox'
+                type='checkbox'
+                checked={item.isComplete}
+                onChange={() => onToggleTodo(item.id)}
+              />
+              <div>
+                <p className='date'>{item.date}</p>
+                <p
+                  className={item.isComplete ? 'todo-item' : 'uncomplete-todo'}
+                >
+                  {item.text}
+                </p>
+              </div>
+            </div>
+            <DeleteButton onClick={() => onDeleteTodo(item.id)}>
+              Delete
+            </DeleteButton>
+          </TodoWrapper>
+        ))}
+      </TodoSection>
+    </>
   )
 }
