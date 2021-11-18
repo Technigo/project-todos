@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
+import DatePicker from 'react-datepicker'
 
 import { todos } from '../reducers/todos'
 
@@ -27,6 +28,7 @@ const ModalContent = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  align-items: center;
 `
 const CloseButton = styled.div`
   box-sizing: border-box;
@@ -39,7 +41,8 @@ const CloseButton = styled.div`
   font-size: 1.4rem;
 `
 
-export const TodoItem = ({ id }) => {
+export const TodoItem = () => {
+  const [startDate, setStartDate] = useState(new Date())
   const item = useSelector(store => store.todos.modalItem)
   const dispatch = useDispatch()
 
@@ -53,6 +56,7 @@ export const TodoItem = ({ id }) => {
         <ModalWrapper>
           <ModalContent>
             <p>{item.text}</p>
+            <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
             <CloseButton onClick={onModalClick}>Close</CloseButton>
           </ModalContent>
         </ModalWrapper>

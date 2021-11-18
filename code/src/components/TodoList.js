@@ -27,6 +27,16 @@ const TodoText = styled.p`
 const Checkbox = styled.input`
   border-radius: 50%;
 `
+const Button = styled.button`
+  margin: 5px;
+  height: 4rem;
+  width: 4rem;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 10px;
+  border: 0;
+  color: black;
+`
 
 export const TodoList = () => {
   const items = useSelector(store => store.todos.items)
@@ -54,7 +64,7 @@ export const TodoList = () => {
             onChange={() => onToggleTodo(item.id)}
           />
           <TodoText onClick={() => onSelectItem(item.id)}>{item.text}</TodoText>
-          <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
+          <Button onClick={() => onDeleteTodo(item.id)}>x</Button>
         </TodoItem>
       ))}
     </TodoSection>
