@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const StyledButton = styled.button`
-  background: var(--red);
+const StartButton = styled.button`
+  background: var(--lax);
   color: var(--white);
   font-family: inherit;
   padding: 0.6em 1.3em;
@@ -15,7 +15,6 @@ const StyledButton = styled.button`
   &:hover {
     transform: translate(-0.05em, -0.05em);
     box-shadow: var(--brown) 0.15em 0.15em;
-    background-color: purple;
   }
  
   &:active {
@@ -24,6 +23,6 @@ const StyledButton = styled.button`
   }
 `
 
-const Buttons = ({ text }) => <StyledButton>{text}</StyledButton>
+export const StartBtn = ({ text }) => <StartButton>{text}</StartButton>
 
-export default Buttons
+

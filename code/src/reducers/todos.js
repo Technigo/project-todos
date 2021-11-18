@@ -12,9 +12,10 @@ const todos = createSlice({
     addToDo: (state, action) => {
       state.items.push({
         id: uniqid(),
-        task: action.payload,
+        task: action.payload.input,
         isComplete: false,
-        newDate: new Date()
+        newDate: new Date(),
+        category: action.payload.category
       })
     },
     removeToDo: (state, action) => {
@@ -26,7 +27,7 @@ const todos = createSlice({
     },
     completeAll: (state) => {
       state.items = []
-    }
+    },
   }
 })
 

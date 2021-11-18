@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --red: #9b0c33;
-  --white: #fbd8c1;
-  --brown: #681609;
+  --lax: #e59089;
+  --white: #fff4f3;
+  --brown: #9b0c33;
 }
 
 body {
@@ -11,7 +11,7 @@ body {
   font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #C88B77;
+  background-color: var(--white);
   height: 100vh;
 }
 
