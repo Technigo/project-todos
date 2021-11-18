@@ -24,6 +24,9 @@ export const CheckAllButton = styled.button`
   width: 250px;
   font-weight: 100;
   margin: 10px auto;
+  &:hover {
+    box-shadow: 2px 2px #b7cf9e;
+  }
 `;
 export const DeleteButton = styled.button`
   border-radius: 20px;
@@ -34,4 +37,8 @@ export const DeleteButton = styled.button`
   text-align: center;
   justify-content: flex-end;
   color: black;
+
+  &:hover {
+    box-shadow: 2px 2px #ee7d69;
+  }
 `;

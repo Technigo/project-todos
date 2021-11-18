@@ -34,7 +34,7 @@ const HeaderText = styled.h1`
   margin: 5px 10px;
   color: white;
   font-weight: 200;
-  font-size: 30px;
+  font-size: 40px;
 `;
 const SmallHeaderText = styled.h2`
   align-self: flex-start;
