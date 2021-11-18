@@ -8,7 +8,9 @@ import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 import Header from 'components/Header';
 import MainContainer from 'components/MainContainer';
-// import Completed from 'components/CompletedTodos';
+import ClearAllButton from 'components/ClearAllButton';
+
+
 
 //app.js are the origin component of our app.
 
@@ -32,7 +34,6 @@ store.subscribe(() => {
   localStorage.setItem("reduxState", JSON.stringify(store.getState()));
 });
 
-// const store = configureStore({ reducer }); 
 
 export const App = () => {
 	return (
@@ -43,6 +44,7 @@ export const App = () => {
 			<AddTodo />
       {/* <Completed /> */}
 			<TodoList />
+			<ClearAllButton />
       </MainContainer> 
 		</Provider>
 	);

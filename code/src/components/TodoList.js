@@ -3,6 +3,36 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import todos from '../reducers/todos';
 
+import styled from "styled-components";
+
+//styled components
+const TodoSection = styled.section`
+word-wrap: break-word;
+font-family: 'Comic Neue', cursive;
+`;
+
+const TodoItem = styled.div`
+word-wrap: break-word;
+font-family: 'Comic Neue', cursive;
+`;
+
+const TodoParagraph = styled.p`
+	display:inline-block;
+	width: 55%;
+	font-size: 14px;
+`;
+
+const Checkbox = styled.input`
+	width:20%;
+`;
+
+const DeleteToDo = styled.button`
+	display:inline-block;
+
+`;
+
+//code
+//taking items from the store - import to refer to slice which is todos in this case 
 const TodoList = () => {
 	const items = useSelector((store) => store.todos.items);
 
@@ -17,26 +47,23 @@ const TodoList = () => {
 	};
 
 	return (
-		<section>
+		<TodoSection>
 			{items.map((item, index) => (
-				<div className="flex-item" key={item.id}>
-					<p>{item.text}</p>
-					<input
+				<TodoItem key={item.id}>
+					<Checkbox
 						type="checkbox"
 						checked={item.isComplete}
 						onChange={() => onToggleTodo(item.id)}
 					/>
 
-					{/* // v1 */}
-					{/* <button onClick={() => onDeleteTodoMutability(index)}>Delete</button> */}
+					<TodoParagraph>{item.text}</TodoParagraph>
 
-					{/* // v2 */}
-					<button onClick={() => onDeleteTodoImmutability(item.id)}>
+					<DeleteToDo onClick={() => onDeleteTodoImmutability(item.id)}>
 						Delete
-					</button>
-				</div>
+					</DeleteToDo>
+				</TodoItem>
 			))}
-		</section>
+		</TodoSection>
 	);
 };
 

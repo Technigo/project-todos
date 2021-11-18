@@ -51,9 +51,15 @@ const todos = createSlice({ //name the varibale as the slice
 			const decreasedItems = store.items.filter(
 				(item) => item.id !== action.payload
 			);
-
 			store.items = decreasedItems;
 		},
+
+
+    
+    clearAllTodos: (store) => {
+			store.items = [];
+		  },
+
 	},
 });
 
