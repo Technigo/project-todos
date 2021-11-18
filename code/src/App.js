@@ -4,6 +4,8 @@ import { combineReducers, createStore } from "@reduxjs/toolkit";
 import todos from "./reducers/todos";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
+import Header from "./components/Header";
+import ClearAll from "./components/ClearAll";
 
 //collect all slices and put them together in one place
 const reducer = combineReducers({
@@ -30,8 +32,9 @@ export const App = () => {
   return (
     <Provider store={store}>
       <main>
-        <h1>To-do's</h1>
+        <Header />
         <AddTodo />
+        <ClearAll />
         <TodoList />
       </main>
     </Provider>

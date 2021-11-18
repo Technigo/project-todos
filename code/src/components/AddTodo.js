@@ -15,7 +15,7 @@ const AddTodo = () => {
   };
 
   return (
-    <form className="add-todo-section" onSubmit={addTodo}>
+      <form className="add-todo-section" onSubmit={addTodo}>
       <button className="add-btn" onClick={addTodo} type="submit">
         <i class="fas fa-plus"></i>
       </button>

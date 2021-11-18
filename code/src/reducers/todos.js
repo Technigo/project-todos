@@ -27,8 +27,7 @@ const todos = createSlice({
     toggleTodo: (store, action) => {
       const updatedItems = store.items.map((item) => {
         console.log(item.id, action.payload);
-        if (item.id === action.payload) {
-          //is item.id matching with the right todo (action.payload)
+        if (item.id === action.payload) { //checking if item.id match with the right todo (action.payload)
           const updatedTodo = {
             ...item, // short for: "id: item.id, text: item.text, isComplete: item.isComplete"
             isComplete: !item.isComplete,
@@ -51,6 +50,11 @@ const todos = createSlice({
 
       store.items = decreasedItems;
     },
+
+    //fourth method:
+    clearAll: (store) => {
+			store.items = [];
+		  },
   },
 });
 
