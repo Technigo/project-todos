@@ -13,13 +13,27 @@ const AddContainer = styled.div `
     
 `
 const Addbutton = styled.button `
-    margin: 0;
+    margin-right: 10px;
     border: none;
-    width: 20%;`
+    width: 20%;
+    justify-content: flex-end;
+    background: white;
+    color: inherit;
+    -webkit-appearance: none;
+    -moz-appearance: none;`
 
-
+const Plus = styled.img `
+    width:30px;
+`
 const TaskInput =styled.input`
     border: none;
+    width: 80%;
+    font-size: 16px;
+    margin-left: 10px;
+    &::-webkit-input-placeholder {
+        color: grey;
+        font-size: 20px;
+      }   
 `
 
 
@@ -30,16 +44,18 @@ const AddTodo = () => {
     const dispatch = useDispatch () // always needed
     
     const onAddTodo = () => {
-        dispatch(todos.actions.addTodo(input))// This is the function which is invoked when you click the button to add a to-do
+        dispatch(todos.actions.addTodo(input)); setInput('');// This is the function which is invoked when you click the button to add a to-do
     }
+    
     return (
+        
         <AddContainer>
-             <Addbutton onClick={onAddTodo}> + </Addbutton> 
+             
             <TaskInput type="text" 
-            placeholder="Your task here"
+            placeholder="Start your Future"
             value={input} 
             onChange ={(event) => setInput(event.target.value)}/>
-           
+           <Addbutton onClick={onAddTodo}><Plus src='assets/more.png'/> </Addbutton>
         </AddContainer>
     )
 }
