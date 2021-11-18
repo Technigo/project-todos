@@ -52,18 +52,15 @@ a {
 #root {
   display: flex;
   flex-direction: column;
-  align-content: center;
+  justify-content: space-between;
   min-height: 100vh;
 
-  border: 2px solid violet;
 }
 
 .container {
   display: flex;
   flex-direction: column;
-
   min-width: 334px;
   max-width: 500px;
   margin: 0 auto;
-  border: 2px solid blue;
 }

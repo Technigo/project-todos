@@ -35,6 +35,7 @@ export const TodoList = () => {
           <InputButton onClick={onAddToDo}>Add ToDo</InputButton>
         </div>
       </InputField>
+
       <div className="container">
         <h2>You have {listWithTodos.length} Todos left for today.</h2>
         {listWithTodos.map((item, index) => (
@@ -53,19 +54,20 @@ export const TodoList = () => {
 };
 
 const Content = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: nowrap;
-  margin: 10px 0px;
-  height: 100%;
-
-  background-color: pink;
+  @media (min-width: 992px) {
+    border: 3px dotted black;
+    min-width: 334px;
+    max-width: 500px;
+    margin: 0 auto;
+  }
 `;
 
 const InputField = styled.div`
   background: var(--main-color);
+
+  @media (min-width: 992px) {
+    background: none;
+  }
 
   .input {
     display: flex;
@@ -74,11 +76,9 @@ const InputField = styled.div`
     align-items: center;
     flex-wrap: nowrap;
     margin: 10px 0px;
-  }
 
-  @media (min-width: 992px) {
-    border: 2px solid red;
-    background-color: var(--secondary-color);
+    @media (min-width: 992px) {
+    }
   }
 `;
 
@@ -114,6 +114,9 @@ const TheList = styled.div`
   flex-wrap: nowrap;
   border: 1px solid black;
   margin: 10px 0px;
+
+  @media (min-width: 992px) {
+  }
 `;
 
 const DeleteButton = styled.button`
