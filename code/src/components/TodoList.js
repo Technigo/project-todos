@@ -1,7 +1,6 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import DayJS from "react-dayjs"
-// import moment from "moment"
 
 import todos from "../reducers/todos"
 
