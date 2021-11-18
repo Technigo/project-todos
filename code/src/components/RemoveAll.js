@@ -1,11 +1,10 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Swal from 'sweetalert2';
 
 import todos from '../reducers/todos';
 
 export const RemoveAll = () => {
-  const items = useSelector(store => store.todos.items); // store."the slice". items from slice
   const dispatch = useDispatch();
 
   const handleRemoveAll = () => {
@@ -24,7 +23,7 @@ export const RemoveAll = () => {
         Swal.fire('Deleted!', '', 'success');
         dispatch(todos.actions.removeAll());
       } else if (willDelete.isDenied) {
-        dispatch(todos.items);
+        dispatch(todos.actions.items);
       }
     });
   };
