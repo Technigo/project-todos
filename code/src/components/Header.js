@@ -15,7 +15,8 @@ const HeaderBox = styled.section`
 const Header = () => {
   return (
     <HeaderBox>
-      <h1>TASKER</h1>
+      <p>✔️</p>
+      <h1>🌈TASKER</h1>
       <CompleteAllTask />
     </HeaderBox>
   );

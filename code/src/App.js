@@ -2,6 +2,7 @@ import React from 'react';
 
 import { Provider } from 'react-redux';
 import { combineReducers, createStore } from '@reduxjs/toolkit';
+import styled from 'styled-components';
 
 import tasks from './reducers/tasks';
 import TasksList from 'components/TasksList';
@@ -28,13 +29,19 @@ store.subscribe(() => {
   localStorage.setItem('todosReduxState', JSON.stringify(store.getState()));
 });
 
+const MainBox = styled.main`
+  background-color: rgb(0, 187, 249);
+`;
+
 export const App = () => {
   return (
     <Provider store={store}>
-      <Header />
-      <TaskCounter />
-      <TasksList />
-      <ClearAllTask />
+      <MainBox>
+        <Header />
+        <TaskCounter />
+        <TasksList />
+        <ClearAllTask />
+      </MainBox>
     </Provider>
   );
 };

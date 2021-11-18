@@ -7,15 +7,15 @@ const AddTaskBox = styled.div`
   background-color: skyblue;
   width: ${(props) => props.wid * 0.76}px;
   position: absolute;
-  bottom: ${(props) => props.hgt * 0.03}px;
+  ${'' /* bottom: ${(props) => props.hgt * 0.03}px; */}
 
   @media (min-width: 768px) {
-    bottom: ${(props) => props.hgt * 0.06}px;
+    ${'' /* bottom: ${(props) => props.hgt * 0.06}px; */}
   }
 
   @media (min-width: 1366px) {
     width: ${(props) => props.wid * 0.5}px;
-    bottom: ${(props) => props.hgt * 0.09}px;
+    ${'' /* bottom: ${(props) => props.hgt * 0.09}px; */}
   }
 
   input {

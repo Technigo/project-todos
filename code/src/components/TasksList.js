@@ -1,4 +1,5 @@
 import React from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useWindowSize } from '@react-hook/window-size';
 
@@ -77,10 +78,13 @@ const TaskCard = styled.section`
 
 const TasksList = () => {
   const [width, height] = useWindowSize();
+  let [checked, setChecked] = useState(false);
 
   const items = useSelector((store) =>
     store.tasks.items.filter((item) => item.complete === false)
   );
+
+  checked = items.complete;
 
   const dispatch = useDispatch();
 
@@ -88,28 +92,24 @@ const TasksList = () => {
     dispatch(tasks.actions.toggleCheck(id));
   };
 
+  const onSetChecked = () => {
+    setChecked(!checked);
+  };
+
+  const onCheckComplete = (id) => {
+    onSetChecked();
+    setTimeout(() => onToggleCheck(id), 2000);
+  };
+
   return (
     <TaskCard className={items.length <= 0 && 'empty'} hgt={height} wid={width}>
-      {/* {items.map((item) => (
-        <div key={item.id}>
-          <input
-            className='checkbox'
-            type='checkbox'
-            checked={item.complete}
-            onChange={() => onToggleCheck(item.id)}
-          />
-          <p>{item.text}</p>
-          <p>{item.timestamp}</p>
-          <DeleteTask item={item.id} />
-        </div>
-      ))} */}
       {items.map((item) => (
         <div key={item.id}>
           <input
             className='checkbox'
             type='checkbox'
-            checked={item.complete}
-            onChange={() => onToggleCheck(item.id)}
+            checked={checked}
+            onChange={() => onCheckComplete(item.id)}
           />
           <p>{item.text}</p>
           <p>{item.timestamp}</p>
