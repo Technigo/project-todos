@@ -23,27 +23,31 @@ export const TodoList = () => {
         {items.length <= 0 && <p>Add a task</p>}
         {items.map((item) => (
           <div key={item.id} className="small-task-wrapper">
-            <input
-              className="checkbox"
-              type="checkbox"
-              checked={item.isComplete}
-              onChange={() => onToggleTodo(item.id)}
-            />
-            <div className="task-wrapper">
-              <p className="task-date">{item.timePosted}</p>
-              <p className={item.isComplete ? "task-completed" : "task-p"}>
-                {item.text}
-              </p>
+            <div className="check-text">
+              <input
+                className="checkbox"
+                type="checkbox"
+                checked={item.isComplete}
+                onChange={() => onToggleTodo(item.id)}
+              />
+              <div className="task-wrapper">
+                <p className="task-date">{item.timePosted}</p>
+                <p className={item.isComplete ? "task-completed" : "task-p"}>
+                  {item.text}
+                </p>
+              </div>
             </div>
             <DeleteButton onClick={() => onDeleteTodo(item.id)}>
               Delete
             </DeleteButton>
           </div>
         ))}
+        {items.length >= 1 && (
+          <CheckAllButton onClick={onClickClearAll}>
+            Complete all
+          </CheckAllButton>
+        )}
       </section>
-      {items.length >= 1 && (
-        <CheckAllButton onClick={onClickClearAll}>Complete all</CheckAllButton>
-      )}
     </>
   );
 };

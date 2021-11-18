@@ -9,7 +9,7 @@ export const AddTodo = () => {
   const [input, setInput] = useState("");
 
   const onAddTodo = () => {
-    dispatch(todos.actions.addTodo(input));
+    dispatch(todos.actions.addTodo(input), setInput(""));
   };
 
   return (
@@ -20,6 +20,7 @@ export const AddTodo = () => {
         placeholder="Add"
         value={input}
         onChange={(event) => setInput(event.target.value)}
+        onKeyDown={(e) => e.key === "Enter" && onAddTodo()}
       />
       <AddButton onClick={onAddTodo} disabled={input < 1}>
         +

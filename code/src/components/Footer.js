@@ -6,6 +6,8 @@ const FooterWrapper = styled.div`
   width: 100%;
   font-size: 20px;
   padding: 10px;
+  bottom: 0;
+  position: absolute;
 `;
 const FooterText = styled.p`
   font-size: 15px;
@@ -17,7 +19,7 @@ const FooterText = styled.p`
 const Link = styled.a`
   text-decoration: none;
   color: white;
-  /* A handwritten font here */
+  font-family: "Caveat", cursive;
 `;
 
 export const Footer = () => {

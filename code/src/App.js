@@ -28,7 +28,7 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
-      <div className="contentWrapper">
+      <div className="content-wrapper">
         <Header />
         <AddTodo />
         <TodoList />

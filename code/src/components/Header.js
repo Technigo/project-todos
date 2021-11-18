@@ -11,6 +11,7 @@ const HeaderWrapper = styled.div`
   background-color: #edac5f;
   box-shadow: 2px 2px 5px gray;
   height: 100px;
+  padding: 10px 0px;
 `;
 const Paragraph = styled.p`
   font-size: 13px;
@@ -29,14 +30,14 @@ const AlignText = styled.div`
 `;
 const HeaderText = styled.h1`
   align-self: flex-start;
-  margin: 10px 10px;
+  margin: 5px 10px;
   color: white;
   font-weight: 200;
   font-size: 30px;
 `;
 const SmallHeaderText = styled.h2`
   align-self: flex-start;
-  margin: 0px 10px;
+  margin: 5px 10px;
   color: white;
   font-weight: 200;
   font-size: 15px;

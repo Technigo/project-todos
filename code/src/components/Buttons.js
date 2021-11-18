@@ -4,9 +4,9 @@ export const AddButton = styled.button`
   background-color: white;
   border: 4px solid #b7cf9e;
   border-radius: 50%;
-  margin-left: 10px;
-  width: 50px;
-  height: 50px;
+  margin: 0px 10px;
+  width: 40px;
+  height: 40px;
   font-size: 25px;
   color: #b7cf9e;
   text-align: center;
@@ -20,7 +20,7 @@ export const CheckAllButton = styled.button`
   height: 40px;
   width: 250px;
   font-weight: 100;
-  margin: 20px auto;
+  margin: 10px auto;
 `;
 export const DeleteButton = styled.button`
   border-radius: 20px;
