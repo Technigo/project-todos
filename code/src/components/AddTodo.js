@@ -20,7 +20,9 @@ const AddTodo = () => {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={onTodoAdd}>Add Todo</button>
+      <button onClick={onTodoAdd}>
+        <i class="fas fa-plus"></i>
+      </button>
     </div>
   );
 };
