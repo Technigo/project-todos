@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import windowSize from 'react-window-size';
+import { useWindowSize } from '@react-hook/window-size';
 
 import AddTasks from './AddTasks';
 import DeleteTask from './DeleteTask';
@@ -10,6 +10,16 @@ import styled from 'styled-components';
 
 const TaskCard = styled.section`
   background: rgb(255, 231, 231);
+  height: ${(props) => props.hgt * 0.8}px;
+  width: ${(props) => props.wid * 0.9}px;
+
+  @media (min-width: 768px) {
+    width: ${(props) => props.wid * 0.8}px;
+  }
+
+  @media (min-width: 1366px) {
+    width: ${(props) => props.wid * 0.5}px;
+  }
 
   div {
     display: flex;
@@ -29,10 +39,48 @@ const TaskCard = styled.section`
     border: none;
     background: transparent;
   }
+
+  .checkbox {
+    appearance: none;
+    background-color: #fff;
+    margin: 0;
+    font: inherit;
+    color: black;
+    width: 2em;
+    height: 2em;
+    border: 0.15em solid #edac5f;
+    border-radius: 1em;
+    transform: translateY(-0.075em);
+    display: grid;
+    place-content: center;
+  }
+  .checkbox::before {
+    content: '';
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 50%;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #edac5f;
+  }
+  .checkbox:checked::before {
+    transform: scale(1);
+  }
+
+  &.empty {
+    background-color: yellow;
+    background-image: url('https://media.giphy.com/media/13d2jHlSlxklVe/giphy.gif');
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 `;
 
 const TasksList = () => {
-  const items = useSelector((store) => store.tasks.items);
+  const [width, height] = useWindowSize();
+
+  const items = useSelector((store) =>
+    store.tasks.items.filter((item) => item.complete === false)
+  );
 
   const dispatch = useDispatch();
 
@@ -41,21 +89,36 @@ const TasksList = () => {
   };
 
   return (
-    <TaskCard>
-      {items.map((item, index) => (
+    <TaskCard className={items.length <= 0 && 'empty'} hgt={height} wid={width}>
+      {/* {items.map((item) => (
         <div key={item.id}>
           <input
+            className='checkbox'
             type='checkbox'
             checked={item.complete}
             onChange={() => onToggleCheck(item.id)}
           />
           <p>{item.text}</p>
+          <p>{item.timestamp}</p>
+          <DeleteTask item={item.id} />
+        </div>
+      ))} */}
+      {items.map((item) => (
+        <div key={item.id}>
+          <input
+            className='checkbox'
+            type='checkbox'
+            checked={item.complete}
+            onChange={() => onToggleCheck(item.id)}
+          />
+          <p>{item.text}</p>
+          <p>{item.timestamp}</p>
           <DeleteTask item={item.id} />
         </div>
       ))}
-      <AddTasks />
+      <AddTasks hgt={height} wid={width} />
     </TaskCard>
   );
 };
 
-export default windowSize(TasksList);
+export default TasksList;

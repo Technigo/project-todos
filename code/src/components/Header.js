@@ -1,13 +1,24 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const HeaderH1 = styled.h1`
-  background-color: purple;
+import CompleteAllTask from './ClearAllTask';
+
+const HeaderBox = styled.section`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(123, 104, 238);
   color: white;
 `;
 
 const Header = () => {
-  return <HeaderH1>TASKER</HeaderH1>;
+  return (
+    <HeaderBox>
+      <h1>TASKER</h1>
+      <CompleteAllTask />
+    </HeaderBox>
+  );
 };
 
 export default Header;
