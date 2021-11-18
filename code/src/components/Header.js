@@ -11,6 +11,7 @@ export const Header = () => {
   const todoList = useSelector((store) => store.todo.todos);
   const completedList = todoList.filter((todo) => todo.completed);
 
+  // Function that checks amount completed quests.
   const getPercentage = () => {
     if (completedList.length === 0) {
       return 0;
