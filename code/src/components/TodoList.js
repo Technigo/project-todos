@@ -12,8 +12,23 @@ const TodosContainer = styled.section`
   padding-bottom: 5px;
   padding-left: 15px;
   margin: 10px;
-  background-color: #fffbfb90;
+  margin-bottom: 20px;
+  background-color: #fffbfb54;
   border-radius: 10px;
+
+  @media (min-width: 768px) {
+    margin-left: 80px;
+    margin-right: 80px;
+    padding-top: 25px;
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+  @media (min-width: 1366px) {
+    margin-left: 120px;
+    margin-right: 120px;
+    padding-right: 50px;
+    padding-left: 50px;
+  }
 `;
 
 const TodoWrapper = styled.div`
@@ -24,6 +39,12 @@ const TodoWrapper = styled.div`
   border-radius: 10px;
   background-color: #8fbfd7;
   margin-bottom: 10px;
+
+  @media (min-width: 768px) {
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-bottom: 20px;
+  }
 `;
 
 const CheckboxWrapper = styled.div`
@@ -51,6 +72,16 @@ const CheckboxInput = styled.input`
 const DeleteButton = styled.button`
   background-color: #3b8cb4;
   border: 1px solid #337b9e;
+
+  @media (min-width: 768px) {
+    &:hover {
+      background-color: #276a8b;
+    }
+  }
+`;
+
+const DeleteEmoji = styled.span`
+  margin-right: 1px;
 `;
 
 const TodoList = () => {
@@ -81,13 +112,9 @@ const TodoList = () => {
 
             <p>{item.text}</p>
             <DeleteButton onClick={() => onDeleteTodo(item.id)}>
-              <span
-                className="delete-emoji"
-                role="img"
-                aria-label="delete-emoji"
-              >
+              <DeleteEmoji role="img" aria-label="delete-emoji">
                 ➖
-              </span>
+              </DeleteEmoji>
             </DeleteButton>
           </TodoWrapper>
         ))}

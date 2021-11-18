@@ -11,12 +11,31 @@ const HeaderContainer = styled.div`
   text-align: center;
   justify-content: center;
   align-items: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+`;
+
+const HeaderText = styled.h1`
+  font-family: "Lobster", cursive;
+  margin-top: 0;
+
+  @media (min-width: 768px) {
+    font-size: 38px;
+    margin-left: 50px;
+    margin-bottom: 0;
+  }
+  @media (min-width: 1366px) {
+    margin-left: 95px;
+  }
 `;
 
 const Header = () => {
   return (
     <HeaderContainer>
-      <h1>Todo:</h1>
+      <HeaderText>Todo List</HeaderText>
       <Counter />
     </HeaderContainer>
   );

@@ -8,13 +8,34 @@ const InputContainer = styled.div`
   display: flex;
   padding: 20px;
   justify-content: space-between;
+  align-items: center;
+
+  @media (min-width: 768px) {
+    margin-top: 20px;
+    margin-left: 80px;
+    margin-right: 80px;
+    margin-bottom: 20px;
+  }
+  @media (min-width: 1366px) {
+    justify-content: center;
+  }
 `;
 
 const StyledInput = styled.input`
-  width: 75%;
+  width: 65%;
   background-color: #8fbfd7;
   border: 1px solid #337b9e;
   border-radius: 20px;
+  padding: 10px;
+
+  @media (min-width: 768px) {
+    border-radius: 30px;
+    padding: 25px;
+  }
+  @media (min-width: 1366px) {
+    width: 400px;
+    margin-right: 30px;
+  }
 `;
 
 const AddButton = styled.button`
@@ -23,15 +44,26 @@ const AddButton = styled.button`
   background-color: #3b8cb4;
   border: 1px solid #337b9e;
   border-radius: 20px;
+
+  @media (min-width: 768px) {
+    width: 80px;
+    border-radius: 40px;
+
+    &:hover {
+      background-color: #276a8b;
+    }
+  }
 `;
 
+const AddEmoji = styled.span``;
+
 const AddTodo = () => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState("Add new task ...");
   const dispatch = useDispatch();
   const onAddTodo = (input) => {
     dispatch(todos.actions.addTodo(input));
 
-    setInput("");
+    setInput("Add new task ...");
   };
 
   return (
@@ -42,9 +74,9 @@ const AddTodo = () => {
         onChange={(event) => setInput(event.target.value)}
       />
       <AddButton onClick={() => onAddTodo(input)}>
-        <span className="add-emoji" role="img" aria-label="add-emoji">
+        <AddEmoji role="img" aria-label="add-emoji">
           ➕
-        </span>
+        </AddEmoji>
       </AddButton>
     </InputContainer>
   );
