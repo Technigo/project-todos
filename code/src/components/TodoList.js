@@ -90,8 +90,10 @@ const TodoList = () => {
 
             <p>{item.text}</p>
             <DeleteButton onClick={() => onDeleteTodo(item.id)}>
-              <DeleteEmoji role="img" aria-label="delete-emoji">
-                ➖
+              <DeleteEmoji>
+                <span role="img" aria-label="delete-emoji">
+                  ➖
+                </span>
               </DeleteEmoji>
             </DeleteButton>
           </TodoWrapper>
