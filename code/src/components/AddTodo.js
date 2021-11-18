@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-
 import styled from "styled-components";
 
 import todos from '../reducers/todos'; //slice imported
@@ -42,8 +41,6 @@ font-family: 'Comic Neue', cursive;
 
 
 
-
-
 //code
 const AddTodo = () => { //pass anonymus function
 	const [input, setInput] = useState(''); //our state property. We use setInput function in order to update the State.
@@ -53,7 +50,12 @@ const AddTodo = () => { //pass anonymus function
 
 	const onAddTodo = () => { //function for add a to do
 		dispatch(todos.actions.addTodo(input)); //here we dispatch our action
+
+		// setting input field to an empty string
+		setInput("");
 	};
+
+
 
 	return (
 		<AddTodoContainer>

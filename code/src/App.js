@@ -1,7 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux'; 
 import { combineReducers, createStore } from '@reduxjs/toolkit';
-
 import todos from './reducers/todos'; //our slice
 
 import AddTodo from './components/AddTodo';
@@ -9,6 +8,7 @@ import TodoList from './components/TodoList';
 import Header from 'components/Header';
 import MainContainer from 'components/MainContainer';
 import ClearAllButton from 'components/ClearAllButton';
+import NoTodoLeft from  'components/NoTodoLeft';
 
 
 
@@ -39,13 +39,13 @@ export const App = () => {
 	return (
 		//Our components
 		<Provider store={store}> 
-    <MainContainer> 
-      <Header />
+    		<MainContainer> 
+    		<Header />
 			<AddTodo />
-      {/* <Completed /> */}
 			<TodoList />
 			<ClearAllButton />
-      </MainContainer> 
-		</Provider>
+			<NoTodoLeft />
+    		</MainContainer> 
+			</Provider>
 	);
 };

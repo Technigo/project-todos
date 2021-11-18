@@ -1,6 +1,6 @@
 import React from 'react';
 import todos from "../reducers/todos";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 
 //Thank you Darya DALA746 for this!
@@ -28,8 +28,12 @@ font-family: 'Comic Neue', cursive;
 
 
 const ClearAllButton = () => {
-	  //Get correct item from store based on index
-	  const dispatch = useDispatch();
+//Get correct item from store based on index
+const dispatch = useDispatch();
+
+const items = useSelector((store) => store.todos.items);
+const activeTodos = items.length;
+const noTodosLeft = activeTodos === 0;
 
 	  // calling clearAllTodos with dispatch 
 	  const clearAllTodos = () => {
@@ -38,11 +42,15 @@ const ClearAllButton = () => {
 	  };
 
 	return (
+    <>
+    { noTodosLeft === false && 
 		<ClearButtonContainer>
 			<ClearButton onClick={clearAllTodos}>
-				Clear all todos <i className="fas fa-trash"></i>
+			Clear all todos <i className="fas fa-trash"></i>
 			</ClearButton>
 		</ClearButtonContainer>
+  }
+  </>
 	)
 };
 
