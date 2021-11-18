@@ -1,50 +1,66 @@
 import { createSlice } from "@reduxjs/toolkit";
+import uniqid from "uniqid";
+
+const currentDate = new Date();
+const tomorrow = new Date();
+tomorrow.setDate(tomorrow.getDate() + 1);
+const yesterday = new Date();
+yesterday.setDate(yesterday.getDate() - 1);
 
 const todos = [
   {
-    id: 1,
+    id: uniqid(),
     title: "Walk in the park",
     place: "Trädgårdsföreningen, Gothenburg",
-    time: "09:00",
+    dueDate: currentDate.getTime(),
     category: "activity",
     completed: false,
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
-    id: 2,
-    title: "Walk in the park",
-    place: "Trädgårdsföreningen, Gothenburg",
-    time: "09:00",
+    id: uniqid(),
+    title: "Morning Jog",
+    place: "Outside",
+    dueDate: tomorrow.getTime(),
     category: "activity",
     completed: false,
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
-    id: 3,
-    title: "Walk in the park",
-    place: "Trädgårdsföreningen, Gothenburg",
-    time: "09:00",
+    id: uniqid(),
+    title: "Walk the dog",
+    place: "Outside",
+    dueDate: currentDate.getTime(),
     category: "activity",
     completed: false,
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
-    id: 4,
-    title: "Walk in the park",
-    place: "Trädgårdsföreningen, Gothenburg",
-    time: "09:00",
-    category: "activity",
+    id: uniqid(),
+    title: "Cinema",
+    place: "Biopalatset, Gothenburg",
+    dueDate: tomorrow.getTime(),
+    category: "family",
     completed: false,
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
   },
   {
-    id: 5,
-    title: "Walk in the park",
-    place: "Trädgårdsföreningen, Gothenburg",
-    time: "09:00",
-    category: "activity",
+    id: uniqid(),
+    title: "Cook family dinner",
+    place: "At home",
+    dueDate: yesterday.getTime(),
+    category: "family",
     completed: false,
-    createdAt: new Date(),
+    createdAt: new Date().getTime(),
+  },
+  {
+    id: uniqid(),
+    title: "Important meeting",
+    place: "The Office",
+    dueDate: tomorrow.getTime(),
+    category: "business",
+    completed: false,
+    createdAt: new Date().getTime(),
   },
 ];
 
@@ -61,17 +77,20 @@ export const todo = createSlice({
     },
 
     addTodo: (store, action) => {
-      const { category, title, place, time } = action.payload;
-      const id = store.todos.length + 1;
-      store.todos.push({
+      const { category, title, place, dueDate } = action.payload;
+      const id = uniqid();
+
+      const newTodo = {
         id,
         category,
         title,
         place,
-        time,
+        dueDate,
         completed: false,
-        createdAt: new Date(),
-      });
+        createdAt: new Date().getTime(),
+      };
+
+      store.todos = [...store.todos, newTodo];
     },
 
     setIsCompleted: (store, action) => {
@@ -79,7 +98,6 @@ export const todo = createSlice({
       const index = store.todos.findIndex((todo) => todo.id === id);
 
       const newTodos = [...store.todos];
-
       newTodos[index].completed = !newTodos[index].completed;
       store.todos = newTodos;
     },
@@ -96,11 +114,10 @@ export const todo = createSlice({
 
     removeTodo: (store, action) => {
       const { id } = action.payload;
-      const index = store.todos.findIndex((todo) => todo.id === id);
 
-      const newTodos = [...store.todos];
-      newTodos.splice(index, 1);
-      store.todos = newTodos;
+      store.todos.splice(action.payload, 1);
+      const decreasedItem = store.todos.filter((item) => todos.id !== id);
+      store.todos = decreasedItem;
     },
   },
 });

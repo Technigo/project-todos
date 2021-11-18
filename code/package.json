@@ -20,10 +20,12 @@
     "moment": "^2.29.1",
     "react": "^16.12.0",
     "react-circular-progressbar": "^2.0.4",
+    "react-datepicker": "^4.3.0",
     "react-dom": "^16.12.0",
     "react-redux": "^7.2.6",
     "react-scripts": "3.2.0",
-    "styled-components": "^5.3.3"
+    "styled-components": "^5.3.3",
+    "uniqid": "^5.4.0"
   },
   "scripts": {
     "start": "react-scripts start",

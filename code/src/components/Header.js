@@ -4,6 +4,7 @@ import moment from "moment";
 import "react-circular-progressbar/dist/styles.css";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import { useSelector } from "react-redux";
+import { mainColor } from "./style/colors";
 
 export const Header = () => {
   const date = new Date();
@@ -44,7 +45,7 @@ export const Header = () => {
                 rotation: 0,
                 strokeLinecap: "butt",
                 pathTransition: "none",
-                pathColor: `#d98a60`,
+                pathColor: mainColor,
                 trailColor: `#fcf4f0`,
               })}
             />
@@ -57,7 +58,7 @@ export const Header = () => {
 };
 
 const HeaderContainer = styled.header`
-  height: 35vh;
+  min-height: 35vh;
   width: 100%;
   background-image: url("./pictures/HeaderPicture.jpg");
   background-repeat: no-repeat;
@@ -74,15 +75,27 @@ const TitleDateContainer = styled.div`
   width: 100%;
   display: grid;
   grid-template-rows: 1fr auto;
-  border-bottom: 3px #d98a60 solid;
+  border-bottom: 3px ${mainColor} solid;
 `;
 
 const Title = styled.h1`
   margin: 65px 0 10px 10px;
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 60px;
+  }
+  @media (min-width: 1025px) {
+    font-size: 60px;
+  }
 `;
 
 const DateContainer = styled.span`
   margin: 0 0 10px 10px;
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 26px;
+  }
+  @media (min-width: 1025px) {
+    font-size: 26px;
+  }
 `;
 
 const HeaderDetailContainer = styled.div`
@@ -91,10 +104,19 @@ const HeaderDetailContainer = styled.div`
   background-color: rgb(0, 0, 0, 0.3);
   padding: 0 10px 0px 10px;
   min-width: 110px;
+  @media (min-width: 668px) and (max-width: 1024px) {
+    min-width: 250px;
+  }
+  @media (min-width: 1025px) {
+    min-width: 350px;
+  }
 `;
 
 const AmountNumber = styled.span`
   font-size: 30px;
+  @media (min-width: 1025px) {
+    font-size: 40px;
+  }
 `;
 
 const AmountOfTodos = styled.div`
@@ -119,13 +141,23 @@ const PercentageContainer = styled.div`
 
 const AmountText = styled.span`
   color: rgb(255, 255, 255, 0.5);
+  @media (min-width: 1025px) {
+    font-size: 20px;
+  }
 `;
 
 const ProgressbarContainer = styled.div`
   width: 20px;
   height: 20px;
+  @media (min-width: 1025px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 const PercentageText = styled.span`
   font-size: 20px;
+  @media (min-width: 1025px) {
+    font-size: 30px;
+  }
 `;

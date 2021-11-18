@@ -4,12 +4,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/pro-light-svg-icons";
 import { screen } from "reducers/screen";
 import { useDispatch } from "react-redux";
+import { mainColor } from "../style/colors";
 
 export const AddButton = () => {
   const dispatch = useDispatch();
   return (
     <AddButtonCircle
       onClick={() => {
+        // Dispatch a change in screen to the global state.
         dispatch(screen.actions.currentScreen({ screen: "newTodo" }));
       }}
     >
@@ -27,9 +29,14 @@ const AddButtonCircle = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #d98a60;
+  background-color: ${mainColor};
   border-radius: 50%;
   border: lightgrey 1px solid;
   margin: 20px;
   font-size: 30px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(217, 138, 96, 0.8);
+    transition: all 200ms ease-in-out;
+  }
 `;

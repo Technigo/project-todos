@@ -1,21 +1,16 @@
 import React from "react";
-import { Header } from "./Header";
-import { NewTodoScreen } from "./NewTodoScreen";
+import { AddTodoScreen } from "../screens/AddTodoScreen";
 import { useSelector } from "react-redux";
-import { TodoList } from "./TodoList";
+import { TodoListScreen } from "screens/TodoListScreen";
 
+// From main I direct which screen will be shown depending on the current screen.
 export const Main = () => {
   const currentScreen = useSelector((store) => store.screen.currentScreen);
 
   return (
     <>
-      {currentScreen === "todoList" && (
-        <>
-          <Header />
-          <TodoList />
-        </>
-      )}
-      {currentScreen === "newTodo" && <NewTodoScreen />}
+      {currentScreen === "todoList" && <TodoListScreen />}
+      {currentScreen === "newTodo" && <AddTodoScreen />}
     </>
   );
 };

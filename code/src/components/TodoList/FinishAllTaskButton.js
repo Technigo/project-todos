@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import { useDispatch } from "react-redux";
-import { todo } from "../reducers/todo";
+import { todo } from "reducers/todo";
+import { grayColor } from "../style/colors";
 
 export const FinishAllTasksButton = () => {
   const dispatch = useDispatch();
@@ -10,7 +11,7 @@ export const FinishAllTasksButton = () => {
     <FlexBox>
       <CompleteAll
         onClick={() => {
-          console.log("hej");
+          // Dispatch and tell the global state to complete all tasks.
           dispatch(todo.actions.setAllIsCompleted());
         }}
       >
@@ -28,10 +29,12 @@ const FlexBox = styled.div`
 
 const CompleteAll = styled.button`
   border: none;
-  background-color: #d2d3db;
+  background-color: ${grayColor};
   padding: 10px;
 
   &:hover {
     cursor: pointer;
+    background-color: rgba(210, 211, 219, 0.8);
+    transition: all 200ms ease-in-out;
   }
 `;

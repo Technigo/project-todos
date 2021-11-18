@@ -1,22 +1,27 @@
 import React, { useState } from "react";
 import styled from "styled-components/macro";
-import { CategoryIcon } from "./CategoryIcon";
+import { CategoryIcon } from "../components/CategoryIcon";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/pro-light-svg-icons";
 import { useDispatch } from "react-redux";
 import { todo } from "reducers/todo";
 import { screen } from "reducers/screen";
+import DatePicker from "react-datepicker";
+import { grayColor, mainColor } from "../components/style/colors";
+import "react-datepicker/dist/react-datepicker.css";
 
-export const NewTodoScreen = () => {
+// Set local states depending on the value from the inputs.
+export const AddTodoScreen = () => {
   const [category, setCategory] = useState("business");
   const [todoTitle, setTodoTitle] = useState("");
   const [todoPlace, setTodoPlace] = useState("");
-  const [todoTime, setTodoTime] = useState("");
+  const [startDate, setStartDate] = useState(new Date());
   const dispatch = useDispatch();
 
+  // Resets the local state
   const reset = () => {
     setCategory("business");
-    setTodoTime("");
+    setStartDate(new Date());
     setTodoPlace("");
     setTodoTitle("");
   };
@@ -26,6 +31,7 @@ export const NewTodoScreen = () => {
       <GoBackIconHeaderContainer>
         <GoBackIcon
           onClick={() => {
+            // Dispatch scrollIntoView to false so it doesn't scroll down.
             dispatch(
               screen.actions.scrollDownToNewitem({ scrollIntoView: false })
             );
@@ -39,6 +45,7 @@ export const NewTodoScreen = () => {
       <ContentContainer>
         <CategoryIcon category={category} completed={false} canClick={false} />
         <Form
+          // Dispatch the information on submit to the global state.
           onSubmit={(event) => {
             event.preventDefault();
             dispatch(
@@ -46,12 +53,13 @@ export const NewTodoScreen = () => {
                 category: category,
                 title: todoTitle,
                 place: todoPlace,
-                time: todoTime,
+                dueDate: startDate.getTime(),
               })
             );
             reset();
 
             dispatch(screen.actions.currentScreen({ screen: "todoList" }));
+            // Dispatch scrollIntoView to true so it scroll to the bottom of the list.
             dispatch(
               screen.actions.scrollDownToNewitem({ scrollIntoView: true })
             );
@@ -85,15 +93,18 @@ export const NewTodoScreen = () => {
             value={todoPlace}
             onChange={(event) => setTodoPlace(event.target.value)}
           ></TodoInput>
-          <label htmlFor="place" />
-          <TodoInput
-            maxLength="20"
-            id="time"
-            name="time"
-            placeholder="Time"
-            value={todoTime}
-            onChange={(event) => setTodoTime(event.target.value)}
-          ></TodoInput>
+          <label htmlFor="dueDate">Due date</label>
+
+          <DatePicker
+            selected={startDate}
+            onChange={(date) => {
+              console.log(date);
+              setStartDate(date);
+            }}
+            minDate={new Date()}
+            showDisabledMonthNavigation
+            required
+          />
           <SubmitButton type="submit">Add your Todo</SubmitButton>
         </Form>
       </ContentContainer>
@@ -102,7 +113,7 @@ export const NewTodoScreen = () => {
 };
 
 const NewTodoContainer = styled.section`
-  background-color: #d98a60;
+  background-color: ${mainColor};
   width: 100%;
   height: 100%;
   min-height: 100vh;
@@ -114,6 +125,10 @@ const GoBackIcon = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 30px;
+  cursor: pointer;
+  @media (min-width: 1025px) {
+    font-size: 40px;
+  }
 `;
 
 const GoBackIconHeaderContainer = styled.div`
@@ -125,10 +140,17 @@ const Header3 = styled.h3`
   color: black;
   margin: 0;
   text-align: center;
+  @media (min-width: 1025px) {
+    font-size: 30px;
+  }
 `;
 
 const ContentContainer = styled.div`
   padding-top: 20px;
+  @media (min-width: 1025px) {
+    max-width: 400px;
+    margin: auto;
+  }
 `;
 
 const Form = styled.form`
@@ -140,17 +162,22 @@ const Form = styled.form`
 
 const SubmitButton = styled.button`
   border-radius: 3px;
-  background-color: #d2d3db;
+  background-color: ${grayColor};
   text-transform: uppercase;
   padding: 10px;
   border: 1px solid black;
   letter-spacing: 2px;
+  cursor: pointer;
+  &:hover {
+    background-color: rgba(210, 211, 219, 0.8);
+    transition: all 200ms ease-in-out;
+  }
 `;
 
 const TodoInput = styled.input`
-  background-color: #d98a60;
+  background-color: ${mainColor};
   border: none;
-  border-bottom: #d2d3db 1px solid;
+  border-bottom: ${grayColor} 1px solid;
   padding: 10px;
   &::placeholder {
     color: rgba(0, 0, 0, 0.5);

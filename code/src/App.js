@@ -1,6 +1,6 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import { combineReducers, createStore } from "@reduxjs/toolkit";
 import { todo } from "reducers/todo";
 import { screen } from "reducers/screen";
 import { Main } from "components/Main";
@@ -10,7 +10,18 @@ const reducer = combineReducers({
   screen: screen.reducer,
 });
 
-const store = configureStore({ reducer, screen });
+const persistedStateJSON = localStorage.getItem("todosReduxState");
+let persistedState = {};
+
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON);
+}
+
+const store = createStore(reducer, persistedState);
+
+store.subscribe(() => {
+  localStorage.setItem("todosReduxState", JSON.stringify(store.getState()));
+});
 
 export const App = () => {
   return (
