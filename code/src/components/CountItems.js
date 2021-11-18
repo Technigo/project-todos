@@ -12,8 +12,12 @@ export const CountItems = () => {
 
   return (
     <div className="item-counter">
-      <p>{counter} tasks total</p>
-      <p>{completedTasks} completed</p>
+      <p>
+        <span className="number-total">{counter}</span> tasks total
+      </p>
+      <p>
+        <span className="number-complete">{completedTasks}</span> completed
+      </p>
     </div>
   )
 }

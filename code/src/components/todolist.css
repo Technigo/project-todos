@@ -1,17 +1,20 @@
 .list-item-box {
   display: flex;
-  background-color: #fff;
+  background-color: #608c9b;
+  color: white;
   align-items: center;
   justify-content: space-between;
-  width: 100vw;
-  margin: 0 auto;
-  border-bottom: 1px solid black;
+  width: 90vw;
+  margin: 5px auto;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 30px;
+  box-shadow: 5px 5px 5px rgb(82, 82, 82);
 }
 
 .check-box {
   margin: 0px 20px 0px 20px;
-  width: 1.3em;
-  height: 1.3em;
+  width: 22px;
+  height: 22px;
   background-color: white;
   border-radius: 50%;
   vertical-align: middle;
@@ -23,6 +26,7 @@
 
 .check-box:checked {
   background-color: #66bb6a;
+  color: black;
 }
 
 p {
@@ -35,23 +39,35 @@ p {
   margin-right: 10px;
 }
 
-.delete-sign {
-  font-size: 12px;
+i {
+  font-size: 18px;
+  margin-left: 15px;
+  color: white;
+}
+
+h2 {
+  text-align: center;
+  color: royalblue;
 }
 
 .completed-items {
   display: flex;
   align-items: center;
+  background: #00b887;
+  color: #fff;
   justify-content: space-between;
-  width: 100vw;
-  margin: 0 auto;
+  width: 85vw;
+  margin: 5px auto;
   padding: 0 10px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  box-shadow: 5px 5px 5px rgb(82, 82, 82);
 }
 
-.date {
-  font-size: 12px;
-}
-
-.item-text {
-  margin-bottom: 30px;
+@media (min-width: 768) {
+  h2 {
+    color: red;
+  }
 }
