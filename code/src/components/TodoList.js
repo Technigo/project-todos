@@ -9,26 +9,31 @@ const TodosDiv = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: lightgrey;
+    background-color: blanchedalmond;
+    border-top: 1px solid lightblue;
     &:nth-child(odd) {
-        background: #F2F3F4;
+        background: antiquewhite;
       }
     &:last-child {
         border-radius: 0 0 20px 20px;
     }
 `
+const TodoTextDiv = styled.div`
+    padding: 10px;
+    max-width: 300px;
+`
 const TodosCheckbox = styled.input`
     width:30px;
     height:30px;
     margin: 10px;
-    filter: grayscale(50%) sepia(10%) brightness(150%);
+    filter: grayscale(60%) sepia(10%) brightness(180%);
 `
 const TodosRemoveButton = styled.button`
     padding: 10px 15px;
     border: none;
     border-radius: 10px;
     margin: 10px;
-    background-color: lightpink;
+    background-color: #F1C8D5;
 `
 const EmptyTodoDiv = styled.div`
     padding-top: 30px;
@@ -57,9 +62,9 @@ const TodoList = () => {
         {items.map((item, index) => (
             <TodosDiv key={item.id}>
                 <TodosCheckbox type="checkbox" checked={item.isComplete} onChange={() => onToggleTodo(item.id)}/>
-                <p>{item.text}</p>
+                <TodoTextDiv>{item.text}</TodoTextDiv>
                 <div>
-                    <span>{moment(item.createdAt).format('HH:MM')}</span>
+                    <span>{moment(item.createdAt).format('hh:mm:ss')}</span>
                     <TodosRemoveButton onClick={() => onDeleteTodo(item.id)}>Clear</TodosRemoveButton>
                 </div>
             </TodosDiv>

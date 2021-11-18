@@ -2,6 +2,8 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 20px;
+  background-image: url("./cork-board.png");
+  background-repeat: repeat;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;

@@ -14,6 +14,7 @@ const todos = createSlice({
                 id: uniqid(),
                 text: action.payload,
                 isComplete: false,
+                createdAt: new Date()
             }
             store.items = [...store.items, newTodo]
         },
@@ -35,9 +36,12 @@ const todos = createSlice({
             const decreasedItems = store.items.filter((item) => item.id !== action.payload)
             store.items = decreasedItems
         },
+        checkAll: (store) => {
+            store.items.map(item => item.isComplete = true)
+        },
         clear: () => {
             return initialState
-          },
+        },
     },
 })
 

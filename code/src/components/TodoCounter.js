@@ -3,6 +3,11 @@ import styled from "styled-components"
 import moment from 'moment';
 import { useSelector } from 'react-redux'
 
+const TodoH1 = styled.h1`
+    color: #422117;
+    font-family: 'Pacifico', cursive;
+    font-size: 3rem;
+`
 const TheHeader = styled.div `
     padding-top: 20px;
 `
@@ -12,15 +17,22 @@ const DateText = styled.p`
 
 const TodoCounter = () => {
     const items = useSelector((store) => store.todos.items)
-    console.log("items?", items)
+    const complete = useSelector((store) => store.todos.items.filter(item => item.isComplete).length)
+    const incomplete = useSelector((store) => store.todos.items.filter(item => !item.isComplete).length)
+    
+    console.log("items?", items.filter(item => item.isComplete).length)  //// CONSOLE LOGGGGGGGG!!!!!
 
     return (
         <TheHeader>
-            <h1>Todo Today</h1>
+            <TodoH1>Todo Today</TodoH1>
             <h2>{items.length}</h2>
             <DateText>{moment().format('YYYY/MM/DD')}</DateText>
-            <p>Complete:</p>
-            <p>Incomplete:</p>
+            <p>Incomplete: {incomplete} 
+            {incomplete >! items.length && <span> &#10006; </span>}
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Complete: {complete}
+            {complete === items.length && <span> &#10004; </span>}
+            </p>
         </TheHeader>
     )
 }
