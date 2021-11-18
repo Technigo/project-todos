@@ -1,9 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledAddTodoButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  display: inline-block;
   background: #ffde53;
   color: #515214e3;
   font-size: 30px;
