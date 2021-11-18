@@ -55,7 +55,7 @@ export const TodoList = () => {
       <div className="container">
         <h2>You have {listWithTodos.length} Todos left for today.</h2>
         {listWithTodos.map((item, index) => (
-          <TheList>
+          <TheList border={item.category === 'Urgent' ? 'red' : 'green'}>
             <input
               type="checkbox"
               checked={item.isComplete}
@@ -130,8 +130,10 @@ const TheList = styled.div`
   justify-content: space-around;
   align-items: center;
   flex-wrap: nowrap;
-  border: 1px solid black;
+  /* border: 1px solid black; */
   margin: 10px 0px;
+
+  border: 1px solid ${(props) => props.border};
 
   @media (min-width: 992px) {
   }

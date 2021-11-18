@@ -10,14 +10,21 @@ export const todo = createSlice({
         text: 'Continue with code along',
         complete: false,
         date: new Date(),
-        category: 'Studies'
+        category: 'Fun stuff'
       },
       {
         id: 1,
         text: 'Clean the office room',
         complete: false,
         date: new Date(),
-        category: 'House Chores'
+        category: 'Not urgent'
+      },
+      {
+        id: 1,
+        text: 'Clean the office room',
+        complete: false,
+        date: new Date(),
+        category: 'Urgent'
       }
     ]
   },
