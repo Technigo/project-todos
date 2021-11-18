@@ -11,6 +11,7 @@ export const TodoList = () => {
   //Denna funktionen tar det som är i input statet och skickar till funktionen i the store. tror jag...
   const onAddToDo = () => {
     dispatch(todo.actions.addTodo(input));
+    setInput('');
   };
   const listWithTodos = useSelector((store) => store.todo.items);
   const onToggle = (index) => {
@@ -21,7 +22,7 @@ export const TodoList = () => {
   };
 
   return (
-    <>
+    <Content>
       <InputField>
         <h1>TodoList</h1>
         <div className="input">
@@ -29,6 +30,7 @@ export const TodoList = () => {
             type="text"
             placeholder="write your Todo:"
             onChange={(event) => setInput(event.target.value)}
+            value={input}
           />
           <InputButton onClick={onAddToDo}>Add ToDo</InputButton>
         </div>
@@ -46,9 +48,21 @@ export const TodoList = () => {
           </TheList>
         ))}
       </div>
-    </>
+    </Content>
   );
 };
+
+const Content = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  margin: 10px 0px;
+  height: 100%;
+
+  background-color: pink;
+`;
 
 const InputField = styled.div`
   background: var(--main-color);
@@ -60,6 +74,11 @@ const InputField = styled.div`
     align-items: center;
     flex-wrap: nowrap;
     margin: 10px 0px;
+  }
+
+  @media (min-width: 992px) {
+    border: 2px solid red;
+    background-color: var(--secondary-color);
   }
 `;
 
@@ -109,6 +128,7 @@ const DeleteButton = styled.button`
   box-shadow: none;
   margin: 10px;
   font-family: var(--button-font);
+  margin-left: auto;
 
   &:hover {
     background-color: white;
