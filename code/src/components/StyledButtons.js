@@ -37,16 +37,21 @@ export const StyledDeleteButton = styled.button`
   font-size: 25px;
   font-weight: 500;
   border-radius: 50%;
-  text-align: center;
-  vertical-align: middle;
+  /* text-align: center;
+  vertical-align: middle; */
   overflow: hidden;
   transition: 0.4s;
   border: 0px;
-  width: 40px;
-  min-height: 40px;
-  line-height: 40px;
+  width: 1.5em;
+  height: 1.5em;
+  /* line-height: 40px; */
   &:hover {
     cursor: pointer;
+  }
+  &.button-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 `;
 

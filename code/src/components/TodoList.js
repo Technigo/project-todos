@@ -110,7 +110,7 @@ const TodoList = () => {
             </div>
 
             <StyledDeleteButton onClick={() => onDeleteTodo(listItem.id)}>
-              <span>-</span>
+              <span className='button-text'>-</span>
             </StyledDeleteButton>
           </div>
         ))}
