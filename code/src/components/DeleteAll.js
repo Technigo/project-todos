@@ -10,7 +10,12 @@ const DeleteAll = () => {
   const dispatch = useDispatch()
 
   const deleteAllTodos = () => {
-    dispatch(todos.actions.deleteAll())
+    const deletingAll = window.confirm(
+      "Are you sure you want to complete all tasks?"
+    )
+    if (deletingAll) {
+      dispatch(todos.actions.deleteAll())
+    }
   }
 
   return (

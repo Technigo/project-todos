@@ -7,7 +7,6 @@ const todos = createSlice({
   initialState: {
     // always an object on its own
     items: [],
-    checkedItems: [],
   },
 
   reducers: {
@@ -51,23 +50,6 @@ const todos = createSlice({
       store.items = updatedItems
     },
 
-    // sortTodo: (store, action) => {
-    //   const sortTodoFunction = store.items.map(item => {
-    //     if (item.isComplete === true) {
-    //       const updatedNotChecked = {
-    //         ...checkedItems,
-    //       }
-    //       return updatedNotChecked
-    //     } else {
-    //       const updatedChecked = {
-    //         ...checkedItems,
-    //       }
-    //       return updatedChecked
-    //     }
-    //   })
-    //   store.checkedItems
-    // },
-
     deleteTodo: (store, action) => {
       //v1 - Mutability approach (splice(index, noOfItmetoDelete))
       //   store.items.splice(action.payload, 1)
@@ -79,7 +61,6 @@ const todos = createSlice({
       store.items = decreasedItems
     },
     deleteAll: (store, action) => {
-      console.log("delete them allllll")
       store.items = []
     },
   },

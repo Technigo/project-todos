@@ -31,6 +31,7 @@ const TodoList = () => {
             key={item.id}
           >
             <input
+              className="checkbox"
               type="checkbox"
               checked={item.isComplete}
               onChange={() => onToggleTodo(item.id)}
