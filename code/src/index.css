@@ -3,7 +3,7 @@
 }
 
 body {
-  margin: 0;
+  margin: 0 auto;
   font-family: montserrat, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -11,6 +11,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   color: #dedede;
   background-color: #1a1a1a;
+  max-width: 767px;
 }
 
 code {
@@ -25,18 +26,18 @@ code {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 1rem;
+  padding: 1.5rem 1rem 3rem 1rem;
 }
 
-.headlineandcircles {
+.dateandcircles {
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding-bottom: 1rem;
+  /* padding-bottom: 1rem; */
 }
 
 .circles-container {
-  display: flex;
+  display: none;
   flex-direction: row;
   margin: 0;
   padding-right: 0.5rem;
@@ -78,25 +79,31 @@ code {
   background-color: rgb(22, 66, 22);
 }
 
-.header h1 {
-  font-size: 1rem;
-  padding: 0;
+.heading-counter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 0.25rem;
 }
 
-.header p {
-  font-weight: 400;
+h1 {
+  font-size: 1rem;
+  text-align: left;
+  margin: 0 1rem 0 0;
+
+}
+
+
+p {
+  font-weight: 500;
   font-size: 14px;
   padding: 0;
-  color: rgb(72, 143, 72);
+  color: #80B477;
   margin: 0;
 }
 
 .main {
   padding: 0 1rem;
-}
-
-p {
-  font-size: 14px;
 }
 
 
@@ -106,17 +113,34 @@ p {
   display: flex;
   justify-content: flex-end;
   margin: 0 auto;
-  padding: 0.5rem 1rem 1rem 1rem;
+  padding-top: 0.5rem;
   width: 100%;
+}
+
+.add-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+h3 {
+  margin: 0.3rem 1rem 0 0;
+  font-size: 1rem;
+}
+
+.penguin {
+  margin-right: 1rem;
+  width: 48px;
+}
+
+.add-bottom {
+ padding: 3rem 1rem;
 }
 
 h4 {
   font-size: 1rem;
   text-align: left;
-  padding-top: 1rem;
-  padding-left: 1rem;
-  width: 100%;
-  margin: 0 auto;
+  margin: 0;
 }
 
 .add-input {
@@ -150,76 +174,109 @@ h4 {
 }
 
 
-/* TODOLIST  */
-
-h1 {
-  font-size: 1.5rem;
-  text-align: left;
-  padding-top: 2rem;
-  width: 100%;
-  margin: 0 auto;
-}
-
-
 /* TODO ITEM */
 
 .todo-container {
-  margin: 0 auto;
-  height: 64px;
+  /* margin: 0 auto; */
   width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  background-color: #333;
+  margin-bottom: 0.5rem;
+  border-radius: 8px;
+  min-height: 64px;
+  padding: 1rem 0;
 }
 
-.title-radio input{
+
+.title-radio input {
   display: block;
   height: 18px;
   width: 18px;
   margin-right: 1rem;
   border: none;
-  border-radius: 9px;
+  border-radius: 8px;
+}
+
+.date-time {
+  font-size: 14px;
+  color: #80B477;
+  font-weight: 500;
+  margin-left: 49px;
 }
 
 .title-radio {
-  background-color: #333;
-  border-radius: 8px;
-  min-height: 48px;
+  width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  width: 100%;
   padding-left: 1rem;
+  /* margin-bottom: 0.5rem; */
+}
+
+.todo-radio {
+  margin: 0;
 }
 
 .title-radio p {
   color: #fff;
-  margin-right: 2rem;
+  margin-right: 1rem;
+}
+
+.actions-counter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 1rem;
 }
 
 .delete-btn {
   display: flex;
-  justify-content: center;
   align-items: center;
   background-color: transparent;
-  height: 48px;
-  width: 48px;
   border: none;
   border-radius: 8px;
   text-align: center;
   margin-left: 1rem;
+  padding-right: 1rem;
 }
 
 .fa-minus-circle {
   color: #dedede;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
-main h4 {
-  padding-left: 0;
-  padding-bottom: 0.5rem;
+.btns-container {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+
 }
 
+.delete-all-btn {
+  border: none;
+  border-radius: 1rem;
+  height: 2rem;
+  font-family: montserrat;
+  font-weight: 600;
+  background-color: #dedede;
+  color: #1a1a1a;
+  padding: 0 1rem 0 1rem;
+  width: 100%;
+  margin-left: 0.25rem;
+}
 
-
+.check-all-btn {
+  border: none;
+  border-radius: 1rem;
+  height: 2rem;
+  font-family: montserrat;
+  font-weight: 600;
+  background-color: #dedede;
+  color: #1a1a1a;
+  padding: 0 1rem 0 1rem;
+  width: 100%;
+  margin-right: 0.25rem;
+}

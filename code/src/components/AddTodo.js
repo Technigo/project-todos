@@ -2,6 +2,7 @@ import React, { useState } from "react"
 import { useDispatch } from 'react-redux'
 
 import todos from "../reducers/todos"
+import Penguin from "./Penguin"
 
 
 const AddTodo = () => {
@@ -14,8 +15,14 @@ const AddTodo = () => {
     }
 
     return (
-        <>
-        <h4>Create new task</h4>
+        <section className='add-bottom'>
+            <div className='add-header'>
+                <Penguin />
+                <div className='create-text'>
+                    <p>Let's get structured</p>
+                    <h3>Create some todos</h3>
+                </div>
+            </div>
         <div className='add-todo-container'>
             <input 
                 type='text'
@@ -27,7 +34,7 @@ const AddTodo = () => {
                 <i className="fas fa-plus-circle"/>
             </button>
         </div>
-        </>
+        </section>
     )
 }
 

@@ -8,7 +8,7 @@ const todos = createSlice({
             { id: 1, text: 'Watch video on actions & reducers', isComplete: true },
             { id: 2, text: 'Follow redux codealong', isComplete: true },
             { id: 3, text: 'Fork weekly assignment', isComplete: true },
-            { id: 4, text: 'Create a todo app', isCcomplete: false },
+            { id: 4, text: 'Create a todo app', isComplete: false },
         ],
     },
 
@@ -20,7 +20,8 @@ const todos = createSlice({
             const newTodo = {
                 id: uniqid(),
                 text: action.payload,
-                isComplete: false
+                isComplete: false,
+                createdAt: new Date()
             }
 
             store.items = [...store.items, newTodo]
@@ -41,6 +42,7 @@ const todos = createSlice({
             })
 
             store.items = updatedItems
+
         },
         deleteTodo: (store, action) => {
             const decreasedItems = store.items.filter(
@@ -48,7 +50,20 @@ const todos = createSlice({
             )
 
             store.items = decreasedItems
+
         },
+        deleteAllTodos: (store) => {
+            console.log('delete all todos')
+            store.items = []
+        },
+        checkAllTodos: (store) => {
+            console.log('check all todos')
+            const completeAll = {
+                isComplete: true
+            }
+            store.items = completeAll
+        },
+    
     },
 })
 
