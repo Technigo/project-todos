@@ -20,7 +20,7 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
   margin: 5px 0px;
   text-align: left;
-  max-width: 300px;
+  max-width: 250px;
 }
 .task-completed {
   text-decoration: line-through;
@@ -30,7 +30,7 @@ body {
   font-family: "Open Sans Condensed", sans-serif;
   margin: 5px 0px;
   text-align: left;
-  max-width: 300px;
+  max-width: 250px;
 }
 .small-task-wrapper {
   display: flex;
@@ -44,7 +44,7 @@ body {
   flex-direction: column;
   margin: 0px 10px;
   align-self: center;
-  max-width: 300px;
+  max-width: 250px;
 }
 .task-date {
   font-size: 10px;
@@ -79,7 +79,7 @@ body {
 .checkbox {
   appearance: none;
   background-color: #fff;
-  margin: 0;
+  margin: 10px;
   font: inherit;
   color: black;
   width: 2em;
@@ -126,6 +126,7 @@ body {
   width: 100%;
   max-width: 500px;
   height: 50px;
+  align-items: center;
 }
 
 p {
