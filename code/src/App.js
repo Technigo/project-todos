@@ -5,6 +5,8 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import todo from "./reducers/todo";
 import AddTodo from "components/AddTodo";
 import TodoList from "components/TodoList";
+import AddTask from "components/AddTask";
+import { OuterSection } from "components/GlobalStyledComponents";
 
 const reducer = combineReducers({
   todo: todo.reducer,
@@ -17,7 +19,7 @@ const reducer = combineReducers({
 //   persistedState = JSON.parse(persistedStateJSON);
 // }
 
-// Create store with initial state
+// // Create store with initial state
 // const store = createStore(
 //   reducer,
 //   persistedState,
@@ -34,8 +36,11 @@ const store = configureStore({ reducer });
 export const App = () => {
   return (
     <Provider store={store}>
-      <AddTodo />
-      <TodoList />
+      <OuterSection>
+        <AddTodo />
+        <AddTask />
+        <TodoList />
+      </OuterSection>
     </Provider>
   );
 };

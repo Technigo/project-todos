@@ -16,3 +16,13 @@ body {
 .no-task {
   font-size: 30px;
 }
+
+@media (min-width: 768px) {
+  .emoji {
+    font-size: 25px;
+  }
+
+  .no-task {
+    font-size: 45px;
+  }
+}

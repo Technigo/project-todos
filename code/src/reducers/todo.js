@@ -42,6 +42,17 @@ const todo = createSlice({
     removeAll: (store) => {
       store.list = [];
     },
+
+    completeAll: (store) => {
+      const completed = store.list.map((item) => {
+        const updatedTodo = {
+          ...item,
+          isComplete: true,
+        };
+        return updatedTodo;
+      });
+      store.list = completed;
+    },
   },
 });
 

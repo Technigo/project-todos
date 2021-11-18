@@ -9,20 +9,26 @@ import NoTask from "./NoTask";
 
 const TaskContainer = styled.div`
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+  justify-content: flex-start;
+  flex-direction: column;
+  width: 300px;
   border-bottom: 1px solid #f2f2f2;
+
+  @media (min-width: 768px) {
+    width: 520px;
+  }
+`;
+
+const TaskOuterContainer = styled.div`
+  display: flex;
+  align-items: center;
 `;
 
 const TaskInnerContainer = styled.div`
   display: flex;
   justify-content: flex-start;
   align-items: center;
-`;
-
-const StyledParagraph = styled.p`
+  width: 40px;
   padding-left: 5px;
 `;
 
@@ -41,9 +47,23 @@ const StyledCheckbox = styled.input`
   }
 `;
 
+const TextContainer = styled.div`
+  width: 230px;
+
+  @media (min-width: 768px) {
+    width: 450px;
+  }
+`;
+
 const ButtonContainer = styled.div`
-margin-left`;
-const DateTask = styled.p``;
+  display: flex;
+  flex-direction: column;
+`;
+
+const DateTask = styled.p`
+  font-style: italic;
+  padding-left: 10px;
+`;
 
 const TodoList = () => {
   const MyList = useSelector((store) => store.todo.list);
@@ -59,28 +79,34 @@ const TodoList = () => {
   };
   console.log(MyList);
   return (
-    <Section>
+    <Section className="test">
       {MyList.length === 0 ? (
         <NoTask />
       ) : (
         MyList.map((item) => (
           <TaskContainer key={item.id}>
-            <TaskInnerContainer>
-              <StyledCheckbox
-                type="checkbox"
-                checked={item.isComplete}
-                onChange={() => onToggleTodo(item.id)}
-              />
-              <StyledParagraph>{item.text}</StyledParagraph>
-            </TaskInnerContainer>
-            <ButtonContainer>
-              <StyledButton onClick={() => onRemoveTodo(item.id)}>
-                <span className="emoji" role="img" aria-label="minus sign">
-                  ➖
-                </span>
-              </StyledButton>
-            </ButtonContainer>
-            {/* <DateTask>{moment(item.date).format("MM Do")}</DateTask> */}
+            <TaskOuterContainer>
+              <TaskInnerContainer>
+                <StyledCheckbox
+                  type="checkbox"
+                  checked={item.isComplete}
+                  onChange={() => onToggleTodo(item.id)}
+                />
+              </TaskInnerContainer>
+              <TextContainer>
+                <p>{item.text}</p>
+              </TextContainer>
+              <ButtonContainer>
+                <StyledButton onClick={() => onRemoveTodo(item.id)}>
+                  <span className="emoji" role="img" aria-label="minus sign">
+                    ➖
+                  </span>
+                </StyledButton>
+              </ButtonContainer>
+            </TaskOuterContainer>
+            <DateTask>
+              Task created: {moment(item.date).format("MMM Do")}
+            </DateTask>
           </TaskContainer>
         ))
       )}
