@@ -19,6 +19,9 @@ h3 {
   font-weight: 200;
   font-size: 20px;
 }
+.clear-board-none {
+  display: none;
+}
 
 .task-p {
   color: black;

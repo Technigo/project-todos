@@ -18,9 +18,9 @@ export const CompletedTodos = () => {
   return (
     <>
       <section
-        className={items.isComplete <= 0 ? "clear-board" : "todo-wrapper"}
+        className={items.length <= 0 ? "clear-board-none" : "todo-wrapper"}
       >
-        <h3>Completed</h3>
+        {items.length > 0 && <h3>Completed</h3>}
         {items.map((item) => (
           <div key={item.id} className="small-task-wrapper">
             <div className="check-text">

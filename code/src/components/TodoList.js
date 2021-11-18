@@ -20,7 +20,7 @@ export const TodoList = () => {
   return (
     <>
       <section className={items.length <= 0 ? "clear-board" : "todo-wrapper"}>
-        <h3>Todo</h3>
+        {items.length > 0 && <h3>To do</h3>}
         {items
           .filter((item) => item.isComplete === false)
           .map((item) => (
