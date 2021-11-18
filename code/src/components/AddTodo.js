@@ -9,20 +9,21 @@ import { StyledAddTodoButton } from './StyledButtons';
 
 const StyledForm = styled.form`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  margin: 2vh 4vw;
+  width: 95%;
+  margin: 2vh 2vw;
 
   .todo-input {
     font-family: 'Roboto', sans-serif;
     color: #333;
     font-size: 1.2rem;
-    margin: 2vh auto;
+    margin: 2vh 2vw;
     padding: 1rem;
     border-radius: 0.2rem;
     background-color: rgb(255, 255, 255);
     border: none;
-    width: 60vw;
+    width: 65%;
     display: inline-block;
     border-bottom: 0.3rem solid transparent;
     transition: all 0.3s;

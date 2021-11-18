@@ -13,6 +13,7 @@ const reducer = combineReducers({
   todos: todos.reducer,
 });
 
+//creating local storage
 const persistedStateJSON = localStorage.getItem('todosReduxState');
 let persistedState = {};
 
@@ -29,11 +30,12 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
-      <Header />
-
-      <AddTodo />
-      <TodoAmount />
-      <TodoList />
+      <div className='wrapper'>
+        <Header />
+        <AddTodo />
+        <TodoAmount />
+        <TodoList />
+      </div>
     </Provider>
   );
 };

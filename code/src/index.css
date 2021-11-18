@@ -10,8 +10,27 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 #root {
   width: 100%;
+  position: relative;
+}
+
+@media (min-width: 768px) {
+  body {
+    background-image: url(./assets/background.jpg);
+  }
+
+  .wrapper {
+    position: absolute;
+    top: 10vh;
+    left: 50%;
+    transform: translate(-50%);
+    min-width: 600px;
+    min-height: 750px;
+    background-color: #fff;
+    border: 2px solid #fff;
+  }
 }

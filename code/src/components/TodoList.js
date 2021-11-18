@@ -4,6 +4,7 @@ import styled from 'styled-components/macro';
 
 import todos from '../reducers/todos';
 import { StyledDeleteButton, CheckAllButton } from './StyledButtons';
+import { StyledCheckbox } from './StyledCheckbox';
 import emptystate from '../assets/emptystate.png';
 
 const StyledList = styled.section`
@@ -12,7 +13,7 @@ const StyledList = styled.section`
     flex-direction: column;
     justify-content: flex-start;
     margin: 10px auto;
-    height: 400px;
+    height: 260px;
     overflow-y: scroll;
   }
   &.no-items {
@@ -21,7 +22,7 @@ const StyledList = styled.section`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 60%;
     object-fit: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -29,16 +30,18 @@ const StyledList = styled.section`
 
   .list-item {
     display: grid;
-    grid-template-columns: 7.5vw auto 45px;
+    grid-template-columns: 9vw auto 45px;
     align-items: center;
     padding: 2vh 2vw;
-  }
-  .list-item:nth-child(2n + 1) {
-    background-color: #f4f4f4;
+    min-height: 50px;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 6vw auto 7vw;
+    }
   }
 
-  .checkbox {
-    grid-column: 1;
+  .list-item:nth-child(2n + 1) {
+    background-color: #e6f3f5;
   }
 
   .list-item-info {
@@ -88,7 +91,7 @@ const TodoList = () => {
       >
         {todoListItems.map((listItem) => (
           <div className='list-item' key={listItem.id}>
-            <input
+            <StyledCheckbox
               className='checkbox'
               type='checkbox'
               checked={listItem.isComplete}
