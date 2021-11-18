@@ -21,14 +21,16 @@ const ToDoList = () => {
             {allTodos.map((item) => (
                 <div key={item.id}>
                     <p>{item.text}</p>
-                    <input
-                        type="checkbox"
-                        checked={item.isComplete}
-                        onChange={() => {
-                            onCompletedToggle(item.id);
-                        }}
-                    >
-                    </input>
+                    <label>
+                        Completed
+                        <input
+                            type="checkbox"
+                            checked={item.isComplete}
+                            onChange={() => {
+                                onCompletedToggle(item.id);
+                            }}
+                        ></input>
+                    </label>
                     <button
                         onClick={() => {
                             onDelete(item.id);
