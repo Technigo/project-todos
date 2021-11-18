@@ -7,6 +7,14 @@ const TodoH1 = styled.h1`
     color: #422117;
     font-family: 'Pacifico', cursive;
     font-size: 3rem;
+    margin-top: 10px;
+    margin-bottom: 0;
+`
+const TodoH2 = styled.h2`
+    color: #422117;
+    font-size: 3rem;
+    margin-top: 0;
+    margin-bottom: 20px;
 `
 const TheHeader = styled.div `
     padding-top: 20px;
@@ -15,7 +23,7 @@ const DateText = styled.p`
     color: grey;
 `
 
-const TodoCounter = () => {
+const TodoHead = () => {
     const items = useSelector((store) => store.todos.items)
     const complete = useSelector((store) => store.todos.items.filter(item => item.isComplete).length)
     const incomplete = useSelector((store) => store.todos.items.filter(item => !item.isComplete).length)
@@ -25,7 +33,7 @@ const TodoCounter = () => {
     return (
         <TheHeader>
             <TodoH1>Todo Today</TodoH1>
-            <h2>{items.length}</h2>
+            <TodoH2>{items.length}</TodoH2>
             <DateText>{moment().format('YYYY/MM/DD')}</DateText>
             <p>Incomplete: {incomplete} 
             {incomplete >! items.length && <span> &#10006; </span>}
@@ -37,4 +45,4 @@ const TodoCounter = () => {
     )
 }
 
-export default TodoCounter
+export default TodoHead

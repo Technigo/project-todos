@@ -7,7 +7,7 @@ import todos from './reducers/todos'
 
 import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
-import TodoCounter from 'components/TodoCounter'
+import Todohead from 'components/TodoHead'
 
 const TheHead = styled.section`
   max-width: 550px;
@@ -45,7 +45,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <TheHead>
-        <TodoCounter />
+        <Todohead />
         <AddTodo />
       </TheHead>
       <TheBody>

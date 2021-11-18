@@ -22,10 +22,14 @@ const TodoTextDiv = styled.div`
     padding: 10px;
     max-width: 300px;
 `
+const CheckboxDiv = styled.div`
+    padding-right: 10px;
+    border-right: 1px solid #F1C8D5;
+`
 const TodosCheckbox = styled.input`
-    width:30px;
-    height:30px;
-    margin: 10px;
+    width: 30px;
+    height: 30px;
+    margin: 10px 10px 10px 20px;
     filter: grayscale(60%) sepia(10%) brightness(180%);
 `
 const TodosRemoveButton = styled.button`
@@ -61,10 +65,12 @@ const TodoList = () => {
         {items.length === 0 && <EmptyTodoDiv>Ohhh, lucky you! </EmptyTodoDiv>}
         {items.map((item, index) => (
             <TodosDiv key={item.id}>
-                <TodosCheckbox type="checkbox" checked={item.isComplete} onChange={() => onToggleTodo(item.id)}/>
+                <CheckboxDiv>
+                    <TodosCheckbox type="checkbox" checked={item.isComplete} onChange={() => onToggleTodo(item.id)}/>
+                </CheckboxDiv>
                 <TodoTextDiv>{item.text}</TodoTextDiv>
                 <div>
-                    <span>{moment(item.createdAt).format('hh:mm:ss')}</span>
+                    <span>{moment(item.createdAt).format('hh:mm')}</span>
                     <TodosRemoveButton onClick={() => onDeleteTodo(item.id)}>Clear</TodosRemoveButton>
                 </div>
             </TodosDiv>
