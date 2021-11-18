@@ -11,14 +11,12 @@ const CounterText = styled.p`
 `;
 
 const TodoCount = () => {
-  // const counter = useSelector((store) => store.todos.items.length);
   const uncompleteTodos = useSelector(
     (store) => store.todos.items.filter((item) => !item.isComplete).length
   );
 
   return (
     <>
-      {/* <p>You have {counter} tasks to do today</p> */}
       <CounterText>
         You have <span>{uncompleteTodos}</span> tasks to-do<span>.</span>
       </CounterText>

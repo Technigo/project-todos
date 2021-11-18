@@ -8,7 +8,6 @@ const TodoCard = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  /* align-items: center; */
   min-width: 250px;
   @media (min-width: 768px) {
     width: 500px;
@@ -18,9 +17,7 @@ const TodoCard = styled.section`
 const TodoElements = styled.div`
   display: flex;
   justify-content: space-between;
-  /* border: 2px solid black; */
   align-items: center;
-  /* border-top: black 1px solid; */
   border-bottom: 1px solid rgba(0, 0, 0, 0.1); ;
 `;
 
@@ -30,7 +27,6 @@ const Child = styled.div`
   justify-content: flex-end;
   align-items: center;
   margin: 15px 0 15px 0;
-  /* border: solid 3px pink; */
 `;
 
 const Text = styled.div`

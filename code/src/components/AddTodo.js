@@ -20,7 +20,6 @@ const Button = styled.button`
   border: none;
   background-color: transparent;
   font-size: 30px;
-  /* opacity: 0.7; */
   color: #8fc9a3;
 `;
 
@@ -33,7 +32,6 @@ const Container = styled.div`
 
 const TextInput = styled.input`
   margin: 0;
-  /* opacity: 0.7; */
   border: solid #8fc9a3;
   border-radius: 5px;
   padding: 10px;

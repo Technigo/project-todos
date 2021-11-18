@@ -10,7 +10,7 @@ const Banner = styled.section`
   height: 50px;
   margin-bottom: 20px;
   display: flex;
-  flex-direction: row;
+  justify-content: flex-start;
   align-items: center;
 `;
 
@@ -35,6 +35,16 @@ const Hamburger = styled.div`
   }
 `;
 
+const Home = styled.div`
+  color: white;
+  padding-left: 20px;
+  font-size: 21px;
+  @media (min-width: 768px) {
+    padding-left: 40px;
+    font-size: 23px;
+  }
+`;
+
 const Header = () => {
   return (
     <Banner>
@@ -43,6 +53,9 @@ const Header = () => {
         <div></div>
         <div></div>
       </Hamburger>
+      <Home>
+        <i class="fas fa-home"></i>
+      </Home>
     </Banner>
   );
 };

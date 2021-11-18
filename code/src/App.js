@@ -9,14 +9,12 @@ import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import TodoCount from "./components/TodoCount";
 import Header from "components/Header";
-import CompletedTodos from "components/CompletedTodos";
 
 const MainContainer = styled.main`
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* min-width: 250px; */
 `;
 
 //Always the same
@@ -48,7 +46,6 @@ export const App = () => {
       <MainContainer>
         <AddTodo />
         <TodoList />
-        <CompletedTodos />
         <TodoCount />
       </MainContainer>
     </Provider>
