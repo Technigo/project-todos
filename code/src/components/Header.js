@@ -10,12 +10,18 @@ const StyledHeader = styled.header`
   color: #fff;
   padding: 0.5em 1em;
   height: 13vh;
-`;
 
-const StyledHeaderLeft = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  .header-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    font-size: 50px;
+    margin: 0;
+    font-weight: 400;
+  }
 `;
 
 const StyledHeaderRight = styled.div`
@@ -24,10 +30,6 @@ const StyledHeaderRight = styled.div`
   justify-content: center;
   font-size: 16px;
   margin: 3px 0;
-`;
-
-const StyledTodoHeader = styled.div`
-  font-size: 50px;
 `;
 
 const StyledHeaderText = styled.p`
@@ -42,10 +44,10 @@ const Header = () => {
 
   return (
     <StyledHeader>
-      <StyledHeaderLeft>
-        <StyledTodoHeader>ToDo</StyledTodoHeader>
+      <div className='header-left'>
+        <h1>ToDo</h1>
         <StyledHeaderText>{moment().format('LL')}</StyledHeaderText>
-      </StyledHeaderLeft>
+      </div>
       <StyledHeaderRight>{todoListItems} tasks</StyledHeaderRight>
     </StyledHeader>
   );

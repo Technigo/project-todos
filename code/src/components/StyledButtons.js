@@ -1,7 +1,9 @@
 import styled from 'styled-components';
 
 export const StyledAddTodoButton = styled.button`
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: #ffde53;
   color: #515214e3;
   font-size: 30px;
@@ -16,13 +18,14 @@ export const StyledAddTodoButton = styled.button`
   height: 60px;
   line-height: 60px;
   &:hover {
-    background: #515214e3;
     cursor: pointer;
   }
 `;
 
 export const StyledDeleteButton = styled.button`
-  display: inline-block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   grid-column: 3;
   background: #ffde53;
   color: #515214e3;
@@ -38,7 +41,6 @@ export const StyledDeleteButton = styled.button`
   height: 40px;
   line-height: 40px;
   &:hover {
-    background: #515214e3;
     cursor: pointer;
   }
 `;
@@ -46,9 +48,10 @@ export const StyledDeleteButton = styled.button`
 export const CheckAllButton = styled.button`
   display: flex;
   justify-content: center;
+  align-items: center;
   background: #ffde53;
   color: #515214e3;
-  font-size: 18px;
+  font-size: 14px;
   font-weight: 500;
   border-radius: 25px;
   text-align: center;
@@ -61,7 +64,6 @@ export const CheckAllButton = styled.button`
   line-height: 50px;
   margin: 10px;
   &:hover {
-    background: #515214e3;
     cursor: pointer;
   }
   &.no-items {

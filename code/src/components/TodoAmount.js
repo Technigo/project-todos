@@ -9,11 +9,11 @@ const TaskInfo = styled.div`
   &.no-tasks {
     display: none;
   }
-`;
 
-const TaskInfoText = styled.h3`
-  font-weight: 400;
-  margin: 0;
+  .task-info-text {
+    font-weight: 400;
+    margin: 0;
+  }
 `;
 
 const TodoAmount = () => {
@@ -33,8 +33,12 @@ const TodoAmount = () => {
         'no-tasks'
       }
     >
-      <TaskInfoText>Tasks to do: {uncompletedListItems.length}</TaskInfoText>
-      <TaskInfoText>Finished tasks: {completedListItems.length}</TaskInfoText>
+      <h3 className='task-info-text'>
+        Tasks to do: {uncompletedListItems.length}
+      </h3>
+      <h3 className='task-info-text'>
+        Finished tasks: {completedListItems.length}
+      </h3>
     </TaskInfo>
   );
 };

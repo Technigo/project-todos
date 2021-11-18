@@ -12,21 +12,21 @@ const StyledForm = styled.form`
   justify-content: space-between;
   align-items: center;
   margin: 2vh 4vw;
-`;
 
-const StyledInput = styled.input`
-  font-family: 'Roboto', sans-serif;
-  color: #333;
-  font-size: 1.2rem;
-  margin: 2vh auto;
-  padding: 1rem;
-  border-radius: 0.2rem;
-  background-color: rgb(255, 255, 255);
-  border: none;
-  width: 60vw;
-  display: inline-block;
-  border-bottom: 0.3rem solid transparent;
-  transition: all 0.3s;
+  .todo-input {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+    font-size: 1.2rem;
+    margin: 2vh auto;
+    padding: 1rem;
+    border-radius: 0.2rem;
+    background-color: rgb(255, 255, 255);
+    border: none;
+    width: 60vw;
+    display: inline-block;
+    border-bottom: 0.3rem solid transparent;
+    transition: all 0.3s;
+  }
 `;
 
 const AddTodo = () => {
@@ -46,7 +46,8 @@ const AddTodo = () => {
 
   return (
     <StyledForm onSubmit={onAddTodo}>
-      <StyledInput
+      <input
+        className='todo-input'
         type='text'
         value={todoInput}
         onChange={onTodoInputChange}
@@ -54,7 +55,7 @@ const AddTodo = () => {
         required=''
       />
       <StyledAddTodoButton type='submit' disabled={todoInput === ''}>
-        &#x0002B;
+        <span>&#x0002B;</span>
       </StyledAddTodoButton>
     </StyledForm>
   );

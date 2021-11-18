@@ -6,7 +6,6 @@ const todos = createSlice({
   name: 'todos',
   initialState: {
     todoListItems: [],
-    timePosted: moment().calendar(),
   },
   reducers: {
     addTodo: (store, action) => {
@@ -14,6 +13,7 @@ const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         isComplete: false,
+        timePosted: moment().format('LLL'),
       };
 
       store.todoListItems = [newTodo, ...store.todoListItems];
