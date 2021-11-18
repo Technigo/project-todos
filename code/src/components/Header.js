@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const Banner = styled.section`
-  background-color: red;
+  background-color: #8fc9a3;
   position: relative;
   top: 0;
   background-size: cover !important;

@@ -16,6 +16,7 @@ const MainContainer = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* min-width: 250px; */
 `;
 
 //Always the same
