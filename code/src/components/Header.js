@@ -1,26 +1,28 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 import { todos } from '../reducers/todos'
 
 const HeaderWrapper = styled.div`
-  background-color: grey;
-  height: 50px;
+  background-color: rgb(244, 244, 244);
   display: flex;
   justify-content: space-between;
-  width: 250px;
-  margin: 10px auto;
+  padding: 10px;
+  /* box-sizing: border-box; */
 `
 const Title = styled.h1`
   margin: 0;
-  font-size: 20px;
+  font-size: 2.5rem;
 `
 const Text = styled.p`
   margin: 0;
 `
 const Button = styled.button`
-  background-color: blue;
+  background-color: rgb(106, 121, 248);
+  border: 0;
+  padding: 3px 6px;
+  border-radius: 5px;
   color: white;
 `
 
@@ -39,7 +41,7 @@ export const Header = () => {
         <Text>Today</Text>
       </div>
       <div>
-        <Text>{items.reduce((a, b) => a && b.isComplete, true)}</Text>
+        <Text>{items.length}</Text>
         <Button onClick={onClearAll}>clear all</Button>
       </div>
     </HeaderWrapper>

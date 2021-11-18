@@ -1,50 +1,74 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
+import DatePicker from 'react-datepicker'
 
 import { todos } from '../reducers/todos'
 
 const InputWrapper = styled.div`
   display: flex;
   justify-content: space-between;
+  align-items: center;
   gap: 5px;
-  width: 250px;
-  margin: 30px auto;
-  border: 1px solid grey;
+  width: 100%;
+  /* margin: 0 auto; */
+  border-top: 1px solid rgb(244, 244, 244);
   padding: 10px 5px;
   box-sizing: border-box;
+  background-color: rgba(255, 255, 255, 05);
+  position: fixed;
+  bottom: 0;
 `
 const Input = styled.input`
   flex-grow: 1;
+  height: 60px;
   border: 0;
+  font-size: 5rem;
+`
+const Button = styled.button`
+  margin: 5px;
+  height: 4rem;
+  width: 4rem;
+  font-size: 2.5rem;
+  text-align: center;
+  border-radius: 10px;
+  border: 0;
+  color: black;
 `
 
 export const AddTodo = () => {
   const dispatch = useDispatch()
   const [input, setInput] = useState('')
+  const [showDatePicker, setShowDatePicker] = useState(false)
+  const [startDate, setStartDate] = useState(new Date())
 
-  const onAddTodo = () => {
+  const onAddTodo = e => {
     dispatch(todos.actions.addTodo(input))
     setInput('')
+    e.target.blur()
   }
 
   const onKeyDown = e => {
     if (e.key === 'Enter') {
-      onAddTodo()
+      onAddTodo(e)
     }
   }
 
   return (
     <InputWrapper>
-      <button disabled={input <= 0} onClick={onAddTodo}>
+      <Button disabled={input <= 0} onClick={onAddTodo}>
         +
-      </button>
+      </Button>
       <Input
         type='text'
         value={input}
         onChange={e => setInput(e.target.value)}
         onKeyDown={onKeyDown}
       />
+      {showDatePicker && <DatePicker selected={startDate} onChange={date => setStartDate(date)} />}
+      <Button disabled={input <= 0} onClick={() => setShowDatePicker(true)}>
+        🕒
+      </Button>
     </InputWrapper>
   )
 }

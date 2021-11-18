@@ -4,7 +4,33 @@ import uniqid from 'uniqid'
 export const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: [],
+    items: [
+      {
+        id: 'kw4k9t3i',
+        text: 'Hej',
+        isComplete: false,
+      },
+      {
+        id: 'kw4k9wov',
+        text: 'HEj igen',
+        isComplete: true,
+      },
+      {
+        id: 'kw4k9zqn',
+        text: 'Hej då',
+        isComplete: false,
+      },
+      {
+        id: 'kw4ka3bz',
+        text: 'Va då`?',
+        isComplete: false,
+      },
+    ],
+    modalItem: {
+      id: 'kw4ka3bz',
+      text: 'Va då`?',
+      isComplete: false,
+    },
   },
   reducers: {
     addTodo: (store, action) => {
@@ -31,8 +57,15 @@ export const todos = createSlice({
       const decreasedItems = store.items.filter(item => item.id !== action.payload)
       store.items = decreasedItems
     },
-    clearAllTodos: (store, action) => {
+    clearAllTodos: store => {
       store.items = []
+    },
+    setModalItem: (store, action) => {
+      const modalItem = store.items.find(item => item.id === action.payload)
+      store.modalItem = modalItem
+    },
+    removeModalItem: store => {
+      store.modalItem = false
     },
   },
 })
