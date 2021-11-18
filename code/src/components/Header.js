@@ -8,7 +8,7 @@ const Header = () => {
         <header className="header">
             <div className="header-container">
                 <h1 className="heading-one">Todo list</h1>
-                <p className="date">{moment().format("Do-MMM-YY")}</p>
+                <p className="date">{moment().format("Do MMM YY")}</p>
             </div>
         </header>
     )

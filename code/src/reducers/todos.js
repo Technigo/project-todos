@@ -17,9 +17,9 @@ const todos = createSlice({
       // newTodo object goes inside the items array when the user adds thing to do in the input
       const newTodo = {
         id: uniqid(),
-        text: data,
+        task: data,
         isComplete: false,
-        timeStamp: moment().format("Do-MMM-YY")
+        timeStamp: moment().format("Do MMM YY")
       };
       // immutability approach; creating a new array with the existing array data comming from the addTodo component
       store.items = [...store.items, newTodo];

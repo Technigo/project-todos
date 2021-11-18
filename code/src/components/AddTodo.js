@@ -11,7 +11,10 @@ const AddTodo = () => {
   //function btn
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input)); //input replace the action parameter
+    setInput("") 
   };
+
+
 
   return (
     <div className="input-wrapper">
