@@ -73,7 +73,10 @@ const AddTodo = () => {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <AddButton onClick={() => onAddTodo(input)}>
+      <AddButton
+        disabled={input === "Add new task ..."}
+        onClick={() => onAddTodo(input)}
+      >
         <AddEmoji role="img" aria-label="add-emoji">
           ➕
         </AddEmoji>

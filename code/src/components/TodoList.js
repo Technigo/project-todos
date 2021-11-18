@@ -47,28 +47,6 @@ const TodoWrapper = styled.div`
   }
 `;
 
-const CheckboxWrapper = styled.div`
-  display: inline-flex;
-  cursor: pointer;
-  position: relative;
-`;
-
-const CheckboxInput = styled.input`
-  height: 25px;
-  width: 25px;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -o-appearance: none;
-  appearance: none;
-  border: 1px solid #337b9e;
-  border-radius: 50px;
-  outline: none;
-  transition-duration: 0.3s;
-  background-color: #3b8cb4;
-  cursor: pointer;
-  margin: 0;
-`;
-
 const DeleteButton = styled.button`
   background-color: #3b8cb4;
   border: 1px solid #337b9e;
@@ -102,13 +80,13 @@ const TodoList = () => {
       <TodosContainer>
         {items.map((item) => (
           <TodoWrapper key={item.id}>
-            <CheckboxWrapper>
-              <CheckboxInput
+            <div className="checkboxWrapper">
+              <input
                 type="checkbox"
                 checked={item.isComplete}
                 onChange={() => onToggleTodo(item.id)}
               />
-            </CheckboxWrapper>
+            </div>
 
             <p>{item.text}</p>
             <DeleteButton onClick={() => onDeleteTodo(item.id)}>
@@ -118,7 +96,6 @@ const TodoList = () => {
             </DeleteButton>
           </TodoWrapper>
         ))}
-        {/* <p>You have {items.length.isComplete} completed tasks</p> */}
       </TodosContainer>
     </>
   );
