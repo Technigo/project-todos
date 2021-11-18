@@ -21,7 +21,8 @@ const AddTodo = () => {
     <>
       <form onSubmit={handleOnSubmit} className="add-todo-wrap">
         <input
-          minLength="4"
+          //required
+          // content="value"
           className="input-box"
           type="text"
           placeholder="What will you do today?"

@@ -42,7 +42,6 @@ const TodoList = () => {
             </p>
           </div>
 
-          {/* <span> Created</span> */}
           <CreatedTime>
             <DayJS
               style={{ padding: "5px" }}
@@ -54,7 +53,7 @@ const TodoList = () => {
               className="delete-button"
               onClick={() => onDeleteTodoImmutability(item.id)}
             >
-              {/* <Wastecan src="./assets/wastecan.svg" /> */}-
+              x
             </button>
           </CreatedTime>
         </div>

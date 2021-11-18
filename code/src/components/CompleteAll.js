@@ -18,6 +18,10 @@ const Button = styled.button`
   border-radius: 5px;
   width: 120px;
   margin: 0 5px;
+  cursor: pointer;
+  &:hover {
+    background-color: #ffc800;
+  }
 `
 
 const CompleteAll = () => {

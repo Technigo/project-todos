@@ -6,7 +6,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-image: url(); */
-  background-color: rgb(75, 75, 75);
+  background-color: rgb(215, 215, 215);
   display: flex;
   justify-content: center;
 }
@@ -40,7 +40,7 @@ code {
   font-style: italic;
   margin: 3px;
   padding: 0 10px;
-  height: 40px;
+  /* height: 40px; */
   border-radius: 5px;
   border: 1px solid #999999;
 }
@@ -97,12 +97,11 @@ the time is vs  */
   min-height: 45px;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
-  border: 2px solid rgb(255, 235, 82);
-
+  border: 1px solid #ffbe00;
+  outline: none;
   resize: none;
   margin: 3px;
-  /* outline: none;
-  overflow-wrap: break-word; */
+  /*   overflow-wrap: break-word; */
 }
 
 /* .add-todo-button {
@@ -130,13 +129,16 @@ the time is vs  */
   color: rgb(255, 255, 255);
   outline: none;
 }
+.add-todo-button:hover {
+  color: rgb(254, 177, 36);
+}
 
 .delete-button {
   border: none;
-  height: 30px;
-  width: 30px;
+  height: 24px;
+  width: 24px;
   border-radius: 50%;
-  font-size: 28px;
+  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -146,11 +148,18 @@ the time is vs  */
   color: rgb(226 133 0);
   outline: none;
 }
+.delete-button:hover {
+  background-color: rgb(108, 108, 108);
+  color: rgb(283 191 12);
+}
+
 .item-text {
-  color: rgb(255, 255, 255);
-  padding-left: 10px;
-  font-size: 12px;
+  color: rgb(31, 31, 31);
+  margin: 6px;
+  font-size: 14px;
   font-style: normal;
+  text-align: left;
+  max-width: 200px;
 }
 .check-button {
   display: flex;
@@ -163,7 +172,7 @@ the time is vs  */
 }
 
 .checkbox {
-  width: 18px;
+  /* width: 18px; */
   height: 20px;
   margin: 0 6px 0 0;
   cursor: pointer;

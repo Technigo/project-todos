@@ -9,6 +9,7 @@ import Header from "./components/Header"
 import AddTodo from "./components/AddTodo"
 import TodoList from "./components/TodoList"
 import CompleteAll from "./components/CompleteAll"
+import Footer from "./components/Footer"
 
 const reducer = combineReducers({ todos: todos.reducer })
 
@@ -35,6 +36,7 @@ export const App = () => {
         <AddTodo />
         <TodoList />
         <CompleteAll />
+        <Footer />
       </Provider>
     </Main>
   )
@@ -47,11 +49,12 @@ const Main = styled.div`
   flex-direction: column;
   text-align: center;
   justify-content: flex-start;
-  background-color: #818181;
+  background-color: #fffcfc;
   padding: 5px;
   border-radius: 10px;
   font-size: 14px;
   box-sizing: border-box;
+  box-shadow: rgb(139 139 139) 10px 10px 10px;
   @media (min-width: 767px) {
     width: 500px;
     margin: 20px 0px;

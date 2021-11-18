@@ -10,6 +10,10 @@ const Greeting = () => {
     height: 150px;
     border-radius: 50%;
   `
+  const GreetingText = styled.h2`
+    font-size: 20px;
+    color: #000;
+  `
 
   return (
     <div>
@@ -22,7 +26,7 @@ const Greeting = () => {
               src="https://media.giphy.com/media/QXbkZHjE3Q7dyzWUX7/giphy.gif"
               alt="evening gif"
             ></Gif>
-            <h2> Good Evening</h2>
+            <GreetingText> Good Evening</GreetingText>
           </>
         ) : (
           <>
@@ -31,7 +35,7 @@ const Greeting = () => {
               // src="https://media.giphy.com/media/SxMPKbvfD4zpXjEmc3/giphy.gif"
               alt="afternoon gif"
             ></Gif>
-            <h2> Good Afternoon</h2>
+            <GreetingText> Good Afternoon</GreetingText>
           </>
         )
       ) : (
@@ -42,7 +46,7 @@ const Greeting = () => {
             src="https://media.giphy.com/media/SxMPKbvfD4zpXjEmc3/giphy.gif"
             alt="morning gif"
           ></Gif>
-          <h2>Good Morning</h2>
+          <GreetingText>Good Morning</GreetingText>
         </>
       )}
     </div>
