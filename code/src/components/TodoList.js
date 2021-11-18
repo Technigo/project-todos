@@ -31,28 +31,24 @@ const TodoList = () => {
           }
           key={item.id}
         >
-          <div className="text-and-check-container">
-            <input
-              type="checkbox"
-              checked={item.isComplete}
-              onChange={() => onToggleTodo(item.id)}
-            ></input>
-            <p className="list-input-text">{item.text}</p>
+          <input
+            type="checkbox"
+            checked={item.isComplete}
+            onChange={() => onToggleTodo(item.id)}
+          ></input>
+          <div className="list-input-text">
+            <p className="todo-text">{item.text}</p>
+
+            <p className="date">
+              Created at -<DayJS element="span" format="MMM D, YYYY H:mm" />
+            </p>
           </div>
-
-          <p>
-            Created at -<DayJS element="span" format="MMM D, YYYY H:mm" />
-          </p>
-
-          {/* v1
-          <button onClick={() => onDeleteTodoImmutability(index)}>Delete</button>
-          v2 */}
 
           <button
             className="delete-btn"
             onClick={() => onDeleteTodoImmutability(item.id)}
           >
-            Delete
+            &otimes;
           </button>
         </div>
       ))}
