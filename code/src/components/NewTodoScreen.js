@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowLeftLong } from "@fortawesome/pro-light-svg-icons";
 import { useDispatch } from "react-redux";
 import { todo } from "reducers/todo";
+import { screen } from "reducers/screen";
 
 export const NewTodoScreen = () => {
   const [category, setCategory] = useState("business");
@@ -25,7 +26,10 @@ export const NewTodoScreen = () => {
       <GoBackIconHeaderContainer>
         <GoBackIcon
           onClick={() => {
-            dispatch(todo.actions.currentScreen({ screen: "todoList" }));
+            dispatch(
+              screen.actions.scrollDownToNewitem({ scrollIntoView: false })
+            );
+            dispatch(screen.actions.currentScreen({ screen: "todoList" }));
           }}
         >
           <FontAwesomeIcon icon={faArrowLeftLong} />
@@ -38,7 +42,7 @@ export const NewTodoScreen = () => {
           onSubmit={(event) => {
             event.preventDefault();
             dispatch(
-              todo.actions.addNewTodo({
+              todo.actions.addTodo({
                 category: category,
                 title: todoTitle,
                 place: todoPlace,
@@ -46,7 +50,11 @@ export const NewTodoScreen = () => {
               })
             );
             reset();
-            dispatch(todo.actions.currentScreen({ screen: "todoList" }));
+
+            dispatch(screen.actions.currentScreen({ screen: "todoList" }));
+            dispatch(
+              screen.actions.scrollDownToNewitem({ scrollIntoView: true })
+            );
           }}
         >
           <select

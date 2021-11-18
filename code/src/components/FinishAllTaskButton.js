@@ -10,6 +10,7 @@ export const FinishAllTasksButton = () => {
     <FlexBox>
       <CompleteAll
         onClick={() => {
+          console.log("hej");
           dispatch(todo.actions.setAllIsCompleted());
         }}
       >

@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faTrash } from "@fortawesome/pro-light-svg-icons";
 import { useDispatch } from "react-redux";
 import { todo } from "reducers/todo";
+import moment from "moment";
 
 export const TodoListItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -16,11 +17,12 @@ export const TodoListItem = ({ item }) => {
         canClick={true}
         id={item.id}
       />
-      <ItemHeaderLocationContainer>
+      <div>
         <ItemHeader>{item.title}</ItemHeader>
         <ItemLocation>{item.place}</ItemLocation>
         <ItemTimer>{item.time}</ItemTimer>
-      </ItemHeaderLocationContainer>
+        <CreatedAt>Created {moment(item.CreatedAt).fromNow()}</CreatedAt>
+      </div>
       <FontAwesomeIcon
         icon={faTrash}
         onClick={() => dispatch(todo.actions.removeTodo({ id: item.id }))}
@@ -39,16 +41,21 @@ const Item = styled.div`
   align-items: center;
 `;
 
-const ItemHeaderLocationContainer = styled.div``;
-
 const ItemHeader = styled.div`
   font-size: 16px;
 `;
+
 const ItemLocation = styled.div`
   color: #d2d3db;
   font-size: 14px;
 `;
+
 const ItemTimer = styled.div`
+  color: #d2d3db;
+  font-size: 14px;
+`;
+
+const CreatedAt = styled.div`
   color: #d2d3db;
   font-size: 14px;
 `;

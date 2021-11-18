@@ -1,11 +1,11 @@
 import React from "react";
 import { Header } from "./Header";
-import { TodoList } from "./TodoList";
 import { NewTodoScreen } from "./NewTodoScreen";
 import { useSelector } from "react-redux";
+import { TodoList } from "./TodoList";
 
 export const Main = () => {
-  const currentScreen = useSelector((store) => store.todo.currentScreen);
+  const currentScreen = useSelector((store) => store.screen.currentScreen);
 
   return (
     <>

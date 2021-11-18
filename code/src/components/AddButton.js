@@ -2,33 +2,26 @@ import React from "react";
 import styled from "styled-components/macro";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPlus } from "@fortawesome/pro-light-svg-icons";
-import { todo } from "reducers/todo";
+import { screen } from "reducers/screen";
 import { useDispatch } from "react-redux";
 
 export const AddButton = () => {
   const dispatch = useDispatch();
   return (
-    <AddButtonContainer>
-      <AddButtonCircle
-        onClick={() => {
-          dispatch(todo.actions.currentScreen({ screen: "newTodo" }));
-        }}
-      >
-        <FontAwesomeIcon icon={faPlus} />
-      </AddButtonCircle>
-    </AddButtonContainer>
+    <AddButtonCircle
+      onClick={() => {
+        dispatch(screen.actions.currentScreen({ screen: "newTodo" }));
+      }}
+    >
+      <FontAwesomeIcon icon={faPlus} />
+    </AddButtonCircle>
   );
 };
 
-const AddButtonContainer = styled.div`
-  width: 100%;
-  display: flex;
-  justify-content: flex-end;
-  position: sticky;
-  bottom: 0;
-`;
-
 const AddButtonCircle = styled.div`
+  position: fixed;
+  bottom: 0;
+  right: 0;
   height: 60px;
   width: 60px;
   display: flex;

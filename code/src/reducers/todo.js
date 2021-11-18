@@ -8,6 +8,7 @@ const todos = [
     time: "09:00",
     category: "activity",
     completed: false,
+    createdAt: new Date(),
   },
   {
     id: 2,
@@ -16,6 +17,7 @@ const todos = [
     time: "09:00",
     category: "activity",
     completed: false,
+    createdAt: new Date(),
   },
   {
     id: 3,
@@ -24,12 +26,30 @@ const todos = [
     time: "09:00",
     category: "activity",
     completed: false,
+    createdAt: new Date(),
+  },
+  {
+    id: 4,
+    title: "Walk in the park",
+    place: "Trädgårdsföreningen, Gothenburg",
+    time: "09:00",
+    category: "activity",
+    completed: false,
+    createdAt: new Date(),
+  },
+  {
+    id: 5,
+    title: "Walk in the park",
+    place: "Trädgårdsföreningen, Gothenburg",
+    time: "09:00",
+    category: "activity",
+    completed: false,
+    createdAt: new Date(),
   },
 ];
 
 const initialState = {
   todos,
-  currentScreen: "todoList",
 };
 
 export const todo = createSlice({
@@ -40,15 +60,18 @@ export const todo = createSlice({
       store.todos = [];
     },
 
-    currentScreen: (store, action) => {
-      const { screen } = action.payload;
-      store.currentScreen = screen;
-    },
-
-    addNewTodo: (store, action) => {
+    addTodo: (store, action) => {
       const { category, title, place, time } = action.payload;
       const id = store.todos.length + 1;
-      store.todos.push({ id, category, title, place, time });
+      store.todos.push({
+        id,
+        category,
+        title,
+        place,
+        time,
+        completed: false,
+        createdAt: new Date(),
+      });
     },
 
     setIsCompleted: (store, action) => {

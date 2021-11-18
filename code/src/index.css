@@ -10,6 +10,7 @@ body {
   box-sizing: border-box;
   font-family: "Raleway", sans-serif;
   background-color: (255, 255, 255, 255);
+  scroll-behavior: smooth;
 }
 
 code {
