@@ -9,10 +9,10 @@ const TodosDiv = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: blanchedalmond;
+    background-color: rgba(255,235,205,0.85);
     border-top: 1px solid lightblue;
     &:nth-child(odd) {
-        background: antiquewhite;
+        background: rgba(250,235,215,0.85);
       }
     &:last-child {
         border-radius: 0 0 20px 20px;
@@ -21,6 +21,7 @@ const TodosDiv = styled.div`
 const TodoTextDiv = styled.div`
     padding: 10px;
     max-width: 300px;
+    font-family: 'Source Code Pro', monospace;
 `
 const CheckboxDiv = styled.div`
     padding-right: 10px;
@@ -38,13 +39,20 @@ const TodosRemoveButton = styled.button`
     border-radius: 10px;
     margin: 10px;
     background-color: #F1C8D5;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
 `
 const EmptyTodoDiv = styled.div`
     padding-top: 30px;
     height: 250px;
     border-radius: 0 0 20px 20px;
-    background-color: #F2F3F4;
+    background-color: rgba(255,235,205,0.7);
     text-align: center;
+`
+const EmptyImg = styled.img`
+    margin-top: 50px;
+    width: 100px;
+    opacity: 0.4;
 `
 
 const TodoList = () => {
@@ -62,7 +70,10 @@ const TodoList = () => {
     
     return (
         <section>
-        {items.length === 0 && <EmptyTodoDiv>Ohhh, lucky you! </EmptyTodoDiv>}
+        {items.length === 0 && 
+            <EmptyTodoDiv>
+                <EmptyImg src="empty.svg" alt="empty"/>
+            </EmptyTodoDiv>}
         {items.map((item, index) => (
             <TodosDiv key={item.id}>
                 <CheckboxDiv>

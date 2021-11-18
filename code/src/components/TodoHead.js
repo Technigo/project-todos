@@ -12,8 +12,8 @@ const TodoH1 = styled.h1`
 `
 const TodoH2 = styled.h2`
     color: #422117;
-    font-size: 3rem;
-    margin-top: 0;
+    font-size: 4rem;
+    margin-top: 10px;
     margin-bottom: 20px;
 `
 const TheHeader = styled.div `
@@ -21,6 +21,12 @@ const TheHeader = styled.div `
 `
 const DateText = styled.p`
     color: grey;
+    font-family: 'Source Code Pro', monospace;
+    font-size: 0.9rem;
+`
+const CompleteP = styled.p`
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
 `
 
 const TodoHead = () => {
@@ -35,12 +41,12 @@ const TodoHead = () => {
             <TodoH1>Todo Today</TodoH1>
             <TodoH2>{items.length}</TodoH2>
             <DateText>{moment().format('YYYY/MM/DD')}</DateText>
-            <p>Incomplete: {incomplete} 
+            <CompleteP>Incomplete: {incomplete} 
             {incomplete >! items.length && <span> &#10006; </span>}
             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
             Complete: {complete}
             {complete === items.length && <span> &#10004; </span>}
-            </p>
+            </CompleteP>
         </TheHeader>
     )
 }

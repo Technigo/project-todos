@@ -13,6 +13,8 @@ const AddTodoButton = styled.button`
     font-size: 1.1rem;
     border-radius: 0 20px 20px 0;
     background-color: white;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
 `
 const AllButtonsDiv = styled.div`
     display: flex;
@@ -25,6 +27,8 @@ const CheckAllButton = styled.button`
     margin: 30px 20px 0 0;
     padding: 10px 15px;
     filter: grayscale(60%) sepia(10%) brightness(180%);
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
 `
 const ClearAllButton = styled.button`
     border: none;
@@ -32,11 +36,17 @@ const ClearAllButton = styled.button`
     background-color: #F1C8D5;
     margin: 30px 0 0 20px;
     padding: 10px 15px;
+    font-family: 'Source Code Pro', monospace;
+    font-weight: 600;
 `
 const AddTodoInput = styled.input`
     height: 36px;
     width: 250px;
     border-radius: 20px 0 0 20px;
+    @media (max-width: 450px) {
+        width: 130px;
+
+    }
 `
 
 const AddTodo = () => {

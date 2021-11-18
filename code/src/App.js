@@ -12,7 +12,7 @@ import Todohead from 'components/TodoHead'
 const TheHead = styled.section`
   max-width: 550px;
   margin: 0 auto;
-  background-color: blanchedalmond;
+  background-color: rgba(255,235,205,0.9);
   text-align: center;
   border-radius: 20px 20px 0 0;
 `
