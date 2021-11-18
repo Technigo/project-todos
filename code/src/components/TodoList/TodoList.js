@@ -14,9 +14,16 @@ export const TodoList = () => {
   const todos = useSelector((store) => store.todo.todos);
   const ButtonsContainerRef = useRef();
 
-  const activities = todos.filter((todo) => todo.category === "activity");
-  const business = todos.filter((todo) => todo.category === "business");
-  const family = todos.filter((todo) => todo.category === "family");
+  const activities = todos.filter(
+    (todo) => todo.category === "activity" && !todo.completed
+  );
+  const business = todos.filter(
+    (todo) => todo.category === "business" && !todo.completed
+  );
+  const family = todos.filter(
+    (todo) => todo.category === "family" && !todo.completed
+  );
+  const completed = todos.filter((todo) => todo.completed);
 
   // Using a useEffect to recognise changes in the global state and then
   // either scrollIntoView or not.
@@ -53,6 +60,15 @@ export const TodoList = () => {
             <>
               <TodoListTitle>Family</TodoListTitle>
               {family.map((item) => {
+                return <TodoListItem key={item.id} item={item} />;
+              })}
+            </>
+          )}
+
+          {completed.length > 0 && (
+            <>
+              <TodoListTitle>Completed</TodoListTitle>
+              {completed.map((item) => {
                 return <TodoListItem key={item.id} item={item} />;
               })}
             </>
