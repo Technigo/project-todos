@@ -3,13 +3,21 @@ import { useDispatch } from "react-redux";
 
 import todos from "../reducers/todos";
 
-const addTodo = () => {
+const AddTodo = () => {
   const [input, setInput] = useState("");
 
   const dispatch = useDispatch();
 
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input));
+    setInput("");
+  };
+
+  // Sends input on Enter button
+  const onEnter = event => {
+    if (event.key === "Enter") {
+      onAddTodo();
+    }
   };
 
   return (
@@ -17,6 +25,7 @@ const addTodo = () => {
       <input
         type="text"
         value={input}
+        onKeyDown={event => onEnter(event)}
         onChange={event => setInput(event.target.value)}
       />
       <button onClick={onAddTodo}>Add todo</button>
@@ -24,4 +33,4 @@ const addTodo = () => {
   );
 };
 
-export default addTodo;
+export default AddTodo;

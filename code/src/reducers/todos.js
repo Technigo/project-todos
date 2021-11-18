@@ -24,6 +24,9 @@ const todos = createSlice({
         }
       });
     },
+    deleteTodo: (store, action) => {
+      store.items.splice(action.payload, 1);
+    },
   },
 });
 
