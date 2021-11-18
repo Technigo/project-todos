@@ -20,7 +20,7 @@ const AddTodo = () => {
   }
 
   return (
-    <>
+    <section>
     <InputContainer>
       {!canWrite && <AddTodoButton onClick={() => handleCreateTodo()}><span>+ Add todo</span></AddTodoButton>}
       {canWrite && 
@@ -42,7 +42,7 @@ const AddTodo = () => {
       </form>
       }
     </InputContainer>
-    </>
+    </section>
   )
 }
 

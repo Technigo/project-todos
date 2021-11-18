@@ -18,7 +18,7 @@ const Header = () => {
   const completedTasks = tasks.filter((singleTask) => singleTask.isComplete)
   
   return(
-    <>
+    <section>
     <HeaderContainer>
       <HeaderMainTitle>Todo</HeaderMainTitle>
       <HeaderBodyContainer>
@@ -32,7 +32,7 @@ const Header = () => {
         </RigthContainer>
       </HeaderBodyContainer>
     </HeaderContainer>
-    </>
+    </section>
   )
 }
 

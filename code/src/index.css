@@ -1,6 +1,6 @@
 body {
   background-color: rgb(37, 37, 37);
-  margin: 0px;
+  margin: 0 auto;
   font-family: "Alata", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -9,4 +9,8 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+section {
+  max-width: 900px;
 }

@@ -2,18 +2,13 @@ import styled from "styled-components"
 
 // Header
 export const HeaderContainer = styled.section`
-color: rgb(37, 37, 37);   
-background: #ffcc67;
-width: 100%;
-max-width: 750px;
-margin: 0 auto;
-border-radius: 0 0 30px 30px;
-
+  color: rgb(37, 37, 37);   
+  background: #ffcc67;
+  border-radius: 0 0 30px 30px;
 `
 export const HeaderBodyContainer = styled.section`
   color: rgb(37, 37, 37);
   border-radius: 2px;
-  margin: 0px auto;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -66,6 +61,7 @@ font-weight: 700;
 margin: 0 10px;
 text-align: start;
 padding: 1rem 0 0.2rem 0;
+
 @media (min-width: 768px){
    font-size: 2.2rem;
 }
@@ -131,7 +127,7 @@ export const EmptyTodoDiv = styled.div`
   align-items: center;
   color:rgb(100, 100, 100);
   margin: 10px auto;
-  max-width: 750px;
+  
   border-radius: 10px;
   font-size: 16px;
 
@@ -156,7 +152,7 @@ export const InputContainer = styled.div`
    justify-content: center;
    background: rgb(150, 150, 150);
    margin: 10px auto;
-   max-width: 740px;
+   
    padding: 5px;
    align-items: center;
    border: rgb(200, 200, 200) solid 2px;
@@ -276,50 +272,49 @@ export const InputButton = styled.button`
   }
 `
 export const AddTodoButton = styled.button `
-padding: 0.7em 1.5em;
-border: 2px solid #ffcc67;
-border-radius: 20px;
-position: relative;
-overflow: hidden;
-background-color: transparent;
-text-align: center;
-text-transform: uppercase;
-font-size: 16px;
-color: #ddd;
-transition: .3s;
-z-index: 1;
-font-family: inherit;
-color: #ffcc67;
+  padding: 0.7em 1.5em;
+  border: 2px solid #ffcc67;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  background-color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #ddd;
+  transition: .3s;
+  z-index: 1;
+  font-family: inherit;
+  color: #ffcc67;
 
-&::before {
-content: '';
-width: 0;
-height: 300%;
-position: absolute;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%) rotate(45deg);
-background: #ffcc67;
-transition: .5s ease;
-display: block;
-z-index: -1;
-}
+  &::before {
+  content: '';
+  width: 0;
+  height: 300%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background: #ffcc67;
+  transition: .5s ease;
+  display: block;
+  z-index: -1;
+  }
 
-&:hover::before {
-width: 105%;
-}
+  &:hover::before {
+  width: 105%;
+  }
 
-&:hover {
-color: #111;
-}
+  &:hover {
+  color: #111;
+  }
 `
-// Icon links
+// Footer
 export const FooterContainer = styled.footer`
   position: relative;
   bottom: 0;
   font-size: 12px;
 `
-
 export const Icon = styled.a`
   text-decoration: none;
   margin: 5px 2px;
