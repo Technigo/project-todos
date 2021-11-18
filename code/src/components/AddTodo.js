@@ -56,7 +56,7 @@ const AddTodo = () => {
         required=''
       />
       <StyledAddTodoButton type='submit' disabled={todoInput === ''}>
-        <span>&#x0002B;</span>
+        <span>+</span>
       </StyledAddTodoButton>
     </StyledForm>
   );

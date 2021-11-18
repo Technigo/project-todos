@@ -33,7 +33,7 @@ const StyledList = styled.section`
     grid-template-columns: 9vw auto 45px;
     align-items: center;
     padding: 2vh 2vw;
-    min-height: 50px;
+    min-height: 60px;
 
     @media (min-width: 768px) {
       grid-template-columns: 6vw auto 7vw;
@@ -108,7 +108,7 @@ const TodoList = () => {
             </div>
 
             <StyledDeleteButton onClick={() => onDeleteTodo(listItem.id)}>
-              <span>&#x02212;</span>
+              <span>-</span>
             </StyledDeleteButton>
           </div>
         ))}
