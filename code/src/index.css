@@ -9,7 +9,7 @@ body {
   --theme-color: palevioletred;
   --sub-theme-color: grey;
   background-size: cover;
-  background-position: top;
+  /* background-position: top; */
   transition: background-image 0.5s ease;
 }
 
