@@ -11,17 +11,26 @@ const AllTodoButtons = styled.div`
   margin: 20px;
 `
 
+const Button = styled.button`
+  background-color: #ffbe00;
+  border: none;
+  height: 33px;
+  border-radius: 5px;
+  width: 120px;
+  margin: 0 5px;
+`
+
 const CompleteAll = () => {
   const dispatch = useDispatch()
 
   return (
     <AllTodoButtons>
-      <button onClick={() => dispatch(todos.actions.completeAllTodos())}>
+      <Button onClick={() => dispatch(todos.actions.completeAllTodos())}>
         Complete All
-      </button>
-      <button onClick={() => dispatch(todos.actions.removeAllTodos())}>
+      </Button>
+      <Button onClick={() => dispatch(todos.actions.removeAllTodos())}>
         Remove All
-      </button>
+      </Button>
     </AllTodoButtons>
   )
 }

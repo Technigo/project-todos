@@ -1,13 +1,13 @@
 import React from "react"
 import DayJS from "react-dayjs"
 import { useSelector, useDispatch } from "react-redux"
-import styled from "styled-components"
+// import styled from "styled-components"
 
 import todos from "../reducers/todos"
 
-const Wastecan = styled.img`
-  width: 25px;
-`
+// const Wastecan = styled.img`
+//   width: 25px;
+// `
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
@@ -33,18 +33,22 @@ const TodoList = () => {
               checked={item.isComplete}
               onChange={() => onToggleTodo(item.id)}
             />
-            <p className="item-text">{item.text}</p>
+            <p
+              className="item-text"
+              style={{ textDecoration: item.isComplete ? "line-through" : "" }}
+            >
+              {item.text}
+            </p>
           </div>
 
-          <span> Created</span>
-
+          {/* <span> Created</span> */}
           <DayJS element="span" format="MMM D, YYYY H:mm" />
 
           <button
             className="delete-button"
             onClick={() => onDeleteTodoImmutability(item.id)}
           >
-            <Wastecan src="./assets/wastecan.svg" />
+            {/* <Wastecan src="./assets/wastecan.svg" /> */}-
           </button>
         </div>
       ))}

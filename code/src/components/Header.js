@@ -4,18 +4,18 @@ import styled from "styled-components"
 import { useSelector } from "react-redux"
 
 import Greeting from "./Greeting"
-import CompleteAll from "./CompleteAll"
 
 const DateContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   color: white;
-  margin-top: 150px;
+  margin-top: 30px;
 `
 
 const CompletedTaskText = styled.p`
-  color: red;
+  color: #ffbe00;
+  font-weight: bold;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,7 +36,6 @@ const Header = () => {
       <CompletedTaskText>
         {completedTasks} / {numberOfTasks} tasks completed
       </CompletedTaskText>
-      <CompleteAll />
     </>
   )
 }

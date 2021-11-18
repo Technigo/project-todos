@@ -29,7 +29,7 @@ const AddTodo = () => {
           onChange={(event) => setInput(event.target.value)}
         />
         <button className="add-todo-button" onClick={onAddTodo}>
-          Add todo
+          +
         </button>
       </form>
     </>
