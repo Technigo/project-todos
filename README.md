@@ -1,13 +1,14 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This assignment was to create a Todo app by using Redux. Focus was on implemmenting Reducers and Actions.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First we had to plan the app to realize which reducers we need and what data to send to the store.
+The design came last for me as I only wanted a simple design with focus on the functions.
+
+If I had more time I would add the timestamp and categories.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://quicktodo.netlify.app/
