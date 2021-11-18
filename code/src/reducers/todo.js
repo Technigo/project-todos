@@ -9,12 +9,14 @@ export const todo = createSlice({
         id: 0,
         text: 'Continue with code along',
         complete: false,
+        date: new Date(),
         category: 'Studies'
       },
       {
         id: 1,
         text: 'Clean the office room',
         complete: false,
+        date: new Date(),
         category: 'House Chores'
       }
     ]
@@ -23,8 +25,10 @@ export const todo = createSlice({
     addTodo: (store, action) => {
       const newTodo = {
         id: uniqid(),
-        text: action.payload,
-        isComplete: false
+        text: action.payload.text,
+        isComplete: false,
+        date: new Date(),
+        category: action.payload.category
       };
       store.items = [newTodo, ...store.items];
     },

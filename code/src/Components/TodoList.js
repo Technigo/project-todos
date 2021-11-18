@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
+import moment from 'moment';
 
 import { todo } from 'reducers/todo';
 
 export const TodoList = () => {
   const [input, setInput] = useState('');
+  const [category, setCategory] = useState('');
   const dispatch = useDispatch();
 
   //Denna funktionen tar det som är i input statet och skickar till funktionen i the store. tror jag...
   const onAddToDo = () => {
-    dispatch(todo.actions.addTodo(input));
+    dispatch(todo.actions.addTodo({ text: input, category: category }));
     setInput('');
   };
   const listWithTodos = useSelector((store) => store.todo.items);
@@ -32,7 +34,21 @@ export const TodoList = () => {
             onChange={(event) => setInput(event.target.value)}
             value={input}
           />
-          <InputButton onClick={onAddToDo}>Add ToDo</InputButton>
+
+          <div class="trips">
+            <label>Category:</label>
+            <select
+              name="category"
+              onChange={(event) => setCategory(event.target.value)}>
+              <option value="Urgent">Urgent</option>
+              <option value="Not urgent">Not urgent</option>
+              <option value="Fun stuff">Fun stuff</option>
+            </select>
+          </div>
+
+          <InputButton disabled={input.length < 1} onClick={onAddToDo}>
+            Add ToDo
+          </InputButton>
         </div>
       </InputField>
 
@@ -46,6 +62,8 @@ export const TodoList = () => {
               onChange={() => onToggle(item.id)}></input>
             <p>{item.text}</p>
             <DeleteButton onClick={() => onDelete(index)}>Delete</DeleteButton>
+            <p>Posted: {moment(item.date).fromNow()}</p>
+            <p>Category:{item.category}</p>
           </TheList>
         ))}
       </div>
