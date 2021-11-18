@@ -5,7 +5,7 @@ const EmptyContainer = styled.div`
     font-size: 30px;
     display: flex;
     color: white;
-    margin-top: 30px;
+    margin-top: 10px;
     width: 100%;
     background-color: rgba(245, 245, 245, 0.622);
     border-radius: 25px 25px 10px 10px;
@@ -35,9 +35,15 @@ const EmptyText = styled.p`
     font-weight: bold;
     color: #768eb0;
     font-family: 'Marcellus SC', serif;
+    @media (min-width: 768px) {
+    font-size: 23px;
+    }
 `
 const Gif = styled.img`
-    width: 100%;
+    width: 90%;
+    @media (min-width: 768px) {
+    max-width: 400px;
+    }
     @media (min-width: 992px) {
         max-width: 500px;
     }
@@ -51,8 +57,12 @@ const Main = styled.div`
     justify-content: center;
     align-items: center;
     width: 90%;
-    padding: 15px;
+    padding: 5px 15px 15px 15px;
     border-radius: 0px 0px 25px 25px;
+    border: none;
+    @media (min-width: 768px) {
+    min-height: 500px;
+    }
 `
 const NoTasks = () => {
     return (
@@ -60,7 +70,7 @@ const NoTasks = () => {
             <EmptyContainer>
                 <EmptyCard>
                     <EmptyText>There is nothing left to do!</EmptyText>
-                    <EmptyText>You deserve some rest.</EmptyText>
+                    <EmptyText>You deserve some rest</EmptyText>
                     <Gif src="https://media3.giphy.com/media/LpWSbJeDMVhzv3EYxF/giphy.gif?cid=ecf05e47x81zoce6rtdgs514eknj54w21ngffis5x731o42r&rid=giphy.gif&ct=g" alt="mushroom-resting" />
                 </EmptyCard>
             </EmptyContainer>

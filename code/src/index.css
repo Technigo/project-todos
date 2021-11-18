@@ -92,8 +92,8 @@ input:checked ~ .check::after{
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  display: inline-block;
-  font-size: 16px;
+  display: inline;
+  font-size: 15px;
   font-weight: bold;
   outline: none;
   padding: 8px;
@@ -118,3 +118,61 @@ input:checked ~ .check::after{
 .button-55:focus {
   box-shadow: rgba(0, 0, 0, .3) 2px 8px 4px -6px;
 }
+
+.select-dropdown {
+  position: relative;
+  background-color: rgba(118, 142, 176, 0.72);
+  width: 100%;
+  border-radius: 2px;
+}
+.select-dropdown select {
+  font-family: 'Yuji Syuku', serif;
+  font-weight: 400;
+  text-align: center;
+  font-size: 16px;
+  width: 100%;
+  padding: 8px 24px 8px 10px;
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: white;
+}
+.select-dropdown select:focus {
+  outline: none;
+  box-shadow: none;
+}
+.select-dropdown select::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    margin-top: -2px;
+    right: 8px;
+    width: 0; 
+    height: 0; 
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #aaa;
+}
+
+@media (min-width: 768px) {
+  .select-dropdown select {
+    font-size: 23px;
+  }
+  .select-dropdown{
+    width: 80%;
+  }
+  .button-55 {
+    width: 40%;
+    font-size: 20px;
+  }
+  .box label {
+    font-size: 22px;
+  }
+  .check{
+    margin-top: 3px;
+    width: 18px;
+    height: 18px;
+  }
+  }

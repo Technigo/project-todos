@@ -6,7 +6,7 @@ const TitleHeader = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 15px;
+    padding: 10px 15px;
     width: 90%;
     background-color: rgba(118, 142, 176, 0.5);
     border-radius: 25px 25px 0px 0px;
@@ -17,16 +17,22 @@ const TextContainer = styled.div`
     margin:0;
 `
 const Title = styled.h1`
-    font-size: 45px;
+    font-size: 35px;
     margin: 0;
     font-family: 'Yuji Syuku', serif;
+    @media (min-width: 768px) {
+    font-size: 50px;
+    }
 `
 const TitleDate = styled.p`
     color: white;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 700;
     margin: 5px 0px 0px;
     font-family: 'Yuji Syuku', serif;
+    @media (min-width: 768px) {
+    font-size: 25px;
+    }
 `
 
 const Header = () => {

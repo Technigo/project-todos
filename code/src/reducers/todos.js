@@ -5,17 +5,20 @@ import uniqid from 'uniqid'
 const todos = createSlice({
     name: 'todos',
     initialState: {
-        items: [],
+        items: []
     },
     reducers: {
         addTodo: (store, action) => {
             // const myStringifiedDate = JSON.stringify(new Date())
             // console.log(myStringifiedDate)
+            const { input, dueDate, category } = action.payload
             const newTodo = {
                 id: uniqid(),
-                text: action.payload,
+                text: input,
                 isComplete: false,
-                createdAt: new Date().toString()
+                createdAt: new Date().toString(),
+                dueDate: dueDate.toString(),
+                category
             }
             // add to the state
             store.items = [...store.items, newTodo]
@@ -38,7 +41,6 @@ const todos = createSlice({
             const decreasedItems = store.items.filter((item) =>
                 item.id !== action.payload
             )
-            console.log(decreasedItems)
             store.items = decreasedItems
         },
         deleteAllTodos: (store) => {
@@ -48,12 +50,25 @@ const todos = createSlice({
             const updatedItems = store.items.map(item => {
                 const updatedTodos = {
                     ...item,
-                    isComplete: !item.isComplete
+                    isComplete: true
                 }
                 return updatedTodos
             })
             store.items = updatedItems
-        }
+        },
+        showDone: (store) => {
+            const updatedListDone = store.items.filter(item => {
+                return item.isComplete === true
+            })
+            store.items = updatedListDone
+
+        },
+        showNotDone: (store) => {
+            const updatedListNotDone = store.items.filter(item => {
+                return item.isComplete === false
+            })
+            store.items = updatedListNotDone
+        },
     }
 })
 

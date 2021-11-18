@@ -30,6 +30,7 @@ const MainSection = styled.section`
   flex-direction: column;
   margin: 20px 5px;
   width: 90%;
+  margin: 0;
   height: 90%;
   border-radius: 25px;
   @media (min-width: 768px) {
@@ -50,12 +51,14 @@ const persistedState = localStorage.getItem('reduxState')
 
 const store = createStore(
   reducer,
-  persistedState
-);
+  persistedState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 store.subscribe(() => {
   localStorage.setItem("reduxState", JSON.stringify(store.getState()));
-});
+})
+
 
 export const App = () => {
   return (

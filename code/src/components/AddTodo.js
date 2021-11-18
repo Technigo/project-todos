@@ -3,15 +3,18 @@ import { useDispatch } from "react-redux";
 import styled from 'styled-components/macro'
 //import the slice itself for dispatch
 import todos from "reducers/todos";
+import DatePicker from "react-date-picker";
+import img from '../assets/calendar.png'
 
 const StyledForm = styled.form`
     display: flex;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 15px;
-    height: 30px;
+    padding: 10px 15px 0px 15px;
     margin: 0;
     width: 90%;
+    min-height: 80px;
     background-color: rgba(245, 245, 245, 0.622);
 `
 const StyledInput = styled.input`
@@ -19,50 +22,108 @@ const StyledInput = styled.input`
     height: 20px;
     padding: 10px;
     font-size: 18px;
+    overflow-wrap: break-word;
     border: 1px solid grey;
     &::placeholder{
-        font-size: 18px;
+        font-size: 16px;
         font-family: 'Yuji Syuku', serif;
         color: grey;
         text-transform: lowercase;
     }
+    @media (min-width: 768px) {
+        &::placeholder{
+            font-size: 25px;
+        }
+    }
 `
-// const StyledButton = styled.button`
-//     width: 80px;
-//     height: 40px;
-//     padding: 5px;
-//     font-size: 16px;
-//     font-weight: bold;
-//     color: white;
-//     background-color: #768eb0;
-//     border: none;
-// `
+const StyledInputButton = styled.div` 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 15px;
+`
+const StyledDatePicker = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    min-height: 50px;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    z-index: 15;
+`
+const StyledDate = styled(DatePicker)`
+    width: 60%;
+    background-color: rgba(118, 142, 176, 0.72);
+    height: 50px;
+    color: black;
+    margin-left: 10px;
+    @media (min-width: 768px) {
+        width: 68%;
+    }
+`
+const StyledIcon = styled.img`
+    width: 50px;
+    height: 50px;
+    background-color: transparent;
+    padding: 0px;
+    margin: 0px;
+`
 
 const AddTodo = () => {
     const [input, setInput] = useState('')
+    const [dueDate, setDueDate] = useState('')
+    const [category, setCategory] = useState('')
 
     const dispatch = useDispatch()
     const onAddTodo = (event, input) => {
-        dispatch(todos.actions.addTodo(input))
+        dispatch(todos.actions.addTodo({ input, dueDate, category }))
         event.preventDefault()
         setInput('')
+        setDueDate('')
+        setCategory('')
     }
 
     return (
         <StyledForm>
-            <StyledInput
-                placeholder="a new task"
-                type="text"
-                value={input}
-                onChange={(event) => setInput(event.target.value)}
-                maxLength="30"
-            />
-            <button className="button-55"
-                onClick={(event) => onAddTodo(event, input)}
-                disabled={input < 3}>
-                Add task
-            </button>
-            {/* <button class="button-55" role="button">Button 55</button> */}
+            <div className="select-dropdown">
+                <select
+                    className="categories"
+                    value={category}
+                    onChange={(event) => setCategory(event.target.value)}
+                >
+                    <option disabled value="">Choose category</option>
+                    <option value="Household">Household</option>
+                    <option value="Work">Work</option>
+                    <option value="Social">Social</option>
+                    <option value="Hobbies">Hobbies</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <StyledInputButton>
+                <StyledInput
+                    placeholder="a new task"
+                    type="text"
+                    value={input}
+                    onChange={(event) => setInput(event.target.value)}
+                    maxLength="30"
+                />
+                <button className="button-55"
+                    onClick={(event) => onAddTodo(event, input)}
+                    disabled={input < 3}>
+                    Add task
+                </button>
+            </StyledInputButton>
+            <StyledDatePicker>
+                <div>
+                    <StyledIcon src={img} alt="calender" />
+                </div>
+                <StyledDate
+                    onChange={(date) => setDueDate(date)}
+                    value={dueDate}
+                    style={{ background: "white" }}
+                />
+            </StyledDatePicker>
 
         </StyledForm>
     )

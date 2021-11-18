@@ -7,12 +7,14 @@ import { FaTrashAlt } from "react-icons/fa";
 import todos from "reducers/todos"
 import NoTasks from "./NoTasks";
 import TodoCard from "./TodoCard";
+import CounterButtons from "./CounterButtons";
+
 
 const TodoSection = styled.section`
     color: black;
     width: 90%;
-    margin: 0;
-    min-height: 400px;
+    margin-top: 0;
+    min-height: 330px;
     display: flex;
     flex-direction: column;
     font-size: 18px;
@@ -38,32 +40,20 @@ const TaskCheckbox = styled.div`
 const CheckboxDelete = styled.div`
     display: flex;
     align-items: center;
+    justify-content: center;
     background-color: rgba(245,245,245,0.622);
+    flex-direction: row;
 `
 const DeleteButton = styled.button`
     border: none;
     font-size: 23px;
     background-color: rgba(245,245,245,0.622);
+    @media (min-width: 768px) {
+    font-size: 28px;
+    margin-top: -4px;
+    }
 `
-const ButtonsCount = styled.div`
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-`
-const Buttons = styled.button`
-    padding: 7px 7px;
-    display: flex;
-    background-color: #768eb0;
-    color: whitesmoke;
-    font: 14px;
-    font-weight: bold;
-    margin: 10px 0px 20px 5px;
-    border: none;
-    border-radius: 5px;
-`
-const Count = styled.p`
-    margin: 0;
-`
+
 
 const TodoList = () => {
 
@@ -73,13 +63,10 @@ const TodoList = () => {
     const onDeleteTodo = (id) => {
         dispatch(todos.actions.deleteTodo(id))
     }
-    const onDeleteAllTodo = () => {
-        dispatch(todos.actions.deleteAllTodos())
-    }
-    const onCompleteAllTodo = () => {
-        dispatch(todos.actions.completeAllTodos())
-    }
-    const completed = useSelector((store) => store.todos.items.filter((item) => item.isComplete === true))
+
+    // const onShowDone = () => {
+    //     dispatch(todos.actions.showDone())
+    // }
 
     return (
         <>
@@ -97,18 +84,10 @@ const TodoList = () => {
                             </CheckboxDelete>
                         </TaskCheckbox>
                     ))}
-                    <ButtonsCount>
-                        <Buttons onClick={onDeleteAllTodo}>
-                            Delete all
-                        </Buttons>
-                        <Buttons
-                            onClick={onCompleteAllTodo}
-                            disabled={completed.length === items.length}
-                        >
-                            Complete all
-                        </Buttons>
-                    </ButtonsCount>
-                    <Count>Completed: {completed.length}/{items.length}</Count>
+                    <CounterButtons />
+                    {/* <button onClick={onShowDone} >Show done</button>
+                    <button onClick={onShowNotDone}>Show not done</button> */}
+                    {/* <button onClick={onShowAll}>Show all</button> */}
                 </TodoSection>
             )}
         </>
