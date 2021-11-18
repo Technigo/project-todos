@@ -7,7 +7,7 @@ const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-evenly;
   background-color: #edac5f;
   box-shadow: 2px 2px 5px gray;
   height: 100px;
@@ -17,6 +17,7 @@ const Paragraph = styled.p`
   font-size: 13px;
   margin: 5px 10px;
   color: white;
+  text-align: left;
 `;
 const AlignP = styled.div`
   justify-content: flex-end;
@@ -26,7 +27,7 @@ const AlignText = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 50%;
+  padding-right: 40px;
 `;
 const HeaderText = styled.h1`
   align-self: flex-start;

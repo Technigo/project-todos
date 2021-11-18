@@ -5,8 +5,8 @@ export const AddButton = styled.button`
   border: 4px solid #b7cf9e;
   border-radius: 50%;
   margin: 0px 10px;
-  max-width: 40px;
-  max-height: 40px;
+  width: 40px;
+  height: 40px;
   font-size: 25px;
   color: #b7cf9e;
   text-align: center;
