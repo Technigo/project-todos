@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import { AddSubTask } from './AddSubTask'
+import { SubTaskList } from './SubTaskList'
 
 import { todos } from '../reducers/todos'
 
@@ -20,7 +22,6 @@ const ModalWrapper = styled.div`
 `
 const ModalContent = styled.div`
   width: 300px;
-  height: 350px;
   background-color: rgb(255, 255, 255);
   border-top: 1px solid rgb(244, 244, 244);
   box-shadow: 0 50px 50px 10px rgba(51, 58, 64, 0.2);
@@ -50,13 +51,10 @@ const Input = styled.input`
 
 export const TodoItem = () => {
   const [dueDate, setDueDate] = useState(new Date())
-  const [item, setItem] = useState({})
   const selectedItem = useSelector(store => store.todos.selectedItem)
   const dispatch = useDispatch()
 
   useEffect(() => {
-    setItem(selectedItem)
-    console.log(selectedItem)
     selectedItem.dueDate ? setDueDate(selectedItem.dueDate) : setDueDate(new Date())
   }, [selectedItem])
 
@@ -67,12 +65,12 @@ export const TodoItem = () => {
   ))
 
   const onCloseClick = () => {
-    dispatch(todos.actions.saveSelectedItem(item))
+    dispatch(todos.actions.saveSelectedItem())
     dispatch(todos.actions.removeSelectedItem())
   }
 
   const onChangeText = e => {
-    setItem({ ...item, text: e.target.value })
+    dispatch(todos.actions.editSelectedItem({ text: e.target.value }))
   }
 
   const onKeyDown = e => {
@@ -83,8 +81,8 @@ export const TodoItem = () => {
   }
 
   const onChangeDate = date => {
+    dispatch(todos.actions.editSelectedItem({ dueDate: date }))
     setDueDate(date)
-    setItem({ ...item, dueDate: dueDate })
   }
 
   return (
@@ -92,8 +90,14 @@ export const TodoItem = () => {
       {selectedItem && (
         <ModalWrapper>
           <ModalContent>
-            <Input type='text' value={item.text} onChange={onChangeText} onKeyDown={onKeyDown} />
             <div>
+              <Input
+                type='text'
+                value={selectedItem.text}
+                onChange={onChangeText}
+                onKeyDown={onKeyDown}
+              />
+
               <p>Set due date: </p>
               <DatePicker
                 selected={dueDate}
@@ -104,6 +108,8 @@ export const TodoItem = () => {
                 customInput={<DatePickerButton />}
               />
             </div>
+            {selectedItem.subTasks && <SubTaskList />}
+            <AddSubTask />
             <CloseButton onClick={onCloseClick}>Close</CloseButton>
           </ModalContent>
         </ModalWrapper>

@@ -24,12 +24,13 @@ const TodoText = styled.p`
   font-size: 1.5rem;
 `
 const Checkbox = styled.input`
-  border-radius: 50%;
+  width: 20px;
+  height: 20px;
 `
 const Button = styled.button`
   margin: 5px;
-  height: 4rem;
-  width: 4rem;
+  height: 40px;
+  width: 40px;
   font-size: 1rem;
   text-align: center;
   border-radius: 10px;
@@ -69,6 +70,7 @@ export const TodoList = () => {
               onChange={() => onToggleTodo(item.id)}
             />
             <TodoText onClick={() => onSelectItem(item.id)}>{item.text}</TodoText>
+            {item.subTasks.length > 0 && `Subtasks: ${item.subTasks.length}`}
             <Dates>
               <p>Created: {moment(item.createdAt).fromNow()}</p>
               {item.dueDate && <p>Due: {moment(item.dueDate).fromNow()}</p>}

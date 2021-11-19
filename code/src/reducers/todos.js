@@ -1,4 +1,4 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice, current } from '@reduxjs/toolkit'
 import uniqid from 'uniqid'
 import moment from 'moment'
 
@@ -12,6 +12,29 @@ export const todos = createSlice({
         isComplete: false,
         createdAt: '2021-11-19T14:31:56.135Z',
         dueDate: false,
+        subTasks: [
+          {
+            id: 'kw6l7yld',
+            text: 'asdsda',
+            isComplete: false,
+            createdAt: '2021-11-19T16:19:17.088Z',
+            dueDate: false,
+          },
+          {
+            id: 'kw6l871t',
+            text: 'asdasdad',
+            isComplete: false,
+            createdAt: '2021-11-19T16:19:28.049Z',
+            dueDate: false,
+          },
+          {
+            id: 'kw6l89mr',
+            text: 'asdasdd',
+            isComplete: false,
+            createdAt: '2021-11-19T16:19:31.395Z',
+            dueDate: false,
+          },
+        ],
       },
       {
         id: 'kw6he1k6',
@@ -19,6 +42,7 @@ export const todos = createSlice({
         isComplete: false,
         createdAt: '2021-11-19T14:32:02.406Z',
         dueDate: false,
+        subTasks: [],
       },
       {
         id: 'kw6he4cu',
@@ -26,9 +50,39 @@ export const todos = createSlice({
         isComplete: false,
         createdAt: '2021-11-19T14:32:06.030Z',
         dueDate: '2021-11-19T14:32:08.589Z',
+        subTasks: [],
       },
     ],
-    selectedItem: false,
+    selectedItem: {
+      id: 'kw6hdwq0',
+      text: 'Köp mjölk',
+      isComplete: false,
+      createdAt: '2021-11-19T14:31:56.135Z',
+      dueDate: false,
+      subTasks: [
+        {
+          id: 'kw6l7yld',
+          text: 'asdsda',
+          isComplete: false,
+          createdAt: '2021-11-19T16:19:17.088Z',
+          dueDate: false,
+        },
+        {
+          id: 'kw6l871t',
+          text: 'asdasdad',
+          isComplete: false,
+          createdAt: '2021-11-19T16:19:28.049Z',
+          dueDate: false,
+        },
+        {
+          id: 'kw6l89mr',
+          text: 'asdasdd',
+          isComplete: false,
+          createdAt: '2021-11-19T16:19:31.395Z',
+          dueDate: false,
+        },
+      ],
+    },
   },
   reducers: {
     addTodo: (store, action) => {
@@ -39,6 +93,7 @@ export const todos = createSlice({
         isComplete: false,
         createdAt: createdAt,
         dueDate: false,
+        subTasks: [],
       }
       store.items = [...store.items, newTodo]
     },
@@ -67,11 +122,11 @@ export const todos = createSlice({
       store.selectedItem = false
     },
     editSelectedItem: (store, action) => {
-      const updatedItem = { ...store.selectedItem }
+      const updatedItem = { ...store.selectedItem, ...action.payload }
       store.selectedItem = updatedItem
     },
-    saveSelectedItem: (store, action) => {
-      const updatedItem = action.payload
+    saveSelectedItem: store => {
+      const updatedItem = store.selectedItem
       const updatedItems = store.items.map(item => {
         if (item.id === updatedItem.id) {
           return { ...updatedItem }
@@ -80,6 +135,32 @@ export const todos = createSlice({
         }
       })
       store.items = updatedItems
+    },
+    addSubTask: (store, action) => {
+      const createdAt = moment()
+      const newSubTask = {
+        id: uniqid(),
+        text: action.payload,
+        isComplete: false,
+        createdAt: createdAt,
+        dueDate: false,
+      }
+      const newSubTasks = [...current(store.selectedItem.subTasks), newSubTask]
+      store.selectedItem.subTasks = [...newSubTasks]
+    },
+    toggleSubTask: (store, action) => {
+      const updatedItems = store.selectedItem.subTasks.map(item => {
+        if (item.id === action.payload) {
+          return { ...item, isComplete: !item.isComplete }
+        } else {
+          return item
+        }
+      })
+      store.selectedItem.subTasks = updatedItems
+    },
+    deleteSubTask: (store, action) => {
+      const decreasedItems = store.selectedItem.subTasks.filter(item => item.id !== action.payload)
+      store.selectedItem.subTasks = decreasedItems
     },
   },
 })

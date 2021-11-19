@@ -12,11 +12,10 @@ const InputWrapper = styled.div`
   gap: 5px;
   width: 100%;
   border-top: 1px solid rgb(244, 244, 244);
-  padding: 10px 5px;
+  padding: 0 5px;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 05);
-  position: fixed;
-  bottom: 0;
+  margin-top: auto;
 `
 const Input = styled.input`
   flex-grow: 1;
@@ -26,34 +25,34 @@ const Input = styled.input`
 `
 const Button = styled.button`
   margin: 5px;
-  height: 4rem;
-  width: 4rem;
-  font-size: 2.5rem;
+  height: 2rem;
+  width: 2rem;
+  font-size: 2rem;
   text-align: center;
   border-radius: 10px;
   border: 0;
   color: black;
 `
 
-export const AddTodo = () => {
+export const AddSubTask = () => {
   const dispatch = useDispatch()
   const [input, setInput] = useState('')
 
-  const onAddTodo = e => {
-    dispatch(todos.actions.addTodo(input))
+  const onAddSubTask = e => {
+    dispatch(todos.actions.addSubTask(input))
     setInput('')
     e.target.blur()
   }
 
   const onKeyDown = e => {
     if (e.key === 'Enter') {
-      onAddTodo(e)
+      onAddSubTask(e)
     }
   }
 
   return (
     <InputWrapper>
-      <Button disabled={input <= 0} onClick={onAddTodo}>
+      <Button disabled={input <= 0} onClick={onAddSubTask}>
         +
       </Button>
       <Input

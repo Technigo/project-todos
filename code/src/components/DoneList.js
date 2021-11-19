@@ -6,8 +6,6 @@ import moment from 'moment'
 import { todos } from '../reducers/todos'
 
 const TodoSection = styled.section`
-  /* width: 250px;
-  margin: 0 auto; */
   padding: 0 10px;
 `
 const DoneItem = styled.div`
