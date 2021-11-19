@@ -7,67 +7,58 @@ import { todos } from 'reducers/todos'
 export const FilterCategory = () => {
   const dispatch = useDispatch()
 
-  // const categories = ['all', 'business', 'personal', 'shopping']
+  const categories = ['all', 'business', 'personal', 'shopping']
 
   return (
-    <StyledWrapper>
-      <StyledButton
-        className="all"
-        onClick={() => dispatch(todos.actions.changeFilter('all'))}>
-        <StyledSmallHeadline>All</StyledSmallHeadline>
-      </StyledButton>
-      <StyledButton
-        className="business"
-        onClick={() => dispatch(todos.actions.changeFilter('business'))}>
-        <StyledSmallHeadline>Business</StyledSmallHeadline>
-      </StyledButton>
-      <StyledButton
-        className="personal"
-        onClick={() => dispatch(todos.actions.changeFilter('personal'))}>
-        <StyledSmallHeadline>Personal</StyledSmallHeadline>
-      </StyledButton>
-      <StyledButton
-        className="shopping"
-        onClick={() => dispatch(todos.actions.changeFilter('shopping'))}>
-        <StyledSmallHeadline>Shopping</StyledSmallHeadline>
-      </StyledButton>
-      {/* {categories.map((category) => (
-        <StyledButton
-          key={category}
-          className={category}
-          onClick={() => dispatch(todos.actions.changeFilter(category))}>
-          <StyledSmallHeadline>{category}</StyledSmallHeadline>
-        </StyledButton>
-      ))} */}
-    </StyledWrapper>
+    <MainWrapper>
+      <StyledSmallHeadline>Filter categories</StyledSmallHeadline>
+      <StyledWrapper>
+        {categories.map((item) => (
+          <StyledButton
+            key={item}
+            className={item}
+            onClick={() => dispatch(todos.actions.changeFilter(item))}>
+            <StyledSmallHeadline>{item}</StyledSmallHeadline>
+          </StyledButton>
+        ))}
+      </StyledWrapper>
+    </MainWrapper>
   )
 }
 
-const StyledWrapper = styled.section`
+const MainWrapper = styled.div`
   max-width: 400px;
-  margin: auto;
+  margin: 20px auto;
+`
+
+const StyledWrapper = styled.section`
+  width: 100%;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
   grid-template-rows: 1fr 1fr;
-  grid-gap: 3px;
-  border: 1px red solid;
+  grid-gap: 8px;
+  margin-top: 15px;
 `
 const StyledButton = styled.button`
-  /* width: 24%; */
-  border: none;
+  border: #21274e 1px solid;
   background-color: #21274e;
   color: #9aaedb;
   display: flex;
   justify-content: center;
-  padding: 8px;
+  padding: 7px;
+  border-radius: 6px;
 
-  .all {
-    border: 2px solid red !important;
+  &:hover {
+    border: #9aaedb 1px solid;
+  }
+
+  &:after {
+    color: red;
   }
 `
 const StyledSmallHeadline = styled.h3`
   color: #9aaedb;
-  font-size: 13px;
+  font-size: 12px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: 'Inter', sans-serif;

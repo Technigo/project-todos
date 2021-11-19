@@ -7,58 +7,66 @@ import { todos } from '../reducers/todos'
 export const AddTodo = () => {
   const [input, setInput] = useState('')
   const [category, setCategory] = useState('')
+  const [showForm, setShowForm] = useState(false)
+
+  const categories = ['business', 'personal', 'shopping']
+
+  const onShowForm = () => {
+    setShowForm(true)
+  }
 
   const dispatch = useDispatch()
 
   const onAddTodo = (event) => {
-    event.preventDefault()
+    // event.preventDefault()
     dispatch(todos.actions.addTodo({ input, category }))
-    console.log('input: ', input)
-    console.log('category: ', category)
+    setShowForm(false)
     setInput('')
+    // console.log('input: ', input)
+    // console.log('category: ', category)
   }
 
   return (
     <StyledContainer>
-      <StyledSmallHeadline>Add new to-do</StyledSmallHeadline>
-      <StyledTextInput
-        type="text"
-        value={input}
-        placeholder="Type here..."
-        onChange={(event) => {
-          setInput(event.target.value)
-        }}
-      />
-
-      <StyledForm>
-        <input
-          type="radio"
-          id="personal"
-          name="category"
-          value="personal"
-          onChange={(event) => setCategory(event.target.value)}
-        />
-        <label htmlFor="personal">Personal</label>
-        <input
-          type="radio"
-          id="business"
-          name="category"
-          value="business"
-          onChange={(event) => setCategory(event.target.value)}
-        />
-        <label htmlFor="business">Business</label>
-        <input
-          type="radio"
-          id="shopping"
-          name="category"
-          value="shopping"
-          onChange={(event) => setCategory(event.target.value)}
-        />
-        <label htmlFor="shopping">Shopping</label>
-        <button type="submit" disabled={input === ''} onClick={onAddTodo}>
-          Add todo
+      {!showForm && (
+        <button onClick={() => onShowForm()}>
+          <StyledSmallHeadline>Add new to-do</StyledSmallHeadline>
         </button>
-      </StyledForm>
+      )}
+      {showForm && (
+        <div>
+          <StyledSmallHeadline>Add new to-do</StyledSmallHeadline>
+
+          <StyledForm>
+            <StyledTextInput
+              type="text"
+              value={input}
+              placeholder="Type here..."
+              onChange={(event) => {
+                setInput(event.target.value)
+              }}
+            />
+            <StyledButton
+              type="submit"
+              disabled={input === ''}
+              onClick={onAddTodo}>
+              +
+            </StyledButton>
+            {categories.map((item) => (
+              <label key={item} htmlFor={item}>
+                <input
+                  type="radio"
+                  id={item}
+                  name="category"
+                  value={item}
+                  onChange={(event) => setCategory(event.target.value)}
+                />
+                <span className="span">{item}</span>
+              </label>
+            ))}
+          </StyledForm>
+        </div>
+      )}
     </StyledContainer>
   )
 }
@@ -68,6 +76,8 @@ const StyledContainer = styled.div`
   max-width: 400px;
   display: flex;
   flex-direction: column;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #9aaedb;
 `
 const StyledTextInput = styled.input`
   background: transparent;
@@ -84,21 +94,58 @@ const StyledTextInput = styled.input`
   }
 `
 const StyledForm = styled.form`
-  display: block;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
   position: relative;
   cursor: pointer;
   font-size: 16px;
   user-select: none;
-  margin: 0 15px 0 5px;
+  margin: 15px 0 5px 0;
   color: white;
 
-  .input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
+  input {
+    display: none;
   }
+
+  input:hover + span {
+    background-color: #21274e;
+    border: 1px solid #21274e;
+    color: white;
+  }
+
+  input:checked + span {
+    background-color: #21274e;
+    border: 1px solid tomato;
+    color: white;
+  }
+
+  span {
+    color: #9aaedb;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    border: 1px solid #9aaedb;
+    padding: 6px 10px;
+    border-radius: 8px;
+  }
+`
+
+const StyledButton = styled.button`
+  width: 35px;
+  height: 35px;
+  border: none;
+  color: white;
+  border-radius: 100px;
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background-color: #21274e;
 `
 
 const StyledSmallHeadline = styled.h3`

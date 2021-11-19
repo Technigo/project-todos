@@ -43,14 +43,16 @@ export const TodoList = () => {
   return (
     <StyledSection>
       <StyledSmallHeadline>
-        Completed: {itemsChecked}/{items.length}
+        Checked to-dos: {itemsChecked}/{items.length}
         <ProgressbarWrapperStyled>
           <div
             className="progress"
             style={{ width: `${itemsChecked * (100 / items.length)}%` }}></div>
         </ProgressbarWrapperStyled>
       </StyledSmallHeadline>
-      <StyledSmallHeadline>{itemsCategory}</StyledSmallHeadline>
+      <StyledSmallHeadline className="category">
+        {itemsCategory}
+      </StyledSmallHeadline>
       <StyledStartText style={{ display: startText() }}>
         No to-dos today?
       </StyledStartText>
@@ -103,6 +105,13 @@ const StyledTaskContainer = styled.div`
 const StyledSection = styled.section`
   max-width: 400px;
   margin: auto;
+
+  .category {
+    color: white;
+    font-size: 20px;
+    margin: 0;
+    height: 40px;
+  }
 `
 
 const StyledButton = styled.button`
@@ -113,13 +122,14 @@ const StyledButton = styled.button`
   margin-right: 5px;
 `
 const StyledSmallHeadline = styled.h3`
+  height: 40px;
   color: #9aaedb;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  margin: 30px 0 10px;
+  margin: 10px 0 0 0;
   line-height: 3;
   display: flex;
   align-items: center;
@@ -147,7 +157,7 @@ const StyledParagraph = styled.p`
 `
 const ProgressbarWrapperStyled = styled.div`
   height: 8px;
-  width: 35%;
+  width: 30%;
   overflow: hidden;
   border: 1px solid #9aaedb;
   border-radius: 10px;
