@@ -2,12 +2,12 @@
 
 Replace this readme with your own information about your project.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project was all about using the state to store and change data. We got introduced to slice and how useful redux can be. The mission was to create a simple todo list that stores and updates when you add a new to-do.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The problem i had was how to add objects to my slice and how to use them in the components. I looked at other projects and used the techniques i saw there. If i had more time I probably would've added some categories for my todos.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://sofias-todos.netlify.app/
