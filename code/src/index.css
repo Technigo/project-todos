@@ -81,6 +81,11 @@ h3 {
   display: flex;
   align-items: center;
 }
+.button-aligment {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
 
 .clear-board {
   background-image: url(./assets/todov2.svg);

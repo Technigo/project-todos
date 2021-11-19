@@ -2,6 +2,9 @@ import { createSlice } from "@reduxjs/toolkit";
 import uniqid from "uniqid";
 import moment from "moment";
 
+const initialState = {
+  items: [],
+};
 export const todos = createSlice({
   name: "todos",
   initialState: {
@@ -16,6 +19,10 @@ export const todos = createSlice({
         timePosted: moment().format("DD MMMM YYYY, HH:mm"),
       };
       store.items = [...store.items, newTodo];
+    },
+
+    deleteAll: () => {
+      return initialState;
     },
     toggleTodo: (store, action) => {
       const updatedItem = store.items.map((item) => {

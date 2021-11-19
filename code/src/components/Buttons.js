@@ -22,7 +22,7 @@ export const CheckAllButton = styled.button`
   color: black;
   font-size: 20px;
   height: 40px;
-  width: 250px;
+  width: 45%;
   font-weight: 100;
   margin: 10px auto;
   &:hover {

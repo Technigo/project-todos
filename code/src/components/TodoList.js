@@ -16,6 +16,9 @@ export const TodoList = () => {
   const onClickClearAll = () => {
     dispatch(todos.actions.clearAllTasks());
   };
+  const onDeleteAll = () => {
+    dispatch(todos.actions.deleteAll());
+  };
 
   return (
     <>
@@ -51,9 +54,10 @@ export const TodoList = () => {
             ))}
         </div>
         {items.length >= 1 && (
-          <CheckAllButton onClick={onClickClearAll}>
-            Complete all
-          </CheckAllButton>
+          <div className="button-aligment">
+            <CheckAllButton onClick={onClickClearAll}>Check all</CheckAllButton>
+            <CheckAllButton onClick={onDeleteAll}>Delete all</CheckAllButton>
+          </div>
         )}
       </section>
     </>

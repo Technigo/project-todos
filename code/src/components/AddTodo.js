@@ -17,7 +17,7 @@ export const AddTodo = () => {
       <input
         type="text"
         className="text-input"
-        placeholder="Add"
+        placeholder="I have to"
         value={input}
         onChange={(event) => setInput(event.target.value)}
         onKeyDown={(e) => e.key === "Enter" && onAddTodo()}
