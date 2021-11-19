@@ -1,23 +1,20 @@
 import styled from 'styled-components';
 
 export const StyledAddTodoButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ffde53;
-  color: #515214e3;
-  font-size: 30px;
-  font-weight: 500;
-  border-radius: 50%;
-  overflow: hidden;
-  transition: 0.4s;
-  border: 0px;
+  background-color: #ffde53;
+  border-radius: 100%;
   width: 60px;
   height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
   &:hover {
     cursor: pointer;
   }
   .button-text {
+    height: 30px;
+    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,32 +28,12 @@ export const StyledDeleteButton = styled.button`
   width: 40px;
   height: 40px;
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ffde53;
-  border-radius: 50%;
-  overflow: hidden;
-  transition: 0.4s;
-  border: 0px;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  padding: 0;
-  box-sizing: border-box;
-  position: relative; */
   &:hover {
     cursor: pointer;
   }
-
   .button-text {
-    /* color: #515214e3;
-    font-size: 30px;
-    font-weight: 500; */
     height: 20px;
     width: 20px;
     justify-content: center;

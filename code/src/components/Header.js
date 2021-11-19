@@ -10,7 +10,6 @@ const StyledHeader = styled.header`
   color: #fff;
   padding: 0.5em 1em;
   height: 15vh;
-
   @media (min-width: 768px) {
     padding: 0.5em 3em;
   }
@@ -38,7 +37,6 @@ const StyledHeaderRight = styled.div`
   justify-content: center;
   font-size: 16px;
   margin: 3px 0;
-
   @media (min-width: 768px) {
     font-size: 20px;
   }
@@ -47,7 +45,6 @@ const StyledHeaderRight = styled.div`
 const StyledHeaderText = styled.p`
   font-size: 16px;
   margin: 3px 0;
-
   @media (min-width: 768px) {
     font-size: 20px;
   }
