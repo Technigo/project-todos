@@ -7,28 +7,18 @@ import { todos, filteredTodos } from '../reducers/todos'
 // import { TodoItem } from './TodoItem'
 
 export const TodoList = () => {
-  const items = useSelector((store) => filteredTodos(store))
-
+  const dispatch = useDispatch()
+  const items = useSelector((store) => store.todos.items)
+  const itemsfiltered = useSelector((store) => filteredTodos(store))
   const itemsChecked = useSelector(
     (store) => store.todos.items.filter((item) => item.isComplete).length
   )
-
-  const dispatch = useDispatch()
-
   const onToggleTodo = (id) => {
     dispatch(todos.actions.toggleTodo(id))
   }
-
-  // v1 Mutability approach
-  // const onDeleteTodo = (index) => {
-  //   dispatch(todos.actions.deleteTodo(index))
-  // }
-
-  // v2 Immutability approach
   const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id))
   }
-
   const checkedLine = (item) => {
     if (item.isComplete) {
       return 'line-through'
@@ -36,7 +26,6 @@ export const TodoList = () => {
       return 'none'
     }
   }
-
   const categoryColor = (category) => {
     if (category === 'business') {
       return '2px solid dodgerblue'
@@ -46,7 +35,6 @@ export const TodoList = () => {
       return '2px solid tomato'
     }
   }
-
   const startText = () => {
     if (items.length) {
       return 'none'
@@ -56,19 +44,19 @@ export const TodoList = () => {
   return (
     <StyledSection>
       <StyledSmallHeadline>
-        Your to-do's
+        Your to-do's {itemsChecked}/{items.length}
         {/* Your to-do's ({Math.round(itemsChecked * (100 / items.length))}% done) */}
         {/* Your to-do's ({itemsChecked} done, {itemsUnchecked} to go) */}
-        {/* <ProgressbarWrapperStyled>
+        <ProgressbarWrapperStyled>
           <div
             className="progress"
             style={{ width: `${itemsChecked * (100 / items.length)}%` }}></div>
-        </ProgressbarWrapperStyled> */}
+        </ProgressbarWrapperStyled>
       </StyledSmallHeadline>
       <StyledStartText style={{ display: startText() }}>
         No to-dos today?
       </StyledStartText>
-      {items.map((item) => (
+      {itemsfiltered.map((item) => (
         // <TodoItem key={item.id} item={item} />
         <StyledTodoItem key={item.id} className={item.category}>
           <StyledTaskContainer>
