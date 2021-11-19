@@ -8,7 +8,8 @@ body {
   --link-color: grey;
   --theme-color: palevioletred;
   --sub-theme-color: grey;
-  background-size: cover;
+  /* background-size: cover; */
+  object-fit: cover;
   background-attachment: fixed;
   background-position: top;
   transition: background-image 0.5s ease;
