@@ -25,10 +25,10 @@ export const TodoList = () => {
       return 'none'
     }
   }
-  const categoryColor = (category) => {
-    if (category === 'business') {
+  const categoryColor = (item) => {
+    if (item === 'business') {
       return '2px solid dodgerblue'
-    } else if (category === 'shopping') {
+    } else if (item === 'shopping') {
       return '2px solid limegreen'
     } else {
       return '2px solid tomato'
