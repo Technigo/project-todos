@@ -9,6 +9,7 @@ const Wrapper = styled.div`
   .react-datepicker {
     box-shadow: 3px 2px 11px rgb(0 0 0 / 30%);
     font-family: "rubik";
+    position: relative;
   }
   .react-datepicker__input-container input {
     font-family: "rubik";
@@ -16,36 +17,16 @@ const Wrapper = styled.div`
 `;
 
 const AddDate = ({ setNewDate, newDate }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleChange = (e) => {
-    setIsOpen(!isOpen);
-    setNewDate(e);
-  };
-  const handleClick = (e) => {
-    e.preventDefault();
-    setIsOpen(!isOpen);
-  };
-
   return (
-    <Wrapper>
-      <label>
-        Deadline
-        {/* det finns en version som är som en knapp så att den inte fokuserar direkt på den i telefonen */}
-      </label>
-      <button className="example-custom-input" onClick={handleClick}>
-        {DateTime.fromJSDate(newDate)
-          .setZone("Europe/Stockholm")
-          .toFormat("dd LLL yyyy")}
-      </button>
-      {isOpen && (
+    <label>
+      Deadline
+      <Wrapper>
         <DatePicker
           selected={newDate}
-          onChange={handleChange}
-          inline
+          onChange={(date) => setNewDate(date)}
         />
-      )}
-    </Wrapper>
+      </Wrapper>
+    </label>
   );
 };
 
