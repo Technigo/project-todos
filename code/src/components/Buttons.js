@@ -11,16 +11,18 @@ const StartButton = styled.button`
   border: 3px solid var(--brown);
   border-radius: 0.4em;
   cursor: pointer;
+  transition: all .8s ease-in-out;
 
   &:hover {
-    transform: translate(-0.05em, -0.05em);
-    box-shadow: var(--brown) 0.15em 0.15em;
+    /* transform: translate(-0.05em, -0.05em); */
+    transform: scale(1.1);
+    /* box-shadow: var(--brown) 0.15em 0.15em; */
   }
  
-  &:active {
+ /*  &:active {
     transform: translate(0.05em, 0.05em);
     box-shadow: var(--brown) 0.05em 0.05em;
-  }
+  } */
 `
 const AddTaskButton = styled.button`
   display: block;

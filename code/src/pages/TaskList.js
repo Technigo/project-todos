@@ -15,7 +15,6 @@ const StyledMain = styled.main `
   background-color: var(--white);
 `
 
-
 const TaskList = () => {
   return (
     <StyledMain>

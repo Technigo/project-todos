@@ -22,6 +22,10 @@ const AddTaskForm = styled.form`
     border-radius: 5px;
     border: 1px solid var(--brown);
     width: 67%;
+
+    &:focus {
+      outline: none !important;
+    }
   }
 
   & select {
@@ -54,6 +58,7 @@ const AddTask = () => {
         type='text'
         value={input}
         onChange={(event) => setInput(event.target.value)}
+        autoFocus='autofocus'
       />
       <select 
         id='categories'

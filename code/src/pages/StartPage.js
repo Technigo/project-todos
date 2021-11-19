@@ -12,11 +12,6 @@ const StyledMain = styled.main`
   flex-direction: column;
   align-items: center;
 `
-const StyledImg = styled.img`
-  width: 80%;
-  margin-bottom: 50px;
-`
-
 
 const StartPage = () => {
   return (

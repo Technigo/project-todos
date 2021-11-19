@@ -7,11 +7,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt, faPen } from '@fortawesome/free-solid-svg-icons'
 
 import todos from '../reducers/todos'
+import Image from '../components/Image'
 
 const ContainerDiv = styled.div `
   height: 57vh;
   margin-top: -50px;
   overflow-y:auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  & img {
+    opacity: 0.5;
+  }
 `
 const StyledForm = styled.form `
   width: 80vw;
@@ -23,31 +31,28 @@ const StyledForm = styled.form `
   flex-wrap: wrap;
   justify-content: space-between;
   border-radius: 5px;
-  opacity: ${props => props.completed ? 0.3 : 1};;
-  background-color: ${props => props.category === 'Study' ? 'var(--lax)' : props.category === 'Work' ? '#bcc1a5' : props.category === 'Shopping' ? '#9e9dd9' : '#facdc5'};
+  opacity: ${props => props.completed ? 0.3 : 1};
+  background-color: ${props => props.category === 'Study' ? 'var(--lax)' : props.category === 'Work' ? '#6997b0' : props.category === 'Shopping' ? '#9e9dd9' : '#facdc5'};
 
   & button {
     background-color: transparent;
     border: none;
-    color: var(--brown);
     font-size: 15px;
     cursor: pointer;
   }
 `
-
 const ToDoLabel = styled.label `
   text-decoration: ${props => props.completed ? 'line-through' : 'none'};
 `
-
 const StyledParagraph = styled.p `
   width: 100%;
   font-size: 14px;
   margin-bottom: 0;
 `
 
-
 const ToDos = () => {
   const tasks = useSelector((state) => state.todos.items)
+  const noTasks = useSelector((state) => state.todos.items.length === 0)
   const dispatch = useDispatch()
 
   const trashCanIcon = <FontAwesomeIcon icon={faTrashAlt} />
@@ -59,6 +64,7 @@ const ToDos = () => {
 
   return (
     <ContainerDiv>
+      {noTasks && <Image />}
       {tasks.map((task) => (
         <StyledForm 
           key={task.id}
