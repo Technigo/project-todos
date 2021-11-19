@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components/macro'
+import moment from 'moment'
 
 import { todos } from '../reducers/todos'
 
@@ -37,6 +38,10 @@ const Button = styled.button`
   border: 0;
   color: black;
 `
+const Dates = styled.div`
+  display: flex;
+  flex-direction: column;
+`
 
 export const TodoList = () => {
   const items = useSelector(store => store.todos.items)
@@ -64,6 +69,10 @@ export const TodoList = () => {
             onChange={() => onToggleTodo(item.id)}
           />
           <TodoText onClick={() => onSelectItem(item.id)}>{item.text}</TodoText>
+          <Dates>
+            <p>Created: {moment(item.createdAt).startOf('day').fromNow()}</p>
+            {item.dueDate && <p>Due: {moment(item.dueDate).endOf('day').fromNow()}</p>}
+          </Dates>
           <Button onClick={() => onDeleteTodo(item.id)}>x</Button>
         </TodoItem>
       ))}

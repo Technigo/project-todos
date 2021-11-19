@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components/macro'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
+import moment from 'moment'
 
 import { todos } from '../reducers/todos'
 
@@ -68,7 +69,6 @@ export const TodoItem = () => {
   ))
 
   const onCloseClick = () => {
-    setItem({ ...item, dueDate: dueDate })
     dispatch(todos.actions.saveSelectedItem(item))
     dispatch(todos.actions.removeSelectedItem())
   }
@@ -84,6 +84,11 @@ export const TodoItem = () => {
     }
   }
 
+  const onChangeDate = date => {
+    setDueDate(date)
+    setItem({ ...item, dueDate: dueDate })
+  }
+
   return (
     <>
       {selectedItem && (
@@ -93,7 +98,7 @@ export const TodoItem = () => {
             <div>
               <DatePicker
                 selected={dueDate}
-                onChange={date => setDueDate(date)}
+                onChange={date => onChangeDate(date)}
                 timeInputLabel='Time:'
                 dateFormat='yyyy-mm-dd (hh:mm)'
                 showTimeInput

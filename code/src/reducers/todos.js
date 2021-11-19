@@ -6,43 +6,44 @@ export const todos = createSlice({
   initialState: {
     items: [
       {
-        id: 'kw639pef',
-        text: 'Köp mat',
+        id: 'kw68dol9',
+        text: 'Hej',
         isComplete: false,
+        createdAt: '2021-11-19T10:19:49.053Z',
+        dueDate: '2021-11-19T15:23:00.614Z',
+      },
+      {
+        id: 'kw68dvwe',
+        text: 'Hej igen!',
+        isComplete: false,
+        createdAt: '2021-11-19T10:19:58.526Z',
         dueDate: false,
       },
       {
-        id: 'kw639tpp',
-        text: 'Laga mat',
+        id: 'kw68e1qu',
+        text: 'Köp blöjor!',
         isComplete: false,
+        createdAt: '2021-11-19T10:20:06.102Z',
         dueDate: false,
       },
       {
-        id: 'kw63a1z9',
-        text: 'Sov länge',
+        id: 'kw68e91y',
+        text: 'Köp fler blöjor!',
         isComplete: false,
-        dueDate: false,
-      },
-      {
-        id: 'kw63abx9',
-        text: 'Ät maten',
-        isComplete: false,
+        createdAt: '2021-11-19T10:20:15.574Z',
         dueDate: false,
       },
     ],
-    selectedItem: {
-      id: 'kw63a1z9',
-      text: 'Sov länge',
-      isComplete: false,
-      dueDate: false,
-    },
+    selectedItem: false,
   },
   reducers: {
     addTodo: (store, action) => {
+      const createdAt = new Date()
       const newTodo = {
         id: uniqid(),
         text: action.payload,
         isComplete: false,
+        createdAt: createdAt,
         dueDate: false,
       }
       store.items = [...store.items, newTodo]
