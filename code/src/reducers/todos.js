@@ -43,8 +43,6 @@ export const todos = createSlice({
       store.items = [...store.items, newTodo]
     },
     toggleTodo: (store, action) => {
-      console.log(action)
-
       const updatedItems = store.items.map(item => {
         if (item.id === action.payload) {
           return { ...item, isComplete: !item.isComplete }

@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-// import moment from 'moment'
 
 import { todos } from '../reducers/todos'
 
@@ -43,7 +42,6 @@ const CloseButton = styled.div`
   font-size: 1.4rem;
 `
 const Input = styled.input`
-  /* flex-grow: 1; */
   margin-top: 20px;
   height: 60px;
   border: 0;

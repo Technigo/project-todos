@@ -9,7 +9,6 @@ const HeaderWrapper = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 10px;
-  /* box-sizing: border-box; */
 `
 const Title = styled.h1`
   margin: 0;

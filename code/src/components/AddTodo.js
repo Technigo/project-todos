@@ -12,7 +12,6 @@ const InputWrapper = styled.div`
   align-items: center;
   gap: 5px;
   width: 100%;
-  /* margin: 0 auto; */
   border-top: 1px solid rgb(244, 244, 244);
   padding: 10px 5px;
   box-sizing: border-box;
