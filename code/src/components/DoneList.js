@@ -10,7 +10,7 @@ const TodoSection = styled.section`
   margin: 0 auto; */
   padding: 0 10px;
 `
-const TodoItem = styled.div`
+const DoneItem = styled.div`
   display: flex;
   gap: 20px;
   justify-content: space-between;
@@ -18,7 +18,7 @@ const TodoItem = styled.div`
   border-top: 1px solid rgb(244, 244, 244);
   padding: 1.5rem 5px;
   box-sizing: border-box;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(244, 244, 244);
 `
 const TodoText = styled.p`
   margin: 0;
@@ -43,7 +43,7 @@ const Dates = styled.div`
   flex-direction: column;
 `
 
-export const TodoList = () => {
+export const DoneList = () => {
   const items = useSelector(store => store.todos.items)
   const dispatch = useDispatch()
 
@@ -62,9 +62,9 @@ export const TodoList = () => {
   return (
     <TodoSection>
       {items
-        .filter(item => !item.isComplete)
+        .filter(item => item.isComplete)
         .map(item => (
-          <TodoItem key={item.id}>
+          <DoneItem key={item.id}>
             <Checkbox
               type='checkbox'
               checked={item.isComplete}
@@ -76,7 +76,7 @@ export const TodoList = () => {
               {item.dueDate && <p>Due: {moment(item.dueDate).fromNow()}</p>}
             </Dates>
             <Button onClick={() => onDeleteTodo(item.id)}>x</Button>
-          </TodoItem>
+          </DoneItem>
         ))}
     </TodoSection>
   )

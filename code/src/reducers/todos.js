@@ -1,44 +1,38 @@
 import { createSlice } from '@reduxjs/toolkit'
 import uniqid from 'uniqid'
+import moment from 'moment'
 
 export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
       {
-        id: 'kw68dol9',
-        text: 'Hej',
+        id: 'kw6hdwq0',
+        text: 'Köp mjölk',
         isComplete: false,
-        createdAt: '2021-11-19T10:19:49.053Z',
-        dueDate: '2021-11-19T15:23:00.614Z',
-      },
-      {
-        id: 'kw68dvwe',
-        text: 'Hej igen!',
-        isComplete: false,
-        createdAt: '2021-11-19T10:19:58.526Z',
+        createdAt: '2021-11-19T14:31:56.135Z',
         dueDate: false,
       },
       {
-        id: 'kw68e1qu',
-        text: 'Köp blöjor!',
+        id: 'kw6he1k6',
+        text: 'Kolla på film',
         isComplete: false,
-        createdAt: '2021-11-19T10:20:06.102Z',
+        createdAt: '2021-11-19T14:32:02.406Z',
         dueDate: false,
       },
       {
-        id: 'kw68e91y',
-        text: 'Köp fler blöjor!',
+        id: 'kw6he4cu',
+        text: 'Laga mat',
         isComplete: false,
-        createdAt: '2021-11-19T10:20:15.574Z',
-        dueDate: false,
+        createdAt: '2021-11-19T14:32:06.030Z',
+        dueDate: '2021-11-19T14:32:08.589Z',
       },
     ],
     selectedItem: false,
   },
   reducers: {
     addTodo: (store, action) => {
-      const createdAt = new Date()
+      const createdAt = moment()
       const newTodo = {
         id: uniqid(),
         text: action.payload,

@@ -1,9 +1,9 @@
 import React, { useState, useEffect, forwardRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import styled from 'styled-components/macro'
+import styled from 'styled-components'
 import DatePicker from 'react-datepicker'
 import 'react-datepicker/dist/react-datepicker.css'
-import moment from 'moment'
+// import moment from 'moment'
 
 import { todos } from '../reducers/todos'
 
@@ -96,6 +96,7 @@ export const TodoItem = () => {
           <ModalContent>
             <Input type='text' value={item.text} onChange={onChangeText} onKeyDown={onKeyDown} />
             <div>
+              <p>Set due date: </p>
               <DatePicker
                 selected={dueDate}
                 onChange={date => onChangeDate(date)}
