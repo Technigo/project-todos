@@ -1,13 +1,159 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-family: 'Cantarell', sans-serif;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+header {
+  background-image: url('/assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50%;
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  color: #fedd00;
+}
+
+.amount-tasks {
+  background-color: #f7898e;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  color: #f5f9fb;
+}
+
+.add-task {
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+.add-task button {
+  margin-left: 4px;
+  border: none;
+  border-radius: 6px;
+  background-color: #012f66;
+  color: #f5f9fb;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+}
+
+.add-task input {
+  border: 2px solid #fedd00;
+  border-radius: 6px;
+}
+
+input,
+button {
+  font-family: 'Cantarell', sans-serif;
+}
+
+table {
+  /* border: 1px solid; */
+  width: 100%;
+  max-width: 80%;
+  text-align: center;
+  margin: 0 auto;
+  border-collapse: collapse;
+  box-shadow: 8px 8px 16px #d3d3d3;
+}
+
+td,
+th {
+  padding: 1rem;
+}
+
+th {
+  background: radial-gradient(circle at bottom, #f7898e 3px, transparent 3px)
+    repeat-x bottom;
+  background-size: 1px;
+}
+
+tr:not(:last-child) td {
+  background: radial-gradient(circle at bottom, #f7898e 2px, transparent 2px)
+    repeat-x bottom;
+  background-size: 1px;
+}
+
+/* tr {
+  box-shadow: 8px 8px 16px #d3d3d3;
+} */
+
+.checkbox {
+  display: inline-flex;
+  cursor: pointer;
+  position: relative;
+}
+
+.checkbox > input {
+  height: 1.15rem;
+  width: 1.15rem;
+  appearance: none;
+  border: 2px solid #012f66;
+  border-radius: 4px;
+  outline: none;
+  transition-duration: 0.4s;
+  background-color: #fedd00;
+  /* background-color: #012f66; */
+  cursor: pointer;
+  margin: 0;
+  transform: translateY(0.2rem);
+}
+.checkbox > input:checked,
+.checkmark {
+  background-color: #012f66;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+.checkbox > input:active {
+  /* border: 2px solid #f7898e; */
+  transform: scale(1.1);
+}
+
+.completed {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+select {
+  font-family: 'Cantarell', sans-serif;
+  border: 2px solid #012f66;
+  border-radius: 4px;
+  /* appearance: none; */
+}
+
+.remove-button {
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+}
+
+.remove-button:active {
+  opacity: 0.5;
+}
+
+@media (hover: hover) {
+  .remove-button:hover {
+    background-color: #f7898e;
+  }
 }
