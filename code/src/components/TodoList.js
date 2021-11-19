@@ -32,6 +32,7 @@ display:inline-block;
 background-color: #000046;
 border:none;
 border-radius: 8px 0 8px 0;
+padding:0;
 height: 40px;
 width: 86px;
 font-weight: 600;

@@ -24,6 +24,7 @@ height: 40px;
 width: 200px;
 font-weight: 600;
 font-size: 23px;
+padding:0;
 color: white;
 box-shadow: 3px 3px #1CB5E0;
 font-family: 'Gaegu', cursive;

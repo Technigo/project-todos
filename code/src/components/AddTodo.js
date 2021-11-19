@@ -26,9 +26,11 @@ font-size:18px;
 color: black;
 box-shadow: 3px 3px #000046;
 font-family: 'Gaegu', cursive;
+padding:0;
 `;
 
 const Input = styled.input`
+max-width: 58%;
 border: none;
 margin: 20px auto;
 padding: 7px;
