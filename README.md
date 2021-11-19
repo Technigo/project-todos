@@ -1,13 +1,12 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The aim of this project was to build a To-do project using Redux global state
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I first coded for the store - by building reducers - and then coded from there. There was a lot of nomenclature and syntax to implement, but I feel more confident with the flow and logic of Redux now. I also used UseState hook from React to store the input value from the User and local storage - using createStore Hook from reduxjs/toolkit - to store the inputs in the browser 
+I actually really happy the clean aesthetc of my project and don't want to clutter it too much with adding too many more features. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://kara-howes-todos.netlify.app
