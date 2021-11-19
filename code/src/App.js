@@ -34,9 +34,8 @@ export const App = () => {
     <Provider store={store}>
       <main>
         <Header />
-        <EmptyField />
         <TodoList />
-
+        <EmptyField />
         <div className="footer">
           <AddTodo />
         </div>

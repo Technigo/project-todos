@@ -5,7 +5,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: whitesmoke;
 }
 
 code {
@@ -17,17 +16,21 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
-  width: 400px;
+  /* height: 100vh; */
+  width: 350px;
   margin: 0 auto;
   background-color: whitesmoke;
 }
 
 h1 {
   font-family: 'Ubuntu', sans-serif;
-  font-size: 40px;
-  margin-bottom: 20px;
+  font-size: 30px;
+  margin: 10px;
   color: white;
+}
+
+h4 {
+  font-family: 'Ubuntu', sans-serif;
 }
 
 p {
@@ -39,7 +42,8 @@ p {
 
 header {
   background-color: #79B4B7;
-  width: 400px;
+  width: 350px;
+        
   text-align: center;
   margin-bottom: 10px;
   padding-bottom: 5px;
@@ -69,8 +73,16 @@ header {
 }
 
 .empty-field {
-  width: 90%;
-  margin: 0 auto;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 30px;
+}
+
+img {
+  width: 200px;
+  height: auto;
 }
 
 .task-container {
@@ -169,7 +181,7 @@ header {
   bottom: 0;
   /* display: flex;
   align-items: center; */
-  width: 400px;
+  width: 350px;
 }
 
 .add-todo-section {
