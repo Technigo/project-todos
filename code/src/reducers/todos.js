@@ -1,3 +1,4 @@
+
 import { createSlice } from '@reduxjs/toolkit'
 import uniqid from 'uniqid'
 
@@ -5,7 +6,12 @@ import uniqid from 'uniqid'
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: [] //array of todos
+    items: [
+      { id: 1, text: 'Take a walk', isComplete: false, display: true },
+      { id: 2, text: 'Grocery', isComplete: true, display: true },
+      { id: 3, text: 'Code', isComplete: true, display: false },
+      { id: 4, text: 'Yoga', isComplete: true, display: false }
+    ] //array of todos
   },
   reducers: {
     addTodo: (store, action) => {
@@ -45,14 +51,16 @@ const todos = createSlice({
       })
       store.items = updatedItems
     },
-    deleteTodo: (store, action) => {
-      // v1 mutability approach (index: action.payload)
+    clearTodo: (store, action) => {
       store.items.splice(action.payload, 0)
 
-      //v2 immutability approach (id in acrion.payload)
+      //v2 immutability approach (id in action.payload)
       const decreasedItems = store.items.filter(item => item.id !== action.payload)
 
       store.items = decreasedItems
+    },
+    clearAllTodo: (store) => {
+      store.items = []
     }
   },
 })

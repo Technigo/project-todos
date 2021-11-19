@@ -5,11 +5,9 @@ import todos from '../reducers/todos'
 
 
 const TodoContainer = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: auto;
-  margin: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 200px;
 `
 const Section = styled.section`
   display: flex;
@@ -30,10 +28,12 @@ const TodoList = () => {
   //   dispatch(todos.actions.deleteTodo(index))
   // }
 
-  //v2
-  // const onDeleteTodo = (id) => {
-  //   dispatch(todos.actions.deleteTodo(id))
-  // }
+  
+  const clearTodo = (id) => {
+    dispatch(todos.actions.clearTodo(id))
+  }
+
+  
 
   return (
     <TodoContainer>
@@ -45,6 +45,7 @@ const TodoList = () => {
               onChange={() => onToggleTodo(item.id)} 
             />
             <p>{item.text}</p> 
+            <button onClick={() => clearTodo(item.id)}>Clear</button>
           </Section>
       ))}
     </TodoContainer>

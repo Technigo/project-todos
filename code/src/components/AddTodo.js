@@ -12,13 +12,6 @@ const AddTodo = () => {
     dispatch(todos.actions.addTodo(input))
   }
 
- 
-  // const onKeyDown = () => {
-  //   if (event.key === 'Enter') {
-  //     console.log('hej')
-  //   }
-  // }
-
   return (
     <div>
       <input 
