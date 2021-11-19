@@ -82,6 +82,13 @@ const TodoList = () => {
               </td>
             </tr>
           ))}
+          {items.length === 0 ? (
+            <tr>
+              <td colSpan='4' className='empty-state'>
+                Add your first task above
+              </td>
+            </tr>
+          ) : null}
         </tbody>
       </table>
     </section>

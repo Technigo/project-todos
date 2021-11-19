@@ -85,6 +85,10 @@ tr:not(:last-child) td {
   background-size: 1px;
 }
 
+.empty-state {
+  color: lightslategray;
+}
+
 .checkbox {
   display: inline-flex;
   cursor: pointer;
