@@ -1,7 +1,5 @@
-import React, { useState } from "react";
-import todos from "reducers/todos";
+import React from "react";
 import styled from "styled-components";
-import { useSelector } from "react-redux";
 import { AmountOfTasks } from "./AmountOfTasks";
 import moment from "moment";
 
@@ -55,19 +53,12 @@ const Header = (props) => {
     }
   };
 
-  const amount = useSelector((store) => store.todos.length);
-  // const amount = useSelector(
-  //   (store) => store.todos.filter((item) => item.isComplete).length
-  // );
-
   return (
     <TopPage>
       <button onClick={changeTheme}>Dark/light</button>
       <h1>T O D O :</h1>
       <h6>Today: {moment().format("MMM Do YY")}</h6>
-
       <AmountOfTasks />
-      {/* {amount} */}
     </TopPage>
   );
 };

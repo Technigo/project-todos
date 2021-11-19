@@ -44,14 +44,14 @@ const todos = createSlice({
       store.items = decreasedItems;
     },
 
-    toggleAllTodo: (store, action) => {
+    toggleAllTodo: (store) => {
       const allDone = store.items.map((item) => {
         if (item.isComplete === false) {
-          const allDoneItems = {
+          const updatedTodo = {
             ...item,
-            isComplete: !item.isComplete,
+            isComplete: true,
           };
-          return allDoneItems;
+          return updatedTodo;
         } else {
           return item;
         }
@@ -60,21 +60,21 @@ const todos = createSlice({
       store.items = allDone;
     },
 
+    toggleAllTodoBack: (store) => {
+      const allUnDone = store.items.map((item) => {
+        const updatedTodo = {
+          ...item,
+          isComplete: false,
+        };
+        return updatedTodo;
+      });
+
+      store.items = allUnDone;
+    },
+
     removeAll: (store) => {
       store.items = [];
     },
-
-    // deleteAll: (store, action) => {
-    //   const deleteAllItems = store.items((item) => item.id !== action.payload);
-
-    //   store.items = deleteAllItems;
-    // },
-
-    // completeAll: (store) => {
-    //   const completeAllItems = store.items;
-
-    //   store.items = completeAllItems;
-    // },
   },
 });
 

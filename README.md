@@ -1,12 +1,12 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week we started with Redux, buildning our own reducers and applying them in a 'Todo'-app in React. We got to build our store with information and functions that we could reach from our different components in the app.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+For me there wasn't really a problem per say. Mostly I had to wrap my head around the fact that we should build as mush as possible in our reducer and not directly in our components. I do get the idea of Redux, which is very clever. And I do like the fact that everything is gathered in one big accessible store.
+
+I spent a lot of time working with styled components and also used the ThemeProvider to toggle between dark and ligth mode. I would have liked to put these functions in separate components but didn't get that far this time.
 
 ## View it live
 

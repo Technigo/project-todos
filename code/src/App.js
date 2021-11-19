@@ -2,9 +2,7 @@ import React, { useState } from "react";
 import { Provider } from "react-redux";
 import { ThemeProvider } from "styled-components";
 import { combineReducers, createStore } from "@reduxjs/toolkit";
-// import useDarkMode from "components/useDarkMode";
-// import { lightTheme, darkTheme } from "components/theme";
-// import { GlobalStyles } from "components/global";
+import styled from "styled-components";
 
 import todos from "./reducers/todos";
 import Header from "components/Header";
@@ -18,17 +16,21 @@ const LightTheme = {
   inputBackground: "#E4EFE7",
   listItemBackground: "#FDFAF6",
   listItem: "#064420",
-  // {textDecorationLine: item.isComplete ? "line-throught" : ""}
+  listItemDone: "#9DBEB9",
   buttonBackground: "#9DBEB9",
+  background: "#F6F6F6",
 };
 
 const DarkTheme = {
-  pageBackground: "#413C69",
-  titleColor: "#A7C5EB",
-  tasksToComplete: "#709FB0",
-  inputBackground: "#4A47A3",
-  listItemBackground: "#709FB0",
-  listItem: "#4A47A3",
+  pageBackground: "#0F044C",
+  titleColor: "#EEEEEE",
+  tasksToComplete: "#E9A6A6",
+  inputBackground: "#787A91",
+  listItemBackground: "#5C527F",
+  listItem: "#EEEEEE",
+  listItemDone: "#8787A3",
+  buttonBackground: "#EAE1E1",
+  background: "#261C2C",
 };
 
 const themes = {
@@ -40,7 +42,11 @@ const reducer = combineReducers({
   todos: todos.reducer,
 });
 
-// const store = configureStore({ reducer });
+const BackgroundColor = styled.body`
+  background-color: ${(props) => props.theme.background};
+  width: 100vw;
+  height: 100vh;
+`;
 
 // Retrieve localstorage as initial state
 const persistedStateJSON = localStorage.getItem("todos");
@@ -65,18 +71,14 @@ store.subscribe(() => {
 export const App = () => {
   const [theme, setTheme] = useState("light");
 
-  // const [theme, toggleTheme] = useDarkMode();
-  // const themeMode = theme === "light" ? lightTheme : darkTheme;
-
   return (
     <ThemeProvider theme={themes[theme]}>
-      {/* theme={themeMode}> */}
       <Provider store={store}>
-        {/* <GlobalStyles /> */}
-        {/* <Toggle theme={theme} toggleTheme={toggleTheme} /> */}
-        <Header theme={theme} setTheme={setTheme} />
-        <AddTodo />
-        <TodoList />
+        <BackgroundColor>
+          <Header theme={theme} setTheme={setTheme} />
+          <AddTodo />
+          <TodoList />
+        </BackgroundColor>
       </Provider>
     </ThemeProvider>
   );

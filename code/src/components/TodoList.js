@@ -34,18 +34,14 @@ const ListItems = styled.div`
   }
 
   input {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    -o-appearance: none;
-    appearance: none;
     border: 1px solid ${(props) => props.theme.buttonBackground};
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     border-radius: 50%;
     cursor: pointer;
     padding: 10px;
     background-color: white;
-    margin: 0;
+    margin: 3px;
   }
 
   button {
@@ -71,39 +67,14 @@ const ListItems = styled.div`
     margin: 5px 5px;
   }
 
+  .done {
+    text-decoration: line-through;
+    color: ${(props) => props.theme.listItemDone};
+    text-decoration-thickness: 3px;
+  }
+
   p {
     font-size: 10px;
-  }
-
-  /* label {
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-  }
-
-  label input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-
-  span {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    border-radius: 50%;
-    background-color: #eee;
   }
 
   input :checked {
@@ -125,50 +96,27 @@ const TodoList = () => {
 
   return (
     <ListItems>
-      {items
-        // .sort(
-        //   (a, b) => a.isComplete(item.isComplete === true),
-        //   b.isComplete(item.isComplete === false)
-        // )
-        .map((item) => (
-          <div key={item.id}>
-            <section
-            // style={{
-            //   textDecoration: item.isComplete ? "line-throught" : "",
-            // }}
-            >
-              <label>
-                <h3
-                  style={{
-                    textDecoration: item.isCorrect ? "line-through" : "",
-                  }}
-                  // clasName="todo"
-                  // style={{
-                  //   textDecorationLine: item.isComplete ? "line-throught" : "",
-                  // }}
-                >
-                  {item.text}
-                </h3>
+      {items.map((item) => (
+        <div key={item.id}>
+          <section>
+            <label>
+              <h3 className={item.isComplete ? "done" : "not-done"}>
+                {item.text}
+              </h3>
 
-                <input
-                  type="checkbox"
-                  checked={item.isComplete}
-                  onChange={() => onToggleTodo(item.id)}
-                  // style={{
-                  //   textDecorationLine: item.isComplete ? "line-throught" : "",
-                  // }}
-                />
-              </label>
-            </section>
-            <section>
-              {/* moment().calendar() 
-            moment().format("MMM Do YY")*/}
-              <p>{moment().format("MMM Do YY")}</p>
-              {/* <textarea rows="2" name="comments"></textarea> */}
-              <button onClick={() => onDeleteTodo(item.id)}>X</button>
-            </section>
-          </div>
-        ))}
+              <input
+                type="checkbox"
+                checked={item.isComplete}
+                onChange={() => onToggleTodo(item.id)}
+              />
+            </label>
+          </section>
+          <section>
+            <p>{moment().format("MMM Do YY")}</p>
+            <button onClick={() => onDeleteTodo(item.id)}>X</button>
+          </section>
+        </div>
+      ))}
     </ListItems>
   );
 };
