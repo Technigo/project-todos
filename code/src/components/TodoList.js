@@ -16,12 +16,6 @@ const TodoList = () => {
     dispatch(todos.actions.toggleTodo(id))
   }
 
-  // v1
-  //   const onDeleteTodo = (index) => {
-  //     dispatch(todos.actions.deleteTodo(index))
-  //   }
-
-  // v2
   const onRemoveTodo = (id) => {
     dispatch(todos.actions.removeTodo(id))
   }
@@ -65,9 +59,6 @@ const TodoList = () => {
               <td className={item.isComplete ? 'completed' : ''}>
                 {item.text}
               </td>
-              {/* <button type='button' onClick={() => onDeleteTodo(index)}>
-            Delete
-          </button> */}
               <td>
                 <select
                   value={item.status}

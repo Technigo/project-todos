@@ -31,10 +31,6 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
-// const store = configureStore({
-//   reducer,
-// })
-
 document.title = `(${store.getState().todos.items.length}) My Task`
 
 // store the state in localStorage as JSON string on Redux state change
