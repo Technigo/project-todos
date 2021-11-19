@@ -70,8 +70,8 @@ export const TodoList = () => {
           />
           <TodoText onClick={() => onSelectItem(item.id)}>{item.text}</TodoText>
           <Dates>
-            <p>Created: {moment(item.createdAt).startOf('day').fromNow()}</p>
-            {item.dueDate && <p>Due: {moment(item.dueDate).endOf('day').fromNow()}</p>}
+            <p>Created: {moment(item.createdAt).fromNow()}</p>
+            {item.dueDate && <p>Due: {moment(item.dueDate).fromNow()}</p>}
           </Dates>
           <Button onClick={() => onDeleteTodo(item.id)}>x</Button>
         </TodoItem>
