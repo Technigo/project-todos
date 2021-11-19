@@ -14,11 +14,10 @@ const todos = createSlice({
         // Each reducer is a property which is a function, always have 2 arguments, current value of store and an action 
         addTodo: (store, action) => {
             
-            console.log(action) // consists of payload (the data) and type
-           
-
+         
             const newTodo ={
-                id: uniqid(),// needs to be absolutely unique
+                id: Date.now(),
+                //id: uniqid(),// needs to be absolutely unique
                 text: action.payload,
                 isComplete: false // needed so that we know
             }

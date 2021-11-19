@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
+import moment from 'moment'
 
 import todos from '../reducers/todos'
 
@@ -17,31 +18,56 @@ const onDeleteTodo = (id) => {
     }
     
    //styling
-   const Todo = styled.p `
-    margin:5px;
-    padding: 5px;` 
-
-   const Removebutton = styled.button `
-    border: none;
-    background-color: white;
-    `
+   
    const Checkbox = styled.input `
-    border-radius: 50%;
-    width:20px;
+    width: 20px;
+    margin: 0 20px;
+   
+   `  
+   const TodoItemText = styled.div `
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
    `
-   const Delete =styled.img`
-    width:15px;`
+   const Todo = styled.p `
+    font-size: 14px;
+    font-weight: bold;
+    margin:0;
+   ` 
+    const Removebutton = styled.button `
+    border: none;
+    background-color: grey;
+    padding: 8px 8px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: white;
+    width: 65px;
+    margin-right: 10px;
+   `
+    const Date =styled.p `
+    margin:0;
+    font-size: 10px;
+   `
+    const Container = styled.section`
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 8px;
+    `
+   
     return (
         <>
        
         <section> 
             {items.map((item) => (
-                <div className ="flex-item" key={item.id}>
-                   
+                <Container key={item.id}>
                     <Checkbox type="checkbox"checked={item.isComplete} onChange={() => onToggleTodo(item.id)}/> 
-                    <Todo>{item.text}</Todo>
-                    <Removebutton onClick={() => onDeleteTodo(item.id)}><Delete src="assets/delete.png"/></Removebutton>
-                </div>
+                        <TodoItemText>
+                            <Todo>{item.text}</Todo>
+                            <Date>Created at: {moment().calendar()}</Date>
+                        </TodoItemText>
+                    <Removebutton onClick={() => onDeleteTodo(item.id)}>Delete</Removebutton>
+                </Container>
             ))}
         </section>{/*// mapping over item to show the text inputs*/}
         

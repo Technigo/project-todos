@@ -10,7 +10,8 @@ const AddContainer = styled.div `
     flex-direction: row;
     width: 100%;
     height: 50px;
-    
+    cursor:pointer;
+    margin-bottom: 15px;
 `
 const Addbutton = styled.button `
     margin-right: 10px;
@@ -23,16 +24,20 @@ const Addbutton = styled.button `
     -moz-appearance: none;`
 
 const Plus = styled.img `
-    width:30px;
+    width:25px;
 `
 const TaskInput =styled.input`
     border: none;
     width: 80%;
     font-size: 16px;
-    margin-left: 10px;
+    margin-left: 30px;
+    &:focus {
+        outline:none;
+      }   
     &::-webkit-input-placeholder {
-        color: grey;
+        color: #CFD0D0;
         font-size: 20px;
+        margin-left: 30px
       }   
 `
 
@@ -44,7 +49,9 @@ const AddTodo = () => {
     const dispatch = useDispatch () // always needed
     
     const onAddTodo = () => {
-        dispatch(todos.actions.addTodo(input)); setInput('');// This is the function which is invoked when you click the button to add a to-do
+        dispatch(todos.actions.addTodo(input)); setInput('');
+        // This is the function which is invoked when you click the button to add a to-do
+        // the setInput('') clears the input field when button is clicked
     }
     
     return (
@@ -52,10 +59,10 @@ const AddTodo = () => {
         <AddContainer>
              
             <TaskInput type="text" 
-            placeholder="Start your Future"
+            placeholder="Add your task"
             value={input} 
             onChange ={(event) => setInput(event.target.value)}/>
-           <Addbutton onClick={onAddTodo}><Plus src='assets/more.png'/> </Addbutton>
+           <Addbutton onClick={onAddTodo}><Plus src='assets/add.png'/> </Addbutton>
         </AddContainer>
     )
 }
