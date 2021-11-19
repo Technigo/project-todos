@@ -42,6 +42,7 @@ p {
 
 .complete-todo {
   color: #4398bf;
+  text-decoration: line-through;
   margin: 3px;
 }
 

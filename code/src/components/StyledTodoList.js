@@ -44,7 +44,6 @@ export const StyledCheckBox = styled.input`
   }
 `
 export const TodoSection = styled.div`
-  margin-top: 20px;
   overflow: auto;
 `
 

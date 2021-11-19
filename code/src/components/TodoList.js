@@ -43,13 +43,16 @@ export const TodoList = () => {
     <>
       <div className='header'>
         <img src={Logo} alt='check-mark' width='80px' height='60px' />
-        <h1>You have {numberOfTodos - numberOfCompleteItems} tasks to do!</h1>
+
         <label className='switch'>
           <input type='checkbox' onClick={() => changeColorMode()} />
           <span className='slider round'></span>
         </label>
       </div>
       <TodoSection>
+        <div>
+          <h1>You have {numberOfTodos - numberOfCompleteItems} tasks to do!</h1>
+        </div>
         {items.map((item) => (
           <TodoWrapper key={item.id}>
             <div>
@@ -62,7 +65,9 @@ export const TodoList = () => {
               <div>
                 <p className='date'>{item.date}</p>
                 <p
-                  className={item.isComplete ? 'todo-item' : 'uncomplete-todo'}
+                  className={
+                    item.isComplete ? 'complete-todo' : 'uncomplete-todo'
+                  }
                 >
                   {item.text}
                 </p>
