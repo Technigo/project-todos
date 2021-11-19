@@ -15,7 +15,7 @@ const AddTodo = () => {
     }
 
     return (
-        <section className='add-bottom'>
+        <section className='add'>
             <div className='add-header'>
                 <Penguin />
                 <div className='create-text'>

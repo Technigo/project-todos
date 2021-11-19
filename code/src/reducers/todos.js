@@ -57,13 +57,8 @@ const todos = createSlice({
             store.items = []
         },
         checkAllTodos: (store) => {
-            console.log('check all todos')
-            const completeAll = {
-                isComplete: true
-            }
-            store.items = completeAll
+            store.items.map(item => item.isComplete = true)
         },
-    
     },
 })
 

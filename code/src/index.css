@@ -26,7 +26,7 @@ code {
   display: flex;
   flex-direction: column;
   width: 100%;
-  padding: 1.5rem 1rem 3rem 1rem;
+  padding: 1.5rem 1rem 1rem 1rem;
 }
 
 .dateandcircles {
@@ -111,16 +111,55 @@ p {
 
 .add-todo-container {
   display: flex;
-  justify-content: flex-end;
-  margin: 0 auto;
-  padding-top: 0.5rem;
   width: 100%;
+  height: 48px;
+  width: 100%;
+  border-radius: 24px;
+  background-color: #1a1a1a;
+}
+
+
+.add {
+  padding: 1rem 1rem;
+  background-color: #333;
+  margin: 1rem;
+  border-radius: 8px;
+ }
+
+ .add-input {
+  font-family: montserrat;
+  font-weight: 500;
+  height: 48px;
+  width: 100%;
+  border-radius: 24px;
+  border: none;
+  background-color: #1a1a1a;
+  padding: 0 0 0 1rem;
+  color: #dedede;
+}
+
+ .add-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  height: 48px;
+  width: 48px;
+  border: none;
+  border-radius: 8px;
+}
+
+.fa-plus-circle {
+  position: absolute;
+  color: #80B477;
+  font-size: 2rem;
+  padding-right: 0.5rem;
 }
 
 .add-header {
   display: flex;
   align-items: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 h3 {
@@ -133,46 +172,11 @@ h3 {
   width: 48px;
 }
 
-.add-bottom {
- padding: 3rem 1rem;
-}
-
 h4 {
   font-size: 1rem;
   text-align: left;
   margin: 0;
 }
-
-.add-input {
-  font-family: montserrat;
-  font-weight: 500;
-  height: 48px;
-  width: 100%;
-  border-radius: 24px;
-  border: none;
-  background-color: #444;
-  padding: 0 1rem 0 1rem;
-  color: #dedede;
-}
-
-.add-button {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: transparent;
-  height: 48px;
-  width: 48px;
-  border: none;
-  border-radius: 8px;
-  text-align: center;
-  margin-left: 1rem;
-}
-
-.fa-plus-circle {
-  color: #444;
-  font-size: 2rem;
-}
-
 
 /* TODO ITEM */
 
@@ -244,7 +248,7 @@ h4 {
 }
 
 .fa-minus-circle {
-  color: #dedede;
+  color: #666;
   font-size: 1.5rem;
 }
 

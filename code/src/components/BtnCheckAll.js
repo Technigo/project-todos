@@ -8,19 +8,17 @@ const BtnCheckAll = () => {
 
     const dispatch = useDispatch()
 
-    const checkAllTodos = (id) => {
-        dispatch(todos.actions.checkAllTodos(id))
-    }
+    const OnCheckAllTodos = () => {
+        dispatch(todos.actions.checkAllTodos())
+      }
 
     return (
         <button 
             className='check-all-btn' 
-            onClick={() => checkAllTodos(items.id)}>
+            onClick={OnCheckAllTodos}>
             Check all!
         </button>
     )
 }
 
 export default BtnCheckAll
-
-    

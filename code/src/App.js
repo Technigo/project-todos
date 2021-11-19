@@ -34,8 +34,8 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
-      <TodoList />
       <AddTodo />
+      <TodoList />
     </Provider>
   )
 }
