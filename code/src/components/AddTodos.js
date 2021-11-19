@@ -21,19 +21,20 @@ const AddTodo = () => {
 
   return (
     <div className="input-wrapper">
-      <label htmlFor="todo" />
-      <input
-        id="todo"
-        type="text"
-        placeholder="Add a task"
-        value={input}
-        onChange={(event) => setInput(event.target.value)} // make a function?
-        ref={inputRef}
-        className="todo-input"
-      />
-      <button className="input-button" onClick={onAddTodo}>
-        Add todo
-      </button>
+      <label>
+        <input
+          id="todo"
+          type="text"
+          placeholder="Add a task"
+          value={input}
+          onChange={(event) => setInput(event.target.value)} // make a function?
+          ref={inputRef}
+          className="todo-input"
+        />
+        <button className="input-button" onClick={onAddTodo}>
+          Add todo
+        </button>
+      </label>
     </div>
   );
 };

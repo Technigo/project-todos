@@ -39,37 +39,40 @@ const TodoList = () => {
     <>
       <section className="todo-list-container">
         {/* ternary operator? */}
-        <div className="todo-list">
-          <h3>to-do</h3>
-          {unCompletedTodos.map((item) => (
-            <div className="checkbox-wrapper" key={item.id}>
-              <p>{item.text}</p>
-              <div>
-                <span>{moment(date).format('ll')}</span>
-              </div>
-              <label>
-                <FaCheckCircle />
-                {/* <span role="img" aria-label="check">
+        <h3>to-do</h3>
+
+        <div>
+          <div className="todo-list">
+            {unCompletedTodos.map((item) => (
+              <div className="checkbox-wrapper" key={item.id}>
+                <label>
+                  <FaCheckCircle />
+                  {/* <span role="img" aria-label="check">
                   ✔
                 </span> */}
-                <input
-                  type="checkbox"
-                  checked={item.isComplete}
-                  onChange={() => onToggleTodo(item.id)}
-                />
-                {/* <input 
+                  <input
+                    type="checkbox"
+                    checked={item.isComplete}
+                    onChange={() => onToggleTodo(item.id)}
+                  />
+                  {/* <input 
               type="date"
               /> */}
-              </label>
-              {/* <button onClick={() => onDeleteTodo(item.id)}>Delete</button> */}
-              <div className="delete-wrapper">
-                <FaTrash
-                  className="delete-button"
-                  onClick={() => onDeleteTodo(item.id)}
-                />
+                </label>
+                <p className="todo">{item.text}</p>
+                <div>
+                  <span>{moment(date).format('ll')}</span>
+                </div>
+                {/* <button onClick={() => onDeleteTodo(item.id)}>Delete</button> */}
+                <div className="delete-wrapper">
+                  <FaTrash
+                    className="delete-button"
+                    onClick={() => onDeleteTodo(item.id)}
+                  />
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
           <button disabled={items.length < 1} onClick={onClickCompleteAll}>
             Complete all!
           </button>

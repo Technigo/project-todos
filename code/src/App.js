@@ -37,7 +37,7 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <>
-      <Header />
+      {/* <Header /> */}
       <Provider store={store}>
         <Summary />
         <div className="app-wrapper">

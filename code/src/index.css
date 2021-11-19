@@ -6,6 +6,9 @@
   --black: #000000;
   --darkgrey: #969f94;
 }
+* {
+  border: 1px solid lime;
+}
 
 @import url('https://fonts.googleapis.com/css2?family=Autour+One&display=swap');
 
@@ -53,36 +56,67 @@ code {
 }
 
 .app-wrapper {
-  display: flex;
-  /* width: 100%; */
+  display: grid;
+  flex-direction: column;
+  align-items: center;
+  /* height: 60vh; */
+  width: 100%;
+  padding: 5%;
+  border-radius: 15px 15px 0 0;
+  background-color: rgba(252, 134, 76, 0.6);
+  position: absolute;
+  top: 45%;
+
+  /* display: flex;
   position: absolute;
   top: 40%;
   bottom: 0;
   height: 100%;
   width: 100%;
-  /* top: 0
-px
-; */
-  /* justify-content: center; */
-  /* justify-items: center; */
   flex-wrap: nowrap;
-  flex-direction: column;
+  flex-direction: column; */
 }
 
 .input-wrapper {
-  display: flex;
-  /* padding: 20% 0; */
+  display: grid;
+  /* grid-template-row: repeat(4, 1fr);
+  column-gap: 20px;
+  padding-bottom: 7%; */
+  margin: 0 auto;
+
+  justify-content: center;
+  /* display: flex;
   position: relative;
   top: 12%;
   justify-content: center;
-  /* align-content: center; */
   align-items: center;
-  /* right: 30%; */
-  /* left: 30%; */
   z-index: 2;
-  justify-content: center;
+  justify-content: center; */
 }
 
 input[type='text'] {
-  padding: 8px;
+  /* padding: 8px; */
+
+  grid-column: span 3;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid var(--grey);
+  margin-right: 10px;
+  vertical-align: text-top;
+}
+
+.input-button {
+  grid-column: span 1;
+  font-size: 16px;
+  height: 50px;
+  width: 50px;
+  /* font-size: 16px; */
+  /* appearance: none; */
+  border-radius: 50px;
+  background: var(--black);
+  color: var(--white);
+  border: none;
+  /* padding: 10px 30px; */
+  font-weight: bold;
+  /* margin: 0 5px; */
 }

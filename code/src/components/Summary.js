@@ -34,41 +34,21 @@ export const Summary = () => {
 
 export default Summary;
 
-const SectionEmpty = styled.section`
-  h2 {
-    font-size: 4.5em;
-    color: var(--black);
-    padding: 0 5%;
-    margin-top: 0.5em;
-    margin-bottom: 0;
-  }
-
-  h3 {
-    margin: 5%;
-    font-size: 3em;
-    color: var(--orange);
-    width: 100%;
-    background-color: var(--darkgrey);
-  }
-
-  p {
-    padding: 0 5%;
-    color: var(--teal);
-  }
-`;
-
 const Section = styled.section`
+  height: 200px;
+  width: 100%;
+  display: grid;
   h2 {
     font-size: 4.5em;
     color: var(--black);
-    padding: 0 30%;
-    margin-top: 0.5em;
+    padding: 0 20%;
+    margin-top: 0;
     margin-bottom: 0;
   }
 
   h3 {
     margin: 0;
-    padding-left: 30%;
+    padding-left: 20%;
     font-size: 2.8em;
     color: var(--orange);
     width: 100%;
@@ -76,8 +56,27 @@ const Section = styled.section`
 
   p {
     margin: 1% 0;
-    padding-left: 30%;
+    padding-left: 20%;
+    padding-bottom: 5%;
     color: var(--teal);
     width: 100%;
+  }
+`;
+
+const SectionEmpty = styled(Section)`
+  h2 {
+    padding: 0 5%;
+    margin: 4% 0;
+  }
+
+  h3 {
+    margin: 5%;
+    padding: 0;
+    font-size: 3em;
+    background-color: var(--darkgrey);
+  }
+
+  p {
+    padding: 0 5%;
   }
 `;
