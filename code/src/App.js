@@ -8,7 +8,8 @@ import tasks from './reducers/tasks';
 import TasksList from 'components/TasksList';
 import Header from 'components/Header';
 import TaskCounter from 'components/TaskCounter';
-import ClearAllTask from 'components/CompleteTaskList';
+import AddTasks from 'components/AddTasks';
+import CompleteTaskList from 'components/CompleteTaskList';
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -40,7 +41,7 @@ export const App = () => {
         <Header />
         <TaskCounter />
         <TasksList />
-        <ClearAllTask />
+        <AddTasks />
       </MainBox>
     </Provider>
   );

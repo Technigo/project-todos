@@ -11,16 +11,14 @@ import styled from 'styled-components';
 
 const TaskCard = styled.section`
   background: rgb(255, 231, 231);
-  height: ${(props) => props.hgt * 0.8}px;
+  font-family: 'Itim', cursive;
+  word-wrap: break-word;
+  overflow-y: scroll;
+  ${'' /* height: ${(props) => props.hgt * 0.8}px; */}
+  height: 60vh;
+  border-top-left-radius: 10px;
+
   width: ${(props) => props.wid * 0.9}px;
-
-  @media (min-width: 768px) {
-    width: ${(props) => props.wid * 0.8}px;
-  }
-
-  @media (min-width: 1366px) {
-    width: ${(props) => props.wid * 0.5}px;
-  }
 
   div {
     display: flex;
@@ -29,16 +27,17 @@ const TaskCard = styled.section`
     align-items: center;
   }
 
-  span {
-    display: inline;
-    height: 0.5em;
-    width: 0.5em;
-    font-size: 1em;
-  }
-
   button {
     border: none;
     background: transparent;
+  }
+
+  .text-box {
+    display: flex;
+    flex-direction: column;
+    width: 60vw;
+    text-align: left;
+    align-items: stretch;
   }
 
   .checkbox {
@@ -68,11 +67,28 @@ const TaskCard = styled.section`
     transform: scale(1);
   }
 
+  .time {
+    font-size: 0.6em;
+  }
+
+  .task-box {
+    border-bottom: 4px double rgb(168, 218, 220, 0.8);
+  }
+
   &.empty {
-    background-color: yellow;
+    background-color: rgb(254, 228, 64);
     background-image: url('https://media.giphy.com/media/13d2jHlSlxklVe/giphy.gif');
     background-repeat: no-repeat;
     background-position: center;
+  }
+
+  ${'' /* width: 360px; */}
+  @media (min-width: 768px) {
+    width: ${(props) => props.wid * 0.8}px;
+  }
+
+  @media (min-width: 1366px) {
+    width: ${(props) => props.wid * 0.5}px;
   }
 `;
 
@@ -104,19 +120,21 @@ const TasksList = () => {
   return (
     <TaskCard className={items.length <= 0 && 'empty'} hgt={height} wid={width}>
       {items.map((item) => (
-        <div key={item.id}>
+        <div className='task-box' key={item.id}>
           <input
             className='checkbox'
             type='checkbox'
             checked={checked}
             onChange={() => onCheckComplete(item.id)}
           />
-          <p>{item.text}</p>
-          <p>{item.timestamp}</p>
+          <div className='text-box'>
+            <p>{item.text}</p>
+            <p className='time'>{item.timestamp}</p>
+          </div>
           <DeleteTask item={item.id} />
         </div>
       ))}
-      <AddTasks hgt={height} wid={width} />
+      {/* <AddTasks hgt={height} wid={width} /> */}
     </TaskCard>
   );
 };

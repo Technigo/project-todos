@@ -1,7 +1,36 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 
 import tasks from 'reducers/tasks';
+
+const Xspan = styled.span`
+  display: inline;
+  height: 0.5em;
+  width: 0.5em;
+  font-size: 1.3em;
+  opacity: 0.6;
+
+  &:hover {
+    filter: invert(1);
+    transform: translateY(-7px);
+  }
+
+  &:active {
+    transform: translateY(-5px);
+  }
+`;
+
+const Xbtn = styled.button`
+  transition: all 0.3s ease 0s;
+
+  &:hover {
+    transform: translateY(-7px);
+  }
+  &:active {
+    transform: translateY(-5px);
+  }
+`;
 
 const DeleteTask = ({ item }) => {
   const dispatch = useDispatch();
@@ -10,12 +39,12 @@ const DeleteTask = ({ item }) => {
     dispatch(tasks.actions.deleteTask(id));
   };
   return (
-    <button onClick={() => onDeleteTask(item)}>
+    <Xbtn onClick={() => onDeleteTask(item)}>
       {' '}
-      <span role='img' aria-label='img'>
+      <Xspan role='img' aria-label='img'>
         ✖️
-      </span>{' '}
-    </button>
+      </Xspan>{' '}
+    </Xbtn>
   );
 };
 

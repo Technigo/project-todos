@@ -6,7 +6,11 @@ import tasks from 'reducers/tasks';
 const AddTaskBox = styled.div`
   background-color: skyblue;
   width: ${(props) => props.wid * 0.76}px;
-  position: absolute;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  border-bottom-left-radius: 10px;
+
   ${'' /* bottom: ${(props) => props.hgt * 0.03}px; */}
 
   @media (min-width: 768px) {
@@ -20,6 +24,26 @@ const AddTaskBox = styled.div`
 
   input {
     width: 80%;
+    font-size: 1.5em;
+    border-radius: 10px;
+  }
+
+  button {
+    background: transparent;
+    border: none;
+  }
+`;
+
+const AddSpan = styled.p`
+  opacity: 0.8;
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: transform 0.3s ease 0s;
+
+  &:hover {
+    ${'' /* transform: translateY(-7px); */}
+    transform: rotate(1080deg);
+    filter: invert(1);
   }
 `;
 
@@ -52,11 +76,11 @@ const AddTasks = ({ hgt, wid }) => {
         onChange={onSetInput}
         onKeyDown={(e) => e.key === 'Enter' && onAddTask()}
       />
-      <button onClick={onAddTask}>
+      <button disabled={!input} onClick={onAddTask}>
         {' '}
-        <span role='img' aria-label='img'>
+        <AddSpan role='img' aria-label='img'>
           ➕
-        </span>{' '}
+        </AddSpan>{' '}
       </button>
     </AddTaskBox>
   );
