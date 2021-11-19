@@ -32,11 +32,14 @@ export const App = () => {
   return (
     <Provider store={store}>
       <main className="main-container">
-        <FirstText />
-
-        <TodoList />
-        <AddTodo />
-        <DeleteAll />
+        <section className="first-section">
+          <FirstText />
+          <AddTodo />
+        </section>
+        <div>
+          <TodoList />
+          <DeleteAll />
+        </div>
       </main>
     </Provider>
   )

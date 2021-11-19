@@ -22,7 +22,7 @@ const FirstText = () => {
           <header>
             <h1>Add another to do</h1>
             {/* <p>You have {totalTodos - filteredIsComplete} things to do!</p> */}
-            <p>
+            <p className="description-intro">
               You completed{" "}
               <span className="mark"> {filteredIsComplete.length}</span> out of{" "}
               <span className="mark">{totalTodos}</span> things to do!
