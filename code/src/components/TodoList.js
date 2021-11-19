@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Moment from 'moment';
 
 import todos from '../reducers/todos';
+import BackgroundGif from './BackgroundGif';
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
@@ -71,11 +72,16 @@ const TodoList = () => {
     );
   return (
     <div
+      // style={{
+      //   backgroundImage: (src =
+      //     'https://giphy.com/gifs/thegifys-gifys-5xaOcLx8A5zjZzUTSx2'),
+      // }}
       className='no-todos'
       style={{
         backgroundColor: 'rgb(167, 225, 234)',
       }}
     >
+      <BackgroundGif />
       <h2 className='no-todos-text'>
         You dont have anything to do please add some todos!
       </h2>

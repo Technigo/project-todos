@@ -10,6 +10,8 @@ body {
   width: 100%;
   /* background-color: rgb(235, 243, 249); */
   color: rgb(31, 43, 65);
+  font-family: 'Montserat';
+  /* font-family: 'Oswald', 'Montserat'; */
 }
 
 code {
@@ -18,16 +20,38 @@ code {
 }
 ::placeholder {
   padding-left: 20px;
-  color: rgb(251, 225, 20);
+  color: rgb(235, 243, 249);
+}
+
+h1 {
+  font-family: 'Oswald', 'Montserat';
+  font-size: 2.1rem;
+  margin-top: 5px;
+
+  background-color: yellow;
+
+  transform: rotate(-10deg) translateX(10px);
+  display: block;
+}
+
+.background-gif {
+  max-width: 100%;
+}
+
+.week-day {
+  font-family: 'Oswald';
+  font-size: 1.2rem;
+  margin-top: 0;
 }
 
 .no-todos-text {
   color: rgb(92, 101, 117);
   margin-top: 0;
-  font-size: 1.2rem;
-  padding-top: 50px;
+  font-size: 1rem;
+  padding-top: 15px;
   padding-left: 30px;
   padding-right: 30px;
+  font-family: montserrat;
 }
 
 .add-todo {
@@ -118,6 +142,7 @@ code {
 }
 
 .todo-input {
+  margin-top: 20px;
   font-family: montserrat;
   font-weight: 500;
   height: 48px;

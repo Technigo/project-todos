@@ -18,6 +18,7 @@ const AddTodo = () => {
   return (
     <section className='add-todo'>
       <div>
+        <h1>TODO's</h1>
         <input
           className='todo-input'
           type='text'
@@ -35,10 +36,9 @@ const AddTodo = () => {
           <span className='plus'>+</span>
         </button>
       </div>
-      {/* <p>{Moment(task.time).fromNow()} </p> */}
-      <p>
-        {Moment(date).format('dddd')},{Moment(date).format('ll')}
-      </p>
+      {/* <p>{Moment(date).fromNow()} </p> */}
+      <p>{Moment(date).format('ll')}</p>
+      <p className='week-day'>{Moment(date).format('dddd')}</p>
       <p>You have {items.length} tasks today</p>
     </section>
   );
