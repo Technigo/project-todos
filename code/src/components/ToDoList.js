@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled, { keyframes } from "styled-components";
 
-import tasks, { filteredTasks } from "../reducers/tasks";
+import tasks from "../reducers/tasks";
 import moment from "moment";
 
 const ToDoList = () => {
