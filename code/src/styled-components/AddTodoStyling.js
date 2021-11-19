@@ -5,9 +5,7 @@ export const AddTodoContainer = styled.section`
 	margin: 10px auto;
 	gap:10px;
 
-	@media(min-width: 768px) {
-		display: flex;
-	}
+
 `; 
 
 export const Input = styled.input`
@@ -43,11 +41,5 @@ export const Select = styled.select`
 
 	option {
 		color:gray;
-	}
-
-	@media(min-width: 768px) {
-		width:190px;
-		margin-top: 21px;
-    height: 40px;
 	}
 `;
