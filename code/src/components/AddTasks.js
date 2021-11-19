@@ -41,7 +41,6 @@ const AddSpan = styled.p`
   transition: transform 0.3s ease 0s;
 
   &:hover {
-    ${'' /* transform: translateY(-7px); */}
     transform: rotate(1080deg);
     filter: invert(1);
   }
@@ -78,8 +77,8 @@ const AddTasks = ({ hgt, wid }) => {
       />
       <button disabled={!input} onClick={onAddTask}>
         {' '}
-        <AddSpan role='img' aria-label='img'>
-          ➕
+        <AddSpan>
+          <span role='img' aria-label='img'>➕</span>
         </AddSpan>{' '}
       </button>
     </AddTaskBox>

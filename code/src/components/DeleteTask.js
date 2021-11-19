@@ -41,9 +41,7 @@ const DeleteTask = ({ item }) => {
   return (
     <Xbtn onClick={() => onDeleteTask(item)}>
       {' '}
-      <Xspan role='img' aria-label='img'>
-        ✖️
-      </Xspan>{' '}
+      <Xspan ><span role='img' aria-label='img'>✖️</span></Xspan>{' '}
     </Xbtn>
   );
 };

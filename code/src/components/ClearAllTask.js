@@ -1,25 +1,28 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 import JSConfetti from 'js-confetti';
+import { useWindowSize } from '@react-hook/window-size';
+
 
 const CompleteButton = styled.button`
   background-color: rgb(176, 224, 230);
-  height: 2.5em;
+  height: 3.5em;
   font-family: 'Shippori Antique', sans-serif;
   color: #000;
-  background-color: #fff;
+  background-color: rgb(255, 211, 0, 0.8);
   border: none;
   border-radius: 45px;
-  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease 0s;
-  cursor: pointer;
   outline: none;
+  position: absolute;
+  left: ${props => props.wid * 0.73}px;
 
   &:hover {
-    background-color: #2ee59d;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    background-color: rgb(255, 0, 0, 0.7);
+    box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
     transform: translateY(-7px);
   }
@@ -30,9 +33,11 @@ const CompleteButton = styled.button`
     color: black;
     transform: translateY(-5px);
   }
+
 `;
 
 const ClearAllTask = () => {
+  const [width, height] = useWindowSize();
   const jsConfetti = new JSConfetti();
   const items = useSelector((store) => store.tasks.items);
 
@@ -56,6 +61,7 @@ const ClearAllTask = () => {
   return (
     <>
       <CompleteButton
+        hgt={height} wid={width}
         onClick={() => {
           onClearAll(items);
         }}

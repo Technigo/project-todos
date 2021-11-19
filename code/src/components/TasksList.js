@@ -3,7 +3,6 @@ import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useWindowSize } from '@react-hook/window-size';
 
-import AddTasks from './AddTasks';
 import DeleteTask from './DeleteTask';
 
 import tasks from 'reducers/tasks';
@@ -14,7 +13,7 @@ const TaskCard = styled.section`
   font-family: 'Itim', cursive;
   word-wrap: break-word;
   overflow-y: scroll;
-  ${'' /* height: ${(props) => props.hgt * 0.8}px; */}
+  height: ${(props) => props.hgt * 0.8}px;
   height: 60vh;
   border-top-left-radius: 10px;
 

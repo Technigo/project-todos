@@ -9,7 +9,7 @@ import TasksList from 'components/TasksList';
 import Header from 'components/Header';
 import TaskCounter from 'components/TaskCounter';
 import AddTasks from 'components/AddTasks';
-import CompleteTaskList from 'components/CompleteTaskList';
+
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -32,6 +32,7 @@ store.subscribe(() => {
 
 const MainBox = styled.main`
   background-color: rgb(0, 187, 249);
+  position: relative;
 `;
 
 export const App = () => {

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { useWindowSize } from '@react-hook/window-size';
+
 
 import DeleteTask from './DeleteTask';
 import tasks from 'reducers/tasks';
@@ -10,17 +12,15 @@ const CompletedTaskBox = styled.section`
     background-color: rgb(0, 245, 212);
     font-family: 'Shippori Antique', sans-serif;
     word-wrap: break-word;
-    height: 60vh;
     font-family: 'Itim', cursive;
-    overflow-y: scroll;
-	color: #4a4e69;
+	  color: #4a4e69;
 	
 
 	position: fixed;
 	z-index: 20;
 	top: 0;
 	left: 0;
-	width: 200px;
+	width: 300px;
 	height: 100%;
 	display: flex;
 	flex-direction: column;
@@ -30,16 +30,6 @@ const CompletedTaskBox = styled.section`
 	padding-right: 20px;
 	justify-content: center;
 	background-color: #00F5D4;
-
-   
-    @media (min-width: 768px) {
-      width: 400px;
-    }
-
-    ${
-      '' /* @media (min-width: 1366px) {
-      width: ${(props) => props.wid * 0.5}px; */
-    } */}
     
 
     span {
@@ -48,11 +38,6 @@ const CompletedTaskBox = styled.section`
       width: 0.5em;
       font-size: 1em;
 	  opacity: 0.8;
-    }
-
-    button {
-      border: none;
-      background: transparent;
     }
 
     .checkbox {
@@ -102,13 +87,23 @@ const CompletedTaskBox = styled.section`
       font-size: 0.6em;
     }
 
+    .list-box {
+      height: 100%;
+      overflow-y: scroll;
+      display: flex;
+      flex-direction: column;
+      margin-top: 5rem;
+    }
+
 	h2 {
 		position: absolute;
 		top: 3em;
 	}
 
-	
+  @media (min-width: 768px) {
+    width: 40%;
   }
+}
 
   &.side-hidden {
     display: none;
@@ -116,10 +111,49 @@ const CompletedTaskBox = styled.section`
 `;
 
 const CompleteButton = styled.button`
-  z-index: 30;
+    z-index: 30;
+    font-family: 'Shippori Antique', sans-serif;
+    height: 3.5em;
+    border: none;
+    background: transparent;
+    border-radius: 45px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease 0s;
+    outline: none;
+
+  &:hover {
+    background-color: rgb(63, 102, 0);
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: #fff;
+    transform: translateY(-7px);
+  }
+
+  &:active {
+    background-color: #fff;
+    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+    color: black;
+    transform: translateY(-5px);
+  }
+
+  &.move {
+    position: absolute;
+  }
+
+  @media (min-width: 768px) {
+    &.move {
+      left: ${(props) => props.wid * 0.04 * -1}px;
+    }
+  }
+
+  @media (min-width: 1366px) {
+    &.move {
+      left: ${(props) => props.wid * 0.2 * -1}px;
+    }
+  }
 `;
 
-const CompleteTaskList = ({ active }) => {
+const CompleteTaskList = () => {
+  const [width, height] = useWindowSize();
   const [isActive, setActive] = useState(false);
 
   const toggleClass = () => {
@@ -136,28 +170,30 @@ const CompleteTaskList = ({ active }) => {
   return (
     <>
       <CompleteButton
-        // className={isActive ? 'side-active' : 'side-hidden'}
+        hgt={height} wid={width}
+        className={isActive ? 'move' : null}
         onClick={toggleClass}
       >
-        Done
+        {isActive ? 'Completed Task' : 'See Completed Task'}
       </CompleteButton>
       <CompletedTaskBox className={isActive ? 'side-active' : 'side-hidden'}>
-        <h2>Completed Tasks</h2>
-        {items.map((item) => (
-          <div key={item.id}>
-            <input
-              className='checkbox'
-              type='checkbox'
-              checked={item.complete}
-              onChange={() => onToggleCheck(item.id)}
-            />
-            <div className='text-box'>
-              <p>{item.text}</p>
-              <p>{item.timestamp}</p>
+        <div className='list-box'>
+          {items.map((item) => (
+            <div key={item.id}>
+              <input
+                className='checkbox'
+                type='checkbox'
+                checked={item.complete}
+                onChange={() => onToggleCheck(item.id)}
+              />
+              <div className='text-box'>
+                <p>{item.text}</p>
+                <p>{item.timestamp}</p>
+              </div>
+              <DeleteTask item={item.id} />
             </div>
-            <DeleteTask item={item.id} />
-          </div>
-        ))}
+          ))}
+        </div>
       </CompletedTaskBox>
     </>
   );
