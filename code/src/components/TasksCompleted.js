@@ -13,12 +13,10 @@ const Tasktext = styled.p `
   font-weight: bold;
  `
  
-
 const TasksCompleted = () => {
     const amount = useSelector(store => store.todos.items.length)
     const completedAmount = useSelector(store => store.todos.items.filter(item => item.isComplete).length)
 
-    
     return (
         <>
             <Tasktext> {amount} tasks</Tasktext>

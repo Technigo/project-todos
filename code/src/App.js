@@ -2,14 +2,11 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, createStore } from '@reduxjs/toolkit'
 import styled from 'styled-components'
-//import { Routes, Route, BrowserRouter } from 'react-router-dom';
-
 
 //import components
 import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
 import DateTasks from './components/DateTasks'
-
 
 //a reducer required for the store
 import todos from './reducers/todos'
@@ -29,7 +26,7 @@ if (persistedStatesJSON) {
 const store = createStore(reducer, persistedState)
 
 // Store the state in local storage when the Redux state is changed
-store.subscribe(()=> {
+store.subscribe(() => {
   localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))
 })
 
@@ -54,7 +51,7 @@ const TaskContainer = styled.div`
   flex-direction: column;
   background: white;
 `
-const TodoContainer =styled.div`
+const TodoContainer = styled.div`
   width: 100%;
   overflow: scroll;
   max-height: 370px;`
@@ -64,18 +61,18 @@ export const App = () => {
   return (
     // need to wrap everything in provider
     <Provider store={store}>
-        <Main>
-          <TaskContainer>
-            <DateTasks/>
-            <TodoContainer>
-              <AddTodo />
-              <TodoList />
-              
-            </TodoContainer>
-         
-          </TaskContainer> 
-        </Main>
-        
+      <Main>
+        <TaskContainer>
+          <DateTasks />
+          <TodoContainer>
+            <AddTodo />
+            <TodoList />
+
+          </TodoContainer>
+
+        </TaskContainer>
+      </Main>
+
 
     </Provider>
 

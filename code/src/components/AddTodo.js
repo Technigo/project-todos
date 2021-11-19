@@ -42,8 +42,6 @@ const TaskInput =styled.input`
 `
 
 
-
-
 const AddTodo = () => {
     const [input, setInput] = useState('')// using the local state here to set the input....more convenient than using global state
     const dispatch = useDispatch () // always needed
@@ -57,7 +55,6 @@ const AddTodo = () => {
     return (
         
         <AddContainer>
-             
             <TaskInput type="text" 
             placeholder="Add your task"
             value={input} 
