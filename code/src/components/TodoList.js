@@ -9,7 +9,8 @@ import { todos, filteredTodos } from '../reducers/todos'
 export const TodoList = () => {
   const dispatch = useDispatch()
   const items = useSelector((store) => store.todos.items)
-  const itemsfiltered = useSelector((store) => filteredTodos(store))
+  const itemsFiltered = useSelector((store) => filteredTodos(store))
+  const itemsCategory = useSelector((store) => store.todos.filter)
   const itemsChecked = useSelector(
     (store) => store.todos.items.filter((item) => item.isComplete).length
   )
@@ -44,7 +45,7 @@ export const TodoList = () => {
   return (
     <StyledSection>
       <StyledSmallHeadline>
-        Your to-do's {itemsChecked}/{items.length}
+        Completed: {itemsChecked}/{items.length}
         {/* Your to-do's ({Math.round(itemsChecked * (100 / items.length))}% done) */}
         {/* Your to-do's ({itemsChecked} done, {itemsUnchecked} to go) */}
         <ProgressbarWrapperStyled>
@@ -53,10 +54,11 @@ export const TodoList = () => {
             style={{ width: `${itemsChecked * (100 / items.length)}%` }}></div>
         </ProgressbarWrapperStyled>
       </StyledSmallHeadline>
+      <StyledSmallHeadline>{itemsCategory}</StyledSmallHeadline>
       <StyledStartText style={{ display: startText() }}>
         No to-dos today?
       </StyledStartText>
-      {itemsfiltered.map((item) => (
+      {itemsFiltered.map((item) => (
         // <TodoItem key={item.id} item={item} />
         <StyledTodoItem key={item.id} className={item.category}>
           <StyledTaskContainer>

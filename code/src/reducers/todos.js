@@ -4,7 +4,8 @@ import uniqid from 'uniqid'
 export const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: []
+    items: [],
+    filter: 'all'
   },
   reducers: {
     addTodo: (store, action) => {
