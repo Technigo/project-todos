@@ -7,6 +7,15 @@ import todos from "../reducers/todos"
 const AddTodoContainer = styled.div`
     padding: 10px;
 `
+const AddTodoInput = styled.input`
+    height: 36px;
+    width: 250px;
+    border-radius: 20px 0 0 20px;
+    @media (max-width: 450px) {
+        width: 130px;
+        height: 26px;
+    }
+`
 const AddTodoButton = styled.button`
     padding: 10px 20px;
     border: none;
@@ -15,6 +24,10 @@ const AddTodoButton = styled.button`
     background-color: white;
     font-family: 'Source Code Pro', monospace;
     font-weight: 600;
+    @media (max-width: 450px) {
+        padding: 7px 10px;
+        font-size: 0.9rem;
+    }
 `
 const AllButtonsDiv = styled.div`
     display: flex;
@@ -29,6 +42,10 @@ const CheckAllButton = styled.button`
     filter: grayscale(60%) sepia(10%) brightness(180%);
     font-family: 'Source Code Pro', monospace;
     font-weight: 600;
+    @media (max-width: 450px) {
+        padding: 3px 6px;
+        font-size: 0.7rem;
+    }
 `
 const ClearAllButton = styled.button`
     border: none;
@@ -38,16 +55,12 @@ const ClearAllButton = styled.button`
     padding: 10px 15px;
     font-family: 'Source Code Pro', monospace;
     font-weight: 600;
-`
-const AddTodoInput = styled.input`
-    height: 36px;
-    width: 250px;
-    border-radius: 20px 0 0 20px;
     @media (max-width: 450px) {
-        width: 130px;
-
+        padding: 3px 6px;
+        font-size: 0.7rem;
     }
 `
+
 
 const AddTodo = () => {
     const [input, setInput] = useState('')

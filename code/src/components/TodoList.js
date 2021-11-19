@@ -22,6 +22,9 @@ const TodoTextDiv = styled.div`
     padding: 10px;
     max-width: 300px;
     font-family: 'Source Code Pro', monospace;
+    @media (max-width: 450px) {
+        font-size: 0.8rem;
+    }
 `
 const CheckboxDiv = styled.div`
     padding-right: 10px;
@@ -32,8 +35,17 @@ const TodosCheckbox = styled.input`
     height: 30px;
     margin: 10px 10px 10px 20px;
     filter: grayscale(60%) sepia(10%) brightness(180%);
+    @media (max-width: 450px) {
+        width: 25px;
+        height: 25px;
+    }
 `
-const TodosRemoveButton = styled.button`
+const TimeClearDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: baseline;
+`
+const TodosClearButton = styled.button`
     padding: 10px 15px;
     border: none;
     border-radius: 10px;
@@ -41,6 +53,18 @@ const TodosRemoveButton = styled.button`
     background-color: #F1C8D5;
     font-family: 'Source Code Pro', monospace;
     font-weight: 600;
+    @media (max-width: 450px) {
+        padding: 3px 6px;
+        font-size: 0.7rem;
+    }
+`
+const TimestampSpan = styled.span`
+    font-family: 'Source Code Pro', monospace;
+    color: grey;
+    font-size: 0.8rem;
+    @media (max-width: 450px) {
+        font-size: 0.6rem;
+    }
 `
 const EmptyTodoDiv = styled.div`
     padding-top: 30px;
@@ -80,10 +104,10 @@ const TodoList = () => {
                     <TodosCheckbox type="checkbox" checked={item.isComplete} onChange={() => onToggleTodo(item.id)}/>
                 </CheckboxDiv>
                 <TodoTextDiv>{item.text}</TodoTextDiv>
-                <div>
-                    <span>{moment(item.createdAt).format('hh:mm')}</span>
-                    <TodosRemoveButton onClick={() => onDeleteTodo(item.id)}>Clear</TodosRemoveButton>
-                </div>
+                <TimeClearDiv>
+                    <TimestampSpan>{moment(item.createdAt).format('hh:mm')}</TimestampSpan>
+                    <TodosClearButton onClick={() => onDeleteTodo(item.id)}>Clear</TodosClearButton>
+                </TimeClearDiv>
             </TodosDiv>
         ))}
         </section>
