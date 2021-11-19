@@ -115,6 +115,8 @@ const TodoList = () => {
             <StyledDeleteButton onClick={() => onDeleteTodo(listItem.id)}>
               <img
                 className='button-text'
+                aria-label='icon'
+                alt='icon'
                 src='https://img.icons8.com/external-tulpahn-outline-color-tulpahn/64/000000/external-bin-mobile-user-interface-tulpahn-outline-color-tulpahn.png'
               />
               {/* <span className='button-text'>&#8722;</span> */}
