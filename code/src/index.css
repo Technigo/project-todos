@@ -3,7 +3,6 @@ body {
   font-family: "Poiret One", cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-image: url(); */
   background-color: rgb(215, 215, 215);
   display: flex;
   justify-content: center;
