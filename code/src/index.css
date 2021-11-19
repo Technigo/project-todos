@@ -4,7 +4,6 @@ body {
   font-family: "Aclonica", sans-serif;
   font-family: "Fredoka One", cursive;
   font-family: "Nunito", sans-serif;
-  background-color: rgb(225, 220, 220);
   color: white;
 }
 
@@ -12,32 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-.header {
-  background-color: rgb(28, 102, 167);
-  justify-content: space-evenly;
-  height: 120 px;
-}
-
-.header-btn {
-  display: flex;
-
-  padding: 10px;
-  border-radius: 20px;
-  margin: 30px;
-  justify-content: space-around;
-  background-color: #ff0266;
-  color: white;
-}
 
 .btn-box {
   display: flex;
-}
-
-.header-title {
-  text-align: center;
-  color: white;
-  padding-top: 20px;
-  font-weight: bolder;
 }
 
 /* todo-area */
@@ -45,12 +21,30 @@ code {
 .todo-wrapper {
   width: 100%;
   display: flex;
-  background-color: rgb(28, 102, 167);
+  background: rgba(233, 181, 181, 0.6);
+  transition: 0.5s ease;
+  border-radius: 50px;
+  border: 1px solid #ffc5dd;
+  margin-top: 25px;
   grid-gap: 30px;
   border-radius: 50px;
   padding: 5px;
   color: white;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.label-wrapper {
+  display: flex;
+}
+
+.Button-box {
+  display: flex;
+
+  flex-direction: flex-end;
+}
+
+.text-wrapper {
+  display: flex;
 }
 
 .flex-item {
@@ -98,7 +92,6 @@ code {
 }
 
 .input-field {
-  border: solid black;
   width: 100%;
   height: 54px;
   background: none;
@@ -107,19 +100,23 @@ code {
   outline: none;
 }
 .container-input {
+  transition: 0.5s ease;
   display: flex;
   padding: 4px;
   padding-left: 20px;
   justify-content: center;
   align-items: center;
-  background-color: #fce6ef;
+  background: rgba(233, 181, 181, 0.6);
+  transition: 0.5s ease;
   border-radius: 50px;
   border: 1px solid #ffc5dd;
   margin-top: 25px;
 }
 .button-input {
-  height: 54px;
-  width: 94px;
+  margin-right: 10px;
+  margin-top: 10px;
+  height: 30px;
+  width: 30px;
   background-color: #ff0266;
   color: #ffffff;
   text-transform: uppercase;
@@ -160,8 +157,9 @@ code {
   height: 25px;
   width: 25px;
   background-color: #eee;
-
+  display: flex;
   border-radius: 15px;
+  margin-left: 10px;
 }
 
 .container:hover input ~ .checkmark {
@@ -196,4 +194,8 @@ code {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+.item-length {
+  display: flex;
 }

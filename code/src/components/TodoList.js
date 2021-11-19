@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { FaTrashAlt } from "react-icons/fa";
 
 import Checkbox from "@material-ui/core/Checkbox";
 // import CheckCircleIcon from "@material-ui/icons/CheckCircle";
@@ -23,30 +24,27 @@ const TodoList = () => {
       {items.map((item) => (
         <div className="flex-item">
           <div className="todo-wrapper" key={item.id}>
-            <p>{item.text}</p>
-            <label class="container">
-              <input
-                type="checkbox"
-                checked={item.isComplete}
-                onChange={() => onToggleTodo(item.id)}
-              />
-              <span class="checkmark"></span>
-            </label>
-            {/* <input
-              type="checkbox"
-              checked={item.isComplete}
-              onChange={() => onToggleTodo(item.id)}
-            />{" "} */}
-            <button
-              className="btn btn-delete"
-              edge="end"
-              aria-label="edit"
-              onClick={() => onDeleteTodo(item.id)}
-            >
-              <span className="mdi mdi-delete mdi-24px"></span>
-              <span class Name="mdi mdi-delete-empty mdi-24px"></span>
-              <span>Delete</span>
-            </button>
+            <span className="label-wrapper">
+              <p className="text-wrapper">{item.text}</p>
+              <label class="container">
+                <input
+                  type="checkbox"
+                  checked={item.isComplete}
+                  onChange={() => onToggleTodo(item.id)}
+                />
+                <span className="checkmark"></span>
+              </label>
+            </span>
+            <span className="Button-box">
+              <button
+                className="button-input"
+                edge="end"
+                aria-label="edit"
+                onClick={() => onDeleteTodo(item.id)}
+              >
+                <FaTrashAlt></FaTrashAlt>
+              </button>
+            </span>
           </div>
         </div>
       ))}
