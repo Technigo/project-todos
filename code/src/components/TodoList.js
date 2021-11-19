@@ -2,7 +2,6 @@ import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import todos from "../reducers/todos"
-import AddTodo from "./AddTodo"
 
 import "./todolist.css"
 
@@ -19,9 +18,6 @@ const TodoList = () => {
     dispatch(todos.actions.deleteTodo(id))
   }
   // a complete all button-dispatch here
-  const onClickCompleteAll = () => {
-    dispatch(items.actions.completeAllTasks())
-  }
 
   //Filters completed and uncompleted tasks in different sections.
   const sortCompletedTasks = items.filter((item) => item.isComplete)
@@ -66,9 +62,7 @@ const TodoList = () => {
             checked={item.isComplete}
             onChange={() => onToggleTodo(item.id)}
           />
-          <p>
-            {item.text} {item.category}
-          </p>
+          <p>{item.text}</p>
           <button className="delete-btn" onClick={() => onRemoveTodo(item.id)}>
             <span className="delete-complete">
               <span className="delete-sign" role="img" aria-label="trash bin">
@@ -76,8 +70,6 @@ const TodoList = () => {
               </span>
             </span>
           </button>
-
-          <button onClick={onClickCompleteAll}>Delete all tasks</button>
         </div>
       ))}
     </>
