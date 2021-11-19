@@ -1,44 +1,13 @@
-import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import todos from "../reducers/todos";
+import React from 'react';
 
-const TodoList = () => {
-  const items = useSelector((store) => store.todos.items);
-  const dispatch = useDispatch();
+import './TodoList.css';
+import { TodoItem } from './TodoItem';
 
-  const onToggleTodo = (id) => {
-    dispatch(todos.actions.toggleTodo(id));
-  };
-
-  //   const onDeleteTodoMutability = (index) => {
-  //     dispatch(todos.actions.deleteTodo(index));
-  //   };
-
-  const onDeleteTodoImmutability = (id) => {
-    dispatch(todos.actions.deleteTodo(id));
-  };
+export const TodoList = () => {
 
   return (
-    <section>
-      {items.map((item, index) => (
-        <div className="flex-item" key={item.id}>
-          <p>{item.text}</p>
-          <input
-            type="checkbox"
-            checked={item.isComplete}
-            onChange={() => onToggleTodo(item.id)}
-          />
-          {/* v1
-          <button onClick={() => onDeleteTodoMutability(index)}>Delete</button> */}
-
-          {/* v1 */}
-          <button onClick={() => onDeleteTodoImmutability(item.id)}>
-            Delete
-          </button>
-        </div>
-      ))}
+    <section className="list-of-items-container">
+      <TodoItem />
     </section>
   );
 };
-
-export default TodoList;

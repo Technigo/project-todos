@@ -1,0 +1,112 @@
+.list-of-items-container {
+    padding: 0px 10px;
+    overflow: scroll;
+    max-height: 370px;
+  }
+  
+  @media only screen and (min-height: 569px) {
+    .list-of-items-container {
+      max-height: 465px;
+    }
+  }
+  
+  @media only screen and (min-height: 668px) {
+    .list-of-items-container {
+      max-height: 530px;
+    }
+  }
+  
+  @media only screen and (min-height: 738px) {
+    .list-of-items-container {
+      max-height: 500px;
+    }
+  }
+  
+  .list-of-items-container::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .list-of-items {
+    list-style-type: none;
+    padding: 0px;
+    height: 100%;
+    place-items: end;
+    border-radius: 12px;
+    margin: 0px;
+  }
+  
+  .item {
+    border-radius: 5px;
+    background-image: url('https://images.unsplash.com/photo-1635412224483-103bbca8d271?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDE1M3xpVUlzblZ0akIwWXx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60');
+    padding: 15px 15px;
+    margin-bottom: 10px;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+    display:flex;
+    width:100%;
+    align-items: center;
+  }
+  
+  .todo-item-text {
+    display:flex;
+    flex-direction: column;
+    flex-grow: 2;
+  }
+  
+  .item input[type='checkbox']:hover, .item button:hover {
+    cursor: pointer;
+  }
+  
+  .delete {
+    padding:10px 15px;
+    width:80px;
+    border:none;
+    background-image: url('https://images.unsplash.com/photo-1636846882019-bbdc125bb4bb?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDM2fGlVSXNuVnRqQjBZfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=1296&q=60');
+    color:white;
+    border-radius: 5px;
+    font-weight: 700;
+    align-self: flex-end;
+  }
+  
+  .delete:hover {
+    background-image: url('https://images.unsplash.com/photo-1633880072671-5cb4d9a59636?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDQ1fGlVSXNuVnRqQjBZfHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=1296&q=60');
+    transition: .2s;
+  }
+  
+  .update {
+    border:none;
+    margin-right:20px;
+  }
+  
+  .date {
+    font-size: 12px;
+    margin:0;
+  }
+  
+  .done {
+    background-color:#eaffdf;
+  }
+  
+  .done button {
+    background-color:#c5e3b5;
+  }
+  
+  .todo-header {
+    font-weight: 600;
+    margin:0;
+  }
+  
+  @media only screen and (min-width: 599px) {
+    .item {
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  
+    .list-of-items-container {
+      overflow-y: scroll;
+      padding: 0px 20px;
+    }
+  
+    .list-of-items-container::-webkit-scrollbar {
+      display: none;
+    }
+  }
