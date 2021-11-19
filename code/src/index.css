@@ -87,7 +87,7 @@ h1 {
   max-width: 300px;
   width: 257px;
   font-size: 16px;
-  min-height: calc(100vh - 50px);
+  min-height: calc(100vh - 100px);
 }
 
 .todo-wrapper {
