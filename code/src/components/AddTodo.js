@@ -34,6 +34,7 @@ max-width: 58%;
 border: none;
 margin: 20px auto;
 padding: 7px;
+border-radius: unset;
 background-color: transparent;
 border-bottom: 2px solid #000046;
 font-size: 22px;
