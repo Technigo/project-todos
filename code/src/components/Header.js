@@ -10,7 +10,8 @@ import {
   LeftContainer, 
   HeaderSubTitle,
   RigthContainer, 
-  ButtonHeader } from "./StyledComponents";
+  ButtonHeader,
+  MainSection } from "./StyledComponents";
 
 const Header = () => {
 
@@ -25,7 +26,7 @@ const Header = () => {
   const completedTasks = tasks.filter((singleTask) => singleTask.isComplete)
   
   return(
-    <section>
+    <MainSection>
     <HeaderContainer>
       <HeaderMainTitle>&#x2611; Todo-App</HeaderMainTitle>
       <HeaderBodyContainer>
@@ -39,7 +40,7 @@ const Header = () => {
         </RigthContainer>
       </HeaderBodyContainer>
     </HeaderContainer>
-    </section>
+    </MainSection>
   )
 }
 

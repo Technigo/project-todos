@@ -9,7 +9,8 @@ import {
   DeleteButton, 
   DateContainer, 
   TodoContainer, 
-  EmptyTodoDiv } from "./StyledComponents";
+  EmptyTodoDiv,
+  MainSection } from "./StyledComponents";
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
@@ -25,7 +26,7 @@ const TodoList = () => {
   }
 
   return (
-    <section>
+    <MainSection>
       {items.length === 0 && 
       <EmptyTodoDiv>
         <img src="images/burger.png" alt="burger" className="empty-image" />
@@ -54,7 +55,7 @@ const TodoList = () => {
             <p>Created at: {moment(item.createdAt).format('MMM Do YYYY')}</p>
           </DateContainer></div>
       ))}
-    </section>
+    </MainSection>
   )
 }
 

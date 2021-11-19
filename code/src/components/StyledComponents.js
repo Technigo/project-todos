@@ -82,6 +82,10 @@ margin: 1.2rem 0 0 0;
 `
 
 // Wrappers
+export const MainSection = styled.section`
+  margin: 0 auto;
+  max-width: 900px;
+`
 export const FlexItem = styled.div`
   background: rgb(100, 100, 100);
   display: flex;

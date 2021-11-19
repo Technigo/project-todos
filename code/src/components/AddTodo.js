@@ -6,7 +6,8 @@ import {
   AddTodoButton, 
   TextInput, 
   InputButton, 
-  InputContainer } from "./StyledComponents";
+  InputContainer,
+  MainSection } from "./StyledComponents";
 
 const AddTodo = () => {
   const dispatch = useDispatch()
@@ -24,7 +25,7 @@ const AddTodo = () => {
   }
 
   return (
-    <section>
+    <MainSection>
     <InputContainer>
       {!canWrite && <AddTodoButton onClick={() => handleCreateTodo()}><span>+ Add todo</span></AddTodoButton>}
       {canWrite && 
@@ -46,7 +47,7 @@ const AddTodo = () => {
       </form>
       }
     </InputContainer>
-    </section>
+    </MainSection>
   )
 }
 
