@@ -61,6 +61,9 @@ const TodosClearButton = styled.button`
         padding: 3px 6px;
         font-size: 0.7rem;
     }
+    &:hover{
+        transform: scale(1.05)
+    }
 `
 const TimestampSpan = styled.span`
     font-family: 'Source Code Pro', monospace;
@@ -71,8 +74,8 @@ const TimestampSpan = styled.span`
     }
 `
 const EmptyTodoDiv = styled.div`
-    padding-top: 20px;
-    height: 220px;
+    padding-top: 10px;
+    height: 260px;
     border-radius: 0 0 20px 20px;
     background-color: rgba(255,235,205,0.7);
     text-align: center;
@@ -81,6 +84,11 @@ const EmptyImg = styled.img`
     margin-top: 50px;
     width: 100px;
     opacity: 0.4;
+`
+const EmptyText = styled.p`
+    margin-top: 30px;
+    font-family: 'Source Code Pro', monospace;
+    color: grey;
 `
 
 const TodoList = () => {
@@ -101,6 +109,7 @@ const TodoList = () => {
         {items.length === 0 && 
             <EmptyTodoDiv>
                 <EmptyImg src="empty.svg" alt="empty"/>
+                <EmptyText>The Todo list is empty!</EmptyText>
             </EmptyTodoDiv>}
         {items.map((item, index) => (
             <TodosDiv key={item.id}>

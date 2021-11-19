@@ -13,7 +13,7 @@ const TodoH1 = styled.h1`
         font-size: 2.6rem;
     }
 `
-const TodoH2 = styled.h2`
+const TodoSpan = styled.span`
     color: #422117;
     font-size: 4rem;
     margin-top: 10px;
@@ -45,13 +45,10 @@ const TodoHead = () => {
     const items = useSelector((store) => store.todos.items)
     const complete = useSelector((store) => store.todos.items.filter(item => item.isComplete).length)
     const incomplete = useSelector((store) => store.todos.items.filter(item => !item.isComplete).length)
-    
-    console.log("items?", items.filter(item => item.isComplete).length)  //// CONSOLE LOGGGGGGGG!!!!!
 
     return (
         <TheHeader>
-            <TodoH1>Todo Today</TodoH1>
-            <TodoH2>{items.length}</TodoH2>
+            <TodoH1>Todo Today: <TodoSpan>{items.length}</TodoSpan></TodoH1>
             <DateText>{moment().format('YYYY/MM/DD')}</DateText>
             <CompleteP>Incomplete: {incomplete} 
             {incomplete >! items.length && <span> &#10006; </span>}
