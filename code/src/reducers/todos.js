@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
 import uniqid from "uniqid";
-import moment from "moment";
 
 const todos = createSlice({
   name: "todos",
