@@ -239,6 +239,7 @@ h1 {
 @media (max-width: 768px) {
   .intro-container {
     width: 100%;
+    flex-direction: row;
   }
 
   .intro-img {
@@ -249,6 +250,11 @@ h1 {
     width: 100%;
     position: sticky;
     bottom: 10px;
+    padding: 5px;
+  }
+
+  .input-text {
+    font-size: 16px;
   }
 
   .list-container {
@@ -263,5 +269,13 @@ h1 {
   h1 {
     margin: 1px auto;
     font-size: 24px;
+  }
+
+  .description-intro {
+    font-size: 16px;
+  }
+
+  .first-section {
+    width: auto;
   }
 }
