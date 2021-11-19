@@ -15,8 +15,13 @@ const store = configureStore({ reducer });
 
 //Stlyed component
 const Main = styled.main` 
-width: 500px;
-margin: 0 auto;
+width: 95%;
+margin:0 auto;
+
+@media (min-width: 600px) {
+  margin: 0 auto;
+  max-width: 500px;
+}
 `
 
 export const App = () => {

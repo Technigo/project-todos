@@ -6,6 +6,7 @@ import todos from "../reducers/todos";
 //Stlyed component
 const Section = styled.section`
   display: flex;
+  /* overflow: scroll; */
 
   .list-container,
   .date-container,

@@ -10,7 +10,7 @@ const HeaderTag = styled.header`
   background-image: url(${img});
   background-repeat: no-repeat, repeat;
   background-size: cover; /* Resize the background image to cover the entire container */
-  background-position: center; 
+  background-position: center;
   text-align: center;
 
   .header-container {
@@ -27,6 +27,7 @@ const HeaderTag = styled.header`
 
   .date {
     color: rgb(253, 140, 4);
+    margin-top: 10px;
   }
 
   .amount {
@@ -37,6 +38,7 @@ const HeaderTag = styled.header`
   .amount {
     font-weight: bolder;
     font-family: "Indie Flower", cursive;
+    
   }
 `;
 

@@ -7,7 +7,7 @@ import styled from "styled-components";
 const InputWrapper = styled.div`
   position: absolute;
   top: 20px;
-  width: 500px;
+  width: 95%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -21,7 +21,7 @@ const InputWrapper = styled.div`
     background-color: rgb(201, 204, 213);
   }
   .todo-input {
-    width: 500px;
+    width: 95%;
     border-radius: 5px 0 0 5px;
     color: rgb(0, 30, 108);
   }
@@ -35,6 +35,11 @@ const InputWrapper = styled.div`
     background-color: rgb(253, 140, 4);
     color: rgb(223, 212, 212);
   }
+
+  @media (min-width: 600px) {
+  margin: 0 auto;
+  max-width: 500px;
+}
 `;
 
 const AddTodo = () => {
