@@ -1,13 +1,15 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+The project assinment was to create a ToDo app using React and Redux.The application should have the following functionalities:
+• list all todo tasks - completed or uncompleted;
+• user should be able to mark an uncompleted task as complete (and change it back to uncomplete);
+• user should be able to add and remove tasks;
+• the app should show a count of either all todos, or all uncomplete todos (or both)
+• each task should have a timestamp indicating when it was created.
+• styled-components should be used instead of vanilla CSS
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+My extra touch to the project was to add a time-varying Greeting text and image.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://todo-app-pde.netlify.app/

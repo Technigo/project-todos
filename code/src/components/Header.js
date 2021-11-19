@@ -10,7 +10,6 @@ const DateContainer = styled.div`
   flex-direction: column;
   align-items: center;
   color: black;
-  margin-top: 30px;
 `
 
 const CompletedTaskText = styled.p`
@@ -28,6 +27,7 @@ const Header = () => {
 
   return (
     <>
+      <h1> TODO's</h1>
       <DateContainer>
         <Greeting />
         <DayJS format="D MMMM YYYY" />

@@ -10,19 +10,32 @@ const FooterBox = styled.footer`
   padding: 10px;
 `
 
-// const CompletedTaskText = styled.p`
-//   color: #ffbe00;
-//   font-weight: bold;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-// `
+const Text = styled.p`
+  margin: 20px 0 0 0;
+  color: grey;
+`
+
+const Github = styled.a`
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+  font-size: 18px;
+  color: orange;
+  &:hover {
+    color: #ffc800;
+  }
+`
 
 const Footer = () => {
   return (
     <>
       <FooterBox>
-        <p> Designed and Developed by Pinar Demirel </p>
+        <Text>
+          Developed and Designed by Pinar Demirel 2021{" "}
+          <Github href="https://github.com/pdetli" target="blank">
+            <i className="fa fa-github"></i>
+          </Github>
+        </Text>
       </FooterBox>
     </>
   )

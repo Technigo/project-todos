@@ -21,10 +21,12 @@ const AddTodo = () => {
     <>
       <form onSubmit={handleOnSubmit} className="add-todo-wrap">
         <input
-          //required
+          // required
           // content="value"
+          // type="text"
+          maxLength="24"
+          minLength="4"
           className="input-box"
-          type="text"
           placeholder="What will you do today?"
           value={input}
           onChange={(event) => setInput(event.target.value)}

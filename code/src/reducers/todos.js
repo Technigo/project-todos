@@ -12,17 +12,15 @@ const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         isComplete: false,
+        time: Date.now(),
       }
 
-      store.items = [...store.items, newTodo]
+      store.items = [newTodo, ...store.items]
     },
     toggleTodo: (store, action) => {
       const updatedItems = store.items.map((item) => {
         if (item.id === action.payload) {
           const updatedTodo = {
-            // id: item.id,
-            // text: item.text,
-            // isComplete: item.isComplete,
             ...item,
             isComplete: !item.isComplete,
           }

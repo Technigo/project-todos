@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Poiret One", cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-image: url(); */
@@ -10,17 +8,6 @@ body {
   display: flex;
   justify-content: center;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
-/* .add-todo-container {
-  border: 1px solid purple;
-  width: 600px;
-  height: 200px;
-} */
 
 .todo-list-container {
   display: flex;
@@ -35,7 +22,7 @@ code {
   justify-content: space-between;
   align-items: center;
   background-color: rgba(177, 177, 177, 0.194);
-  color: rgb(205, 205, 205);
+  color: rgb(123, 123, 123);
   font-size: 11px;
   font-style: italic;
   margin: 3px;
@@ -55,42 +42,6 @@ code {
   display: flex;
   align-items: center;
 }
-/* 
-god morning evening 
-the time is vs  */
-
-/* .add-todo-input {
-  background: #fff;
-  padding: 0 120px 0 0;
-  border-radius: 1px;
-  margin-top: 200px;
-  box-shadow: 0px 0px 0px 6px rgba(255, 255, 255, 0.3);
-} */
-
-/* .fl-wrap {
-  float: left;
-  width: 100%;
-  position: relative;
-}*/
-
-/* .input-box:before {
-  content: "";
-  position: absolute;
-  bottom: -40px;
-  width: 50px;
-  height: 1px;
-  background: rgba(255, 255, 255, 0.41);
-  left: 50%;
-  margin-left: -25px;
-} */
-
-/* .input-box {
-  width: 100%;
-  float: left;
-  border: none;
-  height: 70px;
-  padding-left: 20px;
-} */
 
 .input-box {
   width: 100%;
@@ -101,18 +52,11 @@ the time is vs  */
   outline: none;
   resize: none;
   margin: 3px;
+  padding-left: 10px;
+  font-family: "Poiret One", cursive;
   /*   overflow-wrap: break-word; */
 }
 
-/* .add-todo-button {
-  background: #f94605;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-  margin: 0 auto;
-  align-items: center;
-  width: 80px;
-} */
 .add-todo-button {
   height: 50px;
   width: 50px;
@@ -136,21 +80,15 @@ the time is vs  */
 .delete-button {
   border: none;
   height: 24px;
-  width: 24px;
-  border-radius: 50%;
-  font-size: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  border: none;
-  background-color: rgb(23, 23, 23);
-  color: rgb(226 133 0);
-  outline: none;
+  background-color: transparent;
 }
 .delete-button:hover {
-  background-color: rgb(108, 108, 108);
-  color: rgb(283 191 12);
+  filter: invert(55%) sepia(100%) saturate(766%) hue-rotate(358deg)
+    brightness(101%) contrast(104%);
 }
 
 .item-text {

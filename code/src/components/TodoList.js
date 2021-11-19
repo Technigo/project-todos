@@ -5,11 +5,6 @@ import styled from "styled-components"
 
 import todos from "../reducers/todos"
 
-const CreatedTime = styled.div`
-  display: flex;
-  align-items: center;
-`
-
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
 
@@ -46,14 +41,14 @@ const TodoList = () => {
             <DayJS
               style={{ padding: "5px" }}
               element="span"
-              format="MMM D, YYYY H:mm"
+              format="dddd H:mm"
             />
 
             <button
               className="delete-button"
               onClick={() => onDeleteTodoImmutability(item.id)}
             >
-              x
+              <Wastecan src="./assets/wastecan.svg" />
             </button>
           </CreatedTime>
         </div>
@@ -63,3 +58,11 @@ const TodoList = () => {
 }
 
 export default TodoList
+
+const CreatedTime = styled.div`
+  display: flex;
+  align-items: center;
+`
+const Wastecan = styled.img`
+  width: 20px;
+`

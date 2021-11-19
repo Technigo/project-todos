@@ -19,6 +19,8 @@ const Button = styled.button`
   width: 120px;
   margin: 0 5px;
   cursor: pointer;
+  font-family: "Poiret One", cursive;
+  font-weight: bold;
   &:hover {
     background-color: #ffc800;
   }

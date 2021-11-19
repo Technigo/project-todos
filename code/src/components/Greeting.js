@@ -21,8 +21,6 @@ const Greeting = () => {
         hour >= 16 ? (
           <>
             <Gif
-              // src="https://media.giphy.com/media/p2PoRL1YVjh31Pnyj6/giphy.gif"
-              // src="https://media.giphy.com/media/HQElMzJ2lZp9LN7g2x/giphy.gif"
               src="https://media.giphy.com/media/QXbkZHjE3Q7dyzWUX7/giphy.gif"
               alt="evening gif"
             ></Gif>
@@ -32,7 +30,6 @@ const Greeting = () => {
           <>
             <Gif
               src="https://media.giphy.com/media/f94D70FW49zjL33sIL/giphy.gif"
-              // src="https://media.giphy.com/media/SxMPKbvfD4zpXjEmc3/giphy.gif"
               alt="afternoon gif"
             ></Gif>
             <GreetingText> Good Afternoon</GreetingText>
@@ -41,8 +38,6 @@ const Greeting = () => {
       ) : (
         <>
           <Gif
-            // src="https://media.giphy.com/media/MY6krcVK50sWsCakAp/giphy.gif"
-            // src="https://media.giphy.com/media/h5c4FzZuPGKR6ajcW8/giphy.gif"
             src="https://media.giphy.com/media/SxMPKbvfD4zpXjEmc3/giphy.gif"
             alt="morning gif"
           ></Gif>
