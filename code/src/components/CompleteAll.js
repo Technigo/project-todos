@@ -4,6 +4,23 @@ import styled from "styled-components"
 
 import todos from "../reducers/todos"
 
+const CompleteAll = () => {
+  const dispatch = useDispatch()
+
+  return (
+    <AllTodoButtons>
+      <Button onClick={() => dispatch(todos.actions.completeAllTodos())}>
+        Complete All
+      </Button>
+      <Button onClick={() => dispatch(todos.actions.removeAllTodos())}>
+        Remove All
+      </Button>
+    </AllTodoButtons>
+  )
+}
+
+export default CompleteAll
+
 const AllTodoButtons = styled.div`
   display: flex;
   justify-content: center;
@@ -25,20 +42,3 @@ const Button = styled.button`
     background-color: #ffc800;
   }
 `
-
-const CompleteAll = () => {
-  const dispatch = useDispatch()
-
-  return (
-    <AllTodoButtons>
-      <Button onClick={() => dispatch(todos.actions.completeAllTodos())}>
-        Complete All
-      </Button>
-      <Button onClick={() => dispatch(todos.actions.removeAllTodos())}>
-        Remove All
-      </Button>
-    </AllTodoButtons>
-  )
-}
-
-export default CompleteAll

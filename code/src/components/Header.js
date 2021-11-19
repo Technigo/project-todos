@@ -5,21 +5,6 @@ import { useSelector } from "react-redux"
 
 import Greeting from "./Greeting"
 
-const DateContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  color: black;
-`
-
-const CompletedTaskText = styled.p`
-  color: #ffbe00;
-  font-weight: bold;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
 const Header = () => {
   const todos = useSelector((store) => store.todos.items)
   const numberOfTasks = todos.length
@@ -41,3 +26,18 @@ const Header = () => {
 }
 
 export default Header
+
+const DateContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: black;
+`
+
+const CompletedTaskText = styled.p`
+  color: #ffbe00;
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`

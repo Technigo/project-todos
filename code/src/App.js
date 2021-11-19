@@ -43,7 +43,7 @@ export const App = () => {
 }
 
 const Main = styled.div`
-  ${"" /* width: 400px; */}
+  width: 360px;
   margin: 10px;
   display: flex;
   flex-direction: column;

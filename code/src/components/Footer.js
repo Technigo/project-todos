@@ -1,6 +1,23 @@
 import React from "react"
 import styled from "styled-components"
 
+const Footer = () => {
+  return (
+    <>
+      <FooterBox>
+        <Text>
+          Developed and Designed by Pinar Demirel 2021{" "}
+          <Github href="https://github.com/pdetli" target="blank">
+            <i className="fa fa-github"></i>
+          </Github>
+        </Text>
+      </FooterBox>
+    </>
+  )
+}
+
+export default Footer
+
 const FooterBox = styled.footer`
   display: flex;
   flex-direction: column;
@@ -25,20 +42,3 @@ const Github = styled.a`
     color: #ffc800;
   }
 `
-
-const Footer = () => {
-  return (
-    <>
-      <FooterBox>
-        <Text>
-          Developed and Designed by Pinar Demirel 2021{" "}
-          <Github href="https://github.com/pdetli" target="blank">
-            <i className="fa fa-github"></i>
-          </Github>
-        </Text>
-      </FooterBox>
-    </>
-  )
-}
-
-export default Footer
