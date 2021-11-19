@@ -123,12 +123,12 @@ input {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1fac9e;
+  background: rgba(242, 181, 90, 0.4);
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 3px;
 }
 
 .todo-text {
@@ -141,12 +141,14 @@ input {
 
 .flex-item {
   display: flex;
-  width: 90%;
   margin: 0 auto;
-
+  margin-left: 3px;
   flex-direction: row;
   justify-content: space-between;
-  /* margin: 1em; */
+}
+
+.flex-item:nth-child(2n + 1) {
+  background-color: rgb(255, 255, 255, 0.6);
 }
 
 .verify-container {
@@ -154,6 +156,7 @@ input {
   flex-direction: column;
   align-self: center;
   justify-content: flex-end;
+  margin-right: 1em;
 }
 
 .todo-days {
@@ -162,5 +165,5 @@ input {
 }
 
 .todo-list-section {
-  width: 350px;
+  width: 100%;
 }

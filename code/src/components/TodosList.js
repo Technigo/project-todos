@@ -30,8 +30,6 @@ const TodoList = () => {
               checked={item.isComplete}
               onChange={() => onToggleTodo(item.id)}
             />
-
-            {/* // v2 */}
             <button
               className="delete-btn"
               onClick={() => onDeleteTodoImmutability(item.id)}
