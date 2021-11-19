@@ -169,7 +169,7 @@ const TodoList = () => {
           <>
             <H1 className="emptyList">Nothing to do</H1>
 
-            <Images src="https://cdn-icons.flaticon.com/png/512/3037/premium/3037869.png?token=exp=1637333559~hmac=1b6ce30e58b175595387588414116090" />
+            <Images src="../yoga.png" />
           </>
         )}
         {items.map((item) => (
