@@ -5,6 +5,7 @@ import todos from '../reducers/todos';
 
 
 const CheckboxWrapper = styled.div`
+margin-left: 10%;
 display: -webkit-box;
 	display: -ms-flexbox;
 	display: flex;

@@ -3,6 +3,9 @@ import todos from "../reducers/todos";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+
 //Thank you Darya DALA746 for this!
 
 const ClearButtonContainer = styled.section`
@@ -13,17 +16,17 @@ background-color: white;
 `;
 
 const ClearButton = styled.button`
-background-color: #ffdde1;
+background-color: #000046;
 margin: 20px 0 0 20px;
 border:none;
 border-radius: 8px 0 8px 0;
 height: 40px;
-width: 130px;
+width: 200px;
 font-weight: 600;
-font-size:18px;
-color: black;
-box-shadow: 3px 3px #ee9ca7;
-font-family: 'Comic Neue', cursive;
+font-size: 23px;
+color: white;
+box-shadow: 3px 3px #1CB5E0;
+font-family: 'Gaegu', cursive;
 `;
 
 
@@ -41,12 +44,13 @@ const noTodosLeft = activeTodos === 0;
 			localStorage.clear();
 	  };
 
+    //When todos is shown  "Clear all todos button" is visible
 	return (
     <>
     { noTodosLeft === false && 
 		<ClearButtonContainer>
 			<ClearButton onClick={clearAllTodos}>
-			Clear all todos <i className="fas fa-trash"></i>
+			Clear all todos <FontAwesomeIcon icon={faTrashAlt}/>
 			</ClearButton>
 		</ClearButtonContainer>
   }

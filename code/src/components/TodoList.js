@@ -5,40 +5,40 @@ import todos from '../reducers/todos';
 import Checkbox from './Checkbox';
 import styled from "styled-components";
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTimesCircle } from '@fortawesome/free-solid-svg-icons'
+
+
 //styled components
 const TodoSection = styled.section`
 word-wrap: break-word;
-font-family: 'Comic Neue', cursive;
-`;
+font-family: 'Gaegu', cursive;`;
 
 const TodoItem = styled.div`
 word-wrap: break-word;
-font-family: 'Comic Neue', cursive;
-`;
+font-family: 'Gaegu', cursive;`;
 
 const TodoParagraph = styled.p`
 color: ${props => props.isComplete ? "grey" : "black"};
 text-decoration: ${props => props.isComplete ? "line-through" : "none"};
 display:inline-block;
-width: 65%;
+width: 45%;
 font-size: 18px;
 line-height: 8px;
 `;
 
-// const Checkbox = styled.div`
-// display:inline-block;
-// margin: 0 10px 0 25px;
-// background-color: ${props => props.checked ? "#ee9ca7;" : "#ffdde1;"};
-// background-image: ${props => !props.checked ? "none;" : "#ffdde1;"}; 
-// cursor: pointer;
-// border-radius: 50%;
-// font-size: 22px;
-// height: 28px;
-// width: 28px; 
-// `;
-
 const DeleteToDo = styled.button`
 display:inline-block;
+background-color: #000046;
+border:none;
+border-radius: 8px 0 8px 0;
+height: 40px;
+width: 86px;
+font-weight: 600;
+font-size:18px;
+color: white;
+box-shadow: 3px 3px #1CB5E0;
+font-family: 'Gaegu', cursive;
 `;
 
 //code
@@ -48,7 +48,7 @@ const TodoList = () => {
 
   const dispatch = useDispatch();
 
-  
+
 
   const onDeleteTodoImmutability = (id) => {
     dispatch(todos.actions.deleteTodo(id));
@@ -60,15 +60,15 @@ const TodoList = () => {
         <TodoItem key={item.id}>
           <Checkbox
             type="checkbox"
-            todoId= {item.id}
+            todoId={item.id}
             isChecked={item.isComplete}
-            
+
           />
           <TodoParagraph isComplete={item.isComplete}>{item.text}
           </TodoParagraph>
 
           <DeleteToDo onClick={() => onDeleteTodoImmutability(item.id)}>
-            Delete
+            Delete&nbsp;<FontAwesomeIcon icon={faTimesCircle} />
           </DeleteToDo>
         </TodoItem>
       ))}

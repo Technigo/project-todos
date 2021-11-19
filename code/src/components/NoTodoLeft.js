@@ -1,17 +1,32 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import img from '../img/shark-finished.png';
 
 import styled from "styled-components";
 
 const NotodosContainer = styled.div`
 	text-align: center;
 	font-size: 30px;
-	color: #ee9ca7;
+	color: grey;
 	margin: 20px auto;
-	font-family: 'Comic Neue', cursive;
+	font-family: 'Gaegu', cursive;
 	img {
-		width: 50px;
+	width: 30%;
+	border-left: 5px solid #fff;
+	animation: spinner infinite 4s;
+}
+
+@keyframes spinner {
+	0% {
+		transform: rotate(0);
 	}
+	50% {
+		transform: rotate(180deg);
+	}
+	100% {
+		transform: rotate(360deg);
+	}
+}
 `;
 
 const NoTodoLeft = () => {
@@ -20,12 +35,14 @@ const NoTodoLeft = () => {
   const activeTodos = items.length;
   const noTodosLeft = activeTodos === 0;
   
+
+//When todos is cleared "Clear all todos button" is removed and spinning shark is shown
   return (
     <>
     { noTodosLeft === true && 
     <NotodosContainer>
-      <p>No todos here - swim for more?</p>
-      {/* <img src={img} alt="notes-img" /> */}
+      <p>Fintastic all cleared!</p>
+      <img src={img} alt="shark-img" />
     </NotodosContainer>
     }
     </>

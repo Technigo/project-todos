@@ -6,16 +6,16 @@ import styled from "styled-components";
 //styled components
 const HeaderContainer = styled.header`
 text-align: center;
-font-family: 'Comic Neue', cursive;
+font-family: 'Gaegu', cursive;
 
 `;
 
 const Heading = styled.h1`
 text-align: center;
-font-size: 45px;
-word-spacing: -5.5px; 
+font-size: 65px;
+word-spacing: -8px; 
 margin: auto auto;
-color: #ee9ca7;
+color: #1CB5E0;
 font-weight: 600;
 padding: 15px 5px 0 5px;
 span {
@@ -28,7 +28,7 @@ display: flex;
 flex-direction: column;
 text-align: center;
 font-weight: 400;
-font-size: 23px;
+font-size: 25px;
 margin: 10px auto;
 `;
 
@@ -36,7 +36,7 @@ const TaskCount = styled.section`
 display: flex;
 flex-direction: column;
 text-align: center;
-font-size: 23px;
+font-size: 25px;
 font-weight: 400;
 margin-bottom: 20px;
 `;

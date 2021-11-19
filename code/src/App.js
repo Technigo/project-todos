@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux'; 
-import { combineReducers, createStore } from '@reduxjs/toolkit';
+import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import todos from './reducers/todos'; //our slice
 
 import AddTodo from './components/AddTodo';
@@ -20,19 +20,20 @@ const reducer = combineReducers({ //a varibale that collects all of our slices
 
 
 // set up for local store 
-const persistedStateJSON = localStorage.getItem("reduxState");
-let persistedState = {};
+const preloadedStateJSON = localStorage.getItem('todosReduxState')
+let preloadedState = {}
 
-if (persistedStateJSON) {
-  persistedState = JSON.parse(persistedStateJSON);
-};
+if (preloadedStateJSON) {
+	preloadedState = JSON.parse(preloadedStateJSON) 
+  }  
 
 // reducer: reducer; ES6 short syntas is reducer because the same name of variable and value. //reducer is the property that configuterStore expects from us
-const store = createStore(reducer, persistedState);
+const store = configureStore({ reducer, preloadedState })
 
+//Store the state in localstorage, when Redux state changes
 store.subscribe(() => {
-  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
-});
+	localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))
+  })
 
 
 export const App = () => {
