@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Project making a Todo app using react redux store with global states & reducers.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Started trying to figues out how I wanted the layout to be then continued on making up the store, components and reducers. Used styled components for the CSS and moment.js for the time presented.
+
+If I had more time I would've wanted to maybe make categories and deadlines for the todos.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://d-todo-today.netlify.app/
