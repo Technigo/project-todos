@@ -6,6 +6,7 @@ const tasks = createSlice({
   name: 'tasks',
   initialState: { items: [],
 },
+
 reducers: {
   addTasks: (store, action) => {
     //   const data = action.payload;
@@ -42,7 +43,7 @@ store.items = updatedItems;
 			// v2 Immutability approach (id in action.payload)
 			const decreasedItems = store.items.filter(
 				(item) => item.id !== action.payload
-			);
+        );
 
 			store.items = decreasedItems;
 		},

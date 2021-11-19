@@ -3,11 +3,12 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import styled from 'styled-components';
-import GlobalStyle from 'globalStyles';
+import GlobalStyle from 'GlobalStyles';
 
 import tasks from './reducers/tasks'
 import AddTasks from 'components/AddTasks'
 import TaskList from 'components/TaskList'
+import Header from 'components/Header';
 
 // Since exported default no {} around
 
@@ -32,6 +33,7 @@ export const App = () => {
     <GlobalStyle />
     <MainContainer>
       <Provider store={store}>
+        <Header/>
         <AddTasks />
         <TaskList />
       </Provider>

@@ -7,13 +7,23 @@ import tasks from "reducers/tasks";
 
 const AddTaskContainer = styled.section`
     border: 2px solid orange;
-    /* margin: 20px auto;
-    min-height: 100px;
+    margin: 10px auto;
+    /* min-height: 100px; */
     width: 90%;
     display: flex;
-    align-items: center; */
+    align-items: center; 
+    /* justify-content: space-between; */
+  `
+  const AddTaskButton = styled.button `
+  border-radius: 10px;
+  margin: 5px;
   `
 
+  const AddTaskText = styled.input `
+  color: blue;
+  text-transform: uppercase;
+  border: none;
+  `
 
 const AddTasks = () => {
   const [input, setInput] = useState ('')
@@ -28,12 +38,12 @@ const AddTasks = () => {
   
   return(
     <AddTaskContainer>
-      <input 
+      <AddTaskText 
         type="text" 
         value={input}
         onChange={(event) => setInput(event.target.value)}
         />
-      <button onClick={onAddTasks}>Add task</button>
+      <AddTaskButton onClick={onAddTasks}>Add task</AddTaskButton>
     </AddTaskContainer>
     );
 };

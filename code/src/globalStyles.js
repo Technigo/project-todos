@@ -5,7 +5,7 @@ const GlobalStyle = createGlobalStyle`
     margin: 2px;
     padding: 2px;
     border: 2px solid red;
-    background: lightgray;
+    background: white;
     /* font-family:  ; */
   }
 `;
