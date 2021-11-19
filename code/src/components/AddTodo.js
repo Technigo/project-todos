@@ -66,9 +66,6 @@ export const AddTodo = () => {
         onKeyDown={onKeyDown}
       />
       {showDatePicker && <DatePicker selected={startDate} onChange={date => setStartDate(date)} />}
-      <Button disabled={input <= 0} onClick={() => setShowDatePicker(true)}>
-        🕒
-      </Button>
     </InputWrapper>
   )
 }
