@@ -9,7 +9,7 @@ body {
   --theme-color: palevioletred;
   --sub-theme-color: grey;
   background-size: 100vh;
-  object-fit: fill;
+  object-fit: cover;
   background-attachment: fixed;
   background-position: top;
   transition: background-image 0.5s ease;
