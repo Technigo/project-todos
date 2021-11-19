@@ -32,6 +32,9 @@ const AddTodo = () => {
 
   const onAddTodo = () => {
     const dateAdded = DateTime.now();
+    // const tagsArray = newTags.map((tag) => {
+    //   return tag.value;
+    // });
     setNewTodo("");
     setNewDate(new Date());
     setNewTags([]);

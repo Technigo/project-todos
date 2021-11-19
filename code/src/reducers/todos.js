@@ -31,6 +31,7 @@ const todos = createSlice({
       };
 
       store.items = [...store.items, newTodo];
+      store.filterItems = store.items;
     },
     toggleTodo: (store, action) => {
       const updatedItems = store.items.map((item) => {
@@ -61,6 +62,10 @@ const todos = createSlice({
         );
       } else if (store.filter === "showall") {
         store.filterItems = store.items;
+      } else {
+        store.filterItems = store.items.filter((item) =>
+          item.tags.some((tag) => tag.value === store.filter)
+        );
       }
     },
     checkTodos: (store) => {
@@ -73,6 +78,7 @@ const todos = createSlice({
       });
 
       store.items = updatedItems;
+      store.filterItems = store.items;
     },
     uncheckTodos: (store) => {
       const updatedItems = store.items.map((item) => {
@@ -84,6 +90,7 @@ const todos = createSlice({
       });
 
       store.items = updatedItems;
+      store.filterItems = store.items;
     },
     deleteTodo: (store, action) => {
       const decreasedTodo = store.items.filter(
@@ -91,6 +98,7 @@ const todos = createSlice({
       );
 
       store.items = decreasedTodo;
+      store.filterItems = store.items;
     },
   },
 });

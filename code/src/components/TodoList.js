@@ -100,7 +100,7 @@ const TodoList = () => {
           <SmallWrapper>
             <SmallText>
               Finish by:{" "}
-              {DateTime.fromJSDate(item.date)
+              {DateTime.fromISO(item.date)
                 .setZone("Europe/Stockholm")
                 .toFormat("dd LLL yyyy")}
             </SmallText>
