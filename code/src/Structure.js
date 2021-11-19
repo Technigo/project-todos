@@ -44,13 +44,21 @@ export const Structure = () => {
           <InfoBoard />
         </div>
       </div>
-      <Footer height={50} width={100}>
-        <p>
-          created and developed by &#8203;
-          <a className="link" href="https://mary-snopok.com" target="_blank" rel="noopener noreferrer">
-            @marysnopok
-          </a>
-        </p>
+      <Footer height={100} width={100}>
+        <div className="contacts-wrapper">
+          <p>
+            created and developed by &#8203;
+            <a className="link" href="https://mary-snopok.com" target="_blank" rel="noopener noreferrer">
+              @marysnopok
+            </a>
+          </p>
+          <p>
+            photos by &#8203;
+            <a className="link" href="https://unsplash.com/@jessbaileydesigns" target="_blank" rel="noopener noreferrer">
+              @jessbailey
+            </a>
+          </p>
+        </div>
       </Footer>
     </main>
   );

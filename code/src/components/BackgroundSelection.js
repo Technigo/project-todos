@@ -15,8 +15,3 @@ export const BackgroundSelection = styled.div`
     font-size: 18px;
   }
 `;
-
-// left: px;
-// right: 0;
-// left:500px;
-// right: 0;

@@ -9,8 +9,6 @@ export const DatePick = ({ item }) => {
   const pastDate = dayjs(item.dueDate);
   const dueDateCheck = pastDate.isBefore(today);
 
-  console.log("itemDueDate", pastDate.isBefore(today));
-
   const dispatch = useDispatch();
 
   const dueDate = item.dueDate;
