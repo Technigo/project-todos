@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components/macro";
 
 import todos from "../reducers/todos";
+
+import FilterOptions from "./FilterOptions";
+
 const { DateTime } = require("luxon");
 
 const Wrapper = styled.div`
@@ -66,12 +69,31 @@ const Tag = styled.div`
 `;
 
 const TodoList = () => {
+  const filter = useSelector((store) => store.filter);
   const items = useSelector((store) => store.todos.items);
+  let filteredItems = items;
+
+  const filterItems = () => {
+    console.log(filter);
+    if (filter === "") {
+      filteredItems = items;
+    } else if (filter === "checked") {
+      filteredItems = items.filter(
+        (item) => item.isComplete === true
+      );
+    } else if (filter === "unchecked") {
+      filteredItems = items.filter(
+        (item) => item.isComplete === false
+      );
+    }
+    console.log(filteredItems);
+  };
 
   const dispatch = useDispatch();
 
   const onToggleTodo = (id) => {
     dispatch(todos.actions.toggleTodo(id));
+    filterItems();
   };
 
   const onDeleteTodo = (id) => {
@@ -79,7 +101,7 @@ const TodoList = () => {
   };
 
   const onCheckTodos = (boolean) => {
-    if (boolean) dispatch(todos.actions.finishTodos());
+    if (boolean) dispatch(todos.actions.checkTodos());
     else dispatch(todos.actions.uncheckTodos());
   };
 
@@ -91,7 +113,8 @@ const TodoList = () => {
       <button onClick={() => onCheckTodos(false)}>
         Uncheck all tasks
       </button>
-      {items.map((item) => (
+      <FilterOptions />
+      {filteredItems.map((item) => (
         <Wrapper key={item.id}>
           <SmallWrapper>
             <SmallText>

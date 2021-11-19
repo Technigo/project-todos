@@ -7,6 +7,7 @@ const todos = createSlice({
   // initial is always an object
   initialState: {
     items: [],
+    filter: "",
   },
   reducers: {
     addTodo: (store, action) => {
@@ -35,7 +36,10 @@ const todos = createSlice({
 
       store.items = updatedItems;
     },
-    finishTodos: (store) => {
+    changeFilter: (store, action) => {
+      store.filter = action.payload;
+    },
+    checkTodos: (store) => {
       const updatedItems = store.items.map((item) => {
         const updatedTodo = {
           ...item,
