@@ -142,7 +142,7 @@ const Time = styled.p`
   }
 `;
 
-const Image = styled.img`
+const Images = styled.img`
   width: 200px;
   height: 200px;
 `;
@@ -169,7 +169,7 @@ const TodoList = () => {
           <>
             <H1 className="emptyList">Nothing to do</H1>
 
-            <Image src="https://cdn-icons.flaticon.com/png/512/3037/premium/3037869.png?token=exp=1637333559~hmac=1b6ce30e58b175595387588414116090"></Image>
+            <Images src="https://cdn-icons.flaticon.com/png/512/3037/premium/3037869.png?token=exp=1637333559~hmac=1b6ce30e58b175595387588414116090" />
           </>
         )}
         {items.map((item) => (
