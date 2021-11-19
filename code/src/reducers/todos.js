@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import uniqid, { time } from 'uniqid' // used to generate an absolutely unique id
-
+import moment from 'moment'
 
 
 const todos = createSlice({
@@ -16,10 +16,12 @@ const todos = createSlice({
             
          
             const newTodo ={
-                id: Date.now(),
+                id: uniqid(),
                 //id: uniqid(),// needs to be absolutely unique
                 text: action.payload,
-                isComplete: false // needed so that we know
+                isComplete: false, // needed so that we know
+                postedTime: moment().calendar()
+
             }
 
             // immutable approach; a completely new array with the values from previous array plus extra element

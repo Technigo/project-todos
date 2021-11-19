@@ -22,11 +22,8 @@ const TasksCompleted = () => {
     return (
         <>
             <Tasktext> {amount} tasks</Tasktext>
-            <Tasktext> <Span>{completedAmount}</Span> tasks completed</Tasktext>
-            
+            <Tasktext> <Span>{completedAmount}</Span> tasks completed</Tasktext> 
         </>
-
-
     )
     
 }

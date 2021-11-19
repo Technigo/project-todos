@@ -19,21 +19,29 @@ const onDeleteTodo = (id) => {
     
    //styling
    
-   const Checkbox = styled.input `
-    width: 20px;
-    margin: 0 20px;
-   
-   `  
+  
    const TodoItemText = styled.div `
     display: flex;
     flex-direction: column;
     flex-grow: 2;
    `
    const Todo = styled.p `
+   
     font-size: 14px;
     font-weight: bold;
     margin:0;
+    ${({isComplete}) =>
+    isComplete &&
+    `
+    color: green`}
    ` 
+   const Checkbox = styled.input `
+   width: 20px;
+   margin: 0 20px;
+   &:active + ${({Todo})} {
+    background-color: green;
+     }
+  ` 
     const Removebutton = styled.button `
     border: none;
     background-color: grey;
@@ -64,19 +72,17 @@ const onDeleteTodo = (id) => {
                     <Checkbox type="checkbox"checked={item.isComplete} onChange={() => onToggleTodo(item.id)}/> 
                         <TodoItemText>
                             <Todo>{item.text}</Todo>
-                            <Date>Created at: {moment().calendar()}</Date>
+                            <Date>Created: {item.postedTime}</Date>
                         </TodoItemText>
                     <Removebutton onClick={() => onDeleteTodo(item.id)}>Delete</Removebutton>
                 </Container>
             ))}
         </section>{/*// mapping over item to show the text inputs*/}
         
-       
-        
-        
         </>
     )
-   
+    
 }
+
 
 export default TodoList

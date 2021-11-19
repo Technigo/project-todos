@@ -55,7 +55,9 @@ const TaskContainer = styled.div`
   background: white;
 `
 const TodoContainer =styled.div`
-width: 100%;`
+  width: 100%;
+  overflow: scroll;
+  max-height: 370px;`
 
 export const App = () => {
 
