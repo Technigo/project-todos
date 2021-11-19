@@ -28,22 +28,26 @@ export const TodoList = () => {
       <InputField>
         <h1>TodoList</h1>
         <div className="input">
-          <input
-            type="text"
-            placeholder="write your Todo:"
-            onChange={(event) => setInput(event.target.value)}
-            value={input}
-          />
+          <div className="inputBox">
+            <input
+              className="textInput"
+              type="text"
+              placeholder="write your Todo:"
+              onChange={(event) => setInput(event.target.value)}
+              value={input}
+            />
 
-          <div class="trips">
-            <label>Category:</label>
-            <select
-              name="category"
-              onChange={(event) => setCategory(event.target.value)}>
-              <option value="Urgent">Urgent</option>
-              <option value="Not urgent">Not urgent</option>
-              <option value="Fun stuff">Fun stuff</option>
-            </select>
+            <div>
+              <label>Category:</label>
+              <select
+                className="categoryInput"
+                name="category"
+                onChange={(event) => setCategory(event.target.value)}>
+                <option value="Urgent">Urgent</option>
+                <option value="Not urgent">Not urgent</option>
+                <option value="Fun stuff">Fun stuff</option>
+              </select>
+            </div>
           </div>
 
           <InputButton disabled={input.length < 1} onClick={onAddToDo}>
@@ -56,14 +60,20 @@ export const TodoList = () => {
         <h2>You have {listWithTodos.length} Todos left for today.</h2>
         {listWithTodos.map((item, index) => (
           <TheList border={item.category === 'Urgent' ? 'red' : 'green'}>
-            <input
-              type="checkbox"
-              checked={item.isComplete}
-              onChange={() => onToggle(item.id)}></input>
-            <p>{item.text}</p>
-            <DeleteButton onClick={() => onDelete(index)}>Delete</DeleteButton>
-            <p>Posted: {moment(item.date).fromNow()}</p>
-            <p>Category:{item.category}</p>
+            <div className="topList">
+              <input
+                type="checkbox"
+                checked={item.isComplete}
+                onChange={() => onToggle(item.id)}></input>
+              <p>{item.text}</p>
+              <DeleteButton onClick={() => onDelete(index)}>
+                Delete
+              </DeleteButton>
+            </div>
+            <div className="bottomList">
+              <p>Posted: {moment(item.date).fromNow()}</p>
+              <p>Category:{item.category}</p>
+            </div>
           </TheList>
         ))}
       </div>
@@ -73,10 +83,12 @@ export const TodoList = () => {
 
 const Content = styled.div`
   @media (min-width: 992px) {
-    border: 3px dotted black;
+    background-color: var(--background);
+    border: 5px dotted black;
     min-width: 334px;
     max-width: 500px;
     margin: 0 auto;
+    padding: 50px;
   }
 `;
 
@@ -85,6 +97,14 @@ const InputField = styled.div`
 
   @media (min-width: 992px) {
     background: none;
+  }
+  .textInput {
+    margin: 5px;
+  }
+
+  .categoryInput {
+    margin: 5px;
+    margin-bottom: 10px;
   }
 
   .input {
@@ -95,6 +115,8 @@ const InputField = styled.div`
     flex-wrap: nowrap;
     margin: 10px 0px;
 
+    .inputBox {
+    }
     @media (min-width: 992px) {
     }
   }
@@ -126,14 +148,30 @@ const InputButton = styled.button`
 const TheList = styled.div`
   background-color: white;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-  flex-wrap: nowrap;
+  flex-direction: column;
+
   /* border: 1px solid black; */
   margin: 10px 0px;
 
   border: 1px solid ${(props) => props.border};
+
+  .topList {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+    font-size: 16px;
+  }
+
+  .bottomList {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    font-style: italic;
+    font-size: 12px;
+  }
 
   @media (min-width: 992px) {
   }

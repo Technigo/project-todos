@@ -11,4 +11,8 @@ export const Header = () => {
 const HeaderStyle = styled.div`
   background-color: white;
   border: 5px dotted black;
+
+  @media (min-width: 992px) {
+    padding: 30px;
+  }
 `;

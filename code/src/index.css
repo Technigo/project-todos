@@ -16,7 +16,9 @@ code {
 
 :root {
   --main-color: #769859;
+  /* --main-color: #7e30007c; */
   --secondary-color: #bbcbad5b;
+  --background: rgba(00, 00, 00, 0.1);
   --main-font: "Courier New",
   monospace;
   --secondary-font: monospace;
@@ -27,6 +29,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
   text-align: center;
+  margin: 0px;
+  padding: 20px;
 }
 
 h2{
@@ -61,6 +65,6 @@ a {
   display: flex;
   flex-direction: column;
   min-width: 334px;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
 }
