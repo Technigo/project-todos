@@ -19,15 +19,15 @@ const AddTodo = () => {
 
   return (
       <form className="add-todo-section" onSubmit={addTodo}>
-      <button className="add-btn" onClick={addTodo} type="submit">
-        <i className="fas fa-plus"></i>
-      </button>
       <input
         type="text"
-        placeholder="Add to-do..."
+        placeholder="Add to-do"
         value={input}
         onChange={(event) => setInput(event.target.value)} //submit input text when press enter
       />
+      <button className="add-btn" onClick={addTodo} type="submit">
+        <i className="fas fa-plus"></i>
+      </button>
     </form>
   );
 };

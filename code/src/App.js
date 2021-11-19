@@ -2,7 +2,7 @@ import React from "react";
 import { Provider } from "react-redux";
 import { combineReducers, createStore } from "@reduxjs/toolkit";
 import todos from "./reducers/todos";
-import AddTodo from "./components/AddTodo";
+/* import AddTodo from "./components/AddTodo"; */
 import TodoList from "./components/TodoList";
 import Header from "./components/Header";
 import EmptyField from "./components/EmptyList";
@@ -32,14 +32,9 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
-      <main>
         <Header />
-        <TodoList />
         <EmptyField />
-        <div className="footer">
-          <AddTodo />
-        </div>
-      </main>
+        <TodoList />
     </Provider>
   );
 };

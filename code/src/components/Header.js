@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import ClearAll from "components/ClearAll"
+import AddTodo from "components/AddTodo";
 
 
 
@@ -14,6 +15,7 @@ const Header = () => {
   return (
     <header>
     <h1>My to-do's</h1>
+    <AddTodo />
     <div className="header-functions-container">
       <p className="counter-paragraph">Completed {amountTodos}/{totalTodos}</p>
       <ClearAll />

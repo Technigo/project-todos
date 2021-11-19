@@ -17,7 +17,7 @@ const TodoList = () => {
   };
 
   return (
-    <main>
+    <>
       {items.map((item) => (
         <div className="task-container" key={item.id}>
           <div className="task-with-checkbox">
@@ -29,7 +29,7 @@ const TodoList = () => {
             />
             <div className="text-and-date-box">
               <p className="task-paragraph">{item.text}</p>
-              <p className="date-paragraph">Added {moment().format("MMM Do")}</p>
+              <p className="date-paragraph">Added {moment().format("MMM Do hh:mm")}</p>
             </div>
           </div>
           <button className="delete-btn" onClick={() => onDeleteTodo(item.id)}>
@@ -37,7 +37,7 @@ const TodoList = () => {
           </button>
         </div>
       ))}
-    </main>
+    </>
   );
 };
 
