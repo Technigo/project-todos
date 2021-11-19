@@ -49,12 +49,12 @@ export const TodoList = () => {
                 </DeleteButton>
               </div>
             ))}
-          {items.length >= 1 && (
-            <CheckAllButton onClick={onClickClearAll}>
-              Complete all
-            </CheckAllButton>
-          )}
         </div>
+        {items.length >= 1 && (
+          <CheckAllButton onClick={onClickClearAll}>
+            Complete all
+          </CheckAllButton>
+        )}
       </section>
     </>
   );
