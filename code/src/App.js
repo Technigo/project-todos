@@ -34,7 +34,12 @@ if (persistedStateJSON) {
 }
 
 // Create store with initial state
-const store = createStore(reducer, persistedState);
+const store = createStore(
+  reducer,
+  persistedState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ &&
+    window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 // Store the state in localstorage when Redux state change
 store.subscribe(() => {

@@ -7,6 +7,7 @@ const options = [
   { value: "school", label: "School" },
   { value: "dog", label: "Dog" },
   { value: "travel", label: "Travel" },
+  { value: "shopping", label: "Shopping" },
 ];
 
 const styles = {

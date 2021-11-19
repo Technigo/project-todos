@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 import todos from "../reducers/todos";
 
@@ -12,8 +12,12 @@ const Wrapper = styled.div`
   margin-top: 10px;
   border-top: 1px solid purple;
 
-  &:first-child {
-    border: 1px solid black;
+  &:nth-child(2n) {
+    background-color: rgba(232, 195, 232, 0.5);
+  }
+
+  &:nth-child(2n-1) {
+    background-color: rgba(218, 158, 218, 0.5);
   }
 `;
 
@@ -46,10 +50,18 @@ const SmallText = styled.p`
   margin-bottom: 0;
 `;
 
+const TagText = styled.p`
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
+`;
+
 const Tag = styled.div`
   background: purple;
   color: white;
   padding: 2px;
+  width: max-content;
+  height: min-content;
 `;
 
 const TodoList = () => {
@@ -83,10 +95,12 @@ const TodoList = () => {
               <p>{item.text}</p>
             </FlexRow>
             <button onClick={() => onDeleteTodo(item.id)}>x</button>
-            {item.tags.map((tag) => (
-              <Tag>{tag.value}</Tag>
-            ))}
           </ListItem>
+          {item.tags.map((tag) => (
+            <Tag>
+              <TagText>{tag.value}</TagText>
+            </Tag>
+          ))}
         </Wrapper>
       ))}
     </>

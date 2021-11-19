@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import DatePicker from "react-datepicker";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -23,6 +23,7 @@ const AddDate = ({ setNewDate }) => {
     <Wrapper>
       <label>
         Deadline
+        {/* det finns en version som är som en knapp så att den inte fokuserar direkt på den i telefonen */}
         <DatePicker
           selected={startDate}
           onChange={(date) => {
