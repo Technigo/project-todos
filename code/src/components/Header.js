@@ -7,15 +7,15 @@ import ClearAll from "components/ClearAll"
 
 const Header = () => {
 
-  //Filter out the amount of uncompleted todos
-  const items = useSelector((store) => store.todos.items);
-  const amountTodos = items.filter(todo => !todo.isComplete).length;
+  const items = useSelector((store) => store.todos.items); //Reaching for the todos via selector
+  const amountTodos = items.filter(todo => !todo.isComplete).length; //Filter out the amount of uncompleted todos
+  const totalTodos = items.length; //Reaching for total amount of todo's
 
   return (
     <header>
     <h1>My to-do's</h1>
     <div className="header-functions-container">
-      <p>{amountTodos} uncompleted</p>
+      <p className="counter-paragraph">Completed {amountTodos}/{totalTodos}</p>
       <ClearAll />
     </div>
     </header>

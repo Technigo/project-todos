@@ -37,9 +37,9 @@ export const App = () => {
         <EmptyField />
         <TodoList />
 
-      <div className="footer">
-        <AddTodo />
-      </div>
+        <div className="footer">
+          <AddTodo />
+        </div>
       </main>
     </Provider>
   );

@@ -24,7 +24,7 @@ const AddTodo = () => {
       </button>
       <input
         type="text"
-        placeholder="Add new to-do"
+        placeholder="Add to-do..."
         value={input}
         onChange={(event) => setInput(event.target.value)} //submit input text when press enter
       />

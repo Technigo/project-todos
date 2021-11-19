@@ -19,8 +19,8 @@ const TodoList = () => {
   return (
     <main>
       {items.map((item) => (
-        <div className="added-task-container" key={item.id}>
-          <div className="added-task-with-checkbox">
+        <div className="task-container" key={item.id}>
+          <div className="task-with-checkbox">
             <input
               className="checkbox"
               type="checkbox"
@@ -28,8 +28,8 @@ const TodoList = () => {
               onChange={() => onToggleTodo(item.id)}
             />
             <div className="text-and-date-box">
-              <p className="added-task-p">{item.text}</p>
-              <p>Added {moment().format("MMM Do")}</p>
+              <p className="task-paragraph">{item.text}</p>
+              <p className="date-paragraph">Added {moment().format("MMM Do")}</p>
             </div>
           </div>
           <button className="delete-btn" onClick={() => onDeleteTodo(item.id)}>
