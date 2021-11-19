@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, forwardRef } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components/macro'
 import DatePicker from 'react-datepicker'
+import 'react-datepicker/dist/react-datepicker.css'
 
 import { todos } from '../reducers/todos'
 
@@ -40,24 +41,66 @@ const CloseButton = styled.div`
   padding: 0.6rem;
   font-size: 1.4rem;
 `
+const Input = styled.input`
+  /* flex-grow: 1; */
+  margin-top: 20px;
+  height: 60px;
+  border: 0;
+  font-size: 5rem;
+`
 
 export const TodoItem = () => {
-  const [startDate, setStartDate] = useState(new Date())
-  const item = useSelector(store => store.todos.modalItem)
+  const [dueDate, setDueDate] = useState(new Date())
+  const [item, setItem] = useState({})
+  const selectedItem = useSelector(store => store.todos.selectedItem)
   const dispatch = useDispatch()
 
-  const onModalClick = () => {
-    dispatch(todos.actions.removeModalItem())
+  useEffect(() => {
+    setItem(selectedItem)
+    console.log(selectedItem)
+    selectedItem.dueDate ? setDueDate(selectedItem.dueDate) : setDueDate(new Date())
+  }, [selectedItem])
+
+  const DatePickerButton = forwardRef(({ value, onClick }, ref) => (
+    <button className='example-custom-input' onClick={onClick} ref={ref}>
+      {value}
+    </button>
+  ))
+
+  const onCloseClick = () => {
+    setItem({ ...item, dueDate: dueDate })
+    dispatch(todos.actions.saveSelectedItem(item))
+    dispatch(todos.actions.removeSelectedItem())
+  }
+
+  const onChangeText = e => {
+    setItem({ ...item, text: e.target.value })
+  }
+
+  const onKeyDown = e => {
+    if (e.key === 'Enter') {
+      onChangeText(e)
+      e.target.blur()
+    }
   }
 
   return (
     <>
-      {item && (
+      {selectedItem && (
         <ModalWrapper>
           <ModalContent>
-            <p>{item.text}</p>
-            <DatePicker selected={startDate} onChange={date => setStartDate(date)} />
-            <CloseButton onClick={onModalClick}>Close</CloseButton>
+            <Input type='text' value={item.text} onChange={onChangeText} onKeyDown={onKeyDown} />
+            <div>
+              <DatePicker
+                selected={dueDate}
+                onChange={date => setDueDate(date)}
+                timeInputLabel='Time:'
+                dateFormat='yyyy-mm-dd (hh:mm)'
+                showTimeInput
+                customInput={<DatePickerButton />}
+              />
+            </div>
+            <CloseButton onClick={onCloseClick}>Close</CloseButton>
           </ModalContent>
         </ModalWrapper>
       )}

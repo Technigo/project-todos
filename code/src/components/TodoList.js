@@ -51,7 +51,7 @@ export const TodoList = () => {
   }
 
   const onSelectItem = id => {
-    dispatch(todos.actions.setModalItem(id))
+    dispatch(todos.actions.setSelectedItem(id))
   }
 
   return (

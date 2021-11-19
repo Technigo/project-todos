@@ -6,30 +6,35 @@ export const todos = createSlice({
   initialState: {
     items: [
       {
-        id: 'kw4k9t3i',
-        text: 'Hej',
+        id: 'kw639pef',
+        text: 'Köp mat',
         isComplete: false,
+        dueDate: false,
       },
       {
-        id: 'kw4k9wov',
-        text: 'HEj igen',
-        isComplete: true,
+        id: 'kw639tpp',
+        text: 'Laga mat',
+        isComplete: false,
+        dueDate: false,
       },
       {
-        id: 'kw4k9zqn',
-        text: 'Hej då',
+        id: 'kw63a1z9',
+        text: 'Sov länge',
         isComplete: false,
+        dueDate: false,
       },
       {
-        id: 'kw4ka3bz',
-        text: 'Va då`?',
+        id: 'kw63abx9',
+        text: 'Ät maten',
         isComplete: false,
+        dueDate: false,
       },
     ],
-    modalItem: {
-      id: 'kw4ka3bz',
-      text: 'Va då`?',
+    selectedItem: {
+      id: 'kw63a1z9',
+      text: 'Sov länge',
       isComplete: false,
+      dueDate: false,
     },
   },
   reducers: {
@@ -38,6 +43,7 @@ export const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         isComplete: false,
+        dueDate: false,
       }
       store.items = [...store.items, newTodo]
     },
@@ -60,12 +66,27 @@ export const todos = createSlice({
     clearAllTodos: store => {
       store.items = []
     },
-    setModalItem: (store, action) => {
+    setSelectedItem: (store, action) => {
       const modalItem = store.items.find(item => item.id === action.payload)
-      store.modalItem = modalItem
+      store.selectedItem = modalItem
     },
-    removeModalItem: store => {
-      store.modalItem = false
+    removeSelectedItem: store => {
+      store.selectedItem = false
+    },
+    editSelectedItem: (store, action) => {
+      const updatedItem = { ...store.selectedItem }
+      store.selectedItem = updatedItem
+    },
+    saveSelectedItem: (store, action) => {
+      const updatedItem = action.payload
+      const updatedItems = store.items.map(item => {
+        if (item.id === updatedItem.id) {
+          return { ...updatedItem }
+        } else {
+          return item
+        }
+      })
+      store.items = updatedItems
     },
   },
 })
