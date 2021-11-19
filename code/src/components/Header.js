@@ -31,7 +31,7 @@ const weekdays = [
 ];
 
 const weekday =
-  weekdays[DateTime.now().setZone("Europe/Stockholm").weekday];
+  weekdays[DateTime.now().setZone("Europe/Stockholm").weekday - 1];
 const date = DateTime.now()
   .setZone("Europe/Stockholm")
   .toFormat("dd LLL");

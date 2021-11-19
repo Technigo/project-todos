@@ -10,8 +10,8 @@ const Wrapper = styled.div`
   width: 90%;
   max-width: 300px;
   margin-top: 10px;
-
   border-top: 1px solid purple;
+
   &:first-child {
     border: 1px solid black;
   }
@@ -46,6 +46,12 @@ const SmallText = styled.p`
   margin-bottom: 0;
 `;
 
+const Tag = styled.div`
+  background: purple;
+  color: white;
+  padding: 2px;
+`;
+
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
 
@@ -77,6 +83,9 @@ const TodoList = () => {
               <p>{item.text}</p>
             </FlexRow>
             <button onClick={() => onDeleteTodo(item.id)}>x</button>
+            {item.tags.map((tag) => (
+              <Tag>{tag.value}</Tag>
+            ))}
           </ListItem>
         </Wrapper>
       ))}

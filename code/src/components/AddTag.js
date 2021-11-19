@@ -33,7 +33,10 @@ const theme = (theme) => ({
 
 const animatedComponents = makeAnimated();
 
-const AddTag = () => {
+const AddTag = ({ setNewTags }) => {
+  const handleChange = (event) => {
+    setNewTags(event);
+  };
   return (
     <div>
       <label>
@@ -46,6 +49,7 @@ const AddTag = () => {
           closeMenuOnSelect={false}
           components={animatedComponents}
           theme={theme}
+          onChange={handleChange}
         />
       </label>
     </div>
