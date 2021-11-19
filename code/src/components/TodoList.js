@@ -12,8 +12,9 @@ const TodosContainer = styled.section`
   padding-right: 15px;
   padding-bottom: 5px;
   padding-left: 15px;
-  margin: 10px;
+  margin-right: 10px;
   margin-bottom: 20px;
+  margin-left: 10px;
   background-color: #fffbfb54;
   border-radius: 10px;
 
