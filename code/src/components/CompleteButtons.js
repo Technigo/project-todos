@@ -12,7 +12,7 @@ const CompleteButtonStyle = styled.div`
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
   margin-top: 10px;
-  width: 250px;
+  width: 280px;
 
   button {
     background-color: ${(props) => props.theme.buttonBackground};

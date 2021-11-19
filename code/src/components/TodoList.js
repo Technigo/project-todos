@@ -6,10 +6,10 @@ import moment from "moment";
 import todos from "reducers/todos";
 
 const ListItems = styled.div`
-  width: 270px;
+  width: 300px;
 
   div {
-    width: 260px;
+    width: 290px;
     background-color: ${(props) => props.theme.listItemBackground};
     margin: 10px 0;
     padding: 5px;

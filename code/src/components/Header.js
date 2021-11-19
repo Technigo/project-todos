@@ -5,7 +5,7 @@ import moment from "moment";
 
 const TopPage = styled.div`
   background-color: ${(props) => props.theme.pageBackground};
-  width: 270px;
+  width: 300px;
   height: auto;
   text-align: center;
   border-radius: 10px;
