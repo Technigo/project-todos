@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
 const CompleteAllButton = styled.button`
+  cursor: pointer;
   align-items: center;
   margin-right: 5px;
   width: 70px;

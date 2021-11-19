@@ -14,6 +14,7 @@ export const TodoContainer = styled.div`
   }
 `
 export const StyledCheckBox = styled.input`
+  cursor: pointer;
   appearance: none;
   background-color: #fff;
   margin: 0;
@@ -87,6 +88,7 @@ export const AddTodoButton = styled.button`
   padding: 20px;
   color: blue;
   border: none;
+  cursor: pointer;
   &.addtask-active {
     transform: rotate(45deg);
   }
@@ -114,6 +116,7 @@ export const DeleteButton = styled.button`
   font-size: 12px;
   display: flex;
   justify-content: center;
+  cursor: pointer;
   &:hover {
     background-color: #4398bf;
     color: #fff;
@@ -137,6 +140,7 @@ export const SendButton = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
   }
   &:hover {
     background-color: #4398bf;
