@@ -35,7 +35,7 @@ const Header = () => {
         </LeftContainer>
         <RigthContainer>
           <HeaderSubTitle>{completedTasks.length}/{tasks.length} todos completed</HeaderSubTitle>
-          <ButtonHeader onClick={onCompleteAll}>Complete All</ButtonHeader>
+          <ButtonHeader onClick={onCompleteAll}>Check All</ButtonHeader>
           <ButtonHeader onClick={onDeleteAll}>Clear All</ButtonHeader>
         </RigthContainer>
       </HeaderBodyContainer>

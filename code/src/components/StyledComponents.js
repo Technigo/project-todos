@@ -7,7 +7,7 @@ export const HeaderContainer = styled.section`
   border-radius: 0 0 30px 30px;
 `
 export const HeaderBodyContainer = styled.section`
-  color: rgb(37, 37, 37);
+  color: #252525;
   border-radius: 2px;
   display: flex;
   align-items: flex-start;
@@ -25,7 +25,7 @@ export const RigthContainer = styled.div`
 `
 export const ButtonHeader = styled.button`
   color: white;
-  background: rgb(37, 37, 37);
+  background: 	#252525;
   border: none;
   padding: 10px;
   margin: 10px 0;
@@ -37,7 +37,7 @@ export const ButtonHeader = styled.button`
   vertical-align: middle;
   -webkit-transform: perspective(1px) translateZ(0);
   transform: perspective(1px) translateZ(0);
-  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 1px #000000;
   -webkit-transition-duration: 0.3s;
   transition-duration: 0.3s;
   -webkit-transition-property: transform;
@@ -84,15 +84,15 @@ margin: 1.2rem 0 0 0;
 // Wrappers
 export const MainSection = styled.section`
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 650px;
 `
 export const FlexItem = styled.div`
-  background: rgb(100, 100, 100);
+  background: #646464;
   display: flex;
   justify-content: space-between;
   margin: 10px 0 0;
   padding: 5px;
-  border: rgb(150, 150, 150) solid 2px;
+  border: #969696 solid 2px;
   border-radius: 10px 10px 0 0;
   word-break: break-word;
   font-size: 16px;
@@ -114,9 +114,9 @@ export const FlexItem = styled.div`
 export const DateContainer = styled.div`
   display: flex;
   justify-content: end;
-  background: rgb(150, 150, 150);
+  background: #969696;
   padding: 0 5px;  
-  border: rgb(150, 150, 150) solid 2px;
+  border: #969696 solid 2px;
   border-radius: 0 0 10px 10px;
   font-size: 12px;
   @media (min-width: 768px){
@@ -130,7 +130,7 @@ export const EmptyTodoDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  color:rgb(100, 100, 100);
+  color:#646464;
   margin: 10px auto;
   
   border-radius: 10px;
@@ -155,12 +155,12 @@ export const TodoContainer = styled.div`
 export const InputContainer = styled.div`
    display: flex;
    justify-content: center;
-   background: rgb(150, 150, 150);
+   background: #969696;
    margin: 10px auto;
    
    padding: 5px;
    align-items: center;
-   border: rgb(200, 200, 200) solid 2px;
+   border: #c8c8c8 solid 2px;
    border-radius: 10px;
 `
 export const TextInput = styled.input`
@@ -168,7 +168,7 @@ export const TextInput = styled.input`
   padding: 0.5em 1em;
   font-size: 16px;
   border-radius: 10px 0 0 10px;
-  background: rgb(100, 100, 100);
+  background: #646464;
   color: #ddd;
   outline: none;
   @media (min-width: 768px){
@@ -179,7 +179,6 @@ export const TextInput = styled.input`
   }
 `
 export const DeleteButton = styled.button`
-  color: white;
   background: none;
   border: none;
   padding: 10px;
@@ -337,6 +336,16 @@ export const Image = styled.img`
   border-radius: 50%;
   width: 18px;
   filter: grayscale(100%) contrast(50%);
+  cursor: pointer;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+
+  &:hover {
+    -webkit-transform: scale(1.5);
+    transform: scale(1.5);
+  }
 `
 
 

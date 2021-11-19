@@ -42,7 +42,7 @@ const AddTodo = () => {
           <InputButton 
           onClick={onAddTodo}
           disabled={input.length < 3}
-          >Add</InputButton>
+          >ADD</InputButton>
         </label>
       </form>
       }
