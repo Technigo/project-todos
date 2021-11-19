@@ -2,11 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 import uniqid from 'uniqid';
 import moment from 'moment';
 
+const initialState = {
+  todoListItems: [],
+};
+
 const todos = createSlice({
   name: 'todos',
-  initialState: {
-    todoListItems: [],
-  },
+  initialState,
   reducers: {
     addTodo: (store, action) => {
       const newTodo = {
@@ -50,6 +52,9 @@ const todos = createSlice({
           };
       });
       store.todoListItems = completeAll;
+    },
+    deleteAll: () => {
+      return initialState;
     },
   },
 });

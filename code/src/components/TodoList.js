@@ -88,6 +88,10 @@ const TodoList = () => {
     dispatch(todos.actions.completeAllTasks());
   };
 
+  const onDeleteAll = () => {
+    dispatch(todos.actions.deleteAll());
+  };
+
   return (
     <>
       <StyledList
@@ -103,10 +107,10 @@ const TodoList = () => {
             />
 
             <div className='list-item-info'>
-              <p className={listItem.isComplete && 'checked'}>
+              <p className={listItem.isComplete ? 'checked' : 'no-class'}>
                 {listItem.text}
               </p>
-              <p className={listItem.isComplete && 'checked'}>
+              <p className={listItem.isComplete ? 'checked' : 'no-class'}>
                 Created: {listItem.timePosted}
               </p>
             </div>
@@ -130,6 +134,9 @@ const TodoList = () => {
           <span>Check all</span>
         </CheckAllButton>
       </ButtonContainer>
+      <button className='false' onClick={onDeleteAll}>
+        Delete all
+      </button>
     </>
   );
 };
