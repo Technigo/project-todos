@@ -13,6 +13,7 @@ body {
   background-color: antiquewhite;
   background-color: whitesmoke;
   padding-top: 30px;
+  background-color: rgb(204, 120, 17);
 }
 
 code {
@@ -20,130 +21,6 @@ code {
     monospace;
 }
 
-/* Main */
-main {
-  width: 500px;
-  margin: 0 auto;
-}
 
-/* Header */
-.header {
-  height: 45vh;
-  background-image: url(./images/mountain-background.jpeg);
-  background-repeat: no-repeat, repeat;
-  background-size: cover; /* Resize the background image to cover the entire container */
-  background-position: center; /* Center the image */
-  text-align: center;
-}
-.header-container {
-  margin-top: 40px;
-  padding-top: 20px;
-}
 
-.heading-one {
-  color: rgb(0, 30, 108);
-  font-family:'Indie Flower', cursive;
-  text-transform: capitalize;
-}
 
-.date {
-  color: rgb(253, 140, 4);
-  font-weight: bolder;
-  font-family:'Indie Flower', cursive;
-  font-size: 1.3rem;
-
-}
-
-/* Input */
-.input-wrapper {
-  position: absolute;
-  top: 20px;
-  width: 500px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.todo-input,
-.todo-btn {
-  border: none;
-  padding: 0.5rem;
-  font-size: 1.2rem;
-  background-color: rgb(201, 204, 213);
-}
-.todo-input {
-  width: 500px;
-  border-radius: 5px 0 0 5px;
-  color: rgb(0, 30, 108);
-}
-
-.todo-btn {
-  cursor: pointer;
-  color: rgb(253, 140, 4);
-  transition: all 0.3s ease;
-  border-radius: 0 5px 5px 0;
-}
-.todo-btn:hover {
-  background-color: rgb(253, 140, 4);
-  color: rgb(223, 212, 212);
-}
-
-/* Section */
-/* box-shadow: */
-
-section {
-  display: flex;
-}
-
-.list-container,
-.date-container,
-.buttons-container {
-  display: flex;
-  align-items: center;
-  margin-top: 4px;
-  padding: 5px;
-}
-
-.list-container {
-  list-style-type: none;
-  background-color: rgb(228, 216, 220);
-  color: rgb(0, 30, 108);
-  flex-grow: 1;
-
-}
-
-.date-container {
-  padding: 5px 15px;
-  color: rgb(253, 140, 4);
-  background-color: rgb(201, 204, 213);
-}
-
-.buttons-container {
-  padding: 5px 15px;
-  background-color: rgb(147, 181, 198);
-}
-
-.item {
-  padding: 0 5px;
-}
-
-input[type="checkbox"] {
-  cursor: pointer;
-  font: inherit;
-  width: 0.8em;
-  height: 0.8em;
-  margin-right: 10px;
-}
-
-.trash-btn {
-  cursor: pointer;
-  border: none;
-  transition: all 0.3s ease;
-  background-color: rgb(147, 181, 198);
-  color: rgb(0, 30, 108);
-}
-
-.trash-btn:hover {
-  color: rgb(253, 140, 4);
-}

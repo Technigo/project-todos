@@ -13,19 +13,18 @@ const todos = createSlice({
   reducers: {
     addTodo: (store, action) => {
       //data variable gets filled in with info sent by dispatch
-      const data = action.payload;
+      const task = action.payload;
       // newTodo object goes inside the items asray when the user adds thing to do in the input
       const newTodo = {
         id: uniqid(),
-        task: data,
+        task: task,
         isComplete: false,
-        timeStamp: moment().format("Do MMM YY")
+        createdAt: moment().format("Do MMM YY")
       };
       // immutability approach; creating a new array with the existing array data comming from the addTodo component
       store.items = [...store.items, newTodo];
     },
     toggleTodo: (store, action) => {
-      console.log(action);
 
       const updateItems = store.items.map((item) => {
         //action.payload is responsible for storing the data comming from the dispatch, that is why is posible to make the comparison
@@ -35,9 +34,9 @@ const todos = createSlice({
             isComplete: !item.isComplete,
           }
           return updatedTodo;
+
         } else {
             return item;
-
         }
       });
 
