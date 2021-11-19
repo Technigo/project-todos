@@ -26,28 +26,35 @@ main {
   background-color: whitesmoke;
 }
 
-.header {
-  background-color: #FFCFDF;
-  width: 100%;
-  text-align: center;
-}
-
 h1 {
   /* font-family: "Reenie Beanie", cursive; */
   font-family: 'Roboto', sans-serif;
   font-size: 40px;
   margin-bottom: 20px;
-  background-color: #FFE67F;
-  width: max-content;
-  border-radius: 5px;
 }
 
 p {
   /* font-family: "Reenie Beanie", cursive; */
-  font-family: 'Roboto', sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  margin: 0;
+  color: grey;
+  margin:0;
 }
+
+.header {
+  background-color: #FFCFDF;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.header-functions-container {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+
 
 .added-task-container {
   display: flex;
@@ -65,7 +72,13 @@ p {
 
 .added-task-with-checkbox {
   display: flex;
-  align-items: center;
+}
+
+.added-task-p {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 18px;
+  color: black;
+  margin:0;
 }
 
 .checkbox {
@@ -104,20 +117,11 @@ p {
   top: -4px;
   left: 1px;
   color: black;
-  
-  
 }
 
-.text-and-date {
+.text-and-date-box {
   display: flex;
   flex-direction: column;
-}
-
-.date {
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 14px;
-  color: grey;
-  margin:0;
 }
 
 .delete-btn {
@@ -126,6 +130,7 @@ p {
   color: grey;
   font-size: 16px;
   cursor: pointer;
+  margin-right: 2%;
 }
 
 .clear-all-btn {
@@ -134,8 +139,6 @@ p {
   color: grey;
   font-size: 16px;
   cursor: pointer;
-  position: absolute;
-  top: 82%;
 }
 
 .footer {
