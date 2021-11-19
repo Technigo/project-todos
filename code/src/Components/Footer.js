@@ -24,5 +24,6 @@ const StyledFooter = styled.footer`
   }
   @media (min-width: 992px) {
     padding: 30px;
+    margin-top: 50px;
   }
 `;

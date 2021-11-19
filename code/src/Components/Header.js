@@ -13,6 +13,8 @@ const HeaderStyle = styled.div`
   border: 5px dotted black;
 
   @media (min-width: 992px) {
+    background-color: var(--main-color);
     padding: 30px;
+    margin-bottom: 50px;
   }
 `;

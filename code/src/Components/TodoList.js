@@ -29,6 +29,8 @@ export const TodoList = () => {
         <h1>TodoList</h1>
         <div className="input">
           <div className="inputBox">
+            <label>ToDo:</label>
+            <br />
             <input
               className="textInput"
               type="text"
@@ -39,10 +41,15 @@ export const TodoList = () => {
 
             <div>
               <label>Category:</label>
+              <br />
               <select
                 className="categoryInput"
                 name="category"
+                default="label"
                 onChange={(event) => setCategory(event.target.value)}>
+                <option value="value" disabled selected>
+                  Choose a Category
+                </option>
                 <option value="Urgent">Urgent</option>
                 <option value="Not urgent">Not urgent</option>
                 <option value="Fun stuff">Fun stuff</option>
@@ -110,7 +117,7 @@ const InputField = styled.div`
   .input {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
     margin: 10px 0px;
@@ -118,6 +125,7 @@ const InputField = styled.div`
     .inputBox {
     }
     @media (min-width: 992px) {
+      justify-content: space-between;
     }
   }
 `;
