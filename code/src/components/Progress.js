@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 const Progress = () => {
-  const items = useSelector((store) => store.todos.items)
+  const items = useSelector((store) => store.quests.items)
 
   return (
     <div className='progress'>

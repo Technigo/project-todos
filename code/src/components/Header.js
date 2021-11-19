@@ -2,11 +2,11 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 
 const Header = () => {
-  const amountTasks = useSelector((store) => store.todos.items.length)
+  const amountQuests = useSelector((store) => store.quests.items.length)
   return (
     <header>
       <h1>
-        My Task <span className='amount-tasks'>{amountTasks}</span>
+        My Quests <span className='amount-quests'>{amountQuests}</span>
       </h1>
     </header>
   )

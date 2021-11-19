@@ -3,18 +3,18 @@ import { Provider } from 'react-redux'
 import { combineReducers, createStore } from '@reduxjs/toolkit'
 
 import Header from 'components/Header'
-import AddTask from 'components/AddTask'
-import TodoList from 'components/TodoList'
+import AddQuest from 'components/AddQuest'
+import QuestList from 'components/QuestList'
 import Progress from 'components/Progress'
 import Footer from 'components/Footer'
-import todos from './reducers/todos'
+import quests from './reducers/quests'
 
 const reducer = combineReducers({
-  todos: todos.reducer,
+  quests: quests.reducer,
 })
 
 // get the localStorage in JSON string format
-const persistedStateJSON = localStorage.getItem('todosReduxState')
+const persistedStateJSON = localStorage.getItem('questsReduxState')
 let persistedState = {}
 
 // if we have data in persistedStateJSON -> convert to an object
@@ -31,20 +31,20 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
-document.title = `(${store.getState().todos.items.length}) My Task`
+document.title = `(${store.getState().quests.items.length}) My Quests`
 
 // store the state in localStorage as JSON string on Redux state change
 store.subscribe(() => {
-  document.title = `(${store.getState().todos.items.length}) My Task`
-  localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))
+  document.title = `(${store.getState().quests.items.length}) My Quests`
+  localStorage.setItem('questsReduxState', JSON.stringify(store.getState()))
 })
 
 export const App = () => {
   return (
     <Provider store={store}>
       <Header />
-      <AddTask />
-      <TodoList />
+      <AddQuest />
+      <QuestList />
       <Progress />
       <Footer />
     </Provider>

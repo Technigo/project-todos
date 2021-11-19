@@ -1,27 +1,27 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
-import todos from '../reducers/todos'
+import quests from '../reducers/quests'
 
-const TodoList = () => {
-  const items = useSelector((store) => store.todos.items)
+const QuestList = () => {
+  const items = useSelector((store) => store.quests.items)
 
   const dispatch = useDispatch()
 
-  const onToggleAllTodos = (checked) => {
-    dispatch(todos.actions.toggleAllTodos(checked))
+  const onToggleAllQuests = (checked) => {
+    dispatch(quests.actions.toggleAllQuests(checked))
   }
 
-  const onToggleTodo = (id) => {
-    dispatch(todos.actions.toggleTodo(id))
+  const onToggleQuest = (id) => {
+    dispatch(quests.actions.toggleQuest(id))
   }
 
-  const onRemoveTodo = (id) => {
-    dispatch(todos.actions.removeTodo(id))
+  const onRemoveQuest = (id) => {
+    dispatch(quests.actions.removeQuest(id))
   }
 
   const updateStatus = (id, value) => {
-    dispatch(todos.actions.changeStatus({ id, value }))
+    dispatch(quests.actions.changeStatus({ id, value }))
   }
 
   return (
@@ -35,11 +35,11 @@ const TodoList = () => {
                   type='checkbox'
                   // test each element and return a boolean value
                   checked={items.every((item) => item.isComplete)}
-                  onChange={(event) => onToggleAllTodos(event.target.checked)}
+                  onChange={(event) => onToggleAllQuests(event.target.checked)}
                 />
               </label>
             </th>
-            <th>Task</th>
+            <th>Quest</th>
             <th>Status</th>
             <th>Remove</th>
           </tr>
@@ -52,7 +52,7 @@ const TodoList = () => {
                   <input
                     type='checkbox'
                     checked={item.isComplete}
-                    onChange={() => onToggleTodo(item.id)}
+                    onChange={() => onToggleQuest(item.id)}
                   />
                 </label>
               </td>
@@ -75,7 +75,7 @@ const TodoList = () => {
                 <button
                   type='button'
                   className='remove-button'
-                  onClick={() => onRemoveTodo(item.id)}
+                  onClick={() => onRemoveQuest(item.id)}
                 >
                   <i className='fas fa-trash' />
                 </button>
@@ -85,7 +85,7 @@ const TodoList = () => {
           {items.length === 0 ? (
             <tr>
               <td colSpan='4' className='empty-state'>
-                Add your first task above
+                Add your first quest above
               </td>
             </tr>
           ) : null}
@@ -95,4 +95,4 @@ const TodoList = () => {
   )
 }
 
-export default TodoList
+export default QuestList

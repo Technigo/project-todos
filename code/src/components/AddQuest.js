@@ -1,32 +1,32 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import todos from '../reducers/todos'
+import quests from '../reducers/quests'
 
-const AddTask = () => {
+const AddQuest = () => {
   const [input, setInput] = useState('')
 
   const dispatch = useDispatch()
 
   const onAddTask = () => {
-    dispatch(todos.actions.addTodo(input))
+    dispatch(quests.actions.addQuest(input))
     // empty the text field
     setInput('')
   }
 
   return (
-    <div className='add-task'>
+    <div className='add-quest'>
       <input
         type='text'
         value={input}
         onChange={(event) => setInput(event.target.value)}
-        placeholder='Add Task...'
+        placeholder='Add Quest...'
       />
       <button type='button' onClick={onAddTask}>
-        Add Task
+        Add Quest
       </button>
     </div>
   )
 }
 
-export default AddTask
+export default AddQuest

@@ -1,24 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit'
 import uniqid from 'uniqid'
 
-const todos = createSlice({
-  name: 'todos',
+const quests = createSlice({
+  name: 'quests',
   initialState: {
     items: [],
   },
   reducers: {
-    addTodo: (store, action) => {
-      const newTodo = {
+    addQuest: (store, action) => {
+      const newQuest = {
         id: uniqid(),
         text: action.payload,
         status: 'todo',
         isComplete: false,
       }
 
-      store.items = [...store.items, newTodo]
+      store.items = [...store.items, newQuest]
     },
 
-    toggleAllTodos: (store, action) => {
+    toggleAllQuests: (store, action) => {
       store.items = store.items.map((item) => {
         return {
           ...item,
@@ -28,15 +28,15 @@ const todos = createSlice({
       })
     },
 
-    toggleTodo: (store, action) => {
+    toggleQuest: (store, action) => {
       const updatedItems = store.items.map((item) => {
         if (item.id === action.payload) {
-          const updatedTodo = {
+          const updatedQuest = {
             ...item,
             status: item.isComplete ? 'todo' : 'completed',
             isComplete: !item.isComplete,
           }
-          return updatedTodo
+          return updatedQuest
         } else {
           return item
         }
@@ -45,7 +45,7 @@ const todos = createSlice({
       store.items = updatedItems
     },
 
-    removeTodo: (store, action) => {
+    removeQuest: (store, action) => {
       store.items = store.items.filter((item) => item.id !== action.payload)
     },
 
@@ -64,4 +64,4 @@ const todos = createSlice({
   },
 })
 
-export default todos
+export default quests

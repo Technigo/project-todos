@@ -22,7 +22,7 @@ header h1 {
   color: #fedd00;
 }
 
-.amount-tasks {
+.amount-quests {
   background-color: #f7898e;
   display: inline-flex;
   justify-content: center;
@@ -33,13 +33,13 @@ header h1 {
   color: #f5f9fb;
 }
 
-.add-task {
+.add-quest {
   display: flex;
   justify-content: center;
   margin: 1rem 0;
 }
 
-.add-task button {
+.add-quest button {
   margin-left: 4px;
   border: none;
   border-radius: 6px;
@@ -49,7 +49,7 @@ header h1 {
   padding: 0.5rem 1rem;
 }
 
-.add-task input {
+.add-quest input {
   border: 2px solid #fedd00;
   border-radius: 6px;
 }
