@@ -18,8 +18,6 @@ export const AddTodo = () => {
 
   const dispatch = useDispatch()
 
-  // const numberOfTodos = useSelector((store) => store.todos.length)
-
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input))
     setInput('') //Clears input field

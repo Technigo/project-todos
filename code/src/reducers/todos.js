@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
+
 import uniqid from 'uniqid'
 import moment from 'moment'
 
@@ -37,6 +38,16 @@ export const todos = createSlice({
         (item) => item.id !== action.payload
       )
       store.items = decreasedItems
+    },
+    completeAllTodos: (store, action) => {
+      const allTodosComplete = store.items.map((item) => {
+        const updatedComplete = {
+          ...item,
+          isComplete: true,
+        }
+        return updatedComplete
+      })
+      store.items = allTodosComplete
     },
   },
 })

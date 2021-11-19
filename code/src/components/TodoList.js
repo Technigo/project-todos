@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
+import { CompleteAllTodos } from './CompleteAllTodos'
+import moment from 'moment'
 import {
   StyledCheckBox,
   TodoWrapper,
@@ -14,8 +16,7 @@ export const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
   const completeItems = items.filter((listItem) => listItem.isComplete)
   const numberOfCompleteItems = completeItems.length
-  // const uncompletedListItems = items.filter((listItem) => !listItem.isComplete)
-  // const todaysDate = moment().format('DD MMMM')
+  const todaysDate = moment().format('dddd Do MMM')
 
   const numberOfTodos = items.length
 
@@ -43,15 +44,16 @@ export const TodoList = () => {
     <>
       <div className='header'>
         <img src={Logo} alt='check-mark' width='80px' height='60px' />
-
+        <h4>{todaysDate}</h4>
         <label className='switch'>
           <input type='checkbox' onClick={() => changeColorMode()} />
           <span className='slider round'></span>
         </label>
       </div>
       <TodoSection>
-        <div>
+        <div className='complete-container'>
           <h1>You have {numberOfTodos - numberOfCompleteItems} tasks to do!</h1>
+          <CompleteAllTodos />
         </div>
         {items.map((item) => (
           <TodoWrapper key={item.id}>

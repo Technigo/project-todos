@@ -40,6 +40,13 @@ p {
   margin: 3px;
 }
 
+.complete-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .complete-todo {
   color: #4398bf;
   text-decoration: line-through;

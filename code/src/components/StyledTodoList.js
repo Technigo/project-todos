@@ -106,7 +106,7 @@ export const AddTodoInput = styled.input`
 
 export const DeleteButton = styled.button`
   margin-right: 5px;
-  width: 60px;
+  width: 70px;
   height: 30px;
   color: #4398bf;
   border: 2px solid #4398bf;
