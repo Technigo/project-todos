@@ -12,8 +12,8 @@ const Summary = () => {
   return (
     <div className="summary">
       {/* <h3>{taskAll} things in total.</h3> */}
-      <h1>{taskLeft} things to do.</h1>
-      <h2>{taskDone} things done.</h2>
+      <h1>{taskLeft} things to do</h1>
+      <h2>{taskDone} things done</h2>
     </div>
   );
 };

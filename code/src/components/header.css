@@ -1,3 +1,11 @@
+:root {
+  --pink: #ed86be;
+  --blue: #869aed;
+  --grey: #a9a9a9;
+  --white: #ffffff;
+  --black: #000000;
+}
+
 .header {
   display: flex;
   justify-content: center;
@@ -14,6 +22,7 @@
   font-size: 45px;
   padding: 2%;
   color: white;
-  text-shadow: 1px 1px gray;
+  text-shadow: 1px 0px gray;
+  text-decoration: underline 4px var(--blue);
   height: fit-content;
 }

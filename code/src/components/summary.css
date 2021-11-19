@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
 
+:root {
+  --pink: #ed86be;
+  --blue: #869aed;
+  --grey: #a9a9a9;
+  --white: #ffffff;
+  --black: #000000;
+}
+
 .summary {
   display: flex;
   flex-direction: column;
@@ -15,7 +23,8 @@
   padding: 2% 0;
 }
 .summary h2 {
-  font-size: 25px;
+  font-size: 20px;
   margin: 0;
-  padding: 2% 0;
+  padding: 1% 0;
+  color: var(--black);
 }
