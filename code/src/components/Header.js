@@ -12,13 +12,13 @@ const Header = () => {
   const amountTodos = items.filter(todo => !todo.isComplete).length;
 
   return (
-    <>
+    <header>
     <h1>My to-do's</h1>
     <div className="header-functions-container">
       <p>{amountTodos} uncompleted</p>
       <ClearAll />
     </div>
-    </>
+    </header>
   )
 }
 

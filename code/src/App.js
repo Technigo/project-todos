@@ -5,6 +5,7 @@ import todos from "./reducers/todos";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import Header from "./components/Header";
+import EmptyField from "./components/EmptyList";
 /* import ClearAll from "./components/ClearAll"; */
 
 //collect all slices and put them together in one place
@@ -31,12 +32,15 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
-      <Header />
+      <main>
+        <Header />
+        <EmptyField />
         <TodoList />
-        
+
       <div className="footer">
         <AddTodo />
       </div>
+      </main>
     </Provider>
   );
 };

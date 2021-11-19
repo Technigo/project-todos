@@ -12,12 +12,15 @@ const AddTodo = () => {
     //When the AddTodo function is called, the action is triggered and it passes the input value
     event.preventDefault();
     dispatch(todos.actions.addTodo(input));
+
+    //Update input field to an empty string after submitting
+		setInput("");
   };
 
   return (
       <form className="add-todo-section" onSubmit={addTodo}>
       <button className="add-btn" onClick={addTodo} type="submit">
-        <i class="fas fa-plus"></i>
+        <i className="fas fa-plus"></i>
       </button>
       <input
         type="text"

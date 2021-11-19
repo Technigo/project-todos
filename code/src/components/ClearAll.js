@@ -17,7 +17,7 @@ return (
     <button 
       className="clear-all-btn" 
       onClick={clearAll}>
-      Clear all <i class="fas fa-folder-minus"></i>
+      Clear all <i className="fas fa-folder-minus"></i>
     </button>
  
 )

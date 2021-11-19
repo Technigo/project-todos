@@ -33,7 +33,7 @@ const TodoList = () => {
             </div>
           </div>
           <button className="delete-btn" onClick={() => onDeleteTodo(item.id)}>
-          <i class="fas fa-minus-circle"></i>
+          <i className="fas fa-minus-circle"></i>
           </button>
         </div>
       ))}
