@@ -11,12 +11,19 @@ const HeaderContainer = styled.header`
   display: flex;
   height: 90px;
   padding: 25px;
+  @media (min-width: 768px) {
+    font-size: 30px;
+  }
 `;
 const HeaderDate = styled.div`
   h1 {
     font-family: "Permanent Marker", cursive;
     text-transform: uppercase;
-    font-size: 30px;
+    font-size: 33px;
+    @media (min-width: 768px) {
+      font-size: 70px;
+      margin-left: 100px;
+    }
   }
   display: flex;
   flex-direction: column;
@@ -24,10 +31,18 @@ const HeaderDate = styled.div`
 const TasksInfo = styled.div`
   text-align: right;
   height: 80px;
+  @media (min-width: 768px) {
+    height: 120px;
+  }
 `;
 const TasksAndButtons = styled.div`
   position: absolute;
   right: 20px;
+  @media (min-width: 768px) {
+    font-size: 30px;
+    margin-right: 10%;
+    margin-top: 30px;
+  }
 `;
 const Header = () => {
   const items = useSelector((store) => store.todos.items);

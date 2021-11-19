@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import uniqid from "uniqid";
+import moment from "moment";
 
 const todos = createSlice({
   name: "todos",
@@ -12,8 +13,8 @@ const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         isComplete: false,
+        createdAt: new Date(),
       };
-      console.log(newTodo);
       store.items = [...store.items, newTodo];
     },
     toggleTodo: (store, action) => {

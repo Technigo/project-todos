@@ -8,10 +8,15 @@ const DeleteButton = styled.button`
   background: none;
   border: none;
   height: 25px;
-
   cursor: pointer;
-  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px,
-    rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  font-size: 20px;
+  font-family: "Caveat", cursive;
+
+  @media (min-width: 768px) {
+    height: 40px;
+    font-size: 30px;
+  }
+
   &:hover {
     color: red;
     border-color: red;

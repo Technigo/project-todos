@@ -13,11 +13,19 @@ const TextForm = styled.form`
     border-radius: 5px;
     text-align: center;
     border: none;
+    font-size: 20px;
+    font-family: "Caveat", cursive;
+
+    @media (min-width: 768px) {
+      width: 410px;
+      margin: 50px auto;
+      font-size: 30px;
+    }
   }
 `;
 const AddButton = styled.button`
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   color: pink;
   font-size: 25px;
   background-color: white;
@@ -25,6 +33,12 @@ const AddButton = styled.button`
   border-radius: 50%;
   margin: 5px;
   cursor: pointer;
+
+  @media (min-width: 768px) {
+    width: 45px;
+    height: 45px;
+    font-size: 30px;
+  }
 
   &:hover {
     background-color: pink;

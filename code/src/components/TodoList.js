@@ -14,16 +14,25 @@ const TodoForm = styled.form`
   padding: 10px;
   border-bottom: 1px solid pink;
   min-height: 30px;
-  width: 220px;
+  width: 200px;
   margin: 20px auto;
   text-align: center;
   align-items: center;
 
+  @media (min-width: 768px) {
+    min-height: 40px;
+    width: 400px;
+  }
+
   p {
     overflow-wrap: break-word;
-    max-width: 160px;
-    font-size: 18px;
+    max-width: 130px;
+    font-size: 15px;
     text-transform: uppercase;
+    @media (min-width: 768px) {
+      max-width: 310px;
+      font-size: 18px;
+    }
   }
 `;
 const ButtonTrash = styled.button`
@@ -42,12 +51,24 @@ const ButtonTrash = styled.button`
   }
 `;
 const Label = styled.label`
+display: flex;
   margin-top: auto;
   position: absolute;
   right: 40px;
-  font-size: 30px;
+  
+  
+  ${(props) =>
+    props.complete === true
+      ? `text-decoration: line-through`
+      : `text-decoration: none`}
 
+}
+
+  
+  
+  
   input[type="checkbox"] {
+    margin-left: 10px;
     appearance: none;
     /*Showing the square*/
     font: inherit;
@@ -58,12 +79,14 @@ const Label = styled.label`
     border-radius: 50%;
     transform: translateY(-0.075em);
     display: grid;
-    rgba(235, 227, 227, 1);
     place-content: center;
+    
     &:hover {
       color: lightgreen;
     }
-  }
+
+    }
+  
   /*Before shecked*/
   input[type="checkbox"]::before {
     content: "";
@@ -76,27 +99,47 @@ const Label = styled.label`
     transform-origin: bottom left;
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   }
+   
+     
+  
 
   input[type="checkbox"]:checked::before {
     transform: scale(1);
     background-color: lightgreen;
     color: lightgreen;
-  }
+    label{
+    text-decoration: line-through;
+ }
+
 `;
 const Block = styled.section`
-padding: 30px;
-  min-height: 600px;
+  padding: 30px;
+  min-height: 300px;
   background-color: rgba(235, 227, 227, 1);
   margin: 10px;
   border-radius: 20px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
 
-
+  @media (min-width: 768px) {
+    width: 750px;
+    margin: 100px auto;
   }
-
-  `;
+`;
 const H1 = styled.h1`
-  margin: 40px;
+  margin: 30px;
+`;
+
+const Time = styled.p`
+  font-size: 10px !important;
+  width: 30px;
+  position: absolute;
+  margin-left: -38px;
+  @media (min-width: 768px) {
+    width: 55px;
+    font-size: 17px !important;
+  }
 `;
 
 const TodoList = () => {
@@ -112,11 +155,6 @@ const TodoList = () => {
     dispatch(todos.actions.deleteTodo(id));
   };
 
-  const timestamp = new Date();
-  const momentTimestamp = moment(timestamp).startOf("day").fromNow();
-
-  console.log(momentTimestamp);
-
   return (
     <>
       <Header />
@@ -125,33 +163,32 @@ const TodoList = () => {
 
         {items.length === 0 && (
           <>
-            <H1 className="emptyList">All Done!!</H1>
+            <H1 className="emptyList">Nothing to do</H1>
             <iframe
               src="https://giphy.com/embed/xiEaqGsXOPRELmGFym"
               width="200"
               height="200"
               frameBorder="0"
-              class="giphy-embed"
+              className="giphy-embed"
             ></iframe>
-            <p>
-              <a href="https://giphy.com/gifs/molangofficialpage-kawaii-molang-piupiu-xiEaqGsXOPRELmGFym"></a>
-            </p>
           </>
         )}
         {items.map((item) => (
           <TodoForm key={item.id}>
-            <p>{item.text}</p>
-            <Label>
+            <Label complete={item.isComplete}>
+              <p>{item.text}</p>
+
               <input
                 type="checkbox"
                 checked={item.isComplete}
                 onChange={() => onToggleTodo(item.id)}
               />
             </Label>
+
             <ButtonTrash onClick={() => onDeleteTodoImmutability(item.id)}>
               <i className="far fa-trash-alt"></i>
             </ButtonTrash>
-            {/* <p>{momentTimestamp}</p> */}
+            <Time>{moment(item.createdAt).calendar()}</Time>
           </TodoForm>
         ))}
       </Block>
