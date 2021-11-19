@@ -24,7 +24,7 @@ export const AddTodo = () => {
       <StyledTextInput
         type="text"
         value={input}
-        placeholder="Type it here..."
+        placeholder="Type here..."
         onChange={(event) => {
           setInput(event.target.value)
         }}

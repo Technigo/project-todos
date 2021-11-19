@@ -4,8 +4,6 @@ import styled from 'styled-components'
 
 import { todos, filteredTodos } from '../reducers/todos'
 
-// import { TodoItem } from './TodoItem'
-
 export const TodoList = () => {
   const dispatch = useDispatch()
   const items = useSelector((store) => store.todos.items)
@@ -20,8 +18,8 @@ export const TodoList = () => {
   const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id))
   }
-  const checkedLine = (item) => {
-    if (item.isComplete) {
+  const checkedLine = (todo) => {
+    if (todo.isComplete) {
       return 'line-through'
     } else {
       return 'none'
@@ -57,25 +55,25 @@ export const TodoList = () => {
         No to-dos today?
       </StyledStartText>
       <section>
-        {itemsFiltered.map((item) => (
+        {itemsFiltered.map((todo) => (
           // <StyledTodoItem key={item.id} className={item.category}>
-          <StyledTodoItem key={item.id}>
+          <StyledTodoItem key={todo.id}>
             <StyledTaskContainer>
               <label className="container">
                 <input
                   type="checkbox"
-                  checked={item.isComplete}
-                  onChange={() => onToggleTodo(item.id)}
+                  checked={todo.isComplete}
+                  onChange={() => onToggleTodo(todo.id)}
                 />
                 <div
                   className="checkmark"
-                  style={{ border: categoryColor(item.category) }}></div>
+                  style={{ border: categoryColor(todo.category) }}></div>
               </label>
-              <StyledParagraph style={{ textDecoration: checkedLine(item) }}>
-                {item.text}
+              <StyledParagraph style={{ textDecoration: checkedLine(todo) }}>
+                {todo.text}
               </StyledParagraph>
             </StyledTaskContainer>
-            <StyledButton onClick={() => onDeleteTodo(item.id)}>
+            <StyledButton onClick={() => onDeleteTodo(todo.id)}>
               <i className="far fa-trash-alt"></i>
             </StyledButton>
           </StyledTodoItem>
