@@ -56,7 +56,8 @@ export const TodoList = () => {
   return (
     <StyledSection>
       <StyledSmallHeadline>
-        Your to-do's ({Math.round(itemsChecked * (100 / items.length))}% done)
+        Your to-do's
+        {/* Your to-do's ({Math.round(itemsChecked * (100 / items.length))}% done) */}
         {/* Your to-do's ({itemsChecked} done, {itemsUnchecked} to go) */}
         <ProgressbarWrapperStyled>
           <div
@@ -82,7 +83,7 @@ export const TodoList = () => {
                 style={{ border: categoryColor(item.category) }}></div>
             </label>
             <StyledParagraph style={{ textDecoration: checkedLine(item) }}>
-              {item.text}{' '}
+              {item.text}
             </StyledParagraph>
           </StyledTaskContainer>
           <StyledButton onClick={() => onDeleteTodo(item.id)}>
