@@ -38,7 +38,7 @@ border-radius: unset;
 background-color: transparent;
 border-bottom: 2px solid #000046;
 font-size: 22px;
-font-family: 'Gaegu', cursive;
+font-family: 'Architects Daughter', cursive;
 `;
 
 

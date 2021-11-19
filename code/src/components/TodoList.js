@@ -16,7 +16,8 @@ font-family: 'Gaegu', cursive;`;
 
 const TodoItem = styled.div`
 word-wrap: break-word;
-font-family: 'Gaegu', cursive;`;
+font-family: 'Architects Daughter', cursive;
+`;
 
 const TodoParagraph = styled.p`
 color: ${props => props.isComplete ? "grey" : "black"};
