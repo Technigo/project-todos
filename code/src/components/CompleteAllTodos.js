@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { todos } from 'reducers/todos'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
@@ -21,7 +21,6 @@ const CompleteAllButton = styled.button`
 `
 
 export const CompleteAllTodos = () => {
-  const [isActive, setActive] = useState(false)
   const items = useSelector((store) => store.todos.items)
   const dispatch = useDispatch()
 
