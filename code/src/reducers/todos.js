@@ -6,7 +6,15 @@ const todos = createSlice({
   name: "todos",
   initialState: {
     // always an object on its own
-    items: [],
+    items: [
+      {
+        id: "uniqid()",
+        text: "Handla",
+        isComplete: false,
+        time: Date.now(),
+        category: "shopping",
+      },
+    ],
   },
 
   reducers: {
@@ -17,6 +25,7 @@ const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         isComplete: false,
+        time: Date.now(),
       }
 
       store.items = [newTodo, ...store.items]

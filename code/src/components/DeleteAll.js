@@ -20,7 +20,6 @@ const DeleteAll = () => {
 
   return (
     <div>
-      <img src="./bin.svg" alt="delete bin"></img>
       <button className="delete-all-btn" onClick={deleteAllTodos}>
         | Delete all your todos |
       </button>

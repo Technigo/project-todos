@@ -1,6 +1,7 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
-import DayJS from "react-dayjs"
+
+import moment from "moment"
 
 import { CheckboxStyled } from "styling/checkbox"
 
@@ -42,9 +43,7 @@ const TodoList = () => {
             <div className="list-input-text">
               <p className="todo-text">{item.text}</p>
 
-              <p className="date">
-                Created at -<DayJS element="span" format="MMM D, YYYY H:mm" />
-              </p>
+              <p className="date">Created at {moment(item.time).fromNow()}</p>
             </div>
 
             <button
@@ -70,7 +69,8 @@ const TodoList = () => {
                 <p className="todo-text">{isCompleteItem.text}</p>
 
                 <p className="date">
-                  Created at -<DayJS element="span" format="MMM D, YYYY H:mm" />
+                  Created at{" "}
+                  {moment(isCompleteItem.time).format("MMMM Do YYYY, h:mm")}
                 </p>
               </div>
 

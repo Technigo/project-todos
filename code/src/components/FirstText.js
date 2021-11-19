@@ -1,6 +1,6 @@
 import React from "react"
 import { useSelector } from "react-redux"
-import DayJS from "react-dayjs"
+import moment from "moment"
 
 const FirstText = () => {
   const items = useSelector(store => store.todos.items)
@@ -14,7 +14,7 @@ const FirstText = () => {
     <section className="intro-container">
       {totalTodos === 0 ? (
         <>
-          <h1>Looks like you need to add a todo!</h1>
+          <h1>Looks like you need to add a to do!</h1>
           <img src="./illustration.svg" alt="illustration"></img>
         </>
       ) : (
@@ -27,8 +27,8 @@ const FirstText = () => {
               <span className="mark"> {filteredIsComplete.length}</span> out of{" "}
               {totalTodos} things to do!
             </p>
-            <p className="date">
-              -<DayJS element="span" format="MMM D, YYYY H:mm" />
+            <p className="date-intro">
+              {moment(items.time).format("MMMM Do YYYY, h:mm")}
             </p>
           </header>
           <img
