@@ -6,11 +6,11 @@ import todos from "reducers/todos";
 import CompleteButtons from "./CompleteButtons";
 
 const InputStyle = styled.div`
-  width: 300px;
+  width: 260px;
   background-color: ${(props) => props.theme.inputBackground};
-  padding: 0 0 20px 0;
+  padding: 20px;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 
