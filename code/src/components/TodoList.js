@@ -6,84 +6,6 @@ import { todos, filteredTodos } from '../reducers/todos'
 
 // import { TodoItem } from './TodoItem'
 
-const StyledTodoItem = styled.div`
-  background-color: #21274e;
-  padding: 10px;
-  margin: 10px 0;
-  font-size: 20px;
-  border-radius: 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.15);
-`
-
-const StyledTaskContainer = styled.div`
-  display: flex;
-  align-items: center;
-`
-
-const StyledSection = styled.section`
-  max-width: 400px;
-  margin: auto;
-`
-
-const StyledButton = styled.button`
-  background: transparent;
-  border: none;
-  color: #9aaedb;
-  font-size: 16px;
-  margin-right: 5px;
-`
-const StyledSmallHeadline = styled.h3`
-  color: #9aaedb;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  margin: 30px 0 10px;
-  line-height: 3;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`
-
-const StyledStartText = styled.p`
-  font-size: 25px;
-  line-height: 1.3;
-  font-weight: 300;
-  color: white;
-  width: 80%;
-`
-
-const StyledParagraph = styled.p`
-  font-size: 16px;
-  margin: 0;
-  color: white;
-
-  .moment {
-    font-size: 12px;
-    color: #9aaedb;
-    text-decoration: none !important;
-  }
-`
-const ProgressbarWrapperStyled = styled.div`
-  height: 8px;
-  width: 35%;
-  overflow: hidden;
-  /* background-color: #21274e; */
-  border: 1px solid #9aaedb;
-  border-radius: 10px;
-  display: flex;
-
-  .progress {
-    background-color: #9aaedb;
-    height: 100%;
-    transition: 0.3s ease-out;
-  }
-`
-
 export const TodoList = () => {
   const items = useSelector((store) => filteredTodos(store))
 
@@ -171,3 +93,81 @@ export const TodoList = () => {
     </StyledSection>
   )
 }
+
+const StyledTodoItem = styled.div`
+  background-color: #21274e;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 20px;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0px 3px 4px 0 rgba(0, 0, 0, 0.15);
+`
+
+const StyledTaskContainer = styled.div`
+  display: flex;
+  align-items: center;
+`
+
+const StyledSection = styled.section`
+  max-width: 400px;
+  margin: auto;
+`
+
+const StyledButton = styled.button`
+  background: transparent;
+  border: none;
+  color: #9aaedb;
+  font-size: 16px;
+  margin-right: 5px;
+`
+const StyledSmallHeadline = styled.h3`
+  color: #9aaedb;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin: 30px 0 10px;
+  line-height: 3;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`
+
+const StyledStartText = styled.p`
+  font-size: 25px;
+  line-height: 1.3;
+  font-weight: 300;
+  color: white;
+  width: 80%;
+`
+
+const StyledParagraph = styled.p`
+  font-size: 16px;
+  margin: 0;
+  color: white;
+
+  .moment {
+    font-size: 12px;
+    color: #9aaedb;
+    text-decoration: none !important;
+  }
+`
+const ProgressbarWrapperStyled = styled.div`
+  height: 8px;
+  width: 35%;
+  overflow: hidden;
+  /* background-color: #21274e; */
+  border: 1px solid #9aaedb;
+  border-radius: 10px;
+  display: flex;
+
+  .progress {
+    background-color: #9aaedb;
+    height: 100%;
+    transition: 0.3s ease-out;
+  }
+`
