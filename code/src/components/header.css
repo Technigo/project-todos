@@ -2,7 +2,7 @@ header {
   display: flex;
   justify-content: space-around;
   color: white;
-  background-color: #c9c9c9;
+  background-color: #b3b3b3;
   padding: 20px 0;
   /* border-bottom-left-radius: 60px;
   border-bottom-right-radius: 60px; */
@@ -19,8 +19,8 @@ header {
 }
 
 .number-total {
-  border: 1px solid #a78fff;
-  background-color: #a78fff;
+  border: 1px solid #608c9b;
+  background-color: #608c9b;
   color: white;
   font-weight: 900;
   border-radius: 50%;
@@ -28,8 +28,8 @@ header {
 }
 
 .number-complete {
-  border: 1px solid #66bb6a;
-  background-color: #66bb6a;
+  border: 1px solid #00b887;
+  background-color: #00b887;
   color: white;
   font-weight: 900;
   border-radius: 50%;
