@@ -28,7 +28,7 @@ return (
 
 <section className="todoListContent"> 
 <section className="todoListContent___text"> 
-<h1> {todos.titel} </h1>
+<h1> {todos.title} </h1>
 <p> {todos.task} </p>
 </section>
 
