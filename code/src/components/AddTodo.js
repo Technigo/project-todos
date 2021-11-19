@@ -64,7 +64,6 @@ export const AddTodo = () => {
         onChange={e => setInput(e.target.value)}
         onKeyDown={onKeyDown}
       />
-      {showDatePicker && <DatePicker selected={startDate} onChange={date => setStartDate(date)} />}
     </InputWrapper>
   )
 }
