@@ -2,6 +2,7 @@
 
 :root {
   --pink: #ed86be;
+  --peach: #eda686;
   --blue: #869aed;
   --grey: #a9a9a9;
   --white: #ffffff;
@@ -38,7 +39,7 @@ body {
   position: absolute;
   top: 40%;
   border-radius: 30px;
-  border: 2px solid hotpink;
+  /* border: 2px solid hotpink; */
 }
 .flex-item {
   /* display: flex;
@@ -47,27 +48,15 @@ body {
   grid-template-columns: repeat(5, 1fr);
   align-items: center;
   border-bottom: 1px dotted var(--blue);
-  border: 2px solid var(--blue);
+  /* border: 2px solid var(--blue); */
 }
 
 .task {
   grid-column: span 3;
 }
 
-.checkbox {
+/* .checkbox {
   grid-column: span 1;
-}
-
-/* .checkbox-done {
-  position: absolute;
-}
-
-.checkbox-done input {
-  background-color: #ed86be;
-  height: 28px;
-  width: 28px;
-  left: 0;
-  top: 0;
 } */
 
 .delete-button {
@@ -81,3 +70,55 @@ body {
   font-size: 12px;
   font-weight: 700;
 }
+
+.checkbox-label {
+  display: block;
+  position: relative;
+  padding-left: 25px;
+  margin: 0px 5px;
+  /* font-size: 16px; */
+  user-select: none;
+}
+.checkbox-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.custom-checkbox {
+  position: absolute;
+  top: -11px;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: var(--peach);
+  border-radius: 50%;
+  /* cursor: pointer; */
+}
+.checkbox-label:hover input ~ .custom-checkbox {
+  background-color: var(--blue);
+}
+.checkbox-label input:checked ~ .custom-checkbox {
+  background-color: var(--blue);
+}
+
+/* the check in the checkbox */
+.custom-checkbox:after {
+  content: '';
+  position: absolute;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  top: 4px;
+  left: 9px;
+  transform: rotate(45deg);
+  display: none;
+}
+.checkbox-label input:checked ~ .custom-checkbox:after {
+  display: block;
+}
+/* .checkbox-label input:focus + .custom-checkbox {
+  outline: #333 auto 4px;
+} */

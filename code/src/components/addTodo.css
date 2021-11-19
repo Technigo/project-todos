@@ -5,19 +5,24 @@
   --white: #ffffff;
   --black: #000000;
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .add-todo {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 20px;
+  padding-bottom: 3%;
 
   justify-content: center;
-  border: 1px solid lime;
+  /* border: 1px solid lime; */
 }
 
 .add-todo input {
+  font-family: 'Poppins', sans-serif;
   grid-column: span 2;
   padding: 10px;
+  border-radius: 5px;
+  border: 1px solid black;
 }
 
 .add-todo button {

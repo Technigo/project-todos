@@ -18,11 +18,11 @@
 }
 
 .header h1 {
-  margin-top: 15%;
-  font-size: 45px;
+  margin-top: 12%;
+  font-size: 55px;
   padding: 2%;
-  color: black;
-  /* text-shadow: 1px 0px gray;
-  text-decoration: underline 4px var(--blue);
+  color: white;
+  text-shadow: 1px 0px gray;
+  /* text-decoration: underline 4px var(--blue);
   height: fit-content; */
 }

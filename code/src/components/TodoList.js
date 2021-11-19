@@ -26,13 +26,14 @@ const TodoList = () => {
     <section>
       {items.map((item, index) => (
         <div className="flex-item" key={item.id}>
-          <div className="checkbox">
+          <label className="checkbox-label">
             <input
               type="checkbox"
               checked={item.isComplete}
               onChange={() => onToggleTodo(item.id)}
             />
-          </div>
+            <span class="custom-checkbox"></span>
+          </label>
           <p className="task">{item.text}</p>
           {/* v1 muteablity delete button  */}
           {/* <button onClick={() => onDeleteTodoMutability (index)}>Delete</button> */}
