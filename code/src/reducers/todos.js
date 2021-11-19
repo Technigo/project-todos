@@ -24,7 +24,7 @@ const todos = createSlice({
     toggleIsComplete: (state, action) => {
       const task = state.items.find((item) => item.id === action.payload)
       task.isComplete = !task.isComplete
-      state.items.sort((a,b) => a.isComplete > b.isComplete && (1 || -1))
+      state.items = state.items.sort((a,b) => a.isComplete - b.isComplete)
     },
     completeAll: (state) => {
       state.items = []
