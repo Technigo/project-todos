@@ -69,31 +69,12 @@ const Tag = styled.div`
 `;
 
 const TodoList = () => {
-  const filter = useSelector((store) => store.filter);
-  const items = useSelector((store) => store.todos.items);
-  let filteredItems = items;
-
-  const filterItems = () => {
-    console.log(filter);
-    if (filter === "") {
-      filteredItems = items;
-    } else if (filter === "checked") {
-      filteredItems = items.filter(
-        (item) => item.isComplete === true
-      );
-    } else if (filter === "unchecked") {
-      filteredItems = items.filter(
-        (item) => item.isComplete === false
-      );
-    }
-    console.log(filteredItems);
-  };
+  const filterItems = useSelector((store) => store.todos.filterItems);
 
   const dispatch = useDispatch();
 
   const onToggleTodo = (id) => {
     dispatch(todos.actions.toggleTodo(id));
-    filterItems();
   };
 
   const onDeleteTodo = (id) => {
@@ -114,7 +95,7 @@ const TodoList = () => {
         Uncheck all tasks
       </button>
       <FilterOptions />
-      {filteredItems.map((item) => (
+      {filterItems.map((item) => (
         <Wrapper key={item.id}>
           <SmallWrapper>
             <SmallText>

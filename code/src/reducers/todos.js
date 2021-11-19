@@ -7,7 +7,17 @@ const todos = createSlice({
   // initial is always an object
   initialState: {
     items: [],
+    filterItems: [],
     filter: "",
+    options: [
+      { value: "home", label: "Home" },
+      { value: "school", label: "School" },
+      { value: "dog", label: "Dog" },
+      { value: "travel", label: "Travel" },
+      { value: "shopping", label: "Shopping" },
+      { value: "checked", label: "Checked" },
+      { value: "unchecked", label: "unchecked" },
+    ],
   },
   reducers: {
     addTodo: (store, action) => {
@@ -34,10 +44,24 @@ const todos = createSlice({
         } else return item;
       });
 
+      store.filterItems = updatedItems;
       store.items = updatedItems;
     },
     changeFilter: (store, action) => {
       store.filter = action.payload;
+    },
+    updateFilterList: (store) => {
+      if (store.filter === "checked") {
+        store.filterItems = store.items.filter(
+          (item) => item.isComplete === true
+        );
+      } else if (store.filter === "unchecked") {
+        store.filterItems = store.items.filter(
+          (item) => item.isComplete === false
+        );
+      } else if (store.filter === "showall") {
+        store.filterItems = store.items;
+      }
     },
     checkTodos: (store) => {
       const updatedItems = store.items.map((item) => {

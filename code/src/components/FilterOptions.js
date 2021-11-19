@@ -5,12 +5,14 @@ import Select from "react-select";
 import todos from "../reducers/todos";
 
 const options = [
+  { value: "showall", label: "Show all" },
   { value: "home", label: "Home" },
   { value: "school", label: "School" },
   { value: "dog", label: "Dog" },
   { value: "travel", label: "Travel" },
   { value: "shopping", label: "Shopping" },
   { value: "checked", label: "Checked" },
+  { value: "unchecked", label: "Unchecked" },
 ];
 
 const styles = {
@@ -39,8 +41,8 @@ const FilterOptions = () => {
   const dispatch = useDispatch();
 
   const handleChange = (event) => {
-    console.log(event.value);
     dispatch(todos.actions.changeFilter(event.value));
+    dispatch(todos.actions.updateFilterList(event.value));
   };
 
   return (
