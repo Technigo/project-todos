@@ -74,6 +74,9 @@ h3 {
   max-width: 500px;
   overflow-y: auto;
 }
+.scroll {
+  overflow-y: auto;
+}
 .check-text {
   display: flex;
   align-items: center;
