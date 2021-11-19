@@ -11,7 +11,21 @@ const reducer = combineReducers({
   todos: todos.reducer,
 });
 
-const store = configureStore({ reducer });
+//retrieve localstorage as initial state
+const preloadedStateJSON = localStorage.getItem("todosReduxState");
+let preloadedState = {};
+
+if (preloadedStateJSON) {
+  preloadedState = JSON.parse(preloadedStateJSON);
+}
+
+//create store with initial state
+const store = configureStore({ reducer, preloadedState });
+
+//store the state in localstorage on Redux state change
+store.subscribe(() => {
+  localStorage.setItem("todosReduxState", JSON.stringify(store.getState()));
+});
 
 export const App = () => {
   return (
