@@ -20,14 +20,6 @@ const todos = createSlice({
       store.items = [...store.items, newTodo];
     },
     toggleTodo: (store, action) => {
-      // v1 Mutability approach
-      // store.items.forEach((item) => {
-      // 	if (item.id === action.payload) {
-      // 		item.isComplete = !item.isComplete;
-      // 	}
-      // });
-
-      // v2 Immutability approach
       const updatedItems = store.items.map((item) => {
         if (item.id === action.payload) {
           const updatedTodo = {
