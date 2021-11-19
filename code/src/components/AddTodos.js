@@ -58,7 +58,9 @@ const AddTodo = () => {
           onChange={(event) => setInput(event.target.value)}
         />
         <button disabled={input === ""} onClick={onAddTodo} value={""}>
-          ➕
+          <span role="img" aria-label="pic">
+            ➕
+          </span>
         </button>
       </InputStyle>
     </>
