@@ -142,10 +142,9 @@ const Time = styled.p`
   }
 `;
 
-const Images = styled.img`
+const Image = styled.img`
   width: 200px;
   height: 200px;
-  margin-bottom: 30px;
 `;
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
@@ -169,10 +168,8 @@ const TodoList = () => {
         {items.length === 0 && (
           <>
             <H1 className="emptyList">Nothing to do</H1>
-            <Images
-              src="https://cdn-icons.flaticon.com/png/512/3037/premium/3037869.png?token=exp=1637333559~hmac=1b6ce30e58b175595387588414116090"
-              alt="yoga"
-            ></Images>
+
+            <Image src="https://cdn-icons.flaticon.com/png/512/3037/premium/3037869.png?token=exp=1637333559~hmac=1b6ce30e58b175595387588414116090"></Image>
           </>
         )}
         {items.map((item) => (
