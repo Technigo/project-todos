@@ -38,10 +38,27 @@ input:focus {
 
 .add-btn {
   border: 2px solid #608c9b;
-  border-radius: 5px;
+  border-radius: 50%;
   background-color: #608c9b;
   height: 50px;
   width: 50px;
   margin-bottom: 10px;
   box-shadow: 3px 3px 3px rgb(82, 82, 82);
+}
+
+@media (min-width: 768px) {
+  .text-field {
+    width: 60%;
+  }
+}
+
+@media (min-width: 992px) {
+  .text-field {
+    width: 15%;
+  }
+
+  .text-field:hover,
+  .text-field:focus {
+    width: 25%;
+  }
 }

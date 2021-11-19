@@ -2,10 +2,10 @@ header {
   display: flex;
   justify-content: space-around;
   color: white;
-  background-color: #b3b3b3;
+  background-color: #608c9b;
+
   padding: 20px 0;
-  /* border-bottom-left-radius: 60px;
-  border-bottom-right-radius: 60px; */
+  object-fit: fill;
 }
 
 .item-counter {
@@ -16,28 +16,63 @@ header {
   font-size: 14px;
   font-weight: 700;
   align-self: left;
-}
-
-.number-total {
-  border: 1px solid #608c9b;
-  background-color: #608c9b;
   color: white;
-  font-weight: 900;
-  border-radius: 50%;
-  padding: 1px 7px;
 }
 
+.number-total,
 .number-complete {
-  border: 1px solid #00b887;
-  background-color: #00b887;
   color: white;
   font-weight: 900;
-  border-radius: 50%;
-  padding: 1px 7px;
 }
 
 .complete-all-btn {
   border: none;
+  color: black;
+  font-weight: 700;
   border-radius: 40px;
-  padding: 5px;
+  padding: 5px 10px;
+  margin-top: 10px;
+  background-color: white;
+}
+
+@media (min-width: 768px) {
+  header {
+    padding-left: 60px;
+  }
+
+  h1 {
+    font-size: 50px;
+  }
+
+  .number-total,
+  .number-complete {
+    font-size: 20px;
+    font-weight: 900;
+  }
+}
+
+@media (min-width: 992px) {
+  header {
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 0;
+  }
+
+  h1 {
+    font-size: 50px;
+    text-align: center;
+  }
+
+  .number-total,
+  .number-complete {
+    font-size: 20px;
+    font-weight: 900;
+  }
+
+  .item-counter {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    column-gap: 40px;
+  }
 }

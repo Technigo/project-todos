@@ -27,51 +27,59 @@ const TodoList = () => {
   return (
     <>
       <section className="todo-container">
-        {unCompletedTasks.map((item) => (
-          <div className="list-item-box" key={item.id}>
-            <p>
+        <div className="todo-wrapper">
+          {unCompletedTasks.map((item) => (
+            <div className="list-item-box" key={item.id}>
+              <p>
+                <input
+                  className="check-box"
+                  type="checkbox"
+                  checked={item.isComplete}
+                  onChange={() => onToggleTodo(item.id)}
+                />
+                <span className="item-text">{item.text}</span>
+              </p>
+              <button
+                className="delete-btn"
+                onClick={() => onRemoveTodo(item.id)}
+              >
+                <span className="delete-sign" role="img" aria-label="trash bin">
+                  <i className="fas fa-trash-alt"></i>
+                </span>
+              </button>
+            </div>
+          ))}
+        </div>
+
+        <h2>Completed tasks ✓</h2>
+        <div className="todo-wrapper">
+          {sortCompletedTasks.map((item) => (
+            <div className="completed-items" key={item.id}>
               <input
                 className="check-box"
                 type="checkbox"
                 checked={item.isComplete}
                 onChange={() => onToggleTodo(item.id)}
               />
-              <span className="item-text">
-                {item.text} {item.category}
-              </span>
-            </p>
-            <button
-              className="delete-btn"
-              onClick={() => onRemoveTodo(item.id)}
-            >
-              <span className="delete-sign" role="img" aria-label="trash bin">
-                {" "}
-                <i className="fas fa-trash-alt"></i>{" "}
-              </span>
-            </button>
-          </div>
-        ))}
-      </section>
-      <h2>Completed tasks</h2>
-
-      {sortCompletedTasks.map((item) => (
-        <div className="completed-items" key={item.id}>
-          <input
-            className="check-box"
-            type="checkbox"
-            checked={item.isComplete}
-            onChange={() => onToggleTodo(item.id)}
-          />
-          <p>{item.text}</p>
-          <button className="delete-btn" onClick={() => onRemoveTodo(item.id)}>
-            <span className="delete-complete">
-              <span className="delete-sign" role="img" aria-label="trash bin">
-                <i className="fas fa-trash-alt"></i>
-              </span>
-            </span>
-          </button>
+              <p>{item.text}</p>
+              <button
+                className="delete-btn"
+                onClick={() => onRemoveTodo(item.id)}
+              >
+                <span className="delete-complete">
+                  <span
+                    className="delete-sign"
+                    role="img"
+                    aria-label="trash bin"
+                  >
+                    <i className="fas fa-trash-alt"></i>
+                  </span>
+                </span>
+              </button>
+            </div>
+          ))}
         </div>
-      ))}
+      </section>
     </>
   )
 }

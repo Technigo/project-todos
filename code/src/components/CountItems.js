@@ -24,10 +24,10 @@ export const CountItems = () => {
         <span className="number-total">{counter}</span> tasks total
       </p>
       <p>
-        <span className="number-complete">{completedTasks}</span> completed
+        <span className="number-complete">{completedTasks}</span> completed ✔️
       </p>
       <button className="complete-all-btn" onClick={onClickCompleteAll}>
-        Delete all tasks
+        Complete all
       </button>
     </div>
   )
