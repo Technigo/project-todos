@@ -15,7 +15,7 @@ const todoData = createSlice({
 
        const newTodo = {
         id: Date.now(),
-        titel: action.payload.titel,
+        title: action.payload.title,
         task: action.payload.task,
         completed: false
       }; 
