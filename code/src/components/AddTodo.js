@@ -4,57 +4,6 @@ import styled from 'styled-components'
 
 import { todos } from '../reducers/todos'
 
-const StyledContainer = styled.div`
-  margin: 0 auto;
-  max-width: 400px;
-  display: flex;
-  flex-direction: column;
-`
-const StyledTextInput = styled.input`
-  background: transparent;
-  background-color: #21274e;
-  border: none;
-  padding: 10px;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  color: white;
-  font-size: 16px;
-
-  &::placeholder {
-    color: #9aaedb;
-  }
-`
-const StyledForm = styled.form`
-  display: block;
-  position: relative;
-  cursor: pointer;
-  font-size: 16px;
-  user-select: none;
-  margin: 0 15px 0 5px;
-  color: white;
-
-  .input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-  }
-`
-
-const StyledSmallHeadline = styled.h3`
-  color: #9aaedb;
-  font-size: 13px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  font-family: 'Inter', sans-serif;
-  font-weight: 600;
-  margin: 25px 0 15px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`
-
 export const AddTodo = () => {
   const [input, setInput] = useState('')
   const [category, setCategory] = useState('')
@@ -113,3 +62,54 @@ export const AddTodo = () => {
     </StyledContainer>
   )
 }
+
+const StyledContainer = styled.div`
+  margin: 0 auto;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+`
+const StyledTextInput = styled.input`
+  background: transparent;
+  background-color: #21274e;
+  border: none;
+  padding: 10px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: white;
+  font-size: 16px;
+
+  &::placeholder {
+    color: #9aaedb;
+  }
+`
+const StyledForm = styled.form`
+  display: block;
+  position: relative;
+  cursor: pointer;
+  font-size: 16px;
+  user-select: none;
+  margin: 0 15px 0 5px;
+  color: white;
+
+  .input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+`
+
+const StyledSmallHeadline = styled.h3`
+  color: #9aaedb;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin: 25px 0 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+`

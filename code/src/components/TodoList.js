@@ -46,8 +46,6 @@ export const TodoList = () => {
     <StyledSection>
       <StyledSmallHeadline>
         Completed: {itemsChecked}/{items.length}
-        {/* Your to-do's ({Math.round(itemsChecked * (100 / items.length))}% done) */}
-        {/* Your to-do's ({itemsChecked} done, {itemsUnchecked} to go) */}
         <ProgressbarWrapperStyled>
           <div
             className="progress"
@@ -58,29 +56,31 @@ export const TodoList = () => {
       <StyledStartText style={{ display: startText() }}>
         No to-dos today?
       </StyledStartText>
-      {itemsFiltered.map((item) => (
-        // <TodoItem key={item.id} item={item} />
-        <StyledTodoItem key={item.id} className={item.category}>
-          <StyledTaskContainer>
-            <label className="container">
-              <input
-                type="checkbox"
-                checked={item.isComplete}
-                onChange={() => onToggleTodo(item.id)}
-              />
-              <div
-                className="checkmark"
-                style={{ border: categoryColor(item.category) }}></div>
-            </label>
-            <StyledParagraph style={{ textDecoration: checkedLine(item) }}>
-              {item.text}
-            </StyledParagraph>
-          </StyledTaskContainer>
-          <StyledButton onClick={() => onDeleteTodo(item.id)}>
-            <i className="far fa-trash-alt"></i>
-          </StyledButton>
-        </StyledTodoItem>
-      ))}
+      <section>
+        {itemsFiltered.map((item) => (
+          // <StyledTodoItem key={item.id} className={item.category}>
+          <StyledTodoItem key={item.id}>
+            <StyledTaskContainer>
+              <label className="container">
+                <input
+                  type="checkbox"
+                  checked={item.isComplete}
+                  onChange={() => onToggleTodo(item.id)}
+                />
+                <div
+                  className="checkmark"
+                  style={{ border: categoryColor(item.category) }}></div>
+              </label>
+              <StyledParagraph style={{ textDecoration: checkedLine(item) }}>
+                {item.text}
+              </StyledParagraph>
+            </StyledTaskContainer>
+            <StyledButton onClick={() => onDeleteTodo(item.id)}>
+              <i className="far fa-trash-alt"></i>
+            </StyledButton>
+          </StyledTodoItem>
+        ))}
+      </section>
     </StyledSection>
   )
 }
@@ -151,7 +151,6 @@ const ProgressbarWrapperStyled = styled.div`
   height: 8px;
   width: 35%;
   overflow: hidden;
-  /* background-color: #21274e; */
   border: 1px solid #9aaedb;
   border-radius: 10px;
   display: flex;
