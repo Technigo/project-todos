@@ -98,3 +98,25 @@ body {
 .checkbox-label input:checked ~ .custom-checkbox:after {
   display: block;
 }
+
+/* STYLING FOR TABLET */
+@media screen and (min-width: 768px) {
+  .list-wrapper {
+    padding: 8% 15%;
+    top: 35%;
+    border-radius: 50px;
+  }
+}
+
+/* STYLING FOR DESKTOP */
+@media screen and (min-width: 992px) {
+  .list-wrapper {
+    padding: 4% 15%;
+    top: 44%;
+  }
+  .flex-item {
+    display: grid;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}

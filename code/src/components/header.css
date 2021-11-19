@@ -25,3 +25,19 @@
   color: var(--white);
   text-shadow: 2px 2px 10px #ff9999;
 }
+
+/* STYLING FOR TABLET */
+@media screen and (min-width: 768px) {
+  .header h1 {
+    margin-top: 8%;
+    font-size: 55px;
+  }
+}
+
+/* STYLING FOR DESKTOP */
+@media screen and (min-width: 992px) {
+  .header h1 {
+    margin-top: 4%;
+    font-size: 55px;
+  }
+}

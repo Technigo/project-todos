@@ -28,3 +28,32 @@
   margin: 0;
   padding: 0;
 }
+
+/* STYLING FOR TABLET */
+@media screen and (min-width: 768px) {
+  .summary {
+    width: 400px;
+    left: 17%;
+  }
+  .summary h1 {
+    font-size: 40px;
+  }
+  .summary h2 {
+    font-size: 30px;
+  }
+}
+
+/* STYLING FOR DESKTOP */
+@media screen and (min-width: 992px) {
+  .summary {
+    width: 400px;
+    left: 26%;
+    top: 24%;
+  }
+  .summary h1 {
+    font-size: 40px;
+  }
+  .summary h2 {
+    font-size: 30px;
+  }
+}
