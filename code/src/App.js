@@ -14,27 +14,28 @@ const reducer = combineReducers({
 })
 
 // Retrieve localstorage as initial state
-// const persistedStateJSON = localStorage.getItem("todosReduxState")
-// let persistedState = {}
+const persistedStateJSON = localStorage.getItem("todosReduxState")
+let persistedState = {}
 
-// if (persistedStateJSON) {
-//   persistedState = JSON.parse(persistedStateJSON)
-// }
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON)
+}
 
-const store = createStore(reducer)
+const store = createStore(reducer, persistedState)
 
 // Store the state in localstorage when Redux state change
-// store.subscribe(() => {
-//   localStorage.setItem("todosReduxState", JSON.stringify(store.getState()))
-// })
+store.subscribe(() => {
+  localStorage.setItem("todosReduxState", JSON.stringify(store.getState()))
+})
 
 export const App = () => {
   return (
     <Provider store={store}>
       <main className="main-container">
         <FirstText />
-        <AddTodo />
+
         <TodoList />
+        <AddTodo />
         <DeleteAll />
       </main>
     </Provider>

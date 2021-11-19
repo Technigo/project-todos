@@ -25,7 +25,7 @@ const FirstText = () => {
             <p>
               You completed{" "}
               <span className="mark"> {filteredIsComplete.length}</span> out of{" "}
-              {totalTodos} things to do!
+              <span className="mark">{totalTodos}</span> things to do!
             </p>
             <p className="date-intro">
               {moment(items.time).format("MMMM Do YYYY, h:mm")}

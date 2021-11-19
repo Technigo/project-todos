@@ -12,7 +12,7 @@ export const CheckboxStyled = styled.input`
   cursor: pointer;
   // box-shadow: inset 1px 1px 2px var(--grey);
   border: 1px solid var(--grey);
-  border-radius: 50px;
+  border-radius: 5px;
 
   &::after {
     content: "";

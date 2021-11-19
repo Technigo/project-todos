@@ -25,7 +25,7 @@ const TodoList = () => {
 
   return (
     <section className="list-container">
-      <p>Your to dos</p>
+      <p className="label">To do</p>
       {items.map((item, index) => (
         <>
           <div
@@ -56,7 +56,7 @@ const TodoList = () => {
         </>
       ))}
       <div>
-        <p>Completed todos</p>
+        <p className="label">Completed todos</p>
         {filteredIsComplete.map(isCompleteItem => (
           <>
             <div className={"item-checked"} key={isCompleteItem.id}>
