@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux'
 import styled from 'styled-components/macro'
 import moment from 'moment'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashAlt, faPen } from '@fortawesome/free-solid-svg-icons'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 import todos from '../reducers/todos'
 import Image from '../components/Image'
