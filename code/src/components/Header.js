@@ -12,7 +12,7 @@ const todaysDate = date.toString().slice(0, 10);
 export const Header = () => {
   return (
     <HeaderDiv>
-      <HeaderTitle>Today's Tasks</HeaderTitle>
+      <HeaderTitle>Today's Tasks </HeaderTitle>
       <DateText>{todaysDate}</DateText>
     </HeaderDiv>
   );
@@ -41,9 +41,10 @@ const HeaderDiv = styled.div`
 `;
 
 const HeaderTitle = styled.h1`
-  color: #ea86b6;
+  color: white;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
+  text-shadow: 0 0 2px #000;
 
   @media (min-width: 700px) {
     font-size: 34px;
@@ -51,10 +52,11 @@ const HeaderTitle = styled.h1`
 `;
 
 const DateText = styled.p`
-  color: #ea86b6;
+  color: white;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 20px;
+  text-shadow: 0 0 2px #000;
 
   @media (min-width: 700px) {
     font-size: 34px;

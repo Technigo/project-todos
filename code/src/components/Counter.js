@@ -9,11 +9,16 @@ export const Counter = () => {
 
 const CounterText = styled.p`
   display: flex;
-  margin: 50px auto 0px;
+  margin: 30px auto;
   width: fit-content;
   text-align: center;
   font-family: Arial, Helvetica, sans-serif;
-  color: #ea86b6;
-  font-size: 14px;
+  color: white;
+  font-size: 18px;
+  text-shadow: 0 0 2px #000;
   font-weight: bold;
+
+  @media (min-width: 700px) {
+    font-size: 22px;
+  }
 `;

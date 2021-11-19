@@ -2,14 +2,13 @@ body {
   margin: 0;
   width: 100%;
   /* background-color: #ebfe8b; */
-  background-color: #008080;
-
-  /* background-color: #eeffdc; */
-  /* background-image: url(https://images.pexels.com/photos/6858611/pexels-photo-6858611.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260);
+  /* background-color: #008080; */
+  /* background-color: #fff; */
+  background-image: url(https://images.unsplash.com/photo-1615715615981-a87805af52c3?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=774&q=80);
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
-  background-size: cover; */
+  background-size: cover;
 }
 
 html {

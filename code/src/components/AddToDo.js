@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { todos } from "reducers/todos";
 import styled from "styled-components";
 import { useState } from "react";
+import Select from "react-dropdown-select";
 
 export const AddToDo = () => {
   const [input, setInput] = useState("");
@@ -25,10 +26,11 @@ export const AddToDo = () => {
           resetInput();
         }}
       >
-        Add
+        <i class="fas fa-tasks"></i>
       </StyledButton>
       <TextInput
         type="text"
+        placeholder="add task here.."
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
@@ -41,27 +43,26 @@ const StyledMainDiv = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  background-color: #fceef5;
+  background-color: white;
   width: 320px;
-  height: 100px;
+  height: 150px;
   margin: 20px auto 30px;
-  /* border: 1px solid lightgrey; */
-  border-radius: 20px;
+  /* border: 1px solid #ea86b6; */
+  border-radius: 5px;
 
   @media (min-width: 700px) {
     width: 500px;
-    height: 100px;
     margin: 80px auto 30px;
   }
 `;
 
 const TextInput = styled.input`
-  margin: 10px;
+  margin: 20px;
   width: 180px;
   height: 30px;
-  border: 0.5px solid lightgrey;
-  caret-color: black;
-  color: #e05297;
+  border: 0.5px solid white;
+  caret-color: hotpink;
+  color: hotpink;
   background-color: white;
   font-size: 16px;
   font-family: Arial, Helvetica, sans-serif;
@@ -72,66 +73,10 @@ const TextInput = styled.input`
 `;
 
 const StyledButton = styled.button`
-  appearance: button;
-  background-color: #ea86b6;
-  border: solid transparent;
-  border-radius: 16px;
-  border-width: 0 0 4px;
-  box-sizing: border-box;
-  color: #e05297;
+  font-size: 2em;
+  margin-left: 15px;
+  color: hotpink;
+  border: none;
+  background-color: transparent;
   cursor: pointer;
-  display: inline-block;
-  font-size: 15px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  line-height: 20px;
-  margin: 0;
-  outline: none;
-  overflow: visible;
-  padding: 10px 15px;
-  text-align: center;
-  text-transform: uppercase;
-  touch-action: manipulation;
-  transform: translateZ(0);
-  transition: filter 0.2s;
-  user-select: none;
-  -webkit-user-select: none;
-  vertical-align: middle;
-  white-space: nowrap;
-
-  :after {
-    background-clip: padding-box;
-    background-color: #f3bad6;
-    border: solid transparent;
-    border-radius: 16px;
-    border-width: 0 0 4px;
-    bottom: -4px;
-    content: "";
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
-    z-index: -1;
-  }
-
-  :main,
-  :focus {
-    user-select: auto;
-  }
-
-  :hover:not(:disabled) {
-    filter: brightness(1.1);
-  }
-
-  :disabled {
-    cursor: auto;
-  }
-
-  :active:after {
-    border-width: 0 0 0px;
-  }
-
-  :active {
-    padding-bottom: 10px;
-  }
 `;
