@@ -1,12 +1,20 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
+import styled from 'styled-components'
 import todos from '../reducers/todos'
 
-const TodoList = () => {
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+
+
+export const TodoList = () => {
 	const items = useSelector((store) => store.todos.items)
 
 	const dispatch = useDispatch()
+
+  const trashCanIcon = <FontAwesomeIcon icon={faTrashAlt} />
+  
 
 	const onToggleTodo = (id) => {
 		dispatch(todos.actions.toggleTodo(id))
@@ -17,23 +25,41 @@ const TodoList = () => {
 	}
 
 	return (
-		<section>
+		<TodoContainer>
 			{items.map((item, index) => (
-				<div className="flex-item" key={item.id}>
-					<p>{item.text}</p>
-					<input
+				<TodoTasks className="flex-item" key={item.id}>
+          	<CustomCheckbox
 						type="checkbox"
 						checked={item.isComplete}
 						onChange={() => onToggleTodo(item.id)}
 					/>
-
-					<button onClick={() => onDeleteTodoImmutability(item.id)}>
-						Delete
-					</button>
-				</div>
+					<p>{item.text}</p>
+				
+					<DeleteButton onClick={() => onDeleteTodoImmutability(item.id)}>{trashCanIcon}</DeleteButton>
+          
+				</TodoTasks>
 			))}
-		</section>
+		</TodoContainer>
 	)
+
 }
 
-export default TodoList
+const TodoContainer = styled.section`
+  padding: 20px 35px 0 35px;
+
+`
+const CustomCheckbox = styled.input`
+  border-radius: 50px;
+`
+const TodoTasks = styled.div`
+
+`
+const DeleteButton = styled.button`
+  border: none;
+  
+  &:hover {
+    color: gray;
+
+    }
+`
+
