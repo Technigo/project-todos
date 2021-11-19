@@ -31,9 +31,7 @@ const AddTodo = () => {
   const dispatch = useDispatch();
 
   const onAddTodo = () => {
-    const dateAdded = DateTime.now()
-      .setZone("Europe/Stockholm")
-      .toFormat("dd LLL yyyy");
+    const dateAdded = DateTime.now();
     let todoObject = { newTodo, newDate, newTags, dateAdded };
     dispatch(todos.actions.addTodo(todoObject));
   };

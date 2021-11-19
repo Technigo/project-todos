@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components/macro";
 
 import todos from "../reducers/todos";
+const { DateTime } = require("luxon");
 
 const Wrapper = styled.div`
   display: flex;
@@ -83,7 +84,12 @@ const TodoList = () => {
         <Wrapper key={item.id}>
           <SmallWrapper>
             <SmallText>Finish by: {item.date}</SmallText>
-            <SmallText>Added: {item.added}</SmallText>
+            <SmallText>
+              Added:{" "}
+              {DateTime.fromISO(item.added)
+                .setZone("Europe/Stockholm")
+                .toFormat("dd LLL yyyy")}
+            </SmallText>
           </SmallWrapper>
           <ListItem>
             <FlexRow>
