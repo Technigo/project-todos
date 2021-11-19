@@ -10,4 +10,4 @@ I spent a lot of time working with styled components and also used the ThemeProv
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://lisapblome-w14-todo.netlify.app/
