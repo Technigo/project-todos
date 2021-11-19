@@ -32,7 +32,7 @@ const TodoList = () => {
               checked={item.isComplete}
               onChange={() => onToggleTodo(item.id)}
             />
-            <span class="custom-checkbox"></span>
+            <span className="custom-checkbox"></span>
           </label>
           <p className="task">{item.text}</p>
           {/* v1 muteablity delete button  */}
