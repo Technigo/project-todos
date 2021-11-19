@@ -1,13 +1,10 @@
 # Project Todos
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
+Here is my Todo list that I made in the Tecnigo Bootcamp, It was some strugles but I am proud of the final result!
+This was a tuff week with React Redux, I created new slices and practicing actions and payloads. Created reducers and learned how to structure reduce store. I  get to know dispatch and select even a bit more and yeh, it was allot new and old learning so werry good practise!
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I had hard to understand how the reducers worked but I will learn, just a mather off time.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Here it is : https://helenas-todo.netlify.app/
