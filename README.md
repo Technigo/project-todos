@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+This project is about creating a React Redux todo app with the functionality to add, list, and toggle tasks whether a task is done or not. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## How I solved it - What I learned
 
-## The problem
-
-started with set up of the project
+- This is my first project working with Styled components. I found styled-components effective, structured, and reusable. In my project, I created a folder named styled-components to keep all my components together. 
+- I created localStorage to keep all my todos saved, even when the page is reloaded. 
+- In my header, I am showing real-time and date. This functionality I created with help of moment.js, useState and useEffect. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://todo-app-by-darya.netlify.app/
