@@ -3,10 +3,10 @@ import { createSlice } from "@reduxjs/toolkit";
 const todoData = createSlice({
   name: "todo",
   initialState: [
-    { id: 1, titel: "Meeting", task: "“It works on my machine.”", completed: false },
-    { id: 2, titel: "Afterwork", task: "“API by day, IPA by night.”", completed: true },
-    { id: 3, titel: "Deadline", task: "“When I wrote this code, only God and I understood what I did. Now only God knows.”", completed: false },
-    { id: 4, titel: "Work", task: "“Debugging.. is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.”", completed: false },
+    { id: 1, title: "Meeting", task: "“It works on my machine.”", completed: false },
+    { id: 2, title: "Afterwork", task: "“API by day, IPA by night.”", completed: true },
+    { id: 3, title: "Deadline", task: "“When I wrote this code, only God and I understood what I did. Now only God knows.”", completed: false },
+    { id: 4, title: "Work", task: "“Debugging.. is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.”", completed: false },
    
   ],
 
