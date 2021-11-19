@@ -97,7 +97,7 @@ const TodoList = () => {
             <button onClick={() => onDeleteTodo(item.id)}>x</button>
           </ListItem>
           {item.tags.map((tag) => (
-            <Tag>
+            <Tag key={tag.value}>
               <TagText>{tag.value}</TagText>
             </Tag>
           ))}
