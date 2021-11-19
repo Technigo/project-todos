@@ -10,6 +10,7 @@ const AddTodoContainer = styled.div`
 const AddTodoInput = styled.input`
     height: 36px;
     width: 250px;
+    padding-left: 10px;
     border-radius: 20px 0 0 20px;
     @media (max-width: 450px) {
         width: 130px;

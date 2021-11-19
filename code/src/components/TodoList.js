@@ -71,8 +71,8 @@ const TimestampSpan = styled.span`
     }
 `
 const EmptyTodoDiv = styled.div`
-    padding-top: 30px;
-    height: 250px;
+    padding-top: 20px;
+    height: 220px;
     border-radius: 0 0 20px 20px;
     background-color: rgba(255,235,205,0.7);
     text-align: center;
