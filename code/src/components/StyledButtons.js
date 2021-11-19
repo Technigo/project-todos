@@ -25,7 +25,17 @@ export const StyledAddTodoButton = styled.button`
 `;
 
 export const StyledDeleteButton = styled.button`
+  background-color: #f5f9fa;
+  border: 2px solid #6577ae;
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
   display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+  /* display: flex;
   justify-content: center;
   align-items: center;
   background: #ffde53;
@@ -38,15 +48,17 @@ export const StyledDeleteButton = styled.button`
   line-height: 40px;
   padding: 0;
   box-sizing: border-box;
-  position: relative;
+  position: relative; */
   &:hover {
     cursor: pointer;
   }
 
   .button-text {
-    color: #515214e3;
+    /* color: #515214e3;
     font-size: 30px;
-    font-weight: 500;
+    font-weight: 500; */
+    height: 20px;
+    width: 20px;
     justify-content: center;
     align-items: center;
   }
