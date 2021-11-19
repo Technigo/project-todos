@@ -1,8 +1,26 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const FooterStyled = styled.footer`
+  font-size: 12px;
+  text-align: center;
+
+  a {
+    text-decoration: none;
+    font-weight: 700;
+    color: #012f66;
+  }
+
+  a:visited {
+    text-decoration: none;
+    font-weight: 700;
+    color: #012f66;
+  }
+`
 
 const Footer = () => {
   return (
-    <footer>
+    <FooterStyled>
       <p>
         &#169; by{' '}
         <a
@@ -14,7 +32,7 @@ const Footer = () => {
         </a>
         &nbsp;| Team Foxes 🦊 | Technigo
       </p>
-    </footer>
+    </FooterStyled>
   )
 }
 
