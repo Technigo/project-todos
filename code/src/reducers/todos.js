@@ -2,7 +2,9 @@ import { createSlice } from '@reduxjs/toolkit'
 import uniqid from 'uniqid' // used to generate an absolutely unique id
 import moment from 'moment'
 
-
+const initialState = {
+    items:[]
+}
 const todos = createSlice({
     // every slice needs 3 properties: name, initialState and reducer 
     name:'todos',
@@ -50,6 +52,10 @@ const todos = createSlice({
             //leave behind the deleted element
             const decreasedItems = store.items.filter((item) => item.id !== action.payload)
             store.items = decreasedItems
+        },
+       
+        onDelete: () => {
+            return initialState;
         }
     }
 })

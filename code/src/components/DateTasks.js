@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import moment from 'moment'
 
 import TasksCompleted from 'components/TasksCompleted'
+import DeleteAll from 'components/DeleteAll'
 
 const TaskDateContainer = styled.section`
     display: flex;
@@ -13,9 +14,11 @@ const TaskDateContainer = styled.section`
 
 `
 const TitleContainer = styled.div`
+  display:flex;
   margin: 30px auto 20px auto;
   text-align: center;
-  background: white;    
+  background: white;  
+   
   `
 const Title = styled.h1`
   font-family: 'Bodoni Moda', serif;
@@ -38,6 +41,7 @@ const DateTasks = () => {
             <TaskDateContainer>
                 <Date>{moment().format('ll')}</Date>
                 <TasksCompleted />   
+                <DeleteAll/>
             </TaskDateContainer>
             
             <TitleContainer>

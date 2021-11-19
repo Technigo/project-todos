@@ -10,6 +10,7 @@ import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
 import DateTasks from './components/DateTasks'
 
+
 //a reducer required for the store
 import todos from './reducers/todos'
 
@@ -63,16 +64,6 @@ export const App = () => {
   return (
     // need to wrap everything in provider
     <Provider store={store}>
-      {/*<BrowserRouter>
-        <Routes>
-          <Route path="/" element={<StarterPage />} />
-          <Route path="Todo" element={<AddTodo />}  />
-          <Route path="Todo" element={<TodoList />} />
-          
-        </Routes>
-
-      </BrowserRouter>
-        <StarterPage />*/}
         <Main>
           <TaskContainer>
             <DateTasks/>
@@ -81,7 +72,7 @@ export const App = () => {
               <TodoList />
               
             </TodoContainer>
-          
+         
           </TaskContainer> 
         </Main>
         
