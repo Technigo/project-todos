@@ -62,6 +62,32 @@ export const todos = createSlice({
       )
 
       store.items = decreasedItems
+    },
+    changeFilter: (store, action) => {
+      store.filter = action.payload
     }
   }
 })
+
+export const filteredTodos = (store) => {
+  const filter = store.todos.filter
+  const todos = store.todos.items
+  if (filter === 'all') {
+    return todos
+  }
+  if (filter === 'business') {
+    return todos.filter((item) => {
+      return item.category === 'business'
+    })
+  }
+  if (filter === 'personal') {
+    return todos.filter((item) => {
+      return item.category === 'personal'
+    })
+  }
+  if (filter === 'shopping') {
+    return todos.filter((item) => {
+      return item.category === 'shopping'
+    })
+  }
+}

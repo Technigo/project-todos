@@ -6,7 +6,7 @@ import { combineReducers, createStore } from '@reduxjs/toolkit'
 import { todos } from './reducers/todos'
 import { TodoList } from 'components/TodoList'
 import { AddTodo } from 'components/AddTodo'
-// import { CategorySection } from 'components/CategorySection'
+import { FilterCategory } from 'components/FilterCategory'
 import { Header } from 'components/Header'
 
 const reducer = combineReducers({
@@ -41,7 +41,7 @@ export const App = () => {
     <Provider store={store}>
       <Header />
       <AddTodo />
-      {/* <CategorySection /> */}
+      <FilterCategory />
       <TodoList />
     </Provider>
   )

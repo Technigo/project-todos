@@ -67,7 +67,6 @@ export const AddTodo = () => {
     console.log('input: ', input)
     console.log('category: ', category)
     setInput('')
-    setCategory('')
   }
 
   return (
@@ -107,7 +106,7 @@ export const AddTodo = () => {
           onChange={(event) => setCategory(event.target.value)}
         />
         <label htmlFor="shopping">Shopping</label>
-        <button type="submit" onClick={onAddTodo}>
+        <button type="submit" disabled={input === ''} onClick={onAddTodo}>
           Add todo
         </button>
       </StyledForm>

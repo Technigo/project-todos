@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
-import { todos } from '../reducers/todos'
+import { todos, filteredTodos } from '../reducers/todos'
 
 // import { TodoItem } from './TodoItem'
 
@@ -61,6 +61,12 @@ const StyledParagraph = styled.p`
   font-size: 16px;
   margin: 0;
   color: white;
+
+  .moment {
+    font-size: 12px;
+    color: #9aaedb;
+    text-decoration: none !important;
+  }
 `
 const ProgressbarWrapperStyled = styled.div`
   height: 8px;
@@ -79,24 +85,11 @@ const ProgressbarWrapperStyled = styled.div`
 `
 
 export const TodoList = () => {
-  const items = useSelector((store) => store.todos.items)
+  const items = useSelector((store) => filteredTodos(store))
+
   const itemsChecked = useSelector(
     (store) => store.todos.items.filter((item) => item.isComplete).length
   )
-  // const businessItems = useSelector((store) =>
-  //   store.todos.items.filter((item) => item.category === 'business')
-  // )
-  // const personalItems = useSelector((store) =>
-  //   store.todos.items.filter((item) => item.category === 'personal')
-  // )
-  // const shoppingItems = useSelector((store) =>
-  //   store.todos.items.filter((item) => item.category === 'shopping')
-  // )
-
-  // const itemsUnchecked = useSelector(
-  //   (store) =>
-  //     store.todos.items.filter((item) => item.isComplete === false).length
-  // )
 
   const dispatch = useDispatch()
 
@@ -115,7 +108,7 @@ export const TodoList = () => {
   }
 
   const checkedLine = (item) => {
-    if (item.isComplete === true) {
+    if (item.isComplete) {
       return 'line-through'
     } else {
       return 'none'
@@ -124,11 +117,11 @@ export const TodoList = () => {
 
   const categoryColor = (category) => {
     if (category === 'business') {
-      return '2px solid tomato'
+      return '2px solid dodgerblue'
     } else if (category === 'shopping') {
       return '2px solid limegreen'
     } else {
-      return '2px solid darkviolet'
+      return '2px solid tomato'
     }
   }
 
@@ -141,7 +134,7 @@ export const TodoList = () => {
   return (
     <StyledSection>
       <StyledSmallHeadline>
-        Your to-do's
+        Your to-do's ({Math.round(itemsChecked * (100 / items.length))}% done)
         {/* Your to-do's ({itemsChecked} done, {itemsUnchecked} to go) */}
         <ProgressbarWrapperStyled>
           <div
@@ -167,7 +160,7 @@ export const TodoList = () => {
                 style={{ border: categoryColor(item.category) }}></div>
             </label>
             <StyledParagraph style={{ textDecoration: checkedLine(item) }}>
-              {item.text}
+              {item.text}{' '}
             </StyledParagraph>
           </StyledTaskContainer>
           <StyledButton onClick={() => onDeleteTodo(item.id)}>
