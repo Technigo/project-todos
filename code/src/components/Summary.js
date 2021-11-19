@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import './summary.css';
 
 export const Summary = () => {
@@ -15,7 +15,6 @@ export const Summary = () => {
       <SectionEmpty>
         <h2>HOORAY </h2>
         <h3>you are free!!!</h3>
-        <p>- or be a bit productive and add moore moore moore tasks...</p>
       </SectionEmpty>
     );
   } else {
@@ -45,11 +44,11 @@ const SectionEmpty = styled.section`
   }
 
   h3 {
-    margin: 0;
-    padding: 0 5%;
-    font-size: 2.8em;
+    margin: 5%;
+    font-size: 3em;
     color: var(--orange);
     width: 100%;
+    background-color: var(--darkgrey);
   }
 
   p {

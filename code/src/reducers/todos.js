@@ -6,6 +6,7 @@ const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [],
+    // filter: "all"
   },
   reducers: {
     //each property is one method to update the store. Will always looks like this, a name and an anonymous function. Properties in function will always be store and in some cases action
@@ -22,6 +23,10 @@ const todos = createSlice({
       // v2 Immutability approach. Use spread
       store.items = [...store.items, newTodo];
     },
+
+    // changeFilter: (store, action) => {
+    //   store.filter = action.payload;
+    // }
 
     toggleTodo: (store, action) => {
       // v1 Mutability approach
@@ -51,15 +56,21 @@ const todos = createSlice({
       // store.items.splice(action.payload, 1);
 
       // v2 Immutability approach
-      const decreadedItems = store.items.filter(
+      const deletedItems = store.items.filter(
         (item) => item.id !== action.payload
       );
 
-      store.items = decreadedItems;
+      store.items = deletedItems;
+    },
+
+    toggleIsComplete: (store, action) => {
+      const todo = store.items.filter((item) => item.id === action.payload);
+      todo.isComplete = !todo.isComplete;
+      store.items.sort((a, b) => a.isComplete > b.isComplete && (1 || -1));
     },
 
     // Complete all todos
-    completeAllTodos: (store, action) => {
+    completeAllTodos: (store) => {
       const completeAll = store.items.map((todo) => {
         return {
           ...todo,

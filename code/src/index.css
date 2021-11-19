@@ -4,6 +4,7 @@
   --grey: #e3e0db;
   --white: #ffffff;
   --black: #000000;
+  --darkgrey: #969f94;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Autour+One&display=swap');
@@ -38,7 +39,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('./assets/todo-background.jpg');
+  background-image: url('https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=704&q=80');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -72,9 +73,16 @@ px
   display: flex;
   /* padding: 20% 0; */
   position: relative;
-  top: 8%;
+  top: 12%;
+  justify-content: center;
+  /* align-content: center; */
+  align-items: center;
   /* right: 30%; */
   /* left: 30%; */
   z-index: 2;
   justify-content: center;
+}
+
+input[type='text'] {
+  padding: 8px;
 }
