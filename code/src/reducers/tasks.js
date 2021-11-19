@@ -61,3 +61,21 @@ const tasks = createSlice({
 });
 
 export default tasks;
+
+export const selectFilteredTodos = (store) => {
+  const filter = store.tasks.filter;
+  const tasks = store.tasks.items;
+  if (filter === "all") {
+    return tasks;
+  }
+  if (filter === "to do") {
+    return tasks.filter((tasks) => {
+      return !tasks.isComplete;
+    });
+  }
+  if (filter === "done") {
+    return tasks.filter((tasks) => {
+      return tasks.isComplete;
+    });
+  }
+};

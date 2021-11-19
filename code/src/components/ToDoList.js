@@ -2,11 +2,11 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled, { keyframes } from "styled-components";
 
-import tasks from "../reducers/tasks";
+import tasks, { selectFilteredTodos } from "../reducers/tasks";
 import moment from "moment";
 
 const ToDoList = () => {
-  const items = useSelector((store) => store.tasks.items);
+  const items = useSelector((store) => selectFilteredTodos(store));
 
   const dispatch = useDispatch();
 
@@ -24,24 +24,24 @@ const ToDoList = () => {
 
   return (
     <ToDoContainer>
-      {items.map((newtask) => (
-        <div key={newtask.id}>
+      {items.map((item) => (
+        <div key={item.id}>
           <TasksContainer>
             <InfoContainer>
-              <Task>{newtask.text}</Task>
+              <Task>{item.text}</Task>
               <Date>{moment().format("L")}</Date>
             </InfoContainer>
             <IconsContainer>
               <Label>
                 <Input
                   type="checkbox"
-                  checked={newtask.isComplete}
-                  onChange={() => onToggleTask(newtask.id)}
+                  checked={item.isComplete}
+                  onChange={() => onToggleTask(item.id)}
                 />
                 <Indicator />
               </Label>
 
-              <Button onClick={() => onDeleteTask(newtask.id)}>
+              <Button onClick={() => onDeleteTask(item.id)}>
                 <i className="fas fa-times-circle fa-lg"></i>
               </Button>
             </IconsContainer>

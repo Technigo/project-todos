@@ -4,6 +4,7 @@ import Header from "components/Header";
 import Counter from "components/Counter";
 import AddTask from "components/AddTask";
 import ToDoList from "components/ToDoList";
+import Filter from "components/Filter";
 import styled from "styled-components";
 
 const Wrapper = () => {
@@ -12,6 +13,7 @@ const Wrapper = () => {
       <Header />
       <Counter />
       <AddTask />
+      <Filter />
       <ToDoList />
     </WrapperContainer>
   );
