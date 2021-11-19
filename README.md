@@ -1,13 +1,10 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a todo list there you can write down your tasks, complete them and delete them, to organize your life
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
+This project is made with React and Redux, with a store and reducers to update the store. I started with making a design for how I wanted it to look and see what kind of components I needed and went from there. There are some styled components aswell as the usual CSS as styling. For the future I would love to add some categories so that you could cluster the tasks.
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://autumntodo.netlify.app
