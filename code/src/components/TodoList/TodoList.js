@@ -38,7 +38,7 @@ export const TodoList = () => {
   return (
     <>
       {todos.length > 0 && (
-        <TodoListContainer>
+        <TodoListContainer ref={ButtonsContainerRef}>
           {/* Only renders the title and map the array if the length of the array is larger then 0. */}
           {activities.length > 0 && (
             <>
@@ -88,7 +88,7 @@ export const TodoList = () => {
       )}
 
       {/*ref to be able to scroll down to the buttonsContainer*/}
-      <ButtonsContainer ref={ButtonsContainerRef}>
+      <ButtonsContainer>
         <FinishAllTasksButton />
         <EmptyListButton />
       </ButtonsContainer>
