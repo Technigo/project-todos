@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { combineReducers, createStore } from '@reduxjs/toolkit'
 import styled from 'styled-components'
 //import { Routes, Route, BrowserRouter } from 'react-router-dom';
 
@@ -18,9 +18,20 @@ import todos from './reducers/todos'
 const reducer = combineReducers({
   todos: todos.reducer
 })
+// retrieve local storage
+const persistedStatesJSON = localStorage.getItem('todosReduxState')
+let persistedState = {}
+if (persistedStatesJSON) {
+  persistedState = JSON.parse(persistedStatesJSON)
+}
 
 //use the single reducer to create a Store
-const store = configureStore({ reducer })
+const store = createStore(reducer, persistedState)
+
+// Store the state in local storage when the Redux state is changed
+store.subscribe(()=> {
+  localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))
+})
 
 // styling
 const Main = styled.section`
@@ -42,10 +53,7 @@ const TaskContainer = styled.div`
   display: flex;
   flex-direction: column;
   background: white;
-
-  
 `
-
 const TodoContainer =styled.div`
 width: 100%;`
 
