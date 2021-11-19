@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import uniqid, { time } from 'uniqid' // used to generate an absolutely unique id
+import uniqid from 'uniqid' // used to generate an absolutely unique id
 import moment from 'moment'
 
 

@@ -8,7 +8,6 @@ import styled from 'styled-components'
 //import components
 import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
-import StarterPage from './components/StarterPage'
 import DateTasks from './components/DateTasks'
 
 //a reducer required for the store
