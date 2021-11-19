@@ -56,7 +56,7 @@ const QuestList = () => {
                   />
                 </label>
               </td>
-              <td className={item.isComplete ? 'completed' : ''}>
+              <td className={item.isComplete ? 'completed' : 'active'}>
                 {item.text}
               </td>
               <td>
