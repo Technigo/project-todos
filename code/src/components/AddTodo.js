@@ -88,7 +88,7 @@ const AddTodo = () => {
     const dispatch = useDispatch()
     const onAddTodo = (event, input) => {
         dispatch(todos.actions.addTodo({ input, dueDate, category }))
-        dispatch(todos.actions.toggleFilter("all"))
+        // dispatch(todos.actions.toggleFilter("all"))
         event.preventDefault()
         setInput('')
         setDueDate('')
