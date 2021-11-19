@@ -29,6 +29,9 @@ const TodoTextDiv = styled.div`
 const CheckboxDiv = styled.div`
     padding-right: 10px;
     border-right: 1px solid #F1C8D5;
+    @media (max-width: 450px) {
+        padding-right: 5px;
+    }
 `
 const TodosCheckbox = styled.input`
     width: 30px;
@@ -36,8 +39,9 @@ const TodosCheckbox = styled.input`
     margin: 10px 10px 10px 20px;
     filter: grayscale(60%) sepia(10%) brightness(180%);
     @media (max-width: 450px) {
-        width: 25px;
-        height: 25px;
+        width: 20px;
+        height: 20px;
+        margin: 3px 3px 3px 10px;
     }
 `
 const TimeClearDiv = styled.div`
