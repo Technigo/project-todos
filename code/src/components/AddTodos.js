@@ -25,8 +25,14 @@ const AddTodos = () => {
         value={input}
         onChange={event => setInput(event.target.value)}
         placeholder="Add a to do"
+        required
       />
-      <button type="submit" className="addTodo-btn" onClick={onAddTodo}>
+      <button
+        type="submit"
+        className="addTodo-btn"
+        onClick={onAddTodo}
+        disabled={input.length < 1}
+      >
         +
       </button>
     </form>

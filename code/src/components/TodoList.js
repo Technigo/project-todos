@@ -1,50 +1,10 @@
 import React from "react"
 import { useDispatch, useSelector } from "react-redux"
 import DayJS from "react-dayjs"
-import styled from "styled-components"
+
+import { CheckboxStyled } from "styling/checkbox"
 
 import todos from "../reducers/todos"
-
-const CheckboxStyled = styled.input`
-  position: relative;
-  appearance: none;
-  height: 24px;
-  width: 24px;
-  margin-right: 10px;
-  background: #fff;
-  transition: 0.1s;
-  flex-shrink: 0;
-  cursor: pointer;
-  box-shadow: inset 1px 1px 2px var(--grey);
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 5px;
-    left: 4px;
-    height: 17px;
-    transition: 0.1s;
-    width: 17px;
-    background-image: url(../check.svg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0;
-    border: var(--grey);
-  }
-
-  &:checked {
-    background: #fff;
-    box-shadow: inset 1px 1px 2px var(--grey);
-    &::after {
-      opacity: 1;
-    }
-  }
-
-  &:focus,
-  :active {
-    outline: none;
-  }
-`
 
 const TodoList = () => {
   const dispatch = useDispatch()
@@ -91,7 +51,7 @@ const TodoList = () => {
               className="delete-btn"
               onClick={() => onDeleteTodoImmutability(item.id)}
             >
-              &otimes;
+              <img className="img-bin" src="./bin.svg" alt="delete bin"></img>
             </button>
           </div>
         </>
@@ -102,7 +62,6 @@ const TodoList = () => {
           <>
             <div className={"item-checked"} key={isCompleteItem.id}>
               <CheckboxStyled
-                className="checkbox"
                 type="checkbox"
                 checked={isCompleteItem.isComplete}
                 onChange={() => onToggleTodo(isCompleteItem.id)}
@@ -119,7 +78,7 @@ const TodoList = () => {
                 className="delete-btn"
                 onClick={() => onDeleteTodoImmutability(isCompleteItem.id)}
               >
-                &otimes;
+                <img className="img-bin" src="./bin.svg" alt="delete bin"></img>
               </button>
             </div>
           </>

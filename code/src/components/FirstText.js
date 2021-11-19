@@ -31,7 +31,11 @@ const FirstText = () => {
               -<DayJS element="span" format="MMM D, YYYY H:mm" />
             </p>
           </header>
-          <img src="./illustration.svg" alt="illustration"></img>
+          <img
+            className="intro-img"
+            src="./illustration.svg"
+            alt="illustration"
+          ></img>
         </>
       )}
     </section>

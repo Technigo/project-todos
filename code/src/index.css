@@ -33,6 +33,7 @@ code {
   width: 80%;
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   padding: 20px 0;
   color: var(--grey);
   border-bottom: var(--grey) 1px solid;
@@ -40,6 +41,10 @@ code {
 
 h1 {
   margin-top: 0;
+}
+
+.intro-img {
+  object-fit: cover;
 }
 
 .input-container {
@@ -64,10 +69,12 @@ h1 {
 .addTodo-btn {
   border-radius: 50%;
   border: none;
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   background-color: var(--green);
-  color: white;
+
+  font-size: larger;
+  font-weight: 700;
 }
 
 .list-container {
@@ -126,7 +133,7 @@ h1 {
   position: absolute;
   top: 0;
   left: 0;
-  width: 5px;
+  width: 2px;
   height: 100%;
   background-color: var(--grey);
   border-top-right-radius: 10px;
@@ -174,53 +181,11 @@ h1 {
 .mark {
   color: var(--green);
   font-weight: 700;
-  text-shadow: 1px 1px #3f3d56;
+  text-shadow: 1px 1px var(--grey);
   font-size: larger;
 }
 
-/* .checkbox {
-  position: relative;
-  appearance: none;
-  height: 24px;
-  width: 24px;
-  margin-right: 10px;
-  background: #e6e6e6;
-  transition: 0.1s;
-  flex-shrink: 0;
-  cursor: pointer;
-  box-shadow: inset 2px 2px 5px var(--grey), inset -2px -2px 5px var(--orange);
-} */
-/* ::after ads ON content */
-.checkbox::after {
-  content: "";
-  position: absolute;
-  top: 5px;
-  left: 4px;
-  height: 17px;
-  transition: 0.1s;
-  width: 17px;
-  /* background-image: url(../public/check.svg); */
-  /* background: var(--red); */
-  opacity: 0;
-  border: var(--grey);
-}
-
-.checkbox:checked {
-  background: var(--green);
-  box-shadow: inset 2px 2px 5px var(--grey), inset -2px -2px 5px var(--orange);
-}
-
-.checkbox:checked,
-.checkbox::after {
-  opacity: 1;
-}
-
-.checkbox:focus,
-.checkbox:active {
-  outline: none;
-}
-
-.checkbox:focus,
-.checkbox:active .checkbox::after {
-  outline: none;
+.img-bin {
+  width: 35px;
+  height: 35px;
 }
