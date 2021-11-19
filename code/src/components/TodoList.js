@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import todos from "../reducers/todos";
+import StartTodo from "./StartTodo";
 
 const TodosContainer = styled.section`
   display: flex;
@@ -75,30 +76,41 @@ const TodoList = () => {
     dispatch(todos.actions.deleteTodo(id));
   };
 
+  const completeItem = (item) => {
+    if (item.isComplete) {
+      return "line-through";
+    } else {
+      return "none";
+    }
+  };
+
   return (
     <>
-      <TodosContainer>
-        {items.map((item) => (
-          <TodoWrapper key={item.id}>
-            <div className="checkboxWrapper">
-              <input
-                type="checkbox"
-                checked={item.isComplete}
-                onChange={() => onToggleTodo(item.id)}
-              />
-            </div>
+      {items.length < 1 && <StartTodo />}
+      {items.length > 0 && (
+        <TodosContainer>
+          {items.map((item) => (
+            <TodoWrapper key={item.id}>
+              <div className="checkboxWrapper">
+                <input
+                  type="checkbox"
+                  checked={item.isComplete}
+                  onChange={() => onToggleTodo(item.id)}
+                />
+              </div>
 
-            <p>{item.text}</p>
-            <DeleteButton onClick={() => onDeleteTodo(item.id)}>
-              <DeleteEmoji>
-                <span role="img" aria-label="delete-emoji">
-                  ➖
-                </span>
-              </DeleteEmoji>
-            </DeleteButton>
-          </TodoWrapper>
-        ))}
-      </TodosContainer>
+              <p style={{ textDecoration: completeItem(item) }}>{item.text}</p>
+              <DeleteButton onClick={() => onDeleteTodo(item.id)}>
+                <DeleteEmoji>
+                  <span role="img" aria-label="delete-emoji">
+                    ➖
+                  </span>
+                </DeleteEmoji>
+              </DeleteButton>
+            </TodoWrapper>
+          ))}
+        </TodosContainer>
+      )}
     </>
   );
 };

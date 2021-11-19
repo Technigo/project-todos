@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import moment from "moment";
 
 import Counter from "components/Counter";
 
@@ -33,10 +34,21 @@ const HeaderText = styled.h1`
   }
 `;
 
+const DateFormat = styled.p`
+  margin-top: 0;
+  font-size: 14px;
+
+  @media (min-width: 768px) {
+    margin-top: 1em;
+    font-size: 16px;
+  }
+`;
+
 const Header = () => {
   return (
     <HeaderContainer>
       <HeaderText>Todo List</HeaderText>
+      <DateFormat>{moment().format("LL")}</DateFormat>
       <Counter />
     </HeaderContainer>
   );
