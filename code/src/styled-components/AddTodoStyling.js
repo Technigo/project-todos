@@ -4,8 +4,6 @@ export const AddTodoContainer = styled.section`
 	text-align: center;
 	margin: 10px auto;
 	gap:10px;
-
-
 `; 
 
 export const Input = styled.input`
@@ -31,7 +29,6 @@ export const AddButton = styled.button`
 	padding: 10px;
 	font-size: 20px;
 	margin-top: 20px;
-
 `;
 
 export const Select = styled.select`
