@@ -9,38 +9,38 @@ import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
 
 export const TodoList = () => {
-	const items = useSelector((store) => store.todos.items)
+  const items = useSelector((store) => store.todos.items)
 
-	const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
   const trashCanIcon = <FontAwesomeIcon icon={faTrashAlt} />
   
 
-	const onToggleTodo = (id) => {
-		dispatch(todos.actions.toggleTodo(id))
-	}
+  const onToggleTodo = (id) => {
+    dispatch(todos.actions.toggleTodo(id))
+  }
 
-	const onDeleteTodoImmutability = (id) => {
-		dispatch(todos.actions.deleteTodo(id))
-	}
+  const onDeleteTodoImmutability = (id) => {
+    dispatch(todos.actions.deleteTodo(id))
+  }
 
-	return (
-		<TodoContainer>
-			{items.map((item, index) => (
-				<TodoTasks className="flex-item" key={item.id}>
-          	<CustomCheckbox
-						type="checkbox"
-						checked={item.isComplete}
-						onChange={() => onToggleTodo(item.id)}
-					/>
-					<p>{item.text}</p>
-				
-					<DeleteButton onClick={() => onDeleteTodoImmutability(item.id)}>{trashCanIcon}</DeleteButton>
+  return (
+    <TodoContainer>
+      {items.map((item, index) => (
+        <TodoTasks className="flex-item" key={item.id}>
+            <CustomCheckbox
+            type="checkbox"
+            checked={item.isComplete}
+            onChange={() => onToggleTodo(item.id)}
+          />
+          <p>{item.text}</p>
+        
+          <DeleteButton onClick={() => onDeleteTodoImmutability(item.id)}>{trashCanIcon}</DeleteButton>
           
-				</TodoTasks>
-			))}
-		</TodoContainer>
-	)
+        </TodoTasks>
+      ))}
+    </TodoContainer>
+  )
 
 }
 
@@ -52,7 +52,6 @@ const CustomCheckbox = styled.input`
   border-radius: 50px;
 `
 const TodoTasks = styled.div`
-
 `
 const DeleteButton = styled.button`
   border: none;
