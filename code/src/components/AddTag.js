@@ -34,17 +34,18 @@ const theme = (theme) => ({
 
 const animatedComponents = makeAnimated();
 
-const AddTag = ({ setNewTags }) => {
+const AddTag = ({ setNewTags, newTags }) => {
   const handleChange = (event) => {
     setNewTags(event);
   };
   return (
     <div>
       <label>
-        Tags
+        Tags (optional)
         <Select
           isMulti
           name="tags"
+          value={newTags}
           styles={styles}
           options={options}
           closeMenuOnSelect={false}

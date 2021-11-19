@@ -1,9 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import DatePicker from "react-datepicker";
 import styled from "styled-components/macro";
 
 import "react-datepicker/dist/react-datepicker.css";
-const { DateTime } = require("luxon");
 
 const Wrapper = styled.div`
   .react-datepicker {
@@ -19,7 +18,7 @@ const Wrapper = styled.div`
 const AddDate = ({ setNewDate, newDate }) => {
   return (
     <label>
-      Deadline
+      Deadline (optional)
       <Wrapper>
         <DatePicker
           selected={newDate}

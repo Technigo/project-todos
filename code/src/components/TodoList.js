@@ -78,8 +78,19 @@ const TodoList = () => {
     dispatch(todos.actions.deleteTodo(id));
   };
 
+  const onCheckTodos = (boolean) => {
+    if (boolean) dispatch(todos.actions.finishTodos());
+    else dispatch(todos.actions.uncheckTodos());
+  };
+
   return (
     <>
+      <button onClick={() => onCheckTodos(true)}>
+        Check all tasks
+      </button>
+      <button onClick={() => onCheckTodos(false)}>
+        Uncheck all tasks
+      </button>
       {items.map((item) => (
         <Wrapper key={item.id}>
           <SmallWrapper>

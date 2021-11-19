@@ -52,7 +52,7 @@ const AddTodo = () => {
         />
       </label>
       <AddDate setNewDate={setNewDate} newDate={newDate} />
-      <AddTag setNewTags={setNewTags} />
+      <AddTag setNewTags={setNewTags} newTags={newTags} />
       <button onClick={onAddTodo}>Add Todo</button>
     </Wrapper>
   );

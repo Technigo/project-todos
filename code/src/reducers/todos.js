@@ -35,6 +35,28 @@ const todos = createSlice({
 
       store.items = updatedItems;
     },
+    finishTodos: (store) => {
+      const updatedItems = store.items.map((item) => {
+        const updatedTodo = {
+          ...item,
+          isComplete: true,
+        };
+        return updatedTodo;
+      });
+
+      store.items = updatedItems;
+    },
+    uncheckTodos: (store) => {
+      const updatedItems = store.items.map((item) => {
+        const updatedTodo = {
+          ...item,
+          isComplete: false,
+        };
+        return updatedTodo;
+      });
+
+      store.items = updatedItems;
+    },
     deleteTodo: (store, action) => {
       const decreasedTodo = store.items.filter(
         (item) => item.id !== action.payload
