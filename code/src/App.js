@@ -1,9 +1,35 @@
-import React from 'react'
+import React from "react";
+import { Provider } from "react-redux";
+import { combineReducers, createStore } from "@reduxjs/toolkit";
+
+import tasks from "./reducers/tasks";
+import Wrapper from "components/Wrapper";
+
+const reducer = combineReducers({
+  tasks: tasks.reducer,
+});
+
+const persistedStateJSON = localStorage.getItem("reduxState");
+let persistedState = {};
+
+if (persistedStateJSON) {
+  persistedState = JSON.parse(persistedStateJSON);
+}
+
+const store = createStore(
+  reducer,
+  persistedState,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+store.subscribe(() => {
+  localStorage.setItem("reduxState", JSON.stringify(store.getState()));
+});
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
-}
+    <Provider store={store}>
+      <Wrapper />
+    </Provider>
+  );
+};
