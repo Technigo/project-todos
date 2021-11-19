@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { useSelector } from "react-redux";
 
 const { DateTime } = require("luxon");
 
@@ -18,6 +19,15 @@ const HeadingTwo = styled.h2`
   font-size: 28px;
   font-weight: 500;
   margin-top: 0;
+  margin-bottom: 0;
+  text-align: center;
+`;
+const HeadingThree = styled.h3`
+  font-family: "Ranga", cursive;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 0;
+  text-align: center;
 `;
 
 const weekdays = [
@@ -37,12 +47,18 @@ const date = DateTime.now()
   .toFormat("dd LLL");
 
 const Header = () => {
+  const items = useSelector((store) => store.todos.items);
+  const done = items.filter((item) => item.isComplete).length;
+
   return (
     <header>
       <HeadingOne>To do</HeadingOne>
       <HeadingTwo>
         {weekday} {date}
       </HeadingTwo>
+      <HeadingThree>
+        Finished:{done}/{items.length}
+      </HeadingThree>
     </header>
   );
 };
