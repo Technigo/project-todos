@@ -39,7 +39,6 @@ const Button = styled.button`
 export const AddTodo = () => {
   const dispatch = useDispatch()
   const [input, setInput] = useState('')
-  const [showDatePicker, setShowDatePicker] = useState(false)
   const [startDate, setStartDate] = useState(new Date())
 
   const onAddTodo = e => {
