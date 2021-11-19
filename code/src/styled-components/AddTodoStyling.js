@@ -15,7 +15,7 @@ export const Input = styled.input`
 	margin: 20px auto;
 	padding:5px 2px 0px 2px;
 	background-color: transparent;
-	border-bottom: 2px solid rgb(170, 170, 170);
+	border-bottom: 1px solid rgb(170, 170, 170);
 	font-size: 18px;
 
 	::placeholder {
@@ -35,11 +35,19 @@ export const AddButton = styled.button`
 `;
 
 export const Select = styled.select`
-  width: 100%;
+  width: 190px;
   height: 35px;
   color: black;
+	border-radius: 5px;
+	border: 1px solid rgb(170, 170, 170);
+
+	option {
+		color:gray;
+	}
 
 	@media(min-width: 768px) {
-		margin-top: 25px;
+		width:190px;
+		margin-top: 21px;
+    height: 40px;
 	}
 `;

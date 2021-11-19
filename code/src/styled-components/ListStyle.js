@@ -3,11 +3,12 @@ import styled from 'styled-components';
 export const ListSection = styled.section`
 	padding: 10px;
 	margin: 10px;
-	background-color: rgb(192 192 192 / 54%);
 	border-radius: 5px;
+	background-color: rgb(170, 170, 170);
 
 	h2 {
 		text-align: center;
+
 	}
 `; 
 
@@ -18,19 +19,14 @@ export const TodoListDiv = styled.div`
 	word-wrap: break-word;
 	display:flex;
 	justify-content: space-between;
+	border: 1px solid rgb(170, 170, 170);
 
 	span {
 		margin: 10px;
 	}
-
-	.complete {
-	text-decoration: line-through;
-	opacity: 0.7;
-}
 `;
 
 export const ListDiv = styled.div`
-
 	display: flex;
 	align-items: center;
 	background-color: white;
@@ -43,12 +39,6 @@ export const ListDiv = styled.div`
 	opacity: 0.7;
 	
 `;
-
-/* lägg till något styling eller */ 
-export const ButtonContainer = styled.div`
-
-`;
-
 /* combine those two in one*/
 export const Button = styled.button`
 	background-color: ${props => props.red ? "red" : "green"};
@@ -74,8 +64,16 @@ export const ButtonDelete = styled.button`
 export const CategorySpan = styled.span`
 	padding: 5px;
 	border-radius: 5px;
-	color: gray;
+	color: black;
 	font-weight: bold;
+	font-size: 14px;
+	background-color: ${props => 
+		props.category === 'Studies' ? '#89B5AF' : 
+		props.category === 'Work' ? '#DED9C4' : 
+		props.category === 'Family & Friends' ? '#9e9dd9' : 
+		props.category === 'Health' ? '#AE431E': 
+		props.category === "" ? 'none': 
+		'#facdc5'}
 `; 
 
 export const TextSpan = styled.span`

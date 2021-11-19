@@ -4,7 +4,6 @@ import {
 	ListSection, 
 	TodoListDiv, 
 	Button, 
-	ButtonContainer,
 	CategorySpan,
 	TextSpan
 } from '../styled-components/ListStyle';
@@ -30,16 +29,16 @@ const TodoList = () => {
 			{items.filter(item => item.isComplete === false).map((item) => (
 				<TodoListDiv key={item.id} props={item.isComplete} >
 					<TextSpan>{item.text}</TextSpan>
-					<CategorySpan>{item.category}</CategorySpan>
-					<ButtonContainer>
+
+					<div>
+					<CategorySpan category={item.category}>{item.category}</CategorySpan>
 						<Button green onClick={() => onToggleTodo(item.id)}>
 							<i className="fas fa-check"></i>
 						</Button>
 						<Button red onClick={() => onDeleteTodo(item.id)}>
 							<i className="fas fa-trash"></i>
 						</Button>
-					</ButtonContainer>
-
+					</div>
 				</TodoListDiv>
 			))}
 		</ListSection>

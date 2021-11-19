@@ -1,15 +1,14 @@
 import React from 'react';
-// style and images 
-import img from '../img/favicon-32x32.png';
 import styled from "styled-components";
 
 // styling notodos
 const NotodosContainer = styled.div`
 	text-align: center;
 	margin: 20px auto;
+	color: rgb(170, 170, 170);
 
-	img {
-		width: 50px;
+	i {
+		font-size: 40px;
 	}
 `;
 
@@ -17,7 +16,7 @@ const NoTodos = () => {
 	return (
 		<NotodosContainer>
 			<p>No tasks at the moment!</p>
-			<img src={img} alt="notes-img" />
+			<i className="fas fa-list-alt"></i>
 	  </NotodosContainer>
 	)
 };

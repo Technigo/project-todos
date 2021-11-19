@@ -1,6 +1,7 @@
 import React, { useState} from 'react';
 // in order to send data nad update the store we need useDispatch
 import { useDispatch } from 'react-redux';
+// package that gives us unique id 
 import uniqid from 'uniqid';
 // slice 
 import todos from '../reducers/todos';
@@ -15,7 +16,7 @@ import {
 const AddTodo = () => {
 
 	const [input, setInput] = useState('');
-	const [ category, setCategory ] = useState("")
+	const [category, setCategory] = useState("")
 
 	const dispatch = useDispatch();
 
@@ -37,10 +38,11 @@ const AddTodo = () => {
 		<>
 		<AddTodoContainer>
 			<Input 
+				props={input.length}
 				type="text" 
 				placeholder="Add todo here..."
 				value={input} 
-				onChange={(event) => setInput(event.target.value)} />
+				onChange={(event) => setInput(event.target.value)} maxLength={20}/>
 			<div>
 				<Select value={category} onChange={(event) => setCategory(event.target.value)} required>
 				  <option value="">Select category...</option>
