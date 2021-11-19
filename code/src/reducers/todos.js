@@ -22,12 +22,12 @@ const todos = createSlice({
         isComplete: false,
         postedTime: moment().format("ddd D MMM"),
       };
-      // immutable approach; a completely new array with the values from previous array plus extra element
+      // immutable approach; new array with the values from previous array plus added element
       store.items = [...store.items, newTodo];
     },
     // this reducer is responsible for triggering the isComplete property from true to false or false to true
     toggleTodo: (store, action) => {
-      //immuteable approach, going to create a new array with all todos updated
+      //immuteable approach, creating a new array with all updated todos
       const updatedItems = store.items.map((item) => {
         if (item.id === action.payload) {
           const updatedTodo = {
@@ -43,8 +43,8 @@ const todos = createSlice({
     },
     // This reducer is responsible for deleting a Todo
     deleteTodo: (store, action) => {
-      // immuteable approach, will pass the id in action.payload, should use filter, prepare new array and pull most items, but
-      //leave behind the deleted element
+      // immuteable approach, passing the id in action.payload, using filter, new array and pull most items
+      //leaves behind the deleted element
       const decreasedItems = store.items.filter(
         (item) => item.id !== action.payload
       );
