@@ -6,14 +6,21 @@
 }
 
 .text-field {
-  border: 2px solid #608c9b;
+  border: none;
   border-radius: 5px;
   background: transparent;
-  width: 70%;
+  width: 50%;
   padding: 12px 0px 12px 10px;
   margin: 10px 5px 20px 0px;
   font-size: 18px;
-  box-shadow: 3px 3px 3px rgb(82, 82, 82);
+  box-shadow: 3px 3px 3px 3px rgb(123, 123, 123);
+  transition: width 1s;
+}
+
+.text-field:hover,
+.text-field:focus {
+  width: 70%;
+  border: 1px solid #608c9b;
 }
 
 input:focus {

@@ -8,10 +8,12 @@ const todos = createSlice({
   },
   reducers: {
     addTodo: (store, action) => {
+      const { category } = action.payload
       const newTodo = {
         id: uniqid(),
         text: action.payload,
         isComplete: false,
+        category,
       }
       // immutability approach to adding items 👇
       store.items = [...store.items, newTodo]
@@ -39,6 +41,16 @@ const todos = createSlice({
       )
 
       store.items = decreasedItems
+    },
+
+    completeAllTasks: (store, action) => {
+      const completeAll = store.items.map((item) => {
+        return {
+          ...item,
+          isComplete: true,
+        }
+      })
+      store.items = completeAll
     },
   },
 })

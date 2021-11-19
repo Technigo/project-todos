@@ -2,6 +2,7 @@ import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 
 import todos from "../reducers/todos"
+import AddTodo from "./AddTodo"
 
 import "./todolist.css"
 
@@ -17,7 +18,12 @@ const TodoList = () => {
   const onRemoveTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id))
   }
+  // a complete all button-dispatch here
+  const onClickCompleteAll = () => {
+    dispatch(items.actions.completeAllTasks())
+  }
 
+  //Filters completed and uncompleted tasks in different sections.
   const sortCompletedTasks = items.filter((item) => item.isComplete)
 
   const unCompletedTasks = items.filter((item) => !item.isComplete)
@@ -26,13 +32,7 @@ const TodoList = () => {
     <>
       <section className="todo-container">
         {unCompletedTasks.map((item) => (
-          <div
-            className="list-item-box"
-            key={item.id}
-            style={{
-              display: item.isComplete ? "none" : "",
-            }}
-          >
+          <div className="list-item-box" key={item.id}>
             <p>
               <input
                 className="check-box"
@@ -40,13 +40,9 @@ const TodoList = () => {
                 checked={item.isComplete}
                 onChange={() => onToggleTodo(item.id)}
               />
-
-              {/* <span
-                // style={{
-                //   textDecoration: item.isComplete ? "line-through" : "",
-                // }}
-              > */}
-              <span className="item-text">{item.text}</span>
+              <span className="item-text">
+                {item.text} {item.category}
+              </span>
             </p>
             <button
               className="delete-btn"
@@ -70,7 +66,9 @@ const TodoList = () => {
             checked={item.isComplete}
             onChange={() => onToggleTodo(item.id)}
           />
-          <p>{item.text}</p>
+          <p>
+            {item.text} {item.category}
+          </p>
           <button className="delete-btn" onClick={() => onRemoveTodo(item.id)}>
             <span className="delete-complete">
               <span className="delete-sign" role="img" aria-label="trash bin">
@@ -78,6 +76,8 @@ const TodoList = () => {
               </span>
             </span>
           </button>
+
+          <button onClick={onClickCompleteAll}>Delete all tasks</button>
         </div>
       ))}
     </>
