@@ -10,7 +10,7 @@ import Header from './components/Header';
 
 // this combines all of the slices we have in reducers folder, specify all of them in an object
 const reducer = combineReducers({
-  // first slice
+  // first and only slice
   todos: todos.reducer,
 });
 
@@ -22,7 +22,7 @@ if (persistedStateJSON) {
 }
 
 const store = createStore(
-  reducer, // reducer property equals to reducer variable (on line 7)
+  reducer, // reducer property equals to reducer variable (on line 12)
   persistedState
 );
 

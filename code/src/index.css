@@ -3,17 +3,8 @@ body {
   font-family: 'Montserrat Alternates', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: #d3e4cd; */
   text-align: center;
   background-image: url(/todo-background.jpg);
-  /* background: linear-gradient(135deg, black 25%, transparent 25%) -50px 0,
-    linear-gradient(225deg, black 25%, transparent 25%) -50px 0,
-    linear-gradient(315deg, black 25%, transparent 25%),
-    linear-gradient(45deg, black 25%, transparent 25%);
-  background-size: 2em 2em;
-  background-color: #232323;
-  background-size: 70.71px 70.71px; */
-
   width: 100%;
 }
 
@@ -48,7 +39,6 @@ code {
 
 .input-text {
   margin-right: 50px;
-
   font-size: 10px;
 }
 
@@ -101,8 +91,6 @@ main {
   padding: 20px;
   box-sizing: border-box;
   background-color: #fef5ed;
-  /* background-image: linear-gradient(#fef5ed, #d8d2cc); */
-  /* box-shadow: 0 0 18px #727272; */
   border-radius: 10px;
 }
 

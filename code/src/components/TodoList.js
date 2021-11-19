@@ -7,7 +7,7 @@ import NoTodos from './NoTodos';
 import todos from '../reducers/todos';
 
 const TodoList = () => {
-  const items = useSelector(store => store.todos.items); // store."the slice". items from slice
+  const items = useSelector(store => store.todos.items); // store + "the slice" + items from slice in todos.js
 
   const dispatch = useDispatch();
 
@@ -31,12 +31,10 @@ const TodoList = () => {
               onChange={() => onToggleTodo(item.id)}
             />
 
-            <p className={item.isComplete ? 'done ' : 'not-done '}>
-              {item.text}
-            </p>
+            <p className={item.isComplete ? 'done' : 'not-done'}>{item.text}</p>
             <p
               className={
-                item.isComplete ? 'done todo-date ' : 'not-done todo-date '
+                item.isComplete ? 'done todo-date' : 'not-done todo-date'
               }
             >
               {moment(item.createdAt).format('LL')}

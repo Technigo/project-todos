@@ -4,18 +4,12 @@ import uniqid from 'uniqid';
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    // initialState is always an object
     items: [],
   },
-  // also an object, one property is a method to update the store
+
   reducers: {
+    // a property that is a function with two arguments, store and action
     addTodo: (store, action) => {
-      // a property that is a function, always looks like this. Reducers always have TWO argument, store and action
-
-      // action is ALWAYS type and payload. the action.payload is the data we want to send, action.type is added behind the scenes by redux itself. We don't have to worry about action.type at all. Focus on action.payload. connected to AddTodo.js useDispatch()
-
-      // two ways to update the store mutable way/immutable way
-
       const newTodo = {
         id: uniqid(), // be very precise when making ids. code relies on uniqueness of keys. the uniqid() creates an automatic uniq id. package to install "npm install uniqid"
         text: action.payload,
@@ -23,28 +17,18 @@ const todos = createSlice({
         createdAt: new Date(),
       };
 
-      // mutability approach
-      //store.items.push(data);
-      //redux would not know that we updated the store this way. this would work in react, but NOT in redux because of immer package that prevents mutability approaches. immer would fix this for you.
-
-      //react only recognizes if the inital value is changed, not if anything is added or removed from the array
-
-      // immutable approach that
-      store.items = [...store.items, newTodo]; // this spreads whatever was before (...store) and adds the new data. makes a totally new array PLUS the values of the old array PLUS the values of the new array
+      // immutable approach
+      store.items = [...store.items, newTodo]; // this spreads whatever was before (...store) and adds the new data. It makes a totally new array that adds the values of the old array PLUS the values of the new array
     },
 
+    // this handles the delete all button
     deleteAll: (store, action) => {
       store.items = [];
     },
-    toggleTodo: (store, action) => {
-      // the action.payload this time is going to be the ID
 
-      // mutability approach
-      //   store.items.forEach(item => {
-      //     if (item.id === action.payload) {
-      //       item.isComplete = !item.isComplete; // this makes the isComplete equal to true
-      //     }
-      //   });
+    // this handles if the todo is cone (checked) or not
+    toggleTodo: (store, action) => {
+      // the action.payload is the ID
 
       // immutable approach
       const updatedItems = store.items.map(item => {
@@ -58,20 +42,18 @@ const todos = createSlice({
           return item;
         }
       });
-
       store.items = updatedItems;
     },
-    deleteTodo: (store, action) => {
-      // mutability approach
-      // store.items.splice(index, numberOfElementsToDeleteFromThatIndex 1)
-      // }
 
-      // immutable approach
+    // this handles the delete button
+    deleteTodo: (store, action) => {
+      // immutable approach. This checks if the ID of the item doesn't match the ID that is action.payload, then we keep it and show only the filtered todos
       const decreasedItems = store.items.filter(
         item => item.id !== action.payload
       );
       store.items = decreasedItems;
     },
+
     completeAll: (store, action) => {
       const completedItems = store.items.map(todo => {
         if (!todo.isComplete) {
@@ -99,6 +81,7 @@ const todos = createSlice({
       });
       store.items = uncompletedItems;
     },
+
     removeAll: store => {
       store.items = [];
     },

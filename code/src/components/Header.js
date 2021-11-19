@@ -1,6 +1,5 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
 import { RemoveAll } from './RemoveAll';
 
 import moment from 'moment';
@@ -13,6 +12,7 @@ const Header = () => {
   const dispatch = useDispatch();
 
   const onButtonClick = () => {
+    // this checks if the number of completed tasks is equal to number of tasks, if true, then we can "un-check" them, else we can check them
     if (completedTasks.length === items.length) {
       dispatch(todos.actions.uncompleteAll());
     } else {
