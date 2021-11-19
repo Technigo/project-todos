@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { todos } from "reducers/todos";
 import styled from "styled-components";
 import { useState } from "react";
-import Select from "react-dropdown-select";
 
 export const AddToDo = () => {
   const [input, setInput] = useState("");
