@@ -1,18 +1,12 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { ReactComponent as EmptyPage } from "../images/empty-page.svg";
 
-import styled from "styled-components";
 import moment from "moment";
 
 import todo from "../reducers/todo";
 
 // styled component that wraps the content
-const TodoContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  padding: 20px;
-`;
 
 const TodoList = () => {
   let store = useSelector((store) => store.todo.items);
@@ -31,13 +25,13 @@ const TodoList = () => {
   if (store.length === 0) {
     return (
       <div className="empty-state">
-        <p>There are no Todos at the moment.!</p>
+        <EmptyPage className="empty-page" />
       </div>
     );
   }
 
   return (
-    <TodoContainer>
+    <div className="to-do-container">
       {store.map((item) => (
         <div key={item.id} className="todo-item">
           {/* We check if the task is marked as completed and change className */}
@@ -63,12 +57,10 @@ const TodoList = () => {
           <span className="task-info">{moment(item.createdAt).fromNow()}</span>
           {item.dueAt < new Date() ? (
             <span className="task-info overdue">
-              {" "}
               Task is overdue {moment(item.dueAt).fromNow()}{" "}
             </span>
           ) : (
             <span className="task-info">
-              {" "}
               Task is due: {moment(item.dueAt).fromNow()}
             </span>
           )}
@@ -77,7 +69,7 @@ const TodoList = () => {
           )}
         </div>
       ))}
-    </TodoContainer>
+    </div>
   );
 };
 

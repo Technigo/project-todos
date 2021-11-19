@@ -22,7 +22,6 @@ const AddTask = () => {
 
   // state variable to hold categories gets passed down to the a component
   const [categoryStorage, setCategoryStorage] = useState("");
-  console.log(categoryStorage);
 
   // Dealing with the date to set tomorrow as the default for the DatePicker
   const [startDate, setStartDate] = useState(todayInSec);
@@ -40,6 +39,7 @@ const AddTask = () => {
         category: categoryStorage,
       })
     );
+    setInput("");
   };
 
   return (

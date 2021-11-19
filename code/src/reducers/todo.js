@@ -46,16 +46,17 @@ const todo = createSlice({
     setFilter: (store, action) => {
       // first condition sorts the array by due date in ascending order
       if (action.payload === "date due") {
-        store.items = store.items.slice().sort((a, b) => {
-          return a.dueAt - b.dueAt;
-        });
+        store.items = store.items.slice().sort((a, b) => a.dueAt - b.dueAt);
       }
-      // HERE I want to filter by boolean
+      // sorts the uncompleted tasks first
       else if (action.payload === "uncompleted") {
-        const sortedArr = store.items.slice().sort((a, b) => {
-          return a.completed - b.completed;
-        });
-        store.items = [...sortedArr];
+        store.items = store.items
+          .slice()
+          .sort((a, b) => a.completed - b.completed);
+      } else if (action.payload === "category") {
+        store.items = store.items
+          .slice()
+          .sort((a, b) => a.category.localeCompare(b.category));
       } else {
         store.items = [...store.items];
       }

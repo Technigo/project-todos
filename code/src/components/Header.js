@@ -4,17 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import todo from "../reducers/todo";
 
 import moment from "moment";
-import styled from "styled-components";
-
-// Styled component that wraps the content
-const Wrapper = styled.div`
-  width: 100%;
-  display: flex;
-  padding: 25px 20px;
-  justify-content: space-between;
-  background-color: #f2f2f2;
-  box-shadow: 0 5px 2px -2px #e9eef1;
-`;
 
 const Header = () => {
   const store = useSelector((store) => store.todo);
@@ -28,12 +17,13 @@ const Header = () => {
     }
   };
 
+  // marks all the tasks as complete
   const onCompleteAll = () => {
     dispatch(todo.actions.compleatAll());
   };
 
   return (
-    <Wrapper>
+    <div className="header-wrapper">
       <div className="header-left">
         <h1>
           Hey, <br /> This is your to-do list.
@@ -57,7 +47,7 @@ const Header = () => {
           </button>
         </div>
       </div>
-    </Wrapper>
+    </div>
   );
 };
 
