@@ -25,6 +25,8 @@ display: -webkit-box;
             /* background: #eee; */
             display: inline-block;
     margin-right: 20px;
+    height: 100%;
+    vertical-align: middle;
 `;
 const Input = styled.input`
 font-size: 15px;
@@ -70,7 +72,7 @@ const Checkbox = (props) => {
 
     const onToggleTodo = (id) => {
         dispatch(todos.actions.toggleTodo(id));
-      };
+    };
 
     return (
         <CheckboxWrapper>
