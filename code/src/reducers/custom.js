@@ -15,7 +15,6 @@ const custom = createSlice({
     selectBackground: (store, action) => {
       const image = action.payload;
       store.selectedBackground = image;
-      console.log("change background", action.payload);
     },
   },
 });
