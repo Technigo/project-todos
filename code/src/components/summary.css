@@ -15,16 +15,16 @@
   position: absolute;
   width: 260px;
   left: 8%;
-  top: 22%;
+  top: 20%;
   color: var(--white);
 }
 .summary h1 {
-  font-size: 35px;
+  font-size: 30px;
   margin: 0;
   padding: 2% 0;
 }
 .summary h2 {
   font-size: 20px;
   margin: 0;
-  padding: 1% 0;
+  padding: 0;
 }

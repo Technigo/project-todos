@@ -16,7 +16,6 @@
 body {
   margin: 0;
   font-family: 'Poppins', sans-serif;
-
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -71,16 +70,14 @@ body {
 }
 .custom-checkbox {
   position: absolute;
-  top: 0px;
+  top: -11px;
   left: 0;
   height: 25px;
   width: 25px;
   background-color: var(--peach);
   border-radius: 50%;
 }
-/* .checkbox-label:hover input ~ .custom-checkbox {
-  background-color: var(--blue);
-} */
+
 .checkbox-label input:checked ~ .custom-checkbox {
   background-color: var(--blue);
 }

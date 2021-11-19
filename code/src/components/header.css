@@ -1,5 +1,6 @@
 :root {
   --pink: #ed86be;
+  --peach: #eda686;
   --blue: #869aed;
   --grey: #a9a9a9;
   --white: #ffffff;
@@ -21,5 +22,6 @@
   margin-top: 13%;
   font-size: 45px;
   padding: 2%;
-  color: var(--black);
+  color: var(--white);
+  text-shadow: 2px 2px 10px #ff9999;
 }

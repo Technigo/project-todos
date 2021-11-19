@@ -9,9 +9,9 @@
 
 .add-todo {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
-  padding-bottom: 5%;
+  padding-bottom: 7%;
   margin: 0 auto;
 
   justify-content: center;
@@ -20,7 +20,7 @@
 
 .add-todo input {
   font-family: 'Poppins', sans-serif;
-  grid-column: span 2;
+  grid-column: span 3;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--grey);
