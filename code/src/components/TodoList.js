@@ -3,6 +3,7 @@ import { useSelector } from "react-redux"
 import { useDispatch } from "react-redux"
 import styled from 'styled-components/macro'
 import { FaTrashAlt } from "react-icons/fa";
+import { selectedTasks } from "reducers/todos";
 
 import todos from "reducers/todos"
 import NoTasks from "./NoTasks";
@@ -53,20 +54,42 @@ const DeleteButton = styled.button`
     margin-top: -4px;
     }
 `
+const ButtonsCount = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 50%;
+    margin: 0 auto;
+    padding: 0;
+`
+const Buttons = styled.button`
+    padding: 7px 7px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d8c1f9;
+    color: whitesmoke;
+    font-size: 15px;
+    min-height: 40px;
+    font-weight: bold;
+    margin: 10px 0px 20px 5px;
+    border: none;
+    border-radius: 5px;
+    @media (min-width: 768px) {
+    font-size: 18px;
+    margin-top: 13px;
+    }
+`
 
 
 const TodoList = () => {
 
-    const items = useSelector((store) => store.todos.items)
+    const items = useSelector((store) => selectedTasks(store))
 
     const dispatch = useDispatch()
     const onDeleteTodo = (id) => {
         dispatch(todos.actions.deleteTodo(id))
     }
-
-    // const onShowDone = () => {
-    //     dispatch(todos.actions.showDone())
-    // }
 
     return (
         <>
@@ -85,9 +108,11 @@ const TodoList = () => {
                         </TaskCheckbox>
                     ))}
                     <CounterButtons />
-                    {/* <button onClick={onShowDone} >Show done</button>
-                    <button onClick={onShowNotDone}>Show not done</button> */}
-                    {/* <button onClick={onShowAll}>Show all</button> */}
+                    <ButtonsCount>
+                        <Buttons onClick={() => dispatch(todos.actions.toggleFilter("all"))} >All</Buttons>
+                        <Buttons onClick={() => dispatch(todos.actions.toggleFilter("active"))} >Active</Buttons>
+                        <Buttons onClick={() => dispatch(todos.actions.toggleFilter("completed"))} >Done</Buttons>
+                    </ButtonsCount>
                 </TodoSection>
             )}
         </>

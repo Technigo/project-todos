@@ -40,6 +40,7 @@ const DueText = styled.p`
 const StyledCategory = styled.p`
     margin: 0;
     font-size: 13px;
+    font-weight: bold;
     font-family: 'Yuji Syuku', serif;
     ${props => props.category === "Household"
         ? `color: green`
@@ -49,7 +50,7 @@ const StyledCategory = styled.p`
                 ? `color: palevioletred`
                 : props.category === "Hobbies"
                     ? `color: purple`
-                    : `color: black`};
+                    : `color: #ae9ac7`};
     @media (min-width: 768px) {
     font-size: 17px;
     }
@@ -84,8 +85,12 @@ const TodoCard = ({ item }) => {
                     {item.text}
                 </label>
             </div>
-            <TaskAddedTime>added: {moment(newData).fromNow()}</TaskAddedTime>
-            <StyledCategory category={item.category}>category: {item.category ? item.category : 'other'}</StyledCategory>
+            <TaskAddedTime>
+                added: {moment(newData).fromNow()}
+            </TaskAddedTime>
+            <StyledCategory category={item.category}>
+                category: {item.category ? item.category : 'other'}
+            </StyledCategory>
             {item.dueDate ? (<DueText
                 style={{
                     color: currentDate >= newDueDate

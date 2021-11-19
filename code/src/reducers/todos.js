@@ -5,12 +5,11 @@ import uniqid from 'uniqid'
 const todos = createSlice({
     name: 'todos',
     initialState: {
-        items: []
+        items: [],
+        filter: "all"
     },
     reducers: {
         addTodo: (store, action) => {
-            // const myStringifiedDate = JSON.stringify(new Date())
-            // console.log(myStringifiedDate)
             const { input, dueDate, category } = action.payload
             const newTodo = {
                 id: uniqid(),
@@ -56,20 +55,29 @@ const todos = createSlice({
             })
             store.items = updatedItems
         },
-        showDone: (store) => {
-            const updatedListDone = store.items.filter(item => {
-                return item.isComplete === true
-            })
-            store.items = updatedListDone
-
-        },
-        showNotDone: (store) => {
-            const updatedListNotDone = store.items.filter(item => {
-                return item.isComplete === false
-            })
-            store.items = updatedListNotDone
-        },
+        toggleFilter: (store, action) => {
+            store.filter = action.payload
+        }
     }
 })
 
 export default todos
+
+export const selectedTasks = (store) => {
+    const filter = store.todos.filter
+    const todos = store.todos.items
+
+    if (filter === "all") {
+        return todos
+    }
+    if (filter === "active") {
+        return todos.filter((item) => {
+            return !item.isComplete
+        })
+    }
+    if (filter === "completed") {
+        return todos.filter((item) => {
+            return item.isComplete
+        })
+    }
+}

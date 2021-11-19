@@ -36,6 +36,11 @@ const StyledInput = styled.input`
             margin: 0;
         }
     }
+    @media (min-width: 992px) {
+        &::placeholder{
+            font-size: 23px;
+        }
+    }
 `
 const StyledInputButton = styled.div` 
     display: flex;
@@ -60,7 +65,10 @@ const StyledDate = styled(DatePicker)`
     color: black;
     margin-left: 10px;
     @media (min-width: 768px) {
-        width: 68%;
+        width: 40%;
+    }
+    @media (min-width: 992px) {
+        width: 30%;
     }
 `
 const StyledIcon = styled.img`
@@ -76,9 +84,11 @@ const AddTodo = () => {
     const [dueDate, setDueDate] = useState('')
     const [category, setCategory] = useState('')
 
+
     const dispatch = useDispatch()
     const onAddTodo = (event, input) => {
         dispatch(todos.actions.addTodo({ input, dueDate, category }))
+        dispatch(todos.actions.toggleFilter("all"))
         event.preventDefault()
         setInput('')
         setDueDate('')
@@ -93,7 +103,7 @@ const AddTodo = () => {
                     value={category}
                     onChange={(event) => setCategory(event.target.value)}
                 >
-                    <option disabled value="">Choose category</option>
+                    <option disabled value="">Choose category &#x025BE; </option>
                     <option value="Household">Household</option>
                     <option value="Work">Work</option>
                     <option value="Social">Social</option>
