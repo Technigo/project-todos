@@ -10,7 +10,6 @@ const StyledForm = styled.form`
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 95%;
   margin: 2vh 2vw;
 
   .todo-input {
@@ -55,7 +54,7 @@ const AddTodo = () => {
         required=''
       />
       <StyledAddTodoButton type='submit' disabled={todoInput === ''}>
-        <span className='button-text'>+</span>
+        <span className='button-text'>&#x2B;</span>
       </StyledAddTodoButton>
     </StyledForm>
   );

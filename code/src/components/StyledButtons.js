@@ -14,11 +14,10 @@ export const StyledAddTodoButton = styled.button`
   border: 0px;
   width: 60px;
   height: 60px;
-  line-height: 60px;
   &:hover {
     cursor: pointer;
   }
-  &.button-text {
+  .button-text {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,9 +29,6 @@ export const StyledDeleteButton = styled.button`
   justify-content: center;
   align-items: center;
   background: #ffde53;
-  color: #515214e3;
-  font-size: 30px;
-  font-weight: 500;
   border-radius: 50%;
   overflow: hidden;
   transition: 0.4s;
@@ -42,29 +38,15 @@ export const StyledDeleteButton = styled.button`
   line-height: 40px;
   padding: 0;
   box-sizing: border-box;
-
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #ffde53;
-  color: #515214e3;
-  font-size: 18px;
-  font-weight: 500;
-  border-radius: 25px;
-  text-align: center;
-  vertical-align: middle;
-  overflow: hidden;
-  transition: 0.4s;
-  border: 0px;
-  width: 35px;
-  height: 25px;
-  line-height: 25px;
-  margin: 5px; */
+  position: relative;
   &:hover {
     cursor: pointer;
   }
-  &.button-text {
-    display: flex;
+
+  .button-text {
+    color: #515214e3;
+    font-size: 30px;
+    font-weight: 500;
     justify-content: center;
     align-items: center;
   }
