@@ -1,0 +1,32 @@
+:root {
+  --pink: #ed86be;
+  --blue: #869aed;
+  --grey: #a9a9a9;
+  --white: #ffffff;
+  --black: #000000;
+}
+
+.add-todo {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 20px;
+
+  justify-content: center;
+  border: 1px solid lime;
+}
+
+.add-todo input {
+  grid-column: span 2;
+  padding: 10px;
+}
+
+.add-todo button {
+  grid-column: span 1;
+  border-radius: 50%;
+  background-color: var(--blue);
+  color: var(--white);
+  border: none;
+  font-size: 30px;
+  height: 50px;
+  width: 50px;
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 
 import todos from '../reducers/todos';
+import './addTodo.css';
 
 const AddTodo = () => {
   const [input, setInput] = useState('');
@@ -14,7 +15,7 @@ const AddTodo = () => {
   };
 
   return (
-    <div>
+    <div className="add-todo">
       <input
         type="text"
         placeholder="Add new task"
