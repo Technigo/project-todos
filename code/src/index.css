@@ -79,7 +79,7 @@ table {
 
 td,
 th {
-  padding: 1rem;
+  padding: 1rem 0.8rem;
 }
 
 th {
@@ -150,6 +150,30 @@ select {
 
 .remove-button:active {
   opacity: 0.5;
+}
+
+.progress {
+  display: flex;
+  justify-content: space-evenly;
+  color: lightslategray;
+  font-style: italic;
+}
+
+footer {
+  font-size: 12px;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: none;
+  font-weight: 700;
+  color: #012f66;
+}
+
+footer a:visited {
+  text-decoration: none;
+  font-weight: 700;
+  color: #012f66;
 }
 
 @media (hover: hover) {

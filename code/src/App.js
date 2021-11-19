@@ -5,6 +5,8 @@ import { combineReducers, createStore } from '@reduxjs/toolkit'
 import Header from 'components/Header'
 import AddTask from 'components/AddTask'
 import TodoList from 'components/TodoList'
+import Progress from 'components/Progress'
+import Footer from 'components/Footer'
 import todos from './reducers/todos'
 
 const reducer = combineReducers({
@@ -47,6 +49,8 @@ export const App = () => {
       <Header />
       <AddTask />
       <TodoList />
+      <Progress />
+      <Footer />
     </Provider>
   )
 }

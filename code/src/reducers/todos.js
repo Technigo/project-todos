@@ -29,7 +29,7 @@ const todos = createSlice({
       store.items = store.items.map((item) => {
         return {
           ...item,
-          status: action.payload ? 'complete' : 'todo',
+          status: action.payload ? 'completed' : 'todo',
           isComplete: action.payload,
         }
       })
@@ -51,7 +51,7 @@ const todos = createSlice({
             // text: item.text,
             // isComplete: item.isComplete,
             ...item,
-            status: item.isComplete ? 'todo' : 'complete',
+            status: item.isComplete ? 'todo' : 'completed',
             isComplete: !item.isComplete,
           }
           return updatedTodo
@@ -80,7 +80,7 @@ const todos = createSlice({
           return {
             ...item,
             status: action.payload.value,
-            isComplete: action.payload.value === 'complete',
+            isComplete: action.payload.value === 'completed',
           }
         }
         return item
