@@ -20,6 +20,7 @@ header {
 
 header h1 {
   color: #fedd00;
+  text-shadow: 1px 2px 2px #d3d3d3;
 }
 
 .amount-quests {
@@ -173,5 +174,20 @@ footer a:visited {
 @media (hover: hover) {
   .remove-button:hover {
     background-color: #f7898e;
+  }
+}
+
+@media (max-width: 375px) {
+  table {
+    font-size: 10px;
+  }
+  .active {
+    font-size: 12px;
+  }
+  select {
+    font-size: 10px;
+  }
+  .progress {
+    font-size: 14px;
   }
 }
