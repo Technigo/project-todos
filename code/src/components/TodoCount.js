@@ -1,14 +1,20 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-scroll";
+import { useDispatch } from "react-redux";
 const TodoCount = () => {
+
+  const dispatch = useDispatch()
   const TodoCount = useSelector((store) => store.todo.length);
 
   const TodoCountCompleted = useSelector((store) =>
     store.todo.filter((todos) => todos.completed === true)
   );
 
+  const todos = useSelector((store) => store.todo);
  
+
+
 
   return (
     <>
@@ -22,7 +28,6 @@ const TodoCount = () => {
       </Link>
       <section className="TodoCountContent" id="count">
         <p>Total todos: {TodoCount} </p>
-
         <p> Completed: {TodoCountCompleted.length} </p>
       </section>
     </>

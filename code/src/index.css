@@ -87,11 +87,19 @@ z-index: -1;
  width: 100%;
 }
 
+.addTodoContainer h1{
+  font-size: 35px;
+  margin: -5px 0 20px 0 ;
+  text-shadow: #ffffff 1px 1px 2px;
+}
+
+
+
 /* Add todo content */
 .addTodoContent {
   width: 320px;
   padding: 0 20px;
-
+margin-bottom: 20px;
   
 
   
@@ -155,7 +163,7 @@ color: white;
 .addTodo___btn button {
   border-radius: 5px;
   font-size: 14px;
-  font-family: 'Patrick Hand', cursive;
+  font-family: 'Jura', sans-serif;
  
 }
 

@@ -28,6 +28,7 @@ const AddTodo = () => {
     <source src={video} type='video/mp4' />
 </video>
 
+<h1> Add a Todo </h1>
       <section className="addTodoContent">
         
         <section className="addTodo___text">
@@ -35,7 +36,7 @@ const AddTodo = () => {
           <form>
             <label>
               {" "}
-              Add title:
+              Title:
               <input
                 className="titel"
                 type="text"
@@ -47,7 +48,7 @@ const AddTodo = () => {
 
             <label>
               {" "}
-              Add a task:
+              Task:
               <textarea
                 className="task"
                 type="text"

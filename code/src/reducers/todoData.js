@@ -26,8 +26,14 @@ const todoData = createSlice({
       
     },
 
+    toggleAll: (store, action) => {
+     const togg = store.findIndex((todo) => todo.completed === false);
+     store[togg].completed = action.payload.completed;
+
+    },
+
     toggleComplete: (state, action) => {
-      const index = state.findIndex((todos) => todos.id === action.payload.id);
+      const index = state.findIndex((todos) => todos === action.payload);
       state[index].completed = action.payload.completed;
     },
 
