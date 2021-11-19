@@ -20,6 +20,7 @@ const todos = createSlice({
         id: uniqid(), // be very precise when making ids. code relies on uniqueness of keys. the uniqid() creates an automatic uniq id. package to install "npm install uniqid"
         text: action.payload,
         isComplete: false,
+        createdAt: new Date(),
       };
 
       // mutability approach

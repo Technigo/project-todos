@@ -166,3 +166,14 @@ input:focus {
     width: 50%;
   }
 }
+
+.date-today,
+.time-today {
+  margin: 5px 0;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.time-date {
+  margin: 10px 0;
+}

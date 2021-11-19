@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 
 import { RemoveAll } from './RemoveAll';
 
+import moment from 'moment';
+
 import todos from '../reducers/todos';
 
 const Header = () => {
@@ -21,6 +23,10 @@ const Header = () => {
   return (
     <div>
       <h1>TODOS</h1>
+      <div className='time-date'>
+        <p className='date-today'>{moment().format('dddd')}</p>
+        <p className='time-today'> {moment().format('HH:mm')} </p>
+      </div>
       <div className='todos-done'>
         tasks done: {completedTasks.length}/{items.length}
       </div>
