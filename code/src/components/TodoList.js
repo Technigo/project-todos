@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components/macro';
+import JSConfetti from 'js-confetti';
 
 import todos from '../reducers/todos';
 import { StyledDeleteButton, CheckAllButton } from './StyledButtons';
@@ -72,6 +73,7 @@ const ButtonContainer = styled.div`
 `;
 
 const TodoList = () => {
+  const jsConfetti = new JSConfetti();
   const todoListItems = useSelector((store) => store.todos.todoListItems);
 
   const dispatch = useDispatch();
@@ -90,6 +92,7 @@ const TodoList = () => {
 
   const onDeleteAll = () => {
     dispatch(todos.actions.deleteAll());
+    jsConfetti.addConfetti();
   };
 
   return (
@@ -133,10 +136,13 @@ const TodoList = () => {
         >
           <span>Check all</span>
         </CheckAllButton>
+        <CheckAllButton
+          className={todoListItems.length <= 0 && 'no-items'}
+          onClick={onDeleteAll}
+        >
+          <span>Delete all</span>
+        </CheckAllButton>
       </ButtonContainer>
-      <button className='false' onClick={onDeleteAll}>
-        Delete all
-      </button>
     </>
   );
 };
