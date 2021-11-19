@@ -59,11 +59,11 @@ export const TodoList = () => {
         Your to-do's
         {/* Your to-do's ({Math.round(itemsChecked * (100 / items.length))}% done) */}
         {/* Your to-do's ({itemsChecked} done, {itemsUnchecked} to go) */}
-        <ProgressbarWrapperStyled>
+        {/* <ProgressbarWrapperStyled>
           <div
             className="progress"
             style={{ width: `${itemsChecked * (100 / items.length)}%` }}></div>
-        </ProgressbarWrapperStyled>
+        </ProgressbarWrapperStyled> */}
       </StyledSmallHeadline>
       <StyledStartText style={{ display: startText() }}>
         No to-dos today?
