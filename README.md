@@ -7,3 +7,4 @@ The taks was to build a to-do application using Redux store. The aim was to prac
 I introduced a sorting option for the todo list with js .sort method. I used moment to format the time.
 
 ## View it live
+https://hey-just-todo-it.netlify.app/
