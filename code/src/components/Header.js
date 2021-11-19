@@ -38,6 +38,12 @@ const TopPage = styled.div`
     color: ${(props) => props.theme.pageBackground};
     transition: all 0.5s ease;
   }
+
+  button:hover {
+    cursor: pointer;
+    color: white;
+    transition: 0.1s;
+  }
 `;
 
 const Header = (props) => {

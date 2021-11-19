@@ -18,6 +18,7 @@ const LightTheme = {
   inputBackground: "#E4EFE7",
   listItemBackground: "#FDFAF6",
   listItem: "#064420",
+  // {textDecorationLine: item.isComplete ? "line-throught" : ""}
   buttonBackground: "#9DBEB9",
 };
 

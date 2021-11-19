@@ -22,6 +22,12 @@ const CompleteButtonStyle = styled.div`
     padding: 5px;
     margin: 0 5px;
   }
+
+  button:hover {
+    cursor: pointer;
+    color: white;
+    transition: 0.1s;
+  }
 `;
 
 const CompleteButtons = () => {

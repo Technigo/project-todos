@@ -6,6 +6,7 @@ const todos = createSlice({
   initialState: {
     items: [],
   },
+
   reducers: {
     addTodo: (store, action) => {
       console.log(action);

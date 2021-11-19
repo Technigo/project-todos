@@ -24,13 +24,45 @@ const ListItems = styled.div`
     color: ${(props) => props.theme.titleColor};
   }
 
+  label {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    border: 1px solid ${(props) => props.theme.buttonBackground};
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 10px;
+    background-color: white;
+    margin: 0;
+  }
+
   button {
     background-color: ${(props) => props.theme.buttonBackground};
     color: ${(props) => props.theme.listItemBackground};
     border: none;
-    border-radius: 10px;
+    border-radius: 50%;
     font-weight: bold;
+    width: 25px;
+    height: 25px;
     padding: 5px;
+  }
+
+  button:hover {
+    cursor: pointer;
+    color: white;
+    transition: 0.1s;
   }
 
   h3,
@@ -100,13 +132,31 @@ const TodoList = () => {
         // )
         .map((item) => (
           <div key={item.id}>
-            <section>
-              <h3>{item.text}</h3>
+            <section
+            // style={{
+            //   textDecoration: item.isComplete ? "line-throught" : "",
+            // }}
+            >
               <label>
+                <h3
+                  style={{
+                    textDecoration: item.isCorrect ? "line-through" : "",
+                  }}
+                  // clasName="todo"
+                  // style={{
+                  //   textDecorationLine: item.isComplete ? "line-throught" : "",
+                  // }}
+                >
+                  {item.text}
+                </h3>
+
                 <input
                   type="checkbox"
                   checked={item.isComplete}
                   onChange={() => onToggleTodo(item.id)}
+                  // style={{
+                  //   textDecorationLine: item.isComplete ? "line-throught" : "",
+                  // }}
                 />
               </label>
             </section>
@@ -115,7 +165,7 @@ const TodoList = () => {
             moment().format("MMM Do YY")*/}
               <p>{moment().format("MMM Do YY")}</p>
               {/* <textarea rows="2" name="comments"></textarea> */}
-              <button onClick={() => onDeleteTodo(item.id)}>Delete</button>
+              <button onClick={() => onDeleteTodo(item.id)}>X</button>
             </section>
           </div>
         ))}

@@ -10,7 +10,7 @@ const InputStyle = styled.div`
   background-color: ${(props) => props.theme.inputBackground};
   padding: 0 0 20px 0;
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
 
@@ -22,12 +22,21 @@ const InputStyle = styled.div`
   }
 
   button {
-    padding: 10px;
+    align-self: center;
     background-color: ${(props) => props.theme.buttonBackground};
     color: ${(props) => props.theme.inputBackground};
     border: none;
-    border-radius: 10px;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
     font-weight: bold;
+    text-align: center;
+  }
+
+  button:hover {
+    cursor: pointer;
+    border: 2px solid white;
+    transition: 0.1s;
   }
 `;
 
@@ -35,7 +44,7 @@ const AddTodo = () => {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
 
-  const onAddTodo = () => {
+  const onAddTodo = (event) => {
     dispatch(todos.actions.addTodo(input));
   };
 
@@ -48,7 +57,9 @@ const AddTodo = () => {
           value={input}
           onChange={(event) => setInput(event.target.value)}
         />
-        <button onClick={onAddTodo}>Add todo</button>
+        <button disabled={input === ""} onClick={onAddTodo} value={""}>
+          ➕
+        </button>
       </InputStyle>
     </>
   );
