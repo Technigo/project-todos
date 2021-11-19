@@ -88,7 +88,6 @@ h1 {
   flex-wrap: nowrap;
   flex-direction: column;
   width: 257px;
-  overflow: auto;
 }
 
 .one-todo-wrapper {
