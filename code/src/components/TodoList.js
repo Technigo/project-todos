@@ -83,7 +83,12 @@ const TodoList = () => {
       {items.map((item) => (
         <Wrapper key={item.id}>
           <SmallWrapper>
-            <SmallText>Finish by: {item.date}</SmallText>
+            <SmallText>
+              Finish by:{" "}
+              {DateTime.fromJSDate(item.date)
+                .setZone("Europe/Stockholm")
+                .toFormat("dd LLL yyyy")}
+            </SmallText>
             <SmallText>
               Added:{" "}
               {DateTime.fromISO(item.added)
