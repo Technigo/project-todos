@@ -352,7 +352,7 @@ justify-content: space-around;
   font-size: 12px;
   border: rgba(169, 169, 169, 0.644) 2px solid;
   box-shadow: rgb(255, 255, 255) 1px 1px 5px 5px;
-
+  color: black;
   }
   
 
@@ -362,6 +362,7 @@ justify-content: space-around;
     
     background-color: rgb(167, 166, 166);
     box-shadow: rgb(167, 166, 166) 1px 1px 5px 5px;
+    
   
     }
 
