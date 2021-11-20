@@ -55,7 +55,12 @@ export const TodoList = () => {
 						onChange={() => onToggleTodo(item.id)}
 					/>
 					<TaskName>{item.text}</TaskName>
-					<DeleteButton onClick={() => onDeleteTodo(item.id)}>x</DeleteButton>
+					<DeleteButton
+						aria-label="delete"
+						onClick={() => onDeleteTodo(item.id)}
+					>
+						x
+					</DeleteButton>
 				</ListContainer>
 			))}
 		</section>

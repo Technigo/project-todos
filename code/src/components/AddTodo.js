@@ -6,7 +6,10 @@ import styled from "styled-components";
 const AddTodoSection = styled.div`
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
-	margin-top: 20px;
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	left: 1rem;
 `;
 
 const TextInput = styled.input`
