@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 26.0.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="Lager_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 283.5 56.7" style="enable-background:new 0 0 283.5 56.7;" xml:space="preserve">
+<style type="text/css">
+	.st0{filter:url(#Adobe_OpacityMaskFilter);}
+	.st1{fill:url(#SVGID_00000116201066465480069630000016065665124378507913_);}
+	.st2{mask:url(#SVGID_1_);fill:#354F9D;}
+</style>
+<defs>
+	<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="0" y="0" width="283.5" height="56.7">
+		
+			<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
+	</filter>
+</defs>
+<mask maskUnits="userSpaceOnUse" x="0" y="0" width="283.5" height="56.7" id="SVGID_1_">
+	<g class="st0">
+		
+			<linearGradient id="SVGID_00000156577930762289603350000017914035194259661978_" gradientUnits="userSpaceOnUse" x1="-430.3371" y1="138.3615" x2="-373.6442" y2="138.3615" gradientTransform="matrix(6.123234e-17 1 -1 6.123234e-17 280.0938 430.3371)">
+			<stop  offset="0.1" style="stop-color:#FFFFFF"/>
+			<stop  offset="0.9" style="stop-color:#000000"/>
+		</linearGradient>
+		<polygon style="fill:url(#SVGID_00000156577930762289603350000017914035194259661978_);" points="0,56.7 0,0 283.5,0 283.5,56.7 
+					"/>
+	</g>
+</mask>
+<rect y="0" class="st2" width="283.5" height="56.7"/>
+</svg>

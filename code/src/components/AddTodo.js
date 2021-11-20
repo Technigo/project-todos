@@ -9,8 +9,6 @@ export const AddTodo = () => {
   const [category, setCategory] = useState('')
   const [showForm, setShowForm] = useState(false)
 
-  // const categories = ['business', 'personal', 'shopping']
-
   const toggleShowForm = () => {
     if (showForm) {
       setShowForm(false)
@@ -21,24 +19,11 @@ export const AddTodo = () => {
 
   const dispatch = useDispatch()
 
-  const onAddTodo = (event) => {
-    // event.preventDefault()
+  const onAddTodo = () => {
     dispatch(todos.actions.addTodo({ input, category }))
-    setShowForm(false)
+    setShowForm(true)
     setInput('')
-    // console.log('input: ', input)
-    // console.log('category: ', category)
   }
-
-  // const categoryColor = (item) => {
-  //   if (item === 'business') {
-  //     return '2px solid dodgerblue'
-  //   } else if (item === 'shopping') {
-  //     return '2px solid limegreen'
-  //   } else {
-  //     return '2px solid tomato'
-  //   }
-  // }
 
   return (
     <StyledContainer>
@@ -106,20 +91,6 @@ export const AddTodo = () => {
                 </span>
               </label>
             </IconContainer>
-
-            {/* {categories.map((item) => (
-              <label key={item} htmlFor={item}>
-                <input
-                  type="radio"
-                  id={item}
-                  name="category"
-                  value={item}
-                  onChange={(event) => setCategory(event.target.value)}
-                />
-                <span className="span">{item}</span>
-              </label>
-            ))} */}
-
             <StyledButton
               type="submit"
               disabled={input === ''}
@@ -210,7 +181,8 @@ const StyledButton = styled.button`
   align-items: center;
   justify-content: center;
   padding: 0;
-  background-color: darkviolet;
+  background-color: transparent;
+  border: 2px solid white;
 `
 
 const StyledSmallHeadline = styled.h3`
