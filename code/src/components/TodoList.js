@@ -20,9 +20,13 @@ const TodoList = () => {
     dispatch(todos.actions.deleteTodo(id));
   };
 
-  // delete all todo
+  // complete all todo
   const onClickCompleteAll = () => {
     dispatch(todos.actions.completeAllTodos());
+  };
+
+  const onClickDeleteAll = (id) => {
+    dispatch(todos.actions.deleteAllTodos(id));
   };
 
   // filter todo
@@ -52,13 +56,22 @@ const TodoList = () => {
           />
         </div>
       ))}
-      <button
-        className="delete-all"
-        disabled={items.length < 1}
-        onClick={onClickCompleteAll}
-      >
-        complete all
-      </button>
+      <div className="button-wrapper">
+        <button
+          className="clear-all"
+          disabled={items.length < 1}
+          onClick={onClickCompleteAll}
+        >
+          complete all
+        </button>
+        <button
+          className="delete-all"
+          disabled={items.length < 1}
+          onClick={onClickDeleteAll}
+        >
+          delete all
+        </button>
+      </div>
 
       {/* <h3>done</h3> */}
       {completeTodos.map((item) => (

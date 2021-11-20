@@ -79,6 +79,10 @@ const todos = createSlice({
       });
       store.items = completeAll;
     },
+
+    deleteAllTodos: (store, action) => {
+      store.items = [];
+    },
   },
 });
 

@@ -80,20 +80,26 @@
 .round input[type='checkbox']:checked + label:after {
   opacity: 1;
 } */
+.button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
 
-.delete-all {
+.delete-all,
+.clear-all {
   font-size: 18px;
   height: 50px;
-  width: 200px;
+  width: 150px;
   /* font-size: 16px; */
   /* appearance: none; */
   border-radius: 50px;
-  background: var(--black);
-  color: var(--white);
+  background: var(--grey);
+  color: var(--black);
   border: none;
 
   font-weight: bold;
-  margin: 10px;
+  margin: 40px 10px;
   cursor: pointer;
 }
 
