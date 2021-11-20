@@ -37,6 +37,10 @@ background-color: transparent;
 border-bottom: 2px solid #000046;
 font-size: 22px;
 font-family: 'Architects Daughter', cursive;
+::placeholder {
+  font-size: 16px;
+  color: #cccccc;
+}
 `;
 
 
@@ -60,6 +64,7 @@ const AddTodo = () => { //pass anonymus function
       <Input
         type="text"
         value={input}
+        placeholder="Add a jaw-some todo here"
         onChange={(event) => setInput(event.target.value)}
       />
       <AddTodoButton onClick={onAddTodo}>Add todo <FontAwesomeIcon icon={faPlusSquare} /></AddTodoButton>
