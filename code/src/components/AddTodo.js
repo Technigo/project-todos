@@ -7,15 +7,26 @@ const AddTodoSection = styled.div`
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	position: fixed;
-	bottom: 30px;
-	right: 20px;
-	left: 20px;
+	bottom: 0px;
+	right: 0px;
+	left: 0px;
+	background-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0),
+		#fcfcff,
+		#fcfcff,
+		#fcfcff,
+		#fcfcff
+	);
+	padding: 30px 20px 30px 20px;
 `;
 
+// background-color: #fcfcff;
+
 const TextInput = styled.input`
-	height: 45px;
+	height: 60px;
 	grid-column: span 4;
-	padding: 10px;
+	padding: 15px;
 	font-size: 16px;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
@@ -31,10 +42,11 @@ const TextInput = styled.input`
 `;
 
 const AddTaskButton = styled.button`
-	height: 45px;
-	border: none;
+	height: 60px;
 	background-color: #60c57f;
+	border: none;
 	font-weight: 600;
+	font-size: 16px;
 	color: #ffffff;
 	border-top-right-radius: 6px;
 	border-bottom-right-radius: 6px;

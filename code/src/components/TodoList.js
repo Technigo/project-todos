@@ -3,6 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { todos } from "../reducers/todos";
 
+const ListSection = styled.section`
+	margin-bottom: 120px;
+`;
+
 const ListContainer = styled.div`
 	display: flex;
 	align-items: center;
@@ -11,7 +15,7 @@ const ListContainer = styled.div`
 	margin: 7px 0;
 	border-radius: 5px;
 	border: 1px solid #e0e0e0;
-	min-height: 55px;
+	min-height: 60px;
 	padding: 10px;
 `;
 
@@ -46,7 +50,7 @@ export const TodoList = () => {
 	};
 
 	return (
-		<section>
+		<ListSection>
 			{items.map((item, index) => (
 				<ListContainer key={item.id}>
 					<Checkbox
@@ -63,6 +67,6 @@ export const TodoList = () => {
 					</DeleteButton>
 				</ListContainer>
 			))}
-		</section>
+		</ListSection>
 	);
 };
