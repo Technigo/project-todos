@@ -14,12 +14,12 @@ export const EmptyList = () => {
   }
 
   return (
-    <>
+    <Wrapper>
       <StyledStartText style={{ display: startText() }}>
         No to-dos today?
       </StyledStartText>
       <Swallows />
-    </>
+    </Wrapper>
   )
 }
 
@@ -29,4 +29,8 @@ const StyledStartText = styled.p`
   font-weight: 300;
   color: white;
   width: 80%;
+`
+const Wrapper = styled.div`
+  width: 100%;
+  margin-top: 35px;
 `

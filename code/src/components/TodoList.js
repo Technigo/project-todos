@@ -150,4 +150,5 @@ const StyledOverlay = styled(Overlay)`
   z-index: 10;
   position: fixed;
   bottom: 0;
+  left: 0;
 `
