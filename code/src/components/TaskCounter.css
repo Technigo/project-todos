@@ -1,0 +1,8 @@
+.counter-container {
+  display: flex;
+  font-size: 1.3em;
+  height: 2.4em;
+  margin-left: auto;
+  margin-right: auto;
+  width: 90%;
+}
