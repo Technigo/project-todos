@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from 'styled-components';
 
-import Todos from '../reducers/Todos'
+import Todos from '../reducers/todos'
 
 //styling the component here:
 const Container  = styled.div`
@@ -15,12 +15,14 @@ padding: 20px;
 margin: auto;
 border: 2px solid grey;
 border-top: none;
+box-shadow: 0 1px 2px 0 rgb(0 0 0 / 30%), 0 2px 6px 2px rgb(0 0 0 / 15%);
 `
 const Input = styled.input`
 display: inline-block;
 padding: 20px;
 margin: 10px 10px;
 border-radius: 3px;
+background: rgb(237, 237, 237);
 font-weight: 600;
 overflow-wrap: break-word;
 word-break: break-word;
@@ -33,10 +35,21 @@ margin: auto;
 width: auto;
 background: transparent;
 color: black;
-border-radius: 5px;
+border-radius: 3px;
 border: 2px solid grey;
+box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
 font-family: 'Hind Vadodara', sans-serif;
 font-weight: 600;
+
+&:hover {
+    color: white;
+    background-color: grey;
+}
+&:active {
+    background-color: grey;
+    transition: 0.5s;
+    color: #white;
+}
 `
 
 const AddTodo = () => {
@@ -51,7 +64,8 @@ const AddTodo = () => {
             <Input 
                 type="text" 
                 value={input} 
-                onChange={(event) => setInput(event.target.value)}/>
+                onChange={(event) => setInput(event.target.value)}
+                placeholder="Type new to-do"/>
             <Button onClick={onAddTodo} > 
                 Add task 
             </Button>                
