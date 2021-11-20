@@ -1,7 +1,7 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { combineReducers, createStore } from "@reduxjs/toolkit";
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 
 import todos from "./reducers/todos";
 
@@ -9,13 +9,18 @@ import Header from "./components/Header";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 
+const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: rgb(236, 229, 255);
+  }
+  `;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: rgb(236, 229, 255);
   font-family: "rubik";
 `;
 
@@ -52,6 +57,7 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
+      <GlobalStyle />
       <Wrapper>
         <Header />
         <AddTodo />

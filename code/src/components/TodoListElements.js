@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components/macro";
 
@@ -29,8 +29,8 @@ const Wrapper = styled.div`
   width: 90%;
   max-width: 300px;
   margin-top: 0px;
-  border-top: 1px solid purple;
-  border-bottom: 1px solid purple;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 
   &:nth-child(2n-1) {
     background-color: ${(prop) =>
