@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import styled from "styled-components/macro";
 
@@ -10,8 +10,16 @@ const HeadingTwo = styled.h2`
   font-family: "Ranga", cursive;
   font-size: 28px;
   font-weight: 500;
-  margin-top: 0;
+  margin-top: 20px;
   margin-bottom: 0;
+  text-align: center;
+`;
+
+const HeadingThree = styled.h3`
+  font-family: "Ranga", cursive;
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 0;
   text-align: center;
 `;
 
@@ -22,13 +30,28 @@ const Wrapper = styled.div`
   max-width: 300px;
   margin-top: 0px;
   border-top: 1px solid purple;
-
-  &:nth-child(2n) {
-    background-color: rgba(232, 195, 232, 0.5);
-  }
+  border-bottom: 1px solid purple;
 
   &:nth-child(2n-1) {
-    background-color: rgba(218, 158, 218, 0.5);
+    background-color: ${(prop) =>
+      prop.heading === "Prio 1"
+        ? "rgba(203, 155, 237, 0.5)"
+        : prop.heading === "Prio 2"
+        ? "rgba(155, 183, 211, 0.5)"
+        : prop.heading === "Prio 3"
+        ? "rgba(237, 203, 155, 0.5)"
+        : "rgba(162, 162, 97, 0.5)"};
+  }
+
+  &:nth-child(2n) {
+    background-color: ${(prop) =>
+      prop.heading === "Prio 1"
+        ? "rgba(151, 55, 219, 0.5)"
+        : prop.heading === "Prio 2"
+        ? "rgba(72, 114, 157, 0.5)"
+        : prop.heading === "Prio 3"
+        ? "rgba(218, 146, 46, 0.5)"
+        : "beige"};
   }
 `;
 
@@ -93,14 +116,21 @@ const TodoListElements = ({ list, heading }) => {
     dispatch(todos.actions.deleteTodo(id));
   };
 
-  console.log(list);
-  console.log(heading);
+  const checkList = () => {
+    if (
+      list.filter((item) => item.isComplete).length === list.length
+    ) {
+      return "All done!";
+    } else return "Some tasks left...";
+  };
+
   if (list.length) {
     return (
       <>
         <HeadingTwo>{heading}</HeadingTwo>
+        <HeadingThree>{checkList()}</HeadingThree>
         {list.map((item) => (
-          <Wrapper key={item.id}>
+          <Wrapper key={item.id} heading={heading}>
             <SmallWrapper>
               <SmallText>
                 Finish by:{" "}
