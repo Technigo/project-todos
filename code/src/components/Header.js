@@ -18,7 +18,7 @@ const StyledBigHeadline = styled.h1`
 export const Header = () => {
   return (
     <StyledContainer>
-      <StyledBigHeadline>What to-do next?</StyledBigHeadline>
+      <StyledBigHeadline>What to-do?</StyledBigHeadline>
     </StyledContainer>
   )
 }
