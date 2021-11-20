@@ -29,19 +29,19 @@ const theme = (theme) => ({
   },
 });
 
-const AddTag = ({ setNewProject, newProject }) => {
+const AddTag = ({ setNewProject, newLabel, setNewLabel }) => {
   return (
     <div>
       <label>
-        Project (optional)
+        Prio (optional)
         <Select
           name="projects"
-          value={newProject}
+          value={newLabel}
           styles={styles}
           options={options}
           theme={theme}
           onChange={(todo) => {
-            console.log("Project is set to: ", todo.value);
+            setNewLabel(todo);
             setNewProject(todo.value);
           }}
         />

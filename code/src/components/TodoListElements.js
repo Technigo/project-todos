@@ -59,6 +59,36 @@ const Wrapper = styled.div`
   }
 `;
 
+const DeleteButton = styled.div`
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 5px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 12px;
+  text-decoration: none;
+  color: black;
+  background: rgba(218, 46, 46, 0.3);
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border-radius: 30px;
+  border: 2px solid rgba(146, 21, 21, 0.6);
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 0 rgba(146, 21, 21, 0.3);
+  width: 12px;
+  height: 12px;
+
+  &:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 rgba(146, 21, 21, 0.3);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+`;
+
 const ListItem = styled.div`
   display: flex;
   flex-direction: row;
@@ -161,7 +191,9 @@ const TodoListElements = ({ list, heading }) => {
                 />
                 <p>{item.text}</p>
               </FlexRow>
-              <button onClick={() => onDeleteTodo(item.id)}>x</button>
+              <DeleteButton onClick={() => onDeleteTodo(item.id)}>
+                X
+              </DeleteButton>
             </ListItem>
             <Tags>
               {" "}

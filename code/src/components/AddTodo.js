@@ -17,10 +17,20 @@ const Wrapper = styled.div`
   width: 90%;
   max-width: 300px;
 `;
+const SmallWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+`;
 
 const InputField = styled.input`
   font-family: inherit;
   display: block;
+  height: 36px;
+  width: 98%;
+  border: rgb(204, 204, 204) solid 1px;
 `;
 
 const Button = styled.button`
@@ -58,23 +68,30 @@ const AddTodo = () => {
   const [newProject, setNewProject] = useState("");
   const [newDate, setNewDate] = useState(new Date());
   const [newTags, setNewTags] = useState([]);
+  const [newLabel, setNewLabel] = useState("");
 
   const dispatch = useDispatch();
 
   const onAddTodo = () => {
-    const dateAdded = DateTime.now();
-    setNewTodo("");
-    setNewDate(new Date());
-    setNewTags([]);
-    setNewProject("");
-    let todoObject = {
-      newTodo,
-      newProject,
-      newDate,
-      newTags,
-      dateAdded,
-    };
-    dispatch(todos.actions.addTodo(todoObject));
+    if (newTodo === "") {
+      alert("Hey there, there is no todo! Fill in your todo");
+    } else {
+      const dateAdded = DateTime.now();
+
+      let todoObject = {
+        newTodo,
+        newProject,
+        newDate,
+        newTags,
+        dateAdded,
+      };
+      dispatch(todos.actions.addTodo(todoObject));
+      setNewTodo("");
+      setNewDate(new Date());
+      setNewTags([]);
+      setNewProject("");
+      setNewLabel("");
+    }
   };
 
   return (
@@ -89,11 +106,16 @@ const AddTodo = () => {
           onChange={(todo) => setNewTodo(todo.target.value)}
         />
       </label>
-      <AddProject
-        setNewProject={setNewProject}
-        newProject={newProject}
-      />
-      <AddDate setNewDate={setNewDate} newDate={newDate} />
+      <SmallWrapper>
+        {" "}
+        <AddProject
+          setNewProject={setNewProject}
+          newLabel={newLabel}
+          setNewLabel={setNewLabel}
+        />
+        <AddDate setNewDate={setNewDate} newDate={newDate} />
+      </SmallWrapper>
+
       <AddTag setNewTags={setNewTags} newTags={newTags} />
       <Button onClick={onAddTodo}>Add Todo</Button>
     </Wrapper>

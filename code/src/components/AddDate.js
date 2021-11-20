@@ -12,6 +12,8 @@ const Wrapper = styled.div`
   }
   .react-datepicker__input-container input {
     font-family: "rubik";
+    height: 34px;
+    border: rgb(204, 204, 204) solid 1px;
   }
 `;
 
