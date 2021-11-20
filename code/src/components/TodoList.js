@@ -93,10 +93,10 @@ const TodoList = () => {
                     checked={item.isComplete}
                     onChange={() => onToggleTodo(item.id)}
                   />
+                  <CheckMark></CheckMark>
                 </Container>
               </span>
               <ButtonBox>
-                <CheckMark></CheckMark>
                 <ButtonInput
                   edge="end"
                   aria-label="edit"

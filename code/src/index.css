@@ -37,12 +37,6 @@ code {
   display: flex;
 }
 
-.Button-box {
-  display: flex;
-
-  flex-direction: flex-end;
-}
-
 .text-wrapper {
   display: flex;
   font-family: "Baloo 2", cursive;
@@ -118,19 +112,6 @@ code {
   border: 1px solid #ffc5dd;
   margin-top: 25px;
 }
-.button-input {
-  margin-right: 10px;
-  margin-top: 10px;
-  height: 30px;
-  width: 30px;
-  background-color: #ff0266;
-  color: #ffffff;
-  text-transform: uppercase;
-  border-style: none;
-  border-radius: 50px;
-  cursor: pointer;
-  outline: none;
-}
 
 /* CHECKBOX */
 .container {
@@ -153,19 +134,6 @@ code {
   cursor: pointer;
   height: 0;
   width: 0;
-}
-
-.checkmark {
-  margin-top: 15px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
-  display: flex;
-  border-radius: 15px;
-  margin-left: 10px;
 }
 
 .container:hover input ~ .checkmark {

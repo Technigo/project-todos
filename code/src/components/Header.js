@@ -7,7 +7,7 @@ import styled from "styled-components";
 const Header = () => {
   const [visible, setVisible] = useState(true);
   const items = useSelector((store) => store.todos.items);
-  const completedTodos = items.filter((todo) => todo.isComplete);
+  // const completedTodos = items.filter((todo) => todo.isComplete);
   const dispatch = useDispatch();
   const counter = useSelector((store) => store.todos.items.length);
   const donetask = useSelector((store) =>

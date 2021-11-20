@@ -1,9 +1,23 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-// import moment from 'moment';
 import { FaPlus } from "react-icons/fa";
+import styled from "styled-components";
 
 import todos from "../reducers/todos";
+
+const ButtonInput = styled.button`
+  margin-right: 10px;
+  margin-top: 10px;
+  height: 30px;
+  width: 30px;
+  background-color: #ff0266;
+  color: #ffffff;
+  text-transform: uppercase;
+  border-style: none;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+`;
 
 const AddTodo = () => {
   const [input, setInput] = useState("");
@@ -25,9 +39,9 @@ const AddTodo = () => {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button className="button-input" onClick={() => onAddTodo(input)}>
+      <ButtonInput onClick={() => onAddTodo(input)}>
         <FaPlus />
-      </button>
+      </ButtonInput>
     </div>
   );
 };
