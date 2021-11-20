@@ -23,6 +23,7 @@ const todos = createSlice({
       const newTodo = {
         id: uniqid(),
         text: action.payload.newTodo,
+        project: action.payload.newProject,
         date: action.payload.newDate,
         tags: action.payload.newTags,
         added: action.payload.dateAdded,

@@ -6,6 +6,7 @@ import todos from "../reducers/todos";
 
 import AddTag from "../components/AddTag";
 import AddDate from "../components/AddDate";
+import AddProject from "./AddProject";
 
 const { DateTime } = require("luxon");
 
@@ -13,7 +14,6 @@ const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 200px;
   width: 90%;
   max-width: 300px;
 `;
@@ -25,6 +25,7 @@ const InputField = styled.input`
 
 const AddTodo = () => {
   const [newTodo, setNewTodo] = useState("");
+  const [newProject, setNewProject] = useState("");
   const [newDate, setNewDate] = useState(new Date());
   const [newTags, setNewTags] = useState([]);
 
@@ -32,13 +33,17 @@ const AddTodo = () => {
 
   const onAddTodo = () => {
     const dateAdded = DateTime.now();
-    // const tagsArray = newTags.map((tag) => {
-    //   return tag.value;
-    // });
     setNewTodo("");
     setNewDate(new Date());
     setNewTags([]);
-    let todoObject = { newTodo, newDate, newTags, dateAdded };
+    setNewProject("");
+    let todoObject = {
+      newTodo,
+      newProject,
+      newDate,
+      newTags,
+      dateAdded,
+    };
     dispatch(todos.actions.addTodo(todoObject));
   };
 
@@ -54,6 +59,10 @@ const AddTodo = () => {
           onChange={(todo) => setNewTodo(todo.target.value)}
         />
       </label>
+      <AddProject
+        setNewProject={setNewProject}
+        newProject={newProject}
+      />
       <AddDate setNewDate={setNewDate} newDate={newDate} />
       <AddTag setNewTags={setNewTags} newTags={newTags} />
       <button onClick={onAddTodo}>Add Todo</button>

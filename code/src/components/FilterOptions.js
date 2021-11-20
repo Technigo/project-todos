@@ -47,7 +47,7 @@ const FilterOptions = () => {
   return (
     <div>
       <label>
-        Tags (optional)
+        Filter
         <Select
           name="filter-options"
           styles={styles}

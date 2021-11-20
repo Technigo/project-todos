@@ -8,12 +8,31 @@ import FilterOptions from "./FilterOptions";
 
 const { DateTime } = require("luxon");
 
+const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: space-between;
+  height: 80px;
+  width: 90%;
+  max-width: 300px;
+  margin-top: 20px;
+  margin-bottom: 0px;
+`;
+
+const SmallBtnWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 0;
+`;
+
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 90%;
   max-width: 300px;
-  margin-top: 10px;
+  margin-top: 0px;
   border-top: 1px solid purple;
 
   &:nth-child(2n) {
@@ -54,10 +73,10 @@ const SmallText = styled.p`
   margin-bottom: 0;
 `;
 
-const TagText = styled.p`
-  font-size: 10px;
-  margin: 0;
-  padding: 0;
+const Tags = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
 `;
 
 const Tag = styled.div`
@@ -66,6 +85,14 @@ const Tag = styled.div`
   padding: 2px;
   width: max-content;
   height: min-content;
+  border-radius: 10%;
+  margin: 3px;
+`;
+
+const TagText = styled.p`
+  font-size: 10px;
+  margin: 0;
+  padding: 0;
 `;
 
 const TodoList = () => {
@@ -73,23 +100,24 @@ const TodoList = () => {
   const filter = useSelector((store) => store.todos.filter);
   const [newItems, setNewItems] = useState([]);
 
-  const filterList = () => {
-    if (filter === "checked") {
-      setNewItems(items.filter((item) => item.isComplete === true));
-    } else if (filter === "unchecked") {
-      setNewItems(items.filter((item) => item.isComplete === false));
-    } else if (filter === "showall") {
-      setNewItems(items);
-    } else {
-      setNewItems(
-        items.filter((item) =>
-          item.tags.some((tag) => tag.value === filter)
-        )
-      );
-    }
-  };
-
   useEffect(() => {
+    const filterList = () => {
+      if (filter === "checked") {
+        setNewItems(items.filter((item) => item.isComplete === true));
+      } else if (filter === "unchecked") {
+        setNewItems(
+          items.filter((item) => item.isComplete === false)
+        );
+      } else if (filter === "showall") {
+        setNewItems(items);
+      } else {
+        setNewItems(
+          items.filter((item) =>
+            item.tags.some((tag) => tag.value === filter)
+          )
+        );
+      }
+    };
     filterList();
   }, [filter, items]);
 
@@ -110,13 +138,17 @@ const TodoList = () => {
 
   return (
     <>
-      <button onClick={() => onCheckTodos(true)}>
-        Check all tasks
-      </button>
-      <button onClick={() => onCheckTodos(false)}>
-        Uncheck all tasks
-      </button>
-      <FilterOptions />
+      <ButtonWrapper>
+        <SmallBtnWrap>
+          <button onClick={() => onCheckTodos(true)}>
+            Check all tasks
+          </button>
+          <button onClick={() => onCheckTodos(false)}>
+            Uncheck all tasks
+          </button>
+        </SmallBtnWrap>
+        <FilterOptions />
+      </ButtonWrapper>
       {newItems.map((item) => (
         <Wrapper key={item.id}>
           <SmallWrapper>
@@ -144,11 +176,14 @@ const TodoList = () => {
             </FlexRow>
             <button onClick={() => onDeleteTodo(item.id)}>x</button>
           </ListItem>
-          {item.tags.map((tag) => (
-            <Tag key={tag.value}>
-              <TagText>{tag.value}</TagText>
-            </Tag>
-          ))}
+          <Tags>
+            {" "}
+            {item.tags.map((tag) => (
+              <Tag key={tag.value}>
+                <TagText>{tag.value}</TagText>
+              </Tag>
+            ))}
+          </Tags>
         </Wrapper>
       ))}
     </>
