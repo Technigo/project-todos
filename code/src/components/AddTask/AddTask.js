@@ -11,13 +11,16 @@ const AddTask = () => {
     dispatch(tasks.actions.addTask(input));
   };
   const cleanInput = () => {
+    {
+      /* Clean the input box upon submitting */
+    }
     setInput('');
   };
 
   return (
     <div className='form-container'>
       {/* A form to control form elements and then pass the values into actions
-      upon submitting. */}
+      after submitting. */}
       <span className='input-span'>
         <button
           className='task-button'
