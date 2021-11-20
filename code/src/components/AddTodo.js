@@ -10,18 +10,18 @@ const AddTodoSection = styled.div`
 	bottom: 0px;
 	right: 0px;
 	left: 0px;
-	background-image: linear-gradient(
-		to bottom,
-		rgba(0, 0, 0, 0),
-		#fcfcff,
-		#fcfcff,
-		#fcfcff,
-		#fcfcff
-	);
-	padding: 30px 20px 30px 20px;
+	background-color: #fcfcff;
+	padding: 20px 20px 30px 20px;
 `;
 
-// background-color: #fcfcff;
+// background-image: linear-gradient(
+// 	to bottom,
+// 	rgba(0, 0, 0, 0),
+// 	#fcfcff,
+// 	#fcfcff,
+// 	#fcfcff,
+// 	#fcfcff
+// );
 
 const TextInput = styled.input`
 	height: 60px;

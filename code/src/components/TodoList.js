@@ -3,29 +3,40 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { todos } from "../reducers/todos";
 
-const ListSection = styled.section`
-	margin-bottom: 120px;
+const ListContainer = styled.section`
+	margin-bottom: 110px;
 `;
 
-const ListContainer = styled.div`
+const FormContainer = styled.form`
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	justify-content: space-between;
 	background-color: #ffffff;
 	margin: 7px 0;
 	border-radius: 5px;
 	border: 1px solid #e0e0e0;
 	min-height: 60px;
-	padding: 10px;
+	padding: 15px;
 `;
 
 const Checkbox = styled.input`
 	border-radius: 50%;
+	position: relative;
+	top: 5px;
 `;
 
-const TaskName = styled.p`
+const TaskName = styled.label`
 	width: 100%;
-	padding: 0 10px;
+	padding-left: 10px;
+	margin-right: 10px;
+	display: flex;
+	flex-direction: column;
+`;
+
+const Date = styled.span`
+	font-size: 11px;
+	color: #b0b0b0;
+	line-height: 12px;
 `;
 
 const DeleteButton = styled.button`
@@ -34,6 +45,8 @@ const DeleteButton = styled.button`
 	width: 20px;
 	height: 20px;
 	border-radius: 50%;
+	position: relative;
+	top: 5px;
 `;
 
 export const TodoList = () => {
@@ -50,23 +63,29 @@ export const TodoList = () => {
 	};
 
 	return (
-		<ListSection>
+		<ListContainer>
 			{items.map((item, index) => (
-				<ListContainer key={item.id}>
+				<FormContainer key={item.id}>
 					<Checkbox
 						type="checkbox"
+						name={item.id}
+						id={item.id}
+						value={item.text}
 						checked={item.isComplete}
 						onChange={() => onToggleTodo(item.id)}
 					/>
-					<TaskName>{item.text}</TaskName>
+					<TaskName for={item.id}>
+						{item.text}
+						<Date> Date</Date>
+					</TaskName>
 					<DeleteButton
 						aria-label="delete"
 						onClick={() => onDeleteTodo(item.id)}
 					>
 						x
 					</DeleteButton>
-				</ListContainer>
+				</FormContainer>
 			))}
-		</ListSection>
+		</ListContainer>
 	);
 };
