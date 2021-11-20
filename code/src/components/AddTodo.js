@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux' // in order to trigger an action, need useDispatch and the slice itself
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 import todos from '../reducers/todos'
 
