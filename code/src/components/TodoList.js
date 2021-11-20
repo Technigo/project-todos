@@ -137,7 +137,7 @@ const TodoList = () => {
   };
 
   const returnListItems = () => {
-    return newItems.map((item) => (
+    newItems.map((item) => (
       <Wrapper key={item.id}>
         <SmallWrapper>
           <SmallText>
