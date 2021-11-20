@@ -101,7 +101,11 @@ const StyledTaskContainer = styled.div`
 
 const StyledSection = styled.section`
   max-width: 400px;
-  margin: auto;
+  margin: 0 auto 35px;
+
+  @media (min-width: 500px) {
+    margin-bottom: 80px;
+  }
 
   .category {
     color: white;
@@ -147,8 +151,9 @@ const StyledParagraph = styled.p`
 `
 const StyledOverlay = styled(Overlay)`
   width: 100%;
+  max-height: 80px;
   z-index: 10;
   position: fixed;
   bottom: 0;
-  left: 0;
+  margin: 0 auto;
 `
