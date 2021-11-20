@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import moment from "moment";
 import todos from "../reducers/todos";
 import styled from "styled-components";
 
@@ -8,6 +9,10 @@ const Header = () => {
   const items = useSelector((store) => store.todos.items);
   const completedTodos = items.filter((todo) => todo.isComplete);
   const dispatch = useDispatch();
+  const counter = useSelector((store) => store.todos.items.length);
+  const donetask = useSelector((store) =>
+    store.todos.items.filter((item) => item.isComplete === true)
+  );
 
   const Header = styled.section`
     background: rgba(255, 255, 255, 0.6);
@@ -62,15 +67,17 @@ const Header = () => {
     border-radius: 50px;
     margin: 10pxpx;
     justify-content: space-around;
+    font-family: "Baloo 2", cursive;
+    border: none;
   `;
 
-  const Button2Wrapper = styled.button`
+  const Button2Wrapper = styled.div`
     gap:5px;
     display flex;
     flex-direction:row;
     margin 10px;
-    background: rgba(255, 255, 255, 0.6);
     transition: 0.5s ease;
+    border: none;
   `;
   const Button2 = styled.button`
     color: grey;
@@ -78,6 +85,8 @@ const Header = () => {
     padding: 10px;
     border-radius: 50px;
     justify-content: space-evenly;
+    font-family: "Baloo 2", cursive;
+    border: none;
   `;
   const Button3 = styled.button`
     color: grey;
@@ -85,6 +94,8 @@ const Header = () => {
     padding: 10px;
     border-radius: 50px;
     justify-content: space-evenly;
+    font-family: "Baloo 2", cursive;
+    border: none;
   `;
 
   const Button4 = styled.button`
@@ -93,6 +104,8 @@ const Header = () => {
     padding: 10px;
     border-radius: 50px;
     justify-content: space-evenly;
+    font-family: "Baloo 2", cursive;
+    border: none;
   `;
 
   return (
@@ -100,7 +113,10 @@ const Header = () => {
       <HeaderTitle>
         {" "}
         To do's
-        <ItemLength>{items.length} / tasks done </ItemLength>
+        <ItemLength>
+          {donetask.length} out of {counter} tasks done{" "}
+        </ItemLength>
+        <ItemLength>{moment().format("dddd Do MMMM")}</ItemLength>
       </HeaderTitle>
       <HeaderWrapper>
         <Container1> </Container1>

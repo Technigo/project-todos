@@ -45,6 +45,9 @@ code {
 
 .text-wrapper {
   display: flex;
+  font-family: "Baloo 2", cursive;
+  color: grey;
+  margin-left: 10px;
 }
 
 .flex-item {
@@ -92,12 +95,15 @@ code {
 }
 
 .input-field {
+  font-size: large;
+  color: rgb(87, 84, 84);
   width: 100%;
   height: 54px;
   background: none;
   border: 0;
   padding: 0;
   outline: none;
+  font-family: "Baloo 2", cursive;
 }
 .container-input {
   transition: 0.5s ease;
@@ -168,7 +174,8 @@ code {
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196f3;
+  background-color: #5c6165;
+  border: cadetblue;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -194,8 +201,4 @@ code {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
-}
-
-.item-length {
-  display: flex;
 }
