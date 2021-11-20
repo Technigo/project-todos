@@ -8,16 +8,18 @@ const Addtasks = styled.div`
 	width: 95%;
 `;
 
-const Inputtext = styled.input`
+const InputText = styled.input`
 	width: 80%;
 	outline: none;
 	resize: none;
 	margin: 10px;
 	border-radius: 10px;
-	height: 40px;
+	height: 20px;
 	border-style: none;
 	font-family: 'Poiret One', cursive;
 	font-weight: 650;
+	min-height: 40px;
+	padding-left: 20px;
 	::placeholder {
 		text-align: center;
 	}
@@ -30,6 +32,7 @@ const AddTodoBtn = styled.button`
 	border-radius: 50%;
 	border: none;
 	color: black;
+	cursor: pointer;
 `;
 
 const AddTodo = () => {
@@ -44,7 +47,7 @@ const AddTodo = () => {
 	};
 	return (
 		<Addtasks>
-			<Inputtext
+			<InputText
 				type="text"
 				placeholder="Add your daily tasks"
 				value={input}

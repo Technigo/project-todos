@@ -9,7 +9,7 @@ const TaskstoComplete = styled.section`
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
-	margin-top: 50px;
+	margin-top: 30px;
 	overflow-y: scroll;
 	&::-webkit-scrollbar {
 		display: none;
@@ -18,48 +18,51 @@ const TaskstoComplete = styled.section`
 
 const TasksWrapper = styled.div`
 	display: flex;
-	margin: 5px;
+	margin-bottom: 20px;
 	width: 90%;
 	align-items: center;
 	border-radius: 20px;
+	height: 50px;
 `;
 
 const TimeandTask = styled.div`
 	display: inline-block;
 	flex-direction: column;
+	margin: 0;
 	flex-grow: 1;
-	align-items: center;
 	padding: 0;
 	font-weight: 660;
 	font-family: 'Poiret One', cursive;
 	color: white;
+	font-size: 16px;
+	line-height: 40%;
 `;
 
-const Checkbox = styled.div`
+const Checkboxwrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 5px;
 `;
 
-const Recyclebin = styled.img`
-	width: 20px;
-	height: 20px;
-	border-radius: 50%;
-`;
+// const Recyclebin = styled.img`
+// 	width: 20px;
+// 	height: 20px;
+// 	border-radius: 50%;
+// `;
 
 const Deletebtn = styled.button`
 	border: none;
 	width: 30px;
 	height: 30px;
 	border-radius: 50%;
+	&:hover {
+		background-color: #b2ea70;
+	}
 `;
 
-const Inputbox = styled.input`
-	border-radius: 50%;
-	::checkbox {
-		border-radius: 50%;
-	}
+const Time = styled.p`
+	font-size: 12px;
 `;
 
 const TodoList = () => {
@@ -85,18 +88,18 @@ const TodoList = () => {
 		<TaskstoComplete>
 			{items.map((item, index) => (
 				<TasksWrapper key={item.id}>
-					<Checkbox>
-						<Inputbox
+					<Checkboxwrapper>
+						<input
 							type="checkbox"
 							placeholder="black"
 							checked={item.isComplete}
 							onChange={() => onToggleTodo(item.id)}
 						/>
-					</Checkbox>
+					</Checkboxwrapper>
 
 					<TimeandTask>
 						<p>{item.text}</p>
-						<p>{item.createdAt}</p>
+						<Time>{item.createdAt}</Time>
 					</TimeandTask>
 					<Deletebtn onClick={() => onDeleteTodoImmutability(item.id)}>
 						<span role="img" aria-label="Delete trash-can">
@@ -110,9 +113,3 @@ const TodoList = () => {
 };
 
 export default TodoList;
-
-{
-	/* <span role="img" aria-label="Delete trash-can">
-							🗑️
-						</span> */
-}

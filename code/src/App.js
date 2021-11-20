@@ -6,8 +6,10 @@ import styled from 'styled-components';
 import todos from './reducers/todos';
 
 import Header from './components/Header';
+import CompleteAll from './components/CompleteAll';
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
+import Footer from './components/Footer';
 
 const reducer = combineReducers({
 	todos: todos.reducer,
@@ -35,10 +37,15 @@ const MainContainer = styled.section`
 	text-align: center;
 	justify-content: flex-start;
 	flex-direction: column;
+	padding: 5px;
+	border-radius: 20px;
 	background-color: #ffffff10;
 	backdrop-filter: blur(12px);
 	--webkit-backdrop-filter: blur(12px);
 	margin-top: 100px;
+	@media (min-width: 768px) {
+		width: 500px;
+	}
 `;
 
 export const App = () => {
@@ -46,8 +53,10 @@ export const App = () => {
 		<MainContainer>
 			<Provider store={store}>
 				<Header />
+				<CompleteAll />
 				<AddTodo />
 				<TodoList />
+				<Footer />
 			</Provider>
 		</MainContainer>
 	);

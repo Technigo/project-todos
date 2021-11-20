@@ -57,6 +57,22 @@ const todos = createSlice({
 			);
 			store.items = decreasedItems;
 		},
+		completeAllTasks: (store) => {
+			const itemsAllCompleted = store.items.map((item) => {
+				return {
+					...item,
+					isComplete: true,
+				};
+			});
+			store.items = itemsAllCompleted;
+		},
+
+		removeAllTasks: (store) => {
+			return {
+				...store,
+				items: [],
+			};
+		},
 	},
 });
 

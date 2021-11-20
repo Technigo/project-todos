@@ -14,11 +14,10 @@ const StyledHeader = styled.div`
 	width: 100%;
 	text-align: center;
 	flex-direction: column;
-	margin-bottom: 40px;
 `;
 const TodoTitle = styled.h1`
 	font-family: 'Reenie Beanie', cursive;
-	font-size: 40px;
+	font-size: 50px;
 	color: white;
 `;
 
