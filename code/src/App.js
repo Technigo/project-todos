@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from "react-redux";
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import todos from './reducers/todos'; //re-named this reducer to start with lower-case
+import todos from './reducers/Todos'; //re-named this reducer to start with lower-case
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
 

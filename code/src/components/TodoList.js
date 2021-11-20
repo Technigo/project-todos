@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import Todos from "../reducers/todos";
+import Todos from "../reducers/Todos";
 
 //styling the component here:
 const ListOfTodos = styled.div`
