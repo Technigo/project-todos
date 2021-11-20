@@ -4,9 +4,10 @@ import styled from "styled-components";
 import { Counter } from "./Counter";
 
 const HeaderSection = styled.header`
-	background-color: #ffffff;
+	background-color: #60c57f;
 	padding: 30px 20px;
-	border-bottom: 1px solid #e8e8e8;
+	color: #ffffff;
+	//border-bottom: 1px solid #e8e8e8;
 `;
 
 const Heading = styled.h1`
@@ -15,17 +16,17 @@ const Heading = styled.h1`
 `;
 
 const CompleteButton = styled.button`
-	background-color: #ffffff;
-	color: #60c57f;
+	background-color: #60c57f;
+	color: #ffffff;
 	padding: 4px 8px;
-	border: solid 1px #60c57f;
+	border: solid 1px #ffffff;
 	border-radius: 100px;
 	font-size: 12px;
 	font-weight: 600;
 	text-transform: uppercase;
 	&:hover {
-		background-color: #60c57f;
-		color: #ffffff;
+		background-color: #ffffff;
+		color: #60c57f;
 	}
 `;
 

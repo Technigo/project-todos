@@ -1,7 +1,36 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-
+import styled from "styled-components";
 import { todos } from "../reducers/todos";
+
+const ListContainer = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background-color: #ffffff;
+	margin: 7px 0;
+	border-radius: 5px;
+	border: 1px solid #e0e0e0;
+	min-height: 55px;
+	padding: 10px;
+`;
+
+const Checkbox = styled.input`
+	border-radius: 50%;
+`;
+
+const TaskName = styled.p`
+	width: 100%;
+	padding: 0 10px;
+`;
+
+const DeleteButton = styled.button`
+	border: solid 1px grey;
+	background-color: #ffffff;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+`;
 
 export const TodoList = () => {
 	const items = useSelector((store) => store.todos.items);
@@ -19,15 +48,15 @@ export const TodoList = () => {
 	return (
 		<section>
 			{items.map((item, index) => (
-				<div className="flex-item" key={item.id}>
-					<input
+				<ListContainer key={item.id}>
+					<Checkbox
 						type="checkbox"
 						checked={item.isComplete}
 						onChange={() => onToggleTodo(item.id)}
 					/>
-					<p>{item.text}</p>
-					<button onClick={() => onDeleteTodo(item.id)}>Delete</button>
-				</div>
+					<TaskName>{item.text}</TaskName>
+					<DeleteButton onClick={() => onDeleteTodo(item.id)}>x</DeleteButton>
+				</ListContainer>
 			))}
 		</section>
 	);

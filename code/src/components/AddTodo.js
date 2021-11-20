@@ -3,28 +3,27 @@ import { useDispatch } from "react-redux";
 import { todos } from "../reducers/todos";
 import styled from "styled-components";
 
-const AddTodoSection = styled.section`
+const AddTodoSection = styled.div`
 	display: grid;
-	grid-template-columns: repeat(6, 1fr);
+	grid-template-columns: repeat(7, 1fr);
 `;
 
 const TextInput = styled.input`
-	height: 40px;
-	border-top-left-radius: 6px;
-	border-bottom-left-radius: 6px;
+	height: 45px;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 	border: 1px solid #e0e0e0;
 	border-right: none;
 	box-sizing: border-box;
-	grid-column: span 4;
+	grid-column: span 5;
 	font-size: 16px;
 	padding: 10px;
 `;
 
 const AddTaskButton = styled.button`
-	height: 40px;
+	height: 45px;
 	border: none;
 	background-color: #60c57f;
-	font-size: 16px;
 	font-weight: 600;
 	color: #ffffff;
 	border-top-right-radius: 6px;
