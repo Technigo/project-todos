@@ -7,9 +7,9 @@ const AddTodoSection = styled.div`
 	display: grid;
 	grid-template-columns: repeat(5, 1fr);
 	position: fixed;
-	bottom: 1rem;
-	right: 1rem;
-	left: 1rem;
+	bottom: 30px;
+	right: 20px;
+	left: 20px;
 `;
 
 const TextInput = styled.input`
