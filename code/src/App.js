@@ -17,8 +17,8 @@ const store = configureStore({ reducer }); //this is the same as: {reducer: redu
 export const App = () => {
   return (
     <Provider store={store}>  
-      <AddTodo /> 
       <TodoList />
+      <AddTodo /> 
     </Provider>
   )
 }

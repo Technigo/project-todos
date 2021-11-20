@@ -12,13 +12,24 @@ const Todos = createSlice ({
         addTodo: (store, action) => {//we need to pass data about "what to do"
             
             const newTodo = {
-                id: uniqid(), //I installed the "uniqid" to be able to use it here
+                id: uniqid(), //installed the "uniqid" to be able to create unique ids
                 text: action.payload,
                 isComplete: false,
             }
                 store.items = [...store.items, newTodo]; // this makes it immutable, by making a new array
         },
+        toggleTodo: (store, action) => { //this will display if the checkbox is true or false
+            store.items.forEach((item) => {
+                if (item.id === action.payload) {
+                    item.isComplete = !item.isComplete;
+                }
+            })
+        },
+        deleteTodo: (store, action) => {
+            store.items.splice(action.payload, 1);
+        }
     },
+
 });
 
 export default Todos;
