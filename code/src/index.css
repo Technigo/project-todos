@@ -4,7 +4,7 @@
   --grey: #e3e0db;
   --white: #ffffff;
   --black: #000000;
-  --darkgrey: #969f94;
+  --darkgrey: #dae0de;
 }
 /* * {
   border: 1px solid lime;
@@ -42,17 +42,22 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=704&q=80');
+  background-image: url('./assets/todo-background.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-attachment: fixed;
   display: flex;
 }
+/* background-image: url('https://images.unsplash.com/photo-1470790376778-a9fbc86d70e2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=704&q=80') */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+p {
+  font-size: 16px;
 }
 
 .app-wrapper {
@@ -63,9 +68,10 @@ code {
   height: 100%;
   padding: 5%;
   border-radius: 15px 15px 0 0;
-  background-color: rgba(252, 134, 76, 0.6);
+  background-color: rgba(255, 255, 255, 0.8);
+  /* background-color: rgba(252, 134, 76, 0.6); */
   position: absolute;
-  top: 25%;
+  top: 36%;
 }
 
 .input-wrapper {
@@ -77,6 +83,7 @@ code {
 
   justify-content: center;
   align-items: start;
+  margin: 0 auto 25px;
   /* display: flex;
   position: relative;
   top: 12%;
@@ -89,7 +96,8 @@ code {
 input[type='text'] {
   /* padding: 8px; */
 
-  grid-column: span 3;
+  /* grid-column: span 3; */
+  font-size: 16px;
   padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--grey);
@@ -100,8 +108,9 @@ input[type='text'] {
 .input-button {
   grid-column: span 1;
   font-size: 16px;
-  height: 50px;
-  width: 50px;
+  height: 55px;
+  width: 55px;
+
   /* font-size: 16px; */
   /* appearance: none; */
   border-radius: 50px;
@@ -118,7 +127,7 @@ input[type='text'] {
 @media screen and (min-width: 768px) {
   .app-wrapper {
     padding: 8% 15%;
-    top: 35%;
+    top: 40%;
   }
   .input-wrapper {
     column-gap: 50px;
@@ -136,8 +145,8 @@ input[type='text'] {
     padding-bottom: 6%;
   }
   .input-wrapper button {
-    font-size: 40px;
-    height: 60px;
-    width: 60px;
+    font-size: 28px;
+    height: 80px;
+    width: 80px;
   }
 }

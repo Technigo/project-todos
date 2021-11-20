@@ -37,7 +37,6 @@ const AddTodo = () => {
         <input
           id="todo"
           type="text"
-          placeholder="ADD A TASK"
           value={input}
           onChange={handleNewTodo}
           ref={inputRef}

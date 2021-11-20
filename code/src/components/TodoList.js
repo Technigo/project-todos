@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaTrash, FaCheckCircle } from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 import './todolist.css';
 import moment from 'moment';
 
@@ -32,7 +32,7 @@ const TodoList = () => {
   // filter todo
   const unCompletedTodos = items.filter((item) => !item.isComplete);
   const completeTodos = items.filter((item) => item.isComplete);
-
+  console.log('UNCOMPL', unCompletedTodos);
   const date = new Date();
 
   return (
@@ -56,24 +56,17 @@ const TodoList = () => {
           />
         </div>
       ))}
-      <div className="button-wrapper">
-        <button
-          className="clear-all"
-          disabled={items.length < 1}
-          onClick={onClickCompleteAll}
-        >
-          complete all
-        </button>
-        <button
-          className="delete-all"
-          disabled={items.length < 1}
-          onClick={onClickDeleteAll}
-        >
-          delete all
-        </button>
-      </div>
-
-      {/* <h3>done</h3> */}
+      {unCompletedTodos.length > 0 && (
+        <div className="button-wrapper">
+          <button
+            className="clear-all"
+            // disabled={items.length < 1}
+            onClick={onClickCompleteAll}
+          >
+            complete all
+          </button>
+        </div>
+      )}
       {completeTodos.map((item) => (
         <div className="todo-card completed" key={item.id}>
           <label htmlFor="checkbox" />
@@ -88,18 +81,24 @@ const TodoList = () => {
           <p className="todo">{item.text}</p>
 
           <span className="date">{moment(date).format('ll')}</span>
-
-          {/* <button onClick={() => onDeleteTodo(item.id)}>Delete</button> */}
-          {/* <div className="delete-wrapper"> */}
           <FaTrash
             className="delete-button"
             onClick={() => onDeleteTodo(item.id)}
           />
-          {/* </div> */}
         </div>
       ))}
+      {completeTodos.length > 0 && (
+        <div className="button-wrapper">
+          <button
+            className="delete-all"
+            // disabled={items.length < 1}
+            onClick={onClickDeleteAll}
+          >
+            delete all
+          </button>
+        </div>
+      )}
     </>
-    // </div>
   );
 };
 

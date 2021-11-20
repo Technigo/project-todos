@@ -41,14 +41,14 @@ const Section = styled.section`
   h2 {
     font-size: 4.5em;
     color: var(--black);
-    padding: 0 20%;
+    padding: 0 30%;
     margin-top: 0;
     margin-bottom: 0;
   }
 
   h3 {
     margin: 0;
-    padding-left: 20%;
+    padding-left: 30%;
     font-size: 2.8em;
     color: var(--orange);
     width: 100%;
@@ -56,7 +56,7 @@ const Section = styled.section`
 
   p {
     margin: 1% 0;
-    padding-left: 20%;
+    padding-left: 30%;
     padding-bottom: 5%;
     color: var(--teal);
     width: 100%;
