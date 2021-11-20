@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components/macro';
 import './summary.css';
 
-export const Summary = () => {
+const Summary = () => {
   const todos = useSelector((store) => store.todos.items);
 
   const unCompletedTodos = todos.filter((item) => !item.isComplete).length;
@@ -41,14 +41,14 @@ const Section = styled.section`
   h2 {
     font-size: 4.5em;
     color: var(--black);
-    padding: 0 30%;
+    padding: 5% 40% 0;
     margin-top: 0;
     margin-bottom: 0;
   }
 
   h3 {
     margin: 0;
-    padding-left: 30%;
+    padding-left: 40%;
     font-size: 2.8em;
     color: var(--orange);
     width: 100%;
@@ -56,14 +56,14 @@ const Section = styled.section`
 
   p {
     margin: 1% 0;
-    padding-left: 30%;
+    padding-left: 40%;
     padding-bottom: 5%;
     color: var(--teal);
     width: 100%;
   }
   @media screen and (min-width: 768px) {
     width: 400px;
-    margin-left: 45%;
+    margin-left: 10%;
 
     h2 {
       font-size: 6em;
@@ -76,18 +76,10 @@ const Section = styled.section`
 
 const SectionEmpty = styled(Section)`
   h2 {
-    padding: 0 5%;
-    margin: 4% 0;
+    margin-top: 20%;
   }
 
   h3 {
-    margin: 5%;
-    padding: 0;
     font-size: 3em;
-    background-color: var(--darkgrey);
-  }
-
-  p {
-    padding: 0 5%;
   }
 `;
