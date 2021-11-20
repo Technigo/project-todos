@@ -14,7 +14,7 @@ const reducer = combineReducers({
   todos: todos.reducer,
 });
 
-// Jennies code starts here: Retrieve localstorage as initial state
+// Retrieve localstorage as initial state
 const persistedStateJSON = localStorage.getItem('todosReduxState');
 let persistedState = {};
 
@@ -27,7 +27,7 @@ const store = createStore(
   reducer,
   persistedState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+); //added window etc to make dev tools work
 
 // Store the state in localstorage when Redux state change
 store.subscribe(() => {

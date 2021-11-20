@@ -12,12 +12,7 @@ const TodoList = () => {
     dispatch(todos.actions.toggleTodo(id));
   };
 
-  //v1 delete function mutebility
-  // const onDeleteTodoMutability = (index) => {
-  //   dispatch(todos.actions.deleteTodo(index));
-  // };
-
-  //v2
+  // delete function immutebility
   const onDeleteTodoImmutability = (id) => {
     dispatch(todos.actions.deleteTodo(id));
   };
@@ -35,9 +30,8 @@ const TodoList = () => {
             <span className="custom-checkbox"></span>
           </label>
           <p className="task">{item.text}</p>
-          {/* v1 muteablity delete button  */}
-          {/* <button onClick={() => onDeleteTodoMutability (index)}>Delete</button> */}
-          {/* v2 immuteablity delete button  */}
+
+          {/* button with immuteablity */}
           <button
             className="delete-button"
             onClick={() => onDeleteTodoImmutability(item.id)}

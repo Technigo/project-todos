@@ -4,16 +4,26 @@ Blue req
 - You should be able to add and remove tasks  🍏
 - Your app should show a count of either all todos, or all uncomplete todos (or both) 🍏
 
-make comments in the code 🍎
-media query tablet 🍎
-media query desktop 🍎
+add wordwrap 🍏
+add rensa fält 🍏
+
+
+make comments in the code 🍏
+Add OG tags 🍏
+Write more in readme 🍎
+
+add clear all
+add delete all
+
+media query tablet 🍏
+media query desktop 🍏
 
 make colors root 🍏
 import font 🍏
-make header nice 🍎
-style checkboxes 🍎
+make header nice 🍎 impossible?????
+style checkboxes 🍏
 style delete buttons🍏
-style add new task 🍎
+style add new task 🍏
 add som kind of lines between tasks 🍏
 make task fill upp whole line - use grid? 🍏
 

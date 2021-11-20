@@ -10,8 +10,8 @@ const AddTodo = () => {
   const dispatch = useDispatch();
 
   const onAddTodo = () => {
-    // Here you can add payload 👇🏽
-    dispatch(todos.actions.addTodo(input));
+    setInput(''); // clears inputfield after adding task
+    dispatch(todos.actions.addTodo(input)); // Here you can add payload
   };
 
   return (
@@ -19,10 +19,13 @@ const AddTodo = () => {
       <input
         type="text"
         placeholder="Add new task"
+        required
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={onAddTodo}>+</button>
+      <button onClick={onAddTodo} disabled={input.length < 1}>
+        +
+      </button>
     </div>
   );
 };
