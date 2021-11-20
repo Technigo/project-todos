@@ -10,8 +10,8 @@ const EmptyField = () => {
     <>
     { emptyField === true &&
     <div className="empty-field">
-      <h2>Nothing to do</h2>
-      <p>Write your task and tap the button to create a new to-do</p>
+      <h2>Nothing to do?</h2>
+      <p>Let's add some todos</p>
       </div>}
     </>
   )

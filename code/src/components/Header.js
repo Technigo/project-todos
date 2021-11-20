@@ -14,7 +14,7 @@ const Header = () => {
 
   return (
     <header>
-    <h1>My to-do's</h1>
+    <h1>Todos</h1>
     <AddTodo />
     <div className="header-functions-container">
       <p className="counter-paragraph">Completed {amountTodos}/{totalTodos}</p>

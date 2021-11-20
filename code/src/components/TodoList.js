@@ -19,6 +19,7 @@ const TodoList = () => {
   return (
     <>
       {items.map((item) => (
+        <div className="task-list">
         <div className="task-container" key={item.id}>
           <div className="task-with-checkbox">
             <input
@@ -35,6 +36,7 @@ const TodoList = () => {
           <button className="delete-btn" onClick={() => onDeleteTodo(item.id)}>
           <i className="fas fa-minus-circle"></i>
           </button>
+        </div>
         </div>
       ))}
     </>
