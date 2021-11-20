@@ -1,13 +1,20 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+In this week's project, we were tasked to do a to-do app using Redux and Styled components. The to-do app should have an input where user's can write tasks, display the tasks, delete a task, sort completed and uncompleted tasks, mark all or delete all tasks. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
-## The problem
+Technologies used:
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+* React
+* Redux
+* Styled Components
+* Moments.js
+* JS Confetti
+* Pexels for images
+* Coolors for color palette
+* Totally Free Cursors for the cursor
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+[TASKER](https://tasker-todoapp.netlify.app/)

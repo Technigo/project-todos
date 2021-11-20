@@ -21,7 +21,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   justify-content: center;
-  background-color: rgb(0, 187, 249);
+  background-image: url("https://images.pexels.com/photos/1287142/pexels-photo-1287142.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 code {

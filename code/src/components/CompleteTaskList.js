@@ -6,15 +6,19 @@ import styled from 'styled-components';
 
 import DeleteTask from './DeleteTask';
 import tasks from 'reducers/tasks';
+import CompleteAllTask from './CompleteAllTask';
 
 const CompletedTaskBox = styled.section`
   &.side-active {
-    background-color: rgb(0, 245, 212);
+    background-image: url('https://images.pexels.com/photos/3876635/pexels-photo-3876635.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     font-family: 'Shippori Antique', sans-serif;
-    word-wrap: break-word;
     font-family: 'Itim', cursive;
-	  color: #4a4e69;
+	  color: rgb(53, 56, 75);
     font-size: 1.5em;
+    transition: all 1s ease-in-out 0.3s;
 	
 
     position: fixed;
@@ -26,10 +30,9 @@ const CompletedTaskBox = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    background: black;
     padding-right: 20px;
     justify-content: center;
-    background-color: #00F5D4;
+    
       
 
     span {
@@ -37,7 +40,7 @@ const CompletedTaskBox = styled.section`
       height: 0.5em;
       width: 0.5em;
       font-size: 1.3em;
-	  opacity: 0.8;
+	    opacity: 0.8;
     }
 
     .checkbox {
@@ -79,7 +82,7 @@ const CompletedTaskBox = styled.section`
       display: flex;
       flex-direction: row;
       align-items: center;
-      width: 80%;
+      width: 100%;
 	  
     }
 
@@ -88,12 +91,15 @@ const CompletedTaskBox = styled.section`
     }
 
     .list-box {
-      height: 100%;
+      height: 75%;
       overflow-y: scroll;
+      overflow-x: hidden;
       display: flex;
       flex-direction: column;
       margin-top: 5rem;
-      width: 100%;
+      width: 95%;
+      background-color: rgb(170, 246, 131, 0.9);
+      border-radius: 10px;
     }
 
     .empty {
@@ -104,7 +110,11 @@ const CompletedTaskBox = styled.section`
     }
 
     p {
-      overflow-wrap: anywhere;
+      overflow-wrap: break-word;
+    }
+
+    .list {
+      border-bottom: 4px double rgb(8, 99, 117, 0.5);
     }
 
 	h2 {
@@ -148,7 +158,7 @@ const CompleteTaskList = ({ isActive }) => {
 
       <div className='list-box'>
         {items.map((item) => (
-          <div key={item.id}>
+          <div className='list' key={item.id}>
             <input
               className='checkbox'
               type='checkbox'
@@ -166,6 +176,7 @@ const CompleteTaskList = ({ isActive }) => {
         ))}
         {items <= items.length ? <p className='empty'>nothing here... <span role='img' aria-label='img'>🤔</span></p> : null}
       </div>
+      <CompleteAllTask items={items} />
     </CompletedTaskBox>
   );
 };

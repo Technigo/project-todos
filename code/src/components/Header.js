@@ -20,6 +20,8 @@ const HeaderBox = styled.section`
       position: absolute;
       width: 160px;
       left: ${props => props.wid / 2 - 92}px;
+      font-size: 1.5em;
+      font-family: 'Shippori Antique', sans-serif;
 
       @media (min-width: 768px) {
     left: ${(props) => props.wid * 0.9 * 0.35}px;
@@ -46,10 +48,10 @@ const CompleteButton = styled.button`
     background: transparent;
     border-radius: 45px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease 0s;
+    transition: transform 0.1s ease-in-out 0s;
     outline: none;
     position: relative;
-
+    
     font-size: 1.1em;
 
     span {
@@ -66,7 +68,7 @@ const CompleteButton = styled.button`
     }
 
   &:hover {
-    background-color: rgb(57, 230, 0, 0.8);
+    background-color: rgb(36, 229, 81, 0.8);
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
     transform: translateY(-2px);
@@ -80,26 +82,29 @@ const CompleteButton = styled.button`
   }
 
   &.move {
+    color: rgb(53, 56, 75);
+    margin-bottom: 2em;
     position: absolute;
     text-align: center;
-    background-color: rgb(57, 230, 0, 0.8);
-    width: ${(props) => props.wid * 0.6}px;
-    left: ${(props) => props.wid * 0.15}px;
+    background-color: rgb(0,153,71, 0.7);
+    width: ${(props) => props.wid * 0.7}px;
+    left: ${(props) => props.wid * 0.1}px;
+
+    &:hover {
+      background-color: rgb(140, 255, 102);
+    }
 
     @media (min-width: 768px) {
       position: absolute;
-      left: ${(props) => props.wid * 0.04 * -1}px;
-      width: ${(props) => props.wid * 0.3}px
+      left: ${(props) => props.wid * 0.05 * -1}px;
+      width: ${(props) => props.wid * 0.4}px
     }
 
     @media (min-width: 1366px) {
       left: ${(props) => props.wid * 0.2 * -1}px;
+      width: ${(props) => props.wid * 0.33}px
     }
   }
-
-  
-
- 
 `;
 
 const Header = () => {
@@ -108,9 +113,6 @@ const Header = () => {
   const toggleClass = () => {
     setActive(!isActive);
   };
-
-  console.log(width);
-  console.log(width / 2)
 
 
   return (
@@ -124,7 +126,7 @@ const Header = () => {
           <span className="btn-text"> {isActive ? 'Completed Task 🎯' : '📝'}</span>
         </CompleteButton>
         <CompleteTaskList isActive={isActive} />
-        <h1 className='header-text'> <span role='img' aria-label='img'>🌈</span>TASKER</h1>
+        <p className='header-text'> <span role='img' aria-label='img'>🌈</span>TASKER</p>
         <ClearAllTask />
       </HeaderBox>
     </>

@@ -37,7 +37,7 @@ export const tasks = createSlice({
       );
       state.items = leftItems;
     },
-    clearAllTask: (state, action) => {
+    completeAllTask: (state, action) => {
       const allItemsComplete = state.items.map((item) => {
         const updatedCheck = {
           ...item,

@@ -4,28 +4,23 @@ import styled from 'styled-components';
 import tasks from 'reducers/tasks';
 
 const AddTaskBox = styled.div`
-  background-color: skyblue;
+  background-color: rgb(154,202,248, 0.6);
   width: ${(props) => props.wid * 0.76}px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   border-bottom-left-radius: 10px;
 
-  ${'' /* bottom: ${(props) => props.hgt * 0.03}px; */}
-
-  @media (min-width: 768px) {
-    ${'' /* bottom: ${(props) => props.hgt * 0.06}px; */}
-  }
 
   @media (min-width: 1366px) {
     width: ${(props) => props.wid * 0.5}px;
-    ${'' /* bottom: ${(props) => props.hgt * 0.09}px; */}
   }
 
   input {
     width: 80%;
     font-size: 1.5em;
     border-radius: 10px;
+    color: rgb(53, 56, 75);
   }
 
   button {

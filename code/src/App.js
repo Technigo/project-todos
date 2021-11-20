@@ -31,7 +31,7 @@ store.subscribe(() => {
 });
 
 const MainBox = styled.main`
-  background-color: rgb(0, 187, 249);
+  
   position: relative;
 `;
 

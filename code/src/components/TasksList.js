@@ -18,6 +18,7 @@ const TaskCard = styled.section`
   border-top-left-radius: 10px;
   font-size: 1.3em;
   width: ${(props) => props.wid * 0.9}px;
+  color: rgb(53, 56, 75);
 
   div {
     display: flex;
@@ -40,7 +41,7 @@ const TaskCard = styled.section`
   }
 
   p {
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
   }
 
   .checkbox {
@@ -79,8 +80,8 @@ const TaskCard = styled.section`
   }
 
   &.empty {
-    background-color: rgb(254, 228, 64);
-    background-image: url('https://media.giphy.com/media/13d2jHlSlxklVe/giphy.gif');
+    background-color: rgb(248, 150, 216, 0.7);
+    background-image: url('https://media.giphy.com/media/xT8qBwdHOt79erD2qQ/giphy.gif');
     background-repeat: no-repeat;
     background-position: center;
   }
