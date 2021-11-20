@@ -9,7 +9,10 @@ export const Counter = () => {
 
 	return (
 		<p>
-			{completedAmount}/{todosAmount}
+			<span>
+				{completedAmount}/{todosAmount}
+			</span>
+			<span> done</span>
 		</p>
 	);
 };

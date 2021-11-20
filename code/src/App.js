@@ -2,10 +2,9 @@ import React from "react";
 import { Provider } from "react-redux";
 import { combineReducers, createStore } from "@reduxjs/toolkit";
 
+// Importing components & reducers
 import { todos } from "./reducers/todos";
-import { AddTodo } from "./components/AddTodo";
-import { TodoList } from "./components/TodoList";
-import { Counter } from "./components/Counter";
+import { Container } from "./components/Container";
 
 const reducer = combineReducers({
 	todos: todos.reducer,
@@ -34,9 +33,7 @@ store.subscribe(() => {
 export const App = () => {
 	return (
 		<Provider store={store}>
-			<Counter />
-			<AddTodo />
-			<TodoList />
+			<Container />
 		</Provider>
 	);
 };
