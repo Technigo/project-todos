@@ -1,8 +1,9 @@
 import React from 'react'
-import moment from 'moment'
-import { useSelector } from "react-redux";
+// import moment from 'moment'
+import { useSelector } from "react-redux"
+import Today from './Today'
 
-import Counter from './Counter';
+import Counter from './Counter'
 
 const Header = () => {
     const date = useSelector(store => store.todos.today)
@@ -16,7 +17,8 @@ const Header = () => {
                 <div className='circle3'></div>
                 <div className='circle4'></div>
             </div>
-            <p>{moment(date).format('dddd')}, {moment(date).format('ll')}</p>
+            <Today />
+            {/* <p>{moment(date).format('dddd')}, {moment(date).format('ll')}</p> */}
         </div>
         <div className='heading-counter'>
             <h1>Your todo's!</h1>

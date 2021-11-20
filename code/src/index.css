@@ -20,6 +20,48 @@ code {
 }
 
 
+/* STARTPAGE */
+
+.start-page h1 {
+  color: #1a1a1a;
+  font-size: 72px;
+}
+
+.fa-plus {
+  font-size: 32px;
+  animation-name: bounce;
+  animation-fill-mode: both;
+  animation-duration: 1s;
+}
+
+.pulse::after {
+  content: " ";
+  border-radius: 50%;
+  height: 3rem;
+  width: 3rem;
+  position: absolute;
+  margin: -8px 0 0 -38px;
+  animation: pulsate 1s ease-out;
+  animation-iteration-count: infinite;
+  opacity: 0.0;
+  box-shadow: 0 0 1px 2px #80B477;
+  animation-delay: 1.1s;
+}
+
+@keyframes pulsate {
+  0%    {transform: scale(0.1, 0.1); opacity: 0.0;}
+  50%   {opacity: 1.0;}
+  100%  {transform: scale(1.2, 1.2);opacity: 0;}
+}
+
+@keyframes bounce {
+  0%    {opacity: 0; transform: translateY(-2000px)}
+  60%   {opacity: 1; transform: translateY(30px)}
+  80%   {transform: translateY(-10px)}
+  100%  {transform: translateY(0)}
+}
+
+
 /* HEADER  */
 
 .header {
@@ -131,11 +173,16 @@ p {
   font-weight: 500;
   height: 48px;
   width: 100%;
+  margin-right: 0.5rem;
   border-radius: 24px;
   border: none;
   background-color: #1a1a1a;
   padding: 0 0 0 1rem;
   color: #dedede;
+}
+
+input:focus {
+  outline: none;
 }
 
  .add-button {
@@ -255,7 +302,15 @@ h4 {
 .btns-container {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  /* margin-bottom: 1rem; */
+  bottom: 2rem;
+  left: 0;
+  right: 0;
+  position: fixed;
+  max-width: 767px;
+  margin: 0 auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 
 }
 
@@ -265,11 +320,11 @@ h4 {
   height: 2rem;
   font-family: montserrat;
   font-weight: 600;
-  background-color: #dedede;
+  background-color: #999;
   color: #1a1a1a;
   padding: 0 1rem 0 1rem;
   width: 100%;
-  margin-left: 0.25rem;
+  margin-left: 0.5rem;
 }
 
 .check-all-btn {
@@ -278,9 +333,9 @@ h4 {
   height: 2rem;
   font-family: montserrat;
   font-weight: 600;
-  background-color: #dedede;
+  background-color: #999;
   color: #1a1a1a;
   padding: 0 1rem 0 1rem;
   width: 100%;
-  margin-right: 0.25rem;
+  margin-right: 0.5rem;
 }

@@ -4,6 +4,9 @@ import moment from 'moment'
 import todos from '../reducers/todos'
 import BtnDeleteAll from "./BtnDeleteAll"
 import BtnCheckAll from "./BtnCheckAll"
+import Header from "./Header"
+import AddTodo from "./AddTodo"
+import StartPage from "./StartPage"
 
 const TodoList = () => {
     const items = useSelector((store) => store.todos.items)
@@ -20,7 +23,11 @@ const TodoList = () => {
 
     const date = moment()
 
+    if (items.length > 0)
     return (
+        <>
+        <Header />
+        <AddTodo />
         <section className='main'>
             <section className='btns-container'>
                 <BtnCheckAll />
@@ -57,9 +64,13 @@ const TodoList = () => {
 					</button>
                 </section>
             ))}
-
         </section>
+        </>
     )
+    return (
+        <StartPage />
+    )
+      
 }
 
 export default TodoList
