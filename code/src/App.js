@@ -31,6 +31,7 @@ const store = createStore(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 )
 
+// update the title with the amount of quests
 document.title = `(${store.getState().quests.items.length}) My Quests`
 
 // store the state in localStorage as JSON string on Redux state change
