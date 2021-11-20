@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
-import { useWindowSize } from '@react-hook/window-size';
 
 
 import DeleteTask from './DeleteTask';
@@ -14,29 +14,29 @@ const CompletedTaskBox = styled.section`
     word-wrap: break-word;
     font-family: 'Itim', cursive;
 	  color: #4a4e69;
+    font-size: 1.5em;
 	
 
-	position: fixed;
-	z-index: 20;
-	top: 0;
-	left: 0;
-	width: 300px;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	font-weight: bold;
-	background: black;
-	padding-right: 20px;
-	justify-content: center;
-	background-color: #00F5D4;
-    
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
+    width: 300px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: black;
+    padding-right: 20px;
+    justify-content: center;
+    background-color: #00F5D4;
+      
 
     span {
       display: inline;
       height: 0.5em;
       width: 0.5em;
-      font-size: 1em;
+      font-size: 1.3em;
 	  opacity: 0.8;
     }
 
@@ -48,7 +48,7 @@ const CompletedTaskBox = styled.section`
       color: black;
       width: 2em;
       height: 2em;
-      border: 0.15em solid #00bbf9;
+      border: 0.15em solid rgb(140, 255, 102);
       border-radius: 1em;
       transform: translateY(-0.075em);
       display: grid;
@@ -61,7 +61,7 @@ const CompletedTaskBox = styled.section`
       border-radius: 50%;
       transform: scale(0);
       transition: 120ms transform ease-in-out;
-      box-shadow: inset 1em 1em #00bbf9;
+      box-shadow: inset 1em 1em rgb(140, 255, 102);
     }
     .checkbox:checked::before {
       transform: scale(1);
@@ -78,13 +78,13 @@ const CompletedTaskBox = styled.section`
     div {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
       align-items: center;
-	  width: 100%;
+      width: 80%;
+	  
     }
 
     .time {
-      font-size: 0.6em;
+      font-size: 0.8em;
     }
 
     .list-box {
@@ -93,12 +93,25 @@ const CompletedTaskBox = styled.section`
       display: flex;
       flex-direction: column;
       margin-top: 5rem;
+      width: 100%;
+    }
+
+    .empty {
+      font-size: 1.5em;
+      height: 10rem;
+      width: 10rem;
+      padding: 5rem;
+    }
+
+    p {
+      overflow-wrap: anywhere;
     }
 
 	h2 {
 		position: absolute;
 		top: 3em;
 	}
+
 
   @media (min-width: 768px) {
     width: 40%;
@@ -110,55 +123,10 @@ const CompletedTaskBox = styled.section`
   }
 `;
 
-const CompleteButton = styled.button`
-    z-index: 30;
-    font-family: 'Shippori Antique', sans-serif;
-    height: 3.5em;
-    border: none;
-    background: transparent;
-    border-radius: 45px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease 0s;
-    outline: none;
 
-  &:hover {
-    background-color: rgb(63, 102, 0);
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
-  }
+const CompleteTaskList = ({ isActive }) => {
+  let [checked, setChecked] = useState(true);
 
-  &:active {
-    background-color: #fff;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: black;
-    transform: translateY(-5px);
-  }
-
-  &.move {
-    position: absolute;
-  }
-
-  @media (min-width: 768px) {
-    &.move {
-      left: ${(props) => props.wid * 0.04 * -1}px;
-    }
-  }
-
-  @media (min-width: 1366px) {
-    &.move {
-      left: ${(props) => props.wid * 0.2 * -1}px;
-    }
-  }
-`;
-
-const CompleteTaskList = () => {
-  const [width, height] = useWindowSize();
-  const [isActive, setActive] = useState(false);
-
-  const toggleClass = () => {
-    setActive(!isActive);
-  };
   const dispatch = useDispatch();
 
   const onToggleCheck = (id) => {
@@ -167,35 +135,38 @@ const CompleteTaskList = () => {
   const items = useSelector((store) =>
     store.tasks.items.filter((item) => item.complete === true)
   );
+
+  const onSetChecked = (id) => {
+    setChecked(!checked);
+    setTimeout(() => onToggleCheck(id), 2000);
+  };
+
+  checked = items.complete;
+
   return (
-    <>
-      <CompleteButton
-        hgt={height} wid={width}
-        className={isActive ? 'move' : null}
-        onClick={toggleClass}
-      >
-        {isActive ? 'Completed Task' : 'See Completed Task'}
-      </CompleteButton>
-      <CompletedTaskBox className={isActive ? 'side-active' : 'side-hidden'}>
-        <div className='list-box'>
-          {items.map((item) => (
-            <div key={item.id}>
-              <input
-                className='checkbox'
-                type='checkbox'
-                checked={item.complete}
-                onChange={() => onToggleCheck(item.id)}
-              />
-              <div className='text-box'>
-                <p>{item.text}</p>
-                <p>{item.timestamp}</p>
-              </div>
-              <DeleteTask item={item.id} />
+    <CompletedTaskBox className={isActive ? 'side-active' : 'side-hidden'}>
+
+      <div className='list-box'>
+        {items.map((item) => (
+          <div key={item.id}>
+            <input
+              className='checkbox'
+              type='checkbox'
+              checked={checked}
+              defaultChecked
+              onChange={() => onSetChecked(item.id)}
+            />
+            <div className='text-box'>
+              <p>{item.text}</p>
+              <p className='time'>{item.timestamp}</p>
             </div>
-          ))}
-        </div>
-      </CompletedTaskBox>
-    </>
+            <DeleteTask className='xbtn' item={item.id} />
+          </div>
+
+        ))}
+        {items <= items.length ? <p className='empty'>nothing here</p> : null}
+      </div>
+    </CompletedTaskBox>
   );
 };
 

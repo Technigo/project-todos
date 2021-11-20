@@ -23,6 +23,8 @@ const Xspan = styled.span`
 
 const Xbtn = styled.button`
   transition: all 0.3s ease 0s;
+  border: none;
+  background-color: transparent;
 
   &:hover {
     transform: translateY(-7px);

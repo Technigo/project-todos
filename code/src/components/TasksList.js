@@ -16,7 +16,7 @@ const TaskCard = styled.section`
   height: ${(props) => props.hgt * 0.8}px;
   height: 60vh;
   border-top-left-radius: 10px;
-
+  font-size: 1.3em;
   width: ${(props) => props.wid * 0.9}px;
 
   div {
@@ -37,6 +37,10 @@ const TaskCard = styled.section`
     width: 60vw;
     text-align: left;
     align-items: stretch;
+  }
+
+  p {
+    overflow-wrap: anywhere;
   }
 
   .checkbox {
@@ -81,7 +85,6 @@ const TaskCard = styled.section`
     background-position: center;
   }
 
-  ${'' /* width: 360px; */}
   @media (min-width: 768px) {
     width: ${(props) => props.wid * 0.8}px;
   }
@@ -133,7 +136,6 @@ const TasksList = () => {
           <DeleteTask item={item.id} />
         </div>
       ))}
-      {/* <AddTasks hgt={height} wid={width} /> */}
     </TaskCard>
   );
 };

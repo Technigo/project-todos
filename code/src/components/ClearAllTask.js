@@ -9,7 +9,9 @@ import { useWindowSize } from '@react-hook/window-size';
 const CompleteButton = styled.button`
   background-color: rgb(176, 224, 230);
   height: 3.5em;
+  width: 3.5em;
   font-family: 'Shippori Antique', sans-serif;
+  font-size: 1em;
   color: #000;
   background-color: rgb(255, 211, 0, 0.8);
   border: none;
@@ -17,21 +19,19 @@ const CompleteButton = styled.button`
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease 0s;
   outline: none;
-  position: absolute;
-  left: ${props => props.wid * 0.73}px;
 
   &:hover {
     background-color: rgb(255, 0, 0, 0.7);
     box-shadow: 0 15px 20px rgba(46, 229, 157, 0.4);
     color: #fff;
-    transform: translateY(-7px);
+    // transform: translateY(2px);
   }
 
   &:active {
     background-color: #fff;
     box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
     color: black;
-    transform: translateY(-5px);
+    transform: translateY(7px);
   }
 
 `;
@@ -66,7 +66,7 @@ const ClearAllTask = () => {
           onClearAll(items);
         }}
       >
-        Clear All
+        <span role='img' aria-label='img'>❌</span>
       </CompleteButton>
     </>
   );
