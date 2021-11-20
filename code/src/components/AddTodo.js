@@ -23,6 +23,36 @@ const InputField = styled.input`
   display: block;
 `;
 
+const Button = styled.button`
+  position: relative;
+  display: inline-block;
+  margin: 10px;
+  padding: 10px 10px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 16px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #725ac1;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border-radius: 30px;
+  border: 2px solid #725ac1;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #725ac1;
+  width: max-content;
+
+  &:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #725ac1;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+`;
+
 const AddTodo = () => {
   const [newTodo, setNewTodo] = useState("");
   const [newProject, setNewProject] = useState("");
@@ -65,7 +95,7 @@ const AddTodo = () => {
       />
       <AddDate setNewDate={setNewDate} newDate={newDate} />
       <AddTag setNewTags={setNewTags} newTags={newTags} />
-      <button onClick={onAddTodo}>Add Todo</button>
+      <Button onClick={onAddTodo}>Add Todo</Button>
     </Wrapper>
   );
 };

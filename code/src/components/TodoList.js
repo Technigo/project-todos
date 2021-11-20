@@ -9,21 +9,47 @@ import TodoListElements from "./TodoListElements";
 
 const ButtonWrapper = styled.div`
   display: flex;
-  flex-direction: row;
-  /* align-items: center; */
+  flex-direction: column;
   justify-content: space-between;
-  height: 80px;
   width: 90%;
   max-width: 300px;
-  margin-top: 20px;
+  margin-top: 40px;
   margin-bottom: 0px;
 `;
 
 const SmallBtnWrap = styled.div`
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 0;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 15px;
+`;
+const Button = styled.button`
+  position: relative;
+  display: inline-block;
+  margin: 5px;
+  padding: 5px 5px;
+  text-align: center;
+  font-family: inherit;
+  font-size: 12px;
+  text-decoration: none;
+  color: #725ac1;
+  background: rgba(46, 81, 218, 0.3);
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border-radius: 30px;
+  border: 2px solid #725ac1;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #725ac1;
+  width: max-content;
+
+  &:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #725ac1;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 const TodoList = () => {
@@ -96,15 +122,15 @@ const TodoList = () => {
   return (
     <>
       <ButtonWrapper>
-        <SmallBtnWrap>
-          <button onClick={() => onCheckTodos(true)}>
-            Check all tasks
-          </button>
-          <button onClick={() => onCheckTodos(false)}>
-            Uncheck all tasks
-          </button>
-        </SmallBtnWrap>
         <FilterOptions />
+        <SmallBtnWrap>
+          <Button onClick={() => onCheckTodos(true)}>
+            Check all
+          </Button>
+          <Button onClick={() => onCheckTodos(false)}>
+            Uncheck all
+          </Button>
+        </SmallBtnWrap>
       </ButtonWrapper>
       {returnListItems()}
     </>
