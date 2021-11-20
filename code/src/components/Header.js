@@ -5,31 +5,37 @@ import AddTodo from 'components/AddTodo'
 import styled from 'styled-components'
 
 const TheHeader = styled.header`
-  max-width: 400px;
+  width: 300px;
   margin: 0 auto;
   text-align: center;
   margin-bottom: 5px;
+  background-color: #ffffff10;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 3px 4px rgba(0, 0, 0, 0.06);
+  padding-left: 10px;
+  padding-right: 10px;
 
   h1 {
     font-family: 'Ubuntu', sans-serif;
     font-size: 30px;
     margin-top: 30px;
     margin-bottom: 20px;
+    padding-top: 10px;
     color: black;
   }
-
-  .header-functions-container {
+`
+const HeaderFunctions = styled.div`
     display: flex;
     justify-content: space-between;
     margin: 0 auto;
     padding-top: 20px;
     margin-bottom: -40px;
     width: 100%;
-  }
 
-  .counter-paragraph {
-    color: grey;
-  }
+    .counter-paragraph {
+      color: grey;
+    }
 `
 const Header = () => {
 
@@ -41,10 +47,10 @@ const Header = () => {
     <TheHeader>
     <h1>Todos</h1>
     <AddTodo />
-    <div className="header-functions-container">
+    <HeaderFunctions>
       <p className="counter-paragraph">Completed {amountTodos}/{totalTodos}</p>
       <ClearAll />
-    </div>
+    </HeaderFunctions>
     </TheHeader>
   )
 }

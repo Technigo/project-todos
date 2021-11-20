@@ -3,12 +3,12 @@ import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 const NothingToDo = styled.section`
-  width: 250px;
+  width: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 50px;
+  margin-top: 90px;
 
   h2 {
     font-family: 'Ubuntu', sans-serif;
@@ -18,7 +18,6 @@ const NothingToDo = styled.section`
     padding: 10px;
   }
 `
-
 const EmptyField = () => {
   const items = useSelector((store) => store.todos.items)
   const activeTodos = items.length
