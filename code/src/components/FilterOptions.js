@@ -42,7 +42,6 @@ const FilterOptions = () => {
 
   const handleChange = (event) => {
     dispatch(todos.actions.changeFilter(event.value));
-    dispatch(todos.actions.updateFilterList(event.value));
   };
 
   return (

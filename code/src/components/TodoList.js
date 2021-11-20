@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components/macro";
 
@@ -69,7 +69,29 @@ const Tag = styled.div`
 `;
 
 const TodoList = () => {
-  const filterItems = useSelector((store) => store.todos.filterItems);
+  const items = useSelector((store) => store.todos.items);
+  const filter = useSelector((store) => store.todos.filter);
+  const [newItems, setNewItems] = useState([]);
+
+  const filterList = () => {
+    if (filter === "checked") {
+      setNewItems(items.filter((item) => item.isComplete === true));
+    } else if (filter === "unchecked") {
+      setNewItems(items.filter((item) => item.isComplete === false));
+    } else if (filter === "showall") {
+      setNewItems(items);
+    } else {
+      setNewItems(
+        items.filter((item) =>
+          item.tags.some((tag) => tag.value === filter)
+        )
+      );
+    }
+  };
+
+  useEffect(() => {
+    filterList();
+  }, [filter, items]);
 
   const dispatch = useDispatch();
 
@@ -95,7 +117,7 @@ const TodoList = () => {
         Uncheck all tasks
       </button>
       <FilterOptions />
-      {filterItems.map((item) => (
+      {newItems.map((item) => (
         <Wrapper key={item.id}>
           <SmallWrapper>
             <SmallText>

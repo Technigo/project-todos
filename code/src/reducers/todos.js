@@ -7,7 +7,6 @@ const todos = createSlice({
   // initial is always an object
   initialState: {
     items: [],
-    filterItems: [],
     filter: "",
     options: [
       { value: "home", label: "Home" },
@@ -31,7 +30,6 @@ const todos = createSlice({
       };
 
       store.items = [...store.items, newTodo];
-      store.filterItems = store.items;
     },
     toggleTodo: (store, action) => {
       const updatedItems = store.items.map((item) => {
@@ -44,29 +42,10 @@ const todos = createSlice({
           return updatedTodo;
         } else return item;
       });
-
-      store.filterItems = updatedItems;
       store.items = updatedItems;
     },
     changeFilter: (store, action) => {
       store.filter = action.payload;
-    },
-    updateFilterList: (store) => {
-      if (store.filter === "checked") {
-        store.filterItems = store.items.filter(
-          (item) => item.isComplete === true
-        );
-      } else if (store.filter === "unchecked") {
-        store.filterItems = store.items.filter(
-          (item) => item.isComplete === false
-        );
-      } else if (store.filter === "showall") {
-        store.filterItems = store.items;
-      } else {
-        store.filterItems = store.items.filter((item) =>
-          item.tags.some((tag) => tag.value === store.filter)
-        );
-      }
     },
     checkTodos: (store) => {
       const updatedItems = store.items.map((item) => {
@@ -78,7 +57,6 @@ const todos = createSlice({
       });
 
       store.items = updatedItems;
-      store.filterItems = store.items;
     },
     uncheckTodos: (store) => {
       const updatedItems = store.items.map((item) => {
@@ -90,7 +68,6 @@ const todos = createSlice({
       });
 
       store.items = updatedItems;
-      store.filterItems = store.items;
     },
     deleteTodo: (store, action) => {
       const decreasedTodo = store.items.filter(
@@ -98,7 +75,6 @@ const todos = createSlice({
       );
 
       store.items = decreasedTodo;
-      store.filterItems = store.items;
     },
   },
 });
