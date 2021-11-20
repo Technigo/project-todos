@@ -1,11 +1,13 @@
 body {
   background-color: #000;
+  border-radius: 12px;
   color: #fff;
   margin: 0;
   font-family: 'Josefin Sans', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   width: 320px;
+  height: auto;
   overflow-x: hidden;
 }
 
@@ -32,4 +34,42 @@ code {
   margin-top: 8%;
   margin-left: 0.5em;
   margin-right: auto;
+}
+
+/* ----------------------------------------------- */
+/*                MEDIA QUERIES                    */
+/* ----------------------------------------------- */
+
+@media only screen and (min-width: 350px) {
+  body {
+    border: 0.1px solid #292b2e;
+    display: flex;
+    margin-top: 25%;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    overflow-y: hidden;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    display: block;
+    margin-top: 5%;
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  body {
+    margin-left: 40%;
+  }
+}
+
+@media only screen and (min-width: 3840px) {
+  body {
+    margin-left: 15%;
+  }
 }

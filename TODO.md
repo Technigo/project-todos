@@ -7,7 +7,7 @@ A to-do list based on the bizarre routines of French composer Eric Satie
 - Put on an all-white outfit
 - Eat only white-colored foods
 - Work on current music piece
-- Buy a 100 umbrellas
+- Buy 100 umbrellas
 - Analyze a symphony
 - Sleep with one eye closed
 

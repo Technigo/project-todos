@@ -3,9 +3,10 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import tasks from './reducers/tasks';
 
-import AddTask from './components/AddTask';
-import TaskList from './components/TaskList';
-import { TaskCounter } from 'components/TaskCounter';
+import AddTask from './components/AddTask/AddTask';
+import TaskList from './components/TaskList/TaskList';
+import { TaskCounter } from './components/TaskCounter/TaskCounter';
+import { Footer } from './components/Footer/Footer';
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
@@ -20,6 +21,7 @@ export const App = () => {
       <AddTask />
       <TaskCounter />
       <TaskList />
+      <Footer />
     </Provider>
   );
 };

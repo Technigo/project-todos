@@ -1,0 +1,9 @@
+.footer-container {
+  font-size: small;
+  padding: 1em;
+  text-align: center;
+}
+
+.footer-link {
+  color: var(--task-three);
+}

@@ -3,7 +3,9 @@ import uniqid from 'uniqid';
 
 export const tasks = createSlice({
   name: 'tasks',
-  initialState: { items: [] },
+  initialState: {
+    items: [],
+  },
   reducers: {
     addTask: (store, action) => {
       const newTask = {

@@ -10,7 +10,7 @@ export const TaskCounter = () => {
   return (
     <>
       <div className='counter-container'>
-        <p>Tasks to do today: {totalTasks}</p>
+        <p>Tasks left: {totalTasks}</p>
       </div>
     </>
   );
