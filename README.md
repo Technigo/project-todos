@@ -1,5 +1,3 @@
-# Project Todos
-
 The goal of this project was to build a todo app using Redux store, writing my own reducers and actions.
 
 Features
