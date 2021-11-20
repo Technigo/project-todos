@@ -7,6 +7,10 @@ const todoData = createSlice({
     { id: 2, title: "Afterwork", task: "“API by day, IPA by night.”", completed: true },
     { id: 3, title: "Deadline", task: "“When I wrote this code, only God and I understood what I did. Now only God knows.”", completed: false },
     { id: 4, title: "Work", task: "“Debugging.. is twice as hard as writing the code in the first place. Therefore, if you write the code as cleverly as possible, you are, by definition, not smart enough to debug it.”", completed: false },
+    { id: 5, title: "Meeting", task: "blabla", completed: false },
+    { id: 6, title: "Afterwork", task: "blabla", completed: true },
+    { id: 7, title: "Deadline", task: "blabla", completed: false },
+    { id: 8, title: "Work", task: "blabla", completed: false },
    
   ],
 
@@ -25,6 +29,25 @@ const todoData = createSlice({
 
       
     },
+    allComplete:(store,action) =>{ 
+
+       store.map(todos => {
+        if (!todos.completed) {
+          todos.completed = action.payload.completed
+          return{
+            completed:true,
+...store,
+
+          }
+        } else {
+          return store;
+        }
+      });
+    },
+
+    deleteComplete: (state, action) => {
+      return state.filter((todos) => !todos.completed === !action.payload.completed);
+    },
 
     toggleComplete: (state, action) => {
       const index = state.findIndex((todos) => todos.id === action.payload.id);
@@ -37,6 +60,6 @@ const todoData = createSlice({
   }
 });
 
-export const { addTodo, toggleComplete, deleteTodo } = todoData.actions;
+export const { addTodo, toggleComplete, deleteTodo, allComplete, deleteComplete } = todoData.actions;
 
 export default todoData.reducer;

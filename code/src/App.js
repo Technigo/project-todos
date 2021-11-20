@@ -5,6 +5,8 @@ import todoData from "reducers/todoData";
 import TodoList from "components/TodoList";
 import AddTodo from "components/AddTodo";
 import TodoCount from "components/TodoCount";
+import { CompleteBtn } from "components/CompleteBtn";
+
 
 const reducer = combineReducers({
   todo: todoData
@@ -31,6 +33,7 @@ export const App = () => (
      
       <TodoCount id="count" />
       <TodoList />
+      <CompleteBtn/>
      
       </section>
       </article>
