@@ -14,7 +14,6 @@ const StyledBigHeadline = styled.h1`
   font-size: 30px;
   margin: 0;
 `
-
 export const Header = () => {
   return (
     <StyledContainer>
