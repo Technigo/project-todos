@@ -22,6 +22,7 @@ const HeadingTwo = styled.h2`
   margin-bottom: 0;
   text-align: center;
 `;
+
 const HeadingThree = styled.h3`
   font-family: "Ranga", cursive;
   font-size: 22px;

@@ -2,11 +2,9 @@ import React from "react";
 import Select from "react-select";
 
 const options = [
-  { value: "home", label: "Home" },
-  { value: "school", label: "School" },
-  { value: "dog", label: "Dog" },
-  { value: "travel", label: "Travel" },
-  { value: "shopping", label: "Shopping" },
+  { value: "prio1", label: "Prio 1" },
+  { value: "prio2", label: "Prio 2" },
+  { value: "prio3", label: "Prio 3" },
 ];
 
 const styles = {
@@ -37,14 +35,15 @@ const AddTag = ({ setNewProject, newProject }) => {
       <label>
         Project (optional)
         <Select
-          name="tags"
+          name="projects"
           value={newProject}
           styles={styles}
           options={options}
           theme={theme}
           onChange={(todo) => {
-            console.log(todo.target.value))
-            setNewProject(todo.target.value)}}
+            console.log("Project is set to: ", todo.value);
+            setNewProject(todo.value);
+          }}
         />
       </label>
     </div>
