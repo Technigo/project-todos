@@ -13,8 +13,8 @@ const TheHeader = styled.header`
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.06);
-  padding-left: 10px;
-  padding-right: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
 
   h1 {
     font-family: 'Ubuntu', sans-serif;
@@ -30,7 +30,6 @@ const HeaderFunctions = styled.div`
     justify-content: space-between;
     margin: 0 auto;
     padding-top: 20px;
-    margin-bottom: -40px;
     width: 100%;
 
     .counter-paragraph {

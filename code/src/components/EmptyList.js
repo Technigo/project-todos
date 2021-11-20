@@ -8,7 +8,6 @@ const NothingToDo = styled.section`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  margin-top: 90px;
 
   h2 {
     font-family: 'Ubuntu', sans-serif;
@@ -16,6 +15,7 @@ const NothingToDo = styled.section`
     background-color: #FFD580;
     border-radius: 20px;
     padding: 10px;
+    margin-top: 60px;
   }
 `
 const EmptyField = () => {
