@@ -1,5 +1,6 @@
 body {
   margin: 0 auto;
+  box-sizing: border-box;
   height: 100vh;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -22,6 +23,10 @@ code {
   color: rgb(235, 243, 249);
 }
 
+html {
+  margin: 0 auto;
+}
+
 h1 {
   font-family: 'Oswald', 'Montserat';
   font-size: 2.1rem;
@@ -37,16 +42,25 @@ h1 {
   padding-top: 1px;
   margin-bottom: 5px;
 }
+
 .completed {
   margin-top: 5px;
   margin-bottom: 5px;
   font-size: 0.9rem;
 }
+
 .moment-p {
   margin-top: 5px;
 }
+
 .background-gif {
   max-width: 100%;
+}
+
+.footer-p {
+  position: relative;
+  margin-top: 210px;
+  font-size: 0.7rem;
 }
 
 .week-day {
@@ -96,27 +110,28 @@ h1 {
   flex-direction: column;
   justify-content: left;
   min-width: 80%;
-  /* padding: 10px 20px 0 0; */
 }
 
 .created-at {
   position: absolute;
   bottom: 10px;
   left: 10px;
+  color: rgb(235, 243, 249);
 }
 
 .created-at-day {
   position: absolute;
   bottom: 30px;
   left: 10px;
+  color: rgb(235, 243, 249);
 }
 
 .seperator {
   border: solid 1px rgb(235, 243, 249);
   transform: rotate(180deg) translateX(10px);
 }
+
 .right-todo {
-  /* display: flex; */
   flex-direction: column;
   align-items: right;
   justify-content: right;
@@ -134,10 +149,6 @@ h1 {
   background-color: rgb(32, 178, 178);
   color: #444;
   border-bottom: 1px solid rgb(235, 243, 249);
-}
-
-.delete-todo:done {
-  background-color: rgb(254, 100, 100);
 }
 
 .not-done {
@@ -159,7 +170,7 @@ h1 {
   position: absolute;
   top: 10px;
   left: 15px;
-  padding: 10px, 300px, 0 0;
+  margin: 10px, 300px, 0 0;
 }
 
 .todo-section {
@@ -230,21 +241,16 @@ h1 {
   font-weight: 500;
   height: 45px;
   width: 45px;
-  margin-left: 1px;
+  margin-right: 5px;
   margin-top: 20px;
-  border-radius: 10px;
+  border-radius: 50px;
   border: none;
-  background-color: rgb(254, 100, 100);
   padding: 0 1rem 0 1rem;
-  color: rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
 
 .regular-checbox {
   display: none;
-}
-
-.delete-x {
-  margin-right: 30px;
 }
 
 .checkbox {
@@ -252,15 +258,182 @@ h1 {
   height: 40px;
   border-radius: 50%;
   margin-top: 20px;
-  /* filter: brightness(20%) invert(20%); */
-  /* filter: grayscale(60%) sepia(10%) brightness(180%); */
+  vertical-align: middle;
+  margin-right: 7px;
 }
 
 .checkbox:active {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   margin-top: 20px;
-  /* filter: grayscale(60%) sepia(10%) brightness(180%); */
-  /* filter: brightness(20%) invert(20%); */
+  text-align: center;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .footer-p {
+    position: relative;
+    margin-top: 190px;
+    font-size: 1.1rem;
+  }
+
+  .clear-todo {
+    height: 53px;
+    width: 120px;
+  }
+
+  .no-todos {
+    max-width: 100%;
+  }
+
+  .background-gif {
+    width: 100%;
+  }
+
+  .add-todo {
+    height: 340px;
+  }
+
+  .task-number-text {
+    font-size: 1.7rem;
+    margin-top: 11px;
+  }
+
+  .week-day {
+    font-size: 1.5rem;
+  }
+
+  .todo-input {
+    height: 70px;
+    width: 57%;
+    border-radius: 50px 0 0 50px;
+  }
+
+  .add-todo-button {
+    height: 70px;
+    width: 70px;
+  }
+
+  .task-number {
+    font-size: 1.7rem;
+  }
+
+  .completed {
+    font-size: 1.2rem;
+  }
+
+  .moment-p {
+    font-size: 1.2rem;
+  }
+
+  .media-h1 {
+    margin-left: 75px;
+    font-size: 2.7rem;
+    margin-bottom: 20px;
+  }
+
+  .no-todos-text {
+    font-size: 1.5rem;
+  }
+
+  .not-done {
+    width: 80%;
+    height: 210px;
+  }
+
+  .done {
+    width: 80%;
+    height: 210px;
+  }
+
+  .delete-check {
+    padding-left: 370px;
+  }
+
+  .left-todo {
+    width: 50%;
+  }
+}
+@media (min-width: 1024px) {
+  .footer-p {
+    position: relative;
+    margin-top: 240px;
+    font-size: 1.3rem;
+  }
+
+  .clear-todo {
+    height: 53px;
+    width: 120px;
+  }
+
+  .delete-check {
+    padding-left: 570px;
+  }
+
+  .clear-todo {
+    height: 53px;
+    width: 120px;
+  }
+
+  .not-done {
+    width: 80%;
+    height: 210px;
+  }
+
+  .done {
+    width: 80%;
+    height: 210px;
+  }
+
+  .background-gif {
+    width: 100%;
+  }
+
+  .add-todo {
+    height: 420px;
+  }
+
+  .task-number-text {
+    font-size: 2rem;
+    margin-top: 20px;
+  }
+
+  .week-day {
+    font-size: 2rem;
+    margin-top: 30px;
+  }
+
+  .todo-input {
+    height: 77px;
+    width: 57%;
+    border-radius: 50px 0 0 50px;
+  }
+
+  .add-todo-button {
+    height: 77px;
+    width: 77px;
+  }
+
+  .task-number {
+    font-size: 1.7rem;
+  }
+
+  .completed {
+    font-size: 1.7rem;
+  }
+
+  .moment-p {
+    font-size: 1.7rem;
+    margin-bottom: 10px;
+  }
+
+  .media-h1 {
+    margin-left: 75px;
+    font-size: 3rem;
+    margin-bottom: 20px;
+  }
+
+  .no-todos-text {
+    font-size: 1.5rem;
+  }
 }

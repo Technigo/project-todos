@@ -4,6 +4,7 @@ import Moment from 'moment';
 
 import todos from '../reducers/todos';
 import BackgroundGif from './BackgroundGif';
+import Footer from './Footer';
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
@@ -80,6 +81,7 @@ const TodoList = () => {
       <h2 className='no-todos-text'>
         You dont have anything to do please add some todos!
       </h2>
+      <Footer />
     </div>
   );
 };

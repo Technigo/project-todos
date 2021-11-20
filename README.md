@@ -1,12 +1,12 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A simple todo app made with React.js and Redux, custome made reducers and actions.
+In this project i tried to work more with functionality, learning about reducers, how to structure a store, what immutabilty means trough React lens and how to work with it.
+In my design inspiration i wanted to have a cheerful motivating theme.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+If i had more time i would focus more on styled components. ANd tried to give the todo app more functionality.
 
 ## View it live
 
