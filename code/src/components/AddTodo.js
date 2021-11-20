@@ -28,7 +28,11 @@ const AddTodo = () => {
         onKeyDown={event => onEnter(event)}
         onChange={event => setInput(event.target.value)}
       />
-      <button onClick={onAddTodo}>Add todo</button>
+      <button className="add-button" onClick={onAddTodo}>
+        <span role="img" aria-label="Add-plus">
+          ➕
+        </span>
+      </button>
     </div>
   );
 };

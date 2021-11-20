@@ -26,9 +26,11 @@ store.subscribe(() => {
 
 export const App = () => {
   return (
-    <Provider store={store}>
-      <AddTodo />
-      <TodoList />
-    </Provider>
+    <div className="todo-container">
+      <Provider store={store}>
+        <AddTodo />
+        <TodoList />
+      </Provider>
+    </div>
   );
 };

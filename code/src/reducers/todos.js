@@ -13,7 +13,7 @@ const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         isComplete: false,
-        date: moment().format("MMMM Do YYYY, h:mm"),
+        date: moment().format("MMMM Do YYYY"),
       };
 
       // v2 Immutability
