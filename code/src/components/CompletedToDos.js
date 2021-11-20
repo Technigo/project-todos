@@ -25,6 +25,10 @@ const ContainerDiv = styled.div`
   padding: 0 3px;
   cursor: pointer;
   }
+
+  @media (min-width: 667px) {
+    margin: 10px 0;
+  }
 `
 
 const CompletedToDos = () => {

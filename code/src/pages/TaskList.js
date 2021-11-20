@@ -13,6 +13,10 @@ const StyledMain = styled.main `
   align-items: center;
   justify-content: space-between;
   background-color: var(--white);
+
+  @media (min-width: 667px) {
+    height: 80vh;
+  }
 `
 
 const TaskList = () => {

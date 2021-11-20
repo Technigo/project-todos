@@ -11,6 +11,7 @@ import Image from '../components/Image'
 
 const ContainerDiv = styled.div `
   height: 57vh;
+  max-width: fit-content;
   margin-top: -50px;
   overflow-y:auto;
   display: flex;
@@ -20,9 +21,14 @@ const ContainerDiv = styled.div `
   & img {
     opacity: 0.5;
   }
+
+  @media (min-width: 667px) {
+    margin-top: auto;
+  }
 `
 const StyledForm = styled.form `
   width: 80vw;
+  max-width: 340px;
   margin-bottom: 10px;
   padding: 5px;
   font-size: 20px;
@@ -39,6 +45,10 @@ const StyledForm = styled.form `
     border: none;
     font-size: 15px;
     cursor: pointer;
+  }
+
+  @media (min-width: 667px) {
+    max-width: 400px;
   }
 `
 const ToDoLabel = styled.label `

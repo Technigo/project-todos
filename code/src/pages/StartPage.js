@@ -11,6 +11,10 @@ const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  & img {
+    max-width: 520px;
+  }
 `
 
 const StartPage = () => {

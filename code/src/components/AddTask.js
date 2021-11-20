@@ -7,7 +7,6 @@ import { AddBtn } from './Buttons'
 
 const AddTaskForm = styled.form`
   margin-bottom: 30px;
-  width: inherit;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -37,6 +36,10 @@ const AddTaskForm = styled.form`
     border-radius: 0.4em;
     padding: 0 3px;
   }
+
+  @media (min-width: 667px) {
+    width: 400px;
+  }
 ` 
 
 const AddTask = () => {
@@ -58,7 +61,6 @@ const AddTask = () => {
         type='text'
         value={input}
         onChange={(event) => setInput(event.target.value)}
-        autoFocus='autofocus'
       />
       <select 
         id='categories'
