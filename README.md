@@ -1,13 +1,25 @@
-# Project Todos
+# To do list!
 
-Replace this readme with your own information about your project.
+A multipage React/Redux application, where the user can create a new task, update to complete or delete it individually or the total amount of tasks.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## Features
 
-## The problem
+- Use of different components
+- Use of redux and redux toolkit
+- Use of hooks: useSelector, useDispatch, useState
+- Tasks counter
+- Filter completed and uncompleted tasks
+- Responsive styling
+- Styled components
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Production Process
+
+- I started by planning the functionalities and layout for the project and dividing those into components.
+
+- Creating reducers was a new concept and this was a great oportunity to add different functionalities.
+
+- The filter for completed and uncompleted tasks was initially creating conflits when published on Netlify, but after changing it to the tasks file in the reducer, the conflits were solved
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://brunastodo.netlify.app/
