@@ -136,6 +136,46 @@ const TodoList = () => {
     else dispatch(todos.actions.uncheckTodos());
   };
 
+  const returnListItems = () => {
+    return newItems.map((item) => (
+      <Wrapper key={item.id}>
+        <SmallWrapper>
+          <SmallText>
+            Finish by:{" "}
+            {DateTime.fromISO(item.date)
+              .setZone("Europe/Stockholm")
+              .toFormat("dd LLL yyyy")}
+          </SmallText>
+          <SmallText>
+            Added:{" "}
+            {DateTime.fromISO(item.added)
+              .setZone("Europe/Stockholm")
+              .toFormat("dd LLL yyyy")}
+          </SmallText>
+        </SmallWrapper>
+        <ListItem>
+          <FlexRow>
+            <input
+              type="checkbox"
+              checked={item.isComplete}
+              onChange={() => onToggleTodo(item.id)}
+            />
+            <p>{item.text}</p>
+          </FlexRow>
+          <button onClick={() => onDeleteTodo(item.id)}>x</button>
+        </ListItem>
+        <Tags>
+          {" "}
+          {item.tags.map((tag) => (
+            <Tag key={tag.value}>
+              <TagText>{tag.value}</TagText>
+            </Tag>
+          ))}
+        </Tags>
+      </Wrapper>
+    ));
+  };
+
   return (
     <>
       <ButtonWrapper>
@@ -149,43 +189,7 @@ const TodoList = () => {
         </SmallBtnWrap>
         <FilterOptions />
       </ButtonWrapper>
-      {newItems.map((item) => (
-        <Wrapper key={item.id}>
-          <SmallWrapper>
-            <SmallText>
-              Finish by:{" "}
-              {DateTime.fromISO(item.date)
-                .setZone("Europe/Stockholm")
-                .toFormat("dd LLL yyyy")}
-            </SmallText>
-            <SmallText>
-              Added:{" "}
-              {DateTime.fromISO(item.added)
-                .setZone("Europe/Stockholm")
-                .toFormat("dd LLL yyyy")}
-            </SmallText>
-          </SmallWrapper>
-          <ListItem>
-            <FlexRow>
-              <input
-                type="checkbox"
-                checked={item.isComplete}
-                onChange={() => onToggleTodo(item.id)}
-              />
-              <p>{item.text}</p>
-            </FlexRow>
-            <button onClick={() => onDeleteTodo(item.id)}>x</button>
-          </ListItem>
-          <Tags>
-            {" "}
-            {item.tags.map((tag) => (
-              <Tag key={tag.value}>
-                <TagText>{tag.value}</TagText>
-              </Tag>
-            ))}
-          </Tags>
-        </Wrapper>
-      ))}
+      {returnListItems()}
     </>
   );
 };
