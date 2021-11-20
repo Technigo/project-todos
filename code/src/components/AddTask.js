@@ -25,6 +25,10 @@ const AddTaskForm = styled.form`
     &:focus {
       outline: none !important;
     }
+    @media (min-width: 1024px) {
+      font-size: 17px;
+      height: 40px;
+    }
   }
 
   & select {
@@ -35,6 +39,11 @@ const AddTaskForm = styled.form`
     border: 1px solid var(--brown);
     border-radius: 0.4em;
     padding: 0 3px;
+
+    @media (min-width: 1024px) {
+      font-size: 17px;
+      padding: 0 7px;
+    }
   }
 
   @media (min-width: 667px) {

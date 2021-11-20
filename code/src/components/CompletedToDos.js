@@ -29,6 +29,10 @@ const ContainerDiv = styled.div`
   @media (min-width: 667px) {
     margin: 10px 0;
   }
+
+  @media (min-width: 1024px) {
+    margin: 10px 20px 10px 0;
+  }
 `
 
 const CompletedToDos = () => {

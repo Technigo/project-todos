@@ -14,15 +14,12 @@ const StartButton = styled.button`
   transition: all .8s ease-in-out;
 
   &:hover {
-    /* transform: translate(-0.05em, -0.05em); */
     transform: scale(1.1);
-    /* box-shadow: var(--brown) 0.15em 0.15em; */
   }
- 
- /*  &:active {
-    transform: translate(0.05em, 0.05em);
-    box-shadow: var(--brown) 0.05em 0.05em;
-  } */
+
+  @media (min-width: 1024px) {
+    font-size: 20px;
+  }
 `
 const AddTaskButton = styled.button`
   display: block;
@@ -37,6 +34,11 @@ const AddTaskButton = styled.button`
   border-radius: 0.4em;
   padding: 0 3px;
   cursor: pointer;
+
+  @media (min-width: 1024px) {
+    font-size: 17px;
+    height: 40px;
+  }
 `
 
 export const StartBtn = ({ text }) => <StartButton>{text}</StartButton>

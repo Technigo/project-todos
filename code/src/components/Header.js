@@ -10,6 +10,10 @@ const StyledHeader = styled.h1`
   @media (min-width: 667px) {
     font-size: 36px;
   }
+
+  @media (min-width: 1024px) {
+    font-size: 39px;
+  }
 `
 
 const Header = () => <StyledHeader>What do you want to achieve today?</StyledHeader>

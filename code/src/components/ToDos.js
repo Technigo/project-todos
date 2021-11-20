@@ -50,6 +50,11 @@ const StyledForm = styled.form `
   @media (min-width: 667px) {
     max-width: 400px;
   }
+
+  @media (min-width: 1024px) {
+    font-size: 22px;
+    margin: 0 20px 10px 20px;
+  }
 `
 const ToDoLabel = styled.label `
   text-decoration: ${props => props.completed ? 'line-through' : 'none'};
