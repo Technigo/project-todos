@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import img from '../img/shark_fin.png';
 
 import styled from "styled-components";
 
@@ -19,7 +20,15 @@ font-weight: 600;
 padding: 15px 5px 0 5px;
 span {
 font-size: 30px;
-	} 
+	}
+img {
+    height:50px;
+} 
+@media (max-width: 600px) {
+.hiddenMobile{
+    display:none;
+}
+}
 `;
 
 const DayHeading = styled.h2`
@@ -59,7 +68,9 @@ const Header = () => {
     return (
 
         <HeaderContainer >
-            <Heading>Todo <span>do do do do do do</span></Heading>
+            <Heading>
+                Todo <span>do do do</span><span className="hiddenMobile"> do do do</span> <img src={img} alt="sharkfin-img" />
+            </Heading>
             <DayHeading>{getDay()} • {getDate()}</DayHeading>
             <TaskCount>Active todos: {activeTodos}</TaskCount>
         </HeaderContainer>
