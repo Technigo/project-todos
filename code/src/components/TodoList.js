@@ -5,6 +5,7 @@ import todos from "../reducers/todos";
 
 const TodoList = () => {
   const items = useSelector(store => store.todos.items);
+  const numberOfTodos = items.length;
 
   const dispatch = useDispatch();
 
@@ -20,6 +21,7 @@ const TodoList = () => {
       {items.map((item, index) => (
         <div className="flex-item" key={item.id}>
           <p>{item.text}</p>
+          <p>{item.date}</p>
           <input
             type="checkbox"
             checked={item.isComplete}
@@ -28,6 +30,7 @@ const TodoList = () => {
           <button onClick={() => onDeleteTodo(index)}>Delete</button>
         </div>
       ))}
+      <p>{numberOfTodos}</p>
     </section>
   );
 };

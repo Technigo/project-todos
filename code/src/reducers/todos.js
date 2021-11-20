@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import uniqid from "uniqid";
+import moment from "moment";
 
 const todos = createSlice({
   name: "todos",
@@ -12,6 +13,7 @@ const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         isComplete: false,
+        date: moment().format("MMMM Do YYYY, h:mm"),
       };
 
       // v2 Immutability
