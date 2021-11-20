@@ -61,6 +61,17 @@ const Section = styled.section`
     color: var(--teal);
     width: 100%;
   }
+  @media screen and (min-width: 768px) {
+    width: 400px;
+    margin-left: 45%;
+
+    h2 {
+      font-size: 6em;
+    }
+    h3 {
+      font-size: 4em;
+    }
+  }
 `;
 
 const SectionEmpty = styled(Section)`

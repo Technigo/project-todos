@@ -14,9 +14,6 @@ const TodoList = () => {
   const onToggleTodo = (id) => {
     dispatch(todos.actions.toggleTodo(id));
   };
-  // const onToggleIsComplete = (id) => {
-  //   dispatch(todos.actions.toggleIsComplete(id));
-  // };
 
   // delete one todo
   const onDeleteTodo = (id) => {
@@ -35,69 +32,59 @@ const TodoList = () => {
   const date = new Date();
 
   return (
-    // <div className="todo-wrapper">
     <>
-      <section className="todo-list-container">
-        {/* ternary operator? */}
-        <h3>to-do</h3>
+      {unCompletedTodos.map((item) => (
+        <div className="todo-card" key={item.id}>
+          <label htmlFor="checkbox" />
+          <input
+            className="round"
+            type="checkbox"
+            checked={item.isComplete}
+            onChange={() => onToggleTodo(item.id)}
+            id="checkbox"
+          />
 
-        <div>
-          <div className="todo-list">
-            {unCompletedTodos.map((item) => (
-              <div className="checkbox-wrapper" key={item.id}>
-                <label>
-                  <FaCheckCircle />
-                  {/* <span role="img" aria-label="check">
-                  ✔
-                </span> */}
-                  <input
-                    type="checkbox"
-                    checked={item.isComplete}
-                    onChange={() => onToggleTodo(item.id)}
-                  />
-                  {/* <input 
-              type="date"
-              /> */}
-                </label>
-                <p className="todo">{item.text}</p>
-                <div>
-                  <span>{moment(date).format('ll')}</span>
-                </div>
-                {/* <button onClick={() => onDeleteTodo(item.id)}>Delete</button> */}
-                <div className="delete-wrapper">
-                  <FaTrash
-                    className="delete-button"
-                    onClick={() => onDeleteTodo(item.id)}
-                  />
-                </div>
-              </div>
-            ))}
-          </div>
-          <button disabled={items.length < 1} onClick={onClickCompleteAll}>
-            Complete all!
-          </button>
-          {/* <h3>done</h3> */}
-          {completeTodos.map((item) => (
-            <div className="checkbox-wrapper completed" key={item.id}>
-              <p>{item.text}</p>
-              <div>
-                <span>{moment(date).format('ll')}</span>
-              </div>
-              <input
-                type="checkbox"
-                checked={item.isComplete}
-                onChange={() => onToggleTodo(item.id)}
-              />
-              <div className="delete-wrapper">
-                <FaTrash
-                  className="delete-button"
-                  onClick={() => onDeleteTodo(item.id)}
-                />
-              </div>
-            </div>
-          ))}
+          <p className="todo">{item.text}</p>
+          <span className="date">{moment(date).format('ll')}</span>
+          <FaTrash
+            className="delete-button"
+            onClick={() => onDeleteTodo(item.id)}
+          />
         </div>
-      </section>
+      ))}
+      <button
+        className="delete-all"
+        disabled={items.length < 1}
+        onClick={onClickCompleteAll}
+      >
+        complete all
+      </button>
+
+      {/* <h3>done</h3> */}
+      {completeTodos.map((item) => (
+        <div className="todo-card completed" key={item.id}>
+          <label htmlFor="checkbox" />
+          <input
+            className="round"
+            type="checkbox"
+            checked={item.isComplete}
+            onChange={() => onToggleTodo(item.id)}
+            id="checkbox"
+          />
+
+          <p className="todo">{item.text}</p>
+
+          <span className="date">{moment(date).format('ll')}</span>
+
+          {/* <button onClick={() => onDeleteTodo(item.id)}>Delete</button> */}
+          {/* <div className="delete-wrapper"> */}
+          <FaTrash
+            className="delete-button"
+            onClick={() => onDeleteTodo(item.id)}
+          />
+          {/* </div> */}
+        </div>
+      ))}
     </>
     // </div>
   );

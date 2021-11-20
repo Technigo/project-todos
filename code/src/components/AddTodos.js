@@ -25,14 +25,14 @@ const AddTodo = () => {
         <input
           id="todo"
           type="text"
-          placeholder="Add a task"
+          placeholder="ADD A TASK"
           value={input}
           onChange={(event) => setInput(event.target.value)} // make a function?
           ref={inputRef}
           className="todo-input"
         />
         <button className="input-button" onClick={onAddTodo}>
-          Add todo
+          add task
         </button>
       </label>
     </div>
