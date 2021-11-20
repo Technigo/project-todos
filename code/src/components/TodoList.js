@@ -21,42 +21,41 @@ const TodoList = () => {
   const onClearTodo = (id) => {
     dispatch(todos.actions.clearTodo(id));
   };
-  const onCheckAllTodo = (item) => {
+  const onCheckAllTodo = () => {
     dispatch(todos.actions.checkAllTodo());
   };
 
-  if (items.length > 0)
+  if (items.length > 0 || items.complete > 1)
     return (
-      <section
-        className='todo'
-        // style={{
-        //   backgroundColor: 'rgb(68, 68, 68)',
-        // }}
-      >
+      <section className='todo'>
         {items.map((item) => (
           <div className={item.isComplete ? 'done' : 'not-done'} key={item.id}>
-            <div className='todo-text'>
-              <p>{item.text}</p>
+            <div className='left-todo'>
+              <div className='todo-text'>{item.text}</div>
+              <p>
+                <span className='created-at'>
+                  {Moment(item.createdAt).format('hh:mm:ss')}
+                </span>
+                <span className='created-at-day'>
+                  {Moment(date).format('dddd')}
+                </span>
+              </p>
             </div>
-            <div className='todo-container'>
+            <div className='seperator'></div>
+            <div className='right-todo'>
               <input
                 className='checkbox'
                 type='checkbox'
                 checked={item.isComplete}
                 onChange={() => onToggleTodo(item.id)}
               />
+
               <button
                 className='delete-todo'
                 onClick={() => onRemoveTodo(item.id)}
               >
-                <span className='x'>x</span>
+                <span className='delete-x'>❌</span>
               </button>
-              <p>
-                <span>
-                  {Moment(item.createdAt).format('hh:mm:ss')},
-                  {Moment(date).format('dddd')}
-                </span>
-              </p>
             </div>
           </div>
         ))}
@@ -64,7 +63,7 @@ const TodoList = () => {
           <button className='clear-todo' onClick={() => onClearTodo(items.id)}>
             <span>delete all</span>
           </button>
-          <button className='clear-todo' onClick={() => onClearTodo(items)}>
+          <button className='clear-todo' onClick={() => onCheckAllTodo(items)}>
             <span>check all</span>
           </button>
         </div>
@@ -72,10 +71,6 @@ const TodoList = () => {
     );
   return (
     <div
-      // style={{
-      //   backgroundImage: (src =
-      //     'https://giphy.com/gifs/thegifys-gifys-5xaOcLx8A5zjZzUTSx2'),
-      // }}
       className='no-todos'
       style={{
         backgroundColor: 'rgb(167, 225, 234)',

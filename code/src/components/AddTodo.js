@@ -10,6 +10,13 @@ const AddTodo = () => {
   const date = Moment();
   const items = useSelector((store) => store.todos.items);
 
+  const complete = useSelector(
+    (store) => store.todos.items.filter((item) => item.isComplete).length
+  );
+  const incomplete = useSelector(
+    (store) => store.todos.items.filter((item) => !item.isComplete).length
+  );
+
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input));
     setInput(''); //cleares the input field after submit
@@ -36,10 +43,19 @@ const AddTodo = () => {
           <span className='plus'>+</span>
         </button>
       </div>
-      {/* <p>{Moment(date).fromNow()} </p> */}
-      <p>{Moment(date).format('ll')}</p>
+
+      <p className='moment-p'>{Moment(date).format('ll')}</p>
       <p className='week-day'>{Moment(date).format('dddd')}</p>
-      <p>You have {items.length} tasks today</p>
+
+      <p className='task-number-text'>
+        You have <span className='task-number'>{items.length}</span> tasks today
+      </p>
+      <p className='completed'>
+        Incomplete: {incomplete}
+        {incomplete > !items.length && <span></span>}
+        &nbsp;&nbsp; Complete: {complete}
+        {complete === items.length && <span> &#10004; </span>}{' '}
+      </p>
     </section>
   );
 };

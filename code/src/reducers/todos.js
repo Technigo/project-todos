@@ -14,7 +14,6 @@ const todos = createSlice({
 
   reducers: {
     addTodo: (store, action) => {
-      console.log(action);
       const data = action.payload;
 
       const newTodo = {
@@ -28,7 +27,6 @@ const todos = createSlice({
       store.items = [...store.items, newTodo];
     },
     toggleTodo: (store, action) => {
-      // console.log(action);
       const updatedItems = store.items.map((item) => {
         if (item.id === action.payload) {
           const updatedTodo = {
@@ -42,15 +40,15 @@ const todos = createSlice({
       });
       store.items = updatedItems;
     },
-    // checkAllTodo: (store) => {
-    //   store.items.map(item.isComplete === true);
-    // },
 
     removeToDo: (store, action) => {
       const decreasedItems = store.items.filter(
         (item) => item.id !== action.payload
       );
       store.items = decreasedItems;
+    },
+    checkAllTodo: (store) => {
+      store.items.map((item) => (item.isComplete = true));
     },
     clearTodo: () => {
       return initialState;
