@@ -6,8 +6,6 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
-//Thank you Darya DALA746 for this!
-
 const ClearButtonContainer = styled.section`
 display:flex;
 justify-content: center;
@@ -32,31 +30,31 @@ font-family: 'Gaegu', cursive;
 
 
 const ClearAllButton = () => {
-//Get correct item from store based on index
-const dispatch = useDispatch();
+  //Get correct item from store based on index
+  const dispatch = useDispatch();
 
-const items = useSelector((store) => store.todos.items);
-const activeTodos = items.length;
-const noTodosLeft = activeTodos === 0;
+  const items = useSelector((store) => store.todos.items);
+  const activeTodos = items.length;
+  const noTodosLeft = activeTodos === 0;
 
-	  // calling clearAllTodos with dispatch 
-	  const clearAllTodos = () => {
-			dispatch(todos.actions.clearAllTodos());
-			localStorage.clear();
-	  };
+  // calling clearAllTodos with dispatch 
+  const clearAllTodos = () => {
+    dispatch(todos.actions.clearAllTodos());
+    localStorage.clear();
+  };
 
-    //When todos is shown  "Clear all todos button" is visible
-	return (
+  //When todos is shown  "Clear all todos button" is visible
+  return (
     <>
-    { noTodosLeft === false && 
-		<ClearButtonContainer>
-			<ClearButton onClick={clearAllTodos}>
-			Clear all todos <FontAwesomeIcon icon={faTrashAlt}/>
-			</ClearButton>
-		</ClearButtonContainer>
-  }
-  </>
-	)
+      {noTodosLeft === false &&
+        <ClearButtonContainer>
+          <ClearButton onClick={clearAllTodos}>
+            Clear all todos <FontAwesomeIcon icon={faTrashAlt} />
+          </ClearButton>
+        </ClearButtonContainer>
+      }
+    </>
+  )
 };
 
-export default ClearAllButton; 
+export default ClearAllButton;

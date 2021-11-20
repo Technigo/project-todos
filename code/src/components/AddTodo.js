@@ -4,8 +4,6 @@ import styled from "styled-components";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlusSquare } from '@fortawesome/free-solid-svg-icons'
 
-
-
 import todos from '../reducers/todos'; //slice imported
 
 
@@ -44,33 +42,29 @@ font-family: 'Architects Daughter', cursive;
 
 //code
 const AddTodo = () => { //pass anonymus function
-	const [input, setInput] = useState(''); //our state property. We use setInput function in order to update the State.
+  const [input, setInput] = useState(''); //our state property. We use setInput function in order to update the State.
 
+  const dispatch = useDispatch(); //
 
-	const dispatch = useDispatch(); //
+  const onAddTodo = () => { //function for add a to do
+    dispatch(todos.actions.addTodo(input)); //here we dispatch our action
 
-	const onAddTodo = () => { //function for add a to do
-		dispatch(todos.actions.addTodo(input)); //here we dispatch our action
-
-		//const trashCanIcon = <FontAwesomeIcon icon={faTrashAlt} />
-
-
-		// setting input field to an empty string
-		setInput("");
-	};
+    // setting input field to an empty string
+    setInput("");
+  };
 
 
 
-	return (
-		<AddTodoContainer>
-			<Input
-				type="text"
-				value={input}
-				onChange={(event) => setInput(event.target.value)}
-			/>
-			<AddTodoButton onClick={onAddTodo}>Add todo <FontAwesomeIcon icon={faPlusSquare}/></AddTodoButton>
-		</AddTodoContainer>
-	);
+  return (
+    <AddTodoContainer>
+      <Input
+        type="text"
+        value={input}
+        onChange={(event) => setInput(event.target.value)}
+      />
+      <AddTodoButton onClick={onAddTodo}>Add todo <FontAwesomeIcon icon={faPlusSquare} /></AddTodoButton>
+    </AddTodoContainer>
+  );
 };
 
 export default AddTodo;

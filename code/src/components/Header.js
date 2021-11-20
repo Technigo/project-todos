@@ -7,7 +7,6 @@ import styled from "styled-components";
 const HeaderContainer = styled.header`
 text-align: center;
 font-family: 'Gaegu', cursive;
-
 `;
 
 const Heading = styled.h1`

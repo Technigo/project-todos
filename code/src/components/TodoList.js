@@ -19,6 +19,8 @@ word-wrap: break-word;
 font-family: 'Architects Daughter', cursive;
 `;
 
+
+//using props in text decoration to make the line thorugh depending on toggle on/off on task 
 const TodoParagraph = styled.p`
 color: ${props => props.isComplete ? "grey" : "black"};
 text-decoration: ${props => props.isComplete ? "line-through" : "none"};

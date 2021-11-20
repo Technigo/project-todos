@@ -28,6 +28,7 @@ display: -webkit-box;
     height: 100%;
     vertical-align: middle;
 `;
+
 const Input = styled.input`
 font-size: 15px;
 	-webkit-appearance: none;
@@ -64,6 +65,10 @@ font-size: 15px;
   }
   :checked:after{
 	left: calc(100% - 1.5em);
+  }
+  @media (max-width: 600px) {
+left: -45%;
+margin-right: -15px;
   }
 `;
 
