@@ -9,10 +9,14 @@ export const AddTodo = () => {
   const [category, setCategory] = useState('')
   const [showForm, setShowForm] = useState(false)
 
-  const categories = ['business', 'personal', 'shopping']
+  // const categories = ['business', 'personal', 'shopping']
 
-  const onShowForm = () => {
-    setShowForm(true)
+  const toggleShowForm = () => {
+    if (showForm) {
+      setShowForm(false)
+    } else {
+      setShowForm(true)
+    }
   }
 
   const dispatch = useDispatch()
@@ -26,16 +30,32 @@ export const AddTodo = () => {
     // console.log('category: ', category)
   }
 
+  // const categoryColor = (item) => {
+  //   if (item === 'business') {
+  //     return '2px solid dodgerblue'
+  //   } else if (item === 'shopping') {
+  //     return '2px solid limegreen'
+  //   } else {
+  //     return '2px solid tomato'
+  //   }
+  // }
+
   return (
     <StyledContainer>
       {!showForm && (
-        <button onClick={() => onShowForm()}>
-          <StyledSmallHeadline>Add new to-do</StyledSmallHeadline>
-        </button>
+        <AddContainer>
+          <AddButton onClick={() => toggleShowForm()}>
+            <ButtonTitle>Add new to-do</ButtonTitle>
+            <i className="fas fa-chevron-down"></i>
+          </AddButton>
+        </AddContainer>
       )}
       {showForm && (
-        <div>
-          <StyledSmallHeadline>Add new to-do</StyledSmallHeadline>
+        <AddContainer>
+          <AddButton onClick={() => toggleShowForm()}>
+            <ButtonTitle>Add new to-do</ButtonTitle>
+            <i className="fas fa-chevron-up"></i>
+          </AddButton>
 
           <StyledForm>
             <StyledTextInput
@@ -46,13 +66,48 @@ export const AddTodo = () => {
                 setInput(event.target.value)
               }}
             />
-            <StyledButton
-              type="submit"
-              disabled={input === ''}
-              onClick={onAddTodo}>
-              +
-            </StyledButton>
-            {categories.map((item) => (
+
+            <IconContainer>
+              <StyledSmallHeadline>Category:</StyledSmallHeadline>
+              <label htmlFor="personal">
+                <input
+                  type="radio"
+                  id="personal"
+                  name="category"
+                  value="personal"
+                  onChange={(event) => setCategory(event.target.value)}
+                />
+                <span className="span">
+                  <i className="fas fa-user"></i>
+                </span>
+              </label>
+              <label htmlFor="business">
+                <input
+                  type="radio"
+                  id="business"
+                  name="category"
+                  value="business"
+                  onChange={(event) => setCategory(event.target.value)}
+                />
+                <span className="span">
+                  <i className="fas fa-briefcase"></i>
+                </span>
+              </label>
+              <label htmlFor="shopping">
+                <input
+                  type="radio"
+                  id="shopping"
+                  name="category"
+                  value="shopping"
+                  onChange={(event) => setCategory(event.target.value)}
+                />
+                <span className="span">
+                  <i className="fas fa-shopping-basket"></i>
+                </span>
+              </label>
+            </IconContainer>
+
+            {/* {categories.map((item) => (
               <label key={item} htmlFor={item}>
                 <input
                   type="radio"
@@ -63,9 +118,16 @@ export const AddTodo = () => {
                 />
                 <span className="span">{item}</span>
               </label>
-            ))}
+            ))} */}
+
+            <StyledButton
+              type="submit"
+              disabled={input === ''}
+              onClick={onAddTodo}>
+              <i className="fas fa-plus"></i>
+            </StyledButton>
           </StyledForm>
-        </div>
+        </AddContainer>
       )}
     </StyledContainer>
   )
@@ -77,14 +139,15 @@ const StyledContainer = styled.div`
   display: flex;
   flex-direction: column;
   padding-bottom: 25px;
-  border-bottom: 1px solid #9aaedb;
+  border-bottom: 1px dashed #9aaedb;
 `
 const StyledTextInput = styled.input`
+  width: 100%;
   background: transparent;
   background-color: #21274e;
-  border: none;
+  border: 1px solid #9aaedb;
   padding: 10px;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 10px;
   color: white;
   font-size: 16px;
@@ -105,47 +168,49 @@ const StyledForm = styled.form`
   margin: 15px 0 5px 0;
   color: white;
 
-  input {
+  input[type='radio'] {
     display: none;
-  }
-
-  input:hover + span {
-    background-color: #21274e;
-    border: 1px solid #21274e;
-    color: white;
   }
 
   input:checked + span {
     background-color: #21274e;
-    border: 1px solid tomato;
     color: white;
   }
 
-  span {
+  label {
+    width: 35px;
+    height: 35px;
     color: #9aaedb;
-    font-size: 12px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-family: 'Inter', sans-serif;
-    font-weight: 600;
-    border: 1px solid #9aaedb;
-    padding: 6px 10px;
     border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-left: 8%;
+  }
+
+  .fa-user:hover {
+    color: tomato;
+  }
+  .fa-shopping-basket:hover {
+    color: limegreen;
+  }
+  .fa-briefcase:hover {
+    color: dodgerblue;
   }
 `
 
 const StyledButton = styled.button`
-  width: 35px;
-  height: 35px;
+  width: 30px;
+  height: 30px;
   border: none;
   color: white;
   border-radius: 100px;
-  font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 0;
-  background-color: #21274e;
+  background-color: darkviolet;
 `
 
 const StyledSmallHeadline = styled.h3`
@@ -155,8 +220,40 @@ const StyledSmallHeadline = styled.h3`
   letter-spacing: 1px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  margin: 25px 0 15px;
+  margin: 0;
+`
+const AddContainer = styled.div`
+  padding: 10px 15px;
+  color: #9aaedb;
+  background-color: #21274e;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 15px;
+`
+const AddButton = styled.button`
+  width: 100%;
+  height: 25px;
+  border: none;
+  color: #9aaedb;
+  background-color: #21274e;
+  padding: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
+`
+const ButtonTitle = styled.p`
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  margin: 0;
+`
+const IconContainer = styled.div`
+  display: flex;
+  align-items: center;
+  color: #9aaedb;
 `

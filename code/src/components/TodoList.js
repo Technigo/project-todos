@@ -43,7 +43,7 @@ export const TodoList = () => {
   return (
     <StyledSection>
       <StyledSmallHeadline>
-        Checked to-dos: {itemsChecked}/{items.length}
+        Total to-dos done: {itemsChecked}/{items.length}
         <ProgressbarWrapperStyled>
           <div
             className="progress"
@@ -51,31 +51,32 @@ export const TodoList = () => {
         </ProgressbarWrapperStyled>
       </StyledSmallHeadline>
       <StyledSmallHeadline className="category">
-        {itemsCategory}
+        {itemsCategory} to-dos
       </StyledSmallHeadline>
       <StyledStartText style={{ display: startText() }}>
         No to-dos today?
       </StyledStartText>
       <section>
-        {itemsFiltered.map((todo) => (
+        {itemsFiltered.map((item) => (
           // <StyledTodoItem key={item.id} className={item.category}>
-          <StyledTodoItem key={todo.id}>
+          <StyledTodoItem key={item.id}>
             <StyledTaskContainer>
               <label className="container">
                 <input
                   type="checkbox"
-                  checked={todo.isComplete}
-                  onChange={() => onToggleTodo(todo.id)}
+                  checked={item.isComplete}
+                  onChange={() => onToggleTodo(item.id)}
                 />
                 <div
                   className="checkmark"
-                  style={{ border: categoryColor(todo.category) }}></div>
+                  style={{ border: categoryColor(item.category) }}></div>
               </label>
-              <StyledParagraph style={{ textDecoration: checkedLine(todo) }}>
-                {todo.text}
+              <StyledParagraph
+                style={{ textDecoration: checkedLine(item.category) }}>
+                {item.text}
               </StyledParagraph>
             </StyledTaskContainer>
-            <StyledButton onClick={() => onDeleteTodo(todo.id)}>
+            <StyledButton onClick={() => onDeleteTodo(item.id)}>
               <i className="far fa-trash-alt"></i>
             </StyledButton>
           </StyledTodoItem>
@@ -90,7 +91,7 @@ const StyledTodoItem = styled.div`
   padding: 10px;
   margin: 10px 0;
   font-size: 20px;
-  border-radius: 15px;
+  border-radius: 12px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -108,7 +109,7 @@ const StyledSection = styled.section`
 
   .category {
     color: white;
-    font-size: 20px;
+    font-size: 17px;
     margin: 0;
     height: 40px;
   }
@@ -122,14 +123,15 @@ const StyledButton = styled.button`
   margin-right: 5px;
 `
 const StyledSmallHeadline = styled.h3`
-  height: 40px;
+  height: 25px;
   color: #9aaedb;
   font-size: 13px;
   text-transform: uppercase;
   letter-spacing: 1px;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  margin: 10px 0 0 0;
+  margin: 0;
+  margin-bottom: 10px;
   line-height: 3;
   display: flex;
   align-items: center;

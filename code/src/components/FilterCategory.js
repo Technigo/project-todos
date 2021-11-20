@@ -7,7 +7,7 @@ import { todos } from 'reducers/todos'
 export const FilterCategory = () => {
   const dispatch = useDispatch()
 
-  const categories = ['all', 'business', 'personal', 'shopping']
+  const categories = ['all', 'personal', 'business', 'shopping']
 
   return (
     <MainWrapper>
@@ -29,6 +29,8 @@ export const FilterCategory = () => {
 const MainWrapper = styled.div`
   max-width: 400px;
   margin: 20px auto;
+  padding-bottom: 25px;
+  border-bottom: 1px dashed #9aaedb;
 `
 
 const StyledWrapper = styled.section`
