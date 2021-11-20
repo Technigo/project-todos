@@ -164,7 +164,7 @@ const CompleteTaskList = ({ isActive }) => {
           </div>
 
         ))}
-        {items <= items.length ? <p className='empty'>nothing here</p> : null}
+        {items <= items.length ? <p className='empty'>nothing here... 🤔</p> : null}
       </div>
     </CompletedTaskBox>
   );
