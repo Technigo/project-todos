@@ -1,41 +1,52 @@
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import todos from "../reducers/todos"
-import styled from "styled-components";
+import styled from "styled-components"
+import plusIcon from "../assets/plus-icon.svg"
 
 const StyledForm = styled.form`
     display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
     width: 90vw;
-    position: absolute;
-    top: 18vh;
+    top: 28vh;
     left: 5vw;
+    z-index: 1;
+    row-gap: 5px;
 `;
 
 const StyledInput = styled.input`
-cursor: default;
-    flex-grow: 2;
     height: 35px;
+    width: 50vw;
     font-family: 'Spartan', sans-serif;
-    color: #FFA4B3;
-    background-color: #B34D75c0;
+    color: #4A4737;
+    background-color: transparent;
     border: none;
-    border-radius: 5px 0 0 5px;
+    border-bottom: 1px solid #4a473700;
         ::placeholder {
-        color: #FFA4B3;
+        color: #4A4737ad;
+        text-align: center;
         }
         :focus {
-        outline: none;   
+        outline: none;
+        border-bottom: 1px solid #4A4737;
         }
 `;
 
-const StyledButton = styled.button`
-    height: 37px;
+const AddTodoButton = styled.button`
     border: none;
-    background-color: #B34D75c0;
-    border-radius: 0 5px 5px 0;
-    font-size: 30px;
-    color: #FFA4B3;
     cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    transition: .5s ease-in-out;
+        :hover:enabled{
+            transform: scale(1.1);
+        }
+`;
+
+const AddTodoIcon = styled.img`
+    width: 40px;
 `;
 
 const AddTodo = () => {
@@ -46,16 +57,17 @@ const AddTodo = () => {
     const onAddTodo = (event) => {
         event.preventDefault()
         dispatch(todos.actions.addTodo(input))
+        return setInput('')
     }
 
     return (
         <StyledForm>
             <StyledInput
-                placeholder="Add Task"
+                placeholder="+ Add Task"
                 type="text"
                 value={input}
                 onChange={(event) => setInput(event.target.value)} />
-                <StyledButton onClick={onAddTodo}>+</StyledButton>
+                <AddTodoButton disabled={!input} onClick={onAddTodo}><AddTodoIcon src={plusIcon}/></AddTodoButton>
         </StyledForm>
     )
 }

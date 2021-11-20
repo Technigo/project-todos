@@ -3,15 +3,11 @@ body {
   font-family: 'Spartan', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("./assets/background-image.jpg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+  background-color: #B9C8AC;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #FFA4B3;
+  color: #4a4737;
 }
 
 code {

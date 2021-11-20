@@ -13,7 +13,7 @@ const todos = createSlice({
                 id: uniqid(),
                 text: action.payload,
                 isComplete: false,
-                timePosted: moment().subtract(10, 'days').calendar(),
+                timePosted: moment().format('DD/MM/YYYY'),
             }
 
             store.items = [...store.items, newTodo]
