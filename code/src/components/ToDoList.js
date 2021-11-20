@@ -41,9 +41,9 @@ const ToDoList = () => {
                 <Indicator />
               </Label>
 
-              <Button onClick={() => onDeleteTask(item.id)}>
+              <DeleteButton onClick={() => onDeleteTask(item.id)}>
                 <i className="fas fa-times-circle fa-lg"></i>
-              </Button>
+              </DeleteButton>
             </IconsContainer>
           </TasksContainer>
         </div>
@@ -67,8 +67,14 @@ const ToDoList = () => {
   );
 };
 
+export default ToDoList;
+
 const ToDoContainer = styled.section`
   width: 70%;
+
+  @media (min-width: 1025px) {
+    width: 60%;
+  }
 `;
 
 const TasksContainer = styled.div`
@@ -77,21 +83,34 @@ const TasksContainer = styled.div`
 `;
 
 const InfoContainer = styled.div`
-   display: flex;
-   justify-content: space-between;
-   padding 5px;
- `;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    padding: 5px 30px;
+  }
+`;
 
 const Task = styled.p`
   font-size: 18px;
   color: #49586e;
   word-wrap: wrap;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 25px;
+  }
 `;
 
 const Date = styled.p`
   font-size: 12px;
   color: #49586e;
   margin-top: 10%;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 18px;
+    margin-top: 6%;
+  }
 `;
 
 const IconsContainer = styled.div`
@@ -100,45 +119,22 @@ const IconsContainer = styled.div`
   margin-bottom: 5%;
 `;
 
-const Button = styled.button`
-  border: none;
-  background-color: #d7f0ed;
-  color: #2f8c85;
-  &:hover {
-    color: #2f8c85;
-  }
-  &:active {
-    background-color: #c8b6e5;
-    transition: 0.5s;
-    color: #2f8c85;
-  }
-`;
-
 const ButtonsContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
   margin-top: 5%;
 `;
 
-const CompleteButton = styled.button`
+const DeleteButton = styled.button`
+  border: none;
+  background-color: #d7f0ed;
   color: #2f8c85;
-  font-size: 14px;
-  background-color: #e1f1f6;
-  border: 2px solid #2f8c85;
   &:hover {
     color: #d7f0ed;
     background-color: #2f8c85;
   }
-`;
-
-const EmptyTasks = styled.button`
-  color: #2f8c85;
-  font-size: 14px;
-  background-color: #e1f1f6;
-  border: 2px solid #2f8c85;
-  &:hover {
-    color: #d7f0ed;
-    background-color: #2f8c85;
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 25px;
   }
 `;
 
@@ -149,11 +145,9 @@ const Input = styled.input`
   z-index: -1;
 `;
 
+// -- checkbox styling
 const Label = styled.label`
   position: relative;
-  /* display: inline-block; */
-  cursor: ${(props) => (props.disabled ? "not-allowed" : "pointer")};
-  /* margin: 0.6em 1em; */
 `;
 
 const rotate = keyframes`
@@ -173,9 +167,9 @@ const Indicator = styled.div`
   background: #e1f1f6;
   position: absolute;
   top: 0em;
-  /* left: -1.6em; */
   border: 1px solid #2f8c85;
   border-radius: 0.2em;
+
   ${Input}:not(:disabled):checked & {
     background: #d1d1d1;
   }
@@ -202,6 +196,47 @@ const Indicator = styled.div`
   &::disabled {
     cursor: not-allowed;
   }
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    width: 1.5em;
+    height: 1.5em;
+
+    ${Input}:checked + &::after {
+      left: 0.35em;
+      width: 40%;
+    }
+  }
 `;
 
-export default ToDoList;
+// -- buttons
+const CompleteButton = styled.button`
+  color: #2f8c85;
+  font-size: 14px;
+  background-color: #d7f0ed;
+  border: 2px solid #2f8c85;
+  &:hover {
+    color: #d7f0ed;
+    background-color: #2f8c85;
+  }
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 22px;
+    padding: 5px 15px;
+  }
+`;
+
+const EmptyTasks = styled.button`
+  color: #2f8c85;
+  font-size: 14px;
+  background-color: #d7f0ed;
+  border: 2px solid #2f8c85;
+  &:hover {
+    color: #d7f0ed;
+    background-color: #2f8c85;
+  }
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 22px;
+    padding: 5px 15px;
+  }
+`;

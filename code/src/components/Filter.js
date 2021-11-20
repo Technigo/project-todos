@@ -8,17 +8,19 @@ const Filter = () => {
   const dispatch = useDispatch();
 
   return (
-    <ButtonContainer>
-      <Button onClick={() => dispatch(tasks.actions.changeFilter("all"))}>
-        all
-      </Button>
-      <Button onClick={() => dispatch(tasks.actions.changeFilter("to do"))}>
-        to do
-      </Button>
-      <Button onClick={() => dispatch(tasks.actions.changeFilter("done"))}>
-        done
-      </Button>
-    </ButtonContainer>
+    <>
+      <ButtonContainer>
+        <Button onClick={() => dispatch(tasks.actions.changeFilter("all"))}>
+          all
+        </Button>
+        <Button onClick={() => dispatch(tasks.actions.changeFilter("to do"))}>
+          to do
+        </Button>
+        <Button onClick={() => dispatch(tasks.actions.changeFilter("done"))}>
+          done
+        </Button>
+      </ButtonContainer>
+    </>
   );
 };
 
@@ -29,6 +31,10 @@ const ButtonContainer = styled.div`
   display: flex;
   justify-content: space-between;
   margin-top: 5%;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    width: 70%;
+  }
 `;
 
 const Button = styled.button`
@@ -37,12 +43,15 @@ const Button = styled.button`
   background-color: #d7f0ed;
   border: 2px solid #2f8c85;
 
-  &:hover {
+  &:hover,
+  &:focus {
     color: #d7f0ed;
     background-color: #2f8c85;
   }
-  &:active {
-    color: #d7f0ed;
-    background-color: #2f8c85;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 22px;
+    padding: 5px 15px;
+    margin-bottom: 20px;
   }
 `;

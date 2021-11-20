@@ -20,6 +20,10 @@ const CounterInfo = styled.p`
   font-family: "Roboto", sans-serif;
   font-size: 16px;
   text-align: center;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 24px;
+  }
 `;
 
 export default Counter;

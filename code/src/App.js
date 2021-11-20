@@ -9,6 +9,8 @@ const reducer = combineReducers({
   tasks: tasks.reducer,
 });
 
+// -- add local storage
+
 const persistedStateJSON = localStorage.getItem("reduxState");
 let persistedState = {};
 
@@ -19,6 +21,7 @@ if (persistedStateJSON) {
 const store = createStore(
   reducer,
   persistedState,
+  // -- to make the redux devtools work
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 

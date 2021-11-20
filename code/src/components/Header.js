@@ -28,9 +28,18 @@ const Title = styled.h2`
   font-family: "League Script", cursive;
   color: #d7f0ed;
   font-size: 50px;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 70px;
+    margin-bottom: 0;
+  }
 `;
 
 const Date = styled.h6`
   color: #d7f0ed;
   font-size: 16px;
+
+  @media (min-width: 668px) and (max-width: 1024px) {
+    font-size: 24px;
+  }
 `;

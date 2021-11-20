@@ -62,6 +62,7 @@ const tasks = createSlice({
 
 export default tasks;
 
+// -- filter for completed / uncompleted tasks
 export const selectFilteredTodos = (store) => {
   const filter = store.tasks.filter;
   const tasks = store.tasks.items;
