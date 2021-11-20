@@ -1,13 +1,14 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A "To-do" app built in React Redux, using Redux-toolkit and Styled components.
+Focused on creating slice, reducer, action, how to structure a Redux store and interact with the store using useSelector and useDispatch.
+In the to-do app, you should be able to add tasks, list tasks and toggle whether a task is done or not.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Did a few codealongs to get used to how to set up a Redux store and creating reducer. Googled different To-do apps for inspiration. Added an extra column - Status, for practice.
+If I got more time I would try to add filters to display todo/in progress/completed quests and/or sort the quests.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Netlify link: https://quest-log.netlify.app/
