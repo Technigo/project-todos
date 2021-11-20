@@ -9,17 +9,21 @@ const { DateTime } = require("luxon");
 const HeadingTwo = styled.h2`
   font-family: "Ranga", cursive;
   font-size: 28px;
+  line-height: 28px;
   font-weight: 500;
   margin-top: 20px;
-  margin-bottom: 0;
+  margin-bottom: 10px;
+  margin-right: 10px;
   text-align: center;
 `;
 
 const HeadingThree = styled.h3`
   font-family: "Ranga", cursive;
   font-size: 22px;
+  line-height: 28px;
   font-weight: 500;
-  margin-top: 0;
+  margin-top: 20px;
+  margin-bottom: 10px;
   text-align: center;
 `;
 
@@ -88,6 +92,7 @@ const Tags = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
+  align-items: center;
 `;
 
 const Tag = styled.div`
@@ -127,8 +132,10 @@ const TodoListElements = ({ list, heading }) => {
   if (list.length) {
     return (
       <>
-        <HeadingTwo>{heading}</HeadingTwo>
-        <HeadingThree>{checkList()}</HeadingThree>
+        <Tags>
+          <HeadingTwo>{heading}</HeadingTwo>
+          <HeadingThree>{checkList()}</HeadingThree>
+        </Tags>
         {list.map((item) => (
           <Wrapper key={item.id} heading={heading}>
             <SmallWrapper>
