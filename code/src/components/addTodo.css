@@ -12,9 +12,8 @@
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   padding-bottom: 7%;
-  /* margin: 0 auto; */
+  margin: 0 auto;
   justify-content: center;
-  align-items: center;
 }
 
 .add-todo input {
@@ -35,6 +34,11 @@
   font-size: 30px;
   height: 50px;
   width: 50px;
+  position: relative;
+}
+
+.button p {
+  position: absolute;
 }
 
 /* STYLING FOR TABLET */
