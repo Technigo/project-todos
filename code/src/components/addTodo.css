@@ -8,24 +8,30 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 
 .add-todo {
-  display: grid;
+  /* display: grid;
   grid-template-columns: repeat(4, 1fr);
   column-gap: 20px;
   padding-bottom: 7%;
   margin: 0 auto;
+  justify-content: center; */
+
+  display: flex;
   justify-content: center;
+  align-items: center;
+  column-gap: 20px;
+  padding-bottom: 7%;
 }
 
 .add-todo input {
   font-family: 'Poppins', sans-serif;
-  grid-column: span 3;
+  /* grid-column: span 3; */
   padding: 10px;
   border-radius: 5px;
   border: 1px solid var(--grey);
 }
 
 .add-todo button {
-  grid-column: span 1;
+  /* grid-column: span 1; */
   border-radius: 25px 25px 25px 25px;
   margin: 0;
   background-color: var(--blue);
