@@ -1,9 +1,0 @@
-{
-  "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.36",
-    "@fortawesome/react-fontawesome": "^0.1.16",
-    "react-icons": "^4.3.1",
-    "styled-components": "^5.3.3",
-    "uniqid": "^5.4.0"
-  }
-}

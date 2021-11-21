@@ -1,14 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import styled from "styled-components";
 
 import todos from "../reducers/todos";
-
-const input = styled.div`
-display: flex;
-flex-direction: column;
-gap; 10px;
-`;
 
 const AddTodo = () => {
   const [input, setInput] = useState("");
