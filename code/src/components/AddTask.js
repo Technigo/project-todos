@@ -6,10 +6,28 @@ import task from '../reducers/task';
 
 // Styled Components
 const StyledAddTaskContainer = styled.div`
-display: flex;
-justify-content: space-between;
-margin-left: 5px;
-`
+	height: 100px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.1);
+	display: flex;
+	justify-content: space-evenly;
+
+	input {
+		height: 24px;
+		margin: auto 0;
+	}
+`;
+
+const StyledButton = styled.button`
+	margin: auto 0;
+	padding: 10px;
+	border: none;
+	border-radius: 20px;
+	background: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+`;
 
 const AddTask = () => {
 	const [input, setInput] = useState('');
@@ -24,9 +42,13 @@ const AddTask = () => {
 			<input
 				type='text'
 				value={input}
-				onChange={event => setInput(event.target.value)}
+				onChange={(event) => setInput(event.target.value)}
 			/>
-			&nbsp; <button onClick={onAddTask}>Add Task</button>
+			<StyledButton onClick={onAddTask} disabled={input.length < 1}>
+				<span role='image' aria-label='Plus emoji'>
+					➕
+				</span>
+			</StyledButton>
 		</StyledAddTaskContainer>
 	);
 };

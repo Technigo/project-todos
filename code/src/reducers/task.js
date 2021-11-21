@@ -7,6 +7,7 @@ const task = createSlice({
 		items: [
 			{ id: 1, text: 'Watch video on actions', isComplete: true },
 			{ id: 2, text: 'Follow redux codealong', isComplete: true },
+			{ id: 3, text: 'Finish project', isComplete: false },
 		],
 	},
 	reducers: {
@@ -16,13 +17,12 @@ const task = createSlice({
 			const newTask = {
 				id: uniqid(),
 				text: data,
-				isComplete: false
-			}
-			store.items = [...store.items, newTask]
+				isComplete: false,
+			};
+			store.items = [...store.items, newTask];
 		},
 
 		toggleTask: (store, action) => {
-			
 			//mutability approach
 			// store.items.forEach(item => {
 			// 	if (item.id === action.payload) {
@@ -31,12 +31,12 @@ const task = createSlice({
 			// })
 
 			//immutability approach
-			const updatedItems = store.items.map(item => {
+			const updatedItems = store.items.map((item) => {
 				if (item.id === action.payload) {
 					const updatedTask = {
-						...item, 
-						isComplete: !item.isComplete
-					}
+						...item,
+						isComplete: !item.isComplete,
+					};
 					return updatedTask;
 				} else {
 					return item;
@@ -51,11 +51,12 @@ const task = createSlice({
 			// store.items.splice(action.payload, 1);
 
 			//immutability approach
-			const decreasedItems = store.items.filter(item => item.id !== action.payload)
+			const decreasedItems = store.items.filter(
+				(item) => item.id !== action.payload
+			);
 
 			store.items = decreasedItems;
-
-		}
+		},
 	},
 });
 

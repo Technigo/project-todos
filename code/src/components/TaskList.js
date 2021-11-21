@@ -6,83 +6,113 @@ import AllTasks from './AllTasks';
 import task from '../reducers/task';
 
 // Styled components
-const StyledTaskList = styled.section`
-
-`
+const ListContainer = styled.section``;
 
 const StyledButton = styled.button`
-right: 2px;
-`
+	border: none;
+	background: none;
+`;
 
 const StyledTaskDiv = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-`
-const CheckBoxLabel = styled.label`
-position: relative;
-top: 1px;
-width: 27px;
-height: 27px;
-border: 1px solid #c8ccd4;
-border-radius: 3px;
-vertical-align: middle;
-transition: background 0.1s ease;
-cursor: pointer;
-display: block;
-
-&:after {
-	content: '';
-	position: absolute;
-	top: 2px;
-	left: 8px;
-	width: 7px;
-	height: 14px;
-	opacity: 0;
-	transform: rotate(45deg) scale(0);
-	border-right: 2px solid #fff;
-	border-bottom: 2px solid #fff;
-	transition: all 0.3s ease;
-	transition-delay: 0.15s;
-}
-`
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+`;
 
 const StyledCheckBox = styled.input`
+	appearance: none;
+	-webkit-appearance: none;
+	position: relative;
+	top: 1px;
+	width: 27px;
+	height: 27px;
+	border: 1px solid #c8ccd4;
+	border-radius: 3px;
+	vertical-align: middle;
+	transition: background 0.1s ease;
+	cursor: pointer;
+	display: block;
+	border: 1px solid #003b49;
+	border-radius: 25px;
 
-`
+	&:checked {
+		background: lightgrey;
+	}
 
+	&:checked:after {
+		content: url('https://img.icons8.com/material-outlined/24/000000/checkmark--v1.png');
+		position: absolute;
+		font-size: 20px;
+	}
+`;
+
+const DeleteImage = styled.img`
+	content: url('https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-trash-bin-cleaning-kiranshastry-lineal-kiranshastry.png');
+	height: 30px;
+	width: 30px;
+`;
 
 const TaskList = () => {
 	// fetch tasks from store
-	const currentTasks = useSelector((store) => store.task.items);
+	const completedTasks = useSelector((store) =>
+		store.task.items.filter((item) => item.isComplete)
+	);
+
+	// fetch incomplete tasks from store
+	const incompleteTasks = useSelector((store) =>
+		store.task.items.filter((item) => !item.isComplete)
+	);
 
 	const dispatch = useDispatch();
 
 	const onToggleTask = (id) => {
-		dispatch(task.actions.toggleTask(id))
-	}
+		dispatch(task.actions.toggleTask(id));
+	};
 
 	const onDeleteTask = (id) => {
-		dispatch(task.actions.deleteTask(id))
-	}
-
-
+		dispatch(task.actions.deleteTask(id));
+	};
 
 	return (
-		<StyledTaskList>
+		<ListContainer>
 			<h1>Daily Tasks</h1>
-			{currentTasks.map(item => 
-				<StyledTaskDiv key={item.id}>
-					<CheckBoxLabel>
-						<StyledCheckBox type="checkbox" checked={item.isComplete} onChange={() => onToggleTask(item.id)} />
-					</CheckBoxLabel>
-					<p>{item.text}</p>
-					<StyledButton onClick={() => onDeleteTask(item.id)}>Delete</StyledButton>
-				</StyledTaskDiv>
-				)}
-			<AllTasks />
 
-		</StyledTaskList>
+			{incompleteTasks.map((item) => (
+				<StyledTaskDiv key={item.id}>
+					<StyledCheckBox
+						type='checkbox'
+						id='checkbox'
+						checked={item.isComplete}
+						onChange={() => onToggleTask(item.id)}
+					/>
+
+					<label htmlFor='checkbox'>
+						<p>{item.text}</p>
+					</label>
+					<StyledButton onClick={() => onDeleteTask(item.id)}>
+						<DeleteImage />
+					</StyledButton>
+				</StyledTaskDiv>
+			))}
+
+			{completedTasks.map((item) => (
+				<StyledTaskDiv key={item.id}>
+					<StyledCheckBox
+						type='checkbox'
+						id='completeCheckbox'
+						checked={item.isComplete}
+						onChange={() => onToggleTask(item.id)}
+					/>
+					<label htmlFor='completeCheckbox'>
+						<p>{item.text}</p>
+					</label>
+					<StyledButton onClick={() => onDeleteTask(item.id)}>
+						<DeleteImage />
+					</StyledButton>
+				</StyledTaskDiv>
+			))}
+			<AllTasks />
+		</ListContainer>
 	);
 };
 
