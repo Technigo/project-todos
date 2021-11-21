@@ -1,5 +1,6 @@
 body {
   margin: 0px;
+  background-color: white;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -99,7 +100,7 @@ code {
 }
 
 .checkbox-doing:checked {
-  background: rgb(230, 230, 127);
+  background: rgb(255, 255, 179);
 }
 
 .checkbox {
