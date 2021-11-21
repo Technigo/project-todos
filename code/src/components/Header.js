@@ -7,7 +7,7 @@ import { CountItems } from "./CountItems"
 export const Header = () => {
   return (
     <header>
-      <h1>To do list</h1>
+      <h1>Task manager</h1>
       <CountItems />
     </header>
   )
