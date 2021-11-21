@@ -34,12 +34,12 @@
   font-size: 30px;
   height: 50px;
   width: 50px;
-  position: relative;
+  /* position: relative; */
 }
 
-.button p {
+/* .button p {
   position: absolute;
-}
+} */
 
 /* STYLING FOR TABLET */
 @media screen and (min-width: 768px) {
