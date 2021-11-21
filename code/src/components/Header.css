@@ -1,0 +1,58 @@
+header {
+  border-radius: 20px 20px 0px 0px;
+  padding: 20px;
+  margin-bottom: 10px;
+  background-color: White;
+  /* background-size: cover !important; */
+  /* background-color: thistle; */
+  background-color: white;
+  top: 0;
+  /* z-index: 0; */
+  /* position: relative; */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+/* .todo-header {
+    display: flex;
+    flex-direction: column;
+  } */
+
+header h1 {
+  margin: 0;
+  color: #9a70c9;
+}
+
+.todo-header {
+  padding-left: 50px;
+}
+
+header p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.manager-btn {
+  /* padding-left: 100px; */
+  /* width: 180px;
+  height: 180px; */
+  /* position: absolute;
+  right: 20px;
+  top: 18px; */
+  font-size: x-large;
+  border: none;
+  background: thistle;
+  color: rgb(97, 97, 97);
+  /* border-radius: 5px; */
+  /* font-weight: 700; */
+  /* align-self: flex-end; */
+  /* align-items: center; */
+  cursor: pointer;
+}
+
+@media only screen and (min-width: 599px) {
+  header {
+    margin-bottom: 20px;
+    padding: 30px;
+  }
+}
