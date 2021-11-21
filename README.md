@@ -1,13 +1,13 @@
-# Project Todos
+# Project Todo ✅
 
-Replace this readme with your own information about your project.
+The aim of the project was to build a TODO app using React, Redux, JSX and styled components. In this app the user should be able to add/remove tasks, list tasks and toggle when a task is completed or not.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+# The challenge?
 
-## The problem
+The challenge was to graps how Redux interacts with React to dispatch actions and how information is sent and received between the store and the different components. To overcome this I challenged myself to create more component in order to get more comfortable with the flow and structure of redux.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+It was a fun and creative project to learn redux. If I had more time I would like to make a conditional rendering that would change the background image depending on the time of the day.
 
-## View it live
+# View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://mt-dotse-todo.netlify.app/
