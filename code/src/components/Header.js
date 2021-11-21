@@ -29,6 +29,7 @@ const HeadingThree = styled.h3`
   font-weight: 500;
   margin-top: 0;
   text-align: center;
+  margin-bottom: 40px;
 `;
 
 const weekdays = [

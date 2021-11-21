@@ -44,14 +44,13 @@ const Button = styled.button`
   letter-spacing: 1px;
   text-decoration: none;
   color: #725ac1;
-  background: transparent;
+  background: rgba(46, 81, 218, 0.3);
   cursor: pointer;
   transition: ease-out 0.5s;
   border-radius: 30px;
   border: 2px solid #725ac1;
   border-radius: 10px;
   box-shadow: inset 0 0 0 0 #725ac1;
-  width: max-content;
 
   &:hover {
     color: white;
@@ -63,7 +62,7 @@ const Button = styled.button`
   }
 `;
 
-const AddTodo = () => {
+const AddTodo = ({ setNewAddTodo }) => {
   const [newTodo, setNewTodo] = useState("");
   const [newProject, setNewProject] = useState("");
   const [newDate, setNewDate] = useState(new Date());
@@ -91,6 +90,7 @@ const AddTodo = () => {
       setNewTags([]);
       setNewProject("");
       setNewLabel("");
+      setNewAddTodo(false);
     }
   };
 

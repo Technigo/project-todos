@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Provider } from "react-redux";
 import { combineReducers, createStore } from "@reduxjs/toolkit";
 import styled, { createGlobalStyle } from "styled-components";
@@ -7,6 +7,7 @@ import todos from "./reducers/todos";
 
 import Header from "./components/Header";
 import AddTodo from "./components/AddTodo";
+import OpenTodo from "./components/OpenTodo";
 import TodoList from "./components/TodoList";
 
 const GlobalStyle = createGlobalStyle`
@@ -22,6 +23,7 @@ const Wrapper = styled.div`
   width: 100vw;
   height: 100vh;
   font-family: "rubik";
+  margin-bottom: 150px;
 `;
 
 // by convention always called reducer
@@ -55,12 +57,14 @@ store.subscribe(() => {
 });
 
 export const App = () => {
+  const [newAddTodo, setNewAddTodo] = useState(false);
   return (
     <Provider store={store}>
       <GlobalStyle />
       <Wrapper>
         <Header />
-        <AddTodo />
+        {!newAddTodo && <OpenTodo setNewAddTodo={setNewAddTodo} />}
+        {newAddTodo && <AddTodo setNewAddTodo={setNewAddTodo} />}
         <TodoList />
       </Wrapper>
     </Provider>

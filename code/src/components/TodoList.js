@@ -22,6 +22,7 @@ const SmallBtnWrap = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: flex-end;
   margin-top: 15px;
 `;
 const Button = styled.button`
@@ -41,6 +42,7 @@ const Button = styled.button`
   border: 2px solid #725ac1;
   border-radius: 10px;
   box-shadow: inset 0 0 0 0 #725ac1;
+  height: min-content;
   width: max-content;
 
   &:hover {
@@ -130,14 +132,15 @@ const TodoList = () => {
   return (
     <>
       <ButtonWrapper>
-        <FilterOptions />
         <SmallBtnWrap>
           <Button onClick={() => onCheckTodos(true)}>
             Check all
           </Button>
+
           <Button onClick={() => onCheckTodos(false)}>
             Uncheck all
           </Button>
+          <FilterOptions />
         </SmallBtnWrap>
       </ButtonWrapper>
       {returnListItems()}

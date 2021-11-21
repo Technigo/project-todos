@@ -27,11 +27,26 @@ const HeadingThree = styled.h3`
   text-align: center;
 `;
 
-const Wrapper = styled.div`
+const MainWrapper = styled.div`
   display: flex;
   flex-direction: column;
   width: 90%;
   max-width: 300px;
+`;
+
+const HeadingList = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 15px;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
   margin-top: 0px;
   border-top: 1px solid black;
   border-bottom: 1px solid black;
@@ -172,15 +187,15 @@ const TodoListElements = ({ list, heading }) => {
 
   if (list.length) {
     return (
-      <>
-        <Tags>
+      <MainWrapper>
+        <HeadingList>
           <HeadingTwo>{heading}</HeadingTwo>
           <HeadingThree>{checkList()}</HeadingThree>
-        </Tags>
+        </HeadingList>
         {list.map((item) => (
           <Wrapper key={item.id} heading={heading}>
             <SmallWrapper>
-              <SmallText>Finish by: {checkDate(item.date)}</SmallText>
+              <SmallText>Deadline: {checkDate(item.date)}</SmallText>
               <SmallText>
                 Added:{" "}
                 {DateTime.fromISO(item.added)
@@ -211,7 +226,7 @@ const TodoListElements = ({ list, heading }) => {
             </Tags>
           </Wrapper>
         ))}
-      </>
+      </MainWrapper>
     );
   } else return null;
 };
