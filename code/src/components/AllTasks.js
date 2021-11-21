@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import ConfettiRain from './Confetti';
+import ConfettiRain from './ConfettiRain';
 // import styled from 'styled-components';
 
 const AllTasks = () => {
