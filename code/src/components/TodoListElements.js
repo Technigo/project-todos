@@ -159,6 +159,17 @@ const TodoListElements = ({ list, heading }) => {
     } else return "Some tasks left...";
   };
 
+  const checkDate = (item_date) => {
+    const date = DateTime.fromJSDate(item_date)
+      .setZone("Europe/Stockholm")
+      .toFormat("dd LLL yyyy");
+    if (date === "Invalid DateTime") {
+      return DateTime.fromISO(item_date)
+        .setZone("Europe/Stockholm")
+        .toFormat("dd LLL yyyy");
+    } else return date;
+  };
+
   if (list.length) {
     return (
       <>
@@ -169,12 +180,7 @@ const TodoListElements = ({ list, heading }) => {
         {list.map((item) => (
           <Wrapper key={item.id} heading={heading}>
             <SmallWrapper>
-              <SmallText>
-                Finish by:{" "}
-                {DateTime.fromISO(item.date)
-                  .setZone("Europe/Stockholm")
-                  .toFormat("dd LLL yyyy")}
-              </SmallText>
+              <SmallText>Finish by: {checkDate(item.date)}</SmallText>
               <SmallText>
                 Added:{" "}
                 {DateTime.fromISO(item.added)
