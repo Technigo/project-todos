@@ -121,6 +121,7 @@ input[type='text'] {
   font-weight: bold;
   /* margin: 0 5px; */
   cursor: pointer;
+  text-align: center;
 }
 
 /* STYLING FOR TABLET */

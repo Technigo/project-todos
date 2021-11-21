@@ -94,13 +94,18 @@ const Section = styled.section`
 `;
 
 const SectionEmpty = styled(Section)`
+  width: 100%;
+  align-items: center;
+  padding: 10%;
   h2 {
+    font-size: 4em;
     margin-top: 10%;
-    padding: 5%;
+    padding: 0;
   }
 
   h3 {
     margin-bottom: 10%;
-    padding: 5%;
+    padding: 0;
+    width: 100%;
   }
 `;
