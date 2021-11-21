@@ -32,14 +32,13 @@ const TodosContainer = styled.div`
   flex-direction: column;
   flex-wrap: wrap;
   column-gap: 5px;
-  padding: 5px;
+  padding: 10px;
   line-break: anywhere;
   background-color: #fcf9f07e;
   border-radius: 5px;
   @media (min-width: 768px) {
     row-gap: 30px;
     width: 35vw;
-    padding: 10px;
   }
   @media (min-width: 992px) {
     font-size: 20px;
