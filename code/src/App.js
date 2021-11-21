@@ -5,6 +5,7 @@ import { Header } from "components/Header";
 
 import todos from "./reducers/todos";
 
+import GlobalStyle from "components/GlobalStyleing";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import Counter from "components/Counter";
@@ -29,6 +30,7 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
+      <GlobalStyle />
       <Header />
       <Counter />
       <AddTodo />

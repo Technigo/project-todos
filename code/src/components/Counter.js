@@ -7,14 +7,14 @@ const CounterRow = styled.div`
   flex-direction: row;
   align-items: center;
   text-align: center;
-  width: 90%;
+  justify-content: space-evenly;
   height: 50px;
   margin: 10px auto;
   color: hotpink;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 24px;
+  font-size: 16px;
   @media (min-width: 700px) {
-    font-size: 34px;
+    font-size: 20px;
   }
 `;
 

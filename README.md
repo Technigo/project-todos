@@ -1,8 +1,15 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+With the help of React-Redux I created this simple to do list which displays:
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+- Current date
+- Amount of tasks in total
+- Amount of tasks completed
+- Amount of tasks left
+- Input field and submit button
+- Local storage
+- Checkbox if completed, delete button if deleted
+- Date of when the task was created.
 
 ## The problem
 
@@ -19,3 +26,5 @@ Describe how you approached to problem, and what tools and techniques you used t
 Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
 
 https://www.figma.com/file/hjj3IQjRhijESpkacIYixe/week-14-to-do-list
+
+https://elsa-bjelkedal-to-do-list.netlify.app/

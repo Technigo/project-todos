@@ -2,18 +2,6 @@
 import React from "react";
 import styled from "styled-components";
 
-const date = new Date();
-const todaysDate = date.toString().slice(0, 10);
-
-export const Header = () => {
-  return (
-    <HeaderDiv>
-      <HeaderTitle>Today's Tasks</HeaderTitle>
-      <DateText>{todaysDate}</DateText>
-    </HeaderDiv>
-  );
-};
-
 const HeaderDiv = styled.div`
   display: flex;
   flex-direction: row;
@@ -51,3 +39,14 @@ const DateText = styled.p`
     font-size: 34px;
   }
 `;
+const date = new Date();
+const todaysDate = date.toString().slice(0, 10);
+
+export const Header = () => {
+  return (
+    <HeaderDiv>
+      <HeaderTitle>Today's Tasks</HeaderTitle>
+      <DateText>{todaysDate}</DateText>
+    </HeaderDiv>
+  );
+};
