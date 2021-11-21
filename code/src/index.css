@@ -31,7 +31,6 @@ body {
   position: absolute;
   top: 40%;
   border-radius: 30px;
-  border: 1px solid lime;
 }
 .flex-item {
   display: grid;
