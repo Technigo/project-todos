@@ -1,12 +1,13 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
+
+//a reducer required for sending info via dispatch
 import todos from "../reducers/todos";
 
 //Stlyed component
 const Section = styled.section`
   display: flex;
-  /* overflow: scroll; */
 
   .list-container,
   .date-container,
@@ -26,7 +27,7 @@ const Section = styled.section`
 
   .date-container {
     padding: 5px 15px;
-    color: rgb(253, 140, 4);
+    color: #b35900;
     background-color: rgb(201, 204, 213);
   }
 
@@ -46,7 +47,7 @@ const Section = styled.section`
     background-color: rgb(147, 181, 198);
     color: rgb(0, 30, 108);
   }
-  
+
   .trash-btn:hover {
     color: rgb(253, 140, 4);
   }

@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import todos from "../reducers/todos";
 import styled from "styled-components";
+
+//a reducer required for sending info via dispatch
+import todos from "../reducers/todos";
+
 
 //Styled component
 const InputWrapper = styled.div`
@@ -27,12 +30,12 @@ const InputWrapper = styled.div`
   }
   .todo-btn {
     cursor: pointer;
-    color: rgb(253, 140, 4);
+    color:#b35900;
     transition: all 0.3s ease;
     border-radius: 0 5px 5px 0;
   }
   .todo-btn:hover {
-    background-color: rgb(253, 140, 4);
+    background-color: #b35900;
     color: rgb(223, 212, 212);
   }
 
@@ -50,7 +53,7 @@ const AddTodo = () => {
   //function btn
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input)); //input replace the action parameter
-    setInput("");
+    setInput(""); //clears the input
   };
 
   return (
@@ -64,7 +67,7 @@ const AddTodo = () => {
       />
       <button onClick={onAddTodo} className="todo-btn">
         {" "}
-        <i class="fas fa-plus-square"></i>
+        <i className="fas fa-plus-square"></i>
       </button>
     </InputWrapper>
   );

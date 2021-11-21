@@ -2,14 +2,11 @@ import { createSlice } from "@reduxjs/toolkit";
 import uniqid from "uniqid";
 import moment from "moment";
 
-
 //Slice
 const todos = createSlice({
   name: "todos",
   initialState: {
-    items: [
-      
-    ],
+    items: [],
   },
 
   reducers: {
@@ -21,24 +18,22 @@ const todos = createSlice({
         id: uniqid(),
         task: task,
         isComplete: false,
-        createdAt: moment().format("Do MMM YY")
+        createdAt: moment().format("Do MMM YY"),
       };
       // immutability approach; creating a new array with the existing array data comming from the addTodo component
       store.items = [...store.items, newTodo];
     },
     toggleTodo: (store, action) => {
-
       const updateItems = store.items.map((item) => {
         //action.payload is responsible for storing the data comming from the dispatch, that is why is posible to make the comparison
         if (item.id === action.payload) {
           const updatedTodo = {
             ...item,
             isComplete: !item.isComplete,
-          }
+          };
           return updatedTodo;
-
         } else {
-            return item;
+          return item;
         }
       });
 
@@ -46,8 +41,27 @@ const todos = createSlice({
     },
 
     deleteTodo: (store, action) => {
-        const decreasedItems = store.items.filter(item => item.id !== action.payload);
-        store.items = decreasedItems;
+      const decreasedItems = store.items.filter(
+        (item) => item.id !== action.payload
+      );
+      store.items = decreasedItems;
+    },
+
+    completeAllTasks: (store) => {
+      const itemsAllCompleted = store.items.map((item) => {
+        return {
+          ...item,
+          isComplete: true,
+        };
+      });
+      store.items = itemsAllCompleted;
+    },
+
+    removeAllTasks: (store) => {
+      return {
+        ...store,
+        items: [],
+      };
     },
   },
 });

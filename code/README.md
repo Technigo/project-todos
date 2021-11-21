@@ -1,19 +1,5 @@
 # Technigo React Starter App
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+This is a Todo-list, in which I was inspired by the Swiss mountains. It is created in React and Redux, with a store and reducers to update the store. You can add and remove todos, keep track of how many tasks you have finished and how many are left to do, and you can see when each todo was created. If you have nothing to do, no list is displayed. Special attention was also paid to immutability. 
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
-
-## Usage
-
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
-
-Alternatively, if you don't want a new git repo on your account;
-
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+ I started by creating reducers in order to display the initial state and the functionalities for what dynamic data should be displayed and what should happen when clicking buttons. I created the components for the different parts of the app, and used UseSelector to display information from the reducer in the app. I used useDispatch to create actions that connected functionalities in the reducer to click-events in the components, then added styling, mostly by using styledComponents. I used moment to display the current date for when each todo was created and also to display the current date.

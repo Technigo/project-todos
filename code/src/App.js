@@ -1,12 +1,18 @@
 import React from "react";
 import { Provider } from "react-redux";
-import { combineReducers, createStore } from "@reduxjs/toolkit";
+import { combineReducers, configureStore, createStore } from "@reduxjs/toolkit";
+import styled from "styled-components";
+
+//a reducer required for the store
 import todos from "./reducers/todos";
+
+//import components
 import Header from "components/Header";
 import AddTodo from "components/AddTodo";
 import TodoList from "components/TodoList";
-import styled from "styled-components";
+import Buttons from "components/Buttons";
 
+// This combines all reducers; in this project, only one is being used.
 const reducer = combineReducers({
   todos: todos.reducer,
 });
@@ -42,6 +48,7 @@ export const App = () => {
     <Provider store={store}>
       <Main>
         <Header />
+        <Buttons />
         <AddTodo />
         <TodoList />
       </Main>
