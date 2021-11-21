@@ -307,6 +307,7 @@ h1 {
     height: 70px;
     width: 57%;
     border-radius: 50px 0 0 50px;
+    font-size: 1rem;
   }
 
   .add-todo-button {
@@ -353,8 +354,45 @@ h1 {
   .left-todo {
     width: 50%;
   }
+  .right-todo {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: right;
+    width: 20%;
+    height: 100%;
+    border-bottom: 1px solid rgb(235, 243, 249);
+  }
+  .checkbox {
+    width: 48px;
+    height: 48px;
+    margin-top: 35px;
+    margin-left: 33px;
+    margin-right: 7px;
+  }
+  .checkbox:active {
+    width: 48px;
+    height: 48px;
+    margin-top: 35px;
+    margin-left: 33px;
+  }
+  .delete-todo {
+    height: 53px;
+    width: 53px;
+    margin-right: 5px;
+    margin-top: 35px;
+    margin-left: 30px;
+    border-radius: 50px;
+    padding: 0 1rem 0 1rem;
+  }
 }
 @media (min-width: 1024px) {
+  .todo-input {
+    height: 77px;
+    width: 57%;
+    border-radius: 50px 0 0 50px;
+    font-size: 1.1rem;
+  }
   .footer-p {
     position: relative;
     margin-top: 240px;
@@ -435,5 +473,36 @@ h1 {
 
   .no-todos-text {
     font-size: 1.5rem;
+  }
+  .right-todo {
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: right;
+    width: 20%;
+    height: 100%;
+    border-bottom: 1px solid rgb(235, 243, 249);
+  }
+  .checkbox {
+    width: 48px;
+    height: 48px;
+    margin-top: 35px;
+    margin-left: 45px;
+    margin-right: 7px;
+  }
+  .checkbox:active {
+    width: 48px;
+    height: 48px;
+    margin-top: 35px;
+    margin-left: 45px;
+  }
+  .delete-todo {
+    height: 55px;
+    width: 55px;
+    margin-right: 5px;
+    margin-top: 35px;
+    margin-left: 45px;
+    border-radius: 50px;
+    padding: 0 1rem 0 1rem;
   }
 }

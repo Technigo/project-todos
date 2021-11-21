@@ -14,7 +14,7 @@ const todos = createSlice({
 
   reducers: {
     addTodo: (store, action) => {
-      const data = action.payload;
+      // const data = action.payload;
 
       const newTodo = {
         id: uniqid(),

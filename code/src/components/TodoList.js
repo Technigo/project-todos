@@ -55,7 +55,9 @@ const TodoList = () => {
                 className='delete-todo'
                 onClick={() => onRemoveTodo(item.id)}
               >
-                <span className='delete-x'>❌</span>
+                <span className='delete-x' role='img' aria-label='delete emoji'>
+                  ❌
+                </span>
               </button>
             </div>
           </div>
