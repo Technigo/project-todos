@@ -1,19 +1,13 @@
-# Technigo React Starter App
+# Project Todo ✅
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+The aim of the project was to build a TODO app using React, Redux, JSX and styled components. In this app the user should be able to add/remove tasks, list tasks and toggle when a task is completed or not.
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+# The challenge?
 
-## Usage
+The challenge was to graps how Redux interacts with React to dispatch actions and how information is sent and received between the store and the different components. To overcome this I challenged myself to create more component in order to get more comfortable with the flow and structure of redux.
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+It was a fun and creative project to learn redux. If I had more time I would like to make a conditional rendering that would change the background image depending on the time of the day.
 
-Alternatively, if you don't want a new git repo on your account;
+# View it live
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+https://mt-dotse-todo.netlify.app/
