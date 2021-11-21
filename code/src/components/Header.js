@@ -1,13 +1,20 @@
 import React from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { todos } from "../reducers/todos";
 import styled from "styled-components";
 
 import { Counter } from "./Counter";
+import { CompleteButton } from "./CompleteButton";
 
 const HeaderSection = styled.header`
 	background-color: #60c57f;
 	padding: 30px 20px;
 	color: #ffffff;
-	//border-bottom: 1px solid #e8e8e8;
+`;
+
+const FlexContainer = styled.div`
+	display: flex;
+	justify-content: space-between;
 `;
 
 const Heading = styled.h1`
@@ -15,39 +22,23 @@ const Heading = styled.h1`
 	margin-bottom: 5px;
 `;
 
-const CompleteButton = styled.button`
-	background-color: #60c57f;
-	color: #ffffff;
-	padding: 4px 8px;
-	border: solid 1px #ffffff;
-	border-radius: 100px;
-	font-size: 12px;
-	font-weight: 600;
-	text-transform: uppercase;
-	&:hover {
-		background-color: #ffffff;
-		color: #60c57f;
-	}
-`;
-
 export const Header = () => {
+	const items = useSelector((store) => store.todos.items);
+	const dispatch = useDispatch();
+
+	const onCompleteAllTodos = (items) => {
+		dispatch(todos.actions.completeAllTodos(items));
+	};
+
 	return (
 		<HeaderSection>
-			<div>
+			<FlexContainer>
 				<Heading>To do list</Heading>
-				<CompleteButton>Clear all</CompleteButton>
-			</div>
+				<CompleteButton onClick={onCompleteAllTodos}>
+					Complete all
+				</CompleteButton>
+			</FlexContainer>
 			<Counter />
 		</HeaderSection>
 	);
 };
-
-// Grey colors:
-// #e8e8e8
-// #c4cbd1
-// #f5f5f7
-// #f1f4f7
-// #222221
-// #2e2e2d
-// #f5f5f5
-// #e1e1e1

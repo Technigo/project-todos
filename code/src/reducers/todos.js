@@ -31,6 +31,16 @@ export const todos = createSlice({
 			store.items = updatedItems;
 		},
 
+		completeAllTodos: (store) => {
+			const completeAll = store.items.map((item) => {
+				return {
+					...item,
+					isComplete: true,
+				};
+			});
+			store.items = completeAll;
+		},
+
 		deleteTodo: (store, action) => {
 			const decreasedItems = store.items.filter(
 				(item) => item.id !== action.payload
