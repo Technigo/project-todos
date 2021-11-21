@@ -27,7 +27,7 @@
 .add-todo button {
   grid-column: span 1;
   border-radius: 25px 25px 25px 25px;
-  margin: 0 auto;
+  margin: 0;
   background-color: var(--blue);
   color: var(--white);
   border: none;
