@@ -2,7 +2,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  /* border-bottom: 1px solid black; */
 }
 
 .text-field {
@@ -20,7 +19,7 @@
 .text-field:hover,
 .text-field:focus {
   width: 70%;
-  border: 1px solid #608c9b;
+  border: 1px solid #6979f8;
 }
 
 input:focus {
@@ -37,18 +36,27 @@ input:focus {
 }
 
 .add-btn {
-  border: 2px solid #608c9b;
+  border: 2px solid #6979f8;
   border-radius: 50%;
-  background-color: #608c9b;
+  background-color: #6979f8;
   height: 50px;
   width: 50px;
   margin-bottom: 10px;
   box-shadow: 3px 3px 3px rgb(82, 82, 82);
 }
 
+.add-btn:focus {
+  box-shadow: none;
+}
+
 @media (min-width: 768px) {
   .text-field {
-    width: 60%;
+    width: 40%;
+  }
+
+  .text-field:hover,
+  .text-field:focus {
+    width: 50%;
   }
 }
 

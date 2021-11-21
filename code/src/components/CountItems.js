@@ -5,6 +5,9 @@ import todos from "reducers/todos"
 
 import "./todolist.css"
 
+//component to get only the length of task completed and uncompleted tasks
+//and dispatching and rendering the complete all tasks button
+
 export const CountItems = () => {
   const dispatch = useDispatch()
 

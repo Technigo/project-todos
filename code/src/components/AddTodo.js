@@ -5,6 +5,8 @@ import todos from "../reducers/todos"
 
 import "./addtodo.css"
 
+//using local useState  to store the input from the text field and passing it to the todolist
+
 const AddTodo = () => {
   const [input, setInput] = useState("")
 

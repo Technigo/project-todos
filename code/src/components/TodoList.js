@@ -1,23 +1,26 @@
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 
+//import of the reducers file
 import todos from "../reducers/todos"
 
 import "./todolist.css"
 
 const TodoList = () => {
+  //getting all the items(tasks)-array from the store
   const items = useSelector((store) => store.todos.items)
 
   const dispatch = useDispatch()
 
+  //make it so it is possible to toggle between completed and uncompleted task
   const onToggleTodo = (id) => {
     dispatch(todos.actions.toggleTodo(id))
   }
 
+  //Removing a task completely from the list
   const onRemoveTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id))
   }
-  // a complete all button-dispatch here
 
   //Filters completed and uncompleted tasks in different sections.
   const sortCompletedTasks = items.filter((item) => item.isComplete)
@@ -51,7 +54,7 @@ const TodoList = () => {
           ))}
         </div>
 
-        <h2>Completed tasks ✓</h2>
+        <h2> Completed ✓</h2>
         <div className="todo-wrapper">
           {sortCompletedTasks.map((item) => (
             <div className="completed-items" key={item.id}>

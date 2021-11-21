@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit"
 import uniqid from "uniqid"
 
+//This is setting upp all the reducers to handle the state
 const todos = createSlice({
   name: "todos",
   initialState: {
@@ -13,7 +14,7 @@ const todos = createSlice({
         text: action.payload,
         isComplete: false,
       }
-      // immutability approach to adding items 👇
+      // immutability approach to adding items
       store.items = [...store.items, newTodo]
     },
 
@@ -33,7 +34,7 @@ const todos = createSlice({
       store.items = updatedItems
     },
     deleteTodo: (store, action) => {
-      //immunatibity approach to deleting items 👇
+      //immunatibity approach to deleting items
       const decreasedItems = store.items.filter(
         (item) => item.id !== action.payload
       )
@@ -41,7 +42,7 @@ const todos = createSlice({
       store.items = decreasedItems
     },
 
-    completeAllTasks: (store, action) => {
+    completeAllTasks: (store) => {
       const completeAll = store.items.map((item) => {
         return {
           ...item,

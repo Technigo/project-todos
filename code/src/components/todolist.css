@@ -1,6 +1,6 @@
 .list-item-box {
   display: flex;
-  background-color: #608c9b;
+  background-color: #6979f8;
   color: white;
   align-items: center;
   justify-content: space-between;
@@ -30,7 +30,7 @@
 }
 
 p {
-  font-size: 18px;
+  font-size: 14px;
 }
 
 .delete-btn {
@@ -63,7 +63,6 @@ h2 {
   border-top-right-radius: 20px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  border-bottom: 1px solid black;
   box-shadow: 4px 4px 4px rgb(82, 82, 82);
 }
 
@@ -74,9 +73,20 @@ h2 {
   }
 }
 
-@media (min-width: 992px) {
+@media (min-width: 1024px) {
+  .list-item-box,
+  .completed-items {
+    width: 45%;
+  }
+}
+
+@media (min-width: 1200px) {
   .list-item-box,
   .completed-items {
     width: 30%;
+  }
+
+  p {
+    font-style: 18px;
   }
 }
