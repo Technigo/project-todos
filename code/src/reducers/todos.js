@@ -7,8 +7,8 @@ const todos = createSlice({
     },
     reducers: {
         addTodo: (store, action) => {
-            console.log('store', store)
             console.log('action', action)
+            const data = action.payload
         }
     },
 })
