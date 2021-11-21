@@ -63,7 +63,6 @@ p {
   background-color: rgb(252, 117, 223);
   width: 250px;
   height: 250px;
-  /* margin: auto; */
   box-shadow: rgba(0, 0, 0, 0.5) 2.4px 2.4px 3.2px;
   display: flex;
   flex-direction: column;
