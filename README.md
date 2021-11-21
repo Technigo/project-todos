@@ -1,6 +1,6 @@
 # Project Todos
 
-This week's project was to create a Todo-List app
+This week's project was to create a Todo-List app.
 
 ## The problem
 
