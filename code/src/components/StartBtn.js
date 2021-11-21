@@ -1,9 +1,7 @@
 import React from "react"
 import styled from "styled-components"
-// import { useDispatch } from "react-redux"
-// import todos from "reducers/todos"
-// import { useHistory } from 'react-router-dom'
-// import TodoList from "./TodoList"
+import { useDispatch } from "react-redux"
+import todos from "reducers/todos"
 
 
 
@@ -23,11 +21,18 @@ const StyledStartBtn = styled.button`
     }
 `
 
+
 const StartBtn = () => {
+    const dispatch = useDispatch()
+
+    const addTodo = (id) => {
+        dispatch(todos.actions.addTodo(id))
+    }
 
     return (
             <StyledStartBtn 
-                className='pulse'>
+                className='pulse'
+                onClick={() => addTodo('testing')}>
                 <i className="fas fa-plus"></i>
             </StyledStartBtn>
     )

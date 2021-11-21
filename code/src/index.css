@@ -19,14 +19,6 @@ code {
     monospace;
 }
 
-
-/* STARTPAGE */
-
-.start-page h1 {
-  color: #1a1a1a;
-  font-size: 72px;
-}
-
 .fa-plus {
   font-size: 32px;
   animation-name: bounce;
@@ -61,7 +53,6 @@ code {
   100%  {transform: translateY(0)}
 }
 
-
 /* HEADER  */
 
 .header {
@@ -75,7 +66,6 @@ code {
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* padding-bottom: 1rem; */
 }
 
 .heading-counter {
@@ -230,7 +220,6 @@ h4 {
   flex-direction: row;
   align-items: center;
   padding-left: 1rem;
-  /* margin-bottom: 0.5rem; */
 }
 
 .todo-radio {
