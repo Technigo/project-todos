@@ -24,6 +24,17 @@ code {
 
 .header-text {
   font-size: 20px;
+  margin-left: 20px;
+}
+
+.canban {
+  display: flex;
+  flex-direction: row;
+  gap: 35px;
+  justify-content: flex-end;
+  margin-right: 30px;
+  font-size: 12px;
+  font-weight: bold;
 }
 
 /* AddTodo component */
@@ -31,12 +42,15 @@ code {
 .add-todo {
   display: flex;
   flex-direction: row;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .input {
   padding: 10px;
   background-color: rgb(243, 239, 239);
   border: none;
+  width: 230px;
 }
 
 .add-button {
@@ -50,9 +64,36 @@ code {
 /* Todolist component */
 
 .flex-item {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+
+  border: 1px solid rgb(243, 239, 239);
+  padding: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+}
+
+.todo-container {
+  display: flex;
+  flex-direction: row;
   align-items: center;
+}
+
+.item-text {
+  font-size: 15px;
+}
+
+.checkbox-doing {
+  height: 20px;
+  width: 20px;
+  background: rgb(243, 239, 239);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  margin: 0;
+  border-radius: 5px;
+}
+
+.checkbox-doing:checked {
+  background: rgb(230, 230, 127);
 }
 
 .checkbox {
@@ -61,18 +102,28 @@ code {
   background: rgb(243, 239, 239);
   -webkit-appearance: none;
   -moz-appearance: none;
+  margin: 0;
+  border-radius: 5px;
 }
 
 .checkbox:checked {
-  background: green;
+  background: rgb(79, 105, 79);
 }
 
 .button-container {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
 }
 
-.buttons {
+.complete-button {
   padding: 5px;
-  margin: 5px;
+  height: 25px;
+}
+
+.delete-button {
+  background-color: rgb(241, 109, 109);
+  width: 25px;
+  height: 25px;
 }

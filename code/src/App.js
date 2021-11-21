@@ -5,6 +5,7 @@ import { combineReducers, createStore } from "@reduxjs/toolkit";
 import todos from "./reducers/todos";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/Todolist";
+import Canban from "./components/Canban";
 
 const reducer = combineReducers({
   todos: todos.reducer,
@@ -36,6 +37,7 @@ export const App = () => {
       <h1 className="header-text">today's todos</h1>
       <Provider store={store}>
         <AddTodo />
+        <Canban />
         <TodoList />
       </Provider>
     </div>

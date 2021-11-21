@@ -22,7 +22,7 @@ const AddTodo = () => {
         type="Text"
         className="input"
         value={input}
-        placeholder="What's up today?"
+        placeholder="what's up today?"
         onChange={(event) => setInput(event.target.value)}
       />
       <button className="add-button" onClick={onAddTodo}>
