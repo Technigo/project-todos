@@ -6,17 +6,22 @@ import AllTasks from './AllTasks';
 import task from '../reducers/task';
 
 // Styled components
-const ListContainer = styled.section``;
-
-const StyledButton = styled.button`
-	border: none;
-	background: none;
-`;
-
 const StyledTaskDiv = styled.div`
+	width: 80%;
+	margin: 20px auto;
+	padding: 20px;
+	font-size: 18px;
+	font-weight: bold;
+	color: #003b49;
+	background: rgba(255, 255, 255, 0.4);
+	border-radius: 25px;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+
+	@media (min-width: 768px) {
+		font-size: 24px;
+	}
 `;
 
 const StyledCheckBox = styled.input`
@@ -41,15 +46,18 @@ const StyledCheckBox = styled.input`
 
 	&:checked:after {
 		content: url('https://img.icons8.com/material-outlined/24/000000/checkmark--v1.png');
-		position: absolute;
-		font-size: 20px;
 	}
+`;
+
+const StyledButton = styled.button`
+	border: none;
+	background: none;
 `;
 
 const DeleteImage = styled.img`
 	content: url('https://img.icons8.com/external-kiranshastry-lineal-kiranshastry/64/000000/external-trash-bin-cleaning-kiranshastry-lineal-kiranshastry.png');
-	height: 30px;
-	width: 30px;
+	height: 35px;
+	width: 35px;
 `;
 
 const TaskList = () => {
@@ -74,8 +82,8 @@ const TaskList = () => {
 	};
 
 	return (
-		<ListContainer>
-			<h1>Daily Tasks</h1>
+		<section>
+			{/* Incomplete tasks */}
 
 			{incompleteTasks.map((item) => (
 				<StyledTaskDiv key={item.id}>
@@ -95,6 +103,7 @@ const TaskList = () => {
 				</StyledTaskDiv>
 			))}
 
+			{/* Completed tasks */}
 			{completedTasks.map((item) => (
 				<StyledTaskDiv key={item.id}>
 					<StyledCheckBox
@@ -112,7 +121,7 @@ const TaskList = () => {
 				</StyledTaskDiv>
 			))}
 			<AllTasks />
-		</ListContainer>
+		</section>
 	);
 };
 

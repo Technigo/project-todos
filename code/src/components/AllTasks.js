@@ -22,7 +22,7 @@ const AllTasks = () => {
 					<ConfettiRain />
 				</>
 			) : (
-				<p>Add a Task</p>
+				<p>Add a task to do</p>
 			)}
 		</div>
 	);

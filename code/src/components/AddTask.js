@@ -14,19 +14,38 @@ const StyledAddTaskContainer = styled.div`
 
 	input {
 		height: 24px;
+		width: 60%;
 		margin: auto 0;
+		padding: 5px;
+		border: 3px solid white;
+		border-radius: 5px;
+
+		&:focus {
+			border: 3px solid hotpink;
+			outline: none;
+		}
+
+		@media (min-width: 768px) {
+			height: 30px;
+			width: 50%;
+			font-size: 24px;
+		}
 	}
 `;
 
 const StyledButton = styled.button`
 	margin: auto 0;
 	padding: 10px;
-	border: none;
+	border: 2px solid white;
 	border-radius: 20px;
 	background: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	&:enabled {
+		border: 2px solid hotpink;
+	}
 `;
 
 const AddTask = () => {
@@ -41,10 +60,14 @@ const AddTask = () => {
 		<StyledAddTaskContainer>
 			<input
 				type='text'
+				placeholder='Add Task Here'
 				value={input}
 				onChange={(event) => setInput(event.target.value)}
 			/>
-			<StyledButton onClick={onAddTask} disabled={input.length < 1}>
+			<StyledButton
+				type='submit'
+				onClick={onAddTask}
+				disabled={input.length < 1}>
 				<span role='img' aria-label='Plus sign'>
 					➕
 				</span>

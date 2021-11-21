@@ -20,6 +20,10 @@ const TaskContainer = styled.section`
 	color: #003b49;
 	background: rgba(255, 255, 255, 0.3);
 	border-radius: 25px;
+
+	@media (min-width: 768px) {
+		width: 65%;
+	}
 `;
 
 const store = configureStore({ reducer });
