@@ -4,25 +4,55 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import styled from 'styled-components'
 import todos from '../reducers/todos'
+import AddTodo from './AddTodo'
+import Header from './Header'
+
 
 
 const TodoContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr;
-  margin-top: 200px;
+  margin-top: 100px;
+  margin-bottom: 12px;
 `
 const TodoItem = styled.section`
+  width: 100%;
+  padding: 10px 4px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border: 2px solid black;
-  margin-bottom: 2px;
-  padding-left: 4px;
-  padding-right: 6px;
+  border: 1px solid peachpuff;
+  border-radius: 5px 5px 5px 5px;
+  margin-bottom: 6px;
+  background: whitesmoke;
 `
 const TodoItemLeft = styled.div`
   display: flex;
   align-items: center;
+
+  p {
+    font-size: 22px;
+    margin-left: 6px;
+  }
+
+  input:checked:before {
+    .checkbox:checked:before{
+background-color:green;
+}
+  }
+`
+
+const ToDoParagraph = styled.div`
+  display: block;
+
+  .dateCreated {
+    font-size: 12px;
+    font-style: italic;
+  }
+`
+
+const DateCreated = styled.p`
+  font-size: 8px;
 `
 const TrashbinButton = styled.button`
   cursor: pointer;
@@ -39,16 +69,18 @@ const TodoList = () => {
     dispatch(todos.actions.toggleTodo(id))
   }
 
-  const editTodo = () => {
-
-  }
-
   const clearTodo = (id) => {
     dispatch(todos.actions.clearTodo(id))
   }
 
+  const currentDate = () => {
+    return new Date().toLocaleDateString("sv-SV", ({ year: 'numeric', month: 'numeric', day: 'numeric' }));
+  }
+
   return (
+    
     <TodoContainer>
+      
       {items.map((item, index) => (
           <TodoItem key={item.id}>
             <TodoItemLeft>
@@ -57,12 +89,17 @@ const TodoList = () => {
                 checked={item.isComplete} 
                 onChange={() => onToggleTodo(item.id)} 
               />
-              <p>{item.text}</p> 
+              <ToDoParagraph>
+                <p>{item.text}</p>
+                <p className = "dateCreated">created {currentDate()}</p> 
+              </ToDoParagraph>
+          
             </TodoItemLeft>
 
             <TrashbinButton onClick={() => clearTodo(item.id)}>{clearIcon}</TrashbinButton>
           </TodoItem>
       ))}
+      <AddTodo/>
     </TodoContainer>
   ) 
 }

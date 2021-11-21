@@ -1,7 +1,17 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import todos from '../reducers/todos'
+import styled from 'styled-components'
 
+const Button = styled.b`
+  width: 100%;
+  display: flex;
+  align-content: center;
+  background-color: peachpuff;
+  border-radius: 5px;
+  cursor: pointer;
+  justify-content: center;
+`
 const ClearAll = () => {
   const dispatch = useDispatch()
 
@@ -13,9 +23,9 @@ const ClearAll = () => {
 
   return (
     <div>
-      <button onClick={clearAllTodo}>
+      <Button onClick={clearAllTodo}>
         Clear All
-      </button>
+      </Button>
     </div>
   )
 }
