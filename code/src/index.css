@@ -87,7 +87,7 @@ h1 {
 .illustration-bubble {
   animation: swipe 2s;
   animation-timing-function: ease-in;
-  /* animation-iteration-count: infinite; */
+  animation-iteration-count: infinite;
 }
 
 @keyframes swipe {
@@ -96,11 +96,11 @@ h1 {
   }
 
   50% {
-    transform: translateX(-500px, 500px);
+    transform: translateX(-500px, 0);
   }
 
   100% {
-    transform: translateX(0px, 0);
+    transform: translateX(0, 0);
   }
 }
 
@@ -141,7 +141,6 @@ h1 {
   height: 40px;
   width: 40px;
   background-color: var(--green);
-
   font-size: larger;
   font-weight: 700;
 }
@@ -337,5 +336,6 @@ a {
     position: relative;
     color: var(--grey);
     padding-top: 10px;
+    font-size: 10px;
   }
 }

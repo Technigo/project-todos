@@ -1,12 +1,10 @@
 import React from "react"
-import { useSelector, useDispatch } from "react-redux"
+import { useDispatch } from "react-redux"
 
 import todos from "../reducers/todos"
 import Swal from "sweetalert2"
 
 const DeleteAll = () => {
-  const items = useSelector(store => store.todos.items)
-
   const dispatch = useDispatch()
 
   const deleteAllTodos = () => {

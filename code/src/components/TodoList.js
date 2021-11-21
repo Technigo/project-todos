@@ -27,7 +27,7 @@ const TodoList = () => {
     <section className="list-container">
       {items.length === 0 ? (
         <div className="img-done-container">
-          <p>All completed</p>
+          <p>Want to add one?</p>
           <Svg />
         </div>
       ) : (

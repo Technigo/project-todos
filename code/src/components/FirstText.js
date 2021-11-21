@@ -14,9 +14,7 @@ const FirstText = () => {
     <section className="intro-container">
       {totalTodos === 0 ? (
         <>
-          <h1>
-            Nothing on your to do list! <br /> Want to add one?
-          </h1>
+          <h1>Nothing on your to do list!</h1>
         </>
       ) : (
         <>

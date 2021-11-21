@@ -5,7 +5,7 @@ const Footer = () => {
     <p className="footer">
       © by{" "}
       <a href="https://github.com/Ajliin" alt="link github">
-        Elin | Technigo
+        Elin Diczfalusy 2021 | Technigo
       </a>
     </p>
   )
