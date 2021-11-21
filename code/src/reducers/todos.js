@@ -13,8 +13,7 @@ const todos = createSlice({
         text: "Handla",
         isComplete: false,
         time: Date.now(),
-
-        color: ["green", "red"],
+        color: ["var(--green)"],
       },
     ],
   },
