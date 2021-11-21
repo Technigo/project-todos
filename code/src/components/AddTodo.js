@@ -3,13 +3,14 @@ import { useDispatch } from 'react-redux'; // import dispatch actions and trigge
 import styled from 'styled-components';
 import todos from '../reducers/todos';
 
+//styled components
 const Addtasks = styled.div`
 	margin: 0 auto;
 	width: 95%;
 `;
 
 const InputText = styled.input`
-	width: 80%;
+	width: 70%;
 	outline: none;
 	resize: none;
 	margin: 10px;
@@ -23,6 +24,10 @@ const InputText = styled.input`
 	::placeholder {
 		text-align: center;
 	}
+
+	@media (min-width: 767px) {
+		width: 75%;
+	}
 `;
 
 const AddTodoBtn = styled.button`
@@ -34,6 +39,8 @@ const AddTodoBtn = styled.button`
 	color: black;
 	cursor: pointer;
 `;
+
+//component to add new tasks
 
 const AddTodo = () => {
 	const [input, setInput] = useState('');

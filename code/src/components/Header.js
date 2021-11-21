@@ -2,10 +2,7 @@ import React from 'react';
 import moment from 'moment';
 import styled from 'styled-components';
 
-//import todos from '../reducers/todos';
 import { useSelector } from 'react-redux';
-
-//component showing the app's header
 
 //Styled components
 const StyledHeader = styled.div`
@@ -19,6 +16,7 @@ const TodoTitle = styled.h1`
 	font-family: 'Reenie Beanie', cursive;
 	font-size: 50px;
 	color: white;
+	/* #febb01 */
 `;
 
 const CompletedTask = styled.p`
@@ -33,10 +31,10 @@ const Date = styled.p`
 	color: white;
 `;
 
+//component showing the app's header
 const Header = () => {
 	const items = useSelector((store) => store.todos.items);
 	const completedTasks = items.filter((items) => items.isComplete);
-	//const dispatch = useDispatch();
 
 	return (
 		<>

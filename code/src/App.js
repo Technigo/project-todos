@@ -32,7 +32,7 @@ store.subscribe(() => {
 });
 
 const MainContainer = styled.section`
-	width: 400px;
+	width: 380px;
 	display: flex;
 	text-align: center;
 	justify-content: flex-start;
@@ -42,7 +42,7 @@ const MainContainer = styled.section`
 	background-color: #ffffff10;
 	backdrop-filter: blur(12px);
 	--webkit-backdrop-filter: blur(12px);
-	margin-top: 100px;
+	margin-top: 25px;
 	@media (min-width: 768px) {
 		width: 500px;
 	}

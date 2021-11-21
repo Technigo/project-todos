@@ -4,6 +4,7 @@ import styled from 'styled-components';
 
 import todos from '../reducers/todos';
 
+//styled components
 const AllTaskButtonWrapper = styled.div`
 	display: flex;
 	align-items: center;
@@ -14,18 +15,22 @@ const AllTaskButtonWrapper = styled.div`
 const Button = styled.button`
 	border: none;
 	cursor: pointer;
-	background-color: white;
+	background-color: #002366;
+	color: white;
 	font-family: 'Poiret One', cursive;
 	font-weight: 700;
 	margin: 20px;
 	border-radius: 20px;
-	padding: 7px;
+	padding: 8px;
 	&:hover {
-		background-color: #d9b974;
+		background-color: #bc9828;
 	}
 `;
 
+//component to complete and clear all tasks
+
 const CompleteAll = () => {
+	//dispatches actions and trigger state changes to the store
 	const dispatch = useDispatch();
 
 	return (

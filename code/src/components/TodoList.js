@@ -4,14 +4,17 @@ import styled from 'styled-components';
 
 import todos from '../reducers/todos';
 
+//Style components
 const TaskstoComplete = styled.section`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	flex-direction: column;
 	margin-top: 30px;
+	max-height: 310px;
+	padding: 0 10px;
 	overflow-y: scroll;
-	&::-webkit-scrollbar {
+	::-webkit-scrollbar {
 		display: none;
 	}
 `;
@@ -38,18 +41,16 @@ const TimeandTask = styled.div`
 	line-height: 40%;
 `;
 
-const Checkboxwrapper = styled.div`
+const CheckboxWrapper = styled.div`
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	padding: 5px;
 `;
 
-// const Recyclebin = styled.img`
-// 	width: 20px;
-// 	height: 20px;
-// 	border-radius: 50%;
-// `;
+const Input = styled.input`
+	cursor: pointer;
+`;
 
 const Deletebtn = styled.button`
 	border: none;
@@ -57,7 +58,7 @@ const Deletebtn = styled.button`
 	height: 30px;
 	border-radius: 50%;
 	&:hover {
-		background-color: #b2ea70;
+		background-color: red;
 	}
 `;
 
@@ -65,6 +66,7 @@ const Time = styled.p`
 	font-size: 12px;
 `;
 
+// component showing the added tasks
 const TodoList = () => {
 	const items = useSelector((store) => store.todos.items); // reaching for the data in the Slice todo.js
 
@@ -88,14 +90,14 @@ const TodoList = () => {
 		<TaskstoComplete>
 			{items.map((item, index) => (
 				<TasksWrapper key={item.id}>
-					<Checkboxwrapper>
-						<input
+					<CheckboxWrapper>
+						<Input
 							type="checkbox"
 							placeholder="black"
 							checked={item.isComplete}
 							onChange={() => onToggleTodo(item.id)}
 						/>
-					</Checkboxwrapper>
+					</CheckboxWrapper>
 
 					<TimeandTask>
 						<p>{item.text}</p>

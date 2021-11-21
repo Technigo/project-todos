@@ -1,21 +1,25 @@
 import React from 'react';
 import styled from 'styled-components';
 
+//styled components
 const FooterContainer = styled.div`
-	font-family: 'Poiret One', cursive;
+	font-family: 'Reenie Beanie', cursive;
 	color: white;
-	font-size: 11px;
+	font-size: 18px;
+	font-weight: bold;
 `;
 
 const Link = styled.a`
 	text-decoration: none;
-	color: white;
+	color: #002366;
+
 	font-weight: 400;
-	&:active {
+	&:hover {
 		text-decoration: underline;
 	}
 `;
 
+//component showing the apps footer
 const Footer = () => {
 	return (
 		<FooterContainer>
