@@ -9,7 +9,7 @@ export const todos = createSlice({
   },
   reducers: {
     addTodo: (store, action) => {
-      console.log(action)
+      // console.log(action)
 
       const { input, category } = action.payload
 
@@ -22,7 +22,7 @@ export const todos = createSlice({
       store.items = [newTodo, ...store.items]
     },
     toggleTodo: (store, action) => {
-      console.log(action)
+      // console.log(action)
 
       const updatedItems = store.items.map((item) => {
         if (item.id === action.payload) {

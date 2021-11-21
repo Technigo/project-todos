@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This was a week 14 project at Technigo. It consisted of building a to-do app in React using redux store and reduxjs-toolkit. Actions were to be stored in a slice and the store was to be called and modified with useSelect and useDispatch.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The styling was up to us in this project so I went to dribbble.com to find a great looking design to follow and to also inspire what functions I'd like to end up including in the app. The requirements were to list the to-dos, display a counter for the to-dos, give the user possibility to add to-dos, check and uncheck them, and to delete them. I added categories to my solution and buttons to show all to-dos or only the ones belonging to a certain category, applied animation to the checkbox of the to-dos, made an accordion style form for the add to-do function and added a progress bar. The styling was made by using styled components for the most part and useState was used locally to render items conditionally. LocalStorage was also applied to make the whole app usable.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://elsisco-what-todo.netlify.app/

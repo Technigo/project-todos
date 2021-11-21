@@ -150,7 +150,7 @@ const StyledParagraph = styled.p`
   }
 `
 const StyledOverlay = styled(Overlay)`
-  width: 100%;
+  min-width: 100%;
   max-height: 80px;
   z-index: 10;
   position: fixed;
