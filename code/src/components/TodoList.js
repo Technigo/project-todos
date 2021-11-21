@@ -2,7 +2,6 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { FaTrashAlt } from "react-icons/fa";
 import styled from "styled-components";
-import Checkbox from "@material-ui/core/Checkbox";
 
 import todos from "../reducers/todos";
 import TheStart from "./TheStart";
