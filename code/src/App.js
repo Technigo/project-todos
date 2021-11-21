@@ -31,13 +31,14 @@ const MainSection = styled.section`
   margin: 20px 5px;
   width: 90%;
   margin: 0;
-  height: 90%;
+  height: 70%;
   border-radius: 25px;
   @media (min-width: 768px) {
     max-width: 600px;
   }
   @media (min-width: 992px) {
     max-width: 800px;
+    max-height: 800px;
   }
 `
 
