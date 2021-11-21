@@ -71,54 +71,11 @@ code {
   padding: 1.5rem 1rem 1rem 1rem;
 }
 
-.dateandcircles {
+.date {
   display: flex;
   flex-direction: row;
   align-items: center;
   /* padding-bottom: 1rem; */
-}
-
-.circles-container {
-  display: none;
-  flex-direction: row;
-  margin: 0;
-  padding-right: 0.5rem;
-} 
-
-.circle1 {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
-  border-radius: 8px;
-  background-color: rgb(111, 182, 111);
-}
-
-.circle2 {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
-  border-radius: 8px;
-  background-color: rgb(72, 143, 72);
-}
-
-.circle3 {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
-  border-radius: 8px;
-  background-color: rgb(42, 92, 42);
-}
-
-.circle4 {
-  display: inline-block;
-  width: 1rem;
-  height: 1rem;
-  margin-right: 0.5rem;
-  border-radius: 8px;
-  background-color: rgb(22, 66, 22);
 }
 
 .heading-counter {
@@ -153,19 +110,29 @@ p {
 
 .add-todo-container {
   display: flex;
-  width: 100%;
+  max-width: 767px;
   height: 48px;
   width: 100%;
   border-radius: 24px;
   background-color: #1a1a1a;
 }
 
+.bottom-container {
+  position: fixed;
+  max-width: 767px;
+  bottom: 1rem;
+  right: 1rem;
+  left: 1rem;
+  margin: 0 auto;
+
+}
+
 
 .add {
   padding: 1rem 1rem;
   background-color: #333;
-  margin: 1rem;
   border-radius: 8px;
+  margin-bottom: 1rem;
  }
 
  .add-input {
@@ -228,7 +195,6 @@ h4 {
 /* TODO ITEM */
 
 .todo-container {
-  /* margin: 0 auto; */
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -302,16 +268,7 @@ h4 {
 .btns-container {
   display: flex;
   justify-content: space-between;
-  /* margin-bottom: 1rem; */
-  bottom: 2rem;
-  left: 0;
-  right: 0;
-  position: fixed;
   max-width: 767px;
-  margin: 0 auto;
-  padding-left: 1rem;
-  padding-right: 1rem;
-
 }
 
 .delete-all-btn {

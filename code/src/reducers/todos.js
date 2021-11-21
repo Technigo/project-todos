@@ -1,6 +1,10 @@
 import { createSlice } from "@reduxjs/toolkit"
 import uniqid  from 'uniqid'
 
+// const initialState = {
+//     startAdding: false,
+//   },
+
 const todos = createSlice({
     name: 'todos',
     initialState:  { 
@@ -56,6 +60,12 @@ const todos = createSlice({
         checkAllTodos: (store) => {
             store.items.map(item => item.isComplete = true)
         },
+        // startAdding: (store) => {
+        //     store.startAdding = true
+        //   }
+        // startAdding: () => {
+        //     return todos.initialState
+        //   }
     },
 })
 

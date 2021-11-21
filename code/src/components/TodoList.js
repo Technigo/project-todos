@@ -27,11 +27,13 @@ const TodoList = () => {
     return (
         <>
         <Header />
-        <AddTodo />
         <section className='main'>
-            <section className='btns-container'>
-                <BtnCheckAll />
-                <BtnDeleteAll />  
+            <section className='bottom-container'>
+                <AddTodo />
+                <section className='btns-container'>
+                    <BtnCheckAll />
+                    <BtnDeleteAll />  
+                </section>
             </section>
             {items.map((item, index) => (
                 <section className='todo-container' key={item.id}>
@@ -49,8 +51,6 @@ const TodoList = () => {
                         <span className='date-time'>
                                     Created
                                     &nbsp;
-                                    {/* {moment(item.weekday).format('ddd')}
-                                    &nbsp; */}
                                     {moment(date).format('ddd')}
                                     &nbsp;
                                     {moment(item.createdAt).format('h:mm')}
