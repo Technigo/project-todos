@@ -1,10 +1,7 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import img from "../images/mountain-background.jpeg";
 
-//a reducer required for sending info via dispatch
-import todos from "../reducers/todos";
 
 //Styled component
 const HeaderTag = styled.header`
