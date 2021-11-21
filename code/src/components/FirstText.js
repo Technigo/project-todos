@@ -15,7 +15,7 @@ const FirstText = () => {
     <section className="intro-container">
       {totalTodos === 0 ? (
         <>
-          <h1>Looks like you need to add a to do!</h1>
+          <h1>No to do! Want to add one?</h1>
           <Svg />
 
           {/* <img src="./illustration.svg" alt="illustration"></img> */}
@@ -34,11 +34,7 @@ const FirstText = () => {
               {moment(items.time).format("MMMM Do YYYY, h:mm")}
             </p>
           </header>
-          <img
-            className="intro-img"
-            src="./illustration.svg"
-            alt="illustration"
-          ></img>
+          <Svg />
         </>
       )}
     </section>
