@@ -1,6 +1,5 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import todos from "../reducers/todos";
 
@@ -48,19 +47,13 @@ const TodoList = () => {
           </div>
 
           <div className="button-container">
-            <button
-              className="button"
-              onClick={() => onDeleteTodo(item.id)}
-            >
+            <button className="button" onClick={() => onDeleteTodo(item.id)}>
               <span role="img" aria-label="checked">
                 &#10006;
               </span>
             </button>
             <div className="complete-button-container">
-              <button
-                className="button"
-                onClick={() => onDoingTodo(item.id)}
-              >
+              <button className="button" onClick={() => onDoingTodo(item.id)}>
                 <span role="img" aria-label="checked">
                   &#x2714;
                 </span>
