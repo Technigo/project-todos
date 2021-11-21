@@ -103,7 +103,7 @@ const TodoList = () => {
             />
             <div className="text-and-date-box">
               <TaskParagraph isComplete={item.isComplete}>{item.text}</TaskParagraph>
-              <p className="date-paragraph">Added {moment().format("MMM Do hh:mm")}</p>
+              <p className="date-paragraph">Added {moment().format('llll')}</p>
             </div>
           </div>
           <button className="delete-btn" onClick={() => onDeleteTodo(item.id)}>
