@@ -5,7 +5,6 @@ export const StyledSection = styled.main`
   background-color: #1a1a1a;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   margin-right: 1rem;
   margin-left: 1rem;
 `
@@ -16,14 +15,11 @@ export const StyledDiv2 = styled.div`
     display: flex;
     justify-content: center;
     flex-direction: row;
+    margin-top: 6rem;
     align-items: center;
-    position: fixed;
-    bottom: 2rem;
-    left: 1rem;
-    right: 1rem;
 
     @media (min-width: 767px) {
-        bottom: 8rem;
+        margin-bottom: 3rem;
      }
 
 `
@@ -82,7 +78,7 @@ export const StyledHeader = styled.header`
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding-top: 3rem;
+    padding-top: 5rem;
 
     @media (min-width: 767px) {
         padding-top: 8rem;
