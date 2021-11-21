@@ -10,4 +10,4 @@ If i had more time i would focus more on styled components. ANd tried to give th
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://a1eksa-todo.netlify.app/
