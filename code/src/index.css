@@ -1,9 +1,9 @@
 body {
   height: 100vh;
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #B9C8AC;
+  background-color: #f6c05cc7;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,5 +11,5 @@ body {
 }
 
 code {
-  font-family: 'Spartan', sans-serif;
+  font-family: "Spartan", sans-serif;
 }
