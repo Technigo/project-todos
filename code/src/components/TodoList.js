@@ -4,8 +4,9 @@ import styled from "styled-components/macro";
 
 import todos from "../reducers/todos";
 
-import FilterOptions from "./FilterOptions";
 import TodoListElements from "./TodoListElements";
+import AllDone from "./AllDone";
+import FilterOptions from "./FilterOptions";
 
 const ButtonWrapper = styled.div`
   display: flex;
@@ -99,24 +100,31 @@ const TodoList = () => {
       (item) => item.project === "" || !item.project
     );
 
-    console.log("No prio list: ", noPrio);
-
-    return (
-      <>
-        {prioOne && (
-          <TodoListElements list={prioOne} heading={"Prio 1"} />
-        )}
-        {prioTwo && (
-          <TodoListElements list={prioTwo} heading={"Prio 2"} />
-        )}
-        {prioThree && (
-          <TodoListElements list={prioThree} heading={"Prio 3"} />
-        )}
-        {noPrio && (
-          <TodoListElements list={noPrio} heading={"No prio"} />
-        )}
-      </>
-    );
+    if (
+      prioOne.length ||
+      prioTwo.length ||
+      prioThree.length ||
+      noPrio.length
+    ) {
+      return (
+        <>
+          {prioOne && (
+            <TodoListElements list={prioOne} heading={"Prio 1"} />
+          )}
+          {prioTwo && (
+            <TodoListElements list={prioTwo} heading={"Prio 2"} />
+          )}
+          {prioThree && (
+            <TodoListElements list={prioThree} heading={"Prio 3"} />
+          )}
+          {noPrio && (
+            <TodoListElements list={noPrio} heading={"No prio"} />
+          )}
+        </>
+      );
+    } else {
+      return <AllDone />;
+    }
   };
 
   return (
