@@ -7,7 +7,7 @@ I also included a complete all button and a timestamp, using moment.js.
 
 To build this app I had to pull together all the parts of redux - the store, slices, reducers and actions. I gained a lot of useful experience.
 
-I started by creating a slice and reducers with four methods: addTodo, toggleTodo, deleteTodo and clearAll. In App.js the store was created. I could then start with adding the functions and styling in all the components.
+I created a slice with one root reducer including four methods: addTodo, toggleTodo, deleteTodo and clearAll. In App.js the store was set up. In the components I fetched data with selectors and dispatched actions to update the store.
 
 For the first time, I used styled-components to do the styling. There's still a lot to learn about what's possibile to do with styled-components but I really enjoyed this approach and how it's structured. I've done a Mobile first design for this project, with no other media query breakpoints.
 
