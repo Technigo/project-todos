@@ -4,11 +4,7 @@ import uniqid from 'uniqid';
 const task = createSlice({
 	name: 'task',
 	initialState: {
-		items: [
-			{ id: 1, text: 'Watch video on actions', isComplete: true },
-			{ id: 2, text: 'Follow redux codealong', isComplete: true },
-			{ id: 3, text: 'Finish project', isComplete: false },
-		],
+		items: [],
 	},
 	reducers: {
 		addTask: (store, action) => {
