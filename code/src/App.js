@@ -32,8 +32,8 @@ store.subscribe(() => {
 
 export const App = () => {
   return (
-    <div>
-      <h1>Your todo list for the day!</h1>
+    <div className="container">
+      <h1 className="header-text">today's todos</h1>
       <Provider store={store}>
         <AddTodo />
         <TodoList />

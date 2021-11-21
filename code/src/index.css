@@ -1,5 +1,5 @@
 body {
-  margin: 20px;
+  margin: 0px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -12,8 +12,67 @@ code {
     monospace;
 }
 
-.flex-item {
+/* mobile menu */
+
+.container {
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 10px;
+  width: 320px;
+  margin: 20px;
+}
+
+.header-text {
+  font-size: 20px;
+}
+
+/* AddTodo component */
+
+.add-todo {
+  display: flex;
+  flex-direction: row;
+}
+
+.input {
+  padding: 10px;
+  background-color: rgb(243, 239, 239);
+  border: none;
+}
+
+.add-button {
+  background-color: rgb(243, 239, 239);
+  font-weight: bold;
+  padding: 10px;
+  border: none;
+  width: 50px;
+}
+
+/* Todolist component */
+
+.flex-item {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+}
+
+.checkbox {
+  height: 20px;
+  width: 20px;
+  background: rgb(243, 239, 239);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.checkbox:checked {
+  background: green;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.buttons {
+  padding: 5px;
+  margin: 5px;
 }

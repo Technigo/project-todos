@@ -1,7 +1,14 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import styled from "styled-components";
 
 import todos from "../reducers/todos";
+
+const input = styled.div`
+display: flex;
+flex-direction: column;
+gap; 10px;
+`;
 
 const AddTodo = () => {
   const [input, setInput] = useState("");
@@ -10,13 +17,17 @@ const AddTodo = () => {
     dispatch(todos.actions.addTodo(input));
   };
   return (
-    <div>
+    <div className="add-todo">
       <input
         type="Text"
+        className="input"
         value={input}
+        placeholder="What's up today?"
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={onAddTodo}>Add todo</button>
+      <button className="add-button" onClick={onAddTodo}>
+        +
+      </button>
     </div>
   );
 };

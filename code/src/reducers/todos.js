@@ -41,6 +41,14 @@ const todos = createSlice({
 
       store.items = decreasedItems;
     },
+
+    completeTodo: (store, action) => {
+      const completedItems = store.items.filter(
+        (item) => item.id !==action.payload
+      );
+
+      store.items = completedItems;
+    }
   },
 });
 
