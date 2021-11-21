@@ -37,7 +37,7 @@ const MainSection = styled.section`
     max-width: 600px;
   }
   @media (min-width: 992px) {
-    max-width: 1000px;
+    max-width: 800px;
   }
 `
 
