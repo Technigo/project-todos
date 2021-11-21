@@ -8,7 +8,7 @@ const Summary = () => {
   const unCompletedTodos = todos.filter((item) => !item.isComplete).length;
 
   const completeTodos = todos.filter((item) => item.isComplete).length;
-
+  // if there are no tasks this will show
   if (unCompletedTodos < 1) {
     return (
       <SectionEmpty>

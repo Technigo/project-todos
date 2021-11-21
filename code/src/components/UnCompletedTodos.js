@@ -18,7 +18,6 @@ const UnCompletedTodos = () => {
     dispatch(todos.actions.toggleTodo(id));
   };
 
-  // delete one todo
   const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id));
   };

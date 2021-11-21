@@ -24,6 +24,7 @@ const AddTodo = () => {
   const handleNewTodo = (event) => {
     setInput(event.target.value);
   };
+  console.log(input);
 
   return (
     <TodoInput>
@@ -35,7 +36,12 @@ const AddTodo = () => {
           onChange={handleNewTodo}
           ref={inputRef}
         />
-        <button onClick={onAddTodo}>add task</button>
+        <button
+          onClick={onAddTodo}
+          disabled={input.length < 5 || input.length > 140}
+        >
+          <span>add task</span>
+        </button>
       </label>
     </TodoInput>
   );
@@ -47,12 +53,13 @@ const TodoInput = styled.div`
   display: grid;
   margin: 0 auto;
   justify-content: center;
+  align-items: center;
   align-items: start;
   margin: 0 auto 25px;
 
   button {
     grid-column: span 1;
-    font-size: 16px;
+    text-align: center;
     height: 55px;
     width: 55px;
     border-radius: 50px;
@@ -61,11 +68,13 @@ const TodoInput = styled.div`
     border: none;
     font-weight: bold;
     cursor: pointer;
-
-    display: inline-flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    vertical-align: middle;
+    display: inline-block;
+  }
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 16px;
   }
 
   input[type='text'] {
@@ -74,7 +83,7 @@ const TodoInput = styled.div`
     border-radius: 5px;
     border: 1px solid var(--grey);
     margin-right: 10px;
-    vertical-align: text-top;
+    vertical-align: middle;
   }
 
   @media screen and (min-width: 768px) {
