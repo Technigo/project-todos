@@ -19,7 +19,9 @@ const AddTodo = () => {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={onAddTodo}>Add todo</button>
+      <button className="add-todo-button" onClick={onAddTodo}>
+        add todo
+      </button>
     </div>
   );
 };

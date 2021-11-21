@@ -13,31 +13,87 @@ code {
     monospace;
 }
 
+h1 {
+  font-family: 'Playfair Display', serif;
+  text-align: center;
+  color: white;
+  font-size: 60px;
+}
+
+p {
+  margin: 0 1rem;
+  
+}
+
+.counter {
+  text-align: center;
+  font-size: 25px;
+  color: white;
+}
+
 .add-todo {
   display: flex;
   justify-content: center;
-  margin: 50px;
+  align-items: center;
+}
+
+.add-todo-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin-left: 20px;
+  border: none;
+  background-color: rgb(122, 180, 199);
+}
+
+.add-todo input {
+  height: 20px;
 }
 
 /* ---------------todo-note:------------ */
+.todo-body {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: flex-start;
+
+}
+
 .todo-container {
   background-color: rgb(252, 117, 223);
-  width: 300px;
-  height: 300px;
-  margin: auto;
+  width: 250px;
+  height: 250px;
+  /* margin: auto; */
   box-shadow: rgba(0, 0, 0, 0.5) 2.4px 2.4px 3.2px;
   display: flex;
+  flex-direction: column;
   transform: rotate(2deg);
-  margin-bottom: 20px;
+  margin: 20px;
+  font-family: 'Just Another Hand', cursive;
+  font-size: 45px;
+
 }
+
+/* .todo-container :nth-child(odd){
+  transform: rotate(-2deg);
+  background-color: rgb(182, 252, 117);
+} */
 
 .todo-content {
   margin: auto;
 }
 
 .todo {
+  display: flex;
   flex-direction: row;
+  align-items: center;
+  padding: 1rem;
 }
+
 .delete-button {
-  align-content: flex-end;
+  display: flex;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  height: 25px;
 }

@@ -17,25 +17,23 @@ const TodoList = () => {
   };
 
   return (
-    <section>
+    <section className="todo-body">
       {items.map((item) => (
         <div className="todo-container" key={item.id}>
-          <div className="todo-content">
-            <div className="todo">
-              <input
-                type="checkbox"
-                checked={item.isComplete}
-                onChange={() => onToggleTodo(item.id)}
-              />
-              <p>{item.text}</p>
-            </div>
-            <button
-              className="delete-button"
-              onClick={() => onDeleteTodo(item.id)}
-            >
-              Delete
-            </button>
+          <div className="todo">
+            <input
+              type="checkbox"
+              checked={item.isComplete}
+              onChange={() => onToggleTodo(item.id)}
+            />
+            <p>{item.text}</p>
           </div>
+          <button
+            className="delete-button"
+            onClick={() => onDeleteTodo(item.id)}
+          >
+            Delete
+          </button>
         </div>
       ))}
     </section>
