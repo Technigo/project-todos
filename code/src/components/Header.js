@@ -5,7 +5,7 @@ import img from "../images/mountain-background.jpeg";
 
 //Styled component
 const HeaderTag = styled.header`
-  height: 35vh;
+  height: 40vh;
   background-image: url(${img});
   background-repeat: no-repeat, repeat;
   background-size: cover; /* Resize the background image to cover the entire container */

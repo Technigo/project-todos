@@ -43,6 +43,7 @@ const Container = styled.div`
     margin: 10px 10px 20px;
     border: none;
     cursor: pointer;
+    font-size: 1.1rem;
   }
 
   .remove-btn {
