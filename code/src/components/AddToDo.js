@@ -46,7 +46,7 @@ const StyledMainDiv = styled.div`
   width: 320px;
   height: 150px;
   margin: 20px auto 30px;
-  /* border: 1px solid #ea86b6; */
+  border: 1px solid lightgrey;
   border-radius: 5px;
 
   @media (min-width: 700px) {
