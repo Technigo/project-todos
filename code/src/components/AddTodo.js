@@ -11,10 +11,8 @@ const StyledForm = styled.form`
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 10px 15px 0px 15px;
-    margin: 0;
+    padding: 10px 15px 10px 15px;
     width: 90%;
-    min-height: 80px;
     background-color: rgba(245, 245, 245, 0.622);
 `
 const StyledInput = styled.input`
@@ -46,7 +44,6 @@ const StyledInputButton = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15px;
 `
 const StyledDatePicker = styled.div`
     display: flex;
@@ -57,6 +54,9 @@ const StyledDatePicker = styled.div`
     margin-top: 8px;
     margin-bottom: 5px;
     z-index: 15;
+    @media (min-width: 992px) {
+    max-height: 80px;
+    }
 `
 const StyledDate = styled(DatePicker)`
     width: 60%;
@@ -69,6 +69,7 @@ const StyledDate = styled(DatePicker)`
     }
     @media (min-width: 992px) {
         width: 30%;
+        max-height: 80px;
     }
 `
 const StyledIcon = styled.img`
@@ -81,7 +82,7 @@ const StyledIcon = styled.img`
 
 const AddTodo = () => {
     const [input, setInput] = useState('')
-    const [dueDate, setDueDate] = useState('')
+    const [dueDate, setDueDate] = useState(new Date())
     const [category, setCategory] = useState('')
 
 
@@ -111,6 +112,16 @@ const AddTodo = () => {
                     <option value="Other">Other</option>
                 </select>
             </div>
+            <StyledDatePicker>
+                <div>
+                    <StyledIcon src={img} alt="calender" />
+                </div>
+                <StyledDate
+                    onChange={(date) => setDueDate(date)}
+                    value={dueDate}
+                    style={{ background: "white" }}
+                />
+            </StyledDatePicker>
             <StyledInputButton>
                 <StyledInput
                     placeholder="a new task"
@@ -125,16 +136,6 @@ const AddTodo = () => {
                     Add task
                 </button>
             </StyledInputButton>
-            <StyledDatePicker>
-                <div>
-                    <StyledIcon src={img} alt="calender" />
-                </div>
-                <StyledDate
-                    onChange={(date) => setDueDate(date)}
-                    value={dueDate}
-                    style={{ background: "white" }}
-                />
-            </StyledDatePicker>
 
         </StyledForm>
     )

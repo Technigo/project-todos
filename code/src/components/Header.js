@@ -10,6 +10,9 @@ const TitleHeader = styled.header`
     width: 90%;
     background-color: rgba(118, 142, 176, 0.5);
     border-radius: 25px 25px 0px 0px;
+    @media (min-width: 992px) {
+    max-height: 100px;
+    }
 `
 const TextContainer = styled.div`
     display: flex;

@@ -101,7 +101,8 @@ input:checked ~ .check::after{
   position: relative;
   /* background-color: rgba(118, 142, 176, 0.72); */
   width: 100%;
-  border-radius: 2px;
+  border-radius: 5px;
+  background-color: #243f65bc;
 }
 .select-dropdown select {
   font-family: 'Yuji Syuku', serif;
@@ -116,7 +117,7 @@ input:checked ~ .check::after{
   -moz-appearance: none;
   appearance: none;
   /* color: black; */
-  color: #243f65bc;
+  color: whitesmoke;
 }
 .select-dropdown select:active{
   outline: none;
@@ -144,7 +145,7 @@ input:checked ~ .check::after{
     font-size: 23px;
   }
   .select-dropdown{
-    width: 80%;
+    width: 50%;
   }
   .button-55 {
     width: 40%;
@@ -162,6 +163,7 @@ input:checked ~ .check::after{
 
 @media (min-width: 992px) {
   .select-dropdown select {
-    font-size: 28px;
+    font-size: 20px;
+    margin: 0;
   }
 }

@@ -14,6 +14,7 @@ const EmptyContainer = styled.div`
     }
     @media (min-width: 992px) {
     max-width: 60%;
+    max-height: 400px;
     }
 `
 const EmptyCard = styled.div`
@@ -45,7 +46,8 @@ const Gif = styled.img`
     max-width: 400px;
     }
     @media (min-width: 992px) {
-        max-width: 500px;
+        max-width: 300px;
+        max-height: 300px;
     }
     
 `
@@ -57,12 +59,9 @@ const Main = styled.div`
     justify-content: center;
     align-items: center;
     width: 90%;
-    padding: 5px 15px 15px 15px;
+    padding: 0px 15px 15px 15px;
     border-radius: 0px 0px 25px 25px;
     border: none;
-    @media (min-width: 768px) {
-    min-height: 500px;
-    }
 `
 const NoTasks = () => {
     return (

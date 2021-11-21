@@ -52,6 +52,10 @@ const DeleteButton = styled.button`
     @media (min-width: 768px) {
     font-size: 28px;
     margin-top: -4px;
+    cursor: pointer;
+    }
+    &:hover{
+        color: tomato;
     }
 `
 

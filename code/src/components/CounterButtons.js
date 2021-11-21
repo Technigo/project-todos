@@ -42,9 +42,13 @@ const Buttons = styled.button`
     color: whitesmoke;
     font-size: 11px;
     font-weight: bold;
-    margin: 10px 0px 20px 5px;
+    margin: 10px 0px 20px 20px;
     border: none;
     border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+        background-color: #5f417f;
+    }
     @media (min-width: 768px) {
     font-size: 18px;
     margin-top: 13px;
