@@ -12,6 +12,10 @@ const RemainingTasksContainer = styled.div`
   & h2 {
     font-size: 16px;
   }
+
+  @media (min-width: 768px) {
+    width: 200px;
+  }
 `;
 
 const LeftTodoCounter = () => {

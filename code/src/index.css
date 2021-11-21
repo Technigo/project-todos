@@ -19,14 +19,10 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   height: 100vh;
+  box-sizing: border-box;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
-}
-
-.flex-item {
-  display: flex;
-  align-items: center;
 }

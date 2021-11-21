@@ -1,12 +1,20 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-
+import styled from "styled-components";
 import todos from "./reducers/todos";
 
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import Header from "./components/Header";
+
+const MainWrapper = styled.main`
+  @media (min-width: 768px) {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+`;
 
 const reducer = combineReducers({
   todos: todos.reducer,
@@ -31,9 +39,11 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
-      <Header />
-      <AddTodo />
-      <TodoList />
+      <MainWrapper>
+        <Header />
+        <TodoList />
+        <AddTodo />
+      </MainWrapper>
     </Provider>
   );
 };

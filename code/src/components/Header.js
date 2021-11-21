@@ -19,6 +19,7 @@ const HeaderContainer = styled.section`
 
   @media (min-width: 768px) {
     width: 400px;
+    height: 25vh;
   }
 `;
 
