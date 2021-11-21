@@ -87,9 +87,6 @@ const TodoList = () => {
   //   };
   const date = new Date();
   const todaysDate = date.toString().slice(0, 10);
-  {
-    /* ev kolla upp att använda moment.js här ovan */
-  }
 
   return (
     <BigStyle>
