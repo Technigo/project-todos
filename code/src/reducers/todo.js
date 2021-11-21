@@ -4,29 +4,7 @@ import uniqid from 'uniqid';
 export const todo = createSlice({
   name: 'todo',
   initialState: {
-    items: [
-      {
-        id: 0,
-        text: 'Continue with code along',
-        complete: false,
-        date: new Date(),
-        category: 'Fun stuff'
-      },
-      {
-        id: 1,
-        text: 'Clean the office room',
-        complete: false,
-        date: new Date(),
-        category: 'Not urgent'
-      },
-      {
-        id: 1,
-        text: 'Clean the office room',
-        complete: false,
-        date: new Date(),
-        category: 'Urgent'
-      }
-    ]
+    items: []
   },
   reducers: {
     addTodo: (store, action) => {

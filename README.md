@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In this weeks project we started to make our own reducers and actions in the redux store.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I approaced the weeks project by making one funktion at the time. I started with the input field and expanded the functionalities from there. I had a hard time with the syntax of the store and how to write the functionalities to use the store. I solved it throw a lot of googling and looking at different examples.
+
+If i had more time i would make a sorting function on the app, so there would be possible to sort by date/ time and the different categories. And also a possibility to remove all the todos with a button. Also a would make a local storage.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://hedvigs-todo.netlify.app
