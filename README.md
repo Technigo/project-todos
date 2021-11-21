@@ -11,6 +11,7 @@ The goal of this project was to build a todo app using Redux store.
 - Filtered todos
 - Summary componant that counts completed todos and uncompleted
 - Responsive UI for mobile, tablet and desktop
+- Styled components
 
 ## Production process
 
