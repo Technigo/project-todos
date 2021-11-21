@@ -1,5 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit"
 import uniqid from "uniqid"
+import Swal from "sweetalert2"
 
 // Takes one big object
 const todos = createSlice({
@@ -12,7 +13,8 @@ const todos = createSlice({
         text: "Handla",
         isComplete: false,
         time: Date.now(),
-        category: "shopping",
+
+        color: ["green", "red"],
       },
     ],
   },
@@ -26,12 +28,26 @@ const todos = createSlice({
         text: action.payload,
         isComplete: false,
         time: Date.now(),
-        category: ""
+        color: [
+          "var(--yellow)",
+          "var(--orange)",
+          "var(--green)",
+          "var(--yellow)",
+          "var(--orange)",
+          "var(--green)",
+          "var(--yellow)",
+          "var(--orange)",
+          "var(--green)",
+        ],
       }
 
       store.items = [newTodo, ...store.items]
       console.log("store.items", store.items)
     },
+
+    // addColor: (store, action)=> {
+    //   color: ["green"],
+    // },
 
     toggleTodo: (store, action) => {
       //   store.items.forEach(item => {
@@ -46,10 +62,10 @@ const todos = createSlice({
             ...item,
             isComplete: !item.isComplete,
           }
-          if (item.isComplete === true) {
-            alert("Here we go again")
-          } else {
-            alert("Good job doint things, now rest!")
+          if (item.isComplete === !true) {
+            Swal.fire({
+              title: "Good job!",
+            })
           }
           return updatedTodo
         } else {

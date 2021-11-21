@@ -8,6 +8,7 @@ import AddTodo from "./components/AddTodos"
 import TodoList from "components/TodoList"
 import FirstText from "components/FirstText"
 import DeleteAll from "components/DeleteAll"
+import Footer from "components/Footer"
 
 const reducer = combineReducers({
   todos: todos.reducer,
@@ -41,6 +42,7 @@ export const App = () => {
           <DeleteAll />
         </section>
       </main>
+      <Footer />
     </Provider>
   )
 }

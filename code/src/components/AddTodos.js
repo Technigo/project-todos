@@ -10,6 +10,7 @@ const AddTodos = () => {
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input))
   }
+  console.log("input", input)
 
   const handleOnSubmit = e => {
     e.preventDefault()

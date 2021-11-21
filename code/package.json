@@ -20,6 +20,7 @@
     "react-scripts": "3.2.0",
     "redux": "^4.1.2",
     "styled-components": "^5.3.3",
+    "sweetalert2": "^11.2.0",
     "uniqid": "^5.4.0"
   },
   "scripts": {

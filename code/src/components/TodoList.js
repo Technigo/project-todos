@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux"
 import moment from "moment"
 
 import { CheckboxStyled } from "styling/checkbox"
+import Svg from "svg"
 
 import todos from "../reducers/todos"
 
@@ -17,32 +18,31 @@ const TodoList = () => {
 
   const onDeleteTodoImmutability = id => {
     dispatch(todos.actions.deleteTodo(id))
-    console.log("onDeleteTodoTim")
   }
 
   const filteredIsComplete = items.filter(item => item.isComplete)
-  console.log("isCompleteItem", filteredIsComplete)
+  const filteredNotComplete = items.filter(item => !item.isComplete)
 
   return (
     <section className="list-container">
       {items.length === 0 ? (
         <div className="img-done-container">
           <p>All completed</p>
-          <img className="img-done" src="./done.svg" alt="checked icon"></img>
+          <Svg />
         </div>
       ) : (
         <>
           <p className="label">To do</p>
-          {items.map((item, index) => (
+          {filteredNotComplete.map((item, index) => (
             <>
               <div
-                className={
-                  item.isComplete ? "item-container-checked" : "item-container"
-                }
+                style={{
+                  backgroundImage: `linear-gradient(72deg, var(--background), ${item.color[index]})`,
+                }}
+                className="item-container"
                 key={item.id}
               >
                 <CheckboxStyled
-                  // className="checkbox"
                   type="checkbox"
                   checked={item.isComplete}
                   onChange={() => onToggleTodo(item.id)}
@@ -70,9 +70,15 @@ const TodoList = () => {
           ))}
           <div>
             <p className="label">Completed to dos</p>
-            {filteredIsComplete.map(isCompleteItem => (
+            {filteredIsComplete.map((isCompleteItem, index) => (
               <>
-                <div className={"item-checked"} key={isCompleteItem.id}>
+                <div
+                  style={{
+                    backgroundImage: `linear-gradient(72deg, var(--background), ${isCompleteItem.color[index]})`,
+                  }}
+                  className={"item-checked"}
+                  key={isCompleteItem.id}
+                >
                   <CheckboxStyled
                     type="checkbox"
                     checked={isCompleteItem.isComplete}
@@ -83,7 +89,7 @@ const TodoList = () => {
 
                     <p className="date">
                       Created at{" "}
-                      {moment(isCompleteItem.time).format("MMMM Do YYYY, h:mm")}
+                      {moment(isCompleteItem.time).format("MMMM Do YYYY, H:mm")}
                     </p>
                   </div>
 
