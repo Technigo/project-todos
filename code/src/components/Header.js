@@ -24,13 +24,25 @@ margin-bottom:20px;
   }
 `
 const Title = styled.text`
-font-size: 30px;
+font-size: 40px;
 text-align: center;
+@media (min-width: 768px) {
+    flex-direction: row;
+    text-align: center;
+  }
+@media (min-width: 768px) {
+    font-size: 68px;
+    margin-left: 50px;
+    margin-bottom: 0;
+  }
+  @media (min-width: 1366px) {
+    margin-left: 95px;
+  }
 `
 const Header =()=>{
     return(
         <HeaderWrapper>
-            <Title>To do app</Title>
+            <Title>Your To-dos</Title>
             <ListSummary/>
         </HeaderWrapper>
     );
