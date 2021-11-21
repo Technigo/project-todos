@@ -75,7 +75,7 @@ export const TodoList = () => {
 						checked={item.isComplete}
 						onChange={() => onToggleTodo(item.id)}
 					/>
-					<TaskName for={item.id}>
+					<TaskName htmlfor={item.id}>
 						{item.text}
 						<Date> Date</Date>
 					</TaskName>
