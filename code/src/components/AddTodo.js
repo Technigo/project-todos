@@ -25,6 +25,7 @@ const AddTodo = () => {
       <input
         type="text"
         value={input}
+        placeholder="Next todo.."
         onKeyDown={event => onEnter(event)}
         onChange={event => setInput(event.target.value)}
       />

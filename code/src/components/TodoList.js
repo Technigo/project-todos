@@ -27,7 +27,7 @@ const TodoList = () => {
             checked={item.isComplete}
             onChange={() => onToggleTodo(item.id)}
           />
-          <p>{item.date}</p>
+          <p className="todo-date">{item.date}</p>
           <button className="delete-button" onClick={() => onDeleteTodo(index)}>
             <span role="img" aria-label="Delete">
               🗑️
