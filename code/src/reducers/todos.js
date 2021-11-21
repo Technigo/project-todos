@@ -7,7 +7,9 @@ import moment from "moment";
 const todos = createSlice({
   name: "todos",
   initialState: {
-    items: [],
+    items: [
+      
+    ],
   },
 
   reducers: {
