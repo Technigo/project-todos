@@ -26,7 +26,9 @@ const TextInput = styled.input`
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
-	font-family: "Montserrat", sans-serif;
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+		"Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+		sans-serif;
 	::placeholder {
 		color: #b0b0b0;
 	}
