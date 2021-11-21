@@ -1,6 +1,7 @@
 import React from "react"
 import { useSelector } from "react-redux"
 import moment from "moment"
+import Svg from "../svg"
 
 const FirstText = () => {
   const items = useSelector(store => store.todos.items)
@@ -15,7 +16,9 @@ const FirstText = () => {
       {totalTodos === 0 ? (
         <>
           <h1>Looks like you need to add a to do!</h1>
-          <img src="./illustration.svg" alt="illustration"></img>
+          <Svg />
+
+          {/* <img src="./illustration.svg" alt="illustration"></img> */}
         </>
       ) : (
         <>

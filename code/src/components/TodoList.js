@@ -25,65 +25,83 @@ const TodoList = () => {
 
   return (
     <section className="list-container">
-      <p className="label">To do</p>
-      {items.map((item, index) => (
+      {items.length === 0 ? (
+        <div className="img-done-container">
+          <img className="img-done" src="./done.svg" alt="checked icon"></img>
+        </div>
+      ) : (
         <>
-          <div
-            className={
-              item.isComplete ? "item-container-checked" : "item-container"
-            }
-            key={item.id}
-          >
-            <CheckboxStyled
-              // className="checkbox"
-              type="checkbox"
-              checked={item.isComplete}
-              onChange={() => onToggleTodo(item.id)}
-            ></CheckboxStyled>
-            <div className="list-input-text">
-              <p className="todo-text">{item.text}</p>
+          <p className="label">To do</p>
+          {items.map((item, index) => (
+            <>
+              <div
+                className={
+                  item.isComplete ? "item-container-checked" : "item-container"
+                }
+                key={item.id}
+              >
+                <CheckboxStyled
+                  // className="checkbox"
+                  type="checkbox"
+                  checked={item.isComplete}
+                  onChange={() => onToggleTodo(item.id)}
+                ></CheckboxStyled>
+                <div className="list-input-text">
+                  <p className="todo-text">{item.text}</p>
 
-              <p className="date">Created at {moment(item.time).fromNow()}</p>
-            </div>
+                  <p className="date">
+                    Created at {moment(item.time).fromNow()}
+                  </p>
+                </div>
 
-            <button
-              className="delete-btn"
-              onClick={() => onDeleteTodoImmutability(item.id)}
-            >
-              <img className="img-bin" src="./bin.svg" alt="delete bin"></img>
-            </button>
+                <button
+                  className="delete-btn"
+                  onClick={() => onDeleteTodoImmutability(item.id)}
+                >
+                  <img
+                    className="img-bin"
+                    src="./bin.svg"
+                    alt="delete bin"
+                  ></img>
+                </button>
+              </div>
+            </>
+          ))}
+          <div>
+            <p className="label">Completed to dos</p>
+            {filteredIsComplete.map(isCompleteItem => (
+              <>
+                <div className={"item-checked"} key={isCompleteItem.id}>
+                  <CheckboxStyled
+                    type="checkbox"
+                    checked={isCompleteItem.isComplete}
+                    onChange={() => onToggleTodo(isCompleteItem.id)}
+                  ></CheckboxStyled>
+                  <div className="list-input-text">
+                    <p className="todo-text">{isCompleteItem.text}</p>
+
+                    <p className="date">
+                      Created at{" "}
+                      {moment(isCompleteItem.time).format("MMMM Do YYYY, h:mm")}
+                    </p>
+                  </div>
+
+                  <button
+                    className="delete-btn"
+                    onClick={() => onDeleteTodoImmutability(isCompleteItem.id)}
+                  >
+                    <img
+                      className="img-bin"
+                      src="./bin.svg"
+                      alt="delete bin"
+                    ></img>
+                  </button>
+                </div>
+              </>
+            ))}
           </div>
         </>
-      ))}
-      <div>
-        <p className="label">Completed todos</p>
-        {filteredIsComplete.map(isCompleteItem => (
-          <>
-            <div className={"item-checked"} key={isCompleteItem.id}>
-              <CheckboxStyled
-                type="checkbox"
-                checked={isCompleteItem.isComplete}
-                onChange={() => onToggleTodo(isCompleteItem.id)}
-              ></CheckboxStyled>
-              <div className="list-input-text">
-                <p className="todo-text">{isCompleteItem.text}</p>
-
-                <p className="date">
-                  Created at{" "}
-                  {moment(isCompleteItem.time).format("MMMM Do YYYY, h:mm")}
-                </p>
-              </div>
-
-              <button
-                className="delete-btn"
-                onClick={() => onDeleteTodoImmutability(isCompleteItem.id)}
-              >
-                <img className="img-bin" src="./bin.svg" alt="delete bin"></img>
-              </button>
-            </div>
-          </>
-        ))}
-      </div>
+      )}
     </section>
   )
 }

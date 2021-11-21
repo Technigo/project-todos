@@ -26,6 +26,7 @@ const todos = createSlice({
         text: action.payload,
         isComplete: false,
         time: Date.now(),
+        category: ""
       }
 
       store.items = [newTodo, ...store.items]

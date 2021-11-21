@@ -36,10 +36,10 @@ export const App = () => {
           <FirstText />
           <AddTodo />
         </section>
-        <div>
+        <section className="second-section">
           <TodoList />
           <DeleteAll />
-        </div>
+        </section>
       </main>
     </Provider>
   )
