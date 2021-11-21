@@ -14,5 +14,7 @@
 Add accordion to show filtered todos?
 https://react-bootstrap.github.io/components/accordion/
 
-Styled components?
 Addera kommentarer
+Align text på button
+
+Går ej att addera input om längd är mindre än 3

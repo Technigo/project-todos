@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components/macro';
 import { Provider } from 'react-redux';
 import { combineReducers, createStore } from '@reduxjs/toolkit';
 
@@ -39,11 +40,34 @@ export const App = () => {
       {/* <Header /> */}
       <Provider store={store}>
         <Summary />
-        <div className="app-wrapper">
+        <AppWrapper>
           <AddTodo />
           <TodoList />
-        </div>
+        </AppWrapper>
       </Provider>
     </>
   );
 };
+
+const AppWrapper = styled.div`
+  justify-items: center;
+  width: 100%;
+  height: 100vh;
+  padding: 5%;
+  border-radius: 15px 15px 0 0;
+  background-color: rgba(255, 255, 255, 0.8);
+
+  @media screen and (min-width: 768px) {
+    .app-wrapper {
+      padding: 8% 15%;
+      top: 40%;
+    }
+  }
+  
+  /* STYLING FOR DESKTOP */
+  @media screen and (min-width: 992px) {
+    .app-wrapper {
+      padding: 4% 15%;
+      top: 44%;
+    }
+`;

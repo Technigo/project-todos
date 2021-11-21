@@ -5,6 +5,7 @@ The goal of this project was to build a todo app using Redux store.
 ## Features
 
 - Redux hooks: useSelector, useDispatch, useSTate, useRef
+- Used localstorage to save todos
 - Ternary operators to handle empty states
 - Timestap added using moment.js
 - Filtered todos
