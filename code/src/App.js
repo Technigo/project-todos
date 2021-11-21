@@ -30,6 +30,7 @@ const MainSection = styled.section`
   flex-direction: column;
   margin: 20px 5px;
   width: 90%;
+  height: 90%;
   margin: 0;
   border-radius: 25px;
   @media (min-width: 768px) {
@@ -37,7 +38,6 @@ const MainSection = styled.section`
   }
   @media (min-width: 992px) {
     max-width: 800px;
-    max-height: 400px;
   }
 `
 
