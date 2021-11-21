@@ -35,32 +35,38 @@ const Summary = () => {
 export default Summary;
 
 const Section = styled.section`
-  height: 200px;
   width: 100%;
   display: grid;
   h2 {
     font-size: 4.5em;
     color: var(--black);
-    padding: 5% 40% 0;
+    padding: 5% 30% 0;
     margin-top: 0;
     margin-bottom: 0;
   }
 
   h3 {
     margin: 0;
-    padding-left: 40%;
+    padding-left: 30%;
     font-size: 2.8em;
     color: var(--orange);
-    width: 100%;
+    width: 70%;
   }
 
   p {
     margin: 1% 0;
-    padding-left: 40%;
+    padding-left: 30%;
     padding-bottom: 5%;
     color: var(--teal);
     width: 100%;
   }
+
+  @media screen and (min-width: 320px) and (max-width: 480px) {
+    h3 {
+      width: 90%;
+    }
+  }
+
   @media screen and (min-width: 768px) {
     width: 400px;
     margin-left: 10%;
@@ -70,16 +76,31 @@ const Section = styled.section`
     }
     h3 {
       font-size: 4em;
+      width: 100%;
     }
+  }
+
+  @media screen and (min-width: 992px) {
+    h2,
+    h3,
+    p {
+      padding-left: 40%;
+    }
+  }
+
+  @media screen and (min-width: 1025px) {
+    width: 600px;
   }
 `;
 
 const SectionEmpty = styled(Section)`
   h2 {
-    margin-top: 20%;
+    margin-top: 10%;
+    padding: 5%;
   }
 
   h3 {
-    font-size: 3em;
+    margin-bottom: 10%;
+    padding: 5%;
   }
 `;

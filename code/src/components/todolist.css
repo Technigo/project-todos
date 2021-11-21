@@ -13,14 +13,14 @@
   grid-column: 2/7;
   overflow-wrap: break-word;
   font-size: 18px;
-  text-transform: capitalize;
+  text-transform: uppercase;
   padding: 0 5px;
 }
 
 .date {
-  grid-column: 7/11;
+  grid-column: 9/11;
   opacity: 0.6;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .completed {
@@ -113,5 +113,8 @@
   .todo-card {
     max-width: 600px;
     margin: 0 auto;
+  }
+  .date {
+    font-size: 14px;
   }
 }
