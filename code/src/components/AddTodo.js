@@ -10,8 +10,9 @@ const AddTodo = () => {
 
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input))
-  }
 
+    setInput('')
+  }
   return (
     <div>
       <input 

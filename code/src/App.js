@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, createStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import styled from 'styled-components'
 
 import todos from './reducers/todos'
@@ -35,17 +35,17 @@ const reducer = combineReducers({
 })
 
 // set up for localstorage as initial state
-const persistedStateJSON = localStorage.getItem("reduxState");
-let persistedState = {};
+const preloadedStateJSON = localStorage.getItem("reduxState");
+let preloadedState = {};
  
-if (persistedStateJSON) {
-  persistedState = JSON.parse(persistedStateJSON);
+if (preloadedStateJSON) {
+  preloadedState = JSON.parse(preloadedStateJSON);
 };
 
 // create store with initial state
-const store = createStore(
-  reducer, 
-  persistedState
+const store = configureStore(
+  {reducer, 
+  preloadedState}
 )
 
 // store the state in localstorage on Redux state change
@@ -57,13 +57,10 @@ export const App = () => {
   return (
     <Container>
       <Provider store={store}>
-  
           <Header />
-          <ClearTodo />
+          <AddTodo />
           <TodoList />
-        {/*   <AddTodo /> */}
           <ClearAll />
-    
       </Provider>
     </Container>
   )
