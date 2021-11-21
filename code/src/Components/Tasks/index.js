@@ -3,7 +3,7 @@ import Collapse from '@kunukn/react-collapse';
 import { useSelector } from 'react-redux'
 import { Task } from '../Task/index'
 import { Empty } from "Components/Empty";
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const TasksContainer = styled.section`
     display: flex;

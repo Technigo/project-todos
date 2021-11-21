@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { todo } from "Reducers/todo";
 import { useDispatch } from 'react-redux'
 
@@ -103,7 +103,7 @@ export const AddTask = () => {
     const [maxLength, setMaxLength] = useState("")
     const [task, setTask] = useState("");
 
-    const maxLengthPermitted = 450;
+    const maxLengthPermitted = 200;
     const handleCreateTask = () => {
         setCanWrite(true);
     }
