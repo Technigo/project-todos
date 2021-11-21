@@ -1,5 +1,5 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import { todos } from "../reducers/todos";
 import styled from "styled-components";
 
@@ -19,7 +19,6 @@ const CompleteAllButton = styled.button`
 `;
 
 export const CompleteButton = () => {
-	const items = useSelector((store) => store.todos.items);
 	const dispatch = useDispatch();
 
 	const onCompleteAllTodos = (items) => {

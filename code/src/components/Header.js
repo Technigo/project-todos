@@ -1,6 +1,4 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { todos } from "../reducers/todos";
 import styled from "styled-components";
 
 import { Counter } from "./Counter";
@@ -23,20 +21,11 @@ const Heading = styled.h1`
 `;
 
 export const Header = () => {
-	const items = useSelector((store) => store.todos.items);
-	const dispatch = useDispatch();
-
-	const onCompleteAllTodos = (items) => {
-		dispatch(todos.actions.completeAllTodos(items));
-	};
-
 	return (
 		<HeaderSection>
 			<FlexContainer>
 				<Heading>To do list</Heading>
-				<CompleteButton onClick={onCompleteAllTodos}>
-					Complete all
-				</CompleteButton>
+				<CompleteButton />
 			</FlexContainer>
 			<Counter />
 		</HeaderSection>
