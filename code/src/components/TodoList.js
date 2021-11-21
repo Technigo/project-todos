@@ -33,6 +33,7 @@ const TaskName = styled.label`
 	margin-right: 10px;
 	display: flex;
 	flex-direction: column;
+	color: ${(props) => (props.completed ? `#b0b0b0` : `#222221`)};
 `;
 
 const Date = styled.span`
@@ -76,7 +77,7 @@ export const TodoList = () => {
 						checked={item.isComplete}
 						onChange={() => onToggleTodo(item.id)}
 					/>
-					<TaskName htmlFor={item.id}>
+					<TaskName htmlFor={item.id} completed={item.isComplete}>
 						{item.text}
 						<Date> Created {dayjs(item.creationDate).format("DD MMM")}</Date>
 					</TaskName>
