@@ -45,7 +45,7 @@ const AddTask = () => {
 				onChange={(event) => setInput(event.target.value)}
 			/>
 			<StyledButton onClick={onAddTask} disabled={input.length < 1}>
-				<span role='image' aria-label='Plus emoji'>
+				<span role='img' aria-label='Plus sign'>
 					➕
 				</span>
 			</StyledButton>
