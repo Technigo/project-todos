@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import { todos } from "../reducers/todos";
+import { CloseIcon } from "./CloseIcon";
 
 const ListContainer = styled.section`
 	margin-bottom: 110px;
@@ -40,11 +41,11 @@ const Date = styled.span`
 `;
 
 const DeleteButton = styled.button`
-	border: solid 1px grey;
-	background-color: #ffffff;
-	width: 20px;
-	height: 20px;
+	display: flex;
+	justify-content: center;
+	border: solid 1px #b0b0b0;
 	border-radius: 50%;
+	background-color: #ffffff;
 	position: relative;
 	top: 5px;
 `;
@@ -82,7 +83,7 @@ export const TodoList = () => {
 						aria-label="delete"
 						onClick={() => onDeleteTodo(item.id)}
 					>
-						x
+						<CloseIcon />
 					</DeleteButton>
 				</FormContainer>
 			))}

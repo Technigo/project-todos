@@ -14,15 +14,6 @@ const AddTodoSection = styled.div`
 	padding: 20px 20px 30px 20px;
 `;
 
-// background-image: linear-gradient(
-// 	to bottom,
-// 	rgba(0, 0, 0, 0),
-// 	#fcfcff,
-// 	#fcfcff,
-// 	#fcfcff,
-// 	#fcfcff
-// );
-
 const TextInput = styled.input`
 	height: 60px;
 	grid-column: span 4;
