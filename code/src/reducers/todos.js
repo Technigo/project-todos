@@ -17,10 +17,9 @@ const todos = createSlice({
                 isComplete: false,
             }
             // - Mutability
-            // store.items.push(data)
-            // - Immutability
-            // store.items = [...store.items, data]
+            // store.items.push(newTodo)
 
+            // - Immutability
             store.items = [...store.items, newTodo]
         },
         toggleTodo: (store, action) => {
@@ -30,6 +29,7 @@ const todos = createSlice({
             //         item.isComplete = !item.isComplete
             //     }
             // })
+
             // - Immutability
             const updatedItems = store.items.map((item) => {
                 if (item.id === action.payload) {
@@ -46,6 +46,16 @@ const todos = createSlice({
                 }
             })
             store.items = updatedItems
+        },
+        deleteTodo: (store, action) => {
+            // - Mutability
+            // store.items.splice(index, numberOfItemsToDelete)
+            // store.items.splice(action.payload, 1)
+            
+            // - Immutability
+            const decreasedItems = store.items.filter((item) => item.id !== action.payload)
+
+            store.items = decreasedItems
         }
     },
 })
