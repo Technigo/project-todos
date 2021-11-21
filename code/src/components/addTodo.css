@@ -14,12 +14,6 @@
   padding-bottom: 7%;
   margin: 0 auto;
   justify-content: center;
-
-  /* display: flex;
-  justify-content: center;
-  align-items: center;
-  column-gap: 20px;
-  padding-bottom: 7%; */
 }
 
 .add-todo input {
@@ -42,12 +36,7 @@
   height: 50px;
   width: 50px;
   text-align: center;
-  /* position: relative; */
 }
-
-/* .button p {
-  align-items: center;
-} */
 
 /* STYLING FOR TABLET */
 @media screen and (min-width: 768px) {
