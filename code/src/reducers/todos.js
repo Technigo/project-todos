@@ -6,8 +6,11 @@ const todos = createSlice({
         items: []
     },
     reducers: {
-
+        addTodo: (store, action) => {
+            console.log('store', store)
+            console.log('action', action)
+        }
     },
 })
 
-export default todos
+export default todos 
