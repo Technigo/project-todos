@@ -6,7 +6,6 @@ import Swal from "sweetalert2"
 
 const DeleteAll = () => {
   const items = useSelector(store => store.todos.items)
-  console.log(items)
 
   const dispatch = useDispatch()
 

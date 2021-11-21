@@ -41,7 +41,6 @@ const todos = createSlice({
       }
 
       store.items = [newTodo, ...store.items]
-      console.log("store.items", store.items)
     },
 
     // addColor: (store, action)=> {
@@ -78,7 +77,7 @@ const todos = createSlice({
     deleteTodo: (store, action) => {
       //v1 - Mutability approach (splice(index, noOfItmetoDelete))
       //   store.items.splice(action.payload, 1)
-      console.log("inside deletetodo reducer")
+
       // v2 Immutability (id in action.payload)
       const decreasedItems = store.items.filter(
         item => item.id !== action.payload
@@ -92,4 +91,3 @@ const todos = createSlice({
 })
 
 export default todos
-// because the are only one

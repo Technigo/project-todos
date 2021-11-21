@@ -5,7 +5,6 @@ import Svg from "../svg"
 
 const FirstText = () => {
   const items = useSelector(store => store.todos.items)
-  console.log(items)
 
   const totalTodos = items.length
 
