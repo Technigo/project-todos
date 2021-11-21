@@ -14,7 +14,7 @@ const TaskList = styled.div`
   backdrop-filter: blur(12px);
   box-shadow: 0 3px 4px rgba(0, 0, 0, 0.06);
   background-color: #ffffff10;
-  border-left: #45c3e9 3px solid;
+  border-left: violet 3px solid;
   padding: 5px 3px;
   margin: 0 auto;
   margin-bottom: 10px;

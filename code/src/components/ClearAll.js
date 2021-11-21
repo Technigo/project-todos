@@ -9,6 +9,7 @@ const ClearAllButton = styled.button`
     color: grey;
     font-size: 16px;
     cursor: pointer;
+    margin-bottom: 5px;
 
     .fas {
       padding-left: 0px;

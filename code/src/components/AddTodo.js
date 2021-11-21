@@ -25,14 +25,15 @@ input {
   border-radius: 20px;
   border: none;
   font-size: 16px;
-  width: 160px;
-  height: 35px;
+  width: 150px;
+  height: 30px;
+  padding-left: 10px;
   font-family: Arial, Helvetica, sans-serif;
 }
 
 & ::placeholder {
   color: grey;
-  padding: 10px;
+  padding: 2px;
 }
 
 input:focus {
