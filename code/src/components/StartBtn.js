@@ -33,7 +33,7 @@ const StartBtn = () => {
             <StyledStartBtn 
                 className='pulse'
                 // onClick={() => addTodo('testing')}>
-                onClick={() => addTodo('Hey! You are here! Check this todo!')}>
+                onClick={() => addTodo('Hey! Mark this as done!')}>
                 <i className="fas fa-plus"></i>
             </StyledStartBtn>
     )

@@ -8,6 +8,7 @@ import Header from "./Header"
 import AddTodo from "./AddTodo"
 import StartPage from "./StartPage"
 
+
 const TodoList = () => {
     const items = useSelector((store) => store.todos.items)
 
@@ -69,7 +70,8 @@ const TodoList = () => {
     )
     return (
         <StartPage />
-    )  
+    )
+      
 }
 
 export default TodoList
