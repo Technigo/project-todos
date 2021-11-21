@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
+import dayjs from "dayjs";
 import { todos } from "../reducers/todos";
 import { CloseIcon } from "./CloseIcon";
 
@@ -8,7 +9,7 @@ const ListContainer = styled.section`
 	margin-bottom: 110px;
 `;
 
-const FormContainer = styled.form`
+const Wrapper = styled.div`
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
@@ -66,7 +67,7 @@ export const TodoList = () => {
 	return (
 		<ListContainer>
 			{items.map((item, index) => (
-				<FormContainer key={item.id}>
+				<Wrapper key={item.id}>
 					<Checkbox
 						type="checkbox"
 						name={item.id}
@@ -75,9 +76,9 @@ export const TodoList = () => {
 						checked={item.isComplete}
 						onChange={() => onToggleTodo(item.id)}
 					/>
-					<TaskName htmlfor={item.id}>
+					<TaskName htmlFor={item.id}>
 						{item.text}
-						<Date> Date</Date>
+						<Date> Created {dayjs(item.creationDate).format("DD MMM")}</Date>
 					</TaskName>
 					<DeleteButton
 						aria-label="delete"
@@ -85,7 +86,7 @@ export const TodoList = () => {
 					>
 						<CloseIcon />
 					</DeleteButton>
-				</FormContainer>
+				</Wrapper>
 			))}
 		</ListContainer>
 	);

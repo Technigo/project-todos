@@ -7,10 +7,10 @@ const CompleteAllButton = styled.button`
 	background-color: #60c57f;
 	color: #ffffff;
 	padding: 4px 8px;
-	border: solid 1px #ffffff;
+	border: solid 2px #ffffff;
 	border-radius: 100px;
 	font-size: 12px;
-	font-weight: 600;
+	font-weight: 700;
 	text-transform: uppercase;
 	&:hover {
 		background-color: #ffffff;
