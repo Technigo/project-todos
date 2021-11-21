@@ -10,16 +10,42 @@ const todos = createSlice({
         addTodo: (store, action) => {
             console.log('action', action)
             const data = action.payload
-            // - Mutability
-            // store.items.push(data)
-            // - Immutability
-            // store.items = [...store.items, data]
+
             const newTodo = {
                 id: uniqid(),
                 text: data,
                 isComplete: false,
             }
+            // - Mutability
+            // store.items.push(data)
+            // - Immutability
+            // store.items = [...store.items, data]
+
             store.items = [...store.items, newTodo]
+        },
+        toggleTodo: (store, action) => {
+            // - Mutability
+            // store.items.forEach((item) => {
+            //     if (item.id === action.payload) {
+            //         item.isComplete = !item.isComplete
+            //     }
+            // })
+            // - Immutability
+            const updatedItems = store.items.map((item) => {
+                if (item.id === action.payload) {
+                    const updatedTodo = {
+                        ...item,
+                        // id: item.id,
+                        // text: item.text,
+                        // isComplete: item.isComplete,
+                        isComplete: !item.isComplete
+                    }
+                    return updatedTodo
+                } else {
+                    return item
+                }
+            })
+            store.items = updatedItems
         }
     },
 })
