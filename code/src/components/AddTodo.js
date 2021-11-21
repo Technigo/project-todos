@@ -12,6 +12,14 @@ const AddTodoSection = styled.div`
 	left: 0px;
 	background-color: #fcfcff;
 	padding: 20px 20px 30px 20px;
+
+	@media (min-width: 700px) {
+		padding: 20px 15vw 30px 15vw;
+	}
+
+	@media (min-width: 1025px) {
+		padding: 20px 20vw 30px 20vw;
+	}
 `;
 
 const TextInput = styled.input`

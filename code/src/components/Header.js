@@ -8,6 +8,14 @@ const HeaderSection = styled.header`
 	background-color: #60c57f;
 	padding: 30px 20px;
 	color: #ffffff;
+
+	@media (min-width: 700px) {
+		padding: 60px 15vw;
+	}
+
+	@media (min-width: 1025px) {
+		padding: 60px 20vw;
+	}
 `;
 
 const FlexContainer = styled.div`
