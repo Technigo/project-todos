@@ -1,21 +1,14 @@
 // import { iteratorSymbol } from "@reduxjs/toolkit/node_modules/immer/dist/internal";
 import React from "react";
 import styled from "styled-components";
-import TodoList from "./TodoList";
 
 const date = new Date();
-// const day = date.getDate();
-// const month = date.getMonth() + 1;
-// const year = date.getFullYear();
 const todaysDate = date.toString().slice(0, 10);
-
-//console.log("the date:", todaysDate);
 
 export const Header = () => {
   return (
     <HeaderDiv>
       <HeaderTitle>Today's Tasks</HeaderTitle>
-
       <DateText>{todaysDate}</DateText>
     </HeaderDiv>
   );
