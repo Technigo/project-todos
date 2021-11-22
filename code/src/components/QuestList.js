@@ -17,16 +17,12 @@ const Table = styled.table`
     padding: 1rem 0.8rem;
   }
 
-  th {
-    background: radial-gradient(circle at bottom, #f7898e 3px, transparent 3px)
-      repeat-x bottom;
-    background-size: 1px;
+  thead tr {
+    border-bottom: 2px solid #f7898e;
   }
 
-  tr:not(:last-child) td {
-    background: radial-gradient(circle at bottom, #f7898e 2px, transparent 2px)
-      repeat-x bottom;
-    background-size: 1px;
+  tr:not(:last-child) {
+    border-bottom: 1px solid #f7898e;
   }
 
   .checkbox {
