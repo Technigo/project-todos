@@ -78,21 +78,9 @@ export const TodoList = () => {
     dispatch(todos.actions.setSelectedItem(id))
   }
 
-  const swipeHandlers = useSwipeable({
-    onSwiped: () => setSwiping(false),
-    onSwiping: () => setSwiping(true),
-    ...{
-      delta: 10, // min distance(px) before a swipe starts. *See Notes*
-      preventDefaultTouchmoveEvent: false, // call e.preventDefault *See Details*
-      trackTouch: true, // track touch input
-      trackMouse: false, // track mouse input
-      rotationAngle: 0, // set a rotation angle
-    },
-  })
-
   return (
     <>
-      <div {...swipeHandlers}> You can swipe here {swiping && <p>you're swiping</p>}</div>
+      <div> You can swipe here {swiping && <p>you're swiping</p>}</div>
       <TodoSection>
         {items
           .filter(item => !item.isComplete)
