@@ -6,12 +6,12 @@ import todos from '../reducers/todos'
 
 const AddTodoWrapper = styled.div`
   display: flex;
-  height: 60px;
+  height: 50px;
   justify-content: space-between;
   width: 100%;
   margin-bottom: 6px;
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 2px solid black;
+  border-radius: 8px;
 `
 
 const Button = styled.button`
@@ -49,12 +49,11 @@ const AddTodo = () => {
       <InputField 
         type="text" 
         value={input}
-        placeholder="add task" 
+        placeholder="to complete" 
         onChange={(event) => setInput(event.target.value)}
       />
       <Button onClick={onAddTodo}
       disabled={input.length < 3 || input.length > 25} type="submit">+
-      
       </Button>
     </AddTodoWrapper>
   )

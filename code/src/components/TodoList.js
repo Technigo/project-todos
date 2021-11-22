@@ -2,17 +2,15 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import moment from 'moment'
 import styled from 'styled-components'
 import todos from '../reducers/todos'
 import AddTodo from './AddTodo'
-import Header from './Header'
-
-
 
 const TodoContainer = styled.section`
   display: grid;
   grid-template-columns: 1fr;
-  margin-top: 100px;
+  margin-top: 20px;
   margin-bottom: 12px;
 `
 const TodoItem = styled.section`
@@ -41,7 +39,6 @@ background-color:green;
 }
   }
 `
-
 const ToDoParagraph = styled.div`
   display: block;
 
@@ -49,10 +46,6 @@ const ToDoParagraph = styled.div`
     font-size: 12px;
     font-style: italic;
   }
-`
-
-const DateCreated = styled.p`
-  font-size: 8px;
 `
 const TrashbinButton = styled.button`
   cursor: pointer;
@@ -78,9 +71,7 @@ const TodoList = () => {
   }
 
   return (
-    
     <TodoContainer>
-      
       {items.map((item, index) => (
           <TodoItem key={item.id}>
             <TodoItemLeft>
@@ -91,7 +82,7 @@ const TodoList = () => {
               />
               <ToDoParagraph>
                 <p>{item.text}</p>
-                <p className = "dateCreated">created {currentDate()}</p> 
+                <p className="dateCreated">created {moment().format("YYYY.MM.D")}</p>
               </ToDoParagraph>
           
             </TodoItemLeft>

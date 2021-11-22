@@ -13,11 +13,12 @@ import ClearAll from './components/ClearAll'
 
 
 const Container = styled.section`
-  height: 20vh;
-  max-width: 700px;
+  width: auto;
   padding: 10px 10px 30px 10px;
-  border-bottom: 1px solid black;
+  background-color: #ACD5D9;
+  border: 2px solid mintcream;
   border-radius: 15px; 
+  margin: 80px 0px;
 `
 
 // collect all slices and combine to one box. 

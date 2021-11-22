@@ -5,9 +5,13 @@ import styled from 'styled-components'
 const Container = styled.div`
   display: block;
   text-align: center;
+  border-bottom: 1px solid black;
+  
 `
 const Heading = styled.h1`
-  padding-bottom: 10px;
+  font-size: 27px;
+  padding-top: 15px;
+  padding-bottom: 20px;
 `
 
 const Counter = styled.div`
@@ -17,6 +21,8 @@ const Counter = styled.div`
 
 const CounterItem = styled.div`
   text-align: center;
+  font-weight: 700;
+  margin-bottom: 15px;
 `
 
 
@@ -34,10 +40,10 @@ const Header = () => {
 
   return (
     <Container>
-      <h1>accompLISTment</h1>
+      <Heading>accompLISTment</Heading>
       <Counter>
         <p>{currentDate()}</p>
-        <CounterItem><br/>Accomplished {amountComplete}/{totalItems}</CounterItem>
+        <CounterItem><br/>Completed {amountComplete}/{totalItems}</CounterItem>
       </Counter>
     </Container>
   )
