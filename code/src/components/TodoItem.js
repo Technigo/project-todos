@@ -55,7 +55,7 @@ export const TodoItem = () => {
   const dispatch = useDispatch()
 
   useEffect(() => {
-    selectedItem.dueDate ? setDueDate(selectedItem.dueDate) : setDueDate(new Date())
+    selectedItem.dueDate ? setDueDate(new Date(selectedItem.dueDate)) : setDueDate(new Date())
   }, [selectedItem])
 
   const DatePickerButton = forwardRef(({ value, onClick }, ref) => (
@@ -81,7 +81,7 @@ export const TodoItem = () => {
   }
 
   const onChangeDate = date => {
-    dispatch(todos.actions.editSelectedItem({ dueDate: date }))
+    dispatch(todos.actions.editSelectedItem({ dueDate: date.getTime() }))
     setDueDate(date)
   }
 
@@ -97,13 +97,11 @@ export const TodoItem = () => {
                 onChange={onChangeText}
                 onKeyDown={onKeyDown}
               />
-
               <p>Set due date: </p>
               <DatePicker
                 selected={dueDate}
                 onChange={date => onChangeDate(date)}
                 timeInputLabel='Time:'
-                dateFormat='yyyy-mm-dd (hh:mm)'
                 showTimeInput
                 customInput={<DatePickerButton />}
               />

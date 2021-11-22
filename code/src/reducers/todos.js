@@ -5,60 +5,12 @@ import moment from 'moment'
 export const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: [
-      {
-        id: 'kw6shaur',
-        text: 'Code the code',
-        isComplete: false,
-        createdAt: '2021-11-19T19:42:30.194Z',
-        dueDate: '2021-11-14T19:46:26.000Z',
-        subTasks: [],
-      },
-      {
-        id: 'kw6shw22',
-        text: 'Review the review',
-        isComplete: false,
-        createdAt: '2021-11-19T19:42:57.674Z',
-        dueDate: '2021-11-20T19:00:00.000Z',
-        subTasks: [
-          {
-            id: 'kw6sjuab',
-            text: 'Read it',
-            isComplete: false,
-            createdAt: '2021-11-19T19:44:28.691Z',
-            dueDate: false,
-          },
-          {
-            id: 'kw6sk73e',
-            text: 'Ask the questions...',
-            isComplete: false,
-            createdAt: '2021-11-19T19:44:45.290Z',
-            dueDate: false,
-          },
-        ],
-      },
-      {
-        id: 'kw6slwfo',
-        text: 'Submit the code 🛀',
-        isComplete: false,
-        createdAt: '2021-11-19T19:46:04.788Z',
-        dueDate: false,
-        subTasks: [],
-      },
-      {
-        id: 'kw6sm9tv',
-        text: 'Dance 💃',
-        isComplete: false,
-        createdAt: '2021-11-19T19:46:22.147Z',
-        dueDate: false,
-        subTasks: [],
-      },
-    ],
+    items: [],
     selectedItem: false,
   },
   reducers: {
     addTodo: (store, action) => {
-      const createdAt = moment()
+      const createdAt = new Date().getTime()
       const newTodo = {
         id: uniqid(),
         text: action.payload,
@@ -68,6 +20,19 @@ export const todos = createSlice({
         subTasks: [],
       }
       store.items = [...store.items, newTodo]
+    },
+    addAndEditTodo: (store, action) => {
+      const createdAt = new Date().getTime()
+      const newTodo = {
+        id: uniqid(),
+        text: action.payload,
+        isComplete: false,
+        createdAt: createdAt,
+        dueDate: false,
+        subTasks: [],
+      }
+      store.items = [...store.items, newTodo]
+      store.selectedItem = { ...newTodo }
     },
     toggleTodo: (store, action) => {
       const updatedItems = store.items.map(item => {

@@ -11,7 +11,7 @@ const InputWrapper = styled.div`
   align-items: center;
   gap: 5px;
   width: 100%;
-  border-top: 1px solid rgb(244, 244, 244);
+  border-top: 2px solid black;
   padding: 10px 5px;
   box-sizing: border-box;
   background-color: rgba(255, 255, 255, 05);
@@ -39,28 +39,33 @@ export const AddTodo = () => {
   const dispatch = useDispatch()
   const [input, setInput] = useState('')
 
-  const onAddTodo = e => {
-    dispatch(todos.actions.addTodo(input))
+  const clearInput = e => {
     setInput('')
     e.target.blur()
   }
 
-  const onKeyDown = e => {
+  const onAddTodo = e => {
     if (e.key === 'Enter') {
-      onAddTodo(e)
+      dispatch(todos.actions.addTodo(input))
+      clearInput(e)
     }
+  }
+
+  const onAddAndEdit = e => {
+    dispatch(todos.actions.addAndEditTodo(input))
+    clearInput(e)
   }
 
   return (
     <InputWrapper>
-      <Button disabled={input <= 0} onClick={onAddTodo}>
+      <Button disabled={input <= 0} onClick={onAddAndEdit}>
         +
       </Button>
       <Input
         type='text'
         value={input}
         onChange={e => setInput(e.target.value)}
-        onKeyDown={onKeyDown}
+        onKeyDown={onAddTodo}
       />
     </InputWrapper>
   )
