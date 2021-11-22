@@ -91,7 +91,7 @@ p {
 }
 
 .main {
-  padding: 0 1rem;
+  margin: 0 1rem;
 }
 
 
@@ -109,11 +109,12 @@ p {
 .bottom-container {
   position: fixed;
   max-width: 767px;
-  bottom: 1rem;
+  bottom: 0;
   right: 1rem;
   left: 1rem;
   margin: 0 auto;
-
+  padding: 1rem 0 1rem 0;
+  background-color: #1a1a1a;
 }
 
 .add {
@@ -282,4 +283,29 @@ h4 {
   padding: 0 1rem 0 1rem;
   width: 100%;
   margin-right: 0.5rem;
+}
+
+
+@media (min-width: 767px) {
+  
+    .bottom-container {
+      padding: 2rem 0 3rem 0;
+    }
+
+    .add {
+      margin-bottom: 2rem;
+      padding: 2rem;
+    }
+
+    .check-all-btn {
+      margin-right: 1rem;
+    }
+
+    .delete-all-btn {
+      margin-left: 1rem;
+    }
+
+    .main {
+      margin: 0;
+    }
 }
