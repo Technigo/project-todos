@@ -19,6 +19,16 @@ const TodoItem = styled.div`
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
 `
+const DoneItem = styled.div`
+  display: flex;
+  gap: 20px;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgb(244, 244, 244);
+  padding: 1.5rem 5px;
+  box-sizing: border-box;
+  background-color: rgb(244, 244, 244);
+`
 const Checkbox = styled.input`
   width: 20px;
   height: 20px;
@@ -101,6 +111,26 @@ export const TodoList = () => {
               </Data>
               <Button onClick={() => onDeleteTodo(item.id)}>x</Button>
             </TodoItem>
+          ))}
+      </TodoSection>
+      <TodoSection>
+        {items
+          .filter(item => item.isComplete)
+          .map(item => (
+            <DoneItem key={item.id}>
+              <Checkbox
+                type='checkbox'
+                checked={item.isComplete}
+                onChange={() => onToggleTodo(item.id)}
+              />
+              <Data>
+                <h3 onClick={() => onSelectItem(item.id)}>{item.text}</h3>
+                {item.subTasks.length > 0 && `Subtasks: ${item.subTasks.length}`}
+                {!item.dueDate && <p>Created: {moment(item.createdAt).fromNow()}</p>}
+                {item.dueDate && <p>Due: {moment(item.dueDate).fromNow()}</p>}
+              </Data>
+              <Button onClick={() => onDeleteTodo(item.id)}>x</Button>
+            </DoneItem>
           ))}
       </TodoSection>
     </>
