@@ -19,8 +19,6 @@ border: none;
 width: 20%;
 justify-content: flex-end;
 background: #379683;
-color: white:
-font-weight: bold;
 `
 
 const TodoInput = styled.input`
