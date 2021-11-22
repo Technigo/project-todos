@@ -1,13 +1,10 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The goal of this week project was to create a todo-list using Redux and especially practicing setting up reducers and actions.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The main challenge was to get flow of redux and create the sclice with different reducers which where then dispatched in the two components.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+You can see the project here https://condescending-swanson-543f70.netlify.app/
