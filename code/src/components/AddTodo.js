@@ -10,7 +10,7 @@ const AddTodoWrapper = styled.div`
   justify-content: space-between;
   width: 100%;
   margin-bottom: 6px;
-  border: 2px solid black;
+  border: 1px solid mintcream;;
   border-radius: 8px;
 `
 

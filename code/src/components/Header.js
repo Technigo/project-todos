@@ -3,10 +3,10 @@ import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 const Container = styled.div`
+  width: 100%;
   display: block;
   text-align: center;
-  border-bottom: 1px solid black;
-  
+  border-bottom: 1px solid mintcream;;
 `
 const Heading = styled.h1`
   font-size: 27px;

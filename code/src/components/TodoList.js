@@ -33,10 +33,8 @@ const TodoItemLeft = styled.div`
     margin-left: 6px;
   }
 
-  input:checked:before {
-    .checkbox:checked:before{
-background-color:green;
-}
+  input:checked {
+    background-color:green;
   }
 `
 const ToDoParagraph = styled.div`

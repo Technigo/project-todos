@@ -11,6 +11,7 @@ const Button = styled.b`
   border-radius: 5px;
   cursor: pointer;
   justify-content: center;
+  padding: 4px 0px;
 `
 const ClearAll = () => {
   const dispatch = useDispatch()
