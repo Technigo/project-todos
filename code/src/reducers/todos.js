@@ -17,13 +17,25 @@ const todos = createSlice({
             store.items = [...store.items, newTodo]
         },
 
-        toggleToDo: (store, action) => {
-            store.items.forEach((item) => {
-                if (item.id === action.payload) {
-                    item.isComplete = !item.isComplete
-                }
-            })
-        }
+        toggleTodo: (store, action) => {
+                const updatedItems = store.items.map((item) => {
+                    if (item.id === action.payload) {
+                        const updatedTodo = {
+                            ...item,
+                            isComplete: !item.isComplete
+                        }
+                        return updatedTodo
+                    } else {
+                        return item
+                    }
+                })
+
+                store.items = updatedItems
+        },
+        
+        deleteTodo: (store, action) => {
+            store.items.splice(action.payload, 1)
+        } 
     }
 })
 
