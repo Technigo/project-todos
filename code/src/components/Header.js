@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components/macro'
+import moment from 'moment'
 
 import { todos } from '../reducers/todos'
 
@@ -28,6 +29,7 @@ const Button = styled.button`
 export const Header = () => {
   const items = useSelector(store => store.todos.items)
   const dispatch = useDispatch()
+  const toDay = moment().format('dddd MMM MM/YY')
 
   const onClearAll = () => {
     dispatch(todos.actions.clearAllTodos())
@@ -36,8 +38,8 @@ export const Header = () => {
   return (
     <HeaderWrapper>
       <div>
-        <Title>Todo</Title>
-        <Text>Today</Text>
+        <Title>Todo-Listan</Title>
+        <Text>{toDay}</Text>
       </div>
       <div>
         <Text>{items.length}</Text>
