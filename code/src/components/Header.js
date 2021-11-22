@@ -27,7 +27,9 @@ const Button = styled.button`
 `
 
 export const Header = () => {
-  const items = useSelector(store => store.todos.items)
+  const items = useSelector(store => store.todos.items.length)
+  const todoItems = useSelector(store => store.todos.items.filter(item => !item.isComplete).length)
+  const doneItems = useSelector(store => store.todos.items.filter(item => item.isComplete).length)
   const dispatch = useDispatch()
   const toDay = moment().format('dddd MMM MM/YY')
 
@@ -42,7 +44,12 @@ export const Header = () => {
         <Text>{toDay}</Text>
       </div>
       <div>
-        <Text>{items.length}</Text>
+        <Text>
+          Todo: {todoItems}/{items}
+        </Text>
+        <Text>
+          Done: {doneItems}/{items}
+        </Text>
         <Button onClick={onClearAll}>clear all</Button>
       </div>
     </HeaderWrapper>
