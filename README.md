@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Create a todo application where the user should be able to add todos, list todos and toggle wether a todo is done or not. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+We got a lot out of the monday lecture, coded along and watched it over again. Fun (and tricky) project!
+A lot of trial and errors during the week. 
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://brave-feynman-04e1f9.netlify.app/

@@ -4,9 +4,7 @@ import uniqid  from 'uniqid'
 const todos = createSlice({
     name: 'todos',
     initialState:  { 
-        items: [
-            // { id: 1, text: 'Yay! First step, you are here!', isComplete: true },
-        ],
+        items: [],
     },
 
     reducers: {

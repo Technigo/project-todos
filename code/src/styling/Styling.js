@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
 
+// HEADER //
+
 export const StyledSection = styled.main`
   background-color: #1a1a1a;
   display: flex;
@@ -84,3 +86,20 @@ export const StyledHeader = styled.header`
         padding-top: 8rem;
     }
 `
+
+export const StyledStartBtn = styled.button`
+    background-color: #333;
+    color: #80B477;
+    border: none;
+    border-radius: 50%;
+    width: 72px;
+    height: 72px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 10px 5px -6px;
+
+    @media (min-width: 767px) {
+        width: 112px;
+        height: 112px;
+    }
+`
+
