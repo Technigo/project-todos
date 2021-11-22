@@ -51,10 +51,12 @@ export const SubTaskList = () => {
 
   const onToggleSubTask = id => {
     dispatch(todos.actions.toggleSubTask(id))
+    dispatch(todos.actions.setIsChanged(true))
   }
 
   const onDeleteSubTask = id => {
     dispatch(todos.actions.deleteSubTask(id))
+    dispatch(todos.actions.setIsChanged(true))
   }
 
   return (

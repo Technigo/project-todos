@@ -42,6 +42,7 @@ export const AddSubTask = () => {
     dispatch(todos.actions.addSubTask(input))
     setInput('')
     e.target.blur()
+    dispatch(todos.actions.setIsChanged(true))
   }
 
   const onKeyDown = e => {

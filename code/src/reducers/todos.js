@@ -7,6 +7,7 @@ export const todos = createSlice({
   initialState: {
     items: [],
     selectedItem: false,
+    isChanged: false,
   },
   reducers: {
     addTodo: (store, action) => {
@@ -61,6 +62,9 @@ export const todos = createSlice({
     editSelectedItem: (store, action) => {
       const updatedItem = { ...store.selectedItem, ...action.payload }
       store.selectedItem = updatedItem
+    },
+    setIsChanged: (store, action) => {
+      store.isChanged = action.payload
     },
     saveSelectedItem: store => {
       const updatedItem = store.selectedItem

@@ -42,6 +42,16 @@ const CloseButton = styled.div`
   padding: 0.6rem;
   font-size: 1.4rem;
 `
+const SaveButton = styled.div`
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(126, 191, 132, 0.3);
+  border-radius: 0 0 20px 20px;
+  text-align: center;
+  padding: 0.6rem;
+  font-size: 1.4rem;
+`
 const Input = styled.input`
   margin-top: 20px;
   height: 60px;
@@ -52,6 +62,7 @@ const Input = styled.input`
 export const TodoItem = () => {
   const [dueDate, setDueDate] = useState(new Date())
   const selectedItem = useSelector(store => store.todos.selectedItem)
+  const isChanged = useSelector(store => store.todos.isChanged)
   const dispatch = useDispatch()
 
   useEffect(() => {
@@ -67,10 +78,12 @@ export const TodoItem = () => {
   const onCloseClick = () => {
     dispatch(todos.actions.saveSelectedItem())
     dispatch(todos.actions.removeSelectedItem())
+    dispatch(todos.actions.setIsChanged(false))
   }
 
   const onChangeText = e => {
     dispatch(todos.actions.editSelectedItem({ text: e.target.value }))
+    dispatch(todos.actions.setIsChanged(true))
   }
 
   const onKeyDown = e => {
@@ -83,6 +96,7 @@ export const TodoItem = () => {
   const onChangeDate = date => {
     dispatch(todos.actions.editSelectedItem({ dueDate: date.getTime() }))
     setDueDate(date)
+    dispatch(todos.actions.setIsChanged(true))
   }
 
   return (
@@ -108,7 +122,8 @@ export const TodoItem = () => {
             </div>
             {selectedItem.subTasks && <SubTaskList />}
             <AddSubTask />
-            <CloseButton onClick={onCloseClick}>Close</CloseButton>
+            {isChanged && <SaveButton onClick={onCloseClick}>Save</SaveButton>}
+            {!isChanged && <CloseButton onClick={onCloseClick}>Close</CloseButton>}
           </ModalContent>
         </ModalWrapper>
       )}
