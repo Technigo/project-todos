@@ -89,6 +89,10 @@ const Section = styled.section`
 
   @media screen and (min-width: 1025px) {
     width: 600px;
+
+    p {
+      font-size: 22px;
+    }
   }
 `;
 

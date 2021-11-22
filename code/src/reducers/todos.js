@@ -1,6 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 import uniqid from 'uniqid';
 
+// AN object with 3 properties = name, initialState and reducers
 const todos = createSlice({
   name: 'todos',
   initialState: {

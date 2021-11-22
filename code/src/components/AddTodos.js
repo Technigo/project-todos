@@ -24,7 +24,6 @@ const AddTodo = () => {
   const handleNewTodo = (event) => {
     setInput(event.target.value);
   };
-  console.log(input);
 
   return (
     <TodoInput>
@@ -36,10 +35,7 @@ const AddTodo = () => {
           onChange={handleNewTodo}
           ref={inputRef}
         />
-        <button
-          onClick={onAddTodo}
-          disabled={input.length < 5 || input.length > 140}
-        >
+        <button onClick={onAddTodo} disabled={input.length < 3}>
           <span>add task</span>
         </button>
       </label>
@@ -70,6 +66,11 @@ const TodoInput = styled.div`
     cursor: pointer;
     vertical-align: middle;
     display: inline-block;
+
+    &:disabled {
+      cursor: not-allowed;
+      opacity: 0.4;
+    }
   }
   span {
     display: inline-block;
@@ -95,9 +96,12 @@ const TodoInput = styled.div`
     padding-bottom: 6%;
 
     button {
-      font-size: 28px;
       height: 80px;
       width: 80px;
+    }
+
+    span {
+      font-size: 28px;
     }
   }
 `;

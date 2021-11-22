@@ -6,8 +6,6 @@ import todos from '../reducers/todos';
 import CompletedTodos from './CompletedTodos';
 import UnCompletedTodos from './UnCompletedTodos';
 
-import './todolist.css';
-
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
   const dispatch = useDispatch();
