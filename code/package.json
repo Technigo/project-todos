@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
-    "babel-eslint": "^10.1.0",
     "carbon-components": "^10.48.0",
     "carbon-components-react": "^7.48.1",
     "carbon-icons": "^7.0.7",
