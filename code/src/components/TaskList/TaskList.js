@@ -39,7 +39,6 @@ const TaskList = () => {
             <Checkbox
               checked={item.isComplete}
               onChange={() => onToggleTask(item.id)}
-			  {/* Color styling according to Material UI's documentation */}
               sx={{
                 color: purple[400],
                 '&.Mui-checked': {
@@ -49,7 +48,7 @@ const TaskList = () => {
                 margin: '7px 3px',
               }}
             />
-			{/* Display the user's input as a task on the list */}
+            {/* Display the user's input as a task on the list */}
             <p className='task-text'>{item.text}</p>
 
             <button
