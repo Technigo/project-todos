@@ -4,6 +4,7 @@ import { RiDeleteBinLine } from 'react-icons/ri'
 
 import todos from '../reducers/todos'
 
+
 const ClearAllBtn = () => {
     const dispatch = useDispatch()
 

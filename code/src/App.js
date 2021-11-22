@@ -13,6 +13,7 @@ import todos from './reducers/todos'
 import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
 import Header from 'components/Header'
+import Manager from 'components/Manager'
 
 import './App.css'
 
@@ -29,7 +30,10 @@ export const App = () => {
       <main className="app">
 		  	  <Header />
 			  <TodoList />
-			  <AddTodo />
+			  <div className="input-container-main">
+				<AddTodo />
+				<Manager />
+			</div>
       </main>
 		</Provider>
 	)

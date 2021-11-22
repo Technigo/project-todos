@@ -1,18 +1,19 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 import CheckAllBtn from './CheckAllBtn'
-
 import ClearAllBtn from './ClearAllBtn'
+
+import './Manager.css'
 
 const Manager = () => {
 
-    const items = useSelector((store) => store.todos.items)
     return (
-        <div className="calendar-section">
-        <p>{items.length} tasks</p>
-        <ClearAllBtn />
-        <p>Clear all tasks</p>
-        <CheckAllBtn />
+        <div className="manager-container">
+        <CheckAllBtn 
+        className="manager-btn"
+        />
+        <ClearAllBtn 
+        className="manager-btn"
+        />
     </div>
     )
 

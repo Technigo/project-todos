@@ -1,17 +1,23 @@
+.manager-container {
+  display: flex;
+  background-color: white;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  margin: 20px;
+}
+
 .manager-btn {
-  /* padding-left: 100px; */
-  /* width: 180px;
-    height: 180px; */
-  /* position: absolute;
-    right: 20px;
-    top: 18px; */
-  font-size: x-large;
+  font-size: medium;
   border: none;
   background: thistle;
+  padding: 10px;
   color: rgb(97, 97, 97);
-  /* border-radius: 5px; */
-  /* font-weight: 700; */
-  /* align-self: flex-end; */
-  /* align-items: center; */
+  border-radius: 10px;
+  font-weight: 700;
   cursor: pointer;
+}
+
+.manager-btn:hover {
+  color: rgb(197, 197, 197);
+  background: rgb(248, 240, 248);
 }

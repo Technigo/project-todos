@@ -1,6 +1,5 @@
 import React from 'react'
 import {  useDispatch } from 'react-redux'
-import { RiDeleteBinLine } from 'react-icons/ri'
 
 import todos from '../reducers/todos'
 

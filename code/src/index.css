@@ -1,15 +1,15 @@
 body {
   margin: 20px;
-  font-family: 'Nunito', sans-serif;
+  font-family: 'Varela Round', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  background: rgb(155, 113, 201);
+  background: rgb(253, 192, 193);
   background: linear-gradient(
-    90deg,
-    rgba(155, 113, 201, 1) 0%,
+    95deg,
+    rgba(253, 192, 193, 1) 0%,
     rgba(207, 155, 197, 1) 35%,
-    rgba(253, 192, 193, 1) 100%
+    rgba(155, 113, 201, 1) 100%
   );
 }
 
@@ -17,8 +17,3 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-/* 
-.flex-item {
-  display: flex;
-  align-items: center;
-} */

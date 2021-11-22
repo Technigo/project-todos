@@ -1,6 +1,7 @@
 .todo-container {
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .todo-form {
@@ -8,19 +9,15 @@
   width: 100%;
   display: flex;
   align-items: flex-end;
-  position: absolute;
-  position: absolute;
-  bottom: 0;
   justify-content: space-between;
   background-color: #fff;
-  /* background-color: whitesmoke; */
   border-radius: 20px;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
   margin: 0px 0;
   padding: 10px;
 }
 
-.todo-input input {
+.todo-form input {
+  font-family: 'Varela Round', sans-serif;
   height: 50px;
   border-radius: 5px 0 0 5px;
   border: none;
