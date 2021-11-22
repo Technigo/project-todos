@@ -11,9 +11,6 @@ const AddTask = () => {
     dispatch(tasks.actions.addTask(input));
   };
   const cleanInput = () => {
-    {
-      /* Clean the input box upon submitting */
-    }
     setInput('');
   };
 
