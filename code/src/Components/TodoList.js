@@ -10,7 +10,6 @@ export const TodoList = () => {
   const [category, setCategory] = useState('');
   const dispatch = useDispatch();
 
-  //Denna funktionen tar det som är i input statet och skickar till funktionen i the store. tror jag...
   const onAddToDo = () => {
     dispatch(todo.actions.addTodo({ text: input, category: category }));
     setInput('');
