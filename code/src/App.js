@@ -33,6 +33,7 @@ store.subscribe(() => {
 
 const MainContainer = styled.section`
 	width: 380px;
+
 	display: flex;
 	text-align: center;
 	justify-content: flex-start;
