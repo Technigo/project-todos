@@ -1,13 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background:rgb(71, 55, 70);
+  background-size:auto;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+header {
+  margin: 0 auto;
+}
+
+.header {
+  margin-bottom: 2px;
+  align-self: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: antiquewhite;
+}
+
+.todo-count {
+  position:absolute;
+  top:20px;
+  right:20px;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 350px;
+  min-height: 550px;
+  border-radius: 5%;
+  border: 1px solid rgb(0, 0, 0);
+  background-color: rgba(199, 49, 161, 0.4);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.addtodos-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 350px;
+  padding: 1em;
+  height: 80px;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgb(116, 110, 115);
+  border-radius: 5%;
+}
+
+input {
+  margin: 0.5em;
+  padding: 0.5em;
+  border: rgb(77, 3, 70);
+  color: black;
+}
+
+.checkbox {
+  cursor: default;
+  appearance: auto;
+  box-sizing: border-box;
+  padding: none;
+  border: none;
+  align-self: center;
+}
+
+.delete-button {
+  padding:8px 12px;
+  width:80px;
+  background:#8b417f;
+  color: antiquewhite;
+  border-radius: 5px;
+  font-weight: 500;
+  align-self: flex-end;
+  border-radius: 5%;
+
+}
+
+.delete-button:hover {
+  background-color:#b930a2;
+  transition: .2s;
+}
+
+
+.add-todo {
+  align-self: center;
+  appearance: auto;
+  font-size: 1rem;
+  text-rendering: auto;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow:rgb(231, 227, 226);
+  display: inline-block;
+  text-align: center;
+  align-items: flex-start;
+  cursor: default;
+  box-sizing: border-box;
+  background-color: transparent;
+  margin: 0em;
+  padding: 10px 15px;
+  border-width: 2px;
+  border-color: black;
+  border-image: initial;
+  border-radius: 5%;
+}
+
+.list-container {
+  display: flex;
+  flex-direction: row;
+  border-top: 1px solid rgb(34, 27, 27);
+  border-bottom: 3px solid rgb(34, 27, 27);
+  justify-content: space-between;
+  height: 390px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  color: antiquewhite;
+  
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px transparent;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: whitesmoke;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+.todo-input {
+  display: inline-block;
+  word-break: break-word;
+  max-width: 180px;
+  padding: 15px;
+}
+
+.flex-item {
+  display: flex;
+  margin: 0 auto;
+  margin-left: 3px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.flex-item:nth-child(2n + 1) {
+  background-color: rgb(255, 255, 255, 0.6);
+}
+
+.delete-container {
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+  justify-content: flex-end;
+  margin-right: 1em;
+ 
+}
+
+.todos-list {
+  width: 100%;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 
+  
 }
