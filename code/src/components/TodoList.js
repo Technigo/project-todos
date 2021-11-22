@@ -1,8 +1,7 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import moment from 'moment'
-import { useSwipeable } from 'react-swipeable'
 
 import { todos } from '../reducers/todos'
 
@@ -63,7 +62,6 @@ const Data = styled.div`
 
 export const TodoList = () => {
   const items = useSelector(store => store.todos.items)
-  const [swiping, setSwiping] = useState(false)
   const dispatch = useDispatch()
 
   const onToggleTodo = id => {
@@ -80,7 +78,6 @@ export const TodoList = () => {
 
   return (
     <>
-      <div> You can swipe here {swiping && <p>you're swiping</p>}</div>
       <TodoSection>
         {items
           .filter(item => !item.isComplete)
