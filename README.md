@@ -22,3 +22,5 @@ Your app should list all todo tasks - completed or uncompleted
 I managed to fulfill these requirements with the help of study-partners, online resources and lectures.
 
 ## View it live
+
+https://ninarivera-todo-project.netlify.app/
