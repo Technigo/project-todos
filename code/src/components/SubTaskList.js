@@ -19,11 +19,6 @@ const TodoItem = styled.div`
   box-sizing: border-box;
   background-color: rgb(255, 255, 255);
 `
-const TodoText = styled.p`
-  margin: 0;
-  flex-grow: 1;
-  font-size: 1rem;
-`
 const Checkbox = styled.input`
   border-radius: 50%;
 `
@@ -37,11 +32,21 @@ const Button = styled.button`
   border: 0;
   color: black;
 `
-const Dates = styled.div`
+const Data = styled.div`
   display: flex;
   flex-direction: column;
+  width: 200px;
   & p {
     font-size: 0.6rem;
+  }
+  & h3 {
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 0;
+    overflow: hidden;
+    display: inline-block;
+    text-overflow: ellipsis;
+    white-space: nowrap;
   }
 `
 
@@ -68,11 +73,11 @@ export const SubTaskList = () => {
             checked={item.isComplete}
             onChange={() => onToggleSubTask(item.id)}
           />
-          <TodoText>{item.text}</TodoText>
-          <Dates>
+
+          <Data>
+            <h3>{item.text}</h3>
             <p>Created: {moment(item.createdAt).fromNow()}</p>
-            {item.dueDate && <p>Due: {moment(item.dueDate).fromNow()}</p>}
-          </Dates>
+          </Data>
           <Button onClick={() => onDeleteSubTask(item.id)}>x</Button>
         </TodoItem>
       ))}

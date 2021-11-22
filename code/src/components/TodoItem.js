@@ -58,6 +58,14 @@ const Input = styled.input`
   border: 0;
   font-size: 5rem;
 `
+const DateDiv = styled.div`
+  display: flex;
+  width: 260px;
+  align-items: center;
+  & p {
+    width: 100%;
+  }
+`
 
 export const TodoItem = () => {
   const [dueDate, setDueDate] = useState(new Date())
@@ -104,13 +112,13 @@ export const TodoItem = () => {
       {selectedItem && (
         <ModalWrapper>
           <ModalContent>
-            <div>
-              <Input
-                type='text'
-                value={selectedItem.text}
-                onChange={onChangeText}
-                onKeyDown={onKeyDown}
-              />
+            <Input
+              type='text'
+              value={selectedItem.text}
+              onChange={onChangeText}
+              onKeyDown={onKeyDown}
+            />
+            <DateDiv>
               <p>Set due date: </p>
               <DatePicker
                 selected={dueDate}
@@ -119,7 +127,7 @@ export const TodoItem = () => {
                 showTimeInput
                 customInput={<DatePickerButton />}
               />
-            </div>
+            </DateDiv>
             {selectedItem.subTasks && <SubTaskList />}
             <AddSubTask />
             {isChanged && <SaveButton onClick={onCloseClick}>Save</SaveButton>}
