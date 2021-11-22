@@ -13,30 +13,25 @@ const Heading = styled.h1`
   padding-top: 15px;
   padding-bottom: 20px;
 `
-
 const Counter = styled.div`
   display: block;
-
 `
-
 const CounterItem = styled.div`
   text-align: center;
   font-weight: 700;
   margin-bottom: 15px;
 `
 
-
 const Header = () => {
 
   const items = useSelector((store) => store.todos.items);
-  const amountTodos = items.filter(todo => !todo.isComplete).length;
+  // const amountTodos = items.filter(todo => !todo.isComplete).length;
   const amountComplete = items.filter(todo => todo.isComplete).length;
   const totalItems = items.length;
   
   const currentDate = () => {
     return new Date().toLocaleDateString("en-US", ({ year: 'numeric', month: 'long', day: 'numeric' }));
   }
-
 
   return (
     <Container>

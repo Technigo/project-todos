@@ -7,15 +7,15 @@ const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      { id: 1, text: 'Take a walk', isComplete: false, display: true },
-      { id: 2, text: 'Grocery', isComplete: true, display: true },
-      { id: 3, text: 'Code', isComplete: true, display: false },
-      { id: 4, text: 'Yoga', isComplete: true, display: false }
+      { id: 1, text: 'Code', isComplete: true, display: true },
+      { id: 2, text: 'Eat', isComplete: false, display: true },
+      { id: 3, text: 'Sleep', isComplete: false, display: false },
+      { id: 4, text: 'Repeat', isComplete: true, display: false }
     ] //array of todos
   },
   reducers: {
     addTodo: (store, action) => {
-      const data = action.payload 
+      // const data = action.payload 
 
       const newTodo = {
         id: uniqid(),

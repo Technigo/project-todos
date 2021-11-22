@@ -53,7 +53,7 @@ const TrashbinButton = styled.button`
 
 const TodoList = () => {
   const items = useSelector(store => store.todos.items) //reference the slice with store.todos
-  const noItems = useSelector((store) => store.todos.items.length === 0)
+  // const noItems = useSelector((store) => store.todos.items.length === 0)
   const dispatch = useDispatch()
   const clearIcon = <FontAwesomeIcon icon={faTrashAlt} />
   const onToggleTodo = (id) => {
@@ -62,10 +62,6 @@ const TodoList = () => {
 
   const clearTodo = (id) => {
     dispatch(todos.actions.clearTodo(id))
-  }
-
-  const currentDate = () => {
-    return new Date().toLocaleDateString("sv-SV", ({ year: 'numeric', month: 'numeric', day: 'numeric' }));
   }
 
   return (
