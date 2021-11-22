@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux"
 
 import todos from "../reducers/todos"
 
+// Styled components
 const AddTodoBody = styled.div`
     padding: 10px;
 `
@@ -84,23 +85,25 @@ const ClearAllButton = styled.button`
     }
 `
 
-
 const AddTodo = () => {
     const [input, setInput] = useState('')
 
     const dispatch = useDispatch()
 
+    //dispatch addTodo reducer & clear input field
     const onAddTodo = () => {
         dispatch(todos.actions.addTodo(input))
         setInput('')
     }
 
+    //For making Enter key addTodo
     const checkKey = (event) => {
         if (event.keyCode === 13 && !event.shiftKey) {
             onAddTodo(event)
         }
     }
     
+    //dispatch check all boxes reducer
     const onCheckAll = () => {
         dispatch(todos.actions.checkAll())
       }

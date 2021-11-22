@@ -9,6 +9,7 @@ import AddTodo from './components/AddTodo'
 import TodoList from './components/TodoList'
 import Todohead from 'components/TodoHead'
 
+// Styled components
 const TheHead = styled.section`
   max-width: 550px;
   margin: 0 auto;
@@ -16,11 +17,12 @@ const TheHead = styled.section`
   text-align: center;
   border-radius: 20px 20px 0 0;
 `
-
 const TheBody = styled.section`
   max-width: 550px;
   margin: 0 auto;
 `
+
+// Makes todos persist refresh
 const persistedStateJSON = localStorage.getItem('todosReduxState')
 let persistedState ={}
 
@@ -28,15 +30,16 @@ if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON)
 }
 
+// Set up store
 const reducer = combineReducers ({
   todos: todos.reducer,
 })
-
 const store = createStore (
   reducer,
   persistedState
 )
 
+// Checks changes in store
 store.subscribe(() => {
   localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))
 })

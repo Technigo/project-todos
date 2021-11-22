@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 import todos from '../reducers/todos'
 
+// Styled components
 const TodosDiv = styled.div`
     display: flex;
     justify-content: space-between;
@@ -96,10 +97,12 @@ const TodoList = () => {
 
     const dispatch = useDispatch()
 
+    // Dispatch toggleTodo/checkboxes
     const onToggleTodo = (id) => {
         dispatch(todos.actions.toggleTodo(id))
     }
 
+    // Dispatch deleteTodo reducer
     const onDeleteTodo = (id) => {
         dispatch(todos.actions.deleteTodo(id))
     }

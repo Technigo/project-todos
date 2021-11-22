@@ -3,6 +3,7 @@ import styled from "styled-components"
 import moment from 'moment';
 import { useSelector } from 'react-redux'
 
+// Styled components
 const TodoH1 = styled.h1`
     color: #422117;
     font-family: 'Pacifico', cursive;
