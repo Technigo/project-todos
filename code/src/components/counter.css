@@ -1,0 +1,7 @@
+.task-amount {
+  color: whitesmoke;
+  font-weight: bolder;
+  margin: 8% 8% 0;
+  display: flex;
+  justify-content: flex-end;
+}

@@ -1,0 +1,79 @@
+.flex-item {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  width: 320px;
+  height: 100px;
+  align-items: center;
+  background-color: pink;
+  box-shadow: rgba(0, 0, 0, 0.18) 0px 2px 4px;
+  border-radius: 25px;
+  width: 90%;
+  margin: auto auto 10px;
+}
+
+.item-container {
+  color: white;
+  min-inline-size: 60%;
+  margin: auto;
+  text-align: left;
+  font-weight: bolder;
+  padding-left: 15px;
+}
+
+.date-container {
+  text-align: left;
+  justify-content: right;
+  inline-size: 15%;
+  overflow-wrap: break-word;
+}
+
+.create-date {
+  font-size: 10px;
+  font-weight: bolder;
+  color: white;
+}
+
+.delete-btn {
+  border: none;
+  background-color: transparent;
+  font-size: xxx-large;
+  color: whitesmoke;
+  padding: 25px;
+}
+
+.checkbox-container {
+  padding: 0 3px 15px 3px;
+}
+
+input[type="checkbox"] {
+  position: absolute;
+  width: 0;
+  height: 0;
+}
+
+input[type="checkbox"]:after {
+  content: "";
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  width: 15px;
+  height: 15px;
+  font-size: 13px;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  background: white;
+}
+
+input[type="checkbox"]:checked:after {
+  content: "\2713";
+  background-color: #bde0fe;
+}
+
+@media (min-width: 768px) {
+  .create-date {
+    font-size: 15px;
+    font-weight: bolder;
+  }
+}
