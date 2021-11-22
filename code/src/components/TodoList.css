@@ -1,0 +1,105 @@
+.todo-container {
+    padding-right: 30px;
+    margin-left:1rem;
+    margin-right: 1rem;
+    overflow-x: hidden;
+    max-height: 370px;
+  }
+
+  .item {
+    background: white;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 15px 15px;
+    box-shadow: rgba(55, 67, 64, 0.5) 0px 3px 2px 0px, rgba(55, 67, 64, 0.15) 0px 2px 6px 2px;
+    display:flex;
+    width:100%;
+    align-items: center;
+  }
+  
+  .todo-text-container {
+    display:flex;
+    flex-direction: column;
+    flex-grow: 2;
+  }
+  
+  .item input[type='checkbox']:hover, .item button:hover {
+    cursor: pointer;
+  }
+  
+  .delete {
+    padding:10px 15px;
+    width:80px;
+    border:none;
+    background:#333333;
+    color:white;
+    border-radius: 5px;
+    font-weight: 700;
+    align-self: flex-end;
+  }
+  
+  .delete:hover {
+    background-color:#111111;
+    transition: .2s;
+  }
+  
+  .update {
+    border:none;
+    margin-right:20px;
+  }
+  
+  .date {
+    font-size: 12px;
+    margin:0;
+  }
+  
+  .done {
+    background-color:#eaffdf;
+  }
+  
+  .done button {
+    background-color:#c5e3b5;
+  }
+  
+  .todo-header {
+    font-weight: bold;
+    margin:0;
+  }
+
+
+  @media only screen and (min-height: 569px) {
+    .list-of-items-container {
+      max-height: 465px;
+    }
+  }
+  
+  @media only screen and (min-height: 668px) {
+    .list-of-items-container {
+      max-height: 530px;
+    }
+  }
+  
+  @media only screen and (min-height: 738px) {
+    .list-of-items-container {
+      max-height: 500px;
+    }
+  }
+  
+
+  
+  @media only screen and (min-width: 599px) {
+    .item {
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+  
+    .list-of-items-container {
+      padding-right:20px;
+      margin-left:1rem;
+      margin-right: 1rem;
+    }
+  
+    .list-of-items-container::-webkit-scrollbar {
+      display: none;
+    }
+  }

@@ -1,0 +1,18 @@
+.app {
+    margin: 0 auto;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    background:#fffffe;
+    border: solid #222222 1px;
+  }
+  
+  @media only screen and (min-width: 599px) {
+    .app {
+      width: 50vh;
+      height: 60vh;
+      max-width: 400px;
+      min-height: 600px;
+      margin-top: 60px;
+    }
+  }
