@@ -32,8 +32,7 @@ store.subscribe(() => {
 });
 
 const MainContainer = styled.section`
-	width: 380px;
-
+	width: 355px;
 	display: flex;
 	text-align: center;
 	justify-content: flex-start;
