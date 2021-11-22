@@ -2,8 +2,6 @@
 
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-
 
 //import react reducers
 import todos from './reducers/todos'
