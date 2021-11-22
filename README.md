@@ -1,13 +1,24 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+Todo-lists can sometimes be stressful, so I wanted to make one with soft colors and clouds. I created this simple todo-list with the help of React-Redux. In it you will find:
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+- the current date
+- total amount of tasks
+- input field with submit button
+- local storage
+- checkbox for completed tasks
+- delete button for deleting tasks
+- and the date from when the task was created.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The task at hand was to make a todo-list which fulfills these requirements:
+Your app should list all todo tasks - completed or uncompleted
+
+- You should be able to mark an uncompleted task as complete (and change it back to uncomplete)
+- You should be able to add and remove tasks
+- Your app should show a count of either all todos, or all uncomplete todos (or both)
+
+I managed to fulfill these requirements with the help of study-partners, online resources and lectures.
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
