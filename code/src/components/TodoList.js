@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 import todos from '../reducers/todos';
 
@@ -10,6 +10,7 @@ const TodoList = () => {
 
 	const dispatch = useDispatch();
 
+  // dispatching created reducers
 	const onToggleTodo = (id) => {
 		dispatch(todos.actions.toggleTodo(id));
 	};
@@ -19,94 +20,63 @@ const TodoList = () => {
 	};
 
 	//Styling
-
-const TodoItemText = styled.div`
+const Container = styled.div`
   display: flex;
-  flex-direction:column;
+  align-items: center;
+  flex-direction: column;
   flex-grow: 2;
   `;
-const Todo= styled.p`
-font-size:10px;
-${({ isComplete }) =>
-            isComplete &&
-`
-const Checkbox= styled.input`
-   width: 20px;
-   margin: 0 20px;
-   &:active + ${({ Todo })} {
-    background-color: green;
-     }
-  `;
+const TodoItem = styled.div`
+    display: flex;
+    flex-direction: column;
+    flex-grow: 2;
+    background-color: #edf5e1;
+    height: 32px;
+    width: 80%;
+    margin-left: 5px;
+    margin-right: 10px;
+    margin-top:5px;
+    border-radius: 5px;
+    `;
 
-const Container = styled.section`
-  display: flex;
-  flex-direction: column;
-  background-color: #fffbfb54;
- 
-  @media (min-width: 768px) {
-    margin-left: 80px;
-    margin-right: 80px;
-    padding-top: 25px;
-    padding-right: 30px;
-    padding-left: 30px;
-  }
-  @media (min-width: 1366px) {
-    margin-left: 120px;
-    margin-right: 120px;
-    padding-right: 50px;
-    padding-left: 50px;
-  }
-`;
+    const Deletebutton = styled.button`
+    border: none;
+    background-color: red;
+    padding: 8px 8px;
+    border-radius: 5px;
+    font-weight: 700;
+    color: white;
+    width: 65px;
+    `;
 
-const DeleteButton = styled.button`
-  background-color: #3b8cb4;
-  border: 1px solid #337b9e;
-  @media (min-width: 768px) {
-    &:hover {
-      background-color: #276a8b;
-    }
-  }
-`;
+    const Checkbox = styled.input`
+    margin-left: 25px;
+    margin-right: 5px;
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: #05386B;
+    border-radius: 5px;
+  `
+    //displaying all the possible actions
+    return (
+  
+    
+    <section>
+        {items.map((item, index) =>(
+            <Container key={item.id}>
+                  <Checkbox
+                        type="checkbox" 
+                        checked={item.isComplete} 
+                        onChange={() => onToggleTodo(item.id)}
+                />
+                 <TodoItem>{item.text}</TodoItem>
+                <Deletebutton onClick={() => onDeleteTodo(index)}>Delete</Deletebutton>
+            </Container>
+        ))}
+    </section>
 
-
-	const completeItem = (item) => {
-    if (item.isComplete) {
-      return "line-through";
-    } else {
-      return "none";
-    }
-  };
-
-	return (
-
-<Container key={item.id}>
-		<Checkbox 
-						type= "checkbox"
-						checked={item.isComplete}
-						onChange= {() => onToggleTodo(item.id)}
-
-		
-
-{items.map((item) => (
-				<Todo
-				
-				<div className="checkboxWrapper">
-				<Checkbox>
-					
-						/>
-				</div>
-						  <p style={{ textDecoration: completeItem(item) }}>{item.text}</p>
-            <DeleteButton onClick={() => onDeleteTodo(item.id)}>
-
-			
-			</Todo>
-			</Checkbox>
-				</DeleteButton>
-			))}
-
-		</Container>
-	
-	      )};
-	
-
-export default TodoList;
+    );
+  
+};
+export default ToDoList; 

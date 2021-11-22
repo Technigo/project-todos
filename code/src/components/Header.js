@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components'; 
+import styled from 'styled-components/macro'; 
 import ListSummary from './ListSummary';
 
 const HeaderWrapper = styled.header`
@@ -8,7 +8,7 @@ padding: 10px;
 display:flex;
 flex-direction: column; 
 justify-content: space-between; 
-margin-bottom:20px;
+margin-bottom:10px auto;
 
 @media (min-width: 768px) {
     flex-direction: row;
