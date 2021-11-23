@@ -1,7 +1,16 @@
-.task-amount {
+.tasks {
   color: whitesmoke;
   font-weight: bolder;
   margin: 8% 8% 0;
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  text-align: end;
+}
+
+.task-amount {
+  margin-bottom: 1px;
+}
+
+.task-amount-done {
+  margin-top: 1px;
 }
