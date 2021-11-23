@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+In this week's project I flexed my redux muscles and built an application which pulls together all the parts of redux by building a todo app. In the app, one can add task, list tasks and toggle whether a task is done or not.
+## What I learned
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
-
+How to structure a redux store
+How to write reducers and actions
+How to interact with the store using selectors or by dispatching actions
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Add your todos here: https://accomplistment.netlify.app
