@@ -59,9 +59,10 @@ const TodoItem = styled.div`
     border-radius: 5px;
   `
     //displaying all the possible actions
+   
     return (
   
-    
+    // Something wrong here?!
     <section>
         {items.map((item, index) =>(
             <Container key={item.id}>
@@ -79,4 +80,4 @@ const TodoItem = styled.div`
     );
   
 };
-export default ToDoList; 
+export default TodoList; 
