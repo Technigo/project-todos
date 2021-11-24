@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import styled from 'styled-components/macro'; 
-
+//styling
 const CompletedText = styled.p`
   font-size: 15px;
   padding: 5px;

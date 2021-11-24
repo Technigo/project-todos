@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/macro'; 
 import ListSummary from './ListSummary';
-
+//styling 
 const HeaderWrapper = styled.header`
 height: 50px;
 padding: 10px;
