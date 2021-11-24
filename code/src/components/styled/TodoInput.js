@@ -14,7 +14,7 @@ export const TodoInput = styled.input`
   margin-left: 10px;
   background-color: transparent;
 
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     width: 418px;
     height: 40px;
     font-size: 18px;

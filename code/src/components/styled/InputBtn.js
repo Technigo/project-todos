@@ -12,7 +12,7 @@ export const InputBtn = styled.button`
   align-items: center;
   width: ${(props) => props.width}px;
   height: ${(props) => props.height}px;
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     font-size: 16px;
   }
 `;

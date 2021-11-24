@@ -20,7 +20,7 @@ export const SelectionBtn = styled.button`
     color: palevioletred;
   }
 
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     margin-top: 20px;
     font-size: 16px;
     padding: 16px;

@@ -9,7 +9,7 @@ export const BackgroundSelection = styled.div`
   justify-content: flex-start;
   font-size: 16px;
 
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     max-width: 700px;
 
     font-size: 18px;

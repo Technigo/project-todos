@@ -7,7 +7,7 @@ export const Header = styled.header`
   background-color: rgba(216, 112, 147, 0.208);
   justify-content: flex-end;
   align-items: center;
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     height: 140px;
   }
 `;

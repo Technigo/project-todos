@@ -312,7 +312,7 @@ h1 {
   }
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
   .grid {
     max-width: 600px;
     width: 500px;

@@ -11,7 +11,7 @@ export const SharedFooterAndHeaderStyles = css`
   font-family: "Nunito", sans-serif;
   color: grey;
   box-sizing: border-box;
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     width: 100%;
     font-size: 18px;
   }

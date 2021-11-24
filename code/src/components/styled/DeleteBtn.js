@@ -27,7 +27,7 @@ export const DeleteBtn = styled.button`
     border: 2px solid palevioletred;
   }
 
-  @media (min-width: 769px) {
+  @media (min-width: 768px) {
     padding: 16px;
   }
 `;
