@@ -1,12 +1,18 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+This project is part of Technigo front-end remote boot camp (week14). The aim of the project was to creating a Todo-list in React, using Redux, creating reducers, and implementing all functions that are relevant for a Todo-app.
+## The process
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+- Structure a redux store
+- Write reducers and actions
+- How to interact with the store using selectors or by dispatching actions.
 
-## The problem
+## Tech
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+- HTML/CSS
+- Styled Components
+- React/JSX
+- Redux/Redux Toolkit
 
 ## View it live
 
