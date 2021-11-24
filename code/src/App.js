@@ -46,6 +46,7 @@ const Main = styled.main`
 export const App = () => {
   return (
     <Provider store={store}>
+
       <Main>
         <Header />
         <Buttons />

@@ -10,12 +10,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: antiquewhite;
-  background-color: whitesmoke;
   padding-top: 30px;
   background-color:  #ff8c1a;
   font-size: 20px;
-
 }
 
 code {
