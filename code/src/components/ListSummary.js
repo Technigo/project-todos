@@ -4,7 +4,7 @@ import styled from 'styled-components/macro';
 
 const CompletedText = styled.p`
   font-size: 15px;
-  padding: 8px;
+  padding: 5px;
   @media (min-width: 768px) {
     font-size: 12px;
   }

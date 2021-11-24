@@ -10,6 +10,7 @@ flex-direction: column;
 justify-content: space-between; 
 margin-bottom:10px auto;
 
+
 @media (min-width: 768px) {
     flex-direction: row;
     justify-content: space-between;

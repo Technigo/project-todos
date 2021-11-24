@@ -20,18 +20,18 @@ const TodoList = () => {
 	};
 
 	//Styling
-const Container = styled.div`
+const Container = styled.section`
   display: flex;
   align-items: center;
-  flex-direction: column;
-  flex-grow: 2;
+  height: 50px;
+  width: 87%;
+  margin-bottom: 8px;
+  margin-right: 20px;
   `;
+
 const TodoItem = styled.div`
     display: flex;
-    flex-direction: column;
-    flex-grow: 2;
-    background-color: #edf5e1;
-    height: 32px;
+    flex-direction: row;
     width: 80%;
     margin-left: 5px;
     margin-right: 10px;
@@ -49,20 +49,16 @@ const TodoItem = styled.div`
     width: 65px;
     `;
 
-    const Checkbox = styled.input`
-    margin-left: 25px;
-    margin-right: 5px;
-    display: inline-block;
-    width: 32px;
-    height: 32px;
-    background: #05386B;
-    border-radius: 5px;
+  const Checkbox = styled.input`
+  width: 20px;
+   margin: 0 20px;
+   background-color: red;
   `
     //displaying all the possible actions
    
     return (
   
-    // Something wrong here?!
+    
     <section>
         {items.map((item, index) =>(
             <Container key={item.id}>
