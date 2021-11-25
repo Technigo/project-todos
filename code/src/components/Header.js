@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import moment from "moment";
 import todos from "../reducers/todos";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import AddTodo from "./AddTodo";
 
 const Header = () => {
@@ -26,6 +26,9 @@ const Header = () => {
     padding-top: 20px;
     font-weight: bolder;
     font-family: "Baloo 2", cursive;
+    @media (min-width: 768px) {
+      font-size: 45px;
+    }
   `;
   const HeaderWrapper = styled.div`
     color: white;
@@ -47,9 +50,12 @@ const Header = () => {
   `;
 
   const ItemLength = styled.div`
-    font-weight: 500;
     font-family: "Baloo 2", cursive;
     color: rgb(109, 100, 100);
+    @media (min-width: 768px) {
+      font-weight: 60px;
+      margin-bottom: 20px;
+    }
   `;
   const TodoWrapper = styled.div`
     display: flex;
@@ -65,6 +71,10 @@ const Header = () => {
     justify-content: space-around;
     font-family: "Baloo 2", cursive;
     border: none;
+    @media (min-width: 768px) {
+      font-size: 25px;
+      padding: 20px;
+    }
   `;
 
   const Button2Wrapper = styled.div`

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { FaPlus } from "react-icons/fa";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 import todos from "../reducers/todos";
 
@@ -39,7 +39,18 @@ const ButtonInput = styled.button`
   border-radius: 50px;
   cursor: pointer;
   border: none;
+  @media (min-width: 768px) {
+    height: 40px;
+    width: 40px;
+  }
 `;
+
+// const Svg = styled.svg`
+//   @media (min-width: 768px) {
+//     height: 100px;
+//     width: 100px;
+//   }
+// `;
 const StyledTextInput = styled.input`
   border: none;
   margin-left: 20px;
@@ -54,6 +65,12 @@ const StyledTextInput = styled.input`
 
   &::placeholder {
     color: rgb(109, 100, 100);
+  }
+  @media (min-width: 768px) {
+    font-size: 25px;
+    padding: 20px;
+    margin-left: 90px;
+    margin-bottom: 20px;
   }
 `;
 
