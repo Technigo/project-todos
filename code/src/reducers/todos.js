@@ -1,11 +1,20 @@
 import { createSlice } from "@reduxjs/toolkit";
 import uniqid from "uniqid";
 
+// const initialState = {
+//   today: new Date(),
+//   task: [],
+//   totalTask: 1,
+// };
+
 const todos = createSlice({
   name: "todos",
   initialState: {
     items: [],
   },
+
+  //THE LIBARY THAT YOU PICK STUFF FROME
+
   reducers: {
     addTodo: (store, action) => {
       const newTodo = {
@@ -26,6 +35,7 @@ const todos = createSlice({
       });
       store.items = allDone;
     },
+
     removeComplete: (store) => {
       const decreaseComplete = store.items.filter(
         (complete) => complete.isComplete === false

@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components/macro";
+import { Link } from "react-router-dom";
 
 const TextField = styled.h2`
   justify-content: center;
@@ -17,7 +18,6 @@ const Wrap = styled.div`
   margin-left: 55px;
   background: rgba(255, 255, 255, 0.6);
   transition: 0.5s ease;
-  margin-top;300px
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -27,12 +27,27 @@ const Wrap = styled.div`
   border-radius: 50px;
   border: none;
 `;
+const StartButton = styled.button`
+  display: flex;
+  justify-content: center;
+  color: grey;
+  background: rgba(233, 181, 181, 0.6);
+  padding: 10px;
+  border-radius: 50px;
+  justify-content: space-around;
+  font-family: "Baloo 2", cursive;
+  border: none;
+`;
 const TheStart = () => {
   return (
     <>
       <Wrap>
         <TextField> Hey You!</TextField>
         <TextField>Time to be organize</TextField>
+
+        <Link to="/Todos">
+          <StartButton> ADD SOME TO DO </StartButton>
+        </Link>
       </Wrap>
       <lottie-player
         src="https://assets2.lottiefiles.com/packages/lf20_ZcIjtY.json"
