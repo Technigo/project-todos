@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components/macro'
-import moment from 'moment'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 
@@ -26,6 +25,7 @@ const ContainerDiv = styled.div `
     margin-top: auto;
   }
 `
+/* In StyledForm is the code for changing the colors according to the chosen category. Also the opacity of the cards changes here according to task-completion */
 const StyledForm = styled.form `
   width: 80vw;
   max-width: 340px;
@@ -56,13 +56,15 @@ const StyledForm = styled.form `
     margin: 0 20px 10px 20px;
   }
 `
+/* In ToDoLabel is the code for making completed tasks linethrough */
 const ToDoLabel = styled.label `
   text-decoration: ${props => props.completed ? 'line-through' : 'none'};
 `
 const StyledParagraph = styled.p `
   width: 100%;
   font-size: 14px;
-  margin-bottom: 0;
+  margin-top: 10px;
+  margin-bottom: 1px;
 `
 
 const ToDos = () => {
@@ -71,7 +73,6 @@ const ToDos = () => {
   const dispatch = useDispatch()
 
   const trashCanIcon = <FontAwesomeIcon icon={faTrashAlt} />
-  /* const editIcon = <FontAwesomeIcon icon={faPen} /> */
 
   const onToggleIsComplete = (id) => {
     dispatch(todos.actions.toggleIsComplete(id))
@@ -96,10 +97,9 @@ const ToDos = () => {
               type='checkbox' 
               onChange={() => onToggleIsComplete(task.id)}
             />
-            {/* <button >{editIcon}</button> */}
             <button onClick={() => dispatch(todos.actions.removeToDo(task.id))}>{trashCanIcon}</button>
           </div>
-          <StyledParagraph>{moment(task.newDate).format("D. MM. YYYY")}</StyledParagraph> 
+          <StyledParagraph>{task.category}</StyledParagraph> 
         </StyledForm>
       ))}
     </ContainerDiv>

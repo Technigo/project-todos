@@ -57,6 +57,7 @@ const CompletedToDos = () => {
 
   return (
     <>
+    {/* The Div only displays, if there are tasks */}
     {!noTasks &&
     <ContainerDiv>
       <span>Completed ToDos: {completedToDos.length}/{AllToDos} </span> 
