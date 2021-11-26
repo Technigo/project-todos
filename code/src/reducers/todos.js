@@ -35,7 +35,7 @@ export const todos = createSlice({
           return item
         }
       })
-      store.items = updatedItems
+      store.items = updatedItems.sort((a, b) => a.isComplete - b.isComplete)
     },
     deleteTodo: (store, action) => {
       const decreasedItems = store.items.filter(
