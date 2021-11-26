@@ -83,6 +83,7 @@ const Header = () => {
     flex-direction:row;
     transition: 0.5s ease;
     border: none;
+    
   `;
   const Button2 = styled.button`
     color: grey;
@@ -92,7 +93,11 @@ const Header = () => {
     justify-content: space-evenly;
     font-family: "Baloo 2", cursive;
     border: none;
+    @media (min-width: 768px) {
+    font-size: 25px;
+    padding: 20px;
   `;
+
   const Button3 = styled.button`
     color: grey;
     background: rgba(233, 181, 181, 0.6);
@@ -101,6 +106,10 @@ const Header = () => {
     justify-content: space-evenly;
     font-family: "Baloo 2", cursive;
     border: none;
+    @media (min-width: 768px) {
+      font-size: 25px;
+      padding: 20px;
+    }
   `;
 
   const Button4 = styled.button`
@@ -111,6 +120,10 @@ const Header = () => {
     justify-content: space-evenly;
     font-family: "Baloo 2", cursive;
     border: none;
+    @media (min-width: 768px) {
+      font-size: 25px;
+      padding: 20px;
+    }
   `;
 
   return (

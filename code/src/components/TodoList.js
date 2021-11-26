@@ -28,8 +28,8 @@ const TodoList = () => {
         </Link>
       </SmallHeaderWrapper>
       {items.map((item) => (
-        <StyledTodoItem key={item.id}>
-          <StyledTaskContainer>
+        <StyledTodoItemId key={item.id}>
+          <StyledTodoContainer>
             <label className="container">
               <input
                 type="checkbox"
@@ -39,7 +39,7 @@ const TodoList = () => {
               <span className="checkmark"></span>
             </label>
             <p className="text-wrapper">{item.text}</p>
-          </StyledTaskContainer>
+          </StyledTodoContainer>
           <ButtonBox>
             <ButtonInput
               edge="end"
@@ -49,7 +49,7 @@ const TodoList = () => {
               <FaTrashAlt></FaTrashAlt>
             </ButtonInput>
           </ButtonBox>
-        </StyledTodoItem>
+        </StyledTodoItemId>
       ))}
     </>
   );
@@ -121,7 +121,7 @@ const ButtonInput = styled.button`
   width: 50px;
 `;
 
-const StyledTodoItem = styled.div`
+const StyledTodoItemId = styled.div`
   display: flex;
   background: rgba(233, 181, 181, 0.6);
   margin: 10px 0;
@@ -138,7 +138,7 @@ const StyledTodoItem = styled.div`
     font-size: 30px;
   }
 `;
-const StyledTaskContainer = styled.span`
+const StyledTodoContainer = styled.span`
   display: flex;
   align-items: center;
 `;
