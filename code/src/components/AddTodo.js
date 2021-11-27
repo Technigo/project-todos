@@ -29,6 +29,24 @@ const TodoText = styled.input`
   padding-left: 10px;
 `;
 
+const AddTodoButton = styled.button`
+  position: relative;
+  display: inline-block;
+  height: 85%;
+  text-align: center;
+  letter-spacing: 1px;
+  text-decoration: none;
+  font-size: 16px;
+  color: white;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border-radius: 30px;
+  border: 2px solid white;
+  border-radius: 15px;
+  box-shadow: inset 0 0 0 0 black;
+`;
+
 const AddTodo = () => {
   const [input, setInput] = useState("");
 
@@ -45,7 +63,7 @@ const AddTodo = () => {
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <button onClick={onAddTodo}>Add todo</button>
+      <AddTodoButton onClick={onAddTodo}>Add todo</AddTodoButton>
     </AddTodoContainer>
   );
 };
