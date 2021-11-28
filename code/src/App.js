@@ -9,11 +9,9 @@ import TodoList from "./components/TodoList";
 import Header from "./components/Header";
 
 const MainWrapper = styled.main`
-  @media (min-width: 768px) {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-  }
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 `;
 
 const reducer = combineReducers({

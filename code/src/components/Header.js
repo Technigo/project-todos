@@ -17,6 +17,10 @@ const HeaderContainer = styled.section`
     margin: 10px;
   }
 
+  @media (min-width: 375px) and (max-width: 767px) {
+    width: 300px;
+  }
+
   @media (min-width: 768px) {
     width: 400px;
     height: 25vh;

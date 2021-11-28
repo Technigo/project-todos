@@ -10,15 +10,16 @@ const AddTodoContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin: 30px 20px;
+  width: 90%;
 
   @media (min-width: 768px) {
     width: 400px;
   }
 `;
 
-const TodoText = styled.input`
-  width: 70%;
-  height: 80%;
+const AddTodoText = styled.input`
+  width: 75%;
+  height: 75%;
   border-radius: 15px;
   outline: none;
   border: none;
@@ -32,9 +33,7 @@ const TodoText = styled.input`
 const AddTodoButton = styled.button`
   position: relative;
   display: inline-block;
-  height: 85%;
   text-align: center;
-  letter-spacing: 1px;
   text-decoration: none;
   font-size: 16px;
   color: white;
@@ -45,6 +44,18 @@ const AddTodoButton = styled.button`
   border: 2px solid white;
   border-radius: 15px;
   box-shadow: inset 0 0 0 0 black;
+  text-shadow: 1px 1px 1px black;
+  width: 18%;
+  height: 80%;
+
+  &:hover {
+    color: white;
+    box-shadow: inset 0 -100px 0 0 #00bf72;
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
 `;
 
 const AddTodo = () => {
@@ -54,16 +65,18 @@ const AddTodo = () => {
 
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input));
+
+    setInput("");
   };
 
   return (
     <AddTodoContainer>
-      <TodoText
+      <AddTodoText
         type="text"
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <AddTodoButton onClick={onAddTodo}>Add todo</AddTodoButton>
+      <AddTodoButton onClick={onAddTodo}>Add</AddTodoButton>
     </AddTodoContainer>
   );
 };
