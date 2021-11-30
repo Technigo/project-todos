@@ -21,7 +21,7 @@ const Todolist = ({ toDone, notDone, allTodos }) => {
     <TodosContainer>
       <TopInfo>
         ToDone: {toDoneTodos.length}/{listedtodos.length}
-        <DeleteButton onClick={() => dispatch(todos.actionsdelete.Todos())}>Delete All</DeleteButton>
+        <DeleteButton onClick={() => dispatch(todos.actions.clearTodos())}>Delete All</DeleteButton>
       </TopInfo>
       <NewTodo addTodo={addTodo} setAddTodo={setAddTodo} />
 

@@ -120,7 +120,8 @@ export const DeleteButton = styled.button`
   font-size: 14px;
   border-radius: 15px;
   cursor: pointer;
-  margin: 10px 0;
+  margin: 10px;
+  padding: 5px;
 `;
 
 export const TopInfo = styled.div`
