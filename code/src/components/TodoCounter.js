@@ -1,10 +1,9 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import todos from "reducers/todos";
 
 const TodoCounter = () => {
-    const todos = useSelector((state) => state.todos.list.todos)
-    const remainingTodos = todos.filter((todo) => todo.complete === false)
+    const todos = useSelector((state) => state.todos.items)
+    const remainingTodos = todos.filter((todo) => todo.isComplete === false)
 
     if (remainingTodos.length === 0) {
         return (

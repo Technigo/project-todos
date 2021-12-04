@@ -13,7 +13,7 @@ const AddTodo = () => {
     }
 
     return(
-        <div>
+        <section className="add-todo">
             <input
                 type="text"
                 value={input}
@@ -22,7 +22,7 @@ const AddTodo = () => {
             <button onClick={onAddTodo}>
                 Add todo
             </button>
-        </div>
+        </section>
     )
 }
 
