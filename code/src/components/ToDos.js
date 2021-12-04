@@ -29,6 +29,7 @@ const ContainerDiv = styled.div `
 const StyledForm = styled.form `
   width: 80vw;
   max-width: 340px;
+  min-height: 54px;
   margin-bottom: 10px;
   padding: 5px;
   font-size: 20px;
