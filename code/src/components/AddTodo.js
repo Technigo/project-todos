@@ -6,6 +6,7 @@ import todos from "../reducers/todos";
 
 import AddTag from "../components/AddTag";
 import AddDate from "../components/AddDate";
+// I have forgotten to change to AddProject, instead it is AddTag. BUT it still works, why? ALso, should have called it prio
 import AddProject from "./AddProject";
 
 const { DateTime } = require("luxon");
@@ -72,7 +73,7 @@ const AddTodo = ({ setNewAddTodo }) => {
   const dispatch = useDispatch();
 
   const onAddTodo = () => {
-    if (newTodo === "") {
+    if (!newTodo) {
       alert("Hey there, there is no todo! Fill in your todo");
     } else {
       const dateAdded = DateTime.now();

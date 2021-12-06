@@ -15,7 +15,7 @@ const todos = createSlice({
       { value: "travel", label: "Travel" },
       { value: "shopping", label: "Shopping" },
       { value: "checked", label: "Checked" },
-      { value: "unchecked", label: "unchecked" },
+      { value: "unchecked", label: "Unchecked" },
     ],
   },
   reducers: {

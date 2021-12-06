@@ -51,6 +51,7 @@ const Wrapper = styled.div`
   border-top: 1px solid black;
   border-bottom: 1px solid black;
 
+  // maybe use a switch instead here?
   &:nth-child(2n-1) {
     background-color: ${(prop) =>
       prop.heading === "Prio 1"
@@ -109,7 +110,6 @@ const ListItem = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  height: 40px;
   width: 100%;
   margin-top: 0;
 `;
@@ -195,6 +195,7 @@ const TodoListElements = ({ list, heading }) => {
         {list.map((item) => (
           <Wrapper key={item.id} heading={heading}>
             <SmallWrapper>
+              {/* universal function for printing date */}
               <SmallText>Deadline: {checkDate(item.date)}</SmallText>
               <SmallText>
                 Added:{" "}

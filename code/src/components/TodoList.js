@@ -102,6 +102,7 @@ const TodoList = () => {
       (item) => item.project === "" || !item.project
     );
 
+    // here I could just check newItems.length
     if (
       prioOne.length ||
       prioTwo.length ||

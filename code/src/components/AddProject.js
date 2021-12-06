@@ -29,7 +29,7 @@ const theme = (theme) => ({
   },
 });
 
-const AddTag = ({ setNewProject, newLabel, setNewLabel }) => {
+const AddProject = ({ setNewProject, newLabel, setNewLabel }) => {
   return (
     <div>
       <label>
@@ -50,4 +50,4 @@ const AddTag = ({ setNewProject, newLabel, setNewLabel }) => {
   );
 };
 
-export default AddTag;
+export default AddProject;
