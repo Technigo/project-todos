@@ -26,7 +26,7 @@ export const InfoBoard = () => {
           </span>{" "}
         </p>
         <p>
-          task left:{" "}
+          tasks left:{" "}
           <span className="decoration" aria-label="decoration">
             {uncompletedTasks}
           </span>{" "}
