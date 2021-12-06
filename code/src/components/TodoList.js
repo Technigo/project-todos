@@ -8,6 +8,10 @@ const TodoList = () => {
 
     const dispatch = useDispatch()
 
+    const deleteAllTodos = () => {
+        dispatch(todos.actions.deleteAllTodos())
+    }
+
     const onToggleTodo = (id) => {
         dispatch(todos.actions.toggleTodo(id))
     }
@@ -28,6 +32,7 @@ const TodoList = () => {
                 <p>Done?</p>
                 <p>Task todo</p>
                 <button
+                    onClick={deleteAllTodos}
                     className="btn-del-all btn">
                     <strong>Remove All</strong>
                 </button>

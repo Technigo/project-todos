@@ -51,11 +51,14 @@ const todos = createSlice({
             // - Mutability
             // store.items.splice(index, numberOfItemsToDelete)
             // store.items.splice(action.payload, 1)
-            
+
             // - Immutability
             const decreasedItems = store.items.filter((item) => item.id !== action.payload)
 
             store.items = decreasedItems
+        },
+        deleteAllTodos: (store) => {
+            store.items = []
         }
     },
 })
