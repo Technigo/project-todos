@@ -12,17 +12,27 @@ const AddTodo = () => {
         dispatch(todos.actions.addTodo(input))
     }
 
-    return(
+    return (
+        <>
         <section className="add-todo">
             <input
                 type="text"
                 value={input}
                 onChange={(event) => setInput(event.target.value)}
+                placeholder="Add what you need to do ..."
+                className="input-text"
             />
-            <button onClick={onAddTodo}>
-                Add todo
+            <span></span>
+            <button
+                onClick={onAddTodo}
+                className="btn-add btn"
+                disabled={input.length < 1 || input.length > 140}
+            >
+                <strong>+</strong>
             </button>
         </section>
+        <p className="char-count">{input.length} / 140 characters</p>
+        </>
     )
 }
 

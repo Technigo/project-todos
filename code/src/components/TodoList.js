@@ -23,9 +23,17 @@ const TodoList = () => {
     }
 
     return (
-        <section>
+        <section className="todo-items">
+            <div className="todo-items-header">
+                <p>Done?</p>
+                <p>Task todo</p>
+                <button
+                    className="btn-del-all btn">
+                    <strong>Remove All</strong>
+                </button>
+            </div>
             {items.map((item, index) => (
-                <div className="flex-item" key={item.id}>
+                <div className="todo-item-flex" key={item.id}>
                     <input
                         type="checkbox"
                         checked={item.isComplete}
@@ -36,10 +44,13 @@ const TodoList = () => {
                     {/* <button onClick={() => onDeleteTodoMutability(index)}>
                         Delete
                     </button> */}
-                    
+
                     {/* - Immutability */}
-                    <button onClick={() => onDeleteTodoImmutability(item.id)}>
-                        Delete
+                    <button
+                        onClick={() => onDeleteTodoImmutability(item.id)}
+                        className="btn-del btn"
+                    >
+                        <strong>Remove</strong>
                     </button>
                 </div>
             ))}
