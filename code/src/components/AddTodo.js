@@ -49,6 +49,7 @@ const AddTodo = () => { //pass anonymus function
   const [input, setInput] = useState(''); //our state property. We use setInput function in order to update the State.
 
   const dispatch = useDispatch(); //Dispatch is a function of the Redux store. We call store. Dispatch to dispatch an action.
+  //useDispatch(); gives a reference to store.dispatch
 
   const onAddTodo = () => { //function for add a to do
     dispatch(todos.actions.addTodo(input)); //here we dispatch our action

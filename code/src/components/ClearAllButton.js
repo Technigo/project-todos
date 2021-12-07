@@ -33,14 +33,14 @@ const ClearAllButton = () => {
   //Get correct item from store based on index
   const dispatch = useDispatch();
 
-  const items = useSelector((store) => store.todos.items);
-  const activeTodos = items.length;
-  const noTodosLeft = activeTodos === 0;
+  const items = useSelector((store) => store.todos.items); // a hook to acess the state
+  const numberOfActiveTodos = items.length; 
+  const noTodosLeft = numberOfActiveTodos === 0;
 
   // calling clearAllTodos with dispatch 
   const clearAllTodos = () => {
     dispatch(todos.actions.clearAllTodos());
-    localStorage.clear();
+    localStorage.clear(); //localStorage is used for presisting todos cross browser sessions
   };
 
   //When todos is shown  "Clear all todos button" is visible

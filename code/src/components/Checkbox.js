@@ -22,7 +22,6 @@ display: -webkit-box;
 	    -ms-flex: 1;
 	        flex: 1;
 
-            /* background: #eee; */
             display: inline-block;
     margin-right: 20px;
     height: 100%;
