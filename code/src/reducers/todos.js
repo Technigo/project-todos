@@ -16,7 +16,7 @@ const todos = createSlice({
         task: action.payload.input,
         isComplete: false,
         newDate: new Date(),
-        category: action.payload.category
+        category: action.payload.category || 'Other'
       })
     },
     /* this function deletes an element from the items array */
