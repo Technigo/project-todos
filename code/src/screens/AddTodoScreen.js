@@ -18,7 +18,7 @@ export const AddTodoScreen = () => {
   const [startDate, setStartDate] = useState(new Date());
   const dispatch = useDispatch();
 
-  // Resets the local state
+  // Resets the local state so that the information from adding a todo disappears when it is added.
   const reset = () => {
     setCategory("business");
     setStartDate(new Date());
@@ -98,7 +98,6 @@ export const AddTodoScreen = () => {
             <DatePicker
               selected={startDate}
               onChange={(date) => {
-                console.log(date);
                 setStartDate(date);
               }}
               minDate={new Date()}

@@ -12,7 +12,7 @@ import { grayColor } from "../style/colors";
 export const TodoList = () => {
   const scrollIntoView = useSelector((store) => store.screen.scrollIntoView);
   const todos = useSelector((store) => store.todo.todos);
-  const ButtonsContainerRef = useRef();
+  const TodoListContainerRef = useRef();
 
   // Filter the todos list after categories and if the todo is completed or not and
   // then conditionally render the lists depending on category and if completed or not.
@@ -31,14 +31,14 @@ export const TodoList = () => {
   // either scrollIntoView or not.
   useEffect(() => {
     if (scrollIntoView) {
-      ButtonsContainerRef.current.scrollIntoView();
+      TodoListContainerRef.current.scrollIntoView();
     }
   }, [scrollIntoView]);
 
   return (
     <>
       {todos.length > 0 && (
-        <TodoListContainer ref={ButtonsContainerRef}>
+        <TodoListContainer ref={TodoListContainerRef}>
           {/* Only renders the title and map the array if the length of the array is larger then 0. */}
           {activities.length > 0 && (
             <>
@@ -86,8 +86,6 @@ export const TodoList = () => {
           You dont have anything to do please add some todos!
         </TodoListContainerEmpty>
       )}
-
-      {/*ref to be able to scroll down to the buttonsContainer*/}
       <ButtonsContainer>
         <FinishAllTasksButton />
         <EmptyListButton />

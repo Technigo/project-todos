@@ -114,9 +114,7 @@ export const todo = createSlice({
 
     removeTodo: (store, action) => {
       const { id } = action.payload;
-
-      store.todos.splice(action.payload, 1);
-      const decreasedItem = store.todos.filter((item) => todos.id !== id);
+      const decreasedItem = store.todos.filter((item) => item.id !== id);
       store.todos = decreasedItem;
     },
   },
