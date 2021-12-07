@@ -60,7 +60,7 @@ const TodoList = () => {
 
   return (
     <TodoSection>
-      {items.map((item, index) => (
+      {items.map((item) => (
         <TodoItem key={item.id}>
           <Checkbox
             type="checkbox"
