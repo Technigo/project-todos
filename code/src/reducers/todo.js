@@ -8,14 +8,14 @@ const todo = createSlice({
   },
   reducers: {
     addTodo: (store, action) => {
-      const NewTodo = {
+      const newTodo = {
         id: uniqid(),
         text: action.payload,
         isComplete: false,
         date: Date.now(),
       };
 
-      store.list = [...store.list, NewTodo];
+      store.list = [...store.list, newTodo];
     },
 
     toggleStatus: (store, action) => {

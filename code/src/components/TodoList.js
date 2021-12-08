@@ -79,7 +79,7 @@ const DateTask = styled.p`
 `;
 
 const TodoList = () => {
-  const MyList = useSelector((store) => store.todo.list);
+  const myList = useSelector((store) => store.todo.list);
 
   const dispatch = useDispatch();
 
@@ -93,10 +93,10 @@ const TodoList = () => {
 
   return (
     <Section className="test">
-      {MyList.length === 0 ? (
+      {myList.length === 0 ? (
         <NoTask />
       ) : (
-        MyList.map((item) => (
+        myList.map((item) => (
           <TaskContainer key={item.id}>
             <TaskOuterContainer>
               <TaskInnerContainer>
