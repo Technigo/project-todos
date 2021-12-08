@@ -52,7 +52,6 @@ const todos = createSlice({
       store.items = updatedItems
     },
     clearTodo: (store, action) => {
-      store.items.splice(action.payload, 0)
 
       //v2 immutability approach (id in action.payload)
       const decreasedItems = store.items.filter(item => item.id !== action.payload)
