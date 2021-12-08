@@ -58,25 +58,23 @@ const AddButton = styled.button`
 const AddEmoji = styled.span``;
 
 const AddTodo = () => {
-  const [input, setInput] = useState("Add new task ...");
+  const [input, setInput] = useState("");
   const dispatch = useDispatch();
   const onAddTodo = (input) => {
     dispatch(todos.actions.addTodo(input));
 
-    setInput("Add new task ...");
+    setInput("");
   };
 
   return (
     <InputContainer>
       <StyledInput
+        placeholder="Add new task ..."
         type="text"
         value={input}
         onChange={(event) => setInput(event.target.value)}
       />
-      <AddButton
-        disabled={input === "Add new task ..."}
-        onClick={() => onAddTodo(input)}
-      >
+      <AddButton disabled={!input} onClick={() => onAddTodo(input)}>
         <AddEmoji>
           <span role="img" aria-label="add-emoji">
             ➕

@@ -64,6 +64,10 @@ const DeleteEmoji = styled.span`
   margin-right: 1px;
 `;
 
+const TexedStyled = styled.p`
+  text-decoration: ${(props) => (props.isComplete ? "line-through" : "none")};
+`;
+
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
 
@@ -77,18 +81,11 @@ const TodoList = () => {
     dispatch(todos.actions.deleteTodo(id));
   };
 
-  const completeItem = (item) => {
-    if (item.isComplete) {
-      return "line-through";
-    } else {
-      return "none";
-    }
-  };
-
   return (
     <>
-      {items.length < 1 && <StartTodo />}
-      {items.length > 0 && (
+      {!items.length ? (
+        <StartTodo />
+      ) : (
         <TodosContainer>
           {items.map((item) => (
             <TodoWrapper key={item.id}>
@@ -100,7 +97,9 @@ const TodoList = () => {
                 />
               </div>
 
-              <p style={{ textDecoration: completeItem(item) }}>{item.text}</p>
+              <TexedStyled isComplete={item.isComplete}>
+                {item.text}
+              </TexedStyled>
               <DeleteButton onClick={() => onDeleteTodo(item.id)}>
                 <DeleteEmoji>
                   <span role="img" aria-label="delete-emoji">

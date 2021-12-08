@@ -31,7 +31,7 @@ const Counter = () => {
   const counter = useSelector((store) => store.todos.items.length);
 
   const completed = useSelector((store) =>
-    store.todos.items.filter((item) => item.isComplete === true)
+    store.todos.items.filter((item) => item.isComplete)
   );
 
   return (
