@@ -71,10 +71,8 @@ const AppLogo = styled.img`
 
 const Header = () => {
   const items = useSelector((store) => {
-    console.log(store.todos.items);
     return store.todos.items;
   });
-  console.log(items);
   const completedTodos = items.filter((item) => item.isComplete);
   const incompletedTodos = items.filter((item) => !item.isComplete);
   const currentDate = moment().format("Do MMMM YYYY");

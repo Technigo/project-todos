@@ -3,6 +3,8 @@ import { useDispatch } from "react-redux";
 import todos from "../reducers/todos";
 import styled from "styled-components";
 import plusIcon from "../assets/plus-icon.svg";
+import moment from "moment";
+import uniqid from "uniqid";
 
 const StyledForm = styled.form`
   display: flex;
@@ -75,8 +77,14 @@ const AddTodo = () => {
 
   const onAddTodo = (event) => {
     event.preventDefault();
-    dispatch(todos.actions.addTodo(input));
-    return setInput("");
+    const newTodo = {
+      id: uniqid(),
+      text: input,
+      isComplete: false,
+      timePosted: moment().format("DD/MM/YYYY"),
+    };
+    dispatch(todos.actions.addTodo(newTodo));
+    setInput("");
   };
 
   return (

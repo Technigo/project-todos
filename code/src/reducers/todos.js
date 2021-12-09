@@ -1,6 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import moment from "moment";
-import uniqid from "uniqid";
 
 const todos = createSlice({
   name: "todos",
@@ -9,16 +7,7 @@ const todos = createSlice({
   },
   reducers: {
     addTodo: (store, action) => {
-      console.log(store);
-
-      const newTodo = {
-        id: uniqid(),
-        text: action.payload,
-        isComplete: false,
-        timePosted: moment().format("DD/MM/YYYY"),
-      };
-
-      store.items = [...store.items, newTodo];
+      store.items = [...store.items, action.payload];
     },
     toggleTodo: (store, action) => {
       const updatedItems = store.items.map((item) => {
