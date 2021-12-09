@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { addTodo } from "reducers/todoData";
 import { Link } from "react-scroll";
-import video from "images/background.mp4"
+import video from "images/background.mp4";
 const AddTodo = () => {
   const [addTask, setAddTask] = useState("");
   const [addTitle, setAddTitle] = useState("");
@@ -13,26 +13,20 @@ const AddTodo = () => {
     if (addTitle === "" || addTask === "") {
     } else {
       dispatch(addTodo({ title: addTitle, task: addTask }));
-      setAddTitle('')
-      setAddTask('')
+      setAddTitle("");
+      setAddTask("");
     }
   };
 
-
-
-
-
   return (
-    <article className="addTodoContainer" id="top" >
-        <video id="background-video" autoPlay loop muted>
-    <source src={video} type='video/mp4' />
-</video>
+    <article className="addTodoContainer" id="top">
+      <video id="background-video" autoPlay loop muted>
+        <source src={video} type="video/mp4" />
+      </video>
 
-<h1> Add a Todo </h1>
+      <h1> Add a Todo </h1>
       <section className="addTodoContent">
-        
         <section className="addTodo___text">
-       
           <form>
             <label>
               {" "}
@@ -71,7 +65,6 @@ const AddTodo = () => {
               Add{" "}
             </button>
           </div>
-           
         </section>
       </section>
 

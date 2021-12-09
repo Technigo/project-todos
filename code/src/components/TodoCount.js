@@ -8,7 +8,7 @@ const TodoCount = () => {
   const TodoCount = useSelector((store) => store.todo.length);
 
   const TodoCountCompleted = useSelector((store) =>
-    store.todo.filter((todos) => todos.completed === true)
+    store.todo.filter((todos) => todos.completed === true).length
   );
 
 
@@ -28,7 +28,7 @@ const TodoCount = () => {
       </Link>
       <section className="TodoCountContent" id="count">
         <p>Total todos: {TodoCount} </p>
-        <p> Completed: {TodoCountCompleted.length} </p>
+        <p> Completed: {TodoCountCompleted} </p>
       </section>
     </>
   );
