@@ -36,6 +36,7 @@ const todos = createSlice({
             store.items = updatedItems
         }, 
         deleteTodo: (store, action) => {
+            console.log(action)
             const decreasedItems = store.items.filter(item => item.id !== action.payload)
 
             store.items = decreasedItems
