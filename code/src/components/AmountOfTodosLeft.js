@@ -7,7 +7,7 @@ const AmountOfTodosLeft = () => {
     })
 
     return (
-        <h1>You have {notCompletedAmount} tasks left today</h1>
+        <h1>You have {notCompletedAmount} todos left</h1>
     )
 }
 

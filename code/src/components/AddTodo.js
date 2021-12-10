@@ -3,6 +3,12 @@ import { useDispatch } from "react-redux"
 
 import todos from '../reducers/todos'
 
+import Box from '@mui/material/Box'
+import Input from '@mui/material/Input'
+import Button from '@mui/material/Button'
+import { borderBottom } from "@mui/system"
+import { CenterFocusStrong } from "@mui/icons-material"
+
 const AddTodo = () => {
     const [input, setInput] = useState('')
 
@@ -14,13 +20,21 @@ const AddTodo = () => {
 
     return (
         <div>
-            <input
-            type="text" value={input}
-            onChange={event => setInput(event.target.value)}
-            />
-            <button onClick={onAddTodo}>
-                Add todo
-            </button>
+            <Box>
+                <Input
+                    placeholder="What's cooking?"
+                    type="text"
+                    value={input}
+                    onChange={event => setInput(event.target.value)}
+                />
+                <Button
+                    variant="contained"
+                    disabled={!input}
+                    color="primary"
+                    onClick={onAddTodo}>
+                        Add todo
+                </Button>
+            </Box>
         </div>
     )
 }

@@ -8,6 +8,20 @@ import AmountOfTodosLeft from "./components/AmountOfTodosLeft"
 import AddTodo from 'components/AddTodo'
 import TodoList from 'components/TodoList'
 
+// Styling
+import styled from "styled-components";
+import { Box } from '@mui/system'
+import GlobalStyle from './styling/globalStyles'
+import "@fontsource/roboto"
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 340px;
+  margin: 0 auto;
+  align-items: center;
+`
+
 const reducer = combineReducers({
   todos: todos.reducer
 }) 
@@ -21,7 +35,10 @@ if (persistedStateJSON) {
 }
 
 // Create store with initial state
-const store = createStore(reducer, persistedState)
+const store = createStore(
+  reducer, 
+  persistedState
+  )
 
 // Store the state in localstorage when Redux state change
 store.subscribe(() => {
@@ -31,9 +48,24 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
-      <AmountOfTodosLeft />
-      <TodoList />
-      <AddTodo />
+      <GlobalStyle />
+      <Wrapper>
+        <Box
+          sx={{
+              bgcolor: 'white',
+              boxShadow: 1,
+              borderRadius: 1,
+              p: 2,
+              m: 6,
+              minWidth: 300,
+              minHeight: 500,
+            }}
+          >
+          <AmountOfTodosLeft />
+          <TodoList />
+          <AddTodo />
+        </Box>
+      </Wrapper>
     </Provider>
   )
 }
