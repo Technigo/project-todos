@@ -6,8 +6,6 @@ import todos from '../reducers/todos'
 import Box from '@mui/material/Box'
 import Input from '@mui/material/Input'
 import Button from '@mui/material/Button'
-import { borderBottom } from "@mui/system"
-import { CenterFocusStrong } from "@mui/icons-material"
 
 const AddTodo = () => {
     const [input, setInput] = useState('')
