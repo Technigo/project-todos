@@ -19,7 +19,7 @@ const AddTodo = () => {
     return (
         <div>
             <Box
-                style={{ display: 'flex', justifyContent: 'space-around', position: 'absolute', bottom: '15px', width: '350px' }}
+                style={{ display: 'flex', justifyContent: 'space-around', position: 'absolute', bottom: '25px', width: '350px' }}
             >
                 <Input
                     placeholder="What's cooking?"

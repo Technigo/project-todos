@@ -9,6 +9,7 @@ const GlobalStyle = createGlobalStyle`
   }
   h1 {
     font-size: 24px;
+    text-align: center;
   }
   p {
     margin-block-start: 2px;
