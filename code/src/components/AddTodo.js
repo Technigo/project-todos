@@ -13,7 +13,8 @@ const AddTodo = () => {
     const dispatch = useDispatch()
 
     const onAddTodo = () => {
-        dispatch(todos.actions.addTodo(input))   
+        dispatch(todos.actions.addTodo(input))
+        setInput('')   
     }
 
     return (
