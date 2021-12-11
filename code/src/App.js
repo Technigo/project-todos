@@ -23,6 +23,7 @@ const Wrapper = styled.div`
   align-items: center;
   background-color: white;
   box-shadow: 0 0.2rem 1.2rem rgb(0 0 0 / 20%);
+  border-radius: 4px;
 
   @media (min-width: 768px) {
     max-width: 540px;
