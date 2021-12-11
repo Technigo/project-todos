@@ -17,9 +17,16 @@ import "@fontsource/roboto"
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  width: 340px;
+  width: 85vw;
   margin: 0 auto;
+  margin-top: 30px;
   align-items: center;
+  background-color: white;
+  box-shadow: 0 0.2rem 1.2rem rgb(0 0 0 / 20%);
+
+  @media (min-width: 768px) {
+    max-width: 540px;
+  }
 `
 
 const reducer = combineReducers({
@@ -52,13 +59,8 @@ export const App = () => {
       <Wrapper>
         <Box
           sx={{
-              bgcolor: 'white',
-              boxShadow: 1,
-              borderRadius: 1,
-              p: 2,
-              m: 6,
-              minWidth: 350,
-              minHeight: 500,
+              minWidth: '90%',
+              minHeight: '75vh',
               position: 'relative',
             }}
           >

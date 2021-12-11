@@ -13,16 +13,24 @@ const AddTodo = () => {
     const dispatch = useDispatch()
 
     const onAddTodo = () => {
-        dispatch(todos.actions.addTodo(input))        
+        dispatch(todos.actions.addTodo(input))   
     }
 
     return (
         <div>
             <Box
-                style={{ display: 'flex', justifyContent: 'space-around', position: 'absolute', bottom: '25px', width: '350px' }}
+                style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    position: 'absolute',
+                    bottom: '25px',
+                    width: '100%'
+                }}
             >
                 <Input
                     placeholder="What's cooking?"
+                    color='secondary'
+                    sx={{ width: '70%' }}
                     type="text"
                     value={input}
                     onChange={event => setInput(event.target.value)}
@@ -30,8 +38,9 @@ const AddTodo = () => {
                 <Button
                     variant="contained"
                     disabled={!input}
-                    color="primary"
-                    style={{ verticalAlign: 'initial', padding: '3px 16px' }}
+                    color="secondary"
+                    style={{ verticalAlign: 'initial', padding: '3px 16px', minWidth: '110px'
+                }}
                     onClick={onAddTodo}>
                         Add todo
                 </Button>

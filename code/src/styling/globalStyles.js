@@ -2,19 +2,16 @@
 import { createGlobalStyle } from 'styled-components'
  
 const GlobalStyle = createGlobalStyle`
-  body {
-    margin: 0 auto;
-    padding: 0;
-    background: rgba(25, 118, 210, 0.5);
+  .flex-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
   }
-  h1 {
-    font-size: 24px;
-    text-align: center;
-  }
-  p {
-    margin-block-start: 2px;
-    margin-block-end: 2px;
-  }
+  
+  .grid-item {
+    display: grid;
+    width: 90%;
+    grid-template-columns: 1fr;
 `
  
 export default GlobalStyle
