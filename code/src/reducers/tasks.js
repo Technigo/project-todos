@@ -23,8 +23,6 @@ const tasks = createSlice({
             id: item.id,
             text: item.text,
             isComplete: item.isComplete,
-            // ...item,
-            isComplete: !item.isComplete,
           };
           return updatedTodo;
         } else {
