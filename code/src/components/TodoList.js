@@ -32,8 +32,10 @@ const TodoList = () => {
                             fontSize: 28,
                         },
                         }}
-                        />
-                    <p>{item.text}</p>
+                    />
+                    <div className='grid-item'>
+                        <p>{item.text}</p>
+                    </div>
                     <Button
                         variant="outlined"
                         color="primary"

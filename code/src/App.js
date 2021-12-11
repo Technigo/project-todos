@@ -57,8 +57,9 @@ export const App = () => {
               borderRadius: 1,
               p: 2,
               m: 6,
-              minWidth: 300,
+              minWidth: 350,
               minHeight: 500,
+              position: 'relative',
             }}
           >
           <AmountOfTodosLeft />

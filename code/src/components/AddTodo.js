@@ -18,7 +18,9 @@ const AddTodo = () => {
 
     return (
         <div>
-            <Box>
+            <Box
+                style={{ display: 'flex', justifyContent: 'space-around', position: 'absolute', bottom: '15px', width: '350px' }}
+            >
                 <Input
                     placeholder="What's cooking?"
                     type="text"
@@ -29,6 +31,7 @@ const AddTodo = () => {
                     variant="contained"
                     disabled={!input}
                     color="primary"
+                    style={{ verticalAlign: 'initial', padding: '3px 16px' }}
                     onClick={onAddTodo}>
                         Add todo
                 </Button>

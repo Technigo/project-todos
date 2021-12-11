@@ -13,4 +13,11 @@ code {
 .flex-item {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+}
+
+.grid-item {
+  display: grid;
+  width: 170px;
+  grid-template-columns: 1fr 1fr 1fr;
 }
