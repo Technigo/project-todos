@@ -23,9 +23,6 @@ const todos = createSlice({
       const updatedItems = store.items.map((item) => {
         if (item.id === action.payload) {
           const updatedTodo = {
-            // id: item.id,
-            // text: item.text,
-            // isComplete: item.isComplete,
             ...item,
             isComplete: !item.isComplete,
           };
@@ -55,7 +52,6 @@ const todos = createSlice({
       const item = action.payload.item;
       const itemInStore = store.items.find((el) => el.id === item.id);
       itemInStore.dueDate = dueDate;
-      console.log("action", action);
     },
   },
 });

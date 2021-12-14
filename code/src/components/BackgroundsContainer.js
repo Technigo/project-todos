@@ -1,5 +1,5 @@
 import React from "react";
-import { BackgroundSelection } from "components/BackgroundSelection";
+import { BackgroundSelection } from "./styled/BackgroundSelection";
 import { useDispatch, useSelector } from "react-redux";
 import custom from "reducers/custom";
 

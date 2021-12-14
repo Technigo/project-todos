@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 
-import { AddTodo } from "./components/AddTodo";
-import { Header } from "./components/styled/Header";
-import { Footer } from "./components/styled/Footer";
+import { AddTodo } from "components/AddTodo";
+import { Header } from "components/styled/Header";
+import { Signature } from "components/Signature";
 import { InfoBoard } from "components/InfoBoard";
 import { NavBoard } from "components/NavBoard";
-
 import { AllTodoList } from "components/AllTodoList";
 import { CustomizeBtn } from "components/styled/CustomizeBtn";
 import { BackgroundContainer } from "components/BackgroundsContainer";
-import { useSelector } from "react-redux";
 
 export const Structure = () => {
   const [value, setValue] = useState("closed");
@@ -43,23 +42,8 @@ export const Structure = () => {
           <AllTodoList />
           <InfoBoard />
         </div>
+        <Signature />
       </div>
-      <Footer height={100} width={100}>
-        <div className="contacts-wrapper">
-          <p>
-            created and developed by &#8203;
-            <a className="link" href="https://mary-snopok.com" target="_blank" rel="noopener noreferrer">
-              @marysnopok
-            </a>
-          </p>
-          <p>
-            photos by &#8203;
-            <a className="link" href="https://unsplash.com/@jessbaileydesigns" target="_blank" rel="noopener noreferrer">
-              @jessbailey
-            </a>
-          </p>
-        </div>
-      </Footer>
     </main>
   );
 };
