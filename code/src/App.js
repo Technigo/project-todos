@@ -2,7 +2,6 @@ import React from "react";
 import { Provider } from "react-redux";
 import { combineReducers, createStore } from "@reduxjs/toolkit";
 
-// Importing components & reducers
 import { todos } from "./reducers/todos";
 import { Container } from "./components/Container";
 
