@@ -1,10 +1,10 @@
-import React, { useState } from "react"
-import { useDispatch } from "react-redux"
+import React, { useState } from 'react'
+import { useDispatch } from 'react-redux'
 
-import todos from "../reducers/todos"
+import todos from '../reducers/todos'
 
 const AddTodos = () => {
-  const [input, setInput] = useState("")
+  const [input, setInput] = useState('')
 
   //is needed then use of dispatch
   const dispatch = useDispatch()
@@ -14,9 +14,9 @@ const AddTodos = () => {
   }
 
   // Page does not reload on submit and clear input field
-  const handleOnSubmit = e => {
+  const handleOnSubmit = (e) => {
     e.preventDefault()
-    setInput("")
+    setInput('')
   }
 
   return (
@@ -26,9 +26,8 @@ const AddTodos = () => {
         type="text"
         className="input-text"
         value={input}
-        onChange={event => setInput(event.target.value)}
+        onChange={(event) => setInput(event.target.value)}
         placeholder="Add a to do"
-        
       />
       <button
         type="submit"

@@ -1,26 +1,25 @@
-import React from "react"
-import { useDispatch } from "react-redux"
+import React from 'react'
+import { useDispatch } from 'react-redux'
 
-import todos from "../reducers/todos"
-import Swal from "sweetalert2"
+import todos from '../reducers/todos'
+import Swal from 'sweetalert2'
 
 const DeleteAll = () => {
   const dispatch = useDispatch()
 
   const deleteAllTodos = () => {
     Swal.fire({
-      title: "Are you sure?",
+      title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      icon: "warning",
+      icon: 'warning',
       showCancelButton: true,
-      showCancelButtonColor: "var(--green)",
-      confirmButtonColor: "var(--green)",
-      cancelButtonColor: "var(--orange)",
-      confirmButtonText: "Yes, delete it!",
-    }).then(result => {
+      confirmButtonColor: 'var(--green)',
+      cancelButtonColor: 'var(--orange)',
+      confirmButtonText: 'Yes, delete it!',
+    }).then((result) => {
       if (result.isConfirmed) {
         dispatch(todos.actions.deleteAll())
-        Swal.fire("Deleted!", "Your file has been deleted.", "success")
+        Swal.fire('Deleted!', 'Your file has been deleted.', 'success')
       }
     })
   }

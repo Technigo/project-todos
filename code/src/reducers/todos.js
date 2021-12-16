@@ -1,18 +1,18 @@
-import { createSlice } from "@reduxjs/toolkit"
-import uniqid from "uniqid"
+import { createSlice } from '@reduxjs/toolkit'
+import uniqid from 'uniqid'
 
 // Takes one big object
 const todos = createSlice({
-  name: "todos",
+  name: 'todos',
   initialState: {
     // always an object on its own
     items: [
       {
         id: uniqid(),
-        text: "Put your to do here",
+        text: 'Put your to do here',
         isComplete: false,
         time: Date.now(),
-        color: ["var(--green)"],
+        color: ['var(--green)'],
       },
     ],
   },
@@ -27,41 +27,39 @@ const todos = createSlice({
         isComplete: false,
         time: Date.now(),
         color: [
-          "var(--yellow)",
-          "var(--orange)",
-          "var(--green)",
-          "var(--yellow)",
-          "var(--orange)",
-          "var(--green)",
-          "var(--yellow)",
-          "var(--orange)",
-          "var(--green)",
-          "var(--yellow)",
-          "var(--orange)",
-          "var(--green)",
-          "var(--yellow)",
-          "var(--orange)",
-          "var(--green)",
-          "var(--yellow)",
-          "var(--orange)",
-          "var(--green)",
+          'var(--yellow)',
+          'var(--orange)',
+          'var(--green)',
+          'var(--yellow)',
+          'var(--orange)',
+          'var(--green)',
+          'var(--yellow)',
+          'var(--orange)',
+          'var(--green)',
+          'var(--yellow)',
+          'var(--orange)',
+          'var(--green)',
+          'var(--yellow)',
+          'var(--orange)',
+          'var(--green)',
+          'var(--yellow)',
+          'var(--orange)',
+          'var(--green)',
         ],
       }
 
       store.items = [newTodo, ...store.items]
     },
-
-  
-
+    // action.payload = chosen id
     toggleTodo: (store, action) => {
-
-      const updatedItems = store.items.map(item => {
+      const updatedItems = store.items.map((item) => {
         if (item.id === action.payload) {
+          // use the spread operator to keep all of the object the same and modify only one parameter
           const updatedTodo = {
             ...item,
             isComplete: !item.isComplete,
           }
-      
+
           return updatedTodo
         } else {
           return item
@@ -71,17 +69,13 @@ const todos = createSlice({
       store.items = updatedItems
     },
 
+    // action.payload = chosen id
     deleteTodo: (store, action) => {
-      //v1 - Mutability approach (splice(index, noOfItmetoDelete))
-      //   store.items.splice(action.payload, 1)
-
-      // v2 Immutability (id in action.payload)
       const decreasedItems = store.items.filter(
-        item => item.id !== action.payload
+        (item) => item.id !== action.payload,
       )
       store.items = decreasedItems
     },
-
 
     deleteAll: (store, action) => {
       store.items = []
