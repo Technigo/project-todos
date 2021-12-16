@@ -1,54 +1,39 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { toggleComplete, deleteTodo } from 'reducers/todoData';
+import React from "react";
+import { useDispatch } from "react-redux";
+import { toggleComplete, deleteTodo } from "reducers/todoData";
 
-export const TodoItem = ({todos}) => {
+export const TodoItem = ({ todos }) => {
+  const dispatch = useDispatch();
 
+  const handleToggle = () => {
+    dispatch(toggleComplete({ id: todos.id, completed: !todos.completed }));
+  };
 
-const dispatch = useDispatch();
+  const HandleDelete = () => {
+    dispatch(deleteTodo({ id: todos.id }));
+  };
 
-const handleToggle = () =>{
+  return (
+    <section className="todoListContent">
+      <section className="todoListContent___text">
+        <h1> {todos.title} </h1>
+        <p> {todos.task} </p>
+      </section>
 
-dispatch(toggleComplete({id: todos.id, completed: !todos.completed}))
+      <section className="todoListContent___btnAndCheckbox">
+        <label>
+          <input
+            type="checkbox"
+            checked={todos.completed}
+            onChange={handleToggle}
+          />
+          completed
+        </label>
 
-
-}
-
-
-const HandleDelete = () => {
-
-dispatch(deleteTodo({id: todos.id }))
-
-
-}
-
-
-
-return (
-
-<section className="todoListContent"> 
-<section className="todoListContent___text"> 
-<h1> {todos.title} </h1>
-<p> {todos.task} </p>
-</section>
-
-<section className="todoListContent___btnAndCheckbox"> 
-<label>
-<input type="checkbox"
-checked={todos.completed}
-onChange={handleToggle}
-/>
-completed</label>
-
-
-<div className="todoListContent___btnContainer">
-<button onClick={HandleDelete}> Delete </button>
-</div>
-</section>
-</section>
-
-)
-
-
-
-   }
+        <div className="todoListContent___btnContainer">
+          <button onClick={HandleDelete}> Delete </button>
+        </div>
+      </section>
+    </section>
+  );
+};

@@ -1,13 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Jura:wght@300;400;500;600;700&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
-
 body {
-  
   margin: 0 auto;
   padding: 0 auto;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -16,10 +13,10 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
-  overflow-y:visible;
-  font-family: 'Jura', sans-serif;
+  overflow-y: visible;
+  font-family: "Jura", sans-serif;
   font-weight: 500;
- color: black;
+  color: black;
 }
 
 code {
@@ -35,20 +32,16 @@ main {
   display: flex;
   justify-content: center;
   align-content: center;
-  
 }
 
 .componentContainer {
   display: flex;
   flex-direction: column;
   width: 100%;
-
-
-
 }
 
-.componentCountAndList{
- height: 100%;
+.componentCountAndList {
+  height: 100%;
   width: 100vw;
   display: flexbox;
   flex-direction: column;
@@ -56,26 +49,23 @@ main {
   justify-content: space-evenly;
   overflow-y: none;
   background-color: #000000ec;
- 
-  }
+}
 
-  ::-webkit-scrollbar {
-    background-color: transparent;
-    width: 0.1px;
-  }
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: 0.1px;
+}
 
-video{
-height: 200vh;
+video {
+  height: 200vh;
   float: left;
   top: 0;
   padding: none;
-  position:fixed; /* optional depending on what you want to do in your app */
+  position: fixed; /* optional depending on what you want to do in your app */
   background-clip: border-box;
   background-size: cover;
-z-index: -1;
-  
+  z-index: -1;
 }
-
 
 /* Add todo Container */
 
@@ -85,25 +75,20 @@ z-index: -1;
   justify-content: center;
   align-items: center;
   height: 100vh;
- width: 100%;
+  width: 100%;
 }
 
-.addTodoContainer h1{
+.addTodoContainer h1 {
   font-size: 35px;
-  margin: -5px 0 20px 0 ;
+  margin: -5px 0 20px 0;
   text-shadow: #ffffff 1px 1px 2px;
 }
-
-
 
 /* Add todo content */
 .addTodoContent {
   width: 320px;
   padding: 0 20px;
-margin-bottom: 20px;
-  
-
-  
+  margin-bottom: 20px;
 }
 
 .addTodo___text {
@@ -114,7 +99,6 @@ margin-bottom: 20px;
   padding: 5px 5px 15px 5px;
   font-size: 25px;
   font-weight: bolder;
-  
 }
 
 form {
@@ -133,9 +117,9 @@ form {
   border-style: none;
   border-color: transparent;
   outline: none;
-color: white;
+  color: white;
   font-size: 17px;
-  font-family: 'Jura', sans-serif;
+  font-family: "Jura", sans-serif;
 }
 
 .task {
@@ -149,7 +133,7 @@ color: white;
   outline: none;
   resize: none;
   color: white;
-  font-family: 'Jura', sans-serif;
+  font-family: "Jura", sans-serif;
   font-size: 16px;
 }
 
@@ -164,20 +148,19 @@ color: white;
 .addTodo___btn button {
   border-radius: 5px;
   font-size: 14px;
-  font-family: 'Jura', sans-serif;
- 
+  font-family: "Jura", sans-serif;
 }
 
 .btnRed {
   background-color: rgb(0, 0, 0);
-color: black;
+  color: black;
 }
 
 .btnGreen {
   background-color: rgb(255, 255, 255);
   font-weight: 800;
   font-size: 12px;
-color: black;
+  color: black;
   box-shadow: rgba(0, 0, 0, 0.883) 1px 1px 5px 1px;
 }
 
@@ -189,24 +172,13 @@ color: black;
   box-shadow: rgba(0, 0, 0, 0.883) 1px 1px 5px 1px;
 }
 
-
-
-
 /* Button - see all todos */
 
-
 .seeAllTodo___btn button {
- visibility: hidden;
-
+  visibility: hidden;
 }
 
-
-
-
-
-
 /* Todo Counter */
-
 
 /* Counter */
 
@@ -217,34 +189,22 @@ color: black;
   margin: 50px 20px 70px 20px;
   padding: 50px 10px 0 10px;
   height: 100px;
-  
-
- 
 }
 
 .TodoCountContent p {
-  width:115px;
+  width: 115px;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
   text-align: center;
   white-space: nowrap;
   font-weight: bolder;
   box-shadow: rgb(255, 255, 255) 1px 1px 5px 5px;
-  
 }
 /* Btn counter */
 
-
-
 .Count___btn button {
- visibility: hidden;
+  visibility: hidden;
 }
-
-
-
-
-
-
 
 /* Todo-List */
 
@@ -256,7 +216,6 @@ color: black;
   grid-row: 3;
   grid-row-gap: 30px;
   place-items: center;
-
 }
 
 .todoListContent {
@@ -283,10 +242,6 @@ color: black;
   word-break: normal;
   overflow-wrap: break-word;
   align-self: center;
-
-
-
-
 }
 .todoListContent___text h1 {
   text-align: center;
@@ -307,46 +262,32 @@ color: black;
   margin-top: 5px;
 }
 
-
-
-
-
 .todoListContent___btnContainer button {
- 
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
   border: black solid 1px;
   color: rgb(0, 0, 0);
 }
 
-
-
-
-.todoListContent___btnContainer button:hover{
+.todoListContent___btnContainer button:hover {
   background-color: rgb(0, 0, 0);
   color: rgb(255, 255, 255);
-   }
-
-
+}
 
 /* Button Complete all / Delete all complete */
 
-.CompleteBtnContent{
-width: 100%;
-height: 50px;
-margin: 100px 0 10px 0px;
-padding: 0px 30px;
-display: flex;
-align-items: center;
-justify-content: space-around;
-
-
+.CompleteBtnContent {
+  width: 100%;
+  height: 50px;
+  margin: 100px 0 10px 0px;
+  padding: 0px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
-.CompleteBtnContent button{
-  
-  
-  width:115px;
+.CompleteBtnContent button {
+  width: 115px;
   background-color: rgb(255, 255, 255);
   border-radius: 5px;
   text-align: center;
@@ -354,96 +295,75 @@ justify-content: space-around;
   border: rgba(169, 169, 169, 0.644) 2px solid;
   box-shadow: rgb(255, 255, 255) 1px 1px 5px 5px;
   color: black;
-  }
-  
+}
 
-  .CompleteBtnContent button:hover{
-  
-  
-    
-    background-color: rgb(167, 166, 166);
-    box-shadow: rgb(167, 166, 166) 1px 1px 5px 5px;
-    
-  
-    }
-
-
+.CompleteBtnContent button:hover {
+  background-color: rgb(167, 166, 166);
+  box-shadow: rgb(167, 166, 166) 1px 1px 5px 5px;
+}
 
 /* Tablet */
 
 @media (min-width: 767px) {
-
   .todosListContainer {
     display: grid;
-    grid-template-columns:  1fr 1fr;
-    grid-row-gap:30px;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 30px;
     grid-column-gap: 10px;
     place-items: center;
     place-content: center;
     width: 100%;
-    
-
- }
-
+  }
 }
 
 @media (min-width: 1024px) {
-
   body {
-  
-    
-  
     overflow-y: hidden;
-   }
+  }
 
-   .componentCountAndList{
+  .componentCountAndList {
     height: 100vh;
-    
-    
-     overflow-y: scroll;
-     background-color: #000000ec;
-    
-     }
 
+    overflow-y: scroll;
+    background-color: #000000ec;
+  }
 
   .todosListContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-row-gap:30px;
+    grid-row-gap: 30px;
     grid-column-gap: 10px;
     place-items: center;
     place-content: center;
     width: 100%;
     max-height: 200vh;
-  
-  
   }
 
   .seeAllTodo___btn {
     width: 100%;
     top: 95vh;
-   
+
     position: absolute;
     height: 92px;
   }
-  
+
   .seeAllTodo___btn button:hover {
     transform: scale(90%);
   }
-  
+
   .seeAllTodoDiv___btn {
     width: 100%;
-   height: 85%;
+    height: 85%;
     background-color: #ffffff;
-  
+
     display: flex;
     justify-content: center;
     position: relative;
   }
-  
+
   .seeAllTodo___btn button {
     visibility: visible;
-    background: linear-gradient(180deg, #ffffff,#ffffff, #ffffff00);
+    background: linear-gradient(180deg, #ffffff, #ffffff, #ffffff00);
     border-radius: 60px;
     height: 80px;
     width: 80px;
@@ -453,27 +373,27 @@ justify-content: space-around;
     transition: 0.2s ease-in;
     font-weight: 600;
     color: #000000;
-    font-family: 'Jura', sans-serif;
-  
+    font-family: "Jura", sans-serif;
   }
-  
-  @keyframes bounce { 
-    0% { transform: translateY(0); }
-    100% { transform: translateY(3px); }
+
+  @keyframes bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(3px);
+    }
   }
-  
+
   .seeAllTodo___btn span {
     display: block;
     font-weight: 800;
     animation: bounce 0.9s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-    
-  font-size: 12px;
-  
-  
+
+    font-size: 12px;
   }
-  
 
   .Count___btn {
     width: 100%;
@@ -482,7 +402,7 @@ justify-content: space-around;
     position: absolute;
     height: 5px;
   }
-  
+
   .CountDiv___btn {
     width: 100%;
     margin-top: -1px;
@@ -490,10 +410,10 @@ justify-content: space-around;
     justify-content: center;
     height: 50px;
   }
-  
+
   .Count___btn button {
     visibility: visible;
-    background:#fffffe;
+    background: #fffffe;
     border-radius: 60px;
     height: 80px;
     width: 80px;
@@ -505,48 +425,34 @@ justify-content: space-around;
     font-size: 10px;
     position: relative;
     color: #000000;
-    font-family: 'Jura', sans-serif;
+    font-family: "Jura", sans-serif;
   }
-  
+
   .Count___btn button:hover {
     transform: scale(90%);
   }
-  
+
   .Count___btn span {
     display: block;
     font-weight: 800;
     animation: bounce 0.9s;
     animation-direction: alternate;
     animation-iteration-count: infinite;
-    top:5px;
+    top: 5px;
     margin-bottom: 10px;
-    
-  font-size: 12px;
+
+    font-size: 12px;
   }
-  
-
-
-
-
 }
-
 
 @media (min-width: 1500px) {
   .todosListContainer {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-row-gap:20px;
+    grid-row-gap: 20px;
     grid-column-gap: 10px;
     place-items: center;
     place-content: center;
     width: 100%;
-   
-  
   }
-
-
-
-
-
-
 }

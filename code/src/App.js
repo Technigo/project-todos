@@ -7,7 +7,6 @@ import AddTodo from "components/AddTodo";
 import TodoCount from "components/TodoCount";
 import { CompleteBtn } from "components/CompleteBtn";
 
-
 const reducer = combineReducers({
   todo: todoData
 });
@@ -15,27 +14,16 @@ const reducer = combineReducers({
 const store = configureStore({ reducer });
 
 export const App = () => (
-
- 
-
-
-
-
-
-
   <Provider store={store}>
     <main>
       <article className="componentContainer">
-     
-      <AddTodo />
-      
-      <section className="componentCountAndList">
-     
-      <TodoCount id="count" />
-      <TodoList />
-      <CompleteBtn/>
-     
-      </section>
+        <AddTodo />
+
+        <section className="componentCountAndList">
+          <TodoCount id="count" />
+          <TodoList />
+          <CompleteBtn />
+        </section>
       </article>
     </main>
   </Provider>
