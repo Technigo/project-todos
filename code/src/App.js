@@ -31,6 +31,7 @@ store.subscribe(() => {
 
 export const App = () => {
   return (
+    // provider makes the redux store availble in the rest of the app
     <Provider store={store}>
       <main className="main-container">
         <section className="first-section">

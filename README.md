@@ -10,7 +10,6 @@ Redux-toolkit
 Create new reducers
 Create new slices
 Create new actions
-Immutability
 Interaction with the store using selectors or dispatching actions
 
 ## View it live
