@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
 import uniqid from "uniqid"
-import Swal from "sweetalert2"
 
 // Takes one big object
 const todos = createSlice({
@@ -9,8 +8,8 @@ const todos = createSlice({
     // always an object on its own
     items: [
       {
-        id: "uniqid()",
-        text: "Handla",
+        id: uniqid(),
+        text: "Put your to do here",
         isComplete: false,
         time: Date.now(),
         color: ["var(--green)"],
@@ -20,7 +19,7 @@ const todos = createSlice({
 
   reducers: {
     // method to update the store, reducers will always look lite this:
-    // The will always contain store and action. U will always use store but not action (for example increase)
+    // The will always contain store and action. U will always use store but not action (for example deleteAll)
     addTodo: (store, action) => {
       const newTodo = {
         id: uniqid(),
@@ -37,22 +36,24 @@ const todos = createSlice({
           "var(--yellow)",
           "var(--orange)",
           "var(--green)",
+          "var(--yellow)",
+          "var(--orange)",
+          "var(--green)",
+          "var(--yellow)",
+          "var(--orange)",
+          "var(--green)",
+          "var(--yellow)",
+          "var(--orange)",
+          "var(--green)",
         ],
       }
 
       store.items = [newTodo, ...store.items]
     },
 
-    // addColor: (store, action)=> {
-    //   color: ["green"],
-    // },
+  
 
     toggleTodo: (store, action) => {
-      //   store.items.forEach(item => {
-      //     if (item.id === action.payload) {
-      //       item.isComplete = !item.isComplete
-      //     }
-      //   })
 
       const updatedItems = store.items.map(item => {
         if (item.id === action.payload) {
@@ -60,11 +61,7 @@ const todos = createSlice({
             ...item,
             isComplete: !item.isComplete,
           }
-          if (item.isComplete === !true) {
-            Swal.fire({
-              title: "Good job!",
-            })
-          }
+      
           return updatedTodo
         } else {
           return item
@@ -84,6 +81,8 @@ const todos = createSlice({
       )
       store.items = decreasedItems
     },
+
+
     deleteAll: (store, action) => {
       store.items = []
     },

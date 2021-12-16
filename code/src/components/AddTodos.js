@@ -5,12 +5,15 @@ import todos from "../reducers/todos"
 
 const AddTodos = () => {
   const [input, setInput] = useState("")
+
+  //is needed then use of dispatch
   const dispatch = useDispatch()
 
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input))
   }
 
+  // Page does not reload on submit and clear input field
   const handleOnSubmit = e => {
     e.preventDefault()
     setInput("")
@@ -25,7 +28,7 @@ const AddTodos = () => {
         value={input}
         onChange={event => setInput(event.target.value)}
         placeholder="Add a to do"
-        required
+        
       />
       <button
         type="submit"
