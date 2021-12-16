@@ -2,8 +2,9 @@
   --yellow: #dbe42f;
   --orange: #dd1583;
   --background: #f1f1f1;
+  --purple: #c400ff;
   --blue: #006cfe;
-  --green: #0cecdd;
+  --green: #0ceca9;
   --grey: #3f3d56;
 }
 
@@ -14,11 +15,7 @@
 body {
   margin: 20px;
   font-family: raleway;
-  background-image: linear-gradient(
-    180deg,
-    var(--background),
-    var(--background)
-  );
+  background-image: linear-gradient(270deg, var(--background), #e0e0e0);
 }
 
 code {
@@ -65,8 +62,9 @@ code {
 
 h1 {
   margin: 1px auto;
-  font-size: 36px;
+  font-size: 34px;
 }
+
 .description-intro {
   font-size: 28px;
 }
@@ -75,7 +73,8 @@ h1 {
   color: var(--orange);
   font-weight: 700;
   text-shadow: 1px 1px var(--grey);
-  font-size: 36px;
+  font-size: xx-large;
+  margin-top: 2px;
 }
 
 .date-intro {
@@ -124,7 +123,7 @@ h1 {
   padding-left: 10px;
   width: 92%;
   font-size: 20px;
-  background-color: rgba(131, 73, 73, 0.08);
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .addTodo-btn {
@@ -169,20 +168,16 @@ h1 {
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
-  background-image: linear-gradient(72deg, var(--background), var(--yellow));
   padding: 10px 10px;
   border-radius: 10px;
   width: 100%;
   margin-bottom: 5px;
-  border-left: 3px solid var(--grey);
-  /* border-bottom-left-radius: 0px;
-  border-bottom-right-radius: 0px; */
+  box-shadow: 1px 1px 1px var(--grey);
 }
 
 .item-checked {
   opacity: 0.5;
   background-image: linear-gradient(72deg, var(--background), var(--yellow));
-  border-left: 3px solid var(--grey);
 }
 
 /* checkbox under styling folder  */
@@ -288,15 +283,16 @@ a {
   .intro-container {
     width: 100%;
     flex-direction: row;
+    padding: 0 10px;
   }
 
   h1 {
-    margin: 1px auto;
-    font-size: 28px;
+    margin: 1px;
+    font-size: 24px;
   }
 
   .description-intro {
-    font-size: 16px;
+    font-size: 15px;
   }
 
   .svg-img {
@@ -307,9 +303,12 @@ a {
   /* * * * AddTodo.js MOBILE* * * */
   .input-container {
     width: 100%;
-    position: sticky;
-    bottom: 10px;
     padding: 5px;
+    margin-bottom: 0;
+  }
+
+  .input-container p {
+    margin: 0;
   }
 
   .input-text {
@@ -319,6 +318,7 @@ a {
   /* * * * TodoList.js MOBILE* * * */
   .list-container {
     width: 100%;
+    margin: 5px auto;
   }
   .list-input-text {
     width: 80%;

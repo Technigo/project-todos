@@ -14,12 +14,17 @@ const FirstText = () => {
     <section className="intro-container">
       {totalTodos === 0 ? (
         <>
-          <h1>Nothing on your to do list!</h1>
+          <h1>
+            There is <span className="mark">nothing</span> on your to do list!
+            <p className="date-intro">{moment().format('MMMM Do YYYY')}</p>
+          </h1>
         </>
       ) : (
         <>
           <header>
-            <h1>Add another to do</h1>
+            <h1>
+              Add <span className="mark">another</span> to do
+            </h1>
             <p className="description-intro">
               You completed
               <span className="mark"> {completedTodos.length}</span> out of{' '}
