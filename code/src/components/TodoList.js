@@ -7,6 +7,13 @@ import todos from "../reducers/todos";
 
 const Todos = styled.div`
 	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+`;
+
+const TodoText = styled.p`
+	display: flex;
+	align-items: flex-start;
 `;
 
 const TodoList = () => {
@@ -27,7 +34,7 @@ const TodoList = () => {
 			<AmountOfTodos />
 			{items.map((item) => (
 				<Todos className="flex-item" key={item.id}>
-					<p>{item.text}</p>
+					<TodoText>{item.text}</TodoText>
 					<input
 						type="checkbox"
 						checked={item.isComplete}
