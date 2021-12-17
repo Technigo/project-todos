@@ -1,9 +1,7 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short
-and to the point.
+A todo list where the user can add tasks, delete them and a counter keeps track
+on how many todos you have left.
 
 ## The problem
 

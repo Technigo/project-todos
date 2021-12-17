@@ -1,8 +1,13 @@
 import React from "react";
+import styled from "styled-components";
 import { useSelector, useDispatch } from "react-redux";
 import { AmountOfTodos } from "./AmoutOfTodos";
 
 import todos from "../reducers/todos";
+
+const Todos = styled.div`
+	display: flex;
+`;
 
 const TodoList = () => {
 	const items = useSelector((store) => store.todos.items);
@@ -13,21 +18,15 @@ const TodoList = () => {
 		dispatch(todos.actions.toggleTodo(id));
 	};
 
-	// v1
-	// const onDeleteTodoMutability = (index) => {
-	// 	dispatch(todos.actions.deleteTodo(index));
-	// };
-
-	// v2
-	const onDeleteTodoImmutability = (id) => {
+	const onDeleteTodo = (id) => {
 		dispatch(todos.actions.deleteTodo(id));
 	};
 
 	return (
 		<section>
 			<AmountOfTodos />
-			{items.map((item, index) => (
-				<div className="flex-item" key={item.id}>
+			{items.map((item) => (
+				<Todos className="flex-item" key={item.id}>
 					<p>{item.text}</p>
 					<input
 						type="checkbox"
@@ -35,14 +34,8 @@ const TodoList = () => {
 						onChange={() => onToggleTodo(item.id)}
 					/>
 
-					{/* // v1 */}
-					{/* <button onClick={() => onDeleteTodoMutability(index)}>Delete</button> */}
-
-					{/* // v2 */}
-					<button onClick={() => onDeleteTodoImmutability(item.id)}>
-						Delete
-					</button>
-				</div>
+					<button onClick={() => onDeleteTodo(item.id)}>Delete task</button>
+				</Todos>
 			))}
 		</section>
 	);
