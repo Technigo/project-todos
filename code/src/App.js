@@ -18,13 +18,14 @@ const TodoContainer = styled.div`
 	align-items: center;
 	justify-content: space-between;
 	flex-direction: column;
-	min-height: 85vh;
-	height: 85%;
+	min-height: 70vh;
+	height: 70%;
 	margin: 5vh;
 	background-color: #b39ddb;
 	padding-bottom: 5vh;
 	width: 80%;
 	border-radius: 5px;
+
 	@media (min-width: 768px) {
 		width: 50%;
 	}
