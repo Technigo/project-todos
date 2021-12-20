@@ -19,7 +19,7 @@ const InputButton = styled.button`
 	border-radius: 5px;
 	border: none;
 	box-shadow: 1px 1px 3px #4d2c91;
-	padding: 5px;
+	padding: 10px;
 `;
 
 const Input = styled.input`
