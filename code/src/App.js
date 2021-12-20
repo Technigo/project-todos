@@ -8,6 +8,11 @@ import todos from "./reducers/todos";
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 
+const Wrapper = styled.div`
+	display: flex;
+	justify-content: center;
+`;
+
 const TodoContainer = styled.div`
 	display: flex;
 	align-items: center;
@@ -18,7 +23,11 @@ const TodoContainer = styled.div`
 	margin: 5vh;
 	background-color: #b39ddb;
 	padding-bottom: 5vh;
-	max-width: 90vw;
+	width: 80%;
+	border-radius: 5px;
+	@media (min-width: 768px) {
+		width: 50%;
+	}
 `;
 
 const reducer = combineReducers({
@@ -30,10 +39,12 @@ const store = configureStore({ reducer });
 export const App = () => {
 	return (
 		<Provider store={store}>
-			<TodoContainer>
-				<TodoList />
-				<AddTodo />
-			</TodoContainer>
+			<Wrapper>
+				<TodoContainer>
+					<TodoList />
+					<AddTodo />
+				</TodoContainer>
+			</Wrapper>
 		</Provider>
 	);
 };

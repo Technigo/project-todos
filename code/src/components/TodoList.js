@@ -19,6 +19,18 @@ const TodoText = styled.p`
 const DeleteButton = styled.button`
 	font-family: "Saira Condensed", sans-serif;
 	background-color: #e6ceff;
+	border-radius: 5px;
+	margin: 5px;
+	border: 2px;
+	box-shadow: 1px 1px 3px #4d2c91;
+`;
+
+const Checkbox = styled.input`
+	font-family: "Saira Condensed", sans-serif;
+	background-color: #e6ceff;
+	color: #e6ceff;
+	border: none;
+	outline: none;
 `;
 
 const TodoList = () => {
@@ -39,12 +51,12 @@ const TodoList = () => {
 			<AmountOfTodos />
 			{items.map((item) => (
 				<Todos key={item.id}>
-					<TodoText>{item.text}</TodoText>
-					<input
+					<Checkbox
 						type="checkbox"
 						checked={item.isComplete}
 						onChange={() => onToggleTodo(item.id)}
 					/>
+					<TodoText>{item.text}</TodoText>
 
 					<DeleteButton onClick={() => onDeleteTodo(item.id)}>
 						Delete to-do
