@@ -37,6 +37,7 @@ const AddTodo = () => {
 
 	const onAddTodo = () => {
 		dispatch(todos.actions.addTodo(input));
+		setInput("");
 	};
 
 	return (
@@ -48,7 +49,7 @@ const AddTodo = () => {
 				required
 				onChange={(event) => setInput(event.target.value)}
 			/>
-			<InputButton onClick={onAddTodo} disabled={input.length < 1}>
+			<InputButton onClick={onAddTodo} disabled={!input}>
 				Add to-to
 			</InputButton>
 		</InputContainer>
