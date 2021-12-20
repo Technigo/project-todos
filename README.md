@@ -1,13 +1,11 @@
 # Project Todos
 
-A todo list where the user can add tasks, delete them and a counter keeps track
-on how many todos you have left.
+A todo list where the user can add tasks, delete them and a counter that keeps
+track on how many todos you have left to complete.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used
-to solve it. How did you plan? What technologies did you use? If you had more
-time, what would be next?
+I used Store in Redux for this project and styled components for styling.
 
 ## View it live
 
