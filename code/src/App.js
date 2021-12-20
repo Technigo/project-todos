@@ -11,9 +11,14 @@ import TodoList from "./components/TodoList";
 const TodoContainer = styled.div`
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	justify-content: space-between;
 	flex-direction: column;
-	height: 100vh;
+	min-height: 85vh;
+	height: 85%;
+	margin: 5vh;
+	background-color: #b39ddb;
+	padding-bottom: 5vh;
+	max-width: 90vw;
 `;
 
 const reducer = combineReducers({
@@ -26,8 +31,8 @@ export const App = () => {
 	return (
 		<Provider store={store}>
 			<TodoContainer>
-				<AddTodo />
 				<TodoList />
+				<AddTodo />
 			</TodoContainer>
 		</Provider>
 	);

@@ -7,13 +7,18 @@ import todos from "../reducers/todos";
 
 const Todos = styled.div`
 	display: flex;
-	justify-content: space-evenly;
+	justify-content: space-between;
 	align-items: center;
 `;
 
 const TodoText = styled.p`
 	display: flex;
 	align-items: flex-start;
+`;
+
+const DeleteButton = styled.button`
+	font-family: "Saira Condensed", sans-serif;
+	background-color: #e6ceff;
 `;
 
 const TodoList = () => {
@@ -33,7 +38,7 @@ const TodoList = () => {
 		<section>
 			<AmountOfTodos />
 			{items.map((item) => (
-				<Todos className="flex-item" key={item.id}>
+				<Todos key={item.id}>
 					<TodoText>{item.text}</TodoText>
 					<input
 						type="checkbox"
@@ -41,7 +46,9 @@ const TodoList = () => {
 						onChange={() => onToggleTodo(item.id)}
 					/>
 
-					<button onClick={() => onDeleteTodo(item.id)}>Delete task</button>
+					<DeleteButton onClick={() => onDeleteTodo(item.id)}>
+						Delete to-do
+					</DeleteButton>
 				</Todos>
 			))}
 		</section>

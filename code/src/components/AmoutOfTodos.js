@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 const AmountsText = styled.h1`
 	display: flex;
+	text-shadow: 1px 0.5px 2px #4d2c91;
 `;
 
 export const AmountOfTodos = () => {
@@ -11,5 +12,5 @@ export const AmountOfTodos = () => {
 		return store.todos.items.filter((todo) => !todo.isComplete).length;
 	});
 
-	return <AmountsText>You have {amount} todos</AmountsText>;
+	return <AmountsText>You have {amount} to-dos left</AmountsText>;
 };
