@@ -46,7 +46,6 @@ const AddTodo = () => {
 				placeholder="Write something..."
 				value={input}
 				required
-				size="50"
 				onChange={(event) => setInput(event.target.value)}
 			/>
 			<InputButton onClick={onAddTodo} disabled={input.length < 1}>
