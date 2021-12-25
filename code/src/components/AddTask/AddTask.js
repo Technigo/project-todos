@@ -7,8 +7,12 @@ import './AddTask.css';
 const AddTask = () => {
   const [input, setInput] = useState('');
   const dispatch = useDispatch();
-  const onAddTask = () => {
-    dispatch(tasks.actions.addTask(input));
+  const onAddTask = (e) => {
+    if (input.trim() !== '') {
+      dispatch(tasks.actions.addTask(input));
+      setInput('');
+    }
+    e.preventDefault();
   };
   const cleanInput = () => {
     setInput('');
@@ -21,20 +25,22 @@ const AddTask = () => {
       <span className='input-span'>
         <button
           className='task-button'
-          onClick={() => {
-            onAddTask();
+          onClick={(e) => {
+            onAddTask(e);
             cleanInput();
           }}
         >
           +
         </button>
-        <input
-          className='form-input'
-          type='text'
-          value={input}
-          placeholder={'Add a crazy task'}
-          onChange={(event) => setInput(event.target.value)}
-        />
+        <form onSubmit={onAddTask}>
+          <input
+            className='form-input'
+            type='text'
+            value={input}
+            placeholder={'Add a crazy task'}
+            onChange={(event) => setInput(event.target.value)}
+          />
+        </form>
       </span>
     </div>
   );
