@@ -33,18 +33,22 @@ const TodoList = () => {
                 <p>Task todo</p>
                 <button
                     onClick={deleteAllTodos}
-                    className="btn-del-all btn">
+                    className="btn-del-all btn"
+                    disabled={items < 1}>
                     <strong>Remove All</strong>
                 </button>
             </div>
             {items.map((item, index) => (
                 <div className="todo-item-flex" key={item.id}>
-                    <input
-                        type="checkbox"
-                        checked={item.isComplete}
-                        onChange={() => onToggleTodo(item.id)}
-                    />
-                    <p>{item.text}</p>
+                    <label className="checkbox-container">
+                        <p className="item-text">{item.text}</p>
+                        <input
+                            type="checkbox"
+                            checked={item.isComplete}
+                            onChange={() => onToggleTodo(item.id)}
+                        />
+                        <span className="checkmark"></span>
+                    </label>
                     {/* - Mutability */}
                     {/* <button onClick={() => onDeleteTodoMutability(index)}>
                         Delete
