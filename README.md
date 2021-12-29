@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A todo project in Redux where you can add, complete and remove your tasks.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First time using redux to this extent, which was quite a bit of fun but also challenging to say the least. It's rather intuitive, but it takes a lot of time and repetition to get familiar with its workings.
+I started off by trying to go top to bottom, one component and reducer at a time. I ended up only using Redux and moment.js, apart from the obvious HTML/CSS.
+If there was more time I would spend a lot on it improving the UX, as the UI jumps aruond a bit during add/remove; it's jarring. For an initial project I guess it's okay. :) I would also destruct the components into more of them and utilize styled components rather than standard CSS.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Enjoy: https://gracious-wright-8702bd.netlify.app/
