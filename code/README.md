@@ -1,19 +1,21 @@
-# Technigo React Starter App
+# Project Todos
 
-This app has been generated using `create-react-app`, then cleaned up a little so we have a project with just the elements we need to get started.
+I created a classical ToDo-List with React/Redux, using the Redux store to save my daily Todos. For this project I build a responsive starting page and a tasklist.
 
-Add components in the `src` folder and use them in `src/app.js` to get started.
+## The problem
 
-## Usage
+In this project I created my own slice and redux-store for the first time. I created several reducers that I use for injecting/removing data into/from the store or sorting the todos (completed are moved to the end).
+I used again Styled Components and performed conditional rendering in different parts of my code (eg colouring of different ToDos dependent on category).
 
-1. On GitHub, click the 'use this template' button to create a new repo on your account
-1. Clone the new repo to your computer
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+Learnings from this project:
+- The role redux-toolkit plays
+- How to create new slices
+- How to create new reducers
+- How to create new actions
+- What immutability means and how to work with it
+- How to structure a redux store
+- How to interact with the store using selectors or by dispatching actions
 
-Alternatively, if you don't want a new git repo on your account;
+## View it live
 
-1. Download & extract the [latest release](https://github.com/Technigo/react-starter/releases/latest) from GitHub
-1. Open the directory in the terminal: `cd /path/to/react-starter`
-1. Install required dependencies with npm: `npm install`
-1. Start the project: `npm start`
+Check out my project: https://nehrwein-todo-list.netlify.app
