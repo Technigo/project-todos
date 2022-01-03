@@ -15,11 +15,15 @@ export const TodoList = () => {
     setInput('');
   };
   const listWithTodos = useSelector((store) => store.todo.items);
+
   const onToggle = (index) => {
     dispatch(todo.actions.toggle(index));
   };
   const onDelete = (id) => {
     dispatch(todo.actions.delete(id));
+  };
+  const onDeleteAll = () => {
+    dispatch(todo.actions.deleteAll());
   };
 
   return (
@@ -40,6 +44,7 @@ export const TodoList = () => {
 
             <div>
               <label>Category:</label>
+              {/* Change the br to a nicer solution.  */}
               <br />
               <select
                 className="categoryInput"
@@ -64,6 +69,13 @@ export const TodoList = () => {
 
       <div className="container">
         <h2>You have {listWithTodos.length} Todos left for today.</h2>
+
+        <DeleteAllButton
+          disabled={listWithTodos.length < 1}
+          onClick={onDeleteAll}>
+          Delete all
+        </DeleteAllButton>
+
         {listWithTodos.map((item, index) => (
           <TheList border={item.category === 'Urgent' ? 'red' : 'green'}>
             <div className="topList">
@@ -132,6 +144,29 @@ const InputField = styled.div`
 const InputButton = styled.button`
   border: 1px solid black;
   background-color: var(--main-color);
+  color: black;
+  width: 100px;
+  padding: 8px;
+  font-size: 15px;
+  border-radius: 4px;
+
+  transition-duration: 0.4s;
+  box-shadow: none;
+  margin: 10px;
+  font-family: var(--button-font);
+
+  &:hover {
+    background-color: white;
+    color: black;
+    transition-duration: 0.4s;
+    box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24),
+      0 17px 50px 0 rgba(0, 0, 0, 0.19);
+  }
+`;
+
+const DeleteAllButton = styled.button`
+  border: 1px solid black;
+  background-color: #f25050;
   color: black;
   width: 100px;
   padding: 8px;

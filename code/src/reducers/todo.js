@@ -4,7 +4,20 @@ import uniqid from 'uniqid';
 export const todo = createSlice({
   name: 'todo',
   initialState: {
-    items: []
+    items: [
+      {
+        id: 0,
+        text: 'Continue with code along',
+        complete: false,
+        category: 'Studies'
+      },
+      {
+        id: 1,
+        text: 'Clean the office room',
+        complete: false,
+        category: 'House Chores'
+      }
+    ]
   },
   reducers: {
     addTodo: (store, action) => {
@@ -26,6 +39,9 @@ export const todo = createSlice({
     },
     delete: (store, action) => {
       store.items.splice(action.payload, 1);
+    },
+    deleteAll: (store, action) => {
+      store.items = [];
     }
   }
 });
