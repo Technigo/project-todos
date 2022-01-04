@@ -13,34 +13,34 @@ const AddTodoContainer = styled.section`
 `;
 
 const AddTodoButton = styled.button`
-background-color: #1CB5E0;
-margin: 20px 0 0 20px;
-border:none;
-border-radius: 8px 0 8px 0;
-height: 40px;
-width: 101px;
-font-weight: 700;
-font-size:18px;
-color: black;
-box-shadow: 3px 3px #000046;
-font-family: 'Gaegu', cursive;
-padding:0;
+  background-color: #1CB5E0;
+  margin: 20px 0 0 20px;
+  border:none;
+  border-radius: 8px 0 8px 0;
+  height: 40px;
+  width: 101px;
+  font-weight: 700;
+  font-size:18px;
+  color: black;
+  box-shadow: 3px 3px #000046;
+  font-family: 'Gaegu', cursive;
+  padding:0;
 `;
 
 const Input = styled.input`
-max-width: 58%;
-border: none;
-margin: 20px auto;
-padding: 7px;
-border-radius: unset;
-background-color: transparent;
-border-bottom: 2px solid #000046;
-font-size: 22px;
-font-family: 'Architects Daughter', cursive;
-::placeholder {
-  font-size: 16px;
-  color: #cccccc;
-}
+  max-width: 58%;
+  border: none;
+  margin: 20px auto;
+  padding: 7px;
+  border-radius: unset;
+  background-color: transparent;
+  border-bottom: 2px solid #000046;
+  font-size: 22px;
+  font-family: 'Architects Daughter', cursive;
+    ::placeholder {
+      font-size: 16px;
+      color: #cccccc;
+    }
 `;
 
 

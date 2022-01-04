@@ -22,27 +22,27 @@ font-family: 'Architects Daughter', cursive;
 
 //using props in text decoration to make the line thorugh depending on toggle on/off on task 
 const TodoParagraph = styled.p`
-color: ${props => props.isComplete ? "grey" : "black"};
-text-decoration: ${props => props.isComplete ? "line-through" : "none"};
-display:inline-block;
-width: 45%;
-font-size: 18px;
-line-height: 8px;
+  color: ${props => props.isComplete ? "grey" : "black"};
+  text-decoration: ${props => props.isComplete ? "line-through" : "none"};
+  display:inline-block;
+  width: 45%;
+  font-size: 18px;
+  line-height: 8px;
 `;
 
 const DeleteToDo = styled.button`
-display:inline-block;
-background-color: #000046;
-border:none;
-border-radius: 8px 0 8px 0;
-padding:0;
-height: 40px;
-width: 86px;
-font-weight: 600;
-font-size:18px;
-color: white;
-box-shadow: 3px 3px #1CB5E0;
-font-family: 'Gaegu', cursive;
+  display:inline-block;
+  background-color: #000046;
+  border:none;
+  border-radius: 8px 0 8px 0;
+  padding:0;
+  height: 40px;
+  width: 86px;
+  font-weight: 600;
+  font-size:18px;
+  color: white;
+  box-shadow: 3px 3px #1CB5E0;
+  font-family: 'Gaegu', cursive;
 `;
 
 //code

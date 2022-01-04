@@ -32,31 +32,31 @@ img {
 `;
 
 const DayHeading = styled.h2`
-display: flex;
-flex-direction: column;
-text-align: center;
-font-weight: 400;
-font-size: 25px;
-margin: 10px auto;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-weight: 400;
+  font-size: 25px;
+  margin: 10px auto;
 `;
 
 const TaskCount = styled.section`
-display: flex;
-flex-direction: column;
-text-align: center;
-font-size: 25px;
-font-weight: 400;
-margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  font-size: 25px;
+  font-weight: 400;
+  margin-bottom: 20px;
 `;
 
 
 //code
 const Header = () => {
 
-    const items = useSelector((store) => store.todos.items);
-
-    const activeTodos = items.filter(todo => !todo.isComplete).length;
-
+  const items = useSelector((store) => store.todos.items);
+  
+  const activeTodos = items.filter(todo => !todo.isComplete).length;
+    
     const getDay = () => {
         return new Date().toLocaleDateString("en-US", { weekday: "long" });
     }
@@ -65,14 +65,13 @@ const Header = () => {
         return new Date().toLocaleDateString("en-US", ({ month: 'long', day: 'numeric' }));
     }
 
-    return (
-
-        <HeaderContainer >
-            <Heading>
-                Todo <span>do do do</span><span className="hiddenMobile"> do do do</span> <img src={img} alt="sharkfin-img" />
-            </Heading>
-            <DayHeading>{getDay()} • {getDate()}</DayHeading>
-            <TaskCount>Active todos: {activeTodos}</TaskCount>
+  return (
+    <HeaderContainer >
+        <Heading>
+            Todo <span>do do do</span><span className="hiddenMobile"> do do do</span> <img src={img} alt="sharkfin-img" />
+              </Heading>
+                <DayHeading>{getDay()} • {getDate()}</DayHeading>
+                  <TaskCount>Active todos: {activeTodos}</TaskCount>
         </HeaderContainer>
     )
 }
