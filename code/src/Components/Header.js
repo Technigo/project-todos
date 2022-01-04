@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Header = () => {
   return (
     <HeaderStyle>
-      <h1></h1>
+      <h1>Todo App</h1>
     </HeaderStyle>
   );
 };

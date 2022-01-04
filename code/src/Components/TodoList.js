@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
 import moment from 'moment';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 import { todo } from 'reducers/todo';
 
@@ -29,7 +31,6 @@ export const TodoList = () => {
   return (
     <Content>
       <InputField>
-        <h1>TodoList</h1>
         <div className="input">
           <div className="inputBox">
             <label>ToDo:</label>
@@ -55,8 +56,9 @@ export const TodoList = () => {
                   Choose a Category
                 </option>
                 <option value="Urgent">Urgent</option>
-                <option value="Not urgent">Not urgent</option>
-                <option value="Fun stuff">Fun stuff</option>
+                <option value="Home">Home</option>
+                <option value="School">School</option>
+                <option value="Shopping">Shopping</option>
               </select>
             </div>
           </div>
@@ -83,9 +85,15 @@ export const TodoList = () => {
                 type="checkbox"
                 checked={item.isComplete}
                 onChange={() => onToggle(item.id)}></input>
-              <p>{item.text}</p>
+              <p
+                className={
+                  item.isComplete ? 'complete-todo' : 'incomplete-todo'
+                }>
+                {item.text}
+              </p>
+
               <DeleteButton onClick={() => onDelete(index)}>
-                Delete
+                {<FontAwesomeIcon icon={faTrash} />}
               </DeleteButton>
             </div>
             <div className="bottomList">
@@ -112,6 +120,7 @@ const Content = styled.div`
 
 const InputField = styled.div`
   background: var(--main-color);
+  margin-top: 0;
 
   @media (min-width: 992px) {
     background: none;
@@ -131,7 +140,7 @@ const InputField = styled.div`
     justify-content: space-around;
     align-items: center;
     flex-wrap: nowrap;
-    margin: 10px 0px;
+    padding: 15px;
 
     .inputBox {
     }
@@ -191,8 +200,6 @@ const TheList = styled.div`
   background-color: white;
   display: flex;
   flex-direction: column;
-
-  /* border: 1px solid black; */
   margin: 10px 0px;
 
   border: 1px solid ${(props) => props.border};
@@ -215,6 +222,14 @@ const TheList = styled.div`
     font-size: 12px;
   }
 
+  .complete-todo {
+    color: var(--main-color);
+    text-decoration: line-through;
+    margin: 3px;
+  }
+  .incomplete-todo {
+    text-decoration: none;
+  }
   @media (min-width: 992px) {
   }
 `;
@@ -222,7 +237,7 @@ const TheList = styled.div`
 const DeleteButton = styled.button`
   background-color: var(--main-color);
   color: black;
-  width: 100px;
+  width: 50px;
   padding: 8px;
   font-size: 15px;
   border-radius: 4px;
@@ -230,7 +245,6 @@ const DeleteButton = styled.button`
   transition-duration: 0.4s;
   box-shadow: none;
   margin: 10px;
-  font-family: var(--button-font);
   margin-left: auto;
 
   &:hover {
