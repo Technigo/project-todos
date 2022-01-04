@@ -9,12 +9,22 @@ export const Header = () => {
 };
 
 const HeaderStyle = styled.div`
-  background-color: white;
   border: 5px dotted black;
+  background-color: var(--main-color);
+  margin-bottom: 20px;
+
+  h1 {
+    font-size: 1em;
+    padding: 10px;
+  }
 
   @media (min-width: 992px) {
-    background-color: var(--main-color);
     padding: 30px;
     margin-bottom: 50px;
+
+    h1 {
+      font-size: 2em;
+      padding: 10px;
+    }
   }
 `;

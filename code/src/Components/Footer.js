@@ -68,18 +68,27 @@ const Icon = styled.a`
 `;
 
 const Icons = styled.div`
-  padding: 10px;
   display: flex;
   justify-content: center;
+
+  @media (min-width: 992px) {
+    padding: 10px;
+  }
 `;
 
 const StyledFooter = styled.footer`
   border: 5px dotted black;
   background-color: var(--main-color);
   text-align: center;
+  margin-top: 20px;
 
   @media (min-width: 0px) and (max-width: 991px) {
     margin-top: auto;
+
+    h1 {
+      font-size: 1em;
+      padding: 10px;
+    }
   }
   @media (min-width: 992px) {
     padding: 30px;

@@ -33,27 +33,22 @@ export const TodoList = () => {
       <InputField>
         <div className="input">
           <div className="inputBox">
-            <label>ToDo:</label>
-            <br />
             <input
               className="textInput"
               type="text"
-              placeholder="write your Todo:"
+              placeholder="Write your Todo:"
               onChange={(event) => setInput(event.target.value)}
               value={input}
             />
 
             <div>
-              <label>Category:</label>
-              {/* Change the br to a nicer solution.  */}
-              <br />
               <select
                 className="categoryInput"
                 name="category"
                 default="label"
                 onChange={(event) => setCategory(event.target.value)}>
                 <option value="value" disabled selected>
-                  Choose a Category
+                  Category
                 </option>
                 <option value="Urgent">Urgent</option>
                 <option value="Home">Home</option>
@@ -108,30 +103,43 @@ export const TodoList = () => {
 };
 
 const Content = styled.div`
+  background-color: var(--background);
+  border: 5px dotted black;
+  min-width: 334px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 10px;
   @media (min-width: 992px) {
-    background-color: var(--background);
-    border: 5px dotted black;
-    min-width: 334px;
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 50px;
+    padding 50px;
   }
 `;
 
 const InputField = styled.div`
   background: var(--main-color);
+  border: 1px solid black;
   margin-top: 0;
 
-  @media (min-width: 992px) {
+  /*  @media (min-width: 992px) {
     background: none;
-  }
+  } */
   .textInput {
     margin: 5px;
+    background-color: var(--main-color);
+    border: none;
+    border-bottom: 1px solid;
+    text-align: center;
+
+    ::placeholder {
+      color: black;
+      opacity: 1;
+    }
   }
 
   .categoryInput {
     margin: 5px;
     margin-bottom: 10px;
+    background-color: var(--main-color);
+    border: none;
   }
 
   .input {
@@ -144,9 +152,9 @@ const InputField = styled.div`
 
     .inputBox {
     }
-    @media (min-width: 992px) {
+    /* @media (min-width: 992px) {
       justify-content: space-between;
-    }
+    } */
   }
 `;
 
@@ -229,8 +237,6 @@ const TheList = styled.div`
   }
   .incomplete-todo {
     text-decoration: none;
-  }
-  @media (min-width: 992px) {
   }
 `;
 
