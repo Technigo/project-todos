@@ -5,29 +5,30 @@ import styled from "styled-components/macro"
 import todos from '../reducers/todos'
 
 const Container = styled.div `
-display: flex;
-flex-direction: row;
-width: 100%;
-height: 50px;
-cursor:pointer;
-margin-bottom: 15px;`
+    display: flex
+    flex-direction: row
+    width: 100%
+    height: 50px
+    cursor:pointer
+    margin-bottom: 15px
+`
 
 const AddTodoButton = styled.button `
-margin-left: 10px;
-border-radius: 10px;
-border: none;
-width: 20%;
-justify-content: flex-end;
-background: #379683;
+    margin-left: 10px
+    border-radius: 10px
+    border: none
+    width: 20%
+    justify-content: flex-end
+    background: #379683
 `
 
 const TodoInput = styled.input`
-border: 5px;
-width: 80%;
-font-size: 16px;
-margin-left: 30px;
-border-radius: 10px;
-background-color: #edf5e1; 
+    border: 5px
+    width: 80%
+    font-size: 16px
+    margin-left: 30px
+    border-radius: 10px
+    background-color: #edf5e1
 `
 const AddToDo = () => {
     const [input, setInput] = useState('')
