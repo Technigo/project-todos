@@ -67,7 +67,7 @@ export const TodoList = () => {
 
 	return (
 		<ListContainer>
-			{items.map((item, index) => (
+			{items.map((item) => (
 				<Wrapper key={item.id}>
 					<Checkbox
 						type="checkbox"
