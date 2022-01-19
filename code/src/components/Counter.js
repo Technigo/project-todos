@@ -9,13 +9,7 @@ export const Counter = () => {
 
 	return (
 		<>
-			{todosAmount === 0 ? (
-				<p> </p>
-			) : (
-				<p>
-					{completedAmount}/{todosAmount} done
-				</p>
-			)}
+			<p>{todosAmount === 0 ? "" : `${completedAmount}/${todosAmount} done`}</p>
 		</>
 	);
 };

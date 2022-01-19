@@ -64,7 +64,6 @@ export const AddTodo = () => {
 		setInput(""); // Clears textinput
 	};
 
-	// onAddTodo function is invoked on Enter-key
 	const onEnter = (event) => {
 		if (event.key === "Enter") {
 			onAddTodo();
@@ -77,7 +76,7 @@ export const AddTodo = () => {
 				type="text"
 				value={input}
 				placeholder="Add a new task"
-				onKeyDown={(event) => onEnter(event)}
+				onKeyDown={onEnter}
 				onChange={(event) => setInput(event.target.value)}
 			/>
 			<AddTaskButton onClick={onAddTodo}>Add</AddTaskButton>
