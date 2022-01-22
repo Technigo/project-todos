@@ -6,32 +6,32 @@ import { ListSection, ListDiv } from '../styled-components/ListStyle';
 import NoTodos from '../components/NoTodos'
 
 const FinishedTodo = () => {
-	const items = useSelector((store) => store.todos.items);
-	// filtering the array to find all tasks that is completed
-	// and then reverse so the last task will be at the top of the list  
-	const finishedTodo = items.filter((item) => item.isComplete).reverse();
-	// filtering the array to fins all tasks that is completed, and then 
-	const finishedTodoLength = items.filter((item) => item.isComplete).length;
+  const items = useSelector((store) => store.todos.items);
+  // filtering the array to find all tasks that is completed
+  // and then reverse so the last task will be at the top of the list  
+  const finishedTodo = items.filter((item) => item.isComplete).reverse();
+  // filtering the array to fins all tasks that is completed, and then 
+  const finishedTodoLength = items.filter((item) => item.isComplete).length;
 
-	if (items.length === 0) {
-		return (
-		  <NoTodos  />
-		);
-	}
+  if (items.length === 0) {
+    return (
+      <NoTodos  />
+    );
+  }
 
-	return (
-		<ListSection>
-			<h2>
-				<i className="fas fa-check-square"></i> {finishedTodoLength}/{items.length} is completed!
-			</h2>
-			{finishedTodo.map(item => (
-				// if item isComplete true it will dispaly line thought the text 
-				<ListDiv key={item.id} props={item.isComplete} >
-					{item.text}
-				</ListDiv>
-			))}
-		</ListSection>
-	)
+  return (
+    <ListSection>
+      <h2>
+        <i className="fas fa-check-square"></i> {finishedTodoLength}/{items.length} is completed!
+      </h2>
+      {finishedTodo.map(item => (
+        // if item isComplete true it will dispaly line thought the text 
+        <ListDiv key={item.id} props={item.isComplete} >
+          {item.text}
+        </ListDiv>
+      ))}
+    </ListSection>
+  )
 };
 
 export default FinishedTodo; 

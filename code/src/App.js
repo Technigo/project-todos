@@ -17,9 +17,9 @@ import ClearAllButton from './components/ClearAllButton';
 /* SETTING THE STORE HERE */
 // putting all slices/reducers in one box here
 const reducer = combineReducers({
-	// here we specife all of the slices that we need to combine
-	// in this project we have one slice
-	todos: todos.reducer
+  // here we specife all of the slices that we need to combine
+  // in this project we have one slice
+  todos: todos.reducer
 });
 
 // set up for local store 
@@ -44,15 +44,15 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
-		<main className="main-content">
-			<Header  />
-			<AddTodo  />
-			{/*<TodoSummary  />*/}
-			<TodoList  />
-			<FinishedTodo />
-			<ClearAllButton />
-		</main>
-	</Provider>
+    <main className="main-content">
+      <Header  />
+      <AddTodo  />
+      {/*<TodoSummary  />*/}
+      <TodoList  />
+      <FinishedTodo />
+      <ClearAllButton />
+    </main>
+  </Provider>
   )
 };
 

@@ -5,49 +5,49 @@ import { createSlice } from "@reduxjs/toolkit";
 // name variables as name of the file
 // createSlice take in an argumnets, an object 
 const todos = createSlice({
-	name: 'todos', 
-	// initialState is an object
-	initialState: {
-		items: []
-	},
-	// reducers is just another objects where each property is just one method
-	// to update the store 
-	// reducers provides with two arguments, one is the store, 
-	// and the second is action 
-	reducers:{
-		// arguments are the data that you pass, this data is about a todo you want to add 
-		addTodo: (store, action) => {
-			const newTodo = action.payload;
-			// payload is like a variable 	
-			// ...(three dots) is spread what was before, plus add data
-			store.items = [...store.items, newTodo]
+  name: 'todos', 
+  // initialState is an object
+  initialState: {
+    items: []
+  },
+  // reducers is just another objects where each property is just one method
+  // to update the store 
+  // reducers provides with two arguments, one is the store, 
+  // and the second is action 
+  reducers:{
+    // arguments are the data that you pass, this data is about a todo you want to add 
+    addTodo: (store, action) => {
+      const newTodo = action.payload;
+      // payload is like a variable 	
+      // ...(three dots) is spread what was before, plus add data
+      store.items = [...store.items, newTodo]
 
-		}, 
-		// to check the checkbox 
-		toggleTodo: (store, action) => {
-			const updatedItems = store.items.map((item) => {
-				if (item.id === action.payload) {
-					const updatedTodo = {
-						...item,
-						isComplete: !item.isComplete
-					}
-					return updatedTodo;
-				} else {
-					return item;
-				}
-			});
-			
-			store.items = updatedItems;
-		},
-		deleteTodo: (store, action) => {
-			const decreasedItems = store.items.filter((item) => item.id !== action.payload)
+    }, 
+    // to check the checkbox 
+    toggleTodo: (store, action) => {
+      const updatedItems = store.items.map((item) => {
+        if (item.id === action.payload) {
+          const updatedTodo = {
+            ...item,
+            isComplete: !item.isComplete
+          }
+          return updatedTodo;
+        } else {
+          return item;
+        }
+      });
+      
+      store.items = updatedItems;
+    },
+    deleteTodo: (store, action) => {
+      const decreasedItems = store.items.filter((item) => item.id !== action.payload)
 
-			store.items = decreasedItems;
-		},
-		clearAllTodos: (store) => {
-			store.items = [];
-		  },
-	},
+      store.items = decreasedItems;
+    },
+    clearAllTodos: (store) => {
+      store.items = [];
+      },
+  },
 });
 
 export default todos;
