@@ -43,12 +43,14 @@ const AddTodoBtn = styled.button`
 //component to add new tasks
 
 const AddTodo = () => {
+	//stores the input
 	const [input, setInput] = useState('');
 
 	//dispatches actions and trigger state changes to the store
 	const dispatch = useDispatch();
 
 	const onAddTodo = () => {
+		//dispatching the input to the reducer
 		dispatch(todos.actions.addTodo(input));
 		setInput(''); //Helps clear the input
 	};

@@ -12,7 +12,6 @@ const FooterContainer = styled.div`
 const Link = styled.a`
 	text-decoration: none;
 	color: #002366;
-
 	font-weight: 400;
 	&:hover {
 		text-decoration: underline;
