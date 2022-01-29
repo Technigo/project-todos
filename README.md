@@ -2,7 +2,7 @@
 
 The aim of the project was to build a TODO app using React, Redux, JSX and styled components. In this app the user should be able to add/remove tasks, list tasks and toggle when a task is completed or not.
 
-# What have I learned 💡
+## What have I learned 💡
 
 - I started out by creating a **store** called todos.js with a **initial state** and reducers. In the addtodo reducer I included an object containing four properties: id, text, isComplete, CreatedAt.
 - I then built a component called TodoList.js to show those tasks. This component accesses the store by using a **selector**, which returns an array containing all the tasks. It is then mapped over the array in order to show the different tasks on the browser.
@@ -12,6 +12,6 @@ The aim of the project was to build a TODO app using React, Redux, JSX and style
 - In the removeAllTask reducer the items are set to an empty array. Once the remove all button is clicked an action is dispatched, and the reducer is invoked returning an empty array.
 - For this project I mainly used **styled components**. I like this approach because it offers an organized and structure way to style.
 
-# View it live
+## View it live
 
 https://mt-dotse-todo.netlify.app/
