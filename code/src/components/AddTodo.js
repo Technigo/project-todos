@@ -18,12 +18,12 @@ const StyledForm = styled.form`
     font-size: 1.2rem;
     margin: 2vh 2vw;
     padding: 1rem;
-    border-radius: 0.2rem;
+    border-radius: 0.2rem, 0;
     background-color: rgb(255, 255, 255);
     border: none;
     width: 65%;
     display: inline-block;
-    border-bottom: 0.3rem solid transparent;
+    border-bottom: 0.1rem solid grey;
     transition: all 0.3s;
   }
 `;
@@ -35,8 +35,12 @@ const AddTodo = () => {
 
   const onAddTodo = (event) => {
     event.preventDefault();
-    dispatch(todos.actions.addTodo(todoInput));
-    setTodoInput('');
+    if (todoInput !== '') {
+      dispatch(todos.actions.addTodo(todoInput));
+      setTodoInput('');
+    } else {
+      alert('Write your todo before adding it :)');
+    }
   };
 
   const onTodoInputChange = (event) => {
@@ -50,10 +54,10 @@ const AddTodo = () => {
         type='text'
         value={todoInput}
         onChange={onTodoInputChange}
-        placeholder='&#x0002B; Add task'
+        placeholder='&#x0002B; Write new task here'
         required=''
       />
-      <StyledAddTodoButton type='submit' disabled={todoInput === ''}>
+      <StyledAddTodoButton type='submit'>
         <img
           className='button-text'
           aria-label='icon'

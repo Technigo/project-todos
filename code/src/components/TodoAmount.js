@@ -3,13 +3,9 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components/macro';
 
 const TaskInfo = styled.div`
-  display: flex;
   justify-content: space-around;
   height: 3vh;
-  &.no-tasks {
-    display: none;
-  }
-
+  display: ${(props) => (props.noTask ? 'none' : 'flex')};
   .task-info-text {
     font-weight: 400;
     margin: 0;
@@ -27,10 +23,8 @@ const TodoAmount = () => {
 
   return (
     <TaskInfo
-      className={
-        uncompletedListItems.length <= 0 &&
-        completedListItems.length <= 0 &&
-        'no-tasks'
+      noTask={
+        uncompletedListItems.length <= 0 && completedListItems.length <= 0
       }
     >
       <h3 className='task-info-text'>
