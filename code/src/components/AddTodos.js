@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import todos from "reducers/todos";
 import CompleteButtons from "./CompleteButtons";
+//import { set } from "@reduxjs/toolkit/node_modules/immer/dist/internal";
 
 const InputStyle = styled.div`
   width: 260px;
@@ -44,8 +45,9 @@ const AddTodo = () => {
   const [input, setInput] = useState("");
   const dispatch = useDispatch();
 
-  const onAddTodo = (event) => {
+  const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input));
+    setInput("");
   };
 
   return (
@@ -57,7 +59,7 @@ const AddTodo = () => {
           value={input}
           onChange={(event) => setInput(event.target.value)}
         />
-        <button disabled={input === ""} onClick={onAddTodo} value={""}>
+        <button disabled={!input} onClick={onAddTodo}>
           <span role="img" aria-label="pic">
             ➕
           </span>
