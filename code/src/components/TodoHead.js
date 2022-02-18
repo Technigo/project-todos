@@ -49,7 +49,7 @@ const TodoHead = () => {
 
     return (
         <TheHeader>
-            <TodoH1>Todo Today: <TodoSpan>{items.length}</TodoSpan></TodoH1>
+            <TodoH1>To Do Today: <TodoSpan>{items.length}</TodoSpan></TodoH1>
             <DateText>{moment().format('YYYY/MM/DD')}</DateText>
             <CompleteP>Incomplete: {incomplete} 
             {incomplete >! items.length && <span> &#10006; </span>}

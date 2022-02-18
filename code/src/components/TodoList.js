@@ -112,7 +112,7 @@ const TodoList = () => {
         {items.length === 0 && 
             <EmptyTodoDiv>
                 <EmptyImg src="empty.svg" alt="empty"/>
-                <EmptyText>The Todo list is empty!</EmptyText>
+                <EmptyText>The To Do list is empty!</EmptyText>
             </EmptyTodoDiv>}
         {items.map((item, index) => (
             <TodosDiv key={item.id}>

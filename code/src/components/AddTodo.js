@@ -112,7 +112,7 @@ const AddTodo = () => {
         <AddTodoBody>
             <AddTodoContainer>
                 <AddTodoInput type="text" value={input} onChange={(event) => setInput(event.target.value)} onKeyDown={(event) => checkKey(event)}/>
-                <AddTodoButton onClick={onAddTodo} disabled={input.length >= 100 || input.length <= 2}>Add Todo</AddTodoButton>
+                <AddTodoButton onClick={onAddTodo} disabled={input.length >= 100 || input.length <= 2}>Add To Do</AddTodoButton>
             </AddTodoContainer>
             <AllButtonsDiv>
                 <CheckAllButton onClick={onCheckAll}>Check All</CheckAllButton>
