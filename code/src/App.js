@@ -42,10 +42,13 @@ const reducer = combineReducers({
   todos: todos.reducer,
 });
 
-const BackgroundColor = styled.body`
+const BackgroundColor = styled.main`
   background-color: ${(props) => props.theme.background};
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 // Retrieve localstorage as initial state

@@ -12,6 +12,7 @@ const todos = createSlice({
       const newTodo = {
         id: uniqid(),
         text: action.payload,
+        date: Date.now(),
         isComplete: false,
       };
 
@@ -26,6 +27,7 @@ const todos = createSlice({
               ...item,
               isComplete: !item.isComplete,
             };
+
             return updatedTodo;
           } else {
             return item;
@@ -37,15 +39,23 @@ const todos = createSlice({
     },
 
     updateTodo: (store, action) => {
-      const updatedTodo = store.items.map((item) => {
-        if (item.id === action.payload) {
-          return {
+      console.log(action);
+
+      // store.text = action.payload.text;
+
+      const editedTodo = store.items.map((item) => {
+        if (item.text === action.payload) {
+          const editedText = {
             ...item,
-            item: action.payload.item,
+            text: action.payload,
           };
+          return editedText;
+        } else {
+          return item;
         }
-        return updatedTodo;
       });
+
+      store.items = editedTodo;
     },
 
     detleteTodo: (store, action) => {

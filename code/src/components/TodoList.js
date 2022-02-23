@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
-import moment from "moment";
+//import moment from "moment";
 
 import todos from "reducers/todos";
 
@@ -31,34 +31,6 @@ const ListItems = styled.div`
     align-items: center;
     cursor: pointer;
   }
-
-  /* input {
-    border: 1px solid ${(props) => props.theme.buttonBackground};
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    cursor: pointer;
-    padding: 10px;
-    background-color: white;
-    margin: 3px;
-  } */
-
-  /* button {
-    background-color: ${(props) => props.theme.buttonBackground};
-    color: ${(props) => props.theme.listItemBackground};
-    border: none;
-    border-radius: 50%;
-    font-weight: bold;
-    width: 25px;
-    height: 25px;
-    padding: 5px;
-  }
-
-  button:hover {
-    cursor: pointer;
-    color: white;
-    transition: 0.1s;
-  } */
 
   h3,
   p {
@@ -128,12 +100,11 @@ const Editbtn = styled.button`
 `;
 
 const TodoList = () => {
-  const [isEditOpen, setIsEditOpen] = useState(false);
-
-  //const [edit, setEdit] = useState(false);
-  //const [input, setInput] = useState("")
-  //const [update, setUpdate] = useState("");
   const items = useSelector((store) => store.todos.items);
+
+  const [isEditOpen, setIsEditOpen] = useState(false);
+  const [editedInput, setEditedInput] = useState("");
+
   const dispatch = useDispatch();
 
   const onToggleTodo = (id) => {
@@ -144,10 +115,10 @@ const TodoList = () => {
     dispatch(todos.actions.detleteTodo(id));
   };
 
-  // const onUpdateTodo = (id) => {
-  //   setEdit(!true);
-  //   dispatch(todos.actions.updateTodo(id));
-  // };
+  const onUpdateTodo = () => {
+    dispatch(todos.actions.updateTodo(editedInput));
+    setEditedInput("");
+  };
 
   return (
     <ListItems>
@@ -167,19 +138,28 @@ const TodoList = () => {
             </label>
           </section>
           <section>
-            <p>{moment().format("MMM Do YY")}</p>
+            <div>
+              {/* <p>{date}</p> */}
+              <p>{item.date}</p>
+              {/* <p>{moment().format("MMM Do YY")}</p> */}
+            </div>
             <div>
               <Editbtn onClick={() => setIsEditOpen(!isEditOpen)}>Edit</Editbtn>
               <Buttons onClick={() => onDeleteTodo(item.id)}>X</Buttons>
             </div>
           </section>
-
           {isEditOpen && (
-            <EditInput
-              defaultValue={item.text}
-              isOpen={isEditOpen}
-              setIsOpen={setIsEditOpen}
-            />
+            <>
+              <p>Edit your todo</p>
+              <EditInput
+                type="text"
+                value={editedInput}
+                placeholder={item.text}
+                onChange={(e) => setEditedInput(e.target.value)}
+              />
+              <button onClick={() => setIsEditOpen(!isEditOpen)}>close</button>
+              <button onClick={() => onUpdateTodo(editedInput)}>save</button>
+            </>
           )}
         </div>
       ))}
