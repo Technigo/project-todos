@@ -6,6 +6,8 @@ import todos from "reducers/todos";
 import CompleteButtons from "./CompleteButtons";
 //import { set } from "@reduxjs/toolkit/node_modules/immer/dist/internal";
 
+//const { DateTime } = require("luxon");
+
 const InputStyle = styled.div`
   width: 260px;
   background-color: ${(props) => props.theme.inputBackground};
@@ -42,12 +44,17 @@ const InputStyle = styled.div`
 `;
 
 const AddTodo = () => {
-  const [input, setInput] = useState("");
+  const [newTodo, setNewTodo] = useState("");
   const dispatch = useDispatch();
 
   const onAddTodo = () => {
-    dispatch(todos.actions.addTodo(input));
-    setInput("");
+    const dateAdded = Date.now();
+    let todoObject = {
+      newTodo,
+      dateAdded,
+    };
+    dispatch(todos.actions.addTodo(todoObject));
+    setNewTodo("");
   };
 
   return (
@@ -56,10 +63,10 @@ const AddTodo = () => {
       <InputStyle>
         <input
           type="text"
-          value={input}
-          onChange={(event) => setInput(event.target.value)}
+          value={newTodo}
+          onChange={(event) => setNewTodo(event.target.value)}
         />
-        <button disabled={!input} onClick={onAddTodo}>
+        <button disabled={!newTodo} onClick={onAddTodo}>
           <span role="img" aria-label="pic">
             ➕
           </span>

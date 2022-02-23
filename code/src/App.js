@@ -42,7 +42,7 @@ const reducer = combineReducers({
   todos: todos.reducer,
 });
 
-const BackgroundColor = styled.main`
+const BackgroundColor = styled.section`
   background-color: ${(props) => props.theme.background};
   width: 100vw;
   height: 100vh;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
-//import moment from "moment";
+import moment from "moment";
 
 import todos from "reducers/todos";
 
@@ -102,6 +102,8 @@ const Editbtn = styled.button`
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
 
+  console.log(items);
+
   const [isEditOpen, setIsEditOpen] = useState(false);
   const [editedInput, setEditedInput] = useState("");
 
@@ -139,9 +141,7 @@ const TodoList = () => {
           </section>
           <section>
             <div>
-              {/* <p>{date}</p> */}
-              <p>{item.date}</p>
-              {/* <p>{moment().format("MMM Do YY")}</p> */}
+              <p>Added: {moment(item.added).fromNow()}</p>
             </div>
             <div>
               <Editbtn onClick={() => setIsEditOpen(!isEditOpen)}>Edit</Editbtn>
