@@ -16,4 +16,4 @@ This project is part of Technigo front-end remote boot camp (week14). The aim of
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+view the project at: https://to-do-it.netlify.app/
