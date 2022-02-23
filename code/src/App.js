@@ -6,8 +6,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 //import components 
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
-import Header from './components/Header';
-import ListSummary from 'components/ListSummary';
+import Header from './components/Header'; 
 
 //import reducer that is required for the store
 import todos from './reducers/todos';
@@ -29,5 +28,5 @@ export const App = ()=> {
               <TodoList/>
 		</Provider>
   );
-}
+};
 

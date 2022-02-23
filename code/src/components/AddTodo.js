@@ -13,7 +13,8 @@ const AddContainer = styled.div`
     height: 50px;
     margin-bottom: 15px;
     margin-top: 50px;
-  `
+  `;
+  
   //button to add input text from to list
 	const AddButton = styled.button `
     margin-right:20px;
@@ -25,7 +26,7 @@ const AddContainer = styled.div`
     color: white;
     font-weight: 700;
     margin-left: 10px;
-`
+`; 
   
 const TaskInput = styled.input`
 border: 1px solid black;
@@ -33,10 +34,11 @@ width: 50%;
 font-size: 15px;
 margin-left: 50px;
 margin-right: 15px;   
-`
+`; 
 
   const AddTodo = () => {
   const [input, setInput] = useState ('');
+
   const dispatch = useDispatch();
 
 
