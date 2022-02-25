@@ -124,45 +124,96 @@ const TodoList = () => {
 
   return (
     <ListItems>
-      {items.map((item) => (
-        <div key={item.id}>
-          <section>
-            <label>
-              <h3 className={item.isComplete ? "done" : "not-done"}>
-                {item.text}
-              </h3>
+      {items
+        .filter((item) => !item.isComplete)
+        .map((item) => (
+          <div key={item.id}>
+            <section>
+              <label>
+                <h3 className={item.isComplete ? "done" : "not-done"}>
+                  {item.text}
+                </h3>
 
-              <CheckedInput
-                type="checkbox"
-                checked={item.isComplete}
-                onChange={() => onToggleTodo(item.id)}
-              />
-            </label>
-          </section>
-          <section>
-            <div>
-              <p>Added: {moment(item.added).fromNow()}</p>
-            </div>
-            <div>
-              <Editbtn onClick={() => setIsEditOpen(!isEditOpen)}>Edit</Editbtn>
-              <Buttons onClick={() => onDeleteTodo(item.id)}>X</Buttons>
-            </div>
-          </section>
-          {isEditOpen && (
-            <>
-              <p>Edit your todo</p>
-              <EditInput
-                type="text"
-                value={editedInput}
-                placeholder={item.text}
-                onChange={(e) => setEditedInput(e.target.value)}
-              />
-              <button onClick={() => setIsEditOpen(!isEditOpen)}>close</button>
-              <button onClick={() => onUpdateTodo(editedInput)}>save</button>
-            </>
-          )}
-        </div>
-      ))}
+                <CheckedInput
+                  type="checkbox"
+                  checked={item.isComplete}
+                  onChange={() => onToggleTodo(item.id)}
+                />
+              </label>
+            </section>
+            <section>
+              <div>
+                <p>Added: {moment(item.added).fromNow()}</p>
+              </div>
+              <div>
+                <Editbtn onClick={() => setIsEditOpen(!isEditOpen)}>
+                  Edit
+                </Editbtn>
+                <Buttons onClick={() => onDeleteTodo(item.id)}>X</Buttons>
+              </div>
+            </section>
+            {isEditOpen && (
+              <>
+                <p>Edit your todo</p>
+                <EditInput
+                  type="text"
+                  value={editedInput}
+                  placeholder={item.text}
+                  onChange={(e) => setEditedInput(e.target.value)}
+                />
+                <button onClick={() => setIsEditOpen(!isEditOpen)}>
+                  close
+                </button>
+                <button onClick={() => onUpdateTodo(editedInput)}>save</button>
+              </>
+            )}
+          </div>
+        ))}
+      {items
+        .filter((item) => item.isComplete)
+        .map((item) => (
+          <div key={item.id}>
+            <section>
+              <label>
+                <h3 className={item.isComplete ? "done" : "not-done"}>
+                  {item.text}
+                </h3>
+
+                <CheckedInput
+                  type="checkbox"
+                  checked={item.isComplete}
+                  onChange={() => onToggleTodo(item.id)}
+                />
+              </label>
+            </section>
+            <section>
+              <div>
+                <p>Added: {moment(item.added).fromNow()}</p>
+              </div>
+              <div>
+                {/* <Editbtn onClick={() => setIsEditOpen(!isEditOpen)}>
+                  Edit
+                </Editbtn> */}
+                <Buttons onClick={() => onDeleteTodo(item.id)}>X</Buttons>
+              </div>
+            </section>
+            {/* {isEditOpen && (
+              <>
+                <p>Edit your todo</p>
+                <EditInput
+                  type="text"
+                  value={editedInput}
+                  placeholder={item.text}
+                  onChange={(e) => setEditedInput(e.target.value)}
+                />
+                <button onClick={() => setIsEditOpen(!isEditOpen)}>
+                  close
+                </button>
+                <button onClick={() => onUpdateTodo(editedInput)}>save</button>
+              </>
+            )} */}
+          </div>
+        ))}
     </ListItems>
   );
 };

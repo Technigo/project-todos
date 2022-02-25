@@ -21,20 +21,18 @@ const todos = createSlice({
     },
 
     toggleTodo: (store, action) => {
-      const updatedItems = store.items
-        .map((item) => {
-          if (item.id === action.payload) {
-            const updatedTodo = {
-              ...item,
-              isComplete: !item.isComplete,
-            };
+      const updatedItems = store.items.map((item) => {
+        if (item.id === action.payload) {
+          const updatedTodo = {
+            ...item,
+            isComplete: !item.isComplete,
+          };
 
-            return updatedTodo;
-          } else {
-            return item;
-          }
-        })
-        .sort((a, b) => a.isComplete - b.isComplete);
+          return updatedTodo;
+        } else {
+          return item;
+        }
+      });
 
       store.items = updatedItems;
     },
