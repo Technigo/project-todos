@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch }  from 'react-redux'
-import styled from 'styled-components'
+
 import todos from '../reducers/todos'
+
+import styled from 'styled-components'
 
 const AddTodoWrapper = styled.div`
   display: flex;
@@ -10,7 +12,7 @@ const AddTodoWrapper = styled.div`
   width: 100%;
   margin-bottom: 6px;
   border: 1px solid mintcream;;
-  border-radius: 8px;
+  border-radius: 4px;
 `
 
 const Button = styled.button`
@@ -40,15 +42,15 @@ const AddTodo = () => {
 
   const onAddTodo = () => {
     dispatch(todos.actions.addTodo(input))
-
+  
     setInput('')
   }
   return (
     <AddTodoWrapper>
       <InputField 
-        type="text" 
+        type='text' 
         value={input}
-        placeholder="to complete" 
+        placeholder='Add task' 
         onChange={(event) => setInput(event.target.value)}
       />
       <Button onClick={onAddTodo}

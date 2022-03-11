@@ -3,9 +3,11 @@ import { useSelector, useDispatch } from 'react-redux'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import moment from 'moment'
-import styled from 'styled-components'
+
 import todos from '../reducers/todos'
 import AddTodo from './AddTodo'
+
+import styled from 'styled-components'
 
 const TodoContainer = styled.section`
   display: grid;
@@ -20,7 +22,7 @@ const TodoItem = styled.section`
   align-items: center;
   justify-content: space-between;
   border: 1px solid peachpuff;
-  border-radius: 5px 5px 5px 5px;
+  border-radius: 4px;
   margin-bottom: 6px;
   background: whitesmoke;
 `
@@ -37,7 +39,7 @@ const TodoItemLeft = styled.div`
     background-color:green;
   }
 `
-const ToDoParagraph = styled.div`
+const TodoParagraph = styled.div`
   display: block;
 
   .dateCreated {
@@ -53,9 +55,9 @@ const TrashbinButton = styled.button`
 
 const TodoList = () => {
   const items = useSelector(store => store.todos.items) //reference the slice with store.todos
-  // const noItems = useSelector((store) => store.todos.items.length === 0)
   const dispatch = useDispatch()
   const clearIcon = <FontAwesomeIcon icon={faTrashAlt} />
+
   const onToggleTodo = (id) => {
     dispatch(todos.actions.toggleTodo(id))
   }
@@ -66,7 +68,7 @@ const TodoList = () => {
 
   return (
     <TodoContainer>
-      {items.map((item, index) => (
+      {items.map((item) => (
           <TodoItem key={item.id}>
             <TodoItemLeft>
               <input 
@@ -74,13 +76,11 @@ const TodoList = () => {
                 checked={item.isComplete} 
                 onChange={() => onToggleTodo(item.id)} 
               />
-              <ToDoParagraph>
+              <TodoParagraph>
                 <p>{item.text}</p>
-                <p className="dateCreated">created {moment().format("YYYY.MM.D")}</p>
-              </ToDoParagraph>
-          
+                <p className='dateCreated'>created {moment().format('YYYY.MM.D')}</p>
+              </TodoParagraph>        
             </TodoItemLeft>
-
             <TrashbinButton onClick={() => clearTodo(item.id)}>{clearIcon}</TrashbinButton>
           </TodoItem>
       ))}

@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+
 import styled from 'styled-components'
 
 const Container = styled.div`
@@ -23,19 +24,18 @@ const CounterItem = styled.div`
 `
 
 const Header = () => {
-
   const items = useSelector((store) => store.todos.items);
   // const amountTodos = items.filter(todo => !todo.isComplete).length;
   const amountComplete = items.filter(todo => todo.isComplete).length;
   const totalItems = items.length;
   
   const currentDate = () => {
-    return new Date().toLocaleDateString("en-US", ({ year: 'numeric', month: 'long', day: 'numeric' }));
+    return new Date().toLocaleDateString('en-US', ({ year: 'numeric', month: 'long', day: 'numeric' }));
   }
 
   return (
     <Container>
-      <Heading>accompLISTment</Heading>
+      <Heading>Task Tracker</Heading>
       <Counter>
         <p>{currentDate()}</p>
         <CounterItem><br/>Completed {amountComplete}/{totalItems}</CounterItem>

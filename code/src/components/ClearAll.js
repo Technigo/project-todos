@@ -1,9 +1,11 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+
 import todos from '../reducers/todos'
+
 import styled from 'styled-components'
 
-const Button = styled.b`
+const Button = styled.button`
   width: 100%;
   display: flex;
   align-content: center;

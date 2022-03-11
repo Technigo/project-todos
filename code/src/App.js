@@ -1,6 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
+
 import todos from './reducers/todos'
 import Header from './components/Header'
 import TodoList from './components/TodoList'
@@ -8,13 +9,12 @@ import ClearAll from './components/ClearAll'
 
 import styled from 'styled-components'
 
-
 const Container = styled.section`
   width: auto;
   padding: 10px 10px 30px 10px;
   background-color: #ACD5D9;
   border: 2px solid mintcream;
-  border-radius: 15px; 
+  border-radius: 6px; 
   margin: 80px 0px;
 `
 
