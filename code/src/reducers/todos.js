@@ -11,16 +11,16 @@ const todos = createSlice({
 
   reducers: {
     addTodo: (store, action) => {
-      //data variable gets filled in with info sent by dispatch
+      //task variable gets filled with the tasks sent by the dispatch hook
       const task = action.payload;
-      // newTodo object goes inside the items asray when the user adds thing to do in the input
+      // newTodo object goes inside the items array when the user adds tasks in the input
       const newTodo = {
         id: uniqid(),
         task: task,
         isComplete: false,
         createdAt: moment().format("Do MMM YY"),
       };
-      // immutability approach; creating a new array with the existing array data comming from the addTodo component
+      // immutability approach
       store.items = [...store.items, newTodo];
     },
     toggleTodo: (store, action) => {
@@ -55,6 +55,16 @@ const todos = createSlice({
         };
       });
       store.items = itemsAllCompleted;
+    },
+
+    uncheckAllTasks: (store) => {
+      const itemsNotCompleted = store.items.map((item) => {
+        return {
+          ...item,
+          isComplete: false,
+        };
+      });
+      store.items = itemsNotCompleted;
     },
 
     removeAllTasks: (store) => {

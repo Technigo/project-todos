@@ -6,11 +6,11 @@ import styled from "styled-components";
 //a reducer required for the store
 import todos from "./reducers/todos";
 
-//import components
-import Header from "components/Header";
-import AddTodo from "components/AddTodo";
-import TodoList from "components/TodoList";
-import Buttons from "components/Buttons";
+//imported components
+import Header from "components/header/Header";
+import AddTask from "components/addtasks/AddTask";
+import TasksListContainer from "components/tasklistContainer/TasksListContainer";
+import Subheader from "./components/subheader/Subheader";
 
 // This combines all reducers; in this project, only one is being used.
 const reducer = combineReducers({
@@ -39,19 +39,18 @@ const Main = styled.main`
 
   @media (min-width: 600px) {
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 550px;
   }
 `;
 
 export const App = () => {
   return (
     <Provider store={store}>
-
       <Main>
         <Header />
-        <Buttons />
-        <AddTodo />
-        <TodoList />
+        <Subheader />
+        <AddTask />
+        <TasksListContainer />
       </Main>
     </Provider>
   );
