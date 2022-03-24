@@ -11,7 +11,7 @@ const CompletedTasks = styled.p`
 const TasksCompleted = () => {
   //useSelector
   const completedTasks = useSelector(
-    (store) => store.todos.items.filter((item) => item.isComplete).length
+    (store) => store.todos.tasks.filter((item) => item.isComplete).length
   );
 
   return <CompletedTasks>Tasks completed: {completedTasks}</CompletedTasks>;

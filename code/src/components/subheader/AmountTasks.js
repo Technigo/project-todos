@@ -10,7 +10,7 @@ const AmountTask = styled.p`
 
 const AmountTasks = () => {
   //useSelector
-  const amountTasks = useSelector((store) => store.todos.items.length);
+  const amountTasks = useSelector((store) => store.todos.tasks.length);
 
   return <AmountTask>Tasks to do: {amountTasks}</AmountTask>;
 };

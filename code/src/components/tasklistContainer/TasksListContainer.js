@@ -36,7 +36,7 @@ const DateContainer = styled.div`
 
 const TasksListContainer = () => {
   // This component is responsible for getting from the store and rendering the tasks.
-  const items = useSelector((store) => store.todos.items);
+  const tasks = useSelector((store) => store.todos.tasks);
   const dispatch = useDispatch(); // sends info to the reducers
 
   //Function declaration for ticking checkbox (onChange)
@@ -51,8 +51,8 @@ const TasksListContainer = () => {
 
   return (
     <>
-      {items.map((item) => (
-        <Section>
+      {tasks.map((item) => (
+        <Section key={item.id}>
 
           <TaskList itemId={item.id} itemTask={item.task} />
 
