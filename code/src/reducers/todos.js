@@ -11,13 +11,17 @@ const todos = createSlice({
 
   reducers: {
     addTodo: (store, action) => {
-      //task variable gets filled with the tasks sent by the dispatch hook
-      const task = action.payload;
-      // newTodo object goes inside the tasks array when the user adds tasks in the input
+      //task and category variables get filled in the input and dropdown field 
+      //with the user's choice and are sent by the dispatch hook.
+      const task = action.payload.task;
+      const category = action.payload.category;
+      const id = uniqid();
+      // newTodo object goes inside the items array when the user adds tasks in the input
       const newTodo = {
-        id: uniqid(),
+        id: id,
         task: task,
         isComplete: false,
+        category:category,
         createdAt: moment().format("Do MMM YY"),
       };
       // immutability approach

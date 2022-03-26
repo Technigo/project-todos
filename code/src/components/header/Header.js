@@ -1,10 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-import img from "../../images/snow.jpg"
+import img from "../../images/snow.jpg";
 
 //Styled component
 const HeaderTag = styled.header`
-  height: 70vh;
+  height: 50vh;
   background-image: url(${img});
   background-repeat: no-repeat, repeat;
   background-size: cover;
@@ -17,11 +17,11 @@ const HeaderContainer = styled.div`
 `;
 
 const Title = styled.h1`
-  color: rgb(0, 30, 108);
+  color: #ad5e0f;
   font-family: "Indie Flower", cursive;
   text-transform: capitalize;
   font-size: 2.7rem;
-  text-shadow:2px 2px 2px white;
+  text-shadow: 2px 2px 2px white;
 `;
 
 const Header = () => {

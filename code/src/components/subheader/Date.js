@@ -6,7 +6,7 @@ const HeadingTwoDate = styled.div`
   margin: 10px auto;
   font-weight: bolder;
   font-family: "Indie Flower", cursive;
-  color: #b35900;
+  color: #DE8025;
   font-size: 28px;
 `;
 

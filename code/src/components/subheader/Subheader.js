@@ -18,19 +18,32 @@ const Container = styled.div`
   background-color: rgba(255, 255, 255, 0.09);
   backdrop-filter: blur(12px);
   --webkit-backdrop-filter: blur(12px);
+  font-size: 0.8rem;
+  @media (min-width: 500px) {
+    font-size: 1rem;
+  }
+`;
+
+const ButtonContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @media (min-width: 500px) {
+    flex-direction: row;
+  }
 `;
 
 const Subheader = () => {
   return (
     <Container>
-      <Date />
+      <Date /> 
       <AmountTasks />
       <TasksCompleted />
-      <div>
+      <ButtonContainer>
         <CheckAllButton />
         <UncheckAllButton />
         <RemoveAllButton />
-      </div>
+      </ButtonContainer>
     </Container>
   );
 };

@@ -9,7 +9,7 @@ const Button = styled.button`
   background-color: rgb(147, 181, 198);
   color: rgb(0, 30, 108);
   &:hover {
-    color: rgb(253, 140, 4);
+    color: #b35900;
   }
 `;
 
@@ -17,7 +17,7 @@ const DeleteButton = ({ onDeleteTask, itemId }) => {
   return (
     <Button onClick={() => onDeleteTask(itemId)}>
       {" "}
-      <i class="fas fa-trash"></i>{" "}
+      <i className="fas fa-trash"></i>{" "}
     </Button>
   );
 };

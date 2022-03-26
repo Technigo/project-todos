@@ -9,7 +9,7 @@ import todos from "./reducers/todos";
 //imported components
 import Header from "components/header/Header";
 import AddTask from "components/addtasks/AddTask";
-import TasksListContainer from "components/tasklistContainer/TasksListContainer";
+import TasksListContainer from "components/tasklist/TasksList";
 import Subheader from "./components/subheader/Subheader";
 
 // This combines all reducers; in this project, only one is being used.
@@ -33,6 +33,7 @@ store.subscribe(() => {
 
 //Stlyed component
 const Main = styled.main`
+min-width:300px;
   width: 95%;
   margin: 0 auto;
   padding-bottom: 50px;
