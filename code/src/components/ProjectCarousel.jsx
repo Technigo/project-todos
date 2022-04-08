@@ -7,9 +7,11 @@ const ProjectCarousel = ({ projects }) => {
   return (
     <>
       <h3>This is the project carousel</h3>
-      {/* {projects.map((item) => (
-        <p>{item.title}</p>
-      ))} */}
+      {projects.map((item) => (
+        <React.Fragment key={item.id}>
+          <p>{item.title}</p>
+        </React.Fragment>
+      ))}
     </>
   );
 };
