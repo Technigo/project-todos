@@ -21,7 +21,7 @@ const IntroPage = () => {
                 textAlign="center"
                 color="blue.400" 
                 borderColor='blue.400' 
-                w='60%'  
+                width={['100%', '80%', '60%', '50%', ]}  
                 h='100%' 
                 border='2px' 
                 borderRadius={5}
