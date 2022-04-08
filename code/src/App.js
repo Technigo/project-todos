@@ -1,9 +1,18 @@
-import React from 'react'
+import React from 'react';
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-export const App = () => {
+import { StartPage } from './components/StartPage';
+import IntroPage from 'components/IntroPage';
+
+const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<IntroPage />} />
+        <Route path="/app" element={<StartPage />} />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;
