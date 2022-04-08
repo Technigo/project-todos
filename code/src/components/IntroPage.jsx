@@ -1,7 +1,6 @@
 import React from 'react';
 import { Button, Container, Heading, keyframes } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
-import { IoMdArrowForward } from 'react-icons/io'
 import { Link } from 'react-router-dom'
 
 import { Start } from './illustrations/Start';
@@ -22,7 +21,7 @@ const IntroPage = () => {
             </Heading>
             <Start />
             <Link to="/app">
-                <Button rightIcon={<IoMdArrowForward />} size='lg' variant='outline' colorScheme='blue'>Enter</Button>
+                <Button width='343px' size='lg' variant='outline' colorScheme='blue'>Enter</Button>
             </Link>
         </Container>
     )
