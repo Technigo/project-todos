@@ -15,13 +15,33 @@ const animation = `${animationKeyframes} 1s ease-in-out`;
 const IntroPage = () => {
     return (
         <Container centerContent maxW="container.lg">
-            <Heading as={motion.div} animation={animation} my="6" padding="4" textAlign="center"
-                     color="white" w='100%' h='100%' bgGradient='linear(blue.400, blue.500)' borderRadius={5}>
-                Welcome to EffektiApp
+            <Heading 
+                my="10" 
+                padding="4" 
+                textAlign="center"
+                color="blue.400" 
+                borderColor='blue.400' 
+                w='60%'  
+                h='100%' 
+                border='2px' 
+                borderRadius={5}
+            >EffektiApp
             </Heading>
             <Start />
             <Link to="/app">
-                <Button width='343px' size='lg' variant='outline' colorScheme='blue'>Enter</Button>
+                <Button 
+                    as={motion.div} 
+                    animation={animation} 
+                    width='200px'  
+                    color="blue.400" 
+                    borderColor='blue.400' 
+                    variant='outline'
+                    _hover={{
+                        background: "blue.400",
+                        color: "white",
+                      }}
+                >Enter
+                </Button>
             </Link>
         </Container>
     )

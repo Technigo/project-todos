@@ -1,24 +1,18 @@
 import React from 'react'
-import { Box, Image, Center, keyframes } from "@chakra-ui/react"
-
-import { motion } from 'framer-motion';
-
-
-const animationKeyframes1 = keyframes`
-  0% { transform: scale(0);} 
-  100% { transform: scale(1); }
-`;
-
-const animation1 = `${animationKeyframes1} 1s ease-in-out`;
+import { Box, Image, Center, Text } from "@chakra-ui/react"
 
 export const Start = () => {
     return (
-        <Box as={motion.div} animation={animation1} textAlign="center" my="2">Start planning your day!
+        <Box textAlign="center" my="2">
+            <Text fontSize='2xl' textAlign='center'>
+                Start planning your day!
+            </Text>
             <Center>
                 <Image             
                     width={['100%', '80%', '60%', '40%', ]}  
                     src='./assets/start.jpg' 
                     alt='Done Illustration' 
+                    my="2"
                 />
             </Center>
         </Box>
