@@ -34,7 +34,9 @@ const AddButton = styled.button`
 `
 
 const AddInput = styled.input`
-  border: none;
+  border-top: none;
+  border-left: none;
+  border-right: none;
   border-bottom: 1px solid black;
   outline: none;
 

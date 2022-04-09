@@ -50,3 +50,7 @@ code {
 /* button:active {
   transform: scale(0.99);
 } */
+
+.dragging {
+  visibility: hidden
+}
