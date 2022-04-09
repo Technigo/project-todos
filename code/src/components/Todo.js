@@ -1,8 +1,8 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
+// import { useSelector } from 'react-redux'
+import styled from "styled-components/macro"
 
-import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCircle } from '@fortawesome/free-solid-svg-icons'
 // import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircle } from '@fortawesome/free-regular-svg-icons'
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 // import { faCircleXmark } from '@fortawesome/free-regular-svg-icons'
-import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { faTrashCan } from '@fortawesome/free-regular-svg-icons'
 // import { faEraser } from '@fortawesome/free-solid-svg-icons'
 
 import { todos } from 'reducers/todos'
@@ -27,12 +27,8 @@ const DeleteButton = styled.button`
   margin-left: 0.5rem;
 `
 
-export const Todo = ({ todo }) => {
+export const Todo = ({ todo, id }) => {
   const dispatch = useDispatch()
-  console.log(todo.completed)
-
-  const allTodos = useSelector((store) => store.todos.items)
-  console.log(allTodos)
 
   // const isChecked = () => {
   //   if (todo.completed) {
@@ -60,18 +56,13 @@ export const Todo = ({ todo }) => {
     }
   }
 
-  // const onDeleteTodo = () => {
-
-  // }
-
-  const onCompletedChange = () => {
-    console.log('onCompletedChange is semi working')
-    dispatch(todos.actions.toggleTodo(todo))
+  const onDeleteTodo = () => {
+    dispatch(todos.actions.deleteTodo(todo))
   }
 
-  // const onClickChange = () => {
-  //   dispatch(todos.actions.toggleTodo(todo))
-  // }
+  const onCompletedChange = () => {
+    dispatch(todos.actions.toggleTodo(id))
+  }
 
   return (
     <div>
@@ -80,25 +71,7 @@ export const Todo = ({ todo }) => {
         {onCheck()}
         <span>{todo.text}</span>
       </label>
-      {/* <DeleteButton type="button" onClick={() => dispatch(todos.actions.deleteTodo(todo))}><FontAwesomeIcon icon={faCircleXmark} /></DeleteButton> */}
-      <DeleteButton type="button" onClick={() => dispatch(todos.actions.deleteTodo(todo))}><FontAwesomeIcon icon={faTrashCan} /></DeleteButton>
-      {/* <DeleteButton type="button" onClick={() => dispatch(todos.actions.deleteTodo(todo))}><FontAwesomeIcon icon={faEraser} /></DeleteButton> */}
+      <DeleteButton type="button" onClick={onDeleteTodo}><FontAwesomeIcon icon={faTrashCan} /></DeleteButton>
     </div>
   )
 }
-
-// const CustomCheckboxLabel = styled.label`
-
-// & input[type="checkbox"] {
-//   display: none;
-// }
-
-// & input[type="checkbox"]:checked {
-//   display: inline-block;
-// }
-
-// `
-
-// const UncheckedIcon = styled.span`
-// color: blue;
-// `

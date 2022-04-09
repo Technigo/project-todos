@@ -19,29 +19,41 @@ export const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         completed: false
+        // add timestamp here
+        // maybe categories as well?
       }
 
       state.items = [...state.items, newTodo]
     },
 
+    // need to understand more this part...
     deleteTodo: (state, action) => {
-      state.items = state.items.filter((item) => item.id !== action.payload.id)
+      state.items = state.items.filter((todo) => todo.id !== action.payload.id)
     },
 
-    // no clue for now how to do it...
+    // need to understand more this part...
     toggleTodo: (state, action) => {
-      if (state.items.find((item) => item.completed)) {
-        console.log('this item is completed')
-      } else if (state.items.find((item) => !item.completed)) {
-        console.log('this item is NOT completed')
-      }
+      const updatedTodos = state.items.map((todo) => {
+        if (todo.id === action.payload) {
+          return {
+            ...todo,
+            completed: !todo.completed
+          }
+        } else {
+          return todo
+        }
+      })
+      state.items = updatedTodos
+    },
 
+    deleteAll: (state) => {
+      state.items.length = 0
+    },
 
-      // state.completed = !state.completed
-      // state.items.find((item) => item.completed === !item.completed)
-      // state.items.find((item) => item.completed === action.payload.completed)
-      // state.items.push({ ...action.payload, completed: true })
-    }
+    toggleAll: (state, action) => {
+      // code here
+      console.log('need some code here...')
+    },
 
   }
 })
