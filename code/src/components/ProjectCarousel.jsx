@@ -1,17 +1,27 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import { projects } from "reducers/projects";
+import Flickity from "react-flickity-component";
 
-const ProjectCarousel = ({ projects }) => {
-  console.log(projects);
+const flickityOptions = {
+  initialIndex: 0,
+  pageDots: false,
+  wrapAround: true,
+  freeScroll: true,
+  autoPlay: 1500,
+};
+
+const ProjectCarousel = (props) => {
   return (
     <>
-      <h3>This is the project carousel</h3>
-      {projects.map((item) => (
-        <React.Fragment key={item.id}>
-          <p>{item.title}</p>
-        </React.Fragment>
-      ))}
+      <Flickity
+        className={"carousel"} // default ''
+        elementType={"div"} // default 'div'
+        options={flickityOptions} // takes flickity options {}
+        disableImagesLoaded={false} // default false
+        reloadOnUpdate // default false
+        static // default false
+      >
+        {props.children}
+      </Flickity>
     </>
   );
 };

@@ -2,7 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { projects } from "reducers/projects";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 // Import Styling
 import {
@@ -29,46 +29,48 @@ import {
   weathergray,
 } from "../assets/icons";
 
-const NewProject = () => {
+const iconArray = [
+  [0, chatgray, "chat"],
+  [1, clipboardgray, "clipboard"],
+  [2, gamegray, "game"],
+  [3, giftgray, "gift"],
+  [4, outdoorsgray, "outdoors"],
+  [5, pingray, "pin"],
+  [6, shoppinggray, "shopping"],
+  [7, timegray, "time"],
+  [8, travelgray, "travel"],
+  [9, tvgray, "tv"],
+  [10, viewgray, "view"],
+  [11, weathergray, "weather"],
+];
+
+const colorArray = [
+  [0, "#E52E4E", "229, 46, 78", "red"],
+  [1, "#F7643B", "247, 100, 59", "orange"],
+  [2, "#DF8D00", "223, 141, 0", "yellow"],
+  [3, "#10AE21", "16, 174, 32", "green"],
+  [4, "#04A9A4", "4, 169, 164", "teal"],
+  [5, "#00A8DB", "0, 168, 219", "light blue"],
+  [6, "#1183DA", "17, 131, 218", "dark blue"],
+  [7, "#E929BA", "233, 41, 186", "pink"],
+  [8, "#7B39ED", "123, 57, 237", "purple"],
+  [9, "#666666", "102, 102, 102", "gray"],
+];
+
+const NewProject = ({ setCreatingProject }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [projectName, chooseProjectName] = useState("");
   const [icon, chooseIcon] = useState("");
   const [color, chooseColor] = useState("");
   const [error, setError] = useState(false);
-
-  const iconArray = [
-    [0, chatgray],
-    [1, clipboardgray],
-    [2, gamegray],
-    [3, giftgray],
-    [4, outdoorsgray],
-    [5, pingray],
-    [6, shoppinggray],
-    [7, timegray],
-    [8, travelgray],
-    [9, tvgray],
-    [10, viewgray],
-    [11, weathergray],
-  ];
-
-  const colorArray = [
-    [0, "#E52E4E", "red"],
-    [1, "#F7643B", "orange"],
-    [2, "#DF8D00", "yellow"],
-    [3, "#10AE21", "green"],
-    [4, "#04A9A4", "teal"],
-    [5, "#00A8DB", "light blue"],
-    [6, "#1183DA", "dark blue"],
-    [7, "#E929BA", "pink"],
-    [8, "#7B39ED", "purple"],
-    [9, "#666666", "gray"],
-  ];
 
   // Create Unique Project ID
   let projectId = "";
   const randomId = () => {
     projectId =
       Date.now().toString(36) + Math.random().toString(36).substring(2);
+    setCreatingProject(true);
   };
   randomId();
 
@@ -94,9 +96,12 @@ const NewProject = () => {
 
   // Create Project Button
   const createProject = () => {
-    if (!projectName === 0 || !icon || !color) {
+    console.log(!projectName, !icon, !color);
+    if (!projectName || !icon || !color) {
       setError(true);
+      console.log("seterror", error);
     } else {
+      console.log("project dispatched");
       dispatch(
         projects.actions.addProject({
           id: projectId,
@@ -105,10 +110,10 @@ const NewProject = () => {
           color: color,
         })
       );
+      setCreatingProject(false);
+      navigate(`/projects/${projectId}`);
     }
   };
-
-  console.log(projectId, projectName, icon, color);
 
   return (
     <div>
@@ -127,7 +132,7 @@ const NewProject = () => {
             value={item[0]}
             onClick={selectIcon}
           >
-            <Icon src={item[1]} />
+            <Icon src={item[1]} height="30px" width="30px" />
           </IconButton>
         ))}
       </GridContainer>
@@ -136,18 +141,16 @@ const NewProject = () => {
         {colorArray.map((item) => (
           <ColorButton
             key={item[0]}
-            value={item[0]}
+            value={item[1]}
             onClick={selectColor}
-            backgroundcolor={item[1]}
+            backgroundcolor={item[2]}
           >
-            {item[2]}
+            {item[3]}
           </ColorButton>
         ))}
       </GridContainer>
       {error && <p>Please select all the required fields.</p>}
-      <Link to={`/projects/${projectId}`}>
-        <button onClick={createProject}>Create project to-do!</button>
-      </Link>
+      <button onClick={createProject}>Create project to-do!</button>
     </div>
   );
 };

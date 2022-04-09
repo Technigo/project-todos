@@ -16,27 +16,26 @@ export const GridContainer = styled.div`
 // Button Styling
 export const ColorButton = styled.button`
   width: auto;
-  background-color: ${(props) => props.backgroundcolor};
+  background-color: rgba(${(props) => props.backgroundcolor}, 0.7);
   color: white;
   border: none;
   font-weight: 600;
   padding: 10px 10px;
   cursor: pointer;
   font-size: 16px;
-  opacity: 70%;
 
   &:hover {
-    opacity: 100%;
+    background-color: rgba(${(props) => props.backgroundcolor}, 1);
   }
 
   &:focus {
-    opacity: 100%;
+    background-color: rgba(${(props) => props.backgroundcolor}, 1);
   }
 `;
 
 export const Icon = styled.img`
-  height: 30px;
-  width: 30px;
+  height: ${(props) => props.height};
+  width: ${(props) => props.width};
 `;
 
 export const IconButton = styled.button`
@@ -71,4 +70,25 @@ export const TextInput = styled.input`
   &:focus {
     // border: 2px solid #212529;
   }
+`;
+
+// Header Scrollbar
+export const CarouselChild = styled.div`
+  font-size: 18px;
+  font-weight: 400;
+  padding: 8px 10px;
+  background-color: ${(props) => props.color};
+  color: white;
+  width: max-content;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px;
+  gap: 10px;
+`;
+
+export const CarouselIcon = styled.img`
+  height: 20px;
+  width: 20px;
 `;

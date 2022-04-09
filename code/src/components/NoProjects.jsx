@@ -1,6 +1,6 @@
 import React from "react";
 
-const EmptyState = () => {
+const NoProjects = () => {
   return (
     <>
       <h2>Click above to create your new project to-do list!</h2>
@@ -8,4 +8,4 @@ const EmptyState = () => {
   );
 };
 
-export default EmptyState;
+export default NoProjects;
