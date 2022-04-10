@@ -3,6 +3,10 @@ import { useDispatch } from 'react-redux'
 import styled from "styled-components/macro"
 // import moment from 'moment'
 
+import DatePicker from "react-datepicker"
+
+
+import "react-datepicker/dist/react-datepicker.css"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCirclePlus } from '@fortawesome/free-regular-svg-icons'
@@ -48,24 +52,31 @@ export const AddTodo = () => {
 
   const [inputText, setInputText] = useState('')
   const [inputCategory, setInputCategory] = useState('')
+  const [inputDeadline, setInputDeadline] = useState(new Date())
 
   const [isDisabled, setIsDisabled] = useState(true)
 
   // maybe this way to add a timestamp? what should be between () ???
-  // const [timestamp, setTimestamp] = useState('')
+  const [timestamp, setTimestamp] = useState(Date.now)
 
   // if text entered and then deleted, would need to be back disabled and red (so I can remove "required")
   // it works now
   const onChangeInputText = (event) => {
     setInputText(event.target.value)
-    console.log(inputText)
     setIsDisabled(!event.target.value)
+    setTimestamp(Date.now)
+    // setTimestamp(moment().format('dddd, h:mm a'))
   }
 
   const onChangeInputCategory = (event) => {
     setInputCategory(event.target.value)
-    console.log(event.target.value)
-    console.log(inputCategory)
+    // ne fonctionne pas
+    // setIsDisabled(!event.target.value)
+  }
+
+  const onChangeInputDeadline = (date) => {
+    setInputDeadline(+new Date(date))
+
     // ne fonctionne pas
     // setIsDisabled(!event.target.value)
   }
@@ -74,26 +85,35 @@ export const AddTodo = () => {
   const onAddTodo = (event) => {
     event.preventDefault()
     // should add timestamp as well in dispatch between ()
-    dispatch(todos.actions.addTodo(inputText, inputCategory))
+    dispatch(todos.actions.addTodo({ inputText, inputCategory, inputDeadline, timestamp }))
     setInputText('')
     setInputCategory('')
     setIsDisabled(true)
-    // setTimestamp(moment().format('dddd, h:mm a'))
+    // console.log(Date.now())
     // console.log(moment().format('dddd, h:mm a'))
-    // console.log(timestamp)
+    console.log(timestamp)
   }
 
   return (
     <form onSubmit={onAddTodo}>
-      <StyledFontAwesomeIcon icon={faEdit} />
-      <AddInput required type="text" onChange={onChangeInputText} value={inputText}></AddInput>
-      <label htmlFor="category">Choose a category:</label>
-      <select id="category" value={inputCategory} onChange={onChangeInputCategory}>
-        <option value="" disabled>--Please choose an option--</option>
-        <option value="home">Home</option>
-        <option value="work">Work</option>
-      </select>
+      <p>
+        <StyledFontAwesomeIcon icon={faEdit} />
+        <AddInput required type="text" onChange={onChangeInputText} value={inputText}></AddInput>
+      </p>
+      <p>
+        <label htmlFor="category" value="Choose a category"></label>
+        <select required id="category" value={inputCategory} onChange={onChangeInputCategory}>
+          <option value="" disabled>--Choose a category--</option>
+          <option value="personal">Personal</option>
+          <option value="school">School</option>
+          <option value="work">Work</option>
+        </select>
+      </p>
+      <DatePicker selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd MMMM yyyy" locale={'en'}>
+        <div style={{ color: "red", fontWeight: "bold", textAlign: "center" }}>Choose a deadline</div>
+      </DatePicker>
       <AddButton type="submit" disabled={isDisabled}><FontAwesomeIcon icon={faPlus} /></AddButton>
+      <hr></hr>
     </form>
   )
 }

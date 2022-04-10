@@ -8,7 +8,7 @@ import { faCheckDouble } from '@fortawesome/free-solid-svg-icons'
 import { todos } from 'reducers/todos'
 
 import { CompletedTodosList } from './CompletedTodosList'
-import { NotCompletedTodosList } from './NotCompletedTodosList'
+import { PendingTodosList } from './PendingTodosList'
 
 const AllButton = styled.button`
   display: inline-block;
@@ -19,9 +19,11 @@ const AllButton = styled.button`
   font-size: 1rem;
   cursor: pointer;
   text-align: center;
+  margin-right: 10px;
 
   &:disabled {
     color: red;
+    cursor: default;
   }
 `
 
@@ -29,11 +31,10 @@ export const TodosList = () => {
   const dispatch = useDispatch()
 
   const [completedVisible, setCompletedVisible] = useState('block')
-  const [notCompletedVisible, setNotCompletedVisible] = useState('block')
+  const [pendingVisible, setPendingVisible] = useState('block')
   const [isAllDisabled, setIsAllDisabled] = useState(true)
   const [isCompletedDisabled, setIsCompletedDisabled] = useState(false)
-  const [isNotCompletedDisabled, setIsNotCompletedDisabled] = useState(false)
-
+  const [isPendingDisabled, setIsPendingDisabled] = useState(false)
 
   const deleteAll = () => {
     dispatch(todos.actions.deleteAll())
@@ -43,26 +44,26 @@ export const TodosList = () => {
     dispatch(todos.actions.toggleAll())
   }
 
-  const onDisplayAll = () => {
+  const displayAll = () => {
       setCompletedVisible('block')
-      setNotCompletedVisible('block')
+      setPendingVisible('block')
       setIsAllDisabled(true)
       setIsCompletedDisabled(false)
-      setIsNotCompletedDisabled(false)
+      setIsPendingDisabled(false)
   }
 
-  const onDisplayCompleted = () => {
-      setNotCompletedVisible('none')
+  const displayCompleted = () => {
+      setPendingVisible('none')
       setCompletedVisible('block')
       setIsCompletedDisabled(true)
       setIsAllDisabled(false)
-      setIsNotCompletedDisabled(false)
+      setIsPendingDisabled(false)
   }
 
-  const onDisplayNotCompleted = () => {
+  const displayPending = () => {
       setCompletedVisible('none')
-      setNotCompletedVisible('block')
-      setIsNotCompletedDisabled(true)
+      setPendingVisible('block')
+      setIsPendingDisabled(true)
       setIsAllDisabled(false)
       setIsCompletedDisabled(false)
   }
@@ -75,16 +76,16 @@ export const TodosList = () => {
       <AllButton onClick={toggleAll}><FontAwesomeIcon icon={faCheckDouble} /></AllButton>
       <hr></hr>
 
-      <button onClick={onDisplayAll} disabled={isAllDisabled}>All</button>
-      <button onClick={onDisplayCompleted} disabled={isCompletedDisabled}>Completed</button>
-      <button onClick={onDisplayNotCompleted} disabled={isNotCompletedDisabled}>Not completed</button>
+      <AllButton onClick={displayAll} disabled={isAllDisabled}>All</AllButton>
+      <AllButton onClick={displayCompleted} disabled={isCompletedDisabled}>Completed</AllButton>
+      <AllButton onClick={displayPending} disabled={isPendingDisabled}>Not completed</AllButton>
 
       <div style={{ display: completedVisible }}>
         <CompletedTodosList />
       </div>
 
-      <div style={{ display: notCompletedVisible }}>
-        <NotCompletedTodosList />
+      <div style={{ display: pendingVisible }}>
+        <PendingTodosList />
       </div>
 
     </>

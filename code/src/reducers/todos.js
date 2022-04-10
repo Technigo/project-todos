@@ -6,32 +6,37 @@ export const todos = createSlice({
   initialState: {
     items: [
       // à enlever plus tard
-      { id: 1, text: 'Faire mon projet', completed: false },
-      { id: 2, text: 'Lire', completed: true },
-      { id: 3, text: 'Manger', completed: true },
-      { id: 4, text: 'Dormir', completed: false },
+      { id: 1, text: 'Faire mon projet', category: 'school', deadline: 1649607605000, timestamp: 1649607005000, completed: false },
+      { id: 2, text: 'Lire', category: 'work', deadline: 1651330191000, timestamp: 1651330191000, completed: true },
+      { id: 3, text: 'Manger', category: 'personal', deadline: 1651330191000, timestamp: 1651330191000, completed: true },
+      { id: 4, text: 'Dormir', category: 'personal', deadline: 1651330191000, timestamp: 1651330191000, completed: false },
     ]
   },
   reducers: {
     addTodo: (state, action) => {
+      const { inputText, inputCategory, inputDeadline, timestamp } = action.payload
 
-      const newTodo = {
+      state.items.push({
         id: uniqid(),
-        text: action.payload,
-        completed: false
+        text: inputText,
+        category: inputCategory,
+        deadline: inputDeadline,
+        timestamp: timestamp,
         // add timestamp here
-        // maybe categories as well?
-      }
-
-      state.items = [...state.items, newTodo]
+        // add deadline here
+        completed: false
+      })
     },
 
-    // need to understand more this part...
+
+    // need to understand better this part...
     deleteTodo: (state, action) => {
       state.items = state.items.filter((todo) => todo.id !== action.payload)
+      console.log(state.items)
+
     },
 
-    // need to understand more this part...
+    // need to understand better this part...
     toggleTodo: (state, action) => {
       const updatedTodos = state.items.map((todo) => {
         if (todo.id === action.payload) {

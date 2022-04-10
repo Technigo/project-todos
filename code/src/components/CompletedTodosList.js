@@ -28,10 +28,25 @@ export const CompletedTodosList = () => {
     }
   }, [droppable])
 
+  const [inputSearch, setInputSearch] = useState('')
+  const filteredTestSearch = completedTodos.filter(todo => todo.text.includes(inputSearch))
+
+  const testSearch = (event) => {
+    setInputSearch(event.target.value)
+  }
+
+  // is value={inputSearch} doing something in input?
+
   return (
     <>
+      <div>
+        <label>Search a task:
+          <input type="search" name="q" onChange={testSearch} value={inputSearch} />
+        </label>
+        {/* <button>Search</button> */}
+      </div>
       <div ref={(el) => setDroppable(el)}>
-        {completedTodos.map((todo) => (
+        {filteredTestSearch.map((todo) => (
           <Todo key={todo.id} todo={todo} id={todo.id} />
         ))}
       </div>

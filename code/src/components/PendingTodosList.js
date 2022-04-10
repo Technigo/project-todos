@@ -4,9 +4,9 @@ import Sortable from "sortablejs"
 
 import { Todo } from './Todo'
 
-export const NotCompletedTodosList = () => {
+export const PendingTodosList = () => {
   const allTodos = useSelector((store) => store.todos.items)
-  const notCompletedTodos = allTodos.filter(todo => !todo.completed)
+  const pendingTodos = allTodos.filter(todo => !todo.completed)
 
   const [droppable, setDroppable] = useState(null)
 
@@ -31,11 +31,11 @@ export const NotCompletedTodosList = () => {
   return (
     <>
       <div ref={(el) => setDroppable(el)}>
-        {notCompletedTodos.map((todo) => (
+        {pendingTodos.map((todo) => (
           <Todo key={todo.id} todo={todo} id={todo.id} />
         ))}
       </div>
-      <p>Not completed tasks: {notCompletedTodos.length}/{allTodos.length}</p>
+      <p>Not completed tasks: {pendingTodos.length}/{allTodos.length}</p>
 
     </>
   )
