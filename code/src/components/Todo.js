@@ -3,10 +3,8 @@ import { useDispatch } from 'react-redux'
 // import { useSelector } from 'react-redux'
 import styled from "styled-components/macro"
 
-import { formatRelative } from 'date-fns'
-import enGB from 'date-fns/locale/en-GB'
-// import moment from 'moment'
-
+// import { formatRelative } from 'date-fns'
+// import enGB from 'date-fns/locale/en-GB'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCircle } from '@fortawesome/free-solid-svg-icons'
@@ -84,41 +82,39 @@ export const Todo = ({ todo, id }) => {
     dispatch(todos.actions.toggleTodo(id))
   }
 
-  const formatRelativeLocale = {
-    lastWeek: "'last' eeee",
-    yesterday: "'yesterday'",
-    today: "'today'",
-    tomorrow: "'tomorrow'",
-    nextWeek: "'next' eeee",
-    other: 'dd.MM.yyyy',
-  }
+  // const formatRelativeLocale = {
+  //   lastWeek: "'last' eeee",
+  //   yesterday: "'yesterday'",
+  //   today: "'today'",
+  //   tomorrow: "'tomorrow'",
+  //   nextWeek: "'next' eeee",
+  //   other: 'dd.MM.yyyy',
+  // }
 
-  const locale = {
-    ...enGB,
-    formatRelative: (token) => formatRelativeLocale[token],
-  }
+  // const locale = {
+  //   ...enGB,
+  //   formatRelative: (token) => formatRelativeLocale[token],
+  // }
 
-  const formattedDeadline = formatRelative((new Date(todo.deadline)), new Date(), { locale })
-  // const formattedTimestamp = moment(todo.timestamp).format('dddd, h:mm a')
-  const formattedTimestamp = formatRelative((new Date(todo.timestamp)), new Date(), { locale })
+//   const formattedDeadline = formatRelative((new Date(todo.deadline)), new Date(), { locale })
+//   const formattedTimestamp = formatRelative((new Date(todo.timestamp)), new Date(), { locale })
+// console.log(todo.deadline)
+// console.log(new Date(todo.deadline))
+// console.log(todo.timestamp)
+// console.log(new Date(todo.timestamp))
 
   useEffect(() => {
     if (todo.deadline < Date.now()) {
       setIsOverdue({ color: "red" })
-      console.log('deadline dépassé')
-      // cochon = { color: "red" }
-    } else {
-      console.log('deadline à venir')
     }
   }, [todo.deadline])
 
-  console.log(todo.timestamp)
   return (
     <div>
       <label className="custom-checkbox" style={isDone()} onChange={onCompletedChange}>
         <input type="checkbox" />
         {onCheck()}
-        <span style={isOverdue}>{todo.text} {iconCategory()} deadline: {formattedDeadline}, created: {formattedTimestamp}</span>
+        <span style={isOverdue}>{todo.text} {iconCategory()} deadline: {todo.deadline}, created: {todo.timestamp}</span>
       </label>
       <DeleteButton type="button" onClick={onDeleteTodo}><FontAwesomeIcon icon={faTrashCan} /></DeleteButton>
     </div>
