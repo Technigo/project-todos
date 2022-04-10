@@ -8,33 +8,45 @@ export const tasks = createSlice({
 
   reducers: {
     addTask: (state, action) => {
-      console.log(action.payload);
       state.task.push({ ...action.payload });
     },
 
     toggleTask: (state, action) => {
-      console.log(action.payload);
       const task = state.task.find(
         (task) => action.payload.taskid === task.taskid
       );
-      console.log(task);
       if (task.complete) {
         task.complete = false;
       } else if (!task.complete) {
         task.complete = true;
       }
-      // task.complete = action.payload.complete;
-      // const updatedTask = {
-      //   ...state.task,
-      //   complete: tasks[taskIndex].complete,
-      // };
-      // return [
-      //   ...state.slice(0, taskIndex),
-      //   updatedTask,
-      //   ...state.slice(taskIndex + 1),
-      // ];
+    },
+    deleteTask: (state, action) => {
+      const taskIndex = state.task.findIndex(
+        (task) => action.payload.taskid === task.taskid
+      );
+      state.task.splice(taskIndex, 1);
+    },
+
+    toggleAllTasks: (state, action) => {
+      console.log(action.payload);
+      const tasks = state.task.filter(
+        (task) => action.payload.projectid === task.projectid
+      );
+      for (let i = 0; i < tasks.length; i++) {
+        tasks[i].complete = true;
+      }
+    },
+
+    // BUGGY - doesn't delete all tasks that belong to a project
+    deleteProjectTasks: (state, action) => {
+      console.log(action.payload);
+      for (let i = 0; i < state.task.length; i++) {
+        if (state.task[i].projectid === action.payload.projectid) {
+          state.task.splice(i, 1);
+          i--;
+        }
+      }
     },
   },
-
-  deleteTask: (state, action) => {},
 });

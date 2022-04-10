@@ -33,6 +33,7 @@ export const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Header />
+        {/* INCORRECT USE OF USESTATE FOR APP RENDERING  - line 43, creatingProject & setCreatingProject */}
         {!creatingProject && <CreateNewProject />}
         <Container>
           <Routes>

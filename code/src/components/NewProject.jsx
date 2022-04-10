@@ -44,6 +44,7 @@ const iconArray = [
   [11, weathergray, "weather"],
 ];
 
+// Change to useSelector!!!
 const colorArray = [
   [0, "#E52E4E", "229, 46, 78", "red"],
   [1, "#F7643B", "247, 100, 59", "orange"],
@@ -96,12 +97,9 @@ const NewProject = ({ setCreatingProject }) => {
 
   // Create Project Button
   const createProject = () => {
-    console.log(!projectName, !icon, !color);
     if (!projectName || !icon || !color) {
       setError(true);
-      console.log("seterror", error);
     } else {
-      console.log("project dispatched");
       dispatch(
         projects.actions.addProject({
           id: projectId,
@@ -122,6 +120,7 @@ const NewProject = ({ setCreatingProject }) => {
         type="text"
         onChange={(event) => chooseProjectName(event.target.value)}
         width="100%"
+        // maxlength="13"
       />
       <h2>Choose your icon:</h2>
       <GridContainer gridcolumns="1fr 1fr 1fr" gap="10px">
@@ -137,6 +136,7 @@ const NewProject = ({ setCreatingProject }) => {
         ))}
       </GridContainer>
       <h2>Select a color:</h2>
+      {/* !!! Change to useSelector !!! */}
       <GridContainer gridcolumns="1fr 1fr" gridrows="auto" gap="10px">
         {colorArray.map((item) => (
           <ColorButton

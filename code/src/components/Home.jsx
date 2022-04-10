@@ -1,9 +1,10 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import NoProjects from "./NoProjects";
-import { projects } from "reducers/projects";
 
 const Home = () => {
-  return <>{projects.length ? <h1>This is home</h1> : <NoProjects />}</>;
+  const projects = useSelector((store) => store.projects.project);
+  return <>{projects.length > 0 ? <h1>This is home</h1> : <NoProjects />}</>;
 };
 
 export default Home;

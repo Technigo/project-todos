@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
+import styled from "styled-components";
 import { tasks } from "reducers/tasks";
+import { projects } from "reducers/projects";
+import { useNavigate } from "react-router-dom";
 
 // Import Components
 import Error from "./Error";
@@ -13,37 +16,38 @@ import { Icon, TextInput } from "styledelements/elements";
 
 // Import Icons'
 import {
-  chatgray,
-  clipboardgray,
-  gamegray,
-  giftgray,
-  outdoorsgray,
-  pingray,
-  shoppinggray,
-  timegray,
-  travelgray,
-  tvgray,
-  viewgray,
-  weathergray,
+  chatwhite,
+  clipboardwhite,
+  gamewhite,
+  giftwhite,
+  outdoorswhite,
+  pinwhite,
+  shoppingwhite,
+  timewhite,
+  travelwhite,
+  tvwhite,
+  viewwhite,
+  weatherwhite,
 } from "../assets/icons";
 
 const iconArray = [
-  [0, chatgray, "chat"],
-  [1, clipboardgray, "clipboard"],
-  [2, gamegray, "game"],
-  [3, giftgray, "gift"],
-  [4, outdoorsgray, "outdoors"],
-  [5, pingray, "pin"],
-  [6, shoppinggray, "shopping"],
-  [7, timegray, "time"],
-  [8, travelgray, "travel"],
-  [9, tvgray, "tv"],
-  [10, viewgray, "view"],
-  [11, weathergray, "weather"],
+  [0, chatwhite, "chat"],
+  [1, clipboardwhite, "clipboard"],
+  [2, gamewhite, "game"],
+  [3, giftwhite, "gift"],
+  [4, outdoorswhite, "outdoors"],
+  [5, pinwhite, "pin"],
+  [6, shoppingwhite, "shopping"],
+  [7, timewhite, "time"],
+  [8, travelwhite, "travel"],
+  [9, tvwhite, "tv"],
+  [10, viewwhite, "view"],
+  [11, weatherwhite, "weather"],
 ];
 
 const Project = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [taskName, setTaskName] = useState("");
   const id = useParams().id;
   const projectArray = useSelector((store) => store.projects.project);
@@ -66,18 +70,47 @@ const Project = () => {
     document.querySelector(".newTaskInput").value = "";
   };
 
+  const toggleAllTasks = () => {
+    dispatch(
+      tasks.actions.toggleAllTasks({
+        projectid: project.id,
+      })
+    );
+  };
+
+  const deleteProject = () => {
+    // Delete All Tasks
+    dispatch(
+      tasks.actions.deleteProjectTasks({
+        projectid: project.id,
+      })
+    );
+    // Delete Project
+    dispatch(
+      projects.actions.deleteProject({
+        projectid: project.id,
+      })
+    );
+    navigate("/");
+    setTimeout(window.location.reload(), 5);
+  };
+
   if (project) {
     return (
       <>
-        <Icon
-          src={iconArray[Number(project.icon)][1]}
-          alt={iconArray[2]}
-          height="40px"
-          width="40px"
-        />
-        <h1>{project.title}</h1>
+        <ProjectHeader backgroundcolor={project.color}>
+          <Icon
+            src={iconArray[Number(project.icon)][1]}
+            alt={iconArray[2]}
+            height="40px"
+            width="40px"
+          />
+          <h1>{project.title}</h1>
+        </ProjectHeader>
         {taskArray.length === 0 && <NoTasks />}
-        <h3>Name task:</h3>
+        <div>
+          <h3>Name task:</h3>
+        </div>
         <TextInput
           type="text"
           onChange={(event) => setTaskName(event.target.value)}
@@ -89,6 +122,10 @@ const Project = () => {
           taskArray.map((task) => (
             <Task key={task.taskid} taskid={task.taskid} />
           ))}
+        {taskArray.length > 0 && (
+          <button onClick={toggleAllTasks}>Mark all tasks as complete</button>
+        )}
+        <button onClick={deleteProject}>Delete project to-do list</button>
       </>
     );
   } else {
@@ -97,3 +134,14 @@ const Project = () => {
 };
 
 export default Project;
+
+const ProjectHeader = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background-color: ${(props) => props.backgroundcolor};
+  color: white;
+  padding: 8px 10px;
+  word-break: break-all;
+`;

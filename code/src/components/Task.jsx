@@ -17,6 +17,14 @@ const Task = ({ taskid }) => {
     );
   };
 
+  const deleteTask = () => {
+    dispatch(
+      tasks.actions.deleteTask({
+        taskid: thisTask.taskid,
+      })
+    );
+  };
+
   const created = formatRelative(new Date(thisTask.added), new Date());
   return (
     <>
@@ -27,6 +35,7 @@ const Task = ({ taskid }) => {
         checked={thisTask.complete}
         onChange={toggleComplete}
       />
+      <button onClick={deleteTask}>Delete</button>
     </>
   );
 };

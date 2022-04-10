@@ -12,6 +12,12 @@ export const projects = createSlice({
       state.project.push({ ...action.payload });
     },
 
-    deleteProject: (state, action) => {},
+    deleteProject: (state, action) => {
+      console.log(action.payload);
+      const projectIndex = state.project.findIndex(
+        (project) => action.payload.projectid === project.projectid
+      );
+      state.project.splice(projectIndex, 1);
+    },
   },
 });

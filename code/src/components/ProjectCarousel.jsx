@@ -17,7 +17,7 @@ const ProjectCarousel = (props) => {
         elementType={"div"} // default 'div'
         options={flickityOptions} // takes flickity options {}
         disableImagesLoaded={false} // default false
-        reloadOnUpdate // default false
+        reloadOnUpdate={true} // default false
         static // default false
       >
         {props.children}
