@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 // import { useSelector } from 'react-redux'
 import styled from "styled-components/macro"
-
-// import { formatRelative } from 'date-fns'
-// import enGB from 'date-fns/locale/en-GB'
+// import moment from 'moment'
+import { formatRelative } from 'date-fns'
+import enGB from 'date-fns/locale/en-GB'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCircle } from '@fortawesome/free-solid-svg-icons'
@@ -82,26 +82,27 @@ export const Todo = ({ todo, id }) => {
     dispatch(todos.actions.toggleTodo(id))
   }
 
-  // const formatRelativeLocale = {
-  //   lastWeek: "'last' eeee",
-  //   yesterday: "'yesterday'",
-  //   today: "'today'",
-  //   tomorrow: "'tomorrow'",
-  //   nextWeek: "'next' eeee",
-  //   other: 'dd.MM.yyyy',
-  // }
+  const formatRelativeLocale = {
+    lastWeek: "'last' eeee",
+    yesterday: "'yesterday'",
+    today: "'today'",
+    tomorrow: "'tomorrow'",
+    nextWeek: "'next' eeee",
+    other: 'dd.MM.yyyy',
+  }
 
-  // const locale = {
-  //   ...enGB,
-  //   formatRelative: (token) => formatRelativeLocale[token],
-  // }
-
-//   const formattedDeadline = formatRelative((new Date(todo.deadline)), new Date(), { locale })
-//   const formattedTimestamp = formatRelative((new Date(todo.timestamp)), new Date(), { locale })
-// console.log(todo.deadline)
-// console.log(new Date(todo.deadline))
-// console.log(todo.timestamp)
-// console.log(new Date(todo.timestamp))
+  const locale = {
+    ...enGB,
+    formatRelative: (token) => formatRelativeLocale[token],
+  }
+  const dateDeadline = (new Date(todo.deadline))
+  const dateTimestamp = (new Date(todo.timestamp))
+  const formattedDeadline = formatRelative(dateDeadline, new Date(), { locale })
+  const formattedTimestamp = formatRelative(dateTimestamp, new Date(), { locale })
+  // console.log(todo.deadline)
+  // console.log(new Date(todo.deadline))
+  // console.log(todo.timestamp)
+  // console.log(new Date(todo.timestamp))
 
   useEffect(() => {
     if (todo.deadline < Date.now()) {
@@ -114,7 +115,7 @@ export const Todo = ({ todo, id }) => {
       <label className="custom-checkbox" style={isDone()} onChange={onCompletedChange}>
         <input type="checkbox" />
         {onCheck()}
-        <span style={isOverdue}>{todo.text} {iconCategory()} deadline: {todo.deadline}, created: {todo.timestamp}</span>
+        <span style={isOverdue}>{todo.text} {iconCategory()} deadline: {formattedDeadline}, created: {formattedTimestamp}</span>
       </label>
       <DeleteButton type="button" onClick={onDeleteTodo}><FontAwesomeIcon icon={faTrashCan} /></DeleteButton>
     </div>
