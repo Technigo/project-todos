@@ -6,10 +6,10 @@ export const todos = createSlice({
   initialState: {
     items: [
       // à enlever plus tard
-      { id: 1, text: 'Faire mon projet', category: 'school', deadline: 1649607605000, timestamp: 1649607005000, completed: false },
-      { id: 2, text: 'Lire', category: 'work', deadline: 1651330191000, timestamp: 1651330191000, completed: true },
-      { id: 3, text: 'Manger', category: 'personal', deadline: 1651330191000, timestamp: 1651330191000, completed: true },
-      { id: 4, text: 'Dormir', category: 'personal', deadline: 1651330191000, timestamp: 1651330191000, completed: false },
+      // { id: 1, text: 'Faire mon projet', category: 'school', deadline: 1649607605000, timestamp: 1649607005000, completed: false },
+      // { id: 2, text: 'Lire', category: 'work', deadline: 1651330191000, timestamp: 1651330191000, completed: true },
+      // { id: 3, text: 'Manger', category: 'personal', deadline: 1651330191000, timestamp: 1651330191000, completed: true },
+      // { id: 4, text: 'Dormir', category: 'personal', deadline: 1651330191000, timestamp: 1651330191000, completed: false },
     ]
   },
   reducers: {
@@ -22,8 +22,6 @@ export const todos = createSlice({
         category: inputCategory,
         deadline: inputDeadline,
         timestamp: timestamp,
-        // add timestamp here
-        // add deadline here
         completed: false
       })
     },
