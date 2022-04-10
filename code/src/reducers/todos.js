@@ -28,7 +28,7 @@ export const todos = createSlice({
 
     // need to understand more this part...
     deleteTodo: (state, action) => {
-      state.items = state.items.filter((todo) => todo.id !== action.payload.id)
+      state.items = state.items.filter((todo) => todo.id !== action.payload)
     },
 
     // need to understand more this part...
@@ -47,13 +47,26 @@ export const todos = createSlice({
     },
 
     deleteAll: (state) => {
-      state.items.length = 0
+      state.items = []
+      // state.items.length = 0
     },
 
-    toggleAll: (state, action) => {
-      // code here
-      console.log('need some code here...')
+    toggleAll: (state) => {
+      if (state.items.filter(todo => !todo.completed).length > 0) {
+        state.items = state.items.map((todo) => {
+          return {
+            ...todo,
+            completed: true
+          }
+        })
+      } else {
+        state.items = state.items.map((todo) => {
+          return {
+            ...todo,
+            completed: false
+          }
+        })
+      }
     },
-
   }
 })

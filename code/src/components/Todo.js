@@ -57,7 +57,7 @@ export const Todo = ({ todo, id }) => {
   }
 
   const onDeleteTodo = () => {
-    dispatch(todos.actions.deleteTodo(todo))
+    dispatch(todos.actions.deleteTodo(id))
   }
 
   const onCompletedChange = () => {

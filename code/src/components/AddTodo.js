@@ -34,10 +34,8 @@ const AddButton = styled.button`
 `
 
 const AddInput = styled.input`
-  border-top: none;
-  border-left: none;
-  border-right: none;
-  border-bottom: 1px solid black;
+  border: 1px solid black;
+  border-radius: 0;
   outline: none;
 
   &:focus {
@@ -68,7 +66,8 @@ export const AddTodo = () => {
     setInputCategory(event.target.value)
     console.log(event.target.value)
     console.log(inputCategory)
-    setIsDisabled(!event.target.value)
+    // ne fonctionne pas
+    // setIsDisabled(!event.target.value)
   }
 
   // timestamp state not updated... how to do it?
@@ -89,7 +88,7 @@ export const AddTodo = () => {
       <StyledFontAwesomeIcon icon={faEdit} />
       <AddInput required type="text" onChange={onChangeInputText} value={inputText}></AddInput>
       <label htmlFor="category">Choose a category:</label>
-      <select id="category" value={inputCategory} onChange={onChangeInputCategory} required>
+      <select id="category" value={inputCategory} onChange={onChangeInputCategory}>
         <option value="" disabled>--Please choose an option--</option>
         <option value="home">Home</option>
         <option value="work">Work</option>
