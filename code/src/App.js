@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { compose, createStore, combineReducers } from "@reduxjs/toolkit";
@@ -10,7 +10,6 @@ import Error from "components/Error";
 import Project from "components/Project";
 import Header from "components/Header";
 import NewProject from "components/NewProject";
-import CreateNewProject from "components/CreateNewProject";
 
 import { Container } from "styledelements/elements";
 import { colors } from "reducers/colors";
@@ -28,20 +27,14 @@ const reducer = combineReducers({
 const store = createStore(reducer, enhancer);
 
 export const App = () => {
-  const [creatingProject, setCreatingProject] = useState(false);
   return (
     <Provider store={store}>
       <BrowserRouter>
         <Header />
-        {/* INCORRECT USE OF USESTATE FOR APP RENDERING  - line 43, creatingProject & setCreatingProject */}
-        {!creatingProject && <CreateNewProject />}
         <Container>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route
-              path="/newproject"
-              element={<NewProject setCreatingProject={setCreatingProject} />}
-            />
+            <Route path="/newproject" element={<NewProject />} />
             <Route path="/projects/:id" element={<Project />} />
             <Route path="*" element={<Error />} />
           </Routes>

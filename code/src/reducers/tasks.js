@@ -9,18 +9,23 @@ export const tasks = createSlice({
   reducers: {
     addTask: (state, action) => {
       state.task.push({ ...action.payload });
+      // Sort tasks by complete
+      state.task.sort((task) => {
+        return task.complete ? 1 : -1;
+      });
     },
 
     toggleTask: (state, action) => {
       const task = state.task.find(
         (task) => action.payload.taskid === task.taskid
       );
-      if (task.complete) {
-        task.complete = false;
-      } else if (!task.complete) {
-        task.complete = true;
-      }
+      task.complete = !task.complete;
+      // Sort tasks by complete
+      state.task.sort((task) => {
+        return task.complete ? 1 : -1;
+      });
     },
+
     deleteTask: (state, action) => {
       const taskIndex = state.task.findIndex(
         (task) => action.payload.taskid === task.taskid

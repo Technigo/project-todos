@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 import { tasks } from "reducers/tasks";
 import { projects } from "reducers/projects";
 import { useNavigate } from "react-router-dom";
@@ -12,7 +12,7 @@ import NoTasks from "./NoTasks";
 import Task from "./Task";
 
 // Import Styled Elements
-import { Icon, TextInput } from "styledelements/elements";
+import { TextInput } from "styledelements/elements";
 
 // Import Icons'
 import {
@@ -99,33 +99,51 @@ const Project = () => {
     return (
       <>
         <ProjectHeader backgroundcolor={project.color}>
-          <Icon
-            src={iconArray[Number(project.icon)][1]}
-            alt={iconArray[2]}
-            height="40px"
-            width="40px"
-          />
-          <h1>{project.title}</h1>
+          <IconTitleContainer>
+            <Icon
+              src={iconArray[Number(project.icon)][1]}
+              alt={iconArray[2]}
+              height="40px"
+              width="40px"
+            />
+            <h1>{project.title}</h1>
+          </IconTitleContainer>
+          <div>
+            <h2>
+              {
+                taskArray.filter(
+                  (task) =>
+                    project.id === task.projectid && task.complete === true
+                ).length
+              }{" "}
+              /{" "}
+              {taskArray.filter((task) => project.id === task.projectid).length}
+            </h2>
+          </div>
         </ProjectHeader>
-        {taskArray.length === 0 && <NoTasks />}
-        <div>
-          <h3>Name task:</h3>
-        </div>
-        <TextInput
-          type="text"
-          onChange={(event) => setTaskName(event.target.value)}
-          width="100%"
-          className="newTaskInput"
-        />
-        <button onClick={addTask}>Add task!</button>
-        {taskArray.length > 0 &&
-          taskArray.map((task) => (
-            <Task key={task.taskid} taskid={task.taskid} />
-          ))}
-        {taskArray.length > 0 && (
-          <button onClick={toggleAllTasks}>Mark all tasks as complete</button>
-        )}
-        <button onClick={deleteProject}>Delete project to-do list</button>
+        <TaskContainer bordercolor={project.color}>
+          {taskArray.length === 0 && <NoTasks />}
+          <div>
+            <h4>Name task:</h4>
+          </div>
+          <TextInput
+            type="text"
+            onChange={(event) => setTaskName(event.target.value)}
+            width="100%"
+            className="newTaskInput"
+          />
+          <button onClick={addTask}>Add task!</button>
+          {taskArray.length > 0 &&
+            taskArray.map((task) => (
+              <Task key={task.taskid} taskid={task.taskid} />
+            ))}
+        </TaskContainer>
+        <ProjectFooter backgroundcolor={project.color}>
+          {taskArray.length > 0 && (
+            <button onClick={toggleAllTasks}>Mark all tasks as complete</button>
+          )}
+          <button onClick={deleteProject}>Delete project to-do list</button>
+        </ProjectFooter>
       </>
     );
   } else {
@@ -137,11 +155,52 @@ export default Project;
 
 const ProjectHeader = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
   background-color: ${(props) => props.backgroundcolor};
   color: white;
   padding: 8px 10px;
-  word-break: break-all;
+  hyphens: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+`;
+
+const IconTitleContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+`;
+
+const Icon = styled.img`
+  height: 24px;
+  width: 24px;
+`;
+
+const TaskContainer = styled.div`
+  padding: 10px;
+  border-left: 3px solid ${(props) => props.bordercolor};
+  border-right: 3px solid ${(props) => props.bordercolor};
+`;
+
+const ProjectFooter = styled.div`
+  background-color: ${(props) => props.backgroundcolor};
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  padding: 8px 10px;
+  gap: 10px;
+  margin-bottom: 20px;
 `;

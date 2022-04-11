@@ -3,15 +3,10 @@ import { useDispatch } from "react-redux";
 import { useState } from "react";
 import { projects } from "reducers/projects";
 import { useNavigate } from "react-router-dom";
+import styled from "styled-components/macro";
 
 // Import Styling
-import {
-  ColorButton,
-  GridContainer,
-  IconButton,
-  Icon,
-  TextInput,
-} from "styledelements/elements";
+import { GridContainer, TextInput } from "styledelements/elements";
 
 // Import Icons'
 import {
@@ -58,7 +53,7 @@ const colorArray = [
   [9, "#666666", "102, 102, 102", "gray"],
 ];
 
-const NewProject = ({ setCreatingProject }) => {
+const NewProject = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [projectName, chooseProjectName] = useState("");
@@ -71,7 +66,6 @@ const NewProject = ({ setCreatingProject }) => {
   const randomId = () => {
     projectId =
       Date.now().toString(36) + Math.random().toString(36).substring(2);
-    setCreatingProject(true);
   };
   randomId();
 
@@ -80,6 +74,7 @@ const NewProject = ({ setCreatingProject }) => {
     chooseIcon(event.currentTarget.value);
   };
 
+  // Trying to toggle classes on buttons
   // let selectBtns = document.querySelectorAll(
   //   ".elements__IconButton-sc-f5m284-4"
   // );
@@ -108,7 +103,6 @@ const NewProject = ({ setCreatingProject }) => {
           color: color,
         })
       );
-      setCreatingProject(false);
       navigate(`/projects/${projectId}`);
     }
   };
@@ -123,21 +117,23 @@ const NewProject = ({ setCreatingProject }) => {
         // maxlength="13"
       />
       <h2>Choose your icon:</h2>
-      <GridContainer gridcolumns="1fr 1fr 1fr" gap="10px">
+      <GridContainer gridcolumns="1fr 1fr 1fr">
         {iconArray.map((item) => (
-          <IconButton
-            key={item[0]}
-            role="button"
-            value={item[0]}
-            onClick={selectIcon}
-          >
-            <Icon src={item[1]} height="30px" width="30px" />
-          </IconButton>
+          <React.Fragment key={item[0]}>
+            <IconButton
+              key={item[0]}
+              role="button"
+              value={item[0]}
+              onClick={selectIcon}
+            >
+              <Icon src={item[1]} alt={icon[2]} />
+            </IconButton>
+          </React.Fragment>
         ))}
       </GridContainer>
       <h2>Select a color:</h2>
       {/* !!! Change to useSelector !!! */}
-      <GridContainer gridcolumns="1fr 1fr" gridrows="auto" gap="10px">
+      <GridContainer gridcolumns="1fr 1fr" gridrows="auto">
         {colorArray.map((item) => (
           <ColorButton
             key={item[0]}
@@ -156,3 +152,46 @@ const NewProject = ({ setCreatingProject }) => {
 };
 
 export default NewProject;
+
+// Icon Button
+const Icon = styled.img`
+  height: 30px;
+  width: 30px;
+`;
+
+const IconButton = styled.button`
+  border-radius: 50%;
+  height: 55px;
+  width: 55px;
+  justify-self: center;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    border: 1px solid #212529;
+  }
+
+  &:focus {
+    border: 1px solid #212529;
+  }
+`;
+
+// Button Styling
+const ColorButton = styled.button`
+  width: auto;
+  background-color: rgba(${(props) => props.backgroundcolor}, 0.7);
+  color: white;
+  border: none;
+  font-weight: 600;
+  padding: 10px 10px;
+  cursor: pointer;
+  font-size: 16px;
+
+  &:hover {
+    background-color: rgba(${(props) => props.backgroundcolor}, 1);
+  }
+
+  &:focus {
+    background-color: rgba(${(props) => props.backgroundcolor}, 1);
+  }
+`;
