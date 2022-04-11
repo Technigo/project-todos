@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Form = () => {
+const AddTasks = () => {
     return(
         <div>
             This is where I will add my tasks.
@@ -9,4 +9,4 @@ const Form = () => {
     )
 }
 
-export default Form
+export default AddTasks

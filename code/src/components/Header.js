@@ -1,4 +1,10 @@
 import React from "react";
+import styled from "styled-components";
+
+const HeaderWrapper = styled.header`
+background-color: blue;
+`
+
 
 
 const Header = () => {
