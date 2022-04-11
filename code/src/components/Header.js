@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const HeaderWrapper = styled.header`
-background-color: blue;
+background-color: #90e0ef;
 `
 
 
@@ -10,7 +10,7 @@ background-color: blue;
 const Header = () => {
     return(
         <HeaderWrapper>
-            THIS WILL BE MY HEADER
+            <h1>THIS IS MY HEADER</h1>
         </HeaderWrapper>
     )
 }
