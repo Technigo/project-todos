@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components/macro";
 import { tasks } from "reducers/tasks";
 import trashgray from "../assets/trashgray.svg";
+import checkblack from "../assets/checkblack.svg";
 
 const Task = ({ taskid }) => {
   const dispatch = useDispatch();
@@ -31,13 +32,15 @@ const Task = ({ taskid }) => {
   const created = formatRelative(new Date(thisTask.added), new Date());
   return (
     <TaskWrapper complete={thisTask.complete}>
-      <div>
-        <Checkbox
+      <CustomCheck role="button" onClick={toggleComplete}>
+        {thisTask.complete ? "" : <IncompleteCheckIcon src={checkblack} />}
+        {thisTask.complete ? <CheckIcon src={checkblack} /> : ""}
+        {/* <Checkbox
           type="checkbox"
           checked={thisTask.complete}
           onChange={toggleComplete}
-        />
-      </div>
+        /> */}
+      </CustomCheck>
       <TaskInfo>
         <TaskTitle>{thisTask.title}</TaskTitle>
         <TaskDate>Added {created}</TaskDate>
@@ -71,6 +74,39 @@ const Line = styled.hr`
 
 const Checkbox = styled.input`
   cursor: pointer;
+`;
+
+const CheckIcon = styled.img`
+  height: 20px;
+  width: 20px;
+  filter: invert(11%) sepia(5%) saturate(1643%) hue-rotate(179deg)
+    brightness(96%) contrast(92%);
+`;
+
+const IncompleteCheckIcon = styled.img`
+  height: 20px;
+  width: 20px;
+  transform: scale(0);
+  opacity: 0;
+  filter: invert(96%) sepia(1%) saturate(3393%) hue-rotate(180deg)
+    brightness(78%) contrast(87%);
+`;
+
+const CustomCheck = styled.div`
+  height: 20px;
+  width: 20px;
+  border: 1px solid #212529;
+  border-radius: 4px;
+  cursor: pointer;
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+
+  &:hover ${IncompleteCheckIcon} {
+    transition: 0.5s ease-in-out;
+    opacity: 1;
+    transform: scale(1);
+  }
 `;
 
 const TaskInfo = styled.div`
