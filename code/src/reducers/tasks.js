@@ -29,13 +29,35 @@ const tasks = createSlice({
             store.items = [...store.items, newTask]
         },
 
+        deleteTask: (store, action) => {
+            const deletedTasks = store.items.filter((taskItem) => taskItem.id !== action.payload)
+            store.items = deletedTasks
+        },
 
         toggleItem: (store, action) => {
-            store.items.forEach(item => {
+            const updatedTaskItems =
+            store.items.map((item) => {
                 if (item.id === action.payload) {
-                    item.isCaught = !item.isCaught
+                  const updatedTask = {
+                      ...item,
+                      isCaught: !item.isCaught//item.isCaught = !item.isCaught
+                  }
+                  return updatedTask
+                } else {
+                    return item
                 }
             })
+            store.items = updatedTaskItems
+        },
+
+        allTasksDone: (store) => {
+            const allDone = store.items.map((task) => {
+                return {
+                    ...task,
+                    isCaught: true
+                }
+            })
+            store.items = allDone
         }
     },
 })

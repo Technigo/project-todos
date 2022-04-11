@@ -15,20 +15,26 @@ const DoneTasks = () => {
 
     const doneTasks = items.filter((taskItem) => taskItem.isCaught)
 
-    const onDeleteTask = (taskId) =>{
+    const onDeleteTask = (taskId) => {
         dispatch(tasks.actions.deleteTask(taskId))
     }
 
-    return(
+    const doneSummary = doneTasks.length
+     if (doneTasks < 1) {
+         return (
+             <h1>Done nothing</h1>
+         )
+     } else {
+          return(
         <>
-        <h1>DONE</h1>
         {doneTasks.map((taskItem) => (
-            <div>
+            <div key={taskItem.id}>
+                <p>{doneSummary} task done</p>
                 <h2>{taskItem.text}</h2>
-                {/* <label>
+                <label>
                     done:
                     <input type="checkbox" checked={taskItem.isCaught} onChange={() => onTaskToggle(taskItem.id)} />
-                </label> */}
+                </label>
                 <button onClick={() => onDeleteTask(taskItem.id)}>
                 <span role="img" aria-label="delete">x</span>
             </button>
@@ -37,6 +43,7 @@ const DoneTasks = () => {
 
         </>
     )
+     }
 }
 
 export default DoneTasks
