@@ -6,7 +6,7 @@ const Completed = () => {
     return (
 
         <>
-        <h2>Completed</h2>
+        <p><b>Completed</b></p>
         <p>Task... Task.. Task</p>
         </>
 

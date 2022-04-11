@@ -1,22 +1,26 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Completed from 'components/Completed'
-// import styled from 'styled-components'
+import { motion } from 'framer-motion'
 
-import pokemons from 'reducers/tasks'
+import taskList from 'reducers/tasks'
+
 
 const StartPage = () => {
 
     const tasksList = useSelector((todos) => todos.tasks.items)
 
     const dispatch = useDispatch()
-    const onPokemonToggle = (taskId) => {
-        dispatch(pokemons.actions.toggleItem(taskId))
+    const onTaskToggle = (taskId) => {
+        dispatch(taskList.actions.toggleItem(taskId))
     }
 
     return (
         <section>
             
+
+
+            <img src="./assets/woman-long-list.jpg" alt="illustration created by storyset, www.freepik.com" width="300px"/>
             <h1>Todo list will be here</h1> 
 
             
@@ -29,11 +33,11 @@ const StartPage = () => {
                     <h2>{taskItem.name}</h2>
                     
                     <label>
-                       Is done:
+                    {taskItem.text}
                     <input 
                     type="checkbox" 
                     checked={taskItem.isDone} 
-                    onChange={() => onPokemonToggle(taskItem.id)} />
+                    onChange={() => onTaskToggle(taskItem.id)} />
                     </label>
 
                     <button className="btn">
