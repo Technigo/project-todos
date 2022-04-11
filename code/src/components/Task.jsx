@@ -35,11 +35,6 @@ const Task = ({ taskid }) => {
       <CustomCheck role="button" onClick={toggleComplete}>
         {thisTask.complete ? "" : <IncompleteCheckIcon src={checkblack} />}
         {thisTask.complete ? <CheckIcon src={checkblack} /> : ""}
-        {/* <Checkbox
-          type="checkbox"
-          checked={thisTask.complete}
-          onChange={toggleComplete}
-        /> */}
       </CustomCheck>
       <TaskInfo>
         <TaskTitle>{thisTask.title}</TaskTitle>
@@ -70,10 +65,6 @@ const Line = styled.hr`
   border-left: 0px solid transparent;
   border-right: 0px solid transparent;
   border-bottom: 0px solid transparent;
-`;
-
-const Checkbox = styled.input`
-  cursor: pointer;
 `;
 
 const CheckIcon = styled.img`
@@ -107,6 +98,12 @@ const CustomCheck = styled.div`
     opacity: 1;
     transform: scale(1);
   }
+
+  &:hover ${CheckIcon} {
+    transition: 0.5s ease-in-out;
+    opacity: 0;
+    transform: scale(0);
+  }
 `;
 
 const TaskInfo = styled.div`
@@ -136,6 +133,6 @@ const Icon = styled.img`
 
   &:hover {
     transition: 0.5s ease-in-out;
-    transform: scale(1.1);
+    transform: scale(1.2);
   }
 `;
