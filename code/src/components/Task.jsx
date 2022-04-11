@@ -98,16 +98,18 @@ const CustomCheck = styled.div`
   border-radius: 4px;
   cursor: pointer;
 
-  &:hover ${IncompleteCheckIcon} {
-    transition: all 0.5s ease-in;
-    transform: scale(1);
-    opacity: 1;
-  }
+  @media (hover: hover) {
+    &:hover ${IncompleteCheckIcon} {
+      transition: all 0.5s ease-in;
+      transform: scale(1);
+      opacity: 1;
+    }
 
-  &:hover ${CheckIcon} {
-    transition: all 0.5s ease-in;
-    transform: scale(0);
-    opacity: 0;
+    &:hover ${CheckIcon} {
+      transition: all 0.5s ease-in;
+      transform: scale(0);
+      opacity: 0;
+    }
   }
 `;
 
