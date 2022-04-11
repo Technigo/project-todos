@@ -1,21 +1,21 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const data = createSlice({
-    name: 'pokemons',
-    initialState: {
-    items: [
-        {id: '8957283520',
-        name: 'Bulbasaur',
-        isCaught: false
-        },  
-        { id: "9048604380",
-        name: 'Charmander',
-        isCaught: false
-        },
-],
-}
-const pokemons = createSlice({
-name: 'pokemons',
+const data = [
+
+    {
+    id: "gjkfhgkj938",
+    name: "Bulbasaur",
+    isCaught: false,
+    },
+    { 
+    id: "gjkfhg33989",
+    name: 'Charmander',
+    isCaught: false
+    },
+]
+
+const tasks = createSlice({
+name: 'tasks',
 initialState: {
     items: data,
 },
@@ -30,4 +30,4 @@ initialState: {
     },
 })
 
-export default pokemons
+export default tasks
