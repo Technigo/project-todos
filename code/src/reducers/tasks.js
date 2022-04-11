@@ -4,13 +4,13 @@ const data = [
 
     {
     id: "gjkfhgkj938",
-    name: "Bulbasaur",
-    isCaught: false,
+    name: "Task 1",
+    isDone: false,
     },
     { 
     id: "gjkfhg33989",
-    name: 'Charmander',
-    isCaught: false
+    name: 'Task 2',
+    isDone: false
     },
 ]
 
@@ -23,7 +23,7 @@ initialState: {
         toggleItem: (store, action) => {
         store.items.forEach(item => {
             if (item.id === action.payload) {
-                item.isCaught = !item.isCaught
+                item.isDone = !item.isDone
             }
         })
         }
