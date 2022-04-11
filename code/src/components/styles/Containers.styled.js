@@ -16,3 +16,14 @@ export const Card = styled(FlexColumn)`
   border-radius: 5px;
   position: relative;
 `
+
+export const AddTaskCard= styled.div`
+ position: relative;
+
+ & img {
+    width: 45px;
+    position: absolute;
+    right: -10px;
+    top: 10px;
+ }
+`

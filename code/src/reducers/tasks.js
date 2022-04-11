@@ -1,9 +1,9 @@
-import {createSlice} from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit'
 
 export const taskList = [
-    { id:'a1c2' , taskInput: { input: 'Finish the asignment'}, tag:'study', isDone: false},
-    { id:'b2d3' , taskInput: { input: 'Hit the gym'}, tag:'gym', isDone: false},
-    { id:'e3f6' , taskInput: { input: 'Buy milk'}, tag:'shopping', isDone: false},
+    { id: 'a1c2', taskInput: 'Finish the asignment', tag: 'study', isDone: false },
+    { id: 'b2d3', taskInput: 'Hit the gym', tag: 'gym', isDone: false },
+    { id: 'e3f6', taskInput: 'Buy milk', tag: 'shopping', isDone: false },
 ]
 
 //with local state (useState), the taskText has an object as property
@@ -15,19 +15,20 @@ export const tasks = createSlice({
     name: 'tasks',
     initialState: {
         items: taskList,
-      },
+    },
     reducers: {
         addTask: (store, action) => {
             // const { taskInput, tag } = action.payload
-
+            console.log(action.payload)
+            const userInput = action.payload
             const newTodo = {
                 id: Date.now().toString(),
-                taskInput: action.payload,
-                tag: action.payload,
+                taskInput: userInput,
+                tag: userInput,
                 isDone: false
             }
             store.items = [...store.items, newTodo];
-        } 
+        }
     }
 })
 

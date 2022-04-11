@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 import { Card } from './styles/Containers.styled'
 import { TagsWrapper, Tag } from './styles/Tags.styled'
+import { AddTaskCard } from './styles/Containers.styled'
 
 import { tasks } from '../reducers/tasks'
 
@@ -11,24 +12,19 @@ import { useSelector, useDispatch } from 'react-redux';
 const AddTasks = () => {
   const [newTask, setNewTask] = useState("")
   const dispatch = useDispatch()
-  const taskInput = useSelector((store) => store.tasks.items.taskText);
+  const taskInput = useSelector((store) => store.tasks.items.taskInput);
+  const tagInput = useSelector((store)=> store.tasks.items.tag)
 
   const onTaskSubmit = () => {
     dispatch(tasks.actions.addTask(newTask))
   }
 
-  const onTaskValueChange = (event) => {
-    const { name, value } = event.target;
-    setNewTask((prevTasks) => {
-      return { 
-        ...prevTasks,
-        [name]: value
-      };
-    });
+  const onTagValueChange = (event) => {
+    event.preventDefault()
   }
-
   console.log(newTask)
   console.log(taskInput)
+  console.log(tagInput)
 
   const onTagSubmit = () => {
 
@@ -36,31 +32,30 @@ const AddTasks = () => {
 
   return (
     <Card>
-      <form>
+      <AddTaskCard>
         <label htmlFor="input">
           <input
             type="text"
-            value={newTask.newTask}
+            value={newTask}
             placeholder="Add your task here..."
             name="input"
-            onChange={onTaskValueChange}
+            onChange={(event) => setNewTask(event.target.value)}
           />
         </label>
-        <button>
+        <button onClick={() => onTaskSubmit()}>
           <img
             src='./images/add-icon.svg'
             alt='add task'
-            onClick={(event) => onTaskSubmit(event.preventDefault())}
           />
         </button>
         <TagsWrapper>
-          <Tag color='#3DB429'>work</Tag>
-          <Tag color='#F36969'>study</Tag>
+          <Tag name='tag' value="work" color='#3DB429'>work</Tag>
+          <Tag name='tag' value="study" color='#F36969'>study</Tag>
           <Tag color='#5B87C9'>shopping</Tag>
           <Tag color='#A093D4'>gym</Tag>
           <Tag color='#FB9A08'>misc</Tag>
         </TagsWrapper>
-      </form>
+        </AddTaskCard>
     </Card>
   )
 }

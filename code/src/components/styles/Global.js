@@ -22,7 +22,7 @@ h1 {
     margin: 20px 0 20px 0;
 }
 
-input[name="content"] {
+input[name="input"] {
     width: 80%;
     height: 20px;
     border: 1px solid #706B6B;
@@ -34,18 +34,6 @@ input[name="content"] {
 input[name="checkTask"] {
     width: 20px;
     height: 20px; 
-}
-
-form img {
-    width: 45px;
-    position: absolute;
-    right: -10px;
-    top: 10px;
-
-}
-
-form {
-    position: relative;
 }
 
 p { 

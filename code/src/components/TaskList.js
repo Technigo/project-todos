@@ -22,7 +22,7 @@ const TaskList = () => {
              name="checkTask" 
              checked={task.isDone}
              />
-             <span>{task.taskInput.input}</span>
+             <span>{task.taskInput}</span>
           </label>
           <button>
           <img

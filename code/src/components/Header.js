@@ -1,17 +1,21 @@
 import React from 'react'
 
+import { useSelector } from 'react-redux';
+
 import { Regular, Count} from './styles/Fonts.styled'
 import { FlexRow } from './styles/Containers.styled'
-import { taskList } from '../reducers/tasks'
+
 
 const Header = () => {
+  const count = useSelector((store) => store.tasks.items.length);
+
   return (
     <header>
       <FlexRow>
         <h1>Today <Regular>{new Date().toLocaleDateString('en-SE', {
           weekday: 'long',
           day: 'numeric'
-        })}</Regular><Count>{taskList.length} tasks</Count></h1>
+        })}</Regular><Count>{count} tasks</Count></h1>
       </FlexRow>
     </header>
   )
