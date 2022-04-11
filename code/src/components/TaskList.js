@@ -16,7 +16,7 @@ return (
     <div>
         {taskList.map(taskItem => (
         <article key={taskItem.id}>
-            <h2>{taskItem.name}</h2>
+             <h2>{taskItem.text}</h2>
             <label>
                 Done (is caught):
              <input type="checkbox" checked={taskItem.isCaught} onChange={() => onTaskToggle(taskItem.id)} />
@@ -24,8 +24,9 @@ return (
             <button>
                 <span role="img" aria-label="delete">x</span>
             </button>
-        </article>
-    ))}</div>
+        </article> 
+     ))}
+    </div>
 )
 }
 
