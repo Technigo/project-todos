@@ -25,18 +25,18 @@ const DoneButton = styled.input`
 
   + label {
     position: relative;
-    padding-left: 30px;
+    padding-left: 10px;
     cursor: pointer;
     display: inline-block;
     color: #666;
     line-height: 25px;
     &:before, &:after {
-      content: '';
+      content: "";
       position: absolute;
-      left: 0;
-      top: 0;
-      width: 25px;
-      height: 25px;
+      left: -18px;
+      top: 2.5px;
+      width: 18px;
+      height: 18px;
     }
     &:before {
       outline: 2px solid #aaa;
@@ -83,10 +83,10 @@ const TodoList = () => {
           <h2>{todoItem.title}</h2>
             <DoneButton 
               type="checkbox" 
+              id={todoItem.id}
               checked={todoItem.isDone}
-              name="todo"
               onChange={() => onTodoToggle(todoItem.id)} />
-            <label htmlFor='done'>Done</label>
+            <label htmlFor={todoItem.id}>Done</label>
           <DeleteButton>
             <span role="img" aria-label="delete">
               ❌
