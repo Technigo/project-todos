@@ -1,12 +1,12 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import tasks from 'reducers/tasks'
-import AddTasks from 'components/AddTasks'
-import TaskList from 'components/TaskList'
-import Header from 'components/Header'
-import Footer from 'components/Footer'
+import Main from 'components/Main'
+import CompletedTasks from 'components/CompletedTasks'
+
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
@@ -20,10 +20,12 @@ const store = configureStore({
 export const App = () => {
   return (
     <Provider store={store}>
-      <Header />
-      <AddTasks />
-      <TaskList />
-      <Footer />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Main />}/>
+          <Route path="/completed" element={<CompletedTasks />} />
+        </Routes>
+      </BrowserRouter>
     </Provider>
   )
 }
