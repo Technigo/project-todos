@@ -133,7 +133,7 @@ const NewProject = () => {
         ))}
       </GridContainer>
       {error && <p>Please select all the required fields.</p>}
-      <button onClick={createProject}>Create project to-do!</button>
+      <SubmitButton onClick={createProject}>Create project to-do!</SubmitButton>
     </NewProjectWrapper>
   );
 };
@@ -169,7 +169,6 @@ const IconButton = styled.button`
   }
 `;
 
-// Button Styling
 const ColorButton = styled.button`
   width: auto;
   background-color: rgba(${(props) => props.backgroundcolor}, 0.7);
@@ -187,4 +186,13 @@ const ColorButton = styled.button`
   &:focus {
     background-color: rgba(${(props) => props.backgroundcolor}, 1);
   }
+`;
+
+const SubmitButton = styled.button`
+  background-color: #dee2e6;
+  border: 2px solid #212529;
+  font-size: 18px;
+  padding: 10px;
+  font-weight: 500;
+  cursor: pointer;
 `;
