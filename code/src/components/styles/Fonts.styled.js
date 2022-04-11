@@ -6,7 +6,7 @@ export const Regular = styled.span`
 `
 
 export const Count= styled(Regular)`
-margin-left: 73px;
+margin-left: 65px;
 `
 
 export const ColorLine = styled.p`

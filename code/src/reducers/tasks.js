@@ -9,7 +9,9 @@ export const taskList = [
 //with local state (useState), the taskText has an object as property
 // { id: '123', taskText: { input: "buy carrots"}, isDone: false }
 // so in this case, easier to just add the tags into the input object
-// { id: '123', taskInput: { input: "buy carrots", tags: "shopping" }, isDone: false }
+
+//Ideally, It should look like tthis
+// { id: '123', taskInput: [{ input: "buy carrots", tags: "shopping" }], isDone: false }
 
 export const tasks = createSlice({
     name: 'tasks',
