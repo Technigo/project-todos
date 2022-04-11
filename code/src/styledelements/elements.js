@@ -13,9 +13,6 @@ export const GridContainer = styled.div`
   gap: 10px;
 `;
 
-// Button Styling
-export const ActionButton = styled.button``;
-
 // Text Input
 export const TextInput = styled.input`
   width: ${(props) => props.width};

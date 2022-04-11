@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components/macro";
 import { tasks } from "reducers/tasks";
 import { projects } from "reducers/projects";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import { keyframes } from "styled-components";
 
 // Import Components
@@ -58,6 +58,9 @@ const Project = () => {
     (task) => task.projectid === id
   );
   const project = projectArray.find((x) => x.id === id);
+
+  const location = useLocation();
+  console.log(location);
 
   // BUGGY! Function to Check if all tasks are completed
   const checkAllComplete = () => {
@@ -172,16 +175,18 @@ const Project = () => {
         </TaskContainer>
         <ProjectFooter backgroundcolor={project.color}>
           {taskArray.length > 0 && (
-            <button onClick={toggleAllTasksComplete}>
+            <FooterButton role="button" onClick={toggleAllTasksComplete}>
               Mark all tasks as complete
-            </button>
+            </FooterButton>
           )}
           {/* {taskArray.length > 0 && allComplete && (
             <button onClick={toggleAllTasksIncomplete}>
               Mark all tasks as incomplete
             </button>
           )} */}
-          <button onClick={deleteProject}>Delete project to-do list</button>
+          <FooterButton role="button" onClick={deleteProject}>
+            Delete project to-do list
+          </FooterButton>
         </ProjectFooter>
       </>
     );
@@ -268,10 +273,29 @@ const NewTaskIcon = styled.img`
   width: 20px;
 `;
 
+const unfold = keyframes`
+0% { max-height: 0; }
+100% { max-height: 2000; }
+`;
+
 const TaskContainer = styled.div`
   padding: 10px;
   border-left: 3px solid ${(props) => props.bordercolor};
   border-right: 3px solid ${(props) => props.bordercolor};
+  overflow: hidden;
+  animation: ${unfold} 4s ease-out;
+  animation-fill-mode: forwards;
+  // height: auto;
+  max-height: 2000px;
+`;
+
+const FooterButton = styled.div`
+  background-color: #dee2e6;
+  color: #212529;
+  border: none;
+  cursor: pointer;
+  padding: 7px;
+  font-weight: 400;
 `;
 
 const ProjectFooter = styled.div`
