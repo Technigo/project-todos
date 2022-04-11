@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
 import todos from 'reducers/todos';
+import image from 'assets/check.png'
 
 const TodoSection = styled.section`
   display: flex;
@@ -17,6 +18,44 @@ const TodoItem = styled.article`
   margin-bottom: 5px;
   position: relative;
   width: 50%;
+`;
+
+const DoneButton = styled.input`
+  opacity: 0;
+
+  + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    display: inline-block;
+    color: #666;
+    line-height: 25px;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 25px;
+      height: 25px;
+    }
+    &:before {
+      outline: 2px solid #aaa;
+    }
+  }
+    &:checked + label:before {
+      outline: 2px solid #00FF00;
+  }
+    &:checked + label:after {
+      background-image: url(${image});
+      background-size: contain;
+      transform: scale(1);
+      opacity: 1;
+      transition: all .3s ease;
+  }
+    &:not(:checked) + label:after {
+      transform: scale(0);
+      opacity: 0;
+}
 `;
 
 const DeleteButton = styled.button`
@@ -42,13 +81,12 @@ const TodoList = () => {
       {todoList.map(todoItem => (
         <TodoItem key={todoItem.id}>
           <h2>{todoItem.title}</h2>
-          <label>
-            Is done:
-            <input 
+            <DoneButton 
               type="checkbox" 
-              checked={todoItem.isDone} 
+              checked={todoItem.isDone}
+              name="todo"
               onChange={() => onTodoToggle(todoItem.id)} />
-          </label>
+            <label htmlFor='done'>Done</label>
           <DeleteButton>
             <span role="img" aria-label="delete">
               ❌
