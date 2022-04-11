@@ -1,16 +1,14 @@
-import React from 'react';
+// import React from 'react';
 
-import Input from 'components/Input';
-import ToDoList from 'components/ToDoList';
+// import TaskList from 'components/TaskList';
 
 
-const Container = () => {
-    return (
-        <section>
-            <ToDoList />
-            <Input />
-        </section>
-    )
-}
+// const Container = () => {
+//     return (
+//         <section>
+//             <TaskList />
+//         </section>
+//     )
+// }
 
-export default Container;
+// export default Container;
