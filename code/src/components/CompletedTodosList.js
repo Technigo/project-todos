@@ -29,7 +29,7 @@ export const CompletedTodosList = () => {
   }, [droppable])
 
   const [inputSearch, setInputSearch] = useState('')
-  const filteredTestSearch = completedTodos.filter(todo => todo.text.includes(inputSearch))
+  const filteredTestSearch = completedTodos.filter(todo => todo.text.toLowerCase().includes(inputSearch.toLowerCase()))
 
   const testSearch = (event) => {
     setInputSearch(event.target.value)

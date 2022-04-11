@@ -1,10 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from "styled-components/macro"
-// import moment from 'moment'
 
 import DatePicker from "react-datepicker"
-
 
 import "react-datepicker/dist/react-datepicker.css"
 
@@ -13,7 +11,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faEdit } from '@fortawesome/free-regular-svg-icons'
-
 
 import { todos } from 'reducers/todos'
 
@@ -53,11 +50,8 @@ export const AddTodo = () => {
   const [inputText, setInputText] = useState('')
   const [inputCategory, setInputCategory] = useState('')
   const [inputDeadline, setInputDeadline] = useState(new Date())
-
-  const [isDisabled, setIsDisabled] = useState(true)
-
-  // maybe this way to add a timestamp? what should be between () ???
   const [timestamp, setTimestamp] = useState(Date.now)
+  const [isDisabled, setIsDisabled] = useState(true)
 
   // if text entered and then deleted, would need to be back disabled and red (so I can remove "required")
   // it works now
@@ -65,7 +59,6 @@ export const AddTodo = () => {
     setInputText(event.target.value)
     setIsDisabled(!event.target.value)
     setTimestamp(Date.now)
-    // setTimestamp(moment().format('dddd, h:mm a'))
   }
 
   const onChangeInputCategory = (event) => {
@@ -76,22 +69,17 @@ export const AddTodo = () => {
 
   const onChangeInputDeadline = (date) => {
     setInputDeadline(+new Date(date))
-
     // ne fonctionne pas
     // setIsDisabled(!event.target.value)
   }
 
-  // timestamp state not updated... how to do it?
   const onAddTodo = (event) => {
     event.preventDefault()
-    // should add timestamp as well in dispatch between ()
     dispatch(todos.actions.addTodo({ inputText, inputCategory, inputDeadline, timestamp }))
     setInputText('')
     setInputCategory('')
+    setInputDeadline(new Date())
     setIsDisabled(true)
-    // console.log(Date.now())
-    // console.log(moment().format('dddd, h:mm a'))
-    console.log(timestamp)
   }
 
   return (
@@ -109,7 +97,7 @@ export const AddTodo = () => {
           <option value="work">Work</option>
         </select>
       </p>
-      <DatePicker selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd MMMM yyyy" locale={'en'}>
+      <DatePicker selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd MMMM yyyy" locale={'en'} minDate={new Date()}>
         <div style={{ color: "red", fontWeight: "bold", textAlign: "center" }}>Choose a deadline</div>
       </DatePicker>
       <AddButton type="submit" disabled={isDisabled}><FontAwesomeIcon icon={faPlus} /></AddButton>
