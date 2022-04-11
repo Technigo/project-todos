@@ -24,3 +24,5 @@ export const viewgray = require("./viewgray.svg");
 export const viewwhite = require("./viewwhite.svg");
 export const weathergray = require("./weathergray.svg");
 export const weatherwhite = require("./weatherwhite.svg");
+export const addwhite = require("./addwhite.svg");
+export const addgray = require("./addgray.svg");

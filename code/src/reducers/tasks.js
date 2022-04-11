@@ -9,9 +9,15 @@ export const tasks = createSlice({
   reducers: {
     addTask: (state, action) => {
       state.task.push({ ...action.payload });
-      // Sort tasks by complete
-      state.task.sort((task) => {
-        return task.complete ? 1 : -1;
+      // Sort tasks by complete and date
+      const complete = (x, y) => {
+        return x > y ? 1 : x < y ? -1 : 0;
+      };
+      const added = (x, y) => {
+        return x < y ? 1 : x > y ? -1 : 0;
+      };
+      state.task.sort(function (a, b) {
+        return complete(a.complete, b.complete) || added(a.added, b.added);
       });
     },
 
@@ -20,9 +26,15 @@ export const tasks = createSlice({
         (task) => action.payload.taskid === task.taskid
       );
       task.complete = !task.complete;
-      // Sort tasks by complete
-      state.task.sort((task) => {
-        return task.complete ? 1 : -1;
+      // Sort tasks by complete and date
+      const complete = (x, y) => {
+        return x > y ? 1 : x < y ? -1 : 0;
+      };
+      const added = (x, y) => {
+        return x < y ? 1 : x > y ? -1 : 0;
+      };
+      state.task.sort(function (a, b) {
+        return complete(a.complete, b.complete) || added(a.added, b.added);
       });
     },
 

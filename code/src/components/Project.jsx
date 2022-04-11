@@ -28,6 +28,7 @@ import {
   tvwhite,
   viewwhite,
   weatherwhite,
+  addwhite,
 } from "../assets/icons";
 
 const iconArray = [
@@ -122,17 +123,18 @@ const Project = () => {
           </div>
         </ProjectHeader>
         <TaskContainer bordercolor={project.color}>
+          <NewTask>
+            <NewTaskIconWrapper role="button" onClick={addTask}>
+              <NewTaskIcon src={addwhite} alt="add new task." />
+            </NewTaskIconWrapper>
+            <TextInput
+              type="text"
+              onChange={(event) => setTaskName(event.target.value)}
+              width="100%"
+              className="newTaskInput"
+            />
+          </NewTask>
           {taskArray.length === 0 && <NoTasks />}
-          <div>
-            <h4>Name task:</h4>
-          </div>
-          <TextInput
-            type="text"
-            onChange={(event) => setTaskName(event.target.value)}
-            width="100%"
-            className="newTaskInput"
-          />
-          <button onClick={addTask}>Add task!</button>
           {taskArray.length > 0 &&
             taskArray.map((task) => (
               <Task key={task.taskid} taskid={task.taskid} />
@@ -186,6 +188,36 @@ const IconTitleContainer = styled.div`
 const Icon = styled.img`
   height: 24px;
   width: 24px;
+`;
+
+const NewTask = styled.div`
+  display: grid;
+  grid-template-columns: max-content auto;
+  align-items: center;
+  gap: 10px;
+`;
+
+const NewTaskIconWrapper = styled.div`
+  border-radius: 50%;
+  background-color: #212429;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.5s ease-in-out;
+    transform: scale(1.1);
+    // border: 2px solid white;
+  }
+`;
+
+const NewTaskIcon = styled.img`
+  height: 22px;
+  width: 22px;
 `;
 
 const TaskContainer = styled.div`

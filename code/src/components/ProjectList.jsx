@@ -43,17 +43,21 @@ const ProjectList = () => {
       {projects.map((project) => (
         <Link to={`/projects/${project.id}`} key={project.id}>
           <ProjectListContainer color={project.color}>
-            <Icon src={iconArray[Number(project.icon)][0]} />
-            <div>{project.title}</div>
+            <IconTitle>
+              <Icon src={iconArray[Number(project.icon)][0]} />
+              {project.title}
+            </IconTitle>
             <div>
-              {
-                tasks.filter(
-                  (task) =>
-                    project.id === task.projectid && task.complete === true
-                ).length
-              }{" "}
-              / {tasks.filter((task) => project.id === task.projectid).length}{" "}
-              tasks done
+              <TaskStatus>
+                {
+                  tasks.filter(
+                    (task) =>
+                      project.id === task.projectid && task.complete === true
+                  ).length
+                }{" "}
+                / {tasks.filter((task) => project.id === task.projectid).length}{" "}
+                tasks done
+              </TaskStatus>
             </div>
           </ProjectListContainer>
         </Link>
@@ -63,11 +67,6 @@ const ProjectList = () => {
 };
 
 export default ProjectList;
-
-const Icon = styled.img`
-  height: 30px;
-  width: 30px;
-`;
 
 const ProjectListContainer = styled.div`
   font-size: 20px;
@@ -80,8 +79,27 @@ const ProjectListContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 5px;
+  margin-bottom: 15px;
 
   a {
     color: white;
   }
+`;
+
+const IconTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+`;
+
+const Icon = styled.img`
+  height: 30px;
+  width: 30px;
+`;
+
+const TaskStatus = styled.p`
+  font-size: 18px;
+  font-weight: 400;
 `;

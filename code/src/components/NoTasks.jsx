@@ -3,7 +3,7 @@ import React from "react";
 const NoTasks = () => {
   return (
     <>
-      <h2>Add your first new to-do task below!</h2>
+      <h3>Add your first new to-do task above!</h3>
     </>
   );
 };

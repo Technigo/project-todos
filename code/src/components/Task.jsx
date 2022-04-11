@@ -32,7 +32,7 @@ const Task = ({ taskid }) => {
   return (
     <TaskWrapper complete={thisTask.complete}>
       <div>
-        <input
+        <Checkbox
           type="checkbox"
           checked={thisTask.complete}
           onChange={toggleComplete}
@@ -41,6 +41,7 @@ const Task = ({ taskid }) => {
       <TaskInfo>
         <TaskTitle>{thisTask.title}</TaskTitle>
         <TaskDate>Added {created}</TaskDate>
+        <Line />
       </TaskInfo>
       <div role="button" onClick={deleteTask}>
         <Icon src={trashgray} alt="delete task." />
@@ -55,10 +56,21 @@ const TaskWrapper = styled.div`
   display: grid;
   grid-template-columns: max-content auto max-content;
   align-items: center;
-  // border: 1px solid black;
   margin: 5px 0;
   gap: 10px;
   color: #212529;
+  color: ${(props) => (props.complete === true ? "#adb5bd" : "#212529")};
+`;
+
+const Line = styled.hr`
+  border-top: 1px solid #adb5bd;
+  border-left: 0px solid transparent;
+  border-right: 0px solid transparent;
+  border-bottom: 0px solid transparent;
+`;
+
+const Checkbox = styled.input`
+  cursor: pointer;
 `;
 
 const TaskInfo = styled.div`
@@ -84,4 +96,10 @@ const TaskDate = styled.p`
 const Icon = styled.img`
   height: 20px;
   width: 20px;
+  cursor: pointer;
+
+  &:hover {
+    transition: 0.5s ease-in-out;
+    transform: scale(1.1);
+  }
 `;

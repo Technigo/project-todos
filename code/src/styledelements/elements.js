@@ -13,12 +13,6 @@ export const GridContainer = styled.div`
   gap: 10px;
 `;
 
-// Icon Styling
-export const Icon = styled.img`
-  height: ${(props) => props.height};
-  width: ${(props) => props.width};
-`;
-
 // Button Styling
 export const ActionButton = styled.button``;
 
