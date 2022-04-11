@@ -3,7 +3,6 @@ import { useSelector } from "react-redux";
 import ProjectCarousel from "./ProjectCarousel";
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
-import { keyframes } from "styled-components";
 import CarouselChildren from "./CarouselChildren";
 import addgray from "../assets/addgray.svg";
 import homeicon from "../assets/homeicon.svg";
@@ -72,16 +71,6 @@ const Icon = styled.img`
   width: 24px;
 `;
 
-const grow = keyframes`
-0% { transform: scale(1); }
-100% { transform: scale(1.2); }
-`;
-
-const shrink = keyframes`
-0% { transform: scale(1.2); }
-100% { transform: scale(1); }
-`;
-
 const IconWrapper = styled.div`
   border-radius: 50%;
   background-color: #dee2e6;
@@ -91,12 +80,11 @@ const IconWrapper = styled.div`
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  animation: ${shrink} 0.7s;
-  animation-fill-mode: forwards;
+  transition: all 0.7s ease-out;
 
   &:hover {
-    animation: ${grow} 1s;
-    animation-fill-mode: forwards;
+    transition: all 0.5s ease-in;
+    transform: scale(1.2);
   }
 `;
 

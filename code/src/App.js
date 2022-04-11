@@ -29,7 +29,7 @@ const store = createStore(reducer, enhancer);
 export const App = () => {
   return (
     <Provider store={store}>
-      <BrowserRouter forceRefresh={true}>
+      <BrowserRouter>
         <Header />
         <Container>
           <Routes>

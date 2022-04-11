@@ -8,12 +8,10 @@ export const projects = createSlice({
 
   reducers: {
     addProject: (state, action) => {
-      console.log(action.payload);
       state.project.push({ ...action.payload });
     },
 
     deleteProject: (state, action) => {
-      console.log(action.payload);
       const projectIndex = state.project.findIndex(
         (project) => action.payload.projectid === project.projectid
       );

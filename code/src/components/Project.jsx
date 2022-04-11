@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import styled from "styled-components/macro";
 import { tasks } from "reducers/tasks";
 import { projects } from "reducers/projects";
-import { useNavigate, useLocation } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { keyframes } from "styled-components";
 
 // Import Components
@@ -59,14 +59,11 @@ const Project = () => {
   );
   const project = projectArray.find((x) => x.id === id);
 
-  const location = useLocation();
-  console.log(location);
-
   // BUGGY! Function to Check if all tasks are completed
   const checkAllComplete = () => {
     for (let i = 0; i < taskArray.length; i++) {
       if (taskArray[i].complete === false) {
-        setAllComplete(false);
+        return false;
       } else {
         setAllComplete(true);
       }
@@ -239,16 +236,6 @@ const NewTask = styled.div`
   gap: 10px;
 `;
 
-const grow = keyframes`
-0% { transform: scale(1); }
-100% { transform: scale(1.1); }
-`;
-
-const shrink = keyframes`
-0% { transform: scale(1.1); }
-100% { transform: scale(1); }
-`;
-
 const NewTaskIconWrapper = styled.div`
   border-radius: 50%;
   background-color: #212429;
@@ -259,12 +246,11 @@ const NewTaskIconWrapper = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  animation: ${shrink} 0.5s;
-  animation-fill-mode: forwards;
+  transition: all 0.7s ease-out;
 
   &:hover {
-    animation: ${grow} 1s;
-    animation-fill-mode: forwards;
+    transition: all 0.5s ease-in;
+    transform: scale(1.1);
   }
 `;
 
@@ -296,12 +282,14 @@ const FooterButton = styled.div`
   cursor: pointer;
   padding: 7px;
   font-weight: 400;
+  align-self: stretch;
+  font-size: 14px;
 `;
 
 const ProjectFooter = styled.div`
   background-color: ${(props) => props.backgroundcolor};
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   color: white;
   padding: 8px 10px;

@@ -77,6 +77,7 @@ const CheckIcon = styled.img`
   width: 20px;
   filter: invert(11%) sepia(5%) saturate(1643%) hue-rotate(179deg)
     brightness(96%) contrast(92%);
+  transition: all 0.7s ease-out;
 `;
 
 const IncompleteCheckIcon = styled.img`
@@ -86,16 +87,7 @@ const IncompleteCheckIcon = styled.img`
   opacity: 0;
   filter: invert(96%) sepia(1%) saturate(3393%) hue-rotate(180deg)
     brightness(78%) contrast(87%);
-`;
-
-const grow = keyframes`
-0% { transform: scale(0); opacity: 0; }
-100% { transform: scale(1); opacity: 1; }
-`;
-
-const shrink = keyframes`
-0% { transform: scale(1); opacity: 1; }
-100% { transform: scale(0); opacity: 0; }
+  transition: all 0.7s ease-out;
 `;
 
 const CustomCheck = styled.div`
@@ -106,24 +98,16 @@ const CustomCheck = styled.div`
   border-radius: 4px;
   cursor: pointer;
 
-  ${IncompleteCheckIcon} {
-    animation: ${shrink} 0.7s;
-    animation-fill-mode: forwards;
-  }
-
-  ${CheckIcon} {
-    animation: ${grow} 0.7s;
-    animation-fill-mode: forwards;
-  }
-
   &:hover ${IncompleteCheckIcon} {
-    animation: ${grow} 1s;
-    animation-fill-mode: forwards;
+    transition: all 0.5s ease-in;
+    transform: scale(1);
+    opacity: 1;
   }
 
   &:hover ${CheckIcon} {
-    animation: ${shrink} 1s;
-    animation-fill-mode: forwards;
+    transition: all 0.5s ease-in;
+    transform: scale(0);
+    opacity: 0;
   }
 `;
 
