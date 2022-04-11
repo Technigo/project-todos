@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import Completed from 'components/Completed'
-import { motion } from 'framer-motion'
 
 import taskList from 'reducers/tasks'
 
