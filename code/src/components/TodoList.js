@@ -37,18 +37,23 @@ const DoneButton = styled.input`
       top: 2.5px;
       width: 18px;
       height: 18px;
+      border-radius: 20%;
     }
     &:before {
       outline: 2px solid #aaa;
     }
   }
     &:checked + label:before {
-      outline: 2px solid #00FF00;
+      outline: 2px solid #097969;
   }
+    &:checked + label {
+    color: #097969;
+    text-decoration: line-through;
+}
     &:checked + label:after {
       background-image: url(${image});
       background-size: contain;
-      transform: scale(1);
+      transform: scale(0.8);
       opacity: 1;
       transition: all .3s ease;
   }
@@ -86,7 +91,7 @@ const TodoList = () => {
               id={todoItem.id}
               checked={todoItem.isDone}
               onChange={() => onTodoToggle(todoItem.id)} />
-            <label htmlFor={todoItem.id}>Done</label>
+            <label htmlFor={todoItem.id}>Do it!</label>
           <DeleteButton>
             <span role="img" aria-label="delete">
               ❌

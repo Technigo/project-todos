@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const data = [
   {
     id: 'adsfadsfsdf',
-    title: 'wash your clothes',
+    title: 'wash clothes',
     isDone: false,
   },
   {
