@@ -95,13 +95,13 @@ const NewProject = () => {
   };
 
   return (
-    <div>
+    <NewProjectWrapper>
       <h2>Name of project list:</h2>
       <TextInput
         type="text"
         onChange={(event) => chooseProjectName(event.target.value)}
         width="100%"
-        // maxlength="13"
+        maxLength="12"
       />
       <h2>Choose your icon:</h2>
       <GridContainer gridcolumns="1fr 1fr 1fr">
@@ -134,13 +134,18 @@ const NewProject = () => {
       </GridContainer>
       {error && <p>Please select all the required fields.</p>}
       <button onClick={createProject}>Create project to-do!</button>
-    </div>
+    </NewProjectWrapper>
   );
 };
 
 export default NewProject;
 
-// Icon Button
+const NewProjectWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+
 const Icon = styled.img`
   height: 30px;
   width: 30px;

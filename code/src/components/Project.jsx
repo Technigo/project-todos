@@ -59,7 +59,7 @@ const Project = () => {
   );
   const project = projectArray.find((x) => x.id === id);
 
-  // Function to Check if all tasks are completed
+  // BUGGY! Function to Check if all tasks are completed
   const checkAllComplete = () => {
     for (let i = 0; i < taskArray.length; i++) {
       if (taskArray[i].complete === false) {
@@ -68,6 +68,7 @@ const Project = () => {
         setAllComplete(true);
       }
     }
+    console.log(allComplete);
   };
 
   const addTask = () => {
@@ -93,6 +94,7 @@ const Project = () => {
     // checkAllComplete();
   };
 
+  // BUGGY - Commented out - issue with checkAllComplete() function
   // const toggleAllTasksIncomplete = () => {
   //   dispatch(
   //     tasks.actions.toggleAllTasksIncomplete({
@@ -169,7 +171,7 @@ const Project = () => {
             ))}
         </TaskContainer>
         <ProjectFooter backgroundcolor={project.color}>
-          {taskArray.length > 0 && !allComplete && (
+          {taskArray.length > 0 && (
             <button onClick={toggleAllTasksComplete}>
               Mark all tasks as complete
             </button>
