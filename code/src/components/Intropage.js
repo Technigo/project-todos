@@ -26,11 +26,6 @@ export default IntroPage
 
 //styled components
 
-const Cloud = styled.img`
-position: relative;
-background: url('./assets/cloud-green.png');
-`
-
 const Button = styled.button`
 background: transparent;
 border-radius: 10px;
