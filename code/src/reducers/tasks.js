@@ -45,8 +45,7 @@ export const tasks = createSlice({
       state.task.splice(taskIndex, 1);
     },
 
-    toggleAllTasks: (state, action) => {
-      console.log(action.payload);
+    toggleAllTasksComplete: (state, action) => {
       const tasks = state.task.filter(
         (task) => action.payload.projectid === task.projectid
       );
@@ -55,9 +54,16 @@ export const tasks = createSlice({
       }
     },
 
-    // BUGGY - doesn't delete all tasks that belong to a project
+    toggleAllTasksIncomplete: (state, action) => {
+      const tasks = state.task.filter(
+        (task) => action.payload.projectid === task.projectid
+      );
+      for (let i = 0; i < tasks.length; i++) {
+        tasks[i].complete = false;
+      }
+    },
+
     deleteProjectTasks: (state, action) => {
-      console.log(action.payload);
       for (let i = 0; i < state.task.length; i++) {
         if (state.task[i].projectid === action.payload.projectid) {
           state.task.splice(i, 1);

@@ -7,7 +7,7 @@ import trashgray from "../assets/trashgray.svg";
 import checkblack from "../assets/checkblack.svg";
 import { keyframes } from "styled-components";
 
-const Task = ({ taskid }) => {
+const Task = ({ taskid, checkAllComplete }) => {
   const dispatch = useDispatch();
   const thisTask = useSelector((store) => store.tasks.task).find(
     (task) => taskid === task.taskid
@@ -20,6 +20,7 @@ const Task = ({ taskid }) => {
         projectid: thisTask.projectid,
       })
     );
+    checkAllComplete();
   };
 
   const deleteTask = () => {
@@ -28,11 +29,12 @@ const Task = ({ taskid }) => {
         taskid: thisTask.taskid,
       })
     );
+    checkAllComplete();
   };
 
   const created = formatRelative(new Date(thisTask.added), new Date());
   return (
-    <TaskWrapper complete={thisTask.complete}>
+    <TaskWrapper>
       <CustomCheck
         role="button"
         onClick={toggleComplete}
@@ -41,7 +43,7 @@ const Task = ({ taskid }) => {
         {thisTask.complete ? "" : <IncompleteCheckIcon src={checkblack} />}
         {thisTask.complete ? <CheckIcon src={checkblack} /> : ""}
       </CustomCheck>
-      <TaskInfo>
+      <TaskInfo complete={thisTask.complete}>
         <TaskTitle>{thisTask.title}</TaskTitle>
         <TaskDate>Added {created}</TaskDate>
         <Line />
@@ -61,8 +63,6 @@ const TaskWrapper = styled.div`
   align-items: center;
   margin: 5px 0;
   gap: 10px;
-  color: #212529;
-  color: ${(props) => (props.complete === true ? "#adb5bd" : "#212529")};
 `;
 
 const Line = styled.hr`
@@ -88,6 +88,16 @@ const IncompleteCheckIcon = styled.img`
     brightness(78%) contrast(87%);
 `;
 
+const grow = keyframes`
+0% { transform: scale(0); opacity: 0; }
+100% { transform: scale(1); opacity: 1; }
+`;
+
+const shrink = keyframes`
+0% { transform: scale(1); opacity: 1; }
+100% { transform: scale(0); opacity: 0; }
+`;
+
 const CustomCheck = styled.div`
   height: 20px;
   width: 20px;
@@ -96,21 +106,31 @@ const CustomCheck = styled.div`
   border-radius: 4px;
   cursor: pointer;
 
+  ${IncompleteCheckIcon} {
+    animation: ${shrink} 0.7s;
+    animation-fill-mode: forwards;
+  }
+
+  ${CheckIcon} {
+    animation: ${grow} 0.7s;
+    animation-fill-mode: forwards;
+  }
+
   &:hover ${IncompleteCheckIcon} {
-    transition: 0.5s ease-in-out;
-    opacity: 1;
-    transform: scale(1);
+    animation: ${grow} 1s;
+    animation-fill-mode: forwards;
   }
 
   &:hover ${CheckIcon} {
-    transition: 0.5s ease-in-out;
-    opacity: 0;
-    transform: scale(0);
+    animation: ${shrink} 1s;
+    animation-fill-mode: forwards;
   }
 `;
 
 const TaskInfo = styled.div`
   justify-self: stretch;
+  transition: 0.7s ease-in-out;
+  color: ${(props) => (props.complete === true ? "#adb5bd" : "#212529")};
 `;
 
 const TaskTitle = styled.p`
@@ -132,15 +152,15 @@ const TaskDate = styled.p`
 const shake = keyframes` 
   0% { transform: translate(1px, 1px) rotate(0deg); }
   10% { transform: translate(-1px, -1px) rotate(-1deg); }
-  20% { transform: translate(-2px, 0px) rotate(1deg); }
-  30% { transform: translate(2px, 0px) rotate(0deg); }
-  40% { transform: translate(1px, -1px) rotate(1deg); }
-  50% { transform: translate(-1px, 1px) rotate(-1deg); }
-  60% { transform: translate(0px, -2px) rotate(0deg); }
-  70% { transform: translate(-1px, 1px) rotate(-1deg); }
-  80% { transform: translate(1px, -1px) rotate(1deg); }
+  20% { transform: translate(-2px, -1px) rotate(1deg); }
+  30% { transform: translate(-1px, 0px) rotate(0deg); }
+  40% { transform: translate(0px, 1px) rotate(1deg); }
+  50% { transform: translate(0px, 0px) rotate(-1deg); }
+  60% { transform: translate(-1px, 0px) rotate(0deg); }
+  70% { transform: translate(0px, 1px) rotate(-1deg); }
+  80% { transform: translate(1px, 2px) rotate(1deg); }
   90% { transform: translate(1px, 1px) rotate(0deg); }
-  100% { transform: translate(1px, -1px) rotate(-1deg); }
+  100% { transform: translate(0px, 0px) rotate(-1deg); }
 `;
 
 const Icon = styled.img`

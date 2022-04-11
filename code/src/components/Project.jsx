@@ -5,6 +5,7 @@ import styled from "styled-components/macro";
 import { tasks } from "reducers/tasks";
 import { projects } from "reducers/projects";
 import { useNavigate } from "react-router-dom";
+import { keyframes } from "styled-components";
 
 // Import Components
 import Error from "./Error";
@@ -50,12 +51,24 @@ const Project = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [taskName, setTaskName] = useState("");
+  const [allComplete, setAllComplete] = useState(false);
   const id = useParams().id;
   const projectArray = useSelector((store) => store.projects.project);
   const taskArray = useSelector((store) => store.tasks.task).filter(
     (task) => task.projectid === id
   );
   const project = projectArray.find((x) => x.id === id);
+
+  // Function to Check if all tasks are completed
+  const checkAllComplete = () => {
+    for (let i = 0; i < taskArray.length; i++) {
+      if (taskArray[i].complete === false) {
+        setAllComplete(false);
+      } else {
+        setAllComplete(true);
+      }
+    }
+  };
 
   const addTask = () => {
     dispatch(
@@ -71,13 +84,23 @@ const Project = () => {
     document.querySelector(".newTaskInput").value = "";
   };
 
-  const toggleAllTasks = () => {
+  const toggleAllTasksComplete = () => {
     dispatch(
-      tasks.actions.toggleAllTasks({
+      tasks.actions.toggleAllTasksComplete({
         projectid: project.id,
       })
     );
+    // checkAllComplete();
   };
+
+  // const toggleAllTasksIncomplete = () => {
+  //   dispatch(
+  //     tasks.actions.toggleAllTasksIncomplete({
+  //       projectid: project.id,
+  //     })
+  //   );
+  //   checkAllComplete();
+  // };
 
   const deleteProject = () => {
     // Delete All Tasks
@@ -132,18 +155,30 @@ const Project = () => {
               onChange={(event) => setTaskName(event.target.value)}
               width="100%"
               className="newTaskInput"
+              onKeyDown={(e) => e.key === "Enter" && addTask()}
             />
           </NewTask>
           {taskArray.length === 0 && <NoTasks />}
           {taskArray.length > 0 &&
             taskArray.map((task) => (
-              <Task key={task.taskid} taskid={task.taskid} />
+              <Task
+                key={task.taskid}
+                taskid={task.taskid}
+                checkAllComplete={checkAllComplete}
+              />
             ))}
         </TaskContainer>
         <ProjectFooter backgroundcolor={project.color}>
-          {taskArray.length > 0 && (
-            <button onClick={toggleAllTasks}>Mark all tasks as complete</button>
+          {taskArray.length > 0 && !allComplete && (
+            <button onClick={toggleAllTasksComplete}>
+              Mark all tasks as complete
+            </button>
           )}
+          {/* {taskArray.length > 0 && allComplete && (
+            <button onClick={toggleAllTasksIncomplete}>
+              Mark all tasks as incomplete
+            </button>
+          )} */}
           <button onClick={deleteProject}>Delete project to-do list</button>
         </ProjectFooter>
       </>
@@ -197,6 +232,16 @@ const NewTask = styled.div`
   gap: 10px;
 `;
 
+const grow = keyframes`
+0% { transform: scale(1); }
+100% { transform: scale(1.1); }
+`;
+
+const shrink = keyframes`
+0% { transform: scale(1.1); }
+100% { transform: scale(1); }
+`;
+
 const NewTaskIconWrapper = styled.div`
   border-radius: 50%;
   background-color: #212429;
@@ -207,11 +252,12 @@ const NewTaskIconWrapper = styled.div`
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  animation: ${shrink} 0.5s;
+  animation-fill-mode: forwards;
 
   &:hover {
-    transition: 0.5s ease-in-out;
-    transform: scale(1.1);
-    // border: 2px solid white;
+    animation: ${grow} 1s;
+    animation-fill-mode: forwards;
   }
 `;
 
