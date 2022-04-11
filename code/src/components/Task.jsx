@@ -5,6 +5,7 @@ import styled from "styled-components/macro";
 import { tasks } from "reducers/tasks";
 import trashgray from "../assets/trashgray.svg";
 import checkblack from "../assets/checkblack.svg";
+import { keyframes } from "styled-components";
 
 const Task = ({ taskid }) => {
   const dispatch = useDispatch();
@@ -32,7 +33,11 @@ const Task = ({ taskid }) => {
   const created = formatRelative(new Date(thisTask.added), new Date());
   return (
     <TaskWrapper complete={thisTask.complete}>
-      <CustomCheck role="button" onClick={toggleComplete}>
+      <CustomCheck
+        role="button"
+        onClick={toggleComplete}
+        complete={thisTask.complete}
+      >
         {thisTask.complete ? "" : <IncompleteCheckIcon src={checkblack} />}
         {thisTask.complete ? <CheckIcon src={checkblack} /> : ""}
       </CustomCheck>
@@ -86,12 +91,10 @@ const IncompleteCheckIcon = styled.img`
 const CustomCheck = styled.div`
   height: 20px;
   width: 20px;
-  border: 1px solid #212529;
+  border: 1px solid
+    ${(props) => (props.complete === true ? "#adb5bd" : "#212529")};
   border-radius: 4px;
   cursor: pointer;
-  // display: flex;
-  // justify-content: center;
-  // align-items: center;
 
   &:hover ${IncompleteCheckIcon} {
     transition: 0.5s ease-in-out;
@@ -126,6 +129,20 @@ const TaskDate = styled.p`
   font-weight: 300;
 `;
 
+const shake = keyframes` 
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -1px) rotate(-1deg); }
+  20% { transform: translate(-2px, 0px) rotate(1deg); }
+  30% { transform: translate(2px, 0px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 1px) rotate(-1deg); }
+  60% { transform: translate(0px, -2px) rotate(0deg); }
+  70% { transform: translate(-1px, 1px) rotate(-1deg); }
+  80% { transform: translate(1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 1px) rotate(0deg); }
+  100% { transform: translate(1px, -1px) rotate(-1deg); }
+`;
+
 const Icon = styled.img`
   height: 20px;
   width: 20px;
@@ -134,5 +151,7 @@ const Icon = styled.img`
   &:hover {
     transition: 0.5s ease-in-out;
     transform: scale(1.2);
+    animation: ${shake} 1s;
+    animation-iteration-count: infinite;
   }
 `;
