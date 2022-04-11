@@ -8,7 +8,7 @@ const IntroPage = () => {
         <>
         <h1>Do it today – get it out of your head</h1>
 
-        <a href="/app">
+        <a href="/StartPage">
             <button className="btn">Write it down</button>
         </a>
         </>
