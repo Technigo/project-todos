@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import CarouselChildren from "./CarouselChildren";
 import addgray from "../assets/addgray.svg";
+import homeicon from "../assets/homeicon.svg";
 
 const Header = () => {
   console.log(useSelector((store) => store));
@@ -13,7 +14,10 @@ const Header = () => {
     <SiteHeader>
       <HeaderWrapper>
         <Link to="/">
-          <h1>TO-DO LISTS</h1>
+          <HomeWrapper>
+            <HomeIcon src={homeicon} alt="Home Logo" />
+            <h1>TO-DO LISTS</h1>
+          </HomeWrapper>
         </Link>
         <Link to="/newproject">
           <IconWrapper>
@@ -46,20 +50,32 @@ const SiteHeader = styled.header`
   color: #f8f9fa;
 
   a {
-    color: #f8f9fa;
+    color: #dee2e6;
   }
 `;
 
+const HomeWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  align-items: center;
+`;
+
+const HomeIcon = styled.img`
+  height: 30px;
+  width: 30px;
+`;
+
 const Icon = styled.img`
-  height: 28px;
-  width: 28px;
+  height: 24px;
+  width: 24px;
 `;
 
 const IconWrapper = styled.div`
   border-radius: 50%;
   background-color: #dee2e6;
-  height: 40px;
-  width: 40px;
+  height: 36px;
+  width: 36px;
   display: flex;
   flex-direction: row;
   justify-content: center;

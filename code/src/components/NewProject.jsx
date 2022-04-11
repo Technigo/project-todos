@@ -1,5 +1,5 @@
 import React from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { projects } from "reducers/projects";
 import { useNavigate } from "react-router-dom";
@@ -39,20 +39,6 @@ const iconArray = [
   [11, weathergray, "weather"],
 ];
 
-// Change to useSelector!!!
-const colorArray = [
-  [0, "#E52E4E", "229, 46, 78", "red"],
-  [1, "#F7643B", "247, 100, 59", "orange"],
-  [2, "#DF8D00", "223, 141, 0", "yellow"],
-  [3, "#10AE21", "16, 174, 32", "green"],
-  [4, "#04A9A4", "4, 169, 164", "teal"],
-  [5, "#00A8DB", "0, 168, 219", "light blue"],
-  [6, "#1183DA", "17, 131, 218", "dark blue"],
-  [7, "#E929BA", "233, 41, 186", "pink"],
-  [8, "#7B39ED", "123, 57, 237", "purple"],
-  [9, "#666666", "102, 102, 102", "gray"],
-];
-
 const NewProject = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -60,6 +46,7 @@ const NewProject = () => {
   const [icon, chooseIcon] = useState("");
   const [color, chooseColor] = useState("");
   const [error, setError] = useState(false);
+  const colorArray = useSelector((store) => store.colors.colors);
 
   // Create Unique Project ID
   let projectId = "";
@@ -136,12 +123,12 @@ const NewProject = () => {
       <GridContainer gridcolumns="1fr 1fr" gridrows="auto">
         {colorArray.map((item) => (
           <ColorButton
-            key={item[0]}
-            value={item[1]}
+            key={item.id}
+            value={item.hex}
             onClick={selectColor}
-            backgroundcolor={item[2]}
+            backgroundcolor={item.rgba}
           >
-            {item[3]}
+            {item.name}
           </ColorButton>
         ))}
       </GridContainer>
@@ -166,6 +153,7 @@ const IconButton = styled.button`
   justify-self: center;
   border: none;
   cursor: pointer;
+  background-color: #dee2e6;
 
   &:hover {
     border: 1px solid #212529;
