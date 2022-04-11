@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 
 
@@ -12,9 +13,9 @@ const IntroPage = () => {
         <h1 className="header-start">Do it today – get it out of your head</h1>
         </div>
 
-        <a href="/app">
+        <Link to="/app">
             <button className="btn">Write it down</button>
-        </a>
+        </Link>
         </>
 
 

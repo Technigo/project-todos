@@ -19,11 +19,11 @@ reducer: reducer,
 export const App = () => {
   return (
     <Provider store={store}>
-      <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<IntroPage />} />
-        <Route path="/app" element={<StartPage />} />
-      </Routes>
-      </BrowserRouter>
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<IntroPage />} />
+            <Route path="/app" element={<StartPage />} />
+          </Routes>
+        </BrowserRouter>
    </Provider>
   )}

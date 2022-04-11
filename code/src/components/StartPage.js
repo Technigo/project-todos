@@ -29,7 +29,7 @@ const StartPage = () => {
                     <h2>{taskItem.name}</h2>
                     
                     <label>
-                        Is caught:
+                       Is done:
                     <input 
                     type="checkbox" 
                     checked={taskItem.isDone} 
@@ -37,7 +37,7 @@ const StartPage = () => {
                     </label>
 
                     <button className="btn">
-                        Done with task
+                        All done
                     </button>
 
                 </article>
