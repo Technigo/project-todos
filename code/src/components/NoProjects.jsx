@@ -1,11 +1,26 @@
 import React from "react";
+import noprojects from "../assets/noprojects.svg";
+import styled from "styled-components";
 
 const NoProjects = () => {
   return (
-    <>
+    <Wrapper>
+      <NoProjectsIcon src={noprojects} alt="Three layered documents" />
+      <h2>Looks like you don't have any to-do lists!</h2>
       <h2>Click the plus icon above to create your new project to-do list!</h2>
-    </>
+    </Wrapper>
   );
 };
 
 export default NoProjects;
+
+const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const NoProjectsIcon = styled.img`
+  width: 200px;
+  height: 200px;
+  margin: 20px auto;
+`;

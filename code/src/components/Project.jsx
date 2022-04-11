@@ -278,7 +278,7 @@ const TaskContainer = styled.div`
 const FooterButton = styled.div`
   background-color: #dee2e6;
   color: #212529;
-  border: none;
+  border: 2px solid #212529;
   cursor: pointer;
   padding: 7px;
   font-weight: 400;
