@@ -22,7 +22,7 @@ export const App = () => {
       <BrowserRouter>
       <Routes>
         <Route path="/" element={<IntroPage />} />
-        <Route path="/app" element={<StartPage />} />
+        <Route path="/StartPage" element={<StartPage />} />
       </Routes>
       </BrowserRouter>
    </Provider>
