@@ -14,16 +14,6 @@ const data = [
     },
 ]
 
-const todos = createSlice ({
-    name: 'tasks',
-    initialState: [
-        { id: 1, text: 'Work work work', complete: true },
-        { id: 2, text: 'Watch Netflix', complete: true },
-        { id: 3, text: 'Create a todo app', complete: true },
-        { id: 4, text: 'Sing a beautiful song', complete: false },
-    ]
-})
-
 const tasks = createSlice({
 name: 'tasks',
 initialState: {
