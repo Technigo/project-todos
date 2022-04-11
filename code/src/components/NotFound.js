@@ -13,7 +13,8 @@ const NotFound = () => {
         <div>
             <img src="./assets/sorry.jpg" alt="illustration created by storyset, www.freepik.com" width="300px"/>
             <p>
-               <h2> Ooopsi, this page does not exist. Try again! </h2>
+               <h2> Ooopsi, this page does not exist.</h2>
+               <h3> Try again! </h3>
                 <Button onClick={onHomeButtonClick}>Return to Home Page</Button>
             </p>
 
