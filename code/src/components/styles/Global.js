@@ -39,7 +39,8 @@ input[name="checkTask"] {
 form img {
     width: 45px;
     position: absolute;
-    margin: 10px 0 0 10px;
+    right: -10px;
+    top: 10px;
 
 }
 
@@ -50,4 +51,11 @@ form {
 p { 
     color: #706B6B;
 }
+
+button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
 `

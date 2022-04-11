@@ -1,0 +1,8 @@
+Users should be able to type task and add a tag (category) and then click the plus button to submit task.
+The category is not mandatory.
+
+Because the button tags are part of the form, the preventDefault needs to be added to prevent the page from refreshing itself.
+
+Steps for Mon 11/4/22:
+1. Set up reducers.
+2. Dispatch function to the add task button.

@@ -1,7 +1,8 @@
 import React from 'react'
 
-import { Regular, LeftMargin } from './styles/Fonts.styled'
+import { Regular, Count} from './styles/Fonts.styled'
 import { FlexRow } from './styles/Containers.styled'
+import { taskList } from '../reducers/tasks'
 
 const Header = () => {
   return (
@@ -10,7 +11,7 @@ const Header = () => {
         <h1>Today <Regular>{new Date().toLocaleDateString('en-SE', {
           weekday: 'long',
           day: 'numeric'
-        })}</Regular><LeftMargin>3 tasks</LeftMargin></h1>
+        })}</Regular><Count>{taskList.length} tasks</Count></h1>
       </FlexRow>
     </header>
   )

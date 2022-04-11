@@ -5,7 +5,7 @@ export const Regular = styled.span`
     font-size: .6em;
 `
 
-export const LeftMargin = styled(Regular)`
+export const Count= styled(Regular)`
 margin-left: 73px;
 `
 

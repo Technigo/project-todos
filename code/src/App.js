@@ -1,20 +1,22 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { configureStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { tasks } from "./reducers/tasks";
 
 
 import Header from 'components/Header'
 import AddTasks from 'components/AddTasks'
 import FilterTasks from 'components/FilterTasks'
-import AllTasks from 'components/AllTasks'
+import TaskList from 'components/TaskList'
 
 import { GlobalStyles } from "components/styles/Global";
 import { FlexColumn } from 'components/styles/Containers.styled'
 
-const reducer = {tasks: tasks.reducer}
+const reducer = combineReducers({
+  tasks: tasks.reducer
+});
 
-const store = configureStore({ reducer: reducer });
+const store = configureStore({ reducer});
 
 export const App = () => {
   return (
@@ -25,7 +27,7 @@ export const App = () => {
           <Header />
           <AddTasks />
           <FilterTasks />
-          <AllTasks />
+          <TaskList />
         </FlexColumn>
       </main>
     </Provider>

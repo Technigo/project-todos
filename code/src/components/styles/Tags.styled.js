@@ -19,4 +19,8 @@ export const Tag = styled.button`
   color: #706B6B;
   font-size: .8em;
   background-color: transparent;
+
+  &:hover {
+    
+  }
 `
