@@ -4,14 +4,14 @@ import styled from 'styled-components'
 
 import tasks from "reducers/tasks";
 
-const taskArticle = styled.article`
+const TaskArticle = styled.article`
     position: relative;
 `
 
 const RemoveButton = styled.button`
     background-color: blue;
     position: absolute;
-    top: 10px;
+    top: 0;
     right: 10px;
     border: none;
     cursor: poiner;
@@ -31,7 +31,7 @@ const TaskList = () => {
     return (
         <section>
             {allTasks.map(taskItem => (
-                <article key={taskItem.id}>
+                <TaskArticle key={taskItem.id}>
                     <h2>{taskItem.name}</h2>
                     <label> Completed:
                         <input type="checkbox" 
@@ -40,7 +40,7 @@ const TaskList = () => {
                         />
                     </label>
                     <RemoveButton>X</RemoveButton>
-                </article>
+                </TaskArticle>
             ))}
         </section>
     )

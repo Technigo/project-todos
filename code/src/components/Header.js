@@ -9,9 +9,9 @@ background-color: blue;
 
 const Header = () => {
     return(
-        <Header>
+        <HeaderWrapper>
             THIS WILL BE MY HEADER
-        </Header>
+        </HeaderWrapper>
     )
 }
 
