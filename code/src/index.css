@@ -4,6 +4,11 @@ body {
   background-image: url(assets/cork-background.jpg);
 }
 
+.header-text {
+  font-size: 18px;
+  font-weight: 700;
+}
+
 .todo-item {
   display: flex;
   align-items: center;

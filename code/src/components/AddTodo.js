@@ -27,7 +27,7 @@ const AddTodo = () => {
 
   return (
     <div>
-      <p>Things that has to be done!</p>
+      <p className='header-text'>Things that has to be done!</p>
       <input
         className='text-input'
         type='text'
