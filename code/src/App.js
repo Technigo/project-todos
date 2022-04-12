@@ -5,7 +5,7 @@ import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
 import pokemons from "reducers/todo";
 
-import PokemonList from "components/todoList";
+import TaskList from "components/todoList";
 
 //One of the pocket in the backpack
 const reducer = combineReducers({
@@ -23,7 +23,7 @@ const store = configureStore({
 export const App = () => {
   return (
     <Provider store={store}>
-      <PokemonList />
+      <TaskList />
     </Provider>
   );
 };

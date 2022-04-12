@@ -2,19 +2,29 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const data = [
   {
-    id: "lahjs275234x",
-    name: "Bulbasaur",
-    isCaught: false,
+    id: "1",
+    text: "Watch video on actions & reducers",
+    complete: false,
   },
   {
-    id: "lahjs27kjahs24x",
-    name: "Charmander",
-    isCaught: false,
+    id: "2",
+    text: "Follow redux codealong",
+    complete: false,
+  },
+  {
+    id: "3",
+    text: "Fork weekly assignment",
+    complete: false,
+  },
+  {
+    id: "4",
+    text: "Create a todo app",
+    complete: false,
   },
 ];
 
 const pokemons = createSlice({
-  name: "pokemons",
+  name: "tasks",
   initialState: {
     items: data,
   },
@@ -29,7 +39,7 @@ const pokemons = createSlice({
 
       store.items.forEach((item) => {
         if (item.id === action.payload) {
-          item.isCaught = !item.isCaught;
+          item.complete = !item.complete;
         }
       });
     },

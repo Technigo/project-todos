@@ -4,7 +4,7 @@ import styled from "styled-components";
 
 import pokemons from "reducers/todo";
 
-const PokemonItem = styled.article`
+const TaskItem = styled.article`
   border: 1px solid #dcdcdc;
   border-radius: 5px;
   padding: 10px;
@@ -24,8 +24,8 @@ const DeleteButton = styled.button`
 // useSelector  reach for the data.
 // to reach the whole store or backpack: ((store) => store...
 
-const PokemonList = () => {
-  const pokemonList = useSelector((backpack) => backpack.pokemons.items);
+const TaskList = () => {
+  const taskList = useSelector((backpack) => backpack.pokemons.items);
 
   const dispatch = useDispatch();
 
@@ -35,15 +35,15 @@ const PokemonList = () => {
 
   return (
     <section>
-      {pokemonList.map((pokemonItem) => (
-        <PokemonItem key={pokemonItem.id}>
-          <h2>{pokemonItem.name}</h2>
+      {taskList.map((taskItem) => (
+        <TaskItem key={taskItem.id}>
+          <h2>{taskItem.text}</h2>
           <label>
-            Is caught:
+            Is completed:
             <input
               type="checkbox"
-              checked={pokemonItem.isCaught}
-              onChange={() => onPokemonToggle(pokemonItem.id)}
+              checked={taskItem.completed}
+              onChange={() => onPokemonToggle(taskItem.id)}
             />
           </label>
           <DeleteButton>
@@ -51,10 +51,10 @@ const PokemonList = () => {
               ❌
             </span>
           </DeleteButton>
-        </PokemonItem>
+        </TaskItem>
       ))}
     </section>
   );
 };
 
-export default PokemonList;
+export default TaskList;
