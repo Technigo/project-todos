@@ -11,7 +11,9 @@ const ToDoList = () => {
             {toDoList.map((toDoItem) => (
                 <ToDoListItem 
                   key={toDoItem.id}
-                  text={toDoItem.text}>
+                  id={toDoItem.id}
+                  text={toDoItem.text}
+                  isComplete={toDoItem.complete}>
                 </ToDoListItem>
             ))}
         </section>
