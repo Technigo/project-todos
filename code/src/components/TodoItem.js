@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from 'styled-components';
 
 import todos from "../reducers/todos.js";
+import TodoTags from "./TodoTags.js";
 import TodoCompleted from "./TodoCompleted.js";
 
 const TodoItem = ({ todo }) => {
@@ -15,10 +16,7 @@ const TodoItem = ({ todo }) => {
             <p>
                 {todo.whatToDo}
             </p>
-            <h3>TAGS:</h3>
-            <p>
-                {todo.tags}
-            </p>
+            <TodoTags tags={todo.tags} />
             <TodoCompleted todo={todo} />
         </div>
     );
