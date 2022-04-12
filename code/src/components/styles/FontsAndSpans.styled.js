@@ -18,3 +18,8 @@ export const ColorLine = styled.p`
 export const Task = styled.span`
   margin-left: 3px;
 `
+
+export const DoneTask = styled(Task)`
+  color: #706B6B;
+  text-decoration: line-through;
+`

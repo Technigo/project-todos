@@ -37,6 +37,7 @@ input[name="input"] {
 input[name="checkTask"] {
     width: 20px;
     height: 20px; 
+    accent-color: gray;
 }
 
 p { 
