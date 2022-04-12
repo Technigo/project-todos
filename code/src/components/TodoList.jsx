@@ -13,7 +13,9 @@ export const TodoList = () => {
   return (
     <Box my={5}>
       {filterTodos.length ? 
-      filterTodos.map(todo => (<Todo key={`todo-${todo.id}`} todo={todo} /> )) 
+      filterTodos.map(todo => (
+        <Todo key={`todo-${todo.id}`} todo={todo}></Todo>
+      )) 
       : <Done /> }
     </Box>
   )

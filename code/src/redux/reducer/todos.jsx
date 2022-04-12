@@ -1,7 +1,7 @@
-import { ADD_TODO, TOGGLE_TODO } from '../actionsTypes';
+import { ADD_TODO, TOGGLE_TODO, DELETED } from '../actionsTypes';
 
 const initialState = {
-  todos: []
+  todos: [],
 }
 
 const todos = (state = initialState, action) => {
@@ -13,6 +13,15 @@ const todos = (state = initialState, action) => {
           ...state.todos,
           { content, completed: false, id }
         ]
+      }
+    }
+
+    case DELETED: {
+      const { id } = action.payload;
+      const index = state.todos.findIndex((task) => id === task.id)
+      return {
+        ...state,
+        todos: [...state.todos.slice(0, index), ...state.todos.slice(index + 1)]
       }
     }
 

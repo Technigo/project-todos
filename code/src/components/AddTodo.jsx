@@ -26,6 +26,7 @@ export const AddTodo = () => {
           <Input
             type="text"
             value={value}
+            placeholder="Create a new to-do"
             onChange={handleInput}
             borderTopRightRadius={0}
             borderBottomRightRadius={0}
