@@ -1,15 +1,17 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import Input from "components/input";
+import "./App.css";
 //combineReducers for the pockets and configureStore for the backpack
 
-import pokemons from "reducers/todo";
+import task from "reducers/todo";
 
 import TaskList from "components/todoList";
 
 //One of the pocket in the backpack
 const reducer = combineReducers({
-  pokemons: pokemons.reducer,
+  task: task.reducer,
 });
 
 // Inject the pocket in to the backpack
@@ -23,6 +25,7 @@ const store = configureStore({
 export const App = () => {
   return (
     <Provider store={store}>
+      <Input />
       <TaskList />
     </Provider>
   );

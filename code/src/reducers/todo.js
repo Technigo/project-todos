@@ -23,13 +23,13 @@ const data = [
   },
 ];
 
-const pokemons = createSlice({
+const task = createSlice({
   name: "tasks",
   initialState: {
     items: data,
   },
 
-  //Reducers to update the isCaught
+  //Reducers to update the complete.
   //We receive 2 arguments from redux: store and action
   // store.items = name of our array
   reducers: {
@@ -46,4 +46,4 @@ const pokemons = createSlice({
   },
 });
 
-export default pokemons;
+export default task;

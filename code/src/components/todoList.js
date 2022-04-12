@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
-import pokemons from "reducers/todo";
+import task from "reducers/todo";
 
 const TaskItem = styled.article`
   border: 1px solid #dcdcdc;
@@ -25,12 +25,12 @@ const DeleteButton = styled.button`
 // to reach the whole store or backpack: ((store) => store...
 
 const TaskList = () => {
-  const taskList = useSelector((backpack) => backpack.pokemons.items);
+  const taskList = useSelector((backpack) => backpack.task.items);
 
   const dispatch = useDispatch();
 
-  const onPokemonToggle = (pokemonId) => {
-    dispatch(pokemons.actions.toggleItem(pokemonId));
+  const onTaskToggle = (Id) => {
+    dispatch(task.actions.toggleItem(Id));
   };
 
   return (
@@ -43,7 +43,7 @@ const TaskList = () => {
             <input
               type="checkbox"
               checked={taskItem.completed}
-              onChange={() => onPokemonToggle(taskItem.id)}
+              onChange={() => onTaskToggle(taskItem.id)}
             />
           </label>
           <DeleteButton>
