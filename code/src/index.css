@@ -5,9 +5,11 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #ecf0f3;
+  /* background-color: #ecf0f3; */
+  background: linear-gradient(330deg, #D2E0F8, #ecf0f3);
+  background-image: url(./asstes/pexels-ian-beckley-2440024.jpg);
 
-
+  background-size: cover;
 }
 
 code {

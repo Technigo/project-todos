@@ -43,12 +43,12 @@ const ProviderContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  // margin-top: 50px;
-  background-color: rgba(255, 255, 255, 0.473);
   margin: 100px 700px;
   padding: 50px;
   border-radius: 20px;
-  background: #ecf0f3;
-   box-shadow: 13px 13px 20px #cbced1,
-              -13px -13px 20px #ffffff;
+  background: rgb(236, 240, 243);
+   box-shadow: 
+              -3px -3px 20px rgb(236, 226, 225, 0.9),
+              3px 3px 20px rgb(236, 226, 225, 0.9);
+
 `
