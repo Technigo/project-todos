@@ -3,8 +3,8 @@ import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import Input from "components/input";
 import "./App.css";
-//combineReducers for the pockets and configureStore for the backpack
 
+//combineReducers for the pockets and configureStore for the backpack
 import task from "reducers/todo";
 
 import TaskList from "components/todoList";
@@ -25,8 +25,8 @@ const store = configureStore({
 export const App = () => {
   return (
     <Provider store={store}>
-      <Input />
       <TaskList />
+      <Input />
     </Provider>
   );
 };
