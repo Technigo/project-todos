@@ -1,5 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import styled from "styled-components";
+
+const NrOfTask = styled.p`
+  font-size: 18px;
+  font-weight: 500;
+  margin-left: 20px;
+`;
 
 const TaskCounter = () => {
   const taskToDo = useSelector((store) => store.tasks.items);
@@ -8,13 +15,11 @@ const TaskCounter = () => {
   if (taskToDo.length > 0) {
     return (
       <div>
-        <p>Tasks To Do:{remainingToDo.length} </p>
+        <NrOfTask>{remainingToDo.length} Tasks To Do </NrOfTask>
       </div>
     );
   } else if (remainingToDo.length === 0) {
-      return(
-          <p>No tasks toDo</p>
-      )
+    return <p>No tasks toDo</p>;
   }
 };
 export default TaskCounter;
