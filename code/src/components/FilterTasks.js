@@ -1,7 +1,7 @@
 import React from 'react'
 
 import { FlexRow } from './styles/Containers.styled'
-import { ColorLine } from './styles/Fonts.styled'
+import { ColorLine } from './styles/FontsAndSpans.styled'
 
 const FilterTasks = () => {
     return (

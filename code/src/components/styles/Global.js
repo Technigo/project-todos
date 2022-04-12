@@ -41,6 +41,7 @@ p {
 }
 
 button {
+    box-sizing: border-box;
     border: none;
     background: none;
     cursor: pointer;

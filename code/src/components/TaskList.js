@@ -2,7 +2,10 @@ import React from 'react'
 
 import { useSelector, useDispatch } from "react-redux";
 
-import { FlexColumn } from './styles/Containers.styled'
+import { TaskListFlexColumn, TaskListWrapper } from './styles/Containers.styled'
+import { Tag } from './styles/Tags.styled'
+import { Task } from './styles/FontsAndSpans.styled'
+import { RemoveTaskButton } from './styles/Buttons.styled'
 
 
 
@@ -12,26 +15,28 @@ const TaskList = () => {
   const dispatch = useDispatch();
 
   return (
-    <FlexColumn>
+    <TaskListFlexColumn>
       {allTasks.map((task => (
-        <div key={task.id}>
+        <TaskListWrapper key={task.id}>
           <label htmlFor="checkTask">
             <input 
              type="checkbox" 
              name="checkTask" 
              checked={task.isDone}
              />
-             <span>{task.task}</span>
-          </label>
+             <Task>{task.task}</Task>
+             <Tag>{task.tag} </Tag>
+          
           <button>
-          <img
+          <RemoveTaskButton
           src='./images/remove-icon.svg'
           alt='remove task'
         />
         </button>
-        </div>
+        </label>
+        </TaskListWrapper >
       )))}
-    </FlexColumn>
+    </TaskListFlexColumn>
   )
 }
 

@@ -11,6 +11,15 @@ flex-direction: column;
 padding: 20px;
 `
 
+export const TaskListFlexColumn = styled(FlexColumn)`
+padding: 0;
+`
+export const TaskListWrapper = styled(FlexRow)`
+display: flex;
+flex-direction: column;
+position: relative;
+`
+
 export const Card = styled(FlexColumn)`
   border: 1px solid #706B6B;
   border-radius: 5px;
@@ -20,10 +29,4 @@ export const Card = styled(FlexColumn)`
 export const AddTaskCard= styled.div`
  position: relative;
 
- & img {
-    width: 45px;
-    position: absolute;
-    right: -10px;
-    top: 10px;
- }
 `

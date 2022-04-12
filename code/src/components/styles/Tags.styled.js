@@ -5,7 +5,6 @@ export const TagsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-
 `
 
 export const TagInput = styled.input`
@@ -24,4 +23,14 @@ export const TagInput = styled.input`
   &:hover {
     cursor: pointer;
   }
+`
+export const Tag = styled.span`
+  color: #706B6B;
+  font-size: .6em;
+  border: 1px solid #706B6B;
+  border-radius: 5px;
+  padding: 2px;
+  position: absolute;
+  bottom: 2px;
+  right: 28px;
 `
