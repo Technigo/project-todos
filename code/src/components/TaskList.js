@@ -7,29 +7,16 @@ import { Tag } from './styles/Tags.styled'
 import { Task } from './styles/FontsAndSpans.styled'
 import { RemoveTaskButton } from './styles/Buttons.styled'
 
-
+import { tasks } from '../reducers/tasks'
 
 const TaskList = () => {
 
   const allTasks = useSelector((store) => store.tasks.items);
+  const dispatch = useDispatch()
 
-  // const checkTag = () => { 
-  //   if (tag !== "") {
-  //     if (tag === "work") {
-  //       return <Tag color='#3DB429'> work </Tag>
-  //     } else if (tag === "study") {
-  //       return <Tag color='#3DB429'> study </Tag>
-  //     } else if (tag === "shopping") {
-  //       return <Tag color='#3DB429'> shopping </Tag>
-  //     } else if (tag === "gym") {
-  //       return <Tag color='#3DB429'> gym </Tag>
-  //     } else {
-  //       <Tag color='#3DB429'> misc </Tag>
-  //     }
-  //   } 
-  //     return null
-  // }
-
+  const onTaskToggle = (taskId) => {
+    dispatch(tasks.actions.toggleDoneTask(taskId));
+  }
 
   return (
     <TaskListFlexColumn>
@@ -40,6 +27,7 @@ const TaskList = () => {
               type="checkbox"
               name="checkTask"
               checked={task.isDone}
+              onChange={() => dispatch(() => onTaskToggle(task.id))}
             />
             <Task>{task.task}</Task>
             {(() => {
