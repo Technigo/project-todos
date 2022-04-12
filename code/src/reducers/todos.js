@@ -4,7 +4,8 @@ import uniqid from 'uniqid'
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: []
+    items: [],
+    deletedItems: []
   },
   reducers: {
     addTodo: (store, action) => {
@@ -20,28 +21,13 @@ const todos = createSlice({
       })
     },
 
-    deleteTodo: (store, action) => {
-      store.items = store.items.filter((todo) => todo.id !== action.payload)
-    },
-
     toggleTodo: (store, action) => {
-      console.log(Date.now())
-      console.log(Math.round(Date.now() / 86400000) * 86400000)
-
       store.items.forEach((todo) => {
         if (todo.id === action.payload) {
           todo.completed = !todo.completed
         }
       })
     },
-
-    deleteAll: (store) => { store.items = [] },
-
-    // need to be implemented in UI, or remove deleteAll to keep this one instead
-    deleteAllCompleted: (store) => {
-      store.items = store.items.filter((todo) => !todo.completed)
-    },
-
 
     toggleAll: (store) => {
       if (store.items.find(todo => !todo.completed)) {
@@ -55,19 +41,39 @@ const todos = createSlice({
       }
     },
 
+    deleteTodo: (store, action) => {
+      store.deletedItems = store.items.filter((todo) => todo.id === action.payload)
+      store.items = store.items.filter((todo) => todo.id !== action.payload)
+    },
+
+    deleteAll: (store) => { 
+      store.deletedItems = store.items
+      store.items = [] 
+    },
+
+    // need to be implemented in UI, or remove deleteAll to keep this one instead
+    deleteAllCompleted: (store) => {
+      store.items = store.items.filter((todo) => !todo.completed)
+    },
+
+    undoDelete: (store) => {
+      store.items = store.items.concat(store.deletedItems)
+      store.deletedItems = []
+    },
+
 
 
     // displayAll: (store) => {
     //   store.items
     // },
 
-    // displayPending: (store) => {
-    //   store.items.filter(todo => !todo.completed)
-    // },
+    displayPending: (store) => {
+      store.items.filter(todo => !todo.completed)
+    },
 
-    // displayCompleted: (store) => {
-    //   store.items.filter(todo => todo.completed)
-    // }
+    displayCompleted: (store) => {
+      store.items.filter(todo => todo.completed)
+    }
 
 
 

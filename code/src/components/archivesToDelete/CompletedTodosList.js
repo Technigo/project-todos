@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react"
 import { useSelector } from 'react-redux'
 import Sortable from "sortablejs"
 
-import Todo from './Todo'
+import Todo from '../Todo'
 
 const CompletedTodosList = () => {
   const allTodos = useSelector((store) => store.todos.items)

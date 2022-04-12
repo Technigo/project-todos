@@ -1,12 +1,9 @@
 import React, { useEffect, useState } from "react"
-import { useSelector } from 'react-redux'
 import Sortable from "sortablejs"
 
-import Todo from './Todo'
+// import Todo from './Todo'
 
-const PendingTodosList = () => {
-  const allTodos = useSelector((store) => store.todos.items)
-  const pendingTodos = allTodos.filter(todo => !todo.completed)
+const SortableDroppable = ({ arrayToUse }) => {
 
   const [droppable, setDroppable] = useState(null)
 
@@ -31,14 +28,14 @@ const PendingTodosList = () => {
   return (
     <>
       <div ref={(el) => setDroppable(el)}>
-        {pendingTodos.reverse().map((todo) => (
+        {arrayToUse}
+        {/* {pendingTodos.reverse().map((todo) => (
           <Todo key={todo.id} todo={todo} id={todo.id} />
-        ))}
+        ))} */}
       </div>
-      <p>Not completed tasks: {pendingTodos.length}/{allTodos.length}</p>
 
     </>
   )
 }
 
-export default PendingTodosList
+export default SortableDroppable

@@ -81,7 +81,7 @@ const AddTodo = () => {
     setInputDeadline(new Date())
     setIsDisabled(true)
   }
-  // minDate={new Date()}
+
   return (
     <form onSubmit={onAddTodo}>
       <p>
@@ -90,14 +90,14 @@ const AddTodo = () => {
       </p>
       <p>
         <label htmlFor="category" value="Choose a category"></label>
-        <select required id="category" value={inputCategory} onChange={onChangeInputCategory}>
-          <option value="" disabled>--Choose a category--</option>
+        <select id="category" value={inputCategory} onChange={onChangeInputCategory}>
+          {/* <option value="" disabled>--Choose a category--</option> */}
           <option value="personal">Personal</option>
           <option value="school">School</option>
           <option value="work">Work</option>
         </select>
       </p>
-      <DatePicker selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd.MM.yyyy" locale={'en'} >
+      <DatePicker selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd.MM.yyyy" locale={'en'} minDate={new Date()}>
         <div style={{ color: "red", fontWeight: "bold", textAlign: "center" }}>Choose a deadline</div>
       </DatePicker>
       <AddButton type="submit" disabled={isDisabled}><FontAwesomeIcon icon={faPlus} /></AddButton>
