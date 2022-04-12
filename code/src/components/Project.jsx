@@ -281,6 +281,7 @@ const TaskContainer = styled.div`
   animation-fill-mode: forwards;
   // height: auto;
   max-height: 2000px;
+  background-color: white;
 `;
 
 const FooterButton = styled.div`
@@ -292,6 +293,10 @@ const FooterButton = styled.div`
   font-weight: 400;
   align-self: stretch;
   font-size: 14px;
+
+  @media (min-width: 768px) {
+    font-size: 15px;
+  }
 `;
 
 const ProjectFooter = styled.div`

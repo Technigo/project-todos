@@ -59,12 +59,17 @@ const HeaderWrapper = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 20px;
   padding-left: env(safe-area-inset-left);
   padding-right: env(safe-area-inset-right);
+  padding: 15px 20px;
 
   a:hover {
     text-decoration: underline;
+  }
+
+  @media (min-width: 768px) {
+    width: 600px;
+    margin: 0 auto;
   }
 `;
 

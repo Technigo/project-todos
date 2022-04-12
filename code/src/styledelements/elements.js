@@ -4,6 +4,11 @@ import styled from "styled-components/macro";
 export const Container = styled.div`
   width: 325px;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    width: 450px;
+    margin: 0 auto;
+  }
 `;
 
 export const GridContainer = styled.div`

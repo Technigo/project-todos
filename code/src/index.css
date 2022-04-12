@@ -17,6 +17,7 @@ body {
   display: flex;
   flex-direction: column;
   color: #212529;
+  background-color: #f8f9fa;
 }
 
 /* Carousel */
