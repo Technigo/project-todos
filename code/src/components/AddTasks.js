@@ -13,6 +13,7 @@ import { useDispatch } from 'react-redux';
 const AddTasks = () => {
   const [task, setTask] = useState("")
   const [tag, setTag] = useState("")
+  const [charCount, setCharCount] = useState(0)
 
   const dispatch = useDispatch()
 
@@ -20,6 +21,12 @@ const AddTasks = () => {
     dispatch(tasks.actions.addTask({ task, tag }))
     setTask('')
     setTag('')
+    setCharCount(0)
+  }
+
+  const onTaskValueChange = (event) => {
+    setTask(event.target.value)
+    setCharCount(event.target.value.length)
   }
 
   const onTagValueChange = (event) => {
@@ -38,8 +45,10 @@ const AddTasks = () => {
             value={task}
             placeholder="Add your task here..."
             name="input"
-            onChange={(event) => setTask(event.target.value)}
+            onChange={onTaskValueChange}
+            maxLength="30"
           />
+          {charCount}/30 charactors
         </label>
         <TagsWrapper>
           <form value={tag}>

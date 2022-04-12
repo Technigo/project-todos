@@ -35,7 +35,7 @@ export const Tag = styled.span`
   border-radius: 5px;
   padding: 2px;
   position: absolute;
-  bottom: 2px;
+  bottom: 8px;
   right: 28px;
   background-color: #fffefd;
 `

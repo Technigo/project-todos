@@ -2,7 +2,7 @@ import React from 'react'
 
 import { useSelector, useDispatch } from "react-redux";
 
-import { TaskListFlexColumn, TaskListWrapper } from './styles/Containers.styled'
+import { TaskListFlexColumn, TaskListWrapper, TaskListWrapperLabel } from './styles/Containers.styled'
 import { Tag } from './styles/Tags.styled'
 import { Task, DoneTask } from './styles/FontsAndSpans.styled'
 import { RemoveTaskButton } from './styles/Buttons.styled'
@@ -22,7 +22,7 @@ const TaskList = () => {
     <TaskListFlexColumn>
       {allTasks.map((task => (
         <TaskListWrapper key={task.id}>
-          <label htmlFor="checkTask">
+          <TaskListWrapperLabel htmlFor="checkTask">
             <input
               type="checkbox"
               name="checkTask"
@@ -46,7 +46,7 @@ const TaskList = () => {
                 alt='remove task'
               />
             </button>
-          </label>
+          </TaskListWrapperLabel>
         </TaskListWrapper >
       )))}
     </TaskListFlexColumn>

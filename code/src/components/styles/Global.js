@@ -32,16 +32,25 @@ input[name="input"] {
     padding: 5px;
     font-size: 1.2em;
     background-color: #fffefd;
+    margin-bottom: 10px;
 }
 
 input[name="checkTask"] {
-    width: 20px;
-    height: 20px; 
+    width: 18px;
+    height: 18px; 
     accent-color: gray;
+    position: absolute;
+    top: 0;
+
+    &:hover {
+      cursor: pointer;
+    }
 }
 
-p { 
+
+label {
     color: #706B6B;
+    font-size: .9em;
 }
 
 button {
