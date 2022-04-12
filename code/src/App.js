@@ -1,13 +1,26 @@
 import React from 'react'
+import { Provider } from 'react-redux'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
+
+import tasks from 'reducers/Tasks'
 
 import { Header } from 'components/Header'
-import { AddToDo } from 'components/AddToDo'
+
+
+//Creating the pocket (combined all slices)
+const reducer = combineReducers({
+  tasks: tasks.reducer
+})
+
+const store = configureStore({
+  reducer
+})
+
 
 export const App = () => {
   return (
-    <div>
+    <Provider store={store}>
       <Header/>
-      <AddToDo/>
-    </div>
+    </Provider>
   )
 }
