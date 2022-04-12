@@ -8,23 +8,31 @@ export const list = createSlice({
         todos: []
     },
     reducers: {
-        addTodo: (state, action) => {
-            const excistingTodo = state.todos.find((todo) => todo.id === action.payload.id)
+        addTodo: (store, action) => {
+            const excistingTodo = store.todos.find((todo) => todo.id === action.payload.id)
 
             if (excistingTodo) {
                 excistingTodo.quantity += 1
             } else {
-                state.todos.push ({ ...action.payload, quantity: 1 })
+                store.todos.push ({ ...action.payload, quantity: 1 })
             }
         },
-        removeTodo: (state, action) => {
-            const excistingTodo = state.todos.find((todo) => todo.id === action.payload.id)
+        removeTodo: (store, action) => {
+            const excistingTodo = store.todos.find((todo) => todo.id === action.payload.id)
 
             if (excistingTodo && excistingTodo.quantity === 1) {
-                state.todos = state.todos.filter((todo) => todo.id !== action.payload.id)
+                store.todos = store.todos.filter((todo) => todo.id !== action.payload.id)
             } else if (excistingTodo) {
                 excistingTodo.quantity -= 1
             }
+        },
+        toggleTodo: (store, action) => {
+            store.todos.forEach((todo) => {
+                if (todo.id === action.payload.id) {
+                    todo.isCompleted = !todo.isCompleted
+                }
+            })
         }
     }
 })
+

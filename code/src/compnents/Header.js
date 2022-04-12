@@ -1,6 +1,14 @@
 import React from "react";
+import styled from 'styled-components'
 import { useSelector } from "react-redux";
 import { AddTodo } from "./AddTodo";
+
+const StyledHeader = styled.div `
+h1 {
+    font-size: 18px;
+    text-decoration: underline;
+}
+`
 
 
 export const Header = () => {
@@ -11,13 +19,15 @@ export const Header = () => {
     ))
 
     return (
-        <div>You have {totalTodos} todo's
+        <StyledHeader>
+        <div className="header">
+            <h1>You have {totalTodos} todo's</h1>
             <ul>
                 {allTodos.map((todo) => (
                     <AddTodo key={todo.id} todo={todo} />
                 ))}
             </ul>
-
         </div>
+        </StyledHeader>
     )
 }
