@@ -54,13 +54,25 @@ const SiteHeader = styled.header`
   }
 `;
 
+const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+
+  a:hover {
+    text-decoration: underline;
+  }
+`;
+
 const HomeWrapper = styled.div`
   display: flex;
   flex-direction: row;
   gap: 10px;
   align-items: center;
-  padding-left: env(safe-area-inset-left);
-  padding-right: env(safe-area-inset-right);
 `;
 
 const HomeIcon = styled.img`
@@ -87,17 +99,5 @@ const IconWrapper = styled.div`
   &:hover {
     transition: all 0.5s ease-in;
     transform: scale(1.2);
-  }
-`;
-
-const HeaderWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  padding: 15px 20px;
-
-  a:hover {
-    text-decoration: underline;
   }
 `;
