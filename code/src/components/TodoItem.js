@@ -5,6 +5,7 @@ import styled from 'styled-components';
 import todos from "../reducers/todos.js";
 import TodoTags from "./TodoTags.js";
 import TodoCompleted from "./TodoCompleted.js";
+import TodoDelete from "./TodoDelete.js";
 
 const TodoItem = ({ todo }) => {
     
@@ -18,6 +19,7 @@ const TodoItem = ({ todo }) => {
             </p>
             <TodoTags tags={todo.tags} />
             <TodoCompleted todo={todo} />
+            <TodoDelete todo={todo} />
         </div>
     );
 }
