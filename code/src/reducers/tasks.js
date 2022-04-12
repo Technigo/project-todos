@@ -1,11 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const data = [
+  { id: 1, text: "Watch video on actions & reducers", isComplete: false },
+  { id: 2, text: "Follow redux codealong", isComplete: false },
+  { id: 3, text: "Fork weekly assignment", isComplete: false },
+  { id: 4, text: "Create a todo app", isComplete: false },
+];
+
 const tasks = createSlice({
   name: "tasks",
   initialState: {
-    items: [],
+    items: data,
   },
-  reducers: {},
+  reducers: {
+    toggleTask: (store, action) => {
+      console.log("store:", store);
+      console.log("Action:", action);
+
+      store.items.forEach((item) => {
+        if (item.id === action.payload) {
+          item.isComplete = !item.isComplete;
+        }
+      });
+    },
+  },
 });
 
 export default tasks;
