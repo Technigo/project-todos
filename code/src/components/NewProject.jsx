@@ -115,7 +115,7 @@ const NewProject = () => {
               value={item[0]}
               onClick={selectIcon}
               onKeyDown={(e) => e.key === "Enter" && selectIcon(e)}
-              selected={`${icon == item[0] ? "selected" : ""}`}
+              selected={`${Number(icon) === Number(item[0]) ? "selected" : ""}`}
             >
               <Icon src={item[1]} alt={item[2]} />
             </IconButton>
