@@ -1,9 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const todos = createSlice ( {
-name: 'todos',
-initialState: {
-    items: [
+const data = [
         {
             id: '1',
             task: 'Eat',
@@ -29,8 +26,13 @@ initialState: {
             display:'false'
         }
     ]
-};
 
+    const todos = createSlice({
+        name: 'todos',
+        initialState: {
+            items: data,
+},
+reducers: {}
 });
 
 export default todos;
