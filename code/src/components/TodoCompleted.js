@@ -15,7 +15,7 @@ const TodoCompleted = ({ todo }) => {
 
     return (
         <label>
-            Is completed?
+            Completed?
             <input 
             type="checkbox" 
             checked={todo.isCompleted} 

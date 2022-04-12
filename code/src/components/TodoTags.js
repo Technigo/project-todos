@@ -5,15 +5,18 @@ import styled from 'styled-components';
 import todos from "../reducers/todos.js";
 
 const TodoTags = ({ tags }) => {
+
+    const Tag = styled.span`
+        background-color: #40e0d0;
+        margin: 0 10px 0 0;
+        
+    `
     
     return (
         <div className="todo-item-tags">
-            <h3>TAGS:</h3>
-            <p>
-                {tags.map((tag) => (
-                    <span key={tag} className="todo-item-tag">{tag}</span>
-                ))}
-            </p>
+            {tags.map((tag) => (
+                <Tag key={tag} className="todo-item-tag">{tag}</Tag>
+            ))}
         </div>
     );
 }
