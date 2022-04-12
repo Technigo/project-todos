@@ -5,6 +5,7 @@ import todos from "../reducers/todos";
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
   const dispatch = useDispatch();
+
   const onToggleToDo = (id) => {
     dispatch(todos.actions.toggleTodo(id));
   };
@@ -16,13 +17,13 @@ const TodoList = () => {
   return (
     <section>
       {items.map((item, index) => (
-        <div className="flex-item" key={item.id}>
-          <p>{item.text}</p>
+        <div className="todo-item" key={item.id}>
           <input
             type="checkbox"
             checked={item.isComplete}
             onChange={() => onToggleToDo(item.id)}
           />
+          <p>{item.text}</p>
           <button onClick={() => onDeleteTodo(index)}>Delete</button>
         </div>
       ))}

@@ -17,7 +17,6 @@ const todos = createSlice({
       store.items = [...store.items, newTodo];
     },
     toggleTodo: (store, action) => {
-      console.log("action", action);
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.isComplete = !item.isComplete;
