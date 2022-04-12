@@ -59,6 +59,8 @@ const HomeWrapper = styled.div`
   flex-direction: row;
   gap: 10px;
   align-items: center;
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
 `;
 
 const HomeIcon = styled.img`

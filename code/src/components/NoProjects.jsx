@@ -1,6 +1,6 @@
 import React from "react";
+import styled from "styled-components/macro";
 import noprojects from "../assets/noprojects.svg";
-import styled from "styled-components";
 
 const NoProjects = () => {
   return (
