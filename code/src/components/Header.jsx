@@ -8,7 +8,6 @@ import addgray from "../assets/addgray.svg";
 import homeicon from "../assets/homeicon.svg";
 
 const Header = () => {
-  console.log(useSelector((store) => store));
   const projects = useSelector((store) => store.projects.project);
   return (
     <SiteHeader>
