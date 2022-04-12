@@ -53,7 +53,7 @@ const AddTasks = () => {
           <TagInput type="button" value="study" color='#F36969' onClick={onTagValueChange}  />
           <TagInput type="button" value="shopping" color='#5B87C9' onClick={onTagValueChange} />
           <TagInput type="button" value="gym"  color='#A093D4' onClick={onTagValueChange} />
-          <TagInput type="button" value="misc" color='#FB9A08' onClick={onTagValueChange} />
+          <TagInput type="button" value="other" color='#FB9A08' onClick={onTagValueChange} />
           </form>
         </TagsWrapper>
       </AddTaskCard>

@@ -16,21 +16,25 @@ export const TagInput = styled.input`
   height: 23px;
   margin: 10px 4px 4px 0;
   padding: 0 5px 2px 5px;
-  color: #706B6B;
+
   font-size: .8em;
-  background-color: transparent;
+  background-color: #fffefd;
 
   &:hover {
     cursor: pointer;
   }
 `
 export const Tag = styled.span`
-  color: #706B6B;
+  border-top: 2px solid ${(props) => (props.color)};
+  border-left: 1px solid #706B6B;
+  border-bottom: 1px solid #706B6B;
+  border-right: 1px solid #706B6B;
   font-size: .6em;
-  border: 1px solid #706B6B;
   border-radius: 5px;
   padding: 2px;
   position: absolute;
   bottom: 2px;
   right: 28px;
+
+  background-color: #fffefd;
 `

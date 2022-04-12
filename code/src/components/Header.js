@@ -21,7 +21,6 @@ const Header = () => {
             ) : (
               <span>{count} tasks</span>
             )}
-
           </Count></h1>
       </FlexRow>
     </header>

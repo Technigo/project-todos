@@ -11,6 +11,7 @@ body {
     box-sizing: border-box;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
+    background-color: #fffcf9;
 }
 
 main {
@@ -29,6 +30,7 @@ input[name="input"] {
     border-radius: 5px;
     padding: 5px;
     font-size: 1.2em;
+    background-color: #fffefd;
 }
 
 input[name="checkTask"] {

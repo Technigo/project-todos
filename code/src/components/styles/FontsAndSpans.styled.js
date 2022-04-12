@@ -17,5 +17,4 @@ export const ColorLine = styled.p`
 
 export const Task = styled.span`
   margin-left: 3px;
-  font-size: .9em;
 `
