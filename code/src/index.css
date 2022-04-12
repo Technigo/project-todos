@@ -12,6 +12,7 @@ code {
     monospace;
 }
 
+/* how can I put that in styled component instead? */
 .custom-checkbox input[type="checkbox"],
 .custom-checkbox .checked {
   display: none;

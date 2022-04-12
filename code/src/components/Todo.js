@@ -19,6 +19,8 @@ import { faBriefcase } from '@fortawesome/free-solid-svg-icons'
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { faPerson } from '@fortawesome/free-solid-svg-icons'
 
+import { ItemText, ItemIcons, StyledTodo, StyledTodoItem, StyledTodoDeadline, StyledTodoTimestamp, StyledCategoryIcon, StyledToggleIcon } from './styling/StyledTodo'
+
 import todos from 'reducers/todos'
 
 const DeleteButton = styled.button`
@@ -111,14 +113,19 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
   const formattedDeadline = formatRelative(dateDeadline, new Date(), { locale })
 
   return (
-    <div>
-      <label className="custom-checkbox" style={isDone()} onChange={onCompletedChange}>
+    <StyledTodo>
+      <StyledTodoDeadline style={isOverdue}>{todo.deadline !== null && `due ${formattedDeadline}`}</StyledTodoDeadline>
+      <StyledTodoItem className="custom-checkbox" style={isDone()} onChange={onCompletedChange}>
         <input type="checkbox" />
-        {onToggle()}
-        {todo.text} {categoryIcon()} created: {formattedTimestamp} <span style={isOverdue}>deadline: {formattedDeadline}</span>
-      </label>
-      <DeleteButton type="button" onClick={onDeleteTodo}><FontAwesomeIcon icon={faTrashCan} /></DeleteButton>
-    </div>
+        <ItemIcons>
+          <StyledCategoryIcon>{categoryIcon()}</StyledCategoryIcon>
+          <StyledToggleIcon>{onToggle()}</StyledToggleIcon>
+        </ItemIcons>
+        <ItemText>{todo.text} </ItemText>
+        <DeleteButton type="button" onClick={onDeleteTodo}><FontAwesomeIcon icon={faTrashCan} /></DeleteButton>
+      </StyledTodoItem>
+      <StyledTodoTimestamp>created {formattedTimestamp}</StyledTodoTimestamp>
+    </StyledTodo>
   )
 }
 

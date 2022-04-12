@@ -46,9 +46,9 @@ const todos = createSlice({
       store.items = store.items.filter((todo) => todo.id !== action.payload)
     },
 
-    deleteAll: (store) => { 
+    deleteAll: (store) => {
       store.deletedItems = store.items
-      store.items = [] 
+      store.items = []
     },
 
     // need to be implemented in UI, or remove deleteAll to keep this one instead
@@ -63,19 +63,15 @@ const todos = createSlice({
 
 
 
-    // displayAll: (store) => {
-    //   store.items
+    // how can I implement this?
+
+    // displayPending: (store) => {
+    //   store.items = store.items.filter(todo => !todo.completed)
     // },
 
-    displayPending: (store) => {
-      store.items.filter(todo => !todo.completed)
-    },
-
-    displayCompleted: (store) => {
-      store.items.filter(todo => todo.completed)
-    }
-
-
+    // displayCompleted: (store) => {
+    //   store.items = store.items.filter(todo => todo.completed)
+    // }
 
   }
 })

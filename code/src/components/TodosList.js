@@ -49,15 +49,14 @@ const TodosList = () => {
   const [inputSearch, setInputSearch] = useState('')
 
   const pendingTodos = allTodos.filter(todo => !todo.completed)
-  const pendingTodosSearched = pendingTodos.filter(todo => todo.text.toLowerCase().includes(inputSearch.toLowerCase()) || todo.category.toLowerCase().includes(inputSearch.toLowerCase()))
+  const pendingTodosSearched = pendingTodos.filter(todo => todo.text.toLowerCase().includes(inputSearch.toLowerCase()) || todo.category.toLowerCase().startsWith(inputSearch.toLowerCase()))
   const completedTodos = allTodos.filter(todo => todo.completed)
-  const completedTodosSearched = completedTodos.filter(todo => todo.text.toLowerCase().includes(inputSearch.toLowerCase()) || todo.category.toLowerCase().includes(inputSearch.toLowerCase()))
+  const completedTodosSearched = completedTodos.filter(todo => todo.text.toLowerCase().includes(inputSearch.toLowerCase()) || todo.category.toLowerCase().startsWith(inputSearch.toLowerCase()))
 
   const undoDelete = () => {
     dispatch(todos.actions.undoDelete())
     setIsUndoDisabled(true)
   }
-
 
   const onTodoSearch = (event) => {
     setInputSearch(event.target.value)
@@ -96,6 +95,12 @@ const TodosList = () => {
     setIsCompletedDisabled(false)
   }
 
+  // const displayPending = () => {
+  //   dispatch(todos.actions.displayPending())
+  //   console.log(allTodos)
+  // }
+
+
   return (
     <>
       <AllButton onClick={deleteAll}><FontAwesomeIcon icon={faTrash} /></AllButton>
@@ -104,8 +109,8 @@ const TodosList = () => {
       <hr></hr>
 
       <AllButton onClick={displayAll} disabled={isAllDisabled}>All</AllButton>
+      <AllButton onClick={displayPending} disabled={isPendingDisabled}>Pending</AllButton>
       <AllButton onClick={displayCompleted} disabled={isCompletedDisabled}>Completed</AllButton>
-      <AllButton onClick={displayPending} disabled={isPendingDisabled}>Not completed</AllButton>
       <hr></hr>
 
       <div>

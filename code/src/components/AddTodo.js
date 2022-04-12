@@ -48,8 +48,8 @@ const AddTodo = () => {
   const dispatch = useDispatch()
 
   const [inputText, setInputText] = useState('')
-  const [inputCategory, setInputCategory] = useState('')
-  const [inputDeadline, setInputDeadline] = useState(new Date())
+  const [inputCategory, setInputCategory] = useState('personal')
+  const [inputDeadline, setInputDeadline] = useState(null)
   const [timestamp, setTimestamp] = useState(Date.now)
   const [isDisabled, setIsDisabled] = useState(true)
 
@@ -63,22 +63,20 @@ const AddTodo = () => {
 
   const onChangeInputCategory = (event) => {
     setInputCategory(event.target.value)
-    // ne fonctionne pas
-    // setIsDisabled(!event.target.value)
   }
 
   const onChangeInputDeadline = (date) => {
     setInputDeadline(+new Date(date))
-    // ne fonctionne pas
-    // setIsDisabled(!event.target.value)
   }
 
   const onAddTodo = (event) => {
     event.preventDefault()
+    console.log(inputCategory)
     dispatch(todos.actions.addTodo({ inputText, inputCategory, inputDeadline, timestamp }))
     setInputText('')
-    setInputCategory('')
-    setInputDeadline(new Date())
+    // à enlever ou non si on veut ajouter plusieurs tâches de la même catégorie ou faire un reset de tous les champs
+    setInputCategory('personal')
+    setInputDeadline(null)
     setIsDisabled(true)
   }
 
