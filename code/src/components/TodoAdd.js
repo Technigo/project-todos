@@ -6,6 +6,13 @@ import todos from "../reducers/todos.js";
 
 const TodoAdd = () => {
 
+    const dispatch = useDispatch();
+    
+    const onClickAddNewTodo = () => {
+        console.log('clicked add todo');
+    }
+
+
     return (
         <div className="todo-add-new-todo">
             <label>
@@ -21,6 +28,11 @@ const TodoAdd = () => {
                 cols="50" 
                 />
             </label>
+            <button
+                type="submit"
+                onClick={() => onClickAddNewTodo()}>
+                ADD
+            </button>
         </div>
     );
 }
