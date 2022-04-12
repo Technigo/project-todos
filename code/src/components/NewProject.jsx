@@ -43,9 +43,10 @@ const NewProject = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [projectName, chooseProjectName] = useState("");
-  const [icon, chooseIcon] = useState("");
+  const [icon, chooseIcon] = useState();
   const [color, chooseColor] = useState("");
   const [error, setError] = useState(false);
+  // const [iconActive, setIconActive] = useState("");
   const colorArray = useSelector((store) => store.colors.colors);
 
   // Create Unique Project ID
@@ -75,6 +76,7 @@ const NewProject = () => {
   // Select Color Button
   const selectColor = (event) => {
     chooseColor(event.target.value);
+    // setColorActive(event.target.value);
   };
 
   // Create Project Button
@@ -113,8 +115,9 @@ const NewProject = () => {
               value={item[0]}
               onClick={selectIcon}
               onKeyDown={(e) => e.key === "Enter" && selectIcon(e)}
+              selected={`${icon == item[0] ? "selected" : ""}`}
             >
-              <Icon src={item[1]} alt={icon[2]} />
+              <Icon src={item[1]} alt={item[2]} />
             </IconButton>
           </React.Fragment>
         ))}
@@ -127,8 +130,9 @@ const NewProject = () => {
             key={item.id}
             value={item.hex}
             onClick={selectColor}
-            backgroundcolor={item.rgba}
+            backgroundcolor={item.hex}
             onKeyDown={(e) => e.key === "Enter" && selectColor(e)}
+            selected={`${color === item.hex ? "selected" : ""}`}
           >
             {item.name}
           </ColorButton>
@@ -166,9 +170,9 @@ const IconButton = styled.button`
   height: 55px;
   width: 55px;
   justify-self: center;
-  border: none;
   cursor: pointer;
   background-color: #dee2e6;
+  border: ${(props) => (props.selected ? "1px solid #212529" : "none")};
 
   &:hover {
     border: 1px solid #212529;
@@ -181,7 +185,8 @@ const IconButton = styled.button`
 
 const ColorButton = styled.button`
   width: auto;
-  background-color: rgba(${(props) => props.backgroundcolor}, 0.7);
+  background-color: ${(props) => props.backgroundcolor};
+  opacity: ${(props) => (props.selected ? "1.0" : "0.7")};
   color: white;
   border: none;
   font-weight: 600;
@@ -190,11 +195,11 @@ const ColorButton = styled.button`
   font-size: 16px;
 
   &:hover {
-    background-color: rgba(${(props) => props.backgroundcolor}, 1);
+    opacity: 1;
   }
 
   &:focus {
-    background-color: rgba(${(props) => props.backgroundcolor}, 1);
+    opacity: 1;
   }
 `;
 
