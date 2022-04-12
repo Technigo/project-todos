@@ -11,7 +11,7 @@ border-radius: 5px;
 background: #fff;
 `
 
-export const StyledTodoItem = styled.div`
+export const StyledTodoItem = styled.label`
 display: flex;
 justify-content: space-between;
 `
