@@ -15,7 +15,7 @@ import Task from "./Task";
 // Import Styled Elements
 import { TextInput } from "styledelements/elements";
 
-// Import Icons'
+// Import Icons
 import {
   chatwhite,
   clipboardwhite,
@@ -105,13 +105,11 @@ const Project = () => {
   // };
 
   const deleteProject = () => {
-    // Delete All Tasks
     dispatch(
       tasks.actions.deleteProjectTasks({
         projectid: project.id,
       })
     );
-    // Delete Project
     dispatch(
       projects.actions.deleteProject({
         projectid: project.id,

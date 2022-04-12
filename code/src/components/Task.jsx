@@ -2,16 +2,17 @@ import React from "react";
 import { formatRelative } from "date-fns";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components/macro";
+import { keyframes } from "styled-components";
 import { tasks } from "reducers/tasks";
 import trashgray from "../assets/trashgray.svg";
 import checkblack from "../assets/checkblack.svg";
-import { keyframes } from "styled-components";
 
 const Task = ({ taskid, checkAllComplete }) => {
   const dispatch = useDispatch();
   const thisTask = useSelector((store) => store.tasks.task).find(
     (task) => taskid === task.taskid
   );
+  const created = formatRelative(new Date(thisTask.added), new Date());
 
   const toggleComplete = () => {
     dispatch(
@@ -32,7 +33,6 @@ const Task = ({ taskid, checkAllComplete }) => {
     checkAllComplete();
   };
 
-  const created = formatRelative(new Date(thisTask.added), new Date());
   return (
     <TaskWrapper>
       <CustomCheck

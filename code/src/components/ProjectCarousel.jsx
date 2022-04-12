@@ -6,7 +6,7 @@ const flickityOptions = {
   pageDots: false,
   wrapAround: true,
   freeScroll: true,
-  autoPlay: 4000,
+  autoPlay: 6000,
 };
 
 const ProjectCarousel = (props) => {

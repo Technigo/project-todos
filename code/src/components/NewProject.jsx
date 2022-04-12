@@ -8,7 +8,7 @@ import styled from "styled-components/macro";
 // Import Styling
 import { GridContainer, TextInput } from "styledelements/elements";
 
-// Import Icons'
+// Import Icons
 import {
   chatgray,
   clipboardgray,
@@ -62,17 +62,6 @@ const NewProject = () => {
     chooseIcon(event.currentTarget.value);
   };
 
-  // Trying to toggle classes on buttons
-  // let selectBtns = document.querySelectorAll(
-  //   ".elements__IconButton-sc-f5m284-4"
-  // );
-  // selectBtns.forEach((btn) => {
-  //   btn.addEventListener("click", () => {
-  //     selectBtns.forEach((b) => b.classList.remove("iconButtonActive"));
-  //     btn.classList.add("iconButtonActive");
-  //   });
-  // });
-
   // Select Color Button
   const selectColor = (event) => {
     chooseColor(event.target.value);
@@ -123,7 +112,6 @@ const NewProject = () => {
         ))}
       </GridContainer>
       <h2>Select a color:</h2>
-      {/* !!! Change to useSelector !!! */}
       <GridContainer gridcolumns="1fr 1fr" gridrows="auto">
         {colorArray.map((item) => (
           <ColorButton
