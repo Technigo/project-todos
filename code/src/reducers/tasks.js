@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const taskList = [
-    { id: 'a1c2', taskInput: 'Finish the asignment', tag: 'study', isDone: false },
-    { id: 'b2d3', taskInput: 'Hit the gym', tag: 'gym', isDone: false },
-    { id: 'e3f6', taskInput: 'Buy milk', tag: 'shopping', isDone: false },
+    { id: 'a1c2', task: 'Finish the asignment', tag: 'study', isDone: false },
+    { id: 'b2d3', task: 'Hit the gym', tag: 'gym', isDone: false },
+    { id: 'e3f6', task: 'Buy milk', tag: 'shopping', isDone: false },
 ]
 
 //with local state (useState), the taskText has an object as property
@@ -20,19 +20,19 @@ export const tasks = createSlice({
     },
     reducers: {
         addTask: (store, action) => {
-            // const { taskInput, tag } = action.payload
-            console.log(action.payload)
-            const userInput = action.payload
+            const { task, tag } = action.payload
             const newTodo = {
                 id: Date.now().toString(),
-                taskInput: userInput,
-                tag: userInput,
+                task: task,
+                tag: tag,
                 isDone: false
             }
             store.items = [...store.items, newTodo];
         }
     }
 })
+
+
 
 // const onContentValueChange = (event) => {
 //   const { name, value } = event.target;
@@ -44,25 +44,3 @@ export const tasks = createSlice({
 //   });
 // };
 
-// <form onSubmit={onContentSubmit}>
-// <label htmlFor="content">
-//   <textarea
-//     rows="3"
-//     placeholder="Type anything!"
-//     name="content"
-//     value={content.content}
-//     onChange={onContentValueChange}
-//   />
-// </label>
-
-// <label htmlFor="author">
-//   <input
-//     type="text"
-//     placeholder="Sign your name"
-//     name="author"
-//     value={content.author}
-//     onChange={onContentValueChange}
-//   />
-// </label>
-// <button type="submit">Submit</button>
-// </form>

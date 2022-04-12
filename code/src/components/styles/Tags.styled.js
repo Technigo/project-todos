@@ -5,9 +5,10 @@ export const TagsWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
+
 `
 
-export const Tag = styled.button`
+export const TagInput = styled.input`
   border-top: 3px solid ${(props) => (props.color)};
   border-left: 1px solid #706B6B;
   border-bottom: 1px solid #706B6B;
@@ -21,6 +22,6 @@ export const Tag = styled.button`
   background-color: transparent;
 
   &:hover {
-    
+    cursor: pointer;
   }
 `

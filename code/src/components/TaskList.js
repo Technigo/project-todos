@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { FlexColumn } from './styles/Containers.styled'
 
-import taskList from '../reducers/tasks'
 
 
 const TaskList = () => {
@@ -22,7 +21,7 @@ const TaskList = () => {
              name="checkTask" 
              checked={task.isDone}
              />
-             <span>{task.taskInput}</span>
+             <span>{task.task}</span>
           </label>
           <button>
           <img
