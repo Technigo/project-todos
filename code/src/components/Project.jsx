@@ -172,7 +172,12 @@ const Project = () => {
         </TaskContainer>
         <ProjectFooter backgroundcolor={project.color}>
           {taskArray.length > 0 && (
-            <FooterButton role="button" onClick={toggleAllTasksComplete}>
+            <FooterButton
+              role="button"
+              tabIndex="0"
+              onClick={toggleAllTasksComplete}
+              onKeyDown={(e) => e.key === "Enter" && toggleAllTasksComplete()}
+            >
               Mark all tasks as complete
             </FooterButton>
           )}
@@ -181,7 +186,12 @@ const Project = () => {
               Mark all tasks as incomplete
             </button>
           )} */}
-          <FooterButton role="button" onClick={deleteProject}>
+          <FooterButton
+            role="button"
+            tabIndex="0"
+            onClick={deleteProject}
+            onKeyDown={(e) => e.key === "Enter" && deleteProject()}
+          >
             Delete project to-do list
           </FooterButton>
         </ProjectFooter>
@@ -278,7 +288,7 @@ const TaskContainer = styled.div`
 const FooterButton = styled.div`
   background-color: #dee2e6;
   color: #212529;
-  border: 2px solid #212529;
+  border: none;
   cursor: pointer;
   padding: 7px;
   font-weight: 400;

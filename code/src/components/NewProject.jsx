@@ -112,6 +112,7 @@ const NewProject = () => {
               role="button"
               value={item[0]}
               onClick={selectIcon}
+              onKeyDown={(e) => e.key === "Enter" && selectIcon(e)}
             >
               <Icon src={item[1]} alt={icon[2]} />
             </IconButton>
@@ -127,13 +128,19 @@ const NewProject = () => {
             value={item.hex}
             onClick={selectColor}
             backgroundcolor={item.rgba}
+            onKeyDown={(e) => e.key === "Enter" && selectColor(e)}
           >
             {item.name}
           </ColorButton>
         ))}
       </GridContainer>
       {error && <p>Please complete and select all the required fields.</p>}
-      <SubmitButton role="button" onClick={createProject}>
+      <SubmitButton
+        role="button"
+        tabIndex="0"
+        onClick={createProject}
+        onKeyDown={(e) => e.key === "Enter" && createProject()}
+      >
         Create project to-do!
       </SubmitButton>
     </NewProjectWrapper>

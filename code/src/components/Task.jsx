@@ -39,6 +39,8 @@ const Task = ({ taskid, checkAllComplete }) => {
         role="button"
         onClick={toggleComplete}
         complete={thisTask.complete}
+        tabIndex="0"
+        onKeyDown={(e) => e.key === "Enter" && toggleComplete()}
       >
         {thisTask.complete ? "" : <IncompleteCheckIcon src={checkblack} />}
         {thisTask.complete ? <CheckIcon src={checkblack} /> : ""}
@@ -48,7 +50,12 @@ const Task = ({ taskid, checkAllComplete }) => {
         <TaskDate>Added {created}</TaskDate>
         <Line />
       </TaskInfo>
-      <div role="button" onClick={deleteTask}>
+      <div
+        role="button"
+        tabIndex="0"
+        onClick={deleteTask}
+        onKeyDown={(e) => e.key === "Enter" && deleteTask()}
+      >
         <Icon src={trashgray} alt="delete task." />
       </div>
     </TaskWrapper>

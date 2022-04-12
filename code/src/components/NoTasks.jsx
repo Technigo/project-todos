@@ -16,10 +16,11 @@ export default NoTasks;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
+  gap: 10px;
 `;
 
 const NoTasksIcon = styled.img`
   width: 200px;
   height: 200px;
-  margin: 20px auto;
+  margin: 20px auto 0 auto;
 `;

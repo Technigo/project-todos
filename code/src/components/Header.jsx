@@ -14,14 +14,14 @@ const Header = () => {
     <SiteHeader>
       <HeaderWrapper>
         <Link to="/">
-          <HomeWrapper>
-            <HomeIcon src={homeicon} alt="Home Logo" />
+          <HomeWrapper tabIndex="0">
+            <HomeIcon src={homeicon} alt="Home Button" />
             <h1>TO-DO LISTS</h1>
           </HomeWrapper>
         </Link>
         <Link to="/newproject">
           <IconWrapper>
-            <Icon src={addgray} alt="New to-do list button." />
+            <Icon src={addgray} alt="New to-do list button." tabIndex="0" />
           </IconWrapper>
         </Link>
       </HeaderWrapper>
