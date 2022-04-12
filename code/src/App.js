@@ -3,10 +3,10 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers } from '@reduxjs/toolkit'
 
 import { loadState, saveState } from './reducers/localStorage'
-import { todos } from './reducers/todos'
+import todos from './reducers/todos'
 
-import { AddTodo } from './components/AddTodo'
-import { TodosList } from './components/TodosList'
+import AddTodo from './components/AddTodo'
+import TodosList from './components/TodosList'
 
 const reducer = combineReducers({
   todos: todos.reducer,
@@ -24,7 +24,7 @@ store.subscribe(() => {
 
 // const store = configureStore({ reducer: reducer })
 
-export const App = () => {
+const App = () => {
   return (
     <Provider store={store}>
       <AddTodo />
@@ -32,3 +32,5 @@ export const App = () => {
     </Provider>
   )
 }
+
+export default App

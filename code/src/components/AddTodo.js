@@ -12,7 +12,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { faEdit } from '@fortawesome/free-regular-svg-icons'
 
-import { todos } from 'reducers/todos'
+import todos from 'reducers/todos'
 
 // quebec flag blue: #003DA5
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
@@ -44,7 +44,7 @@ const AddInput = styled.input`
   }
 `
 
-export const AddTodo = () => {
+const AddTodo = () => {
   const dispatch = useDispatch()
 
   const [inputText, setInputText] = useState('')
@@ -81,7 +81,7 @@ export const AddTodo = () => {
     setInputDeadline(new Date())
     setIsDisabled(true)
   }
-
+  // minDate={new Date()}
   return (
     <form onSubmit={onAddTodo}>
       <p>
@@ -97,7 +97,7 @@ export const AddTodo = () => {
           <option value="work">Work</option>
         </select>
       </p>
-      <DatePicker selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd MMMM yyyy" locale={'en'} minDate={new Date()}>
+      <DatePicker selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd.MM.yyyy" locale={'en'} >
         <div style={{ color: "red", fontWeight: "bold", textAlign: "center" }}>Choose a deadline</div>
       </DatePicker>
       <AddButton type="submit" disabled={isDisabled}><FontAwesomeIcon icon={faPlus} /></AddButton>
@@ -105,3 +105,5 @@ export const AddTodo = () => {
     </form>
   )
 }
+
+export default AddTodo

@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react"
 import { useSelector } from 'react-redux'
 import Sortable from "sortablejs"
 
-import { Todo } from './Todo'
+import Todo from './Todo'
 
-export const PendingTodosList = () => {
+const PendingTodosList = () => {
   const allTodos = useSelector((store) => store.todos.items)
   const pendingTodos = allTodos.filter(todo => !todo.completed)
 
@@ -31,7 +31,7 @@ export const PendingTodosList = () => {
   return (
     <>
       <div ref={(el) => setDroppable(el)}>
-        {pendingTodos.map((todo) => (
+        {pendingTodos.reverse().map((todo) => (
           <Todo key={todo.id} todo={todo} id={todo.id} />
         ))}
       </div>
@@ -40,3 +40,5 @@ export const PendingTodosList = () => {
     </>
   )
 }
+
+export default PendingTodosList

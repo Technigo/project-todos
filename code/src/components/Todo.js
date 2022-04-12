@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 // import { useSelector } from 'react-redux'
 import styled from "styled-components/macro"
-import { formatRelative } from 'date-fns'
-import enGB from 'date-fns/locale/en-GB'
+// import { formatRelative } from 'date-fns'
+// import enGB from 'date-fns/locale/en-GB'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCircle } from '@fortawesome/free-solid-svg-icons'
@@ -19,7 +19,9 @@ import { faBriefcase } from '@fortawesome/free-solid-svg-icons'
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { faPerson } from '@fortawesome/free-solid-svg-icons'
 
-import { todos } from 'reducers/todos'
+import todos from 'reducers/todos'
+
+import { FormattedTimestamp, FormattedDeadline } from './FormattedDates'
 
 const DeleteButton = styled.button`
   display: inline-block;
@@ -33,7 +35,7 @@ const DeleteButton = styled.button`
   margin-left: 0.5rem;
 `
 
-export const Todo = ({ todo, id }) => {
+const Todo = ({ todo, id }) => {
   const dispatch = useDispatch()
 
   const [isOverdue, setIsOverdue] = useState({})
@@ -82,43 +84,27 @@ export const Todo = ({ todo, id }) => {
     dispatch(todos.actions.toggleTodo(id))
   }
 
-  const formatRelativeLocale = {
-    lastWeek: "'last' eeee",
-    yesterday: "'yesterday'",
-    today: "'today'",
-    tomorrow: "'tomorrow'",
-    nextWeek: "'next' eeee",
-    other: 'dd.MM.yyyy',
-  }
+  // const formatRelativeLocale = {
+  //   lastWeek: "'last' eeee",
+  //   yesterday: "'yesterday'",
+  //   today: "'today' HH:mm",
+  //   tomorrow: "'tomorrow'",
+  //   nextWeek: "'next' eeee",
+  //   other: 'dd.MM.yyyy',
+  // }
 
-  const formatRelativeLocaleWithTime = {
-    lastWeek: "'last' eeee",
-    yesterday: "'yesterday'",
-    today: "'today' HH.mm",
-    tomorrow: "'tomorrow'",
-    nextWeek: "'next' eeee",
-    other: 'dd.MM.yyyy',
-  }
-
-
-  const locale = {
-    ...enGB,
-    formatRelative: (token) => formatRelativeLocale[token],
-  }
-
-  const localeWithTime = {
-    ...enGB,
-    formatRelative: (token) => formatRelativeLocaleWithTime[token],
-  }
-
-
-  const dateDeadline = (new Date(todo.deadline))
-  const dateTimestamp = (new Date(todo.timestamp))
-  const formattedDeadline = formatRelative(dateDeadline, new Date(), { locale })
-  const formattedTimestamp = formatRelative(dateTimestamp, new Date(), { localeWithTime })
+  // const locale = {
+  //   ...enGB,
+  //   formatRelative: (token) => formatRelativeLocale[token],
+  // }
+// put this in another file and import it???
+  // const dateDeadline = (new Date(todo.deadline))
+  // const dateTimestamp = (new Date(todo.timestamp))
+  // const formattedDeadline = formatRelative(dateDeadline, new Date(), { locale })
+  // const formattedTimestamp = formatRelative(dateTimestamp, new Date(), { locale })
 
   useEffect(() => {
-    if (todo.deadline < Date.now() && !todo.completed) {
+    if (todo.deadline < (Math.round(Date.now() / 86400000) * 86400000) && !todo.completed) {
       setIsOverdue({ color: "red" })
     }
   }, [todo.deadline, todo.completed])
@@ -128,9 +114,11 @@ export const Todo = ({ todo, id }) => {
       <label className="custom-checkbox" style={isDone()} onChange={onCompletedChange}>
         <input type="checkbox" />
         {onToggle()}
-        <span style={isOverdue}>{todo.text} {categoryIcon()} deadline: {formattedDeadline}, created: {formattedTimestamp}</span>
+        <span style={isOverdue}>{todo.text} {categoryIcon()} deadline: <FormattedDeadline todo={todo} />, created: <FormattedTimestamp todo={todo} /></span>
       </label>
       <DeleteButton type="button" onClick={onDeleteTodo}><FontAwesomeIcon icon={faTrashCan} /></DeleteButton>
     </div>
   )
 }
+
+export default Todo

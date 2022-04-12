@@ -1,16 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit'
 import uniqid from 'uniqid'
 
-export const todos = createSlice({
+const todos = createSlice({
   name: 'todos',
   initialState: {
     items: []
   },
   reducers: {
-    addTodo: (state, action) => {
+    addTodo: (store, action) => {
       const { inputText, inputCategory, inputDeadline, timestamp } = action.payload
 
-      state.items.push({
+      store.items.push({
         id: uniqid(),
         text: inputText,
         category: inputCategory,
@@ -20,47 +20,58 @@ export const todos = createSlice({
       })
     },
 
-    // need to understand better this part...
-    deleteTodo: (state, action) => {
-      state.items = state.items.filter((todo) => todo.id !== action.payload)
+    deleteTodo: (store, action) => {
+      store.items = store.items.filter((todo) => todo.id !== action.payload)
     },
 
-    // need to understand better this part...
-    toggleTodo: (state, action) => {
-      const updatedTodos = state.items.map((todo) => {
+    toggleTodo: (store, action) => {
+      console.log(Date.now())
+      console.log(Math.round(Date.now() / 86400000) * 86400000)
+
+      store.items.forEach((todo) => {
         if (todo.id === action.payload) {
-          return {
-            ...todo,
-            completed: !todo.completed
-          }
-        } else {
-          return todo
+          todo.completed = !todo.completed
         }
       })
-      state.items = updatedTodos
     },
 
-    deleteAll: (state) => {
-      state.items = []
-      // state.items.length = 0
+    deleteAll: (store) => { store.items = [] },
+
+    // need to be implemented in UI, or remove deleteAll to keep this one instead
+    deleteAllCompleted: (store) => {
+      store.items = store.items.filter((todo) => !todo.completed)
     },
 
-    toggleAll: (state) => {
-      if (state.items.filter(todo => !todo.completed).length > 0) {
-        state.items = state.items.map((todo) => {
-          return {
-            ...todo,
-            completed: true
-          }
+
+    toggleAll: (store) => {
+      if (store.items.find(todo => !todo.completed)) {
+        store.items.forEach((todo) => {
+          todo.completed = true
         })
       } else {
-        state.items = state.items.map((todo) => {
-          return {
-            ...todo,
-            completed: false
-          }
+        store.items.forEach((todo) => {
+          todo.completed = false
         })
       }
     },
+
+
+
+    // displayAll: (store) => {
+    //   store.items
+    // },
+
+    // displayPending: (store) => {
+    //   store.items.filter(todo => !todo.completed)
+    // },
+
+    // displayCompleted: (store) => {
+    //   store.items.filter(todo => todo.completed)
+    // }
+
+
+
   }
 })
+
+export default todos

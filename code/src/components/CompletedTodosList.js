@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react"
 import { useSelector } from 'react-redux'
 import Sortable from "sortablejs"
 
-import { Todo } from './Todo'
+import Todo from './Todo'
 
-export const CompletedTodosList = () => {
+const CompletedTodosList = () => {
   const allTodos = useSelector((store) => store.todos.items)
   const completedTodos = allTodos.filter(todo => todo.completed)
 
@@ -46,7 +46,7 @@ export const CompletedTodosList = () => {
         {/* <button>Search</button> */}
       </div>
       <div ref={(el) => setDroppable(el)}>
-        {filteredTestSearch.map((todo) => (
+        {filteredTestSearch.reverse().map((todo) => (
           <Todo key={todo.id} todo={todo} id={todo.id} />
         ))}
       </div>
@@ -54,3 +54,5 @@ export const CompletedTodosList = () => {
     </>
   )
 }
+
+export default CompletedTodosList

@@ -5,10 +5,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { faCheckDouble } from '@fortawesome/free-solid-svg-icons'
 
-import { todos } from 'reducers/todos'
+import todos from 'reducers/todos'
 
-import { CompletedTodosList } from './CompletedTodosList'
-import { PendingTodosList } from './PendingTodosList'
+import CompletedTodosList from './CompletedTodosList'
+import PendingTodosList from './PendingTodosList'
 
 const AllButton = styled.button`
   display: inline-block;
@@ -27,7 +27,7 @@ const AllButton = styled.button`
   }
 `
 
-export const TodosList = () => {
+const TodosList = () => {
   const dispatch = useDispatch()
 
   const [completedVisible, setCompletedVisible] = useState('block')
@@ -91,3 +91,5 @@ export const TodosList = () => {
     </>
   )
 }
+
+export default TodosList
