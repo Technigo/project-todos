@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
-import moment from 'moment'
 
 
 
@@ -10,11 +9,9 @@ import { CompleatedAllTodos } from './CompleatedAllTodos'
 
 export const TodoList = () => {
 
-    const [isActive, setActive] = useState(false)
     const items = useSelector((store) => store.todos.items)
     const completeItems = items.filter((listItem) => listItem.isComplete)
     const numberOfCompleteItems = completeItems.length
-    const todaysDate = moment().format('dddd Do MMM')
 
 
     const numberOfTodos = items.length

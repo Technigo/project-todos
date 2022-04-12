@@ -47,7 +47,7 @@ export const AddTodo = () => {
                     toggleClass()
                   }}
             >
-                ➕
+               <span role='img' aria-label='Add'>➕</span>
             </AddTodoBtn>
 
             {/* <button
