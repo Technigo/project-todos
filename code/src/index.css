@@ -1,5 +1,5 @@
 body {
-  margin: 15px;
+  margin: 0px;
   font-family: 'Alata', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -8,4 +8,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+
+.header{
+  background-color: #670f2d;
+  padding: 20px;
+  text-align: center;
+  font-size: 24pt;
+  color: #d06e90;
+  text-shadow: -2px -2px #6e325e;
 }
