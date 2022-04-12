@@ -26,7 +26,7 @@ export const todos = createSlice({
                 if (item.id === action.payload) {
                     const updatedTodo = {
                         ...item,
-                        iscomplete: !item.isCompleate,
+                        isComplete: !item.isComplete,
                     }
                     return updatedTodo
                 } else {

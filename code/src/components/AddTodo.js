@@ -63,7 +63,7 @@ export const AddTodo = () => {
 
 const AddTodoContainer = styled.section`
  position: fixed;
- bottom: 200px;
+ bottom: 150px;
 
 `
 

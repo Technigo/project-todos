@@ -16,9 +16,8 @@ code {
 }
 
 .complete-todo {
-  color: #4398bf;
   text-decoration: line-through;
-  margin: 3px;
+  margin: 0;
 }
 
 .uncomplete-todo {
