@@ -16,12 +16,14 @@ export const TagInput = styled.input`
   height: 23px;
   margin: 10px 4px 4px 0;
   padding: 0 5px 2px 5px;
-
   font-size: .8em;
   background-color: #fffefd;
 
   &:hover {
-    cursor: pointer;
+  cursor: pointer;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
   }
 `
 export const Tag = styled.span`
@@ -35,6 +37,5 @@ export const Tag = styled.span`
   position: absolute;
   bottom: 2px;
   right: 28px;
-
   background-color: #fffefd;
 `

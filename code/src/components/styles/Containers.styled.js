@@ -28,5 +28,6 @@ export const Card = styled(FlexColumn)`
 
 export const AddTaskCard= styled.div`
  position: relative;
-
+ display: flex;
+ flex-direction: column;
 `

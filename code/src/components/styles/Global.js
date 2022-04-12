@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 export const GlobalStyles = createGlobalStyle`
 *:focus {
     outline: none;
+    border-color: #706B6B;
 }
 
 body {
@@ -24,7 +25,7 @@ h1 {
 }
 
 input[name="input"] {
-    width: 80%;
+    width: 95%;
     height: 20px;
     border: 1px solid #706B6B;
     border-radius: 5px;

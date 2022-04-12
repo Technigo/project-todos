@@ -41,21 +41,18 @@ const AddTasks = () => {
             onChange={(event) => setTask(event.target.value)}
           />
         </label>
-        <button onClick={() => onTaskSubmit(task, tag)}>
-          <AddTaskButton
-            src='./images/add-icon.svg'
-            alt='add task'
-          />
-        </button>
         <TagsWrapper>
           <form value={tag}>
-          <TagInput type="button" value="work" color='#3DB429' onClick={onTagValueChange} />
-          <TagInput type="button" value="study" color='#F36969' onClick={onTagValueChange}  />
-          <TagInput type="button" value="shopping" color='#5B87C9' onClick={onTagValueChange} />
-          <TagInput type="button" value="gym"  color='#A093D4' onClick={onTagValueChange} />
-          <TagInput type="button" value="other" color='#FB9A08' onClick={onTagValueChange} />
+            <TagInput type="button" value="work" color='#3DB429' onClick={onTagValueChange} />
+            <TagInput type="button" value="study" color='#F36969' onClick={onTagValueChange} />
+            <TagInput type="button" value="shopping" color='#5B87C9' onClick={onTagValueChange} />
+            <TagInput type="button" value="gym" color='#A093D4' onClick={onTagValueChange} />
+            <TagInput type="button" value="other" color='#FB9A08' onClick={onTagValueChange} />
           </form>
-        </TagsWrapper>
+          </TagsWrapper>
+          <AddTaskButton onClick={() => onTaskSubmit(task, tag)}>
+           + ADD TASK
+          </AddTaskButton>
       </AddTaskCard>
     </Card>
   )
