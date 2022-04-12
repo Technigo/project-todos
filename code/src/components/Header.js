@@ -4,9 +4,11 @@ import styled from 'styled-components';
 const Header = () => {
 
     return (
-        <h1>
-            TODO APP
-        </h1>
+        <header className="container">
+            <h1>
+                TODO APP
+            </h1>
+        </header>
     );
 }
 

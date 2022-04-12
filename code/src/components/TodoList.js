@@ -12,7 +12,7 @@ const TodoList = () => {
     const dispatch = useDispatch();
     
     return (
-        <div className="todo-list">
+        <div className="todo-list container">
             {todoList.map((todo) => (
                 <TodoItem  key={todo.id} todo={todo}/>
             ))}

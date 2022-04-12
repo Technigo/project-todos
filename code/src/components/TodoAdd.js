@@ -14,7 +14,7 @@ const TodoAdd = () => {
 
 
     return (
-        <div className="todo-add-new-todo">
+        <div className="todo-add-new-todo container">
             <label>
                 Title
                 <input 

@@ -11,7 +11,7 @@ const TodoTags = ({ tags }) => {
             <h3>TAGS:</h3>
             <p>
                 {tags.map((tag) => (
-                    <span className="todo-item-tag">{tag}</span>
+                    <span key={tag} className="todo-item-tag">{tag}</span>
                 ))}
             </p>
         </div>

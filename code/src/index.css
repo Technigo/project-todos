@@ -11,3 +11,20 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+
+.container {
+  border: 1px solid black;
+  width: 600px;
+  margin: 0 0 0 20px;
+}
+
+.todo-item {
+  border: 1px solid coral;
+}
+
+.todo-item-tag {
+  background-color: turquoise;
+  margin: 0 10px 0 0;
+}
