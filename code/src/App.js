@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import tasks from 'reducers/tasks'
 import Main from 'components/Main'
 import CompletedTasks from 'components/CompletedTasks'
+import Incomplete from 'components/Incomplete'
 
 
 const reducer = combineReducers({
@@ -24,6 +25,7 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Main />}/>
           <Route path="/completed" element={<CompletedTasks />} />
+          <Route path="/incomplete" element={<Incomplete />} />
         </Routes>
       </BrowserRouter>
     </Provider>

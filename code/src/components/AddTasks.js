@@ -23,11 +23,12 @@ const Form = styled.div`
 `
 
 const Label = styled.label`
-    opacity: 1;
+    margin-top: 15px;
 `
 
 const Textarea = styled.input`
     width: 95%;
+    padding: 10px;
 
     @media ${devices.tablet} {
         width: 70%;
@@ -37,7 +38,24 @@ const Textarea = styled.input`
 const AddButton = styled.button`
     width: 300px;
     border: none;
-    background-color: #ade8f4;
+    border-radius: 10px;
+    box-shadow: 0 4px #723c70;
+    padding: 6px;
+    margin: 7px 0 25px 0;
+    background-color: #5c4d7d;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:active {
+        box-shadow: 0 4px #5c4d7d;
+        transform: translateY(3px);
+        transition: 0.3s;
+    }
+
+    &:disabled {
+        color: #723c70;
+    }
 `
 
 
@@ -49,6 +67,7 @@ const AddTasks = () => {
                     <Label>Add new task here</Label>
                         <Textarea type="textarea"/>
                     <AddButton>
+                    {/* disabled={xxxx.length < 1} Add when button is working*/}
                         Add task
                     </AddButton>
                 </Form>

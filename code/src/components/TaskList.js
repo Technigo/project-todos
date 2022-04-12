@@ -13,7 +13,6 @@ const devices = {
 const Container = styled.div`
     width: 375px;
     margin: 0 auto;
-    background-color: #caf0f8;
 
     @media ${devices.tablet} {
     width:768px;
@@ -22,14 +21,14 @@ const Container = styled.div`
 
 const TaskArticle = styled.article`
     position: relative;
-    border-bottom: solid 1px #ade8f4;
+    border-bottom: solid 1px #5c4d7d;
 `
 const TaskName = styled.h3`
     font-family: 'Grape Nuts', cursive;
 `
 
 const RemoveButton = styled.button`
-    background-color: #caf0f8;
+    background-color: white;
     position: absolute;
     top: 10px;
     right: 10px;
