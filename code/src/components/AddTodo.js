@@ -1,9 +1,9 @@
-import React from "react";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
+import React from "react"
+import { useState } from "react"
+import { useDispatch } from "react-redux"
+import styled from "styled-components"
 
-import todos from "../reducers/todos";
+import todos from "../reducers/todos"
 
 const Button = styled.button`
   align-self: center;
@@ -11,35 +11,37 @@ const Button = styled.button`
   color: whitesmoke;
   font-family: "Inconsolata";
   border-radius: 10px;
-  padding: 10px;
-  font-size: 10px;
-`;
+  padding: 12px;
+  font-size: 12px;
+  cursor: pointer;
+`
 
 const AddTodo = () => {
-  const [input, setInput] = useState("");
-  const dispatch = useDispatch();
+  const [input, setInput] = useState("")
+  const dispatch = useDispatch()
 
   const onAddTodo = () => {
-    dispatch(todos.actions.addTodo(input));
-  };
+    dispatch(todos.actions.addTodo(input))
+    setInput("")
+  }
 
   return (
     <div>
       <p>Things that has to be done!</p>
       <input
-        className="text-input"
-        type="text"
+        className='text-input'
+        type='text'
         value={input}
         onChange={(event) => setInput(event.target.value)}
-        maxLength="22"
+        maxLength='20'
       />
       <Button onClick={onAddTodo}>
-        <span role="img" aria-label="plus">
+        <span role='img' aria-label='plus'>
           ➕
         </span>
       </Button>
     </div>
-  );
-};
+  )
+}
 
-export default AddTodo;
+export default AddTodo

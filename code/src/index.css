@@ -1,6 +1,5 @@
 body {
   margin: 20px;
-
   font-family: "Inconsolata";
   background-image: url(assets/cork-background.jpg);
 }
@@ -8,6 +7,17 @@ body {
 .todo-item {
   display: flex;
   align-items: center;
+  margin-top: 12px;
+}
+
+.todo-item p {
+  font-size: 17px;
+  margin: 7px 10px 7px 10px;
+}
+
+.todo-item button {
+  position: absolute;
+  right: 42px;
 }
 
 .todo-container {
@@ -19,10 +29,11 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 25px;
+  position: relative;
 }
 
 .text-input {
-  font-size: 15px;
+  font-size: 17px;
   border-radius: 5px;
   height: 30px;
   margin-right: 5px;
@@ -30,6 +41,7 @@ body {
   background-color: whitesmoke;
   padding: 5px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 /* ------ checkbox ------ */
@@ -38,18 +50,31 @@ body {
 }*/
 
 [type="checkbox"]:not(:checked) {
-  width: 25px;
-  height: 25px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  left: 38px;
+  cursor: pointer;
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease;
 }
 
 [type="checkbox"]:checked {
-  width: 20px;
-  height: 20px;
+  background-color: whitesmoke;
+  border-radius: 10px;
+  width: 30px;
+  height: 30px;
   background-image: url(assets/check-mark.png);
   background-size: contain;
   opacity: 1;
   transform: scale(1);
   transition: all 0.3s ease;
+  position: absolute;
+  left: 25px;
+  cursor: pointer;
 }
 
 /* ----- TABLET VIEW ----- */
