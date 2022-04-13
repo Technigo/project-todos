@@ -31,6 +31,7 @@ align-items: center;
 const IntroHeading = styled.h1 `
 color: #1D3F6F;
 font-size: 34px;
+text-align: center;
 `
 
 const Button = styled.button`
@@ -38,6 +39,7 @@ border-radius: 8px;
 border: 0.4px solid gray;
 padding: 6px;
 font-family: 'Roboto', sans-serif;
+font-size: 15px;
 `
 
 const IntroImage = styled.img`
@@ -53,11 +55,12 @@ const IntroPage = () => {
        <IntroImage src="./assets/todo-illustration.png" alt="Illustration made by pch.vector - www.freepik.com" />
 
         <IntroHeading>
-            Lets do it today
+         Your best friend – <br />
+         The Todo App.
         </IntroHeading>
 
         <Link to="/app">
-            <Button>Write it down</Button>
+            <Button>Let's get this started</Button>
         </Link>
         </Container>
     )
