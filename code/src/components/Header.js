@@ -20,6 +20,18 @@ const ButtonWrapper = styled.div`
   justify-content: space-evenly;
 `;
 
+const OptionsBtn = styled.button`
+  background-color: transparent;
+  border: none;
+  border-radius: 20px;
+  padding: 10px;
+  cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+`;
+
 const Header = ({
   completed,
   uncompleted,
@@ -49,19 +61,19 @@ const Header = ({
 
   return (
     <HeaderWrapper>
-      <h2>My Todo list</h2>
+      <h2>What to do today?</h2>
       <p>{date}</p>
       <p>{weekday}</p>
       <ButtonWrapper>
-        <button active={all} onClick={showAll}>
+        <OptionsBtn active={all} onClick={showAll}>
           All
-        </button>
-        <button active={completed} onClick={showCompleted}>
+        </OptionsBtn>
+        <OptionsBtn active={completed} onClick={showCompleted}>
           Completed
-        </button>
-        <button active={uncompleted} onClick={showUncompleted}>
+        </OptionsBtn>
+        <OptionsBtn active={uncompleted} onClick={showUncompleted}>
           Uncompleted
-        </button>
+        </OptionsBtn>
       </ButtonWrapper>
     </HeaderWrapper>
   );

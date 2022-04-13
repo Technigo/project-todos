@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import todo from 'reducers/todo';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCirclePlus } from '@fortawesome/free-solid-svg-icons';
 
 const TodoInput = styled.input`
   width: 90%;
@@ -14,11 +16,35 @@ const TodoInput = styled.input`
   border-bottom: 1px solid rgb(50, 78, 168);
   border-radius: 4px;
   font-size: 20px;
+  &::placeholder {
+    color: rgb(50, 78, 168);
+    padding-left: 5px;
+  }
 `;
 
 const TodoWrapper = styled.form`
   padding-top: 20px;
   text-align: center;
+  margin-top: 40px;
+`;
+
+const RemoveBtn = styled.button`
+  margin: 10px 10px 0px 0px;
+  position: absolute;
+  right: 0;
+  background-color: rgb(50, 78, 168);
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 50px;
+  padding: 10px;
+  border: none;
+`;
+
+const AddBtn = styled.button`
+  background-color: transparent;
+  border: none;
 `;
 
 const AddTodo = () => {
@@ -33,6 +59,9 @@ const AddTodo = () => {
 
   return (
     <>
+      <RemoveBtn onClick={() => dispatch(todo.actions.deleteAllTasks(todo))}>
+        remove all
+      </RemoveBtn>
       <TodoWrapper>
         <TodoInput
           type='text'
@@ -41,10 +70,14 @@ const AddTodo = () => {
           value={newTodo}
           onChange={(event) => setNewTodo(event.target.value)}
         />
-        <button onClick={onTodoText}>add</button>
-        <button onClick={() => dispatch(todo.actions.deleteAllTasks(todo))}>
-          remove all
-        </button>
+        <AddBtn onClick={onTodoText}>
+          <FontAwesomeIcon
+            onClick={onTodoText}
+            icon={faCirclePlus}
+            size='3x'
+            color='rgb(50, 78, 168)'
+          />
+        </AddBtn>
       </TodoWrapper>
     </>
   );
