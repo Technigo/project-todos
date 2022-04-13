@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const Heading = styled.section`
 background-color: #F9CE74;
-  padding: 5px;
+  padding: 6px;
   text-align: center;
   font-size: 20pt;
   color: #d06e90;
