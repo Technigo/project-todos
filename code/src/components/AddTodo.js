@@ -73,6 +73,7 @@ const AddTodoContainer = styled.section`
 
   @media ${devices.mobile} {
         transform: scale(0.8);
+        bottom: 180px;
       }
 
       @media ${devices.tablet} {
