@@ -6,7 +6,6 @@ import { tasks } from "./reducers/tasks";
 
 import Header from 'components/Header'
 import AddTasks from 'components/AddTasks'
-import FilterTasks from 'components/FilterTasks'
 import TaskList from 'components/TaskList'
 
 import { GlobalStyles } from "components/styles/Global";
@@ -26,7 +25,6 @@ export const App = () => {
           <GlobalStyles />
           <Header />
           <AddTasks />
-          <FilterTasks />
           <TaskList />
         </FlexColumn>
       </main>

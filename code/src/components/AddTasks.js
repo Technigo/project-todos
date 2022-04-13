@@ -32,10 +32,6 @@ const AddTasks = () => {
   const onTagValueChange = (event) => {
     setTag(event.currentTarget.value)
   }
-
-  console.log(task)
-  console.log(tag)
-
   return (
     <Card>
       <AddTaskCard>

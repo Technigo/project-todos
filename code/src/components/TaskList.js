@@ -2,10 +2,10 @@ import React from 'react'
 
 import { useSelector, useDispatch } from "react-redux";
 
-import { TaskListFlexColumn, TaskListWrapper, TaskListWrapperLabel } from './styles/Containers.styled'
+import { TaskListFlexColumn, TaskListWrapper, TaskListWrapperLabel, FlexRow } from './styles/Containers.styled'
 import { Tag } from './styles/Tags.styled'
 import { Task, DoneTask } from './styles/FontsAndSpans.styled'
-import { RemoveTaskButton } from './styles/Buttons.styled'
+import { RemoveTaskButton, FilterButton } from './styles/Buttons.styled'
 
 import { tasks } from '../reducers/tasks'
 
@@ -24,6 +24,11 @@ const TaskList = () => {
 
   return (
     <TaskListFlexColumn>
+      <FlexRow>
+        <FilterButton color='#5B87C9'>All Tasks</FilterButton>
+        <FilterButton color='#C95B5B'>To do</FilterButton>
+        <FilterButton color='#58BB48'>Done</FilterButton>
+      </FlexRow>
       {allTasks.map((task) => (
         <TaskListWrapper key={task.id}>
           <TaskListWrapperLabel htmlFor="checkTask">
