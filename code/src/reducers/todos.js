@@ -24,15 +24,24 @@ const data = [
             task: 'Workout',
             isComplete: 'true',
             display:'false'
-        }
-    ]
+        },
+    ];
 
     const todos = createSlice({
         name: 'todos',
         initialState: {
             items: data,
 },
-reducers: {}
+reducers: {
+    toggleItem: (store, action) => {
+
+        store.items.forEach((item) => {
+        if (item.id === action.payload) {
+            item.isComplete = !item.isComplete;
+        }
+     });
+    },
+},
 });
 
 export default todos;
