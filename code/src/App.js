@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { useState } from 'react';
 
 import todo from 'reducers/todo';
 import TodoList from 'components/TodoList';
@@ -16,11 +17,21 @@ const store = configureStore({
 });
 
 export const App = () => {
+  const [all, setAll] = useState(true);
+  const [completed, setCompleted] = useState(false);
+  const [uncompleted, setUncompleted] = useState(false);
   return (
     <Provider store={store}>
-      <Header />
+      <Header
+        completed={completed}
+        uncompleted={uncompleted}
+        all={all}
+        setCompleted={setCompleted}
+        setUncompleted={setUncompleted}
+        setAll={setAll}
+      />
       <AddTodo />
-      <TodoList />
+      <TodoList completed={completed} uncompleted={uncompleted} all={all} />
     </Provider>
   );
 };

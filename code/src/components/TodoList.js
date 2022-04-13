@@ -5,10 +5,14 @@ import todo from 'reducers/todo';
 import moment from 'moment';
 
 const TodoItem = styled.div`
-  border: 2px solid black;
+  background-color: rgb(213, 219, 214);
+  border-radius: 10px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
 `;
 
-const TodoList = () => {
+const TodoList = ({ all, completed, uncompleted }) => {
   const todoList = useSelector((store) => store.todo.items);
   const allTasks = useSelector((store) => store.todo.items);
   const completedTasks = allTasks.filter((todo) => todo.completed === true);

@@ -1,7 +1,25 @@
 import React from 'react';
 import { useState } from 'react';
-import { createDispatchHook, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import todo from 'reducers/todo';
+import styled from 'styled-components';
+
+const TodoInput = styled.input`
+  width: 90%;
+  margin: 0;
+  margin-bottom: 10px;
+  padding: 5px;
+  height: 38px;
+  border: none;
+  border-bottom: 1px solid rgb(50, 78, 168);
+  border-radius: 4px;
+  font-size: 20px;
+`;
+
+const TodoWrapper = styled.form`
+  padding-top: 20px;
+  text-align: center;
+`;
 
 const AddTodo = () => {
   const dispatch = useDispatch();
@@ -15,12 +33,11 @@ const AddTodo = () => {
 
   return (
     <>
-      <form>
-        <span>Add your todo here: </span>
-        <input
+      <TodoWrapper>
+        <TodoInput
           type='text'
           placeholder='Add your todo..'
-          minlength='3'
+          minLength='3'
           value={newTodo}
           onChange={(event) => setNewTodo(event.target.value)}
         />
@@ -28,7 +45,7 @@ const AddTodo = () => {
         <button onClick={() => dispatch(todo.actions.deleteAllTasks(todo))}>
           remove all
         </button>
-      </form>
+      </TodoWrapper>
     </>
   );
 };

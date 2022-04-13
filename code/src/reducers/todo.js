@@ -23,13 +23,13 @@ const todo = createSlice({
         }
       });
     },
-    deleteTask: (state, action) => {
+    deleteTask: (store, action) => {
       const { id } = action.payload;
-      const task = state.items.find((t) => t.id === id);
-      state.items.splice(state.items.indexOf(task), 1);
+      const task = store.items.find((t) => t.id === id);
+      store.items.splice(store.items.indexOf(task), 1);
     },
-    deleteAllTasks: (state) => {
-      state.items = [];
+    deleteAllTasks: (store) => {
+      store.items = [];
     },
   },
 });
