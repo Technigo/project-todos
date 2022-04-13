@@ -91,7 +91,7 @@ const AddTask = () => {
 
     const newTask = {
         id: uniqid(),
-        name: inputValue,
+        text: inputValue,
         isDone: false,
     }
 

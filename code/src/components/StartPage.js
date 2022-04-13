@@ -74,19 +74,12 @@ word-break: break-word;
 `
 
 const TaskHeading = styled.h2`
-margin-block-start: -18px;
+margin-block-start: -2px;
 font-size: 20px;
 max-width: 70%;
 overflow-wrap: break-word;
-padding-bottom: 6px;
 `
 
-const NewTaskHeading = styled.h2`
-margin-block-start: -2px;
-font-size: 20px;
-max-width: 85%;
-overflow-wrap: break-word;
-`
 
 const Checkbox = styled.input`
 margin-top: 10px;
@@ -132,8 +125,7 @@ const StartPage = () => {
                         <Emoji>
                     <span role="img" aria-label="cross">❌</span></Emoji> 
                     </Button>
-                    <NewTaskHeading>{taskItem.name}</NewTaskHeading>
-                    
+
                     <label>
                     <TaskHeading>{taskItem.text}</TaskHeading>
 
