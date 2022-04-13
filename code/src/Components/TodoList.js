@@ -8,7 +8,7 @@ const TodoItem = styled.article`
 padding: 8px;
 border-radius: 8px;
 color: purple;  
-margin-top:35px;
+margin-top:25px;
 margin-bottom: 15px;
 position:relative;
 border:solid 1px;
@@ -25,6 +25,8 @@ const CheckBox = styled.input`
     height:18px;
     width:18px;
 	top: 5px;
+    border-radius:5px
+    outline: 2px solid #aaa;
     cursor:pointer;
 `;
 
@@ -35,7 +37,6 @@ right: 10px;
 background:none;
 border:none;
 cursor:pointer;
-
 `;
 
 
@@ -53,7 +54,7 @@ const TodoList = () => {
     };
 
     const onTodoDelete = (index) => {
-        dispatch (todo.actions.deleteItem(index));
+        dispatch(todo.actions.deleteItem(index));
 
     };
 
@@ -62,15 +63,15 @@ const TodoList = () => {
             {todoList.map((todoItem, todoIndex) => (
                 <TodoItem key={todoItem.id}>
                     <h2>{todoItem.name}</h2>
-                    <label> 
-                    Done
-                    <CheckBox
-                        type="checkbox"
-                        checked={todoItem.done}
-                        onChange={() => onTodoToggle(todoItem.id)}
-                    />
-                   </label>
-                        
+                    <label>
+                        Done
+                        <CheckBox
+                            type="checkbox"
+                            checked={todoItem.done}
+                            onChange={() => onTodoToggle(todoItem.id)}
+                        />
+                    </label>
+
                     <DeleteButton onClick={() => onTodoDelete(todoIndex)}>
                         <span role="img" aria-label="delete">
                             ✖️

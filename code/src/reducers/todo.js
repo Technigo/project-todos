@@ -46,7 +46,6 @@ const todo = createSlice({
         addItem: (store, action) => {
             store.items.push(action.payload);
 
-        
     },
 },
 });
