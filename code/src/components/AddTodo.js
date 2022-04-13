@@ -70,14 +70,13 @@ const AddTodo = () => {
           value={newTodo}
           onChange={(event) => setNewTodo(event.target.value)}
         />
-        <AddBtn onClick={onTodoText}>
-          <FontAwesomeIcon
-            onClick={onTodoText}
-            icon={faCirclePlus}
-            size='3x'
-            color='rgb(50, 78, 168)'
-          />
-        </AddBtn>
+
+        <FontAwesomeIcon
+          onClick={onTodoText}
+          icon={faCirclePlus}
+          size='3x'
+          color='rgb(50, 78, 168)'
+        />
       </TodoWrapper>
     </>
   );
