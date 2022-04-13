@@ -1,13 +1,56 @@
 body {
-  margin: 0;
+  margin: 15px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightgoldenrodyellow;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  @import url('https://fonts.googleapis.com/css?family=Nunito');
+
 }
+
+
+.counter-total {
+font-size: 20px;
+font: weight 20px;
+font-family: monospace;
+align-items: center;
+}
+
+
+ /* [type="checkbox"] {
+opacity: 20px;
+
+}
+[type="checkbox"] + label{
+position: relative;
+cursor: pointer;
+
+}
+
+[type="checkbox"] + label::before{
+  content: "";
+  position: absolute;
+  left:0;
+  top:0;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid #aaa;
+  background: white;
+
+
+}
+
+[type="checkbox"]:checked + label::before{
+  content: "";
+  position: absolute;
+  left:0;
+  top:0;
+  width: 18px;
+  height: 18px;
+  background-size: contain;
+}  */
