@@ -1,11 +1,12 @@
-import React from 'react'
-import { Provider } from 'react-redux';
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import React from "react"
+import { Provider } from "react-redux";
+import { combineReducers, configureStore } from "@reduxjs/toolkit";
 
-import todo from 'reducers/todo';
+import todo from "reducers/todo";
 
-import TodoList from 'Components/TodoList';
-import TodoCounter from 'Components/TodoCounter';
+import TodoList from "Components/TodoList";
+import TodoCounter from "Components/TodoCounter";
+import AddTodo from "Components/AddTodo";
 
 
 const reducer = combineReducers({
@@ -13,12 +14,13 @@ const reducer = combineReducers({
 });
 
 const store = configureStore({
-  reducer: reducer
+  reducer,
 });
 
 export const App = () => {
   return (
     <Provider store={store}>
+      <AddTodo/>
       <TodoList/>
       <TodoCounter/>
     </Provider>

@@ -7,18 +7,18 @@ import todo from "reducers/todo";
 const TodoItem = styled.article`
 padding: 8px;
 border-radius: 8px;
+color: purple;  
 margin-top:35px;
 margin-bottom: 15px;
-color: purple;
 position:relative;
-background-image: linear-gradient(pink, yellow);
+border:solid 1px;
 font-size: 15px;
+font-family: monospace;
 &:hover {
-    color: black;
-    
+    &:hover {
+		background-image: linear-gradient(pink, yellow);
 }
-`
-;
+` ;
 
 const CheckBox = styled.input`
 	position: relative;
@@ -38,6 +38,11 @@ cursor:pointer;
 
 `;
 
+
+
+
+
+
 const TodoList = () => {
     const todoList = useSelector((store) => store.todo.items);
 
@@ -45,26 +50,30 @@ const TodoList = () => {
 
     const onTodoToggle = (todoId) => {
         dispatch(todo.actions.toggleItem(todoId));
+    };
+
+    const onTodoDelete = (index) => {
+        dispatch (todo.actions.deleteItem(index));
 
     };
 
     return (
         <section>
-            {todoList.map((todoItem) => (
+            {todoList.map((todoItem, todoIndex) => (
                 <TodoItem key={todoItem.id}>
                     <h2>{todoItem.name}</h2>
-
+                    <label> 
+                    Done
                     <CheckBox
                         type="checkbox"
-                        checked={todoItem.Done}
+                        checked={todoItem.done}
                         onChange={() => onTodoToggle(todoItem.id)}
                     />
-                    <label htmlFor='Done'>
-                        Done
-                    </label>
-                    <DeleteButton>
+                   </label>
+                        
+                    <DeleteButton onClick={() => onTodoDelete(todoIndex)}>
                         <span role="img" aria-label="delete">
-                            ❌
+                            ✖️
                         </span>
                     </DeleteButton>
                 </TodoItem>

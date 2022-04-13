@@ -5,30 +5,29 @@ const data = [
     {
         id: 'jfksfjs',
         name: 'Buy sweets',
-        Done: false
+        done: false,
     },
 
     {
         id: 'jfksfjsfds',
         name: 'Fix all the Easter eggs',
-        Done: false
+        done: false,
     },
 
     {
         id: 'jfksfjsfdf',
         name: 'Hide the eggs',
-        Done: false
+        done: false,
     },
     {
         id: 'jfksfjttt',
         name: 'Host the egg hunt',
-        Done: false
+        done: false,
     },
 ];
 
-
-const todos = createSlice({
-    name: 'todos',
+const todo = createSlice({
+    name: "todo",
     initialState: {
         items: data,
     },
@@ -36,11 +35,20 @@ const todos = createSlice({
         toggleItem: (store, action) => {
             store.items.forEach((item) => {
                 if (item.id === action.payload) {
-                    item.Done = !item.Done;
+                    item.done = !item.done;
                 }
             });
         },
+        deleteItem: (store, action) => {
+            store.items.splice(action.payload, 1);
+        },
+
+        addItem: (store, action) => {
+            store.items.push(action.payload);
+
+        
     },
+},
 });
 
-export default todos;
+export default todo;
