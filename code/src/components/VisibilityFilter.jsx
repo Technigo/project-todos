@@ -5,6 +5,7 @@ import { useDispatch } from 'react-redux';
 import { VISIBILITY_FILTER } from '../constants';
 import { setFilter } from '../redux/actions';
 
+
 export const VisibilityFilter = () => {
   const dispatch = useDispatch();
 
@@ -12,17 +13,15 @@ export const VisibilityFilter = () => {
     <Container centerContent>
       <Tabs>
         <TabList>
-          {Object.keys(VISIBILITY_FILTER).map(filterkey => {
-            const currentFilter = VISIBILITY_FILTER[filterkey];
-            return (
-              <Tab
-                key={`visibility-filter-${currentFilter}`}
-                onClick={() => dispatch(setFilter(currentFilter))}
-              >
-                {currentFilter}
-              </Tab>
-            )
-          })}
+          <Tab onClick={() => dispatch(setFilter(VISIBILITY_FILTER.INCOMPLETED))}>
+            Incompleted
+          </Tab>
+          <Tab onClick={() => dispatch(setFilter(VISIBILITY_FILTER.COMPLETED))}>
+            Completed
+          </Tab>
+          <Tab onClick={() => dispatch(setFilter(VISIBILITY_FILTER.ALL))}>
+            All
+          </Tab>
         </TabList>
       </Tabs>
     </Container>

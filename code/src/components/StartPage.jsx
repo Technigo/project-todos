@@ -15,8 +15,8 @@ export const StartPage = () => {
             </Heading>
             <VisibilityFilter />
             <AddTodo />
+            <TodoList/>  
             <ToDoCounter />
-            <TodoList/>        
         </Container>
     )
 }

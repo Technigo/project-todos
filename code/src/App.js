@@ -4,7 +4,6 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { StartPage } from './components/StartPage';
 import IntroPage from 'components/IntroPage';
 
-
 const App = () => {
   return (
     <BrowserRouter>
