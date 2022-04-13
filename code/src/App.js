@@ -50,6 +50,7 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: -10px;
   border: 1px solid red;
 `
 
@@ -78,7 +79,10 @@ const ProviderContainer = styled.section`
   @media ${devices.mobile} {
     margin: 50px;
     min-width: 40px;
-    width: 250px;
+    width: 200px;
+    min-height: 400px;
+    height: 100px;
+
 
   }
 

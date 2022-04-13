@@ -90,7 +90,7 @@ const Task = styled.div`
     align-items: center;
 
     @media ${devices.mobile} {
-        transform: scale(0.8);
+        transform: scale(0.7);
       }
     
 `
