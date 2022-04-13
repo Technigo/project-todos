@@ -17,7 +17,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 font-size: 16px;
-margin-top: 2rem;
+margin-top: 3rem;
 line-height: 0;
 
 @media ${devices.tablet} {

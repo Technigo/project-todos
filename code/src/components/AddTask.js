@@ -36,6 +36,9 @@ const Textarea = styled.input`
 width: 75%;
 padding: 10px;
 border: none;
+font-family: 'Roboto', sans-serif;
+font-size: 16px;
+
 
 @media ${devices.tablet} {
     width: 60%;
@@ -46,6 +49,7 @@ const Button = styled.button`
 border-radius: 8px;
 border: 0.4px solid gray;
 padding: 6px;
+font-family: 'Roboto', sans-serif;
 `
 
 const Label = styled.label`
@@ -96,7 +100,7 @@ const AddTask = () => {
              <span role="img" aria-label="pen"> 🖋️</span>    &nbsp;
            <Textarea
             type="text"
-            placeholder= "Insert new task here.."
+            placeholder= "Insert new to-do task here.."
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)} />
 
