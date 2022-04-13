@@ -110,6 +110,10 @@ const DateP = styled.p`
 const TaskWrapper = styled.section`
     max-height: 400px;
     width: 400px;
+
+    @media ${devices.mobile} {
+        max-height: 250px;
+      }
 `
 const TodoSection = styled.section`
 overflow: auto;
@@ -124,7 +128,6 @@ border-radius: 10px;
 border: none;
 box-shadow: -10px -10px 20px #fff, 10px 10px 20px rgb(174, 174, 192, 0.5);
 cursor: pointer;
-color: black;
 
 &:hover {
     box-shadow: 
