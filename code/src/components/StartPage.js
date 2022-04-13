@@ -61,10 +61,15 @@ const Article = styled.article`
 border: 0.4px solid gray;
 background: #f8f8f8;
 border-radius: 15px;
-padding: 0.7rem;
-margin: 0.2rem;
+padding: 1rem;
+margin: 0.4rem;
 width: 83%;
 position: relative;
+`
+
+const TaskHeading = styled.h2`
+margin-block-start: -23px;
+
 `
 
 const StartPage = () => {
@@ -108,7 +113,7 @@ const StartPage = () => {
                     <h2>{taskItem.name}</h2>
                     
                     <label>
-                    <h2>{taskItem.text}</h2>
+                    <TaskHeading>{taskItem.text}</TaskHeading>
                     <input 
                     type="checkbox" 
                     checked={taskItem.isDone} 
