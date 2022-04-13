@@ -2,7 +2,6 @@ import React from "react";
 import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import Counter from "components/Counter";
-// import Counter from "components/Counter";
 import Input from "components/input";
 import "./App.css";
 
