@@ -1,16 +1,10 @@
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import tasks from 'reducers/tasks'
 
 const AddTask = () => {
 
     const [input, setInput] = useState('')
-
-    // const inputRef = useRef(null)
-
-    // useEffect(() => {
-    //     inputRef.current.focus()
-    // })
 
     const dispatch = useDispatch()
 
@@ -31,7 +25,6 @@ const AddTask = () => {
                 type="text"
                 value={input}
                 onChange={handleNewTask}
-                // ref={inputRef}
                 />
                 <button className='add-button' onClick={onAddTask} disabled={input.length < 1}>
                     <span>Add task</span>

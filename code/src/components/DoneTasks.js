@@ -49,7 +49,7 @@ const DoneTasks = () => {
                 </label>
                 </div>
                 <button className="delete-button" onClick={() => onDeleteTask(taskItem.id)}>
-                <img src={trash} />
+                <img src={trash} alt="trash"/>
             </button>
             </div>
         ))}
