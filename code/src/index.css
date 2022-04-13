@@ -45,4 +45,6 @@ input {
   color: inherit;
   font-family: inherit;
   font-size: 100%;
+  border: 1px solid black;
+  border-radius: 5px;
 }

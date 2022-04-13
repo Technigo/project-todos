@@ -16,7 +16,7 @@ text-transform: uppercase;
 font-size: 12px;
 `
 
-export const TodoMiddleBox = styled.label`
+export const TodoMiddleBox = styled.div`
 display: flex;
 justify-content: space-between;
 align-items: center;
@@ -44,7 +44,7 @@ font-size: 8px;
 text-align: right;
 `
 
-export const TodoCheckingBox = styled.div`
+export const TodoCheckingBox = styled.label`
 display: flex;
 align-items: center;
 justify-content: flex-start;

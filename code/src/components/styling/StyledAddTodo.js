@@ -15,6 +15,11 @@ background: #fff;
 export const AddTextBox = styled.div`
 width: 100%;
 
+& input {
+  border-radius: 5px;
+  border: 1px solid #000;
+
+}
 `
 
 export const AddText = styled.input`
@@ -33,7 +38,7 @@ export const AddCategory = styled.div`
 & select {
   width: 242px;
   background-color: #fff;
-  /* border-radius: 5px; */
+  border-radius: 5px;
   border: 1px solid #000;
   color: inherit;
   font-family: inherit;
