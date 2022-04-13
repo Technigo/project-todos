@@ -60,7 +60,7 @@ font-family: 'Roboto', sans-serif;
 `
 
 const HeaderBox = styled.div`
-width: 80%;
+width: 85%;
 border: 1px solid gray;
 border-radius: 12px;
 padding: 0.4rem;
@@ -108,6 +108,7 @@ const AddTask = () => {
         <HeaderBox>
            <label>
              <span role="img" aria-label="pen"> 🖋️</span> 
+             &nbsp;
            <Textarea
             type="text"
             placeholder= "Insert new to-do task here.."
