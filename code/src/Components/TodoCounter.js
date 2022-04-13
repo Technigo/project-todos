@@ -17,7 +17,10 @@ const TodoCounter = () => {
 
      return (
         <section className="counter-left">
-                <p> No more to-dos</p>
+            <span role="img" aria-label="Completed">
+            No more to-dos, or add some new! 🐣 HAPPY EASTER 🐣
+                        </span>
+               
 
              </section>
        )

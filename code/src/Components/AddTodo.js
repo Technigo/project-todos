@@ -25,7 +25,7 @@ const AddTodo = () => {
     };
 
     return (
-        <form onSubmit={onFormSubmit}>
+         <form onSubmit={onFormSubmit}>
             <label>
                 Add to do! &nbsp;
                 <input

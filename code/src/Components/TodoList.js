@@ -14,7 +14,7 @@ position:relative;
 border:solid 1px;
 font-size: 15px;
 font-family: monospace;
-&:hover {
+
     &:hover {
 		background-image: linear-gradient(pink, yellow);
 }
@@ -38,10 +38,6 @@ background:none;
 border:none;
 cursor:pointer;
 `;
-
-
-
-
 
 
 const TodoList = () => {

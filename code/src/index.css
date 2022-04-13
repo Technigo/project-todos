@@ -8,18 +8,47 @@ body {
   background-color: lightgoldenrodyellow;
 }
 
-code {
-  @import url('https://fonts.googleapis.com/css?family=Nunito');
 
-}
 
 
 .counter-total {
 font-size: 20px;
 font: weight 20px;
 font-family: monospace;
-align-items: center;
+
 }
+
+.counter-left {
+  font-size: 20px;
+  font: weight 20px;
+  font-family: monospace;
+  padding-top: 50px;
+}
+
+form {
+padding: 18px;
+border-radius: 8px;
+color: purple;  
+margin-top:35px;
+margin-bottom: 15px;
+position:relative;
+border:solid 3px;
+font-size: 20px;
+font-family: monospace;
+background-image: linear-gradient(pink, yellow);
+
+}
+
+
+button {
+justify-content:space-evenly;
+border-radius: 3px;  
+}
+
+
+
+
+
 
 
  /* [type="checkbox"] {
