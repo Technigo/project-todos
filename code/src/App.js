@@ -4,8 +4,9 @@ import styled from 'styled-components'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
-import { Header } from 'compnents/Header'
-import { TodoList } from 'compnents/TodoList'
+import { Header } from 'components/Header'
+import { TodoList } from 'components/TodoList'
+import { Form } from 'components/Form'
 
 import { list } from 'reducers/list'
 import { todos } from 'reducers/todos'
@@ -36,6 +37,7 @@ export const App = () => (
       <div className='post-it'>
         <Header />
         <TodoList />
+        <Form />
       </div>
     </StyledApp>
   </Provider>
