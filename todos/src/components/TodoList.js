@@ -9,7 +9,7 @@ import {
 } from "styles";
 
 const TodoList = () => {
-  const todoList = useSelector((store) => store.todos.lists);
+  const todoList = useSelector((state) => state.todos.lists);
 
   const dispatch = useDispatch();
 
