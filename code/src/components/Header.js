@@ -6,7 +6,7 @@ const Header = () => {
 
 return(
     <header>
-     <h1>tasks</h1>
+     <h1>to-do list</h1>
      <p>{moment(date).format('dddd')}</p>
     </header>
 )

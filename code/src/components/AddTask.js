@@ -6,11 +6,11 @@ const AddTask = () => {
 
     const [input, setInput] = useState('')
 
-    const inputRef = useRef(null)
+    // const inputRef = useRef(null)
 
-    useEffect(() => {
-        inputRef.current.focus()
-    })
+    // useEffect(() => {
+    //     inputRef.current.focus()
+    // })
 
     const dispatch = useDispatch()
 
@@ -31,10 +31,10 @@ const AddTask = () => {
                 type="text"
                 value={input}
                 onChange={handleNewTask}
-                ref={inputRef}
+                // ref={inputRef}
                 />
-                <button onClick={onAddTask} disabled={input.length < 1}>
-                    <span>Add</span>
+                <button className='add-button' onClick={onAddTask} disabled={input.length < 1}>
+                    <span>Add task</span>
                 </button>
             </label>
         </div>

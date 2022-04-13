@@ -29,7 +29,7 @@ export const App = () => {
       <Routes>
         <Route path='/' element={<NotDoneTasks />}/>
         <Route path='/navbar' element={<Navbar />} />
-        <Route path='/notdonetasks' element={<NotDoneTasks />} />
+        {/* <Route path='/notdonetasks' element={<NotDoneTasks />} /> */}
         <Route path='/donetasks' element={<DoneTasks />} />
       </Routes>
       </BrowserRouter>

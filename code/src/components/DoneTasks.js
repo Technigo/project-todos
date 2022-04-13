@@ -2,6 +2,8 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import tasks from "reducers/tasks";
+import state from '../assets/state.png'
+import trash from '../assets/trash.svg'
 
 const DoneTasks = () => {
 
@@ -28,26 +30,30 @@ const DoneTasks = () => {
 
      if (doneTasks < 1) {
          return (
-             <h1>Done nothing</h1>
+            <section className="section-wrapper">
+            <img className="tasklist-img" src={state} alt="tasklist" />
+            </section>
          )
      } else {
           return(
         <>
         <section className="done-wrapper">
-        <button onClick={onClickAllTasksDelete}>delete all</button>
-        <p>{doneSummary} task done </p>
+        <p className="task-to-do">{doneSummary} done by now! </p>
         {doneTasks.map((taskItem) => (
             <div className="task-container" key={taskItem.id}>
+                <div className="task-and-input">
                 <h2>{taskItem.text}</h2>
-                <label>
-                    done:
-                    <input type="checkbox" checked={taskItem.isCaught} onChange={() => onTaskToggle(taskItem.id)} />
+                <label className="task-label">
+                    <input id="checkbox" type="checkbox" hidden checked={taskItem.isCaught} onChange={() => onTaskToggle(taskItem.id)} />
+                    <label for="checkbox" class="checkbox"><span class="icon"></span></label>
                 </label>
+                </div>
                 <button className="delete-button" onClick={() => onDeleteTask(taskItem.id)}>
-                <span role="img" aria-label="delete">x</span>
+                <img src={trash} />
             </button>
             </div>
         ))}
+        <button className="delete-all-button" onClick={onClickAllTasksDelete}>Delete all</button>
         </section>
         </>
     )

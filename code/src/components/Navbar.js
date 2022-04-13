@@ -6,7 +6,7 @@ const Navbar = () => {
     return(
         <>
         <nav>
-            <NavLink to='NotDoneTasks'>To do</NavLink>
+            <NavLink to='/'>To do</NavLink>
             <NavLink to='DoneTasks'>Done</NavLink>
         </nav>
         </>

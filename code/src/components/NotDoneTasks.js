@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import tasks from "reducers/tasks";
 import AddTask from "./AddTask";
 import state from '../assets/state.png'
+import trash from '../assets/trash.svg'
 
 const NotDoneTasks = () => {
 
@@ -41,22 +42,24 @@ const NotDoneTasks = () => {
         return(
         <>
         <section className="not-done-wrapper">
-        <button onClick={onClickAllDone}>all done</button>
-        <p>{notDoneSummary} task to do</p>
+        <p className="task-to-do">{notDoneSummary} still to be done</p>
         {notDoneTasks.map((taskItem) => (
         <div className="task-container" key={taskItem.id}>
+            <div className="task-and-input">
         <h2>{taskItem.text}</h2>
-       <label>
-           Done:
-        <input type="checkbox" checked={taskItem.isCaught} onChange={() => onTaskToggle(taskItem.id)} />
+       <label className="task-label">
+        <input id="checkbox" type="checkbox" hidden checked={taskItem.isCaught} onChange={() => onTaskToggle(taskItem.id)} />
+        <label for="checkbox" class="checkbox"><span class="icon"></span></label>
        </label>
+       </div>
        <button className="delete-button" onClick={() => onDeleteTask(taskItem.id)}>
-           <span role="img" aria-label="delete">x</span>
-       </button>
+        <img src={trash} />
+       </button> 
        {}
      </div> 
         ))}
-        <AddTask />
+        <button className="all-button" onClick={onClickAllDone}>All done</button>
+         <AddTask />
     </section>
         </>  
     )
