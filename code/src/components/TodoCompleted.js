@@ -13,16 +13,28 @@ const TodoCompleted = ({ todo }) => {
         console.log(todoId);
     }
 
+    const LabelTodoCompleted = styled.label `
+        font-size: 1rem;
+    `
+
+    const CheckboxTodoCompleted = styled.input `
+        border: 2px solid #000;
+        background-color: pink;
+        cursor: pointer;
+    `
+
     return (
-        <label>
-            Completed?
-            <input 
+        <div>
+            <LabelTodoCompleted htmlFor={todo.id}>
+                Completed?
+            </LabelTodoCompleted>
+            <CheckboxTodoCompleted 
             type="checkbox" 
+            id={todo.id}
             checked={todo.isCompleted} 
             onChange={() => toggleCompleted(todo.id)}
             />
-        </label>
-        
+        </div>
     );
 }
 

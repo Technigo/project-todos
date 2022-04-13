@@ -13,6 +13,7 @@ const TodoItem = ({ todo }) => {
         border-bottom: 5px solid black;
         margin: 20px 0;
         padding: 0 0 20px 0;
+        position: relative;
 
     `
     const TodoItemHeading = styled.h2 `
@@ -22,7 +23,7 @@ const TodoItem = ({ todo }) => {
         font-weight: 700;
 
     `
-
+    
     const TodoItemDescription = styled.p `
         font-size: 1rem;
         padding: 0;
