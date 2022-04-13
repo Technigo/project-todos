@@ -27,6 +27,7 @@ const CheckAllBtn = styled.button`
     border: none;
     align-self: center;
     cursor: pointer;
+    color: black;
     box-shadow: -10px -10px 20px #fff, 10px 10px 20px rgb(174, 174, 192, 0.5);
 
     &:hover {
