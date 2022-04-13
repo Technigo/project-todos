@@ -81,7 +81,7 @@ const ProviderContainer = styled.section`
     min-width: 40px;
     width: 200px;
     min-height: 400px;
-    height: 100px;
+    height: 450px;
 
 
   }
