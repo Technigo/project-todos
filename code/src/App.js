@@ -3,7 +3,6 @@ import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import Counter from "components/Counter";
 // import Counter from "components/Counter";
-import styled from "styled-components/macro";
 import Input from "components/Input";
 import "./App.css";
 
