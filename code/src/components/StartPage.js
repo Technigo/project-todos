@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import Completed from 'components/Completed'
+import CompletedTasks from 'components/CompletedTasks'
 import styled from 'styled-components'
 import taskList from 'reducers/tasks'
 import AddTask from './AddTask'
@@ -55,14 +55,14 @@ const StartPage = () => {
 
     return (
         <section>
-                    <Container>
+            <Container>
 
-
-            <img src="./assets/woman-long-list.jpg" alt="illustration created by storyset, www.freepik.com" width="150px"/>
+        <img src="./assets/woman-long-list.jpg" alt="illustration created by storyset, www.freepik.com" width="150px"/>
             <BigHeading>Get it out of your head</BigHeading> 
 
             <AddTask />
-        <Completed />
+        <CompletedTasks />
+        
             
     
             {tasksList.map((taskItem, taskIndex) => (
@@ -79,8 +79,8 @@ const StartPage = () => {
                     Check!    &nbsp;
                     </label>
 
-                    <Button onClick={() => onDeleteClick(taskIndex)} className="btn">
-                        Delete
+                    <Button onClick={() => onDeleteClick(taskIndex)} >
+                    <span role="img" aria-label="cross">❌</span> 
                     </Button>
                   
                 </article>

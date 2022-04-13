@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Completed = (taskItem) => {
+const CompletedTasks = (taskItem) => {
 
     return (
 
@@ -16,4 +16,4 @@ const Completed = (taskItem) => {
 }
 
 
-export default Completed
+export default CompletedTasks

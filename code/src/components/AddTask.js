@@ -38,7 +38,7 @@ padding: 10px;
 border: none;
 
 @media ${devices.tablet} {
-    width: 65%;
+    width: 60%;
 }
 `
 
@@ -53,6 +53,14 @@ width: 80%;
 border: 1px solid gray;
 border-radius: 12px;
 padding: 0.4rem;
+
+@media ${devices.tablet} {
+    width: 50%;
+}
+
+@media ${devices.tablet} {
+    width: 40%;
+}
 `
 
 
