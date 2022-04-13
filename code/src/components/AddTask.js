@@ -24,9 +24,9 @@ const AddTask = () => {
     }
 
     return(
-        <div>
-            <label>
-                <input 
+        <div className='input-wrapper'>
+            <label className='input-label'>
+                <input className='task-input'
                 id="task"
                 type="text"
                 value={input}
