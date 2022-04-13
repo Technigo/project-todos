@@ -17,9 +17,12 @@ initialState: {
         toggleItem: (store, action) => {
         store.items.forEach(item => {
             if (item.id === action.payload) {
-                item.isDone = !item.isDone
+                item.complete = !item.complete
             }
         })
+        },
+        deleteItem: (store, action) => {
+        store.items.splice(action.payload, 1)
         }
     },
 })

@@ -7,7 +7,7 @@ const IntroPage = () => {
     return (
 
         <>
-       <img src="./assets/todo-illustration.png" alt="Illustration made by pch.vector - www.freepik.com" />
+       <img src="./assets/todo-illustration.png" alt="Illustration made by pch.vector - www.freepik.com" width="450px" />
 
         <h1 className="header-start">
             Do it today – get it out of your head
@@ -25,7 +25,6 @@ export default IntroPage
 
 
 //styled components
-
 const Button = styled.button`
 background: transparent;
 border-radius: 10px;

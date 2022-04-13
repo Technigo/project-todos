@@ -13,9 +13,7 @@ const reducer = combineReducers({
   tasks: tasks.reducer,
 })
 
-const store = configureStore({
-reducer: reducer,
-})
+const store = configureStore({reducer: reducer,})
 
 export const App = () => {
   return (
