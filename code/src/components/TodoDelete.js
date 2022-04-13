@@ -1,16 +1,16 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from 'styled-components';
 
 import todos from "../reducers/todos.js";
 
-const TodoDelete = ({ todo }) => {
-
+const TodoDelete = ({ index }) => {
 
     const dispatch = useDispatch();
     
-    const deleteTodo = (todoId) => {
+    const deleteTodo = (index) => {
         console.log('delete');
+        dispatch(todos.actions.deleteTodo(index));
     }
 
     const DeleteTodoButton = styled.button `
@@ -29,7 +29,7 @@ const TodoDelete = ({ todo }) => {
     `
 
     return (
-        <DeleteTodoButton type="submit" onClick={() => deleteTodo(todo.id)}>
+        <DeleteTodoButton type="submit" onClick={() => deleteTodo(index)}>
             X
         </DeleteTodoButton>
         

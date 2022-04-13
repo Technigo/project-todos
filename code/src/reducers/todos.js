@@ -24,18 +24,18 @@ const todos = createSlice({
     },
     reducers: {
         markAsCompleted: (store, action) => {
-
-
-            console.log('store ' + store);
-            console.log('action ' + action);
-            console.log('payload ' + action.payload);
-
             store.items.forEach(item => {
                 if (item.id === action.payload) {
                     item.isCompleted = !item.isCompleted
                 }
             })
         },
+        addTodo: (store, action) => {
+            store.items.push(action.payload);
+        },
+        deleteTodo: (store, action) => {
+            store.items.splice(action.payload, 1);
+        }
     },
 });
 
