@@ -5,25 +5,21 @@ const data = [
             id: '1',
             task: 'Eat',
             isComplete: 'false',
-            display:'true'
         },
         {
             id: '2',
             task: 'Sleep',
-            isComplete: 'true',
-            display:'true'
+            isComplete: 'false',
         },
         {
             id: '3',
             task: 'Clean',
             isComplete: 'false',
-            display:'false'
         },
         {
             id: '4',
             task: 'Workout',
-            isComplete: 'true',
-            display:'false'
+            isComplete: 'false',
         },
     ];
 
@@ -33,14 +29,23 @@ const data = [
             items: data,
 },
 reducers: {
-    toggleItem: (store, action) => {
 
-        store.items.forEach((item) => {
-        if (item.id === action.payload) {
-            item.isComplete = !item.isComplete;
-        }
-     });
-    },
+toggleItem: (store, action) => {
+
+store.items.forEach((item) => {
+if(item.id === action.payload) {
+    item.isComplete = !item.isComplete;
+}
+});
+},
+
+deleteItem: (store, action) => {
+store.items.splice(action.payload, 1);
+
+},
+},
+addItem: (store, action) => {
+store.items.push(action.payload);   
 },
 });
 

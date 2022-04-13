@@ -5,21 +5,22 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import Header from 'components/header';
 import todos from 'reducers/todos';
 import ToDoList from 'components/todolist';
+import AddToDo from 'components/addToDo';
 
 const reducer=combineReducers({
   todos:todos.reducer,
 });
 
-
 const store= configureStore({
-  reducer: reducer
-})
+  reducer: reducer,
+});
 
 export const App = () => {
   return (
     <Provider store={store}> 
 <Header />
     <ToDoList />
+    <AddToDo />
       </Provider>
-  )
-}
+  );
+};
