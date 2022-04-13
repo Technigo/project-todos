@@ -4,6 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import todos from 'reducers/todos';
 
+import AddTodo from 'components/AddTodo';
 import TodoList from 'components/TodoList';
 
 const reducer = combineReducers({
@@ -17,6 +18,7 @@ const store = configureStore({
 export const App = () => {
   return (
     <Provider store={store}>
+      <AddTodo />
       <TodoList />
     </Provider>
   )

@@ -16,12 +16,17 @@ const TodoList = () => {
   const dispatch = useDispatch();
 
   const onTodoToggle = (todoId) => {
-    dispatch(todos.actions.toggleItem(todoId))
+    dispatch(todos.actions.toggleItem(todoId));
+  };
+
+  const onTodoDelete = (index) => {
+    dispatch(todos.actions.deleteItem(index));
   };
 
   return (
     <TodoSection>
-      {todoList.map(todoItem => (
+      <h2>Your todos: &nbsp; {todoList.length}</h2>
+      {todoList.map((todoItem, todoIndex) => (
         <TodoItem key={todoItem.id}>
           <h2>{todoItem.title}</h2>
             <DoneButton 
@@ -30,8 +35,10 @@ const TodoList = () => {
               checked={todoItem.isDone}
               onChange={() => onTodoToggle(todoItem.id)} />
             <label htmlFor={todoItem.id}>Do it!</label>
-          <DeleteButton>
-            <span role="img" aria-label="delete">
+          <DeleteButton onClick={() => onTodoDelete(todoIndex)}>
+            <span 
+              role="img" 
+              aria-label="delete">
               ❌
             </span>
           </DeleteButton> 
