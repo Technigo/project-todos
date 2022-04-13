@@ -88,7 +88,7 @@ const InputField = styled.input`
         0px 0px 0px 5px #ecf0f3,
         8px 8px 15px #a7aaaf,
         -8px -8px 15px #ffffff;
-    border: none;
+    border: 1px solid #555;
     color: #555;
     outline:none;
     background: none;

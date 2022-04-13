@@ -124,6 +124,7 @@ border-radius: 10px;
 border: none;
 box-shadow: -10px -10px 20px #fff, 10px 10px 20px rgb(174, 174, 192, 0.5);
 cursor: pointer;
+color: black;
 
 &:hover {
     box-shadow: 
@@ -134,7 +135,6 @@ cursor: pointer;
 
 box-shadow: inset 8px 8px 8px #cbced1,
           inset -8px -8px 8px #ffffff;
-transition: ease-in 0.4s;
 }
 `
 
