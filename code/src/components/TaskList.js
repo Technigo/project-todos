@@ -42,7 +42,7 @@ const TaskList = () => {
                 case "gym": return <Tag color='#A093D4'> gym </Tag>
                 case "other": return <Tag color='#FB9A08'> other </Tag>
                 case "": return null
-                default : return null
+                default: return null
               }
             })()}
             <button onClick={() => onTaskRemove(task.id)}>
