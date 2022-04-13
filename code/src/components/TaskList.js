@@ -48,30 +48,31 @@ const TaskText = styled.h2`
 `;
 
 const StyledCheckBox = styled.input`
-cursor: pointer;
+  cursor: pointer;
   appearance: none;
   background-color: #fff;
+  /* color: #ffbcbc; */
   width: 2em;
   height: 2em;
-  border: 0.15em solid #4398bf;
+  border: 1px solid #dcdcdc;
   border-radius: 5px;
   transform: translateY(-0.075em);
   display: grid;
   place-content: center;
 
   &::before {
-    content: '';
+    content: "";
     width: 1.3em;
     height: 1.3em;
-    border-radius: 5px;
+    border-radius: 2px;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em #4398bf;
+    box-shadow: inset 1em 1em #ffbcbc;
   }
   &:checked::before {
     transform: scale(1);
   }
-`
+`;
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
@@ -82,10 +83,14 @@ const TaskList = () => {
     dispatch(tasks.actions.toggleTask(taskId));
   };
 
+  const onTaskDelete = (index) =>{
+      dispatch(tasks.actions.deleteTask(index))
+  }
+
   return (
     <TaskWrapper>
       {" "}
-      {taskList.map((task) => (
+      {taskList.map((task, TaskIndex) => (
         <TaskCard key={task.id}>
           <StyledCheckBox
             type="checkbox"
@@ -94,7 +99,7 @@ const TaskList = () => {
           />
           <label htmlFor="completed task"></label>
           <TaskText>{task.text}</TaskText>
-          <DeleteButton>
+          <DeleteButton onClick={()=> onTaskDelete(TaskIndex)}>
             {" "}
             <span role="img" aria-label="delete">
               𝕏

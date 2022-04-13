@@ -23,6 +23,9 @@ const tasks = createSlice({
         }
       });
     },
+    deleteTask: (store, action) =>{
+      store.items.splice(action.payload, 1);
+    }
   },
 });
 
