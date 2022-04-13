@@ -30,7 +30,7 @@ export const AddTodo = () => {
     return(
         <>
         <AddTodoContainer className="AddTodo-container">
-            <input className="input-field" 
+            <InputField 
                 onKeyDown={(e) => onEnter(e)}
                 placeholder='Add Todo...'
                 type='text'
@@ -82,26 +82,25 @@ const AddTodoContainer = styled.section`
 
 `
 
-// const InputField = styled.input`
-//     box-shadow: 
-//         0px 0px 2px #5f5f5f,
-//         0px 0px 0px 5px #ecf0f3,
-//         8px 8px 15px #a7aaaf,
-//         -8px -8px 15px #ffffff;
-//     border: none;
-//     color: #555;
-//     outline:none;
-//     background: none;
-//     font-size: 18px;
-//     color: #555;
-//     margin-bottom: 30px;
-//     border-radius: 25px;
-//     box-shadow: inset 8px 8px 8px #cbced1,
-//                 inset -8px -8px 8px #ffffff;
+const InputField = styled.input`
+    box-shadow: 
+        0px 0px 2px #5f5f5f,
+        0px 0px 0px 5px #ecf0f3,
+        8px 8px 15px #a7aaaf,
+        -8px -8px 15px #ffffff;
+    border: none;
+    color: #555;
+    outline:none;
+    background: none;
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 30px;
+    border-radius: 25px;
+    
 
-//     padding: 15px;
+    padding: 15px;
 
-// `
+`
 const AddTodoBtn = styled.button`
     padding: 15px;
     border-radius: 10px;
