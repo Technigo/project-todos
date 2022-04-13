@@ -50,27 +50,40 @@ const TaskList = () => {
         dispatch(tasks.actions.deleteItem(index))
      }
 
-    return (
-        <section>
-            <Container>
-            {allTasks.map((taskItem, index) => (
-                <TaskArticle key={taskItem.id}>
-                    <TaskName>{taskItem.text}</TaskName>
-                    <label> Completed:
-                        <input type="checkbox" 
-                        checked={taskItem.complete} 
-                        onChange={() => onItemToggle(taskItem.id)}
-                        />
-                    </label>
-                    <DeleteButton 
-                        onClick={() =>onDeleteButton(index)}>                      
-                        <span role="img" aria-label="cross">❌
-                        </span></DeleteButton>
-                </TaskArticle>
-            ))}
-            </Container>
-        </section>
-    )
+     
+     
+    if (allTasks.length === 0) {
+        return (
+            <section>
+                <p> You dont have any tasks!</p>
+            </section>
+        )
+    } else {
+        return (
+            <section>
+                <Container>
+                {allTasks.map((taskItem, index) => (
+                    <TaskArticle key={taskItem.id}>
+                        <TaskName>{taskItem.text}</TaskName>
+                        <label> Completed:
+                            <input type="checkbox" 
+                            checked={taskItem.complete} 
+                            onChange={() => onItemToggle(taskItem.id)}
+                            />
+                        </label>
+                        <DeleteButton 
+                            onClick={() =>onDeleteButton(index)}>                      
+                            <span role="img" aria-label="cross">❌
+                            </span></DeleteButton>
+                    </TaskArticle>
+                ))}
+                </Container>
+            </section>
+        )
+    }
+
+
+
 }
 
 export default TaskList

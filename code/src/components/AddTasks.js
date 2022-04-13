@@ -1,7 +1,6 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { useState } from 'react'
-import { uniqid } from "uniqid"
+import uniqid from "uniqid"
 import styled from 'styled-components'
 
 import tasks from 'reducers/tasks'
@@ -21,7 +20,7 @@ const Container = styled.div`
     }
 `
 
-const Form = styled.div`
+const Form = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -89,9 +88,9 @@ const AddTasks = () => {
                 <Form onSubmit={onFormSubmit}>
                     <Label>Add new task here</Label>
                         <Textarea 
-                        type="textarea"
+                        type="text"
                         value={inputValue}
-                        onChange={(event) => setInputValue(event.target.value)}/>
+                        onChange={(e) => setInputValue(e.target.value)}/>
                     <AddButton
                         type="submit">
                         Add task
