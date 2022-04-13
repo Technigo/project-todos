@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import Completed from 'components/Completed'
 
 import taskList from 'reducers/tasks'
+import AddTask from './AddTask'
 
 
 const StartPage = () => {
@@ -27,11 +28,11 @@ const StartPage = () => {
             <img src="./assets/woman-long-list.jpg" alt="illustration created by storyset, www.freepik.com" width="150px"/>
             <h1>Todo list will be here</h1> 
 
-            
+            <AddTask />
         <Completed />
             
             
-            {tasksList.map(taskItem => (
+            {tasksList.map((taskItem, taskIndex) => (
 
                 <article>
                     <h2>{taskItem.name}</h2>
@@ -44,7 +45,7 @@ const StartPage = () => {
                     onChange={() => onTaskToggle(taskItem.id)} />
                     </label>
 
-                    <button onClick={() => onDeleteClick()} className="btn">
+                    <button onClick={() => onDeleteClick(taskIndex)} className="btn">
                         Delete
                     </button>
 
