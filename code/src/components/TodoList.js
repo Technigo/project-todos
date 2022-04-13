@@ -30,9 +30,13 @@ const TodoList = () => {
     dispatch(todos.actions.toggleItem(todoId));
   };
 
+  const onTodoDelete =(index) => {
+      dispatch(todos.actions.deleteItem(index))
+  }
+
   return (
     <section>
-      {todoList.map((todoItem) => (
+      {todoList.map((todoItem, todoIndex) => (
         <TodoItem key={todoItem.id}>
           <h2>{todoItem.Todo}</h2>
           <label>
@@ -43,7 +47,7 @@ const TodoList = () => {
               onChange={() => onTodoToggle(todoItem.id)}
             />
           </label>
-          <DeleteButton>
+          <DeleteButton onClick={() => onTodoDelete(todoIndex)}>
             <span role="img" aria-label="delete">
               ❌
             </span>
