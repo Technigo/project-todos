@@ -32,6 +32,11 @@ align-items: center;
 }
 `
 
+const HeaderImage = styled.img`
+width: 170px;
+margin-top: 15px;
+`
+
 const Nav = styled.nav`
 display: flex;
 flex-direction: column;
@@ -65,14 +70,25 @@ padding: 1rem;
 margin: 0.4rem;
 width: 83%;
 position: relative;
+word-break: break-word;
 `
 
 const TaskHeading = styled.h2`
-margin-block-start: -23px;
+margin-block-start: -18px;
 font-size: 20px;
-width: 87%;
-word-break: break-word;
+max-width: 70%;
+overflow-wrap: break-word;
+`
 
+const NewTaskHeading = styled.h2`
+margin-block-start: -2px;
+font-size: 20px;
+max-width: 85%;
+overflow-wrap: break-word;
+`
+
+const Checkbox = styled.input`
+margin-top: 10px;
 `
 
 const StartPage = () => {
@@ -93,7 +109,8 @@ const StartPage = () => {
         <section>
             <Container>
 
-        <img src="./assets/woman-long-list.jpg" alt="illustration created by storyset, www.freepik.com" width="150px"/>
+        <HeaderImage src="./assets/woman-long-list.jpg" alt="illustration created by storyset, www.freepik.com" width="150px" />
+
             <BigHeading>Get it out of your head</BigHeading> 
 
             <AddTask />
@@ -113,15 +130,16 @@ const StartPage = () => {
                         <Emoji>
                     <span role="img" aria-label="cross">❌</span></Emoji> 
                     </Button>
-                    <h2>{taskItem.name}</h2>
+                    <NewTaskHeading>{taskItem.name}</NewTaskHeading>
                     
                     <label>
                     <TaskHeading>{taskItem.text}</TaskHeading>
-                    <input 
+
+                    <Checkbox 
                     type="checkbox" 
                     checked={taskItem.isDone} 
                     onChange={() => onTaskToggle(taskItem.id)} />
-                    Check!    &nbsp;
+                   I'm done with this
                     </label>
                   
                 </Article>

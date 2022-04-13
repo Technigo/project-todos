@@ -39,13 +39,18 @@ border: 0.4px solid gray;
 padding: 6px;
 font-family: 'Roboto', sans-serif;
 `
+
+const IntroImage = styled.img`
+width: 350px;
+margin-top: 15px;
+`
   
 const IntroPage = () => {
 
     return (
 
       <Container>
-       <img src="./assets/todo-illustration.png" alt="Illustration made by pch.vector - www.freepik.com" width="300px" />
+       <IntroImage src="./assets/todo-illustration.png" alt="Illustration made by pch.vector - www.freepik.com" />
 
         <IntroHeading>
             Lets do it today
