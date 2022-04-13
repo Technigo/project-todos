@@ -16,7 +16,9 @@ word-break: break-word;
 /* flex-wrap: wrap; */
 `
 const TaskText = styled.h2`
+/* position: absolute; */
 max-width: 75%;
+color: ${(props) => (props.completed ? `#b0b0b0` : `#222221`)};
 `
 
 const ButtonDelete = styled.button`
@@ -46,12 +48,12 @@ const TaskList = () => {
         <section>
             {taskList.map((taskItem, taskIndex) => (
             <TaskItem key={taskItem.id}>
-                <input 
-                type='checkbox'
-                checked={taskItem.complete}
-                onChange={() => onTaskToggle(taskItem.id)}
-                />
-                <TaskText>&nbsp;{taskItem.text}</TaskText>
+                    <input 
+                    type='checkbox'
+                    checked={taskItem.complete}
+                    onChange={() => onTaskToggle(taskItem.id)}
+                    />
+                    <TaskText completed={taskItem.complete}>&nbsp;{taskItem.text}</TaskText>
                 <ButtonDelete onClick={() => onTaskDelete(taskIndex)}>
                     <span role='img' aria-label='delete'>
                         ✖️

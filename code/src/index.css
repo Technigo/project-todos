@@ -12,3 +12,51 @@ code {
     monospace;
 }
 
+/* [type="checkbox"] {
+  opacity:0;
+}
+input[type="checkbox"] + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+}
+
+input[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  color: #fff;
+  border: 2px solid #333;
+  border-radius: 50%;
+  background: #fff;
+}
+input[type="checkbox"]:checked + label::before {
+content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  outline: 2px solid green;
+  border-radius: 50%;
+  background: #fff;
+}
+
+input[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  font-size: 13px;
+  outline: 2px solid green;
+  border-radius: 50%;
+  background: lightcoral;
+  background-size: contain;
+}
+ */
