@@ -43,6 +43,10 @@ const Button = styled.button`
 border-radius: 8px;
 border: 0.4px solid gray;
 padding: 4px;
+display: flex;
+position: absolute;
+right: 13px;
+top: 15px;
 `
 const BigHeading = styled.h1`
 color: #1D3F6F;
@@ -60,6 +64,7 @@ border-radius: 15px;
 padding: 0.7rem;
 margin: 0.2rem;
 width: 83%;
+position: relative;
 `
 
 const StartPage = () => {
@@ -96,6 +101,10 @@ const StartPage = () => {
             {tasksList.map((taskItem, taskIndex) => (
 
                 <Article>
+                    <Button onClick={() => onDeleteClick(taskIndex)} >
+                        <Emoji>
+                    <span role="img" aria-label="cross">❌</span></Emoji> 
+                    </Button>
                     <h2>{taskItem.name}</h2>
                     
                     <label>
@@ -106,11 +115,6 @@ const StartPage = () => {
                     onChange={() => onTaskToggle(taskItem.id)} />
                     Check!    &nbsp;
                     </label>
-
-                    <Button onClick={() => onDeleteClick(taskIndex)} >
-                        <Emoji>
-                    <span role="img" aria-label="cross">❌</span></Emoji> 
-                    </Button>
                   
                 </Article>
 
