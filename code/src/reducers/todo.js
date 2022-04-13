@@ -56,6 +56,10 @@ const todo = createSlice({
 
 			store.items = decreasedItem
 		},
+
+		deleteAll: (store) => {
+			store.items = []
+		},
 	},
 })
 

@@ -1,13 +1,15 @@
-import { it } from 'eslint/lib/rule-tester/rule-tester'
 import React from 'react'
 
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
 const CounterTask = styled.p`
+	font-family: 'Imprima';
 	color: var(--clr-secondary);
+	font-weight: 300;
 	text-align: center;
-	margin: 0.5em 1.5em;
+	max-width: 32ch;
+	margin: 0.5em 1.5em 1.5em;
 `
 
 const TaskCounter = () => {
@@ -31,12 +33,7 @@ const TaskCounter = () => {
 		}
 	}
 
-	return (
-		<CounterTask>
-			{showTasksDone(items)}
-			{/* You have {items.length} tasks in your list {tasksDone.length} */}
-		</CounterTask>
-	)
+	return <CounterTask>{showTasksDone(items)}</CounterTask>
 }
 
 export default TaskCounter
