@@ -60,7 +60,7 @@ font-family: 'Roboto', sans-serif;
 `
 
 const HeaderBox = styled.div`
-width: 83%;
+width: 80%;
 border: 1px solid gray;
 border-radius: 12px;
 padding: 0.4rem;

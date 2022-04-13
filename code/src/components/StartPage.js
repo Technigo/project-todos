@@ -53,6 +53,15 @@ const Emoji = styled.span`
 font-size: 10px;
 `
 
+const Article = styled.article`
+border: 0.4px solid gray;
+background: #f8f8f8;
+border-radius: 15px;
+padding: 0.7rem;
+margin: 0.2rem;
+width: 83%;
+`
+
 const StartPage = () => {
 
     const tasksList = useSelector((todos) => todos.tasks.items)
@@ -86,7 +95,7 @@ const StartPage = () => {
     
             {tasksList.map((taskItem, taskIndex) => (
 
-                <article>
+                <Article>
                     <h2>{taskItem.name}</h2>
                     
                     <label>
@@ -103,7 +112,7 @@ const StartPage = () => {
                     <span role="img" aria-label="cross">❌</span></Emoji> 
                     </Button>
                   
-                </article>
+                </Article>
 
             ))}
             </Container>
