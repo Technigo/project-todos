@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from 'styled-components'
 
 import tasks from "reducers/tasks";
+import emptypage from "images/emptypage.jpg"
 
 const devices = {
     mobile: "(min-width: 375px)",
@@ -39,6 +40,7 @@ const DeleteButton = styled.button`
 
 const TaskList = () => {
     const allTasks = useSelector((store) => store.tasks.items)
+    const remainingTasks = allTasks.filter((task) => task.complete === false)
 
     const dispatch = useDispatch()
 
@@ -55,7 +57,7 @@ const TaskList = () => {
     if (allTasks.length === 0) {
         return (
             <section>
-                <p> You dont have any tasks!</p>
+                <img src={emptypage} alt="two people scheduling" width="375px"/>
             </section>
         )
     } else {
@@ -65,15 +67,17 @@ const TaskList = () => {
                 {allTasks.map((taskItem, index) => (
                     <TaskArticle key={taskItem.id}>
                         <TaskName>{taskItem.text}</TaskName>
-                        <label> Completed:
-                            <input type="checkbox" 
+                        <label> Completed
+                            <input 
+                            type="checkbox"
+                            name="tasks" 
                             checked={taskItem.complete} 
                             onChange={() => onItemToggle(taskItem.id)}
                             />
                         </label>
                         <DeleteButton 
                             onClick={() =>onDeleteButton(index)}>                      
-                            <span role="img" aria-label="cross">❌
+                            <span role="img" aria-label="cross">✕
                             </span></DeleteButton>
                     </TaskArticle>
                 ))}

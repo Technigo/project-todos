@@ -7,7 +7,7 @@ import Footer from 'components/Footer'
 const CompletedTasks = () => {
     const allTasks = useSelector((store) => store.tasks.items)
 
-     const dispatch = useDispatch()
+    //  const dispatch = useDispatch()
 
     // const onItemToggle = (taskId) => {
     //     dispatch(tasks.actions.toggleItem(taskId))

@@ -26,6 +26,7 @@ const tasks = createSlice({
         addItem: (store, action) => {
            store.items.push(action.payload)
         },
+
     }
 })
 

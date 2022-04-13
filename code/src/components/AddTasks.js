@@ -46,7 +46,7 @@ const AddButton = styled.button`
     box-shadow: 0 4px #723c70;
     padding: 6px;
     margin: 7px 0 25px 0;
-    background-color: #5c4d7d;
+    background-color: #892B64;
     color: white;
     font-size: 16px;
     cursor: pointer;
@@ -58,7 +58,11 @@ const AddButton = styled.button`
     }
 
     &:disabled {
-        color: #723c70;
+        color: gray;
+        box-shadow: none;
+        cursor: default;
+        transform: translateY(0);
+        transition: none;
     }
 `
 
@@ -92,7 +96,8 @@ const AddTasks = () => {
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)}/>
                     <AddButton
-                        type="submit">
+                        type="submit"
+                        disabled={inputValue.length < 5}>
                         Add task
                     </AddButton>
                 </Form>
