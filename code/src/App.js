@@ -7,6 +7,7 @@ import tasks from 'reducers/tasks'
 
 
 import Navbar from 'components/Navbar'
+import Header from 'components/Header'
 import DoneTasks from 'components/DoneTasks'
 import NotDoneTasks from 'components/NotDoneTasks'
 
@@ -23,6 +24,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <BrowserRouter>
+      <Header />
       <Navbar />
       <Routes>
         <Route path='/' element={<NotDoneTasks />}/>

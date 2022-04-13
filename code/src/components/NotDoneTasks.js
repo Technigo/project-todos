@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import moment from "moment";
 
 import tasks from "reducers/tasks";
 import AddTask from "./AddTask";
@@ -25,14 +24,12 @@ const NotDoneTasks = () => {
         dispatch(tasks.actions.allTasksDone())
     }
 
-    const date = new Date()
-
     const notDoneSummary = notDoneTasks.length
-    
+
      if (notDoneTasks < 1) {
          return (
             <>
-             <h1>Nothing to do</h1>
+            <img src=''></img>
             <AddTask />
             </>
          )
@@ -45,7 +42,6 @@ const NotDoneTasks = () => {
         {notDoneTasks.map((taskItem) => (
         <article key={taskItem.id}>
         <h2>{taskItem.text}</h2>
-        <p>{moment(date).format('ll')}</p>
        <label>
            Done (is caught):
         <input type="checkbox" checked={taskItem.isCaught} onChange={() => onTaskToggle(taskItem.id)} />
