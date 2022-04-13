@@ -11,6 +11,7 @@ const tasks = createSlice({
     name: 'tasks',
     initialState: {
         items: data,
+        // items: [],
     },
     reducers: {
         toggleItem: (store, action) => {
@@ -28,6 +29,9 @@ const tasks = createSlice({
         },
         addItem: (store, action) => {
             store.items.push(action.payload)
+        },
+        removeAll: (store) => {
+            store.items = []
         }
     }
 })
