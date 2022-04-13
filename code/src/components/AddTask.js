@@ -38,7 +38,7 @@ width: 65%;
 padding: 10px;
 border: none;
 font-family: 'Roboto', sans-serif;
-font-size: 16px;
+font-size: 15px;
 background: #f8f8f8;
 font-weight: 400;
 line-height: 1.4;
@@ -57,6 +57,7 @@ border-radius: 8px;
 border: 0.4px solid gray;
 padding: 6px;
 font-family: 'Roboto', sans-serif;
+font-size: 15px;
 `
 
 const HeaderBox = styled.div`
