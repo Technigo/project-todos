@@ -14,7 +14,7 @@ const onFormSubmit = (event) => {
 
 const newToDo = {
     id: uniqid(),
-    text: inputValue,
+    task: inputValue,
     isComplete: false,
 };
 

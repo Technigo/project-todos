@@ -12,10 +12,5 @@ code {
 
 
 .header{
-  background-color: #670f2d;
-  padding: 20px;
-  text-align: center;
-  font-size: 24pt;
-  color: #d06e90;
-  text-shadow: -2px -2px #6e325e;
+  background-image: url("https://images.unsplash.com/photo-1618255339659-0084b31196b9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fHBvc3QlMjBpdHxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=500&q=60");
 }

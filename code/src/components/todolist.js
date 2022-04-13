@@ -35,10 +35,8 @@ return (
         ❌
         </span>
 </button>
-
 </div>
 ))}
-
 </section>
 );
 };
