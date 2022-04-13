@@ -18,6 +18,14 @@ margin: 0 auto;
 display: flex;
 flex-direction: column;
 align-items: center;
+
+@media ${devices.tablet} {
+    width: 768px;
+}
+
+@media ${devices.desktop} {
+    width: 1025px;
+}
 `
 
 const IntroHeading = styled.h1 `

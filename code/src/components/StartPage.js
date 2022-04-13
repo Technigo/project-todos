@@ -99,7 +99,8 @@ const StartPage = () => {
                     </label>
 
                     <Button onClick={() => onDeleteClick(taskIndex)} >
-                    <Emoji role="img" aria-label="cross">❌</Emoji> 
+                        <Emoji>
+                    <span role="img" aria-label="cross">❌</span></Emoji> 
                     </Button>
                   
                 </article>
