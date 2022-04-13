@@ -27,14 +27,14 @@ const TaskList = () => {
     //console.log(taskList)
 
     const dispatch = useDispatch();
-    const onTaskToggle = (text) => {
-        dispatch(tasks.actions.toggleTask(text));
+    const onTaskToggle = (id) => {
+        dispatch(tasks.actions.toggleTask(id));
     //     console.log(onTaskToggle)
     };
 
-    const onDelete = (text) => {
-        dispatch(tasks.actions.deleteTask(text));
-        console.log(onDelete)
+    const onDelete = (taskIndex) => {
+        dispatch(tasks.actions.deleteTask(taskIndex));
+        // console.log(onDelete)
     };
 
     const onRemoveAll = () => {
@@ -44,16 +44,16 @@ const TaskList = () => {
     return (
         <section> 
             {taskList.map((task) => (
-                <TaskStyling key={task.text}>
+                <TaskStyling key={task.id}>
                     <h2>{task.text}</h2>
                     <label>
                         completed:
                         <input 
                             type='checkbox' 
                             checked={task.isComplete}
-                            onChange={()=>onTaskToggle(task.text)} />
+                            onChange={()=>onTaskToggle(task.id)} />
                     </label>
-                    <DeleteButton onClick={()=> onDelete(task.text)}>
+                    <DeleteButton onClick={()=> onDelete(task.id)}>
                         <span role='img' aria-label='delete'>❌</span>    
                     </DeleteButton>                
                 </TaskStyling>

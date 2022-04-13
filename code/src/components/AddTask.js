@@ -1,28 +1,39 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import uniqid from "uniqid";
 
 import tasks from '../reducers/tasks';
 
 const AddTask = () => { 
-    const [task, setTask] = useState('')
+    const [input, setInput] = useState('');
     const dispatch = useDispatch();
 
-    const onAddTask = () => {
-        dispatch(tasks.actions.addTask(task)); 
-        setTask('');
+    const onFormSubmit = (event) => {
+        event.preventDefault();
+
+        const newTask = {
+            id: uniqid(),
+            text: input,
+            isComplete: false,
+        };
+
+        dispatch(tasks.actions.addTask(newTask)); 
+        setInput('');
     }
-       
+        
     return (
-        <div>
+        <form onSubmit={onFormSubmit}>
+            <label>
+                New task : &nbsp;
             <input 
                 type='text'
-                value={task}
+                value={input}
                 placeholder='enter task'
-                onChange={(event) => setTask(event.target.value)}
+                onChange={(event) => setInput(event.target.value)}
             />
-            <button onClick={()=> onAddTask()}>add</button>
-            
-        </div>
+            </label>
+            <button type='submit'>Submit</button>
+        </form>
     );
 };
 

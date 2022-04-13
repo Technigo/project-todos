@@ -1,39 +1,34 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-// import moment from "moment";
-
-//StyleContainer is a parent element that forces the child elements to appear on one line.  
-const OutterContainer = styled.div`
+const OutterDateContainer = styled.div`
     display: flex;
     justify-content: space-between; 
     align-items: center;
-
 `
-
+//StyleContainer is a parent element that forces the child elements to appear on one line. 
 const StyleContainer = styled.div`
     white-space: nowrap; 
 `	
 
 const DateStamp = styled.div`
-    font-size: 3rem;
-    font-weight: 500;
+    // font-size: 1rem;
+    // font-weight: 500;
     color: red;
     display: inline-block;
-
 ` 
-const TimeStamp = styled.div`
+const YearMonthStamp = styled.div`
     display: inline-block;
-    font-size: 1.02rem;
-    font-weight: 500;
-    margin-left: 0.3rem; 
-    
-
+    // font-size: 1.02rem;
+    // font-weight: 500;
+    // margin-left: 0.3rem; 
 ` 
-
 const Header = () => {
 
-    // const date = moment().format('LLLL');
+    const allTasks = useSelector(store => store.tasks.items);
+    const completedTasks = allTasks.filter(singleTask => singleTask.isComplete);
+    const unCompletedTasks = allTasks.filter(singleTask => !singleTask.isComplete);
 
     let year = new Date().toLocaleDateString("en-US", {year: 'numeric'})
     let month = new Date().toLocaleDateString("en-US",{month: "short"})
@@ -46,19 +41,24 @@ const Header = () => {
             <h1>
                 Task-it
             </h1>
-            <OutterContainer>
+            <OutterDateContainer>
                 <StyleContainer>
                     <DateStamp>
                         <p>{date}</p>
                     </DateStamp>
-                    <TimeStamp>
+                    <YearMonthStamp>
                         <p>{month}</p>
                         <p>{year}</p>
-                    </TimeStamp>
+                    </YearMonthStamp>
                 </StyleContainer>
                 <p>{weekday}</p>
-            </OutterContainer>
-
+            </OutterDateContainer>
+                <div>
+                    <p>You have {allTasks.length} task(s) in total.</p>
+                    <p>Completed task(s) : {completedTasks.length}.</p>
+                    <p>Uncompleted tasks(s) : {unCompletedTasks.length}.</p>
+                </div>
+            
         </>
     )
 }
