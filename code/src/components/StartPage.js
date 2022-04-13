@@ -69,6 +69,9 @@ position: relative;
 
 const TaskHeading = styled.h2`
 margin-block-start: -23px;
+font-size: 20px;
+width: 87%;
+word-break: break-word;
 
 `
 
