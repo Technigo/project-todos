@@ -1,44 +1,15 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import styled from "styled-components/macro";
 import { Link } from "react-router-dom";
 
-// Import Icons'
-import {
-  chatwhite,
-  clipboardwhite,
-  gamewhite,
-  giftwhite,
-  outdoorswhite,
-  pinwhite,
-  shoppingwhite,
-  timewhite,
-  travelwhite,
-  tvwhite,
-  viewwhite,
-  weatherwhite,
-} from "../assets/icons";
-
-const iconArray = [
-  [chatwhite, "chat"],
-  [clipboardwhite, "clipboard"],
-  [gamewhite, "game"],
-  [giftwhite, "gift"],
-  [outdoorswhite, "outdoors"],
-  [pinwhite, "pin"],
-  [shoppingwhite, "shopping"],
-  [timewhite, "time"],
-  [travelwhite, "travel"],
-  [tvwhite, "tv"],
-  [viewwhite, "view"],
-  [weatherwhite, "weather"],
-];
-
 const CarouselChildren = ({ project }) => {
+  const iconArray = useSelector((store) => store.icons.icons);
   return (
     <Link to={`/projects/${project.id}`}>
       <CarouselChild color={project.color}>
         <Icon
-          src={iconArray[Number(project.icon)][0]}
+          src={iconArray[Number(project.icon)][3]}
           alt={iconArray[Number(project.icon)][1]}
         />
         <div>{project.title}</div>

@@ -4,58 +4,23 @@ import { useState } from "react";
 import { projects } from "reducers/projects";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components/macro";
+import uniqid from "uniqid";
 
 // Import Styling
 import { GridContainer, TextInput } from "styledelements/elements";
 
-// Import Icons
-import {
-  chatgray,
-  clipboardgray,
-  gamegray,
-  giftgray,
-  outdoorsgray,
-  pingray,
-  shoppinggray,
-  timegray,
-  travelgray,
-  tvgray,
-  viewgray,
-  weathergray,
-} from "../assets/icons";
-
-const iconArray = [
-  [0, chatgray, "chat"],
-  [1, clipboardgray, "clipboard"],
-  [2, gamegray, "game"],
-  [3, giftgray, "gift"],
-  [4, outdoorsgray, "outdoors"],
-  [5, pingray, "pin"],
-  [6, shoppinggray, "shopping"],
-  [7, timegray, "time"],
-  [8, travelgray, "travel"],
-  [9, tvgray, "tv"],
-  [10, viewgray, "view"],
-  [11, weathergray, "weather"],
-];
-
 const NewProject = () => {
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
   const [projectName, chooseProjectName] = useState("");
   const [icon, chooseIcon] = useState();
   const [color, chooseColor] = useState("");
   const [error, setError] = useState(false);
-  // const [iconActive, setIconActive] = useState("");
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const colorArray = useSelector((store) => store.colors.colors);
+  const iconArray = useSelector((store) => store.icons.icons);
 
   // Create Unique Project ID
-  let projectId = "";
-  const randomId = () => {
-    projectId =
-      Date.now().toString(36) + Math.random().toString(36).substring(2);
-  };
-  randomId();
+  let projectId = uniqid("project-");
 
   // Select Icon Button
   const selectIcon = (event) => {
@@ -106,7 +71,7 @@ const NewProject = () => {
               onKeyDown={(e) => e.key === "Enter" && selectIcon(e)}
               selected={`${Number(icon) === Number(item[0]) ? "selected" : ""}`}
             >
-              <Icon src={item[1]} alt={item[2]} />
+              <Icon src={item[2]} alt={item[2]} />
             </IconButton>
           </React.Fragment>
         ))}

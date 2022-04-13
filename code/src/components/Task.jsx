@@ -22,6 +22,7 @@ const Task = ({ taskid, checkAllComplete }) => {
       })
     );
     checkAllComplete();
+    console.log(taskid);
   };
 
   const deleteTask = () => {

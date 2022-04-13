@@ -1,18 +1,46 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+// Import Icons
+import {
+  chatgray,
+  clipboardgray,
+  gamegray,
+  giftgray,
+  outdoorsgray,
+  pingray,
+  shoppinggray,
+  timegray,
+  travelgray,
+  tvgray,
+  viewgray,
+  weathergray,
+  chatwhite,
+  clipboardwhite,
+  gamewhite,
+  giftwhite,
+  outdoorswhite,
+  pinwhite,
+  shoppingwhite,
+  timewhite,
+  travelwhite,
+  tvwhite,
+  viewwhite,
+  weatherwhite,
+} from "../assets/icons";
+
 const iconArray = [
-  [0, "chat"],
-  [1, "clipboard"],
-  [2, "game"],
-  [3, "gift"],
-  [4, "outdoors"],
-  [5, "pin"],
-  [6, "shopping"],
-  [7, "time"],
-  [8, "travel"],
-  [9, "tv"],
-  [10, "view"],
-  [11, "weather"],
+  [0, "chat", chatgray, chatwhite],
+  [1, "clipboard", clipboardgray, clipboardwhite],
+  [2, "game", gamegray, gamewhite],
+  [3, "gift", giftgray, giftwhite],
+  [4, "outdoors", outdoorsgray, outdoorswhite],
+  [5, "pin", pingray, pinwhite],
+  [6, "shopping", shoppinggray, shoppingwhite],
+  [7, "time", timegray, timewhite],
+  [8, "travel", travelgray, travelwhite],
+  [9, "tv", tvgray, tvwhite],
+  [10, "view", viewgray, viewwhite],
+  [11, "weather", weathergray, weatherwhite],
 ];
 
 export const icons = createSlice({

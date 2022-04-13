@@ -9,6 +9,7 @@ import homeicon from "../assets/homeicon.svg";
 
 const Header = () => {
   const projects = useSelector((store) => store.projects.project);
+  console.log(useSelector((store) => store));
   return (
     <SiteHeader>
       <HeaderWrapper>

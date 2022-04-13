@@ -6,6 +6,7 @@ import { tasks } from "reducers/tasks";
 import { projects } from "reducers/projects";
 import { useNavigate } from "react-router-dom";
 import { keyframes } from "styled-components";
+import uniqid from "uniqid";
 
 // Import Components
 import Error from "./Error";
@@ -16,36 +17,7 @@ import Task from "./Task";
 import { TextInput } from "styledelements/elements";
 
 // Import Icons
-import {
-  chatwhite,
-  clipboardwhite,
-  gamewhite,
-  giftwhite,
-  outdoorswhite,
-  pinwhite,
-  shoppingwhite,
-  timewhite,
-  travelwhite,
-  tvwhite,
-  viewwhite,
-  weatherwhite,
-  addwhite,
-} from "../assets/icons";
-
-const iconArray = [
-  [0, chatwhite, "chat"],
-  [1, clipboardwhite, "clipboard"],
-  [2, gamewhite, "game"],
-  [3, giftwhite, "gift"],
-  [4, outdoorswhite, "outdoors"],
-  [5, pinwhite, "pin"],
-  [6, shoppingwhite, "shopping"],
-  [7, timewhite, "time"],
-  [8, travelwhite, "travel"],
-  [9, tvwhite, "tv"],
-  [10, viewwhite, "view"],
-  [11, weatherwhite, "weather"],
-];
+import { addwhite } from "../assets/icons";
 
 const Project = () => {
   const dispatch = useDispatch();
@@ -57,7 +29,11 @@ const Project = () => {
   const taskArray = useSelector((store) => store.tasks.task).filter(
     (task) => task.projectid === id
   );
+  const iconArray = useSelector((store) => store.icons.icons);
   const project = projectArray.find((x) => x.id === id);
+
+  // Create unique ID
+  let taskId = uniqid("task-");
 
   // BUGGY! Function to Check if all tasks are completed
   const checkAllComplete = () => {
@@ -74,15 +50,14 @@ const Project = () => {
   const addTask = () => {
     dispatch(
       tasks.actions.addTask({
-        taskid:
-          Date.now().toString(36) + Math.random().toString(36).substring(2),
+        taskid: taskId,
         title: taskName,
         complete: false,
         added: Date.now(),
         projectid: project.id,
       })
     );
-    document.querySelector(".newTaskInput").value = "";
+    setTaskName("");
   };
 
   const toggleAllTasksComplete = () => {
@@ -125,7 +100,7 @@ const Project = () => {
         <ProjectHeader backgroundcolor={project.color}>
           <IconTitleContainer>
             <Icon
-              src={iconArray[Number(project.icon)][1]}
+              src={iconArray[Number(project.icon)][3]}
               alt={iconArray[2]}
               height="40px"
               width="40px"
@@ -152,6 +127,7 @@ const Project = () => {
             </NewTaskIconWrapper>
             <TextInput
               type="text"
+              value={taskName}
               onChange={(event) => setTaskName(event.target.value)}
               width="100%"
               className="newTaskInput"
