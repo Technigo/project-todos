@@ -114,7 +114,7 @@ const TodoList = () => {
 
 	return (
 		<>
-			{items.length < 1 && EmptyState}
+			{items.length < 1 && <EmptyState />}
 			{items.length > 0 && (
 				<main>
 					<AddTodo />
