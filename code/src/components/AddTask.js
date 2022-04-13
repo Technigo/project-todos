@@ -33,13 +33,26 @@ align-items: center;
 `
 
 const Textarea = styled.input`
-width: 95%;
+width: 75%;
 padding: 10px;
+border: none;
 
 @media ${devices.tablet} {
     width: 65%;
 }
+`
 
+const Button = styled.button`
+border-radius: 8px;
+border: 0.4px solid gray;
+padding: 6px;
+`
+
+const Label = styled.label`
+width: 80%;
+border: 1px solid gray;
+border-radius: 12px;
+padding: 0.4rem;
 `
 
 
@@ -67,25 +80,24 @@ const AddTask = () => {
 
 
 
-
     return (
         <Container>
         <Form onSubmit={onFormSubmit}>
 
-           <label>
-               New task: &nbsp;
+           <Label>
+             <span role="img" aria-label="pen"> 🖋️</span>    &nbsp;
            <Textarea
             type="text"
-            placeholder= "I will remember to do this..."
+            placeholder= "Insert new task here.."
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)} />
 
-           </label>
+           </Label>
            &nbsp;
-        <button 
+        <Button 
         type="submit">
             Submit
-        </button>
+        </Button>
         </Form>
         </Container>
 
