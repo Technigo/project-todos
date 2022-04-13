@@ -3,6 +3,7 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import { devices } from "styles";
+import { TaskCard } from "./TaskList";
 
 const NrOfTask = styled.p`
   font-size: 16px;
@@ -27,7 +28,8 @@ const TaskCounter = () => {
       </div>
     );
   } else if (remainingToDo.length === 0) {
-    return <p>No tasks toDo</p>;
+    return <TaskCard>
+    <p>Let's sdd something to your To Do list</p></TaskCard>;
   }
 };
 export default TaskCounter;

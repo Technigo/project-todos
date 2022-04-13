@@ -7,6 +7,7 @@ import tasks from "reducers/tasks";
 import Header from "components/Header";
 import TaskList from "components/TaskList";
 import TaskCounter from "components/TaskCounter";
+import AddNewTask from "components/AddNewTask";
 import { GlobalStyle } from "styles";
 
 const reducer = combineReducers({
@@ -25,6 +26,7 @@ export const App = () => {
       <Header/>
       <TaskList/>
       <TaskCounter/>
+      <AddNewTask/>
     </Provider>
     </>
   );

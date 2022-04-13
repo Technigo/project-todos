@@ -23,9 +23,12 @@ const tasks = createSlice({
         }
       });
     },
-    deleteTask: (store, action) =>{
+    deleteTask: (store, action) => {
       store.items.splice(action.payload, 1);
-    }
+    },
+    addItem: (store, action) => {
+      store.items.push(action.payload);
+    },
   },
 });
 

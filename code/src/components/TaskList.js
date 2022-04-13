@@ -14,13 +14,13 @@ const TaskWrapper = styled.section`
   }
 `;
 
-const TaskCard = styled.article`
+export const TaskCard = styled.article`
   position: relative;
   display: flex;
   align-items: center;
   border: 1px solid #dcdcdc;
   border-radius: 5px;
-  padding: 10px;
+  padding: 15px 10px 10px 15px;
   margin: 5px;
   background-color: rgba(255, 255, 255, 0.5);
 
@@ -34,7 +34,16 @@ const DeleteButton = styled.button`
   right: 10px;
   background: none;
   border: none;
+  margin-bottom: 10px;
   cursor: pointer;
+
+  &:hover {background-color: rgba(255, 255, 255, 0.7)}
+  &:active {
+    background-color: rgba(255, 255, 255, 0.7)
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
 `;
 
 const TaskText = styled.h2`
@@ -83,9 +92,9 @@ const TaskList = () => {
     dispatch(tasks.actions.toggleTask(taskId));
   };
 
-  const onTaskDelete = (index) =>{
-      dispatch(tasks.actions.deleteTask(index))
-  }
+  const onTaskDelete = (index) => {
+    dispatch(tasks.actions.deleteTask(index));
+  };
 
   return (
     <TaskWrapper>
@@ -99,7 +108,7 @@ const TaskList = () => {
           />
           <label htmlFor="completed task"></label>
           <TaskText>{task.text}</TaskText>
-          <DeleteButton onClick={()=> onTaskDelete(TaskIndex)}>
+          <DeleteButton onClick={() => onTaskDelete(TaskIndex)}>
             {" "}
             <span role="img" aria-label="delete">
               𝕏
