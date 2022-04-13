@@ -44,7 +44,6 @@ const TaskList = () => {
                 case "work": return <Tag color='#3DB429'> work </Tag>
                 case "study": return <Tag color='#F36969'> study </Tag>
                 case "shopping": return <Tag color='#5B87C9'> shopping</Tag>
-                case "gym": return <Tag color='#A093D4'> gym </Tag>
                 case "other": return <Tag color='#FB9A08'> other </Tag>
                 case "": return null
                 default: return null
