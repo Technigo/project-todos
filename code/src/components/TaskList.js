@@ -3,21 +3,16 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import tasks from "reducers/tasks";
-
-const devices = {
-    mobile: "(min-width: 375px)",
-    tablet: "(min-width: 768px)",
-    desktop: "(min-width: 1025px)",
-}
+import { devices } from "styles";
 
 const TaskWrapper = styled.section`
-@media ${devices.tablet}{
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-justify-content: center;
-}
-`
+  @media ${devices.tablet} {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+`;
 
 const TaskCard = styled.article`
   position: relative;
@@ -27,11 +22,11 @@ const TaskCard = styled.article`
   border-radius: 5px;
   padding: 10px;
   margin: 5px;
-  background-color: rgba(255, 255, 255, 0.50);
+  background-color: rgba(255, 255, 255, 0.5);
 
-@media ${devices.tablet}{
+  @media ${devices.tablet} {
     width: 70vw;
-}
+  }
 `;
 const DeleteButton = styled.button`
   position: absolute;
@@ -43,28 +38,61 @@ const DeleteButton = styled.button`
 `;
 
 const TaskText = styled.h2`
-font-weight: 400;
-font-size: large;
-margin: 10px 5px;
+  font-weight: 400;
+  font-size: medium;
+  margin: 10px 5px;
+
+  @media ${devices.tablet} {
+    font-size: large;
+  }
+`;
+
+const StyledCheckBox = styled.input`
+cursor: pointer;
+  appearance: none;
+  background-color: #fff;
+  width: 2em;
+  height: 2em;
+  border: 0.15em solid #4398bf;
+  border-radius: 5px;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+
+  &::before {
+    content: '';
+    width: 1.3em;
+    height: 1.3em;
+    border-radius: 5px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #4398bf;
+  }
+  &:checked::before {
+    transform: scale(1);
+  }
 `
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
 
   const dispatch = useDispatch();
-  
-  const onTaskToggle = (taskId) =>{
-    dispatch(tasks.actions.toggleTask(taskId))
-  }
+
+  const onTaskToggle = (taskId) => {
+    dispatch(tasks.actions.toggleTask(taskId));
+  };
 
   return (
     <TaskWrapper>
       {" "}
       {taskList.map((task) => (
         <TaskCard key={task.id}>
-          <label>
-            <input type="checkbox" checked={task.isComplete} onChange={()=> onTaskToggle(task.id)} />
-          </label>
+          <StyledCheckBox
+            type="checkbox"
+            checked={task.isComplete}
+            onChange={() => onTaskToggle(task.id)}
+          />
+          <label htmlFor="completed task"></label>
           <TaskText>{task.text}</TaskText>
           <DeleteButton>
             {" "}

@@ -1,5 +1,11 @@
 import { createGlobalStyle } from "styled-components";
 
+export const devices = {
+    mobile: "(min-width: 375px)",
+    tablet: "(min-width: 768px)",
+    desktop: "(min-width: 1025px)",
+}
+
 export const GlobalStyle = createGlobalStyle`
 body {
     margin: 0;
@@ -9,5 +15,9 @@ body {
   background-image: url(../images/background.jpg);
   object-fit: cover;
   background-position: 100% 44%;
+
+  @media ${devices.tablet}{
+    background-position: 100% 40%;
+  }
 }
 `;
