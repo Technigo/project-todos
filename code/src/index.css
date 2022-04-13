@@ -52,12 +52,15 @@ code {
 /* Mobile */
 @media (max-width:767px) {
   body {
-    background-repeat: no-repeat;
+    /* background-repeat: no-repeat;
     position: fixed;
     z-index: -1;
     background-size: cover;
     background-position: center top;
-    background-attachment: fixed;
+    background-attachment: fixed; */
+    /* Created with https://www.css-gradient.com */
+
+  background: linear-gradient(to top left, #F1A0A7, #9F5762);
   }
 
 
