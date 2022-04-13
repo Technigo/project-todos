@@ -50,7 +50,7 @@ const Wrapper = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: -10px;
+  // margin: -10px;
   border: 1px solid red;
 `
 
