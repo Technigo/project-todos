@@ -44,6 +44,7 @@ const NewProject = () => {
           title: projectName,
           icon: icon,
           color: color,
+          tasks: [],
         })
       );
       navigate(`/projects/${projectId}`);

@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import styled from "styled-components/macro";
-import { tasks } from "reducers/tasks";
 import { projects } from "reducers/projects";
 import { useNavigate } from "react-router-dom";
 import { keyframes } from "styled-components";
@@ -23,40 +22,27 @@ const Project = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [taskName, setTaskName] = useState("");
-  const [allComplete, setAllComplete] = useState(false);
   const id = useParams().id;
   const projectArray = useSelector((store) => store.projects.project);
-  const taskArray = useSelector((store) => store.tasks.task).filter(
-    (task) => task.projectid === id
-  );
   const iconArray = useSelector((store) => store.icons.icons);
   const project = projectArray.find((x) => x.id === id);
   const projectIndex = projectArray.findIndex((project) => project.id === id);
-  console.log(projectIndex);
+  const taskList = useSelector(
+    (store) => store.projects.project[projectIndex].tasks
+  );
 
   // Create unique ID
   let taskId = uniqid("task-");
 
-  // BUGGY! Function to Check if all tasks are completed
-  const checkAllComplete = () => {
-    for (let i = 0; i < taskArray.length; i++) {
-      if (taskArray[i].complete === false) {
-        return false;
-      } else {
-        setAllComplete(true);
-        console.log(allComplete);
-      }
-    }
-  };
-
   const addTask = () => {
     dispatch(
-      tasks.actions.addTask({
+      projects.actions.addTask({
         taskid: taskId,
         title: taskName,
         complete: false,
         added: Date.now(),
         projectid: project.id,
+        projectindex: projectIndex,
       })
     );
     setTaskName("");
@@ -64,29 +50,13 @@ const Project = () => {
 
   const toggleAllTasksComplete = () => {
     dispatch(
-      tasks.actions.toggleAllTasksComplete({
-        projectid: project.id,
+      projects.actions.toggleAllTasksComplete({
+        projectindex: projectIndex,
       })
     );
-    // checkAllComplete();
   };
 
-  // BUGGY - Commented out - issue with checkAllComplete() function
-  // const toggleAllTasksIncomplete = () => {
-  //   dispatch(
-  //     tasks.actions.toggleAllTasksIncomplete({
-  //       projectid: project.id,
-  //     })
-  //   );
-  //   checkAllComplete();
-  // };
-
   const deleteProject = () => {
-    dispatch(
-      tasks.actions.deleteProjectTasks({
-        projectid: project.id,
-      })
-    );
     dispatch(
       projects.actions.deleteProject({
         projectindex: projectIndex,
@@ -111,14 +81,8 @@ const Project = () => {
           </IconTitleContainer>
           <div>
             <h2>
-              {
-                taskArray.filter(
-                  (task) =>
-                    project.id === task.projectid && task.complete === true
-                ).length
-              }{" "}
-              /{" "}
-              {taskArray.filter((task) => project.id === task.projectid).length}
+              {taskList.filter((task) => task.complete === true).length} /{" "}
+              {taskList.length}
             </h2>
           </div>
         </ProjectHeader>
@@ -136,18 +100,18 @@ const Project = () => {
               onKeyDown={(e) => e.key === "Enter" && addTask()}
             />
           </NewTask>
-          {taskArray.length === 0 && <NoTasks />}
-          {taskArray.length > 0 &&
-            taskArray.map((task) => (
+          {taskList.length === 0 && <NoTasks />}
+          {taskList.length > 0 &&
+            taskList.map((task) => (
               <Task
                 key={task.taskid}
                 taskid={task.taskid}
-                checkAllComplete={checkAllComplete}
+                projectindex={projectIndex}
               />
             ))}
         </TaskContainer>
         <ProjectFooter backgroundcolor={project.color}>
-          {taskArray.length > 0 && (
+          {taskList.length > 0 && (
             <FooterButton
               role="button"
               tabIndex="0"

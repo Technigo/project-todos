@@ -3,7 +3,6 @@ import { Provider } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { compose, createStore, combineReducers } from "@reduxjs/toolkit";
 import persistState from "redux-localstorage";
-import { tasks } from "reducers/tasks";
 import { projects } from "reducers/projects";
 import Home from "components/Home";
 import Error from "components/Error";
@@ -18,7 +17,6 @@ import { icons } from "reducers/icons";
 const enhancer = compose(persistState());
 
 const reducer = combineReducers({
-  tasks: tasks.reducer,
   projects: projects.reducer,
   colors: colors.reducer,
   icons: icons.reducer,

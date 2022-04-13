@@ -3,38 +3,40 @@ import { formatRelative } from "date-fns";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components/macro";
 import { keyframes } from "styled-components";
-import { tasks } from "reducers/tasks";
+import { projects } from "reducers/projects";
 import trashgray from "../assets/trashgray.svg";
 import checkblack from "../assets/checkblack.svg";
 
-const Task = ({ taskid, checkAllComplete }) => {
+const Task = ({ taskid, projectindex }) => {
   const dispatch = useDispatch();
-  const thisTask = useSelector((store) => store.tasks.task).find(
-    (task) => taskid === task.taskid
+  const thisTask = useSelector((store) =>
+    store.projects.project[projectindex].tasks.find(
+      (task) => taskid === task.taskid
+    )
   );
-  const taskIndex = useSelector((store) => store.tasks.task).findIndex(
-    (task) => taskid === task.taskid
+  const taskIndex = useSelector((store) =>
+    store.projects.project[projectindex].tasks.findIndex(
+      (task) => taskid === task.taskid
+    )
   );
   const created = formatRelative(new Date(thisTask.added), new Date());
 
   const toggleComplete = () => {
     dispatch(
-      tasks.actions.toggleTask({
-        taskid: thisTask.taskid,
-        projectid: thisTask.projectid,
+      projects.actions.toggleTask({
         taskindex: taskIndex,
+        projectindex: projectindex,
       })
     );
-    checkAllComplete();
   };
 
   const deleteTask = () => {
     dispatch(
-      tasks.actions.deleteTask({
+      projects.actions.deleteTask({
         taskindex: taskIndex,
+        projectindex: projectindex,
       })
     );
-    checkAllComplete();
   };
 
   return (

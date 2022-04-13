@@ -5,7 +5,6 @@ import styled from "styled-components/macro";
 
 const ProjectList = () => {
   const projects = useSelector((store) => store.projects.project);
-  const tasks = useSelector((store) => store.tasks.task);
   const icons = useSelector((store) => store.icons.icons);
 
   return (
@@ -22,14 +21,8 @@ const ProjectList = () => {
             </IconTitle>
             <div>
               <TaskStatus>
-                {
-                  tasks.filter(
-                    (task) =>
-                      project.id === task.projectid && task.complete === true
-                  ).length
-                }{" "}
-                / {tasks.filter((task) => project.id === task.projectid).length}{" "}
-                tasks done
+                {project.tasks.filter((task) => task.complete === true).length}{" "}
+                / {project.tasks.length} tasks done
               </TaskStatus>
             </div>
           </ProjectListContainer>
