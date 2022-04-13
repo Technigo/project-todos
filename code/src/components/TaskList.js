@@ -20,12 +20,22 @@ const Container = styled.div`
     }
 `
 
+const WrapperDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+`
+
 const TaskArticle = styled.article`
     position: relative;
     border-bottom: solid 1px #5c4d7d;
+    padding: 10px;
+    overflow-wrap: break-word;
 `
 const TaskName = styled.h3`
     font-family: 'Grape Nuts', cursive;
+    font-size: 24px;
 `
 
 const DeleteButton = styled.button`
@@ -35,6 +45,10 @@ const DeleteButton = styled.button`
     right: 10px;
     border: none;
     cursor: pointer;
+`
+
+const CheckLabel = styled.label`
+    font-size: 16px;
 `
 
 
@@ -57,7 +71,11 @@ const TaskList = () => {
     if (allTasks.length === 0) {
         return (
             <section>
-                <img src={emptypage} alt="two people scheduling" width="375px"/>
+                <Container>
+                    <WrapperDiv>
+                        <img src={emptypage} alt="two people scheduling" width="375px"/>
+                    </WrapperDiv>
+                </Container>
             </section>
         )
     } else {
@@ -67,14 +85,14 @@ const TaskList = () => {
                 {allTasks.map((taskItem, index) => (
                     <TaskArticle key={taskItem.id}>
                         <TaskName>{taskItem.text}</TaskName>
-                        <label> Completed
+                        <CheckLabel> Done
                             <input 
                             type="checkbox"
                             name="tasks" 
                             checked={taskItem.complete} 
                             onChange={() => onItemToggle(taskItem.id)}
                             />
-                        </label>
+                        </CheckLabel>
                         <DeleteButton 
                             onClick={() =>onDeleteButton(index)}>                      
                             <span role="img" aria-label="cross">✕

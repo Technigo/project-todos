@@ -24,6 +24,7 @@ const Form = styled.form`
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: solid 1px #5c4d7d;
 `
 
 const Label = styled.label`
@@ -33,6 +34,8 @@ const Label = styled.label`
 const Textarea = styled.input`
     width: 95%;
     padding: 10px;
+    border: 3px solid #5c4d7d;
+    border-radius: 10px;
 
     @media ${devices.tablet} {
         width: 70%;
@@ -48,6 +51,7 @@ const AddButton = styled.button`
     margin: 7px 0 25px 0;
     background-color: #892B64;
     color: white;
+    font-family: 'Acme', sans-serif;
     font-size: 16px;
     cursor: pointer;
 

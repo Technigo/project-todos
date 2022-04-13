@@ -2,7 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterWrapper = styled.footer`
-background-color: #723c70;
+    background-color: #723c70;
+    text-align: center;
+
 `
 
 const Freepik = styled.p`
