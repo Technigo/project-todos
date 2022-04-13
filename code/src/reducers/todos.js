@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit'
-import uniqid from 'uniqid'
 
 const todos = createSlice({
   name: 'todos',
@@ -9,16 +8,7 @@ const todos = createSlice({
   },
   reducers: {
     addTodo: (store, action) => {
-      const { inputText, inputCategory, inputDeadline, timestamp } = action.payload
-
-      store.items.push({
-        id: uniqid(),
-        text: inputText,
-        category: inputCategory,
-        deadline: inputDeadline,
-        timestamp: timestamp,
-        completed: false
-      })
+      store.items.push(action.payload)
     },
 
     toggleTodo: (store, action) => {
@@ -46,33 +36,19 @@ const todos = createSlice({
       store.items = store.items.filter((todo) => todo.id !== action.payload)
     },
 
+    deleteAllCompleted: (store) => {
+      store.items = store.items.filter((todo) => !todo.completed)
+    },
+
     deleteAll: (store) => {
       store.deletedItems = store.items
       store.items = []
-    },
-
-    // need to be implemented in UI, or remove deleteAll to keep this one instead
-    deleteAllCompleted: (store) => {
-      store.items = store.items.filter((todo) => !todo.completed)
     },
 
     undoDelete: (store) => {
       store.items = store.items.concat(store.deletedItems)
       store.deletedItems = []
     },
-
-
-
-    // how can I implement this?
-
-    // displayPending: (store) => {
-    //   store.items = store.items.filter(todo => !todo.completed)
-    // },
-
-    // displayCompleted: (store) => {
-    //   store.items = store.items.filter(todo => todo.completed)
-    // }
-
   }
 })
 

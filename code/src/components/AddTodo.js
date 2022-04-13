@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import styled from "styled-components/macro"
+import uniqid from 'uniqid'
+
 
 import DatePicker from "react-datepicker"
 
@@ -55,26 +57,32 @@ const AddTodo = () => {
 
   // if text entered and then deleted, would need to be back disabled and red (so I can remove "required")
   // it works now
-  const onChangeInputText = (event) => {
-    setInputText(event.target.value)
-    setIsDisabled(!event.target.value)
+  const onChangeInputText = (e) => {
+    setInputText(e.target.value)
+    setIsDisabled(!e.target.value)
     setTimestamp(Date.now)
   }
 
-  const onChangeInputCategory = (event) => {
-    setInputCategory(event.target.value)
+  const onChangeInputCategory = (e) => {
+    setInputCategory(e.target.value)
   }
 
   const onChangeInputDeadline = (date) => {
     setInputDeadline(+new Date(date))
   }
 
-  const onAddTodo = (event) => {
-    event.preventDefault()
-    console.log(inputCategory)
-    dispatch(todos.actions.addTodo({ inputText, inputCategory, inputDeadline, timestamp }))
+  const onAddTodo = (e) => {
+    e.preventDefault()
+    const newTodo = {
+      id: uniqid(),
+      text: inputText,
+      category: inputCategory,
+      deadline: inputDeadline,
+      timestamp: timestamp,
+      completed: false
+    }
+    dispatch(todos.actions.addTodo(newTodo))
     setInputText('')
-    // à enlever ou non si on veut ajouter plusieurs tâches de la même catégorie ou faire un reset de tous les champs
     setInputCategory('personal')
     setInputDeadline(null)
     setIsDisabled(true)

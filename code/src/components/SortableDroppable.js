@@ -11,6 +11,7 @@ const SortableDroppable = ({ arrayToUse }) => {
     if (droppable) {
       Sortable.create(droppable, {
         easing: "cubic-bezier(0.2, 0, 0, 1)",
+        handle: '.handle',
         animation: 150,
         // className: "container",
         ghostClass: "dragging",

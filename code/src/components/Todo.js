@@ -18,6 +18,7 @@ import { faBriefcase } from '@fortawesome/free-solid-svg-icons'
 // import { faBuilding } from '@fortawesome/free-solid-svg-icons'
 import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
 import { faPerson } from '@fortawesome/free-solid-svg-icons'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import { ItemText, ItemIcons, StyledTodo, StyledTodoItem, StyledTodoDeadline, StyledTodoTimestamp, StyledCategoryIcon, StyledToggleIcon } from './styling/StyledTodo'
 
@@ -118,7 +119,9 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
       <StyledTodoItem className="custom-checkbox" style={isDone()} onChange={onCompletedChange}>
         <input type="checkbox" />
         <ItemIcons>
-          <StyledCategoryIcon>{categoryIcon()}</StyledCategoryIcon>
+          <FontAwesomeIcon icon={faBars} className="handle" />
+
+          <StyledCategoryIcon >{categoryIcon()}</StyledCategoryIcon>
           <StyledToggleIcon>{onToggle()}</StyledToggleIcon>
         </ItemIcons>
         <ItemText>{todo.text} </ItemText>

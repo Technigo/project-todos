@@ -8,7 +8,7 @@ Start by briefly describing the assignment in a sentence or two. Keep it short a
 
 * add category / icon depending on category
 * add deadline
-* delete one / delete all
+* delete one / delete completed / delete all
 * toggle complete/pending one/all
 * undo delete (one or all)
 * display all/completed/pending

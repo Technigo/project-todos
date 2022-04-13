@@ -58,14 +58,20 @@ const TodosList = () => {
     setIsUndoDisabled(true)
   }
 
-  const onTodoSearch = (event) => {
-    setInputSearch(event.target.value)
+  const onTodoSearch = (e) => {
+    setInputSearch(e.target.value)
   }
 
   const deleteAll = () => {
     dispatch(todos.actions.deleteAll())
     setIsUndoDisabled(false)
   }
+
+  const deleteAllCompleted = () => {
+    dispatch(todos.actions.deleteAllCompleted())
+    setIsUndoDisabled(false)
+  }
+
 
   const toggleAll = () => {
     dispatch(todos.actions.toggleAll())
@@ -107,6 +113,9 @@ const TodosList = () => {
       <hr></hr>
       <AllButton onClick={toggleAll}><FontAwesomeIcon icon={faCheckDouble} /></AllButton>
       <hr></hr>
+      <AllButton onClick={deleteAllCompleted}><FontAwesomeIcon icon={faTrash} /> completed</AllButton>
+      <hr></hr>
+
 
       <AllButton onClick={displayAll} disabled={isAllDisabled}>All</AllButton>
       <AllButton onClick={displayPending} disabled={isPendingDisabled}>Pending</AllButton>
