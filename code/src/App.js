@@ -5,6 +5,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import pokemons from 'reducers/pokemons'
 
 import PokemonList from 'components/PokemonList'
+import AddPokemon from 'components/AddPokemon'
+
 
 //prepare pocket
 const reducer = combineReducers({
@@ -21,6 +23,7 @@ export const App = () => {
     //put backpack on the persons shoulder 
     //all here in between has access to global store
     <Provider store={store}>
+      <AddPokemon/>
       <PokemonList/>
     </Provider>
   )

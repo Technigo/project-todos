@@ -32,9 +32,13 @@ const onPokemonToggle = (pokemonId) => {
     dispatch(pokemons.actions.toggleItem(pokemonId))
 }
 
+const onPokemonDelete = (index) => {
+    dispatch(pokemons.actions.deleteItem(index))
+}
+
 return (
 <section>
-    {pokemonList.map(pokemonItem => (
+    {pokemonList.map((pokemonItem, pokemonIndex) => (
         <PokemonItem key={pokemonItem.id}>
             <h2>{pokemonItem.name}</h2>
             <label>
@@ -42,7 +46,7 @@ return (
             <input type="checkbox" checked={pokemonItem.isCaught}
             onChange={() => onPokemonToggle(pokemonItem.id)}/>
             </label>
-            <DeleteButton>
+            <DeleteButton onClick={() => onPokemonDelete(pokemonIndex)}>
                 <span role="img" aria-label="delete">🧨</span>
             </DeleteButton>
         </PokemonItem>
