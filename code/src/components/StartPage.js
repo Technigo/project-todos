@@ -42,7 +42,7 @@ align-items: center;
 const Button = styled.button`
 border-radius: 8px;
 border: 0.4px solid gray;
-padding: 6px;
+padding: 3px;
 `
 const BigHeading = styled.h1`
 color: #1D3F6F;

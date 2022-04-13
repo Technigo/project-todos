@@ -19,6 +19,20 @@ display: flex;
 flex-direction: column;
 align-items: center;
 `
+
+const IntroHeading = styled.h1 `
+color: #1D3F6F;
+font-size: 34px;
+`
+
+const Button = styled.button`
+background: transparent;
+border-radius: 10px;
+font-family: 'Roboto', serif;
+font-size: 14px;
+border: 1px solid gray;
+padding: 0.5rem;
+`
   
 const IntroPage = () => {
 
@@ -27,9 +41,9 @@ const IntroPage = () => {
       <Container>
        <img src="./assets/todo-illustration.png" alt="Illustration made by pch.vector - www.freepik.com" width="300px" />
 
-        <h1 className="header-start">
+        <IntroHeading>
             Lets do it today
-        </h1>
+        </IntroHeading>
 
         <Link to="/app">
             <Button>Write it down</Button>
@@ -40,14 +54,3 @@ const IntroPage = () => {
 
 
 export default IntroPage
-
-
-//styled components
-const Button = styled.button`
-background: transparent;
-border-radius: 10px;
-font-family: 'Della Respira', serif;
-font-size: 14px;
-border: 1px solid gray;
-padding: 0.3rem;
-`
