@@ -3,7 +3,7 @@ import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import Counter from "components/Counter";
 // import Counter from "components/Counter";
-import Input from "components/Input";
+import Input from "components/input";
 import "./App.css";
 
 //combineReducers for the pockets and configureStore for the backpack
