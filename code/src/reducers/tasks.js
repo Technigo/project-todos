@@ -22,10 +22,8 @@ export const tasks = createSlice({
     },
 
     toggleTask: (state, action) => {
-      const task = state.task.find(
-        (task) => action.payload.taskid === task.taskid
-      );
-      task.complete = !task.complete;
+      state.task[action.payload.taskindex].complete =
+        !state.task[action.payload.taskindex].complete;
       // Sort tasks by complete and date
       const complete = (x, y) => {
         return x > y ? 1 : x < y ? -1 : 0;
@@ -39,10 +37,7 @@ export const tasks = createSlice({
     },
 
     deleteTask: (state, action) => {
-      const taskIndex = state.task.findIndex(
-        (task) => action.payload.taskid === task.taskid
-      );
-      state.task.splice(taskIndex, 1);
+      state.task.splice(action.payload.taskindex, 1);
     },
 
     toggleAllTasksComplete: (state, action) => {

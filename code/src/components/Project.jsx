@@ -31,6 +31,8 @@ const Project = () => {
   );
   const iconArray = useSelector((store) => store.icons.icons);
   const project = projectArray.find((x) => x.id === id);
+  const projectIndex = projectArray.findIndex((project) => project.id === id);
+  console.log(projectIndex);
 
   // Create unique ID
   let taskId = uniqid("task-");
@@ -42,9 +44,9 @@ const Project = () => {
         return false;
       } else {
         setAllComplete(true);
+        console.log(allComplete);
       }
     }
-    console.log(allComplete);
   };
 
   const addTask = () => {
@@ -87,7 +89,7 @@ const Project = () => {
     );
     dispatch(
       projects.actions.deleteProject({
-        projectid: project.id,
+        projectindex: projectIndex,
       })
     );
     navigate("/");

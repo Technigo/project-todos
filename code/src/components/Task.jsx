@@ -12,6 +12,9 @@ const Task = ({ taskid, checkAllComplete }) => {
   const thisTask = useSelector((store) => store.tasks.task).find(
     (task) => taskid === task.taskid
   );
+  const taskIndex = useSelector((store) => store.tasks.task).findIndex(
+    (task) => taskid === task.taskid
+  );
   const created = formatRelative(new Date(thisTask.added), new Date());
 
   const toggleComplete = () => {
@@ -19,16 +22,16 @@ const Task = ({ taskid, checkAllComplete }) => {
       tasks.actions.toggleTask({
         taskid: thisTask.taskid,
         projectid: thisTask.projectid,
+        taskindex: taskIndex,
       })
     );
     checkAllComplete();
-    console.log(taskid);
   };
 
   const deleteTask = () => {
     dispatch(
       tasks.actions.deleteTask({
-        taskid: thisTask.taskid,
+        taskindex: taskIndex,
       })
     );
     checkAllComplete();

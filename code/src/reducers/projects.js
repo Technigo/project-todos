@@ -12,10 +12,7 @@ export const projects = createSlice({
     },
 
     deleteProject: (state, action) => {
-      const projectIndex = state.project.findIndex(
-        (project) => action.payload.projectid === project.projectid
-      );
-      state.project.splice(projectIndex, 1);
+      state.project.splice(action.payload.projectindex, 1);
     },
   },
 });
