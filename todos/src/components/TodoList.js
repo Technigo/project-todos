@@ -2,7 +2,11 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import todos from "reducers/todos";
-import AddTodos from "./AddTodos";
+
+import { 
+  Article, 
+  TodoText 
+} from "styles";
 
 const TodoList = () => {
   const todoList = useSelector((store) => store.todos.lists);
@@ -13,18 +17,22 @@ const TodoList = () => {
     dispatch(todos.actions.toggleTodo(todoId));
   };
 
+  const onTodoDelete = (todoId) => {
+    dispatch(todos.actions.deleteTodo(todoId));
+  };
+
   return (
     <section>
-      <AddTodos /> 
       {todoList.map((item) => (
-        <article key={item.id}>
-          <h2>{item.text}</h2>
+        <Article key={item.id}>
+          <TodoText complete={item.isComplete}>{item.text}</TodoText>
           <input
             type="checkbox"
-            checked={item.complete}
+            checked={item.isComplete}
             onChange={() => { onTodoToggle(item.id) }}
           />
-        </article>
+          <button onClick={() => onTodoDelete(item.id)}>Delete</button>
+        </Article>
       ))}
     </section>
   )

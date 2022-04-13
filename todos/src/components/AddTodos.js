@@ -20,7 +20,7 @@ const AddTodos = () => {
       isComplete: false
     };
 
-    dispatch(todos.actions.addToDo(newTodo));
+    dispatch(todos.actions.addTodo(newTodo));
 
     setInputValue("");
   };

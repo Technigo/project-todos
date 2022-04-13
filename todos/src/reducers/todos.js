@@ -22,10 +22,14 @@ const todos = createSlice({
 
       state.lists = updatedTodos
     },
-    addToDo: (state, action) => {
+    addTodo: (state, action) => {
       state.lists = [...state.lists, action.payload];
-    }
-  }
+    },
+    deleteTodo: (state, action) => {
+      const updatedTodo = state.lists.filter((todo) => todo.id !== action.payload);
+      state.lists = updatedTodo;
+    },
+  },
 });
 
 export default todos;
