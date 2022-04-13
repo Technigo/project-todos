@@ -31,7 +31,6 @@ export const AddTodo = () => {
         <>
         <AddTodoContainer className="AddTodo-container">
             <InputField 
-                className={isActive ? 'input-active' : 'input-hidden'}
                 onKeyDown={(e) => onEnter(e)}
                 placeholder='Add Todo...'
                 type='text'
