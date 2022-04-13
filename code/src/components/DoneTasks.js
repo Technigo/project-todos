@@ -19,7 +19,13 @@ const DoneTasks = () => {
         dispatch(tasks.actions.deleteTask(taskId))
     }
 
+    const onClickAllTasksDelete = (taskId) => {
+        dispatch(tasks.actions.allTasksDelete(taskId))
+    }
+
     const doneSummary = doneTasks.length
+
+
      if (doneTasks < 1) {
          return (
              <h1>Done nothing</h1>
@@ -27,9 +33,10 @@ const DoneTasks = () => {
      } else {
           return(
         <>
+        <button onClick={onClickAllTasksDelete}>delete all</button>
         {doneTasks.map((taskItem) => (
             <div key={taskItem.id}>
-                <p>{doneSummary} task done</p>
+                <p>{doneSummary} task done </p>
                 <h2>{taskItem.text}</h2>
                 <label>
                     done:
@@ -40,7 +47,6 @@ const DoneTasks = () => {
             </button>
             </div>
         ))}
-
         </>
     )
      }

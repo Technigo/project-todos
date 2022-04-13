@@ -21,9 +21,14 @@ const NotDoneTasks = () => {
         dispatch(tasks.actions.deleteTask(taskId))
     }
 
+    const onClickAllDone = () => {
+        dispatch(tasks.actions.allTasksDone())
+    }
+
     const date = new Date()
 
     const notDoneSummary = notDoneTasks.length
+    
      if (notDoneTasks < 1) {
          return (
             <>
@@ -35,6 +40,7 @@ const NotDoneTasks = () => {
          
         return(
         <>
+        <button onClick={onClickAllDone}>all done</button>
         <p>{notDoneSummary} task to do</p>
         {notDoneTasks.map((taskItem) => (
         <article key={taskItem.id}>

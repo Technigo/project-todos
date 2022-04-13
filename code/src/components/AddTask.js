@@ -33,7 +33,7 @@ const AddTask = () => {
                 onChange={handleNewTask}
                 ref={inputRef}
                 />
-                <button onClick={onAddTask} disabled={input.length < 5}>
+                <button onClick={onAddTask} disabled={input.length < 1}>
                     <span>Add</span>
                 </button>
             </label>
