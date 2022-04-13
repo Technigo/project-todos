@@ -1,9 +1,14 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import uniqid from 'uniqid';
-//import styled from 'styled-components'
 
 import todos from 'reducers/todos'
+import {
+  Header,
+  Form, 
+  Input,
+  Button
+} from 'Styles'
 
 const AddTodo = () => {
   const [inputValue, setInputValue] = useState("");
@@ -25,17 +30,19 @@ const AddTodo = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <label>
-        New to-do: &nbsp;
-      <input 
-      type="text" 
-      value={inputValue}
-      onChange={(e) => setInputValue(e.target.value)}
-      />
-      </label>
-      <button type="submit">Submit</button>
-    </form>
+    <Header>
+      <Form onSubmit={onFormSubmit}>
+        <label>
+        <Input 
+        type="text" 
+        value={inputValue}
+        onChange={(e) => setInputValue(e.target.value)}
+        placeholder="Add new task"
+        />
+        </label>
+        <Button type="submit">+</Button>
+      </Form>
+    </Header>
   )
 };
 

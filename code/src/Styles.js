@@ -1,5 +1,33 @@
 import styled from 'styled-components';
 
+export const Main = styled.main`
+  background: #697482;
+  height: 100vw;
+`
+
+export const Header = styled.header`
+  display: flex;
+  justify-content: center;
+`
+
+export const Form = styled.form`
+  display: flex;
+  justify-content: center;
+  margin: 5vw 0;
+`
+
+export const Input = styled.input`
+  border: groove;
+  border-radius: 50px;
+  padding: 10px;
+`
+
+export const Button = styled.button`
+  border: none;
+  margin: 10px;
+  border-radius: 50px;
+`
+
 export const TodoSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -7,6 +35,7 @@ export const TodoSection = styled.section`
 `;
 
 export const TodoItem = styled.article`
+  background: #EFEDEB;
   border: 1px solid #dcdcdc;
   border-radius: 5px;
   padding: 10px;
@@ -23,7 +52,7 @@ export const DoneButton = styled.input`
     padding-left: 10px;
     cursor: pointer;
     display: inline-block;
-    color: #666;
+    color: #697482;
     line-height: 25px;
     &:before, &:after {
       content: "";
@@ -66,3 +95,8 @@ export const DeleteButton = styled.button`
   border: none;
   cursor: pointer;
 `;
+
+export const TodoNumber = styled.h4`
+  color: transparent;
+  text-shadow: rgba(245,245,245,0.5) 3px 5px 1px;
+`

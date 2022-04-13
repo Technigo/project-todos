@@ -1,14 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
+import uniqid from 'uniqid';
 
 const data = [
   {
-    id: 'adsfadsfsdf',
-    title: 'wash clothes',
-    isDone: false,
-  },
-  {
-    id: 'fgfdgfghdfg',
-    title: 'read a book',
+    id: uniqid(),
+    title: 'Add task',
     isDone: false,
   },
 ];
