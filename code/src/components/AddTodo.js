@@ -75,6 +75,11 @@ const AddTodoContainer = styled.section`
         transform: scale(0.8);
       }
 
+      @media ${devices.tablet} {
+        bottom: 400px;
+    
+      }
+
 `
 
 const InputField = styled.input`
