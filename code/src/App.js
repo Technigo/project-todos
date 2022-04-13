@@ -51,7 +51,7 @@ const Wrapper = styled.section`
   justify-content: center;
   align-items: center;
   // margin: -10px;
-  border: 1px solid red;
+  // border: 1px solid red;
 `
 
 const ProviderContainer = styled.section`
