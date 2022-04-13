@@ -1,47 +1,55 @@
 import styled from "styled-components/macro"
 
-export const StyledTodo = styled.div`
+export const TodoArticle = styled.article`
 display: flex;
 flex-direction: column;
 max-width: 600px;
-margin: 15px 20px;
-padding: 15px;
+margin: 10px 20px;
+padding: 10px;
 border: 2px solid red;
 border-radius: 5px;
 background: #fff;
 `
 
-export const StyledTodoItem = styled.label`
-display: flex;
-justify-content: space-between;
-`
-
-export const ItemIcons = styled.span`
-display: flex;
-`
-
-export const StyledTodoDeadline = styled.div`
+export const TodoDeadline = styled.div`
 text-transform: uppercase;
 font-size: 12px;
 `
 
-export const StyledTodoTimestamp = styled.div`
+export const TodoMiddleBox = styled.label`
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 5px 0;
+`
+
+export const TodoDraggingBox = styled.span`
+display: flex;
+justify-content: flex-start;
+align-items: center;
+min-width: 60px;
+/* column-gap: 5px; */
+cursor: grabbing;
+`
+
+// comment arranger pour que le text soit aligné à gauche??
+export const TodoText = styled.span`
+display: flex;
+align-self: center;
+/* flex-grow: 2; */
+`
+
+export const TodoTimestamp = styled.div`
 font-size: 8px;
 text-align: right;
 `
 
-export const StyledCategoryIcon = styled.span`
-font-size: 32px;
-margin-right: 10px;
+export const TodoCheckingBox = styled.div`
+display: flex;
+align-items: center;
+justify-content: flex-start;
+flex-grow: 2;
+cursor: pointer;
 `
 
-export const StyledToggleIcon = styled.span`
-font-size: 24px;
-margin-right: 10px;
 
-`
-
-// comment arranger pour que le text soit aligné à gauche??
-export const ItemText = styled.span`
-align-self: flex-start;
-`

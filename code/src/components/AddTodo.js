@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import styled from "styled-components/macro"
+// import styled from "styled-components/macro"
 import uniqid from 'uniqid'
-
 
 import DatePicker from "react-datepicker"
 
@@ -12,51 +11,21 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faCirclePlus } from '@fortawesome/free-regular-svg-icons'
 // import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
-import { faEdit } from '@fortawesome/free-regular-svg-icons'
 
 import todos from 'reducers/todos'
 
-// quebec flag blue: #003DA5
-const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-color: #003DA5;
-`
-
-const AddButton = styled.button`
-  display: inline-block;
-  border: none;
-  padding: 0;
-  background: transparent;
-  color: #000;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-
-  &:disabled {
-    color: red;
-  }
-`
-
-const AddInput = styled.input`
-  border: 1px solid black;
-  border-radius: 0;
-  outline: none;
-
-  &:focus {
-    background-color: lightgrey;
-  }
-`
+import { AddButtonBox, AddTextBox, AddSection, AddFeatures, AddOptions, AddText, AddCategory, AddDeadline } from './styling/StyledAddTodo'
+import { AddButton } from './styling/IconsButtons'
 
 const AddTodo = () => {
   const dispatch = useDispatch()
 
   const [inputText, setInputText] = useState('')
-  const [inputCategory, setInputCategory] = useState('personal')
+  const [inputCategory, setInputCategory] = useState('neutral')
   const [inputDeadline, setInputDeadline] = useState(null)
   const [timestamp, setTimestamp] = useState(Date.now)
   const [isDisabled, setIsDisabled] = useState(true)
 
-  // if text entered and then deleted, would need to be back disabled and red (so I can remove "required")
-  // it works now
   const onChangeInputText = (e) => {
     setInputText(e.target.value)
     setIsDisabled(!e.target.value)
@@ -83,32 +52,39 @@ const AddTodo = () => {
     }
     dispatch(todos.actions.addTodo(newTodo))
     setInputText('')
-    setInputCategory('personal')
+    setInputCategory('neutral')
     setInputDeadline(null)
     setIsDisabled(true)
   }
 
   return (
-    <form onSubmit={onAddTodo}>
-      <p>
-        <StyledFontAwesomeIcon icon={faEdit} />
-        <AddInput required type="text" onChange={onChangeInputText} value={inputText}></AddInput>
-      </p>
-      <p>
-        <label htmlFor="category" value="Choose a category"></label>
-        <select id="category" value={inputCategory} onChange={onChangeInputCategory}>
-          {/* <option value="" disabled>--Choose a category--</option> */}
-          <option value="personal">Personal</option>
-          <option value="school">School</option>
-          <option value="work">Work</option>
-        </select>
-      </p>
-      <DatePicker selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd.MM.yyyy" locale={'en'} minDate={new Date()}>
-        <div style={{ color: "red", fontWeight: "bold", textAlign: "center" }}>Choose a deadline</div>
-      </DatePicker>
-      <AddButton type="submit" disabled={isDisabled}><FontAwesomeIcon icon={faPlus} /></AddButton>
-      <hr></hr>
-    </form>
+    <AddSection>
+      <form onSubmit={onAddTodo}>
+        <AddTextBox>
+          <AddText required placeholder="Type your todo here" type="text" onChange={onChangeInputText} value={inputText} />
+        </AddTextBox>
+        <AddFeatures>
+          <AddOptions>
+            <AddCategory>
+              <label htmlFor="category" value="Choose a category"></label>
+              <select id="category" value={inputCategory} onChange={onChangeInputCategory}>
+                {/* <option value="" disabled>--Choose a category--</option> */}
+                <option value="neutral">Neutral</option>
+                <option value="funny">Funny</option>
+                <option value="boring">Boring</option>
+                <option value="hard">Hard</option>
+              </select>
+            </AddCategory>
+            <AddDeadline>
+              <DatePicker placeholderText="Choose a deadline (optional)" selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd.MM.yyyy" locale={'en'} minDate={new Date()} />
+            </AddDeadline>
+          </AddOptions>
+          <AddButtonBox>
+            <AddButton type="submit" disabled={isDisabled}><FontAwesomeIcon icon={faPlus} /></AddButton>
+          </AddButtonBox>
+        </AddFeatures>
+      </form>
+    </AddSection>
   )
 }
 

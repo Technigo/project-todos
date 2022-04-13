@@ -5,8 +5,7 @@ import { createStore, combineReducers } from '@reduxjs/toolkit'
 import { loadState, saveState } from './reducers/localStorage'
 import todos from './reducers/todos'
 
-import AddTodo from './components/AddTodo'
-import TodosList from './components/TodosList'
+import Main from 'components/Main'
 
 const reducer = combineReducers({
   todos: todos.reducer,
@@ -22,13 +21,10 @@ store.subscribe(() => {
   })
 })
 
-// const store = configureStore({ reducer: reducer })
-
 const App = () => {
   return (
     <Provider store={store}>
-      <AddTodo />
-      <TodosList />
+      <Main />
     </Provider>
   )
 }

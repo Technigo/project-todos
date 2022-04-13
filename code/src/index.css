@@ -7,6 +7,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+main {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -21,37 +26,17 @@ code {
 .custom-checkbox input[type="checkbox"]:checked~.checked {
   display: inline-block;
 }
+
 .custom-checkbox input[type="checkbox"]:checked~.unchecked {
   display: none;
 }
 
-/* button {
-  display: inline-block;
-  border: none;
-  padding: 0;
-  margin: 0; */
-  /* text-decoration: none;
-  background: grey;
-  color: #000;
-  /* font-family: sans-serif; */
-  /* font-size: 1rem;
-  cursor: pointer;
-  text-align: center; */
-  /* transition: background 250ms ease-in-out, 
-              transform 150ms ease; */
-  /* -webkit-appearance: none;
-  -moz-appearance: none; */
-/* } */
-
-/* button:focus {
-  outline: 1px solid #fff;
-  outline-offset: -4px;
-} */
-
-/* button:active {
-  transform: scale(0.99);
-} */
-
 .dragging {
   visibility: hidden
+}
+
+/* class to target the calendar */
+/* weirdly the width need to be -8x than what is displayed... */
+.react-datepicker__input-container input {
+  width: 234px;
 }

@@ -1,53 +1,26 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 
-import styled from "styled-components/macro"
 import { formatRelative, formatDistanceToNow } from 'date-fns'
 import enGB from 'date-fns/locale/en-GB'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCircle } from '@fortawesome/free-solid-svg-icons'
-// import { faCircleCheck } from '@fortawesome/free-solid-svg-icons'
-// import { faCircleXmark } from '@fortawesome/free-solid-svg-icons'
-import { faCircle } from '@fortawesome/free-regular-svg-icons'
+import { faCircle, faFaceDizzy, faFaceFlushed, faFaceGrinSquintTears, faFaceMehBlank } from '@fortawesome/free-regular-svg-icons'
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
-// import { faCircleXmark } from '@fortawesome/free-regular-svg-icons'
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons'
-// import { faEraser } from '@fortawesome/free-solid-svg-icons'
-import { faBriefcase } from '@fortawesome/free-solid-svg-icons'
-// import { faBuilding } from '@fortawesome/free-solid-svg-icons'
-import { faGraduationCap } from '@fortawesome/free-solid-svg-icons'
-import { faPerson } from '@fortawesome/free-solid-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-import { ItemText, ItemIcons, StyledTodo, StyledTodoItem, StyledTodoDeadline, StyledTodoTimestamp, StyledCategoryIcon, StyledToggleIcon } from './styling/StyledTodo'
+import { TodoText, TodoCheckingBox, TodoDraggingBox, TodoArticle, TodoMiddleBox, TodoDeadline, TodoTimestamp } from './styling/StyledTodo'
+import { DeleteTodoButton, CategoryIcon, ToggleIcon, HandleIcon } from './styling/IconsButtons'
 
 import todos from 'reducers/todos'
 
-const DeleteButton = styled.button`
-  display: inline-block;
-  border: none;
-  padding: 0;
-  background: transparent;
-  color: #000;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  margin-left: 0.5rem;
-`
 
 const Todo = ({ todo, id, setIsUndoDisabled }) => {
 
   const dispatch = useDispatch()
 
   const [isOverdue, setIsOverdue] = useState({})
-  // const isChecked = () => {
-  //   if (todo.completed) {
-  //     return true
-  //   } else {
-  //     return false
-  //   }
-  // }
 
   // maybe combine these two?
   const isDone = () => {
@@ -69,12 +42,14 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
   }
 
   const categoryIcon = () => {
-    if (todo.category === 'personal') {
-      return <FontAwesomeIcon icon={faPerson} />
-    } else if (todo.category === 'work') {
-      return <FontAwesomeIcon icon={faBriefcase} />
-    } else if (todo.category === 'school') {
-      return <FontAwesomeIcon icon={faGraduationCap} />
+    if (todo.category === 'neutral') {
+      return <FontAwesomeIcon icon={faFaceMehBlank} />
+    } else if (todo.category === 'funny') {
+      return <FontAwesomeIcon icon={faFaceGrinSquintTears} />
+    } else if (todo.category === 'boring') {
+      return <FontAwesomeIcon icon={faFaceDizzy} />
+    } else if (todo.category === 'hard') {
+      return <FontAwesomeIcon icon={faFaceFlushed} />
     }
   }
 
@@ -97,12 +72,12 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
   const formattedTimestamp = formatDistanceToNow(dateTimestamp, { addSuffix: true })
 
   const formatRelativeLocale = {
-    lastWeek: "'last' eeee",
-    yesterday: "'yesterday'",
-    today: "'today'",
-    tomorrow: "'tomorrow'",
-    nextWeek: "'next' eeee",
-    other: 'dd.MM.yyyy',
+    lastWeek: "'was due last' eeee",
+    yesterday: "'was due yesterday'",
+    today: "'due today'",
+    tomorrow: "'due tomorrow'",
+    nextWeek: "'due next' eeee",
+    other: "'due' dd.MM.yyyy",
   }
 
   const locale = {
@@ -114,21 +89,22 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
   const formattedDeadline = formatRelative(dateDeadline, new Date(), { locale })
 
   return (
-    <StyledTodo>
-      <StyledTodoDeadline style={isOverdue}>{todo.deadline !== null && `due ${formattedDeadline}`}</StyledTodoDeadline>
-      <StyledTodoItem className="custom-checkbox" style={isDone()} onChange={onCompletedChange}>
-        <input type="checkbox" />
-        <ItemIcons>
-          <FontAwesomeIcon icon={faBars} className="handle" />
-
-          <StyledCategoryIcon >{categoryIcon()}</StyledCategoryIcon>
-          <StyledToggleIcon>{onToggle()}</StyledToggleIcon>
-        </ItemIcons>
-        <ItemText>{todo.text} </ItemText>
-        <DeleteButton type="button" onClick={onDeleteTodo}><FontAwesomeIcon icon={faTrashCan} /></DeleteButton>
-      </StyledTodoItem>
-      <StyledTodoTimestamp>created {formattedTimestamp}</StyledTodoTimestamp>
-    </StyledTodo>
+    <TodoArticle>
+      <TodoDeadline style={isOverdue}>{todo.deadline !== null && formattedDeadline}</TodoDeadline>
+      <TodoMiddleBox>
+        <TodoDraggingBox>
+          <HandleIcon icon={faBars} className="handle" />
+          <CategoryIcon className="handle">{categoryIcon()}</CategoryIcon>
+        </TodoDraggingBox>
+        <TodoCheckingBox className="custom-checkbox" style={isDone()} onChange={onCompletedChange}>
+          <input type="checkbox" />
+          <ToggleIcon>{onToggle()}</ToggleIcon>
+          <TodoText>{todo.text} </TodoText>
+        </TodoCheckingBox>
+        <DeleteTodoButton type="button" onClick={onDeleteTodo}><FontAwesomeIcon icon={faTrashCan} /></DeleteTodoButton>
+      </TodoMiddleBox>
+      <TodoTimestamp>created {formattedTimestamp}</TodoTimestamp>
+    </TodoArticle>
   )
 }
 

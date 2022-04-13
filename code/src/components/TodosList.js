@@ -1,41 +1,20 @@
 import React, { useState } from "react"
-import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
 
-import styled from "styled-components/macro"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
-import { faCheckDouble } from '@fortawesome/free-solid-svg-icons'
-
-import todos from 'reducers/todos'
-
-// import CompletedTodosList from './CompletedTodosList'
-// import PendingTodosList from './archivesToDelete/PendingTodosList'
+import { FilteringButton } from './styling/IconsButtons'
 
 import Todo from './Todo'
 
 import SortableDroppable from './SortableDroppable'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+import { faCircle } from '@fortawesome/free-regular-svg-icons'
+import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
+import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 
-const AllButton = styled.button`
-  display: inline-block;
-  border: none;
-  padding: 0;
-  background: transparent;
-  color: #000;
-  font-size: 1rem;
-  cursor: pointer;
-  text-align: center;
-  margin-right: 10px;
+import { FilteringSection, FilteringButtonsBox, FilteringInput, Count } from './styling/StyledFiltering'
 
-  &:disabled {
-    color: red;
-    cursor: default;
-  }
-`
-
-const TodosList = () => {
-  const dispatch = useDispatch()
+const TodosList = ({ setIsUndoDisabled }) => {
 
   const allTodos = useSelector((store) => store.todos.items)
 
@@ -45,7 +24,6 @@ const TodosList = () => {
   const [isCompletedDisabled, setIsCompletedDisabled] = useState(false)
   const [isPendingDisabled, setIsPendingDisabled] = useState(false)
 
-  const [isUndoDisabled, setIsUndoDisabled] = useState(true)
   const [inputSearch, setInputSearch] = useState('')
 
   const pendingTodos = allTodos.filter(todo => !todo.completed)
@@ -53,28 +31,8 @@ const TodosList = () => {
   const completedTodos = allTodos.filter(todo => todo.completed)
   const completedTodosSearched = completedTodos.filter(todo => todo.text.toLowerCase().includes(inputSearch.toLowerCase()) || todo.category.toLowerCase().startsWith(inputSearch.toLowerCase()))
 
-  const undoDelete = () => {
-    dispatch(todos.actions.undoDelete())
-    setIsUndoDisabled(true)
-  }
-
   const onTodoSearch = (e) => {
     setInputSearch(e.target.value)
-  }
-
-  const deleteAll = () => {
-    dispatch(todos.actions.deleteAll())
-    setIsUndoDisabled(false)
-  }
-
-  const deleteAllCompleted = () => {
-    dispatch(todos.actions.deleteAllCompleted())
-    setIsUndoDisabled(false)
-  }
-
-
-  const toggleAll = () => {
-    dispatch(todos.actions.toggleAll())
   }
 
   const displayAll = () => {
@@ -101,34 +59,19 @@ const TodosList = () => {
     setIsCompletedDisabled(false)
   }
 
-  // const displayPending = () => {
-  //   dispatch(todos.actions.displayPending())
-  //   console.log(allTodos)
-  // }
-
-
   return (
     <>
-      <AllButton onClick={deleteAll}><FontAwesomeIcon icon={faTrash} /></AllButton>
-      <hr></hr>
-      <AllButton onClick={toggleAll}><FontAwesomeIcon icon={faCheckDouble} /></AllButton>
-      <hr></hr>
-      <AllButton onClick={deleteAllCompleted}><FontAwesomeIcon icon={faTrash} /> completed</AllButton>
-      <hr></hr>
-
-
-      <AllButton onClick={displayAll} disabled={isAllDisabled}>All</AllButton>
-      <AllButton onClick={displayPending} disabled={isPendingDisabled}>Pending</AllButton>
-      <AllButton onClick={displayCompleted} disabled={isCompletedDisabled}>Completed</AllButton>
-      <hr></hr>
-
-      <div>
-        <label>Search a task or a category:
-          <input type="search" name="q" onChange={onTodoSearch} value={inputSearch} />
-        </label>
-      </div>
-
-      <button type="button" onClick={undoDelete} disabled={isUndoDisabled}>undo</button>
+      <FilteringSection>
+        <FilteringButtonsBox>
+          <FilteringButton onClick={displayPending} disabled={isPendingDisabled}><FontAwesomeIcon icon={faCircle} /></FilteringButton>
+          <FilteringButton onClick={displayAll} disabled={isAllDisabled}><FontAwesomeIcon icon={faGlobe} /></FilteringButton>
+          <FilteringButton onClick={displayCompleted} disabled={isCompletedDisabled}><FontAwesomeIcon icon={faCircleCheck} /></FilteringButton>
+        </FilteringButtonsBox>
+        <FilteringInput>
+            <input placeholder="Search a task or a category" type="search" name="q" onChange={onTodoSearch} value={inputSearch} autoComplete="off" />
+        </FilteringInput>
+        <Count>{pendingTodos.length} tasks left to do</Count>
+      </FilteringSection>
 
       <div style={{ display: pendingVisible }}>
         <SortableDroppable arrayToUse={pendingTodosSearched.reverse().map((todo) => (
@@ -143,8 +86,9 @@ const TodosList = () => {
         ))} />
 
       </div>
+
       {/* use just one count? */}
-      {allTodos.length !== 0 && <span><p>{allTodos.length} tasks ({pendingTodos.length} pending)</p> <p>{allTodos.length} tasks ({completedTodos.length} completed)</p></span>}
+      {/* {allTodos.length !== 0 && <span><p>{allTodos.length} tasks ({pendingTodos.length} pending)</p> <p>{allTodos.length} tasks ({completedTodos.length} completed)</p></span>} */}
 
     </>
   )
