@@ -1,11 +1,16 @@
-
 .input-hidden,
 .button-hidden {
   display: none;
 }
 
 .input-active,
-.button-active {
+.button-active,
+.img-active {
   display: initial;
   transition: 0.4s ease-in-out;
+}
+
+.img-hidden {
+  display: none;
+  transition: 0.5s ease-in-out;
 }

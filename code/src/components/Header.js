@@ -15,8 +15,8 @@ const Wrapper = styled.div`
   width: min-content;
   margin: 30px 50px 20px;
 
-  @media ${devices.tablet}{
-      margin-right: 15%;
+  @media ${devices.tablet} {
+    margin-right: 15%;
   }
 `;
 
@@ -27,7 +27,7 @@ const Title = styled.h1`
   color: #ffbcbc;
   margin: 0;
 
-  @media ${devices.tablet}{
+  @media ${devices.tablet} {
     font-size: 90px;
     line-height: 100px;
   }
@@ -37,7 +37,7 @@ const Date = styled.p`
   font-weight: 500;
   margin-top: 0;
 
-  @media ${devices.tablet}{
+  @media ${devices.tablet} {
     font-size: 25px;
   }
 `;

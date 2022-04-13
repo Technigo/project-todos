@@ -1,11 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const data = [
-  { id: 1, text: "Watch video on actions & reducers", isComplete: false },
-  { id: 2, text: "Follow redux codealong", isComplete: false },
-  { id: 3, text: "Fork weekly assignment", isComplete: false },
-  { id: 4, text: "Create a todo app", isComplete: false },
-];
+const data = [];
 
 const tasks = createSlice({
   name: "tasks",

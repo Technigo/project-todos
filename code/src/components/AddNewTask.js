@@ -4,10 +4,15 @@ import styled from "styled-components";
 import uniqid from "uniqid";
 
 import tasks from "reducers/tasks";
+import { devices } from "styles";
 
 const NewTaskWrapper = styled.section`
   display: flex;
   justify-content: flex-end;
+
+  @media ${devices.tablet} {
+    margin-right: 13%;
+  }
 `;
 const NewTask = styled.div`
   display: flex;
@@ -23,7 +28,6 @@ const NewTaskbtn = styled.button`
   display: flex;
   align-items: center;
   height: min-content;
-  /* margin-left: 10px; */
 `;
 const NewTaskBtnText = styled.p`
   font-size: large;
@@ -32,6 +36,10 @@ const NewTaskBtnText = styled.p`
 
   &:hover {
     margin-left: 5px;
+  }
+
+  @media ${devices.tablet} {
+    font-size: x-large;
   }
 `;
 
@@ -52,18 +60,26 @@ const Input = styled.input`
   width: 45vw;
   padding: 2px 5px 2px 10px;
   word-break: break-all;
+
+  @media ${devices.tablet} {
+    height: 50px;
+  }
 `;
 
 const SubmitBtn = styled.button`
-border-radius: 0px 9px 9px 0 ;
-height: 33px;
-border: none;
-background-color: #FFBCBC;
-color: white;
-font-size: x-large;
-font-weight: 600;
+  border-radius: 0px 9px 9px 0;
+  height: 33px;
+  border: none;
+  background-color: #ffbcbc;
+  color: white;
+  font-size: x-large;
+  font-weight: 600;
 
-`
+  @media ${devices.tablet} {
+    height: 55px;
+    width: 40px;
+  }
+`;
 
 const AddNewTask = () => {
   const [inputValue, setInputValue] = useState("");
@@ -111,7 +127,10 @@ const AddNewTask = () => {
         </form>
 
         <NewTaskbtn onClick={toggleClass}>
-          <PlusIcon src="../images/icons8-plus-math-26.png"></PlusIcon>
+          <PlusIcon
+            src="../images/icons8-plus-math-26.png"
+            className={isActive ? "img-hidden" : "img-active"}
+          ></PlusIcon>
           <NewTaskBtnText>NEW TASK</NewTaskBtnText>
         </NewTaskbtn>
       </NewTask>

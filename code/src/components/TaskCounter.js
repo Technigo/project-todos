@@ -3,17 +3,17 @@ import { useSelector } from "react-redux";
 import styled from "styled-components";
 
 import { devices } from "styles";
-import { TaskCard } from "./TaskList";
+import { TaskCard, TaskWrapper } from "./TaskList";
 
 const NrOfTask = styled.p`
   font-size: 16px;
   font-weight: 500;
   margin-left: 20px;
 
-  @media ${devices.tablet}{
+  @media ${devices.tablet} {
     font-size: 20px;
-  font-weight: 600;
-  margin-left: 15%;
+    font-weight: 600;
+    margin-left: 15%;
   }
 `;
 
@@ -28,8 +28,13 @@ const TaskCounter = () => {
       </div>
     );
   } else if (remainingToDo.length === 0) {
-    return <TaskCard>
-    <p>Let's sdd something to your To Do list</p></TaskCard>;
+    return (
+      <TaskWrapper>
+        <TaskCard>
+          <p>Let's sdd something to your To Do list</p>
+        </TaskCard>
+      </TaskWrapper>
+    );
   }
 };
 export default TaskCounter;

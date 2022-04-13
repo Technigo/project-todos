@@ -21,13 +21,13 @@ const store = configureStore({
 export const App = () => {
   return (
     <>
-    <GlobalStyle/>
-    <Provider store={store}>
-      <Header/>
-      <TaskList/>
-      <TaskCounter/>
-      <AddNewTask/>
-    </Provider>
+      <GlobalStyle />
+      <Provider store={store}>
+        <Header />
+        <TaskList />
+        <TaskCounter />
+        <AddNewTask />
+      </Provider>
     </>
   );
 };

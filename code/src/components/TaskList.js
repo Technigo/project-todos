@@ -5,7 +5,7 @@ import styled from "styled-components";
 import tasks from "reducers/tasks";
 import { devices } from "styles";
 
-const TaskWrapper = styled.section`
+export const TaskWrapper = styled.section`
   @media ${devices.tablet} {
     display: flex;
     flex-direction: row;
