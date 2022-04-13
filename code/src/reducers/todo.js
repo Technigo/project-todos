@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import styled from "styled-components/macro";
 
 const data = [
   {

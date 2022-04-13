@@ -8,7 +8,7 @@ import "./App.css";
 //combineReducers for the pockets and configureStore for the backpack
 import tasks from "reducers/todo";
 
-import TaskList from "components/TodoList";
+import TaskList from "components/todoList";
 
 //One of the pocket in the backpack
 const reducer = combineReducers({
