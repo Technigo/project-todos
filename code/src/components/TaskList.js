@@ -54,7 +54,6 @@ const CheckLabel = styled.label`
 
 const TaskList = () => {
     const allTasks = useSelector((store) => store.tasks.items)
-    const remainingTasks = allTasks.filter((task) => task.complete === false)
 
     const dispatch = useDispatch()
 

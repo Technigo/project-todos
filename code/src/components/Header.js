@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const HeaderWrapper = styled.header`
@@ -12,22 +11,6 @@ const Title = styled.h1`
     color: white;
     padding: 25px;
 `
-
-const HeaderButton = styled.button`
-    border: none;
-    background-color: #723c70;
-    color: white;
-    font-size: 16px;
-    text-decoration: underline;
-    cursor: pointer;
-`
-const ButtonWrapper = styled.div`
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-`
-
-
 
 
 const Header = () => {
