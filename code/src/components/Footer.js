@@ -9,7 +9,6 @@ const FooterText = styled.p`
   font-family: 'Quicksand', sans-serif;
 `
 
-
 const Footer = () => {
     return (
         <FooterText>

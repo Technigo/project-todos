@@ -15,16 +15,17 @@ code {
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
 
+/* CHECKBOX STYLING */
 [type="checkbox"]{
   opacity: 0;
-}
+} 
 
 [type="checkbox"] + label{
   position: relative;
-  padding-left: 40px;
+  padding-left: 30px;
   cursor: pointer;
   display: inline-block;
-  color: darkslateblue;
+  color: #666;
   line-height: 25px;
 }
 
@@ -33,23 +34,22 @@ code {
   position: absolute;
   left: 0;
   top: 0;
-  width: 24px;
-  height: 24px;
-  outline: 2px solid black;
-  background: white;
-  border-radius: 4px;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid #aaa;
+  background: #fff;
 }
 
+/* FROM HERE ON IT ONLY WORKS IN DEV TOOLS IN RESPONSIVE MODE, NOT IN BROWSER */
 [type="checkbox"]:checked + label::before{
   content: "";
   position: absolute;
   left: 0;
   top: 0;
-  width: 24px;
-  height: 24px;
+  width: 18px;
+  height: 18px;
   outline: 2px solid hotpink;
-  background: white;
-  border-radius: 4px;
+  background: #fff;
 }
 
 [type="checkbox"]:checked + label::after{
@@ -57,10 +57,24 @@ code {
   position: absolute;
   left: 0;
   top: 0;
-  width: 24px;
-  height: 24px;
-  background-image: url(/code/public/assets/checkmark.png);
+  width: 18px;
+  height: 18px;
+  background: url('/assets/checkmark.png');
   background-size: contain;
-  border-radius: 4px;
+  transform: scale(1);
+  opacity: 1;
+  transition: all .3s ease;
 }
 
+[type="checkbox"]:not(:checked) + label::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 18px;
+  height: 18px;
+  background: url('/assets/checkmark.png');
+  background-size: contain;
+  transform:scale(0);
+  opacity: 0;
+}

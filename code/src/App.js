@@ -4,6 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import pokemons from 'reducers/pokemons'
 
+import AddPokemon from 'components/AddPokemon'
 import PokemonList from 'components/PokemonList'
 import ToDoCounter from 'components/ToDoCounter'
 import Header from 'components/Header'
@@ -21,6 +22,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
+      <AddPokemon />
       <PokemonList />
       <ToDoCounter />
       <Footer />

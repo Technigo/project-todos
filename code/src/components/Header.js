@@ -12,9 +12,7 @@ const HeaderTitle = styled.h1`
 const Header = () => {
     
     return (
-        <>
-        <HeaderTitle>get it done</HeaderTitle>
-        </>
+        <HeaderTitle>Get it done</HeaderTitle>
     )
 }
 

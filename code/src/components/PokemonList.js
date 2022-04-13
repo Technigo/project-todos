@@ -32,26 +32,31 @@ const DeleteEmoji = styled.span`
 `
 
 const PokemonList = () => {
+
   const pokemonList = useSelector((store) => store.pokemons.items)
 
   const dispatch = useDispatch()
 
   const onPokemonToggle = (pokemonId) => {
       dispatch(pokemons.actions.toggleItem(pokemonId))
-  }  
+  } 
+  
+  const onPokemonDelete = (index) => {
+    dispatch(pokemons.actions.deleteItem(index))
+  }
 
     return (
       <section>
-        {pokemonList.map(pokemonItem => (
+        {pokemonList.map((pokemonItem, pokemonIndex) => (
           <PokemonItem key={pokemonItem.id}>
             <ToDoItem>{pokemonItem.name}</ToDoItem>
             <input 
               type="checkbox" 
-              checked={pokemonItem.isDone} 
+              checked={pokemonItem.isDone}
               onChange={() => onPokemonToggle(pokemonItem.id)}
             />
-            <label htmlFor="completed">Done</label>
-            <DeleteButton>
+            <label htmlFor="done">Done</label>
+            <DeleteButton onClick={() => onPokemonDelete(pokemonIndex)}>
               <DeleteEmoji role="img" aria-label="delete">
                 ✖
               </DeleteEmoji>

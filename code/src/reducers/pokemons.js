@@ -3,19 +3,9 @@ import { createSlice } from '@reduxjs/toolkit'
 const data = [
     {
       id: 'abcd1234',
-      name: 'Buy laundry detergent',
+      name: 'Practice yoga',
       isDone: false,
-    },
-    {
-      id: 'efgh5678',
-      name: 'Do project!',
-      isDone: false,
-    },
-    {
-        id: 'ijkl9101',
-        name: 'Practice yin yoga',
-        isDone: false,
-    },
+    }
   ]
 
 const pokemons = createSlice({
@@ -25,14 +15,17 @@ const pokemons = createSlice({
   },
   reducers: {
     toggleItem: (store, action) => {
-        console.log(store)
-        console.log(action)
-
       store.items.forEach(item => {
         if (item.id === action.payload) {
           item.isDone = !item.isDone
         }
       })
+    },
+    deleteItem: (store, action) => {
+      store.items.splice(action.payload, 1)
+    },
+    addItem: (store, action) => {
+      store.items.push(action.payload);
     }
   },
 })
