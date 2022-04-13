@@ -15,13 +15,12 @@ const Header = () => {
         <h1>Today <Regular>{new Date().toLocaleDateString('en-SE', {
           weekday: 'long',
           day: 'numeric'
-        })}</Regular><Count>
+        })}</Regular>
             {count === 0 || count === 1 ? (
-              <span>{count} task</span>
+              <Count>{count} task</Count>
             ) : (
-              <span>{count} tasks</span>
-            )}
-          </Count></h1>
+              <Count>{count} tasks</Count>
+            )}</h1>
       </FlexRow>
     </header>
   )
