@@ -34,7 +34,7 @@ align-items: center;
 
 const HeaderImage = styled.img`
 width: 170px;
-margin-top: 25px;
+margin-top: 35px;
 `
 
 const Nav = styled.nav`
@@ -76,10 +76,9 @@ word-break: break-word;
 const TaskHeading = styled.h2`
 margin-block-start: -2px;
 font-size: 20px;
-max-width: 70%;
+max-width: 82%;
 overflow-wrap: break-word;
 `
-
 
 const Checkbox = styled.input`
 margin-top: 10px;

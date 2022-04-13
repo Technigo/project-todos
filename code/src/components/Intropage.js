@@ -44,7 +44,7 @@ font-size: 15px;
 
 const IntroImage = styled.img`
 width: 350px;
-margin-top: 25px;
+margin-top: 35px;
 `
   
 const IntroPage = () => {
