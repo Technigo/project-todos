@@ -66,14 +66,14 @@ const AddTodo = () => {
         <AddFeatures>
           <AddOptions>
             <AddCategory>
-              <label htmlFor="category" value="Choose a category"></label>
-              <select id="category" value={inputCategory} onChange={onChangeInputCategory}>
-                {/* <option value="" disabled>--Choose a category--</option> */}
-                <option value="neutral">Neutral</option>
-                <option value="funny">Funny</option>
-                <option value="boring">Boring</option>
-                <option value="hard">Hard</option>
-              </select>
+              <label>
+                <select value={inputCategory} onChange={onChangeInputCategory}>
+                  <option value="neutral">Neutral</option>
+                  <option value="funny">Funny</option>
+                  <option value="boring">Boring</option>
+                  <option value="hard">Hard</option>
+                </select>
+              </label>
             </AddCategory>
             <AddDeadline>
               <DatePicker placeholderText="Choose a deadline (optional)" selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd.MM.yyyy" locale={'en'} minDate={new Date()} />

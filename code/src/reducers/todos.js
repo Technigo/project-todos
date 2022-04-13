@@ -49,6 +49,10 @@ const todos = createSlice({
       store.items = store.items.concat(store.deletedItems)
       store.deletedItems = []
     },
+
+    disableUndoDelete: (store) => {
+      store.deletedItems = []
+    }
   }
 })
 

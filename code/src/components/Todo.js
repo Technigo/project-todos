@@ -5,7 +5,7 @@ import { formatRelative, formatDistanceToNow } from 'date-fns'
 import enGB from 'date-fns/locale/en-GB'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircle, faFaceDizzy, faFaceFlushed, faFaceGrinSquintTears, faFaceMehBlank } from '@fortawesome/free-regular-svg-icons'
+import { faCircle, faFaceDizzy, faFaceFlushed, faFaceGrinSquintTears, faFaceMeh } from '@fortawesome/free-regular-svg-icons'
 import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 import { faTrashCan } from '@fortawesome/free-regular-svg-icons'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
@@ -43,7 +43,7 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
 
   const categoryIcon = () => {
     if (todo.category === 'neutral') {
-      return <FontAwesomeIcon icon={faFaceMehBlank} />
+      return <FontAwesomeIcon icon={faFaceMeh} />
     } else if (todo.category === 'funny') {
       return <FontAwesomeIcon icon={faFaceGrinSquintTears} />
     } else if (todo.category === 'boring') {

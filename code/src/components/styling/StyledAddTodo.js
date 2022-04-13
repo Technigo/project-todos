@@ -9,6 +9,7 @@ padding: 10px;
 border: 2px solid red;
 border-radius: 5px;
 background: #fff;
+/* color: blue; */
 `
 
 export const AddTextBox = styled.div`
@@ -22,16 +23,23 @@ border-radius: 0;
 outline: none;
 /* why is it larger than the box that contains it?? */
 width: 100%;
-&:focus {
+/* &:focus {
   background-color: lightgrey;
-}
+} */
 `
 
 export const AddCategory = styled.div`
 
 & select {
   width: 242px;
+  background-color: #fff;
+  /* border-radius: 5px; */
+  border: 1px solid #000;
+  color: inherit;
+  font-family: inherit;
+  font-size: 100%;
 }
+
 `
 
 export const AddDeadline = styled.div`

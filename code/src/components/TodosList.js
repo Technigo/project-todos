@@ -13,6 +13,10 @@ import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 
 import { FilteringSection, FilteringButtonsBox, FilteringInput, Count } from './styling/StyledFiltering'
+import NoPendingTask from './NoPendingTask'
+import NoCompletedTask from './NoCompletedTask'
+import NoSearchResults from './NoSearchResults'
+import NoTask from './NoTask'
 
 const TodosList = ({ setIsUndoDisabled }) => {
 
@@ -59,8 +63,25 @@ const TodosList = ({ setIsUndoDisabled }) => {
     setIsCompletedDisabled(false)
   }
 
+  let count = ''
+
+  if (inputSearch !== '') {
+    if ((pendingTodosSearched.length + completedTodosSearched.length) < 2) {
+      count = `${pendingTodosSearched.length + completedTodosSearched.length} task fits your search`
+    } else {
+      count = `${pendingTodosSearched.length + completedTodosSearched.length} tasks fit your search`
+    }
+  } else if (pendingTodos.length === 0) {
+    count = 'no task left to do'
+  } else if (pendingTodos.length === 1) {
+    count = `only ${pendingTodos.length} task left to do`
+  } else {
+    count = `${pendingTodos.length} tasks left to do`
+  }
+
   return (
     <>
+
       <FilteringSection>
         <FilteringButtonsBox>
           <FilteringButton onClick={displayPending} disabled={isPendingDisabled}><FontAwesomeIcon icon={faCircle} /></FilteringButton>
@@ -68,28 +89,30 @@ const TodosList = ({ setIsUndoDisabled }) => {
           <FilteringButton onClick={displayCompleted} disabled={isCompletedDisabled}><FontAwesomeIcon icon={faCircleCheck} /></FilteringButton>
         </FilteringButtonsBox>
         <FilteringInput>
-            <input placeholder="Search a task or a category" type="search" name="q" onChange={onTodoSearch} value={inputSearch} autoComplete="off" />
+          <input placeholder="Search a task or a category" type="search" name="q" onChange={onTodoSearch} value={inputSearch} autoComplete="off" />
         </FilteringInput>
-        <Count>{pendingTodos.length} tasks left to do</Count>
+        <Count>{count}</Count>
       </FilteringSection>
-
+{(!pendingTodos.length && !completedTodos.length) ? <NoTask /> : 
+      <>
       <div style={{ display: pendingVisible }}>
-        <SortableDroppable arrayToUse={pendingTodosSearched.reverse().map((todo) => (
-          <Todo key={todo.id} todo={todo} id={todo.id} setIsUndoDisabled={setIsUndoDisabled} />
-        ))} />
-      </div>
-
-
-      <div style={{ display: completedVisible }}>
-        <SortableDroppable arrayToUse={completedTodosSearched.reverse().map((todo) => (
-          <Todo key={todo.id} todo={todo} id={todo.id} setIsUndoDisabled={setIsUndoDisabled} />
-        ))} />
-
-      </div>
-
-      {/* use just one count? */}
-      {/* {allTodos.length !== 0 && <span><p>{allTodos.length} tasks ({pendingTodos.length} pending)</p> <p>{allTodos.length} tasks ({completedTodos.length} completed)</p></span>} */}
-
+          {pendingTodos.length ?
+            <SortableDroppable arrayToUse={pendingTodosSearched.reverse().map((todo) => (
+              <Todo key={todo.id} todo={todo} id={todo.id} setIsUndoDisabled={setIsUndoDisabled} />
+            ))} />
+            :
+            <NoPendingTask />}
+        </div><div style={{ display: completedVisible }}>
+            {completedTodos.length ?
+              <SortableDroppable arrayToUse={completedTodosSearched.reverse().map((todo) => (
+                <Todo key={todo.id} todo={todo} id={todo.id} setIsUndoDisabled={setIsUndoDisabled} />
+              ))} />
+              :
+              <NoCompletedTask />}
+          </div>
+          </>
+    }
+      {(allTodos.length && !pendingTodosSearched.length && !completedTodosSearched.length) ? <NoSearchResults /> : ''}
     </>
   )
 }

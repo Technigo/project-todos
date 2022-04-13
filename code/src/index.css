@@ -40,3 +40,9 @@ code {
 .react-datepicker__input-container input {
   width: 234px;
 }
+
+input {
+  color: inherit;
+  font-family: inherit;
+  font-size: 100%;
+}
