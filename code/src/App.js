@@ -6,7 +6,6 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import StartPage from 'components/StartPage'
 import IntroPage from 'components/Intropage'
 import tasks from 'reducers/tasks'
-import AddTask from 'components/AddTask'
 import NotFound from 'components/NotFound'
 
 

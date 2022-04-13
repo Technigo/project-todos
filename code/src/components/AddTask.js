@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
-import styled from 'styled-components'
-import uniqid from 'uniq'
+import { useDispatch } from 'react-redux'
+// import styled from 'styled-components'
+import uniqid from 'uniqid'
 
 import tasks from 'reducers/tasks'
 
@@ -9,7 +9,7 @@ import tasks from 'reducers/tasks'
 const AddTask = () => {
 
     const [inputValue, setInputValue] = useState("")
-    
+
     const dispatch = useDispatch()
 
     const onFormSubmit = (event) => {
@@ -20,25 +20,29 @@ const AddTask = () => {
         name: inputValue,
         isDone: false,
     }
-    
+
     dispatch(tasks.actions.addItem(newTask))
 
     setInputValue('')
     }
 
     return (
-        <form onSumbit={onFormSubmit}>
-            
+        <form onSubmit={onFormSubmit}>
+
            <label>
                New task: &nbsp;
-           <input 
+           <input
             type="text"
-            value={inputValue} 
-            onChange={e => setInputValue(e.target.value)} />
+            value={inputValue}
+            onChange={(e) => setInputValue(e.target.value)} />
 
            </label>
            &nbsp;
-        <button type="submit">Submit</button>
+        <button 
+        type="submit">
+            Submit
+        </button>
+        
         </form>
 
     )
