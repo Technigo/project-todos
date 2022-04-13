@@ -78,6 +78,7 @@ margin-block-start: -18px;
 font-size: 20px;
 max-width: 70%;
 overflow-wrap: break-word;
+padding-bottom: 6px;
 `
 
 const NewTaskHeading = styled.h2`
@@ -89,6 +90,7 @@ overflow-wrap: break-word;
 
 const Checkbox = styled.input`
 margin-top: 10px;
+vertical-align: bottom;
 `
 
 const StartPage = () => {
@@ -139,7 +141,7 @@ const StartPage = () => {
                     type="checkbox" 
                     checked={taskItem.isDone} 
                     onChange={() => onTaskToggle(taskItem.id)} />
-                   I'm done with this
+                     &nbsp; I'm done with this
                     </label>
                   
                 </Article>
