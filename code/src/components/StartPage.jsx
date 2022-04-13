@@ -4,7 +4,6 @@ import { Container, Heading } from '@chakra-ui/react';
 import { VisibilityFilter } from './VisibilityFilter';
 import { TodoList } from './TodoList';
 import { AddTodo } from './AddTodo';
-import ToDoCounter from './ToDoCounter';
 
 export const StartPage = () => {
     return (
@@ -16,7 +15,6 @@ export const StartPage = () => {
             <VisibilityFilter />
             <AddTodo />
             <TodoList/>  
-            <ToDoCounter />
         </Container>
     )
 }
