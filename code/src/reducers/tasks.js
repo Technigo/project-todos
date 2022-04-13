@@ -6,13 +6,6 @@ export const taskList = [
     { id: 'e3f6', task: 'Buy milk', tag: 'shopping', isDone: false },
 ]
 
-//with local state (useState), the taskText has an object as property
-// { id: '123', taskText: { input: "buy carrots"}, isDone: false }
-// so in this case, easier to just add the tags into the input object
-
-//Ideally, It should look like tthis
-// { id: '123', taskInput: [{ input: "buy carrots", tags: "shopping" }], isDone: false }
-
 export const tasks = createSlice({
     name: 'tasks',
     initialState: {
@@ -25,22 +18,29 @@ export const tasks = createSlice({
                 id: Date.now().toString(),
                 task: task,
                 tag: tag,
-                isDone: false
+                isDone: false,
             }
             store.items = [...store.items, newTodo];
         },
         removeTask: (store, action) => {
             const updatedTasks = store.items.filter(
                 (item) => item.id !== action.payload
-              )
+            )
             store.items = updatedTasks
         },
         toggleDoneTask: (store, action) => {
-            store.items.forEach((item) => {
+            const updatedItems = store.items.map((item) => {
                 if (item.id === action.payload) {
-                  item.isDone = !item.isDone;
+                    const updatedItem = {
+                        ...item,
+                        isDone: !item.isDone,
+                    }
+                    return updatedItem
+                } else {
+                    return item
                 }
-              })
+            })
+            store.items = updatedItems
         }
     }
 })

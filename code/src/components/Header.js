@@ -7,7 +7,7 @@ import { FlexRow } from './styles/Containers.styled'
 
 
 const Header = () => {
-  const count = useSelector((store) => store.tasks.items.length);
+  const count = useSelector((store) => store.tasks.items.filter((item) => item.isDone === false))
 
   return (
     <header>
@@ -16,10 +16,10 @@ const Header = () => {
           weekday: 'long',
           day: 'numeric'
         })}</Regular>
-            {count === 0 || count === 1 ? (
-              <Count>{count} task</Count>
+            {count.length === 0 || count.length === 1 ? (
+              <Count>{count.length} task</Count>
             ) : (
-              <Count>{count} tasks</Count>
+              <Count>{count.length} tasks</Count>
             )}</h1>
       </FlexRow>
     </header>
