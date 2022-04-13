@@ -32,14 +32,6 @@ align-items: center;
 }
 `
 
-const Article = styled.article`
-width: 100%;
-margin: 0 auto;
-display: flex;
-flex-direction: column;
-align-items: center;
-`
-
 const Nav = styled.nav`
 display: flex;
 flex-direction: column;
@@ -90,7 +82,7 @@ const StartPage = () => {
     
             {tasksList.map((taskItem, taskIndex) => (
 
-                <Article>
+                <article>
                     <h2>{taskItem.name}</h2>
                     
                     <label>
@@ -106,7 +98,7 @@ const StartPage = () => {
                     <span role="img" aria-label="cross">❌</span> 
                     </Button>
                   
-                </Article>
+                </article>
 
             ))}
             </Container>
