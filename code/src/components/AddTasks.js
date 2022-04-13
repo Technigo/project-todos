@@ -44,7 +44,7 @@ const AddTasks = () => {
             onChange={onTaskValueChange}
             maxLength="30"
           />
-          {charCount}/30 charactors
+          {charCount}/30 characters
         </label>
         <TagsWrapper>
           <form value={tag}>
