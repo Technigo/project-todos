@@ -1,13 +1,12 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+To Do App made with React/Redux & Chackra UI.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Approached the project after reading all the info provided, Redux was challenging but a lot of fun once you get the hang of it.
+Went mobile first and since i use Chakra UI the media queries were already set.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://effektiapp.netlify.app
