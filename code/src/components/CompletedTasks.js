@@ -7,7 +7,7 @@ import Footer from 'components/Footer'
 const CompletedTasks = () => {
     const allTasks = useSelector((store) => store.tasks.items)
 
-    const dispatch = useDispatch()
+    // const dispatch = useDispatch()
 
     // const onItemToggle = (taskId) => {
     //     dispatch(tasks.actions.toggleItem(taskId))
@@ -21,7 +21,7 @@ const CompletedTasks = () => {
             <div>
             {allTasks.map(taskItem => (
                 <article key={taskItem.id}>
-                    <h3>{taskItem.text}</h3>
+                    {taskItem.complete === true ? <h3>{taskItem.text}</h3> : ''}
                     <label> Completed:
                         <input type="checkbox" 
                         checked={taskItem.complete} 

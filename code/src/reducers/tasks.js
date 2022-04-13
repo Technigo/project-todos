@@ -19,28 +19,14 @@ const tasks = createSlice({
             })
         },
 
-        // removeItem: (store, action) => {
-        //     const existingItem =  store.items.find((item) => item.id === action.payload.id)
+        deleteItem: (store, action) => {
+            store.items.splice(action.payload, 1)
+        },
 
-        //     if (existingItem && existingItem.quantity === 1) {
-        //         store.items = store.items.filter((item) => item.id !== action.payload.id)
-        //     }else if (existingItem) {
-        //         existingItem.quantity -= 1
-        //     }
-        // }
-
-       // completeItem: (store, action) => {
-            //             const existingItem =  store.items.find((item) => item.id === action.payload.id)
-            
-            //             if (existingItem) {
-            //                 existingItem.quantity += 1
-            //             } else {
-            //                 store.items.push({...action.payload, quantity: 1})
-            //             }
-            //         },
-    },
-
-
+        addItem: (store, action) => {
+           store.items.push(action.payload)
+        },
+    }
 })
 
 export default tasks

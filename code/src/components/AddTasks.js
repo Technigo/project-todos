@@ -1,5 +1,10 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
+import { useState } from 'react'
+import { uniqid } from "uniqid"
 import styled from 'styled-components'
+
+import tasks from 'reducers/tasks'
 
 const devices = {
     mobile: "(min-width: 375px)",
@@ -60,19 +65,40 @@ const AddButton = styled.button`
 
 
 const AddTasks = () => {
+    const [inputValue, setInputValue] = useState("")
+
+    const dispatch = useDispatch()
+
+    const onFormSubmit = (event) => {
+        event.preventDefault()
+
+        const newTask = {
+            id: uniqid(),
+            text: inputValue,
+            complete: false,
+        }
+
+        dispatch(tasks.actions.addItem(newTask))
+
+         setInputValue("")
+    }
+
     return(
-        <section>
+        <article>
             <Container>
-                <Form>
+                <Form onSubmit={onFormSubmit}>
                     <Label>Add new task here</Label>
-                        <Textarea type="textarea"/>
-                    <AddButton>
-                    {/* disabled={xxxx.length < 1} Add when button is working*/}
+                        <Textarea 
+                        type="textarea"
+                        value={inputValue}
+                        onChange={(event) => setInputValue(event.target.value)}/>
+                    <AddButton
+                        type="submit">
                         Add task
                     </AddButton>
                 </Form>
             </Container>
-        </section>
+        </article>
     )
 }
 

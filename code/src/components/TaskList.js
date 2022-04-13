@@ -27,7 +27,7 @@ const TaskName = styled.h3`
     font-family: 'Grape Nuts', cursive;
 `
 
-const RemoveButton = styled.button`
+const DeleteButton = styled.button`
     background-color: white;
     position: absolute;
     top: 10px;
@@ -46,14 +46,14 @@ const TaskList = () => {
         dispatch(tasks.actions.toggleItem(taskId))
     }
 
-    // const onButtonClick = (taskId) => {
-    //     dispatch(tasks.actions.removeItem(taskId))
-    // }
+    const onDeleteButton = (index) => {
+        dispatch(tasks.actions.deleteItem(index))
+     }
 
     return (
         <section>
             <Container>
-            {allTasks.map(taskItem => (
+            {allTasks.map((taskItem, index) => (
                 <TaskArticle key={taskItem.id}>
                     <TaskName>{taskItem.text}</TaskName>
                     <label> Completed:
@@ -62,10 +62,10 @@ const TaskList = () => {
                         onChange={() => onItemToggle(taskItem.id)}
                         />
                     </label>
-                    <RemoveButton type="button">                      
-                     {/* onClick={() =>onButtonClick(taskItem.id)} */}
+                    <DeleteButton 
+                        onClick={() =>onDeleteButton(index)}>                      
                         <span role="img" aria-label="cross">❌
-                        </span></RemoveButton>
+                        </span></DeleteButton>
                 </TaskArticle>
             ))}
             </Container>
