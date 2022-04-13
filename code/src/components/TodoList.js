@@ -28,7 +28,7 @@ export const TodoList = () => {
 
     return(
         <>
-        <h1>Todo list</h1>
+        <HeaderH1>Todo list</HeaderH1>
         
             <CompleteContainer>
                 <h1>Tasks: {numberOfTodos - numberOfCompleteItems}</h1>
@@ -64,6 +64,21 @@ export const TodoList = () => {
     )
 }
 
+const devices = {
+    mobile: "(max-width: 667px)",
+    tablet: "(min-width:668px) and (max-width:1024px)",
+    desktop: "(min-width: 1025px)",
+  };
+
+const HeaderH1 = styled.h1`
+    margin: 0;
+    font-family: 'Staatliches', cursive;
+    letter-spacing: 2px;
+    font-size: 40px;
+    color: rgb(255, 142, 77);
+    text-shadow: 3px 3px 3px rgba(255, 124, 135, 0.5);
+`
+
 const CompleteContainer = styled.div`
     display: flex;
     gap: 20px;
@@ -73,11 +88,17 @@ const Task = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @media ${devices.mobile} {
+        transform: scale(0.8);
+      }
+    
 `
 
 const CurrentTask = styled.div`
-    font-size: 24px;
+    font-size: 20px;
     padding: -70px 0;
+    z-index: 10;
 
 `
 

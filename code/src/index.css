@@ -5,11 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background-color: #ecf0f3; */
-  background: linear-gradient(330deg, #D2E0F8, #ecf0f3);
-  background-image: url(./asstes/pexels-ian-beckley-2440024.jpg);
-
-  background-size: cover;
+  background-image: url(./asstes/pexels-eugene-liashchevskyi-10843173.jpg);
+  background-size: cover; 
+  background-position: 50%;
+  font-family: 'Poppins', sans-serif;
 }
 
 code {
@@ -49,3 +48,23 @@ code {
   -ms-overflow-style: none;
   scrollbar-width: none; /* Firefox */
 }
+
+/* Mobile */
+@media (max-width:767px) {
+  body {
+    background-repeat: no-repeat;
+    position: fixed;
+    z-index: -1;
+    background-size: cover;
+    background-position: center top;
+    background-attachment: fixed;
+  }
+
+
+}
+
+/* .addTodo-container {
+  display: flex;
+  align-items: flex-end;
+  height: 250px;
+} */

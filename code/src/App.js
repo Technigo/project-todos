@@ -28,27 +28,64 @@ store.subscribe(() => {
 export const App = () => {
   return (
     <Provider store={store}>
-      <ProviderContainer>
-        <TodoList />
-        <AddTodo />
-      </ProviderContainer>
+      <Wrapper>
+        <ProviderContainer className="provider-container">
+          <TodoList />
+          <AddTodo />
+        </ProviderContainer>
+        </Wrapper>
     </Provider>
   )
 }
 
+
+
+const devices = {
+  mobile: "(max-width: 667px)",
+  tablet: "(min-width:668px) and (max-width:1024px)",
+  desktop: "(min-width: 1025px)",
+};
+
+const Wrapper = styled.section`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid red;
+`
+
 const ProviderContainer = styled.section`
+  position: relative;
   min-height: 600px;
   min-width: 400px;
   max-height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 100px 700px;
   padding: 50px;
   border-radius: 20px;
   background: rgb(236, 240, 243);
    box-shadow: 
-              -3px -3px 20px rgb(236, 226, 225, 0.9),
-              3px 3px 20px rgb(236, 226, 225, 0.9);
+              -3px -3px 30px rgb(255, 175, 130, .8),
+              3px 3px 30px rgb(255, 175, 130, .8);
+
+  @media ${devices.tablet} {
+    margin: 100px 0;
+    width: 400px;
+    min-width: 40px;
+
+  }
+
+  @media ${devices.mobile} {
+    margin: 50px;
+    min-width: 40px;
+    width: 250px;
+
+  }
+
+  @media ${devices.desktop} {
+    margin: 100px 700px;
+
+  }
 
 `
+
