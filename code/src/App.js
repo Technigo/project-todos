@@ -1,17 +1,20 @@
 import React from "react";
 import { Provider } from "react-redux";
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import Input from "components/input";
+import Counter from "components/Counter";
+// import Counter from "components/Counter";
+import styled from "styled-components/macro";
+import Input from "components/Input";
 import "./App.css";
 
 //combineReducers for the pockets and configureStore for the backpack
-import task from "reducers/todo";
+import tasks from "reducers/todo";
 
-import TaskList from "components/todoList";
+import TaskList from "components/TodoList";
 
 //One of the pocket in the backpack
 const reducer = combineReducers({
-  task: task.reducer,
+  task: tasks.reducer,
 });
 
 // Inject the pocket in to the backpack
@@ -26,6 +29,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <TaskList />
+      <Counter />
       <Input />
     </Provider>
   );

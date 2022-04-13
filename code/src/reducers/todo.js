@@ -1,29 +1,25 @@
 import { createSlice } from "@reduxjs/toolkit";
+import styled from "styled-components/macro";
 
 const data = [
   {
     id: "1",
-    text: "Watch video on actions & reducers",
+    text: "Make dinner reservation",
     complete: false,
   },
   {
     id: "2",
-    text: "Follow redux codealong",
+    text: "Laundry",
     complete: false,
   },
   {
     id: "3",
-    text: "Fork weekly assignment",
-    complete: false,
-  },
-  {
-    id: "4",
-    text: "Create a todo app",
+    text: "grocery shopping",
     complete: false,
   },
 ];
 
-const task = createSlice({
+const tasks = createSlice({
   name: "tasks",
   initialState: {
     items: data,
@@ -34,16 +30,20 @@ const task = createSlice({
   // store.items = name of our array
   reducers: {
     toggleItem: (store, action) => {
-      console.log("Store:", store);
-      console.log("Action:", action);
-
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.complete = !item.complete;
         }
       });
     },
+    //remove one argument from the array
+    deleteItem: (store, action) => {
+      store.items.splice(action.payload, 1);
+    },
+    addItem: (store, action) => {
+      store.items.push(action.payload);
+    },
   },
 });
 
-export default task;
+export default tasks;

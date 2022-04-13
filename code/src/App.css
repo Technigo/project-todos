@@ -1,7 +1,19 @@
-.app {
-  height: 100vh;
-  width: 100vw;
-  background-color: palevioletred;
-  display: grid;
-  place-items: center;
+@import url("https://fonts.googleapis.com/css?family=Architects+Daughter&display=swap");
+
+* {
+  margin: 0;
+}
+
+body {
+  background-color: #ffeaa7;
+  font-family: "Architects Daughter", sans-serif;
+  text-align: center;
+}
+h1 {
+  font-size: 25px;
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 16px;
 }
