@@ -42,11 +42,15 @@ align-items: center;
 const Button = styled.button`
 border-radius: 8px;
 border: 0.4px solid gray;
-padding: 3px;
+padding: 4px;
 `
 const BigHeading = styled.h1`
 color: #1D3F6F;
 font-size: 28px;
+`
+
+const Emoji = styled.span`
+font-size: 10px;
 `
 
 const StartPage = () => {
@@ -95,7 +99,7 @@ const StartPage = () => {
                     </label>
 
                     <Button onClick={() => onDeleteClick(taskIndex)} >
-                    <span role="img" aria-label="cross">❌</span> 
+                    <Emoji role="img" aria-label="cross">❌</Emoji> 
                     </Button>
                   
                 </article>
