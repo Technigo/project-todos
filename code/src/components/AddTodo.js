@@ -76,7 +76,7 @@ const AddTodoContainer = styled.section`
       }
 
       @media ${devices.tablet} {
-        bottom: 400px;
+        bottom: 300px;
     
       }
 
