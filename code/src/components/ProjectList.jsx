@@ -3,40 +3,10 @@ import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 
-// Import Icons'
-import {
-  chatwhite,
-  clipboardwhite,
-  gamewhite,
-  giftwhite,
-  outdoorswhite,
-  pinwhite,
-  shoppingwhite,
-  timewhite,
-  travelwhite,
-  tvwhite,
-  viewwhite,
-  weatherwhite,
-} from "../assets/icons";
-
-const iconArray = [
-  [chatwhite, "chat"],
-  [clipboardwhite, "clipboard"],
-  [gamewhite, "game"],
-  [giftwhite, "gift"],
-  [outdoorswhite, "outdoors"],
-  [pinwhite, "pin"],
-  [shoppingwhite, "shopping"],
-  [timewhite, "time"],
-  [travelwhite, "travel"],
-  [tvwhite, "tv"],
-  [viewwhite, "view"],
-  [weatherwhite, "weather"],
-];
-
 const ProjectList = () => {
   const projects = useSelector((store) => store.projects.project);
   const tasks = useSelector((store) => store.tasks.task);
+  const icons = useSelector((store) => store.icons.icons);
 
   return (
     <>
@@ -44,7 +14,10 @@ const ProjectList = () => {
         <Link to={`/projects/${project.id}`} key={project.id}>
           <ProjectListContainer color={project.color}>
             <IconTitle>
-              <Icon src={iconArray[Number(project.icon)][0]} />
+              <Icon
+                src={icons[Number(project.icon)][3]}
+                alt={icons[Number(project.icon)][1]}
+              />
               {project.title}
             </IconTitle>
             <div>

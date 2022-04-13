@@ -4,8 +4,8 @@ import ProjectCarousel from "./ProjectCarousel";
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
 import CarouselChildren from "./CarouselChildren";
-import addgray from "../assets/addgray.svg";
 import homeicon from "../assets/homeicon.svg";
+import addgray from "../assets/addgray.svg";
 
 const Header = () => {
   const projects = useSelector((store) => store.projects.project);
