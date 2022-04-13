@@ -1,25 +1,25 @@
-import React from "react";
-import { Provider } from "react-redux";
-import { combineReducers, configureStore } from "@reduxjs/toolkit";
+import React from "react"
+import { Provider } from "react-redux"
+import { combineReducers, configureStore } from "@reduxjs/toolkit"
 
-import todos from "./reducers/todos";
+import todos from "./reducers/todos"
 
-import AddTodo from "./components/AddTodo";
-import TodoList from "./components/TodoList";
+import AddTodo from "./components/AddTodo"
+import TodoList from "./components/TodoList"
 
 const reducer = combineReducers({
   todos: todos.reducer,
-});
+})
 
-const store = configureStore({ reducer });
+const store = configureStore({ reducer })
 
 export const App = () => {
   return (
     <Provider store={store}>
-      <div className="todo-container">
+      <div className='todo-container'>
         <AddTodo />
         <TodoList />
       </div>
     </Provider>
-  );
-};
+  )
+}

@@ -2,6 +2,7 @@ import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 import todos from "../reducers/todos"
 import styled from "styled-components"
+import moment from "moment"
 
 const Button = styled.button`
   backgroundcolor: whitesmoke;
@@ -34,9 +35,12 @@ const TodoList = () => {
             checked={item.isComplete}
             onChange={() => onToggleToDo(item.id)}
           />
-          <p>{item.text}</p>
+          <div className='todo-text-container'>
+            <p className='todo-text'>{item.text}</p>
+            <span className='date'>{moment().calendar()}</span>
+          </div>
           <Button onClick={() => onDeleteTodo(index)}>
-            <span role='img' aria-label='minus'>
+            <span role='img' aria-label='minus-icon'>
               ➖
             </span>
           </Button>

@@ -36,7 +36,7 @@ const AddTodo = () => {
         maxLength='20'
       />
       <Button onClick={onAddTodo}>
-        <span role='img' aria-label='plus'>
+        <span role='img' aria-label='plus-icon'>
           ➕
         </span>
       </Button>

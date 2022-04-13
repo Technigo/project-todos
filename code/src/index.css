@@ -4,6 +4,12 @@ body {
   background-image: url(assets/cork-background.jpg);
 }
 
+.date {
+  font-size: 9px;
+  display: flex;
+  justify-content: flex-start;
+}
+
 .header-text {
   font-size: 18px;
   font-weight: 700;
@@ -11,18 +17,23 @@ body {
 
 .todo-item {
   display: flex;
-  align-items: center;
-  margin-top: 12px;
+  margin: 12px;
 }
 
-.todo-item p {
+.todo-text {
   font-size: 17px;
   margin: 7px 10px 7px 10px;
 }
 
+.todo-text-container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
 .todo-item button {
   position: absolute;
-  right: 42px;
+  right: 20px;
 }
 
 .todo-container {
@@ -60,7 +71,7 @@ body {
   width: 35px;
   height: 35px;
   position: absolute;
-  left: 38px;
+  left: 20px;
   cursor: pointer;
   opacity: 1;
   transform: scale(1);
