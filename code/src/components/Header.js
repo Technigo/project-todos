@@ -11,19 +11,30 @@ const OutterDateContainer = styled.div`
 const StyleContainer = styled.div`
     white-space: nowrap; 
 `	
-
 const DateStamp = styled.div`
-    // font-size: 1rem;
-    // font-weight: 500;
-    color: red;
+    font-size: 2.8rem;
+    font-weight: 500;
+    color: black;
     display: inline-block;
 ` 
 const YearMonthStamp = styled.div`
     display: inline-block;
-    // font-size: 1.02rem;
-    // font-weight: 500;
-    // margin-left: 0.3rem; 
+    font-size: 1.02rem;
+    font-weight: 500;
+    margin-left: 0.3rem; 
 ` 
+const Title = styled.h1`
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: normal;
+    // border: 1px solid black;
+    margin: 1.5rem 4rem;
+    background: #99a8bb;
+`
+const CounterWrapper = styled.div`
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid black;
+`
 const Header = () => {
 
     const allTasks = useSelector(store => store.tasks.items);
@@ -38,9 +49,9 @@ const Header = () => {
 
     return (
         <>
-            <h1>
+            <Title>
                 Task-it
-            </h1>
+            </Title>
             <OutterDateContainer>
                 <StyleContainer>
                     <DateStamp>
@@ -53,11 +64,11 @@ const Header = () => {
                 </StyleContainer>
                 <p>{weekday}</p>
             </OutterDateContainer>
-                <div>
+                <CounterWrapper>
                     <p>You have {allTasks.length} task(s) in total.</p>
                     <p>Completed task(s) : {completedTasks.length}.</p>
                     <p>Uncompleted tasks(s) : {unCompletedTasks.length}.</p>
-                </div>
+                </CounterWrapper>
             
         </>
     )
