@@ -34,7 +34,7 @@ align-items: center;
 
 const HeaderImage = styled.img`
 width: 170px;
-margin-top: 15px;
+margin-top: 25px;
 `
 
 const Nav = styled.nav`
