@@ -34,12 +34,10 @@ font-size: 34px;
 `
 
 const Button = styled.button`
-background: transparent;
-border-radius: 10px;
-font-family: 'Roboto', serif;
-font-size: 14px;
-border: 1px solid gray;
-padding: 0.5rem;
+border-radius: 8px;
+border: 0.4px solid gray;
+padding: 6px;
+font-family: 'Roboto', sans-serif;
 `
   
 const IntroPage = () => {
