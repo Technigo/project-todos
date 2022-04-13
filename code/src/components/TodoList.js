@@ -2,9 +2,9 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
-import pokemons from 'reducers/pokemons'
+import todos from 'reducers/todos'
 
-const PokemonItem = styled.article`
+const TodoItem = styled.article`
   border-radius: 4px;
   padding: 12px;
   margin-bottom: 6px;
@@ -21,7 +21,7 @@ const DeleteButton = styled.button`
   cursor: pointer;
 `
 
-const ToDoItem = styled.h2`
+const TodoItemText = styled.h2`
   font-family: 'Quicksand', sans-serif;
   color: #D885A3;
   font-size: 20px;
@@ -31,40 +31,40 @@ const DeleteEmoji = styled.span`
   font-size: 28px;
 `
 
-const PokemonList = () => {
+const TodoList = () => {
 
-  const pokemonList = useSelector((store) => store.pokemons.items)
+  const todoList = useSelector((store) => store.todos.items)
 
   const dispatch = useDispatch()
 
-  const onPokemonToggle = (pokemonId) => {
-      dispatch(pokemons.actions.toggleItem(pokemonId))
+  const onTodoToggle = (todoId) => {
+      dispatch(todos.actions.toggleItem(todoId))
   } 
   
-  const onPokemonDelete = (index) => {
-    dispatch(pokemons.actions.deleteItem(index))
+  const onTodoDelete = (index) => {
+    dispatch(todos.actions.deleteItem(index))
   }
 
     return (
       <section>
-        {pokemonList.map((pokemonItem, pokemonIndex) => (
-          <PokemonItem key={pokemonItem.id}>
-            <ToDoItem>{pokemonItem.name}</ToDoItem>
+        {todoList.map((todoItem, todoIndex) => (
+          <TodoItem key={todoItem.id}>
+            <TodoItemText>{todoItem.name}</TodoItemText>
             <input 
               type="checkbox" 
-              checked={pokemonItem.isDone}
-              onChange={() => onPokemonToggle(pokemonItem.id)}
+              checked={todoItem.isDone}
+              onChange={() => onTodoToggle(todoItem.id)}
             />
             <label htmlFor="done">Done</label>
-            <DeleteButton onClick={() => onPokemonDelete(pokemonIndex)}>
+            <DeleteButton onClick={() => onTodoDelete(todoIndex)}>
               <DeleteEmoji role="img" aria-label="delete">
                 ✖
               </DeleteEmoji>
             </DeleteButton>
-          </PokemonItem>
+          </TodoItem>
         ))}
     </section>
   )
 }
 
-export default PokemonList
+export default TodoList

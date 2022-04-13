@@ -2,16 +2,16 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-import pokemons from 'reducers/pokemons'
+import todos from 'reducers/todos'
 
-import AddPokemon from 'components/AddPokemon'
-import PokemonList from 'components/PokemonList'
-import ToDoCounter from 'components/ToDoCounter'
+import AddTodo from 'components/AddTodo'
+import TodoList from 'components/TodoList'
+import TodoCounter from 'components/TodoCounter'
 import Header from 'components/Header'
 import Footer from 'components/Footer'
 
 const reducer = combineReducers({
-  pokemons: pokemons.reducer,
+  todos: todos.reducer,
 })
 
 const store = configureStore({
@@ -22,9 +22,9 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
-      <AddPokemon />
-      <PokemonList />
-      <ToDoCounter />
+      <AddTodo />
+      <TodoList />
+      <TodoCounter />
       <Footer />
     </Provider>
   )

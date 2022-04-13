@@ -8,8 +8,8 @@ const data = [
     }
   ]
 
-const pokemons = createSlice({
-  name: 'pokemons',
+const todos = createSlice({
+  name: 'todos',
   initialState: {
     items: data
   },
@@ -30,4 +30,4 @@ const pokemons = createSlice({
   },
 })
 
-export default pokemons 
+export default todos 
