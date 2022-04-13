@@ -15,12 +15,16 @@ const TaskList = () => {
   const dispatch = useDispatch()
 
   const onTaskToggle = (taskId) => {
-    dispatch(tasks.actions.toggleDoneTask(taskId));
+    dispatch(tasks.actions.toggleDoneTask(taskId))
+  }
+
+  const onTaskRemove = (index) => {
+    dispatch(tasks.actions.removeTask(index))
   }
 
   return (
     <TaskListFlexColumn>
-      {allTasks.map((task => (
+      {allTasks.map((task) => (
         <TaskListWrapper key={task.id}>
           <TaskListWrapperLabel htmlFor="checkTask">
             <input
@@ -38,9 +42,10 @@ const TaskList = () => {
                 case "gym": return <Tag color='#A093D4'> gym </Tag>
                 case "other": return <Tag color='#FB9A08'> other </Tag>
                 case "": return null
+                default : return null
               }
             })()}
-            <button>
+            <button onClick={() => onTaskRemove(task.id)}>
               <RemoveTaskButton
                 src='./images/remove-icon.svg'
                 alt='remove task'
@@ -48,7 +53,7 @@ const TaskList = () => {
             </button>
           </TaskListWrapperLabel>
         </TaskListWrapper >
-      )))}
+      ))}
     </TaskListFlexColumn>
   )
 }

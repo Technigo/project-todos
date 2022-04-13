@@ -29,12 +29,18 @@ export const tasks = createSlice({
             }
             store.items = [...store.items, newTodo];
         },
+        removeTask: (store, action) => {
+            const updatedTasks = store.items.filter(
+                (item) => item.id !== action.payload
+              )
+            store.items = updatedTasks
+        },
         toggleDoneTask: (store, action) => {
             store.items.forEach((item) => {
                 if (item.id === action.payload) {
                   item.isDone = !item.isDone;
                 }
-              });
+              })
         }
     }
 })
