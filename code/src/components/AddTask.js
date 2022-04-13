@@ -32,13 +32,20 @@ flex-direction: column;
 align-items: center;
 `
 
+
 const Textarea = styled.input`
-width: 75%;
+width: 65%;
 padding: 10px;
 border: none;
 font-family: 'Roboto', sans-serif;
 font-size: 16px;
+background: #f8f8f8;
+font-weight: 400;
+line-height: 1.4;
 
+&:active {
+border: none;
+}
 
 @media ${devices.tablet} {
     width: 60%;
@@ -52,11 +59,13 @@ padding: 6px;
 font-family: 'Roboto', sans-serif;
 `
 
-const Label = styled.label`
-width: 80%;
+const HeaderBox = styled.div`
+width: 83%;
 border: 1px solid gray;
 border-radius: 12px;
 padding: 0.4rem;
+background: #f8f8f8;
+outline: none;
 
 @media ${devices.tablet} {
     width: 50%;
@@ -96,20 +105,22 @@ const AddTask = () => {
         <Container>
         <Form onSubmit={onFormSubmit}>
 
-           <Label>
-             <span role="img" aria-label="pen"> 🖋️</span>    &nbsp;
+        <HeaderBox>
+           <label>
+             <span role="img" aria-label="pen"> 🖋️</span> 
            <Textarea
             type="text"
             placeholder= "Insert new to-do task here.."
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)} />
 
-           </Label>
+           </label>
            &nbsp;
         <Button 
         type="submit">
             Submit
         </Button>
+        </HeaderBox>
         </Form>
         </Container>
 

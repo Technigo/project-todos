@@ -1,10 +1,12 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import CompletedTasks from 'components/CompletedTasks'
+import AllTasks from 'components/AllTasks'
 import styled from 'styled-components'
 import taskList from 'reducers/tasks'
 import AddTask from './AddTask'
 import Footer from './Footer'
+import IncompleteTasks from './IncompleteTasks'
 
 
 //styled components
@@ -29,6 +31,22 @@ align-items: center;
     width: 1025px;
 }
 `
+
+const Article = styled.article`
+width: 100%;
+margin: 0 auto;
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+
+const Nav = styled.nav`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+
 const Button = styled.button`
 border-radius: 8px;
 border: 0.4px solid gray;
@@ -61,13 +79,18 @@ const StartPage = () => {
             <BigHeading>Get it out of your head</BigHeading> 
 
             <AddTask />
-        <CompletedTasks />
         
+        <Nav>
+        <AllTasks />
+        <CompletedTasks />
+        <IncompleteTasks />
+
+        </Nav>
             
     
             {tasksList.map((taskItem, taskIndex) => (
 
-                <article>
+                <Article>
                     <h2>{taskItem.name}</h2>
                     
                     <label>
@@ -83,7 +106,7 @@ const StartPage = () => {
                     <span role="img" aria-label="cross">❌</span> 
                     </Button>
                   
-                </article>
+                </Article>
 
             ))}
             </Container>
