@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 export const taskList = [
-    // { id: 'a1c2', task: 'Finish the asignment', tag: 'study', isDone: false },
-    // { id: 'b2d3', task: 'Hit the gym', tag: 'gym', isDone: false },
-    // { id: 'e3f6', task: 'Buy milk', tag: 'shopping', isDone: false },
+    { id: 'a1c2', task: 'Finish the asignment', tag: 'study', isDone: false },
+    { id: 'b2d3', task: 'Hit the gym', tag: 'gym', isDone: false },
+    { id: 'e3f6', task: 'Buy milk', tag: 'shopping', isDone: false },
 ]
 
 //with local state (useState), the taskText has an object as property

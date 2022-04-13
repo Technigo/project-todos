@@ -9,13 +9,6 @@ export const Count= styled(Regular)`
   margin-left: 32px;
 `
 
-export const ColorLine = styled.p`
-  border-left: 2px solid ${(props) => (props.color)};
-  padding-left: 5px;
-  margin-right: 10px;
-  color: #706B6B;
-`
-
 export const Task = styled.span`
   margin-left: 30px;
   color: black;

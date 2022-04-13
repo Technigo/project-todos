@@ -25,6 +25,9 @@ export const TagInput = styled.input`
   box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
   color: rgba(0, 0, 0, 0.65);
   }
+  &:focus {
+    font-weight: 600;
+  }
 `
 export const Tag = styled.span`
   border-top: 2px solid ${(props) => (props.color)};
