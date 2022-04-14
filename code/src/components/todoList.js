@@ -30,8 +30,7 @@ const DeleteButton = styled.button`
   cursor: pointer;
 `;
 
-// useSelector  reach for the data.
-// to reach the whole store or backpack: ((store) => store...
+// useSelector reach for the data.
 
 const TodoList = () => {
   const taskList = useSelector((state) => state.task.items);

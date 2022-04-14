@@ -24,9 +24,7 @@ const tasks = createSlice({
     items: data,
   },
 
-  //Reducers to update the complete.
-  //We receive 2 arguments from redux: store and action
-  // store.items = name of our array
+  //Reducers to update the completed todos.
   reducers: {
     toggleItem: (store, action) => {
       store.items.forEach((item) => {
@@ -35,10 +33,11 @@ const tasks = createSlice({
         }
       });
     },
-    //remove one argument from the array
+    //remove argument from the array
     deleteItem: (store, action) => {
       store.items.splice(action.payload, 1);
     },
+    //add argument to the array
     addItem: (store, action) => {
       store.items.push(action.payload);
     },

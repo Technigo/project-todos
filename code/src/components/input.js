@@ -22,7 +22,6 @@ const InputArea = styled.input`
   color: #494a4b;
 `;
 
-//to define the input we need a function
 const AddTodo = () => {
   const [inputValue, setInputValue] = useState("");
 
