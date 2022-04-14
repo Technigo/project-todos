@@ -35,6 +35,7 @@ const TaskList = () => {
     dispatch(tasks.actions.allNewTasks())
   }
 
+
   return (
     <TaskListFlexColumn>
       <FlexRow>

@@ -54,7 +54,7 @@ const AddTasks = () => {
             <TagInput type="button" value="other" color='#FB9A08' onClick={onTagValueChange} />
           </form>
           </TagsWrapper>
-          <AddTaskButton onClick={() => onTaskSubmit(task, tag)}>
+          <AddTaskButton onClick={() => onTaskSubmit(task, tag)} disabled={charCount===0}>
            + ADD TASK
           </AddTaskButton>
       </AddTaskCard>

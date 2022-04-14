@@ -5,13 +5,13 @@ export const AddTaskButton= styled.button`
   background-color: pink;
   color: white;
   font-weight: 600;
-  background-color: #4C5154;
+  background-color: #04B18F;
   padding: 5px 5px;
   margin-top: 10px;
   border-radius: 5px;
 
-  &:hover {
-    background-color: #04B18F;
+  &:disabled {
+    background-color: #4C5154;
   }
 `
 
@@ -56,5 +56,9 @@ export const FilterButton = styled.button`
 
   &:active {
     font-weight: 600;
+  }
+
+  &:disabled {
+    text-decoration: line-through;
   }
 ` 
