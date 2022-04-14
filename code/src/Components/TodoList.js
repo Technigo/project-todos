@@ -11,7 +11,7 @@ color: purple;
 margin-top:25px;
 margin-bottom: 15px;
 position:relative;
-border:solid 1px;
+border:solid 2px;
 font-size: 15px;
 font-family: monospace;
 

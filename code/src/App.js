@@ -7,6 +7,7 @@ import todo from "reducers/todo";
 import TodoList from "Components/TodoList";
 import TodoCounter from "Components/TodoCounter";
 import AddTodo from "Components/AddTodo";
+import Header from "Components/Header";
 
 
 const reducer = combineReducers({
@@ -20,9 +21,11 @@ const store = configureStore({
 export const App = () => {
   return (
     <Provider store={store}>
+       <Header/>
       <AddTodo/>
       <TodoList/>
       <TodoCounter/>
+     
     </Provider>
   );
 };

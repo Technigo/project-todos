@@ -8,20 +8,15 @@ const data = [
         done: false,
     },
 
-    {
-        id: 'jfksfjsfds',
-        name: 'Fix all the Easter eggs',
-        done: false,
-    },
 
     {
         id: 'jfksfjsfdf',
-        name: 'Hide the eggs',
+        name: 'Prep the Easter eggs',
         done: false,
     },
     {
         id: 'jfksfjttt',
-        name: 'Host the egg hunt',
+        name: 'Do the egg hunt',
         done: false,
     },
 ];
