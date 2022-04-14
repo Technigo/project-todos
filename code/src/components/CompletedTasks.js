@@ -1,17 +1,13 @@
-import React from 'react'
+import React from "react";
+import { useSelector } from "react-redux";
 
-
-const CompletedTasks = () => {
-
-    return (
-
-        <>
-        <p><b>Completed</b></p>
-        </>
-
-
-    )
-}
-
-
-export default CompletedTasks
+const TotalCompletedItems = () => {
+  const taskList = useSelector((state) => state.tasks.items);
+  const completedTodos = taskList.filter((items) => items.complete === true);
+  return (
+    <p>
+      You have completed {completedTodos.length}/{taskList.length} todos
+    </p>
+  );
+};
+export default TotalCompletedItems;

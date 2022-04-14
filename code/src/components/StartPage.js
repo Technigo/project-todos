@@ -1,9 +1,9 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import CompletedTasks from 'components/CompletedTasks'
 import AllTasks from 'components/AllTasks'
 import styled from 'styled-components'
 import taskList from 'reducers/tasks'
+import CompletedTasks from 'components/CompletedTasks'
 import AddTask from './AddTask'
 import Footer from './Footer'
 import IncompleteTasks from './IncompleteTasks'
@@ -120,7 +120,7 @@ const StartPage = () => {
         
         <Nav>
         <AllTasks />
-        <CompletedTasks />
+        <CompletedTasks />        
         <IncompleteTasks />
 
         </Nav>
