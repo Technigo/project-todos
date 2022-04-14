@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import moment from 'moment'
 
 //Need to import the slice from the reducer folder because its used in the onChange for checkboxes
 import tasks from 'reducers/Tasks'
@@ -17,11 +18,14 @@ const TodoList = () => {
         dispatch(tasks.actions.deleteTodo(index))
     }
 
+    const createdAt = moment()
+
     return (
         <section>
             {todoList.map((todo, todoIndex) => (
                 <article key={todo.id}>
                     <h3>{todo.name}</h3>
+                    <p>Created at {createdAt.format('DD/MM/YY HH:MM')}</p>
                     <label>
                         <span role='img' aria-label='checked'>Finished ✔</span>
                     <input 
