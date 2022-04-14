@@ -23,9 +23,9 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
+      <AddTodo />
       <TodoList /> 
       <TodoCounter />
-      <AddTodo />
     </Provider>
   )
 }

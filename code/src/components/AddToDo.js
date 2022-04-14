@@ -6,6 +6,18 @@ import styled from 'styled-components'
 
 import tasks from 'reducers/Tasks'
 
+
+const InputArea = styled.input `
+border: 0;
+border-bottom: 3px dashed #fdcb6e;
+padding: 10px 15px;
+width: 30%;
+background-color: transparent;
+color: #494a4b;
+font-size: 1.3rem;
+font-family: "Architects Daughter", sans-serif;
+`
+
 const AddTodo = () => {
     const [toDo, setToDo] = useState('')
     const dispatch = useDispatch()
@@ -33,7 +45,7 @@ const AddTodo = () => {
         <form onSubmit={onFormSubmit}>
             <label> 
                 New Task : &nbsp; 
-                <input 
+                <InputArea 
                 type="text"
                 value={toDo}
                 onChange={(e) => setToDo(e.target.value)}

@@ -6,9 +6,21 @@ import moment from 'moment'
 import tasks from 'reducers/Tasks'
 
 
+const TodoArea = styled.section `
+margin: 40px auto 5px;
+padding: 16px;
+min-height: 370px;
+max-width: 300px;
+background-color: #f1f5f8;
+background-size: 40px 40px;
+border-radius: 20px;
+box-shadow: 4px 3px 7px 2px #00000040;
+`
+
+
 const ToDos = styled.article `
 border: 1px solid #dcdcdc; 
-padding: 5px;
+padding: 10px;
 margin-bottom: 5px;
 border-radius: 5px;
 position: relative;
@@ -49,7 +61,7 @@ const TodoList = () => {
 
 
     return (
-    <section>
+    <TodoArea >
         {todoList.map((todo, todoIndex) => (
             <ToDos key={todo.id}>
                 <h2>{todo.name}</h2>
@@ -68,7 +80,7 @@ const TodoList = () => {
         ))}
         <button onClick={CheckAllTodo}>Check all todos</button>
         <button onClick={unCheckAllTodo}>Uncheck all todos</button>
-    </section>
+    </TodoArea >
 
     ) 
 }
