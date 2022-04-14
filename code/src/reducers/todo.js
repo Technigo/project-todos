@@ -1,21 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
+import uniqid from "uniqid";
 
 
 const data = [
     {
-        id: 'jfksfjs',
+        id: 1,
         name: 'Buy sweets',
         done: false,
     },
 
 
     {
-        id: 'jfksfjsfdf',
+        id: 2,
         name: 'Prep the Easter eggs',
         done: false,
     },
     {
-        id: 'jfksfjttt',
+        id: 3,
         name: 'Do the egg hunt',
         done: false,
     },
