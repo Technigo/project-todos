@@ -23,7 +23,7 @@ const CompletedTodos = () => {
         {items.length > 0 && <h3>Completed</h3>}
         <div className='scroll'>
           {items.map((item) => (
-            <div key={item.id} className='small-task-wrapper'>
+            <div key={item.id} className='small-todo-wrapper'>
               <div className='check-text'>
                 <div>
                   <input
@@ -34,6 +34,7 @@ const CompletedTodos = () => {
                   />
                 </div>
                 <div className='task-wrapper'>
+                  <p className='task-date'>{item.timePosted}</p>
                   <p className={item.isComplete ? 'task-completed' : 'task-p'}>
                     {item.text}
                   </p>

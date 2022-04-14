@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import uniqid from 'uniqid'
+import moment from 'moment'
 
 const initialState = {
   items: [],
@@ -16,6 +17,7 @@ const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         isComplete: false,
+        timePosted: moment().format('DD MMMM YYYY, HH:mm'),
       }
       store.items = [...store.items, newTodo]
     },
@@ -28,7 +30,7 @@ const todos = createSlice({
       const updatedItem = store.items.map((item) => {
         if (item.id === action.payload) {
           const updatedTodo = {
-            ...item, //spred operator
+            ...item,
             isComplete: !item.isComplete,
           }
           return updatedTodo

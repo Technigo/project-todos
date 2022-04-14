@@ -10,11 +10,13 @@ const TodoList = () => {
   const onToggleTodo = (id) => {
     dispatch(todos.actions.toggleTodo(id))
   }
-
   const onDeleteTodo = (id) => {
     dispatch(todos.actions.deleteTodo(id))
   }
 
+  const onClickClearAll = () => {
+    dispatch(todos.actions.clearAllTasks())
+  }
   const onDeleteAll = () => {
     dispatch(todos.actions.deleteAll())
   }
@@ -38,6 +40,7 @@ const TodoList = () => {
                     />
                   </div>
                   <div className='task-wrapper'>
+                    <p className='task-date'>{item.timePosted}</p>
                     <p
                       className={item.isComplete ? 'task-completed' : 'task-p'}
                     >
@@ -53,6 +56,7 @@ const TodoList = () => {
         </div>
         {items.length >= 1 && (
           <div className='button-aligment'>
+            <CheckAllButton onClick={onClickClearAll}>Check all</CheckAllButton>
             <CheckAllButton onClick={onDeleteAll}>Remove all</CheckAllButton>
           </div>
         )}

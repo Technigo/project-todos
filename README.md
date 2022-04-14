@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week I have build a to-do app with redux. In the app you should be able to add tasks, see a list of task and toggle whether a task is done or not.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started out by drawing it all up on jamboard so I could see how many components I needed and also what information I should have in my reducer. I also draw how I wanted my app to look like. After that I started out with adding my components and reducers and completing them one by one. This week I also tried to make some styling with styled components. If I had more time I would add a image when you have no tasks left.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Link to the project:
