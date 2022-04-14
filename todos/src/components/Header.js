@@ -2,9 +2,12 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import todos from "reducers/todos";
+import DateStamp from "./DateStamp";
 
 import {
-  Heading
+  Heading,
+  ClearWrapper,
+  ClearButton
 } from "styles";
 
 const Header = () => {
@@ -14,11 +17,12 @@ const Header = () => {
 
   return (
     <Heading>
-      <h1>Todo</h1>
-      <div>
+      <h1>Todo List</h1>
+      <DateStamp /> 
+      <ClearWrapper>
         <p>{todosLength} todos</p>
-        <button onClick={() => dispatch(todos.actions.clearTodos())}>Clear All</button>
-      </div>
+        <ClearButton onClick={() => dispatch(todos.actions.clearTodos())}>Clear All</ClearButton>
+      </ClearWrapper>
     </Heading>
   );
 };

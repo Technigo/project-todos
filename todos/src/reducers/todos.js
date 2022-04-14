@@ -6,7 +6,6 @@ const todos = createSlice({
   name: "todo",
   initialState,
   reducers: {
-    
     toggleTodo: (state, action) => {
       const updatedTodos = state.lists.map((todo) => {
         if (todo.id === action.payload) {

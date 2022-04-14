@@ -4,6 +4,13 @@ import uniqid from "uniqid";
 
 import todos from "reducers/todos";
 
+import {
+  Form,
+  Input,
+  Plus,
+  AddButton
+} from "styles";
+
 const handleTodoSubmit = (event) => {
   event.preventDefault();
 };
@@ -12,7 +19,7 @@ const AddTodos = () => {
   const [inputValue, setInputValue] = useState("");
 
   const dispatch = useDispatch();
- 
+
   const handleNewTodo = () => {
     const newTodo = {
       id: uniqid(),
@@ -26,19 +33,20 @@ const AddTodos = () => {
   };
 
   return (
-    <form onSubmit={handleTodoSubmit}>
-      <input 
-        type="text" 
+    <Form onSubmit={handleTodoSubmit}>
+      <Input
+        type="text"
         placeholder="Add todo"
         value={inputValue}
-        onChange={(event) => {setInputValue(event.target.value)}}
+        onChange={(event) => { setInputValue(event.target.value) }}
       />
-      <button 
+      <AddButton
         type="submit"
+        disabled={!inputValue}
         onClick={handleNewTodo}
-      >+
-      </button>
-    </form>
+      ><Plus>+</Plus> Add
+      </AddButton>
+    </Form>
   );
 };
 

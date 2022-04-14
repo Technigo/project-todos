@@ -3,9 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 
 import todos from "reducers/todos";
 
-import { 
-  Article, 
-  TodoText 
+import {
+  Article,
+  TodoText
 } from "styles";
 
 const TodoList = () => {
@@ -25,12 +25,15 @@ const TodoList = () => {
     <section>
       {todoList.map((item) => (
         <Article key={item.id}>
-          <TodoText complete={item.isComplete}>{item.text}</TodoText>
-          <input
-            type="checkbox"
-            checked={item.isComplete}
-            onChange={() => { onTodoToggle(item.id) }}
-          />
+          <div>
+            <input
+              type="checkbox"
+              id={item.text}
+              checked={item.isComplete}
+              onChange={() => { onTodoToggle(item.id) }}
+            />
+            <TodoText htmlFor={item.text} complete={item.isComplete}>{item.text}</TodoText>
+          </div>
           <button onClick={() => onTodoDelete(item.id)}>Delete</button>
         </Article>
       ))}
