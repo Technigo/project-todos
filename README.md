@@ -8,4 +8,4 @@ I started out by drawing it all up on jamboard so I could see how many component
 
 ## View it live
 
-Link to the project:
+Link to the project: https://make-it-happen-week.netlify.app/
