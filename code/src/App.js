@@ -17,6 +17,7 @@ const store = configureStore({
 });
 
 //Everything inside the provider has acess to the global store
+
 export const App = () => {
   return (
     <Provider store={store}>
