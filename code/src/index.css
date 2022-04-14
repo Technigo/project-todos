@@ -28,7 +28,7 @@ body {
 .container {
 	width: 80%;
 	max-width: 700px;
-	height: 500px;
+	height: 70vh;
 	background: hsla(0, 0%, 100%, 0.8);
 	padding: 1rem;
 	position: relative;
@@ -41,7 +41,7 @@ body {
 
 .list-container {
 	overflow-y: scroll;
-	height: 85%;
+	height: 90%;
 }
 
 h1 {
@@ -53,9 +53,10 @@ h1 {
 
 .counter {
 	color: #fff;
-  display: flex;
-  justify-content: center;
-  font-size: 1rem;
+	display: flex;
+	justify-content: center;
+	font-size: 1rem;
+	margin: -1rem;
 }
 
 form {
@@ -65,7 +66,7 @@ form {
 	bottom: 0;
 	height: 3rem;
 	border: none;
-	margin: 0.8rem;
+	margin: 0 0 0.5rem 0;
 	width: 85%;
 }
 
@@ -76,6 +77,8 @@ input {
 	font-size: 1.2rem;
 	background: hsla(0, 1%, 35%, 0);
 	padding: 0 10px;
+
+	width: 100%;
 }
 
 input:focus {
