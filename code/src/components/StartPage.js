@@ -53,7 +53,7 @@ top: 15px;
 `
 const BigHeading = styled.h1`
 color: #1D3F6F;
-font-size: 28px;
+font-size: 31px;
 `
 
 const Emoji = styled.span`

@@ -116,7 +116,7 @@ const AddTask = () => {
              &nbsp;
            <Textarea
             type="text"
-            placeholder= "Insert new to-do task here.."
+            placeholder= "Insert new task here.."
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)} />
 
