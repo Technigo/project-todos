@@ -41,8 +41,11 @@ margin-top: 35px;
 const Nav = styled.nav`
 display: flex;
 flex-direction: column;
-justify-content: center;
+flex-direction: row;
+justify-content: space-between;
 align-items: center;
+width: 295px;
+align-self: center;
 `
 
 const Button = styled.button`
@@ -72,6 +75,10 @@ margin: 0.4rem;
 width: 83%;
 position: relative;
 word-break: break-word;
+
+@media ${devices.tablet} {
+    width: 50%;
+}
 `
 
 const TaskHeading = styled.h2`
