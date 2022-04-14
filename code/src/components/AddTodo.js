@@ -11,16 +11,17 @@ const AddTodo = () => {
   const dispatch = useDispatch();
 
   const onFormSubmit = (event) => {
-    event.preventdDfault();
-  };
+    event.preventDefault();
 
-  const newTodo = {
-    id: uniqid(),
-    name: inputValue,
-    isDone: false,
-  };
+    const newTodo = {
+      id: uniqid(),
+      Todo: inputValue,
+      isDone: false,
+    };
 
-  dispatch(todos.actions.addItem(newTodo));
+    dispatch(todos.actions.addItem(newTodo));
+    setInputvalue("");
+  };
 
   return (
     <form onSubmit={onFormSubmit}>

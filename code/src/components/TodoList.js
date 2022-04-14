@@ -30,9 +30,9 @@ const TodoList = () => {
     dispatch(todos.actions.toggleItem(todoId));
   };
 
-  const onTodoDelete =(index) => {
-      dispatch(todos.actions.deleteItem(index))
-  }
+  const onTodoDelete = (index) => {
+    dispatch(todos.actions.deleteItem(index));
+  };
 
   return (
     <section>
