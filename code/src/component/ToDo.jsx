@@ -4,7 +4,7 @@ import { useDispatch } from "react-redux";
 import { toggleComplete } from "../features/todo/todoSlice";
 
 const ToDo = ({ todoItem }) => {
-  const { todo, isCompleted, id } = todoItem;
+  const { todo, isCompleted, id, date } = todoItem;
   const dispatch = useDispatch();
 
   return (
@@ -17,7 +17,12 @@ const ToDo = ({ todoItem }) => {
       >
         {isCompleted && <FaCheck className="check-icon" />}
       </button>
-      <p className="my-1">{todo}</p>
+      <div className="container-space-between" style={{ width: "100%" }}>
+        <p className="my-1">{todo}</p>
+        <p className="my-1" style={{ fontSize: "0.8rem" }}>
+          {date}
+        </p>
+      </div>
     </li>
   );
 };

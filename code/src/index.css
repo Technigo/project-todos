@@ -59,6 +59,11 @@ input:focus {
   display: flex;
   flex-direction: column;
 }
+.container-space-between {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
 .container-center {
   display: flex;
   justify-content: center;
@@ -67,6 +72,11 @@ input:focus {
 .container-center-start {
   display: flex;
   align-items: center;
+}
+.container-center-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 .container-center-column {
   display: flex;
@@ -99,14 +109,12 @@ input:focus {
   margin: 0 auto;
   border: 1px solid var(--color-grey);
 }
-
 .header {
   width: 100%;
   align-items: flex-start;
   background-color: var(--color-greyFaded);
   border-bottom: 1px solid var(--color-grey);
 }
-
 .todo-item {
   width: 100%;
   padding: 1em;
@@ -118,8 +126,17 @@ input:focus {
 .check-icon {
   color: var(--color-white);
 }
-
+.sort {
+  width: 100%;
+  padding: 0.5em 1em;
+  background-color: var(--color-greyFaded);
+}
+.sort p {
+  margin: 0;
+  margin-bottom: 0.3rem;
+}
 /* buttons */
+.btn-sort,
 .btn-primary {
   border-radius: 5px;
   padding: 0.5rem 1rem;
@@ -130,11 +147,9 @@ input:focus {
   background-color: var(--color-primary);
   color: var(--color-white);
 }
-
 .btn-primary:hover {
   background-color: var(--color-primaryFaded);
 }
-
 .btn-todo {
   width: 25px;
   height: 25px;
@@ -147,13 +162,11 @@ input:focus {
   color: var(--color-grey);
   border: 1px solid transparent;
 }
-
 .btn-todo:hover {
   color: var(--color-primary);
   transform: scale(1.25);
   border: 1px solid var(--color-primary);
 }
-
 .btn-check {
   width: 25px;
   height: 25px;
@@ -165,7 +178,23 @@ input:focus {
   transition: all 200ms ease-out;
   border: 1px solid var(--color-primary);
 }
-
 .btn-completed {
   background-color: var(--color-primary);
+}
+.btn-sort {
+  padding: 0.1rem;
+  padding-bottom: 0.2rem;
+  margin-right: 0.5rem;
+  background-color: transparent;
+  color: var(--color-grey);
+  font-size: 1rem;
+  border-bottom: 1px solid transparent;
+  border-radius: 0;
+}
+.btn-sort:last-child {
+  margin-right: 0;
+}
+.btn-sort:hover {
+  border-bottom: 1px solid var(--color-primary);
+  color: var(--color-primary);
 }

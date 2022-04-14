@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import moment from "moment";
 import { FaPlus } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { onAdd } from "../features/todo/todoSlice";
@@ -13,6 +14,7 @@ const NewForm = () => {
       id: uniqid(),
       todo: todoInput,
       isCompleted: false,
+      date: moment(new Date()).format("MMM Do, h:mm:ss a"),
     };
     dispatch(onAdd(newTodo));
     setTodoInput("");

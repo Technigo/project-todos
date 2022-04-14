@@ -7,7 +7,7 @@ const todoSlice = createSlice({
   reducers: {
     reset: () => initialState,
     onAdd: (state, action) => {
-      state.todo.push(action.payload);
+      state.todo.unshift(action.payload);
     },
     toggleComplete: (state, action) => {
       state.todo.forEach((todo) => {
