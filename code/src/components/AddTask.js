@@ -15,13 +15,31 @@ const Container = styled.div`
     min-width: 15rem;
 	margin: 0.5rem auto;
     padding: 2rem;
-    border-radius: 15%
+    border-radius: 15%;
 `;
 
 const Title = styled.h1`
 	font-size: 1.5rem;
     padding: 2.5rem;
     color: rgb(255, 238, 238);
+`;
+
+const AddButton = styled.button`
+    padding: 0.6rem;
+    color: rgb(255, 238, 238);
+    background-color: rgb(230, 9, 101);
+    cursor: pointer;
+    border-radius: 75%;
+    font-weight: 700;
+    margin-left: 0.5rem;
+    
+    &:hover {
+    background-color: rgb(253, 93, 93);
+    color: rgb(255, 238, 238);
+    transition: background-color 0.4s ease;
+    transition: font-size 0.4s ease;
+    heigth: 30px;
+    }
 `;
 
 const AddTask = () => {
@@ -45,18 +63,18 @@ const AddTask = () => {
 
     return (
         <> <Title>
-        Todo today : 
+        Todo today  
     </Title>
     <Container>
             <form onSubmit={onFormSubmit}>
                 <label>
-                    New task : &nbsp;
                     <input type="text"
                         value={inputValue}
                         onChange={(event) => setInputValue(event.target.value)}
+                        placeholder='Write short task here...'
                         />
                 </label>
-                <button type="submit">Add</button>
+                <AddButton type="submit" disabled={inputValue.length > 25}>Add</AddButton>
             </form>
         <TaskList/>
     </Container>
