@@ -13,13 +13,18 @@ const AddTodo = () => {
 	};
 
 	return (
-		<div>
+		<div className='text'>
+			New todo: &nbsp;
 			<input
 				type='text'
 				value={input}
+				className='placeholder'
 				onChange={(event) => setInput(event.target.value)}
 			/>
-			<button onClick={onAddTodo}>Add todo</button>
+			&nbsp;
+			<button className='button' onClick={onAddTodo}>
+				Add
+			</button>
 		</div>
 	);
 };

@@ -1,12 +1,15 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+The assignment was:
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+- Your app should list all todo tasks - completed or uncompleted
+- You should be able to mark an uncompleted task as complete (and change it back to uncomplete)
+- You should be able to add and remove tasks
+- Your app should show a count of either all todos or all uncomplete todos (or both)
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+At first I had a challenge getting the counter to work.
 
 ## View it live
 

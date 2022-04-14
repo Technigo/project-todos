@@ -20,13 +20,16 @@ const TodoList = () => {
 		<section>
 			{items.map((item) => (
 				<div className='flex-item' key={item.id}>
-					<p>{item.text}</p>
+					<p className='text'>{item.text}</p>
 					<input
 						type='checkbox'
 						checked={item.isComplete}
 						onChange={() => onToggleTodo(item.id)}
 					/>
-					<button onClick={() => onDeleteTodo(item.id)}>Delete</button>
+					&nbsp;
+					<button className='button' onClick={() => onDeleteTodo(item.id)}>
+						Delete
+					</button>
 				</div>
 			))}
 		</section>

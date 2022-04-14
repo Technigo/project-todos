@@ -1,10 +1,20 @@
 body {
-	margin: 0;
+	margin: 2rem;
 	font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
 		'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-		sans-serif;
+		monospace;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	background: rgb(34, 193, 195);
+	background: linear-gradient(
+		0deg,
+		rgba(34, 193, 195, 1) 0%,
+		rgba(253, 187, 45, 1) 100%
+	);
+	background-repeat: no-repeat;
+	display: flex;
+	color: #615121;
+	min-height: 100vh;
 }
 
 code {
@@ -15,4 +25,54 @@ code {
 .flex-item {
 	display: flex;
 	align-items: center;
+	color: #615121;
+}
+
+.header {
+	font-family: monospace;
+	color: #615121;
+}
+
+.button {
+	border-radius: 25px;
+	border: #615121;
+	font: monospace;
+	color: #615121;
+}
+
+.placeholder {
+	border-radius: 25px;
+	border: #615121;
+	font: monospace;
+}
+
+.text {
+	color: #615121;
+	font: monospace;
+}
+
+[type='checkbox']:checked + label::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 18px;
+	height: 18px;
+	background-size: contain;
+	transform: scale(1);
+	opacity: 1;
+	transition: all 0.3s ease;
+	color: #615121;
+}
+
+[type='checkbox']:not(:checked) + label::after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 18px;
+	height: 18px;
+	background-size: contain;
+	transform: scale(0);
+	opacity: 0;
 }
