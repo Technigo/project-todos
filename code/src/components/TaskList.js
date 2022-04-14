@@ -11,7 +11,8 @@ import { tasks } from '../reducers/tasks'
 
 const TaskList = () => {
 
-  const allTasks = useSelector((store) => store.tasks.items);
+  const allTasks = useSelector((store) => store.tasks.items)
+  const filteredTasks = useSelector((store) => store.tasks.filter)
   const dispatch = useDispatch()
 
   const onTaskToggle = (taskId) => {
@@ -30,14 +31,18 @@ const TaskList = () => {
     dispatch(tasks.actions.filterTodo())
   }
 
+  const allNewTasks = () => {
+    dispatch(tasks.actions.allNewTasks())
+  }
+
   return (
     <TaskListFlexColumn>
       <FlexRow>
-        <FilterButton color='#5B87C9' onClick={allTasks}>All Tasks</FilterButton>
+        <FilterButton color='#5B87C9' onClick={() => allNewTasks()}>All Tasks</FilterButton>
         <FilterButton color='#C95B5B' onClick={() => onTodoFilter()}>To do</FilterButton>
         <FilterButton color='#58BB48' onClick={() => onDoneTasksFilter()}>Done</FilterButton>
       </FlexRow>
-      {allTasks.map((task) => (
+      {filteredTasks.length === 0 ? allTasks.map((task) => (
         <TaskListWrapper key={task.id}>
           <TaskListWrapperLabel htmlFor="checkTask">
             <input
@@ -63,9 +68,40 @@ const TaskList = () => {
                 alt='remove task'
               />
             </button>
-          </TaskListWrapperLabel>
+          </TaskListWrapperLabel>          
         </TaskListWrapper >
-      ))}
+      )): <div>{filteredTasks.map((task) => (
+        <TaskListWrapper key={task.id}>
+          <TaskListWrapperLabel htmlFor="checkTask">
+            <input
+              type="checkbox"
+              name="checkTask"
+              checked={task.isDone}
+              onChange={() => onTaskToggle(task.id)}
+            />
+            {task.isDone ? <DoneTask>{task.task}</DoneTask> : <Task>{task.task}</Task>}
+            {(() => {
+              switch (task.tag) {
+                case "work": return <Tag color='#3DB429'> work </Tag>
+                case "study": return <Tag color='#F36969'> study </Tag>
+                case "shopping": return <Tag color='#5B87C9'> shopping</Tag>
+                case "other": return <Tag color='#FB9A08'> other </Tag>
+                case "": return null
+                default: return null
+              }
+            })()}
+            <button onClick={() => onTaskRemove(task.id)}>
+              <RemoveTaskButton
+                src='./images/remove-icon.svg'
+                alt='remove task'
+              />
+            </button>
+          </TaskListWrapperLabel>          
+        </TaskListWrapper >
+      ))}</div>
+          }
+
+      
     </TaskListFlexColumn>
   )
 }
