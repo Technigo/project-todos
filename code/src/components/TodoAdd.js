@@ -65,7 +65,8 @@ const TodoAdd = () => {
             title: inputTitleValue,
             whatToDo: inputTextValue,
             tags: [inputTagValue],
-            isCompleted: false
+            isCompleted: false,
+            createdAt: Date.now()
         }
 
         dispatch(todos.actions.addTodo(newTodo));
@@ -103,12 +104,17 @@ const TodoAdd = () => {
                         onChange={(e) => setInputTextValue(e.target.value)}
                     />
                 </InputContainer>
-                <AddTodoInput
-                    id="tag"
-                    type="text"
-                    value={inputTagValue}
-                    onChange={(e) => setInputTagValue(e.target.value)} 
-                />
+                <InputContainer>
+                    <LabelAddNew htmlFor="tags">
+                        Add tags?
+                    </LabelAddNew>
+                    <AddTodoInput
+                        id="tags"
+                        type="text"
+                        value={inputTagValue}
+                        onChange={(e) => setInputTagValue(e.target.value)} 
+                    />
+                </InputContainer>
                 <AddNewTodoButton
                     type="submit">
                     Add new todo

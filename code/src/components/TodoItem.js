@@ -1,5 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
+import { format } from 'date-fns';
+
 
 import TodoTags from "./TodoTags.js";
 import TodoCompleted from "./TodoCompleted.js";
@@ -41,6 +43,7 @@ const TodoItem = ({ todo, index }) => {
             </TodoItemDescription>
             <TodoTags tags={todo.tags} />
             <TodoCompleted todo={todo} />
+            <p>Added {format(todo.createdAt, 'yyyy-MM-dd hh:mm')}</p>
             <TodoDelete index={index} todo={todo} />
         </TodoListItem>
     );

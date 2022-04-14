@@ -6,14 +6,16 @@ const data = [
         title: 'Walk dog',
         whatToDo: 'Should go for a walk with Pedro.',
         tags: ['dog', 'walk'],
-        isCompleted: false
+        isCompleted: false,
+        createdAt: Date.now()
     },
     {
         id: '23545fgdg',
         title: 'Buy new t-shirt',
         whatToDo: 'Need to buy a new t-shirt that should be green.',
         tags: ['shopping', 'go to the mall'],
-        isCompleted: true
+        isCompleted: true,
+        createdAt: Date.now()
     }
 ]
 
