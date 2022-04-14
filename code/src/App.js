@@ -4,7 +4,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import tasks from 'reducers/tasks'
-import StartPage from 'components/StartsPage'
+import StartPage from 'components/StartPage'
 import Main from 'components/Main'
 import NotFound from 'components/NotFound'
 

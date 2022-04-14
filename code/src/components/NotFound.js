@@ -1,13 +1,47 @@
 import React from "react";
-// import { useNavigate } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
+import styled from 'styled-components'
+
+const Container = styled.div`
+    width: 375px;
+    margin: 0 auto;
+`
+
+const StartButton = styled.button`
+    padding: 6px;
+    width: 300px;
+    border-radius: 10px;
+    margin: 7px 0 25px 0;
+    border: solid 3px #4C4EF9;
+    background-color: rgb(216, 216, 239);
+    color: #4C4EF9;
+    font-family: 'Acme', sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+
+    &:active {
+        background-color: #4C4EF9;
+        color:white;
+    }    
+    `
 
 
 const NotFound = () => {
+    const navigate = useNavigate()
+
+    const onButtonClick = () => {
+        navigate("/main")
+    }
+
+
     return (
         <section>
-            <div>
+            <Container>
                 <p>This page does not exist...</p>
-            </div>
+                <StartButton onClick={onButtonClick}>
+                    Back to your planning
+                </StartButton>
+            </Container>
         </section>
     )
 }

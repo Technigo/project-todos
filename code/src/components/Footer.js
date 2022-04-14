@@ -2,13 +2,14 @@ import React from "react";
 import styled from "styled-components";
 
 const FooterWrapper = styled.footer`
-    background-color: #723c70;
     text-align: center;
-
+    padding-top: 10px;
+    margin-top: 40px;
 `
 
 const Freepik = styled.p`
     font-size: 12px;
+    margin-bottom: 0;
 `
 
 const Link = styled.a`

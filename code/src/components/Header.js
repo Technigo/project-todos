@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 const HeaderWrapper = styled.header`
-    background-color: #723c70;
+    background-color: #4C4EF9;
 `
 const Title = styled.h1`
     margin-top: 0;

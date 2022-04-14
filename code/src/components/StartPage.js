@@ -4,6 +4,10 @@ import styled from "styled-components"
 
 import startpage from "images/startpage.jpg"
 
+const Section = styled.section`
+    margin-top: 50px;
+`
+
 const Container = styled.div`
     width: 375px;
     margin: 0 auto;
@@ -21,15 +25,15 @@ const StartButton = styled.button`
     width: 300px;
     border-radius: 10px;
     margin: 7px 0 25px 0;
-    border: solid 3px #892B64;
-    background-color: white;
-    color: #892B64;
+    border: solid 3px #4C4EF9;
+    background-color: rgb(216, 216, 239);
+    color: #4C4EF9;
     font-family: 'Acme', sans-serif;
     font-size: 16px;
     cursor: pointer;
 
     &:active {
-        background-color: #892B64;
+        background-color: #4C4EF9;
         color:white;
     }    
     `
@@ -37,7 +41,7 @@ const StartButton = styled.button`
     
 const StartPage = () => {
     return (
-        <section>
+        <Section>
             <Container>
                 <WrapperDiv>
                 <img src={startpage} alt="people with big dartboard" width="375px"/>
@@ -51,7 +55,7 @@ const StartPage = () => {
                 </Link>
                 </WrapperDiv>
             </Container>
-        </section>
+        </Section>
 
     )
 }

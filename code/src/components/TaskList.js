@@ -19,17 +19,20 @@ const Container = styled.div`
     width:768px;
     }
 `
+const StyledSection = styled.section`
+    border-top: 1px solid #4C4EF9;
+`
+
 
 const WrapperDiv = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-
 `
 
 const TaskArticle = styled.article`
     position: relative;
-    border-bottom: solid 1px #5c4d7d;
+    border-bottom: solid 1px #4C4EF9;
     padding: 10px;
     overflow-wrap: break-word;
 `
@@ -39,7 +42,7 @@ const TaskName = styled.h3`
 `
 
 const DeleteButton = styled.button`
-    background-color: white;
+    background-color: rgb(216, 216, 239);
     position: absolute;
     top: 10px;
     right: 10px;
@@ -72,14 +75,14 @@ const TaskList = () => {
             <section>
                 <Container>
                     <WrapperDiv>
-                        <img src={emptypage} alt="two people scheduling" width="375px"/>
+                        <img src={emptypage} alt="two people scheduling" width="375px" />
                     </WrapperDiv>
                 </Container>
             </section>
         )
     } else {
         return (
-            <section>
+            <StyledSection>
                 <Container>
                 {allTasks.map((taskItem, index) => (
                     <TaskArticle key={taskItem.id}>
@@ -99,7 +102,7 @@ const TaskList = () => {
                     </TaskArticle>
                 ))}
                 </Container>
-            </section>
+            </StyledSection>
         )
     }
 

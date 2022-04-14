@@ -3,6 +3,12 @@ import { useSelector } from "react-redux";
 import styled from "styled-components"
 
 
+const devices = {
+    mobile: "(min-width: 375px)",
+    tablet: "(min-width: 768px)",
+    desktop: "(min-width: 1025px)",
+  }
+
 const Container = styled.div`
     width: 375px;
     margin: 0 auto;
@@ -12,9 +18,15 @@ const CounterArticle = styled.article`
     display: flex;
     flex-direction: column;
     align-items: center;
-    border: 3px solid #5c4d7d;
+    border: 3px solid #4C4EF9;
     border-radius: 10px;
-    margin: 15px;
+    margin: 15px 9.5px 50px 9.5px;
+    color: white;
+    background-color:#4C4EF9;
+
+    @media ${devices.desktop}{
+        margin: 15px 9.5px 25px 9.5px
+    }
 `
 
 const TaskCounter = () => {
