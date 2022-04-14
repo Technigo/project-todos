@@ -20,6 +20,10 @@ const TodoInput = styled.input`
     color: rgb(50, 78, 168);
     padding-left: 5px;
   }
+  @media (min-width: 1025px) {
+    width: 40vw;
+    margin-left: 15px;
+  }
 `;
 
 const TodoWrapper = styled.form`
@@ -40,11 +44,36 @@ const RemoveBtn = styled.button`
   border-radius: 50px;
   padding: 10px;
   border: none;
+  transition: transform 0.2s;
+  @media (min-width: 768px) {
+    position: absolute;
+    right: 40%;
+    left: 40%;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+  @media (min-width: 1025px) {
+    right: 45%;
+    left: 45%;
+  }
 `;
 
 const AddBtn = styled.button`
   background-color: transparent;
   border: none;
+  transition: transform 0.2s;
+  @media (min-width: 1025px) {
+    margin-left: 20px;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+`;
+
+const RemoveWrapper = styled.div`
+  width: 100%;
+  position: relative;
 `;
 
 const AddTodo = () => {
@@ -59,24 +88,28 @@ const AddTodo = () => {
 
   return (
     <>
-      <RemoveBtn onClick={() => dispatch(todo.actions.deleteAllTasks(todo))}>
-        remove all
-      </RemoveBtn>
-      <TodoWrapper>
+      <RemoveWrapper>
+        <RemoveBtn onClick={() => dispatch(todo.actions.deleteAllTasks(todo))}>
+          remove all
+        </RemoveBtn>
+      </RemoveWrapper>
+      <TodoWrapper onSubmit={onTodoText}>
         <TodoInput
           type='text'
           placeholder='Add your todo..'
           minLength='3'
           value={newTodo}
           onChange={(event) => setNewTodo(event.target.value)}
+          required
         />
-
-        <FontAwesomeIcon
-          onClick={onTodoText}
-          icon={faCirclePlus}
-          size='3x'
-          color='rgb(50, 78, 168)'
-        />
+        <AddBtn>
+          <FontAwesomeIcon
+            onClick={onTodoText}
+            icon={faCirclePlus}
+            size='3x'
+            color='rgb(50, 78, 168)'
+          />
+        </AddBtn>
       </TodoWrapper>
     </>
   );

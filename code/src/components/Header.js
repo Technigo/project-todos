@@ -1,5 +1,4 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import moment from 'moment';
 
@@ -10,6 +9,11 @@ const HeaderWrapper = styled.div`
   padding: 10px;
   height: 200px;
   border-radius: 0px 0px 10px 10px;
+  @media (min-width: 1025px) {
+    width: 43vw;
+    margin: auto;
+    margin-top: 50px;
+  }
 `;
 
 const ButtonWrapper = styled.div`
@@ -30,6 +34,12 @@ const OptionsBtn = styled.button`
   color: white;
   font-size: 15px;
   font-weight: bold;
+  transition: transform 0.2s;
+  @media (min-width: 1025px) {
+    &:hover {
+      transform: scale(1.15);
+    }
+  }
 `;
 
 const Header = ({
