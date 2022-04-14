@@ -1,14 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import tasks from "reducers/tasks";
-import { formatDistance } from 'date-fns';
 
 
 const Task = ( {task} ) => {
 
     const navigate = useNavigate()
     const dispatch = useDispatch();
+    const [complete, setComplete] = useState(false);
     
     const editItem = (id) => {
         navigate('/add-task');
@@ -19,39 +19,51 @@ const Task = ( {task} ) => {
         dispatch(tasks.actions.deleteItem(id))
     }
    
- 
 
-    const currentDate = new Date().getDate();
-    const dueDate = new Date(task.dueDate).getDate()
-    const currentMonth = new Date().getMonth();
-    const currentYear =  new Date().getFullYear();
-    const dueMonth = new Date(task.dueDate).getMonth();
-    const dueYear = new Date(task.dueDate).getFullYear();
-
-    const dateDifference =  Number(dueDate - currentDate);
-
-    const reminder = () =>{
-        if (currentMonth === dueMonth && currentYear === dueYear && dateDifference < 10) 
-        {   console.log(dateDifference)
-            return <span>Due in {dateDifference}</span>
-        }
+    // Toggle check complete button
+    const onChangeCompleteBtn = (id) => {
+        setComplete(!complete);
+        dispatch(tasks.actions.updateCompleteItem(id))
     }
+ 
+  
+    const currentDate = new Date().getTime();
 
+    const dueDateFormat = new Date(task.dueDate).toLocaleDateString()
 
-      
-    return <li key={task.id}>
-    {reminder()}
-    <span> {task.complete ? 'complete' : 'uncomplete'} </span>
-    <p> {task.text}  </p>
-    <span>Due date: {task.dueDate === '' ? 'no due date' : task.dueDate}</span>
-    <span className='thought-date'>	
-    {formatDistance(task.date, Date.now(), {
-								addSuffix: true,
-							})}</span>
+    //Convert remainDay from millisecond to an integer
+    // Plus 1 to make the date stay same, even when the millisecond decrease
+    const remainDay = Math.floor((task.dueDate - currentDate)/(1000*60*60*24)+1)
+
+    const reminder = () => {
+        if (remainDay > 10) {
+            return dueDateFormat 
+        } 
+
+        return remainDay + 'days';
+    }      
+    return (
+        <>
+        <label htmlFor={task.text}>
+        <span> {task.complete ? 'complete' : 'uncomplete'} </span>
+    
+        <p> {task.text}  </p>
+    
+        <span>Due date: {reminder()}</span>
+        <span>Created: {task.date}</span>
+
                             
-    <button type="button" onClick={() => editItem(task.id)}>edit</button>
-    <button type="button" onClick={() => deleteItem(task.id)}>delete</button>
-    </li>
+        <button type="button" onClick={() => editItem(task.id)}>edit</button>
+        <button type="button" onClick={() => deleteItem(task.id)}>delete</button>
+        </label>
+        <input 
+        type='checkbox'
+        value={task.text}
+        checked={complete}
+        onChange={() => onChangeCompleteBtn(task.id)}
+        />
+        </>
+    )
 
 }
 

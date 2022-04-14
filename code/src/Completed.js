@@ -1,10 +1,19 @@
 import React from "react";
 import Header from "Header";
+import Task from "Task";
+import uniqid from 'uniqid';
 
 const Completed = () => {
+
+    const list = JSON.parse(localStorage.getItem('item'));
+    const completedList = list.filter(item => item.complete);
+
     return (
         <div>
             <Header header='✅ Complete' />
+            <ul>
+            {completedList.map(item => <Task task = {item} key={uniqid()}/>)}
+            </ul>
         </div>
     )
 }

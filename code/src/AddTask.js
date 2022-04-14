@@ -1,24 +1,22 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import uniqid from 'uniqid';
-import { format, formatDistance, formatRelative, subDays } from 'date-fns'
 
 
 import tasks from "reducers/tasks";
 import { useNavigate } from "react-router-dom";
 import leftBtn from './img/leftBtn.svg'
 import folder from './img/folder.svg'
-import { now } from "moment";
-
 
 
 const AddTask = () => {
     
-    const createDate = new Date();
+    const createDate = new Date().toLocaleDateString();
     const [inputTask, setInputTask] = useState('')
     const [dueDate, setDueDate] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
+
 
     const editItem = useSelector(state => state.tasks.editItem);
     const isEditing = useSelector(state => state.tasks.isEditing);
@@ -28,9 +26,9 @@ const AddTask = () => {
     const onSubmitNewTask = (e) => {
       
         e.preventDefault(e)
-        
-        dispatch(tasks.actions.addItem({id: uniqid(), text: inputTask, complete: true, date: createDate, dueDate: dueDate})) 
+        dispatch(tasks.actions.addItem({id: uniqid(), text: inputTask, complete: false, date: createDate, dueDate: new Date(dueDate).getTime()})) 
         navigate('/all');
+     
     }
 
     // On Change function to update and edit item
@@ -69,7 +67,7 @@ const AddTask = () => {
                     id="due-date"
                     value={dueDate}
                     min = {createDate}
-                    max = '2100-01-01'
+                    max = '01/01/2100'
                     onChange={(e) => setDueDate(e.target.value)}
                     />
                 </label>

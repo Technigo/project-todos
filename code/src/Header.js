@@ -16,7 +16,10 @@ const Header = ( {header} ) => {
    
     const deleteItem = () => {
         dispatch(tasks.actions.deleteAllItem());
+        window.localStorage.clear()
     }
+
+
    
 
     return <header>
