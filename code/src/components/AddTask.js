@@ -63,7 +63,7 @@ font-size: 15px;
 -moz-appearance: none;
 appearance: none;
 
-&:active {
+&:active, &:focus, &target {
 -webkit-appearance: none;
 -moz-appearance: none;
 appearance: none;
