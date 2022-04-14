@@ -1,47 +1,60 @@
 import styled from 'styled-components';
 
 export const Main = styled.main`
-  background: #697482;
+  display: flex;
+  justify-content: center;
+  background: rgb(255,250,250, 0.5);
   height: 100vw;
 `
 
-export const Header = styled.header`
-  display: flex;
-  justify-content: center;
+export const TodoContainer = styled.section`
+  height: fit-content;
+  background: rgb(240,220,255,0.1);
+  margin: 30px;
+  padding: 50px;
+  border: 1px solid #FFAB76;
+  border-radius: 10px;
 `
 
 export const Form = styled.form`
   display: flex;
-  justify-content: center;
-  margin: 5vw 0;
+  flex-direction: column;
+  margin: 5px 0;
 `
 
 export const Input = styled.input`
-  border: groove;
-  border-radius: 50px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  font-style: oblique;
+  margin: 5px;
   padding: 10px;
 `
 
-export const Button = styled.button`
-  border: none;
+export const AddButton = styled.button`
+  color: #FFAB76;
+  border: 1px solid #dcdcdc;
+  background: #fff;
+  padding: 0;
   margin: 10px;
-  border-radius: 50px;
+  width: 18px;
+  height: 18px;
+  border-radius: 10px;
 `
 
-export const TodoSection = styled.section`
+export const TodoSection = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
 `;
 
 export const TodoItem = styled.article`
-  background: #EFEDEB;
+  background: #fff;
   border: 1px solid #dcdcdc;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
   margin-bottom: 5px;
   position: relative;
-  width: 50%;
+  width: 100%;
 `;
 
 export const DoneButton = styled.input`
@@ -57,26 +70,26 @@ export const DoneButton = styled.input`
     &:before, &:after {
       content: "";
       position: absolute;
-      left: -18px;
-      top: 2.5px;
-      width: 18px;
-      height: 18px;
-      border-radius: 20%;
+      left: -11px;
+      top: 5.5px;
+      width: 15px;
+      height: 15px;
+      border-radius: 10px;
     }
     &:before {
       outline: 2px solid #aaa;
     }
   }
     &:checked + label:before {
-      outline: 2px solid #097969;
+      outline: 2px solid #FFAB76;
   }
     &:checked + label {
-    color: #097969;
-    text-decoration: line-through;
+      color: #FFAB76;
+      text-decoration: line-through;
 }
     &:checked + label:after {
       background-image: url("/assets/check.png");
-      background-size: contain;
+      background-size: cover;
       transform: scale(0.8);
       opacity: 1;
       transition: all .3s ease;
@@ -97,6 +110,5 @@ export const DeleteButton = styled.button`
 `;
 
 export const TodoNumber = styled.h4`
-  color: transparent;
-  text-shadow: rgba(245,245,245,0.5) 3px 5px 1px;
-`
+  color: #FFAB76;
+  `

@@ -36,7 +36,8 @@ const TodoList = () => {
                 onChange={() => onTodoToggle(todoItem.id)} />
               <label htmlFor={todoItem.id}>Do it!</label>
             <DeleteButton onClick={() => onTodoDelete(todoIndex)}>
-              <span 
+              <span
+                className='button-span'
                 role="img" 
                 aria-label="delete">
                 ✖️
@@ -44,7 +45,7 @@ const TodoList = () => {
             </DeleteButton> 
         </TodoItem>
       ))}
-      <TodoNumber>Your todos: &nbsp; {todoList.length}</TodoNumber>
+      <TodoNumber>Your tasks: &nbsp; {todoList.length}</TodoNumber>
     </TodoSection>
   )
 }

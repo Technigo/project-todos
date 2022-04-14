@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import uniqid from 'uniqid';
+import moment from 'moment';
 
 import todos from 'reducers/todos'
 import {
-  Header,
   Form, 
   Input,
-  Button
+  AddButton,
 } from 'Styles'
 
 const AddTodo = () => {
@@ -29,20 +29,27 @@ const AddTodo = () => {
     setInputValue("");
   };
 
+  const date = moment().format('MMMM Do YYYY');
+
   return (
-    <Header>
       <Form onSubmit={onFormSubmit}>
-        <label>
-        <Input 
-        type="text" 
-        value={inputValue}
-        onChange={(e) => setInputValue(e.target.value)}
-        placeholder="Add new task"
-        />
-        </label>
-        <Button type="submit">+</Button>
+        <p>{date}</p>
+          <label>
+          <Input 
+          type="text" 
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+          placeholder="Add new task"
+          />
+          <AddButton type="submit">
+            <span 
+            className='button-span'
+            role="img" 
+            aria-label="submit-mark"
+            >➕</span>
+          </AddButton>
+          </label>
       </Form>
-    </Header>
   )
 };
 

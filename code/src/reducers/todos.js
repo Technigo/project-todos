@@ -4,7 +4,7 @@ import uniqid from 'uniqid';
 const data = [
   {
     id: uniqid(),
-    title: 'Add task',
+    title: 'Add task to list',
     isDone: false,
   },
 ];

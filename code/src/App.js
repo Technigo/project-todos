@@ -8,7 +8,8 @@ import AddTodo from 'components/AddTodo';
 import TodoList from 'components/TodoList';
 
 import {
-  Main
+  Main,
+  TodoContainer
 } from 'Styles'
 
 const reducer = combineReducers({
@@ -23,8 +24,10 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Main>
+      <TodoContainer>
       <AddTodo />
       <TodoList />
+      </TodoContainer>
       </Main>
     </Provider>
   )
