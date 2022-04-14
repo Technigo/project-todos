@@ -42,6 +42,7 @@ const Project = () => {
     } else if (completedTasks !== totalTasks) {
       // console.log("false", allComplete, completedTasks, "/", totalTasks);
       setAllComplete(false);
+      console.log(allComplete);
     }
   };
 
