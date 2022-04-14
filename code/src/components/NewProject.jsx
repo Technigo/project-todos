@@ -97,7 +97,11 @@ const NewProject = () => {
             </ColorButton>
           ))}
         </GridContainer>
-        {error && <p>Please complete and select all the required fields.</p>}
+        {error && (
+          <p role="alert">
+            Please complete and select all the required fields.
+          </p>
+        )}
         <SubmitButton
           role="button"
           tabIndex="0"

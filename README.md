@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The brief was to use Redux and React to create a to-do list app.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I ended up using React-Router as well, and implementing local storage. I can create multiple lists, toggle them as complete or incomplete, delete the tasks, edit the tasks, or delete the entire project lists. Also added aria labels and tabbing to make the site accessible.
+
+Lots of challenges and bugs I managed to fix. Would like to have implemented a drag-and-drop as well for the tasks. Let's see if I have time to implement it.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://to-do-list-week14.netlify.app/
