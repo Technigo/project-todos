@@ -60,6 +60,7 @@ const Task = ({ taskid, projectindex, checkComplete }) => {
   };
 
   const changingText = (e) => {
+    console.log(e.currentTarget.textContent);
     setNewText(e.currentTarget.textContent);
   };
 
