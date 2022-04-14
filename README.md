@@ -1,13 +1,18 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week, I deep dived into global states with Redux approach.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I struggled a lot to filter tasks based on status.
+I created a new array (filter) that stores a copy of objects of all tasks.
+Each time a task is toggled as done, the object is added to this new array (filter).
+
+This approach creates bugs when ALL of the tasks are either toggled or not toggled (all tasks have the same status) --> All of them will show in all filters.
+
+I'm continuing to explore different approaches and to fix this bug. However, when you have several tasks that don't have the same status, the task sorting works like a charm!
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://minimal-task-tracker.netlify.app/
+

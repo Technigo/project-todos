@@ -101,8 +101,6 @@ const TaskList = () => {
         </TaskListWrapper >
       ))}</div>
           }
-
-      
     </TaskListFlexColumn>
   )
 }

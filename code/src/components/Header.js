@@ -3,7 +3,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 
 import { Regular, Count } from './styles/FontsAndSpans.styled'
-import { FlexRow } from './styles/Containers.styled'
+import { FlexRowGradientBg } from './styles/Containers.styled'
 
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
 
   return (
     <header>
-      <FlexRow>
+      <FlexRowGradientBg>
         <h1>Today <Regular>{new Date().toLocaleDateString('en-SE', {
           weekday: 'long',
           day: 'numeric'
@@ -21,7 +21,7 @@ const Header = () => {
             ) : (
               <Count>{count.length} tasks</Count>
             )}</h1>
-      </FlexRow>
+      </FlexRowGradientBg>
     </header>
   )
 }

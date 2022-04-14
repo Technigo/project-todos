@@ -20,8 +20,19 @@ main {
   margin: auto;
 }
 
+footer {
+  text-align: center;
+  font-weight: 400;
+  color: darkgray;
+}
+
+a {
+  text-decoration: none;
+  color: darkgray;
+}
+
 h1 {
-  margin: 20px 0 20px 0;
+  margin: 20px 0 20px 20px;
 }
 
 input[name="input"] {

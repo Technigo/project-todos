@@ -9,7 +9,7 @@ import AddTasks from 'components/AddTasks'
 import TaskList from 'components/TaskList'
 
 import { GlobalStyles } from "components/styles/Global";
-import { FlexColumn } from 'components/styles/Containers.styled'
+import {  Border } from 'components/styles/Containers.styled'
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -21,12 +21,13 @@ export const App = () => {
   return (
     <Provider store={store}>
       <main>
-        <FlexColumn>
+        <Border>
           <GlobalStyles />
           <Header />
           <AddTasks />
           <TaskList />
-        </FlexColumn>
+        </Border>
+        <footer> <p>Created by : <a href='https://github.com/rawisou'> Rawisara Saman</a></p></footer>
       </main>
     </Provider>
   )
