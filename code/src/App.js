@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { combineReducers, compose, configureStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import Header from 'components/Header.js';
 import TodoAdd from './components/TodoAdd.js';

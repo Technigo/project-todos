@@ -1,10 +1,5 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import styled from 'styled-components';
-
-import todos from "../reducers/todos.js";
-
-const TodoTags = ({ tags }) => {
 
     const Tags = styled.div `
         margin: 0 0 15px 0;
@@ -21,13 +16,21 @@ const TodoTags = ({ tags }) => {
             background-color: #40e0d0;
         }
     `
+
+const TodoTags = ({ tags }) => {
     
+    console.log('tags', tags);
+
     return (
-        <Tags>
-            {tags.map((tag) => (
-                <Tag key={tag} className="todo-item-tag">{tag}</Tag>
-            ))}
-        </Tags>
+
+            <Tags>
+                {tags.map((tag, index) => (
+                    <Tag key={'tag'+index}>
+                        {tag}
+                    </Tag>
+                ))}
+            </Tags>
+        
     );
 }
 

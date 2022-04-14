@@ -1,9 +1,7 @@
 import React from "react";
 import styled from 'styled-components';
 
-const Header = () => {
-
-    const Header = styled.header `
+const HeaderContainer = styled.header `
         padding: 6px 0 0 0;
         margin: 20px 20px 20px 20px;
     `
@@ -14,12 +12,16 @@ const Header = () => {
         border-bottom: 8px solid black;
     `
 
+const Header = () => {
+
+    
+
     return (
-        <Header className="container">
+        <HeaderContainer className="container">
             <Heading>
                 TODO APP
             </Heading>
-        </Header>
+        </HeaderContainer>
     );
 }
 

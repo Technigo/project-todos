@@ -4,16 +4,7 @@ import styled from 'styled-components';
 
 import todos from "../reducers/todos.js";
 
-const TodoDelete = ({ index }) => {
-
-    const dispatch = useDispatch();
-    
-    const deleteTodo = (index) => {
-        console.log('delete');
-        dispatch(todos.actions.deleteTodo(index));
-    }
-
-    const DeleteTodoButton = styled.button `
+const DeleteTodoButton = styled.button `
         background-color: #f05cb5;
         border: 2px solid #000;
         position: absolute;
@@ -28,8 +19,19 @@ const TodoDelete = ({ index }) => {
         }
     `
 
+const TodoDelete = ({ index }) => {
+
+    const dispatch = useDispatch();
+    
+    const deleteTodo = (index) => {
+        console.log('delete' + index);
+        dispatch(todos.actions.deleteTodo(index));
+    }
+
+    
+
     return (
-        <DeleteTodoButton type="submit" onClick={() => deleteTodo(index)}>
+        <DeleteTodoButton onClick={() => deleteTodo(index)}>
             X
         </DeleteTodoButton>
         

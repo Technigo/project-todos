@@ -2,14 +2,14 @@ import  { createSlice } from '@reduxjs/toolkit';
 
 const data = [
     {
-        id: '1',
+        id: 'dgfger1',
         title: 'Walk dog',
         whatToDo: 'Should go for a walk with Pedro.',
         tags: ['dog', 'walk'],
         isCompleted: false
     },
     {
-        id: '2',
+        id: '23545fgdg',
         title: 'Buy new t-shirt',
         whatToDo: 'Need to buy a new t-shirt that should be green.',
         tags: ['shopping', 'go to the mall'],
