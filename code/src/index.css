@@ -45,7 +45,7 @@ main {
 	position: relative;
 }
 
-/* input {
+input {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -54,10 +54,11 @@ main {
 	border: none;
 	border-bottom: 2px solid var(--clr-accent);
 	outline: none;
-} */
+}
 
-/* input[type='checkbox'] {
+input[type='checkbox'] {
 	align-self: flex-start;
+	display: inline-block;
 	border: 2px solid var(--clr-accent);
 	height: 20px;
 	width: 20px;
@@ -65,8 +66,17 @@ main {
 	top: 0.25em;
 	right: 0.5em;
 	margin: 0;
+	cursor: pointer;
+}
+
+input[type='checkbox']:checked + label::after {
+	content: '✔';
+	position: absolute;
+	top: -5px;
+	left: 0;
 }
 
 .completed {
 	text-decoration: line-through;
-} */
+	color: red;
+}

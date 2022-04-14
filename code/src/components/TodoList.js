@@ -53,6 +53,7 @@ const Container = styled.section`
 
 const TaskContainerWrapper = styled.form`
 	display: flex;
+	position: relative;
 `
 
 const TaskContainer = styled.div`
@@ -84,6 +85,10 @@ const InputText = styled.label`
 	align-self: end;
 	width: 230px;
 	overflow-wrap: break-word;
+
+	.completed {
+		text-decoration: line-through;
+	}
 `
 
 const TodoList = () => {
