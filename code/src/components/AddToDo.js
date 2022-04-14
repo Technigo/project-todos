@@ -25,18 +25,26 @@ const AddTodo = () => {
         setToDo('')
     }
     
+    const onRemoveAll = () => {
+        dispatch(tasks.actions.deleteAllTodos())
+    }
+
+    
     return (
-        <form onSubmit={onFormSubmit}>
-            <label>
-                New Todo: &nbsp;
-            <input 
-            type='text'
-            value={toDo}
-            onChange={(event) =>setToDo(event.target.value)}
-            />
-            </label>
-            <button type='submit'>Add New Todo!</button>
-        </form>
+        <section>
+            <form onSubmit={onFormSubmit}>
+                <label>
+                    New Todo: &nbsp;
+                <input 
+                type='text'
+                value={toDo}
+                onChange={(event) =>setToDo(event.target.value)}
+                />
+                </label>
+                <button type='submit'>Add New Todo!</button>
+            </form>
+            <button onClick={onRemoveAll}>Clear all todos</button>
+        </section>
     )
 }
 

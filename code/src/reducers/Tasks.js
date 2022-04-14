@@ -24,6 +24,20 @@ const tasks = createSlice ({
 
         addTodo: (store, action) => {
             store.taskList.push(action.payload)
+        },
+
+        deleteAllTodos: (store) => {
+            store.taskList = []
+        },
+        checkAllTodo: (store) => {
+            store.taskList.forEach((task) =>{
+                    task.isChecked = true
+                })
+        },
+        unCheckTodo: (store) => {
+            store.taskList.forEach((task) => {
+                task.isChecked = false
+            })
         }
     }
 })

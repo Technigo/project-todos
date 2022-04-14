@@ -18,16 +18,27 @@ const TodoList = () => {
         dispatch(tasks.actions.deleteTodo(index))
     }
 
-    const createdAt = moment()
+    const CheckAllTodo = () => {
+        dispatch(tasks.actions.checkAllTodo())
+    }
 
+    const unCheckAllTodo = () => {
+        dispatch(tasks.actions.unCheckTodo())
+    }
+
+    //To show date and time todo was created
+    const dateFormat = 'DD/MM/YY HH:MM';
+    const createdAt = moment().format(dateFormat)
+
+    
     return (
         <section>
             {todoList.map((todo, todoIndex) => (
                 <article key={todo.id}>
                     <h3>{todo.name}</h3>
-                    <p>Created at {createdAt.format('DD/MM/YY HH:MM')}</p>
+                    <p>Created at {createdAt}</p>
                     <label>
-                        <span role='img' aria-label='checked'>Finished ✔</span>
+                        <span>Finished</span>
                     <input 
                     type='checkbox'
                     checked={todo.isChecked}
@@ -39,6 +50,8 @@ const TodoList = () => {
                     </button>
                 </article>
             ))}
+            <button onClick={CheckAllTodo}>Check all todos</button>
+            <button onClick={unCheckAllTodo}>Uncheck all todos</button>
         </section>
     )
 
