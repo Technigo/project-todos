@@ -14,7 +14,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 import todos from 'reducers/todos'
 
-import { AddButtonBox, AddTextBox, AddSection, AddFeatures, AddOptions, AddCategory, AddDeadline } from './styling/StyledAddTodo'
+import { AddButtonBox, AddText, AddSection, AddForm, AddOptions, AddCategory, AddDeadline } from './styling/StyledAddTodo'
 import { AddButton } from './styling/IconsButtons'
 
 const AddTodo = () => {
@@ -59,31 +59,23 @@ const AddTodo = () => {
 
   return (
     <AddSection>
-      <form onSubmit={onAddTodo}>
-        <AddTextBox>
-          <input required placeholder="Type your todo here" type="text" onChange={onChangeInputText} value={inputText} />
-        </AddTextBox>
-        <AddFeatures>
+      <AddForm onSubmit={onAddTodo}>
           <AddOptions>
-            <AddCategory>
-              <label>
-                <select value={inputCategory} onChange={onChangeInputCategory}>
-                  <option value="neutral">Neutral</option>
-                  <option value="funny">Funny</option>
-                  <option value="boring">Boring</option>
-                  <option value="hard">Hard</option>
-                </select>
-              </label>
+            <AddText required placeholder="Type your todo" type="text" onChange={onChangeInputText} value={inputText} />
+            <AddCategory value={inputCategory} onChange={onChangeInputCategory}>
+              <option value="neutral">Neutral</option>
+              <option value="funny">Funny</option>
+              <option value="boring">Boring</option>
+              <option value="hard">Hard</option>
             </AddCategory>
             <AddDeadline>
-              <DatePicker placeholderText="Choose a deadline (optional)" selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd.MM.yyyy" locale={'en'} minDate={new Date()} />
+              <DatePicker placeholderText="Deadline (optional)" selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd.MM.yyyy" locale={'en'} minDate={new Date()} />
             </AddDeadline>
           </AddOptions>
           <AddButtonBox>
             <AddButton type="submit" disabled={isDisabled}><FontAwesomeIcon icon={faPlus} /></AddButton>
           </AddButtonBox>
-        </AddFeatures>
-      </form>
+      </AddForm>
     </AddSection>
   )
 }

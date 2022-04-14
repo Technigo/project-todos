@@ -38,10 +38,12 @@ code {
 /* class to target the calendar */
 /* weirdly the width need to be -8x than what is displayed... */
 .react-datepicker__input-container input {
-  width: 234px;
+  width: 100%;
 }
 
-input {
+input,
+select {
+  background-color: #fff;
   color: inherit;
   font-family: inherit;
   font-size: 100%;

@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components/macro"
 
-const FooterSection = styled.div`
+const FooterSection = styled.footer`
 display: flex;
 flex-direction: column;
 max-width: 600px;
@@ -13,6 +13,7 @@ border-radius: 5px;
 background: #fff;
 
 & p {
+  margin: 0;
   text-align: center;
 }
 

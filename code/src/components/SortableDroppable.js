@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react"
 import Sortable from "sortablejs"
 
-// import Todo from './Todo'
-
 const SortableDroppable = ({ arrayToUse }) => {
 
   const [droppable, setDroppable] = useState(null)
@@ -30,11 +28,7 @@ const SortableDroppable = ({ arrayToUse }) => {
     <>
       <div ref={(el) => setDroppable(el)}>
         {arrayToUse}
-        {/* {pendingTodos.reverse().map((todo) => (
-          <Todo key={todo.id} todo={todo} id={todo.id} />
-        ))} */}
       </div>
-
     </>
   )
 }

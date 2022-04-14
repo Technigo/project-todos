@@ -9,31 +9,36 @@ padding: 10px;
 border: 2px solid red;
 border-radius: 5px;
 background: #fff;
-/* color: blue; */
 `
 
-export const AddTextBox = styled.div`
-/* width: 100%; */
+export const AddForm = styled.form`
+display: flex;
+`
+
+export const AddOptions = styled.div`
+display: flex;
+flex-direction: column;
+width: 50%;
+`
+
+
+export const AddText = styled.input`
+width: 100%;
 /* why is it larger than the box that contains it?? */
-& input {
   border-radius: 5px;
   border: 1px solid #000;
-  width: 100%;
 
-}
 `
 
-export const AddCategory = styled.div`
-
-& select {
-  width: 242px;
-  background-color: #fff;
+export const AddCategory = styled.select`
+width: 100%;
+  /* background-color: #fff;
   border-radius: 5px;
   border: 1px solid #000;
   color: inherit;
   font-family: inherit;
-  font-size: 100%;
-}
+  font-size: 100%; */
+  margin-top: 10px;
 
 `
 
@@ -41,19 +46,9 @@ export const AddDeadline = styled.div`
 padding-top: 10px;
 `
 
-export const AddFeatures = styled.div`
-display: flex;
-justify-content: space-between;
-padding-top: 10px;
-`
-export const AddOptions = styled.div`
-display: flex;
-flex-direction: column;
-flex-grow: 2;
-`
 
 export const AddButtonBox = styled.div`
 display: flex;
 justify-content: center;
-width: 50px;
+width: 50%;
 `

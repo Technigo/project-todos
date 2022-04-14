@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from "styled-components/macro"
 
-const HeaderSection = styled.div`
+const HeaderSection = styled.header`
 display: flex;
 flex-direction: column;
 max-width: 600px;
@@ -14,6 +14,7 @@ background: #fff;
 text-align: center;
 
 & h1 {
+  margin: 0;
   text-transform: uppercase;
 }
 `

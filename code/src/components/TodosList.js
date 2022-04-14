@@ -95,21 +95,22 @@ const TodosList = ({ setIsUndoDisabled }) => {
       </FilteringSection>
       {(!pendingTodos.length && !completedTodos.length) ? <NoTodo /> :
         <>
-          <div style={{ display: pendingVisible }}>
+          <section style={{ display: pendingVisible }}>
             {pendingTodos.length ?
               <SortableDroppable arrayToUse={pendingTodosSearched.reverse().map((todo) => (
                 <Todo key={todo.id} todo={todo} id={todo.id} setIsUndoDisabled={setIsUndoDisabled} />
               ))} />
               :
               <NoPendingTodo />}
-          </div><div style={{ display: completedVisible }}>
+          </section>
+          <section style={{ display: completedVisible }}>
             {completedTodos.length ?
               <SortableDroppable arrayToUse={completedTodosSearched.reverse().map((todo) => (
                 <Todo key={todo.id} todo={todo} id={todo.id} setIsUndoDisabled={setIsUndoDisabled} />
               ))} />
               :
               <NoCompletedTodo />}
-          </div>
+          </section>
         </>
       }
       {(allTodos.length && !pendingTodosSearched.length && !completedTodosSearched.length) ? <NoSearchResults /> : ''}
