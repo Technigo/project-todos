@@ -1,13 +1,15 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Built a To Do app with Redux and React. This app lists all the todos and allows users to add new todos.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The first thing I focused on was creating slices, reducers, and actions with Redux. Once that was done, 
+I created all the different components and then fetched the list of todos and mapped over them to display
+each todo. From there I added checkbox inputs with fuctionalities to toggle todos from being complete or 
+incomplete. I chose not to create custom checkboxes because I didn't want to make them inaccessible. Lastly
+I added reducers that would delete one todo at a time and a reducer to clear all of them. 
 
-## View it live
+## Demo
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://savannah-todo-list.netlify.app/
