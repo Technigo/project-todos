@@ -14,6 +14,7 @@ const ButtonAdd = styled.button`
 border: none;
 background: none;
 font-size: 2rem;
+margin-left: 10px;
 cursor: pointer;
 `
 const InputField = styled.input`

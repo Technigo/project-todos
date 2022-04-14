@@ -25,12 +25,13 @@ background-color: white;
 const TaskText = styled.h2`
 max-width: 75%;
 font-size: 20px;
+margin-left: 8px;
 color: ${(props) => (props.completed ? `#b0b0b0` : `#222221`)};
 `
 
 const ButtonDelete = styled.button`
 position: absolute;
-top: 22px;
+/* top: 22px; */
 right: 10px;
 padding-left: 2px;
 border: none;
