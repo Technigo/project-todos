@@ -4,7 +4,7 @@ import { faFaceDizzy, faFaceFlushed, faFaceGrinSquintTears, faFaceMeh } from '@f
 
 import { EmptySection, EmptyIconsBox } from './styling/StyledEmpty'
 
-const NoTask = () => {
+const NoTodo = () => {
 
   return (
     <EmptySection>
@@ -12,7 +12,7 @@ const NoTask = () => {
         <FontAwesomeIcon icon={faFaceDizzy} />
         <FontAwesomeIcon icon={faFaceFlushed} />
       </EmptyIconsBox>
-      <p>Follow you mood and add some funny or boring task in the form above.</p>
+      <p>Follow you mood and add some funny or boring todo in the form above.</p>
       <EmptyIconsBox>
         <FontAwesomeIcon icon={faFaceGrinSquintTears} />
         <FontAwesomeIcon icon={faFaceMeh} />
@@ -21,4 +21,4 @@ const NoTask = () => {
   )
 }
 
-export default NoTask
+export default NoTodo

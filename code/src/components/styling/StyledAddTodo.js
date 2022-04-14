@@ -13,24 +13,14 @@ background: #fff;
 `
 
 export const AddTextBox = styled.div`
-width: 100%;
-
+/* width: 100%; */
+/* why is it larger than the box that contains it?? */
 & input {
   border-radius: 5px;
   border: 1px solid #000;
+  width: 100%;
 
 }
-`
-
-export const AddText = styled.input`
-border: 1px solid black;
-border-radius: 0;
-outline: none;
-/* why is it larger than the box that contains it?? */
-width: 100%;
-/* &:focus {
-  background-color: lightgrey;
-} */
 `
 
 export const AddCategory = styled.div`

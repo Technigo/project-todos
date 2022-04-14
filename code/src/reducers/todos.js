@@ -50,9 +50,9 @@ const todos = createSlice({
       store.deletedItems = []
     },
 
-    disableUndoDelete: (store) => {
-      store.deletedItems = []
-    }
+    // disableUndoDelete: (store) => {
+    //   store.deletedItems = []
+    // }
   }
 })
 

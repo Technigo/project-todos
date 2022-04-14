@@ -13,10 +13,10 @@ import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 
 import { FilteringSection, FilteringButtonsBox, FilteringInput, Count } from './styling/StyledFiltering'
-import NoPendingTask from './NoPendingTask'
-import NoCompletedTask from './NoCompletedTask'
+import NoPendingTodo from './NoPendingTodo'
+import NoCompletedTodo from './NoCompletedTodo'
 import NoSearchResults from './NoSearchResults'
-import NoTask from './NoTask'
+import NoTodo from './NoTodo'
 
 const TodosList = ({ setIsUndoDisabled }) => {
 
@@ -67,16 +67,16 @@ const TodosList = ({ setIsUndoDisabled }) => {
 
   if (inputSearch !== '') {
     if ((pendingTodosSearched.length + completedTodosSearched.length) < 2) {
-      count = `${pendingTodosSearched.length + completedTodosSearched.length} task fits your search`
+      count = `${pendingTodosSearched.length + completedTodosSearched.length} todo fits your search`
     } else {
-      count = `${pendingTodosSearched.length + completedTodosSearched.length} tasks fit your search`
+      count = `${pendingTodosSearched.length + completedTodosSearched.length} todos fit your search`
     }
   } else if (pendingTodos.length === 0) {
-    count = 'no task left to do'
+    count = 'no todo left to do'
   } else if (pendingTodos.length === 1) {
-    count = `only ${pendingTodos.length} task left to do`
+    count = `only ${pendingTodos.length} todo left to do`
   } else {
-    count = `${pendingTodos.length} tasks left to do`
+    count = `${pendingTodos.length} todos left to do`
   }
 
   return (
@@ -89,29 +89,29 @@ const TodosList = ({ setIsUndoDisabled }) => {
           <FilteringButton onClick={displayCompleted} disabled={isCompletedDisabled}><FontAwesomeIcon icon={faCircleCheck} /></FilteringButton>
         </FilteringButtonsBox>
         <FilteringInput>
-          <input placeholder="Search a task or a category" type="search" name="q" onChange={onTodoSearch} value={inputSearch} autoComplete="off" />
+          <input placeholder="Search a todo or category" type="search" name="q" onChange={onTodoSearch} value={inputSearch} autoComplete="off" />
         </FilteringInput>
         <Count>{count}</Count>
       </FilteringSection>
-{(!pendingTodos.length && !completedTodos.length) ? <NoTask /> : 
-      <>
-      <div style={{ display: pendingVisible }}>
-          {pendingTodos.length ?
-            <SortableDroppable arrayToUse={pendingTodosSearched.reverse().map((todo) => (
-              <Todo key={todo.id} todo={todo} id={todo.id} setIsUndoDisabled={setIsUndoDisabled} />
-            ))} />
-            :
-            <NoPendingTask />}
-        </div><div style={{ display: completedVisible }}>
+      {(!pendingTodos.length && !completedTodos.length) ? <NoTodo /> :
+        <>
+          <div style={{ display: pendingVisible }}>
+            {pendingTodos.length ?
+              <SortableDroppable arrayToUse={pendingTodosSearched.reverse().map((todo) => (
+                <Todo key={todo.id} todo={todo} id={todo.id} setIsUndoDisabled={setIsUndoDisabled} />
+              ))} />
+              :
+              <NoPendingTodo />}
+          </div><div style={{ display: completedVisible }}>
             {completedTodos.length ?
               <SortableDroppable arrayToUse={completedTodosSearched.reverse().map((todo) => (
                 <Todo key={todo.id} todo={todo} id={todo.id} setIsUndoDisabled={setIsUndoDisabled} />
               ))} />
               :
-              <NoCompletedTask />}
+              <NoCompletedTodo />}
           </div>
-          </>
-    }
+        </>
+      }
       {(allTodos.length && !pendingTodosSearched.length && !completedTodosSearched.length) ? <NoSearchResults /> : ''}
     </>
   )

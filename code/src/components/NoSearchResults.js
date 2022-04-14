@@ -9,7 +9,7 @@ const NoSearchResults = () => {
   return (
     <EmptySection>
       <p>Nothing fits your search, maybe worth checking the spelling...</p>
-<FontAwesomeIcon icon={faFaceMehBlank} />
+      <FontAwesomeIcon icon={faFaceMehBlank} />
     </EmptySection>
   )
 }

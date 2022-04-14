@@ -54,7 +54,8 @@ width: fit-content;
 margin-left: 10px;
 
 &:disabled {
-  color: red;
+  color: grey;
+  cursor: not-allowed;
 }
 `
 
@@ -70,8 +71,8 @@ export const ActionButton = styled.button`
   margin-right: 10px;
 
   &:disabled {
-    color: red;
-    cursor: default;
+    color: grey;
+    cursor: not-allowed;
   }
 `
 
@@ -81,13 +82,13 @@ export const FilteringButton = styled.button`
   padding: 0;
   background: transparent;
   color: #000;
-  font-size: 1.5rem;
+  font-size: 2rem;
   cursor: pointer;
   text-align: center;
   margin-right: 10px;
 
   &:disabled {
-    font-size: 2rem;
-    cursor: default;
+    color: red;
+    cursor: not-allowed;
   }
 `

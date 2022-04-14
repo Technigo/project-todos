@@ -23,6 +23,7 @@ margin-top: 10px;
 & input {
   width: 242px;
   text-align: center;
+  background-color: transparent;
 }
 `
 

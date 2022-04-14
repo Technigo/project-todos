@@ -4,14 +4,14 @@ import { faFaceGrinStars } from '@fortawesome/free-regular-svg-icons'
 
 import { EmptySection } from './styling/StyledEmpty'
 
-const NoPendingTask = () => {
+const NoPendingTodo = () => {
 
   return (
     <EmptySection>
-      <p>All tasks are completed, hurrah!</p>
+      <p>All todos are completed, hurrah!</p>
       <FontAwesomeIcon icon={faFaceGrinStars} />
     </EmptySection>
   )
 }
 
-export default NoPendingTask
+export default NoPendingTodo

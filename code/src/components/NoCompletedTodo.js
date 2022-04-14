@@ -4,14 +4,14 @@ import { faFaceGrimace } from '@fortawesome/free-regular-svg-icons'
 
 import { EmptySection } from './styling/StyledEmpty'
 
-const NoCompletedTask = () => {
+const NoCompletedTodo = () => {
 
   return (
     <EmptySection>
-      <p>Complete some tasks and this section won't be empty!</p>
+      <p>Complete some todos and this section won't be empty!</p>
       <FontAwesomeIcon icon={faFaceGrimace} />
     </EmptySection>
   )
 }
 
-export default NoCompletedTask
+export default NoCompletedTodo

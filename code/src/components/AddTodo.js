@@ -14,7 +14,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 import todos from 'reducers/todos'
 
-import { AddButtonBox, AddTextBox, AddSection, AddFeatures, AddOptions, AddText, AddCategory, AddDeadline } from './styling/StyledAddTodo'
+import { AddButtonBox, AddTextBox, AddSection, AddFeatures, AddOptions, AddCategory, AddDeadline } from './styling/StyledAddTodo'
 import { AddButton } from './styling/IconsButtons'
 
 const AddTodo = () => {
@@ -61,7 +61,7 @@ const AddTodo = () => {
     <AddSection>
       <form onSubmit={onAddTodo}>
         <AddTextBox>
-          <AddText required placeholder="Type your todo here" type="text" onChange={onChangeInputText} value={inputText} />
+          <input required placeholder="Type your todo here" type="text" onChange={onChangeInputText} value={inputText} />
         </AddTextBox>
         <AddFeatures>
           <AddOptions>
