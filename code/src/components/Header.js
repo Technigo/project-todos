@@ -1,14 +1,16 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-import todos from "reducers/todos";
+// import todos from "reducers/todos";
 
 const Headerbox = styled.header `
-    border: 1px solid orange;
+    border: 1px solid;
+    border-color: #554D45;
     padding: 10px;
     margin-bottom: 5px;
     border-radius: 5px;
+    position: relative;
 `
 
 

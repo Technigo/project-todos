@@ -1,16 +1,18 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
-import { formatDistance } from "date-fns";
 
 import todos from "reducers/todos";
 
 const TodoItem = styled.article `
-  border: 1px solid orange;
+  border: 1px solid;
+  border-color: #554D45;
+  background-color: #ffd680;
   padding: 10px;
   margin-bottom: 5px;
   border-radius: 5px;
   position: relative;
+  margin-top: 30px;
 `
 
 const DeleteButton = styled.button `
@@ -40,9 +42,9 @@ const TodoList = () => {
 
   
  
-  const date = () => {
-    new Date()
-  }
+  // const date = () => {
+  //   new Date()
+  // }
   // const h = date.toDateString()
   // console.log(h)
   // const time = date.toLocaleTimeString()

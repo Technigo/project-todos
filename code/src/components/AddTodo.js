@@ -5,12 +5,66 @@ import uniqid from "uniqid"
 
 import todos from "reducers/todos";
 
-const AddBox = styled.article`
-  border: 1px solid orange;
-  padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 5px;  
+const AddContainer = styled.section`
+  display: flex;
+  justify-content: center;
+  position: relative;
+
+  .add {
+    cursor: pointer;
+    border: none;
+    font-size: 30px;
+    height: 70px;
+    width: 70px;
+    position: absolute;
+    top: -35px;
+    border-radius: 50%;
+    background-color: #ffb314;
+    
+  }
 `
+const AddBox = styled.article`
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding-top: 30px;
+    justify-content: center;
+    align-items: center;
+    margin-top:40px;
+    gap: 10px;
+  }
+
+  .send {
+    width: 70px;
+    background-color: #ffb314;
+    cursor: pointer;
+    border: none;
+    cursor: pointer;
+    border: none;
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  input {
+    background-color: #ffe7b4;
+    font-size: 20px;
+    border-radius: 5px;
+    border: none;
+    padding:10px;
+  }
+`
+
+// const NewtodoButton = styled.button`
+//   height: 15px;
+//   width: 15px;
+//   position: absolute;
+//   top: -10px;
+//   border: none;
+//   cursor: pointer;
+//   text-align: center;
+//   `
+  
 
 
 const AddTodo = () => {
@@ -45,15 +99,17 @@ const AddTodo = () => {
     }
 
     return (
-      <section>
+      <AddContainer>
         <button 
           type="button"
-          onClick={() => setVisible(!visible)}>➕ </button>
+          className="add"
+          onClick={() => setVisible(!visible)}>+
+        </button>
+        
           {visible && (
-        <AddBox>
+            <AddBox>
           <form onSubmit={handleSubmit}>
             <label>
-              New item : &nbsp;
             <input
             type="text"
             placeholder="My new todo"
@@ -61,12 +117,13 @@ const AddTodo = () => {
             value={newItem}
             />
             </label>
-            <button type="submit">ADD TODO</button>
+            <button className="send" type="submit">ADD</button>
             </form>
             
             </AddBox>
           )}
-        </section>
+          
+        </AddContainer>
     )
 }
 
