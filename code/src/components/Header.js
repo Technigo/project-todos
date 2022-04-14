@@ -1,27 +1,21 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-import { formatDistance, formatWithOptions } from 'date-fns'
-import { eo } from 'date-fns/locale'
-
-const dateToString = formatWithOptions({ locale: eo }, 'D MMMM YYYY')
+import moment from 'moment'
 
 const Header = () => {
   const tasks = useSelector((store) => store.tasks.items)
-  const numberOfTasks = tasks.lenght
+  const numberOfTasks = tasks.length
   const completedTasks = tasks.filter((task) => task.isComplete).length
 
   return (
     <HeaderContainer>
-      <h1>TO DO</h1>
+      <h1>ADD TO DO</h1>
       <CounterContainer>
-        <h4>
-          {' '}
-          {completedTasks} / {numberOfTasks} tasks completed
-          {/* <p>{formatWithOptions}(Date.now(), {
-              addSuffix: true
-            })</p> */}
-        </h4>
+        <h6>{moment().format('dddd, Do MMMM')}</h6>
+        <h6>
+          ToDos:{numberOfTasks} | Done:{completedTasks}
+        </h6>
       </CounterContainer>
     </HeaderContainer>
   )
@@ -32,16 +26,25 @@ export default Header
 const HeaderContainer = styled.header`
   display: flex;
   justify-content: column;
-  margin: 0px 0px 0px 20%;
+  text-align: center;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 5px;
 
   h1 {
-    font-size: 30px;
+    font-size: 25px;
     color: #c77700;
-  }
-
-  h4 {
-    justify-content: end;
   }
 `
 
-const CounterContainer = styled.div``
+const CounterContainer = styled.div`
+  /* flex-direction: column;
+  justify-content: space-evenly; */
+
+  h6 {
+    margin: 0px;
+    padding: 2px;
+    color: #c77700;
+    text-align: right;
+  }
+`

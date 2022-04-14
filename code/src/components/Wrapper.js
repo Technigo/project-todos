@@ -13,12 +13,17 @@ const Wrapper = () => {
   return (
     <>
       <GlobalStyle />
-      <Header />
-      <AddTask />
-      <Container>
-        <ToDoList />
-        <ClearBtn />
-      </Container>
+      <Rapper>
+        <Header />
+        <AddTask />
+        <Headline>
+          <h2>YOUR TO DOS</h2>
+        </Headline>
+        <Container>
+          <ToDoList />
+          <ClearBtn />
+        </Container>
+      </Rapper>
     </>
   )
 }
@@ -26,14 +31,27 @@ const Wrapper = () => {
 const GlobalStyle = createGlobalStyle`
 body {
   background-color: #A2CCDA;
+  margin: 0px;
+  padding: 0px;
 }
 `
+const Headline = styled.h2`
+  font-size: 10px;
+  margin: 0px;
+  color: #c77700;
+`
+
 const Container = styled.div`
   background-color: #ffe588;
-  width: 400px;
-  height: 600px;
-  margin: 10px 20%;
-  border: solid black 3px;
+
+  height: auto;
+  margin: auto;
+  /* margin: 10px 20%; */
+  border: solid black 4px;
+`
+const Rapper = styled.div`
+  width: 50%;
+  margin: auto;
 `
 
 export default Wrapper

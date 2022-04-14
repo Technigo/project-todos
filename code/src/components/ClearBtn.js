@@ -4,11 +4,6 @@ import styled from 'styled-components'
 
 import tasks from 'reducers/tasks'
 
-const ClearButton = styled.button`
-  background-color: pink;
-  color: black;
-`
-
 const ClearBtn = () => {
   const dispatch = useDispatch()
 
@@ -24,3 +19,14 @@ const ClearBtn = () => {
 }
 
 export default ClearBtn
+
+const ClearButton = styled.button`
+  font-family: 'rubik';
+  margin: 5%;
+  background-color: #064338;
+  color: #cee9ed;
+  padding: 10px;
+  border: black solid 3px;
+  cursor: pointer;
+  text-decoration: none;
+`

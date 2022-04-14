@@ -1,13 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+const data = [
+  {
+    id: 'lahjs275234x',
+    description: 'Clean',
+    isComplete: false
+  },
+  {
+    id: 'lahjs27kjahs24x',
+    description: 'Dust',
+    isComplete: false
+  }
+]
+
 // have to have: name, initial state, list of actions
 const tasks = createSlice({
   name: 'tasks',
   initialState: {
-    items: []
+    items: [data]
   },
   reducers: {
-    toggleTodo: (store, action) => {
+    toggleTasks: (store, action) => {
       const updatedItems = store.items.map((task) => {
         if (task.id === action.payload) {
           const updatedItem = {
@@ -19,11 +32,12 @@ const tasks = createSlice({
           return task
         }
       })
+
       store.items = updatedItems
     },
     addTask: (store, action) => {
       store.items = [...store.items, action.payload]
-      //const { id, description, isComplete } = action.payload
+      // const { id, description, isComplete } = action.payload
       //store.items = [{ id, description, isComplete }, ...store.items]
       //store.items.push(action.payload) //Mutabilityversion
     },
