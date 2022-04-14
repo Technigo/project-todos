@@ -52,6 +52,12 @@ export const projects = createSlice({
       // });
     },
 
+    editTask: (state, action) => {
+      state.project[action.payload.projectindex].tasks[
+        action.payload.taskindex
+      ].title = action.payload.title;
+    },
+
     deleteTask: (state, action) => {
       state.project[action.payload.projectindex].tasks.splice(
         action.payload.taskindex,

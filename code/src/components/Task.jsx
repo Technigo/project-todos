@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { formatRelative } from "date-fns";
 import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components/macro";
@@ -6,8 +6,12 @@ import { keyframes } from "styled-components";
 import { projects } from "reducers/projects";
 import trashgray from "../assets/trashgray.svg";
 import checkblack from "../assets/checkblack.svg";
+import saveblack from "../assets/saveblack.svg";
+import editblack from "../assets/editblack.svg";
 
 const Task = ({ taskid, projectindex, checkComplete }) => {
+  const [editable, setEditable] = useState(false);
+  const [newText, setNewText] = useState("");
   const dispatch = useDispatch();
   const thisTask = useSelector((store) =>
     store.projects.project[projectindex].tasks.find(
@@ -41,6 +45,43 @@ const Task = ({ taskid, projectindex, checkComplete }) => {
     setTimeout(checkComplete(), 5);
   };
 
+  const saveNewText = () => {
+    dispatch(
+      projects.actions.editTask({
+        taskindex: taskIndex,
+        projectindex: projectindex,
+        title: newText,
+      })
+    );
+  };
+
+  const editTask = () => {
+    setEditable(true);
+  };
+
+  const changingText = (e) => {
+    setNewText(e.currentTarget.textContent);
+  };
+
+  const pasteAsPlainText = (event) => {
+    event.preventDefault();
+
+    const text = event.clipboardData.getData("text/plain");
+    document.execCommand("insertHTML", false, text);
+  };
+
+  const disableNewLines = (e) => {
+    const keyCode = e.keyCode || e.which;
+    if (keyCode === 13) {
+      e.preventDefault();
+    }
+  };
+
+  const savingText = () => {
+    setEditable(false);
+    saveNewText();
+  };
+
   return (
     <TaskWrapper>
       <CustomCheck
@@ -54,18 +95,48 @@ const Task = ({ taskid, projectindex, checkComplete }) => {
         {thisTask.complete ? <CheckIcon src={checkblack} /> : ""}
       </CustomCheck>
       <TaskInfo complete={thisTask.complete}>
-        <TaskTitle>{thisTask.title}</TaskTitle>
+        <TaskTitle
+          contentEditable={editable}
+          onBlur={(e) => changingText(e)}
+          onPaste={pasteAsPlainText}
+          onKeyPress={(e) => disableNewLines(e)}
+        >
+          {thisTask.title}
+        </TaskTitle>
         <TaskDate>Added {created}</TaskDate>
         <Line />
       </TaskInfo>
-      <div
-        role="button"
-        tabIndex="0"
-        onClick={deleteTask}
-        onKeyDown={(e) => e.key === "Enter" && deleteTask()}
-      >
-        <Icon src={trashgray} alt="delete task." />
-      </div>
+      <IconWrapper>
+        {!editable && (
+          <IconButton
+            role="button"
+            tabIndex="0"
+            onClick={editTask}
+            onKeyDown={(e) => e.key === "Enter" && editTask()}
+          >
+            <Icon src={editblack} alt="edit task." />
+          </IconButton>
+        )}
+        {editable && (
+          <IconButton
+            role="button"
+            tabIndex="0"
+            onClick={savingText}
+            onKeyDown={(e) => e.key === "Enter" && savingText()}
+          >
+            <Icon src={saveblack} alt="save edit." />
+          </IconButton>
+        )}
+
+        <IconButton
+          role="button"
+          tabIndex="0"
+          onClick={deleteTask}
+          onKeyDown={(e) => e.key === "Enter" && deleteTask()}
+        >
+          <Icon src={trashgray} alt="delete task." />
+        </IconButton>
+      </IconWrapper>
     </TaskWrapper>
   );
 };
@@ -76,7 +147,7 @@ const TaskWrapper = styled.div`
   display: grid;
   grid-template-columns: max-content auto max-content;
   align-items: center;
-  margin: 5px 0;
+  margin: 10px 0;
   gap: 10px;
   background-color: white;
 `;
@@ -135,7 +206,7 @@ const TaskInfo = styled.div`
   color: ${(props) => (props.complete === true ? "#adb5bd" : "#212529")};
 `;
 
-const TaskTitle = styled.p`
+const TaskTitle = styled.div`
   font-size: 16px;
   font-weight: 500;
   hyphens: auto;
@@ -163,6 +234,17 @@ const shake = keyframes`
   80% { transform: translate(1px, 2px) rotate(1deg); }
   90% { transform: translate(1px, 1px) rotate(0deg); }
   100% { transform: translate(0px, 0px) rotate(-1deg); }
+`;
+
+const IconWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+`;
+
+const IconButton = styled.div`
+  height: 20px;
+  width: 20px;
 `;
 
 const Icon = styled.img`
