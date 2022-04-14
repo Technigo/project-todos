@@ -15,8 +15,7 @@ const Header = () => {
     return (
        
         <Heading>
-            <h2>What to do?</h2> 
-        <h1>A TO DO LIST!!!</h1>
+        <h1>WHAT <mark>TO DO</mark> LIST</h1>
         </Heading>
     
     )

@@ -12,6 +12,24 @@ border-radius:2px;
 font-family: 'Open Sans', sans-serif;
 `
 
+const Taskcontainer = styled.section `
+margin:20px;
+padding:10px;
+`
+const Taskbox = styled.div`
+background-color: #a24b56;
+margin: 5px;
+border-radius: 5px;
+`
+
+const Task =styled.h2 `
+font-family: 'Covered By Your Grace', cursive;
+font-size: 50px;
+transform: rotate(-15deg);
+
+`
+
+
 
 const ToDoList = ( ) => {
 const todoList = useSelector((store) => store.todos.items);
@@ -27,10 +45,10 @@ const onToDoDelete = (index) => {
 };
 
 return (
-<section>
+<Taskcontainer>
 {todoList.map((todoItem, todoIndex) => (
-<div key={todoItem.id}>
-<h2>{todoItem.task}</h2>
+<Taskbox key={todoItem.id}>
+<Task>{todoItem.task}</Task>
 <label>
     Is completed:
     <input 
@@ -45,9 +63,9 @@ return (
     DELETE
         </span>
 </Deletebutton>
-</div>
+</Taskbox>
 ))}
-</section>
+</Taskcontainer>
 );
 };
 
