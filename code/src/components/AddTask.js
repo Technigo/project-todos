@@ -63,7 +63,7 @@ font-size: 15px;
 -moz-appearance: none;
 appearance: none;
 
-&:enabled, &:active:enabled {
+&:active:enabled {
 -webkit-appearance: none;
 -moz-appearance: none;
 appearance: none;
