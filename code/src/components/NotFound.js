@@ -42,7 +42,7 @@ const NotFound = () => {
 
     const navigate= useNavigate()
     const onHomeButtonClick = () => {
-        navigate('/')
+        navigate('/app')
     }
 
     return (

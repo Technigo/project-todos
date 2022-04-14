@@ -1,8 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const data = [
-
-]
+const data = []
 
 const tasks = createSlice({
 name: 'tasks',
