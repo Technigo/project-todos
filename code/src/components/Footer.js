@@ -1,5 +1,5 @@
 import React from 'react'
-import styled, { keyframes } from 'styled-components'
+import styled from 'styled-components'
 
 
 //styled components
@@ -43,7 +43,7 @@ return (
 <Container>
 <p> Made with 
 
-<span role="img" aria-label="heart emoji" className="heart"> &nbsp;❤️ &nbsp;</span>
+<span role="img" aria-label="heart emoji"> &nbsp;❤️ &nbsp;</span>
 by <Link href="https://github.com/emmajosefina/" target="_blank" rel="noopener noreferrer">Emma</Link>
 </p>
 <p>Technigo Bootcamp</p>
