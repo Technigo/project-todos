@@ -6,7 +6,7 @@ const NoTasks = () => {
   return (
     <Wrapper>
       <NoTasksIcon src={notasks} alt="pencil over paper" />
-      <h3>Add your first new to-do task above!</h3>
+      <h3 tabIndex="0">Add your first new to-do task above!</h3>
     </Wrapper>
   );
 };

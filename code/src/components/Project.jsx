@@ -94,9 +94,12 @@ const Project = () => {
               height="40px"
               width="40px"
             />
-            <h1>{project.title}</h1>
+            <h1 tabIndex="0">{project.title}</h1>
           </IconTitleContainer>
-          <div>
+          <div
+            tabIndex="0"
+            aria-label={`${completedTasks} out of ${totalTasks} tasks completed`}
+          >
             <h2>
               {completedTasks} / {totalTasks}
             </h2>
@@ -104,7 +107,12 @@ const Project = () => {
         </ProjectHeader>
         <TaskContainer bordercolor={project.color}>
           <NewTask>
-            <NewTaskIconWrapper role="button" onClick={addTask}>
+            <NewTaskIconWrapper
+              role="button"
+              onClick={addTask}
+              tabIndex="0"
+              aria-label="create new task button."
+            >
               <NewTaskIcon src={addwhite} alt="add new task." />
             </NewTaskIconWrapper>
             <TextInput
@@ -114,6 +122,7 @@ const Project = () => {
               width="100%"
               className="newTaskInput"
               onKeyDown={(e) => e.key === "Enter" && addTask()}
+              aria-label="type and hit enter to create new task."
             />
           </NewTask>
           {taskList.length === 0 && <NoTasks />}

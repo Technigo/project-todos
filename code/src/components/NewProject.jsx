@@ -54,14 +54,15 @@ const NewProject = () => {
   return (
     <Container>
       <NewProjectWrapper>
-        <h2>Name of project list:</h2>
+        <h2 tabIndex="0">Name of project list:</h2>
         <TextInput
           type="text"
           onChange={(event) => chooseProjectName(event.target.value)}
           width="100%"
           maxLength="12"
+          aria-label="Name of project list."
         />
-        <h2>Choose your icon:</h2>
+        <h2 tabIndex="0">Choose your icon:</h2>
         <GridContainer gridcolumns="1fr 1fr 1fr">
           {iconArray.map((item) => (
             <React.Fragment key={item[0]}>
@@ -70,6 +71,7 @@ const NewProject = () => {
                 role="button"
                 value={item[0]}
                 onClick={selectIcon}
+                aria-label={item[1]}
                 onKeyDown={(e) => e.key === "Enter" && selectIcon(e)}
                 selected={`${
                   Number(icon) === Number(item[0]) ? "selected" : ""
@@ -80,7 +82,7 @@ const NewProject = () => {
             </React.Fragment>
           ))}
         </GridContainer>
-        <h2>Select a color:</h2>
+        <h2 tabIndex="0">Select a color:</h2>
         <GridContainer gridcolumns="1fr 1fr" gridrows="auto">
           {colorArray.map((item) => (
             <ColorButton

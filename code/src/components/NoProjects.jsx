@@ -8,8 +8,8 @@ const NoProjects = () => {
     <Container>
       <Wrapper>
         <NoProjectsIcon src={noprojects} alt="Three layered documents" />
-        <h2>Looks like you don't have any to-do lists!</h2>
-        <h2>
+        <h2 tabIndex="0">Looks like you don't have any to-do lists!</h2>
+        <h2 tabIndex="0">
           Click the plus icon above to create your first project to-do list!
         </h2>
       </Wrapper>

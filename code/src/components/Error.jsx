@@ -7,9 +7,9 @@ const Error = () => {
   return (
     <Container>
       <Wrapper>
-        <ErrorPageIcon src={shredder} alt="paper shredder" />
-        <h2>This page doesn't exist.</h2>
-        <h2>Click on the title above to go home.</h2>
+        <ErrorPageIcon src={shredder} alt="paper shredder." />
+        <h2 tabIndex="0">This page doesn't exist.</h2>
+        <h2 tabIndex="0">Click on the title above to go home.</h2>
       </Wrapper>
     </Container>
   );

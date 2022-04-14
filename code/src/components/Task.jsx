@@ -87,6 +87,11 @@ const Task = ({ taskid, projectindex, checkComplete }) => {
         complete={thisTask.complete}
         tabIndex="0"
         onKeyDown={(e) => e.key === "Enter" && toggleComplete()}
+        aria-label={
+          thisTask.complete
+            ? `task complete. press enter to toggle.`
+            : `task incomplete. press enter to toggle.`
+        }
       >
         {thisTask.complete ? "" : <IncompleteCheckIcon src={checkblack} />}
         {thisTask.complete ? <CheckIcon src={checkblack} /> : ""}
@@ -97,10 +102,11 @@ const Task = ({ taskid, projectindex, checkComplete }) => {
           onBlur={(e) => changingText(e)}
           onPaste={pasteAsPlainText}
           onKeyPress={(e) => e.key === "Enter" && disableNewLines(e)}
+          tabIndex="0"
         >
           {thisTask.title}
         </TaskTitle>
-        <TaskDate>Added {created}</TaskDate>
+        <TaskDate tabIndex="0">Added {created}</TaskDate>
         <Line />
       </TaskInfo>
       <IconWrapper>
