@@ -65,16 +65,12 @@ const Task = ({ taskid, projectindex, checkComplete }) => {
 
   const pasteAsPlainText = (event) => {
     event.preventDefault();
-
     const text = event.clipboardData.getData("text/plain");
     document.execCommand("insertHTML", false, text);
   };
 
   const disableNewLines = (e) => {
-    const keyCode = e.keyCode || e.which;
-    if (keyCode === 13) {
-      e.preventDefault();
-    }
+    e.preventDefault();
   };
 
   const savingText = () => {
@@ -99,7 +95,7 @@ const Task = ({ taskid, projectindex, checkComplete }) => {
           contentEditable={editable}
           onBlur={(e) => changingText(e)}
           onPaste={pasteAsPlainText}
-          onKeyPress={(e) => disableNewLines(e)}
+          onKeyPress={(e) => e.key === "Enter" && disableNewLines(e)}
         >
           {thisTask.title}
         </TaskTitle>
