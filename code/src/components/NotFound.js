@@ -34,6 +34,7 @@ font-family: 'Roboto', serif;
 font-size: 14px;
 border: 1px solid gray;
 padding: 0.3rem;
+-webkit-appearance: none;
 `
 
 

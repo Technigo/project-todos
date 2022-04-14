@@ -58,6 +58,7 @@ border: 0.4px solid gray;
 padding: 6px;
 font-family: 'Roboto', sans-serif;
 font-size: 15px;
+-webkit-appearance: none;
 `
 
 const HeaderBox = styled.div`

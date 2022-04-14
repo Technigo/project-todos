@@ -56,6 +56,7 @@ display: flex;
 position: absolute;
 right: 13px;
 top: 15px;
+-webkit-appearance: none;
 `
 const BigHeading = styled.h1`
 color: #1D3F6F;
