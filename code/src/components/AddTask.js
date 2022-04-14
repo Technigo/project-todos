@@ -62,6 +62,12 @@ font-size: 15px;
 -webkit-appearance: none;
 -moz-appearance: none;
 appearance: none;
+
+&:active {
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
+}
 `
 
 const HeaderBox = styled.div`
