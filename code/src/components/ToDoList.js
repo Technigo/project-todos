@@ -1,12 +1,20 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import styled
+import styled from 'styled-components';
 
 import todos from 'reducers/todos';
 
+const TaskContainer = styled.div`
+  border-style: solid;
+  margin: 5px;
+`;
+
+const DeleteButton = styled.button`
+  cursor: pointer;
+`;
+
 const ToDoList = () => {
   const todoItem = useSelector((store) => store.todos.items);
-  console.log(todoItem);
 
   const dispatch = useDispatch();
 
@@ -14,10 +22,14 @@ const ToDoList = () => {
     dispatch(todos.actions.toggleItem(id));
   };
 
+  const onToDoDelete = (index) => {
+    dispatch(todos.actions.deleteItem(index));
+  };
+
   return (
     <section>
-      {todoItem.map((item) => (
-        <div key={item.id}>
+      {todoItem.map((item, index) => (
+        <TaskContainer key={item.id}>
           <label>
             <input
               type="checkbox"
@@ -26,17 +38,15 @@ const ToDoList = () => {
             />
           </label>
           <p>{item.text}</p>
-          <button>
-            <span role="button" aria-label="delete">
-              Delete
+          <DeleteButton onClick={() => onToDoDelete(index)}>
+            <span role="img" aria-label="delete">
+              Delete ❌
             </span>
-          </button>
-        </div>
+          </DeleteButton>
+        </TaskContainer>
       ))}
     </section>
   );
 };
 
 export default ToDoList;
-
-// useSelector and then fetch the list of todos and then map over them

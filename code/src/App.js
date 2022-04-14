@@ -4,6 +4,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import todos from 'reducers/todos';
 
+import Header from 'components/Header';
+import AddTask from 'components/AddTask';
 import ToDoList from 'components/ToDoList';
 
 const reducer = combineReducers({
@@ -14,11 +16,11 @@ const store = configureStore({
   reducer,
 });
 
-// I can add global styled components here
-
 export const App = () => {
   return (
     <Provider store={store}>
+      <Header />
+      <AddTask />
       <ToDoList />
     </Provider>
   );
