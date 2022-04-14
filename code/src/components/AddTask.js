@@ -58,7 +58,10 @@ border: 0.4px solid gray;
 padding: 6px;
 font-family: 'Roboto', sans-serif;
 font-size: 15px;
+/*These three below removes Safari default styling*/
 -webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
 `
 
 const HeaderBox = styled.div`
@@ -120,7 +123,8 @@ const AddTask = () => {
            </label>
            &nbsp;
         <Button 
-        type="submit">
+        type="submit"
+        disabled={inputValue === ""}>
             Submit
         </Button>
         </HeaderBox>
