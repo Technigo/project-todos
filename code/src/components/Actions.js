@@ -4,16 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
   faTrash, 
   faCheckDouble, 
-  faClipboardList, 
   faRotateLeft 
 } from '@fortawesome/free-solid-svg-icons'
 
 import todos from 'reducers/todos'
 
-import { ActionsBox, ActionButton } from './styles/actionsStyles'
+import { ActionsBox, ActionButton, UndoButton } from './styles/actionsStyles'
 import { Section } from './styles/sharedStyles'
 
-const TodosActions = ({ isUndoDisabled, setIsUndoDisabled }) => {
+const Actions = ({ isUndoDisabled, setIsUndoDisabled }) => {
 
   const dispatch = useDispatch()
 
@@ -40,13 +39,13 @@ const TodosActions = ({ isUndoDisabled, setIsUndoDisabled }) => {
 
   return (
     <Section>
-      <ActionButton
+      <UndoButton
         disabled={isUndoDisabled}
         onClick={undoDelete}
         type="button"
       >
         <FontAwesomeIcon icon={faRotateLeft} />
-      </ActionButton>
+      </UndoButton>
       <ActionsBox>
         <ActionButton disabled={allTodos.length ? false : true} onClick={deleteAll}>
           <FontAwesomeIcon icon={faTrash} />
@@ -55,11 +54,11 @@ const TodosActions = ({ isUndoDisabled, setIsUndoDisabled }) => {
           <FontAwesomeIcon icon={faCheckDouble} />
         </ActionButton>
         <ActionButton disabled={completedTodos.length ? false : true} onClick={deleteAllCompleted}>
-          <FontAwesomeIcon icon={faClipboardList} />
+        <FontAwesomeIcon icon={faCheckDouble} mask={faTrash} transform="shrink-8" />
         </ActionButton>
       </ActionsBox>
     </Section>
   )
 }
 
-export default TodosActions
+export default Actions

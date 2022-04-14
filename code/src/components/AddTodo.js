@@ -11,7 +11,16 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 import todos from 'reducers/todos'
 
-import { AddButtonBox, AddButton, AddText, AddForm, AddOptions, AddCategory, AddDeadline } from './styles/addTodoStyles'
+import { 
+  AddButtonBox, 
+  AddButton, 
+  AddText, 
+  AddForm, 
+  AddOptions, 
+  AddCategory, 
+  AddDeadline 
+} from './styles/addTodoStyles'
+
 import { Section } from './styles/sharedStyles'
 
 const AddTodo = () => {
@@ -34,7 +43,7 @@ const AddTodo = () => {
   }
 
   const onChangeInputDeadline = (date) => {
-    setInputDeadline(+new Date(date))
+    setInputDeadline(+new Date(date) + 86400000 - 1)
   }
 
   const onAddTodo = (e) => {
@@ -62,6 +71,7 @@ const AddTodo = () => {
             <AddCategory value={inputCategory} onChange={onChangeInputCategory}>
               <option value="neutral">Neutral</option>
               <option value="funny">Funny</option>
+              <option value="joyful">Joyful</option>
               <option value="boring">Boring</option>
               <option value="hard">Hard</option>
             </AddCategory>

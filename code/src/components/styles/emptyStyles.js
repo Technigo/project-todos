@@ -3,13 +3,18 @@ import styled from 'styled-components/macro'
 import { Section } from './sharedStyles'
 
 export const EmptySection = styled(Section)`
-background-color: transparent;
-  border: none;
+  background-color: transparent;
+  background-color: #D1D8DC33;
   text-align: center;
-  font-size: 2rem;
 
   & p {
-    text-align: center;
-    font-size: 1rem;;
+    font-family: 'Grape Nuts', cursive;
+    font-size: 2rem;
+    color: #1a2023;
+  }
+
+  & span {
+    font-size: 3rem;
+    color: #3B7C7D;
   }
 `

@@ -7,8 +7,16 @@ import Todo from './Todo'
 import SortableDroppable from './SortableDroppable'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faFaceGrinHearts, faFaceGrimace, faFaceGrinStars, faFaceMehBlank, faCircle, faCircleCheck } from '@fortawesome/free-regular-svg-icons'
-import { faGlobe } from '@fortawesome/free-solid-svg-icons'
+import { 
+  faFaceGrinHearts, 
+  faFaceGrimace, 
+  faFaceGrinStars, 
+  faFaceMehBlank, 
+  faCircle, 
+  faCircleCheck 
+} from '@fortawesome/free-regular-svg-icons'
+
+import { faInfinity } from '@fortawesome/free-solid-svg-icons'
 
 import { FilteringButtonsBox, FilteringInput, Count, FilteringButton } from './styles/filteringStyles'
 
@@ -64,17 +72,19 @@ const TodosList = ({ setIsUndoDisabled }) => {
   let count = ''
 
   if (inputSearch !== '') {
-    if ((pendingTodosSearched.length + completedTodosSearched.length) < 2) {
-      count = `${pendingTodosSearched.length + completedTodosSearched.length} todo fits your search`
+    if ((pendingTodosSearched.length + completedTodosSearched.length) === 0) {
+      count = `no todo fits your search`
+    } else if ((pendingTodosSearched.length + completedTodosSearched.length) === 1) {
+      count = `only ${pendingTodosSearched.length + completedTodosSearched.length} todo fits your search`
     } else {
       count = `${pendingTodosSearched.length + completedTodosSearched.length} todos fit your search`
     }
   } else if (pendingTodos.length === 0) {
-    count = 'no todo left to do'
+    count = 'no todo left'
   } else if (pendingTodos.length === 1) {
-    count = `only ${pendingTodos.length} todo left to do`
+    count = `only ${pendingTodos.length} todo to complete`
   } else {
-    count = `${pendingTodos.length} todos left to do`
+    count = `${pendingTodos.length} todos to complete`
   }
 
   return (
@@ -86,7 +96,7 @@ const TodosList = ({ setIsUndoDisabled }) => {
               <FontAwesomeIcon icon={faCircle} />
             </FilteringButton>
             <FilteringButton onClick={displayAll} disabled={isAllDisabled}>
-              <FontAwesomeIcon icon={faGlobe} />
+              <FontAwesomeIcon icon={faInfinity} />
             </FilteringButton>
             <FilteringButton onClick={displayCompleted} disabled={isCompletedDisabled}>
               <FontAwesomeIcon icon={faCircleCheck} />

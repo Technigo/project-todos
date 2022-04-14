@@ -4,12 +4,11 @@ import styled from "styled-components/macro"
 export const Section = styled.section`
 display: flex;
 flex-direction: column;
-max-width: 600px;
+max-width: 800px;
 margin: 10px 20px;
 padding: 10px;
-/* border: 2px solid red; */
 border-radius: 5px;
-background-color: #F3F7F7;
+background-color: #E8EBED;
 `
 
 export const Button = styled.button`
@@ -19,7 +18,7 @@ export const Button = styled.button`
   background: transparent;
   cursor: pointer;
   text-align: center;
-  color: #000;
+  color: #3B7C7D;
 
   &:disabled {
   cursor: not-allowed;

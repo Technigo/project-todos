@@ -6,32 +6,33 @@ import enGB from 'date-fns/locale/en-GB'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { 
-  faCircle, 
-  faFaceDizzy, 
-  faFaceFlushed, 
-  faFaceGrinSquintTears, 
-  faFaceMeh, 
-  faCircleCheck, 
-  faTrashCan 
+import {
+  faCircle,
+  faFaceDizzy,
+  faFaceFlushed,
+  faFaceGrinSquintTears,
+  faFaceMeh,
+  faFaceGrinBeam,
+  faCircleCheck,
+  faTrashCan,
 } from '@fortawesome/free-regular-svg-icons'
 
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import todos from 'reducers/todos'
 
-import { 
-  TodoDeleteButton, 
-  TodoCategoryIcon, 
-  TodoToggleIcon, 
-  TodoDragIcon, 
-  TodoText, 
-  TodoToggleBox, 
-  TodoDragBox, 
-  TodoArticle, 
-  TodoMiddleBox, 
-  TodoDeadline, 
-  TodoTimestamp 
+import {
+  TodoDeleteButton,
+  TodoCategoryIcon,
+  TodoToggleIcon,
+  TodoDragIcon,
+  TodoText,
+  TodoToggleBox,
+  TodoDragBox,
+  TodoArticle,
+  TodoMiddleBox,
+  TodoDeadline,
+  TodoTimestamp
 } from './styles/todoStyles'
 
 const Todo = ({ todo, id, setIsUndoDisabled }) => {
@@ -62,6 +63,8 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
   const categoryIcon = () => {
     if (todo.category === 'neutral') {
       return <FontAwesomeIcon icon={faFaceMeh} />
+    } else if (todo.category === 'joyful') {
+      return <FontAwesomeIcon icon={faFaceGrinBeam} />
     } else if (todo.category === 'funny') {
       return <FontAwesomeIcon icon={faFaceGrinSquintTears} />
     } else if (todo.category === 'boring') {
@@ -80,9 +83,8 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
     dispatch(todos.actions.toggleTodo(id))
   }
 
-  // to fix!!!! red even if not overdue
   useEffect(() => {
-    if (todo.deadline < (Math.round(Date.now() / 86400000) * 86400000) && !todo.completed) {
+    if (todo.deadline < Date.now() && !todo.completed) {
       setIsOverdue({ color: "red" })
     }
   }, [todo.deadline, todo.completed])

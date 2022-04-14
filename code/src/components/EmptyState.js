@@ -8,7 +8,7 @@ const EmptyState = ({ emptyText, emptyIcon }) => {
   return (
     <EmptySection>
       <p>{emptyText}</p>
-      <FontAwesomeIcon icon={emptyIcon} />
+      <span><FontAwesomeIcon icon={emptyIcon} /></span>
     </EmptySection>
   )
 }
