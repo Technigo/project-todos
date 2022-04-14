@@ -31,7 +31,7 @@ const TaskCounter = () => {
     return (
       <TaskWrapper>
         <TaskCard>
-          <p>Let's sdd something to your To Do list</p>
+          <p>Let's add something to your list</p>
         </TaskCard>
       </TaskWrapper>
     );

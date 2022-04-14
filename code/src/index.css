@@ -5,12 +5,17 @@
 
 .input-active,
 .button-active,
-.img-active {
+.img-active,
+.text-active {
   display: initial;
   transition: 0.4s ease-in-out;
 }
 
-.img-hidden {
+.img-hidden,
+.text-hidden {
   display: none;
   transition: 0.5s ease-in-out;
+}
+.completed-task {
+  text-decoration: line-through;
 }

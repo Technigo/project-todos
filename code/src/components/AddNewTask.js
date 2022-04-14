@@ -16,7 +16,7 @@ const NewTaskWrapper = styled.section`
 `;
 const NewTask = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   margin-right: 30px;
 `;
@@ -28,11 +28,14 @@ const NewTaskbtn = styled.button`
   display: flex;
   align-items: center;
   height: min-content;
+  margin: 0;
+  padding: 0;
 `;
 const NewTaskBtnText = styled.p`
-  font-size: large;
+  font-size: medium
   font-weight: 600;
   transition: 0.3s ease-in-out;
+  color: black;
 
   &:hover {
     margin-left: 5px;
@@ -43,11 +46,12 @@ const NewTaskBtnText = styled.p`
   }
 `;
 
-const PlusIcon = styled.img`
+const Icon = styled.img`
   height: 20px;
   width: 20px;
   transition: 0.3s ease-in-out;
   margin: 0;
+  color: black;
 
   &:hover {
     margin-right: 5px;
@@ -57,12 +61,13 @@ const PlusIcon = styled.img`
 const Input = styled.input`
   border: 1px solid #dcdcdc;
   height: 30px;
-  width: 45vw;
+  width: 70vw;
   padding: 2px 5px 2px 10px;
-  word-break: break-all;
+  line-break: normal;
 
   @media ${devices.tablet} {
     height: 50px;
+    width: 65vw;
   }
 `;
 
@@ -108,6 +113,26 @@ const AddNewTask = () => {
   return (
     <NewTaskWrapper>
       <NewTask>
+        <NewTaskbtn onClick={toggleClass}>
+          <Icon
+            src="../images/icons8-plus-math-26.png"
+            className={isActive ? "img-hidden" : "img-active"}
+          ></Icon>
+          <NewTaskBtnText className={isActive ? "text-hidden" : "text-active"}>
+            NEW TASK
+          </NewTaskBtnText>
+        </NewTaskbtn>
+
+        <NewTaskbtn onClick={toggleClass}>
+          <Icon
+            src="../images/icons8-minus-24.png"
+            className={isActive ? "img-active" : "img-hidden"}
+          ></Icon>
+          <NewTaskBtnText className={isActive ? "text-active" : "text-hidden"}>
+            NEW TASK
+          </NewTaskBtnText>
+        </NewTaskbtn>
+
         <form onSubmit={onFormSubmit}>
           <label>
             <Input
@@ -125,14 +150,6 @@ const AddNewTask = () => {
             +
           </SubmitBtn>
         </form>
-
-        <NewTaskbtn onClick={toggleClass}>
-          <PlusIcon
-            src="../images/icons8-plus-math-26.png"
-            className={isActive ? "img-hidden" : "img-active"}
-          ></PlusIcon>
-          <NewTaskBtnText>NEW TASK</NewTaskBtnText>
-        </NewTaskbtn>
       </NewTask>
     </NewTaskWrapper>
   );

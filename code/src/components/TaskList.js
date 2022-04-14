@@ -21,7 +21,7 @@ export const TaskCard = styled.article`
   border: 1px solid #dcdcdc;
   border-radius: 5px;
   padding: 15px 10px 10px 15px;
-  margin: 5px;
+  margin: 10px;
   background-color: rgba(255, 255, 255, 0.5);
 
   @media ${devices.tablet} {
@@ -35,6 +35,7 @@ const DeleteButton = styled.button`
   background: none;
   border: none;
   margin-bottom: 10px;
+  color: black;
   cursor: pointer;
 
   &:hover {background-color: rgba(255, 255, 255, 0.7)}
@@ -107,7 +108,11 @@ const TaskList = () => {
             onChange={() => onTaskToggle(task.id)}
           />
           <label htmlFor="completed task"></label>
-          <TaskText>{task.text}</TaskText>
+          <TaskText
+            className={task.isComplete ? "completed-task" : "task-todo"}
+          >
+            {task.text}
+          </TaskText>
           <DeleteButton onClick={() => onTaskDelete(TaskIndex)}>
             {" "}
             <span role="img" aria-label="delete">
