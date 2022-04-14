@@ -47,6 +47,7 @@ margin-top: 10px;
 `
 
 const AddButton = styled.button`
+font-family: 'Jost', sans-serif;
 margin: 20px 0 40px 0;
 background: none;
 border: 1px solid black;
@@ -57,7 +58,7 @@ align-self: center;
 cursor: pointer;
 
 &:hover {
-  background-color: yellow;
+  background-color: #AD6122;
 }
 
 `
@@ -76,7 +77,7 @@ const AddToDo = () => {
       id: uniqid(),
       name: inputValue,
       description: value,
-      isCaught: false
+      isDone: false
     }
 
 

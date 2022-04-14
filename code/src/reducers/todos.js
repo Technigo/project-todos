@@ -2,14 +2,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-const data = [
-  // {
-  //   id: uniqid(),
-  //   name: '',
-  //   isDone: false
-  // }
- 
-]
+const data = []
 
 
 const todos= createSlice({
@@ -21,7 +14,7 @@ const todos= createSlice({
     toggleItem: (store, action) => {
       store.items.forEach(item => {
         if (item.id === action.payload) {
-           item.isCaught = !item.isCaught
+           item.isDone = !item.isDone
         }
       })
     },
