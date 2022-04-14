@@ -9,8 +9,7 @@
 body {
 	margin: 0;
 	letter-spacing: 1.1px;
-	font-family: 'Imprima', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans',
-		'Helvetica Neue', sans-serif;
+	font-family: 'Imprima', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
@@ -46,9 +45,7 @@ main {
 	position: relative;
 }
 
-input,
-input:active,
-input:focus-visible {
+/* input {
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
@@ -57,36 +54,19 @@ input:focus-visible {
 	border: none;
 	border-bottom: 2px solid var(--clr-accent);
 	outline: none;
-}
+} */
 
-input {
-	width: 328px;
-	height: 20px;
-	border: none;
-	border-bottom: 2px solid var(--clr-accent);
-	background-color: var(--clr-main-opacity);
-	margin-bottom: 1.5em;
-}
-
-input[type='text'] {
-	font-size: 16px;
-	height: 30px;
-	letter-spacing: 1.5px;
-	color: var(--clr-secondary);
-	text-align: center;
-}
-
-input[type='checkbox'] {
+/* input[type='checkbox'] {
 	align-self: flex-start;
 	border: 2px solid var(--clr-accent);
+	height: 20px;
 	width: 20px;
 	position: relative;
-	top: 0.5em;
+	top: 0.25em;
 	right: 0.5em;
 	margin: 0;
 }
 
-input[type='checkbox']:checked {
-	content: 'V';
-	z-index: 2;
-}
+.completed {
+	text-decoration: line-through;
+} */

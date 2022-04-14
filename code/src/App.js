@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { createStore, combineReducers } from '@reduxjs/toolkit'
+import { createStore, combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import Header from 'components/Header'
 import SelectStart from 'components/SelectStart'
@@ -19,6 +19,7 @@ if (persistedStateJSON) {
 }
 
 const store = createStore(reducer, persistedState)
+// const store = configureStore({ reducer })
 
 store.subscribe(() => {
 	localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))

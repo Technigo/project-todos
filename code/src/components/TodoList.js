@@ -12,7 +12,7 @@ import TaskCounter from './TaskCounter'
 import todo from '../reducers/todo'
 
 const ListBtn = styled.button`
-	padding: 0;
+	padding: 0.1em 0.1em 0;
 	border: none;
 	position: relative;
 	cursor: pointer;
@@ -21,7 +21,9 @@ const ListBtn = styled.button`
 	align-self: end;
 
 	&:hover {
-		transform: scale(1.2);
+		background: var(--clr-accent);
+		border-radius: 20%;
+		transition: all 0.3s ease-in;
 	}
 `
 
@@ -34,6 +36,12 @@ const DeleteAllbtn = styled.button`
 	position: relative;
 	top: 5px;
 	left: 126px;
+
+	&:hover {
+		text-decoration: line-through;
+		transform: scale(0.9);
+		transition: all 0.3s ease-in;
+	}
 `
 
 const Container = styled.section`
@@ -43,7 +51,7 @@ const Container = styled.section`
 	align-items: center;
 `
 
-const TaskContainerWrapper = styled.div`
+const TaskContainerWrapper = styled.form`
 	display: flex;
 `
 
@@ -51,7 +59,7 @@ const TaskContainer = styled.div`
 	display: flex;
 	flex-direction: column;
 	width: 300px;
-	padding: 0.5em 1em;
+	padding: 0.5em 1em 0;
 
 	:first-of-type {
 		padding-top: 1em;
@@ -62,12 +70,14 @@ const TaskContainer = styled.div`
 `
 
 const DateContainer = styled.p`
-	font-size: 13px;
+	margin: 0.25em 1.65em;
+	font-size: 12px;
 	color: var(--clr-gray);
 `
 
-const InputText = styled.p`
+const InputText = styled.label`
 	margin: 0;
+	padding-bottom: 0.2em;
 	color: var(--clr-secondary);
 	border-bottom: 1px solid var(--clr-accent);
 	font-family: 'Imprima', 'Ubuntu', sans-serif;
@@ -122,10 +132,14 @@ const TodoList = () => {
 						<TaskContainerWrapper>
 							<input
 								type='checkbox'
+								name='tasks'
 								checked={item.isCompleted}
 								onChange={() => onToggleTodo(item.id)}
 							/>
-							<InputText onChange={(e) => onInputChange(e, item.editable)}>
+							<InputText
+								onChange={(e) => onInputChange(e, item.editable)}
+								className={`${item.isCompleted ? 'completed' : ''}`}
+							>
 								{item.text}
 							</InputText>
 							<ListBtn onClick={() => onUpdateTodo(item.id)}>
