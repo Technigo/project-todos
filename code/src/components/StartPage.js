@@ -7,6 +7,7 @@ import taskList from 'reducers/tasks'
 import AddTask from './AddTask'
 import Footer from './Footer'
 import IncompleteTasks from './IncompleteTasks'
+import TimeStamp from './TimeStamp'
 
 
 //styled components
@@ -103,7 +104,7 @@ const StartPage = () => {
         <section>
             <Container>
 
-        <HeaderImage src="./assets/woman-long-list.jpg" alt="illustration created by storyset, www.freepik.com" width="150px" />
+        <HeaderImage src="./assets/woman-long-list.jpg" alt="illustration created by storyset, www.freepik.com" />
 
             <BigHeading>Get it out of your head</BigHeading> 
 
@@ -127,7 +128,8 @@ const StartPage = () => {
 
                     <label>
                     <TaskHeading>{taskItem.text}</TaskHeading>
-
+                   <TimeStamp />
+                  
                     <Checkbox 
                     type="checkbox" 
                     checked={taskItem.isDone} 
