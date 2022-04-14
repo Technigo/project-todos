@@ -1,6 +1,7 @@
 import React from "react"
 import { Provider } from "react-redux"
 import { combineReducers, configureStore } from "@reduxjs/toolkit"
+import TaskCounter from "./components/TaskCounter"
 
 import todos from "./reducers/todos"
 
@@ -19,6 +20,9 @@ export const App = () => {
       <div className='todo-container'>
         <AddTodo />
         <TodoList />
+        <div className='taskCounter-container'>
+          <TaskCounter />
+        </div>
       </div>
     </Provider>
   )

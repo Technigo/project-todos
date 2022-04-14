@@ -16,6 +16,7 @@ const Button = styled.button`
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items)
+  console.log(items)
   const dispatch = useDispatch()
 
   const onToggleToDo = (id) => {

@@ -7,7 +7,6 @@ import todos from "../reducers/todos"
 
 const Button = styled.button`
   align-self: center;
-  text-transform: uppercase;
   color: whitesmoke;
   font-family: "Inconsolata";
   border-radius: 10px;
