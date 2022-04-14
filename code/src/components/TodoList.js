@@ -1,6 +1,7 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
+import { formatDistance } from "date-fns";
 
 import todos from "reducers/todos";
 
@@ -35,20 +36,25 @@ const TodoList = () => {
     dispatch(todos.actions.deleteItem(index))
   }
 
-  const uncompletedTodos = todoList.filter(item => item.isDone === false)
-  console.log(uncompletedTodos, 'test')
-  console.log(todoList, 'hejhejhej')
+  
 
-  const currentTime = new Date()
-  console.log(currentTime, 'tid')
+  
+ 
+  const date = () => {
+    new Date()
+  }
+  // const h = date.toDateString()
+  // console.log(h)
+  // const time = date.toLocaleTimeString()
+  // console.log(time, 'klockslag')
+  
+
   return (
     <section>
-        <h1>Number of todos:{todoList.length}</h1>
-        <h1>Uncompleted: {uncompletedTodos.length}</h1>
+        
         {todoList.map((todoItem, itemIndex) => (
             <TodoItem key={todoItem.id} >
-                <h2>{todoItem.listitem}</h2>
-        
+        <h2>{todoItem.listitem}</h2>
                 <label>
                     Completed:
                     <input 

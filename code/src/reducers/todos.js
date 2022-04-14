@@ -5,7 +5,9 @@ import { createSlice } from "@reduxjs/toolkit";
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: []
+    items: [
+
+    ]
   },
   reducers: {
     toggleItem: (store, action) => {
@@ -15,7 +17,7 @@ const todos = createSlice({
         }
       })
     },
-    addTask: (store, action) => {
+   addTask : (store, action) => {
       console.log(action, 'action')
       store.items.push(action.payload)
     },
