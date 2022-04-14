@@ -4,7 +4,6 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from "react-redux";
 
 import { getTodosByVisibilityFilter } from "../redux/selector";
-
 import { VISIBILITY_FILTER } from '../constants';
 import { setFilter } from '../redux/actions';
 
