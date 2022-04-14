@@ -1,9 +1,10 @@
-import React from 'react'
+import React from "react";
+import Header from "./component/Header";
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
+    <div className="todo-container container-center-column">
+      <Header />
     </div>
-  )
-}
+  );
+};
