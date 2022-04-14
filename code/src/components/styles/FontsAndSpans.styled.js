@@ -6,7 +6,7 @@ export const Regular = styled.span`
 `
 
 export const Count= styled(Regular)`
-  margin-left: 32px;
+  margin-left: 50px;
 `
 
 export const Task = styled.span`

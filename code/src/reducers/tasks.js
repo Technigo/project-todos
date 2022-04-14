@@ -1,14 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export const taskList = [
-    { id: 'a1c2', task: 'Finish the assignment', tag: 'study', isDone: false },
-    { id: 'e3f6', task: 'Buy milk', tag: 'shopping', isDone: false },
-]
-
 export const tasks = createSlice({
     name: 'tasks',
     initialState: {
-        items: taskList,
+        items: [],
         filter: []
     },
     reducers: {

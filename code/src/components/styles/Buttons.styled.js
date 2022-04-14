@@ -41,7 +41,6 @@ export const RemoveTaskButton = styled.img`
     transform: scale(1, 1);
   }
   }
-
 `
 
 export const FilterButton = styled.button`
