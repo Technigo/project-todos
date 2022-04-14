@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import styled from 'styled-components'
 
+import Date from "./Date";
 import tasks from "reducers/tasks";
 import emptypage from "images/emptypage.jpg"
 
@@ -52,6 +53,7 @@ const DeleteButton = styled.button`
 
 const CheckLabel = styled.label`
     font-size: 16px;
+    display: inline;
 `
 
 
@@ -86,8 +88,8 @@ const TaskList = () => {
                 <Container>
                 {allTasks.map((taskItem, index) => (
                     <TaskArticle key={taskItem.id}>
-                        <TaskName>{taskItem.text}</TaskName>
-                        <CheckLabel> Done
+                        <TaskName>{taskItem.text}
+                        <CheckLabel>
                             <input 
                             type="checkbox"
                             name="tasks" 
@@ -95,6 +97,8 @@ const TaskList = () => {
                             onChange={() => onItemToggle(taskItem.id)}
                             />
                         </CheckLabel>
+                        </TaskName>
+                        <Date />
                         <DeleteButton 
                             onClick={() =>onDeleteButton(index)}>                      
                             <span role="img" aria-label="cross">✕
