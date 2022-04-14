@@ -1,3 +1,4 @@
+import ToDos from "component/ToDos";
 import React from "react";
 import Header from "./component/Header";
 import NewForm from "./component/NewForm";
@@ -7,6 +8,7 @@ export const App = () => {
     <div className="todo-container container-center-column">
       <Header />
       <NewForm />
+      <ToDos />
     </div>
   );
 };

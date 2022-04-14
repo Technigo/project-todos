@@ -55,12 +55,15 @@ input:focus {
 }
 
 /* flexbox */
+.container-column {
+  display: flex;
+  flex-direction: column;
+}
 .container-center {
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .container-center-start {
   display: flex;
   align-items: center;
@@ -83,6 +86,9 @@ input:focus {
 }
 .m-1 {
   margin: 0.25rem;
+}
+.my-1 {
+  margin: 0.25rem 0;
 }
 
 /* components */
@@ -146,4 +152,20 @@ input:focus {
   color: var(--color-primary);
   transform: scale(1.25);
   border: 1px solid var(--color-primary);
+}
+
+.btn-check {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin-right: 1rem;
+  transition: all 200ms ease-out;
+  border: 1px solid var(--color-primary);
+}
+
+.btn-completed {
+  background-color: var(--color-primary);
 }
