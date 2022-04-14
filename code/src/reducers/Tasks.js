@@ -28,8 +28,13 @@ const tasks = createSlice ({
                 }
             })
         },
+
         deleteTodo: (store, action) => {
             store.taskList.splice(action.payload, 1)
+        },
+
+        addTodo: (store, action) => {
+            store.taskList.push(action.payload)
         }
     }
 })
