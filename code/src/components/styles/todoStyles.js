@@ -11,9 +11,9 @@ flex-direction: column;
 max-width: 600px;
 margin: 10px 20px;
 padding: 10px;
-border: 2px solid red;
+/* border: 2px solid red; */
 border-radius: 5px;
-background: #fff;
+background-color: #F3F7F7;
 `
 
 export const TodoDeadline = styled.div`

@@ -79,29 +79,33 @@ const TodosList = ({ setIsUndoDisabled }) => {
 
   return (
     <>
-      <Section>
-        <FilteringButtonsBox>
-          <FilteringButton onClick={displayPending} disabled={isPendingDisabled}>
-            <FontAwesomeIcon icon={faCircle} />
-          </FilteringButton>
-          <FilteringButton onClick={displayAll} disabled={isAllDisabled}>
-            <FontAwesomeIcon icon={faGlobe} />
-          </FilteringButton>
-          <FilteringButton onClick={displayCompleted} disabled={isCompletedDisabled}>
-            <FontAwesomeIcon icon={faCircleCheck} />
-          </FilteringButton>
-        </FilteringButtonsBox>
-        <FilteringInput>
-          <input
-            autoComplete="off"
-            onChange={onTodoSearch}
-            placeholder="Search a todo or category"
-            type="search"
-            value={inputSearch}
-          />
-        </FilteringInput>
-        <Count>{count}</Count>
-      </Section>
+      {allTodos.length ?
+        <Section>
+          <FilteringButtonsBox>
+            <FilteringButton onClick={displayPending} disabled={isPendingDisabled}>
+              <FontAwesomeIcon icon={faCircle} />
+            </FilteringButton>
+            <FilteringButton onClick={displayAll} disabled={isAllDisabled}>
+              <FontAwesomeIcon icon={faGlobe} />
+            </FilteringButton>
+            <FilteringButton onClick={displayCompleted} disabled={isCompletedDisabled}>
+              <FontAwesomeIcon icon={faCircleCheck} />
+            </FilteringButton>
+          </FilteringButtonsBox>
+          <FilteringInput>
+            <input
+              autoComplete="off"
+              onChange={onTodoSearch}
+              placeholder="Search a todo or category"
+              type="search"
+              value={inputSearch}
+            />
+          </FilteringInput>
+          <Count>{count}</Count>
+        </Section>
+        :
+        ''}
+
       {(!pendingTodos.length && !completedTodos.length) ?
         <EmptyState
           emptyIcon={faFaceGrinHearts}
