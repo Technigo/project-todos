@@ -55,11 +55,6 @@ const BigHeading = styled.h1`
 color: #1D3F6F;
 font-size: 31px;
 `
-
-const Emoji = styled.span`
-font-size: 10px;
-`
-
 const Article = styled.article`
 border: 0.4px solid gray;
 background: #f8f8f8;
@@ -126,8 +121,8 @@ const StartPage = () => {
                 <Article>
                 
                     <Button onClick={() => onDeleteClick(taskIndex)} >
-                        <Emoji>
-                    <span role="img" aria-label="cross">❌</span></Emoji> 
+                     
+                    <span role="img" aria-label="cross">❌</span> 
                     </Button>
 
                     <label>

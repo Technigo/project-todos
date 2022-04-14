@@ -118,7 +118,7 @@ const AddTask = () => {
 
         <HeaderBox>
            <label>
-             <span role="img" aria-label="pen"> 🖋️</span> 
+             <span role="img" aria-label="pen" className="pen"> 🖋️</span> 
              &nbsp;
            <Textarea
             type="text"
