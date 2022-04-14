@@ -1,22 +1,24 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import Task from './Task';
 import tasks from 'reducers/tasks';
 
 
-
 const TaskList = () => {
-    const taskList = useSelector((backpack) => backpack.tasks.items)
+    const taskList = useSelector((backpack) => backpack.tasks.items);
 
     const dispatch = useDispatch();
 
-    const onTaskToggle = (taskId) => {
+    const onItemToggle = (taskId) => {
         dispatch(tasks.actions.toggleItem(taskId))
-    }
+    };
+
+    const onTaskRemove = (index) => {
+        dispatch(tasks.actions.removeItem(index));
+    };
 
     return (
         <section>
-            {taskList.map((taskItem) => (
+            {taskList.map((taskItem, taskIndex) => (
                <article key={taskItem.id}>
                    <h2>{taskItem.text}</h2>
                    <label>
@@ -27,13 +29,13 @@ const TaskList = () => {
                             onChange={() => onItemToggle(taskItem.id)}
                         />
                    </label>
-                   <button>
+                   <button onClick={() => onTaskRemove(taskIndex)}>
                        <span role='img' aria-label='delete'>❌</span>
                    </button>
                </article>
             ))}
         </section>
-    )
-}
+    );
+};
 
 export default TaskList;
