@@ -55,8 +55,19 @@ input:focus {
 }
 
 /* flexbox */
+.container-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container-center-start {
+  display: flex;
+  align-items: center;
+}
 .container-center-column {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
@@ -90,6 +101,19 @@ input:focus {
   border-bottom: 1px solid var(--color-grey);
 }
 
+.todo-item {
+  width: 100%;
+  padding: 1em;
+  border-bottom: 1px solid var(--color-grey);
+}
+.item-icon {
+  color: var(--color-grey);
+}
+.check-icon {
+  color: var(--color-white);
+}
+
+/* buttons */
 .btn-primary {
   border-radius: 5px;
   padding: 0.5rem 1rem;
@@ -103,4 +127,23 @@ input:focus {
 
 .btn-primary:hover {
   background-color: var(--color-primaryFaded);
+}
+
+.btn-todo {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  margin-right: 1rem;
+  transition: all 200ms ease-out;
+  color: var(--color-grey);
+  border: 1px solid transparent;
+}
+
+.btn-todo:hover {
+  color: var(--color-primary);
+  transform: scale(1.25);
+  border: 1px solid var(--color-primary);
 }
