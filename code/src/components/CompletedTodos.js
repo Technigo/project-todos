@@ -23,7 +23,7 @@ const CompletedTodos = () => {
         {items.length > 0 && <h3>Completed</h3>}
         <div className='scroll'>
           {items.map((item) => (
-            <div key={item.id} className='small-todo-wrapper'>
+            <div key={item.id} className='small-task-wrapper'>
               <div className='check-text'>
                 <div>
                   <input
