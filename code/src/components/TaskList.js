@@ -1,23 +1,30 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
-
 import tasks from 'reducers/tasks'
 
 const TaskItem = styled.article`
 display: flex;
 align-items: center;
-/* border: 1px solid black; */
-/* padding: 10px; */
-/* margin: 0 1rem; */
-height: 5rem;
+border-radius: 10px;
+padding: 3px;
+margin: 1rem 1.5rem;
+height: 4rem;
 position: relative;
 word-break: break-word;
-/* flex-wrap: wrap; */
+background-color: white;
+
+@media (min-width: 678px) {
+    margin: 1rem 3rem;
+  }
+
+  @media (min-width: 1024px) {
+    margin: 1rem 5rem;
+  }
 `
 const TaskText = styled.h2`
-/* position: absolute; */
 max-width: 75%;
+font-size: 20px;
 color: ${(props) => (props.completed ? `#b0b0b0` : `#222221`)};
 `
 
@@ -29,6 +36,7 @@ padding-left: 2px;
 border: none;
 background: none;
 font-size: 2rem;
+cursor: pointer;
 `
 
 const TaskList = () => {
@@ -48,12 +56,12 @@ const TaskList = () => {
         <section>
             {taskList.map((taskItem, taskIndex) => (
             <TaskItem key={taskItem.id}>
-                    <input 
+                <input 
                     type='checkbox'
                     checked={taskItem.complete}
                     onChange={() => onTaskToggle(taskItem.id)}
-                    />
-                    <TaskText completed={taskItem.complete}>&nbsp;{taskItem.text}</TaskText>
+                />
+                <TaskText completed={taskItem.complete}>&nbsp;{taskItem.text}</TaskText>
                 <ButtonDelete onClick={() => onTaskDelete(taskIndex)}>
                     <span role='img' aria-label='delete'>
                         ✖️

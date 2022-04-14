@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const data = [
-    { id: 1, text: 'Clean', complete: false },
-    { id: 2, text: 'Wash', complete: false },
-    { id: 3, text: 'Go to riding school', complete: false },
-    { id: 4, text: 'Create todo app', complete: false },
-]
+// const data = [
+//     { id: 1, text: 'Clean', complete: false },
+//     { id: 2, text: 'Wash', complete: false },
+//     { id: 3, text: 'Go to riding school', complete: false },
+//     { id: 4, text: 'Create todo app', complete: false },
+// ]
 
 const tasks = createSlice({
     name: 'tasks',
     initialState: {
-        items: data,
-        // items: [],
+        // items: data,
+        items: [],
     },
     reducers: {
         toggleItem: (store, action) => {
