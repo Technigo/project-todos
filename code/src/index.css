@@ -23,6 +23,7 @@ code {
 
 .uncomplete-todo {
   margin-top: -10px;
+  margin: 0;
 }
 
 /* Scrollbar styling  */
@@ -52,28 +53,14 @@ code {
 /* Mobile */
 @media (max-width:767px) {
   body {
-     /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-    /* background-position: center top; */
-    /* background-attachment: fixed;  */
-    /* Created with https://www.css-gradient.com */
-
-  background: linear-gradient(to top left, #F1A0A7, #9F5762);
-  height: 100vh;
+    background: linear-gradient(to top left, #F1A0A7, #9F5762);
+    height: 100vh;
   }
-
-
 }
 
 @media (min-width:668px) and (max-width:1024px) {
   body {
     height: 100vh;
-
   }
 }
 
-/* .addTodo-container {
-  display: flex;
-  align-items: flex-end;
-  height: 250px;
-} */

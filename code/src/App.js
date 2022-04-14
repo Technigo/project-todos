@@ -1,11 +1,15 @@
 import React from 'react'
 import {Provider} from 'react-redux'
 import { combineReducers, createStore } from '@reduxjs/toolkit'
-import styled from 'styled-components'
 
 import { todos } from 'reducers/todos'
 import { AddTodo } from 'components/AddTodo'
 import { TodoList } from 'components/TodoList'
+
+import {
+  Wrapper,
+  ProviderContainer
+} from '../src/components/Styling'
 
 const reducer = combineReducers({
   todos: todos.reducer,
@@ -33,63 +37,11 @@ export const App = () => {
           <TodoList />
           <AddTodo />
         </ProviderContainer>
-        </Wrapper>
+      </Wrapper>
     </Provider>
   )
 }
 
 
 
-const devices = {
-  mobile: "(max-width: 667px)",
-  tablet: "(min-width:668px) and (max-width:1024px)",
-  desktop: "(min-width: 1025px)",
-};
-
-const Wrapper = styled.section`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // margin: -10px;
-  // border: 1px solid red;
-`
-
-const ProviderContainer = styled.section`
-  position: relative;
-  min-height: 600px;
-  min-width: 400px;
-  max-height: 600px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 50px;
-  border-radius: 20px;
-  background: rgb(236, 240, 243);
-   box-shadow: 
-              -3px -3px 30px rgb(255, 175, 130, .8),
-              3px 3px 30px rgb(255, 175, 130, .8);
-
-  @media ${devices.tablet} {
-    margin: 100px 0;
-    width: 400px;
-    min-width: 40px;
-
-  }
-
-  @media ${devices.mobile} {
-    margin: 50px;
-    min-width: 40px;
-    width: 200px;
-    min-height: 400px;
-    height: 450px;
-
-
-  }
-
-  @media ${devices.desktop} {
-    margin: 100px 700px;
-
-  }
-
-`
 
