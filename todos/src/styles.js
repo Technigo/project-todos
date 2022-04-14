@@ -4,11 +4,18 @@ const Button = styled.button`
   cursor: pointer;
   -webkit-appearance: none;
   -webkit-border-radius: none;
+  background-color: #995cfa;
+  color: white;
 
-  &:hover {
-    background-color: #995cfa;
-    color: white;
-  };
+  @media (min-width: 768px) {
+    background-color: #efefef;
+    color: black;
+
+    &:hover {
+      background-color: #995cfa;
+      color: white;
+    };
+  }
 `;
 
 export const Heading = styled.header`
@@ -61,7 +68,7 @@ export const AddTodo = styled.input`
   @media (min-width: 768px) {
     width: 70%;
     margin-bottom: 0;
-  }
+  };
 `;
 
 export const Plus = styled.span`
