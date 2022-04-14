@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { formatRelative } from "date-fns";
 import { useDispatch, useSelector } from "react-redux";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import { keyframes } from "styled-components";
 import { projects } from "reducers/projects";
 import trashgray from "../assets/trashgray.svg";

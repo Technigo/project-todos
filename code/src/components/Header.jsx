@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import ProjectCarousel from "./ProjectCarousel";
 import { Link } from "react-router-dom";
-import styled from "styled-components/macro";
+import styled from "styled-components";
 import CarouselChildren from "./CarouselChildren";
 import homeicon from "../assets/homeicon.svg";
 import addgray from "../assets/addgray.svg";
