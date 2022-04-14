@@ -66,6 +66,8 @@ color: #3B7C7D;
 export const TodoText = styled.span`
 display: flex;
 align-self: center;
+hyphens: auto;
+    overflow-wrap: break-word;
 `
 
 export const TodoDeleteButton = styled(Button)`
