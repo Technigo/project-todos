@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import trashIcon from './img/trash.svg'
 import leftBtn from './img/leftBtn.svg'
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import tasks from "reducers/tasks";
 
 const Header = ( {header} ) => {
@@ -13,8 +13,6 @@ const Header = ( {header} ) => {
     const onBackBtnClick = () => {
         navigate('/');
     }
-
-    const taskList = useSelector(state => state.tasks.list)
    
     const deleteItem = () => {
         dispatch(tasks.actions.deleteAllItem());

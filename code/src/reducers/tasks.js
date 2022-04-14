@@ -4,40 +4,59 @@ import { createSlice } from '@reduxjs/toolkit'
 const tasks = createSlice ({
     name: 'tasks',
     initialState: {
-      list: [
-        { id: 1, text: 'Watch video on actions & reducers', complete: true },
-        { id: 2, text: 'Follow redux codealong', complete: true },
-        { id: 3, text: 'Fork weekly assignment', complete: true },
-        { id: 4, text: 'Create a todo app', complete: false },
+      list: [ 
+       
 
       ],
-    
       editItem:'', 
-      isEditing: false,
-      editId: null
+      editId: null,
+      isEditing: false
+      
     },
       reducers: {
           
-
           addItem: (state, action) => {
-            state.list.push(action.payload)
-            state.isEditing = false
-        
 
+              const existingEdititem = state.list.find(item => item.id === state.editId);
+
+              if (existingEdititem) {
+
+                 existingEdititem.text = state.editItem;
+                 state.editItem = '';
+                 state.editId = null;
+                 state.isEditing = false;
+                 
+                } else {
+                  state.list = [...state.list, action.payload];
+                }
+              
+             
           },
 
           onChangeItemInput: (state,action) => {
-            state.editItem = action.payload;
+            return {...state, editItem: action.payload}
           },
 
           editItem: (state, action) => {
-            const findItem = state.list.find(item => item.id === action.payload);
-            state.isEditing = true
-            state.editItem = findItem.text
+            const findItem = state.list.find(item => item.id === action.payload)
+      
+      
+            return {
+              ...state, 
+              editItem: findItem.text, 
+              editId: findItem.id, 
+              isEditing: true 
+            };;
+          },
+
+          deleteItem: (state, action) => {
+            const filterList = state.list.filter(item => item.id !== action.payload);
+            state.list = filterList
           },
 
           deleteAllItem: (state,action) => {
-              state.list = [];
+            const emptyList = [];
+            state.list = emptyList;
           } 
         
       }
@@ -45,3 +64,10 @@ const tasks = createSlice ({
 
 
 export default tasks;
+
+
+
+
+
+
+

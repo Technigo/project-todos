@@ -1,30 +1,51 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import uniqid from 'uniqid';
+import { format, formatDistance, formatRelative, subDays } from 'date-fns'
+
 
 import tasks from "reducers/tasks";
 import { useNavigate } from "react-router-dom";
 import leftBtn from './img/leftBtn.svg'
+import folder from './img/folder.svg'
+import { now } from "moment";
 
 
 
 const AddTask = () => {
     
-    const editItem = useSelector(state => state.tasks.editItem);
-
+    const createDate = new Date();
+    const [inputTask, setInputTask] = useState('')
+    const [dueDate, setDueDate] = useState('');
     const dispatch = useDispatch();
     const navigate = useNavigate();
 
+    const editItem = useSelector(state => state.tasks.editItem);
+    const isEditing = useSelector(state => state.tasks.isEditing);
+
+    
+    // Submit Task function
     const onSubmitNewTask = (e) => {
+      
         e.preventDefault(e)
-        dispatch(tasks.actions.addItem({id: uniqid(), text: editItem, complete: true }))
+        
+        dispatch(tasks.actions.addItem({id: uniqid(), text: inputTask, complete: true, date: createDate, dueDate: dueDate})) 
         navigate('/all');
     }
 
+    // On Change function to update and edit item
     const onChangeItem = (item) => {
-      dispatch(tasks.actions.onChangeItemInput(item))
+
+        if (!isEditing) {
+            setInputTask(item)
+        } else {
+            setInputTask(editItem)
+            dispatch(tasks.actions.onChangeItemInput(item))
+
+        }
     }
 
+    //Go back to home page
     const onBackBtnClick = () => {
         navigate('/');
     }
@@ -38,11 +59,25 @@ const AddTask = () => {
                 <input 
                 type='text' 
                 placeholder="Task title"
-                value={editItem}
+                value={isEditing ? editItem : inputTask}
                 onChange={(e) => onChangeItem(e.target.value)}
+                required
                 />
+                <label htmlFor='due-date'>Set due date
+                    <input 
+                    type='date' 
+                    id="due-date"
+                    value={dueDate}
+                    min = {createDate}
+                    max = '2100-01-01'
+                    onChange={(e) => setDueDate(e.target.value)}
+                    />
+                </label>
                 <button type="submit">Submit</button>
             </form>
+            <button type="button">
+                <img src={folder} alt="folder icon" />
+            </button>
         </div>
     )
 }
