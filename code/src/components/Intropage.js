@@ -40,6 +40,9 @@ border: 0.4px solid gray;
 padding: 6px;
 font-family: 'Roboto', sans-serif;
 font-size: 15px;
+-webkit-appearance: none;
+-moz-appearance: none;
+appearance: none;
 `
 
 const IntroImage = styled.img`

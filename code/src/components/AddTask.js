@@ -34,11 +34,11 @@ align-items: center;
 
 
 const Textarea = styled.input`
-width: 65%;
+width: 60%;
 padding: 10px;
 border: none;
 font-family: 'Roboto', sans-serif;
-font-size: 15px;
+font-size: 16px;
 background: #f8f8f8;
 font-weight: 400;
 line-height: 1.4;
@@ -65,7 +65,7 @@ appearance: none;
 `
 
 const HeaderBox = styled.div`
-width: 85%;
+width: 89%;
 border: 1px solid gray;
 border-radius: 12px;
 padding: 0.4rem;
