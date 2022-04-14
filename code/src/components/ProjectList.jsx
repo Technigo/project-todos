@@ -2,13 +2,14 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components/macro";
+import { Container } from "styledelements/elements";
 
 const ProjectList = () => {
   const projects = useSelector((store) => store.projects.project);
   const icons = useSelector((store) => store.icons.icons);
 
   return (
-    <>
+    <Container>
       {projects.map((project) => (
         <Link to={`/projects/${project.id}`} key={project.id}>
           <ProjectListContainer color={project.color}>
@@ -28,7 +29,7 @@ const ProjectList = () => {
           </ProjectListContainer>
         </Link>
       ))}
-    </>
+    </Container>
   );
 };
 

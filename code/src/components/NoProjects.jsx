@@ -1,16 +1,19 @@
 import React from "react";
 import styled from "styled-components/macro";
 import noprojects from "../assets/noprojects.svg";
+import { Container } from "styledelements/elements";
 
 const NoProjects = () => {
   return (
-    <Wrapper>
-      <NoProjectsIcon src={noprojects} alt="Three layered documents" />
-      <h2>Looks like you don't have any to-do lists!</h2>
-      <h2>
-        Click the plus icon above to create your first project to-do list!
-      </h2>
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        <NoProjectsIcon src={noprojects} alt="Three layered documents" />
+        <h2>Looks like you don't have any to-do lists!</h2>
+        <h2>
+          Click the plus icon above to create your first project to-do list!
+        </h2>
+      </Wrapper>
+    </Container>
   );
 };
 

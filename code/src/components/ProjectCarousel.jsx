@@ -18,7 +18,7 @@ const ProjectCarousel = (props) => {
         options={flickityOptions} // takes flickity options {}
         disableImagesLoaded={false} // default false
         reloadOnUpdate={true} // default false
-        static // default false
+        static={true} // default false
       >
         {props.children}
       </Flickity>

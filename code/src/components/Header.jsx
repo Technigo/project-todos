@@ -26,13 +26,11 @@ const Header = () => {
         </Link>
       </HeaderWrapper>
       {projects.length > 0 && (
-        <>
-          <ProjectCarousel>
-            {projects.map((project) => (
-              <CarouselChildren key={project.id} project={project} />
-            ))}
-          </ProjectCarousel>
-        </>
+        <ProjectCarousel>
+          {projects.map((project) => (
+            <CarouselChildren key={project.id} project={project} />
+          ))}
+        </ProjectCarousel>
       )}
     </SiteHeader>
   );

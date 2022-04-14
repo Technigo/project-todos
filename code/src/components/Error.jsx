@@ -1,14 +1,17 @@
 import React from "react";
 import styled from "styled-components/macro";
 import shredder from "../assets/shredder.svg";
+import { Container } from "styledelements/elements";
 
 const Error = () => {
   return (
-    <Wrapper>
-      <ErrorPageIcon src={shredder} alt="paper shredder" />
-      <h2>This page doesn't exist.</h2>
-      <h2>Click on the title above to go home.</h2>
-    </Wrapper>
+    <Container>
+      <Wrapper>
+        <ErrorPageIcon src={shredder} alt="paper shredder" />
+        <h2>This page doesn't exist.</h2>
+        <h2>Click on the title above to go home.</h2>
+      </Wrapper>
+    </Container>
   );
 };
 

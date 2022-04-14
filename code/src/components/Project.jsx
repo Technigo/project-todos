@@ -13,7 +13,7 @@ import NoTasks from "./NoTasks";
 import Task from "./Task";
 
 // Import Styled Elements
-import { TextInput } from "styledelements/elements";
+import { TextInput, Container } from "styledelements/elements";
 
 // Import Icons
 import { addwhite } from "../assets/icons";
@@ -22,6 +22,7 @@ const Project = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [taskName, setTaskName] = useState("");
+  const [allComplete, setAllComplete] = useState(false);
   const id = useParams().id;
   const projectArray = useSelector((store) => store.projects.project);
   const iconArray = useSelector((store) => store.icons.icons);
@@ -30,6 +31,19 @@ const Project = () => {
   const taskList = useSelector(
     (store) => store.projects.project[projectIndex].tasks
   );
+  let completedTasks = taskList.filter((task) => task.complete === true).length;
+  let totalTasks = taskList.length;
+
+  // Check if all tasks are complete !! WHY IS THIS NOT WORKING
+  const checkComplete = () => {
+    if (completedTasks === totalTasks) {
+      // console.log("true", allComplete, completedTasks, "/", totalTasks);
+      setAllComplete(true);
+    } else if (completedTasks !== totalTasks) {
+      // console.log("false", allComplete, completedTasks, "/", totalTasks);
+      setAllComplete(false);
+    }
+  };
 
   // Create unique ID
   let taskId = uniqid("task-");
@@ -46,6 +60,7 @@ const Project = () => {
       })
     );
     setTaskName("");
+    setTimeout(checkComplete(), 5);
   };
 
   const toggleAllTasksComplete = () => {
@@ -54,6 +69,7 @@ const Project = () => {
         projectindex: projectIndex,
       })
     );
+    setTimeout(checkComplete(), 5);
   };
 
   const deleteProject = () => {
@@ -63,12 +79,11 @@ const Project = () => {
       })
     );
     navigate("/");
-    setTimeout(window.location.reload(), 5);
   };
 
   if (project) {
     return (
-      <>
+      <Container>
         <ProjectHeader backgroundcolor={project.color}>
           <IconTitleContainer>
             <Icon
@@ -81,8 +96,7 @@ const Project = () => {
           </IconTitleContainer>
           <div>
             <h2>
-              {taskList.filter((task) => task.complete === true).length} /{" "}
-              {taskList.length}
+              {completedTasks} / {totalTasks}
             </h2>
           </div>
         </ProjectHeader>
@@ -101,14 +115,43 @@ const Project = () => {
             />
           </NewTask>
           {taskList.length === 0 && <NoTasks />}
-          {taskList.length > 0 &&
+
+          {/* All tasks */}
+          {/* {taskList.length > 0 &&
             taskList.map((task) => (
               <Task
                 key={task.taskid}
                 taskid={task.taskid}
                 projectindex={projectIndex}
               />
-            ))}
+            ))} */}
+
+          {/* Complete Tasks */}
+          {taskList.length > 0 &&
+            taskList
+              .filter((task) => task.complete === false)
+              .map((task, index) => (
+                <Task
+                  key={task.taskid}
+                  taskid={task.taskid}
+                  projectindex={projectIndex}
+                  checkComplete={checkComplete}
+                  index={index}
+                />
+              ))}
+
+          {/* Incomplete Tasks */}
+          {taskList.length > 0 &&
+            taskList
+              .filter((task) => task.complete === true)
+              .map((task) => (
+                <Task
+                  key={task.taskid}
+                  taskid={task.taskid}
+                  projectindex={projectIndex}
+                  checkComplete={checkComplete}
+                />
+              ))}
         </TaskContainer>
         <ProjectFooter backgroundcolor={project.color}>
           {taskList.length > 0 && (
@@ -135,7 +178,7 @@ const Project = () => {
             Delete project to-do list
           </FooterButton>
         </ProjectFooter>
-      </>
+      </Container>
     );
   } else {
     return <Error />;

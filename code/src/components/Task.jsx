@@ -7,7 +7,7 @@ import { projects } from "reducers/projects";
 import trashgray from "../assets/trashgray.svg";
 import checkblack from "../assets/checkblack.svg";
 
-const Task = ({ taskid, projectindex }) => {
+const Task = ({ taskid, projectindex, checkComplete }) => {
   const dispatch = useDispatch();
   const thisTask = useSelector((store) =>
     store.projects.project[projectindex].tasks.find(
@@ -28,6 +28,7 @@ const Task = ({ taskid, projectindex }) => {
         projectindex: projectindex,
       })
     );
+    setTimeout(checkComplete(), 5);
   };
 
   const deleteTask = () => {
@@ -37,6 +38,7 @@ const Task = ({ taskid, projectindex }) => {
         projectindex: projectindex,
       })
     );
+    setTimeout(checkComplete(), 5);
   };
 
   return (
@@ -76,6 +78,7 @@ const TaskWrapper = styled.div`
   align-items: center;
   margin: 5px 0;
   gap: 10px;
+  background-color: white;
 `;
 
 const Line = styled.hr`

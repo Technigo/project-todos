@@ -4,15 +4,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { compose, createStore, combineReducers } from "@reduxjs/toolkit";
 import persistState from "redux-localstorage";
 import { projects } from "reducers/projects";
+import { colors } from "reducers/colors";
+import { icons } from "reducers/icons";
 import Home from "components/Home";
 import Error from "components/Error";
 import Project from "components/Project";
 import Header from "components/Header";
 import NewProject from "components/NewProject";
-
-import { Container } from "styledelements/elements";
-import { colors } from "reducers/colors";
-import { icons } from "reducers/icons";
 
 const enhancer = compose(persistState());
 
@@ -29,14 +27,12 @@ export const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Header />
-        <Container>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/newproject" element={<NewProject />} />
-            <Route path="/projects/:id" element={<Project />} />
-            <Route path="*" element={<Error />} />
-          </Routes>
-        </Container>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/newproject" element={<NewProject />} />
+          <Route path="/projects/:id" element={<Project />} />
+          <Route path="*" element={<Error />} />
+        </Routes>
       </BrowserRouter>
     </Provider>
   );

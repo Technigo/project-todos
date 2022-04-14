@@ -21,16 +21,15 @@ export const projects = createSlice({
       });
 
       // Sort tasks by complete and date
-      const complete = (x, y) => {
-        return x > y ? 1 : x < y ? -1 : 0;
-      };
-      const added = (x, y) => {
-        return x < y ? 1 : x > y ? -1 : 0;
-      };
-
-      state.project[action.payload.projectindex].tasks.sort(function (a, b) {
-        return complete(a.complete, b.complete) || added(a.added, b.added);
-      });
+      // const complete = (x, y) => {
+      //   return x > y ? 1 : x < y ? -1 : 0;
+      // };
+      // const added = (x, y) => {
+      //   return x < y ? 1 : x > y ? -1 : 0;
+      // };
+      // state.project[action.payload.projectindex].tasks.sort(function (a, b) {
+      //   return complete(a.complete, b.complete) || added(a.added, b.added);
+      // });
     },
 
     toggleTask: (state, action) => {
@@ -42,16 +41,15 @@ export const projects = createSlice({
         ].complete;
 
       // Sort tasks by complete and date
-      const complete = (x, y) => {
-        return x > y ? 1 : x < y ? -1 : 0;
-      };
-      const added = (x, y) => {
-        return x < y ? 1 : x > y ? -1 : 0;
-      };
-
-      state.project[action.payload.projectindex].tasks.sort(function (a, b) {
-        return complete(a.complete, b.complete) || added(a.added, b.added);
-      });
+      // const complete = (x, y) => {
+      //   return x > y ? 1 : x < y ? -1 : 0;
+      // };
+      // const added = (x, y) => {
+      //   return x < y ? 1 : x > y ? -1 : 0;
+      // };
+      // state.project[action.payload.projectindex].tasks.sort(function (a, b) {
+      //   return complete(a.complete, b.complete) || added(a.added, b.added);
+      // });
     },
 
     deleteTask: (state, action) => {

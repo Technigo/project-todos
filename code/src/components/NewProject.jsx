@@ -7,7 +7,7 @@ import styled from "styled-components/macro";
 import uniqid from "uniqid";
 
 // Import Styling
-import { GridContainer, TextInput } from "styledelements/elements";
+import { GridContainer, TextInput, Container } from "styledelements/elements";
 
 const NewProject = () => {
   const [projectName, chooseProjectName] = useState("");
@@ -52,56 +52,60 @@ const NewProject = () => {
   };
 
   return (
-    <NewProjectWrapper>
-      <h2>Name of project list:</h2>
-      <TextInput
-        type="text"
-        onChange={(event) => chooseProjectName(event.target.value)}
-        width="100%"
-        maxLength="12"
-      />
-      <h2>Choose your icon:</h2>
-      <GridContainer gridcolumns="1fr 1fr 1fr">
-        {iconArray.map((item) => (
-          <React.Fragment key={item[0]}>
-            <IconButton
-              key={item[0]}
-              role="button"
-              value={item[0]}
-              onClick={selectIcon}
-              onKeyDown={(e) => e.key === "Enter" && selectIcon(e)}
-              selected={`${Number(icon) === Number(item[0]) ? "selected" : ""}`}
+    <Container>
+      <NewProjectWrapper>
+        <h2>Name of project list:</h2>
+        <TextInput
+          type="text"
+          onChange={(event) => chooseProjectName(event.target.value)}
+          width="100%"
+          maxLength="12"
+        />
+        <h2>Choose your icon:</h2>
+        <GridContainer gridcolumns="1fr 1fr 1fr">
+          {iconArray.map((item) => (
+            <React.Fragment key={item[0]}>
+              <IconButton
+                key={item[0]}
+                role="button"
+                value={item[0]}
+                onClick={selectIcon}
+                onKeyDown={(e) => e.key === "Enter" && selectIcon(e)}
+                selected={`${
+                  Number(icon) === Number(item[0]) ? "selected" : ""
+                }`}
+              >
+                <Icon src={item[2]} alt={item[2]} />
+              </IconButton>
+            </React.Fragment>
+          ))}
+        </GridContainer>
+        <h2>Select a color:</h2>
+        <GridContainer gridcolumns="1fr 1fr" gridrows="auto">
+          {colorArray.map((item) => (
+            <ColorButton
+              key={item.id}
+              value={item.hex}
+              onClick={selectColor}
+              backgroundcolor={item.hex}
+              onKeyDown={(e) => e.key === "Enter" && selectColor(e)}
+              selected={`${color === item.hex ? "selected" : ""}`}
             >
-              <Icon src={item[2]} alt={item[2]} />
-            </IconButton>
-          </React.Fragment>
-        ))}
-      </GridContainer>
-      <h2>Select a color:</h2>
-      <GridContainer gridcolumns="1fr 1fr" gridrows="auto">
-        {colorArray.map((item) => (
-          <ColorButton
-            key={item.id}
-            value={item.hex}
-            onClick={selectColor}
-            backgroundcolor={item.hex}
-            onKeyDown={(e) => e.key === "Enter" && selectColor(e)}
-            selected={`${color === item.hex ? "selected" : ""}`}
-          >
-            {item.name}
-          </ColorButton>
-        ))}
-      </GridContainer>
-      {error && <p>Please complete and select all the required fields.</p>}
-      <SubmitButton
-        role="button"
-        tabIndex="0"
-        onClick={createProject}
-        onKeyDown={(e) => e.key === "Enter" && createProject()}
-      >
-        Create project to-do!
-      </SubmitButton>
-    </NewProjectWrapper>
+              {item.name}
+            </ColorButton>
+          ))}
+        </GridContainer>
+        {error && <p>Please complete and select all the required fields.</p>}
+        <SubmitButton
+          role="button"
+          tabIndex="0"
+          onClick={createProject}
+          onKeyDown={(e) => e.key === "Enter" && createProject()}
+        >
+          Create project to-do!
+        </SubmitButton>
+      </NewProjectWrapper>
+    </Container>
   );
 };
 
