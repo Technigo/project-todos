@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Simpe to-do web application built with React and Redux-toolkit.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+It was a good practice to understand when to use react useState hook with Redux store management library. For example, sorting operation is by state update method from useState hook because sorting is only for rendering data instead of manipulating data in store.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://technigo-todo-redux.netlify.app
