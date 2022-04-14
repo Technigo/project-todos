@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import { Button } from './sharedStyles'
 
-
 export const TodoArticle = styled.article`
 display: flex;
 flex-direction: column;
@@ -40,6 +39,7 @@ color: #3B7C7D;
 `
 
 export const TodoDragIcon = styled(FontAwesomeIcon)`
+font-size: 1.25rem;
 margin-right: 10px;
 `
 

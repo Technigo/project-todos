@@ -7,13 +7,13 @@ import Todo from './Todo'
 import SortableDroppable from './SortableDroppable'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { 
-  faFaceGrinHearts, 
-  faFaceGrimace, 
-  faFaceGrinStars, 
-  faFaceMehBlank, 
-  faCircle, 
-  faCircleCheck 
+import {
+  faFaceGrinHearts,
+  faFaceGrimace,
+  faFaceGrinStars,
+  faFaceMehBlank,
+  faCircle,
+  faCircleCheck
 } from '@fortawesome/free-regular-svg-icons'
 
 import { faInfinity } from '@fortawesome/free-solid-svg-icons'
@@ -70,22 +70,35 @@ const TodosList = ({ setIsUndoDisabled }) => {
   }
 
   let count = ''
+  let empty = ''
 
   if (inputSearch !== '') {
     if ((pendingTodosSearched.length + completedTodosSearched.length) === 0) {
       count = `no todo fits your search`
+      empty = <EmptyState emptyIcon={faFaceMehBlank} emptyText={"Nothing fits your search, maybe worth checking the spelling..."} />
     } else if ((pendingTodosSearched.length + completedTodosSearched.length) === 1) {
       count = `only ${pendingTodosSearched.length + completedTodosSearched.length} todo fits your search`
     } else {
       count = `${pendingTodosSearched.length + completedTodosSearched.length} todos fit your search`
     }
   } else if (pendingTodos.length === 0) {
-    count = 'no todo left'
+    count = 'no todo pending'
   } else if (pendingTodos.length === 1) {
-    count = `only ${pendingTodos.length} todo to complete`
+    count = `only ${pendingTodos.length} todo pending`
   } else {
-    count = `${pendingTodos.length} todos to complete`
+    count = `${pendingTodos.length} todos pending`
   }
+
+  if (inputSearch === '') {
+    if (!allTodos.length) {
+      empty = <EmptyState emptyIcon={faFaceGrinHearts} emptyText={"Follow you mood and add some todo!"} />
+    } else if (pendingTodos.length && !completedTodos.length) {
+      empty = <EmptyState emptyIcon={faFaceGrimace} emptyText={"Complete some todos and feel the satisfaction!"} />
+    } else if (!pendingTodos.length && completedTodos.length) {
+      empty = <EmptyState emptyIcon={faFaceGrinStars} emptyText={"All todos are completed, hurrah!"} />
+    }
+  }
+
 
   return (
     <>
@@ -114,56 +127,29 @@ const TodosList = ({ setIsUndoDisabled }) => {
           <Count>{count}</Count>
         </Section>
         :
-        ''}
-
-      {(!pendingTodos.length && !completedTodos.length) ?
-        <EmptyState
-          emptyIcon={faFaceGrinHearts}
-          emptyText={"Follow you mood and add some funny or boring todo in the form above."}
-        />
-        :
-        <>
-          <section style={{ display: isPendingVisible }}>
-            {pendingTodos.length ?
-              <SortableDroppable arrayToUse={pendingTodosSearched.reverse().map((todo) => (
-                <Todo
-                  id={todo.id}
-                  key={todo.id}
-                  setIsUndoDisabled={setIsUndoDisabled}
-                  todo={todo}
-                />
-              ))} />
-              :
-              <EmptyState
-                emptyIcon={faFaceGrinStars}
-                emptyText={"All todos are completed, hurrah!"}
-              />}
-          </section>
-          <section style={{ display: isCompletedVisible }}>
-            {completedTodos.length ?
-              <SortableDroppable arrayToUse={completedTodosSearched.reverse().map((todo) => (
-                <Todo
-                  id={todo.id}
-                  key={todo.id}
-                  setIsUndoDisabled={setIsUndoDisabled}
-                  todo={todo}
-                />
-              ))} />
-              :
-              <EmptyState
-                emptyIcon={faFaceGrimace}
-                emptyText={"Complete some todos and this section won't be empty!"}
-              />}
-          </section>
-        </>
+        ''
       }
-      {(allTodos.length && !pendingTodosSearched.length && !completedTodosSearched.length) ?
-        <EmptyState
-          emptyIcon={faFaceMehBlank}
-          emptyText={"Nothing fits your search, maybe worth checking the spelling..."}
-        />
-        :
-        ''}
+      <section style={{ display: isPendingVisible }}>
+        <SortableDroppable arrayToUse={pendingTodosSearched.reverse().map((todo) => (
+          <Todo
+            id={todo.id}
+            key={todo.id}
+            setIsUndoDisabled={setIsUndoDisabled}
+            todo={todo}
+          />
+        ))} />
+      </section>
+      <section style={{ display: isCompletedVisible }}>
+        <SortableDroppable arrayToUse={completedTodosSearched.reverse().map((todo) => (
+          <Todo
+            id={todo.id}
+            key={todo.id}
+            setIsUndoDisabled={setIsUndoDisabled}
+            todo={todo}
+          />
+        ))} />
+      </section>
+      {empty}
     </>
   )
 }
