@@ -30,7 +30,6 @@ const InputField = styled.input`
   border: none;
   background: linen;
   border-radius: 4px;
-  width: 300px;
   @media (min-width: 768px) {
     width: 400px;
   }
