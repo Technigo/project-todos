@@ -87,6 +87,12 @@ margin-top: 10px;
 vertical-align: bottom;
 `
 
+const TaskText = styled.h2`
+  font-weight: 400;
+  font-size: medium;
+  margin: 10px 5px;
+`;
+
 const StartPage = () => {
 
     const tasksList = useSelector((todos) => todos.tasks.items)
@@ -134,8 +140,11 @@ const StartPage = () => {
                     onChange={() => onTaskToggle(taskItem.id)} />
                      &nbsp; I'm done with this
                     </label>
-                  
-                </Article>
+
+                    <TaskText 
+                    className={taskItem.isDone ? "completed-task" : "task-todo"}/>
+                      
+              </Article>
 
             ))}
             </Container>
