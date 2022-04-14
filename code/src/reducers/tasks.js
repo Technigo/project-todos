@@ -9,6 +9,7 @@ export const tasks = createSlice({
     name: 'tasks',
     initialState: {
         items: taskList,
+        filter: []
     },
     reducers: {
         addTask: (store, action) => {
@@ -40,6 +41,14 @@ export const tasks = createSlice({
                 }
             })
             store.items = updatedItems
+        },
+        filterDoneTasks: (store) => {
+            const doneItems = store.items.filter(task => task.isDone)
+            store.filter = doneItems
+        },
+        filterTodo: (store) => {
+            const todoItems = store.items.filter(task => !task.isDone)
+            store.filter = todoItems
         }
     }
 })

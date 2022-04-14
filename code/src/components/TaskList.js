@@ -22,12 +22,20 @@ const TaskList = () => {
     dispatch(tasks.actions.removeTask(index))
   }
 
+  const onDoneTasksFilter = () => {
+    dispatch(tasks.actions.filterDoneTasks())
+  }
+
+  const onTodoFilter = () => {
+    dispatch(tasks.actions.filterTodo())
+  }
+
   return (
     <TaskListFlexColumn>
       <FlexRow>
-        <FilterButton color='#5B87C9'>All Tasks</FilterButton>
-        <FilterButton color='#C95B5B'>To do</FilterButton>
-        <FilterButton color='#58BB48'>Done</FilterButton>
+        <FilterButton color='#5B87C9' onClick={allTasks}>All Tasks</FilterButton>
+        <FilterButton color='#C95B5B' onClick={() => onTodoFilter()}>To do</FilterButton>
+        <FilterButton color='#58BB48' onClick={() => onDoneTasksFilter()}>Done</FilterButton>
       </FlexRow>
       {allTasks.map((task) => (
         <TaskListWrapper key={task.id}>
@@ -36,7 +44,7 @@ const TaskList = () => {
               type="checkbox"
               name="checkTask"
               checked={task.isDone}
-              onChange={() => dispatch(() => onTaskToggle(task.id))}
+              onChange={() => onTaskToggle(task.id)}
             />
             {task.isDone ? <DoneTask>{task.task}</DoneTask> : <Task>{task.task}</Task>}
             {(() => {
