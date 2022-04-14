@@ -5,16 +5,34 @@ import { formatRelative, formatDistanceToNow } from 'date-fns'
 import enGB from 'date-fns/locale/en-GB'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faCircle, faFaceDizzy, faFaceFlushed, faFaceGrinSquintTears, faFaceMeh } from '@fortawesome/free-regular-svg-icons'
-import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
-import { faTrashCan } from '@fortawesome/free-regular-svg-icons'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
 
-import { TodoText, TodoCheckingBox, TodoDraggingBox, TodoArticle, TodoMiddleBox, TodoDeadline, TodoTimestamp } from './styling/StyledTodo'
-import { DeleteTodoButton, CategoryIcon, ToggleIcon, HandleIcon } from './styling/IconsButtons'
+import { 
+  faCircle, 
+  faFaceDizzy, 
+  faFaceFlushed, 
+  faFaceGrinSquintTears, 
+  faFaceMeh, 
+  faCircleCheck, 
+  faTrashCan 
+} from '@fortawesome/free-regular-svg-icons'
+
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import todos from 'reducers/todos'
 
+import { 
+  TodoDeleteButton, 
+  TodoCategoryIcon, 
+  TodoToggleIcon, 
+  TodoDragIcon, 
+  TodoText, 
+  TodoToggleBox, 
+  TodoDragBox, 
+  TodoArticle, 
+  TodoMiddleBox, 
+  TodoDeadline, 
+  TodoTimestamp 
+} from './styles/todoStyles'
 
 const Todo = ({ todo, id, setIsUndoDisabled }) => {
 
@@ -62,6 +80,7 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
     dispatch(todos.actions.toggleTodo(id))
   }
 
+  // to fix!!!! red even if not overdue
   useEffect(() => {
     if (todo.deadline < (Math.round(Date.now() / 86400000) * 86400000) && !todo.completed) {
       setIsOverdue({ color: "red" })
@@ -92,16 +111,21 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
     <TodoArticle>
       <TodoDeadline style={isOverdue}>{todo.deadline !== null && formattedDeadline}</TodoDeadline>
       <TodoMiddleBox>
-        <TodoDraggingBox>
-          <HandleIcon icon={faBars} className="handle" />
-          <CategoryIcon className="handle">{categoryIcon()}</CategoryIcon>
-        </TodoDraggingBox>
-        <TodoCheckingBox className="custom-checkbox" style={isDone()} onChange={onCompletedChange}>
+        <TodoDragBox className="handle">
+          <TodoDragIcon icon={faBars} />
+          <TodoCategoryIcon>{categoryIcon()}</TodoCategoryIcon>
+        </TodoDragBox>
+        <TodoToggleBox
+          className="custom-checkbox"
+          onChange={onCompletedChange}
+          style={isDone()}>
           <input type="checkbox" />
-          <ToggleIcon>{onToggle()}</ToggleIcon>
-          <TodoText>{todo.text} </TodoText>
-        </TodoCheckingBox>
-        <DeleteTodoButton type="button" onClick={onDeleteTodo}><FontAwesomeIcon icon={faTrashCan} /></DeleteTodoButton>
+          <TodoToggleIcon>{onToggle()}</TodoToggleIcon>
+          <TodoText>{todo.text}</TodoText>
+        </TodoToggleBox>
+        <TodoDeleteButton onClick={onDeleteTodo} type="button">
+          <FontAwesomeIcon icon={faTrashCan} />
+        </TodoDeleteButton>
       </TodoMiddleBox>
       <TodoTimestamp>created {formattedTimestamp}</TodoTimestamp>
     </TodoArticle>

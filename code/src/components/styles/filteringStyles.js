@@ -1,19 +1,18 @@
 import styled from 'styled-components/macro'
 
-export const FilteringSection = styled.section`
-display: flex;
-flex-direction: column;
-max-width: 600px;
-margin: 10px 20px;
-padding: 10px;
-border: 2px solid red;
-border-radius: 5px;
-background: #fff;
-`
+import { Button } from './sharedStyles'
 
 export const FilteringButtonsBox = styled.div`
 display: flex;
 justify-content: space-evenly;
+`
+
+export const FilteringButton = styled(Button)`
+  font-size: 2rem;
+
+  &:disabled {
+    color: red;
+  }
 `
 
 export const FilteringInput = styled.label`

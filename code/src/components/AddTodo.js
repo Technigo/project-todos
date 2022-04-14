@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-// import styled from "styled-components/macro"
 import uniqid from 'uniqid'
 
 import DatePicker from "react-datepicker"
@@ -8,14 +7,12 @@ import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCirclePlus } from '@fortawesome/free-regular-svg-icons'
-// import { faCirclePlus } from '@fortawesome/free-solid-svg-icons'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 import todos from 'reducers/todos'
 
-import { AddButtonBox, AddText, AddSection, AddForm, AddOptions, AddCategory, AddDeadline } from './styling/StyledAddTodo'
-import { AddButton } from './styling/IconsButtons'
+import { AddButtonBox, AddButton, AddText, AddForm, AddOptions, AddCategory, AddDeadline } from './styles/addTodoStyles'
+import { Section } from './styles/sharedStyles'
 
 const AddTodo = () => {
   const dispatch = useDispatch()
@@ -58,7 +55,7 @@ const AddTodo = () => {
   }
 
   return (
-    <AddSection>
+    <Section>
       <AddForm onSubmit={onAddTodo}>
           <AddOptions>
             <AddText required placeholder="Type your todo" type="text" onChange={onChangeInputText} value={inputText} />
@@ -76,7 +73,7 @@ const AddTodo = () => {
             <AddButton type="submit" disabled={isDisabled}><FontAwesomeIcon icon={faPlus} /></AddButton>
           </AddButtonBox>
       </AddForm>
-    </AddSection>
+    </Section>
   )
 }
 

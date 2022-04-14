@@ -1,29 +1,27 @@
 import React, { useState } from "react"
 import { useSelector } from 'react-redux'
 
-import { FilteringButton } from './styling/IconsButtons'
 
 import Todo from './Todo'
 
 import SortableDroppable from './SortableDroppable'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-import { faCircle } from '@fortawesome/free-regular-svg-icons'
-import { faCircleCheck } from '@fortawesome/free-regular-svg-icons'
+import { faFaceGrinHearts, faFaceGrimace, faFaceGrinStars, faFaceMehBlank, faCircle, faCircleCheck } from '@fortawesome/free-regular-svg-icons'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 
-import { FilteringSection, FilteringButtonsBox, FilteringInput, Count } from './styling/StyledFiltering'
-import NoPendingTodo from './NoPendingTodo'
-import NoCompletedTodo from './NoCompletedTodo'
-import NoSearchResults from './NoSearchResults'
-import NoTodo from './NoTodo'
+import { FilteringButtonsBox, FilteringInput, Count, FilteringButton } from './styles/filteringStyles'
+
+import { Section } from './styles/sharedStyles'
+
+import EmptyState from './EmptyState'
 
 const TodosList = ({ setIsUndoDisabled }) => {
 
   const allTodos = useSelector((store) => store.todos.items)
 
-  const [completedVisible, setCompletedVisible] = useState('block')
-  const [pendingVisible, setPendingVisible] = useState('block')
+  const [isCompletedVisible, setIsCompletedVisible] = useState('block')
+  const [isPendingVisible, setIsPendingVisible] = useState('block')
   const [isAllDisabled, setIsAllDisabled] = useState(true)
   const [isCompletedDisabled, setIsCompletedDisabled] = useState(false)
   const [isPendingDisabled, setIsPendingDisabled] = useState(false)
@@ -40,24 +38,24 @@ const TodosList = ({ setIsUndoDisabled }) => {
   }
 
   const displayAll = () => {
-    setCompletedVisible('block')
-    setPendingVisible('block')
+    setIsCompletedVisible('block')
+    setIsPendingVisible('block')
     setIsAllDisabled(true)
     setIsCompletedDisabled(false)
     setIsPendingDisabled(false)
   }
 
   const displayCompleted = () => {
-    setPendingVisible('none')
-    setCompletedVisible('block')
+    setIsPendingVisible('none')
+    setIsCompletedVisible('block')
     setIsCompletedDisabled(true)
     setIsAllDisabled(false)
     setIsPendingDisabled(false)
   }
 
   const displayPending = () => {
-    setCompletedVisible('none')
-    setPendingVisible('block')
+    setIsCompletedVisible('none')
+    setIsPendingVisible('block')
     setIsPendingDisabled(true)
     setIsAllDisabled(false)
     setIsCompletedDisabled(false)
@@ -81,39 +79,77 @@ const TodosList = ({ setIsUndoDisabled }) => {
 
   return (
     <>
-
-      <FilteringSection>
+      <Section>
         <FilteringButtonsBox>
-          <FilteringButton onClick={displayPending} disabled={isPendingDisabled}><FontAwesomeIcon icon={faCircle} /></FilteringButton>
-          <FilteringButton onClick={displayAll} disabled={isAllDisabled}><FontAwesomeIcon icon={faGlobe} /></FilteringButton>
-          <FilteringButton onClick={displayCompleted} disabled={isCompletedDisabled}><FontAwesomeIcon icon={faCircleCheck} /></FilteringButton>
+          <FilteringButton onClick={displayPending} disabled={isPendingDisabled}>
+            <FontAwesomeIcon icon={faCircle} />
+          </FilteringButton>
+          <FilteringButton onClick={displayAll} disabled={isAllDisabled}>
+            <FontAwesomeIcon icon={faGlobe} />
+          </FilteringButton>
+          <FilteringButton onClick={displayCompleted} disabled={isCompletedDisabled}>
+            <FontAwesomeIcon icon={faCircleCheck} />
+          </FilteringButton>
         </FilteringButtonsBox>
         <FilteringInput>
-          <input placeholder="Search a todo or category" type="search" name="q" onChange={onTodoSearch} value={inputSearch} autoComplete="off" />
+          <input
+            autoComplete="off"
+            onChange={onTodoSearch}
+            placeholder="Search a todo or category"
+            type="search"
+            value={inputSearch}
+          />
         </FilteringInput>
         <Count>{count}</Count>
-      </FilteringSection>
-      {(!pendingTodos.length && !completedTodos.length) ? <NoTodo /> :
+      </Section>
+      {(!pendingTodos.length && !completedTodos.length) ?
+        <EmptyState
+          emptyIcon={faFaceGrinHearts}
+          emptyText={"Follow you mood and add some funny or boring todo in the form above."}
+        />
+        :
         <>
-          <section style={{ display: pendingVisible }}>
+          <section style={{ display: isPendingVisible }}>
             {pendingTodos.length ?
               <SortableDroppable arrayToUse={pendingTodosSearched.reverse().map((todo) => (
-                <Todo key={todo.id} todo={todo} id={todo.id} setIsUndoDisabled={setIsUndoDisabled} />
+                <Todo
+                  id={todo.id}
+                  key={todo.id}
+                  setIsUndoDisabled={setIsUndoDisabled}
+                  todo={todo}
+                />
               ))} />
               :
-              <NoPendingTodo />}
+              <EmptyState
+                emptyIcon={faFaceGrinStars}
+                emptyText={"All todos are completed, hurrah!"}
+              />}
           </section>
-          <section style={{ display: completedVisible }}>
+          <section style={{ display: isCompletedVisible }}>
             {completedTodos.length ?
               <SortableDroppable arrayToUse={completedTodosSearched.reverse().map((todo) => (
-                <Todo key={todo.id} todo={todo} id={todo.id} setIsUndoDisabled={setIsUndoDisabled} />
+                <Todo
+                  id={todo.id}
+                  key={todo.id}
+                  setIsUndoDisabled={setIsUndoDisabled}
+                  todo={todo}
+                />
               ))} />
               :
-              <NoCompletedTodo />}
+              <EmptyState
+                emptyIcon={faFaceGrimace}
+                emptyText={"Complete some todos and this section won't be empty!"}
+              />}
           </section>
         </>
       }
-      {(allTodos.length && !pendingTodosSearched.length && !completedTodosSearched.length) ? <NoSearchResults /> : ''}
+      {(allTodos.length && !pendingTodosSearched.length && !completedTodosSearched.length) ?
+        <EmptyState
+          emptyIcon={faFaceMehBlank}
+          emptyText={"Nothing fits your search, maybe worth checking the spelling..."}
+        />
+        :
+        ''}
     </>
   )
 }
