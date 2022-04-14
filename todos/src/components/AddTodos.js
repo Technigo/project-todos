@@ -6,7 +6,7 @@ import todos from "reducers/todos";
 
 import {
   Form,
-  Input,
+  AddTodo,
   Plus,
   AddButton
 } from "styles";
@@ -34,7 +34,7 @@ const AddTodos = () => {
 
   return (
     <Form onSubmit={handleTodoSubmit}>
-      <Input
+      <AddTodo
         type="text"
         placeholder="Add todo"
         value={inputValue}
@@ -44,7 +44,7 @@ const AddTodos = () => {
         type="submit"
         disabled={!inputValue}
         onClick={handleNewTodo}
-      ><Plus>+</Plus> Add
+      ><Plus disabled={!inputValue}>+</Plus> Add
       </AddButton>
     </Form>
   );

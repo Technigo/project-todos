@@ -5,7 +5,9 @@ import todos from "reducers/todos";
 
 import {
   Article,
-  TodoText
+  CheckBox,
+  TodoText,
+  DeleteButton
 } from "styles";
 
 const TodoList = () => {
@@ -26,15 +28,16 @@ const TodoList = () => {
       {todoList.map((item) => (
         <Article key={item.id}>
           <div>
-            <input
+            <CheckBox
               type="checkbox"
-              id={item.text}
+              tabIndex="0"
+              id={item.id}
               checked={item.isComplete}
               onChange={() => { onTodoToggle(item.id) }}
             />
-            <TodoText htmlFor={item.text} complete={item.isComplete}>{item.text}</TodoText>
+            <TodoText htmlFor={item.id} complete={item.isComplete}>{item.text}</TodoText>
           </div>
-          <button onClick={() => onTodoDelete(item.id)}>Delete</button>
+          <DeleteButton onClick={() => onTodoDelete(item.id)}>Delete</DeleteButton>
         </Article>
       ))}
     </section>

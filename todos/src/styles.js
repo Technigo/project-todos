@@ -1,12 +1,30 @@
 import styled from "styled-components";
 
+const Button = styled.button`
+  cursor: pointer;
+
+  &:hover {
+    background-color: #995cfa;
+    color: white;
+  };
+`;
+
 export const Heading = styled.header`
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   background-color: #2d2d2d;
   color: white;
   padding: 20px;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  };
+`;
+
+export const Total = styled.p`
+  margin: 10px;
 `;
 
 export const ClearWrapper = styled.div`
@@ -15,33 +33,54 @@ export const ClearWrapper = styled.div`
   align-items: center;
 `;
 
-export const ClearButton = styled.button`
+export const ClearButton = styled(Button)`
   margin-top: 10px;
+  border: none;
+  padding: 4px 10px;
+  border-radius: 15px;
 `;
 
 export const Form = styled.form`
   padding: 10px;
   display: flex;
+  flex-direction: column;
   padding: 25px 10px;
   justify-content: center;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  };
 `;
 
-export const Input = styled.input`
-  width: 70%;
+export const AddTodo = styled.input`
   padding: 10px;
+  margin-bottom: 15px;
+
+  @media (min-width: 768px) {
+    width: 70%;
+    margin-bottom: 0;
+  }
 `;
 
 export const Plus = styled.span`
   background-color: white;
   border-radius: 50%;
   padding: 3px 7px;
+  color: ${(prop) => prop.disabled
+    ? "grey"
+    : "black"
+  };
 `;
 
 export const AddButton = styled.button`
-  background-color: #8741f6;
-  border: none;
   padding: 10px;
-
+  font-weight: 600;
+  color: white;
+  cursor: pointer;
+  background-color: ${(prop) => prop.disabled
+    ? "none"
+    : "#995cfa"
+  };
 `;
 
 export const Article = styled.article`
@@ -60,10 +99,19 @@ export const Article = styled.article`
   }
 `;
 
+export const CheckBox = styled.input`
+  cursor: pointer;
+`;
+
 export const TodoText = styled.label`
   margin-left: 12px;
+  cursor: pointer;
   text-decoration: ${(prop) => prop.complete
     ? "line-through"
     : "none"
   };
+`;
+
+export const DeleteButton = styled(Button)`
+  border-radius: 10px;
 `;

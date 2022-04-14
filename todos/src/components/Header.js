@@ -7,6 +7,7 @@ import DateStamp from "./DateStamp";
 import {
   Heading,
   ClearWrapper,
+  Total,
   ClearButton
 } from "styles";
 
@@ -17,10 +18,10 @@ const Header = () => {
 
   return (
     <Heading>
-      <h1>Todo List</h1>
+      <h1>To Do List</h1>
       <DateStamp /> 
       <ClearWrapper>
-        <p>{todosLength} todos</p>
+        <Total>{todosLength} todos</Total>
         <ClearButton onClick={() => dispatch(todos.actions.clearTodos())}>Clear All</ClearButton>
       </ClearWrapper>
     </Heading>
