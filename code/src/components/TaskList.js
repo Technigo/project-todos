@@ -56,7 +56,6 @@ const CheckLabel = styled.label`
     display: inline;
 `
 
-
 const TaskList = () => {
     const allTasks = useSelector((store) => store.tasks.items)
 
