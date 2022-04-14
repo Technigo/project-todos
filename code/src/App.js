@@ -1,11 +1,11 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { createGlobalStyle } from 'styled-components'
 
-import tasks from './reducers/Tasks'
+import tasks from './reducers/tasks'
 
-import ToDoList from 'components/ToDoList'
-import AddTask from 'components/AddTask'
+import Wrapper from 'components/Wrapper'
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -18,8 +18,7 @@ const store = configureStore({
 export const App = () => {
   return (
     <Provider store={store}>
-      <AddTask />
-      <ToDoList />
+      <Wrapper />
     </Provider>
   )
 }

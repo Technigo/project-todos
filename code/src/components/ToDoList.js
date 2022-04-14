@@ -2,13 +2,7 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-import tasks from 'reducers/Tasks'
-
-export const TodoContainer = styled.article`
-  background-color: #e5e0cc;
-  margin: 30px;
-  padding: 40px;
-`
+import tasks from 'reducers/tasks'
 
 const ToDoList = () => {
   const items = useSelector((store) => store.tasks.items)
@@ -23,13 +17,13 @@ const ToDoList = () => {
             className="checkbox"
             type="checkbox"
             checked={task.isComplete}
-            onChange={() => dispatch(tasks.actions.toggleFinished(task.id))}
+            onChange={() => dispatch(tasks.actions.toggleTodo(task.id))}
           />
           <div className="todoListContainer">
             <label htmlFor={task.id}>{task.description}</label>
           </div>
           <button onClick={() => dispatch(tasks.actions.removeTask(task.id))}>
-            🗑
+            X
           </button>
         </article>
       ))}
@@ -38,3 +32,8 @@ const ToDoList = () => {
 }
 
 export default ToDoList
+
+const TodoContainer = styled.article`
+  margin: 30px;
+  padding: 40px;
+`

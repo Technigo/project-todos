@@ -3,13 +3,7 @@ import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid'
 import styled from 'styled-components'
 
-import tasks from 'reducers/Tasks'
-
-const FormContainer = styled.form`
-  background-color: #e5e0cc;
-  margin: 30px;
-  padding: 40px;
-`
+import tasks from 'reducers/tasks'
 
 const AddTask = () => {
   const [value, setValue] = useState('')
@@ -19,7 +13,8 @@ const AddTask = () => {
 
     const newTask = {
       id: uniqid(),
-      description: value
+      description: value,
+      isComplete: false
     }
 
     dispatch(tasks.actions.addTask(newTask))
@@ -29,21 +24,27 @@ const AddTask = () => {
   return (
     <FormContainer>
       <form onSubmit={onFormSubmit}>
-        <div>TO DO</div>
-        <input
-          className=""
-          type="text"
-          placeholder="Add a to do..."
-          value={value}
-          onChange={(event) => setValue(event.target.value)}
-          required
-        />
-        <button className="submit-button" type="submit">
-          +
-        </button>
+        <label>
+          <input
+            className=""
+            type="text"
+            placeholder="Add a to do..."
+            value={value}
+            onChange={(event) => setValue(event.target.value)}
+            required
+          />
+          <button className="submit-button" type="submit">
+            +
+          </button>
+        </label>
       </form>
     </FormContainer>
   )
 }
+
+const FormContainer = styled.form`
+  margin: 30px;
+  padding: 40px;
+`
 
 export default AddTask
