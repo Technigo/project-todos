@@ -2,13 +2,17 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-const OutterDateContainer = styled.div`
+const BackGround = styled.section`
+    background: linear-gradient(#98BAE7, #B8E4F0);
+    padding: 5px 24px;
+    font-family: 'Poppins', sans-serif;
+`
+const OutterContainer = styled.div`
     display: flex;
     justify-content: space-between; 
     align-items: center;
 `
-//StyleContainer is a parent element that forces the child elements to appear on one line. 
-const StyleContainer = styled.div`
+const InnerContainer = styled.div`
     white-space: nowrap; 
 `	
 const DateStamp = styled.div`
@@ -21,15 +25,14 @@ const YearMonthStamp = styled.div`
     display: inline-block;
     font-size: 1.02rem;
     font-weight: 500;
-    margin-left: 0.3rem; 
+    margin-left: 0.3rem;
+    line-height: 1.3rem; 
 ` 
 const Title = styled.h1`
     font-size: 1.5rem;
     text-align: center;
     font-weight: normal;
-    // border: 1px solid black;
-    margin: 1.5rem 4rem;
-    background: #99a8bb;
+    margin-top: 1rem;
 `
 const CounterWrapper = styled.div`
     margin-bottom: 1.5rem;
@@ -41,6 +44,7 @@ const Header = () => {
     const completedTasks = allTasks.filter(singleTask => singleTask.isComplete);
     const unCompletedTasks = allTasks.filter(singleTask => !singleTask.isComplete);
 
+
     let year = new Date().toLocaleDateString("en-US", {year: 'numeric'})
     let month = new Date().toLocaleDateString("en-US",{month: "short"})
     let date = new Date().toLocaleDateString("en-US",{day: "numeric"})
@@ -48,12 +52,12 @@ const Header = () => {
 
 
     return (
-        <>
+        <BackGround>
             <Title>
-                Task-it
+                Daily reminder
             </Title>
-            <OutterDateContainer>
-                <StyleContainer>
+            <OutterContainer>
+                <InnerContainer>
                     <DateStamp>
                         <p>{date}</p>
                     </DateStamp>
@@ -61,16 +65,15 @@ const Header = () => {
                         <p>{month}</p>
                         <p>{year}</p>
                     </YearMonthStamp>
-                </StyleContainer>
+                </InnerContainer>
                 <p>{weekday}</p>
-            </OutterDateContainer>
-                <CounterWrapper>
-                    <p>You have {allTasks.length} task(s) in total.</p>
-                    <p>Completed task(s) : {completedTasks.length}.</p>
-                    <p>Uncompleted tasks(s) : {unCompletedTasks.length}.</p>
-                </CounterWrapper>
-            
-        </>
+            </OutterContainer>
+            <CounterWrapper>
+                <p>You have {allTasks.length} task(s) in total.</p>
+                <p>Completed task(s) : {completedTasks.length}</p>
+                <p>Uncompleted task(s) : {unCompletedTasks.length}</p>
+            </CounterWrapper>
+        </BackGround>
     )
 }
 

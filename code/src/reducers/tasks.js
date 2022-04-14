@@ -1,14 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const data =  [
-    {
-        id: '1234',
-        text: 'Name three good things about yourself',
-        isComplete: false,  
-    }, 
+const data =  [ 
     {
         id: '2345',
-        text: 'Take a well deserved rest',
+        text: 'Take a well deserved rest.',
         isComplete: false,  
     }
 ]
@@ -16,7 +11,7 @@ const data =  [
 const tasks = createSlice({
     name: 'tasks',
     initialState: {
-        items: data
+        items: data 
     },
     //Reducers give us information about different things that can update the store/(initial)state. These are actions related.
     reducers: {
