@@ -26,7 +26,6 @@ const TaskItem = ({ itemIndex }) => {
 
 	return (
 		<div id='task-list' className={`${item.isComplete ? 'complete' : ''}`}>
-			{/* <div className='task-list'> */}
 			<input
 				type='checkbox'
 				checked={item.isComplete}
