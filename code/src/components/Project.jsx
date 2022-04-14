@@ -131,15 +131,15 @@ const Project = () => {
           {taskList.length > 0 &&
             taskList
               .filter((task) => task.complete === false)
-              .map((task, index) => (
+              .map((task) => (
                 <Task
                   key={task.taskid}
                   taskid={task.taskid}
                   projectindex={projectIndex}
                   checkComplete={checkComplete}
-                  index={index}
                 />
-              ))}
+              ))
+              .reverse()}
 
           {/* Incomplete Tasks */}
           {taskList.length > 0 &&
@@ -152,7 +152,8 @@ const Project = () => {
                   projectindex={projectIndex}
                   checkComplete={checkComplete}
                 />
-              ))}
+              ))
+              .reverse()}
         </TaskContainer>
         <ProjectFooter backgroundcolor={project.color}>
           {taskList.length > 0 && (
