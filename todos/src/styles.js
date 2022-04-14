@@ -2,6 +2,8 @@ import styled from "styled-components";
 
 const Button = styled.button`
   cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-border-radius: none;
 
   &:hover {
     background-color: #995cfa;
@@ -77,6 +79,9 @@ export const AddButton = styled.button`
   font-weight: 600;
   color: white;
   cursor: pointer;
+  -webkit-appearance: none;
+  -webkit-border-radius: none;
+
   background-color: ${(prop) => prop.disabled
     ? "none"
     : "#995cfa"
