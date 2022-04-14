@@ -3,7 +3,8 @@ import React from "react";
 export const Header = () => {
     return(
         <div>
-            <h1>My todo do app</h1>
+            <h1>Remeber to</h1>
+            <p>...</p>
         </div>
     )
 }
