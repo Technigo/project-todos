@@ -70,7 +70,7 @@ const NoTodosText = styled.p`
   line-height: 40px;
 `
 
-const TodoCounter = () => {
+const ToDoCounter = () => {
     const allTodos = useSelector((store) => store.todos.items)
     const remainingTodos = allTodos.filter((todo) => todo.isDone === true)
 
@@ -106,7 +106,7 @@ const TodoCounter = () => {
                   &nbsp;Sit back - relax - have a coffee.&nbsp; 
                   <span role="img" aria-label="coffee emoji">☕️</span>
               </WhenEmptyList>
-              <NoTodosText>But maybe you ran out of coffee filters...?<br></br>
+              <NoTodosText>But maybe you ran out of coffee filters..?<br></br>
               Add that or something else to your todo list!</NoTodosText>
             </TodoCounterText>
           </TodoCounterContainer>
@@ -114,4 +114,4 @@ const TodoCounter = () => {
     } 
 }
 
-export default TodoCounter 
+export default ToDoCounter 
