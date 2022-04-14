@@ -14,7 +14,7 @@ const AddTask = () => {
 		dispatch(
 			tasks.actions.addTask({
 				text: inputText,
-				isDone: false,
+				isComplete: false,
 			})
 		);
 
@@ -22,7 +22,10 @@ const AddTask = () => {
 	};
 
 	return (
-		<form>
+		<form onSubmit={handleSubmit}>
+			<button type='submit' className='add-btn'>
+				<i class='fa-solid fa-plus'></i>
+			</button>
 			<input
 				type='text'
 				placeholder='Add a Task'
@@ -30,7 +33,6 @@ const AddTask = () => {
 				value={inputText}
 				required
 			/>
-			<button type='submit'>Add Task</button>
 		</form>
 	);
 };
