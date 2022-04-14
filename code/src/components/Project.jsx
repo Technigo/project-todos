@@ -24,8 +24,8 @@ const Project = () => {
   const [taskName, setTaskName] = useState("");
   const [allComplete, setAllComplete] = useState(false);
   const id = useParams().id;
-  const projectArray = useSelector((store) => store.projects.project);
   const iconArray = useSelector((store) => store.icons.icons);
+  const projectArray = useSelector((store) => store.projects.project);
   const project = projectArray.find((x) => x.id === id);
   const projectIndex = projectArray.findIndex((project) => project.id === id);
   const taskList = useSelector(
@@ -80,6 +80,7 @@ const Project = () => {
       })
     );
     navigate("/");
+    window.location.reload();
   };
 
   if (project) {

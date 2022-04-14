@@ -9,7 +9,6 @@ import addgray from "../assets/addgray.svg";
 
 const Header = () => {
   const projects = useSelector((store) => store.projects.project);
-  console.log(useSelector((store) => store));
   return (
     <SiteHeader>
       <HeaderWrapper>

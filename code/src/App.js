@@ -11,6 +11,7 @@ import Error from "components/Error";
 import Project from "components/Project";
 import Header from "components/Header";
 import NewProject from "components/NewProject";
+import ErrorBoundary from "components/ErrorBoundary";
 
 const enhancer = compose(persistState());
 
@@ -27,10 +28,18 @@ export const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Header />
+
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/newproject" element={<NewProject />} />
-          <Route path="/projects/:id" element={<Project />} />
+          <Route
+            path="/projects/:id"
+            element={
+              <ErrorBoundary>
+                <Project />{" "}
+              </ErrorBoundary>
+            }
+          />
           <Route path="*" element={<Error />} />
         </Routes>
       </BrowserRouter>
