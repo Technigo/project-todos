@@ -1,25 +1,9 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
-import styled from 'styled-components/macro';
 
 import tasks from "reducers/tasks";
 
-const TaskItem = styled.article`
-    border: 1px solid #dcdcdc;
-    border-radius: 5px;
-    padding: 10px;
-    margin-bottom: 5px;
-    position: relative;
-    `;
-
-    const DeleteButton = styled.button`
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    `;
+import { TaskItem, DeleteButton, Tasklist } from "../styled-components";
 
 const TaskList = () => {
     const taskList = useSelector((backpack) => backpack.tasks.items);
@@ -30,27 +14,36 @@ const TaskList = () => {
         dispatch(tasks.actions.toggleItem(taskId));
     };
 
+    const onTaskDelete = (taskIndex) => {
+        dispatch(tasks.actions.deleteItem(taskIndex));
+    };
+
+
     return (
-        <section>
-        {taskList.map((taskItem) => (
-            <TaskItem key={taskItem.id}>
-            <h2>{taskItem.task}</h2>
-            <label>
-                Is done:
-                <input
-                type="checkbox"
-                checked={taskItem.isDone}
-                onChange={() => onTaskToggle(taskItem.id)}
-                />
-            </label>
-            <DeleteButton>
-                <span role="img" aria-label="delete">
-                ❌
-                </span>
-            </DeleteButton>
-            </TaskItem>
-        ))}
-        </section>
+        <Tasklist>
+            {taskList.map((taskItem, index) => (
+                
+                <TaskItem key={taskItem.id}>
+                    <h2>{taskItem.task}</h2>
+                    <label>
+                        Is done:
+                        <input
+                        type="checkbox"
+                        checked={taskItem.isDone}
+                        onChange={() => onTaskToggle(taskItem.id)}
+                        />
+                    </label>
+                    <DeleteButton onClick={() => {
+                        onTaskDelete(index)
+                        }
+                    }>
+                        <span role="img" aria-label="delete">
+                        {/* ❌ */}delete
+                        </span>
+                    </DeleteButton>
+                </TaskItem>
+            ))}
+        </Tasklist>
     );
 };
 

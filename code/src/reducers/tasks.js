@@ -23,12 +23,19 @@ const tasks = createSlice({
         // console.log("Store:", store);
         // console.log("Action:", action);
 
-        store.items.forEach((item) => {
-            if (item.id === action.payload) {
-            item.isDone = !item.isDone;
-            }
-        });
+            store.items.forEach((item) => {
+                if (item.id === action.payload) {
+                item.isDone = !item.isDone;
+                }
+            });
         },
+        deleteItem: (store, action) => {
+            console.log("wtf");
+            store.items.splice(action.payload, 1);
+        },
+        addItem: (store, action) => {
+            store.items.push(action.payload);
+        }
     },
 });
 
