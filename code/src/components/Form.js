@@ -23,6 +23,9 @@ export const Form = () => {
 
     const onFormSubmit = (event) => {
         event.preventDefault();
+        dispatch(list.actions.addTodo(newTodo));
+        setInputValue('')
+    }
 
         const newTodo = {
             id: uniqid(),
@@ -30,8 +33,8 @@ export const Form = () => {
             isCompleted: false,
         }
 
-        dispatch(list.actions.addTodo(newTodo));
-    }
+        
+    
 
     return (
         <form onSubmit={onFormSubmit}>

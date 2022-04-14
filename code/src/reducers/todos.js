@@ -1,33 +1,35 @@
-import { createSlice } from '@reduxjs/toolkit';
+// //BOT IN USE
 
-//This is the database of todos
+// import { createSlice } from '@reduxjs/toolkit';
 
-const todoData = [
-    { 
-        id: 1, 
-        title: 'Eat', 
-        isCompleted: false,
-    },
-    { 
-        id: 2, 
-        title: 'Clean', 
-        isCompleted: false, 
-    },
-    {   id: 3, 
-        title: 'Dance', 
-        isCompleted: false, 
-    }
-];
+// //This is the database of todos
+
+// const todoData = [
+//     { 
+//         id: 1, 
+//         title: 'Eat', 
+//         isCompleted: false,
+//     },
+//     { 
+//         id: 2, 
+//         title: 'Clean', 
+//         isCompleted: false, 
+//     },
+//     {   id: 3, 
+//         title: 'Dance', 
+//         isCompleted: false, 
+//     }
+// ];
 
 
 
-// let counter = true;
-// for (const completed of todoData) {
-//     if (completed.isCompleted === 'false') counter++;
-// }
+// // let counter = true;
+// // for (const completed of todoData) {
+// //     if (completed.isCompleted === 'false') counter++;
+// // }
 
-export const todos = createSlice({
-    name: 'todos' ,
-    initialState: todoData
-})
+// export const todos = createSlice({
+//     name: 'todos' ,
+//     initialState: todoData
+// })
 

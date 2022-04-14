@@ -18,6 +18,7 @@ export const list = createSlice({
                 store.todos.push({ ...action.payload, quantity: 1 })
             }
         },
+        //Add button
         addTodo: (store, action) => {
             store.todos.push(action.payload); 
             // store.todos = [...store.todos, action.payload]; //imutability
