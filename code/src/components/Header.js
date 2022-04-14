@@ -6,6 +6,7 @@ const BackGround = styled.section`
     background: linear-gradient(#98BAE7, #B8E4F0);
     padding: 5px 24px;
     font-family: 'Poppins', sans-serif;
+    border-radius: 0% 0% 100% 100%;
 `
 const OutterContainer = styled.div`
     display: flex;
@@ -34,9 +35,9 @@ const Title = styled.h1`
     font-weight: normal;
     margin-top: 1rem;
 `
-const CounterWrapper = styled.div`
+const CounterContainer = styled.div`
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid black;
+    text-align: center; 
 `
 const Header = () => {
 
@@ -68,11 +69,11 @@ const Header = () => {
                 </InnerContainer>
                 <p>{weekday}</p>
             </OutterContainer>
-            <CounterWrapper>
+            <CounterContainer>
                 <p>You have {allTasks.length} task(s) in total.</p>
                 <p>Completed task(s) : {completedTasks.length}</p>
                 <p>Uncompleted task(s) : {unCompletedTasks.length}</p>
-            </CounterWrapper>
+            </CounterContainer>
         </BackGround>
     )
 }

@@ -4,26 +4,21 @@ import styled from 'styled-components';
 
 import tasks from "reducers/tasks";
 
-const TaskOutterContainer = styled.section`
+const OutterContainer = styled.section`
     min-height: 3rem;
     font-family: 'Poppins', sans-serif;
 `
-const TaskStyling = styled.article`
+const NewTaskStyling = styled.article`
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 5px;
     position: relative;
-    font-size: 16px;
+    font-size: 18px;
     font-weight: small;
     line-height: 1.8rem;
-    border-bottom: 1px solid #dcdcdc;
+    border-bottom: 1px solid  #3b3838;
     font-weight: 300;
 `
-
-const TaskText = styled.article`
-    font-weight: 500;
-`
-
 const DeleteButton = styled.button`
     position: absolute;
     top: 10px;
@@ -40,7 +35,6 @@ const RemoveAllBtn = styled.button`
     border-radius: 5px;
     border: none;
     border-style: outset;
-    // margin-left: 250px;
     margin-left: 125px;
 `
 
@@ -62,24 +56,22 @@ const TaskList = () => {
 
     return (
         <section>
-            <TaskOutterContainer>
+            <OutterContainer>
             {taskList.map((task) => (
-                <TaskStyling key={task.id}>
-                    <TaskText>{task.text}</TaskText>
+                <NewTaskStyling key={task.id}>
+                    <input
+                        type='checkbox' 
+                        checked={task.isComplete}
+                        onChange={()=>onTaskToggle(task.id)} />
                     <label>
-                        completed:
-                        <input
-                            className='checkbox' 
-                            type='checkbox' 
-                            checked={task.isComplete}
-                            onChange={()=>onTaskToggle(task.id)} />
+                        &nbsp;{task.text}
                     </label>
                     <DeleteButton onClick={()=> onDelete(task.id)}>
                         <span role='img' aria-label='delete'>✖️</span>    
                     </DeleteButton>                
-                </TaskStyling>
+                </NewTaskStyling>
             ))}
-            </TaskOutterContainer>
+            </OutterContainer>
             <RemoveAllBtn onClick={onRemoveAll}>clear list</RemoveAllBtn>
         </section>
     )

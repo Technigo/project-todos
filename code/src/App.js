@@ -11,9 +11,11 @@ import AddTask from 'components/AddTask';
 const Wrapper = styled.section`
   margin: 0 auto;
   width: 327px;
+  min-height: 100vh;
 
   @media (min-width:667px) {
-    width: 500px; 
+    width: 500px;
+
   }
 `
 
@@ -26,8 +28,8 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <Header />
-      <Wrapper>  
+      <Wrapper>
+        <Header />  
         <AddTask />
         <TaskList />
       </Wrapper>

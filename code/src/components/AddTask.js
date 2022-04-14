@@ -6,15 +6,17 @@ import styled from "styled-components";
 import tasks from '../reducers/tasks';
 
 const AddTaskContainer = styled.section`
+    border-top: 1px solid black;
     margin-top: 1rem;
     margin-bottom: 1rem;
     font-family: 'Poppins', sans-serif;
+    line-height: 3rem; 
 `
 const SubmitButton = styled.button`
     border-radius: 50%;
     padding: 0.3rem;
     margin-left: 0.5rem;
-    background: #B8E4F0;
+    background: #98BAE7;
     border: none; 
 `
 
