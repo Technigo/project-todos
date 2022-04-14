@@ -10,6 +10,7 @@ const TodoItem = styled.article`
   margin-bottom: 5px;
   border-radius: 10px;
   position: relative;
+  background-color: yellow;
 `;
 
 const DeleteButton = styled.button`

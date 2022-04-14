@@ -29,6 +29,7 @@ const AddTodo = () => {
         New things to do : &nbsp;
         <input
           type="text"
+          required
           value={inputValue}
           onChange={(e) => setInputvalue(e.target.value)}
         />
