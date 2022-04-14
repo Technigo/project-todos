@@ -1,11 +1,10 @@
 import React from "react";
 import styled from 'styled-components';
-import { format } from 'date-fns';
-
 
 import TodoTags from "./TodoTags.js";
 import TodoCompleted from "./TodoCompleted.js";
 import TodoDelete from "./TodoDelete.js";
+import TodoCreatedAt from "./TodoCreatedAt.js";
 
 
 const TodoListItem = styled.div `
@@ -28,6 +27,12 @@ const TodoListItem = styled.div `
         padding: 0;
         margin: 0 0 20px 0;
     `
+    const ContainerBottom = styled.div `
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    `
+
     
 
 const TodoItem = ({ todo, index }) => {
@@ -42,8 +47,10 @@ const TodoItem = ({ todo, index }) => {
                 {todo.whatToDo}
             </TodoItemDescription>
             <TodoTags tags={todo.tags} />
-            <TodoCompleted todo={todo} />
-            <p>Added {format(todo.createdAt, 'yyyy-MM-dd hh:mm')}</p>
+            <ContainerBottom>
+                <TodoCreatedAt createdAt={todo.createdAt}/>
+                <TodoCompleted todo={todo} />
+            </ContainerBottom>
             <TodoDelete index={index} todo={todo} />
         </TodoListItem>
     );
