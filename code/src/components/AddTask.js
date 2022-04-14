@@ -43,8 +43,8 @@ background: #f8f8f8;
 font-weight: 400;
 line-height: 1.4;
 
-&:active {
-border: none;
+&:focus-visible {
+outline: none;
 }
 
 @media ${devices.tablet} {
