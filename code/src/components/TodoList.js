@@ -7,7 +7,6 @@ import styled from 'styled-components'
 import updateBtn from '../assets/update.svg'
 import deleteBtn from '../assets/delete.svg'
 
-import EmptyState from './EmptyState'
 import AddTodo from './AddTodo'
 import TaskCounter from './TaskCounter'
 import todo from '../reducers/todo'
@@ -81,6 +80,7 @@ const TodoList = () => {
 	const [inputChange, setInputChange] = useState('')
 	const items = useSelector((store) => store.todo.items)
 	console.log('items', items)
+	console.log('inputchange', inputChange)
 	const dispatch = useDispatch()
 
 	//dispatched reducers
@@ -113,42 +113,37 @@ const TodoList = () => {
 	// ('LLLL d, yyyy | HH:mm')
 
 	return (
-		<>
-			{items.length < 1 && <EmptyState />}
-			{items.length > 0 && (
-				<main>
-					<AddTodo />
+		<main>
+			<AddTodo />
 
-					<Container>
-						{items.map((item) => (
-							<TaskContainer key={item.id}>
-								<TaskContainerWrapper>
-									<input
-										type='checkbox'
-										checked={item.isCompleted}
-										onChange={() => onToggleTodo(item.id)}
-									/>
-									<InputText onChange={(e) => onInputChange(e, item.editable)}>
-										{item.text}
-									</InputText>
-									<ListBtn onClick={() => onUpdateTodo(item.id)}>
-										<img src={updateBtn} alt='update task'></img>
-									</ListBtn>
-									<ListBtn onClick={() => onDeleteTodo(item.id)}>
-										<img src={deleteBtn} alt='delete task'></img>
-									</ListBtn>
-								</TaskContainerWrapper>
-								<div>
-									<DateContainer>{dateString}</DateContainer>
-								</div>
-							</TaskContainer>
-						))}
-					</Container>
-					<TaskCounter />
-					<DeleteAllbtn onClick={onDeleteAll}>delete all</DeleteAllbtn>
-				</main>
-			)}
-		</>
+			<Container>
+				{items.map((item) => (
+					<TaskContainer key={item.id}>
+						<TaskContainerWrapper>
+							<input
+								type='checkbox'
+								checked={item.isCompleted}
+								onChange={() => onToggleTodo(item.id)}
+							/>
+							<InputText onChange={(e) => onInputChange(e, item.editable)}>
+								{item.text}
+							</InputText>
+							<ListBtn onClick={() => onUpdateTodo(item.id)}>
+								<img src={updateBtn} alt='update task'></img>
+							</ListBtn>
+							<ListBtn onClick={() => onDeleteTodo(item.id)}>
+								<img src={deleteBtn} alt='delete task'></img>
+							</ListBtn>
+						</TaskContainerWrapper>
+						<div>
+							<DateContainer>{dateString}</DateContainer>
+						</div>
+					</TaskContainer>
+				))}
+			</Container>
+			<TaskCounter />
+			<DeleteAllbtn onClick={onDeleteAll}>delete all</DeleteAllbtn>
+		</main>
 	)
 }
 

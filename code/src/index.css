@@ -74,7 +74,6 @@ input[type='text'] {
 	letter-spacing: 1.5px;
 	color: var(--clr-secondary);
 	text-align: center;
-	overflow-wrap: break-word;
 }
 
 input[type='checkbox'] {

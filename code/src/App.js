@@ -3,7 +3,7 @@ import { Provider } from 'react-redux'
 import { createStore, combineReducers } from '@reduxjs/toolkit'
 
 import Header from 'components/Header'
-import TodoList from 'components/TodoList'
+import SelectStart from 'components/SelectStart'
 
 import todo from 'reducers/todo'
 
@@ -28,7 +28,7 @@ export const App = () => {
 	return (
 		<Provider store={store}>
 			<Header />
-			<TodoList />
+			<SelectStart />
 		</Provider>
 	)
 }

@@ -1,8 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useDispatch } from 'react-redux'
 
-import AddTodo from './AddTodo'
+import TodoList from './TodoList'
 
 import ArrowOne from '../assets/arrowone.svg'
 import ArrowTwo from '../assets/arrowtwo.svg'
@@ -62,6 +61,11 @@ const StartBtn = styled.button`
 
 const AddImg = styled.img`
 	border: none;
+
+	&:hover {
+		transform: scale(1.3);
+		transition: all 0.45s ease-in;
+	}
 `
 
 const EmptyStateImg = styled.img`
@@ -69,30 +73,34 @@ const EmptyStateImg = styled.img`
 `
 
 const EmptyState = () => {
-	const dispatch = useDispatch()
+	const [startTodo, setStartTodo] = useState(false)
+
 	const onStartAdding = () => {
-		{
-			//toggla startGame:true (add StartGame && in TodoList)
-		}
+		setStartTodo(true)
 	}
 
 	return (
-		<EmptyStateWrapper>
-			<EmptyStateText>
-				It seems like you’ve completed all your tasks! Click the button to add
-				some new ones or take a well deserved break!{' '}
-			</EmptyStateText>
-			<Imagewrapper>
-				<ArrowWrapper>
-					<Arrowone src={ArrowOne} alt='arrows'></Arrowone>
-					<Arrowtwo src={ArrowTwo} alt='arrows'></Arrowtwo>
-				</ArrowWrapper>
-				<StartBtn onClick={onStartAdding}>
-					<AddImg src={addBtn} alt='add task'></AddImg>
-				</StartBtn>
-				<EmptyStateImg src={Empty} alt='no tasks'></EmptyStateImg>
-			</Imagewrapper>
-		</EmptyStateWrapper>
+		<>
+			{startTodo && <TodoList />}
+			{!startTodo && (
+				<EmptyStateWrapper>
+					<EmptyStateText>
+						All empty here! Click the button to add some new tasks or take a
+						well deserved break!{' '}
+					</EmptyStateText>
+					<Imagewrapper>
+						<ArrowWrapper>
+							<Arrowone src={ArrowOne} alt='arrows'></Arrowone>
+							<Arrowtwo src={ArrowTwo} alt='arrows'></Arrowtwo>
+						</ArrowWrapper>
+						<StartBtn onClick={onStartAdding}>
+							<AddImg src={addBtn} alt='add task'></AddImg>
+						</StartBtn>
+						<EmptyStateImg src={Empty} alt='no tasks'></EmptyStateImg>
+					</Imagewrapper>
+				</EmptyStateWrapper>
+			)}
+		</>
 	)
 }
 

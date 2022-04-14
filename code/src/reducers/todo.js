@@ -8,10 +8,9 @@ const todo = createSlice({
 	},
 	reducers: {
 		addTodo: (store, action) => {
-			console.log(action)
-
 			const newTask = {
 				text: action.payload,
+				editable: false,
 				isCompleted: false,
 				id: uniqid(),
 			}

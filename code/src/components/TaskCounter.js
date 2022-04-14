@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 const CounterTask = styled.p`
@@ -29,7 +29,7 @@ const TaskCounter = () => {
 				}
 			}
 		} else {
-			return `Oh! It looks empty here.. Let's get started by adding some tasks!`
+			return `Let's get started by adding some tasks!`
 		}
 	}
 
