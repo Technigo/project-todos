@@ -4,12 +4,23 @@ import styled from 'styled-components'
 
 import todos from 'reducers/todos'
 
+const TodoContainer = styled.section`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+`
+
 const TodoItem = styled.article`
   border-radius: 4px;
   padding: 12px;
   margin-bottom: 6px;
   background: linen;
   position: relative;
+  @media (min-width: 768px) {
+    width: 500px;
+  }
 `
 
 const DeleteButton = styled.button`
@@ -25,14 +36,14 @@ const TodoItemText = styled.h2`
   font-family: 'Quicksand', sans-serif;
   color: #D885A3;
   font-size: 20px;
+  word-wrap: break-word;
 `
 
 const DeleteEmoji = styled.span`
-  font-size: 28px;
+  font-size: 20px;
 `
 
 const TodoList = () => {
-
   const todoList = useSelector((store) => store.todos.items)
 
   const dispatch = useDispatch()
@@ -46,16 +57,16 @@ const TodoList = () => {
   }
 
     return (
-      <section>
+      <TodoContainer>
         {todoList.map((todoItem, todoIndex) => (
           <TodoItem key={todoItem.id}>
-            <TodoItemText>{todoItem.name}</TodoItemText>
+            <TodoItemText><span role="img" aria-label="bullet point">⚫️</span> {todoItem.name}</TodoItemText>
             <input 
               type="checkbox" 
               checked={todoItem.isDone}
               onChange={() => onTodoToggle(todoItem.id)}
             />
-            <label htmlFor="done">Done</label>
+            <label htmlFor="done">DONE</label>
             <DeleteButton onClick={() => onTodoDelete(todoIndex)}>
               <DeleteEmoji role="img" aria-label="delete">
                 ✖
@@ -63,7 +74,7 @@ const TodoList = () => {
             </DeleteButton>
           </TodoItem>
         ))}
-    </section>
+    </TodoContainer>
   )
 }
 

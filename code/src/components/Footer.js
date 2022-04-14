@@ -13,7 +13,7 @@ const Footer = () => {
     return (
         <FooterText>
             Made by Camilla Hallberg<br></br>
-            Technigo Web Development Bootcamp Spring 2022 🤖
+            Technigo Web Development Bootcamp Spring 2022 <span role="img" aria-label="robot emoji">🤖</span>
         </FooterText>
     )
 }

@@ -1,9 +1,17 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import uniqid from 'uniqid'
 
 import todos from 'reducers/todos'
+
+const FormSection = styled.section`
+  @media (min-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`
 
 const FormContainer = styled.form`
   border-radius: 4px;
@@ -12,14 +20,20 @@ const FormContainer = styled.form`
   margin-bottom: 6px;
   background: #F08FC0;
   position: relative;
+  @media (min-width: 768px) {
+    width: 475px;
+  }
 `
 
 const InputField = styled.input`
-  width: 300px;
-  height: 28px;
+  height: 36px;
   border: none;
   background: linen;
   border-radius: 4px;
+  width: 300px;
+  @media (min-width: 768px) {
+    width: 400px;
+  }
 `
 
 const AddButton = styled.button`
@@ -29,6 +43,7 @@ const AddButton = styled.button`
   position: absolute;
   top: 2px;
   bottom: 2px;
+  padding-left: 20px;
 `
 
 const AddEmoji = styled.span`
@@ -36,6 +51,7 @@ const AddEmoji = styled.span`
 `
 
 const AddTodo = () => {
+
   const [inputValue, setInputValue] = useState("")
 
   const dispatch = useDispatch()
@@ -55,6 +71,7 @@ const AddTodo = () => {
   }
 
   return (
+    <FormSection>
     <FormContainer onSubmit={onFormSubmit}>
         <InputField 
           type="text" 
@@ -63,8 +80,11 @@ const AddTodo = () => {
           required 
           onChange={(e) => setInputValue(e.target.value)}
         />
-      <AddButton type="submit"><AddEmoji role="img" aria-label="plus sign emoji">✚</AddEmoji></AddButton>
+        <AddButton type="submit" disabled={inputValue.length > 140}>
+          <AddEmoji role="img" aria-label="plus sign emoji">✚</AddEmoji>
+        </AddButton>
     </FormContainer>
+    </FormSection>
   )
 }
 
