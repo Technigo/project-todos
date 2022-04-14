@@ -51,6 +51,13 @@ h1 {
 	margin: 2rem 0 1rem;
 }
 
+.counter {
+	color: #fff;
+  display: flex;
+  justify-content: center;
+  font-size: 1rem;
+}
+
 form {
 	display: flex;
 	flex-direction: row;

@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 import Header from './Header';
 import AddTask from './AddTask';
 import TaskItem from './TaskItem';
+import TaskCount from './TaskCount';
 
 const TaskList = () => {
 	const list = useSelector((store) => store.tasks.list);
@@ -19,6 +20,7 @@ const TaskList = () => {
 				</div>
 				<AddTask />
 			</div>
+			<TaskCount />
 		</>
 	);
 };
