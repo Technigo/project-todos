@@ -5,7 +5,9 @@ const todoSlice = createSlice({
   name: "todo",
   initialState,
   reducers: {
-    reset: () => initialState,
+    reset: (state) => {
+      state.todo = state.todo.filter((todo) => !todo.isCompleted);
+    },
     onAdd: (state, action) => {
       state.todo.unshift(action.payload);
     },

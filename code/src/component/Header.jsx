@@ -12,10 +12,10 @@ const Header = () => {
         <h3 className="my-1">Todo</h3>
         <p className="my-1">{moment().format("MMM Do")}</p>
       </article>
-      <article className="container-column">
-        <p className="my-1">{tasks} tasks</p>
+      <article className="container-column-end">
+        <p className="my-1">{tasks} tasks &nbsp;</p>
         <button className="btn-primary" onClick={() => dispatch(reset())}>
-          CLEAR ALL
+          CLEAR COMPLETED
         </button>
       </article>
     </header>

@@ -59,6 +59,11 @@ input:focus {
   display: flex;
   flex-direction: column;
 }
+.container-column-end {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
 .container-space-between {
   display: flex;
   justify-content: space-between;
@@ -104,7 +109,7 @@ input:focus {
 /* components */
 .todo-container {
   width: 100%;
-  max-width: 375px;
+  max-width: 370px;
   overflow-y: scroll;
   margin: 0 auto;
   border: 1px solid var(--color-grey);
@@ -134,6 +139,7 @@ input:focus {
 .sort p {
   margin: 0;
   margin-bottom: 0.3rem;
+  font-size: 0.8rem;
 }
 /* buttons */
 .btn-sort,
@@ -187,7 +193,7 @@ input:focus {
   margin-right: 0.5rem;
   background-color: transparent;
   color: var(--color-grey);
-  font-size: 1rem;
+  font-size: 0.8rem;
   border-bottom: 1px solid transparent;
   border-radius: 0;
 }

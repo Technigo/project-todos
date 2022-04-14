@@ -13,12 +13,12 @@ const ToDos = () => {
   const completed = todos.filter((todo) => todo.isCompleted).length;
 
   const showCompleted = () => {
-    const completedList = todoList.filter((todo) => todo.isCompleted);
+    const completedList = todos.filter((todo) => todo.isCompleted);
     setTodoList(completedList);
   };
 
   const showInCompleted = () => {
-    const incompletedList = todoList.filter((todo) => !todo.isCompleted);
+    const incompletedList = todos.filter((todo) => !todo.isCompleted);
     setTodoList(incompletedList);
   };
 
