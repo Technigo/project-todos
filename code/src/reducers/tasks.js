@@ -4,17 +4,17 @@ const data = [
     {
         id: '55555',
         name: 'Bulbasaur',
-        isCaught: false,
+        isDone: false,
     },
     {
         id: '666666',
         name: 'Charmander',
-        isCaught: false,
+        isDone: false,
     },
 ]
 
-const pokemons = createSlice({
-    name: 'pokemons',
+const tasks = createSlice({
+    name: 'tasks',
     initialState: {
         items: data,
     },
@@ -23,7 +23,7 @@ const pokemons = createSlice({
         // v1 mutability
             store.items.forEach((item) => {
                 if (item.id === action.payload) {
-                item.isCaught = !item.isCaught
+                item.isDone = !item.isDone
                   }
             })
 
@@ -59,4 +59,4 @@ const pokemons = createSlice({
     },
 })
 
-export default pokemons;
+export default tasks;

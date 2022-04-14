@@ -2,9 +2,9 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
 import uniqid from 'uniqid'
-import pokemons from 'reducers/pokemons'
+import tasks from 'reducers/tasks'
 
-const AddPokemon = () => {
+const AddTask = () => {
     const [inputValue, setInputValue] = useState("")
 
     const dispatch = useDispatch();
@@ -12,13 +12,13 @@ const AddPokemon = () => {
     const onFormSubmit = (event) => {
         event.preventDefault()
 
-     const newPokemon = {
+     const newTask = {
         id: uniqid(),
         name: inputValue,
-        isCaught: false,
+        isDone: false,
      }
 
-        dispatch(pokemons.actions.addItem(newPokemon))
+        dispatch(tasks.actions.addItem(newTask))
 
         setInputValue("")
     }
@@ -26,7 +26,7 @@ const AddPokemon = () => {
     return (
         <form onSubmit={onFormSubmit}>
            <label>
-               New pokemon : &nbsp;
+               New task : &nbsp;
            <input type="text"
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
@@ -37,4 +37,4 @@ const AddPokemon = () => {
     )
 }
 
-export default AddPokemon;
+export default AddTask;

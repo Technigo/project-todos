@@ -2,15 +2,15 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
-import pokemons from 'reducers/pokemons'
+import tasks from 'reducers/tasks'
 
-import PokemonList from 'components/PokemonList'
-import AddPokemon from 'components/AddPokemon'
+import TaskList from 'components/TaskList'
+import AddTask from 'components/AddTask'
 
 
 //prepare pocket
 const reducer = combineReducers({
-  pokemons: pokemons.reducer,
+  tasks: tasks.reducer,
 })
 
 //injected pocket into backpack
@@ -23,8 +23,8 @@ export const App = () => {
     //put backpack on the persons shoulder 
     //all here in between has access to global store
     <Provider store={store}>
-      <AddPokemon/>
-      <PokemonList/>
+      <AddTask/>
+      <TaskList/>
     </Provider>
   )
 }
