@@ -29,7 +29,7 @@ const Header = () => {
         <div>
             {onetaskTodo && <h2>You´ve got {todoList.length} todo in your list</h2>}  
             {tasksTodo && <h2>You´ve got {todoList.length} todos in your list</h2>}
-            {notasksTodo && <h2>You´ve got no todos in your list!🎉</h2>}
+            {notasksTodo && <h2>You´ve got no todos in your list!</h2>}
         </div>
         <div>{show && <h2>{uncompletedTodos.length} of them are uncompleted.</h2>}</div>
      
