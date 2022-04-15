@@ -40,7 +40,7 @@ const ToDoList = () => {
           <p>{item.text}</p>
           <DeleteButton onClick={() => onToDoDelete(index)}>
             <span role="img" aria-label="delete">
-              Delete ❌
+              Remove checked ❌
             </span>
           </DeleteButton>
         </TaskContainer>

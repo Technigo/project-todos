@@ -7,10 +7,9 @@ const todos = createSlice({
   },
   reducers: {
     toggleItem: (store, action) => {
-      store.items.map((item) => {
+      store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.isComplete = !item.isComplete;
-          // should add return?
         }
       });
     },
