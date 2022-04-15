@@ -17,8 +17,10 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
-      <AddTodos />
-      <TodoList />
+      <main>
+        <AddTodos />
+        <TodoList />
+      </main>
     </Provider>
   );
 };

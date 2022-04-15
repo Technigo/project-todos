@@ -39,6 +39,26 @@ export const Heading = styled.header`
   };
 `;
 
+export const EmptyStateWrapper = styled.section`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 15px;
+`;
+
+export const Folder = styled.span`
+  background-color: #995cfa;
+  padding: 10px 20px;
+  width: 50px;
+  border-radius: 50%;
+  font-size: 60px;
+`;
+
+export const SubHeading = styled.h2`
+  margin: 35px 0;
+`; 
+
 export const Total = styled.p`
   margin: 10px;
 `;

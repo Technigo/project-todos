@@ -10,11 +10,13 @@ import {
   TodoText,
   DeleteButton
 } from "styles";
+import EmptyState from "./EmptyState";
 
 import TimeStamp from "./TimeStamp";
 
 const TodoList = () => {
   const todoList = useSelector((state) => state.todos.lists);
+  const todosLength = useSelector((state) => state.todos.lists).length;
 
   const dispatch = useDispatch();
 
@@ -25,6 +27,10 @@ const TodoList = () => {
   const onTodoDelete = (todoId) => {
     dispatch(todos.actions.deleteTodo(todoId));
   };
+
+  if (todosLength === 0) {
+    return <EmptyState />
+  }
 
   return (
     <section>
