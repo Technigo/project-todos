@@ -61,7 +61,8 @@ return (
 
 
 
-{todoList.map((todoItem, todoIndex) => (
+{
+todoList.map((todoItem, todoIndex) => (
 <Taskbox key={todoItem.id}>
 <Task>{todoItem.task}</Task>
 <CheckBox
@@ -80,6 +81,31 @@ return (
 </Deletebutton>
 </Taskbox>
 ))}
+
+{completed &&
+completedTasks.map((todoItem) => (
+<CheckBox
+    type="checkbox" 
+    id={todoItem.id}
+    checked="true"
+    onChange={() => onToDoToggle(todoItem.id)}
+    />
+),
+)};
+
+
+{uncompleted &&
+uncompletedTasks.map((todoItem) => (
+<CheckBox
+    type="checkbox" 
+    id={todoItem.id}
+    checked={todoItem.completed}
+    onChange={() => onToDoToggle(todoItem.id)}
+    />
+),
+)};
+
+
 <div> Done: &nbsp; {todoList.length}</div>
 </Taskcontainer>
 );

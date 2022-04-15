@@ -1,27 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const data = [
-        {
-            id: '1',
-            task: 'Eat',
-            isComplete: 'false',
-        },
-        {
-            id: '2',
-            task: 'Sleep',
-            isComplete: 'false',
-        },
-        {
-            id: '3',
-            task: 'Clean',
-            isComplete: 'false',
-        },
-        {
-            id: '4',
-            task: 'Workout',
-            isComplete: 'false',
-        },
-    ];
+const data = [];
 
     const todos = createSlice({
         name: 'todos',

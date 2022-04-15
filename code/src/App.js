@@ -6,6 +6,7 @@ import Header from 'components/header';
 import todos from 'reducers/todos';
 import ToDoList from 'components/todolist';
 import AddToDo from 'components/addToDo';
+import ToDoStatus from 'components/counter';
 
 const reducer=combineReducers({
   todos:todos.reducer,
@@ -21,6 +22,7 @@ export const App = () => {
 <Header />
 <AddToDo />
     <ToDoList />
+    <ToDoStatus />
     
       </Provider>
   );
