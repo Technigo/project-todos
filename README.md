@@ -1,12 +1,12 @@
 # Project Todos
 
-This week's project was to build a to-do list with slices, reducers and actions. Furthermore keep practicing on useSelector and dispatching actions. 
+This week's project was to build a to-do list with slices, reducers and actions from scratch. Furthermore keep practicing on useSelector and dispatching actions. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I had put a lot of time on the design rather then adding some more functionalities with javaScript. If I had more time I would try to practice more using conditional rendering with the '&&' syntax. 
 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://silly-lolly-47b522.netlify.app/
