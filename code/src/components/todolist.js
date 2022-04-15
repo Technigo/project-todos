@@ -10,25 +10,31 @@ border:none;
 padding: 8px;
 border-radius:2px;
 font-family: 'Open Sans', sans-serif;
+position:absolute;
+top: 10px;
+right: 10px;
+`
+
+const CheckBox = styled.label`
+position:absolute;
+top: 10px;
+left: 10px;
 `
 
 const Taskcontainer = styled.section `
 margin:20px;
+background-color:blue;
 padding:10px;
 `
 const Taskbox = styled.div`
-background-color: #a24b56;
-margin: 5px;
-border-radius: 5px;
+position:relative
 `
 
 const Task =styled.h2 `
-font-family: 'Covered By Your Grace', cursive;
-font-size: 50px;
-transform: rotate(-15deg);
+font-family: 'Alata',sans-serif;
+font-size: 25px;
 
 `
-
 
 
 const ToDoList = ( ) => {
@@ -49,18 +55,17 @@ return (
 {todoList.map((todoItem, todoIndex) => (
 <Taskbox key={todoItem.id}>
 <Task>{todoItem.task}</Task>
-<label>
-    Is completed:
+<CheckBox>
     <input 
     type="checkbox" 
     checked={todoItem.isComplete}
     onChange={() => onToDoToggle(todoItem.id)}
     />
-</label>
+</CheckBox>
 
 <Deletebutton onClick={() => onToDoDelete(todoIndex)}>
     <span role="img" aria-label="delete">
-    DELETE
+    REMOVE
         </span>
 </Deletebutton>
 </Taskbox>

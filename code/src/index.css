@@ -27,3 +27,8 @@ border:none;
 font-family: 'Alata', sans-serif;
 ;
 }
+
+::placeholder {
+  color:blueviolet;
+  font-size: 1.5em;
+}

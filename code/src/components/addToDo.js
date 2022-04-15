@@ -28,10 +28,7 @@ padding: 10px;
 border-color: blue;
 color: blue;
 width:200px;
-
 `
-
-
 
 const AddToDo = () => {
 const [inputValue, setInputValue] = useState ("");
@@ -55,14 +52,14 @@ setInputValue("");
 return (
     <AddTask onSubmit={onFormSubmit}>
 <TaskLabel>
-    NEW TO DO: &nbsp;
     <input
     type="text"
     value={inputValue}
     onChange={(e) => setInputValue(e.target.value)}
+    placeholder="   TYPE NEW TO DO..."
     />
 </TaskLabel>
-<InputButton type="submit">ADD TO MY LIST</InputButton>
+<InputButton type="submit">+++ADD TO MY LIST</InputButton>
 </AddTask>
 );
 };
