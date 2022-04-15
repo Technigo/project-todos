@@ -33,9 +33,9 @@ text-align: center;
 `
 
 const IntroButton = styled.button`
-border-radius: 8px;
+border-radius: 10px;
 border: 0.4px solid gray;
-padding: 6px;
+padding: 10px;
 font-family: 'Roboto', sans-serif;
 font-size: 15px;
 /*These three below removes Safari default styling*/

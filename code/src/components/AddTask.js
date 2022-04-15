@@ -52,11 +52,12 @@ outline: none;
 `
 
 const Button = styled.button`
-border-radius: 8px;
+border-radius: 10px;
 border: 0.4px solid gray;
-padding: 6px;
+padding: 8px;
 font-family: 'Roboto', sans-serif;
 font-size: 15px;
+margin-left: 10px;
 /*These three below removes Safari default styling*/
 -webkit-appearance: none;
 -moz-appearance: none;
