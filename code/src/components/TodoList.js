@@ -5,6 +5,7 @@ import { formatRelative, subDays } from "date-fns";
 import tasks from "../reducers/tasks";
 
 import TaskCounter from "./TaskCounter";
+import NoTodos from "./NoTodos";
 
 const TodoList = () => {
   const items = useSelector((store) => store.tasks.items);
@@ -42,13 +43,15 @@ const TodoList = () => {
       </button>
       {items.map((item) => (
         <div key={item.id}>
-          <p>{item.text}</p>
           <input
             type="checkbox"
             checked={item.isComplete}
             onChange={() => onToggleTask(item.id)}
           />
           <p>{taskDate}</p>
+          <p className={item.isComplete ? "complete-todo" : "uncomplete-todo"}>
+            {item.text}
+          </p>
           <button onClick={() => onDeleteTasks(item.id)}>x </button>
         </div>
       ))}
