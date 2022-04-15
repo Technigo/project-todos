@@ -34,12 +34,13 @@ font-size: 34px;
 text-align: center;
 `
 
-const Button = styled.button`
+const IntroButton = styled.button`
 border-radius: 8px;
 border: 0.4px solid gray;
 padding: 6px;
 font-family: 'Roboto', sans-serif;
 font-size: 15px;
+/*These three below removes Safari default styling*/
 -webkit-appearance: none;
 -moz-appearance: none;
 appearance: none;
@@ -63,7 +64,7 @@ const IntroPage = () => {
         </IntroHeading>
 
         <Link to="/app">
-            <Button>Let's get this started</Button>
+            <IntroButton>Let's get this started</IntroButton>
         </Link>
         </Container>
     )
