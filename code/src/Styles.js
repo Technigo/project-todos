@@ -9,11 +9,18 @@ export const Main = styled.main`
 
 export const TodoContainer = styled.section`
   height: fit-content;
+  width: 330px;
   background: rgb(240,220,255,0.1);
-  margin: 30px;
-  padding: 50px;
+  margin: 25px;
+  padding: 20px;
   border: 1px solid #FFAB76;
   border-radius: 10px;
+  @media (min-width: 667px) {
+    width: 500px
+  }
+  @media (min-width: 1024px) {
+    width: 800px
+  }
 `
 
 export const Form = styled.form`
@@ -23,6 +30,7 @@ export const Form = styled.form`
 `
 
 export const Input = styled.input`
+  width: 80%;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
   font-style: oblique;
@@ -48,13 +56,14 @@ export const TodoSection = styled.div`
 `;
 
 export const TodoItem = styled.article`
+  position: relative;
   background: #fff;
+  width: 100%;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
-  padding: 10px;
+  padding: 15px;
   margin-bottom: 5px;
-  position: relative;
-  width: 100%;
+  word-wrap: break-word;
 `;
 
 export const DoneButton = styled.input`

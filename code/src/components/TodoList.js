@@ -45,7 +45,7 @@ const TodoList = () => {
             </DeleteButton> 
         </TodoItem>
       ))}
-      <TodoNumber>Your tasks: &nbsp; {todoList.length}</TodoNumber>
+      <TodoNumber>Your task(s): &nbsp; {todoList.length}</TodoNumber>
     </TodoSection>
   )
 }
