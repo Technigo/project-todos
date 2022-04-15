@@ -23,27 +23,26 @@ const AddTask = () => {
 
   return (
     <FormContainer>
-      <form onSubmit={onFormSubmit}>
-        <label>
-          <Input
-            className="input"
-            type="text"
-            placeholder="Add a to do..."
-            value={value}
-            onChange={(event) => setValue(event.target.value)}
-            required
-          />
-          <SubmitButton className="submit-button" type="submit">
-            +
-          </SubmitButton>
-        </label>
-      </form>
+      <Input
+        onSubmit={onFormSubmit}
+        className="input"
+        type="text"
+        // placeholder="Add a to do..."
+        value={value}
+        onChange={(event) => setValue(event.target.value)}
+        required
+      />
+      <SubmitButton className="submit-button" type="submit">
+        +
+      </SubmitButton>
     </FormContainer>
   )
 }
 
-const FormContainer = styled.form`
+const FormContainer = styled.div`
   display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
 `
 
 const Input = styled.input`
@@ -51,17 +50,19 @@ const Input = styled.input`
   all: unset;
   width: calc(100% - 20px);
   border: 4px solid black;
-  /* margin: 10px auto; */
   padding: 7px;
   border-radius: unset;
   background-color: #cee9ed;
   font-size: 22px;
+  z-index: -9;
   ::placeholder {
     font-size: 16px;
     color: gray;
   }
 `
 const SubmitButton = styled.button`
+  display: flex;
+  justify-content: flex-end;
   position: absolute;
   all: unset;
   width: calc(100% - 20px);
@@ -69,7 +70,9 @@ const SubmitButton = styled.button`
   font-size: 24px;
   padding-right: 8px;
   cursor: pointer;
-  color: #6b6462;
+  color: black;
+  z-index: 7;
+  position: right;
 
   .submit-button:focus {
     outline: none;

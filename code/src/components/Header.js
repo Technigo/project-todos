@@ -29,7 +29,7 @@ const HeaderContainer = styled.header`
   text-align: center;
   justify-content: space-between;
   align-items: center;
-  margin-top: 5px;
+  margin-top: 30px;
 
   h1 {
     font-size: 25px;

@@ -43,10 +43,8 @@ const Headline = styled.h2`
 
 const Container = styled.div`
   background-color: #ffe588;
-
   height: auto;
   margin: auto;
-  /* margin: 10px 20%; */
   border: solid black 4px;
 `
 const Rapper = styled.div`
