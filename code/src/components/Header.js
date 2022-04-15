@@ -70,9 +70,9 @@ const Header = () => {
                 <p>{weekday}</p>
             </OutterContainer>
             <CounterContainer>
-                <p>You have {allTasks.length} task(s) in total.</p>
-                <p>Completed task(s) : {completedTasks.length}</p>
-                <p>Uncompleted task(s) : {unCompletedTasks.length}</p>
+                <p>Total tasks : {allTasks.length}</p>
+                <p>Completed : {completedTasks.length}</p>
+                <p>Uncompleted : {unCompletedTasks.length}</p>
             </CounterContainer>
         </BackGround>
     )

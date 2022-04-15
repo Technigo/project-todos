@@ -3,8 +3,8 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import styled from 'styled-components';
 
-import  tasks  from './reducers/tasks';
-import  TaskList from './components/TaskList';
+import tasks  from './reducers/tasks';
+import TaskList from './components/TaskList';
 import Header from './components/Header';
 import AddTask from 'components/AddTask';
 
@@ -15,7 +15,7 @@ const Wrapper = styled.section`
 
   @media (min-width:667px) {
     width: 500px;
-
+    
   }
 `
 

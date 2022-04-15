@@ -48,6 +48,7 @@ const AddTask = () => {
                         value={input}
                         placeholder='enter new task'
                         onChange={(event) => setInput(event.target.value)}
+                        required
                     />
                 </label>
                 <SubmitButton type='submit'>
