@@ -31,19 +31,27 @@ height: 70vh;
     margin-top: 0px;
     text-align: center;
     padding: 30px;
-    font-size : 50px;
+    font-size : 30px;
   }
   .input-date{
-    float: right;
+   display: flex;
+   
     margin: 10px;
   }
 .form-input {
   border: 3px solid black;
   border-radius: 10px;
-  width: 30rem;
+ width: 20rem;
   height: 4rem;
+  margin-left: 50px;
+  margin-bottom : 30px;
 }
-
+.input{
+  display: flex;
+  flex-direction:column ;
+  justify-content: center;
+  align-items: center;
+}
   form{
     display: flex;
     align-items: center;
@@ -51,16 +59,16 @@ height: 70vh;
   }
   form button{
 margin: 10px;
-  border-radius: 20%;
+margin-top: -15px;
+ border-radius: 20%;
  background: #fff;
 border: 5px solid black;
-  font-size: 50px;
+ font-size: 50px;
 width: 50px;
 height: 70px;
   color: #171818;
-
-
   }
+
  input[type="checkbox"]{
     position: relative;
     width: 40px;
@@ -92,16 +100,17 @@ box-shadow: 0 2px 5px rgba(0, 0, 0.2);
 input:checked[type="checkbox"]:before{
  left: 20px;
   }
+
+
   .task-list{
     display: flex;
    border: 10px solid black;
-    flex-direction: column;
-   width: 50vw; 
+    flex-direction: column; 
     border-radius: 20px;
     padding: 10px;
-    margin-left: 25rem;
-    margin-top: 20px;  
+    margin: 50px, 20px; 
   }
+
   h4{
     margin: 10px;
     border-bottom: 5px solid black;
@@ -133,6 +142,17 @@ background: #fff;
     cursor: pointer;
   }
   .taskcounter{
-    float: left;
+display: flex;
+flex-direction: column;
     margin: 10px;
+  }
+@media only screen and (min-width: 768px) {
+   .task-list{
+     width: 30rem;
+   }
+  }
+  @media only screen and (min-width: 1024px) {
+   .task-list{
+     width: 50rem;
+   }
   }
