@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { TaskStyling, TaskItem, DeleteButton, NumberOfTasks } from 'styles'
+import { TaskListStyling, TaskItem, DeleteButton, NumberOfTasks } from 'styles'
 
 import tasks from 'reducers/tasks'
 
@@ -21,7 +21,7 @@ const TaskList = () => {
     return (
         <section>
             <NumberOfTasks>Number of tasks: {taskList.length}</NumberOfTasks>
-            <TaskStyling>
+            <TaskListStyling>
                 {taskList.map((taskItem, taskIndex) => {
                     return <TaskItem key={taskItem.id}>
                         <h2>{taskItem.text}</h2>
@@ -40,7 +40,7 @@ const TaskList = () => {
                         </DeleteButton>
                     </TaskItem>
                 })}
-            </TaskStyling>
+            </TaskListStyling>
         </section>
     )
 }

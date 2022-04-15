@@ -38,7 +38,7 @@ export const TodoListContainer = styled.section`
   min-width: 300px;
 `
 
-export const TaskStyling = styled.article`
+export const TaskListStyling = styled.article`
   padding: 20px;
   
   h2 {
@@ -56,6 +56,8 @@ export const NewTask = styled.article`
   border: 1px solid #dcdcdc;
   border-radius: 5px;
   color: white;
+  font-weight: 600;
+  text-align: center;
   
   .newInput {
     font-size: 15px;
@@ -92,4 +94,21 @@ export const NumberOfTasks = styled.p`
     width: max-content;
     padding: 5px 5px;
     font-size: 15px;
+`
+
+export const InputArea = styled.input`
+    border: 0;
+    border-bottom: 3px dashed white;
+    background-color: transparent;
+    padding: 10px 15 px;
+    // width: 30%;
+    color: white;
+`
+
+export const SubmitButton = styled.button`
+    border-radius: 8px;
+    padding: 10px 15px;
+    margin: 3px;
+    background-color: white;
+    font-family: 'Ubuntu', sans-serif;
 `

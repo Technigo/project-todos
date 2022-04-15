@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid'
-import { NewTask } from 'styles'
+import { NewTask, SubmitButton, InputArea } from 'styles'
 
 import tasks from 'reducers/tasks'
 
@@ -29,14 +29,14 @@ const AddTask = () => {
             <form onSubmit={onFormSubmit}>
                 <label>
                     New task : &nbsp;
-                    <input 
+                    <InputArea 
                         type="text"
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)} 
                         className="newInput"
                     />
                 </label>
-                <button type="submit">Submit</button>
+                <SubmitButton type="submit">Add</SubmitButton>
             </form>
         </NewTask>
     )
