@@ -4,7 +4,7 @@ In this week's project I've created a to do app using Redux. It was quite a chal
 
 ## The problem
 
-I've discussed the theory about Redux with the people in my class and I've used the live sessions well to be able to grasp the concept as much as possible. Looking forward to continue learning more!
+I've discussed the theory about Redux with the people in my class and I've used the live sessions well to be able to grasp the concept as much as possible. I also watched some good youtubers explaining Redux. Looking forward to continue learning more!
 
 ## View it live
 
