@@ -24,7 +24,8 @@ const AddTodos = () => {
     const newTodo = {
       id: uniqid(),
       text: inputValue,
-      isComplete: false
+      isComplete: false,
+      createdAt: JSON.stringify(Date.now())
     };
 
     dispatch(todos.actions.addTodo(newTodo));
@@ -38,13 +39,12 @@ const AddTodos = () => {
         type="text"
         placeholder="Add todo"
         value={inputValue}
-        onChange={(event) => { setInputValue(event.target.value) }}
-      />
+        onChange={(event) => { setInputValue(event.target.value); }} />
       <AddButton
         type="submit"
         disabled={!inputValue}
-        onClick={handleNewTodo}
-      ><Plus disabled={!inputValue}>+</Plus> Add
+        onClick={handleNewTodo}>
+          <Plus disabled={!inputValue}>+</Plus> Add
       </AddButton>
     </Form>
   );

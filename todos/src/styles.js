@@ -18,6 +18,13 @@ const Button = styled.button`
   }
 `;
 
+const Wrappers = styled.div`
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+`;
+
 export const Heading = styled.header`
   display: flex;
   flex-direction: column;
@@ -75,10 +82,7 @@ export const Plus = styled.span`
   background-color: white;
   border-radius: 50%;
   padding: 3px 7px;
-  color: ${(prop) => prop.disabled
-    ? "grey"
-    : "black"
-  };
+  color: ${(prop) => (prop.disabled ? "grey" : "black")};
 `;
 
 export const AddButton = styled.button`
@@ -87,10 +91,7 @@ export const AddButton = styled.button`
   -webkit-appearance: none;
   -webkit-border-radius: none;
 
-  background-color: ${(prop) => prop.disabled
-    ? "none"
-    : "#995cfa"
-  };
+  background-color: ${(prop) => (prop.disabled ? "none" : "#995cfa")};
 `;
 
 export const Article = styled.article`
@@ -109,6 +110,28 @@ export const Article = styled.article`
   }
 `;
 
+export const CreatedAt = styled.p`
+  display: none;
+
+  @media (min-width: 768px) {
+    display: flex;
+  };
+`;
+
+export const FlexDiv = styled(Wrappers)`
+  flex: 1;
+  justify-content: center;
+  display: ${(prop) => (prop.time ? "none" : null)};
+ 
+  @media (min-width: 768px) {
+    display: ${(prop) => (prop.time ? "flex" : null)};
+  }
+`;
+
+export const CheckBoxWrapper = styled.div`
+  margin-right: auto;
+`;
+
 export const CheckBox = styled.input`
   cursor: pointer;
 `;
@@ -116,12 +139,10 @@ export const CheckBox = styled.input`
 export const TodoText = styled.label`
   margin-left: 12px;
   cursor: pointer;
-  text-decoration: ${(prop) => prop.complete
-    ? "line-through"
-    : "none"
-  };
+  text-decoration: ${(prop) => (prop.complete ? "line-through" : "none")};
 `;
 
 export const DeleteButton = styled(Button)`
   border-radius: 10px;
+  margin-left: auto; 
 `;

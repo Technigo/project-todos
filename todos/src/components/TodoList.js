@@ -2,13 +2,16 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 
 import todos from "reducers/todos";
-
 import {
   Article,
+  FlexDiv,
+  CheckBoxWrapper,
   CheckBox,
   TodoText,
   DeleteButton
 } from "styles";
+
+import TimeStamp from "./TimeStamp";
 
 const TodoList = () => {
   const todoList = useSelector((state) => state.todos.lists);
@@ -27,21 +30,27 @@ const TodoList = () => {
     <section>
       {todoList.map((item) => (
         <Article key={item.id}>
-          <div>
-            <CheckBox
-              type="checkbox"
-              tabIndex="0"
-              id={item.id}
-              checked={item.isComplete}
-              onChange={() => { onTodoToggle(item.id) }}
-            />
-            <TodoText htmlFor={item.id} complete={item.isComplete}>{item.text}</TodoText>
-          </div>
-          <DeleteButton onClick={() => onTodoDelete(item.id)}>Delete</DeleteButton>
+          <FlexDiv>
+            <CheckBoxWrapper>
+              <CheckBox
+                type="checkbox"
+                tabIndex="0"
+                id={item.id}
+                checked={item.isComplete}
+                onChange={() => { onTodoToggle(item.id); }} />
+              <TodoText htmlFor={item.id} complete={item.isComplete}>{item.text}</TodoText>
+            </CheckBoxWrapper>
+          </FlexDiv>
+          <FlexDiv time>
+            <TimeStamp createdAt={item.createdAt} />
+          </FlexDiv>
+          <FlexDiv>
+            <DeleteButton onClick={() => onTodoDelete(item.id)}>Delete</DeleteButton>
+          </FlexDiv>
         </Article>
       ))}
     </section>
-  )
-}
+  );
+};
 
 export default TodoList;

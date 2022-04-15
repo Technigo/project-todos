@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = { lists: [] }
+const initialState = { lists: [] };
 
 const todos = createSlice({
   name: "todo",
@@ -12,7 +12,7 @@ const todos = createSlice({
           const updatedTodo = {
             ...todo,
             isComplete: !todo.isComplete
-          }
+          };
 
           return updatedTodo;
         } else {
@@ -20,7 +20,7 @@ const todos = createSlice({
         }
       });
 
-      state.lists = updatedTodos
+      state.lists = updatedTodos;
     },
 
     addTodo: (state, action) => {
