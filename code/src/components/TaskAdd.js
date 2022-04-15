@@ -47,7 +47,8 @@ const TaskAdd = () => {
 
     return (
         <AddForm onSubmit={onFormSubmit}>
-            <ButtonAdd type='submit' disabled={inputValue.length < 1}>
+            {/* <ButtonAdd type='submit' disabled={inputValue.length < 1}> */}
+            <ButtonAdd type='submit'>
               <span role='img' aria-label='add task'>+</span>
             </ButtonAdd>
             <InputField
@@ -56,6 +57,7 @@ const TaskAdd = () => {
               type='text'
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
+              required
             >
             </InputField>
         </AddForm>
