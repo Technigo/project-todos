@@ -42,6 +42,9 @@ const tasks = createSlice({
     clearAll: (store) => {
       store.items = [];
     },
+    checkAllTasks: (store) => {
+      store.items.map((item) => (item.isComplete = true));
+    },
   },
 });
 

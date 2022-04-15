@@ -23,6 +23,10 @@ const TodoList = () => {
     dispatch(tasks.actions.clearAll());
   };
 
+  const checkAllTasks = () => {
+    dispatch(tasks.actions.checkAllTasks());
+  };
+
   const taskDate = formatRelative(subDays(new Date(), 0), new Date(), {
     addSuffix: true,
   });
@@ -32,6 +36,9 @@ const TodoList = () => {
       <TaskCounter />
       <button onClick={clearAll} disabled={items < 1}>
         Clear All
+      </button>
+      <button onClick={checkAllTasks} disabled={items < 1}>
+        Check All
       </button>
       {items.map((item) => (
         <div key={item.id}>
