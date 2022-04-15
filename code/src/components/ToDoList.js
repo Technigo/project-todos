@@ -89,7 +89,7 @@ const Indicator = styled.div`
     left: 0.25em;
     width: 35%;
     height: 70%;
-    border: solid #a2ccda;
+    border: solid #c77700;
     border-width: 0 0.2em 0.2em 0;
     animation-name: ${rotate};
     animation-duration: 0.3s;
