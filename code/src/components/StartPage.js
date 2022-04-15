@@ -60,7 +60,7 @@ background: #f8f8f8;
 border-radius: 15px;
 padding: 1rem;
 margin: 0.4rem;
-width: 84%;
+width: 78%;
 position: relative;
 word-break: break-word;
 
