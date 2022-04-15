@@ -11,7 +11,7 @@ const StyledInput = styled.input`
 	letter-spacing: 1.5px;
 	color: var(--clr-secondary);
 	text-align: center;
-	width: 328px;
+	width: 310px;
 	border: none;
 	border-bottom: 2px solid var(--clr-accent);
 	background-color: var(--clr-main-opacity);

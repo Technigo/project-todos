@@ -68,7 +68,7 @@ const TaskContainerWrapper = styled.div`
 const TaskContainer = styled.div`
 	display: flex;
 	flex-direction: column;
-	width: 300px;
+	width: 282px;
 	padding: 0.5em 1em 0;
 
 	:first-of-type {
