@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a simple and clean todo-list build in React and Redux. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The biggest challenge for me was the structure of the Redux store. I also chose to use styled components for the first time in a project. In the end, I thought that both the Redux store and styled components showed to be very useful once set up. When I have more time I will add more features to the todo-list, such as calender view and also tags/filtering. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://sofia-ringstedt-task-list.netlify.app/
