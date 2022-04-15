@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import uniqid from "uniqid";
 
@@ -15,14 +15,13 @@ const SubmitButton = styled.button`
 `;
 
 const Inputfield = styled.div`
-  background-color: #e9ebe6;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  margin-bottom: 5px;
-  border-radius: 10px;
   margin: auto;
+  margin-bottom: 19px;
+  margin-top: 24px;
 `;
 
 const AddTodo = () => {

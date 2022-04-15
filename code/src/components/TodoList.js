@@ -5,11 +5,15 @@ import styled from "styled-components";
 import todos from "reducers/todos";
 
 const TodoItem = styled.article`
-  border: 1px solid #e9ebe6;
+  border: 1px solid black;
+  background-color: rgb(255, 255, 255, 0.5);
   padding: 10px;
-  margin-bottom: 5px;
+  margin: auto;
+  margin-bottom: 20px;
   border-radius: 10px;
   position: relative;
+  width: 50%;
+  text-align: left;
 `;
 
 const DeleteButton = styled.button`
@@ -41,7 +45,7 @@ const TodoList = () => {
         <TodoItem key={todoItem.id}>
           <h4>{todoItem.Todo}</h4>
           <label>
-            Done:
+            Done: &nbsp;&nbsp;
             <input
               type="checkbox"
               checked={todoItem.isDone}
@@ -50,7 +54,7 @@ const TodoList = () => {
           </label>
           <DeleteButton onClick={() => onTodoDelete(todoIndex)}>
             <span role="img" aria-label="delete">
-              ❌
+              X
             </span>
           </DeleteButton>
         </TodoItem>

@@ -17,7 +17,10 @@ body{
 `;
 
 const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 50%;
+  text-align: center;
   margin: auto;
   margin-top: 100px;
 `;
