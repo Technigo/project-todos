@@ -21,6 +21,9 @@ const AddContainer = styled.section`
     border-radius: 50%;
     background-color: #CE5D45;
     color: #fff6e2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 `
 const AddBox = styled.article`
