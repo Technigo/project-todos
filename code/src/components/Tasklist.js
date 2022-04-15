@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { format } from "date-fns";
 
 import tasks from "../reducers/tasks";
 
@@ -15,6 +16,10 @@ const Tasklist = () => {
     dispatch(tasks.actions.deleteitem(index));
   };
 
+  const date = new Date();
+
+  const dateToday = format(date, "MM/dd/yyyy HH:mm");
+
   return (
     <section className="task-list">
       {taskList.map((taskItem, taskIndex) => (
@@ -23,7 +28,7 @@ const Tasklist = () => {
             className="button-task"
             onClick={() => onTaskDelete(taskItem.taskIndex)}
           >
-            <span role="img" aria-label="delete">
+            <span>
               <img src="./Assets/del.png" alt="delete" />
             </span>
           </button>
@@ -37,7 +42,9 @@ const Tasklist = () => {
               />
             </label>
           </div>
-          <h4>{taskItem.text}</h4>
+          <h4>
+            {taskItem.text} <br /> {dateToday}
+          </h4>
         </article>
       ))}
     </section>

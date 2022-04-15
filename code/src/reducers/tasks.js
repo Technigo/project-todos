@@ -26,6 +26,9 @@ const tasks = createSlice({
     additem: (store, action) => {
       store.taskitems.push(action.payload);
     },
+    filterdone: (store, action) => {
+      store.taskitems.filter(action.payload);
+    },
   },
 });
 
