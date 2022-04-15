@@ -135,13 +135,14 @@ const TodoList = () => {
 	return (
 		<main>
 			<AddTodo />
-
 			<Container>
+				<TaskCounter />
 				{items.map((item) => (
 					<TaskContainer key={item.id}>
 						<TaskContainerWrapper>
 							<Wrapper>
 								<input
+									tabIndex={'0'}
 									type='checkbox'
 									name='tasks'
 									checked={item.isCompleted}
@@ -167,7 +168,6 @@ const TodoList = () => {
 					</TaskContainer>
 				))}
 			</Container>
-			<TaskCounter />
 			<DeleteAllbtn onClick={onDeleteAll}>delete all</DeleteAllbtn>
 		</main>
 	)

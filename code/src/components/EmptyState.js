@@ -17,6 +17,8 @@ const EmptyStateWrapper = styled.section`
 	flex-direction: column;
 	border-bottom-left-radius: 30px;
 	border-bottom-right-radius: 30px;
+	border: 2px solid var(--clr-accent);
+	border-top: none;
 `
 
 const EmptyStateText = styled.p`
