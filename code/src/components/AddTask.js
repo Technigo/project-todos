@@ -15,6 +15,7 @@ const AddTask = () => {
         id: uniqid(),
         description: inputValue,
         isDone: false,
+				createdAt: Date.now(),
       })
     );
     setInputValue("");
