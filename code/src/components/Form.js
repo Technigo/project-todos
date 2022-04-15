@@ -5,11 +5,7 @@ import { useSelector } from 'react-redux'
 
 import styled from 'styled-components'
 
-const devices = {
-    mobile: "(min-width: 375px)",
-    tablet: "(min-width: 768px)",
-    desktop: "(min-width: 1025px)",
-}
+
 
 const pixeldimensions = {
     mobile: '375px',
@@ -26,15 +22,6 @@ padding: 2em;
 background-color: gray;
 gap: 2em;
 
-    /* @media ${devices.mobile} {
-        width: ${pixeldimensions.mobile}
-    }
-    @media ${devices.tablet} {
-        width: ${pixeldimensions.tablet}
-    }
-    @media ${devices.desktop} {
-        width: ${pixeldimensions.desktop}
-    } */
 `
 
 const Form = () => {
@@ -42,10 +29,10 @@ const Form = () => {
     const [newTask, setTask] = useState()
     const dispatch = useDispatch()
 
-    const taskArray = useSelector((store) => store.tasks.items.length)
+    const taskArray = useSelector((store) => store.tasks.items)
 
     const newTaskObject = {
-        id: taskArray + 1,
+        id: taskArray.length + 1,
         title: newTask,
         status: false
     }
@@ -54,10 +41,7 @@ const Form = () => {
         e.preventDefault();
         dispatch(tasks.actions.addTask(newTaskObject))
         setTask('')
-
-        // { method: 'POST', headers: { 'Content-Type': 'application/json',}, body: JSON.stringify({ message: newThought }) }
-        // ).then((res) => res.json()).then((data) => setThoughts([data, ...thoughts])).then(setNewThought(''))
-    }
+     }
 
     return ( 
         
@@ -69,7 +53,7 @@ const Form = () => {
                 <input  
                 value={newTask || ''} 
                 onChange={(e) => setTask(e.target.value)}
-                id={taskArray+1}
+                id={taskArray.length +1}
                 />
 
                 <button  

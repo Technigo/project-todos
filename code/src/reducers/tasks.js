@@ -23,9 +23,58 @@ export const tasks = createSlice({
             if (item.id === action.payload){
                 item.status = !item.status
             }
-        })   
+        })  
+        },
 
+        sort: (store, action) => {
+
+            if (action.payload === 'DONE') {
+                return (
+                    store.items.filter(t => t.status)
+                )
+            }
+            else if (action.payload === 'UNDONE'){
+                return (
+                    store.items.filter(t => !t.status)
+                )}
+            else { return  store.items 
+            }
         }
+
+        // filterTodos: (store, filter) => {
+
+        //     if (filter.payload === 'DONE') {
+                
+        //     return store.items.filter(t => t.status);
+                 
+        //     } else if (filter.payload === 'UNDONE') {
+
+        //     return store.items.filter(t => !t.status);
+
+        //     } else { return null }
+    
+        // }
+
+        // sortFinished: (store, action) => {
+          
+        //     store.items.filter((item) => {
+        //         taskList.item.status = true
+        //     }))
+
+        //     })  
+
+        // }
+        // sort: (store, action) => {
+
+        //     if (action.payload === 'DONE') {
+        //         return (setFiltered(finishedTasks))
+        //     }
+        //     else if (action.payload === 'UNDONE'){
+        //         return setFiltered(unfinishedTasks)
+        //     }
+        //     else { return setFiltered(allTasks) 
+        //     }
+        // }
     }
 
 }
