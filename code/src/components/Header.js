@@ -5,18 +5,26 @@ import styled from "styled-components";
 // import todos from "reducers/todos";
 
 const Headerbox = styled.header `
-    border: 1px solid;
-    border-color: #554D45;
+    // border: 1px solid;
+    // border-color: #554D45;
     padding: 10px;
     margin-bottom: 5px;
     border-radius: 5px;
     position: relative;
+    background-color: #F6AC87;
 `
 
 
 const Header = () => {
     const todoList = useSelector((store) => store.todos.items)
 
+     
+    const date = new Date().toDateString()
+    
+//   const h = date.toDateString()
+//   console.log(h)
+//   const time = date.toLocaleTimeString()
+//   console.log(time, 'klockslag')
     const tasksTodo = todoList.length > 1
     const onetaskTodo = todoList.length === 1
     const notasksTodo = todoList.length === 0
@@ -25,6 +33,7 @@ const Header = () => {
     const show = uncompletedTodos.length > 0
     return (
         <Headerbox>
+            <p>{date}</p>
         <h1>Welcome!</h1>
         <div>
             {onetaskTodo && <h2>You´ve got {todoList.length} todo in your list</h2>}  

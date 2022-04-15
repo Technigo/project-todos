@@ -4,25 +4,64 @@ import styled from "styled-components";
 
 import todos from "reducers/todos";
 
+const ListContainer = styled.section`
+  display: flex;
+  flex-direction: column;
+  margin-top: 60px;
+  gap: 10px;
+`
+
 const TodoItem = styled.article `
-  border: 1px solid;
-  border-color: #554D45;
-  background-color: #ffd680;
+  background-color: #F8C77C;
   padding: 10px;
-  margin-bottom: 5px;
   border-radius: 5px;
   position: relative;
-  margin-top: 30px;
-`
+  display: flex;
+  align-items: center;
+  
+  input[type='checkbox'] {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    background: #fff;
+    border: 2px solid #F6AC87;
+    padding: 10px;
+    border-radius: 50%;
+    height: 27px;
+    width: 27px;
+  }
+  
+  input[type='checkbox']:checked {
+    background: #CE5D45;
+    background-image: url("icons/check.svg");
+  }
+  
+  input[type='checkbox']:checked:after {
+    font-family: 'FontAwesome';
+    background-image: url("/check.svg")
+    background-size: contain;
+    font-size: 1rem;
+    font-weight: 500;
+    position: absolute;
+    top: 3px;
+    left: 75px;
+  }
+  `
+
 
 const DeleteButton = styled.button `
   position: absolute;
   top: 10px;
-  right: 10px;
+  right: 15px;
   background: none;
   border: none;
   cursor: pointer;
+  font-size: 40px;
+  color: #fff6e2;
+  transform: rotate(45deg);
+  
 `
+
 
 
 const TodoList = () => {
@@ -40,33 +79,23 @@ const TodoList = () => {
 
   
 
-  
- 
-  // const date = () => {
-  //   new Date()
-  // }
-  // const h = date.toDateString()
-  // console.log(h)
-  // const time = date.toLocaleTimeString()
-  // console.log(time, 'klockslag')
-  
-
   return (
-    <section>
+    <ListContainer>
         
         {todoList.map((todoItem, itemIndex) => (
             <TodoItem key={todoItem.id} >
-        <h2>{todoItem.listitem}</h2>
-                <label>
-                    Completed:
+        {/* <h2>{todoItem.listitem}</h2> */}
+        <label>
                     <input 
-                    type="checkbox" 
+                    type="checkbox"
+                    name="completed" 
                     checked={todoItem.isDone} 
                     onChange={() => onItemToggle(todoItem.id)}
                     />
-                </label>
+              </label>
+              <h2>&nbsp;{todoItem.listitem}</h2>
                 <DeleteButton onClick={() =>onItemDelete(itemIndex)}>
-                    <span role="img" aria-label="delete">⛱</span>
+               +
                 </DeleteButton>
             </TodoItem>
             
@@ -74,7 +103,7 @@ const TodoList = () => {
         
     }
     
-    </section>
+    </ListContainer>
     
   )
 }

@@ -13,14 +13,14 @@ const AddContainer = styled.section`
   .add {
     cursor: pointer;
     border: none;
-    font-size: 30px;
+    font-size: 50px;
     height: 70px;
     width: 70px;
     position: absolute;
-    top: -35px;
+    top: -20px;
     border-radius: 50%;
-    background-color: #ffb314;
-    
+    background-color: #CE5D45;
+    color: #fff6e2;
   }
 `
 const AddBox = styled.article`
@@ -37,17 +37,16 @@ const AddBox = styled.article`
 
   .send {
     width: 70px;
-    background-color: #ffb314;
-    cursor: pointer;
-    border: none;
+    background-color: #CE5D45;
     cursor: pointer;
     border: none;
     padding: 5px;
     border-radius: 5px;
+    color: #fff6e2;
   }
 
   input {
-    background-color: #ffe7b4;
+    background-color: #F6AC87;
     font-size: 20px;
     border-radius: 5px;
     border: none;
@@ -80,17 +79,6 @@ const AddTodo = () => {
         setNewItem('')
         setVisible(false)
     }
-
-  //   const time = (event) => {
-  //     event.preventDefault();
-  //     date = new Date()
-  //   }
-  // //   const date = new Date()
-  // // console.log(date, 'ny tid')
-  // // const h = date.toDateString()
-  // // console.log(h)
-  // // const time = date.toLocaleTimeString()
-  // // console.log(time, 'klockslag')
 
     const newTask = {
       id: uniqid(),
