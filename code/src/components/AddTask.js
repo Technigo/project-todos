@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useSelector, useDispatch } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks';
 import styled from 'styled-components'
 import uniqid from 'uniqid'
@@ -16,6 +16,29 @@ const SubmitButton=styled.button`
 	outline: inherit;
 
 `
+
+const Input=styled.input`
+width: 60%;
+padding: 2px 6px;
+margin: 8px 0;
+box-sizing: border-box;
+border:none;
+border-bottom: 2px solid black;
+background:none;
+
+&:focus{
+    outline:none;
+    width: 60%;
+    padding: 2px 6px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border:none;
+    border-bottom: 2px solid black;
+    background:none;
+
+}
+
+`
 export const AddTask=()=>{
     const dispatch=useDispatch();
     const[inputValue, setInputValue]=useState("");
@@ -30,17 +53,18 @@ export const AddTask=()=>{
     dispatch(tasks.actions.addTask(newTask));
     setInputValue("")
     }
+
 return(
     <form onSubmit={onFormSubmit}>
       <label>
-        New Task: &nbsp;
-        <input 
+        Add task ☛ &nbsp;
+        <Input 
           type="text"
           required
           value={inputValue}
           onChange={(e)=>setInputValue(e.target.value)}/>
       </label>
-      <SubmitButton type="submit">Submit</SubmitButton>
+      <SubmitButton type="submit">&nbsp;<span role="img" aria-label="delete"> ➕</span></SubmitButton>
     </form>
 
     )

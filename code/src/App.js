@@ -24,11 +24,17 @@ body{
   color: black;
   background: linear-gradient(70deg, #f7f377  30%, rgba(0,0,0,0) 30%), linear-gradient(30deg, #a8e6c3 60%, #f39adf 60%);
   background-repeat: no-repeat;
-  background-size: cover;
-  height:100vh;
+	background-attachment: fixed;
   font-family: 'Oswald', sans-serif;
-  
 }
+`
+const Wrapper=styled.div`
+width:80%; 
+margin:auto;
+display: flex; 
+flex-direction:column;
+align-items:center;
+
 `
 
 
@@ -40,12 +46,12 @@ export const App = () => {
  <Provider store={store}> 
  <GlobalStyle/>
  <Header/>
- <div className="rapper">
-  <TaskCounter/>
-  <AddTask/>
-   <TaskList/>
- </div>
-  </Provider> 
+ <Wrapper>
+ <TaskCounter/>
+ <AddTask/>
+ <TaskList/>
+ </Wrapper>
+ </Provider> 
  
   )
 }
