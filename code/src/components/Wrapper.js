@@ -7,6 +7,8 @@ import AddTask from 'components/AddTask'
 import ClearBtn from 'components/ClearBtn'
 import { createGlobalStyle } from 'styled-components'
 
+import tasks from './reducers/tasks'
+
 const Wrapper = () => {
   return (
     <>
