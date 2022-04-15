@@ -10,9 +10,12 @@ const HeaderWrapper = styled.div`
   height: 200px;
   border-radius: 0px 0px 10px 10px;
   @media (min-width: 1025px) {
-    width: 43vw;
-    margin: auto;
-    margin-top: 50px;
+  }
+`;
+
+const HeaderText = styled.div`
+  @media (min-width: 1025px) {
+    margin-left: 420px;
   }
 `;
 
@@ -22,6 +25,8 @@ const ButtonWrapper = styled.div`
   padding: 10px;
   display: flex;
   justify-content: space-evenly;
+  @media (min-width: 1025px) {
+  }
 `;
 
 const OptionsBtn = styled.button`
@@ -71,9 +76,11 @@ const Header = ({
 
   return (
     <HeaderWrapper>
-      <h2>What to do today?</h2>
-      <p>{date}</p>
-      <p>{weekday}</p>
+      <HeaderText>
+        <h2>What to do today?</h2>
+        <p>{date}</p>
+        <p>{weekday}</p>
+      </HeaderText>
       <ButtonWrapper>
         <OptionsBtn active={all} onClick={showAll}>
           All

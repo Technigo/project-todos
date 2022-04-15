@@ -97,10 +97,9 @@ const AddTodo = () => {
         <TodoInput
           type='text'
           placeholder='Add your todo..'
-          minLength='3'
           value={newTodo}
-          onChange={(event) => setNewTodo(event.target.value)}
           required
+          onChange={(event) => setNewTodo(event.target.value)}
         />
         <AddBtn>
           <FontAwesomeIcon
