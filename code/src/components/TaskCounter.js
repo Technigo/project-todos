@@ -2,7 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-
+//Styled components
 const Description = styled.p`
 font-size: 18px;
 margin-top: 2rem;

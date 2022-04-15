@@ -4,8 +4,7 @@ import styled from 'styled-components'
 
 
 
-//styled components
-
+//Styled components
 const devices = {
     mobile: "(min-width: 375px)",
     tablet: "(min-width: 768px)",

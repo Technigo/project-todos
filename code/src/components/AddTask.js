@@ -5,8 +5,7 @@ import uniqid from 'uniqid'
 import tasks from 'reducers/tasks'
 
 
-
-//styled components
+//Styled components
 const devices = {
     mobile: "(min-width: 375px)",
     tablet: "(min-width: 768px)",
@@ -86,9 +85,6 @@ outline: none;
     width: 40%;
 }
 `
-
-
-
 
 const AddTask = () => {
 

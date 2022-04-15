@@ -9,7 +9,7 @@ import TimeStamp from './TimeStamp'
 
 
 
-//styled components
+//Styled components
 const devices = {
 mobile: "(min-width: 375px)",
 tablet: "(min-width: 768px)",
@@ -71,22 +71,20 @@ word-break: break-word;
 `
 
 const TaskHeading = styled.h2`
-margin-block-start: -2px;
-font-size: 20px;
 max-width: 82%;
+margin-top: -2px;
 overflow-wrap: break-word;
+cursor: pointer;
+  text-decoration: ${(prop) => prop.complete
+    ? "line-through"
+    : "none"
+  }
 `
 
 const Checkbox = styled.input`
 margin-top: 10px;
 vertical-align: bottom;
 `
-
-const TaskText = styled.h2`
-  font-weight: 400;
-  font-size: medium;
-  margin: 10px 5px;
-`;
 
 const StartPage = () => {
 
@@ -118,26 +116,32 @@ const StartPage = () => {
     
             {tasksList.map((taskItem, taskIndex) => (
 
-                <Article>
+                <Article key={taskItem.id}>
                 
-                    <Button onClick={() => onDeleteClick(taskIndex)} >
-                     
-                    <span role="img" aria-label="cross">❌</span> 
-                    </Button>
+                   
 
+                   
+                    <TaskHeading
+                    htmlFor={taskItem.id} 
+                    complete={taskItem.isDone}>
+                    {taskItem.text}
+                    </TaskHeading>
+
+                    <TimeStamp />
                     <label>
-                    <TaskHeading>{taskItem.text}</TaskHeading>
-                   <TimeStamp />
-                  
                     <Checkbox 
                     type="checkbox" 
+                    tabIndex="0"
                     checked={taskItem.isDone} 
-                    onChange={() => onTaskToggle(taskItem.id)} />
+                    id={taskItem.id}
+                    onChange={() => { onTaskToggle(taskItem.id)}} />
                      &nbsp; I'm done with this
                     </label>
 
-                    <TaskText 
-                    className={taskItem.isDone ? "completed-task" : "task-todo"}/>
+                    <Button onClick={() => onDeleteClick(taskIndex)} >
+                     
+                     <span role="img" aria-label="cross">❌</span> 
+                     </Button>
                       
               </Article>
 
