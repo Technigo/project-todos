@@ -15,7 +15,7 @@ const Startpage = () => {
         <h1>Welcome to ToDo-App</h1>
         <h3>Make your life easier</h3>
         <button onClick={onStart}>Let's start </button>
-        <img src="./Assets/start-image.png" alt="start page image" />
+        <img src="./Assets/start-image.png" alt="start page" />
       </div>
     );
   }

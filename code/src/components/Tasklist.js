@@ -24,7 +24,7 @@ const Tasklist = () => {
             onClick={() => onTaskDelete(taskItem.taskIndex)}
           >
             <span role="img" aria-label="delete">
-              <img src="./Assets/del.png" alt="delete image" />
+              <img src="./Assets/del.png" alt="delete" />
             </span>
           </button>
           <div className="input-task">
