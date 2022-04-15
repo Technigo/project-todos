@@ -31,6 +31,7 @@ height: 70vh;
     margin-top: 0px;
     text-align: center;
     padding: 30px;
+    padding-bottom: 10px;
     font-size : 30px;
   }
   .input-date{
@@ -115,11 +116,12 @@ input:checked[type="checkbox"]:before{
     margin: 10px;
     border-bottom: 5px solid black;
     padding: 40px;
-    
     font-size: 20px;
     
   }
-
+.input-image{
+  width: 10rem;
+}
   .button-task{
   float: right;
   margin: 5px;

@@ -30,10 +30,12 @@ const Addtasks = () => {
   return (
     <div className="input">
       <h1 className="input-heading">Task for Today</h1>
+      <img className="input-image" src="./Assets/pencil.png" alt="pencil" />
       <p className="input-date">
         {" "}
         <b>Date</b> : {dateToday} <br />
       </p>
+
       <Taskcounter />
       <form onSubmit={handleSubmit}>
         <label>
