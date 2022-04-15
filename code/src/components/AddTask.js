@@ -27,6 +27,8 @@ const AddTask = () => {
 				id="new task"
         name="new task"
         value={inputValue}
+				required
+        autoFocus
         onChange={(event) => {
           setInputValue(event.target.value);
         }}

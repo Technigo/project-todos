@@ -1,18 +1,29 @@
 import { createSlice } from "@reduxjs/toolkit";
 
+const initialState = {
+  items: [],
+};
+
 export const listSlice = createSlice({
   name: "listSlice",
-  initialState: {
-		items: [],
-	},
+  initialState,
   reducers: {
-    addTask: (store, action) => {
-      store.items = [...store.items, action.payload];
+    addTask: (state, action) => {
+      state.items = [...state.items, action.payload];
     },
-    removeTask: () => {},
-    toggleTaskStatus: () => {},
-    // resetTaskList: (store) => {
-    //   return initialState;
-    // },
+
+    removeTask: (state, action) => {
+      state.items = state.items.filter((id) => id !== action.payload);
+    },
+
+    toggleStatus: (state, action) => {
+      state.items = state.items.map((item) =>
+        item.id === action.payload ? { ...item, isDone: !item.isDone } : item
+      );
+    },
+
+    resetList: () => {
+      return initialState;
+    },
   },
 });
