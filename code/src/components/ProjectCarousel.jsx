@@ -6,7 +6,7 @@ const flickityOptions = {
   pageDots: false,
   wrapAround: true,
   freeScroll: true,
-  autoPlay: 6000,
+  // autoPlay: 6000,
 };
 
 const ProjectCarousel = (props) => {
@@ -17,8 +17,6 @@ const ProjectCarousel = (props) => {
         elementType={"div"} // default 'div'
         options={flickityOptions} // takes flickity options {}
         disableImagesLoaded={false} // default false
-        reloadOnUpdate={true} // default false
-        static={true} // default false
       >
         {props.children}
       </Flickity>

@@ -9,7 +9,7 @@ import checkblack from "../assets/checkblack.svg";
 import saveblack from "../assets/saveblack.svg";
 import editblack from "../assets/editblack.svg";
 
-const Task = ({ taskid, projectindex, checkComplete }) => {
+const Task = ({ taskid, projectindex }) => {
   const [editable, setEditable] = useState(false);
   const [newText, setNewText] = useState("");
   const dispatch = useDispatch();
@@ -32,7 +32,6 @@ const Task = ({ taskid, projectindex, checkComplete }) => {
         projectindex: projectindex,
       })
     );
-    setTimeout(checkComplete(), 5);
   };
 
   const deleteTask = () => {
@@ -42,7 +41,6 @@ const Task = ({ taskid, projectindex, checkComplete }) => {
         projectindex: projectindex,
       })
     );
-    setTimeout(checkComplete(), 5);
   };
 
   const saveNewText = () => {
@@ -60,7 +58,6 @@ const Task = ({ taskid, projectindex, checkComplete }) => {
   };
 
   const changingText = (e) => {
-    console.log(e.currentTarget.textContent);
     setNewText(e.currentTarget.textContent);
   };
 

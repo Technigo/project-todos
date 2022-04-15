@@ -28,7 +28,6 @@ export const App = () => {
     <Provider store={store}>
       <BrowserRouter>
         <Header />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/newproject" element={<NewProject />} />

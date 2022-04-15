@@ -22,7 +22,6 @@ const Project = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const [taskName, setTaskName] = useState("");
-  const [allComplete, setAllComplete] = useState(false);
   const id = useParams().id;
   const iconArray = useSelector((store) => store.icons.icons);
   const projectArray = useSelector((store) => store.projects.project);
@@ -33,18 +32,6 @@ const Project = () => {
   );
   let completedTasks = taskList.filter((task) => task.complete === true).length;
   let totalTasks = taskList.length;
-
-  // Check if all tasks are complete !! WHY IS THIS NOT WORKING
-  const checkComplete = () => {
-    if (completedTasks === totalTasks) {
-      // console.log("true", allComplete, completedTasks, "/", totalTasks);
-      setAllComplete(true);
-    } else if (completedTasks !== totalTasks) {
-      // console.log("false", allComplete, completedTasks, "/", totalTasks);
-      setAllComplete(false);
-      console.log(allComplete);
-    }
-  };
 
   // Create unique ID
   let taskId = uniqid("task-");
@@ -61,7 +48,6 @@ const Project = () => {
       })
     );
     setTaskName("");
-    setTimeout(checkComplete(), 5);
   };
 
   const toggleAllTasksComplete = () => {
@@ -70,7 +56,6 @@ const Project = () => {
         projectindex: projectIndex,
       })
     );
-    setTimeout(checkComplete(), 5);
   };
 
   const deleteProject = () => {
@@ -80,7 +65,6 @@ const Project = () => {
       })
     );
     navigate("/");
-    window.location.reload();
   };
 
   if (project) {
@@ -127,16 +111,6 @@ const Project = () => {
           </NewTask>
           {taskList.length === 0 && <NoTasks />}
 
-          {/* All tasks */}
-          {/* {taskList.length > 0 &&
-            taskList.map((task) => (
-              <Task
-                key={task.taskid}
-                taskid={task.taskid}
-                projectindex={projectIndex}
-              />
-            ))} */}
-
           {/* Complete Tasks */}
           {taskList.length > 0 &&
             taskList
@@ -146,7 +120,6 @@ const Project = () => {
                   key={task.taskid}
                   taskid={task.taskid}
                   projectindex={projectIndex}
-                  checkComplete={checkComplete}
                 />
               ))
               .reverse()}
@@ -160,7 +133,6 @@ const Project = () => {
                   key={task.taskid}
                   taskid={task.taskid}
                   projectindex={projectIndex}
-                  checkComplete={checkComplete}
                 />
               ))
               .reverse()}

@@ -30,7 +30,6 @@ const NewProject = () => {
   // Select Color Button
   const selectColor = (event) => {
     chooseColor(event.target.value);
-    // setColorActive(event.target.value);
   };
 
   // Create Project Button
