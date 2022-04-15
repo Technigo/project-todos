@@ -12,14 +12,10 @@ const data = [
 
     {
         id: 1,
-        name: 'Prep the Easter eggs',
+        name: 'Buy eggs',
         done: false,
     },
-    {
-        id: 2,
-        name: 'Do the egg hunt',
-        done: false,
-    },
+    
 ];
 
 const todo = createSlice({
