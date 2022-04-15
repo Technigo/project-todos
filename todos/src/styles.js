@@ -83,8 +83,6 @@ export const Plus = styled.span`
 
 export const AddButton = styled.button`
   padding: 10px;
-  font-weight: 600;
-  color: white;
   cursor: pointer;
   -webkit-appearance: none;
   -webkit-border-radius: none;
