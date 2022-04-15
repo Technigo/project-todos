@@ -7,6 +7,12 @@ import tasks from 'reducers/Tasks'
 
 import CustomButtons from 'components/Buttons'
 
+const devices = {
+    mobile: '(min-width: 375px)',
+    tablet: '(min-width: 768px)',
+    desktop: '(min-width: 1024px)'
+}
+
 const TodoContainer = styled.section`
 display: flex;
 flex-direction: column;
@@ -24,6 +30,14 @@ margin: 10px 5px;
 width: 80%;
 display: flex;
 flex-direction: column;
+
+@media ${devices.tablet} {
+    width: 60%;
+}
+
+@media ${devices.desktop} {
+    width: 50%;
+}
 `
 
 const TodoText = styled.p`

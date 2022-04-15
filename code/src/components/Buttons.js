@@ -4,9 +4,11 @@ import styled from 'styled-components'
 
 import tasks from 'reducers/Tasks'
 
+
 const ButtonContainer = styled.div`
 display: flex;
 justify-content: flex-start;
+
 `
 const CheckallButton = styled.button`
 background-color: #FFF;
@@ -29,7 +31,7 @@ cursor: pointer;
 `
 const RemoveAllButton = styled.button`
 background-color: #FFF;
-border: 1px solid red;
+border: 1px solid #E9190F;
 width: 5rem;
 padding: 5px;
 margin: 5px;

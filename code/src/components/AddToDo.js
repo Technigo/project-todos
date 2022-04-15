@@ -5,8 +5,16 @@ import styled from 'styled-components'
 import uniqid from 'uniqid'
 
 import tasks from 'reducers/Tasks'
-import styledComponents from "styled-components";
 
+const devices = {
+    mobile: '(min-width: 375px)',
+    tablet: '(min-width: 768px)',
+    desktop: '(min-width: 1024px)'
+}
+
+const ContainerInput = styled.section`
+margin: auto;
+`
 const Form = styled.form`
 height: 50px;
 width: 80%;
@@ -16,6 +24,10 @@ background-color: #FFF;
 display: flex;
 justify-content: center;
 align-items: center;
+
+@media ${devices.tablet} {
+    height: 65px;
+}
 `
 
 const TextInput = styled.input`
@@ -26,8 +38,10 @@ flex: 1;
 &:focus{
     outline:none;
 }
+@media ${devices.tablet} {
+    font-size: 22px;
+}
 `
-
 const SubmitButton = styled.button`
 margin-right: 8px;
 background-color: #99e2b4;
@@ -36,6 +50,12 @@ border-radius: 10px;
 height: 30px;
 width: 50px;
 cursor: pointer;
+
+@media ${devices.tablet} {
+    width; 60px;
+    height: 40px;
+    margin-right: 25px;
+}
 `
 
 
@@ -63,11 +83,12 @@ const AddTodo = () => {
 
     
     return (
-        <section>
+        <ContainerInput>
             <Form onSubmit={onFormSubmit}>
                 <TextInput 
                 type='text'
                 placeholder="Add new todo here..."
+
                 value={toDo}
                 onChange={(event) =>setToDo(event.target.value)}
                 />
@@ -77,8 +98,7 @@ const AddTodo = () => {
                 Add!
                 </SubmitButton>
             </Form>
-            
-        </section>
+        </ContainerInput>
     )
 }
 

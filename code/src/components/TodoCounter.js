@@ -2,19 +2,40 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
+const devices = {
+    mobile: '(min-width: 375px)',
+    tablet: '(min-width: 768px)',
+    desktop: '(min-width: 1024px)'
+}
 
 const CounterUncompleted = styled.p`
 text-align: center;
 font-weight: 500;
-font-size: 24px;
+font-size: 18px;
 padding: 8px;
 margin: 10px;
+
+@media ${devices.tablet} {
+    font-size: 20px;
+}
+
+@media ${devices.tablet} {
+    font-size: 24px;
+}
 `
 const CounterFinished = styled.p`
 text-align: center;
 font-weight: 500;
-font-size: 24px;
+font-size: 18px;
 margin: 10px;
+
+@media ${devices.tablet} {
+    font-size: 20px;
+}
+
+@media ${devices.tablet} {
+    font-size: 24px;
+}
 `
 
 const FinishedText = styled.p`
