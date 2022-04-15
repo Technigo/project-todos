@@ -6,6 +6,7 @@ import todos from "reducers/todos";
 
 const Deletebutton = styled.button `
 decoration:none;
+background:none;
 border:none;
 padding: 8px;
 border-radius:2px;
@@ -15,7 +16,7 @@ top: 10px;
 right: 10px;
 `
 
-const CheckBox = styled.label`
+const CheckBox = styled.input`
 position:absolute;
 top: 10px;
 left: 10px;
@@ -63,21 +64,18 @@ return (
 {todoList.map((todoItem, todoIndex) => (
 <Taskbox key={todoItem.id}>
 <Task>{todoItem.task}</Task>
-<CheckBox>
-   
-    <input 
+<CheckBox
     type="checkbox" 
     id={todoItem.id}
     checked={todoItem.isComplete}
     onChange={() => onToDoToggle(todoItem.id)}
     />
-     <label>Complete
-    </label>
-</CheckBox>
+<label htmlFor={todoItem.id}>Done?</label>
+
 
 <Deletebutton onClick={() => onToDoDelete(todoIndex)}>
     <span role="img" aria-label="delete">
-    REMOVE
+    ✖️
         </span>
 </Deletebutton>
 </Taskbox>

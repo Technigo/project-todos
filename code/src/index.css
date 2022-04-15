@@ -68,3 +68,32 @@ font-family: 'Alata', sans-serif;
   background:#fff;
 }
 
+
+
+[type="checkbox"]:checked + label::after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:18px;
+  height:18px;
+background-image: url("assets/checkmark.png");
+background-size: contain;
+transform:scale(1);
+opacity:1;
+transition:all .3s ease;
+}
+
+[type="checkbox"]:not(:checked) + label::after{
+  content:"";
+  position:absolute;
+  left:0;
+  top:0;
+  width:18px;
+  height:18px;
+
+background-size: contain;
+transform:scale(0);
+opacity:0;
+
+}
