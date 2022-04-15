@@ -23,7 +23,6 @@ left: 10px;
 
 const Taskcontainer = styled.section `
 margin:20px;
-background-color:blue;
 padding:10px;
 `
 const Taskbox = styled.div`
@@ -65,13 +64,14 @@ return (
 <Taskbox key={todoItem.id}>
 <Task>{todoItem.task}</Task>
 <CheckBox>
-    <label>Completed tasks
+   
     <input 
     type="checkbox" 
     id={todoItem.id}
     checked={todoItem.isComplete}
     onChange={() => onToDoToggle(todoItem.id)}
     />
+     <label>Complete
     </label>
 </CheckBox>
 

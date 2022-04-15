@@ -60,7 +60,7 @@ return (
     type="text"
     value={inputValue}
     onChange={(e) => setInputValue(e.target.value)}
-    placeholder="   TYPE NEW TO DO..."
+    placeholder="ADD NEW TO DO..."
     />
 </TaskLabel>
 <InputButton type="submit">+++ADD TO MY LIST</InputButton>
