@@ -6,7 +6,7 @@ import uniqid from 'uniqid'
 import todos from "reducers/todos";
 
 
-const WrappAll = styled.div`
+export const WrappAll = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -18,13 +18,13 @@ display: flex;
 flex-direction: column;
 `
 
-const InputLabel = styled.p`
-margin-bottom: 8px;
-font-size: 14px;
-font-weight: 300;
-font-style: italic;
+// const InputLabel = styled.p`
+// margin-bottom: 8px;
+// font-size: 14px;
+// font-weight: 300;
+// font-style: italic;
 
-`
+// `
 const TitleInput = styled.input`
 width: 70vw;
 font-family: 'Jost', sans-serif;
@@ -38,17 +38,20 @@ background-color: rgb(228, 221, 203);
 &:focus {
   outline:none;
 }
+
+@media (min-width: 768px) {
+font-size: 20px;
+width: 50vw;
+}
 `
 
 const ExtraInput = styled(TitleInput)`
 margin-top: 10px;
-
-
 `
 
 const AddButton = styled.button`
 font-family: 'Jost', sans-serif;
-margin: 20px 0 40px 0;
+margin: 20px 0 10px 0;
 background: none;
 border: 1px solid black;
 border-radius: 5px;
@@ -58,7 +61,14 @@ align-self: center;
 cursor: pointer;
 
 &:hover {
-  background-color: #AD6122;
+  background-color: rgb(207, 219, 204);
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  width: 25vw;
+  font-size: 16px;
+  
 }
 
 `
@@ -95,7 +105,7 @@ const AddToDo = () => {
    
     <FormContainer onSubmit={onFormSubmit}> 
       <label>
-        <InputLabel>Add: &nbsp;</InputLabel>
+        {/* <InputLabel>Add: &nbsp;</InputLabel> */}
       <TitleInput required type="text" placeholder="Title" value={inputValue} 
       onChange={(e) => setInputValue(e.target.value)} />
       </label>

@@ -9,6 +9,7 @@ import todos from 'reducers/todos'
 import ListItem from 'components/ToDoList'
 import AddToDo from 'components/AddToDo'
 import Header from 'components/Header'
+import TasksCounter from 'components/TasksCounter'
 
 const reducer = combineReducers({
   todos: todos.reducer
@@ -24,10 +25,12 @@ justify-content: center;
 `
 
 const AllComponents = styled.div`
-border: 2px solid rgb(228, 221, 203);
+/* border: 2px solid rgb(228, 221, 203); */
 padding-top: 40px;
 width: 100%;
 min-height: 100vh;
+/* border: 4px solid rgba(173, 97, 34, 0.32); */
+border: 4px solid rgb(207, 219, 204);
 border-radius: 70px 70px 0 0;
 background-color: rgb(228, 221, 203);
 
@@ -48,6 +51,7 @@ export const App = () => {
       <AllComponents>
       <Header />
       <AddToDo />
+      <TasksCounter />
       <ListItem />
       </AllComponents>
       </Main>

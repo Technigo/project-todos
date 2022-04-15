@@ -11,6 +11,11 @@ const WrapperAllNotes = styled.section`
   margin-bottom: 10px;
   justify-content: center;
   align-items: center;
+  
+
+  @media (min-width: 768px) {
+    
+  }
 `;
 
 const ListedItems = styled.article`
@@ -34,11 +39,14 @@ const NoteTitle = styled.h2`
   text-decoration: underline;
   color: #ad6122;
   white-space: pre-wrap;
+  overflow-wrap: break-word;
 `;
 
 const Description = styled.p`
   font-size: 18px;
   margin: 0 0 10px 0;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
 `;
 
 const Date = styled.p`
@@ -61,14 +69,22 @@ const CheckLabel = styled.label`
   right: 0;
   bottom: 20px;
   color: #606060;
-
 `;
+
+const StyledCheckBox = styled.input`
+/* appearance: none; */
+cursor: pointer;
+display: inline-block;
+color: #fff;
+`
+
+
 
 const DeleteButton = styled.button`
   position: absolute;
   font-family: 'Jost', sans-serif;
   color: #606060;
-  top: 5px;
+  top: 12px;
   color: blue;
   font-size: 12px;
   right: 0;
@@ -110,7 +126,7 @@ const ListItem = () => {
             <Date>{date}</Date>
               <CheckLabel>
                 Done deal:
-                <input
+                <StyledCheckBox
                   type="checkbox"
                   checked={newNote.isDone}
                   onChange={() => onToDoToggle(newNote.id)}
