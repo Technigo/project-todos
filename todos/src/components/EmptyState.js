@@ -9,7 +9,7 @@ import {
 const EmptyState = () => {
   return (
     <EmptyStateWrapper>
-      <p><Folder role="img" aria-label="folder">📁</Folder></p>
+      <Folder><span role="img" aria-label="folder">📁</span></Folder>
       <SubHeading>Hurray</SubHeading>
       <p>There's nothing left to do!</p>
     </EmptyStateWrapper>

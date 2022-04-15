@@ -47,10 +47,9 @@ export const EmptyStateWrapper = styled.section`
   padding: 60px 15px;
 `;
 
-export const Folder = styled.span`
+export const Folder = styled.p`
   background-color: #995cfa;
   padding: 10px 20px;
-  width: 50px;
   border-radius: 50%;
   font-size: 60px;
 `;
