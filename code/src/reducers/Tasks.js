@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 //Keep the array in a separate variable for cleaner code
-const data = []
+//const data = []
 
 
 const tasks = createSlice ({
     name: 'tasks',
     initialState: {
-        taskList: data
+        taskList: []
     },
     reducers: {
         toggleTodo: (store, action) => {
@@ -31,7 +31,7 @@ const tasks = createSlice ({
         },
         checkAllTodo: (store) => {
             store.taskList.forEach((task) =>{
-                    task.isChecked = true
+                task.isChecked = true
                 })
         },
         unCheckTodo: (store) => {

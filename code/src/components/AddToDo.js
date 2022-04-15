@@ -1,9 +1,43 @@
 import React from "react";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
+import styled from 'styled-components'
 import uniqid from 'uniqid'
 
 import tasks from 'reducers/Tasks'
+import styledComponents from "styled-components";
+
+const Form = styled.form`
+height: 50px;
+width: 80%;
+margin: 30px;
+border-radius: 12px;
+background-color: #FFF;
+display: flex;
+justify-content: center;
+align-items: center;
+`
+
+const TextInput = styled.input`
+background: none;
+border: none;
+margin-left: 12px;
+flex: 1;
+&:focus{
+    outline:none;
+}
+`
+
+const SubmitButton = styled.button`
+margin-right: 8px;
+background-color: #99e2b4;
+border: none;
+border-radius: 10px;
+height: 30px;
+width: 50px;
+cursor: pointer;
+`
+
 
 const AddTodo = () => {
     const [toDo, setToDo] = useState('')
@@ -25,25 +59,23 @@ const AddTodo = () => {
         setToDo('')
     }
     
-    const onRemoveAll = () => {
-        dispatch(tasks.actions.deleteAllTodos())
-    }
+    
 
     
     return (
         <section>
-            <form onSubmit={onFormSubmit}>
-                <label>
-                    New Todo: &nbsp;
-                <input 
+            <Form onSubmit={onFormSubmit}>
+                <TextInput 
                 type='text'
+                placeholder="Add new todo here"
                 value={toDo}
                 onChange={(event) =>setToDo(event.target.value)}
                 />
-                </label>
-                <button type='submit'>Add New Todo!</button>
-            </form>
-            <button onClick={onRemoveAll}>Clear all todos</button>
+                <SubmitButton type='submit'>
+                    <span role='img' aria-label='plussign'>➕</span>
+                </SubmitButton>
+            </Form>
+            
         </section>
     )
 }

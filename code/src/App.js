@@ -5,7 +5,6 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import tasks from 'reducers/Tasks'
 
 import { Header } from 'components/Header'
-import TodoList from 'components/TodoList'
 import AddTodo from 'components/AddToDo'
 import TodoCounter from 'components/TodoCounter'
 
@@ -25,9 +24,8 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header/>
-      <TodoList/>
-      <TodoCounter/>
       <AddTodo/>
+      <TodoCounter/>
     </Provider>
   )
 }
