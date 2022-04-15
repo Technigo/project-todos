@@ -5,12 +5,11 @@ import styled from "styled-components";
 import todos from "reducers/todos";
 
 const TodoItem = styled.article`
-  border: 1px solid #000000;
+  border: 1px solid #e9ebe6;
   padding: 10px;
   margin-bottom: 5px;
   border-radius: 10px;
   position: relative;
-  background-color: yellow;
 `;
 
 const DeleteButton = styled.button`
@@ -20,6 +19,7 @@ const DeleteButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
+  font-size: 18px;
 `;
 
 const TodoList = () => {
@@ -39,7 +39,7 @@ const TodoList = () => {
     <section>
       {todoList.map((todoItem, todoIndex) => (
         <TodoItem key={todoItem.id}>
-          <h2>{todoItem.Todo}</h2>
+          <h4>{todoItem.Todo}</h4>
           <label>
             Done:
             <input

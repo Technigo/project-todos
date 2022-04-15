@@ -5,6 +5,26 @@ import uniqid from "uniqid";
 
 import todos from "reducers/todos";
 
+const SubmitButton = styled.button`
+  curson: pointer;
+  height: 30px;
+  width: 60px;
+  font-family: "Kalam", cursive;
+  font-weight: 80px;
+  border: none;
+`;
+
+const Inputfield = styled.div`
+  background-color: #e9ebe6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 5px;
+  border-radius: 10px;
+  margin: auto;
+`;
+
 const AddTodo = () => {
   const [inputValue, setInputvalue] = useState("");
 
@@ -24,18 +44,21 @@ const AddTodo = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <label>
-        New things to do : &nbsp;
-        <input
-          type="text"
-          required
-          value={inputValue}
-          onChange={(e) => setInputvalue(e.target.value)}
-        />
-      </label>
-      <button type="submit">Add thing to do</button>
-    </form>
+    <Inputfield className="inputwrapper">
+      <form onSubmit={onFormSubmit}>
+        <label>
+          &nbsp;
+          <input
+            type="text"
+            required
+            value={inputValue}
+            onChange={(e) => setInputvalue(e.target.value)}
+          />
+          &nbsp;
+        </label>
+        <SubmitButton type="submit">Add</SubmitButton>
+      </form>
+    </Inputfield>
   );
 };
 
