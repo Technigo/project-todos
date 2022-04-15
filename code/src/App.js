@@ -15,7 +15,6 @@ const Wrapper = styled.section`
 
   @media (min-width:667px) {
     width: 500px;
-    
   }
 `
 

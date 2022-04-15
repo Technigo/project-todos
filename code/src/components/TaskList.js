@@ -36,6 +36,10 @@ const RemoveAllBtn = styled.button`
     border: none;
     border-style: outset;
     margin-left: 125px;
+
+    @media (min-width:667px) {
+        margin-left: 215px; 
+      }
 `
 
 const TaskList = () => {
