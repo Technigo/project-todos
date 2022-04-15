@@ -6,13 +6,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: lightgoldenrodyellow;
+  text-align: center;
 }
 
 .counter-total {
 font-size: 20px;
 font-family: monospace;
 color: purple; 
-
 position:relative;
 border-radius: 8px;
 padding: 18px;
@@ -22,6 +22,7 @@ justify-content: center;
 }
 
 .counter-left {
+  display: flex;
   font-size: 25px;
   font-family: monospace;
   padding-top: 40px;
@@ -32,12 +33,14 @@ justify-content: center;
 form {
 font-size: 20px;
 padding: 18px;
+max-width: 400px;
 border-radius: 8px;
 color: purple;  
 border:solid 2px;
 margin-top:10px;
 font-family: monospace;
 display: flex;
+box-shadow: 5px 5px #000;
 justify-content:flex-start;
 background-image: linear-gradient(pink, yellow);
 
@@ -69,40 +72,32 @@ padding-top:50px;
 
 }
 
+@media screen and (min-width: 1024px) {    
 
-
-
-
-
- /* [type="checkbox"] {
-opacity: 20px;
-
-}
-[type="checkbox"] + label{
-position: relative;
-cursor: pointer;
+h1 { 
+ justify-content: flex-start;
 
 }
 
-[type="checkbox"] + label::before{
-  content: "";
-  position: absolute;
-  left:0;
-  top:0;
-  width: 18px;
-  height: 18px;
-  outline: 2px solid #aaa;
-  background: white;
+.date {
 
-
+  justify-content: flex-start;
 }
 
-[type="checkbox"]:checked + label::before{
-  content: "";
-  position: absolute;
-  left:0;
-  top:0;
-  width: 18px;
-  height: 18px;
-  background-size: contain;
-}  */
+form {
+
+  justify-content: flex-start;
+  max-width: 380px;
+}
+
+.counter-left {
+
+justify-content: flex-start;
+}
+
+.counter-total {
+
+  justify-content: flex-start;
+}
+
+}

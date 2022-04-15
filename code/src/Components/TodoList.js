@@ -8,17 +8,20 @@ const TodoItem = styled.article`
 padding: 8px;
 border-radius: 8px;
 color: purple;  
+max-width: 400px;
 margin-top:25px;
 margin-bottom: 15px;
 position:relative;
 border:solid 2px;
 font-size: 15px;
 font-family: monospace;
-
+box-shadow: 5px 5px #000;
     &:hover {
 		background-image: linear-gradient(pink, yellow);
 }
 ` ;
+
+
 
 const CheckBox = styled.input`
 	position: relative;
