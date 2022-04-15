@@ -1,13 +1,6 @@
 # Project Todos
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Week 14 project at the Technigo Bootcamp. We were supposed to build a Todo appplication with Redux. You should be able to add tasks, delete one or more tasks and have a counter that counts the tasks in some way.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://sofiestodolist.netlify.app/
