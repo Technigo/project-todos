@@ -42,9 +42,9 @@ width: 100%
 .form-input {
   border: 3px solid black;
   border-radius: 10px;
- width: 20rem;
+ width: 15rem;
   height: 4rem;
-  margin-left: 50px;
+margin: 10px;
   margin-bottom : 30px;
 }
 .input{
@@ -108,6 +108,8 @@ input:checked[type="checkbox"]:before{
 
   .task-list{
     display: flex;
+    flex-wrap: wrap;
+    justify-content: safe;
    border: 10px solid black;
     flex-direction: column; 
     border-radius: 20px;
@@ -152,13 +154,22 @@ display: flex;
 flex-direction: column;
     margin: 10px;
   }
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
    .task-list{
      width: 30rem;
+     
    }
+   .start-page img{
+    height: 100vh;
+    width: 100%
+    }
   }
   @media only screen and (min-width: 1024px) {
    .task-list{
      width: 50rem;
    }
+   .start-page img{
+    height: 100vh;
+    width: 60%
+    }
   }
