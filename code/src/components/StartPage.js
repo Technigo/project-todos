@@ -30,7 +30,6 @@ align-items: center;
     width: 1025px;
 }
 `
-
 const HeaderImage = styled.img`
 width: 170px;
 margin-top: 35px;
