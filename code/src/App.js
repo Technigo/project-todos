@@ -9,13 +9,12 @@ import { TodoList } from 'components/TodoList'
 import { Form } from 'components/Form'
 
 import { list } from 'reducers/list'
-// import { todos } from 'reducers/todos'
 
 const StyledApp = styled.div `
 .post-it {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   background-color: #FFFF99;
   width: 50%;
   margin: auto;
@@ -26,7 +25,6 @@ const StyledApp = styled.div `
 
 const reducer = combineReducers({
   list: list.reducer,
-  // todos: todos.reducer
 })
 
 const store = configureStore({ reducer: reducer })
