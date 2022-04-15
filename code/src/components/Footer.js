@@ -32,7 +32,7 @@ line-height: 0;
 
 const Link = styled.a`
 text-decoration: none;
-color: #b51918;
+color: #0074BA;
 `
 
 const Footer = () => {
