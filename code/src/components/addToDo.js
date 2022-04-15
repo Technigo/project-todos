@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import uniqid from "uniqid";
+import moment from "moment";
 import styled from "styled-components";
 
 import todos from "reducers/todos";
@@ -49,8 +50,11 @@ dispatch(todos.actions.addItem(newToDo));
 setInputValue("");
 };
 
+const date = moment().format("MMMM Do YYYY")
+
 return (
     <AddTask onSubmit={onFormSubmit}>
+        <p>{date}</p>
 <TaskLabel>
     <input
     type="text"

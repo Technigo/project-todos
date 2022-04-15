@@ -59,6 +59,8 @@ return (
         <span>tasks completed</span>
     </div>
 
+
+
 {todoList.map((todoItem, todoIndex) => (
 <Taskbox key={todoItem.id}>
 <Task>{todoItem.task}</Task>
@@ -66,6 +68,7 @@ return (
     <label>Completed tasks
     <input 
     type="checkbox" 
+    id={todoItem.id}
     checked={todoItem.isComplete}
     onChange={() => onToDoToggle(todoItem.id)}
     />
@@ -79,6 +82,7 @@ return (
 </Deletebutton>
 </Taskbox>
 ))}
+<div> Done: &nbsp; {todoList.length}</div>
 </Taskcontainer>
 );
 };
