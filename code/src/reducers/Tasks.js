@@ -1,23 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const data = [
-  {
-    id: 'lahjs275234x',
-    description: 'Clean',
-    isComplete: false
-  },
-  {
-    id: 'lahjs27kjahs24x',
-    description: 'Dust',
-    isComplete: false
-  }
-]
-
 // have to have: name, initial state, list of actions
 const tasks = createSlice({
   name: 'tasks',
   initialState: {
-    items: [data]
+    items: []
   },
   reducers: {
     toggleTasks: (store, action) => {

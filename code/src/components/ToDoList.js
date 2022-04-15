@@ -4,6 +4,40 @@ import styled, { keyframes } from 'styled-components'
 
 import tasks from 'reducers/tasks'
 
+const ToDoList = () => {
+  const items = useSelector((store) => store.tasks.items)
+  const dispatch = useDispatch()
+
+  const onToggleTask = (id) => {
+    dispatch(tasks.actions.toggleTasks(id))
+  }
+
+  return (
+    <TodoContainer>
+      {items.map((task) => (
+        <TodoList key={task.id}>
+          <CheckboxContainer>
+            <Label>
+              <Input
+                type="checkbox"
+                checked={task.isComplete}
+                onChange={() => onToggleTask(task.id)}
+              />
+              <Indicator />
+            </Label>
+          </CheckboxContainer>
+          <TodoTask isComplete={task.isComplete}>{task.description}</TodoTask>
+          <DoneBtn onClick={() => dispatch(tasks.actions.removeTask(task.id))}>
+            X
+          </DoneBtn>
+        </TodoList>
+      ))}
+    </TodoContainer>
+  )
+}
+
+export default ToDoList
+
 const CheckboxContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -97,37 +131,3 @@ const DoneBtn = styled.button`
   font-family: 'rubik';
   font-size: 20px;
 `
-
-const ToDoList = () => {
-  const items = useSelector((store) => store.tasks.items)
-  const dispatch = useDispatch()
-
-  const onToggleTask = (id) => {
-    dispatch(tasks.actions.toggleTasks(id))
-  }
-
-  return (
-    <TodoContainer>
-      {items.map((task) => (
-        <TodoList key={task.id}>
-          <CheckboxContainer>
-            <Label>
-              <Input
-                type="checkbox"
-                checked={task.isComplete}
-                onChange={() => onToggleTask(task.id)}
-              />
-              <Indicator />
-            </Label>
-          </CheckboxContainer>
-          <TodoTask isComplete={task.isComplete}>{task.description}</TodoTask>
-          <DoneBtn onClick={() => dispatch(tasks.actions.removeTask(task.id))}>
-            X
-          </DoneBtn>
-        </TodoList>
-      ))}
-    </TodoContainer>
-  )
-}
-
-export default ToDoList
