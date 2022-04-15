@@ -3,13 +3,13 @@ import { createSlice } from '@reduxjs/toolkit'
 const data = [
     {
         id: 'sfsegnege',
-        name: 'Write my first task',
-        isDone: false,
+        text: 'Write my first task',
+        complete: false,
     },
     {
         id: 'egvkmeobe',
-        name: 'Write my second task',
-        isDone: false,
+        text: 'Write my second task',
+        complete: false,
     },
 ]
 
@@ -19,12 +19,12 @@ const tasks = createSlice({
         items: data,
     },
     reducers: {
-        toggleItem: (store, action) => {
+        toggleTask: (store, action) => {
         
         // v1 - Mutability
         store.items.forEach(items => {
             if (items.id === action.payload) {
-                items.isDone = !items.isDone
+                items.complete = !items.complete
             }
         })
 
@@ -33,7 +33,7 @@ const tasks = createSlice({
         //     if (item.id === action.payload) {
         //         const updatedItem = {
         //             ...item,
-        //             isDone: !item.isDone
+        //             complete: !item.complete
         //         }
 
         //         return updatedItem
@@ -44,7 +44,7 @@ const tasks = createSlice({
 
         // store.items = updatedItems
       },
-      deleteItem: (store, action) => {
+      deleteTask: (store, action) => {
         // v1 - Mutability
         store.items.splice(action.payload, 1)
 
@@ -53,7 +53,7 @@ const tasks = createSlice({
         // store.items = updatedItems
 
       },
-      addItem: (store, action) => {
+      addTask: (store, action) => {
         // v1 - Mutability
         store.items.push(action.payload)
 
