@@ -4,6 +4,9 @@ import { listSlice } from "reducers/listSlice";
 
 const TaskList = () => {
   const tasks = useSelector((store) => store.listSlice.items);
+  const completedTasks = useSelector((store) =>
+    store.listSlice.items.filter((item) => item.isDone)
+  );
   const dispatch = useDispatch();
 
   return (
@@ -14,13 +17,30 @@ const TaskList = () => {
             id={task.id}
             type="checkbox"
             checked={task.isDone}
-            onChange={() => {
-              dispatch(listSlice.actions.toggleStatus(task.id));
-            }}
+            onChange={() => dispatch(listSlice.actions.toggleStatus(task.id))}
           />
           <label htmlFor={task.id}>{task.description}</label>
+          <button
+            type="button"
+            onClick={() => {
+              dispatch(listSlice.actions.removeTask(task.id));
+            }}
+          >
+            -
+          </button>
         </div>
       ))}
+      <button
+        type="button"
+        onClick={() => {
+          dispatch(listSlice.actions.resetList());
+        }}
+      >
+        Clear list
+      </button>
+      <p>
+        {completedTasks.length}/{tasks.length} tasks completed
+      </p>
     </>
   );
 };
