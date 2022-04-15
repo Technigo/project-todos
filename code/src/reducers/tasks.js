@@ -3,14 +3,14 @@ import { createSlice } from '@reduxjs/toolkit'
 const data = [
     {
         id: '55555',
-        name: 'Bulbasaur',
+        name: 'Example Todo',
         isDone: false,
     },
-    {
-        id: '666666',
-        name: 'Charmander',
-        isDone: false,
-    },
+    // {
+    //     id: '666666',
+    //     name: 'Charmander',
+    //     isDone: false,
+    // },
 ]
 
 const tasks = createSlice({

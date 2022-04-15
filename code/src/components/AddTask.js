@@ -42,6 +42,14 @@ const AddButton = styled.button`
     }
 `;
 
+const TextBox = styled.input`
+width: 9rem; 
+border: none;
+border-bottom: 2px solid rgb(253, 93, 93); 
+padding: 0.3rem;
+margin-bottom: 1.5rem; 
+`
+
 const AddTask = () => {
     const [inputValue, setInputValue] = useState("")
 
@@ -68,7 +76,7 @@ const AddTask = () => {
     <Container>
             <form onSubmit={onFormSubmit}>
                 <label>
-                    <input type="text"
+                    <TextBox type="text"
                         value={inputValue}
                         onChange={(event) => setInputValue(event.target.value)}
                         placeholder='Write short task here...'
