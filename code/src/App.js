@@ -28,8 +28,10 @@ store.subscribe(() => {
 export const App = () => {
 	return (
 		<Provider store={store}>
-			<Header />
-			<SelectStart />
+			<section className='app-wrapper'>
+				<Header />
+				<SelectStart />
+			</section>
 		</Provider>
 	)
 }

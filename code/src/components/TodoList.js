@@ -49,9 +49,15 @@ const Container = styled.section`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	position: relative;
 `
 
-const TaskContainerWrapper = styled.form`
+const Wrapper = styled.div`
+	display: flex;
+	position: relative;
+`
+
+const TaskContainerWrapper = styled.div`
 	display: flex;
 	position: relative;
 `
@@ -85,10 +91,6 @@ const InputText = styled.label`
 	align-self: end;
 	width: 230px;
 	overflow-wrap: break-word;
-
-	.completed {
-		text-decoration: line-through;
-	}
 `
 
 const TodoList = () => {
@@ -135,18 +137,20 @@ const TodoList = () => {
 				{items.map((item) => (
 					<TaskContainer key={item.id}>
 						<TaskContainerWrapper>
-							<input
-								type='checkbox'
-								name='tasks'
-								checked={item.isCompleted}
-								onChange={() => onToggleTodo(item.id)}
-							/>
-							<InputText
-								onChange={(e) => onInputChange(e, item.editable)}
-								className={`${item.isCompleted ? 'completed' : ''}`}
-							>
-								{item.text}
-							</InputText>
+							<Wrapper>
+								<input
+									type='checkbox'
+									name='tasks'
+									checked={item.isCompleted}
+									onChange={() => onToggleTodo(item.id)}
+								/>
+								<InputText
+									onChange={(e) => onInputChange(e, item.editable)}
+									className={`${item.isCompleted ? 'completed' : ''}`}
+								>
+									{item.text}
+								</InputText>
+							</Wrapper>
 							<ListBtn onClick={() => onUpdateTodo(item.id)}>
 								<img src={updateBtn} alt='update task'></img>
 							</ListBtn>

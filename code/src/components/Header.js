@@ -5,6 +5,8 @@ import Logo from '../assets/logo.svg'
 const HeaderContainer = styled.header`
 	background: var(--clr-main);
 	color: var(--clr-secondary);
+	border-top-left-radius: 30px;
+	border-top-right-radius: 30px;
 	display: flex;
 	justify-content: center;
 	padding-top: 2em;

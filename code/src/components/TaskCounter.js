@@ -7,8 +7,8 @@ const CounterTask = styled.p`
 	font-family: 'Imprima';
 	color: var(--clr-secondary);
 	font-weight: 300;
-	text-align: center;
-	max-width: 32ch;
+	align-self: flex-start;
+	max-width: 33ch;
 	margin: 0.5em 1.5em 1.5em;
 `
 
@@ -22,11 +22,7 @@ const TaskCounter = () => {
 			if (items.length === tasksDone.length) {
 				return 'Well done! All tasks are done. Take a well deserved break or add more tasks'
 			} else {
-				if (items.length === 1) {
-					return `You have ${items.length} task in your list and you have done ${tasksDone.length} of them.`
-				} else {
-					return `You have ${items.length} tasks in your list and you have done ${tasksDone.length} of them.`
-				}
+				return `TODO: ${tasksDone.length} of ${items.length} done`
 			}
 		} else {
 			return `Let's get started by adding some tasks!`

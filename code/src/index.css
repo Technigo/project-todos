@@ -7,6 +7,13 @@
 }
 
 body {
+	display: flex;
+	justify-content: center;
+	background: var(--clr-gray);
+	background-image: url('../src/assets/hearts.jpg');
+	/* background-image: url('../src/assets/background.jpg'); */
+	background-repeat: no-repeat;
+	background-size: cover;
 	margin: 0;
 	letter-spacing: 1.1px;
 	font-family: 'Imprima', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -16,6 +23,20 @@ body {
 
 code {
 	font-family: 'Imprima', 'Ubuntu', sans-serif;
+}
+
+.app-wrapper {
+	width: 360px;
+	margin: 2em 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+@media (min-width: 667px) {
+	.app-wrapper {
+		width: 500px;
+	}
 }
 
 h1 {
@@ -33,8 +54,11 @@ main {
 	flex-direction: column;
 	align-items: center;
 	background: var(--clr-main);
-	height: 100vh;
+	min-height: 80vh;
+	padding-bottom: 2em;
 	overflow: scroll;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
 }
 
 .input-wrapper {
@@ -69,14 +93,14 @@ input[type='checkbox'] {
 	cursor: pointer;
 }
 
-input[type='checkbox']:checked + label::after {
-	content: '✔';
-	position: absolute;
-	top: -5px;
-	left: 0;
+input[type='checkbox']:checked {
+	content: '';
+	display: inline-block;
+	background-image: url('../src/assets/checkmark.svg');
+	background-repeat: no-repeat;
 }
 
 .completed {
 	text-decoration: line-through;
-	color: red;
+	color: var(--clr-gray) !important;
 }
