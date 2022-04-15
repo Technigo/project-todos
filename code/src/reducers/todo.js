@@ -4,19 +4,19 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const data = [
     {
-        id: 1,
+        id: 0,
         name: 'Buy sweets',
         done: false,
     },
 
 
     {
-        id: 2,
+        id: 1,
         name: 'Prep the Easter eggs',
         done: false,
     },
     {
-        id: 3,
+        id: 2,
         name: 'Do the egg hunt',
         done: false,
     },

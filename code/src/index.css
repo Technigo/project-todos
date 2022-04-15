@@ -46,6 +46,8 @@ background-image: linear-gradient(pink, yellow);
 button {
 font-size: 15px;
 border-radius: 5px;  
+background-color: lightgoldenrodyellow;
+margin-left: 20px;
 
 }
 

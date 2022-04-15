@@ -34,7 +34,7 @@ const AddTodo = () => {
                     onChange={(e) => setInputValue(e.target.value)}
                 />
             </label>
-            <button type="submit">Submit</button>
+            <button type="submit">ADD</button>
         </form>
 
     );
