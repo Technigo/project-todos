@@ -42,7 +42,6 @@ font-size: 15px;
 -webkit-appearance: none;
 -moz-appearance: none;
 -webkit-border-radius: none;
-appearance: none;
 `
 
 const IntroImage = styled.img`
@@ -73,7 +72,6 @@ const IntroPage = () => {
   
             <IntroButton onClick={onStart}>Let's get this started</IntroButton>
           
-    
         </Container>
     )
 }
