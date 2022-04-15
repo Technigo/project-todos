@@ -7,6 +7,7 @@ import tasks from 'reducers/Tasks'
 import { Header } from 'components/Header'
 import AddTodo from 'components/AddToDo'
 import TodoCounter from 'components/TodoCounter'
+import TodoList from 'components/TodoList'
 
 
 //Creating the pocket (combined all slices)
@@ -26,6 +27,7 @@ export const App = () => {
       <Header/>
       <AddTodo/>
       <TodoCounter/>
+      <TodoList/>
     </Provider>
   )
 }

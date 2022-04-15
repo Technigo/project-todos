@@ -20,7 +20,7 @@ const DateContainer = styled.div`
 `
 
 const HeaderText = styled.div`
-font-size: 20px;
+font-size: 17px;
 text-transform: uppercase;
 `
 

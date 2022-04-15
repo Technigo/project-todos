@@ -7,8 +7,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #D8F3DC;
   width: 100vw;
-  display: grid;
-  place-items: center;
+  height: 100vh;
 }
 
 code {

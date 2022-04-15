@@ -10,7 +10,7 @@ import styledComponents from "styled-components";
 const Form = styled.form`
 height: 50px;
 width: 80%;
-margin: 30px;
+margin-left: 45px;
 border-radius: 12px;
 background-color: #FFF;
 display: flex;
@@ -67,14 +67,14 @@ const AddTodo = () => {
             <Form onSubmit={onFormSubmit}>
                 <TextInput 
                 type='text'
-                placeholder="Add new todo here"
+                placeholder="Add new todo here..."
                 value={toDo}
                 onChange={(event) =>setToDo(event.target.value)}
                 />
                 <SubmitButton 
                  type='submit'
                  disabled={toDo === ''}>
-                    <span role='img' aria-label='plussign'>➕</span>
+                Add!
                 </SubmitButton>
             </Form>
             

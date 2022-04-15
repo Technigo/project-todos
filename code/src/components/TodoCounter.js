@@ -2,7 +2,6 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
-import TodoList from 'components/TodoList'
 
 const CounterUncompleted = styled.p`
 text-align: center;
@@ -28,10 +27,9 @@ const TodoCounter = () => {
 
     if (allTodos.length !== completedTodos.length){
         return(
-            <CounterUncompleted>You have completed {completedTodos.length}/{allTodos.length} todos</CounterUncompleted> &&
-            <TodoList/>
+            <CounterUncompleted>You have completed {completedTodos.length}/{allTodos.length} todos</CounterUncompleted>
         )
-    } else{
+    } else {
         return(
             <CounterFinished >
                 <FinishedText>Hurray you finished all todos</FinishedText> 

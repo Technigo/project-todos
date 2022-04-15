@@ -5,23 +5,23 @@ import moment from 'moment'
 
 import tasks from 'reducers/Tasks'
 
+import CustomButtons from 'components/Buttons'
+
 const TodoContainer = styled.section`
-background-color: #F5F3F4;
-position: relative;
-margin: 50px;
-padding: 20px;
-min-height: 16rem;
-min-width: 16rem;
-box-shadow: 4px 3px 5px 3px #000;
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 3.5rem;
 `
 
 const TodoCard = styled.article`
 position: relative;
 border: 1px solid #000;
 border-radius: 5px;
-background-color: #E3F2FD;
+background-color: #F2F5FF;
 padding: 10px;
 margin: 10px 5px;
+width: 80%;
 display: flex;
 flex-direction: column;
 `
@@ -37,6 +37,10 @@ font-size: 14px;
 align-self: flex-end;
 padding-top: 5px;
 `
+const Checkbox = styled.input`
+margin-top: 5px;
+padding: 5px;
+`
 
 const DeleteTodo = styled.button`
 position: absolute;
@@ -45,41 +49,6 @@ right: 10px;
 background: none;
 border: none;
 font-size: 16px;
-cursor: pointer;
-`
-const ButtonContainer = styled.div`
-display: flex;
-justify-content: flex-start;
-`
-const CheckallButton = styled.button`
-background-color: #FFF;
-border: 1px solid #000;
-width: 5rem;
-padding: 5px;
-border-radius: 10px;
-margin: 5px;
-font-size: 10px;
-cursor: pointer;
-`
-
-const UncheckButton = styled.button`
-background-color: #FFF;
-border: 1px solid #000;
-width: 5rem;
-padding: 5px;
-border-radius: 10px;
-margin: 5px;
-font-size: 10px;
-cursor: pointer;
-`
-const RemoveAllButton = styled.button`
-background-color: #FFF;
-border: 1px solid red;
-width: 5rem;
-padding: 5px;
-border-radius: 10px;
-margin: 5px;
-font-size: 10px;
 cursor: pointer;
 `
 
@@ -98,18 +67,6 @@ const TodoList = () => {
         dispatch(tasks.actions.deleteTodo(index))
     }
 
-    const CheckAllTodo = () => {
-        dispatch(tasks.actions.checkAllTodo())
-    }
-
-    const unCheckAllTodo = () => {
-        dispatch(tasks.actions.unCheckTodo())
-    }
-
-    const onRemoveAll = () => {
-        dispatch(tasks.actions.deleteAllTodos())
-    }
-
     //To store date and time when todo is created
     const dateFormat = 'DD/MM/YY HH:MM';
     const createdAt = moment().format(dateFormat)
@@ -121,9 +78,10 @@ const TodoList = () => {
                 <TodoCard key={todo.id}>
                     <TodoText>{todo.name}</TodoText>
                     <label>
-                        Check!
-                    <input 
+                    Check! &nbsp; 
+                    <Checkbox 
                         type='checkbox'
+                        tabIndex='0'
                         checked={todo.isChecked}
                         onChange={() => onTodoToggle(todo.id)}
                     />
@@ -133,13 +91,8 @@ const TodoList = () => {
                         <span role='img' aria-label='delete'>❌</span>
                     </DeleteTodo>
                 </TodoCard>
-            ))}
-           <ButtonContainer>
-            <CheckallButton onClick={CheckAllTodo}>Check all</CheckallButton>
-            <UncheckButton onClick={unCheckAllTodo}>Uncheck all</UncheckButton>
-            <RemoveAllButton onClick={onRemoveAll}>Clear all todos</RemoveAllButton>
-            </ButtonContainer>
-            
+            ))} 
+             <CustomButtons/>
         </TodoContainer>
     )
 
