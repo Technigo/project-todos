@@ -18,6 +18,7 @@ const TodoItem = styled.article`
   margin-bottom: 6px;
   background: linen;
   position: relative;
+
   @media (min-width: 768px) {
     width: 500px;
   }
@@ -75,8 +76,8 @@ const TodoList = () => {
             </DeleteButton>
           </TodoItem>
         ))}
-    </TodoContainer>
-  )
+      </TodoContainer>
+    )
 }
 
 export default TodoList

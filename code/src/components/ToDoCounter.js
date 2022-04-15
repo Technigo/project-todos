@@ -17,6 +17,7 @@ const TodoCounterText = styled.div`
   border-radius: 4px;
   font-size: 16px;
   padding-left: 8px;
+  
   @media (min-width: 768px) {
     width: 508px;
     height: 200px;

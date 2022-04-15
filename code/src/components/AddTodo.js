@@ -36,6 +36,7 @@ const InputField = styled.input`
     font-size: 16px;
     font-family: 'Quicksand', sans-serif;
   }
+
   @media (min-width: 768px) {
     width: 400px;
 
@@ -60,7 +61,6 @@ const AddEmoji = styled.span`
 `
 
 const AddTodo = () => {
-
   const [inputValue, setInputValue] = useState("")
 
   const dispatch = useDispatch()
@@ -81,7 +81,7 @@ const AddTodo = () => {
 
   return (
     <FormSection>
-    <FormContainer onSubmit={onFormSubmit}>
+      <FormContainer onSubmit={onFormSubmit}>
         <InputField 
           type="text" 
           placeholder="Type here..."
@@ -92,7 +92,7 @@ const AddTodo = () => {
         <AddButton type="submit" disabled={inputValue.length > 100}>
           <AddEmoji role="img" aria-label="plus sign emoji">✚</AddEmoji>
         </AddButton>
-    </FormContainer>
+      </FormContainer>
     </FormSection>
   )
 }
