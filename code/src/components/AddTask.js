@@ -70,7 +70,7 @@ appearance: none;
 `
 
 const HeaderBox = styled.div`
-width: 89%;
+width: 82%;
 border: 1px solid gray;
 border-radius: 12px;
 padding: 0.4rem;

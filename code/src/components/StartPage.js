@@ -8,7 +8,6 @@ import Footer from './Footer'
 import TimeStamp from './TimeStamp'
 
 
-
 //Styled components
 const devices = {
 mobile: "(min-width: 375px)",
@@ -117,9 +116,7 @@ const StartPage = () => {
             {tasksList.map((taskItem, taskIndex) => (
 
                 <Article key={taskItem.id}>
-                
-                   
-
+            
                    
                     <TaskHeading
                     htmlFor={taskItem.id} 
