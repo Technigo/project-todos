@@ -7,6 +7,8 @@ const HeaderContainer = styled.header`
 	color: var(--clr-secondary);
 	border-top-left-radius: 30px;
 	border-top-right-radius: 30px;
+	border: 2px solid var(--clr-accent);
+	border-bottom: none;
 	display: flex;
 	justify-content: center;
 	padding-top: 2em;

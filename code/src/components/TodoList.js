@@ -17,13 +17,16 @@ const ListBtn = styled.button`
 	position: relative;
 	cursor: pointer;
 	background: var(--clr--main);
-	border-bottom: 1px solid var(--clr-accent);
 	align-self: end;
 
-	&:hover {
-		background: var(--clr-accent);
-		border-radius: 20%;
-		transition: all 0.3s ease-in;
+	@media (min-width: 667px) {
+		border-bottom: 1px solid var(--clr-accent);
+
+		&:hover {
+			background: var(--clr-accent);
+			border-radius: 20%;
+			transition: all 0.3s ease-in;
+		}
 	}
 `
 
@@ -89,7 +92,7 @@ const InputText = styled.label`
 	border-bottom: 1px solid var(--clr-accent);
 	font-family: 'Imprima', 'Ubuntu', sans-serif;
 	align-self: end;
-	width: 230px;
+	width: 225px;
 	overflow-wrap: break-word;
 `
 
