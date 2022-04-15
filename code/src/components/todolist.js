@@ -33,8 +33,12 @@ position:relative
 const Task =styled.h2 `
 font-family: 'Alata',sans-serif;
 font-size: 25px;
-
 `
+
+const Tasktracker = styled.div`
+font-size:16pt;
+`
+
 
 
 const ToDoList = ( { list, completed, uncompleted} ) => {
@@ -54,10 +58,8 @@ const onToDoDelete = (index) => {
 
 return (
 <Taskcontainer>
-    <div>
-        {completedTasks.length} / {todoList.length}
-        <span>tasks completed</span>
-    </div>
+<Tasktracker> Tasks on your TO DO: &nbsp; {todoList.length}</Tasktracker>
+    
 
 
 
@@ -82,31 +84,10 @@ todoList.map((todoItem, todoIndex) => (
 </Taskbox>
 ))}
 
-{completed &&
-completedTasks.map((todoItem) => (
-<CheckBox
-    type="checkbox" 
-    id={todoItem.id}
-    checked="true"
-    onChange={() => onToDoToggle(todoItem.id)}
-    />
-),
-)};
 
 
-{uncompleted &&
-uncompletedTasks.map((todoItem) => (
-<CheckBox
-    type="checkbox" 
-    id={todoItem.id}
-    checked={todoItem.completed}
-    onChange={() => onToDoToggle(todoItem.id)}
-    />
-),
-)};
 
 
-<div> Done: &nbsp; {todoList.length}</div>
 </Taskcontainer>
 );
 };

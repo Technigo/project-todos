@@ -3,7 +3,7 @@ body {
   font-family: 'Alata', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #e9b8bf;
+  background-color: #E8E5E5;
 }
 
 code {
@@ -11,27 +11,15 @@ code {
     monospace;
 }
 
-mark {
-  color:blue;
-  background:none;
-}
 
-input {
-margin-top: 10px;
-height: 40px;
-width: 300px;
-text-decoration: none;
-border-radius: 5px;
-background-color:blue;
-border:none;
-font-family: 'Alata', sans-serif;
-;
-}
+
 
 ::placeholder {
-  color:blueviolet;
-  font-size: 1.5em;
+  color:#EF63BB;
+  font-size: 18pt;
+border-bottom: tomato;
 }
+
 
 [type="checkbox"]{
   opacity:0;

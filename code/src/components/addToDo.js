@@ -6,6 +6,12 @@ import styled from "styled-components";
 
 import todos from "reducers/todos";
 
+const Date = styled.p`
+font-size:20pt;
+margin-top: 5px;
+margin-bottom:2px;
+`
+
 const AddTask = styled.form`
 margin:20px;
 display:flex;
@@ -18,15 +24,32 @@ display:flex;
 flex-direction:column;
 text-align: center;
 padding:10px;
-margin: 30px;
+margin: 0 30 0 30px;
 font-size:30px;
 margin-bottom: 0px;
 `
+const Input = styled.input`
+margin-top: 10px;
+height: 50px;
+width: 300px;
+text-decoration: none;
+border-radius: 5px;
+background-color:#465AFF;
+border:none;
+font-family: 'Alata', sans-serif;
+font-size:18pt;
+text-align:center;
+`
+
+
+
 const InputButton = styled.button `
 background: none;
 font-family: 'Alata',sans-serif;
+font-weight: bolder;
+font-size:20pt;
 padding: 10px;
-border-color: blue;
+border:none;
 color: blue;
 width:200px;
 `
@@ -54,16 +77,16 @@ const date = moment().format("MMMM Do YYYY")
 
 return (
     <AddTask onSubmit={onFormSubmit}>
-        <p>{date}</p>
+        <Date>{date}</Date>
 <TaskLabel>
-    <input
+    <Input
     type="text"
     value={inputValue}
     onChange={(e) => setInputValue(e.target.value)}
-    placeholder="ADD NEW TO DO..."
+    placeholder="New TO DO..."
     />
 </TaskLabel>
-<InputButton type="submit">+++ADD TO MY LIST</InputButton>
+<InputButton type="submit">➕➕➕</InputButton>
 </AddTask>
 );
 };
