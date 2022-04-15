@@ -44,25 +44,25 @@ const ArrowWrapper = styled.div`
 
 const Arrowone = styled.img`
 	position: absolute;
-	top: -45px;
-	right: 45px;
+	top: -75px;
+	right: 22px;
 	width: 130px;
 `
 const Arrowtwo = styled.img`
 	position: absolute;
-	top: -75px;
-	left: 35px;
+	top: -90px;
+	left: 15px;
 	width: 130px;
 `
 const Arrowthree = styled.img`
 	position: absolute;
-	top: -30px;
-	left: 35px;
+	top: -50px;
+	left: 33px;
 	width: 130px;
 `
 const Arrowfour = styled.img`
 	position: absolute;
-	top: -35px;
+	top: -67px;
 	right: 45px;
 	width: 130px;
 `

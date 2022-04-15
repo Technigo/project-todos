@@ -95,6 +95,17 @@ input[type='checkbox'] {
 	cursor: pointer;
 }
 
+input.new-content {
+	position: absolute;
+	width: auto;
+	bottom: 0;
+	left: 1em;
+	width: 223px;
+	height: 25px;
+	background: var(--clr-main);
+	color: var(--clr-secondary);
+}
+
 input[type='checkbox']:checked {
 	content: '';
 	display: inline-block;

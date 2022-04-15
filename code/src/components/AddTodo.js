@@ -52,7 +52,12 @@ const AddTodo = () => {
 
 	return (
 		<div className='input-wrapper'>
-			<StyledInput type='text' value={input} onChange={(e) => setInput(e.target.value)}></StyledInput>
+			<StyledInput
+				type='text'
+				value={input}
+				placeholder='Add task here..'
+				onChange={(e) => setInput(e.target.value)}
+			></StyledInput>
 			<AddBtn type='submit' onClick={onAddTodo} disabled={input.length === 0}>
 				<AddPlus src={plusBtn} alt='add task'></AddPlus>
 			</AddBtn>
