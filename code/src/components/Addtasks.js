@@ -47,11 +47,10 @@ const Addtasks = () => {
             onChange={(e) => setInputValue(e.target.value)}
           />
         </label>
-        <button type="submit">
-          {" "}
+        <button className="add-button" type="submit">
           <span role="img" aria-label="add">
             &#43;
-          </span>{" "}
+          </span>
         </button>
       </form>
       <Tasklist />
