@@ -4,8 +4,7 @@ import styled from 'styled-components/macro';
 export const Container = styled.div`
     width: clamp(250px, 90%, 350px);
     // max-width: 350px;
-    margin: 3rem auto 0 auto;
-    // margin-top: 3rem;
+    margin: 3rem auto 4rem auto;
 
     @media (min-width: 668px) {
         width: clamp(250px, 90%, 500px);
@@ -14,8 +13,8 @@ export const Container = styled.div`
 
 export const Header = styled.header`
     margin: 0;
+    margin-bottom: 1rem;
     display: flex;
-    // grid-template-columns: 1fr 1fr;
     align-items: center;
     justify-content: space-between;
 
@@ -32,22 +31,25 @@ export const Form = styled.form`
     text-align: center;
     width: 100%;
     margin: 0 auto;
-    display: grid;
-    grid-template-columns: 1fr max-content;
-    justify-content: start;
+    display: flex;
+    justify-content: space-between;
     align-content: center;
+    gap: 25px;
 
     input {
         padding: .5em;
         font-size: 1rem;
+        flex-grow: 4;
+        border: 1px solid hsl(21,84%,54%);
+        border-radius: .25rem;
     }
 `
 
 export const NewTaskButton = styled.button`
-    // font-size 1rem;
+    font-weight: 700;
+    font-family: 'Nunito';
     text-transform: uppercase;
     color: white;
-    // padding: .5em;
     min-width: 10ch;
     background-color: hsl(21,84%,54%);
     border-radius: .25rem;
@@ -76,6 +78,7 @@ export const TaskItem = styled.div`
 `
 
 export const SmallButton = styled.button`
+    font-family: 'Nunito';
     position: absolute;
     top: 1rem;
     right: 1rem;
@@ -105,7 +108,7 @@ export const Input = styled.input`
 
 export const Tasklist = styled.div`
     display: grid;
-    gap: 2rem;
+    // gap: 2rem;
 `
 
 export const TaskLabel = styled.label`
@@ -145,14 +148,13 @@ export const Checkmark = styled.span`
 
 export const Footer = styled.footer`
     position: fixed;
-    padding: 10px 10px 0px 10px;
     bottom: 0;
     width: 100%;
     height: 4rem;
-    background: hsl(21,84%,54%);
     color: white;
-    text-align: center;
     line-height: 2rem;
+    text-align: center;
+    background-color: hsl(21,84%,54%);
 
     a {
         color: white;
@@ -166,4 +168,29 @@ export const Taskwrapper = styled.div`
     background-color: hsla(0, 0%, 100%, .8);
     border-radius: .25rem;
     position: relative;
+    margin-bottom: 1rem;
+`
+
+export const Flex = styled.div`
+    display: flex;
+` 
+
+export const Overview = styled.div`
+    padding: .5rem;
+    background-color: hsla(0, 0%, 100%, .8);
+    border-radius: .25rem;
+    text-align: center;
+    margin: 1rem 0;
+    font-weight: 600;
+    background-color: #1e6091;
+    // border: 1px solid hsl(21,84%,54%);
+
+    p {
+        color: white;
+        margin: 0;
+    }
+`
+
+export const Created = styled.p`
+color: #495057;
 `

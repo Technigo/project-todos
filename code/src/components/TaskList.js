@@ -1,15 +1,15 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { formatRelative } from "date-fns";
-import subDays from "date-fns/subDays";
 
 import tasks from "reducers/tasks";
 
-import { TaskItem, SmallButton, Tasklist, Taskwrapper } from "../styled-components";
+import { TaskItem, SmallButton, Tasklist, Taskwrapper, Created } from "../styled-components";
 
 const TaskList = () => {
     const taskList = useSelector((backpack) => backpack.tasks.items);
-
+    const completedTasks = taskList.filter(taskItem => taskItem.isDone);
+    const incompletedTasks = taskList.filter(taskItem => !taskItem.isDone);
     const dispatch = useDispatch();
 
     const onTaskToggle = (taskId) => {
@@ -23,9 +23,9 @@ const TaskList = () => {
 
     return (
         <Tasklist>
-            {taskList.map((taskItem, index) => (
-                <Taskwrapper>
-                    <TaskItem key={taskItem.id}>
+            {incompletedTasks.map((taskItem, index) => (
+                <Taskwrapper key={taskItem.id}>
+                    <TaskItem>
                         <h2>{taskItem.task}</h2>
                         <label className="container" title={'Done'}>
                             <input
@@ -33,7 +33,7 @@ const TaskList = () => {
                             checked={taskItem.isDone}
                             onChange={() => onTaskToggle(taskItem.id)}
                             />
-                            Done:
+                            {taskItem.isDone ? 'Completed' : 'Complete task!'}
                             <span className="checkmark"></span>
                             
                             
@@ -42,11 +42,37 @@ const TaskList = () => {
                             onTaskDelete(index)
                             }
                         }>
+                            
                             <span role="img" aria-label="delete">
-                            {/* ❌ */}delete
+                                delete
                             </span>
                         </SmallButton>
-                        <p>created: {new Date(taskItem.createdAt).toLocaleTimeString()}</p>
+                        <Created>created: {formatRelative(new Date(taskItem.createdAt), new Date())}</Created>
+                    </TaskItem>
+                </Taskwrapper>
+            ))}
+            {completedTasks.map((taskItem, index) => (
+                <Taskwrapper key={taskItem.id}>
+                    <TaskItem >
+                        <h2>{taskItem.task}</h2>
+                        <label className="container" title={'Done'}>
+                            <input
+                            type="checkbox"
+                            checked={taskItem.isDone}
+                            onChange={() => onTaskToggle(taskItem.id)}
+                            />
+                            {taskItem.isDone ? 'Completed' : 'Complete task!'}
+                            <span className="checkmark"></span>
+                        </label>
+                        <SmallButton onClick={() => {
+                            onTaskDelete(index)
+                            }
+                        }>
+                            <span role="img" aria-label="delete">
+                                delete
+                            </span>
+                        </SmallButton>
+                        <Created>created: {formatRelative(new Date(taskItem.createdAt), new Date())}</Created>
                     </TaskItem>
                 </Taskwrapper>
             ))}

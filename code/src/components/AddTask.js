@@ -6,7 +6,7 @@ import uniqid from 'uniqid'
 
 import tasks from "reducers/tasks";
 
-import { Form, GoBackButton, NewTaskButton } from '../styled-components'
+import { Form, NewTaskButton } from '../styled-components'
 
 const placeholders = [
     "Water the plants",
@@ -20,8 +20,6 @@ const placeholders = [
     "Finish the project",
     "Go on a bug hunt"
 ];
-
-
 
 const AddTask = () => {
     const [inputValue, setInputValue] = useState('');
@@ -39,7 +37,7 @@ const AddTask = () => {
             id: uniqid(),
             task: inputValue,
             isDone: false,
-            createdAt: new Date(),
+            createdAt: Date.now(),
         };
         
         dispatch(tasks.actions.addItem(newTask));
@@ -50,7 +48,7 @@ const AddTask = () => {
     return (
         <Form onSubmit={onFormSubmit}>
             {/* <GoBackButton onClick={goBack}>go back</GoBackButton> */}
-            <div>
+            {/* <Flex> */}
                 <input
                     type='text'
                     value={inputValue}
@@ -60,7 +58,7 @@ const AddTask = () => {
                     }
                     placeholder={placeholders[[Math.floor(Math.random() * (placeholders.length-1))]]}
                 />
-            </div>
+            {/* </Flex> */}
             <NewTaskButton 
                 type='submit'    
                 disabled={!inputValue}
