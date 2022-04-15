@@ -7,11 +7,17 @@ const Container = styled.div`
     margin: 0 auto;
 `
 
+const WrapperDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+`
+
 const StartButton = styled.button`
     padding: 6px;
     width: 300px;
     border-radius: 10px;
-    margin: 7px 0 25px 0;
+    margin: 100px 0 25px 0;
     border: solid 3px #4C4EF9;
     background-color: rgb(216, 216, 239);
     color: #4C4EF9;
@@ -37,10 +43,12 @@ const NotFound = () => {
     return (
         <section>
             <Container>
-                <p>This page does not exist...</p>
-                <StartButton onClick={onButtonClick}>
-                    Back to your planning
-                </StartButton>
+                <WrapperDiv>
+                    <p>This page does not exist...</p>
+                    <StartButton onClick={onButtonClick}>
+                        Back to your planning
+                    </StartButton>
+                </WrapperDiv>
             </Container>
         </section>
     )

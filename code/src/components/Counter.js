@@ -20,7 +20,7 @@ const CounterArticle = styled.article`
     align-items: center;
     border: 3px solid #4C4EF9;
     border-radius: 10px;
-    margin: 15px 9.5px 50px 9.5px;
+    margin: 40px 9.5px 100px 9.5px;
     color: white;
     background-color:#4C4EF9;
 

@@ -9,11 +9,10 @@ const HeaderWrapper = styled.header`
     align-items: center;
 `
 const Title = styled.h1`
-    margin-top: 0;
-    // text-align: center;
+    margin: 0;
     font-family: 'Abril Fatface', cursive;
     color: white;
-    padding: 25px;
+    padding: 10px;
 `
 
 

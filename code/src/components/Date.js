@@ -4,6 +4,7 @@ import styled from "styled-components"
 
 const TimeStamp = styled.div`
     font-size: 16px;
+    margin-bottom: 40px;
 ` 
 
 
