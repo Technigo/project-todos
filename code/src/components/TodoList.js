@@ -23,6 +23,13 @@ const TodoItem = styled.article`
   }
 `
 
+const TodoItemText = styled.h2`
+  font-family: 'Quicksand', sans-serif;
+  color: #D885A3;
+  font-size: 20px;
+  word-wrap: break-word;
+`
+
 const DeleteButton = styled.button`
   position: absolute;
   top: 8px;
@@ -30,13 +37,6 @@ const DeleteButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-`
-
-const TodoItemText = styled.h2`
-  font-family: 'Quicksand', sans-serif;
-  color: #D885A3;
-  font-size: 20px;
-  word-wrap: break-word;
 `
 
 const DeleteEmoji = styled.span`
@@ -60,8 +60,9 @@ const TodoList = () => {
       <TodoContainer>
         {todoList.map((todoItem, todoIndex) => (
           <TodoItem key={todoItem.id}>
-            <TodoItemText><span role="img" aria-label="bullet point">⚫️</span> {todoItem.name}</TodoItemText>
-            <input 
+            <TodoItemText>{todoItem.name}</TodoItemText>
+            <input
+              className="checkbox" 
               type="checkbox" 
               checked={todoItem.isDone}
               onChange={() => onTodoToggle(todoItem.id)}

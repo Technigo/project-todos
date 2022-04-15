@@ -29,18 +29,14 @@ const Status = styled.h3`
   font-weight: bold;
   color: #6B4F4F;
   letter-spacing: 2px;
-  padding-left: 16px;
+  padding-left: 20px;
 `
 
 const StatusText = styled.p`
   @media (min-width: 768px) {
-    text-align: center;
+    padding-left: 40px;
+    padding-top: 4px;
   }
-`
-
-const ArrowEmoji = styled.span`
-  font-size: 20px;
-  padding-right: 12px;
 `
 
 const CounterNumbers = styled.span`
@@ -80,18 +76,10 @@ const ToDoCounter = () => {
             <TodoCounterText>
                 <Status>Status</Status>
                 <StatusText>
-                  <ArrowEmoji 
-                    role="img" 
-                    aria-label="arrow emoji">➡
-                  </ArrowEmoji> 
-                  You have <CounterNumbers>{allTodos.length}</CounterNumbers> tasks on your to do-list.
+                  You have <CounterNumbers>{allTodos.length}</CounterNumbers> task/s on your to do-list.
                 </StatusText>
                 <StatusText>
-                  <ArrowEmoji 
-                    role="img" 
-                    aria-label="arrow emoji">➡
-                  </ArrowEmoji> 
-                  Currently <CounterNumbers>{remainingTodos.length}</CounterNumbers> of them are completed.
+                  Currently <CounterNumbers>{remainingTodos.length}</CounterNumbers> of them are done.
                 </StatusText>
             </TodoCounterText>
           </TodoCounterContainer>
@@ -101,13 +89,13 @@ const ToDoCounter = () => {
           <TodoCounterContainer>
             <TodoCounterText>
               <WhenEmptyList>
-                <NoTodosTitle>You have no todo's! </NoTodosTitle> 
+                <NoTodosTitle>You have no to do's! </NoTodosTitle> 
                   <span role="img" aria-label="party emoji">🥳</span> 
                   &nbsp;Sit back - relax - have a coffee.&nbsp; 
                   <span role="img" aria-label="coffee emoji">☕️</span>
               </WhenEmptyList>
               <NoTodosText>But maybe you ran out of coffee filters..?<br></br>
-              Add that or something else to your todo list!</NoTodosText>
+              Add that or something else to purchase on your todo list!</NoTodosText>
             </TodoCounterText>
           </TodoCounterContainer>
         )

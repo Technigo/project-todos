@@ -15,66 +15,16 @@ code {
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500;700&display=swap');
 
-/* CHECKBOX STYLING */
-[type="checkbox"]{
-  opacity: 0; 
-}
-
-[type="checkbox"] + label{
+input.checkbox {
+  width: 20px;
+  height: 20px;
+  margin: 0;
   position: relative;
-  padding-left: 30px;
-  cursor: pointer;
-  display: inline-block;
-  line-height: 20px;
-  font-family:'Courier New', Courier, monospace;
 }
 
-[type="checkbox"] + label::before{
-  content: "";
+label {
+  font-family: 'Courier New', Courier, monospace;
+  padding-left: 12px;
   position: absolute;
-  left: 0;
-  top: 0;
-  width: 18px;
-  height: 18px;
-  outline: 2px solid #000;
-  background: linen;
-}
-
-/* FROM HERE ON IT ONLY WORKS IN DEV TOOLS IN RESPONSIVE MODE, NOT IN BROWSER */
-[type="checkbox"]:checked + label::before{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 18px;
-  height: 18px;
-  outline: 2px solid #F08FC0;
-  background: linen;
-}
-
-[type="checkbox"]:checked + label::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 18px;
-  height: 18px;
-  background: url('/assets/checkmark.png');
-  background-size: contain;
-  transform: scale(1);
-  opacity: 1;
-  transition: all .3s ease;
-}
-
-[type="checkbox"]:not(:checked) + label::after{
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 18px;
-  height: 18px;
-  background: url('/assets/checkmark.png');
-  background-size: contain;
-  transform:scale(0);
-  opacity: 0;
+  bottom: 16px;
 }

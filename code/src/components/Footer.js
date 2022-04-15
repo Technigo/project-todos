@@ -4,9 +4,13 @@ import styled from 'styled-components'
 const FooterText = styled.p`
   color: linen;
   text-align: center;
-  line-height: 30px;
+  line-height: 28px;
   margin-top: 150px;
   font-family: 'Quicksand', sans-serif;
+
+  @media (min-width: 768px) {
+    margin-top: 180px;
+  }
 `
 
 const Footer = () => {

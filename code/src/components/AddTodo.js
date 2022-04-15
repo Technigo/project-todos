@@ -30,8 +30,18 @@ const InputField = styled.input`
   border: none;
   background: linen;
   border-radius: 4px;
+
+  ::placeholder {
+    padding-left: 6px;
+    font-size: 16px;
+    font-family: 'Quicksand', sans-serif;
+  }
   @media (min-width: 768px) {
     width: 400px;
+
+    ::placeholder {
+      padding-left: 18px;
+    }
   }
 `
 
@@ -74,12 +84,12 @@ const AddTodo = () => {
     <FormContainer onSubmit={onFormSubmit}>
         <InputField 
           type="text" 
-          placeholder="Type something here..."
+          placeholder="Type here..."
           value={inputValue}
           required 
           onChange={(e) => setInputValue(e.target.value)}
         />
-        <AddButton type="submit" disabled={inputValue.length > 140}>
+        <AddButton type="submit" disabled={inputValue.length > 100}>
           <AddEmoji role="img" aria-label="plus sign emoji">✚</AddEmoji>
         </AddButton>
     </FormContainer>

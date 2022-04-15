@@ -1,12 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const data = [
-    {
-      id: 'abcd1234',
-      name: 'Practice yoga',
-      isDone: false,
-    }
-  ]
+const data = []
 
 const todos = createSlice({
   name: 'todos',
