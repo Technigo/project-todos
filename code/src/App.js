@@ -11,7 +11,7 @@ import Header from 'components/Header'
 const GlobalStyle = createGlobalStyle`
   body {
     font-family: 'Manrope', sans-serif;
-    background-color: #fff6e2;
+    background-color: #f9fad1;
     color: #4F4F4F;
   }
 `

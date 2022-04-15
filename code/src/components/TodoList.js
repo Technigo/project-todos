@@ -4,6 +4,7 @@ import styled from "styled-components";
 
 import todos from "reducers/todos";
 
+
 const ListContainer = styled.section`
   display: flex;
   flex-direction: column;
@@ -12,7 +13,7 @@ const ListContainer = styled.section`
 `
 
 const TodoItem = styled.article `
-  background-color: #F8C77C;
+  background-color: #aac3bd;
   padding: 10px;
   border-radius: 5px;
   position: relative;
@@ -24,7 +25,7 @@ const TodoItem = styled.article `
     -webkit-appearance: none;
     position: relative;
     background: #fff;
-    border: 2px solid #F6AC87;
+    border: 2px solid #ee6802;
     padding: 10px;
     border-radius: 50%;
     height: 27px;
@@ -32,7 +33,7 @@ const TodoItem = styled.article `
   }
   
   input[type='checkbox']:checked {
-    background: #CE5D45;
+    background: #ee6802;
     background-image: url("icons/check.svg");
   }
   
@@ -52,12 +53,12 @@ const TodoItem = styled.article `
 const DeleteButton = styled.button `
   position: absolute;
   top: 10px;
-  right: 15px;
+  right: 10px;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 40px;
-  color: #fff6e2;
+  color: #ff9b21;
   transform: rotate(45deg);
   
 `
@@ -93,7 +94,8 @@ const TodoList = () => {
                     onChange={() => onItemToggle(todoItem.id)}
                     />
               </label>
-              <h2>&nbsp;{todoItem.listitem}</h2>
+              <h3>&nbsp;{todoItem.listitem}</h3>
+      
                 <DeleteButton onClick={() =>onItemDelete(itemIndex)}>
                +
                 </DeleteButton>

@@ -5,13 +5,27 @@ import styled from "styled-components";
 // import todos from "reducers/todos";
 
 const Headerbox = styled.header `
-    // border: 1px solid;
-    // border-color: #554D45;
-    padding: 10px;
-    margin-bottom: 5px;
+    padding: 20px 20px 40px 20px;
+    // margin-bottom: 5px;
     border-radius: 5px;
     position: relative;
-    background-color: #F6AC87;
+    background-color: #aac3bd;
+
+    p, h1, h3, h4 {
+        margin: 0;
+    }
+
+    p {
+        font-size: 12px;
+    }
+    h1 {
+        font-size: 40px;
+        font-weight: 1000;
+    }
+
+    h3 {
+        margin-top:10px;
+    }
 `
 
 
@@ -21,26 +35,26 @@ const Header = () => {
      
     const date = new Date().toDateString()
     
-//   const h = date.toDateString()
-//   console.log(h)
-//   const time = date.toLocaleTimeString()
-//   console.log(time, 'klockslag')
     const tasksTodo = todoList.length > 1
     const onetaskTodo = todoList.length === 1
     const notasksTodo = todoList.length === 0
 
-    const uncompletedTodos = todoList.filter(item => item.isDone === false)
-    const show = uncompletedTodos.length > 0
+    const completedTodos = todoList.filter(item => item.isDone === true)
+    const showOne = completedTodos.length === 1
+    const show = completedTodos.length > 1
     return (
         <Headerbox>
             <p>{date}</p>
-        <h1>Welcome!</h1>
+        <h1>Hi there!</h1>
         <div>
-            {onetaskTodo && <h2>You´ve got {todoList.length} todo in your list</h2>}  
-            {tasksTodo && <h2>You´ve got {todoList.length} todos in your list</h2>}
-            {notasksTodo && <h2>You´ve got no todos in your list!</h2>}
+            {onetaskTodo && <h3>You´ve got {todoList.length} todo in your list</h3>}  
+            {tasksTodo && <h3>You´ve got {todoList.length} todos in your list</h3>}
+            {notasksTodo && <h3>You´ve got no todos in your list!</h3>}
         </div>
-        <div>{show && <h2>{uncompletedTodos.length} of them are uncompleted.</h2>}</div>
+        <div>
+            {showOne && <h4>{completedTodos.length} of them is completed.</h4>}
+            {show && <h4>{completedTodos.length} of them are completed.</h4>}
+        </div>
      
         
         </Headerbox>
