@@ -37,8 +37,10 @@ font-size: 25px;
 `
 
 
-const ToDoList = ( ) => {
+const ToDoList = ( { list, completed, uncompleted} ) => {
 const todoList = useSelector((store) => store.todos.items);
+const completedTasks = todoList.filter((todos) => todos.completed === true);
+const uncompletedTasks = todoList.filter((todos) => todos.uncompleted === false);
 
 const dispatch = useDispatch();
 
@@ -52,15 +54,22 @@ const onToDoDelete = (index) => {
 
 return (
 <Taskcontainer>
+    <div>
+        {completedTasks.length} / {todoList.length}
+        <span>tasks completed</span>
+    </div>
+
 {todoList.map((todoItem, todoIndex) => (
 <Taskbox key={todoItem.id}>
 <Task>{todoItem.task}</Task>
 <CheckBox>
+    <label>Completed tasks
     <input 
     type="checkbox" 
     checked={todoItem.isComplete}
     onChange={() => onToDoToggle(todoItem.id)}
     />
+    </label>
 </CheckBox>
 
 <Deletebutton onClick={() => onToDoDelete(todoIndex)}>
