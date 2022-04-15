@@ -44,12 +44,12 @@ const AddTask = () => {
 
 const Container = styled.div`
   display: flex;
-  flex-direction: column;
-  position: relative;
+  flex-direction: row;
+  /* position: relative; */
 `
 
 const Input = styled.input`
-  position: absolute;
+  /* position: absolute; */
   all: unset;
   width: calc(100% - 20px);
   border: 4px solid black;
@@ -66,11 +66,11 @@ const Input = styled.input`
   }
 `
 const SubmitButton = styled.button`
-  position: absolute;
+  /* position: absolute;
   top: 0;
   right: 0;
   left: 0;
-  bottom: 0;
+  bottom: 0; */
   all: unset;
   width: calc(100% - 20px);
   font-family: 'Montserrat', sans-serif;
@@ -78,9 +78,8 @@ const SubmitButton = styled.button`
   padding-right: 8px;
   cursor: pointer;
   color: black;
-  z-index: 0;
-
-  display: inherit;
+  /* z-index: 0;
+  display: inherit; */
 
   .submit-button:focus {
     outline: none;
