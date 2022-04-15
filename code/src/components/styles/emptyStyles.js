@@ -3,7 +3,6 @@ import styled from 'styled-components/macro'
 import { Section } from './sharedStyles'
 
 export const EmptySection = styled(Section)`
-  background-color: transparent;
   background-color: #D1D8DC33;
   text-align: center;
 

@@ -1,12 +1,6 @@
 import React, { useState } from "react"
 import { useSelector } from 'react-redux'
-
-
-import Todo from './Todo'
-
-import SortableDroppable from './SortableDroppable'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import {
   faFaceGrinHearts,
   faFaceGrimace,
@@ -15,31 +9,40 @@ import {
   faCircle,
   faCircleCheck
 } from '@fortawesome/free-regular-svg-icons'
-
 import { faInfinity } from '@fortawesome/free-solid-svg-icons'
 
-import { FilteringButtonsBox, FilteringInput, Count, FilteringButton } from './styles/filteringStyles'
+import Todo from './Todo'
+import EmptyState from './EmptyState'
+import SortableDroppable from './SortableDroppable'
 
 import { Section } from './styles/sharedStyles'
+import {
+  FilteringButtonsBox,
+  FilteringInput,
+  Count,
+  FilteringButton
+} from './styles/filteringStyles'
 
-import EmptyState from './EmptyState'
-
-const TodosList = ({ setIsUndoDisabled }) => {
+const TodosList = ({ inputSearch, setInputSearch, setIsUndoDisabled }) => {
 
   const allTodos = useSelector((store) => store.todos.items)
+
+  const pendingTodos = allTodos.filter(todo => !todo.completed)
+  const pendingTodosSearched = pendingTodos.filter(todo => (
+    todo.text.toLowerCase().includes(inputSearch.toLowerCase()) ||
+    todo.category.toLowerCase().startsWith(inputSearch.toLowerCase())
+  ))
+  const completedTodos = allTodos.filter(todo => todo.completed)
+  const completedTodosSearched = completedTodos.filter(todo => (
+    todo.text.toLowerCase().includes(inputSearch.toLowerCase()) ||
+    todo.category.toLowerCase().startsWith(inputSearch.toLowerCase())
+  ))
 
   const [isCompletedVisible, setIsCompletedVisible] = useState('block')
   const [isPendingVisible, setIsPendingVisible] = useState('block')
   const [isAllDisabled, setIsAllDisabled] = useState(true)
   const [isCompletedDisabled, setIsCompletedDisabled] = useState(false)
   const [isPendingDisabled, setIsPendingDisabled] = useState(false)
-
-  const [inputSearch, setInputSearch] = useState('')
-
-  const pendingTodos = allTodos.filter(todo => !todo.completed)
-  const pendingTodosSearched = pendingTodos.filter(todo => todo.text.toLowerCase().includes(inputSearch.toLowerCase()) || todo.category.toLowerCase().startsWith(inputSearch.toLowerCase()))
-  const completedTodos = allTodos.filter(todo => todo.completed)
-  const completedTodosSearched = completedTodos.filter(todo => todo.text.toLowerCase().includes(inputSearch.toLowerCase()) || todo.category.toLowerCase().startsWith(inputSearch.toLowerCase()))
 
   const onTodoSearch = (e) => {
     setInputSearch(e.target.value)
@@ -70,48 +73,80 @@ const TodosList = ({ setIsUndoDisabled }) => {
   }
 
   let count = ''
-  let empty = ''
 
   if (inputSearch !== '') {
-    if ((pendingTodosSearched.length + completedTodosSearched.length) === 0) {
-      count = `no todo fits your search`
-      empty = <EmptyState emptyIcon={faFaceMehBlank} emptyText={"Nothing fits your search, maybe worth checking the spelling..."} />
+    if ((pendingTodosSearched.length + completedTodosSearched.length) >= 2) {
+      count = `${pendingTodosSearched.length + completedTodosSearched.length} todos fit your search`
     } else if ((pendingTodosSearched.length + completedTodosSearched.length) === 1) {
       count = `only ${pendingTodosSearched.length + completedTodosSearched.length} todo fits your search`
-    } else {
-      count = `${pendingTodosSearched.length + completedTodosSearched.length} todos fit your search`
+    } else if (!allTodos.length) {
+      count = `no todo fits your search`
     }
-  } else if (pendingTodos.length === 0) {
-    count = 'no todo pending'
+  } else if (pendingTodos.length >= 2) {
+    count = `${pendingTodos.length} todos pending`
   } else if (pendingTodos.length === 1) {
     count = `only ${pendingTodos.length} todo pending`
   } else {
-    count = `${pendingTodos.length} todos pending`
+    count = 'no todo pending'
   }
+
+  let empty = ''
 
   if (inputSearch === '') {
     if (!allTodos.length) {
-      empty = <EmptyState emptyIcon={faFaceGrinHearts} emptyText={"Follow you mood and add some todo!"} />
+      empty = <EmptyState
+        emptyIcon={faFaceGrinHearts}
+        emptyText={"Follow you mood and add some todo!"}
+      />
     } else if (pendingTodos.length && !completedTodos.length) {
-      empty = <EmptyState emptyIcon={faFaceGrimace} emptyText={"Complete some todos and feel the satisfaction!"} />
+      empty = <EmptyState
+        emptyIcon={faFaceGrimace}
+        emptyText={"Complete some todos and feel the satisfaction!"}
+      />
     } else if (!pendingTodos.length && completedTodos.length) {
-      empty = <EmptyState emptyIcon={faFaceGrinStars} emptyText={"All todos are completed, hurrah!"} />
+      empty = <EmptyState
+        emptyIcon={faFaceGrinStars}
+        emptyText={"All todos are completed, hurrah!"}
+      />
+    }
+  } else if (inputSearch !== '') {
+    if ((pendingTodosSearched.length + completedTodosSearched.length) === 0 && allTodos.length) {
+      empty = <EmptyState
+        emptyIcon={faFaceMehBlank}
+        emptyText={"Nothing fits your search, maybe worth checking the spelling..."}
+      />
+    } else if (!allTodos.length) {
+      empty = <EmptyState
+        emptyIcon={faFaceGrinHearts}
+        emptyText={"Follow you mood and add some todo!"}
+      />
     }
   }
-
 
   return (
     <>
       {allTodos.length ?
         <Section>
           <FilteringButtonsBox>
-            <FilteringButton onClick={displayPending} disabled={isPendingDisabled}>
+            <FilteringButton
+              aria-label="display pending tasks"
+              disabled={isPendingDisabled}
+              onClick={displayPending}
+            >
               <FontAwesomeIcon icon={faCircle} />
             </FilteringButton>
-            <FilteringButton onClick={displayAll} disabled={isAllDisabled}>
+            <FilteringButton
+              aria-label="display all tasks"
+              disabled={isAllDisabled}
+              onClick={displayAll}
+            >
               <FontAwesomeIcon icon={faInfinity} />
             </FilteringButton>
-            <FilteringButton onClick={displayCompleted} disabled={isCompletedDisabled}>
+            <FilteringButton
+              aria-label="display completed tasks"
+              disabled={isCompletedDisabled}
+              onClick={displayCompleted}
+            >
               <FontAwesomeIcon icon={faCircleCheck} />
             </FilteringButton>
           </FilteringButtonsBox>

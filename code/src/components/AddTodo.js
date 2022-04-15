@@ -1,29 +1,26 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid'
-
 import DatePicker from "react-datepicker"
-
 import "react-datepicker/dist/react-datepicker.css"
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 import todos from 'reducers/todos'
 
-import { 
-  AddButtonBox, 
-  AddButton, 
-  AddText, 
-  AddForm, 
-  AddOptions, 
-  AddCategory, 
-  AddDeadline 
+import { Section } from './styles/sharedStyles'
+import {
+  AddButtonBox,
+  AddButton,
+  AddText,
+  AddForm,
+  AddOptions,
+  AddCategory,
+  AddDeadline
 } from './styles/addTodoStyles'
 
-import { Section } from './styles/sharedStyles'
+const AddTodo = ({ setInputSearch }) => {
 
-const AddTodo = () => {
   const dispatch = useDispatch()
 
   const [inputText, setInputText] = useState('')
@@ -57,6 +54,7 @@ const AddTodo = () => {
       completed: false
     }
     dispatch(todos.actions.addTodo(newTodo))
+    setInputSearch('')
     setInputText('')
     setInputCategory('neutral')
     setInputDeadline(null)
@@ -66,22 +64,45 @@ const AddTodo = () => {
   return (
     <Section>
       <AddForm onSubmit={onAddTodo}>
-          <AddOptions>
-            <AddText required placeholder="Type your todo" type="text" onChange={onChangeInputText} value={inputText} />
-            <AddCategory value={inputCategory} onChange={onChangeInputCategory}>
-              <option value="neutral">Neutral</option>
-              <option value="funny">Funny</option>
-              <option value="joyful">Joyful</option>
-              <option value="boring">Boring</option>
-              <option value="hard">Hard</option>
-            </AddCategory>
-            <AddDeadline>
-              <DatePicker placeholderText="Deadline (optional)" selected={inputDeadline} onChange={onChangeInputDeadline} dateFormat="dd.MM.yyyy" locale={'en'} minDate={new Date()} />
-            </AddDeadline>
-          </AddOptions>
-          <AddButtonBox>
-            <AddButton type="submit" disabled={isDisabled}><FontAwesomeIcon icon={faPlus} /></AddButton>
-          </AddButtonBox>
+        <AddOptions>
+          <AddText
+            onChange={onChangeInputText}
+            placeholder="Type your todo"
+            required
+            type="text"
+            value={inputText}
+          />
+          <AddCategory
+            aria-label="choose a category"
+            onChange={onChangeInputCategory}
+            value={inputCategory}
+          >
+            <option value="neutral">Neutral</option>
+            <option value="funny">Funny</option>
+            <option value="joyful">Joyful</option>
+            <option value="boring">Boring</option>
+            <option value="hard">Hard</option>
+          </AddCategory>
+          <AddDeadline>
+            <DatePicker
+              dateFormat="dd.MM.yyyy"
+              locale={'en'}
+              minDate={new Date()}
+              onChange={onChangeInputDeadline}
+              placeholderText="Deadline (optional)"
+              selected={inputDeadline}
+            />
+          </AddDeadline>
+        </AddOptions>
+        <AddButtonBox>
+          <AddButton
+            aria-label="add a task"
+            disabled={isDisabled}
+            type="submit"
+          >
+            <FontAwesomeIcon icon={faPlus} />
+          </AddButton>
+        </AddButtonBox>
       </AddForm>
     </Section>
   )

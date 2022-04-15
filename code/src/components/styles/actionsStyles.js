@@ -26,5 +26,5 @@ export const UndoButton = styled(Button)`
 
   &:enabled {
   transform: scale(1.5);
-}
+  }
 `

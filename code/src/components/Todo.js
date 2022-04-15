@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
-
 import { formatRelative, formatDistanceToNow } from 'date-fns'
 import enGB from 'date-fns/locale/en-GB'
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import {
   faCircle,
   faFaceDizzy,
@@ -16,7 +13,6 @@ import {
   faCircleCheck,
   faTrashCan,
 } from '@fortawesome/free-regular-svg-icons'
-
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 
 import todos from 'reducers/todos'
@@ -41,37 +37,29 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
 
   const [isOverdue, setIsOverdue] = useState({})
 
-  // maybe combine these two?
-  const isDone = () => {
-    if (todo.completed) {
-      return { opacity: "0.5" }
-      // return { textDecoration: "line-through", opacity: "0.5" }
-    } else {
-      return { opacity: "1" }
-      // return { textDecoration: "none", opacity: "1" }
-    }
+  let toggleStyle = {}
+  let toggleIcon = ''
+
+  if (todo.completed) {
+    toggleStyle = { opacity: "0.5" }
+    toggleIcon = <FontAwesomeIcon icon={faCircleCheck} />
+  } else {
+    toggleStyle = { opacity: "1" }
+    toggleIcon = <FontAwesomeIcon icon={faCircle} />
   }
 
-  const onToggle = () => {
-    if (todo.completed) {
-      return <FontAwesomeIcon icon={faCircleCheck} />
-    } else {
-      return <FontAwesomeIcon icon={faCircle} />
-    }
-  }
+  let categoryIcon = ''
 
-  const categoryIcon = () => {
-    if (todo.category === 'neutral') {
-      return <FontAwesomeIcon icon={faFaceMeh} />
-    } else if (todo.category === 'joyful') {
-      return <FontAwesomeIcon icon={faFaceGrinBeam} />
-    } else if (todo.category === 'funny') {
-      return <FontAwesomeIcon icon={faFaceGrinSquintTears} />
-    } else if (todo.category === 'boring') {
-      return <FontAwesomeIcon icon={faFaceDizzy} />
-    } else if (todo.category === 'hard') {
-      return <FontAwesomeIcon icon={faFaceFlushed} />
-    }
+  if (todo.category === 'neutral') {
+    categoryIcon = <FontAwesomeIcon icon={faFaceMeh} />
+  } else if (todo.category === 'joyful') {
+    categoryIcon = <FontAwesomeIcon icon={faFaceGrinBeam} />
+  } else if (todo.category === 'funny') {
+    categoryIcon = <FontAwesomeIcon icon={faFaceGrinSquintTears} />
+  } else if (todo.category === 'boring') {
+    categoryIcon = <FontAwesomeIcon icon={faFaceDizzy} />
+  } else if (todo.category === 'hard') {
+    categoryIcon = <FontAwesomeIcon icon={faFaceFlushed} />
   }
 
   const onDeleteTodo = () => {
@@ -79,7 +67,7 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
     setIsUndoDisabled(false)
   }
 
-  const onCompletedChange = () => {
+  const onToggleChange = () => {
     dispatch(todos.actions.toggleTodo(id))
   }
 
@@ -113,19 +101,24 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
     <TodoArticle>
       <TodoDeadline style={isOverdue}>{todo.deadline !== null && formattedDeadline}</TodoDeadline>
       <TodoMiddleBox>
-        <TodoDragBox className="handle">
+        <TodoDragBox aria-label="dragging handle for sorting" className="handle">
           <TodoDragIcon icon={faBars} />
-          <TodoCategoryIcon>{categoryIcon()}</TodoCategoryIcon>
+          <TodoCategoryIcon>{categoryIcon}</TodoCategoryIcon>
         </TodoDragBox>
         <TodoToggleBox
+          aria-label="toggle task status"
           className="custom-checkbox"
-          onChange={onCompletedChange}
-          style={isDone()}>
+          onChange={onToggleChange}
+          style={toggleStyle}>
           <input type="checkbox" />
-          <TodoToggleIcon>{onToggle()}</TodoToggleIcon>
+          <TodoToggleIcon>{toggleIcon}</TodoToggleIcon>
           <TodoText>{todo.text}</TodoText>
         </TodoToggleBox>
-        <TodoDeleteButton onClick={onDeleteTodo} type="button">
+        <TodoDeleteButton
+          aria-label="delete task"
+          onClick={onDeleteTodo}
+          type="button"
+        >
           <FontAwesomeIcon icon={faTrashCan} />
         </TodoDeleteButton>
       </TodoMiddleBox>

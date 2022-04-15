@@ -22,11 +22,11 @@ export const FilteringInput = styled.label`
   align-self: center;
   margin-top: 10px;
 
-& input {
-  width: 250px;
-  text-align: center;
-  background-color: transparent;
-}
+  & input {
+    width: 250px;
+    text-align: center;
+    background-color: transparent;
+  }
 `
 
 export const Count = styled.div`

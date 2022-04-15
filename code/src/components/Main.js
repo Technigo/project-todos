@@ -9,13 +9,14 @@ import Footer from './Footer'
 const Main = () => {
 
   const [isUndoDisabled, setIsUndoDisabled] = useState(true)
+  const [inputSearch, setInputSearch] = useState('')
 
   return (
     <main>
       <Header />
-      <AddTodo />
-      <TodosList setIsUndoDisabled={setIsUndoDisabled} />
-      <Actions isUndoDisabled={isUndoDisabled} setIsUndoDisabled={setIsUndoDisabled} />
+      <AddTodo setInputSearch={setInputSearch} />
+      <TodosList inputSearch={inputSearch} setInputSearch={setInputSearch} setIsUndoDisabled={setIsUndoDisabled} />
+      <Actions setInputSearch={setInputSearch} isUndoDisabled={isUndoDisabled} setIsUndoDisabled={setIsUndoDisabled} />
       <Footer />
     </main>
   )

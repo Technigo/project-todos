@@ -20,11 +20,9 @@ const SortableDroppable = ({ arrayToUse }) => {
   }, [droppable])
 
   return (
-    <>
       <div ref={(el) => setDroppable(el)}>
         {arrayToUse}
       </div>
-    </>
   )
 }
 
