@@ -11,10 +11,16 @@ import styled from 'styled-components'
   font-style: italic;
   text-align: center;
   `
-
   const TaskNone = styled(TasksLeft)`
 
   `
+
+  const Amount = styled.span`
+  color: #000172;
+  font-weight: 300;
+  
+  `
+
 
 const TasksCounter = () => {
   const taskCount = useSelector((store) => store.todos.items)
@@ -25,14 +31,14 @@ const TasksCounter = () => {
 
     return(
     <div>
-      <TasksLeft>You have {taskToDo.length} things to do</TasksLeft>
+      <TasksLeft>You have <Amount>{taskToDo.length}</Amount> things to do</TasksLeft>
     </div>
     )
      
 } else if (taskCount.length === 1) {
   return(
     <div>
-    <TasksLeft>You have {taskToDo.length} thing to do</TasksLeft>
+    <TasksLeft>You have <Amount>{taskToDo.length}</Amount> thing to do</TasksLeft>
   </div>
 
   )
