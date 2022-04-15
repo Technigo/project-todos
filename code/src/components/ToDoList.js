@@ -22,10 +22,9 @@ const ListedItems = styled.article`
   position: relative;
   border: none;
   border-bottom: 1px solid #ad6122;
-  /* border-top: 2px solid blue; */
   width: 70vw;
   padding: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 20px;
 `;
 
 const Wrapper = styled.div`
@@ -40,54 +39,100 @@ const NoteTitle = styled.h2`
   color: #ad6122;
   white-space: pre-wrap;
   overflow-wrap: break-word;
+
+  @media (min-width: 992px) {
+    font-size: 24px;
+  }
 `;
 
 const Description = styled.p`
   font-size: 18px;
-  margin: 0 0 10px 0;
+  margin: 0 0 25px 0;
   white-space: pre-wrap;
+  font-weight: 400;
   overflow-wrap: break-word;
+  
+  @media (min-width: 992px) {
+    font-size: 22px;
+    font-weight: 300;
+  }
+
 `;
+
+const DateWrapper = styled.div`
+width: 100%;
+position: absolute;
+bottom: 0;
+`
+
 
 const Date = styled.p`
   font-size: 12px;
   font-style: italic;
   color: #606060;
-`
-// const CheckWrapper = styled.div`
-// display: flex;
-// flex-direction: column;
-// justify-content: flex-end;
-// /* border: 2px solid; */
-// width: 70vw;
-// padding: 5px 0;
 
-// `
+  @media (min-width: 992px) {
+    font-size: 14px;
+  }
+  
+`
+const CheckWrapper = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: flex-end;
+width: 70vw;
+padding: 5px 0;
+
+`
 const CheckLabel = styled.label`
   font-size: 12px;
   position: absolute;
-  right: 0;
-  bottom: 20px;
+  right: 35px;
+  bottom: 12px;
   color: #606060;
+
+  @media (min-width: 992px) {
+    font-size: 14px;
+  }
 `;
 
 const StyledCheckBox = styled.input`
-/* appearance: none; */
+appearance: none;
 cursor: pointer;
+position: absolute;
+bottom: 12px;
 display: inline-block;
-color: #fff;
+background-color: yellow;
+width: 15px;
+height: 15px;
+place-content: center;
+display: grid;
+
+
+
+&::before {
+  content:"";
+  background-color: yellow;
+  width: 10px;
+  height: 10px;
+}
+
+&:checked::before {
+  width: 10px;
+  height: 10px;
+  background-color: blue;
+
+}
 `
-
-
 
 const DeleteButton = styled.button`
   position: absolute;
   font-family: 'Jost', sans-serif;
   color: #606060;
-  top: 12px;
+  top: 20px;
   color: blue;
   font-size: 12px;
-  right: 0;
+  right: 12px;
   background: none;
   border: none;
   border-radius: 2px;
@@ -95,7 +140,6 @@ const DeleteButton = styled.button`
 
   &:hover {
     background-color: yellow;
-    /* border: 1px solid black; */
     border-radius: 2px;
   }
 `;
@@ -122,16 +166,19 @@ const ListItem = () => {
           <Wrapper>
             <NoteTitle>{newNote.name}</NoteTitle>
             <Description>{newNote.description}</Description>
-           
+            <DateWrapper>
             <Date>{date}</Date>
-              <CheckLabel>
-                Done deal:
+            </DateWrapper>
+           <CheckWrapper>
                 <StyledCheckBox
                   type="checkbox"
                   checked={newNote.isDone}
                   onChange={() => onToDoToggle(newNote.id)}
                 />
+              <CheckLabel>
+                Done deal:
               </CheckLabel>
+              </CheckWrapper>
             
           </Wrapper>
           <DeleteButton onClick={() => onNoteDelete(noteIndex)}>

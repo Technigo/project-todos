@@ -25,12 +25,8 @@ justify-content: center;
 `
 
 const AllComponents = styled.div`
-/* border: 2px solid rgb(228, 221, 203); */
 padding-top: 40px;
-width: 100%;
 min-height: 100vh;
-/* border: 4px solid rgba(173, 97, 34, 0.32); */
-border: 4px solid rgb(207, 219, 204);
 border-radius: 70px 70px 0 0;
 background-color: rgb(228, 221, 203);
 
@@ -40,6 +36,10 @@ background-color: rgb(228, 221, 203);
   align-items: center;
   padding: 40px 60px 0 60px;
 
+}
+
+@media (min-width: 992px) {
+  width: 75vw;
 }
 `
 

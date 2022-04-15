@@ -17,7 +17,7 @@ font-weight: bolder;
 /* text-transform: uppercase; */
 font-style: italic;
 margin: 0 40px;
-border-bottom: 1px solid #AD6122;
+border-bottom: 1px solid rgba(173, 99, 39, 0.52);
 
 @media (min-width: 768px) {
   font-size: 70px;
