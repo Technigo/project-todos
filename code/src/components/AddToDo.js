@@ -71,7 +71,9 @@ const AddTodo = () => {
                 value={toDo}
                 onChange={(event) =>setToDo(event.target.value)}
                 />
-                <SubmitButton type='submit'>
+                <SubmitButton 
+                 type='submit'
+                 disabled={toDo === ''}>
                     <span role='img' aria-label='plussign'>➕</span>
                 </SubmitButton>
             </Form>
