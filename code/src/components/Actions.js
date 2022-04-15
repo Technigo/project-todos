@@ -45,35 +45,30 @@ const Actions = ({ setInputSearch, isUndoDisabled, setIsUndoDisabled }) => {
         aria-label="undo last delete one task or delete all tasks action"
         disabled={isUndoDisabled}
         onClick={undoDelete}
-        type="button"
-      >
+        type="button">
         <FontAwesomeIcon icon={faRotateLeft} />
       </UndoButton>
       <ActionsBox>
         <ActionButton
           aria-label="delete all tasks"
           disabled={allTodos.length ? false : true}
-          onClick={deleteAll}
-        >
+          onClick={deleteAll}>
           <FontAwesomeIcon icon={faTrash} />
         </ActionButton>
         <ActionButton
           aria-label="complete or uncomplete all tasks"
           disabled={allTodos.length ? false : true}
-          onClick={toggleAll}
-        >
+          onClick={toggleAll}>
           <FontAwesomeIcon icon={faCheckDouble} />
         </ActionButton>
         <ActionButton
           aria-label="delete all completed tasks"
           disabled={completedTodos.length ? false : true}
-          onClick={deleteAllCompleted}
-        >
+          onClick={deleteAllCompleted}>
           <FontAwesomeIcon
             icon={faCheckDouble}
             mask={faTrash}
-            transform="shrink-8"
-          />
+            transform="shrink-8" />
         </ActionButton>
       </ActionsBox>
     </Section>

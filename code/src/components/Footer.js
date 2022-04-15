@@ -10,8 +10,7 @@ const Footer = () => {
           href="https://nadialefebvre.dev/"
           target="_blank"
           rel="noopener noreferrer"
-          title="Portfolio Nadia Lefebvre"
-        >
+          title="Portfolio Nadia Lefebvre">
           Nadia Lefebvre
         </a>
       </p>

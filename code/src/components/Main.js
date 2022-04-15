@@ -15,8 +15,14 @@ const Main = () => {
     <main>
       <Header />
       <AddTodo setInputSearch={setInputSearch} />
-      <TodosList inputSearch={inputSearch} setInputSearch={setInputSearch} setIsUndoDisabled={setIsUndoDisabled} />
-      <Actions setInputSearch={setInputSearch} isUndoDisabled={isUndoDisabled} setIsUndoDisabled={setIsUndoDisabled} />
+      <TodosList
+        inputSearch={inputSearch}
+        setInputSearch={setInputSearch}
+        setIsUndoDisabled={setIsUndoDisabled} />
+      <Actions 
+        setInputSearch={setInputSearch}
+        isUndoDisabled={isUndoDisabled}
+        setIsUndoDisabled={setIsUndoDisabled} />
       <Footer />
     </main>
   )

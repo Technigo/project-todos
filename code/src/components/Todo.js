@@ -117,8 +117,7 @@ const Todo = ({ todo, id, setIsUndoDisabled }) => {
         <TodoDeleteButton
           aria-label="delete task"
           onClick={onDeleteTodo}
-          type="button"
-        >
+          type="button">
           <FontAwesomeIcon icon={faTrashCan} />
         </TodoDeleteButton>
       </TodoMiddleBox>

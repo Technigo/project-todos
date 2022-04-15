@@ -70,13 +70,11 @@ const AddTodo = ({ setInputSearch }) => {
             placeholder="Type your todo"
             required
             type="text"
-            value={inputText}
-          />
+            value={inputText} />
           <AddCategory
             aria-label="choose a category"
             onChange={onChangeInputCategory}
-            value={inputCategory}
-          >
+            value={inputCategory}>
             <option value="neutral">Neutral</option>
             <option value="funny">Funny</option>
             <option value="joyful">Joyful</option>
@@ -90,16 +88,14 @@ const AddTodo = ({ setInputSearch }) => {
               minDate={new Date()}
               onChange={onChangeInputDeadline}
               placeholderText="Deadline (optional)"
-              selected={inputDeadline}
-            />
+              selected={inputDeadline} />
           </AddDeadline>
         </AddOptions>
         <AddButtonBox>
           <AddButton
             aria-label="add a task"
             disabled={isDisabled}
-            type="submit"
-          >
+            type="submit">
             <FontAwesomeIcon icon={faPlus} />
           </AddButton>
         </AddButtonBox>

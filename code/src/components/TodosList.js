@@ -72,13 +72,14 @@ const TodosList = ({ inputSearch, setInputSearch, setIsUndoDisabled }) => {
     setIsCompletedDisabled(false)
   }
 
+  const searchTotal = pendingTodosSearched.length + completedTodosSearched.length
   let count = ''
 
   if (inputSearch !== '') {
-    if ((pendingTodosSearched.length + completedTodosSearched.length) >= 2) {
-      count = `${pendingTodosSearched.length + completedTodosSearched.length} todos fit your search`
-    } else if ((pendingTodosSearched.length + completedTodosSearched.length) === 1) {
-      count = `only ${pendingTodosSearched.length + completedTodosSearched.length} todo fits your search`
+    if (searchTotal >= 2) {
+      count = `${searchTotal} todos fit your search`
+    } else if (searchTotal === 1) {
+      count = `only ${searchTotal} todo fits your search`
     } else if (!allTodos.length) {
       count = `no todo fits your search`
     }
@@ -90,36 +91,31 @@ const TodosList = ({ inputSearch, setInputSearch, setIsUndoDisabled }) => {
     count = 'no todo pending'
   }
 
-  let empty = ''
+  let emptyState = ''
 
   if (inputSearch === '') {
     if (!allTodos.length) {
-      empty = <EmptyState
+      emptyState = <EmptyState
         emptyIcon={faFaceGrinHearts}
-        emptyText={"Follow you mood and add some todo!"}
-      />
+        emptyText={"Follow you mood and add some todo!"} />
     } else if (pendingTodos.length && !completedTodos.length) {
-      empty = <EmptyState
+      emptyState = <EmptyState
         emptyIcon={faFaceGrimace}
-        emptyText={"Complete some todos and feel the satisfaction!"}
-      />
+        emptyText={"Complete some todos and feel the satisfaction!"} />
     } else if (!pendingTodos.length && completedTodos.length) {
-      empty = <EmptyState
+      emptyState = <EmptyState
         emptyIcon={faFaceGrinStars}
-        emptyText={"All todos are completed, hurrah!"}
-      />
+        emptyText={"All todos are completed, hurrah!"} />
     }
   } else if (inputSearch !== '') {
-    if ((pendingTodosSearched.length + completedTodosSearched.length) === 0 && allTodos.length) {
-      empty = <EmptyState
+    if (searchTotal === 0 && allTodos.length) {
+      emptyState = <EmptyState
         emptyIcon={faFaceMehBlank}
-        emptyText={"Nothing fits your search, maybe worth checking the spelling..."}
-      />
+        emptyText={"Nothing fits your search, maybe worth checking the spelling..."} />
     } else if (!allTodos.length) {
-      empty = <EmptyState
+      emptyState = <EmptyState
         emptyIcon={faFaceGrinHearts}
-        emptyText={"Follow you mood and add some todo!"}
-      />
+        emptyText={"Follow you mood and add some todo!"} />
     }
   }
 
@@ -131,22 +127,19 @@ const TodosList = ({ inputSearch, setInputSearch, setIsUndoDisabled }) => {
             <FilteringButton
               aria-label="display pending tasks"
               disabled={isPendingDisabled}
-              onClick={displayPending}
-            >
+              onClick={displayPending}>
               <FontAwesomeIcon icon={faCircle} />
             </FilteringButton>
             <FilteringButton
               aria-label="display all tasks"
               disabled={isAllDisabled}
-              onClick={displayAll}
-            >
+              onClick={displayAll}>
               <FontAwesomeIcon icon={faInfinity} />
             </FilteringButton>
             <FilteringButton
               aria-label="display completed tasks"
               disabled={isCompletedDisabled}
-              onClick={displayCompleted}
-            >
+              onClick={displayCompleted}>
               <FontAwesomeIcon icon={faCircleCheck} />
             </FilteringButton>
           </FilteringButtonsBox>
@@ -156,8 +149,7 @@ const TodosList = ({ inputSearch, setInputSearch, setIsUndoDisabled }) => {
               onChange={onTodoSearch}
               placeholder="Search a todo or category"
               type="search"
-              value={inputSearch}
-            />
+              value={inputSearch} />
           </FilteringInput>
           <Count>{count}</Count>
         </Section>
@@ -170,8 +162,7 @@ const TodosList = ({ inputSearch, setInputSearch, setIsUndoDisabled }) => {
             id={todo.id}
             key={todo.id}
             setIsUndoDisabled={setIsUndoDisabled}
-            todo={todo}
-          />
+            todo={todo} />
         ))} />
       </section>
       <section style={{ display: isCompletedVisible }}>
@@ -180,11 +171,10 @@ const TodosList = ({ inputSearch, setInputSearch, setIsUndoDisabled }) => {
             id={todo.id}
             key={todo.id}
             setIsUndoDisabled={setIsUndoDisabled}
-            todo={todo}
-          />
+            todo={todo} />
         ))} />
       </section>
-      {empty}
+      {emptyState}
     </>
   )
 }
