@@ -39,6 +39,9 @@ const tasks = createSlice({
 
       store.items = deleteItems;
     },
+    clearAll: (store) => {
+      store.items = [];
+    },
   },
 });
 

@@ -8,19 +8,35 @@ const AddTask = () => {
 
   const dispatch = useDispatch();
 
+  const onFormSubmit = (e) => {
+    e.preventDefault();
+  };
+
+  const checkKey = (e) => {
+    if (e.key === "Enter" && !e.shiftKey) {
+      onAddTask(e);
+    }
+  };
+
   const onAddTask = () => {
     dispatch(tasks.actions.addTask(input));
+    setInput("");
   };
 
   return (
-    <div>
-      <input
-        type="text"
-        value={input}
-        onChange={(event) => setInput(event.target.value)}
-      />
-      <button onClick={onAddTask}>Add todo</button>
-    </div>
+    <form onSubmit={onFormSubmit}>
+      <section>
+        <input
+          type="text"
+          value={input}
+          onKeyDown={(e) => checkKey(e)}
+          onChange={(e) => setInput(e.target.value)}
+        />
+        <button type="submit" onClick={onAddTask} disabled={input.length === 0}>
+          +
+        </button>
+      </section>
+    </form>
   );
 };
 

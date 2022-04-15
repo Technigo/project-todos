@@ -6,6 +6,7 @@ import tasks from "./reducers/tasks";
 
 import AddTask from "./components/AddTask";
 import TodoList from "./components/TodoList";
+import Header from "./components/Header";
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
@@ -16,8 +17,9 @@ const store = configureStore({ reducer });
 export const App = () => {
   return (
     <Provider store={store}>
-      <AddTask />
+      <Header />
       <TodoList />
+      <AddTask />
     </Provider>
   );
 };
