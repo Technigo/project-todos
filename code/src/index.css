@@ -7,7 +7,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #89A479;
+  background-color: #89a479;
   color: #000;
 }
 
@@ -21,23 +21,22 @@ code {
     monospace;
 }
 
-/* cant' figure how to put that in styled component instead for now */
-.custom-checkbox input[type="checkbox"],
+.custom-checkbox input[type='checkbox'],
 .custom-checkbox .checked {
   display: none;
 }
 
-.custom-checkbox input[type="checkbox"]:checked~.checked {
+.custom-checkbox input[type='checkbox']:checked ~ .checked {
   display: inline-block;
 }
 
-.custom-checkbox input[type="checkbox"]:checked~.unchecked {
+.custom-checkbox input[type='checkbox']:checked ~ .unchecked {
   display: none;
 }
 
 /* class for draggable item */
 .dragging {
-  visibility: hidden
+  visibility: hidden;
 }
 
 /* class to target the deadline calendar */

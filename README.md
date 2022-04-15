@@ -16,7 +16,7 @@ I started by creating the reducer and display a basic list of hard coded todos. 
 * see a count of pending todos / search resulst (depending on search input empty or not)
 * sort todos by dragging the handle
 
-I used local storage so the list is not gone when refresing the page. For styling, I used styled components and if I had more time, I would have structured them better.
+I used local storage so the list is not gone when refresing the page. For styling, I used styled components and if I had more time, I would have structured them better. I also left some tiny things in my CSS that I had trouble to incorporate in my styled components.
 
 Overall, I am very proud and happy with what I have achieved. I wanted an app that I would like to use and I was able to do that.
 
