@@ -42,6 +42,7 @@ font-size: 15px;
 /*These three below removes Safari default styling*/
 -webkit-appearance: none;
 -moz-appearance: none;
+-webkit-border-radius: none;
 appearance: none;
 `
 
