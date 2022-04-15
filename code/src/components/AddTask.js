@@ -127,7 +127,7 @@ const AddTask = () => {
         <Button 
         type="submit"
         disabled={inputValue === ""}>
-            Submit
+            Send
         </Button>
         </HeaderBox>
         </Form>
