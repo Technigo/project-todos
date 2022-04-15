@@ -3,6 +3,39 @@ import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 import { useSelector } from 'react-redux'
 
+import styled from 'styled-components'
+
+const devices = {
+    mobile: "(min-width: 375px)",
+    tablet: "(min-width: 768px)",
+    desktop: "(min-width: 1025px)",
+}
+
+const pixeldimensions = {
+    mobile: '375px',
+    tablet: '786px',
+    desktop: '1025px',
+}
+
+const InputField = styled.form`
+display: flex;
+flex-direction: column;
+position: absolute;
+width: 100%;
+padding: 2em;
+background-color: gray;
+gap: 2em;
+
+    /* @media ${devices.mobile} {
+        width: ${pixeldimensions.mobile}
+    }
+    @media ${devices.tablet} {
+        width: ${pixeldimensions.tablet}
+    }
+    @media ${devices.desktop} {
+        width: ${pixeldimensions.desktop}
+    } */
+`
 
 const Form = () => {
 
@@ -31,7 +64,7 @@ const Form = () => {
         
         <div className="task-wrapper">
 
-            <form onSubmit={onFormSubmit}> 
+            <InputField onSubmit={onFormSubmit}> 
                 <label htmlFor="newTask">What do you need to get done?</label>
                 <input  
                 value={newTask || ''} 
@@ -44,7 +77,7 @@ const Form = () => {
                 type="submit"> 
                 Post task 
                 </button>
-            </form>
+            </InputField>
 
         {/* {tasks.map(task => (
             <div className="task-card" key={task.id}>

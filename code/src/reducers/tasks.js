@@ -15,6 +15,16 @@ export const tasks = createSlice({
     reducers: {
         addTask: (state, action) => {
             state.items.push(action.payload)
+        },
+
+        toggleState: (store, action) => {
+
+        store.items.forEach(item => {
+            if (item.id === action.payload){
+                item.status = !item.status
+            }
+        })   
+
         }
     }
 
