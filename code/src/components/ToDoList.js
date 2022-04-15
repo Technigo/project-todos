@@ -4,37 +4,6 @@ import styled, { keyframes } from 'styled-components'
 
 import tasks from 'reducers/tasks'
 
-const ToDoList = () => {
-  const items = useSelector((store) => store.tasks.items)
-  const dispatch = useDispatch()
-
-  return (
-    <TodoContainer>
-      {items.map((task) => (
-        <TodoList key={task.id} className="todo">
-          <CheckboxContainer>
-            <Label>
-              <Input
-                id={task.id}
-                type="checkbox"
-                checked={task.isComplete}
-                onChange={() => dispatch(tasks.actions.toggleTasks(task.id))}
-              />
-              <Indicator />
-            </Label>
-          </CheckboxContainer>
-          <TodoTask isComplete={task.isComplete}>{task.description}</TodoTask>
-          <DoneBtn onClick={() => dispatch(tasks.actions.removeTask(task.id))}>
-            X <i className="fas fa-times-circle fa-lg"></i>
-          </DoneBtn>
-        </TodoList>
-      ))}
-    </TodoContainer>
-  )
-}
-
-export default ToDoList
-
 const CheckboxContainer = styled.div`
   display: flex;
   justify-content: space-around;
@@ -73,7 +42,7 @@ const Indicator = styled.div`
     background: blue;
   }
   ${Label}:hover & {
-    background: #a2ccda;
+    background: green;
   }
   &::after {
     content: '';
@@ -86,7 +55,7 @@ const Indicator = styled.div`
     left: 0.25em;
     width: 35%;
     height: 70%;
-    border: solid #064338;
+    border: solid #a2ccda;
     border-width: 0 0.2em 0.2em 0;
     animation-name: ${rotate};
     animation-duration: 0.3s;
@@ -121,10 +90,44 @@ const DoneBtn = styled.button`
   background: none;
   color: inherit;
   border: none;
-  padding: 0;
+  padding: 0 5px 0 0;
   font: inherit;
   cursor: pointer;
   outline: inherit;
   font-family: 'rubik';
   font-size: 20px;
 `
+
+const ToDoList = () => {
+  const items = useSelector((store) => store.tasks.items)
+  const dispatch = useDispatch()
+
+  const onToggleTask = (id) => {
+    dispatch(tasks.actions.toggleTasks(id))
+  }
+
+  return (
+    <TodoContainer>
+      {items.map((task) => (
+        <TodoList key={task.id}>
+          <CheckboxContainer>
+            <Label>
+              <Input
+                type="checkbox"
+                checked={task.isComplete}
+                onChange={() => onToggleTask(task.id)}
+              />
+              <Indicator />
+            </Label>
+          </CheckboxContainer>
+          <TodoTask isComplete={task.isComplete}>{task.description}</TodoTask>
+          <DoneBtn onClick={() => dispatch(tasks.actions.removeTask(task.id))}>
+            X
+          </DoneBtn>
+        </TodoList>
+      ))}
+    </TodoContainer>
+  )
+}
+
+export default ToDoList

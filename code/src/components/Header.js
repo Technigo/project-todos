@@ -42,6 +42,7 @@ const CounterContainer = styled.div`
   justify-content: space-evenly; */
 
   h6 {
+    font-size: 12px;
     margin: 0px;
     padding: 2px;
     color: #c77700;

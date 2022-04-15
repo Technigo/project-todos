@@ -1,7 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { createGlobalStyle } from 'styled-components'
 
 import tasks from './reducers/tasks'
 

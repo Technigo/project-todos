@@ -1,8 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import tasks from '../reducers/tasks'
-
 import Header from 'components/Header'
 import ToDoList from 'components/ToDoList'
 import AddTask from 'components/AddTask'
@@ -17,7 +15,9 @@ const Wrapper = () => {
         <Header />
         <AddTask />
         <Headline>
-          <h2>YOUR TO DOS</h2>
+          <div>
+            <h2>YOUR TO DOS</h2>
+          </div>
         </Headline>
         <Container>
           <ToDoList />
