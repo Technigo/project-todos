@@ -1,7 +1,6 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react'
 import styled from 'styled-components'
-
+import StartPage from './StartPage'
 
 
 //Styled components
@@ -52,6 +51,14 @@ margin-top: 35px;
 `
   
 const IntroPage = () => {
+    const [start, setStart] = useState(false)
+    const onStart = () => {
+        setStart(true)
+    }
+
+    if (start) {
+        return <StartPage />
+    } else {
 
     return (
 
@@ -63,12 +70,13 @@ const IntroPage = () => {
          The Todo App.
         </IntroHeading>
 
-        <Link to="/app">
-            <IntroButton>Let's get this started</IntroButton>
-        </Link>
+  
+            <IntroButton onClick={onStart}>Let's get this started</IntroButton>
+          
+    
         </Container>
     )
 }
-
+}
 
 export default IntroPage
