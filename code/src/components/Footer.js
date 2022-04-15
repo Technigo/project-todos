@@ -1,7 +1,9 @@
 import React from 'react';
 
-export const Footer = () => (
+const Footer = () => (
     <footer className='footer'>
-        <p>footer</p>
+        <p>Photo by <a href="https://unsplash.com/@evieshaffer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Evie S.</a></p>
     </footer>
 )
+
+export default Footer;

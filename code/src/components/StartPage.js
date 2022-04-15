@@ -4,6 +4,8 @@ import TaskList from "components/TaskList";
 import { useNavigate } from 'react-router-dom';
 import { NewTaskButton, TaskCounter, Header } from "../styled-components";
 
+import AddTask from "./AddTask";
+
 const StartPage = () => {
     const allTasks = useSelector((backpack) => backpack.tasks.items);    
     const completedTasks = allTasks.filter(task => task.isDone)
@@ -14,10 +16,11 @@ const StartPage = () => {
         <>
             <Header>
 				<h1>To do: </h1>
-                <NewTaskButton onClick={() => navigate("/addtask")}>
+                {/* <NewTaskButton onClick={() => navigate("/addtask")}>
                     add new task
-                </NewTaskButton>
+                </NewTaskButton> */}
             </Header>
+            <AddTask/>
             {allTasks.length > 0
                 ? <TaskCounter>
                         <p>Completed {completedTasks.length} / {allTasks? allTasks.length : 0 } todos</p>

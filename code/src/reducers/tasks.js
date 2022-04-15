@@ -5,11 +5,13 @@ const data = [
         id: "lahjs275234x",
         task: "Finish to do-app",
         isDone: false,
+        createdAt: new Date(),
     },
     {
         id: "lahjs27kjahs24x",
         task: "Finish sewing dress",
         isDone: false,
+        createdAt: new Date(),
     },
 ];
 

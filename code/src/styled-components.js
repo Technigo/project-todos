@@ -8,44 +8,22 @@ export const Container = styled.div`
     // margin-top: 3rem;
 
     @media (min-width: 668px) {
-        // max-width: 500px;
         width: clamp(250px, 90%, 500px);
     }
-
-    // @media (min-width: 1100px) {
-    //     max-width: 700px
-    // }
 `
 
 export const Header = styled.header`
-    // font-size: 2rem;
-    // padding-left: 1rem;
     margin: 0;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    // grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-items: center;
+    justify-content: space-between;
 
     h1 {
+        color: hsl(21,84%,54%);
         font-size: 3rem;
         margin: 0;
     }
-
-// font-size: 4rem;
-    // color: black;
-    // text-shadow: 2px 2px white,
-    //     4px 4px hsl(0, 0%, 20%);
-    // text-align: center;
-    // margin: 0;
-    // padding: 3rem;
-
-    // @media (min-width: 668px) {
-    //     font-size: 3rem;
-    // }
-
-    // @media (min-width: 1100px) {
-    //     width: 700px
-    // }
 ` 
 
 export const Form = styled.form`
@@ -54,15 +32,27 @@ export const Form = styled.form`
     text-align: center;
     width: 100%;
     margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    justify-content: start;
+    align-content: center;
+
+    input {
+        padding: .5em;
+        font-size: 1rem;
+    }
 `
 
 export const NewTaskButton = styled.button`
-    font-size 1rem;
-    // text-align: center;
-    padding: 1em;
-    background-color: orange;
+    // font-size 1rem;
+    text-transform: uppercase;
+    color: white;
+    // padding: .5em;
+    min-width: 10ch;
+    background-color: hsl(21,84%,54%);
+    border-radius: .25rem;
     border: none;
-    width: fit-content;
+    cursor: pointer;
 `
 
 export const TaskCounter = styled.div`
@@ -76,26 +66,35 @@ export const TaskCounter = styled.div`
 `
 export const TaskItem = styled.div`
     // border: 1px solid #dcdcdc;
-    background-color: white;
-    border-radius: 5px;
-    padding: 10px;
+    
+    
+    // padding: 10px;
     // margin-bottom: 5px;
     margin: 0 auto;
-    position: relative;
+    // position: relative;
     width: 100%;
 `
 
-export const DeleteButton = styled.button`
+export const SmallButton = styled.button`
     position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
+    top: 1rem;
+    right: 1rem;
+    font-weight: 600;
+    padding: .5em;
+    background-color: hsl(21,84%,54%);
+    color: white;
     border: none;
+    border-radius: .25rem;
     cursor: pointer;
 `
 
 export const GoBackButton = styled.button`
+    font-weight: 600;
+    padding: .5em;
+    background-color: hsl(21,84%,54%);
+    color: white;
     border: none;
+    border-radius: .25rem;
     cursor: pointer;
 `
 
@@ -107,4 +106,64 @@ export const Input = styled.input`
 export const Tasklist = styled.div`
     display: grid;
     gap: 2rem;
+`
+
+export const TaskLabel = styled.label`
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:hover TaskInput ~ Checkmark {
+        background-color: #ccc;
+    }
+` 
+
+export const TaskInput = styled.input`
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+`
+
+export const Checkmark = styled.span`
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    border: 1px solid orange;
+    // background-color: blue;
+`
+
+export const Footer = styled.footer`
+    position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom: 0;
+    width: 100%;
+    height: 4rem;
+    background: hsl(21,84%,54%);
+    color: white;
+    text-align: center;
+    line-height: 2rem;
+
+    a {
+        color: white;
+        font-weight: 700;
+        text-decoration: none;
+    }
+`
+
+export const Taskwrapper = styled.div`
+    padding: 1rem;
+    background-color: hsla(0, 0%, 100%, .8);
+    border-radius: .25rem;
+    position: relative;
 `
