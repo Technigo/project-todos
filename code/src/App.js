@@ -17,7 +17,16 @@ const reducer = combineReducers({
   tasks: tasks.reducer
 })
 
-const store = configureStore({ reducer })
+
+const persistedState = localStorage.getItem('reduxState')
+                        ? JSON.parse(localStorage.getItem('reduxState'))
+                        : {}
+
+const store = configureStore({ reducer, persistedState })
+
+store.subscribe(() => {
+  localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+})
 
 const AddTaskBtn = styled(Link)`
     background-color: #707BFB;

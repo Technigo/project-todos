@@ -5,7 +5,7 @@ const tasks = createSlice ({
     name: 'tasks',
     initialState: {
       storage: [],
-      list: [...JSON.parse(localStorage.getItem('item'))],
+      list: [],
       editItem:'', 
       editObject: {editText:'', editCategory:'',editDate:''},
       editId: null,
@@ -54,7 +54,7 @@ const tasks = createSlice ({
           },
 
           onChangeDate: (state, action) => {
-            return {...state, editObject: {...state.editObject, editDate: action.payload}}
+            return {...state, editObject: {...state.editObject, editDate: new Date(action.payload).getTime()}}
           },
 
           updateCompleteItem: (state, action) => {
