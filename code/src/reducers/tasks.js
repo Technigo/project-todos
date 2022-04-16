@@ -54,7 +54,7 @@ const tasks = createSlice ({
           },
 
           onChangeDate: (state, action) => {
-            return {...state, editObject: {...state.editObject, editDate: new Date(action.payload).getTime()}}
+            return {...state, editObject: {...state.editObject, editDate: action.payload}}
           },
 
           updateCompleteItem: (state, action) => {
