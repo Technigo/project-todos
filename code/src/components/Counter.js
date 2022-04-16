@@ -13,11 +13,13 @@ const TodoCounter = () => {
     );
   } else if (remainingTodos.length === 0) {
     return (
+    
       <section className="counter-left">
         <span role="img" aria-label="Completed">
-          No more to-dos, enjoy the day!
+          <h6>No more to-dos, enjoy the day!</h6>
         </span>
       </section>
+     
     );
   }
 };

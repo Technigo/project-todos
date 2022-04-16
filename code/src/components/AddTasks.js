@@ -4,6 +4,7 @@ import styled from "styled-components";
 import uniqid from "uniqid";
 import tasks from "reducers/Tasks";
 import "../index.css";
+import moment from 'moment'
 
 const devices = {
   mobile: "(min-width: 375px)",
@@ -14,15 +15,15 @@ const devices = {
 const Container = styled.div`
   width: 375px;
   margin: 0;
-
   @media ${devices.tablet} {
     width: 768px;
   }
-
   @media ${devices.desktop} {
     width: 1025px;
   }
 `;
+
+
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState("");
@@ -56,13 +57,13 @@ const AddTask = () => {
             onChange={(e) => setInputValue(e.target.value)}
           />
         </label>
-        <button type="submit" className="btn btn-primary mb-1">
-          <span role="img" aria-label="add">
-            ➕
+        <button type="submit" className="btn btn-primary mb-1" disabled={inputValue === ""}>
+          <span role="img" aria-label="add" mr-2>
+          ➕
           </span>
         </button>
       </form>
-    </Container>
+      </Container>
   );
 };
 

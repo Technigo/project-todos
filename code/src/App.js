@@ -6,6 +6,7 @@ import tasks from "reducers/Tasks";
 import TaskList from "components/TaskList";
 import AddTask from "components/AddTasks";
 import TodoCounter from "components/Counter";
+import Header from "components/Header";
 
 // This code is for the slices(pockets)
 const reducer = combineReducers({
@@ -22,9 +23,11 @@ export const App = () => {
     <div className="container bg-white p-4 mt-5">
       <Provider store={store}>
         <AddTask />
+        <Header />
         <TaskList />
         <TodoCounter />
       </Provider>
     </div>
+
   );
 };

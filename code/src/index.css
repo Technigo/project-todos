@@ -1,17 +1,24 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} 
 
 body {
-  margin: 15px;
+  margin: 0 auto;
   font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightblue !important;
+  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+ /* article-container {
+  min-height: 20vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+form {
+  overflow-wrap: break-word;
 }
