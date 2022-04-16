@@ -33,8 +33,9 @@ const TaskAdd = () => {
 
     const onFormSubmit = (event) => {
         event.preventDefault()
-
+       
         const newTask = {
+            //dependency uniqid to give each task a uniqueid
             id: uniqid(),
             text: inputValue,
             complete: false

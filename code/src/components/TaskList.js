@@ -26,7 +26,6 @@ background-color: white;
 const TaskText = styled.h2`
 max-width: 70%;
 font-size: 20px;
-/* margin: 0 8px; */
 color: ${(props) => (props.completed ? `#b0b0b0` : `#222221`)};
 `
 
@@ -34,7 +33,6 @@ const ButtonDelete = styled.button`
 position: absolute;
 right: 3px;
 margin-left: 6px;
-/* padding: 0 2px 0 8px; */
 border: none;
 background: none;
 font-size: 2rem;
@@ -42,6 +40,7 @@ cursor: pointer;
 `
 
 const TaskList = () => {
+    //Getting the items array from the store
     const taskList = useSelector((store) => store.tasks.items)
 
     const dispatch = useDispatch()
@@ -53,7 +52,7 @@ const TaskList = () => {
     const onTaskDelete = (index) => {
         dispatch(tasks.actions.deleteItem(index))
     }
-
+//Button to delete task to be anonymous function in order not to action before clicked
     return (
         <section>
             {taskList.map((taskItem, taskIndex) => (
