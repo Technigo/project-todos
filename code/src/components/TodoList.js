@@ -13,6 +13,20 @@ import TaskCounter from './TaskCounter'
 import CompleteAll from './CompleteAll'
 import todo from '../reducers/todo'
 
+const Main = styled.main`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: var(--clr-main);
+	min-height: 75vh;
+	padding-bottom: 2em;
+	overflow-y: scroll;
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	border: 2px solid var(--clr-accent);
+	border-top: none;
+`
+
 const ListBtn = styled.button`
 	padding: 0.1em 0.1em 0;
 	border: none;
@@ -57,7 +71,7 @@ const ButtonWrapper = styled.div`
 	margin-left: 1.05em;
 
 	@media (min-width: 667px) {
-		margin-left: 5.7em;
+		margin-left: 5.6em;
 	}
 `
 
@@ -123,9 +137,6 @@ const InputText = styled.label`
 const TodoList = () => {
 	const [inputChange, setInputChange] = useState('')
 	const items = useSelector((store) => store.todo.items)
-	// const text = items.filter((item) => item)
-	console.log('items', items)
-	console.log('inputChange', inputChange)
 
 	const dispatch = useDispatch()
 
@@ -136,7 +147,6 @@ const TodoList = () => {
 
 	const onUpdateTodo = (id) => {
 		dispatch(todo.actions.updateTodo({ id: id, text: inputChange }))
-		// dispatch(todo.actions.updateTodo(id))
 		setInputChange('')
 	}
 
@@ -154,7 +164,7 @@ const TodoList = () => {
 	}
 
 	return (
-		<main>
+		<Main>
 			<AddTodo />
 			<Container>
 				<TaskCounter />
@@ -212,7 +222,7 @@ const TodoList = () => {
 					<DeleteAllbtn onClick={onDeleteAll}>delete all</DeleteAllbtn>
 				</ButtonWrapper>
 			)}
-		</main>
+		</Main>
 	)
 }
 

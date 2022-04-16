@@ -49,20 +49,6 @@ h1 {
 	font-weight: 500;
 }
 
-main {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	background: var(--clr-main);
-	min-height: 75vh;
-	padding-bottom: 2em;
-	overflow-y: scroll;
-	border-bottom-left-radius: 30px;
-	border-bottom-right-radius: 30px;
-	border: 2px solid var(--clr-accent);
-	border-top: none;
-}
-
 .input-wrapper {
 	display: flex;
 	flex-direction: column;

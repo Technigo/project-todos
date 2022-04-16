@@ -2,6 +2,7 @@ import React from 'react'
 
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
+import CheckMark from '../assets/check.svg'
 
 const CounterTask = styled.p`
 	font-family: 'Imprima';
@@ -11,12 +12,8 @@ const CounterTask = styled.p`
 	align-self: flex-start;
 	padding: 0.2em 0.4em;
 	color: var(--clr-accent);
-	max-width: 33ch;
+	max-width: 41ch;
 	margin: 0.5em;
-
-	@media (min-width: 667px) {
-		max-width: 40ch;
-	}
 `
 
 const TaskCounter = () => {
@@ -33,14 +30,23 @@ const TaskCounter = () => {
 					return `Well done! ${tasksDone.length} of ${items.length} task are checked. Take a well deserved break or add a new task.`
 				}
 			} else {
-				return `TODO: ${tasksDone.length} OF ${items.length} DONE`
+				return `TODO: ${tasksDone.length} OF ${items.length} DONE `
 			}
 		} else {
 			return `Let's get started by adding some tasks! ☝️`
 		}
 	}
 
-	return <CounterTask>{showTasksDone(items)}</CounterTask>
+	if (items.length === tasksDone.length) {
+		return <CounterTask>{showTasksDone(items)}</CounterTask>
+	} else {
+		return (
+			<CounterTask>
+				{showTasksDone(items)}
+				<img src={CheckMark} alt='done' />
+			</CounterTask>
+		)
+	}
 }
 
 export default TaskCounter
