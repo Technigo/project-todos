@@ -19,7 +19,6 @@ const TodoContainer = styled.div`
 	background-color: rgb(255, 238, 238);
     min-width: 15rem;
     width: 20vw;
-    height: 30vh;
 	margin: 0.5rem auto;
     padding: 2rem;
     border-radius: 15%;
