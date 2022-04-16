@@ -14,6 +14,8 @@ I wanted to spend some more time on styling this week and tried to follow my ske
 
 If I had more time I would have added a Completed page for the tasks to drop down to when done.
 
+I will move the add button.
+
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://todo-app-id4h4lling.netlify.app/
