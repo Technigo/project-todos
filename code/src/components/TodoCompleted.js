@@ -10,8 +10,24 @@ font-size: 1rem;
 
 const CheckboxTodoCompleted = styled.input `
 border: 2px solid #000;
-background-color: pink;
 cursor: pointer;
+appearance: none;
+width: 1.2rem;
+height: 1.2rem;
+background-color: #fff;
+    &:before {
+        content: "";
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+    &:checked {
+        background-color: #40e0d0;
+    }
+`
+
+const LabelCheckboxContainer = styled.div `
+    display: flex;
+    align-items: center;
 `
 
 const TodoCompleted = ({ todo }) => {
@@ -26,7 +42,7 @@ const TodoCompleted = ({ todo }) => {
    
 
     return (
-        <div>
+        <LabelCheckboxContainer>
             <LabelTodoCompleted htmlFor={todo.id}>
                 Completed?
             </LabelTodoCompleted>
@@ -36,7 +52,7 @@ const TodoCompleted = ({ todo }) => {
                 checked={todo.isCompleted} 
                 onChange={() => toggleCompleted(todo.id)}
             />
-        </div>
+        </LabelCheckboxContainer>
     );
 }
 
