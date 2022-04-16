@@ -36,7 +36,7 @@ const AddContainer = styled.section`
     left: 15px;
     top: 5px;
     border-radius: 50%;
-    background-color: transparent;
+    background-color: var(--darkblgr);
     color: var(--ltgrey);
     display: flex;
     // align-items: center;
