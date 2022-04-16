@@ -2,14 +2,18 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
-// import todos from "reducers/todos";
-
 const Headerbox = styled.header `
     padding: 20px 20px 40px 20px;
-    // margin-bottom: 5px;
     border-radius: 5px;
+    width: 80vw;
+    margin-top: 20px;
     position: relative;
-    background-color: #aac3bd;
+    background-color: var(--misty);
+    color: var(--darkblgr);
+    
+    @media (min-width: 768px) {
+        width: 50vw;
+      }
 
     p, h1, h3, h4 {
         margin: 0;
@@ -21,6 +25,7 @@ const Headerbox = styled.header `
     h1 {
         font-size: 40px;
         font-weight: 1000;
+        color: var(--plum);
     }
 
     h3 {

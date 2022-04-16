@@ -7,12 +7,28 @@ import todos from 'reducers/todos'
 import AddTodo from 'components/AddTodo'
 import TodoList from 'components/TodoList'
 import Header from 'components/Header'
+import DeleteAll from 'components/DeleteAll'
+import Wrapper from 'components/Wrapper'
 
 const GlobalStyle = createGlobalStyle`
+:root {
+  --ltgrey: #eef0e7;
+  --ltblue: #bfd6d3;
+  --brown: #443929;
+  --darkblgr: #284e57;
+  --misty: #aac3bd;
+  --plum: #4D4049;
+}
+
   body {
+    margin: 0;
+    padding: 0;
     font-family: 'Manrope', sans-serif;
-    background-color: #f9fad1;
-    color: #4F4F4F;
+    background-color: var(--ltgrey);
+    color: var(--darkblgr);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 `
 
@@ -31,6 +47,7 @@ export const App = () => {
       <Header />
       <AddTodo />
       <TodoList />
+      <DeleteAll />
     </Provider>
   )
 }

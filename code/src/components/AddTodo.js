@@ -19,8 +19,8 @@ const AddContainer = styled.section`
     position: absolute;
     top: -20px;
     border-radius: 50%;
-    background-color: #ff9b21;
-    color: #fff6e2;
+    background-color: var(--darkblgr);
+    color: var(--ltgrey);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,45 +34,34 @@ const AddBox = styled.article`
 
   form {
     display: flex;
-    // flex-direction: column;
+    justify-content: center;
     padding-top: 30px;
-    // justify-content: center;
-    // align-items: center;
     margin-top:40px;
-    // gap: 10px;
+    width: 80vw;
+
+    @media (min-width: 768px) {
+      width: 50vw;
+    }
   }
 
   .send {
-    // width: 70px;
-    background-color: #ff9b21;
+    background-color: var(--darkblgr);
     cursor: pointer;
     border: none;
     padding: 10px;
     border-radius: 0 5px 5px 0;
-    color: #fff6e2;
+    color: var(--ltgrey);
     font-size: 20px;
   }
 
   input {
-    background-color: #aac3bd;
+    background-color: var(--misty);
     font-size: 20px;
     border-radius: 5px 0 0 5px;
     border: none;
-    padding:10px;
+    padding: 10px;
   }
 `
-
-// const NewtodoButton = styled.button`
-//   height: 15px;
-//   width: 15px;
-//   position: absolute;
-//   top: -10px;
-//   border: none;
-//   cursor: pointer;
-//   text-align: center;
-//   `
-  
-
 
 const AddTodo = () => {
 
@@ -80,7 +69,6 @@ const AddTodo = () => {
     const [newItem, setNewItem] = useState('')
     const [visible, setVisible] = useState(false)
     
-
     const handleSubmit =  (event) => {
         event.preventDefault();
         dispatch(todos.actions.addTask(newTask));
@@ -105,7 +93,7 @@ const AddTodo = () => {
           {visible && (
             <AddBox>
           <form onSubmit={handleSubmit}>
-            <label>
+            {/* <label> */}
             <input
             type="text"
             placeholder="My new todo"
@@ -113,7 +101,7 @@ const AddTodo = () => {
             onChange={(event) => setNewItem(event.target.value)}
             value={newItem}
             />
-            </label>
+            {/* </label> */}
             <button 
               className="send" 
               type="submit"

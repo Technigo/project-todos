@@ -23,6 +23,9 @@ const todos = createSlice({
     },
     deleteItem: (store, action) => {
       store.items.splice(action.payload, 1)
+    },
+    deleteAll: (store, action) => {
+      store.items.splice(action.payload)
     }
   }
   

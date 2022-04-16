@@ -24,8 +24,8 @@ const TodoItem = styled.article `
     appearance: none;
     -webkit-appearance: none;
     position: relative;
-    background: #fff;
-    border: 2px solid #ee6802;
+    background: var(--ltgrey);
+    border: 2px solid var(--darkblgr);
     padding: 10px;
     border-radius: 50%;
     height: 27px;
@@ -33,7 +33,7 @@ const TodoItem = styled.article `
   }
   
   input[type='checkbox']:checked {
-    background: #ee6802;
+    background: var(--plum);
     background-image: url("icons/check.svg");
   }
   
@@ -52,13 +52,13 @@ const TodoItem = styled.article `
 
 const DeleteButton = styled.button `
   position: absolute;
-  top: 10px;
+  top: 8px;
   right: 10px;
   background: none;
   border: none;
   cursor: pointer;
   font-size: 40px;
-  color: #ff9b21;
+  color: var(--darkblgr);
   transform: rotate(45deg);
   
 `
@@ -77,6 +77,8 @@ const TodoList = () => {
   const onItemDelete = (index) => {
     dispatch(todos.actions.deleteItem(index))
   }
+
+ 
 
   
 
@@ -100,6 +102,8 @@ const TodoList = () => {
                +
                 </DeleteButton>
             </TodoItem>
+            
+              
             
         ))
         
