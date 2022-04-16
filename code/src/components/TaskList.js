@@ -26,7 +26,7 @@ const TaskList = () => {
                     return <TaskItem key={taskItem.id}>
                         <h2>{taskItem.text}</h2>
                             <label>
-                                Is done:
+                                Done:
                                 <input
                                     type="checkbox"
                                     checked={taskItem.complete}
