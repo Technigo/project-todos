@@ -47,9 +47,8 @@ const TaskAdd = () => {
 
     return (
         <AddForm onSubmit={onFormSubmit}>
-            {/* <ButtonAdd type='submit' disabled={inputValue.length < 1}> */}
-            <ButtonAdd type='submit'>
-              <span role='img' aria-label='add task'>+</span>
+            <ButtonAdd type='submit' disabled={inputValue.length < 1}>
+              <span role='img' aria-label='add task'>➕</span>
             </ButtonAdd>
             <InputField
               placeholder='Add task'
