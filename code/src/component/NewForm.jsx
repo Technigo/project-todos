@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import moment from "moment";
-import { FaPlus } from "react-icons/fa";
+import { AiOutlinePlus } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { onAdd } from "../features/todo/todoSlice";
 import uniqid from "uniqid";
@@ -23,7 +23,7 @@ const NewForm = () => {
   return (
     <form className="container-center-start todo-item" onSubmit={onSubmit}>
       <button className="btn-todo container-center" type="submit">
-        <FaPlus />
+        <AiOutlinePlus className="btn-icon" />
       </button>
       <input
         type="text"

@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCheck } from "react-icons/fa";
+import { AiOutlineCheck } from "react-icons/ai";
 import { useDispatch } from "react-redux";
 import { toggleComplete } from "../features/todo/todoSlice";
 
@@ -15,7 +15,7 @@ const ToDo = ({ todoItem }) => {
         }`}
         onClick={() => dispatch(toggleComplete(id))}
       >
-        {isCompleted && <FaCheck className="check-icon" />}
+        {isCompleted && <AiOutlineCheck className="check-icon" />}
       </button>
       <div className="container-space-between" style={{ width: "100%" }}>
         <p className="my-1">{todo}</p>

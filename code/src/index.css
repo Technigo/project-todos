@@ -130,6 +130,8 @@ input:focus {
 }
 .check-icon {
   color: var(--color-white);
+  width: 1.25rem;
+  height: 1.25rem;
 }
 .sort {
   width: 100%;
@@ -157,6 +159,7 @@ input:focus {
   background-color: var(--color-primaryFaded);
 }
 .btn-todo {
+  padding: 0;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -174,6 +177,7 @@ input:focus {
   border: 1px solid var(--color-primary);
 }
 .btn-check {
+  padding: 0.25rem;
   width: 25px;
   height: 25px;
   border-radius: 50%;
@@ -203,4 +207,9 @@ input:focus {
 .btn-sort:hover {
   border-bottom: 1px solid var(--color-primary);
   color: var(--color-primary);
+}
+.btn-icon {
+  color: var(--color-grey);
+  width: 1.25rem;
+  height: 1.25rem;
 }
