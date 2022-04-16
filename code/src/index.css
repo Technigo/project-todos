@@ -22,11 +22,11 @@ canvas {
 
 }
 .content-wrapper {
-  position: relative;
+  position: relative; 
   z-index: 100;
 }
 
-.task-wrapper {
+.form-wrapper {
   width: 500px;
   margin: auto;
   position: relative;

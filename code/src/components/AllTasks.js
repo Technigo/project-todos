@@ -15,7 +15,7 @@ cursor: move;
 
 `
   
-  export const AllTasks = () => {
+export const AllTasks = () => {
 
     const dispatch = useDispatch()
 
@@ -25,7 +25,7 @@ cursor: move;
         return (
         <>
 
-        { allTasks.map((task) => (
+        {allTasks.map((task) => (
             <TaskBar key={task.id} draggable="true" >
                 <label htmlFor={task.id}>{task.title}</label> 
                 <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
@@ -35,9 +35,9 @@ cursor: move;
         </>
 
         )
-  }
+}
 
-  export const FinishedTasks = () => {
+export const FinishedTasks = () => {
 
     const dispatch = useDispatch()
 
@@ -47,7 +47,7 @@ cursor: move;
         return (
         <>
 
-        { finishedTasks.map((task) => (
+        {finishedTasks.map((task) => (
             <TaskBar key={task.id} draggable="true" >
                 <label htmlFor={task.id}>{task.title}</label> 
                 <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
@@ -57,4 +57,27 @@ cursor: move;
         </>
 
         )
-  }
+}
+
+
+export const UnFinishedTasks = () => {
+
+    const dispatch = useDispatch()
+
+
+    const unFinishedTasks = useSelector((store) => store.tasks.items.filter(t => !t.status))
+
+        return (
+        <>
+
+        {unFinishedTasks.map((task) => (
+            <TaskBar key={task.id} draggable="true" >
+                <label htmlFor={task.id}>{task.title}</label> 
+                <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
+            </TaskBar>
+        ))}
+
+        </>
+
+        )
+}

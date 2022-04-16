@@ -46,7 +46,7 @@ const Form = () => {
     return ( 
         
         
-        <div className="task-wrapper">
+        <div className="form-wrapper">
 
             <InputField onSubmit={onFormSubmit}> 
                 <label htmlFor="newTask">What do you need to get done?</label>

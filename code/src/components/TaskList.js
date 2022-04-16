@@ -1,13 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
-import { AllTasks } from './AllTasks.js'
-import { FinishedTasks } from './AllTasks.js'
-
-
-
+import { AllTasks, FinishedTasks, UnFinishedTasks } from './AllTasks.js'
 
 import styled from 'styled-components'
+
 
 const ListWrapper = styled.div`
 width: 500px;
@@ -25,21 +22,87 @@ position: relative;
 gap: 1em;
 opacity: 0.5;
 
-    
+`
+const TaskBar = styled.li`
+padding: 2em;
+flex: 1;
+border: 1px solid gray;
+cursor: move;
+
 `
 
 
 
 export const TaskList = () => {
 
-
-    const allTasks = useSelector((store) => store.tasks.items)
-    const finishedTasks = useSelector((store) => store.tasks.items.filter(t => t.status))
-    const unfinishedTasks = useSelector((store) => store.tasks.items.filter(t => !t.status))
-
     const dispatch = useDispatch()
 
-    const [filtered, setFiltered] = useState(allTasks)
+    const allTasks = useSelector((store) => store.tasks.items)
+    const finishedTasks = 
+        useSelector((store) => store.tasks.items.filter(t => t.status))
+
+        const unfinishedTasks = 
+            useSelector((store) => store.tasks.items.filter(t => !t.status))
+
+
+
+    const [tasksList, setTaskList] = useState(allTasks)
+
+    const pushToUnfinished = (task) => {
+        tasks.actions.toggleFINUNFIN(task.id)
+    }
+
+    // useEffect(() => {
+
+    //     {allTasks.map((task) => (
+    //         <TaskBar key={task.id} draggable="true" >
+    //             <label htmlFor={task.id}>{task.title}</label> 
+    //             <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
+    //         </TaskBar>
+    //     ))}
+
+    // }, [tasksList])
+    // const setState = (value) => {
+    //     if (value === 'DONE') {
+         
+    //         // store.items.filter(t => t.status)
+           
+    //         setTaskList(finishedTasks)
+        
+    //     }
+    //     else if (value === 'UNDONE'){
+            
+    //             // store.items.filter(t => !t.status)
+                
+    //             setTaskList(unfinishedTasks)
+                
+    //         }
+    //     else {             
+        
+    //         setTaskList(allTasks)
+            
+    //     }  
+    //     allTasks = tasksList
+    // }
+
+
+    // const onClickSort = (value) => {
+        
+        
+    //  setState(value)
+        
+       
+ 
+    // tasksList.map((task) => (
+    //             <TaskBar key={task.id} draggable="true" >
+    //                 <label htmlFor={task.id}>{task.title}</label> 
+    //                 <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
+    //             </TaskBar>
+    //         ))
+    // }
+
+
+    // const [filtered, setFiltered] = useState(allTasks)
 
 
     // const sort = (input) => {
@@ -53,22 +116,21 @@ export const TaskList = () => {
     //     }
     // }
     // const unfinished = setFiltered(unfinishedTasks)
+    // if (payload === 'DONE') {
+    //     return (setFiltered(finishedTasks))
+    // }
+    // else if (payload === 'UNDONE'){
+    //     return setFiltered(unfinishedTasks)
+    // }
+    // else { return setFiltered(allTasks) 
+    // }
 
 
-    const onClickSort = (payload) => {
+    // const onClickSort = (payload) => {
         
-        dispatch(tasks.actions.sort(payload))
+    //     dispatch(tasks.actions.sort(payload))
 
-        if (payload === 'DONE') {
-            return (setFiltered(finishedTasks))
-        }
-        else if (payload === 'UNDONE'){
-            return setFiltered(unfinishedTasks)
-        }
-        else { return setFiltered(allTasks) 
-        }
-
-    }
+    // }
 
    
    
@@ -94,20 +156,49 @@ export const TaskList = () => {
         <p>Unfinished: {unfinishedTasks.length}</p>
         <p>Finished: {finishedTasks.length}</p> */}
 
-        <button onClick={() => onClickSort('DONE')}>Finished</button>
+        {/* <button onClick={() => onClickSort('DONE')}>Finished</button>
         <button onClick={() => onClickSort('UNDONE')}>Unfinished</button>
-        <button onClick={() => onClickSort('')}>All</button>
+        <button onClick={() => onClickSort('')}>All</button> */}
+{/* {tasksList.map((task) => (
+            <TaskBar key={task.id} draggable="true" >
+                <label htmlFor={task.id}>{task.title}</label> 
+                <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
+            </TaskBar>
+        ))} */}
+
+{/*         
+            {allTasks.map((task) => (
+                <TaskBar key={task.id} draggable="true" >
+                    <label htmlFor={task.id}>{task.title}</label> 
+                    <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
+                </TaskBar>
+            ))} */}
 
 
-        <ListWrapper> 
+            
+
+            <ListWrapper> 
+                All
+            <AllTasks />
+            Finsihed
+            <FinishedTasks />
+
+            Unfinished
+            <UnFinishedTasks />
+
+            </ListWrapper>
+            
 
        
-        {filtered === allTasks && <AllTasks />
-        }
-        {filtered === finishedTasks && <FinishedTasks />
-        }
-        
-        </ListWrapper>
+
+
+        <button onClick={() => setTaskList(finishedTasks)}>Finished</button>
+        <button onClick={() => setTaskList(unfinishedTasks)}>Unfinished</button>
+        <button onClick={() => setTaskList(allTasks)}>All</button>
+
+        <button onClick={() => dispatch(tasks.actions.removeAll())}>REMOVE ALL</button>
+
+
 
         </>
 

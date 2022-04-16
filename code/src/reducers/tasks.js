@@ -8,38 +8,77 @@ const taskList = [
 ]
 
 export const tasks = createSlice({
+    
     name: 'tasks',
     initialState: {
     items: taskList
+
     },
     reducers: {
+
         addTask: (state, action) => {
-            state.items.push(action.payload)
+            state.items = [...state.items, action.payload]
         },
 
         toggleState: (store, action) => {
 
-        store.items.forEach(item => {
-            if (item.id === action.payload){
-                item.status = !item.status
-            }
-        })  
+            const updatedItems = store.items.map(item => {
+
+                    if (item.id === action.payload) {
+
+                        const updatedItem = {
+                            ...item, 
+                            status: !item.status,
+                        }
+                        return updatedItem
+
+                    } else { return item }
+                
+                })  
+
+            store.items = updatedItems
+
         },
+        removeAll: (store) => { store.items = []},
+    }
 
-        sort: (store, action) => {
+}
+)
 
-            if (action.payload === 'DONE') {
-                return (
-                    store.items.filter(t => t.status)
-                )
-            }
-            else if (action.payload === 'UNDONE'){
-                return (
-                    store.items.filter(t => !t.status)
-                )}
-            else { return  store.items 
-            }
-        }
+
+        // sort: (store, action) => {
+
+            
+        //     if (action.payload === 'DONE') {
+                
+        //             // store.items.filter(t => t.status)
+        //             const finishedTasks = 
+                    
+        //             store.items.filter(t => t.status)
+
+        //             return finishedTasks
+                
+        //     }
+        //     else if (action.payload === 'UNDONE'){
+                 
+        //             // store.items.filter(t => !t.status)
+        //             const unfinishedTasks = 
+                    
+        //             store.items.filter(t => !t.status)
+
+        //             return unfinishedTasks
+
+        //         }
+        //     else {             
+        //         const allTasks = store.items
+
+        //         store.items = allTasks
+        //     }
+            
+        // },
+
+
+
 
         // filterTodos: (store, filter) => {
 
@@ -75,7 +114,22 @@ export const tasks = createSlice({
         //     else { return setFiltered(allTasks) 
         //     }
         // }
-    }
 
-}
-)
+        // toggleState: (store, action) => {
+
+        //     store.items.forEach(item => {
+        //         if (item.id === action.payload){
+        //             item.status = !item.status
+        //         }
+        //     })  
+        //     },
+   
+// finisheditems: []
+// unfinisheditems: []
+// toggleUNFIN: (store, action) => {
+
+//     store.unfinisheditems = store.items.map(item => {
+     
+//         [!item.status]
+//     }
+// },

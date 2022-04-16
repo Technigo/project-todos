@@ -6,6 +6,8 @@ import  Form  from 'components/Form.js'
 
 import { tasks } from 'reducers/tasks'
 import { TaskList } from 'components/TaskList'
+import { Sort } from 'components/Sort'
+
 
 import ScriptTag from 'react-script-tag'
 
@@ -24,6 +26,8 @@ export const App = () => {
     <div className="content-wrapper">
       <TaskList />
       <Form />
+
+      {/* <Sort /> */}
 
 
     </div>
