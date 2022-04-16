@@ -9,7 +9,7 @@ align-items: center;
 border-radius: 10px;
 padding: 3px;
 margin: 1rem 1.5rem;
-height: 4rem;
+min-height: 4rem;
 position: relative;
 word-break: break-word;
 overflow-wrap: wrap;
