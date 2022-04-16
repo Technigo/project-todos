@@ -18,7 +18,7 @@ const TodoCount = () => {
 
 return (
     <TaskCount>
-        <p>Completed item: {completedTodo.length} / {allTodos.length}</p>
+        <p>Completed items: {completedTodo.length} / {allTodos.length}</p>
     </TaskCount>
 )
 };
