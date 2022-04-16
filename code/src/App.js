@@ -8,7 +8,7 @@ import AddTodo from 'components/AddTodo'
 import TodoList from 'components/TodoList'
 import Header from 'components/Header'
 import DeleteAll from 'components/DeleteAll'
-import Wrapper from 'components/Wrapper'
+
 
 const GlobalStyle = createGlobalStyle`
 :root {

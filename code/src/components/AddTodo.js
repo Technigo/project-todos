@@ -97,7 +97,7 @@ const AddTodo = () => {
             <input
             type="text"
             placeholder="My new todo"
-            maxlength="26"
+            maxLength="26"
             onChange={(event) => setNewItem(event.target.value)}
             value={newItem}
             />
