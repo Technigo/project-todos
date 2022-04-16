@@ -17,6 +17,7 @@ const ClearButton = styled.div `
     color: var(--ltgrey);
     font-size: 20px;
     margin-top: 10px;
+    margin-bottom: 15px;
     }
 `
 

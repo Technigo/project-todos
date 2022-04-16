@@ -12,7 +12,7 @@ const Headerbox = styled.header `
     color: var(--darkblgr);
     
     @media (min-width: 768px) {
-        width: 50vw;
+        width: 400px;
       }
 
     p, h1, h3, h4 {

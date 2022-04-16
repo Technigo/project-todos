@@ -10,6 +10,10 @@ const ListContainer = styled.section`
   flex-direction: column;
   margin-top: 60px;
   gap: 10px;
+
+  @media (min-width: 768px) {
+    align-items: center;
+  }
 `
 
 const TodoItem = styled.article `
@@ -19,6 +23,12 @@ const TodoItem = styled.article `
   position: relative;
   display: flex;
   align-items: center;
+
+  @media (min-width: 768px) {
+    width: 400px;
+  }
+
+ 
   
   input[type='checkbox'] {
     appearance: none;
@@ -52,12 +62,12 @@ const TodoItem = styled.article `
 
 const DeleteButton = styled.button `
   position: absolute;
-  top: 8px;
-  right: 10px;
+  top: 6px;
+  right: 8px;
   background: none;
   border: none;
   cursor: pointer;
-  font-size: 40px;
+  font-size: 30px;
   color: var(--darkblgr);
   transform: rotate(45deg);
   

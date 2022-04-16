@@ -10,14 +10,30 @@ const AddContainer = styled.section`
   justify-content: center;
   position: relative;
 
+  // .add {
+  //   cursor: pointer;
+  //   border: none;
+  //   font-size: 50px;
+  //   height: 70px;
+  //   width: 70px;
+  //   position: absolute;
+  //   top: -20px;
+  //   border-radius: 50%;
+  //   background-color: var(--darkblgr);
+  //   color: var(--ltgrey);
+  //   display: flex;
+  //   align-items: center;
+  //   justify-content: center;
+  // }
+
   .add {
     cursor: pointer;
     border: none;
     font-size: 50px;
-    height: 70px;
-    width: 70px;
-    position: absolute;
-    top: -20px;
+    height: 100%;
+    width: 100%;
+    // position: absolute;
+    // top: -20px;
     border-radius: 50%;
     background-color: var(--darkblgr);
     color: var(--ltgrey);
@@ -30,6 +46,15 @@ const AddContainer = styled.section`
     margin: 0;
   }
 `
+const Circle = styled.div `
+  height: 70px;
+  width: 70px;
+  background-color: var(--darkblgr);
+  border-radius: 50%;
+  position: absolute;
+  top: -20px;
+`
+
 const AddBox = styled.article`
 
   form {
@@ -40,7 +65,7 @@ const AddBox = styled.article`
     width: 80vw;
 
     @media (min-width: 768px) {
-      width: 50vw;
+      width: 400px;
     }
   }
 
@@ -84,12 +109,13 @@ const AddTodo = () => {
 
     return (
       <AddContainer>
+        <Circle>
         <button 
           type="button"
           className="add"
           onClick={() => setVisible(!visible)}>+
         </button>
-        
+        </Circle>
           {visible && (
             <AddBox>
           <form onSubmit={handleSubmit}>
@@ -105,7 +131,7 @@ const AddTodo = () => {
             <button 
               className="send" 
               type="submit"
-              disabled={newItem === ""}><p>ADD</p> 
+              disabled={newItem === ""}><p>Add</p> 
             
               </button>
             </form>
