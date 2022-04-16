@@ -17,14 +17,15 @@ const StyledList = styled.div `
 
 .todo p {
     margin: 0;
+    padding-right: 20px;
 }
 
 .remove-button {
-    margin-left: 10px;
-    width: 10%;
     background-color: #FFFF99;
     border: none;
     font-size: 30px;
+    cursor: pointer;
+    margin: 0;
 }
 `
 const StyledCheckbox = styled.label `
@@ -33,7 +34,7 @@ const StyledCheckbox = styled.label `
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 25px;
+  margin-bottom: 28px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
