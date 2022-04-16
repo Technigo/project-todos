@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 
 import { useSelector, useDispatch } from "react-redux";
 
@@ -14,7 +14,6 @@ const TaskList = () => {
   const allTasks = useSelector((store) => store.tasks.items)
   const dispatch = useDispatch()
   const [filteredTasks, setFilteredTasks] = useState([])
-
 
   const onTaskToggle = (taskId) => {
     dispatch(tasks.actions.toggleDoneTask(taskId))
@@ -75,7 +74,7 @@ const TaskList = () => {
                 alt='remove task'
               />
             </button>
-          </TaskListWrapperLabel>          
+          </TaskListWrapperLabel>
         </TaskListWrapper >
       ))}
     </TaskListFlexColumn>
