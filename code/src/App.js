@@ -3,8 +3,6 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 
 import tasks from 'reducers/tasks'
-
-// import TaskList from 'components/TaskList' , to put them in the same container I import TaskList in AddTask instead
 import AddTask from 'components/AddTask'
 
 

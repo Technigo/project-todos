@@ -6,11 +6,6 @@ const data = [
         name: 'Example Todo',
         isDone: false,
     },
-    // {
-    //     id: '666666',
-    //     name: 'Charmander',
-    //     isDone: false,
-    // },
 ]
 
 const tasks = createSlice({
@@ -18,6 +13,7 @@ const tasks = createSlice({
     initialState: {
         items: data,
     },
+    
     reducers: {
         toggleItem: (store, action) => {
         // v1 mutability
@@ -44,6 +40,7 @@ const tasks = createSlice({
         deleteItem: (store, action) => {
             //v1 mutability
             store.items.splice(action.payload, 1)
+
             //v2 immutability, filter and assign new var
             // const updatedItems = store.items.filter(item => item.id !== action.payload)
             // store.items = updatedItems
