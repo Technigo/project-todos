@@ -14,8 +14,9 @@ export const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     background-image: url(../images/backgroundPink.jpg);
     // background-color: lightpink;
-    object-fit: cover;
-    background-position: 100%;
+    background-size: auto;
+    background-repeat: no-repeat;  
+    background-position-x: 9%; 
     display: flex;
     justify-content: center;
     font-family: 'Ubuntu', sans-serif;
@@ -32,7 +33,8 @@ export const GlobalStyle = createGlobalStyle`
   h3 {
       font-size: 20px;
       text-align: center;
-      color: #AA176A;
+      color: black;
+      font-style: italic;
     }
 
   p {
@@ -56,7 +58,7 @@ export const TodoListContainer = styled.section`
   justify-content: center;
   flex-direction: column;
   min-width: 300px;
-  border: solid 1px black;
+  border: solid 1px #EA99AA;
   border-radius: 5px;
   margin-top: 20vh;
   padding: 20px;
@@ -88,7 +90,7 @@ export const NewTask = styled.article`
 `
 
 export const TaskItem = styled.article`
-    border: 1px solid #dcdcdc;
+    border: 1px solid #EA99AA;
     border-radius: 5px;
     padding: 10px;
     margin-bottom: 5px; 
@@ -106,7 +108,7 @@ export const DeleteButton = styled.button`
 
     .delete {
       font-size: 30px;
-      color: black;
+      color: #EA99AA;
       font-weight: 600;
     }
 `
@@ -119,19 +121,16 @@ export const NumberOfTasks = styled.p`
 
 export const InputArea = styled.input`
     border: 0;
-    // border-bottom: 3px dashed white;
-    // background-color: transparent;
-    // padding: 10px 15 px;
-    // width: 30%;
-    // color: white;
+    padding: 10px 15 px;
+    margin-right: 6px;
 `
 
 export const SubmitButton = styled.button`
     border-radius: 8px;
     padding: 10px 15px;
     margin: 3px;
-    background-color: #AA176A;
-    color: white;
-    border: solid #AA176A 1px;
+    background-color: #EA99AA;
+    color: black;
+    border: solid #EA99AA 1px;
     font-family: 'Ubuntu', sans-serif;
 `
