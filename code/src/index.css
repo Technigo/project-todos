@@ -91,10 +91,3 @@ transform:scale(0);
 opacity:0;
 }
 
-/*Media queries*/
-
-@media screen and (min-width: 800px) {
-  body{
-    background-color: chocolate;
-  }
-}
