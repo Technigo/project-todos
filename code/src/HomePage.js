@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Logo = styled.h1`
@@ -19,9 +19,26 @@ const NavList = styled.ul`
     list-style: none;
     font-size: 1.8rem;
     padding: 4.8rem 3.2rem;
-    width: 40rem;
-
+    width: 100%;
 ` 
+
+const NavLinks = styled(NavLink)`
+    color: #000;
+    text-decoration: none;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    font-size: 1.8rem;
+    transition: all 0.4s ease;
+
+    &:hover {
+        background-color: #000;
+        color: #fff;
+        padding: 1.6rem 2.2rem;
+        border-radius: 10px;
+        font-size: 2rem;
+
+    }
+`
 
 
 
@@ -30,11 +47,21 @@ const HomePage = () => {
     return (
             <NavList>
                 <Logo><span>Do</span>me</Logo>
-                <Link to='today-task'><li><span role='img'aria-hidden="true" >☀️ </span> Today</li></Link>
-                <Link to='projects'><li><span role='img'aria-hidden="true" >🗂 </span> Projects</li></Link>
-                <Link to='complete'><li><span role='img'aria-hidden="true" >✅ </span>Complete</li></Link>
-                <Link to='uncomplete'><li><span role='img'aria-hidden="true" >🚨 </span> Uncomplete</li></Link>
-                <Link to='all'><li><span role='img'aria-hidden="true" >📝 </span>All tasks</li></Link>
+                <NavLinks to='today-task'>
+                    <li> <span role='img'aria-hidden="true" >☀️ </span> Today </li>
+                </NavLinks>
+                <NavLinks to='projects'>
+                    <li> <span role='img'aria-hidden="true" >🗂 </span> Projects</li>
+                </NavLinks>
+                <NavLinks to='complete'><li>
+                    <span role='img'aria-hidden="true" >✅ </span>Complete</li>
+                </NavLinks>
+                <NavLinks to='uncomplete'>
+                    <li><span role='img'aria-hidden="true" >🚨 </span> Uncomplete</li>
+                </NavLinks>
+                <NavLinks to='all'>
+                    <li><span role='img'aria-hidden="true" >📝 </span>All tasks</li>
+                </NavLinks>
             </NavList>
             
     )

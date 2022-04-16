@@ -4,6 +4,25 @@ import trashIcon from './img/trash.svg'
 import leftBtn from './img/leftBtn.svg'
 import { useDispatch } from "react-redux";
 import tasks from "reducers/tasks";
+import styled from "styled-components";
+import { IconButton } from "AddTaskStyle";
+
+
+const HeaderContainer = styled.header`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+`
+
+const PageTitle = styled.p`
+    font-size: 1.8rem;
+    font-weight: 700;
+    padding: 6.4rem 0;
+
+
+`
 
 const Header = ( {header} ) => {
 
@@ -22,15 +41,15 @@ const Header = ( {header} ) => {
 
    
 
-    return <header>
-        <button type="button" onClick={onBackBtnClick}>
+    return <HeaderContainer>
+        <IconButton type="button" onClick={onBackBtnClick}>
             <img src={leftBtn} alt='left arrow icon' />
-        </button>
-        <p>{header}</p>
-        <button onClick={deleteItem} type="button">
+        </IconButton>
+        <PageTitle>{header}</PageTitle>
+        <IconButton onClick={deleteItem} type="button">
             <img src={trashIcon} alt='trash icon' />
-        </button>
-    </header>
+        </IconButton>
+    </HeaderContainer>
 }
 
 export default Header

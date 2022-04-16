@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import tasks from "reducers/tasks";
-
+import { CheckBox, TaskStatus ,CompleteStatus, Reminder, TaskTitle, DateCreated } from "TaskStyling";
+import {  IconButton } from "AddTaskStyle";
+import trash from './img/trash.svg'
+import edit from './img/edit.svg'
 
 const Task = ( {task} ) => {
-
+    
     const navigate = useNavigate()
     const dispatch = useDispatch();
-    const [complete, setComplete] = useState(false);
     
     const editItem = (id) => {
         navigate('/add-task');
@@ -18,11 +20,11 @@ const Task = ( {task} ) => {
     const deleteItem = (id) => {
         dispatch(tasks.actions.deleteItem(id))
     }
+
    
 
     // Toggle check complete button
     const onChangeCompleteBtn = (id) => {
-        setComplete(!complete);
         dispatch(tasks.actions.updateCompleteItem(id))
     }
  
@@ -36,33 +38,50 @@ const Task = ( {task} ) => {
     const remainDay = Math.floor((task.dueDate - currentDate)/(1000*60*60*24)+1)
 
     const reminder = () => {
-        if (remainDay > 10) {
-            return dueDateFormat 
-        } 
+        if (remainDay > 10 ) {
+            return <span>Due: {dueDateFormat}</span> 
+        } else if (task.dueDate === null) {
+            return <span>No due date</span>
+        }
 
-        return remainDay + 'days';
+        return <span>Due in {remainDay} {remainDay === 1 ? 'day' : 'days'}</span>;
     }      
     return (
-        <>
-        <label htmlFor={task.text}>
-        <span> {task.complete ? 'complete' : 'uncomplete'} </span>
-    
-        <p> {task.text}  </p>
-    
-        <span>Due date: {reminder()}</span>
-        <span>Created: {task.date}</span>
+        <CheckBox>
+            <input 
+            type='checkbox'
+            value={task.text}
+            checked={task.complete}
+            onChange={() => onChangeCompleteBtn(task.id)}
+            />
+            <label htmlFor={task.text}>
+            
+                <TaskStatus>
+                    <div>
+                        <CompleteStatus background = {task.complete ? 'green' : '#f3e0f0'}> {task.complete ? 'complete' : 'uncomplete'} </CompleteStatus>
+                                            
+                        <Reminder>{reminder()}</Reminder>
+                    </div>
+                </TaskStatus>
 
-                            
-        <button type="button" onClick={() => editItem(task.id)}>edit</button>
-        <button type="button" onClick={() => deleteItem(task.id)}>delete</button>
-        </label>
-        <input 
-        type='checkbox'
-        value={task.text}
-        checked={complete}
-        onChange={() => onChangeCompleteBtn(task.id)}
-        />
-        </>
+
+                <TaskTitle> {task.text}  </TaskTitle>
+                
+
+                <div className="flex">
+                        {/*<DateCreated>Created: {task.date}</DateCreated>*/}
+                        <div>
+                            <IconButton type="button" onClick={() => editItem(task.id)}>
+                                <img tabIndex='1' src={edit} alt='edit icon' />
+                            </IconButton>
+                            <IconButton type="button" onClick={() => deleteItem(task.id)}>
+                                <img tabIndex='1' src={trash} alt='trash icon' />
+                            </IconButton>
+                        </div>
+                    </div>
+
+            </label>
+        </CheckBox>
     )
 
 }

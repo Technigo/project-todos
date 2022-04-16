@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { BrowserRouter, Route, Routes, useNavigate } from 'react-router-dom' 
+import { BrowserRouter, Route, Routes } from 'react-router-dom' 
 import { Link } from "react-router-dom";
 import tasks  from './reducers/tasks'
 import HomePage from 'HomePage'
@@ -23,12 +23,24 @@ const AddTaskBtn = styled(Link)`
     background-color: #707BFB;
     color: white;
     padding: 1.6rem 2.2rem;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-decoration: none;
     border-radius: 10px;
+    transition: all 0.4s ease;
 
+    &:hover {
+      background-color: #fff;
+      border: solid 1.5px #707BFB;
+      color: #707BFB;
+      font-size: 2rem;
+    }
+
+    &:active {
+      background-color: #000;
+      color: #fff;    
+    }
 `
 
 export const App = () => {
@@ -46,7 +58,9 @@ export const App = () => {
             <Route path='all' element= { <AllTask /> } />
             <Route path='add-task' element={ <AddTask /> } />
           </Routes>
-          <AddTaskBtn to='add-task'>Add a Task</AddTaskBtn>
+          <div className='btn-container'>
+            <AddTaskBtn to='add-task'>Add a Task</AddTaskBtn>
+          </div>
         </BrowserRouter>
 
     </Provider>

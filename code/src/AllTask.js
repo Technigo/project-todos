@@ -3,7 +3,13 @@ import { useSelector } from "react-redux";
 import Header from "Header";
 import Task from "Task";
 import uniqid from 'uniqid';
+import styled from "styled-components";
 
+const AllTasks = styled.ul`
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+`
 
 const AllTask = () => {
 
@@ -19,16 +25,16 @@ const AllTask = () => {
 
   
         return (
-        <div>
+        <div className='container'>
             <Header header='📝 All tasks' />
 
-            <ul>
+            <AllTasks>
                 {list ? list.map(item => {
                 
                 return <Task key={uniqid()} task = {item} />
                 
                 }) : []}
-            </ul>
+            </AllTasks>
         </div>
     )
 }
