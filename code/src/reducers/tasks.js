@@ -11,7 +11,6 @@ export const tasks = createSlice({
     name: 'tasks',
     initialState: {
         items: taskList,
-        filter: []
     },
     reducers: {
         addTask: (store, action) => {
