@@ -20,7 +20,8 @@ export const App = () => {
       <GlobalStyle />
       <Provider store={store}>
         <TodoListContainer>
-          <h1>MY TODO LIST</h1>
+          <h1>PLAN YOUR WEDDING</h1>
+          <h3>What do you need to do?</h3>
           <TaskList />
           <AddTask />
         </TodoListContainer>

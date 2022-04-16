@@ -1,27 +1,46 @@
 import styled from 'styled-components'
 import { createGlobalStyle } from 'styled-components'
 
+export const devices = {
+    mobile: "(min-width: 375px)",
+    tablet: "(min-width: 768px)",
+    desktop: "(min-width: 1025px)",
+}
+
 export const GlobalStyle = createGlobalStyle`  
   body {
     margin: 0;
-    background-color: white;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    background-image: url(../images/backgroundPink.jpg);
+    // background-color: lightpink;
+    object-fit: cover;
+    background-position: 100%;
+    display: flex;
+    justify-content: center;
+    font-family: 'Ubuntu', sans-serif;
   }
 
   h1 {
       font-size: 25px;
       text-align: center;
-      margin: 20px;
+      margin: 20px 20px 0px 20px;
       padding-top: 20px;
+      border-bottom: solid black 1px;
+    }
+
+  h3 {
+      font-size: 20px;
+      text-align: center;
+      color: #AA176A;
     }
 
   p {
       text-align: center;
-      background-color: black;
+    //   background-color: black;
       border: solid 1px #dcdcdc;
       border-radius: 5px;
-      color: white;
+    //   color: white;
     }
 
   section {
@@ -34,8 +53,14 @@ export const GlobalStyle = createGlobalStyle`
 export const TodoListContainer = styled.section`
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
   min-width: 300px;
+  border: solid 1px black;
+  border-radius: 5px;
+  margin-top: 20vh;
+  padding: 20px;
+  background-color: pink;
 `
 
 export const TaskListStyling = styled.article`
@@ -49,24 +74,20 @@ export const TaskListStyling = styled.article`
 export const NewTask = styled.article`
   display: flex;
   flex-direction: column;
-  background-color: black;
   padding: 15px;
   margin-bottom: 5px; 
   position: relative;
-  border: 1px solid #dcdcdc;
-  border-radius: 5px;
-  color: white;
+  color: black;
   font-weight: 600;
   text-align: center;
   
   .newInput {
     font-size: 15px;
+    font-family: 'Ubuntu', sans-serif;
   }
 `
 
 export const TaskItem = styled.article`
-    background-color: black;
-    color: white;
     border: 1px solid #dcdcdc;
     border-radius: 5px;
     padding: 10px;
@@ -85,7 +106,7 @@ export const DeleteButton = styled.button`
 
     .delete {
       font-size: 30px;
-      color: white;
+      color: black;
       font-weight: 600;
     }
 `
@@ -98,17 +119,19 @@ export const NumberOfTasks = styled.p`
 
 export const InputArea = styled.input`
     border: 0;
-    border-bottom: 3px dashed white;
-    background-color: transparent;
-    padding: 10px 15 px;
+    // border-bottom: 3px dashed white;
+    // background-color: transparent;
+    // padding: 10px 15 px;
     // width: 30%;
-    color: white;
+    // color: white;
 `
 
 export const SubmitButton = styled.button`
     border-radius: 8px;
     padding: 10px 15px;
     margin: 3px;
-    background-color: white;
+    background-color: #AA176A;
+    color: white;
+    border: solid #AA176A 1px;
     font-family: 'Ubuntu', sans-serif;
 `
