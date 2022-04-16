@@ -1,11 +1,12 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 import todos from 'reducers/todos'
 
 import Header from 'components/Header'
+import AddNewToDo from 'components/AddNewToDo'
 import ToDoList from 'components/ToDoList'
 import Footer from 'components/Footer'
 
@@ -26,7 +27,10 @@ export const App = () => {
     <Provider store={store}>
       <StyledAppcontainer>
         <Header />
-        <ToDoList />
+        <main>
+          <AddNewToDo />
+          <ToDoList />
+        </main>
         <Footer />
       </StyledAppcontainer>
     </Provider>

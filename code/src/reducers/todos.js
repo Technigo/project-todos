@@ -1,35 +1,40 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const toDoItems = [
+const data = [
     {
-        id: 1, text: 'Go for a walk', complete: false
+        id: 1, text: 'Go for a walk', isComplete: false
     },
     {
-        id: 2, text: 'Read a book', complete: true
+        id: 2, text: 'Read a book', isComplete: true
     },
     {
-        id: 3, text: 'Cook something delicious', complete: false
+        id: 3, text: 'Cook something delicious', isComplete: false
     },
     {
-        id: 4, text: 'Update your LinkedIn', complete: false
+        id: 4, text: 'Update your LinkedIn', isComplete: false
     }
 ]
 
 const todos = createSlice({
     name: 'todos',
-    initialState: toDoItems,
+    initialState: {
+        toDoList: data
+    },
     reducers: {
+        toggleComplete: (store, action) => {
+            store.toDoList.forEach((item) => {
+                if (item.id === action.payload) {
+                    item.isComplete = !item.isComplete
+                }
+            })
+        },
+        deleteItem: (store, action) => {
+            store.toDoList.splice(action.payload, 1)
+        },
         removeAll: (store, action) => {
             console.log(store)
             console.log(action)
         },
-        toggleComplete: (store, action) => {
-            store.toDoItems.forEach((item) => {
-                if (item.id === action.payload) {
-                    item.complete = !item.complete
-                }
-            })
-        }
     }
 })
 

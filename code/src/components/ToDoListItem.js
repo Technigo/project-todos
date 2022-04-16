@@ -1,5 +1,8 @@
 import React from 'react'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components/macro'
+
+import todos from 'reducers/todos'
 
 const ToDoListItemArticle = styled.article`
     display: flex;
@@ -10,7 +13,17 @@ const ToDoListItemArticle = styled.article`
     background: white;
 `
 
-const ToDoListItem = ({ id, text, isComplete }) => {
+const ToDoListItem = ({ itemIndex, id, text, isComplete }) => {
+
+    const dispatch = useDispatch()
+
+    const onDeleteToDo = (index) => {
+        dispatch(todos.actions.deleteItem(index))
+    }
+
+    const onToggleComplete = (id) => {
+        dispatch(todos.actions.toggleComplete(id))
+    }
 
     return (
         <ToDoListItemArticle>
@@ -19,9 +32,10 @@ const ToDoListItem = ({ id, text, isComplete }) => {
                 Is complete:
                 <input
                     type="checkbox"
-                    checked={isComplete} />
+                    checked={isComplete}
+                    onChange={() => onToggleComplete(id)} />
             </label>
-            <button>Remove</button>
+            <button onClick={() => onDeleteToDo(itemIndex)}>Remove</button>
         </ToDoListItemArticle>
     )
 }

@@ -1,9 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 import ToDoListItem from './ToDoListItem'
-// import todos from 'reducers/todos'
 
 const StyledListSection = styled.section`
     margin: 10px;
@@ -11,19 +10,31 @@ const StyledListSection = styled.section`
 `
 
 const ToDoList = () => {
-    const toDoList = useSelector((store) => store.todos)
+    const toDoList = useSelector((store) => store.todos.toDoList)
+
+    const completedToDos = toDoList.filter((todo) => todo.isComplete)
+
+    const isListNotEmpty = toDoList.length > 0
 
     return (
-        <StyledListSection>
-            {toDoList.map((toDoItem) => (
-                <ToDoListItem 
-                  key={toDoItem.id}
-                  id={toDoItem.id}
-                  text={toDoItem.text}
-                  isComplete={toDoItem.complete}>
-                </ToDoListItem>
-            ))}
-        </StyledListSection>
+        <>
+            {isListNotEmpty &&
+                <section style={{textAlign: 'center'}}>
+                    <p>Completed: {completedToDos.length} of {toDoList.length}</p>
+                </section>
+            }
+            <StyledListSection>
+                {toDoList.map((toDoItem, itemIndex) => (
+                    <ToDoListItem
+                        key={toDoItem.id}
+                        itemIndex={itemIndex}
+                        id={toDoItem.id}
+                        text={toDoItem.text}
+                        isComplete={toDoItem.isComplete}>
+                    </ToDoListItem>
+                ))}
+            </StyledListSection>
+        </>
     )
 }
 
