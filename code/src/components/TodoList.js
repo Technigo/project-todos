@@ -22,7 +22,11 @@ const TodoList = () => {
         
     return (
         <div className="todo-list container">
-            <TodoCounter>You have completed {completedTodos.length} of {numberOfTodos} todos.</TodoCounter>
+
+            { numberOfTodos === 0 ? 
+                <p>Hurray! You don't have any todos.</p> : 
+                <TodoCounter>You have completed {completedTodos.length} of {numberOfTodos} todos.</TodoCounter> 
+            }
 
             {todoList.map((todo, index) => (
                 <TodoItem index={index} key={todo.id} todo={todo}/>
