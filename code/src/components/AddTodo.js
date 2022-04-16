@@ -30,16 +30,17 @@ const AddContainer = styled.section`
     cursor: pointer;
     border: none;
     font-size: 50px;
-    height: 100%;
-    width: 100%;
-    // position: absolute;
-    // top: -20px;
+    // height: 100%;
+    // width: 100%;
+    position: absolute;
+    left: 15px;
+    top: 5px;
     border-radius: 50%;
-    background-color: var(--darkblgr);
+    background-color: transparent;
     color: var(--ltgrey);
     display: flex;
-    align-items: center;
-    justify-content: center;
+    // align-items: center;
+    // justify-content: center;
   }
 
   p {
