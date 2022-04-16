@@ -34,9 +34,10 @@ const AddTask = () => {
                         value={inputValue}
                         onChange={(e) => setInputValue(e.target.value)} 
                         className="newInput"
+                        required
                     />
                 </label>
-                <SubmitButton type="submit">Add</SubmitButton>
+                <SubmitButton type="submit">+</SubmitButton>
             </form>
         </NewTask>
     )

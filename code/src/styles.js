@@ -25,13 +25,12 @@ export const GlobalStyle = createGlobalStyle`
   h1 {
       font-size: 25px;
       text-align: center;
-      margin: 20px 20px 0px 20px;
-      padding-top: 20px;
+      margin: 10px 20px 0px 20px;
       border-bottom: solid black 1px;
     }
 
   h3 {
-      font-size: 20px;
+      font-size: 15px;
       text-align: center;
       color: black;
       font-style: italic;
@@ -39,10 +38,8 @@ export const GlobalStyle = createGlobalStyle`
 
   p {
       text-align: center;
-    //   background-color: black;
-      border: solid 1px #dcdcdc;
+      border: solid 1px #EA99AA;
       border-radius: 5px;
-    //   color: white;
     }
 
   section {
@@ -60,9 +57,15 @@ export const TodoListContainer = styled.section`
   min-width: 300px;
   border: solid 1px #EA99AA;
   border-radius: 5px;
-  margin-top: 20vh;
+  margin: 15vh 0vh 5vh 0vh;
   padding: 20px;
   background-color: pink;
+
+  .date {
+      margin-top: 10px;
+      border: none;
+      font-size: 12px;
+  }
 
   @media ${devices.mobile}{
     max-width: 75vw;
@@ -96,7 +99,7 @@ export const NewTask = styled.article`
 export const TaskItem = styled.article`
     border: 1px solid #EA99AA;
     border-radius: 5px;
-    padding: 10px;
+    padding: 5px 10px 10px 10px;;
     margin-bottom: 5px; 
     position: relative; 
     min-width: 250px;
@@ -104,8 +107,8 @@ export const TaskItem = styled.article`
 
 export const DeleteButton = styled.button`
     position: absolute;
-    top: 10px; 
-    right: 10px; 
+    top: 3px; 
+    right: 6px; 
     background: none;
     border: none;
     cursor: pointer;
@@ -135,10 +138,11 @@ export const InputArea = styled.input`
 
 export const SubmitButton = styled.button`
     border-radius: 8px;
-    padding: 10px 15px;
+    padding: 0px 10px;
     margin: 3px;
     background-color: #EA99AA;
-    color: black;
+    color: white;
     border: solid #EA99AA 1px;
     font-family: 'Ubuntu', sans-serif;
+    font-size: 20px;
 `
