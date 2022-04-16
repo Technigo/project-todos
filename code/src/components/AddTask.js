@@ -28,7 +28,6 @@ const TodoContainer = styled.div`
 const Title = styled.h1`
     display: flex;
     align-items: center;
-    justify-content: space-between;
 	font-size: 1.5rem;
     padding: 2.5rem;
     color: rgb(255, 238, 238);
