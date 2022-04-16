@@ -44,6 +44,7 @@ const todo = createSlice({
 						...item,
 						text: text,
 						editable: !item.editable,
+						createdAt: format(new Date(), 'LLLL d, yyyy | HH:mm'),
 					}
 					return updatedTodoText
 				} else {

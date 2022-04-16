@@ -82,6 +82,11 @@ input {
 	outline: none;
 }
 
+input:focus-visible {
+	border: var(--clr-accent);
+	outline: -webkit-focus-ring-color var(--clr-accent) 1px;
+}
+
 input[type='checkbox'] {
 	align-self: flex-start;
 	display: inline-block;

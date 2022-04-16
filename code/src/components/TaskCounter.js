@@ -5,13 +5,18 @@ import styled from 'styled-components'
 
 const CounterTask = styled.p`
 	font-family: 'Imprima';
-	color: var(--clr-main);
 	font-weight: 300;
+	font-size: 14px;
+	border: 1px solid var(--clr-gray);
 	align-self: flex-start;
-	padding: 0.25em 0.5em;
-	background: var(--clr-accent);
+	padding: 0.2em 0.4em;
+	color: var(--clr-accent);
 	max-width: 33ch;
 	margin: 0.5em;
+
+	@media (min-width: 667px) {
+		max-width: 40ch;
+	}
 `
 
 const TaskCounter = () => {

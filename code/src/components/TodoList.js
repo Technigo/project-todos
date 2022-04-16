@@ -6,6 +6,7 @@ import styled from 'styled-components'
 import updateBtn from '../assets/update.svg'
 import deleteBtn from '../assets/delete.svg'
 import plusBtn from '../assets/plus.svg'
+import closeBtn from '../assets/close.svg'
 
 import AddTodo from './AddTodo'
 import TaskCounter from './TaskCounter'
@@ -42,8 +43,8 @@ const AddBtn = styled.button`
 const AddPlus = styled.img`
 	color: none;
 	position: absolute;
-	right: 43px;
-	bottom: -13px;
+	right: 42px;
+	bottom: -14px;
 
 	&:hover {
 		transform: scale(1.2);
@@ -110,7 +111,7 @@ const DateContainer = styled.p`
 `
 const InputText = styled.label`
 	margin: 0;
-	padding-bottom: 0.2em;
+	padding-bottom: 0.05em;
 	color: var(--clr-secondary);
 	border-bottom: 1px solid var(--clr-accent);
 	font-family: 'Imprima', 'Ubuntu', sans-serif;
@@ -162,7 +163,8 @@ const TodoList = () => {
 						<TaskContainerWrapper>
 							<Wrapper>
 								<input
-									tabIndex={'0'}
+									role='checkbox'
+									tabindex='0'
 									type='checkbox'
 									name='tasks'
 									checked={item.isCompleted}
@@ -171,7 +173,11 @@ const TodoList = () => {
 								<InputText className={`${item.isCompleted ? 'completed' : ''}`}>{item.text}</InputText>
 							</Wrapper>
 							<ListBtn onClick={() => onToggleEditable(item.id)}>
-								<img src={updateBtn} alt='update task'></img>
+								{!item.editable ? (
+									<img src={updateBtn} alt='update task'></img>
+								) : (
+									<img className='close' src={closeBtn} alt='update task'></img>
+								)}
 							</ListBtn>
 							{item.editable && (
 								<input
