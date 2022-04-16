@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const devices = {
     mobile: "(max-width: 667px)",
     tablet: "(min-width:668px) and (max-width:1024px)",
-    desktop: "(min-width: 1025px)",
+    bigDesktop: "(min-width: 1525px)",
   };
 
   // TodoList STYLING
@@ -148,6 +148,10 @@ export const AddTodoContainer = styled.section`
 
       @media ${devices.tablet} {
         bottom: 300px;
+      }
+
+      @media ${devices.bigDesktop} {
+        bottom: 180px;
       }
 `
 
