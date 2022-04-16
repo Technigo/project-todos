@@ -5,6 +5,7 @@ import moment from "moment";
 import styled from "styled-components";
 
 import todos from "reducers/todos";
+import Emoji from "assets/emoji";
 
 const Date = styled.p`
 font-size:20pt;
@@ -86,7 +87,7 @@ return (
     placeholder="New TO DO..."
     />
 </TaskLabel>
-<InputButton type="submit">➕➕➕</InputButton>
+<InputButton type="submit">    <Emoji symbol="➕➕➕ "/></InputButton>
 </AddTask>
 );
 };

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import todos from "reducers/todos";
+import Emoji from "assets/emoji";
 
 
 
@@ -51,6 +52,7 @@ border:none;
 padding: 8px;
 border-radius:2px;
 font-family: 'Open Sans', sans-serif;
+font-size:25px;
 position:absolute;
 top: 10px;
 right: 10px;
@@ -97,7 +99,7 @@ todoList.map((todoItem, todoIndex) => (
 
 <Deletebutton onClick={() => onToDoDelete(todoIndex)}>
     <span role="img" aria-label="delete">
-    ✖️
+    <Emoji symbol="✖️ "/>
         </span>
 </Deletebutton>
 </Taskbox>
