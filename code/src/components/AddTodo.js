@@ -5,11 +5,17 @@ import uniqid from "uniqid"
 
 import todos from "reducers/todos";
 
+
+
 const AddContainer = styled.section`
   display: flex;
   justify-content: center;
   position: relative;
 
+  p {
+    margin: 0;
+  }
+  `
   // .add {
   //   cursor: pointer;
   //   border: none;
@@ -26,27 +32,23 @@ const AddContainer = styled.section`
   //   justify-content: center;
   // }
 
-  .add {
-    cursor: pointer;
-    border: none;
-    font-size: 50px;
-    // height: 100%;
-    // width: 100%;
-    position: absolute;
-    left: 15px;
-    top: 5px;
-    border-radius: 50%;
-    background-color: var(--darkblgr);
-    color: var(--ltgrey);
-    display: flex;
-    // align-items: center;
-    // justify-content: center;
-  }
+  const Button = styled.button`
+  cursor: pointer;
+  border: none;
+  font-size: 50px;
+  // height: 100%;
+  // width: 100%;
+  position: absolute;
+  left: 15px;
+  top: 5px;
+  border-radius: 50%;
+  background-color: var(--darkblgr);
+  color: var(--ltgrey);
+  display: flex;
+  // align-items: center;
+  // justify-content: center;
+  `
 
-  p {
-    margin: 0;
-  }
-`
 const Circle = styled.div `
   height: 70px;
   width: 70px;
@@ -111,11 +113,11 @@ const AddTodo = () => {
     return (
       <AddContainer>
         <Circle>
-        <button 
+        <Button
           type="button"
           className="add"
           onClick={() => setVisible(!visible)}>+
-        </button>
+        </Button>
         </Circle>
           {visible && (
             <AddBox>
