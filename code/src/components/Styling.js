@@ -217,13 +217,13 @@ export const ProviderContainer = styled.section`
   @media ${devices.tablet} {
     margin: 100px 0;
     width: 400px;
-    min-width: 40px;
+    min-width: 400px;
 
   }
 
   @media ${devices.mobile} {
     margin: 50px;
-    min-width: 40px;
+    min-width: 200px;
     width: 200px;
     min-height: 400px;
     height: 450px;
