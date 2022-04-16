@@ -11,13 +11,9 @@ code {
     monospace;
 }
 
-
-
-
 ::placeholder {
   color:#EF63BB;
   font-size: 18pt;
-border-bottom: tomato;
 }
 
 
@@ -27,11 +23,13 @@ border-bottom: tomato;
 
 [type="checkbox"] + label{
   position:relative;
-  padding-left:30px;
+  padding-left:25px;
   cursor:pointer;
   display:inline-block;
-  color:blue;
-  line-height:20px;
+  color:#4758f6;
+  line-height:16px;
+  bottom: 10px;
+left: 12px;
 }
 
 [type="checkbox"] + label::before{
@@ -39,9 +37,9 @@ border-bottom: tomato;
   position:absolute;
   left:0;
   top:0;
-  width:18px;
-  height:18px;
-  outline: 2px solid #e9b8bf;
+  width:16px;
+  height:16px;
+  outline: 2px solid #EF63BB;
   background:#fff;
 }
 
@@ -52,7 +50,7 @@ border-bottom: tomato;
   top:0;
   width:18px;
   height:18px;
-  outline: 2px solid #831d2c;
+  outline: 2px solid #4758f6;
   background:#fff;
 }
 

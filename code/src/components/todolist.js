@@ -4,6 +4,46 @@ import styled from "styled-components";
 
 import todos from "reducers/todos";
 
+
+
+const CheckBox = styled.input`
+position:absolute;
+top: 10px;
+left: 10px;
+`
+
+const Taskcontainer = styled.section `
+margin:20px;
+padding:10px;
+display:flex;
+justify-content:center;
+flex-direction:column;
+`
+const Taskbox = styled.div`
+position:relative;
+background: #ffaee2;
+word-wrap: break-word;
+border-radius: 10px;
+margin:12px;
+`
+
+const Task =styled.h2 `
+font-family: 'Alata',sans-serif;
+    font-size: 22px;
+    margin-left: 15px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+`
+
+
+
+
+const Tasktracker = styled.div`
+font-size: 16pt;
+text-align: center;
+padding: 5px;
+`
+
 const Deletebutton = styled.button `
 decoration:none;
 background:none;
@@ -16,28 +56,6 @@ top: 10px;
 right: 10px;
 `
 
-const CheckBox = styled.input`
-position:absolute;
-top: 10px;
-left: 10px;
-`
-
-const Taskcontainer = styled.section `
-margin:20px;
-padding:10px;
-`
-const Taskbox = styled.div`
-position:relative
-`
-
-const Task =styled.h2 `
-font-family: 'Alata',sans-serif;
-font-size: 25px;
-`
-
-const Tasktracker = styled.div`
-font-size:16pt;
-`
 
 
 
@@ -66,6 +84,7 @@ return (
 {
 todoList.map((todoItem, todoIndex) => (
 <Taskbox key={todoItem.id}>
+
 <Task>{todoItem.task}</Task>
 <CheckBox
     type="checkbox" 
@@ -82,6 +101,7 @@ todoList.map((todoItem, todoIndex) => (
         </span>
 </Deletebutton>
 </Taskbox>
+
 ))}
 
 
