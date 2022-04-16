@@ -50,6 +50,7 @@ return (
             <DeleteButton onClick={() => onTaskDelete(taskIndex)}>
                 <span role="img" aria-label="delete">✖️</span>
             </DeleteButton>
+         
         </TaskItem>
     ))}
 </section>

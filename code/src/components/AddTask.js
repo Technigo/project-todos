@@ -5,6 +5,7 @@ import styled from 'styled-components'
 import uniqid from 'uniqid'
 import tasks from 'reducers/tasks'
 import TaskList from 'components/TaskList'
+import CompletedTasks from 'components/CompletedTasks'
 
 const MainContainer = styled.div`
 display: flex;
@@ -27,6 +28,7 @@ const TodoContainer = styled.div`
 const Title = styled.h1`
     display: flex;
     align-items: center;
+    justify-content: space-between;
 	font-size: 1.5rem;
     padding: 2.5rem;
     color: rgb(255, 238, 238);
@@ -80,7 +82,8 @@ const AddTask = () => {
     return (
     <MainContainer> 
     <Title>
-    Todo today  
+    Todo today &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <CompletedTasks/>
     </Title>
     <TodoContainer>
             <form onSubmit={onFormSubmit}>
