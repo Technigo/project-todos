@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import uniqid from "uniqid";
 import moment from "moment";
 import styled from "styled-components";
@@ -87,7 +87,7 @@ return (
     placeholder="New TO DO..."
     />
 </TaskLabel>
-<InputButton type="submit">    <Emoji symbol="➕➕➕ "/></InputButton>
+<InputButton type="submit">    <Emoji symbol="➕➕➕"/></InputButton>
 </AddTask>
 );
 };

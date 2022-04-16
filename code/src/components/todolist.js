@@ -54,8 +54,8 @@ border-radius:2px;
 font-family: 'Open Sans', sans-serif;
 font-size:25px;
 position:absolute;
-top: 10px;
-right: 10px;
+top: -3px;
+right: 0px;
 `
 
 
@@ -63,8 +63,7 @@ right: 10px;
 
 const ToDoList = ( { list, completed, uncompleted} ) => {
 const todoList = useSelector((store) => store.todos.items);
-const completedTasks = todoList.filter((todos) => todos.completed === true);
-const uncompletedTasks = todoList.filter((todos) => todos.uncompleted === false);
+
 
 const dispatch = useDispatch();
 
@@ -99,7 +98,7 @@ todoList.map((todoItem, todoIndex) => (
 
 <Deletebutton onClick={() => onToDoDelete(todoIndex)}>
     <span role="img" aria-label="delete">
-    <Emoji symbol="✖️ "/>
+    <Emoji symbol="✖️"/>
         </span>
 </Deletebutton>
 </Taskbox>
