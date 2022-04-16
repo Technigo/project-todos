@@ -12,6 +12,7 @@ margin: 1rem 1.5rem;
 height: 4rem;
 position: relative;
 word-break: break-word;
+overflow-wrap: wrap;
 background-color: white;
 
 @media (min-width: 678px) {
@@ -23,16 +24,17 @@ background-color: white;
   }
 `
 const TaskText = styled.h2`
-max-width: 75%;
+max-width: 70%;
 font-size: 20px;
-margin-left: 8px;
+/* margin: 0 8px; */
 color: ${(props) => (props.completed ? `#b0b0b0` : `#222221`)};
 `
 
 const ButtonDelete = styled.button`
 position: absolute;
 right: 10px;
-padding-left: 2px;
+margin-left: 6px;
+/* padding: 0 2px 0 8px; */
 border: none;
 background: none;
 font-size: 2rem;
