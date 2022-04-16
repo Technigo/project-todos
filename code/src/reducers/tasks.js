@@ -42,37 +42,8 @@ export const tasks = createSlice({
                     return item
                 }
             })
-
-            const updatedFilteredItems = store.filter.map((item) => {
-                if (item.id === action.payload) {
-                    const updatedItem = {
-                        ...item,
-                        isDone: !item.isDone,
-                    }
-                    return updatedItem
-                } else {
-                    return item
-                }
-            })
-
             store.items = updatedItems
-            store.filter = updatedFilteredItems
         },
-        filterDoneTasks: (store) => {
-            const doneItems = store.items.filter(task => task.isDone)
-            store.filter = doneItems
-        },
-        filterTodo: (store) => {
-            const todoItems = store.items.filter(task => !task.isDone)
-            store.filter = todoItems
-        },
-        allNewTasks: (store) => {
-            store.filter = []
-        },
-
-        isDoneListener: (store, action) => {
-
-        }
     }
 })
 
