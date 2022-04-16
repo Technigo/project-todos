@@ -44,13 +44,61 @@ export const TaskList = () => {
         const unfinishedTasks = 
             useSelector((store) => store.tasks.items.filter(t => !t.status))
 
+    const [taskList, setTaskList] = useState(allTasks)
+
+    
+
+    useEffect(() => {
+        let component;
+
+        const render = (status) => {
+    
+            if (status === finishedTasks) {
+                component = <FinishedTasks />
+            } 
+            else if (status === unfinishedTasks) {
+                component = <UnFinishedTasks />
+            } else { 
+                component = <AllTasks />
+            }
+    
+            return component
+        }
+
+        render(taskList)
+    })
+
+   
+    return (
+        <>
+          
+
+            <ListWrapper> 
+
+            <AllTasks />
+           
+
+            </ListWrapper>
+            
+
+       
 
 
-    const [tasksList, setTaskList] = useState(allTasks)
+        <button onClick={() => setTaskList(finishedTasks)}>Finished</button>
+        <button onClick={() => setTaskList(unfinishedTasks)}>Unfinished</button>
+        <button onClick={() => setTaskList(allTasks)}>All</button>
 
-    const pushToUnfinished = (task) => {
-        tasks.actions.toggleFINUNFIN(task.id)
-    }
+        <button onClick={() => dispatch(tasks.actions.removeAll())}>REMOVE ALL</button>
+
+
+
+        </>
+
+
+    )
+}
+
+
 
     // useEffect(() => {
 
@@ -131,82 +179,6 @@ export const TaskList = () => {
     //     dispatch(tasks.actions.sort(payload))
 
     // }
-
-   
-   
-    return (
-        <>
-        
-        {/* <button onClick={unfinished}>Unfinished</button> */}
-
-        {/* <ListWrapper> 
-        {allTasks.map((task) => (
-
-            <TaskBar key={task.id} draggable="true" >
-                <label htmlFor={task.id}>{task.title}</label> 
-                <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
-            </TaskBar>
-        ))}
-        </ListWrapper> */}
-
-
-
-
-        {/* <p>Total: {allTasks.length}</p>
-        <p>Unfinished: {unfinishedTasks.length}</p>
-        <p>Finished: {finishedTasks.length}</p> */}
-
-        {/* <button onClick={() => onClickSort('DONE')}>Finished</button>
-        <button onClick={() => onClickSort('UNDONE')}>Unfinished</button>
-        <button onClick={() => onClickSort('')}>All</button> */}
-{/* {tasksList.map((task) => (
-            <TaskBar key={task.id} draggable="true" >
-                <label htmlFor={task.id}>{task.title}</label> 
-                <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
-            </TaskBar>
-        ))} */}
-
-{/*         
-            {allTasks.map((task) => (
-                <TaskBar key={task.id} draggable="true" >
-                    <label htmlFor={task.id}>{task.title}</label> 
-                    <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
-                </TaskBar>
-            ))} */}
-
-
-            
-
-            <ListWrapper> 
-                All
-            <AllTasks />
-            Finsihed
-            <FinishedTasks />
-
-            Unfinished
-            <UnFinishedTasks />
-
-            </ListWrapper>
-            
-
-       
-
-
-        <button onClick={() => setTaskList(finishedTasks)}>Finished</button>
-        <button onClick={() => setTaskList(unfinishedTasks)}>Unfinished</button>
-        <button onClick={() => setTaskList(allTasks)}>All</button>
-
-        <button onClick={() => dispatch(tasks.actions.removeAll())}>REMOVE ALL</button>
-
-
-
-        </>
-
-
-    )
-}
-
-
 // <ListWrapper> 
 // {allTasks.map((task) => (
 
@@ -232,3 +204,57 @@ export const TaskList = () => {
     // ))
 
     // }
+     /* <button onClick={unfinished}>Unfinished</button> */
+
+        /* <ListWrapper> 
+        {allTasks.map((task) => (
+
+            <TaskBar key={task.id} draggable="true" >
+                <label htmlFor={task.id}>{task.title}</label> 
+                <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
+            </TaskBar>
+        ))}
+        </ListWrapper> */
+
+
+
+
+        /* <p>Total: {allTasks.length}</p>
+        <p>Unfinished: {unfinishedTasks.length}</p>
+        <p>Finished: {finishedTasks.length}</p> */
+
+        /* <button onClick={() => onClickSort('DONE')}>Finished</button>
+        <button onClick={() => onClickSort('UNDONE')}>Unfinished</button>
+        <button onClick={() => onClickSort('')}>All</button> */
+/* {tasksList.map((task) => (
+            <TaskBar key={task.id} draggable="true" >
+                <label htmlFor={task.id}>{task.title}</label> 
+                <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
+            </TaskBar>
+        ))} */
+
+/*         
+            {allTasks.map((task) => (
+                <TaskBar key={task.id} draggable="true" >
+                    <label htmlFor={task.id}>{task.title}</label> 
+                    <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
+                </TaskBar>
+            ))} */
+
+
+       
+    // <details open>
+    // <summary>Tasks</summary>
+    // <div> <AllTasks /></div>
+    // </details>
+
+
+    // <details>
+    // <summary>Finished</summary>
+    // <div>  <FinishedTasks /></div>
+    // </details>
+
+    // <details>
+    // <summary>Unfinished</summary>
+    // <div>  <UnFinishedTasks /></div>
+    // </details>

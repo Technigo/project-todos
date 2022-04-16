@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 
 import  Form  from 'components/Form.js'
+import  Background  from 'components/Background.js'
 
 import { tasks } from 'reducers/tasks'
 import { TaskList } from 'components/TaskList'
@@ -23,12 +24,13 @@ export const App = () => {
   return (
     
     <Provider store={store}>
+      <Background />
+
     <div className="content-wrapper">
       <TaskList />
       <Form />
 
       {/* <Sort /> */}
-
 
     </div>
     
