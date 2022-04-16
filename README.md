@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+Building a todo app where I should be able to add tasks, list tasks and toggle whether a task is done or not.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I approached the problem first  with the store, reduces and the building components and last the style, and the tools and techniques I used to solve it was with building the components and added some react-bootstrap for styling. If I had more time, the next would be the design of the project, though I feel is the most time consuming because of lack of experience in UX.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://vocal-ganache-3ca330.netlify.app/
