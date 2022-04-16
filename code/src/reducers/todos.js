@@ -28,12 +28,14 @@ const todos = createSlice({
                 }
             })
         },
+        addItem: (store, action) => {
+            store.toDoList.push(action.payload)
+        },  
         deleteItem: (store, action) => {
             store.toDoList.splice(action.payload, 1)
         },
         removeAll: (store, action) => {
-            console.log(store)
-            console.log(action)
+            store.toDoList = []
         },
     }
 })

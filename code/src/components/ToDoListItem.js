@@ -10,6 +10,7 @@ const ToDoListItemArticle = styled.article`
     align-items: flex-start;
     border: 0.5px solid black;
     padding: 5px;
+    margin: 5px;
     background: white;
 `
 
@@ -35,7 +36,7 @@ const ToDoListItem = ({ itemIndex, id, text, isComplete }) => {
                     checked={isComplete}
                     onChange={() => onToggleComplete(id)} />
             </label>
-            <button onClick={() => onDeleteToDo(itemIndex)}>Remove</button>
+            <button onClick={() => onDeleteToDo(itemIndex)}>Delete</button>
         </ToDoListItemArticle>
     )
 }
