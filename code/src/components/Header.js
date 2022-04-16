@@ -1,18 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import Logo from '../assets/logo.svg'
-
-const HeaderContainer = styled.header`
-	background: var(--clr-main);
-	color: var(--clr-secondary);
-	border-top-left-radius: 30px;
-	border-top-right-radius: 30px;
-	border: 2px solid var(--clr-accent);
-	border-bottom: none;
-	display: flex;
-	justify-content: center;
-	padding-top: 2em;
-`
+import { HeaderContainer } from '../components/Styling'
 
 const Header = () => {
 	return (

@@ -1,13 +1,36 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+This project is a todo app build in React and Redux toolkit. I also used customized css and styled components.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+I really enjoyed working with Redux toolkit, although it was a bit tricky from times to times.
+I learned a lot by testing out different features and I will fefinitley add some more features to it!
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started to do the prototype in Figma. Then I moved on to solve the basic requirements:
+
+- List all todo tasks - completed or uncompleted
+- It should be able to mark an uncompleted task as complete (and change it back to uncomplete)
+- It should be able to add and remove tasks
+- The app should show a count of either all todos or all uncomplete todos (or both)
+
+To this I added several features:
+
+- A timestamp for when the task is created (or updated)
+- A complete button to set all task completed.
+- A delete button to delete all tasks.
+- Saving LocalStorage
+- An empty state page.
+- Toggle for dark and light mode.
+
+Next to do is:
+
+- Add categories
+- Add prioritizing
+- Add sorting functions
+- Add due date
+- Add a warning when clicking on "delete all"
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Link to webpage: https://todo2do.netlify.app/

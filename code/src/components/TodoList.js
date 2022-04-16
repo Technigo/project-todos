@@ -13,6 +13,107 @@ import TaskCounter from './TaskCounter'
 import CompleteAll from './CompleteAll'
 import todo from '../reducers/todo'
 
+const TodoList = () => {
+	const [inputChange, setInputChange] = useState('')
+	const items = useSelector((store) => store.todo.items)
+
+	const dispatch = useDispatch()
+
+	//_____dispatch reducers______//
+	const onToggleTodo = (id) => {
+		dispatch(todo.actions.toggleTodo(id))
+	}
+
+	const onUpdateTodo = (id) => {
+		dispatch(todo.actions.updateTodo({ id: id, text: inputChange }))
+		setInputChange('')
+	}
+
+	const onToggleEditable = (id) => {
+		dispatch(todo.actions.toggleEditable(id))
+	}
+
+	const onDeleteTodo = (id) => {
+		dispatch(todo.actions.deleteTodo(id))
+	}
+
+	const onDeleteAll = () => {
+		// window.confirm('are you sure?') ? console.log('yes') : null
+		dispatch(todo.actions.deleteAll())
+	}
+
+	return (
+		<Main>
+			<Section>
+				{' '}
+				<AddTodo />
+				<Container>
+					<TaskCounter />
+					{items.map((item) => (
+						<TaskContainer key={item.id}>
+							<TaskContainerWrapper>
+								<Wrapper>
+									<input
+										role='checkbox'
+										tabindex='0'
+										type='checkbox'
+										name='tasks'
+										checked={item.isCompleted}
+										onChange={() => onToggleTodo(item.id)}
+									/>
+									<InputText className={`${item.isCompleted ? 'completed' : ''}`}>{item.text}</InputText>
+								</Wrapper>
+								<ListBtn onClick={() => onToggleEditable(item.id)}>
+									{!item.editable ? (
+										<img src={updateBtn} alt='update task'></img>
+									) : (
+										<img className='close' src={closeBtn} alt='update task'></img>
+									)}
+								</ListBtn>
+								{item.editable && (
+									<input
+										class='new-content'
+										value={inputChange}
+										type='text'
+										onChange={(e) => setInputChange(e.target.value)}
+									/>
+								)}
+								{item.editable && (
+									<AddBtn
+										type='submit'
+										onClick={() => onUpdateTodo(item.id)}
+										disabled={inputChange.length === 0}
+									>
+										<AddPlus src={plusBtn} alt='add task'>
+											add
+										</AddPlus>
+									</AddBtn>
+								)}
+								<ListBtn onClick={() => onDeleteTodo(item.id)}>
+									<img src={deleteBtn} alt='delete task'></img>
+								</ListBtn>
+							</TaskContainerWrapper>
+							<div>
+								<DateContainer>{item.createdAt}</DateContainer>
+							</div>
+						</TaskContainer>
+					))}
+				</Container>
+				{items.length > 0 && (
+					<ButtonWrapper>
+						<CompleteAll />
+						<DeleteAllbtn onClick={onDeleteAll}>delete all</DeleteAllbtn>
+					</ButtonWrapper>
+				)}
+			</Section>
+		</Main>
+	)
+}
+
+export default TodoList
+
+//________ Styled components _______
+
 const Main = styled.main`
 	display: flex;
 	flex-direction: column;
@@ -27,6 +128,10 @@ const Main = styled.main`
 	border-top: none;
 `
 
+const Section = styled.section`
+	align-item: flex-start;
+`
+
 const ListBtn = styled.button`
 	padding: 0.1em 0.1em 0;
 	border: none;
@@ -36,10 +141,10 @@ const ListBtn = styled.button`
 	align-self: end;
 
 	@media (min-width: 667px) {
-		border-bottom: 1px solid var(--clr-accent);
+		border-bottom: 2px solid var(--clr-accent);
 
 		&:hover {
-			background: var(--clr-accent);
+			background: var(--clr-gray);
 			border-radius: 20%;
 			transition: all 0.3s ease-in;
 		}
@@ -54,7 +159,11 @@ const AddBtn = styled.button`
 	right: 6px;
 	cursor: pointer;
 `
-const AddPlus = styled.img`
+const AddPlus = styled.button`
+	background: var(--clr-accent);
+	font-family: 'Imprima', 'Ubuntu', sans-serif;
+	border: none;
+	border-radius: 3px;
 	color: none;
 	position: absolute;
 	right: 42px;
@@ -68,15 +177,10 @@ const AddPlus = styled.img`
 
 const ButtonWrapper = styled.div`
 	align-self: flex-start;
-	margin-left: 1.05em;
-
-	@media (min-width: 667px) {
-		margin-left: 5.6em;
-	}
 `
 
 const DeleteAllbtn = styled.button`
-	font-family: inherit;
+	font-family: 'Imprima', 'Ubuntu', sans-serif;
 	background: var(--clr-gray);
 	color: var(--clr-secondary);
 	border: none;
@@ -127,103 +231,9 @@ const InputText = styled.label`
 	margin: 0;
 	padding-bottom: 0.05em;
 	color: var(--clr-secondary);
-	border-bottom: 1px solid var(--clr-accent);
+	border-bottom: 2px solid var(--clr-accent);
 	font-family: 'Imprima', 'Ubuntu', sans-serif;
 	align-self: end;
 	width: 225px;
 	overflow-wrap: break-word;
 `
-
-const TodoList = () => {
-	const [inputChange, setInputChange] = useState('')
-	const items = useSelector((store) => store.todo.items)
-
-	const dispatch = useDispatch()
-
-	//dispatched reducers
-	const onToggleTodo = (id) => {
-		dispatch(todo.actions.toggleTodo(id))
-	}
-
-	const onUpdateTodo = (id) => {
-		dispatch(todo.actions.updateTodo({ id: id, text: inputChange }))
-		setInputChange('')
-	}
-
-	const onToggleEditable = (id) => {
-		dispatch(todo.actions.toggleEditable(id))
-	}
-
-	const onDeleteTodo = (id) => {
-		dispatch(todo.actions.deleteTodo(id))
-	}
-
-	const onDeleteAll = () => {
-		// window.confirm('are you sure?') ? console.log('yes') : null
-		dispatch(todo.actions.deleteAll())
-	}
-
-	return (
-		<Main>
-			<AddTodo />
-			<Container>
-				<TaskCounter />
-				{items.map((item) => (
-					<TaskContainer key={item.id}>
-						<TaskContainerWrapper>
-							<Wrapper>
-								<input
-									role='checkbox'
-									tabindex='0'
-									type='checkbox'
-									name='tasks'
-									checked={item.isCompleted}
-									onChange={() => onToggleTodo(item.id)}
-								/>
-								<InputText className={`${item.isCompleted ? 'completed' : ''}`}>{item.text}</InputText>
-							</Wrapper>
-							<ListBtn onClick={() => onToggleEditable(item.id)}>
-								{!item.editable ? (
-									<img src={updateBtn} alt='update task'></img>
-								) : (
-									<img className='close' src={closeBtn} alt='update task'></img>
-								)}
-							</ListBtn>
-							{item.editable && (
-								<input
-									class='new-content'
-									value={inputChange}
-									type='text'
-									onChange={(e) => setInputChange(e.target.value)}
-								/>
-							)}
-							{item.editable && (
-								<AddBtn
-									type='submit'
-									onClick={() => onUpdateTodo(item.id)}
-									disabled={inputChange.length === 0}
-								>
-									<AddPlus src={plusBtn} alt='add task'></AddPlus>
-								</AddBtn>
-							)}
-							<ListBtn onClick={() => onDeleteTodo(item.id)}>
-								<img src={deleteBtn} alt='delete task'></img>
-							</ListBtn>
-						</TaskContainerWrapper>
-						<div>
-							<DateContainer>{item.createdAt}</DateContainer>
-						</div>
-					</TaskContainer>
-				))}
-			</Container>
-			{items.length > 0 && (
-				<ButtonWrapper>
-					<CompleteAll />
-					<DeleteAllbtn onClick={onDeleteAll}>delete all</DeleteAllbtn>
-				</ButtonWrapper>
-			)}
-		</Main>
-	)
-}
-
-export default TodoList

@@ -1,44 +1,9 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import styled from 'styled-components'
+import { StyledInput, AddBtn, AddPlus } from './Styling'
 
 import plusBtn from '../assets/plus.svg'
 import todo from '../reducers/todo'
-
-const StyledInput = styled.input`
-	font-size: 16px;
-	height: 30px;
-	letter-spacing: 1.5px;
-	color: var(--clr-secondary);
-	text-align: center;
-	width: 310px;
-	border: none;
-	border-bottom: 2px solid var(--clr-accent);
-	background-color: var(--clr-main-opacity);
-	margin-bottom: 1.5em;
-
-	&:focus {
-		border: 2px solid var(--clr-accent);
-	}
-`
-
-const AddBtn = styled.button`
-	background: transparent;
-	padding: 0;
-	border: none;
-	position: absolute;
-	top: 6px;
-	right: 6px;
-	cursor: pointer;
-`
-const AddPlus = styled.img`
-	color: none;
-
-	&:hover {
-		transform: scale(1.2);
-		transition: all 0.3s ease-in;
-	}
-`
 
 const AddTodo = () => {
 	const [input, setInput] = useState('')

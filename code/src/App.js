@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Provider } from 'react-redux'
-import { createStore, combineReducers, configureStore } from '@reduxjs/toolkit'
+import { createStore, combineReducers } from '@reduxjs/toolkit'
 
+import { ButtonSwitch } from 'components/Styling'
 import Header from 'components/Header'
 import SelectStart from 'components/SelectStart'
 
@@ -11,6 +12,7 @@ const reducer = combineReducers({
 	todo: todo.reducer,
 })
 
+//________Handle Local state________
 const persistedStateJSON = localStorage.getItem('todosReduxState')
 let persistedState = {}
 
@@ -19,16 +21,22 @@ if (persistedStateJSON) {
 }
 
 const store = createStore(reducer, persistedState)
-// const store = configureStore({ reducer })
 
 store.subscribe(() => {
 	localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))
 })
 
 export const App = () => {
+	const [themeDark, setThemeDark] = useState(true)
+
+	const onSwitchTheme = () => {
+		setThemeDark(!themeDark)
+	}
+
 	return (
 		<Provider store={store}>
-			<section className='app-wrapper'>
+			<section className={themeDark ? 'app-wrapper dark' : 'app-wrapper light'}>
+				<ButtonSwitch onClick={onSwitchTheme}>{themeDark ? 'Light mode' : 'Dark mode'}</ButtonSwitch>
 				<Header />
 				<SelectStart />
 			</section>

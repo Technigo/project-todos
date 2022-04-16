@@ -1,9 +1,25 @@
 :root {
-	--clr-main: #202020;
+	--clr-main: #111111;
 	--clr-main-opacity: #c4c4c416;
 	--clr-secondary: #fff;
 	--clr-accent: #c86796;
 	--clr-gray: #a3a3a3;
+}
+
+.dark {
+	--clr-main: #111111;
+	--clr-main-opacity: #c4c4c416;
+	--clr-secondary: #fff;
+	--clr-accent: #c86796;
+	--clr-gray: #a3a3a3;
+}
+
+.light {
+	--clr-main: rgb(243, 228, 228);
+	--clr-main-opacity: #e083c138;
+	--clr-secondary: #111111;
+	--clr-accent: #c8759d;
+	--clr-gray: #90848e;
 }
 
 body {
@@ -11,7 +27,6 @@ body {
 	justify-content: center;
 	background: var(--clr-gray);
 	background-image: url('../src/assets/hearts.jpg');
-	/* background-image: url('../src/assets/background.jpg'); */
 	background-repeat: no-repeat;
 	background-size: cover;
 	margin: 0;
@@ -31,6 +46,7 @@ code {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	position: relative;
 }
 
 @media (min-width: 667px) {
@@ -76,7 +92,7 @@ input:focus-visible {
 input[type='checkbox'] {
 	align-self: flex-start;
 	display: inline-block;
-	border: 1px solid var(--clr-accent);
+	border: 2px solid var(--clr-accent);
 	height: 15px;
 	width: 15px;
 	position: relative;
@@ -91,7 +107,7 @@ input.new-content {
 	width: auto;
 	bottom: 0;
 	left: 1em;
-	width: 223px;
+	width: 175px;
 	height: 25px;
 	background: var(--clr-main);
 	color: var(--clr-secondary);

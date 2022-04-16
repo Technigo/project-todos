@@ -9,6 +9,42 @@ import ArrowThree from '../assets/arrowthree.svg'
 import ArrowFour from '../assets/arrowfour.svg'
 import addBtn from '../assets/add.svg'
 
+const EmptyState = () => {
+	const [startTodo, setStartTodo] = useState(false)
+
+	const onStartAdding = () => {
+		setStartTodo(true)
+	}
+
+	return (
+		<>
+			{startTodo && <TodoList />}
+			{!startTodo && (
+				<EmptyStateWrapper>
+					<EmptyStateText>
+						All empty here! Click the button to add some new tasks or take a well deserved break!{' '}
+					</EmptyStateText>
+					<Imagewrapper>
+						<ArrowWrapper>
+							<Arrowone src={ArrowOne} alt='arrows'></Arrowone>
+							<Arrowtwo src={ArrowTwo} alt='arrows'></Arrowtwo>
+						</ArrowWrapper>
+						<StartBtn onClick={onStartAdding}>
+							<AddImg src={addBtn} alt='add task'></AddImg>
+						</StartBtn>
+						<ArrowWrapper>
+							<Arrowthree src={ArrowFour} alt='arrows'></Arrowthree>
+							<Arrowfour src={ArrowThree} alt='arrows'></Arrowfour>
+						</ArrowWrapper>
+					</Imagewrapper>
+				</EmptyStateWrapper>
+			)}
+		</>
+	)
+}
+
+//_______Styled Components________
+
 const EmptyStateWrapper = styled.section`
 	background: var(--clr-main);
 	color: var(--clr-secondary);
@@ -24,7 +60,7 @@ const EmptyStateWrapper = styled.section`
 const EmptyStateText = styled.p`
 	font-size: 18px;
 	margin: 0;
-	padding: 1em 2em 5em;
+	padding: 1em 2em 8em;
 	text-align: center;
 	max-width: 30ch;
 	align-self: center;
@@ -83,39 +119,5 @@ const AddImg = styled.img`
 		transition: all 0.45s ease-in;
 	}
 `
-
-const EmptyState = () => {
-	const [startTodo, setStartTodo] = useState(false)
-
-	const onStartAdding = () => {
-		setStartTodo(true)
-	}
-
-	return (
-		<>
-			{startTodo && <TodoList />}
-			{!startTodo && (
-				<EmptyStateWrapper>
-					<EmptyStateText>
-						All empty here! Click the button to add some new tasks or take a well deserved break!{' '}
-					</EmptyStateText>
-					<Imagewrapper>
-						<ArrowWrapper>
-							<Arrowone src={ArrowOne} alt='arrows'></Arrowone>
-							<Arrowtwo src={ArrowTwo} alt='arrows'></Arrowtwo>
-						</ArrowWrapper>
-						<StartBtn onClick={onStartAdding}>
-							<AddImg src={addBtn} alt='add task'></AddImg>
-						</StartBtn>
-						<ArrowWrapper>
-							<Arrowthree src={ArrowFour} alt='arrows'></Arrowthree>
-							<Arrowfour src={ArrowThree} alt='arrows'></Arrowfour>
-						</ArrowWrapper>
-					</Imagewrapper>
-				</EmptyStateWrapper>
-			)}
-		</>
-	)
-}
 
 export default EmptyState
