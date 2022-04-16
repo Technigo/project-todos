@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import uniqid from "uniqid"
 
 import todos from "reducers/todos";
+import EmptyPic from "./EmptyPic";
 
 
 
@@ -16,21 +17,6 @@ const AddContainer = styled.section`
     margin: 0;
   }
   `
-  // .add {
-  //   cursor: pointer;
-  //   border: none;
-  //   font-size: 50px;
-  //   height: 70px;
-  //   width: 70px;
-  //   position: absolute;
-  //   top: -20px;
-  //   border-radius: 50%;
-  //   background-color: var(--darkblgr);
-  //   color: var(--ltgrey);
-  //   display: flex;
-  //   align-items: center;
-  //   justify-content: center;
-  // }
 
   const Button = styled.button`
   cursor: pointer;
@@ -38,18 +24,13 @@ const AddContainer = styled.section`
   margin: 0;
   padding: 0;
   font-size: 50px;
-  // height: 100%;
-  // width: 100%;
   position: absolute;
   left: 20px;
-  top: 5px;
+  top: 4px;
   border-radius: 50%;
   background-color: transparent;
-  // color: var(--ltgrey);
   color: var(--misty);
   display: flex;
-  // align-items: center;
-  // justify-content: center;
   `
 
 const Circle = styled.div `
@@ -99,6 +80,7 @@ const AddTodo = () => {
     const dispatch = useDispatch()
     const [newItem, setNewItem] = useState('')
     const [visible, setVisible] = useState(false)
+    const todoList = useSelector((store) => store.todos.items)
     
     const handleSubmit =  (event) => {
         event.preventDefault();
@@ -125,7 +107,6 @@ const AddTodo = () => {
           {visible && (
             <AddBox>
           <form onSubmit={handleSubmit}>
-            {/* <label> */}
             <input
             type="text"
             placeholder="My new todo"
@@ -133,7 +114,6 @@ const AddTodo = () => {
             onChange={(event) => setNewItem(event.target.value)}
             value={newItem}
             />
-            {/* </label> */}
             <button 
               className="send" 
               type="submit"
@@ -144,7 +124,8 @@ const AddTodo = () => {
             
             </AddBox>
           )}
-          
+          {!visible && todoList.length === 0 && (
+          <EmptyPic /> )}
         </AddContainer>
     )
 }

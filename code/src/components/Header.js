@@ -60,9 +60,10 @@ const Header = () => {
             {showOne && <h4>{completedTodos.length} of them is completed.</h4>}
             {show && <h4>{completedTodos.length} of them are completed.</h4>}
         </div>
-     
-        
         </Headerbox>
+       
+      
+       
     )
 }
 
