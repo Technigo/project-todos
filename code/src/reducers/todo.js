@@ -43,6 +43,7 @@ const todo = createSlice({
 					const updatedTodoText = {
 						...item,
 						text: text,
+						editable: !item.editable,
 					}
 					return updatedTodoText
 				} else {

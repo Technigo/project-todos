@@ -121,10 +121,10 @@ const InputText = styled.label`
 
 const TodoList = () => {
 	const [inputChange, setInputChange] = useState('')
-	// const [editable, setEditable] = useState(false)
 	const items = useSelector((store) => store.todo.items)
 	// const text = items.filter((item) => item)
 	console.log('items', items)
+	console.log('inputChange', inputChange)
 
 	const dispatch = useDispatch()
 
@@ -133,9 +133,9 @@ const TodoList = () => {
 		dispatch(todo.actions.toggleTodo(id))
 	}
 
-	const onUpdateTodo = (id, inputChange) => {
+	const onUpdateTodo = (id) => {
 		dispatch(todo.actions.updateTodo({ id: id, text: inputChange }))
-		// setEditable(!editable)
+		// dispatch(todo.actions.updateTodo(id))
 		setInputChange('')
 	}
 
@@ -170,7 +170,6 @@ const TodoList = () => {
 								/>
 								<InputText className={`${item.isCompleted ? 'completed' : ''}`}>{item.text}</InputText>
 							</Wrapper>
-							{/* <ListBtn onClick={() => setEditable(!editable)}> */}
 							<ListBtn onClick={() => onToggleEditable(item.id)}>
 								<img src={updateBtn} alt='update task'></img>
 							</ListBtn>
@@ -183,7 +182,11 @@ const TodoList = () => {
 								/>
 							)}
 							{item.editable && (
-								<AddBtn type='submit' onClick={onUpdateTodo} disabled={inputChange.length === 0}>
+								<AddBtn
+									type='submit'
+									onClick={() => onUpdateTodo(item.id)}
+									disabled={inputChange.length === 0}
+								>
 									<AddPlus src={plusBtn} alt='add task'></AddPlus>
 								</AddBtn>
 							)}
