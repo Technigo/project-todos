@@ -29,20 +29,19 @@ margin: 0 30 0 30px;
 font-size:30px;
 margin-bottom: 0px;
 `
+
 const Input = styled.input`
 margin-top: 10px;
 height: 50px;
 width: 300px;
 text-decoration: none;
-border-radius: 5px;
+border-radius: 10px;
 background-color:#465AFF;
 border:none;
 font-family: 'Alata', sans-serif;
 font-size:18pt;
 text-align:center;
 `
-
-
 
 const InputButton = styled.button `
 background: none;
@@ -87,7 +86,7 @@ return (
     placeholder="New TO DO..."
     />
 </TaskLabel>
-<InputButton type="submit">    <Emoji symbol="➕➕➕"/></InputButton>
+<InputButton type="submit"><Emoji symbol="➕➕➕"/></InputButton>
 </AddTask>
 );
 };

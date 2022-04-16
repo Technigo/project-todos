@@ -5,8 +5,6 @@ import styled from "styled-components";
 import todos from "reducers/todos";
 import Emoji from "assets/emoji";
 
-
-
 const CheckBox = styled.input`
 position:absolute;
 top: 10px;
@@ -36,9 +34,6 @@ font-family: 'Alata',sans-serif;
     padding-bottom: 10px;
 `
 
-
-
-
 const Tasktracker = styled.div`
 font-size: 16pt;
 text-align: center;
@@ -58,12 +53,8 @@ top: -3px;
 right: 0px;
 `
 
-
-
-
 const ToDoList = ( { list, completed, uncompleted} ) => {
 const todoList = useSelector((store) => store.todos.items);
-
 
 const dispatch = useDispatch();
 
@@ -79,11 +70,7 @@ return (
 <Taskcontainer>
 <Tasktracker> Tasks on your TO DO: &nbsp; {todoList.length}</Tasktracker>
     
-
-
-
-{
-todoList.map((todoItem, todoIndex) => (
+{todoList.map((todoItem, todoIndex) => (
 <Taskbox key={todoItem.id}>
 
 <Task>{todoItem.task}</Task>
@@ -95,20 +82,13 @@ todoList.map((todoItem, todoIndex) => (
     />
 <label htmlFor={todoItem.id}>Done?</label>
 
-
 <Deletebutton onClick={() => onToDoDelete(todoIndex)}>
     <span role="img" aria-label="delete">
     <Emoji symbol="✖️"/>
         </span>
 </Deletebutton>
 </Taskbox>
-
 ))}
-
-
-
-
-
 </Taskcontainer>
 );
 };

@@ -11,11 +11,22 @@ code {
     monospace;
 }
 
+/*Input button*/
+
 ::placeholder {
   color:#EF63BB;
   font-size: 18pt;
 }
 
+input:hover {
+  background-color:#ffaee2;
+}
+
+input, button{
+  cursor: pointer;
+}
+
+/*Checkboxes*/
 
 [type="checkbox"]{
   opacity:0;
@@ -54,8 +65,6 @@ left: 12px;
   background:#fff;
 }
 
-
-
 [type="checkbox"]:checked + label::after{
   content:"";
   position:absolute;
@@ -77,9 +86,15 @@ transition:all .3s ease;
   top:0;
   width:18px;
   height:18px;
-
 background-size: contain;
 transform:scale(0);
 opacity:0;
+}
 
+/*Media queries*/
+
+@media screen and (min-width: 800px) {
+  body{
+    background-color: chocolate;
+  }
 }

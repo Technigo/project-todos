@@ -1,6 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 
+
+const mediaqueries = {
+  tablet: "(min-width: 768px)",
+  desktop: "(min-width: 1025px)",
+}
+
 const Heading = styled.section`
 background-color: #1B1212;
 height:200px;
@@ -10,6 +16,15 @@ height:200px;
   color: #EF63BB;
   text-shadow: -2px -2px #803B66;
   border-bottom: dashed #E8E5E5;
+
+  @media ${mediaqueries.tablet} {
+    font-size: 34pt;
+}
+
+@media ${mediaqueries.desktop} {
+  font-size: 44pt;
+  height:250px;
+}
 `
 const Colormark = styled.mark`
 color: #465AFF;
