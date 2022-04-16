@@ -5,28 +5,24 @@ import styled from 'styled-components'
 import uniqid from 'uniqid'
 
 const SubmitButton=styled.button`
-    background: none;
-	color: black;
-    
- 
-	border: none;
-	padding: 0;
-	font: inherit;
-	cursor: pointer;
-	outline: inherit;
-
+  background: none;
+  color: black;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 `
-
 const Input=styled.input`
-width: 60%;
-padding: 2px 6px;
-margin: 8px 0;
-box-sizing: border-box;
-border:none;
-border-bottom: 2px solid black;
-background:none;
+  width: 60%;
+  padding: 2px 6px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border:none;
+  border-bottom: 2px solid black;
+  background:none;
 
-&:focus{
+ &:focus{
     outline:none;
     width: 60%;
     padding: 2px 6px;
@@ -35,9 +31,7 @@ background:none;
     border:none;
     border-bottom: 2px solid black;
     background:none;
-
 }
-
 `
 export const AddTask=()=>{
     const dispatch=useDispatch();
@@ -66,7 +60,5 @@ return(
       </label>
       <SubmitButton type="submit">&nbsp;<span role="img" aria-label="delete"> ➕</span></SubmitButton>
     </form>
-
-    )
-
+  )
 }

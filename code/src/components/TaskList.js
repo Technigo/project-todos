@@ -116,22 +116,21 @@ const deleteAllTasks=()=>{dispatch(tasks.actions.removeAll())}
 
 return (
   <><section>
-
-
-
-        {tasklist.map((item, index) => (
-            <TaskItem key={item.id}>
-                <h2>{item.name}</h2>
-                   <Input className="input"
-                        id="isdone"
-                        type="checkbox"
-                        checked={item.isDone}
-                        onChange={() => onItemToggle(item.id)} />
-                <label htmlFor='isdone'>Done!</label>
-                <DeleteButton onClick={() => onTaskDelete(index)}> <span role="img" aria-label="delete"> ➖</span></DeleteButton>
-
-            </TaskItem>
-        ))}
+      {tasklist.map((item, index) => (
+        <TaskItem key={item.id}>
+          <h2>{item.name}</h2>
+        <Input 
+          className="input"
+          id="isdone"
+          type="checkbox"
+          checked={item.isDone}
+          onChange={() => onItemToggle(item.id)} 
+        />            
+        <label htmlFor='isdone'>Done!</label>
+          <DeleteButton onClick={() => onTaskDelete(index)}> <span role="img" aria-label="delete"> ➖</span></DeleteButton>
+        </TaskItem>
+         ))
+      }
         <DeleteAllButton className="deleteAll" onClick={() => deleteAllTasks()}>Taking a chillday, remove all todos!</DeleteAllButton>
     </section></>
    

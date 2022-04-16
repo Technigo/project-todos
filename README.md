@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The purpose of the project was to build a TODO-app using React and Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started up by hardcoding some data which i could store in a slice. After setting a store i App.js i worked on one component at the time. I started with the tasklist-component to render all todos. After that i created the addtask component for adding and removing tasks. I then did the taskcounter component with conditional rendering to display different messages depening on how many tasks where done/left. Finally i styled with styled components. If i would have had more time i would have broken out the styled components to a seperat component. I would also have like to add some functions, like displaying the tasks that are done, an categorising the tasks.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Deployed project: https://stunning-dodol-34b851.netlify.app/

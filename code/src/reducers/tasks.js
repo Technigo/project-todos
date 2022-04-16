@@ -1,7 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const data= [
-   ]
+const data= []
 
 export const tasks = createSlice({
 name:'tasks', //by convention same name as fuction but not same thing
@@ -25,8 +24,6 @@ reducers: {
     store.items.push(action.payload)    
     },
 
-    removeAll:(store,action)=>{store.items=[]}
-
-    
+    removeAll:(store,action)=>{store.items=[]}  
 },
 })
