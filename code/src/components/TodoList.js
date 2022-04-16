@@ -1,19 +1,22 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
-import { useSelector } from "react-redux";
-import { list } from 'reducers/list'
 import styled from 'styled-components'
 
+import { useDispatch } from 'react-redux'
+import { useSelector } from "react-redux";
+
+import { list } from 'reducers/list'
+
+
 const StyledList = styled.div `
-.list {
-    // display: flex;
-
-}
-
 .todo {
     display: flex;
     align-items: center;
     font-size: 22px;
+
+}
+
+.todo p {
+    margin: 0;
 }
 
 .remove-button {
@@ -96,7 +99,6 @@ const StyledCheckbox = styled.label `
 
 `
 
-
 //Listed todos +  tick box and remove button
 export const TodoList = () => {
     const allTodos = useSelector((store) => store.list.todos);
@@ -115,12 +117,9 @@ export const TodoList = () => {
                                     </label>
                                 </StyledCheckbox>
                             <p>{todo.title}</p>
-                            <button className='remove-button' type="button" onClick={() => dispatch(list.actions.removeTodo(todo, todoIndex))}>-</button>
+                            <button className='remove-button' type="button" onClick={() => dispatch(list.actions.removeTodo(todoIndex))}>-</button>
                         </div>
-
-                </div>
-                
-                    
+                </div>                    
             ))}
         </div>
         </StyledList>

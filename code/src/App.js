@@ -10,16 +10,18 @@ import { Form } from 'components/Form'
 
 import { list } from 'reducers/list'
 
+
 const StyledApp = styled.div `
 .post-it {
-  display: flex;
-  flex-direction: column;
-  align-items: left;
-  background-color: #FFFF99;
-  width: 50%;
-  margin: auto;
-  padding: 20px;
-  font-family: 'Gochi Hand', cursive;
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    background-color: #FFFF99;
+    width: 50%;
+    max-width: 425px;
+    margin: auto;
+    padding: 20px;
+    font-family: 'Gochi Hand', cursive;
 }
 `
 
@@ -40,4 +42,3 @@ export const App = () => (
     </StyledApp>
   </Provider>
 )
-
