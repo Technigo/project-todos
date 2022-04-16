@@ -144,7 +144,7 @@ const ListBtn = styled.button`
 		border-bottom: 2px solid var(--clr-accent);
 
 		&:hover {
-			background: var(--clr-gray);
+			background: var(--clr-secondary);
 			border-radius: 20%;
 			transition: all 0.3s ease-in;
 		}
