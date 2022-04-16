@@ -32,7 +32,7 @@ color: ${(props) => (props.completed ? `#b0b0b0` : `#222221`)};
 
 const ButtonDelete = styled.button`
 position: absolute;
-right: 10px;
+right: 4px;
 margin-left: 6px;
 /* padding: 0 2px 0 8px; */
 border: none;
