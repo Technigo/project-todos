@@ -13,6 +13,7 @@ const todo = createSlice({
 				text: action.payload,
 				isCompleted: false,
 				id: uniqid(),
+				editable: false,
 				createdAt: format(new Date(), 'LLLL d, yyyy | HH:mm'),
 			}
 
@@ -49,6 +50,21 @@ const todo = createSlice({
 				}
 			})
 			store.items = updatedText
+		},
+
+		toggleEditable: (store, action) => {
+			const updatedEditable = store.items.map((item) => {
+				if (item.id === action.payload) {
+					const changedEditable = {
+						...item,
+						editable: !item.editable,
+					}
+					return changedEditable
+				} else {
+					return item
+				}
+			})
+			store.items = updatedEditable
 		},
 
 		deleteTodo: (store, action) => {

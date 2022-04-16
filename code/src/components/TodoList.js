@@ -121,9 +121,11 @@ const InputText = styled.label`
 
 const TodoList = () => {
 	const [inputChange, setInputChange] = useState('')
-	const [editable, setEditable] = useState(false)
+	// const [editable, setEditable] = useState(false)
 	const items = useSelector((store) => store.todo.items)
+	// const text = items.filter((item) => item)
 	console.log('items', items)
+
 	const dispatch = useDispatch()
 
 	//dispatched reducers
@@ -133,8 +135,12 @@ const TodoList = () => {
 
 	const onUpdateTodo = (id, inputChange) => {
 		dispatch(todo.actions.updateTodo({ id: id, text: inputChange }))
-		setEditable(!editable)
+		// setEditable(!editable)
 		setInputChange('')
+	}
+
+	const onToggleEditable = (id) => {
+		dispatch(todo.actions.toggleEditable(id))
 	}
 
 	const onDeleteTodo = (id) => {
@@ -164,10 +170,11 @@ const TodoList = () => {
 								/>
 								<InputText className={`${item.isCompleted ? 'completed' : ''}`}>{item.text}</InputText>
 							</Wrapper>
-							<ListBtn onClick={() => setEditable(!editable)}>
+							{/* <ListBtn onClick={() => setEditable(!editable)}> */}
+							<ListBtn onClick={() => onToggleEditable(item.id)}>
 								<img src={updateBtn} alt='update task'></img>
 							</ListBtn>
-							{editable && (
+							{item.editable && (
 								<input
 									class='new-content'
 									value={inputChange}
@@ -175,7 +182,7 @@ const TodoList = () => {
 									onChange={(e) => setInputChange(e.target.value)}
 								/>
 							)}
-							{editable && (
+							{item.editable && (
 								<AddBtn type='submit' onClick={onUpdateTodo} disabled={inputChange.length === 0}>
 									<AddPlus src={plusBtn} alt='add task'></AddPlus>
 								</AddBtn>
