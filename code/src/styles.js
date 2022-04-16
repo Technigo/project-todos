@@ -63,6 +63,10 @@ export const TodoListContainer = styled.section`
   margin-top: 20vh;
   padding: 20px;
   background-color: pink;
+
+  @media ${devices.mobile}{
+    max-width: 75vw;
+  }
 `
 
 export const TaskListStyling = styled.article`
@@ -123,6 +127,10 @@ export const InputArea = styled.input`
     border: 0;
     padding: 10px 15 px;
     margin-right: 6px;
+
+    @media ${devices.mobile}{
+        max-width: 30%;
+      }
 `
 
 export const SubmitButton = styled.button`
