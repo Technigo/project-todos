@@ -4,7 +4,7 @@ import styled from "styled-components";
 import uniqid from "uniqid";
 import tasks from "reducers/Tasks";
 import "../index.css";
-import moment from 'moment'
+
 
 const devices = {
   mobile: "(min-width: 375px)",
