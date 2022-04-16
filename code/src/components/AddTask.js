@@ -1,7 +1,20 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
+import styled from "styled-components";
 
 import tasks from "../reducers/tasks";
+
+const Section = styled.section`
+  position: absolute;
+  bottom: 0px;
+  margin: 20px;
+  display: flex;
+  flex-direction: row;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+`;
 
 const AddTask = () => {
   const [input, setInput] = useState("");
@@ -24,8 +37,8 @@ const AddTask = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <section>
+    <Section>
+      <form onSubmit={onFormSubmit}>
         <input
           type="text"
           value={input}
@@ -35,8 +48,8 @@ const AddTask = () => {
         <button type="submit" onClick={onAddTask} disabled={input.length === 0}>
           +
         </button>
-      </section>
-    </form>
+      </form>
+    </Section>
   );
 };
 
