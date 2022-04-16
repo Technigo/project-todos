@@ -35,15 +35,18 @@ const AddContainer = styled.section`
   const Button = styled.button`
   cursor: pointer;
   border: none;
+  margin: 0;
+  padding: 0;
   font-size: 50px;
   // height: 100%;
   // width: 100%;
   position: absolute;
-  left: 15px;
+  left: 20px;
   top: 5px;
   border-radius: 50%;
-  background-color: var(--darkblgr);
-  color: var(--ltgrey);
+  background-color: transparent;
+  // color: var(--ltgrey);
+  color: var(--misty);
   display: flex;
   // align-items: center;
   // justify-content: center;
