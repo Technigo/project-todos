@@ -3,12 +3,12 @@ import { createSlice } from '@reduxjs/toolkit'
 const data = [
     {
         id: 'sfsegnege',
-        text: 'Write my first task',
+        text: 'Be proud of myself',
         complete: false,
     },
     {
         id: 'egvkmeobe',
-        text: 'Write my second task',
+        text: 'Smile more',
         complete: false,
     },
 ]

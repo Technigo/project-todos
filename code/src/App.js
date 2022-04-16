@@ -26,7 +26,7 @@ export const App = () => {
       <Provider store={store}>
         <TodoListContainer>
           <p className="date">{date}</p>
-          <h1>PLAN YOUR WEDDING</h1>
+          <h1>PLAN YOUR DAY</h1>
           <h3>What do you need to do?</h3>
           <TaskList />
           <AddTask />
