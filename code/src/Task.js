@@ -31,20 +31,26 @@ const Task = ( {task} ) => {
   
     const currentDate = new Date().getTime();
 
+    
     const dueDateFormat = new Date(task.dueDate).toLocaleDateString()
-
+    
+    console.log(currentDate, dueDateFormat, task.dueDate,'here')
     //Convert remainDay from millisecond to an integer
     // Plus 1 to make the date stay same, even when the millisecond decrease
     const remainDay = Math.floor((task.dueDate - currentDate)/(1000*60*60*24)+1)
 
     const reminder = () => {
-        if (remainDay > 10 ) {
-            return <span>Due: {dueDateFormat}</span> 
-        } else if (task.dueDate === null) {
-            return <span>No due date</span>
-        }
 
-        return <span>Due in {remainDay} {remainDay === 1 ? 'day' : 'days'}</span>;
+        if (task.dueDate) {
+
+            if (remainDay > 10 ) {
+                return <span>Due: {dueDateFormat}</span> 
+            } else {
+
+                return <span>Due in {remainDay} {remainDay === 1 ? 'day' : 'days'}</span>;
+            }
+        } 
+         return <span> No due Date </span>
     }      
     return (
         <CheckBox>
@@ -58,9 +64,11 @@ const Task = ( {task} ) => {
             
                 <TaskStatus>
                     <div>
-                        <CompleteStatus background = {task.complete ? 'green' : '#f3e0f0'}> {task.complete ? 'complete' : 'uncomplete'} </CompleteStatus>
+
+                        {/*<CompleteStatus background = {task.complete ? 'green' : '#f3e0f0'}> {task.complete ? 'complete' : 'uncomplete'} </CompleteStatus>*/}
                                             
                         <Reminder>{reminder()}</Reminder>
+                         <Reminder>{task.category}</Reminder>
                     </div>
                 </TaskStatus>
 

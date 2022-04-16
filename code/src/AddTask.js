@@ -24,9 +24,10 @@ const AddTask = () => {
     
     const createDate = new Date().toLocaleDateString();
 
-    const editItem = useSelector(state => state.tasks.editItem);
     const isEditing = useSelector(state => state.tasks.isEditing);
-
+    const editInput = useSelector(state => state.tasks.editObject.editText)
+    const editSelect = useSelector(state => state.tasks.editObject.editCategory)
+    const editDueDate = useSelector(state => state.tasks.editObject.editDate)
 
     // Option values for category selector
     const categoryOption = [ 'Category', '🏠 Home', '👩‍💻 Work', '👩🏼‍🤝‍👩🏻 Meeting', '❤️ Personal']
@@ -58,22 +59,42 @@ const AddTask = () => {
     const onSubmitNewTask = (e) => {
       
         e.preventDefault(e)
-        dispatch(tasks.actions.addItem({id: uniqid(), text: inputTask, complete: false, date: createDate, dueDate: new Date(dueDate).getTime()})) 
+        dispatch(tasks.actions.addItem({id: uniqid(), text: inputTask, category: categorySelect ,complete: false, date: createDate, dueDate: new Date(dueDate).getTime()})) 
         navigate('/all');
+
      
     }
 
     // On Change function to update and edit item
-    const onChangeItem = (item) => {
+    const onChangeItem = (text) => {
 
         if (!isEditing) {
-            setInputTask(item)
+            setInputTask(text)
         } else {
-            setInputTask(editItem)
-            dispatch(tasks.actions.onChangeItemInput(item))
+            //dispatch(tasks.actions.onChangeItemInput(item))
+           // dispatch(tasks.actions.onChangeItemInput({editText: item, editCategory: categorySelect, editDate: dueDate}))
+           dispatch(tasks.actions.onChangeItemInput(text))
 
         }
     }
+
+    const onChangeCategorySelect = (category) => {
+        if (!isEditing) {
+            setCategorySelect(category)
+        } else {
+           dispatch(tasks.actions.onChangeCategory(category))
+        }
+    }
+
+    const onChangeDueDate = (date) => {
+
+        
+            if (!isEditing) {
+                setDueDate(date)
+            } else  dispatch(tasks.actions.onChangeDate(date))
+                 
+    }
+
 
     //Go back to home page
     const onBackBtnClick = () => {
@@ -91,7 +112,7 @@ const AddTask = () => {
                     <InputNewTask 
                     type='text' 
                     placeholder="Task title"
-                    value={isEditing ? editItem : inputTask}
+                    value={isEditing ? editInput : inputTask}
                     onChange={(e) => onChangeItem(e.target.value)}
                     required              
                     />
@@ -114,14 +135,15 @@ const AddTask = () => {
                         <input 
                         type='date' 
                         id="due-date"
-                        value={dueDate}
+                        value={isEditing ? editDueDate  : dueDate}
                         min = {createDate}
                         max = '01/01/2100'
-                        onChange={(e) => setDueDate(e.target.value)}
+                        onChange={(e) => onChangeDueDate(e.target.value)}
                         />
                 </DueDateInput>
                 <CategorySelector background = {OnSelectColorChange}> 
-                    <select value={categorySelect} onChange={(e) => setCategorySelect(e.target.value)}>
+                    <select value={isEditing ? editSelect :categorySelect} 
+                            onChange={(e) => onChangeCategorySelect(e.target.value)}>
                         {categoryOption.map(item =>  SelectOptionDisplay(item))}
                     </select>
                 </CategorySelector>

@@ -5,8 +5,9 @@ const tasks = createSlice ({
     name: 'tasks',
     initialState: {
       storage: [],
-      list: [],
+      list: [...JSON.parse(localStorage.getItem('item'))],
       editItem:'', 
+      editObject: {editText:'', editCategory:'',editDate:''},
       editId: null,
       isEditing: false
       
@@ -23,7 +24,11 @@ const tasks = createSlice ({
               const newEditedList = state.list.map(item => {
                 
                 if (item.id === state.editId) {
-                  const editedItem = {...item, text: state.editItem} 
+                  const editedItem = {...item, 
+                                      text: state.editObject.editText, 
+                                      category: state.editObject.editCategory,
+                                      dueDate: state.editObject.editDate
+                                    } 
                   return editedItem;
                 } else return item;
               })
@@ -39,7 +44,17 @@ const tasks = createSlice ({
           },
 
           onChangeItemInput: (state,action) => {
-            return {...state, editItem: action.payload}
+            //return {...state, editItem: action.payload}
+            return {...state, editObject: {...state.editObject, editText: action.payload}}
+            //return {...state, editObject: {...state.editObject, editText: action.payload}}
+          },
+
+          onChangeCategory: (state,action) => {
+            return {...state, editObject: {...state.editObject, editCategory: action.payload}}
+          },
+
+          onChangeDate: (state, action) => {
+            return {...state, editObject: {...state.editObject, editDate: new Date(action.payload).getTime()}}
           },
 
           updateCompleteItem: (state, action) => {
@@ -68,6 +83,7 @@ const tasks = createSlice ({
       
             return {
               ...state, 
+              editObject: { editText: findItem.text, editDate: findItem.dueDate, editCategory: findItem.category},
               editItem: findItem.text, 
               editId: findItem.id, 
               isEditing: true 

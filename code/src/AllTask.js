@@ -21,6 +21,7 @@ const AllTask = () => {
         window.JSON.parse(localStorage.getItem('item'))
 
     },[taskList])
+
    
 
   
