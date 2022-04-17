@@ -35,13 +35,10 @@ const DateSection = styled.div`
   }
 `;
 
-//Always the same
 const reducer = combineReducers({
-  // by convention it is always called reducer and we always use the same method to combine slices
   todos: todos.reducer, //slice
 });
 
-// retrieve localstorage as inital state
 const todoStorageJSON = localStorage.getItem("todos");
 let todoStorage = {};
 
@@ -49,10 +46,8 @@ if (todoStorageJSON) {
   todoStorage = JSON.parse(todoStorageJSON);
 }
 
-// create store with inital state
-const store = createStore(reducer, todoStorage); // ({ reducer: reducer }) 1-property that configure store expects from us, built in name. 2- the variable we created. ES6 shortage syntax
+const store = createStore(reducer, todoStorage);
 
-// store the state in localstorage on redux state change
 store.subscribe(() => {
   localStorage.setItem("todos", JSON.stringify(store.getState()));
 });
