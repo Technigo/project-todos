@@ -18,13 +18,6 @@ const Button = styled.button`
   }
 `;
 
-const Wrappers = styled.div`
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-`;
-
 export const Heading = styled.header`
   display: flex;
   flex-direction: column;
@@ -137,14 +130,10 @@ export const CreatedAt = styled.p`
   };
 `;
 
-export const FlexDiv = styled(Wrappers)`
-  flex: 1;
-  justify-content: center;
-  display: ${(prop) => (prop.time ? "none" : null)};
- 
-  @media (min-width: 768px) {
-    display: ${(prop) => (prop.time ? "flex" : null)};
-  }
+export const Time = styled.p`
+  margin-left: 32px;
+  color: grey;
+  font-size: 12px;
 `;
 
 export const CheckBoxWrapper = styled.div`

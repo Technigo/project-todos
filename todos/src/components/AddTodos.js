@@ -37,7 +37,7 @@ const AddTodos = () => {
     <Form onSubmit={handleTodoSubmit}>
       <AddTodo
         type="text"
-        placeholder="Add todo"
+        placeholder="Add To Do"
         value={inputValue}
         onChange={(event) => { setInputValue(event.target.value); }} />
       <AddButton

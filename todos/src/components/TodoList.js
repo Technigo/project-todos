@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from "react-redux";
 import todos from "reducers/todos";
 import {
   Article,
-  FlexDiv,
   CheckBoxWrapper,
   CheckBox,
   TodoText,
@@ -36,23 +35,17 @@ const TodoList = () => {
     <section>
       {todoList.map((item) => (
         <Article key={item.id}>
-          <FlexDiv>
-            <CheckBoxWrapper>
-              <CheckBox
-                type="checkbox"
-                tabIndex="0"
-                id={item.id}
-                checked={item.isComplete}
-                onChange={() => { onTodoToggle(item.id); }} />
-              <TodoText htmlFor={item.id} complete={item.isComplete}>{item.text}</TodoText>
-            </CheckBoxWrapper>
-          </FlexDiv>
-          <FlexDiv time>
+          <CheckBoxWrapper>
+            <CheckBox
+              type="checkbox"
+              tabIndex="0"
+              id={item.id}
+              checked={item.isComplete}
+              onChange={() => { onTodoToggle(item.id); }} />
+            <TodoText htmlFor={item.id} complete={item.isComplete}>{item.text}</TodoText>
             <TimeStamp createdAt={item.createdAt} />
-          </FlexDiv>
-          <FlexDiv>
-            <DeleteButton onClick={() => onTodoDelete(item.id)}>Delete</DeleteButton>
-          </FlexDiv>
+          </CheckBoxWrapper>
+          <DeleteButton onClick={() => onTodoDelete(item.id)}>Delete</DeleteButton>
         </Article>
       ))}
     </section>

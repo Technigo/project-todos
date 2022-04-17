@@ -1,12 +1,15 @@
 import React from "react";
 
+import { Time } from "styles";
+
 const timeStamp = (created) => {
+  const dateStamp = created.toDateString().split(' ').slice(1, -1).join(' ');
   let hours = created.getHours();
   if (hours < 10) hours = `0${hours}`;
   let minutes = created.getMinutes();
   if (minutes < 10) minutes = `0${minutes}`;
 
-  return `Created at ${hours}:${minutes}`;
+  return `created ${dateStamp} at ${hours}:${minutes}`;
 };
 
 const TimeStamp = ({ createdAt }) => {
@@ -14,7 +17,7 @@ const TimeStamp = ({ createdAt }) => {
   const todoCreatedAt = new Date(parsedTime);
 
   return (
-    <p>{timeStamp(todoCreatedAt)}</p>
+    <Time>{timeStamp(todoCreatedAt)}</Time>
   );
 };
 
