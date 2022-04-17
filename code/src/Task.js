@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import tasks from "reducers/tasks";
@@ -13,7 +13,7 @@ import { el } from "date-fns/locale";
 
 const Task = ( {task} ) => {
     
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     
     const editItem = (id) => {
@@ -29,6 +29,7 @@ const Task = ( {task} ) => {
     // Toggle check complete button
     const onChangeCompleteBtn = (id) => {
         dispatch(tasks.actions.updateCompleteItem(id))
+        console.log(task.complete)
     }
  
   
@@ -41,13 +42,13 @@ const Task = ( {task} ) => {
     // Plus 1 to make the date stay same, even when the millisecond decrease
     const remainDay = Math.floor((task.dueDate - currentDate)/(1000*60*60*24)+1)
 
+  
     const reminder = () => {
-
         if (task.dueDate) {
 
             if (remainDay > 10 ) {
                 return <span>Due: {dueDateFormat}</span> 
-            } else if (remainDay < 10 && remainDay > 10) {
+            } else if (remainDay < 10) {
 
                 return <span>Due in {remainDay} {remainDay === 1 ? 'day' : 'days'}</span>;
             } else if (remainDay === 0) {
@@ -55,9 +56,9 @@ const Task = ( {task} ) => {
             } else if (remainDay < 0) {
                 return <span>Overdue</span>
             }
-        } else {
-                 return <span> No due date </span>
-        }
+        } 
+            return <span> No due date </span>
+        
     }   
 
     const categoryDisplay = () => {

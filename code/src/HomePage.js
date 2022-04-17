@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
+import {AddNewTaskBtn} from 'Buttons'
 
 const Logo = styled.h1`
     font-size: 2.4rem;
@@ -83,6 +84,8 @@ const HomePage = () => {
                 <NavLinks to='all'>
                     <span role='img'aria-hidden="true" >📝 </span>All tasks
                 </NavLinks>
+                <AddNewTaskBtn />
+
             </NavList>
             
     )

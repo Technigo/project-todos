@@ -4,7 +4,7 @@ import Header from "Header";
 import uniqid from 'uniqid';
 import Task from "Task";
 import tasks from "reducers/tasks";
-import CompleteAllBtn from "CompleteAllBtn";
+import {CompleteAllBtn, AddNewTaskBtn} from "Buttons";
 import EmptyState from "EmptyState";
 
 import styled from "styled-components";
@@ -47,10 +47,10 @@ const Today = () => {
                     )) }
                 </>
                  }
-                 {todayList.length === 0 && <EmptyState />}
+                 {todayList.length === 0 && <EmptyState text='Add new taks and see them here' />}
                 
             </AllTasks>
-    
+            <AddNewTaskBtn />
         </div>
     )
 }
