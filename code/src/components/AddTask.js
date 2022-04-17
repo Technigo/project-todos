@@ -12,22 +12,16 @@ const Section = styled.section`
   align-items: center;
   width: 348px;
   position: absolute;
-  bottom: 20px;
+  bottom: 30px;
   padding-top: 8px;
   padding-bottom: 42px;
   box-shadow: 0 -45px 29px -41px rgb(166 166 166 / 55%);
 `;
 
-const Form = styled.form`
-  /* display: flex;
-  flex-direction: row;
-  align-items: center; */
-`;
-
 const Input = styled.input`
-  border: solid 5px #604fd1;
+  border: solid 2px #6dbd89;
   padding: 12px;
-  border-radius: 10px;
+  border-radius: 5px;
   width: 200px;
 
   &:focus {
@@ -41,14 +35,10 @@ const SubmitBtn = styled.button`
   height: 48px;
   font-size: 30px;
   border: none;
-  border-radius: 10px;
+  border-radius: 5px;
   color: #fff;
-  background: linear-gradient(
-    0deg,
-    rgba(77, 54, 208, 1) 0%,
-    rgba(132, 116, 254, 1) 100%
-  );
-  box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
+  background: #000;
+  cursor: pointer;
 `;
 
 const AddTask = () => {
@@ -74,14 +64,14 @@ const AddTask = () => {
   return (
     <div>
       <Section>
-        <Form onSubmit={onFormSubmit}>
+        <form onSubmit={onFormSubmit}>
           <Input
             type="text"
             value={input}
             onKeyDown={(e) => checkKey(e)}
             onChange={(e) => setInput(e.target.value)}
           />
-        </Form>
+        </form>
         <div>
           <SubmitBtn
             type="submit"

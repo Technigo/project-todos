@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import TodoList from "./TodoList";
 
-import task from "./assets/tasks.png";
+import todos from "./assets/todos.png";
 
 // Styled components
 const Section = styled.section`
@@ -22,15 +22,15 @@ const IntroP = styled.p`
 `;
 
 const AddTodoBtn = styled.button`
-  background: #ad5389;
+  background: #6dbd89;
   background: linear-gradient(
     0deg,
-    rgba(77, 54, 208, 1) 0%,
-    rgba(132, 116, 254, 1) 100%
+    rgba(109, 189, 137, 1) 0%,
+    rgba(109, 189, 137, 1) 100%
   );
 
-  box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
-  border-radius: 50px;
+  box-shadow: 0 0.5em 1.5em -0.5em rgba(109, 189, 137, 1);
+  border-radius: 10px;
   color: #fff;
   border: none;
   padding: 10px;
@@ -42,11 +42,7 @@ const AddTodoBtn = styled.button`
   font-weight: 600;
 
   &:hover {
-    box-shadow: 0 0.5em 1.5em -0.5em rgb(108, 181, 193);
-  }
-
-  &:active {
-    box-shadow: 0 0.3em 1em -0.5em rgb(108, 181, 193);
+    box-shadow: none;
   }
 `;
 // Styled components
@@ -63,8 +59,8 @@ const NoTodos = () => {
       {start && <TodoList />}
       {!start && (
         <Section>
-          <Img src={task} alt="a lot of ideas" />
-          <IntroP>Every mastermind needs a todo, let's add your tasks"</IntroP>
+          <Img src={todos} alt="todo-list" />
+          <IntroP>Nice and clean, no tasks todo!</IntroP>
           <AddTodoBtn onClick={onStart}>Add todo</AddTodoBtn>
         </Section>
       )}

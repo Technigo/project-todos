@@ -24,6 +24,10 @@ const Section = styled.section`
   -moz-box-shadow: 10px 10px 64px 0px rgba(208, 208, 231, 0.75);
   display: flex;
   flex-direction: column;
+
+  @media (min-width: 667px) {
+    width: 400px;
+  }
 `;
 // Styled Components
 

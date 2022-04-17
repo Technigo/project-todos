@@ -2,7 +2,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Poppins", sans-serif;
-  background-color: #a8b8f6;
+  background-color: #c9f2d4;
 }
 
 .complete-todo {
@@ -51,7 +51,7 @@ body {
 
 #cbx:checked ~ .cbx {
   border-color: transparent;
-  background: #6871f1;
+  background: #6dbd89;
   animation: jelly 0.6s ease;
 }
 
@@ -107,8 +107,8 @@ body {
   align-items: center;
   padding: 1em;
   border: 0px solid transparent;
-  background-color: rgb(173, 195, 234, 0.6);
-  border-radius: 1.25em;
+  background-color: #fff;
+  border-radius: 10px;
   transition: all 0.2s linear;
 }
 
