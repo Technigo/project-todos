@@ -5,6 +5,7 @@ import { TodoDelete } from './TodoDelete'
 
 export const TodoItem = () => {
   const allTodos = useSelector((store) => store.tasks);
+  const {completed} = allTodos;
 
   return (
     <div style={{backgroundColor: 'pink'}}>
@@ -16,7 +17,7 @@ export const TodoItem = () => {
             type="checkbox"
             //change checked to completed, and take it from destrcutring from useselector
             //also set the completed property somewhere first
-            checked={false}
+            checked={completed}
         />
         <p style={{margin: '10px'}}>{todoItem.text}</p>
         {/* Make the delete button a own display column, so can align items to left (checkbox and text) and (delete button) - two columns, each column aligned to the left for proportion when typing diff. length of text */}
