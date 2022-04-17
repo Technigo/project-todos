@@ -24,7 +24,7 @@ export const App = () => {
 				<StartPage />
 			</Container>
 			<Footer>
-				<p>Photo by 
+				<p>Photo by &nbsp;
 					<a href="https://unsplash.com/@evieshaffer?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText" target="_blank" rel="noopener noreferrer">Evie S.
 					</a>
 				</p>
