@@ -1,5 +1,5 @@
 # Project Todos
-An todo-app built with Redux.
+A todo-app built with Redux.
 
 ## The problem
 
