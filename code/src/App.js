@@ -24,8 +24,8 @@ export const App = () => {
         <AddTodo />
         <TodoList />
         <TaskCounter />
-        <Footer />
       </main>
+      <Footer />
     </Provider>
   )
 }

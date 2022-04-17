@@ -1,7 +1,7 @@
 import React from 'react'
 import moment from 'moment'
 
-const time = moment().format('MMMM Do')
+const time = moment().format('DD MMMM YYYY, HH:mm')
 
 const Header = () => {
   return (
