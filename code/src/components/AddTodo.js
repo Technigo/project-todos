@@ -24,8 +24,7 @@ const Button = styled.button`
 `;
 
 const TextInput = styled.input`
-  border: solid #004aad;
-  border-radius: 10px;
+  border: 0.5px solid #004aad;
   padding: 10px;
   margin: 0 20px;
   @media (min-width: 768px) {

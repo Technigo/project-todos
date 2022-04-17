@@ -3,6 +3,10 @@ import { useSelector, useDispatch } from "react-redux";
 import styled from "styled-components";
 import todos from "../reducers/store";
 
+// const Star = styled.img`
+//   background-image: url(https://i.ibb.co/6JgR18C/Untitled-design-22.png);
+// `;
+
 const TodoCard = styled.section`
   display: flex;
   flex-direction: column;
@@ -45,14 +49,13 @@ const TodoDetails = styled.div`
 
 const TodoText = styled.p`
   font-size: 16px;
-  color: #004aad;
 `;
 
 const TimeText = styled.p`
   display: flex;
   flex-direction: row;
   align-items: center;
-  color: #e4fd81;
+  color: #004aad;
 
   span {
     margin-right: 4px;
@@ -62,11 +65,12 @@ const TimeText = styled.p`
 
 const Complete = styled.input`
   -webkit-appearance: none;
-  width: 20px;
-  height: 20px;
-  background: white;
-  border-radius: 5px;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
   border: 2px solid #e4fd81;
+  margin-right: 20px;
+  background: ${(props) => (props.checked ? "#e4fd81" : "white")};
 `;
 
 const Delete = styled.button`
