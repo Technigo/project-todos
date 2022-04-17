@@ -12,6 +12,11 @@ const BtnSection = styled.section`
   justify-content: space-around;
 `;
 
+const TaskSection = styled.section`
+  overflow: auto;
+  height: 300px;
+`;
+
 const BtnDoAll = styled.button`
   padding: 10px;
   margin: 12px 0;
@@ -21,6 +26,11 @@ const BtnDoAll = styled.button`
   border: 3px solid #fe3c5e;
   background-color: ${(props) => (props.clearAll ? "#FE3C5E" : "#fff")};
   color: ${(props) => (props.clearAll ? "#fff" : "#FE3C5E")};
+
+  &:hover {
+    background-color: ${(props) => (props.clearAll ? "#fff" : "#FE3C5E")};
+    color: ${(props) => (props.clearAll ? "#FE3C5E" : "#fff")};
+  }
 `;
 
 const TodoDiv = styled.div`
@@ -99,7 +109,7 @@ const TodoList = () => {
           </BtnDoAll>
         </div>
       </BtnSection>
-      <section>
+      <TaskSection>
         {items.map((item) => (
           <TodoDiv
             className={item.isComplete ? "checked-todo" : "unchecked-todo"}
@@ -147,7 +157,7 @@ const TodoList = () => {
           </TodoDiv>
         ))}
         <AddTask />
-      </section>
+      </TaskSection>
     </>
   );
 };

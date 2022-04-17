@@ -1,13 +1,20 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+This week's project was to build a To-do app in react and redux toolkit.
+I used mostly styled components and some vanilla css for bigger styling parts.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## My work
 
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started to plan my project in Figma. Then I decided on what components I would need and how to structure my work. These were the requirements for the application:
+List all todo tasks - completed or uncompleted
+It should be able to mark an uncompleted task as complete (and change it back to uncomplete)
+It should be able to add and remove tasks
+The app should show a count of either all todos or all uncomplete todos (or both)
+I also added:
+A timestamp for when the task is created (or updated)
+A complete button to set all tasks completed.
+A delete button to delete all tasks.
+A no todos added page.
+Other things I would like to add when I have the time would be local storage and categories for the tasks.
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.

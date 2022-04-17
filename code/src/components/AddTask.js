@@ -8,15 +8,14 @@ const Section = styled.section`
   margin: 20px 0;
   display: flex;
   flex-direction: row;
-  align-items: flex-end;
   justify-content: center;
-  height: 64px;
+  align-items: center;
   width: 348px;
   position: absolute;
   bottom: 20px;
-  background-color: aliceblue;
-  padding-bottom: 24px;
   padding-top: 8px;
+  padding-bottom: 42px;
+  box-shadow: 0 -45px 29px -41px rgb(166 166 166 / 55%);
 `;
 
 const Form = styled.form`
@@ -38,12 +37,18 @@ const Input = styled.input`
 
 const SubmitBtn = styled.button`
   margin: 8px;
-  width: 40px;
+  width: 48px;
+  height: 48px;
   font-size: 30px;
   border: none;
   border-radius: 10px;
   color: #fff;
-  background-color: #604fd1;
+  background: linear-gradient(
+    0deg,
+    rgba(77, 54, 208, 1) 0%,
+    rgba(132, 116, 254, 1) 100%
+  );
+  box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
 `;
 
 const AddTask = () => {

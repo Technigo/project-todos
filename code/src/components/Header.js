@@ -14,6 +14,7 @@ const HeaderSection = styled.section`
 const Title = styled.h1`
   margin: 20px 0 5px;
   color: #000;
+  font-size: 32px;
 `;
 
 const TextP = styled.p`
