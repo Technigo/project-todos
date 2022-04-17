@@ -10,7 +10,7 @@ align-text: center;
 export const Header = () => {
     return (
         <div>
-            <Title>Todo list✍</Title>
+            <Title>Todo list<span role='img' aria-label='list'>✍</span></Title>
         </div>
     )
 }

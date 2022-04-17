@@ -97,8 +97,8 @@ const TodoList = () => {
                 </DeleteButton>
             </ToDos>
         ))}
-        <CheckButton onClick={CheckAllTodo}>Check all todos✔</CheckButton>
-        <UncheckButton onClick={unCheckAllTodo}>Uncheck all todos⬜</UncheckButton>
+        <CheckButton onClick={CheckAllTodo}>Check all todos<span role='img' aria-label='check'>✔</span></CheckButton>
+        <UncheckButton onClick={unCheckAllTodo}>Uncheck all todos<span role='img' aria-label='uncheck'>⬜</span></UncheckButton>
     </TodoArea >
 
     ) 
