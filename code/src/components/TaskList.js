@@ -25,14 +25,14 @@ const TaskList = () => {
                 {taskList.map((taskItem, taskIndex) => {
                     return <TaskItem key={taskItem.id}>
                         <h2>{taskItem.text}</h2>
-                            <label>
                                 Done:
                                 <input
                                     type="checkbox"
                                     checked={taskItem.complete}
                                     onChange={() => onTaskToggle(taskItem.id)}
-                                    className="tasks" />
-                            </label>
+                                    className="tasks"
+                                    id={taskItem.id} />
+                                <label htmlFor="completed task"></label>
                             <DeleteButton onClick={() => onTaskDelete(taskIndex)}>
                                 <span role="img" aria-label="delete" className="delete">
                                     x

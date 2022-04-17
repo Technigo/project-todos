@@ -47,6 +47,52 @@ export const GlobalStyle = createGlobalStyle`
     flex-direction: column;
     align-items: center;
   }
+
+//   [type="checkbox"]{
+//       opacity: 0;
+//     }
+
+//   [type="checkbox"] + label {
+//     poistion: relative;
+//     padding-left: 30px;
+//     cursor: pointer;
+//     display: inline-block;
+//     color: #666;
+//     line-height: 25px;
+//   }
+
+//   [type="checkbox"] + label::before {
+//     content: "";
+//     position: absolute;
+//     left: 56px;
+//     top: 51px;
+//     width: 18px;
+//     height: 18px;
+//     outline: 2px solid #aaa;
+//     background: #fff;
+//   }
+
+//   [type="checkbox"]:checked + label::before {
+//     content: "";
+//     position: absolute;
+//     left: 56px;
+//     top: 51px;
+//     width: 18px;
+//     height: 18px;
+//     outline: 2px solid #5fd25f;
+//     background: #fff;
+//   }
+
+//   [type="checkbox"]:checked + label::after {
+//     content: "";
+//     position: absolute;
+//     left: 56px;
+//     top: 51px;
+//     width: 18px;
+//     height: 18px;
+//     outline: 2px solid #5fd25f;
+//     background: #fff;
+//   }
 `
 
 export const TodoListContainer = styled.section`
@@ -81,8 +127,8 @@ export const TaskListStyling = styled.article`
 `
 
 export const NewTask = styled.article`
-  display: flex;
-  flex-direction: column;
+  display: inline-block;
+//   flex-direction: column;
   padding: 15px;
   margin-bottom: 5px; 
   position: relative;
