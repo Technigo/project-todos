@@ -9,7 +9,7 @@ export const listSlice = createSlice({
   initialState,
   reducers: {
     addTask: (state, action) => {
-      state.items = [...state.items, action.payload];
+      state.items = [action.payload, ...state.items];
     },
 
     removeTask: (state, action) => {
