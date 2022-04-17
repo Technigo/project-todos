@@ -12,59 +12,58 @@ const devices = {
 }
 
 const ContainerInput = styled.section`
-display: flex;
-justify-content: center;
-align-items: center;
-
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `
 const Form = styled.form`
-height: 50px;
-width: 60%;
-margin-left: 45px;
-border-radius: 12px;
-background-color: #FFF;
-display: flex;
-justify-content: center;
-align-items: center;
+    height: 50px;
+    width: 70%;
+    border-radius: 12px;
+    background-color: #FFF;
+    display: flex;
+    align-items: center;
 
-@media ${devices.tablet} {
-    width: 50%;
-}
+    @media ${devices.tablet} {
+        width: 50%;
+    }
 `
 
 const TextInput = styled.input`
-background: none;
-border: none;
-margin-left: 12px;
-flex: 1;
-&:focus{
-    outline:none;
-}
-@media ${devices.tablet} {
-    font-size: 20px;
-}
+    background: none;
+    border: none;
+    margin-left: 12px;
+    flex: 1;
+    
+    &:focus{
+        outline:none;
+    }
 
-@media ${devices.desktop} {
-    font-size: 22px;
-}
+    @media ${devices.tablet} {
+        font-size: 20px;
+    }
+
+    @media ${devices.desktop} {
+        font-size: 22px;
+    }
 `
 const SubmitButton = styled.button`
-margin-right: 8px;
-background-color: #D4ECDD;
-border: none;
-border-radius: 10px;
-height: 30px;
-width: 50px;
+    margin-right: 8px;
+    background-color: #D4ECDD;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    width: 50px;
 
-@media ${devices.tablet} {
-    width; 60px;
-    height: 40px;
-    margin-right: 25px;
-}
+    @media ${devices.tablet} {
+        width; 60px;
+        height: 40px;
+        margin-right: 25px;
+    }
 
-@media ${devices.desktop} {
-    cursor: pointer;
-}
+    @media ${devices.desktop} {
+        cursor: pointer;
+    }
 `
 
 
@@ -72,14 +71,10 @@ const AddTodo = () => {
     const [toDo, setToDo] = useState('')
     const dispatch = useDispatch()
 
-    //When form submit following things should happen
-    //Default refreshing page
-    //New todo should be added
-    //Clear the input field
     const onFormSubmit = (event) => {
         event.preventDefault()
         const addNewTodo = {
-            id: uniqid(), 
+            id: uniqid(),
             name: toDo,
             isChecked: false
         }
@@ -87,24 +82,21 @@ const AddTodo = () => {
 
         setToDo('')
     }
-    
-    
 
-    
     return (
         <ContainerInput>
             <Form onSubmit={onFormSubmit}>
-                <TextInput 
-                type='text'
-                placeholder="Add new todo here..."
+                <TextInput
+                    type='text'
+                    placeholder="Add new todo here..."
 
-                value={toDo}
-                onChange={(event) =>setToDo(event.target.value)}
+                    value={toDo}
+                    onChange={(event) => setToDo(event.target.value)}
                 />
-                <SubmitButton 
-                 type='submit'
-                 disabled={toDo === ''}>
-                Add!
+                <SubmitButton
+                    type='submit'
+                    disabled={toDo === ''}>
+                    Add!
                 </SubmitButton>
             </Form>
         </ContainerInput>

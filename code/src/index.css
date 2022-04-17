@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500&family=Roboto:wght@300&display=swap');
+
 * {
   margin: 0;
 }
 body {
-  font-family: 'Montserrat','Helvetica Neue', sans-serif;
+  font-family: 'Playfair Display', serif;
+  
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #C8C6C6;
