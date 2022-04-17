@@ -4,6 +4,10 @@ import styled from 'styled-components'
 
 import tasks from 'reducers/Tasks'
 
+const devices = {
+    tablet: '(min-width: 768px)',
+    desktop: '(min-width: 1024px)'
+}
 
 const ButtonContainer = styled.div`
 display: flex;
@@ -17,7 +21,17 @@ width: 5rem;
 padding: 5px;
 margin: 5px;
 font-size: 16px;
-cursor: pointer;
+
+@media ${devices.desktop} {
+    cursor: pointer;
+
+        &:hover {
+			box-shadow: 3px 3px 3px;
+            border: none;
+            background-color: #D4ECDD;
+			transition: all 0.2s ease-in;
+    }
+}
 `
 
 const UncheckButton = styled.button`
@@ -27,7 +41,16 @@ width: 5rem;
 padding: 5px;
 margin: 5px;
 font-size: 16px;
-cursor: pointer;
+
+@media ${devices.desktop} {
+    cursor: pointer;
+    &:hover {
+        box-shadow: 3px 3px 3px;
+        background-color: #D4ECDD;
+        border: none;
+        transition: all 0.2s ease-in;
+}
+}
 `
 const RemoveAllButton = styled.button`
 background-color: #FFF;
@@ -36,7 +59,16 @@ width: 5rem;
 padding: 5px;
 margin: 5px;
 font-size: 16px;
-cursor: pointer;
+
+@media ${devices.desktop} {
+    cursor: pointer;
+    &:hover {
+        box-shadow: 3px 3px 3px;
+        border: none;
+        background-color: #EF233C;
+        transition: all 0.2s ease-in;
+}
+}
 `
 
 const CustomButtons = () => {

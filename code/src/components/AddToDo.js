@@ -7,17 +7,19 @@ import uniqid from 'uniqid'
 import tasks from 'reducers/Tasks'
 
 const devices = {
-    mobile: '(min-width: 375px)',
     tablet: '(min-width: 768px)',
     desktop: '(min-width: 1024px)'
 }
 
 const ContainerInput = styled.section`
-margin: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+
 `
 const Form = styled.form`
 height: 50px;
-width: 80%;
+width: 60%;
 margin-left: 45px;
 border-radius: 12px;
 background-color: #FFF;
@@ -26,7 +28,7 @@ justify-content: center;
 align-items: center;
 
 @media ${devices.tablet} {
-    height: 65px;
+    width: 50%;
 }
 `
 
@@ -39,22 +41,29 @@ flex: 1;
     outline:none;
 }
 @media ${devices.tablet} {
+    font-size: 20px;
+}
+
+@media ${devices.desktop} {
     font-size: 22px;
 }
 `
 const SubmitButton = styled.button`
 margin-right: 8px;
-background-color: #99e2b4;
+background-color: #D4ECDD;
 border: none;
 border-radius: 10px;
 height: 30px;
 width: 50px;
-cursor: pointer;
 
 @media ${devices.tablet} {
     width; 60px;
     height: 40px;
     margin-right: 25px;
+}
+
+@media ${devices.desktop} {
+    cursor: pointer;
 }
 `
 

@@ -5,13 +5,16 @@ body {
   font-family: 'Montserrat','Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #D8F3DC;
-  width: 100vw;
-  height: 100vh;
+  background-color: #C8C6C6;
+ 
 }
 
 code {
   font-family: 'Montserrat','Helvetica Neue', sans-serif;
+}
+
+.completed {
+  text-decoration: line-through;
 }
 
 

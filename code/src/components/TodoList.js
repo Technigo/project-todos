@@ -8,7 +8,6 @@ import tasks from 'reducers/Tasks'
 import CustomButtons from 'components/Buttons'
 
 const devices = {
-    mobile: '(min-width: 375px)',
     tablet: '(min-width: 768px)',
     desktop: '(min-width: 1024px)'
 }
@@ -17,14 +16,15 @@ const TodoContainer = styled.section`
 display: flex;
 flex-direction: column;
 align-items: center;
+justify-content: center;
 margin-bottom: 3.5rem;
 `
 
 const TodoCard = styled.article`
 position: relative;
-border: 1px solid #000;
+
 border-radius: 5px;
-background-color: #F2F5FF;
+background-color: #EDF2F4;
 padding: 10px;
 margin: 10px 5px;
 width: 80%;
@@ -32,11 +32,11 @@ display: flex;
 flex-direction: column;
 
 @media ${devices.tablet} {
-    width: 60%;
+    width: 50%;
 }
 
 @media ${devices.desktop} {
-    width: 50%;
+    width: 40%;
 }
 `
 
@@ -58,12 +58,15 @@ padding: 5px;
 
 const DeleteTodo = styled.button`
 position: absolute;
-top: 20px;
+top: 15px;
 right: 10px;
 background: none;
 border: none;
 font-size: 16px;
-cursor: pointer;
+
+@media ${devices.desktop} {
+    cursor: pointer;
+}
 `
 
 
@@ -90,7 +93,7 @@ const TodoList = () => {
      <TodoContainer> 
             {todoList.map((todo, todoIndex) => (
                 <TodoCard key={todo.id}>
-                    <TodoText>{todo.name}</TodoText>
+                    <TodoText className={`${todo.isChecked ? 'completed' : ''}`}>{todo.name}</TodoText>
                     <label>
                     Check! &nbsp; 
                     <Checkbox 

@@ -3,7 +3,6 @@ import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 
 const devices = {
-    mobile: '(min-width: 375px)',
     tablet: '(min-width: 768px)',
     desktop: '(min-width: 1024px)'
 }
@@ -19,7 +18,7 @@ margin: 10px;
     font-size: 20px;
 }
 
-@media ${devices.tablet} {
+@media ${devices.desktop} {
     font-size: 24px;
 }
 `
@@ -33,7 +32,7 @@ margin: 10px;
     font-size: 20px;
 }
 
-@media ${devices.tablet} {
+@media ${devices.desktop} {
     font-size: 24px;
 }
 `
