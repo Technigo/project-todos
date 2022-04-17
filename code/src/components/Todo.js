@@ -1,12 +1,16 @@
 import React, {useState} from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addTask } from 'reducers/tasks'
+
 
 import { TodoItem } from './TodoItem'
 
 //ändra till export default längst ner, ta då bort {} vid import
 export const Todo = () => {
     const [value, setValue] = useState('');
+    const allTodos = useSelector((store) => store.tasks);
+    console.log(allTodos.length)
+
     const dispatch = useDispatch();
 
     const onSubmit = (e) => {
@@ -39,6 +43,7 @@ export const Todo = () => {
                 Add task
             </button>
         </div>
+        <span style={{color: 'white', display: 'flex', justifyContent: 'center'}}>You have {allTodos.length} todos in your list</span>
     </div>
   )
 }
