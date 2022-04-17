@@ -17,7 +17,6 @@ border-radius: 20px;
 box-shadow: 4px 3px 7px 2px #00000040;
 `
 
-
 const ToDos = styled.article `
 border: 1px solid #dcdcdc; 
 padding: 10px;
@@ -35,6 +34,25 @@ border: none;
 cursor: pointer;
 `
 
+const CheckButton = styled.button `
+background: #FBDA61; 
+border: 1px solid #000;
+border-radius: 5px;
+padding: 5px;
+margin-top: 10px;
+margin-right: 20px;
+cursor: pointer;
+`
+
+const UncheckButton = styled.button `
+background: #FBDA61; 
+border: 1px solid #000;
+border-radius: 5px;
+padding: 5px;
+margin-top: 10px;
+margin-left: 20px;
+cursor: pointer;
+`
 
 const TodoList = () => {
     const todoList = useSelector((store) => store.tasks.taskList)
@@ -78,8 +96,8 @@ const TodoList = () => {
                 </DeleteButton>
             </ToDos>
         ))}
-        <button onClick={CheckAllTodo}>Check all todos</button>
-        <button onClick={unCheckAllTodo}>Uncheck all todos</button>
+        <CheckButton onClick={CheckAllTodo}>Check all todos✔</CheckButton>
+        <UncheckButton onClick={unCheckAllTodo}>Uncheck all todos⬜</UncheckButton>
     </TodoArea >
 
     ) 

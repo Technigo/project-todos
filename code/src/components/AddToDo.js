@@ -10,7 +10,6 @@ import tasks from 'reducers/Tasks'
 const NewTodoArea = styled.section `
 margin: 40px auto 5px;
 padding: 16px;
-min-height: 370px;
 max-width: 300px;
 background-color: #f1f5f8;
 background-size: 40px 40px;
@@ -21,11 +20,35 @@ const InputArea = styled.input `
 border: 0;
 border-bottom: 3px dashed #fdcb6e;
 padding: 10px 15px;
-width: 30%;
+width: 50%;
 background-color: transparent;
 color: #494a4b;
 font-size: 1.3rem;
 font-family: "Architects Daughter", sans-serif;
+`
+
+const FormArea = styled.form `
+display: flex;
+flex-direction: column;
+flex-wrap: wrap;
+`
+
+const RemoveButton = styled.button `
+background: #FBAB7E; 
+border: 1px solid #000;
+border-radius: 5px;
+padding: 5px;
+margin-top: 10px;
+cursor: pointer;
+`
+
+const SubmitButton = styled.button `
+background: #F7CE68; 
+border: 1px solid #000;
+border-radius: 5px;
+padding: 5px;
+margin-top: 10px;
+cursor: pointer;
 `
 
 const AddTodo = () => {
@@ -52,7 +75,7 @@ const AddTodo = () => {
 
     return (
         <NewTodoArea>
-        <form onSubmit={onFormSubmit}>
+        <FormArea onSubmit={onFormSubmit}>
             <label> 
                 New Task : &nbsp; 
                 <InputArea 
@@ -61,9 +84,9 @@ const AddTodo = () => {
                 onChange={(e) => setToDo(e.target.value)}
                 />
             </label>
-            <button type="submit">Add new task</button>
-        </form>
-        <button onClick={onRemoveAll}>Clear all tasks!</button>
+            <SubmitButton type="submit">Add new task</SubmitButton>
+        </FormArea>
+        <RemoveButton onClick={onRemoveAll}>Clear all tasks!</RemoveButton>
         </NewTodoArea>
     )
 }
