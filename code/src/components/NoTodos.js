@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import TodoList from "./TodoList";
 
-import light from "./assets/light.png";
+import tasks from "./assets/tasks.png";
 
 // Styled components
 const Section = styled.section`
@@ -18,11 +18,11 @@ const Img = styled.img`
 
 const IntroP = styled.p`
   margin: 1em;
-  color: #fff;
+  color: #000;
 `;
 
 const AddTodoBtn = styled.button`
-  background: #6cc0c4;
+  background: #604fd1;
   background: linear-gradient(
     0deg,
     rgb(108, 181, 193) 0% rgb(108, 192, 196) 100%
@@ -61,7 +61,7 @@ const NoTodos = () => {
       {start && <TodoList />}
       {!start && (
         <Section>
-          <Img src={light} alt="a lot of ideas" />
+          <Img src={tasks} alt="a lot of ideas" />
           <IntroP>Every mastermind needs a todo, let's add your tasks"</IntroP>
           <AddTodoBtn onClick={onStart}>Add todo</AddTodoBtn>
         </Section>

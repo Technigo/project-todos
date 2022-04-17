@@ -14,6 +14,18 @@ const Main = styled.main`
   flex-direction: column;
   align-items: center;
 `;
+
+const Section = styled.section`
+  background: #fff;
+  height: 600px;
+  margin-top: 20px;
+  overflow: auto;
+  box-shadow: 10px 10px 64px 0px rgba(180, 180, 207, 0.75);
+  -webkit-box-shadow: 10px 10px 64px 0px rgba(186, 186, 202, 0.75);
+  -moz-box-shadow: 10px 10px 64px 0px rgba(208, 208, 231, 0.75);
+  display: flex;
+  flex-direction: column;
+`;
 // Styled Components
 
 const reducer = combineReducers({
@@ -26,8 +38,10 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Main>
-        <Header />
-        <StartTodo />
+        <Section>
+          <Header />
+          <StartTodo />
+        </Section>
       </Main>
     </Provider>
   );
