@@ -15,6 +15,7 @@ background-color: #f1f5f8;
 background-size: 40px 40px;
 border-radius: 20px;
 box-shadow: 4px 3px 7px 2px #00000040;
+font-family: 'Architects Daughter', sans-serif;
 `
 
 const ToDos = styled.article `
