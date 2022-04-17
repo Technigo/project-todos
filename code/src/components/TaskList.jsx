@@ -19,19 +19,21 @@ const TaskList = () => {
     return (
         <section>
             {taskList.map((taskItem, taskIndex) => (
-               <article key={taskItem.id}>
-                   <h2>{taskItem.text}</h2>
-                   <label>
-                        Is completed:
-                        <input
-                            type='checkbox'
-                            checked={taskItem.complete} 
-                            onChange={() => onItemToggle(taskItem.id)}
-                        />
-                   </label>
-                   <button onClick={() => onTaskRemove(taskIndex)}>
-                       <span role='img' aria-label='delete'>❌</span>
-                   </button>
+               <article className ='task-container' key={taskItem.id}>
+                   <h2 className='task'>{taskItem.text}</h2>
+                   <div className='cta-container'>
+                        <label>
+                                <input
+                                    className='checkbox'
+                                    type='checkbox'
+                                    checked={taskItem.complete} 
+                                    onChange={() => onItemToggle(taskItem.id)}
+                                />
+                        </label>
+                        <button onClick={() => onTaskRemove(taskIndex)}>
+                            <span role='img' aria-label='delete'>❌</span>
+                        </button>
+                   </div>
                </article>
             ))}
         </section>

@@ -9,21 +9,6 @@ const taskData = [
     {
         id: 2, 
         text: 'Dinner', 
-        complete: true
-    },
-    {
-        id: 3, 
-        text: 'Vacuum cleaning', 
-        complete: false
-    },
-    {
-        id: 4, 
-        text: 'Prepare table', 
-        complete: false
-    },
-    {
-        id: 5, 
-        text: 'Dessert', 
         complete: false
     },
 ];

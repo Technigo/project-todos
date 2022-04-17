@@ -25,9 +25,8 @@ const TaskInput = () => {
     };
  
     return (
-        <form onSubmit={onFormSubmit}>
+        <form className='form-container' onSubmit={onFormSubmit}>
             <label>
-                New task:
                 <input
                     type='text'
                     value={inputValue}
