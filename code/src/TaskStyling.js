@@ -14,12 +14,13 @@ export const CheckBox = styled.div`
     background-color: #f3f3fa;
     border-radius: 10px;
 
-   }
+   
 
     label {
         width: 80%;
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         gap: 2rem;
         
     }

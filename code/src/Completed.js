@@ -5,8 +5,8 @@ import uniqid from 'uniqid';
 
 const Completed = () => {
 
-    const list = JSON.parse(localStorage.getItem('item'));
-    const completedList = list.filter(item => item.complete);
+    const lists = JSON.parse(localStorage.getItem('reduxState'));    
+    const completedList = lists.tasks.list.filter(item => item.complete);
 
     return (
         <div>

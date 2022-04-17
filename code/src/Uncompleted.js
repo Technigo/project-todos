@@ -7,9 +7,9 @@ import uniqid from 'uniqid';
 
 const Uncompleted = () => {
 
-    const list = JSON.parse(localStorage.getItem('item'));
-    const unCompleteList = list.filter(item => !item.complete);
-
+    
+    const lists = JSON.parse(localStorage.getItem('reduxState'));    
+    const unCompleteList = lists.tasks.list.filter(item => !item.complete);
 
     return (
         <div>

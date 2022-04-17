@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import Header from "Header";
 import Task from "Task";
+import CompleteAllBtn from "CompleteAllBtn";
+import tasks from "reducers/tasks";
 import uniqid from 'uniqid';
 import styled from "styled-components";
 
@@ -14,23 +16,23 @@ const AllTasks = styled.ul`
 const AllTask = () => {
 
 
-    const list = JSON.parse(localStorage.getItem('item'));
+    const list = JSON.parse(localStorage.getItem('reduxState'));
     const taskList = useSelector(state => state.tasks.list);
 
-    useEffect(() => {
-        window.JSON.parse(localStorage.getItem('item'))
+    const dispatch = useDispatch();
 
-    },[taskList])
+    const onClickCompleteAll = () => {
+        dispatch(tasks.actions.completeAllItems())
+    }
+ 
 
-   
-
-  
         return (
         <div className='container'>
             <Header header='📝 All tasks' />
 
             <AllTasks>
-                {list ? list.map(item => {
+                <CompleteAllBtn completeAll={onClickCompleteAll} />
+                {list ? list.tasks.list.map(item => {
                 
                 return <Task key={uniqid()} task = {item} />
                 

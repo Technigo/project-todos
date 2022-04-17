@@ -12,6 +12,7 @@ const Task = ( {task} ) => {
     const navigate = useNavigate()
     const dispatch = useDispatch();
     
+    console.log(task)
     const editItem = (id) => {
         navigate('/add-task');
         dispatch(tasks.actions.editItem(id));
@@ -45,13 +46,18 @@ const Task = ( {task} ) => {
 
             if (remainDay > 10 ) {
                 return <span>Due: {dueDateFormat}</span> 
-            } else {
+            } else if (remainDay < 10 && remainDay > 10) {
 
                 return <span>Due in {remainDay} {remainDay === 1 ? 'day' : 'days'}</span>;
+            } else if (remainDay === 0) {
+                return <span> Due today </span>
+            } else if (remainDay < 0) {
+                return <span>Overdue</span>
             }
         } 
          return <span> No due Date </span>
-    }      
+    }   
+
     return (
         <CheckBox>
             <input 
@@ -61,23 +67,11 @@ const Task = ( {task} ) => {
             onChange={() => onChangeCompleteBtn(task.id)}
             />
             <label htmlFor={task.text}>
-            
-                <TaskStatus>
-                    <div>
+                <div>
 
-                        {/*<CompleteStatus background = {task.complete ? 'green' : '#f3e0f0'}> {task.complete ? 'complete' : 'uncomplete'} </CompleteStatus>*/}
-                                            
-                        <Reminder>{reminder()}</Reminder>
-                         <Reminder>{task.category}</Reminder>
-                    </div>
-                </TaskStatus>
-
-
-                <TaskTitle> {task.text}  </TaskTitle>
-                
-
-                <div className="flex">
-                        {/*<DateCreated>Created: {task.date}</DateCreated>*/}
+                    <div className="flex">
+                        <TaskTitle> {task.text}  </TaskTitle>
+                        <p>Created at: {task.date}</p>
                         <div>
                             <IconButton type="button" onClick={() => editItem(task.id)}>
                                 <img tabIndex='1' src={edit} alt='edit icon' />
@@ -87,6 +81,17 @@ const Task = ( {task} ) => {
                             </IconButton>
                         </div>
                     </div>
+                </div>
+                <TaskStatus>
+                    <div>
+
+                                <CompleteStatus background = {task.complete ? 'green' : '#f3e0f0'}> {task.complete ? 'complete' : 'uncomplete'} </CompleteStatus>
+                                                    
+                                <Reminder>{reminder()}</Reminder>
+                                <Reminder>{task.category}</Reminder>
+                            </div>
+                </TaskStatus>
+
 
             </label>
         </CheckBox>

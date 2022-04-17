@@ -39,14 +39,11 @@ const tasks = createSlice ({
                    state.isEditing = false;
 
                 }
-                localStorage.setItem('item', JSON.stringify(state.list));
-
+              
           },
 
           onChangeItemInput: (state,action) => {
-            //return {...state, editItem: action.payload}
             return {...state, editObject: {...state.editObject, editText: action.payload}}
-            //return {...state, editObject: {...state.editObject, editText: action.payload}}
           },
 
           onChangeCategory: (state,action) => {
@@ -59,7 +56,8 @@ const tasks = createSlice ({
 
           updateCompleteItem: (state, action) => {
           
-          const existingList= JSON.parse(localStorage.getItem('item'))
+          const existingList= JSON.parse(localStorage.getItem('reduxState')).tasks.list;
+
           const updateList =  existingList.map(item => {
               if (item.id === action.payload) {
                 const updateItem = {...item, complete: !item.complete}
@@ -70,15 +68,31 @@ const tasks = createSlice ({
               
             })
             state.list = updateList;
-            localStorage.setItem('item', JSON.stringify(state.list));
+              console.log(state.list)
 
-
+          },
+          
+          completeAllItems: (state, action) => {
+            if (action.payload) {
+              const completeTodayTasks = action.payload.map(item => {
+                const updateTodayTask = {...item, complete: true};
+                return updateTodayTask;
+              })
+              state.list = completeTodayTasks;
+            } else {
+              const existingList= JSON.parse(localStorage.getItem('reduxState')).tasks.list;
+              const completeAllTasks = existingList.map(item => {
+                const updateAllTasks = {...item, complete: true};
+                return updateAllTasks;
+              })
+              state.list = completeAllTasks;
+            }
           },
 
           editItem: (state, action) => {
             
-            const existingList= JSON.parse(localStorage.getItem('item'))
-            const findItem = existingList.find(item => item.id === action.payload)
+            const existingList= JSON.parse(localStorage.getItem('reduxState'))
+            const findItem = existingList.tasks.list.find(item => item.id === action.payload)
       
       
             return {
@@ -92,10 +106,9 @@ const tasks = createSlice ({
 
           deleteItem: (state, action) => {
 
-            
-            const filterList = state.list.filter(item => item.id !== action.payload);
+            const existingList= JSON.parse(localStorage.getItem('reduxState'))
+            const filterList = existingList.tasks.list.filter(item => item.id !== action.payload);
             state.list = filterList;
-            localStorage.setItem('item', JSON.stringify(state.list));
 
           },
 

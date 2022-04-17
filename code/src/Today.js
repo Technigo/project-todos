@@ -1,8 +1,11 @@
-import React, { useEffect } from "react";
-import { useSelector } from "react-redux"
+import React from "react";
+import { useSelector, useDispatch } from "react-redux"
 import Header from "Header";
 import uniqid from 'uniqid';
 import Task from "Task";
+import tasks from "reducers/tasks";
+import CompleteAllBtn from "CompleteAllBtn";
+import EmptyState from "EmptyState";
 
 import styled from "styled-components";
 
@@ -15,29 +18,37 @@ const AllTasks = styled.ul`
 const Today = () => {
     
     const currentDate = new Date().toLocaleDateString();
-    let list = JSON.parse(localStorage.getItem('item'));
+    let lists = JSON.parse(localStorage.getItem('reduxState'));
  
-    if(list) {
-        list = list.filter(item => item.date === currentDate);
+    let todayList = [];
+    if (lists) {
+        todayList = lists.tasks.list.filter(item => item.date === currentDate);
+
     }
 
     const taskList = useSelector(state => state.tasks.list);
+ 
+    const dispatch = useDispatch();
 
-    useEffect(() => {
-        window.JSON.parse(localStorage.getItem('item'))
+    const onClickCompleteAll = () => {
+        dispatch(tasks.actions.completeAllItems(todayList))
+    }
 
-    },[taskList])
-    
-    
     return ( 
         <div className="container">
             <Header header='☀️  Today' />
             <AllTasks>
-                {list ? list.map(item => {
-                    
-                    return <Task key={uniqid()} task = {item} />
-                    
-                    }) : []}
+                {todayList.length > 0 && 
+                <>
+                    <CompleteAllBtn completeAll={onClickCompleteAll} />
+                    {todayList.map(item => (  
+                        <Task key={uniqid()} task = {item} />
+                        
+                    )) }
+                </>
+                 }
+                 {todayList.length === 0 && <EmptyState />}
+                
             </AllTasks>
     
         </div>
