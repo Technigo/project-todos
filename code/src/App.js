@@ -35,7 +35,7 @@ const DateSection = styled.div`
     text-align: center;
     border-radius: 30px;
     padding: 5px 0;
-    background-color: blue;
+    background-color: #004aad;
   }
 `;
 
