@@ -16,6 +16,7 @@
     "react-redux": "^7.2.8",
     "react-script-tag": "^1.1.2",
     "react-scripts": "3.2.0",
+    "react-spline": "^1.2.1",
     "styled-components": "^5.3.5"
   },
   "scripts": {

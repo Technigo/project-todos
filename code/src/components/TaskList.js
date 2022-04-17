@@ -37,56 +37,110 @@ export const TaskList = () => {
 
     const dispatch = useDispatch()
 
-    const allTasks = useSelector((store) => store.tasks.items)
-    const finishedTasks = 
-        useSelector((store) => store.tasks.items.filter(t => t.status))
 
-        const unfinishedTasks = 
-            useSelector((store) => store.tasks.items.filter(t => !t.status))
+
+    const allTasks = useSelector((store) => store.tasks.items)
+
+    const finishedTasks = 
+    useSelector((store) => store.tasks.items.filter(t => t.status))
+
+    const unfinishedTasks = 
+    useSelector((store) => store.tasks.items.filter(t => !t.status))
+
+
 
     const [taskList, setTaskList] = useState(allTasks)
 
     
+    const filterTasks = (value) => {
+                if (value === 'finished') {
+                    setTaskList(finishedTasks)
+                } else if (value === 'unfinished') {
+                    setTaskList(unfinishedTasks)
+                } else {
+                    setTaskList(allTasks)
+                }
 
-    useEffect(() => {
-        let component;
-
-        const render = (status) => {
-    
-            if (status === finishedTasks) {
-                component = <FinishedTasks />
-            } 
-            else if (status === unfinishedTasks) {
-                component = <UnFinishedTasks />
-            } else { 
-                component = <AllTasks />
+                allTasks = taskList
             }
+       
     
-            return component
-        }
+    //         component = <FinishedTasks />
+                //     } 
+                //     else if (status === unfinishedTasks) {
+                //         component = <UnFinishedTasks />
+                //     } else { 
+                //         component = <AllTasks />
+                //     }
+            
+                //     return component
 
-        render(taskList)
-    })
+        
+        
+
+
+
+        // let component;
+
+        // const render = (status) => {
+    
+        //     if (status === finishedTasks) {
+        //         component = <FinishedTasks />
+        //     } 
+        //     else if (status === unfinishedTasks) {
+        //         component = <UnFinishedTasks />
+        //     } else { 
+        //         component = <AllTasks />
+        //     }
+    
+        //     return component
+    
+        // render(taskList)
+    
 
    
     return (
         <>
-          
+          {/* taskList
+        
+          {if () {
+            <UnFinishedTasks />
+        }else if () {
+            <FinishedTasks />
+        }else {
+            <AllTasks />
 
+        }} */}
+
+        <ListWrapper>
+
+        {taskList.map((task) => (
+            <TaskBar key={task.id} draggable="true" >
+                <label htmlFor={task.id}>{task.title}</label> 
+                <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
+            </TaskBar>
+        ))}
+
+        </ListWrapper>
+
+{/* 
             <ListWrapper> 
 
             <AllTasks />
            
 
             </ListWrapper>
-            
+             */}
 
-       
+             
+        <button onClick={() => filterTasks('finished')}>Finished</button>
+        <button onClick={() => filterTasks('unfinished')}>Unfinished</button>
+        <button onClick={() => filterTasks('all')}>All</button>
 
 
-        <button onClick={() => setTaskList(finishedTasks)}>Finished</button>
+        {/* <button onClick={() => setTaskList(finishedTasks)}>Finished</button>
         <button onClick={() => setTaskList(unfinishedTasks)}>Unfinished</button>
-        <button onClick={() => setTaskList(allTasks)}>All</button>
+        <button onClick={() => setTaskList(allTasks)}>All</button> */}
 
         <button onClick={() => dispatch(tasks.actions.removeAll())}>REMOVE ALL</button>
 
@@ -258,3 +312,20 @@ export const TaskList = () => {
     // <summary>Unfinished</summary>
     // <div>  <UnFinishedTasks /></div>
     // </details>
+
+
+    // useEffect(() => {
+
+    //     const filterTasks = (value) => {
+    //         if (value === 'finished') {
+    //             setTaskList(finishedTasks)
+    //         } else if (value === 'unfinished') {
+    //             setTaskList(unfinishedTasks)
+    //         } else {
+    //             setTaskList(allTasks)
+    //         }
+    //     }
+
+    //     filterTasks()
+    
+    // }, [dispatch])
