@@ -71,11 +71,15 @@ export const SmallButton = styled.button`
     right: 1rem;
     font-weight: 600;
     padding: .5em;
-    background-color: hsl(21,84%,54%);
+    background-color: hsl(21,84%,44%);
     color: white;
     border: none;
     border-radius: .25rem;
     cursor: pointer;
+
+    &:hover {
+        background-color: hsl(21,84%,54%);
+    }
 `
 
 export const GoBackButton = styled.button`
@@ -123,14 +127,13 @@ export const Flex = styled.div`
 
 export const Overview = styled.div`
     padding: .5rem;
-    background-color: hsla(0, 0%, 100%, .8);
     border-radius: .25rem;
     text-align: center;
     margin: 1rem 0;
-    font-weight: 600;
     background-color: #1e6091;
 
-    p {
+    h2 {
+        font-weight: 400;
         color: white;
         margin: 0;
     }

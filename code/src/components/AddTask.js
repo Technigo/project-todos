@@ -39,8 +39,9 @@ const AddTask = () => {
         setInputValue('');
     }
     return (
-        <Form onSubmit={onFormSubmit} aria-label="Add task">
+        <Form onSubmit={onFormSubmit} >
                 <input
+                    aria-label="Write new to do"
                     type='text'
                     value={inputValue}
                     onChange={(e) =>  {
