@@ -11,7 +11,7 @@ export const tasks = createSlice({
   reducers: {
       addTask: (state, action) => {
           const newTask = {
-              id: 5,
+              id: Math.random(), 
               text: action.payload.task
           }
           state.push(newTask);

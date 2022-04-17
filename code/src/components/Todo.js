@@ -17,6 +17,7 @@ export const Todo = () => {
             dispatch(
                 addTask({
                     task: value
+                    //toggle completed här eller?
                 })
             )
         }
@@ -25,18 +26,19 @@ export const Todo = () => {
 
   return (
     <div style={{backgroundColor: 'blue', padding: '30px'}}>
-      Container displaying todo items
-      <input
-        type="text"
-        className="task-input"
-        placeholder="Add task"
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
-	  ></input>
+      <h1 style={{color: 'orange', textAlign: 'center'}}>Reminders</h1>
         <TodoItem />
-        <button onClick={onSubmit}>
-        Add task
-        </button>
+        <div style={{display: 'flex', justifyContent: 'center', margin: '10px'}}>
+            <input
+                type="text"
+                placeholder="New reminder"
+                value={value}
+                onChange={(event) => setValue(event.target.value)}
+            ></input>
+            <button onClick={onSubmit} style={{color: 'orange', fontWeight: 'bold'}}>
+                Add task
+            </button>
+        </div>
     </div>
   )
 }

@@ -9,12 +9,20 @@ export const TodoItem = () => {
 
   return (
     <div style={{backgroundColor: 'pink'}}>
-    <p>Item to display todo item</p>
     {allTodos.map((todoItem) => (
-        <>
-        <p>{todoItem.text}</p>
+        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px'}}>
+        <input
+            style={{margin: '1px'}}
+            className="toggle"
+            type="checkbox"
+            //change checked to completed, and take it from destrcutring from useselector
+            //also set the completed property somewhere first
+            checked={true}
+        />
+        <p style={{margin: '10px'}}>{todoItem.text}</p>
+        {/* Make the delete button a own display column, so can align items to left (checkbox and text) and (delete button) - two columns, each column aligned to the left for proportion when typing diff. length of text */}
         <TodoDelete todoItem={todoItem}/>
-        </>
+        </div>
     ))}
     </div>
   )

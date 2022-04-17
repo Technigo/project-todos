@@ -13,7 +13,7 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      Your components can be mounted here, inside the Provider.
+      {/* Your components can be mounted here, inside the Provider. */}
       <Todo />
     </Provider>
   )
