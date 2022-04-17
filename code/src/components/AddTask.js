@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from 'react-router-dom';
-// import styled from "styled-components";
-import uniqid from 'uniqid'
+import uniqid from 'uniqid';
 
 import tasks from "reducers/tasks";
 
-import { Form, NewTaskButton } from '../styled-components'
+import { Form, NewTaskButton } from '../styled-components';
 
 const placeholders = [
     "Water the plants",
@@ -23,32 +21,25 @@ const placeholders = [
 
 const AddTask = () => {
     const [inputValue, setInputValue] = useState('');
-    const navigate = useNavigate();
+
     const dispatch = useDispatch();
-    
-    const goBack = () => {
-        navigate("/");
-    }
 
     const onFormSubmit = (e) => {
         e.preventDefault();
-        
+
         const newTask = {
             id: uniqid(),
             task: inputValue,
             isDone: false,
             createdAt: Date.now(),
         };
-        
+
         dispatch(tasks.actions.addItem(newTask));
 
         setInputValue('');
-        goBack();
     }
     return (
         <Form onSubmit={onFormSubmit}>
-            {/* <GoBackButton onClick={goBack}>go back</GoBackButton> */}
-            {/* <Flex> */}
                 <input
                     type='text'
                     value={inputValue}
@@ -58,7 +49,6 @@ const AddTask = () => {
                     }
                     placeholder={placeholders[[Math.floor(Math.random() * (placeholders.length-1))]]}
                 />
-            {/* </Flex> */}
             <NewTaskButton 
                 type='submit'    
                 disabled={!inputValue}
@@ -67,6 +57,6 @@ const AddTask = () => {
             </NewTaskButton>
         </Form>
     )
-}
+};
 
 export default AddTask;

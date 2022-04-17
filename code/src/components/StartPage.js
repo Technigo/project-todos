@@ -1,8 +1,8 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import TaskList from "components/TaskList";
 import { TaskCounter, Header, Overview } from "../styled-components";
 
+import TaskList from "components/TaskList";
 import AddTask from "./AddTask";
 
 const StartPage = () => {
@@ -16,13 +16,12 @@ const StartPage = () => {
             </Header>
             <AddTask/>
             <Overview>
-                {allTasks.length > 0
-                    ? <TaskCounter>
-                            <p>Completed {completedTasks.length} / {allTasks? allTasks.length : 0 }</p>
-                            
-                        </TaskCounter>
-                    : <TaskCounter><p>No current to dos!</p></TaskCounter>
-                }
+                <TaskCounter>
+                    {allTasks.length > 0
+                        ? <p>Completed {completedTasks.length} / {allTasks? allTasks.length : 0 }</p>
+                        : <p>No current to dos!</p>
+                    }
+                </TaskCounter>
             </Overview>
             <TaskList />
         </>
