@@ -29,10 +29,10 @@ store.subscribe(() => {
 })
 
 const AddTaskBtn = styled(Link)`
-    background-color: #000;
+    background-color: #707BFB;
     color: white;
-    padding: 1.6rem 2.2rem;
-    font-size: 1.8rem;
+    padding: 1.6rem 2rem;
+    font-size: 1.6rem;
     font-weight: 700;
     letter-spacing: 0.5px;
     text-decoration: none;

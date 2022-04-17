@@ -6,12 +6,15 @@ import CompleteAllBtn from "CompleteAllBtn";
 import tasks from "reducers/tasks";
 import uniqid from 'uniqid';
 import styled from "styled-components";
+import EmptyState from "EmptyState";
 
 const AllTasks = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 2rem;
 `
+
+
 
 const AllTask = () => {
 
@@ -24,19 +27,26 @@ const AllTask = () => {
     const onClickCompleteAll = () => {
         dispatch(tasks.actions.completeAllItems())
     }
- 
 
-        return (
+
+    return (
         <div className='container'>
             <Header header='📝 All tasks' />
 
             <AllTasks>
-                <CompleteAllBtn completeAll={onClickCompleteAll} />
-                {list ? list.tasks.list.map(item => {
+                {(list && list.tasks.list.length > 0 )  &&
+                    <>
+                    <CompleteAllBtn completeAll={onClickCompleteAll} />
+                    { list.tasks.list.map(item => {
+                    
+                    return <Task key={uniqid()} task = {item} />
+                    
+                    })}          
+                    </>
                 
-                return <Task key={uniqid()} task = {item} />
-                
-                }) : []}
+                } 
+                {(!list ||list.tasks.list.length === 0 ) && <EmptyState />}
+
             </AllTasks>
         </div>
     )

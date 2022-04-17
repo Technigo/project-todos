@@ -12,14 +12,14 @@ const HeaderContainer = styled.header`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 320px;
+    padding: 2.4rem 0;
+
 
 `
 
 const PageTitle = styled.p`
     font-size: 1.8rem;
     font-weight: 700;
-    padding: 6.4rem 0;
 
 
 `

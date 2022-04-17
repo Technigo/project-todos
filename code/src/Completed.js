@@ -9,7 +9,7 @@ const Completed = () => {
     const completedList = lists.tasks.list.filter(item => item.complete);
 
     return (
-        <div>
+        <div className="container">
             <Header header='✅ Complete' />
             <ul>
             {completedList.map(item => <Task task = {item} key={uniqid()}/>)}

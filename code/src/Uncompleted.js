@@ -12,7 +12,7 @@ const Uncompleted = () => {
     const unCompleteList = lists.tasks.list.filter(item => !item.complete);
 
     return (
-        <div>
+        <div className="container">
             <Header header='🚨 Uncomplete' />
             <ul>
                 {unCompleteList.map(item => <Task task = {item} key={uniqid}/>)}

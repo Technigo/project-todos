@@ -1,17 +1,23 @@
 import React from "react";
+import { useSelector } from "react-redux";
 import { NavLink, Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Logo = styled.h1`
     font-size: 2.4rem;
     margin-bottom: 3.2rem;
+    text-align: center;
 
     span {
         color: #707BFB;
     }
 `
+const CountTask = styled.span`
+    font-size: 1.6rem;
 
-const NavList = styled.ul`
+`
+
+const NavList = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -20,6 +26,9 @@ const NavList = styled.ul`
     font-size: 1.8rem;
     padding: 4.8rem 3.2rem;
     width: 100%;
+    background-color: #fff;
+    text-align: center;
+ 
 ` 
 
 const NavLinks = styled(NavLink)`
@@ -44,23 +53,35 @@ const NavLinks = styled(NavLink)`
 
 const HomePage = () => {
 
+    const allTasks = JSON.parse(localStorage.getItem('reduxState'));
+    
+    const countTasks = () => {
+
+        if (allTasks) {
+            const uncompleteTask = allTasks.tasks.list.filter(item => !item.complete)
+            return uncompleteTask.length
+        }
+    
+        return 0
+    }
+
     return (
             <NavList>
-                <Logo><span>Do</span>me</Logo>
+                <div>
+                    <Logo><span>Do</span>me</Logo>
+                    <CountTask>To do: {countTasks()} tasks</CountTask>
+                </div>
                 <NavLinks to='today-task'>
-                    <li> <span role='img'aria-hidden="true" >☀️ </span> Today </li>
+                     <span role='img'aria-hidden="true" >☀️ </span> Today 
                 </NavLinks>
-                <NavLinks to='projects'>
-                    <li> <span role='img'aria-hidden="true" >🗂 </span> Projects</li>
-                </NavLinks>
-                <NavLinks to='complete'><li>
-                    <span role='img'aria-hidden="true" >✅ </span>Complete</li>
+                <NavLinks to='complete'>
+                    <span role='img'aria-hidden="true" >✅ </span>Complete
                 </NavLinks>
                 <NavLinks to='uncomplete'>
-                    <li><span role='img'aria-hidden="true" >🚨 </span> Uncomplete</li>
+                    <span role='img'aria-hidden="true" >🚨 </span> Uncomplete
                 </NavLinks>
                 <NavLinks to='all'>
-                    <li><span role='img'aria-hidden="true" >📝 </span>All tasks</li>
+                    <span role='img'aria-hidden="true" >📝 </span>All tasks
                 </NavLinks>
             </NavList>
             

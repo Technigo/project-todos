@@ -4,7 +4,6 @@ import { createSlice } from '@reduxjs/toolkit'
 const tasks = createSlice ({
     name: 'tasks',
     initialState: {
-      storage: [],
       list: [],
       editItem:'', 
       editObject: {editText:'', editCategory:'',editDate:''},
@@ -68,7 +67,6 @@ const tasks = createSlice ({
               
             })
             state.list = updateList;
-              console.log(state.list)
 
           },
           
