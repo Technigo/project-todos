@@ -22,9 +22,6 @@ const tasks = createSlice({
     },
     reducers: {
         toggleItem: (store, action) => {
-        // console.log("Store:", store);
-        // console.log("Action:", action);
-
             store.items.forEach((item) => {
                 if (item.id === action.payload) {
                 item.isDone = !item.isDone;
@@ -32,7 +29,6 @@ const tasks = createSlice({
             });
         },
         deleteItem: (store, action) => {
-            console.log("wtf");
             store.items.splice(action.payload, 1);
         },
         addItem: (store, action) => {
