@@ -59,9 +59,30 @@ input[name="checkTask"] {
     }
 }
 
-label {
+input[type="radio"] {
+    border: none;
+    padding: 5px 0 5px 0;
+    margin: 5px 0 5px 0;
+    opacity: 0;
+    position: absolute;
+    pointer-events: none;
+    width: 10px;
+}
+
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 10px 0 5px 0;
+}
+
+
+label, legend {
   color: #706B6B;
   font-size: .9em;
+}
+
+legend {
+  margin-bottom: 5px;
 }
 
 button {

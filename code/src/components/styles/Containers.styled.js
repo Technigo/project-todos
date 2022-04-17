@@ -59,7 +59,7 @@ export const TaskListWrapperLabel= styled.label`
 
 export const FlexRowGradientBg = styled(FlexRow)`
 background-color: #fffcf9;
-background-image: linear-gradient(#f5deb3, white);
+background-image: linear-gradient(#f5deb3,  #fffcf9);
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;
 

@@ -9,6 +9,7 @@ export const AddTaskButton= styled.button`
   padding: 5px 5px;
   margin-top: 10px;
   border-radius: 5px;
+  width: 100%;
 
   &:disabled {
     background-color: #4C5154;

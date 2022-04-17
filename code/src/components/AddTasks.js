@@ -5,6 +5,7 @@ import { Card } from './styles/Containers.styled'
 import { TagsWrapper, TagInput } from './styles/Tags.styled'
 import { AddTaskCard } from './styles/Containers.styled'
 import { AddTaskButton } from './styles/Buttons.styled'
+import { CharCount } from './styles/FontsAndSpans.styled'
 
 import { tasks } from '../reducers/tasks'
 
@@ -35,28 +36,39 @@ const AddTasks = () => {
   return (
     <Card>
       <AddTaskCard>
-        <label htmlFor="input">
-          <input
-            type="text"
-            value={task}
-            placeholder="Add your task here..."
-            name="input"
-            onChange={onTaskValueChange}
-            maxLength="30"
-          />
-          {charCount}/30 characters
-        </label>
-        <TagsWrapper>
-          <form value={tag}>
-            <TagInput type="button" value="work" color='#3DB429' onClick={onTagValueChange} />
-            <TagInput type="button" value="study" color='#F36969' onClick={onTagValueChange} />
-            <TagInput type="button" value="shopping" color='#5B87C9' onClick={onTagValueChange} />
-            <TagInput type="button" value="other" color='#FB9A08' onClick={onTagValueChange} />
-          </form>
+        <form>
+          <label htmlFor="input">
+            <input
+              type="text"
+              value={task}
+              placeholder="Add your task here..."
+              name="input"
+              onChange={onTaskValueChange}
+              maxLength="30"
+            />
+           <CharCount>{charCount}/30 characters</CharCount> 
+          </label>
+          <TagsWrapper>
+            <fieldset>
+            <legend> Select tag (optional)</legend>
+              <TagInput color='#3DB429'>work
+                <input type="radio" value="work" color='#3DB429' onClick={onTagValueChange} />
+              </TagInput>
+              <TagInput color='#F36969'>study
+                <input type="radio" value="study" color='#F36969' onClick={onTagValueChange} />
+              </TagInput>
+              <TagInput color='#5B87C9'>shopping
+                <input type="radio" value="shopping" color='#5B87C9' onClick={onTagValueChange} />
+              </TagInput>
+              <TagInput color='#FB9A08'>other
+                <input type="radio" value="other" color='#FB9A08' onClick={onTagValueChange} />
+              </TagInput>
+            </fieldset>
           </TagsWrapper>
-          <AddTaskButton onClick={() => onTaskSubmit(task, tag)} disabled={charCount===0}>
-           + ADD TASK
+          <AddTaskButton onClick={() => onTaskSubmit(task, tag)} disabled={charCount === 0}>
+            + ADD TASK
           </AddTaskButton>
+        </form>
       </AddTaskCard>
     </Card>
   )
@@ -64,13 +76,3 @@ const AddTasks = () => {
 
 
 export default AddTasks
-
-// const onContentValueChange = (event) => {
-//   const { name, value } = event.target;
-//   setContent((prev) => {
-//     return {
-//       ...prev,
-//       [name]: value
-//     };
-//   });
-// };

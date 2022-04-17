@@ -4,6 +4,9 @@ export const Regular = styled.span`
   font-weight: 400;
   font-size: .6em;
 `
+export const CharCount = styled.p`
+  margin: 0 0 0 2px;
+`
 
 export const Count= styled(Regular)`
   margin-left: 50px;

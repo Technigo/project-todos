@@ -7,7 +7,7 @@ export const TagsWrapper = styled.div`
   align-items: center;
 `
 
-export const TagInput = styled.input`
+export const TagInput = styled.label`
   border-top: 3px solid ${(props) => (props.color)};
   border-left: 1px solid #706B6B;
   border-bottom: 1px solid #706B6B;
