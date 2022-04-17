@@ -70,11 +70,11 @@ const Header = () => {
       >
         Clear list
       </ResetButton>
-      {tasks.length > 0 && (
-        <TaskNumber>
-          {completedTasks.length} of {tasks.length} tasks complete
-        </TaskNumber>
-      )}
+      <TaskNumber>
+        {tasks.length > 0
+          ? `${completedTasks.length} of ${tasks.length} tasks complete`
+          : "0 tasks to do"}
+      </TaskNumber>
     </HeaderStyled>
   );
 };

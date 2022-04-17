@@ -4,14 +4,19 @@ import Task from "./Task";
 import styled from "styled-components";
 
 const TaskListSection = styled.section`
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
+  height: 70vh;
+  overflow: auto;
+
+  @media (min-width: 768px) {
+    height: 80vh;
+  }
 `;
 
 const EmptyListImg = styled.img`
   width: 200px;
-  margin: 80px auto;
+  margin: 60px auto;
   opacity: 15%;
 `;
 

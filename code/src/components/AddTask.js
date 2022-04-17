@@ -6,10 +6,11 @@ import styled from "styled-components";
 
 const Form = styled.form`
   border-bottom: 1px solid lightgrey;
+  background-color: white;
   padding: 10px 0;
   display: grid;
   grid-template-columns: 0.5fr 3fr 0.5fr;
-  min-height: 32px;
+  height: 32px;
 `;
 
 const InputText = styled.input`

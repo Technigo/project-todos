@@ -5,6 +5,7 @@ import moment from "moment";
 import styled from "styled-components";
 
 const TaskContainer = styled.article`
+/* width: 100%; */
   border-bottom: 1px solid lightgrey;
   padding: 10px 0;
   display: grid;
@@ -22,7 +23,7 @@ const Date = styled.p`
   color: grey;
   font-size: 12px;
   padding: 0;
-  margin: 0;
+  margin: 3px 0 0 0;
 `;
 
 const Checkbox = styled.input`
@@ -40,6 +41,9 @@ const Checkbox = styled.input`
 const RemoveButton = styled.button`
   all: unset;
   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 const RemoveIcon = styled.img`

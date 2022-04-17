@@ -11,17 +11,23 @@ const GlobalStyle = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     color: rgb(1,51,51);
     margin: 0 auto;
+    display: block;
+    justify-content: center;
     width: 100%;
-    box-sizing: border-box;
-    border: 2px solid rgb(1,51,51);
-    min-height: 100vh;
   }
 
   @media (min-width: 768px) {
     body {
-      height: 100vh;
-      width: 700px;
+      width: 768px;
     }
+  }
+
+  main {
+    /* width: 100%;
+    margin: 0 auto; */
+    box-sizing: border-box;
+    border-left: 1px solid lightgrey;
+    border-right: 1px solid lightgrey;
   }
 `;
 
