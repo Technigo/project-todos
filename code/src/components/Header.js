@@ -18,7 +18,7 @@ const HeaderText = styled.h1`
   padding: 0;
   margin: 0;
   font-size: 32px;
-	font-weight: 600;
+  font-weight: 600;
   align-self: flex-end;
 `;
 
@@ -42,11 +42,13 @@ const ResetButton = styled.button`
   width: 88px;
   cursor: pointer;
 
-  &:hover {
-    color: rgb(0, 51, 51);
-    font-weight: bolder;
-    background-color: white;
-    transition: ease-in 0.2s;
+  @media (min-width: 768px) {
+    &:hover {
+      color: rgb(0, 51, 51);
+      font-weight: bolder;
+      background-color: white;
+      transition: ease-in 0.2s;
+    }
   }
 `;
 
