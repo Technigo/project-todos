@@ -18,7 +18,7 @@ const TodoCounter = () => {
         )
     } else {
         return (
-            <CounterText>Noting to do right now</CounterText>
+            <CounterText>Nothing to do right now</CounterText>
         )
     }
 }
