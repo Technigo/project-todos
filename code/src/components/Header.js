@@ -4,7 +4,7 @@ import styled from 'styled-components/macro'
 
 const StyledHeader = styled.header`
   font-family: 'Permanent Marker', cursive;
-  background-color: teal;
+  background-color: var(--primary);
   color: white;
   text-align: center;
   display: flex;

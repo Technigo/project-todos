@@ -9,7 +9,6 @@ const StyledForm = styled.form`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* border: 1px solid teal; */
   margin: 10px 5px;
   padding: 5px;
   position: relative;
@@ -21,14 +20,14 @@ const StyledForm = styled.form`
   input:invalid + span:after {
     position: absolute;
     content: '✖';
-    color: teal;
+    color: var(--primary);
     padding-left: 5px;
   }
 
   input:valid + span:after {
     position: absolute;
     content: '✓';
-    color: teal;
+    color: var(--primary);
     padding-left: 5px;
   }
 
@@ -38,8 +37,8 @@ const StyledForm = styled.form`
   }
 
   button {
-    background-color: teal;
-    border: 1px solid teal;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);;
     border-radius: 12px;
     color: white;
     padding: 0.2rem 0.5rem;

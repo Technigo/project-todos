@@ -5,7 +5,7 @@ import Emoji from './Emoji'
 
 const StyledFooter = styled.footer`
   font-family: 'Permanent Marker', cursive;
-  background-color: teal;
+  background-color: var(--primary);
   text-align: center;
   p {
       font-size: 0.8rem;
