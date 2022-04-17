@@ -2,9 +2,9 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { formatRelative } from "date-fns";
 
-import tasks from "reducers/tasks";
-
 import { TaskItem, SmallButton, Tasklist, Taskwrapper, Created } from "../styled-components";
+
+import tasks from "reducers/tasks";
 
 const TaskList = () => {
     const taskList = useSelector((backpack) => backpack.tasks.items);
@@ -20,7 +20,6 @@ const TaskList = () => {
         dispatch(tasks.actions.deleteItem(taskIndex));
     };
 
-
     return (
         <Tasklist>
             {incompletedTasks.map((taskItem, index) => (
@@ -35,14 +34,11 @@ const TaskList = () => {
                             />
                             {taskItem.isDone ? 'Completed' : 'Complete task!'}
                             <span className="checkmark"></span>
-                            
-                            
                         </label>
                         <SmallButton onClick={() => {
                             onTaskDelete(index)
                             }
                         }>
-                            
                             <span role="img" aria-label="delete">
                                 delete
                             </span>

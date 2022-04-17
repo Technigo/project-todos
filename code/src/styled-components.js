@@ -1,9 +1,7 @@
 import styled from 'styled-components/macro';
 
-
 export const Container = styled.div`
     width: clamp(250px, 90%, 350px);
-    // max-width: 350px;
     margin: 3rem auto 4rem auto;
 
     @media (min-width: 668px) {
@@ -60,20 +58,9 @@ export const NewTaskButton = styled.button`
 export const TaskCounter = styled.div`
     display: grid;
     font-size: clamp(1rem, 5vw + 1rem, 1.5rem);
-    
-    // @media (min-width: 668px) {
-    //     grid-template-columns: repeat(3, 1fr);
-    //     justify-items: center;
-    // }
 `
 export const TaskItem = styled.div`
-    // border: 1px solid #dcdcdc;
-    
-    
-    // padding: 10px;
-    // margin-bottom: 5px;
     margin: 0 auto;
-    // position: relative;
     width: 100%;
 `
 
@@ -101,49 +88,8 @@ export const GoBackButton = styled.button`
     cursor: pointer;
 `
 
-export const Input = styled.input`
-    background: none;
-    border: 2px solid pink;
-`
-
 export const Tasklist = styled.div`
     display: grid;
-    // gap: 2rem;
-`
-
-export const TaskLabel = styled.label`
-    display: block;
-    position: relative;
-    padding-left: 35px;
-    margin-bottom: 12px;
-    cursor: pointer;
-    font-size: 22px;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-
-    &:hover TaskInput ~ Checkmark {
-        background-color: #ccc;
-    }
-` 
-
-export const TaskInput = styled.input`
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-    height: 0;
-    width: 0;
-`
-
-export const Checkmark = styled.span`
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 25px;
-    width: 25px;
-    border: 1px solid orange;
-    // background-color: blue;
 `
 
 export const Footer = styled.footer`
@@ -183,7 +129,6 @@ export const Overview = styled.div`
     margin: 1rem 0;
     font-weight: 600;
     background-color: #1e6091;
-    // border: 1px solid hsl(21,84%,54%);
 
     p {
         color: white;
@@ -192,5 +137,5 @@ export const Overview = styled.div`
 `
 
 export const Created = styled.p`
-color: #495057;
+    color: #495057;
 `
