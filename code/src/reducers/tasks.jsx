@@ -47,11 +47,9 @@ const tasks = createSlice({
         },
         addItem: (store, action) => {
             store.items.push(action.payload);
-            // store.items = [...store.items, action.payload];
         },
     },
 });
 
-// export const { toggleItem } = tasks.actions;
 
 export default tasks;

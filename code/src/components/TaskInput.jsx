@@ -1,12 +1,12 @@
 import React, { useState }  from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import uniqid from 'uniqid';
 
 import tasks from 'reducers/tasks';
 
 
 const TaskInput = () => {
-    const [inputValue, setInputValue] = useState("");
+    const [inputValue, setInputValue] = useState('');
 
     const dispatch = useDispatch();
 
@@ -15,13 +15,13 @@ const TaskInput = () => {
 
         const newTask = {
             id: uniqid(),
-            name: inputValue,
+            text: inputValue,
             complete: false,
         };
 
         dispatch(tasks.actions.addItem(newTask));
 
-        // setInputValue("");
+        setInputValue('');
     };
  
     return (
@@ -32,10 +32,10 @@ const TaskInput = () => {
                     type='text'
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    // placeholder='Write your todo here'
+                    placeholder='Write your todo here'
                 />
             </label>
-            <button type='submit'>Add</button>
+            <button type="submit">Add</button>
         </form>
     );
 };

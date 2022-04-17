@@ -4,7 +4,7 @@ import tasks from 'reducers/tasks';
 
 
 const TaskList = () => {
-    const taskList = useSelector((backpack) => backpack.tasks.items);
+    const taskList = useSelector((store) => store.tasks.items);
 
     const dispatch = useDispatch();
 
