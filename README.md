@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week we are building a todo list with react redux, omg it was a bit to mutch for me but fun.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I hade a few problem with the state and action, to understand how the hole redux reducers work is alot of info to take in, i found a video on youtube that explande it good. But im going to need more practic
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Here u can find my site but i still need to work on the styling a bit more for the mobile version
+
+-------> https://luxury-hummingbird-8c8ae2.netlify.app/
