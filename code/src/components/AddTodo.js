@@ -5,8 +5,7 @@ import uniqid from "uniqid"
 
 import todos from "reducers/todos";
 import EmptyPic from "./EmptyPic";
-
-
+import { format } from "date-fns";
 
 const AddContainer = styled.section`
   display: flex;
@@ -16,9 +15,9 @@ const AddContainer = styled.section`
   p {
     margin: 0;
   }
-  `
+`
 
-  const Button = styled.button`
+const Button = styled.button`
   cursor: pointer;
   border: none;
   margin: 0;
@@ -31,7 +30,7 @@ const AddContainer = styled.section`
   background-color: transparent;
   color: var(--misty);
   display: flex;
-  `
+`
 
 const Circle = styled.div `
   height: 70px;
@@ -42,9 +41,7 @@ const Circle = styled.div `
   top: -20px;
 `
 
-
 const AddBox = styled.article`
-
   form {
     display: flex;
     justify-content: center;
@@ -78,56 +75,57 @@ const AddBox = styled.article`
 
 const AddTodo = () => {
 
-    const dispatch = useDispatch()
-    const [newItem, setNewItem] = useState('')
-    const [visible, setVisible] = useState(false)
-    const todoList = useSelector((store) => store.todos.items)
+  const dispatch = useDispatch()
+  const [newItem, setNewItem] = useState('')
+  const [visible, setVisible] = useState(false)
+  const todoList = useSelector((store) => store.todos.items)
     
-    const handleSubmit =  (event) => {
-        event.preventDefault();
-        dispatch(todos.actions.addTask(newTask));
-        setNewItem('')
-        setVisible(false)
-    }
+  const handleSubmit =  (event) => {
+    event.preventDefault();
+    dispatch(todos.actions.addTask(newTask));
+    setNewItem('')
+    setVisible(false)
+  }
 
-    const newTask = {
-      id: uniqid(),
-      listitem: newItem,
-      isDone: false,
-    }
+  const newTask = {
+    id: uniqid(),
+    listitem: newItem,
+    isDone: false,
+    createdAt: format(new Date(), 'LLLL d, yyyy | HH:mm')
+  }
 
-    return (
-      <AddContainer>
-        <Circle>
+  return (
+    <AddContainer>
+      <Circle>
         <Button
           type="button"
           className="add"
           onClick={() => setVisible(!visible)}>+
         </Button>
-        </Circle>
-          {visible && (
-            <AddBox>
-          <form onSubmit={handleSubmit}>
-            <input
-            type="text"
-            placeholder="My new todo"
-            maxLength="26"
-            onChange={(event) => setNewItem(event.target.value)}
-            value={newItem}
-            />
-            <button 
-              className="send" 
-              type="submit"
-              disabled={newItem === ""}><p>Add</p> 
-            
+      </Circle>
+        {visible && (
+          <AddBox>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                placeholder="My new todo"
+                maxLength="26"
+                onChange={(event) => setNewItem(event.target.value)}
+                value={newItem}
+              />
+              <button 
+                className="send" 
+                type="submit"
+                disabled={newItem === ""}>
+                  <p>Add</p> 
               </button>
             </form>
-            
-            </AddBox>
-          )}
-          {!visible && todoList.length === 0 && (
-          <EmptyPic /> )}
-        </AddContainer>
+          </AddBox>
+        )}
+        {!visible && todoList.length === 0 && (
+          <EmptyPic /> )
+        }
+      </AddContainer>
     )
 }
 

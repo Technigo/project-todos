@@ -9,9 +9,6 @@ import TodoList from 'components/TodoList'
 import Header from 'components/Header'
 import HandleAll from 'components/HandleAll'
 
-
-
-
 const GlobalStyle = createGlobalStyle`
 :root {
   --ltgrey: #eef0e7;
@@ -22,17 +19,17 @@ const GlobalStyle = createGlobalStyle`
   --plum: #4D4049;
 }
 
-  body {
-    margin: 0;
-    padding: 0;
-    font-family: 'Manrope', sans-serif;
-    background-color: var(--ltgrey);
-    color: var(--darkblgr);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--ltgrey);
+  color: var(--darkblgr);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
 `
 
 const reducer = combineReducers({

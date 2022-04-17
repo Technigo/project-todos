@@ -1,14 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-
-
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: [
-
-    ]
+    items: []
   },
+
   reducers: {
     toggleItem: (store, action) => {
       store.items.forEach((item) => {
@@ -17,23 +14,25 @@ const todos = createSlice({
         }
       })
     },
-   addTask : (store, action) => {
-      console.log(action, 'action')
+
+    addTask: (store, action) => {
       store.items.push(action.payload)
-    },
+    }, 
+
     deleteItem: (store, action) => {
       store.items.splice(action.payload, 1)
     },
+
     deleteAll: (store, action) => {
       store.items.splice(action.payload)
     },
+    
     checkAll: (store) => {
       store.items.forEach((item) => {
         item.isDone = true
-    })
-
+      })
+    }
   }
-  
-}});
+});
 
 export default todos;

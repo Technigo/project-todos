@@ -4,16 +4,12 @@ import styled from "styled-components";
 
 import todos from "reducers/todos";
 
-
 const ListContainer = styled.section`
   display: flex;
   flex-direction: column;
   margin-top: 60px;
   gap: 10px;
-
-  @media (min-width: 768px) {
-    align-items: center;
-  }
+  align-items: center;
 `
 
 const TodoItem = styled.article `
@@ -22,18 +18,20 @@ const TodoItem = styled.article `
   border-radius: 5px;
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   width: 320px;
 
-  @media (min-width: 768px) {
-    width: 400px;
+  h3 {
+    margin: 0;
+  }
+  
+  p {
+    font-size: 12px;
   }
 
- 
-  
   input[type='checkbox'] {
     appearance: none;
-    -webkit-appearance: none;
     position: relative;
     background: var(--ltgrey);
     border: 2px solid var(--darkblgr);
@@ -45,21 +43,26 @@ const TodoItem = styled.article `
   
   input[type='checkbox']:checked {
     background: var(--plum);
-    background-image: url("icons/check.svg");
   }
   
-  input[type='checkbox']:checked:after {
-    font-family: 'FontAwesome';
-    background-image: url("/check.svg")
-    background-size: contain;
-    font-size: 1rem;
-    font-weight: 500;
-    position: absolute;
-    top: 3px;
-    left: 75px;
+  @media (min-width: 768px) {
+    width: 400px;
   }
-  `
+`
 
+const ItemBox = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`
+
+const CreatedBox = styled.div`
+  display: flex;
+
+  p {
+    margin: 0;
+  }
+`
 
 const DeleteButton = styled.button `
   position: absolute;
@@ -71,14 +74,11 @@ const DeleteButton = styled.button `
   font-size: 30px;
   color: var(--darkblgr);
   transform: rotate(45deg);
-  
 `
 
-
-
 const TodoList = () => {
-  const todoList = useSelector((store) => store.todos.items)
 
+  const todoList = useSelector((store) => store.todos.items)
   const dispatch = useDispatch()
 
   const onItemToggle = (itemId) => {
@@ -89,39 +89,31 @@ const TodoList = () => {
     dispatch(todos.actions.deleteItem(index))
   }
 
- 
-
-  
-
   return (
     <ListContainer>
-        
-        {todoList.map((todoItem, itemIndex) => (
-            <TodoItem key={todoItem.id} >
-        {/* <h2>{todoItem.listitem}</h2> */}
-        <label>
-                    <input 
-                    type="checkbox"
-                    name="completed" 
-                    checked={todoItem.isDone} 
-                    onChange={() => onItemToggle(todoItem.id)}
-                    />
-              </label>
-              <h3>&nbsp;{todoItem.listitem}</h3>
-      
-                <DeleteButton onClick={() =>onItemDelete(itemIndex)}>
-               +
-                </DeleteButton>
-            </TodoItem>
-            
-              
-            
+      {todoList.map((todoItem, itemIndex) => (
+        <TodoItem key={todoItem.id} >
+          <ItemBox>
+            <label>
+              <input 
+                type="checkbox"
+                name="completed" 
+                checked={todoItem.isDone} 
+                onChange={() => onItemToggle(todoItem.id)}
+              />
+            </label>
+            <h3>&nbsp;{todoItem.listitem}</h3>
+          </ItemBox>
+          <CreatedBox>
+            <p>Created:&nbsp;{todoItem.createdAt}</p>
+          </CreatedBox>
+          <DeleteButton onClick={() =>onItemDelete(itemIndex)}>
+            +
+          </DeleteButton>
+        </TodoItem>
         ))
-        
-    }
-    
+      }
     </ListContainer>
-    
   )
 }
 
