@@ -4,8 +4,9 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 
 import tasks from 'reducers/tasks';
 import Header from 'components/Header.jsx';
-import TaskList from 'components/TaskList';
 import TaskInput from 'components/TaskInput';
+import TaskList from 'components/TaskList';
+import TaskCounter from 'components/TaskCounter';
 
 
 const reducer = combineReducers({
@@ -23,6 +24,7 @@ export const App = () => {
         <Header />
         <TaskInput />
         <TaskList />
+        <TaskCounter />
       </div>
     </Provider>
   );

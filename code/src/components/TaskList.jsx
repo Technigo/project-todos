@@ -31,7 +31,7 @@ const TaskList = () => {
                                 />
                         </label>
                         <button onClick={() => onTaskRemove(taskIndex)}>
-                            <span role='img' aria-label='delete'>❌</span>
+                            <span role='img' aria-label='delete'>X</span>
                         </button>
                    </div>
                </article>
