@@ -21,14 +21,16 @@ const TodoList = () => {
       {todoList.map((todoItem, todoIndex) => (
         <div className="todo-box" key={todoItem.id}>
           <h4 className="todo-item">{todoItem.Todo}</h4>
-          <label className="need-todo">
-            Needs Todo:&nbsp;
-            <input
-              type="checkbox"
-              checked={todoItem.isDone}
-              onChange={() => onTodoToggle(todoItem.id)}
-            />
-          </label>
+          <from>
+            <p>
+              <input
+                type="checkbox"
+                checked={todoItem.isDone}
+                onChange={() => onTodoToggle(todoItem.id)}
+              />
+              <label className="need-todo">Needs Todo:&nbsp;</label>
+            </p>
+          </from>
           <button
             className="delete-btn"
             onClick={() => onTodoDelete(todoIndex)}

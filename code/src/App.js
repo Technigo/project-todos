@@ -5,6 +5,7 @@ import Header from './components/Header'
 import Footer from './components/Footer'
 import TodoList from './components/TodoList'
 import AddTodo from './components/AddTodo'
+import TaskCounter from './components/TaskCounter'
 
 import todos from './reducer/todos'
 
@@ -22,6 +23,7 @@ export const App = () => {
         <Header />
         <AddTodo />
         <TodoList />
+        <TaskCounter />
         <Footer />
       </main>
     </Provider>
