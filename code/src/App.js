@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import { Provider } from "react-redux";
 import { combineReducers, createStore } from "@reduxjs/toolkit";
 import styled from "styled-components";
