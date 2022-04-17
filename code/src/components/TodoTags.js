@@ -1,5 +1,8 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import styled from 'styled-components';
+
+import todos from "../reducers/todos.js";
 
     const Tags = styled.div `
         margin: 0 0 15px 0;
@@ -18,19 +21,21 @@ import styled from 'styled-components';
     `
 
 const TodoTags = ({ tags }) => {
+
+    const dispatch = useDispatch();
     
-    console.log('tags', tags);
+    const filterTags = (tag) => {
+        dispatch(todos.actions.filterTags(tag));
+    }
 
     return (
-
-            <Tags>
-                {tags.map((tag, index) => (
-                    <Tag key={'tag'+index}>
-                        {tag}
-                    </Tag>
-                ))}
-            </Tags>
-        
+        <Tags>
+            {tags.map((tag, index) => (
+                <Tag key={'tag'+index} onClick={() => filterTags(tag)}>
+                    {tag}
+                </Tag>
+            ))}
+        </Tags>
     );
 }
 

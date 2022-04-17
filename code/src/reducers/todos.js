@@ -1,20 +1,26 @@
 import  { createSlice } from '@reduxjs/toolkit';
+import uniqid from "uniqid";
 
 const data = [
     {
-        id: 'dgfger1',
-        title: 'Walk dog',
+        id: uniqid(),
         whatToDo: 'Should go for a walk with Pedro.',
         tags: ['dog', 'walk'],
         isCompleted: false,
         createdAt: Date.now()
     },
     {
-        id: '23545fgdg',
-        title: 'Buy new t-shirt',
-        whatToDo: 'Need to buy a new t-shirt that should be green.',
-        tags: ['shopping', 'go to the mall'],
+        id: uniqid(),
+        whatToDo: 'Need to buy a new t-shirt.',
+        tags: ['shopping'],
         isCompleted: true,
+        createdAt: Date.now()
+    },
+    {
+        id: uniqid(),
+        whatToDo: 'Buy food.',
+        tags: ['shopping'],
+        isCompleted: false,
         createdAt: Date.now()
     }
 ]
@@ -22,7 +28,8 @@ const data = [
 const todos = createSlice({
     name: 'todos',
     initialState: {
-        items: data
+        items: data,
+        tag: '',
     },
     reducers: {
         markAsCompleted: (store, action) => {
@@ -37,6 +44,12 @@ const todos = createSlice({
         },
         deleteTodo: (store, action) => {
             store.items.splice(action.payload, 1);
+        },
+        filterTags: (store, action) => {
+            store.tag = action.payload;
+        },
+        clearTagFilter: (store, action) => {
+            store.tag = '';
         }
     },
 });
