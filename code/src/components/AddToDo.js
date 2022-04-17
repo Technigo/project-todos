@@ -18,7 +18,7 @@ const ContainerInput = styled.section`
 `
 const Form = styled.form`
     height: 50px;
-    width: 70%;
+    width: 80%;
     border-radius: 12px;
     background-color: #FFF;
     display: flex;
