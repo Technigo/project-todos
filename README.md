@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week's assignment was to build a website with a To Do-list using React & Redux. The user should be able to add tasks to the list and toggle whether a task is done or not. Furthermore the user should be able to remove tasks from the list and see an overview of how many tasks are done and how many are left.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+procrastinator-list.netlify.app
