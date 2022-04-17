@@ -1,5 +1,12 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import styled from 'styled-components'
+
+const CounterText = styled.p `
+display:flex;
+justify-content: center;
+align-text: center;
+`
 
 const TodoCounter = () => {
     const allTodos = useSelector((state) => state.tasks.taskList)
@@ -7,11 +14,11 @@ const TodoCounter = () => {
 
     if (allTodos.length !== completedTodos.length){
         return(
-            <p>You have completed {completedTodos.length}/{allTodos.length} todos</p>
+            <CounterText>You have completed {completedTodos.length}/{allTodos.length} todos</CounterText>
         )
     } else {
         return (
-            <p>Noting to do right now</p>
+            <CounterText>Noting to do right now</CounterText>
         )
     }
 }

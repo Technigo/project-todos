@@ -7,6 +7,16 @@ import styled from 'styled-components'
 import tasks from 'reducers/Tasks'
 
 
+const NewTodoArea = styled.section `
+margin: 40px auto 5px;
+padding: 16px;
+min-height: 370px;
+max-width: 300px;
+background-color: #f1f5f8;
+background-size: 40px 40px;
+border-radius: 20px;
+box-shadow: 4px 3px 7px 2px #00000040;
+`
 const InputArea = styled.input `
 border: 0;
 border-bottom: 3px dashed #fdcb6e;
@@ -41,7 +51,7 @@ const AddTodo = () => {
     }
 
     return (
-        <section>
+        <NewTodoArea>
         <form onSubmit={onFormSubmit}>
             <label> 
                 New Task : &nbsp; 
@@ -54,7 +64,7 @@ const AddTodo = () => {
             <button type="submit">Add new task</button>
         </form>
         <button onClick={onRemoveAll}>Clear all tasks!</button>
-        </section>
+        </NewTodoArea>
     )
 }
 

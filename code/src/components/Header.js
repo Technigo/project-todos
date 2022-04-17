@@ -1,9 +1,16 @@
 import React from 'react'
+import styled from 'styled-components'
+
+const Title = styled.h1 `
+display:flex;
+justify-content: center;
+align-text: center;
+`
 
 export const Header = () => {
     return (
         <div>
-            <h1>Task list:</h1>
+            <Title>Todo list</Title>
         </div>
     )
 }
