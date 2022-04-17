@@ -12,8 +12,13 @@ padding:10px;
 margin:auto;
 margin-top:10px;
 position:relative;
-background-color:rgb(245,245,245,0.5)
-`;
+background-color:rgb(245,245,245,0.5);
+
+h3{text-decoration: ${(prop) => prop.complete
+  ? "line-through"
+  : "none"}}
+
+`
 
 const DeleteButton=styled.button`
 position:absolute;
@@ -70,7 +75,7 @@ const DeleteAllButton=styled.button`
     opacity: 1;
   }
   
- & :after {
+ &:after {
     z-index: -1;
     content: '';
     position: absolute;
@@ -117,8 +122,10 @@ const deleteAllTasks=()=>{dispatch(tasks.actions.removeAll())}
 return (
   <><section>
       {tasklist.map((item, index) => (
-        <TaskItem key={item.id}>
-          <h2>{item.name}</h2>
+        <TaskItem key={item.id}
+        htmlFor={item.id} 
+        complete={item.isDone}>
+          <h3>{item.name}</h3>
         <Input 
           className="input"
           id="isdone"
