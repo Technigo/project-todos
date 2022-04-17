@@ -4,9 +4,7 @@ import { combineReducers, createStore } from "@reduxjs/toolkit";
 import styled from "styled-components";
 import GlobalStyle from "globalStyle";
 import moment from "moment";
-
 import todos from "./reducers/store";
-
 import AddTodo from "./components/AddTodo";
 import TodoList from "./components/TodoList";
 import TodoCount from "./components/TodoCount";
@@ -25,13 +23,19 @@ const MainSubsection = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-radius: 20px;
 `;
 
 const DateSection = styled.div`
-  span {
-    font-size: 12px;
+  margin-left: 20px;
+  h3 {
+    color: white;
+    font-size: 16px;
     font-weight: 300;
+    width: 100px;
+    text-align: center;
+    border-radius: 30px;
+    padding: 5px 0;
+    background-color: blue;
   }
 `;
 

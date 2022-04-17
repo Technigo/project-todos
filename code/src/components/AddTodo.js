@@ -25,8 +25,9 @@ const Button = styled.button`
 
 const TextInput = styled.input`
   border: 0.5px solid #004aad;
-  padding: 10px;
+  padding: 15px 30px;
   margin: 0 20px;
+  font-size: 16px;
   @media (min-width: 768px) {
     width: 300px;
   }
