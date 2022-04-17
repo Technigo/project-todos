@@ -12,20 +12,20 @@ const TodoListItem = styled.div `
         margin: 20px 0;
         padding: 0 0 20px 0;
         position: relative;
-
     `
     const TodoItemHeading = styled.h2 `
-        margin: 0 0 10px 0;
+        margin: 0 5px 10px 0;
         padding: 0;
         font-size: 1rem;
         font-weight: 700;
-
+        display: inline-block;
     `
     
     const TodoItemDescription = styled.p `
         font-size: 1rem;
         padding: 0;
         margin: 0 0 20px 0;
+        display: inline-block;
     `
     const ContainerBottom = styled.div `
         display: flex;
@@ -33,15 +33,12 @@ const TodoListItem = styled.div `
         align-items: center;
     `
 
-    
-
 const TodoItem = ({ todo, index }) => {
 
-    
     return (
         <TodoListItem>
             <TodoItemHeading>
-                TO DO: {todo.title}
+                TO DO: 
             </TodoItemHeading>
             <TodoItemDescription>
                 {todo.whatToDo}
