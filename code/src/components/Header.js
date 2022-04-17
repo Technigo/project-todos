@@ -11,6 +11,9 @@ const StyledHeader = styled.header`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  h1 {
+      margin: 10px;
+  }
 `
 
 const Header = () => {
@@ -19,7 +22,7 @@ const Header = () => {
 
     return (
         <StyledHeader>
-            <h1>The Fantastic To Do App!</h1>
+            <h1>To Do!</h1>
             <p>{today}</p>
         </StyledHeader>
     )

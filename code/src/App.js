@@ -17,9 +17,18 @@ const reducer = combineReducers({
 const store = configureStore({ reducer })
 
 const StyledAppcontainer = styled.div`
-  width: 50%;
-  margin: 0 auto;
-  border: 1px solid teal;
+  width: 375px;
+  margin: 10px auto;
+  background-color: white;
+  box-shadow: 0 10px 36px 0 rgba(0,0,0,.16),0 0 0 1px rgba(0,0,0,.06);
+  border: 0.5px solid teal;
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    width: 500px;
+  }
+
 `
 
 export const App = () => {

@@ -1,24 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const data = [
-    {
-        id: 1, text: 'Go for a walk', isComplete: false
-    },
-    {
-        id: 2, text: 'Read a book', isComplete: true
-    },
-    {
-        id: 3, text: 'Cook something delicious', isComplete: false
-    },
-    {
-        id: 4, text: 'Update your LinkedIn', isComplete: false
-    }
-]
-
 const todos = createSlice({
     name: 'todos',
     initialState: {
-        toDoList: data
+        toDoList: []
     },
     reducers: {
         toggleComplete: (store, action) => {

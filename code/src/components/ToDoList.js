@@ -2,14 +2,37 @@ import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components/macro'
 
+import Emoji from './Emoji'
 import ToDoListItem from './ToDoListItem'
 
 import todos from 'reducers/todos'
 
 const StyledListSection = styled.section`
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid salmon;
+    margin: 20px 5px;
+    p {
+        text-align: center;
+    }
+`
+
+const SummarySection = styled.section`
+    text-align: center;
+    margin-bottom: 10px;
+`
+
+const DeleteAllButton = styled.button`
+    background-color: #FF8C00;
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 0.2rem 0.5rem;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-family: 'Overpass', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 4px 2px;
+    cursor: pointer;        
 `
 
 const ToDoList = () => {
@@ -27,17 +50,15 @@ const ToDoList = () => {
 
     return (
         <>
-            {isListNotEmpty &&
-                <section style={{ textAlign: 'center' }}>
-                    <p>Completed: {completedToDos.length} of {toDoList.length}</p>
-                    <button onClick={() => onRemoveAll()}>
-                        Delete all
-                    </button>
-                </section>
-            }
             <StyledListSection>
                 {!isListNotEmpty &&
-                    <p>Your list is empty</p>
+                    <p>
+                        Add a new task or just relax
+                        &nbsp;
+                        <Emoji
+                            symbol="🍀"
+                            label="four-leaf-clover" />
+                    </p>
                 }
                 {toDoList.map((toDoItem, itemIndex) => (
                     <ToDoListItem
@@ -49,6 +70,15 @@ const ToDoList = () => {
                     </ToDoListItem>
                 ))}
             </StyledListSection>
+
+            {isListNotEmpty &&
+                <SummarySection>
+                    <p>Completed tasks: {completedToDos.length} of {toDoList.length}</p>
+                    <DeleteAllButton onClick={() => onRemoveAll()}>
+                        Delete all
+                    </DeleteAllButton>
+                </SummarySection>
+            }
         </>
     )
 }
