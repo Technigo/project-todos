@@ -5,9 +5,9 @@ import styled from "styled-components";
 const Headerbox = styled.header `
     padding: 20px 20px 40px 20px;
     border-radius: 5px;
-    width: 80vw;
+    width: 320px;
     margin-top: 20px;
-    position: relative;
+    // position: relative;
     background-color: var(--misty);
     color: var(--darkblgr);
     

@@ -50,7 +50,7 @@ const AddBox = styled.article`
     justify-content: center;
     padding-top: 30px;
     margin-top:40px;
-    width: 80vw;
+    width: 320px;
 
     @media (min-width: 768px) {
       width: 400px;

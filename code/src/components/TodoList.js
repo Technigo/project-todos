@@ -23,6 +23,7 @@ const TodoItem = styled.article `
   position: relative;
   display: flex;
   align-items: center;
+  width: 320px;
 
   @media (min-width: 768px) {
     width: 400px;

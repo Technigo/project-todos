@@ -7,12 +7,15 @@ const ImageBox = styled.div`
 
 margin: 0;
 padding: 0;
+width: 320px;
+display: flex;
+justify-content: center;
 
 img {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 80vw;
+    width: 100%;
     margin-top: 60px;
     border-radius: 5px;
     opacity: 0.7;

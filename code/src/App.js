@@ -7,7 +7,8 @@ import todos from 'reducers/todos'
 import AddTodo from 'components/AddTodo'
 import TodoList from 'components/TodoList'
 import Header from 'components/Header'
-import DeleteAll from 'components/DeleteAll'
+import HandleAll from 'components/HandleAll'
+
 
 
 
@@ -30,6 +31,7 @@ const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
   }
 `
 
@@ -48,7 +50,7 @@ export const App = () => {
       <Header />
       <AddTodo />
       <TodoList />
-      <DeleteAll />
+      <HandleAll />
     </Provider>
   )
 }

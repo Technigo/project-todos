@@ -26,9 +26,14 @@ const todos = createSlice({
     },
     deleteAll: (store, action) => {
       store.items.splice(action.payload)
-    }
+    },
+    checkAll: (store) => {
+      store.items.forEach((item) => {
+        item.isDone = true
+    })
+
   }
   
-});
+}});
 
 export default todos;
