@@ -39,7 +39,7 @@ const AddTask = () => {
         setInputValue('');
     }
     return (
-        <Form onSubmit={onFormSubmit}>
+        <Form onSubmit={onFormSubmit} aria-label="Add task">
                 <input
                     type='text'
                     value={inputValue}

@@ -18,8 +18,8 @@ const StartPage = () => {
             <Overview>
                 <TaskCounter>
                     {allTasks.length > 0
-                        ? <p>Completed {completedTasks.length} / {allTasks? allTasks.length : 0 }</p>
-                        : <p>No current to dos!</p>
+                        ? <h2>Completed {completedTasks.length} / {allTasks? allTasks.length : 0 }</h2>
+                        : <h2>No current to dos!</h2>
                     }
                 </TaskCounter>
             </Overview>
