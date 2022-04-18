@@ -17,7 +17,7 @@ const Main = styled.main`
 
 const Section = styled.section`
   background: #fff;
-  height: 600px;
+  height: 625px;
   margin-top: 12px;
   box-shadow: 10px 10px 64px 0px rgba(180, 180, 207, 0.75);
   -webkit-box-shadow: 10px 10px 64px 0px rgba(186, 186, 202, 0.75);
