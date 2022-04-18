@@ -1,5 +1,3 @@
-// Username to global state?
-
 import React, { useState } from 'react'
 import { Provider } from 'react-redux'
 import { createStore, combineReducers } from '@reduxjs/toolkit'
@@ -24,7 +22,7 @@ if (persistedStateJSON) {
   persistedState = JSON.parse(persistedStateJSON)
 }
 
-// Creating store with initial state "appState" "taskitemsReduxState"
+// Creating store with initial state
 const store = createStore(reducer, persistedState)
 // const store = configureStore({ reducer })
 

@@ -1,6 +1,3 @@
-// Style the list item and its content
-// Style the checkboxes
-
 import React from "react"
 import { useSelector, useDispatch } from "react-redux"
 import styled from "styled-components"
@@ -13,11 +10,12 @@ const StyledTaskList = styled.section`
     display: flex;
     flex-direction: column;
     margin: 0 1rem;
+    font-family: "Poppins", sans-serif;
 `
 
 const TaskItem = styled.article`
     border: 1px solid pink;
-    padding: 1.2rem;
+    padding: 1.5rem;
     margin: 1rem;
     border-radius: 10px;
     position: relative;
@@ -25,9 +23,19 @@ const TaskItem = styled.article`
     1px 2px 4px 0px #b66fdf,
     2px 4px 8px 0px #b66fdf,
     2px 4px 16px 0px #b66fdf;
+
+    @media screen and (min-width: 1024px) {
+        padding: 2rem;
+    }
 `
 const TaskTitle = styled.h3`
-    margin-bottom: 2rem;
+    margin-bottom: 2.3rem;
+    font-size: 1.2rem;
+
+    @media screen and (min-width: 1024px) {
+        margin-bottom: 3rem;
+        font-size: 1.4rem;
+    }
 `
 
 const TaskDetails = styled.div`
@@ -36,22 +44,45 @@ const TaskDetails = styled.div`
 `
 
 const TaskTag = styled.span`
-    font-size: 0.6rem;
-    padding: 6px;
+    font-size: 0.8rem;
+    padding: 4px;
     border-radius: 10px;
     text-align: center;
     width: 60px;
+    color: #000000ec;
+
+    @media screen and (min-width: 1024px) {
+        font-size: 1rem;
+        width: 80px;
+    }
+`
+
+const CheckSpan = styled.span`
+    margin-left: 8px;
+    background: white;
+    border-radius: 10px;
+    padding: 5px;
+    color: black;
+    font-size: 0.9rem;
+
+    @media screen and (min-width: 1024px) {
+        font-size: 1rem;
+    }
 `
 
 const TaskDate = styled.p`
     font-size: 0.8rem;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+
+    @media screen and (min-width: 1024px) {
+        font-size: 1rem;
+    }
 `
 
-const Button = styled.button`
+const DeleteButton = styled.button`
     position: absolute;
-    top: 1.1rem;
-    right: 1.1rem;
+    top: 1.5rem;
+    right: 1.5rem;
     appearance: none;
     border: none;
     cursor: pointer;
@@ -66,6 +97,15 @@ const Button = styled.button`
     &:hover {
         transform: translateY(-5px);
         box-shadow: 0px 5px 8px 2px #c56bf9d0;
+        transition: 0.4s ease-in-out;
+    }
+
+    @media screen and (min-width: 1024px) {
+        top: 2rem;
+        right: 2rem;
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
     }
 `
 
@@ -99,7 +139,7 @@ const TaskList = ({ allTasks, uncompletedTasks, completedTasks }) => {
                                 checked={task.complete}
                                 onChange={() => onTaskToggle(task.id)}
                                 />
-                                {task.complete && <span>&nbsp; Done!</span>}
+                                {task.complete && <CheckSpan>Done!</CheckSpan>}
                             </label>
 
                             <TaskTag
@@ -113,11 +153,11 @@ const TaskList = ({ allTasks, uncompletedTasks, completedTasks }) => {
                         
                         <TaskDate>Created <Moment fromNow>{task.date}</Moment></TaskDate>
 
-                        <Button onClick={() => onTaskDelete(task.id)}>
+                        <DeleteButton onClick={() => onTaskDelete(task.id)}>
                                 <span role="img" aria-label="emoji">
                                     ✘
                                 </span>
-                        </Button>
+                        </DeleteButton>
                     </TaskItem>
                 ))}
             </StyledTaskList> 
@@ -149,9 +189,11 @@ const TaskList = ({ allTasks, uncompletedTasks, completedTasks }) => {
                             
                             <TaskDate>Created <Moment fromNow>{task.date}</Moment></TaskDate>
 
-                            <Button onClick={() => onTaskDelete(task.id)}>
-                                Delete
-                            </Button>
+                            <DeleteButton onClick={() => onTaskDelete(task.id)}>
+                                <span role="img" aria-label="emoji">
+                                    ✘
+                                </span>
+                            </DeleteButton>
                         </TaskItem>
                     ))}
             </StyledTaskList> 
@@ -183,9 +225,11 @@ const TaskList = ({ allTasks, uncompletedTasks, completedTasks }) => {
                         
                         <TaskDate>Created <Moment fromNow>{task.date}</Moment></TaskDate>
 
-                        <Button onClick={() => onTaskDelete(task.id)}>
-                            Delete
-                        </Button>
+                        <DeleteButton onClick={() => onTaskDelete(task.id)}>
+                            <span role="img" aria-label="emoji">
+                                    ✘
+                            </span>
+                        </DeleteButton>
                     </TaskItem>
                 ))}
             </StyledTaskList> 

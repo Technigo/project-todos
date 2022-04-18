@@ -5,11 +5,11 @@ import styled from "styled-components"
 
 const StyledHeader = styled.header`
     margin: 1.5rem;
-    padding: 1.5rem 1.5rem;
+    padding: 1.3rem;
     background: linear-gradient(200deg, #e3c5f4 0%, #c56bf9 55%);
     border-radius: 10px;
     color: white;
-    max-width: 
+    font-family: "Poppins", sans-serif;
 `
 
 const HeaderDetails = styled.div`
@@ -19,18 +19,18 @@ const HeaderDetails = styled.div`
 `
 
 const HeaderTitle = styled.h1`
-    font-size: 1.5rem;
-    margin-bottom: 10px;
+    font-size: 1.9rem;
+    margin-bottom: 0.5rem;
     text-transform: uppercase;
 
     @media screen and (min-width: 1024px) {
-        font-size: 2rem;
+        font-size: 2.2rem;
     }
 `
 
 const CurrentTasks = styled.p`
     font-size: 0.8rem;
-    width: 27%;
+    width: 30%;
     background: white;
     padding: 6px;
     border-radius: 10px;
@@ -49,7 +49,7 @@ const CurrentTasks = styled.p`
 const HeaderGreeting = styled.h2`
     font-size: 1.2rem;
     font-weight: normal;
-    margin-bottom: 8px;
+    margin-bottom: 3px;
 
     @media screen and (min-width: 1024px) {
         font-size: 1.4rem;
@@ -76,10 +76,11 @@ const TaskFilterButton = styled.button`
     border: none;
     padding: 5px;
     border-radius: 10px;
-    font-size: 1rem;
+    font-size: 0.9rem;
     margin: 0;
     background: transparent;
     color: white;
+    font-family: "Poppins", sans-serif;
 
     &:hover {
         text-decoration: underline;
@@ -147,7 +148,7 @@ const Header = (props) => {
             </HeaderDetails>
 
             <HeaderGreeting>{showGreeting()} {nameInput}!</HeaderGreeting>
-            <HeaderDate><Moment date={date} format="MMMM Do YY"> It's {date}</Moment></HeaderDate>
+            <HeaderDate>It's <Moment date={date} format="MMMM Do YYYY">{date}</Moment></HeaderDate>
            
             <ButtonContainer>
                 <TaskFilterButton

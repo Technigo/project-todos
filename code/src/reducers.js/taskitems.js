@@ -1,21 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 import uniqid from "uniqid"
 
-// const data = [
-//     { id: 1, text: "Do laundry", complete: false },
-//     { id: 2, text: "Wash clothes" , complete: true },
-//     { id: 3, text: "Smell flowers", complete: true },
-//     { id: 4, text: "Fix the code", complete: false }
-// ]
-
-const initialState = {
-    taskitems: [],
-}
-
 const taskitems = createSlice({
     name: "taskitems",
-    initialState,
+    initialState: {
+        username: "",
+        taskitems: []
+    },
     reducers: {
+        // Trying to set the username with input value
+        // setUserName: (state, action) => {
+        //     state.username = action.payload
+        // },
+
         addTaskItem: (state, action) => {
             const { inputValue, priority } = action.payload
 

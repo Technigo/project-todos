@@ -1,8 +1,5 @@
-// Style the whole page
-// Add empty state?
-
-
 import React, { useState } from "react"
+import { useSelector } from "react-redux"
 import styled from "styled-components"
 
 import Header from "./Header"
@@ -39,6 +36,9 @@ const TaskPage = ({ nameInput }) => {
     const [allTasks, setAllTasks] = useState(true)
     const [uncompletedTasks, setUncompletedTasks] = useState(false)
     const [completedTasks, setCompletedTasks] = useState(false)
+    const userName = useSelector((state) => state.username)
+
+    console.log(userName)
 
     return (
         <StyledTaskPage>

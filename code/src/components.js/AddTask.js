@@ -1,7 +1,3 @@
-// Style the button
-// Style the priorities buttons
-
-
 import React, { useState } from "react"
 import { useDispatch } from "react-redux"
 import styled from "styled-components"
@@ -16,6 +12,7 @@ const NewTaskContainer = styled.div`
     flex-direction: column;
     margin: 0.5rem 1.5rem 1.5rem;
     padding: 1rem;
+    font-family: "Poppins", sans-serif;
 `
 
 const AddTaskTitle = styled.h3`
@@ -43,7 +40,7 @@ const InputTitle = styled.label`
 
 const TaskInput = styled.input`
     appearance: none;
-    border: 1px solid;
+    border: 2px solid;
     border-color: transparent;
     background: whitesmoke;
     border-radius: 10px;
@@ -51,9 +48,11 @@ const TaskInput = styled.input`
     margin-top: 6px;
     font-size: 0.9rem;
 
+    &:hover,
+    &:active,
     &:focus {
         outline: none;
-        border-color: purple;
+        border-color: #c56bf9;
     }
 
     @media screen and (min-width: 1024px) {
@@ -101,7 +100,8 @@ const AddTask = () => {
                 width="100px"
                 fontSize="0.8rem"
                 fontSizeDesktop="1.1rem"
-                borderHover="2px solid purple"
+                borderHover="2px solid black"
+                opacityHover="0.8"
                 disabled={!inputValue}
                 onClick={() => AddTask()}>
                     Add Task

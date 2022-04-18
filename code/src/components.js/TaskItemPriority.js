@@ -30,7 +30,7 @@ const PriorityButtonContainer = styled.div`
 
 const PriorityButton = styled.button`
     appearance: none;
-    border: 1px solid;
+    border: 2px solid;
     border-color: transparent;
     margin: 10px 10px 0 0;
     padding: 5px;
@@ -42,13 +42,14 @@ const PriorityButton = styled.button`
     &:active,
     &:focus {
         outline: none;
-        border-color: purple;
+        border-color: black;
+        opacity: 0.7;
     }
 
     @media screen and (min-width: 1024px) {
         margin: 10px 15px 0 0;
         width: 70px;
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 `
 
