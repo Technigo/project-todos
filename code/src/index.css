@@ -13,8 +13,6 @@ code {
 }
 
 
-
-
 :root {
   --edge: transparent  ;
   --background: #884eca;
@@ -24,55 +22,11 @@ code {
 
   box-sizing:border-box;
 
-  /* color: #884eca8a */
-
-  /* --background transparent pink: #cf008a85; */
 }
-/* 
-html {
-  height: 100%;
-  background-color: var(--background);
-  background: linear-gradient(
-    rgba(144, 41, 225, 1),
-    rgba(253, 31, 44, 1),
-    rgba(250, 131, 52, 1),
-    rgba(189, 255, 0, 1)
-  );
-  overflow: hidden;
-} */
+
 body {
   background: rgb(195, 131, 248);
 }
-
-/* 
-.task {
-  width: 200px;
-  padding: 1em;
-  text-align: center;
-  font-size: 2em;
-  color: white;
-  font-family: Lucida Sans , sans-serif;
-  background: rgba(255, 255, 255, 0.116);
-  border: 1px solid rgba(255, 255, 255, 0.521);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
-  backdrop-filter: blur(13px);  
-  border-radius: 9px;
-} */
-/*.lamp {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-
-  height: 100vh;
-  height: 100vh;
-  width: 100vw;
-  min-width: 100vw;
-  z-index: -1;
-}
-*/
-
-
 
 .lava {
   filter: url("#goo");

@@ -1,32 +1,13 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
-
-import  { FormAndList }  from 'components/Form.js'
-import  Background2  from 'components/Background.js'
-import Bunny from 'components/Bunny.js'
-
 import { tasks } from 'reducers/tasks'
-// import { TaskList } from 'components/TaskList'
-import { Sort } from 'components/Sort'
-
-import styled from 'styled-components'
-
-import ScriptTag from 'react-script-tag'
 
 
-const ContentWrapper = styled.main`
-width: 100%;
-position: absolute;
-top: 4em;
-z-index: 100;
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
+import  { FormAndList }  from 'components/TodoApp.js'
+import { ContentWrapper } from 'components/StyleComponents'
 
-`
-
+import  Background2  from 'components/Background.js'
 
 
 const reducer = combineReducers({
@@ -41,14 +22,9 @@ export const App = () => {
     <Provider store={store}>
       <Background2 />
 
-
       <ContentWrapper>
-     {/* <TaskList />  */}
       <FormAndList />
-
-      {/* <Sort /> */}
-
-    </ContentWrapper>
+      </ContentWrapper>
     
  
     </Provider>

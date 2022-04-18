@@ -1,6 +1,18 @@
 import styled from "styled-components"
 import { fontStyling, buttonText, glassBottom } from 'components/StyleVariables'
 
+export const ContentWrapper = styled.main`
+width: 100%;
+position: absolute;
+top: 4em;
+z-index: 100;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+`
+
 export const FormWrapper = styled.div`
 ${glassBottom}
 display: flex;
