@@ -21,7 +21,6 @@ export const Todo = () => {
             dispatch(
                 addTask({
                     task: value
-                    //toggle completed här eller?
                 })
             )
         }
