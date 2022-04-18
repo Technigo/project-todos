@@ -10,6 +10,15 @@ const Todo = styled.article`
   padding: 10px;
   margin-bottom: 5px;
   position: relative;
+  background-color: yellow;
+  width: 60%;
+  margin: 0 20% 10px;
+`
+
+const Main = styled.section`
+  display: flex;
+  flex-direction: column;
+  text-align: center;
 `
 
 const DeleteButton = styled.button`
@@ -35,7 +44,8 @@ const NewTodo = () => {
   }
 
   return (
-    <section>
+    <Main>
+      <h1>Total todos: {newTodo.length}</h1>
       {newTodo.map((newItem, todoIndex) => (
         <Todo key={newItem.id}>
           <h2>{newItem.name}</h2>
@@ -54,7 +64,7 @@ const NewTodo = () => {
           </DeleteButton>
         </Todo>
       ))}
-    </section>
+    </Main>
   )
 }
 

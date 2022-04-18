@@ -1,29 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit"
 
-const data = [
-  {
-    id: "12345",
-    name: "Charmander",
-    completed: false,
-  },
-  {
-    id: "54321",
-    name: "Bulbasaur",
-    completed: false,
-  },
-]
-
 const todos = createSlice({
   name: "todos",
   initialState: {
-    items: data,
+    items: [],
   },
   reducers: {
     toggleItem: (store, action) => {
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.completed = !item.completed
-        } 
+        }
       })
     },
     deleteItem: (store, action) => {
@@ -31,7 +18,7 @@ const todos = createSlice({
     },
     addItem: (store, action) => {
       store.items.push(action.payload)
-    }
+    },
   },
 })
 
