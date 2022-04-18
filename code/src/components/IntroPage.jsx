@@ -10,7 +10,7 @@ const animationKeyframes = keyframes`
   100% { transform: scale(1); }
 `;
 
-const animation = `${animationKeyframes} 1s ease-in-out`;
+const animation = `${animationKeyframes} 1s ease-in-out`; // ANIMATION FOR STARTPAGE IMAGE 
 
 const IntroPage = () => {
     return (

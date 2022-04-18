@@ -7,6 +7,6 @@ export const getTodosByVisibilityFilter = (store, visibilityFilter) => {
     case VISIBILITY_FILTER.INCOMPLETED:
       return store.todos.filter(todo => !todo.completed);
     default:
-      return store.todos;
+      return store.todos; // FILTERS THE TODOS W/(CONSTANTS.JS)
   }
 }

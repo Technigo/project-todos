@@ -21,13 +21,13 @@ export const VisibilityFilter = () => {
       <Tabs variant='enclosed'>
         <TabList>
           <Tab onClick={() => dispatch(setFilter(VISIBILITY_FILTER.INCOMPLETED))}>
-            Incompleted ({todosRemaining.length})  
+            Incompleted ({todosRemaining.length})  {/* DISPLAYS AND FILTERS THE REAMANING TODOS  */}
           </Tab>
           <Tab onClick={() => dispatch(setFilter(VISIBILITY_FILTER.COMPLETED))}>
-            Completed ({todosCompleted.length})  
+            Completed ({todosCompleted.length})  {/* DISPLAYS AND FILTERS THE COMPLETED TODOS  */}
           </Tab>
           <Tab onClick={() => dispatch(setFilter(VISIBILITY_FILTER.ALL))}>
-            All ({allTodos.length})   
+            All ({allTodos.length})   {/* DISPLAYS ALL TODOS */}
           </Tab>
         </TabList>
       </Tabs>

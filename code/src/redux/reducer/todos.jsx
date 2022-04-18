@@ -22,14 +22,14 @@ const todos = (state = initialState, action) => {
       return {
         ...state,
         todos: [...state.todos.slice(0, index), ...state.todos.slice(index + 1)]
-      }
+      } // SLICES THE ARRAY OF TODOS AND DELETES IT WHEN SELECTED 
     }
 
     case TOGGLE_TODO: {
       const { id } = action.payload;
       const todos = state.todos.map(obj => obj.id === id ? { ...obj, completed: !obj.completed } : obj);
       return { todos }
-    }
+    } // CHECKS THE STATE OF THE TODOS AND IF COMPLETED MOVES IT TO THE COMPLETED "SIDE" OF FILTER IF NOT LEAVES IT THERE
 
     default: {
       return state;

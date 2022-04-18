@@ -10,10 +10,11 @@ export const Todo = ({ todo }) => {
   const dispatch = useDispatch();
   const [cheked, setCheked] = useState(false);
 
+  // HANDLECHECK TO TOGGLE THE TOGGLE FUNCTION
   const handleCheked = () => {
     dispatch(toggleTodo(todo.id));
   }
-
+  // HANDLECHECK TO TOGGLE THE DELETE FUNCTION
   const handleDelete = () => {
     dispatch(deleteTodo(todo.id));
   }

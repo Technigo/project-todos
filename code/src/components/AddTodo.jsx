@@ -9,12 +9,13 @@ export const AddTodo = () => {
   const dispatch = useDispatch();
   const [value, setValue] = useState('');
 
+  //IMPUT SUMBMIT
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(addTodo(value));
     setValue('');
   }
-
+  //BUTTON 
   const handleInput = e => {
     setValue(e.target.value);
   }
