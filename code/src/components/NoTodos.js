@@ -5,7 +5,7 @@ import TodoList from "./TodoList";
 
 import todos from "./assets/todos.png";
 
-// Styled components
+/*STYLED COMPONENTS*/
 const Section = styled.section`
   display: flex;
   flex-direction: column;
@@ -19,6 +19,8 @@ const Img = styled.img`
 const IntroP = styled.p`
   margin: 1em;
   color: #000;
+  font-size: 20px;
+  font-weight: 600;
 `;
 
 const AddTodoBtn = styled.button`
@@ -45,7 +47,7 @@ const AddTodoBtn = styled.button`
     box-shadow: none;
   }
 `;
-// Styled components
+/*STYLED COMPONENTS*/
 
 const NoTodos = () => {
   const [start, setStart] = useState(false);

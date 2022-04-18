@@ -18,3 +18,5 @@ A no todos added page.
 Other things I would like to add when I have the time would be local storage and categories for the tasks.
 
 ## View it live
+
+https://todo-by-mimmi.netlify.app/

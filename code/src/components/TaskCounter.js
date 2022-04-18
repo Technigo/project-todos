@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 
+/*STYLED COMPONENTS*/
 const CounterSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -13,7 +14,9 @@ const CounterSection = styled.section`
 const P = styled.p`
   color: #000;
   margin: 0;
+  font-style: italic;
 `;
+/*STYLED COMPONENTS*/
 
 const TaskCounter = () => {
   const items = useSelector((store) => store.tasks.items);
@@ -25,8 +28,8 @@ const TaskCounter = () => {
   if (items.length > 0) {
     return (
       <CounterSection>
-        <P>You have {items.length} todos</P>
-        <P>{doneTasks.length} is completed</P>
+        <P>You have {items.length} todos,</P>
+        <P>{doneTasks.length} is completed.</P>
       </CounterSection>
     );
   } else if (doneTasks.length === 0) {

@@ -8,7 +8,7 @@ import tasks from "./reducers/tasks";
 import Header from "./components/Header";
 import StartTodo from "./components/StartTodo";
 
-// Styled Components
+/*STYLED COMPONENTS*/
 const Main = styled.main`
   display: flex;
   flex-direction: column;
@@ -29,7 +29,7 @@ const Section = styled.section`
     width: 400px;
   }
 `;
-// Styled Components
+/*STYLED COMPONENTS*/
 
 const reducer = combineReducers({
   tasks: tasks.reducer,

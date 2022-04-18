@@ -13,12 +13,10 @@ const tasks = createSlice({
         text: action.payload,
         isComplete: false,
       };
-      // console.log(action);
 
       store.items = [...store.items, newTask];
     },
     toggleTask: (store, action) => {
-      // console.log(action);
       const updatedItems = store.items.map((item) => {
         if (item.id === action.payload) {
           const updatedTask = {

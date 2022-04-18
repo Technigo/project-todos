@@ -7,6 +7,7 @@ import tasks from "../reducers/tasks";
 
 import AddTask from "./AddTask";
 
+/*STYLED COMPONENTS*/
 const BtnSection = styled.section`
   display: flex;
   justify-content: space-around;
@@ -47,6 +48,11 @@ const TodoDiv = styled.div`
   padding: 8px 24px;
   margin: 8px;
   width: 286px;
+
+  @media (min-width: 667px) {
+    width: 310px;
+    margin-left: 21px;
+  }
 `;
 
 const TodoCheckDiv = styled.div`
@@ -55,7 +61,7 @@ const TodoCheckDiv = styled.div`
   align-items: center;
 `;
 
-const TaskDiv = styled.div`
+const InputDiv = styled.div`
   display: flex;
   flex-direction: column;
   margin-left: 16px;
@@ -72,6 +78,7 @@ const DateP = styled.p`
   margin: 4px 0 8px;
   font-size: 14px;
 `;
+/*STYLED COMPONENTS*/
 
 const TodoList = () => {
   const items = useSelector((store) => store.tasks.items);
@@ -114,22 +121,19 @@ const TodoList = () => {
       </BtnSection>
       <TaskSection>
         {items.map((item) => (
-          <TodoDiv
-            className={item.isComplete ? "checked-todo" : "unchecked-todo"}
-            key={item.id}
-          >
+          <TodoDiv key={item.id}>
             <TodoCheckDiv>
-              <div className="cntr">
+              <div className="div-cbx ">
                 <input
                   type="checkbox"
                   checked={item.isComplete}
                   onChange={() => onToggleTask(item.id)}
                   id="cbx"
-                  className="hidden-xs-up"
+                  className="hidden-cbx"
                 />
                 <label htmlFor="cbx" className="cbx"></label>
               </div>
-              <TaskDiv>
+              <InputDiv>
                 <InputP
                   className={
                     item.isComplete ? "complete-todo" : "uncomplete-todo"
@@ -138,7 +142,7 @@ const TodoList = () => {
                   {item.text}
                 </InputP>
                 <DateP>{taskDate}</DateP>
-              </TaskDiv>
+              </InputDiv>
             </TodoCheckDiv>
             <button onClick={() => onDeleteTasks(item.id)} className="tooltip">
               <svg
