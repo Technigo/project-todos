@@ -8,10 +8,15 @@ export const todos = createSlice({
     },
     reducers: {
         addTodo: (store, action) => {
+            console.log('store', store)
+            console.log('action', action)
+            
             const newTodo = {
                 id: uniqid(),
-                text: action.payload,
+                text: action.payload[0],
                 isComplete: false,
+                dueDate: action.payload[1],
+                category: action.payload[2]
             }
             store.items = [...store.items, newTodo]
         },
