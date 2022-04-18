@@ -1,13 +1,14 @@
 # Project Todos
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A todo-app built with Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Use all the parts we´ve learned of redux and build a todo-app. 
+Started with a sketch to get an overview of components, what logic there would be and styling.
+The project gave the opportunity to practise on a lot of things we´ve done earlier, such as date and, more recent, more kinds of React hooks.
+I choose to work with styled components to practise on that too.
+Really fun project! If I had more time I would to try to sort the tasks on completed and uncompleted, and make the "all check"-button toggle.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://resilient-toffee-e117e8.netlify.app/
