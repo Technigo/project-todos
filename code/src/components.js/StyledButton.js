@@ -18,7 +18,6 @@ const StyledButton = styled.button`
     margin: ${props => props.margin};
 
     &:hover:enabled,
-    &:active:enabled,
     &:focus {
         outline: none;
         cursor: pointer;

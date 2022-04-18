@@ -100,6 +100,7 @@ const AddTask = () => {
                 width="100px"
                 fontSize="0.8rem"
                 fontSizeDesktop="1.1rem"
+                widthDesktop="150px"
                 borderHover="2px solid black"
                 opacityHover="0.8"
                 disabled={!inputValue}

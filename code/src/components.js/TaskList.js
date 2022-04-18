@@ -139,7 +139,7 @@ const TaskList = ({ allTasks, uncompletedTasks, completedTasks }) => {
                                 checked={task.complete}
                                 onChange={() => onTaskToggle(task.id)}
                                 />
-                                {task.complete && <CheckSpan>Done!</CheckSpan>}
+                                {task.complete && <CheckSpan>&nbsp; Done!</CheckSpan>}
                             </label>
 
                             <TaskTag
@@ -176,6 +176,7 @@ const TaskList = ({ allTasks, uncompletedTasks, completedTasks }) => {
                                     checked={task.complete}
                                     onChange={() => onTaskToggle(task.id)}
                                     />
+                                    {task.complete && <CheckSpan>&nbsp; Done!</CheckSpan>}
                                 </label>
 
                                 <TaskTag
@@ -212,6 +213,7 @@ const TaskList = ({ allTasks, uncompletedTasks, completedTasks }) => {
                                 checked={task.complete}
                                 onChange={() => onTaskToggle(task.id)}
                                 />
+                                {task.complete && <CheckSpan>&nbsp; Done!</CheckSpan>}
                             </label>
 
                             <TaskTag
