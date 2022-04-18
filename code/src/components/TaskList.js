@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
-import { AllTasks, FinishedTasks, UnFinishedTasks } from './AllTasks.js'
+import { AllTasks, FinishedTasks, UnFinishedTasks } from './TasksAsComponents.js'
 
 import styled from 'styled-components'
 

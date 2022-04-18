@@ -17,8 +17,8 @@ import ScriptTag from 'react-script-tag'
 
 const ContentWrapper = styled.main`
 width: 100%;
-position: relative;
-margin: auto; 
+position: absolute;
+top: 4em;
 z-index: 100;
 display: flex;
 flex-direction: column;
@@ -41,7 +41,6 @@ export const App = () => {
     <Provider store={store}>
       <Background2 />
 
-      <Bunny />
 
       <ContentWrapper>
      {/* <TaskList />  */}

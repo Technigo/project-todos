@@ -1,61 +1,26 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 import { useSelector } from 'react-redux'
 // import { TaskList } from 'components/TaskList'
 import styled from 'styled-components'
 
+import { 
+    FormWrapper, 
+    InputField, 
+    Label, 
+    TextInput, 
+    CheckboxStyled,
+    Submit,
+    ListWrapper,
+    TaskBar,
+    ButtonRow
 
-const FormWrapper = styled.div`
-
-width: 80%;
-background-color: white;
-padding: 2em;
-
-`
-
-const InputField = styled.form`
-display: flex;
-flex-direction: column;
-width: 100%;
-gap: 2em;
-
-`
-
-const Label = styled.label`
-
-`
-
-const TextInput = styled.input`
-height: 10em;
-
-`
-
-const Submit = styled.button`
-height: 4em;
-border-radius: 50px;
-background-color: white;
-color: black;
-`
-
-const ListWrapper = styled.div`
-width: 80%;
-margin: auto;
-display: flex;
-position: relative;
-flex-direction: column;
-justify-content: center;
-gap: 1em;
-`
+} from 'components/StyleComponents'
 
 
-const TaskBar = styled.li`
-padding: 2em;
-flex: 1;
-border: 1px solid gray;
-cursor: move;
 
-`
+
 
 
 export const FormAndList = () => {
@@ -75,7 +40,8 @@ export const FormAndList = () => {
         e.preventDefault();
         dispatch(tasks.actions.addTask(newTaskObject))
         setTask('')
-        filterTasks()
+        setTaskList([...allTasks, newTaskObject])
+        
      }
 
 
@@ -90,7 +56,19 @@ export const FormAndList = () => {
 
 
     const [taskList, setTaskList] = useState(allTasks)
+   
+    // const [tasksRemaining, setTasksRemaining] = useState('')
+    // const [tasksFinished, setTasksFinished] = useState('')
 
+    // useEffect(() => { setTaskList(allTasks)})
+    // useEffect(() => { setTasksRemaining(unfinishedTasks)})
+    // useEffect(() => { setTasksFinished(finishedTasks)})
+     const [checked, setChecked] = useState()
+    
+     const handleCheck = (id) => {
+
+        setChecked()
+     }
     
     const filterTasks = (value) => {
                 if (value === 'finished') {
@@ -100,19 +78,15 @@ export const FormAndList = () => {
                 } else {
                     setTaskList(allTasks)
                 }
-                
             }
-       
-   
-
+  
     return ( 
-
         <>
         
         <FormWrapper>
 
             <InputField onSubmit={onFormSubmit}> 
-                <label htmlFor="newTask">What do you need to get done?</label>
+                <Label htmlFor="newTask">Ceep calm and write it down!</Label>
                 <TextInput  
                 value={newTask || ''} 
                 onChange={(e) => setTask(e.target.value)}
@@ -121,7 +95,8 @@ export const FormAndList = () => {
 
                 <Submit  
                 className="submit-btn" 
-                type="submit"> 
+                type="submit"
+                > 
                 Post task 
                 </Submit>
             </InputField>
@@ -135,15 +110,17 @@ export const FormAndList = () => {
 
             {taskList.map((task) => (
                 <TaskBar key={task.id} draggable="true" >
-                    <label htmlFor={task.id}>{task.title}</label> 
-                    <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))}></input>
+                    <CheckboxStyled htmlFor={task.id}>{task.title} 
+                    <input type="checkbox" checked={task.status} id={task.id} onChange={() => dispatch(tasks.actions.toggleState(task.id))} />
+                    <span></span>
+                    </CheckboxStyled>
                 </TaskBar>
             ))}
 
             </ListWrapper>
 
 
-                
+            <ButtonRow>               
             <button onClick={() => filterTasks('finished')}>Finished</button>
             <button onClick={() => filterTasks('unfinished')}>Unfinished</button>
             <button onClick={() => filterTasks('all')}>All</button>
@@ -154,12 +131,24 @@ export const FormAndList = () => {
             <button onClick={() => setTaskList(allTasks)}>All</button> */}
 
             <button onClick={() => dispatch(tasks.actions.removeAll())}>REMOVE ALL</button>
-
+            </ButtonRow> 
 
             </>
     );
 }
  
+// const filterTasks = (value) => {
+//     if (value === 'finished') {
+//         setTaskList(finishedTasks)
+//     } else if (value === 'unfinished') {
+//         setTaskList(unfinishedTasks)
+//     } else {
+//         setTaskList(allTasks)
+//     }
+// }
+// <button onClick={() => filterTasks('finished')}>Finished</button>
+// <button onClick={() => filterTasks('unfinished')}>Unfinished</button>
+// <button onClick={() => filterTasks('all')}>All</button>
 
 
 // export const TaskList = () => {
