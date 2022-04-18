@@ -58,12 +58,15 @@ const TaskTag = styled.span`
 `
 
 const CheckSpan = styled.span`
-    margin-left: 8px;
+    margin-left: 1rem;
     background: white;
     border-radius: 10px;
     padding: 5px;
     color: black;
     font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
 
     @media screen and (min-width: 1024px) {
@@ -140,7 +143,7 @@ const TaskList = ({ allTasks, uncompletedTasks, completedTasks }) => {
                                 checked={task.complete}
                                 onChange={() => onTaskToggle(task.id)}
                                 />
-                                {task.complete && <CheckSpan>&nbsp; Done!</CheckSpan>}
+                                {task.complete && <CheckSpan>Done!</CheckSpan>}
                             </label>
 
                             <TaskTag
@@ -177,7 +180,7 @@ const TaskList = ({ allTasks, uncompletedTasks, completedTasks }) => {
                                     checked={task.complete}
                                     onChange={() => onTaskToggle(task.id)}
                                     />
-                                    {task.complete && <CheckSpan>&nbsp; Done!</CheckSpan>}
+                                    {task.complete && <CheckSpan>Done!</CheckSpan>}
                                 </label>
 
                                 <TaskTag
@@ -214,7 +217,7 @@ const TaskList = ({ allTasks, uncompletedTasks, completedTasks }) => {
                                 checked={task.complete}
                                 onChange={() => onTaskToggle(task.id)}
                                 />
-                                {task.complete && <CheckSpan>&nbsp; Done!</CheckSpan>}
+                                {task.complete && <CheckSpan>Done!</CheckSpan>}
                             </label>
 
                             <TaskTag
