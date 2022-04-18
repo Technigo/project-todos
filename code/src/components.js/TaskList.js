@@ -64,6 +64,7 @@ const CheckSpan = styled.span`
     padding: 5px;
     color: black;
     font-size: 0.9rem;
+    text-align: center;
 
     @media screen and (min-width: 1024px) {
         font-size: 1rem;

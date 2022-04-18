@@ -64,7 +64,7 @@ const Footer = () => {
                     Delete all tasks
                 </StyledButton>
             </FooterButtonContainer>
-            <CreditText>This app is created by Tiina Liukkonen</CreditText>
+            <CreditText>This app was created by Tiina Liukkonen</CreditText>
         </StyledFooter>
     )
 }
