@@ -46,8 +46,8 @@ const SubmitBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  /* alternative one
-   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  /* alternative one */
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   transition: all 0.3s ease 0s;
 
   &:hover {
@@ -59,9 +59,9 @@ const SubmitBtn = styled.button`
 
   &:active {
     transform: translateY(-1px);
-  } */
+  }
 
-  /* alternative one*/
+  /* alternative two
   border-bottom: 5px solid #27ae60;
   text-shadow: 0px -2px #27ae60;
   -webkit-transition: all 0.1s;
@@ -73,7 +73,7 @@ const SubmitBtn = styled.button`
     -ms-transform: translate(0px, 5px);
     transform: translate(0px, 5px);
     border-bottom: 1px solid #2ecc71;
-  }
+  } */
 `;
 
 const AddTask = () => {
