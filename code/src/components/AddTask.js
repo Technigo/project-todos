@@ -65,12 +65,12 @@ const SubmitBtn = styled.button`
 }*/
 
   /* alternative two */
-  @media (min-width: 667px) {
-    border-bottom: 5px solid #27ae60;
-    text-shadow: 0px -2px #27ae60;
-    -webkit-transition: all 0.1s;
-    transition: all 0.1s;
+  border-bottom: 5px solid #27ae60;
+  text-shadow: 0px -2px #27ae60;
+  -webkit-transition: all 0.1s;
+  transition: all 0.1s;
 
+  @media (min-width: 667px) {
     &:hover,
     &:active {
       -webkit-transform: translate(0px, 5px);
