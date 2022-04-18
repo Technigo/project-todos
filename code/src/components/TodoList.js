@@ -20,7 +20,7 @@ const TodoItem = styled.article `
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  width: 320px;
+  width: 340px;
 
   h3 {
     margin: 0;
@@ -46,7 +46,7 @@ const TodoItem = styled.article `
   }
   
   @media (min-width: 768px) {
-    width: 400px;
+    width: 420px;
   }
 `
 

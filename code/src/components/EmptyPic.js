@@ -5,7 +5,8 @@ import spaceimg from "icons/spaceimg.jpeg";
 const ImageBox = styled.div`
   margin: 0;
   padding: 0;
-  width: 320px;
+  width: 360px;
+  height: auto;
   display: flex;
   justify-content: center;
 
@@ -13,14 +14,15 @@ const ImageBox = styled.div`
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 100%;
+    max-width: 100%;
+    height: auto;
     margin-top: 60px;
     border-radius: 5px;
     opacity: 0.7;
   }
 
     @media (min-width: 768px) {
-      width: 400px;
+      width: 440px;
     }
   }
 `

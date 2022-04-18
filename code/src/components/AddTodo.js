@@ -11,7 +11,7 @@ const AddContainer = styled.section`
   display: flex;
   justify-content: center;
   position: relative;
-
+  margin: 0;
   p {
     margin: 0;
   }
@@ -47,7 +47,7 @@ const AddBox = styled.article`
     justify-content: center;
     padding-top: 30px;
     margin-top:40px;
-    width: 320px;
+    width: 360px;
 
     @media (min-width: 768px) {
       width: 400px;
@@ -70,6 +70,7 @@ const AddBox = styled.article`
     border-radius: 5px 0 0 5px;
     border: none;
     padding: 10px;
+    width: 100%;
   }
 `
 
@@ -83,8 +84,8 @@ const AddTodo = () => {
   const handleSubmit =  (event) => {
     event.preventDefault();
     dispatch(todos.actions.addTask(newTask));
-    setNewItem('')
-    setVisible(false)
+      setNewItem('')
+      setVisible(false)
   }
 
   const newTask = {
