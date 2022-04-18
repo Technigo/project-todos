@@ -24,15 +24,20 @@ export const FormAndList = () => {
 
     const dispatch = useDispatch()
 
+    const allTasks = useSelector((store) => store.tasks.items)
+
 
     const [newTask, setTask] = useState()
     const [checked, setChecked] = useState()
+
+    const [taskList, setTaskList] = useState(allTasks)
+
+    useEffect(() => { setTaskList(allTasks) }, [allTasks])
 
 
 
     const taskArray = useSelector((store) => store.tasks.items)
    
-    const allTasks = useSelector((store) => store.tasks.items)
 
     const finishedTasks = useSelector((store) => store.tasks.items.filter(t => t.status))
 
@@ -49,11 +54,11 @@ export const FormAndList = () => {
         e.preventDefault();
         dispatch(tasks.actions.addTask(newTaskObject))
         setTask('')
-        setTaskList([...allTasks, newTaskObject]) 
+        // setTaskList([...allTasks, newTaskObject]) 
      }
 
-    const [taskList, setTaskList] = useState(allTasks)
-  
+    
+
     
      const handleCheck = (id) => {
 

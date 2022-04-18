@@ -37,8 +37,10 @@ export const tasks = createSlice({
                 })  
 
             store.items = updatedItems
+            
 
         },
+
         removeAll: (store) => { store.items = []},
     }
 
