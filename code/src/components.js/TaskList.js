@@ -57,6 +57,10 @@ const TaskTag = styled.span`
     }
 `
 
+const CheckBox = styled.input`
+    width: 200px;
+`
+
 const CheckSpan = styled.span`
     margin-left: 1rem;
     background: white;
@@ -64,9 +68,6 @@ const CheckSpan = styled.span`
     padding: 5px;
     color: black;
     font-size: 0.9rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     text-align: center;
 
     @media screen and (min-width: 1024px) {
@@ -212,7 +213,7 @@ const TaskList = ({ allTasks, uncompletedTasks, completedTasks }) => {
 
                         <TaskDetails>
                             <label>
-                                <input
+                                <CheckBox
                                 type="checkbox"
                                 checked={task.complete}
                                 onChange={() => onTaskToggle(task.id)}
