@@ -1,9 +1,33 @@
 import React, {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import styled from 'styled-components'
+
 import { addTask } from 'reducers/tasks'
-
-
 import { TodoItem } from './TodoItem'
+
+const MainBackgroundDiv = styled.div`
+    background-color: blue;
+    padding: 30px;
+    height: 100vh;
+`
+const Title = styled.h1`
+    color: orange;
+    text-align: center;
+`
+const InputDiv = styled.div`
+    display: flex;
+    justify-content: center;
+    margin: 10px;
+`
+const StatusSpan = styled.span`
+    color: white;
+    display: flex;
+    justify-content: center;
+`
+const AddButton = styled.button`
+    color: orange;
+    font-weight: bold;
+`
 
 //ändra till export default längst ner, ta då bort {} vid import
 export const Todo = () => {
@@ -28,21 +52,21 @@ export const Todo = () => {
     }
 
   return (
-    <div style={{backgroundColor: 'blue', padding: '30px', height: '100vh'}}>
-      <h1 style={{color: 'orange', textAlign: 'center'}}>Reminders</h1>
+    <MainBackgroundDiv>
+      <Title>Reminders</Title>
         <TodoItem />
-        <div style={{display: 'flex', justifyContent: 'center', margin: '10px'}}>
+        <InputDiv>
             <input
                 type="text"
                 placeholder="New reminder"
                 value={value}
                 onChange={(event) => setValue(event.target.value)}
             ></input>
-            <button onClick={onSubmit} style={{color: 'orange', fontWeight: 'bold'}}>
+            <AddButton onClick={onSubmit}>
                 Add task
-            </button>
-        </div>
-        <span style={{color: 'white', display: 'flex', justifyContent: 'center'}}>You have {allTodos.length} todos in your list</span>
-    </div>
+            </AddButton>
+        </InputDiv>
+        <StatusSpan>You have {allTodos.length} todos in your list</StatusSpan>
+    </MainBackgroundDiv>
   )
 }

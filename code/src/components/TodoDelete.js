@@ -1,6 +1,15 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+import styled from 'styled-components'
+
 import { deleteTask } from 'reducers/tasks'
+
+const DeleteButton = styled.button`
+    background-color: white;
+    border: 1px solid red;
+    color: red;
+    border-radius: 50px;
+`
 
 export const TodoDelete = ({ todoItem }) => {
 
@@ -16,9 +25,9 @@ export const TodoDelete = ({ todoItem }) => {
 
   return (
     <div>
-        <button onClick={removeTask} style={{backgroundColor: 'white', border: '1px solid red', color: 'red', borderRadius: '50px'}}>
+        <DeleteButton onClick={removeTask}>
             Delete task
-        </button>
+        </DeleteButton>
     </div>
   )
 }

@@ -1,8 +1,39 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { tasks } from 'reducers/tasks'
+import styled from 'styled-components'
 
+import { tasks } from 'reducers/tasks'
 import { TodoDelete } from './TodoDelete'
+
+const TodoItemParent = styled.div`
+    background-color: white;
+
+    @media (min-width: 768px) {
+        margin-left: 20vw;
+        margin-right: 20vw;
+    }
+
+    @media (min-width: 992px) {
+        margin-left: 30vw;
+        margin-right: 30vw;
+    }
+`
+const TodoItemDiv = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+    border-bottom: 1px solid grey;
+`
+
+const TodoItemSpan = styled.span`
+    display: flex; 
+    align-items: center;
+`
+
+const TodoItemText = styled.p`
+    margin: 10px;
+`
 
 export const TodoItem = () => {
   const allTodos = useSelector((store) => store.tasks);
@@ -17,24 +48,23 @@ export const TodoItem = () => {
   }
 
   return (
-    <div style={{backgroundColor: 'white'}}>
+    <TodoItemParent>
     {allTodos.map((todoItem) => (
         <>
-        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '5px',  borderBottom: '1px solid grey'}}>
-        <span style={{display: 'flex', alignItems: 'center'}}>
+        <TodoItemDiv>
+        <TodoItemSpan>
         <input
-            style={{margin: '1px'}}
             className="toggle"
             type="checkbox"
             checked={completed}
             onChange={() => onToggle(todoItem.id)}
         />
-        <p style={{margin: '10px'}}>{todoItem.text}</p>
-        </span>
+        <TodoItemText>{todoItem.text}</TodoItemText>
+        </TodoItemSpan>
             <TodoDelete todoItem={todoItem}/>
-        </div>
+        </TodoItemDiv>
         </>
     ))}
-    </div>
+    </TodoItemParent>
   )
 }
