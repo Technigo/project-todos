@@ -15,8 +15,8 @@ export const TodoDelete = ({ todoItem }) => {
   }
 
   return (
-    <div style={{backgroundColor: 'pink'}}>
-        <button onClick={removeTask}>
+    <div>
+        <button onClick={removeTask} style={{backgroundColor: 'white', border: '1px solid red', color: 'red', borderRadius: '50px'}}>
             Delete task
         </button>
     </div>

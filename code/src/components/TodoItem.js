@@ -17,9 +17,11 @@ export const TodoItem = () => {
   }
 
   return (
-    <div style={{backgroundColor: 'pink'}}>
+    <div style={{backgroundColor: 'white'}}>
     {allTodos.map((todoItem) => (
-        <div style={{display: 'flex', justifyContent: 'center', alignItems: 'center', padding: '5px'}}>
+        <>
+        <div style={{display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '5px',  borderBottom: '1px solid grey'}}>
+        <span style={{display: 'flex', alignItems: 'center'}}>
         <input
             style={{margin: '1px'}}
             className="toggle"
@@ -28,9 +30,10 @@ export const TodoItem = () => {
             onChange={() => onToggle(todoItem.id)}
         />
         <p style={{margin: '10px'}}>{todoItem.text}</p>
-        {/* Make the delete button a own display column, so can align items to left (checkbox and text) and (delete button) - two columns, each column aligned to the left for proportion when typing diff. length of text */}
-        <TodoDelete todoItem={todoItem}/>
+        </span>
+            <TodoDelete todoItem={todoItem}/>
         </div>
+        </>
     ))}
     </div>
   )

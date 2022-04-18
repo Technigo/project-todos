@@ -28,7 +28,7 @@ export const Todo = () => {
     }
 
   return (
-    <div style={{backgroundColor: 'blue', padding: '30px'}}>
+    <div style={{backgroundColor: 'blue', padding: '30px', height: '100vh'}}>
       <h1 style={{color: 'orange', textAlign: 'center'}}>Reminders</h1>
         <TodoItem />
         <div style={{display: 'flex', justifyContent: 'center', margin: '10px'}}>
