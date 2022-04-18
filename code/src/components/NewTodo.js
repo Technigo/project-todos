@@ -11,6 +11,7 @@ const Todo = styled.article`
   margin-bottom: 5px;
   position: relative;
 `
+
 const DeleteButton = styled.button`
   position: absolute;
   top: 10px;
@@ -20,17 +21,22 @@ const DeleteButton = styled.button`
   cursor: pointer;
 `
 
-//functional component
 const NewTodo = () => {
   const newTodo = useSelector((store) => store.todos.items)
+
   const dispatch = useDispatch()
+
   const onTodoToggle = (todoId) => {
     dispatch(todos.actions.toggleItem(todoId))
   }
 
+  const onTodoDelete = (index) => {
+    dispatch(todos.actions.deleteItem(index))
+  }
+
   return (
     <section>
-      {newTodo.map((newItem) => (
+      {newTodo.map((newItem, todoIndex) => (
         <Todo key={newItem.id}>
           <h2>{newItem.name}</h2>
           <label>
@@ -38,10 +44,10 @@ const NewTodo = () => {
             <input
               type="checkbox"
               checked={newItem.completed}
-              onChange={() =>onTodoToggle(newItem.id) }
+              onChange={() => onTodoToggle(newItem.id)}
             />
           </label>
-          <DeleteButton>
+          <DeleteButton onClick={() => onTodoDelete(todoIndex)}>
             <span role="img" aria-label="delete">
               ❌
             </span>
