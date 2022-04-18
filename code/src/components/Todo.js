@@ -29,11 +29,9 @@ const AddButton = styled.button`
     font-weight: bold;
 `
 
-//ändra till export default längst ner, ta då bort {} vid import
 export const Todo = () => {
     const [value, setValue] = useState('');
     const allTodos = useSelector((store) => store.tasks);
-    console.log(allTodos.length)
 
     const dispatch = useDispatch();
 
