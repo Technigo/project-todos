@@ -34,7 +34,7 @@ const TaskInput = () => {
                     placeholder='Write your todo here'
                 />
             </label>
-            <button type="submit">Add</button>
+            <button type="submit" className='submit-btn'>Add</button>
         </form>
     );
 };

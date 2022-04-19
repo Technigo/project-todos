@@ -10,7 +10,7 @@ const TaskCounter = () => {
 
     return (
         <article>
-            Completed todo's: {completedTasks.length} / {allTasks.length}
+            <p className='task-counter'>Completed todo's: {completedTasks.length} / {allTasks.length}</p>
         </article>
     )
 }

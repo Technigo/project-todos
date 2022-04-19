@@ -23,11 +23,6 @@ body {
   justify-content: center;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
-
 .container {
   display: flex;
   flex-direction: column;
@@ -51,7 +46,7 @@ code {
 }
 
 .cta-container {
-  padding-left: 2.5em;
+  padding-left: 4.5em;
 }
 
 .checkbox {
@@ -59,15 +54,15 @@ code {
 }
 
 .header {
-  margin: 3em 0 1.5em 0;
-  font-size: 30px;
+  margin: 3em 0 .5em 0;
+  font-size: 34px;
   text-decoration: .2px solid black underline;
 }
 
 input {
   font-size: 15px;
-  margin-right: 1em;
-  padding: .5em;
+  margin: 0 1em 1em 0;
+  padding: .3em;
   border: none;
   outline: none;
   border-bottom: 1px solid black;
@@ -78,13 +73,29 @@ button {
   border: none;
   background-color: rgba(255, 255, 255, 0);
   cursor: pointer;
-  font-size: 17px;
+  font-size: 19px;
   padding: 6px;
+  margin-left: .3em;
 }
 
 button:hover {
   font-weight: bold;
 
+}
+
+.task {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.task-counter {
+  font-size: 22px;
+  margin-top: 2em;
+}
+
+.submit-btn {
+  font-size: 24px;
+  margin-left: 1.3em;
 }
 
 @media screen and (min-width: 667px) and (max-width: 1024px) {
@@ -97,7 +108,7 @@ button:hover {
   }
 
   .header {
-    margin: 4.2em 0 1.5em 0;
+    margin: 4.2em 0 .5em 0;
     font-size: 40px;
     text-decoration: none;
   }
@@ -112,5 +123,28 @@ button:hover {
     width: 100vw;
     background-image: url('./assets/kelly-sikkema-Rq1MLxP5RgI-unsplash.jpg');
     background-size: cover;
+  }
+
+  .header {
+    margin: 5.3em 0 .5em 0;
+    font-size: 40px;
+    text-decoration: none;
+  }
+
+  input {
+    font-size: 20px;
+    margin-right: 5em;
+  }
+
+  .submit-btn, .task {
+    font-size: 26px;
+  }
+
+  .task-counter {
+    font-size: 28px;
+  }
+
+  .task {
+    margin-right: 3em;
   }
 }
