@@ -3,12 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 const taskData = [
     {
         id: 1, 
-        text: 'Laundry', 
+        text: 'Celebrate friday', 
         complete: true
     },
     {
         id: 2, 
-        text: 'Dinner', 
+        text: 'Buy popcorn 🍿', 
         complete: false
     },
 ];
