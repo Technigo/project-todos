@@ -46,37 +46,15 @@ const SubmitBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* @media (min-width: 667px) {
-   alternative one 
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease 0s;
-
-  &:hover {
-    background-color: #2ee59d;
-    box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
-    color: #fff;
-    transform: translateY(-7px);
-  }
-
-  &:active {
-    transform: translateY(-1px);
-  }
-}*/
-
-  /* alternative two */
-  border-bottom: 5px solid #27ae60;
-  text-shadow: 0px -2px #27ae60;
-  -webkit-transition: all 0.1s;
-  transition: all 0.1s;
 
   @media (min-width: 667px) {
-    &:hover,
-    &:active {
-      -webkit-transform: translate(0px, 5px);
-      -ms-transform: translate(0px, 5px);
-      transform: translate(0px, 5px);
-      border-bottom: 1px solid #2ecc71;
+    transition: all 0.3s ease 0s;
+
+    &:hover {
+      background-color: #6dbd89;
+      box-shadow: 0px 15px 20px rgba(46, 229, 157, 0.4);
+      color: #fff;
     }
   }
 `;
