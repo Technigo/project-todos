@@ -5,7 +5,7 @@ import styled from "styled-components";
 import tasks from "../reducers/tasks";
 
 const Section = styled.section`
-  margin: 20px 0;
+  margin: 0;
   display: flex;
   flex-direction: row;
   justify-content: center;
