@@ -34,13 +34,12 @@ const TextInput = styled.input`
 `;
 
 const AddTodo = () => {
-  const [input, setInput] = useState(""); //initialized with empty string
+  const [input, setInput] = useState("");
 
-  // Always have to create an instance for dispatch
   const dispatch = useDispatch();
 
   const onTodoAdd = () => {
-    dispatch(todos.actions.addTodo(input)); //input = payload
+    dispatch(todos.actions.addTodo(input));
     setInput("");
   };
 
@@ -64,7 +63,5 @@ const AddTodo = () => {
     </AddTodoSection>
   );
 };
-
-// onClick={() => dispatch(todos.actions.addTodo())}
 
 export default AddTodo;

@@ -40,18 +40,18 @@ const DateSection = styled.div`
 `;
 
 const reducer = combineReducers({
-  todos: todos.reducer, //slice
+  todos: todos.reducer,
 });
 
+// Local Storage function to keep todos after refresh
 const todoStorageJSON = localStorage.getItem("todos");
 let todoStorage = {};
-
 if (todoStorageJSON) {
   todoStorage = JSON.parse(todoStorageJSON);
 }
 
 const store = createStore(reducer, todoStorage);
-
+// Here store is subscribing to using the the localStorage function
 store.subscribe(() => {
   localStorage.setItem("todos", JSON.stringify(store.getState()));
 });
