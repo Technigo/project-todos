@@ -1,13 +1,11 @@
 # Project Todos
 This week we built a to-do app using React and redux-toolkit.
 
-
-
-
-
 ## The problem
+I started with a sketch with figjam so I could see how many components I need and what information I need in my reducer.  
+After that I started out with adding my components and reducers and completing them one by one. I used styled-component which i couldn't use in last project.
+If I would have had more time I would try customized checkboxes.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 ## View it live
 
