@@ -4,14 +4,15 @@ import uniqid from "uniqid"
 const taskitems = createSlice({
     name: "taskitems",
     initialState: {
-        username: "",
+        username: null,
         taskitems: []
     },
     reducers: {
-        // Trying to set the username with input value
-        // setUserName: (state, action) => {
-        //     state.username = action.payload
-        // },
+        setUserName: (state, action) => {
+            console.log(action.payload)
+
+            state.username = action.payload
+        },
 
         addTaskItem: (state, action) => {
             const { inputValue, priority } = action.payload

@@ -19,9 +19,10 @@ const HeaderDetails = styled.div`
 `
 
 const HeaderTitle = styled.h1`
-    font-size: 1.9rem;
+    font-size: 1.7rem;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
+    font-weight: bold;
 
     @media screen and (min-width: 1024px) {
         font-size: 2.2rem;
@@ -47,7 +48,7 @@ const CurrentTasks = styled.p`
 `
 
 const HeaderGreeting = styled.h2`
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     font-weight: normal;
     margin-bottom: 3px;
 
@@ -94,7 +95,6 @@ const TaskFilterButton = styled.button`
 
 const Header = (props) => {
     const {
-        nameInput,
         allTasks,
         setAllTasks,
         uncompletedTasks,
@@ -105,6 +105,7 @@ const Header = (props) => {
 
     const taskList = useSelector((state) => state.taskitems.taskitems)
     const finishedTasks = taskList.filter(task => task.complete === true)
+    const userName = useSelector((state) => state.taskitems.username)
 
     const showAllTasks = () => {
         setCompletedTasks(false)
@@ -147,7 +148,7 @@ const Header = (props) => {
                 : finishedTasks.length} / {taskList.length} &nbsp; tasks completed</CurrentTasks>
             </HeaderDetails>
 
-            <HeaderGreeting>{showGreeting()} {nameInput}!</HeaderGreeting>
+            <HeaderGreeting>{showGreeting()} {userName}!</HeaderGreeting>
             <HeaderDate>It's <Moment date={date} format="MMMM Do YYYY">{date}</Moment></HeaderDate>
            
             <ButtonContainer>

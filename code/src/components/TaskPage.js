@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import { useSelector } from "react-redux"
 import styled from "styled-components"
 
 import Header from "./Header"
@@ -32,19 +31,15 @@ const ContentWrapper = styled.section`
     }
 `
 
-const TaskPage = ({ nameInput }) => {
+const TaskPage = () => {
     const [allTasks, setAllTasks] = useState(true)
     const [uncompletedTasks, setUncompletedTasks] = useState(false)
     const [completedTasks, setCompletedTasks] = useState(false)
-    const userName = useSelector((state) => state.username)
-
-    console.log(userName)
 
     return (
         <StyledTaskPage>
             <ContentWrapper>
                 <Header
-                nameInput={nameInput}
                 allTasks={allTasks}
                 setAllTasks={setAllTasks}
                 uncompletedTasks={uncompletedTasks}

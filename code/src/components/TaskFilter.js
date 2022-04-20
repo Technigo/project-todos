@@ -2,7 +2,7 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import styled from "styled-components"
 
-import taskitems from "reducers.js/taskitems"
+import taskitems from "reducers/taskitems"
 
 const StyledFilter = styled.div`
     display: flex;

@@ -1,13 +1,13 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Provider } from 'react-redux'
 import { createStore, combineReducers } from '@reduxjs/toolkit'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
-import taskitems from 'reducers.js/taskitems'
+import taskitems from 'reducers/taskitems'
 
-import TaskPage from 'components.js/TaskPage'
-import StartPage from 'components.js/StartPage'
-import ErrorPage from 'components.js/ErrorPage'
+import TaskPage from 'components/TaskPage'
+import StartPage from 'components/StartPage'
+import ErrorPage from 'components/ErrorPage'
 
 
 const reducer = combineReducers({
@@ -35,18 +35,13 @@ store.subscribe(() => {
 console.log(persistedState)
 
 export const App = () => {
-  const [nameInput, setNameInput] = useState("")
-
-  const onNameInputChange = (event) => {
-      setNameInput(event.target.value)
-  }
 
   return (
       <Provider store={store}>
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<StartPage nameInput={nameInput} onNameInputChange={onNameInputChange} />} />
-            <Route path="/taskpage" element={<TaskPage nameInput={nameInput} />} />
+            <Route path="/" element={<StartPage />} />
+            <Route path="/taskpage" element={<TaskPage />} />
             <Route path="*" element={<ErrorPage />} />
           </Routes>
         </BrowserRouter>

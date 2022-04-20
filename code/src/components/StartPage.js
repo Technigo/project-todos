@@ -1,13 +1,13 @@
-import React from "react"
-// import { useDispatch, useSelector } from "react-redux"
-import { Link } from "react-router-dom"
+import React, { useState } from "react"
+import { useDispatch } from "react-redux"
+import { useNavigate } from "react-router-dom"
 import styled from "styled-components"
 
 import StyledButton from "./StyledButton"
 
-// import taskitems from "reducers.js/taskitems"
+import taskitems from "reducers/taskitems"
 
-const StyledStartPage = styled.form`
+const StyledStartPage = styled.section`
     width: 100vw;
     height: 100vh;
     display: flex;
@@ -70,49 +70,41 @@ const StartInput = styled.input`
     }  
 `
 
-const StartPage = ({nameInput, onNameInputChange}) => {
-    // const userName = useSelector((state) => state.username)
-    // const dispatch = useDispatch()
+const StartPage = () => {
+    const [nameInputValue, setNameInputValue] = useState("")
+    const navigate = useNavigate()
 
-    // Tried to update global state with users name input
-    // const handleSubmit = (event) => {
-    //     event.preventDefault()
-    //     dispatch(taskitems.actions.setUserName(nameInput))
-    // }
+    const dispatch = useDispatch()
+
+    const onNameSet = () => {
+        dispatch(taskitems.actions.setUserName(nameInputValue))
+        navigate("/taskpage")
+    }
 
     return (
         <StyledStartPage
-        // onSubmit={handleSubmit}
         >
             <StartMainTitle>My To Dos</StartMainTitle>
-
             <StartSubTitle>Get yourself organized!</StartSubTitle>
-            
             <StyledInput>
                 Your name:
                 <StartInput
-                type="text"
-                value={nameInput}
-                onChange={onNameInputChange}
+                    type="text"
+                    value={nameInputValue}
+                    onChange={event => setNameInputValue(event.target.value)}
                 />
             </StyledInput>
-            
-           
-            <Link to="/taskpage">
                 <StyledButton
                 fontSize="1rem"
                 width="140px"
                 fontSizeDesktop="1.2rem"
                 widthDesktop="180px"
-                disabled={!nameInput}
-                borderHover="none"
-                type="submit"
+                disabled={!nameInputValue}
+                borderHover="2px solid black"
+                onClick={onNameSet}
                 >
                     Let's get started
                 </StyledButton>
-            </Link>
-        
-           
         </StyledStartPage>
     )
 }

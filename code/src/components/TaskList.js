@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux"
 import styled from "styled-components"
 import Moment from "react-moment"
 
-import taskitems from "reducers.js/taskitems"
+import taskitems from "reducers/taskitems"
 import TaskFilter from "./TaskFilter"
 
 const StyledTaskList = styled.section`
@@ -19,6 +19,7 @@ const TaskItem = styled.article`
     margin: 1rem;
     border-radius: 10px;
     position: relative;
+    overflow-wrap: break-word;
     box-shadow: 0px 1px 2px 0px #b66fdf,
     1px 2px 4px 0px #b66fdf,
     2px 4px 8px 0px #b66fdf,
@@ -31,10 +32,13 @@ const TaskItem = styled.article`
 const TaskTitle = styled.h3`
     margin-bottom: 2.3rem;
     font-size: 1.2rem;
+    color: #00000ec;
+    width: 85%;
 
     @media screen and (min-width: 1024px) {
         margin-bottom: 3rem;
         font-size: 1.4rem;
+        width: 90%;
     }
 `
 

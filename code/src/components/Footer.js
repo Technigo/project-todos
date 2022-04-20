@@ -2,7 +2,7 @@ import React from "react"
 import { useDispatch } from "react-redux"
 import styled from "styled-components"
 
-import taskitems from "reducers.js/taskitems"
+import taskitems from "reducers/taskitems"
 import StyledButton from "./StyledButton"
 
 const StyledFooter = styled.footer`
@@ -42,9 +42,9 @@ const Footer = () => {
         <StyledFooter>
             <FooterButtonContainer>
                 <StyledButton
-                fontSize="0.9rem"
+                fontSize="0.8rem"
                 margin="0.5rem"
-                width="160px"
+                width="150px"
                 borderHover="2px solid black"
                 widthDesktop="190px"
                 fontSizeDesktop="1.1rem"
@@ -53,9 +53,9 @@ const Footer = () => {
                     Complete all tasks
                 </StyledButton>
                 <StyledButton
-                fontSize="0.9rem"
+                fontSize="0.8rem"
                 margin="0.5rem"
-                width="160px"
+                width="150px"
                 borderHover="2px solid black"
                 widthDesktop="190px"
                 fontSizeDesktop="1.1rem"
