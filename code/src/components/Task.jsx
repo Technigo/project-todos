@@ -215,6 +215,7 @@ const TaskTitle = styled.div`
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
+  word-break: break-all;
 `;
 
 const TaskDate = styled.p`
