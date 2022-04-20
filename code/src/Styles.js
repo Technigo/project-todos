@@ -44,8 +44,8 @@ export const AddButton = styled.button`
   background: #fff;
   padding: 0;
   margin: 10px;
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 10px;
 `
 

@@ -40,6 +40,7 @@ const AddTodo = () => {
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           placeholder="Add new task"
+          required
           />
           <AddButton type="submit">
             <span 
