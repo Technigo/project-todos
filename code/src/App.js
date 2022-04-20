@@ -34,8 +34,8 @@ export const App = () => {
     <Provider store={store}>
       <Wrapper>
         <ProviderContainer className="provider-container">
-          <TodoList />
           <AddTodo />
+          <TodoList />
         </ProviderContainer>
       </Wrapper>
     </Provider>

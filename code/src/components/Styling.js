@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 
 export const devices = {
@@ -46,12 +46,7 @@ export const DateP = styled.p`
 `
 
 export const TaskWrapper = styled.section`
-    max-height: 400px;
     width: 400px;
-
-    @media ${devices.mobile} {
-        max-height: 250px;
-      }
 `
 export const TodoSection = styled.section`
     overflow: auto;
@@ -139,35 +134,35 @@ export const CheckAllBtn = styled.button`
 // AddTodo STYLING
 export const AddTodoContainer = styled.section`
     position: fixed;
-    bottom: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 40px;
+    min-width: 400px; 
+    width: 500px;
+  border-radius: 20px;
+  background: rgb(236, 240, 243);
+   box-shadow: 
+              -3px -3px 30px rgb(255, 175, 130, .8),
+              3px 3px 30px rgb(255, 175, 130, .8);
+
 
   @media ${devices.mobile} {
-        transform: scale(0.8);
-        bottom: 120px;
-      }
+      min-width: 20px;
+      width: 370px;
+      transform: scale(0.8);
+  }
 
-      @media ${devices.tablet} {
-        bottom: 300px;
-      }
-
-      @media ${devices.bigDesktop} {
-        bottom: 180px;
-      }
 `
 
 export const InputField = styled.input`
-    box-shadow: 
-        0px 0px 2px #5f5f5f,
-        0px 0px 0px 5px #ecf0f3,
-        8px 8px 15px #a7aaaf,
-        -8px -8px 15px #ffffff;
     border: 1px solid #555;
     color: #555;
     outline:none;
     background: none;
     font-size: 18px;
     color: #555;
-    margin-bottom: 30px;
+    margin: 20px;
     border-radius: 25px;
     padding: 15px;
 `
@@ -201,6 +196,7 @@ export const Wrapper = styled.section`
 
 export const ProviderContainer = styled.section`
   position: relative;
+  margin-top: 150px;
   min-height: 600px;
   min-width: 400px;
   max-height: 600px;
@@ -215,14 +211,14 @@ export const ProviderContainer = styled.section`
               3px 3px 30px rgb(255, 175, 130, .8);
 
   @media ${devices.tablet} {
-    margin: 100px 0;
+    // margin: 100px 0;
     width: 400px;
     min-width: 400px;
 
   }
 
   @media ${devices.mobile} {
-    margin: 50px;
+    // margin: 50px;
     min-width: 200px;
     width: 200px;
     min-height: 400px;
@@ -232,7 +228,7 @@ export const ProviderContainer = styled.section`
   }
 
   @media ${devices.desktop} {
-    margin: 100px 700px;
+    // margin: 100px 700px;
 
   }
 
