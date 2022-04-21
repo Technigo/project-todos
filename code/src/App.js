@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { combineReducers, createStore } from '@reduxjs/toolkit'
 import { BrowserRouter, Route, Routes } from 'react-router-dom' 
 import { createStore } from '@reduxjs/toolkit'
 import { Link } from "react-router-dom";
@@ -21,19 +21,26 @@ const reducer = combineReducers({
 
 let persistedState = {};
 const persistedStateJSON = localStorage.getItem("reduxState")
+<<<<<<< HEAD
 
 
 if (persistedStateJSON) {
   persistedState =  JSON.parse(persistedStateJSON)
 }
 
+=======
+
+
+if (persistedStateJSON) {
+  persistedState =  JSON.parse(persistedStateJSON)
+}
+
+>>>>>>> 628cf94b44c3495bb2a610431c2e153133f54d6b
 const store = createStore(reducer, persistedState )
 
 store.subscribe(() => {
   localStorage.setItem('reduxState', JSON.stringify(store.getState()))
 })
-
-
 
 export const App = () => {
  
