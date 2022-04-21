@@ -9,7 +9,7 @@ body {
   height: 430px;
   background-color: rgb(247, 230, 197);
   border-radius: 25px;
-  padding: 16px 35px 16px 35px;
+  padding: 16px 35px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,7 +30,7 @@ body {
 
 .todo-text {
   font-size: 17px;
-  margin: 7px 10px 7px 10px;
+  margin: 7px 10px;
 }
 
 .todo-text-container {
