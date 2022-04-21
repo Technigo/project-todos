@@ -31,6 +31,7 @@ const AddTodo = () => {
                 <input
                     type="text"
                     value={inputValue}
+                    required
                     onChange={(e) => setInputValue(e.target.value)}
                 />
             </label>

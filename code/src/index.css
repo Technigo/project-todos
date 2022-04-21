@@ -72,7 +72,7 @@ padding-top:50px;
 
 }
 
-@media screen and (min-width: 1024px) {    
+@media screen and (min-width: 768px) {    
 
 h1 { 
  justify-content: flex-start;
@@ -87,7 +87,7 @@ h1 {
 form {
 
   justify-content: flex-start;
-  max-width: 380px;
+ 
 }
 
 .counter-left {

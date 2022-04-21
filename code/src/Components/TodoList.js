@@ -14,12 +14,21 @@ margin-bottom: 15px;
 position:relative;
 border:solid 2px;
 font-size: 15px;
+justify-content: flex-start;
 font-family: monospace;
+overflow-wrap:break-word;
 box-shadow: 5px 5px #000;
     &:hover {
 		background-image: linear-gradient(pink, yellow);
 }
-` ;
+
+@media (min-width: 768px) {
+    justify-content:center;
+  }
+`
+;
+
+
 
 
 
