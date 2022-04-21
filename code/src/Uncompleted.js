@@ -5,6 +5,7 @@ import uniqid from 'uniqid';
 import EmptyState from "EmptyState";
 import { CompleteAllBtn, AddNewTaskBtn } from "Buttons";
 import styled from "styled-components";
+import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import tasks from "reducers/tasks";
 
@@ -17,11 +18,11 @@ const AllTasks = styled.ul`
 const Uncompleted = () => {
 
     
-    const lists = JSON.parse(localStorage.getItem('reduxState')); 
+    const taskList = useSelector(state => state.tasks.list);
 
-    let unCompleteList = [...lists.tasks.list]
+    let unCompleteList = []
 
-    if (lists) {
+    if (taskList) {
         unCompleteList = unCompleteList.filter(item => !item.complete);     
     }
 

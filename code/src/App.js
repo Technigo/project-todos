@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { BrowserRouter, Route, Routes } from 'react-router-dom' 
+import { createStore } from '@reduxjs/toolkit'
 import { Link } from "react-router-dom";
 import tasks  from './reducers/tasks'
 import HomePage from 'HomePage'
@@ -13,16 +14,20 @@ import AllTask from 'AllTask'
 import AddTask from 'AddTask'
 import styled from 'styled-components';
 
+
 const reducer = combineReducers({
   tasks: tasks.reducer
 })
 
+let persistedState = {};
+const persistedStateJSON = localStorage.getItem("reduxState")
 
-const persistedState = localStorage.getItem('reduxState')
-                        ? JSON.parse(localStorage.getItem('reduxState'))
-                        : {}
 
-const store = configureStore({ reducer, persistedState })
+if (persistedStateJSON) {
+  persistedState =  JSON.parse(persistedStateJSON)
+}
+
+const store = createStore(reducer, persistedState )
 
 store.subscribe(() => {
   localStorage.setItem('reduxState', JSON.stringify(store.getState()))

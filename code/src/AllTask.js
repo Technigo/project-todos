@@ -19,8 +19,9 @@ const AllTasks = styled.ul`
 const AllTask = () => {
 
 
-    const list = JSON.parse(localStorage.getItem('reduxState'));
     const taskList = useSelector(state => state.tasks.list);
+
+
 
     const dispatch = useDispatch();
 
@@ -34,10 +35,10 @@ const AllTask = () => {
             <Header header='📝 All tasks' />
 
             <AllTasks>
-                {(list && list.tasks.list.length > 0 )  &&
+                {(taskList && taskList.length > 0 )  &&
                     <>
                     <CompleteAllBtn completeAll={onClickCompleteAll} />
-                    { list.tasks.list.map(item => {
+                    { taskList.map(item => {
                     
                     return <Task key={uniqid()} task = {item} />
                     
@@ -45,7 +46,7 @@ const AllTask = () => {
                     </>
                 
                 } 
-                {(!list ||list.tasks.list.length === 0 ) && <EmptyState text='Add new tasks and see them here' />}
+                {(!taskList ||taskList.length === 0 ) && <EmptyState text='Add new tasks and see them here' />}
 
             </AllTasks>
             <AddNewTaskBtn />

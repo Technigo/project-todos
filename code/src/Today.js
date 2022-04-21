@@ -18,15 +18,14 @@ const AllTasks = styled.ul`
 const Today = () => {
     
     const currentDate = new Date().toLocaleDateString();
-    let lists = JSON.parse(localStorage.getItem('reduxState'));
+    const taskList = useSelector(state => state.tasks.list);
  
     let todayList = [];
-    if (lists) {
-        todayList = lists.tasks.list.filter(item => item.date === currentDate);
+
+    if (taskList) {
+        todayList = taskList.filter(item => item.date === currentDate);
 
     }
-
-    const taskList = useSelector(state => state.tasks.list);
  
     const dispatch = useDispatch();
 

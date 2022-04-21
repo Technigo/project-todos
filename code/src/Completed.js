@@ -4,17 +4,18 @@ import Task from "Task";
 import uniqid from 'uniqid';
 import { AddNewTaskBtn } from 'Buttons'
 import EmptyState from "EmptyState";
+import { useSelector } from "react-redux";
 
 
 const Completed = () => {
 
     
-    const lists = JSON.parse(localStorage.getItem('reduxState'));  
+  const taskList = useSelector(state => state.tasks.list);
     
     let completedList = []
     
-    if (lists) {
-        completedList = lists.tasks.list.filter(item => item.complete);
+    if (taskList) {
+        completedList = taskList.filter(item => item.complete);
     }
     
 
