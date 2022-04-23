@@ -32,7 +32,6 @@ const TaskItem = styled.article`
 const TaskTitle = styled.h3`
     margin-bottom: 2.3rem;
     font-size: 1.2rem;
-    color: #00000ec;
     width: 85%;
 
     @media screen and (min-width: 1024px) {
