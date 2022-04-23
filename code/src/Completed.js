@@ -1,12 +1,17 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Header from "Header";
 import Task from "Task";
 import uniqid from 'uniqid';
 import { AddNewTaskBtn } from 'Buttons'
 import EmptyState from "EmptyState";
 import { useSelector } from "react-redux";
+import styled from "styled-components";
 
-
+const AllTasks = styled.ul`
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+`
 const Completed = () => {
 
     
@@ -23,13 +28,13 @@ const Completed = () => {
     return (
         <div className="container">
             <Header header='✅ Complete' />
-            <ul>
+            <AllTasks>
               {completedList.length > 0 && <>
                 {completedList.map(item => <Task task = {item} key={uniqid()}/>)}
               </>
               }
               {completedList.length === 0 && <EmptyState text = 'Complete your tasks and see them here'/>}
-            </ul>
+            </AllTasks>
             <AddNewTaskBtn />
 
         </div>

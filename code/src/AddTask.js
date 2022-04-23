@@ -87,14 +87,11 @@ const AddTask = () => {
     }
 
     const onChangeDueDate = (date) => {
-
-        
             if (!isEditing) {
                 setDueDate(date)
             } else  dispatch(tasks.actions.onChangeDate(date))
                  
     }
-
 
     //Go back to home page
     const onBackBtnClick = () => {
@@ -103,7 +100,7 @@ const AddTask = () => {
   
 
     return (
-        <div className="add-task">
+        <div className="container">
             <IconButton type="button" onClick={onBackBtnClick}>
                 <img tabIndex='1' src={leftBtn} alt='left arrow icon' />
              </IconButton>
@@ -149,7 +146,7 @@ const AddTask = () => {
                 </CategorySelector>
                 <NoteTextArea 
                     placeholder='+ Add note'
-                    rows='10'
+                    rows='6'
                     >
                 </NoteTextArea>
                 <SubmitTaskBtn type="submit">Submit</SubmitTaskBtn>

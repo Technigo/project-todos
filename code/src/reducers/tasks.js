@@ -55,9 +55,7 @@ const tasks = createSlice ({
 
           updateCompleteItem: (state, action) => {
           
-          const existingList= JSON.parse(localStorage.getItem('reduxState')).tasks.list;
-
-          const updateList =  existingList.map(item => {
+          const updateList =  state.list.map(item => {
               if (item.id === action.payload) {
                 const updateItem = {...item, complete: !item.complete}
                 return updateItem;
@@ -78,8 +76,7 @@ const tasks = createSlice ({
               })
               state.list = completeTodayTasks;
             } else {
-              const existingList= JSON.parse(localStorage.getItem('reduxState')).tasks.list;
-              const completeAllTasks = existingList.map(item => {
+              const completeAllTasks = state.list.map(item => {
                 const updateAllTasks = {...item, complete: true};
                 return updateAllTasks;
               })
@@ -89,8 +86,7 @@ const tasks = createSlice ({
 
           editItem: (state, action) => {
             
-            const existingList= JSON.parse(localStorage.getItem('reduxState'))
-            const findItem = existingList.tasks.list.find(item => item.id === action.payload)
+            const findItem = state.list.find(item => item.id === action.payload)
       
       
             return {
@@ -104,8 +100,7 @@ const tasks = createSlice ({
 
           deleteItem: (state, action) => {
 
-            const existingList= JSON.parse(localStorage.getItem('reduxState'))
-            const filterList = existingList.tasks.list.filter(item => item.id !== action.payload);
+            const filterList = state.list.filter(item => item.id !== action.payload);
             state.list = filterList;
 
           },

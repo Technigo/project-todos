@@ -12,6 +12,7 @@ const CompleteAllButton = styled.button`
     gap: 5px;
     font-weight: 500;
     color: #666;
+    padding: 40px 0 0 0;
 
 `
 
@@ -29,6 +30,7 @@ const AddTaskBtn = styled(Link)`
     left: 50%;
     bottom: 20%;
     transform: translate(-50%,50%);
+    
 
     &:hover {
       background-color: #fff;

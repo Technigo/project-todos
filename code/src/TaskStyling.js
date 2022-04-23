@@ -12,6 +12,8 @@ export const CheckBox = styled.div`
     height: 150px;
     background: ${props => props.background};
     border-radius: 10px;
+    border: solid 1.5px #000;
+    position: relative;
 
    
 

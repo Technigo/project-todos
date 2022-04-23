@@ -20,28 +20,28 @@ const Uncompleted = () => {
     
     const taskList = useSelector(state => state.tasks.list);
 
-    let unCompleteList = []
-
-    if (taskList) {
-        unCompleteList = unCompleteList.filter(item => !item.complete);     
-    }
-
     const dispatch = useDispatch();
 
     const onClickCompleteAll = () => {
         dispatch(tasks.actions.completeAllItems())
     }
 
+    
+    let uncompletedList = []
+    
+    if (taskList) {
+        uncompletedList = taskList.filter(item => !item.complete);
+    }
+    
+
     return (
         <div className="container">
             <Header header='🚨 Uncomplete' />
             <AllTasks>
-                { unCompleteList.length > 0 && <>
                     <CompleteAllBtn completeAll={onClickCompleteAll}  />
-                    {unCompleteList.map(item => <Task task = {item} key={uniqid}/>)}
-                    </>
-                }
-                { unCompleteList.length === 0 && <EmptyState text='Yay, you have no uncomplete task. Add new tasks and see them here'/> }
+                    {uncompletedList.map(item =>  <Task task = {item} key={uniqid()}/>)}
+                
+                { uncompletedList.length === 0 && <EmptyState text='Yay, you have no uncomplete task. Add new tasks and see them here'/> }
                 <AddNewTaskBtn />
             </AllTasks>
         </div>

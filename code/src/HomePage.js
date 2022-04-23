@@ -5,16 +5,14 @@ import styled from "styled-components";
 import {AddNewTaskBtn} from 'Buttons'
 
 const Logo = styled.h1`
-    font-size: 2.4rem;
+    font-size: 3.2rem;
     margin-bottom: 3.2rem;
     text-align: center;
+    color: #707BFB;
 
-    span {
-        color: #707BFB;
-    }
 `
 const CountTask = styled.span`
-    font-size: 1.6rem;
+    font-size: 1.8rem;
 
 `
 
@@ -26,8 +24,12 @@ const NavList = styled.div`
     list-style: none;
     font-size: 1.8rem;
     padding: 4.8rem 3.2rem;
-    width: 100%;
     background-color: #fff;
+    border: solid 1.5px #000;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05), 0 6px 6px rgba(0,0,0,0.05);   
+     width: 37.5rem;
+     height: 80vh;
     text-align: center;
  
 ` 
@@ -69,7 +71,7 @@ const HomePage = () => {
     return (
             <NavList>
                 <div>
-                    <Logo><span>Do</span>me</Logo>
+                    <Logo>To-Do List</Logo>
                     <CountTask>To do: {countTasks()} tasks</CountTask>
                 </div>
                 <NavLinks to='today-task'>
