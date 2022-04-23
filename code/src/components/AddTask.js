@@ -13,6 +13,7 @@ const NewTaskContainer = styled.div`
     margin: 0.5rem 1.5rem 1.5rem;
     padding: 1rem;
     font-family: "Poppins", sans-serif;
+    color: #000000ec;
 `
 
 const AddTaskTitle = styled.h3`

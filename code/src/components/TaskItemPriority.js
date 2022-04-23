@@ -37,7 +37,7 @@ const PriorityButton = styled.button`
     border-radius: 10px;
     font-size: 0.8rem;
     width: 60px;
-    color: #00000ec;
+    color: #000000ec;
 
     &:hover,
     &:active,
