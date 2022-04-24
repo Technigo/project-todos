@@ -1,13 +1,17 @@
 # Project Todos
+The assignment was to build a to do list web application with Redux. The user should be able to add new, delete and toggle between tasks. 
 
-Replace this readme with your own information about your project.
+## The solution
+-
+- If I had more time on this project I would like to add more functionalities to it. It would have been nice to add the possibility to edit tasks and also add some kind of timestamp to each task. A button for "clear all tasks" would also be great for the user experience.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+## Tech
+- React 
+- Redux
+- JSX
+- CSS
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://lisen-todo.netlify.app/
