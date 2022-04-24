@@ -60,6 +60,7 @@ const AddTodo = () => {
                 <Input
                     type='text'
                     value={inputValue}
+                    required
                     placeholder='Add here'
                     onChange={(e) => setInputValue(e.target.value)}
                 />
