@@ -6,13 +6,12 @@ import { Link } from "react-router-dom";
 const CompleteAllButton = styled.button`
     background: none;
     border: none;
-    align-self: flex-end;
     display: flex;
     align-items: center;
+    align-self: flex-end;
     gap: 5px;
     font-weight: 500;
-    color: #666;
-    padding: 40px 0 0 0;
+    color: #707BFB;
 
 `
 

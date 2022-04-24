@@ -6,16 +6,17 @@ const EmptyStateContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 2rem;
-    padding: 4.8rem 0;
+    gap: 3.2rem;
 
     img {
         margin-left: 2rem;
+    
     }
 
     p {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
         text-align: center;
+        color: #666;
     }
 `
 

@@ -7,8 +7,7 @@ import tasks from "reducers/tasks";
 import uniqid from 'uniqid';
 import styled from "styled-components";
 import EmptyState from "EmptyState";
-import { set } from "date-fns";
-import { ca } from "date-fns/locale";
+
 
 const AllTasks = styled.ul`
     display: flex;
@@ -34,7 +33,7 @@ const AllTask = () => {
 
     switch (value) {
         case 'All':
-            const all = taskList.sort((a,b) => a < b ? 1 : -1);
+            const all = taskList.sort((a,b) => a.date < b.date ? 1 : -1);
             taskList = all;
             break;
         case 'Uncomplete':
@@ -51,16 +50,21 @@ const AllTask = () => {
         case '🏠 Home':
             const homeList = taskList.filter(item => item.category === '🏠 Home');
             taskList = homeList;
+            break;
         case '👩‍💻 Work':
             const workList = taskList.filter(item => item.category === '👩‍💻 Work');
             taskList = workList;
+            break;
         case '👩🏼‍🤝‍👩🏻 Meeting':
             const meetingList = taskList.filter(item => item.category === '👩🏼‍🤝‍👩🏻 Meeting');
             taskList = meetingList;
+            break;
         case '❤️ Personal':
             const personalList = taskList.filter(item => item.category === '❤️ Personal');
-            taskList = personalList;
-      
+            taskList = personalList;  
+            break;
+        default:
+             taskList = [...taskList]     
     }
 
 
@@ -69,21 +73,21 @@ const AllTask = () => {
             <Header header='📝 All tasks' />
 
             <AllTasks>
-                {(taskList && taskList.length > 0 )  &&
-                    <>
-                    <CompleteAllBtn completeAll={onClickCompleteAll} />
-                    <select value={value} onChange={(e) => setValue(e.target.value)} >
+                <div className='flex'>
+                    <select className='select' value={value} onChange={(e) => setValue(e.target.value)} >
                         <option value='All'>All</option>
                         <option value='Latest'>Latest</option>
                         <option value='Uncomplete'>Uncomplete</option>
                         <option value='Complete'>Complete</option>
-                        <option value='🏠 Home'>🏠 Home</option>
-                        <option value='👩‍💻 Work'>👩‍💻 Work</option>
-                        <option value='👩🏼‍🤝‍👩🏻 Meeting'>👩🏼‍🤝‍👩🏻 Meeting</option>
-                        <option value='❤️ Personal'>❤️ Personal</option>
-
-
+                        <option value='🏠 Home'> Home</option>
+                        <option value='👩‍💻 Work'> Work</option>
+                        <option value='👩🏼‍🤝‍👩🏻 Meeting'> Meeting</option>
+                        <option value='❤️ Personal'> Personal</option>
                     </select>
+                    <CompleteAllBtn completeAll={onClickCompleteAll} />
+                </div>
+                {(taskList && taskList.length > 0 )  &&
+                    <>
                     { taskList.map(item => {
                     
                     return <Task key={uniqid()} task = {item} />

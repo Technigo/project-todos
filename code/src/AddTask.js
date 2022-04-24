@@ -58,9 +58,10 @@ const AddTask = () => {
     // Submit Task function
     const onSubmitNewTask = (e) => {
       
-        e.preventDefault(e)
+        e.preventDefault(e);
         dispatch(tasks.actions.addItem({id: uniqid(), text: inputTask, category: categorySelect ,complete: false, date: createDate, dueDate: new Date(dueDate).getTime()})) 
         navigate('/all');
+        setTimeout(() => alert('New task added'), 300)
 
      
     }
@@ -71,8 +72,6 @@ const AddTask = () => {
         if (!isEditing) {
             setInputTask(text)
         } else {
-            //dispatch(tasks.actions.onChangeItemInput(item))
-           // dispatch(tasks.actions.onChangeItemInput({editText: item, editCategory: categorySelect, editDate: dueDate}))
            dispatch(tasks.actions.onChangeItemInput(text))
 
         }

@@ -41,7 +41,7 @@ const Uncompleted = () => {
                     <CompleteAllBtn completeAll={onClickCompleteAll}  />
                     {uncompletedList.map(item =>  <Task task = {item} key={uniqid()}/>)}
                 
-                { uncompletedList.length === 0 && <EmptyState text='Yay, you have no uncomplete task. Add new tasks and see them here'/> }
+                { uncompletedList.length === 0 && <EmptyState text='whoho, all tasks are done. Add new tasks and see them here'/> }
                 <AddNewTaskBtn />
             </AllTasks>
         </div>

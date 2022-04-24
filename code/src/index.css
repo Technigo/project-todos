@@ -73,7 +73,6 @@ input, select, textarea {
 }
 
 
-
 input::placeholder {
   color: #c5c4c4;
 }
@@ -82,6 +81,17 @@ input::placeholder {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.select {
+  background-color: #fff;
+  border: solid 1.5px #000;
+  border-radius: 5px;
+  width: 30%;
+  text-align: center;
+  padding: 0.5rem;
+  align-self: flex-end;
+  
 }
 
 @media all and (min-width: 700px) {

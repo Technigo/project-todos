@@ -1,9 +1,8 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { combineReducers } from '@reduxjs/toolkit'
 import { BrowserRouter, Route, Routes } from 'react-router-dom' 
 import { createStore } from '@reduxjs/toolkit'
-import { Link } from "react-router-dom";
 import tasks  from './reducers/tasks'
 import HomePage from 'HomePage'
 import Today from 'Today'
