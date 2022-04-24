@@ -7,6 +7,7 @@ We built a todo app by using React, Redux, style components. The app includes th
  - Add new task, schedule due date, select task's category
  - Remove single task or all tasks
  - Toggle checkbox to mark complete/uncomplete task, or complete all tasks
+ - Use Localstorage to save tasks
  
 
 ## The problem
