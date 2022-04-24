@@ -28,7 +28,7 @@ body {
 	max-width: 700px;
 	height: 70vh;
 	background: hsla(0, 0%, 100%, 0.8);
-	padding: 1rem;
+	padding: 0.5rem 1rem 1rem;
 	position: relative;
 	box-shadow: hsla(0, 0%, 0%, 0.2) 0 0 20px;
 	display: flex;
