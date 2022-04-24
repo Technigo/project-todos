@@ -1,13 +1,23 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+We built a todo app by using React, Redux, style components. The app includes these functionalities:
+ - List all todo tasks
+ - Count uncomplete tasks
+ - Classify tasks based on category: today tasks, uncomplete tasks, complete tasks, all
+ - Add new task, schedule due date, select task's category
+ - Remove single task or all tasks
+ - Toggle checkbox to mark complete/uncomplete task, or complete all tasks
+ 
 
 ## The problem
 
 Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First, I designed the prototype in Figma to give the app a certain visual and determine essential functionalities which I want to add. In this project, I practiced using Style Components and learned how to pass props and style elements conditionally. 
+
+Next, I found challenging to understand Redux flow at the beginning and advoid data mutation. I solved the problem by seperating correct datas and functions in global or local state. In order to build immutable data, I carefully passed there inititate state to new variable and applied changes to the new varible, or using spread operator for array, object. 
+
+Lastly, the hardest part was editing state. My solution is to add editing state, either true or false, align with editing object to store the editing value, edit ID, so on in the global state. And update the data based on that. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://suki-todo.netlify.app
