@@ -88,7 +88,7 @@ input:focus {
 	font-size: 1.5rem;
 	cursor: pointer;
 	background: hsla(0, 0%, 100%, 0);
-	color: #000);
+	color: #000;
 }
 
 #task-list {
