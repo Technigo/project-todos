@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import StartPage from 'components/StartPage'
@@ -13,7 +13,18 @@ const reducer = combineReducers({
   tasks: tasks.reducer,
 })
 
-const store = configureStore({reducer: reducer,})
+let persistedState = {}
+const persistedStateJSON = localStorage.getItem("reduxState")
+
+if (persistedStateJSON) {
+  persistedState =  JSON.parse(persistedStateJSON)
+}
+
+const store = createStore (reducer, persistedState)
+
+store.subscribe(() => {
+  localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+})
 
 export const App = () => {
   return (
