@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers, configureStore, createStore } from '@reduxjs/toolkit'
+import { combineReducers, createStore } from '@reduxjs/toolkit'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 
 import StartPage from 'components/StartPage'
