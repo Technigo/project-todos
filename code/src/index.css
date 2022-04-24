@@ -23,6 +23,7 @@ body {
 		hsl(167, 37%, 73%) 100%
 	);
 	background-attachment: fixed;
+	overflow-x: hidden;
 }
 
 .container {
