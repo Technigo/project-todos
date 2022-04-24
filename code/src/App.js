@@ -13,6 +13,7 @@ const reducer = combineReducers({
   tasks: tasks.reducer,
 })
 
+// Local storage
 let persistedState = {}
 const persistedStateJSON = localStorage.getItem("reduxState")
 
