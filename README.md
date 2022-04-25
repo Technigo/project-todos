@@ -1,13 +1,15 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project was Technigo's boot camp project for week 14. Goal was to build a to do -app, where user is able to add tasks, list tasks and toggle whether a task is done or not. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Page requirements:
+- Your app should list all todo tasks - completed or uncompleted
+- You should be able to mark an uncompleted task as complete (and change it back to uncomplete)
+- You should be able to add and remove tasks
+- Your app should show a count of either all todos or all uncomplete todos (or both)
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://kristiinas-todos.netlify.app/
