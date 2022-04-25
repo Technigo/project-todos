@@ -1,7 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { useSelector, useDispatch} from 'react-redux'
-import {todos} from '../reducers/todos'
 import moment from "moment";
 import { Link } from 'react-router-dom';
 
@@ -16,6 +14,8 @@ const Headerdiv = styled.div`
     align-items: center;
     justify-content: space-between;
 `
+
+
 const Title = styled.h1`
     margin:0;
     padding:0;
@@ -24,53 +24,61 @@ const Text = styled.p`
     margin:0;
     padding:0;
 `
-const Clearbutton = styled.button`
+
+
+const PlusButton = styled.span`
+border-radius: 50%;
+box-shadow: 0px 3px 5px -1px rgb(0 0 0 / 20%), 0px 6px 10px 0px rgb(0 0 0 / 14%), 0px 1px 18px 0px rgb(0 0 0 / 12%);
+display: flex;
+align-items: center;
+justify-content: center;
+width: 56px;
+height: 56px;
+padding: 0;
+border: none;
+fill: currentColor;
+cursor: pointer;
+-webkit-user-select: none;
+-moz-user-select: none;
+-ms-user-select: none;
+user-select: none;
+-moz-appearance: none;
+-webkit-appearance: none;
+overflow: hidden;
+transition: box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1),opacity 15ms linear 30ms,transform 270ms 0ms cubic-bezier(0, 0, 0.2, 1);
+background-color: #017DFF;
+color: #fff;
+font-size:28px;
+`
+const StyledLink  = styled(Link)`
+&:focus,
+&:hover,
+&:visited,
+&:link,
+&:active {
+  text-decoration: none;
+}
 `
 
-const TaskDiv = styled.div`
-    display:flex;
-    justify-content:space-between;
-    align-items: center;
-`
-const Task = styled.div`
-    display:flex;
-    align-items:center;
-`
-const Number = styled.p`
-    font-size: 48px;
-`
 
-const TaskText = styled.p`
-    font-size:24px;
-`
 
 
 
 export const Header = () => {
-    const items = useSelector(store => store.todos.items)
-    const dispatch = useDispatch()
-    const onDeleteAll = () => {
-        dispatch(todos.actions.deleteAll())
-    }
-    const onCompleteAll = () => {
-        dispatch(todos.actions.completeAll())
-    }
+    
     const date = moment().format('LL')
     return(
         <Pageheader>
             <Headerdiv>
                 <Title>TodoApp</Title>
-                <Link to={'/create_todo'}>
-                    ➕
-                </Link>
+                <StyledLink to={'/create_todo'}>
+                    <PlusButton> &#x0002B; </PlusButton>
+                </StyledLink>
             </Headerdiv>
             <Headerdiv>
                 <Text>{date}</Text>
             </Headerdiv>
-            <Headerdiv>
-                <Clearbutton onClick={onDeleteAll}>Clear all</Clearbutton>
-                <button onClick={onCompleteAll}>Complete all</button>
-            </Headerdiv>
+            
         </Pageheader>
     )
 }

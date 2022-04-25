@@ -1,6 +1,4 @@
-import React, {useState} from "react"
-import { useDispatch } from "react-redux"
-import  {todos} from '../reducers/todos'
+import React from "react"
 import styled from "styled-components"
 import { CreateTodoHeader } from "../components/CreateTodoHeader"
 import { NewTodoInput } from "components/NewTodoInput"
@@ -8,10 +6,9 @@ import { NewTodoInput } from "components/NewTodoInput"
 const Main = styled.main`
     height: 100%;
     background-color: #e9ecef;
-    border-radius: 1rem;
     width:95vw;
     max-width:500px;
-    box-shadow: 10px 10px 5px gray;
+    box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 `
 
 export const CreateTodo = () => {
