@@ -1,46 +1,52 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux';
-import { addTodos } from 'reducers/reducer';
+import todos from 'reducers/todos';
 import { useDispatch } from 'react-redux';
 
+const TodoInput = () => { 
+    const [inputValue, setInputValue] = useState("");
+    const [value, setValue] = useState("");
 
-const mapStateToProps = (state) => { //First argument - plucks pieces of state out of Redux and assigns them to props that your React component will use.
-    return{
-        todos: state,
-    };
-};
-
-//Add todos
-const mapDispatchToProps = { //Second argument - function which binds action creator functions so that you don’t have to write props.dispatch(actionName()) all over the place, you can just write props.actionName(). 
-      addTodo: (obj) => (addTodos(obj)),
-    };
-
-
-const TodoInput = (props) => { 
-    const [todo, setTodo] = useState("");
+    const dispatch = useDispatch();
     
-    const handleChange = (e) => {
-        setTodo(e.target.value);
-    };
-  
+    const onInputSubmit = (event) => {
+        event.preventDefault();
+
+        const newTodo = {
+            id: Date. now(),
+            name: inputValue,
+            description: inputValue,
+            isDone: false
+        }
+
+
+    dispatch(todos.actions.addTodos(newTodo));
+
+    setInputValue("")
+    setValue("")
+
+    }
+
     return (
+        <form onSubmit= {onInputSubmit}>
     <div className="addTodos">
         <input 
         type="text"
-        onChange={ (e)=> handleChange(e)}
+        value={inputValue}
+        item={inputValue}
+        onChange={ (e) => setInputValue(e.target.value)}
         className="todo-input" 
-        />  
-
+        />
         <button className="add-btn" 
-        onClick={() => props.addTodo({
+        onClick={() => ({
             id: Date. now(), //Generates the unique ID that was typed in
-            item: todo, 
+            item: inputValue, 
             completed: false, //Boolean value set to false
-        })}>Submit</button> 
+        })}>Submit</button>
         <br/>
     </div>
+    </form>
   );
 };
 //Using connect method to connect the react component with redux store
-export default connect (mapStateToProps, mapDispatchToProps)(TodoInput);
+export default TodoInput;
 

@@ -1,10 +1,14 @@
 import "./styles/main.css"
 import React from 'react'
 import TodoInput from 'components/TodoInput'
-import TodoFilter from 'components/TodoFilter';
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import { Provider } from 'react-redux'
-import { reducer } from "reducers/reducer";
+import { todos } from "reducers/todos";
+import TodoList from "components/TodoList";
+
+const reducer = combineReducers({
+    todos: todos.reducer
+})
 
 const store = configureStore({ 
   reducer,
@@ -16,7 +20,7 @@ export const App = () => {
       <div className="App">
         <h1>To do app</h1>
         <TodoInput />
-        <TodoFilter />
+        <TodoList />
       </div>
     </Provider>
   );
