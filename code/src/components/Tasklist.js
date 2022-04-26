@@ -26,7 +26,7 @@ const Tasklist = () => {
         <article className="text-image" key={taskItem.id}>
           <button
             className="button-task"
-            onClick={() => onTaskDelete(taskItem.taskIndex)}
+            onClick={() => onTaskDelete(taskIndex)}
           >
             <span>
               <img src="./Assets/del.png" alt="delete" />
