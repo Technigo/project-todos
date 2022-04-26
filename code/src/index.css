@@ -31,12 +31,15 @@ body {
 .todo-text {
   font-size: 17px;
   margin: 7px 10px;
+  overflow-wrap: break-word;
+  width: 200px;
 }
 
 .todo-text-container {
   display: flex;
   flex-direction: column;
   align-items: baseline;
+  margin-left: 10px;
 }
 
 .todo-item button {
@@ -57,9 +60,10 @@ body {
 }
 
 .date {
-  font-size: 9px;
+  font-size: 12px;
   display: flex;
   justify-content: space-around;
+  color: rgba(0, 0, 0, 0.3);
 }
 
 /* ------ checkbox ------ */

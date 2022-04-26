@@ -37,7 +37,7 @@ const TodoList = () => {
           />
           <div className='todo-text-container'>
             <p className='todo-text'>{item.text}</p>
-            <span className='date'>{moment().calendar()}</span>
+            <p className='date'>{moment().calendar()}</p>
           </div>
           <Button onClick={() => onDeleteTodo(index)}>
             <span role='img' aria-label='minus-icon'>

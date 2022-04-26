@@ -32,7 +32,7 @@ const AddTodo = () => {
         type='text'
         value={input}
         onChange={(event) => setInput(event.target.value)}
-        maxLength='20'
+        maxLength='60'
       />
       <Button onClick={onAddTodo}>
         <span role='img' aria-label='plus-icon'>
