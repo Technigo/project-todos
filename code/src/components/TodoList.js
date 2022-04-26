@@ -21,20 +21,21 @@ const TodoList = () => {
   return (
     <section>
             {todoList.map((taskItem, taskIndex) => (
-               <article className ='task-container' key={taskItem.id}>
-                   <h2 className='task'>{taskItem.description}</h2>
+               <article className ='displaytodos' key={taskItem.id}>
+                 <div className="card">
+                   <h2 className='textarea'>{taskItem.description}</h2>
                    <div className='cta-container'>
                         <label>
                                 <input
                                     className='checkbox'
                                     type='checkbox'
-                                    checked={taskItem.complete} 
                                     onChange={() => onTodoToggle(taskItem.id)}
                                 />
                         </label>
                         <button onClick={() => onTodoDelete(taskIndex)}>
                             <span role='img' aria-label='delete'>X</span>
                         </button>
+                   </div>
                    </div>
                </article>
             ))}

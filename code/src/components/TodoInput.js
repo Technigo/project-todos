@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import todos from 'reducers/todos';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 const TodoInput = () => { 
     const [inputValue, setInputValue] = useState("");
-    const [value, setValue] = useState("");
+
+    const allTodos = useSelector((store) => store.todos.items);    
+    const completedTodos = allTodos.filter(todos => todos.isDone)
 
     const dispatch = useDispatch();
     
@@ -12,17 +14,15 @@ const TodoInput = () => {
         event.preventDefault();
 
         const newTodo = {
-            id: Date. now(),
+            id: Date.now(),
             name: inputValue,
             description: inputValue,
             isDone: false
         }
 
-
     dispatch(todos.actions.addTodos(newTodo));
 
     setInputValue("")
-    setValue("")
 
     }
 
@@ -38,12 +38,13 @@ const TodoInput = () => {
         />
         <button className="add-btn" 
         onClick={() => ({
-            id: Date. now(), //Generates the unique ID that was typed in
+            id: Date.now(), //Generates the unique ID that was typed in
             item: inputValue, 
             completed: false, //Boolean value set to false
         })}>Submit</button>
         <br/>
     </div>
+    <div className="counter">Completed todos {completedTodos.length} / {allTodos.length}</div>  
     </form>
   );
 };

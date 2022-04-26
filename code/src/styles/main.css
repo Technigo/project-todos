@@ -28,6 +28,14 @@ body{
     padding: 0.5rem 1rem;
 }
 
+.counter{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin: 20px;
+    flex-direction: column;
+}
+
 .add-btn{
     margin-left: 1rem;
     background-color: rgb(66, 171, 82);
