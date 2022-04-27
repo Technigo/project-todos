@@ -1,8 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { combineReducers } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { BrowserRouter, Route, Routes } from 'react-router-dom' 
-import { createStore } from '@reduxjs/toolkit'
 import tasks  from './reducers/tasks'
 import HomePage from 'HomePage'
 import Today from 'Today'
@@ -17,15 +16,15 @@ const reducer = combineReducers({
   tasks: tasks.reducer
 })
 
-let persistedState = {};
+let preloadedState = {};
 const persistedStateJSON = localStorage.getItem("reduxState")
 
 
 if (persistedStateJSON) {
-  persistedState =  JSON.parse(persistedStateJSON)
+  preloadedState =  JSON.parse(persistedStateJSON)
 }
 
-const store = createStore(reducer, persistedState )
+const store = configureStore({reducer, preloadedState} )
 
 store.subscribe(() => {
   localStorage.setItem('reduxState', JSON.stringify(store.getState()))
