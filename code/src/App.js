@@ -1,6 +1,6 @@
 import React from 'react'
 import { Provider } from 'react-redux'
-import { createStore, combineReducers } from '@reduxjs/toolkit'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import taskitems from 'reducers/taskitems'
@@ -14,25 +14,19 @@ const reducer = combineReducers({
   taskitems: taskitems.reducer
 })
 
-// Local storage as the initial state
 const persistedStateJSON = localStorage.getItem("taskitemsReduxState")
-let persistedState = {}
+let preloadedState = {}
 
 if (persistedStateJSON) {
-  persistedState = JSON.parse(persistedStateJSON)
+  preloadedState = JSON.parse(persistedStateJSON)
 }
 
-// Creating store with initial state
-const store = createStore(reducer, persistedState)
-// const store = configureStore({ reducer })
+const store = configureStore({reducer, preloadedState})
 
-// Storing the state in local storage on Redux state change
 store.subscribe(() => {
-  // localStorage.clear()
   localStorage.setItem("taskitemsReduxState", JSON.stringify(store.getState()))
 })
 
-console.log(persistedState)
 
 export const App = () => {
 
