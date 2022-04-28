@@ -73,18 +73,23 @@ const Input = styled.input`
 
 const SubmitBtn = styled.button`
   border-radius: 0px 9px 9px 0;
-  height: 33px;
-  border: none;
+  border: 1px solid #dcdcdc;
+  height: 36px;
   background-color: #ffbcbc;
   color: white;
   font-size: x-large;
   font-weight: 600;
+  padding: 5px;
 
   @media ${devices.tablet} {
-    height: 55px;
+    height: 56px;
     width: 40px;
   }
 `;
+const FormWrapper = styled.div`
+display: flex;
+align-items: center;
+`
 
 const AddNewTask = () => {
   const [inputValue, setInputValue] = useState("");
@@ -132,9 +137,8 @@ const AddNewTask = () => {
             NEW TASK
           </NewTaskBtnText>
         </NewTaskbtn>
-
         <form onSubmit={onFormSubmit}>
-          <label>
+      <FormWrapper>
             <Input
               className={isActive ? "input-active" : "input-hidden"}
               type="text"
@@ -142,13 +146,13 @@ const AddNewTask = () => {
               onChange={(event) => setInputValue(event.target.value)}
               placeholder="Add new to do "
             />
-          </label>
           <SubmitBtn
             className={isActive ? "button-active" : "button-hidden"}
             type="submit"
           >
             +
           </SubmitBtn>
+        </FormWrapper>
         </form>
       </NewTask>
     </NewTaskWrapper>

@@ -61,7 +61,6 @@ const StyledCheckBox = styled.input`
   cursor: pointer;
   appearance: none;
   background-color: #fff;
-  /* color: #ffbcbc; */
   width: 2em;
   height: 2em;
   border: 1px solid #dcdcdc;
