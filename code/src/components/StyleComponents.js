@@ -202,3 +202,23 @@ justify-content: space-between;
     }
 
 `
+
+export const CountWrapper = styled.div`
+
+${fontStyling}
+width: 80%;
+color: white;
+font-weight: 500;
+display: flex;
+justify-content: space-around;
+padding: 2em;
+text-align: center;
+font-size: 1.3em;
+opacity: 0.8;
+
+    @media (min-width: 900px) {
+     font-size: 2em;
+     width: 800px;
+    }
+
+`

@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
 import { useSelector } from 'react-redux'
-// import { TaskList } from 'components/TaskList'
-import styled from 'styled-components'
 
 import { 
     FormWrapper, 
@@ -29,7 +27,6 @@ export const FormAndList = () => {
 
 
     const [newTask, setTask] = useState()
-    const [checked, setChecked] = useState()
 
     const [taskList, setTaskList] = useState(allTasks)
 
@@ -60,12 +57,6 @@ export const FormAndList = () => {
         dispatch(tasks.actions.removeTask(id))
      }
 
-
-    
-    //  const handleCheck = (id) => {
-
-    //     setChecked()
-    //  }
     
     const filterTasks = (value) => {
                 if (value === 'finished') {
@@ -126,40 +117,5 @@ export const FormAndList = () => {
     );
 }
  
-// const filterTasks = (value) => {
-//     if (value === 'finished') {
-//         setTaskList(finishedTasks)
-//     } else if (value === 'unfinished') {
-//         setTaskList(unfinishedTasks)
-//     } else {
-//         setTaskList(allTasks)
-//     }
-// }
-// <button onClick={() => filterTasks('finished')}>Finished</button>
-// <button onClick={() => filterTasks('unfinished')}>Unfinished</button>
-// <button onClick={() => filterTasks('all')}>All</button>
 
 
-// export const TaskList = () => {
-
-//     const dispatch = useDispatch()
-
- 
-    // const [tasksRemaining, setTasksRemaining] = useState('')
-    // const [tasksFinished, setTasksFinished] = useState('')
-
-    // useEffect(() => { setTaskList(allTasks)})
-    // useEffect(() => { setTasksRemaining(unfinishedTasks)})
-    // useEffect(() => { setTasksFinished(finishedTasks)})
-
-   
-//     return (
-//         <>
-      
-
-
-//         </>
-
-
-//     )
-// }

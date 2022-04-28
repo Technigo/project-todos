@@ -3,11 +3,11 @@ import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { tasks } from 'reducers/tasks'
 
-
 import  { FormAndList }  from 'components/TodoApp.js'
 import { ContentWrapper } from 'components/StyleComponents'
 
 import  Background2  from 'components/Background.js'
+import Counter from 'components/Counter.js'
 
 
 const reducer = combineReducers({
@@ -24,6 +24,7 @@ export const App = () => {
 
       <ContentWrapper>
       <FormAndList />
+      <Counter />
       </ContentWrapper>
     
  
