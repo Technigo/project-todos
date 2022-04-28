@@ -20,6 +20,28 @@ export const tasks = createSlice({
             state.items = [...state.items, action.payload]
         },
 
+        removeTask: (state, action) => {
+
+            const tasksOneRemoved = state.items.filter((i) => i.id !== action.payload )
+
+            state.items = tasksOneRemoved
+            
+        //     let index = state.items.indexOf(action.payload)
+
+        
+        //     const updatedList = state.items.splice(index, 1)
+        
+
+        // console.log(state.items);
+        // return updatedList
+
+
+        //    state.items = [...state.items.filter( item =>  item !== action.payload )]
+            
+        //     return state.items
+        //     console.log(state.items);
+        },
+
         toggleState: (store, action) => {
 
             const updatedItems = store.items.map(item => {

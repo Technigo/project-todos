@@ -1,15 +1,15 @@
 
 export const fontStyling = `
-font-family: Lucida Sans , sans-serif;
+font-family: 'Bitter', serif;
 font-size: 2em;
 `
 export const buttonText = `
 font-family: Lucida Sans , sans-serif;
 font-size: 1.2em;
 font-weight: 600;
+color: white;
  
 `
-
 
 export const glassBottom = `
 color: white;

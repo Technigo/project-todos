@@ -33,15 +33,22 @@ gap: 2em;
 
 export const Label = styled.label`
 ${fontStyling}
+font-weight: 700;
+font-size: 3.4em;
+text-align: center;
 
 `
 
 export const TextInput = styled.input`
-height: 5em;
-box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
-border-radius:10px;
+/* height: 5em; */
+/* box-shadow:0 0 15px 4px rgba(0,0,0,0.03); */
+border: 1px gray solid;
+border-radius:5px;
+padding: 1em 2em;
+background-color: lavender;
+color: gray;
 font-family:inherit;
-  font-size: inherit;
+  font-size: 2em;
 
 `
 export const CheckboxStyled = styled.label`
@@ -88,6 +95,16 @@ padding-left:2em;
         transform: rotate(45deg);
         }
   }
+`
+export const Cross = styled.button`
+position: absolute;
+color: white;
+width: 50px;
+height: 35px;
+font-size: 0.7em;
+background-color: transparent;
+border: none;
+right: 1em;
 `
 
 export const Submit = styled.button`

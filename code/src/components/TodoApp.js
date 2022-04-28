@@ -14,7 +14,8 @@ import {
     Submit,
     ListWrapper,
     TaskBar,
-    ButtonRow
+    ButtonRow,
+    Cross
 
 } from 'components/StyleComponents'
 
@@ -38,7 +39,6 @@ export const FormAndList = () => {
 
     const taskArray = useSelector((store) => store.tasks.items)
    
-
     const finishedTasks = useSelector((store) => store.tasks.items.filter(t => t.status))
 
     const unfinishedTasks = useSelector((store) => store.tasks.items.filter(t => !t.status))
@@ -54,16 +54,18 @@ export const FormAndList = () => {
         e.preventDefault();
         dispatch(tasks.actions.addTask(newTaskObject))
         setTask('')
-        // setTaskList([...allTasks, newTaskObject]) 
      }
 
-    
-
-    
-     const handleCheck = (id) => {
-
-        setChecked()
+     const onRemoveClick = (id) => {
+        dispatch(tasks.actions.removeTask(id))
      }
+
+
+    
+    //  const handleCheck = (id) => {
+
+    //     setChecked()
+    //  }
     
     const filterTasks = (value) => {
                 if (value === 'finished') {
@@ -97,7 +99,7 @@ export const FormAndList = () => {
             <ListWrapper>
 
             {taskList.map((task) => (
-                <TaskBar key={task.id} draggable="true" >
+                <TaskBar key={task.id} >
                     <CheckboxStyled htmlFor={task.id}>{task.title} 
                     <input 
                     type="checkbox" 
@@ -106,6 +108,7 @@ export const FormAndList = () => {
                     onChange={() => dispatch(tasks.actions.toggleState(task.id))} />
                     <span></span>
                     </CheckboxStyled>
+                    <Cross onClick={() => onRemoveClick(task.id)}><span alt="delete">&#x2715;</span></Cross>
                 </TaskBar>
             ))}
 
