@@ -17,7 +17,7 @@ const TaskList = () => {
     };
 
     return (
-        <section>
+        <section className='task-background'>
             {taskList.map((taskItem, taskIndex) => (
                <article className ='task-container' key={taskItem.id}>
                    <h2 className='task'>{taskItem.text}</h2>

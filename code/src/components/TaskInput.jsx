@@ -30,6 +30,7 @@ const TaskInput = () => {
                 <input
                     type='text'
                     value={inputValue}
+                    required
                     onChange={(e) => setInputValue(e.target.value)}
                     placeholder='Write your todo here'
                 />
