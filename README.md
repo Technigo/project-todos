@@ -11,4 +11,4 @@ Really fun project! If I had more time I would to try to sort the tasks on compl
 
 ## View it live
 
-https://resilient-toffee-e117e8.netlify.app/
+https://thereese-todos.netlify.app
