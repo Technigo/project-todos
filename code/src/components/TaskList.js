@@ -87,7 +87,7 @@ const TaskList = () => {
                 <Container>
                 {allTasks.map((taskItem, index) => (
                     <TaskArticle key={taskItem.id}>
-                        <TaskName>{taskItem.text}
+                        <TaskName>
                         <CheckLabel>
                             <input 
                             type="checkbox"
@@ -96,6 +96,7 @@ const TaskList = () => {
                             onChange={() => onItemToggle(taskItem.id)}
                             />
                         </CheckLabel>
+                        {taskItem.text}
                         </TaskName>
                         <Date />
                         <DeleteButton 
