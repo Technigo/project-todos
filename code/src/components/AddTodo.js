@@ -9,6 +9,7 @@ const AddTodo = () => {
 	const dispatch = useDispatch();
 
 	const onAddTodo = () => {
+		setInput('');
 		dispatch(todos.actions.addTodo(input));
 	};
 
