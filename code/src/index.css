@@ -14,14 +14,7 @@ body {
   background-color: #000;
 }
 
-/* TEMPORARY CHECKBOX */
-[type="checkbox"] {
-  width: 27px;
-  height: 27px;
-}
-
-/* CHECKBOX STILL IN PROGRESS TO MAKE IT WORK */
-/*.cbx {
+.cbx {
   position: absolute;
   top: 1px;
   width: 27px;
@@ -33,7 +26,7 @@ body {
   cursor: pointer;
   display: block;
   background-color: #fff;
-   cursor: pointer;
+  cursor: pointer;
 }
 
 .cbx:after {
@@ -51,20 +44,20 @@ body {
   transition-delay: 0.15s;
 }
 
-#cbx:checked ~ .cbx {
+.cb:checked ~ .cbx {
   border-color: transparent;
   background: #6dbd89;
   animation: jelly 0.6s ease;
 }
 
-#cbx:checked ~ .cbx:after {
+.cb:checked ~ .cbx:after {
   opacity: 1;
   transform: rotate(45deg) scale(1);
 }
 
 .div-cbx {
   position: relative;
-}*/
+}
 
 @keyframes jelly {
   from {
@@ -96,13 +89,13 @@ body {
   }
 }
 
-/* .hidden-cbx {
-  opacity: 1;
+.hidden-cbx {
+  opacity: 0;
   width: 27px;
   height: 27px;
   position: relative;
   right: -1px;
-} */
+}
 
 .tooltip {
   position: relative;
@@ -136,7 +129,7 @@ body {
   right: 110%;
 }
 
-.tooltip .tooltiptext::after {
+.tooltip .tooltiptext:after {
   position: absolute;
   top: 50%;
   right: 100%;

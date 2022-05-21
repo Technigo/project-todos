@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import styled from "styled-components";
+import styled from "styled-components/macro";
 
 import tasks from "../reducers/tasks";
 
@@ -12,10 +12,9 @@ const Section = styled.section`
   align-items: center;
   width: 348px;
   position: absolute;
-  bottom: 24px;
+  bottom: 20px;
   padding-top: 8px;
   padding-bottom: 42px;
-  box-shadow: 0 -45px 29px -41px rgb(166 166 166 / 55%);
 
   @media (min-width: 667px) {
     justify-content: flex-end;
@@ -84,7 +83,7 @@ const AddTask = () => {
       <Section>
         <form onSubmit={onFormSubmit}>
           <Input
-            type="text"
+            type='text'
             value={input}
             onKeyDown={(e) => checkKey(e)}
             onChange={(e) => setInput(e.target.value)}
@@ -92,7 +91,7 @@ const AddTask = () => {
         </form>
         <div>
           <SubmitBtn
-            type="submit"
+            type='submit'
             onClick={onAddTask}
             disabled={input.length === 0}
           >

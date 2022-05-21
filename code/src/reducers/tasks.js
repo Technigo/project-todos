@@ -15,6 +15,7 @@ const tasks = createSlice({
       };
 
       store.items = [...store.items, newTask];
+      console.log(newTask.id, newTask.text);
     },
     toggleTask: (store, action) => {
       const updatedItems = store.items.map((item) => {
