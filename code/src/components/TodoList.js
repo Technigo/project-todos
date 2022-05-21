@@ -15,7 +15,7 @@ const BtnSection = styled.section`
 
 const TaskSection = styled.section`
   overflow: auto;
-  height: 300px;
+  height: 320px;
 `;
 
 const BtnDoAll = styled.button`
