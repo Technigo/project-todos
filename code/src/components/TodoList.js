@@ -70,7 +70,11 @@ const InputDiv = styled.div`
 const InputP = styled.p`
   margin: 8px 0 0;
   overflow-wrap: break-word;
-  width: 224px;
+  width: 200px;
+
+  @media (min-width: 667px) {
+    width: 224px;
+  }
 `;
 
 const DateP = styled.p`

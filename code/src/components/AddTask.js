@@ -79,27 +79,25 @@ const AddTask = () => {
   };
 
   return (
-    <div>
-      <Section>
-        <form onSubmit={onFormSubmit}>
-          <Input
-            type='text'
-            value={input}
-            onKeyDown={(e) => checkKey(e)}
-            onChange={(e) => setInput(e.target.value)}
-          />
-        </form>
-        <div>
-          <SubmitBtn
-            type='submit'
-            onClick={onAddTask}
-            disabled={input.length === 0}
-          >
-            +
-          </SubmitBtn>
-        </div>
-      </Section>
-    </div>
+    <Section>
+      <form onSubmit={onFormSubmit}>
+        <Input
+          type='text'
+          value={input}
+          onKeyDown={(e) => checkKey(e)}
+          onChange={(e) => setInput(e.target.value)}
+        />
+      </form>
+      <div>
+        <SubmitBtn
+          type='submit'
+          onClick={onAddTask}
+          disabled={input.length === 0}
+        >
+          +
+        </SubmitBtn>
+      </div>
+    </Section>
   );
 };
 
