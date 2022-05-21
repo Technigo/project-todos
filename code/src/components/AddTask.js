@@ -13,8 +13,7 @@ const Section = styled.section`
   width: 348px;
   position: absolute;
   bottom: 20px;
-  padding-top: 8px;
-  padding-bottom: 42px;
+  padding-bottom: 56px;
 
   @media (min-width: 667px) {
     justify-content: flex-end;
