@@ -5,10 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-    /* Set a font size */
+   
     font-size: 15px;
   
-    /* Begin The Redundancies */
+   
     background-image: 
       -webkit-linear-gradient(0deg, transparent 5em, rgba(255,0,0,.2) 0, transparent 5.1em),
       -webkit-linear-gradient(rgba(0,0,255,.3) 1px, transparent 0);

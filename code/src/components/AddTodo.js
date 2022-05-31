@@ -19,7 +19,7 @@ const Inputfield = styled.div`
   justify-content: center;
   align-items: center;
   padding: 10px;
-  margin: auto;
+
   margin-bottom: 19px;
   margin-top: 24px;
 `;
