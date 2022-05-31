@@ -1,31 +1,10 @@
 import React from "react"
 import { useDispatch } from "react-redux"
-import styled from "styled-components"
 
 import taskitems from "reducers/taskitems"
-import StyledButton from "./StyledButton"
+import StyledButton from "../styles/StyledButton"
+import { StyledFooter, FooterButtonContainer, CreditText } from "styles/StylesForComponents"
 
-const StyledFooter = styled.footer`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 2rem 0 2rem;
-`
-
-const FooterButtonContainer = styled.div`
-    display: flex;
-    flex-direction: row;
-`
-
-const CreditText = styled.p`
-    margin-top: 2.5rem;
-    font-size: 1rem;
-
-    @media screen and (min-width: 1024px) {
-        font-size: 1.2rem;
-    }
-`
 
 const Footer = () => {
     const dispatch = useDispatch()

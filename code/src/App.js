@@ -4,10 +4,9 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import taskitems from 'reducers/taskitems'
-
-import TaskPage from 'components/TaskPage'
-import StartPage from 'components/StartPage'
-import ErrorPage from 'components/ErrorPage'
+import TaskPage from 'pages/TaskPage'
+import StartPage from 'pages/StartPage'
+import ErrorPage from 'pages/ErrorPage'
 
 
 const reducer = combineReducers({

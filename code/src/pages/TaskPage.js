@@ -1,35 +1,11 @@
 import React, { useState } from "react"
-import styled from "styled-components"
 
-import Header from "./Header"
-import AddTask from "./AddTask"
-import TaskList from "./TaskList"
-import Footer from "./Footer"
+import Header from "../components/Header"
+import AddTask from "../components/AddTask"
+import TaskList from "../components/TaskList"
+import Footer from "../components/Footer"
+import { StyledTaskPage, ContentWrapper } from "styles/StylesForPages"
 
-const StyledTaskPage = styled.main`
-    width: 100vw;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    Footer {
-        margin-top: auto;
-    }
-`
-
-const ContentWrapper = styled.section`
-    width: 375px;
-    margin: 0 auto;
-
-    @media screen and (min-width: 668px) {
-        width: 600px;
-    }
-
-    @media screen and (min-width: 1024px) {
-        width: 800px;
-    }
-`
 
 const TaskPage = () => {
     const [allTasks, setAllTasks] = useState(true)

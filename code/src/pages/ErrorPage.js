@@ -1,30 +1,9 @@
 import React from "react"
 import { useNavigate } from "react-router-dom"
-import styled from "styled-components"
 
-import StyledButton from "./StyledButton"
+import StyledButton from "../styles/StyledButton"
+import { ErrorSection, ErrorTitle } from "styles/StylesForPages"
 
-const ErrorSection = styled.section`
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-family: "Inter", sans-serif;
-`
-
-const ErrorTitle = styled.h1`
-    text-align: center;
-    width: 60%;
-    margin-bottom: 2rem;
-    font-size: 1.5rem;
-
-    @media screen and (min-width: 1024px) {
-        width: 40%;
-        font-size: 2rem;
-    }
-`
 
 const ErrorPage = () => {
     const navigate = useNavigate()
