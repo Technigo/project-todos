@@ -14,14 +14,17 @@ export const HeaderDetails = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 1.5rem;
 `
 
 export const HeaderTitle = styled.h1`
+    display: flex;
+    align-items: center;
     font-size: 1.7rem;
     margin-bottom: 0.5rem;
     text-transform: uppercase;
     font-weight: bold;
-    width: 30%;
+    width: 55%;
 
     @media screen and (min-width: 1024px) {
         font-size: 2.2rem;
@@ -30,9 +33,9 @@ export const HeaderTitle = styled.h1`
 
 export const CurrentTasks = styled.p`
     font-size: 0.8rem;
-    width: 30%;
+    width: 40%;
+    height: 50px;
     background: white;
-    padding: 6px;
     border-radius: 10px;
     color: #060624;
     text-align: center;
@@ -41,8 +44,13 @@ export const CurrentTasks = styled.p`
     justify-content: center;
     box-shadow: 0px 3px 6px 0px #00000081;
 
+    @media screen and (min-width: 668px) {
+        height: 50px;
+        width: 35%;
+    }
+
     @media screen and (min-width: 1024px) {
-        font-size: 0.9rem;
+        font-size: 1rem;
     }
 `
 
