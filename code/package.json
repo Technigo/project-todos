@@ -10,7 +10,6 @@
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.16.0",
-    "eslint-plugin-react-hooks": "^2.3.0",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "react-is": "^16.13.1",
@@ -39,6 +38,7 @@
     ]
   },
   "devDependencies": {
-    "@types/moment": "^2.13.0"
+    "@types/moment": "^2.13.0",
+    "eslint-plugin-react-hooks": "^1.7.0"
   }
 }
