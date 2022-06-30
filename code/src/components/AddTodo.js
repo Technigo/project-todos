@@ -38,28 +38,32 @@ const AddTodo = () => {
 
   const dispatch = useDispatch();
 
-  const onTodoAdd = () => {
+  const onTodoAdd = (event) => {
+    event.preventDefault(event);
     dispatch(todos.actions.addTodo(input));
     setInput("");
   };
 
   return (
     <AddTodoSection>
-      <TextInput
-        type="text"
-        value={input}
-        placeholder="What should we tackle next?"
-        onChange={(event) => setInput(event.target.value)}
-      />
-      <Button onClick={onTodoAdd}>
-        {" "}
-        <img
-          src="https://i.ibb.co/vxPGLtw/Untitled-design-11.png"
-          alt="Add todo button"
-          width="35px"
-          height="35px"
+      <form onSubmit={(event) => onTodoAdd(event)}>
+        <TextInput
+          type="text"
+          value={input}
+          placeholder="What should we tackle next?"
+          onChange={(event) => setInput(event.target.value)}
+          required
         />
-      </Button>
+        <Button type="submit">
+          {" "}
+          <img
+            src="https://i.ibb.co/vxPGLtw/Untitled-design-11.png"
+            alt="Add todo button"
+            width="35px"
+            height="35px"
+          />
+        </Button>
+      </form>
     </AddTodoSection>
   );
 };
