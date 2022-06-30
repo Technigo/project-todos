@@ -27,6 +27,11 @@ const TodoLine = styled.div`
   width: 90%;
   margin-bottom: 15px;
 `;
+const CompleteWrap = styled.div`
+  width: 25px;
+  height: 25px;
+  margin-right: 20px;
+`;
 
 const TodoInfo = styled.div`
   display: flex;
@@ -97,11 +102,13 @@ const TodoList = () => {
       {items.map((item) => (
         <TodoLine key={item.id}>
           <TodoInfo>
-            <Complete
-              type="checkbox"
-              checked={item.isComplete}
-              onChange={() => onToggleTodo(item.id)}
-            />
+            <CompleteWrap>
+              <Complete
+                type="checkbox"
+                checked={item.isComplete}
+                onChange={() => onToggleTodo(item.id)}
+              />
+            </CompleteWrap>
             <TodoDetails>
               <TodoText>{item.text}</TodoText>
               <TimeText>{item.postedTime}</TimeText>
