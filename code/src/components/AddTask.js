@@ -28,12 +28,12 @@ const AddTask = () => {
     }
 
     return (
-    <MainContainer> 
-    <Title>
-    Todo today &nbsp; &nbsp; &nbsp;
-    <CompletedTasks/>
-    </Title>
-    <TodoContainer>
+        <MainContainer>
+            <Title>
+                Todo today &nbsp; &nbsp; &nbsp;
+                <CompletedTasks />
+            </Title>
+            <div>
                 <form onSubmit={onFormSubmit}>
                     <label>
                         <TextBox type="text"
@@ -42,13 +42,13 @@ const AddTask = () => {
                             placeholder='Create new task'
                         />
                     </label>
-                    <AddButton type="submit" disabled={inputValue.length < 1 || inputValue.length > 140}>
+                    <AddButton type="submit" disabled={inputValue.length < 1 || inputValue.length > 200}>
                         +
                     </AddButton>
                 </form>
-        <TaskList/>
-    </TodoContainer>
-    </MainContainer>
+                <TaskList />
+            </div>
+        </MainContainer>
     )
 }
 
@@ -57,27 +57,19 @@ export default AddTask;
 
 const MainContainer = styled.main`
 margin: 2rem;
-// display: flex;
-// flex-direction: column;
-// align-items: center;
+@media (min-width: 768px) {
+    margin: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+    margin: 5rem;
+}
 `;
 
 const Title = styled.h1`
     display: flex;
     align-items: center;
     color: black;
-`;
-
-const TodoContainer = styled.div`
-	// display: flex;
-	// align-items: flex-start;
-	// flex-direction: column;
-	// background-color: rgb(255, 238, 238);
-    // min-width: 15rem;
-    // width: 20vw;
-	// margin: 0.5rem auto;
-    // padding: 2rem;
-    // border-radius: 15%;
 `;
 
 const TextBox = styled.input`
