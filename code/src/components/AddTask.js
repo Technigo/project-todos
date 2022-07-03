@@ -7,57 +7,6 @@ import tasks from 'reducers/tasks'
 import TaskList from 'components/TaskList'
 import CompletedTasks from 'components/CompletedTasks'
 
-const MainContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-`;
-
-const TodoContainer = styled.div`
-	display: flex;
-	align-items: flex-start;
-	flex-direction: column;
-	background-color: rgb(255, 238, 238);
-    min-width: 15rem;
-    width: 20vw;
-	margin: 0.5rem auto;
-    padding: 2rem;
-    border-radius: 15%;
-`;
-
-const Title = styled.h1`
-    display: flex;
-    align-items: center;
-	font-size: 1.5rem;
-    padding: 2.5rem;
-    color: rgb(255, 238, 238);
-`;
-
-const AddButton = styled.button`
-    padding: 0.6rem;
-    color: rgb(255, 238, 238);
-    background-color: rgb(230, 9, 101);
-    cursor: pointer;
-    border-radius: 75%;
-    font-weight: 700;
-    margin-left: 0.5rem;
-    
-    &:hover {
-    background-color: rgb(253, 93, 93);
-    color: rgb(255, 238, 238);
-    transition: background-color 0.4s ease;
-    transition: font-size 0.4s ease;
-    heigth: 30px;
-    }
-`;
-
-const TextBox = styled.input`
-    width: 9rem; 
-    border: none;
-    border-bottom: 2px solid rgb(253, 93, 93); 
-    padding: 0.3rem;
-    margin-bottom: 1.5rem; 
-`
 
 const AddTask = () => {
     const [inputValue, setInputValue] = useState("")
@@ -79,26 +28,97 @@ const AddTask = () => {
     }
 
     return (
-    <MainContainer> 
-    <Title>
-    Todo today &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    <CompletedTasks/>
-    </Title>
-    <TodoContainer>
-            <form onSubmit={onFormSubmit}>
-                <label>
-                    <TextBox type="text"
-                        value={inputValue}
-                        onChange={(event) => setInputValue(event.target.value)}
-                        placeholder='Write short task here...'
+        <MainContainer>
+            <Title>
+                Todo today &nbsp; &nbsp; &nbsp;
+                <CompletedTasks />
+            </Title>
+            <div>
+                <form onSubmit={onFormSubmit}>
+                    <label>
+                        <TextBox type="text"
+                            value={inputValue}
+                            onChange={(event) => setInputValue(event.target.value)}
+                            placeholder='Create new task'
                         />
-                </label>
-                <AddButton type="submit" disabled={inputValue.length > 25}>Add</AddButton>
-            </form>
-        <TaskList/>
-    </TodoContainer>
-    </MainContainer>
+                    </label>
+                    <AddButton type="submit" disabled={inputValue.length < 1 || inputValue.length > 200}>
+                        +
+                    </AddButton>
+                </form>
+                <TaskList />
+            </div>
+        </MainContainer>
     )
 }
 
 export default AddTask;
+
+
+const MainContainer = styled.main`
+margin: 2rem;
+@media (min-width: 768px) {
+    margin: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+    margin: 5rem;
+}
+`;
+
+const Title = styled.h1`
+    display: flex;
+    align-items: center;
+    color: black;
+`;
+
+const TextBox = styled.input`
+    width: 17rem; 
+    border: none;    
+    padding: 1rem;
+    margin-bottom: 1.5rem; 
+    margin-right: 1rem;
+    background: #f5fbfd;
+`;
+
+const AddButton = styled.button`
+  background-color: transparent;
+  border: 1px solid black;
+  color: black;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 24px;
+  padding: 16px 23px;
+  position: relative;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+&:hover,
+:active {
+  outline: 0;
+}
+
+&:hover {
+  background-color: transparent;
+  cursor: pointer;
+}
+
+:before {
+  background-color: #D5EDF6;
+  content: "";
+  height: calc(100% + 3px);
+  position: absolute;
+  right: -7px;
+  top: -9px;
+  transition: background-color 300ms ease-in;
+  width: 100%;
+  z-index: -1;
+}
+
+&:hover:before {
+  background-color: rgb(200, 285, 285);
+}
+`

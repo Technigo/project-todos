@@ -1,17 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-const data = [
-    {
-        id: '55555',
-        name: 'Example Todo',
-        isDone: false,
-    },
-]
-
 const tasks = createSlice({
     name: 'tasks',
     initialState: {
-        items: data,
+        items: [],
     },
     
     reducers: {
