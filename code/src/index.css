@@ -17,8 +17,11 @@ body {
   font-family: 'Montserrat', sans-serif;
   	background: linear-gradient(
 		135deg,
-		rgb(230, 9, 101) 25%,
-		rgba(255, 144, 0, 1) 100%
+    rgb(125, 185, 238) 15%,
+    rgb(145, 188, 202) 100%
+    /* rgb(251, 226, 229) 100% */
+		/* rgb(230, 9, 101) 100%  */
+		/* rgba(255, 144, 0, 1) 100% */
 
 	);
 	background-attachment: fixed;

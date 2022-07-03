@@ -42,12 +42,15 @@ return (
 export default TaskList;
 
 const TaskItem = styled.article`
-    border: 1px solid rgb(253, 93, 93);
-    border-radius: 5px;
-    padding: 1rem;
-    position: relative;
-    font-size: 0.8rem;
-`
+    // border: 1px solid rgb(253, 93, 93);
+    // border-radius: 5px;
+    // padding: 1rem;
+    // position: relative;
+    // font-size: 0.8rem;
+
+       word-break: break-word;
+    overflow-wrap: wrap;
+    `
 
 const DeleteButton = styled.button`
     position: absolute;
