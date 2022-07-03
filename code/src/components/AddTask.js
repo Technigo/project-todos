@@ -42,7 +42,7 @@ const AddTask = () => {
                             placeholder='Create new task'
                         />
                     </label>
-                    <AddButton type="submit" disabled={inputValue.length < 1 || inputValue.length > 205}>
+                    <AddButton type="submit" disabled={inputValue.length < 1 || inputValue.length > 200}>
                         +
                     </AddButton>
                 </form>
