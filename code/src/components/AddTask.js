@@ -104,6 +104,6 @@ const TextBox = styled.input`
     border-bottom: 2px solid rgb(253, 93, 93); 
     padding: 0.3rem;
     margin-bottom: 1.5rem; 
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    word-break: break-word;
+    overflow-wrap: wrap;
 `
