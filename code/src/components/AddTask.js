@@ -7,6 +7,53 @@ import tasks from 'reducers/tasks'
 import TaskList from 'components/TaskList'
 import CompletedTasks from 'components/CompletedTasks'
 
+
+const AddTask = () => {
+    const [inputValue, setInputValue] = useState("")
+
+    const dispatch = useDispatch();
+
+    const onFormSubmit = (event) => {
+        event.preventDefault()
+
+     const newTask = {
+        id: uniqid(),
+        name: inputValue,
+        isDone: false,
+     }
+
+        dispatch(tasks.actions.addItem(newTask))
+
+        setInputValue("")
+    }
+
+    return (
+    <MainContainer> 
+    <Title>
+    Todo today &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+    <CompletedTasks/>
+    </Title>
+    <TodoContainer>
+            <form onSubmit={onFormSubmit}>
+                <label>
+                    <TextBox type="text"
+                        value={inputValue}
+                        onChange={(event) => setInputValue(event.target.value)}
+                        placeholder='Write task here...'
+                        />
+                </label>
+                <AddButton type="submit" disabled={inputValue.length < 1 || inputValue.length > 140 }>Add</AddButton>
+
+            </form>
+        <TaskList/>
+    </TodoContainer>
+    </MainContainer>
+    )
+}
+
+export default AddTask;
+
+
 const MainContainer = styled.div`
 display: flex;
 flex-direction: column;
@@ -57,48 +104,6 @@ const TextBox = styled.input`
     border-bottom: 2px solid rgb(253, 93, 93); 
     padding: 0.3rem;
     margin-bottom: 1.5rem; 
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 `
-
-const AddTask = () => {
-    const [inputValue, setInputValue] = useState("")
-
-    const dispatch = useDispatch();
-
-    const onFormSubmit = (event) => {
-        event.preventDefault()
-
-     const newTask = {
-        id: uniqid(),
-        name: inputValue,
-        isDone: false,
-     }
-
-        dispatch(tasks.actions.addItem(newTask))
-
-        setInputValue("")
-    }
-
-    return (
-    <MainContainer> 
-    <Title>
-    Todo today &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
-    <CompletedTasks/>
-    </Title>
-    <TodoContainer>
-            <form onSubmit={onFormSubmit}>
-                <label>
-                    <TextBox type="text"
-                        value={inputValue}
-                        onChange={(event) => setInputValue(event.target.value)}
-                        placeholder='Write short task here...'
-                        />
-                </label>
-                <AddButton type="submit" disabled={inputValue.length > 25}>Add</AddButton>
-            </form>
-        <TaskList/>
-    </TodoContainer>
-    </MainContainer>
-    )
-}
-
-export default AddTask;

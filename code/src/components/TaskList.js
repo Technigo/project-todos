@@ -4,24 +4,6 @@ import styled from 'styled-components'
 
 import tasks from 'reducers/tasks'
 
-const TaskItem = styled.article`
-    border: 1px solid rgb(253, 93, 93);
-    border-radius: 5px;
-    padding: 1rem;
-    position: relative;
-    font-size: 0.8rem;
-`
-
-const DeleteButton = styled.button`
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 0.6rem;
-`
-
 const TaskList = () => {
 const taskList = useSelector((backpack) => backpack.tasks.items)
 
@@ -58,3 +40,21 @@ return (
 }
 
 export default TaskList;
+
+const TaskItem = styled.article`
+    border: 1px solid rgb(253, 93, 93);
+    border-radius: 5px;
+    padding: 1rem;
+    position: relative;
+    font-size: 0.8rem;
+`
+
+const DeleteButton = styled.button`
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 0.6rem;
+`
