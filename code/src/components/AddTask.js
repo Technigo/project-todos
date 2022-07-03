@@ -77,7 +77,7 @@ const TextBox = styled.input`
     border: none;    
     padding: 1rem;
     margin-bottom: 1.5rem; 
-    margin-right: 1rem;
+    margin-right: 2rem;
     background: #f5fbfd;
 `;
 
@@ -120,5 +120,11 @@ const AddButton = styled.button`
 
 &:hover:before {
   background-color: rgb(200, 285, 285);
+}
+
+:disabled {
+    border: 1px solid #EAEAEA;
+    background-color: transparent;
+    color:  #DEDEDE;
 }
 `
