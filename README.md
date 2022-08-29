@@ -1,10 +1,3 @@
-# Weekly project for Technigo's bootcamp, week 14
-Task: build a todo app
-
-Tech: HTML, CSS, JavaScript, Redux, React, Styled components
-
-----
-
 # Week 14: Project Todos
 
 This week's project was to build a todo app, my first project using Redux from scratch.
