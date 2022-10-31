@@ -40,12 +40,14 @@ export const todos = createSlice({
     checkComplete: (store, action) => {
       const { taskId } = action.payload
       const task = store.tasks.find((t) => t.id === taskId)
+      // const [checked, setChecked] = useState(false)
 
       const setToComplete = () => {
+        // setChecked = true
         const allCompletedTasks = document.getElementsByClassName('finished')
         const color = '#7FB77E'
         for (let i = 0; i < allCompletedTasks.length; i++) {
-          allCompletedTasks[i].complete = true;
+          allCompletedTasks[i].checked = true;
           allCompletedTasks[i].style.background = color;
         }
       }

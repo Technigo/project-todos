@@ -12,7 +12,7 @@ export const Todo = ({ task }) => {
       <input
         name={task.text}
         type="checkbox"
-        checked={task.complete === true ? 'checked' : ''}
+        // checked={checked === task.text}
         className={task.complete === true ? 'finished' : 'notFinished'}
         onChange={() => dispatch(todos.actions.checkComplete(task))} />
       <label htmlFor={task.text}>{task.text}</label>
