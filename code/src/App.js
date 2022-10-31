@@ -1,9 +1,10 @@
 import React from 'react';
+// import styled from 'styled-components';
 
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      Just testing
     </div>
   );
 }
