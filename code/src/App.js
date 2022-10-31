@@ -1,9 +1,13 @@
 import React from 'react';
 
+import Card from 'components/Card';
+import { GlobalStyle } from 'styles/GlobalStyle';
+
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <>
+      <GlobalStyle />
+      <Card />
+    </>
   );
 }
