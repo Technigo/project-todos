@@ -3,11 +3,26 @@ import { createSlice } from '@reduxjs/toolkit';
 const tasks = createSlice({
   name: 'tasks',
   initialState: {
-    tasks: []
+    tasks: [
+      {
+        id: 1,
+        text: 'Clean the kitchen',
+        isComplete: false
+      }
+    ]
   },
   reducers: {
-    addTask: (state, action) => {
+    addTask: (store, action) => {
       console.log(action.payload);
+    },
+    toggleComplete: (store, action) => {
+      // Expects a task id as action.payload
+
+      store.tasks.forEach((task) => {
+        if (task.id === action.payload) {
+          task.isComplete = !task.isComplete;
+        }
+      });
     }
   }
 });

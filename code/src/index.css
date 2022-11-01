@@ -1,13 +1,106 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+/* Animations are here for now */
+
+.backdrop {
+  z-index: 0;
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.backdrop::before {
+  opacity: 0.9;
+  content: '';
+  background-image: url('/public/Assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+  animation: imageAppear 4s;
+}
+
+.backdrop::after {
+  z-index: 1;
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  animation: blur 4s;
+  backdrop-filter: blur(1px); /* apply the blur */
+  pointer-events: none; /* make the overlay click-through */
+}
+
+@keyframes imageAppear {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+@keyframes blur {
+  0% {
+    backdrop-filter: blur(0px);
+  }
+  60% {
+    backdrop-filter: blur(0px);
+  }
+  75% {
+    backdrop-filter: blur(0px);
+  }
+  100% {
+    backdrop-filter: blur(1px);
+  }
+}
+
+.content-container {
+  animation: contentAppear 4s;
+  transform: scale(1);
+}
+
+.footer {
+  animation: contentAppear 4s;
+}
+
+@keyframes contentAppear {
+  0% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  75% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
