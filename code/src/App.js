@@ -1,9 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import { TaskList } from 'components/TaskList';
 import { Header } from 'components/Header';
-import { AddTasks } from 'components/AddTask';
+import { AddTasks } from 'components/AddTasks';
+import { TaskList } from 'components/TaskList';
+import { Overview } from 'components/Overview';
 import { tasks } from 'reducers/tasks';
 
 const reducer = combineReducers({
@@ -21,6 +22,7 @@ export const App = () => {
         <Header />
         <AddTasks />
         <TaskList />
+        <Overview />
       </main>
     </Provider>
   );

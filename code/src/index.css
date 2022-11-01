@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   background-color: #EAF4EF;
   /* button color: 1F9D6E 
@@ -15,19 +19,24 @@ code {
 }
 
 main {
-  width: 95%;
+  min-height: 65vh;
+  max-height: 100vh;
+  width: 100%;
   margin: 0 auto;
-  border: 2px solid blue;
+  border: 2px solid #1F9D6E;
+  box-shadow: 0 8px 16px rgb(56, 55, 55);
+  border-radius: 45px;
+  background-color: whitesmoke;
 }
 
 @media (min-width: 668px) and (max-width: 1024px) {
   main {
-    width: 40%;
+    width: 55%;
   }
 }
 
 @media (min-width: 1025px) {
   main {
-    width: 25%;
+    width: 28%;
   }
 }

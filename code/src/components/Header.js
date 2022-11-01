@@ -1,5 +1,4 @@
 import React from 'react';
-// import styled from 'styled-components/macro';
 import { Wrapper } from 'styles/GlobalStyles';
 
 export const Header = () => {
