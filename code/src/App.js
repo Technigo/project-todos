@@ -3,7 +3,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import tasks from 'reducers/tasks';
-import ToDoList from 'components/ToDoList';
+import TaskList from 'components/TaskList';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -17,7 +17,7 @@ export const App = () => {
 
   return (
     <Provider store={store}>
-      <ToDoList />
+      <TaskList />
     </Provider>
   );
 };

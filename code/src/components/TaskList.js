@@ -5,7 +5,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 
-export const ToDoList = () => {
+export const TaskList = () => {
   const todoList = useSelector((store) => store.tasks.items); // From app.js
 
   const dispatch = useDispatch();
@@ -18,12 +18,12 @@ export const ToDoList = () => {
       {todoList.map((singleTask) => {
         return (
           <article>
-            <h2>{singleTask.name} </h2>
+            <h2>{singleTask.text} </h2>
             <label>
               Is this task done
               <input
                 type="checkbox"
-                checked={singleTask.isDone}
+                checked={singleTask.complete}
                 onChange={() => onTaskIsDoneToggle(singleTask.id)}
               />
             </label>
@@ -35,4 +35,4 @@ export const ToDoList = () => {
   );
 };
 
-export default ToDoList;
+export default TaskList;

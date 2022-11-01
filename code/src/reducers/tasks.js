@@ -8,14 +8,24 @@ const tasks = createSlice({
   initialState: {
     items: [
       {
-        id: '2',
-        name: 'To do 2',
-        isDone: false,
+        id: '1',
+        text: 'Watch video on actions & reducers',
+        complete: false,
       },
       {
-        id: '1',
-        name: 'To Do 1',
-        isDone: false,
+        id: '2',
+        text: 'Follow redux codealong',
+        complete: false,
+      },
+      {
+        id: '3',
+        text: 'Fork weekly assignment',
+        complete: false,
+      },
+      {
+        id: '4',
+        text: 'Create a todo app',
+        complete: false,
       },
     ],
   },
@@ -23,13 +33,18 @@ const tasks = createSlice({
     toggleTask: (store, action) => {
       console.log(store);
       console.log(action);
-      //   store.items.find((item) => item.is === action.payload).isDone =
-      //     !store.items.find((item) => item.is === action.payload).isDone;
+      //   store.items.find((item) => item.is === action.payload).complete =
+      //     !store.items.find((item) => item.is === action.payload).complete;
       store.items.forEach((item) => {
         if (item.id === action.payload) {
-          item.isDone = !item.isDone;
+          item.complete = !item.complete;
         }
       });
+    },
+
+    addTask: (store, action) => {
+      console.log(store);
+      console.log(action);
     },
   },
 });
