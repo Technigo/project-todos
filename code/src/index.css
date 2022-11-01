@@ -1,5 +1,7 @@
 body {
-  margin: 0;
+  background-color: #EAF4EF;
+  /* button color: 1F9D6E 
+  light purple: E8D9FF */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -10,4 +12,22 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+main {
+  width: 95%;
+  margin: 0 auto;
+  border: 2px solid blue;
+}
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  main {
+    width: 40%;
+  }
+}
+
+@media (min-width: 1025px) {
+  main {
+    width: 25%;
+  }
 }
