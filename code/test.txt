@@ -1,0 +1,40 @@
+  return (
+    <section>
+      {allTasks.map((singleTask) => {
+        return (
+          <article>
+            <p>{singleTask.text}</p>
+
+            <input
+              type="checkbox"
+              checked={singleTask.completed}
+              onChange={() => onCompletedToggle(singleTask.id)} />
+
+            <button type="button">❌</button>
+          </article>
+        );
+      })}
+    </section>
+  )
+} 
+
+
+
+
+  return (
+    <section>
+      <h1>My Todos</h1>
+      <div className="task-list">
+        {allTasks.map((singleTask) => {
+          return (
+            <Task
+              key={tasks.id}
+              task={singleTask}>
+              <p>Todo:{singleTask.text}</p>
+            </Task>
+          )
+        })}
+      </div>
+    </section>
+  )
+}
