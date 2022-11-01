@@ -9,6 +9,7 @@ const NewTodo = () => {
   const [name, setName] = useState('')
   const [urgency, setUrgency] = useState('')
   const [id, setId] = useState(0)
+  const [collapsed, setCollapsed] = useState(false)
 
   const dispatch = useDispatch()
 
@@ -21,29 +22,40 @@ const NewTodo = () => {
     setId('')
   }
 
+  // a function that steers the de-collapsing of the New-to-Do-section.
+  const toggle = () => {
+    setCollapsed(!collapsed)
+  }
+
   return (
-    <ToDoWrapper>
-      <form>
-        <label htmlFor="new-todo"> New to-do </label>
-        <input
-          type="text"
-          value={name}
-          id={id}
-          name="new-todo"
-          onChange={(event) => setName(event.target.value)} />
-        <label>
-            Category:
-          <UrgencySelect
-            value={urgency}
-            onChange={(event) => setUrgency(event.target.value)}>
-            <option value="red">Do it ASAP</option>
-            <option value="orange">Can wait a little</option>
-            <option value="green">Just do it when you have time</option>
-          </UrgencySelect>
-        </label>
-        <button type="submit" onClick={HandleSubmit}>Add</button>
-      </form>
-    </ToDoWrapper>
+    <section>
+      <button onClick={toggle} type="button">Add new TODO</button>
+      {collapsed && (
+        <ToDoWrapper>
+          <form>
+            <label htmlFor="new-todo"> New to-do </label>
+            <input
+              type="text"
+              value={name}
+              id={id}
+              name="new-todo"
+              onChange={(event) => setName(event.target.value)} />
+            <label>
+          Category:
+              <UrgencySelect
+                value={urgency}
+                onChange={(event) => setUrgency(event.target.value)}>
+                <option value="red">Do it ASAP</option>
+                <option value="orange">Can wait a little</option>
+                <option value="green">Just do it when you have time</option>
+              </UrgencySelect>
+            </label>
+            <button type="submit" onClick={HandleSubmit}>Add</button>
+          </form>
+        </ToDoWrapper>
+      )}
+
+    </section>
   )
 }
 
