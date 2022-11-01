@@ -3,6 +3,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { EmptyList } from 'components/EmptyList/EmptyList'
 import { Todo } from 'components/Todo/Todo'
+import { AddNewTask } from 'components/AddNewTask/AddNewTask'
 
 export const TodoList = () => {
   const myTodos = useSelector((store) => store.todos.tasks)
@@ -10,6 +11,7 @@ export const TodoList = () => {
 
   return (
     <section>
+      <AddNewTask />
       <h2>My Todos</h2>
 
       <form className="todo-list">

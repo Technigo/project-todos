@@ -11,8 +11,17 @@ export const GlobalStyles = createGlobalStyle`
 
 `
 
-export const NewTodoBtn = styled.button`
-`
+export const DeleteBtn = styled.button`
+    height: 20px;
+    width: 20px;
+    font-size: 0.8em;
+    font-weight: bold;
+    border-radius: 50%;
+    background-color: #bbbbbb;
+    color: white;
+    text-align: center;
+    cursor: pointer;
+    border: none;
 
-export const ClearAllBtn = styled.button`
+
 `

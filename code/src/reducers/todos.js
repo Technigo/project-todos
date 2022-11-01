@@ -1,65 +1,48 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable max-len */
 /* eslint-disable no-plusplus */
 import { createSlice } from '@reduxjs/toolkit'
 
-const tasks = [
-  { id: 1, text: 'Watch video on actions & reducers', complete: false },
-  { id: 2, text: 'Follow redux codealong', complete: false },
-  { id: 3, text: 'Fork weekly assignment', complete: false },
-  { id: 4, text: 'Create a todo app', complete: false }
-]
-
-const initialState = {
-  tasks,
-  isEmpty: true
-  // more items
-}
-
-export const todos = createSlice({
+const todos = createSlice({
   name: 'todos',
-  initialState,
+  initialState: {
+    tasks: [],
+    isEmpty: true
+  },
   reducers: {
 
     // this adds a new task to the list
     addNewTask: (store, action) => {
-      const { taskId, taskIndex } = action.payload
-      const task = store.tasks.find((t) => t.id === taskId)
+      const newTask = {
+        text: action.payload,
+        id: Math.random(),
+        complete: false
+        // postedTime: moment().format("ddd D MMM"),
+      }
 
-      store.tasks.push({
-        taskId,
-        taskIndex,
-        task,
-        taskText: store.tasks.text[taskIndex],
-        complete: store.tasks.complete
-      })
+      store.tasks = [...store.tasks, newTask];
+      store.isEmpty = false
     },
 
-    /*  This action shows if your answer is correct or not
-    and display which button is actually correct. */
+    /*  This action sets a task to complete */
 
     checkComplete: (store, action) => {
+      console.log(action)
       const { taskId } = action.payload
-      const task = store.tasks.find((t) => t.id === taskId)
-      // const [checked, setChecked] = useState(false)
-
-      const setToComplete = () => {
-        // setChecked = true
-        const allCompletedTasks = document.getElementsByClassName('finished')
-        const color = '#7FB77E'
-        for (let i = 0; i < allCompletedTasks.length; i++) {
-          allCompletedTasks[i].checked = true;
-          allCompletedTasks[i].style.background = color;
-        }
-      }
-
-      if (task) {
-        setToComplete()
-      }
+      store.tasks.find((t) => t.id === taskId).complete = !store.tasks.find((t) => t.id === taskId).complete
+      // store.tasks.forEach((t) => {
+      //   if (taskId === t.id) {
+      //     taskId.complete = !taskId.complete
+      //   }
+      // });
     },
 
     // This action clears all tasks
-    clearAll: () => {
-      return initialState
+    clearAll: (store) => {
+      const emptyList = [];
+      store.tasks = emptyList
     }
   }
 })
+
+export default todos;

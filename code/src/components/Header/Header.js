@@ -1,8 +1,12 @@
 /* eslint-disable linebreak-style */
+
 import React from 'react'
+import { HeaderStyled } from './Header.styles'
 
 export const Header = () => {
   return (
-    <h2>Header</h2>
+    <HeaderStyled>
+      <h2>.Chores</h2>
+    </HeaderStyled>
   )
 }

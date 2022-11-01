@@ -1,21 +1,30 @@
 /* eslint-disable linebreak-style */
+import { DeleteBtn } from 'Globalstyles'
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import { todos } from 'reducers/todos'
+import todos from 'reducers/todos'
+import { StyledCheckbox } from './Todo.styles'
 
 export const Todo = ({ task }) => {
   const dispatch = useDispatch()
-  console.log(task)
+
+  const setToComplete = (taskId) => {
+    dispatch(todos.actions.checkComplete({ taskId }))
+  }
 
   return (
-    <div className="todo">
+    <StyledCheckbox className={task.complete === true ? 'finished' : 'notFinished'}>
       <input
         name={task.text}
         type="checkbox"
-        // checked={checked === task.text}
+        checked={task.complete}
         className={task.complete === true ? 'finished' : 'notFinished'}
-        onChange={() => dispatch(todos.actions.checkComplete(task))} />
-      <label htmlFor={task.text}>{task.text}</label>
-    </div>
+        onChange={() => setToComplete(task.id)} />
+      <label
+        htmlFor={task.text}
+        className={task.complete === true ? 'finished' : 'notFinished'}>{task.text}
+      </label>
+      <DeleteBtn type="button">&#215;</DeleteBtn>
+    </StyledCheckbox>
   )
 }
