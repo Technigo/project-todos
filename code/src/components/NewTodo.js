@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
+import { NewTodoButton, ButtonP } from 'styles/Buttons';
 import todos from '../reducers/todos'
 
 const NewTodo = () => {
@@ -29,7 +30,7 @@ const NewTodo = () => {
 
   return (
     <section>
-      <button onClick={toggle} type="button">Add new TODO</button>
+      <NewTodoButton onClick={toggle} type="button"><ButtonP>{collapsed ? '-' : '+'}</ButtonP></NewTodoButton>
       {collapsed && (
         <ToDoWrapper>
           <form>
