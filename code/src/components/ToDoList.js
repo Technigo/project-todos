@@ -2,7 +2,7 @@
 /* eslint-disable react/jsx-closing-tag-location */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import tasks from 'reducers/tasks';
+import { tasks } from 'reducers/tasks';
 import moment from 'moment';
 
 const ToDoList = () => {
@@ -14,6 +14,7 @@ const ToDoList = () => {
     dispatch(tasks.actions.toggleTask(id))
   }
 
+  /* Delete task */
   const onDeleteTask = (id) => {
     dispatch(tasks.actions.deleteTask(id))
   }
@@ -30,13 +31,12 @@ const ToDoList = () => {
               type="checkbox"
               checked={item.complete}
               onChange={() => onToggleTask(item.id)} />
-          </div><div>{items.text}</div>
+          </div><div>{item.text}</div>
           <div>
-            <span>{moment(item.createdAt).format('hh:mm')}</span>
+            <span>{moment(item.createdAt).fromNow()}</span>
             <button onClick={() => onDeleteTask(item.id)}>Clear!</button>
           </div>
         </>
-
       ))}
     </section>
   )

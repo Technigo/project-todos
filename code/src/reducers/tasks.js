@@ -4,7 +4,7 @@ import moment from 'moment';
 
 const initialState = {
   items: [
-    { id: 1, text: 'Gym Time!', complete: true, createdAt: moment().fromNow() }
+    { id: 1, text: 'Gym Time!', complete: true, createdAt: new Date() }
   ]
 }
 
@@ -27,7 +27,7 @@ export const tasks = createSlice({
         if (item.id === action.payload) {
           const updatedBoard = {
             ...item,
-            complete: !item.complete,
+            complete: !item.complete
           }
           return updatedBoard
         } else {
@@ -38,10 +38,10 @@ export const tasks = createSlice({
     },
 
     deleteTask: (store, action) => {
-      const decreasedItems = store.items.filter(
+      const decreasedTasks = store.items.filter(
         (item) => item.id !== action.payload
-        );
-        store.items = decreasedItems
+      );
+      store.items = decreasedTasks
     },
     clear: () => {
       return initialState
