@@ -1,9 +1,21 @@
 import React from 'react';
+import { Provider } from 'react-redux'
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import todos from 'reducers/todos'
+import Main from './components/Main'
+import Header from './components/Header'
 
 export const App = () => {
+  const reducer = combineReducers({
+    todos: todos.reducer
+  })
+  const store = configureStore({
+    reducer
+  })
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <Provider store={store}>
+      <Header />
+      <Main />
+    </Provider>
   );
 }
