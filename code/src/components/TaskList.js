@@ -14,9 +14,12 @@ const TaskList = () => {
   const onremoveTask = (id) => {
     dispatch(tasks.actions.removeTask(id));
   }
+  const onaddTask = (id) => {
+    dispatch(tasks.actions.addTask(id));
+  }
 
   return (
-    <section>
+    <section><button type="button" onClick={() => onaddTask()}>+</button>
       {taskList.map((singleTask) => {
         return (
           <article>

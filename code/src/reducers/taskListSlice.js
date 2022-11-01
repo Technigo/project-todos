@@ -33,6 +33,9 @@ const taskListSlice = createSlice({
     },
     removeTask: (store, action) => {
       store.tasksArray = [...store.tasksArray.filter((task) => task.id !== action.payload)];
+    },
+    addTask: (store, action) => {
+      store.tasksArray = [action.payload, ...store.tasksArray];
     }
   }
 });
