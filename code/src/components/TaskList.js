@@ -14,16 +14,13 @@ const TaskList = () => {
   const onremoveTask = (id) => {
     dispatch(tasks.actions.removeTask(id));
   }
-  const onaddTask = (id) => {
-    dispatch(tasks.actions.addTask(id));
-  }
 
   return (
-    <section><button type="button" onClick={() => onaddTask()}>+</button>
+    <section>
       {taskList.map((singleTask) => {
         return (
           <article>
-            <h2>{singleTask.title}</h2>
+            <h2>{singleTask.text}</h2>
             <label>Is this pokemon caught
               <input type="checkbox" checked={singleTask.isCompleted} onChange={() => onisCompletedToggle(singleTask.id)} />
             </label>

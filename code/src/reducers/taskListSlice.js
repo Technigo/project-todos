@@ -10,11 +10,11 @@ const taskListSlice = createSlice({
   initialState: {
     tasksArray: [
       { id: '1',
-        title: 'Sova',
+        text: 'Sova',
         isCompleted: false },
       {
         id: '2',
-        title: 'Bada',
+        text: 'Bada',
         isCompleted: true
       }
     ]
