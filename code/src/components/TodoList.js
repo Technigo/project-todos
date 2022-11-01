@@ -15,7 +15,7 @@ const TodoList = () => {
       {todoList.map((singleToDo) => {
         return (
           <article>
-            <h1>{singleToDo.name}</h1>
+            <h1>{singleToDo.task}</h1>
             <label> completed
               <input
                 type="checkbox"

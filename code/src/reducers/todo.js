@@ -5,13 +5,13 @@ const todo = createSlice({
   initialState: {
     items: [
       { id: '1',
-        name: 'clean the apartment',
+        task: 'clean the apartment',
         completed: false },
       { id: '2',
-        name: 'cook a nice meal',
+        task: 'cook a nice meal',
         completed: true },
       { id: '3',
-        name: 'work out',
+        task: 'work out',
         completed: false }
     ]
   },
@@ -24,6 +24,9 @@ const todo = createSlice({
           item.completed = !item.completed
         }
       })
+    },
+    addItem: (store, action) => {
+      store.items.push(action.payload)
     }
   }
 });

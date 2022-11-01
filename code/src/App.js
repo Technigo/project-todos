@@ -3,6 +3,7 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import todo from 'reducers/todo';
 import TodoList from 'components/TodoList';
+import TodoSubmitForm from 'components/TodoSubmitForm';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -15,6 +16,7 @@ export const App = () => {
 
   return (
     <Provider store={store}>
+      <TodoSubmitForm />
       <TodoList />
     </Provider>
   );
