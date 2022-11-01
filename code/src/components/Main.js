@@ -1,14 +1,16 @@
 import React from 'react';
+import { OuterWrapper, InnerWrapper } from 'styles/GlobalStyles';
 import NewTodo from './NewTodo';
 import ListOfTodos from './ListOfTodos'
 
 const Main = () => {
   return (
-    <section>
-      <h1>Main section</h1>
-      <NewTodo />
-      <ListOfTodos />
-    </section>
+    <OuterWrapper>
+      <InnerWrapper>
+        <NewTodo />
+        <ListOfTodos />
+      </InnerWrapper>
+    </OuterWrapper>
   )
 }
 

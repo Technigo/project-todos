@@ -2,6 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
+import styled from 'styled-components'
 
 const ListOfTodos = () => {
   const toDoList = useSelector((store) => store.todos.items)
@@ -12,20 +13,41 @@ const ListOfTodos = () => {
   }
 
   return (
-    <section>
+    <ToDoListWrapper>
       {toDoList.map((toDo) => {
         return (
-          <article>
-            <h2>{toDo.name}</h2>
-            <label>Finished?
-              <input type="checkbox" checked={toDo.isDone} onChange={() => onIsDoneToggle(toDo.id)} />
-            </label>
-            <button type="button">X</button>
-          </article>
+          <ToDoItem>
+            <input name="to-dos" type="checkbox" checked={toDo.isDone} onChange={() => onIsDoneToggle(toDo.id)} />
+            <label htmlFor="to-dos"> {toDo.name} </label>
+            <RemoveTask type="button">❌</RemoveTask>
+          </ToDoItem>
         );
       })}
-    </section>
+    </ToDoListWrapper>
   )
 }
 
 export default ListOfTodos
+
+const ToDoListWrapper = styled.section`
+    background-color: #f2e2c8;
+    margin-top: 2vh;
+    height: 60vh;
+    border-radius: 10px;
+    box-shadow: 0 0 1px 1px #f2e2c8;
+`
+const ToDoItem = styled.div`
+    margin: 8px;
+    padding: 4px;
+    background-color: rgba(246, 169, 189, 0.29);
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+`
+
+const RemoveTask = styled.button`
+    background-color: transparent;
+    border: none;
+    &:hover {
+        transform: scale(1.3);
+    }
+    `
