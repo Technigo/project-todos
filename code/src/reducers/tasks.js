@@ -10,10 +10,14 @@ export const tasks = createSlice({
       { id: 4, text: 'Create a todo app', complete: false }
     ]
   },
-  reducer: {
+  reducers: {
+    addTask: (store, action) => {
+      const itemInfo = action.payload;
+      store.items.push(itemInfo);
+    },
     toggleTask: (store, action) => {
-      console.log(store);
-      console.log(action);
+      console.log('store:', store);
+      console.log('action:', action);
 
       store.items.forEach((item) => {
         if (item.id === action.payload) {
@@ -23,7 +27,3 @@ export const tasks = createSlice({
     }
   }
 });
-
-// reducers: { }
-
-// addera items?, så initalstate ringar in allt med {} sen items: []?
