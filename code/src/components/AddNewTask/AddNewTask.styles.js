@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import styled from 'styled-components/macro'
 
-export const AddNewTaskForm = styled.form`
+export const AddNewTaskWrapper = styled.div`
 display: flex;
 
 input {

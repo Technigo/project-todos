@@ -2,7 +2,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import todos from 'reducers/todos'
-import { AddNewTaskBtn } from './AddNewTask.styles'
+import { AddNewTaskBtn, AddNewTaskWrapper } from './AddNewTask.styles'
 
 export const AddNewTask = () => {
   const dispatch = useDispatch()
@@ -14,14 +14,14 @@ export const AddNewTask = () => {
   }
 
   return (
-    <>
+    <AddNewTaskWrapper>
       {/* <label hidden htmlFor="newTaskInput" aria-label="new task input" /> */}
       <input
         type="text"
-        placeholder="add todo"
+        placeholder="New todo"
         value={input}
         onChange={(e) => setInput(e.target.value)} />
       <AddNewTaskBtn type="button" onClick={addNewTodo}>&#43;</AddNewTaskBtn>
-    </>
+    </AddNewTaskWrapper>
   )
 }

@@ -19,9 +19,7 @@ export const TodoList = () => {
           return (
             <Todo
               task={task}
-              key={task.id}>
-              {task.text}
-            </Todo>
+              key={task.id} />
           )
         })}
       </form>

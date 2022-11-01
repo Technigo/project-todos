@@ -12,6 +12,10 @@ export const Todo = ({ task }) => {
     dispatch(todos.actions.checkComplete({ taskId }))
   }
 
+  const deleteTask = (taskId) => {
+    dispatch(todos.actions.deletingTask({ taskId }))
+  }
+
   return (
     <StyledCheckbox className={task.complete === true ? 'finished' : 'notFinished'}>
       <input
@@ -24,7 +28,8 @@ export const Todo = ({ task }) => {
         htmlFor={task.text}
         className={task.complete === true ? 'finished' : 'notFinished'}>{task.text}
       </label>
-      <DeleteBtn type="button">&#215;</DeleteBtn>
+      <p>{task.postedTime}</p>
+      <DeleteBtn type="button" onClick={() => deleteTask(`${task.id}`)}>&#215;</DeleteBtn>
     </StyledCheckbox>
   )
 }
