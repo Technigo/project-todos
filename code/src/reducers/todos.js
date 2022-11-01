@@ -13,6 +13,11 @@ const todos = createSlice({
         id: 2,
         name: 'Make dinner',
         isDone: false
+      },
+      {
+        id: 3,
+        name: 'Say hello to Patrick',
+        isDone: false
       }
     ]
   },
@@ -25,6 +30,11 @@ const todos = createSlice({
           item.isDone = !item.isDone
         }
       })
+    },
+    addToDo: (store, action) => {
+      console.log(store)
+      console.log(action)
+      store.items.push(action.payload)
     }
   }
 })
