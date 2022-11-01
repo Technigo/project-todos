@@ -1,9 +1,24 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice } from '@reduxjs/toolkit';
 
-const taskListData = []
-
-export const tasks = createSlice({
+const tasks = createSlice({
   name: 'tasks',
-  initialState: taskListData
+  initialState: {
+    items: []
+  },
+  reducers: {
+    toggleChecked: (store, action) => {
+      console.log(store);
+      console.log(action);
+      store.items.forEach((item) => {
+        if (item.id === action.payload) {
+          item.isChecked = !item.isChecked
+        }
+      })
+    },
+    addTask: (store, action) => {
+      store.items.push(action.payload);
+    }
+  }
+});
 
-})
+export default tasks;

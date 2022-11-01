@@ -1,32 +1,27 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import tasks from 'reducers/tasks';
 import styled from 'styled-components/macro'
 
-const tasks = [
-  {
-    id: 1,
-    action: 'hard coded tasks'
-  },
-  {
-    id: 2,
-    action: 'Create Store'
-  },
-  {
-    id: 3,
-    action: 'Styled Components'
-  }
-]
-
 const TaskList = () => {
+  const taskList = useSelector((store) => store.tasks.items);
+
+  const dispatch = useDispatch();
+
+  const onTaskCheckedToggle = (id) => {
+    dispatch(tasks.actions.toggleChecked(id));
+  }
   return (
     <>
-      {tasks.map((task) => {
+      {taskList.map((task) => {
         return (
           <TaskListContainer>
             <input
               type="checkbox"
-              id={task.id}
-              value={task.action} />
-            <label htmlFor={task.id}>{task.action}</label>
+              checked={task.isChecked}
+              onChange={() => onTaskCheckedToggle(task.id)}
+              id={task.id} />
+            <label htmlFor={task.id}>{task.taskDescription}</label>
           </TaskListContainer>
         )
       })}
@@ -39,3 +34,9 @@ export default TaskList;
 const TaskListContainer = styled.div`
   background-color: grey;
 `
+
+/* {
+        id: '',
+        taskDescription: '',
+        isChecked: false
+      } */
