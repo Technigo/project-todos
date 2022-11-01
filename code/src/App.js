@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import tasks from 'reducers/tasks';
+import tasks from 'reducers/taskListSlice';
 import TaskList from 'components/TaskList';
 
 export const App = () => {
