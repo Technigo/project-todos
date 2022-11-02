@@ -3,7 +3,7 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import { EmptyList } from 'components/EmptyList/EmptyList'
 import { Todo } from 'components/Todo/Todo'
-import { AddNewTask } from 'components/AddNewTask/AddNewTask'
+import { TodoListContainer, TodosListWrapper } from './TodoList.styles'
 
 export const TodoList = () => {
   const myTodos = useSelector((store) => store.todos.tasks)
@@ -12,11 +12,9 @@ export const TodoList = () => {
   console.log('empty?', emptyList)
 
   return (
-    <section>
-      <AddNewTask />
-      <h2>My Todos</h2>
-
-      <form className="todo-list">
+    <TodoListContainer>
+      <TodosListWrapper>
+        <h2>To do</h2>
         {myTodos.map((task) => {
           return (
             <Todo
@@ -24,10 +22,10 @@ export const TodoList = () => {
               key={task.id} />
           )
         })}
-      </form>
+      </TodosListWrapper>
 
       {emptyList && <EmptyList />}
 
-    </section>
+    </TodoListContainer>
   )
 }
