@@ -43,7 +43,10 @@ export const tasks = createSlice({
       );
       store.items = decreasedTasks
     },
-    clear: () => {
+    checkAllTask: () => {
+      store.items.map(item => item.complete = true)
+    },
+    clearTask: () => {
       return initialState
     }
   }
