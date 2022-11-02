@@ -1,23 +1,21 @@
+/* eslint-disable max-len */
 import React from 'react';
 import styled from 'styled-components'
 import { useSelector } from 'react-redux';
+import { format } from 'date-fns';
 
 export const Header = () => {
   const items = useSelector((store) => store.todos.items)
   const completedTasks = items.filter((item) => !item.completed)
 
   // Shows the current date
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-  const date = new Date();
-  const mm = date.getMonth();
-  const month = months[mm];
-  const dd = date.getDate();
-  const specificWeekday = date.toLocaleDateString('en-US', { weekday: 'long' });
+  const now = new Date()
+  const todaysDate = format(now, "EEEE',' dd MMMM'")
 
   return (
     <HeaderWrapper>
       <HeaderText>My to-do list</HeaderText>
-      <DateText>{`${specificWeekday}, ${month} ${dd}`}</DateText>
+      <DateText>{todaysDate}</DateText>
       <Count>You have <CountSpan>{completedTasks.length}</CountSpan> to-do:s</Count>
     </HeaderWrapper>
   )
@@ -35,18 +33,22 @@ const HeaderWrapper = styled.header`
 
 const Count = styled.p`
   color: black;
-  font-size: 20px;
+  font-size: 25px;
+  font-family: 'Patrick Hand', cursive;
 `
 const CountSpan = styled.span`
   font-weight: 700;
-  `
+  color: #e3591e;
+`
 const DateText = styled.p`
-font-size: 26px;
-font-family: 'Handlee', cursive;
+  font-size: 30px;
+  //font-family: 'Handlee', cursive;
+  font-family: 'Patrick Hand', cursive;
+  margin: 0;
 `
 const HeaderText = styled.p`
   font-size: 45px;
-  //margin-top: 25%;
+  margin: 20px 0px 20px 0px;
   font-family: 'Caveat', cursive;
 
   @media (min-width: 668px){ 
@@ -57,3 +59,10 @@ const HeaderText = styled.p`
  
   }
   `
+/* Shows the current date
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+  const date = new Date();
+  const mm = date.getMonth();
+  const month = months[mm];
+  const dd = date.getDate();
+  const specificWeekday = date.toLocaleDateString('en-US', { weekday: 'long' }); */

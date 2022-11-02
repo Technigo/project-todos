@@ -24,8 +24,8 @@ export const NewTodo = () => {
   return (
     <NewTodoWrapper>
       <form>
-        <LabelTodo label htmlFor="new-todo">New to-do </LabelTodo>
-        <input
+        <LabelTodo label htmlFor="new-todo">New to-do: </LabelTodo>
+        <TodoInput
           type="text"
           placeholder="Add to-do"
           value={name}
@@ -47,11 +47,16 @@ const NewTodoWrapper = styled.div`
 `
 const AddButton = styled.button`
   margin-left: 10px;
+  padding: 5px;
 `
 
 const LabelTodo = styled.label`
 margin: 5px;
+font-size: 20px;
+`
 
+const TodoInput = styled.input`
+padding: 5px;
 `
 // const NewTodoText = styled.form`
 // padding-bottom: 10px;`
