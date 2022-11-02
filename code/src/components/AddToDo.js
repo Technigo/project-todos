@@ -23,7 +23,6 @@ export const AddToDo = () => {
 
   return (
     <Form onSubmit={onFormSubmit}>
-      {/* <h2>Add ToDo</h2> */}
       <div>
         <Text
           className="TextArea"
@@ -42,7 +41,7 @@ export const AddToDo = () => {
 }
 const Form = styled.form`
 // border: solid black 2px;
-background-color:#E0DDCD;
+// background-color:#E0DDCD;
 width: 90%;
 margin: 10px 0 10px 0;
 div{
@@ -57,23 +56,35 @@ h2{
 
 button{
 background: none;
+border: none;
 height: 70px;
 margin: 0 10px 0 0 ;
 
 }
+@media (min-width: 668px) {
+  width: 50%;
+}
+@media (min-width: 1024px) {
+  width: 40%;
 `
 const Text = styled.textarea` 
-// border: solid red 2px;
+border: solid red 2px;
   width: 100%;
-  margin: 15px;
-  height: 10px;
+  margin: 10px;
+  height: 15px;
   padding: 10px;
-  // border: solid rgb(108, 106, 106) 2px;
-  // background-color: rgb(235, 232, 232);
-  // box-shadow:  5px 10px #272727;
+  border: solid rgb(108, 106, 106) 2px;
+  background-color: rgb(235, 232, 232);
+  box-shadow:  5px 10px #272727;
+  @media (min-width: 668px) {
+    margin: 15px;
+    height: 20px;
+  }
 `
 const Icon = styled.img`
 width: 30px;
 height: 30px;
+margin 15px 0 0 0;
+// border: solid red 2px;
 // background-color: pink;
 `

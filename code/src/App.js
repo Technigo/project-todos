@@ -44,7 +44,7 @@ export const App = () => {
 }
 
 const Main = styled.div`
-background-color:#E0DDCD;
+// background-color:#E0DDCD;
 align-items: center;
 display: flex;
 flex-direction: column;

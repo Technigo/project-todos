@@ -5,7 +5,9 @@ import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux';
 import ToDo from 'reducers/todo';
 import moment from 'moment';
-import GarbageBin from 'components/Images/icons8-garbage-bin-64.png'
+import GarbageBin from 'components/Images/icons8-garbage-bin-64.png';
+// import Done from 'components/Images/icons8-done-48.png';
+// import ToDoIcon from 'components/Images/icons8-to-do-30.png'
 
 const ToDoList = () => {
   const todoList = useSelector((store) => store.ToDo.items)
@@ -21,6 +23,11 @@ const ToDoList = () => {
       {todoList.map((singleToDo) => {
         return (
           <ToDos>
+            {/* <Icoon
+              className="icon1"
+              src={ToDo}
+              alt="Icon" /> */}
+
             <p>Posted: {moment(date.createdAt).fromNow()}</p>
 
             <Label>
@@ -45,17 +52,37 @@ const ToDoList = () => {
 export default ToDoList
 
 const ToDos = styled.article`
-// border: solid black 2px;
 width: 90%;
 margin: 10px 0 10px 0;
    border: solid rgb(108, 106, 106) 2px;
   background-color: rgb(255, 255, 255);
-  box-shadow:  5px 10px #272727;
+  box-shadow: 2px -1px 5px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 2px -1px 5px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 2px -1px 5px 0px rgba(0,0,0,0.75);
   position: relative;
 p{
   text-align: center;
+  color: grey;
 }
 
+button{
+background: none;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+right: 2%; 
+bottom: 5%;
+position: absolute;
+border: none;
+
+
+}
+@media (min-width: 668px) {
+  width: 50%;
+}
+@media (min-width: 1024px) {
+  width: 40%;
   `
 
 const Label = styled.div`
@@ -63,12 +90,14 @@ const Label = styled.div`
 margin: 0px 10px 0 10px;
 display: flex;
 flex-direction: row;
+align-items: center;
 h2{
   // border: solid black 2px;
   padding: 0 0 0 5px;
 }
 input{
-  // border: solid blue 2px;
+  border: solid blue 2px;
+
 }
 `
 const Icon = styled.img`
@@ -80,6 +109,17 @@ flex-direction: column;
 align-items: center;
 text-align: center;
 right: 2%; 
-bottom: 4%;
+bottom: 5%;
 position: absolute;
 `
+// const Icoon = styled.img`
+// width: 30px;
+// height: 30px;
+// display: flex;
+// flex-direction: column;
+// align-items: center;
+// text-align: center;
+// right: 2%;
+// bottom: 5%;
+// position: absolute;
+// `
