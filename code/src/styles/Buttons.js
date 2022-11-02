@@ -22,6 +22,6 @@ export const AddTaskButton = styled.button`
   width: 25px;
   &:hover {
   font-size: 24px;
-  cursor: crosshair;
+  cursor: pointer;
 }
 `

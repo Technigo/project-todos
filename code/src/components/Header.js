@@ -1,11 +1,13 @@
 import React from 'react';
-import { Section } from 'styles/styledComponents';
+import { HeaderText, HeaderWrapper, HeaderDate } from 'styles/Header';
+import moment from 'moment';
 
 const Header = () => {
   return (
-    <Section>
-      <h1>TO DO</h1>
-    </Section>
+    <HeaderWrapper>
+      <HeaderText>TO DO</HeaderText>
+      <HeaderDate>{moment().format('dddd DD MMMM HH:MM')}</HeaderDate>
+    </HeaderWrapper>
   )
 }
 

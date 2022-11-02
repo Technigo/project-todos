@@ -23,7 +23,7 @@ const TaskList = () => {
         return (
           <Wrapper>
             <CheckBoxWrapper htmlFor={singleTask} id={singleTask}>
-              <span className="checkMark">done</span>
+              <span className="checkMark" />
               <input
                 className="checkBox"
                 type="checkbox"

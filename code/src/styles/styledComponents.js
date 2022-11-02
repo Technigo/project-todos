@@ -1,62 +1,62 @@
 import styled from 'styled-components'
 
-export const Header = styled.header`
-    color: grey;
-`
-
 export const Section = styled.section`
-    width: 100%;
     border: 2px solid yellow;
+    width: 70%;
+    margin-left: 15%;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
+    border-radius: 20px;
 `
 
 export const Wrapper = styled.div`
+    border: 2px solid lime;
     background-color: pink;
-    width: 300px; 
-    border-radius: 20px;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     margin-top: 20px;
 `
-
-export const InputWrapper = styled.div`
-    background-color: pink;
-    width: 300px; 
-    height: 100px;
-    border-radius: 20px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+export const InputWrapper = styled(Wrapper)`
+    background-color: white;
 `
 
+// export const InputWrapper = styled.div`
+//     border: 2px solid lime;
+//     width: 300px;
+//     height: 100px;
+//     border-radius: 20px;
+//     display: flex;
+//     flex-direction: row;
+//     align-items: center;
+//     justify-content: center;
+// `
+
 export const Date = styled.h2`
-border: 2px solid lime;
+text-align: center;
+width: 100px;
 color: white;
-font-size: 16px;
+font-size: 12px;
 `
 
 export const InputForm = styled.input`
   border: none;
   background-color: transparent;
   font-size: 18px;
-  width: 200px; 
-  height: 80px;
+  width: 70%;
+  height: 50px;
   color: #8fc9a3;
   ::placeholder {
-       color: white;
+       color: black;
    }
   &:focus {
-  background-color: hotpink;
-  border-radius: 20px;
-  outline: none;
+  background-color: pink;
+    outline: none;
   ::placeholder {
        font-style: bold;
    }
@@ -68,7 +68,6 @@ border: 2px solid blue;
 display: block;
 position: relative;
 height: 30px;
-width: 100px;
 
 .checkbox {
   position: absolute;
@@ -94,7 +93,6 @@ width: 100px;
 `
 
 export const TaskText = styled.h2`
-border: 2px solid lime;
-color: white;
+color: black;
 font-size: 16px;
 `
