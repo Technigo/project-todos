@@ -1,4 +1,4 @@
-
+import React from "react"
 
 // WHAT I WANT TO DO HERE:
 // Add a counter that displays the number of completed tasks vs remainining (X/Y)
@@ -7,3 +7,11 @@
 // COUNTER
 // TASKFORM
 // TASKLIST
+
+export const Counter = () => {
+    return (
+        <div>
+            <h1>I'm the Counter!</h1>
+        </div>
+    )
+}

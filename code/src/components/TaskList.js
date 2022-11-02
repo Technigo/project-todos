@@ -3,6 +3,11 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 
+// WHAT I WANT TO DO HERE:
+// Render every task in the store
+// Change their state to completed with a checkbox, which should change how they display
+// Allow tasks to be deleted with a button click
+
 // HEADER
 // COUNTER
 // TASKFORM

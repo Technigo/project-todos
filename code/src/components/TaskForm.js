@@ -1,4 +1,4 @@
-
+import React from "react";
 
 // WHAT I WANT TO DO HERE:
 // Add an input field for new tasks
@@ -9,3 +9,11 @@
 // COUNTER
 // TASKFORM
 // TASKLIST
+
+export const TaskForm = () => {
+    return (
+        <div>
+            <h1>I'm the TaskForm!</h1>
+        </div>
+    )
+}

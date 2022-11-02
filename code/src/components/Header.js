@@ -11,6 +11,8 @@ import React from 'react';
 
 export const Header = () => {
     return (
-
+        <div>
+            <h1>I'm the Header!</h1>
+        </div>
     )
 }
