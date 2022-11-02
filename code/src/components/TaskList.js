@@ -3,22 +3,26 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 // import AddTask from './AddTask';
 import styled from 'styled-components'
+import TodoCounter from './TodoCounter'
 import Task from './Task';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.tasksArray);
   return (
-    <TaskListSection>
-      {taskList.map((taskData) => {
-        return (
-          <section className="todo-wrapper">
-            <Task
-              key={taskData.id}
-              taskData={taskData} />
-          </section>
-        );
-      })}
-    </TaskListSection>
+    <>
+      <TaskListSection>
+        {taskList.map((taskData) => {
+          return (
+            <section className="todo-wrapper">
+              <Task
+                key={taskData.id}
+                taskData={taskData} />
+            </section>
+          );
+        })}
+      </TaskListSection>
+      <TodoCounter />
+    </>
   )
 }
 

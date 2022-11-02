@@ -43,15 +43,13 @@ const taskSlice = createSlice({
     },
     removeAllTasks: (store, action) => {
       store.tasksArray = [...store.tasksArray.filter((task) => task.id === action.payload)];
-    // },
+    }
     // setAllTasksDone: (store, action) => {
     //   store.tasksArray.forEach((task) => {
     //     if (task.id === action.payload) {
     //       task.isCompleted = true
     //     }
     //   })
-    }
-
   }
 });
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import tasks from 'reducers/todos/taskSlice';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Footer = () => {
   const taskList = useSelector((store) => store.tasks.tasksArray);
