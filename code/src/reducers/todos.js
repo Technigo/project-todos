@@ -37,7 +37,7 @@ export const todos = createSlice({
       })
     },
     removeItem: (store, action) => {
-      store.items.splice(action.payload);
+      store.items = store.items.filter((item) => item.id !== action.payload);
     }
 
   }

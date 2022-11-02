@@ -29,22 +29,31 @@ const HeaderWrapper = styled.header`
   justify-content: center;
   align-items: center;
   font-size: 15px;
-  margin-top: 0px;
+  // padding: 10px;
   position: relative;
-  height: 15vh;
 `
 
 const Count = styled.p`
   color: black;
-  padding: 2px;
+  font-size: 20px;
 `
 const CountSpan = styled.span`
   font-weight: 700;
   `
-const DateText = styled.div`
-font-size: 16px;
+const DateText = styled.p`
+font-size: 26px;
+font-family: 'Handlee', cursive;
 `
 const HeaderText = styled.p`
-  font-size: 25px;
-  margin-top: 5%;
+  font-size: 45px;
+  //margin-top: 25%;
+  font-family: 'Caveat', cursive;
+
+  @media (min-width: 668px){ 
+   // margin-top: 10%;
+    font-size: 50px;
+  }
+  @media (min-width: 1025px) {
+ 
+  }
   `

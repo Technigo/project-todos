@@ -18,7 +18,7 @@ export const TodoList = () => {
         return (
           <TodoItem>
             <label htmlFor="to-dos"> {singleTodo.name} </label>
-            <label>Completed
+            <label>
               <input
                 name="to-do"
                 id="todos"
@@ -26,7 +26,7 @@ export const TodoList = () => {
                 checked={singleTodo.completed}
                 onChange={() => onCompletedToggle(singleTodo.id)} />
             </label>
-            <RemoveTask type="button">❌</RemoveTask>
+            <RemoveTask onClick={() => dispatch(todos.actions.removeItem(singleTodo.id))} type="button">Remove ❌</RemoveTask>
           </TodoItem>
         );
       })}
@@ -36,18 +36,23 @@ export const TodoList = () => {
 
 const TodoListWrapper = styled.section`
   margin: 30px;
-  background-color: #D3E4CD;
+  background-color: #ECB390;
   border-radius: 10px;
-  margin-top: 5vh;
+  margin-top: 50px;
   height: 60vh;
 `
 
 const TodoItem = styled.div`
   margin: 8px;
-  padding: 8px;
+  padding: 18px;
   background-color: #FEF5ED;
-  display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+ 
+  @media (min-width: 668px){ 
+    justify-content: space-between;
+  }
 `
 
 const RemoveTask = styled.button`
@@ -58,3 +63,6 @@ const RemoveTask = styled.button`
         cursor: pointer;
     }
     `
+
+//  display: grid;
+// grid-template-columns: 1fr 4fr 1fr;

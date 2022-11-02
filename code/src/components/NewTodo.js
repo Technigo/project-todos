@@ -50,7 +50,8 @@ const AddButton = styled.button`
 `
 
 const LabelTodo = styled.label`
-margin-right: 5px;
+margin: 5px;
+
 `
 // const NewTodoText = styled.form`
 // padding-bottom: 10px;`
