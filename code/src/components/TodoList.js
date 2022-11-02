@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import todos from 'reducers/store';
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 const Complete = styled.input`
   -webkit-appearance: none;
@@ -10,7 +10,10 @@ const Complete = styled.input`
   border-radius: 50%;
   border: 2px solid #e4fd81;
   margin-right: 20px;
-  background: ${(props) => (props.checked ? '#e4fd81' : 'white')};
+  background: ${(props) => (props.checked ? 'black' : 'white')};
+  position: absolute;
+  bottom: 10px; 
+  right: 25px;
 `;
 
 const Container = styled.article`
@@ -25,7 +28,6 @@ const Container = styled.article`
 const Todo = styled.div`
  text-decoration:none;
   color:#000;
-  background:#ffc;
   display:flex;
   flex-direction: column; 
   height:13em;
@@ -34,37 +36,56 @@ const Todo = styled.div`
   margin: 2em; 
   box-shadow: 5px 5px 7px rgba(33,33,33,.7);
   position:relative; 
+/*   &:hover{
+    width: 110%; 
+    height: 110%; 
+  } */
 `
 const Heading = styled.h4`
 padding-bottom: 10px;
-padding-top: 10px;  `
+padding-top: 10px;
+font-family: 'Reenie Beanie';
+font-weight: bold; 
+font-size: 25px; `
 
 const TodoText = styled.p`
+font-family:  'montserrat';
+font-size: 2rem; 
 height: 50%; 
 width: 50%;  `
 
 const Posted = styled.p`
 top: 0; 
 opacity: 0.8; 
+font-family: 'montserrat';
 `
 const DueDate = styled.p`
-margin-bottom: 10px; 
+margin-bottom: 10px;
+font-family: 'montserrat'; 
 `
 
-const DeleteBtn = styled.button`
+const DeleteBtn = styled.div`
 width: 50px; 
 height: 15px; 
 position: absolute;
 bottom: 20px; 
-right: 0px;   
+right: -18px;
+  
 `
+
+const BtnContainer = styled.div`
+display: flex; 
+flex-direction: flex-end; `
+
+const TimeStampContainer = styled.div`
+display:inline-block; 
+font-size: 12px;
+position: absolute;
+bottom: 0; 
+left: 10px; `
 
 const TodoList = () => {
   const items = useSelector((store) => store.todos.items);
-  /*   const doneTodos = useSelector((store) => store.todos.items.completed);
-  const delted = useSelector((store) => store.todos.deleteTodo);
-  console.log(delted)
-  console.log(doneTodos) */
   const dispatch = useDispatch();
 
   const onToggleTodoList = (todoId) => {
@@ -75,26 +96,30 @@ const TodoList = () => {
     dispatch(todos.actions.deleteTodo(id));
   }
 
+  const colors = ['lightgreen', 'green', 'blue', 'lightblue', 'purple', 'orange'];
+
   return (
     <Container>
-      {items.map((item, index) => (
+      {items.map((item, i) => (
         <Todo
           key={item.id}
-          className={index === todos.yesterday ? 'correct' : 'late'}>
-
-          <Posted>Posted: {item.postedTime}</Posted>
+          style={{ backgroundColor: colors[i] }}>
           <Heading>Todo</Heading>
           <TodoText>{item.name}</TodoText>
-          <DueDate>Due date: {item.date}</DueDate>
-          <Complete
-            type="checkbox"
-            checked={item.completed}
-            onChange={() => onToggleTodoList(item.id)} />
-          <DeleteBtn
-            type="button"
-            onClick={() => onDeleteTodo(item.id)}> deleted
-          </DeleteBtn>
-
+          <TimeStampContainer>
+            <Posted>Posted: {item.postedTime}</Posted>
+            <DueDate>Due date: {item.date}</DueDate>
+          </TimeStampContainer>
+          <BtnContainer>
+            <Complete
+              type="checkbox"
+              checked={item.completed}
+              onChange={() => onToggleTodoList(item.id)} />
+            <DeleteBtn
+              type="button"
+              onClick={() => onDeleteTodo(item.id)}> ❌
+            </DeleteBtn>
+          </BtnContainer>
         </Todo>
       ))}
     </Container>

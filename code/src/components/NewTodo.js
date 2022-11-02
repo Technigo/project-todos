@@ -8,7 +8,6 @@ import todos from '../reducers/store';
 const Container = styled.div`
 grid-column: 1 / 2; 
 grid-row: 1 / 2; 
-/* border: dashed 3px black;  */
 padding: 2em; 
 
 `
@@ -16,7 +15,8 @@ padding: 2em;
 const TodoForm = styled.form`
 display: grid; 
 grid-template-columns:  1fr 1fr ; 
-justify-content: space-evenly;  `
+gap: 1em; 
+ `
 
 const TodoInput = styled.input`
 width: 150px; 
@@ -24,15 +24,16 @@ height: 80px;
 display: inline-block;
 justify-content: center;
 grid-column: 1 / 1;
-grid-row: 2 / 4;
+position: absolute;  
+left: 200px; 
       `
 
 const RadioBtnConatiner = styled.div`
 display: flex;
 flex-direction: column; 
-margin-left: 15px; 
-/* margin-top: px; */
-padding-left: 6em;  
+justify-content: center; 
+/* padding-left: 6em; 
+margin-left: 4em;  */
   `
 
 const RadioBtn = styled.input`
@@ -45,19 +46,32 @@ margin-top: 10px;
 
 const SubmitBtn = styled.button`
 margin-right: 20px;
-text-align: center;  
+text-align: center; 
+display: inline-block;
+border-radius: 15px;  
+padding: 0.5rem 0; 
+margin: 0.5rem 1rem;
+width: 11rem;
+background-color: #e7b3b3;
+border: 2px solid white;
+
   `
 
 const TextInput = styled.div`
-padding-left: 4em; `
+/* padding-left: 4em; */ 
+/* margin-left: 4em; */ `
 
 const SubmittBtnConatiner = styled.div`
 padding-left: 4em; 
-margin-top:10px; `
+margin-top:10px; 
+margin-left: 4em; `
 
 const HeadingContainer = styled.div`
 display: flex; 
-flex-direction: row; 
+flex-direction: row;
+background-color: #feb062;
+justify-content: center; 
+margin-bottom: 10px;   
  `
 
 const NewTodo = () => {
@@ -131,7 +145,7 @@ const NewTodo = () => {
           </DueDate>
         </RadioBtnConatiner>
         <SubmittBtnConatiner>
-          <SubmitBtn type="submit">Send</SubmitBtn>
+          <SubmitBtn type="submit">New todo</SubmitBtn>
         </SubmittBtnConatiner>
       </TodoForm>
     </Container>

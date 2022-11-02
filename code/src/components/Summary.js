@@ -6,10 +6,8 @@ const Container = styled.div`
 display: flex; 
 flex-direction: column;
 margin-bottom: 15px;
-grid-column: 2 / 3; 
-grid-row: 1 / 2;
-/* border: dashed 3px black; */
-padding: 2em;   `
+padding: 2em;  
+background-color: #feb062`
 
 const Total = styled.span`
 display: inline; 
@@ -33,6 +31,10 @@ flex-direction: row;
 justify-content: center;  
  `
 
+const Header = styled.h1`
+color: #575151;
+`
+
 const Summary = () => {
   const counter = useSelector((store) => store.todos.items);
   const CompletedTodo = counter.filter((item) => item.completed).length;
@@ -40,7 +42,7 @@ const Summary = () => {
   return (
     <Container>
       <HeadingContainer>
-        <h1>PROGRESS</h1>
+        <Header>PROGRESS</Header>
       </HeadingContainer>
       <Span>
         <Completed>{CompletedTodo} Completed </Completed>
