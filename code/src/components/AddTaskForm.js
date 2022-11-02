@@ -26,7 +26,7 @@ export const AddTaskForm = () => {
       name: NewTask,
       isCompleted: false
     }
-    dispatch(tasks.actions.addTask(addNewTask))
+    dispatch(tasks.actions.addItem(addNewTask))
     setNewTask('')
   }
 

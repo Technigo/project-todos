@@ -13,7 +13,7 @@ export const tasks = createSlice({
         }
       })
     },
-    addTask: (store, action) => {
+    addItem: (store, action) => {
       store.items.unshift(action.payload)
       console.log(store.items)
     },
