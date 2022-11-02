@@ -56,24 +56,22 @@ export const MainHeader = styled.h1`
   font-size: 4em;
   font-family: 'Kolker Brush', cursive;
   text-align: center;
-  padding: 2%;
   border-radius: 10px;
   align-self: center;
-  margin: 5% 5%;
 
   @media ${Devices.tablet} {
   font-size: 6em;
-  padding: 2% 0%;
   }
 `
 
 export const MainText = styled.p`
-  text-align: center;
-  font-size: 16px;
-  line-height: 30px;
-  margin-inline-start: 10px;
-  margin-inline-end: 10px;
+  display: block;
+  color: white;
+  font-size: 1em;
   font-family: 'Montserrat', sans-serif;
+  text-align: center;
+  padding: 1% 1%;
+  align-self: center;
 `
 
 export const MainFooter = styled.a`

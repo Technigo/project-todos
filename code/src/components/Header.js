@@ -1,11 +1,12 @@
 import React from 'react';
-import { MainSections, MainHeader } from '../styles/mainStyles';
+import moment from 'moment';
+import { MainSections, MainHeader, MainText } from '../styles/mainStyles';
 
 const Header = () => {
   return (
     <MainSections coloredBackground>
       <MainHeader>My ToDo:s</MainHeader>
-      {/* Time added here */}
+      <MainText>{moment().format('LLLL')}</MainText>
     </MainSections>
   )
 }

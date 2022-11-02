@@ -1,39 +1,45 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import { MainSections, MainText } from '../styles/mainStyles'
+import styled from 'styled-components/macro';
+import { MainSections, MainText } from '../styles/mainStyles';
 
 const List = () => {
-  const [listItem, setListItem] = useState(false);
-
-  const taskList = useSelector((store) => store.tasks.items);
+  const taskList = useSelector((state) => state.tasks.items);
 
   const dispatch = useDispatch();
 
-  const handleQuestion2Change = () => {
+  const onItemToggle = () => {
     dispatch(tasks.actions.toggleItem())
-    setListItem()
+  }
+
+  const onRemoveClick = () => {
+    dispatch(tasks.actions.removeItem())
   }
 
   return (
     <MainSections>
       {taskList.map((singleItem) => {
         return (
-          <article>
-            <MainText>{singleItem.name}</MainText>
+          <ArticleWrapper key={singleItem.id}>
+
             <label htmlFor="tasks">
               <input
-                className="label-box"
-                name={listItem}
                 type="checkbox"
+                name="tasks"
                 id="tasks"
                 value="tasks"
-                checked={singleItem.isCaught}
-                onChange={(event) => handleQuestion2Change(event)} />
-              I am working
+                checked={singleItem.completed}
+                onChange={(event) => onItemToggle(event)} />
             </label>
-            <button type="button">X</button>
-          </article>
+            <ListText>{singleItem.text}</ListText>
+            <ListText>{singleItem.createdAt}
+            </ListText>
+            <RemoveItemBtn
+              type="button"
+              onClick={() => onRemoveClick()}>X
+            </RemoveItemBtn>
+          </ArticleWrapper>
         )
       })}
 
@@ -42,3 +48,25 @@ const List = () => {
 }
 
 export default List;
+
+const RemoveItemBtn = styled.button`
+  background-color: #FB84A1;
+  border: solid 1px black;
+  border-radius: 4px;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+  width: 20px;
+  height: 20px;
+`
+
+const ArticleWrapper = styled.article`
+  border: solid 2px red;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+`
+
+const ListText = styled(MainText)`
+  color: black;
+`

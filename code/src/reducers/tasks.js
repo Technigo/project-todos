@@ -14,10 +14,10 @@ const tasks = createSlice({
       })
     },
     addItem: (store, action) => {
-      store.item.push(action.payload);
+      store.items.push(action.payload);
     },
     removeItem: (store, action) => {
-      store.item.splice(action.payload);
+      store.items.splice(action.payload);
     }
   }
 });
