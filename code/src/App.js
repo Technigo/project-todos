@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { combineReducers, createStore } from '@reduxjs/toolkit';
 import ToDo from 'reducers/todo'
 import ToDoList from 'components/ToDoList';
 import { AddToDo } from 'components/AddToDo';
@@ -14,9 +14,24 @@ export const App = () => {
 
   })
 
-  const store = configureStore({
-    reducer
+  // const store = configureStore({
+  //   reducer
+  // })
+
+  // Added below so it doesn't remove all the task when reloading the page
+  const persistedStateJSON = localStorage.getItem('todosReduxState')
+  let persistedState = {}
+
+  if (persistedStateJSON) {
+    persistedState = JSON.parse(persistedStateJSON)
+  }
+
+  const store = createStore(reducer, persistedState)
+
+  store.subscribe(() => {
+    localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))
   })
+
   return (
     <Provider store={store}>
       <Header />
