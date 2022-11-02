@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components/macro';
 import { Wrapper, Actionbtn } from 'styles/GlobalStyles';
 import { tasks } from 'reducers/tasks';
-import plusSmall from 'assets/plus_50.png';
+import plusSign from 'assets/plusGreen.png';
 
 export const AddTasks = () => {
   const [newTask, setNewTask] = useState(false);
@@ -11,9 +11,16 @@ export const AddTasks = () => {
 
   const dispatch = useDispatch();
 
+  // Prevent form from refreshing whole page when submitted
+  const onFormSubmit = (event) => {
+    event.preventDefault()
+  };
+
   // Function for adding task to the store
   const sendTaskToStore = (item) => {
-    dispatch(tasks.actions.addToDo(item))
+    if (item.length > 0) {
+      dispatch(tasks.actions.addToDo(item))
+    }
     setMessage('')
   };
 
@@ -27,29 +34,28 @@ export const AddTasks = () => {
     // When the plus sign is clicked, display a text input field for new task
     <AddTaskWrapper>
       {!newTask && (
-        <button
+        <AddBtn
           type="button"
           onClick={() => setNewTask(true)}>
-          <AddImage src={plusSmall} alt="" />
-        </button>
+          <img src={plusSign} alt="" />
+        </AddBtn>
       )}
       {newTask && (
         <InputWrapper>
           <Closebtn
             type="button"
             onClick={() => setNewTask(false)}>
-            X
+            <Cross>X</Cross>
           </Closebtn>
-          <form>
+          <form onSubmit={onFormSubmit}>
             <EnterToDo
               type="text"
-              required
               onChange={handleChange}
               value={message} />
             <Actionbtn
               align="flex-start"
               color="#1F9D6E"
-              type="button"
+              type="submit"
               onClick={() => sendTaskToStore(message)}>
             Add task
             </Actionbtn>
@@ -80,6 +86,12 @@ const InputWrapper = styled(AddTaskWrapper)`
   padding: 5rem 1.5rem;
 `
 
+const AddBtn = styled.button`
+ border: transparent;
+ background-color: transparent;
+ cursor: pointer;
+`
+
 const Closebtn = styled.button`
   align-self: flex-end;
   border: transparent;
@@ -90,10 +102,10 @@ const Closebtn = styled.button`
   color: gray;
 `
 
-const AddImage = styled.img`
-  background-color: transparent; 
-  border: transparent;
-  cursor: pointer;
+const Cross = styled.span`
+  color: gray;
+  font-weight: bold;
+  font-size: 20px;
 `
 
 const EnterToDo = styled.input`

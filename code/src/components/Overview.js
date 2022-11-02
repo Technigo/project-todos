@@ -40,14 +40,14 @@ export const Overview = () => {
         </FlexItem>
         <FlexItem>
           <Actionbtn
-            // align="flex-end"
+            align="flex-end"
             color="#1F9D6E"
             type="button"
             onClick={() => completeAll()}>
         Complete all
           </Actionbtn>
           <Actionbtn
-            // align="flex-start"
+            align="flex-end"
             color="purple"
             type="button"
             onClick={() => deleteAll()}>
@@ -63,11 +63,16 @@ export const Overview = () => {
 const OverviewWrapper = styled(Wrapper)`
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  //justify-content: space-between;
   //flex-direction: column;
-  //flex-wrap: wrap;
+  // flex-wrap: wrap;
+  //border: 2px solid blue;
 `
 
 const FlexItem = styled.div`
   width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  //border: 2px solid blue;
 `
