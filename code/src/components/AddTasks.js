@@ -17,6 +17,7 @@ export const AddTasks = () => {
     setMessage('')
   };
 
+  // Function for storing user's text
   const handleChange = (event) => {
     setMessage(event.target.value);
   };
@@ -61,12 +62,12 @@ export const AddTasks = () => {
 
 // STYLING FOR ABOVE COMPONENT
 const AddTaskWrapper = styled(Wrapper)`
-  min-height: 15vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
+  margin: 2rem 0;
 `
 
 const InputWrapper = styled(AddTaskWrapper)`
@@ -81,11 +82,17 @@ const InputWrapper = styled(AddTaskWrapper)`
 
 const Closebtn = styled.button`
   align-self: flex-end;
+  border: transparent;
+  background-color: transparent;
+  position: absolute;
+  right: 3%;
+  top: 5%;
+  color: gray;
 `
 
 const AddImage = styled.img`
   background-color: transparent; 
-  border: white;
+  border: transparent;
   cursor: pointer;
 `
 
@@ -102,6 +109,4 @@ const EnterToDo = styled.input`
   width: 85%;
   padding: 1.2rem;
 `
-
-// PLus image: background-color: transparent; border: transparent;
 // <a target="_blank" href="https://icons8.com/icon/8J4QMUHe5rvn/plus">Plus</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

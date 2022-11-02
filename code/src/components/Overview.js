@@ -32,30 +32,42 @@ export const Overview = () => {
   }
 
   return (
-    <OverviewWrapper>
-      <h3>Your tasks</h3>
-      <p>{toBeDone} / {allTasks.length} to be completed</p>
-      <Actionbtn
-        align="flex-end"
-        color="#1F9D6E"
-        type="button"
-        onClick={() => completeAll()}>
+    allTasks.length > 0 && (
+      <OverviewWrapper>
+        <FlexItem>
+          <h3>Your tasks</h3>
+          <p>{toBeDone} / {allTasks.length} to be completed</p>
+        </FlexItem>
+        <FlexItem>
+          <Actionbtn
+            // align="flex-end"
+            color="#1F9D6E"
+            type="button"
+            onClick={() => completeAll()}>
         Complete all
-      </Actionbtn>
-      <Actionbtn
-        align="flex-end"
-        color="purple"
-        type="button"
-        onClick={() => deleteAll()}>
+          </Actionbtn>
+          <Actionbtn
+            // align="flex-start"
+            color="purple"
+            type="button"
+            onClick={() => deleteAll()}>
         Remove all
-      </Actionbtn>
-    </OverviewWrapper>
+          </Actionbtn>
+        </FlexItem>
+      </OverviewWrapper>
+    )
   )
 }
 
 // STYLING FOR ABOVE COMPONENT
 const OverviewWrapper = styled(Wrapper)`
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  //flex-direction: column;
+  //flex-wrap: wrap;
+`
+
+const FlexItem = styled.div`
+  width: 50%;
 `
