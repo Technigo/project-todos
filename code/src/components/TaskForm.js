@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import { AddTaskButton } from 'styles/Buttons';
-import { Section, Wrapper } from '../styles/styledComponents';
+import { Section, InputWrapper, InputForm } from '../styles/styledComponents';
 
 const TaskForm = () => {
   const [newToDo, setNewToDo] = useState('')
@@ -16,17 +16,18 @@ const TaskForm = () => {
 
   return (
     <Section>
-      <Wrapper>
-        <input
-          type="text"
+      <InputWrapper>
+        <InputForm
+          type="input"
           placeholder="Add tasks here..."
           onChange={(event) => setNewToDo(event.target.value)}
-          value={newToDo} />
+          value={newToDo}
+          required />
         <AddTaskButton
           type="submit"
-          onClick={addTask}>Add task
+          onClick={addTask}>➕
         </AddTaskButton>
-      </Wrapper>
+      </InputWrapper>
     </Section>
   )
 }

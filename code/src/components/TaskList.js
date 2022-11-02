@@ -1,18 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import { DeleteButton } from 'styles/Buttons';
+import { DeleteButton, Icon } from 'styles/Buttons';
+import Trash from '../icons/trash.svg'
 import { Section, Wrapper, TaskInput } from '../styles/styledComponents';
 
 const TaskList = () => {
-  const [deleteToDo, setDeleteToDo] = useState('')
   const taskList = useSelector((store) => store.tasks.items);
   const dispatch = useDispatch();
 
-  const deleteTask = (e) => {
-    e.preventDefault();
-    dispatch(tasks.actions.deleteTodo(deleteToDo));
-    setDeleteToDo('');
+  const deleteToDo = (id) => {
+    dispatch(tasks.actions.deleteToDo(id));
   };
 
   // payload
@@ -30,7 +28,7 @@ const TaskList = () => {
                 checked={singleTask.complete}
                 onChange={() => onCompleteToggle(singleTask.id)} />
               <TaskInput>{singleTask.text}</TaskInput>
-              <DeleteButton type="button" onClick={deleteTask}>delete</DeleteButton>
+              <DeleteButton type="button" onClick={() => deleteToDo(singleTask.id)}><Icon src={Trash} alt="Delete" /></DeleteButton>
             </Wrapper>
           </article>
         );

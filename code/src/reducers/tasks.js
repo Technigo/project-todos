@@ -6,7 +6,7 @@ const tasks = createSlice({
     items: [
       { id: 5, text: 'Milk', complete: false },
       { id: 2, text: 'Bread', complete: false },
-      { id: 9, text: 'Apple', complete: true }
+      { id: 9, text: 'Apple', complete: false }
     ]
   },
 
@@ -25,7 +25,6 @@ const tasks = createSlice({
     deleteTodo: (store, action) => {
       const itemsId = action.payload;
       const filteredList = store.items.filter((item) => item.id !== itemsId);
-
       store.books = filteredList;
     },
 
