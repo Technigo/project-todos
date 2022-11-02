@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import todos from 'reducers/todos'
+import { todos } from 'reducers/todos'
 import { AddNewTaskBtn, AddNewTaskWrapper } from './AddNewTask.styles'
 
 export const AddNewTask = () => {

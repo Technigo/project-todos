@@ -7,7 +7,9 @@ import { AddNewTask } from 'components/AddNewTask/AddNewTask'
 
 export const TodoList = () => {
   const myTodos = useSelector((store) => store.todos.tasks)
+  console.log('mytodos', myTodos)
   const emptyList = useSelector((store) => store.todos.isEmpty)
+  console.log('empty?', emptyList)
 
   return (
     <section>

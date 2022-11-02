@@ -2,7 +2,7 @@
 import { DeleteBtn } from 'Globalstyles'
 import React from 'react'
 import { useDispatch } from 'react-redux'
-import todos from 'reducers/todos'
+import { todos } from 'reducers/todos'
 import { StyledCheckbox } from './Todo.styles'
 
 export const Todo = ({ task }) => {
