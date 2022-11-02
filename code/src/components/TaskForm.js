@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import { AddTaskButton } from 'styles/Buttons';
+import { Button, Icon } from 'styles/Buttons';
+import Plus from '../icons/plus.svg'
 import { Section, InputWrapper, InputForm } from '../styles/styledComponents';
 
 const TaskForm = () => {
@@ -23,11 +24,12 @@ const TaskForm = () => {
           onChange={(event) => setNewToDo(event.target.value)}
           value={newToDo}
           required />
-        <AddTaskButton
+        <Button
           type="submit"
           onClick={addTask}
-          disabled={newToDo.length === 0}>➕
-        </AddTaskButton>
+          disabled={newToDo.length === 0}>
+          <Icon src={Plus} alt="Add new task" />
+        </Button>
       </InputWrapper>
     </Section>
   )

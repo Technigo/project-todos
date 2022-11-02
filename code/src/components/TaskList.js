@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import { DeleteButton, Icon } from 'styles/Buttons';
+import { Button, Icon } from 'styles/Buttons';
 import Trash from '../icons/trash.svg'
 import { Section, Wrapper, TaskText, Date, CheckBoxWrapper } from '../styles/styledComponents';
 
@@ -32,7 +32,7 @@ const TaskList = () => {
             </CheckBoxWrapper>
             <TaskText>{singleTask.text}</TaskText>
             <Date>{singleTask.time}</Date>
-            <DeleteButton type="button" onClick={() => deleteToDo(singleTask.id)}><Icon src={Trash} alt="Delete" /></DeleteButton>
+            <Button type="button" onClick={() => deleteToDo(singleTask.id)}><Icon src={Trash} alt="Delete" /></Button>
           </Wrapper>
         );
       })}

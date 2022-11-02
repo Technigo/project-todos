@@ -1,8 +1,7 @@
 import styled from 'styled-components'
 
 export const Section = styled.section`
-    border: 2px solid yellow;
-    width: 70%;
+    width: 90%;
     margin-left: 15%;
     padding-bottom: 20px;
     display: flex;
@@ -10,56 +9,44 @@ export const Section = styled.section`
     align-items: center;
     justify-content: center;
     border-radius: 20px;
+    @media (min-width: 800px) {
+        width: 70%;
+        }
 `
 
 export const Wrapper = styled.div`
-    border: 2px solid lime;
     background-color: pink;
-    width: 90%;
+    width: 100%;
+    height: 50px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 10px;
 `
 export const InputWrapper = styled(Wrapper)`
     background-color: white;
-`
-
-// export const InputWrapper = styled.div`
-//     border: 2px solid lime;
-//     width: 300px;
-//     height: 100px;
-//     border-radius: 20px;
-//     display: flex;
-//     flex-direction: row;
-//     align-items: center;
-//     justify-content: center;
-// `
-
-export const Date = styled.h2`
-text-align: center;
-width: 100px;
-color: white;
-font-size: 12px;
+    margin-bottom: -15px;
 `
 
 export const InputForm = styled.input`
   border: none;
+  border-bottom: 2px solid lightgrey;
   background-color: transparent;
-  font-size: 18px;
-  width: 70%;
+  width: 100%;
   height: 50px;
-  color: #8fc9a3;
+  color: black;
+  font-size: 16px;
   ::placeholder {
        color: black;
+       font-family: 'Nunito Sans', sans-serif;
    }
   &:focus {
-  background-color: pink;
+    background-color: pink;
+    border-bottom: transparent;
     outline: none;
-  ::placeholder {
-       font-style: bold;
-   }
+    color: black;
+    padding-left: 45px;
+    font-weight: 600;
 }
 `
 export const CheckBoxWrapper = styled.label`
@@ -95,4 +82,28 @@ height: 30px;
 export const TaskText = styled.h2`
 color: black;
 font-size: 16px;
+font-family: 'Nunito Sans', sans-serif;
+padding-left: 20px;
+font-weight: 600;
+`
+
+export const Date = styled.h2`
+position: absolute;
+margin-left: 68%;
+text-align: left;
+width: 48px;
+color: black;
+font-size: 14px;
+font-family: 'Nunito Sans', sans-serif;
+&:hover {
+  color: black;
+  transform: scale(1.2);
+}
+@media (min-width: 600px) {
+  margin-left: 75%;
+}
+@media (min-width: 800px) {
+  margin-left: 55%;
+  width: 100px;
+}
 `
