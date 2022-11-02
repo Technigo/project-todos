@@ -10,8 +10,6 @@ export const tasks = createSlice({
   },
   reducers: {
     toggleItem: (store, action) => {
-      console.log(store);
-      console.log(action);
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.complete = !item.complete;
@@ -21,6 +19,13 @@ export const tasks = createSlice({
 
     addTask: (store, action) => {
       store.items.push(action.payload);
+    },
+
+    deleteTask: (store, action) => {
+      const filteredTasks = store.items.filter(
+        (item) => item.id !== action.payload
+      );
+      store.items = filteredTasks;
     }
   }
 });

@@ -3,15 +3,18 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
+import { v4 as uuid } from 'uuid';
 
 const NewTask = () => {
   const [input, setInput] = useState('');
   const dispatch = useDispatch();
+  uuid();
 
   const onFormSubmit = (event) => {
     event.preventDefault();
 
     const newTask = {
+      id: uuid(),
       text: input,
       isComplete: false
     };
@@ -30,6 +33,7 @@ const NewTask = () => {
           value={input}
           placeholder="enter new task"
           onChange={(event) => setInput(event.target.value)}
+          required
         />
       </label>
       <button type="submit"> Add </button>

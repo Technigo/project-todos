@@ -1,13 +1,66 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.title {
+  display: flex;
+  font-family: 'Amatic SC', cursive;
+  font-size: 5rem;
+  flex-direction: column;
+  align-items: center;
+}
+
+.date {
+  border: 2px solid #bcb7b7;
+  padding: 5px;
+  border-radius: 12px;
+}
+
+span {
+  font-family: 'Amatic SC', cursive;
+  font-size: 1.5rem;
+}
+
+.tasklist {
+  border: 2px solid #cdcaca;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+article {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: dotted #cbcaca;
+  justify-content: space-between;
+}
+
+.check-task {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+}
+
+.delete {
+  background-color: #db6565;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-size: 1.5rem;
+  /* padding: 5px 1px 2px 1px; */
+}
+
+h2 {
+  font-family: 'Amatic SC', cursive;
 }

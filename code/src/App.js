@@ -3,7 +3,8 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { tasks } from 'reducers/tasks';
 import TaskList from 'components/tasklist';
-import NewTask from 'components/newTask';
+
+import { Container, Wrapper } from 'styledComponents/Container';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -16,8 +17,11 @@ export const App = () => {
 
   return (
     <Provider store={store}>
-      <NewTask />
-      <TaskList />
+      <Wrapper>
+        <Container>
+          <TaskList />
+        </Container>
+      </Wrapper>
     </Provider>
   );
 };
