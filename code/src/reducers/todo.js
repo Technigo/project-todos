@@ -1,10 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
+import uniqid from 'uniqid';
 
 const todo = createSlice({
   name: 'todo',
   initialState: {
     items: [
-      { id: 1,
+      { id: uniqid(),
         task: 'Clean the kitchen',
         isCompleted: false }
     ]
