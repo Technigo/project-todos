@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
 import tasks from 'reducers/tasks';
 
 const TaskList = () => {
@@ -7,7 +8,7 @@ const TaskList = () => {
 
   const dispatch = useDispatch();
 
-  const onisCompleteToggle = (id) => {
+  const onIsCompleteToggle = (id) => {
     dispatch(tasks.actions.toggleItem(id));
   }
 
@@ -17,13 +18,13 @@ const TaskList = () => {
         return (
           <article>
 
-            <h2>{singleTask.name}</h2>
+            <h2>{singleTask.text}</h2>
 
             <input
               type="checkbox"
               checked={singleTask
                 .isComplete}
-              onChange={() => onisCompleteToggle(singleTask.id)} />
+              onChange={() => onIsCompleteToggle(singleTask.id)} />
 
             <button type="button">X</button>
 
