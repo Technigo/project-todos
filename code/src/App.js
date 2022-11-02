@@ -4,7 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { tasks } from 'reducers/tasks';
 import { Header } from 'components/Header';
 import { Counter } from 'components/Counter';
-import { TaskForm } from 'components/TaskForm';
+import { AddTaskForm } from 'components/AddTaskForm';
 import { TaskList } from 'components/TaskList';
 
 export const App = () => {
@@ -20,7 +20,7 @@ export const App = () => {
     <Provider store={store}>
       <Header />
       <Counter />
-      <TaskForm />
+      <AddTaskForm />
       <TaskList />
     </Provider>
   );

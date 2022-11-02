@@ -17,13 +17,15 @@ export const tasks = createSlice({
   },
   reducers: {
     toggleItem: (store, action) => {
-      console.log(store);
-      console.log(action);
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.isCompleted = !item.isCompleted
         }
       })
+    },
+    addTask: (store, action) => {
+      store.items.unshift(action.payload)
+      console.log(store.items)
     }
   }
 });

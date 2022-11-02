@@ -7,6 +7,7 @@ import { tasks } from 'reducers/tasks';
 // Render every task in the store
 // Change their state to completed with a checkbox, which should change how they display
 // Allow tasks to be deleted with a button click
+// Render an 'All done!' image if the list is empty
 
 // HEADER
 // COUNTER

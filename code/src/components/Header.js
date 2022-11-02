@@ -10,9 +10,9 @@ import React from 'react';
 // TASKLIST
 
 export const Header = () => {
-    return (
-        <div>
-            <h1>I'm the Header!</h1>
-        </div>
-    )
+  return (
+    <div>
+      <h1>I am the Header!</h1>
+    </div>
+  )
 }
