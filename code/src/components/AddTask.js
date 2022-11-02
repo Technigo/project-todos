@@ -81,6 +81,7 @@ margin-bottom: 15px;
 border-radius: 205px;
 border: none;
 outline: none;
+text-align: center;
 font-family: 'Roboto', sans-serif;
 cursor: pointer;
 `;

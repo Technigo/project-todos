@@ -86,6 +86,7 @@ export const ButtonStyle = styled.button`
   outline: none;
   cursor: pointer;
   font-family: 'Roboto', sans-serif;
+  text-align: center;
 
   @media (min-width: 667px) {
     
