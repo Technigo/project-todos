@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { Header } from 'components/Header';
 // import pokemons from 'reducers/pokemon';
 // import PokemonList from 'components/PokemonList';
 
@@ -19,6 +20,7 @@ export const App = () => {
   });
   return (
     <Provider store={store}>
+      <Header />
       <AddTask />
       <TodoList />
     </Provider>

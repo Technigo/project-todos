@@ -21,6 +21,12 @@ const todo = createSlice({
     },
     addItem: (store, action) => {
       store.items.push(action.payload)
+    },
+    deleteTodo: (store, action) => {
+      const decreasedItems = store.items.filter(
+        (item) => item.id !== action.payload
+      )
+      store.items = decreasedItems
     }
   }
 });

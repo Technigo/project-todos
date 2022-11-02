@@ -19,11 +19,11 @@ const AddTask = () => {
 
   return (
     <div>
+      <button type="button">&#9547;</button>
       <form onSubmit={handleSubmit}>
         <input type="text" value={newTask} onChange={(e) => setNewTask(e.target.value)} />
         <button type="submit">Add new task</button>
       </form>
-      <button type="button">&#9547;</button>
     </div>
   )
 }
