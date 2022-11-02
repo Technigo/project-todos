@@ -27,18 +27,19 @@ const ToDoList = () => {
       <EmptyText>Empty Board!</EmptyText>
     </EmptyBoard>}
       {items.map((item) => (
-        <>
-          <BoardTasks key={item.id}>
-            <input
+        <BoardTasks key={item.id}>
+          <CheckboxDiv>
+            <BoardCheckbox
               type="checkbox"
               checked={item.complete}
               onChange={() => onToggleTask(item.id)} />
-          </BoardTasks><div>{item.text}</div>
-          <div>
-            <span>{moment(item.createdAt).fromNow()}</span>
-            <button onClick={() => onDeleteTask(item.id)}>Clear!</button>
-          </div>
-        </>
+          </CheckboxDiv>
+          <BoardText>{item.text}</BoardText>
+          <BoardTime>
+            <BoardTimeSpan>{moment(item.createdAt).format('h:mma')}</BoardTimeSpan>
+            <BoardClearButton onClick={() => onDeleteTask(item.id)}>Clear!</BoardClearButton>
+          </BoardTime>
+        </BoardTasks>
       ))}
     </section>
   )
@@ -57,14 +58,73 @@ const BoardTasks = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 1px solid lightblue;
-  &:nth-child(odd) {
-      background: rgba(250,235,215,0.85);
-  }
+  border-top: 1px solid lightblue; 
+    &:nth-child(odd) {
+        background: #FDF9F9;
+      }
+    &:last-child {
+        border-radius: 0 0 20px 20px;
+        background: #FDF9F9;
+        margin-top: 15px;
+      
+    }
+`
 
-  &:last-child {
-    border-radius: 0 0 20px 20px;
+const BoardCheckbox = styled.input`
+  width: 30px;
+  height: 30px;
+  margin: 10px 10px 10px 20px;
+  filter: grayscale(60%) sepia(10%) brightness(180%);
+  @media (max-width: 450px) {
+    width: 20px;
+    height: 20px;
+    margin: 3px 3px 3px 10px;
   }
 `
 
+const CheckboxDiv = styled.div`
+  padding-right: 10px;
+  border-right: 1px solid #F1C8D5;
+  @media (max-width: 450px) {
+    padding-right: 5px;
+  }
+`
+
+const BoardText = styled.div`
+  padding: 10px;
+  max-width: 300px;
+  @media (max-width: 450px) {
+    font-size: 0.8rem;
+  }
+`
+
+const BoardTime = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+`
+
+const BoardTimeSpan = styled.span`
+  color: grey;
+  font-size: 0.8rem;
+  @media (max-width: 450px) {
+    font-size: 0.6rem;
+  }
+`
+
+const BoardClearButton = styled.button`
+  padding: 10px 15px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #F1C8D5;
+  font-weight: 600;
+  @media (max-width: 450px) {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+  }
+  &:hover{
+    transform: scale(1.05)
+  }
+`
 export default ToDoList;
