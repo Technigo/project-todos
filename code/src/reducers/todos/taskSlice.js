@@ -5,18 +5,22 @@ import { createSlice } from '@reduxjs/toolkit';
 //   tasksArray: []
 // };
 
-const taskListSlice = createSlice({
+const taskSlice = createSlice({
   name: 'tasks',
   initialState: {
     tasksArray: [
-      { id: '1',
+      { id: 0,
         text: 'Sova',
-        isCompleted: false },
-      {
-        id: '2',
+        isCompleted: false,
+        color: 'purple' },
+      { id: 1,
         text: 'Bada',
-        isCompleted: true
-      }
+        isCompleted: false,
+        color: 'blue' },
+
+      { id: 2,
+        text: 'Äta',
+        isCompleted: true }
     ]
   },
   reducers: {
@@ -40,4 +44,4 @@ const taskListSlice = createSlice({
   }
 });
 
-export default taskListSlice;
+export default taskSlice;

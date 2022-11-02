@@ -1,29 +1,33 @@
 import React, { useState } from 'react';
-import tasks from 'reducers/taskListSlice';
-import { useDispatch, useSelector } from 'react-redux';
+import taskReducer from 'reducers/todos/taskSlice';
+import { useDispatch } from 'react-redux';
 import uniqid from 'uniqid'; // https://www.npmjs.com/package/uniqid
 import styled from 'styled-components';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
-  console.log('inputValue', inputValue)
-  const taskList = useSelector((store) => store.tasks.tasksArray);
-  console.log('taskList', taskList)
+  // console.log('inputValue', inputValue)
+  // const taskList = useSelector((store) => store.tasks.tasksArray);
+  // console.log('taskList', taskList)
   const dispatch = useDispatch();
-  const onaddTask = () => {
-    dispatch(tasks.actions.addTask({
+
+  const onAddTask = (e) => {
+    e.preventDefault();
+
+    dispatch(taskReducer.actions.addTask({
       id: uniqid(),
       text: inputValue,
       isCompleted: false
-    }))
+    }));
+    setInputValue('');
   }
   return (
     <div>
-      <Form onSubmit={onaddTask}>
+      <Form onSubmit={onAddTask}>
         <Button type="submit" />
         <Input
-          type="text"
           id="new task"
+          type="text"
           name="new task"
           value={inputValue}
           required
@@ -32,6 +36,7 @@ const AddTask = () => {
     </div>
   )
 };
+
 export default AddTask;
 
 const Form = styled.form`

@@ -1,14 +1,17 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import tasks from 'reducers/taskListSlice';
+import taskReducer from 'reducers/todos/taskSlice';
+import filtersReducer from 'reducers/filters/filterSlice';
+import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
 import Header from 'components/Header';
-import AddTask from 'components/AddTask';
+import Footer from 'components/Footer';
 
 export const App = () => {
   const reducer = combineReducers({
-    tasks: tasks.reducer
+    tasks: taskReducer.reducer,
+    filters: filtersReducer
   });
 
   const store = configureStore({
@@ -16,9 +19,12 @@ export const App = () => {
   });
   return (
     <Provider store={store}>
-      <Header />
-      <AddTask />
-      <TaskList />
+      <main>
+        <Header />
+        <AddTask />
+        <TaskList />
+        <Footer />
+      </main>
     </Provider>
   );
-}
+};
