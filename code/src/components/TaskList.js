@@ -23,8 +23,8 @@ const TaskList = () => {
             <p>Done with all your tasks! Youre a workaholic.</p>
           </PlaceholderWrapper>
         )}
-        <p>YOU HAVE COMPLETED:  {completedTasks.length} / {tasksArray.length} </p>
       </TaskListInnerWrapper>
+      <p>YOU HAVE COMPLETED:  {completedTasks.length} / {tasksArray.length} </p>
     </TaskListOuterWrapper>
   )
 }
@@ -34,15 +34,24 @@ background-color: #F69101;
 display: flex;
 align-items: center;
 justify-content: center;
+flex-direction: column;
+font-size: 14px;
 `;
 
 export const TaskListInnerWrapper = styled.div`
-width: 50%;
+width: 60%;
 background-color: white;
-padding: 20px
+padding: 20px;
+border-radius: 20px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
 `;
 
 export const PlaceholderWrapper = styled.div`
+display: flex;
+flex-direction: column;
+align-items: center;
 `;
 
 export default TaskList;

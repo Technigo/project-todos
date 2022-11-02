@@ -23,15 +23,25 @@ export const Task = ({ task }) => {
   }
   return (
     <TaskOuterWrapper>
-      <TaskText htmlFor={task.id}>{task.text}</TaskText>
-      <Checkbutton src={Icon} height="30px" onClick={() => handleCheckboxChange({ task })} />
-      <Checkbox id={task.id} type="checkbox" onChange={() => handleCheckboxChange({ task })} />
-      <RemoveButton src={Icon} height="30px" onClick={() => handleRemoveTask({ task })} />
+      <TaskTextWrapper>
+        <TaskText htmlFor={task.id}>{task.text}</TaskText>
+      </TaskTextWrapper>
+      <ButtonsWrapper>
+        <Checkbutton src={Icon} height="30px" onClick={() => handleCheckboxChange({ task })} />
+        <Checkbox id={task.id} type="checkbox" onChange={() => handleCheckboxChange({ task })} />
+        <RemoveButton src={Icon} height="30px" onClick={() => handleRemoveTask({ task })} />
+      </ButtonsWrapper>
     </TaskOuterWrapper>
   )
 }
 
 export const TaskOuterWrapper = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+`;
+
+export const TaskTextWrapper = styled.div`
 `;
 
 export const Checkbox = styled.input`
@@ -39,8 +49,10 @@ export const Checkbox = styled.input`
 
 export const TaskText = styled.label`
 `;
-
+export const ButtonsWrapper = styled.div`
+`;
 export const RemoveButton = styled.img`
 `;
 export const Checkbutton = styled.img`
 `;
+

@@ -24,13 +24,10 @@ export const Footer = () => {
   )
 };
 
-export const FooterOuterWrapper = styled.footer`
-background-color: #F69101;
-border-bottom-left-radius: 25%;
+export const FooterOuterWrapper = styled.div`
 `;
 
 export const FooterInnerWrapper = styled.div`
-display: flex;
 `;
 
 export const ButtonStyle = styled.button`

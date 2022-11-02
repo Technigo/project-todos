@@ -48,9 +48,11 @@ export const AddTask = () => {
 }
 
 export const FormOuterWrapper = styled.div`
+
 `;
 
 export const FormInnerWrapper = styled.form`
+
 `;
 
 export const InputField = styled.input`

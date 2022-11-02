@@ -2,7 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [
-    { id: 1, text: 'Click REMOVE ALL - button to create your own tasklist', isComplete: false },
+    { id: 1, text: 'Do something fun', isComplete: false },
     { id: 2, text: 'Have a cup of tea', isComplete: false },
     { id: 3, text: 'Call a friend', isComplete: false },
     { id: 4, text: 'Buy chocolate', isComplete: false }
