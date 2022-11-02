@@ -17,9 +17,9 @@ border: none;
 border-radius: 50%;
 height: 50px;
 width: 50px;
-right: 5%; 
-top: 2%;
-position: absolute;
-background-color: #A27DA7;
+// right: 5%; 
+// top: 2%;
+// position: absolute;
+background-color: #E089A9;
 `
 

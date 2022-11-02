@@ -45,7 +45,7 @@ const ToDoList = () => {
 export default ToDoList
 
 const ToDos = styled.article`
-border: solid black 2px;
+// border: solid black 2px;
 width: 90%;
 margin: 10px 0 10px 0;
    border: solid rgb(108, 106, 106) 2px;
@@ -59,20 +59,20 @@ p{
   `
 
 const Label = styled.div`
-border: solid red 2px;
+// border: solid red 2px;
 margin: 0px 10px 0 10px;
 display: flex;
 flex-direction: row;
 h2{
-  border: solid black 2px;
+  // border: solid black 2px;
   padding: 0 0 0 5px;
 }
 input{
-  border: solid blue 2px;
+  // border: solid blue 2px;
 }
 `
 const Icon = styled.img`
-border: solid yellow 2px;
+// border: solid yellow 2px;
 width: 30px;
 height: 30px;
 display: flex;
