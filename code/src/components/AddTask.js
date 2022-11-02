@@ -73,10 +73,12 @@ font-family: 'Roboto', sans-serif;
 export const ButtonStyle = styled.button`
 background: white;
 border-color: #F69101;
+color: black;
 font-size: 30px;
-width: 40px;
+width: 1.5em;
+height: 1.5em;
 margin-bottom: 15px;
-border-radius: 20px;
+border-radius: 205px;
 border: none;
 outline: none;
 font-family: 'Roboto', sans-serif;

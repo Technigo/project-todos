@@ -3,9 +3,6 @@ import React from 'react'
 import { useDispatch } from 'react-redux'
 import styled from 'styled-components/macro'
 
-// Icon
-/* import Icon from '../assets/delete.svg' */
-
 // Reducers
 import { tasks } from '../reducers/tasks'
 
@@ -28,7 +25,6 @@ export const Task = ({ task }) => {
       </TaskTextWrapper>
       <ButtonsWrapper>
         <Checkbox id={task.id} type="checkbox" onChange={() => handleCheckboxChange({ task })} />
-        {/* <RemoveButton src={Icon} height="30px" onClick={() => handleRemoveTask({ task })} /> */}
         <ButtonStyle onClick={() => handleRemoveTask({ task })}>+</ButtonStyle>
       </ButtonsWrapper>
     </TaskOuterWrapper>
@@ -94,6 +90,7 @@ font-family: 'Roboto', sans-serif;
 export const ButtonsWrapper = styled.div`
 display: flex;
 align-items: flex-start;
+margin: 8px 0;
 `;
 
 export const ButtonStyle = styled.button`
@@ -101,6 +98,7 @@ transform: rotate(-45deg);
 height: 1.0em;
 width: 1.0em;
 font-size: 28px;
+color: black;
 background-color: white;
 border: none;
 border-radius: 25px;
@@ -108,14 +106,5 @@ outline: none;
 padding:0;
 margin: -7px 0 0 0;
 cursor: pointer;
-`;
-
-export const CheckButtonEmoIcon = styled.button`
-font-size: 30px;
-`;
-
-export const RemoveButton = styled.img`
-`;
-export const Checkbutton = styled.img`
 `;
 

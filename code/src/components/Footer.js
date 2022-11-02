@@ -21,8 +21,8 @@ export const Footer = () => {
         </RemoveWrapper>
         <FooterTextWrapper>
           <FooterText>Project ToDo App</FooterText>
-          <FooterText>Technigo 2022</FooterText>
           <FooterText>Sofia Andersson</FooterText>
+          <FooterText>Technigo 2022</FooterText>
           <FooterText>Icon from thenounproject.com</FooterText>
         </FooterTextWrapper>
       </FooterInnerWrapper>
@@ -77,8 +77,8 @@ font-family: 'Roboto', sans-serif;
 
 export const ButtonStyle = styled.button`
   font-size: 30px;
-  width: 42px;
-  height: 42px;
+  width: 1.5em;
+  height: 1.5em;
   background: #F69101;
   color: black;
   border-radius: 25px;
