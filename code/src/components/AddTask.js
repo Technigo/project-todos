@@ -8,7 +8,7 @@ const AddTask = () => {
 
   const dispatch = useDispatch()
 
-  const onTaskAdd = (event) => {
+  const onAddTask = (event) => {
     event.preventDefault(event);
     dispatch(tasks.actions.addTask(input));
     setInput('');
@@ -16,7 +16,7 @@ const AddTask = () => {
 
   return (
     <div>
-      <form onSubmit={(event) => onTaskAdd(event)}>
+      <form onSubmit={(event) => onAddTask(event)}>
         <input
           type="text"
           value={input}

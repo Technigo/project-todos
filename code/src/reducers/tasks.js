@@ -47,6 +47,14 @@ const tasks = createSlice({
           item.isComplete = !item.isComplete
         }
       });
+    },
+
+    deleteTask: (store, action) => {
+      const removedTask = store.items.filter(
+        (item) => item.id !== action.payload
+      );
+
+      store.items = removedTask;
     }
   }
 });

@@ -12,6 +12,10 @@ const TaskList = () => {
     dispatch(tasks.actions.toggleItem(id));
   }
 
+  const onDeleteTask = (id) => {
+    dispatch(tasks.actions.deleteTask(id));
+  };
+
   return (
     <section>
       {taskList.map((singleTask) => {
@@ -26,7 +30,11 @@ const TaskList = () => {
                 .isComplete}
               onChange={() => onIsCompleteToggle(singleTask.id)} />
 
-            <button type="button">X</button>
+            <button
+              type="button"
+              onClick={() => onDeleteTask(singleTask.id)}>
+              X
+            </button>
 
           </article>
         );
