@@ -20,12 +20,12 @@ const TaskList = () => {
         {allTasksArray.length === 0 && (
           <PlaceholderWrapper>
             <img src={GOAL} alt="bild" height="100px" />
-            <p>All tasks done!</p>
+            <p>★{' '}ALL TASKS COMPLETED{' '}★</p>
           </PlaceholderWrapper>
         )}
       </TaskListInnerWrapper>
       <CompletedTasksWrapper>
-        <TasksCompleted>DONE:{' '}
+        <TasksCompleted>COMPLETED:{' '}
           {completedTasks.length} / {tasksArray.length}
         </TasksCompleted>
       </CompletedTasksWrapper>
@@ -64,6 +64,7 @@ export const PlaceholderWrapper = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+font-weight: 500;
 `;
 
 export const CompletedTasksWrapper = styled.div`
@@ -84,6 +85,7 @@ export const TasksCompleted = styled.p`
 color: white;
 font-size: 12px;
 display:flex;
+font-family: 'Roboto', sans-serif;
 `;
 
 export default TaskList;

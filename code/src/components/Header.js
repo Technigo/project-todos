@@ -29,9 +29,10 @@ padding-top: 30px;
 margin: 0;
 
 h1 {
-  margin: 0 0 10px 0;
+  margin: -15px 0 40px 0;
   font-size: 20px;
   text-align: center;
+  font-family: 'Roboto', sans-serif;
 }
 `;
 

@@ -21,7 +21,7 @@ export const Footer = () => {
         </RemoveWrapper>
         <FooterTextWrapper>
           <FooterText>Project ToDo App</FooterText>
-          <FooterText>Technigo Bootcamp 2022</FooterText>
+          <FooterText>Technigo 2022</FooterText>
           <FooterText>Sofia Andersson</FooterText>
           <FooterText>Icon from thenounproject.com</FooterText>
         </FooterTextWrapper>
@@ -58,6 +58,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 padding-top: 40px;
+font-family: 'Roboto', sans-serif;
 `;
 
 export const FooterTextWrapper = styled.div`
@@ -71,12 +72,13 @@ font-size: 10px;
 align-self: flex-end;
 margin: 0;
 color: grey;
+font-family: 'Roboto', sans-serif;
 `;
 
 export const ButtonStyle = styled.button`
   font-size: 30px;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   background: #F69101;
   color: black;
   border-radius: 25px;

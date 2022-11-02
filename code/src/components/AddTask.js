@@ -39,7 +39,7 @@ export const AddTask = () => {
           type="text"
           required
           value={text}
-          placeholder="Add task here..."
+          placeholder="Add new task..."
           onChange={(event) => onChangeEvent(event.target.value)} />
         <ButtonStyle type="submit">+</ButtonStyle>
       </FormInnerWrapper>
@@ -65,8 +65,9 @@ outline-color: #F69101;
 outline: none;
 border:none;
 margin: 15px;
-border-radius: 20px;
+border-radius: 5px;
 font-size: 16px;
+font-family: 'Roboto', sans-serif;
 `;
 
 export const ButtonStyle = styled.button`
