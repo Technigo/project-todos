@@ -26,17 +26,13 @@ const todos = createSlice({
           item.isComplete = !item.isComplete;
         }
       });
-    }
-    /*  deleteToDo: (store, action) => {
-      console.log(store);
-      console.log(action);
+    },
+    deleteToDo: (store, action) => {
+      const deleteItems = store.items.filter((item) => item.id !== action.payload)
 
-      store.items.filter((item) => {
-        return (item.id === action.payload) {
-          item.isComplete = !item.isComplete;
-        }
-      });
-    } */
+      store.items = deleteItems;
+    }
+
   }
 })
 
