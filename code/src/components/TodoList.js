@@ -10,6 +10,7 @@ const TodoList = () => {
   const onCompletedToggle = (id) => {
     dispatch(todo.actions.toggleItem(id))
   }
+
   return (
     <section>
       {todoList.map((singleToDo) => {
@@ -22,7 +23,7 @@ const TodoList = () => {
                 checked={singleToDo.completed}
                 onChange={() => onCompletedToggle(singleToDo.id)} />
             </label>
-            <button type="button">❌</button>
+            <button onClick={() => dispatch(todo.actions.deleteItem(singleToDo.id))} type="button">❌</button>
           </article>
         );
       })}

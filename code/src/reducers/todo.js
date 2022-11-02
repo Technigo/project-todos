@@ -25,6 +25,9 @@ const todo = createSlice({
         }
       })
     },
+    deleteItem: (store, action) => {
+      store.items = store.items.filter((item) => item.id !== action.payload)
+    },
     addItem: (store, action) => {
       store.items.push(action.payload)
     }
