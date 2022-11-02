@@ -19,6 +19,7 @@ const MainStyle = styled.main`
   width: 80%;
   height: 80%;
   border-radius: 5px;
+  box-shadow: 0px 0px 20px 8px #12121261;
 
   @media (min-width: 1024px) {
     width: 60%;

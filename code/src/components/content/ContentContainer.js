@@ -1,37 +1,39 @@
+/* eslint-disable operator-linebreak */
+/* eslint-disable indent */
 import React from 'react';
 import styled from 'styled-components/macro';
+import { useSelector } from 'react-redux';
 import { textColor } from 'components/GlobalStyles';
-import angel from '../../Assets/cat/angel.png';
+
 import TaskList from './TaskList';
+import Cat from './Cat';
+import NewTask from './NewTask';
 
 const ContentContainer = () => {
+  const taskListLength = useSelector((store) => store.tasks.tasks.length);
+  const headerText =
+    taskListLength === 0
+      ? 'You have no tasks'
+      : `You have ${taskListLength} ${
+          taskListLength === 1 ? 'task' : 'tasks'
+        } `;
+
   return (
     <ContentContainerStyled>
-      <img src={angel} alt="cat at peace" />
-      <h1>You have no tasks</h1>
+      <Cat />
+      <h1>{headerText}</h1>
       <TaskList />
+      <NewTask />
     </ContentContainerStyled>
   );
 };
 
 const ContentContainerStyled = styled.div`
   display: flex;
-  /* width: 100%; */
-  /* height: 100%; */
-  padding-top: 10%;
+  height: 100%;
   color: ${textColor};
-
   flex-direction: column;
   align-items: center;
-
-  img {
-    width: 64px;
-    height: 64px;
-  }
-
-  @media (min-width: 1024px) {
-    padding-top: 50px;
-  }
 `;
 
 export default ContentContainer;
