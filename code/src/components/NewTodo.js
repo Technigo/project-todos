@@ -46,13 +46,21 @@ const NewTodoWrapper = styled.div`
   font-size: 15px;
 `
 const AddButton = styled.button`
-  margin-left: 10px;
+  margin-left: 5px;
   padding: 5px;
+  
+  @media (min-width: 668px){ 
+    margin-left: 10px;
+  }
 `
 
 const LabelTodo = styled.label`
-margin: 5px;
-font-size: 20px;
+margin: 2px;
+font-size: 15px;
+
+@media (min-width: 668px){ 
+    font-size: 20px;
+  }
 `
 
 const TodoInput = styled.input`

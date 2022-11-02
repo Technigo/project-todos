@@ -31,8 +31,8 @@ export const TodoList = () => {
                 onChange={() => onCompletedToggle(singleTodo.id)} />
             </label>
             <label htmlFor="to-dos"> {singleTodo.name} </label>
-            <CreatedAt>Created: {dateFormatted}</CreatedAt>
-            <RemoveTask onClick={() => dispatch(todos.actions.removeItem(singleTodo.id))} type="button">Remove ❌</RemoveTask>
+            <CreatedAt>{dateFormatted}</CreatedAt>
+            <RemoveTask onClick={() => dispatch(todos.actions.removeItem(singleTodo.id))} type="button">Remove</RemoveTask>
           </TodoItem>
         );
       })}
@@ -61,11 +61,12 @@ const TodoItem = styled.div`
   padding: 8px;
   background-color: #FEF5ED;
   justify-content: space-between;
-  font-size: 20px;
+  font-size: 15px;
   font-family: 'Comic Neue', cursive;
+  
 
   @media (min-width: 668px){ 
-    font-size: 25px;
+    font-size: 20px;
   }
 `
 
@@ -76,6 +77,7 @@ const TodoCheckbox = styled.input`
 const RemoveTask = styled.button`
     background-color: transparent;
     border: none;
+    font-size:12px;
     &:hover {
         transform: scale(1.2);
         cursor: pointer;
@@ -83,7 +85,11 @@ const RemoveTask = styled.button`
 `
 
 const CreatedAt = styled.p`
-font-size:15px;
+  font-size:12px;
+
+  @media (min-width: 668px){ 
+    font-size: 15px;
+  }
 `
 // onClick={() => dispatch(todos.actions.removeItem(singleTodo.id))}
 //  display: grid;
