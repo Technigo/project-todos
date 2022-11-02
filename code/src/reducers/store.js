@@ -38,6 +38,22 @@ const todos = createSlice({
         }
       })
     },
+    /*   lateTodo: (store, action) => {
+      const question = store.items.find((t) => t.id === id)
+
+      const changeBgColor = () => {
+        const test = document.getElementsByClassName('late')
+        const color = 'red'
+        for (let i = 0; i < test.length; i+ ) {
+          test[i].style.background = color;
+        }
+        if (question.yesterday === action.payload) {
+          store.yesterday = true
+        }
+      }
+      changeBgColor()
+    },
+ */
     deleteTodo: (store, action) => {
       store.items.splice(action.payload, 1)
       /* const decreaseTodoList = store.items.filter((item) => item.id !== action.payload)

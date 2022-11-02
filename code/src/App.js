@@ -5,6 +5,18 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import todos from 'reducers/store';
 import TodoList from 'components/TodoList';
 import Summary from 'components/Summary';
+import Header from 'components/Header';
+import styled from 'styled-components';
+
+const Wrapper = styled.section`
+display: flex; 
+flex-direction: column;
+padding-left: 2em; 
+padding-right: 2em;   `
+
+const Test = styled.div`
+display: grid;
+grid-template-columns: 1fr 1fr; `
 
 const reducer = combineReducers({
   todos: todos.reducer
@@ -14,13 +26,15 @@ const store = configureStore({ reducer });
 
 export const App = () => {
   return (
-    <div>
+    <Wrapper>
       <Provider store={store}>
-        <Summary />
-      Find me in src/app.js!
-        <NewTodo />
+        <Header />
+        <Test>
+          <Summary />
+          <NewTodo />
+        </Test>
         <TodoList />
       </Provider>
-    </div>
+    </Wrapper>
   );
 }
