@@ -11,16 +11,17 @@ export const TaskList = () => {
 
   const dispatch = useDispatch();
 
-  // function for toggle
+  // Function for toggling the checkbox between checked and unchecked
   const isCompleteToggle = (task) => {
     dispatch(tasks.actions.toggleItem(task));
   }
 
-  // function for delete
+  // Function for deleting a task from the list
   const deleteTask = (task) => {
     dispatch(tasks.actions.removeToDo(task));
   }
 
+  // Display all the tasks currently in the store, with a checkbox and a delete button:
   return (
     <TaskListWrapper>
       {allTasks.map((task) => (
@@ -39,6 +40,7 @@ export const TaskList = () => {
   )
 }
 
+// STYLING FOR ABOVE COMPONENT
 const TaskListWrapper = styled(Wrapper)`
   // min-height: 35vh;
 `
@@ -51,7 +53,6 @@ const TaskText = styled.div`
   padding: 0.7rem 0.7rem 0.7rem 1.5rem;
   border-radius: 3rem;
   background-color: purple;
-  
 `
 const TaskItem = styled.div`
   display: flex;

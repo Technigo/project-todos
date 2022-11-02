@@ -1,6 +1,8 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
-import { Wrapper } from 'styles/GlobalStyles';
+import { useSelector, useDispatch } from 'react-redux';
+import styled from 'styled-components/macro';
+import { Wrapper, Actionbtn } from 'styles/GlobalStyles';
+import { tasks } from 'reducers/tasks';
 
 export const Overview = () => {
   const allTasks = useSelector((store) => store.tasks.taskData);
@@ -12,11 +14,48 @@ export const Overview = () => {
     }
   });
 
+  const dispatch = useDispatch();
+
+  // Function for completing all tasks when 'Complete all' button is clicked
+  const completeAll = () => {
+    allTasks.forEach(() => {
+      dispatch(tasks.actions.completeAllItems())
+    })
+  };
+
+  // Function for deleting all tasks when 'Remove all' button is clicked
+  const deleteAll = () => {
+    const userConfirm = window.confirm('Are you sure you want to remove all tasks?')
+    if (userConfirm) {
+      dispatch(tasks.actions.removeAll());
+    }
+  }
+
   return (
-    <Wrapper>
+    <OverviewWrapper>
       <h3>Your tasks</h3>
-      <p>All: {allTasks.length}</p>
-      <p>To be completed: {toBeDone}</p>
-    </Wrapper>
+      <p>{toBeDone} / {allTasks.length} to be completed</p>
+      <Actionbtn
+        align="flex-end"
+        color="#1F9D6E"
+        type="button"
+        onClick={() => completeAll()}>
+        Complete all
+      </Actionbtn>
+      <Actionbtn
+        align="flex-end"
+        color="purple"
+        type="button"
+        onClick={() => deleteAll()}>
+        Remove all
+      </Actionbtn>
+    </OverviewWrapper>
   )
 }
+
+// STYLING FOR ABOVE COMPONENT
+const OverviewWrapper = styled(Wrapper)`
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+`

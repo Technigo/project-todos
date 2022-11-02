@@ -14,18 +14,17 @@ export const tasks = createSlice({
   initialState: {
     taskData
   },
-  // functions that will need calling:
+  // ACTIONS (i.e. functions) THAT WILL NEED CALLING:
   reducers: {
-    // action for adding an item to the taskData:
+    // Action for adding an item to the taskData
     addToDo: (state, action) => {
-      console.log('taskData:', taskData)
       state.taskData.push({
         id: counter += 1,
         text: action.payload,
         complete: false
       })
-      console.log('taskData now:', taskData)
     },
+    // Action for toggling between completed/uncompleted when checkbox is clicked
     toggleItem: (state, action) => {
       state.taskData.forEach((item) => {
         if (item.id === action.payload) {
@@ -33,10 +32,19 @@ export const tasks = createSlice({
         }
       });
     },
+    // Action for removing an item
     removeToDo: (state, action) => {
-      console.log('taskData:', taskData)
       state.taskData = state.taskData.filter((item) => item.id !== action.payload)
-      console.log('taskData now:', taskData)
+    },
+    // Action for removing all items
+    removeAll: (state) => {
+      state.taskData = []
+    },
+    // Action for completing all items
+    completeAllItems: (state) => {
+      state.taskData.forEach((item) => {
+        item.complete = true
+      });
     }
   }
 })
