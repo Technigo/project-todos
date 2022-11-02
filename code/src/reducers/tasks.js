@@ -26,6 +26,12 @@ export const tasks = createSlice({
         (item) => item.id !== action.payload
       );
       store.items = filteredTasks;
+    },
+
+    completeAll: (store) => {
+      store.items.forEach((item) => {
+        item.complete = true;
+      });
     }
   }
 });

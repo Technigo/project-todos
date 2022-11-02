@@ -1,4 +1,6 @@
+/* eslint-disable react/jsx-closing-bracket-location */
 import React from 'react';
+// import TitleImage from './brushstroke.svg';
 
 const Header = () => {
   const weekday = new Date().toLocaleString('en-US', {
@@ -10,7 +12,6 @@ const Header = () => {
   return (
     <div>
       <div className="title-container">
-        {/* <img className="brush" src="./brushstroke.svg" alt="brush-stroke" /> */}
         <h1 className="title">TO DO LIST</h1>
       </div>
 
@@ -22,3 +23,11 @@ const Header = () => {
 };
 
 export default Header;
+
+/* <h1
+className="title"
+style={{
+  backgroundImage: `url(${TitleImage})`,
+  backgroundSize: 'cover'
+}}
+> */

@@ -3,11 +3,15 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
+import { Task } from 'styledComponents/Task';
 import Header from './header';
 import NewTask from './newTask';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
+
+  const uncompletedTasks = taskList.filter((item) => !item.complete);
+  const completedTasks = taskList.filter((item) => item.complete);
 
   const dispatch = useDispatch();
 
@@ -19,29 +23,23 @@ const TaskList = () => {
     dispatch(tasks.actions.deleteTask(id));
   };
 
-  const uncompletedTasks = () => {
-    return taskList.filter((item) => !item.complete);
-  };
-
-  const completedTasks = () => {
-    return taskList.filter((item) => item.complete);
+  const onCompleteAll = () => {
+    dispatch(tasks.actions.completeAll());
   };
 
   return (
     <div>
       <Header />
       <section>
-        <NewTask />
         <button type="button">
-          Uncompleted tasks: {uncompletedTasks().length}
+          Uncompleted tasks: {uncompletedTasks.length}
         </button>
-        <button type="button">
-          Completed tasks: {completedTasks().length}
-        </button>
+        <button type="button">Completed tasks: {completedTasks.length}</button>
         <div className="tasklist">
+          <NewTask />
           {taskList.map((singleTask) => {
             return (
-              <article key={singleTask.id}>
+              <Task key={singleTask.id}>
                 <div className="check-task">
                   <label>
                     <input
@@ -57,11 +55,14 @@ const TaskList = () => {
                   type="button"
                   onClick={() => onDeleteTask(singleTask.id)}
                 >
-                  -
+                  x
                 </button>
-              </article>
+              </Task>
             );
           })}
+          <button type="button" onClick={onCompleteAll}>
+            Complete all
+          </button>
         </div>
       </section>
     </div>

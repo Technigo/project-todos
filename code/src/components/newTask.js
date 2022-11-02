@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
+import { Task } from 'styledComponents/Task';
 import { v4 as uuid } from 'uuid';
 
 const NewTask = () => {
@@ -24,20 +25,19 @@ const NewTask = () => {
   };
   console.log(input);
   return (
-    <form onSubmit={onFormSubmit}>
+    <Task onSubmit={onFormSubmit}>
       <label>
-        New task:
         <input
           className="text-input"
           type="text"
           value={input}
-          placeholder="enter new task"
+          placeholder="Enter new task"
           onChange={(event) => setInput(event.target.value)}
           required
         />
       </label>
-      <button type="submit"> Add </button>
-    </form>
+      <button type="submit"> + </button>
+    </Task>
   );
 };
 
