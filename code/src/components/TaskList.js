@@ -20,11 +20,15 @@ const TaskList = () => {
         {allTasksArray.length === 0 && (
           <PlaceholderWrapper>
             <img src={GOAL} alt="bild" height="100px" />
-            <p>Done with all your tasks! Youre a workaholic.</p>
+            <p>All tasks done!</p>
           </PlaceholderWrapper>
         )}
       </TaskListInnerWrapper>
-      <p>YOU HAVE COMPLETED:  {completedTasks.length} / {tasksArray.length} </p>
+      <CompletedTasksWrapper>
+        <TasksCompleted>DONE:{' '}
+          {completedTasks.length} / {tasksArray.length}
+        </TasksCompleted>
+      </CompletedTasksWrapper>
     </TaskListOuterWrapper>
   )
 }
@@ -46,12 +50,40 @@ border-radius: 20px;
 display: flex;
 flex-direction: column;
 justify-content: space-between;
+
+@media (min-width: 667px) {
+    max-width: 400px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 500px;
+  }
 `;
 
 export const PlaceholderWrapper = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
+`;
+
+export const CompletedTasksWrapper = styled.div`
+width: 60%;
+display: flex;
+justify-content: flex-end;
+
+@media (min-width: 667px) {
+    max-width: 400px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 500px;
+  }
+`;
+
+export const TasksCompleted = styled.p`
+color: white;
+font-size: 12px;
+display:flex;
 `;
 
 export default TaskList;

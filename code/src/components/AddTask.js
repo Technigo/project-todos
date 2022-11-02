@@ -39,7 +39,7 @@ export const AddTask = () => {
           type="text"
           required
           value={text}
-          placeholder="Input task here..."
+          placeholder="Add task here..."
           onChange={(event) => onChangeEvent(event.target.value)} />
         <ButtonStyle type="submit">+</ButtonStyle>
       </FormInnerWrapper>
@@ -48,17 +48,36 @@ export const AddTask = () => {
 }
 
 export const FormOuterWrapper = styled.div`
-
+background-color: #F69101;
+display:flex;
+justify-content: center;
+border-bottom-left-radius: 200px;
 `;
 
 export const FormInnerWrapper = styled.form`
-
+display: flex;
+flex-direction: column;
+align-items: center;
 `;
 
 export const InputField = styled.input`
-outline-color: #F69101
+outline-color: #F69101;
+outline: none;
+border:none;
+margin: 15px;
+border-radius: 20px;
+font-size: 16px;
 `;
 
 export const ButtonStyle = styled.button`
-background: #F69101
+background: white;
+border-color: #F69101;
+font-size: 30px;
+width: 40px;
+margin-bottom: 15px;
+border-radius: 20px;
+border: none;
+outline: none;
+font-family: 'Roboto', sans-serif;
+cursor: pointer;
 `;

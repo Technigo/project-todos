@@ -1,41 +1,37 @@
 import React from 'react'
 import styled from 'styled-components/macro'
-import { useSelector } from 'react-redux'
 
-import CHECK from 'assets/checkwhite.png'
+import DONE from 'assets/donewhite.png'
 
 export const Header = () => {
-  // Show total number of items in task-list
-  const tasksArray = useSelector((store) => store.tasks.items);
-  // Show number of completed items in task-list
-  const completedTasks = tasksArray.filter((task) => task.isComplete);
-
   return (
     <HeaderOuterWrapper>
       <HeaderInnerWrapper>
-        <img className="mageColor" src={CHECK} alt="bild" height="100px" />
-        <h1>MY TODOs</h1>
-        <p>You have completed:  {completedTasks.length} / {tasksArray.length} </p>
+        <img className="done" src={DONE} alt="img-done" height="100px" />
+        <h1>TO DO</h1>
       </HeaderInnerWrapper>
     </HeaderOuterWrapper>
   )
 };
 
 export const HeaderOuterWrapper = styled.div`
-width: 100vw;
+width: 100%;
 background-color: #F69101;
 color: white;
 margin:0;
 padding:0;
 display:flex;
 justify-content: center;
-
 `;
 
 export const HeaderInnerWrapper = styled.div`
+padding-top: 30px;
+margin: 0;
 
-.imageColor {
-  
-
+h1 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  text-align: center;
+}
 `;
 

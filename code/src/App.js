@@ -18,8 +18,6 @@ export const App = () => {
 
   const store = configureStore({ reducer })
 
-  // Your components can be mounted here, inside the Provider.
-
   return (
     <Provider store={store}>
       <Header />

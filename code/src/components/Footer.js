@@ -15,29 +15,81 @@ export const Footer = () => {
   return (
     <FooterOuterWrapper>
       <FooterInnerWrapper>
-        <ButtonStyle onClick={handleRemoveAll}>REMOVE ALL TASKS</ButtonStyle>
-        <FooterText>Project - Todo App</FooterText>
-        <FooterText>Sofia Andersson @ Technigo Bootcamp 2022</FooterText>
-        <FooterText>Logo/icon from Noun Project</FooterText>
+        <RemoveWrapper>
+          <ButtonStyle onClick={handleRemoveAll}>-</ButtonStyle>
+          <p>CLEAN MY TO DO LIST</p>
+        </RemoveWrapper>
+        <FooterTextWrapper>
+          <FooterText>Project ToDo App</FooterText>
+          <FooterText>Technigo Bootcamp 2022</FooterText>
+          <FooterText>Sofia Andersson</FooterText>
+          <FooterText>Icon from thenounproject.com</FooterText>
+        </FooterTextWrapper>
       </FooterInnerWrapper>
     </FooterOuterWrapper>
   )
 };
 
-export const FooterOuterWrapper = styled.div`
+export const FooterOuterWrapper = styled.footer`
+background-color: white;
+display: flex;
+
+align-items: center;
+justify-content: center;
 `;
 
 export const FooterInnerWrapper = styled.div`
+width: 85%;
+display: flex;
+justify-content: space-between;
+
+@media (min-width: 667px) {
+    max-width: 400px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 500px;
+  }
 `;
 
-export const ButtonStyle = styled.button`
-color: black;
-background-color: #E8E9EE;
-border: none;
-padding: 10px;
-font-weight: 700;
+export const RemoveWrapper = styled.div`
+font-size: 12px;
+display: flex;
+flex-direction: column;
+align-items: center;
+padding-top: 40px;
+`;
+
+export const FooterTextWrapper = styled.div`
+display: flex;
+justify-content: flex-end;
+flex-direction: column;
 `;
 
 export const FooterText = styled.p`
-font-size: 12px;
+font-size: 10px;
+align-self: flex-end;
+margin: 0;
+color: grey;
+`;
+
+export const ButtonStyle = styled.button`
+  font-size: 30px;
+  width: 40px;
+  height: 40px;
+  background: #F69101;
+  color: black;
+  border-radius: 25px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+
+  @media (min-width: 667px) {
+    
+  }
+
+  @media (min-width: 1024px) {
+    
+  }
 `;
