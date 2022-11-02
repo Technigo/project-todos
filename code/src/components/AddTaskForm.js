@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
+import uniqid from 'uniqid';
 
 // WHAT I WANT TO DO HERE:
 // Add an input field for new tasks /DONE
@@ -21,7 +22,7 @@ export const AddTaskForm = () => {
   const onFormSubmit = (event) => {
     event.preventDefault()
     const addNewTask = {
-      id: 'yay',
+      id: uniqid(),
       name: NewTask,
       isCompleted: false
     }
@@ -35,7 +36,7 @@ export const AddTaskForm = () => {
       <form onSubmit={onFormSubmit}>
         <input
           type="text"
-          placeholder="Add new todo here..."
+          placeholder="Add new task here..."
           value={NewTask}
           onChange={(event) => setNewTask(event.target.value)} />
         <button
