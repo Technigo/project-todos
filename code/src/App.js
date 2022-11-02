@@ -6,6 +6,7 @@ import ToDoList from 'components/ToDoList'
 import NewToDoItem from 'components/NewToDoItem';
 import Calendar from 'components/Calendar';
 import Header from 'components/Header';
+import TotalTasks from 'components/TotalTasks';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -18,6 +19,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Header />
+      <TotalTasks />
       <NewToDoItem />
       <Calendar />
       <ToDoList />

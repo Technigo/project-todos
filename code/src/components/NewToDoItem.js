@@ -26,7 +26,7 @@ const NewToDoItem = () => {
     <form onSubmit={onFormSubmit}>
       <input
         type="text"
-        placeholder="Add Task"
+        placeholder=" 🖊️ Add Task"
         value={newtodo}
         onChange={(e) => handleChange(e)}
         className="todo-input" />

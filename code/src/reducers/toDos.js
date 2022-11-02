@@ -1,8 +1,7 @@
 /* eslint-disable max-len */
 import { createSlice } from '@reduxjs/toolkit';
 
-const toDos = createSlice({
-  name: 'toDos',
+const toDos = createSlice({ name: 'toDos',
   initialState: {
     items: [
 
@@ -12,34 +11,27 @@ const toDos = createSlice({
       // { id: 4, text: 'Create a todo app', complete: false }
     ]
   },
-  reducers: {
-    toggleItem: (store, action) => {
-      // console.log(store);
-      // console.log(action);
-      store.items.find((item) => item.id === action.payload).complete = !store.items.find((item) => item.id === action.payload).complete;
-    },
-    addItem: (store, action) => {
-      const existingToDo = store.items.find((item) => item.id === action.payload.id)
+  reducers: { toggleItem: (store, action) => {
+    // console.log(store);
+    // console.log(action);
+    store.items.find((item) => item.id === action.payload).complete = !store.items.find((item) => item.id === action.payload).complete;
+  },
+  addItem: (store, action) => {
+    const existingToDo = store.items.find((item) => item.id === action.payload.id)
 
-      if (existingToDo) {
-        // increment quantity
-        existingToDo.quantity += 1
-      } else {
-        store.items.push(action.payload)
-        // store.items.push({ ...action.payload, quantity: 1 })
-      }
-    },
-    removeItem: (store, action) => {
-      const existingToDo = store.items.find((item) => item.id === action.payload.id)
-      if (existingToDo && existingToDo.quantity === 1) {
-        // remove it
-        store.items = store.items.filter((item) => item.id !== action.payload.id)
-      } else if (existingToDo) {
-        existingToDo.quantity -= 1
-      }
+    if (existingToDo) {
+      // increment quantity
+      existingToDo.quantity += 1
+    } else {
+      store.items.push(action.payload)
+      // store.items.push({ ...action.payload, quantity: 1 })
     }
-
-  }
-})
+  },
+  removeItem: (store, action) => {
+    // const existingToDo = store.items.find((item) => item.id === action.payload.id);
+    // remove it
+    store.items.filter((item) => item.id !== action.payload);
+    // store.items = existingToDo;
+  } } });
 
 export default toDos;

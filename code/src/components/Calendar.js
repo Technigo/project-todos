@@ -7,7 +7,9 @@ const Calendar = () => {
   const [todayDate, setTodayDate] = useState(new Date());
 
   return (
-    <DatePicker selected={todayDate} onChange={(date) => setTodayDate(date)} />
+    <><h3> Today is a new day ☕ </h3>
+      <DatePicker selected={todayDate} onChange={(date) => setTodayDate(date)} />
+    </>
   );
 }
 
