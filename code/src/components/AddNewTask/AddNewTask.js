@@ -21,7 +21,7 @@ export const AddNewTask = () => {
         placeholder="New todo"
         value={input}
         onChange={(e) => setInput(e.target.value)} />
-      <AddNewTaskBtn type="button" onClick={addNewTodo}>&#43;</AddNewTaskBtn>
+      <AddNewTaskBtn type="submit" onClick={addNewTodo}>&#43;</AddNewTaskBtn>
     </AddNewTaskWrapper>
   )
 }

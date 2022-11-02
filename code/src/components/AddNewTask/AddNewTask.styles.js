@@ -1,7 +1,7 @@
 /* eslint-disable linebreak-style */
 import styled from 'styled-components/macro'
 
-export const AddNewTaskWrapper = styled.div`
+export const AddNewTaskWrapper = styled.form`
     align-self: center;
     display: flex;
     flex-direction: row-reverse;

@@ -7,7 +7,7 @@ import { HeaderStyled } from './Header.styles'
 export const Header = () => {
   return (
     <HeaderStyled>
-      <h1>.Chores</h1>
+      <h1>.TaskLister</h1>
       <AddNewTask />
     </HeaderStyled>
   )

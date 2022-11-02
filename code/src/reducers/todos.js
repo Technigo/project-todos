@@ -32,33 +32,39 @@ export const todos = createSlice({
       store.isEmpty = false
     },
 
-    /*  This action sets a task to complete */
-
+    // This action sets a task to complete
     checkComplete: (store, action) => {
       const { taskId } = action.payload
-      store.tasks.find((t) => t.id === taskId).complete = !store.tasks.find((t) => t.id === taskId).complete
-      // store.tasks.forEach((t) => {
-      //   if (taskId === t.id) {
-      //     taskId.complete = !taskId.complete
-      //   }
-      // });
+      store.tasks.forEach((t) => {
+        if (t.id === taskId) {
+          t.complete = !t.complete
+        }
+      });
     },
 
-    /* This action deletes a task */
+    // This deletes a task */
     deletingTask: (store, action) => {
       const { taskId } = action.payload
       const filteredList = store.tasks.filter((t) => t.id !== taskId)
       store.tasks = filteredList
-      console.log('filtered list', filteredList)
       if (store.tasks.length === 0) {
         store.isEmpty = true
       }
     },
 
-    // This action clears all tasks
+    // This checks all uncompleted tasks to complete
+    setComplete: (store) => {
+      const unComplete = store.tasks.filter((t) => t.complete === false)
+      unComplete.forEach((task) => {
+        task.complete = true
+      })
+    },
+
+    // This deletes all tasks
     clearAll: (store) => {
       const emptyList = [];
       store.tasks = emptyList
+      store.isEmpty = true
     }
   }
 })

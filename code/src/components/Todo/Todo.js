@@ -27,7 +27,7 @@ export const Todo = ({ task }) => {
         htmlFor={task.text}
         className={task.complete === true ? 'finished' : 'notFinished'}>{task.text}
       </label>
-      <p>{task.postedTime}</p>
+      <p className={task.complete === true ? 'finished' : 'notFinished'}>{task.postedTime}</p>
       <DeleteBtn type="button" onClick={() => deleteTask(`${task.id}`)}>&#215;</DeleteBtn>
     </StyledTodo>
   )
