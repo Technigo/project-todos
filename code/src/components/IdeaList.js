@@ -2,7 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { WantToDoRed } from 'reducers/WantToDoRed';
 
-export const WantToDos = () => {
+export const IdeaList = () => {
   const ideaList = useSelector((store) => store.WantToDoRed.items);
   const dispatch = useDispatch();
 
