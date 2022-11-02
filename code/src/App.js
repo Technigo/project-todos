@@ -1,22 +1,19 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import tasks from 'reducers/todo';
-import ToDoList from './components/ToDoList';
+import toDos from 'reducers/todo';
+import List from './components/List';
 
 export const App = () => {
   const reducer = combineReducers({
-    tasks: tasks.reducer
+    toDos: toDos.reducer
   });
 
-  const store = configureStore({
-    // reducer: reducers
-    reducer
-  });
+  const store = configureStore({ reducer });
 
   return (
     <Provider store={store}>
-      <ToDoList />
+      <List />
     </Provider>
   );
-}
+};
