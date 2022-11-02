@@ -18,9 +18,11 @@ const AddTask = () => {
       id: uniqid(),
       text: inputValue,
       isCompleted: false
+      // date: Date.now()
     }));
     setInputValue('');
-  }
+  };
+
   return (
     <div>
       <Form onSubmit={onAddTask}>
@@ -34,8 +36,8 @@ const AddTask = () => {
           onChange={(event) => { setInputValue(event.target.value); }} />
       </Form>
     </div>
-  )
-};
+  );
+}
 
 export default AddTask;
 
@@ -50,3 +52,8 @@ const Input = styled.input`
 border: solid 2px red;
 padding: 10px;
 `
+
+// const Date = styled.input`
+// border: solid 2px red;
+// padding: 10px;
+// `
