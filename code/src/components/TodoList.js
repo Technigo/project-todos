@@ -11,19 +11,15 @@ const TodoList = () => {
   }
   return (
     <div>
-      <h1>My to do list</h1>
       {todoList.map((singleTodo) => {
         return (
-          <>
-            <h2>{singleTodo.name}</h2>
-            <input
+          <div>
+            <h2>{singleTodo.name}</h2><input
               type="checkbox"
               checked={singleTodo.isDone}
-              onChange={() => onIsDoneToggle(singleTodo.id)} />
-            <label>is this done?</label>
-            <button type="button">Remove</button>
-          </>
-        )
+              onChange={() => onIsDoneToggle(singleTodo.id)} /><label>is this done?</label><button type="button" className="btn btn-primary mb-2">Remove</button>
+          </div>
+        );
       })}
     </div>
   )

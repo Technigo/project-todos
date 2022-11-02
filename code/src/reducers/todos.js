@@ -26,7 +26,14 @@ const todos = createSlice({
         }
       });
     }
-    /* store.items.push */
+    addToDo: (store, action) => {
+      const newTodo = {
+        id: Date.now(),
+        title: action.payload.title,
+        idDone: false
+      }
+      store.items.push(action.payload)
+    }
   }
 });
 

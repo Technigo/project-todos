@@ -11,3 +11,43 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+
+/* [type="checkbox"]{
+  opacity:0;
+}
+
+[type="checkbox"] + label{
+position: relative;
+padding-left: 30px;
+cursor: pointer;
+display: inline-block;
+color: #666;
+line-height: 25px;
+}
+
+[type="checkbox"] + label::before{
+  content:"";
+  position: absolute;
+  width: 18px;
+  height:18px;
+  outline:2px solid #aaa;
+  background: #fff;
+}
+
+[type="checkbox"]:checked +label::before{
+  content:"";
+  position: absolute;
+  width: 18px;
+  height:18px;
+  outline:2px solid #5fd25f;
+  background: #fff;
+}
+
+[type="checkbox"]:checked +label::after{
+  content:"";
+  position: absolute;
+  width: 18px;
+  height:18px;
+} */
