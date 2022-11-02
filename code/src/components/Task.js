@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components'
 import tasks from 'reducers/todos/taskSlice';
-// import moment from 'moment';
+import moment from 'moment';
 
 // add label?
 const Task = ({ taskData }) => {
@@ -18,7 +18,7 @@ const Task = ({ taskData }) => {
         checked={taskData.isCompleted}
         onChange={() => onIsCompletedToggle(taskData.id)} /><h2>{taskData.text}</h2>
       <button type="button" onClick={() => onRemoveTask(taskData.id)}>X</button>
-      <Date>{taskData.date}</Date>
+      <Date>Created {moment(taskData.date).format('ddd, MMM Do YYYY @ hh:mm a')}</Date>
     </TaskWrapper>
   );
 };
