@@ -1,8 +1,8 @@
 import React from 'react';
-
 import styled from 'styled-components/macro'
 import { InnerWrapper, OuterWrapper } from 'styles/ProjectStyles';
 import ChooseDate from './ChooseDate';
+import TaskFilters from './TaskFilters';
 import TaskInput from './TaskInput';
 import TaskList from './TaskList';
 
@@ -13,6 +13,7 @@ const Card = () => {
         <CardWrapper>
           <ChooseDate />
           <TaskInput />
+          <TaskFilters />
           <TaskList />
         </CardWrapper>
       </InnerWrapper>
