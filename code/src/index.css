@@ -11,3 +11,54 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/* 
+[type="checkbox"] {
+  opacity: 0;
+}
+
+[type="checkbox"]+label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 25px;
+}
+
+[type="checkbox"]+label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  outline: 3px solid #DF7861;
+  display: inline-block;
+  border-radius: 25%;
+}
+
+[type="checkbox"]:checked+label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  outline: 3px solid black;
+  display: inline-block;
+  border-radius: 25%;
+} */
+
+/* 
+[type="checkbox"]:checked+label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 25px;
+  height: 25px;
+  background-image: url(check.png);
+  display: inline-block;
+  background-size: contain;
+  border-radius: 25%;
+} */
