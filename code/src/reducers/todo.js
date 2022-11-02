@@ -7,16 +7,14 @@ const toDos = createSlice({
   },
   reducers: {
     addTask: (store, action) => {
-      
+      store.items.push(action.payload);
     },
     toggleDone: (store, action) => {
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.done = !item.done
         }
-        console.log(store)
-        console.log(action)
-      })
+      });
     }
   }
 });

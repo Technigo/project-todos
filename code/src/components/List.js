@@ -8,12 +8,10 @@ const List = () => {
 
   return (
     <section>
-      <fieldset>
-        <legend>New task</legend>
+      <ul>
         {taskList.map((task) => {
           return (
-            <article key={task.id}>
-              <h2>{task.name}</h2>
+            <li key={task.id}>{task.task}
               <label htmlFor="task">Done?
                 <input
                   id="task"
@@ -21,14 +19,10 @@ const List = () => {
                   checked={task.done}
                   onChange={() => dispatch(toDos.actions.toggleDone(task.id))} />
               </label>
-            </article>
+            </li>
           )
         })}
-        <label htmlFor="newTask">
-          <input type="text" />
-        </label>
-        <button type="button">Add new task</button>
-      </fieldset>
+      </ul>
     </section>
   )
 };
