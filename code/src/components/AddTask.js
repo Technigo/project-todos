@@ -17,8 +17,8 @@ const AddTask = () => {
     dispatch(taskReducer.actions.addTask({
       id: uniqid(),
       text: inputValue,
-      isCompleted: false
-      // date: Date.now()
+      isCompleted: false,
+      date: Date.now()
     }));
     setInputValue('');
   };
