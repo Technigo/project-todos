@@ -25,7 +25,8 @@ const TaskForm = () => {
           required />
         <AddTaskButton
           type="submit"
-          onClick={addTask}>➕
+          onClick={addTask}
+          disabled={newToDo.length === 0}>➕
         </AddTaskButton>
       </InputWrapper>
     </Section>

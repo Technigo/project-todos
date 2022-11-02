@@ -4,7 +4,7 @@ import { Section } from 'styles/styledComponents';
 const Counter = () => {
   return (
     <Section>
-      Counter
+      counter
     </Section>
   )
 }

@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
+import moment from 'moment';
 
 const tasks = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      { id: 5, text: 'Milk', complete: false },
-      { id: 2, text: 'Bread', complete: false },
-      { id: 9, text: 'Apple', complete: false }
+      { id: 5, text: 'Milk', complete: false, time: moment().format('ddd D MMM') },
+      { id: 2, text: 'Bread', complete: false, time: moment().format('ddd D MMM') },
+      { id: 9, text: 'Apple', complete: false, time: moment().format('ddd D MMM') }
     ]
   },
 
@@ -16,7 +17,8 @@ const tasks = createSlice({
       const newTask = {
         id: Math.max(...store.items.map((item) => item.id)) + 1,
         text: action.payload,
-        complete: false
+        complete: false,
+        time: moment().format('ddd D MMM')
       };
       const newTaskList = [...store.items, newTask];
       store.items = newTaskList;

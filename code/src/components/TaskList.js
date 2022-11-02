@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import { DeleteButton, Icon } from 'styles/Buttons';
 import Trash from '../icons/trash.svg'
-import { Section, Wrapper, TaskInput } from '../styles/styledComponents';
+import { Section, Wrapper, TaskText, Date, CheckBoxWrapper } from '../styles/styledComponents';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
@@ -21,16 +21,19 @@ const TaskList = () => {
     <Section>
       {taskList.map((singleTask) => {
         return (
-          <article>
-            <Wrapper>
+          <Wrapper>
+            <CheckBoxWrapper htmlFor={singleTask} id={singleTask}>
+              <span className="checkMark">done</span>
               <input
+                className="checkBox"
                 type="checkbox"
                 checked={singleTask.complete}
                 onChange={() => onCompleteToggle(singleTask.id)} />
-              <TaskInput>{singleTask.text}</TaskInput>
-              <DeleteButton type="button" onClick={() => deleteToDo(singleTask.id)}><Icon src={Trash} alt="Delete" /></DeleteButton>
-            </Wrapper>
-          </article>
+            </CheckBoxWrapper>
+            <TaskText>{singleTask.text}</TaskText>
+            <Date>{singleTask.time}</Date>
+            <DeleteButton type="button" onClick={() => deleteToDo(singleTask.id)}><Icon src={Trash} alt="Delete" /></DeleteButton>
+          </Wrapper>
         );
       })}
     </Section>
