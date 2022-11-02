@@ -4,6 +4,7 @@ export const Section = styled.section`
 border: 2px solid blue;
 display: flex;
 margin-top: 40%;
+width: 100%
 `
 
 export const ListWrap = styled.div`

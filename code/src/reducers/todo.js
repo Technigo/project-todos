@@ -7,15 +7,15 @@ const todo = createSlice({
       { id: '1',
         task: 'clean the apartment',
         completed: false,
-        tag: 'prio tag test' },
+        tag: '!!' },
       { id: '2',
         task: 'clean the apartment',
         completed: false,
-        tag: 'prio tag test' },
+        tag: '!!!' },
       { id: '3',
         task: 'clean the apartment',
         completed: false,
-        tag: 'prio tag test' }
+        tag: '!' }
     ]
   },
   reducers: {

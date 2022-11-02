@@ -4,6 +4,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import todo from 'reducers/todo';
 import { ListWrap } from 'styledcomponents/SectionWrapper';
 import moment from 'moment'
+import { Deadline, Priority, TaskTitle } from 'styledcomponents/TextStyles';
+import { TrashBtn } from 'styledcomponents/Input';
 
 const TodoList = () => {
   const todoList = useSelector((store) => store.todo.items);
@@ -20,17 +22,19 @@ const TodoList = () => {
       {todoList.map((singleToDo) => {
         return (
           <ListWrap>
-            <label>
-              <input
-                type="checkbox"
-                checked={singleToDo.completed}
-                onChange={() => onCompletedToggle(singleToDo.id)} />
-            </label>
-            <h1>{singleToDo.task}</h1>
-            <h3>Deadline {singleToDo.deadline}</h3>
-            <h3>Importance {singleToDo.tag}</h3>
+            <TaskTitle>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={singleToDo.completed}
+                  onChange={() => onCompletedToggle(singleToDo.id)} />
+              </label>
+              {singleToDo.task}
+            </TaskTitle>
+            <TrashBtn onClick={() => dispatch(todo.actions.deleteItem(singleToDo.id))} type="button">❌</TrashBtn>
+            <Priority>{singleToDo.tag}</Priority>
+            <Deadline>Deadline {singleToDo.deadline}</Deadline>
             <p>Created: {moment(date.createdAt).fromNow()}</p>
-            <button onClick={() => dispatch(todo.actions.deleteItem(singleToDo.id))} type="button">❌</button>
           </ListWrap>
         );
       })}

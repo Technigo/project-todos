@@ -32,3 +32,7 @@ font-size: 1rem;
 border: 2px solid black;
 `
 
+export const TrashBtn = styled.button`
+position: relative;
+left: 85%;
+`
