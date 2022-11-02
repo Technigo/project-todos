@@ -10,10 +10,10 @@ const ToDo = createSlice({
   name: 'ToDos',
   initialState: {
     items: [
-      { id: 1, name: 'Watch video on actions & reducers', complete: true },
-      { id: 2, name: 'Follow redux codealong', complete: true },
-      { id: 3, name: 'Fork weekly assignment', complete: true },
-      { id: 4, name: 'Create a todo app', complete: false }
+      // { id: 1, name: 'Watch video on actions & reducers', complete: true },
+      // { id: 2, name: 'Follow redux codealong', complete: true },
+      // { id: 3, name: 'Fork weekly assignment', complete: true },
+      // { id: 4, name: 'Create a todo app', complete: false }
     ]
   },
 
@@ -29,6 +29,9 @@ const ToDo = createSlice({
     },
     addToDo: (store, action) => {
       store.items.push(action.payload)
+    },
+    deleteItem: (store, action) => {
+      store.items = store.items.filter((item) => item.id !== action.payload)
     }
   }
 });

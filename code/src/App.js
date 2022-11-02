@@ -4,6 +4,9 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import ToDo from 'reducers/todo'
 import ToDoList from 'components/ToDoList';
 import { AddToDo } from 'components/AddToDo';
+import { Header } from 'components/Header';
+import { Counter } from 'components/Counter'
+import styled from 'styled-components';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -16,8 +19,21 @@ export const App = () => {
   })
   return (
     <Provider store={store}>
-      <AddToDo />
-      <ToDoList />
+      <Header />
+      <Main>
+        <AddToDo />
+        <Counter />
+        <ToDoList />
+      </Main>
     </Provider>
   );
 }
+
+const Main = styled.div`
+border: solid black 2px;
+align-items: center;
+display: flex;
+flex-direction: column;
+border: solid green 2px;
+`
+
