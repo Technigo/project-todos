@@ -6,9 +6,9 @@ import uniqid from 'uniqid';
 // WHAT I WANT TO DO HERE:
 // Add an input field for new tasks /DONE
 // Add a button to the right of that field for submitting the task. /DONE
-// On submitting, the form should push a new task object to the tasks array.
-// The task object should contain an ID, name and isChecked value.
-// On submitting, the task should be assigned a unique ID using uniqid.
+// On submitting, the form should push a new task object to the tasks array. /DONE
+// The task object should contain an ID, name and isChecked value. /DONE
+// On submitting, the task should be assigned a unique ID using uniqid. /DONE
 
 // HEADER
 // COUNTER
@@ -27,7 +27,6 @@ export const AddTaskForm = () => {
       isCompleted: false
     }
     dispatch(tasks.actions.addTask(addNewTask))
-
     setNewTask('')
   }
 

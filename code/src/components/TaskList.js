@@ -4,8 +4,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 
 // WHAT I WANT TO DO HERE:
-// Render every task in the store
-// Change their state to completed with a checkbox, which should change how they display
+// Render every task in the store /DONE
+// Change their state to completed with a checkbox /DONE
+// Completed tasks should look differently
 // Allow tasks to be deleted with a button click
 // Render an 'All done!' image if the list is empty
 
@@ -21,19 +22,27 @@ export const TaskList = () => {
   const completedTaskToggle = (id) => {
     dispatch(tasks.actions.toggleItem(id))
   }
+
+  const deleteTask = (index) => {
+    dispatch(tasks.actions.deleteItem(index))
+  }
+
   return (
     <section>
-      {taskArray.map((singleTask) => {
+      {taskArray.map((task, index) => {
         return (
           <div>
-            <p>{singleTask.name}</p>
+            <p>{task.name}</p>
             <label>Status
               <input
                 type="checkbox"
-                checked={singleTask.isCompleted}
-                onChange={() => completedTaskToggle(singleTask.id)} />
+                checked={task.isCompleted}
+                onChange={() => completedTaskToggle(task.id)} />
             </label>
-            <button type="button">❌</button>
+            <button
+              type="button"
+              onClick={() => deleteTask(index)}>❌
+            </button>
           </div>
         );
       })}
