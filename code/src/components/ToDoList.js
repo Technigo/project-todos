@@ -18,14 +18,12 @@ const ToDoList = () => {
         return (
           <article>
             <h2>
-              {singleToDo.text}
+              {singleToDo.name}
             </h2>
-            <label>Is this toDo done?
+            <label>
               <input type="checkbox" checked={singleToDo.complete} onChange={() => onCompleteToggle(singleToDo.id)} />
             </label>
-            <button type="button">
-							X
-            </button>
+            <button type="button" className="deleted-btn" onClick={() => dispatch(toDos.actions.removeItem(singleToDo.id))}>Remove a task</button>
           </article>
         );
       })}
