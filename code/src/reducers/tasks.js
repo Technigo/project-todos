@@ -3,7 +3,9 @@ import uniqid from 'uniqid';
 import moment from 'moment';
 
 const initialState = {
-  items: []
+  items: [
+    { id: 1, text: 'Gym Time!', complete: true, createdAt: new Date() }
+  ]
 }
 
 export const tasks = createSlice({

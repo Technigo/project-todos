@@ -4,6 +4,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import moment from 'moment';
+import styled from 'styled-components';
 
 const ToDoList = () => {
   const items = useSelector((store) => store.tasks.items)
@@ -22,16 +23,17 @@ const ToDoList = () => {
   return (
     <section>
       {items.length === 0
-    && <div>
-      <p>Empty Board!</p></div>}
+    && <EmptyBoard>
+      <EmptyText>Empty Board!</EmptyText>
+    </EmptyBoard>}
       {items.map((item) => (
         <>
-          <div key={item.id}>
+          <BoardTasks key={item.id}>
             <input
               type="checkbox"
               checked={item.complete}
               onChange={() => onToggleTask(item.id)} />
-          </div><div>{item.text}</div>
+          </BoardTasks><div>{item.text}</div>
           <div>
             <span>{moment(item.createdAt).fromNow()}</span>
             <button onClick={() => onDeleteTask(item.id)}>Clear!</button>
@@ -41,5 +43,28 @@ const ToDoList = () => {
     </section>
   )
 }
+
+const EmptyBoard = styled.div`
+  padding-top: 10px;
+  height: 260px;
+`
+const EmptyText = styled.p`
+  margin-top: 30px;
+  color: grey;
+`
+
+const BoardTasks = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid lightblue;
+  &:nth-child(odd) {
+      background: rgba(250,235,215,0.85);
+  }
+
+  &:last-child {
+    border-radius: 0 0 20px 20px;
+  }
+`
 
 export default ToDoList;
