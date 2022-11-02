@@ -1,9 +1,26 @@
 import React from 'react';
+import { Provider } from 'react-redux'
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+// import pokemons from 'reducers/pokemon';
+// import PokemonList from 'components/PokemonList';
+
+import todo from 'reducers/todo';
+import TodoList from 'components/TodoList';
+import AddTask from 'components/AddTask';
 
 export const App = () => {
+  const reducer = combineReducers({
+  //  pokemons: pokemons.reducer,
+    todo: todo.reducer
+  });
+
+  const store = configureStore({
+    reducer
+  });
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <Provider store={store}>
+      <AddTask />
+      <TodoList />
+    </Provider>
   );
 }
