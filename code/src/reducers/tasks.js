@@ -3,9 +3,7 @@ import uniqid from 'uniqid';
 import moment from 'moment';
 
 const initialState = {
-  items: [
-    { id: 1, text: 'Gym Time!', complete: true, createdAt: new Date() }
-  ]
+  items: []
 }
 
 export const tasks = createSlice({
@@ -43,9 +41,11 @@ export const tasks = createSlice({
       );
       store.items = decreasedTasks
     },
-    checkAllTask: () => {
-      store.items.map(item => item.complete = true)
+
+    checkAllTask: (store) => {
+      store.items.map((item) => item.complete = true)
     },
+
     clearTask: () => {
       return initialState
     }

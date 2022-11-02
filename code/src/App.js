@@ -14,8 +14,8 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <Board />
       <AddTask />
+      <Board />
     </Provider>
   );
 }

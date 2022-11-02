@@ -16,9 +16,16 @@ const AddTask = () => {
     dispatch(tasks.actions.checkAllTask())
   }
 
+  const checkKey = (e) => {
+    if (e.keyCode === 13 && !e.shiftKey) {
+      onAddTask(e)
+    }
+  }
+
   return (
     <div>
       <div>
+        <input type="text" value={todo} onChange={(event) => setTodo(event.target.value)} onKeyDown={(e) => checkKey(e)} />
         <button
           onClick={onAddTask}
           disable={todo.length >= 50 || todo.length <= 2}>
@@ -32,7 +39,6 @@ const AddTask = () => {
         </div>
       </div>
     </div>
-
   )
 }
 
