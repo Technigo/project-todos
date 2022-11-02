@@ -39,4 +39,5 @@ display: flex;
 const TodaysDate = styled.div`
 border: solid green 2px;
 display: flex;
+margin: 10px 0 0 0;
 `
