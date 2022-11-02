@@ -8,7 +8,7 @@ const tasks = createSlice({
     items: data
   },
   reducers: {
-    addTask: (store, action) => {
+    toggleItem: (store, action) => {
       // eslint-disable-next-line array-callback-return
       store.items.map((item) => {
         if (item.id === action.payload) {
@@ -17,10 +17,10 @@ const tasks = createSlice({
       })
     },
     deleteItem: (store, action) => {
-      store.item.splice(action.payload, 1)
+      store.items.splice(action.payload, 1)
     },
     addItem: (store, action) => {
-      store.item.push(action.payload)
+      store.items.push(action.payload)
     }
   }
 })

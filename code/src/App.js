@@ -2,19 +2,34 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import React from 'react';
 import { Provider } from 'react-redux';
 import tasks from 'reducers/task';
-import TaskList from 'components/taskList';
+import TaskList from 'components/TaskList';
+import AddTask from 'components/AddTask';
+import Header from 'components/Header';
+import TodoCount from 'components/TaskCounter';
+import TodaysDate from 'components/TodaysDate';
+
+import { OuterWrapper, GlobalStyles, ContentWrapper } from 'styledcomponents/GlobalStyles';
+
+const reducer = combineReducers({
+  tasks: tasks.reducer
+})
+const store = configureStore({ reducer })
 
 export const App = () => {
-  const reducer = combineReducers({
-    tasks: tasks.reducer
-  })
-
-  const store = configureStore({ reducer })
-
   return (
-    <Provider store={store}>
-      Find me in src/app.js!
-      <TaskList />
-    </Provider>
+    <>
+      <GlobalStyles />
+      <OuterWrapper>
+        <Provider store={store}>
+          <Header />
+          <TodaysDate />
+          <ContentWrapper>
+            <AddTask />
+            <TodoCount />
+            <TaskList />
+          </ContentWrapper>
+        </Provider>
+      </OuterWrapper>
+    </>
   );
 }
