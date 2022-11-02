@@ -3,6 +3,11 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 
+// HEADER
+// COUNTER
+// TASKFORM
+// TASKLIST
+
 export const TaskList = () => {
   const taskArray = useSelector((store) => store.tasks.items);
   const dispatch = useDispatch();
@@ -15,7 +20,7 @@ export const TaskList = () => {
       {taskArray.map((singleTask) => {
         return (
           <div>
-            <h2>{singleTask.name}</h2>
+            <p>{singleTask.name}</p>
             <label>Status
               <input
                 type="checkbox"
