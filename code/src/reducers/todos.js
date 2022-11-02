@@ -1,53 +1,43 @@
 import { createSlice } from '@reduxjs/toolkit';
 import uniqid from 'uniqid';
 
+const initialState = {
+  items: []
+};
+
 const todos = createSlice({
   name: 'todos',
-  initialState: {
-    items: [
-      {
-        id: '1',
-        text: 'Watch video on actions & reducers',
-        complete: false
-      },
-      {
-        id: '2',
-        text: 'Follow redux codealong',
-        complete: false
-      },
-      {
-        id: '3',
-        text: 'Fork weekly assignment',
-        complete: false
-      },
-      {
-        id: '4',
-        text: 'Create a todo app',
-        complete: false
-      },
-      {
-        id: uniqid(),
-        text: 'does it work?',
-        complete: false
-      }
-    ]
-  },
+  initialState,
   reducers: {
+    addToDo: (store, action) => {
+      const newToDo = {
+        id: uniqid(),
+        text: action.payload,
+        isComplete: false
+      };
+      store.items = [newToDo, ...store.items]
+    },
     toggleToDo: (store, action) => {
       console.log(store)
       console.log(action)
 
       store.items.forEach((item) => {
         if (item.id === action.payload) {
-          item.complete = !item.complete;
+          item.isComplete = !item.isComplete;
         }
       });
-    },
-    addToDo: (store, action) => {
+    }
+    /*  deleteToDo: (store, action) => {
       console.log(store);
       console.log(action);
-    }
+
+      store.items.filter((item) => {
+        return (item.id === action.payload) {
+          item.isComplete = !item.isComplete;
+        }
+      });
+    } */
   }
-});
+})
 
 export default todos;

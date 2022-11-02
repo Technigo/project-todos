@@ -6,8 +6,12 @@ const ToDoList = () => {
   const toDoList = useSelector((store) => store.todos.items);
   const dispatch = useDispatch();
 
-  const onToggleCheckbox = (id) => {
-    dispatch(todos.actions.toggleCheckbox(id));
+  const onToggleToDo = (id) => {
+    dispatch(todos.actions.toggleToDo(id));
+  }
+
+  const onDeleteToDo = (id) => {
+    dispatch(todos.actions.deleteToDo(id));
   }
   return (
     <section>
@@ -19,9 +23,9 @@ const ToDoList = () => {
               <input
                 type="checkbox"
                 checked={singleToDo.complete}
-                onChange={() => onToggleCheckbox(singleToDo.id)} />
+                onChange={() => onToggleToDo(singleToDo.id)} />
             </lable>
-            <button type="button">X</button>
+            <button type="button" onClick={() => onDeleteToDo(singleToDo.id)}>X</button>
           </article>
         );
       })}
