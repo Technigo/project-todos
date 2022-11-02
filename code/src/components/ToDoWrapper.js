@@ -12,10 +12,22 @@ export const ToDoWrapper = () => {
     tasks: tasks.reducer
   });
 
-  const store = configureStore({
+  let preloadedState = {};
+  const preloadedStateJSON = localStorage.getItem('reduxState')
+
+  if (preloadedStateJSON) {
+    preloadedState = JSON.parse(preloadedStateJSON)
+  }
+
+  const store = configureStore({ reducer, preloadedState })
+
+  store.subscribe(() => {
+    localStorage.setItem('reduxState', JSON.stringify(store.getState()))
+  })
+  /*   const store = configureStore({
     // reducer: reducer
     reducer
-  });
+  }); */
 
   return (
     <Provider store={store}>
