@@ -76,6 +76,7 @@ export const ButtonStyle = styled.button`
   border: none;
   background: #F69101;
   color: white;
+  display: flex;
   align-items: center;
   justify-content: center;
 
