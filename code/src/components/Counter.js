@@ -7,7 +7,7 @@ const Counter = () => {
   const completedTasks = useSelector((store) => store.tasks.items.filter((item) => !item.isComplete).length);
   const totalTasks = useSelector((store) => store.tasks.items.length);
   return (
-    <StyledText>Completed: {completedTasks}/{totalTasks}</StyledText>
+    <StyledText>Still to do: {completedTasks}/{totalTasks}</StyledText>
   )
 };
 
