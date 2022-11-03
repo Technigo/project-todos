@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 const Counter = () => {
   // eslint-disable-next-line max-len
@@ -13,8 +13,6 @@ const Counter = () => {
 
 const StyledText = styled.p`
 align-items: center;
-display: flex;
-flex-direction: column;
 justify-content: center;
 `
 

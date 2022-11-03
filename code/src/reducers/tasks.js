@@ -57,6 +57,10 @@ const tasks = createSlice({
       );
 
       store.items = removedTask;
+    },
+
+    deleteAllTasks: (store) => {
+      store.items = []
     }
   }
 });

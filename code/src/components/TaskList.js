@@ -10,11 +10,15 @@ const TaskList = () => {
 
   const onIsCompleteToggle = (id) => {
     dispatch(tasks.actions.toggleItem(id));
-  }
+  };
 
   const onDeleteTask = (id) => {
     dispatch(tasks.actions.deleteTask(id));
   };
+
+  const onDeleteAllTasks = () => {
+    dispatch(tasks.actions.deleteAllTasks());
+  }
 
   return (
     <ListWrapper>
@@ -37,6 +41,12 @@ const TaskList = () => {
             </button>
 
             <p>Posted: {singleTask.postedTime}</p>
+
+            <button
+              type="button"
+              onClick={() => onDeleteAllTasks(singleTask.id)}>
+              X
+            </button>
 
           </TaskWrapper>
         );
