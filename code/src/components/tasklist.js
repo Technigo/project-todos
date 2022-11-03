@@ -5,7 +5,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import { Task } from 'styledComponents/Task';
 import { FaTrashAlt } from 'react-icons/fa';
-import { DeleteButton } from 'styledComponents/Buttons';
+import {
+  CheckAllContainer,
+  DeleteButton,
+  FilterContainer
+} from 'styledComponents/Buttons';
 import Header from './header';
 import NewTask from './newTask';
 
@@ -46,18 +50,18 @@ const TaskList = () => {
     <div>
       <Header />
 
-      <section>
+      <FilterContainer>
         <button type="button" onClick={() => setFilter('all')}>
-          All tasks: {taskList.length}
-        </button>
-
-        <button type="button" onClick={() => setFilter('completed')}>
-          Completed tasks: {completedTasks.length}
+          All: {taskList.length}
         </button>
         <button type="button" onClick={() => setFilter('uncompleted')}>
-          Uncompleted tasks: {uncompletedTasks.length}
+          Active: {uncompletedTasks.length}
         </button>
-
+        <button type="button" onClick={() => setFilter('completed')}>
+          Completed: {completedTasks.length}
+        </button>
+      </FilterContainer>
+      <section>
         <div className="tasklist">
           <NewTask />
           {filteredTasks.map((singleTask) => {
@@ -84,11 +88,13 @@ const TaskList = () => {
               </Task>
             );
           })}
-          <button className="complete" type="button" onClick={onCompleteAll}>
-            Complete all
-          </button>
         </div>
       </section>
+      <CheckAllContainer>
+        <button type="button" onClick={onCompleteAll}>
+          Complete all
+        </button>
+      </CheckAllContainer>
     </div>
   );
 };

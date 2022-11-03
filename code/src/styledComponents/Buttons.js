@@ -14,3 +14,33 @@ export const DeleteButton = styled.button`
   color: grey;
   font-size: 1rem;
 `;
+
+export const FilterContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 10px;
+
+  button {
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f3d195;
+    cursor: pointer;
+  }
+`;
+
+export const CheckAllContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+
+  button {
+    background-color: #7e949e;
+    padding: 10px;
+    border-radius: 5px;
+    color: #e9e9e9;
+    border: none;
+  }
+`;

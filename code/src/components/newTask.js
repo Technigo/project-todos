@@ -38,8 +38,8 @@ const NewTask = () => {
             required
           />
         </label>
-        <AddButton type="submit"> + </AddButton>
       </form>
+      <AddButton type="submit"> + </AddButton>
     </Task>
   );
 };
