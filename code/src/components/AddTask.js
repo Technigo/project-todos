@@ -29,7 +29,7 @@ const AddTask = () => {
         <AddTaskText type="text" placeholder="Enter a title for this card" value={todo} onChange={(event) => setTodo(event.target.value)} onKeyDown={(e) => checkKey(e)} />
         <AddTaskButton
           onClick={onAddTask}
-          disabled={todo.length >= 20 || todo.length <= 2}>
+          disabled={todo.length >= 15 || todo.length <= 2}>
            +
         </AddTaskButton>
         <AddTaskButtonsClear>
@@ -49,19 +49,18 @@ const AddTaskDiv = styled.div`
 
 const AddTaskContainer = styled.div`
   display: flex;
-  justify-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
 `
 
 const AddTaskText = styled.input`
   height: 40px;
-  width: 250px;
+  width: 485px;
   margin-bottom: 3px;
   padding-left: 10px;
   border-radius: 20px 0 0 20px;
   border: none;
-  @media (max-width: 450px) {
-    width: 130px;
+  @media (max-width: 640px) {
+    width: 150px;
     height: 26px;
   }
 `
@@ -75,7 +74,7 @@ const AddTaskButton = styled.button`
   background-color: white;
   font-size: 1.1rem;
   font-weight: 600;
-  @media (max-width: 450px) {
+  @media (max-width: 640px) {
     height: 28px;
     font-size: 0.8rem;
   }
@@ -90,8 +89,7 @@ const AddTaskButton = styled.button`
 
 const AddTaskButtonsClear = styled.div`
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  flex-wrap: wrap;
 `
 
 const AddTaskButtonCheck = styled.button`

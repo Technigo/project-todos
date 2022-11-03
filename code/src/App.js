@@ -35,7 +35,8 @@ const BoardTitle = styled.h1`
   font-size: 3rem;
   margin-top: 10px;
   margin-bottom: 0;
-  @media (max-width: 450px) {
-    font-size: 2.6rem;
+  @media (max-width: 640px) {
+    font-size: 2rem;
+    padding: 10px;
   }
 `
