@@ -17,11 +17,14 @@ const TodoList = () => {
       {todoList.map((singleTodo, index) => {
         return (
           <div key={singleTodo.id}>
-            <h2>{singleTodo.name}</h2><input
+            <input
               type="checkbox"
               checked={singleTodo.isDone}
-              onChange={() => onIsDoneToggle(singleTodo.id)} /><label>is this done?</label>
-            <button onClick={() => onDeleteTodoButtonClick(index)} type="button" className="btn btn-primary mb-2">Remove</button>
+              className="strikethrough"
+              onChange={() => onIsDoneToggle(singleTodo.id)} />
+            <label className="strikethrough">{singleTodo.name}
+            </label>
+            <button onClick={() => onDeleteTodoButtonClick(index)} type="button" className="btn btn-warning">Remove</button>
           </div>
         );
       })}
