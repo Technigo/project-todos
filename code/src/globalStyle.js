@@ -5,10 +5,15 @@ const GlobalStyle = createGlobalStyle`
   box-sizing: border-box;
 }
 :root {
-  --main-color: hotpink;
-  --text-color: black;
+  --main-color: #a9d7cc;
+  --text-color-light: #c4ccce;
+  --second-color: #005568;
+  --accent-color: #00bcbc; 
+  --dark-color: #002d52;
+  --ligth-color:#d0e7e2;
   --pane-padding: 5px 42px;
 }
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -27,7 +32,7 @@ body {
   font-size: 15px;
   letter-spacing: 1px;
   line-height: 32px;
-  height: 100%;
+  // min-height: 700px;
 }
 `;
 

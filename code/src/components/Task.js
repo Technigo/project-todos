@@ -29,7 +29,7 @@ const Task = ({ taskData }) => {
 export default Task;
 
 const TaskWrapper = styled.div`
-background-color: red;
+background-color: var(--main-color);
 margin: 10px 0;
 padding: 0 10px;
 display: flex;
@@ -42,11 +42,6 @@ flex-direction: column;
   justify-content: flex-start;
   flex-direction: row;
   align-items: center;
-  border: solid 2px green;
-}
-
-.inputfield{
-  // checkbox
 }
 
 .task-text{
@@ -69,9 +64,6 @@ margin-left: auto;
 
 // font-family:
 `
-
-/** (moment().format('MMMM Do YYYY, h:mm:ss a'))}/ */
-
 // @media (min-width: 667px) and (max-width: 1024px) {
 // }
 // @media (min-width: 1025px) {

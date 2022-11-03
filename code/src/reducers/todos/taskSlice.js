@@ -9,18 +9,10 @@ const taskSlice = createSlice({
   name: 'tasks',
   initialState: {
     tasksArray: [
-      { id: 0,
-        text: 'Sova',
-        isCompleted: false,
-        color: 'purple' },
-      { id: 1,
-        text: 'Bada',
-        isCompleted: false,
-        color: 'blue' },
-
-      { id: 2,
-        text: 'Äta',
-        isCompleted: true }
+      // { id: 0,
+      //   text: 'Sova',
+      //   isCompleted: false,
+      //   color: 'purple' }
     ]
   },
   reducers: {

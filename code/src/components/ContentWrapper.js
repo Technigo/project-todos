@@ -4,14 +4,14 @@ import styled from 'styled-components/macro';
 const ContentWrapper = ({ children }) => {
   const OuterWrapper = styled.div`
     border: solid 2px black;
-    background-color: black;
+    background-color: var(--second-color);
   `;
   const InnerWrapper = styled.div`
     max-width: 940px;
     width: 90%;
-    height: 100%;
+    height: 100vh;
     margin: 0 auto;
-    background-color: pink;
+    background-color:var(--ligth-color);
     display: flex;
     flex-direction: column;
 

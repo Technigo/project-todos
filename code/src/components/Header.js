@@ -4,8 +4,6 @@ import styled from 'styled-components'
 const Header = () => {
   return (
     <HeaderContainer>
-      <h1 className="header-title">TODO</h1>
-      <h2 className="header-subtitle">List</h2>
       {/* <Icons/> */}
     </HeaderContainer>
   )
@@ -13,11 +11,11 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
-height: 20vh;
-border: solid 2px red;
+height: 25vh;
 position: relative;
-background-image: url(./todo.jpg);
-// background-image: url(../public/Assets/todo.jpg);
+background-image: url("Assets/background.svg");
+background-size: cover;
+background-color: var(--main-color);
 
 // img{
 //   position: absolute;
@@ -41,10 +39,12 @@ background-image: url(./todo.jpg);
 }
 
 @media (min-width: 667px) and (max-width: 1024px) {
-  height: 30vh;
+  height: 40vh;
 }
 @media (min-width: 1025px) {
-  height: 30vh;
+  height: 44vh;
+  background-image: url("Assets/Background-web.svg");
+
 }
 `
 

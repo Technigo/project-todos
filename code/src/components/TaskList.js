@@ -23,10 +23,10 @@ const TaskList = () => {
 export default TaskList;
 
 const TaskListSection = styled.section`
-border: solid 2px red;
 padding: 20px;
 display: flex;
 flex-direction: column;
+// heigth: 400px;
 `
 
 // @media (min-width: 667px) and (max-width: 1024px) {

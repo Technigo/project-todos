@@ -32,6 +32,7 @@ const AddTask = () => {
         name="new task"
         value={inputValue}
         required
+        placeholder="Write a todo.."
         onChange={(event) => { setInputValue(event.target.value); }} />
       <Button type="submit" />
       <TodoCounter />
@@ -45,23 +46,43 @@ const AddTask = () => {
 export default AddTask;
 
 const Form = styled.form`
-padding: 10px;
-border: solid 2px black;
+padding: 5px;
+margin: 7px;
 display: flex;
 flex-direction: row;
+background-color: var(--ligth-color);
+@media (min-width: 667px) and (max-width: 1024px) {
+  padding: 5px;
+  // margin: 10px;
+}
+@media (min-width: 1025px) {
+  padding: 10px;
+  margin: 20px;
+}
 `
 const Button = styled.button`
-border: solid 2px black;
+// border: solid 2px black;
 padding: 10px;
 margin-left: 10px;
 `
 const Input = styled.input`
-border: solid 2px red;
-padding: 10px;
+border: none;
+height: 35px;
+// padding: 4px;
+width: 400px;
 margin-left: 10px;
+outline: none;
 :focus {
   outline: none;
   border: none;
+  @media (min-width: 667px) and (max-width: 1024px) {
+    // padding: 5px;
+  
+  }
+  @media (min-width: 1025px) {
+    // padding: 10px;
+    height: 50px;
+  }
 `
 
 // const AddTaskWrapper = styled.input`

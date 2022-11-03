@@ -8,14 +8,14 @@ const TodoCounter = () => {
   if (leftTodos.length > 0) {
     return (
       <CounterWrapper>
-        <div className="tasks-left-wrapper">{leftTodos.length} to-dos left! </div>
+        <div className="tasks-left-wrapper">{leftTodos.length}/{taskList.length} left! </div>
       </CounterWrapper>
     );
   } else if (leftTodos.length === 0) {
     return (
       <CounterWrapper>
         <div className="tasks-left-wrapper">
-          No more to-dos! Take a break or add some new!
+          No to-dos!
         </div>
       </CounterWrapper>
     )
@@ -24,13 +24,12 @@ const TodoCounter = () => {
 export default TodoCounter;
 
 const CounterWrapper = styled.div`
-display: block-inline;
-border: solid 2px blue;
 margin-left: auto;
-// justify-content: center;
+border: solid 2px black;
 
 .tasks-left-wrapper{
-border: solid 5px green;
+padding: 10px;
+
 }
 `
 
