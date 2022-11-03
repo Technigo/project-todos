@@ -43,7 +43,10 @@ export const tasks = createSlice({
     },
 
     checkAllTask: (store) => {
-      store.items.map((item) => item.complete = true)
+      const checkedTasks = store.items.map((item) => {
+        return { ...item, complete: true }
+      })
+      store.items = checkedTasks
     },
 
     clearTask: () => {

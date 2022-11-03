@@ -33,7 +33,6 @@
         "unnamedComponents": "arrow-function"
       }
     ],
-    "except-arrow-function": "on",
     "arrow-body-style": "off",
     "class-methods-use-this": "off",
     "brace-style": [
