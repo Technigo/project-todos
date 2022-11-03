@@ -1,9 +1,13 @@
 import styled from 'styled-components'
 
+export const GlobalWrap = styled.div`
+border: 2px blue solid;
+max-width: 400px;
+margin: 0 auto;
+`
+
 export const Section = styled.section`
-border: 2px solid blue;
 display: flex;
-margin-top: 40%;
 width: 100%;
 margin-bottom: 5%;
 `
@@ -12,12 +16,15 @@ export const ListWrap = styled.div`
 border-radius: 10px;
 max-width: 340px;
 padding: 10px;
-background: antiquewhite;
-margin: 10px auto;
-
+background: #ffff;
+margin: 20px auto;
+box-shadow: 4px 3px 5px -2px rgba(0,0,0,0.41);
+-webkit-box-shadow: 4px 3px 5px -2px rgba(0,0,0,0.41);
+-moz-box-shadow: 4px 3px 5px -2px rgba(0,0,0,0.41);
 `
 export const InformationWrap = styled.div`
 padding-left: 10px;
+margin-top: -5px;
 `
 export const CheckWrap = styled.label`
 `

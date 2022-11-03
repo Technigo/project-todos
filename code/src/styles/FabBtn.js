@@ -1,15 +1,15 @@
 import styled from 'styled-components'
 
 export const PositionBtn = styled.div`
-border: 2px solid red;
 display: flex;
 position: absolute;
-left: 80%;
-top: 15%;
+right: 10%;
+top: 230px;
 `
 export const ExpandButton = styled.button`
 color: white;
-background-color: orange;
+background-color: #FFB800;
+position: absolute;
 border-radius: 50%;
 height: 50px;
 width: 50px;

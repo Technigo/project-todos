@@ -4,7 +4,9 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import todo from 'reducers/todo';
 import TodoList from 'components/TodoList';
 import TodoSubmitForm from 'components/TodoSubmitForm';
-import { GlobalWrap } from 'styles/Global';
+import { GlobalWrap } from 'styles/SectionWrapper';
+import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 const reducer = combineReducers({
   todo: todo.reducer
@@ -18,8 +20,10 @@ export const App = () => {
   return (
     <Provider store={store}>
       <GlobalWrap>
+        <Header />
         <TodoSubmitForm />
         <TodoList />
+        <Footer />
       </GlobalWrap>
     </Provider>
   );

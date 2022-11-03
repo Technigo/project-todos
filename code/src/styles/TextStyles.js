@@ -25,12 +25,12 @@ color: #5987DF;
 
 export const Deadline = styled.h3`
 line-height: 0rem;
-font-size: 1rem;
+font-size: 0.8rem;
 font-weight: 400;
 `
 export const CreatedAt = styled.p`
 line-height: 1rem;
-font-size: 0.8rem;
+font-size: 0.7rem;
 margin-bottom: 0;
 
 `
