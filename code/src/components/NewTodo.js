@@ -47,24 +47,29 @@ const NewTodoWrapper = styled.div`
 `
 const AddButton = styled.button`
   margin-left: 5px;
-  padding: 5px;
+  padding: 0px 5px 0px 5px;
+  font-size: 15px;
+  font-family: 'Patrick Hand', cursive;
   
   @media (min-width: 668px){ 
     margin-left: 10px;
+    font-size: 20px;
   }
 `
 
 const LabelTodo = styled.label`
 margin: 2px;
 font-size: 15px;
+font-family: 'Patrick Hand', cursive;
 
 @media (min-width: 668px){ 
-    font-size: 20px;
+    font-size: 22px;
   }
 `
 
 const TodoInput = styled.input`
 padding: 5px;
+
 `
 // const NewTodoText = styled.form`
 // padding-bottom: 10px;`

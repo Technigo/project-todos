@@ -11,7 +11,7 @@ export const todos = createSlice({
       completed: false },
     { id: 3,
       name: 'Feed cat',
-      completed: true },
+      completed: false },
     { id: 4,
       name: 'Feed self',
       completed: false }]
@@ -32,15 +32,17 @@ export const todos = createSlice({
       console.log(action)
       const { name } = action.payload
       store.items.push({
-        id: Date.now(),
+        id: Date.now().toString(),
         name
       })
     },
+    // Immutability
     removeItem: (store, action) => {
-      store.items = store.items.filter((item) => item.id !== action.payload);
+      const removedTask = store.items.filter(
+        (item) => item.id !== action.payload
+      );
+
+      store.items = removedTask;
     }
-
   }
-})
-
-/*   */
+});

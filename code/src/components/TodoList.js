@@ -20,49 +20,59 @@ export const TodoList = () => {
     <TodoListWrapper>
       {allTodos.map((singleTodo) => {
         return (
-          <TodoItem key={singleTodo.id}>
-            <label>
-              <TodoCheckbox
-                input
-                name="to-do"
-                id="todos"
-                type="checkbox"
-                checked={singleTodo.completed}
-                onChange={() => onCompletedToggle(singleTodo.id)} />
-            </label>
-            <label htmlFor="to-dos"> {singleTodo.name} </label>
-            <CreatedAt>{dateFormatted}</CreatedAt>
-            <RemoveTask onClick={() => dispatch(todos.actions.removeItem(singleTodo.id))} type="button">Remove</RemoveTask>
-          </TodoItem>
+          <TodoRow key={singleTodo.id}>
+            <TodoItem>
+              <label>
+                <TodoCheckbox
+                  input
+                  name="to-do"
+                  id="todos"
+                  type="checkbox"
+                  checked={singleTodo.completed}
+                  onChange={() => onCompletedToggle(singleTodo.id)} />
+              </label>
+              <label htmlFor="to-dos"> {singleTodo.name} </label>
+
+              <CreatedAt>{dateFormatted}</CreatedAt>
+            </TodoItem>
+            <RemoveTask onClick={() => dispatch(todos.actions.removeItem(singleTodo.id))} type="button">Remove  <span className="material-symbols-outlined"> thumb_up </span></RemoveTask>
+          </TodoRow>
         );
       })}
     </TodoListWrapper>
   )
 }
 
+const TodoItem = styled.div`
+
+`
+
 const TodoListWrapper = styled.section`
   margin: 30px;
   background-color: rgb(236, 179, 144, 0.7);
   border-radius: 10px;
   margin-top: 50px;
-  height: 60vh;
+  height: 65vh;
+  overflow: auto;
+
   //targets all children within the parent
   > * {
     display: flex;
     flex-direction: row;
     align-items: center;
     > * {
-      margin: 10px;
+      margin: 5px;
     }
   } 
 `
-const TodoItem = styled.div`
+const TodoRow = styled.div`
   margin: 8px;
   padding: 8px;
   background-color: #FEF5ED;
   justify-content: space-between;
   font-size: 15px;
-  font-family: 'Comic Neue', cursive;
+  font-family: 'Open Sans', sans-serif;
+
   
 
   @media (min-width: 668px){ 
@@ -78,14 +88,19 @@ const RemoveTask = styled.button`
     background-color: transparent;
     border: none;
     font-size:12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
+        transition: 0.3s ease-in-out;
         cursor: pointer;
     }
 `
 
 const CreatedAt = styled.p`
   font-size:12px;
+  font-family: 'Comic Neue', cursive;
 
   @media (min-width: 668px){ 
     font-size: 15px;
@@ -94,5 +109,3 @@ const CreatedAt = styled.p`
 // onClick={() => dispatch(todos.actions.removeItem(singleTodo.id))}
 //  display: grid;
 // grid-template-columns: 1fr 4fr 1fr;
-
-// <CreatedAt>Created: {moment(date.createdAt).fromNow()}</CreatedAt>
