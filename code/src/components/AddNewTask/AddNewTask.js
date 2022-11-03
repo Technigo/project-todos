@@ -34,6 +34,7 @@ export const AddNewTask = () => {
           type="date"
           value={dueDate}
           name="dueDateInput"
+          placeholder="yyyy-mm-dd"
           max="2023-12-31"
           onChange={(e) => setDueDate(e.target.value)} />
       </span>
