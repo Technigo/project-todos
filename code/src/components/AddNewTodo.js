@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
@@ -16,16 +17,14 @@ const AddTodo = () => {
 
   return (
     <form onSubmit={onFormSubmit}>
-      <label htmlFor="new-todo">
-            New to-do:
-        <input
-          id="new-todo"
-          type="text"
-          className="form-control mb-2 mr-sm-2"
-          placeholder="Add todo..."
-          value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)} />
-      </label>
+      <input
+        id="new-todo"
+        type="text"
+        className="form-control mb-2 mr-sm-2"
+        placeholder="Add todo..."
+        value={inputValue}
+        onChange={(event) => setInputValue(event.target.value)} />
+      <label htmlFor="new-todo" />
       <button className="btn btn-primary mb-2" type="submit"> Add new to do</button>
     </form>
   )

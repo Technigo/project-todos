@@ -4,7 +4,7 @@ const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      {
+      /*       {
         id: Date.now(),
         name: 'dishes',
         isDone: true,
@@ -15,7 +15,7 @@ const todos = createSlice({
         name: 'garbaige',
         isDone: false,
         created: 'some date'
-      }
+      } */
     ]
   },
   reducers: {

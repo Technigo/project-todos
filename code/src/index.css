@@ -14,11 +14,15 @@ code {
 
  [type="checkbox"]{
   opacity:0;
+  width: 18px;
+  height:18px;
+  margin-left: 40px;
+  z-index: 1;
 }
 
 [type="checkbox"] + label{
 position: relative;
-
+padding-left: 30px;
 cursor: pointer;
 display: inline-block;
 color: #666;
@@ -28,25 +32,51 @@ line-height: 25px;
 [type="checkbox"] + label::before{
   content:"";
   position: absolute;
+  left:-20px;
+  top:0;
   width: 18px;
   height:18px;
   outline:2px solid #aaa;
   background: #fff;
+  z-index: -1;
 }
 
 [type="checkbox"]:checked +label::before{
   content:"";
   position: absolute;
+  left:-20px;
+  top:0;
   width: 18px;
   height:18px;
   outline:2px solid #5fd25f;
   background: #fff;
+  z-index: -1;
 }
 
 [type="checkbox"]:checked +label::after{
   content:"";
   position: absolute;
-  
+  left:-20px;
+  top:0;
   width: 18px;
   height:18px;
+  background-image:url(./images/done-big.png);
+  background-size:contain;
+  transform:scale(1);
+  opacity:1;
+  transition:all .3s ease;
+  z-index: -1;
+} 
+
+[type="checkbox"]:not(:checked) +label::after{
+  content:"";
+  position: absolute;
+  left:0;
+  top:0;
+  width: 18px;
+  height:18px;
+  background-image:url(./images/done-big.png);
+  background-size:contain;
+  transform:scale(0);
+  opacity:0;
 } 
