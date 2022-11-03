@@ -62,7 +62,6 @@ align-items: center;
 
 export const InputField = styled.input`
 outline-color: #F69101;
-outline: none;
 border:none;
 margin: 15px;
 border-radius: 5px;

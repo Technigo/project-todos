@@ -52,7 +52,7 @@ export const Checkbox = styled.input`
   background-color: #fff;
   margin: 0;
   font: inherit;
-  color: black;
+  color: grey;
   width: 1.30em;
   height: 1.30em;
   border: 0.15em solid currentColor;
@@ -63,6 +63,11 @@ export const Checkbox = styled.input`
 
 .form-control + .form-control {
   margin-top: 1em;
+}
+
+&:hover {
+  cursor: pointer;
+  color: black;
 }
 
 ::before {
@@ -79,12 +84,6 @@ export const Checkbox = styled.input`
 
 :checked::before {
   transform: scale(1);
-}
-
-&:hover {
-  cursor: pointer;
-  background: white;
-  color: black;
 }
 `;
 

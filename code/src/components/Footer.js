@@ -30,8 +30,6 @@ export const Footer = () => {
   )
 };
 
-// Local styling
-
 export const FooterOuterWrapper = styled.footer`
 background-color: white;
 display: flex;
