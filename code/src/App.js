@@ -4,6 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import todo from 'reducers/todo';
 import TodoList from 'components/TodoList';
 import TodoSubmitForm from 'components/TodoSubmitForm';
+import { GlobalWrap } from 'styles/Global';
 
 const reducer = combineReducers({
   todo: todo.reducer
@@ -16,8 +17,10 @@ store.subscribe(() => localStorage.setItem('todos', JSON.stringify(store.getStat
 export const App = () => {
   return (
     <Provider store={store}>
-      <TodoSubmitForm />
-      <TodoList />
+      <GlobalWrap>
+        <TodoSubmitForm />
+        <TodoList />
+      </GlobalWrap>
     </Provider>
   );
 }

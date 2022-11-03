@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import styled from 'styled-components'
 import todo from 'reducers/todo'
 import uniqid from 'uniqid'
 import { Add, Close } from '@mui/icons-material'
-import { Calendar, Form, PrioTag, TagWrap } from 'styledcomponents/Input'
-import { Section } from 'styledcomponents/SectionWrapper'
+import { Calendar, Form, Input, PrioTag, TagWrap, Low, Medium, High } from 'styles/Input'
+import { Section } from 'styles/SectionWrapper'
+import { ExpandButton, PositionBtn } from 'styles/FabBtn'
+import { TaskDescription } from 'styles/TextStyles'
 
 const TodoSubmitForm = () => {
   const dispatch = useDispatch()
@@ -37,44 +38,44 @@ const TodoSubmitForm = () => {
 
   return (
     <Section>
-      <div className="fab-container">
+      <PositionBtn>
         <ExpandButton
           onClick={toggleClass}>
           {visible ? <Close /> : <Add />}
         </ExpandButton>
-      </div>
+      </PositionBtn>
       <Form onSubmit={handleSubmit} className={visible ? 'input-active' : 'input-hidden'}>
-        <input
+        <TaskDescription>Add new task</TaskDescription>
+        <Input
           type="text"
           value={newTask}
           placeholder="Add new task..."
           onChange={(e) => setNewTask(e.target.value)} />
+        <TaskDescription>Set a deadline and importance</TaskDescription>
         <Calendar
           className={visible ? 'calendar-active' : 'calendar-hidden'}
-          id="date-picker"
-          type="date"
+          id="calendar"
+          type="time"
           value={isDate}
-          onChange={(e) => setDate(e.target.value)} />
+          onChange={(e) => setDate(e.target.value)}
+          required />
         <TagWrap>
-          <PrioTag>!
-            <input
+          <PrioTag>
+            <Low
               type="checkbox"
               value="!"
-              color="red"
               onChange={(e) => setPrioTag(e.target.value)} />
           </PrioTag>
-          <PrioTag>!!
-            <input
+          <PrioTag>
+            <Medium
               type="checkbox"
               value="!!"
-              color="#ffff"
               onChange={(e) => setPrioTag(e.target.value)} />
           </PrioTag>
-          <PrioTag>!!!
-            <input
+          <PrioTag>
+            <High
               type="checkbox"
               value="!!!"
-              color="#ffff"
               onChange={(e) => setPrioTag(e.target.value)} />
           </PrioTag>
         </TagWrap>
@@ -84,15 +85,3 @@ const TodoSubmitForm = () => {
   )
 }
 export default TodoSubmitForm;
-
-const ExpandButton = styled.button`
-color: white;
-background-color: orange;
-border-radius: 50%;
-height: 50px;
-width: 50px;
-border: none;
-position: absolute;
-left: 80%;
-top: 20%;
-`
