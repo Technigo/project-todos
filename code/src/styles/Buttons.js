@@ -1,21 +1,42 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const NewTodoButton = styled.button`
   border-radius: 50%;
-  height: 44px;
-  width: 44px;
-  background-color: blue;
+  height: 10vh;
+  width: 10vh;
+  background-color: #0925ff;
   color: white;
-  border: white solid 1px;
+  border: white solid 2px;
   display: flex;
   align-items: center;
+  justify-content: center;
   margin: 2px;
   &:hover {
-    transform: scale(1.2);
+    background-color: lightblue;
   }
 `
 export const ButtonP = styled.p`
   font-size: 40px;
   font-family: 'Baloo 2', cursive;
   padding: 5px;
+`
+
+export const AddButton = styled.button`
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  border-radius: 7px;
+  background-color: #0925ff;
+  padding: 3px;
+  color: white;
+  font-family: 'Baloo 2', cursive;
+  border: white solid 2px;
+  `
+
+export const RemoveTask = styled.button`
+background-color: transparent;
+border: none;
+&:hover {
+    transform: scale(1.3);
+}
 `

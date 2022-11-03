@@ -3,8 +3,9 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 import styled from 'styled-components'
-import DeleteTask from 'components/DeleteTask'
+// import DeleteTask from 'components/DeleteTask'
 import DeleteAllTasks from './DeleteAllTasks';
+import { RemoveTask } from '../styles/Buttons'
 
 const ListOfTodos = () => {
   const toDoList = useSelector((store) => store.todos.items)
@@ -14,14 +15,18 @@ const ListOfTodos = () => {
     dispatch(todos.actions.toggleItem(id))
   }
 
+  const onDeleteToDoButtonClick = (index) => {
+    dispatch(todos.actions.removeToDo(index))
+  }
+
   return (
     <ToDoListWrapper>
-      {toDoList.map((toDo) => {
+      {toDoList.map((toDo, index) => {
         return (
           <ToDoItem>
             <input name="to-dos" type="checkbox" checked={toDo.isDone} onChange={() => onIsDoneToggle(toDo.id)} />
             <label htmlFor="to-dos"> {toDo.name} </label>
-            <DeleteTask />
+            <RemoveTask onClick={() => onDeleteToDoButtonClick(index)} type="button">❌</RemoveTask>
           </ToDoItem>
         );
       })}
@@ -33,16 +38,18 @@ const ListOfTodos = () => {
 export default ListOfTodos
 
 const ToDoListWrapper = styled.section`
-    background-color: #f2e2c8;
+    background-color: #ffecea;
     margin-top: 2vh;
     height: 60vh;
     border-radius: 10px;
     box-shadow: 0 0 1px 1px #f2e2c8;
+    position: relative;
 `
 const ToDoItem = styled.div`
-    margin: 8px;
+    margin: 1vh 5vw 1vh 5vw;
     padding: 4px;
-    background-color: rgba(246, 169, 189, 0.29);
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
+    border-radius: 2px;
+    font-family: 'Kalam', cursive;;
 `

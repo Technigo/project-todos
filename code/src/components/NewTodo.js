@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
-import { NewTodoButton, ButtonP } from 'styles/Buttons';
+import { NewTodoButton, ButtonP, AddButton } from 'styles/Buttons';
+import { SrOnly } from 'styles/GlobalStyles'
 import todos from '../reducers/todos'
 
 const NewTodo = () => {
@@ -38,23 +39,25 @@ const NewTodo = () => {
       {collapsed && (
         <ToDoWrapper>
           <form>
-            <label htmlFor="new-todo"> New to-do </label>
+            <label htmlFor="new-todo"><SrOnly> New to-do </SrOnly></label>
             <input
               type="text"
               value={name}
               name="new-todo"
+              placeholder="New to-do"
               onChange={(event) => setName(event.target.value)} />
             <label>
-          Category:
+              <SrOnly>Category:</SrOnly>
               <UrgencySelect
                 value={urgency}
                 onChange={(event) => setUrgency(event.target.value)}>
+                <option style={{ display: 'none' }}>Choose a category</option>
                 <option value="red">Do it ASAP</option>
                 <option value="orange">Can wait a little</option>
                 <option value="green">Just do it when you have time</option>
               </UrgencySelect>
             </label>
-            <button type="submit" onClick={HandleSubmit}>Add</button>
+            <AddButton type="submit" onClick={HandleSubmit}>Add</AddButton>
           </form>
         </ToDoWrapper>
       )}
@@ -66,8 +69,12 @@ const NewTodo = () => {
 export default NewTodo
 
 const ToDoWrapper = styled.section`
-    background-color: #f2e2c8;
+    background-color: #678A74;
     padding: 10px;
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    position: relative;
 `
 const UrgencySelect = styled.select`
 

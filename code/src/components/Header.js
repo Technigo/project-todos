@@ -19,7 +19,7 @@ const Header = () => {
 export default Header
 
 const HeaderWrapper = styled.header`
-  background-color: #f6a9bd;
+  background-color: rgb(255, 69, 117);
   height: 15vh;
   margin-top: 0px;
   position: relative;

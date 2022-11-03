@@ -21,5 +21,11 @@ export default DeleteAllTask
 const RemoveAllTasks = styled.button`
 background-color: red;
 color: white;
-border: blue;
+border: white solid 2px;
+border-radius: 15px;
+padding: 7px;
+position: absolute;
+bottom: 2vh;
+right: 2vw;
+font-style: 'Baloo 2', cursive;
 `

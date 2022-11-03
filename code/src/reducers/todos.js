@@ -41,6 +41,11 @@ const todos = createSlice({
       store.items.push(action.payload)
     },
     removeToDo: (store, action) => {
+      // store.items.forEach((item) => {
+      //   if (item.id === action.payload) {
+      //     store.items.splice(item.id, 1)
+      //   }
+      // })
       store.items.splice(action.payload, 1)
     },
     removeAllToDos: (store, action) => {

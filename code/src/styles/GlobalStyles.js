@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import Background from '../images/Background.png'
+import Background from '../images/Background3.png'
 
 export const OuterWrapper = styled.section`
   width: 100%;
@@ -27,5 +27,17 @@ export const InnerWrapper = styled.section`
 
 export const ContentWrapper = styled.main`
   background-image: url(${Background});
-  background-size: cover;
+  background-size: 90%;
+`
+
+export const SrOnly = styled.span`
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 `
