@@ -9,15 +9,19 @@ const TodoList = () => {
   const onIsDoneToggle = (id) => {
     dispatch(todos.actions.toggleTodoItem(id))
   }
+  const onDeleteTodoButtonClick = (todosIndex) => {
+    dispatch(todos.actions.deleteTodoItem(todosIndex))
+  }
   return (
     <div>
-      {todoList.map((singleTodo) => {
+      {todoList.map((singleTodo, index) => {
         return (
-          <div>
+          <div key={singleTodo.id}>
             <h2>{singleTodo.name}</h2><input
               type="checkbox"
               checked={singleTodo.isDone}
-              onChange={() => onIsDoneToggle(singleTodo.id)} /><label>is this done?</label><button type="button" className="btn btn-primary mb-2">Remove</button>
+              onChange={() => onIsDoneToggle(singleTodo.id)} /><label>is this done?</label>
+            <button onClick={() => onDeleteTodoButtonClick(index)} type="button" className="btn btn-primary mb-2">Remove</button>
           </div>
         );
       })}

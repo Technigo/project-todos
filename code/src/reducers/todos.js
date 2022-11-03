@@ -7,16 +7,21 @@ const todos = createSlice({
       {
         id: Date.now(),
         name: 'dishes',
-        isDone: true
+        isDone: true,
+        created: 'some date'
       },
       {
         id: Math.random(),
         name: 'garbaige',
-        isDone: false
+        isDone: false,
+        created: 'some date'
       }
     ]
   },
   reducers: {
+    setAllItems: (store, action) => {
+      store.items = action.payload;
+    },
     toggleTodoItem: (store, action) => {
       console.log(store);
       console.log(action);
@@ -25,14 +30,23 @@ const todos = createSlice({
           item.isDone = !item.isDone
         }
       });
-    }
-    addToDo: (store, action) => {
-      const newTodo = {
-        id: Date.now(),
-        title: action.payload.title,
-        idDone: false
-      }
+    },
+    deleteTodoItem: (store, action) => {
+      console.log(store);
+      console.log(action);
+      // mutability
+      store.items.splice(action.payload, 1); // deleting one item
+      // immutability
+      /* const updatedItems = store.items.filter((item) => {
+        return store.items.indexOf(item) !== action.payload
+      });
+      store.items = updatedItems */
+    },
+    addItem: (store, action) => {
+      console.log(store);
+      console.log(action);
       store.items.push(action.payload)
+      /* store.items = [...store.items, action.payload] */
     }
   }
 });
