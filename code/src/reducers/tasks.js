@@ -15,6 +15,9 @@ export const tasks = createSlice({
       const itemInfo = action.payload;
       store.items.push(itemInfo);
     },
+    deleteTask: (store, action) => {
+      store.items.splice(action.payload, 1)
+    },
     toggleTask: (store, action) => {
       console.log('store:', store);
       console.log('action:', action);

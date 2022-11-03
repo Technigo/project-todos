@@ -3,7 +3,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
+import { FaEraser } from 'react-icons/fa';
 import AddTask from './AddTask';
+import TaskCount from './TaskCounter';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
@@ -13,29 +15,65 @@ const TaskList = () => {
   const onTaskCompleted = (id) => {
     dispatch(tasks.actions.toggleTask(id));
   }
+  const onTaskDelete = (index) => {
+    dispatch(tasks.actions.deleteTask(index));
+  }
 
   return (
-    <section>
-      {taskList.map((singelTask) => {
-        return (
-          <PostIT>
-            <PostItList>
-              <PostItTitle>{singelTask.text}</PostItTitle>
-              <PostItText>is task completed
-                <input
-                  type="checkbox"
-                  checked={singelTask.complete}
-                  onChange={() => onTaskCompleted(singelTask.id)} />
-              </PostItText>
-              <button type="button">X</button>
-            </PostItList>
-          </PostIT>
-        );
-      })}
-      <AddTask />
-    </section>
+    <SectionParent>
+      <SectionWrapper>
+        <TaskSection>
+          {taskList.map((singelTask, index) => {
+            return (
+              <PostIT key={singelTask.id}>
+                <PostItList>
+                  <PostItTitle>{singelTask.text}</PostItTitle>
+                  <PostItText>
+                    <input
+                      type="checkbox"
+                      checked={singelTask.complete}
+                      onChange={() => onTaskCompleted(singelTask.id)} />
+                     is task completed
+                  </PostItText>
+                  <div>
+                    <DeleteButton onClick={() => onTaskDelete(index)} type="button">Erase me <ClonedEraser /></DeleteButton>
+                  </div>
+                </PostItList>
+              </PostIT>
+            );
+          })}
+        </TaskSection>
+        <TaskParent>
+          <TaskCount />
+          <AddTask />
+        </TaskParent>
+      </SectionWrapper>
+    </SectionParent>
   )
 }
+
+const SectionParent = styled.section`
+  display: flex;
+  width: 100%;
+`;
+
+const SectionWrapper = styled.div`
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const TaskSection = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+`;
+
+const TaskParent = styled.div`
+  display: flex;
+  width: 80%;
+  justify-content: space-between;
+`;
 
 const PostIT = styled.ul`
   list-style:none;
@@ -51,22 +89,72 @@ const PostItList = styled.li`
   color:#000;
   background:#ffc;
   display:block;
-  height:10em;
-  width:10em;
+  height:13em;
+  width:13em;
   padding:1em;
   margin:1em;
+  box-shadow: 7px 7px 9px rgba(33,33,33,.7);
+  transform: rotate(-6deg);
+  transition: transform .15s linear;
+
+  &:hover {
+    box-shadow:10px 10px 7px rgba(0,0,0,.7);
+    transform: scale(1.15);
+    position:relative;
+    z-index:5;    
+  }
+
+  @media (min-width: 900px) {
+    height:20em;
+    width:20em;
+    width: ;
+  }
+  
 `;
 
 const PostItTitle = styled.h2`
 font-weight: bold;
 font-size: 2rem;
+font-family: 'Reenie Beanie';
+
+@media (min-width: 900px) {
+  font-size: 2.5rem;
+}
 `;
 
 const PostItText = styled.p`
   font-size: 1rem;
   font-weight: normal;
+  font-family: 'Reenie Beanie';
+
+
+  @media (min-width: 900px) {
+    font-size: 2rem;
+  }
 `;
 
+const DeleteButton = styled.button`
+border: none;
+background-color: transparent;
+cursor: pointer;
+margin-left: auto;
+font-size: 1rem;
+color: var(--primary);
+font-weight: bold;
+font-size: 2rem;
+font-family: 'Reenie Beanie';
+
+
+ &:hover {
+opacity: 75%;
+transition: 0.3s ease;
+}
+`;
+
+const ClonedEraser = styled(FaEraser)`
+  font-size: 1.5em;
+
+`;
 export default TaskList
 
 // onChange={() => onTaskCompleted(singleTask.id) } ****use this?
