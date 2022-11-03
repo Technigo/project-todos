@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import ContentContainer from './content/ContentContainer';
+import { contentAppear } from './GlobalStyles';
 
 const Main = () => {
   return (
-    <MainStyle className="content-container">
+    <MainStyle>
       <ContentContainer />
     </MainStyle>
   );
@@ -21,9 +22,11 @@ const MainStyle = styled.main`
   border-radius: 5px;
   box-shadow: 0px 0px 20px 8px #12121261;
 
+  animation: ${contentAppear} 4s;
+  transform: scale(1);
+
   @media (min-width: 1024px) {
     width: 60%;
     max-width: 1000px;
   }
-  // TODO: import animations from CSS here
 `;

@@ -1,33 +1,58 @@
 /* eslint-disable react/jsx-closing-bracket-location */
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import styled from 'styled-components/macro';
-// import { textColor } from 'components/GlobalStyles';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import tasks from 'reducers/tasks';
+import cat from 'reducers/cat';
 
 import plus from '../../Assets/plus.svg';
 
 const NewTask = () => {
+  const input = useRef(null);
   const dispatch = useDispatch();
+  const taskListLength = useSelector((store) => store.tasks.tasks).length;
   const [newTaskText, setNewTaskText] = useState('');
 
   return (
     <NewTaskForm
       onSubmit={(e) => {
+        setTimeout(() => {
+          dispatch(cat.actions.changeCat('surprised'));
+        }, 1);
         e.preventDefault();
         dispatch(tasks.actions.addTask(newTaskText));
         setNewTaskText('');
+        setTimeout(() => {
+          dispatch(cat.actions.changeCat('typing'));
+        }, 1000);
+      }}
+      onFocus={() => {
+        dispatch(cat.actions.changeCatAndPrevious('typing'));
+      }}
+      onBlur={() => {
+        if (taskListLength === 0) {
+          dispatch(cat.actions.changeCat('angel'));
+        } else if (taskListLength > 0 && taskListLength <= 4) {
+          dispatch(cat.actions.changeCat('stressed'));
+        } else if (taskListLength > 4 && taskListLength <= 9) {
+          dispatch(cat.actions.changeCat('dizzy'));
+        } else if (taskListLength > 9) {
+          dispatch(cat.actions.changeCat('dead'));
+        }
       }}
     >
-      <NewTaskStyle>
-        <img src={plus} alt="plus" />
+      <NewTaskDiv>
+        <NewTaskButton type="button" onClick={() => input.current.focus()}>
+          <img src={plus} alt="plus" />
+        </NewTaskButton>
         <NewTaskInput
+          ref={input}
           type="text"
           placeholder="Add a new task..."
           value={newTaskText}
           onChange={(event) => setNewTaskText(event.target.value)}
         />
-      </NewTaskStyle>
+      </NewTaskDiv>
       {/* // <input type="submit" value="press me" /> */}
     </NewTaskForm>
   );
@@ -41,13 +66,13 @@ const NewTaskForm = styled.form`
   }
 `;
 
-const NewTaskStyle = styled.div`
+const NewTaskDiv = styled.div`
   padding: 20px 0;
   display: flex;
   align-items: center;
 
   img {
-    padding-left: 20px;
+    /* padding-left: 20px; */
     width: 24px;
     height: 24px;
   }
@@ -56,8 +81,20 @@ const NewTaskStyle = styled.div`
     padding: 40px 0;
 
     img {
-      padding-left: 50px;
+      /* padding-left: 50px; */
     }
+  }
+`;
+
+const NewTaskButton = styled.button`
+  padding: 0;
+  margin-left: 20px;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  @media (min-width: 1024px) {
+    margin-left: 50px;
   }
 `;
 

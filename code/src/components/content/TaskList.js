@@ -1,37 +1,48 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-closing-bracket-location */
-import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import tasks from 'reducers/tasks';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+// import tasks from 'reducers/tasks';
+import cat from 'reducers/cat';
 import styled from 'styled-components/macro';
 import './TaskList.css';
 import { textColor } from 'components/GlobalStyles';
-import bin from '../../Assets/trash.svg';
+// import bin from '../../Assets/trash.svg';
+import TaskFormCheckbox from './TaskFormCheckbox';
+import Trashbin from './Trashbin';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.tasks);
+  // const previousCat = useSelector((store) => store.cat.previousCat);
+  // const catOfTheHour = useSelector((store) => store.cat.catOfTheHour);
   const dispatch = useDispatch();
+  // console.log('previousCat TaskList:', previousCat);
+  // console.log('catOfTheHour TaskList:', catOfTheHour);
+  const catMood = (amountOfTasks) => {
+    if (amountOfTasks === 0) {
+      dispatch(cat.actions.changeCatAndPrevious('angel'));
+    } else if (amountOfTasks > 0 && amountOfTasks <= 4) {
+      dispatch(cat.actions.changeCatAndPrevious('stressed'));
+    } else if (amountOfTasks > 4 && amountOfTasks <= 9) {
+      dispatch(cat.actions.changeCatAndPrevious('dizzy'));
+    } else if (amountOfTasks > 9) {
+      dispatch(cat.actions.changeCatAndPrevious('dead'));
+    }
+  };
+  useEffect(() => {
+    catMood(taskList.length);
+  }, [taskList.length]);
 
-  // <p key={task.id}>{task.text}</p>
+  // console.log(taskList.length, 'previousCat in TaskList:', previousCat);
 
   return (
-    <TaskListStyle>
+    <TaskListStyle scrollTop="scrollHeight">
       {taskList.map((task) => {
         return (
           <TaskForm key={task.id}>
-            <input
-              id={task.id}
-              onChange={() => dispatch(tasks.actions.toggleComplete(task.id))}
-              type="checkbox"
-              checked={task.isComplete}
-              name="tasks"
-            />
+            <TaskFormCheckbox task={task} />
             <label htmlFor={task.id}>{task.text}</label>
-            <TrashBin
-              type="button"
-              onClick={() => dispatch(tasks.actions.deleteTask(task.id))}
-            >
-              <img src={bin} alt="trashbin" />
-            </TrashBin>
+            <Trashbin task={task} />
           </TaskForm>
         );
       })}
@@ -48,7 +59,7 @@ const TaskListStyle = styled.form`
   border: 1px solid ${textColor};
   flex-direction: column;
   font-size: 20px;
-  padding: 20px 10px;
+  padding: 20px;
   gap: 40px;
   overflow-y: scroll;
 `;
@@ -56,25 +67,8 @@ const TaskListStyle = styled.form`
 const TaskForm = styled.div`
   /* display: flex; */
   display: grid;
-  grid-template-columns: 0fr 6fr 1fr;
+  grid-template-columns: 6fr 1fr;
   align-items: center;
   justify-content: center;
   align-items: flex-start;
-`;
-
-const TrashBin = styled.button`
-  height: 24px;
-  width: fit-content;
-  justify-self: center;
-  background: none;
-  /* outline: none; */
-  border: none;
-  cursor: pointer;
-  padding: 0;
-  margin: 0;
-
-  img {
-    height: 24px;
-    width: 24px;
-  }
 `;

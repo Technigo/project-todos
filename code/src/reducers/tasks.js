@@ -1,8 +1,4 @@
 /* eslint-disable operator-linebreak */
-/* eslint-disable no-confusing-arrow */
-/* eslint-disable implicit-arrow-linebreak */
-/* eslint-disable indent */
-/* eslint-disable no-unsafe-optional-chaining */
 import { createSlice } from '@reduxjs/toolkit';
 
 const tasks = createSlice({
@@ -10,33 +6,28 @@ const tasks = createSlice({
   initialState: {
     tasks: [
       {
-        id: 1,
-        text: 'Functionality for deleting a task',
-        isComplete: true
-      },
-      {
-        id: 2,
-        text: 'Functionality for adding a task',
-        isComplete: true
-      },
-      {
-        id: 3,
-        text: 'Styling for tasks',
-        isComplete: true
-      },
-      {
         id: 4,
-        text: 'Cat changing functionality (switch statement redux?)',
-        isComplete: false
+        text: 'Cat changing functionality default, add task and delete task',
+        isComplete: true
       },
       {
-        id: 5,
-        text: 'Change fonts?',
-        isComplete: false
+        id: 1,
+        text: 'Cat changing functionality, input',
+        isComplete: true
       },
       {
-        id: 6,
-        text: 'Change text color?',
+        id: 1123,
+        text: 'Cat changing functionality, added',
+        isComplete: true
+      },
+      {
+        id: 1123342,
+        text: 'Make list scroll to button on submit',
+        isComplete: true
+      },
+      {
+        id: 70,
+        text: 'Delete util',
         isComplete: false
       },
       {
@@ -45,8 +36,13 @@ const tasks = createSlice({
         isComplete: false
       },
       {
-        id: 8,
-        text: 'Optional: timer for cat getting bored/sleeping',
+        id: 80,
+        text: 'Make submit button appear on typing?',
+        isComplete: false
+      },
+      {
+        id: 90,
+        text: 'Optional: change text based on actions',
         isComplete: false
       },
       {
@@ -57,6 +53,11 @@ const tasks = createSlice({
       {
         id: 10,
         text: 'Optional: delete completed tasks',
+        isComplete: false
+      },
+      {
+        id: 11,
+        text: 'Clean up components, like TaskList',
         isComplete: false
       }
     ]
@@ -81,8 +82,6 @@ const tasks = createSlice({
       store.tasks = store.tasks.filter((task) => task.id !== action.payload);
     },
     toggleComplete: (store, action) => {
-      // Expects a task id as action.payload
-
       store.tasks.forEach((task) => {
         if (task.id === action.payload) {
           task.isComplete = !task.isComplete;

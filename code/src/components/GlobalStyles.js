@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components/macro';
+import { createGlobalStyle, keyframes } from 'styled-components/macro';
 
 // Project text colors
 export const textColor = '#7a7a7a';
@@ -10,3 +10,21 @@ export const FontStyles = createGlobalStyle`
   src: url('/Fonts/sarina/Sarina-Regular.ttf');
 }
 `;
+
+export const contentAppear = keyframes`
+0% {
+  opacity: 0;
+}
+  60% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  75% {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  `;

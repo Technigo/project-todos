@@ -1,9 +1,10 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { contentAppear } from './GlobalStyles';
 
 const Footer = () => {
   return (
-    <FooterStyle className="footer">
+    <FooterStyle>
       <a href="https://github.com/joeohm" target="_blank" rel="noreferrer">
         by Joel Öhman
       </a>
@@ -21,6 +22,9 @@ const FooterStyle = styled.footer`
   z-index: 2;
   font-family: 'Sarina';
   transition: all 0.3s ease-in-out;
+
+  animation: ${contentAppear} 4s;
+
   a {
     text-decoration: none;
     color: black;
