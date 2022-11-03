@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import uniqid from 'uniqid';
 import toDos from 'reducers/todo';
+import { StyledForm } from 'components/styled/Form.styled';
 
 const AddNew = () => {
   const [input, setInput] = useState('');
@@ -20,7 +21,7 @@ const AddNew = () => {
   };
 
   return (
-    <form onSubmit={handleFormSubit}>
+    <StyledForm onSubmit={handleFormSubit}>
       <button type="submit">+</button>
       <label htmlFor="newTask">
         <input
@@ -30,7 +31,7 @@ const AddNew = () => {
           onChange={(event) => setInput(event.target.value)}
           placeholder="Add task" />
       </label>
-    </form>
+    </StyledForm>
   );
 };
 

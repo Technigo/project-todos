@@ -2,20 +2,13 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import toDos from 'reducers/todo';
 import { StyledHeader } from './styled/Header.styled';
+import { StyledButton } from './styled/Button.styled';
 
 const Header = () => {
   const dispatch = useDispatch();
   const taskList = useSelector((store) => store.toDos.items);
-  // const [taskCount, setTaskCount] = useState(0);
   const month = new Date().toLocaleString('en', { month: 'long' });
   const date = new Date().getDate();
-  /*   useEffect(() => {
-    taskList.map((task) => {
-        if (task.done) {
-            return
-        }
-    }
-  }, []) */
 
   return (
     <StyledHeader>
@@ -25,7 +18,7 @@ const Header = () => {
       </div>
       <div>
         <p>{taskList.length} tasks</p>
-        <button type="button" onClick={() => dispatch(toDos.actions.clearAll())}>Clear all</button>
+        <StyledButton all type="button" onClick={() => dispatch(toDos.actions.clearAll())}>Clear all</StyledButton>
       </div>
     </StyledHeader>
   );

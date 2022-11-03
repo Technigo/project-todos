@@ -12,8 +12,9 @@ export const ListWrapper = styled.section`
   }
     & li {
       display: flex;
-      justify-content: space-between;
-      padding: 1rem 0;
-      border: 1px solid gainsboro;
+      border-bottom: 1px solid gainsboro;
+      color: gray;
+      font-size: 1rem;
+      padding: 1rem;
     }
 `
