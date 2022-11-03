@@ -11,12 +11,12 @@ const TodoInput = () => {
   const toDoList = useSelector((store) => store.toDos.items);
 
   const [value, setValue] = useState('')
-  // When form is submitted "value" is asigned to "content" of an objectis which is pushed
+  // When form is submitted "value" is asigned to "content" of an object which is pushed
   // into toDos-array by addItem-action.
   const handleToDoSubmit = (event) => {
     event.preventDefault();
     dispatch(toDos.actions.addItem(value))
-    setValue(''); // To clear inpur field
+    setValue(''); // To clear input field
   }
   return (
     <FlexForm onSubmit={handleToDoSubmit}>

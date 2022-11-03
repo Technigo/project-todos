@@ -23,7 +23,10 @@ const toDos = createSlice({
     },
     deleteTask: (store, action) => {
       store.items = store.items.filter((task) => task.id !== action.payload)
-    }
+    }/* ,
+    filterCompleted: (store, action) => {
+      store.items = store.items.filter((task) => task.isCompleted)
+    } */
   }
 })
 export default toDos;

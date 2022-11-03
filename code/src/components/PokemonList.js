@@ -3,6 +3,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import pokemons from 'reducers/pokemon';
+import styled from 'styled-components';
 
 const PokemonList = () => {
   const pokemonList = useSelector((store) => store.pokemons.items)
@@ -14,7 +15,7 @@ const PokemonList = () => {
     dispatch(pokemons.actions.toggleItem(id))
   }
   return (
-    <section>
+    <Section>
       {pokemonList.map((singlePokemon) => {
         return (
           <article key={singlePokemon.id}>
@@ -29,8 +30,12 @@ const PokemonList = () => {
           </article>
         )
       })}
-    </section>
+    </Section>
   )
 }
 
 export default PokemonList;
+
+const Section = styled.section`
+background-color: white
+`

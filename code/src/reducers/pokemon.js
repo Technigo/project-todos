@@ -13,7 +13,7 @@ const pokemons = createSlice({
       {
         id: 'sdh',
         name: 'Mew',
-        isCaught: false
+        isCaught: true
       }
     ]
   },

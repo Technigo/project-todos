@@ -10,11 +10,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: 100vh;
-  background-color: #000;
-
+  background-image: url(../src/assets/images/background.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 
+:root {
+  --topRight: rgb(2, 250, 93);
+  --bottomLeft: rgb(27, 1, 80);
+}
 
+/* Photo by Samantha Gades on Unsplash */
