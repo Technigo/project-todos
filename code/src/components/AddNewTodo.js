@@ -1,5 +1,6 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
+import styled from 'styled-components/macro'
 import { useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 
@@ -25,9 +26,14 @@ const AddTodo = () => {
         value={inputValue}
         onChange={(event) => setInputValue(event.target.value)} />
       <label htmlFor="new-todo" />
-      <button className="btn btn-primary mb-2" type="submit"> Add new to do</button>
+      <AddTodoButtonStyled className="btn btn-primary mb-2" type="submit"> Add new to do</AddTodoButtonStyled>
+      <h4>Is this done?</h4>
     </form>
   )
 }
 
 export default AddTodo;
+
+const AddTodoButtonStyled = styled.button`
+right:0;
+`

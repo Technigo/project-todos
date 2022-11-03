@@ -2,7 +2,7 @@ import React from 'react'
 
 const TotalItems = () => {
   return (
-    <div>TotalItems:</div>
+    <h2>TotalItems:</h2>
   )
 }
 

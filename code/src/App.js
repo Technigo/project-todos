@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components/macro'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
@@ -16,9 +17,33 @@ export const App = () => {
   })
   return (
     <Provider store={store}>
-      <AddNewTodo />
-      <TodoList />
-      <TotalItems />
+      <OuterWrapper>
+        <h2>My to-do list</h2>
+        <AddNewTodo />
+        <TodoList />
+        <TotalItems />
+      </OuterWrapper>
     </Provider>
   );
 }
+
+const OuterWrapper = styled.div`
+position: relative;
+  min-width: 96vw;
+  width: 96%;
+  min-height: 94vh;
+  margin-left: 2%;
+  margin-top: 3vh;
+
+  @media (min-width: 667px) {
+  min-width: 90vw;
+  width: 90%;
+  margin-left:5%;
+}
+
+@media (min-width: 1024px) {
+  min-width: 80vw;
+  width: 80%;
+  margin-left:10%;
+}
+`
