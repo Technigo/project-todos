@@ -2,21 +2,23 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import pokemons from 'reducers/pokemon';
-import PokemonList from 'components/PokemonList';
+import toDoItems from 'reducers/toDoItems';
+import ToDoList from 'components/ToDoList';
+import Add from 'components/Add';
 
 export const App = () => {
   const reducer = combineReducers({
-    pokemons: pokemons.reducer
+    pokemons: toDoItems.reducer
   })
 
   const store = configureStore({
     reducer
   })
+
   return (
     <Provider store={store}>
-      <PokemonList />
+      <ToDoList />
+      <Add />
     </Provider>
-
   );
 }

@@ -11,3 +11,25 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+:root {
+  --section-x-padding: 80px 0;
+  --mobile-y-padding: 0 24px;
+
+  --color-black: #000;
+  --color-lightGray: #D9D9D9;
+  --color-gray: #959595;
+  --color-white: #fff;
+  --color-blue: #0085FF;
+
+  --font-main: '';
+}
+
+*,
+body,
+div {
+  font-family: var(--font-main);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}

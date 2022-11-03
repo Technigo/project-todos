@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const pokemons = createSlice({
-  name: 'pokemons',
+const toDoItems = createSlice({
+  name: 'task-items',
   initialState: {
     items: [
       { id: '1',
@@ -20,9 +20,20 @@ const pokemons = createSlice({
         if (item.id === action.payload) {
           item.isCaught = !item.isCaught
         }
-      })
+      });
+    },
+
+    deleteItem: (store, action) => {
+      // Mutable
+      store.items.splice(action.payload, 1);
+    },
+
+    addItem: (store, action) => {
+      console.log(action);
+      // Mutable
+      store.items.push(action.payload);
     }
   }
 });
 
-export default pokemons
+export default toDoItems;
