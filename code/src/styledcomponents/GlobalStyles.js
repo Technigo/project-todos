@@ -27,13 +27,10 @@ export const GlobalStyles = createGlobalStyle`
 `
 
 export const OuterWrapper = styled.div`
-/* position: relative; */
+position: relative;
 display: flex;
 flex-direction: column;
-`
-
-export const Wrapper = styled.div`
-background-color:#ffadad;
+min-height: 100vh;
 `
 
 export const ContentWrapper = styled.div`
@@ -42,8 +39,8 @@ margin: 30px 20px 0 20px;
 padding: 80px 40px;
 /* top-left top-right bottom-right bottom-left */
 border-radius: 350px 350px 0 0;
-/* height: 100vh; */
-max-height: 100%;
+min-height: 100vh;
+/* max-height: 100%; */
 
 p{
     word-wrap: break-word;
@@ -72,7 +69,8 @@ export const Button = styled.button`
   display: inline;
   width: 50px;
   height: 20px;
-  margin: 5% 40px 5% 0;
+  /* margin: 5% 40px 5% 0; */
+  margin: 0;
   border: none;
   background-color: #046582;
   color: #F9E4D4;

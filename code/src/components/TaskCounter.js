@@ -19,6 +19,7 @@ export default TodoCount;
 
 const Counter = styled.p`
 color: #046582;
+margin: 0;
 /*display: inline-block;
 text-align: right;
 

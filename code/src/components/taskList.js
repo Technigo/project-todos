@@ -2,8 +2,10 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import tasks from 'reducers/task'
-import { Wrapper, Button } from 'styledcomponents/GlobalStyles';
+import { Button } from 'styledcomponents/GlobalStyles';
 import { formatRelative } from 'date-fns';
+
+import styled from 'styled-components';
 
 const TaskList = () => {
   const listTasks = useSelector((store) => store.tasks.items)
@@ -22,28 +24,27 @@ const TaskList = () => {
       {listTasks.map((newTodo, ToDoIndex) => (
         <listedTasks key={newTodo.id}>
           <Wrapper>
-            <p>{newTodo.name}</p>
-            <p>{newTodo.description}</p>
-          </Wrapper>
-          <div>
+            <h4> • {newTodo.name}</h4>
             <p>{formatRelative(new Date(), new Date())}</p>
-          </div>
-          <div>
-            <input
-              type="checkbox"
-              checked={newTodo.isDone}
-              onChange={() => onToDoToggle(newTodo.id)} />
-            <label
-              htmlFor="done">
+            <SubmittedToDoDetails>
+
+              <Checkbox>
+
+                <input
+                  type="checkbox"
+                  checked={newTodo.isDone}
+                  onChange={() => onToDoToggle(newTodo.id)} />
+                <label
+                  htmlFor="done">
                 Done
-            </label>
-          </div>
-
-          <Button
-            type="button"
-            onClick={() => onToDoDelete(ToDoIndex)}>Delete
-          </Button>
-
+                </label>
+              </Checkbox>
+              <Button
+                type="button"
+                onClick={() => onToDoDelete(ToDoIndex)}>Delete
+              </Button>
+            </SubmittedToDoDetails>
+          </Wrapper>
         </listedTasks>
       ))}
     </>
@@ -51,3 +52,31 @@ const TaskList = () => {
 }
 
 export default TaskList
+
+export const Wrapper = styled.div`
+/* background-color:#ffadad; */
+margin: 20px 0;
+
+h4{
+  border-bottom: 1px solid #BB8082;
+}
+
+p{
+  border-bottom: 1px solid #BB8082;
+}
+`
+export const SubmittedToDoDetails = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-between;
+margin: 10px;
+`
+
+export const Checkbox = styled.div`
+margin: 0;
+
+input{
+  margin-right: 5px;
+}
+`

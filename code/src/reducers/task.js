@@ -20,7 +20,7 @@ const tasks = createSlice({
       store.items.splice(action.payload, 1)
     },
     addItem: (store, action) => {
-      store.items.push(action.payload)
+      store.items.unshift(action.payload)
     }
   }
 })

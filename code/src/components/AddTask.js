@@ -8,6 +8,51 @@ import tasks from 'reducers/task';
 import { Button } from 'styledcomponents/GlobalStyles';
 import TodoCount from './TaskCounter';
 
+const AddTask = () => {
+  const [value, setvalue] = useState('')
+
+  const dispatch = useDispatch()
+
+  const onFormSubmit = (event) => {
+    event.preventDefault()
+
+    const newTask = {
+      id: uniqid(),
+      name: value,
+      isDone: false
+    }
+
+    dispatch(tasks.actions.addItem(newTask))
+
+    setvalue('')
+  }
+
+  return (
+
+    <Form onSubmit={onFormSubmit}>
+      {/* <TodoTitle
+          type="text"
+          placeholder="Highlight yo"
+          value={value}
+          onChange={(e) => setvalue(e.target.value)} /> */}
+      <Description
+        placeholder="What do you want to do today?"
+        rows="5"
+        cols="50"
+        value={value}
+        onChange={(event) => setvalue(event.target.value)} />
+      <ToDoDetails>
+        <TodoCount />
+        <Button type="submit">Add</Button>
+
+      </ToDoDetails>
+    </Form>
+
+  )
+}
+
+export default AddTask
+
 /* const Wrapper = styled.div`
  background-color:#ffadad; */
 /* height: 100%;
@@ -64,53 +109,6 @@ const ToDoDetails = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
-margin: 0 10px;
+justify-content: space-between;
+margin: 10px;
 `
-
-const AddTask = () => {
-  const [inputValue, setInputValue] = useState('')
-  const [value, setValue] = useState('')
-
-  const dispatch = useDispatch()
-
-  const onFormSubmit = (event) => {
-    event.preventDefault()
-
-    const newTask = {
-      id: uniqid(),
-      name: inputValue,
-      description: value,
-      isDone: false
-    }
-
-    dispatch(tasks.actions.addItem(newTask))
-
-    setInputValue('')
-    setValue('')
-  }
-
-  return (
-
-    <Form onSubmit={onFormSubmit}>
-      {/* <TodoTitle
-          type="text"
-          placeholder="Highlight yo"
-          value={inputValue}
-          onChange={(e) => setInputValue(e.target.value)} /> */}
-      <Description
-        placeholder="What do you want to do today?"
-        rows="5"
-        cols="50"
-        value={value}
-        onChange={(event) => setValue(event.target.value)} />
-      <ToDoDetails>
-        <Button type="submit">Add</Button>
-        <TodoCount />
-      </ToDoDetails>
-    </Form>
-
-  )
-}
-
-export default AddTask
-
