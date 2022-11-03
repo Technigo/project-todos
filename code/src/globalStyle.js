@@ -27,6 +27,7 @@ body {
   font-size: 15px;
   letter-spacing: 1px;
   line-height: 32px;
+  height: 100%;
 }
 `;
 

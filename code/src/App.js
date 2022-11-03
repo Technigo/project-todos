@@ -6,7 +6,7 @@ import filtersReducer from 'reducers/filters/filterSlice';
 import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
 import Header from 'components/Header';
-import Footer from 'components/Footer';
+// import Footer from 'components/Footer';
 import ContentWrapper from 'components/ContentWrapper';
 
 import GlobalStyle from './globalStyle';
@@ -27,7 +27,7 @@ export const App = () => {
         <Header />
         <AddTask />
         <TaskList />
-        <Footer />
+        {/* <Footer /> */}
       </ContentWrapper>
     </Provider>
   );
