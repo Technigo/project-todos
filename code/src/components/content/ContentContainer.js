@@ -1,6 +1,6 @@
 /* eslint-disable operator-linebreak */
 /* eslint-disable indent */
-import React from 'react';
+import React, { useRef } from 'react';
 import styled from 'styled-components/macro';
 import { useSelector } from 'react-redux';
 import { textColor } from 'components/GlobalStyles';
@@ -18,12 +18,14 @@ const ContentContainer = () => {
           taskListLength === 1 ? 'task' : 'tasks'
         } `;
 
+  const bottomRef = useRef(null);
+
   return (
     <ContentContainerStyled>
       <Cat />
       <h1>{headerText}</h1>
-      <TaskList />
-      <NewTask />
+      <TaskList bottomRef={bottomRef} />
+      <NewTask bottomRef={bottomRef} />
     </ContentContainerStyled>
   );
 };

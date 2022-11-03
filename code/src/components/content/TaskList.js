@@ -11,7 +11,7 @@ import { textColor } from 'components/GlobalStyles';
 import TaskFormCheckbox from './TaskFormCheckbox';
 import Trashbin from './Trashbin';
 
-const TaskList = () => {
+const TaskList = ({ bottomRef }) => {
   const taskList = useSelector((store) => store.tasks.tasks);
   // const previousCat = useSelector((store) => store.cat.previousCat);
   // const catOfTheHour = useSelector((store) => store.cat.catOfTheHour);
@@ -33,10 +33,15 @@ const TaskList = () => {
     catMood(taskList.length);
   }, [taskList.length]);
 
+  // useEffect(() => {
+  //   // Makes the list scroll to the last task
+  //   bottomRef.current.scrollIntoView({ behaviour: 'smooth' });
+  // }, [taskList]);
+
   // console.log(taskList.length, 'previousCat in TaskList:', previousCat);
 
   return (
-    <TaskListStyle scrollTop="scrollHeight">
+    <TaskListStyle scrollTop="1000">
       {taskList.map((task) => {
         return (
           <TaskForm key={task.id}>
@@ -46,6 +51,7 @@ const TaskList = () => {
           </TaskForm>
         );
       })}
+      <div ref={bottomRef} />
     </TaskListStyle>
   );
 };

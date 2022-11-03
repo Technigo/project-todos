@@ -7,7 +7,7 @@ import cat from 'reducers/cat';
 
 import plus from '../../Assets/plus.svg';
 
-const NewTask = () => {
+const NewTask = ({ bottomRef }) => {
   const input = useRef(null);
   const dispatch = useDispatch();
   const taskListLength = useSelector((store) => store.tasks.tasks).length;
@@ -25,6 +25,8 @@ const NewTask = () => {
         setTimeout(() => {
           dispatch(cat.actions.changeCat('typing'));
         }, 1000);
+
+        bottomRef.current.scrollIntoView({ behaviour: 'smooth' });
       }}
       onFocus={() => {
         dispatch(cat.actions.changeCatAndPrevious('typing'));
