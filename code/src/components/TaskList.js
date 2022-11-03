@@ -29,19 +29,19 @@ export const TaskList = () => {
 
   return (
     <section>
-      {taskArray.map((task, index) => {
+      {taskArray.map((item, index) => {
         return (
           <div>
-            <p>{task.name}</p>
+            <p>{item.name}</p>
             <label>Status
               <input
                 type="checkbox"
-                checked={task.isCompleted}
-                onChange={() => completedTaskToggle(task.id)} />
+                checked={item.isCompleted}
+                onChange={() => completedTaskToggle(item.id)} />
             </label>
             <button
               type="button"
-              onClick={() => deleteTask(index)}>❌
+              onClick={() => deleteTask(index)}>❌REMOVE
             </button>
           </div>
         );

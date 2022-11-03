@@ -10,15 +10,15 @@ import { useSelector } from 'react-redux'
 // TASKLIST
 
 export const Counter = () => {
-  const allTasks = useSelector((store) => store.tasks.items)
-  const completedTasks = allTasks.filter((items) => items.isChecked === true)
+  const allTasks = useSelector((store) => store.tasks.items);
+  const completedTasks = allTasks.filter((items) => items.isCompleted === true)
   if (allTasks.length !== completedTasks.length) {
     return (
-      <h2>You have completed {completedTasks.length}/{allTasks.length} tasks on your tasklist</h2>
+      <h2>You have completed {completedTasks.length}/{allTasks.length} tasks</h2>
     )
   } else {
     return (
-      <h2>No tasks remaining, you absolute legend.</h2>
+      <h2>No tasks remaining...</h2>
     )
   }
 }
