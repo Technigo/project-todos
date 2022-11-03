@@ -2,30 +2,35 @@ import styled from 'styled-components'
 
 export const Section = styled.section`
     width: 90%;
-    margin-left: 15%;
+    margin-left: 5%;
     padding-bottom: 20px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-radius: 20px;
-    @media (min-width: 800px) {
-        width: 70%;
+    @media (min-width: 750px) {
+        width: 50%;
+        margin-left: 25%;
+        padding-left: 15px;
+        padding-right: 15px;
+        background: white;
         }
 `
 
 export const Wrapper = styled.div`
-    background-color: pink;
+    background-color: rgb(192, 222, 195);
     width: 100%;
     height: 50px;
     display: flex;
-    flex-direction: row;
+    position: relative;
     align-items: center;
     margin-top: 10px;
+    box-shadow: 2px 5px #888888;
 `
 export const InputWrapper = styled(Wrapper)`
     background-color: white;
-    margin-bottom: -15px;
+    margin-bottom: -17px;
+    box-shadow: none;
 `
 
 export const InputForm = styled.input`
@@ -36,17 +41,20 @@ export const InputForm = styled.input`
   height: 50px;
   color: black;
   font-size: 16px;
+  }
   ::placeholder {
        color: black;
        font-family: 'Nunito Sans', sans-serif;
    }
   &:focus {
-    background-color: pink;
+    background-color: rgb(192, 222, 195);
     border-bottom: transparent;
     outline: none;
     color: black;
-    padding-left: 45px;
-    font-weight: 600;
+    font-size: 18px;
+    padding-left: 42px;
+    font-weight: 400;
+    box-shadow: 2px 5px #888888;
 }
 `
 export const CheckBoxWrapper = styled.label`
@@ -80,29 +88,23 @@ height: 30px;
 `
 
 export const TaskText = styled.h2`
+position: absolute;
+left: 40px;
 color: black;
-font-size: 16px;
+font-size: 18px;
 font-family: 'Nunito Sans', sans-serif;
-padding-left: 20px;
 font-weight: 600;
 `
 
 export const Date = styled.h2`
-border: 2px solid green;
-position: relative;
-margin-left: 68%;
+position: absolute;
+right: 27px;
 width: 48px;
-color: black;
+color: rgb(52, 52, 52);
 font-size: 14px;
 font-family: 'Nunito Sans', sans-serif;
-&:hover {
-  color: black;
-}
-@media (min-width: 600px) {
-  margin-left: 75%;
-}
-@media (min-width: 800px) {
-  margin-left: 55%;
+@media (min-width: 750px) {
   width: 100px;
+  right 20px;
 }
 `

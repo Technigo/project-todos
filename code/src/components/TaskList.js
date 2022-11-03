@@ -6,20 +6,21 @@ import Trash from '../icons/trash.svg'
 import { Section, Wrapper, TaskText, Date, CheckBoxWrapper } from '../styles/styledComponents';
 
 const TaskList = () => {
-  const taskList = useSelector((store) => store.tasks.items);
+  const taskList = useSelector((store) => store.tasks.items); // grabs our items in reducer
   const dispatch = useDispatch();
 
-  const deleteToDo = (id) => {
-    dispatch(tasks.actions.deleteToDo(id));
+  // Delete button
+  const onDeleteItemBtnClick = (todoIndex) => {
+    dispatch(tasks.actions.deleteItem(todoIndex));
   };
 
-  // payload
+  // Toggle checkbox
   const onCompleteToggle = (id) => {
     dispatch(tasks.actions.toggleItem(id))
   }
   return (
     <Section>
-      {taskList.map((singleTask) => {
+      {taskList.map((singleTask, index) => {
         return (
           <Wrapper>
             <CheckBoxWrapper htmlFor={singleTask} id={singleTask}>
@@ -32,7 +33,7 @@ const TaskList = () => {
             </CheckBoxWrapper>
             <TaskText>{singleTask.text}</TaskText>
             <Date>{singleTask.time}</Date>
-            <Button type="button" onClick={() => deleteToDo(singleTask.id)}><Icon src={Trash} alt="Delete" /></Button>
+            <Button type="button" onClick={() => onDeleteItemBtnClick(index)}><Icon src={Trash} alt="Delete" /></Button>
           </Wrapper>
         );
       })}

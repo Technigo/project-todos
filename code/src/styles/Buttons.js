@@ -2,15 +2,15 @@ import styled from 'styled-components'
 
 export const Button = styled.button`
 position: absolute;
-margin-left: 80%;
 border: none;
 background-color: transparent;
-@media (min-width: 800px) {
-  margin-left: 65%;
-}
+right: 4px;
+align-item: center;
 `
 
 export const Icon = styled.img`
+display: flex;
+align-item: center;
 height:20px;
 &:hover {
   transform: scale(1.2);

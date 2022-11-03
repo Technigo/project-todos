@@ -1,14 +1,19 @@
 import React from 'react';
 import { HeaderText, HeaderWrapper, HeaderDate, Line } from 'styles/Header';
+import { Section } from 'styles/styledComponents'
 import moment from 'moment';
+import Counter from './Counter';
 
 const Header = () => {
   return (
-    <HeaderWrapper>
-      <HeaderText>TO DO</HeaderText>
-      <HeaderDate>{moment().format('dddd DD MMMM HH:MM')}</HeaderDate>
-      <Line />
-    </HeaderWrapper>
+    <Section>
+      <HeaderWrapper>
+        <HeaderText>TO DO</HeaderText>
+        <HeaderDate>{moment().format('dddd DD MMMM HH:mm')}</HeaderDate>
+        <Counter />
+        <Line />
+      </HeaderWrapper>
+    </Section>
   )
 }
 
