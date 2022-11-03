@@ -11,14 +11,14 @@ export const AddToDo = () => {
   const [newToDo, setNewToDo] = useState('');
 
   const onFormSubmit = (event) => {
-    event.target.placeholder = 'Add task here...'
+    event.preventDefault();
 
     const postNewToDo = { id: uniqid(),
       name: newToDo,
       complete: false }
 
     dispatch(ToDo.actions.addToDo(postNewToDo))
-    setNewToDo(' ')
+    setNewToDo('')
   }
 
   return (
