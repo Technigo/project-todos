@@ -4,7 +4,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import { AddButton } from 'styledComponents/Buttons';
-
 import { Task } from 'styledComponents/Task';
 import { v4 as uuid } from 'uuid';
 
@@ -14,7 +13,6 @@ const NewTask = () => {
   uuid();
 
   const onFormSubmit = (event) => {
-    console.log(onFormSubmit);
     event.preventDefault();
 
     const newTask = {
