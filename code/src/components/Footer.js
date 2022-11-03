@@ -8,6 +8,7 @@ const Footer = () => {
   const dispatch = useDispatch();
   const onRemoveAllTasks = () => { dispatch(tasks.actions.removeAllTasks(taskList)); };
   const onSetAllTasksDone = () => { dispatch(tasks.actions.setAllTasksDone(taskList)); };
+  console.log('onSetAllTasksDone', onSetAllTasksDone)
   return (
     <FooterContainer>
       <button type="button" onClick={() => onRemoveAllTasks(taskList)}>Reset</button>
