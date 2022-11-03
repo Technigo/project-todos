@@ -3,9 +3,10 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import Header from 'components/Header';
 import TaskList from 'components/TaskList';
-import AddTask from 'components/AddTask'
-
+import AddTask from 'components/AddTask';
 import tasks from 'reducers/tasks';
+import { OuterWrapper, InnerWrapper } from 'GlobalStyles';
+// import Counter from './Counter';
 
 export const ToDoWrapper = () => {
   const reducer = combineReducers({
@@ -31,9 +32,13 @@ export const ToDoWrapper = () => {
 
   return (
     <Provider store={store}>
-      <Header />
-      <TaskList />
-      <AddTask />
+      <OuterWrapper>
+        <InnerWrapper>
+          <Header />
+          <TaskList />
+          <AddTask />
+        </InnerWrapper>
+      </OuterWrapper>
     </Provider>
   );
 }

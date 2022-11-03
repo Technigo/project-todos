@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-
+import styled from 'styled-components/macro'
 import tasks from 'reducers/tasks';
 
 const TaskList = () => {
@@ -17,12 +17,12 @@ const TaskList = () => {
   };
 
   return (
-    <section>
+    <ListWrapper>
       {taskList.map((singleTask) => {
         return (
-          <article>
+          <TaskWrapper key={singleTask.id}>
 
-            <h2>{singleTask.text}</h2>
+            <StyledTask>{singleTask.text}</StyledTask>
 
             <input
               type="checkbox"
@@ -36,13 +36,32 @@ const TaskList = () => {
               X
             </button>
 
-          </article>
+            <p>{singleTask.postedTime}</p>
+
+          </TaskWrapper>
         );
       })}
 
-    </section>
+    </ListWrapper>
   )
 }
+
+const ListWrapper = styled.section`
+  // flex-direction: column;
+`
+
+const TaskWrapper = styled.article`
+  flex-direction: row;
+`
+
+const StyledTask = styled.h3`
+  font-family: var(--font-main);
+  font-weight: 600;
+  text-align: left;
+  font-size: 20px;
+  padding-bottom: 2vh;
+  color: var(--color-accent);
+`
 
 export default TaskList;
 

@@ -20,9 +20,12 @@ const AddTask = () => {
         <input
           type="text"
           value={input}
-          onChange={(event) => setInput(event.target.value)}
-          required />
-        <button type="submit">+</button>
+          placeholder="Add new task"
+          onChange={(event) => setInput(event.target.value)} />
+        <button
+          type="submit"
+          disabled={input === ''}>+
+        </button>
       </form>
     </div>
   );

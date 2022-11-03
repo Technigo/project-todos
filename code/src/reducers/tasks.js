@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import uniqid from 'uniqid'
+import moment from 'moment'
 
 const tasks = createSlice({
   name: 'tasks',
@@ -25,7 +26,8 @@ const tasks = createSlice({
       const newTask = {
         id: uniqid(),
         text: action.payload,
-        isCaught: false
+        isCaught: false,
+        postedTime: moment().startOf('hour').fromNow()
       }
 
       store.items = [...store.items, newTask]
