@@ -25,6 +25,7 @@ export const AddNewTaskWrapper = styled.form`
       border: none;
       background: transparent;
       padding: 3px;
+      z-index: 99;
 
       &:focus {
         outline: none;
