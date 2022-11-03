@@ -32,16 +32,18 @@ export const AddTasks = () => {
   return (
     // When no task is being added, display a plus sign for entering a new task
     // When the plus sign is clicked, display a text input field for new task
-    <AddTaskWrapper>
+    <>
       {!newTask && (
-        <AddBtn
-          type="button"
-          onClick={() => setNewTask(true)}>
-          <img src={plusSign} alt="" />
-        </AddBtn>
+        <AddTaskWrapper>
+          <AddBtn
+            type="button"
+            onClick={() => setNewTask(true)}>
+            <img src={plusSign} alt="" />
+          </AddBtn>
+        </AddTaskWrapper>
       )}
       {newTask && (
-        <InputWrapper>
+        <FormWrapper>
           <Closebtn
             type="button"
             onClick={() => setNewTask(false)}>
@@ -60,30 +62,27 @@ export const AddTasks = () => {
             Add task
             </Actionbtn>
           </form>
-        </InputWrapper>
+        </FormWrapper>
       )}
-    </AddTaskWrapper>
+    </>
   )
 }
 
 // STYLING FOR ABOVE COMPONENT
 const AddTaskWrapper = styled(Wrapper)`
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: center;
-  position: relative;
-  margin: 2rem 0;
 `
 
-const InputWrapper = styled(AddTaskWrapper)`
+const FormWrapper = styled(AddTaskWrapper)`
+  position: relative;  
+  text-align: center;
   background-color: rgba(60, 60, 60, 0.1);
-  width: 100%;
+  width: 95%;
   height: 100%;
   border: none;
-  position: absolute;
   border-radius: 0.6rem;
-  padding: 5rem 1.5rem;
+  padding: 2rem 1.5rem 1.3rem 1.5rem;
+  margin: 1.5rem 0.5rem;
 `
 
 const AddBtn = styled.button`
@@ -118,7 +117,7 @@ const EnterToDo = styled.input`
   font-weight: 200;
   height: 3.2rem;
   background: whitesmoke;
-  width: 85%;
+  width: 90%;
   padding: 1.2rem;
 `
 // <a target="_blank" href="https://icons8.com/icon/8J4QMUHe5rvn/plus">Plus</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>

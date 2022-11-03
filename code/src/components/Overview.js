@@ -7,14 +7,14 @@ import { tasks } from 'reducers/tasks';
 export const Overview = () => {
   const allTasks = useSelector((store) => store.tasks.taskData);
   let toBeDone = 0;
+  const dispatch = useDispatch();
 
+  // For every task in the store that is not completed, increase counter by 1
   allTasks.forEach((task) => {
     if (!task.complete) {
       toBeDone += 1
     }
   });
-
-  const dispatch = useDispatch();
 
   // Function for completing all tasks when 'Complete all' button is clicked
   const completeAll = () => {
@@ -32,47 +32,54 @@ export const Overview = () => {
   }
 
   return (
-    allTasks.length > 0 && (
-      <OverviewWrapper>
-        <FlexItem>
-          <h3>Your tasks</h3>
-          <p>{toBeDone} / {allTasks.length} to be completed</p>
-        </FlexItem>
-        <FlexItem>
-          <Actionbtn
-            align="flex-end"
-            color="#1F9D6E"
-            type="button"
-            onClick={() => completeAll()}>
+    <OverviewWrapper>
+      <FlexContainerText>
+        <h4>You have {toBeDone} out of {allTasks.length} tasks to do.</h4>
+        {/* <p> to be completed</p> */}
+      </FlexContainerText>
+      <FlexContainerBtn>
+        <Actionbtn
+          align="flex-end"
+          color="#4C9173"
+          type="button"
+          onClick={() => completeAll()}>
         Complete all
-          </Actionbtn>
-          <Actionbtn
-            align="flex-end"
-            color="purple"
-            type="button"
-            onClick={() => deleteAll()}>
+        </Actionbtn>
+        <Actionbtn
+          align="flex-end"
+          color="#906387"
+          type="button"
+          onClick={() => deleteAll()}>
         Remove all
-          </Actionbtn>
-        </FlexItem>
-      </OverviewWrapper>
-    )
+        </Actionbtn>
+      </FlexContainerBtn>
+    </OverviewWrapper>
   )
 }
 
 // STYLING FOR ABOVE COMPONENT
 const OverviewWrapper = styled(Wrapper)`
-  display: flex;
-  align-items: center;
+  //display: flex;
+  //align-items: center;
   //justify-content: space-between;
   //flex-direction: column;
   // flex-wrap: wrap;
   //border: 2px solid blue;
 `
 
-const FlexItem = styled.div`
-  width: 50%;
+const FlexContainerText = styled.div`
+  /* width: 70%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  padding-right: 0.2rem; */
+  //border: 2px solid blue;
+`
+
+const FlexContainerBtn = styled.div`
+  display: flex;
+  flex-direction: column;
+  /* width: 30%;
+  align-items: flex-start; */
   //border: 2px solid blue;
 `

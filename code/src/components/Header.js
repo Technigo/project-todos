@@ -1,14 +1,19 @@
 import React from 'react';
 import moment from 'moment';
+import styled from 'styled-components';
 import { Wrapper } from 'styles/GlobalStyles';
 
 export const Header = () => {
   return (
     <Wrapper>
-      <h1>ToDo List</h1>
+      <Title>ToDo List</Title>
       <h3>{moment().format('dddd, Do MMMM YYYY')}</h3>
     </Wrapper>
   )
 }
 
 // STYLING FOR ABOVE COMPONENT
+
+const Title = styled.h1`
+  align-self: center;
+`

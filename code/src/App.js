@@ -4,7 +4,6 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { Header } from 'components/Header';
 import { AddTasks } from 'components/AddTasks';
 import { TaskList } from 'components/TaskList';
-import { Overview } from 'components/Overview';
 import { tasks } from 'reducers/tasks';
 
 const reducer = combineReducers({
@@ -22,7 +21,6 @@ export const App = () => {
         <Header />
         <AddTasks />
         <TaskList />
-        <Overview />
       </main>
     </Provider>
   );
