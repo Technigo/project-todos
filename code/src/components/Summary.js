@@ -5,34 +5,50 @@ import styled from 'styled-components';
 const Container = styled.div`
 display: flex; 
 flex-direction: column;
-margin-bottom: 15px;
-padding: 2em;  
-background-color: #feb062`
+padding: 1em;
+margin-left: 2em;  
+margin-right: 2em; `
 
 const Total = styled.span`
 display: inline; 
-padding-left: 2em;  
+font-family: 'Reenie Beanie';
+font-weight:bold; 
+font-size: 2em;  
 
 `
 const Completed = styled.span`
 display: inline; 
-padding: 2em; 
+font-family: 'Reenie Beanie';
+font-weight:bold; 
+font-size: 2em;
+margin:2em; 
+
 `
 const Span = styled.span`
 padding-top: 2em;
 padding-right: 2em; 
 padding-bottom: 2em; 
 text-align: center; 
-display: inline-block;  `
+display: inline-block; 
+@media (max-width: 678px){
+  display:flex;
+  flex-direction: column; 
+  padding: 0; 
+  
+}
+ `
 
 const HeadingContainer = styled.div`
 display: flex; 
 flex-direction: row;
-justify-content: center;  
+justify-content: center; 
+ 
  `
 
 const Header = styled.h1`
-color: #575151;
+color: #f5ebeb;
+background-color: #070f4e;
+padding: 10px; 
 `
 
 const Summary = () => {

@@ -8,11 +8,11 @@ const Complete = styled.input`
   width: 25px;
   height: 25px;
   border-radius: 50%;
-  border: 2px solid #e4fd81;
+  border: 2px solid #01FB37;
   margin-right: 20px;
-  background: ${(props) => (props.checked ? 'black' : 'white')};
+  background: ${(props) => (props.checked ? '#01FB37' : 'white')};
   position: absolute;
-  bottom: 10px; 
+  bottom: 13px; 
   right: 25px;
 `;
 
@@ -36,10 +36,6 @@ const Todo = styled.div`
   margin: 2em; 
   box-shadow: 5px 5px 7px rgba(33,33,33,.7);
   position:relative; 
-/*   &:hover{
-    width: 110%; 
-    height: 110%; 
-  } */
 `
 const Heading = styled.h4`
 padding-bottom: 10px;
@@ -60,7 +56,8 @@ opacity: 0.8;
 font-family: 'montserrat';
 `
 const DueDate = styled.p`
-margin-bottom: 10px;
+margin-bottom: 15px;
+font-weight: bold; 
 font-family: 'montserrat'; 
 `
 
@@ -96,7 +93,8 @@ const TodoList = () => {
     dispatch(todos.actions.deleteTodo(id));
   }
 
-  const colors = ['lightgreen', 'green', 'blue', 'lightblue', 'purple', 'orange'];
+  const colors = ['#fdfdc4', '#ffe8cf', '#EDC0F6', 'lightblue', '#CFF3A6', '#C0EAF6 ', '#F8C978 ',
+    '#CABEF5'];
 
   return (
     <Container>

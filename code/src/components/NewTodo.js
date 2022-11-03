@@ -6,8 +6,8 @@ import styled from 'styled-components';
 import todos from '../reducers/store';
 
 const Container = styled.div`
-grid-column: 1 / 2; 
-grid-row: 1 / 2; 
+/* grid-column: 1 / 2; 
+grid-row: 1 / 2;  */
 padding: 2em; 
 
 `
@@ -16,32 +16,49 @@ const TodoForm = styled.form`
 display: grid; 
 grid-template-columns:  1fr 1fr ; 
 gap: 1em; 
+
+@media (max-width: 678px){
+  display:flex;
+  flex-direction: column; 
+  
+}
  `
 
 const TodoInput = styled.input`
-width: 150px; 
-height: 80px;
+width: 80%; 
+height: 50%;
 display: inline-block;
 justify-content: center;
-grid-column: 1 / 1;
-position: absolute;  
-left: 200px; 
-      `
+margin-top:0.5em; 
+margin-left:1.5em; 
+grid-column: 1 / 1; 
+border-radius: 15px; 
+font-family: 'Reenie Beanie';
+font-weight:bold; 
+font-size:2em; `
 
 const RadioBtnConatiner = styled.div`
-display: flex;
-flex-direction: column; 
-justify-content: center; 
-/* padding-left: 6em; 
-margin-left: 4em;  */
+display: block;
+text-align: center; 
+@media (max-width: 678px){
+  display:flex;
+  flex-direction: column; 
+  
+}
+
   `
 
 const RadioBtn = styled.input`
-margin-right: 10px; 
+margin-top: 1.5em; 
+margin-right: 10px;
+margin-left: 10px;  
 `
 
 const DueDate = styled.label`
 margin-top: 10px; 
+font-family: 'Reenie Beanie';
+font-weight:bold; 
+font-size:2em; 
     `
 
 const SubmitBtn = styled.button`
@@ -52,27 +69,34 @@ border-radius: 15px;
 padding: 0.5rem 0; 
 margin: 0.5rem 1rem;
 width: 11rem;
-background-color: #e7b3b3;
+background-color: #070f4e;
 border: 2px solid white;
+font-weight: bold; 
+color: #f5ebeb; 
+@media (max-width: 678px){
+  text-align: center;  
+  
+}
 
   `
 
 const TextInput = styled.div`
-/* padding-left: 4em; */ 
-/* margin-left: 4em; */ `
+ `
 
 const SubmittBtnConatiner = styled.div`
-padding-left: 4em; 
-margin-top:10px; 
-margin-left: 4em; `
+padding-left: 1.5em; 
+margin-top:15px;  `
 
 const HeadingContainer = styled.div`
 display: flex; 
 flex-direction: row;
-background-color: #feb062;
 justify-content: center; 
 margin-bottom: 10px;   
  `
+const Heading = styled.h1`
+padding: 10px; 
+color: #f5ebeb; 
+background-color: #070f4e;`
 
 const NewTodo = () => {
   const [input, setInput] = useState('')
@@ -106,7 +130,7 @@ const NewTodo = () => {
       <TodoForm onSubmit={onNewTodo}>
         <TextInput>
           <HeadingContainer>
-            <h1>NEW TODO</h1>
+            <Heading>NEW TODO</Heading>
           </HeadingContainer>
           <TodoInput
             type="text"
@@ -117,7 +141,7 @@ const NewTodo = () => {
         </TextInput>
         <RadioBtnConatiner>
           <HeadingContainer>
-            <h1>DUE DATE</h1>
+            <Heading>DUE DATE</Heading>
           </HeadingContainer>
           <DueDate>
             <RadioBtn
