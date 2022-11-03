@@ -19,18 +19,15 @@ export const Header = () => {
       <Div>
         <TodaysDate>{todaysDate}</TodaysDate>
         <H1>
-          Todays ToDos!
+          Todays Tasks
         </H1>
         <Counter />
       </Div>
-
     </Head>
   );
 };
 
 const Head = styled.div`
-// border: solid black 2px;
-// background-color: #E0DDCD;
 width:100%
 height: 65vh;
 align-items: center;
@@ -46,14 +43,13 @@ const Hero = styled.video`
 width: 100%;
 height: 100%;
 object-fit: cover; 
-// @media (max-width: 668px) {
-// display: none;
-//   }
 
+ @media (min-width: 750px) {
+  height: 48vh;
+}
 
 `
 const Div = styled.div`
-// border: solid blue 2px;
 align-items: center;
 display: flex;
 flex-direction: column;
@@ -64,18 +60,18 @@ padding: 10px;
 border-radius: 15px;
  @media (max-width: 430px) {
 width: 100%;
+background:  rgb(240, 235, 224);
+margin: 30px;
 }
 `
 const H1 = styled.h1`
-// border: solid red 2px;
 align-items: center;
 display: flex;
 flex-direction: column;
 justify-content: center;
 `
 const TodaysDate = styled.div`
-// border: solid green 2px;
 color: grey;
 display: flex;
-margin: 20px 0 0 0;
+margin: 20px 0 5px 0;
 `

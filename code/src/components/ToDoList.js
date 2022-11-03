@@ -54,12 +54,12 @@ export default ToDoList
 const ToDos = styled.article`
 width: 90%;
 margin: 10px 0 10px 0;
-   border: solid rgb(108, 106, 106) 2px;
-  background-color: rgb(255, 255, 255);
-  box-shadow: 2px -1px 5px 0px rgba(0,0,0,0.75);
-  -webkit-box-shadow: 2px -1px 5px 0px rgba(0,0,0,0.75);
-  -moz-box-shadow: 2px -1px 5px 0px rgba(0,0,0,0.75);
-  position: relative;
+border: solid rgb(108, 106, 106) 2px;
+background-color: rgb(255, 255, 255);
+ box-shadow: 2px -1px 5px 0px rgba(0,0,0,0.75);
+-webkit-box-shadow: 2px -1px 5px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 2px -1px 5px 0px rgba(0,0,0,0.75);
+position: relative;
 p{
   text-align: center;
   color: grey;
@@ -76,7 +76,6 @@ bottom: 5%;
 position: absolute;
 border: none;
 
-
 }
 @media (min-width: 668px) {
   width: 50%;
@@ -86,13 +85,11 @@ border: none;
   `
 
 const Label = styled.div`
-// border: solid red 2px;
 margin: 0px 10px 0 10px;
 display: flex;
 flex-direction: row;
 align-items: center;
 h2{
-  // border: solid black 2px;
   padding: 0 0 0 5px;
 }
 input{
@@ -101,9 +98,8 @@ input{
 }
 `
 const Icon = styled.img`
-// border: solid yellow 2px;
-width: 30px;
-height: 30px;
+width: 20px;
+height: 20px;
 display: flex;
 flex-direction: column;
 align-items: center;
@@ -111,15 +107,8 @@ text-align: center;
 right: 2%; 
 bottom: 5%;
 position: absolute;
+@media (min-width: 668px) {
+  width: 30px;
+  height: 30px;
+}
 `
-// const Icoon = styled.img`
-// width: 30px;
-// height: 30px;
-// display: flex;
-// flex-direction: column;
-// align-items: center;
-// text-align: center;
-// right: 2%;
-// bottom: 5%;
-// position: absolute;
-// `

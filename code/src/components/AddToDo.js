@@ -4,7 +4,8 @@ import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
 import ToDo from 'reducers/todo';
 import uniqid from 'uniqid';
-import CheckList from 'components/Images/icons8-add-new-50.png'
+// import CheckList from 'components/Images/icons8-add-new-50.png'
+import Pencil from 'components/Images/icons8-pencil-64.png'
 
 export const AddToDo = () => {
   const dispatch = useDispatch()
@@ -24,34 +25,45 @@ export const AddToDo = () => {
   return (
     <Form onSubmit={onFormSubmit}>
       <div>
+        <img
+          className="icon"
+          src={Pencil}
+          alt="Icon" />
         <Text
           className="TextArea"
           placeholder="add task here.."
           value={newToDo}
           onChange={(event) => setNewToDo(event.target.value)} />
-        <button className="Submit" type="submit">
-          <Icon
-            className="icon"
-            src={CheckList}
-            alt="Icon" />
+        <button className="Submit" type="submit"><Add>+</Add>
         </button>
       </div>
     </Form>
   )
 }
 const Form = styled.form`
-// border: solid black 2px;
-// background-color:#E0DDCD;
 width: 90%;
-margin: 10px 0 10px 0;
+margin: 20px 0 15px 0;
 div{
   display: flex;
   flex-direction: rows;
+  align-items: center;
+justify-content: center;
 }
 
 h2{
-  text-align: center;
-  // border: solid red 2px;
+text-align: center;
+}
+
+img{
+width: 20px;
+height: 20px;
+margin: 0 0 0 15px;
+
+
+@media (min-width: 668px) {
+  width: 30px;
+  height: 30px;
+}
 }
 
 button{
@@ -59,32 +71,53 @@ background: none;
 border: none;
 height: 70px;
 margin: 0 10px 0 0 ;
-
 }
 @media (min-width: 668px) {
-  width: 50%;
+  width: 80%;
 }
 @media (min-width: 1024px) {
-  width: 40%;
+  width: 80%;
 `
 const Text = styled.textarea` 
-border: solid red 2px;
-  width: 100%;
-  margin: 10px;
+  border: none;
+  border-bottom: 1px solid #504E55;
+  background-color: transparent;
   height: 15px;
+  width: 100%;
+  font-size: 15px;
+  color:#504E55;
   padding: 10px;
-  border: solid rgb(108, 106, 106) 2px;
-  background-color: rgb(235, 232, 232);
-  box-shadow:  5px 10px #272727;
+  margin: 15px 15px 15px 0;
+
   @media (min-width: 668px) {
-    margin: 15px;
     height: 20px;
+    font-size: 24px;
+    height: 30px;
+    padding: 12px;
   }
 `
-const Icon = styled.img`
-width: 30px;
-height: 30px;
-margin 15px 0 0 0;
-// border: solid red 2px;
-// background-color: pink;
-`
+const Add = styled.div`
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: solid;
+  border: none;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  background-color: #F3B6D2;
+  color: 99627B;
+  font-size: 20px;
+  box-shadow: 4px 4px 12px -9px rgba(0,0,0,0.68);
+  -webkit-box-shadow: 4px 4px 12px -9px rgba(0,0,0,0.68);
+  -moz-box-shadow: 4px 4px 12px -9px rgba(0,0,0,0.68);
+&:hover {
+  background-color:  #E089A9;
+}
+@media (min-width: 668px) {
+  height: 50px;
+  width: 50px;
+  font-size: 25px;
+}
+  `

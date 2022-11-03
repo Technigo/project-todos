@@ -1,6 +1,6 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { combineReducers, createStore } from '@reduxjs/toolkit';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import ToDo from 'reducers/todo'
 import ToDoList from 'components/ToDoList';
 import { AddToDo } from 'components/AddToDo';
@@ -8,29 +8,13 @@ import { Header } from 'components/Header';
 // import { Counter } from 'components/Counter'
 import styled from 'styled-components';
 
+const reducer = combineReducers({
+  ToDo: ToDo.reducer
+})
+const store = configureStore({ reducer })
+
 export const App = () => {
-  const reducer = combineReducers({
-    ToDo: ToDo.reducer
-
-  })
-
-  // const store = configureStore({
-  //   reducer
-  // })
-
-  // Added below so it doesn't remove all the task when reloading the page
-  const persistedStateJSON = localStorage.getItem('todosReduxState')
-  let persistedState = {}
-
-  if (persistedStateJSON) {
-    persistedState = JSON.parse(persistedStateJSON)
-  }
-
-  const store = createStore(reducer, persistedState)
-
-  store.subscribe(() => {
-    localStorage.setItem('todosReduxState', JSON.stringify(store.getState()))
-  })
+  store.subscribe(() => localStorage.setItem('todos', JSON.stringify(store.getState().ToDo.items)))
 
   return (
     <Provider store={store}>
@@ -44,10 +28,8 @@ export const App = () => {
 }
 
 const Main = styled.div`
-// background-color:#E0DDCD;
 align-items: center;
 display: flex;
 flex-direction: column;
-// border: solid green 2px;
 `
 
