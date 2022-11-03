@@ -20,25 +20,6 @@ export const AddNewTaskWrapper = styled.form`
         border: 0.5px solid #96e4a285;
       }
     }
-
-    input[type=date] {
-      border: none;
-      background: transparent;
-      padding: 3px;
-      z-index: 99;
-
-      &:focus {
-        outline: none;
-      }
-    }
-
-    #datePicker {
-      width: 100px;
-      height: 20px;
-      padding: 0;
-      background: transparent;
-    }
-    
     
     #dueDateLabel {
       position: absolute;
