@@ -12,8 +12,18 @@ export default TodaysDate
 
 const NowDate = styled.p`
 text-align: center;
-margin-top: 0;
+margin-top: 80px;
 color: #046582;
+
+@media (min-width: 600px) and (max-width: 900px){
+  margin-top: 150px;
+  font-size: 21px;
+}
+
+@media (min-width: 901px){
+  margin: 200px 0;
+  font-size: 25px;
+}
 `
 
 /* format(new Date(), "'Today is a' eeee")

@@ -18,26 +18,14 @@ const TodoCount = () => {
 export default TodoCount;
 
 const Counter = styled.p`
-color: #046582;
-margin: 0;
-/*display: inline-block;
-text-align: right;
+  color: #046582;
+  margin: 0;
 
- margin-bottom: 30px; */
+  @media (min-width: 600px) and (max-width: 900px){
+    font-size: 21px;
+  }
+
+@media (min-width: 901px){
+    font-size: 25px;
+}
 `
-
-/*   const counter = useSelector((store) => store.todos.items.length);
-
-  const completed = useSelector((store) =>
-    store.todos.items.filter((item) => item.isComplete)
-  );
-
-  return (
-    <>
-      <CompletedWrapper>
-        <CompletedText>
-          Completed {completed.length}/{counter} tasks
-        </CompletedText>
-      </CompletedWrapper>
-    </>
-  ); */

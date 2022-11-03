@@ -1,6 +1,9 @@
 import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
+   :root {
+    --theme-primary: #F5005E;
+  }
   * {
     box-sizing: border-box;
     margin: 0 auto;
@@ -12,16 +15,13 @@ export const GlobalStyles = createGlobalStyle`
   body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    height: 100%;
+    max-width: 1024px;
     font-family: 'Cormorant Garamond', serif;
     background-color: #6E7582;
 
     @media (min-width: 668px) and (max-width: 1023px){
-        overflow: hidden;
     }
     @media (min-width: 1024px){
-      border: 3px solid rgb(0, 51, 51, 0.1);
-      overflow: hidden;
     }
   }
 `
@@ -30,28 +30,26 @@ export const OuterWrapper = styled.div`
 position: relative;
 display: flex;
 flex-direction: column;
-min-height: 100vh;
+/* min-height: 100vh; */
 `
 
 export const ContentWrapper = styled.div`
-background-color: /* #F9E4D4 */ #F39189;
-margin: 30px 20px 0 20px;
-padding: 60px 40px;
-/* top-left top-right bottom-right bottom-left */
+background-color: #F39189;
+margin: 30px 20px 0;
 border-radius: 350px 350px 0 0;
 min-height: 100vh;
-/* max-height: 100%; */
 
 p{
     word-wrap: break-word;
 }
 
-@media (min-width: 668px) and (max-width: 1023px){
-    margin: 30px 20px 0 20px;
-padding: 80px;  
+@media (min-width: 600px) and (max-width: 900px){
+  margin: 30px 30px 0;
 }
 
-  @media (min-width: 1024px){
+  @media (min-width: 901px){
+    margin: 90px 20px 0 20px;
+    border-radius: 450px 450px 0 0;
   }
 `
 
@@ -66,38 +64,34 @@ z-index: -1;
 `
 
 export const Button = styled.button`
-  /* margin: 5% 40px 5% 0; */
   margin: 0;
   border: none;
-  background-color: /* #046582 */transparent;
+  background-color: transparent;
   color: #F9E4D4;
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 13px;
-  /* transition: transform 0.5s ease 0s;
+  transition: transform 0.5s ease 0s;
 
 
   &:hover{
-    transform: scale(1.2); */
+    transform: scale(1.2);}
 
     img{
-      width: 25px;
-      height: 25px;
+      width: 30px;
+      height: 30px;
       filter: invert(23%) sepia(64%) saturate(1897%) hue-rotate(167deg) brightness(101%) contrast(97%);
     }
 
-  @media (min-width: 668px) and (max-width: 1023px){
-    padding: 10px;
-    /* margin-top: 40px; */
-    font-size: 17px;
-    width: 100px;
-
-  button{
-  padding: 5px 15px;
-  margin: 30px 10px;
+  @media (min-width: 600px) and (max-width: 900px){
+    img{
+      width: 35px;
+      height: 35px;
+    }
   }
-}
 
-  @media (min-width: 1024px){
+  @media (min-width: 901px){
+    img{
+      width: 40px;
+      height: 40px;
+    }
   }
 
 `
