@@ -88,16 +88,15 @@ font-weight: 600;
 `
 
 export const Date = styled.h2`
-position: absolute;
+border: 2px solid green;
+position: relative;
 margin-left: 68%;
-text-align: left;
 width: 48px;
 color: black;
 font-size: 14px;
 font-family: 'Nunito Sans', sans-serif;
 &:hover {
   color: black;
-  transform: scale(1.2);
 }
 @media (min-width: 600px) {
   margin-left: 75%;

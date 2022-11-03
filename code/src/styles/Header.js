@@ -24,7 +24,7 @@ export const HeaderDate = styled.p`
 `
 
 export const Line = styled.div`
-  width: 90%;
+  width: 100%;
   padding-top: 20px;
   display: flex;
   justify-content: space-between;
