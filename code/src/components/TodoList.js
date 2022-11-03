@@ -16,6 +16,10 @@ export const TodoList = () => {
   const now = new Date()
   const dateFormatted = format(now, "EE',' dd/MM',' h:mm a")
 
+  const handleDeleteAll = () => {
+    dispatch(todos.actions.deleteAllTasks());
+  }
+
   return (
     <TodoListWrapper>
       {allTodos.map((singleTodo) => {
@@ -39,6 +43,7 @@ export const TodoList = () => {
           </TodoRow>
         );
       })}
+      <DeleteAllTodos onClick={handleDeleteAll}>Remove all</DeleteAllTodos>
     </TodoListWrapper>
   )
 }
@@ -46,7 +51,6 @@ export const TodoList = () => {
 const TodoItem = styled.div`
 
 `
-
 const TodoListWrapper = styled.section`
   margin: 30px;
   background-color: rgb(236, 179, 144, 0.7);
@@ -61,22 +65,37 @@ const TodoListWrapper = styled.section`
     flex-direction: row;
     align-items: center;
     > * {
-      margin: 5px;
+    margin: 5px;
     }
   } 
 `
 const TodoRow = styled.div`
-  margin: 8px;
-  padding: 8px;
+  margin: 5px;
+  padding: 4px;
   background-color: #FEF5ED;
   justify-content: space-between;
-  font-size: 15px;
-  font-family: 'Open Sans', sans-serif;
-
-  
+  font-size: 25px;
+  font-family: 'Patrick Hand', cursive;
 
   @media (min-width: 668px){ 
-    font-size: 20px;
+    font-size: 28px;
+    margin: 8px;
+    padding: 8px;
+  }
+`
+
+const DeleteAllTodos = styled.button`
+  border-radius: 50px;
+  margin: 20px;
+  padding: 7px;
+  border: 0;
+  font-family: 'Patrick Hand', cursive;
+  font-size: 19px;
+  cursor: pointer;
+  background-color: #FEF5ED;
+  &:hover {
+      transform: scale(1.1);
+      transition: 0.3s ease-in-out;
   }
 `
 
@@ -87,23 +106,25 @@ const TodoCheckbox = styled.input`
 const RemoveTask = styled.button`
     background-color: transparent;
     border: none;
-    font-size:12px;
+    font-size: 17px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    color:#d1570a;
+    font-family: 'Comic Neue', cursive;
     &:hover {
-        transform: scale(1.1);
-        transition: 0.3s ease-in-out;
-        cursor: pointer;
+      transform: scale(1.1);
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
     }
 `
 
 const CreatedAt = styled.p`
-  font-size:12px;
-  font-family: 'Comic Neue', cursive;
+  font-size:15px;
+  font-family: 'Patrick Hand', cursive;
 
   @media (min-width: 668px){ 
-    font-size: 15px;
+    font-size: 20px;
   }
 `
 // onClick={() => dispatch(todos.actions.removeItem(singleTodo.id))}

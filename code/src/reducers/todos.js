@@ -4,23 +4,16 @@ export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [{ id: 1,
-      name: 'Watch video',
-      completed: true },
-    { id: 2,
-      name: 'Walk dog',
-      completed: false },
-    { id: 3,
       name: 'Feed cat',
       completed: false },
-    { id: 4,
+    { id: 2,
       name: 'Feed self',
       completed: false }]
   },
 
   reducers: {
     toggleItem: (store, action) => {
-      console.log(store);
-      console.log(action);
+    // Toggles between true and false
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.completed = !item.completed
@@ -28,21 +21,17 @@ export const todos = createSlice({
       })
     },
     addTodo: (store, action) => {
-      console.log(store)
-      console.log(action)
-      const { name } = action.payload
-      store.items.push({
-        id: Date.now().toString(),
-        name
-      })
+      store.items.push(action.payload)
     },
-    // Immutability
     removeItem: (store, action) => {
+      // takes the items array and filters all items with id that is not equal to payload.
       const removedTask = store.items.filter(
         (item) => item.id !== action.payload
       );
-
       store.items = removedTask;
+    },
+    deleteAllTasks: (store) => {
+      store.items = []
     }
   }
 });
