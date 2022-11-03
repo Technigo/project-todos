@@ -38,12 +38,13 @@ const todos = createSlice({
     addToDo: (store, action) => {
       console.log(store)
       console.log(action)
-      const { name, urgency } = action.payload
-      store.items.push({
-        id: Date.now(),
-        name,
-        urgency
-      })
+      store.items.push(action.payload)
+    },
+    removeToDo: (store, action) => {
+      store.items.splice(action.payload, 1)
+    },
+    removeAllToDos: (store, action) => {
+      store.items.splice(action.payload)
     }
   }
 })

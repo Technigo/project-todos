@@ -3,6 +3,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 import styled from 'styled-components'
+import DeleteTask from 'components/DeleteTask'
+import DeleteAllTasks from './DeleteAllTasks';
 
 const ListOfTodos = () => {
   const toDoList = useSelector((store) => store.todos.items)
@@ -19,10 +21,11 @@ const ListOfTodos = () => {
           <ToDoItem>
             <input name="to-dos" type="checkbox" checked={toDo.isDone} onChange={() => onIsDoneToggle(toDo.id)} />
             <label htmlFor="to-dos"> {toDo.name} </label>
-            <RemoveTask type="button">❌</RemoveTask>
+            <DeleteTask />
           </ToDoItem>
         );
       })}
+      <DeleteAllTasks />
     </ToDoListWrapper>
   )
 }
@@ -43,11 +46,3 @@ const ToDoItem = styled.div`
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
 `
-
-const RemoveTask = styled.button`
-    background-color: transparent;
-    border: none;
-    &:hover {
-        transform: scale(1.3);
-    }
-    `

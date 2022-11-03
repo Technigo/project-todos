@@ -1,3 +1,4 @@
+/* eslint-disable object-curly-newline */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import styled from 'styled-components'
@@ -9,7 +10,6 @@ const NewTodo = () => {
 // Local states
   const [name, setName] = useState('')
   const [urgency, setUrgency] = useState('')
-  const [id, setId] = useState(0)
   const [collapsed, setCollapsed] = useState(false)
 
   const dispatch = useDispatch()
@@ -17,10 +17,14 @@ const NewTodo = () => {
   // a function for dealing with new todos
   const HandleSubmit = (event) => {
     event.preventDefault()
-    dispatch(todos.actions.addToDo({ name, id, urgency }))
+
+    dispatch(todos.actions.addToDo({
+      name,
+      id: Date.now(),
+      completed: false,
+      urgency }))
+
     setName('')
-    setUrgency('')
-    setId('')
   }
 
   // a function that steers the de-collapsing of the New-to-Do-section.
@@ -38,7 +42,6 @@ const NewTodo = () => {
             <input
               type="text"
               value={name}
-              id={id}
               name="new-todo"
               onChange={(event) => setName(event.target.value)} />
             <label>
