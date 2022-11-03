@@ -2,11 +2,11 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import React from 'react';
 import { Provider } from 'react-redux';
 import tasks from 'reducers/task';
-import TaskList from 'components/TaskList';
+
 import AddTask from 'components/AddTask';
 import Header from 'components/Header';
-/* import TodoCount from 'components/TaskCounter'; */
 import TodaysDate from 'components/TodaysDate';
+import TaskList from 'components/TaskList';
 
 import { OuterWrapper, GlobalStyles, ContentWrapper, BottomLine } from 'styledcomponents/GlobalStyles';
 
@@ -22,7 +22,6 @@ export const App = () => {
       <OuterWrapper>
         <Provider store={store}>
           <Header />
-
           <ContentWrapper>
             <TodaysDate />
             <AddTask />

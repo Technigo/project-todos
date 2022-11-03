@@ -43,7 +43,11 @@ const AddTask = () => {
         onChange={(event) => setvalue(event.target.value)} />
       <ToDoDetails>
         <TodoCount />
-        <Button type="submit">Add</Button>
+        <Button type="submit">
+          <img
+            src="/assets/add.png"
+            alt="delete task" />
+        </Button>
 
       </ToDoDetails>
     </Form>
@@ -108,7 +112,13 @@ background-color: #F9E4D4;
 const ToDoDetails = styled.div`
 display: flex;
 flex-direction: row;
+margin: 10px;
 align-items: center;
 justify-content: space-between;
-margin: 10px;
+
+
+@media (min-width: 668px) and (max-width: 1023px){
+  justify-content: space-between;
+  margin: 0;
+  }
 `

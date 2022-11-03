@@ -36,7 +36,7 @@ min-height: 100vh;
 export const ContentWrapper = styled.div`
 background-color: /* #F9E4D4 */ #F39189;
 margin: 30px 20px 0 20px;
-padding: 80px 40px;
+padding: 60px 40px;
 /* top-left top-right bottom-right bottom-left */
 border-radius: 350px 350px 0 0;
 min-height: 100vh;
@@ -66,25 +66,30 @@ z-index: -1;
 `
 
 export const Button = styled.button`
-  display: inline;
-  width: 50px;
-  height: 20px;
   /* margin: 5% 40px 5% 0; */
   margin: 0;
   border: none;
-  background-color: #046582;
+  background-color: /* #046582 */transparent;
   color: #F9E4D4;
   font-family: 'Cormorant Garamond', serif;
   font-size: 13px;
-  transition: transform 0.5s ease 0s;
+  /* transition: transform 0.5s ease 0s;
+
 
   &:hover{
-    transform: scale(1.2);
+    transform: scale(1.2); */
+
+    img{
+      width: 25px;
+      height: 25px;
+      filter: invert(23%) sepia(64%) saturate(1897%) hue-rotate(167deg) brightness(101%) contrast(97%);
+    }
 
   @media (min-width: 668px) and (max-width: 1023px){
     padding: 10px;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     font-size: 17px;
+    width: 100px;
 
   button{
   padding: 5px 15px;
@@ -94,6 +99,5 @@ export const Button = styled.button`
 
   @media (min-width: 1024px){
   }
-}
 
 `

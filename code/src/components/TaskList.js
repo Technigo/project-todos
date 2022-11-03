@@ -4,7 +4,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import tasks from 'reducers/task'
 import { Button } from 'styledcomponents/GlobalStyles';
 import { formatRelative } from 'date-fns';
-
 import styled from 'styled-components';
 
 const TaskList = () => {
@@ -19,33 +18,41 @@ const TaskList = () => {
   const onToDoDelete = (index) => {
     dispatch(tasks.actions.deleteItem(index))
   }
+
+  const toggleLineThrough = (item) => {
+    if (item.checked) {
+      document.getElementById('task').style.textDecoration = 'line-through';
+    } else {
+      document.getElementById('task').style.textDecoration = 'none';
+    }
+  }
   return (
     <>
       {listTasks.map((newTodo, ToDoIndex) => (
-        <listedTasks key={newTodo.id}>
+        <TaskListWrapper key={newTodo.id}>
           <Wrapper>
-            <h4> • {newTodo.name}</h4>
+            <Input
+              type="checkbox"
+              checked={newTodo.isDone}
+              onChange={() => onToDoToggle(newTodo.id)}
+              onClick={() => toggleLineThrough(this)} />
+            <label
+              htmlFor="a"
+              id="task">
+              {newTodo.name}
+            </label>
             <p>{formatRelative(new Date(), new Date())}</p>
-            <SubmittedToDoDetails>
-
-              <Checkbox>
-
-                <input
-                  type="checkbox"
-                  checked={newTodo.isDone}
-                  onChange={() => onToDoToggle(newTodo.id)} />
-                <label
-                  htmlFor="done">
-                Done
-                </label>
-              </Checkbox>
-              <Button
-                type="button"
-                onClick={() => onToDoDelete(ToDoIndex)}>Delete
-              </Button>
-            </SubmittedToDoDetails>
           </Wrapper>
-        </listedTasks>
+          <SubmittedToDoDetails>
+            <Button
+              type="button"
+              onClick={() => onToDoDelete(ToDoIndex)}>
+              <img
+                src="/assets/delete.png"
+                alt="delete task" />
+            </Button>
+          </SubmittedToDoDetails>
+        </TaskListWrapper>
       ))}
     </>
   )
@@ -53,30 +60,42 @@ const TaskList = () => {
 
 export default TaskList
 
-export const Wrapper = styled.div`
-/* background-color:#ffadad; */
-margin: 20px 0;
+const TaskListWrapper = styled.div`
+display: flex;
+flex-direction: column;
+`
 
-h4{
-  border-bottom: 1px solid #BB8082;
-}
+export const Wrapper = styled.div`
+background-color:#F9E4D4;
+width: 100%;
+margin: 20px 0 5px;
+padding: 20px;
 
 p{
-  border-bottom: 1px solid #BB8082;
+  margin-top: 10px;
 }
 `
 export const SubmittedToDoDetails = styled.div`
 display: flex;
 flex-direction: row;
-align-items: center;
-justify-content: space-between;
+justify-content: flex-end;
 margin: 10px;
 `
 
 export const Checkbox = styled.div`
 margin: 0;
 
-input{
+/* input{
   margin-right: 5px;
-}
+  
+  &:checked{
+    height: 52px;
+  } 
+}*/
 `
+const Input = styled.input`
+margin-right: 5px;
+  &:checked + label{
+    text-decoration: line-through;
+  }
+`;
