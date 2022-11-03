@@ -1,15 +1,46 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable no-unused-expressions */
+
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+
+  list: [
+    // { id: 1, text: 'Connect checkbox to a function, make it work', complete: true },
+    // { id: 2, text: 'Make component PRINT Btn', complete: false },
+    // { id: 3, text: 'Make add task btn work', complete: false },
+    // { id: 4, text: '.......', complete: false },
+    // { id: 5, text: 'Call Grandma', complete: false }
+  ]
+
+};
+console.log(initialState)
 export const tasks = createSlice({
 
-  name: 'tasks',
+  name: 'todos',
+  initialState,
+  reducers: {
+    addTask: (state, action) => {
+      state.list.push(action.payload);
+      console.log('action', action)
+    },
+    removeTask: (state, action) => {
+      state.list.pull(action.payload)
+      console.log('remove', action)
+    },
 
-  initialState: [
-    { id: 1, text: 'Read documantation for this week', complete: true },
-    { id: 2, text: 'Make sketch of this week project', complete: true },
-    { id: 3, text: 'Update Linkedin profile', complete: false },
-    { id: 4, text: 'Sent your code review from last week', complete: true },
-    { id: 5, text: 'Call Grandma', complete: true }
-  ]
-})
+    toogleComplete: (state, action) => {
+      const index = state.findIndex(
+        (task) => task.id === action.payload.id
+      );
+      state(index).complete = action.payload.complete;
+    }
+
+  }
+});
+
+export const {
+  addTask,
+  toogleComplete,
+  removeTask
+} = tasks.reducer
