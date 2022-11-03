@@ -5,10 +5,10 @@ import tasks from 'reducers/task';
 import TaskList from 'components/TaskList';
 import AddTask from 'components/AddTask';
 import Header from 'components/Header';
-import TodoCount from 'components/TaskCounter';
+/* import TodoCount from 'components/TaskCounter'; */
 import TodaysDate from 'components/TodaysDate';
 
-import { OuterWrapper, GlobalStyles, ContentWrapper } from 'styledcomponents/GlobalStyles';
+import { OuterWrapper, GlobalStyles, ContentWrapper, BottomLine } from 'styledcomponents/GlobalStyles';
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -22,14 +22,18 @@ export const App = () => {
       <OuterWrapper>
         <Provider store={store}>
           <Header />
-          <TodaysDate />
+
           <ContentWrapper>
+            <TodaysDate />
             <AddTask />
-            <TodoCount />
+            {/* <TodoCount /> */}
             <TaskList />
           </ContentWrapper>
+          <BottomLine />
         </Provider>
+
       </OuterWrapper>
+
     </>
   );
 }

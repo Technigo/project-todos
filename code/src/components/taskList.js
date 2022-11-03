@@ -2,7 +2,7 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import tasks from 'reducers/task'
-import { Wrapper } from 'styledcomponents/GlobalStyles';
+import { Wrapper, Button } from 'styledcomponents/GlobalStyles';
 import { formatRelative } from 'date-fns';
 
 const TaskList = () => {
@@ -18,7 +18,7 @@ const TaskList = () => {
     dispatch(tasks.actions.deleteItem(index))
   }
   return (
-    <Wrapper>
+    <>
       {listTasks.map((newTodo, ToDoIndex) => (
         <listedTasks key={newTodo.id}>
           <Wrapper>
@@ -39,14 +39,14 @@ const TaskList = () => {
             </label>
           </div>
 
-          <button
+          <Button
             type="button"
-            onClick={() => onToDoDelete(ToDoIndex)}>delete
-          </button>
+            onClick={() => onToDoDelete(ToDoIndex)}>Delete
+          </Button>
 
         </listedTasks>
       ))}
-    </Wrapper>
+    </>
   )
 }
 
