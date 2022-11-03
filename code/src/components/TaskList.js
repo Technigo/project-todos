@@ -17,6 +17,11 @@ import { tasks } from 'reducers/tasks';
 
 export const TaskList = () => {
   const taskArray = useSelector((store) => store.tasks.items);
+
+  const outstandingTasks = taskArray.filter((item) => !item.isCompleted);
+
+  const completedTasks = taskArray.filter((item) => item.isCompleted);
+
   const dispatch = useDispatch();
 
   const completedTaskToggle = (id) => {
@@ -29,23 +34,46 @@ export const TaskList = () => {
 
   return (
     <section>
-      {taskArray.map((item, index) => {
-        return (
-          <div>
-            <p>{item.name}</p>
-            <label>Status
-              <input
-                type="checkbox"
-                checked={item.isCompleted}
-                onChange={() => completedTaskToggle(item.id)} />
-            </label>
-            <button
-              type="button"
-              onClick={() => deleteTask(index)}>❌REMOVE
-            </button>
-          </div>
-        );
-      })}
+      <div>
+        <h2>Outstanding</h2>
+        {outstandingTasks.map((item, index) => {
+          return (
+            <div>
+              <p>{item.name}</p>
+              <label>Status
+                <input
+                  type="checkbox"
+                  checked={item.isCompleted}
+                  onChange={() => completedTaskToggle(item.id)} />
+              </label>
+              <button
+                type="button"
+                onClick={() => deleteTask(index)}>❌REMOVE
+              </button>
+            </div>
+          );
+        })}
+      </div>
+      <div>
+        <h2>Completed</h2>
+        {completedTasks.map((item, index) => {
+          return (
+            <div>
+              <p>{item.name}</p>
+              <label>Status
+                <input
+                  type="checkbox"
+                  checked={item.isCompleted}
+                  onChange={() => completedTaskToggle(item.id)} />
+              </label>
+              <button
+                type="button"
+                onClick={() => deleteTask(index)}>❌REMOVE
+              </button>
+            </div>
+          );
+        })}
+      </div>
     </section>
   )
 }
