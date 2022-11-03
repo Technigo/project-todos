@@ -20,3 +20,9 @@ export default Footer;
 
 const FooterContainer = styled.footer`
 border: solid 2px black`
+
+// @media (min-width: 667px) and (max-width: 1024px) {
+// }
+// @media (min-width: 1025px) {
+// }
+// `

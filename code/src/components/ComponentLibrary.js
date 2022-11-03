@@ -1,13 +1,15 @@
 // import React from 'react'
 import styled from 'styled-components/macro'
 
-export const Test = styled.img`
-  margin-top: 260px;
-  display: flex;
-  margin-left: auto;
-  border-radius: 50%;
-  width: 150px;
-  height: 150px;
-  border: 3px solid var(--imageframe);
-  overflow: hidden;
-`
+export const  = styled.div`
+//   `;
+// export const X = styled.div`
+//     max-width: 940px;
+//    ;
+//     @media (min-width: 667px) and (max-width: 1024px) {
+//       width: 75%;
+//     }
+//     @media (min-width: 1025px) {
+//       width: 75%;
+//     }
+//   `;

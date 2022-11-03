@@ -3,6 +3,7 @@ import taskReducer from 'reducers/todos/taskSlice';
 import { useDispatch } from 'react-redux';
 import uniqid from 'uniqid'; // https://www.npmjs.com/package/uniqid
 import styled from 'styled-components';
+import TodoCounter from 'components/TodoCounter';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -24,9 +25,8 @@ const AddTask = () => {
   };
 
   return (
-    <div>
+    <>
       <Form onSubmit={onAddTask}>
-        <Button type="submit" />
         <Input
           id="new task"
           type="text"
@@ -34,8 +34,10 @@ const AddTask = () => {
           value={inputValue}
           required
           onChange={(event) => { setInputValue(event.target.value); }} />
+        <Button type="submit" />
       </Form>
-    </div>
+      <TodoCounter />
+    </>
   );
 }
 
@@ -47,12 +49,20 @@ padding: 10px;
 const Button = styled.button`
 border: solid 2px black;
 padding: 10px;
+margin-left: 10px;
 `
 const Input = styled.input`
 border: solid 2px red;
 padding: 10px;
+margin-left: 10px;
+:focus {
+  outline: none;
+  border: none;
 `
-
+// const AddTaskWrapper = styled.input`
+// display: flex;
+// flex-direction-column;
+// `
 // const Date = styled.input`
 // border: solid 2px red;
 // padding: 10px;

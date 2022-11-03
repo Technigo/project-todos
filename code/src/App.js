@@ -7,6 +7,8 @@ import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import ContentWrapper from 'components/ContentWrapper';
+
 import GlobalStyle from './globalStyle';
 
 export const App = () => {
@@ -21,12 +23,12 @@ export const App = () => {
   return (
     <Provider store={store}>
       <GlobalStyle />
-      <main>
+      <ContentWrapper>
         <Header />
         <AddTask />
         <TaskList />
         <Footer />
-      </main>
+      </ContentWrapper>
     </Provider>
   );
 };
