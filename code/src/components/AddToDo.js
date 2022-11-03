@@ -12,9 +12,9 @@ const AddToDo = () => {
     if (input !== '') {
       dispatch(todos.actions.addToDo(input))
       setInput('')
-    } else {
+    } /* else {
       alert('You have to write a To Do before adding');
-    }
+    } */
   };
   const onInputChange = (event) => {
     setInput(event.target.value)
@@ -25,7 +25,9 @@ const AddToDo = () => {
         type="text"
         value={input}
         onChange={onInputChange}
-        placeholder="Write new task" />
+        placeholder="Write new task"
+        required=" "
+        autoComplete="off" />
       <button type="submit">Test</button>
     </form>
   )

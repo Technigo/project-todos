@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import uniqid from 'uniqid';
+import moment from 'moment';
 
 const initialState = {
   items: []
@@ -9,18 +10,19 @@ const todos = createSlice({
   name: 'todos',
   initialState,
   reducers: {
+    setAllItems: (store, action) => {
+      store.items = action.payload;
+    },
     addToDo: (store, action) => {
       const newToDo = {
         id: uniqid(),
         text: action.payload,
-        isComplete: false
+        isComplete: false,
+        postedTime: moment().format('LLL')
       };
       store.items = [newToDo, ...store.items]
     },
     toggleToDo: (store, action) => {
-      console.log(store)
-      console.log(action)
-
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.isComplete = !item.isComplete;
@@ -30,10 +32,11 @@ const todos = createSlice({
     deleteToDo: (store, action) => {
       const deleteItems = store.items.filter((item) => item.id !== action.payload)
 
-      store.items = deleteItems;
+      store.items = deleteItems
     }
-
   }
 })
 
 export default todos;
+
+// sort tasks if done = true move to bottom...något sådant med boolian?
