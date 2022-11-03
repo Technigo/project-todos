@@ -41,7 +41,7 @@ export const AddTask = () => {
           value={text}
           placeholder="Add new task..."
           onChange={(event) => onChangeEvent(event.target.value)} />
-        <ButtonStyle type="submit">+</ButtonStyle>
+        <ButtonStyle type="submit">✕</ButtonStyle>
       </FormInnerWrapper>
     </FormOuterWrapper>
   )
@@ -71,6 +71,25 @@ font-family: 'Roboto', sans-serif;
 `;
 
 export const ButtonStyle = styled.button`
+height: 40px;
+width: 40px;
+font-size: 20px;
+font-weight: bold;
+transform: rotate(-45deg);
+border-radius: 25px;
+border: none;
+margin-bottom: 20px;
+background: white;
+color: #F69101;
+
+&:hover {
+  cursor: pointer;
+  background: white;
+  color: black;
+}
+`;
+
+/* export const ButtonStyle = styled.button`
 background: white;
 border-color: #F69101;
 color: black;
@@ -84,4 +103,4 @@ outline: none;
 text-align: center;
 font-family: 'Roboto', sans-serif;
 cursor: pointer;
-`;
+`; */

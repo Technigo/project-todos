@@ -16,19 +16,21 @@ export const Footer = () => {
     <FooterOuterWrapper>
       <FooterInnerWrapper>
         <RemoveWrapper>
-          <ButtonStyle onClick={handleRemoveAll}>-</ButtonStyle>
-          <p>CLEAN MY TO DO LIST</p>
+          <ButtonStyle onClick={handleRemoveAll}>✕</ButtonStyle>
+          <ClearAll>CLEAR MY TO DO LIST</ClearAll>
         </RemoveWrapper>
         <FooterTextWrapper>
           <FooterText>Project ToDo App</FooterText>
           <FooterText>Sofia Andersson</FooterText>
           <FooterText>Technigo 2022</FooterText>
-          <FooterText>Icon from thenounproject.com</FooterText>
+          <FooterText>Icon:thenounproject.com</FooterText>
         </FooterTextWrapper>
       </FooterInnerWrapper>
     </FooterOuterWrapper>
   )
 };
+
+// Local styling
 
 export const FooterOuterWrapper = styled.footer`
 background-color: white;
@@ -59,34 +61,23 @@ flex-direction: column;
 align-items: center;
 padding-top: 40px;
 font-family: 'Roboto', sans-serif;
-`;
 
-export const FooterTextWrapper = styled.div`
-display: flex;
-justify-content: flex-end;
-flex-direction: column;
-`;
-
-export const FooterText = styled.p`
-font-size: 10px;
-align-self: flex-end;
-margin: 0;
-color: grey;
-font-family: 'Roboto', sans-serif;
+&:hover Button{
+  cursor: pointer;
+  background: #F69101;
+  color: black;
+}
 `;
 
 export const ButtonStyle = styled.button`
-  font-size: 30px;
-  width: 1.5em;
-  height: 1.5em;
-  background: #F69101;
-  color: black;
+  height: 40px;
+  width: 40px;
+  font-size: 20px;
+  font-weight: bold;
   border-radius: 25px;
   border: none;
-  outline: none;
-  cursor: pointer;
-  font-family: 'Roboto', sans-serif;
-  text-align: center;
+  background: #F69101;
+  color: white;
 
   @media (min-width: 667px) {
     
@@ -95,4 +86,22 @@ export const ButtonStyle = styled.button`
   @media (min-width: 1024px) {
     
   }
+`;
+
+export const FooterTextWrapper = styled.div`
+display: flex;
+justify-content: flex-end;
+flex-direction: column;
+`;
+
+export const ClearAll = styled.p`
+color: black;
+`;
+
+export const FooterText = styled.p`
+font-size: 10px;
+align-self: flex-end;
+margin: 0;
+color: grey;
+font-family: 'Roboto', sans-serif;
 `;

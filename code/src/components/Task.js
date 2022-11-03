@@ -25,7 +25,7 @@ export const Task = ({ task }) => {
       </TaskTextWrapper>
       <ButtonsWrapper>
         <Checkbox id={task.id} type="checkbox" onChange={() => handleCheckboxChange({ task })} />
-        <ButtonStyle onClick={() => handleRemoveTask({ task })}>+</ButtonStyle>
+        <ButtonStyle onClick={() => handleRemoveTask({ task })}>✕</ButtonStyle>
       </ButtonsWrapper>
     </TaskOuterWrapper>
   )
@@ -38,6 +38,7 @@ justify-content: space-between;
 `;
 
 export const TaskTextWrapper = styled.div`
+padding-top: 7px;
 `;
 
 //  This section is the styling for a custom checkbox
@@ -51,7 +52,7 @@ export const Checkbox = styled.input`
   background-color: #fff;
   margin: 0;
   font: inherit;
-  color: currentColor;
+  color: black;
   width: 1.30em;
   height: 1.30em;
   border: 0.15em solid currentColor;
@@ -80,7 +81,11 @@ export const Checkbox = styled.input`
   transform: scale(1);
 }
 
-cursor: pointer;
+&:hover {
+  cursor: pointer;
+  background: white;
+  color: black;
+}
 `;
 
 export const TaskText = styled.label`
@@ -94,17 +99,22 @@ margin: 8px 0;
 `;
 
 export const ButtonStyle = styled.button`
-transform: rotate(-45deg);
 height: 1.0em;
 width: 1.0em;
-font-size: 28px;
-color: black;
+font-size: 24px;
+color: grey;
 background-color: white;
 border: none;
 border-radius: 25px;
 outline: none;
 padding:0;
-margin: -7px 0 0 0;
+margin: -5px 0 0 0;
 cursor: pointer;
+
+&:hover {
+  cursor: pointer;
+  background: white;
+  color: black;
+}
 `;
 
