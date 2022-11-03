@@ -1,6 +1,5 @@
 /* eslint-disable max-len */
 import { createSlice } from '@reduxjs/toolkit';
-import uniqid from 'uniqid';
 
 const todos = createSlice({
   name: 'todos',
@@ -16,12 +15,7 @@ const todos = createSlice({
   },
   reducers: {
     addTask: (store, action) => {
-      const newTask = {
-        id: uniqid(),
-        text: action.payload,
-        isDone: false
-      };
-      store.items = [...store.items, newTask];
+      store.items.push(action.payload)
     },
     toggleItem: (store, action) => {
       console.log(store);
@@ -32,8 +26,17 @@ const todos = createSlice({
           item.isDone = !item.isDone
         }
       });
+    },
+    deleteTask: (store, { payload: itemId }) => {
+      return {
+        store,
+        items: store.items.filter((item) => item.id !== itemId)
+      }
+    },
+    clearList: (store) => {
+      store.items = []
     }
   }
 });
 
-export default todos
+export default todos;

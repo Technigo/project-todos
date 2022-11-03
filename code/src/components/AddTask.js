@@ -1,6 +1,3 @@
-/* eslint-disable no-shadow */
-/* eslint-disable react-hooks/rules-of-hooks */
-/* eslint-disable react/jsx-no-undef */
 // import styled from 'styled-components';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -9,28 +6,27 @@ import uniqid from 'uniqid';
 
 const AddTask = () => {
   const dispatch = useDispatch()
+  const [input, setInput] = useState('');
 
-  const [newTask, setNewTask] = useState('');
-
-  const onFormSubmit = (event) => {
-    event.preventDefault();
-
-    const addNewTask = { id: uniqid(),
-      text: newTask,
-      isDone: false }
-
-    dispatch(todos.actions.addTask(addNewTask))
-    setNewTask(' ')
+  // Adds new task to TaskList when submitting form
+  const submitHandler = (e) => {
+    e.preventDefault()
+    dispatch(todos.actions.addTask({ // from reducer
+      id: uniqid(),
+      text: input,
+      isDone: false
+    }))
+    setInput('') // clears textfield after submitting task
   }
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form onSubmit={submitHandler}>
       <div>
         <input
           type="text"
           placeholder="add task"
-          value={newTask}
-          onChange={(event) => setNewTask(event.target.value)} />
+          value={input}
+          onChange={(event) => setInput(event.target.value)} />
         <button
           type="submit">
             add task

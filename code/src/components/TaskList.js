@@ -2,6 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import todos from 'reducers/todos'
+// import styled from 'styled-components';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.todos.items)
@@ -16,7 +17,7 @@ const TaskList = () => {
     <section>
       {taskList.map((singleTask) => {
         return (
-          <article>
+          <div>
             <label>
               <input
                 type="checkbox"
@@ -24,8 +25,8 @@ const TaskList = () => {
                 onChange={() => onIsDoneToggle(singleTask.id)} />
             </label>
             <h2>{singleTask.text}</h2>
-            <button type="button">Delete</button>
-          </article>
+            <button type="button">X</button>
+          </div>
         );
       })}
     </section>
@@ -33,3 +34,4 @@ const TaskList = () => {
 }
 
 export default TaskList;
+
