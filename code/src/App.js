@@ -2,8 +2,10 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import toDos from 'reducers/todo';
+import { OuterWrapper, InnerWrapper } from 'components/styled/Wrappers.styled';
+import Header from 'components/Header';
 import AddNew from 'components/AddNew';
-import List from './components/List';
+import List from 'components/List';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -13,9 +15,14 @@ export const App = () => {
   const store = configureStore({ reducer });
 
   return (
-    <Provider store={store}>
-      <List />
-      <AddNew />
-    </Provider>
+    <OuterWrapper>
+      <InnerWrapper>
+        <Provider store={store}>
+          <Header />
+          <AddNew />
+          <List />
+        </Provider>
+      </InnerWrapper>
+    </OuterWrapper>
   );
 };

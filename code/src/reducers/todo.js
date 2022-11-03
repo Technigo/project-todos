@@ -1,13 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+const initialState = {
+  items: []
+};
+
 const toDos = createSlice({
   name: 'toDos',
-  initialState: {
-    items: []
-  },
+  initialState,
   reducers: {
     addTask: (store, action) => {
       store.items.push(action.payload);
+    },
+    deleteTask: (store, action) => {
+      store.items.splice(action.payload, 1);
     },
     toggleDone: (store, action) => {
       store.items.forEach((item) => {
@@ -15,6 +20,9 @@ const toDos = createSlice({
           item.done = !item.done
         }
       });
+    },
+    clearAll: () => {
+      return initialState;
     }
   }
 });

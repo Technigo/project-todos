@@ -15,19 +15,21 @@ const AddNew = () => {
 
   const handleFormSubit = (event) => {
     event.preventDefault();
-    dispatch((toDos.actions.addTask(newTask)))
+    dispatch((toDos.actions.addTask(newTask)));
+    setInput('');
   };
 
   return (
     <form onSubmit={handleFormSubit}>
+      <button type="submit">+</button>
       <label htmlFor="newTask">
         <input
           id="newTask"
           type="text"
           value={input}
-          onChange={(event) => setInput(event.target.value)} />
+          onChange={(event) => setInput(event.target.value)}
+          placeholder="Add task" />
       </label>
-      <button type="submit">Add new task</button>
     </form>
   );
 };
