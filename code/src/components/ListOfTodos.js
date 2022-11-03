@@ -6,9 +6,11 @@ import styled from 'styled-components'
 // import DeleteTask from 'components/DeleteTask'
 import DeleteAllTasks from './DeleteAllTasks';
 import { RemoveTask } from '../styles/Buttons'
+// import Urgent from './Urgent';
 
 const ListOfTodos = () => {
   const toDoList = useSelector((store) => store.todos.items)
+  // const levelOfUrgency = useSelector((store) => store.todos.items.urgency)
   const dispatch = useDispatch()
 
   const onIsDoneToggle = (id) => {
@@ -24,6 +26,9 @@ const ListOfTodos = () => {
       {toDoList.map((toDo, index) => {
         return (
           <ToDoItem>
+            {toDo.urgency === 'red' && ('🔴')}
+            {toDo.urgency === 'green' && ('🟢')}
+            {toDo.urgency === 'orange' && ('🟠')}
             <input name="to-dos" type="checkbox" checked={toDo.isDone} onChange={() => onIsDoneToggle(toDo.id)} />
             <label htmlFor="to-dos"> {toDo.name} </label>
             <RemoveTask onClick={() => onDeleteToDoButtonClick(index)} type="button">❌</RemoveTask>
@@ -49,7 +54,7 @@ const ToDoItem = styled.div`
     margin: 1vh 5vw 1vh 5vw;
     padding: 4px;
     display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-columns: 0.5fr 0.5fr 3fr 1fr;
     border-radius: 2px;
     font-family: 'Kalam', cursive;;
 `
