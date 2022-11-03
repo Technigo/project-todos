@@ -32,12 +32,12 @@ const AddTask = () => {
           disable={todo.length >= 50 || todo.length <= 2}>
             +
         </AddTaskButton>
-        <div>
-          <button onClick={onCheckAllTask}>Check your task!</button>
-          <button onClick={() => { dispatch(tasks.actions.clearTask()) }}>
+        <AddTaskButtonsClear>
+          <AddTaskButtonCheck onClick={onCheckAllTask}>Check your task!</AddTaskButtonCheck>
+          <AddTaskButtonClear onClick={() => { dispatch(tasks.actions.clearTask()) }}>
             Clear your Board!
-          </button>
-        </div>
+          </AddTaskButtonClear>
+        </AddTaskButtonsClear>
       </AddTaskContainer>
     </AddTaskDiv>
   )
@@ -46,11 +46,13 @@ const AddTask = () => {
 const AddTaskDiv = styled.div`
   padding: 10px;
 `
+
 const AddTaskContainer = styled.div`
   display: flex;
   justify-items: center;
   justify-content: center;
 `
+
 const AddTaskText = styled.input`
   height: 40px;
   width: 250px;
@@ -61,13 +63,13 @@ const AddTaskText = styled.input`
   @media (max-width: 450px) {
     width: 130px;
     height: 26px;
-}`
+  }
+`
 
 const AddTaskButton = styled.button`
-height: 42px;
+  height: 42px;
   border: none;
   padding: 0 10px 0 10px;
-  color: #422117;
   border-left: 1px solid lightgrey;
   border-radius: 0 20px 20px 0;
   background-color: white;
@@ -76,11 +78,51 @@ height: 42px;
   @media (max-width: 450px) {
     height: 28px;
     font-size: 0.8rem;
-    }
-    &:disabled{
+  }
+  &:disabled {
     color: lightgrey;
-    }
-    &:hover{
+  }
+  &:hover {
     transform: scale(1.05)
+  }
+`
+
+const AddTaskButtonsClear = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding-top: 30px;
+`
+
+const AddTaskButtonCheck = styled.button`
+  border: none;
+  border-radius: 10px;
+  background-color: #0072FF;
+  margin: 30px 10px 0 0;
+  padding: 5px 10px;
+  filter: grayscale(60%) sepia(10%) brightness(180%);
+  font-weight: 600;
+  @media (max-width: 450px) {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+  }
+  &:hover {
+    transform: scale(1.05)
+  }
+`
+
+const AddTaskButtonClear = styled.button`
+  border: none;
+  border-radius: 10px;
+  background-color: #F1C8D5;
+  margin: 30px 0 0 20px;
+  padding: 5px 10px;
+  font-weight: 600;
+  @media (max-width: 450px) {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+  }
+  &:hover {
+    transform: scale(1.05)
+  }
 `
 export default AddTask;
