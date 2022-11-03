@@ -26,7 +26,6 @@ export const App = () => {
           <ContentWrapper>
             <TodaysDate />
             <AddTask />
-            {/* <TodoCount /> */}
             <TaskList />
           </ContentWrapper>
           <BottomLine />
