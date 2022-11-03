@@ -1,9 +1,11 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const CompleteContainer = styled.div`
-border: 2px solid red;
+display: flex;
+flex-direction: column;
+align-items: center; 
 `
 
 const TotalCompletedItems = () => {
@@ -13,7 +15,7 @@ const TotalCompletedItems = () => {
 
   return (
     <CompleteContainer>
-      <h4 className="mt-3">Completed: {completedTodos.length}</h4>
+      <h4>Completed: {completedTodos.length}</h4>
     </CompleteContainer>
   )
 }

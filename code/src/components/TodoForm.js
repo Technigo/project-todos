@@ -1,11 +1,22 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { addTodo } from '../redux/todoSlice';
 
 const FormContainer = styled.div`
-border: 2px solid blue; 
+background-color: white;
+width: 30%;
+margin-left: auto;
+margin-right: auto;
+margin-top: 100px;
+margin-bottom: 2px;
+display: flex;
+flex-direction: column;
+align-items: center; 
+border: 1px dotted lightgrey;
+box-shadow: 3px 5px #888888;
+border-radius: 20px;
 `
 
 const AddTodoForm = () => {

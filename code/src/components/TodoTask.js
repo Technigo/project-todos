@@ -1,18 +1,23 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { toggleComplete, deleteTodo } from '../redux/todoSlice';
+import 'animate.css'
 
 const TaskContainer = styled.div`
-.marker {
-  size: 25px;
+  min-width: 250px;
+.list-group-item {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
 }
-.mr-3 {
-  margin-left: 25px;
-}
-.btn-delete {
+
+.animate__animated {
+  margin-left: 15em;
   background-color: red;
+  padding-bottom: 5px;
+  padding-top: 5px;
 }
+
 `
 
 const TodoItem = ({ id, title, completed }) => {
@@ -40,7 +45,7 @@ const TodoItem = ({ id, title, completed }) => {
               onChange={handleCompleteClick} />
             {title}
           </span>
-          <button onClick={handleDeleteClick} type="button" className="btn-delete">Delete</button>
+          <button onClick={handleDeleteClick} type="button" className="animate__animated animate__fadeIn">Delete</button>
         </div>
       </li>
     </TaskContainer>
