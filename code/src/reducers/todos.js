@@ -20,16 +20,15 @@ export const todos = createSlice({
     // this adds a new task to the list
     addNewTask: (store, action) => {
       const { input, dueDate } = action.payload
+      console.log(action)
       const userId = uuidv4();
-      const dueDateFormatted = dueDate.getDate()
-      const formattedAgain = dueDateFormatted.toLocaleString()
 
       const newTask = {
         text: input,
         id: userId,
         complete: false,
-        postedTime: moment().format('ddd D MMM'),
-        dueDate: formattedAgain
+        postedTime: moment().calendar(),
+        dueDate
       }
 
       store.tasks = [...store.tasks, newTask];
