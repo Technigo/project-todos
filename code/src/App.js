@@ -5,7 +5,9 @@ import { tasks } from 'reducers/tasks';
 import Board from 'components/Board';
 import AddTask from 'components/AddTask'
 import TasksCounter from 'components/TasksCounter';
-import { OutWrapper } from 'styled-components/Wrappers';
+import { OuterWrapper } from 'styled-components/Wrappers';
+import styled from 'styled-components';
+import iconTrello from 'icons/icons8-trello-48.png'
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -16,13 +18,24 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <OutWrapper>
-        <h1>Fake Trello</h1>
+      <OuterWrapper>
+        <BoardTitle>Fake Trello</BoardTitle>
         <AddTask />
         <TasksCounter />
         <Board />
-      </OutWrapper>
+      </OuterWrapper>
     </Provider>
   );
 }
 
+const BoardTitle = styled.h1`
+  background-image: url(${iconTrello});
+  background-repeat: no-repeat;
+  background-position: left 15% bottom 30%;
+  font-size: 3rem;
+  margin-top: 10px;
+  margin-bottom: 0;
+  @media (max-width: 450px) {
+    font-size: 2.6rem;
+  }
+`

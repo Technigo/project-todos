@@ -29,7 +29,7 @@ const AddTask = () => {
         <AddTaskText type="text" placeholder="Enter a title for this card" value={todo} onChange={(event) => setTodo(event.target.value)} onKeyDown={(e) => checkKey(e)} />
         <AddTaskButton
           onClick={onAddTask}
-          disable={todo.length >= 50 || todo.length <= 2}>
+          disabled={todo.length >= 20 || todo.length <= 2}>
            +
         </AddTaskButton>
         <AddTaskButtonsClear>

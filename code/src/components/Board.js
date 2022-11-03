@@ -64,9 +64,7 @@ const BoardTasks = styled.div`
       }
     &:last-child {
         border-radius: 0 0 20px 20px;
-        background: #FDF9F9;
-        margin-top: 15px;
-      
+        background: #FDF9F9;      
     }
 `
 
