@@ -36,7 +36,21 @@ export default TodoInput;
 
 const FlexForm = styled.form`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: -10rem;
+  background-color: rgba(62, 62, 62, 0.4);
+  height: 7rem;
+  width:80vw;
+  
+  @media(min-width: 600px) {
+    position: static;
+    background-color: transparent;
+    width: auto;
+    height: auto;
+    //justify-content: space-between;
+  }
 `
 const StyledInput = styled.input`
   height: 2rem;
