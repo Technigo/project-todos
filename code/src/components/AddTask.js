@@ -26,12 +26,12 @@ const AddTask = () => {
   return (
     <AddTaskDiv>
       <AddTaskContainer>
-        <input type="text" value={todo} onChange={(event) => setTodo(event.target.value)} onKeyDown={(e) => checkKey(e)} />
-        <button
+        <AddTaskText type="text" placeholder="Add your card" value={todo} onChange={(event) => setTodo(event.target.value)} onKeyDown={(e) => checkKey(e)} />
+        <AddTaskButton
           onClick={onAddTask}
           disable={todo.length >= 50 || todo.length <= 2}>
-            Add your task!
-        </button>
+            +
+        </AddTaskButton>
         <div>
           <button onClick={onCheckAllTask}>Check your task!</button>
           <button onClick={() => { dispatch(tasks.actions.clearTask()) }}>
@@ -50,5 +50,37 @@ const AddTaskContainer = styled.div`
   display: flex;
   justify-items: center;
   justify-content: center;
+`
+const AddTaskText = styled.input`
+  height: 40px;
+  width: 250px;
+  margin-bottom: 3px;
+  padding-left: 10px;
+  border-radius: 20px 0 0 20px;
+  border: none;
+  @media (max-width: 450px) {
+    width: 130px;
+    height: 26px;
+}`
+
+const AddTaskButton = styled.button`
+height: 42px;
+  border: none;
+  padding: 0 10px 0 10px;
+  color: #422117;
+  border-left: 1px solid lightgrey;
+  border-radius: 0 20px 20px 0;
+  background-color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  @media (max-width: 450px) {
+    height: 28px;
+    font-size: 0.8rem;
+    }
+    &:disabled{
+    color: lightgrey;
+    }
+    &:hover{
+    transform: scale(1.05)
 `
 export default AddTask;
