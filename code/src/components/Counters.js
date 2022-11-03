@@ -7,7 +7,6 @@ export const TaskCounter = () => {
     (store) => store.TaskReducer.items.filter((item) => item.isComplete).length
   )
 
-  console.log('i am both completed and not')
   return (
     <section className="counter">
       <h4>{showAmount} / {number} completed</h4>
@@ -21,7 +20,6 @@ export const IdeaCounter = () => {
     (store) => store.IdeaReducer.items.filter((item) => item.isComplete).length
   )
 
-  console.log('i am both completed and not')
   return (
     <section className="counter">
       <h4>{showAmount} / {number} completed</h4>

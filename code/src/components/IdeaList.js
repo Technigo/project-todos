@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { IdeaReducer } from 'reducers/reducers';
 import { ClearScreenIdea } from 'components/ClearScreenIdea'
@@ -6,18 +7,22 @@ import { IdeaCounter } from './Counters';
 
 export const IdeaList = () => {
   const ideaList = useSelector((store) => store.IdeaReducer.items);
-  const noIdeas = useSelector((state) => state.IdeaReducer.noIdeas);
   const dispatch = useDispatch();
 
   const onIdeaIsDoneToggle = (id) => {
-    dispatch(IdeaReducer.actions.toggleItem(id))
+    dispatch(IdeaReducer.actions.toggleIdea(id))
   }
+
+  const onDeleteIdea = (id) => {
+    dispatch(IdeaReducer.actions.deleteIdea(id))
+  }
+
   return (
     <div>
-      {noIdeas ? (
+      {(ideaList.length === 0) ? (
         <ClearScreenIdea />
       ) : (
-        <section>
+        <IdeaContainer>
           <IdeaCounter />
           {ideaList.map((singleIdea) => {
             return (
@@ -28,12 +33,16 @@ export const IdeaList = () => {
                   checked={singleIdea.isCaught}
                   onChange={() => onIdeaIsDoneToggle(singleIdea.id)} />
                 <label htmlFor="bla">{singleIdea.text}</label>
-                <button type="button">X</button>
+                <button type="button" onClick={() => onDeleteIdea(singleIdea.id)}>X</button>
               </article>
             )
           })}
-        </section>
+        </IdeaContainer>
       )}
     </div>
   )
 }
+
+const IdeaContainer = styled.section`
+background-color: rgba(54, 54, 54, 0.734);
+`

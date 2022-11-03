@@ -6,7 +6,6 @@ import { TaskCounter } from './Counters';
 
 export const TaskList = () => {
   const taskList = useSelector((store) => store.TaskReducer.items);
-  const noTasks = useSelector((state) => state.TaskReducer.noTasks);
   const dispatch = useDispatch();
 
   const onTaskIsDoneToggle = (id) => {
@@ -19,7 +18,7 @@ export const TaskList = () => {
 
   return (
     <div>
-      {noTasks ? (
+      {(taskList.length === 0) ? (
         <ClearScreenTask />
       ) : (
         <section>

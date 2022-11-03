@@ -60,9 +60,9 @@ export const IdeaReducer = createSlice({
     },
 
     deleteIdea: (store, action) => {
-      const updatedItems = store.items.filter((item) => {
-        return store.items.indexOf(item) !== action.payload;
-      });
+      const updatedItems = store.items.filter(
+        (item) => item.id !== action.payload
+      );
       store.items = updatedItems;
     }
   }

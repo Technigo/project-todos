@@ -11,7 +11,6 @@ export const Header = () => {
 
 const HeaderContainer = styled.div`
     display: flex;
-    background-color: cyan;
-    border: 2px solid darkblue;
+    background-color: rgb(0, 98, 98, 0.5);
     justify-content: center;
 `
