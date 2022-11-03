@@ -69,6 +69,7 @@ const TaskItem = styled.div`
   width: 100%;
   border-radius: 50px;
   margin: 0.5rem 0;
+  align-items: center;
 `
 
 const CheckBox = styled.input`
