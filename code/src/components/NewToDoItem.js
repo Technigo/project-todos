@@ -1,7 +1,6 @@
 /* eslint-disable no-tabs */
 import React, { useState } from 'react';
-// import styled from 'styled-components'
-// import styled from 'styled-components/macro'
+import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import toDos from 'reducers/toDos'
 import uniqid from 'uniqid';
@@ -24,16 +23,28 @@ const NewToDoItem = () => {
 
   return (
     <form onSubmit={onFormSubmit}>
-      <input
+      <Input
         type="text"
-        placeholder=" 🖊️ Add Task"
+        placeholder="🖊️ Add a new Task"
         value={newtodo}
         onChange={(e) => handleChange(e)}
         className="todo-input" />
-      <button className="add-btn" disabled={newtodo.length < 1} type="submit">Add Task</button>
+      <button className="add-btn" disabled={newtodo.length < 1} type="submit">Save</button>
     </form>
 
   )
 }
 
 export default NewToDoItem;
+
+const Input = styled.input`
+  font-size: 18px;
+  padding: 10px;
+  margin: 10px;
+  background: papayawhip;
+  border: none;
+  border-radius: 3px;
+  ::placeholder {
+    color: palevioletred;
+  }
+`;
