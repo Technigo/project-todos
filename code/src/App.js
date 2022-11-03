@@ -3,7 +3,6 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { tasks } from 'reducers/tasks';
 import TaskList from 'components/tasklist';
-
 import { Container, Wrapper } from 'styledComponents/Container';
 
 export const App = () => {

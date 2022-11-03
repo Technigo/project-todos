@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
+import { AddButton } from 'styledComponents/Buttons';
+
 import { Task } from 'styledComponents/Task';
 import { v4 as uuid } from 'uuid';
 
@@ -12,6 +14,7 @@ const NewTask = () => {
   uuid();
 
   const onFormSubmit = (event) => {
+    console.log(onFormSubmit);
     event.preventDefault();
 
     const newTask = {
@@ -25,18 +28,20 @@ const NewTask = () => {
   };
   console.log(input);
   return (
-    <Task onSubmit={onFormSubmit}>
-      <label>
-        <input
-          className="text-input"
-          type="text"
-          value={input}
-          placeholder="Enter new task"
-          onChange={(event) => setInput(event.target.value)}
-          required
-        />
-      </label>
-      <button type="submit"> + </button>
+    <Task>
+      <form onSubmit={onFormSubmit}>
+        <label>
+          <input
+            className="text-input"
+            type="text"
+            value={input}
+            placeholder="Enter new task"
+            onChange={(event) => setInput(event.target.value)}
+            required
+          />
+        </label>
+        <AddButton type="submit"> + </AddButton>
+      </form>
     </Task>
   );
 };

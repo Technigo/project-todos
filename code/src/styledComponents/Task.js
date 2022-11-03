@@ -6,4 +6,5 @@ export const Task = styled.div`
   align-items: center;
   border-bottom: dotted #cbcaca;
   justify-content: space-between;
+  padding: 15px;
 `;

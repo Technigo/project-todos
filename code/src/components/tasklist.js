@@ -3,7 +3,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
+
 import { Task } from 'styledComponents/Task';
+import { FaTrashAlt } from 'react-icons/fa';
+import { DeleteButton } from 'styledComponents/Buttons';
 import Header from './header';
 import NewTask from './newTask';
 
@@ -31,10 +34,13 @@ const TaskList = () => {
     <div>
       <Header />
       <section>
+        <button type="button">All tasks: {taskList.length}</button>
+
+        <button type="button">Completed tasks: {completedTasks.length}</button>
         <button type="button">
           Uncompleted tasks: {uncompletedTasks.length}
         </button>
-        <button type="button">Completed tasks: {completedTasks.length}</button>
+
         <div className="tasklist">
           <NewTask />
           {taskList.map((singleTask) => {
@@ -50,17 +56,18 @@ const TaskList = () => {
                   </label>
                   <h2>{singleTask.text}</h2>
                 </div>
-                <button
+                <DeleteButton
+                  delete
                   className="delete"
                   type="button"
                   onClick={() => onDeleteTask(singleTask.id)}
                 >
-                  x
-                </button>
+                  <FaTrashAlt />
+                </DeleteButton>
               </Task>
             );
           })}
-          <button type="button" onClick={onCompleteAll}>
+          <button className="complete" type="button" onClick={onCompleteAll}>
             Complete all
           </button>
         </div>
