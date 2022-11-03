@@ -1,4 +1,5 @@
 import React from 'react';
+import { GlobalStyle } from 'GlobalStyle';
 import { Display } from 'components/Display'
 import { Provider } from 'react-redux' // Provider activation
 import { configureStore, combineReducers } from '@reduxjs/toolkit' // Store activation w/ provider + all your reducers combined
@@ -13,6 +14,7 @@ export const App = () => {
   const store = configureStore({ reducer })
   return (
     <Provider store={store}>
+      <GlobalStyle />
       <Display />
     </Provider>
   );
