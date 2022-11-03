@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
+import styled from 'styled-components';
 
 const AddTask = () => {
   const [todo, setTodo] = useState('')
@@ -23,8 +24,8 @@ const AddTask = () => {
   }
 
   return (
-    <div>
-      <div>
+    <AddTaskDiv>
+      <AddTaskContainer>
         <input type="text" value={todo} onChange={(event) => setTodo(event.target.value)} onKeyDown={(e) => checkKey(e)} />
         <button
           onClick={onAddTask}
@@ -37,9 +38,17 @@ const AddTask = () => {
             Clear your Board!
           </button>
         </div>
-      </div>
-    </div>
+      </AddTaskContainer>
+    </AddTaskDiv>
   )
 }
 
+const AddTaskDiv = styled.div`
+  padding: 10px;
+`
+const AddTaskContainer = styled.div`
+  display: flex;
+  justify-items: center;
+  justify-content: center;
+`
 export default AddTask;
