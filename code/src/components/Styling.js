@@ -13,7 +13,7 @@ export const Outerwrapper = styled.section`
 export const InnerWrapper = styled.section`
   width: 50%;
   background-color: #94B49F;
-  padding: 30px 0px;
+  border-radius: 20px;
   `
 
 // White: #FCF8E8

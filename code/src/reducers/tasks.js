@@ -5,7 +5,7 @@ const tasks = createSlice({
   initialState: {
     todos: [
       { id: 1, title: 'do dishes', isDone: false },
-      { id: 2, title: 'take out trash', isDone: true },
+      { id: 2, title: 'take out trash', isDone: false },
       { id: 3, title: 'go to the dentist', isDone: false }
     ]
   },
@@ -19,9 +19,13 @@ const tasks = createSlice({
           task.isDone = !task.isDone
         }
       })
+    },
+    addNewTask: (store, action) => {
+      store.todos.push(action.payload);
+    },
+    removeTask: (store, action) => {
+      store.todos.splice(action.payload, 1)
     }
-    // addNewTask: (store, action) => {
-    // }
   }
 });
 

@@ -14,49 +14,46 @@ const Tasks = () => {
   const onIsTaskDone = (id) => {
     dispatch(tasks.actions.markTaskAsDone(id))
   }
+  const onRemoveTaskClick = (task) => {
+    dispatch(tasks.actions.removeTask(task))
+  }
   return (
     <Outerwrapper>
       <Header />
       <InnerWrapper>
-        <section>
-          {allTasks.map((singleTask) => {
-            return (
-              <TasklistSection key={singleTask.id}>
-
-                <input
-                  type="checkbox"
-                  checked={singleTask.isDone}
-                  onChange={() => onIsTaskDone(singleTask.id)} />
-                <label>
-                  <h2>{singleTask.title}</h2>
-                </label>
-                <RemoveTaskButton type="button">X
-                </RemoveTaskButton>
-              </TasklistSection>
-            )
-          })}
-        </section>
+        {allTasks.map((singleTask, index) => {
+          return (
+            <Tasklist key={singleTask.id}>
+              <input
+                type="checkbox"
+                checked={singleTask.isDone}
+                onChange={() => onIsTaskDone(singleTask.id)} />
+              <label>
+                <p>{singleTask.title}</p>
+              </label>
+              <RemoveTaskButton type="button" onClick={() => onRemoveTaskClick(index)}>X
+              </RemoveTaskButton>
+            </Tasklist>
+          )
+        })}
+        <NewTask />
       </InnerWrapper>
-      <NewTask />
+
     </Outerwrapper>
   )
 }
 export default Tasks;
 
-const TasklistSection = styled.section`
+const Tasklist = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
+margin: 15px;
+font-size: 15px;
 `
 const RemoveTaskButton = styled.button`
 background: none;
 border: none;
-font-size: 20px;
+font-size: 15px;
 font-weight: 700;
 `
-// eslint-disable-next-line no-lone-blocks
-//  <div>
-// {allTasks.map((singleTask) => (
-//   console.log(singleTask.title)
-// ))}
-// </div>
