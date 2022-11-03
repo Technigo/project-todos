@@ -4,4 +4,4 @@ This week we had to create a To-Do project using React.js, Redux, and Styled Com
 
 ## View it live
 
-You can see it here ---> 
+You can see it here ---> https://faketrello.netlify.app/
