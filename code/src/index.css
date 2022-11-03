@@ -1,4 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Karla&family=Plaster&display=swap');
+@font-face {
+  font-family: "Urbanist";
+  font-weight: 400;
+  src: url('https://github.com/coreyhu/Urbanist/blob/main/fonts/otf/Urbanist-Regular.otf?raw=true');
+}
+@font-face {
+  font-family: "Urbanist";
+  font-weight: 600;
+  src: url('https://github.com/coreyhu/Urbanist/blob/main/fonts/otf/Urbanist-Bold.otf?raw=true');
+}
 
 #root {
   height: 100%;
@@ -9,11 +18,53 @@ html {
 
 body {
   margin: 0;
-  font-family:'Karla', sans-serif;
+  font-family:'Urbanist-Regular', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
-  font-family: 'Plaster', cursive;
+  font-family: 'Phosphate';
 }
+
+
+/* [type="checkbox"] {
+  opacity: 0;
+}
+ [type="checkbox"] + label {
+  position: relative;
+  padding-left: 9px;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 32px;
+}
+
+[type="checkbox"] + label::before {
+  position: absolute;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  background-image: url(./images/Icon-unchecked.png);
+  background-size: cover;
+}
+
+[type="checkbox"]:checked + label::before{
+  content: "";
+  position: absolute;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  background-image: url(./images/Icon-unchecked.png);
+  background-size: cover;
+}
+
+
+[type="checkbox"]:checked + label::after{
+  content: "";
+  position: absolute;
+  left: -15px;
+  width: 30px;
+  height: 30px;
+  background-image: url(./images/Icon-checked.png);
+  background-size: cover;
+}  */
