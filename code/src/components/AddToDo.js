@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
 import ToDo from 'reducers/todo';
 import uniqid from 'uniqid';
-// import CheckList from 'components/Images/icons8-add-new-50.png'
 import Pencil from 'components/Images/icons8-pencil-64.png'
 
 export const AddToDo = () => {
@@ -12,7 +11,7 @@ export const AddToDo = () => {
   const [newToDo, setNewToDo] = useState('');
 
   const onFormSubmit = (event) => {
-    event.preventDefault();
+    event.target.placeholder = 'Add task here...'
 
     const postNewToDo = { id: uniqid(),
       name: newToDo,

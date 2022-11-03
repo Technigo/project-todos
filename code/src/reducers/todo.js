@@ -16,7 +16,7 @@ const ToDo = createSlice({
       });
     },
     addToDo: (store, action) => {
-      store.items.push(action.payload)
+      store.items.unshift(action.payload)
     },
     deleteItem: (store, action) => {
       store.items = store.items.filter((item) => item.id !== action.payload)

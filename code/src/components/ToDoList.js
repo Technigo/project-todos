@@ -6,8 +6,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import ToDo from 'reducers/todo';
 import moment from 'moment';
 import GarbageBin from 'components/Images/icons8-garbage-bin-64.png';
-// import Done from 'components/Images/icons8-done-48.png';
-// import ToDoIcon from 'components/Images/icons8-to-do-30.png'
 
 const ToDoList = () => {
   const todoList = useSelector((store) => store.ToDo.items)
@@ -23,11 +21,6 @@ const ToDoList = () => {
       {todoList.map((singleToDo) => {
         return (
           <ToDos>
-            {/* <Icoon
-              className="icon1"
-              src={ToDo}
-              alt="Icon" /> */}
-
             <p>Posted: {moment(date.createdAt).fromNow()}</p>
 
             <Label>
