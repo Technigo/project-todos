@@ -23,34 +23,48 @@ const Tasks = () => {
       <InnerWrapper>
         {allTasks.map((singleTask, index) => {
           return (
-            <Tasklist key={singleTask.id}>
-              <input
-                type="checkbox"
-                checked={singleTask.isDone}
-                onChange={() => onIsTaskDone(singleTask.id)} />
-              <label>
-                <p>{singleTask.title}</p>
-              </label>
+            <Content key={singleTask.id}>
+              <SingleTask>
+                <input
+                  type="checkbox"
+                  checked={singleTask.isDone}
+                  onChange={() => onIsTaskDone(singleTask.id)} />
+                <label>
+                  <TasklistText>{singleTask.title}</TasklistText>
+                </label>
+              </SingleTask>
               <RemoveTaskButton type="button" onClick={() => onRemoveTaskClick(index)}>X
               </RemoveTaskButton>
-            </Tasklist>
+            </Content>
           )
         })}
         <NewTask />
       </InnerWrapper>
-
     </Outerwrapper>
   )
 }
 export default Tasks;
 
-const Tasklist = styled.div`
+const Content = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
+justify-content: space-between;
 margin: 15px;
-font-size: 15px;
 `
+const SingleTask = styled.div`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: space-around;
+align-content: flex-end;
+`
+
+const TasklistText = styled.p`
+font-family: 'Montserrat', sans-serif;
+font-size: 13px;
+`
+
 const RemoveTaskButton = styled.button`
 background: none;
 border: none;

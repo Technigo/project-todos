@@ -1,11 +1,14 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-import { useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import tasks from 'reducers/tasks'
 
 const NewTask = () => {
   const dispatch = useDispatch()
   const [newTask, setNewTask] = useState('')
+
+  const allTasks = useSelector((store) => store.tasks.todos);
+  const tasksMarkedAsDone = allTasks.filter((task) => !task.isDone)
 
   const onAddNewTask = (event) => {
     event.preventDefault()
@@ -30,29 +33,47 @@ const NewTask = () => {
           value={newTask}
           onChange={(event) => setNewTask(event.target.value)}
           required />
-        <NewTaskButton type="submit" onClick={() => onAddNewTask}>Add new task</NewTaskButton>
+        <NewTaskAndTasksLeft>
+          <NewTaskButton type="submit" onClick={() => onAddNewTask}>Add new task</NewTaskButton>
+          <TasksLeft>
+            Tasks left: {tasksMarkedAsDone.length}
+          </TasksLeft>
+        </NewTaskAndTasksLeft>
       </NewTaskDiv>
     </form>
   )
 }
 export default NewTask;
 
-// addNewTask: (store, action) => {
-//   store.todos.push(action.payload)
+const NewTaskDiv = styled.div`
+display: flex;
+flex-direction: column;
+padding: 15px;
+align-items: flex-end;
+`
 
 const Input = styled.input`
 border: 1px solid #DF7861;
 border-radius: 20px;
+width: 100%;
 `
+const NewTaskAndTasksLeft = styled.div`
+ display: flex;
+ flex-direction: row;
+ align-items: center;
+ `
 
 const NewTaskButton = styled.button`
 background-color: #ECB390;
 border: none;
-border-radius: 20px;
-padding: 5px 0px;
+border-radius: 10px;
+padding: 5px 8px;
+margin: 10px 0px;
 `
-const NewTaskDiv = styled.div`
-display: flex;
-flex-direction: column;
-padding: 10px;
+
+const TasksLeft = styled.p`
+font-family: 'Libre Franklin', sans-serif;
+font-size: 13px;
+padding: 5px;
 `
+
