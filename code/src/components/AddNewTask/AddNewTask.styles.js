@@ -31,6 +31,14 @@ export const AddNewTaskWrapper = styled.form`
         outline: none;
       }
     }
+
+    #datePicker {
+      width: 100px;
+      height: 20px;
+      padding: 0;
+      background: transparent;
+    }
+    
     
     #dueDateLabel {
       position: absolute;
