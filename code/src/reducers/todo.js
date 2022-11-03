@@ -1,15 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import uniqid from 'uniqid';
+
+const initialItems = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []
 
 const todo = createSlice({
   name: 'todo',
-  initialState: {
-    items: [
-      { id: uniqid(),
-        task: 'Clean the kitchen',
-        isCompleted: false }
-    ]
-  },
+  initialState: { items: initialItems },
   reducers: {
     toggleItem: (store, action) => {
       console.log(store);
@@ -24,10 +19,10 @@ const todo = createSlice({
       store.items.push(action.payload)
     },
     deleteTodo: (store, action) => {
-      const decreasedItems = store.items.filter(
+      const updatedItems = store.items.filter(
         (item) => item.id !== action.payload
       )
-      store.items = decreasedItems
+      store.items = updatedItems
     }
   }
 });

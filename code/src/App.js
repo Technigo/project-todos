@@ -7,22 +7,28 @@ import { Header } from 'components/Header';
 
 import todo from 'reducers/todo';
 import TodoList from 'components/TodoList';
-import AddTask from 'components/AddTask';
+import { InnerWrapper, OuterWrapper } from 'components/styling/GlobalStyling';
+
+const reducer = combineReducers({
+  //  pokemons: pokemons.reducer,
+  todo: todo.reducer
+});
+
+const store = configureStore({
+  reducer
+});
+
+store.subscribe(() => localStorage.setItem('todos', JSON.stringify(store.getState().todo.items)))
 
 export const App = () => {
-  const reducer = combineReducers({
-  //  pokemons: pokemons.reducer,
-    todo: todo.reducer
-  });
-
-  const store = configureStore({
-    reducer
-  });
   return (
     <Provider store={store}>
-      <Header />
-      <AddTask />
-      <TodoList />
+      <OuterWrapper>
+        <InnerWrapper>
+          <Header />
+          <TodoList />
+        </InnerWrapper>
+      </OuterWrapper>
     </Provider>
   );
 }

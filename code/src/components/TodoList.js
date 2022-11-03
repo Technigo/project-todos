@@ -2,12 +2,12 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import todo from 'reducers/todo';
+import AddTask from 'components/AddTask';
 import styled from 'styled-components'
-import { OuterWrapper, InnerWrapper } from './styling/GlobalStyling';
 
 const TodoList = () => {
-  const todoList = useSelector((store) => store.todo.items);
   const dispatch = useDispatch();
+  const todoList = useSelector((store) => store.todo.items);
 
   const onIsCompletedToggle = (id) => {
     dispatch(todo.actions.toggleItem(id));
@@ -17,28 +17,46 @@ const TodoList = () => {
     dispatch(todo.actions.deleteTodo(id))
   }
 
+  const TaskList = styled.div`
+  background-color: #e5f2f5;
+  padding: 20px;
+  `
+
   const TaskSection = styled.section`
-    background-color: pink;
+    margin: 20px;
+  `
+
+  const TaskArticle = styled.article`
+    background-color: #ffff;
+    margin-bottom: 20px;
+    border: 2px solid #007E9F;
+    border-radius: 5px;
+  `
+
+  const DeleteButton = styled.button`
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    border: none;
   `
 
   return (
-    <OuterWrapper>
-      <InnerWrapper>
-        <TaskSection>
-          {todoList.map((singleTask) => {
-            return (
-              <article>
-                <h2>{singleTask.task}</h2>
-                <label>Is task completed
-                  <input type="checkbox" checked={singleTask.isCompleted} onChange={() => onIsCompletedToggle(singleTask.id)} />
-                </label>
-                <button type="button" onClick={() => onDeleteTodo(singleTask.id)}>🗑</button>
-              </article>
-            );
-          })}
-        </TaskSection>
-      </InnerWrapper>
-    </OuterWrapper>
+    <TaskList>
+      <TaskSection>
+        <AddTask />
+        {todoList.map((singleTask) => {
+          return (
+            <TaskArticle key={singleTask.id}>
+              <p>{singleTask.task}</p>
+              <label>
+                <input type="checkbox" checked={singleTask.isCompleted} onChange={() => onIsCompletedToggle(singleTask.id)} />
+              </label>
+              <DeleteButton type="button" onClick={() => onDeleteTodo(singleTask.id)}>❌</DeleteButton>
+            </TaskArticle>
+          );
+        })}
+      </TaskSection>
+    </TaskList>
   )
 }
 export default TodoList;
