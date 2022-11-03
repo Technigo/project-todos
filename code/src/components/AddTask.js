@@ -30,7 +30,7 @@ const AddTask = () => {
       <input
         className="styledInput"
         type="text"
-        placeholder="Add a Task"
+        placeholder="Add a Task..."
         onChange={(e) => setInputText(e.target.value)}
         value={inputText}
         required />

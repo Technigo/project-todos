@@ -48,7 +48,7 @@ input[type='checkbox']:checked:after {
 .styledInput {
 border: none;
 font-family: 'Reenie Beanie';
-font-size: 1.2rem;
+font-size: 3rem;
 background: hsla(0, 1%, 35%, 0);
 padding: 0 10px;
 width: 100%;
