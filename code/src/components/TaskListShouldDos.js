@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import tasksShoulds from 'reducers/tasksShoulds';
 import ListHeaderStyling from 'styling/ListHeaderStyling';
 import ListStyling from 'styling/ListStyling'
+import RemoveTask from './RemoveTask';
 
 const TaskListShouldDos = () => {
   const taskItemShould = useSelector((store) => store.tasksShoulds.items);
@@ -14,10 +15,8 @@ const TaskListShouldDos = () => {
     dispatch(tasksShoulds.actions.toggleItem(id));
   }
 
-  const onIsShowInputField = () => {
-    return (
-      <input type="text" />
-    )
+  const onDeleteTaskItem = (taskIndex) => {
+    dispatch(tasksShoulds.actions.removeItem(taskIndex));
   }
 
   return (
@@ -26,7 +25,7 @@ const TaskListShouldDos = () => {
         <div><h2>Should Dos</h2></div>
       </ListHeaderStyling>
       <ListStyling>
-        {taskItemShould.map((singleTask) => {
+        {taskItemShould.map((singleTask, index) => {
           return (
             <article key={singleTask.id}>
               <h2>
@@ -36,13 +35,10 @@ const TaskListShouldDos = () => {
             Is it Done?
                 <input type="checkbox" checked={singleTask.complete} onChange={() => onIsCompleteToggle(singleTask.id)} />
               </label>
+              <RemoveTask onDeleteTaskItem={onDeleteTaskItem} index={index} />
             </article>
           )
         })}
-        <button
-          type="button"
-          onClick={() => onIsShowInputField()}>Add new To do
-        </button>
       </ListStyling>
 
     </section>

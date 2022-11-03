@@ -19,6 +19,12 @@ const tasksShoulds = createSlice({
           item.complete = !item.complete
         }
       });
+    },
+    addItem: (store, action) => {
+      store.items.push(action.payload);
+    },
+    removeItem: (store, action) => {
+      store.items.splice(action.payload, 1); /* Sets the inex to 1 as initial state */
     }
   }
 });

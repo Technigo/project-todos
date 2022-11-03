@@ -8,7 +8,11 @@ height: auto;
 padding: 1vw;
 margin-left: 2vw;
 
-
+article{
+display:grid;
+grid-template-columns: 5fr 3fr;
+grid-template-rows: 3fr;
+}
 `
 
 export default ListStyling
