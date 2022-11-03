@@ -29,7 +29,7 @@ export const Overview = () => {
     if (userConfirm) {
       dispatch(tasks.actions.removeAll());
     }
-  }
+  };
 
   return (
     <OverviewWrapper>
@@ -39,14 +39,14 @@ export const Overview = () => {
       </FlexContainerText>
       <FlexContainerBtn>
         <Actionbtn
-          align="flex-end"
+          // align="flex-end"
           color="#4C9173"
           type="button"
           onClick={() => completeAll()}>
         Complete all
         </Actionbtn>
         <Actionbtn
-          align="flex-end"
+          // align="flex-start"
           color="#906387"
           type="button"
           onClick={() => deleteAll()}>
@@ -55,7 +55,7 @@ export const Overview = () => {
       </FlexContainerBtn>
     </OverviewWrapper>
   )
-}
+};
 
 // STYLING FOR ABOVE COMPONENT
 const OverviewWrapper = styled(Wrapper)`
@@ -78,8 +78,13 @@ const FlexContainerText = styled.div`
 
 const FlexContainerBtn = styled.div`
   display: flex;
+  width: 80%;
+  justify-content: space-evenly;
+  /* 
+  
+  
   flex-direction: column;
-  /* width: 30%;
+  width: 30%;
   align-items: flex-start; */
   //border: 2px solid blue;
 `

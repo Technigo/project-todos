@@ -48,7 +48,7 @@ export const TaskList = () => {
   } else {
     return (
       <Wrapper>
-        <h2>Congrats!</h2>
+        <Congrats>Congrats!</Congrats>
         <h3>There are no tasks for you to complete.</h3>
         <CoffeeCup src={coffee} alt="steaming coffee cup" />
         <h4>Sit back and relax, or enter some todos above!</h4>
@@ -73,7 +73,7 @@ const TaskItem = styled.div`
 `
 
 const CheckBox = styled.input`
-  width: 1.3rem;
+  //width: 1.3rem;
 `
 
 const TaskText = styled.div`
@@ -92,6 +92,11 @@ const Deletebtn = styled.button`
 
 const DeleteIcon = styled.img`
   width: 1.3rem;
+`
+
+const Congrats = styled.h2`
+  color: #5B446A;
+  color: #906387;
 `
 
 const CoffeeCup = styled.img`

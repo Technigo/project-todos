@@ -17,4 +17,5 @@ export const Actionbtn = styled.button`
   border-radius: 4px;
   border: none;
   width: 5.5rem;
+  cursor: pointer;
 `

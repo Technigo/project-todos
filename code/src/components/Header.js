@@ -6,7 +6,7 @@ import { Wrapper } from 'styles/GlobalStyles';
 export const Header = () => {
   return (
     <Wrapper>
-      <Title>ToDo List</Title>
+      <Title>To Do List</Title>
       <h3>{moment().format('dddd, Do MMMM YYYY')}</h3>
     </Wrapper>
   )

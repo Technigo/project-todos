@@ -27,7 +27,7 @@ main {
   width: 100%;
   margin: 0 auto;
   border: 2px solid #1F9D6E;
-  box-shadow: 0 8px 16px rgb(56, 55, 55);
+  box-shadow: 0 0.5rem 2rem rgb(56, 55, 55);
   border-radius: 2.8rem;
   background-color: whitesmoke;
 }
@@ -38,8 +38,15 @@ main {
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 1025px) and (max-width: 1440px){
+  main {
+    width: 35%;
+  }
+}
+
+@media (min-width: 1441px){
   main {
     width: 25%;
   }
 }
+/* // desktop: '2560px' */

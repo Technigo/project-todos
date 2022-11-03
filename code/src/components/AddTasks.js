@@ -99,6 +99,7 @@ const Closebtn = styled.button`
   right: 3%;
   top: 5%;
   color: gray;
+  cursor: pointer;
 `
 
 const Cross = styled.span`
@@ -120,4 +121,3 @@ const EnterToDo = styled.input`
   width: 90%;
   padding: 1.2rem;
 `
-// <a target="_blank" href="https://icons8.com/icon/8J4QMUHe5rvn/plus">Plus</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
