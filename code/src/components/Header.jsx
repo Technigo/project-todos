@@ -10,6 +10,10 @@ const Header = () => {
   const month = new Date().toLocaleString('en', { month: 'long' });
   const date = new Date().getDate();
 
+  const handleClearAllButtonClick = () => {
+    dispatch(toDos.actions.clearAll());
+  };
+
   return (
     <StyledHeader>
       <div>
@@ -18,7 +22,9 @@ const Header = () => {
       </div>
       <div>
         <p>{taskList.length} tasks</p>
-        <StyledButton all type="button" onClick={() => dispatch(toDos.actions.clearAll())}>Clear all</StyledButton>
+        <StyledButton all type="button" onClick={handleClearAllButtonClick}>
+          Clear all
+        </StyledButton>
       </div>
     </StyledHeader>
   );

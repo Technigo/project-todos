@@ -4,7 +4,7 @@ import uniqid from 'uniqid';
 import toDos from 'reducers/todo';
 import { StyledForm } from 'components/styled/Form.styled';
 
-const AddNew = () => {
+const Form = () => {
   const [input, setInput] = useState('');
   const dispatch = useDispatch();
 
@@ -23,16 +23,17 @@ const AddNew = () => {
   return (
     <StyledForm onSubmit={handleFormSubit}>
       <button type="submit">+</button>
-      <label htmlFor="newTask">
+      <label htmlFor="addTask">
         <input
-          id="newTask"
+          id="addTask"
           type="text"
           value={input}
           onChange={(event) => setInput(event.target.value)}
-          placeholder="Add task" />
+          placeholder="Add task"
+          required />
       </label>
     </StyledForm>
   );
 };
 
-export default AddNew;
+export default Form;

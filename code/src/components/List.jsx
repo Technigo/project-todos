@@ -2,7 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import toDos from 'reducers/todo';
-import { ListWrapper } from './styled/List.styled';
+import { StyledList } from './styled/List.styled';
 import { StyledButton } from './styled/Button.styled';
 
 const List = () => {
@@ -14,11 +14,11 @@ const List = () => {
   }
 
   return (
-    <ListWrapper>
-      <ul>
-        {taskList.map((task, index) => {
-          return (
-            <li key={task.id}>
+    <StyledList>
+      {taskList.map((task, index) => {
+        return (
+          <li key={task.id}>
+            <div>
               <input
                 id={task.id}
                 name="tasks"
@@ -26,12 +26,12 @@ const List = () => {
                 checked={task.done}
                 onChange={() => dispatch(toDos.actions.toggleDone(task.id))} />
               <label htmlFor={task.id}>{task.task}</label>
-              <StyledButton hidden onClick={() => onDeleteTaskButtonClick(index)} type="button">Delete task</StyledButton>
-            </li>
-          )
-        })}
-      </ul>
-    </ListWrapper>
+            </div>
+            <StyledButton onClick={() => onDeleteTaskButtonClick(index)} type="button">Delete task</StyledButton>
+          </li>
+        )
+      })}
+    </StyledList>
   )
 };
 

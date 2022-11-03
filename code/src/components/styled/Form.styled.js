@@ -4,25 +4,26 @@ export const StyledForm = styled.form`
   display: flex;
   align-items: center;
   border-bottom: 1px solid gainsboro;
+  height: 4rem;
 
   & button {
-    font-size: 1.5rem;
-    background-color: white;
+    font-size: 2rem;
     border: none;
-    color: gray;
+    background-color: var(--third-color);
+    color: white;
     cursor: pointer;
-    padding: .5rem 1rem;
+    padding: .8rem 1.4rem;
   }
 
   & input {
     border: none;
-    font-size: 1rem;
+    font-size: 1.1rem;
     padding: .5rem 0;
-    width: fit-content;
+    margin-left: .5rem;
 }
 
   & input::placeholder {
-    color: darkblue;
+    color: var(--main-color);
+    padding-left: .5rem;
   }
-
 `

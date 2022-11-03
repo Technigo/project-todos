@@ -4,7 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import toDos from 'reducers/todo';
 import { OuterWrapper, InnerWrapper } from 'components/styled/Wrappers.styled';
 import Header from 'components/Header';
-import AddNew from 'components/AddNew';
+import AddNew from 'components/Form';
 import List from 'components/List';
 
 export const App = () => {
