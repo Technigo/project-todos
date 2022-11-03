@@ -4,6 +4,7 @@ export const GlobalWrap = styled.div`
 border: 2px blue solid;
 max-width: 400px;
 margin: 0 auto;
+min-height: 600px;
 `
 
 export const Section = styled.section`
