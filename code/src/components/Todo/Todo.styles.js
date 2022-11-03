@@ -17,27 +17,26 @@ export const StyledTodo = styled.div`
 
     p {
         font-size: 0.7rem;
-        align-self: center;
-        text-align: right;
    }
 
     .finished {
         opacity: 0.2;
+        text-decoration: line-through;
 
+        ~ button {
+            opacity: 0.2
+        }
     }
 `
 
 export const DeleteBtn = styled.button`
     justify-self: right;
-    height: 20px;
-    width: 20px;
-    font-size: 0.8em;
-    font-weight: bold;
-    border-radius: 50%;
-    background-color: #bbbbbb;
-    color: white;
-    text-align: center;
+    background-color: transparent;
     cursor: pointer;
     border: none;
+
+    img {
+        width: 18px;
+    }
 
 `

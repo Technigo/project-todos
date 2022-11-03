@@ -19,13 +19,16 @@ export const todos = createSlice({
 
     // this adds a new task to the list
     addNewTask: (store, action) => {
+      const { input, dueDate } = action.payload
       const userId = uuidv4();
+      const dueDateFormatted = dueDate.toLocaleString()
 
       const newTask = {
-        text: action.payload,
+        text: input,
         id: userId,
         complete: false,
-        postedTime: moment().format('ddd D MMM')
+        postedTime: moment().format('ddd D MMM'),
+        dueDate: dueDateFormatted
       }
 
       store.tasks = [...store.tasks, newTask];
@@ -58,6 +61,14 @@ export const todos = createSlice({
       unComplete.forEach((task) => {
         task.complete = true
       })
+    },
+
+    // This changes duedate
+    changeTaskDueDate: (store, action) => {
+      const { taskId, dueDate } = action.payload
+      console.log(action.payload)
+      const changedTask = store.tasks.find((t) => t.id === taskId)
+      changedTask.dueDate = dueDate
     },
 
     // This deletes all tasks

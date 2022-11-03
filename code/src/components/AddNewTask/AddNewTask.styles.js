@@ -7,15 +7,40 @@ export const AddNewTaskWrapper = styled.form`
     flex-direction: row-reverse;
     align-items: center;
 
-  input {
-    justify-self: left;
-    padding: 15px;
-    border-radius: 25px;
-    border: none;
-    background: #8080801f;
-    width: 100vw;
-}
+    input[type=text] {
+      justify-self: left;
+      padding: 15px;
+      border-radius: 25px;
+      border: none;
+      background: #8080801f;
+      width: 100vw;
 
+      &:focus {
+        outline: none;
+        border: 0.5px solid #96e4a285;
+      }
+    }
+
+    input[type=date] {
+      border: none;
+      background: transparent;
+      padding: 3px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+    
+    #dueDateLabel {
+      position: absolute;
+      right: 22vw;
+      top: 32px;
+      z-index: 99;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    
 `
 
 export const AddNewTaskBtn = styled.button`

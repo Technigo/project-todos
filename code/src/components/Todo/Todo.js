@@ -2,6 +2,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
+import trashbin from '../../assets/trashbin.svg'
 import { StyledTodo, DeleteBtn } from './Todo.styles'
 
 export const Todo = ({ task }) => {
@@ -27,8 +28,11 @@ export const Todo = ({ task }) => {
         htmlFor={task.text}
         className={task.complete === true ? 'finished' : 'notFinished'}>{task.text}
       </label>
-      <p className={task.complete === true ? 'finished' : 'notFinished'}>{task.postedTime}</p>
-      <DeleteBtn type="button" onClick={() => deleteTask(`${task.id}`)}>&#215;</DeleteBtn>
+      <div className="dateTime">
+        <p className={task.complete === true ? 'finished' : 'notFinished'}>Created: {task.postedTime}</p>
+        <p className={task.complete === true ? 'finished' : 'notFinished'}>Due date: {task.dueDate}</p>
+      </div>
+      <DeleteBtn type="button" onClick={() => deleteTask(`${task.id}`)}><img src={trashbin} alt="delete" /></DeleteBtn>
     </StyledTodo>
   )
 }
