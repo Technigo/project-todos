@@ -18,18 +18,21 @@ const TaskList = () => {
   const onCompleteToggle = (id) => {
     dispatch(tasks.actions.toggleItem(id))
   }
+
   return (
     <Section>
       {taskList.map((singleTask, index) => {
         return (
           <Wrapper>
-            <CheckBoxWrapper htmlFor={singleTask} id={singleTask}>
-              <span className="checkMark" />
-              <input
-                className="checkBox"
-                type="checkbox"
-                checked={singleTask.complete}
-                onChange={() => onCompleteToggle(singleTask.id)} />
+            <CheckBoxWrapper>
+              <label className="container" htmlFor={singleTask} id={singleTask}>
+                <input
+                  className="checkBox"
+                  type="checkbox"
+                  checked={singleTask.complete}
+                  onChange={() => onCompleteToggle(singleTask.id)} />
+                <span className="checkmark" />
+              </label>
             </CheckBoxWrapper>
             <TaskText>{singleTask.text}</TaskText>
             <Date>{singleTask.time}</Date>
