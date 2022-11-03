@@ -26,11 +26,11 @@ const AddTask = () => {
   return (
     <AddTaskDiv>
       <AddTaskContainer>
-        <AddTaskText type="text" placeholder="Add your card" value={todo} onChange={(event) => setTodo(event.target.value)} onKeyDown={(e) => checkKey(e)} />
+        <AddTaskText type="text" placeholder="Enter a title for this card" value={todo} onChange={(event) => setTodo(event.target.value)} onKeyDown={(e) => checkKey(e)} />
         <AddTaskButton
           onClick={onAddTask}
           disable={todo.length >= 50 || todo.length <= 2}>
-            +
+           +
         </AddTaskButton>
         <AddTaskButtonsClear>
           <AddTaskButtonCheck onClick={onCheckAllTask}>Check your task!</AddTaskButtonCheck>
@@ -83,23 +83,23 @@ const AddTaskButton = styled.button`
     color: lightgrey;
   }
   &:hover {
-    transform: scale(1.05)
+    transform: scale(1.05);
+    background-color: #0079bf;
   }
 `
 
 const AddTaskButtonsClear = styled.div`
   display: flex;
   justify-content: space-between;
-  padding-top: 30px;
+  margin-top: 15px;
 `
 
 const AddTaskButtonCheck = styled.button`
   border: none;
   border-radius: 10px;
-  background-color: #0072FF;
   margin: 30px 10px 0 0;
   padding: 5px 10px;
-  filter: grayscale(60%) sepia(10%) brightness(180%);
+  background-color: #c4c9cc;
   font-weight: 600;
   @media (max-width: 450px) {
     padding: 3px 6px;
@@ -113,7 +113,7 @@ const AddTaskButtonCheck = styled.button`
 const AddTaskButtonClear = styled.button`
   border: none;
   border-radius: 10px;
-  background-color: #F1C8D5;
+  background-color: #c4c9cc;
   margin: 30px 0 0 20px;
   padding: 5px 10px;
   font-weight: 600;
