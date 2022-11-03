@@ -6,7 +6,7 @@ import TaskList from 'components/TaskList';
 import AddTask from 'components/AddTask';
 import tasks from 'reducers/tasks';
 import { OuterWrapper, InnerWrapper } from 'GlobalStyles';
-// import Counter from './Counter';
+import Counter from './Counter';
 
 export const ToDoWrapper = () => {
   const reducer = combineReducers({
@@ -37,6 +37,7 @@ export const ToDoWrapper = () => {
           <Header />
           <TaskList />
           <AddTask />
+          <Counter />
         </InnerWrapper>
       </OuterWrapper>
     </Provider>

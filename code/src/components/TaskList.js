@@ -36,7 +36,7 @@ const TaskList = () => {
               X
             </button>
 
-            <p>{singleTask.postedTime}</p>
+            <p>Posted: {singleTask.postedTime}</p>
 
           </TaskWrapper>
         );
