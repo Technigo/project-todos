@@ -52,6 +52,7 @@ background-color: #F69101;
 display:flex;
 justify-content: center;
 border-bottom-left-radius: 200px;
+margin-top: -2px;
 `;
 
 export const FormInnerWrapper = styled.form`
@@ -80,6 +81,9 @@ border: none;
 margin-bottom: 20px;
 background: white;
 color: #F69101;
+display: flex;
+align-items: center;
+justify-content: center;
 
 &:hover {
   cursor: pointer;
