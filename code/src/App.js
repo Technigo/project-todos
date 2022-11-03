@@ -5,7 +5,6 @@ import ToDo from 'reducers/todo'
 import ToDoList from 'components/ToDoList';
 import { AddToDo } from 'components/AddToDo';
 import { Header } from 'components/Header';
-// import { Counter } from 'components/Counter'
 import styled from 'styled-components';
 
 const reducer = combineReducers({

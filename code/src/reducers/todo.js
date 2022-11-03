@@ -7,8 +7,6 @@ const ToDo = createSlice({
 
   reducers: {
     toggleItem: (store, action) => {
-      // console.log(store);
-      // console.log(action);
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.isCaught = !item.isCaught
