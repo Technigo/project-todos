@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import pokemons from 'reducers/toDoItems';
+import toDoItems from 'reducers/toDoItems';
 
 const Add = () => {
   const [inputValue, setInputValue] = useState('');
@@ -9,17 +9,14 @@ const Add = () => {
     event.preventDefault();
     const newItem = { id: Date.now().toString(),
       name: inputValue,
-      isCaught: false }
-    dispatch(pokemons.actions.addItem(newItem))
+      isDone: false }
+    dispatch(toDoItems.actions.addItem(newItem))
     setInputValue('');
   }
 
   return (
     <form onSubmit={onFormSubmit}>
-      <label htmlFor="add">
-        New Pokemon:
-        <input id="add" type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
-      </label>
+      <input id="add" type="text" placeholder="Add to do" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
       <button type="submit">Add item</button>
     </form>
   )

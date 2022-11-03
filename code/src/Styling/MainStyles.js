@@ -14,7 +14,6 @@ export const InnerWrapper = styled.div`
     padding: var(--section-x-padding);
 
     @media (min-width: 668px) {
-        width: 40rem;
         align-items: flex-start;
     }
 `;

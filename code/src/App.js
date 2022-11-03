@@ -2,13 +2,14 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
+import { OuterWrapper, InnerWrapper } from 'Styling/MainStyles';
 import toDoItems from 'reducers/toDoItems';
 import ToDoList from 'components/ToDoList';
 import Add from 'components/Add';
 
 export const App = () => {
   const reducer = combineReducers({
-    pokemons: toDoItems.reducer
+    todo: toDoItems.reducer
   })
 
   const store = configureStore({
@@ -17,8 +18,12 @@ export const App = () => {
 
   return (
     <Provider store={store}>
-      <ToDoList />
-      <Add />
+      <OuterWrapper>
+        <InnerWrapper>
+          <ToDoList />
+          <Add />
+        </InnerWrapper>
+      </OuterWrapper>
     </Provider>
   );
 }

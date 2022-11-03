@@ -1,45 +1,43 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import pokemons from 'reducers/toDoItems';
+import styled from 'styled-components/macro';
+import toDoItems from 'reducers/toDoItems';
 
-import { OuterWrapper } from 'Styling/MainStyles';
-
-const PokemonList = () => {
-  const pokemonList = useSelector((store) => store.pokemons.items);
+const ToDoList = () => {
+  const toDoList = useSelector((store) => store.todo.items);
 
   const dispatch = useDispatch();
 
-  const IsCaughtToggle = (id) => {
-    dispatch(pokemons.actions.toggleItem(id))
+  const IsDoneToggle = (id) => {
+    dispatch(toDoItems.actions.toggleItem(id))
   }
 
-  const onDeletePokemonBtnClick = (pokemonIndex) => {
-    dispatch(pokemons.actions.deleteItem(pokemonIndex));
+  const onDeleteItem = (toDoIndex) => {
+    dispatch(toDoItems.actions.deleteItem(toDoIndex));
   }
 
   return (
     <section>
-      {pokemonList.map((singlePokemon, index) => {
+      {toDoList.map((singleToDo, index) => {
         return (
-          <OuterWrapper>
-            <article>
-              <h2>{singlePokemon.name}</h2>
-              <label htmlFor="pokemon-check">Is this pokemon caught?
-                <input
-                  id="pokemon-check"
-                  type="checkbox"
-                  checked={singlePokemon.isCaught}
-                  onChange={() => IsCaughtToggle(singlePokemon.id)} />
-              </label>
-              <button onClick={() => onDeletePokemonBtnClick(index)} type="button">X</button>
-            </article>
-          </OuterWrapper>
+          <StyledArticle>
+            <input
+              id="todo-check"
+              type="checkbox"
+              checked={singleToDo.isDone}
+              onChange={() => IsDoneToggle(singleToDo.id)} />
+            <h2>{singleToDo.name}</h2>
+            <button onClick={() => onDeleteItem(index)} type="button">X</button>
+          </StyledArticle>
         )
       })}
     </section>
   )
 }
 
-export default PokemonList;
+export default ToDoList;
 
+export const StyledArticle = styled.div`
+    display: flex;
+    flex-direction: row;
+`;

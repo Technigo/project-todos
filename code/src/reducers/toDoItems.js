@@ -1,15 +1,15 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const toDoItems = createSlice({
-  name: 'task-items',
+  name: 'task-list',
   initialState: {
     items: [
       { id: '1',
         name: 'Pickachu',
-        isCaught: false },
+        isDone: false },
       { id: '2',
         name: 'Sandshrew',
-        isCaught: false }
+        isDone: false }
     ]
   },
   reducers: {
@@ -18,7 +18,7 @@ const toDoItems = createSlice({
       console.log(action)
       store.items.forEach((item) => {
         if (item.id === action.payload) {
-          item.isCaught = !item.isCaught
+          item.isDone = !item.isDone
         }
       });
     },
