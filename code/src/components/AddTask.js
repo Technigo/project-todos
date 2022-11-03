@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { NeedToDoRed } from 'reducers/NeedToDoRed'
+import { TaskReducer } from 'reducers/reducers';
 
 export const AddTask = () => {
   const [input, setInput] = useState('')
 
   const dispatch = useDispatch()
 
-  const onAddTask = () => {
-    dispatch(NeedToDoRed.actions.addTask(input))
+  const onAddTask = (event) => {
+    event.preventDefault();
+    dispatch(TaskReducer.actions.addTask(input))
     setInput('')
   }
 

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { WantToDoRed } from 'reducers/WantToDoRed'
+import { IdeaReducer } from 'reducers/reducers';
 
 export const AddIdea = () => {
   const [input, setInput] = useState('')
@@ -8,7 +8,7 @@ export const AddIdea = () => {
   const dispatch = useDispatch()
 
   const onAddIdea = () => {
-    dispatch(WantToDoRed.actions.addIdea(input))
+    dispatch(IdeaReducer.actions.addIdea(input))
     setInput('')
   }
 

@@ -1,16 +1,14 @@
 import React from 'react';
 import { IdeaList } from 'components/IdeaList';
 import { AddIdea } from 'components/AddIdea';
-import { Link } from 'react-router-dom'
+import { HomeBtn } from 'components/HomeBtn';
 
 export const WantToDo = () => {
   return (
     <section>
       <IdeaList />
       <AddIdea />
-      <Link to="/">
-        <button type="button">Homepage</button>
-      </Link>
+      <HomeBtn />
     </section>
   )
 }

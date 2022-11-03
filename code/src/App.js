@@ -2,8 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import { NeedToDoRed } from 'reducers/NeedToDoRed';
-import { WantToDoRed } from 'reducers/WantToDoRed';
+import { TaskReducer, IdeaReducer } from 'reducers/reducers';
 import { Header } from 'components/Header';
 import { StartPage } from 'pages/StartPage';
 import { NeedToDo } from 'pages/NeedToDo';
@@ -12,8 +11,8 @@ import { NotFound } from 'pages/NotFound';
 
 export const App = () => {
   const reducers = combineReducers({
-    NeedToDoRed: NeedToDoRed.reducer,
-    WantToDoRed: WantToDoRed.reducer
+    TaskReducer: TaskReducer.reducer,
+    IdeaReducer: IdeaReducer.reducer
   });
 
   const store = configureStore({
