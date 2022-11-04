@@ -10,7 +10,7 @@ background-color: white;
 width: fit-content;
 margin-left: auto;
 margin-right: auto;
-margin-top: 150px;
+margin-top: 5%;
 margin-bottom: 2px;
 display: flex;
 flex-direction: column;
@@ -24,7 +24,7 @@ border-radius: 20px;
   height: 30px;
   margin-top: 5%;
   border: 2px solid lightgray;
- 
+ margin-left: 5px;
 }
 `
 

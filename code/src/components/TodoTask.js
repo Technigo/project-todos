@@ -6,21 +6,23 @@ import 'animate.css'
 
 const TaskContainer = styled.div`
   min-width: 300px;
+
+  .test {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
   
 
 .animate__animated {
-  margin-left: 70%;
-  position: relative;
+  margin: 2px;
   color: white;
   background-color: black;
 }
 
-.mr-3 {
-  max-width: 20px;
-  flex-wrap: wrap;
-  
-}
-  
+
 `
 
 const TodoItem = ({ id, title, completed }) => {
@@ -39,7 +41,7 @@ const TodoItem = ({ id, title, completed }) => {
   return (
     <TaskContainer>
       <li className={`list-group-item ${completed && 'list-group-item-success'}`}>
-        <div>
+        <div className="test">
           <span>
             <input
               type="checkbox"

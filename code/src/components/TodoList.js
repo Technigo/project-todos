@@ -10,7 +10,7 @@ margin: 50px auto;
 padding: 20px;
 background-color: white;
 border-radius: 20px;
-border: 1px dotted lightgrey;
+border: 2px solid lightgrey;
 box-shadow: 5px 10px #888888;
 text-overflow: none !important;
 
