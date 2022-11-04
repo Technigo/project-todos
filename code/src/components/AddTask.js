@@ -33,9 +33,9 @@ const AddTask = () => {
            +
         </AddTaskButton>
         <AddTaskButtonsClear>
-          <AddTaskButtonCheck onClick={onCheckAllTask}>Check your task!</AddTaskButtonCheck>
+          <AddTaskButtonCheck onClick={onCheckAllTask}>Check your tasks!</AddTaskButtonCheck>
           <AddTaskButtonClear onClick={() => { dispatch(tasks.actions.clearTask()) }}>
-            Clear your Board!
+            Clear your board!
           </AddTaskButtonClear>
         </AddTaskButtonsClear>
       </AddTaskContainer>

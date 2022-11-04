@@ -7,7 +7,7 @@ const TasksCounter = () => {
   const totalTasks = useSelector((store) => store.tasks.items.length);
   return (
     <TasksCounterContainer>
-      <TasksCounterTime>{moment().format('MMMM d, YYYY')}</TasksCounterTime>
+      <TasksCounterTime>{moment().format('MMMM D, YY')}</TasksCounterTime>
       <TasksCounterLeft>Tasks left: {totalTasks}</TasksCounterLeft>
     </TasksCounterContainer>
   )
