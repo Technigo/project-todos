@@ -4,13 +4,12 @@ const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      { id: 1, text: 'Watch video on actions & reducers', complete: false, priority: 1 },
-      { id: 2, text: 'Follow redux codealong', complete: false, priority: 2 },
-      { id: 3, text: '5', complete: false, priority: 5 },
-      { id: 4, text: '3', complete: false, priority: 3 }
     ]
   },
   reducers: {
+    setAllItems: (store, action) => {
+      store.items = action.payload;
+    },
     toggleItem: (store, action) => {
       console.log(store);
       console.log(action);
@@ -20,12 +19,54 @@ const tasks = createSlice({
         }
       });
     },
-    addItem: (store, action) => {
-      store.items.push(action.payload);
-    },
     removeItem: (store, action) => {
-      store.items.splice(action.payload, 1); /* Sets the inex to 1 as initial state */
+      console.log(action);
+      const updatedItems = store.items.filter((item) => {
+        return store.items.indexOf(item) !== action.payload;
+      });
+      store.items = updatedItems;
+    },
+    addItem: (store, action) => {
+      console.log(action);
+      store.items = [...store.items, action.payload];
     }
   }
+
 });
 export default tasks;
+
+// sorting
+// const exampleToSortArray = [
+//   { id: 1,
+//     name: 'Pikatchu',
+//     isCaught: false },
+//   {
+//     id: 2,
+//     name: 'Mew',
+//     isCaught: true
+//   },
+//   {
+//     id: 3,
+//     name: 'Mew',
+//     isCaught: true
+//   },
+//   {
+//     id: 4,
+//     name: 'Mew',
+//     isCaught: true
+//   },
+//   {
+//     id: 5,
+//     name: 'Mew',
+//     isCaught: true
+//   }
+// ];
+
+// exampleToSortArray.sort((a, b) => {
+//   // sort asceding
+//   return a.id - b.id;
+//   // sort desceding
+//   // return b.id - a.id;
+// })
+
+// console.log(exampleToSortArray)

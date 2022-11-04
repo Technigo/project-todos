@@ -4,13 +4,12 @@ const tasksShoulds = createSlice({
   name: 'tasksShoulds',
   initialState: {
     items: [
-      { id: 1, text: 'shoulds', complete: false },
-      { id: 2, text: 'Clean apartment', complete: false },
-      { id: 3, text: 'Pick up package', complete: false },
-      { id: 4, text: 'Call mum', complete: false }
     ]
   },
   reducers: {
+    setAllItems: (store, action) => {
+      store.items = action.payload;
+    },
     toggleItem: (store, action) => {
       console.log(store);
       console.log(action);
@@ -20,13 +19,18 @@ const tasksShoulds = createSlice({
         }
       });
     },
-    addItem: (store, action) => {
-      store.items.push(action.payload);
-    },
     removeItem: (store, action) => {
-      store.items.splice(action.payload, 1); /* Sets the inex to 1 as initial state */
+      console.log(action);
+      const updatedItems = store.items.filter((item) => {
+        return store.items.indexOf(item) !== action.payload;
+      });
+      store.items = updatedItems;
+    },
+    addItem: (store, action) => {
+      console.log(action);
+      store.items = [...store.items, action.payload];
     }
   }
-});
 
+});
 export default tasksShoulds;

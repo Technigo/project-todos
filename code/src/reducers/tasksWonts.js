@@ -4,13 +4,12 @@ const tasksWonts = createSlice({
   name: 'tasksWonts',
   initialState: {
     items: [
-      { id: 1, text: 'wonts', complete: false },
-      { id: 2, text: 'Follow redux codealong', complete: false },
-      { id: 3, text: 'Fork weekly assignment', complete: false },
-      { id: 4, text: 'Create a todo app', complete: false }
     ]
   },
   reducers: {
+    setAllItems: (store, action) => {
+      store.items = action.payload;
+    },
     toggleItem: (store, action) => {
       console.log(store);
       console.log(action);
@@ -19,8 +18,20 @@ const tasksWonts = createSlice({
           item.complete = !item.complete
         }
       });
+    },
+    removeItem: (store, action) => {
+      console.log(action);
+      const updatedItems = store.items.filter((item) => {
+        return store.items.indexOf(item) !== action.payload;
+      });
+      store.items = updatedItems;
+    },
+    addItem: (store, action) => {
+      console.log(action);
+      store.items = [...store.items, action.payload];
     }
   }
+
 });
 
 export default tasksWonts;

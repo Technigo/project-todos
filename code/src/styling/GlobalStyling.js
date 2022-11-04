@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const GlobalStyling = styled.section`
-background-color: #7EB19F;
+background-color: #1b2337;
 display:flex;
 flex-direction: row;
 flex-wrap: wrap;

@@ -1,6 +1,7 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import ListHeaderStyling from 'styling/ListHeaderStyling';
@@ -9,15 +10,32 @@ import AddNewTask from './AddNewTask.js';
 import RemoveTask from './RemoveTask.js';
 
 const TaskListHaveTos = () => {
-  const taskItem = useSelector((store) => store.tasks.items);
-
   const dispatch = useDispatch();
+  const taskItem = useSelector((store) => store.tasks.items);
+  useEffect(() => {
+    const listFromStorage = JSON.parse(localStorage.getItem('taskItem'));
+    if (listFromStorage) {
+      dispatch(tasks.actions.setAllItems(listFromStorage));
+    }
+  }, [])
+
+  const [inputValue, setInputValue] = useState('');
 
   const onIsCompleteToggle = (id) => {
     dispatch(tasks.actions.toggleItem(id));
   }
   const onDeleteTaskItem = (taskIndex) => {
     dispatch(tasks.actions.removeItem(taskIndex));
+  }
+
+  const onFormSubmit = (event) => {
+    event.preventDefault(); /* Have the store in the same state during one session. no releod */
+    const newTask = { id: Date.now().toString(),
+      text: inputValue,
+      complete: false }
+    dispatch(tasks.actions.addItem(newTask));
+    setInputValue('');
+    localStorage.setItem('taskItem', JSON.stringify(taskItem))
   }
 
   return (
@@ -35,12 +53,12 @@ const TaskListHaveTos = () => {
               <label>
            Done?
                 <input type="checkbox" checked={singleTask.complete} onChange={() => onIsCompleteToggle(singleTask.id)} />
-                <RemoveTask onDeleteTaskItem={onDeleteTaskItem} index={index} />
               </label>
+              <RemoveTask onDeleteTaskItem={onDeleteTaskItem} index={index} />
             </article>
           )
         })}
-        <AddNewTask />
+        <AddNewTask onFormSubmit={onFormSubmit} inputValue={inputValue} setInputValue={setInputValue} />
       </ListStyling>
 
     </section>

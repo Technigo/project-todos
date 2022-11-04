@@ -2,15 +2,16 @@ import styled from 'styled-components';
 
 const ListStyling = styled.div`
 
-background-color: #0C8282;
+background-color: #d7584e;
 width: 20vw;
 height: auto;
 padding: 1vw;
 margin-left: 2vw;
+border-radius: 10px;
 
 article{
 display:grid;
-grid-template-columns: 5fr 3fr;
+grid-template-columns: 6fr 3fr 1fr;
 grid-template-rows: 3fr;
 }
 `
