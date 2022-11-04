@@ -1,12 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
+
 import todo from 'reducers/todo'
 import uniqid from 'uniqid'
 import { Add, Close } from '@mui/icons-material'
 import { Calendar, Form, Input, PrioTag, TagWrap, Low, Medium, High } from 'styles/Input'
 import { Section } from 'styles/SectionWrapper'
-import { ExpandButton, PositionBtn } from 'styles/FabBtn'
+import { ExpandButton, PositionBtn, SubmitButton } from 'styles/BtnStyle'
 import { TaskDescription } from 'styles/TextStyles'
 
 const TodoSubmitForm = () => {
@@ -57,6 +58,7 @@ const TodoSubmitForm = () => {
           id="calendar"
           type="time"
           value={isDate}
+          dateFormat="MM/dd/yyyy h:mm aa"
           onChange={(e) => setDate(e.target.value)}
           required />
         <TagWrap>
@@ -79,7 +81,7 @@ const TodoSubmitForm = () => {
               onChange={(e) => setPrioTag(e.target.value)} />
           </PrioTag>
         </TagWrap>
-        <button type="submit" disabled={newTask.length < 4}> Add new task </button>
+        <SubmitButton type="submit" disabled={newTask.length < 3}> Add new task </SubmitButton>
       </Form>
     </Section>
   )

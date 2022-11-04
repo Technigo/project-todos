@@ -19,20 +19,22 @@ height: 30px;
 margin: 2px;
 border: none;
 font-size: 1rem;
+background-color: transparent;
 border-bottom: 2px solid #FFB800;
 ::placeholder{
   color: #FFB800;
 }
 &:focus {
-    background-color: white;
     outline: none;
     color: black;
+    color: #688599;
 }
 
 `
 
 export const Calendar = styled.input`
 color: #FFB800;
+background-color: transparent;
 width: 270px;
 height: 30px;
 margin: 2px;
@@ -47,8 +49,8 @@ border-bottom: 2px solid #FFB800;
   display: flex;
 }
 &:focus {
-    background-color: white;
     outline: none;
+    color: #688599;
 }
 `
 
@@ -64,11 +66,10 @@ padding: 10px;
 
 export const Low = styled.input`  //checkbox 
   appearance: none;
-  background-color: #fff;
   margin: 0;
   width: 2em;
   height: 2em;
-  border: 0.15em solid grey;
+  border: 0.15em solid  #FFB800;
   border-radius: 1em;
   transform: translateY(-0.075em);
   display: grid;
@@ -80,7 +81,7 @@ export const Low = styled.input`  //checkbox
     border-radius: 50%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em #4398bf;
+    box-shadow: inset 1em 1em #C0C803;
   }
   &:checked::before {
     transform: scale(1);
@@ -89,11 +90,10 @@ export const Low = styled.input`  //checkbox
 
 export const Medium = styled.input`  //checkbox 
   appearance: none;
-  background-color: #fff;
   margin: 0;
   width: 2em;
   height: 2em;
-  border: 0.15em solid #4398bf;
+  border: 0.15em solid #FFB800;
   border-radius: 1em;
   transform: translateY(-0.075em);
   display: grid;
@@ -105,7 +105,7 @@ export const Medium = styled.input`  //checkbox
     border-radius: 50%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em #4398bf;
+    box-shadow: inset 1em 1em #F9B803;
   }
   &:checked::before {
     transform: scale(1);
@@ -114,11 +114,10 @@ export const Medium = styled.input`  //checkbox
 
 export const High = styled.input`  //checkbox 
   appearance: none;
-  background-color: #fff;
   margin: 0;
   width: 2em;
   height: 2em;
-  border: 0.15em solid #4398bf;
+  border: 0.15em solid #FFB800;
   border-radius: 1em;
   transform: translateY(-0.075em);
   display: grid;
@@ -130,7 +129,7 @@ export const High = styled.input`  //checkbox
     border-radius: 50%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em #4398bf;
+    box-shadow: inset 1em 1em #F97603;
   }
   &:checked::before {
     transform: scale(1);

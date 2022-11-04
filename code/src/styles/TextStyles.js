@@ -6,14 +6,21 @@ margin: 0;
 font-size: 1.4rem;
 font-weight: 300;
 padding-top: 10px;
+&.complete-todo{
+    color: grey;
+}
 `
+
 export const Priority = styled.h3`
-color: red; 
+color: #F55E2F; 
 position: relative;
 max-width: 25px;
 left: 87%;
 line-height: 0rem;
 top: 23px;
+&.complete-todo{
+    color: grey;
+}
 `
 
 export const TaskDescription = styled.p`
@@ -27,10 +34,16 @@ export const Deadline = styled.h3`
 line-height: 0rem;
 font-size: 0.8rem;
 font-weight: 400;
+&.complete-todo{
+    color: grey;
+}
 `
 export const CreatedAt = styled.p`
 line-height: 1rem;
 font-size: 0.7rem;
 margin-bottom: 0;
+&.complete-todo{
+    color: grey;
+}
 
 `

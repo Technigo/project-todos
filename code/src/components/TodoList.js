@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+
 import todo from 'reducers/todo';
 import { InformationWrap, ListWrap, CheckWrap, StyledCheckbox } from 'styles/SectionWrapper';
 import moment from 'moment'
@@ -15,14 +16,13 @@ const TodoList = () => {
     dispatch(todo.actions.toggleItem(id))
   }
 
-  const date = new Date();
-
   return (
     <section>
       {todoList.map((singleToDo) => {
         return (
           <ListWrap>
-            <TaskTitle><TrashBtn onClick={() => dispatch(todo.actions.deleteItem(singleToDo.id))} type="button"><Trash>✕</Trash></TrashBtn>
+            <TaskTitle className={singleToDo.completed ? 'complete-todo' : ''}>
+              <TrashBtn onClick={() => dispatch(todo.actions.deleteItem(singleToDo.id))} type="button"><Trash>✕</Trash></TrashBtn>
               <CheckWrap>
                 <StyledCheckbox
                   type="checkbox"
@@ -32,9 +32,9 @@ const TodoList = () => {
               {singleToDo.task}
             </TaskTitle>
             <InformationWrap>
-              <Priority>{singleToDo.tag}</Priority>
-              <Deadline>Complete by {singleToDo.deadline}</Deadline>
-              <CreatedAt>Created: {moment(date.createdAt).fromNow()}</CreatedAt>
+              <Priority className={singleToDo.completed ? 'complete-todo' : ''}>{singleToDo.tag}</Priority>
+              <Deadline className={singleToDo.completed ? 'complete-todo' : ''}>Complete by {singleToDo.deadline}</Deadline>
+              <CreatedAt className={singleToDo.completed ? 'complete-todo' : ''}>{moment().format('dddd Do MMM')}</CreatedAt>
             </InformationWrap>
           </ListWrap>
         );
