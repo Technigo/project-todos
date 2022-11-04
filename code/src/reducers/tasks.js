@@ -3,7 +3,28 @@ import { createSlice } from '@reduxjs/toolkit';
 export const tasks = createSlice({
   name: 'tasks',
   initialState: {
-    items: []
+    items: [
+      {
+        id: 1,
+        name: 'Do something',
+        isCompleted: false
+      },
+      {
+        id: 2,
+        name: 'Do something',
+        isCompleted: false
+      },
+      {
+        id: 3,
+        name: 'Do something',
+        isCompleted: false
+      },
+      {
+        id: 4,
+        name: 'Do something',
+        isCompleted: true
+      }
+    ]
   },
   reducers: {
     toggleItem: (store, action) => {

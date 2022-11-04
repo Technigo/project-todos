@@ -30,12 +30,10 @@ export const TaskList = () => {
             <Styled.ListItem>
               <p>{item.name}</p>
               <Styled.Clickers>
-                <label>Status
-                  <input
-                    type="checkbox"
-                    checked={item.isCompleted}
-                    onChange={() => completedTaskToggle(item.id)} />
-                </label>
+                <input
+                  type="checkbox"
+                  checked={item.isCompleted}
+                  onChange={() => completedTaskToggle(item.id)} />
                 <button
                   type="button"
                   onClick={() => deleteTask(item.id)}>❌
@@ -52,12 +50,10 @@ export const TaskList = () => {
             <Styled.ListItem>
               <p>{item.name}</p>
               <Styled.Clickers>
-                <label>Status
-                  <input
-                    type="checkbox"
-                    checked={item.isCompleted}
-                    onChange={() => completedTaskToggle(item.id)} />
-                </label>
+                <input
+                  type="checkbox"
+                  checked={item.isCompleted}
+                  onChange={() => completedTaskToggle(item.id)} />
                 <button
                   type="button"
                   onClick={() => deleteTask(item.id)}>❌
