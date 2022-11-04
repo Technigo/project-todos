@@ -32,6 +32,7 @@ const tasks = createSlice({
 
       // Immutable, best practice
       store.items = [...store.items, action.payload];
+      // Example of what "..." does:
       // const x = [a,b,c]
       // const y = [x,d] => [[a,b,c], d]
       // const z = [...x,d] => [a,b,c,d]
