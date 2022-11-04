@@ -53,6 +53,10 @@ const Button = styled.button`
     display: flex;
     align-items: center;
 
+    :hover {
+      transform: scale(1.1);
+    }
+
     p {
         font-family: var(--font-main);
         font-weight: 600;

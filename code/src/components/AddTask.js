@@ -54,7 +54,11 @@ const AddTaskWrapper = styled.section`
     width: 70px;
     height: 70px;
     border-radius: 50px;
-    margin: 10px;
+    margin: 20px;
+
+    :hover {
+      transform: scale(1.1);
+    }
   }
 `
 
@@ -64,6 +68,8 @@ const StyledInput = styled.input`
   outline-color: var(--color-lighterAccent);
   padding: 10px;
   width: 100%;
+  font-family: var(--font-main);
+  font-size: 16px;
 `
 
 const PlusIcon = styled.img`

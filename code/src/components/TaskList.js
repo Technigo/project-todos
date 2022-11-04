@@ -26,32 +26,35 @@ const TaskList = () => {
       {taskList.map((singleTask) => {
         return (
           <TaskWrapper key={singleTask.id}>
+            <div className={singleTask.isComplete === true ? 'finished' : 'notFinished'}>
+              <ElementWrapper>
+                <input
+                  type="checkbox"
+                  checked={singleTask
+                    .isComplete}
+                  onChange={() => onIsCompleteToggle(singleTask.id)} />
+                <StyledTask>{singleTask.text}</StyledTask>
+              </ElementWrapper>
 
-            <ElementWrapper>
-              <input
-                type="checkbox"
-                checked={singleTask
-                  .isComplete}
-                onChange={() => onIsCompleteToggle(singleTask.id)} />
-              <StyledTask>{singleTask.text}</StyledTask>
-            </ElementWrapper>
-
-            <ElementWrapper>
-              <p>{singleTask.postedTime}</p>
-              <button
-                type="button"
-                onClick={() => onDeleteTask(singleTask.id)}>
-                <TrashbinIcon
-                  className="trashbin-icon"
-                  src={trashbin}
-                  alt="Trashbin icon" />
-              </button>
-            </ElementWrapper>
-
+              <ElementWrapper>
+                <p>{singleTask.postedTime}</p>
+                <button
+                  type="button"
+                  onClick={() => onDeleteTask(singleTask.id)}>
+                  <TrashbinIcon
+                    className="trashbin-icon"
+                    src={trashbin}
+                    alt="Trashbin icon" />
+                </button>
+              </ElementWrapper>
+            </div>
+            <hr
+              style={{
+                border: '0.5px solid var(--color-accent)'
+              }} />
           </TaskWrapper>
         );
       })}
-
     </ListWrapper>
   )
 }
@@ -62,10 +65,19 @@ const ListWrapper = styled.section`
 
 const TaskWrapper = styled.article`
   // outline: 1px solid red;
-  display: flex;
+
+  .finished, .notFinished {
+    display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
+  }
+
+  .finished {
+        opacity: 0.5;
+        text-decoration: line-through;
+        text-decoration-color: var(--color-accent)
+        }
   
   button {
     background-color: var(--color-background);
@@ -138,7 +150,7 @@ const StyledTask = styled.h3`
   font-family: var(--font-main);
   font-weight: 600;
   text-align: left;
-  font-size: 20px;
+  font-size: 18px;
   color: var(--color-accent);
   padding: 0 15px;
 `
@@ -147,24 +159,3 @@ const TrashbinIcon = styled.img`
 `
 
 export default TaskList;
-
-/* return (
-  <section>
-    {taskList.map((singleTask) => {
-      return (
-        <article>
-          <h2>{singleTask.name}</h2>
-          <label>Is this pokemon caught?
-            <input
-              type="checkbox"
-              checked={singleTask
-                .isComplete}
-              onChange={() => onisCompleteToggle(singleTask.id)} />
-          </label>
-          <button type="button">X</button>
-        </article>
-      );
-    })}
-
-  </section>
-) */

@@ -20,7 +20,7 @@ const StyledText = styled.p`
     font-size: 12px;
     text-transform: uppercase;
     letter-spacing: 1px;
-    color: var(--color-accent);
+    color: var(--color-lighterAccent);
 `
 
 export default Counter;

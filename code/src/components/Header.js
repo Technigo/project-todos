@@ -12,6 +12,8 @@ const Header = () => {
   const weekdayNumber = dateObj.getDay()
   const weekdayName = arrayOfWeekdays[weekdayNumber]
 
+  const date = `${dateObj.getDate()}/${dateObj.getMonth() + 1}/${dateObj.getFullYear()}`;
+
   return (
     <>
       <HeaderContainer>
@@ -21,7 +23,7 @@ const Header = () => {
             src={arrow}
             alt="Icon left" />
         </button>
-        <StyledHeading>{weekdayName}</StyledHeading>
+        <StyledHeading>{weekdayName},<span>{date}</span></StyledHeading>
         <button type="button">
           <IconRight
             className="iconLeft"
@@ -46,13 +48,12 @@ const HeaderContainer = styled.section`
     background-color: var(--color-background);
     border: none;
     cursor: pointer;
+
+    :hover {
+      transform: scale(1.1);
+    }
   }
 `
-
-/* const StyledLine = styled.hr`
-  margin: 0;
-  color: red;
-` */
 
 const IconRight = styled.img`
   width: 13px;
@@ -70,6 +71,14 @@ const StyledHeading = styled.h2`
   text-align: center;
   font-size: 20px;
   color: var(--color-accent);
+
+  span {
+    font-family: var(--font-main);
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--color-accent);
+    padding: 0 10px;
+  }
 `
 
 export default Header;
