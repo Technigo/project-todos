@@ -13,7 +13,7 @@ export default Header;
 const HeaderContainer = styled.header`
 height: 25vh;
 position: relative;
-background-image: url("Assets/background.svg");
+background-image: url("Assets/Background-web.svg");
 background-size: cover;
 background-color: var(--main-color);
 
@@ -43,7 +43,7 @@ background-color: var(--main-color);
 }
 @media (min-width: 1025px) {
   height: 44vh;
-  background-image: url("Assets/Background-web.svg");
+  background-image: url("Assets/background-web.svg");
 
 }
 `

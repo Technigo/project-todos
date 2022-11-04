@@ -3,7 +3,6 @@ import styled from 'styled-components/macro';
 
 const ContentWrapper = ({ children }) => {
   const OuterWrapper = styled.div`
-    border: solid 2px black;
     background-color: var(--second-color);
   `;
   const InnerWrapper = styled.div`
