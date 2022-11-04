@@ -22,7 +22,7 @@ export const AddNewTask = () => {
 
   return (
     <AddNewTaskWrapper onSubmit={addNewTodo}>
-      <label hidden id="todoLabel" htmlFor="newTaskInput">Todo</label>
+      <label htmlFor="newTaskInput" />
       <input
         type="text"
         required
@@ -30,7 +30,7 @@ export const AddNewTask = () => {
         name="newTaskInput"
         value={input}
         onChange={(e) => setInput(e.target.value)} />
-      <label hidden htmlFor="dueDate" />
+      <label htmlFor="dueDate" />
       <select name="dueDate" id="dueDate" onChange={(e) => setDueDate(e.target.value)}>
         <option value="" default>Due date:</option>
         <option value={today}>Today</option>
