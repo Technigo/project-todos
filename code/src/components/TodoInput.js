@@ -1,16 +1,13 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-/* eslint-disable max-len */
-/* eslint-disable no-unused-vars */
 import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import toDos from 'reducers/toDos';
 import styled from 'styled-components';
 
 const TodoInput = () => {
-  const dispatch = useDispatch();
-  const toDoList = useSelector((store) => store.toDos.items);
-
   const [value, setValue] = useState('')
+  const dispatch = useDispatch();
+
   // When form is submitted "value" is asigned to "content" of an object which is pushed
   // into toDos-array by addItem-action.
   const handleToDoSubmit = (event) => {
@@ -49,16 +46,28 @@ const FlexForm = styled.form`
     background-color: transparent;
     width: auto;
     height: auto;
-    //justify-content: space-between;
+
   }
 `
 const StyledInput = styled.input`
   height: 2rem;
   width: 50vw;
+  box-shadow: 0.5rem 0.5rem 1rem #000;
+  border: none;
+  border-radius: 0.5rem;
 `
 
 const AddButton = styled.button`
-  width: 3rem;
+  width: 3.5rem;
   height: 2rem;
-  margin-left:1rem;
+  background-color: #000;
+  color: #fff;
+  border-radius: 0.9rem;
+  border: 0.05rem solid #fff;
+  box-shadow: 0.5rem 0.5rem 1rem #000;
+  text-transform: uppercase;
+  
+  @media(min-width: 600px) {
+    margin-left:1rem;
+  }
 `

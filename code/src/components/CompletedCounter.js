@@ -4,13 +4,12 @@ import styled from 'styled-components';
 
 const CompletedCounter = () => {
   const toDoList = useSelector((store) => store.toDos.items);
-  // const temp = toDoList.length
   const completedArray = toDoList.filter((task) => task.isCompleted === true)
 
   if (toDoList.length >= 1) {
     return (
       <Counter>
-        {(toDoList.length - completedArray.length)} more tasks to complete!
+        {(toDoList.length - completedArray.length)} {toDoList.length === 1 ? 'more task to complete' : 'more tasks to complete!'}
       </Counter>
     )
   }

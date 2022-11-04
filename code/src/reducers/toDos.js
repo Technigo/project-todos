@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import moment from 'moment'
 
 const toDos = createSlice({
   name: 'toDos',
@@ -6,6 +7,9 @@ const toDos = createSlice({
     items: []
   },
   reducers: {
+    setAllItems: (store, action) => {
+      store.items = action.payload;
+    },
     toggleCompleted: (store, action) => {
       store.items.forEach((item) => {
         if (item.id === action.payload) {
@@ -18,7 +22,8 @@ const toDos = createSlice({
       store.items.push({
         id: new Date().getTime(),
         content: `${inputValue}`,
-        isCompleted: false
+        isCompleted: false,
+        timeStamp: moment().calendar()
       })
     },
     deleteTask: (store, action) => {
