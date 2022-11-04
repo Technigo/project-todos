@@ -10,7 +10,7 @@ export const StyledList = styled.ul`
       align-items: center;
       justify-content: space-between;
       border-bottom: 1px solid var(--light-color);
-      font-size: 1rem;
+      font-size: 1.1rem;
       height: 4rem;
       padding: 1.2rem 1.5rem 1.2rem .5rem;
     }

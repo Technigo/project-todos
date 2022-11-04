@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import toDos from 'reducers/todo';
 import { StyledHeader } from './styled/Header.styled';
-import { StyledButton } from './styled/Button.styled';
 
 const Header = () => {
   const dispatch = useDispatch();
@@ -32,9 +31,9 @@ const Header = () => {
       </div>
       <div>
         <p>{amountOfTasks} tasks</p>
-        <StyledButton all type="button" onClick={handleClearAllButtonClick}>
+        <button all type="button" onClick={handleClearAllButtonClick}>
           Clear all
-        </StyledButton>
+        </button>
       </div>
     </StyledHeader>
   );

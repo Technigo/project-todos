@@ -19,6 +19,7 @@ export const StyledHeader = styled.header`
 
     & p {
       margin-left: .1rem;
+      font-size: 1rem;
       }
   }
 
@@ -29,5 +30,18 @@ export const StyledHeader = styled.header`
     & p {
       margin-right: .1rem;
       }
+  }
+
+  & button {
+    background: var(--button-color);
+    margin-top: .5rem;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    padding: .5rem;
+    width: 6rem;
+    height: 2.3rem;
   }
 `

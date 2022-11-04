@@ -27,7 +27,7 @@ export const StyledForm = styled.form`
   & p /* error message */ {
     display: inline;
     color: tomato;
-    font-weight: 900;
+    font-weight: 700;
   }
 
   & input {

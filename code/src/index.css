@@ -44,7 +44,7 @@ code {
   width: 18px;
   height: 18px;
   outline: 2px solid var(--main-color);
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 [type="checkbox"]:checked + label::before{
@@ -55,8 +55,7 @@ code {
   width: 18px;
   height: 18px;
   outline: 2px solid var(--main-color);
-  border-radius: 50%;
-  background: white;
+  /* border-radius: 50%; */
 }
 
 [type="checkbox"]:checked + label::after{
@@ -66,7 +65,7 @@ code {
   top: 0;
   width: 18px;
   height: 18px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   background: var(--main-color);
   background-image: url("./assets/checkmark.png");
   background-size: 70%;
@@ -84,7 +83,7 @@ code {
   top: 0;
   width: 18px;
   height: 18px;
-  border-radius: 50%;
+  /* border-radius: 50%; */
   background: var(--main-color);
   background-image: url("./assets/checkmark.png");
   background-size: 75%;
