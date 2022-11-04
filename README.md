@@ -1,12 +1,14 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A todo-list web app using Redux and React. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The biggest issue was to sort and filter the tasks the right way. Some of the things I've learned this week:
+
+- How to use different filter and find methods for arrays properly
+- Modifying the reducer the right
+- How to use localstorage and moment
 
 ## View it live
 
