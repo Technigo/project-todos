@@ -4,21 +4,30 @@ export const GlobalStyle = createGlobalStyle`
 
 `
 
-export const Button = styled.button`
-color: whitesmoke;
-border-radius: 10px;
-font-size: 11px;
-border: none;
-width: 20px;
-background-color: #A27DA7;
+export const OuterWrapper = styled.div`
+  background-color: #faf6f0;
+  min-height: 100vh;
+  min-width: 100vw;
 `
 
 export const InnerWrapper = styled.section`
-  max-width: 300px;
+  background-color: #d4c7b9;
+  width: 80%;
+  max-width: 700px;
   margin: 0 auto;
-  background-color: #F7ECDE;
-  text-align: center;
-  border-radius: 20px 20px 20px 20px;
+  border-radius: 20px;
+
+  @media (max-width: 850px) {
+    width: 90%;
+  }
+`
+
+export const Button = styled.button`
+border: none;
+border-radius: 20px;
+padding: 7px;
+background-color: #eee6dd;
+color: #936f63;
 `
 
 export const ToDoHeader = styled.h1`

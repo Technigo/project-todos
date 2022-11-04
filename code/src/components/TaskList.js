@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks'
 import styled from 'styled-components'
 import { Button } from 'components/GlobalStyles'
+import { FaTrashAlt } from 'react-icons/fa';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
@@ -18,36 +19,55 @@ const TaskList = () => {
   };
 
   return (
-    <TaskListWrapper>
+    <StyledList>
       {taskList.map((singleTask, index) => {
         return (
-          <TaskWrapper key={singleTask.id}>
-            <label>
+          <li key={singleTask.id}>
+            <div>
               <input
                 className="checkbox"
+                name="tasks"
                 type="checkbox"
                 checked={singleTask.complete}
                 onChange={() => onCompleteToggle(singleTask.id)} />
-            </label>
-            <h4>{singleTask.text}</h4>
-            <Button type="button" onClick={() => onDeleteItemClick(index)}>X</Button>
-          </TaskWrapper>
+              <label htmlFor={singleTask.id}>{singleTask.task}</label>
+            </div>
+            <TasksText>{singleTask.text}</TasksText>
+            <DeleteBtn type="button" onClick={() => onDeleteItemClick(index)}> <FaTrashAlt /></DeleteBtn>
+          </li>
         )
       })}
-    </TaskListWrapper>
+    </StyledList>
   )
 }
 
 export default TaskList
 
-const TaskListWrapper = styled.section`
-/* display: flex;
-flex-direction: row; */
+export const StyledList = styled.ul`
+    list-style-type: none;
+    height: 100vh;
+    width: 100%;
+
+    & li {
+      display: flex;
+      align-items: center;
+      /* justify-content: space-between; */
+      font-size: 1.1rem;
+      height: 2rem;
+      padding: 1.2rem 1.5rem 0rem 0rem;
+    } 
 `
 
-const TaskWrapper = styled.article`
-display: flex;
-flex-direction: row;
-align-items: center;
-border: solid 2px pink;
+const TasksText = styled.p`
+font-size: 1rem;
+margin-left: 2px;
+color: #936f63;
+`
+
+const DeleteBtn = styled(Button)`
+border: none;
+border-radius: 20px;
+height: 30px;
+width: 30px;
+color: #936f63;
 `

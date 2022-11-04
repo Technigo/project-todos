@@ -12,3 +12,6 @@ code {
     monospace;
 }
 
+/* [type="checkbox"]{
+  opacity: 0;
+} */

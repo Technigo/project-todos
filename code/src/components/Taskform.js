@@ -47,11 +47,12 @@ align-items: center;
 `
 
 const SubmitBtn = styled(Button)`
-color: pink;
+border: none;
+border-radius: 20px;
 height: 40px;
 width: 40px;
-border-radius: 50%;
-font-size: 30px;
+background-color: #936f63;
+color: #eee6dd;
 `
 
 const Input = styled.input`
@@ -60,4 +61,5 @@ height: 30px;
 margin: 10px;
 border: none;
 font-size: 1rem;
+background-color: #eee6dd;
 `
