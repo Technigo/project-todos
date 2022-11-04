@@ -11,15 +11,18 @@ const PokemonList = () => {
   const onIsCaughtToggle = (id) => {
     dispatch(pokemons.actions.toggleItem(id));
   }
+  const onDeletePokemonBtnClick = (pokemonIndex) => {
+    dispatch(pokemons.actions.deleteItem(pokemonIndex));
+  }
   return (
     <section>
-      {pokemonList.map((singlePokemon) => {
+      {pokemonList.map((singlePokemon, index) => {
         return (
-          <article>
+          <article key={singlePokemon.id}>
             <h2>{singlePokemon.name}</h2>
             <label>Is this pokemon caught
               <input type="checkbox" checked={singlePokemon.isCaught} onChange={() => onIsCaughtToggle(singlePokemon.id)} />
-              <button type="button">X</button>
+              <button onClick={() => onDeletePokemonBtnClick(index)} type="button">X</button>
             </label>
           </article>
 

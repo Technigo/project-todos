@@ -25,6 +25,26 @@ const pokemons = createSlice({
           item.isCaught = !item.isCaught
         }
       });
+    },
+    deleteItem: (store, action) => {
+      console.log(action);
+      // Mutability
+      // store.items.splice(action.payload, 1);
+      // Immutability
+      const updatedItems = store.items.filter((item) => {
+        return store.items.indexOf(item) !== action.payload
+      });
+      store.items = updatedItems;
+    },
+    addItem: (store, action) => {
+      console.log(action);
+      // Mutability
+      // store.items.push(action.payload);
+      // Immutability
+      store.items = [...store.items, action.payload];
+      // const x = [a,b,c]
+      // const y = [x, d] => [[a,b,c], d]
+      // const z = [...x, d] => [a,b,c,d]
     }
   }
 });
