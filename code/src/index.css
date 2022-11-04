@@ -5,9 +5,9 @@
 }
 
 :root {
-  --main-color: rgb(82, 55, 156);
-  --sub-color: black;
-  --third-color: gray;
+  --main-color: rgb(61, 158, 113);
+  --sub-color: white;
+  --third-color: black;
 
   --header-bg-color: rgb(225, 225, 225);
 }
@@ -26,6 +26,7 @@ code {
 }
 
 h1 {
+  color: var(--sub-color);
   font-size: 2rem;
 }
 

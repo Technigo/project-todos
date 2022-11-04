@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 
 export const OuterWrapper = styled.div`
+  background-color: whitesmoke;
   min-height: 100vh;
   min-width: 100vw;
-  background-color: var(--main-color);
   padding-top: 1px;
 `
 

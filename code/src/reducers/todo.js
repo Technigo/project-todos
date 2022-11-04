@@ -7,7 +7,8 @@ const initialState = {
 const toDos = createSlice({
   name: 'toDos',
   initialState,
-  reducers: {
+  reducers:
+  {
     addTask: (store, action) => {
       store.items.push(action.payload);
     },
