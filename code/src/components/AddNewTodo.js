@@ -22,11 +22,11 @@ const AddTodo = () => {
         id="new-todo"
         type="text"
         className="form-control mb-2 mr-sm-2"
-        placeholder="Add todo..."
+        placeholder="Add todo...🖊️"
         value={inputValue}
         onChange={(event) => setInputValue(event.target.value)} />
       <label htmlFor="new-todo" />
-      <AddTodoButtonStyled className="btn btn-primary mb-2" type="submit"> Add new to do</AddTodoButtonStyled>
+      <AddTodoButtonStyled disabled={inputValue.length > 140} className="btn btn-primary mb-2" type="submit"> Add new to do</AddTodoButtonStyled>
       <h4>Is this done?</h4>
     </form>
   )

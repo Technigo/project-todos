@@ -4,18 +4,6 @@ const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      /*       {
-        id: Date.now(),
-        name: 'dishes',
-        isDone: true,
-        created: 'some date'
-      },
-      {
-        id: Math.random(),
-        name: 'garbaige',
-        isDone: false,
-        created: 'some date'
-      } */
     ]
   },
   reducers: {
