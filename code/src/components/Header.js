@@ -29,7 +29,10 @@ const Header = () => {
             alt="Icon left" />
         </button>
       </HeaderContainer>
-      <StyledLine />
+      <hr
+        style={{
+          border: '1px solid var(--color-accent)'
+        }} />
     </>
   )
 }
@@ -46,10 +49,10 @@ const HeaderContainer = styled.section`
   }
 `
 
-const StyledLine = styled.hr`
+/* const StyledLine = styled.hr`
   margin: 0;
   color: red;
-`
+` */
 
 const IconRight = styled.img`
   width: 13px;

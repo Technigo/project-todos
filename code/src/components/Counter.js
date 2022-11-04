@@ -12,8 +12,15 @@ const Counter = () => {
 };
 
 const StyledText = styled.p`
-align-items: center;
-justify-content: center;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-main);
+    font-weight: 600;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--color-accent);
 `
 
 export default Counter;

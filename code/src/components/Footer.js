@@ -13,32 +13,69 @@ const Footer = () => {
   }
 
   return (
-    <FooterContainer>
-      <Counter />
-      <button
-        type="button"
-        onClick={onDeleteAllTasks}>
-        <TrashbinIcon
-          className="trashbin-icon"
-          src={trashbin}
-          alt="Trashbin icon" />
-
-      </button>
-    </FooterContainer>
+    <>
+      <FooterContainer>
+        <Counter />
+        <Button
+          className="remove-all-button"
+          type="button"
+          onClick={onDeleteAllTasks}>
+          <p>Remove all</p>
+          <TrashbinIcon
+            className="trashbin-icon"
+            src={trashbin}
+            alt="Trashbin icon" />
+        </Button>
+      </FooterContainer>
+      <FooterText>
+        <p>A website made by Ulrika Öhman @ Technigo — 11/24</p>
+        <p>Copyright 2022 — Icons from Noun Project</p>
+      </FooterText>
+    </>
   )
 }
 
 const FooterContainer = styled.section`
+    // outline: 1px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 3vh 0;
 
-    button {
-    background-color: var(--color-background);
-    border: none;
-    cursor: pointer;
+        button {
+        background-color: var(--color-background);
+        border: none;
+        cursor: pointer;
+        }
+`
+
+const Button = styled.button`
+    display: flex;
+    align-items: center;
+
+    p {
+        font-family: var(--font-main);
+        font-weight: 600;
+        text-align: center;
+        font-size: 12px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        color: var(--color-accent);
     }
 `
 
 const TrashbinIcon = styled.img`
     width: 15px;
+    margin: 5px;
+`
+
+const FooterText = styled.p`
+    font-family: var(--font-main);
+    font-weight: 400;
+    text-align: center;
+    font-size: 10px;
+    padding-bottom: 2vh;
+    color: var(--color-accent);
 `
 
 export default Footer;
