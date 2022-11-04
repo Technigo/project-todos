@@ -23,7 +23,6 @@ export const StyledForm = styled.form`
     font-size: 1.1rem;
     padding: .5rem 0 .5rem .5rem;
     margin-left: .5rem;
-    width: 180%;
   }
 
   & input:focus {

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const StyledList = styled.ul`
     list-style-type: none;
-    min-height: 35rem;
+    height: 100vh;
     width: 100%;
 
     & li {

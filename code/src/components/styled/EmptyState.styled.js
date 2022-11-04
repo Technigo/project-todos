@@ -4,7 +4,7 @@ export const EmptyState = styled.div`
   display: flex;
   padding-top: 6.5rem;
   justify-content: center;
-  height: 35rem;
+  height: 100vh;
 
   & svg {
     color: var(--light-color);
