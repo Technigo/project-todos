@@ -6,7 +6,7 @@ export const ToDoItem = styled.div`
   gap: 0.2rem;
   word-wrap: break-word;
   width: 100%;
-  min-height: 5.5rem;
+  height: 5.5rem;
   
   
   background-color: #d8dbe7;

@@ -9,7 +9,8 @@ const CompletedCounter = () => {
   if (toDoList.length >= 1) {
     return (
       <Counter>
-        {(toDoList.length - completedArray.length)} {toDoList.length === 1 ? 'more task to complete' : 'more tasks to complete!'}
+        {(toDoList.length - completedArray.length)}
+        {toDoList.length === 1 ? ' more task to complete' : ' more tasks to complete!'}
       </Counter>
     )
   }
