@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import toDoItems from 'reducers/todos';
+import styled from 'styled-components/macro';
 
 const Add = () => {
   const [inputValue, setInputValue] = useState('');
@@ -15,11 +16,16 @@ const Add = () => {
   }
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <StyledForm onSubmit={onFormSubmit}>
       <input id="add" type="text" placeholder="Add to do" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
       <button type="submit">Add item</button>
-    </form>
+    </StyledForm>
   )
 }
 
 export default Add;
+
+export const StyledForm = styled.form`
+    display: flex;
+    flex-direction: row-reverse;
+`;

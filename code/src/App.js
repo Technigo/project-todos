@@ -2,11 +2,13 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
-import { OuterWrapper, InnerWrapper } from 'Styling/MainStyles';
 import todos from 'reducers/todos';
+import { OuterWrapper, InnerWrapper } from 'Styling/MainStyles';
+import Header from 'components/Header';
 import ToDoList from 'components/ToDoList';
 import Add from 'components/Add';
-import Header from 'components/Header';
+
+import NoData from 'components/NoData';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -24,6 +26,7 @@ export const App = () => {
           <Header />
           <ToDoList />
           <Add />
+          <NoData />
         </InnerWrapper>
       </OuterWrapper>
     </Provider>
