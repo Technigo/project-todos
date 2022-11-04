@@ -18,7 +18,6 @@ const tasks = createSlice({
     },
     removeItem: (store, action) => {
       store.items.splice(action.payload, 1);
-      console.log('action.payload', action.payload)
     }
   }
 });

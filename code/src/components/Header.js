@@ -1,21 +1,14 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import moment from 'moment';
+import Clock from './Clock';
 import { MainSections, MainHeader, MainText } from '../styles/mainStyles';
 
 const Header = () => {
-  const time = moment().format('LLLL');
-  const [currentTime, setCurrentTime] = useState(time);
-
-  useEffect(() => {
-    setInterval(() => {
-      setCurrentTime(time);
-    }, 60 * 1000);
-  });
-
   return (
     <MainSections coloredBackground>
       <MainHeader>My ToDo:s</MainHeader>
-      <MainText>{currentTime}</MainText>
+      <MainText>{moment().format('dddd MMM Do YYYY')}</MainText>
+      <MainText><Clock /></MainText>
     </MainSections>
   )
 }

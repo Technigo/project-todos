@@ -17,7 +17,6 @@ const List = () => {
 
   const onRemoveClick = (event) => {
     dispatch(tasks.actions.removeItem(event))
-    console.log('event', event)
   }
 
   return (
@@ -40,8 +39,6 @@ const List = () => {
               type="button"
               onClick={() => onRemoveClick(index)}>X
             </RemoveItemBtn>
-            {console.log('index', index)}
-            {console.log('singleItem.id', singleItem.id)}
           </ArticleWrapper>
         )
       }).reverse()}
