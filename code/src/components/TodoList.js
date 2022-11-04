@@ -5,17 +5,14 @@ import TodoTask from './TodoTask.js';
 
 const ListContainer = styled.ul`
 
-width: 280px; 
+min-width: 400px; 
 margin: 50px auto;
 padding: 20px;
 background-color: white;
 border-radius: 20px;
-display: flex;
-flex-direction: column; 
-align-items: center;
-justify-content: center;
 border: 1px dotted lightgrey;
 box-shadow: 5px 10px #888888;
+text-overflow: none !important;
 
 @media (min-width: 667px){
   width: 500px;

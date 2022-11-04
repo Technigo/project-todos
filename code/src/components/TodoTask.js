@@ -5,19 +5,22 @@ import { toggleComplete, deleteTodo } from '../redux/todoSlice';
 import 'animate.css'
 
 const TaskContainer = styled.div`
-  min-width: 250px;
-.list-group-item {
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-}
+  min-width: 300px;
+  
 
 .animate__animated {
-  margin-left: 15em;
-  background-color: red;
-  padding-bottom: 5px;
-  padding-top: 5px;
+  margin-left: 70%;
+  position: relative;
+  color: white;
+  background-color: black;
 }
 
+.mr-3 {
+  max-width: 20px;
+  flex-wrap: wrap;
+  
+}
+  
 `
 
 const TodoItem = ({ id, title, completed }) => {
