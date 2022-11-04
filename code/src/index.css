@@ -1,4 +1,4 @@
-body {
+html, body {
   margin: 0px;
   padding: 0px;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -10,9 +10,11 @@ body {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  /* justify-content: center; */
   /* align-items: center; */
   position: relative;
+  background: linear-gradient(90deg, #82c4f0, #abd6e0, #c2e3e9);
+  
 }
 
 code {
@@ -24,8 +26,10 @@ code {
   position: absolute;
   margin: 1rem;
   border: 2px solid black;
-  min-height: 100vh;
-  min-width: 90vw;
+  min-height: 90vh;
+  min-width: 70vw;
+  max-width: 90vw;
+  background-color: rgb(241, 252, 252);
   /* left: 50%;
   transform: translate(-50%); */
   /*kolla på marginalen på höger sida"*/
@@ -39,7 +43,7 @@ code {
     transform: translate(-50%);
     min-width: 600px;
     min-height: 750px;
-    background-color: #fff;
+    
     border: 2px solid black;
   }
 }

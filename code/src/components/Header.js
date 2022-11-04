@@ -21,7 +21,7 @@ export default Header
 const HeaderStyle = styled.header`
     display: flex;
     justify-content: space-between;
-    background-color: blue;
+    background-color: #91830A;
     height: 15vh;
     color: white;
    
