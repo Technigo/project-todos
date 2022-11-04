@@ -30,12 +30,6 @@ span {
   font-size: 1.5rem;
 }
 
-.text-input {
-  border: none;
-  padding: 10px 20px;
-  background-color: #f7f5f1;
-}
-
 .tasklist {
   border: 2px solid #cdcaca;
   padding: 20px;

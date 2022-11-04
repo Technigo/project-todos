@@ -33,5 +33,9 @@ export const tasks = createSlice({
         item.complete = true;
       });
     }
+
+    // clearAll: (store) => {
+    //   return store.items.initialState;
+    // }
   }
 });

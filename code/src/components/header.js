@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <div>
       <div className="title-container">
-        <h1 className="title">TO DO LIST</h1>
+        <h1 className="title">TO-DO LIST</h1>
       </div>
 
       <p className="date">

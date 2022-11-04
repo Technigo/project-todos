@@ -46,6 +46,10 @@ const TaskList = () => {
 
   const filteredTasks = getFilteredTask();
 
+  // const deleteALL = () => {
+  //   dispatch(tasks.actions.clearAll());
+  // };
+
   return (
     <div>
       <Header />
@@ -92,9 +96,12 @@ const TaskList = () => {
       </section>
       <CheckAllContainer>
         <button type="button" onClick={onCompleteAll}>
-          Complete all
+          Check all
         </button>
       </CheckAllContainer>
+      {/* <button type="button" onClick={deleteALL}>
+        Clear all
+      </button> */}
     </div>
   );
 };

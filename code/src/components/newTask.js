@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import { AddButton } from 'styledComponents/Buttons';
+import { Input } from 'styledComponents/Input';
 import { Task } from 'styledComponents/Task';
 import { v4 as uuid } from 'uuid';
 
@@ -29,8 +30,7 @@ const NewTask = () => {
     <Task>
       <form onSubmit={onFormSubmit}>
         <label>
-          <input
-            className="text-input"
+          <Input
             type="text"
             value={input}
             placeholder="Enter new task"
@@ -38,8 +38,8 @@ const NewTask = () => {
             required
           />
         </label>
+        <AddButton type="submit"> + </AddButton>
       </form>
-      <AddButton type="submit"> + </AddButton>
     </Task>
   );
 };
