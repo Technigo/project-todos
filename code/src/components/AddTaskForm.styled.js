@@ -12,6 +12,12 @@ export const Styled = {
   height: 4em;
   background-color: ##eeeeee; 
   padding-left: 2em;
+
+  @media only screen and (max-width: 1000px) {
+    font-size: 0.8em;
+    padding-left: 1em;
+  }
+
   `,
   FormButton: styled.button`
     margin-left: 20px;
@@ -20,5 +26,9 @@ export const Styled = {
     height: 4em;
     background-color: whitesmoke;
     border-radius: 1em;
+
+    @media only screen and (max-width: 1000px) {
+      font-size: 0.8em;
+    }
     `
 }
