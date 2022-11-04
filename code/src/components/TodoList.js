@@ -76,6 +76,10 @@ const DeleteButton = styled.button`
     color: red;
     font-weight: bold;
     font-size: 14px;
+
+    &:hover {
+      background-color: #ccc;
+    }
   `
 const CheckAndDeleteWrapper = styled.div`
   width: 25%;

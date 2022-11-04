@@ -13,11 +13,9 @@ export const Header = () => {
 
   return (
     <HeaderBackground>
-      <HeaderTextWrapper>
-        <HeaderTitle>To-do List</HeaderTitle>
-        <h4>{todaysDate}</h4>
-        <h5>You have {numberOfTodos - numberOfCompleteItems} out of {numberOfTodos} tasks to do!</h5>
-      </HeaderTextWrapper>
+      <HeaderTitle>To-do List</HeaderTitle>
+      <h4>{todaysDate}</h4>
+      <h5>You have {numberOfTodos - numberOfCompleteItems} out of {numberOfTodos} tasks to do!</h5>
     </HeaderBackground>
   )
 }
@@ -29,15 +27,9 @@ const HeaderBackground = styled.header`
     height: 25vh;
     color: #ffff;
   `
-const HeaderTextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`
-
 const HeaderTitle = styled.h1`
     font-weight: 700;
     font-family: 'Roboto';
     text-transform: uppercase;
+    margin-top: 10%;
   `

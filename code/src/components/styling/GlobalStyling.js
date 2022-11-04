@@ -8,6 +8,15 @@ export const OuterWrapper = styled.div`
     justify-content: center;
     height: 100%;
     background: linear-gradient(to left, rgba(0,126,159,0.5), rgba(0,126,159,1));
+
+    @media (min-width: 668px){ 
+        height: 100vh;
+    } 
+
+    @media (min-width: 1025px) {
+        height: 100%; 
+    }
+
 }
 `
 export const InnerWrapper = styled.div`
