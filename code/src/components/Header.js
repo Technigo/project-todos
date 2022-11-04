@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react'
 import moment from 'moment'
 import { useSelector } from 'react-redux'
@@ -12,9 +13,11 @@ export const Header = () => {
 
   return (
     <HeaderBackground>
-      <HeaderTitle>To-do List</HeaderTitle>
-      <h4>{todaysDate}</h4>
-      <h5>You have {numberOfTodos - numberOfCompleteItems} out of {numberOfTodos} tasks to do!</h5>
+      <HeaderTextWrapper>
+        <HeaderTitle>To-do List</HeaderTitle>
+        <h4>{todaysDate}</h4>
+        <h5>You have {numberOfTodos - numberOfCompleteItems} out of {numberOfTodos} tasks to do!</h5>
+      </HeaderTextWrapper>
     </HeaderBackground>
   )
 }
@@ -24,9 +27,15 @@ const HeaderBackground = styled.header`
     text-align: center;
     position: relative;
     height: 25vh;
-    width: 100%; 
     color: #ffff;
   `
+const HeaderTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`
+
 const HeaderTitle = styled.h1`
     font-weight: 700;
     font-family: 'Roboto';
