@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import todos from 'reducers/todos';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components/macro';
-import { Label } from './GlobalStyles';
+import { Button, Label } from './GlobalStyles';
 
 const NewTodo = () => {
   const [newInput, setNewInput] = useState('');
@@ -25,23 +25,27 @@ const NewTodo = () => {
   }
 
   return (
-    <Form onSubmit={onFormSubmit}>
-      <p>
-        <InputField
-          onChange={onNewTodoChange}
-          type="text"
-          placeholder="create new todo..."
-          id="input"
-          value={newInput} />
-        <Label htmlFor="input" />
-        <button
+    <InputBox>
+      <Form onSubmit={onFormSubmit}>
+        <Label htmlFor="input">
+          <InputField
+            onChange={onNewTodoChange}
+            type="text"
+            placeholder="New todo"
+            id="input"
+            value={newInput} />
+        </Label>
+        <Button
           type="submit"
-          margin="10px"
-          backgroundColor="inherit">
-            add
-        </button>
-      </p>
-    </Form>
+          margin="8px"
+          color="#D1DED9"
+          lineheight="0px"
+          padding="12px"
+          backgroundcolor="#1F593C">
+            ADD
+        </Button>
+      </Form>
+    </InputBox>
 
   )
 }
@@ -49,25 +53,32 @@ export default NewTodo;
 
 const InputField = styled.input`
   background-color: #367857;
-  border: none;
   border-radius: 20px;
+  border: none;
   color: white;
-  padding: 10px 20px;
-  width: 70%;
+  width: 100%;
   cursor: pointer;
+  padding: 10px 20px;
 
   &::placeholder {
-    color: white;
+  color: #81BB9E;
 }
 
   &:focus-visible {
     outline: none;
 }
 `
+const InputBox = styled.div`
+  background-color: #367857;
+  border-radius: 20px;
+  width: 100%;
+  margin-bottom: 30px;
+
+`
+
 const Form = styled.form`
   display: flex;
-  justify-content: center;
-  margin-bottom: 10%;
+  align-items: center;
   width: 100%;
 
 `

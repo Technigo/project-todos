@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable max-len */
 import React, { useMemo } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
@@ -23,7 +24,7 @@ const TodoList = () => {
     dispatch(todos.actions.removeTodo(index))
   }
 
-  const TimeStamp = (id) => `${String(new Date(id).getHours()).padStart(2, '0')}:${String(new Date(id).getMinutes()).padStart(2, '0')} ${new Date(id).toDateString()}`
+  // const TimeStamp = (id) => `${String(new Date(id).getHours()).padStart(2, '0')}:${String(new Date(id).getMinutes()).padStart(2, '0')} ${new Date(id).toDateString()}`
 
   const IconColor = useMemo(() => ({ color: '#367857', size: '1.2rem', className: 'react-icons' }), []);
 
@@ -36,22 +37,24 @@ const TodoList = () => {
             {allTodos.map((todo, index) => {
               return (
                 <SingleTodoBox key={todo.id}>
-                  <div>
-                    <label htmlFor="input">
-                      <Checkbox
+                  <TodoBox>
+                    <label>
+                      <input
                         type="checkbox"
                         checked={todo.isChecked}
-                        onChange={() => onCheckedTodoToggle(todo.id)} />
-                      {todo.name}
-                      <p>created {TimeStamp(todo.id)}</p>
+                        onChange={() => onCheckedTodoToggle(todo.id)}
+                        name={`input-${todo.id}`} />
+                      <p>{todo.name}</p>
                     </label>
-                  </div>
-                  <Button
-                    type="button"
-                    onClick={() => onRemoveTodo(index)}
-                    backgroundColor="inherit">
-                    <IoCloseOutline />
-                  </Button>
+                    <Button
+                      type="button"
+                      onClick={() => onRemoveTodo(index)}
+                      backgroundcolor="inherit">
+                      <IoCloseOutline />
+                    </Button>
+                  </TodoBox>
+
+                  {/* <TimeStampStyling>{TimeStamp(todo.id)}</TimeStampStyling> */}
                 </SingleTodoBox>
               )
             })}
@@ -68,15 +71,20 @@ const TodoList = () => {
 export default TodoList;
 
 const SingleTodoBox = styled.article`
-padding: 10px 0px;
+padding: 5px 0px;
 display: flex;
-justify-content: space-between;
 align-items: flex-start;
+flex-direction: column;
+`
+const TodoBox = styled.div`
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
 
-p {
-  font-size: 13px;
-  color: #5a7869;
-}
+  label {
+    width: 100%;
+  }
 `
 
 const NewTodoAndBtn = styled.div`
@@ -85,7 +93,9 @@ const NewTodoAndBtn = styled.div`
   align-items: center;
 `
 
-const Checkbox = styled.input`
-  margin-right: 10px;
-  height: 10px;
-`
+// const TimeStampStyling = styled.p`
+//   font-size: 13px;
+//   color: #5A7869;
+//   padding-left: 28px;
+//   margin-top: -6px;
+// `

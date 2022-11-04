@@ -21,11 +21,15 @@ export const Innerwrapper = styled.div`
 
 export const Button = styled.button`
   border: none;
-  background-color: ${(props) => (props.backgroundColor)};
+  background-color: ${(props) => (props.backgroundcolor)};
   border-radius: 20px;
   cursor: pointer;
-  color: white;
-  margin: ${(props) => (props.margin)}
+  font-size: 13px;
+  color: ${(props) => (props.color)};
+  margin: ${(props) => (props.margin)};
+  height: 30px;
+  line-height: ${(props) => (props.lineheight)};
+  padding:${(props) => (props.padding)};
 `
 
 export const Label = styled.label`

@@ -17,7 +17,7 @@ const Header = () => {
       <div>
         <TodoCounter />
         <ClearAllBtn
-          backgroundColor="#377958"
+          backgroundcolor="#377958"
           onClick={onClearAll}>
   Clear all
         </ClearAllBtn>
