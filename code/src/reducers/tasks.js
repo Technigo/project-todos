@@ -35,7 +35,7 @@ export const tasks = createSlice({
       })
     },
     addItem: (store, action) => {
-      store.items.push(action.payload)
+      store.items.unshift(action.payload)
       console.log(store.items)
     },
     deleteItem: (store, action) => {
