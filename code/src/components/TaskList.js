@@ -32,19 +32,24 @@ const TaskList = () => {
     console.log(arg1)
     console.log(arg2)
     return (
-      <article key={arg1.id}>
-        <h2>{arg1.text}</h2>
-        <label>
-          <input
-            type="checkbox"
-            checked={arg1.taskDone}
-            onChange={() => onIsTaskCompleted(arg1.id)} />
-        </label>
-        <button
-          onClick={() => onDeleteTaskBtnClick(arg2)}
-          type="button">❤️
-        </button>
-      </article>
+      <section className="tasklist-container">
+        <article key={arg1.id}>
+          <label>
+            <p>{arg1.text}</p>
+            <input
+              type="checkbox"
+              id="task"
+              name="dunno"
+              checked={arg1.taskDone}
+              onChange={() => onIsTaskCompleted(arg1.id)} />
+          </label>
+          <button
+            className="broom-btn"
+            onClick={() => onDeleteTaskBtnClick(arg2)}
+            type="button">🧹
+          </button>
+        </article>
+      </section>
     );
   }
   return (

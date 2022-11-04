@@ -3,9 +3,8 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import TaskList from 'components/TaskList'
-import { AddTask } from 'components/AddTask'
+import { Header } from 'components/Header'
 import { tasks } from 'reducers/tasks'
-import { TodoCounter } from 'components/TodoCounter'
 
 /* const reducer = combineReducers({
   tasks: tasks.reducer
@@ -22,9 +21,11 @@ export const App = () => {
   })
   return (
     <Provider store={store}>
-      <TaskList />
-      <AddTask />
-      <TodoCounter />
+      <section className="outer-wrapper">
+        <Header />
+        <TaskList />
+      </section>
     </Provider>
   )
 }
+
