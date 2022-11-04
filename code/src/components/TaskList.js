@@ -23,7 +23,7 @@ const TaskList = () => {
         return (
           <StyledTask>
             <label>
-              <input
+              <Checkbox
                 type="checkbox"
                 name="tasks"
                 checked={singleTask.complete}
@@ -73,12 +73,45 @@ width: 50vw;
 width: 25vw;
 }
 `
+export const Checkbox = styled.input`
+  -webkit-appearance: none;
+  /* For iOS < 15 to remove gradient background */
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: grey;
+  width: 1.8em;
+  height: 1.8em;
+  border-radius: 10px;
+  margin-top: 35%;
+  display: grid;
+  place-content: center;
+@media screen and (min-width: 1024px) {
+  &:hover {
+  cursor: pointer;
+  border: 0.1em solid var(--color-darkGreen);
+}}
+::before {
+  content: "";
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 20px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em var(--color-darkGreen);
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+}
+:checked::before {
+  transform: scale(1);
+}
+`
 const StyledDeleteButton = styled.button`
 border: none;
 width: 3em;
 height: 3em;
 cursor:pointer;
-margin-top: 0.4rem;
 background: transparent;
 
 @media screen and (min-width: 1024px) {
