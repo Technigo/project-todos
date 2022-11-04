@@ -68,7 +68,10 @@ right: 2%;
 bottom: 5%;
 position: absolute;
 border: none;
+}
 
+@media (max-width: 350px) {
+  width: 70%;
 }
 @media (min-width: 668px) {
   width: 50%;
@@ -76,7 +79,6 @@ border: none;
 @media (min-width: 1024px) {
   width: 40%;
   `
-
 const Label = styled.div`
 margin: 0px 10px 0 10px;
 display: flex;
