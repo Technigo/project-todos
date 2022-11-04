@@ -12,7 +12,7 @@ export const StyledList = styled.ul`
       border-bottom: 1px solid var(--light-color);
       font-size: 1rem;
       height: 4rem;
-      padding: 1.2rem 1.5rem 1.2rem .6rem;
+      padding: 1.2rem 1.5rem 1.2rem .5rem;
     }
 
     & button {

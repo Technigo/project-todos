@@ -45,7 +45,6 @@ code {
   height: 18px;
   outline: 2px solid var(--main-color);
   border-radius: 50%;
-  background: white;
 }
 
 [type="checkbox"]:checked + label::before{

@@ -23,13 +23,13 @@ const Form = () => {
   const handleFormSubmit = (event) => {
     event.preventDefault();
     if (!input.trim().length) {
-      setError('Nothing to do?');
+      setError('Nothing?');
       setTimeout(() => setError(''), 1500);
       return false;
     }
 
     for (let i = 0; i < taskList.length; i += 1) {
-      if (newTask.task === taskList[i].task) {
+      if (newTask.task.toLowerCase() === taskList[i].task.toLowerCase()) {
         setError('Already on the list!');
         setTimeout(() => setError(''), 1500);
         return false;
