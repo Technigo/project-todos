@@ -6,16 +6,16 @@ export const Styled = {
     justify-content: center;
   `,
   InputField: styled.input`
-  border-radius: 1em;
-  font-size: 1em;
-  width: 30vw;
-  height: 4em;
-  background-color: ##eeeeee; 
-  padding-left: 2em;
-
-  @media only screen and (max-width: 1000px) {
-    font-size: 0.8em;
-    padding-left: 1em;
+    border-radius: 1em;
+    font-size: 1em;
+    width: 30vw;
+    height: 4em;
+    background-color: ##eeeeee; 
+    padding-left: 2em;
+  
+    @media only screen and (max-width: 1000px) {
+      font-size: 0.8em;
+      padding-left: 1em;
   }
 
   `,

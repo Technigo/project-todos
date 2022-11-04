@@ -59,7 +59,8 @@ export const Styled = {
    }
    `,
   ListText: styled.p`
-  margin: 0.8em;
-  font-weight: bold;
+    margin: 0.8em;
+    font-weight: bold;
+    text-align: left;
    `
 }

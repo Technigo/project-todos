@@ -29,7 +29,7 @@ export const AddTaskForm = () => {
           onChange={(event) => setNewTask(event.target.value)} />
         <Styled.FormButton
           type="submit"
-          disabled={NewTask === ''}>
+          disabled={NewTask === '' || NewTask.length > 100}>
                   Add!
         </Styled.FormButton>
       </form>
