@@ -4,7 +4,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import tasks from 'reducers/tasks';
 import TaskList from 'components/TaskList';
 import TaskForm from 'components/Taskform';
-import { OuterWrapper, ToDoHeader } from 'components/GlobalStyles';
+import { InnerWrapper } from 'components/GlobalStyles';
+import Header from 'components/Header'
 
 export const App = () => {
   const reducer = combineReducers({
@@ -16,11 +17,11 @@ export const App = () => {
   });
   return (
     <Provider store={store}>
-      <OuterWrapper>
-        <ToDoHeader>My things to do!</ToDoHeader>
+      <InnerWrapper>
+        <Header />
         <TaskForm />
         <TaskList />
-      </OuterWrapper>
+      </InnerWrapper>
     </Provider>
   );
 };

@@ -13,14 +13,15 @@ width: 20px;
 background-color: #A27DA7;
 `
 
-export const OuterWrapper = styled.section`
-  max-width: 550px;
+export const InnerWrapper = styled.section`
+  max-width: 300px;
   margin: 0 auto;
-  background-color: #EDEFF0;
+  background-color: #F7ECDE;
   text-align: center;
   border-radius: 20px 20px 20px 20px;
 `
 
 export const ToDoHeader = styled.h1`
 font-size: 40px;
+font-family: 'Montserrat', sans-serif;
 `

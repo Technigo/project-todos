@@ -17,17 +17,17 @@ const TaskForm = () => {
   return (
     <TaskformWrapper>
       <Form>
-        <input
+        <Input
           type="input"
           placeholder="Add task here..."
           onChange={(event) => setNewTodo(event.target.value)}
           value={newTodo}
           required />
-        <Button
+        <SubmitBtn
           type="submit"
           onClick={addTask}
-          disabled={newTodo.length === 0}>Send
-        </Button>
+          disabled={newTodo.length === 0}>+
+        </SubmitBtn>
       </Form>
     </TaskformWrapper>
   )
@@ -36,9 +36,28 @@ const TaskForm = () => {
 export default TaskForm;
 
 const TaskformWrapper = styled.section`
-border: solid 2px red;
+
 `
 
 const Form = styled.form`
-border: solid 2px green;
+height: 50px;
+display: flex;
+flex-direction: row;
+align-items: center;
+`
+
+const SubmitBtn = styled(Button)`
+color: pink;
+height: 40px;
+width: 40px;
+border-radius: 50%;
+font-size: 30px;
+`
+
+const Input = styled.input`
+width: 220px;
+height: 30px;
+margin: 10px;
+border: none;
+font-size: 1rem;
 `
