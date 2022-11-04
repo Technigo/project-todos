@@ -7,34 +7,18 @@ const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      {
-        id: '1',
-        text: 'Watch video on actions & reducers',
-        complete: false,
-      },
-      {
-        id: '2',
-        text: 'Follow redux codealong',
-        complete: false,
-      },
-      {
-        id: '3',
-        text: 'Fork weekly assignment',
-        complete: false,
-      },
-      {
-        id: '4',
-        text: 'Create a todo app',
-        complete: false,
-      },
+      // {
+      //   id: Date.now().toString(),
+      //   text: 'Damiens code along',
+      //   complete: false,
+      // }
     ],
   },
+
   reducers: {
     toggleTask: (store, action) => {
-      console.log(store);
-      console.log(action);
-      //   store.items.find((item) => item.is === action.payload).complete =
-      //     !store.items.find((item) => item.is === action.payload).complete;
+      console.log('store toggleTask:', store);
+      console.log('action toggleTask:', action);
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.complete = !item.complete;
@@ -43,8 +27,33 @@ const tasks = createSlice({
     },
 
     addTask: (store, action) => {
-      console.log(store);
-      console.log(action);
+      // Mutable
+      // store.items.push(action.payload);
+
+      // Immutable, best practice
+      store.items = [...store.items, action.payload];
+      // const x = [a,b,c]
+      // const y = [x,d] => [[a,b,c], d]
+      // const z = [...x,d] => [a,b,c,d]
+    },
+
+    removeTask: (store, action) => {
+      // Mutability
+      // we are deleting one item at a time
+      // store.items.splice(action.payload, 1);
+
+      // Immutability, best practice
+      const updatedItems = store.items.filter((item) => {
+        return store.items.indexOf(item) !== action.payload;
+      });
+      store.items = updatedItems;
+    },
+    setAllItems: (store, action) => {
+      store.items = action.payload;
+    },
+
+    clearTasks: (store) => {
+      store.items = [];
     },
   },
 });
