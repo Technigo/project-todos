@@ -6,11 +6,12 @@ margin: 0 auto;
 min-height: 600px;
 background-color: #f3edeb;
 @media (min-width: 600px) {
-    margin-top: 10%;
+    margin-top: 5%;
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.58);
--webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.58);
--moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.58);
-border-radius: 5px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.58);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.58);
+    border-radius: 5px;
+    margin-bottom: 50px;
   }
 `
 
