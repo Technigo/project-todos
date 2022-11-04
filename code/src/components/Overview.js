@@ -32,11 +32,8 @@ export const Overview = () => {
   };
 
   return (
-    <OverviewWrapper>
-      <FlexContainerText>
-        <h4>You have {toBeDone} out of {allTasks.length} tasks to do.</h4>
-        {/* <p> to be completed</p> */}
-      </FlexContainerText>
+    <Wrapper>
+      <h4>You have {toBeDone} out of {allTasks.length} tasks to do.</h4>
       <FlexContainerBtn>
         <Actionbtn
           // align="flex-end"
@@ -53,38 +50,13 @@ export const Overview = () => {
         Remove all
         </Actionbtn>
       </FlexContainerBtn>
-    </OverviewWrapper>
+    </Wrapper>
   )
 };
 
 // STYLING FOR ABOVE COMPONENT
-const OverviewWrapper = styled(Wrapper)`
-  //display: flex;
-  //align-items: center;
-  //justify-content: space-between;
-  //flex-direction: column;
-  // flex-wrap: wrap;
-  //border: 2px solid blue;
-`
-
-const FlexContainerText = styled.div`
-  /* width: 70%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding-right: 0.2rem; */
-  //border: 2px solid blue;
-`
-
 const FlexContainerBtn = styled.div`
   display: flex;
   width: 80%;
   justify-content: space-evenly;
-  /* 
-  
-  
-  flex-direction: column;
-  width: 30%;
-  align-items: flex-start; */
-  //border: 2px solid blue;
 `

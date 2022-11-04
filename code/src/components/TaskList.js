@@ -6,6 +6,7 @@ import { tasks } from 'reducers/tasks';
 import bin from 'assets/bin-icon.svg';
 import coffee from 'assets/coffeeJsx.svg';
 import { Overview } from './Overview';
+import { CheckBox } from './CheckBox';
 
 export const TaskList = () => {
   // Get all the tasks currently in the store:
@@ -23,8 +24,8 @@ export const TaskList = () => {
     dispatch(tasks.actions.removeToDo(task));
   }
 
-  // If there are any tasks, display them with a checkbox and a delete button:
-  // Display also the overview, if there are any tasks:
+  // If there are any tasks, display them with a checkbox and a delete button,
+  // as well as the overview:
   if (allTasks.length > 0) {
     return (
       <>
@@ -32,7 +33,7 @@ export const TaskList = () => {
           {allTasks.map((task) => (
             <TaskItem key={task.id}>
               <CheckBox
-                type="checkbox"
+                id={task.id}
                 checked={task.complete}
                 onChange={() => isCompleteToggle(task.id)} />
               <TaskText>{task.text}</TaskText>
@@ -48,7 +49,7 @@ export const TaskList = () => {
   } else {
     return (
       <Wrapper>
-        <Congrats>Congrats!</Congrats>
+        <Congrats>Nice work!</Congrats>
         <h3>There are no tasks for you to complete.</h3>
         <CoffeeCup src={coffee} alt="steaming coffee cup" />
         <h4>Sit back and relax, or enter some todos above!</h4>
@@ -58,22 +59,13 @@ export const TaskList = () => {
 }
 
 // STYLING FOR ABOVE COMPONENT
-// const TaskListWrapper = styled(Wrapper)`
-//   /* display: flex;
-//   flex-direction: column; */
-// `
 
 const TaskItem = styled.div`
   display: flex;
-  //border: 3px solid #1F9D6E;
   width: 100%;
   border-radius: 50px;
   margin: 0.5rem 0;
   align-items: center;
-`
-
-const CheckBox = styled.input`
-  //width: 1.3rem;
 `
 
 const TaskText = styled.div`

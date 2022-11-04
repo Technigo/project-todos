@@ -26,7 +26,6 @@ main {
   height: 100%;
   width: 100%;
   margin: 0 auto;
-  border: 2px solid #1F9D6E;
   box-shadow: 0 0.5rem 2rem rgb(56, 55, 55);
   border-radius: 2.8rem;
   background-color: whitesmoke;
@@ -34,19 +33,87 @@ main {
 
 @media (min-width: 668px) and (max-width: 1024px) {
   main {
+    /* border: 2px solid #1F9D6E; */
     width: 50%;
   }
 }
 
 @media (min-width: 1025px) and (max-width: 1440px){
   main {
+    /* border: 2px solid #1F9D6E; */
     width: 35%;
   }
 }
 
 @media (min-width: 1441px){
   main {
+    border: 2px solid #1F9D6E;
     width: 25%;
   }
 }
 /* // desktop: '2560px' */
+
+[type="checkbox"] {
+  opacity: 0;
+}
+
+[type="checkbox"] + label {
+  position: relative;
+  padding-left: 2rem;
+  cursor: pointer;
+  display: inline-block;
+  line-height: 1.5rem;
+}
+
+/* pseudo element BEFORE, the box aroud the checkbox */
+[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -7px;
+  width: 1.1rem;
+  height: 1.1rem;
+  outline: 2px solid #333;
+  background: white;
+}
+
+/* when checkbox is checked, select the adjacent label, and change its before pseudo element */
+[type="checkbox"]:checked + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -7px;
+  width: 1.1rem;
+  height: 1.1rem;
+  outline: 1px solid #1F9D6E;
+  background: white;
+}
+
+/* pseudo element AFTER, the actual checkmark, once checkbox is checked */
+[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -7px;
+  width: 1.1rem;
+  height: 1.1rem;
+  background-image: url(./assets/checkmark.png);
+  background-size: contain;
+  transform:scale(1);
+  opacity: 1;
+  transition: all .3s ease;
+}
+
+/* NOT CHECKED */
+[type="checkbox"]:not(:checked) + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: -7px;
+  width: 1.1rem;
+  height: 1.1rem;
+  background-image: url(./assets/checkmark.png);
+  background-size: contain;
+  transform:scale(0);
+  opacity: 0;
+}
