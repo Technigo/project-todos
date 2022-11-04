@@ -2,7 +2,11 @@ import styled, { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
    :root {
-    --theme-primary: #F5005E;
+    --primary: #BA2635;
+    --secondary: #3F0D12;
+    --tertiary: #DFCFA4;
+    --quaternary: #8D775F;
+    --quinary: #FBFAEF;
   }
   * {
     box-sizing: border-box;
@@ -17,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
     -moz-osx-font-smoothing: grayscale;
     max-width: 1024px;
     font-family: 'Cormorant Garamond', serif;
-    background-color: #6E7582;
+    background-color: var(--secondary);
 
     @media (min-width: 668px) and (max-width: 1023px){
     }
@@ -34,7 +38,7 @@ flex-direction: column;
 `
 
 export const ContentWrapper = styled.div`
-background-color: #F39189;
+background-color: var(--tertiary);
 margin: 30px 20px 0;
 border-radius: 350px 350px 0 0;
 min-height: 100vh;
@@ -54,7 +58,7 @@ p{
 `
 
 export const BottomLine = styled.div`
-background-color: #F0E3CA;
+background-color: var(--quinary);
 width: 100%;
 height: 40px;  
 position: absolute;
@@ -67,9 +71,7 @@ export const Button = styled.button`
   margin: 0;
   border: none;
   background-color: transparent;
-  color: #F9E4D4;
   transition: transform 0.5s ease 0s;
-
 
   &:hover{
     transform: scale(1.2);}
@@ -77,7 +79,7 @@ export const Button = styled.button`
     img{
       width: 30px;
       height: 30px;
-      filter: invert(23%) sepia(64%) saturate(1897%) hue-rotate(167deg) brightness(101%) contrast(97%);
+      filter: invert(26%) sepia(74%) saturate(1727%) hue-rotate(328deg) brightness(82%) contrast(104%);
     }
 
   @media (min-width: 600px) and (max-width: 900px){

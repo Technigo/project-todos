@@ -18,7 +18,7 @@ const TodoCount = () => {
 export default TodoCount;
 
 const Counter = styled.p`
-  color: #046582;
+  color: var(--primary);
   margin: 0;
 
   @media (min-width: 600px) and (max-width: 900px){

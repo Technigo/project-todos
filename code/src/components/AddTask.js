@@ -66,7 +66,9 @@ resize: none;
 font-family: 'Cormorant Garamond', serif;
 width: 90%;
 padding: 20px;
-background-color: #F9E4D4;
+background-color: var(--quinary);
+font-size: 18px;
+box-shadow: 2px 16px 21px -13px rgba(145,138,138,0.51);
 
 ::placeholder{
   font-size: 12px;
@@ -74,6 +76,7 @@ background-color: #F9E4D4;
 
 @media (min-width: 600px) and (max-width: 900px){
   padding: 20px 20px 50px;
+  font-size: 20px;
   ::placeholder{
   font-size: 16px;
 }

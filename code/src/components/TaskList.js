@@ -64,15 +64,16 @@ export default TaskList;
 const TaskListGrid = styled.div`
 display: grid;
 grid-template-columns: 100%;
+margin-bottom: 30%;
 
 @media (min-width: 600px) and (max-width: 900px){
   grid-template-columns: 50% 50%;
-  margin: 30px 0;
+  margin: 30px 0 30%;
 }
 
 @media (min-width: 901px){
   grid-template-columns: 50% 50%;
-  /* margin: 30px; */
+  margin: 30px auto 30%;
   width: 90%;
 }
 `
@@ -91,9 +92,10 @@ width: 100%;
 `
 
 const Wrapper = styled.div`
-background-color:#F9E4D4;
+background-color: var(--quinary);
 margin: 20px 20px 0;
 padding: 20px 10px;
+box-shadow: 2px 16px 21px -13px rgba(145,138,138,0.51);
 
 p{
   margin-top: 10px;
@@ -139,12 +141,12 @@ img{
 const Input = styled.input`
 -webkit-appearance: none;
   appearance: none;
-  background-color: #fff;
+  background-color: white;
   margin: 0 5px 0 0;
   color: red;
   width: 15px;
   height: 15px;
-  border: 1px solid #046582;
+  border: 1px solid var(--tertiary);
   transform: translateY(-4px);
    
 
@@ -154,12 +156,12 @@ const Input = styled.input`
   height: 13px;
   transform: scale(0);
   transition: 120ms transform ease-in-out;
-  box-shadow: inset 30px 30px #046582;
+  box-shadow: inset 30px 30px var(--primary);
   display: grid;
   place-content: center;
   }
   &:checked + label{
-    text-decoration: 4px line-through #BB8082;
+    text-decoration: 4px line-through var(--quaternary);
   }
   &:checked::before{
     transform:scale(1)

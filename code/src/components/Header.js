@@ -3,10 +3,10 @@ import styled from 'styled-components';
 
 const Header = () => {
   return (
-    <><HeaderTitle>To Do List</HeaderTitle>
+    <><HeaderTitle>Daily Planner</HeaderTitle>
       <Separator>
         <div className="line" />
-        <p>DAILY PLANNER</p>
+        <p>TO DO LIST</p>
         <div className="line" />
       </Separator>
       <CreatorName>by Kartika Purwahyuningrum</CreatorName>
@@ -17,8 +17,8 @@ const Header = () => {
 export default Header
 
 const HeaderTitle = styled.h1`
-  color: #FFF8EA;
-  font-size: 65px;
+  color: var(--quinary);
+  font-size: 50px;
   margin: 30px auto 15px;
   text-align: center;
 
@@ -38,14 +38,14 @@ const Separator = styled.div`
 
   p{
     padding: 0 10px;
-    color: #FFF8EA;
-    font-size: 20px;
+    color: var(--quinary);
+    font-size: 18px;
   }
 
   .line{
     height: 1px;
     flex: 1;
-    background-color: #FFF8EA;
+    background-color: var(--quinary);
   }
 
   @media (min-width: 600px) and (max-width: 900px){
@@ -68,7 +68,7 @@ const Separator = styled.div`
 `
 
 const CreatorName = styled.h6`
-  color: #046582;
+  color: var(--primary);
   font-size: 12px;
 
 @media (min-width: 600px) and (max-width: 900px){

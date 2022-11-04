@@ -29,7 +29,6 @@ export const App = () => {
           </ContentWrapper>
           <BottomLine />
         </Provider>
-
       </OuterWrapper>
 
     </>

@@ -13,7 +13,7 @@ export default TodaysDate
 const NowDate = styled.p`
 text-align: center;
 margin-top: 80px;
-color: #046582;
+color: var(--primary);
 
 @media (min-width: 600px) and (max-width: 900px){
   margin-top: 150px;
@@ -25,7 +25,3 @@ color: #046582;
   font-size: 25px;
 }
 `
-
-/* format(new Date(), "'Today is a' eeee")
-//=> "Today is a Wednesday"
- */
