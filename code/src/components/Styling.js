@@ -29,5 +29,4 @@ export const InnerWrapper = styled.section`
 // Darkpurple: #DF7861
 
 // font-family: 'Montserrat', sans-serif;
-// font-family: 'Rochester', cursive;
 // font-family: 'Sacramento', cursive;

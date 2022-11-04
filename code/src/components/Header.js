@@ -22,14 +22,14 @@ display:flex;
 const HeaderHeading = styled.h1`
 font-family: 'Rochester', cursive;
 color: #DF7861;
-font-size: 30px;
+font-size: 33px;
 padding-bottom: 10px;
 
 @media (min-width: 668px) and (max-width: 1024px) {
-  font-size: 33px;
+  font-size: 37px;
   }
   @media (min-width: 1025px) {
-    font-size: 36px;
+    font-size: 40px;
   }
 `
 export default Header;

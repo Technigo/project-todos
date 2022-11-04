@@ -36,7 +36,7 @@ const NewTask = () => {
         <NewTaskButton type="submit" onClick={() => onAddNewTask}>Add new task</NewTaskButton>
       </form>
       <TasksLeft>
-        Tasks left: {tasksMarkedAsDone.length}
+        Tasks left: {tasksMarkedAsDone.length} / {allTasks.length}
       </TasksLeft>
     </NewTaskDiv>
 
@@ -54,8 +54,15 @@ align-items: center;
 const Input = styled.input`
 border: 1px solid #DF7861;
 border-radius: 20px;
-width: 100%;
+width: 80%;
 padding: 5px;
+
+@media (min-width: 668px) and (max-width: 1024px) {
+    width: 90%;
+  }
+  @media (min-width: 1025px) {
+    width: 100%;
+  }
 
 &:focus {
     outline: none;
@@ -66,18 +73,21 @@ padding: 5px;
     color: #ECB390;
   }
 `
-// const NewTaskAndTasksLeft = styled.div`
-//  display: flex;
-//  flex-direction: row;
-//  align-items: center;
-//  `
 
 const NewTaskButton = styled.button`
 background-color: #ECB390;
 border: none;
+font-size: 13px;
 border-radius: 10px;
 padding: 5px 8px;
 margin: 10px 0px;
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  font-size: 15px;
+  }
+  @media (min-width: 1025px) {
+    font-size: 17px;
+  }
 `
 
 const TasksLeft = styled.p`
@@ -86,5 +96,12 @@ font-size: 13px;
 padding: 5px;
 margin: 5px;
 align-self: flex-end;
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  font-size: 15px;
+  }
+  @media (min-width: 1025px) {
+    font-size: 17px;
+  }
 `
 
