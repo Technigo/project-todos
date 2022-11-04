@@ -51,7 +51,7 @@ export default TodoList;
 
 const TaskList = styled.div`
   background-color: #e5f2f5;
-  padding: 20px;
+  padding: 30px;
   border-radius: 5px;
   `
 
@@ -70,7 +70,7 @@ const TaskArticle = styled.article`
     margin: 20px;
     border: 2px solid #007E9F;
     border-radius: 5px;
-    padding: 10px;
+    padding: 0 10px;
     display: flex;
   `
 

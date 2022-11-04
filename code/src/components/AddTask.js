@@ -73,7 +73,7 @@ const NewTaskInput = styled.input`
   padding: 10px;
   width: 100%;
   outline: none;
-  height: 30px;
+  height: 40px;
   border-radius: 5px;
 `
 
@@ -84,7 +84,7 @@ const AddNewTaskButton = styled.button`
   right: 0px;
   z-index: 2;
   border: none;
-  height: 30px;
+  height: 40px;
   cursor: pointer;
   color: white;
   background-color: rgba(0,126,159,0.7);
