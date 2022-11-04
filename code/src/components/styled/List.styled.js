@@ -23,5 +23,10 @@ export const StyledList = styled.ul`
       font-size: 1.5rem;
       line-height: 0;
       width: 6rem;
+      transition: all .2s ease;
+
+      &:hover {
+        color: gray;
+      }
     }
 `

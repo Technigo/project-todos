@@ -14,6 +14,11 @@ export const StyledForm = styled.form`
     cursor: pointer;
     height: 100%;
     padding: .8rem 1.4rem;
+    transition: all .2s ease;
+
+    &:hover {
+      background-color: rgb(52, 52, 52);
+    }
   }
 
   & label {

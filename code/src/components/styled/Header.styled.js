@@ -43,5 +43,10 @@ export const StyledHeader = styled.header`
     padding: .5rem;
     width: 6rem;
     height: 2.3rem;
+    transition: all .2s ease;
+
+    &:hover {
+      background-color: rgb(52, 52, 52);
+    }
   }
 `
