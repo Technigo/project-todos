@@ -3,6 +3,8 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import tasks from 'reducers/tasks';
 import TaskList from 'components/TaskList';
+import TaskForm from 'components/Taskform';
+import { OuterWrapper, ToDoHeader } from 'components/GlobalStyles';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -14,7 +16,11 @@ export const App = () => {
   });
   return (
     <Provider store={store}>
-      <TaskList />
+      <OuterWrapper>
+        <ToDoHeader>My things to do!</ToDoHeader>
+        <TaskForm />
+        <TaskList />
+      </OuterWrapper>
     </Provider>
   );
 };
