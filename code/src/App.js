@@ -3,13 +3,14 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 
 import { OuterWrapper, InnerWrapper } from 'Styling/MainStyles';
-import toDoItems from 'reducers/toDoItems';
+import todos from 'reducers/todos';
 import ToDoList from 'components/ToDoList';
 import Add from 'components/Add';
+import Header from 'components/Header';
 
 export const App = () => {
   const reducer = combineReducers({
-    todo: toDoItems.reducer
+    todo: todos.reducer
   })
 
   const store = configureStore({
@@ -20,6 +21,7 @@ export const App = () => {
     <Provider store={store}>
       <OuterWrapper>
         <InnerWrapper>
+          <Header />
           <ToDoList />
           <Add />
         </InnerWrapper>

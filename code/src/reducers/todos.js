@@ -1,15 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const toDoItems = createSlice({
-  name: 'task-list',
+const todos = createSlice({
+  name: 'todos',
   initialState: {
     items: [
-      { id: '1',
-        name: 'Pickachu',
-        isDone: false },
-      { id: '2',
-        name: 'Sandshrew',
-        isDone: false }
+      // { id: '1', name: 'Pickachu', isDone: false },
+      // { id: '2', name: 'Sandshrew', isDone: false }
     ]
   },
   reducers: {
@@ -36,4 +32,4 @@ const toDoItems = createSlice({
   }
 });
 
-export default toDoItems;
+export default todos;

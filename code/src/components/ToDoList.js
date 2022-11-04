@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components/macro';
-import toDoItems from 'reducers/toDoItems';
+import todos from 'reducers/todos';
 
 const ToDoList = () => {
   const toDoList = useSelector((store) => store.todo.items);
@@ -9,11 +9,11 @@ const ToDoList = () => {
   const dispatch = useDispatch();
 
   const IsDoneToggle = (id) => {
-    dispatch(toDoItems.actions.toggleItem(id))
+    dispatch(todos.actions.toggleItem(id))
   }
 
   const onDeleteItem = (toDoIndex) => {
-    dispatch(toDoItems.actions.deleteItem(toDoIndex));
+    dispatch(todos.actions.deleteItem(toDoIndex));
   }
 
   return (
@@ -26,7 +26,7 @@ const ToDoList = () => {
               type="checkbox"
               checked={singleToDo.isDone}
               onChange={() => IsDoneToggle(singleToDo.id)} />
-            <h2>{singleToDo.name}</h2>
+            <p>{singleToDo.name}</p>
             <button onClick={() => onDeleteItem(index)} type="button">X</button>
           </StyledArticle>
         )
