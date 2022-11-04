@@ -10,7 +10,7 @@ export const Header = () => {
 
   // Shows the current date
   const now = new Date()
-  const todaysDate = format(now, "EEEE',' dd MMMM'")
+  const todaysDate = format(now, "EEEE',' dd MMMM',' yyyy'")
 
   return (
     <HeaderWrapper>
@@ -27,7 +27,6 @@ const HeaderWrapper = styled.header`
   justify-content: center;
   align-items: center;
   font-size: 15px;
-  // padding: 10px;
   position: relative;
 `
 
@@ -42,7 +41,6 @@ const CountSpan = styled.span`
 `
 const DateText = styled.p`
   font-size: 30px;
-  //font-family: 'Handlee', cursive;
   font-family: 'Patrick Hand', cursive;
   margin: 0;
 `
@@ -52,17 +50,9 @@ const HeaderText = styled.p`
   font-family: 'Caveat', cursive;
 
   @media (min-width: 668px){ 
-   // margin-top: 10%;
     font-size: 50px;
   }
   @media (min-width: 1025px) {
  
   }
   `
-/* Shows the current date
-  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
-  const date = new Date();
-  const mm = date.getMonth();
-  const month = months[mm];
-  const dd = date.getDate();
-  const specificWeekday = date.toLocaleDateString('en-US', { weekday: 'long' }); */

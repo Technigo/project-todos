@@ -4,10 +4,10 @@ export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [{ id: 1,
-      name: 'Feed cat',
+      name: 'Buy cat food',
       completed: false },
     { id: 2,
-      name: 'Feed self',
+      name: 'Water plants',
       completed: false }]
   },
 
@@ -18,17 +18,14 @@ export const todos = createSlice({
         if (item.id === action.payload) {
           item.completed = !item.completed
         }
-      })
+      });
     },
     addTodo: (store, action) => {
       store.items.push(action.payload)
     },
     removeItem: (store, action) => {
       // takes the items array and filters all items with id that is not equal to payload.
-      const removedTask = store.items.filter(
-        (item) => item.id !== action.payload
-      );
-      store.items = removedTask;
+      store.items = store.items.filter((item) => item.id !== action.payload)
     },
     deleteAllTasks: (store) => {
       store.items = []

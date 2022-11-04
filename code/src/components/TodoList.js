@@ -43,7 +43,9 @@ export const TodoList = () => {
           </TodoRow>
         );
       })}
-      <DeleteAllTodos onClick={handleDeleteAll}>Remove all</DeleteAllTodos>
+      <Footer>
+        <DeleteAllTodos onClick={handleDeleteAll}>Remove all</DeleteAllTodos>
+      </Footer>
     </TodoListWrapper>
   )
 }
@@ -51,8 +53,14 @@ export const TodoList = () => {
 const TodoItem = styled.div`
 
 `
+const Footer = styled.div`
+  display:flex;
+  justify-content:center;
+  align-items:center;
+`
+
 const TodoListWrapper = styled.section`
-  margin: 30px;
+  margin: 20px;
   background-color: rgb(236, 179, 144, 0.7);
   border-radius: 10px;
   margin-top: 50px;
@@ -68,6 +76,7 @@ const TodoListWrapper = styled.section`
     margin: 5px;
     }
   } 
+
 `
 const TodoRow = styled.div`
   margin: 5px;
@@ -87,7 +96,7 @@ const TodoRow = styled.div`
 const DeleteAllTodos = styled.button`
   border-radius: 50px;
   margin: 20px;
-  padding: 7px;
+  padding: 10px;
   border: 0;
   font-family: 'Patrick Hand', cursive;
   font-size: 19px;
@@ -96,6 +105,9 @@ const DeleteAllTodos = styled.button`
   &:hover {
       transform: scale(1.1);
       transition: 0.3s ease-in-out;
+  }
+  @media (min-width: 1025px){ 
+    padding: 15px;
   }
 `
 
@@ -110,7 +122,7 @@ const RemoveTask = styled.button`
     display: flex;
     flex-direction: column;
     align-items: center;
-    color:#d1570a;
+    color:#ab4b0f;
     font-family: 'Comic Neue', cursive;
     &:hover {
       transform: scale(1.1);
@@ -127,6 +139,3 @@ const CreatedAt = styled.p`
     font-size: 20px;
   }
 `
-// onClick={() => dispatch(todos.actions.removeItem(singleTodo.id))}
-//  display: grid;
-// grid-template-columns: 1fr 4fr 1fr;
