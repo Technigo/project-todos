@@ -40,7 +40,7 @@ export const Styled = {
    width: 100%;
 
    & input {
-    margin: 1em;
+    margin: 1.2em;
     transform: scale(1.5);
 
     &:hover {
