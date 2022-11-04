@@ -2,18 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import uniqid from 'uniqid';
-
-// WHAT I WANT TO DO HERE:
-// Add an input field for new tasks /DONE
-// Add a button to the right of that field for submitting the task. /DONE
-// On submitting, the form should push a new task object to the tasks array. /DONE
-// The task object should contain an ID, name and isChecked value. /DONE
-// On submitting, the task should be assigned a unique ID using uniqid. /DONE
-
-// HEADER
-// COUNTER
-// TASKFORM
-// TASKLIST
+import { Styled } from './AddTaskForm.styled.js'
 
 export const AddTaskForm = () => {
   const [NewTask, setNewTask] = useState('')
@@ -38,11 +27,11 @@ export const AddTaskForm = () => {
           placeholder="Add new task here..."
           value={NewTask}
           onChange={(event) => setNewTask(event.target.value)} />
-        <button
+        <Styled.FormButton
           type="submit"
           disabled={NewTask === ''}>
                   Add!
-        </button>
+        </Styled.FormButton>
       </form>
     </div>
   )

@@ -2,18 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
-
-// WHAT I WANT TO DO HERE:
-// Render every task in the store /DONE
-// Change their state to completed with a checkbox /DONE
-// Completed tasks should look differently
-// Allow tasks to be deleted with a button click /DONE
-// Render an 'All done!' image if the list is empty
-
-// HEADER
-// COUNTER
-// TASKFORM
-// TASKLIST
+import { Styled } from './TaskList.styled'
 
 export const TaskList = () => {
   const taskArray = useSelector((store) => store.tasks.items);
@@ -28,52 +17,56 @@ export const TaskList = () => {
     dispatch(tasks.actions.toggleItem(id))
   }
 
-  const deleteTask = (index) => {
-    dispatch(tasks.actions.deleteItem(index))
+  const deleteTask = (id) => {
+    dispatch(tasks.actions.deleteItem(id))
   }
 
   return (
-    <section>
-      <div>
+    <Styled.ListColumns>
+      <Styled.List>
         <h2>Outstanding</h2>
-        {outstandingTasks.map((item, index) => {
+        {outstandingTasks.map((item) => {
           return (
-            <div>
+            <Styled.ListItem>
               <p>{item.name}</p>
-              <label>Status
-                <input
-                  type="checkbox"
-                  checked={item.isCompleted}
-                  onChange={() => completedTaskToggle(item.id)} />
-              </label>
-              <button
-                type="button"
-                onClick={() => deleteTask(index)}>❌REMOVE
-              </button>
-            </div>
+              <Styled.Clickers>
+                <label>Status
+                  <input
+                    type="checkbox"
+                    checked={item.isCompleted}
+                    onChange={() => completedTaskToggle(item.id)} />
+                </label>
+                <button
+                  type="button"
+                  onClick={() => deleteTask(item.id)}>❌
+                </button>
+              </Styled.Clickers>
+            </Styled.ListItem>
           );
         })}
-      </div>
-      <div>
+      </Styled.List>
+      <Styled.List>
         <h2>Completed</h2>
-        {completedTasks.map((item, index) => {
+        {completedTasks.map((item) => {
           return (
-            <div>
+            <Styled.ListItem>
               <p>{item.name}</p>
-              <label>Status
-                <input
-                  type="checkbox"
-                  checked={item.isCompleted}
-                  onChange={() => completedTaskToggle(item.id)} />
-              </label>
-              <button
-                type="button"
-                onClick={() => deleteTask(index)}>❌REMOVE
-              </button>
-            </div>
+              <Styled.Clickers>
+                <label>Status
+                  <input
+                    type="checkbox"
+                    checked={item.isCompleted}
+                    onChange={() => completedTaskToggle(item.id)} />
+                </label>
+                <button
+                  type="button"
+                  onClick={() => deleteTask(item.id)}>❌
+                </button>
+              </Styled.Clickers>
+            </Styled.ListItem>
           );
         })}
-      </div>
-    </section>
+      </Styled.List>
+    </Styled.ListColumns>
   )
 }

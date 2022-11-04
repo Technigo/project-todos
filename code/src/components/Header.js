@@ -4,11 +4,6 @@ import React from 'react';
 // Add a date and day tracker at the top using DayJS
 // Add an H1 below that
 
-// HEADER
-// COUNTER
-// TASKFORM
-// TASKLIST
-
 export const Header = () => {
   return (
     <div>

@@ -18,7 +18,7 @@ export const Counter = () => {
     )
   } else {
     return (
-      <h2>No tasks remaining...</h2>
+      <h2>Got something you need to do?</h2>
     )
   }
 }

@@ -14,11 +14,14 @@ export const tasks = createSlice({
       })
     },
     addItem: (store, action) => {
-      store.items.unshift(action.payload)
+      store.items.push(action.payload)
       console.log(store.items)
     },
     deleteItem: (store, action) => {
-      store.items.splice(action.payload, 1)
+      const newTaskArray = store.items.filter(
+        (item) => item.id !== action.payload
+      );
+      store.items = newTaskArray;
     }
   }
 });
