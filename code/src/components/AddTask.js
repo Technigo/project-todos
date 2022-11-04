@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import uniqid from 'uniqid'; // https://www.npmjs.com/package/uniqid
 import styled from 'styled-components';
 // import TodoCounter from 'components/TodoCounter';
-import AddbuttonBig from './AddbuttonBig.svg';
+import AddButtonBig from '../assets/AddButtonBig.svg';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -42,7 +42,7 @@ const AddTask = () => {
         onClick={onAddTask}
         tabIndex="0"
         aria-label="create new task button.">
-        <NewTaskIcon src={AddbuttonBig} alt="add new task." />
+        <NewTaskIcon src={AddButtonBig} alt="add new task." />
       </NewTaskIconWrapper>
     </NewTask>
   );
@@ -67,13 +67,12 @@ background-color: var(--ligth-color);
 `;
 
 const NewTaskIconWrapper = styled.div`
-  border: solid 4px red;
-  padding: 10px;
+  // padding: 10px;
   margin-left: 15px;
   border-radius: 50%;
-  background-color: #212429;
-  height: 40px;
-  width: 40px;
+  // background-color: #212429;
+  // height: 50px;
+  // width: 50px;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -82,13 +81,13 @@ const NewTaskIconWrapper = styled.div`
   transition: all 0.7s ease-out;
   &:hover {
     transition: all 0.5s ease-in;
-    transform: scale(1.1);
+    transform: scale(1.3);
   }
 `;
 
 const NewTaskIcon = styled.img`
-  height: 20px;
-  width: 20px;
+  height: 40px;
+  width: 40px;
 `;
 const TextInput = styled.input`
   width: ${(props) => props.width};

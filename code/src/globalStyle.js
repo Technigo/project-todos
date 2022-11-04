@@ -8,10 +8,11 @@ const GlobalStyle = createGlobalStyle`
   --main-color: #a9d7cc;
   --text-color-light: #c4ccce;
   --second-color: #005568;
-  --accent-color: #00bcbc; 
+  --accent-color: #00BBBC; 
   --dark-color: #002d52;
   --ligth-color:#d0e7e2;
   --pane-padding: 5px 42px;
+  //00bcbc
 }
 
 code {
