@@ -4,7 +4,8 @@ import tasks from 'reducers/tasks';
 import styled from 'styled-components/macro';
 import uniqid from 'uniqid';
 import moment from 'moment';
-import { MainSections } from '../styles/mainStyles';
+import TaskCounter from 'components/TaskCounter';
+import { MainSections, Devices } from '../styles/mainStyles';
 
 const AddTask = () => {
   const [listItem, setListItem] = useState('');
@@ -21,6 +22,7 @@ const AddTask = () => {
       completed: false
     }
     dispatch(tasks.actions.addItem(newTask));
+    console.log(newTask)
     setListItem('');
   }
 
@@ -40,6 +42,7 @@ const AddTask = () => {
             </TaskBtn>
           </TaskLabel>
         </form>
+        <TaskCounter />
       </AddTaskWrapper>
     </MainSections>
   )
@@ -48,9 +51,12 @@ const AddTask = () => {
 export default AddTask;
 
 const AddTaskWrapper = styled.article`
-  border: solid 2px red;
   width: 100vw;
+
+  @media ${Devices.tablet} {
+  width: 50vw;
   height: auto;
+  }
 `
 
 const TaskLabel = styled.label`

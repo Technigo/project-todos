@@ -5,8 +5,8 @@ import List from 'components/List';
 import AddTask from 'components/AddTask';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
-import { OuterWrapper } from 'styles/mainStyles';
-// import styled from 'styled-components/macro';
+import { OuterWrapper, Devices } from 'styles/mainStyles';
+import styled from 'styled-components/macro';
 import tasks from './reducers/tasks';
 
 export const App = () => {
@@ -22,17 +22,21 @@ export const App = () => {
     <Provider store={store}>
       <OuterWrapper>
         <Header />
-        {/* <GridWrapper> */}
-        <AddTask />
-        <List />
-        {/* </GridWrapper> */}
+        <GridWrapper>
+          <AddTask />
+          <List />
+        </GridWrapper>
         <Footer />
       </OuterWrapper>
     </Provider>
   );
 }
 
-// const GridWrapper = styled.div`
-//   display: grid;
-//   grid-template-columns: 40% 40%;
-// `
+const GridWrapper = styled.div`
+
+@media ${Devices.tablet} {
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+`

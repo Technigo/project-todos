@@ -2,7 +2,7 @@ import styled from 'styled-components/macro';
 
 // Colors: #CED4B2 #EAECCC #FDFAE3 #F8EDD0 #CDA47A ; #909A5D
 
-// The main styled of this project
+// The main styles of this project
 
 const sizes = {
   tablet: '768px',
@@ -32,22 +32,25 @@ export const OuterWrapper = styled.div`
 export const InnerWrapper = styled.div`
   width: 90%;
   max-width: 900px;
+  min-height: 600px;
   margin: 0 auto;
   padding: 0% 0%;
 
   @media ${Devices.tablet} {
     width: 80%;
+    min-height: 750px;
   }
 
   @media ${Devices.laptop} {
     width: 65%;
+    min-height: 400px;
   }
 `
 
 export const MainSections = styled.section`
   background-color: ${(props) => (props.coloredBackground ? '#909A5D' : '#F8EDD0')};
   width: 100vw;
-  padding: 5%;
+  padding: 5% 0%;
 `
 
 export const MainHeader = styled.h1`
@@ -98,26 +101,3 @@ export const MainFooter = styled.a`
   }
 `
 
-// export const SecondHeader = styled.h3`
-//   color: #D64819;
-//   font-weight: bold;
-//   font-size: 17px;
-//   font-family: 'Montserrat', sans-serif;
-//   text-align: center;
-//   padding: 5%;
-
-//   @media ${Devices.tablet} {
-//     font-size: 24px;
-//   }
-// `
-
-// export const Title = styled.h3`
-//   font-weight: bold;
-//   font-size: 16px;
-//   line-height: 30px;
-//   font-family: 'Roboto', sans-serif;
-//   text-decoration: none;
-//   color: #D64819;
-//   white-space: nowrap;
-//   padding-top: 5%;
-// `

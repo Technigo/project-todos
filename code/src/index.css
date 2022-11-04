@@ -12,3 +12,21 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.list-checkbox {
+  width: 30px;
+  height: 30px;
+  accent-color: #74992e;
+}
+.list-checkbox:hover {
+
+  accent-color: #74992e;
+}
+
+@media (min-width: 768px) {
+  .list-checkbox {
+    width: 20px;
+    height: 20px;
+  }
+}
+
