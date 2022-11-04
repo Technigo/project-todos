@@ -37,7 +37,7 @@ export const TodoList = () => {
         <ClearCompleteBtn
           onClick={setAllComplete}>Check all
         </ClearCompleteBtn>
-        <h2>To do <span>{doTodos.length}/{allTodos.length}</span></h2>
+        <h2>To do: <span>{doTodos.length}/{allTodos.length}</span></h2>
         {doTodos.map((task) => {
           return (
             <Todo
@@ -46,7 +46,7 @@ export const TodoList = () => {
           )
         })}
         {/* Shows all tasks checked as completed */}
-        <h2>Completed <span>{completeTodos.length}/{allTodos.length}</span></h2>
+        <h2>Completed: <span>{completeTodos.length}/{allTodos.length}</span></h2>
         {completeTodos.map((task) => {
           return (
             <Todo

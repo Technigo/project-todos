@@ -9,25 +9,27 @@ export const AddNewTaskWrapper = styled.form`
 
     input[type=text] {
       justify-self: left;
-      padding: 15px;
+      padding: 18px;
       border-radius: 15px;
       border: none;
       background: #ede4e0;
       width: 100vw;
       outline: none;
       font-size: 1rem;
-      }
+
+        &:focus {
+          outline: none;
+          border: 1.5px solid black;
+        }
+
+    }
 
     input::placeholder {
       font-weight: bold;
-      opacity: .5;
+      opacity: .8;
     }
 
-      &:focus {
-        outline: none;
-        border: 0.5px solid #9F73AB;
-      }
-
+    
       
     #dueDate {
       position: absolute;
