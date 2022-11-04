@@ -6,7 +6,7 @@ const Counter = () => {
   const TaskCount = useSelector((store) => store.todo.items.length);
   return (
     <CounterWrap>
-      <CounterText>You have {TaskCount} tasks today</CounterText>
+      <CounterText>You have {TaskCount} tasks to complete today</CounterText>
     </CounterWrap>
   )
 }
@@ -14,15 +14,12 @@ const Counter = () => {
 export default Counter;
 
 const CounterWrap = styled.div`
-display: flex;
 position: relative;
-right: 121%;
-top: 128px;
+right: 122%;
+top: 10px;
 `
 const CounterText = styled.p`
 position: relative;
-width: 300px;
-height: 20px;
-margin: 0 auto;
+width: 200px;
 color: white;
 `

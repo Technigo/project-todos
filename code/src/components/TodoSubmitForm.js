@@ -58,7 +58,6 @@ const TodoSubmitForm = () => {
           id="calendar"
           type="time"
           value={isDate}
-          dateFormat="MM/dd/yyyy h:mm aa"
           onChange={(e) => setDate(e.target.value)}
           required />
         <TagWrap>

@@ -24,7 +24,7 @@ const WeekDay = styled.p`
 position: relative;
 right: 90%;
 z-index: 1;
-top: 30px;
+top: 80px;
 font-size: 3rem;
 color: white;
 `
