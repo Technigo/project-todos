@@ -30,7 +30,6 @@ export const AddNewTaskWrapper = styled.form`
     }
 
     
-      
     #dueDate {
       position: absolute;
       right: 70px;
@@ -55,4 +54,8 @@ export const AddNewTaskBtn = styled.button`
     text-align: center;
     cursor: pointer;
     margin-right: 15px;
+
+    &:hover {
+      transform: scale(1.1)
+    }
 `

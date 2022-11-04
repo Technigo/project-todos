@@ -23,6 +23,5 @@ export const HeaderStyled = styled.header`
             font-size: 2.5rem;
         }
     }
-
     
 `
