@@ -28,7 +28,7 @@ export const TaskList = () => {
         {outstandingTasks.map((item) => {
           return (
             <Styled.ListItem>
-              <p>{item.name}</p>
+              <Styled.ListText>{item.name}</Styled.ListText>
               <Styled.Clickers>
                 <input
                   type="checkbox"
@@ -36,7 +36,7 @@ export const TaskList = () => {
                   onChange={() => completedTaskToggle(item.id)} />
                 <button
                   type="button"
-                  onClick={() => deleteTask(item.id)}>❌
+                  onClick={() => deleteTask(item.id)}>🔥
                 </button>
               </Styled.Clickers>
             </Styled.ListItem>
@@ -48,7 +48,7 @@ export const TaskList = () => {
         {completedTasks.map((item) => {
           return (
             <Styled.ListItem>
-              <p>{item.name}</p>
+              <Styled.ListText>{item.name}</Styled.ListText>
               <Styled.Clickers>
                 <input
                   type="checkbox"
@@ -56,7 +56,7 @@ export const TaskList = () => {
                   onChange={() => completedTaskToggle(item.id)} />
                 <button
                   type="button"
-                  onClick={() => deleteTask(item.id)}>❌
+                  onClick={() => deleteTask(item.id)}>🔥
                 </button>
               </Styled.Clickers>
             </Styled.ListItem>

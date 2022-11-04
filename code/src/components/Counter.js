@@ -1,24 +1,18 @@
+/* eslint-disable max-len */
 import React from 'react'
 import { useSelector } from 'react-redux'
-
-// WHAT I WANT TO DO HERE:
-// Add a counter that displays the number of completed tasks vs remainining (X/Y) /DONE
-
-// HEADER
-// COUNTER
-// TASKFORM
-// TASKLIST
+import { Styled } from './Counter.styled';
 
 export const Counter = () => {
   const allTasks = useSelector((store) => store.tasks.items);
   const completedTasks = allTasks.filter((items) => items.isCompleted === true)
   if (allTasks.length !== completedTasks.length) {
     return (
-      <h2>You have completed {completedTasks.length}/{allTasks.length} tasks</h2>
+      <Styled.Heading>You have completed {completedTasks.length}/{allTasks.length} tasks</Styled.Heading>
     )
   } else {
     return (
-      <h2>Got something you need to do?</h2>
+      <Styled.Heading>Got something you need to do?</Styled.Heading>
     )
   }
 }
