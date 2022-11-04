@@ -1,7 +1,12 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { v4 as uuid } from 'uuid'; // This was installed with npm install uuidv4
-import tasks from 'reducers/tasks';
+import { addTask } from 'reducers/tasks';
+
+import sendIcon from 'assets/paper-plane-icon.svg'
+
+import { v4 as uuid } from 'uuid'; // This was installed with npm i uuidv4
+import moment from 'moment'; // This was installed with npm i moment.
+
 import styled from 'styled-components/macro';
 
 const TaskInput = () => {
@@ -14,50 +19,54 @@ const TaskInput = () => {
   const handleOnFormSubmit = (event) => {
     event.preventDefault();
 
-    dispatch(tasks.actions.addTask({
+    const newTaskInfo = {
       id: uniqueID,
       taskDescription: newTask,
-      isChecked: false
-    }));
+      isChecked: false,
+      createdAt: moment().format('l')
+    };
+
+    dispatch(addTask(newTaskInfo));
 
     setNewTask('');
-  }
-
-  const handleNewTaskChange = (event) => {
-    setNewTask(event.target.value);
   };
 
   return (
     <TaskInputWrapper>
       <Form onSubmit={handleOnFormSubmit}>
-        <TextArea
+        <TextInput
           value={newTask}
-          onChange={handleNewTaskChange}
+          onChange={(e) => setNewTask(e.target.value)}
           placeholder="Write down your task" />
         <AddTaskButton
           type="submit"
-          disabled={newTask.length <= 0}>+
+          disabled={newTask.length <= 0}>
+          <img src={sendIcon} alt="send task" />
         </AddTaskButton>
       </Form>
     </TaskInputWrapper>
-  )
-}
+  );
+};
 
 export default TaskInput;
 
 const TaskInputWrapper = styled.div`
-  display: flex;  
-  
+  display: flex;
+  width: 100%;
+  flex-direction: column;
 `
 const Form = styled.form`
   display: flex;
+  flex-direction: row;
   align-items: center;  
 `
-const TextArea = styled.textarea`
-  padding: 8px;
+const TextInput = styled.input`
+  width: 100%;
+  margin: 0;
+  padding: 0;
   resize: none;
   border: 1px solid rgb(162, 162, 162);
-  height: 50px;
+  height: 30px;
   word-wrap: break-word;
 
   :focus {
@@ -65,15 +74,21 @@ const TextArea = styled.textarea`
     border: 1px solid pink;
   }
 `
-
 const AddTaskButton = styled.button`
-  background-color: lightgreen;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  cursor: pointer;
-  :hover {
-    background-color: grey;
+  display: flex;
+  background-color: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;  
+  img {
+    margin: 3px;
+    width: 25px;
+    height: 25px;       
   }
+  
+  cursor: pointer;
+  /* :hover {
+    background-color: grey;
+  } */
 `
 

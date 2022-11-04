@@ -1,19 +1,21 @@
 import React from 'react';
-import styled from 'styled-components/macro'
+import styled from 'styled-components/macro';
 import { InnerWrapper, OuterWrapper } from 'styles/ProjectStyles';
-import ChooseDate from './ChooseDate';
 import TaskFilters from './TaskFilters';
 import TaskInput from './TaskInput';
 import TaskList from './TaskList';
+import TaskCounter from './TaskCounter';
+import Header from './Header';
 
 const Card = () => {
   return (
     <OuterWrapper>
       <InnerWrapper>
         <CardWrapper>
-          <ChooseDate />
+          <Header />
           <TaskInput />
           <TaskFilters />
+          <TaskCounter />
           <TaskList />
         </CardWrapper>
       </InnerWrapper>
@@ -27,7 +29,7 @@ const CardWrapper = styled.section`
   display: flex;
   flex-direction: column;
   row-gap: 2vh;  
-  height: 500px;
+  height: auto;
   padding: 5vh; 
   border-radius: 30px;
   background: #e0e0e0;
