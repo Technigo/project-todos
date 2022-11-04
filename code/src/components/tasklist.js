@@ -6,9 +6,9 @@ import { tasks } from 'reducers/tasks';
 import { Task } from 'styledComponents/Task';
 import { FaTrashAlt } from 'react-icons/fa';
 import {
-  CheckAllContainer,
   DeleteButton,
-  FilterContainer
+  FilterContainer,
+  Footer
 } from 'styledComponents/Buttons';
 
 import Header from './header';
@@ -97,14 +97,14 @@ const TaskList = () => {
           })}
         </div>
       </section>
-      <CheckAllContainer>
+      <Footer>
         <button type="button" onClick={onCompleteAll}>
           Check all
         </button>
         <button type="button" onClick={deleteALL}>
           Clear all
         </button>
-      </CheckAllContainer>
+      </Footer>
     </div>
   );
 };

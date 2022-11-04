@@ -6,6 +6,7 @@ export const AddButton = styled.button`
   border-radius: 5px;
   color: white;
   padding: 2px 10px 2px 10px;
+  cursor: pointer;
 `;
 
 export const DeleteButton = styled.button`
@@ -31,7 +32,7 @@ export const FilterContainer = styled.div`
   }
 `;
 
-export const CheckAllContainer = styled.div`
+export const Footer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -48,5 +49,6 @@ export const CheckAllContainer = styled.div`
     border-radius: 5px;
     color: #e9e9e9;
     border: none;
+    cursor: pointer;
   }
 `;

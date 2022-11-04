@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 import React from 'react';
+
 // import { Title } from 'styledComponents/Title';
 // import TitleImage from '/assets/brush.svg';
 
@@ -11,15 +12,15 @@ const Header = () => {
     weekday: 'long'
   });
 
-  // const month = currentDate.toLocaleString('en-US', { month: 'long' });
+  const month = currentDate.toLocaleString('en-US', { month: 'long' });
 
   return (
     <div>
-      <div>
+      <div className="test-2">
         <p>{weekday}</p>
         <p>{day}</p>
+        <p>{month}</p>
       </div>
-      {/* <p>{month}</p> */}
 
       <div className="title-container">
         <h1 className="title">TO-DO LIST</h1>

@@ -12,7 +12,7 @@ export const Wrapper = styled.div`
 
 export const Container = styled.div`
   width: 600px;
-  min-height: 650px;
+  min-height: 500px;
   background-color: #f7f5f1;
   padding: 20px;
   margin-top: 20px;
