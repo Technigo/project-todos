@@ -11,11 +11,9 @@ export const StyledTodo = styled.div`
     border-radius: 10px;
     justify-content: space-between;
 
-  
-
-    label {
-        font-size: 1.1rem;
-        padding-left: 1rem;
+    #customCheck {
+        display: flex;
+        gap: 2rem;
     }
 
     .dateTime {
