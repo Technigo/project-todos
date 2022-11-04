@@ -10,27 +10,34 @@ export const AddNewTaskWrapper = styled.form`
     input[type=text] {
       justify-self: left;
       padding: 15px;
-      border-radius: 25px;
+      border-radius: 15px;
       border: none;
-      background: #8080801f;
+      background: #ede4e0;
       width: 100vw;
+      outline: none;
+      font-size: 1rem;
+      }
+
+    input::placeholder {
+      font-weight: bold;
+      opacity: .5;
+    }
 
       &:focus {
         outline: none;
-        border: 0.5px solid #96e4a285;
+        border: 0.5px solid #9F73AB;
       }
-    }
-    
-    #dueDateLabel {
+
+      
+    #dueDate {
       position: absolute;
-      right: 22vw;
-      top: 32px;
+      right: 70px;
       z-index: 99;
-      display: flex;
-      flex-direction: column;
+      padding: 3px;
+      border-radius: 8px;
     }
-    
-    
+
+   
 `
 
 export const AddNewTaskBtn = styled.button`
@@ -41,7 +48,7 @@ export const AddNewTaskBtn = styled.button`
     width: 30px;
     font-size: 1.1em;
     border-radius: 50%;
-    background-color: #4CAF50;
+    background-color: #7dbc66;
     color: white;
     text-align: center;
     cursor: pointer;

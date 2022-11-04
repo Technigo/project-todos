@@ -18,20 +18,19 @@ export const Todo = ({ task }) => {
 
   return (
     <StyledTodo className={task.complete === true ? 'finished' : 'notFinished'}>
-      <input
-        name={task.text}
-        type="checkbox"
-        checked={task.complete}
-        className={task.complete === true ? 'finished' : 'notFinished'}
-        onChange={() => setToComplete(task.id)} />
-      <label
-        htmlFor={task.text}
-        className={task.complete === true ? 'finished' : 'notFinished'}>{task.text}
-      </label>
-      <div className="dateTime">
-        <p className={task.complete === true ? 'finished' : 'notFinished'}>Created: {task.postedTime}</p>
-        <p className={task.complete === true ? 'finished' : 'notFinished'}>Due date: {task.dueDate}</p>
+      <div id="checkText" className={task.complete === true ? 'finished' : 'notFinished'}>
+        <input
+          name={task.text}
+          type="checkbox"
+          checked={task.complete}
+          onChange={() => setToComplete(task.id)} />
+        <label htmlFor={task.text}>{task.text}</label>
+        <div className="dateTime">
+          <p>Created: {task.postedTime}</p>
+          <p>Due: {task.dueDate}</p>
+        </div>
       </div>
+
       <DeleteBtn type="button" onClick={() => deleteTask(`${task.id}`)}><img src={trashbin} alt="delete" /></DeleteBtn>
     </StyledTodo>
   )

@@ -30,14 +30,13 @@ export const AddNewTask = () => {
         name="newTaskInput"
         value={input}
         onChange={(e) => setInput(e.target.value)} />
-      <span id="dueDateLabel">
-        <label htmlFor="dueDateInput">Due Date </label>
-        <select name="dueDate" id="dueDate" onChange={(e) => setDueDate(e.target.value)}>
-          <option value={today}>Today</option>
-          <option value={tomorrow}>Tomorrow</option>
-          <option value="Later">Later</option>
-        </select>
-      </span>
+      <label hidden htmlFor="dueDate" />
+      <select name="dueDate" id="dueDate" onChange={(e) => setDueDate(e.target.value)}>
+        <option value="" default>Due date:</option>
+        <option value={today}>Today</option>
+        <option value={tomorrow}>Tomorrow</option>
+        <option value="Later">Later</option>
+      </select>
 
       <AddNewTaskBtn type="submit">&#43;</AddNewTaskBtn>
     </AddNewTaskWrapper>

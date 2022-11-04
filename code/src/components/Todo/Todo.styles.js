@@ -4,27 +4,34 @@ import styled from 'styled-components/macro'
 export const StyledTodo = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     padding: 12px;
     margin-bottom: 10px;
+    background: #ede4e0;
     border: 1px solid #80808026;
     border-radius: 10px;
-    box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+    justify-content: space-between;
 
-    input {
-        justify-self: left
+  
+
+    label {
+        font-size: 1.1rem;
+        padding-left: 1rem;
     }
 
-    p {
-        font-size: 0.7rem;
-   }
+    .dateTime {
+        font-size: 0.8rem;
+        padding-top: 1rem;
+    }
 
+    ~ .finished {
+        background: #C8DBBE;
+    }
+ 
     .finished {
-        opacity: 0.2;
-        text-decoration: line-through;
 
-        ~ button {
-            opacity: 0.2
+        label, p {
+        opacity: 0.8;
+        text-decoration: line-through;
         }
     }
 `

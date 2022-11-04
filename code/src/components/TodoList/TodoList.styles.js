@@ -17,7 +17,7 @@ export const ClearCompleteBtn = styled.button`
     width: 90px;
     font-size: 1rem;
     border-radius: 25px;
-    background-color: #4CAF50;
+    background-color: #665A48;
     color: white;
     text-align: center;
     cursor: pointer;
