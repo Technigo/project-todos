@@ -82,6 +82,7 @@ const DeleteButton = styled.button`
     color: red;
     font-weight: bold;
     font-size: 14px;
+    padding: 0;
 
     &:hover {
       background-color: #ccc;
