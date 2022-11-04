@@ -13,7 +13,7 @@ const TaskList = () => {
     if (listFromStorage) {
       dispatch(setAllItems(listFromStorage))
     }
-  }, [])
+  }, [dispatch])
 
   const taskList = useSelector((store) => store.tasks.items);
   const filter = useSelector((store) => store.tasks.filteredBy);
