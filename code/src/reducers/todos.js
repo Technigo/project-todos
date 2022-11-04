@@ -22,6 +22,19 @@ const todos = createSlice({
       };
       store.items = [newToDo, ...store.items]
     },
+    /*    toggleToDo: (store, action) => {
+      const updatedItems = store.items.map((item) => {
+        if (item.id === action.payload) {
+          const updatedToDo = {
+            ...item, isComplete: !item.isComplete
+          }
+          return updatedToDo
+        } else {
+          return item
+        }
+      })
+      store.items = updatedItems
+    }, */
     toggleToDo: (store, action) => {
       store.items.forEach((item) => {
         if (item.id === action.payload) {

@@ -1,11 +1,8 @@
 import React from 'react';
 import styled from 'styled-components/macro';
-/* import moment from 'moment'; */
+import moment from 'moment';
 
 const Header = () => {
-  /* const date = {
-    todaysDate: moment().format('LLL')
-  } */
   return (
     <HeaderStyle>
       <div className="container-right">
@@ -13,7 +10,7 @@ const Header = () => {
         <p>Keep track on your tasks</p>
       </div>
       <div className="container-left">
-        <p>{/* {date} */}</p>
+        <p>{moment().format('LL')}</p>
       </div>
     </HeaderStyle>
   )

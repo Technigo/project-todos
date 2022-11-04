@@ -25,7 +25,7 @@ const AddToDo = () => {
         type="text"
         value={input}
         onChange={onInputChange}
-        placeholder="Write new task"
+        placeholder="🖊️ Add a new Task"
         required=" "
         autoComplete="off" />
       <button type="submit">Test</button>
@@ -34,3 +34,5 @@ const AddToDo = () => {
 }
 
 export default AddToDo
+
+// word-wrap: break-word;
