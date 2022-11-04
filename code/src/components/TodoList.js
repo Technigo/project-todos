@@ -75,6 +75,14 @@ padding: 5px 0px;
 display: flex;
 align-items: flex-start;
 flex-direction: column;
+
+@media (min-width: 668px){
+  padding: 10px 0px;
+
+  }
+  @media (min-width: 1025px){
+    
+  }
 `
 const TodoBox = styled.div`
   display: flex;
@@ -94,7 +102,7 @@ const NewTodoAndBtn = styled.div`
 `
 
 // const TimeStampStyling = styled.p`
-//   font-size: 13px;
+//   font-size: 0.8rem;
 //   color: #5A7869;
 //   padding-left: 28px;
 //   margin-top: -6px;

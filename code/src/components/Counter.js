@@ -25,4 +25,12 @@ const Counter = styled.p`
   height: 100%;
   display: flex;
   align-items: center;
+
+  @media (min-width: 668px){
+    padding: 20px 40px;
+
+  }
+  @media (min-width: 1025px){
+    
+  }
 `

@@ -37,10 +37,12 @@ const NewTodo = () => {
         </Label>
         <Button
           type="submit"
-          margin="8px"
+          margin="0px 10px"
+          margintablet="0px 20px"
           color="#D1DED9"
           lineheight="0px"
           padding="12px"
+          paddingtablet="20px 20px"
           backgroundcolor="#1F593C">
             ADD
         </Button>
@@ -67,6 +69,16 @@ const InputField = styled.input`
   &:focus-visible {
     outline: none;
 }
+@media (min-width: 668px){
+  height: 70px;
+  padding: 10px 40px;
+  border-radius: 70px;
+  
+  }
+  @media (min-width: 1025px){
+    
+  }
+
 `
 const InputBox = styled.div`
   background-color: #367857;
@@ -74,6 +86,13 @@ const InputBox = styled.div`
   width: 100%;
   margin-bottom: 30px;
 
+  @media (min-width: 668px){
+  border-radius: 70px;
+  
+  }
+  @media (min-width: 1025px){
+    
+  }
 `
 
 const Form = styled.form`

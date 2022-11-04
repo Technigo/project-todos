@@ -63,16 +63,6 @@ input[type="checkbox"] {
   opacity: 0;
 }
 
-input[type="checkbox"] + p::after {
-  position: absolute;
-  top: 0;
-  left: -15px;
-  width: 30px;
-  height: 30px;
-  background-image: url(./images/Icon-unchecked.png);
-  background-size: cover;
-}
-
 input[type="checkbox"] + p {
   position: relative;
   padding-left: 20px;
@@ -103,4 +93,35 @@ input[type="checkbox"] + p::after{
   height: 30px;
   background-image: url(./images/Icon-unchecked.png);
   background-size: cover;
+}
+
+
+@media (min-width: 668px) {
+  html {
+    font-size: 22px;
+  }
+  input[type="checkbox"] + p {
+    padding-left: 30px;
+  }
+  
+  input[type="checkbox"]:checked + p::before {
+    top: -5px;
+    width: 40px;
+    height: 40px;
+    background-image: url(./images/Icon-checked.png);
+    background-size: cover;
+    z-index: 1;
+  }
+  
+  input[type="checkbox"] + p::after{
+    top: -5px;
+    width: 40px;
+    height: 40px;
+    background-image: url(./images/Icon-unchecked.png);
+    background-size: cover;
+  }
+}
+
+@media (min-width: 1025px) {
+  
 }

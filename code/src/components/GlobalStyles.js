@@ -24,12 +24,22 @@ export const Button = styled.button`
   background-color: ${(props) => (props.backgroundcolor)};
   border-radius: 20px;
   cursor: pointer;
-  font-size: 13px;
+  font-size: 0.8rem;
   color: ${(props) => (props.color)};
   margin: ${(props) => (props.margin)};
   height: 30px;
   line-height: ${(props) => (props.lineheight)};
   padding:${(props) => (props.padding)};
+
+  @media (min-width: 668px){
+    margin: ${(props) => (props.margintablet)};
+    padding:${(props) => (props.paddingtablet)};
+
+
+  }
+  @media (min-width: 1025px){
+    
+  }
 `
 
 export const Label = styled.label`
@@ -38,4 +48,13 @@ export const Label = styled.label`
   width: 100%;
   background-color:  #367857;
   border-radius: 20px;
+
+  @media (min-width: 668px){
+    border-radius: 70px;
+
+  }
+  @media (min-width: 1025px){
+    
+  }
+  
 `
