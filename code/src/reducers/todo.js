@@ -23,6 +23,10 @@ const todo = createSlice({
         (item) => item.id !== action.payload
       )
       store.items = updatedItems
+    },
+    deleteAllTodos: (store) => {
+      const emptyList = [];
+      store.items = emptyList
     }
   }
 });

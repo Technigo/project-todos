@@ -17,6 +17,11 @@ const TodoList = () => {
     dispatch(todo.actions.deleteTodo(id))
   }
 
+  // deletes all tasks from list
+  const deleteAllTodos = () => {
+    dispatch(todo.actions.deleteAllTodos())
+  }
+
   return (
     <TaskList>
       <TaskSection>
@@ -38,6 +43,7 @@ const TodoList = () => {
           );
         })}
       </TaskSection>
+      <DeleteAllButton onClick={deleteAllTodos}>Delete all tasks</DeleteAllButton>
     </TaskList>
   )
 }
@@ -90,4 +96,17 @@ const CheckAndDeleteWrapper = styled.div`
 `
 const TaskText = styled.div`
   width: 75%;
+`
+const DeleteAllButton = styled.button`
+border: none;
+font-size: 12px;
+float: right;
+text-decoration: underline;
+cursor: pointer;
+background-color: #e5f2f5;
+
+&:hover {
+  font-size: 14px;
+  color: rgba(0,126,159,1)
+}
 `
