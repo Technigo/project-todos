@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
+import { InnerWrapper, OuterWrapper } from 'styles/GlobalStyles';
 
 export const TaskInput = () => {
   // useState to set new tasks
@@ -26,19 +27,23 @@ export const TaskInput = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-      <button type="submit">+</button>
-      <label htmlFor="a">
-        <input
-          type="text"
-          value={inputValue}
-          required
-          placeholder="Add task"
-          maxLength="100"
-          onChange={(event) => setInputValue(event.target.value)}
-        />
-      </label>
-    </form>
+    <OuterWrapper>
+      <InnerWrapper>
+        <form onSubmit={onFormSubmit}>
+          <button type="submit">+</button>
+          <label htmlFor="a">
+            <input
+              type="text"
+              value={inputValue}
+              required
+              placeholder="Add task"
+              maxLength="100"
+              onChange={(event) => setInputValue(event.target.value)}
+            />
+          </label>
+        </form>
+      </InnerWrapper>
+    </OuterWrapper>
   );
 };
 
