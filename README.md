@@ -1,12 +1,10 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Simple Todo list web app made to get familiar with Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I was moving this week so I was a bit short on time, that's why I decided to keep it rather simple. There was a lot of functionality I thought of that I didn't have time to even try to implement (like sorting tasks after category, date added etc.). Even thoughI-t really helped me understanding Redux a bit better. I also went back to look at the code for the quiz project (all the reducers and some of the selectors were already there when we started on that project) and was happy to find that I understood it way better now. 
 
 ## View it live
 
