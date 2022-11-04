@@ -1,8 +1,6 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A singel application page which user be able to add tasks, list tasks and toggle whether a task is done or not.
 
 ## The problem
 
