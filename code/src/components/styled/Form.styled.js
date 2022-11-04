@@ -16,6 +16,20 @@ export const StyledForm = styled.form`
     padding: .8rem 1.4rem;
   }
 
+  & label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: 1.5rem;
+    width: 100%;
+   }
+
+  & p /* error message */ {
+    display: inline;
+    color: tomato;
+    font-weight: 900;
+  }
+
   & input {
     background-color: var(--light-color);
     border: none;

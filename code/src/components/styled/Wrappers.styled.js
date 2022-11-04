@@ -4,7 +4,6 @@ export const OuterWrapper = styled.div`
   background-color: whitesmoke;
   min-height: 100vh;
   min-width: 100vw;
-  padding-top: 1px;
 `
 
 export const InnerWrapper = styled.div`

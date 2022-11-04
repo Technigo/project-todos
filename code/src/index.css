@@ -70,7 +70,7 @@ code {
   border-radius: 50%;
   background: var(--main-color);
   background-image: url("./assets/checkmark.png");
-  background-size: 75%;
+  background-size: 70%;
   background-repeat: no-repeat;
   background-position: center;
   transform: scale(1.1);
