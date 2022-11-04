@@ -19,9 +19,6 @@ const todos = createSlice({
     ]
   },
   reducers: {
-    setAllItems: (store, action) => {
-      store.items = action.payload;
-    },
     toggleTodoItem: (store, action) => {
       console.log(store);
       console.log(action);
@@ -47,6 +44,9 @@ const todos = createSlice({
       console.log(action);
       store.items.push(action.payload)
       /* store.items = [...store.items, action.payload] */
+    },
+    setAllItems: (store, action) => {
+      store.items = action.payload;
     }
   }
 });

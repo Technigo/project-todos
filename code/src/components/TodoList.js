@@ -1,18 +1,27 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components/macro'
 import { useSelector, useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 
 const TodoList = () => {
-  const todoList = useSelector((store) => store.todos.items)
   const dispatch = useDispatch();
+  useEffect(() => {
+    const listFromStorage = JSON.parse(localStorage.getItem('toDoList'))
+    if (listFromStorage) {
+      dispatch(todos.actions.setAllItems(listFromStorage))
+    }
+  }, [dispatch])
+  const todoList = useSelector((store) => store.todos.items)
   const onIsDoneToggle = (id) => {
     dispatch(todos.actions.toggleTodoItem(id))
   }
   const onDeleteTodoButtonClick = (todosIndex) => {
     dispatch(todos.actions.deleteTodoItem(todosIndex))
   }
+  useEffect(() => {
+    localStorage.setItem('toDoList', JSON.stringify(todoList))
+  }, [todoList])
   return (
     <>
       {todoList.map((singleTodo, index) => {
