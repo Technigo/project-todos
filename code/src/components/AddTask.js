@@ -57,6 +57,7 @@ color: white;
 margin-bottom: 10px;
 font-size: 24px;
 font-weight: bold;
+padding: 0;
 `
 const FormWrapper = styled.div`
 margin: 20px;
