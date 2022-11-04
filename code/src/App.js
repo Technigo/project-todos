@@ -6,7 +6,7 @@ import { Header } from 'components/Header';
 import { Counter } from 'components/Counter';
 import { AddTaskForm } from 'components/AddTaskForm';
 import { TaskList } from 'components/TaskList';
-import { Styled } from 'components/Wrappers'
+import { Styled } from 'components/Wrappers.styled'
 
 export const App = () => {
   const reducer = combineReducers({
