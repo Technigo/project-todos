@@ -25,22 +25,21 @@ const NewTask = () => {
     setNewTask('')
   }
   return (
-    <form onSubmit={onAddNewTask}>
-      <NewTaskDiv>
+    <NewTaskDiv>
+      <form onSubmit={onAddNewTask}>
         <Input
           type="text"
           placeholder="Add new task here"
           value={newTask}
           onChange={(event) => setNewTask(event.target.value)}
           required />
-        <NewTaskAndTasksLeft>
-          <NewTaskButton type="submit" onClick={() => onAddNewTask}>Add new task</NewTaskButton>
-          <TasksLeft>
-            Tasks left: {tasksMarkedAsDone.length}
-          </TasksLeft>
-        </NewTaskAndTasksLeft>
-      </NewTaskDiv>
-    </form>
+        <NewTaskButton type="submit" onClick={() => onAddNewTask}>Add new task</NewTaskButton>
+      </form>
+      <TasksLeft>
+        Tasks left: {tasksMarkedAsDone.length}
+      </TasksLeft>
+    </NewTaskDiv>
+
   )
 }
 export default NewTask;
@@ -49,19 +48,29 @@ const NewTaskDiv = styled.div`
 display: flex;
 flex-direction: column;
 padding: 15px;
-align-items: flex-end;
+align-items: center;
 `
 
 const Input = styled.input`
 border: 1px solid #DF7861;
 border-radius: 20px;
 width: 100%;
+padding: 5px;
+
+&:focus {
+    outline: none;
+    border-color: #FCF8E8;
+  }
+::placeholder,
+  ::-webkit-input-placeholder {
+    color: #ECB390;
+  }
 `
-const NewTaskAndTasksLeft = styled.div`
- display: flex;
- flex-direction: row;
- align-items: center;
- `
+// const NewTaskAndTasksLeft = styled.div`
+//  display: flex;
+//  flex-direction: row;
+//  align-items: center;
+//  `
 
 const NewTaskButton = styled.button`
 background-color: #ECB390;
@@ -75,5 +84,7 @@ const TasksLeft = styled.p`
 font-family: 'Libre Franklin', sans-serif;
 font-size: 13px;
 padding: 5px;
+margin: 5px;
+align-self: flex-end;
 `
 

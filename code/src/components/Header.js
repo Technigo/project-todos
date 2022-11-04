@@ -24,5 +24,12 @@ font-family: 'Rochester', cursive;
 color: #DF7861;
 font-size: 30px;
 padding-bottom: 10px;
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  font-size: 33px;
+  }
+  @media (min-width: 1025px) {
+    font-size: 36px;
+  }
 `
 export default Header;

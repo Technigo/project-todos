@@ -14,6 +14,7 @@ export const InnerWrapper = styled.section`
   width: 50%;
   background-color: #94B49F;
   border-radius: 20px;
+  box-shadow: 5px 5px 5px #ECB390;
   @media (min-width: 668px) and (max-width: 1024px) {
     width: 40%;
   }

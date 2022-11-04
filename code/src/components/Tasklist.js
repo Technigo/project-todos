@@ -27,6 +27,7 @@ const Tasks = () => {
               <SingleTask>
                 <input
                   type="checkbox"
+                  id="checkbox"
                   checked={singleTask.isDone}
                   onChange={() => onIsTaskDone(singleTask.id)} />
                 <label>
@@ -50,7 +51,7 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: space-between;
-margin: 15px;
+margin: 25px;
 `
 const SingleTask = styled.div`
 display: flex;
@@ -63,6 +64,15 @@ align-content: flex-end;
 const TasklistText = styled.p`
 font-family: 'Montserrat', sans-serif;
 font-size: 13px;
+text-transform: uppercase ;
+padding-left: 5px;
+
+@media (min-width: 668px) and (max-width: 1024px) {
+   font-size: 15px;
+  }
+  @media (min-width: 1025px) {
+  font-size: 17px;
+  }
 `
 
 const RemoveTaskButton = styled.button`
