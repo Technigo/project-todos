@@ -36,6 +36,7 @@ export const AddNewTaskWrapper = styled.form`
       z-index: 99;
       padding: 3px;
       border-radius: 8px;
+      cursor: pointer;
     }
 
    

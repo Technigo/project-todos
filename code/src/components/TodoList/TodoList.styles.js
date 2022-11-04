@@ -4,12 +4,15 @@ import styled from 'styled-components/macro'
 export const TodoListContainer = styled.section`
     align-self: center;
     margin: 10px;
-
+    
     h2 {
         font-size: 1.1rem;
         padding-bottom: 20px;
     }
 
+    > .finished {
+        background: #C8DBBE;
+    }
 `
 
 export const ClearCompleteBtn = styled.button`

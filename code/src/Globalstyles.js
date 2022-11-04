@@ -12,7 +12,19 @@ export const GlobalStyles = createGlobalStyle`
 
    body {
       background: #7D6E83;
+      animation-name: slide-in-left;
+      animation-duration: 1s;
 
+      @keyframes slide-in-left{
+    from{
+        transform: translate3d(-100%, 0, 0);
+        visibility: visible;
+    }
+    to{
+        transform: translate3d(0, 0, 0);
+    }
+}
+    
    
       @media (min-width: 768px) and (max-width: 1023px) {
          margin: 10vh 20%;

@@ -10,10 +10,26 @@ export const StyledTodo = styled.div`
     border: 1px solid #80808026;
     border-radius: 10px;
     justify-content: space-between;
+    animation-name: fade-in;
+    animation-duration: .9s;
+
+    @keyframes fade-in{
+        from{
+            opacity: 0;
+        }
+        to{
+            opacity: 1;   
+        }
+    }
+
 
     #customCheck {
         display: flex;
         gap: 2rem;
+
+       span {
+            cursor: pointer;
+        }
     }
 
     .dateTime {
@@ -21,9 +37,6 @@ export const StyledTodo = styled.div`
         padding-top: 1rem;
     }
 
-    ~ .finished {
-        background: #C8DBBE;
-    }
  
     .finished {
 
@@ -41,7 +54,7 @@ export const DeleteBtn = styled.button`
     border: none;
 
     img {
-        width: 18px;
+        width: 20px;
     }
 
 `
