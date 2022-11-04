@@ -27,10 +27,11 @@ const ToDoItems = () => {
   }
 
   const entireList = toDoList.map((item) => {
-    // <a href="https://www.flaticon.com/free-icons/thumb-tack" title="thumb tack icons">Thumb tack icons created by popo2021 - Flaticon</a>
     return (
-      <ToDoItem key={item.id}>
-        <DeleteButton type="button" onClick={() => onDeleteClick(item.id)}>
+      <ToDoItem
+        style={{ backgroundColor: item.isCompleted ? '#7ce17c' : '#e17c7c' }}
+        key={item.id}>
+        <DeleteButton aria-label={`Delete task ${item.content}`} type="button" onClick={() => onDeleteClick(item.id)}>
           <PinContainer>
             <Pin src={pin} alt="pin" />
             <span>❌</span>
@@ -44,11 +45,12 @@ const ToDoItems = () => {
             <input
               type="checkbox"
               checked={item.isCompleted}
+              aria-label={`Toggle task ${item.content} completion`}
               onChange={() => onCompletedClick(item.id)} />
             <Checkmark className="checkmark"> </Checkmark>
           </label>
           <ItemContentContainer>
-            <p>{item.content}</p>
+            <p aria-label={item.content}>{item.content}</p>
           </ItemContentContainer>
         </ContentWrapper>
       </ToDoItem>
@@ -60,8 +62,7 @@ const ToDoItems = () => {
 export default ToDoItems;
 
 const ItemContentContainer = styled.div`
-  overflow-y: scroll;
-  height: 3rem;
+  line-height:1;
 `
 
 const PinContainer = styled.div`

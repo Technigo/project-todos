@@ -22,6 +22,8 @@ const TodoInput = () => {
           id="todo-input"
           type="text"
           value={value}
+          maxLength="60"
+          placeholder="Add task"
           onChange={((event) => setValue(event.target.value))} />
       </label>
       <AddButton type="submit">Add</AddButton>
@@ -36,7 +38,7 @@ const FlexForm = styled.form`
   justify-content: space-around;
   align-items: center;
   position: absolute;
-  bottom: -10rem;
+  bottom: -9rem;
   background-color: rgba(62, 62, 62, 0.4);
   height: 7rem;
   width:80vw;
@@ -55,6 +57,11 @@ const StyledInput = styled.input`
   box-shadow: 0.5rem 0.5rem 1rem #000;
   border: none;
   border-radius: 0.5rem;
+  padding: 0.7rem;
+
+  @media (min-width: 600px) {
+    width: 375px;
+  }
 `
 
 const AddButton = styled.button`

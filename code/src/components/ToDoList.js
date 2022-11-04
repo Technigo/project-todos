@@ -13,7 +13,7 @@ const ToDoList = () => {
       </ListHeading>
       <TodoInput />
       <CompletedCounter />
-      <TaskWrapper>
+      <TaskWrapper aria-label="List of tasks">
         <ToDoItems />
       </TaskWrapper>
     </ToDoListWrapper>
@@ -30,8 +30,9 @@ const TaskWrapper = styled.div`
   width: 100%;
   overflow-y: scroll;
   position: relative;
-  padding-top: 0.8rem;
+  padding: 0.8rem 0 0.2rem 0;
   justify-content: center;
+  
 
   @media (min-width: 600px) {
     grid-template-columns: repeat(3, 30%);

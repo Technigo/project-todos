@@ -6,10 +6,8 @@ export const ToDoItem = styled.div`
   gap: 0.2rem;
   word-wrap: break-word;
   width: 100%;
-  height: 5.5rem;
-  
-  
-  background-color: #d8dbe7;
+  height: fit-content;
+  max-height: 8rem;
   position: relative;
   padding: 0.3rem;
   box-shadow: 0.2rem 0.2rem 0.2rem;
@@ -24,7 +22,6 @@ export const Pin = styled.img`
   rotate: -15deg;
   z-index: 1;
 `
-
 export const TaskInteraction = styled.div`
   display: flex;
   justify-content: space-between;
