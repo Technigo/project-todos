@@ -20,9 +20,9 @@ export const AddTaskForm = () => {
   }
 
   return (
-    <div>
+    <Styled.Container>
       <form onSubmit={onFormSubmit}>
-        <input
+        <Styled.InputField
           type="text"
           placeholder="Add new task here..."
           value={NewTask}
@@ -33,6 +33,6 @@ export const AddTaskForm = () => {
                   Add!
         </Styled.FormButton>
       </form>
-    </div>
+    </Styled.Container>
   )
 }

@@ -15,7 +15,8 @@ export const Styled = {
     flex-direction: column;
     align-items: center;
     width: 75%;
-    margin: 10% 0% 0% 0%;
+    min-height: 75vh;
+    margin: 5% 0% 0% 0%;
     border-radius: 1em;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     background-color: #DBE2EF;

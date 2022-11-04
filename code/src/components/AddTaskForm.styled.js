@@ -1,8 +1,22 @@
 import styled from 'styled-components'
 
 export const Styled = {
+  Container: styled.div`
+  display: flex;
+  justify-content: center;
+  `,
+  InputField: styled.input`
+  border-radius: 1em;
+  width: 30vw;
+  height: 4em;
+  background-color: ##eeeeee; 
+  padding-left: 2em;
+  `,
   FormButton: styled.button`
     margin-left: 20px;
+    width: 6em;
+    height: 4em;
+    background-color: whitesmoke;
+    border-radius: 1em;
     `
-// Add more styled components here
 }

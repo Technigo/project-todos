@@ -24,7 +24,7 @@ export const TaskList = () => {
   return (
     <Styled.ListColumns>
       <Styled.List>
-        <h2>Outstanding</h2>
+        <Styled.Heading>Outstanding</Styled.Heading>
         {outstandingTasks.map((item) => {
           return (
             <Styled.ListItem>
@@ -44,7 +44,7 @@ export const TaskList = () => {
         })}
       </Styled.List>
       <Styled.List>
-        <h2>Completed</h2>
+        <Styled.Heading>Completed</Styled.Heading>
         {completedTasks.map((item) => {
           return (
             <Styled.ListItem>

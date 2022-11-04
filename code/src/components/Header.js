@@ -10,7 +10,7 @@ export const Header = () => {
   return (
     <Styled.Container>
       <Styled.Date>{currentDate}</Styled.Date>
-      <Styled.Heading>tasklist</Styled.Heading>
+      <Styled.Heading>TASKLIST</Styled.Heading>
     </Styled.Container>
   )
 }
