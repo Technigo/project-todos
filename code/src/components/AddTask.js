@@ -22,7 +22,6 @@ const AddTask = () => {
     }
     dispatch(tasks.actions.addItem(newTask));
     setListItem('');
-    console.log('newTask', newTask)
   }
 
   return (

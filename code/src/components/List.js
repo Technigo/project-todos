@@ -4,25 +4,27 @@ import tasks from 'reducers/tasks';
 import styled from 'styled-components/macro';
 import { MainSections, MainText } from '../styles/mainStyles';
 
+// Add a sorting, date.
+
 const List = () => {
   const taskList = useSelector((state) => state.tasks.items);
 
   const dispatch = useDispatch();
 
-  const onItemToggle = () => {
-    dispatch(tasks.actions.toggleItem())
+  const onItemToggle = (event) => {
+    dispatch(tasks.actions.toggleItem(event))
   }
 
-  const onRemoveClick = () => {
-    dispatch(tasks.actions.removeItem())
+  const onRemoveClick = (event) => {
+    dispatch(tasks.actions.removeItem(event))
+    console.log('event', event)
   }
 
   return (
     <MainSections>
-      {taskList.map((singleItem) => {
+      {taskList.map((singleItem, index) => {
         return (
           <ArticleWrapper key={singleItem.id}>
-
             <label htmlFor="tasks">
               <input
                 type="checkbox"
@@ -30,18 +32,19 @@ const List = () => {
                 id="tasks"
                 value="tasks"
                 checked={singleItem.completed}
-                onChange={(event) => onItemToggle(event)} />
+                onChange={() => onItemToggle(singleItem.id)} />
             </label>
             <ListText>{singleItem.text}</ListText>
-            <ListText>{singleItem.createdAt}
-            </ListText>
+            <ListText>{singleItem.createdAt}</ListText>
             <RemoveItemBtn
               type="button"
-              onClick={() => onRemoveClick()}>X
+              onClick={() => onRemoveClick(index)}>X
             </RemoveItemBtn>
+            {console.log('index', index)}
+            {console.log('singleItem.id', singleItem.id)}
           </ArticleWrapper>
         )
-      })}
+      }).reverse()}
 
     </MainSections>
   )
