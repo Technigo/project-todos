@@ -1,13 +1,7 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This to-do application allows you to create your own to do list by adding tasks, listing them and marking whether a task is done or not. The website also keeps track of the amount of tasks on the list.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://redux-to-do-list.netlify.app/
