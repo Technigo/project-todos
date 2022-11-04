@@ -18,7 +18,6 @@ const Header = () => {
 export default Header;
 
 const BackgroundImg = styled.img`
-background-size: cover;
 width: 100%;
 `
 const WeekDay = styled.p`
@@ -26,7 +25,6 @@ position: relative;
 right: 90%;
 z-index: 1;
 top: 30px;
-
 font-size: 3rem;
 color: white;
 `
