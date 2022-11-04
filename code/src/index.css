@@ -5,11 +5,30 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url('images/darkbackground.jpg');
-  color: rgb(250, 235, 215);
+  background: #212121;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #ffe1a0;
+
+  /* 
+  color: // const yellowish = '#ffe1a0';
+  // const apricotish = '#ffbe91';
+  // const peachish = '#ff999b';
+  // const pinkish = '#ff7ab8';
+  // const purpleish = '#df6fde';
+  // const blueish = '#7b76ff';
+  // const darkestgray = '#212121';
+  // const darkergray = '#303030';
+  // const darkishgray = '#424242'; */
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+

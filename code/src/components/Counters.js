@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components/macro'
 import { useSelector } from 'react-redux'
 
 export const TaskCounter = () => {
@@ -22,7 +23,12 @@ export const IdeaCounter = () => {
 
   return (
     <section className="counter">
-      <h4>{showAmount} / {number} completed</h4>
+      <Text>{showAmount} / {number} completed</Text>
     </section>
   )
 }
+
+const Text = styled.h4`
+Margin: 0;
+color: #ff7ab8;
+`

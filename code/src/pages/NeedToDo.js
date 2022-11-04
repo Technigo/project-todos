@@ -1,6 +1,6 @@
 import React from 'react';
-import { TaskList } from 'components/TaskList';
-import { AddTask } from 'components/AddTask';
+import { TaskList } from 'components/ToDoLists';
+import { AddTask } from 'components/AddToDo';
 import { HomeBtn } from 'components/HomeBtn';
 
 export const NeedToDo = () => {
