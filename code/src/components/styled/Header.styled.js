@@ -46,7 +46,7 @@ export const StyledHeader = styled.header`
     transition: all .2s ease;
 
     &:hover {
-      background-color: rgb(52, 52, 52);
+      background-color: gray;
     }
   }
 `
