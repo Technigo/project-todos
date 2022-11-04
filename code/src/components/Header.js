@@ -10,20 +10,6 @@ export const Header = () => {
   const completeItems = items.filter((listItem) => listItem.isCompleted)
   const numberOfCompleteItems = completeItems.length
 
-  const HeaderBackground = styled.header`
-    width: 100%;
-    text-align: center;
-    position: relative;
-    height: 25vh;
-    width: 100%; 
-    color: #ffff;
-  `
-  const HeaderTitle = styled.h1`
-    font-weight: 700;
-    font-family: 'Roboto';
-    text-transform: uppercase;
-  `
-
   return (
     <HeaderBackground>
       <HeaderTitle>To-do List</HeaderTitle>
@@ -32,3 +18,17 @@ export const Header = () => {
     </HeaderBackground>
   )
 }
+
+const HeaderBackground = styled.header`
+    width: 100%;
+    text-align: center;
+    position: relative;
+    height: 25vh;
+    width: 100%; 
+    color: #ffff;
+  `
+const HeaderTitle = styled.h1`
+    font-weight: 700;
+    font-family: 'Roboto';
+    text-transform: uppercase;
+  `

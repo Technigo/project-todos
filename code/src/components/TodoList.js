@@ -3,7 +3,45 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import todo from 'reducers/todo';
 import AddTask from 'components/AddTask';
-import styled from 'styled-components'
+import styled from 'styled-components';
+
+const TodoList = () => {
+  const dispatch = useDispatch();
+  const todoList = useSelector((store) => store.todo.items);
+
+  const onIsCompletedToggle = (id) => {
+    dispatch(todo.actions.toggleItem(id));
+  }
+
+  const onDeleteTodo = (id) => {
+    dispatch(todo.actions.deleteTodo(id))
+  }
+
+  return (
+    <TaskList>
+      <TaskSection>
+        <AddTask />
+        {todoList.map((singleTask) => {
+          return (
+            <TaskArticle key={singleTask.id}>
+              <label className="container">
+                <input type="checkbox" checked={singleTask.isCompleted} onChange={() => onIsCompletedToggle(singleTask.id)} />
+                <span className="checkmark" />
+              </label>
+              <TaskText>
+                <p>{singleTask.task}</p>
+              </TaskText>
+              <CheckAndDeleteWrapper>
+                <DeleteButton type="button" onClick={() => onDeleteTodo(singleTask.id)}>X</DeleteButton>
+              </CheckAndDeleteWrapper>
+            </TaskArticle>
+          );
+        })}
+      </TaskSection>
+    </TaskList>
+  )
+}
+export default TodoList;
 
 const TaskList = styled.div`
   background-color: #e5f2f5;
@@ -32,53 +70,20 @@ const TaskArticle = styled.article`
 
 const DeleteButton = styled.button`
     border-radius: 50%;
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border: none;
+    color: red;
+    font-weight: bold;
+    font-size: 14px;
   `
 const CheckAndDeleteWrapper = styled.div`
   width: 25%;
   display: flex;
   justify-content: flex-end;
-  gap: 20px;
+  align-items: center;
+  gap: 10px;
 `
 const TaskText = styled.div`
   width: 75%;
 `
-const TodoList = () => {
-  const dispatch = useDispatch();
-  const todoList = useSelector((store) => store.todo.items);
-
-  const onIsCompletedToggle = (id) => {
-    dispatch(todo.actions.toggleItem(id));
-  }
-
-  const onDeleteTodo = (id) => {
-    dispatch(todo.actions.deleteTodo(id))
-  }
-
-  return (
-    <TaskList>
-      <TaskSection>
-        <AddTask />
-        {todoList.map((singleTask) => {
-          return (
-            <TaskArticle key={singleTask.id}>
-              <TaskText>
-                <p>{singleTask.task}</p>
-              </TaskText>
-              <CheckAndDeleteWrapper>
-                <label className="container">
-                  <input type="checkbox" checked={singleTask.isCompleted} onChange={() => onIsCompletedToggle(singleTask.id)} />
-                  <span className="checkmark" />
-                </label>
-                <DeleteButton type="button" onClick={() => onDeleteTodo(singleTask.id)}>❌</DeleteButton>
-              </CheckAndDeleteWrapper>
-            </TaskArticle>
-          );
-        })}
-      </TaskSection>
-    </TaskList>
-  )
-}
-export default TodoList;

@@ -20,21 +20,12 @@ code {
     monospace;
 }
 
-.hidden {
-  display: none;
-}
-
-.active {
-  display: block; 
-}
-
-
 /* Customize the label (the container) */
 .container {
   display: block;
   position: relative;
   padding-left: 35px;
-  margin-bottom: 12px;
+  margin-top: 12px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
@@ -60,6 +51,7 @@ code {
   height: 25px;
   width: 25px;
   background-color: #eee;
+  border-radius: 50%;
 }
 
 /* On mouse-over, add a grey background color */
@@ -69,7 +61,7 @@ code {
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  background-color: #2196F3;
+  background-color: rgba(0,126,159,0.7);
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
@@ -96,3 +88,4 @@ code {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
 }
+
