@@ -27,7 +27,7 @@ const AddTodo = () => {
         onChange={(event) => setInputValue(event.target.value)} />
       <label htmlFor="new-todo" />
       <AddTodoButtonStyled disabled={inputValue.length > 140} className="btn btn-primary mb-2" type="submit"> Add new to do</AddTodoButtonStyled>
-      <h4>Is this done?</h4>
+      <CompletedQuestionStyled>Is this done?</CompletedQuestionStyled>
     </form>
   )
 }
@@ -36,4 +36,8 @@ export default AddTodo;
 
 const AddTodoButtonStyled = styled.button`
 right:0;
+`
+
+const CompletedQuestionStyled = styled.h4`
+margin-top: 20px;
 `
