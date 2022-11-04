@@ -13,21 +13,26 @@ const TaskList = () => {
     dispatch(todos.actions.toggleItem(id));
   }
 
+  const handleDeleteTask = (index) => {
+    dispatch(todos.actions.deleteTask(index));
+  }
+
   return (
     <ListOuterWrapper>
-      {taskList.map((singleTask) => {
+      {taskList.map((singleTask, index) => {
         return (
           <TaskContainer>
             <Task>
-              <label>
-                <input
-                  type="checkbox"
-                  checked={singleTask.isDone}
-                  onChange={() => onIsDoneToggle(singleTask.id)} />
-              </label>
-              <h2>{singleTask.text}</h2>
+              <input
+                type="checkbox"
+                checked={singleTask.isDone}
+                onChange={() => onIsDoneToggle(singleTask.id)} />
+              <label>{singleTask.text}</label>
             </Task>
-            <DeleteTaskButton type="button">×</DeleteTaskButton>
+            <DeleteTaskButton
+              onClick={() => handleDeleteTask(index)}
+              type="button">×
+            </DeleteTaskButton>
           </TaskContainer>
         );
       })}
@@ -53,15 +58,18 @@ const TaskContainer = styled.div`
     width: 90%;
     padding: 2%;
     border-bottom: solid 0.2px grey;
-
-    h2 {
-      font-size: 15px;
-    }
 `;
 
 const Task = styled.div`
 display:flex;
 flex-direction: row;
+border: solid purple;
+
+label {
+  font-size: 15px;
+}
+
+
 `;
 
 const DeleteTaskButton = styled.button`

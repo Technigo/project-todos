@@ -18,20 +18,14 @@ const todos = createSlice({
       store.items.push(action.payload)
     },
     toggleItem: (store, action) => {
-      console.log(store);
-      console.log(action);
-      // store.items.find((item) => item.id === action.payload).isCaught = !store.items.find((item) => item.id === action.payload).isCaught;
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.isDone = !item.isDone
         }
       });
     },
-    deleteTask: (store, { payload: itemId }) => {
-      return {
-        store,
-        items: store.items.filter((item) => item.id !== itemId)
-      }
+    deleteTask: (store, action) => {
+      store.items.splice(action.payload, 1);
     },
     clearList: (store) => {
       store.items = []

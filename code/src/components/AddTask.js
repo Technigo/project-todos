@@ -40,7 +40,7 @@ export default AddTask;
 
 const FormWrapper = styled.form`
     width: 100%;
-    height: 8vh;
+    height: 50px;
     display: flex;
     justify-content: center;
     margin-top: 5%;
@@ -53,7 +53,7 @@ const FormContainer = styled.div`
     justify-content: space-between;
 
     input {
-      width: 80%;
+      width: 75%;
       border-radius: 5px;
       border: solid 0.2px;
       padding-left: 10px;
