@@ -59,6 +59,7 @@ export const Styled = {
 
     &:hover {
       cursor: pointer;
+      transform: scale(2);
       }
    }
    `,
