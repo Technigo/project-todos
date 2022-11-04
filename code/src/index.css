@@ -6,10 +6,8 @@
 
 :root {
   --main-color: rgb(61, 158, 113);
-  --sub-color: white;
-  --third-color: black;
-
-  --header-bg-color: rgb(225, 225, 225);
+  --button-color: black;
+  --light-color: rgb(225, 225, 225);
 }
 
 body {
@@ -24,12 +22,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-
-h1 {
-  color: var(--sub-color);
-  font-size: 2rem;
-}
-
 /* checkboxes */
 [type="checkbox"]{
   opacity: 0;
@@ -37,7 +29,7 @@ h1 {
 
 [type="checkbox"] + label{
   position: relative;
-  padding-left: 2.25rem;
+  padding-left: 3.6rem;
   cursor: pointer;
   display: inline-block;
   color: #666;
@@ -81,7 +73,7 @@ h1 {
   background-size: 75%;
   background-repeat: no-repeat;
   background-position: center;
-  transform: scale(1);
+  transform: scale(1.1);
   opacity: 1;
   transition: all .3s ease;
 }
