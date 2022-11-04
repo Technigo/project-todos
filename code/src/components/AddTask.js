@@ -88,8 +88,14 @@ const AddTaskButton = styled.button`
 `
 
 const AddTaskButtonsClear = styled.div`
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px 250px;
+  @media (max-width: 640px) {
+    padding: 3px 6px;
+    font-size: 0.7rem;
+    grid-gap: 30px 60px;
+  }
 `
 
 const AddTaskButtonCheck = styled.button`
@@ -99,7 +105,7 @@ const AddTaskButtonCheck = styled.button`
   padding: 5px 10px;
   background-color: #c4c9cc;
   font-weight: 600;
-  @media (max-width: 450px) {
+  @media (max-width: 640px) {
     padding: 3px 6px;
     font-size: 0.7rem;
   }
@@ -115,7 +121,7 @@ const AddTaskButtonClear = styled.button`
   margin: 30px 0 0 20px;
   padding: 5px 10px;
   font-weight: 600;
-  @media (max-width: 450px) {
+  @media (max-width: 640px) {
     padding: 3px 6px;
     font-size: 0.7rem;
   }
