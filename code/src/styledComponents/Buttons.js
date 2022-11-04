@@ -13,6 +13,7 @@ export const DeleteButton = styled.button`
   border: none;
   color: grey;
   font-size: 1rem;
+  cursor: pointer;
 `;
 
 export const FilterContainer = styled.div`
@@ -35,6 +36,11 @@ export const CheckAllContainer = styled.div`
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
 
   button {
     background-color: #7e949e;

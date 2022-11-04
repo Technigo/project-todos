@@ -4,8 +4,8 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      { id: '1', text: 'Clean', complete: false },
-      { id: '2', text: 'Homework', complete: false }
+      // { id: '1', text: 'Clean', complete: false },
+      // { id: '2', text: 'Homework', complete: false }
     ]
   },
   reducers: {
@@ -32,10 +32,10 @@ export const tasks = createSlice({
       store.items.forEach((item) => {
         item.complete = true;
       });
-    }
+    },
 
-    // clearAll: (store) => {
-    //   return store.items.initialState;
-    // }
+    clearAll: (store) => {
+      store.items = [];
+    }
   }
 });

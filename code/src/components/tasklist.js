@@ -10,6 +10,7 @@ import {
   DeleteButton,
   FilterContainer
 } from 'styledComponents/Buttons';
+
 import Header from './header';
 import NewTask from './newTask';
 
@@ -46,9 +47,11 @@ const TaskList = () => {
 
   const filteredTasks = getFilteredTask();
 
-  // const deleteALL = () => {
-  //   dispatch(tasks.actions.clearAll());
-  // };
+  const deleteALL = () => {
+    if (window.confirm('Are you sure you want to delete all tasks?')) {
+      dispatch(tasks.actions.clearAll());
+    }
+  };
 
   return (
     <div>
@@ -98,10 +101,10 @@ const TaskList = () => {
         <button type="button" onClick={onCompleteAll}>
           Check all
         </button>
+        <button type="button" onClick={deleteALL}>
+          Clear all
+        </button>
       </CheckAllContainer>
-      {/* <button type="button" onClick={deleteALL}>
-        Clear all
-      </button> */}
     </div>
   );
 };

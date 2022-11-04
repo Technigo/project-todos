@@ -5,7 +5,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { tasks } from 'reducers/tasks';
 import TaskList from 'components/tasklist';
 import { Container, Wrapper } from 'styledComponents/Container';
-// import backgroundImage from './components/background.jpg';
+// import BackgroundImage from './components/background.jpg';
 
 export const App = () => {
   const reducer = combineReducers({
