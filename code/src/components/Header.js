@@ -1,5 +1,5 @@
 import React from 'react';
-import moment from 'moment';
+// import moment from 'moment';
 import { useDispatch, useSelector } from 'react-redux';
 import tasks from 'reducers/tasks';
 import { InnerWrapper, OuterWrapper } from 'styles/GlobalStyles';
@@ -31,7 +31,7 @@ export const Header = () => {
         <HeaderWrapper>
           <TitleWrapper>
             <h1>Get it done!</h1>
-            <p>{moment().format('ddd, D MMM YYYY')}</p>
+            {/* <p>{moment().format('ddd, D MMM YYYY')}</p> */}
           </TitleWrapper>
           <div>
             <p>Total: {handleTaskCounter}</p>
