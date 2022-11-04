@@ -1,19 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-/* import { v4 as uuid } from 'uuid';
-
-const uniqueId = uuid() */
 
 const tasks = createSlice({
   name: 'tasks',
   initialState: {
-    items: [
-      /* { id: '1',
-        text: 'Grocery shopping',
-        isComplete: false },
-      { id: '2',
-        text: 'Laundry',
-        isComplete: false } */
-    ]
+    items: []
   },
   reducers: {
     toggleItem: (store, action) => {
@@ -25,12 +15,19 @@ const tasks = createSlice({
     },
     addTask: (store, action) => {
       store.items.push(action.payload)
-    }/* ,
+    },
     removeTask: (store, action) => {
-      return store.filter(() => tasks.id !== action.payload)
-    } */
+      // mutability
+      store.items.splice(action.payload, 1);
+      // immutability
+      const updatedItems = store.items.filter((item) => {
+        return store.items.indexOf(item) !== action.payload
+      })
+      store.items = updatedItems
+    }
   }
 
 })
 
 export default tasks
+
