@@ -1,13 +1,3 @@
-/* import React from 'react'
-
-const TotalItems = () => {
-  return (
-    <h2>TotalItems:</h2>
-  )
-}
-
-export default TotalItems */
-
 import React from 'react';
 import { useSelector } from 'react-redux';
 
