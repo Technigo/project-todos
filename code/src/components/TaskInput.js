@@ -35,37 +35,31 @@ const TaskInput = () => {
 
   return (
     <section>
-      <form onSubmit={OnFormSubmit}>
+      <StyledForm onSubmit={OnFormSubmit}>
         <label>
           <StyledTextarea
             value={newTask}
             placeholder="Add your task here"
             onChange={handleNewTaskChange} />
         </label>
-        <StyledSubmitButton type="submit" disabled={buttonDisabled}>
-          <svg
-            id="Layer_1"
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 122.88 122.75"><title>plus</title><path d="M44.63,0H78.25a4,4,0,0,1,4,4V40.57h36.64a4,4,0,0,1,4,4V78.18a4,4,0,0,1-4,4H82.24v36.58a4,4,0,0,1-4,4H44.63a4,4,0,0,1-4-4V82.18H4a4,4,0,0,1-4-4V44.56a4,4,0,0,1,4-4H40.63V4a4,4,0,0,1,4-4Z" />
-          </svg>
-        </StyledSubmitButton>
-      </form>
+        <StyledSubmitButton type="submit" disabled={buttonDisabled}>+</StyledSubmitButton>
+      </StyledForm>
     </section>
   )
 }
 
 export default TaskInput
 
+const StyledForm = styled.form`
+display:flex;
+`
 const StyledTextarea = styled.textarea`
  background-color: var(--color-grey);
- box-sizing: border-box;
  border-radius: 20px;
  border: 2px solid white;
  width: 55vw;
  resize: none;
  font-family: "Source Sans Pro";
- /* font-weight: bold; */
  color: var(--color-darkGrey);
  padding-top: 1em;
  padding-left: 1em;
@@ -80,10 +74,13 @@ width: 22vw;
  `
 const StyledSubmitButton = styled.button`
 border: none;
-width: 3em;
-height: 3em;
+font-size: 3em;
 cursor:pointer;
-border-radius: 10px;
-margin-top: 8px;
+font-weight: bold;
 background: transparent;
+color: white;
+width: 1em;
+height: 1em;
+justify-content: center;
+align-items: center;
 `

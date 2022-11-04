@@ -16,12 +16,12 @@ const TaskCounter = () => {
 export default TaskCounter
 
 const StyledH2 = styled.h2`
-font-family: "Archivo Narrow";
+  /* font-family: "Archivo Narrow"; */
   font-size: 1em;
   margin:0.4em 0 2em 0;
   font-weight: lighter;
 
-   @media screen and (min-width: 667px) {
-    transform: scale(1.2);
-  }
+  @media screen and (min-width: 667px) {
+  transform: scale(1.2);
+}
 `
