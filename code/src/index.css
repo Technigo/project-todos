@@ -1,11 +1,10 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Sora', sans-serif;
+  font-size: 24px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fefbff;
+  background-image: url("images/dots.jpg")
 }
 
 code {
@@ -14,7 +13,8 @@ code {
 }
 
 .outer-wrapper {
-  background-color: white;
+  background-color: rgb(255, 255, 255, 0.5);
+  border-radius: 20px;
   margin: 0 auto;
   width: 80%;
   display: flex;
@@ -27,12 +27,28 @@ code {
   align-items: center;
 }
 
+h1 {
+  font-family: 'Secular One', sans-serif;
+  font-size: 50px;
+}
+
+.counter-container {
+  width: 80%;
+}
+
 .tasklist-container{
-  display: flex;
+display: flex;
+flex-direction: column;
 position: relative;
 left: 10%;
 margin-top: 20px;
-width: 75%;
+width: 80%;
+}
+
+.delete-container {
+  display: flex;
+  justify-content: right;
+  border: black;
 }
 
 .broom-btn {
@@ -40,3 +56,128 @@ width: 75%;
   background-color: transparent;
   font-size: 30px;
 }
+
+
+.button-container{
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  /* -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; */
+}
+
+.button-container input {
+  position: absolute;
+  opacity: 0;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 40px;
+width: 40px;
+border: solid 
+}
+
+.button-container:hover input ~ .checkmark {
+  background-color: #9AD3E2
+}
+
+.button-container input:checked ~ .checkmark {
+  background-color: #32A8C5
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.button-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.button-container .checkmark:after {
+  left: 15px;
+  top: 5px;
+  width: 10px;
+  height: 17px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+
+input {
+  width: 100%;
+  padding: 30px 38px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  box-shadow: 1px 1px 1px 2px black;
+  border-radius: 4px;
+  font-size: 24px;
+}
+
+::placeholder {
+font-size: 24px;
+color:rgb(200, 200, 200);
+}
+
+input:focus::placeholder {
+color: white;
+}
+
+button[type=submit] {
+  background-color: #32A8C5;
+position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  border: none;
+  color: white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  font-size: 26px;
+}
+
+button[type=submit]:hover{
+  border: solid black;
+} 
+
+.add-text {
+  position: absolute;
+  top: 10px;
+  left: 25px;
+}
+
+.input-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.add-btn {
+  display: flex;
+  justify-content: right;
+}
+
+@media (min-width: 667px) and (max-width: 1024px) {
+  .task-form-counter {
+  display: flex;
+  }}
+
+  @media (min-width: 1024px) {
+    .task-form-counter {
+    display: flex;
+    }}

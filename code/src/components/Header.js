@@ -6,9 +6,11 @@ import { TodoCounter } from './TodoCounter';
 export const Header = () => {
   return (
     <div className="header-container">
-      <h1>To do List</h1>
-      <AddTask />
-      <TodoCounter />
+      <h1>To do</h1>
+      <div className="task-form-counter">
+        <AddTask />
+        <TodoCounter />
+      </div>
     </div>
   )
 }

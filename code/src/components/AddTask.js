@@ -12,8 +12,7 @@ export const AddTask = () => {
   const dispatch = useDispatch();
   const onFormSubmit = (event) => {
     event.preventDefault();
-    const newTask = { id: Date.now().toString(),
-      text: inputValue,
+    const newTask = { text: inputValue,
       taskDone: false }
     dispatch(tasks.actions.addItem(newTask))
     setInputValue('')
@@ -21,12 +20,13 @@ export const AddTask = () => {
   }
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <form onSubmit={onFormSubmit} className="input-form">
       <label>
-            New Task:
-        <input type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
+        <input type="text" placeholder="Add new task" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
       </label>
-      <button type="submit"> Add Task </button>
+      <div className="add-btn">
+        <button type="submit"><p className="add-text">Add</p></button>
+      </div>
     </form>
   )
 }
