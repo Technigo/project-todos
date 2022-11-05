@@ -14,7 +14,6 @@ export const Styled = {
   List: styled.div`
     display: flex;
     flex-direction: column;
-    height: 100%;
     text-align: center;
     margin: 1em;
     `,

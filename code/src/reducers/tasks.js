@@ -6,17 +6,17 @@ export const tasks = createSlice({
     items: [
       {
         id: 1,
-        name: 'Do something',
+        name: 'Demo task 1',
         isCompleted: false
       },
       {
         id: 2,
-        name: 'Do something else',
+        name: 'Demo task 2',
         isCompleted: false
       },
       {
         id: 3,
-        name: 'Do nothing',
+        name: 'Demo task 3',
         isCompleted: true
       }
     ]
