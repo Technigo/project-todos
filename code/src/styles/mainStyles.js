@@ -7,21 +7,17 @@ import styled from 'styled-components/macro';
 const sizes = {
   tablet: '768px',
   laptop: '1024px',
-  laptopL: '1440px',
   desktop: '2560px'
 };
 
 export const Devices = {
   tablet: `(min-width: ${sizes.tablet})`,
   laptop: `(min-width: ${sizes.laptop})`,
-  laptopL: `(min-width: ${sizes.laptopL})`,
   desktop: `(min-width: ${sizes.desktop})`
 };
 
 export const OuterWrapper = styled.div`
   overflow-x: hidden;
-  /* background: rgb(116,10,24);
-background: linear-gradient(0deg, rgba(116,10,24,0.1951374299719888) 0%, rgba(24,35,135,1) 100%); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -33,18 +29,17 @@ background: linear-gradient(0deg, rgba(116,10,24,0.1951374299719888) 0%, rgba(24
 export const InnerWrapper = styled.div`
   width: 90%;
   max-width: 900px;
-  min-height: 600px;
+  min-height: 100px;
   margin: 0 auto;
   padding: 0% 0%;
 
   @media ${Devices.tablet} {
     width: 80%;
-    min-height: 750px;
+    min-height: 200px;
   }
 
   @media ${Devices.laptop} {
     width: 65%;
-    min-height: 400px;
   }
 `
 
@@ -65,6 +60,7 @@ export const MainHeader = styled.h1`
 
   @media ${Devices.tablet} {
   font-size: 6em;
+  padding-bottom: 1%;
   }
 `
 

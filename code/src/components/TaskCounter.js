@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { MainSections, MainText, Devices } from '../styles/mainStyles';
 
 const TaskCounter = () => {
@@ -36,6 +36,10 @@ export default TaskCounter;
 const CounterSection = styled(MainSections)`
   padding: 5% 0% 0% 0%;
   margin-left: 20%;
+
+  @media ${Devices.tablet} {
+    margin-left: 20%;
+  }
 `
 
 const ArticleWrapper = styled.article`
@@ -49,7 +53,7 @@ const ArticleWrapper = styled.article`
   padding: 1%;
 
   @media ${Devices.tablet} {
-  width: 50vw;
+    width: 28vw;
   }
 `
 
