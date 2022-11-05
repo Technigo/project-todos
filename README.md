@@ -1,13 +1,17 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project was done during week 11 of Technigo's Boot Camp. It was about creating a to-do list in React, using Redux, making our own reducers and implementing functions that are relevant for a to-do app.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started off by sketching up a mobile version of the app using pen and paper, to figure out what I wanted the app to look like, what functions I wanted and what components I need. With that done I headed into VSCode and started by making a new slice to store my to-do tasks and used a hardcoded list of tasks to get going. After that I made every reducer and action that I needed and with everything working as I wanted I made the styling using styled components.
+
+### Tech
+- HTML/CSS
+- Styled Components
+- React/JSX
+- Redux/Redux Toolkit
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://ulrikas-todo-list.netlify.app/
