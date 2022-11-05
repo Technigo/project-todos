@@ -8,6 +8,7 @@ import ListHeaderStyling from 'styling/ListHeaderStyling';
 import ListStyling from 'styling/ListStyling'
 import AddNewTask from './AddNewTask.js';
 import RemoveTask from './RemoveTask.js';
+import TasksCounter from './TaskCounter.js';
 
 const TaskListHaveTos = () => {
   const dispatch = useDispatch();
@@ -58,6 +59,7 @@ const TaskListHaveTos = () => {
             </article>
           )
         })}
+        <TasksCounter />
         <AddNewTask onFormSubmit={onFormSubmit} inputValue={inputValue} setInputValue={setInputValue} />
       </ListStyling>
 
