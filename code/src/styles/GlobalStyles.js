@@ -9,9 +9,9 @@ justify-content: center;
 `
 export const Container = styled.div`
 background-color: var(--color-darkGreen);
-box-shadow: 0 15px 35px rgba(50,50,93,.1), 0 5px 15px rgba(0,0,0,0.07);
+box-shadow: 0 15px 35px rgba(50,50,93,.3), 0 5px 15px rgba(0,0,0,0.5);
 width: 80vw;
-height: 50%;
+height: 80%;
 border-radius: 20px;
 display: flex;
 flex-direction: column;
@@ -20,6 +20,7 @@ margin: 2.5em;
 
 @media (min-width: 667px) and (max-width: 1024px)  {
 width: 60vw;
+height: 50%;
 }
 
 @media screen and (min-width: 1024px) {

@@ -61,11 +61,15 @@ border-radius: 20px;
 width: 70vw;
 display: flex;
 justify-content: space-between;
-align-items: center;
 padding: 0.5em 1.5em;
 box-sizing: border-box;
 margin: 1rem 0;
 color: var(--color-darkGrey);
+
+& p {
+  word-break: break-all;
+  margin: 0 1em;
+}
 
 @media (min-width: 667px) and (max-width: 1024px)  {
 width: 50vw;
@@ -76,7 +80,6 @@ width: 25vw;
 `
 export const Checkbox = styled.input`
   -webkit-appearance: none;
-  /* For iOS < 15 to remove gradient background */
   appearance: none;
   background-color: #fff;
   margin: 0;
@@ -85,7 +88,6 @@ export const Checkbox = styled.input`
   width: 1.7em;
   height: 1.7em;
   border-radius: 10px;
-  /* margin-top: 20%; */
   display: flex;
   align-items: center;
   justify-content: center;

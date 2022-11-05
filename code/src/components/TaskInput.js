@@ -38,6 +38,7 @@ const TaskInput = () => {
       <StyledForm onSubmit={OnFormSubmit}>
         <label>
           <StyledTextarea
+            type="text"
             value={newTask}
             placeholder="Add your task here"
             onChange={handleNewTaskChange} />
@@ -53,23 +54,25 @@ export default TaskInput
 const StyledForm = styled.form`
 display:flex;
 `
-const StyledTextarea = styled.textarea`
+const StyledTextarea = styled.input`
  background-color: var(--color-grey);
  border-radius: 20px;
  border: 2px solid white;
  width: 55vw;
+ height: 7vh;
  resize: none;
  font-family: "Source Sans Pro";
  color: var(--color-darkGrey);
- padding-top: 1em;
  padding-left: 1em;
  outline: none;
 
 @media (min-width: 667px) and (max-width: 1024px)  {
 width: 45vw;
+height: 5vh;
 }
 @media screen and (min-width: 1024px) {
 width: 22vw;
+height: 8vh;
 }
  `
 const StyledSubmitButton = styled.button`
