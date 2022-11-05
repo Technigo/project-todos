@@ -43,7 +43,7 @@ export const Styled = {
    justify-content: space-between;
    width: 100%;
 
-   & input {
+   & input { 
     margin: 1.2em;
     transform: scale(1.5);
 

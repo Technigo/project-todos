@@ -6,17 +6,12 @@ import { Styled } from './TaskList.styled'
 
 export const TaskList = () => {
   const taskArray = useSelector((store) => store.tasks.items);
-
   const outstandingTasks = taskArray.filter((item) => !item.isCompleted);
-
   const completedTasks = taskArray.filter((item) => item.isCompleted);
-
   const dispatch = useDispatch();
-
   const completedTaskToggle = (id) => {
     dispatch(tasks.actions.toggleItem(id))
   }
-
   const deleteTask = (id) => {
     dispatch(tasks.actions.deleteItem(id))
   }

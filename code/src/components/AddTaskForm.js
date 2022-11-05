@@ -24,7 +24,7 @@ export const AddTaskForm = () => {
       <form onSubmit={onFormSubmit}>
         <Styled.InputField
           type="text"
-          placeholder="Add new task here..."
+          placeholder="Enter task"
           value={NewTask}
           onChange={(event) => setNewTask(event.target.value)} />
         <Styled.FormButton
