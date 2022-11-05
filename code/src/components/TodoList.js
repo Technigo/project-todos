@@ -3,12 +3,14 @@
 import React, { useMemo } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
-import styled from 'styled-components/macro';
 import { IconContext } from 'react-icons';
 import { IoCloseOutline } from 'react-icons/io5';
-
 import NewTodo from './NewTodo';
-import { OuterWrapper, Innerwrapper, Button } from './GlobalStyles';
+import { TodoDiv, Article } from './styles/TodoList.styled';
+import { FlexDiv, OuterWrapper, Innerwrapper } from './styles/Flex.styled';
+import { RemoveButton } from './styles/Button.styled'
+import EmptyState from '../images/EmptyState.svg'
+
 import Header from './Header';
 
 const TodoList = () => {
@@ -36,8 +38,8 @@ const TodoList = () => {
             <Header />
             {allTodos.map((todo, index) => {
               return (
-                <SingleTodoBox key={todo.id}>
-                  <TodoBox>
+                <Article key={todo.id}>
+                  <TodoDiv>
                     <label>
                       <input
                         type="checkbox"
@@ -46,22 +48,27 @@ const TodoList = () => {
                         name={`input-${todo.id}`} />
                       <p>{todo.name}</p>
                     </label>
-                    <Button
+                    <RemoveButton
                       type="button"
-                      onClick={() => onRemoveTodo(index)}
-                      backgroundcolor="inherit">
+                      onClick={() => onRemoveTodo(index)}>
                       <IoCloseOutline />
-                    </Button>
-                  </TodoBox>
+                    </RemoveButton>
+                  </TodoDiv>
 
                   {/* <TimeStampStyling>{TimeStamp(todo.id)}</TimeStampStyling> */}
-                </SingleTodoBox>
+                </Article>
               )
             })}
+            {allTodos.length === 0
+            && (
+              <FlexDiv>
+                <h2>You don&apos;t need to do a thing. Read a book or enjoy a fruit</h2>
+                <img src={EmptyState} alt="" />
+              </FlexDiv>)}
           </div>
-          <NewTodoAndBtn>
+          <FlexDiv>
             <NewTodo />
-          </NewTodoAndBtn>
+          </FlexDiv>
         </Innerwrapper>
       </OuterWrapper>
     </IconContext.Provider>
@@ -69,41 +76,3 @@ const TodoList = () => {
   )
 }
 export default TodoList;
-
-const SingleTodoBox = styled.article`
-padding: 5px 0px;
-display: flex;
-align-items: flex-start;
-flex-direction: column;
-
-@media (min-width: 668px){
-  padding: 10px 0px;
-
-  }
-  @media (min-width: 1025px){
-    
-  }
-`
-const TodoBox = styled.div`
-  display: flex;
-  align-items: center;
-  width: 100%;
-  justify-content: space-between;
-
-  label {
-    width: 100%;
-  }
-`
-
-const NewTodoAndBtn = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`
-
-// const TimeStampStyling = styled.p`
-//   font-size: 0.8rem;
-//   color: #5A7869;
-//   padding-left: 28px;
-//   margin-top: -6px;
-// `

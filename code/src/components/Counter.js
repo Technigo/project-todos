@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components/macro';
+import { Counter } from './styles/Header.styled';
 
 const TodoCounter = () => {
   const remainingTodos = useSelector((store) => store.todos.items)
@@ -16,21 +16,3 @@ const TodoCounter = () => {
 
 export default TodoCounter;
 
-const Counter = styled.p`
-  background-color: #377958;
-  border-radius: 20px;
-  color: white;
-  font-size: 14px;
-  padding: 2px 20px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-
-  @media (min-width: 668px){
-    padding: 20px 40px;
-
-  }
-  @media (min-width: 1025px){
-    
-  }
-`
