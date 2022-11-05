@@ -17,10 +17,6 @@ const TaskList = () => {
     dispatch(tasks.actions.deleteTask(id));
   };
 
-  /* const onDeleteAllTasks = () => {
-    dispatch(tasks.actions.deleteAllTasks());
-  } */
-
   return (
     <ListWrapper>
       {taskList.map((singleTask) => {
@@ -68,9 +64,9 @@ const TaskWrapper = styled.article`
 
   .finished, .notFinished {
     display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .finished {
@@ -90,7 +86,7 @@ const ElementWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  padding: 1vh 0;
+  padding: 2vh 0;
 
 /*   [type="checkbox"]{
     opacity: 0;

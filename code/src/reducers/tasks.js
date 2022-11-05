@@ -6,7 +6,7 @@ const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      { id: '1',
+      /*       { id: '1',
         text: 'Walk the dog',
         isComplete: false },
       { id: '2',
@@ -17,7 +17,7 @@ const tasks = createSlice({
         isComplete: false },
       { id: '4',
         text: 'Pay bills',
-        isComplete: false }
+        isComplete: false } */
     ]
   },
   reducers: {
@@ -32,13 +32,6 @@ const tasks = createSlice({
 
       store.items = [...store.items, newTask]
     },
-
-    /* removeTask: (store, action) => {
-      const existingTask = state.items.filter((item) => item.id !== action.payload.id)
-      return (
-        existingTask -= 1
-      )
-    }, */
 
     toggleItem: (store, action) => {
       console.log(store);
