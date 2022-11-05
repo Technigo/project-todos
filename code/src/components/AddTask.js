@@ -19,7 +19,8 @@ const AddTask = () => {
     const newTasks = {
       id: Date.now().toString(),
       name: inputValue,
-      isCaught: false
+      isCaught: false,
+    
     };
 
     // Dispatch the whole object
@@ -29,19 +30,22 @@ const AddTask = () => {
 
   return (
     // printing out our new task in from/ to work form we need to add onSubmit
-    <form className="wrapperForm"
-    onSubmit={onFormSubmit}>
+
+    <form className="wrapperForm" onSubmit={onFormSubmit}>
       <label>
-        New Task:
         <input
           className="taskInput"
           type="text"
           value={inputValue}
           onChange={handleNewTask}
+          placeholder="A new task..."
         />
       </label>
-      <button className="addBtn" type="submit">
-        Add Task
+      <button 
+      className="addBtn" 
+      type="submit" 
+      disabled={inputValue.length < 1}>
+        ➕
       </button>
     </form>
   );
