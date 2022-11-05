@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useMemo } from 'react';
 import { useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 import styled from 'styled-components'
@@ -13,10 +13,11 @@ const DeleteAllTask = () => {
   const DeleteAllToDos = () => {
     dispatch(todos.actions.removeAllToDos())
   }
+  const white = useMemo(() => ({ color: 'white' }), [])
 
   return (
     <RemoveAllTasks onClick={DeleteAllToDos} type="button">
-      <IconContext.Provider value={{ color: 'white' }}>
+      <IconContext.Provider value={white}>
         <VscTrash />
       </IconContext.Provider>
     </RemoveAllTasks>

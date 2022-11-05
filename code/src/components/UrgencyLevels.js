@@ -3,7 +3,7 @@ import { FaClock } from 'react-icons/fa';
 import { IconContext } from 'react-icons'
 
 export const Urgent = () => {
-  const red = useMemo(() => ({ color: 'red' }), []);
+  const red = useMemo(() => ({ color: 'red' }), [])
 
   return (
     <IconContext.Provider value={red}>
@@ -13,7 +13,7 @@ export const Urgent = () => {
 }
 
 export const LessUrgent = () => {
-  const orange = useMemo(() => ({ color: 'orange' }), []);
+  const orange = useMemo(() => ({ color: 'orange' }), [])
 
   return (
     <IconContext.Provider value={orange}>
@@ -23,7 +23,7 @@ export const LessUrgent = () => {
 }
 
 export const NotUrgent = () => {
-  const green = useMemo(() => ({ color: 'green' }), []);
+  const green = useMemo(() => ({ color: 'green' }), [])
 
   return (
     <IconContext.Provider value={green}>
