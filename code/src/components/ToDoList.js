@@ -1,19 +1,30 @@
 /* eslint-disable no-tabs */
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useEffect } from 'react';
+import moment from 'moment'
+// import { format } from 'date-fns';
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux';
 import toDos from 'reducers/toDos';
-// import { Checkbox } from 'styles/Checkbox.styled'
+// import { Checkbox } from 'styles/Checkbox'
 
 const ToDoList = () => {
-  const toDoList = useSelector((store) => store.toDos.items);
-
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    const listFromStorage = JSON.parse(localStorage.getItem('toDoListSave'))
+    if (listFromStorage) {
+      dispatch(toDos.actions.setAllItems(listFromStorage))
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
+  const toDoList = useSelector((store) => store.toDos.items);
   const onCompleteToggle = (id) => {
     dispatch(toDos.actions.toggleItem(id));
   }
-
+  useEffect(() => {
+    localStorage.setItem('toDoListSave', JSON.stringify(toDoList))
+  }, [toDoList])
   return (
     <section>
       {toDoList.map((singleToDo) => {
@@ -22,17 +33,21 @@ const ToDoList = () => {
           <article>
             <div className="checkbox-wrapper">
 
-              <label>
-
-                <input type="checkbox" checked={singleToDo.complete} onChange={() => onCompleteToggle(singleToDo.id)} />
-                {singleToDo.name}
+              <input type="checkbox" checked={singleToDo.complete} onChange={() => onCompleteToggle(singleToDo.id)} />
+              <label className="strikethrough"> {singleToDo.name}
 
               </label>
-
               <button type="button" className="deleted-btn" onClick={() => dispatch(toDos.actions.removeItem(singleToDo.id))}>  <RemoveButton
-                src="./images/waste-icon.png"
+                src="./assets/waste-icon.png"
                 alt="remove task" />
               </button>
+              <p className="moment">
+                {moment().startOf('day').fromNow()}
+              </p>
+              {/* <p className="day">
+                {format(toDos.createdAt, 'dd/mm/yyyy')}
+                {format(new Date(toDos.time), 'p, MM/dd/yyyy')}
+              </p> */}
             </div>
           </article>
         );
@@ -64,3 +79,9 @@ width: 15px;
   }
   }
 `
+
+// const MainSection = styled.section`
+
+//   background-color: blue;
+// 	div{}
+// `

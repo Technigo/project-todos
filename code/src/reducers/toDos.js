@@ -32,6 +32,9 @@ const toDos = createSlice({ name: 'toDos',
     // remove it
     const existingToDo = store.items.filter((item) => item.id !== action.payload);
     store.items = existingToDo;
+  },
+  setAllItems: (store, action) => {
+    store.items = action.payload;
   } } });
 
 export default toDos;

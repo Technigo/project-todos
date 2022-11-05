@@ -14,10 +14,6 @@ body {
   background-color: #F7CAC9;
 }
 
-/* a {
-  text-decoration: none;
-  color: darkgray;
-} */
 h1 {
   margin: 20px 0 20px 20px;
 }
@@ -25,12 +21,10 @@ h3{
 color: #706B6B;
 }
 
-input[type="checkbox"] {
-  filter: hue-rotate(300deg);
-  &:hover {
-    cursor: pointer;
-    }
-} 
+p{
+font-size: small;
+}
+
 button {
   box-sizing: border-box;
   border: none;
