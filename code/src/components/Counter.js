@@ -14,4 +14,5 @@ export default Counter;
 export const CounterContainer = styled.section`
 font-style: italic;
 color: #936f63;
+margin-left: 10px;
 `

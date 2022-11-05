@@ -62,4 +62,8 @@ margin: 10px;
 border: none;
 font-size: 1rem;
 background-color: #eee6dd;
+::placeholder,
+  ::-webkit-input-placeholder {
+    color: #936f63;
+  }
 `

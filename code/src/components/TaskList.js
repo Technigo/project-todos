@@ -50,11 +50,8 @@ export const StyledList = styled.ul`
 
     & li {
       display: flex;
-      align-items: center;
-      /* justify-content: space-between; */
       font-size: 1.1rem;
       height: 2rem;
-      padding: 1.2rem 1.5rem 0rem 0rem;
     } 
 `
 
@@ -70,4 +67,5 @@ border-radius: 20px;
 height: 30px;
 width: 30px;
 color: #936f63;
+margin-top: 10px;
 `
