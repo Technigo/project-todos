@@ -4,6 +4,8 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { tasks } from 'reducers/tasks';
 import { TaskList } from 'components/TaskList';
 import { AddTask } from 'components/AddTask';
+import { Header } from 'components/Header';
+import { OuterWrapper, BorderGradient, BorderWhite } from 'components/GlobayStyles';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -16,8 +18,15 @@ export const App = () => {
 
   return (
     <Provider store={store}>
-      <TaskList />
-      <AddTask />
+      <OuterWrapper>
+        <BorderGradient>
+          <BorderWhite>
+            <Header />
+            <TaskList />
+            <AddTask />
+          </BorderWhite>
+        </BorderGradient>
+      </OuterWrapper>
     </Provider>
   );
 }

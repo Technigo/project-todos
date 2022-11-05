@@ -7,9 +7,15 @@ export const tasks = createSlice({
     items: [
       { id: '0',
         name: 'Plant seeds',
-        isChecked: false },
+        isChecked: true },
       { id: '1',
         name: 'Buy lecakulor',
+        isChecked: false },
+      { id: '2',
+        name: 'Dig dirt',
+        isChecked: true },
+      { id: '3',
+        name: 'Watch it grow',
         isChecked: false }
     ]
   },
@@ -32,6 +38,16 @@ export const tasks = createSlice({
           item.isChecked = !item.isChecked
         }
       });
+    },
+
+    deleteTask: (store, action) => {
+      // Mutability example
+      // store.items.splice(action.payload, 1);
+      // Immutability
+      const updatedItems = store.items.filter((item) => {
+        return store.items.indexOf(item) !== action.payload
+      });
+      store.items = updatedItems
     }
   }
 
