@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import uniqid from 'uniqid'; // https://www.npmjs.com/package/uniqid
 import styled from 'styled-components';
 import TodoCounter from 'components/TodoCounter';
-import AddButtonBig from '../assets/AddButtonBig.svg';
+import AddButton from '../assets/AddButton.svg';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -47,7 +47,7 @@ const AddTask = () => {
           tabIndex="0"
           aria-label="create new task button."
           disabled={inputValue.length < 5 || inputValue.length > 140}>
-          <NewTaskIcon src={AddButtonBig} alt="add new task." />
+          <NewTaskIcon src={AddButton} alt="add new task." />
         </NewTaskIconWrapper>
       </NewTaskWrapper>
       <Wrapper>
@@ -119,8 +119,6 @@ const NewTaskIconWrapper = styled.div`
     transition: all 0.5s ease-in;
     transform: scale(1.3);
 
-
-
   @media (min-width: 667px) and (max-width: 1024px) {
   }
   @media (min-width: 1025px) {
@@ -138,7 +136,7 @@ const NewTaskTextInput = styled.input`
   border: none;
   align-self: center;
   padding: 5px 0 5px 15px;
-  margin-top: 10px;
+  margin-top: 5px;
   height: 34px;
   font-family: "Montserrat", sans-serif;
   outline: none;
@@ -172,7 +170,7 @@ const ButtonWrapper = styled.div`
    
   }
   @media (min-width: 1025px) {
-  margin: 50px 40px 0 0;
+  margin: 53px 40px 0 0;
 }
 
 .reset-button{
@@ -181,14 +179,14 @@ const ButtonWrapper = styled.div`
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   border: none;
-  color: #d0e7e2;
+  color: #fff;
   margin: 0 3px;
   align-content: center;
   width: 100px;
   background-color: #005568;
   &:hover {
   background-color: #00BBBC; 
-  color: whitesmoke;
+  
 }
 @media (min-width: 667px) and (max-width: 1024px) {
   font-size: 13px;

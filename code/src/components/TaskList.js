@@ -8,8 +8,8 @@ import Task from './Task';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.tasksArray);
-  const leftTodos = taskList.filter((task) => task.isCompleted === false)
-  console.log('leftTodos', leftTodos)
+  // const leftTodos = taskList.filter((task) => task.isCompleted === false)
+
   return (
     <TaskListSection>
       {taskList.map((taskData) => {

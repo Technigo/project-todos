@@ -5,17 +5,17 @@ import styled from 'styled-components';
 const TodoCounter = () => {
   const taskList = useSelector((store) => store.tasks.tasksArray);
   const leftTodos = taskList.filter((task) => task.isCompleted === false);
+
   if (leftTodos.length > 0) {
     return (
       <CounterWrapper>
-        Left todo:{leftTodos.length}/{taskList.length}
+        Left todo: {leftTodos.length}/{taskList.length}
       </CounterWrapper>
     );
   } else if (leftTodos.length === 0) {
     return (
       <CounterWrapper>
         <div className="no-left">Add a todo</div>
-        <div className="no-left" />
       </CounterWrapper>
     );
   }
