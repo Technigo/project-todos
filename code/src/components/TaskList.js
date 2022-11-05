@@ -59,7 +59,6 @@ export const TaskList = () => {
 }
 
 // STYLING FOR ABOVE COMPONENT
-
 const TaskItem = styled.div`
   display: flex;
   width: 100%;
@@ -80,6 +79,7 @@ const TaskText = styled.div`
 const Deletebtn = styled.button`
   border: transparent;
   background: transparent;
+  cursor: pointer;
 `
 
 const DeleteIcon = styled.img`
@@ -88,7 +88,6 @@ const DeleteIcon = styled.img`
 
 const Congrats = styled.h2`
   color: #5B446A;
-  color: #906387;
 `
 
 const CoffeeCup = styled.img`

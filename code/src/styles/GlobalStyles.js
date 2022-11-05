@@ -5,17 +5,17 @@ export const Wrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  //border: 2px solid orange;
 `
 
 export const Actionbtn = styled.button`
   align-self: ${(props) => props.align};
-  padding: 0.4rem;
+  padding: 0.6rem 0.4rem;
   margin: 0.4rem;
-  background: ${(props) => props.color}; //#1F9D6E;
+  background: ${(props) => props.color};
   color: white;
   border-radius: 4px;
   border: none;
-  width: 5.5rem;
+  width: 5.9rem;
   cursor: pointer;
+  font-weight: bold;
 `

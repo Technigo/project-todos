@@ -39,12 +39,14 @@ export const tasks = createSlice({
     // Action for removing all items
     removeAll: (state) => {
       state.taskData = []
-    },
-    // Action for completing all items
-    completeAllItems: (state) => {
-      state.taskData.forEach((item) => {
-        item.complete = true
-      });
     }
+    // Action for completing all items
+    // Code commented out as it stopped working after styling checkboxes with css,
+    // will return to it at later time:
+    // completeAllItems: (state) => {
+    //   state.taskData.forEach((item) => {
+    //     item.complete = true
+    //   });
+    // }
   }
 })
