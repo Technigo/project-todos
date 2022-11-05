@@ -25,6 +25,7 @@ export const Styled = {
       width: 100%;
       min-height: 100vh;
       margin: 0%;
+      border-radius: 0em;
       }
 
 
