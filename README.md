@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Created an todo app with React, Redux and styled components. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First I planned how I planned the layout of the app and after that I started to go thru which components and what data I needed to create to be able to make this app to work. After I took step by step and finished with styling. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Make your todo-list here: https://comfy-puffpuff-eada25.netlify.app/
