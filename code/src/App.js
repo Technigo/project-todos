@@ -8,6 +8,7 @@ import TaskListWontDos from 'components/TaskListWontDos';
 import GlobalStyling from 'styling/GlobalStyling';
 import tasksWonts from 'reducers/tasksWonts';
 import tasksShoulds from 'reducers/tasksShoulds';
+import Footer from 'components/Footer';
 import tasks from './reducers/tasks';
 
 /* const reducer = combineReducers({
@@ -29,12 +30,18 @@ export const App = () => {
   });
   return (
     <Provider store={store}>
-      <Header />
       <GlobalStyling>
-        <TaskListHaveTos />
-        <TaskListShouldDos />
-        <TaskListWontDos />
+        <section>
+          <Header />
+          <div className="outer-div">
+            <TaskListHaveTos />
+            <TaskListShouldDos />
+            <TaskListWontDos />
+          </div>
+          <Footer />
+        </section>
       </GlobalStyling>
+
     </Provider>
   )
 }

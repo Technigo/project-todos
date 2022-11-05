@@ -42,7 +42,7 @@ const TaskListHaveTos = () => {
   return (
     <section>
       <ListHeaderStyling>
-        <div><h2>Have To Dos</h2></div>
+        <div><h2>Must Dos</h2></div>
       </ListHeaderStyling>
       <ListStyling>
         {taskItem.map((singleTask, index) => {

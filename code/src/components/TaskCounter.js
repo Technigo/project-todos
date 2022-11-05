@@ -17,7 +17,7 @@ export const TaskCounter = () => {
   }
   return (
     <TaskCounterStyling>
-      <p>{countDone()} out of {items.length} completed</p>
+      <p>{countDone()} out of {items.length} tasks completed</p>
     </TaskCounterStyling>
   )
 }
