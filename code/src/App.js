@@ -1,12 +1,12 @@
 import React from 'react';
-import NewTodo from 'components/NewTodo';
+import NewTodo from 'components/NewTodo/NewTodo';
 import { Provider } from 'react-redux';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import todos from 'reducers/store';
-import TodoList from 'components/TodoList';
-import Header from 'components/Header';
+import TodoList from 'components/TodoList/TodoList';
+import Header from 'components/header/Header';
 import styled from 'styled-components';
-import Summary from 'components/Summary';
+import Summary from 'components/Summary/Summary';
 
 const Wrapper = styled.section`
 display: flex; 
