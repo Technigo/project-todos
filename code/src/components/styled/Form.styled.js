@@ -15,9 +15,11 @@ export const StyledForm = styled.form`
     height: 100%;
     padding: .8rem 1.4rem;
     transition: all .2s ease;
-
-    &:hover {
-      background-color: gray;
+    
+    @media (min-width: 768px) {
+      &:hover {
+        background-color: gray;
+      }
     }
   }
 

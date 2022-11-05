@@ -33,7 +33,7 @@ export const StyledHeader = styled.header`
   }
 
   & button {
-    background: var(--button-color);
+    background-color: var(--button-color);
     margin-top: .5rem;
     color: white;
     border: none;
@@ -45,8 +45,10 @@ export const StyledHeader = styled.header`
     height: 2.3rem;
     transition: all .2s ease;
 
-    &:hover {
-      background-color: gray;
+    @media (min-width: 768px) {
+      &:hover {
+        background-color: gray;
+      }
     }
   }
 `

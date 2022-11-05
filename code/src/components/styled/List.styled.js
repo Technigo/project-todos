@@ -25,8 +25,10 @@ export const StyledList = styled.ul`
       width: 6rem;
       transition: all .2s ease;
 
-      &:hover {
-        color: gray;
+      @media (min-width: 768px) {
+        &:hover {
+          color: gray;
+        }
       }
     }
 `
