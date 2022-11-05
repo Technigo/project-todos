@@ -1,12 +1,18 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week we where tasked with creating a Todo-list website, in React Redux
+where you can add todos and remove them as you please.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I learned more about redux, and how the get and send information to the "store". 
+The problems where making it work, making so you can add todos and remove them.
+I watch the live session, and googled. 
+
+If i had more time:
+- i would add a timestamp for when the todos were created
+- and a remove all button to get a clean state
+- i would put more effort into styling
 
 ## View it live
 

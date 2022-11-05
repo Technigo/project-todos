@@ -7,6 +7,11 @@ import { FaEraser } from 'react-icons/fa';
 import AddTask from './AddTask';
 import TaskCount from './TaskCounter';
 
+/* my "main" component where it all happens
+and a input when you press is todo completed
+and a button for deleting the todo all togheter
+where mapping (looping) through our tasks (store) */
+
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
 
@@ -28,7 +33,7 @@ const TaskList = () => {
               <PostIT key={singelTask.id}>
                 <PostItList>
                   <PostItTitle>{singelTask.text}</PostItTitle>
-                  <PostItText>
+                  <PostItText className={`${singelTask.complete ? 'complete' : ''}`}>
                     <input
                       type="checkbox"
                       checked={singelTask.complete}
@@ -36,7 +41,7 @@ const TaskList = () => {
                      is task completed
                   </PostItText>
                   <div>
-                    <DeleteButton onClick={() => onTaskDelete(index)} type="button">Erase me <ClonedEraser /></DeleteButton>
+                    <DeleteButton onClick={() => onTaskDelete(index)} type="button">Erase me... <ClonedEraser /></DeleteButton>
                   </div>
                 </PostItList>
               </PostIT>
@@ -51,6 +56,8 @@ const TaskList = () => {
     </SectionParent>
   )
 }
+
+/* styled components */
 
 const SectionParent = styled.section`
   display: flex;
@@ -73,6 +80,11 @@ const TaskParent = styled.div`
   display: flex;
   width: 80%;
   justify-content: space-between;
+
+  @media (max-width: 550px) {
+  display: flex;
+  flex-direction: column;
+  }
 `;
 
 const PostIT = styled.ul`
@@ -114,7 +126,7 @@ const PostItList = styled.li`
 
 const PostItTitle = styled.h2`
 font-weight: bold;
-font-size: 2rem;
+font-size: 1.5rem;
 font-family: 'Reenie Beanie';
 
 @media (min-width: 900px) {
@@ -123,10 +135,16 @@ font-family: 'Reenie Beanie';
 `;
 
 const PostItText = styled.p`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   font-size: 1rem;
   font-weight: normal;
   font-family: 'Reenie Beanie';
 
+  &:focus {
+    text-decoration: line-through;
+  }
 
   @media (min-width: 900px) {
     font-size: 2rem;
@@ -152,9 +170,14 @@ transition: 0.3s ease;
 `;
 
 const ClonedEraser = styled(FaEraser)`
-  font-size: 1.5em;
+  font-size: 1em;
+
+  @media (min-width: 900px) {
+    font-size: 1.5rem;
+  }
 
 `;
+
 export default TaskList
 
 // onChange={() => onTaskCompleted(singleTask.id) } ****use this?
