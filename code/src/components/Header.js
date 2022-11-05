@@ -1,12 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import TodoCounter from 'components/TodoCounter';
 
 const Header = () => {
   return (
-    <HeaderContainer>
-      <TodoCounter />
-    </HeaderContainer>
+    <HeaderContainer />
   )
 };
 export default Header;
