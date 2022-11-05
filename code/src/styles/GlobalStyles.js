@@ -27,7 +27,7 @@ export const InnerWrapper = styled.section`
 
 export const ContentWrapper = styled.main`
   background-image: url(${Background});
-  background-size: 90%;
+  background-size: 100%;
 `
 
 export const SrOnly = styled.span`

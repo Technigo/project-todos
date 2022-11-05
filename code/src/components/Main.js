@@ -7,8 +7,8 @@ const Main = () => {
   return (
     <OuterWrapper>
       <InnerWrapper>
-        <NewTodo />
         <ListOfTodos />
+        <NewTodo />
       </InnerWrapper>
     </OuterWrapper>
   )

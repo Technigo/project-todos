@@ -1,22 +1,22 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 import styled from 'styled-components'
-// import DeleteTask from 'components/DeleteTask'
-import DeleteAllTasks from './DeleteAllTasks';
 import { RemoveTask } from '../styles/Buttons'
-// import Urgent from './Urgent';
+import { Label, Checkboxes, CheckboxesHidden, LabelP } from '../styles/Checkboxes'
+import { Urgent, LessUrgent, NotUrgent } from './UrgencyLevels'
 
 const ListOfTodos = () => {
   const toDoList = useSelector((store) => store.todos.items)
-  // const levelOfUrgency = useSelector((store) => store.todos.items.urgency)
   const dispatch = useDispatch()
 
+  // Function to toggle whether a task is done or not.
   const onIsDoneToggle = (id) => {
     dispatch(todos.actions.toggleItem(id))
   }
-
+  // Function to delete a task
   const onDeleteToDoButtonClick = (index) => {
     dispatch(todos.actions.removeToDo(index))
   }
@@ -26,16 +26,19 @@ const ListOfTodos = () => {
       {toDoList.map((toDo, index) => {
         return (
           <ToDoItem>
-            {toDo.urgency === 'red' && ('🔴')}
-            {toDo.urgency === 'green' && ('🟢')}
-            {toDo.urgency === 'orange' && ('🟠')}
-            <input name="to-dos" type="checkbox" checked={toDo.isDone} onChange={() => onIsDoneToggle(toDo.id)} />
-            <label htmlFor="to-dos"> {toDo.name} </label>
+            <Urgency>
+              {toDo.urgency === 'red' && (<Urgent />)}
+              {toDo.urgency === 'green' && (<NotUrgent />)}
+              {toDo.urgency === 'orange' && (<LessUrgent />)}
+            </Urgency>
+            <Label htmlFor="to-dos"> <LabelP>{toDo.name}</LabelP>
+              <CheckboxesHidden name="to-dos" type="checkbox" checked={toDo.isDone} onChange={() => onIsDoneToggle(toDo.id)} />
+              <Checkboxes className={toDo.isDone ? 'done' : 'notDone'} />
+            </Label>
             <RemoveTask onClick={() => onDeleteToDoButtonClick(index)} type="button">❌</RemoveTask>
           </ToDoItem>
         );
       })}
-      <DeleteAllTasks />
     </ToDoListWrapper>
   )
 }
@@ -43,7 +46,7 @@ const ListOfTodos = () => {
 export default ListOfTodos
 
 const ToDoListWrapper = styled.section`
-    background-color: #ffecea;
+    background-color: rgba(255,255,255, 0.8);
     margin-top: 2vh;
     height: 60vh;
     border-radius: 10px;
@@ -51,10 +54,16 @@ const ToDoListWrapper = styled.section`
     position: relative;
 `
 const ToDoItem = styled.div`
-    margin: 1vh 5vw 1vh 5vw;
-    padding: 4px;
+    margin-top: 1vh;
+    margin-bottom: 1vh;
     display: grid;
-    grid-template-columns: 0.5fr 0.5fr 3fr 1fr;
+    grid-template-columns: 0.1fr 3fr 0.5fr;
     border-radius: 2px;
-    font-family: 'Kalam', cursive;;
+    font-family: 'Kalam', cursive;
+    color: black;
+    position: relative;
+`
+const Urgency = styled.div`
+  display: flex; 
+  align-items: center;
 `

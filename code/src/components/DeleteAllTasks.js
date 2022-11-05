@@ -1,8 +1,11 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 import styled from 'styled-components'
+import { VscTrash } from 'react-icons/vsc';
+import { IconContext } from 'react-icons'
 
 const DeleteAllTask = () => {
   const dispatch = useDispatch()
@@ -12,20 +15,34 @@ const DeleteAllTask = () => {
   }
 
   return (
-    <RemoveAllTasks onClick={DeleteAllToDos} type="button">Remove all</RemoveAllTasks>
+    <RemoveAllTasks onClick={DeleteAllToDos} type="button">
+      <IconContext.Provider value={{ color: 'white' }}>
+        <VscTrash />
+      </IconContext.Provider>
+    </RemoveAllTasks>
   )
 }
 
 export default DeleteAllTask
 
 const RemoveAllTasks = styled.button`
-background-color: red;
-color: white;
-border: white solid 2px;
-border-radius: 15px;
+background-color: transparent;
+border: white solid 0.5px;
+border-radius: 20px;
 padding: 7px;
 position: absolute;
-bottom: 2vh;
-right: 2vw;
-font-style: 'Baloo 2', cursive;
+top: 20px;
+right: 10vw;
+display: flex;
+align-items: center;
+justify-content: center;
+&:hover {
+  background-color: lightpink;
+}
+@media (min-width: 668px) and (max-width: 1024px) {
+  right: 20vw;
+} 
+  @media (min-width: 1025px) {
+  right: 20vw;
+} 
 `
