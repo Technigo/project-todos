@@ -6,21 +6,24 @@ export const GlobalStyle = createGlobalStyle`
 
 export const OuterWrapper = styled.div`
   background-color: #faf6f0;
-  min-height: 100vh;
-  min-width: 100vw;
+;
 `
 
 export const InnerWrapper = styled.section`
-  background-color: #d4c7b9;
-  width: 80%;
-  max-width: 700px;
-  margin: 0 auto;
-  border-radius: 20px;
-
-  @media (max-width: 850px) {
-    width: 90%;
-  }
-`
+max-width: 940px;
+width: 90%;
+height: 100vh;
+margin: 0 auto;
+background-color: #d4c7b9;
+display: flex;
+flex-direction: column;
+@media (min-width: 667px) and (max-width: 1024px) {
+  width: 75%;
+}
+@media (min-width: 1025px) {
+  width: 75%;
+}
+`;
 
 export const Button = styled.button`
 border: none;

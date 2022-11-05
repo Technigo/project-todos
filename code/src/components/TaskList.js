@@ -5,6 +5,7 @@ import tasks from 'reducers/tasks'
 import styled from 'styled-components'
 import { Button } from 'components/GlobalStyles'
 import { FaTrashAlt } from 'react-icons/fa';
+import moment from 'moment';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
@@ -22,7 +23,7 @@ const TaskList = () => {
     <StyledList>
       {taskList.map((singleTask, index) => {
         return (
-          <li key={singleTask.id}>
+          <ListWrapper>
             <div>
               <input
                 className="checkbox"
@@ -33,8 +34,13 @@ const TaskList = () => {
               <label htmlFor={singleTask.id}>{singleTask.task}</label>
             </div>
             <TasksText>{singleTask.text}</TasksText>
-            <DeleteBtn type="button" onClick={() => onDeleteItemClick(index)}> <FaTrashAlt /></DeleteBtn>
-          </li>
+            <DateAndDeleteBtn>
+              <Date>
+             Created {moment(tasks.date).format('ddd, MMM Do YYYY @ hh:mm a')}
+              </Date>
+              <DeleteBtn type="button" onClick={() => onDeleteItemClick(index)}> <FaTrashAlt /></DeleteBtn>
+            </DateAndDeleteBtn>
+          </ListWrapper>
         )
       })}
     </StyledList>
@@ -43,16 +49,17 @@ const TaskList = () => {
 
 export default TaskList
 
-export const StyledList = styled.ul`
-    list-style-type: none;
-    height: 100vh;
-    width: 100%;
+export const StyledList = styled.section`
+`
 
-    & li {
-      display: flex;
-      font-size: 1.1rem;
-      height: 2rem;
-    } 
+const ListWrapper = styled.article`
+display: flex;
+flex-direction: row;
+/* flex-wrap: wrap; */
+padding: 0.5vh 2vw;
+justify-content: space-between;
+overflow: scroll;
+border-radius: 1%;
 `
 
 const TasksText = styled.p`
@@ -68,4 +75,16 @@ height: 30px;
 width: 30px;
 color: #936f63;
 margin-top: 10px;
+`
+
+const Date = styled.div`
+font-size: 10px;
+align-items: flex-end;
+margin-left: auto;
+color : #936f63;
+`
+
+const DateAndDeleteBtn = styled.div`
+display: flex;
+flex-direction: column;
 `
