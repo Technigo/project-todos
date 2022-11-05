@@ -32,7 +32,6 @@ const AddTask = () => {
           name="new task"
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)}
-          width="65%"
           placeholder="Write a todo.."
           className="newTaskInput"
           onKeyDown={(e) => e.key === 'Enter' && onAddTask()}
@@ -60,130 +59,108 @@ const Container = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: center;
+align-content: center;
 background-color: var(--light-color);
+padding-bottom: 10px;
 border: solid 2px black;
-padding-top: 5px;
 
 @media (min-width: 667px) and (max-width: 1024px) {
   display: flex;
-flex-direction: row;
-
+  flex-direction: row;
 }
 @media (min-width: 1025px) {
   display: flex;
-flex-direction: row;
-
+  flex-direction: row;
 }
 `
 
 const NewTaskWrapper = styled.div`
 display: flex;
 flex-direction: row;
-// border: solid 2px red;
-padding: 10px;
-display: flex;
 justify-content: center;
-
-
+width: 100%;
+border: solid 2px red;
+padding-bottom: 10px;
 
 @media (min-width: 667px) and (max-width: 1024px) {
-  padding: 5px;
 
 }
 @media (min-width: 1025px) {
-  padding: 20px;
+
  
 }
 `;
 
 const NewTaskIconWrapper = styled.div`
-  margin: 0 0 7px 15px;
-  border-radius: 50%;
-  // background-color: #212429;
-  // height: 50px;
-  // width: 50px;
+  border: solid 2px blue;
+  margin-left: 20px;
+  align-content: center;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-self: center;
-  cursor: pointer;
-  transition: all 0.7s ease-out;
-  &:hover {
-    transition: all 0.5s ease-in;
-    transform: scale(1.3);
-  }
 
   @media (min-width: 667px) and (max-width: 1024px) {
-    display: flex;
-    flex-direction: row; 
-  
   }
   @media (min-width: 1025px) {
-    display: flex;
-    flex-direction: row; 
   }
 `;
 
 const NewTaskIcon = styled.img`
   height: 40px;
   width: 40px;
+  align-self: center;
 `;
 const NewTaskTextInput = styled.input`
-  width: ${(props) => props.width};
-  padding: 7px 4px 0px 20px;
+  width: 65%;
   font-size: 13px;
   border: none;
-  outline: none;
-  :focus {
-  outline: none;
-  border: solid;
+  align-self: center;
+  // padding: 5px 0 5px 15px;
+  margin-top: 10px;
+  height: 34px;
 
-  
   @media (min-width: 667px) and (max-width: 1024px) {
-    // padding: 5px;
-
+    height: 54px;
   }
+
   @media (min-width: 1025px) {
-    // padding: 10px;
+    font-size: 17px;
+    height: 54px;
+  
   }`
 const ButtonWrapper = styled.div`
   display: flex;
   flex-direction: row; 
   justify-content: center;
-  padding: 15px 0;
-  // margin-left: auto;
-  // border: solid 2px red;
+  align-content: center;
+  align-self: center;
+  border: solid 2px red;
 
 .reset-button{
-  padding: 0 4px;
-  margin: 0 4px;
+  height: 20px;
   font-size: 12px;
   font-family: "Montserrat", sans-serif;
-  font-weight: 500;
-
+  font-weight: 600;
   border: none;
   color: #d0e7e2;
-  background-color:
-  padding: 8px;
-width: 100px;
-height: 25px;
-background-color: #005568;
-&:hover {
+  margin: 0 3px;
+  align-content: center;
+  width: 100px;
+  background-color: #005568;
+  &:hover {
   background-color: #00BBBC; 
   color: whitesmoke;
 }
-}
-
-  
 @media (min-width: 667px) and (max-width: 1024px) {
-  // padding: 5px;
-
+  font-size: 13px;
+  height: 20px;
 }
 @media (min-width: 1025px) {
-  height: 35px;
-  margin: 0 7px;
+  font-size: 13px;
+  height: 40px;
+  align-self: center;
+  margin: 0 10px;
 
-
+}
+}
 }`
 
 /*  <button type="button" onClick={() => onSetAllTasksDone(taskList)}>All Done</button> */

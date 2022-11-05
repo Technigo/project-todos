@@ -27,12 +27,11 @@ export default TodoCounter;
 const CounterWrapper = styled.div`
 position: relative;
 
-
 .tasks-left-wrapper{
 padding: 10px;
 position: absolute;
-right: 20px;
-top: 370px;
+right: 17px;
+top: 360px;
 font-weight: 500;
 
 }
