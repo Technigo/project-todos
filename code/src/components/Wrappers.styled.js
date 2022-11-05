@@ -27,7 +27,5 @@ export const Styled = {
       margin: 0%;
       border-radius: 0em;
       }
-
-
     `
 }

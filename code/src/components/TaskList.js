@@ -23,17 +23,17 @@ export const TaskList = () => {
         {outstandingTasks.map((item) => {
           return (
             <Styled.ListItem>
-              <Styled.ListText>{item.name}</Styled.ListText>
-              <Styled.Clickers>
-                <input
+              <Styled.CheckboxAndText>
+                <Styled.Checkbox
                   type="checkbox"
                   checked={item.isCompleted}
                   onChange={() => completedTaskToggle(item.id)} />
-                <button
-                  type="button"
-                  onClick={() => deleteTask(item.id)}>🔥
-                </button>
-              </Styled.Clickers>
+                <Styled.Text>{item.name}</Styled.Text>
+              </Styled.CheckboxAndText>
+              <Styled.Button
+                type="button"
+                onClick={() => deleteTask(item.id)}>🔥
+              </Styled.Button>
             </Styled.ListItem>
           );
         })}
@@ -43,17 +43,17 @@ export const TaskList = () => {
         {completedTasks.map((item) => {
           return (
             <Styled.ListItem>
-              <Styled.ListText>{item.name}</Styled.ListText>
-              <Styled.Clickers>
-                <input
+              <Styled.CheckboxAndText>
+                <Styled.Checkbox
                   type="checkbox"
                   checked={item.isCompleted}
                   onChange={() => completedTaskToggle(item.id)} />
-                <button
-                  type="button"
-                  onClick={() => deleteTask(item.id)}>🔥
-                </button>
-              </Styled.Clickers>
+                <Styled.Text>{item.name}</Styled.Text>
+              </Styled.CheckboxAndText>
+              <Styled.Button
+                type="button"
+                onClick={() => deleteTask(item.id)}>🔥
+              </Styled.Button>
             </Styled.ListItem>
           );
         })}
