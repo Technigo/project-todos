@@ -42,26 +42,6 @@ export const StyledH1 = styled.h1`
   font-weight: 500;
 `
 
-export const ClearAllBtn = styled.button`
-  border: none;
-  background-color: #9FDFBF;
-  border-radius: 20px;
-  cursor: pointer;
-  color: #367857;
-  font-size: 0.8rem;
-  height: 100%;
-  padding: 6px 12px;
-  margin-left: 5px;
-
-  @media (min-width: 668px){
-    padding: 0px 25px;
-
-  }
-  @media (min-width: 1025px){
-    
-  }
-`
-
 export const Counter = styled.p`
 background-color: #377958;
 border-radius: 20px;
