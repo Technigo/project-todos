@@ -10,7 +10,7 @@ export const Header = () => {
 
   // Shows the current date
   const now = new Date()
-  const todaysDate = format(now, "EEEE',' dd MMMM',' yyyy'")
+  const todaysDate = format(now, "EEEE',' dd MMMM yyyy'")
 
   return (
     <HeaderWrapper>

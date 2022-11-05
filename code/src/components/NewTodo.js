@@ -46,8 +46,8 @@ const NewTodoWrapper = styled.div`
 `
 const AddButton = styled.button`
   margin-left: 5px;
-  padding: 2px 7px 2px 7px;
-  font-size: 15px;
+  padding: 5px 10px 5px 10px;
+  font-size: 20px;
   font-family: 'Patrick Hand', cursive;
   background-color: #FEF5ED;
   border: 1px solid black;
@@ -56,18 +56,15 @@ const AddButton = styled.button`
   
   @media (min-width: 668px){ 
     margin-left: 10px;
-    font-size: 20px;
-    padding: 5px 10px 5px 10px;
   }
 `
 
 const TodoInput = styled.input`
-  padding: 5px;
-
-@media (min-width: 668px){ 
   padding: 10px;
-  width: 20vw;
   font-size: 15px;
 
+
+@media (min-width: 668px){ 
+  width: 20vw;
   }
 `

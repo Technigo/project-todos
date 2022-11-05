@@ -50,9 +50,8 @@ export const TodoList = () => {
   )
 }
 
-const TodoItem = styled.div`
+const TodoItem = styled.div``
 
-`
 const Footer = styled.div`
   display:flex;
   justify-content:center;
@@ -60,7 +59,6 @@ const Footer = styled.div`
 `
 
 const TodoListWrapper = styled.section`
-  margin: 20px;
   background-color: rgb(236, 179, 144, 0.7);
   border-radius: 10px;
   margin-top: 50px;
@@ -107,18 +105,19 @@ const DeleteAllTodos = styled.button`
       transition: 0.3s ease-in-out;
   }
   @media (min-width: 1025px){ 
-    padding: 15px;
+    padding: 12px;
+    font-size: 22px;
   }
 `
 
 const TodoCheckbox = styled.input`
   margin-left: 0px;
-  `
+`
 
 const RemoveTask = styled.button`
     background-color: transparent;
     border: none;
-    font-size: 17px;
+    font-size: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -129,6 +128,10 @@ const RemoveTask = styled.button`
       transition: 0.3s ease-in-out;
       cursor: pointer;
     }
+
+    @media (min-width: 668px){ 
+    font-size: 17px;
+  }
 `
 
 const CreatedAt = styled.p`
