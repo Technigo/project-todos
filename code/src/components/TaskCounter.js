@@ -23,22 +23,30 @@ const TaskCounter = () => {
   }
 
   return (
-    <MainSections>
+    <CounterSection>
       <ArticleWrapper>
         {counter()}
       </ArticleWrapper>
-    </MainSections>
+    </CounterSection>
   )
 }
 
 export default TaskCounter;
 
+const CounterSection = styled(MainSections)`
+  padding: 5% 0% 0% 0%;
+  margin-left: 20%;
+`
+
 const ArticleWrapper = styled.article`
-  width: 100vw;
+  background-color: #fffaef;
+  border-radius: 8px;
+  width: 60vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 1%;
 
   @media ${Devices.tablet} {
   width: 50vw;
@@ -62,4 +70,5 @@ const IconWhenEmpty = styled.i`
   transform: scale(4);
   margin: 10%;
   filter: invert(50%);
+  padding: 4% 0%
 `

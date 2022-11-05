@@ -86,6 +86,7 @@ const TaskBtn = styled.button`
   font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   padding: 0.5% 1%;
+  margin-top: 3%;
 
   &:hover {
     transition: all .3s ease-in-out;

@@ -18,7 +18,7 @@ const List = () => {
   }
 
   return (
-    <MainSections>
+    <ListSection>
       {taskList.map((singleItem, index) => {
         return (
           <ArticleWrapper key={singleItem.id}>
@@ -32,34 +32,48 @@ const List = () => {
                 checked={singleItem.completed}
                 onChange={() => onItemToggle(singleItem.id)} />
             </label>
+            <ListText>{singleItem.text}</ListText>
             <RemoveItemBtn
               type="button"
-              onClick={() => onRemoveClick(index)}>X
+              onClick={() => onRemoveClick(index)}>🗑️
             </RemoveItemBtn>
-            <ListText>{singleItem.text}</ListText>
-            <ListText>{singleItem.createdAt}</ListText>
+            <DateText>{singleItem.createdAt}</DateText>
 
           </ArticleWrapper>
         )
       }).reverse()}
 
-    </MainSections>
+    </ListSection>
   )
 }
 
 export default List;
 
+const ListSection = styled(MainSections)`
+  padding: 2% 0%;
+`
+
 const ArticleWrapper = styled.article`
-  border: double 2px lightgray;
+  background-color: white;
+  border: double 2px darkgreen;
   border-radius: 4px;
-  width: 95vw;
+  width: 90vw;
   display: grid;
-  grid-template-columns: 70% 30%;
+  grid-template-columns: 10% 80% 10%;
   margin: 2%;
+  padding: 1%;
 
   @media ${Devices.tablet} {
-  width: 50vw;
+    width: 50vw;
   }
+`
+
+const DateText = styled(MainText)`
+  color: darkgray;
+  font-size: 0.8em;
+  font-weight: bold;
+  grid-column: 2;
+  padding: 8% 0% 4% 0%;
 `
 
 const ListText = styled(MainText)`
@@ -67,14 +81,14 @@ const ListText = styled(MainText)`
 `
 
 const RemoveItemBtn = styled.button`
-  background-color: darkslategray;
-  border: solid 1px black;
+  background-color: white;
+  border: none;
   border-radius: 4px;
-  color: red;
+  color: black;
   font-weight: bold;
   text-align: center;
-  width: 20px;
-  height: 20px;
+  transform: scale(1.4); 
+  padding: 1%;
   justify-self: end;
-  margin: 3%;
+  margin: 10%;
 `

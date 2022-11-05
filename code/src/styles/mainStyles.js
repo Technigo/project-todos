@@ -20,7 +20,8 @@ export const Devices = {
 
 export const OuterWrapper = styled.div`
   overflow-x: hidden;
-  background-color: white;
+  /* background: rgb(116,10,24);
+background: linear-gradient(0deg, rgba(116,10,24,0.1951374299719888) 0%, rgba(24,35,135,1) 100%); */
   display: flex;
   justify-content: center;
   align-items: center;
