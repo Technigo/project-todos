@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
+import TodoCounter from 'components/TodoCounter';
 
 const Header = () => {
   return (
     <HeaderContainer>
-      {/* <Icons/> */}
+      <TodoCounter />
     </HeaderContainer>
   )
 };
@@ -12,37 +13,19 @@ export default Header;
 
 const HeaderContainer = styled.header`
 height: 25vh;
-position: relative;
+overflow: hidden;
+background-position: center;
 background-image: url("Assets/Background-web.svg");
 background-size: cover;
 background-color: var(--main-color);
 
-// img{
-//   position: absolute;
-//   width: 40%;
-//   right: 0%;
-//   bottom: -24%;
-// }
-.header-title{
-  position: absolute;
-  left: 10%;
-  bottom: 20%;
-  font-size: 38px;
-
-}
-.header-subtitle{
-  position: absolute;
-  left: 10%;
-  bottom: 10%;
-  font-size: 30px;
-
-}
 
 @media (min-width: 667px) and (max-width: 1024px) {
   height: 40vh;
 }
 @media (min-width: 1025px) {
-  height: 44vh;
+  // height: 15vh;
+  min-height: 400px;
   background-image: url("Assets/background-web.svg");
 
 }

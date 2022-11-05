@@ -10,7 +10,7 @@ const ContentWrapper = ({ children }) => {
     width: 90%;
     height: 100vh;
     margin: 0 auto;
-    background-color:var(--ligth-color);
+    background-color:#fff;
     display: flex;
     flex-direction: column;
 

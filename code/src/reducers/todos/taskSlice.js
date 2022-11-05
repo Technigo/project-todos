@@ -42,25 +42,31 @@ const taskSlice = createSlice({
           task.isCompleted = !task.isCompleted
         }
       })
+    },
+    toggleAllTasksComplete: (store, action) => {
+      store.tasksArray.forEach((task) => {
+        if (task.id === action.payload) {
+          task.isCompleted = true;
+        }
+      })
     }
   }
 });
 
 export default taskSlice;
 
-/* setAllTasksDone: (store, action) => {
-    //   store.tasksArray.forEach((task) => {
-    //     if (task.id === action.payload) {
-    //     !task.isCompleted = task.isCompleted
-    //     }
-    //   })
-    // },
-  //   }
-  // },
-  //   store.tasksArray.forEach((task) => {
-  //     if (task.id === action.payload) {
-  //       task.isCompleted =
-  //     }
-  //   })
-  // },
-  */
+//  setAllTasksDone: (store, action) => {
+//   store.tasksArray.forEach((task) => {
+//     if (task.id === action.payload) {
+//     !task.isCompleted = task.isCompleted
+//     }
+//   })
+// },
+//   }
+// },
+//   store.tasksArray.forEach((task) => {
+//     if (task.id === action.payload) {
+//       task.isCompleted =
+//     }
+//   })
+// }

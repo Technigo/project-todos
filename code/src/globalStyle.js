@@ -10,7 +10,7 @@ const GlobalStyle = createGlobalStyle`
   --second-color: #005568;
   --accent-color: #00BBBC; 
   --dark-color: #002d52;
-  --ligth-color:#d0e7e2;
+  --light-color:#d0e7e2;
   --pane-padding: 5px 42px;
   //00bcbc
 }

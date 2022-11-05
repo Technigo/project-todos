@@ -55,4 +55,4 @@ const Checkbox = ({ className, checked, ...props }) => (
   </CheckboxContainer>
 )
 
-export default Checkbox
+export default Checkbox;
