@@ -16,6 +16,11 @@ flex-direction: column;
     
   }
 `
+
+export const EmptyState = styled.div`
+
+`
+
 export const TodoDiv = styled.div`
   display: flex;
   align-items: center;
@@ -25,7 +30,7 @@ export const TodoDiv = styled.div`
   label {
     width: 100%;
   }
-  
+
   input[type="checkbox"] {
   opacity: 0;
 }
