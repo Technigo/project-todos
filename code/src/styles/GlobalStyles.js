@@ -10,7 +10,6 @@ export const OuterWrapper = styled.section`
 
 export const InnerWrapper = styled.section`
   width: 90%;
-  //padding-top: 15vh;
   padding-bottom: 8vh;
   display: flex; 
   flex-direction: column;
@@ -29,7 +28,5 @@ export const PaigeWrapper = styled.main`
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
-
 `
 
-// https://colorhunt.co/palette/fef5edd3e4cdadc2a999a799

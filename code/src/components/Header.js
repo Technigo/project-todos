@@ -16,7 +16,7 @@ export const Header = () => {
     <HeaderWrapper>
       <HeaderText>My to-do list</HeaderText>
       <DateText>{todaysDate}</DateText>
-      <Count>You have <CountSpan>{completedTasks.length}</CountSpan> to-do:s</Count>
+      <Count>You have <CountNumber>{completedTasks.length}</CountNumber> to-do:s</Count>
     </HeaderWrapper>
   )
 }
@@ -29,13 +29,12 @@ const HeaderWrapper = styled.header`
   font-size: 15px;
   position: relative;
 `
-
 const Count = styled.p`
   color: black;
   font-size: 25px;
   font-family: 'Patrick Hand', cursive;
 `
-const CountSpan = styled.span`
+const CountNumber = styled.span`
   font-weight: 700;
   color: #e3591e;
 `
@@ -52,7 +51,4 @@ const HeaderText = styled.p`
   @media (min-width: 668px){ 
     font-size: 50px;
   }
-  @media (min-width: 1025px) {
- 
-  }
-  `
+`

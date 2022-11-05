@@ -61,10 +61,10 @@ const Footer = styled.div`
 const TodoListWrapper = styled.section`
   background-color: rgb(236, 179, 144, 0.7);
   border-radius: 10px;
-  margin-top: 50px;
+  margin: 50px 10px 10px 10px;
   height: 65vh;
   overflow: auto;
-
+  
   //targets all children within the parent
   > * {
     display: flex;
@@ -74,7 +74,6 @@ const TodoListWrapper = styled.section`
     margin: 5px;
     }
   } 
-
 `
 const TodoRow = styled.div`
   margin: 5px;
@@ -131,6 +130,8 @@ const RemoveTask = styled.button`
 
     @media (min-width: 668px){ 
     font-size: 17px;
+    font-weight: 600;
+    padding: 15px;
   }
 `
 

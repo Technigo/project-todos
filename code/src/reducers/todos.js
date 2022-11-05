@@ -4,9 +4,6 @@ export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [{ id: 1,
-      name: 'Buy cat food',
-      completed: false },
-    { id: 2,
       name: 'Water plants',
       completed: false }]
   },

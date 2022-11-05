@@ -16,7 +16,7 @@ export const NewTodo = () => {
   const addNewTodo = (event) => {
     event.preventDefault() // prevents the form from reloading when adding new todo
     dispatch(todos.actions.addTodo({ name,
-      id: Date.now(),
+      id: Date.now(), // creates a unique id, based on time created
       completed: false }))
     setName('') // clears input field
   }
@@ -30,7 +30,8 @@ export const NewTodo = () => {
           placeholder="Add to-do"
           value={name}
           input="new-todo"
-          onChange={(event) => setName(event.target.value)} />
+          onChange={(event) => setName(event.target.value)}
+          required />
         <AddButton button type="submit" onClick={addNewTodo}> Add </AddButton>
       </form>
     </NewTodoWrapper>
@@ -56,6 +57,8 @@ const AddButton = styled.button`
   
   @media (min-width: 668px){ 
     margin-left: 10px;
+    padding: 8px 13px 8px 13px;
+    font-size: 22px;
   }
 `
 
@@ -63,8 +66,8 @@ const TodoInput = styled.input`
   padding: 10px;
   font-size: 15px;
 
-
 @media (min-width: 668px){ 
   width: 20vw;
+  padding: 15px;
   }
 `
