@@ -48,12 +48,15 @@ transition: transform .15s linear;
 @media (min-width: 900px) {
   height:20em;
   width:20em;
-  width: ;
 }
 `;
 
 const StyledParagraph = styled.h2`
   font-family: 'Reenie Beanie';
+
+  @media (min-width: 900px) {
+    font-size: 2rem;
+  }
 `;
 
 export default TaskCounter;
