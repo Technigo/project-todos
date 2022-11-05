@@ -17,5 +17,13 @@ const ToDoAmount = () => {
 export default ToDoAmount
 
 const TaskAmount = styled.div`
-display: ${(props) => (props.noTask ? 'none' : 'flex')};
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;;
+display: flex;
+flex-direction: row-reverse;
+
+  display: ${(props) => (props.noTask ? 'none' : 'flex')};
+
+  p {
+    padding-right: 2rem;
+  }
 `

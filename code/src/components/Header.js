@@ -21,16 +21,18 @@ export default Header
 const HeaderStyle = styled.header`
     display: flex;
     justify-content: space-between;
-    background-color: #91830A;
+    background-color: #b7a712e1;
     height: 15vh;
     color: white;
    
     .container-right {
+      padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
   .container-left {
+    padding: 1rem;
       display: flex;
       flex-direction: column;
       justify-content: center;

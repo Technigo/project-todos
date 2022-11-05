@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
+import add from 'assets/add.png'
+import { InputForm, SubmitBtn } from './StyledBtnInput'
 
 const AddToDo = () => {
   const [input, setInput] = useState('');
@@ -20,16 +22,22 @@ const AddToDo = () => {
     setInput(event.target.value)
   };
   return (
-    <form onSubmit={onAddToDo}>
+    <InputForm onSubmit={onAddToDo}>
       <input
+        className="input-box"
         type="text"
         value={input}
         onChange={onInputChange}
         placeholder="🖊️ Add a new Task"
         required=" "
         autoComplete="off" />
-      <button type="submit">Test</button>
-    </form>
+      <SubmitBtn type="submit">
+        <img
+          className="submit-icon"
+          aria-label="submit-button"
+          src={add} />
+      </SubmitBtn>
+    </InputForm>
   )
 }
 

@@ -1,11 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from 'react';
-/* import styled from 'styled-components/macro' */
 import { useSelector, useDispatch } from 'react-redux';
-import todos from 'reducers/todos';
 import styled from 'styled-components/macro';
+
+import todos from 'reducers/todos';
+
 import emptystate from 'assets/space.png'
+import minus from 'assets/minus.png'
+import { DeleteBtn } from './StyledBtnInput';
 
 const ToDoList = () => {
   const dispatch = useDispatch();
@@ -41,8 +44,12 @@ const ToDoList = () => {
               checked={singleToDo.isComplete}
               onChange={() => onToggleToDo(singleToDo.id)} />
             <label className="strikethrough">{singleToDo.text}</label>
-            <p>Created: {singleToDo.postedTime}</p>
-            <button type="button" onClick={() => onDeleteToDo(singleToDo.id)}>X</button>
+            <div className="container">
+              <DeleteBtn type="button" onClick={() => onDeleteToDo(singleToDo.id)}>
+                <img className="btn-icon" aria-label="icon" src={minus} />
+              </DeleteBtn>
+              <p>{singleToDo.postedTime}</p>
+            </div>
           </article>
 
         );
@@ -59,7 +66,7 @@ const StyledList = styled.section`
     flex-direction: column;
     justify-content: flex-start;
     margin: 10px auto;
-    height: 260px;
+    height: 400px;
     overflow-y: scroll;
   }
   &.no-items {
@@ -74,4 +81,41 @@ const StyledList = styled.section`
     background-position: center;
   }
 
+  article {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 0.5vh 2vw;
+    min-height: 12vh;
+    justify-content: space-between;
+    overflow: scroll;
+    border-radius: 1%;
+    border: 1px solid rgb(176, 228, 232);
+  } 
+    article:nth-child(2n + 1) {
+      background: linear-gradient(90deg, #72aad0, #95bac2, #a3bfc3);
+  }
+  label.strikethrough {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    line-height: 25px;
+    word-break: break-word;
+    word-wrap: break-word;
+    max-width: 200px;
+    
+    @media (min-width: 450px) {
+      max-width: 50vw;
+    }
+  }
+  p {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    word-wrap: break-word;
+  }
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 `

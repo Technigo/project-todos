@@ -18,7 +18,7 @@ const todos = createSlice({
         id: uniqid(),
         text: action.payload,
         isComplete: false,
-        postedTime: moment().format('LLL')
+        postedTime: moment().format('MMM Do YY')
       };
       store.items = [newToDo, ...store.items]
     },
