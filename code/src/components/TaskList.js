@@ -16,21 +16,26 @@ const TaskList = () => {
   };
 
   return (
-    <section>
+    <section className="wrapper">
       {/* inside prantes is our payload */}
       {taskList.map((singleTask) => {
         return (
-          <article>
+          <article className="container">
             <h2>{singleTask.name}</h2>
-            <label>
-              Is this caught
+            <label className="inputLabel">
               <input
+                className="taskInput"
                 type="checkbox"
                 checked={singleTask.isCaught}
                 onChange={() => onIsCaughtToggle(singleTask.id)}
               />
             </label>
-            <button onClick={() => onDeleteTaskBtn(singleTask)}>X</button>
+            <button
+              className="deleteTaskBtn"
+              onClick={() => onDeleteTaskBtn(singleTask)}
+            >
+              X
+            </button>
           </article>
         );
       })}

@@ -6,8 +6,8 @@ const Header = () => {
 
   return (
     <header>
-      <h1>to-do list</h1>
-      <p>{moment(date).format('dddd - MM ')}</p>
+      <h1>My To-Do List</h1>
+      <p>{moment(date).format('dddd / MM / YYYY')}</p>
     </header>
   );
 };

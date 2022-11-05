@@ -5,6 +5,9 @@ import tasks from '../reducers/task';
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
   const dispatch = useDispatch();
+    const handleNewTask = (event) => {
+     setInputValue(event.target.value);
+    };
 
   const onFormSubmit = (e) => {
     e.preventDefault();
@@ -25,17 +28,21 @@ const AddTask = () => {
   };
 
   return (
-    // printing out our new task in from/ to work from we need to add onSubmit
-    <form onSubmit={onFormSubmit}>
+    // printing out our new task in from/ to work form we need to add onSubmit
+    <form className="wrapperForm"
+    onSubmit={onFormSubmit}>
       <label>
         New Task:
         <input
+          className="taskInput"
           type="text"
           value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)}
+          onChange={handleNewTask}
         />
       </label>
-      <button type="submit"> Add Task</button>
+      <button className="addBtn" type="submit">
+        Add Task
+      </button>
     </form>
   );
 };

@@ -1,12 +1,12 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import tasks from '../reducers/task';
+import AddTask from './AddTask';
 
-const CompletedTask = () => {
+const NotCompletedTask = () => {
   const items = useSelector((store) => store.tasks.items);
   const dispatch = useDispatch();
-
-  const completeTask = items.filter((taskItem) => taskItem.isCaught);
+  const notCompleteTask = items.filter((taskItem) => !taskItem.isCaught);
 
   const onTaskToggle = (taskId) => {
     dispatch(tasks.actions.toggleItem(taskId));
@@ -15,17 +15,17 @@ const CompletedTask = () => {
   const onDeleteTask = (taskId) => {
     dispatch(tasks.actions.deleteItem(taskId));
   };
-  
-  const onClickAllTaksDelete = (taskId) => {
-    dispatch(tasks.actions.allTaskDelete(taskId));
+
+  const onClickAllCompleted = () => {
+    dispatch(tasks.actions.allCompleteTask());
   };
 
-  const doneSummary = completeTask.length;
+  const NotDoneSummary = notCompleteTask.length;
 
   return (
     <section className="wrapper">
-      <p className="task-to-do">I Have {doneSummary} done by now 😎 </p>
-      {completeTask.map((taskItem) => (
+      <p className="task-to-do">I have {NotDoneSummary} on my to-do list.</p>
+      {notCompleteTask.map((taskItem) => (
         <div className="taskConitainer" key={taskItem.id}>
           <div className="">
             <h2>{taskItem.text}</h2>
@@ -42,19 +42,14 @@ const CompletedTask = () => {
               </label>
             </label>
           </div>
-          <button
-            className="deletebtn"
-            onClick={() => onDeleteTask(taskItem.id)}
-          >
-           
-          </button>
+        
         </div>
       ))}
-      <button className="delete-all-button" onClick={onClickAllTaksDelete}>
-        Delete all
+      <button className="all-btn" onClick={onClickAllCompleted}>
+        All Done
       </button>
     </section>
   );
 };
 
-export default CompletedTask;
+export default NotCompletedTask;

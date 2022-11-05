@@ -29,7 +29,7 @@ using splice method
       store.items.push(action.payload);
     },
 
-    completeTask: (store, action) => {
+    allCompleteTask: (store, action) => {
       const compeleted = store.items.map((task) => {
         return {
           ...task,
