@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
 /* eslint-disable no-nested-ternary */
 import React from 'react'
 import { FaClock } from 'react-icons/fa';
