@@ -35,11 +35,14 @@ header p {
   text-shadow: 2px 8px 6px rgba(0, 0, 0, 0.2),
     0px -5px 35px rgba(255, 255, 255, 0.3);
 }
-/* input placeholder{
-  color:gray;
-  font-size: 12px;
 
-} */
+h2{
+  font-size: 18px;
+  color:rgb(58, 55, 61);
+  padding-right: 1.5rem;
+  line-height: 16px;
+  
+}
 
 .wrapper {
   display: flex;
@@ -59,9 +62,7 @@ margin:auto;
 display:flex;
   justify-content: center;
   padding-top: 20px;
-
-
-
+  align-items: center;
 }
 
 .container {
@@ -74,16 +75,20 @@ display:flex;
   margin-right: 10px;
   border: 1px solid #b0e5ff;
   height: 35px;
+  width:250px;
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
   border-radius: 100px;
   outline: none;
-  font-size: 18px;
+  font-size: 16px;
+  padding-left: 15px;
+  line-height: 16px;
 }
 
-.inputLabel {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
+.inputLabel checkbox{
+   background-color:red;
+  width:35px;
+  font-size:30px;
+   
 }
 
 
@@ -134,7 +139,8 @@ display:flex;
   background-color: (225, 206, 157);
   border: none;
   color: rgb(215, 46, 46);
-  font-size: bold;
+  font-weight: bolder;
+  margin-left: 1rem;
 }
 .deleteTaskBtn:hover {
   box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);

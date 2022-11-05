@@ -24,10 +24,10 @@ const CompletedTask = () => {
 
   return (
     <section className="wrapper">
-      <p className="task-to-do">I Have {doneSummary} done by now 😎 </p>
+      <p className="task-to-do">I Have done {doneSummary} by now 😎 </p>
       {completeTask.map((taskItem) => (
         <div className="taskConitainer" key={taskItem.id}>
-          <div className="">
+          <div>
             <h2>{taskItem.text}</h2>
             <label>
               <input
@@ -37,17 +37,15 @@ const CompletedTask = () => {
                 checked={taskItem.isCaught}
                 onChange={() => onTaskToggle(taskItem.id)}
               />
-              <label for="checkbox" className="checkbox">
+              {/* <label for="checkbox" className="checkbox">
                 <span>🗑</span>
-              </label>
+              </label> */}
             </label>
           </div>
           <button
             className="deletebtn"
             onClick={() => onDeleteTask(taskItem.id)}
-          >
-           
-          </button>
+          ></button>
         </div>
       ))}
       <button className="delete-all-button" onClick={onClickAllTaksDelete}>

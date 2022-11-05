@@ -24,7 +24,7 @@ const TaskList = () => {
             <h2>{singleTask.name}</h2>
             <label className="inputLabel">
               <input
-                className="taskInput"
+                className="input"
                 type="checkbox"
                 checked={singleTask.isCaught}
                 onChange={() => onIsCaughtToggle(singleTask.id)}

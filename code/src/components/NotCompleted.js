@@ -1,7 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import tasks from '../reducers/task';
-import AddTask from './AddTask';
 
 const NotCompletedTask = () => {
   const items = useSelector((store) => store.tasks.items);
@@ -37,9 +36,9 @@ const NotCompletedTask = () => {
                 checked={taskItem.isCaught}
                 onChange={() => onTaskToggle(taskItem.id)}
               />
-              <label for="checkbox" className="checkbox">
+              {/* <label for="checkbox" className="checkbox">
                 <span>🗑</span>
-              </label>
+              </label> */}
             </label>
           </div>
         
