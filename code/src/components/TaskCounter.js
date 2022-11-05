@@ -10,7 +10,7 @@ const TodoCount = () => {
 
   return (
     <Counter>
-          &quot;{completeTodo.length} out of {todoCounter} is done&quot;
+          &quot;{completeTodo.length} out of {todoCounter} task is done&quot;
     </Counter>
   );
 };
@@ -18,14 +18,14 @@ const TodoCount = () => {
 export default TodoCount;
 
 const Counter = styled.p`
-  color: var(--primary);
+  color: var(--quinary);
   margin: 0;
 
-  @media (min-width: 600px) and (max-width: 900px){
-    font-size: 21px;
-  }
+@media (min-width: 600px) and (max-width: 900px){
+  font-size: 21px;
+}
 
 @media (min-width: 901px){
-    font-size: 25px;
+  font-size: 25px;
 }
 `

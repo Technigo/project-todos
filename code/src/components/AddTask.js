@@ -49,37 +49,34 @@ const AddTask = () => {
 export default AddTask
 
 const Form = styled.form`
-display: flex;
-flex-direction: column;
-padding: 0;
-margin-top: 20%;
-align-items: center;
-
-@media (min-width: 901px){
-
-}
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin-top: 20%;
+  align-items: center;
 `
 
 const Description = styled.textarea`
-border: none;
-resize: none;
-font-family: 'Cormorant Garamond', serif;
-width: 90%;
-padding: 20px;
-background-color: var(--quinary);
-font-size: 18px;
-box-shadow: 2px 16px 21px -13px rgba(145,138,138,0.51);
+  border: none;
+  resize: none;
+  font-family: 'Cormorant Garamond', serif;
+  width: 90%;
+  padding: 20px;
+  background-color: var(--quinary);
+  font-size: 18px;
+  box-shadow: 0px 10px 7px -6px rgba(64,29,2,0.43);
 
-::placeholder{
-  font-size: 12px;
-}
+  ::placeholder{
+    font-size: 12px;
+  }
 
 @media (min-width: 600px) and (max-width: 900px){
   padding: 20px 20px 50px;
   font-size: 20px;
+  
   ::placeholder{
-  font-size: 16px;
-}
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 901px){
@@ -89,18 +86,17 @@ box-shadow: 2px 16px 21px -13px rgba(145,138,138,0.51);
 
   ::placeholder{
   font-size: 25px;
-}
   }
+}
 `
 
 export const ToDoDetails = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
-width: 80%;
-margin: 10px auto;
-justify-content: space-between;
-
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80%;
+  margin: 10px auto;
+  justify-content: space-between;
 
 @media (min-width: 600px) and (max-width: 900px){
   margin: 20px auto;

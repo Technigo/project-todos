@@ -62,9 +62,9 @@ const TaskList = () => {
 export default TaskList;
 
 const TaskListGrid = styled.div`
-display: grid;
-grid-template-columns: 100%;
-margin-bottom: 30%;
+  display: grid;
+  grid-template-columns: 100%;
+  margin-bottom: 30%;
 
 @media (min-width: 600px) and (max-width: 900px){
   grid-template-columns: 50% 50%;
@@ -78,9 +78,9 @@ margin-bottom: 30%;
 }
 `
 const TaskListWrapper = styled.div`
-display: flex;
-flex-direction: column;
-width: 100%;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
 
 @media (min-width: 600px) and (max-width: 900px){
   width: 90%;
@@ -92,18 +92,18 @@ width: 100%;
 `
 
 const Wrapper = styled.div`
-background-color: var(--quinary);
-margin: 20px 20px 0;
-padding: 20px 10px;
-box-shadow: 2px 16px 21px -13px rgba(145,138,138,0.51);
+  background-color: var(--quinary);
+  margin: 20px 20px 0;
+  padding: 20px 10px;
+  box-shadow: 0px 10px 7px -6px rgba(64,29,2,0.43);
 
-p{
-  margin-top: 10px;
-}
+  p{
+    margin-top: 10px;
+  }
 
 @media (min-width: 600px) and (max-width: 900px){
   width: 100%;
-margin: 0 ;
+  margin: 0 ;
 }
 
 @media (min-width: 901px){
@@ -114,32 +114,33 @@ margin: 0 ;
     font-size: 28px;
   }
 }
-
 `
 const SubmittedToDoDetails = styled(ToDoDetails)`
-justify-content: flex-end;
+  justify-content: flex-end;
 
-img{
-  height: 35px;
-  width: 35px;
-}
+  img{
+    height: 35px;
+    width: 35px;
+  }
 
 @media (min-width: 600px) and (max-width: 900px){
   justify-content: center;
+  margin: 10px auto;
 }
 
 @media (min-width: 901px){
-  img{
-  height: 45px;
-  width: 45px;
-}
   justify-content: center;
   margin: 10px auto;
+  
+  img{
+    height: 45px;
+    width: 45px;
+  }
 }
 `
 
 const Input = styled.input`
--webkit-appearance: none;
+  -webkit-appearance: none;
   appearance: none;
   background-color: white;
   margin: 0 5px 0 0;
@@ -153,25 +154,19 @@ const Input = styled.input`
   &::before{
     content: "";
     width: 13px;
-  height: 13px;
-  transform: scale(0);
-  transition: 120ms transform ease-in-out;
-  box-shadow: inset 30px 30px var(--primary);
-  display: grid;
-  place-content: center;
+    height: 13px;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 30px 30px var(--secondary);
+    display: grid;
+    place-content: center;
   }
+
   &:checked + label{
-    text-decoration: 4px line-through var(--quaternary);
+    text-decoration: 4px line-through var(--primary);
   }
+  
   &:checked::before{
     transform:scale(1)
   }
-
-  @media (min-width: 600px) and (max-width: 900px){
-
-}
-
-@media (min-width: 901px){
-
-}
 `;

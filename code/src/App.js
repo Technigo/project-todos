@@ -7,6 +7,7 @@ import AddTask from 'components/AddTask';
 import Header from 'components/Header';
 import TodaysDate from 'components/TodaysDate';
 import TaskList from 'components/TaskList';
+import Greeting from 'components/Greeting';
 
 import { OuterWrapper, GlobalStyles, ContentWrapper, BottomLine } from 'styledcomponents/GlobalStyles';
 
@@ -19,10 +20,12 @@ export const App = () => {
   return (
     <>
       <GlobalStyles />
+      <BottomLine />
       <OuterWrapper>
         <Provider store={store}>
           <Header />
           <ContentWrapper>
+            <Greeting />
             <TodaysDate />
             <AddTask />
             <TaskList />
@@ -30,7 +33,6 @@ export const App = () => {
           <BottomLine />
         </Provider>
       </OuterWrapper>
-
     </>
   );
 }

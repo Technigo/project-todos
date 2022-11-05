@@ -3,10 +3,11 @@ import styled from 'styled-components';
 
 const Header = () => {
   return (
-    <><HeaderTitle>Daily Planner</HeaderTitle>
+    <>
+      <FirstTitle>Daily</FirstTitle>
       <Separator>
         <div className="line" />
-        <p>TO DO LIST</p>
+        <h1>Planner</h1>
         <div className="line" />
       </Separator>
       <CreatorName>by Kartika Purwahyuningrum</CreatorName>
@@ -16,59 +17,72 @@ const Header = () => {
 
 export default Header
 
-const HeaderTitle = styled.h1`
-  color: var(--quinary);
-  font-size: 50px;
-  margin: 30px auto 15px;
-  text-align: center;
+const FirstTitle = styled.h1`
+  font-size: 60px;
+  font-style: italic;
+  line-height: 10px;
+  font-weight: 400;
+  letter-spacing: 5px;
+  color: var(--quaternary);
+  margin-top: 50px;
+
 
 @media (min-width: 600px) and (max-width: 900px){
-  font-size: 75px;    
+  font-size: 75px;  
+  margin-top: 70px; 
+  line-height: 25px; 
 }
 
 @media (min-width: 901px){
-  font-size: 95px;
+  font-size: 150px;
+  margin-top: 80px;
+  line-height: 40px; 
 }
 `
+
 /* To create line between the word "Daily Planner" */
 const Separator = styled.div`
   width: 85%;
   display:flex;
   align-items: center;
 
-  p{
+  h1{
     padding: 0 10px;
-    color: var(--quinary);
-    font-size: 18px;
+    color: var(--quaternary);
+    font-size: 40px;
+    margin-top: 10px;
+    font-weight: 400;
   }
 
   .line{
     height: 1px;
+    margin-top: 20px;
     flex: 1;
-    background-color: var(--quinary);
+    background-color: var(--quaternary);
   }
 
-  @media (min-width: 600px) and (max-width: 900px){
-    width: 50%;
+@media (min-width: 600px) and (max-width: 900px){
+  width: 80%;
 
-    p{
-      padding: 0 15px;
-      font-size: 25px;
+  h1{
+    padding: 0 15px;
+    font-size: 55px;
   }
-    }
+}
   
-    @media (min-width: 901px){
-      width: 60%;
+@media (min-width: 901px){
+    width: 80%;
 
-      p{
-        padding: 0 15px;
-        font-size: 30px;
+    h1{
+      padding: 0 15px;
+      font-size: 90px;
+      margin-top: 30px;
     }
-  }
+}
 `
 
 const CreatorName = styled.h6`
-  color: var(--primary);
+  color: var(--quinary);
   font-size: 12px;
 
 @media (min-width: 600px) and (max-width: 900px){
@@ -79,14 +93,3 @@ const CreatorName = styled.h6`
   font-size: 18px;
 }
 `
-
-/*
-@media (min-width: 600px) and (max-width: 900px){
-
-}
-
-@media (min-width: 901px){
-
-}
-
-  */
