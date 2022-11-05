@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import tasks from 'reducers/tasks';
-// import { AddButton } from 'styleComponent/StyledButton';
+import tasks from '../reducers/task';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -26,24 +25,18 @@ const AddTask = () => {
   };
 
   return (
-    <div className="inputWrapper">
-      <form onSubmit={onFormSubmit}>
-        <label className="inputLabel">
-          <input
-            type="text"
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
-            onKeyDown={(e) => e.key === 'Enter' && onFormSubmit()}
-          />
-          {/* <AddButton onClick={() => onFormSubmit()} disabled={task < 1}>
-            +
-          </AddButton> */}
-          <button type="submit"> Add Task</button>
-
-          {/* <button type="submit"> Add Task</button> */}
-        </label>
-      </form>
-    </div>
+    // printing out our new task in from/ to work from we need to add onSubmit
+    <form onSubmit={onFormSubmit}>
+      <label>
+        New Task:
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(event) => setInputValue(event.target.value)}
+        />
+      </label>
+      <button type="submit"> Add Task</button>
+    </form>
   );
 };
 
