@@ -26,7 +26,7 @@ const NewTask = ({ bottomRef }) => {
           dispatch(cat.actions.changeCat('typing'));
         }, 1000);
 
-        bottomRef.current.scrollIntoView({ behaviour: 'smooth' });
+        bottomRef.current.scrollIntoView({ block: 'end', behavior: 'smooth', inline: 'end' });
       }}
       onFocus={() => {
         dispatch(cat.actions.changeCatAndPrevious('typing'));

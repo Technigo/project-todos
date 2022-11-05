@@ -51,7 +51,7 @@ const TaskList = ({ bottomRef }) => {
           </TaskForm>
         );
       })}
-      <div ref={bottomRef} />
+      <BottomRefDiv ref={bottomRef} />
     </TaskListStyle>
   );
 };
@@ -71,10 +71,14 @@ const TaskListStyle = styled.form`
 `;
 
 const TaskForm = styled.div`
-  /* display: flex; */
   display: grid;
   grid-template-columns: 6fr 1fr;
   align-items: center;
   justify-content: center;
   align-items: flex-start;
 `;
+
+const BottomRefDiv = styled.div`
+height: 50px;
+min-height: 50px;
+`
