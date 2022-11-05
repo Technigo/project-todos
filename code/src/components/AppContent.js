@@ -16,7 +16,12 @@ const AppContent = () => {
 
 export default AppContent
 
+// Styled mobile first
+
+// Styling for border around content
 export const Main = styled.main`
 margin: 0 auto;
 border: 2px solid black;
+width: 100vw;
+min-height: 100vh;
 `;

@@ -4,7 +4,6 @@ import { useDispatch/* , useSelector */ } from 'react-redux';
 import tasks from 'reducers/todos';
 
 const AddTask = () => {
-  /* const taskList = useSelector((store) => store.tasks.items); */
   const [inputValue, setInputValue] = useState('');
   const dispatch = useDispatch();
 
@@ -17,16 +16,15 @@ const AddTask = () => {
       isCompleted: false }
     dispatch(tasks.actions.addTask(newTask));
     setInputValue('');
-    /* localStorage.setItem('taskList', JSON.stringify(taskList)) */
   }
 
   return (
     <form onSubmit={onFormSubmit}>
       <label>
-            New Pokemon:
-        <input type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
+        {/* New Pokemon: */}
+        <input type="text" value={inputValue} placeholder="Add new task..." onChange={(event) => setInputValue(event.target.value)} />
       </label>
-      <button type="submit"> Add new task</button>
+      <button type="submit"> Add</button>
     </form>
   )
 }

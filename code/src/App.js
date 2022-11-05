@@ -27,6 +27,7 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import tasks from 'reducers/todos';
 import AppContent from 'components/AppContent';
+import { GlobalStyle } from 'utils/GlobalStyle';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -38,6 +39,7 @@ export const App = () => {
   });
   return (
     <Provider store={store}>
+      <GlobalStyle />
       <AppContent />
     </Provider>
   );
