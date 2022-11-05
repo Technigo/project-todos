@@ -87,3 +87,6 @@ code {
   transform: rotate(45deg);
 }
 
+.complete-todo {
+  text-decoration: line-through;
+}

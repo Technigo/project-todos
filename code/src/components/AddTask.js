@@ -60,7 +60,15 @@ font-weight: bold;
 padding: 0;
 `
 const FormWrapper = styled.div`
-margin: 20px;
+margin: 20px 0;
+
+@media (min-width: 668px){ 
+  margin: 20px;
+ } 
+ 
+ @media (min-width: 1025px) {
+   margin: 20px; 
+ }
 `
 
 const InputWrapper = styled.div`
@@ -76,6 +84,7 @@ const NewTaskInput = styled.input`
   outline: none;
   height: 40px;
   border-radius: 5px;
+  width: 100%;
 `
 
 const AddNewTaskButton = styled.button`
@@ -86,6 +95,7 @@ const AddNewTaskButton = styled.button`
   z-index: 2;
   border: none;
   height: 40px;
+  width: 40px;
   cursor: pointer;
   color: white;
   background-color: rgba(0,126,159,0.7);

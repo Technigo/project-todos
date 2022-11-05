@@ -34,7 +34,7 @@ const TodoList = () => {
                 <span className="checkmark" />
               </label>
               <TaskText>
-                <p>{singleTask.task}</p>
+                <p className={singleTask.isCompleted ? 'complete-todo' : 'uncomplete-todo'}>{singleTask.task}</p>
               </TaskText>
               <CheckAndDeleteWrapper>
                 <DeleteButton type="button" onClick={() => onDeleteTodo(singleTask.id)}>X</DeleteButton>
@@ -56,6 +56,7 @@ const TaskList = styled.div`
   `
 
 const TaskSection = styled.section`
+
 @media (min-width: 668px){ 
  margin: 20px;
 } 
@@ -64,14 +65,24 @@ const TaskSection = styled.section`
   margin: 20px; 
 }
   `
-
 const TaskArticle = styled.article`
     background-color: #ffff;
-    margin: 20px;
+    margin: 20px 0;
     border: 2px solid #007E9F;
     border-radius: 5px;
     padding: 0 10px;
     display: flex;
+    width: 100%;
+
+    @media (min-width: 668px){ 
+      margin: 20px;
+      width: 92%;
+     } 
+     
+     @media (min-width: 1025px) {
+       margin: 20px; 
+     }
+  
   `
 
 const DeleteButton = styled.button`

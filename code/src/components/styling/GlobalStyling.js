@@ -10,7 +10,7 @@ export const OuterWrapper = styled.div`
     background: linear-gradient(to left, rgba(0,126,159,0.5), rgba(0,126,159,1));
 `
 export const InnerWrapper = styled.div`
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     padding-bottom: 20px;
     min-height: 50vh;
