@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import Header from './Header'
 import TaskList from './TaskList'
 import AddTask from './AddTask'
+import DeleteAllBtn from './DeleteAllBtn'
 
 const AppContent = () => {
   return (
@@ -10,6 +11,7 @@ const AppContent = () => {
       <Header />
       <TaskList />
       <AddTask />
+      <DeleteAllBtn />
     </Main>
   )
 }
@@ -24,4 +26,14 @@ margin: 0 auto;
 border: 2px solid black;
 width: 100vw;
 min-height: 100vh;
+
+@media (min-width: 600px) {
+
+  width: 400px;
+    height: 700px;
+    min-height: 600px;
+    margin-top: 5%;
+    border-radius: 30px;
+    overflow: scroll;
+     }
 `;
