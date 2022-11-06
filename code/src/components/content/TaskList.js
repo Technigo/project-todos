@@ -79,6 +79,6 @@ const TaskForm = styled.div`
 `;
 
 const BottomRefDiv = styled.div`
-height: 50px;
-min-height: 50px;
-`
+  height: 50px;
+  min-height: 50px;
+`;

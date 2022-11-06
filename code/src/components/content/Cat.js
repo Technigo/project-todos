@@ -14,11 +14,6 @@ const Cat = () => {
 export default Cat;
 
 const CatStyle = styled.img`
-  padding-top: 10%;
   width: 64px;
   height: 64px;
-
-  @media (min-width: 1024px) {
-    padding-top: 50px;
-  }
 `;

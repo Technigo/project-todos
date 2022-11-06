@@ -8,6 +8,7 @@ import { textColor } from 'components/GlobalStyles';
 import TaskList from './TaskList';
 import Cat from './Cat';
 import NewTask from './NewTask';
+import DeleteAll from './DeleteAll';
 
 const ContentContainer = () => {
   const taskListLength = useSelector((store) => store.tasks.tasks.length);
@@ -22,7 +23,10 @@ const ContentContainer = () => {
 
   return (
     <ContentContainerStyled>
-      <Cat />
+      <HeaderContainer>
+        <Cat />
+        <DeleteAll />
+      </HeaderContainer>
       <h1>{headerText}</h1>
       <TaskList bottomRef={bottomRef} />
       <NewTask bottomRef={bottomRef} />
@@ -36,6 +40,18 @@ const ContentContainerStyled = styled.div`
   color: ${textColor};
   flex-direction: column;
   align-items: center;
+`;
+
+const HeaderContainer = styled.div`
+  padding-top: 10%;
+  position: relative;
+  display: flex;
+  width: 80%;
+  justify-content: center;
+
+  @media (min-width: 1024px) {
+    padding-top: 50px;
+  }
 `;
 
 export default ContentContainer;

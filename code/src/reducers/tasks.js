@@ -25,16 +25,20 @@ const tasks = createSlice({
       store.tasks.push(newTask);
       localStorage.setItem('tasks', JSON.stringify(store.tasks));
     },
-    deleteTask: (store, action) => {
-      store.tasks = store.tasks.filter((task) => task.id !== action.payload);
-      localStorage.setItem('tasks', JSON.stringify(store.tasks));
-    },
     toggleComplete: (store, action) => {
       store.tasks.forEach((task) => {
         if (task.id === action.payload) {
           task.isComplete = !task.isComplete;
         }
       });
+      localStorage.setItem('tasks', JSON.stringify(store.tasks));
+    },
+    deleteTask: (store, action) => {
+      store.tasks = store.tasks.filter((task) => task.id !== action.payload);
+      localStorage.setItem('tasks', JSON.stringify(store.tasks));
+    },
+    deleteAllTasks: (store) => {
+      store.tasks = [];
       localStorage.setItem('tasks', JSON.stringify(store.tasks));
     }
   }

@@ -13,6 +13,7 @@ const Trashbin = ({ task }) => {
 
   return (
     <TrashbinStyle
+      title="Delete task"
       type="button"
       onClick={() => {
         // changes cat to 'smart' if task was completed before deleted
