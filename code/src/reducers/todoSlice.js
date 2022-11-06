@@ -1,3 +1,5 @@
+/* eslint no-useless-return: "error" */
+
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
@@ -20,7 +22,7 @@ const todoSlice = createSlice({
           } else {
             item.done = true
           }
-        }
+        } return false;
       })
     },
     deleteAll: (state) => {
