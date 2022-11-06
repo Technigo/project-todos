@@ -11,22 +11,27 @@ export const NewTaskForm = () => {
   // adding new task using dispatch
   const newTask = () => {
     return (
-      dispatch(tasks.actions.addTask({
-        text: newTaskItem,
-        complete: false,
-        id: Date.now()
+      dispatch(
+        tasks.actions.addTask({
+          text: newTaskItem,
+          complete: false,
+          id: Date.now()
+
         // creating a unique number by using date:
         // made up of the four digit year, two digit month,
         // two digit day, two digit hour, two digit minute, two digit second,
         // and three digit millisecond +
         // a random number from Math.random() if we need a huge data base
-      }))
+        }),
+        setNewTaskItem('') // invoke the function and cleans input after adding a task
+      )
     )
   };
   return (
     <form>
-      <input type="text" placeholder="write here your task" onChange={(e) => setNewTaskItem(e.target.value)} />
+      <input type="text" value={newTaskItem} placeholder="write here your task" onChange={(e) => setNewTaskItem(e.target.value)} />
       <button type="button" onClick={newTask}>Add task</button>
+
     </form>
   )
 }

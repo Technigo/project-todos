@@ -4,14 +4,20 @@ import React from 'react';
 import styled from 'styled-components'
 
 export const GlobalStyle = styled.div`
-background-color: aquamarine;
-margin:50px 200px 50px 200px;
-padding:10px;
-display: flex;
-align-items: flex-start;
-flex-direction: column;
-border: solid 3px red;
-width: 30vw;
+
+    /* background-color: aquamarine; */
+    margin: 150px;
+    padding: 10px;
+    display: flex;
+    -webkit-align-items: flex-start;
+    -webkit-box-align: flex-start;
+    -ms-flex-align: flex-start;
+    align-items: flex-start;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    border: 3px solid #e5bb3d;
+    width: fit-content;
 
 
 `

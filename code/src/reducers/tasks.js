@@ -5,13 +5,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
 
-  list: [
-    // { id: 1, text: 'Connect checkbox to a function, make it work', complete: true },
-    // { id: 2, text: 'Make component PRINT Btn', complete: false },
-    // { id: 3, text: 'Make add task btn work', complete: false },
-    // { id: 4, text: '.......', complete: false },
-    // { id: 5, text: 'Call Grandma', complete: false }
-  ]
+  list: []
 
 };
 console.log(initialState)
@@ -20,20 +14,34 @@ export const tasks = createSlice({
   name: 'todos',
   initialState,
   reducers: {
-    addTask: (state, action) => {
-      state.list.push(action.payload);
-      console.log('action', action)
-    },
-    removeTask: (state, action) => {
-      state.list.pull(action.payload)
-      console.log('remove', action)
+    setAllItems: (state, action) => {
+      state.list = action.payload
     },
 
-    toogleComplete: (state, action) => {
-      const index = state.findIndex(
-        (task) => task.id === action.payload.id
-      );
-      state(index).complete = action.payload.complete;
+    addTask: (state, action) => {
+      state.list.push(action.payload);
+      console.log('action', action);
+    },
+    removeTask: (state, action) => {
+      state.list.splice(action.payload, 1);
+      console.log('remove', state)
+    },
+
+    toggleComplete: (state, action) => {
+      state.list.forEach((list) => {
+        if (list.id === action.payload) {
+          list.complete = !list.complete
+        }
+      });
+
+      // TRIED TO USE FINDINDEX, MANAGED TO MAKE IT WORK BUT WAS GETTING A WEIRD ERROR MESSAGE
+
+      // const index = state.list.findIndex(
+      //   (task) => task.id === action.payload.id,
+      //   state.list[index].complete = action.payload.complete;
+      // )
+
+      // console.log('complete', index)
     }
 
   }

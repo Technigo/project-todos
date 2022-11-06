@@ -6,7 +6,7 @@ export const HeaderDate = () => {
   return (
     <form>
       <label>Date:</label>
-      <input type="date" placeholder="please enter date" />
+      <input type="date" />
     </form>
 
   )
