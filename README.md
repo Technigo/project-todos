@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+For week eleven on the Technigo Frontend developer bootcamp (second week working with Redux), out assignment was to create a to-do list using React and Redux. You should be able to mark the task as completed and remove, remove them and keep track of the numer of tasks.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I created actions for adding, removing and toggling the tasks completion in the reducer. I wanted the tasks to be added like sticky notes on a bulletin board and added scroll to handle overflow as the board fills upp quickly. The layout of the task wrapper is done with grid to make the notes fill up the board in a reasonable manner. The styling is primarily done with styled components.
+
+If I had more time I would implement a local storage solution to prevent the tasks from disappearing if the page accidentally would be refreshed.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://celadon-babka-92be04.netlify.app/
