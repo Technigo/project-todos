@@ -6,7 +6,7 @@ const todoSlice = createSlice({
 	initialState: { value: [] }, //initial value exist, in value should contain the actual value of the state
 	reducers: {
 		/* creating a function */
-		toggleToDo: (state, action) => {
+		toggleToDo: (action) => {
 			store.value.forEach((item) => {
 				if (item.id === action.payload) {
 					item.isCompleted = !item.isCompleted;
@@ -25,4 +25,5 @@ const todoSlice = createSlice({
 	},
 });
 
+export const { addToDo } = todoSlice.actions;
 export default todoSlice.reducer;
