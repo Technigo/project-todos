@@ -1,8 +1,4 @@
-/* eslint-disable react/jsx-closing-bracket-location */
 import React from 'react';
-
-// import { Title } from 'styledComponents/Title';
-// import TitleImage from '/assets/brush.svg';
 
 const Header = () => {
   const currentDate = new Date();
@@ -16,7 +12,7 @@ const Header = () => {
 
   return (
     <div>
-      <div className="test-2">
+      <div className="dateContainer">
         <p>{weekday}</p>
         <p>{day}</p>
         <p>{month}</p>
@@ -30,11 +26,3 @@ const Header = () => {
 };
 
 export default Header;
-
-/* <h1
-className="title"
-style={{
-  backgroundImage: `url(${TitleImage})`,
-  backgroundSize: 'cover'
-}}
-> */

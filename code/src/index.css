@@ -11,6 +11,9 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/***** HEADER *****/
+
 .title {
   display: flex;
   font-family: 'Amatic SC', cursive;
@@ -20,17 +23,17 @@ code {
   margin-bottom: 20px;
 }
 
-.date {
-  border: 2px solid #bcb7b7;
+.dateContainer {
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 5px;
-  border-radius: 12px;
+  box-shadow: rgb(75, 75, 76) 0px 0px 0px 2px inset,
+    rgb(77, 76, 76) 10px -10px 0px -3px;
 }
 
-span {
-  font-family: 'Amatic SC', cursive;
-  font-size: 1.5rem;
-}
-
+/***** TaskList *****/
 .tasklist {
   border: 2px solid #cdcaca;
   padding: 20px;
@@ -45,6 +48,16 @@ span {
   gap: 10px;
 }
 
+form {
+  display: flex;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/***** Global *****/
+
 h1 {
   margin: 0;
 }
@@ -52,13 +65,6 @@ h1 {
 h2 {
   font-family: 'Amatic SC', cursive;
   margin: 0;
-}
-
-.test-2 {
-  width: fit-content;
-  padding: 5px;
-  box-shadow: rgb(75, 75, 76) 0px 0px 0px 2px inset,
-    rgb(77, 76, 76) 10px -10px 0px -3px;
 }
 
 p {
