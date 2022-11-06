@@ -3,7 +3,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import tasks from 'reducers/tasks'
 import styled from 'styled-components'
-import trash from 'Assets/trash.png'
+import trashBin from 'Assets/trashBin.png'
 import NewTask from 'components/NewTask'
 
 const Tasks = () => {
@@ -33,7 +33,7 @@ const Tasks = () => {
               <RemoveTaskButton type="button" onClick={() => onRemoveTaskClick(index)}>
                 <Icon
                   className="icon1"
-                  src={trash}
+                  src={trashBin}
                   alt="IconTrash" />
               </RemoveTaskButton>
             </Content>
@@ -106,4 +106,13 @@ const Icon = styled.img`
 
   width: 20px;
   height: 20px;
+
+@media (min-width: 668px) and (max-width: 1024px) {
+  width: 25px;
+  height: 25px;
+  }
+@media (min-width: 1025px) {
+  width: 25px;
+  height: 25px;
+  }
 `
