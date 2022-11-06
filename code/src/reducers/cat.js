@@ -33,8 +33,6 @@ const cat = createSlice({
   },
   reducers: {
     changeCat: (store, action) => {
-      //   console.log('action.payload changeCat:', action.payload);
-
       // action.payload is either the name (key) of the image, or the image itself
       // if action.payload is the key, newCat gets matched to the corresponding object in the store
       // otherwise action.payload is the image, so it can be used directly for newCat
@@ -45,13 +43,7 @@ const cat = createSlice({
       store.previousCat = store.catOfTheHour;
 
       store.catOfTheHour = store[action.payload];
-      //   setTimeout(() => {
-      //     store.catOfTheHour = store.previousCat;
-      //   }, 2000);
     }
-    // updatePreviousCat: (store) => {
-    //   store.previousCat = store.catOfTheHour;
-    // }
   }
 });
 
