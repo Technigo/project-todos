@@ -11,10 +11,8 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <ToDoCounterDiv>
-        <Count>
-          {completedTasks.length > 0 && <CountSpan>You have {completedTasks.length} to-do:s</CountSpan>}
-          {completedTasks.length === 0 && <CountSpan>You are up to date!</CountSpan>}
-        </Count>
+        {completedTasks.length > 0 && <CountSpan>You have {completedTasks.length} to-do:s</CountSpan>}
+        {completedTasks.length === 0 && <CountSpan>You are up to date!</CountSpan>}
       </ToDoCounterDiv>
       <DeleteAllTask />
     </HeaderWrapper>
@@ -45,14 +43,14 @@ const ToDoCounterDiv = styled.div`
   left: 17vw;
 } 
   @media (min-width: 1025px) {
-  left: 22vw;
-} 
+  left: 22vw;  
+  width: 120px;
+  height: 120px;
+}
 `
-const Count = styled.p`
+const CountSpan = styled.span`
   color: white;
   font-family: 'Indie Flower', cursive;
   padding: 10px;
+  font-size: 20px;
 `
-const CountSpan = styled.span`
-  font-weight: bold;
-  `

@@ -32,7 +32,6 @@ export const NewTodoButton = styled.button`
 `
 export const ButtonP = styled.p`
   font-size: 40px;
-  font-family: 'Baloo 2', cursive;
   padding: 5px;
 `
 
@@ -44,7 +43,7 @@ export const AddButton = styled.button`
   background-color: #0925ff;
   padding: 5px;
   color: white;
-  font-family: 'Baloo 2', cursive;
+  font-family: 'Indie Flower', cursive;
   border: none;
   &:hover {
     background-color: lightblue;
@@ -57,12 +56,12 @@ export const AddButton = styled.button`
     padding: 17px;
     border-radius: 50%
   }
-  `
+`
 
 export const RemoveTask = styled.button`
 background-color: transparent;
 border: none;
 &:hover {
     transform: scale(1.3);
-}
+  }
 `

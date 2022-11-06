@@ -4,7 +4,7 @@ import Background from '../images/Background3.png'
 export const OuterWrapper = styled.section`
   width: 100%;
   display: flex;
-  align-items:center;
+  align-items: center;
   justify-content: center;
 `
 
@@ -16,9 +16,6 @@ export const InnerWrapper = styled.section`
     width: 60%;
   }
   @media (min-width: 1025px){ 
-    width: 50%;
-  }
-  @media (min-width: 1600px) {
     width: 50%;
   }
 `

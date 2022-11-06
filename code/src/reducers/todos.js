@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-// import moment from 'moment'
 
 const todos = createSlice({
   name: 'todos',
@@ -7,21 +6,21 @@ const todos = createSlice({
     items: [
       {
         id: 1,
-        name: 'Do laundry',
-        isDone: false,
-        urgency: 'red'
-      },
-      {
-        id: 2,
-        name: 'Make dinner',
+        name: 'Make dinner reservation for the 14th',
         isDone: false,
         urgency: 'green'
       },
       {
-        id: 3,
-        name: 'Say hello to Patrick',
+        id: 2,
+        name: 'Buy dog food',
         isDone: false,
         urgency: 'orange'
+      },
+      {
+        id: 3,
+        name: 'Watch Redux code-along',
+        isDone: false,
+        urgency: 'red'
       }
     ]
   },

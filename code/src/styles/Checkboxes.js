@@ -32,7 +32,6 @@ export const Checkboxes = styled.span`
   height: 20px;
   width: 20px;
 } 
-  
   &.done {
     background-image: url(${Check});
     background-size: contain;

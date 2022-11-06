@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux';
-import { NewTodoButton, ButtonP, AddButton } from 'styles/Buttons';
+import { NewTodoButton, AddButton, ButtonP } from 'styles/Buttons';
 import { SrOnly } from 'styles/GlobalStyles'
 import todos from '../reducers/todos'
 import Pen from '../images/PenIcon.png'
@@ -16,12 +16,10 @@ const NewTodo = () => {
 
   const dispatch = useDispatch()
 
-  // Setting the collapse/de-collapse of the Add a To do-section
   const toggle = () => {
     setCollapsed(!collapsed)
   }
 
-  // Handling the new To dos.
   const HandleSubmit = (event) => {
     event.preventDefault()
 
@@ -37,7 +35,7 @@ const NewTodo = () => {
 
   return (
     <NewToDoContainer>
-      <NewTodoButton onClick={toggle} className={collapsed ? 'invisible' : 'visible'} type="button"><ButtonP>{collapsed ? '-' : '+'}</ButtonP></NewTodoButton>
+      <NewTodoButton onClick={toggle} className={collapsed ? 'invisible' : 'visible'} type="button"><ButtonP>+</ButtonP></NewTodoButton>
       {collapsed && (
         <ToDoWrapper>
           <form>
@@ -61,7 +59,7 @@ const NewTodo = () => {
                 <option value="green">Not urgent</option>
               </UrgencySelect>
             </label>
-            <AddButton type="submit" onClick={HandleSubmit}>Add</AddButton>
+            <AddButton type="submit" onClick={HandleSubmit}>ADD</AddButton>
           </form>
         </ToDoWrapper>
       )}
