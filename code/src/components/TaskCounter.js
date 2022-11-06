@@ -34,12 +34,7 @@ const TaskCounter = () => {
 export default TaskCounter;
 
 const CounterSection = styled(MainSections)`
-  padding: 5% 0% 0% 0%;
-  margin-left: 20%;
-
-  @media ${Devices.tablet} {
-    margin-left: 20%;
-  }
+  padding: 5% 0% 0% 20%;
 `
 
 const ArticleWrapper = styled.article`

@@ -27,6 +27,7 @@ export const OuterWrapper = styled.div`
 `
 
 export const InnerWrapper = styled.div`
+  overflow-x: hidden;
   width: 90%;
   max-width: 900px;
   min-height: 100px;

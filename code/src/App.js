@@ -34,9 +34,9 @@ export const App = () => {
 
 const GridWrapper = styled.div`
 
-@media ${Devices.tablet} {
-  width: 100vw;
-  display: grid;
-  grid-template-columns: 50% 50%;
-}
+  @media ${Devices.tablet} {
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
 `
