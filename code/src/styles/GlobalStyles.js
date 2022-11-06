@@ -6,27 +6,30 @@ export const OuterWrapper = styled.section`
   display: flex;
   align-items:center;
   justify-content: center;
+
 `
 
 export const InnerWrapper = styled.section`
   width: 90%;
-  padding-bottom: 8vh;
+  padding-bottom: 10vh;
   display: flex; 
   flex-direction: column;
   @media (min-width: 668px) {
     width: 60%;
   }
   @media (min-width: 1025px){ 
-    width: 60%;
+    width: 50%;
+    padding-bottom: 15vh;
   }
   @media (min-width: 1600px) {
-    width: 50%;
+    width: 45%;
   }
 `
 export const PaigeWrapper = styled.main`
   background-image: url(${Background});
-  background-position: center;
-  background-repeat: no-repeat;
   background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
 `
 

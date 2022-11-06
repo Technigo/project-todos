@@ -81,7 +81,7 @@ const TodoListWrapper = styled.section`
   background-color: rgb(236, 179, 144, 0.7);
   border-radius: 10px;
   margin: 50px 10px 10px 10px;
-  height: 65vh;
+  height: 55vh;
   overflow: auto;
   
   //targets all children within the parent
