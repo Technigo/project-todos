@@ -4,21 +4,14 @@ import IconChecked from '../../images/IconChecked.png';
 
 export const Article = styled.article`
 padding: 5px 0px;
-display: flex;
-align-items: flex-start;
-flex-direction: column;
 
-@media (min-width: 668px){
+@media (min-width: ${({ theme }) => theme.tablet}){
   padding: 10px 0px;
 
   }
-  @media (min-width: 1025px){
+  @media (min-width: ${({ theme }) => theme.desktop}){
     
   }
-`
-
-export const EmptyState = styled.div`
-
 `
 
 export const TodoDiv = styled.div`
@@ -28,7 +21,7 @@ export const TodoDiv = styled.div`
   justify-content: space-between;
 
   label {
-    width: 100%;
+    width: inherit;
   }
 
   input[type="checkbox"] {
@@ -83,7 +76,7 @@ input[type="checkbox"] + p::before {
   opacity: 0;
 }
 
-@media (min-width: 668px) {
+@media (min-width: ${({ theme }) => theme.tablet}){
 
   input[type="checkbox"] + p {
     padding-left: 30px;
@@ -96,9 +89,20 @@ input[type="checkbox"] + p::before {
   }
 }
 `
-// const TimeStampStyling = styled.p`
-//   font-size: 0.8rem;
-//   color: #5A7869;
-//   padding-left: 28px;
-//   margin-top: -6px;
-// `
+export const TimeStampStyling = styled.p`
+  border-radius: 20px;
+  padding: 1px 10px;
+  font-size: 0.8rem;
+  color: #5A7869;
+  display: none;
+  white-space: nowrap;
+  margin-top: 3px;
+
+  @media (min-width: ${({ theme }) => theme.tablet}){
+    display: block;
+
+  }
+  @media (min-width: ${({ theme }) => theme.desktop}){
+    
+  }
+`

@@ -2,7 +2,8 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 import TodoCounter from './Counter';
-import { StyledHeader, StyledH1, ClearAllBtn } from './styles/Header.styled';
+import { StyledHeader, StyledH1 } from './styles/Header.styled';
+import { ClearAllBtn } from './styles/Button.styled'
 
 const Header = () => {
   const dispatch = useDispatch()

@@ -22,13 +22,13 @@ export const InputField = styled.input`
   &:focus-visible {
     outline: none;
 }
-@media (min-width: 668px){
+@media (min-width: ${({ theme }) => theme.tablet}){
   height: 70px;
   padding: 10px 40px;
   border-radius: 70px;
   
   }
-  @media (min-width: 1025px){
+  @media (min-width: ${({ theme }) => theme.desktop}){
     
   }
 
@@ -39,11 +39,11 @@ export const InputBox = styled.div`
   width: 100%;
   margin-bottom: 30px;
 
-  @media (min-width: 668px){
+  @media (min-width: ${({ theme }) => theme.tablet}){
   border-radius: 70px;
   
   }
-  @media (min-width: 1025px){
+  @media (min-width: ${({ theme }) => theme.desktop}){
     
   }
 `
@@ -55,11 +55,11 @@ export const Label = styled.label`
   background-color:  #367857;
   border-radius: 20px;
 
-  @media (min-width: 668px){
+  @media (min-width: ${({ theme }) => theme.tablet}){
     border-radius: 70px;
 
   }
-  @media (min-width: 1025px){
+  @media (min-width: ${({ theme }) => theme.desktop}){
     
   }
 `

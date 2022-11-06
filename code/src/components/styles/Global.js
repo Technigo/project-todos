@@ -38,16 +38,7 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 //styling
-@font-face {
-  font-family: "Urbanist";
-  font-weight: 400;
-  src: url('https://github.com/coreyhu/Urbanist/blob/main/fonts/otf/Urbanist-Regular.otf?raw=true');
-}
-@font-face {
-  font-family: "Urbanist";
-  font-weight: 600;
-  src: url('https://github.com/coreyhu/Urbanist/blob/main/fonts/otf/Urbanist-Bold.otf?raw=true');
-}
+@import url('https://fonts.googleapis.com/css2?family=Inter&family=Monoton&display=swap');
 
 #root {
   height: 100%;
@@ -67,19 +58,29 @@ button:active + embed {
 
 body {
   margin: 0;
-  font-family:'Urbanist-Regular', sans-serif;
+  font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
-  font-family: 'Phosphate';
+  font-family: 'Monoton', cursive;
+
 }
 
-@media (min-width: 668px) {
+.react-icons {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+@media (min-width: ${({ theme }) => theme.tablet}){
   html {
     font-size: 22px;
   }
+  .react-icons {
+  height: 2rem;
+  width: 2rem;
+}
 }
 
 @media (min-width: 1025px) {

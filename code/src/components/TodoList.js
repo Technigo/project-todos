@@ -6,7 +6,7 @@ import todos from 'reducers/todos';
 import { IconContext } from 'react-icons';
 import { IoCloseOutline } from 'react-icons/io5';
 import NewTodo from './NewTodo';
-import { TodoDiv, Article } from './styles/TodoList.styled';
+import { TodoDiv, Article, TimeStampStyling } from './styles/TodoList.styled';
 import { FlexDiv, OuterWrapper, Innerwrapper } from './styles/Flex.styled';
 import { RemoveButton } from './styles/Button.styled'
 import EmptyState from '../images/EmptyState.svg'
@@ -26,9 +26,10 @@ const TodoList = () => {
     dispatch(todos.actions.removeTodo(index))
   }
 
-  // const TimeStamp = (id) => `${String(new Date(id).getHours()).padStart(2, '0')}:${String(new Date(id).getMinutes()).padStart(2, '0')} ${new Date(id).toDateString()}`
+  const TimeStampHoursMinutes = (id) => `${String(new Date(id).getHours()).padStart(2, '0')}:${String(new Date(id).getMinutes()).padStart(2, '0')}`
+  const TimeStamp = (id) => `${`${new Date(id).toLocaleDateString('en-us', { day: 'numeric' })} ${new Date(id).toLocaleDateString('en-us', { month: 'short' })}`}`
 
-  const IconColor = useMemo(() => ({ color: '#367857', size: '1.2rem', className: 'react-icons' }), []);
+  const IconColor = useMemo(() => ({ color: '#367857', className: 'react-icons' }), []);
 
   return (
     <IconContext.Provider value={IconColor}>
@@ -48,22 +49,22 @@ const TodoList = () => {
                         name={`input-${todo.id}`} />
                       <p>{todo.name}</p>
                     </label>
+                    <TimeStampStyling>{TimeStamp(todo.id)} {TimeStampHoursMinutes(todo.id)}</TimeStampStyling>
                     <RemoveButton
                       type="button"
                       onClick={() => onRemoveTodo(index)}>
                       <IoCloseOutline />
                     </RemoveButton>
                   </TodoDiv>
-
-                  {/* <TimeStampStyling>{TimeStamp(todo.id)}</TimeStampStyling> */}
                 </Article>
               )
             })}
             {allTodos.length === 0
             && (
               <FlexDiv>
-                <h2>You don&apos;t need to do a thing. Read a book or enjoy a fruit</h2>
                 <img src={EmptyState} alt="" />
+                <h2>All done! Go outside and play!</h2>
+                <p>Or create a new todo.</p>
               </FlexDiv>)}
           </div>
           <FlexDiv>

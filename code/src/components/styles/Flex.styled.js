@@ -17,6 +17,11 @@ export const OuterWrapper = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (min-width: ${({ theme }) => theme.desktop}){
+    min-width: 820px;
+    max-width: 50%;
+  }
 `
 
 export const Innerwrapper = styled.div`
@@ -37,6 +42,12 @@ export const FlexDiv = styled.div`
     font-size: 20px;
     margin-top: 30px;
     text-align: center;
+  }
+
+  p {
+    font-style: italic;
+    color: ${({ theme }) => theme.colors.body};
+    font-size: 0.8rem;
   }
 
   img {

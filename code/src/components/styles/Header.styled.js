@@ -19,7 +19,7 @@ export const StyledHeader = styled.header`
     font-size: 0.8rem;
   }
 
-  @media (min-width: 668px){
+  @media (min-width: ${({ theme }) => theme.tablet}){
     margin-bottom: 30px;
 
     div {
@@ -27,7 +27,7 @@ export const StyledHeader = styled.header`
     }
   
   }
-  @media (min-width: 1025px){
+  @media (min-width: ${({ theme }) => theme.desktop}){
     
   }
 `
@@ -38,8 +38,8 @@ export const StyledH1 = styled.h1`
   color: #367857;
   margin-top: 30px;
   margin-bottom: 30px;
-  line-height: 1.8rem;
   font-weight: 500;
+  line-height: 2.8rem;
 `
 
 export const Counter = styled.p`
@@ -52,11 +52,11 @@ height: 100%;
 display: flex;
 align-items: center;
 
-@media (min-width: 668px){
+@media (min-width: ${({ theme }) => theme.tablet}){
   padding: 20px 40px;
 
 }
-@media (min-width: 1025px){
+@media (min-width: ${({ theme }) => theme.desktop}){
   
 }
 `
