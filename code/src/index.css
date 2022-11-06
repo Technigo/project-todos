@@ -33,28 +33,37 @@ h1 {
 }
 
 .counter-container {
-  width: 80%;
+  width: 100%;
 }
 
 .tasklist-container{
-display: flex;
-flex-direction: column;
-position: relative;
-left: 10%;
-margin-top: 20px;
-width: 80%;
+  display: flex;
+  position: relative;
+  width: 80%;
+  box-sizing: border-box;
+  align-items: flex-end;
+  justify-content: center;
+  flex-direction: column;
 }
 
-.delete-container {
+.checkbox-container {
   display: flex;
-  justify-content: right;
-  border: black;
+  justify-content: left;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tasklist-container p{
+ justify-content: left;
+ width: 100%;
 }
 
 .broom-btn {
   border: none;
   background-color: transparent;
   font-size: 30px;
+  margin: 15px;
+  padding: 15px;
 }
 
 
@@ -175,9 +184,42 @@ button[type=submit]:hover{
 @media (min-width: 667px) and (max-width: 1024px) {
   .task-form-counter {
   display: flex;
-  }}
+  flex-direction: column;
+  padding: 15px;
+  }
+
+  .broom-btn {
+    font-size: 40px;
+  }
+
+  h1 {
+    font-size: 60px;
+  }
+}
 
   @media (min-width: 1024px) {
     .task-form-counter {
     display: flex;
-    }}
+    flex-direction: column;
+    }
+  
+    h1 {
+      font-size: 70px;
+    }
+
+    .tasklist-container{
+      width: 100%;
+      align-items: center;
+    }
+    
+    .checkbox-container {
+      justify-content: center;
+      width: 70%;
+     
+    }
+    
+    .broom-btn {
+      font-size: 40px;
+    }
+    
+  }

@@ -8,8 +8,8 @@ export const Header = () => {
     <div className="header-container">
       <h1>To do</h1>
       <div className="task-form-counter">
-        <AddTask />
         <TodoCounter />
+        <AddTask />
       </div>
     </div>
   )

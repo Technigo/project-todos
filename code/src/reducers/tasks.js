@@ -8,10 +8,10 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      { id: 1, text: 'Watch video on actions & reducers', taskDone: false },
-      { id: 2, text: 'Follow redux codealong', taskDone: false },
-      { id: 3, text: 'Fork weekly assignment', taskDone: false },
-      { id: 4, text: 'Create a todo app', taskDone: false }
+      { id: 1, text: 'Study', taskDone: false },
+      { id: 2, text: 'Clean bathroom', taskDone: false },
+      { id: 3, text: 'Do the dishes', taskDone: false },
+      { id: 4, text: 'Pay bills', taskDone: false }
 
     ]
   },
@@ -22,7 +22,6 @@ export const tasks = createSlice({
     toggleItem: (store, action) => {
       console.log(store)
       console.log(action)
-      // store.items.find((item) => item.id === action.payload).taskDone = !store.items.find((item) => item.id === action.payload).taskDone
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.taskDone = !item.taskDone

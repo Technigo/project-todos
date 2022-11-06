@@ -28,28 +28,31 @@ const TaskList = () => {
   const onDeleteTaskBtnClick = (taskIndex) => {
     dispatch(tasks.actions.deleteItem(taskIndex));
   }
-  const functionForMap = (arg1, arg2) => {
-    console.log(arg1)
-    console.log(arg2)
+  const functionForMap = (todo, broom) => {
+    console.log(todo)
+    console.log(broom)
     return (
 
-      <section className="tasklist-container" key={arg1.id}>
-        <div className="delete-container">
-          <p>{arg1.text}</p>
+      <section className="tasklist-container" key={todo.id}>
+        <div className="checkbox-container">
+          <p>{todo.text}</p>
           <label className="button-container">
             <input
               type="checkbox"
               id="task"
-              checked={arg1.taskDone}
-              onChange={() => onIsTaskCompleted(arg1.id)} />
+              checked={todo.taskDone}
+              onChange={() => onIsTaskCompleted(todo.id)} />
             <span className="checkmark" />
           </label>
+        </div>
+        <div className="delete-container">
           <button
             className="broom-btn"
-            onClick={() => onDeleteTaskBtnClick(arg2)}
+            onClick={() => onDeleteTaskBtnClick(broom)}
             type="button">🧹
           </button>
         </div>
+
       </section>
 
     );
