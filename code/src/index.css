@@ -1,26 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Just+Me+Again+Down+Here&family=Patrick+Hand+SC&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC&family=Just+Me+Again+Down+Here&family=Patrick+Hand&display=swap');
 
 :root {
 	--clr-main: #151515;
 	--clr-main-opacity: #c4c4c416;
 	--clr-secondary: #f7f3f3;
 	--clr-accent: #32aacf;
-	--clr-gray: #a3a3a3;
-  --clr-darkgray: #504f4f;
+	--clr-grey: #a3a3a3;
+  --clr-darkgrey: #504f4f;
  
-  color: #74cece;
+  /* color: #67eb86;
+  color: #22e8ec;
   color: #dfa8e7;
   color: #997ed0;
   color: #f6f386;
-  color: #6ecfed;
+  color: #6ecfed; */
 
   --font-main: 'Amatic SC';
   --font-todo: 'Just Me Again Down Here';
+  --font-date: 'Patrick Hand'
 }
 body {
   display: flex;
 	justify-content: center;
-	background: var(--clr-gray);
+	background: var(--clr-grey);
 	background-image: url('../src/assets/desktop.png');
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -44,17 +46,5 @@ h1 {
 h1,
 p {
   font-family: var(--font-main)
-}
-
-.binder {
-  position: absolute;
-  top: -1.2rem;
-  width: 350px;
-}
-@media (min-width: 667px) {
-	 .binder {
-    top: -1.6rem;
-		width: 500px;
-	}
 }
 

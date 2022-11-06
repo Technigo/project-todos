@@ -7,6 +7,7 @@ import todo from 'reducers/todo'
 // Components
 import { Header } from 'components/Header';
 import { SelectStart } from 'components/SelectStart';
+import { Footer } from 'components/Footer';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -21,6 +22,7 @@ export const App = () => {
         <Header />
         <SelectStart />
       </AppWrapper>
+      <Footer />
     </Provider>
   );
 }

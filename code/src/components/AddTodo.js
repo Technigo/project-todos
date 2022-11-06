@@ -1,18 +1,22 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 
-import styled from 'styled-components'
-import { AddBtn, AddArrow } from 'GlobalStyle'
+import styled from 'styled-components/macro'
+import { AddBtn, AddCheck } from 'GlobalStyle'
 
 // Reducer
 import todo from 'reducers/todo'
 
-import arrowBtn from '../assets/arrow.png'
+import vBtn from '../assets/icon_check.png'
 
 export const AddTodo = () => {
   const [input, setInput] = useState('')
 
   const dispatch = useDispatch()
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+  }
 
   const onAddTodo = () => {
     dispatch(todo.actions.addTodo(input))
@@ -20,43 +24,43 @@ export const AddTodo = () => {
   }
 
   return (
-    <InputWrapper>
+    <AddFormWrapper onSubmit={handleSubmit}>
       <StyledInput
         type="text"
         value={input}
-        placeholder="Add task here.."
+        placeholder="Add task here...."
         onChange={(event) => setInput(event.target.value)} />
       <AddBtn type="submit" onClick={onAddTodo} disabled={input.length === 0}>
-        <AddArrow src={arrowBtn} alt="add task" />
+        <AddCheck src={vBtn} alt="add task" />
       </AddBtn>
-    </InputWrapper>
+    </AddFormWrapper>
   )
 }
 
 // ---------Styled Components-----
 
-const InputWrapper = styled.div`
+const AddFormWrapper = styled.form`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   position: relative;
 `;
 
 const StyledInput = styled.input`
   font-family: var(--font-todo);
-  font-size: 1rem;
-  height: 3em;
+  font-size: 1.5rem;
+  height: 2em;
   letter-spacing: 1.5px;
   color: var(--clr-main);
   text-align: center;
   width: 310px;
   border: none;
-  border-bottom: 2px solid var(--clr-darkgray);
-  background-color: var(--clr-accent);
+  border-bottom: 2px solid var(--clr-darkgrey);
+  background-color: var(--clr-grey);
   margin-bottom: 1.5em;
+  outline: none;
 
   &:focus {
-    border: 2px solid var(--clr-accent);
+   border: 2px solid var(--clr-darkgrey);
   }
 `;

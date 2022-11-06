@@ -1,12 +1,12 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { AddStartIcon, StartBtn } from 'GlobalStyle'
 // Reducer
 import todo from 'reducers/todo'
 
-import deleteAllBtn from '../assets/trashcan_icon.png'
+import deleteAllBtn from '../assets/deleteAll_icon.png'
 
 export const DeleteAll = () => {
   const dispatch = useDispatch()
@@ -18,7 +18,7 @@ export const DeleteAll = () => {
 
   return (
     <DeleteAllBtn onClick={onDeleteAll}>
-      <DeleteALlIcon src={deleteAllBtn} alt="All todos done" />
+      <DeleteALlIcon src={deleteAllBtn} alt="Delete all todos" />
     </DeleteAllBtn>
   )
 }
@@ -26,15 +26,14 @@ export const DeleteAll = () => {
 // ---------Styled Components------
 
 const DeleteAllBtn = styled(StartBtn)`
-  border: 2px solir red;
+  
 `;
 
 const DeleteALlIcon = styled(AddStartIcon)`
+padding: 1em 0 1em 0em;
   border: none;
-  padding: 0.4em 1em;
-  margin-left: 0.5em;
-  margin-top: 0.5em;
   width: 70px;
+  
 
   &:hover {
     transform: scale(1.2);

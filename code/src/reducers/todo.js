@@ -17,7 +17,7 @@ const todo = createSlice({
         id: uniqid(),
         // ändra  id: till date?
         // editable: false,
-        createdAt: format(new Date(), 'LLLL d, yyyy | HH:mm')
+        createdAt: format(new Date(), 'LLL d, yyyy | HH:mm')
       }
       // store.items.push(action.payload);
       // Immutable

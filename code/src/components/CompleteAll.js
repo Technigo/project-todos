@@ -1,12 +1,11 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
+// Reducer
+import todo from 'reducers/todo'
 
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { AddStartIcon, StartBtn } from 'GlobalStyle'
 import allDoneBtn from '../assets/allDone_icon.png'
-
-// Reducer
-import todo from '../reducers/todo'
 
 export const CompleteAll = () => {
   const dispatch = useDispatch()
@@ -25,12 +24,14 @@ export const CompleteAll = () => {
 // Styled Components
 
 const AllDoneBtn = styled(StartBtn)`
-  border: 2px solir red;
+  
 `;
 
 const AllDoneIcon = styled(AddStartIcon)`
+  padding: 1em 0 1em 0.4em;
   border: none;
   width: 70px;
+  
 
   &:hover {
     transform: scale(1.2);

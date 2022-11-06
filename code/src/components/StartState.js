@@ -19,13 +19,16 @@ export const StartState = () => {
       {!startTodo && (
         <OuterWrapper>
           <StartStateText>
-          Click &quot;add to do&quot; and make a list, so you remember everything! {' '}
+          Click &quot;add to do&quot; below, make a list and be productive! {' '}
           </StartStateText>
-          <Imagewrapper>
+          <ImageWrapper>
             <StartBtn onClick={onStartAdding}>
               <AddStartIcon src={startBtn} alt="start adding Todos" />
             </StartBtn>
-          </Imagewrapper>
+          </ImageWrapper>
+          <BottomText>
+          psst! or just take a coffee break!{' '}
+          </BottomText>
         </OuterWrapper>
       )}
     </>
@@ -44,9 +47,15 @@ const StartStateText = styled.p`
   align-self: center;
   letter-spacing: 1.5px;
   line-height: 1.4em;
-`
+`;
 
-const Imagewrapper = styled.div`
+const BottomText = styled(StartStateText)`
+  font-family: var(--font-todo);
+  font-size: 1.5rem;
+  padding-top: 2em;
+`;
+
+const ImageWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;

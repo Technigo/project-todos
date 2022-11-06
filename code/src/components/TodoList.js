@@ -2,14 +2,14 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 
 import styled from 'styled-components/macro'
-import { OuterWrapper } from 'GlobalStyle'
+import { AddCross, ListBtn, OuterWrapper } from 'GlobalStyle'
 
 // Reducers
 import todo from 'reducers/todo'
 
 // Components
 import xBtn from '../assets/icon_cross.png'
-
+import check from '../assets/icon_check_hover.svg'
 import { AddTodo } from './AddTodo'
 // import { TodoCounter } from './TodoCounter'
 // import TaskCounter from './TaskCounter'
@@ -30,15 +30,6 @@ export const TodoList = () => {
     dispatch(todo.actions.deleteTodo(id))
   }
 
-  // To remove an item
-  // const handleDeleteTodo = ({ todos }) => {
-  //   dispatch(todo.actions.deleteTodo(todos.id));
-  // }
-
-  // To show if checkbox is checked or not
-  // const handleCheckboxChange = ({ todoList }) => {
-  //   dispatch(tasks.actions.toggleCompleteStatus(task.id));
-  // }
   return (
     <OuterWrapper>
       {/* flex-start section */}
@@ -53,14 +44,13 @@ export const TodoList = () => {
                 <input
                   type="checkbox"
                   tabIndex="0"
-                  // role='checkbox'
                   name="tasks"
                   checked={item.isCompleted}
                   onChange={() => onToggleTodo(item.id)} />
                 <InputText className={`${item.isCompleted ? 'completed' : ''}`}>{item.text}</InputText>
               </Wrapper>
               <ListBtn onClick={() => onDeleteTodo(item.id)}>
-                <img src={xBtn} alt="delete todo" />
+                <AddCross src={xBtn} alt="delete todo" />
               </ListBtn>
             </TaskContainerWrapper>
             <div>
@@ -82,26 +72,27 @@ export const TodoList = () => {
 // --------Styled components-------
 
 const InnerWrapper = styled.section`
-  background: var(--clr-gray);
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: var(--clr-grey);
   position: relative;
+  width: 310px;
 `;
 
 const TaskContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: 282px;
-padding: 0.5em 1em 0;
+  width: 285px;
+  /* padding: 0.5em 0 0; */
 
-:first-of-type {
-  padding-top: 1em;
-}
+  :first-of-type {
+    padding-top: 1em;
+  }
 
-:last-of-type {
-  padding-bottom: 1.5em;
-}
+  :last-of-type {
+    padding-bottom: 1.5em;
+  }
 `;
 
 const TaskContainerWrapper = styled.div`
@@ -111,7 +102,50 @@ const TaskContainerWrapper = styled.div`
 
 const Wrapper = styled.div`
   display: flex;
-  position: relative;
+ 
+
+  input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-family: var(--font-todo);
+    letter-spacing: 1.5px;
+    border: none;
+    border-bottom: 2px solid var(--clr-accent);
+    outline: none;
+  }
+
+  input:focus-visible {
+    border: var(--clr-accent);
+    outline: -webkit-focus-ring-color var(--clr-accent) 1px;
+  }
+
+  input[type='checkbox'] {
+    align-self: center;
+    /* display: inline-block; */
+    border: 2px solid var(--clr-darkgrey);
+    border-radius: 3px;
+    height: 20px;
+    width: 20px;
+    position: relative;
+    bottom: -0.5em; 
+    right: 0.5em;
+    cursor: pointer;
+  }
+
+  input[type='checkbox']:checked {
+    content: '';
+    background-image: url(${check});
+    width: 20px;
+    height: 20px;
+    background-repeat: no-repeat;
+    border: none; 
+  }
+
+  .completed {
+    text-decoration: line-through;
+    color: var(--clr-secondary) !important;
+  }
 `;
 
 const InputText = styled.label`
@@ -119,36 +153,25 @@ const InputText = styled.label`
   padding-bottom: 0.05em;
   color: var(--clr-secondary);
   border-bottom: 2px solid var(--clr-accent);
-  font-family: 'Imprima', 'Ubuntu', sans-serif;
+  font-family: var(--font-todo);
+  font-size: 1.5rem;
   align-self: end;
   width: 225px;
   overflow-wrap: break-word;
 `;
-const ListBtn = styled.button`
-  padding: 0.1em 0.1em 0;
-  border: none;
-  position: relative;
-  cursor: pointer;
-  background: var(--clr--main);
-  align-self: end;
-
-  @media (min-width: 667px) {
-    border-bottom: 2px solid var(--clr-accent);
-
-    &:hover {
-      background: var(--clr-secondary);
-      border-radius: 20%;
-      transition: all 0.3s ease-in;
-    }
-  }
-`;
 
 const DateContainer = styled.p`
-  margin: 0.25em 1.65em;
-  font-size: 12px;
-  color: var(--clr-gray);
+  font-family: var(--font-date);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--clr-darkgrey);
+  margin: 0.25em 2.3em;
 `;
 
 const ButtonWrapper = styled.div`
   align-self: flex-start;
+
+  @media (min-width: 667px) {
+    margin-left: 75px;
+    }
 `;

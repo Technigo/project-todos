@@ -1,7 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import CheckMark from '../assets/icon_check.png'
 
 export const TodoCounter = () => {
@@ -46,7 +46,7 @@ const CounterTodo = styled.p`
   font-family: var(--font-todo);
   font-weight: 300;
   font-size: 14px;
-  border: 1px solid var(--clr-gray);
+  border: 1px solid var(--clr-grey);
   align-self: flex-start;
   padding: 0.2em 0.4em;
   color: var(--clr-accent);
