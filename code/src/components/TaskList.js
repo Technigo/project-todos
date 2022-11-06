@@ -125,25 +125,9 @@ const CheckboxTask = styled.div`
     border: 1px solid grey;
     background-image: url(/check-mark.png);
     background-size: contain;
-    border-radius: 3px;
-
-   
+    border-radius: 3px;   
   }
 
-  [type="checkbox"]:not(:checked) + label::after{
-    content:"";
-    position: absolute;
-    top: 3px;
-    left: 0;
-    width: 18px;
-    height: 18px;
-    border: 1px solid grey;
-    background-image: url(/check-mark.png);
-    background-size: contain;
-    border-radius: 3px;
-    transform: scale(0);
-    opacity: 0;
-  }
 `
 
 const Label = styled.label`
