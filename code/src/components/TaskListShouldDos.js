@@ -24,11 +24,9 @@ const TaskListShouldDos = () => {
   const onIsCompleteToggle = (id) => {
     dispatch(tasksShoulds.actions.toggleItem(id));
   }
-
   const onDeleteTaskItem = (taskIndex) => {
     dispatch(tasksShoulds.actions.removeItem(taskIndex));
   }
-
   const onFormSubmit = (event) => {
     event.preventDefault(); /* Have the store in the same state during one session. no releod */
     const newTask = { id: Date.now().toString(),
@@ -51,7 +49,7 @@ const TaskListShouldDos = () => {
                 {singleTask.text}
               </h2>
               <label>
-            Is it Done?
+            Done?
                 <input type="checkbox" checked={singleTask.complete} onChange={() => onIsCompleteToggle(singleTask.id)} />
               </label>
               <RemoveTask onDeleteTaskItem={onDeleteTaskItem} index={index} />

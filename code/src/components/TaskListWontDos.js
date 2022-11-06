@@ -7,8 +7,8 @@ import tasksWonts from 'reducers/tasksWonts';
 import ListHeaderStyling from 'styling/ListHeaderStyling';
 import ListStyling from 'styling/ListStyling'
 import AddNewTask from './AddNewTask';
-import RemoveTask from './RemoveTask';
 import TaskCounterWontDos from './TaskCounterWontDos';
+import RemoveTask from './RemoveTask';
 
 const TaskListWontDos = () => {
   const [inputValue, setInputValue] = useState(''); /* Needed for the AddNewTask to work */
@@ -49,7 +49,6 @@ const TaskListWontDos = () => {
                 {singleTask.text}
               </h2>
               <label>
-            Done?
                 <input type="checkbox" checked={singleTask.complete} onChange={() => onIsCompleteToggle(singleTask.id)} />
               </label>
               <RemoveTask onDeleteTaskItem={onDeleteTaskItem} index={index} />

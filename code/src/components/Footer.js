@@ -6,7 +6,7 @@ const Footer = () => {
   return (
     <FooterStyling>
       <div>
-        <p>Mia Dahlgren</p>
+        <p>© Mia Dahlgren</p>
         <p>View it on <a href="https://github.com/miadahlgren/project-todos">GitHub</a></p>
       </div>
       <Weather />
@@ -17,8 +17,7 @@ export default Footer;
 
 const FooterStyling = styled.div`
 position: absolute;
-top: 1100px; 
-height: 20vh;
+top: 930px;
 width: 100%;
 font-size: 48px;
 color: white;
@@ -29,16 +28,22 @@ background-color: transparent;
 
 
 p{
-  font-size: 20px;
+  font-size: 16px;
   margin-right: 2vw;
   color: white; 
   text-align: center;
-  margin-top: 2px;
+  margin-top: 0px;
+  margin-bottom: 2px;
 }
 
 a{
   text-decoration: none;
   color: grey;
+}
+
+a:hover{
+  text-decoration: none;
+  color: black;
 }
 
 `

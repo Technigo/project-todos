@@ -52,7 +52,6 @@ const TaskListHaveTos = () => {
                 {singleTask.text}
               </h2>
               <label>
-           Done?
                 <input type="checkbox" checked={singleTask.complete} onChange={() => onIsCompleteToggle(singleTask.id)} />
               </label>
               <RemoveTask onDeleteTaskItem={onDeleteTaskItem} index={index} />
