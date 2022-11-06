@@ -60,7 +60,7 @@ const Outerwrapper = styled.section`
 `
 
 const InnerWrapper = styled.section`
-  width: 50%;
+  width: 80%;
   background-color: #409A98;
   border-radius: 20px;
   box-shadow: 5px 5px 5px #2f4858;
@@ -105,4 +105,5 @@ font-weight: 700;
 const Icon = styled.img`
 
   width: 20px;
-  height: 20px;`
+  height: 20px;
+`

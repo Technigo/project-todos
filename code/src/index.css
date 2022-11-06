@@ -13,6 +13,24 @@ code {
     monospace;
 }
 
-P {
-  font-family: cursive;
+#checkbox {
+  width: 1.3em;
+  height: 1.3em;
+  background-color: white;
+  border-radius: 50%;
+  vertical-align: middle;
+  border: 1px solid #ddd;
+  appearance: none;
+  -webkit-appearance: none;
+  outline: none;
+  cursor: pointer;
+}
+
+#checkbox:checked {
+  text-decoration: line-through;
+  background-color: #DF7861;
+}
+
+#checkbox:checked+label {
+  text-decoration: line-through;
 }

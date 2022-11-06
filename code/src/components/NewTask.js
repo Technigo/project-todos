@@ -89,15 +89,17 @@ font-family: sans-serif;
 border: 1px solid;
 border-radius: 10px;
 padding: 5px 8px;
-/* margin: 35px 0px; */
+/* margin: 35px 0px;  */
 margin-left: 30%;
 margin-top: 10px;
 
 @media (min-width: 668px) and (max-width: 1024px) {
   font-size: 15px;
+  margin: 35px 0px;
   }
   @media (min-width: 1025px) {
     font-size: 17px;
+    margin: 35px 0px;
   }
 `
 
