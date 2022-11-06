@@ -16,6 +16,7 @@ const AddTask = () => {
   };
   // const onSetAllTasksDone = () => { dispatch(taskReducer.actions.setAllTasksDone(taskList)); };
   const onAddTask = (e) => {
+    console.log('submit')
     e.preventDefault();
 
     dispatch(
@@ -31,7 +32,7 @@ const AddTask = () => {
 
   return (
     <Container>
-      <NewTaskWrapper>
+      <NewTaskWrapper onSubmit={onAddTask}>
         <NewTaskTextInput
           type="text"
           name="new task"
@@ -39,14 +40,10 @@ const AddTask = () => {
           onChange={(event) => setInputValue(event.target.value)}
           placeholder="Write a todo.."
           className="newTaskInput"
-          onKeyDown={(e) => e.key === 'Enter' && onAddTask()}
           aria-label="type and hit enter to create new task." />
         <NewTaskIconWrapper
-          role="button"
-          onClick={onAddTask}
-          tabIndex="0"
-          aria-label="create new task button."
-          disabled={inputValue.length < 5 || inputValue.length > 140}>
+          type="submit"
+          aria-label="create new task button.">
           <NewTaskIcon src={AddButton} alt="add new task." />
         </NewTaskIconWrapper>
       </NewTaskWrapper>
@@ -93,7 +90,7 @@ const Container = styled.div`
   }
 `;
 
-const NewTaskWrapper = styled.div`
+const NewTaskWrapper = styled.form`
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -108,7 +105,9 @@ const NewTaskWrapper = styled.div`
   }
 `;
 
-const NewTaskIconWrapper = styled.div`
+const NewTaskIconWrapper = styled.button`
+  border: none;
+  background: none;
   margin-left: 20px;
   align-content: center;
   display: flex;
