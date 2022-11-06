@@ -5,9 +5,9 @@ import tasks from '../reducers/task';
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
   const dispatch = useDispatch();
-    const handleNewTask = (event) => {
-     setInputValue(event.target.value);
-    };
+  const handleNewTask = (event) => {
+    setInputValue(event.target.value);
+  };
 
   const onFormSubmit = (e) => {
     e.preventDefault();
@@ -19,8 +19,7 @@ const AddTask = () => {
     const newTasks = {
       id: Date.now().toString(),
       name: inputValue,
-      isCaught: false,
-    
+      isCaught: false
     };
 
     // Dispatch the whole object
@@ -41,10 +40,7 @@ const AddTask = () => {
           placeholder="A new task..."
         />
       </label>
-      <button 
-      className="addBtn" 
-      type="submit" 
-      disabled={inputValue.length < 1}>
+      <button className="addBtn" type="submit" disabled={inputValue.length < 1}>
         ➕
       </button>
     </form>

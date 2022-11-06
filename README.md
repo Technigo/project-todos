@@ -1,11 +1,14 @@
 # Project Todos
 
-A singel application page which user be able to add tasks, list tasks and toggle whether a task is done or not.
+A singel application page build with Redux-toolkit.
+User able to add tasks, list tasks and toggle whether a task is done or not.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Understanding the logic between Reducers and Componets take me for a while. What the role of reducer, create a Slice, and then how can i transfer the store and    actions to components was a bit challening for me. 
+Immutability was another challenge part for me.
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+
