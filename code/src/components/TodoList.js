@@ -15,7 +15,7 @@ box-shadow: 5px 10px #888888;
 text-overflow: none !important;
 
 @media (min-width: 667px){
-  width: 500px;
+  width: 400px;
 }
 `
 

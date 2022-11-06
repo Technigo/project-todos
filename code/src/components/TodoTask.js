@@ -8,11 +8,17 @@ const TaskContainer = styled.div`
   min-width: 300px;
 
   .test {
+    border-radius: 20px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-overflow: ellipsis;
     overflow: hidden;
+    margin: 15px;
+    box-shadow: rgba(171,167,177,0.8) 0 0 10px;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
 }
   
 
@@ -20,6 +26,13 @@ const TaskContainer = styled.div`
   margin: 2px;
   color: white;
   background-color: black;
+  border-radius: 20px;
+  margin-right: 10px;
+  border: 3px solid lightgrey;
+
+  &:hover {
+    background-color: red;
+  }
 }
 
 

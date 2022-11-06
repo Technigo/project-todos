@@ -63,7 +63,3 @@ export const AddButton = styled.button`
     opacity: 0;
 }
     `;
-
-export const DeleteButton = styled.button`
-
-`

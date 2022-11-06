@@ -21,7 +21,7 @@ border-radius: 20px;
 
 .input-form {
   border-radius: 20px;
-  height: 30px;
+  height: 35px;
   margin-top: 5%;
   border: 2px solid lightgray;
  margin-left: 5px;
