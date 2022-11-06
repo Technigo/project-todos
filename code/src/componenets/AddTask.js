@@ -3,10 +3,11 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/task';
+import TaskList from './TaskList';
+/* import styled from 'styled-components/macro'; */
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
-
   const dispatch = useDispatch();
   const onFormSubmit = (event) => {
     event.preventDefault();
@@ -15,6 +16,7 @@ const AddTask = () => {
       isDone: false }
     dispatch(tasks.actions.addItem(newTask))
     setInputValue('');
+    localStorage.setItem('taskList', JSON.stringify(TaskList))
   }
 
   return (

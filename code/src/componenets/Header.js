@@ -1,13 +1,25 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
+import moment from 'moment';
+/* import Progressbar from 'components/ProgressBar' */
 
-export const Header = () => {
-  return <HeaderText>My Todos</HeaderText>
+const Header = () => {
+  return (
+    <HeaderWrapper>
+      <h1>Agenda for <span>{moment().format('MMM Do YYYY')}</span></h1>
+    </HeaderWrapper>
+  );
 };
 
-const HeaderText = styled.h1`
-  color: #869D7A;
-  font-weight: bold;
-  font-size: 42px;
-`;
+export default Header;
+
+const HeaderWrapper = styled.header`
+  height: 20vh;
+  min-height: 150px;
+  padding-top: 3rem;
+  background-color: yellow;
+  border: 10px solid black;
+  text-align: center;
+  font-size: 0.8rem;
+  `

@@ -1,26 +1,20 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import task from 'reducers/task';
+import tasks from 'reducers/task';
+/* import styled from 'styled-components/macro'; */
 
 const TaskList = () => {
   const dispatch = useDispatch();
 
-  /* useEffect(() => {
-    const listFromStorage = JSON.parse(localStorage.getItem('TaskList'));
-    if (listFromStorage) {
-      dispatch(task.actions.setAllItems(listFromStorage));
-    }
-  }, []) */
-
   const taskList = useSelector((store) => store.tasks.items);
 
   const onIsDoneToggle = (id) => {
-    dispatch(task.actions.toggleItem(id));
+    dispatch(tasks.actions.toggleItem(id));
   }
 
   const onDeleteTaskButtonClick = (taskIndex) => {
-    dispatch(task.actions.deleteItem(taskIndex));
+    dispatch(tasks.actions.deleteItem(taskIndex));
   }
 
   return (

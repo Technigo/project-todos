@@ -20,16 +20,15 @@ const tasks = createSlice({
       });
     },
     addItem: (store, action) => {
-      store.items.push({ ...action.payload, quantity: 1 })
-      // store.items = [...store.items, action.payload];*/
+      console.log(action);
+      store.items = ([...store.items, action.payload]);
     },
     deleteItem: (store, action) => {
-      // store.items.splice(action.payload, 1);*/
-      const updatedItems = store.items.filter((item) => {
+      const deletedItems = store.items.filter((item) => {
         return store.items.indexOf(item) !== action.payload;
       });
-      store.items = updatedItems;
-    },
+      store.items = deletedItems;
+    }
   }
 });
 
