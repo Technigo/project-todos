@@ -1,23 +1,16 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-/* eslint-disable react/jsx-closing-bracket-location */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import tasks from 'reducers/tasks';
 import cat from 'reducers/cat';
 import styled from 'styled-components/macro';
 import './TaskList.css';
 import { textColor } from 'components/GlobalStyles';
-// import bin from '../../Assets/trash.svg';
 import TaskFormCheckbox from './TaskFormCheckbox';
 import Trashbin from './Trashbin';
 
 const TaskList = ({ bottomRef }) => {
   const taskList = useSelector((store) => store.tasks.tasks);
-  // const previousCat = useSelector((store) => store.cat.previousCat);
-  // const catOfTheHour = useSelector((store) => store.cat.catOfTheHour);
   const dispatch = useDispatch();
-  // console.log('previousCat TaskList:', previousCat);
-  // console.log('catOfTheHour TaskList:', catOfTheHour);
   const catMood = (amountOfTasks) => {
     if (amountOfTasks === 0) {
       dispatch(cat.actions.changeCatAndPrevious('angel'));
@@ -32,13 +25,6 @@ const TaskList = ({ bottomRef }) => {
   useEffect(() => {
     catMood(taskList.length);
   }, [taskList.length]);
-
-  // useEffect(() => {
-  //   // Makes the list scroll to the last task
-  //   bottomRef.current.scrollIntoView({ behaviour: 'smooth' });
-  // }, [taskList]);
-
-  // console.log(taskList.length, 'previousCat in TaskList:', previousCat);
 
   return (
     <TaskListStyle scrollTop="1000">

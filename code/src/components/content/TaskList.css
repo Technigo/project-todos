@@ -1,3 +1,5 @@
+/* Styling for custom checkboxes */
+
 [type='checkbox'] {
   opacity: 0;
   display: none;

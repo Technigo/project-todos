@@ -4,7 +4,6 @@ import styled from 'styled-components/macro';
 import { useDispatch, useSelector } from 'react-redux';
 import tasks from 'reducers/tasks';
 import cat from 'reducers/cat';
-
 import plus from '../../Assets/plus.svg';
 
 const NewTask = ({ bottomRef }) => {
@@ -26,7 +25,11 @@ const NewTask = ({ bottomRef }) => {
           dispatch(cat.actions.changeCat('typing'));
         }, 1000);
 
-        bottomRef.current.scrollIntoView({ block: 'end', behavior: 'smooth', inline: 'end' });
+        bottomRef.current.scrollIntoView({
+          block: 'end',
+          behavior: 'smooth',
+          inline: 'end'
+        });
       }}
       onFocus={() => {
         dispatch(cat.actions.changeCatAndPrevious('typing'));
@@ -55,7 +58,6 @@ const NewTask = ({ bottomRef }) => {
           onChange={(event) => setNewTaskText(event.target.value)}
         />
       </NewTaskDiv>
-      {/* // <input type="submit" value="press me" /> */}
     </NewTaskForm>
   );
 };
@@ -74,7 +76,6 @@ const NewTaskDiv = styled.div`
   align-items: center;
 
   img {
-    /* padding-left: 20px; */
     width: 24px;
     height: 24px;
   }
@@ -83,7 +84,6 @@ const NewTaskDiv = styled.div`
     padding: 40px 0;
 
     img {
-      /* padding-left: 50px; */
     }
   }
 `;

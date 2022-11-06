@@ -4,7 +4,6 @@ import React, { useRef } from 'react';
 import styled from 'styled-components/macro';
 import { useSelector } from 'react-redux';
 import { textColor } from 'components/GlobalStyles';
-
 import TaskList from './TaskList';
 import Cat from './Cat';
 import NewTask from './NewTask';
