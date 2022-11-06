@@ -7,7 +7,6 @@ import { HomeBtn } from 'components/HomeBtn';
 export const NeedToDo = () => {
   return (
     <InnerWrapper>
-      <Text>What do you need to do?</Text>
       <TaskList />
       <AddTask />
       <HomeBtn />
@@ -18,9 +17,8 @@ export const NeedToDo = () => {
 const InnerWrapper = styled.section`
 display: flex;
 width: 100%;
+height: 100%;
 flex-direction: column;
 align-items: center;
-`
-const Text = styled.h2`
-color: #ff999b;
+justify-content: space-between;
 `

@@ -14,7 +14,7 @@ const Buttons = styled.button`
 background-color:#424242;
 position: absolute;
 bottom: 0;
-right: 0;
+right: 5%;
 color: #ffbe91;
 border: none;
 border-radius: 20px;

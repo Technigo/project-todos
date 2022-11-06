@@ -1,15 +1,11 @@
 import React from 'react';
 import styled from 'styled-components/macro';
 import { Link } from 'react-router-dom'
-// import { OuterWrapper } from 'components/GlobalStyles';
 
 export const StartPage = () => {
   return (
     <InnerWrapper>
       <h1>Welcome</h1>
-      <h3>This app help you organize:</h3>
-      <h3>- All those ideas you want to remember for later </h3>
-      <h3>- And all the tasks you rather forget but still need to do.</h3>
       <h2>Is it time for work or play?</h2>
       <ButtonContainer>
         <Link to="/needtodo">
@@ -26,8 +22,10 @@ export const StartPage = () => {
 const InnerWrapper = styled.section`
 display: flex;
 width: 90%;
+height: 100%;
 flex-direction: column;
 align-items: center;
+justify-content: space-between;
 
 h1 {
   color: #ff999b;

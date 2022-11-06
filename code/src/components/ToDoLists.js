@@ -23,15 +23,16 @@ export const TaskList = () => {
         <ClearScreenTask />
       ) : (
         <Container>
+          <Text>What do you need to do?</Text>
           {taskList.map((singleTask) => {
             return (
               <Todo>
                 <input
-                  id={Date.now()}
+                  id={singleTask.id}
                   type="checkbox"
                   checked={singleTask.isCaught}
                   onChange={() => onTaskIsDoneToggle(singleTask.id)} />
-                <label htmlFor={Date.now()}>{singleTask.text}</label>
+                <label htmlFor={singleTask.id}>{singleTask.text}</label>
                 <button type="button" onClick={() => onDeleteTask(singleTask.id)}>
                   <DeleteIcon
                     src="/images/trash_empty.png"
@@ -65,15 +66,16 @@ export const IdeaList = () => {
         <ClearScreenIdea />
       ) : (
         <Container>
+          <Text>What do you want to do?</Text>
           {ideaList.map((singleIdea) => {
             return (
               <Todo>
                 <input
-                  id={singleIdea.text}
+                  id={singleIdea.id}
                   type="checkbox"
                   checked={singleIdea.isCaught}
                   onChange={() => onIdeaIsDoneToggle(singleIdea.id)} />
-                <label htmlFor={singleIdea.text}>{singleIdea.text}</label>
+                <label htmlFor={singleIdea.id}>{singleIdea.text}</label>
                 <button type="button" onClick={() => onDeleteIdea(singleIdea.id)}>
                   <DeleteIcon
                     src="/images/trash_empty.png"
@@ -90,6 +92,7 @@ export const IdeaList = () => {
 }
 
 const Wrapper = styled.div`
+margin-top: 50px;
 width: 90%;
 `
 
@@ -99,6 +102,9 @@ background-color: #303030;
 width: 100%;
 padding: 10px;
 border-radius: 10px;
+`
+const Text = styled.h2`
+color: #ff999b;
 `
 
 const DeleteIcon = styled.img`

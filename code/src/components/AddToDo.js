@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import uniqid from 'uniqid'
 import styled from 'styled-components/macro';
 import { useDispatch } from 'react-redux'
 import { TaskReducer, IdeaReducer } from 'reducers/reducers';
@@ -24,6 +25,7 @@ export const AddTask = () => {
       <InputAndBtn>
         <input
           type="text"
+          id={uniqid()}
           value={input}
           onChange={(event) => setInput(event.target.value)} />
         <button
@@ -53,6 +55,7 @@ export const AddIdea = () => {
       <InputAndBtn>
         <input
           type="text"
+          id={uniqid()}
           value={input}
           onChange={(event) => setInput(event.target.value)} />
         <button
