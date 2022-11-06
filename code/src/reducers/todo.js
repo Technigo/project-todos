@@ -16,6 +16,9 @@ const todo = createSlice({
     ]
   },
   reducers: {
+    setAllItems: (store, action) => {
+      store.item = action.payload
+    },
     toggleItem: (store, action) => {
       console.log(store)
       console.log(action)
@@ -26,10 +29,21 @@ const todo = createSlice({
       })
     },
     deleteItem: (store, action) => {
-      store.items.splice(action.payload, 1)
+      // Mutability
+      // store.items.splice(action.payload, 1)
+
+      // Immutability
+      const updatedItems = store.items.filter((item) => {
+        return store.items.indexOf(item) !== action.payload
+      })
+      store.items = updatedItems
     },
     addItem: (store, action) => {
-      store.items.push(action.payload)
+      // Mutable
+      // store.items.push(action.payload)
+
+      // Immutable
+      store.items = [...store.items, action.payload]
     }
   }
 })
