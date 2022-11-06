@@ -1,13 +1,14 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Create a todo list in React with Redux. In the app you you can add or remove tasks and see how many completed tasks there are.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I had a clear design in hand so it was easy both breaking down in components as well as doing the media query. 
+In this project I have used React, Redux and styled components. I also used the Responsively app to get a better overview on different screen sizes.
+
+If I had more time I would have added a drop down menu with more info about the tasks as well as the date the task was added.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://todos-neah.netlify.app/
