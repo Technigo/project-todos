@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import EmptyState from './EmptyState';
 import TaskList from './TaskList';
 
-const Container = () => {
+const TaskContainer = () => {
   const taskList = useSelector((store) => store.tasks.tasksArray);
   return (
     <Wrapper>
@@ -14,7 +14,7 @@ const Container = () => {
   );
 };
 
-export default Container;
+export default TaskContainer;
 
 const Wrapper = styled.div`
 display: flex;

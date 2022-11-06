@@ -5,7 +5,7 @@ import taskReducer from 'reducers/todos/taskSlice';
 import filtersReducer from 'reducers/filters/filterSlice';
 import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
-// import Container from 'components/Container';
+// import TaskContainer from 'components/TaskContainer';
 import Header from 'components/Header';
 // import Footer from 'components/Footer';
 import ContentWrapper from 'components/ContentWrapper';
@@ -28,7 +28,7 @@ export const App = () => {
         <Header />
         <AddTask />
         <TaskList />
-        {/* <Container /> */}
+        {/* <TaskContainer /> */}
         {/* <Footer /> */}
       </ContentWrapper>
     </Provider>
