@@ -1,6 +1,6 @@
 /* eslint-disable no-nested-ternary */
 import styled from 'styled-components'
-import Check from '../images/Check.jpg'
+import Check from '../images/Check.png'
 
 export const Label = styled.label`
   display: block;
@@ -22,7 +22,7 @@ export const Checkboxes = styled.span`
   width: 18px;
   background-color: #eee;
   border-radius: 18px;
-  border: solid 1px lightgrey;
+  border: solid 1px darkgray;
 
   @media (min-width: 668px) and (max-width: 1024px) {
   height: 20px;
@@ -36,7 +36,7 @@ export const Checkboxes = styled.span`
   &.done {
     background-image: url(${Check});
     background-size: contain;
-    border: #4ac902 solid 3px;
+    border: #0925ff solid 2px;
   }
   &.notDone {
     background: white;
@@ -61,7 +61,7 @@ export const CheckboxesHidden = styled.input`
   width: 20px;
 } 
 `
-export const LabelP = styled.label`
-  text-decoration: underline;
-  font-size: 16px;
+export const LabelP = styled.p`
+  font-family: 'Indie Flower', cursive;
+  font-size: 18px;
 `

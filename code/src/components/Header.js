@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React from 'react';
 import styled from 'styled-components'
 import { useSelector } from 'react-redux';
@@ -10,7 +11,10 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <ToDoCounterDiv>
-        <Count>You have <CountSpan>{completedTasks.length}</CountSpan> to-do:s</Count>
+        <Count>
+          {completedTasks.length > 0 && <CountSpan>You have {completedTasks.length} to-do:s</CountSpan>}
+          {completedTasks.length === 0 && <CountSpan>You are up to date!</CountSpan>}
+        </Count>
       </ToDoCounterDiv>
       <DeleteAllTask />
     </HeaderWrapper>
@@ -35,6 +39,7 @@ const ToDoCounterDiv = styled.div`
   position: absolute;
   top: 2vh;
   left: 2vw;
+  text-align: center;
   
   @media (min-width: 668px) and (max-width: 1024px) {
   left: 17vw;
@@ -45,9 +50,9 @@ const ToDoCounterDiv = styled.div`
 `
 const Count = styled.p`
   color: white;
-  font-family: 'Baloo 2', cursive;
-  padding: 7px;
+  font-family: 'Indie Flower', cursive;
+  padding: 10px;
 `
 const CountSpan = styled.span`
-  font-weight: 700;
+  font-weight: bold;
   `

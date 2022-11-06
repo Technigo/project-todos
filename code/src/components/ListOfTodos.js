@@ -51,7 +51,7 @@ const ListOfTodos = () => {
 export default ListOfTodos
 
 const ToDoListWrapper = styled.section`
-    background-color: rgba(255,255,255, 0.8);
+    background-color: rgba(255,255,255, 0.95);
     margin-top: 2vh;
     height: 60vh;
     border-radius: 10px;
@@ -59,12 +59,12 @@ const ToDoListWrapper = styled.section`
     position: relative;
 `
 const ToDoItem = styled.div`
+    padding: 1vh;
     margin-top: 1vh;
     margin-bottom: 1vh;
     display: grid;
     grid-template-columns: 0.1fr 0.3fr 3fr 0.5fr;
     border-radius: 2px;
-    font-family: 'Kalam', cursive;
     color: black;
     position: relative;
 `

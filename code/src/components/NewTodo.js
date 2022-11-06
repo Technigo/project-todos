@@ -112,8 +112,8 @@ const UrgencySelect = styled.select`
   background-position:left;
   background-size: 22px;
   background-repeat: no-repeat;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-
+  font-family: 'Indie Flower', cursive;
+  font-size: 18px;
 `
 const NewToDoInput = styled.input`
   width: 100%;
@@ -128,5 +128,6 @@ const NewToDoInput = styled.input`
   background-repeat: no-repeat;
   padding: 5px 30px 5px 30px;
   margin: 2px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Indie Flower', cursive;
+  font-size: 18px;
 `
