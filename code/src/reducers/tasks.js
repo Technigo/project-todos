@@ -1,32 +1,31 @@
-import { createSlice } from '@reduxjs/toolkit';
-import uniqid from 'uniqid';
+import { createSlice } from '@reduxjs/toolkit'
 
-export const tasks = createSlice({
+const tasks = createSlice({
   name: 'tasks',
   initialState: {
-    items: []
+    todos: [
+      { id: 1, title: 'groceries', isDone: false },
+      { id: 2, title: 'pick up kids from day care', isDone: false },
+      { id: 3, title: 'traveling on Friday', isDone: false }
+    ]
   },
-  reducers: {
-    addTask: (store, action) => {
-      const { newTask } = action.payload;
 
-      store.items.push({
-        id: uniqid(),
-        text: newTask,
-        completed: false
+  reducers:
+  {
+    markTaskAsDone: (store, action) => {
+      store.todos.forEach((task) => {
+        if (task.id === action.payload) {
+          task.isDone = !task.isDone
+        }
       })
     },
-    toggleItem: (store, action) => {
-      store.items.forEach((items) => {
-        if (items.id === action.payload) {
-          items.completed = !items.completed;
-        }
-      });
+    addNewTask: (store, action) => {
+      store.todos.push(action.payload);
     },
-    deletedTask: (store, action) => {
-      const updatedTasks = store.items.filter((item) => item.id !== action.payload);
-      store.items = updatedTasks
+    removeTask: (store, action) => {
+      store.todos.splice(action.payload, 1)
     }
   }
-})
+});
 
+export default tasks
