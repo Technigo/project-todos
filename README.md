@@ -1,13 +1,15 @@
 # Project Todos
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Week 11 Technigo Bootcamp - Redux. Simple to do list developed in React and Redux. Styling with styled components. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The biggest problem was to understand where data is store when I add a new task and how to count how many object is in array. I solved the problems by using Redux Devtool as well as asking group and coding mentors about specific problems. 
+
+The project is not yet done. I need to work on:
+1. Styling, right now is not fully responsive and need to be updated
+2. I would like to add button that will aloud to print the list with date. 
+3. Congratulation alert when you checked all tasks
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+whatdoineedtodotoday.netlify.app
