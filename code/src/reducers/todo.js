@@ -1,20 +1,11 @@
 /* eslint-disable max-len */
 import { createSlice } from '@reduxjs/toolkit'
 
+const initialItems = localStorage.getItem('todos') ? JSON.parse(localStorage.getItem('todos')) : []
+
 const todo = createSlice({
   name: 'todo',
-  initialState: {
-    items: [
-      { id: '1',
-        name: 'one',
-        isCompleted: false },
-      {
-        id: '2',
-        name: 'two',
-        isCompleted: false
-      }
-    ]
-  },
+  initialState: { items: initialItems },
   reducers: {
     setAllItems: (store, action) => {
       store.item = action.payload
@@ -29,10 +20,10 @@ const todo = createSlice({
       })
     },
     deleteItem: (store, action) => {
-      // Mutability
+      // Mutable
       // store.items.splice(action.payload, 1)
 
-      // Immutability
+      // Immutable
       const updatedItems = store.items.filter((item) => {
         return store.items.indexOf(item) !== action.payload
       })
