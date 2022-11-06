@@ -8,7 +8,7 @@ const ContentWrapper = ({ children }) => {
   const InnerWrapper = styled.div`
     max-width: 940px;
     width: 90%;
-    height: 100vh;
+    min-height: 100vh;
     margin: 0 auto;
     background-color:#fff;
     display: flex;
