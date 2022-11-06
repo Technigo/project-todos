@@ -26,21 +26,21 @@ const ToDoList = () => {
     return (
       <>
         <Wrapper>
-          {allTodos.map((task) => (
-            <ToDoItem key={task.id}>
+          {allTodos.map((todo) => (
+            <ToDoItem key={todo.id}>
               <CheckBox
                 type="checkbox"
-                id={task.id}
-                checked={task.complete}
-                onChange={() => isCompleteToggle(task.id)} />
-              <ToDoText><span>{task.text}</span></ToDoText>
+                id={todo.id}
+                checked={todo.complete}
+                onChange={() => isCompleteToggle(todo.id)} />
+              <ToDoText><p>{todo.text}</p></ToDoText>
 
-              <Deletebtn type="button" onClick={() => deleteTodo(task.id)} />
+              <Deletebtn type="button" onClick={() => deleteTodo(todo.id)} />
 
             </ToDoItem>
           ))}
         </Wrapper>
-        <ToDo allTasks={allTodos} incomplete={incomplete} dispatch={dispatch} />
+        <ToDo allTodos={allTodos} incomplete={incomplete} dispatch={dispatch} />
       </>
     )
   } else {
