@@ -38,16 +38,24 @@ export const ButtonP = styled.p`
 
 export const AddButton = styled.button`
   position: absolute;
-  right: 5px;
-  bottom: 5px;
-  border-radius: 10px;
+  right: 2vw;
+  bottom: 2vh;
+  border-radius: 50%;
   background-color: #0925ff;
-  padding: 3px;
+  padding: 5px;
   color: white;
   font-family: 'Baloo 2', cursive;
   border: none;
   &:hover {
     background-color: lightblue;
+  }
+  @media (min-width: 1025px){ 
+    padding: 12px;
+    border-radius: 50%
+  }
+  @media (min-width: 1600px) {
+    padding: 17px;
+    border-radius: 50%
   }
   `
 

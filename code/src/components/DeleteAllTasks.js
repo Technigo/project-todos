@@ -18,7 +18,7 @@ const DeleteAllTask = () => {
   return (
     <RemoveAllTasks onClick={DeleteAllToDos} type="button">
       <IconContext.Provider value={white}>
-        <VscTrash />
+        <VscTrash size={20} />
       </IconContext.Provider>
     </RemoveAllTasks>
   )
@@ -30,9 +30,9 @@ const RemoveAllTasks = styled.button`
 background-color: transparent;
 border: white solid 0.5px;
 border-radius: 20px;
-padding: 7px;
+padding: 10px;
 position: absolute;
-top: 20px;
+top: 2.5vh;
 right: 10vw;
 display: flex;
 align-items: center;
@@ -44,6 +44,6 @@ justify-content: center;
   right: 20vw;
 } 
   @media (min-width: 1025px) {
-  right: 20vw;
+  right: 25vw;
 } 
 `

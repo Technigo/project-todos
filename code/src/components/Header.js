@@ -37,10 +37,10 @@ const ToDoCounterDiv = styled.div`
   left: 2vw;
   
   @media (min-width: 668px) and (max-width: 1024px) {
-  left: 10vw;
+  left: 17vw;
 } 
   @media (min-width: 1025px) {
-  left: 15vw;
+  left: 22vw;
 } 
 `
 const Count = styled.p`

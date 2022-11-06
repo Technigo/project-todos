@@ -10,19 +10,18 @@ import Pen from '../images/PenIcon.png'
 import Clock from '../images/Clock.png'
 
 const NewTodo = () => {
-// Local states
   const [name, setName] = useState('')
   const [urgency, setUrgency] = useState('')
   const [collapsed, setCollapsed] = useState(false)
 
   const dispatch = useDispatch()
 
-  // a function that steers the de-collapsing of the New-to-Do-section.
+  // Setting the collapse/de-collapse of the Add a To do-section
   const toggle = () => {
     setCollapsed(!collapsed)
   }
 
-  // a function for dealing with new todos
+  // Handling the new To dos.
   const HandleSubmit = (event) => {
     event.preventDefault()
 
@@ -80,12 +79,28 @@ const NewToDoContainer = styled.section`
 `
 const ToDoWrapper = styled.section`
   background-color: rgb(255, 69, 117);
-  padding: 10px;
-  border-radius: 10px;
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  position: relative;
+  padding: 20px;
+  border-radius: 0px 0px 10px 10px;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  justify-content: center;
+  align-items: center;
+  bottom: 10vh;
+  box-sizing: border-box;
+  width: 80%;
+  height: 25vh;
   z-index: 1;
+  
+  @media (min-width: 668px) and (max-width: 1024px) {
+    width: 60%;
+  }
+  @media (min-width: 1025px){ 
+    width: 50%;
+  }
+  @media (min-width: 1600px) {
+    width: 50%;
+  }
 `
 const UrgencySelect = styled.select`
   width: 100%;
@@ -95,7 +110,7 @@ const UrgencySelect = styled.select`
   margin: 2px;
   background-image: url(${Clock});
   background-position:left;
-  background-size: 15%;
+  background-size: 22px;
   background-repeat: no-repeat;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 
@@ -109,7 +124,7 @@ const NewToDoInput = styled.input`
   background-color: white;
   background-image: url(${Pen});
   background-position:left;
-  background-size: 15%;
+  background-size: 22px;
   background-repeat: no-repeat;
   padding: 5px 30px 5px 30px;
   margin: 2px;

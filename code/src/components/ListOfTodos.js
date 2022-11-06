@@ -4,6 +4,8 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 import styled from 'styled-components'
+import { VscTrash } from 'react-icons/vsc';
+import { SrOnly } from 'styles/GlobalStyles';
 import { RemoveTask } from '../styles/Buttons'
 import { Label, Checkboxes, CheckboxesHidden, LabelP } from '../styles/Checkboxes'
 import { Urgent, LessUrgent, NotUrgent } from './UrgencyLevels'
@@ -25,17 +27,20 @@ const ListOfTodos = () => {
     <ToDoListWrapper>
       {toDoList.map((toDo, index) => {
         return (
-          <ToDoItem>
+          <ToDoItem key={toDo.id}>
             <Urgency>
               {toDo.urgency === 'red' && (<Urgent />)}
               {toDo.urgency === 'green' && (<NotUrgent />)}
               {toDo.urgency === 'orange' && (<LessUrgent />)}
             </Urgency>
-            <Label htmlFor="to-dos"> <LabelP>{toDo.name}</LabelP>
+            <Label htmlFor="to-dos"><SrOnly>{toDo.name}</SrOnly>
               <CheckboxesHidden name="to-dos" type="checkbox" checked={toDo.isDone} onChange={() => onIsDoneToggle(toDo.id)} />
               <Checkboxes className={toDo.isDone ? 'done' : 'notDone'} />
             </Label>
-            <RemoveTask onClick={() => onDeleteToDoButtonClick(index)} type="button">❌</RemoveTask>
+            <LabelP>{toDo.name}</LabelP>
+            <RemoveTask onClick={() => onDeleteToDoButtonClick(index)} type="button">
+              <VscTrash size={20} />
+            </RemoveTask>
           </ToDoItem>
         );
       })}
@@ -57,7 +62,7 @@ const ToDoItem = styled.div`
     margin-top: 1vh;
     margin-bottom: 1vh;
     display: grid;
-    grid-template-columns: 0.1fr 3fr 0.5fr;
+    grid-template-columns: 0.1fr 0.3fr 3fr 0.5fr;
     border-radius: 2px;
     font-family: 'Kalam', cursive;
     color: black;
