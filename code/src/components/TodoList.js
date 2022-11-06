@@ -83,6 +83,7 @@ const TodoListWrapper = styled.section`
   margin: 50px 10px 10px 10px;
   height: 55vh;
   overflow: auto;
+  box-shadow: 0px 0px 7px 0px #888888;
   
   //targets all children within the parent
   > * {
