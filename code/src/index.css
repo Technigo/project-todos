@@ -1,17 +1,7 @@
 body {
-  margin: 0;
   font-family: OCR A Std, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	height: 100vh;
-}
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
 }
 
 .deleted-btn{
@@ -70,7 +60,7 @@ line-height: 25px;
   top:0;
   width: 18px;
   height:18px;
-  outline:2px solid #5fd25f;
+  outline:2px solid #ca8f7d;
   background: #fff;
 	z-index: -1;
 }

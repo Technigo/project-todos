@@ -1,12 +1,9 @@
 /* eslint-disable no-tabs */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect } from 'react';
-import moment from 'moment'
-// import { format } from 'date-fns';
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux';
 import toDos from 'reducers/toDos';
-// import { Checkbox } from 'styles/Checkbox'
 
 const ToDoList = () => {
   const dispatch = useDispatch();
@@ -34,20 +31,11 @@ const ToDoList = () => {
             <div className="checkbox-wrapper">
 
               <input type="checkbox" checked={singleToDo.complete} onChange={() => onCompleteToggle(singleToDo.id)} />
-              <label className="strikethrough"> {singleToDo.name}
-
-              </label>
+              <label className="strikethrough"> {singleToDo.name}</label>
               <button type="button" className="deleted-btn" onClick={() => dispatch(toDos.actions.removeItem(singleToDo.id))}>  <RemoveButton
                 src="./assets/waste-icon.png"
                 alt="remove task" />
               </button>
-              <p className="moment">
-                {moment().startOf('day').fromNow()}
-              </p>
-              {/* <p className="day">
-                {format(toDos.createdAt, 'dd/mm/yyyy')}
-                {format(new Date(toDos.time), 'p, MM/dd/yyyy')}
-              </p> */}
             </div>
           </article>
         );
@@ -79,9 +67,3 @@ width: 15px;
   }
   }
 `
-
-// const MainSection = styled.section`
-
-//   background-color: blue;
-// 	div{}
-// `

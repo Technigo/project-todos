@@ -3,13 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const toDos = createSlice({ name: 'toDos',
   initialState: {
-    items: [
-
-      // { id: 1, text: 'Watch video on actions & reducers', complete: true },
-      // { id: 2, text: 'Follow redux codealong', complete: true },
-      // { id: 3, text: 'Fork weekly assignment', complete: true },
-      // { id: 4, text: 'Create a todo app', complete: false }
-    ]
+    items: []
   },
   reducers: { toggleItem: (store, action) => {
     // console.log(store);
@@ -24,11 +18,9 @@ const toDos = createSlice({ name: 'toDos',
       existingToDo.quantity += 1
     } else {
       store.items.push(action.payload)
-      // store.items.push({ ...action.payload, quantity: 1 })
     }
   },
   removeItem: (store, action) => {
-    // const existingToDo = store.items.find((item) => item.id === action.payload.id);
     // remove it
     const existingToDo = store.items.filter((item) => item.id !== action.payload);
     store.items = existingToDo;

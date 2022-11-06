@@ -11,3 +11,4 @@ const TotalTasks = () => {
 };
 
 export default TotalTasks;
+

@@ -1,3 +1,4 @@
+/* eslint-disable no-tabs */
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
@@ -8,7 +9,10 @@ export const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	height: 100vh;
+	box-sizing: border-box;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   background-color: #F7CAC9;
