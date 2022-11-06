@@ -1,25 +1,13 @@
 # Project Todos
 
+Replace this readme with your own information about your project.
 
-In this week's project, we were building a todo app.
-
-Requirements
-
-
-✓ Your app should list all tasks - completed or uncompleted.
-
-✓ You should be able to mark an uncompleted task as complete (and change it back to uncompleted).
-
-✓ You should be able to add and remove tasks.
-
-✓ Your app should show a count of either all todos or all uncompleted todos (or both).
+Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
 ## The problem
 
-I used my Figma template to plan the week and project. This week took some time to learn Figma (how to create components) and I also built my own icons and played with design more than I usually do.
-I spent some time on reading redux documentation before getting stated, which was helpful in understanding the concept.
-If I had more time I would clean the code and finish the Set All done button and play with filters.
+Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
 
 ## View it live
 
-https://petrastodoapp.netlify.app/
+Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
