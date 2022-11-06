@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import toDoItems from 'reducers/todos';
 import styled from 'styled-components/macro';
+
+import toDoItems from 'reducers/todos';
+import Button from './Button';
 
 const Add = () => {
   const [inputValue, setInputValue] = useState('');
@@ -17,8 +19,8 @@ const Add = () => {
 
   return (
     <StyledForm onSubmit={onFormSubmit}>
-      <input id="add" type="text" placeholder="Add to do" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
-      <button type="submit">Add item</button>
+      <StyledInput id="add" type="text" placeholder="Add to do" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
+      <Button src="images/add.svg" alt="add icon" color="var(--color-gray)" />
     </StyledForm>
   )
 }
@@ -26,6 +28,21 @@ const Add = () => {
 export default Add;
 
 export const StyledForm = styled.form`
-    display: flex;
-    flex-direction: row-reverse;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  align-content: stretch;
+  width: 100%;
+  gap: 0.5rem;
+`;
+
+export const StyledInput = styled.input`
+  font-size: 1.25rem;
+  padding: 0.75rem 0.5rem;
+  border: none;
+  width: 87.5%;
+
+  &:focus-visible {
+      outline: none;
+    }
 `;

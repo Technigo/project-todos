@@ -19,7 +19,7 @@ export const StyledHeader = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid var(--color-lightGray);
+    border-bottom: 1px solid var(--color-lightgray);
     padding: 0 0 0.6rem 0;
 `;
 
