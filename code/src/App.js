@@ -4,7 +4,6 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import Tasks from 'components/TaskList'
 import tasks from 'reducers/tasks'
-import NewTask from 'components/NewTask'
 import Header from 'components/Header'
 
 const reducer = combineReducers({
@@ -19,7 +18,6 @@ export const App = () => {
       <Header />
       <tasks />
       <Tasks />
-      <NewTask />
     </Provider>
   )
 }

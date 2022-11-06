@@ -64,6 +64,8 @@ background-color: #B4E6E5;
   @media (min-width: 1025px) {
     width: 100%;
   }
+  */
+
 &:focus {
     outline: none;
     border-color: #FCF8E8;
@@ -71,16 +73,22 @@ background-color: #B4E6E5;
 ::placeholder,
   ::-webkit-input-placeholder {
     color: black;
-    font-family: cursive;
+    font-family: sans-serif;
     text-align: center;
     font-size: 18px;
     width: auto;
   }
+   @media (max-width: 668px) {
+    ::placeholder,
+  ::-webkit-input-placeholder {
+    font-size: 14px;
+  }
+}
 `
 
 const NewTaskButton = styled.button`
 background-color: #B4E6E5;
-font-family: cursive;
+font-family: sans-serif;
 border: 1px solid;
 border-radius: 10px;
 padding: 5px 8px;
@@ -96,7 +104,7 @@ margin-left: 30%;
 `
 
 const TasksLeft = styled.p`
-font-family: cursive;
+font-family: sans-serif;
 font-size: 13px;
 padding: 5px;
 margin: 5px;

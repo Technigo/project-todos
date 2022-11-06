@@ -19,7 +19,7 @@ const HeaderTop = styled.header`
 `
 
 const HeaderStyling = styled.h1`
-    font-family: cursive;
+    font-family: sans-serif;
     font-size: 35px;
     color: black;
 

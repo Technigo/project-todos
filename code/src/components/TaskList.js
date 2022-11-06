@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import tasks from 'reducers/tasks'
 import styled from 'styled-components'
 import trash from 'Assets/trash.png'
+import NewTask from 'components/NewTask'
 
 const Tasks = () => {
   const allTasks = useSelector((store) => store.tasks.todos);
@@ -38,6 +39,7 @@ const Tasks = () => {
             </Content>
           )
         })}
+        <NewTask />
       </InnerWrapper>
     </Outerwrapper>
   )
@@ -46,10 +48,9 @@ const Tasks = () => {
 export default Tasks
 
 const Outerwrapper = styled.section`
-  /* background-color: #FCF8E8; */
   background-color: #5bc0be;
-  width: auto;
-  height: auto;
+  /* width: 100%;
+  height: 80vh; */
   display: flex;
   margin-top: 30px;
   flex-direction: column;
@@ -60,7 +61,6 @@ const Outerwrapper = styled.section`
 
 const InnerWrapper = styled.section`
   width: 50%;
-  /* background-color: #94B49F; */
   background-color: #409A98;
   border-radius: 20px;
   box-shadow: 5px 5px 5px #2f4858;
@@ -82,8 +82,9 @@ input[type=checkbox] {
           accent-color: #B4E6E5;
         }
 `
+
 const TasklistText = styled.p`
-font-family: cursive;
+font-family: sans-serif;
 font-size: 13px;
 text-transform: uppercase ;
 padding-left: 5px;
