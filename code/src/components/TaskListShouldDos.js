@@ -7,6 +7,7 @@ import tasksShoulds from 'reducers/tasksShoulds';
 import ListHeaderStyling from 'styling/ListHeaderStyling';
 import ListStyling from 'styling/ListStyling'
 import AddNewTask from './AddNewTask';
+import TaskCounterShouldDos from './TaskCounterShouldDos';
 import RemoveTask from './RemoveTask';
 
 const TaskListShouldDos = () => {
@@ -57,6 +58,7 @@ const TaskListShouldDos = () => {
             </article>
           )
         })}
+        <TaskCounterShouldDos />
         <AddNewTask onFormSubmit={onFormSubmit} inputValue={inputValue} setInputValue={setInputValue} />
       </ListStyling>
 

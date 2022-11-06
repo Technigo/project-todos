@@ -8,6 +8,7 @@ import ListHeaderStyling from 'styling/ListHeaderStyling';
 import ListStyling from 'styling/ListStyling'
 import AddNewTask from './AddNewTask';
 import RemoveTask from './RemoveTask';
+import TaskCounterWontDos from './TaskCounterWontDos';
 
 const TaskListWontDos = () => {
   const [inputValue, setInputValue] = useState(''); /* Needed for the AddNewTask to work */
@@ -55,6 +56,7 @@ const TaskListWontDos = () => {
             </article>
           )
         })}
+        <TaskCounterWontDos />
         <AddNewTask onFormSubmit={onFormSubmit} inputValue={inputValue} setInputValue={setInputValue} />
       </ListStyling>
 

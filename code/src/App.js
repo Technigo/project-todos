@@ -5,8 +5,10 @@ import Header from 'components/Header';
 import TaskListHaveTos from 'components/TaskListHaveTos';
 import TaskListShouldDos from 'components/TaskListShouldDos';
 import TaskListWontDos from 'components/TaskListWontDos';
+import TaskListWantTos from 'components/TaskListWantTos';
 import GlobalStyling from 'styling/GlobalStyling';
 import tasksWonts from 'reducers/tasksWonts';
+import tasksWants from 'reducers/tasksWants';
 import tasksShoulds from 'reducers/tasksShoulds';
 import Footer from 'components/Footer';
 import tasks from './reducers/tasks';
@@ -21,7 +23,8 @@ export const App = () => {
   const reducer = combineReducers({
     tasks: tasks.reducer,
     tasksShoulds: tasksShoulds.reducer,
-    tasksWonts: tasksWonts.reducer
+    tasksWonts: tasksWonts.reducer,
+    tasksWants: tasksWants.reducer
   });
 
   const store = configureStore({
@@ -36,6 +39,7 @@ export const App = () => {
           <div className="outer-div">
             <TaskListHaveTos />
             <TaskListShouldDos />
+            <TaskListWantTos />
             <TaskListWontDos />
           </div>
           <Footer />

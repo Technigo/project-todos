@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import background from 'assets/road2.jpg';
+import background from 'assets/header2.jpg';
 
 const GlobalStyling = styled.section`
 background-color: #1b2337;
@@ -11,7 +11,6 @@ background-repeat: no-repeat;
 background-size: 100%;
 
 h2{
-    color:black;
     opacity: 1;
 }
 
@@ -25,7 +24,7 @@ label {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    height: 950px;
+    height: 800px;
 }
 
 `
