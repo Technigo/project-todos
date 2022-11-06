@@ -9,8 +9,6 @@ import { useSelector } from 'react-redux';
 export const TodoCounter = () => {
   const todoDone = useSelector((store) => store.tasks.items.filter((item) => item.taskDone).length);
   const todoNotDone = useSelector((store) => store.tasks.items.filter((item) => !item.taskDone).length);
-  console.log(todoDone)
-  console.log(todoNotDone)
 
   return (
     <div className="counter-container">

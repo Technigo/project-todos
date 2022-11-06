@@ -7,7 +7,6 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 
-// This is where I fetch the tasks
 const TaskList = () => {
   const dispatch = useDispatch();
 
@@ -15,22 +14,17 @@ const TaskList = () => {
     const listfromStorage = JSON.parse(localStorage.getItem('allTasks'));
     if (listfromStorage) {
       dispatch(tasks.actions.setAllItems(listfromStorage));
-      console.log(listfromStorage)
-      console.log(tasks)
     }
   }, [])
   const allTasks = useSelector((store) => store.tasks.items);
 
   const onIsTaskCompleted = (id) => {
     dispatch(tasks.actions.toggleItem(id));
-    console.log(id)
   }
   const onDeleteTaskBtnClick = (taskIndex) => {
     dispatch(tasks.actions.deleteItem(taskIndex));
   }
   const functionForMap = (todo, broom) => {
-    console.log(todo)
-    console.log(broom)
     return (
 
       <section className="tasklist-container" key={todo.id}>

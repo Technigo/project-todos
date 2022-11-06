@@ -20,8 +20,6 @@ export const tasks = createSlice({
       store.items = action.payload
     },
     toggleItem: (store, action) => {
-      console.log(store)
-      console.log(action)
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.taskDone = !item.taskDone
@@ -29,13 +27,10 @@ export const tasks = createSlice({
       })
     },
     deleteItem: (store, action) => {
-      console.log(action)
-
       const updatedItems = store.items.filter((item) => {
         return store.items.indexOf(item) !== action.payload
       })
       store.items = updatedItems
-      console.log(updatedItems)
     },
     addItem: (store, action) => {
       store.items = [...store.items, action.payload]
