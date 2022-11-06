@@ -35,9 +35,7 @@ const TaskList = () => {
             </div>
             <TasksText>{singleTask.text}</TasksText>
             <DateAndDeleteBtn>
-              <Date>
-             Created {moment(tasks.date).format('ddd, MMM Do YYYY @ hh:mm a')}
-              </Date>
+              <Date>{moment(tasks.date).format('ddd, MMM Do YYYY @ hh:mm a')}</Date>
               <DeleteBtn type="button" onClick={() => onDeleteItemClick(index)}> <FaTrashAlt /></DeleteBtn>
             </DateAndDeleteBtn>
           </ListWrapper>
@@ -56,10 +54,13 @@ const ListWrapper = styled.article`
 display: flex;
 flex-direction: row;
 /* flex-wrap: wrap; */
-padding: 0.5vh 2vw;
 justify-content: space-between;
 overflow: scroll;
-border-radius: 1%;
+border-radius: 20px;
+border: 2px solid #936f63;
+margin: 20px;
+padding: 0.5vh 2vw;
+background-color: #eee6dd;
 `
 
 const TasksText = styled.p`
@@ -74,7 +75,6 @@ border-radius: 20px;
 height: 30px;
 width: 30px;
 color: #936f63;
-margin-top: 10px;
 `
 
 const Date = styled.div`
@@ -87,4 +87,6 @@ color : #936f63;
 const DateAndDeleteBtn = styled.div`
 display: flex;
 flex-direction: column;
+align-items: flex-end;
+width: 90px;
 `

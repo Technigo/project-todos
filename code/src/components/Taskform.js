@@ -54,7 +54,6 @@ const TaskformWrapper = styled.div`
   @media (min-width: 667px) and (max-width: 1024px) {
     display: flex;
     flex-direction: row;
-    align-items: center;
   }
   @media (min-width: 1025px) {
     display: flex;
@@ -68,6 +67,7 @@ const Form = styled.form`
 display: flex;
 flex-direction: row;
 justify-content: center;
+align-items: center;
 width: 100%;
 margin-top: 20px;
 padding-bottom: 10px;
@@ -80,6 +80,7 @@ height: 40px;
 width: 40px;
 background-color: #936f63;
 color: #eee6dd;
+margin-right: 20px;
 @media (min-width: 667px) and (max-width: 1024px) {
   height: 60px;
   width: 60px;
@@ -91,9 +92,10 @@ color: #eee6dd;
 
 const Input = styled.input`
 width: 300px;
-height: 30px;
-margin: 10px;
-border: none;
+height: 50px;
+margin: 20px 10px 20px 20px;
+padding: 0.5vh 2vw;
+border: 2px solid #936f63;
 border-radius: 20px;
 font-size: 1rem;
 background-color: #eee6dd;
@@ -123,5 +125,5 @@ border-radius: 20px;
 padding: 7px;
 background-color: #eee6dd;
 color: #936f63;
-margin-right: 10px;
+margin-right: 20px;
 `
