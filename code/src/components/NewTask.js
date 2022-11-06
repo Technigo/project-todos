@@ -47,7 +47,7 @@ export default NewTask;
 const NewTaskDiv = styled.div`
 display: flex;
 flex-direction: column;
-padding: 50px;
+padding: 15px;
 align-items: center;
 `
 
@@ -60,9 +60,17 @@ background-color: #B4E6E5;
 
 @media (min-width: 668px) and (max-width: 1024px) {
     width: 90%;
+    ::placeholder,
+  ::-webkit-input-placeholder {
+    font-size: 18px;
+  }
   }
   @media (min-width: 1025px) {
     width: 100%;
+    ::placeholder,
+  ::-webkit-input-placeholder {
+    font-size: 18px;
+  }
   }
   */
 
@@ -75,15 +83,10 @@ background-color: #B4E6E5;
     color: black;
     font-family: sans-serif;
     text-align: center;
-    font-size: 18px;
+    font-size: 14px;
     width: auto;
   }
-   @media (max-width: 668px) {
-    ::placeholder,
-  ::-webkit-input-placeholder {
-    font-size: 14px;
-  }
-}
+
 `
 
 const NewTaskButton = styled.button`
@@ -108,6 +111,7 @@ font-family: sans-serif;
 font-size: 13px;
 padding: 5px;
 margin: 5px;
+
 align-self: auto;
 @media (min-width: 668px) and (max-width: 1024px) {
   font-size: 15px;

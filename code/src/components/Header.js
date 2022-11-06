@@ -24,6 +24,6 @@ const HeaderStyling = styled.h1`
     color: black;
 
 @media (max-width: 668px) {
-    font-size: 25px;
+    font-size: 20px;
 }
 `
