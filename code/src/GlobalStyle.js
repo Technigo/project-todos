@@ -11,15 +11,13 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   button {
-    border: solid;
-    padding: 2px;
     margin:5px;
+    padding: 6px;
   }
 
 
 .todo{
-  border:solid;
-  border-color: black;
+  background-color: white;
   margin:20px;
   padding:15px;
   display: flex;
@@ -28,7 +26,6 @@ export const GlobalStyle = createGlobalStyle`
   flex-direction: row;
   justify-content: space-between;
 }
-
 
 .wrapper,
 .card,
@@ -39,6 +36,12 @@ export const GlobalStyle = createGlobalStyle`
   margin: 60px;
   border-radius: 20px;
   background: linear-gradient(179.4deg, rgb(253, 240, 233) 2.2%, rgb(255, 194, 203) 96.2%);
+  box-shadow: 5px 5px #FE7F9C;
+  
+}
+
+.timestamp{
+  padding-right: 15px;
 }
 
 section {
@@ -47,6 +50,11 @@ section {
 
 .new-task {
   padding:20px;
+}
+
+.add-task {
+  background-color: aliceblue;
+  border-radius: 15px;
 }
 `;
 

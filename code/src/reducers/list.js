@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable max-len */
 import { createSlice } from '@reduxjs/toolkit'
 
@@ -5,8 +6,8 @@ export const list = createSlice({
   name: 'list',
   initialState: {
     items: [
-      { id: 1, task: 'Wash dishes', completed: false },
-      { id: 2, task: 'Gym time', completed: false },
+      { id: 1, task: 'Wash dishes', completed: false, timestamp: Date() },
+      { id: 2, task: 'Gym time', completed: false, timestamp: Date() },
       { id: 3, task: 'Pick kid from school', completed: false },
       { id: 4, task: 'Coding 4-9pm', completed: false }, // completed for toggle
       { id: 5, task: 'Watch Avengers', completed: false }
@@ -26,6 +27,8 @@ export const list = createSlice({
 
     addItem: (state, action) => {
       state.items.push(action.payload)
+      const timeStamp = Date.now()
+      console.log(new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(timeStamp))
     },
 
     deleteItem: (state, action) => {

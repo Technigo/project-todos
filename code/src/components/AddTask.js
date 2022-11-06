@@ -22,10 +22,10 @@ export const AddTask = () => {
   return (
     <form className="new-task" onSubmit={defaultPrevention}>
       <label>
-        Input new task ⇨
+        INPUT NEW TASK  ⇨
         <input type="text" placeholder="Type here..." value={input} onChange={(event) => setInput(event.target.value)} /> {/* getting the input */}
       </label>
-      <button type="submit">Add new task:</button>
+      <button className="add-task" type="submit">Add new task:</button>
     </form>
   )
 }
