@@ -3,8 +3,10 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import tasks from 'reducers/task';
-import TaskList from 'components/TaskList';
-import AddTask from 'components/AddTask';
+import AddTask from 'componenets/AddTask';
+import TaskList from 'componenets/TaskList';
+
+import { Header } from 'components/Header';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -16,9 +18,13 @@ export const App = () => {
   });
 
   return (
-    <Provider store={store}>
-      <TaskList />
-      <AddTask />
-    </Provider>
+    <><Header />
+      <Provider store={store}>
+        <TaskList />
+        <p> testar o det inte ska vara en rad här</p>
+        <AddTask />
+        <p> provar något annatS</p>
+      </Provider>
+    </>
   );
 }

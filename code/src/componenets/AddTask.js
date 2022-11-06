@@ -6,12 +6,13 @@ import tasks from 'reducers/task';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
+
   const dispatch = useDispatch();
   const onFormSubmit = (event) => {
     event.preventDefault();
     const newTask = { id: Date.now().toString(),
       name: inputValue,
-      isCaught: false }
+      isDone: false }
     dispatch(tasks.actions.addItem(newTask))
     setInputValue('');
   }
@@ -25,7 +26,7 @@ const AddTask = () => {
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)} />
       </label>
-      <button type="submit">Add Task!</button>
+      <button type="submit">✖️</button>
     </form>
   )
 }

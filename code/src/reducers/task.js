@@ -2,19 +2,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const tasks = createSlice({
-  name: 'ToDos',
+  name: 'Tasks',
   initialState: {
-    items: [
-      { id: 'testone',
-        name: 'Pikatchu',
-        isCaught: false },
-      {
-        id: 'testtwo',
-        name: 'Mew',
-        isCaught: true,
-        completed: ''
-      }
-    ]
+    items: []
   },
   reducers: {
     setAllItems: (store, action) => {
@@ -25,10 +15,13 @@ const tasks = createSlice({
       console.log(action);
       store.items.forEach((item) => {
         if (item.id === action.payload) {
-          item.isCaught = !item.isCaught
-          item.completed = Date.now()
+          item.isDone = !item.isDone
         }
       });
+    },
+    addItem: (store, action) => {
+      store.items.push({ ...action.payload, quantity: 1 })
+      // store.items = [...store.items, action.payload];*/
     },
     deleteItem: (store, action) => {
       // store.items.splice(action.payload, 1);*/
@@ -37,10 +30,6 @@ const tasks = createSlice({
       });
       store.items = updatedItems;
     },
-    addItem: (store, action) => {
-      // store.items.push(action.payload);*/
-      store.items = [...store.items, action.payload];
-    }
   }
 });
 
