@@ -29,6 +29,7 @@ export const EmptyStateDiv = styled.div`
     font-style: italic;
     color: ${({ theme }) => theme.colors.body};
     font-size: 1rem;
+    display: flex;
   }
 
   img {

@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 import { IconContext } from 'react-icons';
 import { IoCloseOutline } from 'react-icons/io5';
+import { BsArrowDownShort } from 'react-icons/bs';
 import NewTodo from './NewTodo';
 import { TodoDiv, Article, TimeStampStyling, EmptyStateDiv } from './styles/TodoList.styled';
 import { FlexDiv, OuterWrapper, Innerwrapper } from './styles/Flex.styled';
@@ -27,7 +28,7 @@ const TodoList = () => {
   const TimeStampDate = (id) => `${`${new Date(id).toLocaleDateString('en-us', { day: 'numeric' })} ${new Date(id).toLocaleDateString('en-us', { month: 'short' })}`}`
 
   // to set attributes for the react icons
-  const IconColor = useMemo(() => ({ color: '#367857', className: 'react-icons' }), []);
+  const IconColor = useMemo(() => ({ color: '#5A7869', className: 'react-icons' }), []);
 
   return (
     <IconContext.Provider value={IconColor}>
@@ -65,7 +66,7 @@ const TodoList = () => {
               <EmptyStateDiv>
                 <img src={EmptyState} alt="" />
                 <h2>Yay! Looks like there&apos;s no task left to do. Go outside and play!</h2>
-                <p>Or create a new todo.</p>
+                <p>Or create a new todo<BsArrowDownShort /></p>
               </EmptyStateDiv>)}
           </div>
           <FlexDiv>
