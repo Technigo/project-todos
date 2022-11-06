@@ -11,3 +11,4 @@ I started to do some planning of how the app should work, what to place where an
 If I hade more time I would primarily made my counter work. I would also add cathegories.
 
 ## View it live
+https://todo-app-nina-berggren.netlify.app/
