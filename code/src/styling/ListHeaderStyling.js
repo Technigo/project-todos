@@ -18,6 +18,21 @@ h2{
     src: url(assets/JosefinSans-VariableFont_wght.ttf);
     
 }
+@media (max-width: 400px){
+width: 27vw;
+
+h2{
+    font-size: 16px;
+}
+
+}
+@media (min-width: 401px) and (max-width:999px){
+    width: 23vw;
+
+h2{
+    font-size: 16px;
+}  
+}
 `
 
 export default ListHeaderStyling

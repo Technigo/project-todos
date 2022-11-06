@@ -32,5 +32,27 @@ p{
 
 font-family: 'Josefin Sans', sans-serif;
 
+@media (max-width: 400px){
+  p{
+  font-size: 18px;
+}
+
+}
+@media (min-width: 401px) and (max-width:999px){
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  p{
+  font-size: 22px;
+
+}
+}
+
 `
 
+/* @media (max-width: 400px){
+
+}
+@media (min-width: 401px) and (max-width:999px){
+
+} */

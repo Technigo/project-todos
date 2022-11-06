@@ -32,9 +32,8 @@ export default AddNewTask;
 const AddButtonStyle = styled.button`
 border: none;
 background: transparent;
-justify-content: center;
 img{
-  width: 1.9vw;
+  width: 33px;
   border: none;
 }
 
@@ -42,7 +41,6 @@ button{
   border: none;
   background: transparent;
 }
-
 
 `
 
