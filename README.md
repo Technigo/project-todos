@@ -1,13 +1,14 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This project was to create a todo app for practising Redux.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by plan the app. Created then the reducer, TaskList, AddTask and then continued with components I found needed due to my plan. Finally added the styling. And then finally made the custom checkboxes. Now I will never forget that the label and the input have to be connected correctly. 
+
+I would like to be able to change the order of the task and change the color of the checkmark accordingly to the order and the gradient boarder.
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://lindas-todo.netlify.app/
