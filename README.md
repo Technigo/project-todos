@@ -2,7 +2,7 @@
 
 This week's project was to make a Todo-list for adding, deleting and completing tasks in a list using Redux actions. The project is written in React.
 
-I started off by planning my project in a simple overview in Jamboard:
+I started off by planning my project in a simple overview in Jamboard:  
 https://jamboard.google.com/d/1CcqBHQoJb3LcWm31Q21fTs8uff-6gMhHOc1mVHu_HHc/viewer?f=0
 
 I added some extra functionality for showing a cat image with different expressions for each action. I also added styled components with animations, and custom checkboxes. Lastly I decided to add extra functionality for deleting all tasks.
