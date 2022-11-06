@@ -25,6 +25,8 @@ export const RemoveButton = styled.button`
   border: none;
   background-color: inherit;
   cursor: pointer;
+  position: relative;
+  bottom: -1px;
 `
 
 export const ClearAllBtn = styled.button`

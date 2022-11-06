@@ -13,6 +13,35 @@ padding: 5px 0px;
     
   }
 `
+export const EmptyStateDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  h2 {
+    color: ${({ theme }) => theme.colors.body};
+    font-size: 20px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  p {
+    font-style: italic;
+    color: ${({ theme }) => theme.colors.body};
+    font-size: 1rem;
+  }
+
+  img {
+    mix-blend-mode: luminosity;
+  }
+  @media (min-width: ${({ theme }) => theme.tablet}){
+    margin-top: 70px;
+
+  }
+  @media (min-width: ${({ theme }) => theme.desktop}){
+    
+  }
+  `
 
 export const TodoDiv = styled.div`
   display: flex;

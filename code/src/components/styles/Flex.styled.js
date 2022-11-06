@@ -36,21 +36,4 @@ export const FlexDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-
-  h2 {
-    color: ${({ theme }) => theme.colors.body};
-    font-size: 20px;
-    margin-top: 30px;
-    text-align: center;
-  }
-
-  p {
-    font-style: italic;
-    color: ${({ theme }) => theme.colors.body};
-    font-size: 0.8rem;
-  }
-
-  img {
-    mix-blend-mode: luminosity;
-  }
 `
