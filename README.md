@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+A minimalistic to-do app with an input field and two columns to organise tasks according to 'outstanding' or 'completed'.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## About
 
-## The problem
+The app was built with React and Redux, with a heavy reliance on global state management to make all the features and functions play nicely together. It uses Styled Components, DayJS for date checking/formatting and uniqid for generating a new ID for each task. 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+At a later time, I plan to add persistence to the app, which would allow me to replace the to-do app I currently have on my phone with this one.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://jnbjensen-project-tasklist.netlify.app/

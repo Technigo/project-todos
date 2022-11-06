@@ -48,12 +48,12 @@ export const Styled = {
     &:hover {
      cursor: pointer;
     }
-`,
+    `,
   Text: styled.p`
     margin: 0.8em;
     font-weight: bold;
     text-align: left;
-   `,
+    `,
 
   Button: styled.button`
     margin: 1em;

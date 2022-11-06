@@ -1,4 +1,4 @@
-Link to my deployed project:
+Link to my deployed project: https://jnbjensen-project-tasklist.netlify.app/
 
 My reflections on how this week's project turned out:
 

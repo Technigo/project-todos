@@ -17,7 +17,6 @@ export const Styled = {
       font-size: 0.8em;
       padding-left: 1em;
   }
-
   `,
   FormButton: styled.button`
     margin-left: 20px;
@@ -30,5 +29,5 @@ export const Styled = {
     @media only screen and (max-width: 1000px) {
       font-size: 0.8em;
     }
-    `
+  `
 }
