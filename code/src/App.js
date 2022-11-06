@@ -3,7 +3,8 @@ import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import todos from 'reducers/todo'
 import TodoList from 'components/TodoList'
-import AddTodo from 'components/AddTodo'
+import Layout from 'components/Layout'
+import GlobalStyle from 'components/globalStyles'
 
 export const App = () => {
   const reducer = combineReducers({
@@ -16,8 +17,10 @@ export const App = () => {
 
   return (
     <Provider store={store}>
-      <TodoList />
-      <AddTodo />
+      <GlobalStyle />
+      <Layout>
+        <TodoList />
+      </Layout>
     </Provider>
   )
 }

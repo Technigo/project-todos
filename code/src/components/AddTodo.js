@@ -2,6 +2,22 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import todos from 'reducers/todo'
+import styled from 'styled-components/macro'
+
+const AddTodoForm = styled.form`
+padding-top: 1.5em;
+padding-bottom: 1.5em;
+
+`
+
+const AddButton = styled.button`
+  font-size: 120%;
+  cursor: pointer;
+
+  &:hover {
+    font-weight: bold;
+  }
+`
 
 const AddTodo = () => {
   const [inputValue, setInputValue] = useState('')
@@ -9,20 +25,21 @@ const AddTodo = () => {
   const onFormSubmit = (event) => {
     event.preventDefault()
     const newTodo = { id: Date.now().toString(),
+      createdAt: Date.now(),
       text: inputValue,
-      isCaught: false }
+      isDone: false }
     dispatch(todos.actions.addItem(newTodo))
     setInputValue('')
   }
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <AddTodoForm onSubmit={onFormSubmit}>
       <label>
-           New to-do:
+         New task:
         <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
       </label>
-      <button type="submit">Add</button>
-    </form>
+      <AddButton type="submit">ADD</AddButton>
+    </AddTodoForm>
   )
 }
 
