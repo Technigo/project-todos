@@ -1,22 +1,22 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components/macro';
+import uniqid from 'uniqid';
 import { tasks } from '../reducers/tasks';
 import { InnerWrapper } from './GlobayStyles';
 
 export const AddTask = () => {
   const [input, setInput] = useState('');
   const dispatch = useDispatch();
-
   // To prevent reloading of the page when hitting refrech
   const onFormSubmit = (event) => {
     event.preventDefault();
+    const newTask = { id: uniqid(),
+      name: input,
+      isChecked: false }
+    dispatch(tasks.actions.addTask(newTask));
+    setInput('');
   }
-
-  const onAddTask = () => {
-    dispatch(tasks.actions.addTask(input))
-    setInput('')
-  };
 
   return (
     <InnerWrapper>
@@ -28,7 +28,7 @@ export const AddTask = () => {
             value={input}
             onChange={(event) => setInput(event.target.value)} />
         </form>
-        <SubmitBtn type="submit" onClick={onAddTask} disabled={input.length === 0}>+</SubmitBtn>
+        <SubmitBtn type="submit" disabled={input.length === 0}>+</SubmitBtn>
       </AddInnerWrapper>
     </InnerWrapper>
   )
@@ -45,7 +45,7 @@ const AddInnerWrapper = styled.div`
     display: grid;
     grid-template-columns: 1fr 40px;
     align-items: center; 
-    margin-bottom: 15px;
+    margin-bottom: 25px;
 `
 
 const Input = styled.input`

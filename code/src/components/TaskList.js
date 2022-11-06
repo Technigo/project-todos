@@ -22,16 +22,17 @@ export const TaskList = () => {
     <InnerWrapper>
       {taskList.map((singleTask, index) => {
         return (
-          <TaskItem key={singleTask.id}>
-
+          <TaskItem>
             <CheckboxTask>
               <p>
                 <input
                   type="checkbox"
-                  id="checkboxId"
+                  id={singleTask.id}
                   checked={singleTask.isChecked}
                   onChange={() => onCheckedToggle(singleTask.id)} />
-                <Label htmlfor="checkboxId">{singleTask.name}</Label>
+                <Label for={singleTask.id} style={{ textDecoration: singleTask.isChecked ? 'line-through' : '' }} className="check">
+                  {singleTask.name}
+                </Label>
               </p>
             </CheckboxTask>
 
@@ -80,38 +81,70 @@ const CheckboxTask = styled.div`
     margin: 10px 0;
     position: relative;
   }
+
+  [type="checkbox"] {
+    opacity: 0;
+  }
+
+  [type="checkbox"] + label {
+    padding-left: 10px;
+    cursor: pointer;
+    display: inline-block;
+    line-height: 0.5rem;
+  }
+
+  [type="checkbox"] + label::before {
+    content:"";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid grey;
+    border-radius: 3px;
+  }
+
+  [type="checkbox"]:checked + label::before {
+    content:"";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid grey;
+    border-radius: 3px;
+  }
+
+    [type="checkbox"]:checked + label::after{
+    content:"";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid grey;
+    background-image: url(/check-mark.png);
+    background-size: contain;
+    border-radius: 3px;
+
+   
+  }
+
+  [type="checkbox"]:not(:checked) + label::after{
+    content:"";
+    position: absolute;
+    top: 3px;
+    left: 0;
+    width: 18px;
+    height: 18px;
+    border: 1px solid grey;
+    background-image: url(/check-mark.png);
+    background-size: contain;
+    border-radius: 3px;
+    transform: scale(0);
+    opacity: 0;
+  }
 `
-// input {
-//   opacity 1;
-//   z-index: 5;
-// }
-
-// [type="checkbox"] + label {
-//   padding-left: 10px;
-//   cursor: pointer;
-//   display: inline-block;
-//   line-height: 0.5rem;
-// }
-
-// [type="checkbox"] + label::before {
-//   content:"";
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 18px;
-//   height: 18px;
-//   border: 1px solid #000;
-// }
-
-// [type="checkbox"]:checked + label::before {
-//   content:"";
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 18px;
-//   height: 18px;
-//   border: 1px solid red;
-// }
 
 const Label = styled.label`
   font-size: 1rem;
