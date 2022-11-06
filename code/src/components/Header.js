@@ -10,7 +10,7 @@ export const Header = () => {
       <h3>{moment().format('dddd, Do MMMM YYYY')}</h3>
     </Wrapper>
   )
-}
+};
 
 // STYLING FOR ABOVE COMPONENT
 const Title = styled.h1`

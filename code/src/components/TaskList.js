@@ -6,13 +6,16 @@ import { tasks } from 'reducers/tasks';
 import bin from 'assets/bin-icon.svg';
 import coffee from 'assets/coffeeJsx.svg';
 import { Overview } from './Overview';
-import { CheckBox } from './CheckBox';
+// import { CheckBox } from './CheckBox';
 
 export const TaskList = () => {
   // Get all the tasks currently in the store:
   const allTasks = useSelector((store) => store.tasks.taskData);
 
   const dispatch = useDispatch();
+
+  // Get number of incomplete tasks:
+  const incomplete = allTasks.filter((item) => !item.complete).length;
 
   // Function for toggling the checkbox between checked and unchecked
   const isCompleteToggle = (task) => {
@@ -33,6 +36,7 @@ export const TaskList = () => {
           {allTasks.map((task) => (
             <TaskItem key={task.id}>
               <CheckBox
+                type="checkbox"
                 id={task.id}
                 checked={task.complete}
                 onChange={() => isCompleteToggle(task.id)} />
@@ -43,7 +47,7 @@ export const TaskList = () => {
             </TaskItem>
           ))}
         </Wrapper>
-        <Overview />
+        <Overview allTasks={allTasks} incomplete={incomplete} dispatch={dispatch} />
       </>
     )
   } else {
@@ -65,6 +69,12 @@ const TaskItem = styled.div`
   border-radius: 50px;
   margin: 0.5rem 0;
   align-items: center;
+`
+
+const CheckBox = styled.input`
+  width: 1.5rem;
+  height: 1.5rem;
+  background: green;
 `
 
 const TaskText = styled.div`

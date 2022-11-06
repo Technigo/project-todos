@@ -47,9 +47,10 @@ main {
     min-height: 60vh;
   }
 }
-/* // desktop: '2560px' */
 
-[type="checkbox"] {
+/* CODE FOR USING PSEUDO ELEMENTS AS CHECKBOXES, for future use */
+
+/* [type="checkbox"] {
   opacity: 0;
 }
 
@@ -62,7 +63,7 @@ main {
 }
 
 /* first pseudo element BEFORE, the box aroud the real, hidden original checkbox */
-[type="checkbox"] + label::before {
+/* [type="checkbox"] + label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -71,10 +72,10 @@ main {
   height: 1.1rem;
   outline: 2px solid #333;
   background: white;
-}
+} */
 
 /* when checkbox is checked, select the adjacent label, and change its before pseudo element */
-[type="checkbox"]:checked + label::before {
+/* [type="checkbox"]:checked + label::before {
   content: "";
   position: absolute;
   left: 0;
@@ -83,10 +84,10 @@ main {
   height: 1.1rem;
   outline: 1px solid #1F9D6E;
   background: white;
-}
+} */
 
 /* pseudo element AFTER, the actual checkmark, once checkbox is checked */
-[type="checkbox"]:checked + label::after {
+/* [type="checkbox"]:checked + label::after {
   content: "";
   position: absolute;
   left: 0;
@@ -98,10 +99,10 @@ main {
   transform:scale(1);
   opacity: 1;
   transition: all .3s ease;
-}
+} */
 
 /* NOT CHECKED */
-[type="checkbox"]:not(:checked) + label::after {
+/* [type="checkbox"]:not(:checked) + label::after {
   content: "";
   position: absolute;
   left: 0;
@@ -112,4 +113,4 @@ main {
   background-size: contain;
   transform:scale(0);
   opacity: 0;
-}
+} */
