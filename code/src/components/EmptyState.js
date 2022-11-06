@@ -5,7 +5,7 @@ import Empty from '../assets/EmptyState.svg';
 const EmptyState = () => {
   return (
     <Wrapper>
-      <EmptyState src={Empty} alt="Add a task to the list" />
+      <StyledImg src={Empty} alt="Add a task to the list" />
     </Wrapper>
   );
 };
@@ -15,5 +15,9 @@ export default EmptyState;
 const Wrapper = styled.div`
 display: flex;
 justify-content: center;
-background: black;
+`
+
+const StyledImg = styled.img`
+  width: 300px;
+  height: 150px;
 `

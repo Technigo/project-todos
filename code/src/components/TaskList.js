@@ -1,22 +1,20 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
-import { useSelector } from 'react-redux';
 // import AddTask from './AddTask';
 import styled from 'styled-components/macro'
 import Task from './Task';
 // import EmptyState from '../assets/EmtyState.svg';
 
-const TaskList = () => {
-  const taskList = useSelector((store) => store.tasks.tasksArray);
+const TaskList = ({ listData }) => {
   // const leftTodos = taskList.filter((task) => task.isCompleted === false)
 
   return (
     <TaskListSection>
-      {taskList.map((taskData) => {
+      {listData.map((task) => {
         return (
           <Task
-            key={taskData.id}
-            taskData={taskData} />
+            key={task.id}
+            taskData={task} />
         );
       })}
     </TaskListSection>

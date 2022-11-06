@@ -9,7 +9,7 @@ const TaskContainer = () => {
   const taskList = useSelector((store) => store.tasks.tasksArray);
   return (
     <Wrapper>
-      {taskList.length > 0 ? <TaskList /> : <EmptyState />}
+      {taskList.length > 0 ? <TaskList listData={taskList} /> : <EmptyState />}
     </Wrapper>
   );
 };
