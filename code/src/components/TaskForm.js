@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import { Button, Icon } from 'styles/Buttons';
 import Plus from '../icons/plus.svg'
-import { Section, InputWrapper, InputForm } from '../styles/styledComponents';
+import { Section, InputWrapper, InputForm } from '../styles/Global';
 
 const TaskForm = () => {
   const [newToDo, setNewToDo] = useState('')

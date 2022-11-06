@@ -5,9 +5,6 @@ const tasks = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      { id: 5, text: 'Milk', complete: false, time: moment().format('D MMM HH:mm') },
-      { id: 2, text: 'Bread', complete: false, time: moment().format('D MMM HH:mm') },
-      { id: 9, text: 'Apple', complete: false, time: moment().format('D MMM HH:mm') }
     ]
   },
 

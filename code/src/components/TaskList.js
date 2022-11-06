@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import { Button, Icon } from 'styles/Buttons';
 import Trash from '../icons/trash.svg'
-import { Section, Wrapper, TaskText, Date, CheckBoxWrapper } from '../styles/styledComponents';
+import { Section, Wrapper, TaskText, Date, CheckBoxWrapper } from '../styles/Global';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items); // grabs our items in reducer
@@ -25,13 +25,13 @@ const TaskList = () => {
         return (
           <Wrapper>
             <CheckBoxWrapper>
-              <label className="container" htmlFor={singleTask} id={singleTask}>
+              <label htmlFor={singleTask} id={index}>
                 <input
                   className="checkBox"
                   type="checkbox"
                   checked={singleTask.complete}
-                  onChange={() => onCompleteToggle(singleTask.id)} />
-                <span className="checkmark" />
+                  onChange={() => onCompleteToggle(singleTask.id)}
+                  id={singleTask.id} />
               </label>
             </CheckBoxWrapper>
             <TaskText>{singleTask.text}</TaskText>

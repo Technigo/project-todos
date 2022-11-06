@@ -57,76 +57,45 @@ export const InputForm = styled.input`
     box-shadow: 2px 5px #888888;
 }
 `
-export const CheckBoxWrapper = styled.label`
-.container {
-  display: block;
-  position: relative;
-  left: 4px;
-  bottom: 11px;
+export const CheckBoxWrapper = styled.div`
+background-color: none;
+
+.checkBox {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  font: inherit;
+  color: grey;
+  width: 18px;
+  height: 18px;;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+@media screen and (min-width: 1024px) {
+  &:hover {
   cursor: pointer;
-  font-size: 18px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+}}
+::before {
+  content: "";
+  width: 0.9em;
+  height: 0.9em;
+  border-radius: 20px;
+  transform: scale(0);
+  transition: 120ms transform ease-in-out;
+  box-shadow: inset 1em 1em black;
+  transform-origin: bottom left;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
-
-/* Hide the browser's default checkbox */
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+:checked::before {
+  transform: scale(1);
 }
-
-/* Create a custom checkbox */
-.checkmark {
-  position: absolute;
-  left: 4px;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-}
-
-/* On mouse-over, add a grey background color */
-.container:hover input ~ .checkmark {
-  background-color: #ccc;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  background-color: #2196F3;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
-  content: " ";
-  position: absolute;
-  display: none;
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
 }
 `
 
 export const TaskText = styled.h2`
 position: absolute;
+top: 0px;
 left: 40px;
 color: black;
 font-size: 18px;
@@ -136,13 +105,10 @@ font-weight: 600;
 
 export const Date = styled.h2`
 position: absolute;
-right: 27px;
-width: 48px;
+align-item: center;
+right: 30px;
+width: 100px;
 color: rgb(52, 52, 52);
 font-size: 14px;
 font-family: 'Nunito Sans', sans-serif;
-@media (min-width: 750px) {
-  width: 100px;
-  right 20px;
-}
 `

@@ -1,6 +1,6 @@
 import React from 'react';
 import { HeaderText, HeaderWrapper, HeaderDate, Line } from 'styles/Header';
-import { Section } from 'styles/styledComponents'
+import { Section } from 'styles/Global'
 import moment from 'moment';
 import Counter from './Counter';
 

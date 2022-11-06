@@ -23,7 +23,7 @@ export const HeaderText = styled.h1`
     }
 `
 
-export const HeaderDate = styled.p`
+export const HeaderDate = styled.span`
     font-family: 'Nunito Sans', sans-serif;
     line-height: 5px;
     position: absolute;
