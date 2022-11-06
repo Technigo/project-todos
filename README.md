@@ -1,13 +1,8 @@
 # Project Todos
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This assignment was to create a to do list. you should be able to turn on and off complete, add more todos and count the amount of items.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I would've added a show and hide function for completed todos, style the checkbox, create a popper menu bar for more options and features for each item, as well as making the container scrollable if you have many items.
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://cheerful-squirrel-2b6494.netlify.app/

@@ -4,7 +4,7 @@ export const OuterWrapper = styled.div`
     display: flex;
     justify-content: center;
     width: 100%;
-    margin-top: 10%;
+    margin-top: 3rem;
 `;
 
 export const InnerWrapper = styled.div`
