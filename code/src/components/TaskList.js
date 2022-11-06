@@ -67,6 +67,10 @@ const TasksText = styled.p`
 font-size: 1rem;
 margin-left: 2px;
 color: #936f63;
+@media (min-width: 667px) and (max-width: 1024px) {
+}
+@media (min-width: 1025px) {
+}
 `
 
 const DeleteBtn = styled(Button)`

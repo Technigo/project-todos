@@ -47,12 +47,31 @@ font-size: 40px;
 color: #936f63;
 position: absolute;
 z-index: 2;
+top: 40px;
+margin-left: 30px;
+@media (min-width: 667px) and (max-width: 1024px) {
+    font-size: 50px;
+    top: 70px;
+}
+@media (min-width: 1025px) {
+    font-size: 70px;
+    top: 120px;
+}
 `
 
 const TodaysDate = styled.p`
 color: #936f63;
 margin: 20px 0 5px 0;
-margin-left: 20px;
+margin-left: 30px;
 position: absolute;
+top: 30px;
 z-index: 2;
+@media (min-width: 667px) and (max-width: 1024px) {
+    font-size: 18px;
+    top: 60px;
+}
+@media (min-width: 1025px) {
+    font-size: 22px;
+    top: 120px;
+}
 `

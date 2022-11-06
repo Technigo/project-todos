@@ -87,6 +87,12 @@ width: 40px;
 background-color: #fbf4ee;
 color: #f49c5c;
 margin-right: 20px;
+
+&:hover {
+  background-color: #f49c5c;
+  color: #fbf4ee
+}
+
 @media (min-width: 667px) and (max-width: 1024px) {
   height: 60px;
   width: 60px;
@@ -143,6 +149,12 @@ padding: 7px;
 background-color: #f0732a;
 color: #fff6f2;
 margin-right: 20px;
+
+&:hover {
+  background-color: #fff6f2;
+  color: #f0732a
+}
+
 @media (min-width: 667px) and (max-width: 1024px) {
   height: 40px;
   width: 100px;
@@ -150,7 +162,7 @@ margin-right: 20px;
 }
 @media (min-width: 1025px) {
   height: 60px;
-  width: 100px;
+  width: 120px;
   font-size: 18px;
 }
 `

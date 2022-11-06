@@ -2,9 +2,9 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [
-    // { id: 5, text: 'Buy candy for tonight', complete: false },
-    // { id: 2, text: 'Watch a movie', complete: false },
-    // { id: 9, text: 'Make popcorn', complete: false }
+    { id: 5, text: 'Buy candy for tonight', complete: false },
+    { id: 2, text: 'Watch a movie', complete: false },
+    { id: 9, text: 'Make popcorn', complete: false }
   ]
 };
 
