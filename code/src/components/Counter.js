@@ -15,4 +15,11 @@ export const CounterContainer = styled.section`
 font-style: italic;
 color: #936f63;
 margin-left: 20px;
+
+@media (min-width: 667px) and (max-width: 1024px) {
+font-size: 20px;
+}
+@media (min-width: 1025px) {
+  font-size: 20px;
+}
 `

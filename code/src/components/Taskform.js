@@ -53,7 +53,7 @@ const TaskformWrapper = styled.div`
   padding-bottom: 10px;
   @media (min-width: 667px) and (max-width: 1024px) {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
   }
   @media (min-width: 1025px) {
     display: flex;
@@ -71,15 +71,21 @@ align-items: center;
 width: 100%;
 margin-top: 20px;
 padding-bottom: 10px;
-`;
+@media (min-width: 667px) and (max-width: 1024px) {
+  }
+  @media (min-width: 1025px) {
+    margin-top: 0px;
+  padding-bottom: 0px;
+  }
+`
 
 const SubmitBtn = styled(Button)`
-border: none;
+border: 2px solid #f49c5c;
 border-radius: 20px;
 height: 40px;
 width: 40px;
-background-color: #936f63;
-color: #eee6dd;
+background-color: #fbf4ee;
+color: #f49c5c;
 margin-right: 20px;
 @media (min-width: 667px) and (max-width: 1024px) {
   height: 60px;
@@ -87,6 +93,9 @@ margin-right: 20px;
   font-size: 40px;
 }
 @media (min-width: 1025px) {
+  height: 60px;
+  width: 60px;
+  font-size: 40px;
 }
 `
 
@@ -95,19 +104,21 @@ width: 300px;
 height: 50px;
 margin: 20px 10px 20px 20px;
 padding: 0.5vh 2vw;
-border: 2px solid #936f63;
+border: 2px solid #f49c5c;
 border-radius: 20px;
 font-size: 1rem;
-background-color: #eee6dd;
+background-color: #fbf4ee;
 ::placeholder,
   ::-webkit-input-placeholder {
-    color: #936f63;
+    color: #f49c5c;
   }
 
   @media (min-width: 667px) and (max-width: 1024px) {
     height: 50px;
   }
   @media (min-width: 1025px) {
+    width: 500px;
+    font-size: 1.2rem;
   }
 `
 
@@ -117,13 +128,29 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 margin-top: 30px;
+
+@media (min-width: 667px) and (max-width: 1024px) {
+}
+@media (min-width: 1025px) {
+  margin-top: 0px;
+}
 `
 
 const ClearAllBtn = styled.button`
 border: none;
 border-radius: 20px;
 padding: 7px;
-background-color: #eee6dd;
-color: #936f63;
+background-color: #f0732a;
+color: #fff6f2;
 margin-right: 20px;
+@media (min-width: 667px) and (max-width: 1024px) {
+  height: 40px;
+  width: 100px;
+  font-size: 18px;
+}
+@media (min-width: 1025px) {
+  height: 60px;
+  width: 100px;
+  font-size: 18px;
+}
 `

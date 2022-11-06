@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import headerImage from 'assets/headerImage.png'
 
 const date = new Date();
 const todaysDate = date.toString().slice(0, 15);
@@ -9,6 +10,9 @@ const Header = () => {
     <HeaderContainer>
       <TodaysDate>{todaysDate}</TodaysDate>
       <HeaderText>Todays todo list!</HeaderText>
+      <HeaderImage
+        src={headerImage}
+        alt="background-header" />
     </HeaderContainer>
   )
 }
@@ -16,10 +20,10 @@ const Header = () => {
 export default Header;
 
 const HeaderContainer = styled.header`
+
 height: 25vh;
 overflow: hidden;
 background-position: center;
-background-color: #eee6dd;
 
 @media (min-width: 667px) and (max-width: 1024px) {
   height: 40vh;
@@ -29,15 +33,26 @@ background-color: #eee6dd;
 }
 `
 
+const HeaderImage = styled.img`
+    /* position: absolute;
+    width: 600px;
+    left: 95px;
+    top: 0px; */
+    position: relative;
+    z-index: 1;
+`
+
 const HeaderText = styled.h1`
 font-size: 40px;
 color: #936f63;
-text-align: center;
+position: absolute;
+z-index: 2;
 `
 
 const TodaysDate = styled.p`
 color: #936f63;
-display: flex;
 margin: 20px 0 5px 0;
 margin-left: 20px;
+position: absolute;
+z-index: 2;
 `

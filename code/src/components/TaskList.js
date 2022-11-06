@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks'
 import styled from 'styled-components'
 import { Button } from 'components/GlobalStyles'
-import { FaTrashAlt } from 'react-icons/fa';
+import { FaTrash } from 'react-icons/fa';
 import moment from 'moment';
 
 const TaskList = () => {
@@ -36,7 +36,7 @@ const TaskList = () => {
             <TasksText>{singleTask.text}</TasksText>
             <DateAndDeleteBtn>
               <Date>{moment(tasks.date).format('ddd, MMM Do YYYY @ hh:mm a')}</Date>
-              <DeleteBtn type="button" onClick={() => onDeleteItemClick(index)}> <FaTrashAlt /></DeleteBtn>
+              <DeleteBtn type="button" onClick={() => onDeleteItemClick(index)}> <FaTrash /></DeleteBtn>
             </DateAndDeleteBtn>
           </ListWrapper>
         )
@@ -57,10 +57,10 @@ flex-direction: row;
 justify-content: space-between;
 overflow: scroll;
 border-radius: 20px;
-border: 2px solid #936f63;
+border: 2px solid #f0732a;
 margin: 20px;
 padding: 0.5vh 2vw;
-background-color: #eee6dd;
+background-color: #ffccb0;
 `
 
 const TasksText = styled.p`
@@ -74,7 +74,13 @@ border: none;
 border-radius: 20px;
 height: 30px;
 width: 30px;
-color: #936f63;
+color: #f0732a;
+background-color: transparent;
+@media (min-width: 667px) and (max-width: 1024px) {
+
+}
+@media (min-width: 1025px) {
+}
 `
 
 const Date = styled.div`
@@ -89,4 +95,10 @@ display: flex;
 flex-direction: column;
 align-items: flex-end;
 width: 90px;
+@media (min-width: 667px) and (max-width: 1024px) {
+flex-direction: row;
+align-items: center;
+}
+@media (min-width: 1025px) {
+}
 `

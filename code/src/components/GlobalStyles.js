@@ -14,7 +14,7 @@ max-width: 940px;
 width: 90%;
 height: 100vh;
 margin: 0 auto;
-background-color: #d4c7b9;
+background-color: #fbdfcf;
 display: flex;
 flex-direction: column;
 @media (min-width: 667px) and (max-width: 1024px) {
