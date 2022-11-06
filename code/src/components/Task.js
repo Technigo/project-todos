@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import tasks from 'reducers/todos/taskSlice';
 import moment from 'moment';
 import Check from '../assets/Check.svg';
-import Bin from '../assets/Bin.svg';
+import Trash from '../assets/Trash.svg';
 import Lid from '../assets/Lid.svg';
 
 const Task = ({ taskData }) => {
@@ -38,7 +38,7 @@ const Task = ({ taskData }) => {
           onClick={() => onRemoveTask(taskData.id)}
           aria-label="Remove task">
           <span className="trash">
-            <span src={Bin} />
+            <span src={Trash} />
             <i src={Lid} />
           </span>
         </RemoveButton>
@@ -52,39 +52,65 @@ const Task = ({ taskData }) => {
 export default Task;
 
 const TaskWrapper = styled.div`
-  background-color: #f2f7f8;
+  // background-color: #f2f7f8;
+  border-bottom: 3px solid #f2f7f8;;
+
   //var(--main-color)
   margin: 10px 0;
-  padding: 0 10px;
   display: flex;
   flex-direction: column;
+  @media (min-width: 667px) and (max-width: 1024px) {
+  }
+  @media (min-width: 1025px) {
+    padding: 0 30px;
+    margin: 10px 100px;
+    
 
+  }
   .task-row {
-    padding: 25px 0 0 20px;
+    padding: 25px 0 0 10px;
     display: flex;
     justify-content: flex-start;
     flex-direction: row;
     align-items: center;
   }
+  @media (min-width: 667px) and (max-width: 1024px) {
+  }
+  @media (min-width: 1025px) {
+    padding: 0 25px 0 20px;
+  }
 
   .task-text {
+    font-size: 14px;
+    padding: 0 20px;
+  @media (min-width: 667px) and (max-width: 1024px) {
+  }
+  @media (min-width: 1025px) {
     font-size: 16px;
     padding: 0 20px;
   }
+
 `;
 const RemoveButton = styled.button`
-  padding: 0 20px;
+  // padding: 0 20px;
   margin-left: auto;
   border: none;
   background-color: transparent;
+  @media (min-width: 667px) and (max-width: 1024px) {
+
+    }
+    @media (min-width: 1025px) {
+    // padding: 0 20px;
+    }
+    
 
   .trash {
     background: #005568;
-    width: 19px;
-    height: 23px;
+    width: 17px;
+    height: 20px;
     display: inline-block;
     margin: 0 auto;
-
+    
     position: relative;
     -webkit-border-bottom-right-radius: 6px;
     -webkit-border-bottom-left-radius: 6px;
@@ -100,16 +126,15 @@ const RemoveButton = styled.button`
     right: 0;
     bottom: -50px;
     width: 250px;
-    border: solid 2px blue;
+    // border: solid 2px blue;
   }
   .trash span {
     position: absolute;
-    height: 4px;
-    width: 22px;
+    height: 3px;
+    width: 20px;
     background: #005568; //pink color
-    top: -5px;
+    top: -4px;
     left: -2px;
-    right: -6px;
 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -122,31 +147,30 @@ const RemoveButton = styled.button`
   .trash span:after {
     content: "";
     position: absolute;
-    width: 5px;
+    width: 4px;
     //topp
     height: 2px;
     background: #005568;
-    top: -3px;
+    top: -2px; //hrä
 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     transform: rotate(0deg);
     transition: transform 250ms;
     transform-origin: 19% 100%;
-    left: 9px;
+    left: 8px;
     //topp
   }
 
   .trash i {
     position: relative;
     width: 1px;
-    height: 14px;
+    height: 12px;
     background: #fff;
     display: block;
     margin: 14px auto;
     border-radius: 3px;
-    bottom: 9px;
-    // border: solid 2px red;
+    bottom: 10px;
   }
   .trash i:after {
     content: "";
@@ -155,7 +179,7 @@ const RemoveButton = styled.button`
     background: #fff;
     position: absolute;
     left: -4px;
-    // bottom: 0px;
+    bottom: 0px;
     border-radius: 3px;
   }
   .trash i:before {
@@ -165,7 +189,7 @@ const RemoveButton = styled.button`
     background: #fff;
     position: absolute;
     right: -4px;
-    // bottom: 8px;
+    bottom: 0px;
     border-radius: 3px;
     // border: solid 2px pink;
   }
@@ -177,11 +201,17 @@ const RemoveButton = styled.button`
 `;
 
 const Date = styled.div`
-  font-size: 10px;
+  font-size: 9px;
   align-items: flex-end;
   margin-left: auto;
+  padding-right: 5px;
   // font-family:
+
+@media (min-width: 667px) and (max-width: 1024px) {
+  font-size: 10px;
+ }
 `;
+
 const IncompleteCheckIcon = styled.img`
   height: 20px;
   width: 20px;
@@ -206,8 +236,8 @@ const CheckIcon = styled.img`
   right: -50%;
 `;
 const CheckButton = styled.div`
-  height: 23px;
-  width: 23px;
+  height: 22px;
+  width: 22px;
   background-color: #fff;
   position: relative;
 

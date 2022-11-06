@@ -15,7 +15,7 @@ const TodoCounter = () => {
   } else if (leftTodos.length === 0) {
     return (
       <CounterWrapper>
-        <div className="no-left">Add a todo</div>
+       0 todo
       </CounterWrapper>
     );
   }
@@ -27,6 +27,8 @@ const CounterWrapper = styled.div`
   justify-content: center;
   font-size: 13px;
   font-weight: 600;
+  margin: 15px 0;
+
 
   @media (min-width: 667px) and (max-width: 1024px) {
   }

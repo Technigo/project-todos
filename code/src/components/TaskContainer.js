@@ -19,5 +19,4 @@ export default TaskContainer;
 const Wrapper = styled.div`
 display: flex;
 justify-content: center;
-border: solid 2px red;
 `

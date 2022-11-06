@@ -29,6 +29,7 @@ display: flex;
 flex-direction: column;
 overflow: hidden;
 max-height: 2000px;
+width: 100%;
 `
 /*
 const EmptyStateSection = styled.section`

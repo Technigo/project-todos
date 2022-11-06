@@ -13,11 +13,21 @@ const EmptyState = () => {
 export default EmptyState;
 
 const Wrapper = styled.div`
-display: flex;
-justify-content: center;
-`
+  display: flex;
+  justify-content: center;
+`;
 
 const StyledImg = styled.img`
-  width: 300px;
-  height: 150px;
-`
+  width: 70%;
+  padding-top: 45px;
+
+  @media (min-width: 667px) and (max-width: 1024px) {
+    width: 60%;
+    padding-top: 90px;
+  }
+
+  @media (min-width: 1025px) {
+    width: 45%;
+    padding-top: 85px;
+  }
+`;

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import taskReducer from 'reducers/todos/taskSlice';
 import { useDispatch, useSelector } from 'react-redux';
-// import Checkbox from './Checkbox';
 import uniqid from 'uniqid'; // https://www.npmjs.com/package/uniqid
 import styled from 'styled-components';
 import TodoCounter from 'components/TodoCounter';
@@ -15,9 +14,8 @@ const AddTask = () => {
     dispatch(taskReducer.actions.removeAllTasks(taskList));
   };
   // const onSetAllTasksDone = () => { dispatch(taskReducer.actions.setAllTasksDone(taskList)); };
-  const onAddTask = (e) => {
-    console.log('submit')
-    e.preventDefault();
+  const onAddTask = (event) => {
+    event.preventDefault();
 
     dispatch(
       taskReducer.actions.addTask({
@@ -40,11 +38,11 @@ const AddTask = () => {
           onChange={(event) => setInputValue(event.target.value)}
           placeholder="Write a todo.."
           className="newTaskInput"
-          aria-label="type and hit enter to create new task." />
+          aria-label="Type and hit enter to create new task." />
         <NewTaskIconWrapper
           type="submit"
-          aria-label="create new task button.">
-          <NewTaskIcon src={AddButton} alt="add new task." />
+          aria-label="Create new task button.">
+          <NewTaskIcon src={AddButton} alt="Add new task." />
         </NewTaskIconWrapper>
       </NewTaskWrapper>
       <Wrapper>
@@ -53,7 +51,7 @@ const AddTask = () => {
             className="reset-button"
             type="button"
             onClick={() => onRemoveAllTasks(taskList)}>
-            Set All Done
+            All Done
           </button>
           <button
             className="reset-button"
@@ -76,7 +74,7 @@ const Container = styled.div`
   justify-content: center;
   align-content: center;
   background-color: var(--light-color);
-  padding-bottom: 10px;
+ 
 
   @media (min-width: 667px) and (max-width: 1024px) {
     display: flex;
@@ -96,26 +94,25 @@ const NewTaskWrapper = styled.form`
   justify-content: center;
   width: 100%;
   margin-top: 20px;
-  padding-bottom: 10px;
 
   @media (min-width: 667px) and (max-width: 1024px) {
   }
   @media (min-width: 1025px) {
-    // margin-top: 30px;
+ 
   }
 `;
 
 const NewTaskIconWrapper = styled.button`
   border: none;
   background: none;
-  margin-left: 20px;
+  margin-left: 15px;
   align-content: center;
   display: flex;
   border-radius: 50%;
   cursor: pointer;
-  transition: all 0.7s ease-out;
+  transition: all 0.3s ease-out;
   &:hover {
-    transition: all 0.5s ease-in;
+    transition: all 0.3s ease-in;
     transform: scale(1.3);
 
   @media (min-width: 667px) and (max-width: 1024px) {
@@ -125,29 +122,42 @@ const NewTaskIconWrapper = styled.button`
 `;
 
 const NewTaskIcon = styled.img`
-  height: 40px;
-  width: 40px;
+  height: 30px;
+  width: 30px;
   align-self: center;
+  @media (min-width: 667px) and (max-width: 1024px) {
+    height: 40px;
+    width: 40px;
+  }
+  @media (min-width: 1025px) {
+      height: 40px;
+  width: 40px;
+  }
 `;
+
 const NewTaskTextInput = styled.input`
-  width: 65%;
+  width: 70%;
   font-size: 13px;
   border: none;
   align-self: center;
-  padding: 5px 0 5px 15px;
-  margin-top: 5px;
-  height: 34px;
+  padding: 3px 0 3px 10px;
+  margin-left: 8px;
+  height: 30px;
   font-family: "Montserrat", sans-serif;
   outline: none;
   // :focus {
 
   @media (min-width: 667px) and (max-width: 1024px) {
     height: 54px;
+    width: 65%;
   }
 
   @media (min-width: 1025px) {
     font-size: 17px;
     height: 54px;
+    width: 65%;
+    padding: 5px 0 5px 15px;
+
   }
 `;
 const Wrapper = styled.div`
@@ -174,12 +184,14 @@ const ButtonWrapper = styled.div`
 
 .reset-button{
   height: 25px;
-  font-size: 12px;
+  font-size: 11px;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
   border: none;
+  border-radius: 3px;
   color: #fff;
-  margin: 0 3px;
+  letter-spacing: 1px;
+  margin: 0 5px;
   align-content: center;
   width: 100px;
   background-color: #005568;
@@ -194,8 +206,9 @@ const ButtonWrapper = styled.div`
 @media (min-width: 1025px) {
   font-size: 13px;
   height: 40px;
-  // align-content: end;
-  margin: 0 5px;
+ margin: 11px 10px 0 0px;
+
+
 
 }
 }
