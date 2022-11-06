@@ -15,25 +15,23 @@ export const AddTask = () => {
   }
 
   return (
-    <section className="add">
-      <div className="add-header">
-        <div className="create-text">
+    <Wrapper>
+      <div>
+        <div>
           <Text>Add a new task</Text>
         </div>
       </div>
-      <div className="add-task-container">
+      <InputAndBtn>
         <input
           type="text"
-          className="add-input"
           value={input}
           onChange={(event) => setInput(event.target.value)} />
         <button
           type="button"
-          className="add-button"
           onClick={onAddTask}> ➕
         </button>
-      </div>
-    </section>
+      </InputAndBtn>
+    </Wrapper>
   )
 }
 
@@ -48,11 +46,11 @@ export const AddIdea = () => {
   }
 
   return (
-    <section>
+    <Wrapper>
       <div>
         <Text>Add a new idea</Text>
       </div>
-      <div>
+      <InputAndBtn>
         <input
           type="text"
           value={input}
@@ -61,11 +59,35 @@ export const AddIdea = () => {
           type="button"
           onClick={onAddIdea}> ➕
         </button>
-      </div>
-    </section>
+      </InputAndBtn>
+    </Wrapper>
   )
 }
 
+const Wrapper = styled.section`
+display: flex;
+flex-direction: column;
+margin: 10px;
+padding: 5px;
+width: 90%;
+border-radius: 10px;
+align-items: center;
+justify-content: space-around;
+background-color: #303030;
+`
+
 const Text = styled.h2`
 color: #ff999b;
+`
+const InputAndBtn = styled.div`
+display: flex;
+
+[type="text"] {
+  margin: 5px;
+  background-color: #424242;
+}
+
+[type="button"] {
+  background-color: #424242;
+}
 `

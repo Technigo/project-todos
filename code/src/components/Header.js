@@ -11,12 +11,11 @@ export const Header = () => {
 
 const HeaderContainer = styled.div`
     display: flex;
-    width: 80%;
+    width: 100vw;
     background-color: #303030;
     color: #ffbe91;
-    border: 2px solid #ffbe91;
-    border-radius: 40px;
-    box-shadow: 5px 5px 20px #ffbe91, -5px -5px 20px #ffbe91;
+    border-bottom: 2px solid #ffbe91;
+    box-shadow: 0px 15px 20px -15px #ffbe91;
     justify-content: center;
     margin: 10px;
 `

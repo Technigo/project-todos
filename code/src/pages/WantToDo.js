@@ -7,7 +7,7 @@ import { HomeBtn } from 'components/HomeBtn';
 export const WantToDo = () => {
   return (
     <InnerWrapper>
-      <h2>What do you want to do?</h2>
+      <Text>What do you want to do?</Text>
       <IdeaList />
       <AddIdea />
       <HomeBtn />
@@ -20,4 +20,7 @@ display: flex;
 width: 100%;
 flex-direction: column;
 align-items: center;
+`
+const Text = styled.h2`
+color: #ff999b;
 `

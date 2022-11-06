@@ -3,7 +3,6 @@ import styled from 'styled-components/macro';
 import { useSelector, useDispatch } from 'react-redux';
 import { TaskReducer, IdeaReducer } from 'reducers/reducers';
 import { ClearScreenTask, ClearScreenIdea } from 'components/ClearScreen'
-// import deleteIcon from '../images/delete.png';
 import { TaskCounter, IdeaCounter } from './Counters';
 
 export const TaskList = () => {
@@ -24,20 +23,24 @@ export const TaskList = () => {
         <ClearScreenTask />
       ) : (
         <Container>
-          <TaskCounter />
           {taskList.map((singleTask) => {
             return (
-              <article>
+              <Todo>
                 <input
                   id={Date.now()}
                   type="checkbox"
                   checked={singleTask.isCaught}
                   onChange={() => onTaskIsDoneToggle(singleTask.id)} />
                 <label htmlFor={Date.now()}>{singleTask.text}</label>
-                <button type="button" onClick={() => onDeleteTask(singleTask.id)}>X</button>
-              </article>
+                <button type="button" onClick={() => onDeleteTask(singleTask.id)}>
+                  <DeleteIcon
+                    src="/images/trash_empty.png"
+                    alt="Icon" />
+                </button>
+              </Todo>
             )
           })}
+          <TaskCounter />
         </Container>
       )}
     </Wrapper>
@@ -62,7 +65,6 @@ export const IdeaList = () => {
         <ClearScreenIdea />
       ) : (
         <Container>
-          <IdeaCounter />
           {ideaList.map((singleIdea) => {
             return (
               <Todo>
@@ -72,10 +74,15 @@ export const IdeaList = () => {
                   checked={singleIdea.isCaught}
                   onChange={() => onIdeaIsDoneToggle(singleIdea.id)} />
                 <label htmlFor={singleIdea.text}>{singleIdea.text}</label>
-                <button type="button" onClick={() => onDeleteIdea(singleIdea.id)}>-</button>
+                <button type="button" onClick={() => onDeleteIdea(singleIdea.id)}>
+                  <DeleteIcon
+                    src="/images/trash_empty.png"
+                    alt="Icon" />
+                </button>
               </Todo>
             )
           })}
+          <IdeaCounter />
         </Container>
       )}
     </Wrapper>
@@ -83,7 +90,7 @@ export const IdeaList = () => {
 }
 
 const Wrapper = styled.div`
-width: 100%;
+width: 90%;
 `
 
 const Container = styled.section`
@@ -93,14 +100,38 @@ width: 100%;
 padding: 10px;
 border-radius: 10px;
 `
-const Todo = styled.div`
 
-.img {
-  height: 40px;
+const DeleteIcon = styled.img`
+height: 30px;
+`
+
+const Todo = styled.div`
+display: flex;
+background-color: #424242;
+width: 100%;
+padding-left: 5px;
+margin-bottom: 10px;
+border-radius: 10px;
+justify-content: space-between;
+align-items: center;
+
+[type="button"] {
+margin: 10px;
+padding: 0;
+height: 40px;
+width: 40px;
+border-radius: 50%;
+background-image:url(/images/empty_trash.png);
+background-size:contain;
+background-position: center;
+background-color: #303030;
+border: none
 }
 
+// Everything below is checkbox-styling
+
 [type="checkbox"] {
-  opacity:0;
+  display: none;
 }
 [type="checkbox"] + label{
   position:relative;
@@ -115,9 +146,9 @@ const Todo = styled.div`
   position:absolute;
   left:0;
   top:0;
-  width: 18px;
-  height: 18px;
-  outline: 2px solid gray;
+  width: 28px;
+  height: 28px;
+  outline: 1px solid #ff7ab8;
   background: #303030;
 }
 [type="checkbox"]:checked + label::before{
@@ -125,8 +156,8 @@ const Todo = styled.div`
   position:absolute;
   left:0;
   top:0;
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   outline: 2px solid #ff7ab8;
   background: #303030;
 }
@@ -135,8 +166,8 @@ const Todo = styled.div`
   position:absolute;
   left:0;
   top:0;
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   background-image:url(/images/check.png);
   background-size:contain;
   transform:scale(1.7);
@@ -148,18 +179,11 @@ const Todo = styled.div`
   position:absolute;
   left:0;
   top:0;
-  width: 18px;
-  height: 18px;
+  width: 28px;
+  height: 28px;
   background-image:url(/images/check.png);
   background-size:contain;
   transform:scale(0);
   opacity:0;
 }
-
-[type="button"] {
-margin: 10px;
-background-image:url(/images/check.png);
-border: none
-}
-
 `
