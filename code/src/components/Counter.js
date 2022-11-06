@@ -15,10 +15,11 @@ export default Counter;
 
 const CounterWrap = styled.div`
 position: relative;
-right: 130%;
+right: 139%;
 top: 10px;
 `
 const CounterText = styled.p`
+font-family: 'Quicksand', sans-serif;
 position: relative;
 width: 200px;
 color: white;

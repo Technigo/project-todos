@@ -19,7 +19,7 @@ left: 87%;
 line-height: 0rem;
 top: 23px;
 &.complete-todo{
-    color: grey;
+    color: lightgrey;
 }
 `
 

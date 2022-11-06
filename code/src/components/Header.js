@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <Section>
       <BackgroundImg src={Swoop} />
-      <WeekDay>{moment().format('dddd')} </WeekDay>
+      <WeekDay>{moment().format('dddd')}. </WeekDay>
       <Counter />
     </Section>
   )
@@ -21,6 +21,7 @@ const BackgroundImg = styled.img`
 width: 100%;
 `
 const WeekDay = styled.p`
+font-family: 'Yeseva One', cursive;
 position: relative;
 right: 90%;
 z-index: 1;
