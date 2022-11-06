@@ -47,7 +47,6 @@ const TodoList = () => {
         key={todo.id}
         onDelete={onDelete}
         onDone={onDone} />))}
-      {/* @TODO moves dones ones here */}
     </>
   )
 }
