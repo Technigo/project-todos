@@ -63,4 +63,10 @@ export const CheckboxesHidden = styled.input`
 export const LabelP = styled.p`
   font-family: 'Indie Flower', cursive;
   font-size: 18px;
+  &.lineThrough {
+    text-decoration: line-through;
+  }
+  &.noLineThrough {
+    text-decoration: none;
+  }
 `

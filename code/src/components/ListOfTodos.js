@@ -37,7 +37,7 @@ const ListOfTodos = () => {
               <CheckboxesHidden name="to-dos" type="checkbox" checked={toDo.isDone} onChange={() => onIsDoneToggle(toDo.id)} />
               <Checkboxes className={toDo.isDone ? 'done' : 'notDone'} />
             </Label>
-            <LabelP>{toDo.name}</LabelP>
+            <LabelP className={toDo.isDone ? 'lineThrough' : 'noLineThrough'}>{toDo.name}</LabelP>
             <RemoveTask onClick={() => onDeleteToDoButtonClick(index)} type="button">
               <VscTrash size={20} />
             </RemoveTask>
