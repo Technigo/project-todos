@@ -1,13 +1,9 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+Made a Task application.
+Used React and Redux. 
+usestate, created reducers, styled components. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Next step of the project would make it responsive, check accesibility and add a feature to check all the tasks to be done. 
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.

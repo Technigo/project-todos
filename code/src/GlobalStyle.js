@@ -13,6 +13,8 @@ export const GlobalStyle = createGlobalStyle`
   button {
     margin:5px;
     padding: 6px;
+    text-decoration: underline;
+    text-decoration-color: lightblue;  
   }
 
 
@@ -37,11 +39,18 @@ export const GlobalStyle = createGlobalStyle`
   border-radius: 20px;
   background: linear-gradient(179.4deg, rgb(253, 240, 233) 2.2%, rgb(255, 194, 203) 96.2%);
   box-shadow: 5px 5px #FE7F9C;
+
   
 }
 
 .timestamp{
   padding-right: 15px;
+  animation: blinker 3s linear infinite;
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
 }
 
 section {

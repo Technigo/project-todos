@@ -6,8 +6,8 @@ export const list = createSlice({
   name: 'list',
   initialState: {
     items: [
-      { id: 1, task: 'Wash dishes', completed: false, timestamp: Date() },
-      { id: 2, task: 'Gym time', completed: false, timestamp: Date() },
+      { id: 1, task: 'Wash dishes', completed: false },
+      { id: 2, task: 'Gym time', completed: false },
       { id: 3, task: 'Pick kid from school', completed: false },
       { id: 4, task: 'Coding 4-9pm', completed: false }, // completed for toggle
       { id: 5, task: 'Watch Avengers', completed: false }

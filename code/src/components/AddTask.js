@@ -23,7 +23,7 @@ export const AddTask = () => {
     <form className="new-task" onSubmit={defaultPrevention}>
       <label>
         INPUT NEW TASK  ⇨
-        <input type="text" placeholder="Type here..." value={input} onChange={(event) => setInput(event.target.value)} /> {/* getting the input */}
+        <input type="text" placeholder="Type here..." value={input} required onChange={(event) => setInput(event.target.value)} /> {/* getting the input */}
       </label>
       <button className="add-task" type="submit">Add new task:</button>
     </form>
