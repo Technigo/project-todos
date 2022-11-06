@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { todos } from 'reducers/todos'
 import styled from 'styled-components'
 import { format } from 'date-fns';
+import meditate from '../images/Meditation.png'
 
 export const TodoList = () => {
   const allTodos = useSelector((store) => store.todos.items)
@@ -20,33 +21,51 @@ export const TodoList = () => {
     dispatch(todos.actions.deleteAllTasks());
   }
 
-  return (
-    <TodoListWrapper>
-      {allTodos.map((singleTodo) => {
-        return (
-          <TodoRow key={singleTodo.id}>
-            <TodoItem>
-              <label>
-                <TodoCheckbox
-                  input
-                  name="to-do"
-                  id="todos"
-                  type="checkbox"
-                  checked={singleTodo.completed}
-                  onChange={() => onCompletedToggle(singleTodo.id)} />
-              </label>
-              <label htmlFor="to-dos"> {singleTodo.name} </label>
+  const completedTasks = useSelector((state) => state.todos.items);
 
-              <CreatedAt>{dateFormatted}</CreatedAt>
-            </TodoItem>
-            <RemoveTask onClick={() => dispatch(todos.actions.removeItem(singleTodo.id))} type="button">Remove  <span className="material-symbols-outlined"> thumb_up </span></RemoveTask>
-          </TodoRow>
-        );
-      })}
-      <Footer>
-        <DeleteAllTodos onClick={handleDeleteAll}>Remove all</DeleteAllTodos>
-      </Footer>
-    </TodoListWrapper>
+  const todoList = () => {
+    if (completedTasks.length === 0) {
+      return (
+        <EmptyListWrapper>
+          <EmptyMessage href="https://www.psychologytoday.com/us/blog/love-and-gratitude/201712/10-tips-what-do-when-you-have-nothing-do" target="_blank" rel="noopener noreferrer"> 10 Tips for What to Do When You Have Nothing to Do ≫</EmptyMessage>
+          <EmptyPic src={meditate} alt="Meditatating" />
+        </EmptyListWrapper>
+      )
+    } else {
+      return (
+        <TodoListWrapper>
+          {allTodos.map((singleTodo) => {
+            return (
+              <TodoRow key={singleTodo.id}>
+                <TodoItem>
+                  <label>
+                    <TodoCheckbox
+                      input
+                      name="to-do"
+                      id="todos"
+                      type="checkbox"
+                      checked={singleTodo.completed}
+                      onChange={() => onCompletedToggle(singleTodo.id)} />
+                  </label>
+                  <label htmlFor="to-dos"> {singleTodo.name} </label>
+
+                  <CreatedAt>{dateFormatted}</CreatedAt>
+                </TodoItem>
+                <RemoveTask onClick={() => dispatch(todos.actions.removeItem(singleTodo.id))} type="button">Remove  <span className="material-symbols-outlined"> thumb_up </span></RemoveTask>
+              </TodoRow>
+            );
+          })}
+          <Footer>
+            <DeleteAllTodos onClick={handleDeleteAll}>Remove all</DeleteAllTodos>
+          </Footer>
+        </TodoListWrapper>
+      )
+    }
+  }
+  return (
+    <>
+      {todoList()}
+    </>
   )
 }
 
@@ -75,6 +94,7 @@ const TodoListWrapper = styled.section`
     }
   } 
 `
+
 const TodoRow = styled.div`
   margin: 5px;
   padding: 4px;
@@ -141,5 +161,44 @@ const CreatedAt = styled.p`
 
   @media (min-width: 668px){ 
     font-size: 20px;
+  }
+`
+const EmptyListWrapper = styled(TodoListWrapper)`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`
+
+const EmptyMessage = styled.a`
+  font-size: 25px;
+  padding: 30px;
+  padding-top: 15%;
+  margin: 20px;
+  font-family: 'Patrick Hand', cursive;
+  justify-content: center;
+  text-align: center;
+  color: black;
+  text-decoration: none;
+  &:hover {
+      transform: scale(1.05);
+      transition: 0.3s ease-in-out;
+      cursor: pointer;
+    }
+  
+  @media (min-width: 668px){ 
+    font-size: 30px;
+  }
+`
+
+const EmptyPic = styled.img`
+  width: 120px;
+  height: auto;
+
+@media (min-width: 668px){ 
+    width: 150px;
+  }
+  
+@media (min-width: 1025px){ 
+    width: 170px;
   }
 `

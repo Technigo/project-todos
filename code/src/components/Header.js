@@ -29,24 +29,27 @@ const HeaderWrapper = styled.header`
   font-size: 15px;
   position: relative;
 `
-const Count = styled.p`
+const Count = styled.h3`
   color: black;
   font-size: 25px;
   font-family: 'Patrick Hand', cursive;
+  font-weight: 400;
 `
 const CountNumber = styled.span`
   font-weight: 700;
   color: #e3591e;
 `
-const DateText = styled.p`
+const DateText = styled.h2`
   font-size: 30px;
   font-family: 'Patrick Hand', cursive;
   margin: 0;
+  font-weight: 400;
 `
-const HeaderText = styled.p`
+const HeaderText = styled.h1`
   font-size: 45px;
   margin: 20px 0px 20px 0px;
   font-family: 'Caveat', cursive;
+  font-weight: 400;
 
   @media (min-width: 668px){ 
     font-size: 50px;

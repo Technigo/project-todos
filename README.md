@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The assignment was to build a to-do app using React Redux, with the possibility to add and remove tasks. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started out with reading up on what parts I would have to use to create the app, to get a grasp of the "machinery" of the code. Then I sketched on the design of my app, getting an overview pf the different parts and components I would need. When all the basic components were on place and working, I dived into the details and looked at extra features that I could add. If I had more time, I would really like to add localstorage, so that the tasks are saved and don't dissapear when you refresh the page. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://the-todos.netlify.app/
