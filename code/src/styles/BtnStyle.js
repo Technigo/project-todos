@@ -14,6 +14,13 @@ height: 50px;
 width: 50px;
 position: absolute;
 border: none;
+
+&:hover{
+  color: #FFB800;
+  background-color: white;
+  transition: ease-out 300ms;
+
+}
 `
 
 export const SubmitButton = styled.button`

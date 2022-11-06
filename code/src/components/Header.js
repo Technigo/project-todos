@@ -26,6 +26,6 @@ position: relative;
 right: 90%;
 z-index: 1;
 top: 80px;
-font-size: 3rem;
+font-size: 3.2rem;
 color: white;
 `

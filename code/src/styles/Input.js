@@ -85,6 +85,9 @@ export const Low = styled.input`  //checkbox
   &:checked::before {
     transform: scale(1);
   }
+  &:hover{
+    border: 0.15em solid #C0C803;
+}
 `
 
 export const Medium = styled.input`  //checkbox 
@@ -104,11 +107,14 @@ export const Medium = styled.input`  //checkbox
     border-radius: 50%;
     transform: scale(0);
     transition: 120ms transform ease-in-out;
-    box-shadow: inset 1em 1em #F9B803;
+    box-shadow: inset 1em 1em #F98F03;
   }
   &:checked::before {
     transform: scale(1);
   }
+  &:hover{
+    border: 0.15em solid #F98F03;
+}
 `
 
 export const High = styled.input`  //checkbox 
@@ -133,6 +139,9 @@ export const High = styled.input`  //checkbox
   &:checked::before {
     transform: scale(1);
   }
+  &:hover{
+    border: 0.15em solid #F97603;
+}
 `
 
 export const TrashBtn = styled.button`
