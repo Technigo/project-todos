@@ -22,11 +22,12 @@ const AddTask = () => {
   return (
     <FormWrapper onSubmit={submitHandler}>
       <FormContainer>
-        <input
+        <NewTaskInput
           type="text"
-          placeholder="add task"
+          placeholder="Add task"
           value={input}
-          onChange={(event) => setInput(event.target.value)} />
+          onChange={(event) => setInput(event.target.value)}
+          required />
         <button
           type="submit">
             +
@@ -52,25 +53,35 @@ const FormContainer = styled.div`
     flex-direction: row;
     justify-content: space-between;
 
-    input {
-      width: 75%;
-      border-radius: 5px;
-      border: solid 0.2px;
-      padding-left: 10px;
-    }
-
-    input:focus {
-      border-color: green;
-  }
-
     button {
       height: 100%;
-      width: 15%;
+      width: 50px;
       font-size: 200%;
-      background-color: pink;
+      background-color: var(--primary);
       color: white;
       border: none;
       border-radius: 5px;
-    }
 
+      &:hover{
+        cursor: pointer;
+        background-color: var(--secondary);
+      }
+    }
+`;
+
+const NewTaskInput = styled.input`
+  width: 77%;
+  border-radius: 5px;
+  border: solid 0.2px;
+  padding-left: 10px;
+
+  @media (min-width: 1024px) { 
+    font-size: 20px; 
+  }
+
+&:focus {
+  outline: none;
+  border:solid 1.5px var(--primary);
+  color: var(--primary);
+}
 `;

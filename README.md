@@ -1,12 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The asignment was to build a todo app using React and Redux.
+In the app you should be able to add, check/uncheck and delete a task. The app should also count either all tasks or the uncompleted ones.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+This project had a lot to grasp and break down. It was tricky fully understand how redux and slices work. I tried to plan both my design and code as much as I could beforehand and decided what components to use. I used styled components for the styling. 
+
+If I had more time I would add icons to the app. I would work on the responsiveness and clean up the code better. 
 
 ## View it live
 

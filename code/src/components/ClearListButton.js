@@ -12,11 +12,32 @@ export const ClearListButton = () => {
       onClick={() => {
         dispatch(todos.actions.clearList())
       }}>
-    clear list
+    Clear list
     </ClearListBtn>
   )
 }
 
 const ClearListBtn = styled.button`
-  background-color: yellow;
+  height: 2rem;
+  width: 5rem;
+  border: solid var(--primary);
+  border-radius: 5px;
+  background: #fff;
+  color: var(--primary);
+  font-weight: 700;
+  pointer: cursor;
+ 
+  &:hover{
+    cursor: pointer;
+    border: solid var(--secondary);
+    color: var(--secondary);
+
+  }
+
+  @media (min-width: 1024px) { 
+    height: 3rem;
+    width: 6rem; 
+  }
+
+
 `;

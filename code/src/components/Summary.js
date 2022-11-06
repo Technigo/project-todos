@@ -1,4 +1,5 @@
 import React from 'react'
+import styled from 'styled-components'
 import { useSelector } from 'react-redux'
 
 const Summary = () => {
@@ -8,10 +9,19 @@ const Summary = () => {
   const numDone = list.filter((item) => item.isDone).length
 
   return (
-    <div className="Summary">
-      <p>Completed: <span>{numDone}/{list.length}</span></p>
+    <div>
+      <StyledP>Completed: <span>{numDone}/{list.length}</span></StyledP>
     </div>
   )
 }
 
 export default Summary
+
+const StyledP = styled.p`
+  font-size: 16px;
+  color: #a6a6a6;
+
+  @media (min-width: 1024px) { 
+    font-size: 18px; 
+  }
+`;

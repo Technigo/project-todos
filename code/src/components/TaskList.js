@@ -23,11 +23,11 @@ const TaskList = () => {
         return (
           <TaskContainer>
             <Task>
-              <input
+              <Checkbox
                 type="checkbox"
                 checked={singleTask.isDone}
                 onChange={() => onIsDoneToggle(singleTask.id)} />
-              <label>{singleTask.text}</label>
+              <TaskDescription>{singleTask.text}</TaskDescription>
             </Task>
             <DeleteTaskButton
               onClick={() => handleDeleteTask(index)}
@@ -48,6 +48,7 @@ const ListOuterWrapper = styled.section`
     flex-direction: column;
     align-items: center;
     margin-top: 5%;
+    
 `;
 
 const TaskContainer = styled.div`
@@ -56,19 +57,51 @@ const TaskContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 90%;
-    padding: 2%;
-    border-bottom: solid 0.2px grey;
+    padding: 2% 0% 2% 0%;
+    border-bottom: solid 0.2px #cecece;
+    margin-bottom: 1vh;
 `;
 
 const Task = styled.div`
+position: relative;
 display:flex;
 flex-direction: row;
-border: solid purple;
+`;
 
-label {
-  font-size: 15px;
+const TaskDescription = styled.label`
+    color: var(--primary);
+    font-weight: 700;
+    margin-left: 2vw;
+    display: flex;
+    align-items: center;
+
+    @media (min-width: 1024px) { 
+      font-size: 20px;
+    }
+        
+`;
+
+const Checkbox = styled.input`
+appearance: none;
+height: 20px;
+width: 20px;
+border: 2px solid var(--primary);
+border-radius: 50%;
+transition-duration: 0.3s;
+background-color: none;
+cursor: pointer;
+
+&:checked {
+  background-image: url=(code/src/assets/check_icon.png);
+  background-size: contain;
+  background: var(--primary);
 }
 
+&:checked + ${TaskDescription} {
+  text-decoration: line-through;
+  color: #cecece;
+  font-weight: 400;
+}
 
 `;
 
