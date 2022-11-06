@@ -7,7 +7,11 @@ import styled from 'styled-components/macro'
 const AddTodoForm = styled.form`
 padding-top: 1.5em;
 padding-bottom: 1.5em;
+`
 
+const TextInput = styled.input`
+  border: none;
+  border-bottom: 1px solid black;
 `
 
 const AddButton = styled.button`
@@ -36,7 +40,7 @@ const AddTodo = () => {
     <AddTodoForm onSubmit={onFormSubmit}>
       <label>
          New task:
-        <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+        <TextInput type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
       </label>
       <AddButton type="submit">ADD</AddButton>
     </AddTodoForm>
