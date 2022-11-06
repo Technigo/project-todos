@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const PositionBtn = styled.div`
 display: flex;
 position: relative;
-left: 280px;
+left: 300px;
 top: -90px;
 `
 export const ExpandButton = styled.button`

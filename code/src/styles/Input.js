@@ -29,7 +29,6 @@ border-bottom: 2px solid #FFB800;
     color: black;
     color: #688599;
 }
-
 `
 
 export const Calendar = styled.input`
