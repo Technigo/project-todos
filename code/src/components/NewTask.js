@@ -72,13 +72,7 @@ background-color: #B4E6E5;
     font-size: 18px;
   }
   }
-  */
-
-&:focus {
-    outline: none;
-    border-color: #FCF8E8;
-  }
-::placeholder,
+  ::placeholder,
   ::-webkit-input-placeholder {
     color: black;
     font-family: sans-serif;
@@ -95,8 +89,9 @@ font-family: sans-serif;
 border: 1px solid;
 border-radius: 10px;
 padding: 5px 8px;
-margin: 35px 0px;
+/* margin: 35px 0px; */
 margin-left: 30%;
+margin-top: 10px;
 
 @media (min-width: 668px) and (max-width: 1024px) {
   font-size: 15px;
@@ -111,8 +106,8 @@ font-family: sans-serif;
 font-size: 13px;
 padding: 5px;
 margin: 5px;
+align-self: flex-end
 
-align-self: auto;
 @media (min-width: 668px) and (max-width: 1024px) {
   font-size: 15px;
   }
