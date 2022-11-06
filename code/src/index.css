@@ -18,7 +18,7 @@ code {
 }
 
 main {
-  min-height: 100vh;
+  min-height: 95vh;
   width: 100%;
   margin: 0 auto;
   box-shadow: 0 0.5rem 2rem rgb(56, 55, 55);

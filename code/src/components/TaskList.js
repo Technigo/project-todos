@@ -36,7 +36,7 @@ export const TaskList = () => {
                 id={task.id}
                 checked={task.complete}
                 onChange={() => isCompleteToggle(task.id)} />
-              <TaskText>{task.text}</TaskText>
+              <TaskText><span>{task.text}</span></TaskText>
               <Deletebtn type="button" onClick={() => deleteTask(task.id)}>
                 <DeleteIcon src={bin} alt="" />
               </Deletebtn>

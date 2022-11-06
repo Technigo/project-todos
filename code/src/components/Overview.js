@@ -6,7 +6,7 @@ import { tasks } from 'reducers/tasks';
 export const Overview = () => {
   const allTasks = useSelector((store) => store.tasks.taskData);
   let toBeDone = 0;
-  const dispatch = useDispatch();
+  const dispatch = useDispatch()
 
   // For every task in the store that is not completed, increase counter by 1
   allTasks.forEach((task) => {
@@ -25,7 +25,7 @@ export const Overview = () => {
 
   return (
     <Wrapper>
-      <h4>You have {toBeDone} out of {allTasks.length} tasks to do.</h4>
+      <h4>You have {toBeDone} out of {allTasks.length} tasks to complete.</h4>
       <Actionbtn
         color="#906387"
         type="button"
