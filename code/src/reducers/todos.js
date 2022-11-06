@@ -1,49 +1,49 @@
 import { createSlice } from '@reduxjs/toolkit';
-import moment from 'moment';
 
-const initialState = {
-  tasks: []
-};
+const todoData = [
+  { id: 1, text: 'Watch video on actions & reducers', complete: false },
+  { id: 2, text: 'Follow redux codealong', complete: false },
+  { id: 3, text: 'Fork weekly assignment', complete: false }
+];
 
-export const todos = createSlice({
+let counter = todoData.lenght;
+
+const todos = createSlice({
   name: 'todos',
-  initialState,
+  initialState: {
+    todoData
+  },
 
   reducers: {
     // adding new item to the todo
-    addTodo: (state, action) => {
-      const newTodosList = [...state.tasks, action.payload];
-      state.tasks = newTodosList;
-    },
-    checkTodo: (state, action) => {
-      const selectedTask = state.tasks.find(
-        (task) => task.id === action.payload.id
-      );
-
-      /* timestamp for when the task is done */
-      const checkedAt = moment(new Date());
-      selectedTask.isCompleted = !selectedTask.isCompleted;
-      selectedTask.completedAt = checkedAt;
+    addTodo: (store, action) => {
+      store.todoData.push({
+        id: counter += 1,
+        text: action.payload,
+        complete: false
+      })
     },
 
-    removeToDo: (state, action) => {
-      state.tasks = state.tasks.filter((task) => task.id !== action.payload);
+    toggleItem: (store, action) => {
+      store.todoData.forEach((item) => {
+        if (item.id === action.payload) {
+          item.complete = !item.complete
+        }
+      });
     },
 
-    completeAllTodos: (state) => {
-      state.tasks.forEach((task) => { task.isCompleted = true });
+    removeToDo: (store, action) => {
+      store.todoData = store.todoData.filter((item) => item.id !== action.payload);
     },
 
-    removeAllTodos: (state) => {
-      const removedAllTodos = [];
-      state.tasks = removedAllTodos;
+    removeAllTodos: (store) => {
+      store.todoData = []
     },
 
-    removeAllCompletedTodos: (state) => {
-      const removedCompletedTodos = state.tasks.filter(
-        (task) => !task.isCompleted
-      );
-      state.tasks = removedCompletedTodos;
+    completeAllTodos: (store) => {
+      store.todoData.forEach((item) => { item.complete = true });
     }
   }
 })
+
+export default todos
