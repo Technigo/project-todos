@@ -83,7 +83,7 @@ font-weight: bold;
 background: transparent;
 color: white;
 width: 1em;
-height: 1em;
+height: 1.3em;
 justify-content: center;
 align-items: center;
 `
