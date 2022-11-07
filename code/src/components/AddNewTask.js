@@ -33,8 +33,9 @@ const AddButtonStyle = styled.button`
 border: none;
 background: transparent;
 img{
-  width: 33px;
+  width: 30px;
   border: none;
+  margin-left: -5px;
 }
 
 button{
@@ -51,6 +52,7 @@ justify-content: flex-start;
 align-items: flex-start;
 
 input{
-  height: 25px;
+  height: 22px;
+  width: 70%;
 }
 `

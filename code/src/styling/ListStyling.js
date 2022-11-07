@@ -19,6 +19,10 @@ h2{
 
 }
 
+input{
+    max-width: 100%;
+}
+
 article{
 display:grid;
 grid-template-columns: 6fr 3fr 1fr;
