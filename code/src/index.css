@@ -5,11 +5,19 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("images/yellow.jpg");
-  background-color: white;
+  background-color: lightgrey;
   background-size: cover;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@media (max-width: 668px) {
+
+body {
+  background-image: none;
+}
+
 }

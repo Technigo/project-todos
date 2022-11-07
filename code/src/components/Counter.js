@@ -18,5 +18,5 @@ position: relative;
 `
 const CounterInfo = styled.p`
 position: relative;
-width: 300px;
+width: 100%;
 `

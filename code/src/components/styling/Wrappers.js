@@ -7,16 +7,23 @@ export const OuterWrapper = styled.main`
   display: flex;
   justify-content: flex-start;
   align-items: center;
+  @media (max-width: 668px){
+    justify-content: center;
+  }
 `
 export const InnerWrapper = styled.div`
   width: 55%;
   height: 100vh;
   margin-left: 30px;
-  margin-top: 20px;
+  margin-top: 15px;
   background-color: transparent;
   padding: 10px;
   display: flex;
   flex-direction: column;
+  @media (max-width: 668px){
+    margin-left: 0;
+    margin-top: 48px;
+  }
 `
 export const Section = styled.section`
   width: 100%;

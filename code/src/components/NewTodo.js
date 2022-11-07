@@ -46,24 +46,39 @@ const LabelWrapper = styled.label`
     font-size: 20px;
     margin-right: 5px;
   }
+  @media (max-width: 668px){
+    flex-direction: column;
+    margin: 10px;
+    padding: 0px;
+    p{
+      font-size: 17px;
+      margin-right: 0px;
+    }
+  }
 `
 const AddButton = styled.button`
-    width: 125px;
-    height: 30px;
-    background-color: #F090D9;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-family: unset;
-    margin: 10px;
-    text-transform: lowercase;
-    font-weight: 700;
+  width: 125px;
+  height: 30px;
+  background-color: #F090D9;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-family: unset;
+  margin: 10px;
+  text-transform: lowercase;
+  font-weight: 700;
+  @media (max-width: 668px){
+    width: 100px;
+  }
 `
 const InputField = styled.input`
-    width: 225px;
-    height: 25px;
-    border: none;
-    margin: 5px;
+  width: 225px;
+  height: 25px;
+  border: none;
+  margin: 5px;
+  @media (max-width: 668px){
+    width: 150px;
+  }
 `
 
 export default NewTodo

@@ -54,24 +54,33 @@ const ArticleWrapper = styled.article`
 `
 const TodoWrapper = styled.div`
   display: flex;
-  width: 450px;
+  width: 70%;
   padding-left: 25px;
   justify-content: space-between;
   h2{
   font-size: 20px;
-  color: charcoal;
+  }
+  @media (max-width: 668px){
+    padding-left: 5px;
+    h2{
+      font-size: 15px;
+    }
   }
 `
 const DeleteButton = styled.button`
-width: 50px;
-height: 50px;
-background-color: lightgrey;
-border: none;
-border-radius: 50%;
-margin-top: 5px;
+  width: 50px;
+  height: 50px;
+  background-color: lightgrey;
+  border: none;
+  border-radius: 50%;
+  margin-top: 5px;
+  @media (max-width: 668px){
+    width: 35px;
+    height: 35px;
+  }
 `
 const CheckBox = styled.input`
-cursor: pointer;
+  cursor: pointer;
   appearance: none;
   margin: 5px;
   margin-right: -42px;
@@ -95,6 +104,11 @@ cursor: pointer;
   }
   &:checked::before {
     transform: scale(1);
+  }
+  @media (max-width: 668px){
+    margin-right: 10px;
+    width: 1em;
+    height: 1em;
   }
 `
 export default TodoList
