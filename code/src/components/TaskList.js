@@ -7,11 +7,13 @@ import NewTask from './NewTask';
 const TaskHeadline = styled.h1`
 font-family: 'Merriweather';
 font-size: 45px;
+color: #39739d;
 `
 
 const TaskH2 = styled.h2`
 font-family: 'Merriweather';
 font-size: 25px;
+color: #39739d;
 `
 
 const SingleTaskHeading = styled.h3`
@@ -19,7 +21,7 @@ font-family: 'Merriweather';
 font-size: 28px;
 margin-top: 5%;
 text-decoration: ${(props) => (props.done ? 'line-through' : 'none')};
-color: ${(props) => (props.done ? '#D3D3D3' : 'black')};
+color: ${(props) => (props.done ? '#D3D3D3' : '#39739d')};
 `
 
 const SingleTaskContainer = styled.div`
@@ -39,6 +41,7 @@ opacity: ${(props) => (props.done ? '0.5' : 'none')};
 const LabelForCheckbox = styled.label`
 font-family: 'Merriweather';
 font-size: 17px;
+color: #39739d;
 `
 
 const TaskContainer = styled.div`

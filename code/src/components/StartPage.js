@@ -21,6 +21,7 @@ text-align: center;
 font-family: 'Merriweather';
 margin: 0px auto;
 margin-top: 10%;
+color: #39739d;
 `
 
 export const StartButton = styled.button`
