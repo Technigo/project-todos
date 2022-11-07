@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import todo from 'reducers/todo'
+import uniqid from 'uniqid'
 import styled from 'styled-components'
 import { Section } from './styling/Wrappers'
 
@@ -12,6 +13,7 @@ const NewTodo = () => {
   const onFormSubmit = (event) => {
     event.preventDefault()
     const postNewTodo = {
+      id: uniqid(),
       name: newTodo,
       isCompleted: false
     }
