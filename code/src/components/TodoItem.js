@@ -47,7 +47,7 @@ const TodoItem = ({ todo, index, onDelete, onDone }) => {
 
       <StyledSingleTodo key={todo.id} isDone={todo.isDone} onClick={() => onDone(todo.id)}>
         <TodoText>{todo.text}</TodoText>
-        <DateString>{moment(todo.createdAt).format('YYYY-MM-DD HH:mm:ss')}</DateString>
+        <DateString>Added {moment(todo.createdAt).format('HH:mm on MMM Do -YY')}</DateString>
       </StyledSingleTodo>
 
       <RemoveButton
