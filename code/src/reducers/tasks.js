@@ -20,10 +20,10 @@ const tasks = createSlice({
       // mutability
       store.items.splice(action.payload, 1);
       // immutability
-      const updatedItems = store.items.filter((item) => {
-        return store.items.indexOf(item) !== action.payload
+      /* const updatedItems = store.items.filter((item) => {
+        return item.id !== action.payload
       })
-      store.items = updatedItems
+      store.items = updatedItems */
     }
   }
 

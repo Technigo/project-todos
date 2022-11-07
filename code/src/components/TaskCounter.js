@@ -6,10 +6,10 @@ import styled from 'styled-components'
 const TaskCounter = () => {
   const ongoingTasks = useSelector((store) => store.tasks.items);
 
-  const doneTasks = useSelector((store) => store.tasks.items.filter((item) => item.isComplete === true));
+  const completedTasks = useSelector((store) => store.tasks.items.filter((item) => item.isComplete === true));
 
   return (
-    <StyledH2>{ongoingTasks.length} tasks, {doneTasks.length} completed</StyledH2>
+    <StyledH2>{ongoingTasks.length} tasks, {completedTasks.length} completed</StyledH2>
   )
 }
 

@@ -25,6 +25,6 @@ height: 50%;
 
 @media screen and (min-width: 1024px) {
 width: 30vw;
-height: 80%;
+height: 50%;
 }
 `

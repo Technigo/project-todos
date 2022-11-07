@@ -3,8 +3,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import styled from 'styled-components'
-/* import trashCan from 'assets/icon-delete.svg'
- */
+
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items)
 
@@ -95,7 +94,7 @@ export const Checkbox = styled.input`
 @media screen and (min-width: 1024px) {
   &:hover {
   cursor: pointer;
-  border: 0.1em solid var(--color-darkGreen);  
+  border: 0.1em solid var(--color-darkGreen);
 }}
 
 ::before {
@@ -110,7 +109,8 @@ export const Checkbox = styled.input`
   clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 }
 :checked::before {
-  transform: scale(1);
+  transform: scale(1);  
+  text-decoration: line-through;
 }
 `
 const StyledDeleteButton = styled.button`

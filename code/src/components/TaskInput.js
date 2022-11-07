@@ -72,7 +72,7 @@ height: 5vh;
 }
 @media screen and (min-width: 1024px) {
 width: 22vw;
-height: 8vh;
+height: 5vh;
 }
  `
 const StyledSubmitButton = styled.button`
