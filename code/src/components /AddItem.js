@@ -1,25 +1,23 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+//import { useSelector } from 'react-redux';
 import uniqid from 'uniqid';
 import { addToDo } from '../features/todo'; //original idea is to import this action, and use in dispatch, and to access the payload when onSubmit
 import styled from 'styled-components';
 
 const AddItem = () => {
-	const todo = useSelector((state) => state.todo.value);
 	const dispatch = useDispatch();
-	const [text, setText] = useState('');
+	const [input, setInput] = useState('');
 
-	const onFormSubmit = (e) => {
-		e.preventDefault();
-
-		const newTodo = {
-			id: uniqid(),
-			text: text,
-			isComplete: false,
-		};
-		dispatch(todo.actions.addItem(newTodo));
-		setText('');
+	const newTodo = () => {
+		dispatch(
+			addToDo({
+				id: uniqid(),
+				item: input,
+				isComplete: false,
+			})
+		);
+		//setInput('');
 	};
 
 	return (
@@ -27,17 +25,17 @@ const AddItem = () => {
 			<div>
 				<input
 					type="text"
-					placeholder="Complete your To Do List"
+					placeholder="Add a new To Do"
 					autoComplete="off"
-					value={text}
+					value={input}
 					maxLength="40"
 					size="30"
 					required
-					onChange={(e) => setText(e.target.value)}
+					onChange={(e) => setInput(e.target.value)}
 				/>
 			</div>
 			<div className="btnContainer">
-				<button type="submit" onSubmit={onFormSubmit}>
+				<button type="submit" onClick={newTodo}>
 					Add to List
 				</button>
 			</div>

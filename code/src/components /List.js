@@ -1,33 +1,5 @@
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-const List = ({ itemIndex, id, text, isComplete }) => {
-	const dispatch = useDispatch();
+const List = () => {
 	const todo = useSelector((state) => state.todo.value);
-
-	const onDeleteToDo = (index) => {
-		dispatch(todo.actions.deleteItem(index));
-	};
-
-	const onToggleToDo = (id) => {
-		dispatch(todo.actions.toggleToDo(id));
-	};
-
-	return (
-		<>
-			<div>
-				<input
-					type="checkbox"
-					checked={isComplete}
-					onChange={() => onToggleToDo(id)}
-				/>
-				{text}
-			</div>
-			<div>
-				<button onClick={() => onDeleteToDo(itemIndex)}>Remove</button>
-			</div>
-		</>
-	);
 };
-
-export default List;

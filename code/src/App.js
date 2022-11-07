@@ -9,7 +9,7 @@ export const App = () => {
 		<div>
 			<Header />
 			<AddItem />
-			<List />
+			{/* <List /> */}
 			<Footer />
 		</div>
 	);
