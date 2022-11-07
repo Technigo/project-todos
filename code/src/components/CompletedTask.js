@@ -4,8 +4,11 @@ import tasks from '../reducers/task';
 
 const CompletedTask = () => {
   const items = useSelector((store) => store.tasks.items);
-  const dispatch = useDispatch();
+// const item = useSelector((store) => store.tasks.items.filter((item)=>item.isCompleted === true)
+// )
 
+  const dispatch = useDispatch();
+// const completeTask = items.filter((taskItem) => taskItem.isCompleted);
   const completeTask = items.filter((taskItem) => taskItem.isCaught);
 
   const onTaskToggle = (taskId) => {

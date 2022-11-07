@@ -45,6 +45,7 @@ header {
   width: 50%;
   border-radius: 15px;
   background-color: rgb(218, 162, 21);
+  box-shadow:  7px 7px rgb(157, 140, 140);
   margin: 30px;
 }
 
