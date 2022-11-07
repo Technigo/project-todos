@@ -7,17 +7,17 @@ const TodoList = () => {
   const todoList = useSelector(selectTodoList)
   const dispatch = useDispatch()
   const allDone = () => {
-    dispatch(completeAll)
+    dispatch(completeAll())
   }
   const allDeleted = () => {
-    dispatch(deleteAll)
+    dispatch(deleteAll())
   }
 
   return (
     <>
       <div>
-        <button type="button" onClick={allDone()}>complete</button>
-        <button type="button" onClick={allDeleted()}>delete</button>
+        <button type="button" onClick={allDone}>complete</button>
+        <button type="button" onClick={allDeleted}>delete</button>
       </div>
       {
         todoList.map((item) => (

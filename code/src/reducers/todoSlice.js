@@ -26,7 +26,7 @@ const todoSlice = createSlice({
       })
     },
     deleteAll: (state) => {
-      state.todos.todoList = []
+      state.todoList = []
     },
 
     deleteTodo: (state, action) => {

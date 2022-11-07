@@ -2,12 +2,15 @@ import React from 'react'
 import styled from 'styled-components';
 import { Checkbox } from '@mui/material';
 import { useDispatch } from 'react-redux';
-import { setCheck } from 'reducers/todoSlice';
+import { setCheck, deleteTodo } from 'reducers/todoSlice';
 
 const TodoItem = ({ name, done, id }) => {
   const dispatch = useDispatch()
   const handleCheck = () => {
     dispatch(setCheck(id))
+  }
+  const deleteTheTodo = () => {
+    dispatch(deleteTodo(id))
   }
 
   const TimeStampHoursMinutes = () => `${String(new Date(id).getHours()).padStart(2, '0')}:${String(new Date(id).getMinutes()).padStart(2, '0')}`
@@ -24,6 +27,7 @@ const TodoItem = ({ name, done, id }) => {
       <DataText done={done}>
         {TimeStampHoursMinutes(id)}  {TimeStampDate(id)}
       </DataText>
+      <button type="button" onClick={deleteTheTodo}>X</button>
     </TodoItemList>
   )
 }
