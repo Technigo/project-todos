@@ -4,14 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: [
-      { id: 1,
-        text: 'Answer emails',
-        isDone: false },
-      { id: 2,
-        text: 'Walk the dog',
-        isDone: true }
-    ]
+    items: []
   },
   reducers: {
     addTask: (store, action) => {
