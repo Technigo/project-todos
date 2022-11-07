@@ -1,6 +1,6 @@
 import React from 'react';
 import moment from 'moment';
-import Video from '../Assets/Video.mp4';
+import Video from 'Assets/Video.mp4';
 
 const Header = () => {
   const date = new Date();

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import tasks from '../reducers/task';
+import tasks from 'reducers/task';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
