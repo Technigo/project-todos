@@ -24,7 +24,7 @@ const TodoList = () => {
 
   return (
     <>
-      <h2>TO-DO ({todosTodo.length})</h2>
+      <h2>To-do ({todosTodo.length})</h2>
 
       {todosTodo.length === 0 && (
         <p>Wow you are all DONE baby</p>
@@ -39,7 +39,7 @@ const TodoList = () => {
 
       <AddTodo />
 
-      <h2>DONE ({doneTodos.length})</h2>
+      <h2>Done ({doneTodos.length})</h2>
 
       {doneTodos.map((todo, index) => (<TodoItem
         todo={todo}

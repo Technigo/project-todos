@@ -15,6 +15,7 @@ const GlobalStyle = createGlobalStyle`
 
   h2 {
     line-height: 0.7em;
+    text-transform: uppercase;
   }
 `
 

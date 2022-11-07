@@ -6,13 +6,13 @@ const todos = createSlice({
   initialState: {
     items: [
       { id: 'sampleid123',
-        text: 'Hello I am a task',
+        text: 'Eat aaall the cake',
         isDone: false },
       { id: 'sampleid123isarhyme',
-        text: 'A finished one',
+        text: 'Water plants 🌱',
         isDone: true },
       { id: 'sampleid123isarhymeindeed',
-        text: 'Another one!',
+        text: 'Bake a cake',
         isDone: true }
     ]
   },
@@ -29,6 +29,7 @@ const todos = createSlice({
       })
     },
     deleteItem: (store, action) => {
+      // unshift does what comapred to splice here?
       store.items.splice(action.payload, 1)
     },
     addItem: (store, action) => {
