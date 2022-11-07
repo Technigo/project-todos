@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid'; // installed with npm install uuidv4
 import tasks from 'reducers/tasks';
 import styled from 'styled-components/macro'
+import moment from 'moment'
 
 const TaskInput = () => {
   const [newTask, setNewTask] = useState('');
@@ -16,7 +17,8 @@ const TaskInput = () => {
     dispatch(tasks.actions.addTask({
       id: uniqueID, // could do id: Date.now().toString()
       text: newTask,
-      isComplete: false
+      isComplete: false,
+      timeStamp: moment().format('ll')
     }));
     setNewTask('');
 
@@ -53,6 +55,7 @@ export default TaskInput
 
 const StyledForm = styled.form`
 display:flex;
+margin-top: 2em;
 `
 const StyledTextarea = styled.input`
  background-color: var(--color-grey);

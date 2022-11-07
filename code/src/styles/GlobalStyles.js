@@ -11,20 +11,22 @@ export const Container = styled.div`
 background-color: var(--color-darkGreen);
 box-shadow: 0 15px 35px rgba(50,50,93,.3), 0 5px 15px rgba(0,0,0,0.5);
 width: 80vw;
-height: 80%;
+min-height: 70%;
+height: fit-content;
 border-radius: 20px;
 display: flex;
 flex-direction: column;
 align-items: center;
 margin: 2.5em;
+padding: 2em;
 
 @media (min-width: 667px) and (max-width: 1024px)  {
 width: 60vw;
-height: 50%;
+min-height: 60%;
 }
 
 @media screen and (min-width: 1024px) {
 width: 30vw;
-height: 50%;
+min-height: 50%;
 }
 `

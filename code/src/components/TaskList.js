@@ -30,6 +30,9 @@ const TaskList = () => {
                 id={singleTask.id} />
             </label>
             <p>{singleTask.text}</p>
+            <div>
+              Added {singleTask.timeStamp.toLowerCase()}
+            </div>
             <StyledDeleteButton type="button" onClick={onRemoveButtonClick}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"

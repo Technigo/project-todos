@@ -24,8 +24,7 @@ const StyledH1 = styled.h1`
   font-family: "Julius Sans One";
   font-size: 2.2em;
   font-weight: 100;
-  margin-top: 1em;
-
+ 
   @media screen and (min-width: 667px) {
     transform: scale(1.4);
   }
