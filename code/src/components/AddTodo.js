@@ -5,18 +5,29 @@ import todos from 'reducers/todo'
 import styled from 'styled-components/macro'
 
 const AddTodoForm = styled.form`
-padding-top: 1.5em;
-padding-bottom: 1.5em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+`
+
+const FormLabel = styled.input`
+  font-size: 120%;
 `
 
 const TextInput = styled.input`
   border: none;
   border-bottom: 1px solid black;
+  font-family: 'Gaegu', cursive;
+  background: transparent;
+  margin: 5px;
+  font-size: 18px;
 `
 
 const AddButton = styled.button`
   font-size: 120%;
   cursor: pointer;
+  font-family: 'Gaegu', cursive;
+  background: transparent;
+  border: none;
 
   &:hover {
     font-weight: bold;
@@ -38,10 +49,10 @@ const AddTodo = () => {
 
   return (
     <AddTodoForm onSubmit={onFormSubmit}>
-      <label>
-         New task:
+      <FormLabel>
+         NEW TASK:
         <TextInput type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-      </label>
+      </FormLabel>
       <AddButton type="submit">ADD</AddButton>
     </AddTodoForm>
   )

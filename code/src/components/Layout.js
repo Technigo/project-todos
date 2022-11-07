@@ -3,14 +3,14 @@ import styled from 'styled-components/macro'
 const Layout = styled.section`
   display: grid;
   max-width: 15em;
-  min-width: 350px;
-  height: 100%;
-  margin: 1em auto;
+  min-width: 330px;
+  height: fit-content;
+  margin: auto;
   background-color: #FFFF99;
-  padding: 0.8em;
-  margin-top: 100px;
+  margin-top: 3em;
+  margin-bottom: 3em;
   transform: rotate(2deg);
-  box-shadow: 1px 2px 3px rgba(0,0,0,.6);
+  box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.5);
 `
 
 export default Layout

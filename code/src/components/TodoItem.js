@@ -9,26 +9,32 @@ const TodoWrapper = styled.div`
 `
 
 const StyledSingleTodo = styled.label`
-    align-items: center;
-    cursor: pointer;
+  cursor: pointer;
+  font-family: 'Gaegu', cursive;
+  background: transparent;
+  border: none;
 
-    text-decoration: ${(props) => (props.isDone ? 'line-through' : 'none')};
-    &:hover {
+  text-decoration: ${(props) => (props.isDone ? 'line-through' : 'none')};
+  &:hover {
     font-weight: bold;
   }
   `
 
 const RemoveButton = styled.button`
+  cursor: pointer;
+  font-family: 'Gaegu', cursive;
+  background: transparent;
+  border: none;
   font-size: 120%;
   font-weight: bold;
 
   &:hover {
-    font-size: 150%;
+    font-weight: bold;
   }
 `
 
 const TodoText = styled.p`
-  margin-bottom: 0;
+  margin-bottom: 2px;
 `
 
 const DateString = styled.div`
