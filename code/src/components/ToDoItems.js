@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import toDos from 'reducers/toDos';
 import styled from 'styled-components';
@@ -15,8 +15,15 @@ import {
 } from './ToDoItems.Style'
 
 const ToDoItems = () => {
-  const toDoList = useSelector((store) => store.toDos.items);
   const dispatch = useDispatch();
+  const toDoList = useSelector((store) => store.toDos.items);
+  // For local storage
+  useEffect(() => {
+    const listFromStorage = JSON.parse(localStorage.getItem('toDoList'))
+    if (listFromStorage) {
+      dispatch(toDos.actions.locallyStoreItems(listFromStorage))
+    }
+  }, [dispatch])
 
   const onCompletedClick = (id) => {
     dispatch(toDos.actions.toggleCompleted(id))
@@ -56,6 +63,9 @@ const ToDoItems = () => {
       </ToDoItem>
     )
   })
+  useEffect(() => {
+    localStorage.setItem('toDoList', JSON.stringify(toDoList))
+  }, [toDoList])
   return entireList;
 }
 

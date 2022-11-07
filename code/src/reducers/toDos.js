@@ -7,7 +7,7 @@ const toDos = createSlice({
     items: []
   },
   reducers: {
-    setAllItems: (store, action) => {
+    locallyStoreItems: (store, action) => {
       store.items = action.payload;
     },
     toggleCompleted: (store, action) => {
