@@ -28,7 +28,7 @@ export const TodoList = () => {
       return (
         <EmptyListWrapper>
           <EmptyMessage href="https://www.psychologytoday.com/us/blog/love-and-gratitude/201712/10-tips-what-do-when-you-have-nothing-do" target="_blank" rel="noopener noreferrer"> 10 Tips for What to Do When You Have Nothing to Do ≫</EmptyMessage>
-          <EmptyPic src={meditate} alt="Meditatating" />
+          <EmptyPic src={meditate} alt="Meditating" />
         </EmptyListWrapper>
       )
     } else {

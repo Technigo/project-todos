@@ -30,9 +30,8 @@ export const NewTodo = () => {
           placeholder="Add to-do"
           value={name}
           input="new-todo"
-          onChange={(event) => setName(event.target.value)}
-          required />
-        <AddButton button type="submit" onClick={addNewTodo}> Add </AddButton>
+          onChange={(event) => setName(event.target.value)} />
+        <AddButton button disabled={name.length < 1} type="submit" onClick={addNewTodo}> Add </AddButton>
       </form>
     </NewTodoWrapper>
   )
@@ -61,12 +60,11 @@ const AddButton = styled.button`
     font-size: 22px;
   }
 `
-
 const TodoInput = styled.input`
   padding: 10px;
   font-size: 15px;
 
-@media (min-width: 668px){ 
+  @media (min-width: 668px){ 
   width: 20vw;
   padding: 15px;
   }
