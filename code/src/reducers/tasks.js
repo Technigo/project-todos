@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const taskData = [
-  { id: 1, text: 'Watch video on actions & reducers', complete: false },
-  { id: 2, text: 'Follow redux codealong', complete: false },
-  { id: 3, text: 'Fork weekly assignment', complete: false }
+  { id: 1, text: 'Water the plants', complete: false },
+  { id: 2, text: 'Practise playing the guitar', complete: false },
+  { id: 3, text: 'Do your daily kata!', complete: false }
 ]
 
 let counter = taskData.length;
