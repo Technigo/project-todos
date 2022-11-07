@@ -1,4 +1,5 @@
 import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 const List = ({ itemIndex, id, text, isComplete }) => {
 	const dispatch = useDispatch();
@@ -23,7 +24,7 @@ const List = ({ itemIndex, id, text, isComplete }) => {
 				{text}
 			</div>
 			<div>
-				<button onClick={() => onDeleteToDo(itemIndex)}>Delete</button>
+				<button onClick={() => onDeleteToDo(itemIndex)}>Remove</button>
 			</div>
 		</>
 	);

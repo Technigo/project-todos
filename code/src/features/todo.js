@@ -6,7 +6,7 @@ const todoSlice = createSlice({
 	initialState: { value: [] }, //initial value exist, in value should contain the actual value of the state
 	reducers: {
 		/* creating a function */
-		toggleToDo: (action) => {
+		checkIfCompleted: (action) => {
 			store.value.forEach((item) => {
 				if (item.id === action.payload) {
 					item.isCompleted = !item.isCompleted;
