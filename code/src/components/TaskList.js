@@ -10,15 +10,18 @@ import styled from 'styled-components';
 
 export const TaskList = () => {
   const dispatch = useDispatch();
-  // attempt to have tasks to not disappear when reload page
-  // useEffect(() => {
-  //   const listFromStorage = JSON.parse(localStorage.getItem('taskList'));
-  //   if (listFromStorage) {
-  //     dispatch(tasks.actions.setAllItems(listFromStorage));
-  //   }
-  // }, []);
+
+  // Tasks to not disappear when reload page
+  useEffect(() => {
+    const listFromStorage = JSON.parse(localStorage.getItem('taskListSave'));
+    dispatch(tasks.actions.setAllItems(listFromStorage));
+  }, []);
 
   const todoList = useSelector((store) => store.tasks.items);
+
+  useEffect(() => {
+    localStorage.setItem('taskListSave', JSON.stringify(todoList));
+  }, [todoList]);
 
   const handleTaskToggle = (id) => {
     dispatch(tasks.actions.toggleTask(id));
@@ -28,9 +31,6 @@ export const TaskList = () => {
     dispatch(tasks.actions.removeTask(taskIndex));
   };
 
-  useEffect(() => {
-    localStorage.setItem('taskList', JSON.stringify(TaskList));
-  });
   return (
     <OuterWrapper>
       <InnerWrapper>
