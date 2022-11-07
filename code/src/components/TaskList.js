@@ -21,18 +21,17 @@ const TaskList = () => {
       {taskList.map((singleTask) => {
         return (
           <StyledTask>
-            <label>
-              <Checkbox
-                type="checkbox"
-                name="tasks"
-                checked={singleTask.complete}
-                onChange={() => onIsCompleteToggle(singleTask.id)}
-                id={singleTask.id} />
-            </label>
-            <p>{singleTask.text}</p>
-            <div>
-              Added {singleTask.timeStamp.toLowerCase()}
-            </div>
+            <Checkbox
+              type="checkbox"
+              name="tasks"
+              checked={singleTask.complete}
+              onChange={() => onIsCompleteToggle(singleTask.id)}
+              id={singleTask.id} />
+            <p>{singleTask.text}
+              <StyledTimeStamp>
+                {singleTask.timeStamp.toLowerCase()}
+              </StyledTimeStamp>
+            </p>
             <StyledDeleteButton type="button" onClick={onRemoveButtonClick}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -70,7 +69,6 @@ color: var(--color-darkGrey);
 
 & p {
   word-break: break-all;
-  margin: 0 1em;
 }
 
 @media (min-width: 667px) and (max-width: 1024px)  {
@@ -84,7 +82,7 @@ export const Checkbox = styled.input`
   -webkit-appearance: none;
   appearance: none;
   background-color: #fff;
-  margin: 0;
+  margin-top: 0.3em;
   font: inherit;
   color: grey;
   width: 1.7em;
@@ -115,6 +113,9 @@ export const Checkbox = styled.input`
   transform: scale(1);  
   text-decoration: line-through;
 }
+`
+const StyledTimeStamp = styled.div`
+color: gray;
 `
 const StyledDeleteButton = styled.button`
 border: none;
