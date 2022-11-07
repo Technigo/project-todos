@@ -9,7 +9,6 @@ const TaskCounter = () => {
   // Defining "items" in which we're calling a function, and inside the parenthesis, we're giving another function.
   // "items" is the list of todo items.
   const items = useSelector((store) => store.tasks.items)
-
   const countDone = () => {
     // Function which counts and returns the number of "done" items.
     const doneItems = items.filter((item) => item.complete === true)

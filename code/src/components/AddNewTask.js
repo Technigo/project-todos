@@ -50,8 +50,6 @@ display: flex;
 flex-direction: row;
 justify-content: flex-start;
 align-items: flex-start;
-margin: 0px;
-padding-right: 0px;
 
 input{
   height: 30px;

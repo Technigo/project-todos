@@ -39,9 +39,6 @@ font-family: 'Josefin Sans', sans-serif;
 
 }
 @media (min-width: 401px) and (max-width:999px){
-  display: flex;
-  flex-direction: row;
-  align-items: flex-end;
   p{
   font-size: 22px;
 
