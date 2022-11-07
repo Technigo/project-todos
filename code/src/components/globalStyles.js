@@ -4,6 +4,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
+    background-color: #fefefa;
     font-family: 'Gaegu', cursive;
     font-size: 20px;
     line-height: 18px;

@@ -23,7 +23,7 @@ const TextInput = styled.input`
 `
 
 const AddButton = styled.button`
-  font-size: 120%;
+  font-size: 110%;
   cursor: pointer;
   font-family: 'Gaegu', cursive;
   background: transparent;
