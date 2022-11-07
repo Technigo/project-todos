@@ -26,6 +26,9 @@ export const Wrapper = styled.div`
     align-items: center;
     margin-top: 10px;
     box-shadow: 2px 5px #888888;
+    &.complete-todo{
+    background-color: rgb(108, 133, 110);
+}
 `
 export const InputWrapper = styled(Wrapper)`
     background-color: white;
@@ -101,6 +104,10 @@ color: black;
 font-size: 18px;
 font-family: 'Nunito Sans', sans-serif;
 font-weight: 600;
+&.complete-todo{
+    color: rgb(46, 46, 46);
+    text-decoration: line-through;
+}
 `
 
 export const Date = styled.h2`
@@ -111,4 +118,7 @@ width: 100px;
 color: rgb(52, 52, 52);
 font-size: 14px;
 font-family: 'Nunito Sans', sans-serif;
+&.complete-todo{
+    color: rgb(46, 46, 46);
+}
 `

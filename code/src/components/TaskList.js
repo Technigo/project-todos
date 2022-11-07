@@ -9,12 +9,10 @@ const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items); // grabs our items in reducer
   const dispatch = useDispatch();
 
-  // Delete button
   const onDeleteItemBtnClick = (todoIndex) => {
     dispatch(tasks.actions.deleteItem(todoIndex));
   };
 
-  // Toggle checkbox
   const onCompleteToggle = (id) => {
     dispatch(tasks.actions.toggleItem(id))
   }
@@ -23,7 +21,7 @@ const TaskList = () => {
     <Section>
       {taskList.map((singleTask, index) => {
         return (
-          <Wrapper>
+          <Wrapper className={singleTask.complete ? 'complete-todo' : ''}>
             <CheckBoxWrapper>
               <label htmlFor={singleTask} id={index}>
                 <input
@@ -34,8 +32,8 @@ const TaskList = () => {
                   id={singleTask.id} />
               </label>
             </CheckBoxWrapper>
-            <TaskText>{singleTask.text}</TaskText>
-            <Date>{singleTask.time}</Date>
+            <TaskText className={singleTask.complete ? 'complete-todo' : ''}>{singleTask.text}</TaskText>
+            <Date className={singleTask.complete ? 'complete-todo' : ''}>{singleTask.time}</Date>
             <Button type="button" onClick={() => onDeleteItemBtnClick(index)}><Icon src={Trash} alt="Delete" /></Button>
           </Wrapper>
         );

@@ -32,10 +32,21 @@ export const HeaderDate = styled.span`
     margin: 0;
     font-size: 16px;
     text-align: left;
+    @media (max-width: 350px) {
+    font-size: 14px;
+    }
 `
 export const Counting = styled(HeaderDate)`
     text-align: right;
     right: 0;
+    font-size: 16px;
+    @media (max-width: 350px) {
+    font-size: 14px;
+    }
+    &.complete-todo{
+    font-weight: bold;
+    font-size: 16px;
+    }   
 `
 
 export const Line = styled.div`
