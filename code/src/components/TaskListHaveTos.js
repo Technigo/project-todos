@@ -36,8 +36,11 @@ const TaskListHaveTos = () => {
       complete: false }
     dispatch(tasks.actions.addItem(newTask));
     setInputValue('');
-    localStorage.setItem('taskItem', JSON.stringify(taskItem))
   }
+
+  useEffect(() => {
+    localStorage.setItem('taskItem', JSON.stringify(taskItem))
+  }, [taskItem])
 
   return (
     <section>

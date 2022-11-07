@@ -34,8 +34,11 @@ const TaskListWantTos = () => {
       complete: false }
     dispatch(tasksWants.actions.addItem(newTask));
     setInputValue('');
+  }
+  useEffect(() => {
     localStorage.setItem('taskItemWants', JSON.stringify(taskItemWants))
-  };
+  }, [taskItemWants])
+
   return (
     <section>
       <ListHeaderStyling>
