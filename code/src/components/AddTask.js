@@ -75,7 +75,7 @@ height: 40px;
 width: 40px;
 font-size: 20px;
 font-weight: bold;
-transform: rotate(-45deg);
+transform: rotate(-45deg); //Rotates the X-sign to +
 border-radius: 25px;
 border: none;
 margin-bottom: 20px;
