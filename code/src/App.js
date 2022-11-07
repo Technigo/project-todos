@@ -8,6 +8,7 @@ import AddTask from './components/AddTask';
 import Header from './components/Header';
 import CompletedTask from './components/CompletedTask';
 import NotCompletedTask from './components/NotCompleted';
+import 'animate.css';
 
 function App() {
   const reducer = combineReducers({
