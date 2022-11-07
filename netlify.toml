@@ -1,8 +1,6 @@
 # This file tells netlify where the code for this project is and
 # how it should build the JavaScript assets to deploy from.
 [build]
-  base: /opt/build/repo/code
-  command = "npm run build"
-  commandOrigin: config
-  publish = /opt/build/repo/code
-  publishOrigin: config
+  base = "code/"
+  publish = "build/"
+  command = "CI= npm run build"
