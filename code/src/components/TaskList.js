@@ -60,7 +60,6 @@ const ListWrapper = styled.section`
 `
 
 const TaskWrapper = styled.article`
-  // outline: 1px solid red;
 
   .finished, .notFinished {
     display: flex;
@@ -82,55 +81,10 @@ const TaskWrapper = styled.article`
     }
 `
 const ElementWrapper = styled.div`
-  // outline: 1px solid red;
   display: flex;
   flex-direction: row;
   align-items: center;
   padding: 2vh 0;
-
-/*   [type="checkbox"]{
-    opacity: 0;
-  }
-
-  [type="checkbox"] + label{
-    position: relative;
-    // padding-left: 0;
-    cursor: pointer;
-    display: inline-block;
-    color: #666;
-  }
-
-  [type="checkbox"] + label::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    outline: 2px solid var(--color-accent);
-    background: var(--color-white);
-  }
-
-  [type="checkbox"]:checked + label::before{
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    outline: 2px solid red;
-    background: var(--color-white);
-  }
-
-  [type="checkbox"]:checked + label::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 15px;
-    height: 15px;
-    background: var(--color-white);
-  } */
 
   p {
     font-family: var(--font-main);

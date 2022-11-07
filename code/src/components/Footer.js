@@ -13,7 +13,7 @@ const Footer = () => {
   }
 
   return (
-    <>
+    <div>
       <FooterContainer>
         <Counter />
         <Button
@@ -31,12 +31,11 @@ const Footer = () => {
         <p>A website made by Ulrika Öhman @ Technigo — 11/24</p>
         <p>Copyright 2022 — Icons from Noun Project</p>
       </FooterText>
-    </>
+    </div>
   )
 }
 
 const FooterContainer = styled.section`
-    // outline: 1px solid red;
     display: flex;
     justify-content: space-between;
     align-items: center;

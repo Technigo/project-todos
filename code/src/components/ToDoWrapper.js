@@ -25,10 +25,6 @@ export const ToDoWrapper = () => {
   store.subscribe(() => {
     localStorage.setItem('reduxState', JSON.stringify(store.getState()))
   })
-  /*   const store = configureStore({
-    // reducer: reducer
-    reducer
-  }); */
 
   return (
     <Provider store={store}>
