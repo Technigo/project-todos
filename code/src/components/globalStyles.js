@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components/macro'
 
 const GlobalStyle = createGlobalStyle`
   body {
@@ -8,6 +8,12 @@ const GlobalStyle = createGlobalStyle`
     font-size: 20px;
     line-height: 18px;
     display: grid;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h2 {
+    line-height: 0.7em;
   }
 `
 
