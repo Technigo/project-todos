@@ -261,10 +261,3 @@ const CheckButton = styled.div`
   // }
   // }
 `;
-
-/*  <input
-          type="checkbox"
-          id={taskData.id}
-          name="todo"
-          checked={taskData.isCompleted}
-          onChange={() => onIsCompletedToggle(taskData.id)} /> */

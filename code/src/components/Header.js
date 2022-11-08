@@ -27,10 +27,3 @@ background-color: var(--main-color);
 
 }
 `
-
-// const Icons = styled.i`
-// `
-
-// CREAD:
-// // img className="header-image" src= X alt="" /> */}
-// <a href="https://www.freepik.com/free-vector/people-making-list-illustration_3530044.htm#query=todo%20list&position=4&from_view=keyword">Image by rawpixel.com</a> on Freepik

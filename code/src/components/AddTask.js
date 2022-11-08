@@ -41,8 +41,11 @@ const AddTask = () => {
           aria-label="Type and hit enter to create new task." />
         <NewTaskIconWrapper
           type="submit"
+          disabled={inputValue.length < 2 || inputValue.length > 25}
           aria-label="Create new task button.">
-          <NewTaskIcon src={AddButton} alt="Add new task." />
+          <NewTaskIcon
+            src={AddButton}
+            alt="Add new task." />
         </NewTaskIconWrapper>
       </NewTaskWrapper>
       <Wrapper>
@@ -94,12 +97,6 @@ const NewTaskWrapper = styled.form`
   justify-content: center;
   width: 100%;
   margin-top: 20px;
-
-  @media (min-width: 667px) and (max-width: 1024px) {
-  }
-  @media (min-width: 1025px) {
- 
-  }
 `;
 
 const NewTaskIconWrapper = styled.button`
@@ -114,11 +111,6 @@ const NewTaskIconWrapper = styled.button`
   &:hover {
     transition: all 0.3s ease-in;
     transform: scale(1.3);
-
-  @media (min-width: 667px) and (max-width: 1024px) {
-  }
-  @media (min-width: 1025px) {
-  }
 `;
 
 const NewTaskIcon = styled.img`
@@ -145,7 +137,6 @@ const NewTaskTextInput = styled.input`
   height: 30px;
   font-family: "Montserrat", sans-serif;
   outline: none;
-  // :focus {
 
   @media (min-width: 667px) and (max-width: 1024px) {
     height: 54px;
@@ -175,9 +166,6 @@ const ButtonWrapper = styled.div`
   align-self: center;
   margin: 25px 0 0 0;
 
-  @media (min-width: 667px) and (max-width: 1024px) {
-   
-  }
   @media (min-width: 1025px) {
   margin: 53px 40px 0 0;
 }
@@ -206,10 +194,7 @@ const ButtonWrapper = styled.div`
 @media (min-width: 1025px) {
   font-size: 13px;
   height: 40px;
- margin: 11px 10px 0 0px;
-
-
-
+  margin: 11px 10px 0 0px;
 }
 }
 }`;

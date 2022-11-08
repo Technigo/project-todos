@@ -1,41 +1,30 @@
 import React from 'react'
-import { useDispatch, useSelector } from 'react-redux';
-import tasks from 'reducers/todos/taskSlice';
 import styled from 'styled-components';
 
 const Footer = () => {
-  const taskList = useSelector((store) => store.tasks.tasksArray);
-  const dispatch = useDispatch();
-  const onRemoveAllTasks = () => { dispatch(tasks.actions.removeAllTasks(taskList)); };
-  const onSetAllTasksDone = () => { dispatch(tasks.actions.setAllTasksDone(taskList)); };
-  console.log('onSetAllTasksDone', onSetAllTasksDone)
   return (
     <FooterContainer>
-      {taskList.length > 0 && (
-        <FooterButton
-          role="button"
-          onClick={() => onRemoveAllTasks(taskList)}
-          // onKeyDown={(e) => e.key === 'Enter' && onRemoveAllTasks()}>
-          Delete
-          project
-          to-do
-          list />
-      )}
+      <p className="cred">
+      Image by <a href="https://www.freepik.com/free-vector/people-making-list-illustration_3530044.htm#query=todo%20list&position=4&from_view=keyword">rawpixel.com</a> on Freepik
+      </p>
     </FooterContainer>
   )
 };
 export default Footer;
 
 const FooterContainer = styled.footer`
-border: solid 2px black`
-const FooterButton = styled.footer`
-border: solid 2px red
-padding: 30px;`
+display: flex;
+justify-content: center;
+margin-top: 20px;
 
-// @media (min-width: 667px) and (max-width: 1024px) {
-// }
-// @media (min-width: 1025px) {
-// }
-// `
-/*    <button type="button" onClick={() => onRemoveAllTasks(taskList)}>Reset
-</button><button type="button" onClick={() => onSetAllTasksDone(taskList)}>All Done</button></>)} */
+.cred{
+font-size: 6px;
+
+@media (min-width: 667px) and (max-width: 1024px) {
+  font-size: 8px;
+}
+@media (min-width: 1025px) {
+  font-size: 10px;
+}
+}
+`

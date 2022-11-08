@@ -1,26 +1,15 @@
 /* eslint-disable max-len */
 import { createSlice } from '@reduxjs/toolkit';
 
-// const initialState = {
-//   tasksArray: []
-// };
-
 const taskSlice = createSlice({
   name: 'tasks',
   initialState: {
     tasksArray: [
-      // { id: 0,
-      //   text: 'Sova',
-      //   isCompleted: false,
-      //   color: 'purple' }
     ]
   },
   reducers: {
 
     toggleItem: (store, action) => {
-      console.log(store);
-      console.log(action);
-      // store.items.find((item) => item.id === action.payload).isCaught = !store.items.find((item) => item.id === action.payload).isCaught;
       store.tasksArray.forEach((task) => {
         if (task.id === action.payload) {
           task.isCompleted = !task.isCompleted
@@ -58,7 +47,7 @@ export default taskSlice;
 //  setAllTasksDone: (store, action) => {
 //   store.tasksArray.forEach((task) => {
 //     if (task.id === action.payload) {
-//     !task.isCompleted = task.isCompleted
+//      task.isCompleted = !task.isCompleted
 //     }
 //   })
 // },
