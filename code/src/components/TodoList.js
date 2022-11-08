@@ -18,6 +18,7 @@ import { DeleteAll } from './DeleteAll'
 
 export const TodoList = () => {
   const items = useSelector((store) => store.todo.items)
+  const todosCounter = items.filter((item) => item.isCompleted === true)
 
   const dispatch = useDispatch();
 
@@ -35,8 +36,10 @@ export const TodoList = () => {
       {/* flex-start section */}
       {' '}
       <AddTodo />
+      <TodoCounter>
+        <h2>Completed: {todosCounter.length} / {items.length} </h2>
+      </TodoCounter>
       <InnerWrapper>
-        {/* <TodoCounter /> */}
         {items.map((item) => (
           <TaskContainer key={item.id}>
             <TaskContainerWrapper>
@@ -70,6 +73,23 @@ export const TodoList = () => {
 }
 
 // --------Styled components-------
+
+const TodoCounter = styled.div`
+  align-self: end;
+  margin-right: 20px;
+  margin-bottom: 3px;
+
+  h2 {
+    font-family: var(--font-todo);
+    font-size: 1.2rem;
+    color: var(--clr-darkgrey);
+    padding: 0;
+    margin: 0;
+  }
+  @media (min-width: 667px) {
+    margin-right: 100px;
+    }
+`;
 
 const InnerWrapper = styled.section`
   display: flex;
