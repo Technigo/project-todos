@@ -136,3 +136,7 @@ export const TimeStampStyling = styled.p`
     
   }
 `
+export const Deadline = styled.p`
+    font-size: 0.8rem;
+    color: ${({ theme }) => theme.colors.body};
+  `

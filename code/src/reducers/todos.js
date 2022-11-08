@@ -6,16 +6,20 @@ const todos = createSlice({
     items: [
       { id: 1667482086195,
         name: 'buy milk',
-        isChecked: false },
+        isChecked: false,
+        selectedDate: '2022-11-06T23:00:00.000Z' },
       { id: 1667412086196,
         name: 'clean bathroom',
-        isChecked: true },
+        isChecked: true,
+        selectedDate: '2022-11-06T23:00:00.000Z' },
       { id: 1667482086191,
         name: 'water plants',
-        isChecked: false },
+        isChecked: false,
+        selectedDate: '2022-11-06T23:00:00.000Z' },
       { id: 1667482086192,
         name: 'do the laundry',
-        isChecked: false }
+        isChecked: false,
+        selectedDate: '2022-11-06T23:00:00.000Z' }
     ]
   },
   reducers: {

@@ -11,6 +11,11 @@ export const AddButton = styled.button`
   height: 30px;
   padding: 12px;
   line-height: 0px;
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+      color: #fff;
+    }
 
   @media (min-width: ${({ theme }) => theme.tablet}){
     margin: 20px 20px;
