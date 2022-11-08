@@ -22,12 +22,12 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Main />
-      <h1> Testar om det inte ska vara en rad här</h1>
       <Header />
       <TaskList />
-      <h2> Provar hur det ser ut</h2>
       <AddTask />
-      <h3> Avslutande rubrik</h3>
+      <h2>Here is a delete all button</h2>
+      <h2>And is a all button</h2>
+      <h3> Great job today! Let´s continue with a glas of wine</h3>
     </Provider>
   );
 }

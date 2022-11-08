@@ -8,6 +8,8 @@ const Header = () => {
   return (
     <HeaderWrapper>
       <h1>Agenda for <span>{moment().format('MMM Do YYYY')}</span></h1>
+      <h1> Let´s get started!</h1>
+      <h3> Here is the progressbar</h3>
     </HeaderWrapper>
   );
 };
@@ -15,6 +17,7 @@ const Header = () => {
 export default Header;
 
 const HeaderWrapper = styled.header`
+  width: 50%;;
   height: 20vh;
   min-height: 150px;
   padding-top: 3rem;

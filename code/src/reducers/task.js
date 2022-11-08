@@ -4,7 +4,19 @@ import { createSlice } from '@reduxjs/toolkit';
 const tasks = createSlice({
   name: 'Tasks',
   initialState: {
-    items: []
+    items: [
+      { id: 'uniqueidlikethis',
+        name: 'Look for recepie',
+        isCaught: false },
+      { id: 'dontknowwhattowritehere',
+        name: 'Go to Ica',
+        isCaught: false },
+      {
+        id: 'dontknowwhattowritehereeither',
+        name: 'Clean kitchen',
+        isCaught: false
+      }
+    ]
   },
   reducers: {
     setAllItems: (store, action) => {

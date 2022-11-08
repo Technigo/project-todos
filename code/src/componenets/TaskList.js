@@ -2,7 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/task';
-/* import styled from 'styled-components/macro'; */
+import styled from 'styled-components/macro';
 
 const TaskList = () => {
   const dispatch = useDispatch();
@@ -18,23 +18,35 @@ const TaskList = () => {
   }
 
   return (
-    <section>
-      {taskList.map((singleTask, index) => {
-        return (
-          <article key={singleTask.id}>
-            <h2>{singleTask.name}</h2>
-            <lable>Done with task?
-              <input
-                type="checkbox"
-                checked={singleTask.isDone}
-                onChange={() => onIsDoneToggle(singleTask.id)} />
-            </lable>
-            <button onClick={() => onDeleteTaskButtonClick(index)} type="button">🗑️</button>
-          </article>
-        );
-      })}
-    </section>
+    <div>
+      <Wrapper>
+        {taskList.map((singleTask, index) => {
+          return (
+            <article key={singleTask.id}>
+              <h2>{singleTask.name}</h2>
+              <lable>Done with task?
+                <input
+                  type="checkbox"
+                  checked={singleTask.isDone}
+                  onChange={() => onIsDoneToggle(singleTask.id)} />
+              </lable>
+              <button onClick={() => onDeleteTaskButtonClick(index)} type="button">🗑️</button>
+            </article>
+          );
+        })}
+      </Wrapper>
+    </div>
   )
 }
 
 export default TaskList;
+
+const Wrapper = styled.div`
+  width: 30vh;
+  height: 100%;
+  padding: 3rem;
+  background-color: lightpink;
+  border: 10px solid green;
+  text-align: center;
+  font-size: 0.8rem;
+  `
