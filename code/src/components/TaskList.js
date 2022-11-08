@@ -21,7 +21,7 @@ const TaskList = () => {
           <article className="taskListBox" key={singleTask.id}>
             <h2>{singleTask.name}</h2>
             <label className="Is this task done">
-              <input type="radio" checked={singleTask.isDone} onChange={() => onIsDoneToggle(singleTask.id)} />
+              <input type="checkbox" checked={singleTask.isDone} onChange={() => onIsDoneToggle(singleTask.id)} />
               <button onClick={() => onDeleteTaskBtnClick(index)} type="button">Remove task</button>
             </label>
           </article>
