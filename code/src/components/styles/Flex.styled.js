@@ -30,6 +30,10 @@ export const Innerwrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  div {
+    position: relative;
+  }
 `
 
 export const FlexDiv = styled.div`

@@ -31,7 +31,12 @@ export const RemoveButton = styled.button`
   background-color: inherit;
   cursor: pointer;
   position: relative;
-  bottom: -1px;
+  bottom: -2px;
+
+  @media (min-width: ${({ theme }) => theme.tablet}){
+    bottom: 7px;
+
+  }
 `
 
 export const ClearAllBtn = styled.button`

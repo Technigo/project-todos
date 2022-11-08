@@ -20,7 +20,7 @@ export const StyledHeader = styled.header`
   }
 
   @media (min-width: ${({ theme }) => theme.tablet}){
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 
     div {
       height: 40px;

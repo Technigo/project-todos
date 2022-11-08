@@ -46,7 +46,7 @@ export const EmptyStateDiv = styled.div`
 
 export const TodoDiv = styled.div`
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   width: 100%;
   justify-content: space-between;
 
@@ -139,4 +139,26 @@ export const TimeStampStyling = styled.p`
 export const Deadline = styled.p`
     font-size: 0.8rem;
     color: ${({ theme }) => theme.colors.body};
+    margin-left: 34px;
+
+    @media (min-width: ${({ theme }) => theme.tablet}){
+     margin-left: 45px;
+
+  }
   `
+export const AddedLine = styled.p`
+  display: none;
+
+  @media (min-width: ${({ theme }) => theme.tablet}){
+    display: block;
+    border-bottom: 1px solid #9fdfbf;
+    text-align: right;
+    width: 91%;
+    position: absolute;
+    right: 54px;
+    top: 170px;
+    color: #5a7869;
+    font-size: 0.8rem;
+    font-weight: bold;
+  }
+`

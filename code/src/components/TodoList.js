@@ -5,7 +5,7 @@ import { IconContext } from 'react-icons';
 import { IoCloseOutline } from 'react-icons/io5';
 import { BsArrowDownShort } from 'react-icons/bs';
 import NewTodo from './NewTodo';
-import { TodoDiv, Article, TimeStampStyling, EmptyStateDiv, Deadline } from './styles/TodoList.styled';
+import { TodoDiv, Article, TimeStampStyling, EmptyStateDiv, Deadline, AddedLine } from './styles/TodoList.styled';
 import { FlexDiv, OuterWrapper, Innerwrapper } from './styles/Flex.styled';
 import { RemoveButton } from './styles/Button.styled'
 import EmptyState from '../images/EmptyState.svg'
@@ -36,6 +36,7 @@ const TodoList = () => {
         <Innerwrapper>
           <div>
             <Header />
+            <AddedLine>added</AddedLine>
             {allTodos.map((todo, index) => {
               return (
                 <Article key={todo.id}>
@@ -48,7 +49,7 @@ const TodoList = () => {
                         name={`input-${todo.id}`}
                         id={todo.id} />
                       <p>{todo.name}</p>
-                      {todo.selectedDate && <Deadline>complete before: {`${new Date(todo.selectedDate).toLocaleDateString('en-us', { day: 'numeric' })} ${new Date(todo.selectedDate).toLocaleDateString('en-us', { month: 'short' })}`}</Deadline>}
+                      {todo.selectedDate && <Deadline> complete before: {`${new Date(todo.selectedDate).toLocaleDateString('en-us', { day: 'numeric' })} ${new Date(todo.selectedDate).toLocaleDateString('en-us', { month: 'short' })}`}</Deadline>}
                     </label>
                     <TimeStampStyling>
                       {TimeStampDate(todo.id)} {TimeStampHoursMinutes(todo.id)}
