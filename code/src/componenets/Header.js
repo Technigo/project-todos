@@ -17,7 +17,10 @@ const Header = () => {
 export default Header;
 
 const HeaderWrapper = styled.header`
-  width: 50%;;
+position: absolute;
+top: 10%;
+right: 5%;
+  width: 50%;
   height: 20vh;
   min-height: 150px;
   padding-top: 3rem;

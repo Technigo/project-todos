@@ -39,7 +39,7 @@ const AddTask = () => {
 export default AddTask;
 
 const AddWrapper = styled.div`
-background-color: lightblue;
+background-color: lightyellow;
   opacity: 0.9;
   padding: 20px;
   border-radius: 20px;

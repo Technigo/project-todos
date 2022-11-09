@@ -42,8 +42,11 @@ const TaskList = () => {
 export default TaskList;
 
 const Wrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  right: 5%;
   width: 30vh;
-  height: 100%;
+  height: 60%;
   padding: 3rem;
   background-color: lightpink;
   border: 10px solid green;

@@ -6,9 +6,7 @@ import styled from 'styled-components/macro';
 const Main = () => {
   return (
     <div>
-      <Background>
-        <h1>Här ska det vara en snygg bakgrundsbild</h1>
-      </Background>
+      <Background />
     </div>
   )
 }
@@ -19,6 +17,7 @@ background-image: url(${background});
 background-size: cover;
 min-height: 150vh;
 display: flex;
+position: relative;
 align-items: center;
 justify-content: center;
 `
