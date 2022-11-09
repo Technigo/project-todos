@@ -23,9 +23,9 @@ width: 100%;
 const WeekDay = styled.p`
 font-family: 'Yeseva One', cursive;
 position: relative;
-right: 90%;
+right: 92%;
 z-index: 1;
 top: 80px;
-font-size: 3.2rem;
+font-size: 3rem;
 color: white;
 `

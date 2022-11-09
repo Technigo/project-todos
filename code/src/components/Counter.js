@@ -15,7 +15,7 @@ export default Counter;
 
 const CounterWrap = styled.div`
 position: relative;
-right: 139%;
+right: 160%;
 top: 10px;
 `
 const CounterText = styled.p`

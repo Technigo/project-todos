@@ -10,8 +10,8 @@ export const ExpandButton = styled.button`
 color: white;
 background-color: #FFB800;
 border-radius: 50%;
-height: 50px;
-width: 50px;
+height: 55px;
+width: 55px;
 position: absolute;
 border: none;
 
