@@ -1,13 +1,22 @@
-# Project Todos
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
-
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+# Project Todo Today 
+Finally, what you've all been waiting for - an uplifting todo app!
+The goal was to build a todo app where the user can add a todo, check/mark it done,
+and delete it. 
 
 ## View it live
+https://complete-today.netlify.app
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+## The problem
+First, the app was outlined in Figma. One of the most prominent design-feature is the FAB-button that 
+hides and shows the input bar. It was important that there was some sense of deadline and 
+priority buttons to easy highlight how important the task was. 
+
+Next, the project was built in VScode using JavaScript & React. 
+Other technologies used: 
+* Npm packages
+UniqId  -  https://www.npmjs.com/package/uniqid (for creating unique IDs to the tasks)
+Styled Components - https://styled-components.com (Styling and CSS)
+Moment - https://www.npmjs.com/package/moment (Dates, times)
+
+## Images
+<img width="280" alt="200171292-fa9d47a4-71d1-4e5b-8ae4-1e71f8d56ec7" src="https://user-images.githubusercontent.com/105229808/200816283-83942804-a58b-449c-be3f-3b5a0d6f603f.png">
