@@ -24,6 +24,7 @@ right: 5%;
   height: 20vh;
   min-height: 150px;
   padding-top: 3rem;
+  padding-bottom: 3rem;
   background-color: yellow;
   border: 10px solid black;
   text-align: center;

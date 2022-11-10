@@ -22,16 +22,18 @@ const AddTask = () => {
 
   return (
     <AddWrapper>
-      <form onSubmit={onFormSubmit}>
-        <label>
-        Anything else to do today? Add it as a placeholder:
+      <Form onSubmit={onFormSubmit}>
+        <Label>
           <input
             type="text"
             value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)} />
-        </label>
-        <button type="submit">✖️</button>
-      </form>
+            onChange={(event) => setInputValue(event.target.value)}
+            placeholder="Anything else todo?" />
+        </Label>
+        <Button
+          disabled={inputValue === ''}>✖️
+        </Button>
+      </Form>
     </AddWrapper>
   )
 }
@@ -51,3 +53,18 @@ background-color: lightyellow;
   align-items: center;
   justify-content: center;
 `
+const Button = styled.button`
+
+`
+const Form = styled.form`
+    text-align: center;
+    height: 80px;  
+`
+
+const Label = styled.label`
+    display: inline-block;
+    margin-right: 10px;
+    width: 275px;
+    border: none;
+    border-bottom: 2px solid black;
+    `
