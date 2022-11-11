@@ -3,9 +3,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/task';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import TaskList from './TaskList';
-/* import styled from 'styled-components/macro'; */
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -41,30 +40,36 @@ const AddTask = () => {
 export default AddTask;
 
 const AddWrapper = styled.div`
-background-color: lightyellow;
-  opacity: 0.9;
   padding: 20px;
-  border-radius: 20px;
   margin-top: 5vh;
   margin-bottom: 5vh;
-  width: 100%;
+  width: 80%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`
-const Button = styled.button`
-
+  /* border: 4px solid blue; */
 `
 const Form = styled.form`
-    text-align: center;
-    height: 80px;  
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    /* border: 3px solid #F63F41; */
 `
-
 const Label = styled.label`
-    display: inline-block;
-    margin-right: 10px;
-    width: 275px;
-    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 10px;
+    width: 90%;
     border-bottom: 2px solid black;
     `
+const Button = styled.button`
+padding: 15px;
+width: 50px;
+border-radius: 50%;
+color: black;
+border: 3px solid rgb(168, 187, 168);
+justify-item: center;
+`

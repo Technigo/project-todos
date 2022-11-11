@@ -2,26 +2,23 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const tasks = createSlice({
-  name: 'Tasks',
+  name: 'tasks',
   initialState: {
     items: [
-      { id: 'uniqueidlikethis',
+      { id: 'a',
         name: 'Look for recepie',
         isCaught: false },
-      { id: 'dontknowwhattowritehere',
+      { id: 'b',
         name: 'Go to Ica',
         isCaught: false },
       {
-        id: 'dontknowwhattowritehereeither',
+        id: '3',
         name: 'Clean kitchen',
         isCaught: false
       }
     ]
   },
   reducers: {
-    setAllItems: (store, action) => {
-      store.items = action.payload;
-    },
     toggleItem: (store, action) => {
       console.log(store);
       console.log(action);
@@ -32,7 +29,6 @@ const tasks = createSlice({
       });
     },
     addItem: (store, action) => {
-      console.log(action);
       store.items = ([...store.items, action.payload]);
     },
     deleteItem: (store, action) => {
@@ -40,6 +36,9 @@ const tasks = createSlice({
         return store.items.indexOf(item) !== action.payload;
       });
       store.items = deletedItems;
+    },
+    deleteAllItems: (store, action) => {
+      store.items.splice(action.payload)
     }
   }
 });
