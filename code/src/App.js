@@ -7,6 +7,7 @@ import TodoSubmitForm from 'components/TodoSubmitForm';
 import { GlobalWrap } from 'styles/SectionWrapper';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
+import Counter from 'components/Counter';
 
 const reducer = combineReducers({
   todo: todo.reducer
@@ -21,6 +22,7 @@ export const App = () => {
     <Provider store={store}>
       <GlobalWrap>
         <Header />
+        <Counter />
         <TodoSubmitForm />
         <TodoList />
         <Footer />

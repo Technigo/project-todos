@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components'
 import moment from 'moment'
 import { Section } from 'styles/SectionWrapper';
-import Counter from './Counter';
 
 import Swoop from '../assets/modified-swoop-orange.png'
 
@@ -11,7 +10,6 @@ const Header = () => {
     <Section>
       <BackgroundImg src={Swoop} />
       <WeekDay>{moment().format('dddd')}. </WeekDay>
-      <Counter />
     </Section>
   )
 }
