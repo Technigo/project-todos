@@ -31,7 +31,6 @@ const ClearListBtn = styled.button`
     cursor: pointer;
     border: solid var(--secondary);
     color: var(--secondary);
-
   }
 
   @media (min-width: 1024px) { 
