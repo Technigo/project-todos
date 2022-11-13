@@ -4,7 +4,7 @@ const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      { id: 1667412086196,
+      { id: 1667412086195,
         name: 'buy milk',
         isChecked: false },
       { id: 1667412086196,
