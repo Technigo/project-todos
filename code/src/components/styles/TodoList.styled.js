@@ -56,7 +56,7 @@ export const TodoDiv = styled.div`
   }
   label > p {
     width: 90%;
-  }ç
+  }
 
   input[type="checkbox"] {
   opacity: 0;
