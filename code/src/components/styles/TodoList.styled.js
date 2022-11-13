@@ -4,6 +4,7 @@ import IconChecked from '../../images/IconChecked.png';
 
 export const Article = styled.article`
 padding: 5px 0px;
+word-break: break-word;
 
 @media (min-width: ${({ theme }) => theme.tablet}){
   padding: 10px 0px;
@@ -52,6 +53,9 @@ export const TodoDiv = styled.div`
 
   label {
     width: inherit;
+  }
+  label > p {
+    width: 90%;
   }
 
   input[type="checkbox"] {
