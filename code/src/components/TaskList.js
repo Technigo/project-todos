@@ -1,3 +1,4 @@
+/* eslint-disable operator-linebreak */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-undef */
 /* eslint-disable react/jsx-closing-bracket-location */
@@ -14,7 +15,9 @@ export const TaskList = () => {
   // Tasks to not disappear when reload page
   useEffect(() => {
     const listFromStorage = JSON.parse(localStorage.getItem('taskListSave'));
-    dispatch(tasks.actions.setAllItems(listFromStorage));
+    if (listFromStorage) {
+      dispatch(tasks.actions.setAllItems(listFromStorage));
+    }
   }, []);
 
   const todoList = useSelector((store) => store.tasks.items);
@@ -34,25 +37,26 @@ export const TaskList = () => {
   return (
     <OuterWrapper>
       <InnerWrapper>
-        {todoList.map((singleTask, index) => {
-          return (
-            <TaskWrapper key={singleTask.id}>
-              <Task>
-                <label>
-                  <input
-                    type="checkbox"
-                    checked={singleTask.complete}
-                    onChange={() => handleTaskToggle(singleTask.id)}
-                  />
-                </label>
-                <Paragraph>{singleTask.text} </Paragraph>
-              </Task>
-              <Button type="button" onClick={() => handleRemoveTask(index)}>
-                🗑
-              </Button>
-            </TaskWrapper>
-          );
-        })}
+        {todoList.length > 0 &&
+          todoList.map((singleTask, index) => {
+            return (
+              <TaskWrapper key={singleTask.id}>
+                <Task>
+                  <label>
+                    <input
+                      type="checkbox"
+                      checked={singleTask.complete}
+                      onChange={() => handleTaskToggle(singleTask.id)}
+                    />
+                  </label>
+                  <Paragraph>{singleTask.text} </Paragraph>
+                </Task>
+                <Button type="button" onClick={() => handleRemoveTask(index)}>
+                  🗑
+                </Button>
+              </TaskWrapper>
+            );
+          })}
       </InnerWrapper>
     </OuterWrapper>
   );

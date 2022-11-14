@@ -15,15 +15,7 @@ export const Header = () => {
   };
 
   // Count all tasks
-  const handleTaskCounter = useSelector((store) => store.tasks.items.length);
-
-  // const totalTaskInputArray = useSelector((store) => store.tasks.items);
-  // console.log(allTasks);
-
-  // // Count checked tasks
-  // const completedTasks = handleTaskCounter.filter(
-  //   (task) => task.completed === true
-  // );
+  const storeItems = useSelector((store) => store.tasks.items);
 
   return (
     <OuterWrapper>
@@ -33,12 +25,14 @@ export const Header = () => {
             <h1>Get it done!</h1>
             <p>{moment().format('ddd, D MMM YYYY')}</p>
           </TitleWrapper>
-          <div>
-            <p>Total: {handleTaskCounter}</p>
-            <button type="button" onClick={handleClearTasks}>
-              Clear all
-            </button>
-          </div>
+          {storeItems.length > 0 && (
+            <div>
+              <p>Total:{storeItems.length}</p>
+              <button type="button" onClick={handleClearTasks}>
+                Clear all
+              </button>
+            </div>
+          )}
         </HeaderWrapper>
       </InnerWrapper>
     </OuterWrapper>
