@@ -11,4 +11,4 @@ If I had more time I would add icons to the app. I would work on the responsiven
 
 ## View it live
 
-lisa-to-do.netlify.app
+https://lisa-to-do.netlify.app/
