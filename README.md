@@ -6,8 +6,6 @@ For week eleven on the Technigo Frontend developer bootcamp (second week working
 
 I created actions for adding, removing and toggling the tasks completion in the reducer. I wanted the tasks to be added like sticky notes on a bulletin board and added scroll to handle overflow as the board fills upp quickly. The layout of the task wrapper is done with grid to make the notes fill up the board in a reasonable manner. The styling is primarily done with styled components.
 
-If I had more time I would implement a local storage solution to prevent the tasks from disappearing if the page accidentally would be refreshed.
-
 ## View it live
 
 https://celadon-babka-92be04.netlify.app/
