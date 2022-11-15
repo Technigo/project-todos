@@ -11,4 +11,4 @@ If I had more time I would add icons to the app. I would work on the responsiven
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+lisa-to-do.netlify.app
