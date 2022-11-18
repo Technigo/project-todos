@@ -22,7 +22,7 @@ export const TaskList = () => {
     <InnerWrapper>
       {taskList.map((singleTask, index) => {
         return (
-          <TaskItem>
+          <TaskItem key={singleTask.id}>
             <CheckboxTask>
               <p>
                 <input

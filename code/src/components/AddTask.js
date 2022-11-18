@@ -27,8 +27,8 @@ export const AddTask = () => {
             type="text"
             value={input}
             onChange={(event) => setInput(event.target.value)} />
+          <SubmitBtn type="submit" disabled={input.length === 0}>+</SubmitBtn>
         </form>
-        <SubmitBtn type="submit" disabled={input.length === 0}>+</SubmitBtn>
       </AddInnerWrapper>
     </InnerWrapper>
   )
@@ -42,10 +42,12 @@ const AddText = styled.p`
 `
 
 const AddInnerWrapper = styled.div`
-    display: grid;
-    grid-template-columns: 1fr 40px;
     align-items: center; 
     margin-bottom: 25px;
+
+    form {
+      display: flex;
+    }
 `
 
 const Input = styled.input`
@@ -55,6 +57,7 @@ const Input = styled.input`
   border: 1px solid grey;
   overflow-wrap: break-word;
   border-radius: 3px;
+  margin-right: 10px;
 `
 
 const SubmitBtn = styled.button`
@@ -62,6 +65,5 @@ const SubmitBtn = styled.button`
   background: none;
   font-size: 2rem;
   font-weight: bold;
-  margin: 0, 10px;
   cursor: pointer;
 `
