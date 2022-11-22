@@ -1,13 +1,26 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+#5 Individual project
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Built a todo app using Redux
 
-## The problem
+Tech: React, Redux, Styled components
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Tech focus:
+
+- The role redux-toolkit plays
+
+- How to create new slices
+
+- How to create new reducers
+
+- How to create new actions
+
+- What immutability means and how to work with it
+
+- How to structure a redux store
+
+- How to interact with your store using selectors or by dispatching actions
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://teal-crepe-166bfb.netlify.app/
