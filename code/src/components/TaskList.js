@@ -84,6 +84,7 @@ const TaskText = styled.div`
   width: 90%;
   padding: 0.7rem 0.7rem 0.7rem 1.5rem;
   border-radius: 3rem;
+  word-break: break-all;
 `
 
 const Deletebtn = styled.button`
