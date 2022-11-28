@@ -26,12 +26,15 @@ const CounterWrapper = styled.div`
   display: flex;
   justify-content: center;
   font-size: 13px;
-  font-weight: 600;
-  margin: 15px 0;
-
+  font-weight: 400;
+  color: #595555; 
+  margin: 5px 0;
 
   @media (min-width: 667px) and (max-width: 1024px) {
+    margin: 10px 20px 10px 0;
   }
+      
+
   @media (min-width: 1025px) {
     margin: 10px 20px 0 0;
   }

@@ -59,12 +59,9 @@ const TaskWrapper = styled.div`
   margin: 10px 0;
   display: flex;
   flex-direction: column;
-  @media (min-width: 667px) and (max-width: 1024px) {
-  }
+ 
   @media (min-width: 1025px) {
-    padding: 0 30px;
-    margin: 10px 100px;
-    
+    margin: 10px 14px 10px 43px;
 
   }
   .task-row {
@@ -75,9 +72,11 @@ const TaskWrapper = styled.div`
     align-items: center;
   }
   @media (min-width: 667px) and (max-width: 1024px) {
+    padding: 0 5px 0 5px;
+
   }
   @media (min-width: 1025px) {
-    padding: 0 25px 0 20px;
+    padding: 0 15px 0 15px;
   }
 
   .task-text {
@@ -98,11 +97,10 @@ const RemoveButton = styled.button`
   background-color: transparent;
   @media (min-width: 667px) and (max-width: 1024px) {
 
-    }
-    @media (min-width: 1025px) {
+  }
+  @media (min-width: 1025px) {
     // padding: 0 20px;
-    }
-    
+  }
 
   .trash {
     background: #005568;
@@ -110,7 +108,7 @@ const RemoveButton = styled.button`
     height: 20px;
     display: inline-block;
     margin: 0 auto;
-    
+
     position: relative;
     -webkit-border-bottom-right-radius: 6px;
     -webkit-border-bottom-left-radius: 6px;
@@ -207,9 +205,9 @@ const Date = styled.div`
   padding-right: 5px;
   // font-family:
 
-@media (min-width: 667px) and (max-width: 1024px) {
-  font-size: 10px;
- }
+  @media (min-width: 667px) and (max-width: 1024px) {
+    font-size: 10px;
+  }
 `;
 
 const IncompleteCheckIcon = styled.img`

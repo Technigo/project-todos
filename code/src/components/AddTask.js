@@ -86,7 +86,7 @@ const Container = styled.div`
   @media (min-width: 1025px) {
     display: flex;
     flex-direction: row;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     align-items: center;
   }
 `;
@@ -96,13 +96,14 @@ const NewTaskWrapper = styled.form`
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  margin-top: 20px;
+  // margin-top: 5px;
 `;
 
 const NewTaskIconWrapper = styled.button`
   border: none;
   background: none;
-  margin-left: 15px;
+  margin-left: 5px;
+  margin-top: 25px;
   align-content: center;
   display: flex;
   border-radius: 50%;
@@ -111,19 +112,29 @@ const NewTaskIconWrapper = styled.button`
   &:hover {
     transition: all 0.3s ease-in;
     transform: scale(1.3);
+  }
+    @media (min-width: 667px) and (max-width: 1024px) {
+      margin-left: 10px;
+      margin-top: 0px;
+    }
+    @media (min-width: 1025px) {
+      margin-left: 10px;
+      margin-top: 0px;
+    }
 `;
 
 const NewTaskIcon = styled.img`
   height: 30px;
   width: 30px;
   align-self: center;
+
   @media (min-width: 667px) and (max-width: 1024px) {
-    height: 40px;
-    width: 40px;
+    height: 30px;
+    width: 30px;
   }
   @media (min-width: 1025px) {
-      height: 40px;
-  width: 40px;
+    height: 40px;
+    width: 40px;
   }
 `;
 
@@ -133,21 +144,24 @@ const NewTaskTextInput = styled.input`
   border: none;
   align-self: center;
   padding: 3px 0 3px 10px;
-  margin-left: 8px;
+  margin: 25px 0 0 0;
   height: 30px;
   font-family: "Montserrat", sans-serif;
   outline: none;
 
   @media (min-width: 667px) and (max-width: 1024px) {
-    height: 54px;
+    height: 34px;
     width: 65%;
+    margin: 0 0 0 0;
   }
 
   @media (min-width: 1025px) {
     font-size: 17px;
-    height: 54px;
+    height: 40px;
     width: 65%;
     padding: 5px 0 5px 15px;
+    margin: 0;
+
 
   }
 `;
@@ -164,14 +178,20 @@ const ButtonWrapper = styled.div`
   justify-content: center;
   align-items: center;
   align-self: center;
-  margin: 25px 0 0 0;
+  margin: 25px 10px 0 0;
+
+
+  @media (min-width: 667px) and (max-width: 1024px) {
+    margin: 50px 25px 0 0;
+  }
 
   @media (min-width: 1025px) {
-  margin: 53px 40px 0 0;
+  margin: 30px 40px 0 0;
 }
 
 .reset-button{
   height: 25px;
+  width: 80px;
   font-size: 11px;
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
@@ -181,7 +201,7 @@ const ButtonWrapper = styled.div`
   letter-spacing: 1px;
   margin: 0 5px;
   align-content: center;
-  width: 100px;
+
   background-color: #005568;
   &:hover {
   background-color: #00BBBC; 
@@ -190,11 +210,13 @@ const ButtonWrapper = styled.div`
 @media (min-width: 667px) and (max-width: 1024px) {
   font-size: 13px;
   height: 30px;
+  width: 90px;
 }
 @media (min-width: 1025px) {
   font-size: 13px;
   height: 40px;
-  margin: 11px 10px 0 0px;
+  width: 100px;
+  margin: 11px 15px 0 0px;
 }
 }
 }`;
