@@ -16,14 +16,11 @@ background-image: url("Assets/Background-web.svg");
 background-size: cover;
 background-color: var(--main-color);
 
-
 @media (min-width: 667px) and (max-width: 1024px) {
   height: 40vh;
 }
 @media (min-width: 1025px) {
-  // height: 15vh;
   min-height: 400px;
   background-image: url("Assets/background-web.svg");
-
 }
 `
