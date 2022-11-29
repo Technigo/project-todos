@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
   --light-color:#d0e7e2;
   --white:#fff;
   --border:#f2f7f8;
+  --counter:#595555;
 }
 
 code {

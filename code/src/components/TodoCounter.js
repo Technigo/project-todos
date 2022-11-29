@@ -27,13 +27,12 @@ const CounterWrapper = styled.div`
   justify-content: center;
   font-size: 13px;
   font-weight: 400;
-  color: #595555; 
+  color: var(--counter); 
   margin: 5px 0;
 
   @media (min-width: 667px) and (max-width: 1024px) {
     margin: 10px 20px 10px 0;
   }
-      
 
   @media (min-width: 1025px) {
     margin: 10px 20px 0 0;

@@ -97,7 +97,6 @@ const RemoveButton = styled.button`
     height: 20px;
     display: inline-block;
     margin: 0 auto;
-
     position: relative;
     -webkit-border-bottom-right-radius: 6px;
     -webkit-border-bottom-left-radius: 6px;
@@ -113,32 +112,28 @@ const RemoveButton = styled.button`
     right: 0;
     bottom: -50px;
     width: 250px;
-    // border: solid 2px blue;
   }
   .trash span {
     position: absolute;
     height: 3px;
     width: 20px;
-    background: #005568; //pink color
+    background: var(--second-color);
     top: -4px;
     left: -2px;
-
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
     transform: rotate(0deg);
     transition: transform 250ms;
     transform-origin: 19% 100%;
-    // border: solid 2px blue;
-    //lid
+   
   }
   .trash span:after {
     content: "";
     position: absolute;
     width: 4px;
-    //topp
     height: 2px;
-    background: #005568;
-    top: -2px; //hrä
+    background: var(--second-color);
+    top: -2px;
 
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -146,14 +141,13 @@ const RemoveButton = styled.button`
     transition: transform 250ms;
     transform-origin: 19% 100%;
     left: 8px;
-    //topp
   }
 
   .trash i {
     position: relative;
     width: 1px;
     height: 12px;
-    background: #fff;
+    background: var(--white);
     display: block;
     margin: 14px auto;
     border-radius: 3px;
@@ -163,7 +157,7 @@ const RemoveButton = styled.button`
     content: "";
     width: 1px;
     height: 12px;
-    background: #fff;
+    background: var(--white);
     position: absolute;
     left: -4px;
     bottom: 0px;
@@ -173,12 +167,11 @@ const RemoveButton = styled.button`
     content: "";
     width: 1px;
     height: 12px;
-    background: #fff;
+    background: var(--white);
     position: absolute;
     right: -4px;
     bottom: 0px;
     border-radius: 3px;
-    // border: solid 2px pink;
   }
 
   .trash:hover span {
@@ -192,9 +185,8 @@ const Date = styled.div`
   align-items: flex-end;
   margin-left: auto;
   padding-right: 5px;
-  // font-family:
 
-  @media (min-width: 667px) and (max-width: 1024px) {
+  @media (min-width: 667px) {
     font-size: 10px;
   }
 `;
@@ -203,18 +195,11 @@ const IncompleteCheckIcon = styled.img`
   height: 20px;
   width: 20px;
   transform: scale(0);
-  // opacity: 0;
-  // filter: invert(96%) sepia(1%) saturate(3393%) hue-rotate(180deg)
-  // brightness(78%) contrast(87%);
-  // transition: all 2.7s ease-out;
 `;
 
 const CheckIcon = styled.img`
   height: 23px;
   width: 23px;
-  // filter: invert(11%) sepia(5%) saturate(1643%) hue-rotate(179deg)
-  //   brightness(96%) contrast(92%);
-  // transition: all 4.3s ease-out;
   transition: all 1.5s ease-in;
   transform: scale(1.4);
   opacity: 1;
@@ -227,24 +212,7 @@ const CheckButton = styled.div`
   width: 22px;
   background-color: #fff;
   position: relative;
-
   border: 2px solid
-    ${(props) => (props.complete === true ? 'var(--text-color-light)' : '#00BBBC')};
-  //'var(--accent-color:)'
-  // border-radius: 4px;
-  //'#adb5bd' : '#212529'
-
+    ${(props) => (props.complete === true ? 'var(--text-color-light)' : 'var(--accent-color)')};
   cursor: pointer;
-  // @media (hover: hover) {
-  // &:hover ${IncompleteCheckIcon} {
-  // transition: all 0.5s ease-in;
-  // transform: scale(1);
-  // opacity: 1;
-  // }
-  // &:hover ${CheckIcon} {
-  // transition: all 0.5s ease-in;
-  // transform: scale(0);
-  // opacity: 0;
-  // }
-  // }
 `;
