@@ -15,6 +15,7 @@ const Task = ({ taskData }) => {
   const onRemoveTask = () => {
     dispatch(tasks.actions.removeTask(taskData.id));
   };
+
   return (
     <TaskWrapper>
       <div className="task-row">
@@ -22,7 +23,6 @@ const Task = ({ taskData }) => {
           role="button"
           onClick={() => onIsCompletedToggle(taskData.id)}
           complete={taskData.isCompleted}
-          onKeyDown={(e) => e.key === 'Enter' && onIsCompletedToggle(taskData.id)}
           aria-label={
             taskData.isCompleted
               ? 'task complete. press enter to toggle.'
@@ -34,7 +34,7 @@ const Task = ({ taskData }) => {
 
         <p className="task-text">{taskData.text}</p>
         <RemoveButton
-          role="button"
+          type="submit"
           onClick={() => onRemoveTask(taskData.id)}
           aria-label="Remove task">
           <span className="trash">
@@ -52,10 +52,7 @@ const Task = ({ taskData }) => {
 export default Task;
 
 const TaskWrapper = styled.div`
-  // background-color: #f2f7f8;
-  border-bottom: 3px solid #f2f7f8;;
-
-  //var(--main-color)
+  border-bottom: 3px solid var(--border);
   margin: 10px 0;
   display: flex;
   flex-direction: column;
@@ -72,18 +69,17 @@ const TaskWrapper = styled.div`
     align-items: center;
   }
   @media (min-width: 667px) and (max-width: 1024px) {
-    padding: 0 5px 0 5px;
+    padding: 0 4px 0 10px;
 
   }
   @media (min-width: 1025px) {
-    padding: 0 15px 0 15px;
+    padding: 0 15px 0 15px; 
   }
 
   .task-text {
     font-size: 14px;
     padding: 0 20px;
-  @media (min-width: 667px) and (max-width: 1024px) {
-  }
+
   @media (min-width: 1025px) {
     font-size: 16px;
     padding: 0 20px;
@@ -91,19 +87,12 @@ const TaskWrapper = styled.div`
 
 `;
 const RemoveButton = styled.button`
-  // padding: 0 20px;
   margin-left: auto;
   border: none;
   background-color: transparent;
-  @media (min-width: 667px) and (max-width: 1024px) {
-
-  }
-  @media (min-width: 1025px) {
-    // padding: 0 20px;
-  }
 
   .trash {
-    background: #005568;
+    background: var(--second-color);
     width: 17px;
     height: 20px;
     display: inline-block;
@@ -116,7 +105,7 @@ const RemoveButton = styled.button`
     -moz-border-radius-bottomleft: 6px;
     border-bottom-right-radius: 6px;
     border-bottom-left-radius: 6px;
-    //body
+
   }
   .trash:after {
     position: absolute;

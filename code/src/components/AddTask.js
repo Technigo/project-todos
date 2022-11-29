@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import taskReducer from 'reducers/todos/taskSlice';
 import { useDispatch, useSelector } from 'react-redux';
-import uniqid from 'uniqid'; // https://www.npmjs.com/package/uniqid
+import uniqid from 'uniqid';
 import styled from 'styled-components';
 import TodoCounter from 'components/TodoCounter';
 import AddButton from '../assets/AddButton.svg';
@@ -13,10 +13,13 @@ const AddTask = () => {
   const onRemoveAllTasks = () => {
     dispatch(taskReducer.actions.removeAllTasks(taskList));
   };
-  // const onSetAllTasksDone = () => { dispatch(taskReducer.actions.setAllTasksDone(taskList)); };
+
+  const onSetAllTasksDone = () => {
+    dispatch(taskReducer.actions.setAllTasksDone(taskList));
+  };
+
   const onAddTask = (event) => {
     event.preventDefault();
-
     dispatch(
       taskReducer.actions.addTask({
         id: uniqid(),
@@ -43,9 +46,7 @@ const AddTask = () => {
           type="submit"
           disabled={inputValue.length < 2 || inputValue.length > 25}
           aria-label="Create new task button.">
-          <NewTaskIcon
-            src={AddButton}
-            alt="Add new task." />
+          <NewTaskIcon src={AddButton} alt="Add new task." />
         </NewTaskIconWrapper>
       </NewTaskWrapper>
       <Wrapper>
@@ -53,8 +54,8 @@ const AddTask = () => {
           <button
             className="reset-button"
             type="button"
-            onClick={() => onRemoveAllTasks(taskList)}>
-            All Done
+            onClick={() => onSetAllTasksDone(taskList)}>
+            Check all
           </button>
           <button
             className="reset-button"
@@ -77,12 +78,12 @@ const Container = styled.div`
   justify-content: center;
   align-content: center;
   background-color: var(--light-color);
- 
 
   @media (min-width: 667px) and (max-width: 1024px) {
     display: flex;
     flex-direction: row;
   }
+
   @media (min-width: 1025px) {
     display: flex;
     flex-direction: row;
@@ -96,7 +97,6 @@ const NewTaskWrapper = styled.form`
   flex-direction: row;
   justify-content: center;
   width: 100%;
-  // margin-top: 5px;
 `;
 
 const NewTaskIconWrapper = styled.button`
@@ -113,19 +113,15 @@ const NewTaskIconWrapper = styled.button`
     transition: all 0.3s ease-in;
     transform: scale(1.3);
   }
-    @media (min-width: 667px) and (max-width: 1024px) {
-      margin-left: 10px;
-      margin-top: 0px;
-    }
-    @media (min-width: 1025px) {
-      margin-left: 10px;
-      margin-top: 0px;
-    }
+  @media (min-width: 667px) {
+    margin-left: 10px;
+    margin-top: 0;
+  }
 `;
 
 const NewTaskIcon = styled.img`
-  height: 30px;
-  width: 30px;
+  height: 25px;
+  width: 25px;
   align-self: center;
 
   @media (min-width: 667px) and (max-width: 1024px) {
@@ -152,7 +148,7 @@ const NewTaskTextInput = styled.input`
   @media (min-width: 667px) and (max-width: 1024px) {
     height: 34px;
     width: 65%;
-    margin: 0 0 0 0;
+    margin: 0;
   }
 
   @media (min-width: 1025px) {
@@ -161,8 +157,6 @@ const NewTaskTextInput = styled.input`
     width: 65%;
     padding: 5px 0 5px 15px;
     margin: 0;
-
-
   }
 `;
 const Wrapper = styled.div`
@@ -197,14 +191,14 @@ const ButtonWrapper = styled.div`
   font-weight: 600;
   border: none;
   border-radius: 3px;
-  color: #fff;
+  color: var(--white);
   letter-spacing: 1px;
   margin: 0 5px;
   align-content: center;
 
-  background-color: #005568;
+  background-color: var(--second-color);
   &:hover {
-  background-color: #00BBBC; 
+  background-color: var(--accent-color); 
   
 }
 @media (min-width: 667px) and (max-width: 1024px) {
@@ -216,9 +210,7 @@ const ButtonWrapper = styled.div`
   font-size: 13px;
   height: 40px;
   width: 100px;
-  margin: 11px 15px 0 0px;
+  margin: 11px 15px 0 0;
 }
 }
 }`;
-
-/*  <button type="button" onClick={() => onSetAllTasksDone(taskList)}>All Done</button> */

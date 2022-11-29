@@ -28,6 +28,6 @@ const StyledImg = styled.img`
 
   @media (min-width: 1025px) {
     width: 45%;
-    padding: 65px 0 60px 0;
+    padding: 95px 0 60px 0;
   }
 `;
