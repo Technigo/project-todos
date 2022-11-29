@@ -1,13 +1,18 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+Todolist built in Redux with reducers. 
+You can add tasks, list tasks and toggle whether a task is done or not.
+You can also delete a task or all tasks and set every task done.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+<img width="598" alt="Screenshot 2022-11-29 at 15 05 41" src="https://user-images.githubusercontent.com/108176641/204550171-7603972b-7fe5-4d5d-9b89-9a09b0e2bb33.png">
+
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started off with a figma file to plan my week and draw some wireframes.
+This week I spent some extra time on design and figma, made some icons matching the image in the header.
+When I have time I will make a local storage and solve a bug with the check all button. I would also like to add another slicer for filters.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://petrastodoapp.netlify.app/
