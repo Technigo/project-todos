@@ -20,14 +20,12 @@ const TodoList = () => {
   const todosTodo = allTodos.filter((todo) => !todo.isDone)
   const doneTodos = allTodos.filter((todo) => todo.isDone)
 
-  console.log(todosTodo)
-
   return (
     <>
       <h2>To-do ({todosTodo.length})</h2>
 
       {todosTodo.length === 0 && (
-        <p>Wow you are all DONE baby</p>
+        <p>You are all DONE! *high five*</p>
       )}
 
       {todosTodo.map((todo, index) => (<TodoItem

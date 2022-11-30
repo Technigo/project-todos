@@ -7,10 +7,13 @@ import styled from 'styled-components/macro'
 const AddTodoForm = styled.form`
   padding-top: 2.5em;
   padding-bottom: 1.5em;
+  display: flex;
+  align-items: center;
 `
 
-const FormLabel = styled.label`
-  font-size: 100%;
+const FormLabel = styled.p`
+  display: inline-block;
+  padding:0;
 `
 
 const TextInput = styled.input`
@@ -19,7 +22,13 @@ const TextInput = styled.input`
   font-family: 'Gaegu', cursive;
   background: transparent;
   margin: 5px;
-  font-size: 18px;
+  font-size: 21px;
+  width: 185px;
+  border-bottom: 2px dashed;
+
+  :focus {
+    outline: none;
+  }
 `
 
 const AddButton = styled.button`
@@ -28,9 +37,12 @@ const AddButton = styled.button`
   font-family: 'Gaegu', cursive;
   background: transparent;
   border: none;
+  font-weight: bold;
+  padding:0;
+  margin-left:4px;
 
-  &:hover {
-    font-weight: bold;
+  :disabled {
+    color: black;
   }
 `
 
@@ -49,11 +61,13 @@ const AddTodo = () => {
 
   return (
     <AddTodoForm onSubmit={onFormSubmit}>
-      <FormLabel>
-         New task:
+      <label>
+        <FormLabel>
+          New task:
+        </FormLabel>
         <TextInput type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
-      </FormLabel>
-      <AddButton type="submit">ADD</AddButton>
+      </label>
+      <AddButton type="submit" disabled={inputValue.length === 0}>ADD</AddButton>
     </AddTodoForm>
   )
 }

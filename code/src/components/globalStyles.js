@@ -6,15 +6,17 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
     background-color: #fefefa;
     font-family: 'Gaegu', cursive;
-    font-size: 20px;
-    line-height: 18px;
+    font-size: 21px;
+    line-height: 0.9em;
     display: grid;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
   }
 
   h2 {
-    line-height: 0.7em;
+    margin: 0px;
+    line-height: 1.5em;
     text-transform: uppercase;
   }
 `
