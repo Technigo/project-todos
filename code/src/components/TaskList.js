@@ -6,8 +6,8 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import { InnerWrapper, OuterWrapper } from 'styles/GlobalStyles';
-import styled from 'styled-components';
+import { TaskListWrapper } from 'styles/GlobalStyles';
+import styled from 'styled-components/macro';
 
 export const TaskList = () => {
   const dispatch = useDispatch();
@@ -35,49 +35,50 @@ export const TaskList = () => {
   };
 
   return (
-    <OuterWrapper>
-      <InnerWrapper>
-        {todoList.length > 0 &&
-          todoList.map((singleTask, index) => {
-            return (
-              <TaskWrapper key={singleTask.id}>
-                <Task>
-                  <label>
-                    <input
-                      type="checkbox"
-                      checked={singleTask.complete}
-                      onChange={() => handleTaskToggle(singleTask.id)}
-                    />
-                  </label>
-                  <Paragraph>{singleTask.text} </Paragraph>
-                </Task>
-                <Button type="button" onClick={() => handleRemoveTask(index)}>
-                  🗑
-                </Button>
-              </TaskWrapper>
-            );
-          })}
-      </InnerWrapper>
-    </OuterWrapper>
+    <TaskListWrapper>
+      {todoList.length > 0 &&
+        todoList.map((singleTask, index) => {
+          return (
+            <TaskWrapper key={singleTask.id}>
+              <Task>
+                <input
+                  id={singleTask.id}
+                  type="checkbox"
+                  checked={singleTask.complete}
+                  onChange={() => handleTaskToggle(singleTask.id)}
+                />
+                <label htmlFor={singleTask.id} />
+                <Paragraph>
+                  <p>{singleTask.text}</p>
+                  <p>{singleTask.created.toLowerCase()}</p>
+                </Paragraph>
+              </Task>
+              <Button type="button" onClick={() => handleRemoveTask(index)}>
+                🗑
+              </Button>
+            </TaskWrapper>
+          );
+        })}
+    </TaskListWrapper>
   );
 };
 
 export default TaskList;
 
-const Paragraph = styled.p`
-  color: red;
+const Paragraph = styled.div`
+  display: flex;
+  flex-direction: column;
 `;
 
 const TaskWrapper = styled.div`
   display: flex;
   justify-content: space-between;
-  background: white;
+  background: pink;
   border-radius: 10px;
   margin-bottom: 5px;
 `;
 
 const Task = styled.div`
-  width: 100%;
   display: flex;
 `;
 

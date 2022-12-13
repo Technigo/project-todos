@@ -3,7 +3,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import { InnerWrapper, OuterWrapper } from 'styles/GlobalStyles';
+import { TaskListWrapper } from 'styles/GlobalStyles';
+import moment from 'moment';
 
 export const TaskInput = () => {
   // useState to set new tasks
@@ -19,31 +20,30 @@ export const TaskInput = () => {
       id: Date.now().toString(),
       text: inputValue,
       complete: false,
-      created: Date.now().toString(),
+      created: moment().format('ll'),
     };
+    console.log(newTask);
     dispatch(tasks.actions.addTask(newTask));
     // Clear input
     setInputValue('');
   };
 
   return (
-    <OuterWrapper>
-      <InnerWrapper>
-        <form onSubmit={onFormSubmit}>
-          <button type="submit">+</button>
-          <label htmlFor="a">
-            <input
-              type="text"
-              value={inputValue}
-              required
-              placeholder="Add task"
-              maxLength="100"
-              onChange={(event) => setInputValue(event.target.value)}
-            />
-          </label>
-        </form>
-      </InnerWrapper>
-    </OuterWrapper>
+    <TaskListWrapper>
+      <form onSubmit={onFormSubmit}>
+        <label htmlFor="a">
+          <input
+            type="text"
+            value={inputValue}
+            required
+            placeholder="Add task"
+            maxLength="100"
+            onChange={(event) => setInputValue(event.target.value)}
+          />
+        </label>
+        <button type="submit">+</button>
+      </form>
+    </TaskListWrapper>
   );
 };
 
