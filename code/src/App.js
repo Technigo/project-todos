@@ -29,14 +29,11 @@ export const App = () => {
           <TaskList />
         </InnerWrapper>
         <Footer>
-          <div>
-            <p>Created as a project at Technigo</p>
-            <p>
-              ©{' '}
-              <a href="mailto: saralie.bognandi@gmail.com">Saralie Bognandi</a>{' '}
-              2022
-            </p>
-          </div>
+          <p>Created as a project at Technigo</p>
+          <p>
+            © <a href="mailto: saralie.bognandi@gmail.com">Saralie Bognandi</a>{' '}
+            2022
+          </p>
         </Footer>
       </OuterWrapper>
     </Provider>
@@ -48,4 +45,5 @@ const Footer = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  text-align: center;
 `;
