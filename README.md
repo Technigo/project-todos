@@ -5,14 +5,8 @@ Week 11 at technigo bootcamp. This weeks project was to create a to-do list in R
 ## The problem
 
 This is the third week of using Redux and after this week it feels more clear how to use it.
-In this project I have got better knowledge in:
-✓ The role redux-toolkit plays
-✓ How to create new slices
-✓ How to create new reducers
-✓ How to create new actions
-✓ What immutability means and how to work with it
-✓ How to structure a redux store
-✓ How to interact with your store using selectors or by dispatching actions
+In this project I have got better knowledge in the role redux-toolkit plays, how to create new slices, reducers and new actions.
+I learned how to structure a redux store and to interact with your store using selectors or by dispatching actions
 
 ## View it live
 
