@@ -4,13 +4,15 @@ export const Form = styled.form`
   display: flex;
   align-items: center;
   width: 100%;
+  height: 60px;
+
 `
 
 export const InputField = styled.input`
-  background-color: #367857;
+  background-color: #fff;
   border-radius: 20px;
   border: none;
-  color: white;
+  color: black;
   width: 100%;
   cursor: pointer;
   padding: 10px 20px;
@@ -23,7 +25,7 @@ export const InputField = styled.input`
     outline: none;
 }
 @media (min-width: ${({ theme }) => theme.tablet}){
-  height: 70px;
+  height: 60px;
   padding: 10px 40px;
   border-radius: 70px;
   
@@ -34,7 +36,7 @@ export const InputField = styled.input`
 
 `
 export const InputBox = styled.div`
-  background-color: #367857;
+  background-color: #fff;
   border-radius: 20px;
   width: 100%;
   margin-bottom: 30px;
@@ -52,7 +54,7 @@ export const Label = styled.label`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  background-color:  #367857;
+  background-color: #fff;
   border-radius: 20px;
 
   @media (min-width: ${({ theme }) => theme.tablet}){
@@ -69,7 +71,7 @@ width: 30px;
 height: 30px;
 
 &:hover svg{
-      fill: #fff;
+      fill: #6ebaba;
     }
 
 

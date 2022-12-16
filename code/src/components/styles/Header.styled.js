@@ -35,7 +35,7 @@ export const StyledHeader = styled.header`
 export const StyledH1 = styled.h1`
   font-size: 3.2rem;
   text-align: center;
-  color: #367857;
+  color: #fff;
   margin-top: 30px;
   margin-bottom: 30px;
   font-weight: 500;
@@ -43,9 +43,9 @@ export const StyledH1 = styled.h1`
 `
 
 export const Counter = styled.p`
-background-color: #377958;
-border-radius: 20px;
-color: white;
+    background-color: #ffffff;
+    border-radius: 20px;
+    color: #2e708c;
 font-size: 14px;
 padding: 2px 20px;
 height: 100%;

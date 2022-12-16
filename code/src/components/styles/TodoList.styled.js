@@ -1,6 +1,6 @@
 import styled from 'styled-components/macro'
-import IconUnchecked from '../../images/IconUnchecked.png';
-import IconChecked from '../../images/IconChecked.png';
+import Unchecked1 from '../../images/Unchecked1.png';
+import Checked1 from '../../images/Checked1.png';
 
 export const Article = styled.article`
 padding: 5px 0px;
@@ -20,7 +20,7 @@ export const EmptyStateDiv = styled.div`
   align-items: center;
 
   h2 {
-    color: ${({ theme }) => theme.colors.body};
+    color: #ffffff;
     font-size: 20px;
     margin-top: 30px;
     text-align: center;
@@ -28,7 +28,7 @@ export const EmptyStateDiv = styled.div`
 
   p {
     font-style: italic;
-    color: ${({ theme }) => theme.colors.body};
+    color: #ffffff;
     font-size: 1rem;
     display: flex;
   }
@@ -37,7 +37,7 @@ export const EmptyStateDiv = styled.div`
     mix-blend-mode: luminosity;
   }
   @media (min-width: ${({ theme }) => theme.tablet}){
-    margin-top: 70px;
+    margin-top: 40px;
 
   }
   @media (min-width: ${({ theme }) => theme.desktop}){
@@ -56,6 +56,10 @@ export const TodoDiv = styled.div`
   }
   label > p {
     width: 90%;
+  }
+  p {
+    color: #ffffff;
+
   }
 
   input[type="checkbox"] {
@@ -77,7 +81,7 @@ input[type="checkbox"] + p::after{
   left: -15px;
   width: 30px;
   height: 30px;
-  background-image: url(${IconUnchecked});
+  background-image: url(${Unchecked1});
   background-size: cover;
 }
 
@@ -89,7 +93,7 @@ input[type="checkbox"]:checked + p::before {
   top: 0;
   width: 30px;
   height: 30px;
-  background-image: url(${IconChecked});
+  background-image: url(${Checked1});
   background-size: cover;
   z-index: 1;
   transform: scale(1);
@@ -104,7 +108,7 @@ input[type="checkbox"] + p::before {
   top: 0;
   width: 30px;
   height: 30px;
-  background-image: url(${IconChecked});
+  background-image: url(${Checked1});
   background-size: cover;
   transform: scale(0);
   opacity: 0;
@@ -117,9 +121,9 @@ input[type="checkbox"] + p::before {
   }
   
   input[type="checkbox"]:checked + p::before, input[type="checkbox"] + p::after, input[type="checkbox"]:checked + p::after {
-    top: -5px;
-    width: 40px;
-    height: 40px;
+    top: 5px;
+    width: 25px;
+    height: 25px;
   }
 }
 `
@@ -127,7 +131,7 @@ export const TimeStampStyling = styled.p`
   border-radius: 20px;
   padding: 1px 10px;
   font-size: 0.8rem;
-  color: #5A7869;
+  color: #ffffff;
   display: none;
   white-space: nowrap;
   margin-top: 3px;
@@ -142,7 +146,7 @@ export const TimeStampStyling = styled.p`
 `
 export const Deadline = styled.p`
     font-size: 0.8rem;
-    color: ${({ theme }) => theme.colors.body};
+    color: #ffffff;
     margin-left: 34px;
 
     @media (min-width: ${({ theme }) => theme.tablet}){
@@ -155,13 +159,11 @@ export const AddedLine = styled.p`
 
   @media (min-width: ${({ theme }) => theme.tablet}){
     display: block;
-    border-bottom: 1px solid #9fdfbf;
     text-align: right;
-    width: 91%;
-    position: absolute;
-    right: 54px;
+    width: 100%;
+    padding-right: 10%;
     top: 170px;
-    color: #5a7869;
+    color: #ffffff;
     font-size: 0.8rem;
     font-weight: bold;
   }

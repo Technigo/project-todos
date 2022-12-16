@@ -2,7 +2,7 @@ import styled from 'styled-components/macro'
 
 export const AddButton = styled.button`
   border: none;
-  background-color: ${({ theme }) => theme.colors.darkgreen};
+  background-color: #408498;  
   border-radius: 20px;
   cursor: pointer;
   font-size: 0.8rem;
@@ -41,10 +41,10 @@ export const RemoveButton = styled.button`
 
 export const ClearAllBtn = styled.button`
   border: none;
-  background-color: ${({ theme }) => theme.colors.lightgreen};
+  background-color: #ffffff8c;
   border-radius: 20px;
   cursor: pointer;
-  color: #367857;
+  color: #1d5d90;
   font-size: 0.8rem;
   height: 100%;
   padding: 6px 12px;

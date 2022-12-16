@@ -3,7 +3,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 import { IconContext } from 'react-icons';
 import { IoCloseOutline } from 'react-icons/io5';
-import { BsArrowDownShort } from 'react-icons/bs';
 import NewTodo from './NewTodo';
 import { TodoDiv, Article, TimeStampStyling, EmptyStateDiv, Deadline, AddedLine } from './styles/TodoList.styled';
 import { FlexDiv, OuterWrapper, Innerwrapper } from './styles/Flex.styled';
@@ -23,12 +22,9 @@ const TodoList = () => {
   const onRemoveTodo = (index) => {
     dispatch(todos.actions.removeTodo(index))
   }
-  // Variables for the timestamp
-  const TimeStampHoursMinutes = (id) => `${String(new Date(id).getHours()).padStart(2, '0')}:${String(new Date(id).getMinutes()).padStart(2, '0')}`
-  const TimeStampDate = (id) => `${`${new Date(id).toLocaleDateString('en-us', { day: 'numeric' })} ${new Date(id).toLocaleDateString('en-us', { month: 'short' })}`}`
 
   // to set attributes for the react icons
-  const IconColor = useMemo(() => ({ color: '#5A7869', className: 'react-icons' }), []);
+  const IconColor = useMemo(() => ({ color: '#9fdfbf', className: 'react-icons' }), []);
 
   return (
     <IconContext.Provider value={IconColor}>
@@ -36,7 +32,10 @@ const TodoList = () => {
         <Innerwrapper>
           <div>
             <Header />
-            <AddedLine>added</AddedLine>
+            <FlexDiv>
+              <NewTodo />
+            </FlexDiv>
+            {allTodos.length !== 0 && (<AddedLine>complete before</AddedLine>)}
             {allTodos.map((todo, index) => {
               return (
                 <Article key={todo.id}>
@@ -49,10 +48,9 @@ const TodoList = () => {
                         name={`input-${todo.id}`}
                         id={todo.id} />
                       <p>{todo.name}</p>
-                      {todo.selectedDate && <Deadline> complete before: {`${new Date(todo.selectedDate).toLocaleDateString('en-us', { day: 'numeric' })} ${new Date(todo.selectedDate).toLocaleDateString('en-us', { month: 'short' })}`}</Deadline>}
                     </label>
                     <TimeStampStyling>
-                      {TimeStampDate(todo.id)} {TimeStampHoursMinutes(todo.id)}
+                      {todo.selectedDate && <Deadline>{`${new Date(todo.selectedDate).toLocaleDateString('en-us', { day: 'numeric' })} ${new Date(todo.selectedDate).toLocaleDateString('en-us', { month: 'short' })}`}</Deadline>}
                     </TimeStampStyling>
                     <RemoveButton
                       type="button"
@@ -68,12 +66,9 @@ const TodoList = () => {
               <EmptyStateDiv>
                 <img src={EmptyState} alt="" />
                 <h2>Yay! Looks like there&apos;s no task left to do. Go outside and play!</h2>
-                <p>Or create a new todo<BsArrowDownShort /></p>
+                <p>Or create a new todo</p>
               </EmptyStateDiv>)}
           </div>
-          <FlexDiv>
-            <NewTodo />
-          </FlexDiv>
         </Innerwrapper>
       </OuterWrapper>
     </IconContext.Provider>

@@ -5,7 +5,6 @@ import todos from 'reducers/todos';
 import GlobalStyles from 'components/styles/Global';
 import TodoList from 'components/TodoList';
 import { ThemeProvider } from 'styled-components';
-import { BackgroundDiv } from './components/styles/Flex.styled'
 
 export const App = () => {
   const reducer = combineReducers({
@@ -30,9 +29,7 @@ export const App = () => {
     <Provider store={store}>
       <ThemeProvider theme={theme}>
         <GlobalStyles />
-        <BackgroundDiv>
-          <TodoList />
-        </BackgroundDiv>
+        <TodoList />
       </ThemeProvider>
     </Provider>
   );
