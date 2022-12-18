@@ -18,6 +18,7 @@ export const EmptyStateDiv = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-bottom: 60px;
 
   h2 {
     color: #ffffff;
