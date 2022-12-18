@@ -38,8 +38,6 @@ p, h1, h2, h3, h4, h5, h6 {
 }
 
 //styling
-@import url('https://fonts.googleapis.com/css2?family=Inter&family=Monoton&display=swap');
-
 #root {
   height: 100%;
 }

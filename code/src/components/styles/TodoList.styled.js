@@ -127,7 +127,7 @@ input[type="checkbox"] + p::before {
   }
 }
 `
-export const TimeStampStyling = styled.p`
+export const TimeStampStyling = styled.div`
   border-radius: 20px;
   padding: 1px 10px;
   font-size: 0.8rem;
