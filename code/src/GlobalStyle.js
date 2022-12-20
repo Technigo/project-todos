@@ -41,7 +41,7 @@ export const HeaderContainer = styled.header`
 export const OuterWrapper = styled.section`
   background: var(--clr-secondary);
   color: var(--clr-main);
-  min-height: 80vh;
+  min-height: 70vh;
   display: flex;
   flex-direction: column;
   align-items: center;

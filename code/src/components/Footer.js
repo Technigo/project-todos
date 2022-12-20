@@ -13,7 +13,7 @@ export const Footer = () => {
 const FooterWrapper = styled.div`
 display: flex;
 justify-content: flex-end;
-margin-right: -100px;
+/* border: 2px solid red */
 `;
 
 const FooterText = styled.h2`
@@ -27,4 +27,13 @@ const FooterText = styled.h2`
   2px 2px 1px var(--clr-grey);
   transform: rotate(-30deg);
   transform-origin: bottom left;
+  margin-top: -100px;
+  margin-right: -250px;
+
+  @media (max-width: 910px) {
+    transform: none;
+  
+    margin-top: -50px;
+    margin-right: 0px;
+    }
 `;
