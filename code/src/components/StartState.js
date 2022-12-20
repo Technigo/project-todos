@@ -27,7 +27,7 @@ export const StartState = () => {
             </StartBtn>
           </ImageWrapper>
           <BottomText>
-          psst! or just take a coffee break!{' '}
+          psst! or just take a <br /> coffee break!{' '}
           </BottomText>
         </OuterWrapper>
       )}
