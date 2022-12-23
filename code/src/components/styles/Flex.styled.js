@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 export const OuterWrapper = styled.section`
   background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   border: 2px solid white;
