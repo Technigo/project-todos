@@ -26,7 +26,7 @@ const Add = () => {
         onChange={(event) => setInputValue(event.target.value)} />
       <Button
         color="var(--color-gray)"
-        disabled={inputValue.length < 2}>
+        disabled={inputValue.length < 2 || inputValue.length > 18}>
         <img src="images/add.svg" alt="add icon" />
       </Button>
     </StyledForm>

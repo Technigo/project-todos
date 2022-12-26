@@ -23,7 +23,7 @@ const ToDoList = () => {
           <StyledArticle>
             <input
               id="todo"
-              type="checkbox"
+              type="radio"
               checked={singleToDo.isDone}
               onChange={() => IsDoneToggle(singleToDo.id)} />
             <StyledBorder>
