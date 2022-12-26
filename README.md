@@ -5,4 +5,4 @@ This assignment was to create a to do list. you should be able to turn on and of
 I would've added a show and hide function for completed todos, style the checkbox, create a popper menu bar for more options and features for each item, as well as making the container scrollable if you have many items.
 
 ## View it live
-https://cheerful-squirrel-2b6494.netlify.app/
+https://letasks.netlify.app/
