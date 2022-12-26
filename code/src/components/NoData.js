@@ -16,14 +16,14 @@ const NoData = () => {
 export default NoData
 
 export const StyledContainer = styled.div`
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const StyledParagraph = styled.p`
-    color: var(--color-gray);
-    font-size: 1.25rem;
+  color: var(--color-gray);
+  font-size: 1.25rem;
 `;

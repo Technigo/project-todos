@@ -15,21 +15,21 @@ const Header = () => {
 export default Header;
 
 export const StyledHeader = styled.header`
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 1px solid var(--color-lightgray);
-    padding: 0 0 0.6rem 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--color-lightgray);
+  padding: 0 0 0.6rem 0;
 `;
 
 export const StyledText = styled.p`
-    font-size: 1.688rem;
-    font-weight: 800;
+  font-size: 1.688rem;
+  font-weight: 800;
 `;
 
 export const StyledAmount = styled.p`
-    font-size: 1.688rem;
-    color: var(--color-gray);
-    font-weight: 800;
+  font-size: 1.688rem;
+  color: var(--color-gray);
+  font-weight: 800;
 `;

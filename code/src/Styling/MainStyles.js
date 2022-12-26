@@ -8,6 +8,9 @@ export const OuterWrapper = styled.div`
 `;
 
 export const InnerWrapper = styled.div`
+    overflow: hidden;
+    overflow-y: scroll;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;

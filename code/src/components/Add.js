@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components/macro';
 
 import toDoItems from 'reducers/todos';
-import Button from './Button';
 
 const Add = () => {
   const [inputValue, setInputValue] = useState('');
@@ -19,8 +18,17 @@ const Add = () => {
 
   return (
     <StyledForm onSubmit={onFormSubmit}>
-      <StyledInput id="add" type="text" placeholder="Add to do" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
-      <Button src="images/add.svg" alt="add icon" color="var(--color-gray)" />
+      <StyledInput
+        id="add"
+        type="text"
+        placeholder="Add to do"
+        value={inputValue}
+        onChange={(event) => setInputValue(event.target.value)} />
+      <Button
+        color="var(--color-gray)"
+        disabled={inputValue.length < 2}>
+        <img src="images/add.svg" alt="add icon" />
+      </Button>
     </StyledForm>
   )
 }
@@ -45,4 +53,12 @@ export const StyledInput = styled.input`
   &:focus-visible {
       outline: none;
     }
+`;
+
+export const Button = styled.button`
+  border: none;
+  background-color: var(--color-gray);
+  width: 1.30rem;
+  height: 1.30rem;
+  border-radius: 50%;
 `;
