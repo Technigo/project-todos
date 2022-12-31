@@ -13,14 +13,18 @@ code {
 }
 
 [type="checkbox"]{
-  opacity: 0;
+  opacity: 100px;
+  margin-top: 15px;
+  width: 18px;
+  height: 18px;
 }
 
-[type="checkbox"] + label{
-  position: relative;
+/* [type="checkbox"] + label{
+  position: absolute;
   padding-left: 30px;
   cursor: pointer;
   display: inline-block;
+  z-index: 0;
 }
 
 [type="checkbox"] + label::before{
@@ -70,4 +74,4 @@ code {
   background-size: contain;
   transform: scale(0);
   opacity: 0;
-}
+} */

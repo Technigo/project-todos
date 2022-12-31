@@ -12,11 +12,12 @@ export const OuterWrapper = styled.div`
 export const InnerWrapper = styled.section`
 max-width: 940px;
 width: 90%;
-height: 100vh;
+height: 100%;
 margin: 0 auto;
 background-color: #fbdfcf;
 display: flex;
 flex-direction: column;
+min-height: 100vh;
 @media (min-width: 667px) and (max-width: 1024px) {
   width: 75%;
 }
