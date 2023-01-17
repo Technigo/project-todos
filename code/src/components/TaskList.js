@@ -4,7 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/task';
 
 const TaskList = () => {
+  // Shows total number of tasks in the list
   const taskList = useSelector((backpack) => backpack.tasks.items);
+
+  // Show number of completed tasks
+  const completedTasks = taskList.filter((task) => task.isDone);
 
   const dispatch = useDispatch();
 
@@ -23,11 +27,11 @@ const TaskList = () => {
             <label className="Is this task done">
               <input type="checkbox" checked={singleTask.isDone} onChange={() => onIsDoneToggle(singleTask.id)} />
               <button onClick={() => onDeleteTaskBtnClick(index)} type="button">Remove task</button>
+              <p>Completed tasks:{' '}
+                <span style={{ fontWeight: 600 }}>{completedTasks.length} / {taskList.length}</span>
+              </p>
             </label>
           </article>
-        //                 style="float: left"
-        //              => style={{float: 'left'}}
-        //                 style={{ visibility: 'hidden' }}
         );
       })}
     </section>
