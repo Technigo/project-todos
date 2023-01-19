@@ -23,7 +23,7 @@ export const App = () => {
 }
 
 const WebStyle = styled.div`
-  height: 100%;
+  height: 100vh;
   width: 100vw;
   background-color: rgb(168, 173, 182);
   display: grid;
