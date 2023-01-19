@@ -5,6 +5,7 @@ import TodoItem from './TodoItem';
 
 const TodoList = () => {
   const todoList = useSelector(selectTodoList)
+  const todoCounter = todoList.length
   const dispatch = useDispatch()
   const allDone = () => {
     dispatch(completeAll())
@@ -19,6 +20,7 @@ const TodoList = () => {
         <button type="button" onClick={allDone}>complete</button>
         <button type="button" onClick={allDeleted}>delete</button>
       </div>
+      {todoCounter} remaining todos
       {
         todoList.map((item) => (
           <TodoItem
