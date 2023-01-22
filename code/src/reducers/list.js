@@ -16,7 +16,7 @@ export const list = createSlice({
   reducers: {
 
     toggleItem: (state, action) => {
-      console.log(state)
+      console.log('toggle item', state)
       console.log(action)
       state.items.forEach((item) => {
         if (item.id === action.payload) {
@@ -27,8 +27,6 @@ export const list = createSlice({
 
     addItem: (state, action) => {
       state.items.push(action.payload)
-      const timeStamp = Date.now()
-      console.log(new Intl.DateTimeFormat('en-US', { year: 'numeric', month: '2-digit', day: '2-digit', hour: '2-digit', minute: '2-digit', second: '2-digit' }).format(timeStamp))
     },
 
     deleteItem: (state, action) => {
