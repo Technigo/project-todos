@@ -49,7 +49,7 @@ const TodoList = () => {
 
 const ArticleWrapper = styled.article`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   padding: 10px;
 `
 const TodoWrapper = styled.div`

@@ -3,9 +3,9 @@ import styled from 'styled-components'
 export const OuterWrapper = styled.main`
   width: 100%;
   height: 100%;
-  background-color: transparent;
+  background-color: whitesmoke;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   @media (max-width: 668px){
     justify-content: center;
@@ -14,7 +14,6 @@ export const OuterWrapper = styled.main`
 export const InnerWrapper = styled.div`
   width: 55%;
   height: 100vh;
-  margin-left: 30px;
   margin-top: 15px;
   background-color: transparent;
   padding: 10px;
