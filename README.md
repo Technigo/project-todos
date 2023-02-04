@@ -22,7 +22,7 @@ Describe how you approached to problem, and what tools and techniques you used t
 
 ## View it live
 
-neverendingpostit.netlify.app
+[neverendingpostit.netlify.app](https://neverendingpostit.netlify.app)
 
 ## Running locally
 
