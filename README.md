@@ -7,4 +7,4 @@ I mapped in figma before starting, mapped out the reducer, components and stylin
 If I had more time I would have some output.
 
 ## View it live
-
+https://incredible-concha-b9b5bd.netlify.app/
