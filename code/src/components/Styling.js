@@ -22,11 +22,3 @@ export const InnerWrapper = styled.section`
     width: 30%;
   }
   `
-
-// White: #FCF8E8
-// Green: #94B49F
-// Lightpurple: #ECB390
-// Darkpurple: #DF7861
-
-// font-family: 'Montserrat', sans-serif;
-// font-family: 'Sacramento', cursive;
