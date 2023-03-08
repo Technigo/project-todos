@@ -21,15 +21,6 @@ const TaskInput = () => {
       timeStamp: moment().format('ll')
     }));
     setNewTask('');
-
-  /*  event.preventDefault()
-      const newTodo = {
-        id: Date.now().toString(),
-        text: newTask,
-        isComplete: false
-      dispatch(tasks.actions.addTask(newTodo))
-      setNewTask('')
-} */
   }
   const handleNewTaskChange = (event) => {
     setNewTask(event.target.value)

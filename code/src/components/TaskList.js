@@ -2,7 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items)
@@ -20,18 +20,18 @@ const TaskList = () => {
     <section>
       {taskList.map((singleTask) => {
         return (
-          <StyledTask>
+          <StyledTask key={singleTask.id}>
             <Checkbox
               type="checkbox"
               name="tasks"
               checked={singleTask.complete}
               onChange={() => onIsCompleteToggle(singleTask.id)}
               id={singleTask.id} />
-            <p>{singleTask.text}
+            <div>{singleTask.text}
               <StyledTimeStamp>
                 {singleTask.timeStamp.toLowerCase()}
               </StyledTimeStamp>
-            </p>
+            </div>
             <StyledDeleteButton type="button" onClick={onRemoveButtonClick}>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -114,7 +114,7 @@ export const Checkbox = styled.input`
   text-decoration: line-through;
 }
 `
-const StyledTimeStamp = styled.div`
+const StyledTimeStamp = styled.p`
 color: gray;
 `
 const StyledDeleteButton = styled.button`

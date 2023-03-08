@@ -1,6 +1,6 @@
 import React from 'react';
 import { OuterWrapper, Container } from 'styles/GlobalStyles';
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import TaskCounter from './TaskCounter';
 import TaskInput from './TaskInput';
 import TaskList from './TaskList';
@@ -22,7 +22,7 @@ export default TaskPage
 
 const StyledH1 = styled.h1`
   font-family: "Julius Sans One";
-  font-size: 2.2em;
+  font-size: 2em;
   font-weight: 100;
  
   @media screen and (min-width: 667px) {

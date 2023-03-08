@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 import React from 'react';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import moment from 'moment'
 
 const TaskCounter = () => {
