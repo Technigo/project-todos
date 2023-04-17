@@ -3,7 +3,7 @@
 // src/components/TaskList.js
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { toggleComplete } from '../reducers/task'
+import { toggleComplete } from '../reducers/tasks'
 
 const TaskList = () => {
   const tasks = useSelector((state) => state.tasks)
