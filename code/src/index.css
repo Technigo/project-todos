@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -11,8 +16,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /*
   background: rgb(238,174,202);
   background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(191,181,218,1) 52%, rgba(148,187,233,1) 100%);
+  */
+background: hsla(56, 85%, 89%, 1);
+background: linear-gradient(225deg, hsla(56, 85%, 89%, 1) 0%, hsla(27, 92%, 90%, 1) 11%, hsla(356, 100%, 91%, 1) 23%, hsla(311, 64%, 85%, 1) 35%, hsla(263, 64%, 84%, 1) 47%, hsla(215, 77%, 80%, 1) 58%, hsla(195, 82%, 76%, 1) 69%, hsla(185, 84%, 76%, 1) 79%, hsla(167, 82%, 78%, 1) 90%, hsla(126, 89%, 85%, 1) 100%);
   display: flex;
   justify-content: center;
   align-items: center;
@@ -31,18 +40,48 @@ code {
   background-color: white;
   width: 450px;
   height: 600px;
+  border-radius: 35px;
   padding: 25px;
+  position: relative;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow:
+  2.3px 2.3px 1.9px rgba(0, 0, 0, 0.013),
+  5.4px 5.4px 4.3px rgba(0, 0, 0, 0.02),
+  9.7px 9.7px 7.7px rgba(0, 0, 0, 0.024),
+  16.1px 16.1px 12.8px rgba(0, 0, 0, 0.028),
+  26.5px 26.5px 21.2px rgba(0, 0, 0, 0.032),
+  46.2px 46.2px 37px rgba(0, 0, 0, 0.04),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
 }
 
 .Header {
   border: 1px solid red;
-  padding: 10px;
+  padding: 0;
   text-align: center;
+  z-index: 3;
+}
+
+.bgtest {
+  background-color: #DA58C2;
+  width: 780px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  top: -65px;
+  left: -170px;
+}
+
+.Footer {
+  margin-top: 20px;
 }
 
 .Input {
   border: 1px solid green;
   padding: 10px;
+  z-index: 4;
 }
 
 .Input form label span {
@@ -72,4 +111,18 @@ code {
   border: 1px solid blue;
   padding: 10px;
   overflow: auto; /* No scroll when OK in size, scroll appears when list too long*/
+  z-index: 5;
 }
+
+
+/*
+background: hsla(56, 85%, 89%, 1);
+
+background: linear-gradient(225deg, hsla(56, 85%, 89%, 1) 0%, hsla(27, 92%, 90%, 1) 11%, hsla(356, 100%, 91%, 1) 23%, hsla(311, 64%, 85%, 1) 35%, hsla(263, 64%, 84%, 1) 47%, hsla(215, 77%, 80%, 1) 58%, hsla(195, 82%, 76%, 1) 69%, hsla(185, 84%, 76%, 1) 79%, hsla(167, 82%, 78%, 1) 90%, hsla(126, 89%, 85%, 1) 100%);
+
+background: -moz-linear-gradient(225deg, hsla(56, 85%, 89%, 1) 0%, hsla(27, 92%, 90%, 1) 11%, hsla(356, 100%, 91%, 1) 23%, hsla(311, 64%, 85%, 1) 35%, hsla(263, 64%, 84%, 1) 47%, hsla(215, 77%, 80%, 1) 58%, hsla(195, 82%, 76%, 1) 69%, hsla(185, 84%, 76%, 1) 79%, hsla(167, 82%, 78%, 1) 90%, hsla(126, 89%, 85%, 1) 100%);
+
+background: -webkit-linear-gradient(225deg, hsla(56, 85%, 89%, 1) 0%, hsla(27, 92%, 90%, 1) 11%, hsla(356, 100%, 91%, 1) 23%, hsla(311, 64%, 85%, 1) 35%, hsla(263, 64%, 84%, 1) 47%, hsla(215, 77%, 80%, 1) 58%, hsla(195, 82%, 76%, 1) 69%, hsla(185, 84%, 76%, 1) 79%, hsla(167, 82%, 78%, 1) 90%, hsla(126, 89%, 85%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FBF8CC", endColorstr="#FDE4CF", GradientType=1 );
+*/
