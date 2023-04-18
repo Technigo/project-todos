@@ -21,7 +21,10 @@ export const TaskList = () => {
       {taskList.map((singleTask) => {
         return (
           <>
-            <input id={singleTask.id} type="radio" />
+            <input
+              id={singleTask.id}
+              type="checkbox"
+              checked={singleTask.complete} />
             {singleTask.text}
           </>
         )

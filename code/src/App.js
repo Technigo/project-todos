@@ -4,6 +4,7 @@ import { tasks } from 'components/reducers/tasks';
 import { Provider } from 'react-redux';
 import { TaskList } from 'components/TaskList';
 import { NewTask } from 'components/NewTask';
+import { Container } from 'components/styles/global';
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -14,8 +15,10 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <NewTask />
-      <TaskList />
+      <Container>
+        <NewTask />
+        <TaskList />
+      </Container>
     </Provider>
   );
 }
