@@ -1,21 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
+import { v4 as uuid } from 'uuid';
 
 const initialState = {
   tasks: [
     {
-      id: 4,
-      text: 'Set up Store',
-      isCompleted: false
-    },
-    {
-      id: 5,
-      text: 'Set up Reducers',
-      isCompleted: false
-    },
-    {
-      id: 6,
-      text: 'Set up Components',
-      isCompleted: false
+      id: uuid(),
+      text: 'Started tasking',
+      isCompleted: true
     }
   ]
 };

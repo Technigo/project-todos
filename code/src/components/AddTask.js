@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import uncompleted from 'reducers/uncompleted';
+import { v4 as uuid } from 'uuid';
 
 export const AddTask = () => {
   const [inputValue, setInputValue] = useState('')
@@ -10,7 +11,7 @@ export const AddTask = () => {
     event.preventDefault();
     console.log(Date.now().toString())
     const newTask = {
-      id: Date.now().toString(),
+      id: uuid(),
       text: inputValue,
       isCompleted: false
     }

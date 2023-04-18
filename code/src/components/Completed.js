@@ -2,13 +2,19 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 
 export const Completed = () => {
+  const checkboxHandler = () => {
+    console.log('hello')
+  };
+
   const completedTasks = useSelector((store) => store.completed.tasks)
   return (
     <div>
-      <h1>Completed Tasks:</h1>
+      <h2>Completed Tasks:</h2>
       <ul>
         {completedTasks.map((task) => (
-          <li key={task.id}>{task.text}</li>
+          <label key={task.id} htmlFor="checkbox">
+            <input type="checkbox" id="checkbox" onChange={checkboxHandler} />{task.text}
+          </label>
         ))}
       </ul>
     </div>
