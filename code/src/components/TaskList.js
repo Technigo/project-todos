@@ -12,12 +12,13 @@ export const TaskList = () => {
   }
 
   const formatDate = (date) => {
+    const time = format(date, 'HH:mm');
     if (isToday(date)) {
-      return 'Today';
+      return `Today ${time}`;
     } else if (isYesterday(date)) {
-      return 'Yesterday';
+      return `Yesterday ${time}`;
     } else {
-      return format(date, 'EEEE');
+      return `${format(date, 'EEEE')} ${time}`;
     }
   }
 
