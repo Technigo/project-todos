@@ -7,7 +7,7 @@ export const App = () => {
     todos: undefined
   });
 
-  const store = configureStore({ reducer })
+  const store = configureStore({ reducer });
 
   return (
 
