@@ -1,27 +1,21 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import { createSlice } from '@reduxjs/toolkit'
+import uniqid from 'uniqid';
 
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: [
-      { id: '1',
-        text: 'Click here when done with task',
-        isDone: false }
-    ]
+    items: []
   },
   reducers: {
-    toggleItem: (store, action) => {
-      store.items.forEach((item) => {
-        if (item.id === action.payload) {
-          item.isDone = !item.isDone
-        }
-      })
-    },
-    deleteItem: (store, action) => {
-      store.items.splice(action.payload, 1)
-    },
-    addItem: (store, action) => {
-      store.items.push(action.payload)
+    addTodo: (store, action) => {
+      const newTodo = {
+        id: uniqid(),
+        text: action.payload,
+        isComplete: false
+
+      }; // immutability
+      store.items = [...store.items, newTodo];
     }
   }
 })

@@ -6,7 +6,8 @@ const AddTodo = () => {
 
   return (
     <StyledMainDiv>
-      <p>Add task</p>
+
+      <StyledP>Add task</StyledP>
       <TextInput
         type="text"
         value={input}
@@ -23,13 +24,20 @@ background: transparent;
 border: 1 px solid #fff;
 height: 200px;
 width: 300px;
+border: 1px solid red;
 `
 
 const TextInput = styled.input`
 font-family: 'Gaegu';
-font-size: 20px;
+font-size: 16px;
 background-color: white;
 margin: 0;
+border-bottom: 2px dashed;
 `
-
+export const StyledP = styled.p`
+font-family: 'Gaegu';
+font-weight: bold;
+font-size: 20px;
+display: inline-block;
+`
 export default AddTodo;

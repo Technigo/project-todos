@@ -4,6 +4,7 @@ import styled from 'styled-components'
 const TodoList = () => {
   return (
     <BigStyle>
+      <TextP>Task list</TextP>
       <input type="checkbox" />
     </BigStyle>
   )
@@ -25,6 +26,11 @@ const BigStyle = styled.div`
   box-shadow: 3px 5px 6px 0px rgba(0,0,0,0.5);
   padding: 0.7em;
   padding-bottom: 1.1em;
+`
+const TextP = styled.p`
+font-family: 'Gaegu';
+font-weight: bold;
+font-size: 30px;
 `
 
 export default TodoList;
