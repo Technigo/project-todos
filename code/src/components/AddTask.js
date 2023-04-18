@@ -7,10 +7,12 @@ const AddTask = () => {
   const dispatch = useDispatch();
   const onFormSubmit = (event) => {
     event.preventDefault();
+    const now = new Date();
     const newTask = {
       id: Date.now().toString(),
       name: inputValue.charAt(0).toUpperCase() + inputValue.slice(1),
-      isComplete: false
+      isComplete: false,
+      timeStamp: now.toLocaleString()
     };
     dispatch(tasks.actions.addTask(newTask));
     setInputValue('');
