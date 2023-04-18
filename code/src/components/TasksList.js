@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RemoveTask } from 'components/RemoveTask';
 import { tasks } from 'reducers/tasks';
 
+import styled from 'styled-components';
+
 export const TasksList = () => {
   const tasksList = useSelector((store) => store.tasks.todos);
   const dispatch = useDispatch();
@@ -12,20 +14,61 @@ export const TasksList = () => {
   };
 
   return (
-    <section>
-      <ul>
+    <StyledSection>
+      <StyledUl>
         {tasksList.map((singleTask) => {
           return (
-            <li key={singleTask.id}>
-              <input
+            <StyledLi key={singleTask.id}>
+              <StyledCheckbox
                 type="checkbox"
                 checked={singleTask.complete}
                 onChange={() => handleCheckboxChange(singleTask.id)} />
-              <RemoveTask task={singleTask} />
-            </li>
+              <StyledRemoveTask task={singleTask} />
+            </StyledLi>
           );
         })}
-      </ul>
-    </section>
+      </StyledUl>
+    </StyledSection>
   )
 }
+const StyledSection = styled.section`
+  background-color: #f6f6f6;
+  padding: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+`;
+
+const StyledRemoveTask = styled(RemoveTask)`
+  margin-left: auto;
+  color: #e74c3c;
+  cursor: pointer;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+`;
+const StyledUl = styled.ul`
+  margin: 0;
+  padding: 0 0 0 1rem;
+`;
+const StyledLi = styled.li`
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  list-style: none;
+`;
+const StyledCheckbox = styled.input`
+  margin-right: 1rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background-color: #fff;
+  border: 2px solid #777;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  
+  &:checked {
+    background-color: #777;
+  }
+`;
