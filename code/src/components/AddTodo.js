@@ -1,10 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components'
 
 const AddTodo = () => {
+  const [input, setInput] = useState('');
+
   return (
     <StyledMainDiv>
-      <TextInput type="text" />
+      <p>Add task</p>
+      <TextInput
+        type="text"
+        value={input}
+        onChange={(event) => setInput(event.target.value)} />{' '}
     </StyledMainDiv>
   )
 }
