@@ -1,9 +1,25 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import tasks from 'reducers/tasks';
+import AddTask from 'components/AddTask';
+import TaskList from 'components/TaskList';
+import TaskTracker from 'components/TaskTracker';
+import CompleteBtn from 'components/CompleteBtn';
+
+const reducer = combineReducers({
+  tasks: tasks.reducer
+})
+
+const store = configureStore({ reducer })
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
+    <Provider store={store}>
+      <AddTask />
+      <TaskList />
+      <TaskTracker />
+      <CompleteBtn />
+    </Provider>
   );
 }
