@@ -8,6 +8,10 @@ const StyledHeadline = styled.h1`
   color: white;
   font-size: 72px;
   margin-bottom: 2px;
+
+  @media (max-width: 667px) {
+    font-size: 52px;
+  }
 `;
 
 const StyledP = styled.p`
@@ -15,6 +19,10 @@ const StyledP = styled.p`
   line-height: 120%;
   color: white;
   font-size: 18px;
+  
+  @media (max-width: 667px) {
+    font-size: 16px;
+  }
 `;
 
 const Header = () => {
