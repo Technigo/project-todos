@@ -9,8 +9,13 @@ export const AddTasks = () => {
   // TODO - fetch tasks from the store
 
   return (
-    <div>
+    <section>
+      <form>
+        <label htmlFor="label"> Add your todo here
+          <input id="addtodotask" type="text" />
+        </label>
+      </form>
       <button type="button" onClick={() => setNewTask(true)} />
-    </div>
+    </section>
   )
 }
