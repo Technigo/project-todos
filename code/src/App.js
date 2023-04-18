@@ -1,13 +1,13 @@
 import React from 'react';
-// import { Provider } from '@reduxjs/toolkit'
-// import { combineReducers, configureStore } from '@reduxjs/toolkit';
-// import { xx } from 'reducers/xx';
-// import { yy } from 'reducers/yy';
+import { Provider } from 'react-redux'
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { tasks } from 'reducers/tasks';
+import Header from './components/Header'
+import AddTodo from './components/AddTodo'
+import TodoList from './components/TodoList'
 
-/*
 const reducer = combineReducers({
-  xx: xx.reducer,
-  yy: yy.reducer
+  tasks: tasks.reducer
 });
 
 const store = configureStore({ reducer });
@@ -16,16 +16,10 @@ export const App = () => {
   return (
     <Provider store={store}>
       <div className="App">
-        Matildas todos!
+        <Header />
+        <AddTodo />
+        <TodoList />
       </div>
     </Provider>
-  );
-  */
-
-export const App = () => {
-  return (
-    <div className="App">
-          Matildas todos!
-    </div>
   );
 }

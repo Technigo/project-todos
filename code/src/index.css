@@ -21,5 +21,28 @@ code {
 }
 
 .App {
-  margin: 20px;
+  margin: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: white;
+  width: 400px;
+  height: 600px;
+  padding: 25px;
+}
+
+.Header {
+  border: 1px solid red;
+  padding: 10px;
+  text-align: center;
+}
+
+.Input {
+  border: 1px solid green;
+  padding: 10px;
+}
+
+.List {
+  border: 1px solid blue;
+  padding: 10px;
 }
