@@ -14,7 +14,7 @@ const TodoList = () => {
             <div className="todo-row" key={singleTodo.id}>
               <label htmlFor="todo">
                 <span>{singleTodo.content}</span>
-                <input type="checkbox" id="todo" name="todos" />
+                <input type="checkbox" id={singleTodo.id} name="todos" onChange={() => dispatch(tasks.actions.handleCheck(singleTodo))} />
               </label>
               <button type="button" onClick={() => dispatch(tasks.actions.removeItem(singleTodo))}>Delete</button>
             </div>
@@ -27,6 +27,3 @@ const TodoList = () => {
 }
 
 export default TodoList;
-
-//               <input type="checkbox" />
-//               <ul>{singleTodo.content}</ul>
