@@ -18,7 +18,7 @@ const BigStyle = styled.div`
   min-height: 330px;
   height: fit-content;
   margin: auto;
-  background-color: #FFFF99;
+  background-color: #ffda8f;
   margin-top: 3em;
   margin-bottom: 3em;
   transform: rotate(1.2deg);
