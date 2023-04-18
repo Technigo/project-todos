@@ -1,21 +1,31 @@
-/* eslint-disable no-unused-vars */
-/* eslint-disable no-undef */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useState } from 'react-redux';
+import { tasks } from './Reducers/tasks';
 
-export const AddTasks = () => {
-  const listItems = useSelector((store) => store.addTasks.tasks)
-  // TODO - fetch tasks from the store
+const AddTasks = () => {
+  const [inputValue, setInputValue] = useState('');
+  const dispatch = useDispatch();
+
+  const onFormSubmit = (event) => {
+    event.preventDefault();
+    const newTask = { id: Date.now().toString(),
+      name: inputValue,
+      isListed: true };
+    dispatch(tasks.actions.AddTasks(newTask));
+    setInputValue('');
+  }
 
   return (
     <section>
-      <form>
-        <label htmlFor="label"> Add your todo here
-          <input id="addtodotask" type="text" />
+      <form onSubmit={onFormSubmit}>
+        <label htmlFor="addtodotask"> Add your To Do Here
+          <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addtodotask" type="text" />
         </label>
+        <button type="submit" />
       </form>
-      <button type="button" onClick={() => setNewTask(true)} />
     </section>
   )
 }
+
+export default AddTasks;
