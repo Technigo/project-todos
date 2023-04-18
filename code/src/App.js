@@ -1,18 +1,25 @@
-/* Import CombineReducers and configureStore */
+import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import React from 'react';
 import { Provider } from 'react-redux';
+import { Completed } from 'components/Completed';
+import { Uncompleted } from 'components/Uncompleted';
+import uncompleted from 'reducers/uncompleted';
+import completed from 'reducers/completed';
+import { AddTask } from 'components/AddTask';
 
-/* const reducer = combineReducers({
-  undone: 'insert undone.reducer',
-  done: 'insert done.reducer'
+const reducer = combineReducers({
+  completed: completed.reducer,
+  uncompleted: uncompleted.reducer
 })
 
-const store = configureStore({ reducer }); */
+const store = configureStore({ reducer });
 
 export const App = () => {
   return (
     <Provider store={store}>
-      <p>Todo-app comming soon!</p>
+      <AddTask />
+      <Completed />
+      <Uncompleted />
     </Provider>
   );
 }
