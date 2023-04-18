@@ -20,8 +20,8 @@ export const tasks = createSlice({
     },
     addTask: (state, action) => {
       const newId = state.length ? Math.max(...state.map((task) => task.id)) + 1 : 1
-      const createdAT = new Date().toISOString() // timestamp
-      state.push({ id: newId, ...action.payload, createdAT })
+      const createdAt = new Date().toISOString() // timestamp
+      state.push({ id: newId, ...action.payload, createdAt }) // Fixed property name
     },
     removeTask: (state, action) => {
       return state.filter((task) => task.id !== action.payload)
