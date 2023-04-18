@@ -18,12 +18,18 @@ const TaskList = () => {
     dispatch(removeTask(id))
   }
 
+  const formatDate = (dateString) => {
+    const date = new Date(dateString)
+    return date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
+  }
+
   return (
     <ul>
       {tasks.map((task) => (
         <li key={task.id} style={{ textDecoration: task.complete ? 'line-through' : 'none' }}>
           <span onClick={() => handleToggleComplete(task.id)}>
             {task.text}
+            <span>({formatDate(task.createdAt)})</span>
           </span>
           <button type="button" onClick={() => handleRemoveTask(task.id)}>
            Delete
