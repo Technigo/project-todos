@@ -14,9 +14,22 @@ const initialState = {
 export const tasks = createSlice({
   name: 'tasks',
   initialState,
+
   reducers: {
     addTask: (store, action) => {
       store.todos = [...store.todos, action.payload];
+    },
+    removeTask: (store, action) => {
+      const index = store.todos.findIndex((todo) => todo.id === action.payload);
+      if (index !== -1) {
+        store.todos.splice(index, 1);
+      }
+    },
+    toggleComplete: (store, action) => {
+      const index = store.todos.findIndex((todo) => todo.id === action.payload);
+      if (index !== -1) {
+        store.todos[index].complete = !store.todos[index].complete;
+      }
     }
   }
 })
