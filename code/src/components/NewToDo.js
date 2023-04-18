@@ -10,8 +10,8 @@ export const TextInput = styled.input`
   border: 2px solid pink;
   outline: none;
   border-radius: 8px;
-  height: 64px;
-  width: 100%;
+  height: 48px;
+  width: 30%;
   box-sizing: border-box;
   padding: 5px 15px;
   font-size: 18px;
@@ -26,7 +26,6 @@ export const TextInput = styled.input`
     }
 
    @media (max-width: 768px) {
-    height: 48px;
   }
 `
 
@@ -58,8 +57,9 @@ export const NewToDo = () => {
           onChange={(e) => setInputValue(e.target.value)} />
       </label>
       <button
-        type="submit">
-          add task
+        type="submit"
+        className="submit-button">
+        ADD TODO
       </button>
     </form>
   )
