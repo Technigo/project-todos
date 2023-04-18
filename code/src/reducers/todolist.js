@@ -1,37 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  items: [
-    {
-      id: 'hu1234534io2eud7823454352sxd123',
-      name: 'JigglyPuff',
-      isCaught: false
-    },
-    {
-      id: 'hu1234534io2eud7823454352sxd124',
-      name: 'Oddish',
-      isCaught: false
-    },
-    {
-      id: 'hu1234534io2eud7823454352sxd125',
-      name: 'Charmander',
-      isCaught: false
-    },
-    {
-      id: 'hu1234534io2eud7823454352sxd126',
-      name: 'Peepoo',
-      isCaught: false
-    }
-  ]
+  items: []
 }
 
-const pokemons = createSlice({
-  name: 'pokemons',
+const todolist = createSlice({
+  name: 'tasks',
   initialState,
   reducers: {
     // first argument references the state of the store, second argument
     // references the data that is passed down from a component
-    addPokemon: (store, action) => {
+    addTask: (store, action) => {
       // Mutable:
       // store.items.push(action.payload)
       // Immutable:
@@ -46,4 +25,4 @@ const pokemons = createSlice({
   }
 })
 
-export default pokemons;
+export default todolist;
