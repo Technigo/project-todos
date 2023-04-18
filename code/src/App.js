@@ -5,7 +5,7 @@ import { tasks } from 'reducers/todos'
 import { ToDoLists } from 'components/toDoList';
 import { Header } from './components/header'
 import { NewToDo } from './components/newToDo'
-import { SumToDo } from './components/sumToDo'
+import './index.css'
 
 export const App = () => {
   const reducer = combineReducers({
@@ -16,12 +16,11 @@ export const App = () => {
     reducer
   })
   return (
-    <div>
+    <div className="app-container">
       <Provider store={store}>
         <Header />
         <NewToDo />
         <ToDoLists />
-        <SumToDo />
       </Provider>
     </div>
   );
