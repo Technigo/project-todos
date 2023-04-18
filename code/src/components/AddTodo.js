@@ -1,43 +1,27 @@
 import React, { useState } from 'react';
-import styled from 'styled-components'
+import { useDispatch } from 'react-redux';
+import todos from 'reducers/todo';
 
-const AddTodo = () => {
-  const [input, setInput] = useState('');
+export const AddTodo = () => {
+  const [inputText, setInputText] = useState('');
+  const dispatch = useDispatch();
 
+  const onAddTodo = (event) => {
+    event.preventDefault();
+    const newTodo = {
+      id: Date.now().toString(),
+      name: inputText,
+      isDone: false
+    }
+    dispatch(todos.actions.addTodos(newTodo))
+    setInputText('');
+  }
   return (
-    <StyledMainDiv>
-
-      <StyledP>Add task</StyledP>
-      <TextInput
-        type="text"
-        value={input}
-        onChange={(event) => setInput(event.target.value)} />{' '}
-    </StyledMainDiv>
+    <form onSubmit={onAddTodo}>
+      <label htmlFor="task-input">
+        <input onChange={(event) => setInputText(event.target.value)} id="task-input" type="text" placeholder="Add-task" />
+      </label>
+      <button type="submit">Add new todo</button>
+    </form>
   )
 }
-
-const StyledMainDiv = styled.div`
-display: flex;
-flex-direction: row;
-align-items: center;
-background: transparent;
-border: 1 px solid #fff;
-height: 200px;
-width: 300px;
-border: 1px solid red;
-`
-
-const TextInput = styled.input`
-font-family: 'Gaegu';
-font-size: 16px;
-background-color: white;
-margin: 0;
-border-bottom: 2px dashed;
-`
-export const StyledP = styled.p`
-font-family: 'Gaegu';
-font-weight: bold;
-font-size: 20px;
-display: inline-block;
-`
-export default AddTodo;
