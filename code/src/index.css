@@ -141,8 +141,12 @@ code {
   .Container {
     width: 100%;
     max-width: 450px;
-    height: 100%;
-    max-height: 650px;
+    height: 550px;
+    /*
+        height: 100%;
+    min-height: 500px;
+    max-height: 550px;
+    */
     padding: 15px 20px 20px 20px;
     /*background: linear-gradient(225deg, hsla(56, 85%, 89%, 1) 0%, hsla(27, 92%, 90%, 1) 11%, hsla(356, 100%, 91%, 1) 23%, hsla(311, 64%, 85%, 1) 35%, hsla(263, 64%, 84%, 1) 47%, hsla(215, 77%, 80%, 1) 58%, hsla(195, 82%, 76%, 1) 69%, hsla(185, 84%, 76%, 1) 79%, hsla(167, 82%, 78%, 1) 90%, hsla(126, 89%, 85%, 1) 100%);*/
   }
