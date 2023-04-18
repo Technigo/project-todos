@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import { tasks } from '../reducers/tasks';
+import { AddButton } from './styled_components/buttons'
 
 const AddTodo = () => {
   const [inputValue, setInputValue] = useState('');
@@ -29,7 +30,7 @@ const AddTodo = () => {
             id="addTodoInput"
             type="text" />
         </label>
-        <button type="submit" className="add-btn"> Add Now!</button>
+        <AddButton type="submit">+</AddButton>
       </form>
     </div>
   );

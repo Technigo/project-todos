@@ -2,9 +2,12 @@
 import styled from 'styled-components';
 
 export const AddButton = styled.button`
-  background-color: blue;
+  background-color: transparent;
+  border: none;
+  font-size: 50px;
   color: white;
-  border-radius: 25px;
+  border-radius: 50%;
+  margin-left: 5px;
   cursor: pointer;
 `;
 
