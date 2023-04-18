@@ -1,7 +1,34 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import uniqid from 'uniqid';
 import { tasks } from 'reducers/tasks'
+import styled from 'styled-components'
+
+export const TextInput = styled.input`
+  background: #FFFFFF;
+  border: 2px solid pink;
+  outline: none;
+  border-radius: 8px;
+  height: 64px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  font-size: 18px;
+
+    &:focus {
+      outline: none;
+      caret-color: #f85f36;
+    }
+
+    &:hover {
+      border: 2px solid #f85f36;
+    }
+
+   @media (max-width: 768px) {
+    height: 48px;
+  }
+`
 
 export const NewToDo = () => {
   const [inputValue, setInputValue] = useState('');
@@ -23,10 +50,11 @@ export const NewToDo = () => {
   return (
     <form onSubmit={onFormSubmit}>
       <label htmlFor="newtask">
-        <input
+        <TextInput
           type="text"
           name="newtask"
           value={inputValue}
+          placeholder="add todo..."
           onChange={(e) => setInputValue(e.target.value)} />
       </label>
       <button

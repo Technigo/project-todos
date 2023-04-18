@@ -35,7 +35,6 @@ export const ToDoListWrapper = styled.div`
   display: flex;
   flex-direction: column;
   gap: 20px;
-  margin: 20px;
 `
 
 export const ToDotext = styled.p`
