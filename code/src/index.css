@@ -13,10 +13,10 @@ code {
 }
 
 .main-wrapper{
-    min-height: 95vh;
-    width: 100%;
-    margin: 0 auto;
+    min-height: 80vh;
+    width:80vw;
+    margin: 10%;
     box-shadow: 0 0.5rem 2rem rgb(56, 55, 55);
     border-radius: 2.8rem;
-    background-color: whitesmoke;
+    background-color: rgb(148, 147, 203);
 }

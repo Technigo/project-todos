@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/control-has-associated-label */
-import React from 'react';
-import { useDispatch, useState } from 'react-redux';
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { tasks } from './Reducers/tasks';
 
 const AddTasks = () => {
