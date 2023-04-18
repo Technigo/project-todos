@@ -19,4 +19,7 @@ code {
     box-shadow: 0 0.5rem 2rem rgb(56, 55, 55);
     border-radius: 2.8rem;
     background-color: rgb(148, 147, 203);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }

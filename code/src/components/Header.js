@@ -17,7 +17,6 @@ const Title = styled.h1`
   font-size: 4rem;
   margin-bottom: 0;
   line-height: 2rem;
-  padding-top: 5%;
 `;
 
 const StyledMoment = styled(Moment)`
@@ -25,6 +24,4 @@ const StyledMoment = styled(Moment)`
   font-size: 2rem;
   margin-top: 0;
   color: black;
-  display: flex;
-  justify-content: center;
 `;
