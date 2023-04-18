@@ -26,7 +26,7 @@ const Task = ({ id }) => {
         {task.text}
       </StyledText>
       <CheckBox id={id} />
-      <DeleteButton id={id} />
+      <DeleteButton id={task.id} />
     </StyledContainer>
   );
 }

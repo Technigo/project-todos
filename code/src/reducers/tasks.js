@@ -2,10 +2,10 @@ import { createSlice } from '@reduxjs/toolkit'
 
 export const tasks = createSlice({ name: 'tasks',
   initialState: [
-    { id: 1, text: 'Plugga', complete: true },
-    { id: 2, text: 'Gamea', complete: false },
-    { id: 3, text: 'Kodea', complete: true },
-    { id: 4, text: 'Chilla', complete: true }
+    { id: 0, text: 'Plugga', complete: true },
+    { id: 1, text: 'Gamea', complete: false },
+    { id: 2, text: 'Kodea', complete: true },
+    { id: 3, text: 'Chilla', complete: true }
   ],
   reducers: {
     addTask(state, action) {
@@ -16,6 +16,8 @@ export const tasks = createSlice({ name: 'tasks',
       todo.complete = !todo.complete
     },
     deleteTask(state, action) {
-      state = state.filter((t) => t.id !== action.payload)
+      // state = state.filter((t) => t.id !== action.payload)
+      const todo = state.find((t) => t.id === action.payload)
+      state.splice(state.indexOf(todo), 1)
     }
   } })
