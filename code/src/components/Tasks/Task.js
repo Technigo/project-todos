@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import CheckBox from 'react-animated-checkbox'
 import { MdOutlineRemoveCircle } from 'react-icons/md'
@@ -7,12 +7,13 @@ import { Button } from 'reusable-components/Button';
 import { tasks } from 'reducers/tasks';
 import { TaskText } from './TasksStyling';
 
-export const Task = ({ task, index }) => {
-  const [isChecked, setIsChecked] = useState(false);
+export const Task = ({ task, index, completed }) => {
+  // const [isChecked, setIsChecked] = useState(false);
+  // const isCompleted = useSelector((store) => store.tasks.);
   const dispatch = useDispatch();
   // const isCompleted = useSelector((store) => store.tasks.tasks.);
   const handleCheckboxChange = (selectedTaskIndex) => {
-    setIsChecked(!isChecked);
+    // setIsChecked(!isChecked);
     dispatch(tasks.actions.checkItem({ index: selectedTaskIndex }))
   };
 
@@ -23,7 +24,7 @@ export const Task = ({ task, index }) => {
   return (
     <FlexRow>
       <CheckBox
-        checked={isChecked}
+        checked={completed}
         checkBoxStyle={{
           checkedColor: '#B9F3E4',
           size: 40,

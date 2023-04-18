@@ -7,9 +7,13 @@ import { usePopup } from 'react-custom-popup';
 import { tasks } from 'reducers/tasks';
 import { Task } from './Task';
 import { NewTaskContainer, TaskListContainer, TaskPageContainer } from './TasksStyling';
+import { FilterTasks } from './FilterTasks';
 
 export const Tasks = () => {
   const allTasks = useSelector((store) => store.tasks.tasks);
+  const ongoingTasks = allTasks.filter((item) => item.completed === false);
+  const completedTasks = allTasks.filter((item) => item.completed === true);
+  const filterOn = useSelector((store) => store.tasks.filterOn);
   const dispatch = useDispatch();
   console.log(allTasks)
   const { showAlert, showInputDialog } = usePopup();
@@ -65,9 +69,16 @@ export const Tasks = () => {
   return (
 
     <TaskPageContainer>
+      <FilterTasks />
       <TaskListContainer>
-        {allTasks.map((task, index) => (
-          <Task key={task.id} index={index} task={task} />
+        {filterOn === 'all' && allTasks.map((task, index) => (
+          <Task key={task.id} index={index} task={task} completed={task.completed} />
+        ))}
+        {filterOn === 'ongoing' && ongoingTasks.map((task, index) => (
+          <Task key={task.id} index={index} task={task} completed={task.completed} />
+        ))}
+        {filterOn === 'completed' && completedTasks.map((task, index) => (
+          <Task key={task.id} index={index} task={task} completed={task.completed} />
         ))}
       </TaskListContainer>
       <NewTaskContainer><Button onClick={addNewTask}><MdPlaylistAdd fontSize="3em" color="#EA8FEA" /></Button></NewTaskContainer>

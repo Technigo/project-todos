@@ -12,12 +12,12 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     tasks: taskData,
-    completedTask: false,
+    filterOn: 'all',
   },
   reducers: {
     addItem: (state, action) => {
       const { text, due } = action.payload.response
-      const lastItemOfTaskData = taskData[taskData.length - 1].id
+      const lastItemOfTaskData = state.tasks[state.tasks.length - 1].id
       state.tasks.push({
         id: lastItemOfTaskData + 1,
         text,
@@ -33,11 +33,21 @@ export const tasks = createSlice({
     },
     checkItem: (state, action) => {
       const { index } = action.payload
+      if (index === null) {
+        state.tasks.forEach((task) => {
+          task.completed = true
+        })
+        return
+      }
       if (state.tasks[index].completed) {
         state.tasks[index].completed = false
       } else {
         state.tasks[index].completed = true
       }
+    },
+    filterOn: (state, action) => {
+      const { filter } = action.payload
+      state.filterOn = filter
     },
   },
 });
