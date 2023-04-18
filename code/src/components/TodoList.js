@@ -24,4 +24,4 @@ right: 10px;
 background:none;
 border:none;
 cursor:pointer;
-`;
+`
