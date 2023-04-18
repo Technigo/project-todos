@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components'
+import moment from 'moment';
 import { tasks } from './reducers/tasks';
 import { AddButton, HeadLine } from './styles/global';
 
@@ -25,7 +26,8 @@ export const NewTask = () => {
     const addTask = {
       id: Date.now().toString(),
       text: inputValue,
-      complete: false
+      complete: false,
+      time: moment().format('D MMM HH:mm')
     }
     dispatch(tasks.actions.addTask(addTask));
     setInputValue('');

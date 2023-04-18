@@ -31,6 +31,7 @@ export const TaskList = () => {
                 checked={singleTask.complete} />
             </label>
             <TaskText>{singleTask.text}</TaskText>
+            <span className={singleTask.complete ? 'complete-todo' : ''}>{singleTask.time}</span>
           </InnerWrapper>
         )
       })}
