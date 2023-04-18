@@ -20,7 +20,7 @@ const AddTask = () => {
     <section>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
-            Add your new task here:
+          <p>Add your new task here:</p>
           <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" />
         </label>
         <button type="submit">Add now!</button>

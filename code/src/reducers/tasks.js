@@ -21,7 +21,7 @@ const tasks = createSlice({
   reducers: {
     // first argument references the state of the store, second argument references the data that is
     // passed down from a component
-    addToDo: (store, action) => {
+    addTask: (store, action) => {
     // Mutable, avoid because it's unpredictable
     //   store.items.push(action.payload);
     // Immutable

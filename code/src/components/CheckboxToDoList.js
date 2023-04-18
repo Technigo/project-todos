@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 
-const ToDoList = () => {
+const CheckboxToDoList = () => {
   const taskList = useSelector((store) => store.tasks.items)
   return (
     <section>
@@ -9,7 +9,10 @@ const ToDoList = () => {
         {taskList.map((singleTodo) => {
           return (
             <>
-              <li key={singleTodo.id}>{singleTodo.description}</li>
+              <p>
+                <input type="checkbox" id={singleTodo.id} name="todo" />
+                <label htmlFor={singleTodo.id}>{singleTodo.description}</label>
+              </p>
               <hr />
             </>
           )
@@ -19,4 +22,4 @@ const ToDoList = () => {
   )
 }
 
-export default ToDoList;
+export default CheckboxToDoList;
