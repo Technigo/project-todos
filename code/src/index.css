@@ -13,6 +13,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background: rgb(238,174,202);
   background: linear-gradient(90deg, rgba(238,174,202,1) 0%, rgba(191,181,218,1) 52%, rgba(148,187,233,1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }
 
 code {
@@ -20,13 +24,12 @@ code {
     monospace;
 }
 
-.App {
-  margin: 100px;
+.Container {
   display: flex;
   flex-direction: column;
   gap: 15px;
   background-color: white;
-  width: 400px;
+  width: 450px;
   height: 600px;
   padding: 25px;
 }
@@ -42,7 +45,31 @@ code {
   padding: 10px;
 }
 
+.Input form label span {
+  display: block;
+}
+
+.todo-row {
+  margin: 10px auto;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  border: 1px solid orange;
+  padding: 5px;
+}
+
+.todo-row label {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 10px;
+}
+
+.add-btn {
+  margin-left: 10px;
+}
+
 .List {
   border: 1px solid blue;
   padding: 10px;
+  overflow: auto; /* No scroll when OK in size, scroll appears when list too long*/
 }
