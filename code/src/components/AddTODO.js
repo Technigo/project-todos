@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import TODOS from 'reducers/todo';
+import tickets from 'reducers/tickets';
 
 const AddTODO = () => {
   const [inputValue, setInputValue] = useState('');
@@ -14,7 +14,7 @@ const AddTODO = () => {
     }
     // eslint-disable-next-line max-len
     // dispatch(slice.actions.reducer(payload)) We import the slice so that we can reference the reducer.
-    dispatch(TODOS.actions.addTODO(newTODO));
+    dispatch(tickets.actions.addTODO(newTODO));
     setInputValue('');
   }
   return (
