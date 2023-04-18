@@ -5,9 +5,10 @@ import styled from 'styled-components'
 
 export const TodoList = ({ todo }) => {
   const dispatch = useDispatch()
+
   return (
     <div className="todo-wrapper">
-      <input
+      <CheckBox
         type="checkbox"
         onCheck={() => dispatch(todos.action.addItem(todo))}
         id=""
@@ -16,6 +17,16 @@ export const TodoList = ({ todo }) => {
     </div>
   )
 }
+
+const CheckBox = styled.input`
+position: relative;
+height: 16px;
+width: 16px;
+top: 5px;
+border-radius: 5px;
+outline: 2px solid #aaa;
+cursor: pointer;
+`
 
 const DeleteButton = styled.button`
 position:absolute;
