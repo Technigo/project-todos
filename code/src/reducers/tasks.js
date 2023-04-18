@@ -9,11 +9,13 @@ export const tasks = createSlice({ name: 'tasks',
   ],
   reducers: {
     addTask(state, action) {
-      console.log(action.payload)
       state.push(action.payload)
     },
     toggleTask(state, action) {
       const todo = state.find((t) => t.id === action.payload)
       todo.complete = !todo.complete
+    },
+    deleteTask(state, action) {
+      state = state.filter((t) => t.id !== action.payload)
     }
   } })

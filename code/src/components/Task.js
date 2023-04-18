@@ -2,12 +2,12 @@ import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
 import CheckBox from './CheckBox'
+import DeleteButton from './DeleteButton'
 
 const StyledContainer = styled.div``
 
 const StyledText = styled.p`
 font-size: 12px;
-text-decoration: underline;
 
 &.completed {
     color: green;
@@ -26,6 +26,7 @@ const Task = ({ id }) => {
         {task.text}
       </StyledText>
       <CheckBox id={id} />
+      <DeleteButton id={id} />
     </StyledContainer>
   );
 }
