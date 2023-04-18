@@ -21,8 +21,11 @@ export const tasks = createSlice({
     addTask: (state, action) => {
       const newId = state.length ? Math.max(...state.map((task) => task.id)) + 1 : 1
       state.push({ id: newId, ...action.payload })
+    },
+    removeTask: (state, action) => {
+      return state.filter((task) => task.id !== action.payload)
     }
   }
 })
 
-export const { toggleComplete, addTask } = tasks.actions
+export const { toggleComplete, addTask, removeTask } = tasks.actions
