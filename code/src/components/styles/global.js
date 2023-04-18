@@ -15,3 +15,8 @@ export const AddButton = styled.button`
     background: none;
     color: black;
 `
+export const HeadLine = styled.h1`
+    font-family: 'Dongle', sans-serif;
+    font-size: 5em;
+    margin: 0;
+`

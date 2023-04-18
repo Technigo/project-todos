@@ -3,12 +3,15 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components'
 import { tasks } from './reducers/tasks';
-import { AddButton } from './styles/global';
+import { AddButton, HeadLine } from './styles/global';
 
 const AddTask = styled.input`
     border: none;
-    border-bottom: solid black 2px;
-
+    border-bottom: solid black 1px;
+    width: 200px;
+    margin-left: 20px;
+    font-size: 2em;
+    font-family: 'Dongle', sans-serif;
     &:focus {
         outline: none;
     }
@@ -29,10 +32,15 @@ export const NewTask = () => {
   }
   return (
     <section>
+      <HeadLine>To Do</HeadLine>
       <form onSubmit={onTaskSubmit}>
         <label htmlFor="addTaskInput">
-                Add task
-          <AddTask value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" />
+          <AddTask
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+            id="addTaskInput"
+            type="text"
+            placeholder="Add task" />
         </label>
         <AddButton type="submit">
           <span className="material-symbols-outlined">
