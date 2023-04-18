@@ -4,10 +4,13 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { ToDoList } from 'components/ToDoList'
 import { NewToDo } from 'components/NewToDo'
 import { WaveAnimation } from 'components/WaveAnimation'
+import { NewProjectButton } from 'components/NewProjectButton'
+import { tasksproject } from 'reducers/tasksproject'
 import { tasks } from './reducers/tasks'
 
 const reducer = combineReducers({
-  tasks: tasks.reducer
+  tasks: tasks.reducer,
+  tasksproject: tasksproject.reducer
 })
 
 const store = configureStore({ reducer })
@@ -17,6 +20,7 @@ export const App = () => {
     <Provider store={store}>
       <NewToDo />
       <ToDoList />
+      <NewProjectButton />
       <WaveAnimation />
     </Provider>
   )
