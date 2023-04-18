@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/todos';
+import './css/form.css'
 
 export const NewToDo = () => {
   const [inputValue, setInputValue] = useState('');
@@ -21,11 +22,12 @@ export const NewToDo = () => {
 
   return (
     <div>
-      <form onSubmit={onFormSubmit}>
+      <form onSubmit={onFormSubmit} className="form-container">
         <label htmlFor="input">
-          <input type="text" value={inputValue} placeholder="Add new task..." onChange={(event) => setInputValue(event.target.value)} />
+          <input className="input-container" type="text" value={inputValue} placeholder="Add new task..." onChange={(event) => setInputValue(event.target.value)} />
+          <button className="addBtn" type="submit" disabled={inputValue.length === 0}> Add </button>
+
         </label>
-        <button type="submit" disabled={inputValue.length === 0}> Add </button>
       </form>
     </div>
   )

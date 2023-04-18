@@ -13,23 +13,25 @@ const TodoItem = ({ todo, index, onDelete, onDone }) => {
 
   return (
     <div className="todo-container">
-      <p className="TodoText">{todo.text}</p>
-      <button
-        type="submit"
-        ref={todoRef}
-        className="DoneBtn"
-        onClick={() => onDone(todo.id)}
-        onKeyDown={handleKeyDown}>
+      <section className="todo-child">
+        <p className="TodoText">{todo.text}</p>
+        <button
+          type="submit"
+          ref={todoRef}
+          className="doneBtn"
+          onClick={() => onDone(todo.id)}
+          onKeyDown={handleKeyDown}>
 check
-      </button>
+        </button>
 
-      <button
-        className="DeleteBTn"
-        onClick={() => onDelete(index)}
-        type="button"
-        title="Delete task">
+        <button
+          className="deleteBtn"
+          onClick={() => onDelete(index)}
+          type="button"
+          title="Delete task">
         X
-      </button>
+        </button>
+      </section>
     </div>
   );
 };
