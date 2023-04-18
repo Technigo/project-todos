@@ -1,17 +1,31 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import { createSlice } from '@reduxjs/toolkit'
 
+const data = [
+  {
+    id: 0,
+    name: 'Skydive',
+    done: false
+  },
+  {
+    id: 1,
+    name: 'Travel',
+    done: false
+
+  }
+]
+
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: []
+    items: data
   },
 
   reducers: {
     toggleTask: (store, action) => {
       store.items.forEach((item) => {
         if (item.id === action.payload) {
-          item.isDone = !item.isDone
+          item.isDone = !item.done;
         }
       })
     },

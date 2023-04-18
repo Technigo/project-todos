@@ -1,6 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import todos from 'reducers/todo';
+import styled from 'styled-components'
 
 export const SingleTodo = ({ todo }) => {
   const dispatch = useDispatch()
@@ -11,6 +12,16 @@ export const SingleTodo = ({ todo }) => {
         onCheck={() => dispatch(todos.action.addItem(todo))}
         id=""
         name="todos" />
+      <DeleteButton>Button</DeleteButton>
     </div>
   )
 }
+
+const DeleteButton = styled.button`
+position:absolute;
+top:10px;
+right: 10px;
+background:none;
+border:none;
+cursor:pointer;
+`;
