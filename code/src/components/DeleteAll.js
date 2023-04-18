@@ -1,6 +1,25 @@
 import React from 'react'
+import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
+
+export const DeleteButton = styled.button`
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: pink;
+  font-weight: 900;
+
+  &:hover:after {
+    content: 'delete All';
+    }
+`
 
 export const DeleteAll = () => {
   const dispatch = useDispatch();
@@ -10,6 +29,6 @@ export const DeleteAll = () => {
   }
 
   return (
-    <button type="button" onClick={deleteAllOnClick}>Delete All</button>
+    <DeleteButton type="button" onClick={deleteAllOnClick}><FontAwesomeIcon icon={faTrashCan} size="xl" /></DeleteButton>
   );
 }

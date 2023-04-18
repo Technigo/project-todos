@@ -37,6 +37,15 @@ export const ToDoListWrapper = styled.div`
   gap: 20px;
 `
 
+export const ListFooter = styled.div`
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  background: #f85f36;
+`
+
 export const ToDotext = styled.p`
   margin: 0;
   color: black;
@@ -95,8 +104,10 @@ export const ToDoList = () => {
           </DeleteButton>
         </ToDoCard>
       ))}
-      <CompleteAll />
-      <DeleteAll />
+      <ListFooter>
+        <CompleteAll />
+        <DeleteAll />
+      </ListFooter>
     </ToDoListWrapper>
   )
 }
