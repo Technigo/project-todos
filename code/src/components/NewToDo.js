@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import { newTask } from 'reducers/newTask'
+import uniqid from 'uniqid';
+import { tasks } from 'reducers/tasks'
 
 export const NewToDo = () => {
   const [inputValue, setInputValue] = useState('');
@@ -8,14 +9,15 @@ export const NewToDo = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-
     const newToDo = {
-      task: inputValue,
-      isComplete: false
+      id: uniqid(),
+      text: inputValue.charAt(0).toUpperCase() + inputValue.slice(1),
+      complete: false
     };
-
-    dispatch(newTask.actions.addItem(newToDo));
+    dispatch(tasks.actions.addItem(newToDo));
+    dispatch(tasks.actions.sortItems());
     setInputValue('');
+    // https://www.random.org/
   }
 
   return (
