@@ -1,16 +1,24 @@
 import React, { useState } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import CheckBox from 'react-animated-checkbox'
 import { MdOutlineRemoveCircle } from 'react-icons/md'
 import { FlexRow } from 'reusable-components/Container';
 import { Button } from 'reusable-components/Button';
+import { tasks } from 'reducers/tasks';
 import { TaskText } from './TasksStyling';
 
-export const Task = ({ task }) => {
+export const Task = ({ task, index }) => {
   const [isChecked, setIsChecked] = useState(false);
-  const handleCheckboxChange = () => {
+  const dispatch = useDispatch();
+  // const isCompleted = useSelector((store) => store.tasks.tasks.);
+  const handleCheckboxChange = (selectedTaskIndex) => {
     setIsChecked(!isChecked);
+    dispatch(tasks.actions.checkItem({ index: selectedTaskIndex }))
   };
+
+  const handleRemoveTask = (selectedTaskId) => {
+    dispatch(tasks.actions.removeItem({ id: selectedTaskId }))
+  }
 
   return (
     <FlexRow>
@@ -22,9 +30,9 @@ export const Task = ({ task }) => {
           unCheckedColor: '#b8b8b8'
         }}
         duration={400}
-        onClick={handleCheckboxChange} />
-      <TaskText>{task}</TaskText>
-      <Button><MdOutlineRemoveCircle fontSize="2em" color="#FFAACF" /></Button>
+        onClick={() => handleCheckboxChange(index)} />
+      <TaskText>{task.text}</TaskText>
+      <Button onClick={() => handleRemoveTask(task.id)}><MdOutlineRemoveCircle fontSize="2em" color="#FFAACF" /></Button>
     </FlexRow>
   )
 }

@@ -16,32 +16,28 @@ export const Tasks = () => {
   const addNewTask = () => {
     console.log('task')
     showInputDialog({
-      title: 'Sign Up',
+      title: 'Create new task',
       showCloseButton: true,
       headerTextStyle: { fontWeight: 'bold', fontSize: 'x-large' },
       headerStyle: { marginTop: 5, marginBottom: 5 },
       errorMessageStyle: { color: 'green' },
       options: [
         {
-          name: 'No Thanks!',
-          type: 'cancel',
-          style: { background: 'lightcoral' }
-        },
-        {
           name: 'Cancel',
-          type: 'cancel'
+          type: 'cancel',
+          style: { background: '#FFAACF' }
         },
         {
           name: 'Confirm',
           type: 'confirm',
-          style: { background: 'lightgreen' }
+          style: { background: '#B9F3E4' }
         }
       ],
       inputs: [
         {
           inputType: 'textarea',
           name: 'text',
-          label: 'New Task',
+          label: 'Text',
           default: '',
           validation: {
             minLength: {
@@ -70,8 +66,8 @@ export const Tasks = () => {
 
     <TaskPageContainer>
       <TaskListContainer>
-        {allTasks.map((task) => (
-          <Task key={task.id} task={task.text} />
+        {allTasks.map((task, index) => (
+          <Task key={task.id} index={index} task={task} />
         ))}
       </TaskListContainer>
       <NewTaskContainer><Button onClick={addNewTask}><MdPlaylistAdd fontSize="3em" color="#EA8FEA" /></Button></NewTaskContainer>

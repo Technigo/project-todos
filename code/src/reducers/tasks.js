@@ -28,7 +28,16 @@ export const tasks = createSlice({
       console.log(action);
     },
     removeItem: (state, action) => {
-      console.log(action);
+      const { id } = action.payload
+      state.tasks = state.tasks.filter((item) => item.id !== id)
+    },
+    checkItem: (state, action) => {
+      const { index } = action.payload
+      if (state.tasks[index].completed) {
+        state.tasks[index].completed = false
+      } else {
+        state.tasks[index].completed = true
+      }
     },
   },
 });

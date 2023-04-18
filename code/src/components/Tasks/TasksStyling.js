@@ -16,8 +16,8 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-overflow-y:auto;
 box-sizing: border-box;
+min-height:100%;
 `
 
 export const TaskListContainer = styled.div`
@@ -28,7 +28,7 @@ align-items:center;
 flex-direction:column;
 overflow-y:auto;
 box-sizing: border-box;
-gap:2em;
+gap:1em;
 `
 
 export const TaskText = styled.p`
