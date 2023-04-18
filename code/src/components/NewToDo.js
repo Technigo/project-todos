@@ -11,7 +11,7 @@ export const TextInput = styled.input`
   outline: none;
   border-radius: 8px;
   height: 48px;
-  width: 30%;
+  width: 100%;
   box-sizing: border-box;
   padding: 5px 15px;
   font-size: 18px;
@@ -27,6 +27,10 @@ export const TextInput = styled.input`
 
    @media (max-width: 768px) {
   }
+`
+export const ToDoForm = styled.form`
+  display: flex;
+  gap: 10px;
 `
 
 export const NewToDo = () => {
@@ -47,7 +51,7 @@ export const NewToDo = () => {
   }
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <ToDoForm onSubmit={onFormSubmit}>
       <label htmlFor="newtask">
         <TextInput
           type="text"
@@ -61,6 +65,6 @@ export const NewToDo = () => {
         className="submit-button">
         ADD TODO
       </button>
-    </form>
+    </ToDoForm>
   )
 }

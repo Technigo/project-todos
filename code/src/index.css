@@ -34,6 +34,7 @@ code {
     bottom: 0;
     top: 0;
     margin: auto;
+    transform: scaleY(-1);
 }
 .waveWrapperInner {
     position: absolute;
