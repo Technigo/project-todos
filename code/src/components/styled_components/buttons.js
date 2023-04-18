@@ -12,11 +12,13 @@ export const AddButton = styled.button`
 `;
 
 export const DeleteButton = styled.button`
-  background-color: green;
+  background-color: #805BBB;
   color: white;
-  border-radius: none;
+  border-radius: 5px;
+  padding: 5px;
+  border: none;
   cursor: pointer;
   &:hover {
-    background-color: darkgreen;
+    background-color: #DA58C2;
   }
 `;

@@ -1,6 +1,21 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import styled from 'styled-components';
+import { DeleteButton } from './styled_components/buttons';
 import { tasks } from '../reducers/tasks';
+
+const colors = ['#FBF8CC', '#FDE4CF', '#FFCFD2', '#F1C0E8', '#CFBAF0', '#A3C4F3', '#90DBF4', '#8EECF5', '#98F5E1', '#B9FBC0'];
+
+const StyledTodoRow = styled.div`
+  margin: 10px auto;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  background-color: ${(props) => colors[props.index % colors.length]};
+  border-radius: 6px;
+  padding: 5px 8px;
+`;
 
 const TodoList = () => {
   const todoList = useSelector((store) => store.tasks.items);
@@ -9,18 +24,18 @@ const TodoList = () => {
   return (
     <div className="List">
       <ul>
-        {todoList.map((singleTodo) => {
+        {todoList.map((singleTodo, index) => {
           return (
-            <div className="todo-row" key={singleTodo.id}>
-              <label htmlFor="todo">
+            <StyledTodoRow key={singleTodo.id} index={index}>
+              <label htmlFor="todo" className="todo-label">
                 <span>{singleTodo.content}</span>
                 <input type="checkbox" id={singleTodo.id} name="todos" onChange={() => dispatch(tasks.actions.handleCheck(singleTodo))} />
               </label>
-              <button type="button" onClick={() => dispatch(tasks.actions.removeItem(singleTodo))}>Delete</button>
-            </div>
+              <DeleteButton type="button" onClick={() => dispatch(tasks.actions.removeItem(singleTodo))}>Delete</DeleteButton>
+            </StyledTodoRow>
           )
         })}
-        <button type="button" onClick={() => dispatch(tasks.actions.removeAll())}>Remove all tasks</button>
+        <DeleteButton type="button" onClick={() => dispatch(tasks.actions.removeAll())}>Remove all tasks</DeleteButton>
       </ul>
     </div>
   );

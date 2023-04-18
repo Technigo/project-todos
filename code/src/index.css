@@ -79,7 +79,7 @@ code {
 
 .Input {
   z-index: 4;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .Input form {
@@ -120,7 +120,7 @@ code {
   padding: 5px 8px;
 }
 
-.todo-row label {
+.todo-label {
   display: flex;
   flex-direction: row-reverse;
   gap: 10px;
@@ -131,7 +131,6 @@ code {
 }
 
 .List {
-  border: 1px solid blue;
   padding: 10px;
   overflow: auto; /* No scroll when OK in size, scroll appears when list too long*/
   z-index: 5;
