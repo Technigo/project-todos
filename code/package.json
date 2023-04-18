@@ -4,6 +4,11 @@
   "private": true,
   "dependencies": {
     "@babel/eslint-parser": "^7.18.9",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "@fontsource/roboto": "^4.5.8",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.1",
     "@reduxjs/toolkit": "^1.9.5",
     "eslint": "^8.21.0",
     "eslint-config-airbnb": "^19.0.4",

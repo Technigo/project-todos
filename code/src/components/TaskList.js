@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { List } from '@mui/material';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
@@ -8,7 +9,7 @@ const TaskList = () => {
       <ul>
         {taskList.map((eachTask) => {
           return (
-            <li key={eachTask.id}>{eachTask.text}</li>
+            <List key={eachTask.id}>{eachTask.text}</List>
           )
         })}
       </ul>

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
+import { TextField, Button } from '@mui/material';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -21,15 +22,11 @@ const AddTask = () => {
   return (
     <section>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="addTask">
-        Add your task here
-          <input
-            id="addTask"
-            type="text"
-            onChange={(e) => setInputValue(e.target.value)}
-            value={inputValue} />
-        </label>
-        <button type="submit">Add now</button>
+        <TextField
+          placeholder="Add your task here"
+          onChange={(e) => setInputValue(e.target.value)}
+          value={inputValue} />
+        <Button variant="outlined" type="submit">Add now</Button>
       </form>
     </section>
   )
