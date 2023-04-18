@@ -25,8 +25,13 @@ export const tasks = createSlice({
     },
     removeTask: (state, action) => {
       return state.filter((task) => task.id !== action.payload)
+    },
+    completeAll: (state) => {
+      state.forEach((task) => {
+        task.complete = true;
+      });
     }
   }
 })
 
-export const { toggleComplete, addTask, removeTask } = tasks.actions
+export const { toggleComplete, addTask, removeTask, completeAll } = tasks.actions
