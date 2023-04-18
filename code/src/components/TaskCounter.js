@@ -1,14 +1,15 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+// src/components/TaskCounter.js
+import React from 'react'
+import { useSelector } from 'react-redux'
 
 const TaskCounter = () => {
   const tasks = useSelector((state) => state.tasks)
 
-  const uncompleateCount = tasks.filter((task) => !task.compleate).length
+  const uncompletedCount = tasks.filter((task) => !task.complete).length
 
   return (
     <div>
-      <p>Uncompleated tasks: {uncompleateCount}</p>
+      <p>Uncompleted tasks: {uncompletedCount}</p>
     </div>
   )
 }
