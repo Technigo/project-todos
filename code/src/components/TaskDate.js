@@ -4,7 +4,7 @@ const TaskDate = ({ date }) => {
   if (!date) {
     return null;
   }
-  return <p>{date.toLocalDateString()}</p>
+  return <p>{date.toLocaleDateString()}</p>
 }
 
 export default TaskDate;
