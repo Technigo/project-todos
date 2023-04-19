@@ -5,12 +5,10 @@ export const Container = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: flex-start;
-    gap: 20px;;
-    margin: 50px;
+    margin: 10px;
 `
 
-export const AddButton = styled.button`
+export const Button = styled.button`
     border: none;
     background: none;
     color: black;

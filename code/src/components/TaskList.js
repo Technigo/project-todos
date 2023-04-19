@@ -2,22 +2,27 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { tasks } from './reducers/tasks';
+import { Button } from './styles/global';
 
 const InnerWrapper = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 20px;
+    justify-content: space-between;
+    width: 100%;
+    gap: 10px;
     margin: 0;
 `
 
 const TaskText = styled.p`
     font-family: 'Dongle', sans-serif;
     font-size: 2em;
+    width: 100%;
 `
 const Time = styled.p`
   font-family: 'Roboto', sans-serif;
   font-size: 0.7em;
+  width: 100%;
 `
 
 export const TaskList = () => {
@@ -28,9 +33,13 @@ export const TaskList = () => {
     dispatch(tasks.actions.toggleTask(id));
   }
 
+  const deleteBtn = (taskIndex) => {
+    dispatch(tasks.actions.deleteTask(taskIndex))
+  }
+
   return (
     <section>
-      {taskList.map((singleTask) => {
+      {taskList.map((singleTask, index) => {
         return (
           <InnerWrapper>
             <label htmlFor={singleTask}>
@@ -43,6 +52,13 @@ export const TaskList = () => {
             </label>
             <TaskText>{singleTask.text}</TaskText>
             <Time>{singleTask.time}</Time>
+            <Button
+              type="button"
+              onClick={() => deleteBtn(index)}>
+              <span className="material-symbols-outlined">
+cancel
+              </span>
+            </Button>
           </InnerWrapper>
         )
       })}

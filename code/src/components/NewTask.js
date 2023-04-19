@@ -4,7 +4,8 @@ import { useDispatch } from 'react-redux';
 import styled from 'styled-components'
 import moment from 'moment';
 import { tasks } from './reducers/tasks';
-import { AddButton, HeadLine } from './styles/global';
+import { Button, HeadLine } from './styles/global';
+import { Counter } from './Counter';
 
 const AddTask = styled.input`
     border: none;
@@ -34,6 +35,7 @@ export const NewTask = () => {
   }
   return (
     <section>
+      <Counter />
       <HeadLine>To Do</HeadLine>
       <form onSubmit={onTaskSubmit}>
         <label htmlFor="addTaskInput">
@@ -44,11 +46,11 @@ export const NewTask = () => {
             type="text"
             placeholder="Add task" />
         </label>
-        <AddButton type="submit">
+        <Button type="submit">
           <span className="material-symbols-outlined">
 add_circle
           </span>
-        </AddButton>
+        </Button>
       </form>
     </section>
   )

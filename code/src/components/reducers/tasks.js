@@ -1,17 +1,17 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// const initialState = {
-//   items: [
-//     { id: 1, text: 'Fix website', complete: true },
-//     { id: 2, text: 'Build React-app', complete: false },
-//     { id: 3, text: 'Hand in project', complete: true },
-//     { id: 4, text: 'Review code', complete: false }
-//   ]
-// }
+const initialState = {
+  items: [
+    { id: 1, text: 'Fix website', complete: true },
+    { id: 2, text: 'Build React-app', complete: false },
+    { id: 3, text: 'Hand in project', complete: true },
+    { id: 4, text: 'Review code', complete: false }
+  ]
+}
 
 export const tasks = createSlice({
   name: 'tasks',
-  initialState: { items: [] },
+  initialState,
   reducers: {
     addTask: (store, action) => {
       store.items = [...store.items, action.payload]
@@ -23,6 +23,9 @@ export const tasks = createSlice({
           item.complete = !item.complete
         }
       });
+    },
+    deleteTask: (store, action) => {
+      store.items.splice(action.payload, 1)
     }
   }
 });
