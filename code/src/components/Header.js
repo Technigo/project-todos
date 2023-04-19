@@ -19,7 +19,7 @@ const HeaderTitle = styled.h1`
 `;
 const HeaderImage = styled.img`
 width: 20%;
-max-width: 50px;
+max-width: 80px;
 `
 
 export const Header = () => {
