@@ -2,12 +2,14 @@
   box-sizing: border-box;
 }
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #eaf4ef;
+  display: block;
+    margin: 8px;
 }
 
 code {
@@ -15,14 +17,50 @@ code {
     monospace;
 }
 .app-container{
-  display: grid;
-  grid-template-columns: 1fr;
-  background-color: pink;
-    margin: 0 auto;
-    min-height: 95vh;
-    width: 100%;
+  background-color:#fec5e5;
+  border-radius: 2.8rem;
+  box-shadow: 0 0.5rem 2rem #383737;
+  margin: 0 auto;
+  min-height: 95vh;
+  width: 100%;
 }
 
+h1{
+ color:  rgb(121, 182, 193);
+}
+
+h2{
+  color:  rgb(121, 182, 193);
+ }
+
+ p{
+  color: black;
+ }
+
+ @media (min-width: 668px) and (max-width: 1024px) {
+  .app-container {
+    margin-top: 2rem;
+    width: 50%;
+    min-height: 60vh;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px){
+  .app-container {
+    margin-top: 2rem;
+    width: 35%;
+    min-height: 60vh;
+  }
+}
+
+@media (min-width: 1441px){
+  .app-container {
+    margin-top: 3rem;
+    border: 2px solid #1F9D6E;
+    width: 25%;
+    min-height: 60vh;
+  }
+}
 
 
 
