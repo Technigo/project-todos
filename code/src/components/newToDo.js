@@ -23,8 +23,8 @@ export const NewToDo = () => {
   return (
     <div>
       <form onSubmit={onFormSubmit} className="form-container">
-        <label htmlFor="input">
-          <input className="input-container" type="text" value={inputValue} placeholder="Add new task..." onChange={(event) => setInputValue(event.target.value)} />
+        <label htmlFor="input" className="input-container">
+          <input className="input-child" type="text" value={inputValue} placeholder="Add new task..." onChange={(event) => setInputValue(event.target.value)} />
           <button className="addBtn" type="submit" disabled={inputValue.length === 0}> Add </button>
 
         </label>

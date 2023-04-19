@@ -21,8 +21,9 @@ const TodoItem = ({ todo, index, onDelete, onDone }) => {
 
   return (
     <div className="todo-container">
+
+      <p className="TodoText">{todo.text}</p>
       <section className="todo-child">
-        <p className="TodoText">{todo.text}</p>
         <label className="checkbox-container" htmlFor={todo.id}>
           <input
             type="checkbox"
@@ -31,9 +32,6 @@ const TodoItem = ({ todo, index, onDelete, onDone }) => {
             checked={isChecked}
             onChange={handleCheckboxClick}
             onKeyDown={handleKeyDown} />
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-            <path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z" />
-          </svg>
         </label>
         <button
           className="deleteBtn"

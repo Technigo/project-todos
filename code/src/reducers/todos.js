@@ -6,9 +6,7 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
-      { id: '1',
-        text: 'text',
-        isDone: false }
+
     ]
   },
   reducers: {

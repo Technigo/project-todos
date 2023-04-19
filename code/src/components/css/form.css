@@ -1,20 +1,46 @@
-
 .form-container{
-margin-left: 80px;
-
+    display: flex;
+  align-items: center;
 
 }
 .input-container{
-	border: solid 2px  rgb(121, 182, 193);
-    border-radius: 5px;
-    padding: 2% 1% 2% 5%;
-    margin-right: 3%;
-	
-}
+    display: flex;
+    align-items: center;
 
-.addBtn{
-	background-color: rgb(121, 182, 193);
-    border-radius: 15px;
-    border: 4px solid rgb(121, 182, 193);
-    cursor: pointer;
+
+
 }
+.input-child {
+    flex: 1;
+    border: solid 2px rgb(121, 182, 193);
+    border-radius: 0.6rem;
+    margin: 1.5rem 0.5rem;
+    color: rgb(86, 107, 120);
+    font-size: 1rem;
+    font-weight: 200;
+    height: 3.2rem;
+    width: 90%;
+    padding: 1.2rem;
+  }
+  
+  .addBtn {
+    flex-shrink: 0;
+    background-color: rgb(121, 182, 193);
+    border-radius: 0.6rem;
+    cursor: pointer;
+    border: none;
+    color: white;
+    margin-left: 0.5rem;
+    height: 3.2rem;
+    padding: 1.2rem;
+  }
+
+
+
+@media (min-width: 200px) and (max-width: 1024px) {
+    .app-container {
+      margin-top: 2rem;
+      width: 50%;
+      min-height: 60vh;
+    }
+  }
