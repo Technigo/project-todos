@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { FaTrash } from 'react-icons/fa';
+import { tasks } from './Reducers/tasks';
 
 export const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items)
@@ -19,8 +20,9 @@ export const TaskList = () => {
     setCheckedItems(newCheckedItems);
   };
 
-  const deleteTask = (singleTask) => {
-    dispatchEvent(singleTask.actions.removeToDo(singleTask));
+  const dispatch = useDispatch();
+  const deleteTask = (taskId) => {
+    dispatch(tasks.actions.RemoveToDo(taskId));
   }
 
   return (
@@ -65,5 +67,7 @@ li {
 `
 
 const Deletebtn = styled.button`
-height:30px;
-color:transparent;`
+height:3rem;
+color:#DDDBCB;
+background-color: #1B9AAA;
+border:none;`

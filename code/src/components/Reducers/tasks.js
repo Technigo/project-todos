@@ -17,7 +17,11 @@ export const tasks = createSlice({
     AddTasks: (store, action) => {
       // store.items.push(action.payload);mutable-below is immutable
       store.items = [...store.items, action.payload]
+    },
+    RemoveToDo: (store, action) => {
+      const index = store.items.findIndex((item) => item.id === action.payload);
+      store.items.splice(index, 1);
     }
   }
 })
-
+export default tasks;

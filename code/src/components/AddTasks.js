@@ -1,11 +1,12 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components'
 import { tasks } from './Reducers/tasks';
 
 const AddTasks = () => {
   const [inputValue, setInputValue] = useState('');
+  const [clicked, setClicked] = useState(false);
   const dispatch = useDispatch();
 
   const onFormSubmit = (event) => {
@@ -15,15 +16,23 @@ const AddTasks = () => {
       isListed: true };
     dispatch(tasks.actions.AddTasks(newTask));
     setInputValue('');
+    setClicked(true);
   }
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      setClicked(false);
+    }, 2000);
+    return () => clearTimeout(timeoutId);
+  }, [clicked]);
 
   return (
     <Wrapper>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addtodotask">
-          <Input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addtodotask" type="text" />
+          <Input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addtodotask" type="text" required />
         </label>
-        <StyledButton type="submit">Add To List</StyledButton>
+        <StyledButton type="submit" clicked={clicked}>Add To List</StyledButton>
       </form>
     </Wrapper>
   )
@@ -49,7 +58,7 @@ const StyledButton = styled.button`
   height:48px;
   font-family: 'Dongle', sans-serif;
   font-size: 1.5rem;
-  background-color: white;
+  background-color: ${({ clicked }) => (clicked ? '#005F6B' : 'white')};
   color: black;
   border: none;
   padding:0px 10px; 
