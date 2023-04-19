@@ -1,13 +1,15 @@
 import React from 'react';
 import AddTask from './AddTask';
-import CheckboxToDoList from './CheckboxToDoList';
+import ToDoList from './ToDoList';
 
 const ListPage = () => {
   return (
-    <section className="list-page-container">
+    <main className="main-container">
       <AddTask />
-      <CheckboxToDoList />
-    </section>
+      <section className="list-container">
+        <ToDoList />
+      </section>
+    </main>
   )
 }
 

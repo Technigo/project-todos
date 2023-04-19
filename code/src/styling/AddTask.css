@@ -1,0 +1,58 @@
+.top-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 400px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 30px;
+    margin-top: 40px;
+}
+
+.header-h1 {
+    font-size: 30px;
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    margin-top: 16px;
+    color: #DF7861;
+}
+
+.add-task-label {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 18px;
+    margin: 10px 0px 10px 0px;
+    color: #555555;
+}
+
+#addTaskInput {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    height: 25px;
+    width: 200px;
+    border: 2px solid #D4E2D4;
+    border-radius: 5px;
+    color: #555555;
+    padding: 2px 5px 2px 5px;
+}
+
+#addTaskInput:focus {
+  outline: #DF7861;
+}
+
+.add-button {
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+    text-align: center;
+    height: 32px;
+    width: 70px;
+    margin-left: 10px;
+    border: 2px solid #D4E2D4;
+    border-radius: 5px;
+    color: #555555;
+    background-color: white;
+    padding: 2px 5px 2px 5px;
+}
+
+.add-button:hover {
+    background-color: #D4E2D4;
+}

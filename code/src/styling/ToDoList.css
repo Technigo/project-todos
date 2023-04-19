@@ -1,0 +1,112 @@
+.task-count {
+    font-size: 20px;
+    color: #ECB390
+}
+
+ul {
+    padding: 0;
+}
+
+.task-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.task-item {
+    display: flex;
+    margin: 14px 0px 10px 0px;
+}
+
+.todo-text {
+    display: flex;
+    font-size: 22px;
+}
+
+.delete-button {
+    font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 24px;
+    background: none;
+    border: none;
+    color: #DF7861;
+    padding: 0;
+    align-self: flex-end;
+    margin: 8px 18px 8px 0px;
+}
+
+hr {
+    height: 2px;
+    width: 100%;
+    border-width: 0;
+    background-color: #D4E2D4;
+    margin: 0px;
+  }
+
+.invisible-text {
+    font-size: 20px;
+    margin: 10px 0px 10px 0px;
+    color: white;
+}
+
+[type="checkbox"] {
+    opacity: 0;
+}
+
+
+[type="checkbox"] + label {
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    display: inline-block;
+    color: #DF7861;
+    border-radius: 100%;
+    line-height: 22px;
+}
+
+[type="checkbox"] + label::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    outline: 2px solid #DF7861;
+    background-color: white;
+}
+
+[type="checkbox"]:checked + label::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    outline: 2px solid #DF7861;
+    background: white;
+}
+
+[type="checkbox"]:checked + label::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    background-image: url(check_outline.svg);
+    background-size: contain;
+    transform: scale(1);
+    opacity: 1;
+    transition: all .5s ease;
+}
+
+[type="checkbox"]:not(:checked) + label::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    background-size: contain;
+    transform: scale(0);
+    opacity: 0;
+    transition: all .5s ease;
+}

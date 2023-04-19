@@ -1,0 +1,17 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    /*align-items: center;*/
+    width: 400px;
+    border-radius: 10px;
+    background-color: white;
+    padding: 30px;
+    margin-top: 40px;
+}

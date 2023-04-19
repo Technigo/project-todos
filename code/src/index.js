@@ -1,7 +1,9 @@
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './index.css';
-import './App.css'
+import './styling/AddTask.css'
+import './styling/ListPage.css'
+import './styling/ToDoList.css'
 import { App } from './App';
 
 const container = document.getElementById('root');

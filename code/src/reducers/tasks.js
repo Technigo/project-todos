@@ -2,16 +2,16 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [
-    {
+    /* {
       id: '1',
       description: 'Do laundry',
-      completed: false
+      isCompleted: false
     },
     {
       id: '2',
       description: 'Buy milk',
-      completed: false
-    }
+      isCompleted: false
+    } */
   ]
 }
 
@@ -31,6 +31,17 @@ const tasks = createSlice({
       // const z = [...x, 'd']  => ['a','b','c','d']
       // const superObject = {a: 'test', b:'other test'}
       // const supererObject = {...superObject, c: 'third test'}
+    },
+    removeTask: (store, action) => {
+      /* store.items.splice(action.payload, 1) */
+      store.items = store.items.filter((item) => item.id !== action.payload.id)
+    },
+    toggleComplete: (store, action) => {
+      store.items.forEach((task) => {
+        if (task.id === action.payload) {
+          task.isCompleted = !task.isCompleted
+        }
+      })
     }
   }
 });

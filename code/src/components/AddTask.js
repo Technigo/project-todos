@@ -4,26 +4,30 @@ import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 
 const AddTask = () => {
-  const [inputValue, setInputValue] = useState('')
+  // const [inputValue, setInputValue] = useState('')
+  const [newTaskInput, setNewTaskInput] = useState('')
   const dispatch = useDispatch()
   const onFormSubmit = (event) => {
     event.preventDefault()
     const newTask = {
       id: Date.now().toString(),
-      description: inputValue.charAt(0).toUpperCase() + inputValue.slice(1),
-      completed: false
+      description: newTaskInput.charAt(0).toUpperCase() + newTaskInput.slice(1),
+      isCompleted: false
     }
     dispatch(tasks.actions.addTask(newTask))
-    setInputValue('')
+    setNewTaskInput('')
   }
   return (
-    <section>
+    <section className="top-container">
+      <header>
+        <h1 className="header-h1">My to-do list</h1>
+      </header>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
-          <p>Add your new task here:</p>
-          <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" />
+          <p className="add-task-label">Add new task:</p>
+          <input value={newTaskInput} onChange={(event) => setNewTaskInput(event.target.value)} id="addTaskInput" type="text" />
         </label>
-        <button type="submit">Add now!</button>
+        <button className="add-button" type="submit" disabled={newTaskInput.length < 5 || newTaskInput.length > 50}>ADD</button>
       </form>
     </section>
   )
