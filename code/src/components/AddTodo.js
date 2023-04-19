@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import uniqid from 'uniqid'
 
 import todos from 'reducers/todo';
+import { StyleP } from './Header';
 
 const AddTodo = () => {
   const [inputText, setInputText] = useState('');
@@ -23,7 +24,7 @@ const AddTodo = () => {
   return (
     <form onSubmit={onAddTodo}>
       <label htmlFor="text">
-        Add to BucketList
+        <StyleP>Create new</StyleP>
         <input
           type="text"
           value={inputText}

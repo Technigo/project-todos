@@ -23,7 +23,7 @@ font-family: 'Gaegu';
 font-size: 60px;
 font-weight: bold;
 `
-const StyleP = styled.text`
+export const StyleP = styled.text`
 font-family: 'Gaegu', cursive;
 font-size: 20px;
 font-weight: bold;

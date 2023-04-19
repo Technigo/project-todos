@@ -49,9 +49,9 @@ font-family: 'Gaegu';
 font-size: 16px;
 margin-top: 20px;
 margin-bottom: 10px;
-box-shadow: 5px 5px #000;
+box-shadow: 3px 3px #000;
  &:hover{
-  background-image: linear-gradient(green, blue);
+  background-image: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
  }`
 
 const CheckBox = styled.input`
@@ -60,7 +60,7 @@ height: 16px;
 width: 16px;
 top: 5px;
 border-radius: 5px;
-outline: 2px solid #aaa;
+outline: 1px solid #aaa;
 cursor: pointer;
 `
 
