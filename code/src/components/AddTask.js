@@ -54,6 +54,7 @@ const AddTaskLabel = styled.label`
   background-color: beige;
   border-radius: 30px;
   margin-top: 1.5rem;
+  padding: 10px;
 `;
 
 const AddTaskInput = styled.input`
@@ -63,7 +64,7 @@ const AddTaskInput = styled.input`
   border-radius: 20px;
   border-bottom: 2px solid #ccc;
   margin-bottom: 1rem;
-  width: 100%;
+  max-width: 80%;
 `;
 
 const AddTaskButton = styled.button`
