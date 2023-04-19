@@ -1,9 +1,24 @@
-// import { formatDistance } from 'date-fns'
+import React from 'react'
+import { format } from 'date-fns'
+import styled from 'styled-components'
 
-// const Header = () => {
-//     return (
-//         <p>>{formatDistance(newDate(singleTask.createdAt, Date.now(), { addSuffix: true})}</p>
-//     )
-// }
+const Header = () => {
+  const currentDate = new Date();
+  const formattedDate = format(currentDate, 'EEEE, do MMMM yyyy');
 
-// export default Header;
+  return (
+    <>
+      <Title>To Do List</Title>
+      <h3>{formattedDate}</h3>
+    </>
+  )
+}
+
+export default Header;
+
+/* STYLING FOR HEADER */
+
+const Title = styled.h1`
+ font-family: verdana;
+ text-align: center;
+`

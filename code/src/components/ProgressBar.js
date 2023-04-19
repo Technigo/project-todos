@@ -8,11 +8,12 @@ const ProgressBar = () => {
   return (
     <div>
       <p>You have completed {numberOfTasksDone}/{allTasksToDo.length} tasks.</p>
-      {numberOfTasksDone === 0 && <p>Better get started!</p>}
-      {numberOfTasksDone > 0 && numberOfTasksDone <= 0.5 && <p>Not bad!</p>}
-      {numberOfTasksDone > 0.5 && <p>Nearly there!</p>}
     </div>
   )
 }
 
 export default ProgressBar;
+
+//   {numberOfTasksDone === 0 && <p>Better get started!</p>}
+//   {numberOfTasksDone > 0 && numberOfTasksDone <= 0.5 && <p>Not bad!</p>}
+//   {numberOfTasksDone > 0.5 && <p>Nearly there!</p>}
