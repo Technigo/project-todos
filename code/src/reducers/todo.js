@@ -22,15 +22,15 @@ const todos = createSlice({
   },
 
   reducers: {
-    toggleTask: (store, action) => {
+    toggleItem: (store, action) => {
       store.items.forEach((item) => {
         if (item.id === action.payload) {
           item.done = !item.done;
         }
-      })
+      });
     },
-    deleteTask: (store, action) => {
-      store.items.splice(action.payload, 1)
+    deleteItem: (store, action) => {
+      store.items.splice(action.payload, 1);
     },
     addTask: (store, action) => {
       const copyArray = store.items;
