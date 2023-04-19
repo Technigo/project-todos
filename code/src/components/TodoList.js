@@ -22,7 +22,7 @@ export const TodoList = () => {
         <TodoItem key={todoItem.id}>
           <h2>{todoItem.name}</h2>
           <label>
-          Doing it!
+          Done
             <CheckBox
               type="checkbox"
               checked={todoItem.done}
@@ -62,8 +62,11 @@ top: 5px;
 border-radius: 5px;
 outline: 1px solid #aaa;
 cursor: pointer;
-`
 
+&:checked {
+  background-color: red;
+}
+`
 const DeleteButton = styled.button`
 position:absolute;
 top:10px;
