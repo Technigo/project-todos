@@ -18,6 +18,13 @@ export const AddTask = () => {
     dispatch(tasks.actions.addTask(newTask));
     setInputValue('');
   }
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      onFormSubmit(event);
+    }
+  }
+
   return (
     <AddTaskSection>
       <AddTaskForm onSubmit={onFormSubmit}>
@@ -29,7 +36,8 @@ export const AddTask = () => {
           onChange={(event) => setInputValue(event.target.value)}
           id="addTaskInput"
           type="text"
-          placeholder="Enter a task..." />
+          placeholder="Enter a task..."
+          onKeyPress={handleKeyPress} />
         <AddTaskButton type="submit">Add Now!</AddTaskButton>
       </AddTaskForm>
       <Footer />
@@ -87,6 +95,7 @@ const AddTaskInput = styled.input`
   max-width: 80%;
   font-family: 'Mystery Quest', cursive;
   ::placeholder {
+    padding-left: 10px;
     font-family: 'Mystery Quest', cursive;
   }
 `;

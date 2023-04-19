@@ -61,6 +61,7 @@ const StyledUl = styled.ul`
     margin-top: 20px;
     margin-bottom: 20px;
     padding: 0;
+    gap: 10px;
 `;
 const StyledLi = styled.li`
   display: flex;
@@ -87,5 +88,21 @@ const StyledCheckbox = styled.input`
     background-size: 98%;
     background-repeat: no-repeat;
     background-position: center;
+
+       /* animation */
+       animation-name: grow;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  
+  @keyframes grow {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(1.5);
+    }
   }
 `;
