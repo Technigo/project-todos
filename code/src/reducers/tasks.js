@@ -32,17 +32,22 @@ export const tasks = createSlice({
       state.tasks = state.tasks.filter((item) => item.id !== id)
     },
     checkItem: (state, action) => {
-      const { index } = action.payload
-      if (index === null) {
+      const { id } = action.payload
+      console.log(action.payload)
+      const selectedTask = id !== null && state.tasks.find((item) => item.id === id)
+      const selectedTaskIndex = state.tasks.indexOf(selectedTask)
+      console.log('selectedTaskid:', selectedTask.id, 'selectedTaskcompleted:', selectedTask.completed, 'index:', selectedTaskIndex)
+      if (id === null) {
         state.tasks.forEach((task) => {
           task.completed = true
         })
         return
       }
-      if (state.tasks[index].completed) {
-        state.tasks[index].completed = false
+
+      if (selectedTask.completed) {
+        selectedTask.completed = false
       } else {
-        state.tasks[index].completed = true
+        selectedTask.completed = true
       }
     },
     filterOn: (state, action) => {

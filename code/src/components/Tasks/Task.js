@@ -7,14 +7,14 @@ import { Button } from 'reusable-components/Button';
 import { tasks } from 'reducers/tasks';
 import { TaskText } from './TasksStyling';
 
-export const Task = ({ task, index, completed }) => {
+export const Task = ({ task }) => {
   // const [isChecked, setIsChecked] = useState(false);
   // const isCompleted = useSelector((store) => store.tasks.);
   const dispatch = useDispatch();
   // const isCompleted = useSelector((store) => store.tasks.tasks.);
-  const handleCheckboxChange = (selectedTaskIndex) => {
+  const handleCheckboxChange = (selectedTaskId) => {
     // setIsChecked(!isChecked);
-    dispatch(tasks.actions.checkItem({ index: selectedTaskIndex }))
+    dispatch(tasks.actions.checkItem({ id: selectedTaskId }))
   };
 
   const handleRemoveTask = (selectedTaskId) => {
@@ -24,14 +24,14 @@ export const Task = ({ task, index, completed }) => {
   return (
     <FlexRow>
       <CheckBox
-        checked={completed}
+        checked={task.completed}
         checkBoxStyle={{
           checkedColor: '#B9F3E4',
           size: 40,
           unCheckedColor: '#b8b8b8'
         }}
         duration={400}
-        onClick={() => handleCheckboxChange(index)} />
+        onClick={() => handleCheckboxChange(task.id)} />
       <TaskText>{task.text}</TaskText>
       <Button onClick={() => handleRemoveTask(task.id)}><MdOutlineRemoveCircle fontSize="2em" color="#FFAACF" /></Button>
     </FlexRow>

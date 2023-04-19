@@ -25,7 +25,7 @@ export const FilterTasks = () => {
   }
 
   const completeAllTasks = () => {
-    dispatch(tasks.actions.checkItem({ index: null }))
+    dispatch(tasks.actions.checkItem({ id: null }))
   }
 
   return (

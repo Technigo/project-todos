@@ -78,7 +78,7 @@ export const Tasks = () => {
           <Task key={task.id} index={index} task={task} completed={task.completed} />
         ))}
         {filterOn === 'completed' && completedTasks.map((task, index) => (
-          <Task key={task.id} index={index} task={task} completed={task.completed} />
+          <Task key={task.id} index={index} task={task} />
         ))}
       </TaskListContainer>
       <NewTaskContainer><Button onClick={addNewTask}><MdPlaylistAdd fontSize="3em" color="#EA8FEA" /></Button></NewTaskContainer>
