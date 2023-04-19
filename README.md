@@ -1,13 +1,21 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+✓ How to create new slices
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+✓ How to create new reducers
+
+✓ How to create new actions
+
+✓ What immutability means and how to work with it
+
+✓ How to structure a redux store
+
+✓ How to interact with your store using selectors or by dispatching actions
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+My biggest issue is naming the different functions and during the programming process missing details in spelling or if I change as I code. This affected the synced components and created a redo of a lot of code and costed time. I got help both from 1:1 meeting with Technigo, other and former student's as well as using Stack a great deal and google. 
+I chose to go by my style of liking which is simple, earth friendly vibe so I enjoyed having that freedom. 
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://roaring-frangipane-2b3f66.netlify.app
