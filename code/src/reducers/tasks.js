@@ -26,6 +26,13 @@ const tasks = createSlice({
   reducers: {
     addTask: (store, action) => {
       store.items = [...store.items, action.payload]
+    },
+    removeTask: (store, action) => {
+      const existingItem = store.items.find((item) => item.id === action.payload.id)
+
+      if (existingItem) {
+        store.items = store.items.filter((item) => item.id !== action.payload.id)
+      }
     }
   }
 });
