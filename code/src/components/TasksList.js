@@ -41,7 +41,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
   background-color: aliceblue;
-  padding: 2rem;
+  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
@@ -57,8 +57,9 @@ const StyledRemoveTask = styled(RemoveTask)`
 const StyledUl = styled.ul`
     display: flex;
     flex-direction: column;
-  margin: 0;
-  padding: 0 0 0 1rem;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
 `;
 const StyledLi = styled.li`
   display: flex;

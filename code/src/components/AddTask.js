@@ -53,9 +53,25 @@ const AddTaskLabel = styled.label`
   margin-bottom: 1rem;
   background-color: beige;
   border-radius: 30px;
+  border: dotted purple;
   margin-top: 1.5rem;
   padding: 10px;
   font-family: 'Mystery Quest', cursive;
+  &:hover {
+    animation: updown 0.8s ease-in-out infinite;
+  }
+
+  @keyframes updown {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-7px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 `;
 
 const AddTaskInput = styled.input`

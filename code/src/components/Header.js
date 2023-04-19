@@ -10,16 +10,18 @@ const HeaderContainer = styled.header`
   padding: 16px;
   text-align: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  max-height: 80px;
 `;
 
 const HeaderTitle = styled.h1`
   font-size: 2rem;
   font-weight: bold;
   margin: 0;
+  padding: 5px;
 `;
 const HeaderImage = styled.img`
-width: 20%;
-max-width: 80px;
+max-width: 20%; 
+  max-height: 100%;
 `
 
 export const Header = () => {
