@@ -32,6 +32,9 @@ export const TasksList = () => {
   )
 }
 const StyledSection = styled.section`
+display: flex;
+flex-direction: column;
+align-items: center;
   background-color: #f6f6f6;
   padding: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -47,6 +50,8 @@ const StyledRemoveTask = styled(RemoveTask)`
   }
 `;
 const StyledUl = styled.ul`
+    display: flex;
+    flex-direction: column;
   margin: 0;
   padding: 0 0 0 1rem;
 `;
