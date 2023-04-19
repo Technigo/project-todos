@@ -6,6 +6,7 @@ import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
 import TaskTracker from 'components/TaskTracker';
 import ToggleCompleteBtn from 'components/ToggleCompleteBtn';
+import ClearAllBtn from 'components/ClearAllBtn';
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -20,6 +21,7 @@ export const App = () => {
       <TaskList />
       <TaskTracker />
       <ToggleCompleteBtn />
+      <ClearAllBtn />
     </Provider>
   );
 }

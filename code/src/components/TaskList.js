@@ -16,34 +16,55 @@ const TaskList = () => {
   };
 
   // move completed tasks to the bottom of the task list
-  const sortedTaskList = [...taskList].sort((a, b) => {
-    if (a.isComplete && !b.isComplete) {
-      return 1;
-    } else if (!a.isComplete && b.isComplete) {
-      return -1;
+  // const sortedTaskList = [...taskList].sort((a, b) => {
+  //   if (a.isComplete && !b.isComplete) {
+  //     return 1;
+  //   } else if (!a.isComplete && b.isComplete) {
+  //     return -1;
+  //   } else {
+  //     return 0;
+  //   }
+  // });
+
+  // Group tasks by category
+  const groupedTasks = taskList.reduce((acc, task) => {
+    if (task.category) {
+      if (!acc[task.category]) {
+        acc[task.category] = [];
+      }
+      acc[task.category].push(task);
     } else {
-      return 0;
+      if (!acc.Other) {
+        acc.Other = [];
+      }
+      acc.Other.push(task);
     }
-  });
+    return acc;
+  }, {});
 
   return (
     <section>
-      {sortedTaskList.map((singleTask) => {
-        return (
-          <SingleTaskWrapper key={singleTask.id}>
-            <input
-              type="checkbox"
-              checked={singleTask.isComplete}
-              onChange={() => handleCheckboxChange(singleTask.id)} />
-            <p>{singleTask.name}</p>
-            <p>Created: {singleTask.timeStamp}</p>
-            <p>Due: {singleTask.dueDate}</p>
-            <button type="button" onClick={() => handleDeletingTask(singleTask.id)}>
-              Delete
-            </button>
-          </SingleTaskWrapper>
-        );
-      })}
+      {Object.entries(groupedTasks).map(([category, theTasks]) => (
+        <div key={category}>
+          <h2>{category}</h2>
+          {theTasks.map((singleTask) => (
+            <SingleTaskWrapper key={singleTask.id}>
+              <input
+                type="checkbox"
+                checked={singleTask.isComplete}
+                onChange={() => handleCheckboxChange(singleTask.id)} />
+              <p>{singleTask.name}</p>
+              <p>Created: {singleTask.timeStamp}</p>
+              <p>Due: {singleTask.dueDate}</p>
+              <button
+                type="button"
+                onClick={() => handleDeletingTask(singleTask.id)}>
+                Delete
+              </button>
+            </SingleTaskWrapper>
+          ))}
+        </div>
+      ))}
     </section>
   );
 };

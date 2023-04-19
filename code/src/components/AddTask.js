@@ -6,12 +6,14 @@ import 'react-datepicker/dist/react-datepicker.css';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
-  const [dueDate, setDueDate] = useState(null);
+  const [dueDate, setDueDate] = useState('');
+  const [selectedCategory, setSelectedCategory] = useState('');
 
   const dispatch = useDispatch();
 
   const onFormSubmit = (event) => {
     event.preventDefault();
+
     const now = new Date();
     const newTask = {
       id: Date.now().toString(),
@@ -28,11 +30,13 @@ const AddTask = () => {
         year: 'numeric',
         month: 'numeric',
         day: 'numeric'
-      }) : 'Whenever' // Use selected due date or null if not selected
+      }) : 'Whenever', // Use selected due date or 'whenever' if not selected
+      category: selectedCategory
     }
     dispatch(tasks.actions.addTask(newTask));
     setInputValue('');
-    setDueDate(null);
+    setDueDate('');
+    setSelectedCategory('');
   }
 
   return (
@@ -42,6 +46,15 @@ const AddTask = () => {
             New Task:
           <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" />
         </label>
+        <select
+          value={selectedCategory}
+          onChange={(event) => setSelectedCategory(event.target.value)}>
+          <option value="">Select a category</option>
+          <option value="Chores">Chores</option>
+          <option value="Shopping">Shopping</option>
+          <option value="Work">Work</option>
+          <option value="Other">Other</option>
+        </select>
         <DatePicker
           selected={dueDate}
           onChange={(date) => setDueDate(date)}

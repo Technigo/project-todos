@@ -1,17 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  items: [
-    { id: 1,
-      name: 'Do laundry',
-      isComplete: true },
-    { id: 2,
-      name: 'Unload dishwasher',
-      isComplete: true },
-    { id: 3,
-      name: 'Watch week 10 videos',
-      isComplete: false }
-  ]
+  items: []
 }
 const tasks = createSlice({
   name: 'tasks',
@@ -36,6 +26,11 @@ const tasks = createSlice({
       state.items.forEach((task) => {
         task.isComplete = !allComplete;
       });
+    },
+    clearAll: (state) => {
+      const emptyList = [];
+      state.tasks = emptyList
+      state.isEmpty = true
     }
   }
 });
