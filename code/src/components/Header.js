@@ -8,7 +8,7 @@ const Header = () => {
   return (
     <div>
       <h1>
-     Dream list!
+     BucketList
       </h1>
       <section className="date">
         <p>{dateTime}</p>

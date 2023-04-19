@@ -16,7 +16,7 @@ const data = [
 ]
 
 const todos = createSlice({
-  name: 'todos',
+  name: 'todo',
   initialState: {
     items: data
   },
@@ -25,7 +25,7 @@ const todos = createSlice({
     toggleTask: (store, action) => {
       store.items.forEach((item) => {
         if (item.id === action.payload) {
-          item.isDone = !item.done;
+          item.done = !item.done;
         }
       })
     },
