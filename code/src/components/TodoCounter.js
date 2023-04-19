@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-export const CompletedItems = () => {
-  const todos = useSelector((state) => state.todos)
+export const TodoCounter = () => {
+  const todos = useSelector((store) => store.todo.items);
   const completedTodos = todos.filter((singleTodo) => singleTodo.isComplete);
 
   return (
