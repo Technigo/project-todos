@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { AddNewTaskBtn, AddNewTaskWrapper } from './AddTaskStyling';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -41,10 +42,15 @@ const AddTask = () => {
 
   return (
     <section>
-      <form onSubmit={onFormSubmit}>
+      <AddNewTaskWrapper onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
-            New Task:
-          <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" />
+          <input
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+            id="addTaskInput"
+            type="text"
+            placeholder="Add new task"
+            required />
         </label>
         <select
           value={selectedCategory}
@@ -60,8 +66,8 @@ const AddTask = () => {
           onChange={(date) => setDueDate(date)}
           placeholderText="Select due date"
           dateFormat="yyyy-MM-dd" />
-        <button type="submit">Add Task</button>
-      </form>
+        <AddNewTaskBtn type="submit">Add Task</AddNewTaskBtn>
+      </AddNewTaskWrapper>
     </section>
   )
 }
