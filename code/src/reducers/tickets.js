@@ -5,7 +5,8 @@ const initialState = {
     {
       id: 'sgww44',
       name: 'Stay awesome',
-      isDone: false
+      isDone: false,
+      prioritized: false
     }
   ]
 }
@@ -21,11 +22,20 @@ const tickets = createSlice({
     removeTODO: (store, action) => {
       store.items = store.items.filter((item) => item.id !== action.payload.id)
       console.log(store.items)
+    },
+    markAsDone: (store, action) => {
+      const toggledTodo = store.items.find((item) => item.id === action.payload.id);
+      if (toggledTodo) {
+        toggledTodo.isDone = !toggledTodo.isDone;
+        console.log('toggling done')
+      }
+    },
+    clearAll: (store) => {
+      if (store.items.length > 0) {
+        store.items = [];
+      }
     }
-    // markAsDone: (store, action) => {
-    // check off when done
-
   }
-});
+})
 
 export default tickets;
