@@ -1,28 +1,28 @@
-import { createSlice } from '@reduxjs/toolkit';
+// import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = { // Variable.
-  items: [ // Inside it we write properties, as an array.
-    { // Inside, create an object. Default first state for the pokemon.
-      id: 'fldksflkds1', // Property.
-      name: 'Jigglypuff',
-      isCaught: false // A boolean.
-    },
-    { // Another object.
-      id: 'fldksflkds2',
-      name: 'Snorlax',
-      isCaught: true
-    },
-    {
-      id: 'fldksflkds3',
-      name: 'Mewtwo',
-      isCaught: false
-    },
-    {
-      id: 'fldksflkds4',
-      name: 'Oddish',
-      isCaught: true
-    }]
-}
+// const initialState = { // Variable.
+//   items: [ // Inside it we write properties, as an array.
+//     { // Inside, create an object. Default first state for the pokemon.
+//       id: 'fldksflkds1', // Property.
+//       name: 'Jigglypuff',
+//       isCaught: false // A boolean.
+//     },
+//     { // Another object.
+//       id: 'fldksflkds2',
+//       name: 'Snorlax',
+//       isCaught: true
+//     },
+//     {
+//       id: 'fldksflkds3',
+//       name: 'Mewtwo',
+//       isCaught: false
+//     },
+//     {
+//       id: 'fldksflkds4',
+//       name: 'Oddish',
+//       isCaught: true
+//     }]
+// }
 
 // Function which allows us to create our slice
 
