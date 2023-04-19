@@ -1,20 +1,16 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { v4 as uuid } from 'uuid';
 
 const initialState = {
-  tasks: [
-    {
-      id: uuid(),
-      text: 'Started tasking',
-      isCompleted: true
-    }
-  ]
+  tasks: []
 };
 
 const completed = createSlice({
   name: 'completed',
   initialState,
   reducers: {
+    setTaskDone: (store, action) => {
+      store.tasks = [...store.tasks, action.payload]
+    },
     deleteTask: (store, action) => {
       // selects the clicked task by Id and filters it out from store
       const clickedTaskId = store.tasks.find((task) => task.id === action.payload.id);
