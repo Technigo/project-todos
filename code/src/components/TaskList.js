@@ -8,6 +8,7 @@ import { toggleComplete, removeTask } from '../reducers/tasks'
 
 const TaskList = () => {
   const tasks = useSelector((state) => state.tasks)
+  const projects = useSelector((state) => state.projects)
   const dispatch = useDispatch()
 
   const handleToggleComplete = (id) => {
@@ -24,19 +25,29 @@ const TaskList = () => {
   }
 
   return (
-    <ul>
-      {tasks.map((task) => (
-        <li key={task.id} style={{ textDecoration: task.complete ? 'line-through' : 'none' }}>
-          <span onClick={() => handleToggleComplete(task.id)}>
-            {task.text}
-            <span>({formatDate(task.createdAt)})</span>
-          </span>
-          <button type="button" onClick={() => handleRemoveTask(task.id)}>
-           Delete
-          </button>
-        </li>
+
+    <div>
+      {projects.map((project) => (
+        <div key={project.id}>
+          <h3>{project.name}</h3>
+          <ul>
+            {tasks
+              .filter((task) => task.projectId === project.id)
+              .map((task) => (
+                <li
+                  key={task.id}
+                  onClick={() => handleToggleComplete(task.id)}
+                  style={{ textDecoration: task.complete ? 'line-through' : 'none' }}>
+                  {task.text} <span>({formatDate(task.createdAt)})</span>
+                  <button type="button" onClick={(e) => { e.stopPropagation(); handleRemoveTask(task.id); }}>
+                  Delete
+                  </button>
+                </li>
+              ))}
+          </ul>
+        </div>
       ))}
-    </ul>
+    </div>
   )
 }
 
