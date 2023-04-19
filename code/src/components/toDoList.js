@@ -7,13 +7,16 @@ import TodoItem from './TodoItem';
 export const ToDoLists = () => {
   const dispatch = useDispatch();
 
-  // gets the tasks fron the store
+  // gets the tasks from the store
   const taskList = useSelector((store) => store.tasks.items);
 
   // confetti
   const [showConfetti, setShowConfetti] = useState(false)
 
-  // fuction to set checkbox as complete or not, from todo reducer
+  // keep track of whether any tasks have been added
+  const [hasTasks, setHasTasks] = useState(false);
+
+  // function to set checkbox as complete or not, from todo reducer
   const onDone = (id) => {
     dispatch(tasks.actions.toggleItem(id))
   }
@@ -40,31 +43,45 @@ export const ToDoLists = () => {
     }
   }, [showConfetti]);
 
+  useEffect(() => {
+    if (taskList.length > 0) {
+      setHasTasks(true);
+    } else {
+      setHasTasks(false);
+    }
+  }, [taskList]);
+
   return (
-    <>
-      <h2>To-do ({todosTodo.length})</h2>
+    <div>
+      {hasTasks && (
+        <>
+          <h2>To-do ({todosTodo.length})</h2>
 
-      {todosTodo.length === 0 && (
+          {todosTodo.length === 0 && (
+            <p>You are all done! *high five*</p>
+          )}
 
-        <p>You are all done! *high five*</p>
+          {todosTodo.map((todo, index) => (
+            <TodoItem
+              todo={todo}
+              index={index}
+              key={todo.id}
+              onDelete={onDelete}
+              onDone={onDone} />
+          ))}
 
+          <h2>Done ({doneTodos.length})</h2>
+
+          {doneTodos.map((todo, index) => (
+            <TodoItem
+              todo={todo}
+              index={index}
+              key={todo.id}
+              onDelete={onDelete}
+              onDone={onDone} />
+          ))}
+        </>
       )}
-
-      {todosTodo.map((todo, index) => (<TodoItem
-        todo={todo}
-        index={index}
-        key={todo.id}
-        onDelete={onDelete}
-        onDone={onDone} />))}
-
-      <h2>Done ({doneTodos.length})</h2>
-
-      {doneTodos.map((todo, index) => (<TodoItem
-        todo={todo}
-        index={index}
-        key={todo.id}
-        onDelete={onDelete}
-        onDone={onDone} />))}
-    </>
+    </div>
   )
 }
