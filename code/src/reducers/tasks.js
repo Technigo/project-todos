@@ -20,10 +20,9 @@ export const tasks = createSlice({ name: 'tasks',
     deleteTask(state, action) {
       // state = state.filter((t) => t.id !== action.payload)
       const todo = state.todos.find((t) => t.id === action.payload)
-      state.splice(state.indexOf(todo), 1)
+      state.todos.splice(state.todos.indexOf(todo), 1)
     },
     deleteAllTasks(state) {
-      /* eslint-disable no-unused-vars */
       state.todos = []
     },
     completeAllTasks(state) {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 const StyledButton = styled.button`
 background-color: red;

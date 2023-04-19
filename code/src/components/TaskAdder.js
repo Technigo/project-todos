@@ -1,10 +1,13 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import uniqid from 'uniqid'
 
 const StyledContainer = styled.div`
+padding: 5px;
+display: flex;
+flex-direction: column;
 `
 
 const StyledInput = styled.input`
@@ -22,8 +25,8 @@ const TaskAdder = () => {
 
   return (
     <StyledContainer>
-      <StyledButton text="Add task" onClick={handleSubmit} />
       <StyledInput value={todoText} onChange={(e) => setTodoText(e.target.value)} />
+      <StyledButton text="Add task" onClick={handleSubmit} />
     </StyledContainer>
   );
 }

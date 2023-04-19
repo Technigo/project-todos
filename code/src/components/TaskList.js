@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import { useSelector, useDispatch } from 'react-redux'
 import { tasks } from '../reducers/tasks'
 import Task from './Task'
@@ -7,13 +7,32 @@ import Task from './Task'
 const StyledContainer = styled.div`
 display: flex;
 flex-direction: column;
-gap: 5px;`
+gap: 5px;
+width: 100%;`
 
-const CompleteAllButton = styled.button`background-color: green;
+const StyledTasklistBar = styled.div`
+background-color: var(--foreground-primary-color);
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+`
+
+const StyledActionBar = styled.div`
+display: flex;
+flex-direction: row;
+justify-content: center;
+gap: 10px;`
+
+const CompleteAllButton = styled.button`
+background-color: green;
 width: 15px;
 height: 15px;`
 
-const DeleteAllButton = styled.button`background-color: red;
+const DeleteAllButton = styled.button`
+background-color: red;
 width: 15px;
 height: 15px;`
 
@@ -30,12 +49,19 @@ const TaskList = () => {
   }
   const tasksData = useSelector((state) => state.tasks.todos)
   return (
-    <StyledContainer><h1>Tasklist</h1>
-      <CompleteAllButton value="Complete All" onClick={handleCompleteAll} />
-      <DeleteAllButton value="Delete All" onClick={handleDeleteAll} />
+    <StyledContainer>
+      <StyledTasklistBar>
+
+        <h1>Tasklist</h1>
+      </StyledTasklistBar>
+      <StyledActionBar>
+        <CompleteAllButton value="Complete All" onClick={handleCompleteAll} />
+        <DeleteAllButton value="Delete All" onClick={handleDeleteAll} />
+      </StyledActionBar>
       {tasksData.map((task) => (
         <Task id={task.id} key={task.id} />))}
-    </StyledContainer>);
+    </StyledContainer>
+  );
 }
 
 export default TaskList;
