@@ -43,7 +43,7 @@ export const TaskList = () => {
               <label htmlFor={singleTask.id}>{singleTask.name}</label>
               <TaskDate date={singleTask.date} />
               <Deletebtn type="button" onClick={() => deleteTask(singleTask.id)}>
-                <FaTrash />
+                <DeleteIcon />
               </Deletebtn>
             </li>
           )
@@ -71,8 +71,8 @@ input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 2rem;
+  height: 2rem;
   border: 1px solid #F5F1E3;
   border-radius: 4px;
   position: relative;
@@ -86,23 +86,26 @@ input[type="checkbox"]::before {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 12px;
-  height: 12px;
+  width: 1.5rem;
+  height: 1.5rem;
   border-radius: 2px;
   background-color: #F5F1E3; /* change this to the color you want */
 }
 
 input[type="checkbox"]:checked::before {
   content: "✔";
-  font-size: 12px;
+  font-size: 2rem;
   color: #1B9AAA;
   text-align: center;
-  line-height: 12px;
+  line-height: 1.5rem;
 }
+`;
+const DeleteIcon = styled(FaTrash)`
+  color: #DDDBCB;
+  font-size: 1.5rem;
+`;
 
-`
 const Deletebtn = styled.button`
-height:3rem;
 color:#DDDBCB;
 background-color: #1B9AAA;
 border:none;`
