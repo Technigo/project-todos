@@ -18,7 +18,6 @@ export const Tasks = () => {
   console.log(allTasks)
   const { showAlert, showInputDialog } = usePopup();
   const addNewTask = () => {
-    console.log('task')
     showInputDialog({
       title: 'Create new task',
       showCloseButton: true,
@@ -56,7 +55,16 @@ export const Tasks = () => {
           validation: {
             required: { value: true, message: 'Value is required' }
           }
-        }],
+        },
+        {
+          inputType: 'dropdown',
+          name: 'project',
+          label: 'Project',
+          validation: {
+            required: { value: true, message: 'Value is required' }
+          }
+        }
+      ],
       onConfirm: (response) => {
         showAlert({ title: 'Result', text: JSON.stringify(response) });
         console.log(response.text)

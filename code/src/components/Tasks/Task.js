@@ -49,7 +49,7 @@ export const Task = ({ task }) => {
       </FlexRow>
       <FlexRow>
         <DateText>created {createdDateFormatted}</DateText>
-        <DateText>{compareAsc(new Date(task.due), Date.now()) === -1 ? 'overdue' : dueDateFormatted}</DateText>
+        <DateText>{compareAsc(new Date(task.due), Date.now()) === -1 ? 'overdue' : `due ${dueDateFormatted}`}</DateText>
       </FlexRow>
     </TaskCardContainer>
   )
