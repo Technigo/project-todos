@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import todolist from 'reducers/todolist';
+import TaskList from './TaskList';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -11,7 +12,7 @@ const AddTask = () => {
     // this prevents the form from reloading
     const newTask = {
       id: Date.now().toString(),
-      name: inputValue.charAt(0).toUpperCase() + inputValue.slice(1),
+      name: inputValue,
       isCaught: false
     }
     dispatch(todolist.actions.addTask(newTask));
@@ -21,7 +22,7 @@ const AddTask = () => {
     <section>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
-            Add your new task here:
+            Add your new task here:<br />
           <input
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
@@ -30,6 +31,7 @@ const AddTask = () => {
         </label>
         <button type="submit">Add Task!</button>
       </form>
+      <TaskList />
     </section>
   )
 }
