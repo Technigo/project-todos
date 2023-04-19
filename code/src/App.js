@@ -7,6 +7,8 @@ import TaskList from 'components/TaskList';
 import TaskTracker from 'components/TaskTracker';
 import ToggleCompleteBtn from 'components/ToggleCompleteBtn';
 import ClearAllBtn from 'components/ClearAllBtn';
+import { GlobalStyle } from 'components/GlobalStyle';
+import { MainContainer } from 'components/MainStyling';
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -17,11 +19,14 @@ const store = configureStore({ reducer })
 export const App = () => {
   return (
     <Provider store={store}>
-      <AddTask />
-      <TaskList />
-      <TaskTracker />
-      <ToggleCompleteBtn />
-      <ClearAllBtn />
+      <GlobalStyle />
+      <MainContainer>
+        <AddTask />
+        <TaskList />
+        <TaskTracker />
+        <ToggleCompleteBtn />
+        <ClearAllBtn />
+      </MainContainer>
     </Provider>
   );
 }

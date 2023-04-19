@@ -46,16 +46,18 @@ const TaskList = () => {
         {Object.entries(groupedTasks).map(([category, tasksArray]) => (
           <div key={category}>
             <h2>{category}</h2>
-            {/* sort move completed tasks to the bottom of the list in each category */}
+            {/* sort & move completed tasks to the bottom of the list in each category */}
             {tasksArray.sort((a) => (a.isComplete ? 1 : -1)).map((singleTask) => (
               <SingleTaskWrapper key={singleTask.id}>
                 <input
                   type="checkbox"
                   checked={singleTask.isComplete}
                   onChange={() => handleCheckboxChange(singleTask.id)} />
-                <p>{singleTask.name}</p>
-                <p>Created: {singleTask.timeStamp}</p>
-                <p>Due: {singleTask.dueDate}</p>
+                <SingleTaskChild>
+                  <p>{singleTask.name}</p>
+                  <p>Created: {singleTask.timeStamp}</p>
+                  <p>Due: {singleTask.dueDate}</p>
+                </SingleTaskChild>
                 <button
                   type="button"
                   onClick={() => handleDeletingTask(singleTask.id)}>
@@ -71,8 +73,20 @@ const TaskList = () => {
 };
 
 const SingleTaskWrapper = styled.div`
-width: 20vw;
 display: flex;
 flex-direction: row;
+justify-content: space-evenly;
+padding: 1rem;
+gap: 2rem;
+border: solid green;
 `
+
+const SingleTaskChild = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-around;
+padding: 0.5rem;
+border: solid green;
+`
+
 export default TaskList;

@@ -4,7 +4,7 @@ export const AddNewTaskWrapper = styled.form`
     display: flex;
     flex-direction: column;
     border:solid red;
-    /* input[type=text] {
+    input[type=text] {
       justify-self: left;
       padding: 18px;
       border-radius: 15px;
@@ -22,7 +22,7 @@ export const AddNewTaskWrapper = styled.form`
     input::placeholder {
       font-weight: bold;
       opacity: .8;
-    } */
+    }
     
 `
 
@@ -41,3 +41,4 @@ export const AddNewTaskBtn = styled.button`
       transform: scale(1.1)
     }
 `
+
