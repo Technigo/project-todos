@@ -1,33 +1,35 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { tasks } from '../reducers/tasks';
+import tasks from 'reducers/tasks';
 
 export const AddNewTask = () => {
-  const [inputText, setInputText] = useState('');
+  const [inputValue, setinputValue] = useState('');
   const dispatch = useDispatch();
 
   const onTaskSubmit = (event) => {
     event.preventDefault();
     const newTask = {
       id: Date.now().toString(),
-      name: inputText,
+      name: inputValue,
       isDone: false
     }
     dispatch(tasks.actions.addTask(newTask))
-    setInputText('');
-  }
+    setinputValue('');
+  };
   return (
-    <form onSubmit={onTaskSubmit}>
-      <label htmlFor="task-input">
-        <input
-          onChange={(event) => setInputText(event.target.value)}
-          inputText={inputText}
-          id="task-input"
-          type="text"
-          placeholder="Add task" />
-      </label>
-      <button type="submit" className="submit-button"> Add task</button>
-    </form>
+    <section>
+      <form onSubmit={onTaskSubmit}>
+        <label htmlFor="task-input">
+          <input
+            value={inputValue}
+            onChange={(event) => setinputValue(event.target.value)}
+            id="addTaskInput"
+            type="text"
+            placeholder="Add task" />
+        </label>
+        <button type="submit" className="submit-button"> Add task</button>
+      </form>
+    </section>
   )
 }
 
