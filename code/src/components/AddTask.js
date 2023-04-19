@@ -22,7 +22,7 @@ export const AddTask = () => {
     <AddTaskSection>
       <AddTaskForm onSubmit={onFormSubmit}>
         <AddTaskLabel htmlFor="addTaskInput">
-        👇ADD Here👇
+        👇 ADD Here 👇
         </AddTaskLabel>
         <AddTaskInput
           value={inputValue}

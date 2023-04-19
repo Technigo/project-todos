@@ -69,7 +69,7 @@ const StyledLi = styled.li`
   font-size: 1.25rem;
   line-height: 1.5;
   list-style: none;
-  border: dotted pink;
+  
 `;
 const StyledCheckbox = styled.input`
   margin-right: 1rem;
@@ -84,7 +84,7 @@ const StyledCheckbox = styled.input`
   
   &:checked {
     background-image: url(${checkImage});
-    background-size: 80%;
+    background-size: 98%;
     background-repeat: no-repeat;
     background-position: center;
   }

@@ -3,11 +3,12 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   // a slice=
   todos: [
-    { id: 1, text: 'Tidy Room', complete: false },
-    { id: 2, text: 'Pick up clothes from dryer', complete: false },
-    { id: 3, text: 'Help out with dishes', complete: false },
-    { id: 4, text: 'Do your homework', complete: false },
-    { id: 5, text: 'Create a TODO-list', complete: true }
+    { id: 1, text: 'Give kiss to mom', complete: true },
+    { id: 2, text: 'Tidy Room', complete: false },
+    { id: 3, text: 'Pick up clothes', complete: false },
+    { id: 4, text: 'Help out with dishes', complete: false },
+    { id: 5, text: 'Do your homework', complete: false }
+
   ]
 }
 

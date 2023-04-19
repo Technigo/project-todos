@@ -28,7 +28,7 @@ export const Header = () => {
   return (
     <HeaderContainer>
       <HeaderImage src={todoImage} alt="todolist" />
-      <HeaderTitle>My kids <br /> Todo-List!
+      <HeaderTitle>My kids <br /> Todos!
       </HeaderTitle>
       <HeaderImage src={todoImage} alt="todolist" />
     </HeaderContainer>
