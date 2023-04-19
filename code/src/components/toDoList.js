@@ -45,10 +45,9 @@ export const ToDoLists = () => {
       <h2>To-do ({todosTodo.length})</h2>
 
       {todosTodo.length === 0 && (
-        <>
-          <p>You are all done! *high five*</p>
-          {showConfetti && <JSConfetti />}
-        </>
+
+        <p>You are all done! *high five*</p>
+
       )}
 
       {todosTodo.map((todo, index) => (<TodoItem
