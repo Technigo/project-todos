@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import uncompleted from 'reducers/uncompleted';
 import completed from 'reducers/completed';
-import { AddTask } from './AddTask';
 
 export const Uncompleted = () => {
   const dispatch = useDispatch();
@@ -23,7 +22,6 @@ export const Uncompleted = () => {
           <button type="button" onClick={() => dispatch(uncompleted.actions.deleteTask(task))}>🗑️</button>
         </div>
       ))}
-      <AddTask />
     </section>
   )
 }
