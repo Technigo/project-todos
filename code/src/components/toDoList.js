@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/todos';
-import JSConfetti from 'js-confetti'
+import JSConfetti from 'js-confetti';
 import TodoItem from './TodoItem';
+import allDone from './images/Alldone.png';
+import './css/todoItem.css';
 
 export const ToDoLists = () => {
   const dispatch = useDispatch();
@@ -11,28 +13,28 @@ export const ToDoLists = () => {
   const taskList = useSelector((store) => store.tasks.items);
 
   // confetti
-  const [showConfetti, setShowConfetti] = useState(false)
+  const [showConfetti, setShowConfetti] = useState(false);
 
   // keep track of whether any tasks have been added
   const [hasTasks, setHasTasks] = useState(false);
 
   // function to set checkbox as complete or not, from todo reducer
   const onDone = (id) => {
-    dispatch(tasks.actions.toggleItem(id))
-  }
+    dispatch(tasks.actions.toggleItem(id));
+  };
 
   const onDelete = (todoIndex) => {
-    dispatch(tasks.actions.deleteItem(todoIndex))
-  }
+    dispatch(tasks.actions.deleteItem(todoIndex));
+  };
 
-  const todosTodo = taskList.filter((todo) => !todo.isDone)
-  const doneTodos = taskList.filter((todo) => todo.isDone)
+  const todosTodo = taskList.filter((todo) => !todo.isDone);
+  const doneTodos = taskList.filter((todo) => todo.isDone);
 
   useEffect(() => {
     if (todosTodo.length === 0) {
-      setShowConfetti(true)
+      setShowConfetti(true);
     } else {
-      setShowConfetti(false)
+      setShowConfetti(false);
     }
   }, [todosTodo.length]);
 
@@ -50,6 +52,11 @@ export const ToDoLists = () => {
       setHasTasks(false);
     }
   }, [taskList]);
+
+  const onClearAll = () => {
+    dispatch(tasks.actions.deleteAll());
+    dispatch(tasks.actions.deleteAllDone());
+  };
 
   return (
     <div>
@@ -82,6 +89,18 @@ export const ToDoLists = () => {
           ))}
         </>
       )}
+      <button type="button" onClick={onClearAll} className="AllDone">
+        <img src={allDone} alt="All done" />
+      </button>
+      {!hasTasks && (
+        <div>
+          <h2>
+            Yay! Looks like there&apos;s no task left to do. Go outside and
+            play!
+          </h2>
+          <p>Or create a new todo</p>
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
