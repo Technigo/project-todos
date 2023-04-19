@@ -12,7 +12,7 @@ export const Tasklist = () => {
         {toDoList.map((singleTask) => {
           return (
             <li key={singleTask.id}>
-              <input type="checkbox" />
+              <input type="checkbox" checked={singleTask.checked} onChange={() => dispatch(tasks.actions.toggleChecked(singleTask))} />
               {singleTask.name}
               <button type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask))}>X</button>
             </li>)
