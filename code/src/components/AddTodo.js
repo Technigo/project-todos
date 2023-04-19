@@ -11,7 +11,7 @@ export const AddTodo = () => {
     const newTodo = {
       id: Date.now().toString(),
       task: inputValue,
-      isChecked: false
+      isDone: false
     };
     dispatch(todos.actions.addTodo(newTodo));
     setInputValue('');
@@ -24,9 +24,9 @@ export const AddTodo = () => {
           onChange={(event) => setInputValue(event.target.value)}
           id="addNewTodo"
           type="text"
-          placeholder="New task" />
+          placeholder="New task + Enter"
+          required />
       </label>
-      <button type="submit">Add</button>
     </form>
   )
 }
