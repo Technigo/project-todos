@@ -1,5 +1,20 @@
 import React from 'react';
+import { Provider } from 'react-redux';
+import { combineReducers, configureStore } from '@reduxjs/toolkit';
+import { TodoList } from 'components/TodoList';
+
+import { todos } from 'reducers/todo';
+
+const reducer = combineReducers({
+  todos: todos.reducer
+});
+
+const store = configureStore({ reducer });
 
 export const App = () => {
-  return <div>Find me in src/app.js!</div>;
+  return (
+    <Provider store={store}>
+      <TodoList />
+    </Provider>
+  );
 };
