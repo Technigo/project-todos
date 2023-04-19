@@ -1,6 +1,7 @@
 .todo-container{
 	width: 90%;
     margin: 2% auto;
+
 }
 
 .todo-child{
@@ -8,12 +9,14 @@
     display: flex;	
 	background-color: rgb(255, 255, 255);
     border-radius: 15px;
+	border: solid 1px  rgb(121, 182, 193);
 }
 
 .TodoText{
 	display: inline-block;
     flex-basis: 80%;
     margin-left: 5%;
+	
 
 }
 

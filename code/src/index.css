@@ -10,6 +10,7 @@ body {
   background-color: #eaf4ef;
   display: block;
     margin: 8px;
+    background-image: url("background.png") ;
 }
 
 code {
@@ -17,7 +18,7 @@ code {
     monospace;
 }
 .app-container{
-  background-color:#fec5e5;
+  background-color:hsl(324, 83%, 98%);
   border-radius: 2.8rem;
   box-shadow: 0 0.5rem 2rem #383737;
   margin: 0 auto;
@@ -27,9 +28,11 @@ code {
 
 h1{
  color:  rgb(121, 182, 193);
+ text-align: center;
 }
 
 h2{
+  text-align: center;
   color:  rgb(121, 182, 193);
  }
 
