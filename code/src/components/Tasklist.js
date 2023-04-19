@@ -2,6 +2,7 @@ import React from 'react';
 import { Uncompleted } from './Uncompleted';
 import { Completed } from './Completed';
 import { AddTask } from './AddTask';
+import { TodoCounter } from './TodoCounter';
 
 export const Tasklist = () => {
   return (
@@ -12,6 +13,7 @@ export const Tasklist = () => {
       <Uncompleted />
       <h2>Done</h2>
       <Completed />
+      <TodoCounter />
     </div>
   )
 }

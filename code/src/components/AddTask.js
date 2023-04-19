@@ -16,13 +16,15 @@ export const AddTask = () => {
       isCompleted: false
     };
     dispatch(uncompleted.actions.addTask(newTask));
+    setInputValue('');
   };
 
   return (
     <section>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="add">Add new task
+        <label htmlFor="add">Add a new task
           <input
+            value={inputValue}
             onChange={(event) => setInputValue(event.target.value)} />
         </label>
         <button type="submit">➕</button>
