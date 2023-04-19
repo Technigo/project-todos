@@ -25,7 +25,8 @@ const TaskList = () => {
               checked={singleTask.isComplete}
               onChange={() => handleCheckboxChange(singleTask.id)} />
             <p>{singleTask.name}</p>
-            <p>{singleTask.timeStamp}</p>
+            <p>Created: {singleTask.timeStamp}</p>
+            <p>Due: {singleTask.dueDate}</p>
             <button type="button" onClick={() => handleDeletingTask(singleTask.id)}>
               Delete
             </button>

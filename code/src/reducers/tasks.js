@@ -4,16 +4,13 @@ const initialState = {
   items: [
     { id: 1,
       name: 'Do laundry',
-      isComplete: true,
-      timeStamp: null },
+      isComplete: true },
     { id: 2,
       name: 'Unload dishwasher',
-      isComplete: true,
-      timeStamp: null },
+      isComplete: true },
     { id: 3,
       name: 'Watch week 10 videos',
-      isComplete: false,
-      timeStamp: null }
+      isComplete: false }
   ]
 }
 const tasks = createSlice({
