@@ -20,8 +20,8 @@ export const RemoveTask = ({ task }) => {
 };
 
 const Img = styled.img`
-  width: 16px;
-  height: 16px;
+  width: 18px;
+  height: 18px;
   margin-left: 10px;
   cursor: pointer;
 `;

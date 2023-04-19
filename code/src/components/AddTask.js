@@ -28,7 +28,7 @@ export const AddTask = () => {
           onChange={(event) => setInputValue(event.target.value)}
           id="addTaskInput"
           type="text"
-          placeholder="Enter a task" />
+          placeholder="Enter a task..." />
         <AddTaskButton type="submit">Add Now!</AddTaskButton>
       </AddTaskForm>
     </AddTaskSection>
@@ -55,6 +55,7 @@ const AddTaskLabel = styled.label`
   border-radius: 30px;
   margin-top: 1.5rem;
   padding: 10px;
+  font-family: 'Mystery Quest', cursive;
 `;
 
 const AddTaskInput = styled.input`
@@ -65,6 +66,10 @@ const AddTaskInput = styled.input`
   border-bottom: 2px solid #ccc;
   margin-bottom: 1rem;
   max-width: 80%;
+  font-family: 'Mystery Quest', cursive;
+  ::placeholder {
+    font-family: 'Mystery Quest', cursive;
+  }
 `;
 
 const AddTaskButton = styled.button`
@@ -75,6 +80,7 @@ const AddTaskButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+    font-family: 'Mystery Quest', cursive;
 
    &:hover {
     background-color: lightgreen;
