@@ -1,13 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { StyleP } from './Header';
 
 export const TodoCounter = () => {
   const todos = useSelector((store) => store.todo.items);
-  const completedTodos = todos.filter((singleTodo) => singleTodo.isComplete);
+  const completedTodos = todos.filter((todo) => todo.done);
 
   return (
     <section className="bucket-completed">
-      <h2>You have completed {completedTodos.length}</h2>
+      <StyleP>You have completed {completedTodos.length}</StyleP>
     </section>
   )
 }
