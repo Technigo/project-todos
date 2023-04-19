@@ -65,7 +65,6 @@ li {
 }
 
 `
-
 const Deletebtn = styled.button`
 height:3rem;
 color:#DDDBCB;

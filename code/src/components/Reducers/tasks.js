@@ -21,6 +21,9 @@ export const tasks = createSlice({
     RemoveToDo: (store, action) => {
       const index = store.items.findIndex((item) => item.id === action.payload);
       store.items.splice(index, 1);
+    },
+    RemoveAllTasks: (store) => {
+      store.items = []
     }
   }
 })
