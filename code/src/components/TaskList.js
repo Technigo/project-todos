@@ -62,6 +62,40 @@ li {
   font-weight: 100;
   font-size: 2rem;
   margin:10px;
+  display: flex;
+  align-items: center;
+}
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #F5F1E3;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  margin:10px;
+}
+
+input[type="checkbox"]::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 12px;
+  height: 12px;
+  border-radius: 2px;
+  background-color: #F5F1E3; /* change this to the color you want */
+}
+
+input[type="checkbox"]:checked::before {
+  content: "✔";
+  font-size: 12px;
+  color: #1B9AAA;
+  text-align: center;
+  line-height: 12px;
 }
 
 `
