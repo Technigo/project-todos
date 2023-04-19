@@ -91,7 +91,8 @@ hr {
     top: 0;
     width: 18px;
     height: 18px;
-    background-image: url(check_outline.svg);
+    text-align: center;
+    background-image: url('assets/form-checkmark.svg');
     background-size: contain;
     transform: scale(1);
     opacity: 1;

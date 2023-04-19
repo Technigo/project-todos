@@ -38,7 +38,7 @@ const tasks = createSlice({
     },
     toggleComplete: (store, action) => {
       store.items.forEach((task) => {
-        if (task.id === action.payload) {
+        if (task.id === action.payload.id) {
           task.isCompleted = !task.isCompleted
         }
       })
