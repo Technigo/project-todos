@@ -1,8 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import AddToDo from 'components/AddToDo'
-import ToDoList from 'components/ToDoList'
+// import Header from 'components/Header'
+import AddTask from 'components/AddTask'
+import TaskList from 'components/TaskList'
+import ProgressBar from 'components/ProgressBar'
 import { tasks } from './reducers/tasks'
 
 export const App = () => {
@@ -12,8 +14,10 @@ export const App = () => {
   const store = configureStore({ reducer });
   return (
     <Provider store={store}>
-      <AddToDo />
-      <ToDoList />
+      {/* <Header /> */}
+      <TaskList />
+      <AddTask />
+      <ProgressBar />
     </Provider>
   )
 }
