@@ -15,9 +15,20 @@ const TaskList = () => {
     dispatch(tasks.actions.deleteTask({ id }));
   };
 
+  // move completed tasks to the bottom of the task list
+  const sortedTaskList = [...taskList].sort((a, b) => {
+    if (a.isComplete && !b.isComplete) {
+      return 1;
+    } else if (!a.isComplete && b.isComplete) {
+      return -1;
+    } else {
+      return 0;
+    }
+  });
+
   return (
     <section>
-      {taskList.map((singleTask) => {
+      {sortedTaskList.map((singleTask) => {
         return (
           <SingleTaskWrapper key={singleTask.id}>
             <input
