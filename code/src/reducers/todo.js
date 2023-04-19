@@ -33,7 +33,10 @@ const todos = createSlice({
       store.items.splice(action.payload, 1)
     },
     addTask: (store, action) => {
-      store.items.push(action.payload)
+      const copyArray = store.items;
+      copyArray.push(action.payload)
+      store.items = copyArray
+      // store.items.push(action.payload)
     }
   }
 })

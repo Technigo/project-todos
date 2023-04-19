@@ -16,21 +16,21 @@ const AddTodo = () => {
       name: inputText,
       isDone: false
     }
-    dispatch(todos.actions.addTodos(newTodo));
+    dispatch(todos.actions.addTask(newTodo));
     setInputText('');
   };
 
   return (
     <form onSubmit={onAddTodo}>
       <label htmlFor="text">
-        Add to do!;
+        Add to BucketList
         <input
           type="text"
           value={inputText}
           required
           onChange={(event) => setInputText(event.target.value)} />
       </label>
-      <button type="submit">Add new todo</button>
+      <button type="submit">Done</button>
     </form>
   );
 };
