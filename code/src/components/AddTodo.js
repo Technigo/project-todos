@@ -18,12 +18,13 @@ export const AddTodo = () => {
   }
   return (
     <form onSubmit={onFormSubmit}>
-      <label htmlFor="addNewTask">
+      <label htmlFor="addNewTodo">
         <input
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)}
-          id="addNewTask"
-          type="text" />
+          id="addNewTodo"
+          type="text"
+          placeholder="New task" />
       </label>
       <button type="submit">Add</button>
     </form>
