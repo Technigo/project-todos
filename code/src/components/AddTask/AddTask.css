@@ -1,0 +1,54 @@
+.addtask-container {
+  margin: 4rem 2rem 0rem 2rem;
+  background-color: #F7F7F8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  .add-button {
+    border: none;
+   background-color: #F7F7F8;;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .add-button svg path {
+    fill: #BDD5E7;
+  }
+
+  .addtask-container {
+    margin: 2rem 2rem 0rem 2rem;
+    background-color: #F7F7F8;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .add-button {
+    display: inline-block;
+    vertical-align: middle;
+    border: none;
+    background-color: #F7F7F8;;
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  form {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.5rem;
+    margin-right: 1.6rem; /* add some spacing between the button and input */
+  }
+  
+  form label {
+    display: block; /* make sure the input takes full width */
+  }
+  
+  form input {
+    width: 100%;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+  border-radius: 10px;
+  }
+  
