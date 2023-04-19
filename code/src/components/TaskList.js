@@ -47,7 +47,8 @@ const TaskList = () => {
       {Object.entries(groupedTasks).map(([category, theTasks]) => (
         <div key={category}>
           <h2>{category}</h2>
-          {theTasks.map((singleTask) => (
+          {/* sort move completed tasks to the bottom of the list in each category */}
+          {theTasks.sort((a) => (a.isComplete ? 1 : -1)).map((singleTask) => (
             <SingleTaskWrapper key={singleTask.id}>
               <input
                 type="checkbox"
