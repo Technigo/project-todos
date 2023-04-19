@@ -1,15 +1,23 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSquare, faSquareCheck, faTrashCan } from '@fortawesome/free-regular-svg-icons';
+import { Timestamp } from './Timestamp';
 
 export const EachTask = ({ singleTask }) => {
   const dispatch = useDispatch();
   return (
     <div>
-      <p>{singleTask.task}</p>
-      <p>Task Complete: {singleTask.complete.toString()}</p>
-      <button type="button" onClick={() => dispatch(tasks.actions.toggleComplete(singleTask))}>Complete/Incomplete</button>
-      <button type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask))}>Delete</button>
+      <p>--------------------------------------</p>
+      {!singleTask.complete && (<button type="button" onClick={() => dispatch(tasks.actions.toggleComplete(singleTask))}><FontAwesomeIcon icon={faSquare} /></button>)}
+      {singleTask.complete && (<button type="button" onClick={() => dispatch(tasks.actions.toggleComplete(singleTask))}><FontAwesomeIcon icon={faSquareCheck} /></button>)}
+      <button type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask))}><FontAwesomeIcon icon={faTrashCan} /></button>
+      <p>Task: {singleTask.task}</p>
+      <Timestamp singleTask={singleTask} />
+      {/* <p>Task Complete: {singleTask.complete.toString()}</p> */}
+
     </div>
   )
 }

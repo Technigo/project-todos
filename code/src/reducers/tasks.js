@@ -3,28 +3,28 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   items: [
     {
-      id: 1,
+      id: 1681904108559,
       task: 'Make a to do app',
       // label: 'School',
       // date: "there will be a date here",
       complete: false
     },
     {
-      id: 2,
+      id: 1681904108560,
       task: 'Shower',
       // label: 'School',
       // date: "there will be a date here",
       complete: false
     },
     {
-      id: 3,
+      id: 1681904108561,
       task: 'Meet mentor',
       // label: 'School',
       // date: "there will be a date here",
       complete: false
     },
     {
-      id: 4,
+      id: 1681904108562,
       task: 'Demo design project',
       // label: 'School',
       // date: "there will be a date here",
