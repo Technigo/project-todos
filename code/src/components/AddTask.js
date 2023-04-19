@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import moment from 'moment';
 import todolist from 'reducers/todolist';
 import TaskList from './TaskList';
 
@@ -13,7 +14,8 @@ const AddTask = () => {
     const newTask = {
       id: Date.now().toString(),
       name: inputValue,
-      isCaught: false
+      time: moment().format('D MMM HH:mm'),
+      isChecked: false
     }
     dispatch(todolist.actions.addTask(newTask));
     setInputValue('');

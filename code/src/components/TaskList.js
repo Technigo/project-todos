@@ -1,13 +1,15 @@
-import React, { useState } from 'react';
-import { useSelector } from 'react-redux';
+import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import todolist from 'reducers/todolist';
 
 const TaskList = ({ inputValue }) => {
-  const [isChecked, setIsChecked] = useState(false);
+  const dispatch = useDispatch();
   const todoList = useSelector((store) => store.todolist.items);
 
-  const handleOnChange = () => {
-    setIsChecked(!isChecked);
+  const handleOnChange = (id) => {
+    dispatch(todolist.actions.toggleTask(id));
   };
+
   return (
     <section>
       {todoList.map((singletask) => {
@@ -17,9 +19,10 @@ const TaskList = ({ inputValue }) => {
               type="checkbox"
               id={singletask.id}
               value={inputValue}
-              checked={isChecked}
-              onChange={handleOnChange} />
-            {singletask.name}
+              checked={singletask.isChecked}
+              onChange={() => handleOnChange(singletask.id)} />
+            {singletask.name}<br />
+            {singletask.time}
           </div>
         )
       })}

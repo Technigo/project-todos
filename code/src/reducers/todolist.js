@@ -26,6 +26,12 @@ const todolist = createSlice({
       // const y = [x, 'd'] => [['a', 'b', 'c'], 'd']
       // const z = [...x, 'd'] => ['a', 'b', 'c', 'd']
       // this avoids nesting problems with arrays
+    },
+    toggleTask: (state, action) => {
+      const task = state.items.find((singletask) => singletask.id === action.payload);
+      if (task) {
+        task.isChecked = !task.isChecked;
+      }
     }
   }
 })
