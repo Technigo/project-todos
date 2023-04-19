@@ -1,7 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import { AddNewTask } from './AddNewTask';
 
 export const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
@@ -16,12 +15,11 @@ export const TaskList = () => {
             <li key={singleTask.id}>
               <input type="checkbox" checked={singleTask.checked} onChange={() => dispatch(tasks.actions.toggleChecked(singleTask))} />
               {singleTask.name}
-              <button type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask))}>X</button>
+              <button type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask))}>❌</button>
             </li>
           )
         })}
       </ul>
-      <AddNewTask />
     </div>
   )
 }

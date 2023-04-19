@@ -2,7 +2,7 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import tasks from 'reducers/tasks';
-import { TaskList } from './components/TaskList';
+import { Layout } from 'components/Layout';
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -14,8 +14,7 @@ export const App = () => {
   return (
     <Provider
       store={store}>
-      <TaskList />
-        Your components can be mounted here, inside the Provider
+      <Layout />
     </Provider>
   );
 }
