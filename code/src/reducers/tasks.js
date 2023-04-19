@@ -6,10 +6,10 @@ import { createSlice } from '@reduxjs/toolkit'
 export const tasks = createSlice({
   name: 'tasks',
   initialState: [
-    { id: 1, text: 'Watch video on actions & reducers', complete: true, createdAt: new Date().toISOString() },
-    { id: 2, text: 'Follow redux codealong', complete: true, createdAt: new Date().toISOString() },
-    { id: 3, text: 'Fork weekly assignment', complete: true, createdAt: new Date().toISOString() },
-    { id: 4, text: 'Create a todo app', complete: false, createdAt: new Date().toISOString() }
+    { id: 1, text: 'Watch video on actions & reducers', complete: true, createdAt: new Date().toISOString(), dueDate: null },
+    { id: 2, text: 'Follow redux codealong', complete: true, createdAt: new Date().toISOString(), dueDate: null },
+    { id: 3, text: 'Fork weekly assignment', complete: true, createdAt: new Date().toISOString(), dueDate: null },
+    { id: 4, text: 'Create a todo app', complete: false, createdAt: new Date().toISOString(), dueDate: null }
   ],
   reducers: {
     toggleComplete: (state, action) => {
@@ -30,6 +30,12 @@ export const tasks = createSlice({
       state.forEach((task) => {
         task.complete = true;
       });
+    },
+    setDueDate: (state, action) => {
+      const task = state.find((task) => task.id === action.payload.taskId)
+      if (task) {
+        task.dueDate = action.payload.dueDate
+      }
     }
   }
 })

@@ -19,10 +19,17 @@ const TaskList = () => {
     dispatch(removeTask(id))
   }
 
-  const formatDate = (dateString) => {
-    const date = new Date(dateString)
-    return date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
-  }
+  const formatDate = (dateString, dueDate) => {
+    const date = new Date(dateString);
+    let formattedDate = date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' });
+
+    if (dueDate) {
+      const due = new Date(dueDate);
+      formattedDate += ` (due ${due.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })})`;
+    }
+
+    return formattedDate;
+  };
 
   return (
 
@@ -38,11 +45,13 @@ const TaskList = () => {
                   key={task.id}
                   onClick={() => handleToggleComplete(task.id)}
                   style={{ textDecoration: task.complete ? 'line-through' : 'none' }}>
-                  {task.text} <span>({formatDate(task.createdAt)})</span>
+                  {task.text}{' '}
+                  <span>({formatDate(task.createdAt, task.dueDate)})</span>
                   <button type="button" onClick={(e) => { e.stopPropagation(); handleRemoveTask(task.id); }}>
                   Delete
                   </button>
                 </li>
+
               ))}
           </ul>
         </div>

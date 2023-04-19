@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit'
 export const projects = createSlice({
   name: 'projects',
   initialState: [
-    { id: 1, name: 'Project 1', complete: false },
+    { id: 1, name: 'Small dayily tasks', complete: false },
     { id: 2, name: 'Project 2', complete: false }
   ],
   reducers: {
