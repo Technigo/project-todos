@@ -5,7 +5,7 @@ import { tasks } from 'reducers/tasks'
 const CheckBox = ({ id }) => {
   const dispatch = useDispatch();
   const checkComplete = () => {
-    dispatch(tasks.actions.toggleTask(id))
+    dispatch(tasks.actions.completeTask(id))
   }
   return (
 

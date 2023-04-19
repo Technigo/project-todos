@@ -16,7 +16,7 @@ font-size: 12px;
 `
 
 const Task = ({ id }) => {
-  const task = useSelector((state) => state.tasks.find((t) => t.id === id))
+  const task = useSelector((state) => state.tasks.todos.find((t) => t.id === id))
   return (
     <StyledContainer>
       <StyledText className={
