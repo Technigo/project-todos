@@ -18,6 +18,9 @@ export const ToDoLists = () => {
   // keep track of whether any tasks have been added
   const [hasTasks, setHasTasks] = useState(false);
 
+  // keep track of whether the "All Done" button has been clicked
+  const [allDoneClicked, setAllDoneClicked] = useState(false);
+
   // function to set checkbox as complete or not, from todo reducer
   const onDone = (id) => {
     dispatch(tasks.actions.toggleItem(id));
@@ -56,6 +59,7 @@ export const ToDoLists = () => {
   const onClearAll = () => {
     dispatch(tasks.actions.deleteAll());
     dispatch(tasks.actions.deleteAllDone());
+    setAllDoneClicked(true);
   };
 
   return (
@@ -64,8 +68,8 @@ export const ToDoLists = () => {
         <>
           <h2>To-do ({todosTodo.length})</h2>
 
-          {todosTodo.length === 0 && (
-            <p>You are all done! *high five*</p>
+          {todosTodo.length === 0 && !allDoneClicked && (
+            <h3> Viva! You are all done! 🎉 </h3>
           )}
 
           {todosTodo.map((todo, index) => (
@@ -92,13 +96,12 @@ export const ToDoLists = () => {
       <button type="button" onClick={onClearAll} className="AllDone">
         <img src={allDone} alt="All done" />
       </button>
-      {!hasTasks && (
+      {!hasTasks && allDoneClicked && (
         <div>
           <h2>
-            Yay! Looks like there&apos;s no task left to do. Go outside and
-            play!
+            🐳 Whale done!!!!! Looks like there&apos;s no more to do.
           </h2>
-          <p>Or create a new todo</p>
+          <h3>Lets make a new list!</h3>
         </div>
       )}
     </div>

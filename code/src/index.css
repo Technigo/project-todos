@@ -39,6 +39,10 @@ h2{
  
  }
 
+ h3{
+  text-align: center;
+ }
+
  @media (min-width: 200px) and (max-width: 374px) {
   .app-container {
     margin-top: 2rem;
