@@ -20,6 +20,15 @@ box-sizing: border-box;
 min-height:100%;
 `
 
+export const TaskCardContainer = styled.div`
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+box-sizing: border-box;
+gap:0;
+`
+
 export const TaskListContainer = styled.div`
 margin:2em 0;
 display:flex;
@@ -34,7 +43,10 @@ gap:1em;
 export const TaskText = styled.p`
 margin:0;
 overflow-wrap: break-word;
-/* width:50%; */
 width:187px;
 `
 
+export const DateText = styled.p`
+margin:0;
+font-size:0.5em;
+`

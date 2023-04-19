@@ -30,10 +30,10 @@ export const FilterTasks = () => {
 
   return (
     <FlexRow>
-      <Button onClick={filterAllTasks}>All tasks</Button>
-      <Button onClick={filterOngoingTasks}>Ongoing ({ongoingTasks.length})</Button>
-      <Button onClick={filterCompletedTasks}>Done ({completedTasks.length})</Button>
-      <Button onClick={completeAllTasks}>Complete all</Button>
+      <Button filtering onClick={filterAllTasks}>All tasks</Button>
+      <Button filtering onClick={filterOngoingTasks}>Ongoing ({ongoingTasks.length})</Button>
+      <Button filtering onClick={filterCompletedTasks}>Done ({completedTasks.length})</Button>
+      <Button filtering onClick={completeAllTasks}>Complete all</Button>
     </FlexRow>
   )
 }
