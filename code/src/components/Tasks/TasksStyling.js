@@ -27,6 +27,9 @@ align-items:center;
 flex-direction:column;
 box-sizing: border-box;
 gap:0;
+padding:0.5em;
+border:rgb(184, 184, 184) solid 3px;
+border-radius:25px;
 `
 
 export const TaskListContainer = styled.div`
@@ -49,4 +52,20 @@ width:187px;
 export const DateText = styled.p`
 margin:0;
 font-size:0.5em;
+`
+
+export const SelectProject = styled.select`
+margin:0;
+background:transparent;
+padding:0.2em;
+font-size:0.5em;
+border:none;
+
+option{
+    margin:0;
+    padding:0.2em;
+    background-color:red;
+    color:blue;
+}
+
 `

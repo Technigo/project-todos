@@ -2,16 +2,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const taskData = [
-  { id: 1, text: 'task to do 1', created: '10/10/2022', due: '10/11/2022', completed: false },
-  { id: 2, text: 'task to do 2', created: '10/10/2022', due: '10/11/2022', completed: false },
-  { id: 3, text: 'task to do 3', created: '10/10/2022', due: '10/11/2022', completed: false },
-  { id: 4, text: 'task to do 4', created: '10/10/2022', due: '10/11/2022', completed: true },
+  { id: 1, text: 'task to do 1', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'other', label: 'Other' },
+  { id: 2, text: 'task to do 2', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'other', label: 'Other' },
+  { id: 3, text: 'task to do 3', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'other', label: 'Other' },
+  { id: 4, text: 'task to do 4', created: '10/10/2022', due: '10/11/2022', completed: true, value: 'other', label: 'Other' },
+];
+
+const projectsData = [
+  { value: 'shopping', label: 'Shopping' },
+  { value: 'cooking', label: 'Cooking' },
+  { value: 'sports', label: 'Sports' },
+  { value: 'other', label: 'Other' },
 ];
 
 export const tasks = createSlice({
   name: 'tasks',
   initialState: {
     tasks: taskData,
+    projects: projectsData,
     filterOn: 'all',
   },
   reducers: {
@@ -24,6 +32,8 @@ export const tasks = createSlice({
         created: Date.now(),
         due,
         completed: false,
+        value: 'other',
+        label: 'Other'
       })
       console.log(action);
     },
@@ -54,5 +64,9 @@ export const tasks = createSlice({
       const { filter } = action.payload
       state.filterOn = filter
     },
+    //  changeProject: (state, action) => {
+    //   // const { id } = action.payload
+
+    // },
   },
 });

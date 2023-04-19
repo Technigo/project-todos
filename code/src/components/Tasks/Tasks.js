@@ -7,7 +7,7 @@ import { usePopup } from 'react-custom-popup';
 import { tasks } from 'reducers/tasks';
 import { Task } from './Task';
 import { NewTaskContainer, TaskListContainer, TaskPageContainer } from './TasksStyling';
-import { FilterTasks } from './FilterTasks';
+// import { FilterTasks } from './FilterTasks';
 
 export const Tasks = () => {
   const allTasks = useSelector((store) => store.tasks.tasks);
@@ -55,14 +55,6 @@ export const Tasks = () => {
           validation: {
             required: { value: true, message: 'Value is required' }
           }
-        },
-        {
-          inputType: 'dropdown',
-          name: 'project',
-          label: 'Project',
-          validation: {
-            required: { value: true, message: 'Value is required' }
-          }
         }
       ],
       onConfirm: (response) => {
@@ -77,7 +69,6 @@ export const Tasks = () => {
   return (
 
     <TaskPageContainer>
-      <FilterTasks />
       <TaskListContainer>
         {filterOn === 'all' && allTasks.map((task, index) => (
           <Task key={task.id} index={index} task={task} completed={task.completed} />
@@ -89,7 +80,8 @@ export const Tasks = () => {
           <Task key={task.id} index={index} task={task} />
         ))}
       </TaskListContainer>
-      <NewTaskContainer><Button onClick={addNewTask}><MdPlaylistAdd fontSize="3em" color="#EA8FEA" /></Button></NewTaskContainer>
+      <NewTaskContainer><Button onClick={addNewTask}><MdPlaylistAdd fontSize="3em" color="#EA8FEA" /></Button>
+      </NewTaskContainer>
     </TaskPageContainer>
 
   );
