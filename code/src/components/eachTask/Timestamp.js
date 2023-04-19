@@ -1,13 +1,13 @@
 import React from 'react';
 
-export const Timestamp = ({ singleTask }) => {
-  const timestampFullDate = new Date(singleTask.id)
-  console.log(timestampFullDate)
+export const Timestamp = ({ timeToConvert }) => {
+  const timestampFullDate = new Date(timeToConvert)
+  // console.log(timestampFullDate)
   const timestampDate = timestampFullDate.getDate();
-  console.log(timestampDate)
+  // console.log(timestampDate)
   const timestampMonth = timestampFullDate.getMonth() + 1;
-  console.log(timestampMonth)
+  // console.log(timestampMonth)
   return (
-    <p>Scheduled:{timestampDate}/{timestampMonth}</p>
+    <span>{timestampDate}/{timestampMonth}</span>
   )
 }

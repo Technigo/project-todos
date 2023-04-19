@@ -6,28 +6,28 @@ const initialState = {
       id: 1681904108559,
       task: 'Make a to do app',
       // label: 'School',
-      // date: "there will be a date here",
+      due: 1681904108559,
       complete: false
     },
     {
       id: 1681904108560,
       task: 'Shower',
       // label: 'School',
-      // date: "there will be a date here",
+      due: 1681904108560,
       complete: false
     },
     {
       id: 1681904108561,
       task: 'Meet mentor',
       // label: 'School',
-      // date: "there will be a date here",
+      due: 1681904108561,
       complete: false
     },
     {
       id: 1681904108562,
       task: 'Demo design project',
       // label: 'School',
-      // date: "there will be a date here",
+      due: 1681904108562,
       complete: false
     }
   ]

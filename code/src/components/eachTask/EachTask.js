@@ -15,9 +15,8 @@ export const EachTask = ({ singleTask }) => {
       {singleTask.complete && (<button type="button" onClick={() => dispatch(tasks.actions.toggleComplete(singleTask))}><FontAwesomeIcon icon={faSquareCheck} /></button>)}
       <button type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask))}><FontAwesomeIcon icon={faTrashCan} /></button>
       <p>Task: {singleTask.task}</p>
-      <Timestamp singleTask={singleTask} />
-      {/* <p>Task Complete: {singleTask.complete.toString()}</p> */}
-
+      <p>Scheduled: <Timestamp timeToConvert={singleTask.id} /></p>
+      <p>Due: <Timestamp timeToConvert={singleTask.due} /></p>
     </div>
   )
 }
