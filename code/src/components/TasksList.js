@@ -1,6 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import { RemoveTask } from 'components/RemoveTask';
+import { EmptyList } from 'components/EmptyList';
 import { tasks } from 'reducers/tasks';
 
 import styled from 'styled-components';
@@ -15,19 +16,23 @@ export const TasksList = () => {
 
   return (
     <StyledSection>
-      <StyledUl>
-        {tasksList.map((singleTask) => {
-          return (
-            <StyledLi key={singleTask.id}>
-              <StyledCheckbox
-                type="checkbox"
-                checked={singleTask.complete}
-                onChange={() => handleCheckboxChange(singleTask.id)} />
-              <StyledRemoveTask task={singleTask} />
-            </StyledLi>
-          );
-        })}
-      </StyledUl>
+      {tasksList.length === 0 ? (
+        <EmptyList />
+      ) : (
+        <StyledUl>
+          {tasksList.map((singleTask) => {
+            return (
+              <StyledLi key={singleTask.id}>
+                <StyledCheckbox
+                  type="checkbox"
+                  checked={singleTask.complete}
+                  onChange={() => handleCheckboxChange(singleTask.id)} />
+                <StyledRemoveTask task={singleTask} />
+              </StyledLi>
+            );
+          })}
+        </StyledUl>
+      )}
     </StyledSection>
   )
 }
@@ -35,7 +40,7 @@ const StyledSection = styled.section`
 display: flex;
 flex-direction: column;
 align-items: center;
-  background-color: #f6f6f6;
+  background-color: aliceblue;
   padding: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
@@ -74,6 +79,8 @@ const StyledCheckbox = styled.input`
   transition: all 0.2s ease-in-out;
   
   &:checked {
-    background-color: #777;
+    background-color: beige;
+    background-repeat: no-repeat;
+    background-position: center;
   }
 `;

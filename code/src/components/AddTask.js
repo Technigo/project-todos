@@ -21,13 +21,14 @@ export const AddTask = () => {
     <AddTaskSection>
       <AddTaskForm onSubmit={onFormSubmit}>
         <AddTaskLabel htmlFor="addTaskInput">
-            Add todos here!
+        👇ADD Here👇
         </AddTaskLabel>
         <AddTaskInput
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)}
           id="addTaskInput"
-          type="text" />
+          type="text"
+          placeholder="Enter a task" />
         <AddTaskButton type="submit">Add Now!</AddTaskButton>
       </AddTaskForm>
     </AddTaskSection>
@@ -37,7 +38,8 @@ const AddTaskSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: beige;
+  background-color: #f0ccda;
+  height: 300px;
 `;
 
 const AddTaskForm = styled.form`
@@ -49,12 +51,16 @@ const AddTaskForm = styled.form`
 const AddTaskLabel = styled.label`
   font-size: 1.5rem;
   margin-bottom: 1rem;
+  background-color: beige;
+  border-radius: 30px;
+  margin-top: 1.5rem;
 `;
 
 const AddTaskInput = styled.input`
   padding: 0.5rem;
   font-size: 1.5rem;
   border: none;
+  border-radius: 20px;
   border-bottom: 2px solid #ccc;
   margin-bottom: 1rem;
   width: 100%;
@@ -68,4 +74,8 @@ const AddTaskButton = styled.button`
   border: none;
   border-radius: 4px;
   cursor: pointer;
+
+   &:hover {
+    background-color: lightgreen;
+  }
 `;
