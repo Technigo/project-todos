@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -40,15 +41,20 @@ export const tasks = createSlice({
       // console.log('action.payload:', action.payload);
     },
     removeAll: (store) => {
+      // Im not mutating this
       store.items = []
     },
     handleCheck: (store, action) => {
       const { id } = action.payload;
-      const itemExists = store.items.find((item) => item.id === id);
-      if (itemExists) {
-        itemExists.isChecked = !itemExists.isChecked;
+      console.log('id:', id)
+      // const itemExists = store.items.find((item) => item.id === id);
+      const newArray = store.items
+      const indexOfObject = newArray.findIndex((item) => item.id === id)
+      if (indexOfObject > -1) {
+        newArray[indexOfObject].isChecked = !newArray[indexOfObject].isChecked
+        store.items = newArray
       }
-      console.log('action.payload:', action.payload, 'itemExists.isChecked:', itemExists.isChecked)
+      // console.log('action.payload:', action.payload, 'itemExists.isChecked:', itemExists.isChecked)
     }
   }
 });
