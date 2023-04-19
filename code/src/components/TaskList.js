@@ -15,17 +15,6 @@ const TaskList = () => {
     dispatch(tasks.actions.deleteTask({ id }));
   };
 
-  // move completed tasks to the bottom of the task list
-  // const sortedTaskList = [...taskList].sort((a, b) => {
-  //   if (a.isComplete && !b.isComplete) {
-  //     return 1;
-  //   } else if (!a.isComplete && b.isComplete) {
-  //     return -1;
-  //   } else {
-  //     return 0;
-  //   }
-  // });
-
   // Group tasks by category
   const groupedTasks = taskList.reduce((acc, task) => {
     if (task.category) {
@@ -44,11 +33,14 @@ const TaskList = () => {
 
   return (
     <section>
-      {Object.entries(groupedTasks).map(([category, theTasks]) => (
+      {/* Object.entries(groupedTasks) method is used to convert the groupedTasks
+       object into an array of key-value pairs, where the key is the category name
+      and the value is the array of tasks. */}
+      {Object.entries(groupedTasks).map(([category, tasksArray]) => (
         <div key={category}>
           <h2>{category}</h2>
           {/* sort move completed tasks to the bottom of the list in each category */}
-          {theTasks.sort((a) => (a.isComplete ? 1 : -1)).map((singleTask) => (
+          {tasksArray.sort((a) => (a.isComplete ? 1 : -1)).map((singleTask) => (
             <SingleTaskWrapper key={singleTask.id}>
               <input
                 type="checkbox"
