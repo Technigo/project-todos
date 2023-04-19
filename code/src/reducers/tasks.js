@@ -1,7 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  items: []
+  items: [],
+  isEmpty: true
 }
 const tasks = createSlice({
   name: 'tasks',
@@ -9,6 +10,7 @@ const tasks = createSlice({
   reducers: {
     addTask: (state, action) => {
       state.items = [...state.items, action.payload];
+      state.isEmpty = false
     },
     toggleComplete: (state, action) => {
       const { id } = action.payload;
