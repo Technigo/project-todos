@@ -47,8 +47,8 @@ label {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  width: 20px;
-  height: 20px;
+  width: 30px;
+  height: 30px;
   border: 3px solid #D932AC;
   border-radius: 50%;
 
@@ -65,6 +65,8 @@ label {
   background-color: #D9725B;
   border: none;
   border-radius: 5px;
+  width: 30px;
+  height: 30px;
 }
 
 [type="button"]:hover {
