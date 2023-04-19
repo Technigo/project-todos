@@ -21,7 +21,7 @@ const AddTask = () => {
     <section>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
-                    To-Do To-Day?
+          <p>To-Do To-Day?</p>
           <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" />
         </label>
         <button type="submit"> Add Task!</button>
