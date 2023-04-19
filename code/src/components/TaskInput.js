@@ -33,7 +33,7 @@ const TaskInput = () => {
           <StyledTextarea
             type="text"
             value={newTask}
-            placeholder="Add your task here"
+            placeholder="Add your task here..."
             onChange={handleNewTaskChange} />
         </label>
         <StyledSubmitButton type="submit" disabled={buttonDisabled}>+</StyledSubmitButton>
@@ -60,6 +60,11 @@ background: radial-gradient(circle, rgba(63,94,251,0.2329306722689075) 0%, rgba(
  color: var(--color-darkGrey);
  padding-left: 1em;
  outline: none;
+
+ ::placeholder {
+  color: white;
+}
+
 @media (min-width: 667px) and (max-width: 1024px)  {
 width: 45vw;
 height: 5vh;
