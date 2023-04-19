@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useDispatch, useSelector } from 'react-redux';
 import { tasks } from './Reducers/tasks';
+import { EmptyState } from './EmptyState';
 
 export const Footer = () => {
   const dispatch = useDispatch();
@@ -11,10 +12,15 @@ export const Footer = () => {
   }
 
   return (
-    <div>
-      <RemoveAllBtn type="button" onClick={RemoveAllTasks}> Remove All Tasks</RemoveAllBtn>
-      <p>You have {items.length} {items.length === 1 ? 'task' : 'tasks'} remaining</p>
-    </div>
+    <section>
+      {items.length === 0 ? (
+        <EmptyState />
+      ) : (
+        <div>
+          <RemoveAllBtn type="button" onClick={RemoveAllTasks}> Remove All Tasks</RemoveAllBtn>
+          <p>You have {items.length} {items.length === 1 ? 'task' : 'tasks'} remaining</p>
+        </div>)}
+    </section>
   )
 };
 
