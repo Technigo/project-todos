@@ -4,13 +4,13 @@ const initialState = {
   items: [
     {
       id: 1,
-      task: 'Test1',
+      text: 'Test1',
       isDone: false
     },
 
     {
       id: 2,
-      task: 'Test2',
+      text: 'Test2',
       isDone: false
     }
   ]
@@ -23,6 +23,14 @@ export const tasks = createSlice({
 
     addTask: (store, action) => {
       store.items = [...store.items, action.payload]
+    },
+    toggleTask: (store, action) => {
+      store.items.forEach((item) => {
+        if (item.id === action.payload.id) {
+          item.isDone = !item.isDone
+          console.log(item)
+        }
+      })
     },
     clearTasks: () => {
       return initialState

@@ -12,9 +12,10 @@ export const AddTask = () => {
 
     const newTask = {
       id: Date.now().toString(),
-      task: inputValue.charAt(0).toUpperCase() + inputValue.slice(1),
+      text: inputValue.charAt(0).toUpperCase() + inputValue.slice(1),
       isDone: false
     };
+
     dispatch(tasks.actions.addTask(newTask));
     // dispatching the addPokemon with the newPokemon as the argument
     setInputValue('');
