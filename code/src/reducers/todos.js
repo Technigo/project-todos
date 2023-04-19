@@ -33,7 +33,14 @@ export const todos = createSlice({
       store.items = [...store.items, action.payload];
     },
     removeTodo: (store, action) => {
-      store.items = store.items.filter((item) => item.id === action.payload.id)
+      store.items = store.items.filter((item) => item.id !== action.payload.id)
+    },
+    completeTodo: (store, action) => {
+      store.items.forEach((item) => {
+        if (item.id === action.payload) {
+          item.isDone = !item.isDone
+        }
+      })
     }
   }
 })
