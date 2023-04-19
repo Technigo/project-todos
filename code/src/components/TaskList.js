@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { FaTrash } from 'react-icons/fa';
 import { tasks } from './Reducers/tasks';
+import TaskDate from './TaskDate';
 
 export const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items)
@@ -40,6 +41,7 @@ export const TaskList = () => {
                 checked={isChecked}
                 onChange={() => handleCheckboxChange(singleTask.id)} />
               <label htmlFor={singleTask.id}>{singleTask.name}</label>
+              <TaskDate date={singleTask.date} />
               <Deletebtn type="button" onClick={() => deleteTask(singleTask.id)}>
                 <FaTrash />
               </Deletebtn>

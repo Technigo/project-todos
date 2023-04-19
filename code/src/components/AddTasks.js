@@ -2,6 +2,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components'
+import ReactDatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 import { tasks } from './Reducers/tasks';
 
 const AddTasks = () => {
@@ -25,12 +27,14 @@ const AddTasks = () => {
     }, 2000);
     return () => clearTimeout(timeoutId);
   }, [clicked]);
+  const [startDate, setStartDate] = useState(new Date());
 
   return (
     <Wrapper>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addtodotask">
           <Input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addtodotask" type="text" required />
+          <ReactDatePicker showIcon selected={startDate} onChange={(date) => setStartDate(date)} />
         </label>
         <StyledButton type="submit" clicked={clicked}>Add To List</StyledButton>
       </form>
