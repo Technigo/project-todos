@@ -46,6 +46,7 @@ code {
   top: 0;
   z-index: 1;
   overflow: hidden;
+  margin-top: auto;
   box-shadow:
   2.3px 2.3px 1.9px rgba(0, 0, 0, 0.013),
   5.4px 5.4px 4.3px rgba(0, 0, 0, 0.02),
@@ -123,7 +124,10 @@ code {
 .todo-label {
   display: flex;
   flex-direction: row-reverse;
+  align-items: center;
   gap: 10px;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .add-btn {
@@ -137,16 +141,56 @@ code {
 }
 
 @media (max-width: 667px) {
+  body {
+    justify-content: flex-start;
+  }
   .Container {
     width: 100%;
-    max-width: 450px;
+    max-width: 340px;
+    height: 550px;
+    margin-top: 15px;
+    margin-left: 15px;
+    /*
+        height: 100%;
+    min-height: 500px;
+    max-height: 550px;
+    */
+    padding: 7px 10px 10px 10px;
+    /*background: linear-gradient(225deg, hsla(56, 85%, 89%, 1) 0%, hsla(27, 92%, 90%, 1) 11%, hsla(356, 100%, 91%, 1) 23%, hsla(311, 64%, 85%, 1) 35%, hsla(263, 64%, 84%, 1) 47%, hsla(215, 77%, 80%, 1) 58%, hsla(195, 82%, 76%, 1) 69%, hsla(185, 84%, 76%, 1) 79%, hsla(167, 82%, 78%, 1) 90%, hsla(126, 89%, 85%, 1) 100%);*/
+  }
+  .bgtest {
+    background-color: #DA58C2;
+    top: -72px;
+    left: -210px;
+  }
+  
+  .Input {
+    margin-bottom: 25px;
+  }
+
+  .Input form label input {
+    width: 231px;
+  }
+
+  .List {
+    padding: 5px;
+  }
+}
+
+@media (max-width: 375px) {
+  body {
+    justify-content: flex-start;
+  }
+  .Container {
+    width: 100%;
+    max-width: 250px;
     height: 550px;
     /*
         height: 100%;
     min-height: 500px;
     max-height: 550px;
     */
-    padding: 15px 20px 20px 20px;
+    padding: 5px 10px 10px 10px;
     /*background: linear-gradient(225deg, hsla(56, 85%, 89%, 1) 0%, hsla(27, 92%, 90%, 1) 11%, hsla(356, 100%, 91%, 1) 23%, hsla(311, 64%, 85%, 1) 35%, hsla(263, 64%, 84%, 1) 47%, hsla(215, 77%, 80%, 1) 58%, hsla(195, 82%, 76%, 1) 69%, hsla(185, 84%, 76%, 1) 79%, hsla(167, 82%, 78%, 1) 90%, hsla(126, 89%, 85%, 1) 100%);*/
   }
   .bgtest {
@@ -160,7 +204,7 @@ code {
   }
 
   .List {
-    padding: 5px;
+    padding: 2px;
   }
 }
 

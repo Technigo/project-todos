@@ -14,6 +14,13 @@ const StyledTabs = styled.div`
   z-index: 1;
   bottom: 220px;
   left: 450px;
+    
+  @media (max-width: 667px) {
+    width: 50px;
+    height: 250px;
+    bottom: 300px;
+    left: 325px;
+  }
 `;
 
 const StyledTabP = styled.p`
@@ -21,6 +28,9 @@ const StyledTabP = styled.p`
   font-size: 16px;
   margin: 5px;
   text-align: center;
+  @media (max-width: 667px) {
+    font-size: 14px;
+  }
 `;
 
 const StyledTab = styled.div`
@@ -43,6 +53,10 @@ const StyledTab = styled.div`
   }
   &:active {
     background-color: #DA58C2;
+  }
+  @media (max-width: 667px) {
+    width: 50px;
+    height: calc(250px / 3);
   }
 `;
 
