@@ -17,14 +17,26 @@ const StyledTodoRow = styled.div`
   padding: 5px 8px;
 `;
 
-const TodoList = () => {
+const TodoList = ({ selectedTab }) => {
   const todoList = useSelector((store) => store.tasks.items);
   const dispatch = useDispatch();
+  console.log('selectedTab', selectedTab)
+
+  // Here I filter
+  let filteredList = todoList;
+
+  if (selectedTab === 'done') {
+    filteredList = todoList.filter((item) => item.isChecked);
+  } else if (selectedTab === 'notDone') {
+    filteredList = todoList.filter((item) => !item.isChecked);
+  } else {
+    filteredList = todoList
+  }
 
   return (
     <div className="List">
       <ul>
-        {todoList.map((singleTodo, index) => {
+        {filteredList.map((singleTodo, index) => {
           return (
             <StyledTodoRow key={singleTodo.id} index={index}>
               <label htmlFor="todo" className="todo-label">

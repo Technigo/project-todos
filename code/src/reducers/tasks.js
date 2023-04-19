@@ -47,7 +47,7 @@ export const tasks = createSlice({
     handleCheck: (store, action) => {
       const { id } = action.payload;
       console.log('id:', id)
-      // const itemExists = store.items.find((item) => item.id === id);
+      // const itemExists = store.items.find((item) => item.id === id); blev muterbart
       const newArray = store.items
       const indexOfObject = newArray.findIndex((item) => item.id === id)
       if (indexOfObject > -1) {
