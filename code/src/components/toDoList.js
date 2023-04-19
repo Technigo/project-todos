@@ -34,12 +34,12 @@ export const ToDoLists = () => {
   const doneTodos = taskList.filter((todo) => todo.isDone);
 
   useEffect(() => {
-    if (todosTodo.length === 0) {
+    if (doneTodos.length === taskList.length && taskList.length > 0) {
       setShowConfetti(true);
     } else {
       setShowConfetti(false);
     }
-  }, [todosTodo.length]);
+  }, [doneTodos.length, taskList.length]);
 
   useEffect(() => {
     if (showConfetti) {
@@ -101,7 +101,6 @@ export const ToDoLists = () => {
           <h2>
             🐳 Whale done!!!!! Looks like there&apos;s no more to do.
           </h2>
-          <h3>Lets make a new list!</h3>
         </div>
       )}
     </div>
