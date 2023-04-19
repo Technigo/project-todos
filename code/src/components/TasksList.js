@@ -3,8 +3,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RemoveTask } from 'components/RemoveTask';
 import { EmptyList } from 'components/EmptyList';
 import { tasks } from 'reducers/tasks';
-
 import styled from 'styled-components';
+import checkImage from '../images/checkmark.png'
 
 export const TasksList = () => {
   const tasksList = useSelector((store) => store.tasks.todos);
@@ -41,7 +41,8 @@ display: flex;
 flex-direction: column;
 align-items: center;
   background-color: aliceblue;
-  
+  padding-left: 2px;
+  padding-right: 2px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 `;
 
@@ -68,6 +69,7 @@ const StyledLi = styled.li`
   font-size: 1.25rem;
   line-height: 1.5;
   list-style: none;
+  border: dotted pink;
 `;
 const StyledCheckbox = styled.input`
   margin-right: 1rem;
@@ -78,9 +80,11 @@ const StyledCheckbox = styled.input`
   border-radius: 0.25rem;
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  appearance: none;
   
   &:checked {
-    background-color: beige;
+    background-image: url(${checkImage});
+    background-size: 80%;
     background-repeat: no-repeat;
     background-position: center;
   }

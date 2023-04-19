@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import styled from 'styled-components';
+import { Footer } from 'components/Footer';
 
 export const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -31,6 +32,7 @@ export const AddTask = () => {
           placeholder="Enter a task..." />
         <AddTaskButton type="submit">Add Now!</AddTaskButton>
       </AddTaskForm>
+      <Footer />
     </AddTaskSection>
   )
 }
@@ -38,6 +40,7 @@ const AddTaskSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: space-between;
   background-color: #f0ccda;
   height: 300px;
 `;

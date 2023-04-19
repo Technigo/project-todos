@@ -20,7 +20,7 @@ const HeaderTitle = styled.h1`
   padding: 5px;
 `;
 const HeaderImage = styled.img`
-max-width: 20%; 
+max-width: 26%; 
   max-height: 100%;
 `
 
