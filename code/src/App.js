@@ -4,6 +4,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { tasks } from 'reducers/todos'
 import { ToDoLists } from 'components/toDoList';
 import { Header } from './components/header'
+import { Footer } from './components/footer'
 import { NewToDo } from './components/newToDo'
 import './index.css'
 
@@ -21,6 +22,7 @@ export const App = () => {
         <Header />
         <NewToDo />
         <ToDoLists />
+        <Footer />
       </Provider>
     </div>
   );

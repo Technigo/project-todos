@@ -43,6 +43,12 @@ h2{
   text-align: center;
  }
 
+ .Footer{
+  padding: 10px;
+  text-align: center;
+  color:  rgb(121, 182, 193);
+ }
+
  @media (min-width: 200px) and (max-width: 374px) {
   .app-container {
     margin-top: 2rem;
