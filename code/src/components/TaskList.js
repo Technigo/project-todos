@@ -13,7 +13,7 @@ const TaskList = () => {
   return (
     <StyledContainer><h1>Tasklist</h1>
       {tasks.map((task) => (
-        <Task id={task.id} />))}
+        <Task id={task.id} key={task.id} />))}
     </StyledContainer>);
 }
 
