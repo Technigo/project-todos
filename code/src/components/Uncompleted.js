@@ -1,21 +1,23 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import uncompleted from 'reducers/uncompleted';
 import { AddTask } from './AddTask';
 
 export const Uncompleted = () => {
-  const uncompletedTasks = useSelector((store) => store.uncompleted.tasks)
+  const dispatch = useDispatch();
+  const uncompletedTasks = useSelector((store) => store.uncompleted.tasks);
 
   return (
-    <div>
-      <h1>Tasks:</h1>
-      <ul>
-        {uncompletedTasks.map((task) => (
+    <section>
+      {uncompletedTasks.map((task) => (
+        <div>
           <label key={task.id} htmlFor="checkbox">
             <input type="checkbox" id="checkbox" />{task.text}
           </label>
-        ))}
-      </ul>
+          <button type="button" onClick={() => dispatch(uncompleted.actions.deleteTask(task))}>🗑️</button>
+        </div>
+      ))}
       <AddTask />
-    </div>
+    </section>
   )
 }

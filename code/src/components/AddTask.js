@@ -9,24 +9,23 @@ export const AddTask = () => {
 
   const onFormSubmit = (event) => {
     event.preventDefault();
-    console.log(Date.now().toString())
+    // Creates new unique task-item and dispatches it
     const newTask = {
       id: uuid(),
       text: inputValue,
       isCompleted: false
-    }
-    console.log(newTask)
-    dispatch(uncompleted.actions.addTask(newTask))
+    };
+    dispatch(uncompleted.actions.addTask(newTask));
   };
 
   return (
     <section>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="add">Add note
+        <label htmlFor="add">Add new task
           <input
             onChange={(event) => setInputValue(event.target.value)} />
         </label>
-        <button type="submit">Add note</button>
+        <button type="submit">➕</button>
       </form>
     </section>
   )
