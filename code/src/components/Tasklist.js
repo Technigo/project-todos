@@ -6,8 +6,7 @@ import { tasks } from 'reducers/tasks';
 import ListItem from './ListItem';
 
 const Tasklist = () => {
-  const items = useSelector((state) => state.tasks);
-  console.log(items);
+  const items = useSelector((state) => state.tasks.tasks);
   items.map((item) => console.log(item.text));
 
   return (
