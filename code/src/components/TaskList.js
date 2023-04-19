@@ -5,12 +5,17 @@ import TaskListItem from './TaskListItem';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
+
   return (
     <Paper style={{ margin: '20px' }}>
       <List>
         {taskList.map((eachTask) => {
           return (
-            <TaskListItem key={eachTask.id} text={eachTask.text} task={eachTask} />
+            <TaskListItem
+              key={eachTask.id}
+              checked={eachTask}
+              text={eachTask.text}
+              task={eachTask} />
           )
         })}
       </List>

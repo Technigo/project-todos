@@ -8,7 +8,7 @@ const AddTask = () => {
 
   const dispatch = useDispatch();
 
-  const onFormSubmit = (event) => {
+  const onSubmit = (event) => {
     event.preventDefault();
     const newTask = {
       id: Date.now().toString,
@@ -27,13 +27,14 @@ const AddTask = () => {
             id="standard-basic"
             variant="standard"
             fullWidth
-            onSubmit={onFormSubmit}
             label="Add your task here"
             onChange={(e) => setInputValue(e.target.value)}
             value={inputValue} />
         </Grid>
         <Grid xs={2} md={1} item>
           <Button
+            onClick={onSubmit}
+            disabled={inputValue.length < 1}
             variant="outlined"
             color="secondary"
             type="submit">

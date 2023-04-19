@@ -33,6 +33,13 @@ const tasks = createSlice({
       if (existingItem) {
         store.items = store.items.filter((item) => item.id !== action.payload.id)
       }
+    },
+    toggleCheckbox: (store, action) => {
+      store.items.forEach((item) => {
+        if (item.id === action.payload) {
+          item.completed = !item.completed
+        }
+      })
     }
   }
 });
