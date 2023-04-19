@@ -40,7 +40,7 @@ export const TodoList = () => {
 };
 
 const TodoItem = styled.article`
-border: solid 2px;
+border: solid 1px;
 border-radius: 6px;
 padding: 8px;
 max-width: 300px;
