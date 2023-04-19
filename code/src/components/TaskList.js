@@ -1,19 +1,69 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import styled from 'styled-components';
+import { FaTrash } from 'react-icons/fa';
 
 export const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items)
+  const [checkedItems, setCheckedItems] = useState([]);
+
+  const handleCheckboxChange = (id) => {
+    const currentIndex = checkedItems.indexOf(id);
+    const newCheckedItems = [...checkedItems];
+
+    if (currentIndex === -1) {
+      newCheckedItems.push(id);
+    } else {
+      newCheckedItems.splice(currentIndex, 1);
+    }
+    setCheckedItems(newCheckedItems);
+  };
+
+  const deleteTask = (singleTask) => {
+    dispatchEvent(singleTask.actions.removeToDo(singleTask));
+  }
+
   return (
-    <section>
+    <Wrapper>
       <ul>
         {taskList.map((singleTask) => {
-          return <li key={singleTask.id}>{singleTask.name}</li>
+          const isChecked = checkedItems.includes(singleTask.id);
+          return (
+            <li key={singleTask.id}>
+              <input
+                type="checkbox"
+                id={singleTask.id}
+                name="taskList"
+                value={singleTask.id}
+                checked={isChecked}
+                onChange={() => handleCheckboxChange(singleTask.id)} />
+              <label htmlFor={singleTask.id}>{singleTask.name}</label>
+              <Deletebtn type="button" onClick={() => deleteTask(singleTask.id)}>
+                <FaTrash />
+              </Deletebtn>
+            </li>
+          )
         })}
-        <li>
-           feed dog
-        </li>
       </ul>
-    </section>
+    </Wrapper>
   )
+};
+
+const Wrapper = styled.section`
+ul{
+  list-style: none;
+  margin:0;
+  padding:10px;
+}
+li {
+  font-family: 'Dongle', sans-serif;
+  font-weight: 100;
+  font-size: 2rem;
+  margin:10px;
 }
 
+`
+
+const Deletebtn = styled.button`
+height:30px;
+color:transparent;`
