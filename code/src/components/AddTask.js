@@ -9,9 +9,16 @@ import DeleteAllTasks from './DeleteAllTasks';
 import TaskCount from './TaskCount';
 
 const ToDoWrapper = styled.section`
+z-index: 3;
 margin: auto;
-width: 600px;
-border: 1px solid black;`
+width: 470px;
+padding: 10px;
+background: rgba(255, 255, 255, 0.15);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.9px);
+-webkit-backdrop-filter: blur(4.9px);
+border: 1px solid rgba(255, 255, 255, 0.22);`
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');

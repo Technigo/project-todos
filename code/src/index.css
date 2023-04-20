@@ -1,10 +1,14 @@
 body {
   margin: 0;
   font-family: Inter;
+  color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: linear-gradient(to right top, #7edcdc, #98e7d3, #b9f1ca, #dcf9c5, #ffffc7);
+  background-image: url(../assets/background-blob.jpg);
+  background-size: cover;
   height: 100vh;
+  margin-top: 150px;
+  margin-bottom: 20px;
 }
 
 code {
