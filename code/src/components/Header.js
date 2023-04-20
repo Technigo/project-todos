@@ -24,18 +24,32 @@ flex-direction: row;
 align-items: center;
 width: 350px;
 margin-top: 20px;
+
+@media screen and (min-width: 768px) {
+  flex-direction: row;
+}
 `
 const Arrow = styled.img`
 transform: rotate(10deg);
 width: 150px;
 height: 150px;
 align-self: flex-start;
+
+@media screen and (min-width: 360px) {
+  align-self: flex-start;
+  width: 100px;
+  height: 100px;
+}
 `
 
 const Styleh1 = styled.text`
 font-family: 'Gaegu';
 font-size: 60px;
 font-weight: bold;
+
+@media screen and (min-width: 360px) {
+  font-size: 40px;
+}
 `
 export const StyleP = styled.text`
 font-family: 'Gaegu', cursive;

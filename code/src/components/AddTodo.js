@@ -25,7 +25,7 @@ const AddTodo = () => {
   return (
     <TodoForm onSubmit={onAddTodo}>
       <label htmlFor="text">
-        <StyleP>Create new</StyleP>
+        <StyleP>within 6 months I shall ...</StyleP>
         <input
           type="text"
           value={inputText}
@@ -66,11 +66,16 @@ background-color: #c7cf93;
 font-family: 'Gagau';
 width: 80px;
 height: 30px;
-margin-left: -30px;
-/* outline: 1px solid #aaa; */
+margin-left: -150px;
 
 &:hover {
   box-shadow: 1px 2px rgba(33,33,33,.2); 
+}
+
+@media screen and (min-width: 366px) {
+  justify-content: flex-end;
+  width: 80%;
+  margin-left: -40px;
 }
 `
 export default AddTodo;
