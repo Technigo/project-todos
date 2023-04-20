@@ -10,11 +10,11 @@ export const TodoCounter = () => {
   const allTodos = useSelector((store) => store.todos.items)
 
   const onDone = (id) => {
-    dispatch(todos.actions.toggleTask(id))
+    dispatch(todos.actions.toggleItem(id))
   }
 
   const onDelete = (todoIndex) => {
-    dispatch(todos.actions.deleteTask(todoIndex))
+    dispatch(todos.actions.deleteItem(todoIndex))
   }
 
   const todosTodo = allTodos.filter((todo) => !todo.isDone)

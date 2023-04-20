@@ -53,7 +53,7 @@ export const AddNewTodo = () => {
       createdAt: Date.now(),
       text: inputValue,
       isDone: false }
-    dispatch(todos.actions.addTask(newTodo))
+    dispatch(todos.actions.addItem(newTodo))
     setInputValue('')
   }
 

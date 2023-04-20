@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   gap: 15px;
 `
 
-const StyledSingleTodo = styled.p`
+const StyledSingleTodo = styled.div`
   cursor: pointer;
   font-family: 'Gaegu', cursive;
   background: transparent;
@@ -33,7 +33,7 @@ const TodoText = styled.p`
   margin-bottom: 1px;
 `
 
-const DateString = styled.div`
+const DateString = styled.p`
   font-size: 80%;
 `
 
