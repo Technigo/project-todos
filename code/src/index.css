@@ -20,7 +20,7 @@ auto;
 p {
   font-size: 40px;
     font-weight: 100;
-    color: #1a1a1a;
+    color: #ffffff;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -31,7 +31,7 @@ div#root {
   width: 40%;
   align-self: center;
   height: 500px;
-  background: rgb(255 250 177);
+  background: rgb(197 127 152);
   border-radius: 83px;
   border: none;
   box-shadow: 0 0.5rem 3rem #383737;
@@ -43,7 +43,7 @@ section {
     align-items: center;
     padding-top: 35px;
     font-weight: 200;
-    color: #1a1a1a;
+    color: #ffffff;
     font-size: 20px;
 }
 button {

@@ -19,7 +19,7 @@ const AddTask = () => {
   }
   return (
     <section>
-      <p>Plans for today:</p>
+      <p>Plans for today</p>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
           <button type="submit"> Add</button>

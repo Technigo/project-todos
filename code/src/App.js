@@ -4,6 +4,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
 import tasks from 'reducers/tasks';
+import { Footer } from 'components/Footer';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -14,6 +15,7 @@ export const App = () => {
     <Provider store={store}>
       <AddTask />
       <TaskList />
+      <Footer />
     </Provider>
   )
 }

@@ -19,4 +19,4 @@ const DeleteAllBtn = () => {
   )
 }
 
-export default DeleteAllBtn
+export default DeleteAllBtn;
