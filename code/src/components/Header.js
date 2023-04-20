@@ -1,4 +1,5 @@
 import React from 'react';
+import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 
 export const Header = () => {
@@ -7,10 +8,20 @@ export const Header = () => {
   const tasksleft = totalTask - completedTasks
   console.log(completedTasks)
   return (
-    <header>
+    <HeaderSection>
       <h1>To do list!</h1>
-      <p>Tasks done: {completedTasks} of {totalTask}</p>
-      <p>Tasks left: {tasksleft}</p>
-    </header>
+      <div>
+        <p>Completed: {completedTasks} of {totalTask}</p>
+        <p>Tasks left: {tasksleft}</p>
+      </div>
+    </HeaderSection>
   )
 }
+
+const HeaderSection = styled.header`
+display: flex;
+flex-direction: column;
+gap: 5px;
+padding: 4%;
+align-items: center;
+`

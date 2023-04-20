@@ -11,7 +11,7 @@ export const tasks = createSlice({
   initialState,
   reducers: {
     addTask: (store, action) => {
-      store.items = [...store.items, action.payload]
+      store.items = [action.payload, ...store.items]
     },
     deleteTask: (store, action) => {
       store.items = store.items.filter((item) => item.id !== action.payload.id)
