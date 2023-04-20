@@ -7,7 +7,6 @@ align-items:center;
 flex-direction:row;
 bottom:0;
 width:100vw;
-background-color:#f6efdf;
 `
 
 export const TaskPageContainer = styled.div`
@@ -32,16 +31,20 @@ border-radius:25px;
 position:relative;
 margin: 0.8em 0.8em 0 0.8em;
 width:90%;
+background-color:#F6E6C2;
 `
 
 export const TaskListContainer = styled.div`
 margin:2em 0;
+padding:1em 1em 2em;
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
 box-sizing: border-box;
 gap:1em;
+border-radius:25px;
+
 `
 
 export const TaskText = styled.p`
@@ -53,20 +56,4 @@ width:187px;
 export const DateText = styled.p`
 margin:0;
 font-size:0.5em;
-`
-
-export const SelectProject = styled.select`
-margin:0;
-background:transparent;
-padding:0.2em;
-font-size:0.5em;
-border:none;
-
-option{
-    margin:0;
-    padding:0.2em;
-    background-color:red;
-    color:blue;
-}
-
 `

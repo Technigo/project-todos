@@ -2,10 +2,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const taskData = [
-  { id: 1, text: 'task to do 1', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'all projects' },
-  { id: 2, text: 'task to do 2', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'all projects' },
-  { id: 3, text: 'task to do 3', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'all projects' },
-  { id: 4, text: 'task to do 4', created: '10/10/2022', due: '10/11/2022', completed: true, value: 'all projects' },
+  { id: 1, text: 'playing with the cat', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'all projects' },
+  { id: 2, text: 'finish homework', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'all projects' },
+  { id: 3, text: 'go to the gym', created: '10/10/2022', due: '10/11/2022', completed: true, value: 'all projects' },
 ];
 
 const projectsData = [
