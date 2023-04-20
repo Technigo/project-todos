@@ -6,7 +6,7 @@ import { todos } from 'redux/reducers/todos';
 import styled from 'styled-components';
 
 const NewToDo = styled.form`
-  line-height: 0.5rem;
+  line-height: 0.8rem;
   padding-bottom: 0.8rem;
 `;
 
@@ -15,7 +15,7 @@ const Input = styled.input`
   border: none;
   padding: 8px;
   font-size: 18px;
-  font-family: 'Baloo 2', cursive;
+  font-family: 'DynaPuff', cursive;
   border-bottom: 2px dashed;
   :focus {
     outline: none;
@@ -23,10 +23,10 @@ const Input = styled.input`
 `;
 
 const AddButton = styled.button`
-  font-family: 'Baloo 2', cursive;
-  font-size: 18px;
+  background: pink;
   border: none;
-  background: transparent;
+  font-family: 'DynaPuff', cursive;
+  font-size: 18px;
   cursor: pointer;
 `;
 
@@ -52,15 +52,18 @@ export const AddToDo = () => {
       <NewToDo onSubmit={onFormSubmit}>
         <label>
           {/* htmlFor={`new-todo-input${newToDo.id}`} */}
-          <p>New to do:</p>
+          <p>Add new task</p>
           <Input
             type="text"
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)} />
           {/* id={`new-todo-input${newToDo.id}`} /> */}
         </label>
-        <AddButton type="submit" disabled={inputValue.length === 0}>
-          Add new To Do now
+        <AddButton
+          type="submit"
+          disabled={inputValue.length === 0}
+          title="Let's add something!">
+          Add
         </AddButton>
       </NewToDo>
     </section>
