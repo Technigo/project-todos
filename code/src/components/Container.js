@@ -4,31 +4,12 @@ import Header from './Header'
 import AddTodo from './AddTodo'
 import TodoList from './TodoList'
 
-const StyledTabs = styled.div`
-  width: 60px;
-  height: 170px;
-  padding: 0;
-  background-color: transparent;
-  color: black;
-  position: relative;
-  z-index: 1;
-  bottom: 220px;
-  left: 450px;
-    
-  @media (max-width: 667px) {
-    width: 50px;
-    height: 250px;
-    bottom: 300px;
-    left: 325px;
-  }
-`;
-
 const StyledTabP = styled.p`
   font-family: 'Montserrat';
   font-size: 16px;
   margin: 5px;
   text-align: center;
-  @media (max-width: 667px) {
+  @media (max-width: 520px) {
     font-size: 14px;
   }
 `;
@@ -51,12 +32,10 @@ const StyledTab = styled.div`
       font-weight: bold;
     }
   }
-  &:active {
-    background-color: #DA58C2;
-  }
-  @media (max-width: 667px) {
-    width: 50px;
-    height: calc(250px / 3);
+  @media (max-width: 560px) {
+    width: calc(180px / 3);
+    height: 50px;
+    border-radius: ${(props) => props.borderRadiusSmall};
   }
 `;
 
@@ -68,24 +47,24 @@ const Container = () => {
   // const filteredList = useSelector((store) => store.tasks.items);
   // const dispatch = useDispatch();
   return (
-    <>
+    <div className="Container-wrapper">
       <div className="Container">
         <Header />
         <AddTodo />
         <TodoList selectedTab={selectedTab} />
       </div>
-      <StyledTabs>
-        <StyledTab id="tab-all" isSelected={selectedTab === 'all'} borderRadius="0 12px 0 0" onClick={() => setSelectedTab('all')}>
+      <div className="Tabs">
+        <StyledTab id="tab-all" isSelected={selectedTab === 'all'} borderRadius="0 12px 0 0" borderRadiusSmall="0 0 0 12px" onClick={() => setSelectedTab('all')}>
           <StyledTabP>All</StyledTabP>
         </StyledTab>
-        <StyledTab id="tab-not-done" isSelected={selectedTab === 'notDone'} borderRadius="0" onClick={() => setSelectedTab('notDone')}>
+        <StyledTab id="tab-not-done" isSelected={selectedTab === 'notDone'} borderRadius="0" borderRadiusSmall="0" onClick={() => setSelectedTab('notDone')}>
           <StyledTabP>Not done</StyledTabP>
         </StyledTab>
-        <StyledTab id="tab-done" isSelected={selectedTab === 'done'} borderRadius="0 0 12px 0" onClick={() => setSelectedTab('done')}>
+        <StyledTab id="tab-done" isSelected={selectedTab === 'done'} borderRadius="0 0 12px 0" borderRadiusSmall="0 0 12px 0" onClick={() => setSelectedTab('done')}>
           <StyledTabP>Done</StyledTabP>
         </StyledTab>
-      </StyledTabs>
-    </>
+      </div>
+    </div>
   );
 }
 

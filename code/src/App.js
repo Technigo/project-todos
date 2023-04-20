@@ -21,12 +21,3 @@ export const App = () => {
     </Provider>
   );
 }
-
-/*
-    <Provider store={store}>
-      <div className="wrapper">
-        <Container />
-        <Footer />
-      </div>
-    </Provider>
-    */

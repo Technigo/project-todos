@@ -33,6 +33,8 @@ const TodoList = ({ selectedTab }) => {
     filteredList = todoList
   }
 
+  // Här vill jag få in en empty page som visas när den filtrerade arrayen är tom.
+  // Conditional filteredList.length === 0
   return (
     <div className="List">
       <ul>
