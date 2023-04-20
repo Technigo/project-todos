@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { todos } from 'reducers/todo';
+import { tasks } from 'reducers/tasks';
 import styled from 'styled-components';
+import uniqid from 'uniqid';
 
 const NewTodo = styled.form`
   line-height: 1em;
@@ -38,12 +39,12 @@ export const AddTodo = () => {
     event.preventDefault();
 
     const newTodo = {
-      id: todos.id,
-      key: todos.id,
+      id: uniqid(),
+      key: tasks.id,
       text: inputValue,
       isDone: false
     };
-    dispatch(todos.actions.addItem(newTodo));
+    dispatch(tasks.actions.addItem(newTodo));
     setInputValue('');
   };
 

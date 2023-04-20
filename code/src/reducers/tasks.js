@@ -2,8 +2,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 // The 'todo slice' has an initial state with an array of one todo item. Each todo item has an 'id', 'text', and 'isDone' property.
-export const todos = createSlice({
-  name: 'todos',
+export const tasks = createSlice({
+  name: 'tasks',
   initialState: {
     items: [
       { id: '1', text: 'Click this task to mark it as done!', isDone: false },
@@ -20,10 +20,13 @@ export const todos = createSlice({
       });
     },
     deleteItem: (store, action) => {
-      store.items.splice(action.payload, 1);
+      const updatedItems = store.items.filter((item) => {
+        return store.items.indexOf(item) !== action.payload;
+      });
+      store.items = updatedItems;
     },
     addItem: (store, action) => {
-      store.items.push(action.payload);
+      store.items = [...store.items, action.payload];
     },
     completeAll: (store) => {
       store.items.forEach((item) => {
@@ -42,8 +45,6 @@ export const todos = createSlice({
 
 // 'addItem' is a function that takes an action as an argument.
 // It adds the 'action.payload' (which is a new todo item) to the end of the items array in the store.
-
-// 'deleteItem' removes the todo item at the index specified by 'action.payload' from the items array in the store.
 
 // 'completeAll' function loops through all the items in the store array using the 'forEach' method,
 // and sets the isDone property of each item to 'true'.
