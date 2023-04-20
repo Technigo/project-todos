@@ -4,7 +4,6 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 // import Header from 'components/Header.js';
 import AddTask from 'components/AddTask.js';
 import TaskList from 'components/TaskList.js';
-// import CompletedTask from 'components/CompletedTask.js';
 import tasks from 'reducers/tasks.js';
 
 export const App = () => {
@@ -26,10 +25,8 @@ export const App = () => {
     <>
       {/* <Header /> */}
       <Provider store={store}>
-        <AddTask />
         <TaskList />
-        {/* <CompletedTask /> */}
-        Completed tasks
+        <AddTask />
       </Provider>
     </>
   )

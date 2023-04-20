@@ -6,24 +6,42 @@ import tasks from 'reducers/tasks.js';
 
 const TaskList = () => { // Function.
   const taskList = useSelector((store) => store.tasks.items) // useSelector
-  // to fetch the list of tasks and map over them.
+  // to select the list/slice of tasks from Redux store and from that map over
+  // them/select an item. We go to our store and grab the items from our task.
   const dispatch = useDispatch();
-  const onIsTaskCompleted = (id) => {
-    dispatch(tasks.actions.markTaskAsCompleted(id))
+  const onDeleteSingleTaskBtnCLick = (id) => { // Function. Parameter = Id.
+    dispatch(tasks.actions.deleteSingleTask(id)); // Dispatch the action
+  }
+  const onIsCompletedCheckboxToggle = (id) => { // To establish, we need the id.
+    dispatch(tasks.actions.toggleIfTaskIsCompleted(id)); // Since id we need to dispatch an action.
   }
   return (
     <section>
       <ul>
         {taskList.map((singleTask) => {
           return (
-            <li key={singleTask.id}>{singleTask.name}
-              <input
+            <li key={singleTask.id}>
+              <p>
+                <span>{singleTask.name}</span>
+                <button
+                  type="button"
+                  onClick={() => onDeleteSingleTaskBtnCLick(singleTask.id)}>
+                  Delete this task
+                </button>
+                <label htmlFor={`task_with_id${singleTask.id}`}>
+                  Is this one Completed?
+                  <input
+                    id={`task_with_id${singleTask.id}`}
+                    type="checkbox"
+                    value={singleTask.isCompleted}
+                    onChange={() => onIsCompletedCheckboxToggle(singleTask.id)} />
+                </label>
+              </p>
+              {/* <input
                 type="checkbox"
                 id="checkbox"
                 checked={singleTask.isCompleted}
-                onChange={() => onIsTaskCompleted(singleTask.id)} />
-              {/* <label key={singleTask.title}>
-              </label> */}
+                onChange={() => onIsTaskCompleted(singleTask.id)} /> */}
             </li>
           )
         })}
@@ -32,6 +50,7 @@ const TaskList = () => { // Function.
   )
 }
 
+// id as key and singleTask.name in list = printed out value.
 // store = backpack
 export default TaskList;
 
