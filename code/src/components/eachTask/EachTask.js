@@ -17,6 +17,7 @@ export const EachTask = ({ singleTask }) => {
       <p>Task: {singleTask.task}</p>
       <p>Scheduled: <Timestamp timeToConvert={singleTask.id} /></p>
       <p>Due: <Timestamp timeToConvert={singleTask.due} /></p>
+      <p>Completed: {singleTask.complete.toString()}</p>
     </div>
   )
 }

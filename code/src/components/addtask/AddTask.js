@@ -3,6 +3,8 @@ import DatePicker from 'react-datepicker';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import 'react-datepicker/dist/react-datepicker.css';
+import { ButtonStyles } from 'components/buttons/Buttons.styles';
+import { AddTaskStyles } from './AddTask.styles';
 
 export const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -23,19 +25,20 @@ export const AddTask = () => {
   }
 
   return (
-    <section>
+    <AddTaskStyles>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="addTaskInput">Add a new task:
+        <h1>What do I need to do?</h1>
+        <label htmlFor="addTaskInput">I need to:
           <input id="addTaskInput" type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
         </label>
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
-        <label htmlFor="setDueDate">Due by:
+        <label htmlFor="setDueDate">By:
           <DatePicker id="setDueDate" selected={dueDate} onChange={(date) => setDueDate(date)} showWeekNumbers withPortal />
         </label>
         <div>
-          <button type="submit">Add Task</button>
+          <ButtonStyles type="submit">Add Task</ButtonStyles>
         </div>
       </form>
-    </section>
+    </AddTaskStyles>
   )
 }
