@@ -133,6 +133,7 @@ code {
   box-shadow: -5px 5px 0px 0px #f85f36;
   cursor: pointer;
   letter-spacing: 1px;
+  height: 70px;
 }
 
 .submit-button:hover {

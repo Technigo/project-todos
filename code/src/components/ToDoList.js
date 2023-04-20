@@ -4,7 +4,7 @@ import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import uniqid from 'uniqid';
 import { tasks } from 'reducers/tasks';
-import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { faChevronDown, faChevronUp, faFlag } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { CompleteAll } from './CompleteAll';
 import { DeleteAll } from './DeleteAll';
@@ -24,9 +24,9 @@ export const CheckBox = styled.input`
 export const ToDoCard = styled.div`
   display: flex;
   justify-content: space-between;
-  background: pink;
   padding: 10px;
   position: relative;
+  background-color: pink;
 `
 
 export const ToDoInnerCard = styled.div`
@@ -68,6 +68,13 @@ export const ListFooter = styled.div`
   background: #f85f36;
 `
 
+export const ButtonsBox = styled.div`
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+  align-items: center;
+`
+
 export const ToDotext = styled.p`
   margin: 0;
   color: black;
@@ -101,6 +108,13 @@ export const ToDoList = () => {
   const onToDoToggle = (id) => {
     dispatch(tasks.actions.toggleItem(id));
     dispatch(tasks.actions.sortItems());
+    dispatch(tasks.actions.sortPriority());
+  };
+
+  const onTogglePriority = (id) => {
+    dispatch(tasks.actions.togglePriority(id));
+    dispatch(tasks.actions.sortPriority());
+    dispatch(tasks.actions.sortItems());
   };
 
   useEffect(() => {
@@ -115,6 +129,7 @@ export const ToDoList = () => {
     <>
       <ListHeader>
         <ProjectTitle>My todo list</ProjectTitle>
+        <ProjectTitle>Tasks left: 5</ProjectTitle>
         <ListHeaderButton type="button" onClick={toggleList}>
           {listActive ? (
             <FontAwesomeIcon icon={faChevronUp} style={{ color: '#ffffff', fontSize: '30px' }} />)
@@ -122,25 +137,32 @@ export const ToDoList = () => {
         </ListHeaderButton>
       </ListHeader>
       {listActive && (
-        <>
-          <NewToDo />
-          <ToDoListWrapper>
-            {allTasks.map((todoItem, todoIndex) => (
-              <ToDoCard key={uniqid()}>
-                <ToDoInnerCard>
-                  <div className="container">
-                    <div className="round">
-                      <input
-                        type="checkbox"
-                        id={todoItem.id}
-                        name={todoItem.id}
-                        checked={todoItem.complete}
-                        onChange={() => onToDoToggle(todoItem.id)} />
-                      <label htmlFor={todoItem.id} />
-                    </div>
+        <ToDoListWrapper>
+          {allTasks.map((todoItem, todoIndex) => (
+            <ToDoCard key={uniqid()} priority={todoItem.priority}>
+              <ToDoInnerCard>
+                <div className="container">
+                  <div className="round">
+                    <input
+                      type="checkbox"
+                      id={todoItem.id}
+                      name={todoItem.id}
+                      checked={todoItem.complete}
+                      onChange={() => onToDoToggle(todoItem.id)} />
+                    <label htmlFor={todoItem.id} />
                   </div>
+                </div>
+                <div>
                   <ToDotext key={todoItem.id}>{todoItem.text}</ToDotext>
-                </ToDoInnerCard>
+                  <ToDotext>Due: </ToDotext>
+                </div>
+              </ToDoInnerCard>
+              <ButtonsBox>
+                <ListHeaderButton
+                  type="button"
+                  onClick={() => onTogglePriority(todoItem.id)}>
+                  <FontAwesomeIcon icon={faFlag} style={{ color: todoItem.priority ? '#f85f36' : 'black' }} />
+                </ListHeaderButton>
                 <DeleteButton
                   type="button"
                   onClick={() => onToDoDelete(todoIndex)}>
@@ -148,14 +170,15 @@ export const ToDoList = () => {
                     ✖️
                   </span>
                 </DeleteButton>
-              </ToDoCard>
-            ))}
-            <ListFooter>
-              <CompleteAll />
-              <DeleteAll />
-            </ListFooter>
-          </ToDoListWrapper>
-        </>
+              </ButtonsBox>
+            </ToDoCard>
+          ))}
+          <NewToDo />
+          <ListFooter>
+            <CompleteAll />
+            <DeleteAll />
+          </ListFooter>
+        </ToDoListWrapper>
       )}
     </>
   )

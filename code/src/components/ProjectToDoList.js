@@ -84,7 +84,8 @@ export const ProjectToDoList = () => {
     const newToDo = {
       id: uniqid(),
       text: itemName[listIndex].charAt(0).toUpperCase() + itemName[listIndex].slice(1),
-      complete: false
+      complete: false,
+      priority: false
     };
     dispatch(addItem({ listIndex, item: newToDo }));
     setItemName('');

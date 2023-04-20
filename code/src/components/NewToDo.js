@@ -30,6 +30,7 @@ export const TextInput = styled.input`
 `
 export const ToDoForm = styled.form`
   display: flex;
+  flex-direction: column;
   gap: 10px;
 `
 
@@ -42,7 +43,8 @@ export const NewToDo = () => {
     const newToDo = {
       id: uniqid(),
       text: inputValue.charAt(0).toUpperCase() + inputValue.slice(1),
-      complete: false
+      complete: false,
+      priority: false
     };
     dispatch(tasks.actions.addItem(newToDo));
     dispatch(tasks.actions.sortItems());
@@ -60,11 +62,17 @@ export const NewToDo = () => {
           placeholder="add todo..."
           onChange={(e) => setInputValue(e.target.value)} />
       </label>
-      <button
-        type="submit"
-        className="submit-button">
-        ADD TODO
-      </button>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div>
+          <p>Due: ....</p>
+          <p>select project</p>
+        </div>
+        <button
+          type="submit"
+          className="submit-button">
+          ADD TODO
+        </button>
+      </div>
     </ToDoForm>
   )
 }
