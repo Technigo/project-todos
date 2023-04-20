@@ -12,7 +12,8 @@ const AddTodo = () => {
     event.preventDefault();
     const newTodo = {
       id: uuidv4(),
-      content: inputValue.charAt(0).toUpperCase() + inputValue.slice(1)
+      content: inputValue.charAt(0).toUpperCase() + inputValue.slice(1),
+      isChecked: false
     };
     dispatch(tasks.actions.addItem(newTodo));
     setInputValue('');

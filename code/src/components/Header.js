@@ -29,10 +29,10 @@ const StyledP = styled.p`
 const Header = () => {
   const todoList = useSelector((store) => store.tasks.items);
   console.log('todoList', todoList)
-  console.log('todoList.length', todoList.length)
+  // console.log('todoList.length', todoList.length)
   const filteredTodoList = todoList.filter((item) => item.isChecked === true)
-  console.log('filteredTodoList', filteredTodoList)
-  console.log('filteredTodoList.length', filteredTodoList.length)
+  // console.log('filteredTodoList', filteredTodoList)
+  // console.log('filteredTodoList.length', filteredTodoList.length)
   return (
     <>
       <div className="bgtest" />
