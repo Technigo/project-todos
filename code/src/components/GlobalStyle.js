@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Source Sans Pro', sans-serif;
 }
 body {
-  background: aliceblue;
+  background: var(--white);
   animation-name: slide-in-top;
   animation-duration: 1s;
 

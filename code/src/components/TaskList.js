@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import styled from 'styled-components';
 import EmptyList from './EmptyList';
+import { Button } from './Button';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
@@ -58,11 +59,11 @@ const TaskList = () => {
                   <p>Created: {singleTask.timeStamp}</p>
                   <p>Due: {singleTask.dueDate}</p>
                 </SingleTaskChild>
-                <button
+                <Button
                   type="button"
                   onClick={() => handleDeletingTask(singleTask.id)}>
                 Delete
-                </button>
+                </Button>
               </SingleTaskWrapper>
             ))}
           </div>

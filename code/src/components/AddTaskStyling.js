@@ -32,8 +32,8 @@ export const AddNewTaskBtn = styled.button`
     line-height: 20px;
     font-size: 1.1em;
     border-radius: 10px;
-    background-color: #7D6E83;
-    color: white;
+    background-color: var(--dark-blue);
+    color: var(--white);
     text-align: center;
     cursor: pointer;
     margin-right: 15px;
