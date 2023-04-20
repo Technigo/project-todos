@@ -18,17 +18,22 @@ const HeaderTitle = styled.h1`
   font-weight: bold;
   margin: 0;
   padding: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
 const HeaderImage = styled.img`
-max-width: 26%; 
+ max-width: 100%;
   max-height: 100%;
+  object-fit: contain;
+
 `
 
 export const Header = () => {
   return (
     <HeaderContainer>
       <HeaderImage src={todoImage} alt="todolist" />
-      <HeaderTitle>My kids <br /> Todos!
+      <HeaderTitle>My kids Todos!
       </HeaderTitle>
       <HeaderImage src={todoImage} alt="todolist" />
     </HeaderContainer>

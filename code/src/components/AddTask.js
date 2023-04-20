@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import styled from 'styled-components';
-import { Footer } from 'components/Footer';
 
 export const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -24,12 +23,15 @@ export const AddTask = () => {
       onFormSubmit(event);
     }
   }
+  const deleteAllTodosBtnClick = () => {
+    dispatch(tasks.actions.deleteAllTask());
+  }
 
   return (
     <AddTaskSection>
       <AddTaskForm onSubmit={onFormSubmit}>
         <AddTaskLabel htmlFor="addTaskInput">
-        👇 ADD Here 👇
+        👇 ADD task Here 👇
         </AddTaskLabel>
         <AddTaskInput
           value={inputValue}
@@ -39,8 +41,8 @@ export const AddTask = () => {
           placeholder="Enter a task..."
           onKeyPress={handleKeyPress} />
         <AddTaskButton type="submit">Add Now!</AddTaskButton>
+        <DeleteButton type="button" onClick={deleteAllTodosBtnClick}> delete all tasks </DeleteButton>
       </AddTaskForm>
-      <Footer />
     </AddTaskSection>
   )
 }
@@ -51,6 +53,7 @@ const AddTaskSection = styled.section`
   justify-content: space-between;
   background-color: #f0ccda;
   height: 300px;
+  width: 100%;
 `;
 
 const AddTaskForm = styled.form`
@@ -114,3 +117,18 @@ const AddTaskButton = styled.button`
     background-color: lightgreen;
   }
 `;
+const DeleteButton = styled.button`
+  padding: 0.2rem 0.8rem;
+  font-size: 1.1rem;
+  background-color: red;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  margin-top: 15px;
+  cursor: pointer;
+    font-family: 'Mystery Quest', cursive;
+
+   &:hover {
+    background-color: lightgreen;
+  }
+`

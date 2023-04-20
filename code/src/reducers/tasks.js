@@ -20,6 +20,9 @@ export const tasks = createSlice({
     addTask: (store, action) => {
       store.todos = [...store.todos, action.payload];
     },
+    deleteAllTask: (store) => {
+      store.todos = [];
+    },
     removeTask: (store, action) => {
       const taskId = action.payload;
       store.todos = store.todos.filter((todo) => todo.id !== taskId);

@@ -44,6 +44,7 @@ align-items: center;
   padding-left: 2px;
   padding-right: 2px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
 `;
 
 const StyledRemoveTask = styled(RemoveTask)`
