@@ -3,9 +3,11 @@ import styled from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 body {
-    background: rgb(51,102,255);
+    /* background: rgb(51,102,255);
     background: linear-gradient(180deg, rgba(51,102,255,1) 0%, rgba(255,0,255,1) 100%);
 // background-color: linear-gradient(to bottom, #3366ff 0%, #ff00ff 100%);
+   // background-repeat: no-repeat;
+    background-size: 100%; */
     font-family: 'DynaPuff', cursive;
     font-size: 20px;
     display: flex;
@@ -41,7 +43,7 @@ export const Button = styled.button`
   font-size: 18px;
   padding: 4px 13px;
   margin: 8px;
-  font-family: 'Baloo 2', cursive;
+  font-family: 'Dynapuff', cursive;
   background: #edca7f;
   color: #fff;
   border: solid 2px red;

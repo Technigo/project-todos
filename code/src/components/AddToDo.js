@@ -4,6 +4,8 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from 'redux/reducers/todos';
 import styled from 'styled-components';
+import { DefaultButton } from 'components/Button';
+import { TagsInput } from 'components/TagsInput';
 
 const NewToDo = styled.form`
   line-height: 0.8rem;
@@ -59,12 +61,19 @@ export const AddToDo = () => {
             onChange={(event) => setInputValue(event.target.value)} />
           {/* id={`new-todo-input${newToDo.id}`} /> */}
         </label>
+        <TagsInput />
         <AddButton
           type="submit"
           disabled={inputValue.length === 0}
           title="Let's add something!">
           Add
         </AddButton>
+        <DefaultButton
+          type="submit"
+          disabled={inputValue.length === 0}
+          title="Let's add something!">
+          Add
+        </DefaultButton>
       </NewToDo>
     </section>
   );
