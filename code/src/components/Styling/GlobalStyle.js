@@ -19,10 +19,6 @@ export const MainBox = styled.div`
     margin: auto;
     margin-top: 20px;
     padding-bottom: 20px;
-
-    @media (max-width: 667px) {
-      
-}
 `
 export const HeaderH1 = styled.h1`
   font-size: 38px;
