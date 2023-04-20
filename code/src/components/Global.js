@@ -5,7 +5,7 @@ export const Button = styled.button`
   display:flex;
   justify-content: center;
   align-items: center;
-  font-size: 0.9375rem;
+  font-size: 1rem;
   border-radius: 0.5rem;
   border: none;
   transition-duration: 0.4s;
@@ -19,7 +19,7 @@ export const Button = styled.button`
 export const AddButton = styled(Button)`
   background-color:var(--btn1-color);
   color: black;
-  padding: 1rem;
+  padding: 0.8rem;
 
    &:hover {
     background-color: white;
@@ -48,6 +48,7 @@ export const DeleteAllButton = styled(Button)`
   background-color: var(--btn2-color);
   color: #fff;
   padding: 0.1rem 0.7rem;
+  margin: 0 auto;
 
     &:hover {
     background-color: #fff;
@@ -60,6 +61,7 @@ export const DeleteAllButton = styled(Button)`
 
 export const Lists = styled.ul`
 font-family: var(--paragraph-font-family);
+font-size: 1.2rem;
 `;
 
 export const StyledTaskList = styled(Lists)`
@@ -88,7 +90,10 @@ export const StyledCheckbox = styled.input`
   }
 
   &:checked::before {
-    /* content: '\\2714' inserts a checkmark symbol (Unicode character \u2714) before the content of the checkbox when it is checked. The checkmark symbol is represented by its Unicode code point, which is specified using the escape sequence \\2714. */
+    /* content: '\\2714' inserts a checkmark symbol (Unicode character \u2714) 
+    before the content of the checkbox when it is checked. The checkmark symbol 
+    is represented by its Unicode code point, which is specified using the 
+    escape sequence \\2714. */
     content: '\\2714'; 
     display: inline-block;
     font-size: 14px;
@@ -99,6 +104,6 @@ export const StyledCheckbox = styled.input`
 `;
 
 export const StyledIcon = styled(FontAwesomeIcon)`
-margin: 1rem;
+margin: 0.5rem;
 `;
 

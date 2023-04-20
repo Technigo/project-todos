@@ -8,14 +8,20 @@ export const Content = styled.div`
   padding: 0.625rem;
   border: 0.3rem inset;
   border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) 1; 
+  text-align: center;
 
-  /* @media (min-width: 62rem) {
-    padding: 3.125rem;
-  } */
 `;
 
 export const TaskForm = styled.form`
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+@media (min-width: 1440px) {
+    flex-direction: row;;
+  }
 `;
 
 export const SecondHeading = styled.h2`
