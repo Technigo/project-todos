@@ -104,7 +104,7 @@ code {
   position: absolute;
   z-index: 2;
   top: -45px;
-  left: -170px;
+  left: -188px;
 }
 
 /* ---- Input area ---- */
@@ -227,7 +227,7 @@ code {
     min-width: 300px;
     max-width: 450px;
     */
-    height: 550px;
+    height: 520px;
     padding: 7px 12px 12px 12px;
   }
 
@@ -240,7 +240,7 @@ code {
   .bgtest {
     background-color: #DA58C2;
     top: -72px;
-    left: -210px;
+    left: -240px;
   }
   
   .Input {
