@@ -36,51 +36,58 @@ const AddTasks = () => {
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addtodotask">
           <Input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addtodotask" type="text" required />
-          <DatePickerWrapper>
-            <ReactDatePicker showIcon selected={startDate} onChange={(date) => setStartDate(date)} />
-          </DatePickerWrapper>
+          <StyledButton type="submit" clicked={clicked}>Add To List</StyledButton>
         </label>
-        <StyledButton type="submit" clicked={clicked}>Add To List</StyledButton>
+        <DatePickerWrapper>
+          <ReactDatePicker showIcon selected={startDate} onChange={(date) => setStartDate(date)} />
+        </DatePickerWrapper>
+
       </form>
     </Wrapper>
   )
 }
 
 const Wrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: relative;
 `;
 
 const Input = styled.input`
   height:48px;
-  width:70vw;
+  width:60vw;
   border-radius: 5px;
   border: 1px solid #ccc;
-  display: flex;
-  justify-content: center;
   margin-bottom: 1rem;
+  & button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+  }
 `;
 const DatePickerWrapper = styled.div`
   .react-datepicker-wrapper {
     display: inline-block;
   }
-
-
 `;
 
 const StyledButton = styled.button`
-  height:48px;
+  position: absolute;
+  top: 26%;
+  right: 0;
+  transform: translateY(-50%);
+  
+  height:3.3rem;
+  width: 10vw;
   font-family: 'Dongle', sans-serif;
   font-size: 1.5rem;
-  background-color: ${({ clicked }) => (clicked ? '#005F6B' : 'white')};
+  line-height: 1rem;
+  background-color: ${({ clicked }) => (clicked ? 'white' : '#DDDBCB')};
   color: black;
-  border: none;
+  border: 3px #005F6B solid;
   padding:0px 10px; 
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-left:30%;
 
   &:hover {
     background-color: #005F6B;
