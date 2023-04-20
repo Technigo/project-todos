@@ -1,8 +1,8 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components/macro'
-import CheckBox from './CheckBox'
 import DeleteButton from './DeleteButton'
+import { tasks } from '../reducers/tasks'
 
 const StyledContainer = styled.div`
 display: flex;
@@ -13,26 +13,34 @@ justify-content: space-around;
 `
 
 const StyledText = styled.p`
-font-size: 12px;
+font-weight: 400;
+font-size: 15px;
+color: var(--foreground-primary-color);
+flex: 1;
+text-align: center;
+transition: color 0.1s ease-out;
 
 &.completed {
-    color: green;
-    text-decoration: line-through;
+    color: var(--background-color);;
 }
 `
 
 const Task = ({ id }) => {
+  const dispatch = useDispatch();
+  const checkComplete = () => {
+    dispatch(tasks.actions.completeTask(id))
+  }
   const task = useSelector((state) => state.tasks.todos.find((t) => t.id === id))
   return (
-    <StyledContainer>
-      <CheckBox id={id} />
+    <StyledContainer onClick={checkComplete}>
+
       <StyledText className={
         task.complete
           && 'completed'
       }>
         {task.text}
       </StyledText>
-      <DeleteButton id={task.id} />
+      <DeleteButton id={task.id} completed={task.complete} />
     </StyledContainer>
   );
 }

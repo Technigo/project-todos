@@ -7,13 +7,24 @@ import uniqid from 'uniqid'
 const StyledContainer = styled.div`
 padding: 5px;
 display: flex;
-flex-direction: column;
+flex-direction: row;
+background-color: var(--foreground-primary-color);
 `
 
 const StyledInput = styled.input`
+border: none;
+height: 20px;
+font-family: "Raleway";
 `
 
-const StyledButton = styled.button``
+const StyledButton = styled.button`
+background-color: var(--foreground-primary-color);
+font-weight: 400;
+color: white;
+border: none;
+font-family: "Raleway";
+font-size: 15px;
+`
 
 const TaskAdder = () => {
   const [todoText, setTodoText] = useState('');
@@ -26,7 +37,7 @@ const TaskAdder = () => {
   return (
     <StyledContainer>
       <StyledInput value={todoText} onChange={(e) => setTodoText(e.target.value)} />
-      <StyledButton text="Add task" onClick={handleSubmit} />
+      <StyledButton onClick={handleSubmit}>task</StyledButton>
     </StyledContainer>
   );
 }

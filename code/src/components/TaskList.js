@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import { useSelector, useDispatch } from 'react-redux'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { tasks } from '../reducers/tasks'
 import Task from './Task'
 
@@ -19,6 +21,7 @@ align-items: center;
 background-color: var(--foreground-primary-color);
 
 h1 {
+  font-size: 15px;
   flex: 1;
   color: white;
   text-align: center;
@@ -50,10 +53,6 @@ width: 30px;
 height: 30px;
 background-color: inherit;
 border: none;
-
-::before {
-  content: "=";
-}
 `
 
 const CompleteAllButton = styled.button`
@@ -90,8 +89,10 @@ const TaskList = () => {
   return (
     <StyledContainer>
       <StyledTasklistBar>
-        <HamburgerMenuButton onClick={toggleActionBar} />
-        <h1>Tasklist</h1>
+        <HamburgerMenuButton onClick={toggleActionBar}>
+          <FontAwesomeIcon icon={faBars} style={{ color: '#ffffff' }} />
+        </HamburgerMenuButton>
+        <h1>tasks</h1>
       </StyledTasklistBar>
       <StyledActionBar className={toggledActionBar && 'active'}>
         <CompleteAllButton value="Complete All" onClick={handleCompleteAll}>complete all</CompleteAllButton>
