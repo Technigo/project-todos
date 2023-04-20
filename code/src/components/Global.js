@@ -101,6 +101,10 @@ export const StyledCheckbox = styled.input`
     text-align: center;
     color: var(--secondary-background-color);
   }
+
+  &:focus {
+    outline: 2px solid #000;
+  }
 `;
 
 export const StyledIcon = styled(FontAwesomeIcon)`
