@@ -28,9 +28,9 @@ const StyledList = styled.ul`
 list-style-type: none;
 display: flex;
 flex-direction: column;
-border: solid 2px blue;
 gap: 20px;
 overflow: scroll;
+padding: 10px;
 `
 
 const List = styled.li`
@@ -77,4 +77,11 @@ font-size: 32px;
 `
 
 const Checkboxes = styled.input`
+width: 20px;
+height: 20px;
+outline: 2px solid black;
+
+&:before {
+  background-color: red;
+}
 `

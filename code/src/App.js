@@ -44,17 +44,15 @@ max-width: 500px;
 justify-content: center;
 background-color: black;
 padding: 20px;
-border: solid pink 3px;
 `
 
 const ListContainer = styled.section`
 display:flex;
 flex-direction: column;
 align-self: stretch;
-height: 100vw;
+min-height: 400px;
 background-color: #c7b198;
 padding: 40px 10px;
 border-radius: 10px;
-border: solid 3px green;
 gap: 20px;
 `

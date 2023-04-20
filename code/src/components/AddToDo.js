@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import { toDos } from 'reducers/toDos'
+import arrow from '../images/arrow.png'
 
 export const AddToDo = () => {
   const [inputText, setInputText] = useState('')
@@ -20,18 +21,36 @@ export const AddToDo = () => {
   }
 
   return (
-    <Form onSubmit={onFormSubmit}>
-      <label htmlFor="addTodoText">
-        <InputField id="addTodoText" placeholder="Make it happen.." type="text" value={inputText} onChange={(event) => setInputText(event.target.value)} />
-      </label>
-      <MakeButton type="submit" disabled={!inputText}>+</MakeButton>
-    </Form>
+    <FormContainer>
+      <Arrow src={arrow} alt="arrow" />
+      <Form onSubmit={onFormSubmit}>
+        <label htmlFor="addTodoText">
+          <InputField id="addTodoText" placeholder="Make it happen.." type="text" value={inputText} onChange={(event) => setInputText(event.target.value)} />
+        </label>
+        <MakeButton type="submit" disabled={!inputText}>+</MakeButton>
+      </Form>
+    </FormContainer>
   )
 }
+
+const FormContainer = styled.section`
+display:flex;
+flex-direction: column;
+`
+
+const Arrow = styled.img`
+transform: rotate(30deg);
+height: 100px;
+width: 100px;
+display:flex;
+align-self: flex-end;
+margin-top: -110px;
+`
 
 const Form = styled.form`
 display: flex;
 gap: 16px;
+padding: 0px 10px;
 `
 
 const InputField = styled.input`
@@ -39,7 +58,7 @@ border: solid 2px #FF847C;
 border-radius: 5px;
 padding: 8px 20px;
 font-size: 16px;
-background-color: #c7b198;
+background-color: #f0ece2;
 outline-color: #9fe6dc;
 }
 `
