@@ -8,7 +8,7 @@ const AddTask = () => {
   const onAddTask = (event) => {
     event.preventDefault();
     dispatch(tasks.actions.addTask(inputValue))
-    // mpty the text field
+    // empty the text field
     setInputValue('')
   }
   return (
