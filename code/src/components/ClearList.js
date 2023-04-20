@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import tickets from 'reducers/tickets';
@@ -9,7 +10,7 @@ const StyledButton = styled.button`
   transition: all 0.2s ease-in-out;
 `;
 
-const ClearList = (item) => {
+const ClearList = () => {
   const dispatch = useDispatch();
   const [clickCount, setClickCount] = useState(0);
   const buttonRef = useRef(null);
@@ -30,14 +31,19 @@ const ClearList = (item) => {
     if (clickCount === 0) {
       setClickCount(1);
     } else {
-      dispatch(tickets.actions.clearAll(item));
+      dispatch(tickets.actions.clearAll());
       setClickCount(0);
     }
   };
 
+  const handleAllDoneClick = () => {
+    dispatch(tickets.actions.markAllDone());
+    // updating all items, no need to pass item to markAllDone bc it needs no info about which item to target
+  }
+
   return (
     <>
-      <button type="button">All done</button>
+      <button type="button" onClick={handleAllDoneClick}>All done</button>
       <StyledButton type="button" onClick={handleClearAllClick} clicked={clickCount > 0} ref={buttonRef}>
         {clickCount === 0 ? 'Clear All' : 'Are you sure?'}
       </StyledButton>

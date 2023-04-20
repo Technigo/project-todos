@@ -1,8 +1,10 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import vault from 'reducers/vault';
 import tickets from 'reducers/tickets';
 
+// we pass down item since the dispatches regard updates to single items, and eith "item" we add the information about which one it is
 const HandleTODO = ({ item }) => {
   const dispatch = useDispatch();
   return (

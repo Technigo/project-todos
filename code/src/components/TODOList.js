@@ -1,31 +1,42 @@
+/* eslint-disable max-len */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-closing-tag-location */
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import tickets from 'reducers/tickets';
+import vault from 'reducers/vault';
 import HandleTODO from './HandleTODO';
 import ClearList from './ClearList';
 
-// eslint-disable-next-line max-len
 // what we call addedTodos here is the store, we can reference it however we want. So we go to the store, which has a slice named tickets, and we look at the property "items". Whenever the items-array is changed, the pokemonList get's notified thanks to the useSelector, and gets updated
+
+// this component displays the todo items
 const TODOList = () => {
-  const [selectedTODO, setSelectedTODO] = useState(null); // mark if a todo is clicked
   const todoList = useSelector((addedTodos) => addedTodos.tickets.items)
-  const [todoCount, setTodoCount] = useState(todoList.length);
+  const [selectedTODO, setSelectedTODO] = useState(null); // take note if a todo is clicked
+  const [todoCount, setTodoCount] = useState(todoList.length); // to keep track of how many todo's there are and display the number
   const dispatch = useDispatch();
 
   useEffect(() => {
-    setTodoCount(todoList.length)
-  }, [todoList]);
-
-  useEffect(() => {
-    const ticketsListItem = JSON.parse(localStorage.getItem('ticketsList'));
-    if (ticketsListItem) {
-      dispatch(tickets.actions.setupStore(ticketsListItem))
+    const localStorageTickets = localStorage.getItem('ticketsList');
+    console.log(localStorageTickets)
+    if (localStorageTickets) {
+      try {
+        const parsedTickets = JSON.parse(localStorageTickets);
+        dispatch(tickets.actions.setupStore(parsedTickets));
+        setTodoCount(todoList.length);
+      } catch (error) {
+        console.error(error);
+      }
     }
-  }, [])
+    const localStorageSavedTodos = JSON.parse(localStorage.getItem('vaultList'));
+    if (localStorageSavedTodos) {
+      dispatch(vault.actions.setupStore(localStorageSavedTodos));
+    }
+  }, [dispatch, todoList.length]);
 
   const ticketsList = useSelector((store) => store.tickets.items);
+  const vaultList = useSelector((store) => store.vault.items)
 
   const handleTODOClick = (item) => {
     if (item === selectedTODO) {
@@ -34,7 +45,7 @@ const TODOList = () => {
       setSelectedTODO(item); // when one of the todo's is clicked, HandleTODO is mounted
     }
   };
-  console.log(ticketsList)
+  console.log(ticketsList, vaultList)
   return (
     <>
       <section>
