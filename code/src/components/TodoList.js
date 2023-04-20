@@ -45,7 +45,6 @@ border: solid 1px;
 border-radius: 6px;
 padding: 6px;
 max-width: 300px;
-position: relative;
 font-family: 'Gaegu';
 font-size: 20px;
 justify-content: flex-start;

@@ -32,7 +32,7 @@ const AddTodo = () => {
           required
           onChange={(event) => setInputText(event.target.value)} />
       </label>
-      <SubmitButton type="text">Done</SubmitButton>
+      <SubmitButton type="text">ADD NEW</SubmitButton>
     </TodoForm>
   );
 };
@@ -58,8 +58,16 @@ input[type=text] {
 }
 `
 const SubmitButton = styled.button`
-border: 1px solid red;
+border: none;
 border-radius: 5px;
 cursor: pointer;
+font-weight: bold;
+background-color: rgba(201,201,199,255);
+font-family: 'Gagau';
+outline: 1px solid #aaa;
+
+&:hover {
+  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+}
 `
 export default AddTodo;
