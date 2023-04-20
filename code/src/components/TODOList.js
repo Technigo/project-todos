@@ -1,6 +1,8 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-closing-tag-location */
 import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import tickets from 'reducers/tickets';
 import HandleTODO from './HandleTODO';
 import ClearList from './ClearList';
 
@@ -10,10 +12,20 @@ const TODOList = () => {
   const [selectedTODO, setSelectedTODO] = useState(null); // mark if a todo is clicked
   const todoList = useSelector((addedTodos) => addedTodos.tickets.items)
   const [todoCount, setTodoCount] = useState(todoList.length);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setTodoCount(todoList.length)
   }, [todoList]);
+
+  useEffect(() => {
+    const ticketsListItem = JSON.parse(localStorage.getItem('ticketsList'));
+    if (ticketsListItem) {
+      dispatch(tickets.actions.setupStore(ticketsListItem))
+    }
+  }, [])
+
+  const ticketsList = useSelector((store) => store.tickets.items);
 
   const handleTODOClick = (item) => {
     if (item === selectedTODO) {
@@ -22,7 +34,7 @@ const TODOList = () => {
       setSelectedTODO(item); // when one of the todo's is clicked, HandleTODO is mounted
     }
   };
-
+  console.log(ticketsList)
   return (
     <>
       <section>

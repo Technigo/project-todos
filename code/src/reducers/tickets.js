@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
@@ -15,9 +16,14 @@ const tickets = createSlice({
   name: 'tickets',
   initialState,
   reducers: {
+    // first argument references state of store, 2nd references the data being passed down from component. We use this to retain items when refreshing
+    setupStore: (store, action) => {
+      store.items = action.payload;
+    },
     addTODO: (store, action) => {
       // all of the items already in the store + the payload will become the new store
-      store.items = [...store.items, action.payload]
+      store.items = [...store.items, action.payload];
+      localStorage.setItem('ticketsList', JSON.stringify(store.items));
     },
     removeTODO: (store, action) => {
       store.items = store.items.filter((item) => item.id !== action.payload.id)
@@ -28,6 +34,7 @@ const tickets = createSlice({
       if (toggledTodo) {
         toggledTodo.isDone = !toggledTodo.isDone;
         console.log('toggling done')
+        localStorage.setItem('ticketsList', JSON.stringify(store.items));
       }
     },
     clearAll: (store) => {
