@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import todos from 'reducers.js/todos';
 import styled, { css } from 'styled-components';
+import DateToday from './Date';
 
 export const Buttons = styled.button`
   background: transparent;
@@ -11,7 +12,6 @@ export const Buttons = styled.button`
   padding: 10px 25px;
   font-size: 26px;
   cursor: pointer;
-  margin: 25px 0px 0px 0px;
   transition: 0.2s;
 
   &:hover {
@@ -25,6 +25,7 @@ export const Buttons = styled.button`
     background-color: #ddd97f;
     text-transform: uppercase;
     letter-spacing: 1px;
+    margin: 25px 0px 0px 0px;
 
     &:hover {
       background: transparent;
@@ -54,6 +55,18 @@ export const Wrapper = styled.div`
   height: 100%;
   margin-top: 5%;
   padding: 2rem;
+`
+
+export const TopDiv = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap:1rem;
+
+  @media (max-width:668px) {
+    display: block
+  }
 `
 
 export const StyledForm = styled.form`
@@ -88,7 +101,10 @@ const AddToDo = () => {
   }
   return (
     <section>
-      <Buttons type="button" onClick={onThrowToDoAwayBtnClick}> Finish this list</Buttons>
+      <TopDiv>
+        <Buttons type="button" onClick={onThrowToDoAwayBtnClick}> Finish this list</Buttons>
+        <DateToday />
+      </TopDiv>
       <StyledForm onSubmit={onFormSubmit}>
         <label htmlFor="addToDoInput">
         Time to add a new task to the list and get things done
