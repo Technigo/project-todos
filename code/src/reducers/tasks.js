@@ -25,7 +25,26 @@ const tasks = createSlice({
   initialState,
   reducers: {
     addTask: (store, action) => {
-      store.items = [...store.items, action.payload]
+      store.items = [...store.items, action.payload];
+    },
+    deleteAllTask: (store) => {
+      store.items = [];
+    },
+    deleteSingleTask: (store, action) => {
+      const id = action.payload;
+      const copyOfTaskArrayFromStore = store.items;
+      const condition = (element) => element.id === id;
+      const foundIndex = copyOfTaskArrayFromStore.findIndex(condition);
+      copyOfTaskArrayFromStore.splice(foundIndex, 1);
+      store.items = copyOfTaskArrayFromStore;
+    },
+    toggleTaskIsDone: (store, action) => {
+      const id = action.payload;
+      const copyOfTaskArrayFromStore = store.items;
+      const condition = (element) => element.id === id;
+      const foundIndex = copyOfTaskArrayFromStore.findIndex(condition);
+      copyOfTaskArrayFromStore[foundIndex].isDone = !copyOfTaskArrayFromStore[foundIndex].isDone;
+      store.items = copyOfTaskArrayFromStore;
     }
   }
 });

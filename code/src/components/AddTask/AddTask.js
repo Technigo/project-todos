@@ -20,9 +20,12 @@ const AddTask = () => {
     dispatch(tasks.actions.addTask(newTask));
     setInputValue('');
   }
-
+  const onTaskDeleteBtnClick = () => {
+    dispatch(tasks.actions.deleteAllTask());
+  }
   return (
     <section>
+      <button type="button" onClick={onTaskDeleteBtnClick}>DELETE ALL</button>
       <div className="addtask-container">
         <button type="submit" className="add-button">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
