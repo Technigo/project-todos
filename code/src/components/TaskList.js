@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { tasks } from './reducers/tasks';
 import { Button } from './styles/global';
+import { AllDone } from './AllDone';
 
 const InnerWrapper = styled.div`
     display: flex;
@@ -17,6 +18,7 @@ const InnerWrapper = styled.div`
 const TaskText = styled.p`
     font-family: 'Dongle', sans-serif;
     font-size: 2em;
+    line-height: 0.5em;
     width: 100%;
 `
 const Time = styled.p`
@@ -44,6 +46,7 @@ export const TaskList = () => {
           <InnerWrapper>
             <label htmlFor={singleTask}>
               <input
+                key={singleTask.id}
                 id={singleTask.id}
                 type="checkbox"
                 className="checkBox"
@@ -62,6 +65,7 @@ cancel
           </InnerWrapper>
         )
       })}
+      <AllDone />
     </section>
   )
 }

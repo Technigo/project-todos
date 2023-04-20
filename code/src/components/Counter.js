@@ -1,5 +1,12 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import styled from 'styled-components';
+
+const CounterText = styled.p`
+  font-family: 'Roboto', sans-serif;
+  font-size: 1em;
+  display: flex;
+`
 
 export const Counter = () => {
   const items = useSelector((store) => store.tasks.items)
@@ -15,9 +22,8 @@ export const Counter = () => {
     }
   }
   return (
-    <>
-      <span>{doneTasks}</span>
-      <h2>{completedTasks.length}/{items.length} tasks completed</h2>
-    </>
+    <CounterText>
+      {doneTasks()}
+    </CounterText>
   )
 }
