@@ -5,12 +5,24 @@
   display: flex;
   background-color: #282c34;
   min-height: 25vh;
-  display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  gap: 1rem;
+  width: 100%;
+}
+.grow {
+  flex-grow: 1;
+}
+.task {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 500px;
 }
 
 .task-button {
@@ -23,4 +35,9 @@
   color: white;
   font-size: 1.5rem;
   margin-left: 1rem;
+}
+.task-button img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
 }

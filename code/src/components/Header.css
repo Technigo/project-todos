@@ -7,16 +7,43 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  font-family: 'Sora', sans-serif;
 }
-
 .clear-all-button {
   background: none;
   border: none;
   margin: 0;
   padding: 0;
   cursor: pointer;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Sora', sans-serif;
   color: white;
   font-size: 1.5rem;
   margin-left: 1rem;
+}
+
+.clear-all-button img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 1rem;
+}
+.clear-all {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Sora', sans-serif;
+}
+h4 {
+  margin: 5px;
+}
+h1 {
+  margin: 5px;
+}
+input {
+  background-color: #fff;
+  border-radius: 20px;
+  border: none;
+  color: black;
+  cursor: pointer;
+  padding: 10px 20px;
+  box-shadow: fff;
 }

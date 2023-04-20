@@ -3,6 +3,7 @@ import React from 'react';
 import { tasks } from 'reducers/tasks';
 import { useDispatch, useSelector } from 'react-redux';
 import './Header.css';
+import remove from '../img/remove.png';
 
 function getOrdinalSuffix(day) {
   if (day >= 11 && day <= 13) {
@@ -34,20 +35,23 @@ export const Header = () => {
       <div className="header-only">
         <header>
           <h1>My To Do List ✅ </h1>
-          <h2>What do you need to do today?</h2>
-          {/* This is where the number of tasks will be displayed */}
-          <h3>{`${month} ${day}${ordinal}, ${year}`}</h3>{' '}
-          {/* add current data here */}
+          <div className="clear-all">
+            <button
+              className="clear-all-button"
+              type="button"
+              onClick={() => dispatch(tasks.actions.clearAll())}
+            >
+              <p>
+                Clear all <img src={remove} alt="remove" />
+              </p>
+            </button>
+            <p>{numberOfTasks} remaining todos</p>
+            <h3>What do you need to do today?</h3>
+            {/* This is where the number of tasks will be displayed */}
+            <h4>{`${month} ${day}${ordinal}, ${year}`}</h4>{' '}
+            {/* add current data here */}
+          </div>
         </header>
-      </div>
-      <div className="header-and-tasks">
-        <button
-          className="clear-all-button"
-          type="button"
-          onClick={() => dispatch(tasks.actions.clearAll())}
-        >
-          <p>{numberOfTasks} tasks</p>❌ Clear all
-        </button>
       </div>
     </div>
   );

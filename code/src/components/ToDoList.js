@@ -2,15 +2,16 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
-import './ToDo.css';
+import './ToDoList.css';
+import delete1 from '../img/delete1.png';
 
-export const ToDo = () => {
+export const ToDoList = () => {
   // useSelector is a hook that allows us to access the store
   const allTasks = useSelector((store) => store.tasks);
   const dispatch = useDispatch();
   return (
-    <div>
-      <div className="task-list">
+    <section className="task-list">
+      <div className="grow">
         {/* map over the tasks array and render a checkbox and a task for each task  */}
         {allTasks.map((task) => (
           <div className="task-container">
@@ -21,22 +22,21 @@ export const ToDo = () => {
               <button
                 className="task-button"
                 type="button"
-                onClick={() => dispatch(tasks.actions.removeTask())}
+                onClick={() => dispatch(tasks.actions.removeTask(task.id))}
               >
-                ➖ Task
+                <img src={delete1} alt="delete" />
               </button>
             </div>
           </div>
         ))}
       </div>
-      <h1>My To Do List</h1>
-      <button
-        className="task-button-white"
-        type="button"
-        onClick={() => dispatch(tasks.actions.addTask())}
-      >
-        ➕ Task
-      </button>
-    </div>
+    </section>
   );
 };
+// print path: code/src/components/ToDoList.js
+// print path to delete.png: code/src/img/delete.png
+// how to get path to the delete.png file?
+// how to access delete.png from here?
+// how to get the path to the delete.png file?
+// how to get the path to the delete.png file?  // print path: code/src/components/ToDoList.js
+// print path to delete.png: code/src/img/delete.png

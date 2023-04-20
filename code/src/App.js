@@ -1,10 +1,11 @@
 /* eslint-disable comma-dangle */
-import { ToDo } from 'components/ToDo';
+import { ToDoList } from 'components/ToDoList';
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { tasks } from 'reducers/tasks';
 import { Header } from 'components/Header';
+import { AddNewTask } from 'components/AddNewTask';
 
 const reducer = combineReducers({
   tasks: tasks.reducer,
@@ -17,7 +18,8 @@ export const App = () => {
     <Provider store={store}>
       <div className="layout">
         <Header />
-        <ToDo />
+        <AddNewTask />
+        <ToDoList />
       </div>
     </Provider>
   );

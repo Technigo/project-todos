@@ -1,0 +1,14 @@
+.add-task-btn img {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: 1rem;
+}
+.input {
+  background-color: #fff;
+  border-radius: 20px;
+  border: none;
+  color: black;
+  width: 100%;
+  cursor: pointer;
+  padding: 10px 20px;
+}
