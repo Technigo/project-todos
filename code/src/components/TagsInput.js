@@ -34,10 +34,11 @@ export const TagsInputField = styled.input`
 `;
 
 export const TagsInput = () => {
+  const dispatch = useDispatch();
   const [tagInput, setTagInput] = useState('');
   // const allTags = useSelector((state) => state.tags);
   const allTags = useSelector((state) => state.tags.items);
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
@@ -55,7 +56,7 @@ export const TagsInput = () => {
   return (
     <section>
       <TagsInputContainer>
-        {allTags.map((tag) => (
+        {allTags.items.map((tag) => (
           <TagItem key={tag}>
             <span className="text">{tag}</span>
             <span

@@ -10,10 +10,10 @@ export const tags = createSlice({
   },
   reducers: {
     addTag: (state, action) => {
-      state.push(action.payload);
+      state.items.push({ id: Math.random().toString(), text: action.payload });
     },
     removeTag: (state, action) => {
-      return state.filter((tag) => tag.id !== action.payload.id);
+      state.items = state.items.filter((tag) => tag.id !== action.payload);
     }
   }
 });
