@@ -4,5 +4,9 @@ button{
     border: none;
     border-radius: 10px;
     height: 30px;
-    width: 50px;
+    width:fit-content;
+}
+
+.resetButton {
+    width: fit-content;
 }

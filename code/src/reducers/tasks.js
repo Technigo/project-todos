@@ -7,22 +7,22 @@ const initialState = {
   items: [
     {
       id: '1',
-      taskName: 'Jigglypuff', // name is to store the input
+      taskName: 'Style this ugly list', // name is to store the input
       isChecked: false
     },
     {
       id: '2',
-      taskName: 'Snorlax',
+      taskName: 'Get rid of the damn dot on the left side',
       isChecked: true // define with myself, also change it in the addNewTask
     },
     {
       id: '3',
-      taskName: 'Mewtwo',
+      taskName: 'Do the laundry',
       isChecked: false
     },
     {
       id: '4',
-      taskName: 'Oddish',
+      taskName: 'Buy some chips',
       isChecked: true // isChecked same as in tasks.js
     }
   ]
@@ -32,13 +32,6 @@ const tasks = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
-    toggleChecked: (store, action) => {
-      store.items.forEach((item) => {
-        if (item.id === action.payload) {
-          item.isChecked = !item.isChecked;
-        }
-      });
-    },
     // "store, action" can be potato, banana, first argument (store) references the state of the store, second argument (action)references the data that is
     // passed down from a component
     addTask: (store, action) => {
@@ -48,14 +41,29 @@ const tasks = createSlice({
       // Immutable way:
       store.items = [...store.items, action.payload]
     },
-    removeTodo: (store, action) => {
-      store.items.splice(action.payload, 1)
+    deleteAllTasks: (store) => {
+      store.items = [];
     },
-    clearAll: (store, action) => {
-      store.items = []
-      console.log(action)
+    deleteSingleTask: (store, action) => {
+      // const { id } = action.payload;
+      const id = action.payload;
+      console.log('action.payload', action.payload)
+      // splice to remove a single element if I know the index
+      const copyOfTaskListArrayFromStore = store.items;
+      const condition = (element) => element.id === id;
+      const foundIndex = copyOfTaskListArrayFromStore.findIndex(condition);
+      copyOfTaskListArrayFromStore.splice(foundIndex, 1);
+      store.items = copyOfTaskListArrayFromStore;
+    },
+    toggleIfTaskIsChecked: (store, action) => {
+      const id = action.payload;
+      const copyTaskListArrayFromStore = store.items;
+      const condition = (element) => element.id === id;
+      const foundIndex = copyTaskListArrayFromStore.findIndex(condition);
+      copyTaskListArrayFromStore[foundIndex].isCaught = !copyTaskListArrayFromStore[foundIndex].isCaught;
+      store.items = copyTaskListArrayFromStore;
     }
   }
-})
+});
 
 export default tasks;

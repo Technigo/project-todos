@@ -5,6 +5,11 @@ import '../style/AddTask.css'
 import '../style/Input.css'
 import '../style/Buttons.css'
 
+// stringToCapitalize makes only the first letter to uppercase
+const capitalize = (stringToCapitalise) => {
+  return stringToCapitalise.charAt(0).toUpperCase() + stringToCapitalise.slice(1);
+}
+
 const AddTask = () => {
   const [inputValue, setInputValue] = useState(''); // useState använder vi för att det ska uppdateras
 
@@ -17,14 +22,19 @@ const AddTask = () => {
     // in newTask im creating a new id, name
     const newTask = {
       id: Date.now().toString(), // Date.now takes the todays date and makes it into a string
-      taskName: inputValue.toUpperCase(),
+      taskName: capitalize(inputValue), // byta plats på dessa för att capitalizefunction ska funka.
       isChecked: false // använder sen när jag har checkboxes. I wanna
     };
     dispatch(tasks.actions.addTask(newTask)); // newtask is the payload.
     setInputValue('');
   }
+
+  const onResetToDoClick = () => {
+    dispatch(tasks.actions.deleteAllTasks());
+  }
   return (
     <section>
+      <button className="resetButton" type="button" onClick={onResetToDoClick}> Reset To-Do List</button>
       <div className="input">
         <form onSubmit={onFormSubmit}>
           <label htmlFor="addTaskInput">
