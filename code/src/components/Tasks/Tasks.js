@@ -41,12 +41,12 @@ export const Tasks = () => {
         {
           name: 'Cancel',
           type: 'cancel',
-          style: { background: '#FFAACF' }
+          style: { background: '#FFAACF', color: 'rgb(71 69 69)' }
         },
         {
           name: 'Confirm',
           type: 'confirm',
-          style: { background: '#B9F3E4' }
+          style: { background: '#B9F3E4', color: 'rgb(71 69 69)' }
         }
       ],
       inputs: [
@@ -71,7 +71,7 @@ export const Tasks = () => {
         }
       ],
       onConfirm: (response) => {
-        showAlert({ title: 'Result', text: JSON.stringify(response) });
+        showAlert({ title: 'Your task:', text: response.text });
         console.log(response.text)
         console.log(JSON.stringify(response.due))
         dispatch(tasks.actions.addItem({ response }))

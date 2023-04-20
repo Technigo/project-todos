@@ -5,6 +5,8 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import { tasks } from 'reducers/tasks';
 import { GlobalStyle } from 'reusable-components/GlobalStyle';
 import { Main } from 'components/Main';
+import Background from './assets/Background.svg';
+import { Image } from './reusable-components/Background'
 
 const reducer = combineReducers({
   // projects: projects.reducer,
@@ -16,6 +18,7 @@ const store = configureStore({ reducer });
 export const App = () => (
   <Provider store={store}>
     <GlobalStyle />
+    <Image src={Background} alt="background" />
     <Main />
   </Provider>
 );

@@ -44,7 +44,7 @@ flex-direction:column;
 box-sizing: border-box;
 gap:1em;
 border-radius:25px;
-
+height:100%;
 `
 
 export const TaskText = styled.p`
