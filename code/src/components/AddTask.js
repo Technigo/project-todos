@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import tasks from 'reducers/tasks'
+import uniqid from 'uniqid'
 
 const AddTask = () => {
   const dispatch = useDispatch()
@@ -10,7 +11,8 @@ const AddTask = () => {
     event.preventDefault()
     // creating new task, id now, inputvalue uppercase
     const newTask = {
-      id: Date.now().toString(),
+      // generate an 8 byte unique id based on current time
+      id: uniqid.time(),
       name: inputValue,
       isDone: false
     }
