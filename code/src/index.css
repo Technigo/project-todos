@@ -42,7 +42,6 @@ code {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  border: 2px solid hotpink;
   position: relative;
   width: 100%;
 }
@@ -213,7 +212,7 @@ code {
   }*/
 
   .Wrapper {
-    margin: 8px;
+    margin: 5px;
   }
     
   .Container-wrapper {
@@ -253,6 +252,11 @@ code {
 
   .List {
     padding: 5px;
+  }
+
+  .Footer {
+    margin-top: 10px;
+    margin-bottom: 10px;
   }
 }
 
