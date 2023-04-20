@@ -70,9 +70,11 @@ const SingleTaskWrapper = styled.div`
 `;
 
 const TaskListWrapper = styled.section`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+      display: flex;
+    max-height: 50vh;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: scroll;
 `
 
 const DisplayP = styled.p`
@@ -88,7 +90,7 @@ const Btn = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 700;
   filter: invert(1);
 
@@ -106,7 +108,7 @@ const MinusBtn = styled.button`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 700;
   filter: invert(1);
 

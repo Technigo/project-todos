@@ -28,7 +28,7 @@ const AddTask = () => {
         day: 'numeric',
         hour: '2-digit',
         minute: '2-digit',
-        hour12: false // Set to false to display in 24-hour format
+        hour12: false // display in 24-hour format
       }),
       dueDate: dueInput,
       category: categoryInput,
@@ -109,17 +109,36 @@ const TaskForm = styled.form`
   justify-content: space-between;
   align-items: center;
   height: 100%;
-`
+  flex-wrap: wrap;
+
+  @media screen and (max-width: 850px) {
+    transform: scale(0.9);
+  }
+
+  @media screen and (max-width: 490px) {
+    transform: scale(1);
+    flex-direction: column;
+  }
+`;
 
 const StyledP = styled.p`
   white-space: pre-wrap;
   font-weight: 700;
-  font-size: 18px;`
+  font-size: 18px;
+
+  @media screen and (max-width: 490px) {
+    margin: 0%;
+  }`
 
 const Styledlabel = styled.label`
   display: flex;
   flex-direction: column;
-  align-items: center;`
+  align-items: center;
+  
+  @media screen and (max-width: 490px) {
+    height: 85px;
+  }
+  `
 
 const AddTaskBtn = styled.button`
   width: 120px;
