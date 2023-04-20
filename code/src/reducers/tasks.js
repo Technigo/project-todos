@@ -1,16 +1,20 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  items: []
-  // completedCount: 0
+  items: [],
+  completedCount: 0
 };
 
 const tasks = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
+    setupStore: (store, action) => {
+      store.items = action.payload
+    },
     addTask: (store, action) => {
       store.items = [...store.items, action.payload]
+      localStorage.setItem('taskList', JSON.stringify(store.items));
     },
     toggleChecked: (store, action) => {
       const { id } = action.payload
@@ -22,10 +26,13 @@ const tasks = createSlice({
         }
         return item
       })
+      store.completedCount = store.items.filter((item) => item.checked).length
+      localStorage.setItem('taskList', JSON.stringify(store.items));
     },
     deleteTask: (store, action) => {
       store.items = store.items.filter((item) => item.id !== action.payload.id)
-    // store.completedCount = store.items.filter((item) => item.checked).length
+      store.completedCount = store.items.filter((item) => item.checked).length
+      localStorage.setItem('taskList', JSON.stringify(store.items));
     }
   }
 })

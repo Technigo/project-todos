@@ -1,12 +1,25 @@
 import React from 'react'
+import styled from 'styled-components/macro';
 import { TaskList } from './TaskList';
+import { Header } from './Header';
 import { AddNewTask } from './AddNewTask';
 
-export const Layout = () => {
+const MainWrapper = styled.div`
+display: flex;
+width: 100%;
+justify-content:space-between;
+flex-direction:column;
+border: 2px solid blue;
+`
+
+const Layout = () => {
   return (
-    <>
-      <TaskList />
+    <MainWrapper>
+      <Header />
       <AddNewTask />
-    </>
+      <TaskList />
+    </MainWrapper>
   )
 }
+
+export default Layout;
