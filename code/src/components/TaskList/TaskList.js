@@ -8,7 +8,7 @@ const TaskList = () => {
     <section>
       <div className="tasklist-container">
         <div className="header-container">
-          <h1>Today</h1>
+          <h1>TODAY</h1>
         </div>
         <ul className="tasklist">
           {taskList.map((singleTask) => (

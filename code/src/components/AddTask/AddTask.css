@@ -14,12 +14,12 @@
   }
 
   .add-button svg path {
-    fill: #BDD5E7;
+    fill: #C60012;
   }
 
   .addtask-container {
     margin: 2rem 2rem 0rem 2rem;
-    background-color: #F7F7F8;
+    background-color: black;
     align-items: center;
     text-align: center;
   }
@@ -28,7 +28,7 @@
     display: inline-block;
     vertical-align: middle;
     border: none;
-    background-color: #F7F7F8;;
+    background-color: black;
     width: 2.5rem;
     height: 2.5rem;
   }
@@ -49,6 +49,6 @@
     border: none;
     padding: 0.5rem;
     font-size: 1rem;
-  border-radius: 10px;
+    border-radius: 10px;
   }
   

@@ -4,7 +4,6 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import AddTask from 'components/AddTask/AddTask';
 import TaskList from 'components/TaskList/TaskList';
 import tasks from 'reducers/tasks';
-import NavBar from 'NavBar/NavBar';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -13,12 +12,9 @@ export const App = () => {
   const store = configureStore({ reducer })
   return (
     <Provider store={store}>
-      <NavBar />
       <div className="container">
-        <div className="list-box">
-          <TaskList />
-          <AddTask />
-        </div>
+        <TaskList />
+        <AddTask />
       </div>
     </Provider>
   );
