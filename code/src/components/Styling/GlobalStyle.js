@@ -45,8 +45,7 @@ export const AddBtn = styled.button`
 
 export const TaskBox = styled.div`
     display: flex;
-    flex-direction: column;
-    align-items: left;
+    justify-content: center;
     background-color: var(--box-color);
     width: 70vw;
     max-width: 300px;
@@ -55,6 +54,21 @@ export const TaskBox = styled.div`
     margin-top: 10px;
     border-radius: 10px;
 `
+
+export const TrashBtn = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  i {
+    font-size: 20px;
+    color: var(--main-color);
+    padding: 0 18px 0 18px;
+    &:hover {
+      color: var(--hover-color);
+    }
+  }
+`
+
 export const Foot = styled.div`
   display: flex;
   flex-wrap: wrap;

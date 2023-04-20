@@ -4,17 +4,17 @@ const initialState = {
   items: [
     {
       id: '238uskfhslkjdfh98',
-      name: 'Bobsebulbus',
+      todo: 'Bobsebulbus',
       isDone: false
     },
     {
       id: '238uskfhslkjdfh99',
-      name: 'Jigglypuff',
+      todo: 'Jigglypuff',
       isDone: true
     },
     {
       id: '238uskfhslkjdfh100',
-      name: 'BonBon',
+      todo: 'BonBon',
       isDone: false
     }
   ]

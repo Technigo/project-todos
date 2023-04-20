@@ -14,7 +14,7 @@ export const AddNote = () => {
     event.preventDefault();
     const newNote = {
       id: Date.now().toString(),
-      name: capitalizeFirstLetter(inputValue),
+      todo: capitalizeFirstLetter(inputValue),
       isDone: false
     }
     dispatch(notereminder.actions.addNote(newNote))
