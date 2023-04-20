@@ -41,7 +41,7 @@ export const AddTask = () => {
           placeholder="Enter a task..."
           onKeyPress={handleKeyPress} />
         <AddTaskButton type="submit">Add Now!</AddTaskButton>
-        <DeleteButton type="button" onClick={deleteAllTodosBtnClick}> delete all tasks </DeleteButton>
+        <DeleteButton type="button" onClick={deleteAllTodosBtnClick}> Psst... delete everything </DeleteButton>
       </AddTaskForm>
     </AddTaskSection>
   )
@@ -50,9 +50,10 @@ const AddTaskSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   background-color: #f0ccda;
-  height: 400px;
+  // height: 400px;
+  padding-bottom: 40px;
   width: 100%;
 `;
 
@@ -120,7 +121,7 @@ const AddTaskButton = styled.button`
 const DeleteButton = styled.button`
   padding: 0.2rem 0.8rem;
   font-size: 1.1rem;
-  background-color: red;
+  background-color: #eb9494;
   color: #fff;
   border: none;
   border-radius: 4px;
