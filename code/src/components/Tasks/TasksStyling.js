@@ -5,7 +5,6 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:row;
-/* position:fixed; */
 bottom:0;
 width:100vw;
 background-color:#f6efdf;

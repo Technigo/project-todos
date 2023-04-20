@@ -9,11 +9,11 @@ const taskData = [
 ];
 
 const projectsData = [
-  { value: 'all projects', status: 'all' },
-  { value: 'shopping', status: '' },
-  { value: 'cooking', status: '' },
-  { value: 'sports', status: '' },
-  { value: 'other', status: '' },
+  { value: 'all projects' },
+  { value: 'shopping' },
+  { value: 'cooking' },
+  { value: 'sports' },
+  { value: 'other' },
 ];
 
 export const tasks = createSlice({
@@ -37,7 +37,6 @@ export const tasks = createSlice({
         value: 'other',
         label: 'Other'
       })
-      console.log(action);
     },
     removeItem: (state, action) => {
       const { id } = action.payload
@@ -47,9 +46,7 @@ export const tasks = createSlice({
       const { id } = action.payload
       console.log(action.payload)
       const selectedTask = id !== null && state.tasks.find((item) => item.id === id)
-      const selectedTaskIndex = state.tasks.indexOf(selectedTask)
       const filteredProject = state.selectedProject
-      console.log('selectedTaskid:', selectedTask.id, 'selectedTaskcompleted:', selectedTask.completed, 'index:', selectedTaskIndex)
       if (id === null) {
         if (filteredProject === 'all projects' && state.filterOn !== 'done') {
           state.tasks.forEach((task) => {

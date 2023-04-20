@@ -10,12 +10,10 @@ import { tasks } from 'reducers/tasks';
 
 export const ProjectDropdown = ({ taskId, optionValue }) => {
   const options = useSelector((store) => store.tasks.projects);
-  // const tasks = useSelector((store) => store.tasks.tasks);
   const [selectedValue, setSelectedValue] = useState('assign a project')
   const dispatch = useDispatch()
 
   const changeProject = (e) => {
-    console.log(optionValue, selectedValue, taskId)
     setSelectedValue(e.target.textContent)
     dispatch(tasks.actions.changeProject({ id: taskId, value: e.target.textContent }))
     dispatch()

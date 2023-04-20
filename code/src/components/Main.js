@@ -7,7 +7,6 @@ import { NavBar } from './Navbar';
 export const Main = (props) => (
   <PopupProvider>
     <NavBar />
-    {/* <Projects /> */}
     <Tasks {...props} />
   </PopupProvider>
 );

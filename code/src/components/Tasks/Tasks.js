@@ -1,13 +1,11 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-// import { useSelector } from 'react-redux';
 import { Button } from 'reusable-components/Button';
 import { MdPlaylistAdd } from 'react-icons/md';
 import { usePopup } from 'react-custom-popup';
 import { tasks } from 'reducers/tasks';
 import { Task } from './Task';
 import { NewTaskContainer, TaskListContainer, TaskPageContainer } from './TasksStyling';
-// import { FilterTasks } from './FilterTasks';
 
 export const Tasks = () => {
   const allTasks = useSelector((store) => store.tasks.tasks);
