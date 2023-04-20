@@ -5,7 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #EEEEEE;
+  /* background: #EEEEEE; */
+  background-color: #A7727D;
 }
 
 code {
@@ -25,4 +26,5 @@ main {
   border-radius: 20px;
   box-shadow: 0 0.5rem 2rem rgb(56, 55, 55);
   margin: 5% 35%;
+  background-color: #F8EAD8;
 }

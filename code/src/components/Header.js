@@ -10,7 +10,7 @@ const Header = () => {
   return (
     <>
       <GlobalStyle />
-      <Title>To Do List</Title>
+      <Title>My To Do List</Title>
       <DateToday>{formattedDate}</DateToday>
     </>
   )
@@ -23,12 +23,12 @@ export default Header;
 const Title = styled.h1`
   font-weight: 500;
   text-align: center;
-  color: #658864;
+  color: #A7727D;
 `;
 
 const DateToday = styled.h3`
   font-weight: 400;
-  color: #183A1D;
+  color: #A7727D;
   text-align: center;
 
   `

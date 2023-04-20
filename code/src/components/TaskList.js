@@ -65,7 +65,7 @@ const EachTask = styled.div`
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
-  background-color: #f7f7f7;
+  background-color: #F9F5E7;
   border-radius: 10px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 `
