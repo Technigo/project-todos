@@ -4,6 +4,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import AddToDo, { Wrapper } from 'components.js/AddToDo';
 import ToDoList from 'components.js/ToDoList';
 import todos from 'reducers.js/todos';
+import Counter from 'components.js/Counter';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -16,6 +17,7 @@ export const App = () => {
         <AddToDo />
         <ToDoList />
       </Wrapper>
+      <Counter />
     </Provider>
   );
 }
