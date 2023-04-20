@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 import moment from 'moment'
-import logo from 'assets/bucket-img.png'
+import arrow from 'assets/arrow.png'
 
 const Header = () => {
   const dateTime = moment().format('dddd, MMM Do')
@@ -9,7 +9,8 @@ const Header = () => {
   return (
     <>
       <StyledHeader>
-        <Logo src={logo} /> <Styleh1>the BucketList</Styleh1>
+        <Arrow src={arrow} alt="arrow" />
+        <Styleh1>the BucketList</Styleh1>
       </StyledHeader>
       <section className="date">
         <StyleP>{dateTime}</StyleP>
@@ -23,12 +24,12 @@ flex-direction: row;
 align-items: center;
 width: 350px;
 margin-top: 20px;
-margin-left: 10px;
-gap: 20px;
 `
-const Logo = styled.img`
-width: 50px;
-height: 50px;
+const Arrow = styled.img`
+transform: rotate(10deg);
+width: 150px;
+height: 150px;
+align-self: flex-start;
 `
 
 const Styleh1 = styled.text`
