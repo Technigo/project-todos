@@ -7,7 +7,14 @@ export const AddTaskWrapper = styled.form`
     align-items: center;
     border-bottom: 3px solid var(--orange);
     padding-bottom:15px;
-    /* border:solid red; */
+    
+`
+
+export const AddTaskChildDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap:1rem;
 
     input[type=text] {
       padding: 6px;
@@ -30,7 +37,7 @@ export const AddTaskWrapper = styled.form`
       padding: 3px;
       border-radius: 8px;
       cursor: pointer;
-      width: 6em;
+      width: 7em;
     }
 
     .react-datepicker__input-container {
@@ -38,14 +45,4 @@ export const AddTaskWrapper = styled.form`
         margin:0;
         padding:0;
     }
-    
-`
-
-export const AddTaskChildDiv = styled.div`
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    /* justify-content: space-evenly; */
-    gap:1rem;
-    /* border:solid pink; */
 `

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
     height: 3rem;
-    width: ${(props) => ((props.binBtn) ? '4em' : '10em')};
+    width: ${(props) => ((props.smallBtn) ? '4em' : '10em')};
     padding:5px;
     line-height: 20px;
     font-size: 1.1em;

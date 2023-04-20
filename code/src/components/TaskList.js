@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import styled from 'styled-components';
 import TaskTracker from 'components/TaskTracker';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faTrash } from '@fortawesome/free-solid-svg-icons'
+
 import EmptyList from './EmptyList';
 import { Button } from './Button';
 
@@ -63,10 +66,10 @@ const TaskList = () => {
                   <p>Due: {singleTask.dueDate}</p>
                 </SingleTaskChild>
                 <Button
-                  binBtn
+                  smallBtn
                   type="button"
                   onClick={() => handleDeletingTask(singleTask.id)}>
-                🗑️
+                  <FontAwesomeIcon icon={faTrash} size="lg" />
                 </Button>
               </SingleTaskWrapper>
             ))}

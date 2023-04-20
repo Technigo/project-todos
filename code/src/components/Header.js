@@ -28,7 +28,7 @@ const HeaderWrapper = styled.header`
         align-items: center;
     }
     h1 {
-        color: #EDE4E0;
+        color: var(--white);
         font-size: 2rem;
         @media (min-width: 321px) {
             font-size: 2.5rem;

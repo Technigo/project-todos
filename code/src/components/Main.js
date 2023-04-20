@@ -5,6 +5,8 @@ import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
 import { ButtonContainer, MainContainer } from 'components/MainStyling';
 import { Header } from 'components/Header';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCircleCheck, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { Button } from './Button';
 
 export const Main = () => {
@@ -23,18 +25,20 @@ export const Main = () => {
       <Header />
       <MainContainer>
         <AddTask />
-        <TaskList />
         <ButtonContainer>
           <Button
+            smallBtn
             type="button"
-            onClick={() => handleToggleComplete()}> Complete All ✅
+            onClick={() => handleToggleComplete()}> <FontAwesomeIcon icon={faCircleCheck} size="lg" />
           </Button>
           <Button
             binBtnColor
+            smallBtn
             type="button"
-            onClick={() => handleClearAll()}> Clear All 🗑️
+            onClick={() => handleClearAll()}> <FontAwesomeIcon icon={faTrash} size="lg" />
           </Button>
         </ButtonContainer>
+        <TaskList />
       </MainContainer>
     </>
   )
