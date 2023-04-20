@@ -38,11 +38,10 @@ const AddTodo = () => {
 };
 
 export const TodoForm = styled.form`
-border: 1px solid red;
 margin: 2px;
 
 input[type=text] {
-      background: #c9c9c7;
+      background: transparent;
       outline: none;
       font-family: 'Gagau';
       font-weight: bold;
