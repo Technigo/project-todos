@@ -43,11 +43,11 @@ display: flex;
 justify-content: flex-start;
 
 input[type=text] {
-      background: transparent;
+      background: white;
       outline: none;
       font-family: 'Gagau';
       font-weight: bold;
-      font-size: 12px;
+      font-size: 16px;
       outline: 1px solid #aaa;
       border-radius: 6px;
       margin-left: 5%;
@@ -59,15 +59,18 @@ input[type=text] {
 `
 const SubmitButton = styled.button`
 border: none;
-border-radius: 5px;
+border-radius: 60px;
 cursor: pointer;
 font-weight: bold;
 background-color: #c7cf93;
 font-family: 'Gagau';
-outline: 1px solid #aaa;
+width: 80px;
+height: 30px;
+margin-left: -30px;
+/* outline: 1px solid #aaa; */
 
 &:hover {
-  box-shadow: 0 0 11px rgba(33,33,33,.2); 
+  box-shadow: 1px 2px rgba(33,33,33,.2); 
 }
 `
 export default AddTodo;
