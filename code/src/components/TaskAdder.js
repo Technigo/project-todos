@@ -24,6 +24,8 @@ color: white;
 border: none;
 font-family: "Raleway";
 font-size: 15px;
+cursor: pointer;
+
 `
 
 const TaskAdder = () => {

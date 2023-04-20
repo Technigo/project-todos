@@ -10,6 +10,7 @@ padding: 5px;
 flex-direction: row;
 align-items: center;
 justify-content: space-around;
+
 `
 
 const StyledText = styled.p`
@@ -19,10 +20,14 @@ color: var(--foreground-primary-color);
 flex: 1;
 text-align: center;
 transition: color 0.1s ease-out;
+cursor: pointer;
+
+
 
 &.completed {
     color: var(--background-color);;
 }
+
 `
 
 const Task = ({ id }) => {
@@ -32,12 +37,14 @@ const Task = ({ id }) => {
   }
   const task = useSelector((state) => state.tasks.todos.find((t) => t.id === id))
   return (
-    <StyledContainer onClick={checkComplete}>
+    <StyledContainer>
 
-      <StyledText className={
-        task.complete
+      <StyledText
+        className={
+          task.complete
           && 'completed'
-      }>
+        }
+        onClick={checkComplete}>
         {task.text}
       </StyledText>
       <DeleteButton id={task.id} completed={task.complete} />

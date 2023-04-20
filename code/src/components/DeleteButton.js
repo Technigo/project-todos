@@ -9,6 +9,8 @@ const StyledButton = styled.button`
 background-color: inherit;
 border: none;
 transition: color 0.2s ease-out;
+cursor: pointer;
+
 `
 const DeleteButton = ({ id, completed }) => {
   const dispatch = useDispatch();

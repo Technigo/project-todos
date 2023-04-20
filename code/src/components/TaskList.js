@@ -9,7 +9,7 @@ import Task from './Task'
 const StyledContainer = styled.div`
 display: flex;
 flex-direction: column;
-gap: 5px;
+
 width: 100%;`
 
 const StyledTasklistBar = styled.div`
@@ -35,6 +35,8 @@ height: 0px;
 opacity: 0;
 transition: opacity 1s ease-out;
 overflow: hidden;
+background-color: var(--foreground-primary-color);
+
 
 
 &.active {
@@ -53,15 +55,20 @@ width: 30px;
 height: 30px;
 background-color: inherit;
 border: none;
+cursor: pointer;
 `
 
 const CompleteAllButton = styled.button`
-font-size: 12px;
 font-weight: 400;
-background-color: transparent;
-border: 1px solid grey;
-border-radius: 3px;
+color: white;
+border: none;
+font-family: "Raleway";
+font-size: 12px;
 width: 50%;
+padding: 5px;
+background-color: inherit;
+cursor: pointer;
+
 `
 
 const DeleteAllButton = styled(CompleteAllButton)`
