@@ -9,7 +9,6 @@ display: flex;
 width: 100%;
 justify-content:space-between;
 flex-direction:column;
-border: 2px solid blue;
 `
 
 const Layout = () => {

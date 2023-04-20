@@ -4,7 +4,6 @@ import styled from 'styled-components';
 const StyledHeader = styled.header`
 display: flex; 
 flex-direction:column;
-border: 2px solid green;
 height: 200px;
 `
 const StyledTitle = styled.h1`
