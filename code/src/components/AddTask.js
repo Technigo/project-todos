@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import { TextField, Button, Paper, Grid } from '@mui/material';
+import { TextField, Paper, Grid, IconButton } from '@mui/material';
+import { AddCircle } from '@mui/icons-material';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -20,26 +21,25 @@ const AddTask = () => {
   };
 
   return (
-    <Paper style={{ margin: '20px', padding: '20px' }}>
+    <Paper elevation={4} style={{ margin: '20px', padding: '20px', opacity: '0.9' }}>
       <Grid container alignItems="center" spacing={2}>
         <Grid xs={10} md={11} item>
           <TextField
             id="standard-basic"
             variant="standard"
             fullWidth
-            label="Add your task here"
+            label="What's next?"
+            placeholder="Add your task here"
             onChange={(e) => setInputValue(e.target.value)}
             value={inputValue} />
         </Grid>
         <Grid xs={2} md={1} item>
-          <Button
+          <IconButton
             onClick={onSubmit}
             disabled={inputValue.length < 1}
-            variant="outlined"
-            color="secondary"
             type="submit">
-            Add
-          </Button>
+            <AddCircle fontSize="large" />
+          </IconButton>
         </Grid>
       </Grid>
     </Paper>

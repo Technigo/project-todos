@@ -1,23 +1,27 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { List, Paper } from '@mui/material';
+import { Collapse, List, Paper } from '@mui/material';
+import { TransitionGroup } from 'react-transition-group';
 import TaskListItem from './TaskListItem';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
 
   return (
-    <Paper style={{ margin: '20px' }}>
+    <Paper elevation={4} style={{ margin: '20px', opacity: '0.9' }}>
       <List>
-        {taskList.map((eachTask) => {
-          return (
-            <TaskListItem
-              key={eachTask.id}
-              checked={eachTask}
-              text={eachTask.text}
-              task={eachTask} />
-          )
-        })}
+        <TransitionGroup>
+          {taskList.map((eachTask) => {
+            return (
+              <Collapse key={eachTask.id}>
+                <TaskListItem
+                  checked={eachTask}
+                  text={eachTask.text}
+                  task={eachTask} />
+              </Collapse>
+            )
+          })}
+        </TransitionGroup>
       </List>
     </Paper>
   )
