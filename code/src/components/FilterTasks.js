@@ -7,8 +7,27 @@ import {
 
 export const FilterTasks = () => {
   const allTasks = useSelector((store) => store.tasks.tasks);
-  const ongoingTasks = allTasks.filter((item) => item.completed === false);
-  const completedTasks = allTasks.filter((item) => item.completed === true);
+  // const ongoingTasks = allTasks.filter((item) => item.completed === false);
+  // const completedTasks = allTasks.filter((item) => item.completed === true);
+  const projectToFilterOn = useSelector((store) => store.tasks.selectedProject)
+  console.log(projectToFilterOn)
+  // const filterOn = useSelector((store) => store.tasks.filterOn);
+  const ongoingTasks = allTasks.filter((item) => {
+    console.log('item.value:', item.value)
+    if (projectToFilterOn === 'all projects') {
+      return item.completed === false
+    } else {
+      return item.completed === false && item.value === projectToFilterOn
+    }
+  });
+  const completedTasks = allTasks.filter((item) => {
+    if (projectToFilterOn === 'all projects') {
+      return item.completed === true
+    } else {
+      return item.completed === true && item.value === projectToFilterOn
+    }
+  });
+
   const dispatch = useDispatch();
 
   const filterOngoingTasks = () => {

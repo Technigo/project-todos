@@ -29,9 +29,8 @@ export const Tasks = () => {
       return item.completed === true && item.value === projectToFilterOn
     }
   });
-  console.log('projectToFilterOn:', projectToFilterOn)
+
   const dispatch = useDispatch();
-  console.log(allTasks)
   const { showAlert, showInputDialog } = usePopup();
   const addNewTask = () => {
     showInputDialog({
@@ -92,13 +91,23 @@ export const Tasks = () => {
        ))}
         {filterOn === 'all' && projectToFilterOn !== 'all projects'
        && allTasks.filter((item) => item.value.includes(projectToFilterOn)).map((task, index) => (
-         <Task key={task.id} index={index} task={task} completed={task.completed} />
+         <Task
+           key={task.id}
+           index={index}
+           task={task}
+           completed={task.completed}
+           length={allTasks.length} />
        ))}
         {filterOn === 'ongoing' && ongoingTasks.map((task, index) => (
-          <Task key={task.id} index={index} task={task} completed={task.completed} />
+          <Task
+            key={task.id}
+            index={index}
+            task={task}
+            completed={task.completed}
+            length={ongoingTasks.length} />
         ))}
         {filterOn === 'completed' && completedTasks.map((task, index) => (
-          <Task key={task.id} index={index} task={task} />
+          <Task key={task.id} index={index} task={task} length={completedTasks.length} />
         ))}
       </TaskListContainer>
       <NewTaskContainer><Button onClick={addNewTask}><MdPlaylistAdd fontSize="3em" color="#EA8FEA" /></Button>

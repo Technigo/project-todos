@@ -10,16 +10,12 @@ import {
 
 export const NavbarDropdown = () => {
   const options = useSelector((store) => store.tasks.projects);
-  const allTasks = useSelector((store) => store.tasks.tasks);
   const dispatch = useDispatch()
   const [selectedOption, setSelectedOption] = useState('all projects');
 
   const filterProject = (option) => {
-    console.log('selected oprtion', selectedOption)
     setSelectedOption(option.value);
     dispatch(tasks.actions.filterProject({ value: option.value }))
-    console.log(allTasks.filter((item) => item.completed === false && item.value === option.value))
-    console.log(option)
   }
   return (
     <MDBDropdown>
