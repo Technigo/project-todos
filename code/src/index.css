@@ -57,11 +57,15 @@ h2{
   }
 }
 
- @media (min-width: 668px) and (max-width: 1024px) {
+ @media (min-width: 500px) and (max-width: 1024px) {
   .app-container {
     margin-top: 2rem;
-    width: 50%;
+    width: 60%;
     min-height: 60vh;
+  }
+  .addBtn {
+   
+    margin: 5px
   }
 }
 
