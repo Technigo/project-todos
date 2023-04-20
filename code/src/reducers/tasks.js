@@ -40,7 +40,23 @@ export const tasks = createSlice({
     },
     // action for removing a task from Task List
     removeTask: (store, action) => {
-      store.items = store.items.filter((item) => item.id !== action.payload)
+      const index = store.items.findIndex((element) => element.id === action.payload);
+      if (index !== -1) {
+        store.items.splice(index, 1);
+      }
+
+      // store.items = store.items.filter((item) => item.id !== action.payload)
+      // store.items = store.items.splice(action.payload)
+    },
+    // action for removing all tasks from Task List
+    removeAllTasks: (store) => {
+      store.items = []
+    },
+    // action for completing all tasks
+    completeAllTasks: (store) => {
+      store.items.forEach((item) => {
+        item.complete = true
+      })
     }
   }
 })

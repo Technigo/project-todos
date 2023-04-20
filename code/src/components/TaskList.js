@@ -11,8 +11,8 @@ const TaskList = () => {
   const allTasks = useSelector((store) => store.tasks.items)
 
   // Toggle function
-  const onIsDoneToggle = (id) => {
-    dispatch(tasks.actions.toggleItem(id));
+  const onIsDoneToggle = (taskId) => {
+    dispatch(tasks.actions.toggleItem(taskId));
   }
 
   // Remove items from the store / list
@@ -28,11 +28,11 @@ const TaskList = () => {
           {allTasks.map((singleTask) => {
             return (
               <EachTask key={singleTask.id}>{singleTask.name}
-                <label htmlFor="done">
+                <label htmlFor={`task_with_id${singleTask.id}`}>
                   <input
                     type="checkbox"
-                    id="done"
-                    checked={singleTask.isDone}
+                    id={`task_with_id${singleTask.id}`}
+                    value={singleTask.isDone}
                     onChange={() => onIsDoneToggle(singleTask.id)} />
                 </label>
                 <Button onClick={() => onRemoveTaskButtonClick(singleTask.id)} type="button">🗑️</Button>
