@@ -1,14 +1,13 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react'
 import styled from 'styled-components'
+import Checkmark from '../images/checkmark.png'
 
 export const Checkbox = ({ className, checked, ...props }) => (
   <CheckboxContainer className={className}>
     <HiddenCheckbox checked={checked} {...props} />
     <StyledCheckbox checked={checked}>
-      <Icon viewBox="0 0 24 24">
-        <polyline points="20 6 9 17 4 12" />
-      </Icon>
+      <Icon src={Checkmark} />
     </StyledCheckbox>
   </CheckboxContainer>
 )
@@ -17,11 +16,10 @@ const CheckboxContainer = styled.div`
   display: inline-block;
   vertical-align: middle;
 `
-
-const Icon = styled.svg`
-  fill: none;
-  stroke: white;
-  stroke-width: 4px;
+// Custom styled icon
+const Icon = styled.img`
+ height: 28px;
+ width: 28px;
 `
 // Hide checkbox visually but remain accessible to screen readers.
 const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
@@ -38,10 +36,12 @@ const HiddenCheckbox = styled.input.attrs({ type: 'checkbox' })`
 `
 
 const StyledCheckbox = styled.div`
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  background: ${(props) => (props.checked ? '#FF847C;' : '#f0ece2')};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 18px;
+  background: ${(props) => (props.checked ? '#FF847C' : '#f0ece2')};
   border-radius: 3px;
   transition: all 150ms;
   border: solid 2px #FF847C;

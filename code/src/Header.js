@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
-// import arrow from './images/arrow.png'
 
 export const Header = () => {
   const totalCount = useSelector((store) => store.toDos.items.length)
@@ -10,7 +9,6 @@ export const Header = () => {
   return (
     <HeaderSection>
       <H1>What to do?</H1>
-      {/* <Arrow src={arrow} alt="arrow" /> */}
       <ToDoCounter>
         <p> To do: {unfinishedToDos}</p>
         <p>Done: {completedCount} / {totalCount}</p>
@@ -28,13 +26,14 @@ justify-content: center;
 background-color: black;
 color: white;
 font-family: 'Courier New';
-padding: 20px;
-gap: 16px;
+padding: 0px 20px;
+gap: 10px;
 `
 
 const H1 = styled.h1`
 margin: unset;
 font-size: 20px;
+color: #FF847C;
 `
 
 const ToDoCounter = styled.div`
@@ -43,12 +42,6 @@ flex-direction:  column;
 align-self: flex-start;
 justify-self: flex-end;
 font-weight: bold;
+color: #f0ece2;
 
 `
-
-// const Arrow = styled.img`
-// transform: rotate(30deg);
-// position: absolute;
-// right: 5%;
-// top: 10%;
-// `

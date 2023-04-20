@@ -6,6 +6,7 @@ import { toDos } from 'reducers/toDos'
 import { AddToDo } from 'components/AddToDo'
 import { ToDoList } from 'components/ToDoList'
 import { Header } from 'Header'
+import { Footer } from 'components/Footer'
 
 const reducer = combineReducers({
   toDos: toDos.reducer
@@ -23,6 +24,7 @@ export const App = () => {
           <AddToDo />
           <ToDoList />
         </ListContainer>
+        <Footer />
       </Main>
     </Provider>
   )
@@ -44,6 +46,7 @@ max-width: 500px;
 justify-content: center;
 background-color: black;
 padding: 20px;
+gap: 10px;
 `
 
 const ListContainer = styled.section`

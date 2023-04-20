@@ -59,7 +59,7 @@ border-radius: 5px;
 padding: 8px 20px;
 font-size: 16px;
 background-color: #f0ece2;
-outline-color: #9fe6dc;
+outline-color: #6BFFD3;
 }
 `
 

@@ -9,12 +9,17 @@ export const toDos = createSlice({
   name: 'toDos',
   initialState,
   reducers: {
+    setupStore: (store, action) => {
+      store.items = action.payload
+    },
     addToDo: (store, action) => {
       store.items = [...store.items, action.payload]
+      localStorage.setItem('toDoList', JSON.stringify(store.items))
     },
     deleteToDo: (store, action) => {
       store.items = store.items.filter((item) => item.id !== action.payload.id)
       store.completedCount = store.items.filter((item) => item.checked).length
+      localStorage.setItem('toDoList', JSON.stringify(store.items))
     },
     toggleChecked: (store, action) => {
       const { id } = action.payload
@@ -25,6 +30,7 @@ export const toDos = createSlice({
         return item
       })
       store.completedCount = store.items.filter((item) => item.checked).length
+      localStorage.setItem('toDoList', JSON.stringify(store.items))
     }
   }
 })
