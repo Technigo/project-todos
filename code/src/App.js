@@ -12,8 +12,14 @@ export const App = () => {
   const store = configureStore({ reducer })
   return (
     <Provider store={store}>
-      <AddTask />
-      <TaskList />
+      <section className="paper">
+        <div className="pattern">
+          <div className="content">
+            <TaskList />
+            <AddTask />
+          </div>
+        </div>
+      </section>
     </Provider>
   );
 }

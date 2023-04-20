@@ -1,7 +1,11 @@
+/* eslint-disable no-extend-native */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { task } from 'reducers/task';
 
+// const capitalize = (stringToCapitalize) => {
+//   return stringToCapitalize.charAt(0).toUpperCase() + stringToCapitalize.slice(1);
+// }
 export const AddTask = () => {
   const [inputValue, setInputValue] = useState('')
   const dispatch = useDispatch();
@@ -21,14 +25,13 @@ export const AddTask = () => {
   }
   return (
     <section>
-      <button type="button" onClick={onDeleteAllTasksClick}>Delete all tasks</button>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
-            Add your new task here.
           <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" />
         </label>
-        <button type="submit">Add task</button>
+        <button type="submit">Add</button>
       </form>
+      <button type="button" onClick={onDeleteAllTasksClick}>Delete all groceries</button>
     </section>
   )
 }
