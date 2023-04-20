@@ -31,6 +31,18 @@ const Tasks = createSlice({
       /* store.items.push(action.payload); */
       // Immutable
       store.items = [...store.items, action.payload];
+    },
+    deleteAllTasks: (store) => {
+      store.items = [];
+    },
+    deleteSingleTask: (store, action) => {
+      const id = action.payload;
+      // splice to remove a single element if I know the index
+      const copyOfTaskArrayFromStore = store.items;
+      const condition = (element) => element.id === id;
+      const foundIndex = copyOfTaskArrayFromStore.findIndex(condition);
+      copyOfTaskArrayFromStore.splice(foundIndex, 1);
+      store.items = copyOfTaskArrayFromStore;
     }
   }
 });

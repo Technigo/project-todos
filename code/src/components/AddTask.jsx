@@ -17,8 +17,12 @@ const AddTask = () => {
     dispatch(Tasks.actions.addTask(newTask));
     setInputValue('');
   }
+  const onClickDeleteAllTasks = () => {
+    dispatch(Tasks.actions.deleteAllTasks());
+  }
   return (
     <section>
+      <button type="button" onClick={onClickDeleteAllTasks}>Delete all tasks</button>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
                 add your task here
