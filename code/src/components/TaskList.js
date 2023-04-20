@@ -1,9 +1,10 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { tasks } from 'reducers/tasks'
+import tasks from '../reducers/tasks'
 
 const TaskList = () => {
-  const taskList = useSelector((state) => state.tasks.items)
+  const taskList = useSelector((store) => store.tasks.taskList)
+
   return (
     <section>
       <ul>

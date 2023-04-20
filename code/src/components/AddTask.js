@@ -1,30 +1,24 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import { moment } from 'moment';
 
 const AddTask = () => {
   const dispatch = useDispatch();
-  const [inputItem, setInputItem] = useState('');
-  const onFormSubmit = (event) => {
+  const [inputValue, setInputValue] = useState('');
+  const onAddTask = (event) => {
     event.preventDefault();
-    const newTask = {
-      id: Date.now().toString(),
-      text: inputItem,
-      creatAt: moment().format('LLL'),
-      completed: false
-    }
-    dispatch(tasks.actions.addTask(newTask))
-    setInputItem('')
+    dispatch(tasks.actions.addTask(inputValue))
+    // mpty the text field
+    setInputValue('')
   }
   return (
-    <form onSubmit={onFormSubmit}>
-      <label htmlFor="addTaskInput">
-        Add your new todos here
-        <input value={inputItem} onChange={(event) => setInputItem(event.target.value)} id="addTaskInput" type="text" />
-      </label>
-      <button type="submit"> ➕ New TO TO </button>
-    </form>
+    <>
+      <input
+        type="text"
+        value={inputValue}
+        onChange={(event) => setInputValue(event.target.value)} />
+      <button type="button" onClick={onAddTask}> ➕ New TO TO </button>
+    </>
   )
 }
 export default AddTask;
