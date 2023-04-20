@@ -1,19 +1,17 @@
 import React from 'react';
-
-import { Provider } from 'react-redux'
-import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { tasks } from './reducers/lists'
-
-const reducer = combineReducers({
-  tasks: tasks.reducer
-})
-
-const store = configureStore({ reducer })
+import { Provider } from 'react-redux';
+import { persistor, store } from 'redux/store'
+import { PersistGate } from 'redux-persist/integration/react';
+import { ToDoList } from 'components/ToDoList';
+import { GlobalStyle } from 'components/GlobalStyle';
 
 export const App = () => {
   return (
     <Provider store={store}>
-      Components here
+      <PersistGate loading={null} persistor={persistor}>
+        <GlobalStyle />
+        <ToDoList />
+      </PersistGate>
     </Provider>
-  );
+  )
 }
