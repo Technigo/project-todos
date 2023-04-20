@@ -1,16 +1,20 @@
 import React from 'react';
-import AddTask from './AddTask';
 import ToDoList from './ToDoList';
+import Footer from './Footer';
+import Header from './Header';
+import TaskCount from './TaskCount';
 
-const ListPage = () => {
+const Main = () => {
   return (
     <main className="main-container">
-      <AddTask />
+      <Header />
+      <TaskCount />
       <section className="list-container">
         <ToDoList />
       </section>
+      <Footer />
     </main>
   )
 }
 
-export default ListPage;
+export default Main;

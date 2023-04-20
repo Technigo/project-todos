@@ -1,0 +1,39 @@
+.task-count-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 300px;
+    border-radius: 2px;
+    background-color: white;
+    padding: 25px;
+    margin-top: 30px;
+}
+
+
+.task-count-text {
+    font-size: 16px;
+    color: #ECB390;
+    margin: 5px 0px 5px 0px;
+}
+
+.delete-all-tasks-button {
+    /*font-family: 'Sedgwick Ave Display', cursive;
+    font-size: 20px;
+    background: none;
+    border: none;
+    color: #555555;
+    padding-left: 20px;
+    align-self: flex-end;*/
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    border: 2px solid #DF7861;;
+    border-radius: 5px;
+    color: #555555;
+    background-color: white;
+    padding: 2px 5px 2px 5px;
+}
+
+.delete-all-tasks-button:hover {
+    background-color: #DF7861;
+}
