@@ -22,14 +22,14 @@ body {
 }
 
 form {
-  align-self: flex-end;
-  display:block;
   margin-top: 20px;
   margin-bottom: 40px;
+  align-self: center;
+  grid-area: form;
 }
 
 label {
-  font-size: 18px;
+  font-size: 21px;
 }
 
 [type="text"]{
@@ -41,6 +41,8 @@ label {
   margin-top: 20px;
   margin-bottom: 10px;
   margin-left: 10px;
+  display: block;
+  width: 45vw;
 }
 
 [type="checkbox"]{
@@ -51,8 +53,6 @@ label {
   height: 30px;
   border: 3px solid #D932AC;
   border-radius: 50%;
-
-  /* Add a background color when checked */
   background-color: #fff;
 }
 [type="checkbox"]:checked {
@@ -74,4 +74,64 @@ label {
   border: none;
   border-radius: 5px;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+ul {
+  grid-area: list;
+}
+
+.list-item {
+  font-size: 20px;
+  border: 1px solid black;
+  padding: 15px 5px 15px 5px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 7fr 1fr;
+  align-items: center;
+  }
+
+.counter {
+  margin: 10px;
+  align-self: flex-end;
+  font-size: 21px;
+  grid-area: counter;
+}
+
+.lazy-cat-main {
+  opacity: 0;
+}
+
+@media (min-width: 1024px) {
+  .main {
+    display: grid;
+    grid-template-areas: 
+    "list form"
+    "counter form";
+    margin-bottom: 11vw;
+  }
+  [type="text"] {
+    width: 25vw;
+  }
+
+  form {
+    justify-self: flex-end;
+    margin-top: 0;
+    align-self: center;
+  }
+
+  .counter {
+    align-self: flex-start;
+    text-align: start;
+  }
+
+  .lazy-cat-header {
+    opacity: 0;
+  }
+
+  .lazy-cat-main {
+    grid-area: cat;
+    opacity: 100%;
+    display: flex;
+    flex-direction: column;
+  }
 }

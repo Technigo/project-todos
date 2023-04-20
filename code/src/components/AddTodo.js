@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from 'reducers/todos';
+import { Player, Controls } from '@lottiefiles/react-lottie-player';
 
 export const AddTodo = () => {
   const [inputValue, setInputValue] = useState('');
@@ -27,6 +28,15 @@ export const AddTodo = () => {
           placeholder="Press Enter"
           required />
       </label>
+      <div className="lazy-cat-main">
+        <Player
+          autoplay
+          loop
+          src="https://lottie.host/e1545cc9-29b0-4fc7-bf99-cba9800c4de6/LHo0WS7dLJ.json"
+          style={{ height: '150px', width: '150px' }}>
+          <Controls visible={false} buttons={['play', 'repeat', 'frame', 'debug']} />
+        </Player>
+      </div>
     </form>
   )
 }

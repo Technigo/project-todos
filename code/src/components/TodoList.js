@@ -2,21 +2,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { todos } from 'reducers/todos';
-import styled from 'styled-components';
-
-const ListItem = styled.div`
-font-size: 20px;
-border: 1px solid black;
-padding: 15px 5px 15px 5px;
-background-color: white;
-display: grid;
-grid-template-columns: 1fr 7fr 1fr;
-align-items: center;
-`
-
-const Counter = styled.p`
-margin: 10px;
-align-self: flex-end; `
 
 export const TodoList = () => {
   const todoList = useSelector((store) => store.todos.items);
@@ -28,7 +13,7 @@ export const TodoList = () => {
       <ul>
         {todoList.map((singleTodo) => {
           return (
-            <ListItem>
+            <div className="list-item">
               <input
                 onChange={() => dispatch(todos.actions.completeTodo(singleTodo.id))}
                 type="checkbox"
@@ -40,10 +25,10 @@ export const TodoList = () => {
                 type="button"
                 key="remove-button">➖
               </button>
-            </ListItem>)
+            </div>)
         })}
       </ul>
-      <Counter>{amountOfCompleted.length} / {amountOfTasks.length} completed</Counter>
+      <p className="counter">{amountOfCompleted.length} / {amountOfTasks.length} completed</p>
     </>
   )
 }

@@ -18,13 +18,16 @@ const Title = styled.h3`
 font-weight: 700px;
 font-size: 60px;
 color: #F2B807;
-margin-bottom: 20px;`
+margin-bottom: 20px;
+@media (min-width:1024px) {
+  font-size: 70px;
+}`
 
 export const Header = () => {
   return (
     <OuterWrapper>
       <InnerWrapper>
-        <div className="lazy-cat">
+        <div className="lazy-cat-header">
           <Player
             autoplay
             loop
