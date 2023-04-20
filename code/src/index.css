@@ -34,9 +34,7 @@ code {
 
 .Wrapper {
   width: 100%;
-  margin: 5px;
 }
-
 
 .Container-wrapper {
   display: flex;
@@ -142,12 +140,6 @@ code {
 }
 
 
-.add-btn {
-  margin-left: 10px;
-}
-
-
-
 /* ---- List area ---- */
 
 
@@ -206,13 +198,12 @@ code {
 
 
 @media (max-width: 560px) {
-  /*body {
-    justify-content: center;
+  body {
     align-items: flex-start;
-  }*/
+  }
 
   .Wrapper {
-    margin: 5px;
+    margin-top: 35px;
   }
     
   .Container-wrapper {
@@ -222,10 +213,6 @@ code {
 
   .Container {
     width: 100%;
-    /*
-    min-width: 300px;
-    max-width: 450px;
-    */
     height: 520px;
     padding: 7px 12px 12px 12px;
   }
@@ -255,8 +242,9 @@ code {
   }
 
   .Footer {
-    margin-top: 10px;
+    margin-top: 20px;
     margin-bottom: 10px;
+    text-align: center;
   }
 }
 
