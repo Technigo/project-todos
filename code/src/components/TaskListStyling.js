@@ -9,19 +9,20 @@ export const Content = styled.div`
   border: 0.3rem inset;
   border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) 1; 
 
-  @media (min-width: 62rem) {
+  /* @media (min-width: 62rem) {
     padding: 3.125rem;
-  }
+  } */
 `;
 
 export const TaskForm = styled.form`
-  padding: 1rem;
+  padding: 0;
 `;
 
 export const SecondHeading = styled.h2`
 font-family: var(--second-headings-font-family);
 font-weight: 100;
 font-size: 2rem;
+margin: 0;
 `
 
 export const ThirdHeading = styled.h3`

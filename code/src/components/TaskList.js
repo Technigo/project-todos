@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import tasks from '../reducers/task';
 import { StyledInput, Content, TaskForm, SecondHeading, ThirdHeading } from './TaskListStyling';
-import { AddButton, DeleteButton, DeleteAllButton, StyledTaskList } from './Global';
+import { AddButton, DeleteButton, DeleteAllButton, StyledTaskList, StyledIcon } from './Global';
 
 // Define a component for individual task item
 const TaskItem = ({ task, onToggle, onDeleteTask }) => (
@@ -17,7 +17,7 @@ const TaskItem = ({ task, onToggle, onDeleteTask }) => (
     {/* <label htmlFor={`task-${task.id}`}>{task.text}</label> */}
     <DeleteButton onClick={onDeleteTask}>
       Delete
-      <FontAwesomeIcon icon={faTrash} />
+      <StyledIcon icon={faTrash} />
     </DeleteButton>
   </StyledTaskList>
 );
@@ -64,7 +64,7 @@ const TaskList = () => {
   // Render the task list with inputs, buttons and individual task items
   return (
     <Content>
-      <SecondHeading>Add task to todo list</SecondHeading>
+      <SecondHeading>Add Task to Todo List</SecondHeading>
       <TaskForm onSubmit={(e) => e.preventDefault()}>
         <StyledInput
           type="text"
@@ -77,7 +77,7 @@ const TaskList = () => {
       </TaskForm>
 
       <>
-        <ThirdHeading>Uncompleted tasks: {numUncompletedTasks}</ThirdHeading>
+        <ThirdHeading>Uncompleted Tasks: {numUncompletedTasks}</ThirdHeading>
         <StyledTaskList>
           {listWithTasks.map((task) => (
             <TaskItem
@@ -90,7 +90,7 @@ const TaskList = () => {
       </>
       <DeleteAllButton disabled={listWithTasks.length < 1} onClick={onDeleteAll}>
         Delete All
-        <FontAwesomeIcon icon={faTrash} />
+        <StyledIcon icon={faTrash} />
       </DeleteAllButton>
     </Content>
   );
