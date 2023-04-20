@@ -13,19 +13,23 @@ export const Tasks = () => {
   const allTasks = useSelector((store) => store.tasks.tasks);
   const projectToFilterOn = useSelector((store) => store.tasks.selectedProject)
   console.log(projectToFilterOn)
+  const filterOn = useSelector((store) => store.tasks.filterOn);
   const ongoingTasks = allTasks.filter((item) => {
     console.log('item.value:', item.value)
-    return (
-      item.completed === false && item.value === projectToFilterOn
-    )
+    if (projectToFilterOn === 'all projects') {
+      return item.completed === false
+    } else {
+      return item.completed === false && item.value === projectToFilterOn
+    }
   });
   const completedTasks = allTasks.filter((item) => {
-    return (
-      item.completed === true && item.value === projectToFilterOn
-    )
+    if (projectToFilterOn === 'all projects') {
+      return item.completed === true
+    } else {
+      return item.completed === true && item.value === projectToFilterOn
+    }
   });
   console.log('projectToFilterOn:', projectToFilterOn)
-  const filterOn = useSelector((store) => store.tasks.filterOn);
   const dispatch = useDispatch();
   console.log(allTasks)
   const { showAlert, showInputDialog } = usePopup();
@@ -82,7 +86,7 @@ export const Tasks = () => {
 
     <TaskPageContainer>
       <TaskListContainer>
-        {filterOn === 'all' && projectToFilterOn === 'all projects'
+        {projectToFilterOn === 'all projects' && filterOn === 'all'
        && allTasks.map((task, index) => (
          <Task key={task.id} index={index} task={task} completed={task.completed} />
        ))}
