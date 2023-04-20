@@ -2,8 +2,16 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuid } from 'uuid';
 import moment from 'moment';
+import styled from 'styled-components';
 import todolist from 'reducers/todolist';
 import TaskList from './TaskList';
+import DeleteAllTasks from './DeleteAllTasks';
+import TaskCount from './TaskCount';
+
+const ToDoWrapper = styled.section`
+margin: auto;
+width: 600px;
+border: 1px solid black;`
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -21,11 +29,13 @@ const AddTask = () => {
     dispatch(todolist.actions.addTask(newTask));
     setInputValue('');
   }
+
   return (
-    <section>
+    <ToDoWrapper>
+      <TaskCount />
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
-            Add your new task here:<br />
+            Add new task:<br />
           <input
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
@@ -35,7 +45,8 @@ const AddTask = () => {
         <button type="submit">Add Task!</button>
       </form>
       <TaskList />
-    </section>
+      <DeleteAllTasks />
+    </ToDoWrapper>
   )
 }
 

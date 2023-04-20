@@ -9,8 +9,8 @@ const TaskCount = () => {
     <div>
       <ul>
         <li>Total tasks: {todoList.length}</li>
-        <li>Unchecked tasks: {uncompletedTasks.length}</li>
-        <li>Checked tasks: {todoList.length - uncompletedTasks.length}</li>
+        <li>Uncompleted tasks: {uncompletedTasks.length}</li>
+        <li>Completed tasks: {todoList.length - uncompletedTasks.length}</li>
       </ul>
     </div>
   )
