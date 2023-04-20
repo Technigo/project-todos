@@ -9,7 +9,7 @@ display: flex;
 flex-direction:column;
 background:#FAAB1C;
 border-radius: 10%;
-border: 2px solid hotpink;
+margin: 10%;
 `
 
 const StyledList = styled.ul`
