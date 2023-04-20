@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import styled from 'styled-components';
+import angledownIMG from '../assets/angledown.svg'
+import angleupIMG from '../assets/angleup.svg'
+import minusIMG from '../assets/minus.svg'
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
@@ -33,7 +36,9 @@ const TaskList = () => {
   return (
     <TaskListWrapper>
       <FilterDiv>
-        <Btn type="button" onClick={toggleSortingOrder}>Category {sortingOrder === 'asc' ? '⇩' : '⇧'}</Btn>
+        <Btn type="button" onClick={toggleSortingOrder}>
+          Category {sortingOrder === 'asc' ? <img src={angleupIMG} alt="Sort ascending" /> : <img src={angledownIMG} alt="Sort descending" />}
+        </Btn>
       </FilterDiv>
       {sortedTaskList.map((singleTask) => {
         return (
@@ -46,9 +51,9 @@ const TaskList = () => {
             <DisplayP>Created: {singleTask.timeStamp}</DisplayP>
             <DisplayP>Due: {singleTask.dueDate}</DisplayP>
             <DisplayP>Category: {singleTask.category}</DisplayP>
-            <Btn type="button" onClick={() => handleDeletingTask(singleTask.id)}>
-              Delete
-            </Btn>
+            <MinusBtn type="button" onClick={() => handleDeletingTask(singleTask.id)}>
+              <img alt="minus-icon" src={minusIMG} />
+            </MinusBtn>
           </SingleTaskWrapper>
         );
       })}
@@ -76,16 +81,45 @@ const DisplayP = styled.p`
   width: 16%;`
 
 const Btn = styled.button`
-  background-color: #1D3153;
-  color: white;
-  width: 80px;
-  height: 30px;
+  background-color: rgb(226, 206, 172);
+  width: 120px;
+  height: 40px;
   border-radius: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 16px;
+  font-weight: 700;
+  filter: invert(1);
+
+  img {
+    height: 20px;
+    width: 20px;
+  }
+`
+
+const MinusBtn = styled.button`
+  background-color: rgb(226, 206, 172);
+  width: 40px;
+  height: 40px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  font-size: 16px;
+  font-weight: 700;
+  filter: invert(1);
+
+  img {
+    height: 20px;
+    width: 20px;
+  }
 `
 
 const FilterDiv = styled.div`
   height: 50px;
   display: flex;
-  align-items: center;`
+  align-items: center;
+  margin: 15px;`
 
 export default TaskList;

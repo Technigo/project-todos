@@ -41,7 +41,8 @@ const TaskParentDiv = styled.div`
 const TaskChildDiv = styled.div`
     display: flex;
     width: 80%;
-    height: 80%;
+    min-height: 80%;
+    height: fit-content;
     flex-direction: column;
     border-radius: 30px;
     background-color: #ffffffbf;

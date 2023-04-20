@@ -2,6 +2,10 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import styled from 'styled-components';
+import listIMG from '../assets/list.svg'
+import calendarIMG from '../assets/calendarchecked.svg'
+import categoryIMG from '../assets/tablecells.svg'
+import plusIMG from '../assets/plus.svg'
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -48,24 +52,33 @@ const AddTask = () => {
     <AddTaskWrapper>
       <TaskForm onSubmit={onFormSubmit}>
         <Styledlabel htmlFor="addTaskInput">
-          <StyledP>New Task</StyledP>
-          <input
+          <DescriptionWrapper>
+            <DescriptiveSVG alt="list" src={listIMG} />
+            <StyledP>New Task</StyledP>
+          </DescriptionWrapper>
+          <Fieldinput
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
             id="addTaskInput"
             type="text" />
         </Styledlabel>
         <Styledlabel htmlFor="dueDateInput">
-          <StyledP>Due Date</StyledP>
-          <input
+          <DescriptionWrapper>
+            <DescriptiveSVG alt="calendar-checked" src={calendarIMG} />
+            <StyledP>Due Date</StyledP>
+          </DescriptionWrapper>
+          <Fieldinput
             value={dueInput}
             onChange={handleDueInputChange}
             id="dueDateInput"
             type="datetime-local" />
         </Styledlabel>
         <Styledlabel htmlFor="categoryInput">
-          <StyledP>Category</StyledP>
-          <select
+          <DescriptionWrapper>
+            <DescriptiveSVG alt="category-icon" src={categoryIMG} />
+            <StyledP>Category</StyledP>
+          </DescriptionWrapper>
+          <FieldSelect
             value={categoryInput}
             onChange={handleCategoryInputChange}
             id="categoryInput">
@@ -75,9 +88,9 @@ const AddTask = () => {
                 {category}
               </option>
             ))}
-          </select>
+          </FieldSelect>
         </Styledlabel>
-        <AddTaskBtn type="submit">Add Task</AddTaskBtn>
+        <AddTaskBtn type="submit"><PlusSVG alt="plus-icon" src={plusIMG} /> Add Task</AddTaskBtn>
       </TaskForm>
     </AddTaskWrapper>
   );
@@ -100,7 +113,8 @@ const TaskForm = styled.form`
 
 const StyledP = styled.p`
   white-space: pre-wrap;
-  font-weight: 700;`
+  font-weight: 700;
+  font-size: 18px;`
 
 const Styledlabel = styled.label`
   display: flex;
@@ -108,10 +122,38 @@ const Styledlabel = styled.label`
   align-items: center;`
 
 const AddTaskBtn = styled.button`
-  width: 80px;
+  width: 120px;
   height: 40px;
   border-radius: 18px;
-  background-color: #1D3153;
-  color: white;`
+  background-color: rgb(226, 206, 172);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  filter: invert(1);
+  font-weight: 700;
+  font-size: 16px;`
+
+const DescriptiveSVG = styled.img`
+  height: 20px;`
+
+const PlusSVG = styled.img`
+  height: 20px;
+  `
+
+const DescriptionWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+`
+
+const Fieldinput = styled.input`
+height: 25px;
+width: 185px;`
+
+const FieldSelect = styled.select`
+height: 28px;
+width: 187px;`
 
 export default AddTask;
