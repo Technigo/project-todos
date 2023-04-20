@@ -1,11 +1,9 @@
 .app{
     height: 100vh;
     width: 100vw;
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='1440' height='874' preserveAspectRatio='none' viewBox='0 0 1440 874'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1417%26quot%3b)' fill='none'%3e%3crect width='1440' height='874' x='0' y='0' fill='rgba(214%2c 140%2c 69%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c242 C 57.6%2c212 172.8%2c91.4 288%2c92 C 403.2%2c92.6 460.8%2c233 576%2c245 C 691.2%2c257 748.8%2c130.8 864%2c152 C 979.2%2c173.2 1036.8%2c353.4 1152%2c351 C 1267.2%2c348.6 1382.4%2c182.2 1440%2c140L1440 874L0 874z' fill='rgba(255%2c 201%2c 185%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c832 C 48%2c775.8 144%2c584.8 240%2c551 C 336%2c517.2 384%2c657 480%2c663 C 576%2c669 624%2c545 720%2c581 C 816%2c617 864%2c863.2 960%2c843 C 1056%2c822.8 1104%2c486.4 1200%2c480 C 1296%2c473.6 1392%2c744.8 1440%2c811L1440 874L0 874z' fill='rgba(254%2c 254%2c 227%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1417'%3e%3crect width='1440' height='874' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
-    display: grid;
+background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='3200' height='2100' preserveAspectRatio='none' viewBox='0 0 3200 2100'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1027%26quot%3b)' fill='none'%3e%3crect width='3200' height='2100' x='0' y='0' fill='rgba(214%2c 140%2c 69%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c492 C 128%2c595.8 384%2c1049 640%2c1011 C 896%2c973 1024%2c329.8 1280%2c302 C 1536%2c274.2 1664%2c921 1920%2c872 C 2176%2c823 2304%2c26 2560%2c57 C 2816%2c88 3072%2c833 3200%2c1027L3200 2100L0 2100z' fill='rgba(255%2c 201%2c 185%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c1206 C 106.8%2c1301.6 320.4%2c1690.2 534%2c1684 C 747.6%2c1677.8 854.4%2c1174.6 1068%2c1175 C 1281.6%2c1175.4 1388.4%2c1639.6 1602%2c1686 C 1815.6%2c1732.4 1922.4%2c1339.8 2136%2c1407 C 2349.6%2c1474.2 2457.2%2c2002.6 2670%2c2022 C 2882.8%2c2041.4 3094%2c1607.6 3200%2c1504L3200 2100L0 2100z' fill='rgba(254%2c 254%2c 227%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1027'%3e%3crect width='3200' height='2100' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");    display: grid;
     place-items: center;
     background-position: fits-content;
-    background-repeat: no-repeat;
 }
 
 .app-container{
