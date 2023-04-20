@@ -15,7 +15,7 @@ justify-content:center;
 align-items:center;
 flex-direction:column;
 box-sizing: border-box;
-min-height:100%;
+min-height:100vh;
 `
 
 export const TaskCardContainer = styled.div`
