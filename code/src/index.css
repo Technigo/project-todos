@@ -285,6 +285,50 @@ code {
   }
 }
 
+
+
+/*   ----- TEST   */
+
+
+input[type="checkbox"] {
+  visibility: visible;
+}
+.checkboxOverride {
+  margin: 0;
+  position: relative;
+  margin-top: 3px;
+}
+.checkboxOverride input[type="checkbox"]:checked + label:after {
+  opacity: 1;
+}
+.checkboxOverride label {
+  background: none repeat scroll 0 0 rgb(65, 108, 158);
+  border: 1px solid #DDDDDD;
+  border-radius: 50%;
+  cursor: pointer;
+  height: 25px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 25px;
+}
+.checkboxOverride label:after {
+  border-style: none none solid solid;
+  content: "";
+  height: 5px;
+  left: 6px;
+  opacity: 0;
+  position: absolute;
+  top: 7px;
+  -ms-transform:rotate(-45deg); /* IE 9 */
+  -webkit-transform:rotate(-45deg); /* Safari and Chrome */
+  transform:rotate(-45deg);
+  width: 10px;
+}
+
+
+
+
 /*
 background: hsla(56, 85%, 89%, 1);
 

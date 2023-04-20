@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
@@ -5,6 +6,7 @@ import styled from 'styled-components';
 import { DeleteButton } from './styled_components/buttons';
 import { tasks } from '../reducers/tasks';
 import Empty from './Empty'
+// import { Checkbox } from './styled_components/form_elements';
 
 const colors = ['#FBF8CC', '#FDE4CF', '#FFCFD2', '#F1C0E8', '#CFBAF0', '#A3C4F3', '#90DBF4', '#8EECF5', '#98F5E1', '#B9FBC0'];
 
@@ -23,7 +25,7 @@ const TodoList = ({ selectedTab }) => {
   const dispatch = useDispatch();
   console.log('selectedTab', selectedTab)
 
-  // Here I filter
+  // Here I filter based on what tab we have open
   let filteredList = todoList;
 
   if (selectedTab === 'done') {
@@ -34,8 +36,6 @@ const TodoList = ({ selectedTab }) => {
     filteredList = todoList
   }
 
-  // Här vill jag få in en empty page som visas när den filtrerade arrayen är tom.
-  // Conditional filteredList.length === 0
   return (
     <>
       {filteredList.length > 0
@@ -45,9 +45,11 @@ const TodoList = ({ selectedTab }) => {
           {filteredList.map((singleTodo, index) => {
             return (
               <StyledTodoRow key={singleTodo.id} index={index}>
-                <label htmlFor="todo" className="todo-label">
+                <label htmlFor={singleTodo.id} className="todo-label">
                   <span>{singleTodo.content}</span>
-                  <input type="checkbox" id={singleTodo.id} name="todos" onChange={() => dispatch(tasks.actions.handleCheck(singleTodo))} />
+                  <div className="checkboxOverride">
+                    <input type="checkbox" id={singleTodo.id} className="checkboxInputOverride" name="todos" value="1" onChange={() => dispatch(tasks.actions.handleCheck(singleTodo))} />
+                  </div>
                 </label>
                 <DeleteButton type="button" onClick={() => dispatch(tasks.actions.removeItem(singleTodo.id))}>Delete</DeleteButton>
               </StyledTodoRow>
@@ -62,3 +64,5 @@ const TodoList = ({ selectedTab }) => {
 }
 
 export default TodoList;
+
+// <input type="checkbox" id={singleTodo.id} className="checkboxInputOverride" name="todos" value="1" onChange={() => dispatch(tasks.actions.handleCheck(singleTodo))} />

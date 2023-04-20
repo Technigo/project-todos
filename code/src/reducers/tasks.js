@@ -28,8 +28,6 @@ export const tasks = createSlice({
     // first argument references the state of the store
     // second argument references the data that is passed down from a component
     addItem: (store, action) => {
-      // console.log('action:', action);
-      // console.log('action.payload:', action.payload);
       // console.log('store:', store);
       store.items = [...store.items, action.payload];
     },
@@ -40,9 +38,10 @@ export const tasks = createSlice({
       console.log('action.payload:', action.payload)
 
       // We make a new copy to avoid mutating the original state array
-      const newArray = store.items;
+      const newArray = [...store.items]
 
       // We create a condition that the id of the selected element shall match the id coming in from the delete button
+      // Right now its a function and not a boolean. It will turn into one when we add it to findIndex below.
       const condition = (element) => element.id === id;
       console.log('condition', condition)
 
@@ -55,20 +54,15 @@ export const tasks = createSlice({
       // What we are saying here is that we look in newArray for the foundIndex and remove 1.
       // In the case of 'Eat ice cream', it would read: newArray.splice(2, 1)
       // Which would mean, start at index 2 and remove 1 item.
-      // newArray.splice(foundIndex, 1);
+      newArray.splice(foundIndex, 1);
 
-      console.log(
-        'newArray.splice(foundIndex, 1)',
-        newArray.splice(foundIndex, 1)
-      )
+      // We then assign
+      store.items = newArray;
 
-      store.items = newArray.splice(foundIndex, 1);
-
+      // This was not best practice, thus removed:
       // Here we want to filter out the items
       // And return a new state without said item
       // store.items = store.items.filter((item) => item.id !== action.payload.id);
-      // console.log('store:', store);
-      // console.log('action.payload:', action.payload);
     },
     removeAll: (store) => {
       // Im not mutating this
@@ -78,13 +72,33 @@ export const tasks = createSlice({
       const { id } = action.payload;
       console.log('id:', id)
       // const itemExists = store.items.find((item) => item.id === id); blev muterbart
-      const newArray = store.items
+      const newArray = [...store.items]
       const indexOfObject = newArray.findIndex((item) => item.id === id)
       if (indexOfObject > -1) {
         newArray[indexOfObject].isChecked = !newArray[indexOfObject].isChecked
         store.items = newArray
       }
-      // console.log('action.payload:', action.payload, 'itemExists.isChecked:', itemExists.isChecked)
     }
   }
 });
+
+/*
+    removeItem: (store, action) => {
+      const id = action.payload;
+
+      const newArray = [...store.items]
+
+      const condition = (element) => element.id === id;
+      console.log('condition', condition)
+
+      const foundIndex = newArray.findIndex(condition);
+      console.log('foundIndex', foundIndex);
+
+      store.items = newArray.splice(foundIndex, 1);
+      console.log('store.items', store.items);
+      console.log('newArray.splice(foundIndex, 1)', newArray.splice(foundIndex, 1));
+
+            console.log('store.items:', store.items)
+      console.log('newArray:', newArray)
+    },
+    */
