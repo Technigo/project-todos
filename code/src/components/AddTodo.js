@@ -60,5 +60,6 @@ input[type=text] {
 const SubmitButton = styled.button`
 border: 1px solid red;
 border-radius: 5px;
+cursor: pointer;
 `
 export default AddTodo;
