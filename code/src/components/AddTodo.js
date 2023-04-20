@@ -62,7 +62,7 @@ border: none;
 border-radius: 5px;
 cursor: pointer;
 font-weight: bold;
-background-color: rgba(201,201,199,255);
+background-color: #c7cf93;
 font-family: 'Gagau';
 outline: 1px solid #aaa;
 

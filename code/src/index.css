@@ -1,5 +1,8 @@
 body {
   background-color: #f4eedc;
+  background-image: url('./assets//background.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 12% 20%;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
@@ -15,4 +18,5 @@ code {
 
 .p {
   font-family: 'Gagau';
+  color: white;
 }

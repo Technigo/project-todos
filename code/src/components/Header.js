@@ -9,8 +9,7 @@ const Header = () => {
   return (
     <>
       <StyledHeader>
-        <Styleh1>the BucketList</Styleh1>
-        <Logo src={logo} />
+        <Logo src={logo} /> <Styleh1>the BucketList</Styleh1>
       </StyledHeader>
       <section className="date">
         <StyleP>{dateTime}</StyleP>
@@ -23,10 +22,12 @@ display: flex;
 flex-direction: row;
 align-items: center;
 width: 350px;
+margin-top: 20px;
+margin-left: 10px;
 `
 const Logo = styled.img`
-width: 30%;
-height: 30%;
+width: 50px;
+height: 50px;
 `
 
 const Styleh1 = styled.text`

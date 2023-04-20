@@ -34,10 +34,8 @@ const todos = createSlice({
     },
     addTask: (store, action) => {
       const copyArray = store.items;
-      // copyArray.push(action.payload)
       copyArray.unshift(action.payload);
       store.items = copyArray
-      // store.items.push(action.payload)
     }
   }
 })
