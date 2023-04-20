@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable no-shadow */
 // src/reducers/project.js
 import { createSlice } from '@reduxjs/toolkit';
@@ -31,8 +32,13 @@ export const projects = createSlice({
         project.complete = !project.complete;
       }
       localStorage.setItem('projectsList', JSON.stringify(state));
+    },
+    deleteProject: (state, action) => {
+      const newState = state.filter((project) => project.id !== action.payload);
+      localStorage.setItem('projectsList', JSON.stringify(newState));
+      return newState;
     }
   }
 });
 
-export const { setupStore, addProject, toggleComplete: toggleProjectComplete } = projects.actions;
+export const { addProject, toggleComplete: toggleProjectComplete, deleteProject } = projects.actions;
