@@ -21,14 +21,12 @@ export default Header;
 /* STYLING FOR HEADER */
 
 const Title = styled.h1`
-  font-family: 'Quicksand', sans-serif;
   font-weight: 500;
   text-align: center;
   color: #658864;
 `;
 
 const DateToday = styled.h3`
-  font-family: 'Quicksand', sans-serif;
   font-weight: 400;
   color: #183A1D;
   text-align: center;

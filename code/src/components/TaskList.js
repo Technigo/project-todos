@@ -27,16 +27,16 @@ const TaskList = () => {
         <Wrapper>
           {allTasks.map((singleTask) => {
             return (
-              <div key={singleTask.id}>{singleTask.name}
-                <label htmlFor="done">Done
+              <EachTask key={singleTask.id}>{singleTask.name}
+                <label htmlFor="done">
                   <input
                     type="checkbox"
                     id="done"
                     checked={singleTask.isDone}
                     onChange={() => onIsDoneToggle(singleTask.id)} />
                 </label>
-                <Button onClick={() => onRemoveTaskButtonClick(singleTask.id)} type="button">remove</Button>
-              </div>
+                <Button onClick={() => onRemoveTaskButtonClick(singleTask.id)} type="button">🗑️</Button>
+              </EachTask>
             )
           })}
         </Wrapper>
@@ -54,14 +54,30 @@ export default TaskList
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  align-items: flex-start;
+  margin: 10% auto;
+`
+const EachTask = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
-  border: 2px solid #B7B78A;
-  padding: 0px 0px; 
-  margin-right: 35%;
-  margin-left: 35%;
-  border-radius: 20px;
-  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
 `
+
 const Button = styled.button`
-`
+  border: none;
+  border: transparent;
+  background: transparent;
+  cursor: pointer;
+
+
+  &:hover {
+      transform: scale(1.2);
+    }
+  `

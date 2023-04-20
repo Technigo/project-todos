@@ -18,10 +18,12 @@ export const App = () => {
     <>
       <GlobalStyle />
       <Provider store={store}>
-        <Header />
-        <TaskList />
-        <AddTask />
-        <ProgressBar />
+        <main>
+          <Header />
+          <ProgressBar />
+          <TaskList />
+          <AddTask />
+        </main>
         <Footer />
       </Provider>
     </>

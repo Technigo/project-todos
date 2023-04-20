@@ -13,7 +13,3 @@ const ProgressBar = () => {
 }
 
 export default ProgressBar;
-
-//   {numberOfTasksDone === 0 && <p>Better get started!</p>}
-//   {numberOfTasksDone > 0 && numberOfTasksDone <= 0.5 && <p>Not bad!</p>}
-//   {numberOfTasksDone > 0.5 && <p>Nearly there!</p>}

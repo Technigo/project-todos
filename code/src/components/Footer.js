@@ -26,6 +26,10 @@ export default Footer;
 const FooterStyled = styled.footer`
     display: flex;
     justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+
 `
 const Picture = styled.img`
     width: 30px;
