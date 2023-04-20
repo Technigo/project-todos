@@ -67,8 +67,17 @@ font-size: 1.2rem;
 export const StyledTaskList = styled(Lists)`
 list-style: none;
 display: flex;
-flex-wrap: wrap;
+flex-direction: column;
 align-items: center;
+justify-content: space-between;
+`;
+
+export const StyledTaskListItem = styled.li`
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const StyledCheckbox = styled.input`

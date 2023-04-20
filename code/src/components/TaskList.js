@@ -1,25 +1,28 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import tasks from '../reducers/task';
-import { StyledInput, Content, TaskForm, SecondHeadingLabel, ThirdHeading } from './TaskListStyling';
-import { AddButton, DeleteButton, DeleteAllButton, StyledTaskList,
-  StyledIcon, StyledCheckbox, StyledCheckboxLabel } from './Global';
+import { StyledInput, Content, TaskForm, SecondHeadingLabel,
+  ThirdHeading, UncompletedTasks } from './TaskListStyling';
+import { AddButton, DeleteButton, DeleteAllButton,
+  StyledIcon, StyledCheckbox, StyledCheckboxLabel,
+  StyledTaskListItem, StyledTaskList } from './Global';
 
 // Define a component for individual task item
 const TaskItem = ({ task, onToggle, onDeleteTask }) => (
   <StyledTaskList key={task.id}>
-    <StyledCheckbox
-      type="checkbox"
-      id={`task-${task.id}`}
-      checked={task.isComplete}
-      onChange={() => onToggle(task.id)} />
-    <StyledCheckboxLabel htmlFor={`task-${task.id}`}>{task.text}</StyledCheckboxLabel>
-    <DeleteButton onClick={onDeleteTask}>
+    <StyledTaskListItem>
+      <StyledCheckbox
+        type="checkbox"
+        id={`task-${task.id}`}
+        checked={task.isComplete}
+        onChange={() => onToggle(task.id)} />
+      <StyledCheckboxLabel htmlFor={`task-${task.id}`}>{task.text}</StyledCheckboxLabel>
+      <DeleteButton type="button" onClick={onDeleteTask} aria-label={`Delete task ${task.text}`} role="button">
+        <StyledIcon icon={faTrash} />
       Delete
-      <StyledIcon icon={faTrash} />
-    </DeleteButton>
+      </DeleteButton>
+    </StyledTaskListItem>
   </StyledTaskList>
 );
 
@@ -79,7 +82,9 @@ const TaskList = () => {
       </TaskForm>
 
       <>
-        <ThirdHeading>Uncompleted Tasks: {numUncompletedTasks}</ThirdHeading>
+        <ThirdHeading>
+        Uncompleted Tasks: <UncompletedTasks>{numUncompletedTasks}</UncompletedTasks>
+        </ThirdHeading>
         <StyledTaskList>
           {listWithTasks.map((task) => (
             <TaskItem
@@ -90,7 +95,7 @@ const TaskList = () => {
           ))}
         </StyledTaskList>
       </>
-      <DeleteAllButton disabled={listWithTasks.length < 1} onClick={onDeleteAll}>
+      <DeleteAllButton type="button" disabled={listWithTasks.length < 1} onClick={onDeleteAll}>
         Delete All
         <StyledIcon icon={faTrash} />
       </DeleteAllButton>

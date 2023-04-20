@@ -31,12 +31,15 @@ font-size: 2rem;
 margin: 0;
 `
 
-export const ThirdHeading = styled.h3`
+export const ThirdHeading = styled.h2`
 font-family: var(--second-headings-font-family);
 font-weight: 100;
 font-size: 1.5rem;
 `
 
+export const UncompletedTasks = styled.span`
+color: #B38728;
+`;
 export const StyledInput = styled.input`
   padding: 0.625rem;
   border: 0.063rem solid gray;

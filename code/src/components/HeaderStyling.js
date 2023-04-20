@@ -5,6 +5,7 @@ export const StyledTitle = styled.h1`
  font-size:2rem;
  font-weight: 600;
  text-align: center;
+ color: #BF953F;
  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
  -webkit-background-clip: text;
  -webkit-text-fill-color: transparent;
