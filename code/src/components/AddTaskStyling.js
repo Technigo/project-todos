@@ -7,6 +7,20 @@ export const AddTaskWrapper = styled.form`
     align-items: center;
     border-bottom: 3px solid var(--orange);
     padding-bottom:15px;
+
+  select {
+  width: 100%;
+  min-width: 15ch;
+  max-width: 30ch;
+  border: 2px solid var(--dark-blue);
+  border-radius: 10px;
+  padding: 0.25em 0.5em;
+  font-size: 1rem;
+  cursor: pointer;
+  line-height: 1.1;
+  background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
+  text-align: center;
+}
     
 `
 
@@ -20,7 +34,7 @@ export const AddTaskChildDiv = styled.div`
       padding: 6px;
       border-radius: 10px;
       border: 2px solid var(--dark-blue);
-      background: var(--white);
+      background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
       font-size: 1rem;
 
         &:focus {
