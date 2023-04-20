@@ -1,15 +1,19 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = { items: [{ id: 'task1',
-  name: 'Water  the plants',
+  name: 'Make a To Do List',
   isListed: false,
   date: null },
 { id: 'task2',
-  name: 'Do coding exercises',
+  name: 'Check off first item',
   isListed: false,
   date: null },
 { id: 'task3',
-  name: 'Feed the dog',
+  name: 'Realize you have already done 2 things on your list',
+  isListed: false,
+  date: null },
+{ id: 'task4',
+  name: 'Celebrate!',
   isListed: false,
   date: null }] }
 

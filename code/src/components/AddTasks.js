@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
@@ -9,12 +10,14 @@ import { tasks } from './Reducers/tasks';
 const AddTasks = () => {
   const [inputValue, setInputValue] = useState('');
   const [clicked, setClicked] = useState(false);
+  const [startDate, setStartDate] = useState(new Date());
   const dispatch = useDispatch();
 
   const onFormSubmit = (event) => {
     event.preventDefault();
     const newTask = { id: Date.now().toString(),
       name: inputValue,
+      date: startDate,
       isListed: true };
     dispatch(tasks.actions.AddTasks(newTask));
     setInputValue('');
@@ -27,14 +30,15 @@ const AddTasks = () => {
     }, 2000);
     return () => clearTimeout(timeoutId);
   }, [clicked]);
-  const [startDate, setStartDate] = useState(new Date());
 
   return (
     <Wrapper>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addtodotask">
           <Input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addtodotask" type="text" required />
-          <ReactDatePicker showIcon selected={startDate} onChange={(date) => setStartDate(date)} />
+          <DatePickerWrapper>
+            <ReactDatePicker showIcon selected={startDate} onChange={(date) => setStartDate(date)} />
+          </DatePickerWrapper>
         </label>
         <StyledButton type="submit" clicked={clicked}>Add To List</StyledButton>
       </form>
@@ -56,6 +60,13 @@ const Input = styled.input`
   display: flex;
   justify-content: center;
   margin-bottom: 1rem;
+`;
+const DatePickerWrapper = styled.div`
+  .react-datepicker-wrapper {
+    display: inline-block;
+  }
+
+
 `;
 
 const StyledButton = styled.button`
