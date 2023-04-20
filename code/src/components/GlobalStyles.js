@@ -5,6 +5,7 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
     padding: 0;
     font-family: 'Gaegu', cursive;
+    background-color: #C7BCA1;
     font-size: 21px;
     line-height: 0.9em;
     display: grid;
