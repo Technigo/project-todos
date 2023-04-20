@@ -17,14 +17,14 @@ export const Counter = () => {
 
   const doneTasks = () => {
     if (items.length === 0) {
-      return 'Add task'
+      return ''
     } else if (items.length === completedTasks.length) {
       return (
         <>
           <Confetti
             width={width}
             height={height}
-            colors={['#000', '#d4af37']}
+            colors={['#FE6D60', '#FFC967']}
             numberOfPieces={100}
             gravity={0.05}
             confettiSource={{ x: 0, y: 500, w: 1000, h: 1000 }} />

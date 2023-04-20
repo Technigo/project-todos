@@ -19,12 +19,21 @@ const AddTask = styled.input`
     }
 `
 
-const HeaderWrapper = styled.div`
+const HeadlineWrapper = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 100%;
   margin: 0;
+`
+
+const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin: 20px;
 `
 
 export const NewTask = () => {
@@ -49,7 +58,6 @@ export const NewTask = () => {
   return (
     <section>
       <HeaderWrapper>
-        <Counter />
         <DeleteButton
           type="button"
           onClick={deleteAllTasksBtn}>
@@ -58,8 +66,11 @@ export const NewTask = () => {
 delete
           </span>
         </DeleteButton>
+        <HeadlineWrapper>
+          <HeadLine>To Do</HeadLine>
+          <Counter />
+        </HeadlineWrapper>
       </HeaderWrapper>
-      <HeadLine>To Do</HeadLine>
       <form onSubmit={onTaskSubmit}>
         <label htmlFor="addTaskInput">
           <AddTask

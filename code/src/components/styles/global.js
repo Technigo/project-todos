@@ -5,7 +5,15 @@ export const Container = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 10px;
+    margin: 0;
+    overflow-x: hidden;
+
+
+    @media (min-width: 668px) {
+        width: 50%;
+        justify-items: center;
+        margin: 0 auto;
+    }
 `
 
 export const Button = styled.button`
@@ -30,10 +38,17 @@ export const DeleteButton = styled(Button)`
     align-items: center;
     width: 200px;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
 `
 
 export const HeadLine = styled.h1`
     font-family: 'Dongle', sans-serif;
     font-size: 5em;
-    margin: 0;
+    margin: 10px;
+`
+
+export const H2 = styled.h2`
+    font-family: 'Dongle', sans-serif;
+    font-size: 3em;
 `

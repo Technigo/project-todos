@@ -3,16 +3,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { tasks } from './reducers/tasks';
 import { Button } from './styles/global';
-import { AllDone } from './AllDone';
+import { EmptyState } from './EmptyState';
 
 const InnerWrapper = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    width: 100%;
-    gap: 10px;
-    margin: 0;
+    gap: 5px;
+    margin: 0 20px;
 `
 
 const TaskText = styled.p`
@@ -65,7 +64,7 @@ cancel
           </InnerWrapper>
         )
       })}
-      <AllDone />
+      <EmptyState />
     </section>
   )
 }
