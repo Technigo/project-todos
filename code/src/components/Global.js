@@ -107,6 +107,10 @@ export const StyledCheckbox = styled.input`
   }
 `;
 
+export const StyledCheckboxLabel = styled.label`
+cursor: ponter;
+`
+
 export const StyledIcon = styled(FontAwesomeIcon)`
 margin: 0.5rem;
 `;

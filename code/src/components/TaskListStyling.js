@@ -24,7 +24,7 @@ export const TaskForm = styled.form`
   }
 `;
 
-export const SecondHeading = styled.h2`
+export const SecondHeadingLabel = styled.label`
 font-family: var(--second-headings-font-family);
 font-weight: 100;
 font-size: 2rem;

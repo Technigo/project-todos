@@ -3,18 +3,19 @@ import { useDispatch, useSelector } from 'react-redux';
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import tasks from '../reducers/task';
-import { StyledInput, Content, TaskForm, SecondHeading, ThirdHeading } from './TaskListStyling';
-import { AddButton, DeleteButton, DeleteAllButton, StyledTaskList, StyledIcon, StyledCheckbox } from './Global';
+import { StyledInput, Content, TaskForm, SecondHeadingLabel, ThirdHeading } from './TaskListStyling';
+import { AddButton, DeleteButton, DeleteAllButton, StyledTaskList,
+  StyledIcon, StyledCheckbox, StyledCheckboxLabel } from './Global';
 
 // Define a component for individual task item
 const TaskItem = ({ task, onToggle, onDeleteTask }) => (
   <StyledTaskList key={task.id}>
     <StyledCheckbox
       type="checkbox"
+      id={`task-${task.id}`}
       checked={task.isComplete}
       onChange={() => onToggle(task.id)} />
-    <span>{task.text}</span>
-    {/* <label htmlFor={`task-${task.id}`}>{task.text}</label> */}
+    <StyledCheckboxLabel htmlFor={`task-${task.id}`}>{task.text}</StyledCheckboxLabel>
     <DeleteButton onClick={onDeleteTask}>
       Delete
       <StyledIcon icon={faTrash} />
@@ -64,9 +65,10 @@ const TaskList = () => {
   // Render the task list with inputs, buttons and individual task items
   return (
     <Content>
-      <SecondHeading>Add Task to Todo List</SecondHeading>
+      <SecondHeadingLabel htmlFor="add-task">Add Task to Todo List</SecondHeadingLabel>
       <TaskForm onSubmit={(e) => e.preventDefault()}>
         <StyledInput
+          id="add-task"
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
