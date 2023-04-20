@@ -31,7 +31,7 @@ div#root {
   width: 40%;
   align-self: center;
   height: 500px;
-  background: rgb(229 222 190);
+  background: rgb(255 250 177);
   border-radius: 83px;
   border: none;
   box-shadow: 0 0.5rem 3rem #383737;
@@ -112,7 +112,7 @@ input#addTaskInput {
     height: 600px;
     border-radius: 50px;
     padding: 50px;
-    background: rgb(229 222 190);
+    background: rgb(255 250 177);
   }
   section {
     padding-top: 50px;
