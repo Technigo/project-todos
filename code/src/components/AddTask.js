@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import { v4 as uuid } from 'uuid';
 import moment from 'moment';
 import todolist from 'reducers/todolist';
 import TaskList from './TaskList';
@@ -12,7 +13,7 @@ const AddTask = () => {
     event.preventDefault();
     // this prevents the form from reloading
     const newTask = {
-      id: Date.now().toString(),
+      id: uuid(),
       name: inputValue,
       time: moment().format('D MMM HH:mm'),
       isChecked: false
