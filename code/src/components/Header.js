@@ -24,6 +24,7 @@ align-items: center;
 width: 350px;
 margin-top: 20px;
 margin-left: 10px;
+gap: 20px;
 `
 const Logo = styled.img`
 width: 50px;
