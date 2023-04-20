@@ -52,7 +52,7 @@ const AddTaskSection = styled.section`
   align-items: center;
   justify-content: space-between;
   background-color: #f0ccda;
-  height: 300px;
+  height: 400px;
   width: 100%;
 `;
 

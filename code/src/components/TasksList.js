@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux'
 import { RemoveTask } from 'components/RemoveTask';
 import { EmptyList } from 'components/EmptyList';
 import { tasks } from 'reducers/tasks';
+import TaskCount from 'components/TaskCount';
 import styled from 'styled-components';
 import checkImage from '../images/checkmark.png'
 
@@ -33,6 +34,7 @@ export const TasksList = () => {
           })}
         </StyledUl>
       )}
+      <TaskCount />
     </StyledSection>
   )
 }
