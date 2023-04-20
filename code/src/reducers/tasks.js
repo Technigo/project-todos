@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  // a slice=
+
   todos: [
     { id: 1, text: 'Give kiss to mom', complete: true },
     { id: 2, text: 'Tidy Room', complete: false },
@@ -11,7 +11,7 @@ const initialState = {
 
   ]
 }
-
+// a slice=
 export const tasks = createSlice({
   name: 'tasks',
   initialState,

@@ -39,9 +39,9 @@ export const TasksList = () => {
   )
 }
 const StyledSection = styled.section`
-display: flex;
-flex-direction: column;
-align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   background-color: aliceblue;
   padding-left: 2px;
   padding-right: 2px;
@@ -59,12 +59,12 @@ const StyledRemoveTask = styled(RemoveTask)`
   }
 `;
 const StyledUl = styled.ul`
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    padding: 0;
-    gap: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 0;
+  gap: 10px;
 `;
 const StyledLi = styled.li`
   display: flex;
