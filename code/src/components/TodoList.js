@@ -37,7 +37,7 @@ export const TodoList = () => {
   const doneTasks = allTasks.filter((todo) => todo.isDone);
 
   return (
-    <Wrapper key="wrapper">
+    <Wrapper>
       <h2>
         You have {toWords(tasksTodo.length)} {tasksTodo.length === 1 ? 'thing' : 'things'} to do
         today
@@ -48,21 +48,16 @@ export const TodoList = () => {
       {tasksTodo.map((todo, index) => (
         <TodoItem todo={todo} index={index} key={todo.id} onDelete={onDelete} onDone={onDone} />
       ))}
-
       <AddTodo />
-
-      <h2>
-        You have finishied {toWords(doneTasks.length)} {doneTasks.length === 1 ? 'task' : 'tasks'}
-      </h2>
-
       <Button type="button" onClick={onCompleteAll}>
         Complete all
       </Button>
-
       <Button type="button" onClick={onClearAll}>
         Clear all
       </Button>
-
+      <h2>
+        You have finishied {toWords(doneTasks.length)} {doneTasks.length === 1 ? 'task' : 'tasks'}
+      </h2>
       {doneTasks.map((todo, index) => (
         <TodoItem todo={todo} index={index} key={todo.id} onDelete={onDelete} onDone={onDone} />
       ))}
