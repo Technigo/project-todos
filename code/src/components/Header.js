@@ -11,6 +11,7 @@ const HeaderContainer = styled.header`
   text-align: center;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   max-height: 80px;
+  width: 100vw;
 `;
 
 const HeaderTitle = styled.h1`

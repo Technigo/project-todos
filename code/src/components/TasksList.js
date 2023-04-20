@@ -5,7 +5,7 @@ import { EmptyList } from 'components/EmptyList';
 import { tasks } from 'reducers/tasks';
 import TaskCount from 'components/TaskCount';
 import styled from 'styled-components';
-import checkImage from '../images/checkmark.png'
+import checkImage from '../images/check-green.png'
 
 export const TasksList = () => {
   const tasksList = useSelector((store) => store.tasks.todos);

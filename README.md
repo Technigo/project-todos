@@ -14,3 +14,4 @@ Every project should be deployed somewhere. Be sure to include the link to the d
 
 Icons:
 "https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by Octopocto - Flaticon</a>
+"https://www.flaticon.com/free-icons/done" title="done icons">Done icons created by manshagraphics - Flaticon</a>

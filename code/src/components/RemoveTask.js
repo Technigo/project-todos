@@ -2,7 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import styled from 'styled-components';
-import minusImg from '../images/minus.png'
+import minusImg from '../images/bin.png'
 
 export const RemoveTask = ({ task }) => {
   const dispatch = useDispatch();
