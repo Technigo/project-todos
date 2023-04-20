@@ -28,11 +28,8 @@ const tasks = createSlice({
       store.items = [...store.items, action.payload]
     },
     removeTask: (store, action) => {
-      const existingItem = store.items.find((item) => item.id === action.payload.id)
-
-      if (existingItem) {
-        store.items = store.items.filter((item) => item.id !== action.payload.id)
-      }
+      const existingTask = store.items.findIndex((task) => task.id === action.payload.id);
+      store.items.splice(existingTask, 1);
     },
     toggleCheckbox: (store, action) => {
       store.items.forEach((item) => {
