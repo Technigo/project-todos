@@ -3,22 +3,23 @@ import { useDispatch, useSelector } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import tasks from '../reducers/task';
-import { Content, TaskForm } from './TaskListStyling';
-import { AddButton, DeleteButton, DeleteAllButton } from './Global';
+import { StyledInput, Content, TaskForm, SecondHeading, ThirdHeading } from './TaskListStyling';
+import { AddButton, DeleteButton, DeleteAllButton, StyledTaskList } from './Global';
 
 // Define a component for individual task item
 const TaskItem = ({ task, onToggle, onDeleteTask }) => (
-  <li key={task.id}>
+  <StyledTaskList key={task.id}>
     <input
       type="checkbox"
       checked={task.isComplete}
       onChange={() => onToggle(task.id)} />
     <span>{task.text}</span>
+    {/* <label htmlFor={`task-${task.id}`}>{task.text}</label> */}
     <DeleteButton onClick={onDeleteTask}>
-      Delete Task
+      Delete
       <FontAwesomeIcon icon={faTrash} />
     </DeleteButton>
-  </li>
+  </StyledTaskList>
 );
 
 // Define a component for the whole task list
@@ -63,8 +64,9 @@ const TaskList = () => {
   // Render the task list with inputs, buttons and individual task items
   return (
     <Content>
+      <SecondHeading>Add task to todo list</SecondHeading>
       <TaskForm onSubmit={(e) => e.preventDefault()}>
-        <input
+        <StyledInput
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
@@ -74,9 +76,9 @@ const TaskList = () => {
         </AddButton>
       </TaskForm>
 
-      <div className="container">
-        <h2>You have {numUncompletedTasks} tasks left for today.</h2>
-        <ul>
+      <>
+        <ThirdHeading>Uncompleted tasks: {numUncompletedTasks}</ThirdHeading>
+        <StyledTaskList>
           {listWithTasks.map((task) => (
             <TaskItem
               key={task.id}
@@ -84,8 +86,8 @@ const TaskList = () => {
               onToggle={() => onToggle(task.id)}
               onDeleteTask={() => onDeleteTask(task.id)} />
           ))}
-        </ul>
-      </div>
+        </StyledTaskList>
+      </>
       <DeleteAllButton disabled={listWithTasks.length < 1} onClick={onDeleteAll}>
         Delete All
         <FontAwesomeIcon icon={faTrash} />
