@@ -42,11 +42,16 @@ const StyledSection = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: aliceblue;
-  padding-left: 2px;
-  padding-right: 2px;
+ 
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
+  padding-bottom: 40px;
+
+  @media (min-width: 668px) {
+    height: 100vh; /* Set the height to be the full viewport height */
+}
 `;
 
 const StyledRemoveTask = styled(RemoveTask)`

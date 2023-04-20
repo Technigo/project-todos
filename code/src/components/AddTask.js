@@ -55,6 +55,9 @@ const AddTaskSection = styled.section`
   // height: 400px;
   padding-bottom: 40px;
   width: 100%;
+  @media (min-width: 668px) {
+    height: 100vh; /* Set the height to be the full viewport height */
+}
 `;
 
 const AddTaskForm = styled.form`
