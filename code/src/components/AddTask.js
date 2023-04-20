@@ -31,11 +31,6 @@ const AddTask = () => {
   return (
     <div className="container">
       <section>
-        <button
-          className="resetButton"
-          type="button"
-          onClick={onResetToDoClick}> Reset To-Do List
-        </button>
         <div className="input">
           <p>Plans for today</p>
           <form onSubmit={onFormSubmit}>
@@ -50,6 +45,11 @@ const AddTask = () => {
             </label>
           </form>
         </div>
+        <button
+          className="resetButton"
+          type="button"
+          onClick={onResetToDoClick}> ⤫
+        </button>
       </section>
     </div>
   );

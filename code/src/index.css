@@ -24,12 +24,24 @@ p {
     text-align: center;
 }
 .resetButton {
-border: 1px solid red;
+    cursor: pointer;
+    top: 39px;
+    background: none;
+    color: #a05872;
+    font-style: italic;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    font-weight: 100;
+    text-align: center;
+}
+
 div#root {
   border: 2px solid black;
   width: 40%;
@@ -51,15 +63,22 @@ div#root {
 ::-webkit-scrollbar-thumb {
   background: transparent;
 }
+.initialState {
+  border: 1px solid red;
+}
+ul {
+  padding-left: 0px;
+}
 
 section {
   display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 35px;
     font-weight: 200;
-    color: black;
-    font-size: 20px;
+    color: rgb(255, 255, 255);
+}
+li::marker {
+  font-size: 0px;
 }
 button {
   width: 50px;
@@ -71,6 +90,7 @@ button {
   background: #80c7b9;
   float: right;
   top: -9px;
+  cursor: pointer;
 }
 
 form {
@@ -94,17 +114,49 @@ input#addTaskInput {
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
     16 0,
   auto;
+  background-attachment: fixed;
   }
+  .container {
+    border: 1px;
+  }
+  form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+}
   div#root {
-    width: 100%;
     height: auto;
-    border-radius: 30px;
-    padding: 30px;
-    background: rgb(229 222 190);
+    /* background: rgb(229 222 190); */
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    background: rgb(55 55 55 / 50%);
   }
+  p {
+    font-size: 40px;
+    font-weight: 100;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 1 2 black;
+}
+button {
+  width: 50px;
+  border-radius: 40px;
+  border-style: none;
+  margin: 10px;
+  position: relative;
+  top: 48px;
+  background: #cfb1b1;
+  float: right;
+  top: -9px;
+  cursor: pointer;
+}
   section {
     padding-top: 20px;
-    font-size: 16px;
+    font-size: 13px;
+    color: rgb(255, 255, 255);
   }
  
   input#addTaskInput {
@@ -112,11 +164,27 @@ input#addTaskInput {
     font-size: 16px;
   }
 }
+input[type="checkbox" i] {
+  background-color: initial;
+  cursor: default;
+  appearance: auto;
+  box-sizing: border-box;
+  margin: 3px 3px 3px 4px;
+  padding: initial;
+  border: initial;
+}
+.resetButton {
+  color: #9b4765;
+  font-style: normal;
+  font-size: 18px;
+}
+
 /* Media queries for tablet devices */
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
+
   body {
     background-image: url("../Images/wp5418538-floral-aesthetic-desktop-wallpapers.jpg");
-    padding-top: 70px;
+    
     background-size: cover;
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
     16 0,
@@ -128,13 +196,29 @@ input#addTaskInput {
     border-radius: 50px;
     padding: 50px;
    /* background: rgb(255 250 177); */
-   background: rgb(6 6 6 / 64%);
+   /* background: rgb(6 6 6 / 64%); */
+   background: rgb(147 147 147 / 72%);
   }
+
+button {
+  background: #ded592;
+}
+p {
+  font-size: 40px;
+  font-weight: 100;
+  color: #0f0e0e;
+  text-align: center;
+}
+  .resetButton {
+    background: none;
+    top: 30px;
+    /* display: flex; */
+    cursor: pointer;
+    color: #000000;
+    font-size: 20px;
+}
   section {
-    padding-top: 50px;
-    font-size: 24px;
-  }
-  button {
-    top: -25px;
+    font-size: 13px;
+    color: black;
   }
 }
