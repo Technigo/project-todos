@@ -16,6 +16,7 @@
     display: flex;
     gap: 10px;
     padding-left: 8px;
+    font-family: "Roboto";
 }
 
 .singletask-container img{
