@@ -25,7 +25,9 @@ const TaskItem = ({ task }) => {
         onChange={onToggle} />
       <span>{task.text}</span>
       {/* <span>{formatDistanceToNow(new Date(task.timestamp), { addSuffix: true })}</span> */}
-      <button type="button" onClick={onDeleteTask}>Delete</button>
+      <DeleteButton onClick={onDeleteTask}>Delete Task
+        <FontAwesomeIcon icon={faTrash} />
+      </DeleteButton>
     </li>
   );
 };
@@ -60,23 +62,18 @@ export const TaskList = () => {
 
       <div className="container">
         <h2>You have {listWithTasks.length} tasks left for today.</h2>
-
-        <DeleteAllButton
-          disabled={listWithTasks.length < 1}
-          onClick={onDeleteAll}>
-          Delete All
-          <FontAwesomeIcon icon={faTrash} />
-        </DeleteAllButton>
-
         <ul>
           {listWithTasks.map((task) => (
             <TaskItem key={task.id} task={task} />
           ))}
         </ul>
-        <DeleteButton onClick={onDeleteAll}>Delete Task
-          <FontAwesomeIcon icon={faTrash} />
-        </DeleteButton>
       </div>
+      <DeleteAllButton
+        disabled={listWithTasks.length < 1}
+        onClick={onDeleteAll}>
+          Delete All
+        <FontAwesomeIcon icon={faTrash} />
+      </DeleteAllButton>
     </Content>
   );
 };
