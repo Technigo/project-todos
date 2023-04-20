@@ -75,15 +75,17 @@ input#addTaskInput {
   body {
     background-image: url("../Images/wp5418538-floral-aesthetic-desktop-wallpapers.jpg");
     padding-top: 70px;
+    background-size: cover;
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
     16 0,
   auto;
   }
   div#root {
-    width: 90%;
+    width: 100%;
     height: auto;
     border-radius: 30px;
     padding: 30px;
+    background: rgb(229 222 190);
   }
   section {
     padding-top: 20px;
@@ -94,12 +96,13 @@ input#addTaskInput {
     width: 200px;
     font-size: 16px;
   }
-
+}
 /* Media queries for tablet devices */
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
   body {
-    background-image: url("../Images/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcGRmbG93ZXJzZXQxNy1nbG95LTAxYS1sXzEuanBn.webp");
+    background-image: url("../Images/tablet.webp");
     padding-top: 70px;
+    background-size: cover;
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
     16 0,
   auto;
@@ -109,6 +112,7 @@ input#addTaskInput {
     height: 600px;
     border-radius: 50px;
     padding: 50px;
+    background: rgb(229 222 190);
   }
   section {
     padding-top: 50px;
@@ -117,5 +121,4 @@ input#addTaskInput {
   button {
     top: -25px;
   }
-}
 }
