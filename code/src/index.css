@@ -69,3 +69,55 @@ input#addTaskInput {
   width: 280px;
   display: flex;
 }
+
+/* Media queries for mobile devices */
+@media only screen and (max-width: 600px) {
+  body {
+    background-image: url("../Images/wp5418538-floral-aesthetic-desktop-wallpapers.jpg");
+    padding-top: 70px;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
+    16 0,
+  auto;
+  }
+  div#root {
+    width: 90%;
+    height: auto;
+    border-radius: 30px;
+    padding: 30px;
+  }
+  section {
+    padding-top: 20px;
+    font-size: 16px;
+  }
+  button {
+    /* top: -15px; */
+  }
+  input#addTaskInput {
+    width: 200px;
+    font-size: 16px;
+  }
+
+/* Media queries for tablet devices */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+  body {
+    background-image: url("../Images/wp5418538-floral-aesthetic-desktop-wallpapers.jpg");
+    padding-top: 70px;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
+    16 0,
+  auto;
+  }
+  div#root {
+    width: 70%;
+    height: 600px;
+    border-radius: 50px;
+    padding: 50px;
+  }
+  section {
+    padding-top: 50px;
+    font-size: 24px;
+  }
+  button {
+    top: -25px;
+  }
+}
+}
