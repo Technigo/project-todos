@@ -2,6 +2,33 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from 'reducers/todo';
+import styled from 'styled-components';
+
+const NewTodo = styled.form`
+  line-height: 1em;
+  padding-bottom: 10px;
+`;
+
+const Input = styled.input`
+  background: #fff;
+  border: none;
+  padding: 8px;
+  font-size: 18px;
+  font-family: 'Baloo 2', cursive;
+  border-bottom: 2px dashed;
+
+  :focus {
+    outline: none;
+  }
+`;
+
+const AddButton = styled.button`
+  font-family: 'Baloo 2', cursive;
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+`;
 
 export const AddTodo = () => {
   const [inputValue, setInputValue] = useState('');
@@ -12,7 +39,7 @@ export const AddTodo = () => {
 
     const newTodo = {
       id: Date.now().toString(),
-      createdAt: Date.now(),
+      createdAt: new Date(),
       text: inputValue,
       isDone: false
     };
@@ -21,14 +48,14 @@ export const AddTodo = () => {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
+    <NewTodo onSubmit={onFormSubmit}>
       <label>
         <p>New Task:</p>
-        <input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
+        <Input type="text" value={inputValue} onChange={(e) => setInputValue(e.target.value)} />
       </label>
-      <button type="submit" disabled={inputValue.length === 0}>
+      <AddButton type="submit" disabled={inputValue.length === 0}>
         ADD
-      </button>
-    </form>
+      </AddButton>
+    </NewTodo>
   );
 };

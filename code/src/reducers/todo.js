@@ -7,7 +7,7 @@ export const todos = createSlice({
   initialState: {
     items: [
       { id: '1', text: 'Click this task to mark it as done!', isDone: false },
-      { id: '2', text: 'Your first task is: Party like a rockstar', isDone: false }
+      { id: '2', text: 'Party like a rockstar', isDone: false }
     ]
   },
   // The 'reducers' field is an object that contains functions to modify the state of the 'todo slice'.

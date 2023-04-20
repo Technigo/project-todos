@@ -2,8 +2,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { todos } from 'reducers/todo';
+import { toWords } from 'number-to-words';
 import { TodoItem } from './TodoItem';
 import { AddTodo } from './AddTodo';
+import { Wrapper, Button } from './GlobalStyle';
 
 export const TodoList = () => {
   const dispatch = useDispatch();
@@ -26,7 +28,7 @@ export const TodoList = () => {
   };
 
   const onClearAll = () => {
-    if (window.confirm('Are you sure you want to delete all tasks?')) {
+    if (window.confirm('Are you sure you want to delete all tasks, including unfinished ones?')) {
       dispatch(todos.actions.clearAll());
     }
   };
@@ -35,8 +37,11 @@ export const TodoList = () => {
   const doneTodos = allTodos.filter((todo) => todo.isDone);
 
   return (
-    <>
-      <h2>To-do ({todosTodo.length})</h2>
+    <Wrapper>
+      <h2>
+        You have {toWords(todosTodo.length)} {todosTodo.length === 1 ? 'thing' : 'things'} to do
+        today
+      </h2>
 
       {todosTodo.length === 0 && <p>You are all done! ⭐</p>}
 
@@ -46,19 +51,21 @@ export const TodoList = () => {
 
       <AddTodo />
 
-      <h2>Done ({doneTodos.length})</h2>
+      <h2>
+        You have finishied {toWords(doneTodos.length)} {doneTodos.length === 1 ? 'task' : 'tasks'}
+      </h2>
 
-      <button type="button" onClick={onCompleteAll}>
+      <Button type="button" onClick={onCompleteAll}>
         Complete all
-      </button>
+      </Button>
 
-      <button type="button" onClick={onClearAll}>
+      <Button type="button" onClick={onClearAll}>
         Clear all
-      </button>
+      </Button>
 
       {doneTodos.map((todo, index) => (
         <TodoItem todo={todo} index={index} key={todo.id} onDelete={onDelete} onDone={onDone} />
       ))}
-    </>
+    </Wrapper>
   );
 };
