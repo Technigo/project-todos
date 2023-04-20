@@ -52,7 +52,7 @@ h2{
  @media (min-width: 200px) and (max-width: 374px) {
   .app-container {
     margin-top: 2rem;
-    width: 50%;
+    
     min-height: 60vh;
   }
 }
