@@ -3,6 +3,7 @@ import { Provider } from 'react-redux'
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import AddTask from 'components/AddTask';
 import Header from 'components/Header';
+import { Footer } from 'components/Footer';
 import todolist from 'reducers/todolist';
 
 export const App = () => {
@@ -14,6 +15,7 @@ export const App = () => {
     <Provider store={store}>
       <Header />
       <AddTask />
+      <Footer />
     </Provider>
   );
 }

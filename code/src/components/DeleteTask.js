@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrashCan } from '@fortawesome/free-regular-svg-icons'
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import todolist from 'reducers/todolist';
 import styled, { keyframes } from 'styled-components';
 
@@ -16,7 +16,9 @@ const wobble = keyframes`
 `
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-color: white;
+color: rgba(255, 255, 255, 0.7);
+width: 20px;
+height: 20px;
 
 :hover {
     cursor: pointer;

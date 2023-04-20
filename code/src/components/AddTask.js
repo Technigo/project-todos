@@ -6,19 +6,34 @@ import styled from 'styled-components';
 import todolist from 'reducers/todolist';
 import TaskList from './TaskList';
 import DeleteAllTasks from './DeleteAllTasks';
-import TaskCount from './TaskCount';
+import { SubmitButton } from '../styles/Buttons';
 
 const ToDoWrapper = styled.section`
 z-index: 3;
 margin: auto;
 width: 470px;
 padding: 10px;
-background: rgba(255, 255, 255, 0.15);
+background: rgba(255, 255, 255, 0.12);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(4.9px);
 -webkit-backdrop-filter: blur(4.9px);
-border: 1px solid rgba(255, 255, 255, 0.22);`
+border: 1px solid rgba(255, 255, 255, 0.22);
+
+input[type=text] {
+font-family: Quicksand;
+outline: none;
+color: white;
+padding-left: 15px;
+width: 300px;
+height: 40px;
+background: rgba(255, 255, 255, 0.08);
+border-radius: 15px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(1.5px);
+-webkit-backdrop-filter: blur(1.5px);
+border: 1px solid rgba(255, 255, 255, 0.16);
+ }`
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -39,17 +54,16 @@ const AddTask = () => {
 
   return (
     <ToDoWrapper>
-      <TaskCount />
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
-            Add new task:<br />
+          <p>add new task:</p>
           <input
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
             id="addTaskInput"
             type="text" />
         </label>
-        <button type="submit">Add Task!</button>
+        <SubmitButton type="submit">add</SubmitButton>
       </form>
       <TaskList />
       <DeleteAllTasks />
