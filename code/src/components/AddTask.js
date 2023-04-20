@@ -55,7 +55,6 @@ const AddTask = () => {
         </select>
         <AddTaskChildDiv>
           <label htmlFor="addTaskInput">
-            {/* Create a new task <br /> */}
             <input
               value={inputValue}
               onChange={(event) => setInputValue(event.target.value)}

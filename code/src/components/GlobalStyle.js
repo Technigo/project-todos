@@ -12,7 +12,7 @@ body {
   animation-name: slide-in-top;
   animation-duration: 1s;
 
-  /* @keyframes slide-in-top {
+  @keyframes slide-in-top {
     from{
         transform: translate3d(0, -100%, 0);
         visibility: visible;
@@ -20,7 +20,7 @@ body {
     to{
         transform: translate3d(0, 0, 0);
     }
-} */
+}
 
   @media (min-width: 768px) {
      margin: 10vh 20%;

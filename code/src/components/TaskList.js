@@ -50,7 +50,7 @@ const TaskList = () => {
             {/* sort & move completed tasks to the bottom of the list in each category */}
             {tasksArray.sort((a) => (a.isComplete ? 1 : -1)).map((singleTask) => (
               <SingleTaskWrapper key={singleTask.id}>
-                <input
+                <CheckboxInput
                   type="checkbox"
                   checked={singleTask.isComplete}
                   onChange={() => handleCheckboxChange(singleTask.id)} />
@@ -60,6 +60,7 @@ const TaskList = () => {
                   <p>Due: {singleTask.dueDate}</p>
                 </SingleTaskChild>
                 <Button
+                  binBtn
                   type="button"
                   onClick={() => handleDeletingTask(singleTask.id)}>
                 🗑️
@@ -76,18 +77,32 @@ const TaskList = () => {
 const SingleTaskWrapper = styled.div`
 display: flex;
 flex-direction: row;
-justify-content: space-evenly;
+justify-content: space-between;
 align-items: center;
 padding: 5px;
-gap: 2rem;
+gap:1rem;
 /* border: solid green; */
-`
+`;
 
 const SingleTaskChild = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: space-around;
+margin-left: 0;
 /* border: solid green; */
-`
+`;
+
+const CheckboxInput = styled.input`
+  /* appearance: none; */
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid #000;
+  border-radius: 50%;
+  background-color: #fff;
+  /* Change color of the checkbox when checked */
+  /* &:checked {
+    background-color: #000;
+  } */
+`;
 
 export default TaskList;
