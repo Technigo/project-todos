@@ -9,8 +9,15 @@ export const Uncompleted = () => {
   const uncompletedTasks = useSelector((store) => store.uncompleted.tasks);
 
   const onTaskChecked = (task) => {
+    const checkedTime = Date.now();
+    // new task with added completion time
+    const checkedTask = {
+      ...task,
+      completionTime: checkedTime
+    };
+
     dispatch(uncompleted.actions.deleteTask(task));
-    dispatch(completed.actions.setTaskDone(task));
+    dispatch(completed.actions.setTaskDone(checkedTask));
   }
 
   return (
