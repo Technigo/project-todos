@@ -1,7 +1,7 @@
 import React from 'react'
 import { format } from 'date-fns'
 import styled from 'styled-components'
-import GlobalStyles from 'styles/GlobalStyles'
+import GlobalStyle from 'styles/GlobalStyle'
 
 const Header = () => {
   const currentDate = new Date();
@@ -9,7 +9,7 @@ const Header = () => {
 
   return (
     <>
-      <GlobalStyles />
+      <GlobalStyle />
       <Title>To Do List</Title>
       <DateToday>{formattedDate}</DateToday>
     </>
@@ -22,8 +22,9 @@ export default Header;
 
 const Title = styled.h1`
   font-family: 'Quicksand', sans-serif;
-  font-weight: 400;
+  font-weight: 500;
   text-align: center;
+  color: #658864;
 `;
 
 const DateToday = styled.h3`

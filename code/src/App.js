@@ -1,5 +1,5 @@
 import React from 'react';
-import GlobalStyles from 'styles/GlobalStyles';
+import GlobalStyle from 'styles/GlobalStyle';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import Header from 'components/Header';
@@ -16,7 +16,7 @@ export const App = () => {
   const store = configureStore({ reducer });
   return (
     <>
-      <GlobalStyles />
+      <GlobalStyle />
       <Provider store={store}>
         <Header />
         <TaskList />
