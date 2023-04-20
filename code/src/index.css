@@ -1,13 +1,13 @@
 body {
   margin: 0;
-  height: 100vw;
+  /* height: 100vw; */
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   box-sizing: border-box;
-      background-image: url("../src/assets/bgflower.jpg");
+     background-image: url("../src/assets/backgroundsimple.jpg");
         background-size: cover;
         background-size: 100% auto;
         background-repeat: no-repeat;
@@ -16,6 +16,8 @@ body {
         cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🦄</text></svg>")
         16 0,
       auto;
+      background-attachment: fixed;
+  background-position: center;
 }
 
 code {
@@ -27,16 +29,128 @@ code {
   border: 2px solid black;
     display: flex;
     flex-direction: column;
-    background: #b4b2b296;
-    width: 70%;
+   /* background: #b4b2b296; */
+  background-color: #aaaaaad1;
+  width: 35%;
+  align-items: center;
+    border-radius: 83px;
+    border: none;
+    box-shadow: 0 0.5rem 3rem #383737;
+    overflow-y: scroll;
+    height: 400px;
+}
+/* Customized scroll (hide) */
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+div#root {
+  display: flex;
+    justify-content: center;
+    padding-top: 210px;
+    padding-top: 128px;
+}
+
+/* Media queries for mobile devices */
+@media only screen and (max-width: 600px) {
+  body {
+  background-image: url("assets/desktop-bg.jpg");
+  padding-top: 70px;
+  background-size: cover;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
+  16 0,
+  auto;
+  background-attachment: fixed;
+  background-position: center;
+  }
+
+  div#root {
+    border-radius: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+  .outerWrapper {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     border-radius: 83px;
     border: none;
     box-shadow: 0 0.5rem 3rem #383737;
+    overflow-y: scroll;
+    height: 480px;
+    width: 310px;
+    top: -95px;
+    position: relative;
 }
-div#root {
-  display: flex;
+  section {
+    padding-top: 20px;
+    font-size: 16px;
+  }
+  .input {
+    height: 50px;
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
     justify-content: center;
-    padding-top: 300px;
+    align-items: center;
+    width: 75%;
+ }
+  input#addTaskInput {
+    width: 200px;
+    font-size: 16px;
+  }
+}
+/* Media queries for tablet devices */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
   
+  body {
+  background-image: url("assets/backgroundsimple.jpg");
+  padding-top: 70px;
+  background-size: cover;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
+  16 0,
+  auto;
+  background-attachment: fixed;
+  background-position: center;
+  }
+  .outerWrapper {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 83px;
+    border: none;
+    box-shadow: 0 0.5rem 3rem #383737;
+    overflow-y: scroll;
+    height: 700px;
+    width: 460px;
+}
+  .input {
+    height: 50px;
+    border-radius: 12px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+ }
+  div#root {
+    width: 80%;
+    height: 700px;
+    border-radius: 50px;
+    padding: 50px;
+    align-self: center;
+}
+  section {
+    padding-top: 50px;
+    font-size: 24px;
+  }
+  button {
+    top: -25px;
+  }
 }

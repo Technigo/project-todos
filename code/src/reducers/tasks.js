@@ -13,7 +13,7 @@ const initialState = {
     {
       id: '2',
       taskName: 'Get rid of the damn dot on the left side',
-      isChecked: true // define with myself, also change it in the addNewTask
+      isChecked: false // define with myself, also change it in the addNewTask
     },
     {
       id: '3',
@@ -23,7 +23,7 @@ const initialState = {
     {
       id: '4',
       taskName: 'Buy some chips',
-      isChecked: true // isChecked same as in tasks.js
+      isChecked: false // isChecked same as in tasks.js
     }
   ]
 }
@@ -60,9 +60,10 @@ const tasks = createSlice({
       const copyTaskListArrayFromStore = store.items;
       const condition = (element) => element.id === id;
       const foundIndex = copyTaskListArrayFromStore.findIndex(condition);
-      copyTaskListArrayFromStore[foundIndex].isCaught = !copyTaskListArrayFromStore[foundIndex].isCaught;
+      copyTaskListArrayFromStore[foundIndex].isChecked = !copyTaskListArrayFromStore[foundIndex].isChecked;
       store.items = copyTaskListArrayFromStore;
     }
+
   }
 });
 

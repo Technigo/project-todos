@@ -2,6 +2,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
+import styled from 'styled-components';
 
 const TaskList = () => {
 /*  const handleCheck = () => { } */
@@ -12,8 +13,13 @@ const TaskList = () => {
     dispatch(tasks.actions.deleteSingleTask(id));
   } */
   const onIsCheckedCheckboxToggle = (id) => {
-    dispatch(tasks.actions.deleteSingleTask(id));
+    dispatch(tasks.actions.toggleIfTaskIsChecked(id)); // gör att checkboxen checkas i vid click
   }
+
+  const TaskName = styled.span`
+    ${({ isChecked }) => isChecked && 'text-decoration: line-through'};
+  `;
+
   return (
     <section>
       <ul>
@@ -21,11 +27,9 @@ const TaskList = () => {
           return (
             <li key={singleTask.id}>
               <p>
-                <span>{singleTask.taskName}</span>
-                {/*                 <button
-                  type="button"
-                  onClick={() => onDeleteSingleTaskClick(singleTask.id)}> Delete this task
-                </button> */}
+                <TaskName isChecked={singleTask.isChecked}>
+                  {singleTask.taskName}
+                </TaskName>
                 <label htmlFor={`task_with_id${singleTask.id}`}>
                   <input
                     id={`task_with_id${singleTask.id}`}

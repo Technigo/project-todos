@@ -34,7 +34,11 @@ const AddTask = () => {
   }
   return (
     <section>
-      <button className="resetButton" type="button" onClick={onResetToDoClick}> Reset To-Do List</button>
+      <button
+        className="resetButton"
+        type="button"
+        onClick={onResetToDoClick}> Reset To-Do List
+      </button>
       <div className="input">
         <form onSubmit={onFormSubmit}>
           <label htmlFor="addTaskInput">
