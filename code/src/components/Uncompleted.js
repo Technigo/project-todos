@@ -13,7 +13,8 @@ export const Uncompleted = () => {
     // new task with added completion time
     const checkedTask = {
       ...task,
-      completionTime: checkedTime
+      completionTime: checkedTime,
+      isCompleted: !task.isCompleted
     };
 
     dispatch(uncompleted.actions.deleteTask(task));
@@ -25,7 +26,11 @@ export const Uncompleted = () => {
       {uncompletedTasks.map((task) => (
         <div key={task.id}>
           <label htmlFor="checkbox">
-            <input type="checkbox" id="checkbox" onChange={() => onTaskChecked(task)} />{task.text}
+            <input
+              type="checkbox"
+              id="checkbox"
+              checked={task.isCompleted}
+              onChange={() => onTaskChecked(task)} />{task.text}
           </label>
           <button type="button" onClick={() => dispatch(uncompleted.actions.deleteTask(task))}>🗑️</button>
           <p>Task created at: {format(task.creationTime, 'HH:mm dd/MM/yyyy')}</p>
