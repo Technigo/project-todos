@@ -88,7 +88,8 @@ export const StyledCheckbox = styled.input`
   }
 
   &:checked::before {
-    content: '\\2714';
+    /* content: '\\2714' inserts a checkmark symbol (Unicode character \u2714) before the content of the checkbox when it is checked. The checkmark symbol is represented by its Unicode code point, which is specified using the escape sequence \\2714. */
+    content: '\\2714'; 
     display: inline-block;
     font-size: 14px;
     line-height: 1;
