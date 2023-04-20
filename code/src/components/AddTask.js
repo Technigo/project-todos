@@ -5,6 +5,11 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { addTask } from '../reducers/tasks'
 
+// eslint-disable-next-line no-lone-blocks
+{ /* const capitalize = (stringToCapitalise) => {
+  return stringToCapitalise.charAt(0).toUpperCase() + stringToCapitalise.slice(1);
+} */ }
+
 const AddTask = () => {
   const [input, setInput] = useState('')
   const [selectedProject, setSelectedProject] = useState('')

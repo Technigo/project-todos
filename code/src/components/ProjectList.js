@@ -5,8 +5,8 @@ import { useSelector, useDispatch } from 'react-redux'
 import { toggleProjectComplete } from '../reducers/projects'
 
 const ProjectList = () => {
-  const projects = useSelector((state) => state.projects)
   const dispatch = useDispatch()
+  const projects = useSelector((state) => state.projects)
 
   const handleToggleComplete = (id) => {
     dispatch(toggleProjectComplete(id))
