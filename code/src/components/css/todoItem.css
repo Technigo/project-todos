@@ -28,6 +28,7 @@ align-items: center;
 	padding: 0;
 	cursor: pointer;
 	outline: none;
+	margin-right: 5px;
   }
   
   .deleteBtn img {
@@ -47,7 +48,7 @@ align-items: center;
   .doneBtn img {
 	width: 100%;
 	height: 70px;
-	margin-left: 2px;
+	
 
   }
   
