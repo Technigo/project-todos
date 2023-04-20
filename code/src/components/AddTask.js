@@ -14,7 +14,7 @@ const AddTask = () => {
     event.preventDefault();
     const newTask = {
       id: uniqid(),
-      text: inputValue.toUpperCase(),
+      text: inputValue.toLowerCase(),
       completed: false
     }
     dispatch(tasks.actions.addTask(newTask));

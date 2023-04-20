@@ -4,7 +4,7 @@ const initialState = {
   items: [
     {
       id: '1',
-      text: 'Create your own todo',
+      text: 'create your own todo',
       completed: false
     }
   ]

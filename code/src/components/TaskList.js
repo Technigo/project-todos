@@ -9,7 +9,7 @@ const TaskList = () => {
 
   return (
     <Paper elevation={4} style={{ margin: '20px', opacity: '0.9' }}>
-      <List style={{ maxHeight: '320px', overflowY: 'scroll' }}>
+      <List style={{ maxHeight: '35vh', overflowY: 'scroll' }}>
         <TransitionGroup>
           {taskList.map((eachTask) => {
             return (
