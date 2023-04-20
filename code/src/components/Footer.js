@@ -27,9 +27,7 @@ const FooterStyled = styled.footer`
     display: flex;
     justify-content: center;
     align-items: center;
-    position: absolute;
-    bottom: 0;
-
+    margin-top: auto;
 `
 const Picture = styled.img`
     width: 30px;

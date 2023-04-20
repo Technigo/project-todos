@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-// import styled from 'styled-components'
+import styled from 'styled-components'
 // import GlobalStyle from 'styles/GlobalStyle'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
@@ -29,17 +29,17 @@ const AddTask = () => {
     <>
       {/* <GlobalStyle /> */}
       <section>
-        <form onSubmit={onFormSubmit}>
+        <Form onSubmit={onFormSubmit}>
           <label htmlFor="addTaskInput">
-            My next task:
             <input
               type="text"
               value={inputValue}
               onChange={(event) => setInputValue(event.target.value)}
+              placeholder="Add new task"
               id="addTaskInput" />
           </label>
-          <button type="submit">Add Now!</button>
-        </form>
+          <button type="submit">Add</button>
+        </Form>
         <button type="button" onClick={onRemoveAllButtonClick}>Remove all</button>
       </section>
     </>
@@ -48,4 +48,17 @@ const AddTask = () => {
 }
 
 export default AddTask
+
+/* STYLING FOR ADDTASK */
+
+const Form = styled.form`
+
+input[type=text] {
+      background: white;
+      font-size: 16px;
+      outline: 1px solid #A7727D;
+      border-radius: 5px;
+      width: 100%;
+}
+`
 

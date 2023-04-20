@@ -44,7 +44,6 @@ export const tasks = createSlice({
       if (index !== -1) {
         store.items.splice(index, 1);
       }
-
       // store.items = store.items.filter((item) => item.id !== action.payload)
       // store.items = store.items.splice(action.payload)
     },
