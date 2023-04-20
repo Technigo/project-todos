@@ -7,13 +7,13 @@ const tasks = createSlice({
     items: [
       {
         id: 0,
-        text: 'Continue with code along',
+        text: 'Play with cats',
         isComplete: false,
         date: Date.now()
       },
       {
         id: 1,
-        text: 'Clean the office room',
+        text: 'Eat chocolate',
         isComplete: false,
         date: Date.now()
       }
