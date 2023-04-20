@@ -2,6 +2,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import { toDos } from 'reducers/toDos'
+import { Checkbox } from './Checkbox'
 
 export const ToDoList = () => {
   const toDoList = useSelector((store) => store.toDos.items)
@@ -12,10 +13,10 @@ export const ToDoList = () => {
       {toDoList.map((singleToDo) => {
         return (
           <ToDoCard>
-            <List key={singleToDo.id}>
-              <Checkboxes type="checkbox" className="checkboxes" checked={singleToDo.checked} onChange={() => dispatch(toDos.actions.toggleChecked(singleToDo))} />
+            <Label key={singleToDo.id}>
+              <Checkbox type="checkbox" className="checkboxes" checked={singleToDo.checked} onChange={() => dispatch(toDos.actions.toggleChecked(singleToDo))} />
               {singleToDo.name}
-            </List>
+            </Label>
             <DeleteButton type="button" onClick={() => dispatch(toDos.actions.deleteToDo(singleToDo))}> ⌫</DeleteButton>
           </ToDoCard>
         )
@@ -33,7 +34,7 @@ overflow: scroll;
 padding: 10px;
 `
 
-const List = styled.li`
+const Label = styled.label`
 display: flex;
 flex-direction:row;
 align-items: center;
@@ -73,15 +74,5 @@ font-size: 32px;
 &:hover {
   cursor: pointer;
   transform: scale(1.2);
-}
-`
-
-const Checkboxes = styled.input`
-width: 20px;
-height: 20px;
-outline: 2px solid black;
-
-&:before {
-  background-color: red;
 }
 `
