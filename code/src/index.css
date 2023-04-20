@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,700;0,900;1,100;1,400&display=swap');
+@import-normalize;
 
 :root {
-  --bg-color: #323030;
+  --bg-color: #212121;
   --text-color: #fff;
   --hover-color: #E7FF86;
 
-  --main-color: #656464;
+  --main-color: #4d4c4c;
   --box-color: #312F2F;
   }
 
@@ -23,14 +24,31 @@ code {
     monospace;
 }
 
+form {
+  display: flex;
+  justify-self: center;
+  margin: 10px 5px;
+}
+
 input {
   border: none;
   border-radius: 3px;
   font-size: 16px;
   height: 22px;
-  padding: 5px 8px;
   width: 58vw;
+  max-width: 278px;
+  padding: 5px 8px;
   margin-top: 10px;
+}
+
+i {
+  color: var(--box-color);
+  font-size: 38px;
+  margin-top: 6px;
+}
+
+i:hover {
+  color: var(--hover-color);
 }
 
 li {
@@ -42,4 +60,14 @@ ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 700;
+}
+
+a:hover{
+  color: var(--hover-color);
 }

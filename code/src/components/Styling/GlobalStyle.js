@@ -39,16 +39,8 @@ export const Paragraph = styled.p`
 `;
 
 export const AddBtn = styled.button`
-  background-color: var(--box-color);
+  background-color: transparent;
   border: none;
-  font-family: 'Lato', sans-serif;
-  font-size: 25px;
-  font-weight: 700;
-  color: var( --text-color);
-  border-radius: 5px;
-  margin-left: 4px;
-  margin-top: 10px;
-  padding: 3px 10px;
   cursor: pointer;
   &:hover {
     color: var(--hover-color);
@@ -60,10 +52,36 @@ export const TaskBox = styled.div`
     flex-direction: column;
     align-items: left;
     background-color: var(--box-color);
-    width: 230px;
+    width: 70vw;
+    max-width: 300px;
     height: 100%;
     padding: 20px;
+    margin-top: 10px;
     border-radius: 10px;
-    margin-top: 20px;
-  `
+`
+export const Foot = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 200px;
+  margin-top: 20px;
+
+  i {
+    font-size: 20px;
+    color: var(--text-color);
+    padding: 0 18px 0 18px;
+    &:hover {
+      color: var(--hover-color);
+    }
+  }
+`
+
+export const FootParagraph = styled.p`
+  font-size: 12px;
+  font-weight: 300;
+  margin: 0;
+  padding-top: 10px;
+  text-align: center;
+`;
+
 export default GlobalStyles;

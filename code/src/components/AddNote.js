@@ -26,7 +26,9 @@ export const AddNote = () => {
         <label htmlFor="addNoteInput">
           <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addNoteInput" type="text" />
         </label>
-        <AddBtn type="submit">+</AddBtn>
+        <AddBtn type="submit">
+          <i className="fa-solid fa-square-plus" />
+        </AddBtn>
       </form>
     </section>
   )
