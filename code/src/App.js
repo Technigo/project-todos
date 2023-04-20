@@ -1,6 +1,5 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import React from 'react';
-import GlobalStyling from 'Styling/GlobalStyling';
 import { Provider } from 'react-redux';
 import uncompleted from 'reducers/uncompleted';
 import completed from 'reducers/completed';
@@ -16,7 +15,6 @@ const store = configureStore({ reducer });
 export const App = () => {
   return (
     <Provider store={store}>
-      <GlobalStyling />
       <Tasklist />
     </Provider>
   );

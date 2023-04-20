@@ -22,15 +22,13 @@ export const AddTask = () => {
   };
 
   return (
-    <section>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="add">Add a new task
-          <input
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)} />
-        </label>
-        <button type="submit">➕</button>
-      </form>
-    </section>
+    <form className="addTask-form" onSubmit={onFormSubmit}>
+      <label htmlFor="add">Add task:
+        <input
+          value={inputValue}
+          onChange={(event) => setInputValue(event.target.value)} />
+      </label>
+      <button type="submit">➕</button>
+    </form>
   )
 }

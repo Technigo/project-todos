@@ -7,6 +7,7 @@ import format from 'date-fns/format';
 export const Uncompleted = () => {
   const dispatch = useDispatch();
   const uncompletedTasks = useSelector((store) => store.uncompleted.tasks);
+  const flippedTasks = [...uncompletedTasks].reverse();
 
   const onTaskChecked = (task) => {
     const checkedTime = Date.now();
@@ -22,18 +23,20 @@ export const Uncompleted = () => {
   }
 
   return (
-    <section>
-      {uncompletedTasks.map((task) => (
-        <div key={task.id}>
+    <section className="todo-list">
+      <h2>To-do</h2>
+      {flippedTasks.map((task) => (
+        <div className="task-div" key={task.id}>
           <label htmlFor="checkbox">
             <input
               type="checkbox"
               id="checkbox"
               checked={task.isCompleted}
-              onChange={() => onTaskChecked(task)} />{task.text}
+              onChange={() => onTaskChecked(task)} />
+            <span className={task.isCompleted ? 'checked' : 'unchecked'}>{task.text}</span>
           </label>
-          <button type="button" onClick={() => dispatch(uncompleted.actions.deleteTask(task))}>🗑️</button>
-          <p>Task created at: {format(task.creationTime, 'HH:mm dd/MM/yyyy')}</p>
+          <button type="button" onClick={() => dispatch(uncompleted.actions.deleteTask(task))}>❌</button>
+          <p className="timestamp">Task created at: {format(task.creationTime, 'HH:mm dd/MM/yyyy')}</p>
         </div>
       ))}
     </section>

@@ -5,6 +5,8 @@ export const TodoCounter = () => {
   const numberOfUncompletedTasks = useSelector((store) => store.uncompleted.tasks.length);
 
   return (
-    <p>You have {numberOfUncompletedTasks} unfinished task/s</p>
+    <div className="counter-div">
+      <p>You have {numberOfUncompletedTasks} unfinished task/s</p>
+    </div>
   )
 };

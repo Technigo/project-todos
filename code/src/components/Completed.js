@@ -20,7 +20,8 @@ export const Completed = () => {
   };
 
   return (
-    <section>
+    <section className="done-list">
+      <h3>Done</h3>
       {completedTasks.map((task) => (
         <div key={task.id}>
           <label htmlFor="checkbox">
@@ -29,9 +30,9 @@ export const Completed = () => {
               id="checkbox"
               checked={task.isCompleted}
               onChange={() => checkboxHandler(task)} />
-            {task.text}
+            <span className={task.isCompleted ? 'checked' : 'unchecked'}>{task.text}</span>
           </label>
-          <button type="button" onClick={() => dispatch(completed.actions.deleteTask(task))}>🗑️</button>
+          <button type="button" onClick={() => dispatch(completed.actions.deleteTask(task))}>❌</button>
           <p>Task completed at: {format(task.completionTime, 'HH:mm dd/MM/yyyy')}</p>
         </div>
       ))}
