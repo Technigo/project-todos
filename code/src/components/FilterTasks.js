@@ -7,11 +7,16 @@ import {
 
 export const FilterTasks = () => {
   const allTasks = useSelector((store) => store.tasks.tasks);
-  // const ongoingTasks = allTasks.filter((item) => item.completed === false);
-  // const completedTasks = allTasks.filter((item) => item.completed === true);
   const projectToFilterOn = useSelector((store) => store.tasks.selectedProject)
-  console.log(projectToFilterOn)
-  // const filterOn = useSelector((store) => store.tasks.filterOn);
+  const filterOn = useSelector((store) => store.tasks.filterOn);
+  const filteredAllTasks = allTasks.filter((item) => {
+    if (projectToFilterOn === 'all projects' && filterOn === 'all') {
+      return allTasks
+    } else {
+      return item.value === projectToFilterOn
+    }
+  });
+
   const ongoingTasks = allTasks.filter((item) => {
     console.log('item.value:', item.value)
     if (projectToFilterOn === 'all projects') {
@@ -50,7 +55,7 @@ export const FilterTasks = () => {
   return (
     <>
       <MDBNavbarItem>
-        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" filtering onClick={filterAllTasks}>All</MDBNavbarLink>
+        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" filtering onClick={filterAllTasks}>All ({filteredAllTasks.length})</MDBNavbarLink>
       </MDBNavbarItem>
       <MDBNavbarItem>
         <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" filtering onClick={filterOngoingTasks}>Ongoing ({ongoingTasks.length})</MDBNavbarLink>
