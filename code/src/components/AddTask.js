@@ -33,14 +33,16 @@ export const AddTask = () => {
         <AddTaskLabel htmlFor="addTaskInput">
         👇 ADD task Here 👇
         </AddTaskLabel>
-        <AddTaskInput
-          value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)}
-          id="addTaskInput"
-          type="text"
-          placeholder="Enter a task..."
-          onKeyPress={handleKeyPress} />
-        <AddTaskButton type="submit">Add Now!</AddTaskButton>
+        <EnterSection>
+          <AddTaskInput
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+            id="addTaskInput"
+            type="text"
+            placeholder="Enter a task..."
+            onKeyPress={handleKeyPress} />
+          <AddTaskButton type="submit">➕</AddTaskButton>
+        </EnterSection>
         <DeleteButton type="button" onClick={deleteAllTodosBtnClick}> Psst... delete everything </DeleteButton>
       </AddTaskForm>
     </AddTaskSection>
@@ -92,14 +94,21 @@ const AddTaskLabel = styled.label`
   }
 `;
 
+const EnterSection = styled.section`
+display: flex;
+flex-direction: row;
+align-items: center;
+justify-content: center;
+`
+
 const AddTaskInput = styled.input`
   padding: 0.5rem;
   font-size: 1.5rem;
   border: none;
   border-radius: 20px;
   border-bottom: 2px solid #ccc;
-  margin-bottom: 1rem;
-  max-width: 80%;
+
+  max-width: 60%;
   font-family: 'Mystery Quest', cursive;
   ::placeholder {
     padding-left: 10px;
@@ -108,12 +117,17 @@ const AddTaskInput = styled.input`
 `;
 
 const AddTaskButton = styled.button`
-  padding: 0.5rem 1rem;
-  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  font-size: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: #1abc9c;
   color: #fff;
   border: none;
   border-radius: 4px;
+  margin-left: 5px;
   cursor: pointer;
     font-family: 'Mystery Quest', cursive;
 
