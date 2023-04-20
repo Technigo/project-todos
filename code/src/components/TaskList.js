@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 // import { formatDistanceToNow } from 'date-fns';
 import tasks from '../reducers/task';
-import { Content, TaskForm, DeleteButton, DeleteAllButton } from './TaskListStyling';
+import { Content, TaskForm } from './TaskListStyling';
+import { AddButton, DeleteButton, DeleteAllButton } from './Global';
 
 const TaskItem = ({ task }) => {
   const dispatch = useDispatch();
@@ -55,9 +56,9 @@ export const TaskList = () => {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="Add task" />
-        <button type="submit" onClick={onAddTask}>
-          Add
-        </button>
+        <AddButton type="submit" onClick={onAddTask}>
+          Add Task
+        </AddButton>
       </TaskForm>
 
       <div className="container">
