@@ -10,7 +10,7 @@ const AddTask = () => {
     event.preventDefault();
     const newTask = {
       id: Date.now().toString(),
-      name: inputValue.toUpperCase(),
+      name: inputValue.toLowerCase(),
       isCaught: false
     };
     dispatch(tasks.actions.addTask(newTask));
@@ -19,12 +19,13 @@ const AddTask = () => {
   }
   return (
     <section>
+      <p>Plans for today:</p>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
-          <p>To-Do To-Day?</p>
+          <button type="submit"> Add</button>
+          {/* Here user writes the dotos - input */}
           <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" />
         </label>
-        <button type="submit"> Add Task!</button>
       </form>
     </section>
   )

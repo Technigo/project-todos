@@ -7,13 +7,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   display: flex;
   flex-direction: column;
-  background-color: grey;
+  background-image: url("../Images/Cute-Plant-Wallpaper-for-Desktop.png");
+  background-size: cover;
+  padding-top: 70px;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
+  16 0,
+auto;
 }
 * {
   box-sizing: border-box;
 }
 p {
-  font-size: 10px;
+  font-size: 40px;
+    font-weight: 100;
+    color: #1a1a1a;
 }
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -21,10 +28,10 @@ code {
 }
 div#root {
   border: 2px solid black;
-  width: 50%;
+  width: 40%;
   align-self: center;
   height: 500px;
-  background: pink;
+  background: rgb(229 222 190);
   border-radius: 83px;
   border: none;
   box-shadow: 0 0.5rem 3rem #383737;
@@ -34,26 +41,31 @@ section {
   display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 100px;
+    padding-top: 35px;
+    font-weight: 200;
+    color: #1a1a1a;
+    font-size: 20px;
 }
 button {
-  width: 50%;
-  border-radius: 21px;
+  width: 50px;
+  border-radius: 40px;
   border-style: none;
+  margin: 10px;
+  position: relative;
+  top: 48px;
+  background: #80c7b9;
+  float: right;
+  top: -9px;
 }
+
 form {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: center;
 }
 
-label {
-  border: 1px solid red;
-  text-align: center;
-  font-size: 30px;
-}
-
 input#addTaskInput {
-  border: 1px solid red;
+  border: none;
+  width: 280px;
   display: flex;
 }

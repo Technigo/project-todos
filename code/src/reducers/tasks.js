@@ -5,22 +5,22 @@ const initialState = {
   items: [
     {
       id: '19asdfiuhas0823hjkadsh809',
-      name: 'Jigglypuff',
+      name: 'Tvätta',
       isCaught: false
     },
     {
       id: '19asdfiuhas0823hjkadsh809',
-      name: 'Snorlax',
+      name: 'Gymma',
       isCaught: true
     },
     {
       id: '19asdfiuhas0823hjkadsh809',
-      name: 'Mewtwo',
+      name: 'Hejhejhej',
       isCaught: false
     },
     {
       id: '19asdfiuhas0823hjkadsh809',
-      name: 'Oddish',
+      name: 'Köp ett flak',
       isCaught: true
     }
   ]
