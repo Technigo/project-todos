@@ -18,23 +18,24 @@ export const clothes = createSlice({
 
   reducers: {
     addNewClothes: (store, action) => {
-      store.clothes = [...store.clothes, action.payload];
-    },
+      store.items = [...store.items, action.payload];
+    }
   },
 
   checkComplete: (store, action) => {
-    store.clothes.forEach((clothes) => {
-      if (clothes.id === action.payload) {
-        clothes.isChecked = !clothes.isChecked
+    store.items.forEach((item) => {
+      if (item.id === action.payload) {
+        item.isChecked = !item.isChecked
       }
     });
   },
 
   deletingClothes: (store, action) => {
-    const filteredList = store.clothes.filter((clothes) => {
-      return store.clothes.indexOf(clothes) !== action.payload
+    const filteredList = store.items.filter((item) => {
+      return store.items.indexOf(item) !== action.payload
     });
-    store.clothes = filteredList
+    store.item = filteredList
   }
 });
 
+export default clothes;
