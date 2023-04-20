@@ -12,7 +12,7 @@ const TaskItem = ({ task, onToggle, onDeleteTask }) => (
     <input
       type="checkbox"
       checked={task.isComplete}
-      onChange={onToggle} />
+      onChange={() => onToggle(task.id)} />
     <span>{task.text}</span>
     <DeleteButton onClick={onDeleteTask}>
       Delete Task
@@ -37,7 +37,7 @@ const TaskList = () => {
   // Define a function for deleting a task
   const onDeleteTask = (id) => {
     // Dispatch an action to the task reducer with the delete payload
-    dispatch(tasks.actions.delete({ id }));
+    dispatch(tasks.actions.deleteTask({ id }));
   };
 
   // Define a function for adding a new task
@@ -50,6 +50,9 @@ const TaskList = () => {
 
   // Get the list of tasks from the Redux store using the useSelector hook
   const listWithTasks = useSelector((store) => store.tasks.items);
+
+  // Get the number of uncompleted tasks
+  const numUncompletedTasks = listWithTasks.filter((task) => !task.isComplete).length;
 
   // Define a function for deleting all tasks
   const onDeleteAll = () => {
@@ -72,7 +75,7 @@ const TaskList = () => {
       </TaskForm>
 
       <div className="container">
-        <h2>You have {listWithTasks.length} tasks left for today.</h2>
+        <h2>You have {numUncompletedTasks} tasks left for today.</h2>
         <ul>
           {listWithTasks.map((task) => (
             <TaskItem

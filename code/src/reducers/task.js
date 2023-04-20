@@ -30,13 +30,10 @@ const tasks = createSlice({
       store.items = [newTask, ...store.items];
     },
     toggle: (store, action) => {
-      store.items.forEach((item) => {
-        if (item.id === action.payload) {
-          item.isComplete = !item.isComplete;
-        }
-      });
+      const task = store.items.find((item) => item.id === action.payload.id);
+      task.isComplete = !task.isComplete;
     },
-    delete: (store, action) => {
+    deleteTask: (store, action) => {
       store.items.splice(action.payload, 1);
     },
     deleteAll: (store) => {
