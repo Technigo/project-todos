@@ -38,8 +38,8 @@ export const AddTodo = () => {
     event.preventDefault();
 
     const newTodo = {
-      id: Date.now().toString(),
-      createdAt: new Date(),
+      id: todos.id,
+      key: todos.id,
       text: inputValue,
       isDone: false
     };

@@ -15,8 +15,8 @@ export const TodoList = () => {
     dispatch(todos.actions.toggleItem(id));
   };
 
-  const onDelete = (todoIndex) => {
-    dispatch(todos.actions.deleteItem(todoIndex));
+  const onDelete = (index) => {
+    dispatch(todos.actions.deleteItem(index));
   };
 
   const onCompleteAll = () => {
@@ -37,7 +37,7 @@ export const TodoList = () => {
   const doneTodos = allTodos.filter((todo) => todo.isDone);
 
   return (
-    <Wrapper>
+    <Wrapper key="wrapper">
       <h2>
         You have {toWords(todosTodo.length)} {todosTodo.length === 1 ? 'thing' : 'things'} to do
         today
