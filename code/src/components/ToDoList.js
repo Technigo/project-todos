@@ -6,13 +6,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { todos } from 'redux/reducers/todos';
 import { ToDoItem } from './ToDoItem';
 import { AddToDo } from './AddToDo';
+import { Wrapper } from './GlobalStyle';
 
 export const ToDoList = () => {
   const dispatch = useDispatch();
   const allTodos = useSelector((store) => store.todos.items);
-
-  const onDone = (id) => {
-    dispatch(todos.actions.deleteItem(todoIndex));
+  // onDone calls the redux-reducer called toggleItem which toggles the items status
+  const onDone = (todoIndex) => {
+    dispatch(todos.actions.toggleItem(todoIndex));
   };
 
   const onDelete = (todoIndex) => {
@@ -37,40 +38,42 @@ export const ToDoList = () => {
   const doneTodos = allTodos.filter((todo) => todo.isDone);
 
   return (
-    <section>
-      {/* <ul>
+    <Wrapper>
+      <section>
+        {/* <ul>
         {allTodos.map((singleToDo) => {
           return <li key={singleToDo.id}>{singleToDo.name}</li>
         })}
       </ul> */}
-      <h2>To-do ({todosTodo.length})</h2>
+        <h2>To-do ({todosTodo.length})</h2>
 
-      {todosTodo.lenghth === 0 && <p>All done - great job! ✨</p>}
+        {todosTodo.length === 0 && <p>All done - great job! ✨</p>}
 
-      {todosTodo.map((todo, index) => (
-        <ToDoItem todo={todo} index={index} key={todo.id} onDelete={onDelete} onDone={onDone} />
-      ))}
+        {todosTodo.map((todo, index) => (
+          <ToDoItem todo={todo} index={index} key={todo.id} onDelete={onDelete} onDone={onDone} />
+        ))}
 
-      <AddToDo />
+        <AddToDo />
 
-      <h2>Done ({doneTodos.lenght})</h2>
+        <h2>Done ({doneTodos.length})</h2>
 
-      <button type="button" onClick={onCompleteAll}>
+        <button type="button" onClick={onCompleteAll}>
         Complete all to-dos
-      </button>
+        </button>
 
-      <button type="button" onClick={onClearAll}>
+        <button type="button" onClick={onClearAll}>
         Clear all to-dos
-      </button>
+        </button>
 
-      {doneTodos.map((todo, index) => (
-        <ToDoItem todo={todo} index={index} key={todo.id} onDelete={onDelete} onDone={onDone} />
-      ))}
-      {/* <ul>
+        {doneTodos.map((todo, index) => (
+          <ToDoItem todo={todo} index={index} key={todo.id} onDelete={onDelete} onDone={onDone} />
+        ))}
+        {/* <ul>
         {todoList.map((singleToDo) => {
           return <li key={singleToDo.id}>{singleToDo.name}</li>
         })}
       </ul> */}
-    </section>
+      </section>
+    </Wrapper>
   );
 };

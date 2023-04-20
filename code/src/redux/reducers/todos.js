@@ -8,8 +8,8 @@ export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: [
-      { id: '1', text: 'Click this to-do to mark it as done ✅✔', isDone: false },
-      { id: '2', text: 'Your first to-do is: Sing like no one is hearing ‼', isDone: false }
+      { id: '1', text: 'Click this to-do to mark it as done ✅', isDone: false },
+      { id: '2', text: 'Your first to-do is: Sing like no one is hearing!', isDone: false }
     ]
   },
   // The reducers field contains functions to modify the state of the slice (todo made with createSlice)

@@ -3,8 +3,9 @@ import styled from 'styled-components';
 
 export const GlobalStyle = createGlobalStyle`
 body {
-    background-color: linear-gradient(to bottom, #3366ff 0%, #ff00ff 100%);
-    /* opacity: 50%; */
+    background: rgb(51,102,255);
+    background: linear-gradient(180deg, rgba(51,102,255,1) 0%, rgba(255,0,255,1) 100%);
+// background-color: linear-gradient(to bottom, #3366ff 0%, #ff00ff 100%);
     font-family: 'DynaPuff', cursive;
     font-size: 20px;
     display: flex;
@@ -13,7 +14,7 @@ body {
 `;
 
 export const Wrapper = styled.div`
-    background: #3483eb;
+    background: white;
     width: 80vw;
     text-align: center;
     padding: 10px;
@@ -28,8 +29,10 @@ export const Wrapper = styled.div`
 `;
 
 export const SingleTodo = styled.div`
+  background: lightpink;
   margin: 10px;
   border-bottom: 1px solid black;
+  padding-top: 10px;
   padding-bottom: 15px;
   line-height: 1em;
 `;

@@ -11,7 +11,7 @@ const NewToDo = styled.form`
 `;
 
 const Input = styled.input`
-  background: #a83256;
+  background: pink;
   border: none;
   padding: 8px;
   font-size: 18px;

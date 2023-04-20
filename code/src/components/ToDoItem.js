@@ -17,7 +17,7 @@ const DateText = styled.div`
 `;
 
 const DeleteButton = styled.button`
-  background: #a83256;
+  background: pink;
   border: none;
   font-family: 'DynaPuff', cursive;
   font-size: 18px;
