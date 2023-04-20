@@ -102,7 +102,7 @@ justify-content: space-between;
 background-color: transparent;
 border: dotted purple;
 border-radius: 30px;
-width: 244px;
+width: 230px;
 gap: 0;
 
 `
@@ -133,7 +133,7 @@ const AddTaskButton = styled.button`
   color: #fff;
   border: none;
   border-radius: 25px;
-  margin-left: 5px;
+ 
   cursor: pointer;
     font-family: 'Mystery Quest', cursive;
 

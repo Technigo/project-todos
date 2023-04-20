@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import todoImage from '../images/to-do.png'
 
 const HeaderContainer = styled.header`
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   background-color: lightskyblue;
   padding: 16px;
   text-align: center;
@@ -24,7 +24,7 @@ const HeaderTitle = styled.h1`
   align-items: center;
 `;
 const HeaderImage = styled.img`
- max-width: 100%;
+  max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 
