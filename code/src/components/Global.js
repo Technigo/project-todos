@@ -32,13 +32,12 @@ export const AddButton = styled(Button)`
 
 export const DeleteButton = styled(Button)`
   background-color: #fff;
-  border: solid 0.1rem #f25050;
+  border: solid 0.1rem var(--btn2-color);
   color: black;
   padding: 0.1rem 0.7rem;
 
    &:hover {
-    background-color: #f25050;
-    border: solid 0.1rem #fff;
+    background-color:var(--btn2-color);
     color: #fff;
     transition-duration: 0.4s;
     box-shadow: var(--box-shadow);
@@ -46,13 +45,13 @@ export const DeleteButton = styled(Button)`
 `;
 
 export const DeleteAllButton = styled(Button)`
-  background-color: #f25050;
+  background-color: var(--btn2-color);
   color: #fff;
   padding: 0.1rem 0.7rem;
 
     &:hover {
     background-color: #fff;
-    border: solid 0.1rem #f25050;
+    border: solid 0.1rem var(--btn2-color);
     color: #000;
     transition-duration: 0.4s;
     box-shadow: var(--box-shadow);
@@ -68,6 +67,34 @@ list-style: none;
 display: flex;
 flex-wrap: wrap;
 align-items: center;
+`;
+
+export const StyledCheckbox = styled.input`
+  position: relative;
+  top: 0;
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+  appearance: none;
+  border: 2px solid var(--primary-background-color);
+  border-radius: 3px;
+  outline: none;
+  cursor: pointer;
+  transition-duration: 0.4s;
+
+  &:checked {
+    background-color: #fff;
+    border-color:var(--secondary-background-color);
+  }
+
+  &:checked::before {
+    content: '\\2714';
+    display: inline-block;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    color: var(--secondary-background-color);
+  }
 `;
 
 export const StyledIcon = styled(FontAwesomeIcon)`

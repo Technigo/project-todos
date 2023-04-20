@@ -4,12 +4,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import tasks from '../reducers/task';
 import { StyledInput, Content, TaskForm, SecondHeading, ThirdHeading } from './TaskListStyling';
-import { AddButton, DeleteButton, DeleteAllButton, StyledTaskList, StyledIcon } from './Global';
+import { AddButton, DeleteButton, DeleteAllButton, StyledTaskList, StyledIcon, StyledCheckbox } from './Global';
 
 // Define a component for individual task item
 const TaskItem = ({ task, onToggle, onDeleteTask }) => (
   <StyledTaskList key={task.id}>
-    <input
+    <StyledCheckbox
       type="checkbox"
       checked={task.isComplete}
       onChange={() => onToggle(task.id)} />

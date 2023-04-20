@@ -5,7 +5,9 @@
   --drop-shadow: drop-shadow(2px 4px 1px rgb(0 0 0 / 0.3));
   --box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
   --primary-background-color: #94b1aa;
+  --secondary-background-color: #568b7f;
   --btn1-color: #94b1aa;
+  --btn2-color: #800020;
 
 }
 
