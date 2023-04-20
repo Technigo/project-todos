@@ -4,7 +4,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
 import tasks from 'reducers/tasks';
-import { Container } from '@mui/material';
+import { Card, CardMedia, Container } from '@mui/material';
 import TaskStatus from 'components/TaskStatus';
 
 export const App = () => {
@@ -16,7 +16,10 @@ export const App = () => {
 
   return (
     <Provider store={store}>
-      <Container style={{ width: '90%', marginTop: '30%' }}>
+      <Card elevation={0} style={{ backgroundColor: 'transparent', height: '250px' }}>
+        <CardMedia component="img" image="../assets/header.png" alt="logo" style={{ width: '250px', margin: '0 auto' }} />
+      </Card>
+      <Container style={{ width: '90%' }}>
         <AddTask />
         <TaskList />
         <TaskStatus />

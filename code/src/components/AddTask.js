@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import { TextField, Paper, Grid, IconButton } from '@mui/material';
 import { AddCircle } from '@mui/icons-material';
+import uniqid from 'uniqid';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -12,7 +13,7 @@ const AddTask = () => {
   const onSubmit = (event) => {
     event.preventDefault();
     const newTask = {
-      id: Date.now().toString,
+      id: uniqid(),
       text: inputValue.toUpperCase(),
       completed: false
     }
@@ -27,9 +28,10 @@ const AddTask = () => {
           <TextField
             id="standard-basic"
             variant="standard"
+            color="secondary"
             fullWidth
             label="What's next?"
-            placeholder="Add your task here"
+            placeholder="Add your todo here"
             onChange={(e) => setInputValue(e.target.value)}
             value={inputValue} />
         </Grid>
