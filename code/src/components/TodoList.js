@@ -40,32 +40,34 @@ export const TodoList = () => {
 };
 
 const TodoItem = styled.article`
+position: relative;
 border: solid 1px;
 border-radius: 6px;
-padding: 8px;
+padding: 6px;
 max-width: 300px;
 position: relative;
 font-family: 'Gaegu';
-font-size: 16px;
+font-size: 20px;
+justify-content: flex-start;
 margin-top: 20px;
 margin-bottom: 10px;
-box-shadow: 3px 3px #000;
+box-shadow: 4px 4px #000;
  &:hover{
   background-image: linear-gradient(0.25turn, #3f87a6, #ebf8e1, #f69d3c);
+
+  @media (min-width: 768px) {
+    justify-content:center;
+  }
  }`
 
 const CheckBox = styled.input`
 position: relative;
-height: 16px;
-width: 16px;
-top: 5px;
+height: 20px;
+width: 20px;
+top: 3px;
 border-radius: 5px;
 outline: 1px solid #aaa;
 cursor: pointer;
-
-&:checked {
-  background-color: red;
-}
 `
 const DeleteButton = styled.button`
 position:absolute;
