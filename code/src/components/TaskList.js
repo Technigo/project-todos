@@ -14,9 +14,6 @@ const TaskList = () => {
     const onRemoveTask = (taskId) => {
         dispatch(tasks.actions.deleteTask({ id: taskId }));
     }
-    const clearTasks = () => {
-        dispatch(tasks.actions.clearTasks());
-    }
     return (
         <section className="tasklist-container">
             <ul>
@@ -28,8 +25,9 @@ const TaskList = () => {
                             onChange={() => onTaskToggle(singleTask.id)} />
                         {singleTask.name}
                         {singleTask.time}
-                        <button type="button" onClick={() => onRemoveTask(singleTask.id)}>Delete</button>
-                        <button type="button" onClick={clearTasks}>Clear Tasks</button>
+                        <button className="removeBtn" type="button" onClick={() => onRemoveTask(singleTask.id)}>
+                            <img src=".\images\trash.svg" alt="trash" className="trashBtn" />
+                        </button>
                     </li>
                 ))}
             </ul>

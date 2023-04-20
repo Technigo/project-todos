@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.removeBtn{
+  background-color: transparent;
+  border: none;
+}
+.trashBtn {
+height: 20px;
+width: 20px;
+}
