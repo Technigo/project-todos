@@ -16,7 +16,7 @@ const HeaderWrapper = styled.header`
     position: relative;
     padding: 20px;
     background-color:var(--dark-blue);
-    border:solid greenyellow;
+    /* border:solid greenyellow; */
     
 
     .logoName {

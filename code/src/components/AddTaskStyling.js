@@ -5,11 +5,13 @@ export const AddTaskWrapper = styled.form`
     flex-direction: column;
     gap:1rem;
     align-items: center;
-    border:solid red;
+    border-bottom: 3px solid var(--orange);
+    padding-bottom:15px;
+    /* border:solid red; */
 
     input[type=text] {
-      padding: 18px;
-      border-radius: 15px;
+      padding: 6px;
+      border-radius: 10px;
       border: 2px solid var(--dark-blue);
       background: var(--white);
       font-size: 1rem;
@@ -43,7 +45,7 @@ export const AddTaskChildDiv = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-evenly;
+    /* justify-content: space-evenly; */
     gap:1rem;
-    border:solid pink;
+    /* border:solid pink; */
 `

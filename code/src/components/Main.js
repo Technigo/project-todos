@@ -20,21 +20,23 @@ export const Main = () => {
   };
 
   return (
-    <MainContainer>
+    <>
       <Header />
-      <AddTask />
-      <TaskTracker />
-      <TaskList />
-      <ButtonContainer>
-        <Button
-          type="button"
-          onClick={() => handleToggleComplete()}> Complete All ✅
-        </Button>
-        <Button
-          type="button"
-          onClick={() => handleClearAll()}> Clear All 🗑️
-        </Button>
-      </ButtonContainer>
-    </MainContainer>
+      <MainContainer>
+        <AddTask />
+        <TaskTracker />
+        <TaskList />
+        <ButtonContainer>
+          <Button
+            type="button"
+            onClick={() => handleToggleComplete()}> Complete All ✅
+          </Button>
+          <Button
+            type="button"
+            onClick={() => handleClearAll()}> Clear All 🗑️
+          </Button>
+        </ButtonContainer>
+      </MainContainer>
+    </>
   )
 }

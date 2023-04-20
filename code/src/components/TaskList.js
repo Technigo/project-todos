@@ -62,7 +62,7 @@ const TaskList = () => {
                 <Button
                   type="button"
                   onClick={() => handleDeletingTask(singleTask.id)}>
-                Delete
+                🗑️
                 </Button>
               </SingleTaskWrapper>
             ))}
@@ -77,17 +77,17 @@ const SingleTaskWrapper = styled.div`
 display: flex;
 flex-direction: row;
 justify-content: space-evenly;
-padding: 1rem;
+align-items: center;
+padding: 5px;
 gap: 2rem;
-border: solid green;
+/* border: solid green; */
 `
 
 const SingleTaskChild = styled.div`
 display: flex;
 flex-direction: column;
 justify-content: space-around;
-padding: 0.5rem;
-border: solid green;
+/* border: solid green; */
 `
 
 export default TaskList;
