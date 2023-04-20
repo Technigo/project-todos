@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 const TaskCount = ({ taskCount, uncompletedTaskCount }) => {
   return (
     <div>
-      <p>Total Tasks: {taskCount}</p>
-      <p>Uncompleted Tasks: {uncompletedTaskCount}</p>
+      <p style={{ margin: 0 }}>Total Tasks: {taskCount}</p>
+      <p style={{ margin: 0 }}>Uncompleted Tasks: {uncompletedTaskCount}</p>
     </div>
   );
 };

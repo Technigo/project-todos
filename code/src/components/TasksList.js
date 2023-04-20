@@ -47,7 +47,8 @@ const StyledSection = styled.section`
  
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  padding-bottom: 40px;
+  padding-bottom: 20px;
+  padding-top: 20px;
 
   @media (min-width: 668px) {
     height: 100vh; /* Set the height to be the full viewport height */

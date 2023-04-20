@@ -98,17 +98,23 @@ const EnterSection = styled.section`
 display: flex;
 flex-direction: row;
 align-items: center;
-justify-content: center;
+justify-content: space-between;
+background-color: transparent;
+border: dotted purple;
+border-radius: 30px;
+width: 244px;
+gap: 0;
+
 `
 
 const AddTaskInput = styled.input`
   padding: 0.5rem;
   font-size: 1.5rem;
   border: none;
-  border-radius: 20px;
+  border-radius: 30px;
   border-bottom: 2px solid #ccc;
 
-  max-width: 60%;
+  max-width: 70%;
   font-family: 'Mystery Quest', cursive;
   ::placeholder {
     padding-left: 10px;
@@ -117,8 +123,8 @@ const AddTaskInput = styled.input`
 `;
 
 const AddTaskButton = styled.button`
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   font-size: 0.5rem;
   display: flex;
   justify-content: center;
@@ -126,7 +132,7 @@ const AddTaskButton = styled.button`
   background-color: #1abc9c;
   color: #fff;
   border: none;
-  border-radius: 4px;
+  border-radius: 25px;
   margin-left: 5px;
   cursor: pointer;
     font-family: 'Mystery Quest', cursive;
