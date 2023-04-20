@@ -34,9 +34,20 @@ export const tasks = createSlice({
       store.items = [...store.items, action.payload];
     },
     removeItem: (store, action) => {
+      const id = action.payload;
+      const newArray = store.items;
+      const condition = (element) => element.id === id;
+      const foundIndex = newArray.findIndex(condition);
+      console.log('foundIndex', foundIndex);
+      newArray.splice(foundIndex, 1);
+      console.log(
+        'newArray.splice(foundIndex, 1)',
+        newArray.splice(foundIndex, 1)
+      )
+
       // Here we want to filter out the items
       // And return a new state without said item
-      store.items = store.items.filter((item) => item.id !== action.payload.id);
+      // store.items = store.items.filter((item) => item.id !== action.payload.id);
       // console.log('store:', store);
       // console.log('action.payload:', action.payload);
     },
