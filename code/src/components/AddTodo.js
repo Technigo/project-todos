@@ -39,6 +39,8 @@ const AddTodo = () => {
 
 export const TodoForm = styled.form`
 margin: 2px;
+display: flex;
+justify-content: flex-start;
 
 input[type=text] {
       background: transparent;
