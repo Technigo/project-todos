@@ -3,7 +3,8 @@ import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-import { AddNewTaskBtn, AddNewTaskWrapper } from './AddTaskStyling';
+import { AddTaskWrapper, AddTaskChildDiv } from './AddTaskStyling';
+import { Button } from './Button';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -42,7 +43,7 @@ const AddTask = () => {
 
   return (
     <section>
-      <AddNewTaskWrapper onSubmit={onFormSubmit}>
+      <AddTaskWrapper onSubmit={onFormSubmit}>
         <select
           value={selectedCategory}
           onChange={(event) => setSelectedCategory(event.target.value)}>
@@ -52,25 +53,26 @@ const AddTask = () => {
           <option value="Shopping">Buy</option>
           <option value="Other">Other</option>
         </select>
-
-        <label htmlFor="addTaskInput">
-          {/* Create a new task <br /> */}
-          <input
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
-            id="addTaskInput"
-            type="text"
-            placeholder="Add new task"
-            required />
-        </label>
-
-        <DatePicker
-          selected={dueDate}
-          onChange={(date) => setDueDate(date)}
-          placeholderText="Select due date"
-          dateFormat="yyyy-MM-dd" />
-        <AddNewTaskBtn type="submit">Add Task</AddNewTaskBtn>
-      </AddNewTaskWrapper>
+        <AddTaskChildDiv>
+          <label htmlFor="addTaskInput">
+            {/* Create a new task <br /> */}
+            <input
+              value={inputValue}
+              onChange={(event) => setInputValue(event.target.value)}
+              id="addTaskInput"
+              type="text"
+              placeholder="Add new task"
+              required />
+          </label>
+          <DatePicker
+            id="datePicker"
+            selected={dueDate}
+            onChange={(date) => setDueDate(date)}
+            placeholderText="Due"
+            dateFormat="yyyy-MM-dd" />
+        </AddTaskChildDiv>
+        <Button type="submit">Add Task</Button>
+      </AddTaskWrapper>
     </section>
   )
 }

@@ -1,44 +1,49 @@
 import styled from 'styled-components'
 
-export const AddNewTaskWrapper = styled.form`
+export const AddTaskWrapper = styled.form`
     display: flex;
     flex-direction: column;
+    gap:1rem;
+    align-items: center;
     border:solid red;
+
     input[type=text] {
-      justify-self: left;
       padding: 18px;
       border-radius: 15px;
-      border: none;
-      background: pink;
-      outline: none;
-     
-
+      border: 2px solid var(--dark-blue);
+      background: var(--white);
       font-size: 1rem;
+
         &:focus {
-          outline: none;
-          border: 1.5px solid black;
+          border: 2px solid var(--orange);
         }
     }
+    
     input::placeholder {
       font-weight: bold;
       opacity: .8;
     }
+
+    #datePicker {
+      padding: 3px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 6em;
+    }
+
+    .react-datepicker__input-container {
+        display: flex;
+        margin:0;
+        padding:0;
+    }
     
 `
 
-export const AddNewTaskBtn = styled.button`
-    height: 30px;
-    width:100px;
-    line-height: 20px;
-    font-size: 1.1em;
-    border-radius: 10px;
-    background-color: var(--dark-blue);
-    color: var(--white);
-    text-align: center;
-    cursor: pointer;
-    margin-right: 15px;
-    &:hover {
-      transform: scale(1.1)
-    }
+export const AddTaskChildDiv = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    gap:1rem;
+    border:solid pink;
 `
-

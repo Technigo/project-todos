@@ -4,7 +4,7 @@ import tasks from 'reducers/tasks';
 import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
 import TaskTracker from 'components/TaskTracker';
-import { MainContainer } from 'components/MainStyling';
+import { ButtonContainer, MainContainer } from 'components/MainStyling';
 import { Header } from 'components/Header';
 import { Button } from './Button';
 
@@ -23,16 +23,18 @@ export const Main = () => {
     <MainContainer>
       <Header />
       <AddTask />
-      <TaskList />
       <TaskTracker />
-      <Button
-        type="button"
-        onClick={() => handleToggleComplete()}> Complete All
-      </Button>
-      <Button
-        type="button"
-        onClick={() => handleClearAll()}> Clear All
-      </Button>
+      <TaskList />
+      <ButtonContainer>
+        <Button
+          type="button"
+          onClick={() => handleToggleComplete()}> Complete All ✅
+        </Button>
+        <Button
+          type="button"
+          onClick={() => handleClearAll()}> Clear All 🗑️
+        </Button>
+      </ButtonContainer>
     </MainContainer>
   )
 }
