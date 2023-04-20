@@ -6,8 +6,10 @@ border:none;
 margin:0;
 padding:0;
 cursor:pointer;
-font-size:${(props) => (props.filtering ? '0.8em' : '1em')};
-
+font-size:1em;
+position:${(props) => (props.delete ? 'absolute' : '')};
+top: -25px;
+right: -25px;
 :hover{
    transform: scale(1.3);
 }

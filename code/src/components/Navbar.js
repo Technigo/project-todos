@@ -5,8 +5,8 @@ import {
   MDBNavbarNav,
   MDBNavbarItem
 } from 'mdb-react-ui-kit';
-import { Dropdown } from 'components/Tasks/ProjectDropdown';
-import { FilterTasks } from './Tasks/FilterTasks';
+import { FilterTasks } from './FilterTasks';
+import { NavbarDropdown } from './NavbarDropdown';
 
 export const NavBar = () => {
   return (
@@ -14,7 +14,7 @@ export const NavBar = () => {
       <MDBContainer fluid>
         <MDBNavbarNav className="d-flex justify-content-center flex-row gap-2">
           <MDBNavbarItem>
-            <Dropdown />
+            <NavbarDropdown />
           </MDBNavbarItem>
           <FilterTasks />
         </MDBNavbarNav>

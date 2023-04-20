@@ -30,6 +30,9 @@ gap:0;
 padding:0.5em;
 border:rgb(184, 184, 184) solid 3px;
 border-radius:25px;
+position:relative;
+margin: 0.8em 0.8em 0 0.8em;
+width:90%;
 `
 
 export const TaskListContainer = styled.div`
@@ -38,7 +41,6 @@ display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:column;
-overflow-y:auto;
 box-sizing: border-box;
 gap:1em;
 `

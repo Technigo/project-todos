@@ -6,7 +6,7 @@ import { MdOutlineRemoveCircle } from 'react-icons/md'
 import { FlexRow } from 'reusable-components/Container';
 import { Button } from 'reusable-components/Button';
 import { tasks } from 'reducers/tasks';
-import { Dropdown } from 'components/Tasks/ProjectDropdown';
+import { ProjectDropdown } from 'components/Tasks/ProjectDropdown';
 import { TaskText, DateText, TaskCardContainer } from './TasksStyling';
 
 export const Task = ({ task }) => {
@@ -43,10 +43,10 @@ export const Task = ({ task }) => {
           onClick={() => handleCheckboxChange(task.id)} />
 
         <TaskText>{task.text}</TaskText>
-        <Button onClick={() => handleRemoveTask(task.id)}><MdOutlineRemoveCircle fontSize="2em" color="#FFAACF" /></Button>
+        <Button delete onClick={() => handleRemoveTask(task.id)}><MdOutlineRemoveCircle fontSize="2em" color="#FFAACF" /></Button>
       </FlexRow>
       <FlexRow>
-        <Dropdown />
+        <ProjectDropdown taskId={task.id} optionValue={task.value} />
         <DateText>created {createdDateFormatted}</DateText>
         <DateText>{compareAsc(new Date(task.due), Date.now()) === -1 ? 'overdue' : `due ${dueDateFormatted}`}</DateText>
       </FlexRow>

@@ -2,17 +2,18 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const taskData = [
-  { id: 1, text: 'task to do 1', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'other', label: 'Other' },
-  { id: 2, text: 'task to do 2', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'other', label: 'Other' },
-  { id: 3, text: 'task to do 3', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'other', label: 'Other' },
-  { id: 4, text: 'task to do 4', created: '10/10/2022', due: '10/11/2022', completed: true, value: 'other', label: 'Other' },
+  { id: 1, text: 'task to do 1', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'all projects' },
+  { id: 2, text: 'task to do 2', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'all projects' },
+  { id: 3, text: 'task to do 3', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'all projects' },
+  { id: 4, text: 'task to do 4', created: '10/10/2022', due: '10/11/2022', completed: true, value: 'all projects' },
 ];
 
 const projectsData = [
-  { value: 'shopping', label: 'Shopping' },
-  { value: 'cooking', label: 'Cooking' },
-  { value: 'sports', label: 'Sports' },
-  { value: 'other', label: 'Other' },
+  { value: 'all projects', status: 'all' },
+  { value: 'shopping', status: '' },
+  { value: 'cooking', status: '' },
+  { value: 'sports', status: '' },
+  { value: 'other', status: '' },
 ];
 
 export const tasks = createSlice({
@@ -21,6 +22,7 @@ export const tasks = createSlice({
     tasks: taskData,
     projects: projectsData,
     filterOn: 'all',
+    selectedProject: 'all projects'
   },
   reducers: {
     addItem: (state, action) => {
@@ -64,9 +66,15 @@ export const tasks = createSlice({
       const { filter } = action.payload
       state.filterOn = filter
     },
-    //  changeProject: (state, action) => {
-    //   // const { id } = action.payload
-
-    // },
+    changeProject: (state, action) => {
+      const { id, value } = action.payload
+      const selectedTask = id !== null && state.tasks.find((item) => item.id === id)
+      selectedTask.value = value
+    },
+    filterProject: (state, action) => {
+      console.log(action.payload)
+      const { value } = action.payload
+      state.selectedProject = value
+    }
   },
 });

@@ -31,7 +31,7 @@ export const FilterTasks = () => {
   return (
     <>
       <MDBNavbarItem>
-        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" filtering onClick={filterAllTasks}>All tasks</MDBNavbarLink>
+        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" filtering onClick={filterAllTasks}>All</MDBNavbarLink>
       </MDBNavbarItem>
       <MDBNavbarItem>
         <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" filtering onClick={filterOngoingTasks}>Ongoing ({ongoingTasks.length})</MDBNavbarLink>
