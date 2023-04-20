@@ -109,7 +109,6 @@ input#addTaskInput {
 @media only screen and (max-width: 600px) {
   body {
     background-image: url("../Images/wp5418538-floral-aesthetic-desktop-wallpapers.jpg");
-    padding-top: 70px;
     background-size: cover;
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
     16 0,
@@ -126,13 +125,15 @@ input#addTaskInput {
     padding-left: 20px;
 }
   div#root {
-    height: auto;
+    height: 600px;
     /* background: rgb(229 222 190); */
     width: 300px;
     display: flex;
     flex-direction: column;
     place-items: center;
     background: rgb(55 55 55 / 50%);
+    overflow-y: scroll;
+
   }
   p {
     font-size: 40px;
@@ -198,6 +199,8 @@ input[type="checkbox" i] {
    /* background: rgb(255 250 177); */
    /* background: rgb(6 6 6 / 64%); */
    background: rgb(147 147 147 / 72%);
+   overflow-y: scroll;
+
   }
 
 button {
