@@ -4,7 +4,7 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { todos } from 'reducers/todo'
 import { TodoCounter } from 'components/TodoCounter'
 import { Layout } from 'components/Layout'
-import { GlobalStyle } from 'components/GlobalStyles'
+import { GlobalStyle } from 'components/globalStyles'
 
 export const App = () => {
   const reducer = combineReducers({

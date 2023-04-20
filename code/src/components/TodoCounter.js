@@ -2,19 +2,19 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { todos } from 'reducers/todo'
-import { AddNewTodo } from './AddNewTodo'
-import { TodoItem } from './TodoItem'
+import { TodoItem } from 'components/TodoItem'
+import { AddNewTodo } from 'components/AddNewTodo'
 
 export const TodoCounter = () => {
   const dispatch = useDispatch()
   const allTodos = useSelector((store) => store.todos.items)
 
   const onDone = (id) => {
-    dispatch(todos.actions.toggleItem(id))
+    dispatch(todos.actions.toggleTask(id))
   }
 
   const onDelete = (todoIndex) => {
-    dispatch(todos.actions.deleteItem(todoIndex))
+    dispatch(todos.actions.deleteTask(todoIndex))
   }
 
   const todosTodo = allTodos.filter((todo) => !todo.isDone)

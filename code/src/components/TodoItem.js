@@ -50,7 +50,7 @@ export const TodoItem = ({ todo, index, onDelete, onDone }) => {
       <RemoveButton
         onClick={() => onDelete(index)}
         type="button"
-        title="delete tast">X
+        title="delete task">X
       </RemoveButton>
     </Wrapper>
   )
