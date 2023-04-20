@@ -1,103 +1,151 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useEffect } from 'react'
-import styled from 'styled-components'
-import { useSelector, useDispatch } from 'react-redux'
-import uniqid from 'uniqid';
-import { tasksproject } from 'reducers/tasksproject';
-import { CompleteAll } from './CompleteAll';
-import { DeleteAll } from './DeleteAll';
+/* eslint-disable */
 
-export const CheckBox = styled.input`
-  width: 1.3em;
-  height: 1.3em;
-  background-color: white;
-  border-radius: 50%;
-  vertical-align: middle;
-  border: 1px solid #ddd;
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addList, addItem } from 'reducers/tasksproject';
+import uniqid from 'uniqid';
+import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
+
+export const TextInput = styled.input`
+  background: #FFFFFF;
+  border: 2px solid pink;
   outline: none;
-  cursor: pointer;
+  border-radius: 8px;
+  height: 48px;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  font-size: 18px;
+
+    &:focus {
+      outline: none;
+      caret-color: #f85f36;
+    }
+
+    &:hover {
+      border: 2px solid #f85f36;
+    }
+
+   @media (max-width: 768px) {
+  }
 `
 
-export const ToDoCard = styled.div`
+export const ListHeader = styled.div`
   display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
   justify-content: space-between;
   background: pink;
-  padding: 10px;
-  position: relative;
 `
 
-export const ToDoInnerCard = styled.div`
+export const ListHeaderButton = styled.button`
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
   display: flex;
-  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+  color: pink;
+  font-weight: 900;
 `
 
-export const ToDoListWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin: 20px;
-`
-
-export const ToDotext = styled.p`
+export const ProjectTitle = styled.h3`
   margin: 0;
-  color: black;
+  color: #f85f36;
   margin: auto 0;
   font-weight: 700;
 `
 
-export const DeleteButton = styled.button`
-  cursor: pointer;
-  background: transparent;
-  outline: none;
-  border: none;
-`
-
 export const ProjectToDoList = () => {
-  const allProjectTasks = useSelector((store) => store.tasksproject.projectItems)
+  const [projectCreated, setProjectCreated] = useState(false);
+  const [listNameCreated, setListNameCreated] = useState(false);
+  const [listName, setListName] = useState('');
+  const [itemName, setItemName] = useState('');
+  const [projectActive, setProjectActive] = useState(true);
+
+  const lists = useSelector((state) => state.tasksproject.lists);
+
   const dispatch = useDispatch();
 
-  const onToDoDelete = (index) => {
-    dispatch(tasksproject.actions.deleteItem(index));
+  const handleAddList = () => {
+    dispatch(addList({ name: listName }));
+    setListName('');
+    setListNameCreated(true)
+    console.log(listName)
+    console.log(projectCreated)
+    setProjectCreated(false)
   };
 
-  const onToDoToggle = (id) => {
-    dispatch(tasksproject.actions.toggleItem(id));
-    dispatch(tasksproject.actions.sortItems());
+  const handleAddItem = (listIndex) => {
+    const newToDo = {
+      id: uniqid(),
+      text: itemName[listIndex].charAt(0).toUpperCase() + itemName[listIndex].slice(1),
+      complete: false
+    };
+    dispatch(addItem({ listIndex, item: newToDo }));
+    setItemName('');
   };
 
-  useEffect(() => {
-    dispatch(tasksproject.actions.sortItems());
-  }, [dispatch]);
+  const handleWantNewProject = () => {
+    !projectCreated ? setProjectCreated(true) : setProjectCreated(!projectCreated)
+  };
+
+  const handleItemNameChange = (listIndex, value) => {
+    setItemName({ ...itemName, [listIndex]: value });
+  }
+
+  const handleProjectClick = (listIndex) => {
+    setProjectActive((prevProjectActive) => ({
+      ...prevProjectActive,
+      [listIndex]: !prevProjectActive[listIndex],
+    }));
+  };
 
   return (
-    <ToDoListWrapper>
-      {allProjectTasks.map((todoItem, todoIndex) => (
-        <ToDoCard key={uniqid()}>
-          <ToDoInnerCard>
-            <div className="container">
-              <div className="round">
-                <input
-                  type="checkbox"
-                  id={todoItem.id}
-                  name={todoItem.id}
-                  checked={todoItem.complete}
-                  onChange={() => onToDoToggle(todoItem.id)} />
-                <label htmlFor={todoItem.id} />
-              </div>
-            </div>
-            <ToDotext key={todoItem.id}>{todoItem.text}</ToDotext>
-          </ToDoInnerCard>
-          <DeleteButton
-            type="button"
-            onClick={() => onToDoDelete(todoIndex)}>
-            <span role="img" aria-label="delete">
-              ✖️
-            </span>
-          </DeleteButton>
-        </ToDoCard>
-      ))}
-      <CompleteAll />
-      <DeleteAll />
-    </ToDoListWrapper>
-  )
+    <>
+      {listNameCreated && (
+        <div>
+          {Array.isArray(lists) && lists.map((list, listIndex) => (
+            <>
+              <ListHeader key={list.name}>
+                <ProjectTitle>Project: {list.name}</ProjectTitle>
+                <ListHeaderButton type="button" onClick={() => handleProjectClick(listIndex)}>
+                  {projectActive[listIndex] ? (
+                  <FontAwesomeIcon icon={faChevronUp} style={{ color: '#ffffff', fontSize: '30px'}} />)
+                  : (<FontAwesomeIcon icon={faChevronDown} style={{ color: '#ffffff', fontSize: '30px'}} />)}
+                </ListHeaderButton>
+              </ListHeader>
+              {projectActive[listIndex] && (
+            <div key={listIndex}>
+              <TextInput 
+                type="text"
+                value={itemName[listIndex] || ''}
+                onChange={(e) => handleItemNameChange(listIndex, e.target.value)} />
+              <button type="button" onClick={() => handleAddItem(listIndex)}>ADD TODO</button>
+              <ul>
+                {list.items.map((item) => (
+                  <li key={item.text}>{item.text}</li>
+                ))}
+              </ul>
+            </div>)}
+            </>
+          ))}
+        </div>)}
+      {projectCreated && (<div>
+        <TextInput
+          type="text"
+          value={listName}
+          placeholder='Your project name...'
+          onChange={(e) => setListName(e.target.value)} />
+        <button type="button" onClick={handleAddList}>Create project</button>
+      </div>)}
+      <div>
+        <button type="button" onClick={handleWantNewProject}>Create project</button>
+      </div>
+    </>
+  );
 }

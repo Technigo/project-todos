@@ -1,81 +1,85 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import styled from 'styled-components'
+import uniqid from 'uniqid';
 import { faPlus } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { NewProjectToDo } from './NewProjectToDo';
+import { useDispatch } from 'react-redux';
+import { tasksproject } from 'reducers/tasksproject';
 import { ProjectToDoList } from './ProjectToDoList';
 
 export const ListHeader = styled.div`
   display: flex;
   height: 22px;
   gap: 10px;
-  justify-content: space-between;
   align-items: center;
-  padding: 10px;
   background: #E8E8E8;
 `
 export const AddButton = styled.button`
+  width: 100%;
   background: transparent;
   border: none;
   outline: none;
+  justify-content: space-between;
   cursor: pointer;
   display: flex;
   align-items: center;
-  gap: 10px;
   color: #f85f36;
   font-weight: 900;
+`
+export const ProjectInput = styled.input`
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+  height: 22px;
+  box-sizing: border-box;
+  padding: 5px 15px;
+  font-size: 18px;
+  margin: none;
 
-  &:hover:after {
-    content: 'new project';
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid black;
     }
+
+    &:hover {
+    }
+
+   @media (max-width: 768px) {
+  }
+`
+
+export const ProjectForm = styled.form`
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
 `
 
 export const NewProjectButton = () => {
-  const [activeAccordion, setActiveAccordion] = useState(false);
   const [createProject, setCreateProject] = useState(false);
-  const [inputValue, setInputValue] = useState(false);
+  const [projects, setProjects] = useState([]);
+  const [projectIndex, setProjectIndex] = useState(0);
+  const dispatch = useDispatch();
 
-  const handleAccordionClick = () => {
-    setActiveAccordion(true);
-  };
-
-  const onFormSubmit = (event) => {
-    event.preventDefault();
+  const handleCreateNewProject = (listIndex) => {
+    setProjectIndex(projectIndex + 1)
     setCreateProject(true);
+    dispatch(tasksproject.actions.addList(listIndex));
+    setProjects([...projects, { id: uniqid(), name: '', items: [] }]);
   }
 
   return (
     <>
       <ListHeader>
-        <p style={{ color: '#f85f36' }}>create new project</p>
         <AddButton
-          accordian
           type="button"
-          className={activeAccordion ? 'accordionActive' : 'accordionInactive'}
-          onClick={() => handleAccordionClick()}><FontAwesomeIcon icon={faPlus} />
+          onClick={() => handleCreateNewProject()}><p style={{ color: '#f85f36' }}>create new project</p><FontAwesomeIcon icon={faPlus} />
         </AddButton>
       </ListHeader>
-      {activeAccordion && !createProject && (
-        <form onSubmit={onFormSubmit}>
-          <label htmlFor="newproject">
-            New project name
-            <input
-              type="text"
-              name="newproject"
-              onChange={(e) => setInputValue(e.target.value)} />
-          </label>
-          <button
-            type="submit">
-            +
-          </button>
-        </form>
-      )}
       {createProject && (
-        <div>
-          <h3>Project:{inputValue}</h3>
-          <NewProjectToDo />
-          <ProjectToDoList />
-        </div>
+        <ProjectToDoList />
       )}
     </>
   )

@@ -36,11 +36,11 @@ export const tasks = createSlice({
       const item = state.items.find((item) => item.id === action.payload);
       state.items.sort((a, b) => {
         if (a.complete && !b.complete) {
-          return 1; // a comes after b
+          return 1; 
         } else if (!a.complete && b.complete) {
-          return -1; // a comes before b
+          return -1; 
         } else {
-          return 0; // they're equal and can be left in their current order
+          return 0;
         }
       });
     },

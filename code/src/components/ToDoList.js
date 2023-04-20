@@ -1,11 +1,14 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React, { useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import { useSelector, useDispatch } from 'react-redux'
 import uniqid from 'uniqid';
 import { tasks } from 'reducers/tasks';
+import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { CompleteAll } from './CompleteAll';
 import { DeleteAll } from './DeleteAll';
+import { NewToDo } from './NewToDo';
 
 export const CheckBox = styled.input`
   width: 1.3em;
@@ -36,6 +39,25 @@ export const ToDoListWrapper = styled.div`
   flex-direction: column;
   gap: 20px;
 `
+export const ListHeader = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+  background: pink;
+`
+export const ListHeaderButton = styled.button`
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: pink;
+  font-weight: 900;
+`
 
 export const ListFooter = styled.div`
   display: flex;
@@ -53,6 +75,13 @@ export const ToDotext = styled.p`
   font-weight: 700;
 `
 
+export const ProjectTitle = styled.h3`
+  margin: 0;
+  color: #f85f36;
+  margin: auto 0;
+  font-weight: 700;
+`
+
 export const DeleteButton = styled.button`
   cursor: pointer;
   background: transparent;
@@ -61,6 +90,7 @@ export const DeleteButton = styled.button`
 `
 
 export const ToDoList = () => {
+  const [listActive, setlistActive] = useState(true);
   const allTasks = useSelector((store) => store.tasks.items)
   const dispatch = useDispatch();
 
@@ -77,37 +107,56 @@ export const ToDoList = () => {
     dispatch(tasks.actions.sortItems());
   }, [dispatch]);
 
+  const toggleList = () => {
+    setlistActive(!listActive)
+  };
+
   return (
-    <ToDoListWrapper>
-      {allTasks.map((todoItem, todoIndex) => (
-        <ToDoCard key={uniqid()}>
-          <ToDoInnerCard>
-            <div className="container">
-              <div className="round">
-                <input
-                  type="checkbox"
-                  id={todoItem.id}
-                  name={todoItem.id}
-                  checked={todoItem.complete}
-                  onChange={() => onToDoToggle(todoItem.id)} />
-                <label htmlFor={todoItem.id} />
-              </div>
-            </div>
-            <ToDotext key={todoItem.id}>{todoItem.text}</ToDotext>
-          </ToDoInnerCard>
-          <DeleteButton
-            type="button"
-            onClick={() => onToDoDelete(todoIndex)}>
-            <span role="img" aria-label="delete">
-              ✖️
-            </span>
-          </DeleteButton>
-        </ToDoCard>
-      ))}
-      <ListFooter>
-        <CompleteAll />
-        <DeleteAll />
-      </ListFooter>
-    </ToDoListWrapper>
+    <>
+      <ListHeader>
+        <ProjectTitle>My todo list</ProjectTitle>
+        <ListHeaderButton type="button" onClick={toggleList}>
+          {listActive ? (
+            <FontAwesomeIcon icon={faChevronUp} style={{ color: '#ffffff', fontSize: '30px' }} />)
+            : (<FontAwesomeIcon icon={faChevronDown} style={{ color: '#ffffff', fontSize: '30px' }} />)}
+        </ListHeaderButton>
+      </ListHeader>
+      {listActive && (
+        <>
+          <NewToDo />
+          <ToDoListWrapper>
+            {allTasks.map((todoItem, todoIndex) => (
+              <ToDoCard key={uniqid()}>
+                <ToDoInnerCard>
+                  <div className="container">
+                    <div className="round">
+                      <input
+                        type="checkbox"
+                        id={todoItem.id}
+                        name={todoItem.id}
+                        checked={todoItem.complete}
+                        onChange={() => onToDoToggle(todoItem.id)} />
+                      <label htmlFor={todoItem.id} />
+                    </div>
+                  </div>
+                  <ToDotext key={todoItem.id}>{todoItem.text}</ToDotext>
+                </ToDoInnerCard>
+                <DeleteButton
+                  type="button"
+                  onClick={() => onToDoDelete(todoIndex)}>
+                  <span role="img" aria-label="delete">
+                    ✖️
+                  </span>
+                </DeleteButton>
+              </ToDoCard>
+            ))}
+            <ListFooter>
+              <CompleteAll />
+              <DeleteAll />
+            </ListFooter>
+          </ToDoListWrapper>
+        </>
+      )}
+    </>
   )
 }

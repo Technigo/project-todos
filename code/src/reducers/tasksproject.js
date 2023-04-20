@@ -1,54 +1,31 @@
 
 /* eslint-disable */
-
 import { createSlice } from '@reduxjs/toolkit';
 
-const data = [];
+const initialState = {
+  lists: []
+};
 
 export const tasksproject = createSlice({
   name: 'tasksproject',
-  initialState: {
-    projectItems: data
-  },
+  initialState,
+
   reducers: {
-
-    addItem: (store, action) => {
-      store.projectItems = [...store.projectItems, action.payload];
+    addList: (state, action) => {
+      const { name } = action.payload;
+      const newList = { name, items: [] };
+      return { ...state, lists: [...state.lists, newList] };
     },
-
-    deleteItem: (store, action) => {
-      store.projectItems.splice(action.payload, 1);
-    },
-
-    toggleItem: (state, action) => {
-      const projectItem = state.projectItems.find((projectItem) => projectItem.id === action.payload);
-      if (projectItem) {
-        projectItem.complete = !projectItem.complete;
-      }
-    },
-
-    sortItems: (state, action) => {
-      const item = state.projectItems.find((item) => item.id === action.payload);
-      state.projectItems.sort((a, b) => {
-        if (a.complete && !b.complete) {
-          return 1; // a comes after b
-        } else if (!a.complete && b.complete) {
-          return -1; // a comes before b
-        } else {
-          return 0; // they're equal and can be left in their current order
-        }
-      });
-    },
-
-
-    allCompleteItem: (store, action) => {
-      store.projectItems = store.projectItems.map((projectItem) => {
-        return { ...projectItem, complete: action.payload };
-      });
-    },
-
-    clearAllItems: (store, action) => {
-      store.projectItems.splice(action.payload);
+    addItem: (state, action) => {
+      const { listIndex, item } = action.payload;
+      const listToUpdate = state.lists[listIndex];
+      const updatedList = { ...listToUpdate, items: [...listToUpdate.items, item] };
+      const updatedLists = [...state.lists.slice(0, listIndex), updatedList, ...state.lists.slice(listIndex + 1)];
+      return { ...state, lists: updatedLists };
     }
   }
 });
+
+export const { addList, addItem } = tasksproject.actions;
+
+export default tasksproject.reducer;
