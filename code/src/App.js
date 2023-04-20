@@ -17,7 +17,7 @@ export const App = () => {
   return (
     <Provider store={store}>
       <Card elevation={0} style={{ backgroundColor: 'transparent', height: '250px' }}>
-        <CardMedia component="img" image="../assets/header.png" alt="logo" style={{ width: '250px', margin: '0 auto' }} />
+        <CardMedia component="img" image="../assets/logo.png" alt="logo" style={{ width: '300px', margin: '0 auto' }} />
       </Card>
       <Container style={{ width: '90%' }}>
         <AddTask />
