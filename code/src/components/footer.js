@@ -8,7 +8,7 @@ opacity: 0.9;
 bottom: 150px;
 `;
 const GitLink = styled.img`
-  width: 34px;
+  width: 25px;
   &:hover {
     color: white;
     filter: brightness(100); 
