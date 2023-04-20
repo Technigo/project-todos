@@ -168,6 +168,29 @@ code {
   z-index: 5;
 }
 
+.blobcontainer {
+  position: relative;
+  top: -20px;
+}
+
+.blobcontainer svg {
+  transform: scale(0.9);
+  position: absolute;
+  z-index: 1;
+}
+
+.blobcontainer p {
+  font-family: 'Abril Fatface', cursive;
+  position: absolute;
+  color: #DA58C2;
+  font-size: 24px;
+  z-index: 2;
+  top: 120px;
+  left: 130px;
+  max-width: 160px;
+  text-align: center;
+}
+
 /* ---- Footer ---- */
 
 .Footer {
@@ -240,6 +263,19 @@ code {
   .List {
     padding: 5px;
   }
+
+  
+.blobcontainer {
+  position: relative;
+  top: 10px;
+}
+
+.blobcontainer p {
+  font-size: 24px;
+  top: 62px;
+  left: 66px;
+  max-width: 160px;
+}
 
   .Footer {
     margin-top: 20px;
