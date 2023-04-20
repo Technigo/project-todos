@@ -13,7 +13,8 @@ export const AddTask = () => {
     const newTask = {
       id: uuid(),
       text: inputValue,
-      isCompleted: false
+      isCompleted: false,
+      creationTime: Date.now()
     };
     dispatch(uncompleted.actions.addTask(newTask));
     setInputValue('');
