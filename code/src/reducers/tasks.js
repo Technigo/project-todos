@@ -1,30 +1,32 @@
 /* eslint-disable max-len */
 import { createSlice } from '@reduxjs/toolkit';
 
+// initioal state can also be set to an empty array. it just has to be an array.
+
 const initialState = {
   items: [
     {
-      id: '19asdfiuhas0823hjkadsh809',
-      name: 'Tvätta',
-      isCaught: false
+      id: '1',
+      taskName: 'Style this ugly list', // name is to store the input
+      isChecked: false
     },
     {
-      id: '19asdfiuhas0823hjkadsh809',
-      name: 'Gymma',
-      isCaught: true
+      id: '2',
+      taskName: 'Get rid of the damn dot on the left side',
+      isChecked: false // define with myself, also change it in the addNewTask
     },
     {
-      id: '19asdfiuhas0823hjkadsh809',
-      name: 'Hejhejhej',
-      isCaught: false
+      id: '3',
+      taskName: 'Do the laundry',
+      isChecked: false
     },
     {
-      id: '19asdfiuhas0823hjkadsh809',
-      name: 'Köp ett flak',
-      isCaught: true
+      id: '4',
+      taskName: 'Buy some chips',
+      isChecked: false // isChecked same as in tasks.js
     }
   ]
-}
+};
 
 const tasks = createSlice({
   name: 'tasks',
@@ -37,14 +39,31 @@ const tasks = createSlice({
       /*    store.items.push(action.payload); */
 
       // Immutable way:
-      store.items = [...store.items, action.payload]
-      // const x = ["a","b","c"]
-      // const y = [x, "d"] => [["a","b","c"], "d"]
-      // const z = [...x, "d"] => ["a","b","c","d"]
-      // const superObject = {a: "test", b:"other test"}
-      // const supererObject = {...superObject, c: "third test"}
+      store.items = [...store.items, action.payload];
+    },
+    deleteAllTasks: (store) => {
+      store.items = [];
+    },
+    deleteSingleTask: (store, action) => {
+      // const { id } = action.payload;
+      const id = action.payload;
+      console.log('action.payload', action.payload);
+      // splice to remove a single element if I know the index
+      const copyOfTaskListArrayFromStore = store.items;
+      const condition = (element) => element.id === id;
+      const foundIndex = copyOfTaskListArrayFromStore.findIndex(condition);
+      copyOfTaskListArrayFromStore.splice(foundIndex, 1);
+      store.items = copyOfTaskListArrayFromStore;
+    },
+    toggleIfTaskIsChecked: (store, action) => {
+      const id = action.payload;
+      const copyTaskListArrayFromStore = store.items;
+      const condition = (element) => element.id === id;
+      const foundIndex = copyTaskListArrayFromStore.findIndex(condition);
+      copyTaskListArrayFromStore[foundIndex].isChecked = !copyTaskListArrayFromStore[foundIndex].isChecked;
+      store.items = copyTaskListArrayFromStore;
     }
   }
-})
+});
 
 export default tasks;

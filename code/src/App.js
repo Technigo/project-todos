@@ -8,7 +8,7 @@ import { Footer } from 'components/footer';
 
 export const App = () => {
   const reducer = combineReducers({
-    pokemons: tasks.reducer
+    tasks: tasks.reducer
   });
   const store = configureStore({ reducer });
   return (

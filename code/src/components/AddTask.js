@@ -2,35 +2,57 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 
+const capitalize = (stringToCapitalise) => {
+  return stringToCapitalise.charAt(0).toUpperCase() + stringToCapitalise.slice(1);
+}
 const AddTask = () => {
   const [inputValue, setInputValue] = useState(''); // useState använder vi för att det ska uppdateras
+
   const dispatch = useDispatch();
+
   const onFormSubmit = (event) => {
     // för att sidan inte ska reload efter input event.PreventDefault måste in
     event.preventDefault();
+
+    // in newTask im creating a new id, name
     const newTask = {
-      id: Date.now().toString(),
-      name: inputValue.toLowerCase(),
-      isCaught: false
+      id: Date.now().toString(), // Date.now takes the todays date and makes it into a string
+      taskName: capitalize(inputValue), // byta plats på dessa för att capitalizefunction ska funka.
+      isChecked: false // använder sen när jag har checkboxes. I wanna
     };
-    dispatch(tasks.actions.addTask(newTask));
+    dispatch(tasks.actions.addTask(newTask)); // newtask is the payload.
     setInputValue('');
-    // https://www.random.org/
-  }
+  };
+
+  const onResetToDoClick = () => {
+    dispatch(tasks.actions.deleteAllTasks());
+  };
+
   return (
     <div className="container">
       <section>
-        <p>Plans for today</p>
-        <form onSubmit={onFormSubmit}>
-          <label htmlFor="addTaskInput">
-            <button type="submit"> Add</button>
-            {/* Here user writes the dotos - input */}
-            <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" />
-          </label>
-        </form>
+        <button
+          className="resetButton"
+          type="button"
+          onClick={onResetToDoClick}> Reset To-Do List
+        </button>
+        <div className="input">
+          <p>Plans for today</p>
+          <form onSubmit={onFormSubmit}>
+            <label htmlFor="addTaskInput">
+              <button type="submit"> Add</button>
+              {/* Here user writes the dotos - input */}
+              <input
+                value={inputValue}
+                onChange={(event) => setInputValue(event.target.value)}
+                id="addTaskInput"
+                type="text" />
+            </label>
+          </form>
+        </div>
       </section>
     </div>
-  )
-}
+  );
+};
 
 export default AddTask;
