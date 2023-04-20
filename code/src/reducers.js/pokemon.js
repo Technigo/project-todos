@@ -29,9 +29,38 @@ const pokemons = createSlice({
   name: 'pokemons',
   initialState,
   reducers: {
+    setupStore: (store, action) => {
+      store.items = action.payload;
+    },
     addPokemon: (store, action) => {
     // store.items.push(action.payload)
-      store.items = [...store.items, action.payload];
+      store.items = [action.payload, ...store.items];
+      localStorage.setItem('pokemonList', JSON.stringify(store.items));
+    },
+    deleteAllPokemon: (store) => {
+      store.items = [];
+      localStorage.setItem('pokemonList', JSON.stringify(store.items));
+    },
+    deleteSinglePokemon: (store, action) => {
+      const id = action.payload;
+      console.log('action.payload', action.payload)
+      const copyOfPokemonArrayFromStore = store.items;
+      const condition = (element) => element.id === id;
+      const foundIndex = copyOfPokemonArrayFromStore.findIndex(condition);
+      copyOfPokemonArrayFromStore.splice(foundIndex, 1);
+      store.items = copyOfPokemonArrayFromStore;
+      localStorage.setItem('pokemonList', JSON.stringify(store.items));
+    },
+    toggleIfPokemonIsCaught: (store, action) => {
+      const id = action.payload;
+      console.log('action.payload', action.payload)
+      const copyOfPokemonArrayFromStore = store.items;
+      const condition = (element) => element.id === id;
+      const foundIndex = copyOfPokemonArrayFromStore.findIndex(condition);
+      // eslint-disable-next-line max-len
+      copyOfPokemonArrayFromStore[foundIndex].isCaught = !copyOfPokemonArrayFromStore[foundIndex].isCaught;
+      store.items = copyOfPokemonArrayFromStore;
+      localStorage.setItem('pokemonList', JSON.stringify(store.items));
     }
   }
 
