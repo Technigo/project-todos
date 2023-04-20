@@ -1,9 +1,23 @@
 .addtask-container {
-  margin: 4rem 2rem 0rem 2rem;
-  background-color: #F7F7F8;
+  margin: 1rem 2rem 0rem 2rem;
+  background-color: black;;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.onTaskDeleteBtn {
+  position: relative;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  margin: 0rem 0rem 0rem 2rem;
+  background-color: black;
+}
+
+.onTaskDeleteBtn .svg path {
+  position: absolute;
+  z-index: 1;
 }
 
   .add-button {
@@ -15,13 +29,6 @@
 
   .add-button svg path {
     fill: #C60012;
-  }
-
-  .addtask-container {
-    margin: 2rem 2rem 0rem 2rem;
-    background-color: black;
-    align-items: center;
-    text-align: center;
   }
   
   .add-button {

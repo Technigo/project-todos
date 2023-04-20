@@ -1,50 +1,73 @@
-
 .tasklist-container {
   background-color: black;
-    justify-content: center;
-    align-items: center;
+  justify-content: center;
+  align-items: center;
+}
 
-  }
-
-  h1 {
+.header-container h2 {
   font-size: 1,2rem;
   font-weight: bold;
   margin-bottom: 1rem;
   color: #C60012;
-  }
+}
 
-  .header-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
-  .tasklist {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    padding: 0;
-    margin: 0;
-  }
+.tasklist {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+.singletask-container {
+  color: white;
+ 
+  border-radius: 10px;
+  height: 3rem;
+  width: 80%;
+  display: flex;
+  align-items: center;
+
+}
+
+.singletask-container p {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 18px;
+  margin: 0;
+  width: 100%;
+}
+
+.singletask-container input[type="checkbox"] {
+  margin-right: 1rem;
+  margin-left: 1rem;
+}
+
+.tasklist-container ul li {
+  font-size: 0.9rem;
+  list-style-type: none;
+}
+
+.taskdeletebtn {
+  right: 1rem;
+  border: none;
+  width: 2rem;
+  height: 2rem;
+  margin: 0;
+  background-color: black;
+  margin-right: 0.5rem;
+}
+
+
+
   
-
-
-  .singletask-container {
-    color: white;
-    border: solid;
-    border-color: white;
-    border-radius: 10px;
-    height: 3rem;
-    width: 80%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0.5rem 0rem 0.5rem 0rem;
-  }
-
-  .tasklist-container ul li {
-    font-size: 0.9rem;
-    list-style-type: none;
-  }
+  
