@@ -1,8 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import tasks from 'reducers/tasks';
-// import TaskForm from 'components/TodoForm';
+import tasks from 'reducers/task';
 import { TaskList } from './TaskList';
 
 const reducer = combineReducers({
@@ -14,7 +13,6 @@ const store = configureStore({ reducer });
 export const Main = () => {
   return (
     <Provider store={store}>
-      {/* <TaskForm /> */}
       <TaskList />
     </Provider>
   )

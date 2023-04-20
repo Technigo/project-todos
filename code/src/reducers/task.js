@@ -2,20 +2,20 @@ import { createSlice } from '@reduxjs/toolkit';
 import uniqid from 'uniqid';
 
 const tasks = createSlice({
-  name: 'task',
+  name: 'tasks',
   initialState: {
     items: [
       {
         id: 0,
         text: 'Continue with code along',
-        complete: false,
-        category: 'Studies'
+        isComplete: false,
+        date: Date.now()
       },
       {
         id: 1,
         text: 'Clean the office room',
-        complete: false,
-        category: 'House Chores'
+        isComplete: false,
+        date: Date.now()
       }
     ]
   },
@@ -25,8 +25,7 @@ const tasks = createSlice({
         id: uniqid(),
         text: action.payload.text,
         isComplete: false,
-        date: new Date(),
-        category: action.payload.category
+        date: Date.now()
       };
       store.items = [newTask, ...store.items];
     },
@@ -39,10 +38,10 @@ const tasks = createSlice({
     },
     delete: (store, action) => {
       store.items.splice(action.payload, 1);
+    },
+    deleteAll: (store) => {
+      store.items = [];
     }
-    // deleteAll: (store, action) => {
-    //   store.items = [];
-    // }
   }
 });
 
