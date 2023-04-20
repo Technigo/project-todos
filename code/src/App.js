@@ -12,8 +12,10 @@ export const App = () => {
   const store = configureStore({ reducer });
   return (
     <Provider store={store}>
-      <AddTask />
-      <TaskList />
+      <div className="outerWrapper">
+        <AddTask />
+        <TaskList />
+      </div>
     </Provider>
   )
 }

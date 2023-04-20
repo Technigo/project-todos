@@ -5,11 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: antiquewhite;
   box-sizing: border-box;
+      background-image: url("../src/assets/bgflower.jpg");
+        background-size: cover;
+        background-size: 100% auto;
+        background-repeat: no-repeat;
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.outerWrapper {
+  border: 2px solid black;
 }

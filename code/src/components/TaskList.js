@@ -1,4 +1,4 @@
-import { CheckBox } from '@mui/icons-material';
+/* import { CheckBox } from '@mui/icons-material'; */
 import React from 'react';
 import { useSelector } from 'react-redux';
 
@@ -12,9 +12,6 @@ const TaskList = () => {
           return <li key={singleTask.id}>{singleTask.taskName}</li>
         })}
       </ul>
-      {/*  <CheckBox
-        ischecked={done}
-        onChange={handleCheck} /> */}
     </section>
   )
 }
