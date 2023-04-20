@@ -2,12 +2,14 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import styled from 'styled-components';
+import TaskTracker from 'components/TaskTracker';
 import EmptyList from './EmptyList';
 import { Button } from './Button';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);
-  const emptyList = useSelector((store) => store.tasks.isEmpty)
+  const emptyList = useSelector((store) => store.tasks.isEmpty);
+  const totalTasks = taskList.length;
   const dispatch = useDispatch();
 
   const handleCheckboxChange = (id) => {
@@ -34,13 +36,14 @@ const TaskList = () => {
     return acc;
   }, {});
 
-  if (emptyList) {
+  if (emptyList || totalTasks === 0) {
     return (
       <EmptyList />
     )
   } else {
     return (
       <section>
+        <TaskTracker />
         {/* Object.entries(groupedTasks) method is used to convert the groupedTasks
        object into an array of key-value pairs, where the key is the category name
       and the value is the array of tasks. */}

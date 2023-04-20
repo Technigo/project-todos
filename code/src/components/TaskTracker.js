@@ -9,9 +9,10 @@ const TaskTracker = () => {
 
   return (
     <div>
-      <p>Completed {`${completedTasks.length}`}/{`${totalTasks}`}</p>
+      <h3>Completed {`${completedTasks.length}`}/{`${totalTasks}`}</h3>
     </div>
   )
 }
 
 export default TaskTracker;
+

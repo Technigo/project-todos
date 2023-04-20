@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
-import TaskTracker from 'components/TaskTracker';
 import { ButtonContainer, MainContainer } from 'components/MainStyling';
 import { Header } from 'components/Header';
 import { Button } from './Button';
@@ -24,7 +23,6 @@ export const Main = () => {
       <Header />
       <MainContainer>
         <AddTask />
-        <TaskTracker />
         <TaskList />
         <ButtonContainer>
           <Button
@@ -32,6 +30,7 @@ export const Main = () => {
             onClick={() => handleToggleComplete()}> Complete All ✅
           </Button>
           <Button
+            binBtnColor
             type="button"
             onClick={() => handleClearAll()}> Clear All 🗑️
           </Button>

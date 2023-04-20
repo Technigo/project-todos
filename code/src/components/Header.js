@@ -1,12 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
+import checkFileWhite from 'assets/check-file-white.svg'
 
 export const Header = () => {
   return (
     <HeaderWrapper>
       <div className="logoName">
-        {/* <img src={imagepath} alt="logo" /> */}
-        <h1>Tasks</h1>
+        <img src={checkFileWhite} alt="logo" />
+        <h1>TaskPro</h1>
       </div>
     </HeaderWrapper>
   )
@@ -15,6 +16,7 @@ export const Header = () => {
 const HeaderWrapper = styled.header`
     position: relative;
     padding: 20px;
+    justify-content: center;
     background-color:var(--dark-blue);
     /* border:solid greenyellow; */
     
@@ -31,6 +33,11 @@ const HeaderWrapper = styled.header`
         @media (min-width: 321px) {
             font-size: 2.5rem;
         }
+    }
+
+    img{
+      width: 50px;
+      margin-right:20px;
     }
     
 `

@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
     font-family: 'Poppins', sans-serif;
 }
 body {
-  background: pink;
+  background: var(--white);
   animation-name: slide-in-top;
   animation-duration: 1s;
 
