@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import uniqid from 'uniq'
+import uniqid from 'uniqid'
 
 const tasks = createSlice({
   name: 'tasks',
