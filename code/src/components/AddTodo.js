@@ -72,10 +72,8 @@ margin-left: -150px;
   box-shadow: 1px 2px rgba(33,33,33,.2); 
 }
 
-@media screen and (min-width: 366px) {
+@media screen and (min-width: 768px) {
   justify-content: flex-end;
-  width: 80%;
-  margin-left: -40px;
 }
 `
 export default AddTodo;
