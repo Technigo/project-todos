@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import todos from 'reducers.js/todos';
+import { Buttons } from './AddToDo';
 
 const ToDoList = () => {
   const dispatch = useDispatch();
@@ -20,13 +21,13 @@ const ToDoList = () => {
   }
   return (
     <section>
-      <ul>
+      <section>
         {toDoList.map((singleToDo) => {
           return (
             <li key={singleToDo.id}>
               <p>
                 <span>{singleToDo.name}</span>
-                <button type="button" onClick={() => onDeleteSingleToDoBtnClick(singleToDo.id)}> Delete this ToDo</button>
+                <Buttons delete type="button" onClick={() => onDeleteSingleToDoBtnClick(singleToDo.id)}> Remove</Buttons>
                 <label htmlFor={`toDo_with_id${singleToDo.id}`}>
                   Is this one accomplished?
                   <input id={`toDo_with_id${singleToDo.id}`} type="checkbox" value={singleToDo.IsCaught} onChange={() => onIsDoneCheckboxToggle(singleToDo.id)} />
@@ -34,7 +35,7 @@ const ToDoList = () => {
               </p>
             </li>)
         })}
-      </ul>
+      </section>
     </section>
   )
 }

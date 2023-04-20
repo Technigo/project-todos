@@ -5,9 +5,21 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #FFEEEE;
+  background: -webkit-linear-gradient(to right, #FFEEEE, #DDEFBB); 
+  background: linear-gradient(to right, #FFEEEE, #DDEFBB);
+  font-family: 'Manrope', sans-serif;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --primaryBlack: #2d2c2c;
+  --light: #fbfbfbb6;
+  --buttonHover: #e8d1d2;
+  --buttonGreen: #ddd97f;
+  --buttonHoverbeige: #e5d3bc;
 }
