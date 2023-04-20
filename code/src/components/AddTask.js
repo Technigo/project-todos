@@ -3,12 +3,44 @@
 // src/components/AddTask.js
 import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import styled from 'styled-components';
 import { addTask } from '../reducers/tasks'
 
 // eslint-disable-next-line no-lone-blocks
 { /* const capitalize = (stringToCapitalise) => {
   return stringToCapitalise.charAt(0).toUpperCase() + stringToCapitalise.slice(1);
 } */ }
+
+const Form = styled.form`
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+`;
+
+const Select = styled.select`
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+`;
+
+const Input = styled.input`
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+`;
+
+const Button = styled.button`
+  background-color: #28a745;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #218838;
+  }
+`;
 
 const AddTask = () => {
   const [input, setInput] = useState('')
@@ -51,8 +83,8 @@ const AddTask = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <select
+    <Form onSubmit={handleSubmit}>
+      <Select
         value={selectedProject}
         onChange={(e) => setSelectedProject(e.target.value)}>
         <option value="">Select a project</option>
@@ -61,26 +93,26 @@ const AddTask = () => {
             {project.name}
           </option>
         ))}
-      </select>
-      <input
+      </Select>
+      <Input
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Add a new task" />
-      <select
+      <Select
         value={selectedDate}
         onChange={(e) => setSelectedDate(e.target.value)}>
         <option value="today">Today</option>
         <option value="tomorrow">Tomorrow</option>
         <option value="later">Later this week</option>
-      </select>
+      </Select>
       {selectedDate === 'later' && (
         <div>
           <input
             type="date"
             value={selectedDueDate}
             onChange={(e) => setSelectedDueDate(e.target.value)} />
-          <button type="button" onClick={() => setSelectedDate('custom')}>Cancel</button>
+          <Button type="button" onClick={() => setSelectedDate('custom')}>Cancel</Button>
         </div>
       )}
       {selectedDate === 'custom' && (
@@ -92,7 +124,7 @@ const AddTask = () => {
         </div>
       )}
       <button type="submit">Add</button>
-    </form>
+    </Form>
   )
 }
 

@@ -1,6 +1,20 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 import { completeAll } from '../reducers/tasks';
+
+const Button = styled.button`
+  background-color: #28a745;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #218838;
+  }
+`;
 
 const CompleteAllButton = () => {
   const dispatch = useDispatch();
@@ -10,9 +24,9 @@ const CompleteAllButton = () => {
   };
 
   return (
-    <button type="button" onClick={handleClick}>
+    <Button type="button" onClick={handleClick}>
         Complete All
-    </button>
+    </Button>
   );
 };
 

@@ -1,6 +1,32 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 import { addProject } from '../reducers/projects';
+
+const Form = styled.form`
+  display: flex;
+  align-items: center;
+`;
+
+const Input = styled.input`
+  padding: 0.5em;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 1em;
+`;
+
+const Button = styled.button`
+  background-color: #28a745;
+  color: white;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #218838;
+  }
+`;
 
 const AddProject = () => {
   const [input, setInput] = useState('')
@@ -15,14 +41,14 @@ const AddProject = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
+    <Form onSubmit={handleSubmit}>
+      <Input
         type="text"
         value={input}
         onChange={(e) => setInput(e.target.value)}
         placeholder="Add a new project" />
-      <button type="submit">Add</button>
-    </form>
+      <Button type="submit">Add</Button>
+    </Form>
 
   )
 }

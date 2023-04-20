@@ -3,7 +3,32 @@
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import styled from 'styled-components';
 import { toggleProjectComplete, deleteProject } from '../reducers/projects'
+
+const ProjectListContainer = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
+const ProjectListItem = styled.li`
+  text-decoration: ${(props) => (props.complete ? 'line-through' : 'none')};
+  background-color: ${(props) => props.color};
+  padding: 10px;
+  margin: 5px;
+  border-radius: 5px;
+`;
+
+const DeleteButton = styled.button`
+  background-color: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 const ProjectList = () => {
   const dispatch = useDispatch()
@@ -17,18 +42,28 @@ const ProjectList = () => {
     dispatch(deleteProject(id));
   };
   return (
-    <ul>
-      {projects.map((project) => (
-        <li
-          key={project.id}
-          onClick={() => handleToggleComplete(project.id)}
-          style={{ textDecoration: project.complete ? 'line-through' : 'none' }}>
-          <span onClick={() => handleToggleComplete(project.id)}>{project.name}</span>
-          <button type="button" onClick={(e) => { e.stopPropagation(); handleDeleteProject(project.id); }}>Delete</button>
-        </li>
-      ))}
-    </ul>
-  )
-}
+    <ProjectListContainer>
+      <ul>
+        {projects.map((project) => (
+          <ProjectListItem
+            key={project.id}
+            complete={project.complete}>
+            <span onClick={() => handleToggleComplete(project.id)}>
+              {project.name}
+            </span>
+            <DeleteButton
+              type="button"
+              onClick={(e) => {
+                e.stopPropagation();
+                handleDeleteProject(project.id);
+              }}>
+              Delete
+            </DeleteButton>
+          </ProjectListItem>
+        ))}
+      </ul>
+    </ProjectListContainer>
+  );
+};
 
-export default ProjectList
+export default ProjectList;

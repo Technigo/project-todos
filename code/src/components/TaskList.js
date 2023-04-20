@@ -4,7 +4,51 @@
 // src/components/TaskList.js
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
+import styled from 'styled-components';
 import { toggleComplete, removeTask } from '../reducers/tasks'
+
+const TaskListContainer = styled.div`
+  margin-top: 1em;
+`;
+
+const ProjectTitle = styled.h3`
+  margin-bottom: 0.5em;
+  font-size: 1.2em;
+  color: #495057;
+`;
+const colors = ['#F94144', '#F3722C', '#F8961E', '#FDC500', '#F9C74F', '#90BE6D', '#43AA8B', '#4D908E', '#577590', '#277DA1'];
+
+const ProjectContainer = styled.div`
+ background-color: ${(props) => props.color};
+  padding: 1em;
+  margin-bottom: 1em;
+  border-radius: 5px;
+`;
+
+const TaskListUl = styled.ul`
+  list-style: none;
+  padding: 0;
+`;
+
+const TaskItem = styled.li`
+  padding: 0.5em 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  text-decoration: ${(props) => (props.completed ? 'line-through' : 'none')};
+`;
+
+const DeleteButton = styled.button`
+  background-color: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+
+  &:hover {
+    text-decoration: underline;
+  }
+`;
 
 const TaskList = () => {
   const tasks = useSelector((state) => state.tasks)
@@ -32,31 +76,29 @@ const TaskList = () => {
   };
 
   return (
-
-    <div>
+    <TaskListContainer>
       {projects.map((project) => (
-        <div key={project.id}>
-          <h3>{project.name}</h3>
-          <ul>
+        <ProjectContainer key={project.id} color={colors[project.id % colors.length]}>
+          <ProjectTitle>{project.name}</ProjectTitle>
+          <TaskListUl>
             {tasks
               .filter((task) => task.projectId === project.id)
               .map((task) => (
-                <li
+                <TaskItem
                   key={task.id}
-                  onClick={() => handleToggleComplete(task.id)}
-                  style={{ textDecoration: task.complete ? 'line-through' : 'none' }}>
+                  completed={task.complete}
+                  onClick={() => handleToggleComplete(task.id)}>
                   {task.text}{' '}
                   <span>({formatDate(task.createdAt, task.dueDate)})</span>
-                  <button type="button" onClick={(e) => { e.stopPropagation(); handleRemoveTask(task.id); }}>
-                  Delete
-                  </button>
-                </li>
-
+                  <DeleteButton type="button" onClick={(e) => { e.stopPropagation(); handleRemoveTask(task.id); }}>
+                    Delete
+                  </DeleteButton>
+                </TaskItem>
               ))}
-          </ul>
-        </div>
+          </TaskListUl>
+        </ProjectContainer>
       ))}
-    </div>
+    </TaskListContainer>
   )
 }
 
