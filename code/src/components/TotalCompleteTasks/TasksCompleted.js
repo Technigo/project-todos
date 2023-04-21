@@ -2,7 +2,6 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import moment from 'moment';
 import styled from 'styled-components'
-import './TasksComplete.css';
 
 const H3 = styled.h3`
   color: white;
