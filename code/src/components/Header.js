@@ -1,16 +1,52 @@
 import React from 'react';
 import styled from 'styled-components';
+import { useSelector } from 'react-redux';
+import { format } from 'date-fns';
 
 const StyledHeader = styled.header`
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    font-size: 56px;
-    border: solid green 3px;
-    border-radius: 25px 5px 25px 5px;
-    -webkit-border-radius: 25px 5px 25px 5px;
-    -moz-border-radius: 25px 5px 25px 5px;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    border: none;
+    border-radius: 25px 2px 25px 2px;
+    -webkit-border-radius: 25px 2px 25px 2px;
+    -moz-border-radius: 25px 2px 25px 2px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #D4C7B0;
+    box-shadow: 0 5px 8px  rgb(140,115,115,0.2), 0 3px 10px  rgb(140,115,115,0.2);
+
+    h1 {
+      font-size: 96px;
+      font-family: 'Caveat', cursive;
+      color: #3F4238;
+      text-shadow: -4px 5px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    h2 {
+      font-family: 'Caveat', cursive;
+      font-size: 22px;
+      color: black;
+    }
 `;
 
+const formatDate = () => {
+  const currentDate = new Date();
+  return format(currentDate, 'EEE dd MMMM');
+};
+
 export const Header = () => {
-  return <StyledHeader>To Do - App</StyledHeader>
+  const taskList = useSelector((store) => store.tasks.items)
+
+  const dateString = formatDate();
+
+  return (
+    <StyledHeader>
+      <h1>ToDo&apos;s</h1>
+      <h2>{dateString}</h2>
+      <h3>? / {taskList.length} tasks are done</h3>
+    </StyledHeader>
+  );
 }

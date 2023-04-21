@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect } from 'react';
 import { tasks } from 'reducers/tasks';
 import { useSelector, useDispatch } from 'react-redux';
@@ -9,18 +10,175 @@ const StyledTaskListContainer = styled.section`
     flex-direction: column;
     align-content: center;
     flex-wrap: wrap;
-    border: solid blue 3px;
+    font-family: 'Roboto', sans-serif;
+
+    ul {
+      width: 100%;
+    }
 `;
 
 const StyledSingleTaskWrapper = styled.div`
     display: flex;
-    border: solid purple 1px;
+    align-items: center;
+    border: none;
     margin: 20px 0;
     padding: 20px;
-    border-radius: 25px 5px 25px 5px;
-    -webkit-border-radius: 25px 5px 25px 5px;
-    -moz-border-radius: 25px 5px 25px 5px;
-    box-shadow: 0 4px 8px  rgba(188,23,214,0.2), 0 6px 20px  rgba(188,23,214,0.2);
+    border-radius: 25px 2px 25px 2px;
+    -webkit-border-radius: 25px 2px 25px 2px;
+    -moz-border-radius: 25px 2px 25px 2px;
+    box-shadow: 0 5px 8px  rgb(140,115,115,0.2), 0 3px 10px  rgb(140,115,115,0.2);
+    background-color: #F0EFEB;
+
+    input {
+      cursor: pointer;
+    }
+`;
+
+const StyledListItem = styled.li`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  row-gap: 10px;
+
+  p {
+    word-wrap: break-word;
+    margin-left: 10px;
+  }
+`;
+
+const StyledSingleTask = styled.p`
+  font-size: 28px;
+  font-family: 'Caveat', cursive;
+`;
+
+const StyledTimeP = styled.p`
+  font-size: 14px;
+  color: grey;
+`;
+
+const StyledDeleteSingleBtn = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #B7B7A4;
+    border: solid grey 1px;
+    padding: 12px;
+    width: 20px;
+    height: 20px;
+    border-radius: 8px 2px 8px 2px;
+    -webkit-border-radius: 8px 2px 8px 2px;
+    -moz-border-radius: 8px 2px 8px 2px;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &:active {
+      background-color: #A5A58D;
+    }
+`;
+
+const StyledDeleteAllBtn = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    margin: 10px 0;
+    width: 50%;
+    max-width: 150px;
+    background-color: #D4C7B0;
+    color: #3F4238;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    border: none;
+    border-radius: 10px 2px 10px 2px;
+    -webkit-border-radius: 10px 2px 10px 2px;
+    -moz-border-radius: 10px 2px 10px 2px;
+    box-shadow: 0 5px 8px  rgb(140,115,115,0.2), 0 3px 10px  rgb(140,115,115,0.2);
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+
+    &:active {
+      color: white;
+      background-color: #A5A58D;
+    }
+
+    @media (min-width: 667px) {
+      width: 30%;
+    }
+
+    @media (min-width: 1024px) {
+      width: 25%;
+    }
+`;
+
+const CheckboxTypeDiv = styled.div`
+
+  [type='checkbox'] {
+    opacity: 0;
+  }
+
+  [type='checkbox'] + label {
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    display: inline-block;
+    color: darkgreen;
+    line-height: 25px;
+  }
+
+  [type='checkbox'] + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    outline: 2px solid blue;
+    background: white;
+  }
+
+  [type='checkbox']:checked + label::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    outline: 2px solid red;
+    background: white;
+  }
+
+  [type='checkbox']:checked + label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    background-image: url(${process.env.PUBLIC_URL}/assets/icons8-done-30.png);
+    background-size: contain;
+    transform: scale(1);
+    opacity: 1;
+    transition: all .3s ease;
+  }
+
+  [type='checkbox']:not(:checked) + label::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 18px;
+    height: 18px;
+    background-image: url(${process.env.PUBLIC_URL}/assets/icons8-done-30.png);
+    background-size: contain;
+    transform: scale(0);
+    opacity: 0;
+  }
 `;
 
 export const TaskList = () => {
@@ -66,28 +224,32 @@ export const TaskList = () => {
 
           return (
             <StyledSingleTaskWrapper key={singleTask.id}>
-              <label htmlFor={`{task_with_id${singleTask.id}`}>
+              <CheckboxTypeDiv>
                 <input
                   type="checkbox"
                   id={`{task_with_id${singleTask.id}`}
                   value={singleTask.isDone}
+                  name="singleTaskCheckbox"
                   onChange={() => onIsDoneCheckboxToggle(singleTask.id)} />
-              </label>
-              <li>
-                {singleTask.name}
-                <button
-                  type="button"
-                  onClick={() => onDeleteSingleTaskBtnClick(singleTask.id)}>
+
+                <label htmlFor={`{task_with_id${singleTask.id}`}>
+                  <StyledListItem>
+                    <StyledSingleTask>{singleTask.name}</StyledSingleTask>
+                    <StyledTimeP>Added {time}</StyledTimeP>
+                  </StyledListItem>
+                </label>
+              </CheckboxTypeDiv>
+
+              <StyledDeleteSingleBtn
+                type="button"
+                onClick={() => onDeleteSingleTaskBtnClick(singleTask.id)}>
                ✖️
-                </button>
-                <p>Added {time}</p>
-              </li>
+              </StyledDeleteSingleBtn>
             </StyledSingleTaskWrapper>
           )
         })}
       </ul>
-      <button type="button" onClick={onDeleteAllTasks}>Delete all tasks</button>
-      <p>? / {taskList.length} tasks are done</p>
+      <StyledDeleteAllBtn type="button" onClick={onDeleteAllTasks}>Delete all tasks ✖️</StyledDeleteAllBtn>
     </StyledTaskListContainer>
   )
 }

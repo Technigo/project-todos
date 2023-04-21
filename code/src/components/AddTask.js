@@ -8,17 +8,69 @@ const StyledAddTaskContainer = styled.section`
     flex-direction: column;
     flex-wrap: wrap;
     align-content: center;
-    border: solid pink 3px;
-    margin: 20px 0;
+    border: none;
+    margin-top: 20px;
     padding: 10px;
-    border-radius: 25px 5px 25px 5px;
-    -webkit-border-radius: 25px 5px 25px 5px;
-    -moz-border-radius: 25px 5px 25px 5px;
+    font-family: 'Roboto', sans-serif;
+    background-color: #F0EFEB;
+    border-radius: 25px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    box-shadow: 0 5px 8px  rgb(140,115,115,0.1), 0 3px 10px  rgb(140,115,115,0.1);
+
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+    }
+`;
+
+const StyledLabel = styled.label`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    font-size: 26px;
+    font-family: 'Caveat', cursive;
+
+    input {
+      margin: 10px 0;
+      width: 90%;
+      font-size: 18px;
+      border: none;
+      border-radius: 25px;
+      -webkit-border-radius: 25px;
+      -moz-border-radius: 25px;
+      padding: 5px;
+    }
+`;
+
+const StyledAddBtn = styled.button`
+    display: flex;
+    align-items: center;
+    border: solid grey 1px;
+    background-color: #B7B7A4;
+    padding: 10px;
+    border-radius: 10px 3px 10px 3px;
+    -webkit-border-radius: 10px 3px 10px 3px;
+    -moz-border-radius: 10px 3px 10px 3px;
+    box-shadow: 0 5px 8px  rgb(140,115,115,0.2), 0 3px 10px  rgb(140,115,115,0.2);
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.15);
+    }
+
+    &:active {
+      background-color: #A5A58D;
+    }
 `;
 
 export const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
   const dispatch = useDispatch();
+
   const onSubmitAddTask = (event) => {
     event.preventDefault(); // This prevents the default behavior of the event
     const newTask = {
@@ -34,15 +86,15 @@ export const AddTask = () => {
   return (
     <StyledAddTaskContainer>
       <form onSubmit={onSubmitAddTask}>
-        <label htmlFor="addTaskInput">
+        <StyledLabel htmlFor="addTaskInput">
             Add new task
           <input
             type="text"
             value={inputValue} // This is connected to the reset of the state in the text input
             onChange={(event) => setInputValue(event.target.value)}
             id="addTaskInput" />
-        </label>
-        <button type="submit">➕</button>
+        </StyledLabel>
+        <StyledAddBtn type="submit">➕</StyledAddBtn>
       </form>
     </StyledAddTaskContainer>
   )
