@@ -1,13 +1,10 @@
 # Project Todos
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+I created a To do list using React, Redux and various node packages. 
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+First I worked on the functionality of the list mostly focusing on how to create the reducers to fetch what I wanted from the store. Then I did a little design work to make it look the way I was hoping. I am dissapointed in how the calendar is placed but fixing that is for another week when I have more time.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://jennifers-todo-app.netlify.app/
