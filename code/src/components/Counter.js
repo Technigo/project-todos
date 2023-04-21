@@ -12,7 +12,7 @@ const CounterText = styled.p`
 
 export const Counter = () => {
   const items = useSelector((store) => store.tasks.items)
-  const completedTasks = items.filter((task) => task.complete);
+  const completedTasks = items.filter((task) => task.isChecked);
   const { width, height } = useWindowSize()
 
   const doneTasks = () => {
@@ -28,7 +28,7 @@ export const Counter = () => {
             numberOfPieces={100}
             gravity={0.05}
             confettiSource={{ x: 0, y: 500, w: 1000, h: 1000 }} />
-          <h2>✨ Yeeeeey ✨</h2>
+          <h2>All done, good job!</h2>
         </>)
     } else {
       return `${completedTasks.length} / ${items.length} done`
