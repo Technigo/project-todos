@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-  /* background-color: var(--background); */
+  background-color: #f8f7f0;
   min-width: 20.93333rem;
   max-width: 31.25rem;
   margin: 0 auto;
@@ -9,7 +9,6 @@ export const Content = styled.div`
   border: 0.3rem inset;
   border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) 1; 
   text-align: center;
-
 `;
 
 export const TaskForm = styled.form`

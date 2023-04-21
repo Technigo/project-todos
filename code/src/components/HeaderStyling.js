@@ -12,3 +12,4 @@ export const StyledTitle = styled.h1`
   top: 0;
   margin: 2rem auto 0;
 ;`
+

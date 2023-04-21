@@ -18,7 +18,7 @@ const TaskItem = ({ task, onToggle, onDeleteTask }) => (
         checked={task.isComplete}
         onChange={() => onToggle(task.id)} />
       <StyledCheckboxLabel htmlFor={`task-${task.id}`}>{task.text}</StyledCheckboxLabel>
-      <DeleteButton type="button" onClick={onDeleteTask} aria-label={`Delete task ${task.text}`} role="button">
+      <DeleteButton type="button" onClick={onDeleteTask} title="Delete" aria-label={`Delete task ${task.text}`} role="button">
         <StyledIcon icon={faTrash} />
       Delete
       </DeleteButton>

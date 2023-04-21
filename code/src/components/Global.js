@@ -9,7 +9,6 @@ export const Button = styled.button`
   border-radius: 0.5rem;
   border: none;
   transition-duration: 0.4s;
-  box-shadow: var(--box-shadow);
   margin: 0.625rem;
   font-family: var(--paragraph-font-family);
   text-align: center;
@@ -20,6 +19,7 @@ export const AddButton = styled(Button)`
   background-color:var(--btn1-color);
   color: black;
   padding: 0.8rem;
+  box-shadow: var(--box-shadow);
 
    &:hover {
     background-color: white;
@@ -31,9 +31,10 @@ export const AddButton = styled(Button)`
 `;
 
 export const DeleteButton = styled(Button)`
-  background-color: #fff;
-  border: solid 0.1rem var(--btn2-color);
-  color: black;
+  background-color: transparent;
+  text-indent: -9999px; 
+  //Text-indent hides the text "Delete" but still allows it to be read by screen readers. 
+  // The text-indent property moves the text off-screen, but it is still present in the DOM.
   padding: 0.1rem 0.7rem;
 
    &:hover {
@@ -49,6 +50,7 @@ export const DeleteAllButton = styled(Button)`
   color: #fff;
   padding: 0.1rem 0.7rem;
   margin: 0 auto;
+  box-shadow: var(--box-shadow);
 
     &:hover {
     background-color: #fff;
@@ -92,6 +94,7 @@ export const StyledCheckbox = styled.input`
   outline: none;
   cursor: pointer;
   transition-duration: 0.4s;
+  box-shadow: var(--box-shadow);
 
   &:checked {
     background-color: #fff;
