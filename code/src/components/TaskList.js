@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import GlobalStyle from 'styles/GlobalStyle'
 import { useSelector, useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
+import TrashIcon from 'styles/TrashIcon'
 
 const TaskList = () => {
   const dispatch = useDispatch();
@@ -35,7 +36,7 @@ const TaskList = () => {
                     value={singleTask.isDone}
                     onChange={() => onIsDoneToggle(singleTask.id)} />
                 </label>
-                <Button onClick={() => onRemoveTaskButtonClick(singleTask.id)} type="button">🗑️</Button>
+                <Button onClick={() => onRemoveTaskButtonClick(singleTask.id)} type="button"><TrashIcon /></Button>
               </EachTask>
             )
           })}
@@ -65,9 +66,11 @@ const EachTask = styled.div`
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
-  background-color: #F9F5E7;
+  background-color: #FFFFFF;
   border-radius: 10px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  font-family: 'Quicksand', serif;
+
 `
 
 const Button = styled.button`

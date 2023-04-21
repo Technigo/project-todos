@@ -5,13 +5,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: #EEEEEE; */
-  background-color: #A7727D;
+  /* background-color: #EAFDFC; */
+  background-image: url('../public/images/Bubbles.jpg');
+  background-size: cover;
+  background-position: center;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+  /* font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace; */
+  font-family: 'Quicksand', sans-serif;
 }
 
 main {
@@ -19,12 +22,12 @@ main {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border: 2px solid #B7B78A;
-  margin-right: 30%;
-  margin-left: 30%;
+  border: 2px solid #91D8E4;
+  margin-right: 20%;
+  margin-left: 20%;
   border-radius: 20px;
   box-shadow: 0 0.5rem 2rem rgb(56, 55, 55);
   margin-top: 2%;
-  background-color: #F8EAD8;
+  background-color: #EAFDFC;
   min-height: 90vh;
 }

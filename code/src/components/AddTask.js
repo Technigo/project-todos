@@ -40,7 +40,7 @@ const AddTask = () => {
           </label>
           <button type="submit">Add</button>
         </Form>
-        <button type="button" onClick={onRemoveAllButtonClick}>Remove all</button>
+        <Button type="button" onClick={onRemoveAllButtonClick}>Remove all</Button>
       </section>
     </>
 
@@ -56,9 +56,23 @@ const Form = styled.form`
 input[type=text] {
       background: white;
       font-size: 16px;
-      outline: 1px solid #A7727D;
+      color: #82AAE3;
+      outline: 1px solid #FFFFFF;
       border-radius: 5px;
-      width: 100%;
+      width: 100%;   
+}
+`
+
+const Button = styled.button`
+  background-color: #82AAE3;
+  color: #FFFFFF;
+  border-radius: 30px;
+  border: none;
+  padding: 10px;
+  align-text: center;
+
+&:hover {
+  background-color: #91D8E4;
 }
 `
 
