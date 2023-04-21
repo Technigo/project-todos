@@ -19,28 +19,29 @@ export const NoteList = () => {
       {noteList.map((singleNote) => {
         return (
           <TaskBox>
+            <label htmlFor={`note_with_id${singleNote.id}`}>
+              <input
+                className="input-checkbox"
+                id={`note_with_id${singleNote.id}`}
+                type="checkbox"
+                value={singleNote.isDone}
+                onChange={() => onIsDoneCheckToggle(singleNote.id)} />
+            </label>
+
             <li key={singleNote.id}>
               <p>
                 <span>
                   {singleNote.todo}
                 </span>
               </p>
-
-              <label htmlFor={`note_with_id${singleNote.id}`}>
-                <input
-                  id={`note_with_id${singleNote.id}`}
-                  type="checkbox"
-                  value={singleNote.isDone}
-                  onChange={() => onIsDoneCheckToggle(singleNote.id)} />
-              </label>
-
-              <TrashBtn
-                type="button"
-                onClick={() => onDeleteNoteBtnClick(singleNote.id)}>
-                <i className="fa-regular fa-trash-can" />
-              </TrashBtn>
-
             </li>
+
+            <TrashBtn
+              type="button"
+              onClick={() => onDeleteNoteBtnClick(singleNote.id)}>
+              <i className="fa-regular fa-trash-can" />
+            </TrashBtn>
+
           </TaskBox>
         )
       })}

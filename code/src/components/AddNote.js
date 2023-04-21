@@ -28,7 +28,12 @@ export const AddNote = () => {
       <button type="button" onClick={onDeleteNoteBtnClick}>Delete all todos</button>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addNoteInput">
-          <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addNoteInput" type="text" />
+          <input
+            className="input-text"
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+            id="addNoteInput"
+            type="text" />
         </label>
         <AddBtn type="submit">
           <i className="fa-solid fa-square-plus" />

@@ -45,7 +45,8 @@ export const AddBtn = styled.button`
 
 export const TaskBox = styled.div`
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+    align-items: center;
     background-color: var(--box-color);
     width: 70vw;
     max-width: 300px;
@@ -53,6 +54,7 @@ export const TaskBox = styled.div`
     padding: 20px;
     margin-top: 10px;
     border-radius: 10px;
+  
 `
 
 export const TrashBtn = styled.button`
