@@ -16,6 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  margin-bottom: 1rem;
 }
 
 .tasklist {
@@ -28,13 +29,17 @@
   margin: 0;
 }
 
+.list-wrapper {
+  margin: auto;
+}
+
 .singletask-container {
   color: white;
-  border-radius: 10px;
   height: 3rem;
-  width: 80%;
+  width: 85%;
   display: flex;
   align-items: center;
+
 }
 
 .singletask-container p {
@@ -50,6 +55,8 @@
 .singletask-container span {
   font-size: 1.2rem;
   color: white;
+  font-family: 'Roboto Condensed', sans-serif;
+
 }
 
 
