@@ -1,10 +1,20 @@
 import styled from 'styled-components';
 
 export const AddTaskStyles = styled.section`
-    /* border: 5px green solid; */
+    border: 5px green solid;
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0 0 25px 0;
+    width: 90vw;
+    max-width: 500px;
+    height: 60vw;
+    max-height: 500px; 
+    margin: 0 auto;
+    border: 3px black solid;
+    border-radius: 12px;
+    background-color: whitesmoke;
+    
 
 h1 {
     font-family: 'Yeseva One', cursive;
@@ -13,16 +23,18 @@ h1 {
 }
 
 form {
-    width: 50vw;
-    height: 20vw;
-    border: 3px black solid;
+    width: 75vw;
+    max-width: 500px;
+    height: 40vw;
+    max-height: 500px; 
+    /* border: 3px black solid;
     border-radius: 12px;
-    background-color: whitesmoke;
+    background-color: whitesmoke; */
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     padding: 15px;
-    margin: 25px 0 10px 0;
+    margin: 10px 0 10px 0;
 }
 
 label {

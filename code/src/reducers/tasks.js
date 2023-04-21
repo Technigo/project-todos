@@ -8,28 +8,28 @@ const initialState = {
       // label: 'School',
       due: 1681904108559,
       complete: false
-    },
-    {
-      id: 1681904108560,
-      task: 'Shower',
-      // label: 'School',
-      due: 1681904108560,
-      complete: false
-    },
-    {
-      id: 1681904108561,
-      task: 'Meet mentor',
-      // label: 'School',
-      due: 1681904108561,
-      complete: false
-    },
-    {
-      id: 1681904108562,
-      task: 'Demo design project',
-      // label: 'School',
-      due: 1681904108562,
-      complete: false
     }
+    // {
+    //   id: 1681904108560,
+    //   task: 'Shower',
+    //   // label: 'School',
+    //   due: 1681904108560,
+    //   complete: false
+    // },
+    // {
+    //   id: 1681904108561,
+    //   task: 'Meet mentor',
+    //   // label: 'School',
+    //   due: 1681904108561,
+    //   complete: false
+    // },
+    // {
+    //   id: 1681904108562,
+    //   task: 'Demo design project',
+    //   // label: 'School',
+    //   due: 1681904108562,
+    //   complete: false
+    // }
   ]
 }
 

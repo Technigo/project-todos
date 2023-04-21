@@ -1,6 +1,7 @@
 import { EachTask } from 'components/eachTask/EachTask';
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { CompleteListStyles } from './TaskList.styles';
 // import { tasks } from 'reducers/tasks';
 
 export const CompleteTasks = () => {
@@ -8,13 +9,16 @@ export const CompleteTasks = () => {
   const completeTasks = taskList.filter((item) => item.complete === true)
   // const dispatch = useDispatch();
   return (
-    <section>
-      <h3>Complete Tasks</h3>
-      <ul>
+    <CompleteListStyles>
+      <h3>All Done</h3>
+      <section>
+        {completeTasks.length === 0 && (
+          <img src="assets/wateringideas.jpg" alt="watering" />
+        )}
         {completeTasks.map((singleTask) => (
           <EachTask key={singleTask.id} singleTask={singleTask} />
         ))}
-      </ul>
-    </section>
+      </section>
+    </CompleteListStyles>
   )
 }
