@@ -22,6 +22,7 @@ const SubmitBtn = styled.button`
 width: 30px;
 height: 30px;
 border-radius: 50px;
+border-color: black;
 `
 
 const AddTask = () => {
@@ -34,7 +35,7 @@ const AddTask = () => {
       text: inputValue,
       isChecked: false
     }
-    dispatch(tasks.actions.addTask(newTask));
+    dispatch(tasks.actions.newTask(newTask));
     setInputValue('');
   }
 
@@ -42,7 +43,7 @@ const AddTask = () => {
     <InnerWrapper>
       <AddInnerWrapper>
         <form onSubmit={onFormSubmit}>
-          <label htmlFor="task-input">New thing
+          <label htmlFor="task-input">
             <Input
               value={inputValue}
               type="text"
