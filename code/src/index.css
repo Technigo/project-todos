@@ -155,13 +155,73 @@ code {
   padding: 5px 8px;
 }
 
-.todo-label {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
+.container-todo-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-top: 2px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 16px;
   font-family: 'Montserrat', sans-serif;
+}
+
+/* Hide the browser's default checkbox */
+.container-todo-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a pink-ish background color */
+.container-todo-label:hover input ~ .checkmark {
+  background-color: #e3b3f7;
+}
+
+/* When the checkbox is checked, add a green background */
+.container-todo-label input:checked ~ .checkmark {
+  background-color: #8bc55c;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container-todo-label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-todo-label .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .List {
@@ -241,7 +301,7 @@ code {
 
   .Container {
     height: 520px;
-    padding: 12px;
+    padding: 16px;
   }
 
   .Tabs {
@@ -252,8 +312,12 @@ code {
 
   .bgtest {
     background-color: #DA58C2;
+    /*
     top: -72px;
     left: -240px;
+    */
+    top: -72px;
+    left: calc(50% - 390px);
   }
   
   .Input {
@@ -271,7 +335,7 @@ code {
   
 .blobcontainer {
   position: relative;
-  top: 10px;
+  top: -30px;
 }
 
 .blobcontainer p {
@@ -289,43 +353,15 @@ code {
 
 
 
-/*   ----- TEST   */
+/*   ----- TEST ----  */
 
-
-input[type="checkbox"] {
-  visibility: visible;
-}
-.checkboxOverride {
-  margin: 0;
-  position: relative;
-  margin-top: 3px;
-}
-.checkboxOverride input[type="checkbox"]:checked + label:after {
-  opacity: 1;
-}
-.checkboxOverride label {
-  background: none repeat scroll 0 0 rgb(65, 108, 158);
-  border: 1px solid #DDDDDD;
-  border-radius: 50%;
-  cursor: pointer;
-  height: 25px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 25px;
-}
-.checkboxOverride label:after {
-  border-style: none none solid solid;
-  content: "";
-  height: 5px;
-  left: 6px;
-  opacity: 0;
-  position: absolute;
-  top: 7px;
-  -ms-transform:rotate(-45deg); /* IE 9 */
-  -webkit-transform:rotate(-45deg); /* Safari and Chrome */
-  transform:rotate(-45deg);
-  width: 10px;
+.todo-label {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 

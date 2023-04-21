@@ -23,6 +23,7 @@ const StyledP = styled.p`
   
   @media (max-width: 560px) {
     font-size: 16px;
+    margin-top: 20px;
   }
 `;
 

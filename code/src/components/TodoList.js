@@ -45,11 +45,10 @@ const TodoList = ({ selectedTab }) => {
           {filteredList.map((singleTodo, index) => {
             return (
               <StyledTodoRow key={singleTodo.id} index={index}>
-                <label htmlFor={singleTodo.id} className="todo-label">
+                <label htmlFor={singleTodo.id} className="container-todo-label">
                   <span>{singleTodo.content}</span>
-                  <div className="checkboxOverride">
-                    <input type="checkbox" id={singleTodo.id} className="checkboxInputOverride" name="todos" value="1" onChange={() => dispatch(tasks.actions.handleCheck(singleTodo))} />
-                  </div>
+                  <input type="checkbox" id={singleTodo.id} className="checkbox" name="todos" value="1" onChange={() => dispatch(tasks.actions.handleCheck(singleTodo))} />
+                  <span className="checkmark" />
                 </label>
                 <DeleteButton type="button" onClick={() => dispatch(tasks.actions.removeItem(singleTodo.id))}>Delete</DeleteButton>
               </StyledTodoRow>
