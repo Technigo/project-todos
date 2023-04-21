@@ -71,6 +71,30 @@ export const TrashBtn = styled.button`
     }
   }
 `
+export const DeleteBox = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--box-color);
+    width: 70vw;
+    max-width: 300px;
+    height: 18px;
+    padding: 10px 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--main-color);
+    i {
+    font-size: 15px;
+    color: var(--main-color);
+    padding-bottom: 6px;
+    &:hover {
+      color: var(--hover-color);
+    }
+  }
+  
+`
 
 export const Foot = styled.div`
   display: flex;

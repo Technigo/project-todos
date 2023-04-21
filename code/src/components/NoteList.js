@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { notereminder } from 'reducers/reminders';
-import { TaskBox, TrashBtn } from './Styling/GlobalStyle'
+import { TaskBox, TrashBtn, DeleteBox } from './Styling/GlobalStyle'
 
 export const NoteList = () => {
   const noteList = useSelector((store) => store.notes.items);
@@ -13,19 +13,25 @@ export const NoteList = () => {
   const onIsDoneCheckToggle = (id) => {
     dispatch(notereminder.actions.toggleIfItsDone(id))
   }
+  const onDeleteAllBtnClick = () => {
+    dispatch(notereminder.actions.deleteAllNotes())
+  }
   return (
     <section>
 
       {noteList.map((singleNote) => {
         return (
+
           <TaskBox>
             <label htmlFor={`note_with_id${singleNote.id}`}>
+
               <input
                 className="input-checkbox"
                 id={`note_with_id${singleNote.id}`}
                 type="checkbox"
                 value={singleNote.isDone}
                 onChange={() => onIsDoneCheckToggle(singleNote.id)} />
+
             </label>
 
             <li key={singleNote.id}>
@@ -45,6 +51,14 @@ export const NoteList = () => {
           </TaskBox>
         )
       })}
+      <DeleteBox>
+        Delete all
+        <TrashBtn
+          type="button"
+          onClick={onDeleteAllBtnClick}>
+          <i className="fa-regular fa-trash-can" />
+        </TrashBtn>
+      </DeleteBox>
     </section>
   )
 }

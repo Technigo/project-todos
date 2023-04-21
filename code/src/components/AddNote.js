@@ -20,12 +20,8 @@ export const AddNote = () => {
     dispatch(notereminder.actions.addNote(newNote))
     setInputValue('');
   }
-  const onDeleteNoteBtnClick = () => {
-    dispatch(notereminder.actions.deleteAllNotes())
-  }
   return (
     <section>
-      <button type="button" onClick={onDeleteNoteBtnClick}>Delete all todos</button>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addNoteInput">
           <input
