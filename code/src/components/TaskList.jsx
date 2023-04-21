@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/control-has-associated-label */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import Tasks from 'reducers/Task';
@@ -14,21 +15,20 @@ const TaskList = () => {
     dispatch(Tasks.actions.toggleComplete(id));
   }
   return (
-    <section>
+    <section className="w-full">
       <ul>
         {taskList.map((singleTask) => {
           return (
             <li key={singleTask.id}>
-              <p>
+              <p className="flex justify-between items-center">
                 <label htmlFor={`task_with_id${singleTask.id}`}>
-                  is it complete?
                   <input id={`task_with_id${singleTask.id}`} type="checkbox" value={singleTask.isComplete} onChange={() => onIsComplete(singleTask.id)} />
                 </label>
-                <span>{singleTask.text}</span>
+                <span className="w-full text-left ml-2 text-sm">{singleTask.text}</span>
                 <button
+                  className="text-red bi bi-trash3 "
                   type="button"
-                  onClick={() => onDeleteSingleTask(singleTask.id)}>Delete this pokemon
-                </button>
+                  onClick={() => onDeleteSingleTask(singleTask.id)} />
               </p>
             </li>)
         })}
