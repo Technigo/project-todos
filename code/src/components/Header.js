@@ -7,18 +7,15 @@ export const Header = () => {
     <HeaderWrapper>
       <div className="logoName">
         <img src={checkFileWhite} alt="logo" />
-        <h1>TaskPro</h1>
+        <h1>Taskify <sup>&copy;</sup></h1>
       </div>
     </HeaderWrapper>
   )
 }
 
 const HeaderWrapper = styled.header`
-    position: relative;
     padding: 20px;
-    justify-content: center;
     background-color:var(--dark-blue);
-    /* border:solid greenyellow; */
     
 
     .logoName {
@@ -38,6 +35,11 @@ const HeaderWrapper = styled.header`
     img{
       width: 50px;
       margin-right:20px;
+    }
+
+    sup {
+      font-size: 1.3rem;
+      font-weight: lighter;
     }
     
 `

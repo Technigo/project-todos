@@ -1,5 +1,4 @@
 import React from 'react';
-// import award from 'assets/award.svg'
 import checkFile from 'assets/check-file.svg'
 import styled from 'styled-components';
 

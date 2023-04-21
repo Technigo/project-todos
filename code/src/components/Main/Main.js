@@ -1,13 +1,13 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import AddTask from 'components/AddTask';
-import TaskList from 'components/TaskList';
-import { ButtonContainer, MainContainer } from 'components/MainStyling';
+import AddTask from 'components/AddTask/AddTask';
+import TaskList from 'components/TaskList/TaskList';
+import { ButtonContainer, MainContainer } from 'components/Main/MainStyling';
 import { Header } from 'components/Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck, faTrash } from '@fortawesome/free-solid-svg-icons'
-import { Button } from './Button';
+import { Button } from '../Button';
 
 export const Main = () => {
   const dispatch = useDispatch();

@@ -4,7 +4,7 @@ import tasks from 'reducers/tasks';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { AddTaskWrapper, AddTaskChildDiv } from './AddTaskStyling';
-import { Button } from './Button';
+import { Button } from '../Button';
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');

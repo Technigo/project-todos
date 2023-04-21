@@ -3,7 +3,7 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import tasks from 'reducers/tasks';
 import { GlobalStyle } from 'components/GlobalStyle';
-import { Main } from 'components/Main';
+import { Main } from 'components/Main/Main';
 
 const reducer = combineReducers({
   tasks: tasks.reducer

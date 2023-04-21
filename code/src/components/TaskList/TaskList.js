@@ -6,8 +6,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
 import { SingleTaskWrapper, SingleTaskChild, CheckboxInput } from './TaskListStyling';
 
-import EmptyList from './EmptyList';
-import { Button } from './Button';
+import EmptyList from '../EmptyList';
+import { Button } from '../Button';
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items);

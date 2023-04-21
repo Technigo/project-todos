@@ -1,7 +1,4 @@
 import styled from 'styled-components';
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-// import { faCircleCheck} from '@fortawesome/free-solid-svg-icons'
-// import check from 'assets/check-file.svg'
 
 export const SingleTaskWrapper = styled.div`
 display: flex;
