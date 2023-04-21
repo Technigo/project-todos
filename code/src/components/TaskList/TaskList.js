@@ -9,7 +9,11 @@ const TaskList = () => {
   const dispatch = useDispatch();
 
   const onTaskDeleteBtnClick = (id) => {
-    dispatch(tasks.actions.deleteSingleTask(id));
+    const taskContainer = document.getElementById(`task_with_id${id}`).parentNode.parentNode;
+    taskContainer.classList.add('fade-out');
+    setTimeout(() => {
+      dispatch(tasks.actions.deleteSingleTask(id));
+    }, 1000); // wait for 1 second before deleting the task
   }
   const onIsDoneCheckboxToggle = (id) => {
     dispatch(tasks.actions.toggleTaskIsDone(id));
