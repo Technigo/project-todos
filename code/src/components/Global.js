@@ -36,6 +36,7 @@ export const DeleteButton = styled(Button)`
   //Text-indent hides the text "Delete" but still allows it to be read by screen readers. 
   // The text-indent property moves the text off-screen, but it is still present in the DOM.
   padding: 0.1rem 0.7rem;
+  color: #000;
 
    &:hover {
     background-color:var(--btn2-color);
@@ -126,5 +127,6 @@ cursor: ponter;
 export const StyledIcon = styled(FontAwesomeIcon)`
 margin: 0.5rem;
 filter: var(--drop-shadow);
+color: #000;
 `;
 
