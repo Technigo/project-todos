@@ -56,10 +56,11 @@ export default AddTask
 const Form = styled.form`
 
 display: flex;
-gap: 5px;
+gap: 15px;
 width: 100%;
 
 input[type=text] {
+      display: flex;
       background: white;
       font-size: 16px;
       color: black;

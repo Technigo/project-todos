@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import Header from 'components/Header';
 import AllTasks from 'components/AllTasks';
-import ProgressBar from 'components/ProgressBar';
 import Footer from 'components/Footer';
 import { tasks } from './reducers/tasks';
 
@@ -19,7 +18,6 @@ export const App = () => {
       <Provider store={store}>
         <main>
           <Header />
-          <ProgressBar />
           <AllTasks />
         </main>
         <Footer />
