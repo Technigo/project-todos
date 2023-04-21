@@ -17,7 +17,6 @@ const AddTodo = () => {
     };
     dispatch(tasks.actions.addItem(newTodo));
     setInputValue('');
-    // https://www.random.org/
   };
 
   return (

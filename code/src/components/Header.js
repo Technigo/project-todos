@@ -29,11 +29,8 @@ const StyledP = styled.p`
 
 const Header = () => {
   const todoList = useSelector((store) => store.tasks.items);
-  console.log('todoList', todoList)
-  // console.log('todoList.length', todoList.length)
+  // console.log('todoList', todoList)
   const filteredTodoList = todoList.filter((item) => item.isChecked === true)
-  // console.log('filteredTodoList', filteredTodoList)
-  // console.log('filteredTodoList.length', filteredTodoList.length)
   return (
     <>
       <div className="bgtest" />
@@ -46,11 +43,3 @@ const Header = () => {
 }
 
 export default Header;
-
-/*
-      <div className="Header">
-        <StyledHeadline>the todos.</StyledHeadline>
-        <StyledP>{todoList.length} in the list currently</StyledP>
-        <StyledP>x/{todoList.length} tasks complete</StyledP>
-      </div>
-      */

@@ -58,11 +58,6 @@ export const tasks = createSlice({
 
       // We then assign
       store.items = newArray;
-
-      // This was not best practice, thus removed:
-      // Here we want to filter out the items
-      // And return a new state without said item
-      // store.items = store.items.filter((item) => item.id !== action.payload.id);
     },
     removeAll: (store) => {
       // Im not mutating this
@@ -70,8 +65,7 @@ export const tasks = createSlice({
     },
     handleCheck: (store, action) => {
       const { id } = action.payload;
-      console.log('id:', id)
-      // const itemExists = store.items.find((item) => item.id === id); blev muterbart
+      // console.log('id:', id)
       const newArray = [...store.items]
       const indexOfObject = newArray.findIndex((item) => item.id === id)
       if (indexOfObject > -1) {
@@ -81,24 +75,3 @@ export const tasks = createSlice({
     }
   }
 });
-
-/*
-    removeItem: (store, action) => {
-      const id = action.payload;
-
-      const newArray = [...store.items]
-
-      const condition = (element) => element.id === id;
-      console.log('condition', condition)
-
-      const foundIndex = newArray.findIndex(condition);
-      console.log('foundIndex', foundIndex);
-
-      store.items = newArray.splice(foundIndex, 1);
-      console.log('store.items', store.items);
-      console.log('newArray.splice(foundIndex, 1)', newArray.splice(foundIndex, 1));
-
-            console.log('store.items:', store.items)
-      console.log('newArray:', newArray)
-    },
-    */

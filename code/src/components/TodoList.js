@@ -1,12 +1,10 @@
 /* eslint-disable max-len */
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { DeleteButton } from './styled_components/buttons';
 import { tasks } from '../reducers/tasks';
 import Empty from './Empty'
-// import { Checkbox } from './styled_components/form_elements';
 
 const colors = ['#FBF8CC', '#FDE4CF', '#FFCFD2', '#F1C0E8', '#CFBAF0', '#A3C4F3', '#90DBF4', '#8EECF5', '#98F5E1', '#B9FBC0'];
 
@@ -25,7 +23,7 @@ const TodoList = ({ selectedTab }) => {
   const dispatch = useDispatch();
   console.log('selectedTab', selectedTab)
 
-  // Here I filter based on what tab we have open
+  // Here I filter based on what tab we have open:
   let filteredList = todoList;
 
   if (selectedTab === 'done') {
@@ -56,11 +54,11 @@ const TodoList = ({ selectedTab }) => {
                     onChange={() => dispatch(tasks.actions.handleCheck(singleTodo))} />
                   <span className="checkmark" />
                 </label>
-                <DeleteButton type="button" onClick={() => dispatch(tasks.actions.removeItem(singleTodo.id))}>Delete</DeleteButton>
+                <DeleteButton type="button" fontSize="12px" onClick={() => dispatch(tasks.actions.removeItem(singleTodo.id))}>Delete</DeleteButton>
               </StyledTodoRow>
             )
           })}
-          <DeleteButton type="button" onClick={() => dispatch(tasks.actions.removeAll())}>Remove all tasks</DeleteButton>
+          <DeleteButton type="button" fontSize="14px" onClick={() => dispatch(tasks.actions.removeAll())}>Remove all tasks</DeleteButton>
         </ul>
       </div>)}
       {filteredList.length === 0 && <Empty selectedTab={selectedTab} />}

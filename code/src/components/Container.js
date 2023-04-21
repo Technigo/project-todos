@@ -39,13 +39,8 @@ const StyledTab = styled.div`
   }
 `;
 
-// When the user clicks on one of the tabs, we shall update the store with a filtered array
-// The TodoList component should be rendered based on that
-// Do we need to use useSelector or is dispatch enough? To send an action?
 const Container = () => {
   const [selectedTab, setSelectedTab] = useState('all')
-  // const filteredList = useSelector((store) => store.tasks.items);
-  // const dispatch = useDispatch();
   return (
     <div className="Container-wrapper">
       <div className="Container">
