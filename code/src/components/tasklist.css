@@ -1,0 +1,43 @@
+.tasklist-wrapper {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: space-between;
+}
+
+.single-task-wrapper {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #E6DBBC;
+  width: 100%;
+  padding: 15px;
+  border-radius: 25px;
+   
+  /*@media (min-width: 668px) {
+  width: 32rem;
+  font-size: 1rem;
+  }
+  
+  @media (min-width: 1024px) {
+  width: 32rem;
+  font-size: 1.5rem;
+  }*/
+}  
+
+li {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.5rem;
+    color: #444444;   
+  }
+  
+   span {
+      font-size: 0.8rem;
+      color: #777;
+    }
+
+    input[type="checkbox"] {
+      font-size: 1rem;
+    }

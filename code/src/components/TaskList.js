@@ -1,8 +1,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks'
-import styled from 'styled-components';
-import { Checkbox } from './styles/Checkbox';
+import './tasklist.css';
 
 export const TaskList = () => {
   // FUNCTIONALITY
@@ -10,68 +9,20 @@ export const TaskList = () => {
   const dispatch = useDispatch()
 
   const onTaskToggle = (taskId) => {
-    dispatch(tasks.actions.toggleTask({ taskId }));
+    dispatch(tasks.actions.toggleTask({ id: taskId }));
   }
-
   const onRemoveTask = (taskId) => {
-    dispatch(tasks.actions.deleteTask({ taskId }));
+    dispatch(tasks.actions.deleteTask({ id: taskId }));
   }
-
-  // STYLES
-  const TaskListWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  `
-
-  const SingleTaskWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  background-color: lightcoral;
-  padding: 1rem;
-  border-radius: 1.8rem;
-  width: 20rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  font-size: 1rem;
-  word-wrap: break-word;
-  margin-bottom: 15px;
-   
-  li {
-    display: flex;
-    flex-direction: column;
-    text-align: left !important;
-    gap: 0.5rem;
-
-    span {
-      font-size: 0.8rem;
-      color: #777;
-    }
-  }
-
-  @media (min-width: 668px) {
-  width: 32rem;
-  font-size: 1rem;
-}
-
-@media (min-width: 1024px) {
-  width: 32rem;
-  font-size: 1.5rem;
-}
-`;
-
   return (
-    <TaskListWrapper>
+    <div className="tasklist-wrapper">
       <ul>
         {taskList.map((singleTask) => {
           const deadlineDate = singleTask.deadlineDate ? new Date(singleTask.deadlineDate).toLocaleDateString('sv-SE') : '';
           return (
-
-            <SingleTaskWrapper key={singleTask.id}>
-              <Checkbox
-                id={`cbx-${singleTask.id}`}
+            <div className="single-task-wrapper" key={singleTask.id}>
+              <input
+                type="checkbox"
                 checked={singleTask.isDone}
                 onChange={() => onTaskToggle(singleTask.id)} />
               <li>
@@ -84,11 +35,10 @@ export const TaskList = () => {
                 )}
               </li>
               <button type="button" onClick={() => onRemoveTask(singleTask.id)}>Delete</button>
-            </SingleTaskWrapper>
-
+            </div>
           )
         })}
       </ul>
-    </TaskListWrapper>
+    </div>
   )
 }
