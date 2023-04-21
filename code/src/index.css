@@ -132,10 +132,9 @@ input#addTaskInput {
     16 0,
   auto;
   background-attachment: fixed;
+  padding-top: 100px;
   }
-  .container {
-    border: 1px;
-  }
+
   form {
     display: flex;
     flex-direction: row;
@@ -143,7 +142,7 @@ input#addTaskInput {
     padding-left: 20px;
 }
   div#root {
-    height: 600px;
+    height: 530px;
     width: 300px;
     display: flex;
     flex-direction: column;
