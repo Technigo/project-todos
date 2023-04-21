@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import Tasks from 'reducers/Task';
 
+const capitalize = (stringToCapitalized) => {
+  return stringToCapitalized.charAt(0).toUpperCase() + stringToCapitalized.slice(1);
+}
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
 
@@ -11,7 +14,7 @@ const AddTask = () => {
     event.preventDefault();
     const newTask = {
       id: Date.now().toString(),
-      text: inputValue.toUpperCase(),
+      text: capitalize(inputValue),
       isComplete: false
     }
     dispatch(Tasks.actions.addTask(newTask));

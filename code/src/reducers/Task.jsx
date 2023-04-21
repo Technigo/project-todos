@@ -43,6 +43,14 @@ const Tasks = createSlice({
       const foundIndex = copyOfTaskArrayFromStore.findIndex(condition);
       copyOfTaskArrayFromStore.splice(foundIndex, 1);
       store.items = copyOfTaskArrayFromStore;
+    },
+    toggleComplete: (store, action) => {
+      const id = action.payload;
+      const copyOfTaskArrayFromStore = store.items;
+      const condition = (element) => element.id === id;
+      const foundIndex = copyOfTaskArrayFromStore.findIndex(condition);
+      copyOfTaskArrayFromStore[foundIndex].isComplete = !copyOfTaskArrayFromStore[foundIndex].isComplete;
+      store.items = copyOfTaskArrayFromStore;
     }
   }
 });

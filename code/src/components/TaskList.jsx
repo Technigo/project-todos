@@ -10,13 +10,21 @@ const TaskList = () => {
     dispatch(Tasks.actions.deleteSingleTask(id));
   }
 
+  const onIsComplete = (id) => {
+    dispatch(Tasks.actions.toggleComplete(id));
+  }
   return (
     <section>
       <ul>
         {taskList.map((singleTask) => {
           return (
             <li key={singleTask.id}>
-              <p><span>{singleTask.text}</span>
+              <p>
+                <label htmlFor={`task_with_id${singleTask.id}`}>
+                  is it complete?
+                  <input id={`task_with_id${singleTask.id}`} type="checkbox" value={singleTask.isComplete} onChange={() => onIsComplete(singleTask.id)} />
+                </label>
+                <span>{singleTask.text}</span>
                 <button
                   type="button"
                   onClick={() => onDeleteSingleTask(singleTask.id)}>Delete this pokemon
