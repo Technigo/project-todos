@@ -1,7 +1,9 @@
+/* eslint-disable react/jsx-closing-bracket-location */
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import { useDispatch } from 'react-redux'
 import tasks from 'reducers/tasks'
-import uniqid from 'uniqid'
+import { v4 as uuidv4 } from 'uuid' // unique ID package
 
 const AddTask = () => {
   const dispatch = useDispatch()
@@ -9,10 +11,10 @@ const AddTask = () => {
   const onAddTaskFormSubmit = (event) => {
     // prevent reset of form
     event.preventDefault()
-    // creating new task, id now, inputvalue uppercase
+    // creating new task
     const newTask = {
-      // generate an 8 byte unique id based on current time
-      id: uniqid.time(),
+      // generate unique id
+      id: uuidv4(),
       name: inputValue,
       isDone: false
     }
@@ -23,20 +25,47 @@ const AddTask = () => {
   }
   return (
     <section>
-      <form onSubmit={onAddTaskFormSubmit}>
-        <label htmlFor="addtaskInput">
-          Add task!
-          <input
+      <StyledForm onSubmit={onAddTaskFormSubmit}>
+        <StyledLabel>
+          To do-list
+          <StyledInput
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
             id="addtaskInput"
             type="text"
           />
-        </label>
+        </StyledLabel>
         <button type="submit">Add task</button>
-      </form>
+      </StyledForm>
     </section>
   )
 }
+
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+`
+
+const StyledLabel = styled.label`
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+`
+
+const StyledInput = styled.input`
+  height: 50px;
+  color: #e5e5e5;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-top: 8px;
+  font-size: 14px;
+  font-weight: 300;
+  outline: none;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 30px;
+  backdrop-filter: blur(1.5px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+`
 
 export default AddTask

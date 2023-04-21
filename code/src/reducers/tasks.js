@@ -1,21 +1,22 @@
+/* eslint-disable operator-linebreak */
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   items: [
     {
       id: '12345',
-      name: 'first',
+      name: 'Cross off your first task',
       isDone: false
     },
     {
       id: '34567',
-      name: 'second',
+      name: 'Wow, cross another one!',
       isDone: false
     },
     {
       id: '6578453',
-      name: 'third',
-      isDone: true
+      name: 'Last task for now!',
+      isDone: false
     }
   ]
 }
