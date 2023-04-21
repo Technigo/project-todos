@@ -9,7 +9,7 @@ const Empty = ({ selectedTab }) => {
       </svg>
       {selectedTab === 'all' && <p>Nothing to show here. Start adding your todos!</p>}
       {selectedTab === 'done' && <p>Yay you! All your todos are complete. <span role="img">🎉</span></p>}
-      {selectedTab === 'notDone' && <p>Nothing to show here. Start completing your todos!</p>}
+      {selectedTab === 'notDone' && <p>Nothing to show here. Start doing your todos!</p>}
     </div>
   )
 }

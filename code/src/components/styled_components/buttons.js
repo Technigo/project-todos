@@ -14,6 +14,7 @@ export const AddButton = styled.button`
 export const DeleteButton = styled.button`
   background-color: #805BBB;
   color: white;
+  font-size: 14px;
   border-radius: 5px;
   padding: 5px;
   border: none;
