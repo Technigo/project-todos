@@ -1,19 +1,11 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import tasks from 'reducers/tasks';
+import tasks from 'components/reducers/tasks';
 import styled from 'styled-components';
 
 const InnerWrapper = styled.div`
 display: flex;
 flex-direction: column;
-`
-
-const TaskItem = styled.div`
-font-size: 20px;
-`
-
-const CheckboxList = styled.div`
-font-size: 23px;
 `
 
 const DeleteBtn = styled.button`
@@ -32,22 +24,23 @@ const TaskList = () => {
   }
 
   return (
-    <InnerWrapper>
+    <section>
       {taskList.map((singleTask, index) => {
         return (
-          <TaskItem key={singleTask.id}>
-            <CheckboxList>
+          <InnerWrapper>
+            <label htmlFor={singleTask}>
               <input
+                key={singleTask.id}
                 type="checkbox"
                 id={singleTask.id}
                 checked={singleTask.isChecked}
                 onChange={() => onCheckedToggle(singleTask.id)} />
-            </CheckboxList>
+            </label>
             <DeleteBtn onClick={() => onDeleteTaskBtn(index)} type="button" />
-          </TaskItem>
+          </InnerWrapper>
         )
       })}
-    </InnerWrapper>
+    </section>
   )
 }
 

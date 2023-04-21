@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import clothes from 'reducers/tasks';
+import clothes from 'components/reducers/tasks';
 import AddClothes from 'components/AddTask';
 import ClothesList from 'components/TaskList';
 

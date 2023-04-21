@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import tasks from 'reducers/tasks';
+import tasks from 'components/reducers/tasks';
 import uniqid from 'uniqid';
 import styled from 'styled-components';
 
@@ -27,15 +27,15 @@ border-radius: 50px;
 `
 
 const AddTask = () => {
-  const [input, setInput] = useState('')
+  const [inputValue, setInputValue] = useState('')
   const dispatch = useDispatch()
   const onFormSubmit = (event) => {
     event.preventDefault();
     const newTask = { id: uniqid(),
-      name: input,
+      text: inputValue,
       isChecked: false }
     dispatch(tasks.actions.addTask(newTask));
-    setInput('');
+    setInputValue('');
   }
 
   return (
@@ -46,8 +46,8 @@ const AddTask = () => {
           <Input
             type="text"
             value="{input}"
-            onChange={(event) => setInput(event.target.value)} />
-          <SubmitBtn type="submit" disabled={input.length === 0}>+</SubmitBtn>
+            onChange={(event) => setInputValue(event.target.value)} />
+          <SubmitBtn type="submit" disabled={inputValue.length === 0}>+</SubmitBtn>
         </form>
       </AddInnerWrapper>
     </InnerWrapper>
