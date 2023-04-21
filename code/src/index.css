@@ -5,7 +5,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightslategray;
+  -ms-overflow-style: none;
 }
+
+body::-webkit-scrollbar{
+  display: none;
+} /* this should hide the scrollbars in Chrome and Safari */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -16,23 +22,29 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
-background-color: lightsalmon;
-max-width: 660px;
-border-radius: 2rem;
+  background: transparent;
+  max-width: 660px;
+  border-radius: 2rem;
+  border: 2px solid black;
+  padding: 3rem;
+  margin: 1rem;
 }
 
 section {
-  width: 100vw;
+  width: 100%;
   max-width: 600px;
   border: 2px solid blue;
 }
 
-#listSection {
+.listSection {
+  height: 24rem;
   border: 2px solid yellow;
+  overflow: scroll;
+  scrollbar-width: none;
+}
 
-}
-.todoContainer {
-}
+.todoContainer {}
+
 /*
 #addSection {
 display: grid;
@@ -48,8 +60,7 @@ form {
 }
 
 input {
-  flex-basis: 500px;
-  flex-grow: 1;
+  width: 100%;
   background-color: azure;
   align-self: center;
   margin-left: 1rem;
@@ -67,10 +78,14 @@ button {
   cursor: pointer;
 }
 
-#vaultListSection {
-
-}
+#vaultListSection {}
 
 footer {
-margin-bottom: 0;
+  margin-bottom: 0;
+}
+
+@media screen and (max-width:667px) {
+  #listSection {
+  height: 50vh;
+  }
 }
