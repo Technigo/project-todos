@@ -25,35 +25,31 @@ backdrop-filter: blur(4.9px);
 border: 1px solid rgba(255, 255, 255, 0.22);
 
 input[type=text] {
-  display: flex;
 font-family: Quicksand;
 outline: none;
 color: white;
 padding-left: 15px;
-width: 200px;
+width: 320px;
 height: 40px;
 background: rgba(255, 255, 255, 0.08);
-border-radius: 15px;
+border-radius: 170px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(1.5px);
 -webkit-backdrop-filter: blur(1.5px);
-border: 1px solid rgba(255, 255, 255, 0.16);
+border: 1px solid rgba(255, 255, 255, 0.12);
 ::placeholder,
   ::-webkit-input-placeholder {
     color: white;
     font-style: italic;
   }
+  :focus::placeholder {
+  color: transparent;
+}
  }`
 
-const AddTaskDiv = styled.div`
- border: 1px solid black;
+const StyledForm = styled.form`
  display: flex;
- flex-direction: row;
- justify-content: center;
- align-items: center;
- width: 600px;
- height: 100px;
- gap: 20px;`
+ gap: 15px;`
 
 const AddButtonPlus = styled.div`
 font-size: 30px;
@@ -80,19 +76,17 @@ const AddTask = () => {
 
   return (
     <ToDoWrapper>
-      <AddTaskDiv>
-        <form onSubmit={onFormSubmit}>
-          <label htmlFor="addTaskInput">
-            <input
-              value={inputValue}
-              onChange={(event) => setInputValue(event.target.value)}
-              placeholder="buy eggs"
-              id="addTaskInput"
-              type="text" />
-          </label>
-          <SubmitButton type="submit"><AddButtonPlus>+</AddButtonPlus></SubmitButton>
-        </form>
-      </AddTaskDiv>
+      <StyledForm onSubmit={onFormSubmit}>
+        <label htmlFor="addTaskInput">
+          <input
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+            placeholder="buy milk and eggs..."
+            id="addTaskInput"
+            type="text" />
+        </label>
+        <SubmitButton type="submit"><AddButtonPlus>+</AddButtonPlus></SubmitButton>
+      </StyledForm>
       <TaskList />
       <DeleteAllTasks />
     </ToDoWrapper>
