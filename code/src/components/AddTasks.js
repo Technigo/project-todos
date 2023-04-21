@@ -67,8 +67,9 @@ const Input = styled.input`
 const DatePickerWrapper = styled.div`
   .react-datepicker-wrapper {
     position: absolute;
-    right:-77%;
+    right:11px;
     transform: translateY(-50%);
+    width:20vw;
   } 
 `;
 
@@ -94,6 +95,9 @@ const StyledButton = styled.button`
   &:hover {
     background-color: #005F6B;
   }
+  @media screen and (max-width: 768px) {
+    width:4rem;
+    }
 `;
 
 export default AddTasks;
