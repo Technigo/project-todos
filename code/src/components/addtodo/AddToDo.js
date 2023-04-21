@@ -8,7 +8,7 @@ import { TagsInput } from 'components/tagsinput/TagsInput';
 import {
   NewToDo,
   Input,
-  AddButton
+  AddContainer
 } from 'components/addtodo/AddToDo.style'
 
 export const AddToDo = () => {
@@ -40,19 +40,15 @@ export const AddToDo = () => {
             onChange={(event) => setInputValue(event.target.value)} />
           {/* id={`new-todo-input${newToDo.id}`} /> */}
         </label>
-        <TagsInput />
-        <AddButton
-          type="submit"
-          disabled={inputValue.length === 0}
-          title="Let's add something!">
+        <AddContainer>
+          <TagsInput />
+          <DefaultButton
+            type="submit"
+            disabled={inputValue.length === 0}
+            title="Let's add something!">
           Add
-        </AddButton>
-        <DefaultButton
-          type="submit"
-          disabled={inputValue.length === 0}
-          title="Let's add something!">
-          Add
-        </DefaultButton>
+          </DefaultButton>
+        </AddContainer>
       </NewToDo>
     </section>
   );

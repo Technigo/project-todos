@@ -6,6 +6,7 @@ export const NewToDo = styled.form`
 `;
 
 export const Input = styled.input`
+  min-height: 3rem;
   background: pink;
   border: none;
   padding: 8px;
@@ -23,4 +24,10 @@ export const AddButton = styled.button`
   font-family: 'DynaPuff', cursive;
   font-size: 18px;
   cursor: pointer;
+`;
+
+export const AddContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;

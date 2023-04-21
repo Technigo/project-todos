@@ -9,6 +9,7 @@ import { AddToDo } from 'components/addtodo/AddToDo';
 import { ToDoItem } from 'components/todoitem/ToDoItem';
 import { Wrapper } from 'styles/GlobalStyle';
 import { DefaultButton } from 'styles/Button';
+import { ButtonContainer } from './ToDoList.style';
 
 export const ToDoList = () => {
   const dispatch = useDispatch();
@@ -58,15 +59,15 @@ export const ToDoList = () => {
         ))}
 
         <h2>Done ({doneTodos.length})</h2>
-
-        <DefaultButton type="button" onClick={onCompleteAll}>
+        <ButtonContainer>
+          <DefaultButton type="button" onClick={onCompleteAll}>
         Complete all to-dos
-        </DefaultButton>
+          </DefaultButton>
 
-        <DefaultButton type="button" onClick={onClearAll}>
+          <DefaultButton type="button" onClick={onClearAll}>
         Clear all to-dos
-        </DefaultButton>
-
+          </DefaultButton>
+        </ButtonContainer>
         {doneTodos.map((todo, index) => (
           <ToDoItem todo={todo} index={index} key={todo.id} onDelete={onDelete} onDone={onDone} />
         ))}
