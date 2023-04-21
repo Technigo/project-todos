@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import todos from 'reducers.js/todos';
 import { Buttons } from './AddToDo';
-import { NewToDoP, ToDoListBox } from './GlobalStyles';
+import { LeftToDo, NewToDoP, ToDoListBox } from './GlobalStyles';
 
 const ToDoList = () => {
   const dispatch = useDispatch();
@@ -27,10 +27,12 @@ const ToDoList = () => {
         {toDoList.map((singleToDo) => {
           return (
             <li key={singleToDo.id}>
-              <ToDoListBox className="todolistbox">
-                <input id={`toDo_with_id${singleToDo.id}`} type="checkbox" value={singleToDo.IsDone} onChange={() => onIsDoneCheckboxToggle(singleToDo.id)} />
-                <label htmlFor={`toDo_with_id${singleToDo.id}`} />
-                <NewToDoP>{singleToDo.name}</NewToDoP>
+              <ToDoListBox>
+                <LeftToDo>
+                  <input id={`toDo_with_id${singleToDo.id}`} type="checkbox" value={singleToDo.IsDone} onChange={() => onIsDoneCheckboxToggle(singleToDo.id)} />
+                  <label htmlFor={`toDo_with_id${singleToDo.id}`} />
+                  <NewToDoP>{singleToDo.name}</NewToDoP>
+                </LeftToDo>
                 <Buttons delete type="button" onClick={() => onDeleteSingleToDoBtnClick(singleToDo.id)}> Remove</Buttons>
               </ToDoListBox>
             </li>)

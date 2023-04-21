@@ -1,14 +1,15 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { BottomToDo, HCounter } from './GlobalStyles';
 
 const Counter = () => {
   const todo = useSelector((store) => store.todos.items);
   const completedTodos = todo.filter((todos) => todos.isDone && todos.isDone === true);
 
   return (
-    <section className="bottom-todo">
-      <h5>You have completed {completedTodos.length}</h5>
-    </section>
+    <BottomToDo>
+      <HCounter>You have completed: {completedTodos.length} out of {todo.length}</HCounter>
+    </BottomToDo>
   )
 }
 

@@ -1,9 +1,10 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
 import { useDispatch } from 'react-redux';
 import todos from 'reducers.js/todos';
 import DateToday from './Date';
-import { StyledForm, TopDiv } from './GlobalStyles';
+import { StyledForm, StyledInput, TopDiv } from './GlobalStyles';
 
 export const Buttons = styled.button`
   background: transparent;
@@ -45,6 +46,10 @@ export const Buttons = styled.button`
         background-color: var(--buttonHoverbeige);
         transition: 0.2s;
         }
+
+        @media (max-width:668px) {
+          font-size:16px;
+        }
       `
 }
 `
@@ -78,8 +83,8 @@ const AddToDo = () => {
       </TopDiv>
       <StyledForm onSubmit={onFormSubmit}>
         <label htmlFor="addToDoInput">
-        Time to add a new task to the list and get things done
-          <input placeholder="Type a task" value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addToDoInput" type="text" />
+        Time to add a new task to the list and get things done <br />
+          <StyledInput placeholder="Type a task" value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addToDoInput" type="text" />
         </label>
         <Buttons newtodo type="submit">Add Now</Buttons>
       </StyledForm>

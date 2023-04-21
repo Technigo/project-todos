@@ -34,9 +34,7 @@ code {
   padding-left: 30px;
   cursor: pointer;
   display: inline-flex;
-  color: red;
   line-height: 25px;
-  margin: 0 1rem 0 1rem;
 }
 
 [type="checkbox"] + label::before {

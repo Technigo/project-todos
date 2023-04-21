@@ -6,8 +6,8 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  margin-top: 5%;
-  padding: 2rem;
+  margin-top: 2%;
+  padding: 1rem;
 `
 
 export const TopDiv = styled.div`
@@ -18,7 +18,7 @@ export const TopDiv = styled.div`
   gap:1rem;
 
   @media (max-width:668px) {
-    display: block
+    display: block;
   }
 `
 
@@ -42,4 +42,36 @@ export const ToDoListBox = styled.p`
   justify-content: space-between;
   align-items: center;
   align-content: center;
+`
+export const StyledInput = styled.input`
+ border: none;
+ border-radius: 5px;
+ width: 94%;
+ margin: 1rem 0;
+ padding: .5rem .8rem;
+
+ &:hover {
+  box-shadow:0 0 4px rgba(0,0,0,0.5);
+}
+`
+
+export const LeftToDo = styled.div`
+  display: flex-inline;
+  text-align:left;
+  max-width: 300px;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+`
+
+export const BottomToDo = styled.div`
+text-align: center;
+margin: 0 0 4rem 0;
+`
+
+export const HCounter = styled.h4`
+font-family: 'Manrope', sans-serif;
+font-size: 12px;
+font-weight: 300;
 `
