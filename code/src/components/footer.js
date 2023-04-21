@@ -25,11 +25,13 @@ const StyledA = styled.a`
 
 export const Footer = () => {
   return (
-    <FooterWrapper>
-      <StyledA href="https://github.com/AnnaElvine">
-        <GitLink src={Github} alt="github" />
-      </StyledA>
-    </FooterWrapper>
+    <div className="icon">
+      <FooterWrapper>
+        <StyledA href="https://github.com/AnnaElvine">
+          <GitLink src={Github} alt="github" />
+        </StyledA>
+      </FooterWrapper>
+    </div>
   );
 };
 

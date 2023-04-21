@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-closing-tag-location */
 /* import { CheckBox } from '@mui/icons-material'; */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';

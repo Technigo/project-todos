@@ -92,6 +92,9 @@ button {
   top: -9px;
   cursor: pointer;
 }
+button:hover {
+  background-color: white;
+}
 
 form {
   display: flex;
@@ -165,15 +168,6 @@ button {
     font-size: 16px;
   }
 }
-input[type="checkbox" i] {
-  background-color: initial;
-  cursor: default;
-  appearance: auto;
-  box-sizing: border-box;
-  margin: 3px 3px 3px 4px;
-  padding: initial;
-  border: initial;
-}
 .resetButton {
   color: #9b4765;
   font-style: normal;
@@ -185,12 +179,13 @@ input[type="checkbox" i] {
 
   body {
     background-image: url("../Images/wp5418538-floral-aesthetic-desktop-wallpapers.jpg");
-    
     background-size: cover;
     cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
     16 0,
   auto;
+  background-attachment: fixed;
   }
+
   div#root {
     width: 70%;
     height: 600px;

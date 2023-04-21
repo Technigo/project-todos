@@ -1,6 +1,19 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
+import { Counter } from 'components/Counter';
+
+/* const TaskText = styled.p`
+    font-family: 'Dongle', sans-serif;
+    font-size: 2em;
+    line-height: 0.5em;
+    width: 100%;
+`
+const Time = styled.p`
+  font-family: 'Roboto', sans-serif;
+  font-size: 0.7em;
+  width: 100%;
+` */
 
 const capitalize = (stringToCapitalise) => {
   return stringToCapitalise.charAt(0).toUpperCase() + stringToCapitalise.slice(1);
@@ -43,12 +56,15 @@ const AddTask = () => {
                 id="addTaskInput"
                 type="text" />
             </label>
+            {/* <TaskText>{singleTask.text}</TaskText>
+            <Time>{singleTask.time}</Time> */}
           </form>
         </div>
+        <Counter />
         <button
           className="resetButton"
           type="button"
-          onClick={onResetToDoClick}> ⤫
+          onClick={onResetToDoClick}> <div title="❂ Reset your tasklist ❂">⤫</div>
         </button>
       </section>
     </div>
