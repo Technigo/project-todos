@@ -8,13 +8,13 @@ import './TaskList.css';
 // /////////////// COMPONENT //////////////////////// //
 
 export const TaskList = () => {
-  const taskList = useSelector((store) => store.tasks.items)
+  const taskList = useSelector((store) => store.tasks.items) // Tasklist = all tasks
   const dispatch = useDispatch();
 
-  const onTaskToggle = (taskId) => {
+  const onTaskToggle = (taskId) => { // This function is called when a task is checked
     dispatch(Tasks.actions.toggleTask({ id: taskId }));
   }
-  const onRemoveTask = (taskId) => {
+  const onRemoveTask = (taskId) => { // This function is called when a single task is removed
     dispatch(Tasks.actions.deleteTask({ id: taskId }));
   }
 

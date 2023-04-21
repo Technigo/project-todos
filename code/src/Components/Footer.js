@@ -9,10 +9,10 @@ import './Footer.css';
 // /////////////// COMPONENT //////////////////////// //
 
 export const Footer = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch(); // Here we send the action to the reducer
 
   const clearTasks = () => {
-    dispatch(Tasks.actions.clearAll());
+    dispatch(Tasks.actions.clearAll()); // Here we clear all the tasks
   }
 
   // /////////////// OUTCOME //////////////////////// //

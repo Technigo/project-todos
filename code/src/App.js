@@ -13,12 +13,14 @@ import 'App.css';
 // /////////////// COMPONENT //////////////////////// //
 
 export const App = () => {
-  const reducer = combineReducers({
+  const reducer = combineReducers({ // Here we combine all reducers
     tasks: Tasks.reducer
   });
   const store = configureStore({ reducer });
 
   // /////////////// OUTCOME //////////////////////// //
+
+  // The site with all the components will be rendered
 
   return (
     <div className="app">

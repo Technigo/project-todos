@@ -1,5 +1,12 @@
+// /////////////// IMPORTS //////////////////////// //
+
 import React from 'react';
 import './Contact.css';
+
+// /////////////// COMPONENT //////////////////////// //
+
+// This component is used to display the icons to make contact.
+// Oh, and if you only lurking the repo. Heres my email: pererikandreas at gmail dot com.
 
 export const Contact = () => {
   return (
