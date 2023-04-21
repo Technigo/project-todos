@@ -7,7 +7,6 @@ export const Header = () => {
       <HeaderH1>Get it done...</HeaderH1>
       <Paragraph>
         Need to remember what do to next? <br />
-        Add your task below.
       </Paragraph>
     </div>
   );

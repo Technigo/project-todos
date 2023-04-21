@@ -29,7 +29,8 @@ export const AddNote = () => {
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
             id="addNoteInput"
-            type="text" />
+            type="text"
+            placeholder="Add task here..." />
         </label>
         <AddBtn type="submit">
           <i className="fa-solid fa-square-plus" />

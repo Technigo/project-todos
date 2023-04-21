@@ -24,7 +24,7 @@ export const MainBox = styled.div`
 export const HeaderH1 = styled.h1`
   font-size: 38px;
   font-weight: 900;
-  margin: 20px 0;
+  margin: 10px 0;
   padding-top: 30px;
 `;
 

@@ -44,6 +44,8 @@ form {
   max-width: 278px;
   padding: 5px 8px;
   margin-top: 10px;
+  font-family: 'Lato', sans-serif;
+  font-size: 10px;
 }
 
 i {
