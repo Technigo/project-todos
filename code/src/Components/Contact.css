@@ -1,0 +1,14 @@
+.icons {
+    filter: invert(60%) sepia(1%) saturate(2529%) hue-rotate(235deg) brightness(109%) contrast(63%);
+    width: 10px;
+}
+
+.icons:hover{
+    filter: invert(0%) sepia(8%) saturate(7500%) hue-rotate(355deg) brightness(103%) contrast(110%);
+}
+
+.icons-container {
+    display: flex;
+    justify-content: start;
+    margin: 0;
+}

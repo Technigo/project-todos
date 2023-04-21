@@ -1,6 +1,10 @@
+// /////////////// IMPORTS //////////////////////// //
+
 import React from 'react';
 import { useSelector } from 'react-redux';
 import './Counter.css';
+
+// /////////////// COMPONENT //////////////////////// //
 
 export const Counter = () => {
   const items = useSelector((store) => store.tasks.items)
@@ -14,7 +18,9 @@ export const Counter = () => {
     } else {
       return `${completedTasks.length} / ${items.length} ✔`
     }
-  }
+  };
+
+  // /////////////// OUTCOME //////////////////////// //
 
   return (
     <div className="counter">

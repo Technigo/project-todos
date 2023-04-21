@@ -1,8 +1,12 @@
+// /////////////// IMPORTS //////////////////////// //
+
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { Tasks } from 'Reducers/Tasks';
 import { Counter } from './Counter';
 import './Footer.css';
+
+// /////////////// COMPONENT //////////////////////// //
 
 export const Footer = () => {
   const dispatch = useDispatch();
@@ -10,6 +14,9 @@ export const Footer = () => {
   const clearTasks = () => {
     dispatch(Tasks.actions.clearAll());
   }
+
+  // /////////////// OUTCOME //////////////////////// //
+
   return (
     <section className="footer-container">
       <div className="footer-content">

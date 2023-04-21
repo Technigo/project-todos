@@ -35,3 +35,10 @@ button{
 .add-button {
     background-color: #FFC9B9;
 }
+
+.character-counter{
+    font-size: 10px;
+    margin: 0;
+    margin-bottom: 1;
+    margin-left: 10px;
+}

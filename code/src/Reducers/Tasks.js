@@ -1,3 +1,5 @@
+// /////////////// IMPORT //////////////////////// //
+
 import { createSlice } from '@reduxjs/toolkit';
 
 // here we are creating the initialState witch is an empty array.
@@ -5,6 +7,10 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   items: []
 }
+
+// /////////////// SLICE //////////////////////// //
+
+// This is a slice of the store.
 
 export const Tasks = createSlice({
   name: 'Tasks',

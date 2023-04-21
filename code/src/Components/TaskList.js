@@ -1,7 +1,11 @@
+// /////////////// IMPORTS //////////////////////// //
+
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Tasks } from 'Reducers/Tasks';
 import './TaskList.css';
+
+// /////////////// COMPONENT //////////////////////// //
 
 export const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items)
@@ -13,6 +17,8 @@ export const TaskList = () => {
   const onRemoveTask = (taskId) => {
     dispatch(Tasks.actions.deleteTask({ id: taskId }));
   }
+
+  // /////////////// OUTCOME //////////////////////// //
 
   return (
     <section className="tasklist-container">
