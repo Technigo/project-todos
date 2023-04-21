@@ -10,8 +10,6 @@ export const AddTaskWrapper = styled.form`
 
   select {
   width: 100%;
-  min-width: 15ch;
-  max-width: 30ch;
   border: 2px solid var(--dark-blue);
   border-radius: 10px;
   padding: 0.25em 0.5em;

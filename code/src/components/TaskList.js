@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
-import styled from 'styled-components';
 import TaskTracker from 'components/TaskTracker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { SingleTaskWrapper, SingleTaskChild, CheckboxInput } from './TaskListStyling';
 
 import EmptyList from './EmptyList';
 import { Button } from './Button';
@@ -55,7 +55,9 @@ const TaskList = () => {
             <h2>{category}</h2>
             {/* sort & move completed tasks to the bottom of the list in each category */}
             {tasksArray.sort((a) => (a.isComplete ? 1 : -1)).map((singleTask) => (
-              <SingleTaskWrapper key={singleTask.id}>
+              <SingleTaskWrapper
+                key={singleTask.id}
+                style={{ backgroundColor: singleTask.isComplete ? '#ccffcc' : '#fbd0d0' }}>
                 <CheckboxInput
                   type="checkbox"
                   checked={singleTask.isComplete}
@@ -79,36 +81,5 @@ const TaskList = () => {
     );
   }
 };
-
-const SingleTaskWrapper = styled.div`
-display: flex;
-flex-direction: row;
-justify-content: space-between;
-align-items: center;
-padding: 5px;
-gap:1rem;
-/* border: solid green; */
-`;
-
-const SingleTaskChild = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: space-around;
-margin-left: 0;
-/* border: solid green; */
-`;
-
-const CheckboxInput = styled.input`
-  /* appearance: none; */
-  width: 1rem;
-  height: 1rem;
-  border: 2px solid #000;
-  border-radius: 50%;
-  background-color: #fff;
-  /* Change color of the checkbox when checked */
-  /* &:checked {
-    background-color: #000;
-  } */
-`;
 
 export default TaskList;
