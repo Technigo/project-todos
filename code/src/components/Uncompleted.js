@@ -22,12 +22,12 @@ export const Uncompleted = () => {
       isCompleted: !task.isCompleted
     };
     /* checks the checkbox for the unique id */
-    setChecking(task.id);
+    setChecking(task.isCompleted);
 
     setTimeout(() => {
       dispatch(uncompleted.actions.deleteTask(task));
       dispatch(completed.actions.setTaskDone(checkedTask));
-    }, 5000);
+    }, 500);
   }
 
   return (
@@ -36,11 +36,11 @@ export const Uncompleted = () => {
       <AddTask />
       {flippedTasks.map((task) => (
         <div className="task-div" key={task.id}>
-          <label className="checkbox-container" htmlFor="checkbox">
+          <label className="checkbox-container" htmlFor="checkbox-todo">
             <input
               type="checkbox"
-              id="checkbox"
-              checked={task.id === checking}
+              id="checkbox-todo"
+              checked={task.isCompleted !== checking}
               onChange={() => onCheckboxClick(task)} />
             <span className="checkmark" />
             <span className={task.isCompleted ? 'checked' : 'unchecked'}>{task.text}</span>

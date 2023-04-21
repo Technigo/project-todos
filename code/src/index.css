@@ -38,6 +38,9 @@ button {
   font-size: 20px;
 }
 
+button:hover, button:active {
+  transform: scale(1.2)
+}
 
 /* Mobile styling */
 
@@ -64,6 +67,9 @@ button {
   gap: 24px;
 }
 
+.post-it:hover {
+  box-shadow: rgba(247, 247, 247, 0.39) 3px 14px 28px 0px;
+}
 .addTask-form{
   text-decoration: none;
   text-align: center;
@@ -167,6 +173,9 @@ input {
   }
 }
 
+
+/* Custom checkbox */
+
 .checkbox-container {
   display: block;
   position: relative;
@@ -202,7 +211,8 @@ input {
 
 /* On mouse-over, add a grey background color */
 .checkbox-container:hover input ~ .checkmark {
-  background-color: #c1ccc1;
+  background-color: #d0e3d0;
+  transform: scale(1.1);
 }
 
 /* When the checkbox is checked, add a background */

@@ -6,7 +6,6 @@ import format from 'date-fns/format';
 
 export const Completed = () => {
   const dispatch = useDispatch();
-
   const completedTasks = useSelector((store) => store.completed.tasks)
 
   const checkboxHandler = (task) => {
@@ -14,9 +13,10 @@ export const Completed = () => {
       ...task,
       isCompleted: !task.isCompleted
     };
-    // Make the checkbox change before the dispatch is passed. Using setTimeOut???
-    dispatch(completed.actions.deleteTask(task));
-    dispatch(uncompleted.actions.addTask(unCheckedTask));
+    setTimeout(() => {
+      dispatch(completed.actions.deleteTask(task));
+      dispatch(uncompleted.actions.addTask(unCheckedTask));
+    }, 500);
   };
 
   return (
