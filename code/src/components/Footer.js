@@ -13,4 +13,5 @@ export const Footer = styled.footer`
   height: 68%; /* or adjust to your desired height */
   margin: 0 auto;
   opacity: 0.4;
+  z-index: 1
 `

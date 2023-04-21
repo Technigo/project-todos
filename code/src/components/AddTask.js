@@ -5,7 +5,8 @@ import { BsCalendarDateFill } from 'react-icons/bs';
 import { tasks } from 'reducers/tasks';
 import { Button } from './Button';
 import { IconButton } from './styles/IconButton';
-import { Form, Label } from './styles/FormStyled'
+import { Form, Label, AddTaskInput, AddTaskWrapper } from './styles/FormStyled'
+
 import 'react-datepicker/dist/react-datepicker.css';
 
 const CustomInput = forwardRef(({ onClick }, ref) => (
@@ -42,10 +43,10 @@ export const AddTask = () => {
   // STYLES
 
   return (
-    <div>
+    <AddTaskWrapper>
       <Form onSubmit={onFormSubmit}>
         <Label htmlFor="addTaskInput">
-          <input
+          <AddTaskInput
             value={inputValue}
             onInput={(event) => setInputValue(event.target.value)}
             id="addTaskInput"
@@ -62,7 +63,7 @@ export const AddTask = () => {
         </CalendarContainer>
         <Button type="submit"> Add task!</Button>
       </Form>
-    </div>
+    </AddTaskWrapper>
   )
 }
 
