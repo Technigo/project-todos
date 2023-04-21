@@ -5,12 +5,12 @@ const initialState = {
   items: [
     {
       id: '19asdfiuhas0823hjkadsh809',
-      content: 'Do laundry',
+      content: 'Wake up',
       isChecked: false
     },
     {
       id: '19asdfiuhas0823hjkadsh810',
-      content: 'Code some more',
+      content: 'Code something cool',
       isChecked: false
     },
     {
