@@ -33,7 +33,7 @@ const StyledMainWrapper = styled.div`
     @media (min-width: 667px) {
         grid-column: 3 / 7;
         padding: 40px;
-        margin-bottom: 20px;
+        margin: 20px 0;
         border: none;
         border-radius: 25px 5px 25px 5px;
         -webkit-border-radius: 25px 5px 25px 5px;

@@ -20,6 +20,7 @@ const StyledTaskListContainer = styled.section`
 const StyledSingleTaskWrapper = styled.div`
     display: flex;
     align-items: center;
+    justify-content: space-between;
     border: none;
     margin: 20px 0;
     padding: 20px;
@@ -39,11 +40,6 @@ const StyledListItem = styled.li`
   flex-direction: column;
   width: 80%;
   row-gap: 10px;
-
-  p {
-    word-wrap: break-word;
-    margin-left: 10px;
-  }
 `;
 
 const StyledSingleTask = styled.p`
@@ -79,12 +75,17 @@ const StyledDeleteSingleBtn = styled.button`
     }
 `;
 
+const StyledDeleteAllDiv = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  height: 35px;
+`;
+
 const StyledDeleteAllBtn = styled.button`
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 5px;
-    margin: 10px 0;
     width: 50%;
     max-width: 150px;
     background-color: #D4C7B0;
@@ -117,6 +118,8 @@ const StyledDeleteAllBtn = styled.button`
 `;
 
 const CheckboxTypeDiv = styled.div`
+  width: 90%;
+  flex-wrap: wrap;
 
   [type='checkbox'] {
     opacity: 0;
@@ -127,8 +130,12 @@ const CheckboxTypeDiv = styled.div`
     padding-left: 30px;
     cursor: pointer;
     display: inline-block;
-    color: darkgreen;
+    color: black;
+    word-wrap: break-word;
+    margin-left: 10px;
     line-height: 25px;
+    box-sizing: border-box;
+    width: 100%;
   }
 
   [type='checkbox'] + label::before {
@@ -138,7 +145,7 @@ const CheckboxTypeDiv = styled.div`
     top: 0;
     width: 18px;
     height: 18px;
-    outline: 2px solid blue;
+    outline: 2px solid #f8ad9d;
     background: white;
   }
 
@@ -149,7 +156,7 @@ const CheckboxTypeDiv = styled.div`
     top: 0;
     width: 18px;
     height: 18px;
-    outline: 2px solid red;
+    outline: 2px solid #a3b18a;
     background: white;
   }
 
@@ -160,11 +167,11 @@ const CheckboxTypeDiv = styled.div`
     top: 0;
     width: 18px;
     height: 18px;
-    background-image: url(${process.env.PUBLIC_URL}/assets/icons8-done-30.png);
+    background-image: url(${process.env.PUBLIC_URL}/assets/icons8-done-48.png);
     background-size: contain;
     transform: scale(1);
     opacity: 1;
-    transition: all .3s ease;
+    transition: all .3s ease-out;
   }
 
   [type='checkbox']:not(:checked) + label::after {
@@ -174,10 +181,11 @@ const CheckboxTypeDiv = styled.div`
     top: 0;
     width: 18px;
     height: 18px;
-    background-image: url(${process.env.PUBLIC_URL}/assets/icons8-done-30.png);
+    background-image: url(${process.env.PUBLIC_URL}/assets/icons8-done-48.png);
     background-size: contain;
     transform: scale(0);
     opacity: 0;
+    transition: all .3s ease-out;
   }
 `;
 
@@ -243,13 +251,18 @@ export const TaskList = () => {
               <StyledDeleteSingleBtn
                 type="button"
                 onClick={() => onDeleteSingleTaskBtnClick(singleTask.id)}>
-               ✖️
+                <img src={`${process.env.PUBLIC_URL}/assets/icons8-multiply-24.png`} alt="" />
               </StyledDeleteSingleBtn>
             </StyledSingleTaskWrapper>
           )
         })}
       </ul>
-      <StyledDeleteAllBtn type="button" onClick={onDeleteAllTasks}>Delete all tasks ✖️</StyledDeleteAllBtn>
+      <StyledDeleteAllDiv>
+        <StyledDeleteAllBtn type="button" onClick={onDeleteAllTasks}>
+        Delete all tasks
+          <img src={`${process.env.PUBLIC_URL}/assets/icons8-multiply-24.png`} alt="" />
+        </StyledDeleteAllBtn>
+      </StyledDeleteAllDiv>
     </StyledTaskListContainer>
   )
 }

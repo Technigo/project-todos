@@ -94,7 +94,9 @@ export const AddTask = () => {
             onChange={(event) => setInputValue(event.target.value)}
             id="addTaskInput" />
         </StyledLabel>
-        <StyledAddBtn type="submit">➕</StyledAddBtn>
+        <StyledAddBtn type="submit">
+          <img src={`${process.env.PUBLIC_URL}/assets/icons8-plus-math-24.png`} alt="" />
+        </StyledAddBtn>
       </form>
     </StyledAddTaskContainer>
   )
