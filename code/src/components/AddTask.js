@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { clothes } from 'reducers/clothes';
+import tasks from 'reducers/tasks';
 import uniqid from 'uniqid';
 import styled from 'styled-components';
 
@@ -26,15 +26,15 @@ height: 30px;
 border-radius: 50px;
 `
 
-const AddClothes = () => {
+const AddTask = () => {
   const [input, setInput] = useState('')
   const dispatch = useDispatch()
   const onFormSubmit = (event) => {
     event.preventDefault();
-    const newClothes = { id: uniqid(),
+    const newTask = { id: uniqid(),
       name: input,
       isChecked: false }
-    dispatch(clothes.actions.addClothes(newClothes));
+    dispatch(tasks.actions.addTask(newTask));
     setInput('');
   }
 
@@ -54,4 +54,4 @@ const AddClothes = () => {
   )
 }
 
-export default AddClothes;
+export default AddTask;
