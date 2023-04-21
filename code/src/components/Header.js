@@ -11,10 +11,14 @@ const HeaderWrapper = styled.div`
     color: #DA723C;
     font-family: 'Libre Franklin';
     font-style: normal;
+    font-weight: 500;
+    font-size: 36px;
+    line-height: 46px; 
+    @media (min-width: 900px){
     font-weight: 600;
     font-size: 48px;
-    line-height: 58px;
-    text-shadow: 1px 2px 2px #FDF1D6;
+    line-height: 58px; 
+    }
   }
   span {
     background-color: #FDF1D6;
@@ -25,13 +29,16 @@ const HeaderWrapper = styled.div`
     height: 3rem;
     border-radius: 50%;
     color: #9E7540;
-    
   }
 `
-const Image = styled.img`
+const Imagebox = styled.div`
   display: flex;
   width: 100vw;
-  height: 500px;
+  height: 300px;
+`
+const Image = styled.img`
+  width: 100vw;
+  height: auto;
   object-fit: cover;
 
 `
@@ -39,7 +46,9 @@ const Header = () => {
   const amountTasks = useSelector((store) => store.tasks.items.length)
   return (
     <HeaderWrapper>
-      <Image src="./todologo.webp" alt="todoimg" />
+      <Imagebox>
+        <Image src="./todologo.webp" alt="todoimg" />
+      </Imagebox>
       <h1>
         My TO DO LIST <span>{amountTasks}</span>
       </h1>
