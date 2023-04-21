@@ -5,8 +5,8 @@
 }
 
 .header-container h2 {
-  font-size: 1,2rem;
-  font-weight: bold;
+  font-size: 2rem;
+  font-weight: 1500;
   margin-bottom: 1rem;
   color: #C60012;
 }
@@ -29,28 +29,93 @@
 
 .singletask-container {
   color: white;
- 
   border-radius: 10px;
   height: 3rem;
   width: 80%;
   display: flex;
   align-items: center;
-
 }
 
 .singletask-container p {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-between; /* New rule */
   font-size: 18px;
   margin: 0;
   width: 100%;
+  flex: 1;
 }
+
 
 .singletask-container input[type="checkbox"] {
   margin-right: 1rem;
-  margin-left: 1rem;
+  margin-left: -1rem;
 }
+
+[type="checkbox"]{
+  opacity: 0;
+}
+
+[type="checkbox"] + label{
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  color: white;
+  line-height: 24px;
+  margin-bottom: 18px;
+} 
+
+[type="checkbox"] + label::before{
+  content:"";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid #aaa;
+  background: white;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+}
+
+[type="checkbox"]:checked + label::before{
+  content:"";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  outline: 2px solid white;
+  background: white;
+  left: 0;
+  top: 0;
+}
+
+[type="checkbox"]:checked + label::after{
+  content:"";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-image: url('/public/assets/circle-check-regular.svg');
+  background-size: contain;
+  left: 0;
+  top: 0;
+  transform: scale(1);
+  opacity: 1;
+  transition: all .3s ease;
+}
+
+[type="checkbox"]:not(:checked) + label::after{
+  content:"";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-image: url('/public/assets/circle-check-regular.svg');
+  background-size: contain;
+  left: 0;
+  top: 0;
+  transform: scale(0);
+  opacity: 0;
+}
+
 
 .tasklist-container ul li {
   font-size: 0.9rem;
@@ -58,14 +123,14 @@
 }
 
 .taskdeletebtn {
-  right: 1rem;
   border: none;
   width: 2rem;
   height: 2rem;
   margin: 0;
   background-color: black;
-  margin-right: 0.5rem;
+  margin-left: auto;
 }
+
 
 
 

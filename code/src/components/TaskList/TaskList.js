@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import tasks from 'reducers/tasks';
@@ -17,16 +18,15 @@ const TaskList = () => {
     <section>
       <div className="tasklist-container">
         <div className="header-container">
-          <h1>TODAY</h1>
+          <h2>TODAY</h2>
         </div>
         <ul className="tasklist">
           {taskList.map((singleTask) => {
             return (
               <li className="singletask-container" key={singleTask.id}>
                 <p>
-                  <label htmlFor={`task_with_id${singleTask.id}`}>
-                    <input id={`task_with_id${singleTask.id}`} type="checkbox" value={singleTask.isDone} onChange={() => onIsDoneCheckboxToggle(singleTask.id)} />
-                  </label>
+                  <input id={`task_with_id${singleTask.id}`} type="checkbox" value={singleTask.isDone} onChange={() => onIsDoneCheckboxToggle(singleTask.id)} />
+                  <label htmlFor={`task_with_id${singleTask.id}`} />
                   <span>{singleTask.name}</span>
                   <button className="taskdeletebtn" type="button" onClick={() => onTaskDeleteBtnClick(singleTask.id)}>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">

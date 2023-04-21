@@ -1,18 +1,15 @@
 .addtask-container {
   margin: 1rem 2rem 0rem 2rem;
-  background-color: black;;
+  background-color: black;
   display: flex;
   align-items: center;
-  justify-content: center;
 }
-
 .onTaskDeleteBtn {
-  position: relative;
   border: none;
   width: 3rem;
   height: 3rem;
-  margin: 0rem 0rem 0rem 2rem;
   background-color: black;
+  margin-left: 1rem;
 }
 
 .onTaskDeleteBtn .svg path {
@@ -20,42 +17,31 @@
   z-index: 1;
 }
 
-  .add-button {
-    border: none;
-   background-color: #F7F7F8;;
-    width: 2.5rem;
-    height: 2.5rem;
-  }
+.add-button {
+  border: none;
+  background-color: black;
+  width: 2.5rem;
+  height: 2.5rem;
+  margin-right: 0.2rem;
+}
 
-  .add-button svg path {
-    fill: #C60012;
-  }
-  
-  .add-button {
-    display: inline-block;
-    vertical-align: middle;
-    border: none;
-    background-color: black;
-    width: 2.5rem;
-    height: 2.5rem;
-  }
-  
-  form {
-    display: inline-block;
-    vertical-align: middle;
-    margin-left: 0.5rem;
-    margin-right: 1.6rem; /* add some spacing between the button and input */
-  }
-  
-  form label {
-    display: block; /* make sure the input takes full width */
-  }
-  
-  form input {
-    width: 100%;
-    border: none;
-    padding: 0.5rem;
-    font-size: 1rem;
-    border-radius: 10px;
-  }
-  
+.add-button svg path {
+  fill: #C60012;
+}
+
+form {
+  display: flex;
+  align-items: center;
+}
+
+form label {
+  display: block;
+}
+
+form input {
+  width: 100%;
+  border: none;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 10px;
+}

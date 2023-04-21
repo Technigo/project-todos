@@ -15,7 +15,7 @@ const initialState = {
     {
       id: '843h0fhyuhhdf348hd8sj67ipuf',
       name: 'Walk the dog',
-      isDone: true
+      isDone: false
     }
   ]
 }
@@ -45,6 +45,15 @@ const tasks = createSlice({
       const foundIndex = copyOfTaskArrayFromStore.findIndex(condition);
       copyOfTaskArrayFromStore[foundIndex].isDone = !copyOfTaskArrayFromStore[foundIndex].isDone;
       store.items = copyOfTaskArrayFromStore;
+    },
+    handleCheck: (store, action) => {
+      const { id } = action.payload;
+      const newArray = [...store.items]
+      const indexOfObject = newArray.findIndex((item) => item.id === id)
+      if (indexOfObject > -1) {
+        newArray[indexOfObject].isChecked = !newArray[indexOfObject].isChecked
+        store.items = newArray
+      }
     }
   }
 });
