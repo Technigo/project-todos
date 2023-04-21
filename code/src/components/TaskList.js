@@ -1,16 +1,16 @@
 import React from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import tasks from 'components/reducers/tasks';
 import styled from 'styled-components';
 
-const List = styled.div`
+const InnerWrapper = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr;
 justify-content: center;
 margin-top: 20px;
 `
-const TaskName = styled.div`
-font-size: 20px;
+const TaskText = styled.div`
+font-size: 23px;
 `
 
 const DeleteBtn = styled.button`
@@ -30,28 +30,27 @@ const TaskList = () => {
   }
 
   return (
-    <List>
-      <ul>
-        {taskList.map((singleTask) => {
-          return (
-            <li key={singleTask.id}>
-              <TaskName isChecked={singleTask.isChecked}>
-                {singleTask.taskName}
-              </TaskName>
-              <label htmlFor={singleTask.id}>
-                <input
-                  key={singleTask.id}
-                  type="checkbox"
-                  id={singleTask.id}
-                  value={singleTask.isChecked}
-                  onChange={() => onCheckedToggle(singleTask.id)} />
-              </label>
-              <DeleteBtn onClick={() => onDeleteTaskBtn(index)} type="button" />
-            </li>
-          )
-        })}
-      </ul>
-    </List>
+    <section>
+      {taskList.map((singleTask, index) => {
+        return (
+          <InnerWrapper>
+            <label htmlFor={singleTask.id}>
+              <input
+                key={singleTask.id}
+                type="checkbox"
+                id={singleTask.id}
+                checked={singleTask.isChecked}
+                onChange={() => onCheckedToggle(singleTask.id)} />
+            </label>
+            <TaskText>{singleTask.text}</TaskText>
+            <DeleteBtn
+              type="button"
+              onClick={() => onDeleteTaskBtn(index)}>-
+            </DeleteBtn>
+          </InnerWrapper>
+        )
+      })}
+    </section>
   )
 }
 

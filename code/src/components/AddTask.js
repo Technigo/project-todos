@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'components/reducers/tasks';
-import uniqid from 'uniqid';
 import styled from 'styled-components';
 
 const InnerWrapper = styled.div`
@@ -25,22 +24,15 @@ height: 30px;
 border-radius: 50px;
 `
 
-const capitalize = (stringToCapitalize) => {
-  return stringToCapitalize.charAt(0).toUpperCase() + stringToCapitalize.slice(1);
-}
-
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('')
-
   const dispatch = useDispatch()
-
   const onFormSubmit = (event) => {
     event.preventDefault();
-
-    const newTask = { 
-      id: uniqid(),
-      text: capitalize(inputValue),
-      isChecked: false 
+    const newTask = {
+      id: Date.now().toString(),
+      text: inputValue,
+      isChecked: false
     }
     dispatch(tasks.actions.addTask(newTask));
     setInputValue('');
@@ -50,15 +42,15 @@ const AddTask = () => {
     <InnerWrapper>
       <AddInnerWrapper>
         <form onSubmit={onFormSubmit}>
-          <label htmlFor="addTask">
-            <SubmitBtn type="submit" disabled={inputValue.length === 0}>+</SubmitBtn>
+          <label htmlFor="task-input">New thing
             <Input
+              value={inputValue}
               type="text"
               placeholder="Add new thing"
-              value={inputValue}
-              onChange={(event) => setInputValue(event.target.value)} 
-              id="addTaskInput" />
+              onChange={(event) => setInputValue(event.target.value)}
+              id="task-input" />
           </label>
+          <SubmitBtn type="submit" disabled={inputValue.length === 0}>+</SubmitBtn>
         </form>
       </AddInnerWrapper>
     </InnerWrapper>

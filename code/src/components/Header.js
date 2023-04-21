@@ -10,7 +10,7 @@ background: pink;
 export const Header = () => {
   return (
     <HeaderText>
-            Back and forth list
+      <h1>Back and forth list</h1>
     </HeaderText>
   )
 }
