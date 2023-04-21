@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 // import tickets from 'reducers/tickets';
 // import vault from 'reducers/vault';
 import HandleTODO from './HandleTODO';
-import ClearList from './ClearList';
+import { TODOButton } from './buttons';
 
 // what we call addedTodos here is the store, we can reference it however we want. So we go to the store, which has a slice named tickets, and we look at the property "items". Whenever the items-array is changed, the pokemonList get's notified thanks to the useSelector, and gets updated
 
@@ -53,22 +53,23 @@ const TODOList = () => {
   };
   // console.log(ticketsList, vaultList)
   return (
-    <>
-      <section>
-        {todoList.map((singleTodo) => {
-          const isSelected = singleTodo === selectedTODO;
-          return <div key={singleTodo.id}>
-            <button type="button" onClick={() => handleTODOClick(singleTodo)}>
-              {singleTodo.name}
-            </button>
-            {isSelected && <HandleTODO item={singleTodo} />}
-          </div>;
-        })}
-      </section><span>
-        Todos: {todoCount}
-        <ClearList />
+    <section id="listSection">
+      <span>
+        Left to do: {todoCount}
       </span>
-    </>
+      {todoList.map((singleTodo) => {
+        const isSelected = singleTodo === selectedTODO;
+        return <div className="todoContainer" key={singleTodo.id}>
+          <TODOButton
+            type="button"
+            onClick={() => handleTODOClick(singleTodo)}
+            className={isSelected ? 'selected' : ''}>
+            {singleTodo.name}
+          </TODOButton>
+          {isSelected && <HandleTODO item={singleTodo} />}
+        </div>;
+      })}
+    </section>
   )
 }
 

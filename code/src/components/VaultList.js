@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import HandleVault from './HandleVault';
 
+// this component displays the saved items
 const VaultList = () => {
   const vaultList = useSelector((savedTodos) => savedTodos.vault.savedItems);
   const [selectedTODO, setSelectedTODO] = useState(null)
@@ -16,7 +17,7 @@ const VaultList = () => {
   }
 
   return (
-    <section>
+    <section id="vaultListSection">
       {vaultList.map((singleSavedTodo) => {
         const isSelected = singleSavedTodo === selectedTODO;
         return <div key={singleSavedTodo.id}>

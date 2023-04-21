@@ -1,6 +1,17 @@
 import React, { useState } from 'react';
+import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import tickets from 'reducers/tickets';
+import SubmitIcon from '../icons/SubmitIcon.png'
+
+const StyledButton = styled.button`
+height: 60px;
+padding: 0;
+border: none;
+background: transparent;
+cursor: pointer;
+
+`
 
 const AddTODO = () => {
   const [inputValue, setInputValue] = useState('');
@@ -22,15 +33,18 @@ const AddTODO = () => {
   }
 
   return (
-    <section>
+
+    <section id="addSection">
       <form onSubmit={handleNewSubmit}>
         <label htmlFor="addTODOinput">
-            Add a new ToDo
-          <input type="text" id="addTODOinput" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
+          <input type="text" required id="addTODOinput" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
         </label>
-        <button type="submit">Add it</button>
+        <StyledButton type="submit" aria-label="Add it">
+          <img id="submitIcon" src={SubmitIcon} alt="Add todo" />
+        </StyledButton>
       </form>
     </section>
+
   )
 }
 

@@ -2,13 +2,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import tickets from 'reducers/tickets';
-import styled from 'styled-components';
-
-const StyledButton = styled.button`
-  background-color: ${(props) => (props.clicked ? 'green' : '')};
-  color: ${(props) => (props.clicked ? 'white' : 'black')};
-  transition: all 0.2s ease-in-out;
-`;
+import { ClearButtons } from './buttons';
 
 const ClearList = () => {
   const dispatch = useDispatch();
@@ -42,12 +36,12 @@ const ClearList = () => {
   }
 
   return (
-    <>
-      <button type="button" onClick={handleAllDoneClick}>All done</button>
-      <StyledButton type="button" onClick={handleClearAllClick} clicked={clickCount > 0} ref={buttonRef}>
+    <div className="clearContainer">
+      <ClearButtons type="button" onClick={handleAllDoneClick}>All done</ClearButtons>
+      <ClearButtons type="button" onClick={handleClearAllClick} clicked={clickCount > 0} ref={buttonRef}>
         {clickCount === 0 ? 'Clear All' : 'Are you sure?'}
-      </StyledButton>
-    </>
+      </ClearButtons>
+    </div>
   );
 };
 
