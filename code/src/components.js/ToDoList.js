@@ -1,7 +1,9 @@
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import todos from 'reducers.js/todos';
 import { Buttons } from './AddToDo';
+import { NewToDoP, ToDoListBox } from './GlobalStyles';
 
 const ToDoList = () => {
   const dispatch = useDispatch();
@@ -25,14 +27,12 @@ const ToDoList = () => {
         {toDoList.map((singleToDo) => {
           return (
             <li key={singleToDo.id}>
-              <p>
-                <span>{singleToDo.name}</span>
+              <ToDoListBox className="todolistbox">
+                <input id={`toDo_with_id${singleToDo.id}`} type="checkbox" value={singleToDo.IsDone} onChange={() => onIsDoneCheckboxToggle(singleToDo.id)} />
+                <label htmlFor={`toDo_with_id${singleToDo.id}`} />
+                <NewToDoP>{singleToDo.name}</NewToDoP>
                 <Buttons delete type="button" onClick={() => onDeleteSingleToDoBtnClick(singleToDo.id)}> Remove</Buttons>
-                <label htmlFor={`toDo_with_id${singleToDo.id}`}>
-                  Is this one accomplished?
-                  <input id={`toDo_with_id${singleToDo.id}`} type="checkbox" value={singleToDo.IsCaught} onChange={() => onIsDoneCheckboxToggle(singleToDo.id)} />
-                </label>
-              </p>
+              </ToDoListBox>
             </li>)
         })}
       </section>

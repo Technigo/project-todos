@@ -4,8 +4,8 @@ const initialState = {
   items: [
     {
       id: '01',
-      name: 'StartTheToDoList',
-      isDone: true
+      name: 'Plan your day!',
+      isDone: false
     }
   ]
 }

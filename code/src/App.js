@@ -1,10 +1,11 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import AddToDo, { Wrapper } from 'components.js/AddToDo';
+import AddToDo from 'components.js/AddToDo';
 import ToDoList from 'components.js/ToDoList';
 import todos from 'reducers.js/todos';
 import Counter from 'components.js/Counter';
+import { Wrapper } from 'components.js/GlobalStyles';
 
 export const App = () => {
   const reducer = combineReducers({

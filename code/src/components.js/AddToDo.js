@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
+import styled, { css } from 'styled-components';
 import { useDispatch } from 'react-redux';
 import todos from 'reducers.js/todos';
-import styled, { css } from 'styled-components';
 import DateToday from './Date';
+import { StyledForm, TopDiv } from './GlobalStyles';
 
 export const Buttons = styled.button`
   background: transparent;
@@ -47,36 +48,6 @@ export const Buttons = styled.button`
       `
 }
 `
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  margin-top: 5%;
-  padding: 2rem;
-`
-
-export const TopDiv = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  gap:1rem;
-
-  @media (max-width:668px) {
-    display: block
-  }
-`
-
-export const StyledForm = styled.form`
-  margin-top: 2rem;
-  border: 1px solid var(--primaryBlack);
-  padding: 3rem 1.5rem 1rem 1.5rem;
-  border-radius: 2px;
-  display: flex;
-  flex-direction: column;
-`
 
 const capitalize = (stringToCapitalise) => {
   return stringToCapitalise.charAt(0).toUpperCase() + stringToCapitalise.slice(1);
@@ -90,7 +61,7 @@ const AddToDo = () => {
     const newToDo = {
       id: Date.now().toString(),
       name: capitalize(inputValue),
-      isDone: false
+      isDone: true
     };
     dispatch(todos.actions.addToDo(newToDo));
     setInputValue('');

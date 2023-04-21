@@ -9,6 +9,7 @@ body {
   background: -webkit-linear-gradient(to right, #FFEEEE, #DDEFBB); 
   background: linear-gradient(to right, #FFEEEE, #DDEFBB);
   font-family: 'Manrope', sans-serif;
+  list-style: none;
 }
 
 code {
@@ -22,4 +23,46 @@ code {
   --buttonHover: #e8d1d2;
   --buttonGreen: #ddd97f;
   --buttonHoverbeige: #e5d3bc;
+}
+
+[type="checkbox"] {
+  opacity:0;
+}
+
+[type="checkbox"] + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-flex;
+  color: red;
+  line-height: 25px;
+  margin: 0 1rem 0 1rem;
+}
+
+[type="checkbox"] + label::before {
+  content: "";
+  position: ;
+  width: 25px;
+  height: 25px;
+  outline: 2px solid white;
+  background: #fff;
+}
+
+[type="checkbox"]:checked + label::before {
+  content: "";
+  position: ;
+  width: 25px;
+  height: 25px;
+  outline: 2px solid var(--primaryBlack);
+  background: #fff;
+}
+
+[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  outline: 2px solid var(--buttonGreen);
+  background-image: url(../assets/trans-check.png);
+  background-size: contain;
 }
