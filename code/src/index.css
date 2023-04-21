@@ -41,7 +41,6 @@ code {
   justify-content: center;
   align-items: flex-start;
   position: relative;
-  /*width: 100%;*/
   width: 100vw;
 }
 
@@ -53,12 +52,6 @@ code {
   max-width: 450px;
   width: 100%;
   height: 600px;
-  /*
-  width: 100%;
-  max-width: 450px;
-  min-height: 600px;
-  max-height: 700px;
-  */
   border-radius: 35px;
   padding: 15px 25px 25px 25px;
   position: relative;
@@ -231,8 +224,11 @@ code {
 }
 
 .blobcontainer {
-  position: relative;
-  top: -20px;
+  position: absolute;
+  top: 250px;
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 300px;
 }
 
 .blobcontainer svg {
@@ -248,8 +244,8 @@ code {
   color: #DA58C2;
   font-size: 24px;
   z-index: 2;
-  top: 120px;
-  left: 130px;
+  top: 77px;
+  left: calc(50% - 80px);
   max-width: 160px;
   text-align: center;
 }
@@ -312,10 +308,6 @@ code {
 
   .bgtest {
     background-color: #DA58C2;
-    /*
-    top: -72px;
-    left: -240px;
-    */
     top: -72px;
     left: calc(50% - 390px);
   }
@@ -332,18 +324,9 @@ code {
     padding: 5px;
   }
 
-  
-.blobcontainer {
-  position: relative;
-  top: -30px;
-}
-
-.blobcontainer p {
-  font-size: 24px;
-  top: 62px;
-  left: 66px;
-  max-width: 160px;
-}
+  .blobcontainer {
+    top: 220px;
+  }
 
   .Footer {
     margin-top: 20px;
