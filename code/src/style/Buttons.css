@@ -10,3 +10,7 @@ button{
 .resetButton {
     width: fit-content;
 }
+
+.resetButton:hover::before {
+    content: "Reset To-Di List!";
+}

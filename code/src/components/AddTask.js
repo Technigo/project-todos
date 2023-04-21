@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
+import { Counter } from './Counter';
 import '../style/AddTask.css'
 import '../style/Input.css'
 import '../style/Buttons.css'
@@ -12,7 +13,6 @@ const capitalize = (stringToCapitalise) => {
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState(''); // useState använder vi för att det ska uppdateras
-
   const dispatch = useDispatch();
 
   const onFormSubmit = (event) => {
@@ -27,33 +27,35 @@ const AddTask = () => {
     };
     dispatch(tasks.actions.addTask(newTask)); // newtask is the payload.
     setInputValue('');
-  }
+  };
 
   const onResetToDoClick = () => {
     dispatch(tasks.actions.deleteAllTasks());
-  }
+  };
+
   return (
     <section>
-      <button
-        className="resetButton"
-        type="button"
-        onClick={onResetToDoClick}> Reset To-Do List
-      </button>
+      <Counter />
       <div className="input">
         <form onSubmit={onFormSubmit}>
           <label htmlFor="addTaskInput">
-            To-Do To-Day?
             <input
               value={inputValue}
               onChange={(event) => setInputValue(event.target.value)}
               id="addTaskInput"
-              type="text" />
+              type="text"
+              placeholder="Next To-Do.." />
           </label>
           <button
             type="submit"> Add Task!
           </button>
         </form>
       </div>
+      <button
+        className="resetButton"
+        type="button"
+        onClick={onResetToDoClick}><div title="Reset tasklist"> ☑️ </div>
+      </button>
     </section>
   )
 };

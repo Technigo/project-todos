@@ -3,9 +3,13 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import styled from 'styled-components';
+/*
+const CheckBox = styled.img`
+border: 2px solid black;
+`; */
 
 const TaskList = () => {
-/*  const handleCheck = () => { } */
+  /*  const handleCheck = () => { } */
   const taskList = useSelector((store) => store.tasks.items)
   const dispatch = useDispatch();
 
@@ -20,13 +24,15 @@ const TaskList = () => {
     ${({ isChecked }) => isChecked && 'text-decoration: line-through'};
   `;
 
+  // style checkboxes så dom är innan task och rund
+  // add counter
   return (
     <section>
       <ul>
         {taskList.map((singleTask) => {
           return (
             <li key={singleTask.id}>
-              <p>
+              <h1>
                 <TaskName isChecked={singleTask.isChecked}>
                   {singleTask.taskName}
                 </TaskName>
@@ -34,11 +40,13 @@ const TaskList = () => {
                   <input
                     id={`task_with_id${singleTask.id}`}
                     type="checkbox"
+                    placeholder="Next To-Do"
                     value={singleTask.isChecked}
                     onChange={() => onIsCheckedCheckboxToggle(singleTask.id)} />
                 </label>
-              </p>
-            </li>)
+              </h1>
+            </li>
+          );
         })}
       </ul>
     </section>

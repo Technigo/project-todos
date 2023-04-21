@@ -1,9 +1,6 @@
-
-
 section {
     height: 20vh;
     width: 100vw;
     display: grid;
     place-items: center;
-
 }
