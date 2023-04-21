@@ -8,7 +8,7 @@ font-size: 100px;
 font-family: Montserrat Alternates;
 font-weight: 700;
 margin-bottom: -35px;
-opacity: 60%;
+opacity: 72%;
 `
 
 const Header = () => {

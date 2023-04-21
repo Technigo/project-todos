@@ -25,11 +25,12 @@ backdrop-filter: blur(4.9px);
 border: 1px solid rgba(255, 255, 255, 0.22);
 
 input[type=text] {
+  display: flex;
 font-family: Quicksand;
 outline: none;
 color: white;
 padding-left: 15px;
-width: 300px;
+width: 200px;
 height: 40px;
 background: rgba(255, 255, 255, 0.08);
 border-radius: 15px;
@@ -43,6 +44,22 @@ border: 1px solid rgba(255, 255, 255, 0.16);
     font-style: italic;
   }
  }`
+
+const AddTaskDiv = styled.div`
+ border: 1px solid black;
+ display: flex;
+ flex-direction: row;
+ justify-content: center;
+ align-items: center;
+ width: 600px;
+ height: 100px;
+ gap: 20px;`
+
+const AddButtonPlus = styled.div`
+font-size: 30px;
+font-weight: 200;
+line-height: 15px;
+`
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
@@ -63,17 +80,19 @@ const AddTask = () => {
 
   return (
     <ToDoWrapper>
-      <form onSubmit={onFormSubmit}>
-        <label htmlFor="addTaskInput">
-          <input
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
-            placeholder="buy eggs"
-            id="addTaskInput"
-            type="text" />
-        </label>
-        <SubmitButton type="submit">add</SubmitButton>
-      </form>
+      <AddTaskDiv>
+        <form onSubmit={onFormSubmit}>
+          <label htmlFor="addTaskInput">
+            <input
+              value={inputValue}
+              onChange={(event) => setInputValue(event.target.value)}
+              placeholder="buy eggs"
+              id="addTaskInput"
+              type="text" />
+          </label>
+          <SubmitButton type="submit"><AddButtonPlus>+</AddButtonPlus></SubmitButton>
+        </form>
+      </AddTaskDiv>
       <TaskList />
       <DeleteAllTasks />
     </ToDoWrapper>
