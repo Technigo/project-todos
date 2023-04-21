@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const AddTaskWrapper = styled.form`
     display: flex;
     flex-direction: column;
-    
+    max-width: 100vw;
     gap:1rem;
     align-items: center;
     border-bottom: 3px solid var(--orange);
@@ -27,7 +27,7 @@ export const AddTaskChildDiv = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
-    max-width:100vw;
+    max-width:90vw;
     gap:1rem;
 
     input[type=text] {
@@ -36,6 +36,7 @@ export const AddTaskChildDiv = styled.div`
       border: 2px solid var(--dark-blue);
       background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
       font-size: 1rem;
+      width:10em;
 
         &:focus {
           border: 2px solid var(--orange);
