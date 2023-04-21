@@ -49,6 +49,15 @@ export const notereminder = createSlice({
       const foundIndex = copyOfNoteArrayFromStore.findIndex(condition);
       copyOfNoteArrayFromStore[foundIndex].isDone = !copyOfNoteArrayFromStore[foundIndex].isDone
       store.items = copyOfNoteArrayFromStore;
+    },
+    handleCheck: (store, action) => {
+      const { id } = action.payload;
+      const newArray = [...store.items]
+      const indexOfObject = newArray.findIndex((item) => item.id === id)
+      if (indexOfObject > -1) {
+        newArray[indexOfObject].isChecked = !newArray[indexOfObject].isChecked
+        store.items = newArray
+      }
     }
   }
-})
+});
