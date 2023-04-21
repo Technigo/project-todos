@@ -125,5 +125,6 @@ cursor: ponter;
 
 export const StyledIcon = styled(FontAwesomeIcon)`
 margin: 0.5rem;
+filter: var(--drop-shadow);
 `;
 
