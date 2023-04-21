@@ -24,12 +24,13 @@ export const Completed = () => {
       <h2>Done</h2>
       {completedTasks.map((task) => (
         <div className="task-div" key={task.id}>
-          <label htmlFor="checkbox">
+          <label className="checkbox-container" htmlFor="checkbox">
             <input
               type="checkbox"
               id="checkbox"
               checked={task.isCompleted}
               onChange={() => checkboxHandler(task)} />
+            <span className="checkmark" />
             <span className={task.isCompleted ? 'checked' : 'unchecked'}>{task.text}</span>
           </label>
           <button type="button" onClick={() => dispatch(completed.actions.deleteTask(task))}>❌</button>
