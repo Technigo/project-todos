@@ -1,0 +1,31 @@
+button {
+    background-color: transparent;
+}
+
+.clearall-button {
+    width: 20px;
+}
+
+.footer-container {
+    font-size: 13px;
+    display: flex;
+    flex-direction: row;
+    background-color: #FEFEE3;
+    height: 50px;
+    width: 255px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    align-items: center;
+    justify-content: space-between;
+    display: flex;
+    gap: 10px;
+}
+
+button{
+    margin-left: 8px;
+    border: none;
+    border-radius: 10px;
+    height: 30px;
+    width: 35px;
+    background-color: #FFC9B9;
+}

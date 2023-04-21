@@ -1,0 +1,111 @@
+.tasklist-container {
+    width: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.singletask-container{
+    background-color: #FEFEE3;
+    height: 100px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    width: 247px;
+    align-items: center;
+    display: flex;
+    gap: 10px;
+    padding-left: 8px;
+    font-family: "Roboto";
+}
+
+.singletask-container img{
+    width: 12px;
+}
+
+.TaskList{
+    display: flex;
+    align-items: center;
+    width: 80%;
+    margin: 6px 4px;
+    height: 40px;
+    border-radius: 12px;
+}
+
+.trash-button {
+    margin-left: 8px;
+    border: none;
+    border-radius: 5px;
+    height: 20px;
+    width: 20px;
+    background-color: #FFC9B9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.singletask-content2 {
+    background-color: #FFC9B9;
+    padding: 10px;
+    height: 60px;
+    border-radius: 12px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    white-space: break-spaces;
+    word-break: break-all;
+}
+
+.singletask-content2-time{
+    font-size: 10px;
+}
+
+.singletask-content1 {
+    height: 20px;
+    width: 20px;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    background-color: #FFC9B9;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+}
+
+input[type="checkbox"]:after {
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+    font-size: 10px;
+    color: black;
+    display: none;
+}
+
+input[type="checkbox"]:hover {
+    background-color: hwb(14 58% 0%);
+}
+
+input[type="checkbox"]:checked{
+    background-color: #FFC9B9;
+}
+
+input[type="checkbox"]:checked:after {
+    display: block;
+}

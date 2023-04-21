@@ -1,0 +1,8 @@
+.counter p {
+    display: flex;
+    text-align: left;
+    flex: 1;
+    font-size: 12px;
+    margin-right: 12px;
+    font-family: "Roboto";
+}

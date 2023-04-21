@@ -1,0 +1,34 @@
+.app{
+    height: 100vh;
+    width: 100vw;
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' version='1.1' xmlns:xlink='http://www.w3.org/1999/xlink' xmlns:svgjs='http://svgjs.com/svgjs' width='2200' height='1400' preserveAspectRatio='none' viewBox='0 0 2200 1400'%3e%3cg mask='url(%26quot%3b%23SvgjsMask1252%26quot%3b)' fill='none'%3e%3crect width='2200' height='1400' x='0' y='0' fill='rgba(214%2c 140%2c 69%2c 1)'%3e%3c/rect%3e%3cpath d='M 0%2c295 C 36.8%2c262.6 110.4%2c131 184%2c133 C 257.6%2c135 294.4%2c292.2 368%2c305 C 441.6%2c317.8 478.4%2c173.8 552%2c197 C 625.6%2c220.2 662.4%2c416.2 736%2c421 C 809.6%2c425.8 846.4%2c251.2 920%2c221 C 993.6%2c190.8 1030.4%2c309 1104%2c270 C 1177.6%2c231 1214.4%2c17.2 1288%2c26 C 1361.6%2c34.8 1398.4%2c276.8 1472%2c314 C 1545.6%2c351.2 1582.4%2c216 1656%2c212 C 1729.6%2c208 1766.4%2c324.6 1840%2c294 C 1913.6%2c263.4 1952%2c68.8 2024%2c59 C 2096%2c49.2 2164.8%2c207.8 2200%2c245L2200 1400L0 1400z' fill='rgba(255%2c 201%2c 185%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c557 C 88%2c625.4 264%2c913 440%2c899 C 616%2c885 704%2c508.4 880%2c487 C 1056%2c465.6 1144%2c787 1320%2c792 C 1496%2c797 1584%2c515.8 1760%2c512 C 1936%2c508.2 2112%2c720.8 2200%2c773L2200 1400L0 1400z' fill='rgba(254%2c 254%2c 227%2c 1)'%3e%3c/path%3e%3cpath d='M 0%2c997 C 63%2c1043 189%2c1197.6 315%2c1227 C 441%2c1256.4 504%2c1153.4 630%2c1144 C 756%2c1134.6 819%2c1192 945%2c1180 C 1071%2c1168 1134%2c1084.2 1260%2c1084 C 1386%2c1083.8 1449%2c1162.8 1575%2c1179 C 1701%2c1195.2 1765%2c1155.8 1890%2c1165 C 2015%2c1174.2 2138%2c1213 2200%2c1225L2200 1400L0 1400z' fill='rgba(254%2c 254%2c 227%2c 1)'%3e%3c/path%3e%3c/g%3e%3cdefs%3e%3cmask id='SvgjsMask1252'%3e%3crect width='2200' height='1400' fill='white'%3e%3c/rect%3e%3c/mask%3e%3c/defs%3e%3c/svg%3e");
+    display: grid;
+    place-items: center;
+    background-position: fits-content;
+}
+
+.app-container{
+    height: 8%;
+    width: 90%;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #4C956C;
+    border-radius: 12px;
+    padding: 32px 0px;
+    border-radius: 50px;
+    background: transparent;
+    display: table;
+        box-shadow:  32px 32px 64px #bebebe,
+             -32px -32px 64px #ffffff;
+}
+
+.app-container-task{
+    flex: 1;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 12px;
+}
