@@ -39,6 +39,9 @@ const AddTask = () => {
       <div className="input">
         <form onSubmit={onFormSubmit}>
           <label htmlFor="addTaskInput">
+            <button
+              type="submit"> Add Task!
+            </button>
             <input
               value={inputValue}
               onChange={(event) => setInputValue(event.target.value)}
@@ -46,9 +49,7 @@ const AddTask = () => {
               type="text"
               placeholder="Next To-Do.." />
           </label>
-          <button
-            type="submit"> Add Task!
-          </button>
+
         </form>
       </div>
       <button

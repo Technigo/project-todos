@@ -28,7 +28,7 @@ export const Counter = () => {
             numberOfPieces={100}
             gravity={0.05}
             confettiSource={{ x: 0, y: 500, w: 1000, h: 1000 }} />
-          <p>YAY YOU´RE DONE LETS CELEBRATE!</p>
+          <p><span> 🍾 🎉 </span>YAY YOU´RE DONE LETS CELEBRATE! <span> 🎉 🍾 </span></p>
         </>)
     } else {
       return `${completedTasks.length} / ${items.length} done`
