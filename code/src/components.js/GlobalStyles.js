@@ -37,8 +37,9 @@ export const NewToDoP = styled.span`
 
 export const ToDoListBox = styled.p`
   display: flex;
+  text-align:left;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  align-content: center,
+  align-content: center;
 `
