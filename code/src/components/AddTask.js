@@ -150,7 +150,8 @@ const AddTaskBtn = styled.button`
   justify-content: space-around;
   filter: invert(1);
   font-weight: 700;
-  font-size: 16px;`
+  font-size: 16px;
+  color: black;`
 
 const DescriptiveSVG = styled.img`
   height: 20px;`

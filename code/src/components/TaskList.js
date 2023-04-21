@@ -92,6 +92,7 @@ const Btn = styled.button`
   justify-content: space-around;
   font-size: 1em;
   font-weight: 700;
+  color: black;
   filter: invert(1);
 
   img {

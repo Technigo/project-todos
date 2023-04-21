@@ -26,6 +26,7 @@ const Btn = styled.button`
   justify-content: space-around;
   font-size: 16px;
   font-weight: 700;
+  color: black;
   filter: invert(1);
 
   img {
