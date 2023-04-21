@@ -14,20 +14,20 @@ border-radius:  10%;
 box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 
 input[type='checkbox'].checkbox {
-    --size: 16px;
+    --size: 20px;
     --radius: calc(var(--size) / 10);
-    --bg: hotpink;
+    --bg: #ff8b94;
     --border-radius:5px;
     --color: white;
     --time: 0.5s;
 }
 
 @media (min-width:1024px) {
-  height: 80vh;
+  min-height: 80vh;
 }
 
 @media (max-width:1024px) {
-  height: 60vh;
+  min-height: 60vh;
 }
 `
 
@@ -45,7 +45,7 @@ const StyledListItem = styled.li`
 font-family: 'Poppins', sans-serif;
 font-size: 20px;
 background:#63ace5;
-color:;
+color:#FDEDDE;
 padding: 30px;
 border-radius: 15px;
 margin: 20px 40px; 
@@ -57,6 +57,10 @@ box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
   width:60%;
 }
 
+@media (max-width:667px){
+  width:60%;
+}
+
 @media (min-width:667px) and (max-width:1024px) {
   width: 50%;
 }
@@ -65,17 +69,14 @@ box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
   width:30%;
 }
 `
-
 const StyledTodoTitle = styled.h2`
 font-family: 'Mouse Memoirs', sans-serif;
 font-size: 45px; 
 text-align: center;
 margin:20px;
-
 `
 const Datebox = styled.div`
 display:flex: 
-
 `
 
 const Date = styled.p`
@@ -90,6 +91,11 @@ background:transparent;
 border:none;
 height: 40px;
 justify-content: flex-end;
+
+&:hover {
+  box-shadow: 0 0 0 0 rgba(0, 0, 0, 1);
+  transition:all 0.3s ease;
+}
 `
 
 const CheckboxText = styled.p`
@@ -131,7 +137,7 @@ export const TaskList = () => {
                 <DeleteButton type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask))}> <FcEmptyTrash style={{ fontSize: '32px' }} /> </DeleteButton>
               </CheckboxText>
               <Datebox>
-                <Date>Created: {moment(tasks.date).format('ddd MMM Do YYYY')}</Date>
+                <Date>Created: {moment(tasks.date).format('MMM Do YYYY')}</Date>
               </Datebox>
             </StyledListItem>
           )
