@@ -12,7 +12,7 @@ flex-direction:column;
 background:#a8e6cf;
 border-radius:  10%;
 box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
-
+margin-bottom: 10%; 
 input[type='checkbox'].checkbox {
     --size: 20px;
     --radius: calc(var(--size) / 10);
@@ -46,18 +46,20 @@ font-family: 'Poppins', sans-serif;
 font-size: 20px;
 background:#63ace5;
 color:#FDEDDE;
-padding: 30px;
+padding: 20px;
 border-radius: 15px;
-margin: 20px 40px; 
+margin: 20px 30px; 
 width: 98%;
 height: auto;
 box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 
 @media (max-width:350px){
+  font-size: 14px;
   width:60%;
 }
 
 @media (max-width:667px){
+  font-size: 16px;
   width:60%;
 }
 
@@ -84,6 +86,7 @@ display:flex;
 font-family:'Helvetica';
 font-size: 12px; 
 justify-content: flex-end;
+color:#fdf498;
 
 `
 const DeleteButton = styled.button`
