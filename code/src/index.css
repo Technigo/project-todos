@@ -3,24 +3,34 @@
 
 * {
   box-sizing: border-box;
-  overflow-x: hidden;
+  font-family: '5yearsoldfont', sans-serif;
+  font-size: 18px;
 }
 
 body {
   margin: 0;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 16px;
+  
 }
 
-h1{
-  grid-column: 1/-1;
+h1{ 
+  grid-column: 2/4;
   text-align: center;
-  margin: 10px 0 0 0;
+  margin: 0px 0 -37px -14px;
+  padding: 20px;
+  font-size: 28px;
+  background-color: rgba(255,126,185, 1);
+  border: 6px solid white;
+  font-family: 'Permanent Marker', cursive;
+  width: 288px;
+  box-shadow: 3px 14px 28px 0px rgba(0,0,0,0.39);
+  z-index: 3;
 }
+
 
 h2 {
   text-align: center;
   margin: 5px 0 8px 0;
+  font-size: 22px;
 }
 
 button {
@@ -37,22 +47,21 @@ button {
   grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   margin: 0;
-  background-image: url('images/board.jpg');
-  background-size: 240%;
-  gap: 20px;
+  padding: 10px;
+  background-image: url('images/emptyboard.jpg');
+  background-size: cover;
+  gap: 10px;
+  background-repeat: no-repeat;
 }
 
 .addTask-form{
   text-decoration: none;
-  padding-left: 12px;
-}
-
-span {
-  border-bottom: 2px dotted black;
+  text-align: center;
+  display: flex;
+  justify-content: space-between;
 }
 
 input {
-  font-size: 16px;
   padding: 2px;
   border: none;
   border-bottom: 2px dotted black;
@@ -67,15 +76,13 @@ input {
   box-shadow: 3px 14px 28px 0px rgba(0,0,0,0.39);
 }
 
-.todo-text {
-  display: flex;
-  flex-direction: column;
-}
-
 .counter-div{
-  grid-column: 2/4;
-  justify-content: center;
   text-align: center;
+  background-color: rgb(122,252,255);
+  border: 4px solid white;
+  box-shadow: 3px 14px 28px 0px rgba(0,0,0,0.39);
+  margin: 155px 0 -24px 16px;
+  width: 288px;
 }
 
 .checked {
@@ -83,12 +90,16 @@ input {
 }
 
 .task-div {
-
+ width: 90%;
+ display: flex;
+ flex-wrap: wrap;
+ justify-content: space-between;
+ align-items: center;
 }
 
 .timestamp {
   font-style: italic;
-  font-size: 14px;
+  font-size: 12px;
   display: block;
+  margin: 3px;
 }
-

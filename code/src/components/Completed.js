@@ -24,7 +24,7 @@ export const Completed = () => {
     <PostIt>
       <h2>Done</h2>
       {completedTasks.map((task) => (
-        <div key={task.id}>
+        <div className="task-div" key={task.id}>
           <label htmlFor="checkbox">
             <input
               type="checkbox"
@@ -34,7 +34,7 @@ export const Completed = () => {
             <span className={task.isCompleted ? 'checked' : 'unchecked'}>{task.text}</span>
           </label>
           <button type="button" onClick={() => dispatch(completed.actions.deleteTask(task))}>❌</button>
-          <p>Task completed at: {format(task.completionTime, 'HH:mm dd/MM/yyyy')}</p>
+          <p className="timestamp">Task completed at: {format(task.completionTime, 'HH:mm dd/MM/yyyy')}</p>
         </div>
       ))}
     </PostIt>

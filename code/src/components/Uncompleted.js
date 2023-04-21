@@ -5,6 +5,7 @@ import completed from 'reducers/completed';
 import format from 'date-fns/format';
 import { PostIt } from 'Styling/GlobalStyling';
 import { AddTask } from './AddTask';
+import { TodoCounter } from './TodoCounter';
 
 export const Uncompleted = () => {
   const dispatch = useDispatch();
@@ -26,24 +27,23 @@ export const Uncompleted = () => {
 
   return (
     <PostIt>
-      <div className="todo-text">
-        <h2>To-do</h2>
-        <AddTask />
-        {flippedTasks.map((task) => (
-          <div className="task-div" key={task.id}>
-            <label htmlFor="checkbox">
-              <input
-                type="checkbox"
-                id="checkbox"
-                checked={task.isCompleted}
-                onChange={() => onTaskChecked(task)} />
-              <span className={task.isCompleted ? 'checked' : 'unchecked'}>{task.text}</span>
-            </label>
-            <button type="button" onClick={() => dispatch(uncompleted.actions.deleteTask(task))}>❌</button>
-            <p className="timestamp">Task created at: {format(task.creationTime, 'HH:mm dd/MM/yyyy')}</p>
-          </div>
-        ))}
-      </div>
+      <h2>To-do</h2>
+      <AddTask />
+      {flippedTasks.map((task) => (
+        <div className="task-div" key={task.id}>
+          <label htmlFor="checkbox">
+            <input
+              type="checkbox"
+              id="checkbox"
+              checked={task.isCompleted}
+              onChange={() => onTaskChecked(task)} />
+            <span className={task.isCompleted ? 'checked' : 'unchecked'}>{task.text}</span>
+          </label>
+          <button type="button" onClick={() => dispatch(uncompleted.actions.deleteTask(task))}>❌</button>
+          <p className="timestamp">Task created at: {format(task.creationTime, 'HH:mm dd/MM/yyyy')}</p>
+        </div>
+      ))}
+      <TodoCounter />
     </PostIt>
   )
 }
