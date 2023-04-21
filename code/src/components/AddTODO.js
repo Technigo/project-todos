@@ -12,6 +12,7 @@ const AddTODO = () => {
       id: Date.now().toString(), // enough to make an ID for this purpose
       name: inputValue,
       isDone: false,
+      isInVault: false,
       prioritized: false
     }
     // eslint-disable-next-line max-len

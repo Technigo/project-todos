@@ -6,6 +6,7 @@ const initialState = {
       id: '3ttq45',
       name: 'Saved1',
       isDone: false,
+      isInVault: true,
       prioritized: false
     }
   ]
@@ -20,6 +21,7 @@ const vault = createSlice({
     addToVault: (store, action) => {
       console.log(action.payload)
       const savedTodo = store.savedItems.find((item) => item.id === action.payload.id)
+      console.log(action.payload.id)
       console.log('savedTodo:', savedTodo);
       if (!savedTodo) {
         store.savedItems = [...store.savedItems, action.payload]
@@ -27,8 +29,20 @@ const vault = createSlice({
       } else if (savedTodo) {
         return store;
       }
-      localStorage.setItem('vaultList', JSON.stringify(store.savedItems));
+      // localStorage.setItem('vaultList', JSON.stringify(store.savedItems));
       console.log(savedTodo)
+    },
+    deleteSavedTodo: (store, action) => {
+      console.log('delete')
+      store.savedItems = store.savedItems.filter((item) => item.id !== action.payload)
+      console.log(action.payload)
+      // localStorage.setItem('vaultList', JSON.stringify(store.savedItems));
+    },
+    clearSaved: (store) => {
+      if (store.savedItems.length > 0) {
+        store.savedItems = [];
+        // localStorage.setItem('vaultList', JSON.stringify(store.savedItems));
+      }
     }
   }
 })

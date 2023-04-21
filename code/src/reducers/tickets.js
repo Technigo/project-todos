@@ -7,6 +7,7 @@ const initialState = {
       id: 'sgww44',
       name: 'Stay awesome',
       isDone: false,
+      isInVault: false,
       prioritized: false
     }
   ]
@@ -23,7 +24,7 @@ const tickets = createSlice({
     addTODO: (store, action) => {
       // all of the items already in the store + the payload will become the new store
       store.items = [...store.items, action.payload];
-      localStorage.setItem('ticketsList', JSON.stringify(store.items));
+      //  localStorage.setItem('ticketsList', JSON.stringify(store.items));
     },
     removeTODO: (store, action) => {
       store.items = store.items.filter((item) => item.id !== action.payload.id)
@@ -35,21 +36,24 @@ const tickets = createSlice({
       if (toggledTodo) {
         toggledTodo.isDone = !toggledTodo.isDone;
         console.log('toggling happened')
-        localStorage.setItem('ticketsList', JSON.stringify(store.items));
+        //  localStorage.setItem('ticketsList', JSON.stringify(store.items));
       }
     },
     markAllDone: (store) => {
       store.items.forEach((item) => {
         item.isDone = true;
       });
-      localStorage.setItem('ticketsList', JSON.stringify(store.items));
+      // localStorage.setItem('ticketsList', JSON.stringify(store.items));
     },
     clearAll: (store) => {
       if (store.items.length > 0) {
         store.items = [];
-        localStorage.setItem('ticketsList', JSON.stringify(store.items));
+        //  localStorage.setItem('ticketsList', JSON.stringify(store.items));
       }
     }
+    /* moveToTickets: (store, action) => {
+
+    } */
   }
 })
 
