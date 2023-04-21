@@ -1,13 +1,16 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+This is a to do list, made with React and Redux, styling made with styled components (including passing props) + styling for checkboxes in made with Vanilla CSS.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
 
-## The problem
+## Highlights
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+- creating dispatch to be able to got to store and select reducer/action.
+- using event.preventDefault() to unable reloading.
+- the app shows a current date.
+- my first time styling checkboxes.
+- learnt to use styled components comfortably. 
 
 ## View it live
+https://musical-bubblegum-d9620c.netlify.app/
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
