@@ -38,9 +38,9 @@ const AddTask = () => {
               placeholder="Add new task"
               id="addTaskInput" />
           </label>
-          <button type="submit">Add</button>
+          <SubmitButton type="submit">➕</SubmitButton>
         </Form>
-        <Button type="button" onClick={onRemoveAllButtonClick}>Remove all</Button>
+        <RemoveButton type="button" onClick={onRemoveAllButtonClick}>Remove all</RemoveButton>
       </section>
     </>
 
@@ -53,26 +53,38 @@ export default AddTask
 
 const Form = styled.form`
 
+display: flex;
+gap: 5px;
+
 input[type=text] {
       background: white;
       font-size: 16px;
-      color: #82AAE3;
+      color: black;
       outline: 1px solid #FFFFFF;
       border-radius: 5px;
       width: 100%;   
+      justify-content: flex-start;
 }
 `
 
-const Button = styled.button`
-  background-color: #82AAE3;
-  color: #FFFFFF;
+const SubmitButton = styled.button`
+  border: none;
+  background-color: #EAFDFC;
+
+  &:hover {
+      transform: scale(1.2);
+    }
+`
+const RemoveButton = styled.button`
+ background-color: #BFEAF5;
+  color: #243763;
   border-radius: 30px;
   border: none;
   padding: 10px;
   align-text: center;
 
-&:hover {
-  background-color: #91D8E4;
-}
-`
+  &:hover {
+  background-color: #EAFDFC;
+  }
 
+`

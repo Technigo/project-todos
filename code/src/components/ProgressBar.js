@@ -7,7 +7,7 @@ const ProgressBar = () => {
 
   return (
     <div>
-      <p>You have completed {numberOfTasksDone}/{allTasksToDo.length} tasks.</p>
+      <p>{numberOfTasksDone}/{allTasksToDo.length} done</p>
     </div>
   )
 }
