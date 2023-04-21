@@ -25,6 +25,10 @@ input[type='checkbox'].checkbox {
 @media (min-width:1024px) {
   height: 80vh;
 }
+
+@media (max-width:1024px) {
+  height: 60vh;
+}
 `
 
 const StyledList = styled.ul`
