@@ -7,7 +7,7 @@ export const Header = () => {
     <HeaderWrapper>
       <div className="logoName">
         <img src={checkFileWhite} alt="logo" />
-        <h1>Taskify <sup>&copy;</sup></h1>
+        <h1>Tada <sup>&copy;</sup></h1>
       </div>
     </HeaderWrapper>
   )

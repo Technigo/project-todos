@@ -27,6 +27,7 @@ const tasks = createSlice({
       const allComplete = state.items.every((task) => task.isComplete);
       state.items.forEach((task) => {
         task.isComplete = !allComplete;
+        state.isEmpty = true;
       });
     },
     clearAll: (state) => {

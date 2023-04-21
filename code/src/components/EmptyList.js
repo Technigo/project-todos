@@ -5,8 +5,8 @@ import styled from 'styled-components';
 const EmptyList = () => {
   return (
     <EmptyListContainer>
-      <img src={checkFile} alt="award badge icon" />
-      <h1>All Done!</h1>
+      <img src={checkFile} alt="checkmark on a clipboard file" />
+      <h1>Tada!</h1>
     </EmptyListContainer>
   )
 }

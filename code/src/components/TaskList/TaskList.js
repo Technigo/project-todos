@@ -3,9 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import TaskTracker from 'components/TaskTracker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faTrash } from '@fortawesome/free-solid-svg-icons'
+import { faTrash, faClockRotateLeft, faPencil } from '@fortawesome/free-solid-svg-icons'
 import { SingleTaskWrapper, SingleTaskChild, CheckboxInput } from './TaskListStyling';
-
 import EmptyList from '../EmptyList';
 import { Button } from '../Button';
 
@@ -63,9 +62,9 @@ const TaskList = () => {
                   checked={singleTask.isComplete}
                   onChange={() => handleCheckboxChange(singleTask.id)} />
                 <SingleTaskChild>
-                  <p>{singleTask.name}</p>
-                  <p>Created: {singleTask.timeStamp}</p>
-                  <p>Due: {singleTask.dueDate}</p>
+                  <h3>{singleTask.name}</h3>
+                  <p><FontAwesomeIcon icon={faPencil} /> {singleTask.timeStamp}</p>
+                  <p><FontAwesomeIcon icon={faClockRotateLeft} /> {singleTask.dueDate}</p>
                 </SingleTaskChild>
                 <Button
                   smallBtn

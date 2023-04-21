@@ -18,6 +18,9 @@ justify-content: space-around;
 margin-left: 0;
 `;
 
+export const TaskName = styled.h3`
+`
+
 export const CheckboxInput = styled.input`
   appearance: none;
   width: 1.2rem;
