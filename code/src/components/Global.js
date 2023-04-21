@@ -54,9 +54,10 @@ export const DeleteAllButton = styled(Button)`
   box-shadow: var(--box-shadow);
 
     &:hover {
-    background-color: #fff;
-    border: solid 0.1rem var(--btn2-color);
-    color: #000;
+      background-color: #fff;
+      border: solid 0.1rem var(--btn2-color);
+      color: #000;
+    
     transition-duration: 0.4s;
     box-shadow: var(--box-shadow);
   }
@@ -127,6 +128,5 @@ cursor: ponter;
 export const StyledIcon = styled(FontAwesomeIcon)`
 margin: 0.5rem;
 filter: var(--drop-shadow);
-color: #000;
 `;
 
