@@ -5,9 +5,238 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  background-image: url("../Images/Cute-Plant-Wallpaper-for-Desktop.png");
+  background-size: cover;
+  padding-top: 70px;
+  cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
+  16 0,
+auto;
 }
+* {
+  box-sizing: border-box;
+}
+/* FONTS */
+p {
+  font-size: 40px;
+    font-weight: 100;
+    color: #ffffff;
+    text-align: center;
+}
+/* plans for today text */
+h1 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+    font-weight: 100;
+    text-align: center;
+}
+/* all done button */
+h2 {
+  font-weight: lighter;
+  }
 
+/* BUTTONS */
+.resetButton {
+    cursor: pointer;
+    top: 39px;
+    background: none;
+    color: #a05872;
+    font-style: italic;
+    transition: all 0.3s ease 0s;
+}
+.resetButton:hover {
+  background: none;
+}
+button {
+  width: 50px;
+  border-radius: 40px;
+  border-style: none;
+  margin: 10px;
+  position: relative;
+  top: 48px;
+  background: #80c7b9;
+  float: right;
+  top: -9px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+button:hover {
+  background-color: white;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+div#root {
+  border: 2px solid black;
+  width: 40%;
+  align-self: center;
+  height: 500px;
+  background: rgb(197 127 152);color: black;
+  border-radius: 83px;
+  border: none;
+  box-shadow: 0 0.5rem 3rem #383737;
+  overflow-y: scroll;
+} 
+
+/* Customized scroll (hide) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+.initialState {
+  border: 1px solid red;
+}
+ul {
+  padding-left: 0px;
+}
+
+section {
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 200;
+    color: rgb(255, 255, 255);
+}
+li::marker {
+  font-size: 0px;
+}
+
+
+form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+input#addTaskInput {
+  border: none;
+  width: 280px;
+  display: flex;
+}
+
+/* Media queries for mobile devices */
+@media only screen and (max-width: 600px) {
+  body {
+    background-image: url("../Images/wp5418538-floral-aesthetic-desktop-wallpapers.jpg");
+    background-size: cover;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
+    16 0,
+  auto;
+  background-attachment: fixed;
+  padding-top: 100px;
+  }
+
+  form {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 20px;
+}
+  div#root {
+    height: 530px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    background: rgb(55 55 55 / 50%);
+    overflow-y: scroll;
+  }
+  p {
+    font-size: 40px;
+    font-weight: 100;
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 1 2 black;
+}
+h1 {
+  background: #3838388a;
+    border-radius: 5px;
+    color: white;
+}
+
+button {
+  width: 50px;
+  border-radius: 40px;
+  border-style: none;
+  margin: 10px;
+  position: relative;
+  top: 48px;
+  background: #cfb1b1;
+  float: right;
+  top: -9px;
+  cursor: pointer;
+}
+button:hover {
+background-color: white;
+}
+  section {
+    padding-top: 20px;
+    font-size: 13px;
+    color: rgb(255, 255, 255);
+  }
+ 
+  input#addTaskInput {
+    width: 200px;
+    font-size: 16px;
+  }
+}
+.resetButton {
+  color: #ffffff;
+  font-style: normal;
+  font-size: 18px;
+}
+
+
+
+/* Media queries for tablet devices */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+
+  body {
+    background-image: url("../Images/wp5418538-floral-aesthetic-desktop-wallpapers.jpg");
+    background-size: cover;
+    cursor: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='40' height='48' viewport='0 0 100 100' style='fill:black;font-size:24px;'><text y='50%'>🌞</text></svg>")
+    16 0,
+  auto;
+  background-attachment: fixed;
+  }
+
+  div#root {
+    width: 70%;
+    height: 600px;
+    border-radius: 50px;
+    padding: 50px;
+   background: rgb(147 147 147 / 72%);
+   overflow-y: scroll;
+  }
+
+button {
+  background: #ded592;
+}
+p {
+  font-size: 40px;
+  font-weight: 100;
+  color: #0f0e0e;
+  text-align: center;
+}
+  .resetButton {
+    background: none;
+    top: 30px;
+    /* display: flex; */
+    cursor: pointer;
+    color: #000000;
+    font-size: 20px;
+}
+  section {
+    font-size: 13px;
+    color: black;
+  }
 }
