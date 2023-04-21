@@ -47,7 +47,13 @@ const TodoList = ({ selectedTab }) => {
               <StyledTodoRow key={singleTodo.id} index={index}>
                 <label htmlFor={singleTodo.id} className="container-todo-label">
                   <span>{singleTodo.content}</span>
-                  <input type="checkbox" id={singleTodo.id} className="checkbox" name="todos" value="1" onChange={() => dispatch(tasks.actions.handleCheck(singleTodo))} />
+                  <input
+                    type="checkbox"
+                    id={singleTodo.id}
+                    className="checkbox"
+                    name="todos"
+                    checked={singleTodo.isChecked}
+                    onChange={() => dispatch(tasks.actions.handleCheck(singleTodo))} />
                   <span className="checkmark" />
                 </label>
                 <DeleteButton type="button" onClick={() => dispatch(tasks.actions.removeItem(singleTodo.id))}>Delete</DeleteButton>
@@ -63,5 +69,3 @@ const TodoList = ({ selectedTab }) => {
 }
 
 export default TodoList;
-
-// <input type="checkbox" id={singleTodo.id} className="checkboxInputOverride" name="todos" value="1" onChange={() => dispatch(tasks.actions.handleCheck(singleTodo))} />

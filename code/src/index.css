@@ -184,7 +184,7 @@ code {
 
 /* On mouse-over, add a pink-ish background color */
 .container-todo-label:hover input ~ .checkmark {
-  background-color: #e3b3f7;
+  background-color: #ffffffad;
 }
 
 /* When the checkbox is checked, add a green background */
