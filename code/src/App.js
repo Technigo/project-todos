@@ -4,7 +4,6 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
 import Counter from 'components/Counter';
-import ClearBtn from 'components/ClearBtn';
 import tasks from 'reducers/tasks';
 
 export const App = () => {
@@ -14,10 +13,11 @@ export const App = () => {
   const store = configureStore({ reducer });
   return (
     <Provider store={store}>
-      <ClearBtn />
-      <Counter />
-      <AddTask />
-      <TaskList />
+      <div className="App">
+        <Counter />
+        <AddTask />
+        <TaskList />
+      </div>
     </Provider>
   )
 }

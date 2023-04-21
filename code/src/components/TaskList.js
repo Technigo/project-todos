@@ -3,6 +3,7 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
+import ClearBtn from './ClearBtn';
 import './TaskList.css';
 
 const TaskList = () => {
@@ -30,6 +31,7 @@ const TaskList = () => {
                         </button>
                     </li>
                 ))}
+                <ClearBtn />
             </ul>
         </section>
     )

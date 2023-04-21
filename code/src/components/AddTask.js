@@ -21,11 +21,10 @@ const AddTask = () => {
         // https://www.random.org/
     }
     return (
-        <section>
+        <section className="input-field">
             <form onSubmit={onFormSubmit}>
                 <label htmlFor="addTaskInput">
-                    ADD TO DO HERE
-                    <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" required />
+                    <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" placeholder="Add your task here" required />
                 </label>
                 <button type="submit"> Add Now!</button>
             </form>

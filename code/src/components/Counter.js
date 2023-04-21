@@ -8,7 +8,7 @@ const Counter = () => {
 
     const Alldone = () => {
         if (items.length === 0) {
-            return 'Add tasks'
+            return ''
         } else if (items.length === completedTasks.length) {
             return `All done ! ${completedTasks.length} / ${items.length}`
         } else {
