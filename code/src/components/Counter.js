@@ -5,7 +5,6 @@ import Confetti from 'react-confetti'
 import styled from 'styled-components';
 
 const CounterText = styled.p`
-  font-family: 'Roboto', sans-serif;
   font-size: 1em;
   display: flex;
 `
