@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import styled from 'styled-components'
-// import GlobalStyle from 'styles/GlobalStyle'
 import { useDispatch } from 'react-redux'
 import { tasks } from 'reducers/tasks'
+import plus from 'assets/plus.svg'
 
 const capitalize = (stringToCapitalize) => {
   return stringToCapitalize.charAt(0).toUpperCase() + stringToCapitalize.slice(1);
@@ -38,9 +38,11 @@ const AddTask = () => {
               placeholder="Add new task"
               id="addTaskInput" />
           </label>
-          <SubmitButton type="submit">➕</SubmitButton>
+          <SubmitButton type="submit"><PlusIcon src={plus} alt="" /></SubmitButton>
         </Form>
-        <RemoveButton type="button" onClick={onRemoveAllButtonClick}>Remove all</RemoveButton>
+        {/* <RemoveSection> */}
+        <RemoveAllButton type="button" onClick={onRemoveAllButtonClick}>Remove all tasks</RemoveAllButton>
+        {/* </RemoveSection> */}
       </section>
     </>
 
@@ -55,36 +57,62 @@ const Form = styled.form`
 
 display: flex;
 gap: 5px;
+width: 100%;
 
 input[type=text] {
       background: white;
       font-size: 16px;
       color: black;
       outline: 1px solid #FFFFFF;
-      border-radius: 5px;
+      border-radius: 10px;
+      border: 2px solid #BFEAF5;
       width: 100%;   
       justify-content: flex-start;
+      padding: 10px;
 }
 `
 
 const SubmitButton = styled.button`
   border: none;
   background-color: #EAFDFC;
-
-  &:hover {
-      transform: scale(1.2);
-    }
+  cursor: pointer;
 `
-const RemoveButton = styled.button`
- background-color: #BFEAF5;
+
+const PlusIcon = styled.img`
+  width: 1.3rem;
+
+&:hover {
+  transform: scale(1.2);
+  }
+`
+
+// const RemoveSection = styled.div`
+//   display: flex;
+//   flex-direction: row;
+//   justify-content: center;
+//   align-items: center;
+// `
+
+const RemoveAllButton = styled.button`
+ background-color: #EAFDFC;
   color: #243763;
   border-radius: 30px;
   border: none;
   padding: 10px;
-  align-text: center;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
 
   &:hover {
-  background-color: #EAFDFC;
+  color: #C92C6D;
   }
-
 `
+
+// const RemoveIcon = styled.img`
+//   width: 1.2rem;
+
+//   &:hover {
+//   color: #C92C6D;
+//   }
+//   `
