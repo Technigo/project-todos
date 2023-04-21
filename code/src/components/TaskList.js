@@ -16,12 +16,14 @@ const ProjectTitle = styled.h3`
   font-size: 1.2em;
   color: #495057;
 `;
-const colors = ['#221E22', '#3D3B3C', '#505154', '#6F7D8C', '#97A7B3', '#B3C7D6', '#CDD7E2', '#DCE5EB', '#E8F1F4', '#EEF5F7', '#F8FCFE'];
+const colors = ['#6f0765', '#4c0045', '#bd512f', '#ffb228'];
 const ProjectContainer = styled.div`
  background-color: ${(props) => props.color};
   padding: 1em;
   margin-bottom: 1em;
-  border-radius: 5px;
+  border-radius: 20px;
+  min-width:300px;
+  margin-bottom: 2%;
 `;
 
 const TaskListUl = styled.ul`

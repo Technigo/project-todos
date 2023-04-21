@@ -9,6 +9,7 @@ import { toggleProjectComplete, deleteProject } from '../reducers/projects'
 const ProjectListContainer = styled.ul`
   list-style: none;
   padding: 0;
+  
 `;
 
 const ProjectListItem = styled.li`
