@@ -13,15 +13,17 @@ const Label = styled.label`
 `
 
 export const TaskList = () => {
-  const allTasks = useSelector((store) => store.tasks)
+  const allTasks = useSelector((store) => store.tasks.items)
   return (
     <div>
-      {allTasks.map((task) => (
-        <Label>
-          <input type="checkbox" />
-          {task.text}
-        </Label>
-      ))}
+      {allTasks.map((task) => {
+        return (
+          <Label key={task.id}>
+            <input type="checkbox" />
+            {task.text}
+          </Label>
+        )
+      })}
     </div>
   )
 }
