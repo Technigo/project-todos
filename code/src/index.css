@@ -18,3 +18,8 @@ code {
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
+
+img {
+  border-radius: 90px;
+  margin-top: 50px;
+}

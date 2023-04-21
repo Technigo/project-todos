@@ -29,16 +29,14 @@ justify-content: space-between;
 align-items: center;
 padding: 5px 20px;
 gap:1rem;
-border-radius: 10px;
 background-color: #0f1029;
-
 `;
 
 export const App = () => {
   return (
     <Provider store={store}>
+      <Playlist />
       <AppWrapper>
-        <Playlist />
         <img src={`${process.env.PUBLIC_URL}/lofigirl.gif`} alt="lofi girl gif" />
         <h2>Projects</h2>
         <AddProject />

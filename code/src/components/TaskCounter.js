@@ -10,6 +10,7 @@ const TaskCounterContainer = styled.div`
   background-color: #a27381;
   border-radius:20px;
   font-weight: bold;
+  margin-bottom:50px
 `;
 
 const TaskCounter = () => {

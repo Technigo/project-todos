@@ -8,13 +8,13 @@ const PlaylistContainer = styled.div`
   justify-content: center;
   background-color: #301f48;
   padding: 10px;
-  border-radius: 5px;
-  color: white
+  color: white;
+  margin-top:20px;
 `;
 
 const PlaylistLink = styled.a`
   color: white;
-  text-decoration: none;
+  text-decoration: underline;
   margin-left: 10px;
 `;
 
