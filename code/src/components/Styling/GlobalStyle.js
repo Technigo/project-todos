@@ -14,6 +14,7 @@ export const MainBox = styled.div`
     align-items: center;
     background-color: var(--main-color);
     width: 90vw;
+    max-width: 600px;
     height: 100%;
     border-radius: 25px;
     margin: auto;
@@ -64,7 +65,7 @@ export const TrashBtn = styled.button`
   i {
     font-size: 20px;
     color: var(--main-color);
-    padding: 0 18px 0 18px;
+    padding: 0;
     &:hover {
       color: var(--hover-color);
     }
