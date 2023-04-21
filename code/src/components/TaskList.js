@@ -4,12 +4,14 @@ import tasks from 'components/reducers/tasks';
 import styled from 'styled-components';
 
 const InnerWrapper = styled.div`
-display: flex;
-flex-direction: column;
+display: grid;
+grid-template-columns: 1fr 1fr;
+justify-content: center;
+margin-top: 20px;
 `
 
 const DeleteBtn = styled.button`
-width: 25px;
+width: 30px;
 height: 30px;
 `
 
@@ -19,16 +21,18 @@ const TaskList = () => {
   const onCheckedToggle = (id) => {
     dispatch(tasks.actions.toggleItem(id));
   }
-  const onDeleteTaskBtn = (taskIndex) => {
-    dispatch(tasks.actions.deleteTask(taskIndex));
+  const onDeleteTaskBtn = (id) => {
+    dispatch(tasks.actions.deleteTask(id));
   }
 
   return (
     <section>
-      {taskList.map((singleTask, index) => {
+      <ul>
+      {taskList.map((singleTask) => {
         return (
-          <InnerWrapper>
-            <label htmlFor={singleTask}>
+          <li key={singleTask.id}>
+          <p>
+            <span>{singleTask}</span>
               <input
                 key={singleTask.id}
                 type="checkbox"

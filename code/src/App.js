@@ -1,19 +1,22 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import clothes from 'components/reducers/tasks';
-import AddClothes from 'components/AddTask';
-import ClothesList from 'components/TaskList';
+import tasks from 'components/reducers/tasks';
+import AddTask from 'components/AddTask';
+import TaskList from 'components/TaskList';
+import Header from 'components/Header';
 
 export const App = () => {
   const reducer = combineReducers({
-    clothes: clothes.reducers
+    tasks: tasks.reducer
   })
   const store = configureStore({ reducer });
   return (
     <Provider store={store}>
-      <AddClothes />
-      <ClothesList />
+      <Header />
+      <AddTask />
+      <TaskList />
+      
 
     </Provider>
   )

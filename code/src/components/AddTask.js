@@ -7,17 +7,16 @@ import styled from 'styled-components';
 const InnerWrapper = styled.div`
 display: flex;
 flex-direction: column;
-`
-const AddText = styled.div`
-font-size: 18px;
+align-items: center;
 `
 
 const AddInnerWrapper = styled.div`
 backround-color: blue;
 `
 
-const Input = styled.div`
-width: 35px;
+const Input = styled.input`
+width: 200px;
+height: 30px;
 `
 
 const SubmitBtn = styled.button`
@@ -25,6 +24,10 @@ width: 30px;
 height: 30px;
 border-radius: 50px;
 `
+
+const capitalize = (stringToCapitalize) => {
+  return stringToCapitalize.charAt(0).toUpperCase() + stringToCapitalize.slice(1);
+}
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('')
@@ -40,13 +43,16 @@ const AddTask = () => {
 
   return (
     <InnerWrapper>
-      <AddText>Add new things to the list</AddText>
       <AddInnerWrapper>
         <form onSubmit={onFormSubmit}>
+          <label htmlFor="addTask"
           <Input
             type="text"
-            value="{input}"
-            onChange={(event) => setInputValue(event.target.value)} />
+            placeholder="Add new thing"
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)} 
+            id="addTaskInput"/>
+            </label>
           <SubmitBtn type="submit" disabled={inputValue.length === 0}>+</SubmitBtn>
         </form>
       </AddInnerWrapper>
