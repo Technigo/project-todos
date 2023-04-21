@@ -3,9 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import uncompleted from 'reducers/uncompleted';
 import completed from 'reducers/completed';
 import format from 'date-fns/format';
-import { PostIt } from 'Styling/GlobalStyling';
 import { AddTask } from './AddTask';
-import { TodoCounter } from './TodoCounter';
 
 export const Uncompleted = () => {
   const dispatch = useDispatch();
@@ -26,7 +24,7 @@ export const Uncompleted = () => {
   }
 
   return (
-    <PostIt>
+    <div className="post-it post-it1">
       <h2>To-do</h2>
       <AddTask />
       {flippedTasks.map((task) => (
@@ -43,7 +41,6 @@ export const Uncompleted = () => {
           <p className="timestamp">Task created at: {format(task.creationTime, 'HH:mm dd/MM/yyyy')}</p>
         </div>
       ))}
-      <TodoCounter />
-    </PostIt>
+    </div>
   )
 }
