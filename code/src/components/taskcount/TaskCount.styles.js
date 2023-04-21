@@ -8,7 +8,7 @@ export const TaskCountStyles = styled.section`
     width: 90vw;
     max-width: 500px;
     height: 30vw;
-    max-height: 400px; 
+    max-height: 125px; 
     margin: 15px auto;
     border: 3px black solid;
     border-radius: 12px;

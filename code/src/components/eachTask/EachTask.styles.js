@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const EachTaskStyles = styled.section`
     background-color: white;
     width: 75vw;
-    max-width: 500px; 
+    max-width: 450px; 
     display: flex;
     justify-content: space-between;
     margin: 10px auto;

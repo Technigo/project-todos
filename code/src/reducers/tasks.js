@@ -2,13 +2,13 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [
-    {
-      id: 1681904108559,
-      task: 'Make a to do app',
-      // label: 'School',
-      due: 1681904108559,
-      complete: false
-    }
+    // {
+    //   id: 1681904108559,
+    //   task: 'Make a to do app',
+    //   // label: 'School',
+    //   due: 1681904108559,
+    //   complete: false
+    // }
     // {
     //   id: 1681904108560,
     //   task: 'Shower',

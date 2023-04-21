@@ -4,6 +4,7 @@ import { useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSquare, faSquareCheck, faTrashCan } from '@fortawesome/free-regular-svg-icons';
+import { ButtonStyles } from 'components/buttons/Buttons.styles';
 import { Timestamp } from './Timestamp';
 import { DeleteTaskStyles, EachTaskStyles, TaskContentStyles, ToggleButtonStyles } from './EachTask.styles';
 
@@ -12,8 +13,8 @@ export const EachTask = ({ singleTask }) => {
   return (
     <EachTaskStyles>
       <ToggleButtonStyles>
-        {!singleTask.complete && (<button type="button" onClick={() => dispatch(tasks.actions.toggleComplete(singleTask))}><FontAwesomeIcon icon={faSquare} /></button>)}
-        {singleTask.complete && (<button type="button" onClick={() => dispatch(tasks.actions.toggleComplete(singleTask))}><FontAwesomeIcon icon={faSquareCheck} /></button>)}
+        {!singleTask.complete && (<ButtonStyles type="button" onClick={() => dispatch(tasks.actions.toggleComplete(singleTask))} buttonWidth="30px" buttonText="black" buttonColor="white" buttonBorder="none"><FontAwesomeIcon icon={faSquare} /></ButtonStyles>)}
+        {singleTask.complete && (<ButtonStyles type="button" onClick={() => dispatch(tasks.actions.toggleComplete(singleTask))} buttonWidth="30px" buttonText="black" buttonColor="white" buttonBorder="none"><FontAwesomeIcon icon={faSquareCheck} /></ButtonStyles>)}
       </ToggleButtonStyles>
       <TaskContentStyles>
         <p>{singleTask.task}</p>
@@ -22,7 +23,7 @@ export const EachTask = ({ singleTask }) => {
         {/* <p>Completed: {singleTask.complete.toString()}</p> */}
       </TaskContentStyles>
       <DeleteTaskStyles>
-        <button type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask))}><FontAwesomeIcon icon={faTrashCan} /></button>
+        <ButtonStyles type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask))} buttonWidth="30px" buttonText="black" buttonColor="white" buttonBorder="none"><FontAwesomeIcon icon={faTrashCan} /></ButtonStyles>
       </DeleteTaskStyles>
     </EachTaskStyles>
   )

@@ -27,16 +27,16 @@ export const AddTask = () => {
   return (
     <AddTaskStyles>
       <form onSubmit={onFormSubmit}>
-        <h1>What do I need to do?</h1>
+        <h2>What do I need to do?</h2>
         <label htmlFor="addTaskInput">I need to:
-          <input id="addTaskInput" type="text" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
+          <input id="addTaskInput" type="text" placeholder="add a new task" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
         </label>
         {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
         <label htmlFor="setDueDate">By:
           <DatePicker id="setDueDate" selected={dueDate} onChange={(date) => setDueDate(date)} showWeekNumbers withPortal />
         </label>
         <div>
-          <ButtonStyles type="submit">Add Task</ButtonStyles>
+          <ButtonStyles type="submit">Add</ButtonStyles>
         </div>
       </form>
     </AddTaskStyles>

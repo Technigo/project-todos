@@ -31,6 +31,7 @@ img {
     width: 70%;
     object-fit: cover;
     border-radius: 12px;
+    opacity: 75%;
 }
 `
 
@@ -51,5 +52,6 @@ img {
     width: 70%;
     object-fit: cover;
     border-radius: 12px;
+    opacity: 75%;
 }
 `
