@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import styled from 'styled-components';
-import tasks from '../reducers/tasks'
+import tasks from 'reducers/tasks';
 
 const Table = styled.table`
   width: 100%;
@@ -50,6 +50,42 @@ const Table = styled.table`
   .empty-state {
     color: lightgrey;
   }
+  
+  /*checkbox styling start*/ 
+  .checkbox {
+    display: inline-flex;
+    cursor: pointer;
+    position: relative;
+  }
+  .checkbox > input {
+    height: 1.15rem;
+    width: 1.15rem;
+    appearance: none;
+    border: 2px solid #9E7540;
+    border-radius: 4px;
+    outline: none;
+    transition-duration: 0.4s;
+    background-color: #FF8400;
+    cursor: pointer;
+    margin: 0;
+    transform: translateY(0.2rem);
+  }
+  .checkbox > input:checked,
+  .checkmark {
+    background-color: #FF8400;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
+  .checkbox > input:active {
+    transform: scale(1.1);
+  }
+  
+
+
+
+  .completed {
+    text-decoration: line-through;
+    color: #9E7540;
+  }
 `
 
 const TaskList = () => {
@@ -57,12 +93,12 @@ const TaskList = () => {
 
   const dispatch = useDispatch();
 
-  const onToggleAllTask = (checked) => {
-    dispatch(tasks.actions.onToggleAllTask(checked))
+  const onToggleAllTasks = (checked) => {
+    dispatch(tasks.actions.toggleAllTasks(checked))
   }
 
   const onToggleTask = (id) => {
-    dispatch(tasks.actions.onToggleTask(id))
+    dispatch(tasks.actions.toggleTask(id))
   }
 
   const onRemoveTask = (id) => {
@@ -78,13 +114,13 @@ const TaskList = () => {
       <thead>
         <tr>
           <th>
-            <label htmlFor="checkbox">
+            <label htmlFor="checkbox" className="checkbox">
               <input
                 type="checkbox"
                 id="checkbox"
                 // test each element and return a boolean value
                 checked={taskList.every((task) => task.isComplete)}
-                onChange={(event) => onToggleAllTask(event.target.checked)} />
+                onChange={(event) => onToggleAllTasks(event.target.checked)} />
             </label>
           </th>
           <th>Task</th>
@@ -131,7 +167,7 @@ const TaskList = () => {
         {taskList.length === 0 ? (
           <tr>
             <td colSpan="4" className="empty-state">
-              Add your first task above
+              <i>Add your first task above</i>
             </td>
           </tr>
         ) : null}
