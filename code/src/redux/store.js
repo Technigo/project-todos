@@ -1,5 +1,6 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit'
 import { todos } from 'redux/reducers/todos';
+import { tags } from 'redux/reducers/tags';
 import storage from 'redux-persist/lib/storage';
 import { persistReducer, persistStore } from 'redux-persist';
 import thunk from 'redux-thunk';
@@ -10,7 +11,8 @@ const persistConfig = {
 }
 
 const reducer = combineReducers({
-  todos: todos.reducer
+  todos: todos.reducer,
+  tags: tags.reducer
 });
 
 const persistedReducer = persistReducer(persistConfig, reducer)

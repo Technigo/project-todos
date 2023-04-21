@@ -5,39 +5,18 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { tags } from 'redux/reducers/tags';
-import styled from 'styled-components';
-
-export const TagsInputContainer = styled.div`
-  border: 2px solid #000;
-  padding: .5em;
-  border-radius: 3px;
-  width: min(80vw, 600px);
-  margin-top: 1em;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: .5em;
-`;
-
-export const TagItem = styled.div`
-  background-color: rgb(218, 216, 216);
-  display: inline-block;
-  padding: .5em .75em;
-  border-radius: 20px;
-`;
-
-export const TagsInputField = styled.input`
-  flex-grow: 1;
-  padding: .5em 0;
-  border: none;
-  outline: none;
-`;
+import {
+  TagsInputContainer,
+  TagsInputField,
+  TagItem
+} from 'components/tagsinput/TagsInput.style.js';
 
 export const TagsInput = () => {
   const dispatch = useDispatch();
   const [tagInput, setTagInput] = useState('');
   // const allTags = useSelector((state) => state.tags);
   const allTags = useSelector((state) => state.tags.items);
+  console.log('allTaaaaaags', allTags);
   // const dispatch = useDispatch();
 
   const handleFormSubmit = (event) => {
@@ -49,29 +28,29 @@ export const TagsInput = () => {
     }
   };
 
-  const handleTagCloseClick = (tag) => {
-    dispatch(tags.actions.removeTag(tag));
-  };
+  // const handleTagCloseClick = (tag) => {
+  //   dispatch(tags.actions.removeTag(tag));
+  // };
 
   return (
     <section>
       <TagsInputContainer>
-        {allTags.items.map((tag) => (
-          <TagItem key={tag}>
-            <span className="text">{tag}</span>
-            <span
+        {allTags.map((tag) => (
+          <TagItem key={tag.id}>
+            <span className="text">{tag.text}</span>
+            {/* <span
               className="close"
               onClick={() => handleTagCloseClick(tag)}>
               &times;
-            </span>
+            </span> */}
           </TagItem>
         ))}
         <form onSubmit={handleFormSubmit}>
           <TagsInputField
             type="text"
             value={tagInput}
-            onChange={(event) => setTagInput(event.target.value)}
-            placeholder="Type something" />
+            onChange={(event) => setTagInput(event.target.value)} />
+          {/* placeholder="Type something" */}
         </form>
       </TagsInputContainer>
     </section>

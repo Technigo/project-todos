@@ -3,34 +3,13 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from 'redux/reducers/todos';
-import styled from 'styled-components';
-import { DefaultButton } from 'components/Button';
-import { TagsInput } from 'components/TagsInput';
-
-const NewToDo = styled.form`
-  line-height: 0.8rem;
-  padding-bottom: 0.8rem;
-`;
-
-const Input = styled.input`
-  background: pink;
-  border: none;
-  padding: 8px;
-  font-size: 18px;
-  font-family: 'DynaPuff', cursive;
-  border-bottom: 2px dashed;
-  :focus {
-    outline: none;
-  }
-`;
-
-const AddButton = styled.button`
-  background: pink;
-  border: none;
-  font-family: 'DynaPuff', cursive;
-  font-size: 18px;
-  cursor: pointer;
-`;
+import { DefaultButton } from 'styles/Button';
+import { TagsInput } from 'components/tagsinput/TagsInput';
+import {
+  NewToDo,
+  Input,
+  AddButton
+} from 'components/addtodo/AddToDo.style'
 
 export const AddToDo = () => {
   const [inputValue, setInputValue] = useState('');

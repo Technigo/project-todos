@@ -4,8 +4,9 @@ export const tags = createSlice({
   name: 'tags',
   initialState: {
     items: [
-      { id: '1', text: 'Click' },
-      { id: '2', text: 'Your' }
+      { id: '1', text: 'Work' },
+      { id: '2', text: 'Home' },
+      { id: '3', text: 'Other' }
     ]
   },
   reducers: {

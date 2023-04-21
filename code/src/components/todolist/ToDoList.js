@@ -4,9 +4,11 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { todos } from 'redux/reducers/todos';
-import { ToDoItem } from './ToDoItem';
-import { AddToDo } from './AddToDo';
-import { Wrapper } from './GlobalStyle';
+import { AddToDo } from 'components/addtodo/AddToDo';
+// import { ToDoItem } from './ToDoItem';
+import { ToDoItem } from 'components/todoitem/ToDoItem';
+import { Wrapper } from 'styles/GlobalStyle';
+import { DefaultButton } from 'styles/Button';
 
 export const ToDoList = () => {
   const dispatch = useDispatch();
@@ -47,23 +49,23 @@ export const ToDoList = () => {
       </ul> */}
         <h2>To-do ({todosTodo.length})</h2>
 
+        <AddToDo />
+
         {todosTodo.length === 0 && <p>All done - great job! ✨</p>}
 
         {todosTodo.map((todo, index) => (
           <ToDoItem todo={todo} index={index} key={todo.id} onDelete={onDelete} onDone={onDone} />
         ))}
 
-        <AddToDo />
-
         <h2>Done ({doneTodos.length})</h2>
 
-        <button type="button" onClick={onCompleteAll}>
+        <DefaultButton type="button" onClick={onCompleteAll}>
         Complete all to-dos
-        </button>
+        </DefaultButton>
 
-        <button type="button" onClick={onClearAll}>
+        <DefaultButton type="button" onClick={onClearAll}>
         Clear all to-dos
-        </button>
+        </DefaultButton>
 
         {doneTodos.map((todo, index) => (
           <ToDoItem todo={todo} index={index} key={todo.id} onDelete={onDelete} onDone={onDone} />
