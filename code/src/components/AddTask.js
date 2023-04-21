@@ -11,8 +11,12 @@ import { SubmitButton } from '../styles/Buttons';
 const ToDoWrapper = styled.section`
 z-index: 3;
 margin: auto;
-width: 470px;
-padding: 10px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+width: 460px;
+padding-top: 40px;
 background: rgba(255, 255, 255, 0.12);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
@@ -33,6 +37,11 @@ box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(1.5px);
 -webkit-backdrop-filter: blur(1.5px);
 border: 1px solid rgba(255, 255, 255, 0.16);
+::placeholder,
+  ::-webkit-input-placeholder {
+    color: white;
+    font-style: italic;
+  }
  }`
 
 const AddTask = () => {
@@ -56,10 +65,10 @@ const AddTask = () => {
     <ToDoWrapper>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
-          <p>add new task:</p>
           <input
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
+            placeholder="buy eggs"
             id="addTaskInput"
             type="text" />
         </label>

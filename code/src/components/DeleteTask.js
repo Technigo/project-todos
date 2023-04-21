@@ -5,6 +5,11 @@ import { faTrashCan } from '@fortawesome/free-solid-svg-icons'
 import todolist from 'reducers/todolist';
 import styled, { keyframes } from 'styled-components';
 
+const DeleteIconDiv = styled.div`
+height: 100%;
+display: flex;
+align-items: center;`
+
 const wobble = keyframes`
   0% { transform: scale3d(1, 1, 1); }
   30% { transform: scale3d(1.25, 0.75, 1); }
@@ -16,7 +21,7 @@ const wobble = keyframes`
 `
 
 const StyledFontAwesomeIcon = styled(FontAwesomeIcon)`
-color: rgba(255, 255, 255, 0.7);
+color: rgba(255, 255, 255, 0.8);
 width: 20px;
 height: 20px;
 
@@ -32,9 +37,9 @@ const DeleteTask = ({ singletask }) => {
     dispatch(todolist.actions.deleteSingleTask(id));
   }
   return (
-    <div>
+    <DeleteIconDiv>
       <StyledFontAwesomeIcon icon={faTrashCan} onClick={() => onDelete(singletask.id)} />
-    </div>
+    </DeleteIconDiv>
   )
 }
 

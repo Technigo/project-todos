@@ -1,7 +1,16 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import todolist from 'reducers/todolist';
-import DeleteTask from './DeleteTask'
+import styled from 'styled-components';
+import DeleteTask from './DeleteTask';
+
+const SingleTaskDiv = styled.div`
+width: 400px;
+margin: 10px;
+display: flex;
+flex-direction: row;
+justify-content: space-between;
+gap: 10px;`
 
 const TaskList = ({ inputValue }) => {
   const dispatch = useDispatch();
@@ -15,17 +24,21 @@ const TaskList = ({ inputValue }) => {
     <section>
       {todoList.map((singletask) => {
         return (
-          <div key={singletask.id}>
-            <input
-              type="checkbox"
-              id={singletask.id}
-              value={inputValue}
-              checked={singletask.isChecked}
-              onChange={() => handleOnChange(singletask.id)} />
-            {singletask.name}<br />
-            {singletask.time}<br />
-            <DeleteTask singletask={singletask} />
-          </div>
+          <SingleTaskDiv key={singletask.id}>
+            <div>
+              <input
+                type="checkbox"
+                id={singletask.id}
+                value={inputValue}
+                checked={singletask.isChecked}
+                onChange={() => handleOnChange(singletask.id)} />
+              {singletask.name}<br />
+              {singletask.time}
+            </div>
+            <div>
+              <DeleteTask singletask={singletask} />
+            </div>
+          </SingleTaskDiv>
         )
       })}
     </section>
