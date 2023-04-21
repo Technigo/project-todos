@@ -8,6 +8,7 @@
   font-size: 2rem;
   font-weight: 1500;
   margin-bottom: 1rem;
+  margin-top: 0.2rem;
   color: #C60012;
 }
 
@@ -44,6 +45,11 @@
   margin: 0;
   width: 100%;
   flex: 1;
+}
+
+.singletask-container span {
+  font-size: 1.2rem;
+  color: white;
 }
 
 

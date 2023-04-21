@@ -7,7 +7,9 @@ const TotalCompleteItems = () => {
   const completedTasks = taskList.filter((task) => task.isDone === true);
 
   return (
-    <h3>Number of completed tasks: {completedTasks.length}/{taskList.length}</h3>
+    <section className="complete-wrapper">
+      <h3>Tasks done for today - {completedTasks.length}/{taskList.length}</h3>
+    </section>
   );
 }
 
