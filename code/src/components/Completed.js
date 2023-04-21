@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import completed from 'reducers/completed';
 import uncompleted from 'reducers/uncompleted';
 import format from 'date-fns/format';
+import { PostIt } from 'Styling/GlobalStyling';
 
 export const Completed = () => {
   const dispatch = useDispatch();
@@ -20,8 +21,8 @@ export const Completed = () => {
   };
 
   return (
-    <section className="done-list">
-      <h3>Done</h3>
+    <PostIt>
+      <h2>Done</h2>
       {completedTasks.map((task) => (
         <div key={task.id}>
           <label htmlFor="checkbox">
@@ -36,6 +37,6 @@ export const Completed = () => {
           <p>Task completed at: {format(task.completionTime, 'HH:mm dd/MM/yyyy')}</p>
         </div>
       ))}
-    </section>
+    </PostIt>
   )
 }

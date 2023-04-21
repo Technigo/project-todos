@@ -23,8 +23,10 @@ export const AddTask = () => {
 
   return (
     <form className="addTask-form" onSubmit={onFormSubmit}>
-      <label htmlFor="add">Add task:
+      <label htmlFor="add" aria-label="Add task">
         <input
+          id="add"
+          placeholder="Add task"
           value={inputValue}
           onChange={(event) => setInputValue(event.target.value)} />
       </label>

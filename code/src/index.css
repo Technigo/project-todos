@@ -1,17 +1,36 @@
+
+/* General styling */
+
+* {
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
 body {
   margin: 0;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
 }
 
-p {
-  font-size: 16px;
+h1{
+  grid-column: 1/-1;
+  text-align: center;
+  margin: 10px 0 0 0;
+}
+
+h2 {
+  text-align: center;
+  margin: 5px 0 8px 0;
 }
 
 button {
   background: none;
   border: none;
+  font-size: 20px;
 }
+
+
+/* Mobile styling */
 
 .content-wrapper {
   display: grid;
@@ -19,32 +38,44 @@ button {
   justify-content: center;
   margin: 0;
   background-image: url('images/board.jpg');
-  background-color: bisque;
-  object-fit: cover;
-  width:auto;
-}
-
-h1{
-  grid-column: 1/-1;
-  text-align: center;
+  background-size: 240%;
+  gap: 20px;
 }
 
 .addTask-form{
-  grid-column: 1/-1;
-  justify-self: center;
+  text-decoration: none;
+  padding-left: 12px;
 }
 
-
-.todo-list{
-  grid-column: 1/-1;
+span {
+  border-bottom: 2px dotted black;
 }
-.done-list {
-  grid-column: 1/4;
+
+input {
+  font-size: 16px;
+  padding: 2px;
+  border: none;
+  border-bottom: 2px dotted black;
+  background: none;
+  outline-color: rgb(227, 227, 203);
+}
+
+.todo-list, .done-list{
+  grid-column: 2/4;
+  width: 288px;
+  min-height: 288px;
+  box-shadow: 3px 14px 28px 0px rgba(0,0,0,0.39);
+}
+
+.todo-text {
+  display: flex;
+  flex-direction: column;
 }
 
 .counter-div{
-  grid-column: 1/-1;
+  grid-column: 2/4;
   justify-content: center;
+  text-align: center;
 }
 
 .checked {
@@ -52,14 +83,12 @@ h1{
 }
 
 .task-div {
-  
+
 }
 
 .timestamp {
   font-style: italic;
   font-size: 14px;
+  display: block;
 }
 
-input {
-  font-size: 16px;
-}
