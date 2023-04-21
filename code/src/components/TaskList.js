@@ -55,7 +55,7 @@ input:checked {
   transform: scale3d(.975, .975, 1) translate3d(0, 10%, 0);
   content: '✓';
   color: white;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.3);
   display: flex;
   align-items: center;
   justify-content: center;
