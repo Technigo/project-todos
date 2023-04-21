@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import trees from '../images/trees.png'
+import trees from '../images/trees.png';
 
 export const Footer = styled.footer`
  background-image: url(${trees});
