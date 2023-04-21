@@ -73,7 +73,7 @@ const AddTaskLabel = styled.label`
   margin-bottom: 1rem;
   background-color: beige;
   border-radius: 30px;
-  border: dotted purple;
+  border: dotted purple 3px;
   margin-top: 1.5rem;
   padding: 10px;
   font-family: 'Mystery Quest', cursive;
@@ -100,7 +100,7 @@ flex-direction: row;
 align-items: center;
 justify-content: space-between;
 background-color: transparent;
-border: dotted purple;
+border: dotted purple 3px;
 border-radius: 30px;
 width: 230px;
 gap: 0;
@@ -112,8 +112,6 @@ const AddTaskInput = styled.input`
   font-size: 1.5rem;
   border: none;
   border-radius: 30px;
-  border-bottom: 2px solid #ccc;
-
   max-width: 70%;
   font-family: 'Mystery Quest', cursive;
   ::placeholder {

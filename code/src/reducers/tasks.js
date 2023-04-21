@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
 
   todos: [
-    { id: 1, text: 'Give kiss to mom', complete: true },
+    { id: 1, text: 'Give mom a kiss', complete: true },
     { id: 2, text: 'Tidy Room', complete: false },
     { id: 3, text: 'Pick up clothes', complete: false },
     { id: 4, text: 'Help out with dishes', complete: false },

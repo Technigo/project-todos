@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
 import moment from 'moment';
+import Confetti from 'react-confetti';
 import { RemoveTask } from 'components/RemoveTask';
 import { EmptyList } from 'components/EmptyList';
 import { tasks } from 'reducers/tasks';
@@ -13,14 +14,29 @@ export const TasksList = () => {
   const dispatch = useDispatch();
   // eslint-disable-next-line no-unused-vars
   const [currentDate, setCurrentDate] = useState(moment().format('dddd, MMMM Do YYYY'));
+  const [showConfetti, setShowConfetti] = useState(false);
 
   const handleCheckboxChange = (taskId) => {
     dispatch(tasks.actions.toggleComplete(taskId));
+    // check if all tasks are completed
+    // const allCompleted = tasksList.every((task) => task.complete);
+    // if (allCompleted) {
+    // setShowConfetti(true); // set showConfetti to true to display the confetti effect
+    // }
   };
+  useEffect(() => {
+    const allCompleted = tasksList.every((task) => task.complete);
+    if (allCompleted) {
+      setShowConfetti(true);
+    } else {
+      setShowConfetti(false);
+    }
+  }, [tasksList]);
 
   return (
     <StyledSection>
       <h1>{currentDate}</h1>
+      {showConfetti && <Confetti />}
       {tasksList.length === 0 ? (
         <EmptyList />
       ) : (
