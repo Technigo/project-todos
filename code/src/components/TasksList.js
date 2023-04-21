@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux'
+import moment from 'moment';
 import { RemoveTask } from 'components/RemoveTask';
 import { EmptyList } from 'components/EmptyList';
 import { tasks } from 'reducers/tasks';
@@ -10,6 +11,8 @@ import checkImage from '../images/accepted.png'
 export const TasksList = () => {
   const tasksList = useSelector((store) => store.tasks.todos);
   const dispatch = useDispatch();
+  // eslint-disable-next-line no-unused-vars
+  const [currentDate, setCurrentDate] = useState(moment().format('dddd, MMMM Do YYYY'));
 
   const handleCheckboxChange = (taskId) => {
     dispatch(tasks.actions.toggleComplete(taskId));
@@ -17,6 +20,7 @@ export const TasksList = () => {
 
   return (
     <StyledSection>
+      <h1>{currentDate}</h1>
       {tasksList.length === 0 ? (
         <EmptyList />
       ) : (
