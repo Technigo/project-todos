@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -16,8 +15,9 @@ const CheckboxWrapper = styled.div`
     cursor: pointer;
     position: relative;
     margin: auto;
-    width: 18px;
-    height: 18px;
+    width: 24px;
+    height: 24px;
+    padding-left: 10px; /* added padding */
     -webkit-tap-highlight-color: transparent;
     transform: translate3d(0, 0, 0);
   }
@@ -41,8 +41,8 @@ const CheckboxWrapper = styled.div`
     fill: none;
     stroke-linecap: round;
     stroke-linejoin: round;
-    stroke: #c8ccd4;
-    stroke-width: 1.5;
+    stroke: red;
+    stroke-width: 2;
     transform: translate3d(0, 0, 0);
     transition: all 0.2s ease;
   }
@@ -62,11 +62,11 @@ const CheckboxWrapper = styled.div`
   }
 
   .check:hover svg {
-    stroke: #4285f4;
+    stroke: red;
   }
 
   input[type="checkbox"]:checked + .check svg {
-    stroke: #4285f4;
+    stroke: red;
   }
 
   input[type="checkbox"]:checked + .check svg path {
@@ -81,16 +81,27 @@ const CheckboxWrapper = styled.div`
   }
 `;
 
+const CheckboxInput = styled.input.attrs({ type: 'checkbox' })`
+  display: none;
+`;
+
+const StyledCheckbox = styled.label`
+  display: inline-block;
+  .check {
+    cursor: pointer;
+  }
+`;
+
 export const Checkbox = ({ id, checked, onChange }) => {
   return (
     <CheckboxWrapper>
-      <input type="checkbox" id={id} checked={checked} onChange={onChange} />
-      <label htmlFor={id} className="check">
-        <svg width="18px" height="18px" viewBox="0 0 18 18">
+      <CheckboxInput id={id} checked={checked} onChange={onChange} />
+      <StyledCheckbox htmlFor={id} className="check">
+        <svg width="20px" height="20px" viewBox="0 0 18 18">
           <path d="M1,9 L1,3.5 C1,2 2,1 3.5,1 L14.5,1 C16,1 17,2 17,3.5 L17,14.5 C17,16 16,17 14.5,17 L3.5,17 C2,17 1,16 1,14.5 L1,9 Z" />
           <polyline points="1 9 7 14 15 4" />
         </svg>
-      </label>
+      </StyledCheckbox>
     </CheckboxWrapper>
   );
 };

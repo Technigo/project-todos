@@ -4,13 +4,14 @@ import DatePicker, { CalendarContainer } from 'react-datepicker'
 import { BsCalendarDateFill } from 'react-icons/bs';
 import { tasks } from 'reducers/tasks';
 import { Button } from './Button';
+import { IconButton } from './styles/IconButton';
 import { Form, Label } from './styles/FormStyled'
 import 'react-datepicker/dist/react-datepicker.css';
 
 const CustomInput = forwardRef(({ onClick }, ref) => (
-  <button onClick={onClick} ref={ref} type="button">
-    <BsCalendarDateFill />
-  </button>
+  <IconButton onClick={onClick} ref={ref} type="button">
+    <BsCalendarDateFill fill="black" />
+  </IconButton>
 ));
 
 export const AddTask = () => {
@@ -38,10 +39,6 @@ export const AddTask = () => {
     // https://www.random.org/
   }
 
-  const clearTasks = () => {
-    dispatch(tasks.actions.clearTasks());
-  }
-
   // STYLES
 
   return (
@@ -63,9 +60,8 @@ export const AddTask = () => {
             id="deadlineInput"
             dateFormat="yyyy-MM-dd" />
         </CalendarContainer>
-        <button type="submit"> Add task!</button>
+        <Button type="submit"> Add task!</Button>
       </Form>
-      <Button type="button" onClick={clearTasks}>Clear all</Button>
     </div>
   )
 }
