@@ -4,13 +4,16 @@ import styled from 'styled-components';
 const StyledHeader = styled.header`
 display: flex; 
 flex-direction:column;
-height: 200px;
 `
 const StyledTitle = styled.h1`
 font-family: 'Mouse Memoirs', sans-serif;
 font-size: 72px;
 text-align:center;
 color:#1261BC;
+
+@media (min-width:1024px) {
+  font-size: 90px;
+}
 `
 export const Header = () => {
   return (

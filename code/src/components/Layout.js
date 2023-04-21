@@ -7,7 +7,7 @@ import { AddNewTask } from './AddNewTask';
 const MainWrapper = styled.div`
 display: flex;
 justify-content: center;
-width: 100%;
+width: 80vw;
 justify-content:space-between;
 flex-direction:column;
 `

@@ -6,9 +6,10 @@ import styled from 'styled-components';
 
 const StyledTasklist = styled.div`
 display: flex; 
+word-wrap: break-word;
 flex-direction:column;
-background:#FAAB1C;
-border-radius: 10%;
+background:#a8e6cf;
+border-radius:  10%;
 margin: 10%;
 `
 
@@ -22,28 +23,30 @@ padding: 0;
 `
 
 const StyledListItem = styled.li`
-font-family: 'Mouse Memoirs', sans-serif;
-font-size: 24px;
-background: #2490E9;
+font-family: 'Poppins', sans-serif;
+font-size: 20px;
+background:#63ace5;
+color:;
 padding: 30px;
 border-radius: 15px;
 margin: 20px 40px; 
 width: 98%;
 height: 200px;
 
-@media (min-width:667px) {
-  width: 30%;
+@media (min-width:667px) and (max-width:1024px) {
+  width: 50%;
 }
-`
-const StyledTaskText = styled.input`
-display: flex; 
 
+@media (min-width:1024px){
+  width:30%;
+}
 `
 
 const StyledTodoTitle = styled.h2`
-font-size: 40px; 
 font-family: 'Mouse Memoirs', sans-serif;
+font-size: 40px; 
 text-align: center;
+margin:10px;
 
 `
 const Date = styled.p`
@@ -64,15 +67,17 @@ export const TaskList = () => {
   }, [dispatch])
 
   const taskList = useSelector((store) => store.tasks.items);
-
+  const totalCount = useSelector((store) => store.tasks.items.length)
+  const completedCount = useSelector((store) => store.tasks.completedCount)
+  const unfinishedTasks = totalCount - completedCount
   return (
     <StyledTasklist>
-      <StyledTodoTitle> To do: ({taskList.length}) </StyledTodoTitle>
+      <StyledTodoTitle> To do: {unfinishedTasks} / {totalCount}</StyledTodoTitle>
       <StyledList className="task-list">
         {taskList.map((singleTask) => {
           return (
             <StyledListItem key={singleTask.id}>
-              <StyledTaskText type="checkbox" checked={singleTask.checked} onChange={() => dispatch(tasks.actions.toggleChecked(singleTask))} />
+              <input type="checkbox" checked={singleTask.checked} onChange={() => dispatch(tasks.actions.toggleChecked(singleTask))} />
               {singleTask.name}
               <button type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask))}>❌</button>
               <Date>Created: {moment(tasks.date).format('ddd MMM Do YYYY')}</Date>

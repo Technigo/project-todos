@@ -13,7 +13,7 @@ const AddTaskBtn = styled.button`
 font-family: 'Mouse Memoirs', sans-serif;
 font-size: 20px;
 padding: 30px; 
-background: #FAAB1C; 
+background: #fdf498; 
 border-radius: 50%; 
 border: none; 
 
@@ -45,6 +45,7 @@ gap: 20px;
 align-items: center;
 `
 const StyledInput = styled.input`
+font-family: 'Poppins', sans-serif;
 padding: 20px; 
 border: none; 
 border-radius: 20px; 
