@@ -13,7 +13,7 @@ const initialState = { items: [{ id: 'task1',
   isListed: false,
   date: null },
 { id: 'task4',
-  name: 'Celebrate!',
+  name: 'Remove all tasks and celebrate!',
   isListed: false,
   date: null }] }
 

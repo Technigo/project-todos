@@ -66,13 +66,15 @@ const Input = styled.input`
 `;
 const DatePickerWrapper = styled.div`
   .react-datepicker-wrapper {
-    display: inline-block;
-  }
+    position: absolute;
+    right:-77%;
+    transform: translateY(-50%);
+  } 
 `;
 
 const StyledButton = styled.button`
   position: absolute;
-  top: 26%;
+  top: 37%;
   right: 0;
   transform: translateY(-50%);
   
