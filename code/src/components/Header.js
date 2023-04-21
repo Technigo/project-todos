@@ -39,4 +39,8 @@ const StyledMoment = styled(Moment)`
   color: black;
   display: flex;
   justify-content: center;
+
+  @media screen and (max-width: 768px) {
+    text-align:center;
+    }
 `;

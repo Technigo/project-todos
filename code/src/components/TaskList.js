@@ -32,7 +32,7 @@ export const TaskList = () => {
         {taskList.map((singleTask) => {
           const isChecked = checkedItems.includes(singleTask.id);
           return (
-            <li key={singleTask.id}>
+            <li key={singleTask.id} className="task-list-item">
               <input
                 type="checkbox"
                 id={singleTask.id}
@@ -41,10 +41,12 @@ export const TaskList = () => {
                 checked={isChecked}
                 onChange={() => handleCheckboxChange(singleTask.id)} />
               <label htmlFor={singleTask.id}>{singleTask.name}</label>
-              <TaskDate date={singleTask.date} />
               <Deletebtn type="button" onClick={() => deleteTask(singleTask.id)}>
                 <DeleteIcon />
               </Deletebtn>
+              <DateWrapper>
+                <TaskDate date={singleTask.date} />
+              </DateWrapper>
             </li>
           )
         })}
@@ -61,8 +63,8 @@ ul{
 }
 li {
   font-family: 'Dongle', sans-serif;
-  font-weight: 100;
-  font-size: 2rem;
+  font-weight: 400;
+  font-size: 2.5rem;
   margin:10px;
   display: flex;
   align-items: center;
@@ -89,8 +91,11 @@ input[type="checkbox"]::before {
   width: 1.5rem;
   height: 1.5rem;
   border-radius: 2px;
-  background-color: #F5F1E3; /* change this to the color you want */
+  background-color: #F5F1E3;
+  @media screen and (max-width: 768px) {
+   height:2rem }
 }
+
 
 input[type="checkbox"]:checked::before {
   content: "✔";
@@ -99,6 +104,20 @@ input[type="checkbox"]:checked::before {
   text-align: center;
   line-height: 1.5rem;
 }
+.span {
+  font-family: 'Dongle', sans-serif;
+  font-weight: 400;
+  font-size: 2.5rem;
+  margin:10px;
+}
+`;
+const DateWrapper = styled.section`
+  margin:0;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  height:1.5rem;
 `;
 const DeleteIcon = styled(FaTrash)`
   color: #DDDBCB;
