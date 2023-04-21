@@ -31,12 +31,17 @@ const capitalize = (stringToCapitalize) => {
 
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('')
+
   const dispatch = useDispatch()
+
   const onFormSubmit = (event) => {
     event.preventDefault();
-    const newTask = { id: uniqid(),
-      text: inputValue,
-      isChecked: false }
+
+    const newTask = { 
+      id: uniqid(),
+      text: capitalize(inputValue),
+      isChecked: false 
+    }
     dispatch(tasks.actions.addTask(newTask));
     setInputValue('');
   }
@@ -45,15 +50,15 @@ const AddTask = () => {
     <InnerWrapper>
       <AddInnerWrapper>
         <form onSubmit={onFormSubmit}>
-          <label htmlFor="addTask"
-          <Input
-            type="text"
-            placeholder="Add new thing"
-            value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)} 
-            id="addTaskInput"/>
-            </label>
-          <SubmitBtn type="submit" disabled={inputValue.length === 0}>+</SubmitBtn>
+          <label htmlFor="addTask">
+            <SubmitBtn type="submit" disabled={inputValue.length === 0}>+</SubmitBtn>
+            <Input
+              type="text"
+              placeholder="Add new thing"
+              value={inputValue}
+              onChange={(event) => setInputValue(event.target.value)} 
+              id="addTaskInput" />
+          </label>
         </form>
       </AddInnerWrapper>
     </InnerWrapper>

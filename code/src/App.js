@@ -16,8 +16,6 @@ export const App = () => {
       <Header />
       <AddTask />
       <TaskList />
-      
-
     </Provider>
   )
 }
