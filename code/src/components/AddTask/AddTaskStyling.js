@@ -3,6 +3,7 @@ import styled from 'styled-components'
 export const AddTaskWrapper = styled.form`
     display: flex;
     flex-direction: column;
+    
     gap:1rem;
     align-items: center;
     border-bottom: 3px solid var(--orange);
@@ -26,6 +27,7 @@ export const AddTaskChildDiv = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    max-width:100vw;
     gap:1rem;
 
     input[type=text] {
@@ -49,7 +51,7 @@ export const AddTaskChildDiv = styled.div`
       padding: 3px;
       border-radius: 8px;
       cursor: pointer;
-      width: 7em;
+      width: 6em;
     }
 
     .react-datepicker__input-container {
