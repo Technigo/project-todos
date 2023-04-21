@@ -37,8 +37,8 @@ export const App = () => {
         <AddTODO />
         <footer>
           <ClearList />
-          <VaultList />
         </footer>
+        <VaultList />
       </div>
     </Provider>
   );

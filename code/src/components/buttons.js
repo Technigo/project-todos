@@ -8,9 +8,14 @@ text-align: left;
 font-size: 2rem;
 margin-top: 0.6rem;
 margin-bottom: 0.6rem;
+color: white;
 
 &.selected {
-    background: paleturquoise;
+    background: purple;
+    margin-bottom: 0;
+}
+&.selectedSaved {
+    background: palegoldenrod;
     margin-bottom: 0;
 }
 `
@@ -20,6 +25,13 @@ background: transparent;
 width:33.3333%;
 margin-bottom: 0.4rem;
 height: 2.6rem;
+`
+
+export const AddButton = styled.button`
+height: 60px;
+padding: 0;
+border: none;
+background: transparent;
 `
 export const ClearButtons = styled.button`
   background-color: ${(props) => (props.clicked ? 'black' : '')};

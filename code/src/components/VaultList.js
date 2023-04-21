@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import HandleVault from './HandleVault';
+import { TODOButton } from './buttons';
 
 // this component displays the saved items
 const VaultList = () => {
@@ -17,11 +18,14 @@ const VaultList = () => {
   }
 
   return (
-    <section id="vaultListSection">
+    <section className="listSection">
       {vaultList.map((singleSavedTodo) => {
         const isSelected = singleSavedTodo === selectedTODO;
         return <div key={singleSavedTodo.id}>
-          <button type="button" onClick={() => handleSavedTODOClick(singleSavedTodo)}>{singleSavedTodo.name}</button>
+          <TODOButton
+            type="button"
+            onClick={() => handleSavedTODOClick(singleSavedTodo)}
+            className={isSelected ? 'selectedSaved' : ''}>{singleSavedTodo.name}</TODOButton>
           {isSelected && <HandleVault />}
         </div>
       })}

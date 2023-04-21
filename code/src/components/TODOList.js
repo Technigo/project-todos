@@ -53,7 +53,7 @@ const TODOList = () => {
   };
   // console.log(ticketsList, vaultList)
   return (
-    <section id="listSection">
+    <section className="listSection">
       <span>
         Left to do: {todoCount}
       </span>

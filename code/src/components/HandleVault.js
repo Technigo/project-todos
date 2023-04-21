@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import tickets from 'reducers/tickets';
 import vault from 'reducers/vault';
+import { HandleTODOButton } from './buttons';
 
 const HandleVault = ({ item }) => {
   const dispatch = useDispatch()
@@ -11,11 +12,11 @@ const HandleVault = ({ item }) => {
   }
   return (
     <>
-      <button type="button" onClick={() => dispatch(tickets.actions.moveToTickets({ id: item.id, name: item.name, isDone: false }))}>Activate</button>
+      <HandleTODOButton type="button" onClick={() => dispatch(tickets.actions.moveToTickets({ id: item.id, name: item.name, isDone: false }))}>Activate</HandleTODOButton>
       {item && (
-        <button type="button" onClick={() => dispatch(vault.actions.deleteSavedTodo(item.id))}>Delete</button>
+        <HandleTODOButton type="button" onClick={() => dispatch(vault.actions.deleteSavedTodo(item.id))}>Delete</HandleTODOButton>
       )}
-      <button type="button" onClick={handleClearSaved}>Clear All Saved</button>
+      <HandleTODOButton type="button" onClick={handleClearSaved}>Clear All Saved</HandleTODOButton>
     </>
   )
 }

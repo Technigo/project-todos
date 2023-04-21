@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
@@ -7,11 +6,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: lightslategray;
   -ms-overflow-style: none;
+  background-image:url(./icons/magicpattern-background.png);
+  background-size: cover;
+  height: 100vh;
 }
-
-body::-webkit-scrollbar{
-  display: none;
-} /* this should hide the scrollbars in Chrome and Safari */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
@@ -23,16 +21,29 @@ code {
   flex-direction: column;
   align-items: center;
   background: transparent;
-  max-width: 660px;
+  max-width: 600px;
   border-radius: 2rem;
   border: 2px solid black;
   padding: 3rem;
-  margin: 1rem;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 50vh;
+  /* From https://css.glass */
+background: rgba(255, 255, 255, 0.11);
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.9px);
+-webkit-backdrop-filter: blur(4.9px);
+border: 1px solid rgba(255, 255, 255, 0.41);
 }
 
 section {
   width: 100%;
-  max-width: 600px;
+  max-width: 540px;
   border: 2px solid blue;
 }
 
@@ -41,7 +52,13 @@ section {
   border: 2px solid yellow;
   overflow: scroll;
   scrollbar-width: none;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
+
+.listSection::-webkit-scrollbar{
+  display: none;
+} /* this hides the scrollbars in Chrome and Safari */
 
 .todoContainer {}
 
@@ -51,6 +68,10 @@ display: grid;
 grid-template-columns: 86%, 80px;
 align-items: center;
 } */
+
+span {
+  position: fixed;
+}
 
 form {
   width: 100%;
