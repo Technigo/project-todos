@@ -4,11 +4,11 @@ import styled from 'styled-components';
 import { completeAll } from '../reducers/tasks';
 
 const Button = styled.button`
-  background-color: #28a745;
+  background-color: #586535;
   color: white;
   padding: 0.5em 1em;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
 
   &:hover {

@@ -16,7 +16,7 @@ const ProjectTitle = styled.h3`
   font-size: 1.2em;
   color: #495057;
 `;
-const colors = ['#6f0765', '#4c0045', '#bd512f', '#ffb228'];
+const colors = ['#7ab9d7', ' #b8b9c7', ' #4b4a70'];
 const ProjectContainer = styled.div`
  background-color: ${(props) => props.color};
   padding: 1em;

@@ -31,6 +31,7 @@ padding: 5px 20px;
 gap:1rem;
 border-radius: 10px;
 background-color: #0f1029;
+
 `;
 
 export const App = () => {

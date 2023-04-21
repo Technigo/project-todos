@@ -7,8 +7,8 @@ const TaskCounterContainer = styled.div`
   display: flex;
   justify-content: space-between;
   padding: 1em;
-  background-color: #f8f9fa;
-  border-top: 1px solid #dee2e6;
+  background-color: #a27381;
+  border-radius:20px;
   font-weight: bold;
 `;
 
