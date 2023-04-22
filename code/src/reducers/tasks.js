@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit'
 
 const tasks = createSlice({
   name: 'tasks',
   initialState: {
     items: [
       { id: '1',
-        text: 'Click on this task to mark it done',
+        text: 'Click to mark completed',
         isDone: false }
     ]
   },
@@ -18,7 +18,7 @@ const tasks = createSlice({
       })
     },
     deleteItem: (store, action) => {
-      store.item.splice(action.payload, 1)
+      store.items.splice(action.payload, 1)
     },
     addItem: (store, action) => {
       store.items.push(action.payload)

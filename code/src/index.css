@@ -1,13 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&family=Syne+Mono&display=swap');
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+    sans-serif; */
+  font-family: 'Shadows Into Light', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+.Footer {
+  color: rgb(187, 180, 180);
+  font-size: 1.2rem;
+  text-align: center;
+
+}
+
+.Footer a {
+  text-decoration: none;
+  color: rgb(187, 180, 180);
+}
+
+.Footer a:hover {
+  font-weight: bold;
+  color: white;
 }
