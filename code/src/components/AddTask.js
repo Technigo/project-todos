@@ -31,7 +31,7 @@ export const AddTask = () => {
         </label>
         <button type="submit">Add</button>
       </form>
-      <button type="button" onClick={onDeleteAllTasksClick}>Delete all groceries</button>
+      <button className="deleteall-btn" type="button" onClick={onDeleteAllTasksClick}><img src="../eraser.svg" alt="eraser" /><p>Delete all</p></button>
     </section>
   )
 }

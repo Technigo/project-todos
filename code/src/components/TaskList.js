@@ -15,6 +15,7 @@ export const TaskList = () => {
     dispatch(task.actions.toggleIfTaskIsCompleted(id))
   }
   const dateOptions = moment().format('dddd DD/M');
+
   return (
     <section>
       <div className="header">
@@ -24,7 +25,7 @@ export const TaskList = () => {
         {tasklist.map((singleTask) => {
           return (
             <li key={singleTask.id}>
-              <p>
+              <p className="line-through">
                 <span>{singleTask.name}</span>
                 <label htmlFor={`task_with_id${singleTask.id}`} className="container">
                   <input

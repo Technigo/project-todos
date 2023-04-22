@@ -4,6 +4,8 @@
   font-size: 19px;
 }
 
+*, *:after, *:before {box-sizing: border-box;}
+
 body {
   margin: 0;
   font-family: 'Shadows Into Light', cursive;
@@ -17,11 +19,12 @@ body {
 
 .paper {
   width: 300px;
-  height: 100vh;
+  height: 97vh;
   background-color: #fff;
   box-shadow: 0px 0px 5px 0px #888;
   position: relative;
   padding: 40px 0 40px 0;
+  margin: 10px 0 10px 0;
 }
 .paper::before {
   content: '';
@@ -44,7 +47,7 @@ body {
   font-family: 'Shadows Into Light', cursive;
   font-size: 1rem;
   letter-spacing: 1px;
-  word-spacing: 5px;
+  word-spacing: -5px;
 }
 .header {
   display: flex;
@@ -55,31 +58,35 @@ h1 {
   font-size: 1.2rem;
   line-height: 1.2rem;
 }
-.remove-btn {
-  border: none;
-  color: rgba(255, 0, 0, 1);
-  background-color: transparent;
-  font-size: 1rem;
-  cursor: pointer;
-  vertical-align: top;
-}
 .total {
   text-align: right;
 }
-li {
-  display: flex;
+.remove-btn {
+  border: none;
+  color: rgba(255, 0, 0, 0.8);
+  background-color: transparent;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 0.8rem;
+  margin-top: -4px;
+  position: absolute;
+  right: 2vw;
 }
-/* .container {
+li p {
+  display: flex;
+  flex-direction: row;
+}
+.container {
   display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
+  position: absolute;
+  margin: 2px 0 0 10px;
   cursor: pointer;
   font-size: 22px;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  right: 15vw;
 }
 .container input {
   position: absolute;
@@ -89,30 +96,61 @@ li {
   width: 0;
 }
 .checkmark {
-  display: inline-block;
   position: absolute;
   top: 0;
   left: 0;
-  height: 1.2rem;
-  width: 1.2rem;
-  background-color: #eee;
+  height: 0.7rem;
+  width: 0.7rem;
+  border: 1px solid rgba(0,0,0,0.2);
+  border-radius: 2px;
 }
 .checkmark:after {
-  content: "";
+  content: "✓";
   position: absolute;
   display: none;
+  font-size: 1.4rem;
+  color: rgb(0, 170, 0);
+  font-family: monospace;
+  font-style: normal;
+  line-height: 0;
+  margin-top: 4px;
+  margin-left: 1px;
 }
 .container input:checked ~ .checkmark:after {
   display: block;
 }
 .container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-} */
+  -webkit-transform: rotate(348deg);
+  -ms-transform: rotate(348deg);
+  transform: rotate(5deg);
+} 
+.deleteall-btn img{
+  position: relative;
+  width: 10vw;
+  z-index: -1;
+  top: 5vh;
+  left: 20%;
+}
+
+.deleteall-btn {
+  background-color: transparent;
+  border: none;
+  z-index: 1;
+  position: relative;
+  cursor: pointer;
+}
+.deleteall-btn p {
+  font-family: sans-serif;
+  font-size: 0.8rem;
+  position: relative;
+  top: -10vh;
+  left: 21%;
+  z-index: 2;
+  text-transform: uppercase;
+  color: rgba(0,0,0,0.8);
+  rotate: 10 0 15 304deg;
+  font-weight: 700;
+  letter-spacing: -1px;
+  text-shadow: 1px 1px rgba(255,255,255,0.4);
+  
+}
