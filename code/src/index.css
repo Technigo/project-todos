@@ -1,13 +1,355 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Amiko:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap');
+
+* {
+  padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+  background: hsla(56, 85%, 89%, 1);
+  background: linear-gradient(225deg, hsla(56, 85%, 89%, 1) 0%, hsla(27, 92%, 90%, 1) 11%, hsla(356, 100%, 91%, 1) 23%, hsla(311, 64%, 85%, 1) 35%, hsla(263, 64%, 84%, 1) 47%, hsla(215, 77%, 80%, 1) 58%, hsla(195, 82%, 76%, 1) 69%, hsla(185, 84%, 76%, 1) 79%, hsla(167, 82%, 78%, 1) 90%, hsla(126, 89%, 85%, 1) 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.emoji {
+  font-size: 22px;
+}
+
+/* ---- Main containers ---- */
+
+.Wrapper {
+  width: 100%;
+}
+
+.Container-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  position: relative;
+  width: 100vw;
+}
+
+.Container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  background-color: white;
+  max-width: 450px;
+  width: 100%;
+  height: 600px;
+  border-radius: 35px;
+  padding: 15px 25px 25px 25px;
+  position: relative;
+  top: 0;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow:
+  2.3px 2.3px 1.9px rgba(0, 0, 0, 0.013),
+  5.4px 5.4px 4.3px rgba(0, 0, 0, 0.02),
+  9.7px 9.7px 7.7px rgba(0, 0, 0, 0.024),
+  16.1px 16.1px 12.8px rgba(0, 0, 0, 0.028),
+  26.5px 26.5px 21.2px rgba(0, 0, 0, 0.032),
+  46.2px 46.2px 37px rgba(0, 0, 0, 0.04),
+  100px 100px 80px rgba(0, 0, 0, 0.07)
+}
+
+
+.Tabs {
+  padding: 0;
+  height: 100%;
+  background-color: transparent;
+  position: relative;
+  z-index: 1;
+  top: 350px;
+  right: 0;
+  }
+
+
+  /* ---- Header ---- */
+
+.Header {
+  padding: 0;
+  text-align: center;
+  z-index: 3;
+}
+
+.bgtest {
+  background-color: #DA58C2;
+  width: 780px;
+  height: 300px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  top: -45px;
+  left: -188px;
+}
+
+/* ---- Input area ---- */
+
+.Input {
+  z-index: 4;
+  margin-bottom: 12px;
+}
+
+.Input form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.Input form label {
+  display: inline-block;
+}
+
+.Input form label input {
+  font-size: 16px;
+  height: 35px;
+  width: 250px;
+  border-radius: 12px;
+  border: 1px solid white;
+  padding: 5px 10px;
+}
+
+.Input form label input:hover {
+  box-shadow: 2px 2px 5px 1px rgba(0,0,0,0.5) inset;
+}
+
+.Input form label span {
+  display: none;
+}
+
+
+/* ---- List area ---- */
+
+
+.todo-row {
+  margin: 10px auto;
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+  background-color: #f3e5fa;
+  border-radius: 6px;
+  padding: 5px 8px;
+}
+
+.container-todo-label {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-top: 2px;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size: 16px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Hide the browser's default checkbox */
+.container-todo-label input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 22px;
+  width: 22px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+
+/* On mouse-over, add a pink-ish background color */
+.container-todo-label:hover input ~ .checkmark {
+  background-color: #ffffffad;
+}
+
+/* When the checkbox is checked, add a green background */
+.container-todo-label input:checked ~ .checkmark {
+  background-color: #8bc55c;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container-todo-label input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container-todo-label .checkmark:after {
+  left: 7px;
+  top: 3px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.List {
+  padding: 10px;
+  overflow: auto; /* No scroll when OK in size, scroll appears when list too long*/
+  z-index: 5;
+}
+
+.blobcontainer {
+  position: absolute;
+  top: 250px;
+  left: calc(50% - 150px);
+  width: 300px;
+  height: 300px;
+}
+
+.blobcontainer svg {
+  transform: scale(0.9);
+  position: absolute;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.blobcontainer p {
+  font-family: 'Abril Fatface', cursive;
+  position: absolute;
+  color: #DA58C2;
+  font-size: 24px;
+  z-index: 2;
+  top: 77px;
+  left: calc(50% - 80px);
+  max-width: 160px;
+  text-align: center;
+}
+
+/* ---- Footer ---- */
+
+.Footer {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.Footer h3 {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #DA58C2;
+  font-size: 16px;
+  margin: 0 0 2px 5px;
+}
+
+.Footer a {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  color: #DA58C2;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.Footer a:hover {
+  color: white;
+}
+
+
+
+@media (max-width: 560px) {
+  body {
+    align-items: flex-start;
+  }
+
+  .Wrapper {
+    margin-top: 35px;
+  }
+    
+  .Container-wrapper {
+    flex-direction: column;
+    align-items: center;
+    padding: 0 10px 0 10px;
+  }
+
+  .Container {
+    height: 520px;
+    padding: 16px;
+  }
+
+  .Tabs {
+    display: flex;
+    top: 0;
+    left: calc(50% - 180px);
+    }
+
+  .bgtest {
+    background-color: #DA58C2;
+    top: -72px;
+    left: calc(50% - 390px);
+  }
+  
+  .Input {
+    margin-bottom: 25px;
+  }
+
+  .Input form label input {
+    width: 231px;
+  }
+
+  .List {
+    padding: 5px;
+  }
+
+  .blobcontainer {
+    top: 220px;
+  }
+
+  .Footer {
+    margin-top: 20px;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+/* Gradients:
+
+background: hsla(56, 85%, 89%, 1);
+
+background: linear-gradient(225deg, hsla(56, 85%, 89%, 1) 0%, hsla(27, 92%, 90%, 1) 11%, hsla(356, 100%, 91%, 1) 23%, hsla(311, 64%, 85%, 1) 35%, hsla(263, 64%, 84%, 1) 47%, hsla(215, 77%, 80%, 1) 58%, hsla(195, 82%, 76%, 1) 69%, hsla(185, 84%, 76%, 1) 79%, hsla(167, 82%, 78%, 1) 90%, hsla(126, 89%, 85%, 1) 100%);
+
+background: -moz-linear-gradient(225deg, hsla(56, 85%, 89%, 1) 0%, hsla(27, 92%, 90%, 1) 11%, hsla(356, 100%, 91%, 1) 23%, hsla(311, 64%, 85%, 1) 35%, hsla(263, 64%, 84%, 1) 47%, hsla(215, 77%, 80%, 1) 58%, hsla(195, 82%, 76%, 1) 69%, hsla(185, 84%, 76%, 1) 79%, hsla(167, 82%, 78%, 1) 90%, hsla(126, 89%, 85%, 1) 100%);
+
+background: -webkit-linear-gradient(225deg, hsla(56, 85%, 89%, 1) 0%, hsla(27, 92%, 90%, 1) 11%, hsla(356, 100%, 91%, 1) 23%, hsla(311, 64%, 85%, 1) 35%, hsla(263, 64%, 84%, 1) 47%, hsla(215, 77%, 80%, 1) 58%, hsla(195, 82%, 76%, 1) 69%, hsla(185, 84%, 76%, 1) 79%, hsla(167, 82%, 78%, 1) 90%, hsla(126, 89%, 85%, 1) 100%);
+
+filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#FBF8CC", endColorstr="#FDE4CF", GradientType=1 );
+*/
