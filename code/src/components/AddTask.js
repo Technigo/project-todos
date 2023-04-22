@@ -29,7 +29,7 @@ align-items: space-between;
 const StyledInput = styled.input`
   height: 40px;
   width: 80%;
-  color: #f5f5f5;
+  color: white;
   background: rgba(255, 255, 255, 0.08);
   border-radius: 3px;
   padding: 0 10px;
@@ -44,7 +44,8 @@ const StyledInput = styled.input`
 
   // Fixing that the placeholder text is very dark in some browsers
   &::placeholder {
-    color: #f5f5f5;
+    color: white;
+    font-size: 12px;
   }
 `
 const Add = styled.img`
@@ -78,7 +79,7 @@ const Button = styled.button`
   }
 
   ${(props) => props.disabled && css`
-      opacity: 0.5;
+      opacity: 0.2;
     `}
 `
 
@@ -111,7 +112,7 @@ const AddTask = () => {
             id="addtaskInput"
             type="text"
             aria-label="Add task"
-            placeholder="Add task... (minimum 4 characters)"
+            placeholder="Add task... (min 4 characters)"
           />
           <Button
             type="submit"

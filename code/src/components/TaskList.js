@@ -50,15 +50,15 @@ const StyledWrapper = styled.div`
   `
 
 const TaskListH2 = styled.h2`
-  font-size: 18px;
-  color: #f5f5f5;
+  font-size: 14px;
+  color: white;
   font-weight: 500;
 `
 
 const DeleteAll = styled.button`
 background: transparent;
-border: 1px solid #f5f5f5;
-color: #f5f5f5;
+border: 2px solid white;
+color: white;
 padding: 0.5rem 1rem;
 border-radius: 6px;
 transition: all 0.2s ease-in-out;
@@ -71,7 +71,7 @@ const NoTasksP = styled.p`
 background: rgba(0, 0, 0, 0.3);
 border-radius: 8px;
 padding: 0.5rem 1rem;
-color: #f5f5f5;
+color: white;
 font-size: 20px;
 text-align: center;
 `
