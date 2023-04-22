@@ -64,7 +64,7 @@ export const ProjectToDoList = () => {
     dispatch(toggleItem({ listIndex, itemId: id }));
     dispatch(sortItems({ listIndex }));
     dispatch(sortPriority({ listIndex }));
-  };
+}
 
   const onTogglePriority = (id, listIndex) => {
     dispatch(togglePriority({ listIndex, itemId: id }));
@@ -80,8 +80,6 @@ export const ProjectToDoList = () => {
     dispatch(deleteList({ name: list.name }));
   }
 
-  const completed = lists.filter((task) => task.complete);
-  
 
   return (
     <>
@@ -96,7 +94,7 @@ export const ProjectToDoList = () => {
                   Delete List
                 </button>
                 <ProjectTitle>{list.name}</ProjectTitle>
-                <p>{completed.length}/ {list.items.length} done</p>
+                <p>/ {list.items.length} done</p>
                 <ListHeaderButton type="button" onClick={() => handleProjectClick(listIndex)}>
                   {projectActive[listIndex] ? (
                   <FontAwesomeIcon icon={faChevronUp} style={{ color: '#ffffff', fontSize: '30px'}} />)
