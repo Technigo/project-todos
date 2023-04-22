@@ -10,11 +10,11 @@ const HandleTODO = ({ item }) => {
   console.log(singleTodo)
   const dispatch = useDispatch();
   return (
-    <>
+    <div className="buttonContainer">
       <HandleTODOButton type="button" onClick={() => dispatch(tickets.actions.markAsDone(item))} isDone={singleTodo.isDone}>Done</HandleTODOButton>
       <HandleTODOButton type="button" onClick={() => dispatch(tickets.actions.markAsPrio(item))} isPrioritized={singleTodo.isPrioritized}>Important</HandleTODOButton>
       <HandleTODOButton type="button" onClick={() => dispatch(tickets.actions.removeTODO(item))}>Delete</HandleTODOButton>
-    </>
+    </div>
   )
 }
 

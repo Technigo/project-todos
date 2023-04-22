@@ -12,9 +12,10 @@ margin-bottom: 0.4rem;
 color: seashell;
 text-shadow: 1px 1px 2px black;
 border: none;
-font-family: 'Ubuntu Condensed', sans-serif;
-font-weight: 300;
-letter-spacing: 2px;
+/*font-family: 'Ubuntu Condensed', sans-serif;*/
+font-family: 'Shadows Into Light';
+font-weight: 600;
+letter-spacing: 3px;
 /*box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
 
 &.selected {
@@ -26,14 +27,19 @@ letter-spacing: 2px;
     margin-bottom: 0;
 }
 &.isDone {
-  color: lightgray;
+color: lightgray;
 }
 &.isDone::after {
   color: black;
   content: " ✔";
 }
 &.isPrioritized {
-  box-shadow: 0 4px 30px rgba(255, 255, 255, 0.6);
+ /*color: rgb(105, 243, 209);*/
+  text-shadow: 1px 1px 2px black;
+  border-radius: 10px;
+  background: linear-gradient(to left, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3));
+
+ /*box-shadow: 0 4px 20px rgba(255, 255, 255, 0.7);*/
 }
 @media screen and (min-width: 667px) {
   min-height: 3rem;
@@ -44,13 +50,24 @@ letter-spacing: 2px;
 `
 
 export const HandleTODOButton = styled.button`
-background: transparent;
-width:33.3333%;
-font-size:1.1rem;
+color: seashell;
+width:30%;
+font-family: 'Ubuntu Condensed', sans-serif;
+font-size:1.3rem;
 margin-bottom: 0.4rem;
 height: 2.6rem;
-${(props) => props.isDone && 'color: white;'}
-${(props) => props.isPrioritized && 'color: white;'}
+
+/* From https://css.glass */
+background: rgba(90, 56, 92, 0.7);
+border-radius: 4px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: none;
+${(props) => props.isDone && 'color: black;'}
+${(props) => (props.isDone && 'background: rgba(177, 211, 196, 0.6)')};
+${(props) => props.isPrioritized && 'color: black;'}
+${(props) => (props.isPrioritized && 'background: rgba(177, 211, 196, 0.6)')};
 `
 
 export const AddButton = styled.button`
@@ -64,7 +81,17 @@ height: 2rem;
 font-size:1.2rem;
 padding-left: 0.6rem;
 padding-right: 0.6rem;
-background: rgba(105, 114, 121, 0.6);
+margin-bottom: 1rem;
+margin-left: 4px;
+margin-right: 4px;
+
+/* From https://css.glass */
+background: rgba(90, 56, 92, 0.7);
+border-radius: 4px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+backdrop-filter: blur(5px);
+-webkit-backdrop-filter: blur(5px);
+border: none;
   background-color: ${(props) => (props.clicked ? 'black' : '')};
   color: ${(props) => (props.clicked ? 'white' : 'seashell')};
   transition: all 0.2s ease-in-out;
