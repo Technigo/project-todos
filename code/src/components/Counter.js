@@ -1,6 +1,7 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
 import { useSelector } from 'react-redux';
+import styled from 'styled-components';
 
 const Counter = () => {
   const toDoCounter = useSelector((store) => store.tasks.items.length)
@@ -9,10 +10,21 @@ const Counter = () => {
   );
 
   return (
-    <counter-wrapper>
-            &quot;You have done {completeToDo.length} out of {toDoCounter} today!&quot;
-    </counter-wrapper>
+    <CounterWrapper>
+            &quot;You have cleared {completeToDo.length} out of {toDoCounter} today!&quot;
+    </CounterWrapper>
   );
 };
 
 export default Counter;
+
+const CounterWrapper = styled.p`
+  color: var(--quinary);
+  margin: 10px;
+@media (min-width: 600px) and (max-width: 900px){
+  font-size: 18px;
+}
+@media (min-width: 901px){
+  font-size: 20px;
+}
+`

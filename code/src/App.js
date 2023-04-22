@@ -2,11 +2,12 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
-import { GlobalStyles } from 'StyledComponents/globalStyles';
+import { OuterWrapper, GlobalStyles, ContentWrapper } from 'StyledComponents/globalStyles';
 import tasks from './reducers/tasks'
 
 import TaskList from './components/TaskList';
 import AddTask from './components/AddTask';
+import Logo from './components/Logo'
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -18,10 +19,15 @@ export const App = () => {
   return (
     <>
       <GlobalStyles />
-      <Provider store={store}>
-        <AddTask />
-        <TaskList />
-      </Provider>
+      <OuterWrapper>
+        <Provider store={store}>
+          <Logo />
+          <ContentWrapper>
+            <AddTask />
+            <TaskList />
+          </ContentWrapper>
+        </Provider>
+      </OuterWrapper>
     </>
   )
 }

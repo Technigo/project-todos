@@ -5,7 +5,7 @@ export const GlobalStyles = createGlobalStyle`
   :root {
     --primary: #9AA3B8;
     --secondary: #497d59;
-    --tertiary: #D05301;
+    --tertiary: #264e49;
     --quaternary: #D9E2F7;
     --quinary: #FBFAEF;
   }
@@ -21,7 +21,7 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     /* max-width: 1024px; */
-    font-family: 'Cormorant Garamond', serif;
+    /* font-family: 'Cormorant Garamond', serif; */
     background-color: var(--secondary);
     position: relative;
     @media (min-width: 668px) and (max-width: 1023px){
@@ -31,18 +31,19 @@ export const GlobalStyles = createGlobalStyle`
   }
 `
 
-export const outerWrapper = styled.div`
+export const OuterWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
   max-width: 1024px;
+  max-height: 100vh;
 `
 
-export const contentWrapper = styled.div`
+export const ContentWrapper = styled.div`
   background-color: var(--tertiary);
   margin: 50px 25px 0;
-  border-radius: 350px 350px 0 0;
-  min-height: 100vh;
+  border-radius: 4px 4px 4px 4px;
+  /* min-height: 100vh; */
 p{
   word-wrap: break-word;
 }
@@ -50,12 +51,12 @@ p{
   margin: 80px 30px 0;
 }
 @media (min-width: 901px){
-  margin: 90px 40px 0;
-  border-radius: 450px 450px 0 0;
+  margin: 40px 40px 0;
+  border-radius: 4px 4px 4px 4px;
   }
 `
 
-export const bottomLine = styled.div`
+export const BottomLine = styled.div`
   background-color: var(--quaternary);
   width: 100%;
   height: 40px;  
@@ -73,9 +74,9 @@ export const Button = styled.button`
   &:hover{
     transform: scale(1.2);}
     img{
-      width: 30px;
-      height: 30px;
-      filter: invert(100%) sepia(27%) saturate(4654%) hue-rotate(178deg) brightness(101%) contrast(94%);
+      width: 50px;
+      height: 50px;
+      filter: invert(100%);
     }
 @media (min-width: 600px) and (max-width: 900px){
   img{
@@ -85,8 +86,8 @@ export const Button = styled.button`
 }
 @media (min-width: 901px){
   img{
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
   }
 }
 `

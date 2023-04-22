@@ -1,4 +1,5 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable max-len */
 /* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable linebreak-style */
 import React, { useState } from 'react';
@@ -12,34 +13,52 @@ import Counter from './Counter';
 
 const AddTask = () => {
   const [value, setValue] = useState('')
+  const [dueDate, setDueDate] = useState('')
 
   const dispatch = useDispatch()
 
   const onFormSubmit = (event) => {
     event.preventDefault()
 
+    // Check if the textarea is empty
+    if (!value.trim()) {
+      return;
+    }
+
     const newTask = {
       id: uniqid(),
       name: value,
+      dueDate, // add the due date to the new task object
       isDone: false
     }
 
     dispatch(tasks.actions.addItem(newTask))
 
     setValue('')
+    setDueDate('')
   }
 
   return (
     <Form onSubmit={onFormSubmit}>
       <MainTextArea
         placeholder="Start here! Add a new task...or wish"
-        rows="5"
-        cols="40"
+        rows="2"
+        cols="30"
         value={value}
         onChange={(event) => setValue(event.target.value)} />
       <ToDoDetails>
+        <DateInput
+          type="date"
+          value={dueDate}
+          onChange={(event) => setDueDate(event.target.value)} />
+        {/* update the due date state on change */}
         <Counter />
-        <Button type="submit"> Click! </Button>
+        <Button type="submit">
+          <img
+            className="add-button"
+            src="/assets/plus.svg"
+            alt="add to-do" />
+        </Button>
       </ToDoDetails>
     </Form>
   )
@@ -67,7 +86,7 @@ const MainTextArea = styled.textarea`
     ::placeholder{
         font-size: 12px;
     }
-    @media (min-width: 600px) and (max-width: 900px){
+  @media (min-width: 600px) and (max-width: 900px){
   padding: 20px 20px 50px;
   font-size: 20px;
   
@@ -84,6 +103,21 @@ const MainTextArea = styled.textarea`
   font-size: 25px;
   }
 }
+`
+const DateInput = styled.input`
+  width: 40%;
+  padding: 12px 20px;
+  margin: 8px 5px;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 12px;
+  background-color: #fff;
+  /* Remove the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
 `
 
 export const ToDoDetails = styled.div`

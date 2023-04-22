@@ -40,14 +40,15 @@ const TaskList = () => {
               id="task">
               {newTodo.name}
             </label>
-            <p>{formatRelative(new Date(), new Date())}</p>
+            <p>Created: {formatRelative(new Date(), new Date())}</p>
+            <p> Scheduled for: {newTodo.dueDate}</p>
           </Wrapper>
           <SubmittedToDoDetails>
             <Button
               type="button"
               onClick={() => onToDoDelete(ToDoIndex)}>
               <img
-                src="/assets/delete.png"
+                src="/assets/done2.svg"
                 alt="delete task" />
             </Button>
           </SubmittedToDoDetails>
