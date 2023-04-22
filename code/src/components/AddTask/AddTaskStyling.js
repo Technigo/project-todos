@@ -15,6 +15,8 @@ export const AddTaskWrapper = styled.form`
   border-radius: 10px;
   padding: 0.25em 0.5em;
   font-size: 1rem;
+  font-weight: bold;
+  opacity: .8;
   cursor: pointer;
   line-height: 1.1;
   background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
