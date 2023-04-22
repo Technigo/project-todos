@@ -9,7 +9,7 @@ const initialState = {
   ]
 };
 
-const tasks = createSlice({
+export const tasks = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
@@ -17,9 +17,7 @@ const tasks = createSlice({
       store.tasks = [...store.tasks, action.payload];
     },
     deleteTask: (store, action) => {
-      store.items = store.tasks.filter((task) => task.id !== action.payload.id);
+      store.tasks = store.tasks.filter((task) => task.id !== action.payload.id);
     }
   }
 });
-
-export default tasks;
