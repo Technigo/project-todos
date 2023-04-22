@@ -4,9 +4,8 @@ import { createSlice } from '@reduxjs/toolkit'
 // initialState stored in a variable, outside of the createSlice (optional)
 const initialState = {
   items: [
-    { id: 1, text: 'Make some coffee', complete: true },
-    { id: 2, text: 'Make a functional to-do app', complete: false },
-    { id: 3, text: 'Have a dance party', complete: false }
+    { id: 1, text: 'Add tasks to list', checked: false },
+    { id: 2, text: 'Spis en hvede (RIP)', checked: true }
   ]
 }
 
@@ -14,11 +13,27 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
+    toggleChecked: (store, action) => {
+      const { id } = action.payload
+      store.items = store.items.map((item) => {
+        if (item.id === id) {
+          return { ...item, checked: !item.checked }
+        }
+        return item
+      })
+    },
     addTask: (store, action) => {
       // Mutable option: push new task (the payload) into task-items array
       // store.items.push(action.payload)
       // Immutable option(better): Using a spread operator, recreating a new array containing new value.
       store.items = [...store.items, action.payload]
+    },
+    deleteAllTasks: (store) => {
+      store.items = []
+    },
+    deleteSingleTask: (store, action) => {
+      // returns array with only items that do not match the deleted one.
+      store.items = store.items.filter((item) => item.id !== action.payload.id)
     }
   }
 })
