@@ -20,8 +20,13 @@ const Table = styled.table`
   th {
     font-family: 'Libre Franklin';
     color: #FF8400;
-    font-size: 1.5em;
-    padding: 0.7em;
+    font-size: 0.8em;
+    padding: 0.4em;
+    @media (min-width: 900px){
+      font-size: 1.5em;
+      padding: 0.7em;
+    }
+  
   }
   thead tr {
     border-bottom: 2px solid #9E7540;
@@ -70,7 +75,10 @@ const Table = styled.table`
     margin: 0;
     transform: translateY(0.2rem);
   }
-  .checkbox > input:checked,
+  .checkbox > input:checked {
+    background-color: #FF8400;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  }
   .checkmark {
     background-color: #FF8400;
     clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
@@ -78,10 +86,10 @@ const Table = styled.table`
   .checkbox > input:active {
     transform: scale(1.1);
   }
+  .active {
+    font-size: 18px;
+  }
   
-
-
-
   .completed {
     text-decoration: line-through;
     color: #9E7540;
@@ -132,7 +140,7 @@ const TaskList = () => {
         {taskList.map((task) => (
           <tr key={task.id}>
             <td>
-              <label htmlFor="checkbox">
+              <label htmlFor="checkbox" className="checkbox">
                 <input
                   type="checkbox"
                   id="checkbox"

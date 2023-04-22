@@ -35,12 +35,11 @@ const Imagebox = styled.div`
   display: flex;
   width: 100vw;
   height: 300px;
+  object-fit: cover;
 `
 const Image = styled.img`
   width: 100vw;
   height: auto;
-  object-fit: cover;
-
 `
 const Header = () => {
   const amountTasks = useSelector((store) => store.tasks.items.length)
