@@ -12,6 +12,7 @@ const StyledMain = styled.main`
 `
 
 const MainContainer = styled.div`
+  width: 320px;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(5px);

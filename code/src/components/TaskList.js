@@ -6,6 +6,50 @@ import styled from 'styled-components'
 import { CheckBox } from './Checkbox'
 import MinusIcon from '../minus-square-svgrepo-com(1).svg'
 
+const TaskListLi = styled.li`
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  position: relative;
+`
+const Delete = styled.img`
+  height: 2rem;
+  align-self: center;
+`
+
+const StyledLabel = styled.label`
+  display: flex;
+  font-size: 14px;
+  font-weight: 500;
+  color: white;
+  align-items: center;
+`
+const TaskListContainer = styled.section`
+  position: relative;
+`
+
+const TaskUl = styled.ul`
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  padding-left: 0;
+`
+
+const StyledWrapper = styled.div`
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-ite
+  `
+
+const TaskListH2 = styled.h2`
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+`
+
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items)
   const dispatch = useDispatch()
@@ -17,53 +61,6 @@ const TaskList = () => {
   const onIsDoneCheckboxToggle = (id) => {
     dispatch(tasks.actions.toggleIsDone(id))
   }
-
-  const TaskListLi = styled.li`
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-    position: relative;
-  `
-
-  /*   const DeleteButton = styled.button`
-    background: white;
-    border: none;
-    border-radius: 3px;
-    padding: 5px 10px 10px 5px;
-    align-self: flex-end;
-  ` */
-
-  const Delete = styled.img`
-    height: 50px;
-  `
-
-  const StyledLabel = styled.label`
-    font-size: 14px;
-    font-weight: 500;
-    color: white;
-  `
-  const TaskListContainer = styled.section`
-    position: relative;
-  `
-
-  const TaskUl = styled.ul`
-    gap: 1rem;
-    display: flex;
-    flex-direction: column;
-  `
-
-  const StyledWrapper = styled.div`
-    border: 2px solid white;
-    display: flex;
-    gap: 5rem;
-  `
-
-  const TaskListH2 = styled.h2`
-    font-size: 18px;
-    color: white;
-    font-weight: 500;
-  `
-
   return (
     <TaskListContainer>
       <TaskUl>

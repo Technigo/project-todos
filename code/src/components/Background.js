@@ -22,7 +22,7 @@ const Background = () => {
           image: ' linear-gradient(19deg, #21D4FD 0%, #B721FF 100%)'
         },
         particles: {
-          number: { value: 10, density: { enable: true, value_area: 600 } },
+          number: { value: 40, density: { enable: true, value_area: 500 } },
           color: { value: '#ffffff' },
           shape: {
             type: 'square',
@@ -35,7 +35,7 @@ const Background = () => {
             anim: { enable: false, speed: 1, opacity_min: 0.1, sync: false }
           },
           size: {
-            value: 29,
+            value: 40,
             random: true,
             anim: { enable: false, speed: 2, size_min: 0.1, sync: false }
           },
