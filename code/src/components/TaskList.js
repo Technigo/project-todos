@@ -17,11 +17,13 @@ export const TaskList = () => {
   }
   // STYLES
   const TaskListWrapper = styled.div`
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
+  z-index: 2;
   `
   const SingleTaskWrapper = styled.div`
   display: flex;
@@ -32,7 +34,6 @@ export const TaskList = () => {
   padding: 1rem;
   border-radius: 1.8rem;
   width: 20rem;
-  
   word-wrap: break-word;
   margin-bottom: 15px;
   
@@ -65,7 +66,7 @@ export const TaskList = () => {
           return (
             <SingleTaskWrapper key={singleTask.id}>
               <Checkbox
-                id={`cbx-${singleTask.id}`}
+                taskId={singleTask.id}
                 checked={singleTask.isDone}
                 onChange={() => onTaskToggle(singleTask.id)} />
               <li>
@@ -83,7 +84,7 @@ export const TaskList = () => {
             </SingleTaskWrapper>
 
           )
-})}
+        })}
       </ul>
     </TaskListWrapper>
   )

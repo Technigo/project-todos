@@ -14,6 +14,8 @@ const HeaderWrapper = styled.div`
     gap: 2rem;
     padding-top: 2rem;
     padding-bottom: 1rem;
+    z-index: 2;
+  position: relative;
     `
 
 const HeaderTitle = styled.h1`

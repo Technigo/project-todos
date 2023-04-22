@@ -11,4 +11,5 @@ justify-content: center;
 align-items: center;
 padding: 0.5rem;
 color: white;
+cursor: pointer;
 `

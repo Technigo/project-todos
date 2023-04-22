@@ -25,9 +25,8 @@ export const tasks = createSlice({
     },
     toggleTask: (store, action) => {
       store.items.forEach((item) => {
-        if (item.id === action.payload.id) {
+        if (item.id === action.payload.taskId) {
           item.isDone = !item.isDone
-          console.log(item)
         }
       })
     },

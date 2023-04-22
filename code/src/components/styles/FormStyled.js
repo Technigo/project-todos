@@ -6,6 +6,8 @@ flex-direction: row;
 align-items: center;
 justify-content: center;
 padding-bottom: 1rem;
+position: relative;
+z-index: 3;
 `
 export const Form = styled.form`
 display: flex;
