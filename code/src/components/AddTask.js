@@ -67,7 +67,7 @@ input[type=text] {
       outline: 1px solid #FFFFFF;
       border-radius: 10px;
       border: 2px solid #BFEAF5;
-      width: 100%;   
+      width: 130%;   
       justify-content: flex-start;
       padding: 10px;
 }
@@ -75,12 +75,14 @@ input[type=text] {
 
 const SubmitButton = styled.button`
   border: none;
-  background-color: #EAFDFC;
+  background-color: transparent;
   cursor: pointer;
+  margin-left: 50px;
 `
 
 const PlusIcon = styled.img`
   width: 1.3rem;
+  border: none;
 
 &:hover {
   transform: scale(1.2);

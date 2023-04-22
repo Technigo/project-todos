@@ -23,38 +23,38 @@ const TaskList = () => {
     dispatch(tasks.actions.removeTask(taskId));
   }
 
-  if (allTasks.length > 0) {
-    return (
-      <>
-        <GlobalStyle />
-        <section>
-          <Wrapper>
-            <ProgressBar />
-            {allTasks.map((singleTask) => {
-              return (
-                <EachTask key={singleTask.id}>{singleTask.name}
-                  <label htmlFor={`task_with_id${singleTask.id}`}>
-                    <input
-                      type="checkbox"
-                      id={`task_with_id${singleTask.id}`}
-                      value={singleTask.isDone}
-                      onChange={() => onIsDoneToggle(singleTask.id)} />
-                  </label>
-                  <DeleteButton onClick={() => onRemoveTaskButtonClick(singleTask.id)} type="button"><DeleteIcon src={bin} alt="" /></DeleteButton>
-                </EachTask>
-              )
-            })}
-          </Wrapper>
-        </section>
+  // if (allTasks.length > 0) {
+  return (
+    <>
+      <GlobalStyle />
+      <section>
+        <Wrapper>
+          <ProgressBar />
+          {allTasks.map((singleTask) => {
+            return (
+              <EachTask key={singleTask.id}>{singleTask.name}
+                <label htmlFor={`task_with_id${singleTask.id}`}>
+                  <input
+                    type="checkbox"
+                    id={`task_with_id${singleTask.id}`}
+                    value={singleTask.isDone}
+                    onChange={() => onIsDoneToggle(singleTask.id)} />
+                </label>
+                <DeleteButton onClick={() => onRemoveTaskButtonClick(singleTask.id)} type="button"><DeleteIcon src={bin} alt="" /></DeleteButton>
+              </EachTask>
+            )
+          })}
+        </Wrapper>
+      </section>
 
-      </>
+    </>
 
-    )
-  } else {
-    return (
-      <p> Great job, you&apos;ve got no more tasks! Time to relax!</p>
-    )
-  }
+  )
+  // } else {
+  //   return (
+  //     <p> Great job, you&apos;ve got no more tasks! Time to relax!</p>
+  //   )
+  // }
 }
 
 export default TaskList

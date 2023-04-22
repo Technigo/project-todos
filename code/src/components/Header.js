@@ -23,7 +23,8 @@ export default Header;
 const Title = styled.h1`
   font-weight: 500;
   text-align: center;
-  color: #243763;
+  color: #C92C6D;
+  text-shadow: 1px 1px 2px #C92C6D;
 `;
 
 const DateToday = styled.h3`

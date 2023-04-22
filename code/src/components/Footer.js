@@ -47,12 +47,13 @@ const FooterStyled = styled.footer`
 
 const MadeBy = styled.p`
     font-family: 'Quicksand', serif;
+    opacity: 0.7;
     `
 const IconsContainer = styled.div`
     display: flex;
     flex-direction: row;
     gap: 5px;
-
+    opacity: 0.7;
 `
 const Icon = styled.img`
     width: 20px;

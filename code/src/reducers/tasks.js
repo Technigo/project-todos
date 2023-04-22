@@ -9,7 +9,7 @@ const initialState = {
     },
     {
       id: 2,
-      name: 'Book flights to London',
+      name: 'Book holiday flights',
       complete: false
     },
     {

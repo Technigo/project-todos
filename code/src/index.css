@@ -9,6 +9,7 @@ body {
   background-image: url('../public/images/Bubbles.jpg');
   background-size: cover;
   background-position: center;
+  overflow: hidden;
 }
 
 code {
@@ -28,7 +29,6 @@ main {
   border-radius: 20px;
   box-shadow: 0 0.5rem 2rem rgb(56, 55, 55);
   margin-top: 2%;
-  background-color: #EAFDFC;
   min-height: 90vh;
   position: relative;
 }
