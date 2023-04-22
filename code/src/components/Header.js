@@ -9,21 +9,14 @@ const Header = () => {
 
   // initial state is only 0 after the clearAll-funtion has been used once, so it's necessary to check, lest it displays -1 in browser
   useEffect(() => {
-    if (todoList.length === 0) {
+    if (todoList.length === 0 || (todoList.length === 1 && todoList[0].id === 'initialId')) {
       setTodoCount(0);
       setIsDoneCount(0);
-      return;
-    }
-
-    // if the initial nameless object is still in the state (upon first visit), counter is set to 0
-    if (todoList.length === 1 && todoList[0].id === 'initialId') {
-      setTodoCount(0);
-      setIsDoneCount(0);
-      return;
     }
 
     const filteredList = todoList.filter((todo) => todo.id !== 'initialId');
     setTodoCount(filteredList.length);
+    console.log(filteredList.length)
     setIsDoneCount(todoList.filter((todo) => todo.isDone).length);
   }, [todoList]);
 
