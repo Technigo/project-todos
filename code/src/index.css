@@ -76,7 +76,7 @@ a:hover{
 }
 
 [type="checkbox"] + label {
-  position: relative;
+  position: absolute;
   padding-left: 30px;
   cursor: pointer;
   display: inline-block;

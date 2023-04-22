@@ -1,13 +1,20 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { notereminder } from 'reducers/reminders';
-import { AddBtn } from './Styling/GlobalStyle'
+import { AddBtn } from './Styling/GlobalStyle';
 
 export const AddNote = () => {
   const [inputValue, setInputValue] = useState('');
+  const [charCount, setCharCount] = useState(0);
   const dispatch = useDispatch();
+
   const capitalizeFirstLetter = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
+  const onInputChange = (event) => {
+    setInputValue(event.target.value);
+    setCharCount(event.target.value.length);
   }
 
   const onFormSubmit = (event) => {
@@ -19,7 +26,9 @@ export const AddNote = () => {
     }
     dispatch(notereminder.actions.addNote(newNote))
     setInputValue('');
+    setCharCount(0);
   }
+
   return (
     <section>
       <form onSubmit={onFormSubmit}>
@@ -27,18 +36,17 @@ export const AddNote = () => {
           <input
             className="input-text"
             value={inputValue}
-            onChange={(event) => setInputValue(event.target.value)}
+            onChange={onInputChange}
             id="addNoteInput"
             type="text"
-            placeholder="Add task here..." />
+            placeholder="Add task here..."
+            maxLength={100} />
         </label>
         <AddBtn type="submit">
           <i className="fa-solid fa-square-plus" />
         </AddBtn>
       </form>
+      <span>{100 - charCount} / 100 </span>
     </section>
   )
 }
-
-// https://random.org for finding id thats random enough
-// white space &nbsp;

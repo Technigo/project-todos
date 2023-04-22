@@ -73,7 +73,12 @@ export const TaskBox = styled.div`
 export const TaskParagraph = styled.p`
   font-size: 14px;
   font-weight: 300;
+  width: 50vw;
   margin: 0;
+  overflow-wrap: break-word;
+  @media (min-width: 500px) {
+  width: 230px;
+  }
 `;
 
 export const TrashBtn = styled.button`
