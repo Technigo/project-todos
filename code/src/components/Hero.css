@@ -1,0 +1,9 @@
+.hero {
+  width: 90vw;
+  margin: auto;
+  height: 30vh;
+  background-image: url(../assets/apples.png);
+  background-size: cover;
+  border-radius: 10px;
+  overflow: hidden;
+}
