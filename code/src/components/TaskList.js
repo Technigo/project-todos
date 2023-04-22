@@ -51,13 +51,38 @@ const StyledWrapper = styled.div`
 
 const TaskListH2 = styled.h2`
   font-size: 18px;
-  color: white;
+  color: #f5f5f5;
   font-weight: 500;
+`
+
+const DeleteAll = styled.button`
+background: transparent;
+border: 1px solid #f5f5f5;
+color: #f5f5f5;
+padding: 0.5rem 1rem;
+border-radius: 6px;
+transition: all 0.2s ease-in-out;
+
+&:hover {
+  transform: scale(1.2);
+}
+`
+const NoTasksP = styled.p`
+background: rgba(0, 0, 0, 0.3);
+border-radius: 8px;
+padding: 0.5rem 1rem;
+color: #f5f5f5;
+font-size: 20px;
+text-align: center;
 `
 
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items)
   const dispatch = useDispatch()
+
+  const onDeleteAllTasksBtnClick = () => {
+    dispatch(tasks.actions.deleteAllTasks())
+  }
 
   const onDeleteSingleTaskBtnClick = (id) => {
     dispatch(tasks.actions.deleteSingleTask(id))
@@ -92,10 +117,12 @@ const TaskList = () => {
           )
         })}
       </TaskUl>
+      {taskList.length === 0 && <NoTasksP>No tasks yet!</NoTasksP>}
       <TaskListH2>
         Completed: {taskList.filter((task) => task.isDone).length} /{' '}
         {taskList.length}
       </TaskListH2>
+      <DeleteAll type="button" onClick={() => onDeleteAllTasksBtnClick()}>Delete all</DeleteAll>
     </TaskListContainer>
   )
 }
