@@ -9,6 +9,9 @@ const ProgressBar = () => {
   const numberOfTasksDone = allTasksToDo.filter((item) => item.isDone).length;
   const [width, height] = useWindowSize()
 
+  // const [width, height] = useWindowSize()
+  // this returns width and height defined, but still doesn't work
+
   const doneTasks = () => {
     if (allTasksToDo.length === 0) {
       return ''
@@ -54,10 +57,10 @@ const ProgressBarStyled = styled.div`
   
 `
 const Status = styled.p`
-    text-align: center;
+    /* text-align: center;
     justify-content: center;
     align-self: center;
-    text-align: center;
+    text-align: center; */
     `
 
 const CounterText = styled.p`

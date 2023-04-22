@@ -29,5 +29,5 @@ main {
   box-shadow: 0 0.5rem 2rem rgb(56, 55, 55);
   margin-top: 2%;
   min-height: 90vh;
-  position: relative;
+  /* position: relative; */
 }

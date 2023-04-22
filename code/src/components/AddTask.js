@@ -85,7 +85,7 @@ const PlusIcon = styled.img`
   border: none;
 
 &:hover {
-  transform: scale(1.2);
+  transform: scale(1.4);
   }
 `
 
@@ -104,11 +104,12 @@ const RemoveAllButton = styled.button`
   padding: 10px;
   cursor: pointer;
   position: absolute;
-  bottom: 10px;
-  right: 10px;
+  bottom: 50px;
+  right: 50px;
 
   &:hover {
   color: #C92C6D;
+  font-weight: bold;
   }
 `
 

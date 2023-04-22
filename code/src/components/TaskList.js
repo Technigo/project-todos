@@ -66,7 +66,7 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin: 5% auto;
-  position: relative;
+  /* position: relative; */
 `
 // const ProgressBar = styled.div`
 //   display: flex;
@@ -88,8 +88,10 @@ const EachTask = styled.div`
   
   input[type=checkbox] {
     margin-right: 20px;
-    position: absolute;
-    right: 20px;
+    /* position: absolute; */
+    /* right: 20px; */
+    position: relative;
+    left: 0;
   }
 
   label {
