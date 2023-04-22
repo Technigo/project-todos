@@ -20,6 +20,12 @@ const Title = styled.h1`
   margin: 0;
 `
 
+const InputWrapper = styled.div`
+display: flex;
+padding-right: 0.6rem;
+align-items: space-between;
+`
+
 const StyledInput = styled.input`
   height: 40px;
   width: 80%;
@@ -28,6 +34,7 @@ const StyledInput = styled.input`
   border-radius: 3px;
   padding: 0 10px;
   margin-top: 8px;
+  margin-right: 8px;
   font-size: 14px;
   font-weight: 300;
   outline: none;
@@ -37,6 +44,8 @@ const StyledInput = styled.input`
 `
 const Add = styled.img`
   height: 2rem;
+  position: relative;
+  top: 5px
 `
 
 const VisuallyHiddenLabel = styled.label`
@@ -90,21 +99,23 @@ const AddTask = () => {
     <section>
       <StyledForm onSubmit={onAddTaskFormSubmit}>
         <Title>Check it!</Title>
-        <StyledInput
-          value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)}
-          id="addtaskInput"
-          type="text"
-          aria-label="Add task"
-          placeholder="Add task... (minimum 4 characters)"
-        />
-        <Button
-          type="submit"
-          aria-label="Add task"
-          disabled={inputValue.length < 4 || inputValue.length > 22}>
-          <VisuallyHiddenLabel>Add task</VisuallyHiddenLabel>
-          <Add src={AddIcon} />
-        </Button>
+        <InputWrapper>
+          <StyledInput
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+            id="addtaskInput"
+            type="text"
+            aria-label="Add task"
+            placeholder="Add task... (minimum 4 characters)"
+          />
+          <Button
+            type="submit"
+            aria-label="Add task"
+            disabled={inputValue.length < 4 || inputValue.length > 22}>
+            <VisuallyHiddenLabel>Add task</VisuallyHiddenLabel>
+            <Add src={AddIcon} />
+          </Button>
+        </InputWrapper>
       </StyledForm>
     </section>
   )
