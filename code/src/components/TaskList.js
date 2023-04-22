@@ -75,7 +75,7 @@ const TaskList = () => {
           type="text"
           value={input}
           onChange={(e) => setInput(e.target.value)}
-          placeholder="Add task" />
+          placeholder="Write your task here" />
         <AddButton type="submit" onClick={onAddTask}>
           Add Task
         </AddButton>

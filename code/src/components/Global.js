@@ -17,14 +17,14 @@ export const Button = styled.button`
 
 export const AddButton = styled(Button)`
   background-color:var(--btn1-color);
-  color: black;
+  color: #000;
   padding: 0.8rem;
   box-shadow: var(--box-shadow);
 
    &:hover {
-    background-color: white;
+    background-color: #B9B4AE;
     border: solid 0.1rem var(--btn1-color);
-    color: black;
+    color: #fff;
     transition-duration: 0.4s;
     box-shadow: var(--box-shadow);
   }
@@ -40,7 +40,7 @@ export const DeleteButton = styled(Button)`
 
    &:hover {
     background-color:var(--btn2-color);
-    color: #fff;
+    color: #B9B4AE;
     transition-duration: 0.4s;
     box-shadow: var(--box-shadow);
   }
@@ -48,7 +48,7 @@ export const DeleteButton = styled(Button)`
 
 export const DeleteAllButton = styled(Button)`
   background-color: var(--btn2-color);
-  color: #fff;
+  color: #B9B4AE;
   padding: 0.1rem 0.7rem;
   margin: 0 auto;
   box-shadow: var(--box-shadow);
@@ -77,7 +77,7 @@ justify-content: space-between;
 `;
 
 export const StyledTaskListItem = styled.li`
-  margin: 10px;
+  margin: 0.625rem;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -87,12 +87,17 @@ export const StyledTaskListItem = styled.li`
 export const StyledCheckbox = styled.input`
   position: relative;
   top: 0;
-  margin-right: 10px;
-  height: 20px;
-  width: 20px;
+  margin-right: 0.625rem;
+  height: 1.25rem;
+  width: 1.25rem;
   appearance: none;
-  border: 2px solid var(--primary-background-color);
-  border-radius: 3px;
+  border: 0.125rem solid;
+  border-style: inset;
+  border-color: initial;
+  border-image: linear-gradient(to right, rgb(191, 149, 63), 
+  rgb(252, 246, 186), rgb(179, 135, 40), rgb(251, 245, 183),
+  rgb(170, 119, 28)) 1 / 1 / 0 stretch;
+  border-radius: 0.1875rem;
   outline: none;
   cursor: pointer;
   transition-duration: 0.4s;
@@ -110,7 +115,7 @@ export const StyledCheckbox = styled.input`
     escape sequence \\2714. */
     content: '\\2714'; 
     display: inline-block;
-    font-size: 14px;
+    font-size: 1rem;
     line-height: 1;
     text-align: center;
     color: var(--secondary-background-color);

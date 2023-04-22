@@ -1,14 +1,17 @@
 import styled from 'styled-components';
 
 export const Content = styled.div`
-  background-color: #f8f7f0;
-  min-width: 20.93333rem;
-  max-width: 31.25rem;
+  background-color: rgba(145, 132, 115, 0.9);
+  max-width: 24rem;
   margin: 0 auto;
-  padding: 0.625rem;
-  border: 0.3rem inset;
-  border-image: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) 1; 
+  padding: 1rem;
   text-align: center;
+  border-width: 0.3rem;
+  border-style: inset;
+  border-color: initial;
+  border-image: linear-gradient(to right, rgb(191, 149, 63), 
+  rgb(252, 246, 186), rgb(179, 135, 40), rgb(251, 245, 183),
+  rgb(170, 119, 28)) 1 / 1 / 0 stretch;
 `;
 
 export const TaskForm = styled.form`
@@ -37,7 +40,8 @@ font-size: 1.5rem;
 `
 
 export const UncompletedTasks = styled.span`
-color: #B38728;
+color: #B9B4AE;
+font-weight: 700;
 `;
 export const StyledInput = styled.input`
   padding: 0.625rem;
