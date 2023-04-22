@@ -5,8 +5,9 @@ Photo by <a href="https://unsplash.com/@paicooficial?utm_source=unsplash&utm_med
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I checked past projects for ideas, completed a Technigo e-commerce project, sketched my own design, selected necessary components and features, and utilized ChatGPT and forums for npm packages and code snippets. Ideally, I would have utilized styled components instead of index.css for the background image if given more time.
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://project-todo-smirrebinx.netlify.app/
