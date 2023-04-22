@@ -1,8 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const tasks = createSlice({
-  name: 'tasks',
-  initialState: {
+const initialState = {
     items: [
       { id: '1',
         text: 'Rain clothes',
@@ -23,22 +21,28 @@ const tasks = createSlice({
         text: 'The green backpacket',
         isChecked: false }
     ]
-  },
+  }
+
+const tasks = createSlice({
+  name: 'tasks',
+  initialState,
   reducers: {
     addNewTask: (store, action) => {
-      store.items = [...store.items, action.payload];
+      store.items = [...store.items, action.payload]
     },
     deleteTask: (store, action) => {
       store.items.filter((item) => item.id !== action.payload.id)
     },
     toggleItem: (store, action) => {
-      store.items.forEach((item) => {
-        if (item.id === action.payload) {
-          item.isChecked = !item.isChecked
-        }
-      })
-    }
+      const { id } = action.payload
+      store.items = store.items.map((item) => {
+        if (item.id === id) {
+          return { ...item, isChecked: !item.isChecked }
+      }
+      return item
+    })
   }
+}
 })
 
 export default tasks;

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch} from 'react-redux';
 import tasks from 'components/reducers/tasks';
 import styled from 'styled-components';
 
@@ -7,10 +7,6 @@ const InnerWrapper = styled.div`
 display: flex;
 flex-direction: column;
 align-items: center;
-`
-
-const AddInnerWrapper = styled.div`
-backround-color: blue;
 `
 
 const Input = styled.input`
@@ -30,31 +26,29 @@ const AddTask = () => {
   const dispatch = useDispatch()
   const onFormSubmit = (event) => {
     event.preventDefault();
-    const newTask = {
-      id: Date.now().toString(),
-      text: inputValue,
-      isChecked: false
-    }
-    dispatch(tasks.actions.newTask(newTask));
-    setInputValue('');
+  const newTask = {
+    id: Date.now().toString(),
+    text: inputValue,
+    complete: false
   }
+    dispatch(tasks.actions.addTask(newTask));
+    setInputValue('');
+    } 
 
   return (
-    <InnerWrapper>
-      <AddInnerWrapper>
+      <InnerWrapper>
         <form onSubmit={onFormSubmit}>
-          <label htmlFor="task-input">
+          <label htmlFor="addInput"
             <Input
               value={inputValue}
               type="text"
               placeholder="Add new thing"
               onChange={(event) => setInputValue(event.target.value)}
-              id="task-input" />
+              id="addInput" />
           </label>
           <SubmitBtn type="submit" disabled={inputValue.length === 0}>+</SubmitBtn>
         </form>
-      </AddInnerWrapper>
-    </InnerWrapper>
+      </InnerWrapper>
   )
 }
 

@@ -17,9 +17,6 @@ border-radius: 10px;
   margin-left: 70px;
 }
 `
-const TaskText = styled.div`
-font-size: 18px;
-`
 
 const DeleteBtn = styled.button`
 width: 30px;
@@ -32,31 +29,47 @@ border: solid grey;
 const TaskList = () => {
   const taskList = useSelector((store) => store.tasks.items)
   const dispatch = useDispatch();
-
-  const onCheckedToggle = (id) => {
-    dispatch(tasks.actions.toggleItem(id));
-  }
+  const taskToDo = taskList.filter((task) => !task.isChecked)
+  const completedTask = taskList.filter((task) => task.isChecked)
   const onDeleteTaskBtn = (id) => {
     dispatch(tasks.actions.deleteTask(id));
   }
 
   return (
     <section>
-      {taskList.map((singleTask, index) => {
+      <h2>At preschool</h2>
+      {completedTask.map((task) => {
         return (
           <InnerWrapper>
-            <label htmlFor={singleTask.id}>
+            <label htmlFor={task.id}>
               <input
-                key={singleTask.id}
+                key={task.id}
                 type="checkbox"
-                id={singleTask.id}
-                checked={singleTask.isChecked}
-                onChange={() => onCheckedToggle(singleTask.id)} />
+                checked={task.isChecked}
+                onChange={() => dispatch(tasks.actions.toggleChecked(task))} />
             </label>
-            <TaskText>{singleTask.text}</TaskText>
             <DeleteBtn
               type="button"
-              onClick={() => onDeleteTaskBtn(index)}>-
+              onClick={() => dispatch(tasks.actions.deleteTask(task))}>-
+            </DeleteBtn>
+          </InnerWrapper>
+        )
+      })}
+      <h2>Home</h2>
+      {taskToDo.map((task) => {
+        return (
+          <InnerWrapper>
+            <label htmlFor={task.id}>
+              <input
+                type="checkbox"
+                checked={task.checked}
+                key={task.id}
+                onChange={() => dispatch(task.actions.toggleChecked(task))} />
+              {task.text}
+            </label>
+            <DeleteBtn
+              type="button"
+              onClick={() => dispatch(tasks.actions.deleteTask(task))}>-
             </DeleteBtn>
           </InnerWrapper>
         )
