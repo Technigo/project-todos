@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const ProgressBar = () => {
   const allTasksToDo = useSelector((store) => store.tasks.items);
   const numberOfTasksDone = allTasksToDo.filter((item) => item.isDone).length;
-  const { width, height } = useWindowSize()
+  const [width, height] = useWindowSize()
 
   const doneTasks = () => {
     if (allTasksToDo.length === 0) {
@@ -24,7 +24,6 @@ const ProgressBar = () => {
             numberOfPieces={200}
             gravity={0.05}
             confettiSource={{ x: 0, y: 500, w: 1000, h: 1000 }} />
-
           <p>Woop! All finished!</p>
         </>
       )

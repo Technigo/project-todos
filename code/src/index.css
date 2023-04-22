@@ -9,7 +9,6 @@ body {
   background-image: url('../public/images/Bubbles.jpg');
   background-size: cover;
   background-position: center;
-  overflow: hidden;
 }
 
 code {
