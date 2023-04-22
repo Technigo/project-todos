@@ -13,10 +13,10 @@ const Header = () => {
 
   return (
     <div>
+      <Title>TO-DO LIST</Title>
       <div className="dateContainer">
         <p>{weekday} {day} {month}</p>
       </div>
-      <Title>TO-DO LIST</Title>
     </div>
   );
 };

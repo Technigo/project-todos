@@ -3,6 +3,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
 import Header from './Header';
 import AddTodo from './AddTodo';
+import { TaskList, CompletedTaskList } from './TodoListStyled';
+import { Button, Task } from './AddTodoStyled';
 
 const TodoList = () => {
   const dispatch = useDispatch()
@@ -15,6 +17,9 @@ const TodoList = () => {
     dispatch(todos.actions.deleteSingleTodo(todoId));
   }
 
+  const deleteCompletedTodo = (event, todoId) => {
+    dispatch(todos.actions.deleteSingleTodo(todoId));
+  }
   const deleteAllTodos = () => {
     if (window.confirm('Are you sure you want to delete all tasks?')) {
       dispatch(todos.actions.deleteAllTodos());
@@ -24,45 +29,46 @@ const TodoList = () => {
   return (
     <section>
       <Header />
-      <AddTodo />
-      <p>
-        You have completed {completedList.length} of {todoList.length + completedList.length} todos.
-      </p>
-      <ul>
+      <TaskList>
+        <AddTodo />
+
         {todoList.map((singleTodo) => {
           return (
-            <li key={singleTodo.id}>
-              {singleTodo.name}
+            <Task key={singleTodo.id}>
               <label htmlFor="CheckBox">
                 <input
                   type="checkbox"
                   checked={singleTodo.checked}
                   onChange={(event) => handleCheckbox(event, singleTodo.id)} />
               </label>
-              <button type="button" onClick={() => deleteTodo(singleTodo.id)}>✖️</button>
-            </li>
+              {singleTodo.name}
+              <button type="button" onClick={(event) => deleteTodo(event, singleTodo.id)}>✖️</button>
+            </Task>
           )
         })}
-      </ul>
-      <h2>Completed todos</h2>
-      <ul>
-        {completedList.map((singleTodo) => {
+
+      </TaskList>
+      <CompletedTaskList>
+        <p>
+        You have completed {completedList.length} of {todoList.length + completedList.length} todos.
+        </p>
+        {completedList.map((completedTodo) => {
           return (
 
-            <li key={singleTodo.id}>
-              {singleTodo.name}
+            <Task key={completedTodo.id}>
               <label htmlFor="CheckBox">
                 <input
                   type="checkbox"
-                  checked={singleTodo.checked}
-                  onChange={(event) => handleCheckbox(event, singleTodo.id)} />
+                  checked={completedTodo.checked}
+                  onChange={(event) => handleCheckbox(event, completedTodo.id)} />
               </label>
-              <button type="button" onClick={() => deleteTodo(singleTodo.id)}>✖️</button>
-            </li>
+              {completedTodo.name}
+              <button type="button" onClick={(event) => deleteCompletedTodo(event, completedTodo.id)}>✖️</button>
+            </Task>
           )
         })}
-      </ul>
-      <button type="button" onClick={() => deleteAllTodos()}>Empty List</button>
+      </CompletedTaskList>
+      <Button type="button" onClick={() => deleteAllTodos()}>Delete All</Button>
     </section>
   )
 }

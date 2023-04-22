@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import todos from 'reducers/todos';
-import { Button, Input } from './AddTodoStyled';
+import { Button, Input, Task } from './AddTodoStyled';
 
 const AddTodo = () => {
   const [inputValue, setInputValue] = useState('');
@@ -19,15 +19,17 @@ const AddTodo = () => {
   }
   return (
     <section>
-      <form onSubmit={onFormSubmit}>
-        <Input
-          value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)}
-          id="addTodoInput"
-          type="text"
-          placeholder="Enter new task" />
-        <Button type="submit">+</Button>
-      </form>
+      <Task>
+        <form onSubmit={onFormSubmit}>
+          <Input
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+            id="addTodoInput"
+            type="text"
+            placeholder="Enter new task here" />
+          <Button type="submit">+</Button>
+        </form>
+      </Task>
     </section>
   )
 }

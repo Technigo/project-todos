@@ -14,3 +14,11 @@ export const Input = styled.input`
   padding: 10px 20px;
   background-color: #FBFDFB;
 `
+
+export const Task = styled.div`
+  display: flex;
+  flex-direction: row;
+  border-bottom: dotted #cbcaca;
+  justify-content: space-between;
+  padding: 15px;
+`;
