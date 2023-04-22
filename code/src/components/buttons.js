@@ -46,6 +46,7 @@ color: rgba(106,246,211, 0.6);
   font-size: 2rem;
   margin-top: 0.6rem;
   margin-bottom: 0.6rem;
+  letter-spacing: 1px;
 }
 `
 
