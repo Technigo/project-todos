@@ -3,10 +3,11 @@ import { useDispatch, useSelector } from 'react-redux';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import tasks from '../reducers/task';
 import { StyledInput, Content, TaskForm, SecondHeadingLabel,
-  ThirdHeading, UncompletedTasks } from './TaskListStyling';
+  ThirdHeading, UncompletedTasks, TasksCompleted, TasksCompletedImage } from './TaskListStyling';
 import { AddButton, DeleteButton, DeleteAllButton,
   StyledIcon, StyledCheckbox, StyledCheckboxLabel,
   StyledTaskListItem, StyledTaskList } from './Global';
+import todoImage from '../assets/todo.svg';
 
 // Define a component for individual task item
 const TaskItem = ({ task, onToggle, onDeleteTask }) => (
@@ -65,6 +66,18 @@ const TaskList = () => {
     dispatch(tasks.actions.deleteAll());
   };
 
+  const renderCompletedImage = () => {
+    if (numUncompletedTasks === 0) {
+      return (
+        <>
+          <TasksCompletedImage src={todoImage} alt="All tasks completed" />
+          <TasksCompleted>All tasks completed!</TasksCompleted>
+        </>
+      );
+    }
+    return null;
+  };
+
   // Render the task list with inputs, buttons and individual task items
   return (
     <Content>
@@ -85,6 +98,7 @@ const TaskList = () => {
         <ThirdHeading>
         Uncompleted Tasks: <UncompletedTasks>{numUncompletedTasks}</UncompletedTasks>
         </ThirdHeading>
+        {renderCompletedImage()}
         <StyledTaskList>
           {listWithTasks.map((task) => (
             <TaskItem
