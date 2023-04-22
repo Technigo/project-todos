@@ -1,7 +1,7 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { notereminder } from 'reducers/reminders';
-import { TaskBox, TrashBtn, DeleteBox } from './Styling/GlobalStyle'
+import { TaskBox, TrashBtn, DeleteBox, RemoveBtn, TaskParagraph } from './Styling/GlobalStyle'
 
 export const NoteList = () => {
   const noteList = useSelector((store) => store.notes.items);
@@ -18,46 +18,35 @@ export const NoteList = () => {
   }
   return (
     <section>
-
       {noteList.map((singleNote) => {
         return (
 
           <TaskBox key={`${singleNote.id}`}>
+            <input
+              className="input-checkbox"
+              id={`note_with_id${singleNote.id}`}
+              type="checkbox"
+              value={singleNote.isDone}
+              onChange={() => onIsDoneCheckToggle(singleNote.id)} />
+
             <label htmlFor={`note_with_id${singleNote.id}`}>
-
-              <input
-                className="input-checkbox"
-                id={`note_with_id${singleNote.id}`}
-                type="checkbox"
-                value={singleNote.isDone}
-                onChange={() => onIsDoneCheckToggle(singleNote.id)} />
-
+              <TaskParagraph> {singleNote.todo} </TaskParagraph>
             </label>
-
-            <li key={singleNote.id}>
-              <p>
-                <span>
-                  {singleNote.todo}
-                </span>
-              </p>
-            </li>
 
             <TrashBtn
               type="button"
               onClick={() => onDeleteNoteBtnClick(singleNote.id)}>
               <i className="fa-regular fa-trash-can" />
             </TrashBtn>
-
           </TaskBox>
         )
       })}
       <DeleteBox>
-        Delete all
-        <TrashBtn
+        <RemoveBtn
           type="button"
           onClick={onDeleteAllBtnClick}>
-          <i className="fa-regular fa-trash-can" />
-        </TrashBtn>
+          Remove all tasks
+        </RemoveBtn>
       </DeleteBox>
     </section>
   )

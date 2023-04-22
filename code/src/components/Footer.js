@@ -21,7 +21,7 @@ export const Footer = () => {
         rel="noopener noreferrer">
         <i className="fa-brands fa-github" />
       </a>
-      <FootParagraph>Designed and created by<br />
+      <FootParagraph>Created by<br />
         <a href="mailto:johanna@leonsson.se">Johanna Leonsson</a>
       </FootParagraph>
     </Foot>

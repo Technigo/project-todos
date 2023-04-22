@@ -5,6 +5,8 @@
   --bg-color: #212121;
   --text-color: #fff;
   --hover-color: #E7FF86;
+  --fun-color: #ccff00;
+
 
   --main-color: #4d4c4c;
   --box-color: #312F2F;
@@ -30,11 +32,6 @@ form {
   margin: 10px 5px;
 }
 
-.input-checkbox {
-  width: 30px;
-  margin: 0;
-}
-
 .input-text {
   border: none;
   border-radius: 3px;
@@ -58,13 +55,8 @@ i:hover {
   color: var(--hover-color);
 }
 
-li {
+li, ul {
   list-style: none;
-  margin: 0;
-}
-
-ul {
-  list-style-type: none;
   margin: 0;
   padding: 0;
 }
@@ -77,4 +69,63 @@ a {
 
 a:hover{
   color: var(--hover-color);
+}
+
+[type="checkbox"] {
+  opacity: 0;
+}
+
+[type="checkbox"] + label {
+  position: relative;
+  padding-left: 30px;
+  cursor: pointer;
+  display: inline-block;
+  color:var(--text-color);
+  line-height: 12px;
+}
+
+[type="checkbox"] + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  outline: 1px solid var(--text-color);
+  background: var(--main-color);
+  border-radius: 50%;
+}
+
+[type="checkbox"]:checked + label::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  outline: 1px solid var(--hover-color);
+  background: var(--fun-color);
+  border-radius: 50%;
+}
+
+[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  background-size: contain;
+  transform: scale(1);
+  opacity: 1;
+}
+
+[type="checkbox"]:not(:checked) + label::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 12px;
+  height: 12px;
+  opacity: 0;
 }

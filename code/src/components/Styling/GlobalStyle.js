@@ -69,15 +69,19 @@ export const TaskBox = styled.div`
     padding: 20px;
     margin-top: 10px;
     border-radius: 10px;
-  
 `
+export const TaskParagraph = styled.p`
+  font-size: 14px;
+  font-weight: 300;
+  margin: 0;
+`;
 
 export const TrashBtn = styled.button`
   background-color: transparent;
   border: none;
   cursor: pointer;
   i {
-    font-size: 20px;
+    font-size: 18px;
     color: var(--main-color);
     padding: 0;
     &:hover {
@@ -87,26 +91,25 @@ export const TrashBtn = styled.button`
 `
 export const DeleteBox = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     background-color: var(--box-color);
-    width: 70vw;
-    max-width: 300px;
+    max-width: 118px;
     height: 18px;
-    padding: 10px 20px;
-    margin-top: 10px;
+    padding: 10px 10px;
+    margin: 10px auto;
     border-radius: 10px;
-    font-size: 13px;
-    font-weight: 700;
-    color: var(--main-color);
-    i {
-    font-size: 15px;
-    color: var(--main-color);
-    padding-bottom: 6px;
-    &:hover {
-      color: var(--hover-color);
-    }
-  }
+`
+export const RemoveBtn = styled.button`
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: var(--main-color);
+  font-size: 13px;
+  font-weight: 700;
+  &:hover {
+    color: var(--hover-color);
+   }
 `
 
 export const Foot = styled.div`
@@ -119,7 +122,7 @@ export const Foot = styled.div`
   i {
     font-size: 20px;
     color: var(--text-color);
-    padding: 0 18px 0 18px;
+    padding: 0 18px 0 15px;
     &:hover {
       color: var(--hover-color);
     }
