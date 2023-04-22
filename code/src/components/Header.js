@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
 
@@ -6,6 +7,7 @@ const Header = () => {
   const [todoCount, setTodoCount] = useState(0);
   const [isDoneCount, setIsDoneCount] = useState(0);
 
+  // initial state is only 0 after the clearAll-funtion has been used once, so it's necessary to check, lest it displays -1 in browser
   useEffect(() => {
     if (todoList.length === 0) {
       setTodoCount(0);
@@ -13,13 +15,15 @@ const Header = () => {
       return;
     }
 
-    if (todoList.length === 1 && todoList[0].id === '') {
+    // if the initial nameless object is still in the state (upon first visit), counter is set to 0
+    if (todoList.length === 1 && todoList[0].id === 'initialId') {
       setTodoCount(0);
       setIsDoneCount(0);
       return;
     }
 
-    setTodoCount(todoList.length);
+    const filteredList = todoList.filter((todo) => todo.id !== 'initialId');
+    setTodoCount(filteredList.length);
     setIsDoneCount(todoList.filter((todo) => todo.isDone).length);
   }, [todoList]);
 
