@@ -41,6 +41,11 @@ const StyledInput = styled.input`
   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 30px;
   backdrop-filter: blur(1.5px);
   border: 1px solid rgba(255, 255, 255, 0.12);
+
+  // Fixing that the placeholder text is very dark in some browsers
+  &::placeholder {
+    color: #f5f5f5;
+  }
 `
 const Add = styled.img`
   height: 2rem;

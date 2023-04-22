@@ -12,18 +12,6 @@ export const CheckBox = styled.input`
   display: inline-block;
   cursor: pointer;
 
-  &:checked:before {
-    content: '';
-    position: absolute;
-    width: 2rem;
-    height: 2rem;
-    opacity: 0;
-    background-color: #438FE0;
-    border-radius: 3px;
-    transform: translate(-50%, -50%) scale(1);
-    transition: 0.3s;
-  }
-
   &:after {
     content: '';
     position: absolute;
