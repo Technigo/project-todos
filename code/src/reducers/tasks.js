@@ -1,8 +1,26 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  items: [],
-  isEmpty: true
+  items: [
+    { id: 1,
+      name: 'Code along',
+      isComplete: false,
+      timeStamp: 'Wed Apr 19 2023',
+      dueDate: 'Fri Apr 21 2023',
+      category: 'Work' },
+    { id: 2,
+      name: 'Laundry',
+      isComplete: false,
+      timeStamp: 'Wed Apr 19 2023',
+      dueDate: 'Thur Apr 20 2023',
+      category: 'Home' },
+    { id: 3,
+      name: 'Organise closet',
+      isComplete: true,
+      timeStamp: 'Wed Apr 19 2023',
+      dueDate: 'Whenever',
+      category: 'Home' }],
+  isEmpty: false
 }
 const tasks = createSlice({
   name: 'tasks',
@@ -27,7 +45,6 @@ const tasks = createSlice({
       const allComplete = state.items.every((task) => task.isComplete);
       state.items.forEach((task) => {
         task.isComplete = !allComplete;
-        state.isEmpty = true;
       });
     },
     clearAll: (state) => {

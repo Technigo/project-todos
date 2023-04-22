@@ -46,34 +46,35 @@ const AddTask = () => {
   return (
     <section>
       <AddTaskWrapper onSubmit={onFormSubmit}>
-        <select
-          value={selectedCategory}
-          onChange={(event) => setSelectedCategory(event.target.value)}>
-          <option value="">Select a category</option>
-          <option value="Home">Home</option>
-          <option value="Work">Work</option>
-          <option value="Shopping">Buy</option>
-          <option value="Other">Other</option>
-        </select>
+        <label htmlFor="addTaskInput">
+          <input
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+            id="addTaskInput"
+            type="text"
+            placeholder="Add new task"
+            required />
+        </label>
         <AddTaskChildDiv>
-          <label htmlFor="addTaskInput">
-            <input
-              value={inputValue}
-              onChange={(event) => setInputValue(event.target.value)}
-              id="addTaskInput"
-              type="text"
-              placeholder="Add new task"
-              required />
-          </label>
+          <select
+            value={selectedCategory}
+            onChange={(event) => setSelectedCategory(event.target.value)}>
+            <option className="select-title" value="">Pick a category</option>
+            <option value="Home">Home</option>
+            <option value="Work">Work</option>
+            <option value="Shopping">Buy</option>
+            <option value="Other">Other</option>
+          </select>
           <DatePicker
-            id="datePicker"
+            className="datePicker"
             showIcon
             selected={dueDate}
             onChange={(date) => setDueDate(date)}
-            placeholderText="Due"
+            placeholderText="📅 Due by"
             dateFormat="yyyy-MM-dd" />
-          <Button smallBtn type="submit"><FontAwesomeIcon icon={faCirclePlus} size="xl" /></Button>
+          <Button smallBtn type="submit"><FontAwesomeIcon icon={faCirclePlus} size="lg" /></Button>
         </AddTaskChildDiv>
+
       </AddTaskWrapper>
     </section>
   )
