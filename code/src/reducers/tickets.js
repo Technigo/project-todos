@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   items: [
     {
-      id: '',
+      id: 'initialId',
       name: '',
       isDone: false,
       isInVault: false,
