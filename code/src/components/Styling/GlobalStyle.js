@@ -44,6 +44,20 @@ export const AddBtn = styled.button`
   }  
 `;
 
+export const CounterBox = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--main-color);
+    height: 10px;
+    padding: 2px 20px;
+    margin-top: 10px;
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-color);  
+`
+
 export const TaskBox = styled.div`
     display: flex;
     justify-content: space-between;
@@ -93,7 +107,6 @@ export const DeleteBox = styled.div`
       color: var(--hover-color);
     }
   }
-  
 `
 
 export const Foot = styled.div`

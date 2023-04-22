@@ -10,7 +10,7 @@ const initialState = {
     {
       id: '238uskfhslkjdfh99',
       todo: 'Jigglypuff',
-      isDone: true
+      isDone: false
     },
     {
       id: '238uskfhslkjdfh100',

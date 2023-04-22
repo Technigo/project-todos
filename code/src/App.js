@@ -6,6 +6,7 @@ import { AddNote } from 'components/AddNote';
 import { notereminder } from 'reducers/reminders'
 import { Header } from 'components/Header';
 import { Footer } from 'components/Footer';
+import { TotalCompleteItems } from 'components/Counter';
 import { MainBox } from './components/Styling/GlobalStyle'
 
 export const App = () => {
@@ -18,6 +19,7 @@ export const App = () => {
       <MainBox>
         <Header />
         <AddNote />
+        <TotalCompleteItems />
         <NoteList />
         <Footer />
       </MainBox>

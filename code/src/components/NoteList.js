@@ -22,7 +22,7 @@ export const NoteList = () => {
       {noteList.map((singleNote) => {
         return (
 
-          <TaskBox>
+          <TaskBox key={`${singleNote.id}`}>
             <label htmlFor={`note_with_id${singleNote.id}`}>
 
               <input
