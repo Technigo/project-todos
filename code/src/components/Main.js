@@ -12,6 +12,7 @@ const StyledMain = styled.main`
 `
 
 const MainContainer = styled.div`
+  margin-top: 2rem;
   width: 320px;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.15);

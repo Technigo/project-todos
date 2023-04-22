@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import tasks from 'reducers/tasks'
 import styled from 'styled-components'
 import { CheckBox } from './Checkbox'
-import MinusIcon from '../minus-square-svgrepo-com(1).svg'
+import MinusIcon from '../img/minus-square-svgrepo-com.svg'
 
 const TaskListLi = styled.li`
   list-style: none;
@@ -15,6 +15,11 @@ const TaskListLi = styled.li`
 const Delete = styled.img`
   height: 2rem;
   align-self: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    transform: scale(1.2);
+  }
 `
 
 const StyledLabel = styled.label`

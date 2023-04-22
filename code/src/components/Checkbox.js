@@ -4,7 +4,7 @@ export const CheckBox = styled.input`
   -webkit-appearance: none;
   appearance: none;
   position: relative;
-  background: #e8e8e8;
+  background: #f5f5f5;
   width: 2rem;
   height: 2rem;
   border-radius: 3px;
