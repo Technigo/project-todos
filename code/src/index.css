@@ -143,3 +143,17 @@ code {
   color: pink;
   box-shadow: -5px 5px 0px 0px pink;
 }
+
+
+#datePicker {
+      padding: 3px;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 6em;
+    }
+
+    .react-datepicker__input-container {
+        display: flex;
+        margin:0;
+        padding:0;
+    }

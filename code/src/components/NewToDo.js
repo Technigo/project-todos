@@ -1,55 +1,29 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
-import uniqid from 'uniqid';
 import { tasks } from 'reducers/tasks'
-import styled from 'styled-components'
-
-export const TextInput = styled.input`
-  background: #FFFFFF;
-  border: 2px solid pink;
-  outline: none;
-  border-radius: 8px;
-  height: 48px;
-  width: 100%;
-  box-sizing: border-box;
-  padding: 5px 15px;
-  font-size: 18px;
-
-    &:focus {
-      outline: none;
-      caret-color: #f85f36;
-    }
-
-    &:hover {
-      border: 2px solid #f85f36;
-    }
-
-   @media (max-width: 768px) {
-  }
-`
-export const ToDoForm = styled.form`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-`
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
+import { TextInput, ToDoForm } from './style/GlobalStyle';
 
 export const NewToDo = () => {
   const [inputValue, setInputValue] = useState('');
+  const [dueDate, setDueDate] = useState('');
   const dispatch = useDispatch();
 
   const onFormSubmit = (event) => {
     event.preventDefault();
     const newToDo = {
-      id: uniqid(),
+      id: Date.now().toString(),
       text: inputValue.charAt(0).toUpperCase() + inputValue.slice(1),
+      due: dueDate ? dueDate.toDateString() : '-',
       complete: false,
       priority: false
     };
     dispatch(tasks.actions.addItem(newToDo));
     dispatch(tasks.actions.sortItems());
     setInputValue('');
-    // https://www.random.org/
+    setDueDate('');
   }
 
   return (
@@ -64,8 +38,12 @@ export const NewToDo = () => {
       </label>
       <div style={{ display: 'flex', justifyContent: 'space-between' }}>
         <div>
-          <p>Due: ....</p>
-          <p>select project</p>
+          <DatePicker
+            id="datePicker"
+            selected={dueDate}
+            onChange={(date) => setDueDate(date)}
+            placeholderText="Due"
+            dateFormat="yyyy-MM-dd" />
         </div>
         <button
           type="submit"
