@@ -20,7 +20,7 @@ export const CheckBox = styled.input`
     transform: translate(-50%, -50%) scale(0);
     width: 1.5rem;
     height: 1.5rem;
-    background-color: #438FE0;
+    background-color: #8abd76;
     border-radius: 3px;
     transition: 0.3s;
   }

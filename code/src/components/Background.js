@@ -19,7 +19,7 @@ const Background = () => {
       options={{
         fullScreen: false,
         background: {
-          image: 'linear-gradient(19deg, rgba(76,161,250,1) 0%, rgba(151,175,223,1) 62%, rgba(247,192,188,1) 100%)'
+          image: 'linear-gradient(19deg, rgba(34,193,195,1) 0%, rgba(141,190,122,1) 68%, rgba(253,187,45,1) 100%)'
         },
         particles: {
           number: { value: 40, density: { enable: true, value_area: 500 } },
