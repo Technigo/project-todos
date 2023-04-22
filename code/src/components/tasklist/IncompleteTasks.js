@@ -20,6 +20,7 @@ export const IncompleteTasks = () => {
           <EachTask key={singleTask.id} singleTask={singleTask} />
         ))}
       </section>
+      <ButtonStyles type="button" onClick={() => dispatch(tasks.actions.sortCategories())}>Sort by Category</ButtonStyles>
       <ButtonStyles type="button" onClick={() => dispatch(tasks.actions.completeAll())}>Complete All</ButtonStyles>
     </IncompleteListStyles>
   )

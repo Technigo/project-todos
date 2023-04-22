@@ -1,13 +1,14 @@
 import { EachTask } from 'components/eachTask/EachTask';
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { ButtonStyles } from 'components/buttons/Buttons.styles';
+import { tasks } from 'reducers/tasks';
 import { CompleteListStyles } from './TaskList.styles';
-// import { tasks } from 'reducers/tasks';
 
 export const CompleteTasks = () => {
   const taskList = useSelector((store) => store.tasks.items)
   const completeTasks = taskList.filter((item) => item.complete === true)
-  // const dispatch = useDispatch();
+  const dispatch = useDispatch();
   return (
     <CompleteListStyles>
       <h3>All Done</h3>
@@ -19,6 +20,7 @@ export const CompleteTasks = () => {
           <EachTask key={singleTask.id} singleTask={singleTask} />
         ))}
       </section>
+      <ButtonStyles type="button" onClick={() => dispatch(tasks.actions.sortCategories())}>Sort by Category</ButtonStyles>
     </CompleteListStyles>
   )
 }

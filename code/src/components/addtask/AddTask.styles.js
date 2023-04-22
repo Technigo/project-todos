@@ -5,11 +5,11 @@ export const AddTaskStyles = styled.section`
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* padding: 0 0 25px 0; */
+    padding: 15px;
     width: 90vw;
     max-width: 500px;
     /* height: 60vw; */
-    max-height: 350px; 
+    max-height: 550px; 
     margin: 0 auto;
     border: 3px black solid;
     border-radius: 12px;
@@ -40,17 +40,21 @@ label {
     display: flex;
     flex-direction: column;
     max-width: 350px;
-
 }
 
-input {
+input, select {
     font-family: 'Merriweather Sans', sans-serif;
-    width: 300px;
+    width: 275px;
 }
 
-form div {
+/* select {
+    font-family: 'Merriweather Sans', sans-serif;
+    width: 302px;
+} */
+
+/* form div {
     display: flex;
     flex-direction: column;
     align-items: center;
-}
+} */
 `

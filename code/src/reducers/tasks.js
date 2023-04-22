@@ -5,28 +5,28 @@ const initialState = {
     // {
     //   id: 1681904108559,
     //   task: 'Make a to do app',
-    //   // label: 'School',
+    //   category: 'School',
     //   due: 1681904108559,
     //   complete: false
-    // }
+    // },
     // {
     //   id: 1681904108560,
     //   task: 'Shower',
-    //   // label: 'School',
+    //   category: 'School',
     //   due: 1681904108560,
     //   complete: false
     // },
     // {
     //   id: 1681904108561,
     //   task: 'Meet mentor',
-    //   // label: 'School',
+    //   category: 'School',
     //   due: 1681904108561,
     //   complete: false
     // },
     // {
     //   id: 1681904108562,
     //   task: 'Demo design project',
-    //   // label: 'School',
+    //   category: 'School',
     //   due: 1681904108562,
     //   complete: false
     // }
@@ -62,6 +62,15 @@ export const tasks = createSlice({
     completeAll: (store) => {
       // eslint-disable-next-line no-return-assign
       store.items.map((item) => item.complete = true)
+    },
+
+    sortCategories: (store) => {
+      store.items.sort((x, y) => {
+        const a = x.category.toUpperCase();
+        const b = y.category.toUpperCase();
+        // eslint-disable-next-line no-nested-ternary, eqeqeq
+        return a == b ? 0 : a > b ? 1 : -1;
+      });
     }
   }
 })

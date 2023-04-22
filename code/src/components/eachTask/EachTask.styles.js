@@ -26,10 +26,20 @@ export const TaskContentStyles = styled.div`
 p {
     margin: 2px 0;
 }
+
+span {
+    font-size: 12px;
+}
 `
 
 export const DeleteTaskStyles = styled.div`
     display: flex;
     flex-direction: column;
     align-self: flex-start;
+`
+
+export const TimestampStyles = styled.span`
+    font-size: 12px;
+    /* font-style: italic; */
+    color: ${(props) => props.textColor || 'black'};
 `
