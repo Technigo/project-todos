@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const MainContainer = styled.div`
 display:flex;
 flex-direction: column;
-max-height:100vh;
+height:100vh;
 gap:1rem;
 background-color: var(--white);
 padding: 10px 10px  0 10px;
