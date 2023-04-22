@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const HeaderText = styled.div`
 font-size: 25px;
+font-family: 'Quicksand', sans-serif;
 height: 100px;
 background: pink;
 margin-bottom: 20px;

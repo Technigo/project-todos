@@ -3,15 +3,27 @@ import { useDispatch, useSelector } from 'react-redux';
 import tasks from 'components/reducers/tasks';
 import styled from 'styled-components';
 
+const List = styled.div`
+display: flex;
+flex-direction: column;
+background-color: beige;
+`
+const ListHeader = styled.div`
+align-self: center;
+font-size: 18px;
+font-family: 'Quicksand', sans-serif;
+margin-bottom: -20px;
+`
+
 const InnerWrapper = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 justify-content: center;
-margin-top: 20px;
 margin-left: 40px;
-background-color: beige;
 padding: 10px;
 width: 400px;
+font-size: 18px;
+font-family: 'Quicksand', sans-serif;
 border-radius: 10px;
 [type="checkbox"]{
   margin-left: 70px;
@@ -19,11 +31,13 @@ border-radius: 10px;
 `
 
 const DeleteBtn = styled.button`
-width: 30px;
-height: 30px;
-border-radius: 50px;
+background-color: white;
+font-size: 15px;
+font-family: 'Quicksand', sans-serif;
+width: 25px;
+height: 25px;
 margin-left: 80px;
-border: solid grey;
+border-style: none;
 `
 
 const TaskList = () => {
@@ -36,8 +50,8 @@ const TaskList = () => {
   } */
 
   return (
-    <section>
-      <h2>At preschool</h2>
+    <List>
+      <ListHeader><h2>Pree School</h2></ListHeader>
       {completedTask.map((task) => {
         return (
           <InnerWrapper>
@@ -51,12 +65,13 @@ const TaskList = () => {
             {task.text}
             <DeleteBtn
               type="button"
-              onClick={() => dispatch(tasks.actions.deleteTask(task))}>-
+              onClick={() => dispatch(tasks.actions.deleteTask(task))}>X
             </DeleteBtn>
           </InnerWrapper>
         )
       })}
-      <h2>Home</h2>
+      
+      <ListHeader><h2>Home</h2></ListHeader>
       {taskToDo.map((task) => {
         return (
           <InnerWrapper>
@@ -66,16 +81,16 @@ const TaskList = () => {
                 checked={task.isChecked}
                 key={task.id}
                 onChange={() => dispatch(tasks.actions.toggleItem(task))} />
-              {task.text}
             </label>
+            {task.text}
             <DeleteBtn
               type="button"
-              onClick={() => dispatch(tasks.actions.deleteTask(task))}>-
+              onClick={() => dispatch(tasks.actions.deleteTask(task))}>X
             </DeleteBtn>
           </InnerWrapper>
         )
       })}
-    </section>
+    </List>
   )
 }
 
