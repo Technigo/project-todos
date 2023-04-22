@@ -1,7 +1,7 @@
 # Project Todos
 
 This is a React Redux app that allows you to manage tasks. You can add, remove, and mark tasks as completed or uncompleted, and the app will display a count of all tasks or all uncompleted tasks. Redux Toolkit is used to manage state and provide functionality such as creating slices, reducers, and actions, as well as working with immutability and structuring the store.
-Photo by <a href="https://unsplash.com/@kiwihug?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Kiwihug</a> on <a href="https://unsplash.com/backgrounds/art/paper?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+Photo by <a href="https://unsplash.com/@paicooficial?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Paico Oficial</a> on <a href="https://unsplash.com/photos/7jFMs5vzsSQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 ## The problem
 
