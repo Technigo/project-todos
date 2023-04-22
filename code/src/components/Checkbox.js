@@ -10,7 +10,6 @@ export const CheckBox = styled.input`
   border-radius: 3px;
   margin-right: 0.5em;
   display: inline-block;
-  oborder: 1px solid blue;
   cursor: pointer;
 
   &:checked:before {
@@ -19,7 +18,7 @@ export const CheckBox = styled.input`
     width: 2rem;
     height: 2rem;
     opacity: 0;
-    background-color: green;
+    background-color: #60AB80;
     border-radius: 3px;
     transform: translate(-50%, -50%) scale(1);
     transition: 0.3s;
@@ -33,7 +32,7 @@ export const CheckBox = styled.input`
     transform: translate(-50%, -50%) scale(0);
     width: 1.5rem;
     height: 1.5rem;
-    background-color: green;
+    background-color: #60AB80;
     border-radius: 3px;
     transition: 0.3s;
   }
