@@ -1,12 +1,20 @@
 /*eslint-disable*/
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import pokemons from 'reducers/pokemon';
 
 const PokemonList = () => {
-  const pokemonList = useSelector((store) => store.pokemons.items)
   const dispatch = useDispatch();
 
+  useEffect(() => {
+    const pokemonsFromLocalStorage = JSON.parse(localStorage.getItem('pokemonList'))
+    if (pokemonsFromLocalStorage) {
+      dispatch(pokemons.actions.setUpStore(pokemonsFromLocalStorage))
+    }
+  }, [])
+
+  const pokemonList = useSelector((store) => store.pokemons.items)
+  
   const onDeleteSinglePokemonBtnClick = (id) => {
     dispatch(pokemons.actions.deleteSinglePokemon(id));
   }
@@ -24,10 +32,10 @@ const PokemonList = () => {
                 <button
                   type="button"
                   onClick={() => onDeleteSinglePokemonBtnClick(singlePokemon.id)}>
-                      Delete this Pokemon
+                    Remove task
                 </button>
                 <label htmlFor={`pokemon_with_id${singlePokemon.id}`}>
-                    Is this one done?
+                    Task completed
                   <input id={`pokemon_with_id${singlePokemon.id}`} type="checkbox" value={singlePokemon.isCaught} onChange={() =>
                     onIsCaughtCheckboxToggle(singlePokemon.id)} /></label>
               </p>

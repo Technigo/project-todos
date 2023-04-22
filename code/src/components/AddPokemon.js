@@ -29,13 +29,13 @@ const AddPokemon = () => {
 
   return (
     <section>
-      <button type="button" onClick={onDeleteYourPokemonBtnClick}>DELETE YOUR Pokemons</button>
+      <button type="button" onClick={onDeleteYourPokemonBtnClick}>Delete all tasks</button>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addPokemonInput">
-        Add your new Pokemon here.
-          <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addPokemonInput" type="text" required />
+        Add your new task here.
+          <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addPokemonInput" type="text" placeholder="Write your to do here" required />
         </label>
-        <button type="submit"> Add now!</button>
+        <button type="submit"> Add task!</button>
       </form>
     </section>
   )

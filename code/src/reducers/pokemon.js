@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [
-    {
+   /* {
       id: 'random101',
       name: 'Jigglypuff',
       isCaught: false
@@ -22,7 +22,7 @@ const initialState = {
       id: 'random104',
       name: 'Oddish',
       isCaught: true
-    }
+    }*/
   ]
 }
 // here we can addToDo, deleteToDo, checkToDo etc.
@@ -31,11 +31,16 @@ const pokemons = createSlice({
   name: 'pokemons',
   initialState,
   reducers: {
+    setUpStore: (store, action) => {
+      store.items = action.payload;
+    },
     addPokemon: (store, action) => {
       store.items = [action.payload, ...store.items];
+      localStorage.setItem('pokemonList', JSON.stringify(store.items));
     },
     deleteAllPokemon: (store) => {
       store.items = [];
+      localStorage.setItem('pokemonList', JSON.stringify(store.items));
     },
     deleteSinglePokemon: (store, action) => {
       const id = action.payload;
@@ -44,6 +49,7 @@ const pokemons = createSlice({
       const foundIndex = copyOfPokemonArrayFromStore.findIndex(condition);
       copyOfPokemonArrayFromStore.splice(foundIndex, 1);
       store.items = copyOfPokemonArrayFromStore;
+      localStorage.setItem('pokemonList', JSON.stringify(store.items));
     },
     toggleIfPokemonIsCaught: (store, action) => {
       const id = action.payload;
@@ -53,6 +59,7 @@ const pokemons = createSlice({
       copyOfPokemonArrayFromStore[foundIndex].isCaught =
       !copyOfPokemonArrayFromStore[foundIndex].isCaught;
       store.items = copyOfPokemonArrayFromStore;
+      localStorage.setItem('pokemonList', JSON.stringify(store.items));
     }
   }
 });
