@@ -1,7 +1,14 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import { createSlice } from '@reduxjs/toolkit';
 
-const hideInput = () => {
-  return <div>hideInput</div>;
-};
+const initialState = true;
 
-export default hideInput;
+export const hideInputField = createSlice({
+  name: 'hideInputField',
+  initialState,
+  reducers: {
+    hide: (store, action) => {
+      store.hide = !store.hide;
+    }
+  }
+});
