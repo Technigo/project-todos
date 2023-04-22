@@ -38,6 +38,7 @@ export const AddTask = () => {
   )
 }
 
+// Styled components
 const Wrapper = styled.section`
   margin-top: 2rem;
   width: 320px;
@@ -87,7 +88,9 @@ background: #fee4ed;
 border: none;
 margin: 1rem 1rem 1rem 0.5rem;
 cursor: pointer;
+transition: 0.1s;
 &:hover {
-  text-decoration: underline;
+  box-shadow: 1px 1px 6px #888888;
+  transition: 0.1s;
 }
 `

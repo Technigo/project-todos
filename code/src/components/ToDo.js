@@ -4,6 +4,17 @@ import { TaskList } from './TaskList';
 import { AddTask } from './AddTask'
 import Clip from './Assets/clip.png'
 
+export const ToDo = () => {
+  return (
+    <MainWrapper>
+      <ClipImage src={Clip} />
+      <AddTask />
+      <TaskList />
+    </MainWrapper>
+  )
+}
+
+// Styled components
 const MainWrapper = styled.main`
  width: 360px;
  margin: 100px auto 20px auto;
@@ -21,13 +32,3 @@ height: 100px;
 width: 100px;
 margin-top: -7rem;
 `
-
-export const ToDo = () => {
-  return (
-    <MainWrapper>
-      <ClipImage src={Clip} />
-      <AddTask />
-      <TaskList />
-    </MainWrapper>
-  )
-}

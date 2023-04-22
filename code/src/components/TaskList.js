@@ -80,7 +80,7 @@ margin-top: 2rem
 `
 
 const ListSectionWrapper = styled.div`
-margin-bottom: 2rem;
+margin-bottom: 3.5rem;
 `
 
 const TabWrapper = styled.div`
@@ -99,8 +99,8 @@ const Tab = styled.img`
 
 const TabText = styled.h2`
   font-weight: 700;
-  font-size: 1.7rem;
-  background-color: #E2E2E2;
+  font-size: 1.8rem;
+  background-color: #ddf3ff;
   padding: 3px 5px;
   border-radius: 5px;
   width: fit-content;
@@ -121,7 +121,7 @@ const Label = styled.label`
   text-align: left;
   margin: auto;
   background-color: transparent;
-  font-size: 24px;
+  font-size: 28px;
   ${(props) => props.dashed && css`
   text-decoration: line-through;
   `}
@@ -135,13 +135,12 @@ const Input = styled.input`
 const ButtonWrapper = styled.div`
 height: 35px;
 width: 290px;
-
 display: block;
 `
 
 const Button = styled.button`
 background: transparent;
-font-size: 24px;
+font-size: 26px;
 border: none;
 cursor: pointer;
 ${(props) => props.deleteAll && css`
