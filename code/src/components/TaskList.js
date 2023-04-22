@@ -31,9 +31,9 @@ const TaskList = () => {
   const dispatch = useDispatch();
   const taskToDo = taskList.filter((task) => !task.isChecked)
   const completedTask = taskList.filter((task) => task.isChecked)
-  const onDeleteTaskBtn = (id) => {
+  /* const onDeleteTaskBtn = (id) => {
     dispatch(tasks.actions.deleteTask(id));
-  }
+  } */
 
   return (
     <section>
@@ -46,8 +46,9 @@ const TaskList = () => {
                 key={task.id}
                 type="checkbox"
                 checked={task.isChecked}
-                onChange={() => dispatch(tasks.actions.toggleChecked(task))} />
+                onChange={() => dispatch(tasks.actions.toggleItem(task))} />
             </label>
+            {task.text}
             <DeleteBtn
               type="button"
               onClick={() => dispatch(tasks.actions.deleteTask(task))}>-
@@ -62,9 +63,9 @@ const TaskList = () => {
             <label htmlFor={task.id}>
               <input
                 type="checkbox"
-                checked={task.checked}
+                checked={task.isChecked}
                 key={task.id}
-                onChange={() => dispatch(task.actions.toggleChecked(task))} />
+                onChange={() => dispatch(tasks.actions.toggleItem(task))} />
               {task.text}
             </label>
             <DeleteBtn

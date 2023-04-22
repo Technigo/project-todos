@@ -1,33 +1,33 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-    items: [
-      { id: '1',
-        text: 'Rain clothes',
-        isChecked: true },
-      { id: '2',
-        text: 'Cap',
-        isChecked: true },
-      { id: '3',
-        text: 'Sun Lotion(half left)',
-        isChecked: true },
-      { id: '4',
-        text: 'Extra pants(2)',
-        isChecked: false },
-      { id: '5',
-        text: 'Jacket, yellow one',
-        isChecked: false },
-      { id: '6',
-        text: 'The green backpacket',
-        isChecked: false }
-    ]
-  }
+  items: [
+    { id: '1',
+      text: 'Rain clothes',
+      isChecked: false },
+    { id: '2',
+      text: 'Cap',
+      isChecked: true },
+    { id: '3',
+      text: 'Sun Lotion',
+      isChecked: true },
+    { id: '4',
+      text: 'Extra pants(2)',
+      isChecked: true },
+    { id: '5',
+      text: 'Jacket',
+      isChecked: false },
+    { id: '6',
+      text: 'The green backpacket',
+      isChecked: false }
+  ]
+}
 
 const tasks = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
-    addNewTask: (store, action) => {
+    addTask: (store, action) => {
       store.items = [...store.items, action.payload]
     },
     deleteTask: (store, action) => {
@@ -38,11 +38,11 @@ const tasks = createSlice({
       store.items = store.items.map((item) => {
         if (item.id === id) {
           return { ...item, isChecked: !item.isChecked }
-      }
-      return item
-    })
+        }
+        return item
+      })
+    }
   }
-}
 })
 
 export default tasks;
