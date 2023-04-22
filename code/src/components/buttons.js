@@ -27,7 +27,7 @@ letter-spacing: 3px;
     margin-bottom: 0;
 }
 &.isDone {
-color: lightgray;
+color: rgba(106,246,211, 0.6);
 }
 &.isDone::after {
   color: black;
@@ -53,7 +53,7 @@ export const HandleTODOButton = styled.button`
 color: seashell;
 width:30%;
 font-family: 'Ubuntu Condensed', sans-serif;
-font-size:1.3rem;
+font-size:1rem;
 margin-bottom: 0.4rem;
 height: 2.6rem;
 
@@ -61,13 +61,25 @@ height: 2.6rem;
 background: rgba(90, 56, 92, 0.7);
 border-radius: 4px;
 box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+
 backdrop-filter: blur(5px);
 -webkit-backdrop-filter: blur(5px);
+
 border: none;
 ${(props) => props.isDone && 'color: black;'}
 ${(props) => (props.isDone && 'background: rgba(177, 211, 196, 0.6)')};
 ${(props) => props.isPrioritized && 'color: black;'}
 ${(props) => (props.isPrioritized && 'background: rgba(177, 211, 196, 0.6)')};
+transition: all 0.2s ease-in-out;
+&:hover {
+  background: rgba(106,246,211, 0.4);
+}
+@media screen and (min-width: 320px) {
+  font-size:1.1rem;
+}
+@media screen and (min-width: 667px) {
+  font-size:1.3rem;
+}
 `
 
 export const AddButton = styled.button`
@@ -78,6 +90,7 @@ background: transparent;
 `
 export const ClearButtons = styled.button`
 height: 2rem;
+font-family: 'Ubuntu Condensed', sans-serif;
 font-size:1.2rem;
 padding-left: 0.6rem;
 padding-right: 0.6rem;
@@ -95,4 +108,7 @@ border: none;
   background-color: ${(props) => (props.clicked ? 'black' : '')};
   color: ${(props) => (props.clicked ? 'white' : 'seashell')};
   transition: all 0.2s ease-in-out;
+  &:hover {
+  background: rgba(106,246,211, 0.4);
+}
 `;

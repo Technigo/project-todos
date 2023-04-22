@@ -51,7 +51,7 @@ border: 1px solid rgba(255, 255, 255, 0.25);
 }
 
 section {
-  width: 100%;
+  width: 98%;
   max-width: 540px;
 }
 
@@ -69,8 +69,6 @@ section {
   display: none;
 } /* this hides the scrollbars in Chrome and Safari */
 
-.todoContainer {
-}
 
 .buttonContainer {
   display: flex;
@@ -109,16 +107,31 @@ input {
   border: none;
 }
 
+input:focus {
+  outline: 2px solid #6af6d3;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+
 #submitIcon {
   height: 100%;
   padding-right: 1rem;
   padding-left: 3rem;
+  transition: 0.3s ease-in-out;
+}
+
+#submitIcon:hover {
+  filter:sepia(0.5);
 }
 
 button {
   cursor: pointer;
   white-space: break-spaces;
 }
+/*
+button:hover {
+color: rgba(106,246,211, 0.6);
+}*/
 
 #vaultListSection {
   display: none;
@@ -134,5 +147,8 @@ footer {
   }
   h1 {
     font-size: 3rem;
+  }
+  section {
+    width: 100%;
   }
 }
