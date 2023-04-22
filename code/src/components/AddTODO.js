@@ -15,7 +15,7 @@ const AddTODO = () => {
       name: inputValue,
       isDone: false,
       isInVault: false,
-      prioritized: false
+      isPrioritized: false
     }
     // eslint-disable-next-line max-len
     // dispatch(slice.actions.reducer(payload)) We import the slice so that we can reference the reducer.
@@ -28,7 +28,7 @@ const AddTODO = () => {
     <section id="addSection">
       <form onSubmit={handleNewSubmit}>
         <label htmlFor="addTODOinput">
-          <input type="text" required id="addTODOinput" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
+          <input type="text" maxLength="70" required id="addTODOinput" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
         </label>
         <AddButton type="submit" aria-label="Add it">
           <img id="submitIcon" src={SubmitIcon} alt="Add todo" />

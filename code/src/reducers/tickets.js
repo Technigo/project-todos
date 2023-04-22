@@ -8,7 +8,7 @@ const initialState = {
       name: 'Stay awesome',
       isDone: false,
       isInVault: false,
-      prioritized: false
+      isPrioritized: false
     }
   ]
 }
@@ -37,6 +37,13 @@ const tickets = createSlice({
         toggledTodo.isDone = !toggledTodo.isDone;
         console.log('toggling happened')
         //  localStorage.setItem('ticketsList', JSON.stringify(store.items));
+      }
+    },
+    markAsPrio: (store, action) => {
+      const importantTodo = store.items.find((item) => item.id === action.payload.id);
+      if (importantTodo) {
+        importantTodo.isPrioritized = !importantTodo.isPrioritized;
+        console.log('important')
       }
     },
     markAllDone: (store) => {

@@ -39,7 +39,7 @@ const ClearList = () => {
     <div className="clearContainer">
       <ClearButtons type="button" onClick={handleAllDoneClick}>All done</ClearButtons>
       <ClearButtons type="button" onClick={handleClearAllClick} clicked={clickCount > 0} ref={buttonRef}>
-        {clickCount === 0 ? 'Clear All' : 'Are you sure?'}
+        {clickCount === 0 ? 'Clear list' : 'Are you sure?'}
       </ClearButtons>
     </div>
   );

@@ -1,7 +1,7 @@
 /* eslint-disable max-len */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-closing-tag-location */
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 // import tickets from 'reducers/tickets';
 // import vault from 'reducers/vault';
@@ -13,13 +13,15 @@ import { TODOButton } from './buttons';
 // this component displays the todo items
 const TODOList = () => {
   const todoList = useSelector((addedTodos) => addedTodos.tickets.items)
+  console.log(todoList)
   const [selectedTODO, setSelectedTODO] = useState(null); // take note if a todo is clicked
-  const [todoCount, setTodoCount] = useState(todoList.length); // to keep track of how many todo's there are and display the number
+  // eslint-disable-next-line no-unused-vars
+  // const [todoCount, setTodoCount] = useState(todoList.length); // to keep track of how many todo's there are and display the number
   // const dispatch = useDispatch();
 
-  useEffect(() => {
-    // gets data from browser localstorage and dispatches it to tickets.js
-    /* const localStorageTickets = localStorage.getItem('ticketsList');
+  // useEffect(() => {
+  // gets data from browser localstorage and dispatches it to tickets.js
+  /* const localStorageTickets = localStorage.getItem('ticketsList');
     console.log(localStorageTickets)
     if (localStorageTickets) {
       try {
@@ -29,11 +31,11 @@ const TODOList = () => {
       } catch (error) {
         console.error(error);
       } */
-    // const localStorageTickets = JSON.parse(localStorage.getItem('ticketList'));
-    // if (localStorageTickets) {
-    //   dispatch(tickets.actions.setupStore(localStorageTickets))
-    setTodoCount(todoList.length);
-  }, [todoList]);
+  // const localStorageTickets = JSON.parse(localStorage.getItem('ticketList'));
+  // if (localStorageTickets) {
+  //   dispatch(tickets.actions.setupStore(localStorageTickets))
+  // setTodoCount(todoList.length);
+  // }, [todoList]);
   // gets data from browser localstorage and dispatches it to vault.js
   // const localStorageSavedTodos = JSON.parse(localStorage.getItem('vaultList'));
   // if (localStorageSavedTodos) {
@@ -54,16 +56,13 @@ const TODOList = () => {
   // console.log(ticketsList, vaultList)
   return (
     <section className="listSection">
-      <span>
-        Left to do: {todoCount}
-      </span>
       {todoList.map((singleTodo) => {
         const isSelected = singleTodo === selectedTODO;
         return <div className="todoContainer" key={singleTodo.id}>
           <TODOButton
             type="button"
             onClick={() => handleTODOClick(singleTodo)}
-            className={isSelected ? 'selected' : ''}>
+            className={`${isSelected ? 'selected' : ''} ${singleTodo.isDone ? 'isDone' : ''} ${singleTodo.isPrioritized ? 'isPrioritized' : ''}`}>
             {singleTodo.name}
           </TODOButton>
           {isSelected && <HandleTODO item={singleTodo} />}

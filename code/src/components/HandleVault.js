@@ -13,9 +13,7 @@ const HandleVault = ({ item }) => {
   return (
     <>
       <HandleTODOButton type="button" onClick={() => dispatch(tickets.actions.moveToTickets({ id: item.id, name: item.name, isDone: false }))}>Activate</HandleTODOButton>
-      {item && (
-        <HandleTODOButton type="button" onClick={() => dispatch(vault.actions.deleteSavedTodo(item.id))}>Delete</HandleTODOButton>
-      )}
+      <HandleTODOButton type="button" onClick={() => dispatch(vault.actions.deleteSavedTodo(item.id))}>Delete</HandleTODOButton>
       <HandleTODOButton type="button" onClick={handleClearSaved}>Clear All Saved</HandleTODOButton>
     </>
   )

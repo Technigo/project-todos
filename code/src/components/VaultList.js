@@ -18,7 +18,7 @@ const VaultList = () => {
   }
 
   return (
-    <section className="listSection">
+    <section id="vaultListSection">
       {vaultList.map((singleSavedTodo) => {
         const isSelected = singleSavedTodo === selectedTODO;
         return <div key={singleSavedTodo.id}>
@@ -26,7 +26,7 @@ const VaultList = () => {
             type="button"
             onClick={() => handleSavedTODOClick(singleSavedTodo)}
             className={isSelected ? 'selectedSaved' : ''}>{singleSavedTodo.name}</TODOButton>
-          {isSelected && <HandleVault />}
+          {isSelected && <HandleVault item={singleSavedTodo} />}
         </div>
       })}
     </section>
