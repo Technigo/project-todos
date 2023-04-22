@@ -1,13 +1,18 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
+  /* font-family: 'Yeseva One', cursive; */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
+
+  /* background: #4e54c8;  fallback for old browsers */
+  /* background: -webkit-linear-gradient(to bottom left, #8f94fb, #4e54c8);  Chrome 10-25, Safari 5.1-6 */
+  /* background: linear-gradient(to bottom left, #8f94fb, #4e54c8); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  /* background-size: cover;
+  background-repeat: no-repeat; */
+  background-color: whitesmoke;
+  background-image: url("./images/leaves.png")
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
-}
+
