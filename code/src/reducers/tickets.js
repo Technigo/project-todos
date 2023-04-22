@@ -4,8 +4,8 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   items: [
     {
-      id: 'sgww44',
-      name: 'Stay awesome',
+      id: '',
+      name: '',
       isDone: false,
       isInVault: false,
       isPrioritized: false,
