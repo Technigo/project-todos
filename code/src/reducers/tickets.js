@@ -8,7 +8,8 @@ const initialState = {
       name: 'Stay awesome',
       isDone: false,
       isInVault: false,
-      isPrioritized: false
+      isPrioritized: false,
+      createdAt: ''
     }
   ]
 }

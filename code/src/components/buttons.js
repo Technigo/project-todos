@@ -12,7 +12,8 @@ margin-bottom: 0.4rem;
 color: seashell;
 text-shadow: 1px 1px 2px black;
 border: none;
-font-family: 'Shadows Into Light', cursive;
+font-family: 'Ubuntu Condensed', sans-serif;
+font-weight: 300;
 letter-spacing: 2px;
 /*box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); */
 
@@ -45,6 +46,7 @@ letter-spacing: 2px;
 export const HandleTODOButton = styled.button`
 background: transparent;
 width:33.3333%;
+font-size:1.1rem;
 margin-bottom: 0.4rem;
 height: 2.6rem;
 ${(props) => props.isDone && 'color: white;'}
@@ -59,6 +61,7 @@ background: transparent;
 `
 export const ClearButtons = styled.button`
 height: 2rem;
+font-size:1.2rem;
 padding-left: 0.6rem;
 padding-right: 0.6rem;
 background: rgba(105, 114, 121, 0.6);

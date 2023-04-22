@@ -45,8 +45,7 @@ span {
   right: 0;
   height: 70vh;
   /* From https://css.glass */
-  background: rgba(115, 81, 156, 0.2);
-/*background: rgba(255, 255, 255, 0.11); */
+background: rgba(181, 140, 169, 0.1); 
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 backdrop-filter: blur(4.9px);
@@ -83,6 +82,7 @@ align-items: center;
 } */
 
 span {
+  color: white;
 }
 
 form {

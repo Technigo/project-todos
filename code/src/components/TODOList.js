@@ -65,7 +65,7 @@ const TODOList = () => {
             className={`${isSelected ? 'selected' : ''} ${singleTodo.isDone ? 'isDone' : ''} ${singleTodo.isPrioritized ? 'isPrioritized' : ''}`}>
             {singleTodo.name}
           </TODOButton>
-          {isSelected && <HandleTODO item={singleTodo} />}
+          {isSelected && <><p>{singleTodo.createdAt}</p><HandleTODO item={singleTodo} /></>}
         </div>;
       })}
     </section>
