@@ -43,7 +43,6 @@ export const tasks = createSlice({
     },
     checkItem: (state, action) => {
       const { id } = action.payload
-      console.log(action.payload)
       const selectedTask = id !== null && state.tasks.find((item) => item.id === id)
       const filteredProject = state.selectedProject
       if (id === null) {
@@ -76,7 +75,6 @@ export const tasks = createSlice({
       selectedTask.value = value
     },
     filterProject: (state, action) => {
-      console.log(action.payload)
       const { value } = action.payload
       state.selectedProject = value
     }

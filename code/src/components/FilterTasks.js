@@ -18,7 +18,6 @@ export const FilterTasks = () => {
   });
 
   const ongoingTasks = allTasks.filter((item) => {
-    console.log('item.value:', item.value)
     if (projectToFilterOn === 'all projects') {
       return item.completed === false
     } else {
@@ -36,7 +35,6 @@ export const FilterTasks = () => {
   const dispatch = useDispatch();
 
   const filterOngoingTasks = () => {
-    console.log(ongoingTasks)
     dispatch(tasks.actions.filterOn({ filter: 'ongoing' }))
   }
 
