@@ -7,7 +7,7 @@ export const NewTask = () => {
   const [inputValue, setInputValue] = useState(''); /* initial value empty string  */
   const dispatch = useDispatch();
   const onAddNewTaskSubmit = (event) => {
-    // first prevent default otherwise form will reload
+    // first prevent default otherwise page will reload
     event.preventDefault();
     // create an object that will be sent to state whe  user does something
     const TaskAdded = {
