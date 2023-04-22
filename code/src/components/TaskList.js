@@ -21,7 +21,7 @@ const TaskList = () => {
 
   return (
     <>
-      <h2>Ongoing tasks ({todoTasks.length})</h2>
+      <h2>Ongoing: {todoTasks.length}</h2>
 
       {todoTasks.length === 0 && (
         <p>You have no more tasks!</p>
@@ -36,7 +36,7 @@ const TaskList = () => {
 
       <AddTask />
 
-      <h2>COMPLETED ({doneTasks.length})</h2>
+      <h2>COMPLETED: {doneTasks.length}</h2>
 
       {doneTasks.map((task, index) => (<TaskItem
         task={task}
