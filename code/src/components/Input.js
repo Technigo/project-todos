@@ -3,7 +3,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import tasks from 'reducers/tasks';
+import { tasks } from 'reducers/tasks';
 
 // Add id npm package for new tasks id
 const Input = () => {
