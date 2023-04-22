@@ -1,8 +1,24 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import tasks from 'reducers/tasks.js';
-// import Header from './Header.js';
-// import AddTask from './AddTask.js';
+import tasks from 'components/reducers/tasks.js';
+import styled from 'styled-components';
+import { Button } from './styles/global';
+
+const InnerWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5px;
+    margin: 0 20px;
+`
+
+const TaskText = styled.p`
+    font-family: 'Dongle', sans-serif;
+    font-size: 2em;
+    line-height: 0.5em;
+    width: 100%;
+`
 
 const TaskList = () => { // Function.
   const taskList = useSelector((store) => store.tasks.items) // useSelector
@@ -20,29 +36,25 @@ const TaskList = () => { // Function.
       <ul>
         {taskList.map((singleTask) => {
           return (
-            <li key={singleTask.id}>
-              <p>
-                <span>{singleTask.name}</span>
-                <button
-                  type="button"
-                  onClick={() => onDeleteSingleTaskBtnCLick(singleTask.id)}>
-                  Delete this task
-                </button>
-                <label htmlFor={`task_with_id${singleTask.id}`}>
-                  Is this one Completed?
-                  <input
-                    id={`task_with_id${singleTask.id}`}
-                    type="checkbox"
-                    value={singleTask.isCompleted}
-                    onChange={() => onIsCompletedCheckboxToggle(singleTask.id)} />
-                </label>
-              </p>
-              {/* <input
-                type="checkbox"
-                id="checkbox"
-                checked={singleTask.isCompleted}
-                onChange={() => onIsTaskCompleted(singleTask.id)} /> */}
-            </li>
+            <InnerWrapper>
+              <label htmlFor={`task_with_id${singleTask.id}`}>
+                <input
+                  id={`task_with_id${singleTask.id}`}
+                  type="checkbox"
+                  value={singleTask.isCompleted}
+                  className="checkBox"
+                  onChange={() => onIsCompletedCheckboxToggle(singleTask.id)}
+                  checked={singleTask.isCompleted} />
+              </label>
+              <TaskText>
+                {singleTask.name}
+              </TaskText>
+              <Button
+                type="button"
+                onClick={() => onDeleteSingleTaskBtnCLick(singleTask.id)}>
+                Delete this task
+              </Button>
+            </InnerWrapper>
           )
         })}
       </ul>
@@ -53,36 +65,3 @@ const TaskList = () => { // Function.
 // id as key and singleTask.name in list = printed out value.
 // store = backpack
 export default TaskList;
-
-// const Tasks = () => {
-// const allTasks = useSelector((store) => store.tasks.items);
-// const dispatch = useDispatch();
-
-// const onIsTaskDone = (id) => {
-//   dispatch(tasks.actions.markTaskAsDone(id))
-// }
-//   return (
-//     // <Outerwrapper>
-//       // <Header />
-//       // <InnerWrapper>
-//         {allTasks.map((singleTask, index) => {
-//           return (
-//             <Content key={singleTask.id}>
-//               <SingleTask>
-//                 <input
-//                   type="checkbox"
-//                   id="checkbox"
-//                   checked={singleTask.isCompleted}
-//                   onChange={() => onIsTaskCompleted(singleTask.id)} />
-//                 <label>
-//                   <TasklistText>{singleTask.title}</TasklistText>
-//                 </label>
-//               </SingleTask>
-//             </Content>
-//           )
-//         })}
-//         {/* <NewTask />
-//       </InnerWrapper>
-//     </Outerwrapper>
-//   )
-// } */}

@@ -6,26 +6,27 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = { // Variable/function that stores data,
   // allows us to create slices below. Equal to an object.
   items: [ // Inside variable = properties as an array of objects. Items = tasks.
-    { // {} to create first object.
-      id: 1, // Property.
-      name: 'Watch video on actions & reducers',
-      isCompleted: false
-    },
-    { // Another object.
-      id: 2,
-      name: 'Follow redux codealong',
-      isCompleted: false
-    },
-    {
-      id: 3,
-      name: 'Fork weekly assignment',
-      isCompleted: false
-    },
-    {
-      id: 4,
-      name: 'Create a todo app',
-      isCompleted: false
-    }]
+    // { // {} to create first object.
+    //   id: 1, // Property.
+    //   name: 'Watch video on actions & reducers',
+    //   isCompleted: false
+    // },
+    // { // Another object.
+    //   id: 2,
+    //   name: 'Follow redux codealong',
+    //   isCompleted: false
+    // },
+    // {
+    //   id: 3,
+    //   name: 'Fork weekly assignment',
+    //   isCompleted: false
+    // },
+    // {
+    //   id: 4,
+    //   name: 'Create a todo app',
+    //   isCompleted: false
+    // }
+  ]
 }
 // We can access the size of an array, the number of tasks, through property length.
 
@@ -52,22 +53,6 @@ const tasks = createSlice({ // Imported function as an argument.
       // copy.unshift(action.payload); // Unshift adds at the beginning of the array.
       // store.items = copy;
     },
-    deleteSingleTask: (store, action) => { // Functionality. Action because
-      // to find single task we need info, unique = the id.
-      const id = action.payload; // const { id } = destructured, expecting component
-      // to provide an id. Google, js delete element from array = index and splice.
-      // Splice to remove a single element if I know the index. js index of object in
-      // array. { } works when passing/sending/destructuring an object with the
-      // property id. Otherwise, no { } needed. Assign id.
-      console.log('action.payload', action.payload) // action.payload is the id.
-      const copyOfTaskArrayFromStore = store.items; // An array. From state of store.
-      // Used bc don't want to modify. Operate on copy. _Come back to this_20/4_26:18
-      const condition = (element) => element.id === id; // Condition.
-      // Now modify array.
-      const foundIndex = copyOfTaskArrayFromStore.findIndex(condition);
-      copyOfTaskArrayFromStore.splice(foundIndex, 1);
-      store.items = copyOfTaskArrayFromStore;
-    },
     // Frontend is in the end doing forms, checkboxes in those are painful.
     toggleIfTaskIsCompleted: (store, action) => { // Still needs access to store
       // because we need to change the checkbox for that task and action to get the
@@ -83,6 +68,22 @@ const tasks = createSlice({ // Imported function as an argument.
       copyOfTaskArrayFromStore[foundIndex].isCompleted = !copyOfTaskArrayFromStore[foundIndex].isCompleted;
       // ! says it should be the opposite.
       store.items = copyOfTaskArrayFromStore; // Assigning store.items to copyOfEtc.
+    },
+    deleteSingleTask: (store, action) => { // Functionality. Action because
+      // to find single task we need info, unique = the id.
+      const id = action.payload; // const { id } = destructured, expecting component
+      // to provide an id. Google, js delete element from array = index and splice.
+      // Splice to remove a single element if I know the index. js index of object in
+      // array. { } works when passing/sending/destructuring an object with the
+      // property id. Otherwise, no { } needed. Assign id.
+      console.log('action.payload', action.payload) // action.payload is the id.
+      const copyOfTaskArrayFromStore = store.items; // An array. From state of store.
+      // Used bc don't want to modify. Operate on copy. _Come back to this_20/4_26:18
+      const condition = (element) => element.id === id; // Condition.
+      // Now modify array.
+      const foundIndex = copyOfTaskArrayFromStore.findIndex(condition);
+      copyOfTaskArrayFromStore.splice(foundIndex, 1);
+      store.items = copyOfTaskArrayFromStore;
     },
     deleteAllTask: (store) => { // Won't need payload.
       store.items = [];
