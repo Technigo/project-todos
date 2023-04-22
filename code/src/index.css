@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: Roboto Mono;
+  font-family: 'Courier New', Courier, monospace;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -9,3 +9,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+/*https://stackoverflow.com/questions/4148499/how-to-style-a-checkbox-using-css :checked functionality*/
+/*https://fonts.google.com/specimen/Special+Elite*/
+/*https://fonts.google.com/specimen/Cutive*/
