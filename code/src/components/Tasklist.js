@@ -1,28 +1,49 @@
+/* eslint-disable max-len */
+/* eslint-disable no-restricted-globals */
 /* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
-// import ListItem from './ListItem';
+
+import TrashImg from '../assets/icons8-trash.svg';
 
 const Tasklist = () => {
   const items = useSelector((store) => store.tasks.tasks);
   const dispatch = useDispatch();
 
-  items.map((item) => console.log(item.text));
+  const completedTasks = useSelector((store) => store.tasks.completedCount);
+  // Because completedTasks returns NaN if no tasks are compleat, this function returns 0 insted of NaN
+  // Known bug: is not correct when no items in list...
+  const unfinishedTasks = () => {
+    if (isNaN(completedTasks)) {
+      return '0';
+    } else return Math.max(0, completedTasks);
+  };
 
   return (
     <section className="task-list">
+      <h1>Tasks</h1>
+      <p>
+        Complted: {unfinishedTasks()} / {items.length}{' '}
+      </p>
       {items.map((todo) => (
-        <div className="list-item">
-          <input type="radio" />
+        <div
+          key={todo.id}
+          className={`${todo.complete ? 'line-through ' : ''}list-item`}
+        >
+          <input
+            type="checkbox"
+            checked={todo.complete}
+            onChange={() => dispatch(tasks.actions.toggleChecked(todo))}
+          />
           <p>{todo.text}</p>
           <button
             onClick={() => dispatch(tasks.actions.deleteTask(todo))}
             type="button"
           >
-            To remove
+            <img src={TrashImg} alt="delete button" />
           </button>
         </div>
       ))}
