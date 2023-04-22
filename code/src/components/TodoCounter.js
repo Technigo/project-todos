@@ -1,12 +1,32 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+/* import completed from 'reducers/completed'; */
+import uncompleted from 'reducers/uncompleted';
 
 export const TodoCounter = () => {
-  const numberOfUncompletedTasks = useSelector((store) => store.uncompleted.tasks.length);
+  const dispatch = useDispatch();
+  const allUncompletedTasks = useSelector((store) => store.uncompleted.tasks);
+  const numberOfUncompletedTasks = allUncompletedTasks.length;
+
+  console.log(allUncompletedTasks);
+
+  const clearAllTasks = () => {
+    /* Add dispatch to Completed tasks */
+    dispatch(uncompleted.actions.clearAll());
+  };
 
   return (
     <div className="counter-div">
-      <p>You have {numberOfUncompletedTasks} unfinished task/s</p>
+      {numberOfUncompletedTasks >= 1 ? (
+        <p>OMG! U got {numberOfUncompletedTasks} unfinished task/s 😱</p>
+      ) : (
+        <p>Hooray! U got {numberOfUncompletedTasks} tasks left. Go out and enjoy the sun! 😎</p>
+      )}
+      <button
+        className="clear-list"
+        type="button"
+        onClick={clearAllTasks}>Untask yourself!
+      </button>
     </div>
   )
 };

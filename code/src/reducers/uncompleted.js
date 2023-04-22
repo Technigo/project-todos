@@ -19,6 +19,9 @@ const uncompleted = createSlice(
         if (clickedTaskId) {
           store.tasks = store.tasks.filter((task) => task.id !== action.payload.id)
         }
+      },
+      clearAll: (store) => {
+        store.tasks = [];
       }
     }
   }
