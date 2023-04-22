@@ -27,14 +27,18 @@ export const AddTaskWrapper = styled.form`
       opacity: .8;
     }
 
-        
+    @media (min-width: 768px) {
+      #addTaskInput {
+      width:55vw;
+      }
+    }    
 `
 
 export const AddTaskChildDiv = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap:1rem;
   width:90vw;
 
@@ -75,5 +79,8 @@ export const AddTaskChildDiv = styled.div`
    
   }
 
+  @media (min-width: 768px) {
+      width:55vw;
+    }   
   
 `;
