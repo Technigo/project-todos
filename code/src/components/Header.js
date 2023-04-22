@@ -15,7 +15,7 @@ const Header = () => {
       setIsDoneCount(0);
       return;
     }
-    setTodoCount(todoList.length);
+    setTodoCount(todoList.length - 1);
     setIsDoneCount(todoList.filter((todo) => todo.isDone).length);
   }, [todoList]);
   console.log(isDoneCount)
