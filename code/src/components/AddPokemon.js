@@ -16,8 +16,13 @@ const AddPokemon = () => {
     dispatch(pokemons.actions.addPokemon(newPokemon));
     setInputValue('');
   }
+  const onDeleteYourPokemonBtnClick = () => {
+    dispatch(pokemons.actions.deleteAllPokemon());
+  }
+
   return (
     <section>
+      <button type="button" onClick={onDeleteYourPokemonBtnClick}>DELETE YOUR Pokemons</button>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addPokemonInput">
         Add your new Pokemon here.
