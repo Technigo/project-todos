@@ -2,8 +2,10 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
+import './Input.css';
+import addImg from '../assets/add-square-svgrepo-com.svg';
 
 // Add id npm package for new tasks id
 const Input = () => {
@@ -31,10 +33,13 @@ const Input = () => {
             onChange={(event) => {
               setInputValue(event.target.value);
             }}
+            placeholder="Your next big idea!"
           />
         </label>
-        <button type="submit">+</button>
-        <button type="button">Hide input</button>
+        <button type="submit" disabled={inputValue.length < 1}>
+          {/* <img src={addImg} alt="add new todo" /> */}
+          ADD
+        </button>
       </form>
     </div>
   );
