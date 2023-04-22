@@ -96,7 +96,7 @@ const AddTask = () => {
           id="addtaskInput"
           type="text"
           aria-label="Add task"
-          placeholder="Add task..."
+          placeholder="Add task... (minimum 4 characters)"
         />
         <Button
           type="submit"

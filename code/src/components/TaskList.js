@@ -71,8 +71,8 @@ const TaskList = () => {
       <TaskUl>
         {taskList.map((singleTask) => {
           return (
-            <StyledWrapper>
-              <TaskListLi key={singleTask.id}>
+            <StyledWrapper key={singleTask.id}>
+              <TaskListLi>
                 <StyledLabel htmlFor={`task${singleTask.id}`}>
                   <CheckBox
                     id={`task${singleTask.id}`}
