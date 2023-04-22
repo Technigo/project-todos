@@ -36,7 +36,7 @@ export const Tasks = () => {
       showCloseButton: true,
       headerTextStyle: { fontWeight: 'bold', fontSize: 'x-large' },
       headerStyle: { marginTop: 5, marginBottom: 5 },
-      errorMessageStyle: { color: 'green' },
+      errorMessageStyle: { color: 'rgb(71 69 69)' },
       options: [
         {
           name: 'Cancel',
@@ -71,9 +71,7 @@ export const Tasks = () => {
         }
       ],
       onConfirm: (response) => {
-        showAlert({ title: 'Your task:', text: response.text });
-        console.log(response.text)
-        console.log(JSON.stringify(response.due))
+        showAlert({ title: 'Your task:', text: response.text, style: { color: 'rgb(71 69 69)' } });
         dispatch(tasks.actions.addItem({ response }))
       }
     })
