@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components'
 
 export const Wave = styled.div`
- background-image: url('https://i.postimg.cc/fRwZq135/red-wave2-01.png');
+ background-image: url('https://i.postimg.cc/J7S1MkjS/wave-bot-copy.png');
 `
 
 export const WaveAnimation = () => {

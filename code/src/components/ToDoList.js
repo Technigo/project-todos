@@ -49,8 +49,8 @@ export const ToDoList = () => {
         <TaskCounter />
         <ListHeaderButton type="button" onClick={toggleList}>
           {listActive ? (
-            <FontAwesomeIcon icon={faChevronUp} style={{ color: '#ffffff', fontSize: '30px' }} />)
-            : (<FontAwesomeIcon icon={faChevronDown} style={{ color: '#ffffff', fontSize: '30px' }} />)}
+            <FontAwesomeIcon icon={faChevronUp} style={{ color: '#f85f36', fontSize: '25px' }} />)
+            : (<FontAwesomeIcon icon={faChevronDown} style={{ color: '#f85f36', fontSize: '25px' }} />)}
         </ListHeaderButton>
       </ListHeader>
       {listActive && (

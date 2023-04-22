@@ -8,12 +8,14 @@ export const HeaderWrapper = styled.div`
 `
 export const HeaderText = styled.h2`
   font-family: "Raleway", sans-serif;
+  white-space: nowrap;
   color: white;
   letter-spacing: 3px;
   text-align: center;
   font-weight: 900;
   margin: 0;
   font-size: 50px;
+  text-align: center;
 `
 
 export const Header = () => {

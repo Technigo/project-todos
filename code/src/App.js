@@ -8,8 +8,13 @@ import { Header } from 'components/Header'
 import { ProjectToDoList } from 'components/ProjectToDoList'
 import { tasks } from './reducers/tasks'
 
+export const Wrapper = styled.div`
+  overflow: hidden;
+  margin: 0;
+`
+
 export const Main = styled.main`
-  margin: 10px 20px;
+  margin: 30px 20px 20px 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -24,12 +29,14 @@ const store = configureStore({ reducer })
 
 export const App = () => {
   return (
-    <Main>
+    <Wrapper>
       <Header />
-      <Provider store={store}>
-        <ToDoList />
-        <ProjectToDoList />
-      </Provider>
-    </Main>
+      <Main>
+        <Provider store={store}>
+          <ToDoList />
+          <ProjectToDoList />
+        </Provider>
+      </Main>
+    </Wrapper>
   )
 }

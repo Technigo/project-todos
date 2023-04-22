@@ -9,8 +9,8 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { compareAsc } from 'date-fns'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown, faChevronUp, faPlus, faFlag } from '@fortawesome/free-solid-svg-icons'
-import { TextInput, ListHeader, ListHeaderButton, ProjectTitle, AddNewProjectContainer, AddButton, AddButton2, ProjectNameInput, ProjectNameContainer, ToDoForm, ToDoListWrapper, ToDoCard, ToDoInnerCard, ToDotext, ButtonsBox, DeleteButton } from './style/GlobalStyle';
+import { faChevronDown, faChevronUp, faPlus, faFlag, faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { TextInput, CounterText, ListHeaderButton, ProjectTitle, AddNewProjectContainer, AddButton, AddButton2, ProjectNameInput, ProjectNameContainer, ToDoForm, ToDoListWrapper, ToDoCard, ToDoInnerCard, ToDotext, ButtonsBox, DeleteButton, ProjectHeader } from './style/GlobalStyle';
 
 export const ProjectToDoList = () => {
   const [projectCreated, setProjectCreated] = useState(false);
@@ -80,66 +80,63 @@ export const ProjectToDoList = () => {
     dispatch(deleteList({ name: list.name }));
   }
 
-
   return (
     <>
       {listNameCreated && (
         <div>
           {Array.isArray(lists) && lists.map((list, listIndex) => (
             <>
-              <ListHeader key={list.name}>
-                <button
-                  type="button"
-                  onClick={() => deleteListByName(list)}>
-                  Delete List
-                </button>
+              <ProjectHeader key={list.name}>
                 <ProjectTitle>{list.name}</ProjectTitle>
-                <p>/ {list.items.length} done</p>
-                <ListHeaderButton type="button" onClick={() => handleProjectClick(listIndex)}>
-                  {projectActive[listIndex] ? (
-                  <FontAwesomeIcon icon={faChevronUp} style={{ color: '#ffffff', fontSize: '30px'}} />)
-                  : (<FontAwesomeIcon icon={faChevronDown} style={{ color: '#ffffff', fontSize: '30px'}} />)}
-                </ListHeaderButton>
-              </ListHeader>
-            {projectActive[listIndex] && (
-            <>
-              <ToDoListWrapper>
-                {list.items.map((item) => (
-                  <ToDoCard key={item.text}>
-                    <ToDoInnerCard>
-                      <div className="container">
-                        <div className="round">
-                          <input
-                            type="checkbox"
-                            id={item.id}
-                            name={item.id}
-                            checked={item.complete}
-                            onChange={() => onToDoToggle(item.id, listIndex)} />
-                          <label htmlFor={item.id} />
-                        </div>
-                      </div>
-                      <div>
-                        <ToDotext key={item.id}>{item.text}</ToDotext>
-                        <ToDotext>{compareAsc(new Date(item.due), Date.now()) === -1 ? 'overdue' : `due: ${item.due}`}</ToDotext>
-                      </div>
-                    </ToDoInnerCard>
-                    <ButtonsBox>
-                      <ListHeaderButton
-                        type="button"
-                        onClick={() => onTogglePriority(item.id, listIndex)}>
-                        <FontAwesomeIcon icon={faFlag} style={{ color: item.priority ? '#f85f36' : '#464646' }} />
-                      </ListHeaderButton>
-                      <DeleteButton
-                        type="button"
-                        onClick={() => onToDoDelete(item.id, listIndex)}>
-                        <span role="img" aria-label="delete">
-                          ✖️
-                        </span>
-                      </DeleteButton>
-                    </ButtonsBox>
-                  </ToDoCard>
-                ))}
-              </ToDoListWrapper>
+                <CounterText>{list.items.length} tasks</CounterText>
+                <div style={{ display: 'flex', gap: '20px' }}>
+                  <DeleteButton type="button" onClick={() => deleteListByName(list)}><FontAwesomeIcon icon={faTrashCan} style={{ color: '#f85f36', fontWeight: '300', fontSize: '20px' }} /></DeleteButton>
+                  <ListHeaderButton type="button" onClick={() => handleProjectClick(listIndex)}>
+                    {projectActive[listIndex] ? (
+                      <FontAwesomeIcon icon={faChevronUp} style={{ color: '#f85f36', fontWeight: '300', fontSize: '25px' }} />)
+                      : (<FontAwesomeIcon icon={faChevronDown} style={{ color: '#f85f36', fontWeight: '300', fontSize: '25px' }} />)}
+                  </ListHeaderButton>
+                </div>
+              </ProjectHeader>
+              {projectActive[listIndex] && (
+                <>
+                  <ToDoListWrapper>
+                    {list.items.map((item) => (
+                      <ToDoCard key={item.text}>
+                        <ToDoInnerCard>
+                          <div className="container">
+                            <div className="round">
+                              <input
+                                type="checkbox"
+                                id={item.id}
+                                name={item.id}
+                                checked={item.complete}
+                                onChange={() => onToDoToggle(item.id, listIndex)} />
+                              <label htmlFor={item.id} />
+                            </div>
+                          </div>
+                          <div>
+                            <ToDotext key={item.id}>{item.text}</ToDotext>
+                            <ToDotext>{compareAsc(new Date(item.due), Date.now()) === -1 ? 'overdue' : `due: ${item.due}`}</ToDotext>
+                          </div>
+                        </ToDoInnerCard>
+                        <ButtonsBox>
+                          <ListHeaderButton
+                            type="button"
+                            onClick={() => onTogglePriority(item.id, listIndex)}>
+                            <FontAwesomeIcon icon={faFlag} style={{ color: item.priority ? '#f85f36' : '#464646' }} />
+                          </ListHeaderButton>
+                          <DeleteButton
+                            type="button"
+                            onClick={() => onToDoDelete(item.id, listIndex)}>
+                            <span role="img" aria-label="delete">
+                              ✖️
+                            </span>
+                          </DeleteButton>
+                        </ButtonsBox>
+                      </ToDoCard>
+                    ))}
+                  </ToDoListWrapper>
                   <ToDoForm key={listIndex}>
                     <label htmlFor="projecttodo">
                       <TextInput
@@ -165,7 +162,7 @@ export const ProjectToDoList = () => {
                       </button>
                     </div>
                   </ToDoForm>
-              </>
+                </>
               )}
             </>
           ))}
@@ -173,24 +170,25 @@ export const ProjectToDoList = () => {
       {projectCreated && (
         <ProjectNameContainer>
           <ProjectNameInput
-          type="text"
-          value={listName}
-          placeholder='Your project name...'
-          onChange={(e) => setListName(e.target.value)} />
+            type="text"
+            value={listName}
+            placeholder='Your project name...'
+            onChange={(e) => setListName(e.target.value)} />
           <AddButton2
             type="button"
             onClick={handleAddList}>
-            <FontAwesomeIcon icon={faPlus} style={{ color: '#464646' }} />
+            <FontAwesomeIcon icon={faPlus} style={{ color: '#f85f36', fontWeight: '300', fontSize: '25px' }} />
           </AddButton2>
         </ProjectNameContainer>)}
       <AddNewProjectContainer>
         <AddButton
           type="button"
           onClick={handleWantNewProject}>
-          <p style={{ color: '#f85f36' }}>create new project</p>
-          <FontAwesomeIcon icon={faPlus} />
+          <p style={{ color: '#464646', fontWeight: '300', fontSize: '20px', hover: '#f85f36' }}>Create new project</p>
+          <FontAwesomeIcon icon={faPlus} style={{ color: '#464646', fontWeight: '300', fontSize: '25px' }} />
         </AddButton>
       </AddNewProjectContainer>
     </>
   );
 }
+

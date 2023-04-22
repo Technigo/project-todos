@@ -1,14 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import styled from 'styled-components';
-
-const CounterText = styled.p`
-  font-family: "Raleway", sans-serif;
-  font-size: 1em;
-  display: flex;
-  margin: 0;
-  color: #f85f36;
-`
+import { CounterText } from './style/GlobalStyle';
 
 export const TaskCounter = () => {
   const items = useSelector((store) => store.tasks.items)

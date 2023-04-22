@@ -13,7 +13,6 @@ export const ToDoCard = styled.div`
   padding: 10px;
   position: relative;
   background-color: pink;
-  border-radius: 80px;
 `
 
 export const ToDoInnerCard = styled.div`
@@ -34,6 +33,16 @@ export const ListHeader = styled.div`
   justify-content: space-between;
   background: pink;
 `
+
+export const ProjectHeader = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
+  justify-content: space-between;
+  background: #b8dee0;
+`
+
 export const ListHeaderButton = styled.button`
   background: transparent;
   border: none;
@@ -67,7 +76,14 @@ export const ToDotext = styled.p`
   color: #464646;
   margin: auto 0;
   font-weight: 700;
+`
+
+export const CounterText = styled.p`
   font-family: "Raleway", sans-serif;
+  font-size: 1em;
+  display: flex;
+  margin: 0;
+  color: #f85f36;
 `
 
 export const ProjectTitle = styled.h3`
@@ -75,7 +91,7 @@ export const ProjectTitle = styled.h3`
   color: #f85f36;
   margin: auto 0;
   font-weight: 700;
-  font-family: "Raleway", sans-serif;
+  font-size: 25px;
 `
 
 export const DeleteButton = styled.button`
@@ -125,7 +141,7 @@ export const ProjectNameContainer = styled.div`
   padding: 10px;
   justify-content: space-between;
   align-items: center;
-  background: #E8E8E8;
+  background: #b8dee0;
 `
 
 export const AddButton = styled.button`
@@ -159,13 +175,14 @@ export const ProjectNameInput = styled.input`
   height: 100%;
   width: fit-content;
   box-sizing: border-box;
-  font-size: 18px;
+  color:#f85f36;
+  font-size: 20px;
 
     &:focus {
-      caret-color: #464646;
+      caret-color: #f85f36;
     }
 
     &:hover {
-      border-bottom: 1px solid #464646;
+      border-bottom: 1px solid #f85f36;
     }
 `
