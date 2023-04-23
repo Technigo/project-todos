@@ -15,6 +15,7 @@ const FooterWrapper = styled.footer`
     padding: 10px;
     margin-top: 1.5rem;
     background-color:var(--dark-blue);
+    border-radius: 0 0 10px 10px;
 
     .logoName {
         display: flex;

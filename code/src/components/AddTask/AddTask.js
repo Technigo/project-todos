@@ -59,7 +59,7 @@ const AddTask = () => {
           <select
             value={selectedCategory}
             onChange={(event) => setSelectedCategory(event.target.value)}>
-            <option className="select-title" value="">Pick a category</option>
+            <option className="select-title" value="">Pick category</option>
             <option value="Home">Home</option>
             <option value="Work">Work</option>
             <option value="Shopping">Buy</option>

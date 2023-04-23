@@ -62,7 +62,12 @@ const TaskList = () => {
                   checked={singleTask.isComplete}
                   onChange={() => handleCheckboxChange(singleTask.id)} />
                 <SingleTaskChild>
-                  <h3>{singleTask.name}</h3>
+                  <h3
+                    style={{
+                      textDecoration: singleTask.isComplete ? 'line-through' : ''
+                    }}>
+                    {singleTask.name}
+                  </h3>
                   <p><FontAwesomeIcon icon={faPencil} /> {singleTask.timeStamp}</p>
                   <p><FontAwesomeIcon icon={faClockRotateLeft} /> {singleTask.dueDate}</p>
                 </SingleTaskChild>

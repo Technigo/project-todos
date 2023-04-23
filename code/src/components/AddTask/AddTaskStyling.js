@@ -15,7 +15,7 @@ export const AddTaskWrapper = styled.form`
       border-radius: 5px;
       border: 2px solid var(--dark-blue);
       font-size: 1rem;
-      width:90vw;
+      width:95vw;
 
         &:focus {
           border: 2px solid var(--orange);
@@ -46,7 +46,7 @@ export const AddTaskChildDiv = styled.div`
   align-items: center;
   justify-content: space-between;
   gap:1rem;
-  width:90vw;
+  width:95vw;
 
   select {
     border: 2px solid var(--dark-blue);

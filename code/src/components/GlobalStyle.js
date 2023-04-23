@@ -6,11 +6,12 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    
 }
 body {
   background: var(--white);
-  border: 2px solid var(--dark-blue);
-
+  border: 3px solid var(--dark-blue);
+  border-radius: 15px;
   animation-name: slide-in-top;
   animation-duration: 1s;
 
@@ -31,7 +32,7 @@ body {
      margin: 1vh 20%;
   }
   @media (min-width: 1200px) {
-     margin: 1vh 20%;
+     margin: 4vh 20%;
   }
 }
 `
