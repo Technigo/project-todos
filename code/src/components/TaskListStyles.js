@@ -9,6 +9,8 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 width: 100%;
+z-index: 3;
+position: relative;
 `
 export const SingleTaskWrapper = styled.div`
 display: flex;

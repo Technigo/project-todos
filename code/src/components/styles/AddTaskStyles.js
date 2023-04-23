@@ -41,12 +41,12 @@ height: 20px;
 `
 
 export const AddTaskInput = styled.input`
-  width: 8rem;
+  width: 9rem;
   background-color:transparent;
   border: none;
   border-radius: 20px;
   height: 2rem;
-  font-size: 0.5rem;
+  font-size: 1rem;
   font-family: 'League Spartan', sans-serif;
   padding: 0rem 0.5rem;
 
@@ -54,6 +54,7 @@ export const AddTaskInput = styled.input`
   padding: 0rem 0.5rem;
   height: 3rem;
   width: 14rem;
+  font-size: 1.5rem;
   }
 
 
