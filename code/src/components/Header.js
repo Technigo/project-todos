@@ -29,7 +29,8 @@ export const Header = () => {
         <h1>Back & forth...</h1>
       </HeaderText>
       <Weather>
-        It&apos;s <span className="material-symbols-outlined">
+        It&apos;s
+        <span className="material-symbols-outlined">
 rainy
         </span> today.
       </Weather>
