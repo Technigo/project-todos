@@ -16,7 +16,6 @@ export const Header = () => {
 const HeaderWrapper = styled.header`
     padding: 10px;
     background-color:var(--dark-blue);
-    border-radius: 10px 10px 0 0;
 
     .logoName {
         display: flex;
@@ -41,5 +40,10 @@ const HeaderWrapper = styled.header`
       font-size: 1.3rem;
       font-weight: lighter;
     }
+
+    @media (min-width: 768px) {
+      border-radius: 10px 10px 0 0;
+
+  }
     
 `

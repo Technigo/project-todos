@@ -15,7 +15,6 @@ const FooterWrapper = styled.footer`
     padding: 10px;
     margin-top: 1.5rem;
     background-color:var(--dark-blue);
-    border-radius: 0 0 10px 10px;
 
     .logoName {
         display: flex;
@@ -31,5 +30,10 @@ const FooterWrapper = styled.footer`
       font-size: 0.7rem;
       font-weight: lighter;
     }
+    
+    @media (min-width: 768px) {
+      border-radius: 0 0 10px 10px;
+
+  }
     
 `

@@ -57,6 +57,7 @@ export const AddTaskChildDiv = styled.div`
     background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
     font-size: 1rem;
     font-weight: bold;
+    color:grey;
     opacity: 0.8;
     width:50%;
     

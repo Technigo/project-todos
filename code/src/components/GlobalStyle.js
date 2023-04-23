@@ -11,7 +11,6 @@ export const GlobalStyle = createGlobalStyle`
 body {
   background: var(--white);
   border: 3px solid var(--dark-blue);
-  border-radius: 15px;
   animation-name: slide-in-top;
   animation-duration: 1s;
 
@@ -27,10 +26,13 @@ body {
 
   @media (min-width: 768px) {
      margin:2vh 20%;
+     border-radius: 15px;
   }
+
    @media (min-width: 1024px) {
      margin: 1vh 20%;
   }
+  
   @media (min-width: 1200px) {
      margin: 4vh 20%;
   }
