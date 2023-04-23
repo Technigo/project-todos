@@ -23,6 +23,9 @@ export const todos = createSlice({
     },
     addItem: (store, action) => {
       store.items.push(action.payload)
+    },
+    loadItems: (store, action) => {
+      store.items = action.payload
     }
   }
 })

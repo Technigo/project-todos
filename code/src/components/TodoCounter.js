@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import { todos } from 'reducers/todo'
 import { TodoItem } from 'components/TodoItem'
@@ -19,6 +19,18 @@ export const TodoCounter = () => {
 
   const todosTodo = allTodos.filter((todo) => !todo.isDone)
   const doneTodos = allTodos.filter((todo) => todo.isDone)
+
+  useEffect(() => {
+    const savedTodos = JSON.parse(localStorage.getItem('allTodos'));
+
+    if (savedTodos) {
+      dispatch(todos.actions.loadItems(savedTodos));
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem('allTodos', JSON.stringify(allTodos));
+  }, [allTodos]);
 
   return (
     <>
