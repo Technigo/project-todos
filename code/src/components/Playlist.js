@@ -9,7 +9,7 @@ const PlaylistContainer = styled.div`
   background-color: #301f48;
   padding: 10px;
   color: white;
-  margin-top:20px;
+
 `;
 
 const PlaylistLink = styled.a`
