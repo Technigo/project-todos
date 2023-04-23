@@ -222,6 +222,15 @@ input:focus {
     width: fit-content;
   }
 
+    .resetButton:hover::before {
+      content: "Reset To-Di List!";
+    }
+
+        .resetButton {
+          width: 30px;
+          margin-top: 2rem;
+        }
+
   label {
     display: flex;
     flex-direction: row-reverse;

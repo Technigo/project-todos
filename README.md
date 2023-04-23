@@ -1,13 +1,23 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+Project was to practice making your own reducers and slice in Redux by creating a To-Do list in React. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Demands for the project:
+
+✓ Your app should list all tasks - completed or uncompleted.
+
+✓ You should be able to mark an uncompleted task as complete (and change it back to uncompleted).
+
+✓ You should be able to add and remove tasks.
+
+✓ Your app should show a count of either all tasks or all uncompleted tasks (or both).
 
 ## The problem
+ 
+ My aim for this project was to create a Bullet Journal-inspired app where the user can pick different symbols for a couple of categories of tasks. 
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+ I had a hard time figuring out just how to structure my code in each component, which i guess will have to take some more projects before i get a feeling for. At the level im currently at in my learning process i aim to make it as simple as possible to not have my code spread out too much. But next time i think i will go for working more with styled components to make the code more reusable and effective.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://animated-paletas-c14d00.netlify.app/
