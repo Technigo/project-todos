@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const data = []
 
-export const list = createSlice({
+export const todos = createSlice({
   name: 'todos',
   initialState: {
     items: data
