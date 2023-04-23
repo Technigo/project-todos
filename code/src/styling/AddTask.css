@@ -1,48 +1,41 @@
-.top-container {
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    width: 300px;
-    border-radius: 2px;
-    background-color: white;
-    padding: 25px;
-    margin-top: 40px;
-}
-
 .add-task-label {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 14px;
-    margin: 10px 0px 8px 2px;
-    color: #555555;
+    display: flex;
 }
 
 #addTaskInput {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 14px;
-    width: 200px;
+    /*font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
+    width: 180px;
     border: 2px solid #D4E2D4;
     border-radius: 5px;
     color: #555555;
+    margin-left: 20px;
     padding: 2px 5px 2px 5px;
 }
+
+#addTaskInput::placeholder {
+    opacity: 0.7;
+    font-family: 'Courier New', Courier, monospace
+  }
 
 #addTaskInput:focus {
   outline: #DF7861;
 }
 
 .add-button {
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 14px;
-    text-align: center;
-    width: 70px;
-    margin-left: 10px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 12px;
+    width: 60px;
     border: 2px solid #D4E2D4;
     border-radius: 5px;
     color: #555555;
     background-color: white;
-    padding: 2px 5px 2px 5px;
+    margin-left: 10px;
+    padding: 1px 5px 1px 5px;
 }
 
 .add-button:hover {
     background-color: #D4E2D4;
+    cursor: pointer;
 }

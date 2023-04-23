@@ -3,12 +3,10 @@ import AddTask from './AddTask';
 
 const Header = () => {
   return (
-    <section className="top-container">
-      <header>
-        <h1 className="header-h1">My to-do list</h1>
-      </header>
+    <header className="header-container">
+      <h1 className="header-h1">My to-do list</h1>
       <AddTask />
-    </section>
+    </header>
   )
 }
 

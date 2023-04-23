@@ -18,11 +18,10 @@ const AddTask = () => {
 
   return (
     <form onSubmit={onFormSubmit}>
-      <label htmlFor="addTaskInput">
-        <p className="add-task-label">Add new task:</p>
-        <input value={newTaskInput} onChange={(event) => setNewTaskInput(event.target.value)} id="addTaskInput" type="text" />
+      <label className="add-task-label" htmlFor="addTaskInput">
+        <input placeholder="Add new task here..." value={newTaskInput} onChange={(event) => setNewTaskInput(event.target.value)} id="addTaskInput" type="text" />
+        <button className="add-button" type="submit" disabled={newTaskInput.length < 5 || newTaskInput.length > 50}>ADD</button>
       </label>
-      <button className="add-button" type="submit" disabled={newTaskInput.length < 5 || newTaskInput.length > 50}>ADD</button>
     </form>
   )
 }

@@ -41,7 +41,7 @@ const ToDoList = () => {
                 </div>
                 <div>
                   {/* <button className="delete-button" type="button" onClick={() => dispatch(tasks.actions.removeTask(singleTask))}>x</button> */}
-                  <button className="delete-single-task-button" type="button" onClick={() => onDeleteTaskBtnClick(singleTask)}>x</button>
+                  <button className="delete-single-task-button" type="button" onClick={() => onDeleteTaskBtnClick(singleTask)}>X</button>
                 </div>
               </div>
               <hr />

@@ -18,14 +18,19 @@ ul {
 }
 
 .delete-single-task-button {
-    font-family: 'Sedgwick Ave Display', cursive;
+    font-family: 'Permanent Marker', cursive;
     font-size: 20px;
     background: none;
     border: none;
     color: #DF7861;
     padding: 0;
     align-self: flex-end;
-    margin: 14px 18px 2px 0px;
+    margin: 8px 18px 2px 0px;
+}
+
+.delete-single-task-button:hover {
+    color: #b64d35;
+    cursor: pointer;
 }
 
 hr {
@@ -37,9 +42,23 @@ hr {
   }
 
 .invisible-text {
-    font-size: 20px;
+    font-size: 15px;
     margin: 10px 0px 10px 0px;
     color: white;
+}
+
+.delete-all-tasks-button {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 14px;
+    background: none;
+    border: 2px solid #c8c8c8;
+    border-radius: 5px;
+    color: #767676;
+    align-self: flex-end;
+}
+
+.delete-all-tasks-button:hover {
+    background-color: #c8c8c8;
 }
 
 [type="checkbox"] {
@@ -54,7 +73,7 @@ hr {
     display: inline-block;
     color: #DF7861;
     border-radius: 100%;
-    line-height: 22px;
+    line-height: 15px;
 }
 
 [type="checkbox"] + label::before{
@@ -62,9 +81,9 @@ hr {
     position: absolute;
     left: 0;
     top: 0;
-    width: 18px;
-    height: 18px;
-    outline: 2px solid #DF7861;
+    width: 15px;
+    height: 15px;
+    outline: 2px solid #D4E2D4;
     background-color: white;
 }
 
@@ -73,9 +92,10 @@ hr {
     position: absolute;
     left: 0;
     top: 0;
-    width: 18px;
-    height: 18px;
-    outline: 2px solid #DF7861;
+    width: 15px;
+    height: 15px;
+    outline: 2px solid #D4E2D4;
+    color: #D4E2D4;
     background: white;
 }
 
@@ -84,14 +104,15 @@ hr {
     position: absolute;
     left: 0;
     top: 0;
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
     text-align: center;
     background-image: url('assets/form-checkmark.svg');
     background-size: contain;
-    transform: scale(1);
+    background-repeat: no-repeat;
+    transform: scale(0.9);
     opacity: 1;
-    transition: all .5s ease;
+    transition: all .3s ease;
 }
 
 [type="checkbox"]:not(:checked) + label::after{
@@ -99,10 +120,10 @@ hr {
     position: absolute;
     left: 0;
     top: 0;
-    width: 18px;
-    height: 18px;
+    width: 15px;
+    height: 15px;
     background-size: contain;
     transform: scale(0);
     opacity: 0;
-    transition: all .5s ease;
+    transition: all .3s ease;
 }

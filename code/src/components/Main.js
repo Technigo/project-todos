@@ -7,11 +7,11 @@ import TaskCount from './TaskCount';
 const Main = () => {
   return (
     <main className="main-container">
-      <Header />
-      <TaskCount />
       <section className="list-container">
+        <Header />
         <ToDoList />
       </section>
+      <TaskCount />
       <Footer />
     </main>
   )
