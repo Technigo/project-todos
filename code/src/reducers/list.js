@@ -1,12 +1,9 @@
 /* eslint-disable max-len */
 import { createSlice } from '@reduxjs/toolkit';
 
-// const data = []
-
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    // items: data
     items: [
       { id: '1', text: 'Enjoy the nice weather', isDone: false },
       { id: '2', text: 'Eat some nice food', isDone: false }

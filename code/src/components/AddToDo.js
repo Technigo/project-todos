@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import styled from 'styled-components'
 import uniqid from 'uniqid'
 
-import todos from 'reducers/list'
+// import todos from 'reducers/'
 
 const ListContainer = styled.form`
   line-height: 1em;
@@ -36,13 +36,14 @@ const AddPlus = styled.span`
 const AddTodo = () => {
   const [inputValue, setInputValue] = useState('')
   const dispatch = useDispatch()
+  const todos = useSelector((store) => store.todos)
 
   const onFormSubmit = (event) => {
     event.preventDefault()
 
     const newTodo = {
       id: uniqid(),
-      key: todos.id,
+      // key: todos.id,
       name: inputValue,
       isDone: false
     };
@@ -64,4 +65,4 @@ const AddTodo = () => {
   )
 };
 
-export default AddTodo
+export default AddTodo;
