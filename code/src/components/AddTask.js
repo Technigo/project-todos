@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import { Counter } from './Counter';
-import '../style/AddTask.css'
-import '../style/Input.css'
-import '../style/Buttons.css'
 
 // stringToCapitalize makes only the first letter to uppercase
 const capitalize = (stringToCapitalise) => {
