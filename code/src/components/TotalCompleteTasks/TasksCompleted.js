@@ -5,18 +5,18 @@ import styled from 'styled-components'
 
 const H3 = styled.h3`
   color: white;
-  margin: 2rem 0rem 0rem 2rem;
-  font-size: 14px;
+  margin: 1.5rem 0rem 0rem 2rem;
+  font-size: 13px;
   font-family: 'Roboto Condensed', sans-serif;
   font-weight: 400;
 `
 
 const Date = styled.div`
-  font-size: 14px;
+  font-size: 13px;
   color: white;
   margin-left: auto;
   margin-right: 2rem;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 `
 
 const Wrapper = styled.section`

@@ -10,8 +10,8 @@
 
 .onTaskDeleteBtn {
   border: none;
-  width: 2rem;
-  height: 2rem;
+  width: 2.8rem;
+  height: 2.8rem;
   background-color: black;
   margin-left: 1.5rem;
 }
@@ -24,8 +24,8 @@
 .add-button {
   border: none;
   background-color: black;
-  width: 2rem;
-  height: 2rem;
+  width: 2.5rem;
+  height: 2.5rem;
   margin-right: 0.8rem;
 }
 
