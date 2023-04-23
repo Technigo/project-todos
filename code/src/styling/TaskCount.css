@@ -12,7 +12,10 @@
 
 .task-count-text {
     font-size: 16px;
-    font-weight: 600;
     color: #ECB390;
     margin: 5px 0px 5px 0px;
+}
+
+.highlighted-number {
+    color: #dd8673;
 }

@@ -9,13 +9,13 @@ const TaskCount = () => {
   return (
     <section className="task-count-container">
       <p className="task-count-text">
-          Number of tasks: {completedTask.length + notCompletedTask.length}
+          Number of tasks: <span className="highlighted-number">{completedTask.length + notCompletedTask.length}</span>
       </p>
       <p className="task-count-text">
-          Tasks left to complete: {notCompletedTask.length}
+          Tasks left to complete: <span className="highlighted-number">{notCompletedTask.length}</span>
       </p>
       <p className="task-count-text">
-          Completed tasks: {completedTask.length}
+          Completed tasks: <span className="highlighted-number">{completedTask.length}</span>
       </p>
     </section>
   )
