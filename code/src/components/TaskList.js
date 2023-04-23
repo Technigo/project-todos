@@ -43,6 +43,8 @@ width: 30px;
 height: 30px;
 border-radius: 50px;
 margin-left: 60px;
+color: black;
+padding-right: 3px;
 border: 1px solid black;
 `
 
