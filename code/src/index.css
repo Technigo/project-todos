@@ -165,6 +165,14 @@ input:focus {
     /* width: 504px; */
   }
 
+    .headerTitle {
+      margin-left: 20px;
+    }
+
+    .headerContainer {
+      padding-left: 20px;
+    }
+
   .outerWrapper {
     border: 2px solid black;
     display: flex;
@@ -188,10 +196,20 @@ input:focus {
     padding: 0px;
   }
 
+  .form {
+    padding-left: 40px;
+  }
+
+  #addTaskInput {
+    display: flex;
+    align-items: center;
+  }
+
   .input {
     background: white;
     border: none;
     width: 270px;
+    
   }
 
   button {
@@ -208,6 +226,7 @@ input:focus {
     display: flex;
     flex-direction: row-reverse;
     gap: 65px;
+    
   }
 
 }

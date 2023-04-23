@@ -5,8 +5,9 @@ import Confetti from 'react-confetti'
 import styled from 'styled-components';
 
 const CounterText = styled.p`
-  font-size: 1em;
+  font-size: 20px;
   display: flex;
+  justify-content: center;
 `
 
 export const Counter = () => {
@@ -27,15 +28,18 @@ export const Counter = () => {
             numberOfPieces={100}
             gravity={0.05}
             confettiSource={{ x: 0, y: 500, w: 1000, h: 1000 }} />
-          <p><span> 🍾 🎉 </span>YAY YOU´RE DONE LETS CELEBRATE! <span> 🎉 🍾 </span></p>
+
+          <p>YAY YOU´RE DONE LETS CELEBRATE!</p>
         </>)
     } else {
       return `${completedTasks.length} / ${items.length} done`
     }
   }
   return (
+
     <CounterText>
       {doneTasks()}
     </CounterText>
+
   )
 }

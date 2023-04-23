@@ -29,9 +29,6 @@ const TaskList = () => {
           return (
             <li key={singleTask.id}>
               <h1>
-                <TaskName isChecked={singleTask.isChecked}>
-                  {singleTask.taskName}
-                </TaskName>
                 <label htmlFor={`task_with_id${singleTask.id}`}>
                   <input
                     id={`task_with_id${singleTask.id}`}
@@ -40,6 +37,10 @@ const TaskList = () => {
                     value={singleTask.isChecked}
                     onChange={() => onIsCheckedCheckboxToggle(singleTask.id)} />
                 </label>
+                <TaskName isChecked={singleTask.isChecked}>
+                  {singleTask.taskName}
+                </TaskName>
+
               </h1>
             </li>
           );

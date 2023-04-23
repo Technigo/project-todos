@@ -7,12 +7,12 @@ const initialState = {
   items: [
     {
       id: '1',
-      taskName: 'Style this ugly list', // name is to store the input
+      taskName: 'Give yourself a highfive 🙌🏻', // name is to store the input
       isChecked: false
     },
     {
       id: '2',
-      taskName: 'Get rid of the damn dot on the left side',
+      taskName: 'Go pet your dog 🐶 ',
       isChecked: false // define with myself, also change it in the addNewTask
     }
   ]
@@ -22,13 +22,8 @@ const tasks = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
-    // "store, action" can be potato, banana, first argument (store) references the state of the store, second argument (action)references the data that is
-    // passed down from a component
-    addTask: (store, action) => {
-      // Mutable way. (varje gång man muterar the state of the store, youll get a warning). MEN detta vill vi inte. Vi vill att det ska vara immutable:
-      /*    store.items.push(action.payload); */
 
-      // Immutable way:
+    addTask: (store, action) => {
       store.items = [...store.items, action.payload]
     },
     deleteAllTasks: (store) => {
