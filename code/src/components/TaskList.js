@@ -102,7 +102,7 @@ const Wrapper = styled.div`
   padding: 50px 20px;
   margin: 0;
   label{
-    font-size: 28px;
+    font-size: 25px;
   }
 }
 `

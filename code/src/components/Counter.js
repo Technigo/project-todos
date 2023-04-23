@@ -11,7 +11,7 @@ const Counter = () => {
 
   return (
     <CounterWrapper>
-            &quot;You have cleared {completeToDo.length} out of {toDoCounter} today!&quot;
+            &quot; ✔ You have cleared {completeToDo.length} items out of {toDoCounter} today!&quot;
     </CounterWrapper>
   );
 };
@@ -22,6 +22,9 @@ const CounterWrapper = styled.p`
   color: var(--quinary);
   margin: 10px;
   font-size: 12px;
+  background-color: #00000026;
+  border-radius: 4px;
+  padding: 2px;
 @media (min-width: 600px) and (max-width: 900px){
   font-size: 14px;
 }
