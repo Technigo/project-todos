@@ -7,6 +7,7 @@ export const NewToDo = styled.form`
 
 export const Input = styled.input`
   min-height: 3rem;
+  min-width: 40vh;
   background: pink;
   border: none;
   padding: 8px;

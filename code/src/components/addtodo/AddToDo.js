@@ -4,12 +4,12 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from 'redux/reducers/todos';
 import { DefaultButton } from 'styles/Button';
-import { TagsInput } from 'components/tagsinput/TagsInput';
+import { TagsInput } from 'components/TagsInput/TagsInput';
 import {
   NewToDo,
   Input,
   AddContainer
-} from 'components/addtodo/AddToDo.style'
+} from 'components/AddToDo/AddToDo.style'
 
 export const AddToDo = () => {
   const [inputValue, setInputValue] = useState('');

@@ -9,7 +9,7 @@ import {
   TagsInputContainer,
   TagsInputField,
   TagItem
-} from 'components/tagsinput/TagsInput.style.js';
+} from 'components/TagsInput/TagsInput.style.js';
 
 export const TagsInput = () => {
   const dispatch = useDispatch();
