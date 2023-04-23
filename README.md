@@ -1,6 +1,7 @@
 Project Todos - https://hannah-project-to-do.netlify.app/
 
 🏁 Goals:
+
 I was tasked with building a to do app using React, Redux and I have successfully completed what I set out to do.
 
 The app has three main functionalities - adding tasks, listing tasks, and toggling task completion status. I decided to keep the design quite simple as I did not wan't it to be overly complex. 
