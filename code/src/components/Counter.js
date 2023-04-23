@@ -23,9 +23,9 @@ const CounterWrapper = styled.p`
   margin: 10px;
   font-size: 12px;
 @media (min-width: 600px) and (max-width: 900px){
-  font-size: 15px;
+  font-size: 14px;
 }
 @media (min-width: 901px){
-  font-size: 20px;
+  font-size: 16px;
 }
 `
