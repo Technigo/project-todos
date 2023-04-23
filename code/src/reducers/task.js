@@ -34,8 +34,8 @@ const tasks = createSlice({
       const copyOfTaskArrayFromStore = store.items;
       const condition = (element) => element.id === id;
       const foundIndex = copyOfTaskArrayFromStore.findIndex(condition);
-      copyOfTaskArrayFromStore[foundIndex].isCaught =
-      !copyOfTaskArrayFromStore[foundIndex].isCaught;
+      copyOfTaskArrayFromStore[foundIndex].isDone =
+      !copyOfTaskArrayFromStore[foundIndex].isDone;
       store.items = copyOfTaskArrayFromStore;
       localStorage.setItem('taskList', JSON.stringify(store.items));
     }

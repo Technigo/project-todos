@@ -5,6 +5,7 @@ import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
 import tasks from 'reducers/task';
 import Header from 'components/Header';
+import TotalCompleteItems from 'components/TasksCompleted';
 
 export const App = () => {
   const reducer = combineReducers({
@@ -17,6 +18,7 @@ export const App = () => {
       <Header />
       <AddTask />
       <TaskList />
+      <TotalCompleteItems />
     </Provider>
   );
 }

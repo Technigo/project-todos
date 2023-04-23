@@ -5,6 +5,7 @@ const Header = () => {
     <section>
       <h1>My to do list...</h1>
     </section>
-  )}
+  )
+}
 
 export default Header

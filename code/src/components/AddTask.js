@@ -18,7 +18,7 @@ const AddTask = () => {
     const newTask = {
       id: Date.now().toString(),
       name: inputValue.capitalize(),
-      isCaught: false
+      isDone: false
     }
     // false. so that it is not checked.
     dispatch(tasks.actions.addTask(newTask));
@@ -33,8 +33,8 @@ const AddTask = () => {
       <button type="button" onClick={onDeleteYourTaskBtnClick}>Delete all tasks</button>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
-        Add your new task here.
-          <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" placeholder="Write your to do here" required />
+        Add a task
+          <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" placeholder="Write your new to do here" required />
         </label>
         <button type="submit"> Add task!</button>
       </form>
