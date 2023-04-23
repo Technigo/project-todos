@@ -6,17 +6,18 @@ import styled from 'styled-components'
 const H3 = styled.h3`
   color: white;
   margin: 1.5rem 0rem 0rem 2rem;
-  font-size: 13px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 16px;
+  font-family: 'Pathway Extreme', sans-serif;
   font-weight: 400;
 `
 
 const Date = styled.div`
-  font-size: 13px;
+  font-size: 16px;
   color: white;
   margin-left: auto;
   margin-right: 2rem;
   margin-top: 1.5rem;
+  font-family: 'Pathway Extreme', sans-serif;
 `
 
 const Wrapper = styled.section`
