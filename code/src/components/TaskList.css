@@ -17,16 +17,8 @@
 }
 
 .checkBox {
-  height: 20px;
-  width: 20px;
   margin: auto;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
+  scale: 150%;
 }
 
 .listSection {
