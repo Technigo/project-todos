@@ -14,6 +14,10 @@ import { toggleComplete, removeTask } from '../reducers/tasks'
 const TaskListContainer = styled.div`
   margin-top: 2em;
   width:50%;
+  @media (max-width: 768px) {
+    width: 100%;
+    padding: 0 1em;
+  }
 
 `;
 
@@ -40,16 +44,29 @@ const ProjectContainer = styled.div`
 const TaskListUl = styled.ul`
   list-style: none;
   padding: 0;
-  color:white;
-  display:flex;
-  align-items:center
+  color: white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  overflow: auto;
+
+`;
+
+const DueDate = styled.span`
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 1em;
+  margin-right:1em;
+  color:  #b8b9c7;
 `;
 
 const TaskItem = styled.li`
   padding: 0.5em 0;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: flex-end;
+  flex-direction:column;
+  
+ 
+ 
 
   cursor: pointer;
   text-decoration: ${(props) => (props.completed ? 'line-through' : 'none')};
@@ -85,7 +102,7 @@ const TaskList = () => {
 
     if (dueDate) {
       const due = new Date(dueDate);
-      formattedDate = ` due ${due.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}`;
+      formattedDate = ` due ${due.toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}`;
     }
 
     return formattedDate;
@@ -112,7 +129,7 @@ const TaskList = () => {
                     completed={task.complete}
                     onClick={() => handleToggleComplete(task.id)}>
                     {task.text}{' '}
-                    <span>{formatDate(task.createdAt, task.dueDate)}</span>
+                    <DueDate>{formatDate(task.createdAt, task.dueDate)}</DueDate>
                     <DeleteButton type="button" onClick={(e) => { e.stopPropagation(); handleRemoveTask(task.id); }}>
                     Delete
                     </DeleteButton>

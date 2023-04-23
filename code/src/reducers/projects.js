@@ -9,7 +9,8 @@ const getInitialState = () => {
     return projectsFromLocalStorage;
   } else {
     return [
-      { id: 1, name: 'Small daily tasks', complete: false }
+      { id: 1, name: 'Small daily tasks', complete: false },
+      { id: 2, name: 'Cleaning', complete: false }
     ];
   }
 };

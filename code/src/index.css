@@ -35,3 +35,9 @@ h2 {
   margin-bottom: 20px;
 }
 
+/* Mobile styles */
+@media (max-width: 768px) {
+  img {
+    width: 330px;
+  }
+}
