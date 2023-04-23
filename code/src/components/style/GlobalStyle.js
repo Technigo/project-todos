@@ -162,7 +162,7 @@ export const ProjectNameContainer = styled.div`
     }
 
     @media (min-width:1280px){
-      width: 293.977px;
+      width: 291.977px;
     }
 `
 
