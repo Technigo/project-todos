@@ -19,20 +19,26 @@ const TaskList = () => {
         <section className="tasklist-container">
             <ul>
                 {taskList.map((singleTask) => (
-                    <li key={singleTask.id}>
-                        <input
-                            type="checkbox"
-                            checked={singleTask.isChecked}
-                            onChange={() => onTaskToggle(singleTask.id)} />
-                        {singleTask.name}
-                        {singleTask.time}
-                        <button className="removeBtn" type="button" onClick={() => onRemoveTask(singleTask.id)}>
-                            <img src=".\images\trash.svg" alt="trash" className="trashBtn" />
-                        </button>
+                    <li className="list" key={singleTask.id}>
+                        <p className="mainList">
+                            <div className="checkBox">
+                                <input
+                                    type="checkbox"
+                                    checked={singleTask.isChecked}
+                                    onChange={() => onTaskToggle(singleTask.id)} />
+                            </div>
+                            <div className="listSection">
+                                <div className="taskText">{singleTask.name}</div>
+                                <div className="timeStamp">{singleTask.time}</div>
+                            </div>
+                            <button className="removeBtn" type="button" onClick={() => onRemoveTask(singleTask.id)}>
+                                <img src=".\images\trash.svg" alt="trash" className="trashBtn" />
+                            </button>
+                        </p>
                     </li>
                 ))}
-                <ClearBtn />
             </ul>
+            <ClearBtn />
         </section>
     )
 }

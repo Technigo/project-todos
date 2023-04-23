@@ -12,14 +12,17 @@ export const App = () => {
   });
   const store = configureStore({ reducer });
   return (
-    <Provider store={store}>
-      <div className="App">
-        <Counter />
-        <AddTask />
-        <TaskList />
+    <div className="App">
+      <div className="app-container">
+        <div className="app-container-task">
+          <Provider store={store}>
+            <h1>To-Do List</h1>
+            <Counter />
+            <AddTask />
+            <TaskList />
+          </Provider>
+        </div>
       </div>
-    </Provider>
+    </div>
   )
 }
-
-// ctrl + c inside the terminal to stop the liveServer

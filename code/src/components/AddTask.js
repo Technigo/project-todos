@@ -2,6 +2,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import moment from 'moment';
+import './AddTask.css';
 import tasks from 'reducers/tasks';
 
 const AddTask = () => {
@@ -18,15 +19,16 @@ const AddTask = () => {
         };
         dispatch(tasks.actions.addTask(newTask));
         setInputValue('');
-        // https://www.random.org/
     }
     return (
         <section className="input-field">
             <form onSubmit={onFormSubmit}>
                 <label htmlFor="addTaskInput">
-                    <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" placeholder="Add your task here" required />
+                    <div className="input">
+                        <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" placeholder="Add your task here" required />
+                        <button className="addBtn" type="submit"><img className="addIcon" alt="Post here" src="./Images/addBtn.svg" /></button>
+                    </div>
                 </label>
-                <button type="submit"> Add Now!</button>
             </form>
         </section>
     )

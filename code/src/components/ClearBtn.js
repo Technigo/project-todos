@@ -2,6 +2,7 @@
 /* eslint-disable indent */
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import './ClearBtn.css';
 import tasks from 'reducers/tasks';
 
 const ClearBtn = () => {
@@ -11,7 +12,7 @@ const ClearBtn = () => {
     }
     return (
         <section className="ClearBtn-container">
-            <button type="button" onClick={clearTasks}>Clear Tasks</button>
+            <button className="clearBtn" type="button" onClick={clearTasks}>Clear Tasks</button>
         </section>
     )
 }

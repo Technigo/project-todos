@@ -10,7 +10,7 @@ const Counter = () => {
         if (items.length === 0) {
             return ''
         } else if (items.length === completedTasks.length) {
-            return `All done ! ${completedTasks.length} / ${items.length}`
+            return `All done! ${completedTasks.length} / ${items.length}`
         } else {
             return `${completedTasks.length} / ${items.length} done`
         }
