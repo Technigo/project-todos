@@ -46,6 +46,7 @@ const AddButton = styled.button`
 
   :hover {
     font-weight: normal;
+    color: black;
   }
 `
 
