@@ -1,0 +1,26 @@
+
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+    }
+
+.grid-image {
+    background-image:url('./assets/sfondo.png');    
+}
+
+.grid-content {
+    grid-column-start: 2;
+    grid-column-end: span line3;
+    justify-self: center;
+    }
+
+    /* 
+    
+
+
+    */ 

@@ -13,6 +13,7 @@ import { NewTask } from 'components/NewTask';
 It eliminates the need to manually set up various middleware and enhancers. */
 import { TaskList } from 'components/TaskList';
 import { Task } from 'reducers/Task';
+import './App.css';
 
 export const App = () => {
 // need to provide an object as an argument hence curly brackets
@@ -27,10 +28,13 @@ export const App = () => {
   return (
     // provider takes one prop: store and allows entire app to see and use it
     <Provider store={store}>
-      <div>
-        <NewTask />
-        <TaskList />
-      </div>
+      <section className="grid">
+        <section className="grid-image" />
+        <section className="grid-content">
+          <NewTask />
+          <TaskList />
+        </section>
+      </section>
     </Provider>
   );
 }
