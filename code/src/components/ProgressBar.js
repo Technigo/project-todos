@@ -57,6 +57,6 @@ const CounterText = styled.p`
 const Span = styled.section`
 font-weight: bold;
 margin-right: auto;
-padding-right: 60px;
+padding-right: 130px;
 `
 /* Fix this centering later */

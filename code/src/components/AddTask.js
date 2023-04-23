@@ -25,10 +25,11 @@ const AddTask = () => {
   const onRemoveAllButtonClick = () => {
     dispatch(tasks.actions.removeAllTasks());
   }
+
   return (
     <>
       {/* <GlobalStyle /> */}
-      <section>
+      <Section>
         <Form onSubmit={onFormSubmit}>
           <label htmlFor="addTaskInput">
             <input
@@ -43,7 +44,7 @@ const AddTask = () => {
         {/* <RemoveSection> */}
         <RemoveAllButton type="button" onClick={onRemoveAllButtonClick}>Remove all tasks</RemoveAllButton>
         {/* </RemoveSection> */}
-      </section>
+      </Section>
     </>
 
   )
@@ -52,6 +53,12 @@ const AddTask = () => {
 export default AddTask
 
 /* STYLING FOR ADDTASK */
+
+const Section = styled.section`
+position: relative;
+display: flex;
+justify: content: center;
+`
 
 const Form = styled.form`
 
@@ -79,6 +86,7 @@ const SubmitButton = styled.button`
   cursor: pointer;
   margin-left: 50px;
 `
+/* Style media query for mobile for the margin-left relative to input box in future */
 
 const PlusIcon = styled.img`
   width: 1.3rem;
@@ -88,35 +96,19 @@ const PlusIcon = styled.img`
   transform: scale(1.4);
   }
 `
-
-// const RemoveSection = styled.div`
-//   display: flex;
-//   flex-direction: row;
-//   justify-content: center;
-//   align-items: center;
-// `
-
 const RemoveAllButton = styled.button`
  background-color: #EAFDFC;
   color: #243763;
-  border-radius: 30px;
+  border-radius: 10px;
   border: none;
-  padding: 10px;
+  padding: 5px;
   cursor: pointer;
-  position: absolute;
-  bottom: 50px;
-  right: 50px;
+  /* position: absolute; */
+  /* margin-top: 15px;
+  margin-bottom: 10px;
+  margin-right: 20px; */
 
   &:hover {
-  color: #C92C6D;
-  font-weight: bold;
+  background-color: #91D8E4;
   }
 `
-
-// const RemoveIcon = styled.img`
-//   width: 1.2rem;
-
-//   &:hover {
-//   color: #C92C6D;
-//   }
-//   `

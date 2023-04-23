@@ -50,12 +50,12 @@ export const tasks = createSlice({
     // action for removing all tasks from Task List
     removeAllTasks: (store) => {
       store.items = []
-    },
-    // action for completing all tasks
-    completeAllTasks: (store) => {
-      store.items.forEach((item) => {
-        item.complete = true
-      })
     }
+    // action for completing all tasks
+    // completeAllTasks: (store) => {
+    //   store.items.forEach((item) => {
+    //     item.complete = true
+    //   })
+    // }
   }
 })
