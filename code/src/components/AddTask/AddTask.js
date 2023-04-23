@@ -33,7 +33,12 @@ const AddTask = () => {
             </svg>
           </button>
           <label htmlFor="addTaskInput">
-            <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" />
+            <input
+              value={inputValue}
+              onChange={(event) => setInputValue(event.target.value)}
+              id="addTaskInput"
+              type="text"
+              placeholder="Add a task..." />
           </label>
           <button className="onTaskDeleteBtn" type="button" onClick={onTaskDeleteBtnClick}>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
