@@ -1,9 +1,9 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks'
-import styled from 'styled-components';
 import { Checkbox } from './styles/Checkbox';
 import { IconButton } from './styles/IconButton';
+import { TaskListWrapper, SingleTaskWrapper } from './TaskListStyles';
 
 export const TaskList = () => {
   // FUNCTIONALITY
@@ -15,52 +15,7 @@ export const TaskList = () => {
   const onRemoveTask = (taskId) => {
     dispatch(tasks.actions.deleteTask({ taskId }));
   }
-  // STYLES
-  const TaskListWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  z-index: 2;
-  position: relative;
-  `
-  const SingleTaskWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #E6DBBC;
-  padding: 1rem;
-  border-radius: 1.8rem;
-  width: 17rem;
-  word-wrap: break-word;
-  margin-bottom: 15px;
-  
-  li {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    gap: 0.5rem;
-    font-family: 'League Spartan', sans-serif;
-    font-size: 1.5rem;
-    word-wrap: break-word;
-    
-    span {
-      font-size: 0.9rem;  
-      color: #777;
-      text-align: center;
-    }
-  }
-  @media (min-width: 668px) {
-  width: 32rem;
-  font-size: 1rem;
-}
-@media (min-width: 1024px) {
-  width: 32rem;
-  font-size: 1.5rem;
-}
-`;
+
   return (
     <TaskListWrapper>
       <ul>

@@ -15,10 +15,15 @@ flex-direction: row;
 align-items: center;
 justify-content: center;
 background-color: white;
-width: 28rem;
+width: 21rem;
 padding: 0.5rem;
 border-radius: 2rem;
-gap: 1.2rem;`
+gap: 1.2rem;
+@media (min-width: 668px) {
+      font-size: 1.3rem;
+      width: 28rem;
+    }
+    `
 
 export const Label = styled.label`
 display: flex;
@@ -26,19 +31,31 @@ display: flex;
 
 export const CalendarContainer = styled.div`
 position: relative;
-width: 30px;
-height: 30px;
+width: 20px;
+height: 20px;
+
+@media (min-width: 668px) {
+  width: 30px;
+  height: 30px;
+    }
 `
 
 export const AddTaskInput = styled.input`
-  width: 100%;
+  width: 8rem;
   background-color:transparent;
   border: none;
   border-radius: 20px;
-  height: 3rem;
-  font-size: 1.3rem;
+  height: 2rem;
+  font-size: 0.5rem;
   font-family: 'League Spartan', sans-serif;
   padding: 0rem 0.5rem;
+
+  @media (min-width: 668px) {
+  padding: 0rem 0.5rem;
+  height: 3rem;
+  width: 14rem;
+  }
+
 
   :focus {
     outline: none;

@@ -1,4 +1,7 @@
+/* eslint-disable max-len */
 import styled from 'styled-components';
+
+// I could only import these into the TaskList-component if I put this file in the same folder. I couldn't figure out why
 
 export const TaskListWrapper = styled.div`
 display: flex;
@@ -14,7 +17,7 @@ justify-content: space-between;
 align-items: center;
 background-color: #E6DBBC;
 padding: 0.5rem;
-border-radius: 1.8rem;
+border-radius: 2rem;
 width: 20rem;
 word-wrap: break-word;
 margin-bottom: 15px;

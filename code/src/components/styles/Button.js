@@ -10,7 +10,7 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 align-items: center;
-padding: 0.6rem 1.1rem;
+padding: 0.8rem 1rem;
 color: black;
 
 

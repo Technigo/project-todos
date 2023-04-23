@@ -1,12 +1,12 @@
+/* eslint-disable max-len */
 import React, { useState, forwardRef } from 'react';
 import { useDispatch } from 'react-redux';
 import DatePicker, { CalendarContainer } from 'react-datepicker'
 import { BsCalendarDateFill } from 'react-icons/bs';
 import { tasks } from 'reducers/tasks';
-import { Button } from './Button';
+import { Button } from './styles/Button';
 import { IconButton } from './styles/IconButton';
-import { Form, Label, AddTaskInput, AddTaskWrapper } from './styles/FormStyled'
-
+import { Form, Label, AddTaskInput, AddTaskWrapper } from './styles/AddTaskStyles'
 import 'react-datepicker/dist/react-datepicker.css';
 
 const CustomInput = forwardRef(({ onClick }, ref) => (
@@ -14,15 +14,19 @@ const CustomInput = forwardRef(({ onClick }, ref) => (
     <BsCalendarDateFill fill="black" />
   </IconButton>
 ));
+// this handles the input from the calendar and shows the icon button.
 
 export const AddTask = () => {
-  // FUNCTIONALITY
   const [inputValue, setInputValue] = useState('');
+  // get the input using the useState hook.
   const [deadlineDate, setDeadlineDate] = useState(null);
+  // get the Deadline date using the useState hook.
 
   const dispatch = useDispatch();
+  // dispatch hook
 
   const onFormSubmit = (event) => {
+    // this function handles stuff when the form is submitted.
     event.preventDefault();
 
     const newTask = {
@@ -31,12 +35,13 @@ export const AddTask = () => {
       isDone: false,
       deadlineDate: deadlineDate ? new Date(deadlineDate).toLocaleDateString('sv-SE', { day: '2-digit', month: '2-digit', year: 'numeric' }) : null
     };
+    // this is an object that I call newTask that is sent into the items array (that contains all the tasks).
 
     dispatch(tasks.actions.addTask(newTask));
     // dispatching the addPokemon with the newPokemon as the argument
     setInputValue('');
     setDeadlineDate('');
-    // We have to reset the input value back to empty
+    // We have to reset the input value back to empty for both the input and deadline date
     // https://www.random.org/
   }
 
@@ -67,13 +72,4 @@ export const AddTask = () => {
   )
 }
 
-// Move Clear All button to the header instead?
-// Fix the style for form, why doesn't the input-field go below?
-
-// Ta reda på vad som händer här.
-/* Object.defineProperty(String.prototype, 'capitalize', {
-//   value: () => {
-//     return this.charAt(0).toUpperCase() + this.slice(1);
-//   },
-//   enumerable: false
-// }); */
+// in the above return the form is rendered. The datepicker is imported from react-datepicker, and the input from that is set to the deadline-variable. The calendar-container is also imported from react-datepicker.

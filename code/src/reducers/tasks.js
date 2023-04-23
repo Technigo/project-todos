@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: []
+  // this is the array of items(tasks), it starts empty
 }
 
 export const tasks = createSlice({
@@ -13,15 +14,8 @@ export const tasks = createSlice({
     // passed down from a component
 
     addTask: (store, action) => {
-    // Mutable
-    //   store.items.push(action.payload);
-    // Immutable
       store.items = [action.payload, ...store.items]
-      // const x = ['a','b','c']
-      // const y = [x, 'd'] => [['a','b','c'], 'd']
-      // const z = [...x, 'd']  => ['a','b','c','d']
-      // const superObject = {a: 'test', b:'other test'}
-      // const supererObject = {...superObject, c: 'third test'}
+      // this uppdates the store with the action payload using the spread syntax.
     },
     toggleTask: (store, action) => {
       store.items.forEach((item) => {
@@ -29,48 +23,15 @@ export const tasks = createSlice({
           item.isDone = !item.isDone
         }
       })
-    },
+    }, // the toggleTask function uses the forEach loop to iterate over the items array. It check the condition (if item.id is the same as the action.payload.id) then the isDone property is changed. It doesn't matter if it's set as true or false, it just changes to one or the other.
     deleteTask: (store, action) => {
       const index = store.items.findIndex((element) => element.id === action.payload.id);
       store.items.splice(index, 1);
-
-      /* const updatedItems = store.items.filter((item) => item.id !== action.payload.id);
-      return { ...store, items: updatedItems }; */
-
-      /* const updatedItems = store.items
-      condition = (item) => item.id === action.payload.id */
-
-      /* const { id } = action.payload;
-      splice to remove a single element if I know the index
-      const copyOfPokemonArrayFromStore = store.items;
-      const condition = (element) => element.id === id;
-      const foundIndex = copyOfPokemonArrayFromStore.findIndex(condition);
-      copyOfPokemonArrayFromStore.splice(foundIndex, 1);
-      store.items = copyOfPokemonArrayFromStore; */
+      // The deleteTask function will remove the element that is found via the findIndex function
     },
     clearTasks: () => {
       return initialState
     }
+    // the clearTasks function will return to the intitial state, which is an empty array.
   }
 })
-
-/*     deleteSinglePokemon: (store, action) => {
-      // const { id } = action.payload;
-      const id = action.payload;
-      console.log('action.payload', action.payload)
-      // splice to remove a single element if I know the index
-      const copyOfPokemonArrayFromStore = store.items;
-      const condition = (element) => element.id === id;
-      const foundIndex = copyOfPokemonArrayFromStore.findIndex(condition);
-      copyOfPokemonArrayFromStore.splice(foundIndex, 1);
-      store.items = copyOfPokemonArrayFromStore;
-    }, */
-
-/*    toggleIfPokemonIsCaught: (store, action) => {
-      const id = action.payload;
-      const copyOfPokemonArrayFromStore = store.items;
-      const condition = (element) => element.id === id;
-      const foundIndex = copyOfPokemonArrayFromStore.findIndex(condition);
-      copyOfPokemonArrayFromStore[foundIndex].isCaught = !copyOfPokemonArrayFromStore[foundIndex].isCaught;
-      store.items = copyOfPokemonArrayFromStore;
-    } */

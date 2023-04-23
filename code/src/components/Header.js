@@ -1,40 +1,21 @@
 import React from 'react';
-import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import { tasks } from '../reducers/tasks';
-import { Button } from './Button';
+import { Button } from './styles/Button';
 import { Counter } from './Counter';
-
-const HeaderWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    gap: 2rem;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    z-index: 2;
-    position: relative;
-    `
-
-const HeaderTitle = styled.h1`
-    font-size: 5rem;
-    text-align: center;
-    font-family: 'Paytone One', sans-serif;
-    color: #444444;
-    `
+import { HeaderWrapper, HeaderTitle } from './styles/HeaderStyles';
 
 export const Header = () => {
   const dispatch = useDispatch();
+  // useDispatch hook used in the clearTask function below
 
   const clearTasks = () => {
     dispatch(tasks.actions.clearTasks());
   }
-
+  // clearTask function calls the clearTasks-reducerfunction in the store.
   return (
     <HeaderWrapper>
-      <HeaderTitle>TODO</HeaderTitle>
+      <HeaderTitle>Stuff to do</HeaderTitle>
       <Button type="button" onClick={clearTasks}>Clear all</Button>
       <Counter />
     </HeaderWrapper>
