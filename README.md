@@ -13,9 +13,9 @@ Overall, I found this project to be a great opportunity to flex my Redux muscles
 ✅ Be able to add and remove tasks.<br>
 ✅ Should show a count of either all tasks or all uncompleted tasks (or both).
 
-## 🧨 The problem:
-I started with creating a design sketch in Figma - the plan was to create a minimal and lightweight app.
-Then I set the structure with components and reducers.
+## 🚧 The problem:
+I started with creating a design sketch in Figma - the plan was to create a minimal and lightweight app.<br>
+Then I set the structure with components and reducers.<br>
 I used styled components for the most part of the styling in this project. 
 
 If I had more time, I would add a "Complete all" button.
