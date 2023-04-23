@@ -28,7 +28,7 @@ const StyledSingleTaskWrapper = styled.div`
     -webkit-border-radius: 25px 2px 25px 2px;
     -moz-border-radius: 25px 2px 25px 2px;
     box-shadow: 0 5px 8px  rgb(140,115,115,0.2), 0 3px 10px  rgb(140,115,115,0.2);
-    background-color: #F0EFEB;
+    background-color: #f4f3ee;
 
     input {
       cursor: pointer;
@@ -43,8 +43,12 @@ const StyledListItem = styled.li`
 `;
 
 const StyledSingleTask = styled.p`
-  font-size: 28px;
+  font-size: 22px;
   font-family: 'Caveat', cursive;
+
+  @media (min-width: 667px) {
+        font-size: 28px;
+      }
 `;
 
 const StyledTimeP = styled.p`
@@ -90,16 +94,20 @@ const StyledDeleteAllBtn = styled.button`
     width: 50%;
     max-width: 150px;
     height: 30px;
-    background-color: #D4C7B0;
+    background-color: #d8d0c1;
     color: #3F4238;
     font-family: 'Roboto', sans-serif;
-    font-size: 16px;
+    font-size: 14px;
     border: none;
     border-radius: 10px 2px 10px 2px;
     -webkit-border-radius: 10px 2px 10px 2px;
     -moz-border-radius: 10px 2px 10px 2px;
     box-shadow: 0 5px 8px  rgb(140,115,115,0.2), 0 3px 10px  rgb(140,115,115,0.2);
     cursor: pointer;
+
+    @media (min-width: 667px) {
+        font-size: 16px;
+      }
 
     &:hover {
       transform: scale(1.1);

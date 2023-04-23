@@ -16,20 +16,28 @@ const StyledHeader = styled.header`
     -webkit-border-radius: 25px 2px 25px 2px;
     -moz-border-radius: 25px 2px 25px 2px;
     font-family: 'Caveat', cursive;
-    background-color: #D4C7B0;
+    background-color: #d8d0c1;
     box-shadow: 0 5px 8px  rgb(140,115,115,0.2), 0 3px 10px  rgb(140,115,115,0.2);
 
     h1 {
-      font-size: 96px;
+      font-size: 64px;
       font-family: 'Caveat', cursive;
       color: #3F4238;
       text-shadow: -4px 5px 8px rgba(0, 0, 0, 0.4);
+
+      @media (min-width: 667px) {
+        font-size: 96px;
+      }
     }
 
     h2 {
       font-family: 'Caveat', cursive;
-      font-size: 26px;
+      font-size: 22px;
       color: black;
+
+      @media (min-width: 667px) {
+        font-size: 26px;
+      }
     }
 
     h3 {

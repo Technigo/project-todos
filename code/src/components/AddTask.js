@@ -13,7 +13,7 @@ const StyledAddTaskContainer = styled.section`
     margin-bottom: 10px;
     padding: 10px;
     font-family: 'Roboto', sans-serif;
-    background-color: #F0EFEB;
+    background-color: #f4f3ee;
     border-radius: 25px;
     -webkit-border-radius: 25px;
     -moz-border-radius: 25px;
@@ -32,8 +32,12 @@ const StyledLabel = styled.label`
     flex-direction: column;
     align-items: center;
     width: 100%;
-    font-size: 26px;
+    font-size: 22px;
     font-family: 'Caveat', cursive;
+
+    @media (min-width: 667px) {
+        font-size: 26px;
+      }
 
     input {
       margin: 10px 0;
@@ -57,12 +61,16 @@ const StyledAddBtn = styled.button`
     align-items: center;
     border: solid grey 1px;
     background-color: #B7B7A4;
-    padding: 10px;
+    padding: 5px;
     border-radius: 10px 3px 10px 3px;
     -webkit-border-radius: 10px 3px 10px 3px;
     -moz-border-radius: 10px 3px 10px 3px;
     box-shadow: 0 5px 8px  rgb(140,115,115,0.2), 0 3px 10px  rgb(140,115,115,0.2);
     cursor: pointer;
+
+    @media (min-width: 667px) {
+      padding: 10px;
+      }
 
     &:hover {
       transform: scale(1.15);

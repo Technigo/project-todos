@@ -12,7 +12,7 @@ const StyledMainContainer = styled.main`
     grid-template-columns: 5% repeat(2, 1fr) 5%;
     justify-content: center;
     align-items: center;
-    background-color: #efe5dc;
+    background-color: #e2e8dd;
     min-height: 100vh;
 
     @media (min-width: 667px) {
@@ -38,7 +38,7 @@ const StyledMainWrapper = styled.div`
         border-radius: 25px 5px 25px 5px;
         -webkit-border-radius: 25px 5px 25px 5px;
         -moz-border-radius: 25px 5px 25px 5px;
-        background-color: #efe5dc;
+        background-color: #e2e8dd;
         box-shadow: 0 5px 8px  rgb(140,115,115,0.2), 0 3px 10px  rgb(140,115,115,0.2);
     }
 
