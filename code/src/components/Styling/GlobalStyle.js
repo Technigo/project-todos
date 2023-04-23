@@ -6,7 +6,7 @@ body {
     margin: 0;
     padding: 0;
 }
-`
+`;
 
 export const MainBox = styled.div`
     display: flex;
@@ -20,7 +20,8 @@ export const MainBox = styled.div`
     margin: auto;
     margin-top: 20px;
     padding-bottom: 20px;
-`
+`;
+
 export const HeaderH1 = styled.h1`
   font-size: 38px;
   font-weight: 900;
@@ -38,6 +39,7 @@ export const Paragraph = styled.p`
 export const AddBtn = styled.button`
   background-color: transparent;
   border: none;
+  margin-top: 1px;
   cursor: pointer;
   &:hover {
     color: var(--hover-color);
@@ -56,7 +58,14 @@ export const CounterBox = styled.div`
     font-size: 13px;
     font-weight: 700;
     color: var(--text-color);  
-`
+`;
+
+export const CounterP = styled.p`
+  font-size: 11px;
+  font-weight: 300;
+  margin: 0;
+  padding-left: 10px;
+`;
 
 export const TaskBox = styled.div`
     display: flex;
@@ -69,7 +78,8 @@ export const TaskBox = styled.div`
     padding: 20px;
     margin-top: 10px;
     border-radius: 10px;
-`
+`;
+
 export const TaskParagraph = styled.p`
   font-size: 14px;
   font-weight: 300;
@@ -93,18 +103,20 @@ export const TrashBtn = styled.button`
       color: var(--hover-color);
     }
   }
-`
+`;
+
 export const DeleteBox = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: var(--box-color);
-    max-width: 118px;
+    max-width: 122px;
     height: 18px;
     padding: 10px 10px;
     margin: 10px auto;
     border-radius: 10px;
-`
+`;
+
 export const RemoveBtn = styled.button`
   background-color: transparent;
   border: none;
@@ -115,24 +127,24 @@ export const RemoveBtn = styled.button`
   &:hover {
     color: var(--hover-color);
    }
-`
+`;
 
 export const Foot = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  width: 200px;
+  width: 160px;
   margin-top: 20px;
 
   i {
     font-size: 20px;
     color: var(--text-color);
-    padding: 0 18px 0 15px;
+    padding: 0 9px;
     &:hover {
       color: var(--hover-color);
     }
   }
-`
+`;
 
 export const FootParagraph = styled.p`
   font-size: 12px;

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { notereminder } from 'reducers/reminders';
-import { AddBtn } from './Styling/GlobalStyle';
+import { AddBtn, CounterP } from './Styling/GlobalStyle';
 
 export const AddNote = () => {
   const [inputValue, setInputValue] = useState('');
@@ -46,7 +46,9 @@ export const AddNote = () => {
           <i className="fa-solid fa-square-plus" />
         </AddBtn>
       </form>
-      <span>{100 - charCount} / 100 </span>
+      <CounterP>
+        {100 - charCount} / 100
+      </CounterP>
     </section>
   )
 }
