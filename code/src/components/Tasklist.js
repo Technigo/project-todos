@@ -19,7 +19,7 @@ export const Tasklist = () => {
                 <input id={`taskText-${singleTask.id}`} type="checkbox" checked={singleTask.checked} onChange={() => dispatch(tasks.actions.toggleChecked(singleTask))} />
                 <label htmlFor={`taskText-${singleTask.id}`}>{singleTask.name}</label>
               </ListItemWrapper>
-              <DeleteTaskButton type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask.id))}>X</DeleteTaskButton>
+              <DeleteTaskButton type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask.id))}>✘</DeleteTaskButton>
             </StyledListItem>)
         })}
       </List>
@@ -83,9 +83,10 @@ const StyledListItem = styled.li`
     top: 3px;
     width: 18px;
     height: 18px;
-    outline: 2px solid #b6cdbd;;
+    outline: 2px solid #b6cdbd;
     background: white;
     border-radius: 50%;
+    -webkit-border-radius: 50%;
   }
 
   [type="checkbox"]:checked + label::before{
@@ -110,6 +111,8 @@ const StyledListItem = styled.li`
     transform: scale(1.5);
     opacity: 1;
     transition: all .3s ease;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
   }
 
   [type="checkbox"]:not(checked) + label::after{
@@ -123,9 +126,16 @@ const StyledListItem = styled.li`
     background-size: cover;
     transform: scale(0);
     opacity: 0;
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
   }
 
   [type="checkbox"]:checked + label {
-    text-decoration: line-through 2px;
+    text-decoration: line-through 2px #5c715e;
+    -webkit-text-decoration: line-through;
+    text-decoration-color: #5c715e;
+    -webkit-text-decoration-color: #5c715e;
+    text-decoration-thickness: 2px;
+    -webkit-text-decoration-thickness: 2px;
   }
 `

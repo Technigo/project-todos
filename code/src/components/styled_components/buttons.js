@@ -7,11 +7,9 @@ export const Addbutton = styled.button`
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  font-size: 25px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
- 
+  font-size: 1rem;
+  text-align: center;
+  
   &:hover {
   cursor: pointer;
   box-shadow: 1px 2px #665d47;
@@ -21,7 +19,6 @@ export const Addbutton = styled.button`
   color: #b6cdbd;
   border: #b6cdbd 2px solid;
   }
-  
 `
 
 export const DeleteTaskButton = styled.button`
