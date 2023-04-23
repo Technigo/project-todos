@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
@@ -8,6 +8,13 @@ import { DeleteTaskButton } from './styled_components/buttons'
 export const Tasklist = () => {
   const toDoList = useSelector((store) => store.tasks.items)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    const tasksFromLocalStorage = JSON.parse(localStorage.getItem('TodoList'));
+    if (tasksFromLocalStorage) {
+      dispatch(tasks.actions.setUpStore(tasksFromLocalStorage))
+    }
+  }, [dispatch])
 
   return (
     <ListWrapper>

@@ -10,12 +10,17 @@ export const tasks = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
+    setUpStore: (store, action) => {
+      store.items = action.payload
+    },
     addTask: (store, action) => {
       store.items = [action.payload, ...store.items]
+      localStorage.setItem('TodoList', JSON.stringify(store.items))
     },
     deleteAllTasks: (store) => {
       store.items = []
       store.completedCount = store.items.filter((item) => item.checked).length
+      localStorage.setItem('TodoList', JSON.stringify(store.items))
     },
     deleteTask: (store, action) => {
       const id = action.payload.toString()
@@ -27,6 +32,7 @@ export const tasks = createSlice({
       store.items = copyOfTasksArray
       store.completedCount = store.items.filter((item) => item.checked).length
       // to update the completedCount once task is removed
+      localStorage.setItem('TodoList', JSON.stringify(store.items))
     },
     toggleChecked: (store, action) => {
       const { id } = action.payload
@@ -42,6 +48,7 @@ export const tasks = createSlice({
       // to its opposite value with ! operator
       // if id not match the current item, the original item is returned
       store.completedCount = store.items.filter((item) => item.checked).length
+      localStorage.setItem('TodoList', JSON.stringify(store.items))
       // to update the completedCount once the item is checked
     }
   }
