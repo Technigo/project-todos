@@ -1,16 +1,14 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+This project is a task list web application that allows users to add and remove tasks, and mark them as complete or incomplete by checking the checkboxes. The component TasksList is the main component that renders the list of tasks. It uses useSelector and useDispatch hooks provided by the react-redux library to get access to the todos state from the tasks reducer, and dispatch actions to update the state.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+The component also uses the moment library to display the current date at the top of the page. It also has a confetti effect that displays when all the tasks are completed. The handleCheckboxChange function updates the state when a checkbox is checked or unchecked, and the useEffect hook checks whether all the tasks are completed or not, and sets the showConfetti state accordingly.
 
-## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The StyledRemoveTask, StyledUl, StyledLi, and StyledCheckbox are styled components that handle the styling for the remove task button, the list of tasks, the individual task item, and the checkbox respectively.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://ninas-kids-todo-app.netlify.app/
 
 Icons:
 "https://www.flaticon.com/free-icons/tick" title="tick icons">Tick icons created by Octopocto - Flaticon</a>
