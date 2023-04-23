@@ -1,6 +1,7 @@
 * {
   font-family: 'Patrick Hand SC', cursive;
 }
+/* Desktop  */
 
 body {
   margin: 0;
@@ -25,6 +26,27 @@ code {
   font-family: 'Patrick Hand SC', cursive;
 }
 
+/* Header styling  */
+
+.headerContainer {
+  width: 80%;
+display: flex;
+align-items: center;
+justify-content: center;
+margin-top: 2rem;
+    background: rgb(121 62 93 / 23%);
+    border-radius: 16px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    backdrop-filter: blur(6.2px);
+    -webkit-backdrop-filter: blur(6.2px);
+   
+}
+.icon {
+  max-width: 20%;
+  margin: 1rem;
+}
+
+/* General styling  */
 .outerWrapper {
   border: 2px solid black;
   display: flex;
@@ -107,8 +129,6 @@ input:focus {
   outline: none;
 }
 
-
-
 /* Customized scroll (hide) */
 ::-webkit-scrollbar {
   width: 10px;
@@ -121,10 +141,6 @@ input:focus {
 ::-webkit-scrollbar-thumb {
   background: transparent;
 }
-
-
-
-
 
 
 /* MOBILE */
@@ -172,15 +188,6 @@ input:focus {
     padding: 0px;
   }
 
-  /* .input {
-  height: 50px;
-  border-radius: 12px;
-  background-color: white;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 60%;
-} */
   .input {
     background: white;
     border: none;
@@ -210,6 +217,7 @@ input:focus {
 
 
 /* TABLET */
+
 /* Media queries for tablet devices */
 @media only screen and (min-width: 600px) and (max-width: 1024px) {
 
@@ -236,12 +244,6 @@ input:focus {
   }
 
   .input {
-    /* height: 50px;
-    border-radius: 12px;
-    background-color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center; */
     min-width: 40%;
   }
 

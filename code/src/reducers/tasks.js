@@ -5,7 +5,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [
-    /*     {
+    {
       id: '1',
       taskName: 'Style this ugly list', // name is to store the input
       isChecked: false
@@ -14,17 +14,7 @@ const initialState = {
       id: '2',
       taskName: 'Get rid of the damn dot on the left side',
       isChecked: false // define with myself, also change it in the addNewTask
-    },
-    {
-      id: '3',
-      taskName: 'Do the laundry',
-      isChecked: false
-    },
-    {
-      id: '4',
-      taskName: 'Buy some chips',
-      isChecked: false // isChecked same as in tasks.js
-    } */
+    }
   ]
 }
 

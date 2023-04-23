@@ -3,10 +3,6 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import tasks from 'reducers/tasks';
 import styled from 'styled-components';
-/*
-const CheckBox = styled.img`
-border: 2px solid black;
-`; */
 
 const TaskList = () => {
   /*  const handleCheck = () => { } */
