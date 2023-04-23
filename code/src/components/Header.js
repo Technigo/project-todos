@@ -14,7 +14,7 @@ export const Header = () => {
 }
 
 const HeaderWrapper = styled.header`
-    padding: 10px;
+    padding: 5px;
     background-color:var(--dark-blue);
 
     .logoName {
@@ -25,14 +25,11 @@ const HeaderWrapper = styled.header`
     }
     h1 {
         color: var(--white);
-        font-size: 2rem;
-        @media (min-width: 321px) {
-            font-size: 2.5rem;
-        }
+        font-size: 1.8rem;
     }
 
     img{
-      width: 50px;
+      width: 40px;
       margin-right:20px;
     }
 
