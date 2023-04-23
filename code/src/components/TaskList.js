@@ -15,6 +15,10 @@ const TaskList = () => {
 
   const taskList = useSelector((store) => store.tasks.items)
   
+  /*tasks = useSelector(state => state.tasks)
+  const completedTasks = tasks.filter(singleTask => singleTask.isDone)
+  completedTasks.length*/
+  
   const onDeleteSingleTaskBtnClick = (id) => {
     dispatch(tasks.actions.deleteSingleTask(id));
   }
