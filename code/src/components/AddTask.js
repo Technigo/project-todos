@@ -25,6 +25,7 @@ const Select = styled.select`
   font-weight:400;
   font-size: 16px;
   color: #878894;
+  
 `;
 
 const Input = styled.input`

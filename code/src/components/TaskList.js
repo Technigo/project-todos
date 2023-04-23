@@ -22,7 +22,6 @@ const TaskListContainer = styled.div`
     width: 50%;
     padding: 0 1em;
   }
-
 `;
 
 const ProjectTitle = styled.h3`
