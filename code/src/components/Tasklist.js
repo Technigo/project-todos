@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import CheckedIcon from '../assets/checkmark.png'
+import { DeleteTaskButton } from './styled_components/buttons'
 
 export const Tasklist = () => {
   const toDoList = useSelector((store) => store.tasks.items)
@@ -14,11 +15,11 @@ export const Tasklist = () => {
         {toDoList.map((singleTask) => {
           return (
             <StyledListItem key={singleTask.id}>
-              <div>
+              <ListItemWrapper>
                 <input id={`taskText-${singleTask.id}`} type="checkbox" checked={singleTask.checked} onChange={() => dispatch(tasks.actions.toggleChecked(singleTask))} />
                 <label htmlFor={`taskText-${singleTask.id}`}>{singleTask.name}</label>
-              </div>
-              <button type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask))}>X</button>
+              </ListItemWrapper>
+              <DeleteTaskButton type="button" onClick={() => dispatch(tasks.actions.deleteTask(singleTask.id))}>X</DeleteTaskButton>
             </StyledListItem>)
         })}
       </List>
@@ -31,6 +32,10 @@ const ListWrapper = styled.section`
   height:80%;
   overflow-y: scroll;
 `
+const ListItemWrapper = styled.div`
+  display: flex;
+  width: 90%;
+`
 
 const List = styled.ul`
   height: 100%;
@@ -40,7 +45,7 @@ const StyledListItem = styled.li`
   display: flex;
   justify-content: space-between;
   align-items: center;  
-  min-height: 10%;
+  min-height: 15%;
   background: #f7faf7;
   padding: 10px;
   margin-bottom: 10px;
@@ -48,25 +53,34 @@ const StyledListItem = styled.li`
   overflow-wrap: break-word;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
 
+  @media (min-width: 668px) {
+    min-height: 20%;
+  }
+
+  @media (min-width: 668px) {
+    min-height: 15%;
+  }
+
   [type="checkbox"]{
     opacity:0;
   }
 
   [type="checkbox"] + label{
-   position: relative;
-   padding-left: 30px;
-   cursor: pointer;
-   display: inline-block;
-   color: #5c715e;
-   font-weight: bold;
-   line-height: 25px;
+    font-size: 1.1rem;
+    position: relative;
+    padding-left: 30px;
+    cursor: pointer;
+    display: inline-block;
+    color: #5c715e;
+    font-weight: bold;
+    line-height: 25px;
   }
 
   [type="checkbox"] + label::before{
     content:"";
     position: absolute;
     left: 0;
-    top: 0;
+    top: 3px;
     width: 18px;
     height: 18px;
     outline: 2px solid #b6cdbd;;
@@ -109,5 +123,9 @@ const StyledListItem = styled.li`
     background-size: cover;
     transform: scale(0);
     opacity: 0;
+  }
+
+  [type="checkbox"]:checked + label {
+    text-decoration: line-through 2px;
   }
 `

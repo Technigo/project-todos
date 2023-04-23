@@ -13,5 +13,6 @@ body {
 
 h1 {
   font-family: 'Zilla Slab', serif;
+  font-size: 2rem;
 }
 `

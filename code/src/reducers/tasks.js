@@ -13,9 +13,18 @@ export const tasks = createSlice({
     addTask: (store, action) => {
       store.items = [action.payload, ...store.items]
     },
+    deleteAllTasks: (store) => {
+      store.items = []
+      store.completedCount = store.items.filter((item) => item.checked).length
+    },
     deleteTask: (store, action) => {
-      store.items = store.items.filter((item) => item.id !== action.payload.id)
-      // returns a new array with the items that did not match the deleted item id
+      const id = action.payload.toString()
+      const copyOfTasksArray = store.items
+      const condition = (element) => element.id === id
+      const foundIndex = copyOfTasksArray.findIndex(condition)
+      // changed to splice instead of filter, better when you are deleting items from array.
+      copyOfTasksArray.splice(foundIndex, 1)
+      store.items = copyOfTasksArray
       store.completedCount = store.items.filter((item) => item.checked).length
       // to update the completedCount once task is removed
     },

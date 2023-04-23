@@ -7,11 +7,17 @@ import { Addbutton } from './styled_components/buttons';
 export const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
   const dispatch = useDispatch()
+  const capitalize = (stringToCapitalize) => {
+    return stringToCapitalize.charAt(0).toUpperCase() + stringToCapitalize.slice(1)
+  }
   const onFormSubmit = (event) => {
     event.preventDefault();
+    if (inputValue.trim().length === 0) {
+      return
+    }
     const newTask = {
       id: Date.now().toString(),
-      name: inputValue,
+      name: capitalize(inputValue),
       checked: false
     }
     dispatch(tasks.actions.addTask(newTask));
@@ -47,10 +53,14 @@ const StyledForm = styled.form`
     }
 
     input{
+      font-family: 'Zilla Slab';
+      font-size: 1.2rem;
+      padding: 1rem;
       border: none;
       height: 30px;
       border-radius: 10px;
       width: 100%;
+      outline: none;
     }
 `
 
