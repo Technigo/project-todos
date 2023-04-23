@@ -70,6 +70,8 @@ const StyledListItem = styled.li`
 
   [type="checkbox"]{
     opacity:0;
+    -webkit-appearance: none;
+    appearance: none;
   }
 
   [type="checkbox"] + label{
@@ -94,6 +96,8 @@ const StyledListItem = styled.li`
     background: white;
     border-radius: 50%;
     -webkit-border-radius: 50%;
+    clip-path: circle(50% at 50% 50%);
+    box-shadow: inset 0 0 3px #5c715e;
   }
 
   [type="checkbox"]:checked + label::before{
@@ -104,6 +108,7 @@ const StyledListItem = styled.li`
     width: 20px;
     height: 20px;
     outline: 2px solid #5c715e;
+    -webkit-border-radius: 50%;
   }
 
   [type="checkbox"]:checked + label::after{
@@ -117,9 +122,10 @@ const StyledListItem = styled.li`
     background-size: cover;
     transform: scale(1.5);
     opacity: 1;
-    transition: all .3s ease;
+    transition: all .3s ease-in-out;
     -webkit-border-radius: 50%;
     border-radius: 50%;
+    -webkit-border-radius: 50%;
   }
 
   [type="checkbox"]:not(checked) + label::after{
@@ -142,7 +148,7 @@ const StyledListItem = styled.li`
     -webkit-text-decoration: line-through;
     text-decoration-color: #5c715e;
     -webkit-text-decoration-color: #5c715e;
-    text-decoration-thickness: 2px;
-    -webkit-text-decoration-thickness: 2px;
+    text-decoration-thickness: 1px;
+    -webkit-text-decoration-thickness: 1px;
   }
 `
