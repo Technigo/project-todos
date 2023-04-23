@@ -86,6 +86,17 @@ export const ToDotext = styled.p`
   word-break: break-word;
 `
 
+export const Duetext = styled.p`
+  margin: 0;
+  color: #464646;
+  font-weight: 300;
+  opacity: 0.7;
+  margin: 5px 0 auto 0;
+  font-weight: 700;
+  word-break: break-word;
+  font-size: 14px;
+`
+
 export const CounterText = styled.p`
   font-family: "Raleway", sans-serif;
   font-size: 1em;

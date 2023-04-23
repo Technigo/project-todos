@@ -10,7 +10,7 @@ import { CompleteAll } from './CompleteAll';
 import { DeleteAll } from './DeleteAll';
 import { NewToDo } from './NewToDo';
 import { TaskCounter } from './TaskCounter'
-import { ToDoCard, ToDoInnerCard, ToDoListWrapper, ListHeader, ListHeaderButton, ListFooter, ButtonsBox, ToDotext, ProjectTitle, DeleteButton, ProjectWrapper } from './style/GlobalStyle';
+import { ToDoCard, ToDoInnerCard, ToDoListWrapper, ListHeader, ListHeaderButton, ListFooter, ButtonsBox, ToDotext, ProjectTitle, DeleteButton, ProjectWrapper, Duetext } from './style/GlobalStyle';
 
 export const ToDoList = () => {
   const [listActive, setlistActive] = useState(false);
@@ -71,7 +71,7 @@ export const ToDoList = () => {
                 </div>
                 <div>
                   <ToDotext key={todoItem.id}>{todoItem.text}</ToDotext>
-                  <ToDotext>{compareAsc(new Date(todoItem.due), Date.now()) === -1 ? 'overdue' : `due: ${todoItem.due}`}</ToDotext>
+                  <Duetext>{compareAsc(new Date(todoItem.due), Date.now()) === -1 ? 'overdue' : `due: ${todoItem.due}`}</Duetext>
                 </div>
               </ToDoInnerCard>
               <ButtonsBox>

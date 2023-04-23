@@ -9,7 +9,7 @@ import 'react-datepicker/dist/react-datepicker.css';
 import { compareAsc } from 'date-fns'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faChevronUp, faPlus, faMinus, faFlag, faTrashCan } from '@fortawesome/free-solid-svg-icons'
-import { TextInput, CounterText, ListHeaderButton, ProjectTitle, AddNewProjectContainer, AddButton, AddButton2, ProjectNameInput, ProjectNameContainer, ToDoForm, ToDoListWrapper, ToDoCard, ToDoInnerCard, ToDotext, ButtonsBox, DeleteButton, ProjectHeader, ProjectWrapper, FormButton } from './style/GlobalStyle';
+import { TextInput, CounterText, ListHeaderButton, ProjectTitle, AddNewProjectContainer, AddButton, AddButton2, ProjectNameInput, ProjectNameContainer, ToDoForm, ToDoListWrapper, ToDoCard, ToDoInnerCard, ToDotext, ButtonsBox, DeleteButton, ProjectHeader, ProjectWrapper, FormButton, Duetext } from './style/GlobalStyle';
 
 export const ProjectToDoList = () => {
   const [projectCreated, setProjectCreated] = useState(false);
@@ -126,7 +126,7 @@ export const ProjectToDoList = () => {
                           </div>
                           <div>
                             <ToDotext key={item.id}>{item.text}</ToDotext>
-                            <ToDotext>{compareAsc(new Date(item.due), Date.now()) === -1 ? 'overdue' : `due: ${item.due}`}</ToDotext>
+                            <Duetext>{compareAsc(new Date(item.due), Date.now()) === -1 ? 'overdue' : `due: ${item.due}`}</Duetext>
                           </div>
                         </ToDoInnerCard>
                         <ButtonsBox>
