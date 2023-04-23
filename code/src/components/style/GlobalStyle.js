@@ -86,6 +86,7 @@ export const ListFooter = styled.div`
   align-items: center;
   padding: 10px;
   background: pink;
+  height: 29.5px;
 `
 
 export const ButtonsBox = styled.div`
