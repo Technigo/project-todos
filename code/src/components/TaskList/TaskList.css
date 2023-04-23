@@ -79,6 +79,7 @@
 
 [type="checkbox"]{
   opacity: 0;
+  appearance: none;
 }
 
 [type="checkbox"] + label{
@@ -96,7 +97,6 @@
   position: absolute;
   width: 18px;
   height: 18px;
-  outline: 2px solid #aaa;
   background: white;
   left: 0;
   top: 0;
