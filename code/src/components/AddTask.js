@@ -1,6 +1,7 @@
+/*eslint-disable*/
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import pokemons from 'reducers/pokemon';
+import tasks from 'reducers/task';
 
 Object.defineProperty(String.prototype, 'capitalize', {
   value: function () {
@@ -9,31 +10,31 @@ Object.defineProperty(String.prototype, 'capitalize', {
   enumerable: false
 });
 
-const AddPokemon = () => {
+const AddTask = () => {
   const [inputValue, setInputValue] = useState('');
   const dispatch = useDispatch();
   const onFormSubmit = (event) => {
     event.preventDefault();
-    const newPokemon = {
+    const newTask = {
       id: Date.now().toString(),
       name: inputValue.capitalize(),
       isCaught: false
     }
     // false. so that it is not checked.
-    dispatch(pokemons.actions.addPokemon(newPokemon));
+    dispatch(tasks.actions.addTask(newTask));
     setInputValue('');
   }
-  const onDeleteYourPokemonBtnClick = () => {
-    dispatch(pokemons.actions.deleteAllPokemon());
+  const onDeleteYourTaskBtnClick = () => {
+    dispatch(tasks.actions.deleteAllTasks());
   }
 
   return (
     <section>
-      <button type="button" onClick={onDeleteYourPokemonBtnClick}>Delete all tasks</button>
+      <button type="button" onClick={onDeleteYourTaskBtnClick}>Delete all tasks</button>
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="addPokemonInput">
+        <label htmlFor="addTaskInput">
         Add your new task here.
-          <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addPokemonInput" type="text" placeholder="Write your to do here" required />
+          <input value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addTaskInput" type="text" placeholder="Write your to do here" required />
         </label>
         <button type="submit"> Add task!</button>
       </form>
@@ -41,4 +42,4 @@ const AddPokemon = () => {
   )
 }
 
-export default AddPokemon;
+export default AddTask;
