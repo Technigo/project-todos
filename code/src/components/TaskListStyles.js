@@ -27,7 +27,7 @@ margin-bottom: 15px;
 li {
   display: flex;
   flex-direction: column;
-  text-align: left !important;
+  text-align: center;
   gap: 0.5rem;
   font-family: 'League Spartan', sans-serif;
   font-size: 1.5rem;
