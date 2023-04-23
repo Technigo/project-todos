@@ -95,4 +95,16 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: #f5f5f5;
+  width: 100vw;
+}
+
+@media only screen and (min-width: 1042px) {
+  body {
+    display: flex;
+    justify-content: center;
+  }
+
+  #root {
+    max-width: 70%;
+  }
 }
