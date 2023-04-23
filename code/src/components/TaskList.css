@@ -59,3 +59,9 @@
   background: rgba(148, 187, 233, 0.4);
   border-radius: 12px;
 }
+
+
+.removeBtn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
