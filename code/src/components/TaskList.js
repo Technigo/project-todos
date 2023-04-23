@@ -64,8 +64,7 @@ const TaskList = () => {
       <ListHeader><h2>Pree Scho
         <span className="material-symbols-outlined">
 child_care
-        </span>l
-      </h2>
+        </span>l  </h2>
       </ListHeader>
       {completedTask.map((task) => {
         return (
