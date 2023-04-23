@@ -1,5 +1,6 @@
 ul {
     padding: 0;
+    margin: 10px 0px 10px 0px;
 }
 
 .task-row {
@@ -49,7 +50,7 @@ hr {
 
 .delete-all-tasks-button {
     font-family: 'Permanent Marker', cursive;
-    font-size: 14px;
+    font-size: 16px;
     background: none;
     border: 2px solid #c8c8c8;
     border-radius: 5px;

@@ -5,8 +5,9 @@
 #addTaskInput {
     /*font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
     font-family: 'Courier New', Courier, monospace;
-    font-size: 12px;
-    width: 180px;
+    font-size: 14px;
+    font-weight: 600;
+    width: 170px;
     border: 2px solid #D4E2D4;
     border-radius: 5px;
     color: #555555;
@@ -15,7 +16,7 @@
 }
 
 #addTaskInput::placeholder {
-    opacity: 0.7;
+    opacity: 0.9;
     font-family: 'Courier New', Courier, monospace
   }
 
@@ -25,8 +26,8 @@
 
 .add-button {
     font-family: 'Permanent Marker', cursive;
-    font-size: 12px;
-    width: 60px;
+    font-size: 14px;
+    width: 55px;
     border: 2px solid #D4E2D4;
     border-radius: 5px;
     color: #555555;
