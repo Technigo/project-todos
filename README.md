@@ -6,10 +6,10 @@ It needed to be able to add a task, list all new tasks and toggle between comple
 This was a very educational project for me and gave me a better insight and understanding of how to use Redux and the possibilites it has.
 
 Must-have requirements:
-- ✓ List of all tasks - completed or uncompleted.
-- ✓ You should be able to mark an uncompleted task as complete (and change it back to uncompleted).
-- ✓ It should be possible to add and remove tasks.
-- ✓ Should show a count of either all tasks or all uncompleted tasks (or both).
+- List of all tasks - completed or uncompleted.
+- You should be able to mark an uncompleted task as complete (and change it back to uncompleted).
+- It should be possible to add and remove tasks.
+- Should show a count of either all tasks or all uncompleted tasks (or both).
 
 ## 🏔️ The problem
 
