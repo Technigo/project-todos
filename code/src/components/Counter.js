@@ -21,8 +21,9 @@ export default Counter;
 const CounterWrapper = styled.p`
   color: var(--quinary);
   margin: 10px;
+  font-size: 12px;
 @media (min-width: 600px) and (max-width: 900px){
-  font-size: 18px;
+  font-size: 15px;
 }
 @media (min-width: 901px){
   font-size: 20px;

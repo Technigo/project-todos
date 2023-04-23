@@ -3,6 +3,7 @@ import React from 'react'
 import { Provider } from 'react-redux'
 import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { OuterWrapper, GlobalStyles, ContentWrapper } from 'StyledComponents/globalStyles';
+import Sidebar from 'components/Sidebar';
 import tasks from './reducers/tasks'
 
 import TaskList from './components/TaskList';
@@ -22,6 +23,7 @@ export const App = () => {
       <OuterWrapper>
         <Provider store={store}>
           <Logo />
+          <Sidebar />
           <ContentWrapper>
             <AddTask />
             <TaskList />

@@ -2,12 +2,18 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const GithubProfileLink = 'https://github.com/Alexander-Gabor';
+
+function handleClick() {
+  window.open(GithubProfileLink, '_blank');
+}
+
 const Logo = () => {
   return (
     <>
       <FirstTitle>GitDun</FirstTitle>
       <LogoImage
-        src="/assets/Header-img5.png"
+        src="/assets/Header-img6.png"
         alt="guy sitting" />
       {/* <FirstTitle>Daily</FirstTitle>
       <Separator>
@@ -15,7 +21,11 @@ const Logo = () => {
         <h1>Planner</h1>
         <div className="line" />
       </Separator> */}
-      <CreatorName>Alexander Gabor</CreatorName>
+      <GithubLink href={GithubProfileLink} target="_blank">
+        <GithubButton onClick={handleClick}>
+    Alexander Gabor <Icon src="/assets/giticon.svg" alt="github icon" />
+        </GithubButton>
+      </GithubLink>
     </>
   )
 }
@@ -55,49 +65,36 @@ const FirstTitle = styled.h1`
 }
 `
 
-/* To create line between the word "Daily Planner" */
-// const Separator = styled.div`
-//   width: 85%;
-//   display:flex;
-//   align-items: center;
-//   h1{
-//     padding: 0 10px;
-//     color: var(--quaternary);
-//     font-size: 40px;
-//     margin-top: 10px;
-//     font-weight: 400;
-//   }
-//   .line{
-//     height: 1px;
-//     margin-top: 20px;
-//     flex: 1;
-//     background-color: var(--quaternary);
-//   }
-// @media (min-width: 600px) and (max-width: 900px){
-//   width: 80%;
-//   h1{
-//     padding: 0 15px;
-//     font-size: 55px;
-//   }
-// }
+const GithubLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+`;
 
-// @media (min-width: 901px){
-//     width: 80%;
-//     h1{
-//       padding: 0 15px;
-//       font-size: 90px;
-//       margin-top: 30px;
-//     }
-// }
-// `
-
-const CreatorName = styled.h6`
-  color: var(--quinary);
-  font-size: 12px;
+const GithubButton = styled.button`
+  border: none; 
+  margin-top: 10px;
+  color: #7a6a6a;
+  border-radius: 5px;
+  background-color: var(--quinary);
+  font-size: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 5px 2px;
+  padding: 7px;
+  &:hover {
+    cursor: pointer;
+    background-color: lightgray;
+  }
 @media (min-width: 600px) and (max-width: 900px){
   font-size: 15px;
 }
 @media (min-width: 901px){
-  font-size: 18px;
+  font-size: 15px;
 }
+`
+
+const Icon = styled.img`
+width: 20px;
+margin: 0px 10px;
 `

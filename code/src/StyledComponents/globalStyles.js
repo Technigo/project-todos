@@ -20,7 +20,6 @@ export const GlobalStyles = createGlobalStyle`
   body{
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    /* max-width: 1024px; */
     /* font-family: 'Cormorant Garamond', serif; */
     background-color: var(--secondary);
     position: relative;
@@ -35,13 +34,20 @@ export const OuterWrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
-  max-width: 1024px;
+  max-width: 97%;
   max-height: 100vh;
+
+  @media (min-width: 600px) and (max-width: 900px){
+    max-width: 85%;
+}
+  @media (min-width: 901px){
+  max-width: 35%;
+  }
 `
 
 export const ContentWrapper = styled.div`
   background-color: var(--tertiary);
-  margin: 50px 25px 0;
+  margin: 35px 25px 0;
   border-radius: 4px 4px 4px 4px;
   /* min-height: 100vh; */
 p{
@@ -51,7 +57,7 @@ p{
   margin: 80px 30px 0;
 }
 @media (min-width: 901px){
-  margin: 40px 40px 0;
+  margin: 30px 40px 0;
   border-radius: 4px 4px 4px 4px;
   }
 `
@@ -77,6 +83,7 @@ export const Button = styled.button`
       width: 50px;
       height: 50px;
       filter: invert(100%);
+      margin: 8px 5px;
     }
 @media (min-width: 600px) and (max-width: 900px){
   img{
