@@ -1,5 +1,5 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 const HeaderTitle = styled.h1`
   font-family: 'Quicksand', sans-serif;
