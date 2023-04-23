@@ -20,10 +20,11 @@ height: 30px;
 border-radius: 5px;
 border: solid pink;
 margin-right: 10px;
+font-size: 18x;
 `
 
 const SubmitBtn = styled.button`
-width: 40px;
+width: 37px;
 height: 37px;
 border-radius: 5px;
 border-color: black;
