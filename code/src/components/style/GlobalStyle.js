@@ -68,8 +68,7 @@ export const ListFooter = styled.div`
   justify-content: flex-end;
   align-items: center;
   padding: 10px;
-  margin-top: 50px;
-  background: transparent;
+  background: pink;
 `
 
 export const ButtonsBox = styled.div`

@@ -5,10 +5,10 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
   items: [
-    { id: 1, text: 'Sleep', due: '-', complete: false, priority: false },
-    { id: 2, text: 'Call my boyfriend', due: '-', complete: false, priority: true },
-    { id: 3, text: 'Take a bath', due: '-', complete: true, priority: false },
-    { id: 4, text: 'Go to Friskis&Svettis', due: '-', complete: false, priority: false }
+    { id: 1, text: 'Sleep', due: 'Thu Apr 27 2023', complete: false, priority: false },
+    { id: 2, text: 'Call my boyfriend', due: 'Thu Apr 27 2023', complete: false, priority: true },
+    { id: 3, text: 'Take a bath', due: 'Thu Apr 27 2023', complete: true, priority: false },
+    { id: 4, text: 'Go to Friskis&Svettis', due: 'Thu Apr 27 2023', complete: false, priority: false }
   ]
 }
 
