@@ -9,9 +9,6 @@ const ProgressBar = () => {
   const numberOfTasksDone = allTasksToDo.filter((item) => item.isDone).length;
   const [width, height] = useWindowSize()
 
-  // const [width, height] = useWindowSize()
-  // this returns width and height defined, but still doesn't work
-
   const doneTasks = () => {
     if (allTasksToDo.length === 0) {
       return ''
@@ -27,13 +24,13 @@ const ProgressBar = () => {
             numberOfPieces={200}
             gravity={0.05}
             confettiSource={{ x: 0, y: 500, w: 1000, h: 1000 }} />
-          <p>Woop! All finished!</p>
+          <Span><p>Woop! All finished!</p></Span>
         </>
       )
     } else {
       return (
         <ProgressBarStyled>
-          <Status>{numberOfTasksDone}/{allTasksToDo.length} done</Status>
+          <Status><span>{numberOfTasksDone}/{allTasksToDo.length}</span></Status>
         </ProgressBarStyled>)
     }
   }
@@ -49,19 +46,17 @@ export default ProgressBar;
 /* STYLING FOR PROGRESSBAR */
 
 const ProgressBarStyled = styled.div`
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;  
-  text-align: center; */
-  
 `
 const Status = styled.p`
-    /* text-align: center;
-    justify-content: center;
-    align-self: center;
-    text-align: center; */
+   
     `
 
 const CounterText = styled.p`
     `
+
+const Span = styled.section`
+font-weight: bold;
+margin-right: auto;
+padding-right: 60px;
+`
+/* Fix this centering later */

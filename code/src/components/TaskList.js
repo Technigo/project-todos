@@ -29,10 +29,10 @@ const TaskList = () => {
       <GlobalStyle />
       <section>
         <Wrapper>
-          <ProgressBar />
+          <span><ProgressBar /></span>
           {allTasks.map((singleTask) => {
             return (
-              <EachTask key={singleTask.id}>{singleTask.name}
+              <EachTask key={singleTask.id}><span>{singleTask.name}</span>
                 <label htmlFor={`task_with_id${singleTask.id}`}>
                   <input
                     type="checkbox"
@@ -66,12 +66,13 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   margin: 5% auto;
-  /* position: relative; */
+
+  span {
+    margin-left: auto;
+    padding-right: 5px;
+  }
+
 `
-// const ProgressBar = styled.div`
-//   display: flex;
-//   align-items: center`;
-// `
 
 const EachTask = styled.div`
   display: flex;
@@ -85,22 +86,23 @@ const EachTask = styled.div`
   border-radius: 10px;
   box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
   font-family: 'Quicksand', serif;
+  position: relative;
   
   input[type=checkbox] {
-    margin-right: 20px;
-    /* position: absolute; */
-    /* right: 20px; */
-    position: relative;
-    left: 0;
+  
   }
 
   label {
     display: flex;
     align-items: center;
-    margin-right: 10px;
     padding: 8px;
+
   }
 
+  span {
+    position: absolute;
+    left: 50px;
+  }
  `
 
 const DeleteButton = styled.button`
