@@ -1,12 +1,16 @@
 /* eslint-disable max-len */
 import { createSlice } from '@reduxjs/toolkit';
 
-const data = []
+// const data = []
 
 const todos = createSlice({
   name: 'todos',
   initialState: {
-    items: data
+    // items: data
+    items: [
+      { id: '1', text: 'Enjoy the nice weather', isDone: false },
+      { id: '2', text: 'Eat some nice food', isDone: false }
+    ]
   },
   // The reducers field contains functions to modify the state of the slice (todo made with createSlice)
   reducers: {
@@ -18,10 +22,13 @@ const todos = createSlice({
       });
     },
     deleteItem: (store, action) => {
-      store.items.splice(action.payload, 1);
+      const updatedItems = store.items.filter((item) => {
+        return store.items.indexOf(item) !== action.payload;
+      });
+      store.items = updatedItems;
     },
     addItem: (store, action) => {
-      store.items.push(action.payload);
+      store.items = [...store.items, action.payload];
     },
     completeAll: (store) => {
       store.items.forEach((item) => {

@@ -3,7 +3,7 @@ import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
 import styled from 'styled-components'
 
-import todos from './reducers/list'
+import todos from 'reducers/list'
 
 const TodoContainer = styled.section`
   @media (min-width: 768px) {
