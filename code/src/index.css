@@ -83,8 +83,8 @@ code {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 10px;
-    height: 10px;
+    width: 2px;
+    height: 2px;
     border-radius: 50%;
     background-color: rgb(244, 9, 9);
     box-shadow: 0px 0px 40px 20px rgb(244, 76, 9);
@@ -132,7 +132,7 @@ code {
   
   .particle:nth-child(5) {
     top: 80%;
-    left: 80%;
+    left: 90%;
     animation-delay: 8s;
   }
   
@@ -156,15 +156,8 @@ code {
   
   .particle:nth-child(9) {
     top: 40%;
-    left: 30%;
+    left: 20%;
     animation-delay: 16s;
   }
-  
-  .particle:nth-child(10)
-  
- 
-  
-  
-  
   
 }
