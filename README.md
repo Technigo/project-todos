@@ -8,3 +8,4 @@ I began by thinking about which components I would need. I then set up the reduc
 
 ## View it live
 
+https://fiona-klacar-project-todo.netlify.app/
