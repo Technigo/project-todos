@@ -23,7 +23,7 @@ const ProjectListItem = styled.li`
 const DeleteButton = styled.button`
   background-color: transparent;
   border: none;
-  color: red;
+  color:  #b8b9c7;
   cursor: pointer;
 
   &:hover {

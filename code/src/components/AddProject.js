@@ -13,10 +13,12 @@ const Input = styled.input`
   border: 1px solid #ccc;
   border-radius: 5px;
   margin-right: 1em;
+  color:#0f1029;
+  width:250px
 `;
 
 const Button = styled.button`
-  background-color: #28a745;
+  background-color: #7d8aa0;
   color: white;
   padding: 0.5em 1em;
   border: none;
@@ -24,7 +26,7 @@ const Button = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: #218838;
+    background-color:#7d8aa0;
   }
 `;
 
