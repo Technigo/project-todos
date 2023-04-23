@@ -21,5 +21,14 @@ code {
 
 img {
   border-radius: 90px;
-  margin-top: 50px;
+  margin-top: 20px;
+}
+
+h1 {
+  color: #a0a0b4;
+  font-family: 'Pacifico', cursive;
+  font-size: 50px;
+  display: flex;
+
+  
 }

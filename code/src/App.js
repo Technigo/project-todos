@@ -37,8 +37,8 @@ export const App = () => {
     <Provider store={store}>
       <Playlist />
       <AppWrapper>
+        <h1>MellowList</h1>
         <img src={`${process.env.PUBLIC_URL}/lofigirl.gif`} alt="lofi girl gif" />
-        <h2>Projects</h2>
         <AddProject />
         <ProjectList />
         <AddTask />
