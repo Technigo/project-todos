@@ -61,9 +61,12 @@ const TaskList = () => {
 
   return (
     <List>
-      <ListHeader><h2>Pree Scho<span class="material-symbols-outlined">
+      <ListHeader><h2>Pree Scho
+        <span className="material-symbols-outlined">
 child_care
-</span>l</h2></ListHeader>
+        </span>l
+      </h2>
+      </ListHeader>
       {completedTask.map((task) => {
         return (
           <InnerWrapper>
@@ -84,9 +87,11 @@ child_care
           </InnerWrapper>
         )
       })}
-      <ListHeader><h2>H<span class="material-symbols-outlined">
+      <ListHeader><h2>H
+        <span className="material-symbols-outlined">
 home
-</span>me</h2></ListHeader>
+        </span>me </h2>
+      </ListHeader>
       {taskToDo.map((task) => {
         return (
           <InnerWrapper>
