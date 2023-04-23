@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 const data = []
 
-export const todos = createSlice({
+const todos = createSlice({
   name: 'todos',
   initialState: {
     items: data
@@ -33,3 +33,5 @@ export const todos = createSlice({
     }
   }
 });
+
+export default todos;

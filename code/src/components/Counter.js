@@ -102,9 +102,8 @@ const ToDoCounter = () => {
     )
   }
 }
-
 // &nbsp; is a special HTML entity that represents a non-breaking space.
-// It is used to add space between two elements without allowing the browser 
+// It is used to add space between two elements without allowing the browser
 // to break the line between them.
 
 export default ToDoCounter

@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import uniqid from 'uniqid'
 
-import todos from 'reducers/list'
+import todos from './reducers/list'
 
 const ListSection = styled.section`
   @media (min-width: 768px) {

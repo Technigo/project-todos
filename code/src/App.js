@@ -6,7 +6,7 @@ import ToDo from 'components/ToDo'
 import Counter from 'components/Counter'
 import Header from 'components/Header'
 
-import todos from 'reducers/list'
+import todos from './reducers/list';
 
 const reducer = combineReducers({
   todos: todos.reducer
