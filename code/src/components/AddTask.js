@@ -142,6 +142,14 @@ const DateInput = styled.input`
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
+
+  @media (min-width: 600px) and (max-width: 900px){
+  
+}
+
+  @media (min-width: 901px){
+
+}
 `
 
 export const ToDoDetails = styled.div`
@@ -156,5 +164,6 @@ export const ToDoDetails = styled.div`
 }
 @media (min-width: 901px){
   margin: 30px auto;
+  width: 85%
 }
 `

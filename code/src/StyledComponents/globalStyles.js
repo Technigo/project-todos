@@ -41,7 +41,7 @@ export const OuterWrapper = styled.div`
     max-width: 85%;
 }
   @media (min-width: 901px){
-  max-width: 35%;
+  max-width: 36%;
   }
 `
 
