@@ -25,15 +25,6 @@ const Wrapper = styled.section`
   align-items: center;
 `
 
-const Item = styled.div`
-  display: inline-block;
-  margin-right: 10px;
-  margin-bottom: 10px;
-  padding: 5px;
-  background-color: #f2f2f2;
-  border-radius: 5px;
-`
-
 const TotalCompleteItems = () => {
   const taskList = useSelector((store) => store.tasks.items);
   const completedTasks = taskList.filter((task) => task.isDone === true);
@@ -45,9 +36,6 @@ const TotalCompleteItems = () => {
       <Date className="date">
         <p>{dateTime}</p>
       </Date>
-      {completedTasks.map((task) => (
-        <Item key={task.id}>{task.title}</Item>
-      ))}
     </Wrapper>
   );
 }

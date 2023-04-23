@@ -79,8 +79,12 @@
 
 [type="checkbox"]{
   opacity: 0;
-  appearance: none;
 }
+
+[type="checkbox"]:focus {
+  outline: none;
+}
+
 
 [type="checkbox"] + label{
   position: relative;
