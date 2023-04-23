@@ -1,3 +1,5 @@
+/* eslint-disable max-len */
+/* eslint-disable react/no-unescaped-entities */
 import React from 'react';
 import { Provider } from 'react-redux';
 import { configureStore, combineReducers } from '@reduxjs/toolkit';

@@ -14,7 +14,7 @@ export const TaskList = () => {
   const onIsCompletedCheckboxToggle = (id) => {
     dispatch(task.actions.toggleIfTaskIsCompleted(id))
   }
-  const dateOptions = moment().format('dddd DD/M');
+  const dateOptions = moment().format('ddd DD/M');
 
   return (
     <section>
@@ -25,7 +25,7 @@ export const TaskList = () => {
         {tasklist.map((singleTask) => {
           return (
             <li key={singleTask.id}>
-              <p className="line-through">
+              <p>
                 <span>{singleTask.name}</span>
                 <label htmlFor={`task_with_id${singleTask.id}`} className="container">
                   <input
