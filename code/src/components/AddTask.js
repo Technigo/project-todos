@@ -39,6 +39,7 @@ const AddButton = styled.button`
   font-weight: bold;
   padding:0;
   margin-left:4px;
+  color: black;
 
   :disabled {
     color: black;
