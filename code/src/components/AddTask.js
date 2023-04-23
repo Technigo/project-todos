@@ -4,6 +4,7 @@ import { v4 as uuid } from 'uuid';
 import moment from 'moment';
 import styled from 'styled-components';
 import todolist from 'reducers/todolist';
+import TaskCount from './TaskCount';
 import TaskList from './TaskList';
 import DeleteAllTasks from './DeleteAllTasks';
 import { SubmitButton } from '../styles/Buttons';
@@ -16,13 +17,14 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 width: 460px;
-padding-top: 40px;
+padding-top: 10px;
 background: rgba(255, 255, 255, 0.12);
 border-radius: 16px;
 box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 backdrop-filter: blur(4.9px);
 -webkit-backdrop-filter: blur(4.9px);
 border: 1px solid rgba(255, 255, 255, 0.22);
+overflow: hidden;
 
 input[type=text] {
 font-family: Quicksand;
@@ -46,6 +48,12 @@ border: 1px solid rgba(255, 255, 255, 0.12);
   color: transparent;
 }
  }`
+
+const TaskDiv = styled.div`
+width: 100%;
+right: 0;
+display: flex;
+justify-content: flex-end;`
 
 const StyledForm = styled.form`
  display: flex;
@@ -76,6 +84,9 @@ const AddTask = () => {
 
   return (
     <ToDoWrapper>
+      <TaskDiv>
+        <TaskCount />
+      </TaskDiv>
       <StyledForm onSubmit={onFormSubmit}>
         <label htmlFor="addTaskInput">
           <input

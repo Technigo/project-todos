@@ -1,8 +1,19 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import todolist from 'reducers/todolist';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import DeleteTask from './DeleteTask';
+
+const fadeIn = keyframes`
+    from{
+         transform: translate3d(-120%, 0, 0);
+        opacity: 0;
+     }
+     to{
+         transform: translate3d(0, 0, 100%);
+         opacity: 1;
+     }
+ `;
 
 const SingleTaskDiv = styled.div`
 width: 400px;
@@ -11,8 +22,10 @@ display: flex;
 flex-direction: row;
 justify-content: space-between;
 gap: 10px;
+animation: ${fadeIn} 1s ease-in;
 
 input[type=checkbox] {
+  outline: none;
   border: none;
   cursor: pointer;
   -webkit-appearance: none;
@@ -51,6 +64,7 @@ input[type=checkbox] {
 }
 
 input:checked {
+  outline: none;
   ::after {
   transform: scale3d(.975, .975, 1) translate3d(0, 10%, 0);
   content: '✓';

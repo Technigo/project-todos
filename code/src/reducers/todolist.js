@@ -32,6 +32,7 @@ const todolist = createSlice({
     // this action toggles each individual task's checkbox between checked and unchecked:
     // if a single task in the task-array is not checked yet (the initial state of
     // "isChecked" is false), then pressing it will toggle the checkbox for that task only.
+
     deleteSingleTask: (store, action) => {
       const index = store.items.slice().reverse().findIndex((task) => task.id === action.payload);
       if (index !== -1) {
