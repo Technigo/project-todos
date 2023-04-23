@@ -11,7 +11,7 @@ body {
   font-family: 'Shadows Into Light', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: rgba(0,0,0,0.1);
+  background-image: url(../public/bree-anne-XnpWqPZNfXE-unsplash.jpg);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -26,7 +26,7 @@ body {
   box-shadow: 3px 2px 2px 0px rgba(0,0,0,0.4);
   position: relative;
   padding: 40px 0 40px 0;
-  margin: 20px 0 30px 0;
+  margin: 20px 0 10px 0;
 }
 .paper::before {
   content: '';
@@ -150,7 +150,6 @@ input {
   font-family: 'Shadows Into Light', cursive;
   outline: rgba(0,0,0,0.2);
   font-size: 1rem;
-  margin-top: 3.7vh;
   line-height: 0;
 }
 form button {
@@ -173,6 +172,7 @@ form {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  margin-top: 2.5rem;
 }
 @media (min-width: 426px) {
   body {
