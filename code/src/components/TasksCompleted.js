@@ -7,7 +7,7 @@ const TotalCompleteItems = () => {
 
   return (
     <section className="tasks-completed">
-      <h2>Tasks completed {completedTasks.length}/{taskList.length}</h2>
+      <h4>Tasks completed {completedTasks.length}/{taskList.length}</h4>
     </section>
   );
 }
