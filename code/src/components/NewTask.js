@@ -21,16 +21,13 @@ export const NewTask = () => {
     // when action is dipatched, we clear form so user can do it again
     setInputValue('');
   }
-  // calls on reducer from Task slice to delete Task List
-  const onDeleteAllTasksButtonClick = () => {
-    dispatch(Task.actions.deleteAllTasks())
-  };
 
   return (
-    <section>
-      <form onSubmit={onAddNewTaskSubmit}>
+    <section className="NewTaskSection">
+      <h1> Plantastic Day! </h1>
+      <h2> To Do </h2>
+      <form className="NewTaskForm" onSubmit={onAddNewTaskSubmit}>
         <label htmlFor="NewTaskInput">
-          New Task
           <input
             id="NewTaskInput"
             value={inputValue} /* needs to change based on user input/reset function defined up */
@@ -43,9 +40,7 @@ export const NewTask = () => {
           ➕
         </button>
       </form>
-      <button type="button" onClick={onDeleteAllTasksButtonClick}>
-        Clear List
-      </button>
+
     </section>
   );
 }

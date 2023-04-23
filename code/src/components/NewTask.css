@@ -1,5 +1,43 @@
+.NewTaskSection {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20%;
+}
+h1, h2 {
+    font-family: 'Lobster';
+    text-align: center;
+    color: #606C38;
+    text-shadow: 3px 4px 5px rgba(233, 237, 201, 1);
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 5px;
+}
+
+.NewTaskForm {
+    align-self: center;
+}
 
 .newTaskButton {
     background-color: transparent;
     border: none;
+}
+
+input[type=text] {
+    background-color: transparent;
+    border: none;
+    border-bottom: 2px solid black;
+  }
+  
+  input[type=text]:focus {
+    border: 3px black;
+  }
+
+@media (min-width: 667px) {
+h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
 }

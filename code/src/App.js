@@ -14,6 +14,7 @@ It eliminates the need to manually set up various middleware and enhancers. */
 import { TaskList } from 'components/TaskList';
 import { Task } from 'reducers/Task';
 import './App.css';
+import { Footer } from 'components/footer/Footer';
 
 export const App = () => {
 // need to provide an object as an argument hence curly brackets
@@ -33,6 +34,9 @@ export const App = () => {
         <section className="grid-content">
           <NewTask />
           <TaskList />
+        </section>
+        <section className="footer">
+          <Footer />
         </section>
       </section>
     </Provider>

@@ -19,6 +19,16 @@ const initialState = {
       id: '19asdfiuhas0823hjkadsh809',
       content: 'New to-do',
       isChecked: false
+    },
+    {
+      id: '19asdfiuhas0823hjkadsh809',
+      content: 'Run the world',
+      isChecked: false
+    },
+    {
+      id: '19asdfiuhas0823hjkadsh809',
+      content: 'Water Plants',
+      isChecked: false
     }
   ]
 }

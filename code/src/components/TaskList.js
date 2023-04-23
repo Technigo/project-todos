@@ -19,39 +19,53 @@ whenever store is update useSelector is notified makes component re-render */
     // call on reducer from slice and dispatch action
     dispatch(Task.actions.toggleIdTaskIsCompleted(id));
   };
+    // calls on reducer from Task slice to delete Task List
+  const onDeleteAllTasksButtonClick = () => {
+    dispatch(Task.actions.deleteAllTasks())
+  };
 
   /* map below works because of spread operator in Task.js
   that creates an array and includes new tasks added
   without any nesting - if there were nesting
   we would get an undefined error doing map */
   return (
-    <section>
+    <section className="widerTaskListSection">
       <ul>
         {taskList.map((singleTask) => {
           return (
-            <li key={singleTask.id}>
-              <p>
-                <label htmlFor={`Task_with_id${singleTask.id}`}>
-                  <input
-                    id={`Task_with_id${singleTask.id}`}
-                    type="checkbox"
-                    value={singleTask.isChecked}
-                    onChange={() => onIsCompletedCheckBoxToggle(singleTask.id)} />
-                </label>
-                <span>
-                  {singleTask.content}
-                </span>
-                <button
-                  className="deleteSingleTaskButton"
-                  type="button"
-                  onClick={() => OnDeleteSingleTaskButtonClick(singleTask.id)}>
+            <section className="TaskListSection">
+              <li className="singleTask" key={singleTask.id}>
+                <p>
+                  <div className="round">
+                    <label htmlFor={`Task_with_id${singleTask.id}`}>
+                      <input
+                        id={`Task_with_id${singleTask.id}`}
+                        type="checkbox"
+                        value={singleTask.isChecked}
+                        onChange={() => onIsCompletedCheckBoxToggle(singleTask.id)} />
+                    </label>
+                  </div>
+                  <span>
+                    {singleTask.content}
+                  </span>
+                  <button
+                    className="deleteSingleTaskButton"
+                    type="button"
+                    onClick={() => OnDeleteSingleTaskButtonClick(singleTask.id)}>
                   🗑️
-                </button>
-              </p>
-            </li>
+                  </button>
+                </p>
+              </li>
+            </section>
           )
         })}
       </ul>
+      <button
+        className="ClearListButton"
+        type="button"
+        onClick={onDeleteAllTasksButtonClick}>
+                  Clear List
+      </button>
     </section>
   );
 }

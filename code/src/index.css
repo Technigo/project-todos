@@ -11,3 +11,16 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+
+@font-face {
+  font-family: 'Lobster';
+  src: local('Lobster'),
+    url('./assets/Lobster/Lobster-Regular.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Open_Sans';
+  src: local('Open_Sans'),
+    url('./assets/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf') format('truetype');
+}
