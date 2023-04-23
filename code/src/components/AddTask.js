@@ -10,6 +10,7 @@ const StyledAddTaskContainer = styled.section`
     align-content: center;
     border: none;
     margin-top: 20px;
+    margin-bottom: 10px;
     padding: 10px;
     font-family: 'Roboto', sans-serif;
     background-color: #F0EFEB;
@@ -43,6 +44,11 @@ const StyledLabel = styled.label`
       -webkit-border-radius: 25px;
       -moz-border-radius: 25px;
       padding: 5px;
+
+      &:focus {
+        outline: black solid 1px;
+        background-color: white;
+      }
     }
 `;
 
@@ -95,7 +101,7 @@ export const AddTask = () => {
             id="addTaskInput" />
         </StyledLabel>
         <StyledAddBtn type="submit">
-          <img src={`${process.env.PUBLIC_URL}/assets/icons8-plus-math-24.png`} alt="" />
+          <img src={`${process.env.PUBLIC_URL}/assets/icons8-plus-math-24.png`} alt="Plus sign" />
         </StyledAddBtn>
       </form>
     </StyledAddTaskContainer>

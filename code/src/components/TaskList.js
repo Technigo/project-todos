@@ -86,8 +86,10 @@ const StyledDeleteAllBtn = styled.button`
     justify-content: center;
     align-items: center;
     padding: 5px;
+    margin-bottom: 20px;
     width: 50%;
     max-width: 150px;
+    height: 30px;
     background-color: #D4C7B0;
     color: #3F4238;
     font-family: 'Roboto', sans-serif;
@@ -126,6 +128,8 @@ const CheckboxTypeDiv = styled.div`
   }
 
   [type='checkbox'] + label {
+    display: flex;
+    align-items: center;
     position: relative;
     padding-left: 30px;
     cursor: pointer;
@@ -251,7 +255,7 @@ export const TaskList = () => {
               <StyledDeleteSingleBtn
                 type="button"
                 onClick={() => onDeleteSingleTaskBtnClick(singleTask.id)}>
-                <img src={`${process.env.PUBLIC_URL}/assets/icons8-multiply-24.png`} alt="" />
+                <img src={`${process.env.PUBLIC_URL}/assets/icons8-multiply-24.png`} alt="Cross icon" />
               </StyledDeleteSingleBtn>
             </StyledSingleTaskWrapper>
           )
@@ -260,7 +264,7 @@ export const TaskList = () => {
       <StyledDeleteAllDiv>
         <StyledDeleteAllBtn type="button" onClick={onDeleteAllTasks}>
         Delete all tasks
-          <img src={`${process.env.PUBLIC_URL}/assets/icons8-multiply-24.png`} alt="" />
+          <img src={`${process.env.PUBLIC_URL}/assets/icons8-multiply-24.png`} alt="Cross icon" />
         </StyledDeleteAllBtn>
       </StyledDeleteAllDiv>
     </StyledTaskListContainer>
