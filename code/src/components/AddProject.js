@@ -14,19 +14,26 @@ const Input = styled.input`
   border-radius: 5px;
   margin-right: 1em;
   color:#0f1029;
-  width:250px
+  width:250px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
+  font-size: 16px;
 `;
 
 const Button = styled.button`
-  background-color: #7d8aa0;
+  background-color: #b8b4ba;
   color: white;
   padding: 0.5em 1em;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
+  font-size: 16px;
 
   &:hover {
-    background-color:#7d8aa0;
+    background-color:#586535
+;
   }
 `;
 

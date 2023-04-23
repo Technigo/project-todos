@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
@@ -14,10 +15,13 @@ const ProjectListContainer = styled.ul`
 
 const ProjectListItem = styled.li`
   text-decoration: ${(props) => (props.complete ? 'line-through' : 'none')};
-  background-color: ${(props) => props.color};
+ color:#b8b4ba;
   padding: 10px;
   margin: 5px;
   border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
+  font-size: 20px;
 `;
 
 const DeleteButton = styled.button`
@@ -25,6 +29,10 @@ const DeleteButton = styled.button`
   border: none;
   color:  #b8b9c7;
   cursor: pointer;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
+  font-size: 16px;
+  margin-left:10px;
 
   &:hover {
     text-decoration: underline;

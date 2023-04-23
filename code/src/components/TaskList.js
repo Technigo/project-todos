@@ -12,21 +12,29 @@ import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { toggleComplete, removeTask } from '../reducers/tasks'
 
 const TaskListContainer = styled.div`
-  margin-top: 1em;
+  margin-top: 2em;
+  width:50%;
+
 `;
 
 const ProjectTitle = styled.h3`
   margin-bottom: 0.5em;
-  font-size: 1.2em;
+  font-size: 1.3em;
   color: white;
+  font-weight:400;
+
+  
 `;
-const colors = ['#7ab9d7', ' #b8b9c7', ' #4b4a70'];
+
+const colors = [' #b8b9c7', ' #4b4a70', ' #808da2'];
 const ProjectContainer = styled.div`
  background-color: ${(props) => props.color};
   padding: 1em;
   margin-bottom: 1em;
   margin-bottom: 2%;
-  min-height:200px
+  min-height:200px;
+  border-radius:20px;
+ 
 `;
 
 const TaskListUl = styled.ul`
@@ -85,8 +93,7 @@ const TaskList = () => {
 
   return (
     <TaskListContainer>
-      <h1> Projects </h1>
-
+      <h2> Projects </h2>
       <Carousel
         showArrows
         showStatus={false}

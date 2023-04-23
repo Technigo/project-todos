@@ -8,7 +8,7 @@ const TaskCounterContainer = styled.div`
   justify-content: space-between;
   padding: 1em;
   border-radius:20px;
-  font-weight: bold;
+  font-weight: 500;
   margin-bottom:50px;
   color:#b8b4ba;
 `;

@@ -21,6 +21,9 @@ const Select = styled.select`
   padding: 0.5em;
   border: 1px solid #ccc;
   border-radius: 5px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
+  font-size: 16px;
 `;
 
 const Input = styled.input`
@@ -29,18 +32,25 @@ const Input = styled.input`
   border-radius: 5px;
   width: 300px;
   color: #2d2e38;
+  color: #a0a0b4;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:400;
+  font-size: 16px;
 `;
 
 const Button = styled.button`
  
-  color: white;
   padding: 0.5em 1em;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  
+  background-color: #b8b4ba;
+  color:white;
+  font-size:16px;
+
+
   &:hover {
-  
+  background-color: #4d5d3e;
   }
 `;
 
@@ -125,7 +135,7 @@ const AddTask = () => {
             onChange={(e) => setSelectedDueDate(e.target.value)} />
         </div>
       )}
-      <button type="submit">Add</button>
+      <Button type="submit">Add</Button>
     </Form>
   )
 }
