@@ -1,13 +1,33 @@
-# Project Todos
+# Project Todos – https://thetodo-jl.netlify.app
 
-Replace this readme with your own information about your project.
+## ✅ The brief
+Week 11 of @Technigos bootcamp. I was challenged to build a to-do app using Redux.
+It needed to be able to add a task, list all new tasks and toggle between completion status.
+This was a very educational project for me and gave me a better insight and understanding of how to use Redux and the possibilites it has.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+**Must-have requirements:**
+- [x] List of all tasks - completed or uncompleted.
+- [x] You should be able to mark an uncompleted task as complete (and change it back to uncompleted).
+- [x] It should be possible to add and remove tasks.
+- [x] Should show a count of either all tasks or all uncompleted tasks (or both).
 
-## The problem
+## 🏔️ The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started creating a design in Figma with the intention to keep it clean and easy to use. From the design I sketched on what components I needed and how to structure the assigment.  I wanted to use styled components as much as possible during this project.
+
+If I had more time to put into this I would've looked into normalizing the default style cause I did not manage to override that. I would also add a timestamp for each new task and worked more on some alignments of elements.
+
+Overall I am happy with the end result and looking forward to use and expand my knowledge regarding Redux! 
+
+## 💻 Tech stack
+- JavaScript 
+- React
+- Redux
+- CSS
+- HTML
+- Figma
+- npm-packages
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://thetodo-jl.netlify.app
