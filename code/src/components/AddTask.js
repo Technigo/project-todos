@@ -24,6 +24,7 @@ const Select = styled.select`
   font-family: 'Montserrat', sans-serif;
   font-weight:400;
   font-size: 16px;
+  color: #878894;
 `;
 
 const Input = styled.input`
