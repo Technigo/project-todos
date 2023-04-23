@@ -51,7 +51,7 @@ export const AddTaskChildDiv = styled.div`
   select {
     border: 2px solid var(--dark-blue);
     border-radius: 10px;
-    padding: 6px;
+    padding: 7px;
     cursor: pointer;
     line-height: 1.1;
     background: linear-gradient(to bottom, #ffffff 0%, #e5e5e5 100%);
