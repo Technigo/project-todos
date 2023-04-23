@@ -16,7 +16,6 @@ const TaskCount = () => {
   useEffect(() => {
     if (uncompletedTasks.length === 0 && completedTasks.length > 0) {
       swal({
-        icon: 'success',
         title: 'Great job!',
         text: 'You completed all your tasks!',
         button: 'OK'
