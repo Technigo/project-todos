@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { addList, addItem, toggleItem, togglePriority, deleteItem, sortItems, sortPriority, deleteList } from 'reducers/tasksproject';
+import { addList, addItem, toggleItem, togglePriority, deleteItem, sortItems, sortPriority, deleteList } from 'reducers/projects';
 import uniqid from 'uniqid';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
@@ -20,7 +20,7 @@ export const ProjectToDoList = () => {
   const [showForm, setShowForm] = useState(false);
   const [projectActive, setProjectActive] = useState(true);
 
-  const lists = useSelector((state) => state.tasksproject.lists);
+  const lists = useSelector((state) => state.projects.lists);
 
   const dispatch = useDispatch();
 
