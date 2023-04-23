@@ -1,13 +1,20 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+Create a to-do list using redux.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+In the list you should be able to:
+* list all tasks - completed or uncompleted.
+* be able to mark an uncompleted task as complete (and change it back to uncompleted).
+* be able to add and remove tasks.
+* should show a count of either all tasks or all uncompleted tasks (or both).
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I started by creating a sketch of the different components, figuring out which needed to do what.
+I choose a design from behance to have as inspiration for my own layout.
+I used redux and styled components to structure it. I feel like I got a better understanding of the Redux state by doing this project.
 
+If I had more time, I would look into adding more functionality like due date, filtering completed/uncompleted and adding categories.
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+[To do list](https://to-do-check-list.netlify.app/)
