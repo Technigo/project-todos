@@ -40,4 +40,11 @@ h2 {
   img {
     width: 330px;
   }
+
+}
+
+@media (min-width: 1024px) {
+  img {
+    width: 500px;
+  }
 }

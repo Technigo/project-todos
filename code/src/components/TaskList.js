@@ -14,8 +14,12 @@ import { toggleComplete, removeTask } from '../reducers/tasks'
 const TaskListContainer = styled.div`
   margin-top: 2em;
   width:50%;
-  @media (max-width: 768px) {
+  @media (max-width: 758px) {
     width: 100%;
+    padding: 0 1em;
+  }
+  @media (min-width: 768px){
+    width: 50%;
     padding: 0 1em;
   }
 
