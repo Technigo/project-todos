@@ -31,5 +31,5 @@ export const AddContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
-  background: tomato; /* change background before last commit
+  background: tomato; /* change background before last commit */
 `;
