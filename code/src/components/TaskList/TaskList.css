@@ -46,7 +46,7 @@
 
 .fade-out {
   animation-name: fade-out;
-  animation-duration: 1s; /* or however long you want the animation to last */
+  animation-duration: 1s;
   opacity: 0;
 }
 
