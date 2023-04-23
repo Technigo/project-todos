@@ -4,17 +4,7 @@ const initialState = {
   items: [
     {
       id: '238uskfhslkjdfh98',
-      todo: 'Buy a turtle',
-      isDone: false
-    },
-    {
-      id: '238uskfhslkjdfh99',
-      todo: 'Run a marathon',
-      isDone: false
-    },
-    {
-      id: '238uskfhslkjdfh100',
-      todo: 'Plan the vacation 🏝️',
+      todo: 'Add a task and pet a turtle.',
       isDone: false
     }
   ]
