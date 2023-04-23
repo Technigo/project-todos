@@ -7,6 +7,7 @@ import { ButtonContainer, MainContainer } from 'components/Main/MainStyling';
 import { Header } from 'components/Header';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCircleCheck, faTrash } from '@fortawesome/free-solid-svg-icons'
+import { Footer } from 'components/Footer';
 import { Button } from '../Button';
 
 export const Main = () => {
@@ -40,6 +41,8 @@ export const Main = () => {
         </ButtonContainer>
         <TaskList />
       </MainContainer>
+      <Footer />
     </>
   )
 }
+

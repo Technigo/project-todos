@@ -9,6 +9,8 @@ export const GlobalStyle = createGlobalStyle`
 }
 body {
   background: var(--white);
+  border: 2px solid var(--dark-blue);
+
   animation-name: slide-in-top;
   animation-duration: 1s;
 
@@ -23,10 +25,13 @@ body {
 }
 
   @media (min-width: 768px) {
-     margin: 10vh 20%;
+     margin:2vh 20%;
   }
-  @media (min-width: 1024px) {
-     margin: 5vh 30%;
+   @media (min-width: 1024px) {
+     margin: 1vh 20%;
+  }
+  @media (min-width: 1200px) {
+     margin: 1vh 20%;
   }
 }
 `

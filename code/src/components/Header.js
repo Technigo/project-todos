@@ -14,7 +14,7 @@ export const Header = () => {
 }
 
 const HeaderWrapper = styled.header`
-    padding: 20px;
+    padding: 10px;
     background-color:var(--dark-blue);
     
 

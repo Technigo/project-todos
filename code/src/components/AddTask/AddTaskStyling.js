@@ -31,7 +31,13 @@ export const AddTaskWrapper = styled.form`
       #addTaskInput {
       width:55vw;
       }
-    }    
+    } 
+    
+    @media (min-width: 1200px) {
+
+      #addTaskInput {
+      }
+    }
 `
 
 export const AddTaskChildDiv = styled.div`
@@ -43,7 +49,6 @@ export const AddTaskChildDiv = styled.div`
   width:90vw;
 
   select {
-    width: 100%;
     border: 2px solid var(--dark-blue);
     border-radius: 10px;
     padding: 6px;
@@ -81,6 +86,16 @@ export const AddTaskChildDiv = styled.div`
 
   @media (min-width: 768px) {
       width:55vw;
-    }   
-  
+    }  
+    
+ @media (min-width: 1024px) {
+    .datePicker {
+    width:12em;
+  }
+
+  select {
+    width:60%;
+  } 
+}
+
 `;
