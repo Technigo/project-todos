@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This week's bootcamp project was to make a todo-app with the help of Redux; learning how to create slices, reducers and actions, how to interact with the store and how to write immutable code.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I planned out most of the features I wanted and their placement and what would need reducers before I started coding. I made two slices, one for active and one for saved todo-items. The app doesn't have the option to save, because I hit a problem with this that I couldn't solve within the given time. If I had more time I would fix that, and give the CSS a big clean up.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://relaxed-baklava-3d900d.netlify.app/
