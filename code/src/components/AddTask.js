@@ -5,9 +5,10 @@ import styled from 'styled-components';
 
 const InnerWrapper = styled.div`
 display: flex;
-flex-direction: row;
+flex-directon: row;
 justify-content: center;
 align-items: center;
+background-color: beige;
 `
 const Label = styled.div`
 font-size: 20px;
@@ -16,13 +17,21 @@ font-size: 20px;
 const Input = styled.input`
 width: 200px;
 height: 30px;
+border-radius: 5px;
+border: solid pink;
+margin-right: 10px;
 `
 
 const SubmitBtn = styled.button`
-width: 30px;
-height: 30px;
-border-radius: 50px;
+width: 40px;
+height: 37px;
+border-radius: 5px;
 border-color: black;
+background-color: white;
+font-size: 25px;
+color: black;
+position: absolute;
+
 `
 
 const AddTask = () => {
@@ -46,11 +55,11 @@ const AddTask = () => {
           <Input
             value={inputValue}
             type="text"
-            placeholder="Add new thing"
+            placeholder="Don't forget to bring..."
             onChange={(event) => setInputValue(event.target.value)}
             id="addInput" />
+          <SubmitBtn type="submit" disabled={inputValue.length === 0}>+</SubmitBtn>
         </Label>
-        <SubmitBtn type="submit" disabled={inputValue.length === 0}>+</SubmitBtn>
       </form>
     </InnerWrapper>
   )

@@ -6,7 +6,12 @@ import styled from 'styled-components';
 const List = styled.div`
 display: flex;
 flex-direction: column;
-background-color: beige;
+background-color: white;
+margin-left: 20px;
+margin-right: 20px;
+border-radius: 5px;
+box-shadow:   box-shadow: 12px 12px 2px 1px rgba(0,0,0,0.5);
+
 `
 const ListHeader = styled.div`
 align-self: center;
@@ -19,25 +24,31 @@ const InnerWrapper = styled.div`
 display: grid;
 grid-template-columns: 1fr 1fr 1fr;
 justify-content: center;
-margin-left: 40px;
-padding: 10px;
-width: 400px;
 font-size: 18px;
+margin-bottom: 10px;
 font-family: 'Quicksand', sans-serif;
-border-radius: 10px;
 [type="checkbox"]{
-  margin-left: 70px;
+  margin-left: 40px;
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
 }
+`
+
+const TaskText = styled.div`
+margin-left: -70px;
 `
 
 const DeleteBtn = styled.button`
 background-color: white;
 font-size: 15px;
 font-family: 'Quicksand', sans-serif;
-width: 25px;
-height: 25px;
-margin-left: 80px;
-border-style: none;
+width: 30px;
+height: 30px;
+border-radius: 50px;
+margin-left: 60px;
+border: 1px solid black;
+
 `
 
 const TaskList = () => {
@@ -62,7 +73,9 @@ const TaskList = () => {
                 checked={task.isChecked}
                 onChange={() => dispatch(tasks.actions.toggleItem(task))} />
             </label>
+            <TaskText>
             {task.text}
+            </TaskText>
             <DeleteBtn
               type="button"
               onClick={() => dispatch(tasks.actions.deleteTask(task))}>X
@@ -82,7 +95,9 @@ const TaskList = () => {
                 key={task.id}
                 onChange={() => dispatch(tasks.actions.toggleItem(task))} />
             </label>
+            <TaskText>
             {task.text}
+            </TaskText>
             <DeleteBtn
               type="button"
               onClick={() => dispatch(tasks.actions.deleteTask(task))}>X

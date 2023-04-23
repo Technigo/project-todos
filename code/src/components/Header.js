@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const HeaderWrapper = styled.div`
-background: beige;
 display: flex;
 flex-direction: column;
 justify-content: center;
@@ -10,7 +9,7 @@ align-items: center;
 `
 
 const HeaderText = styled.div`
-font-size: 25px;
+font-size: 21px;
 font-family: 'Quicksand', sans-serif;
 height: 100px;
 margin-bottom: 20px;
@@ -28,7 +27,7 @@ export const Header = () => {
         <h1>Back & forth...</h1>
       </HeaderText>
       <Weather>
-        It's <span class="material-symbols-outlined">
+        It's <span className="material-symbols-outlined">
 rainy
 </span> today.
       </Weather>
