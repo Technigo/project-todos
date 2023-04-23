@@ -2,8 +2,8 @@ import styled from 'styled-components';
 
 export const Button = styled.button`
 background-color: #E6DBBC;
-font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-font-size: 1.1rem;
+font-family: 'League Spartan', sans-serif;
+font-size: 1.3rem;
 border-radius: 20px;
 border: none;
 display: flex;

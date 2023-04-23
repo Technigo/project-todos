@@ -61,7 +61,7 @@ export const AddTask = () => {
             id="deadlineInput"
             dateFormat="yyyy-MM-dd" />
         </CalendarContainer>
-        <Button type="submit"> Add task!</Button>
+        <Button type="submit">Add task!</Button>
       </Form>
     </AddTaskWrapper>
   )

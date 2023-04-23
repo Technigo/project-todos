@@ -7,7 +7,7 @@ const CounterWrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'League Spartan', sans-serif;
   font-size: 1.5rem;
   `
 

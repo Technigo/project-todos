@@ -17,13 +17,13 @@ export const TaskList = () => {
   }
   // STYLES
   const TaskListWrapper = styled.div`
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: 100%;
   z-index: 2;
+  position: relative;
   `
   const SingleTaskWrapper = styled.div`
   display: flex;
@@ -33,20 +33,23 @@ export const TaskList = () => {
   background-color: #E6DBBC;
   padding: 1rem;
   border-radius: 1.8rem;
-  width: 20rem;
+  width: 17rem;
   word-wrap: break-word;
   margin-bottom: 15px;
   
   li {
     display: flex;
     flex-direction: column;
-    text-align: left !important;
+    text-align: center;
     gap: 0.5rem;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 1.8rem;
+    font-family: 'League Spartan', sans-serif;
+    font-size: 1.5rem;
+    word-wrap: break-word;
+    
     span {
-      font-size: 0.8rem;  
+      font-size: 0.9rem;  
       color: #777;
+      text-align: center;
     }
   }
   @media (min-width: 668px) {

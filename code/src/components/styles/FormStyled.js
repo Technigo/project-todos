@@ -15,7 +15,7 @@ flex-direction: row;
 align-items: center;
 justify-content: center;
 background-color: white;
-width: 25rem;
+width: 28rem;
 padding: 0.5rem;
 border-radius: 2rem;
 gap: 1.2rem;`
@@ -37,7 +37,8 @@ export const AddTaskInput = styled.input`
   border-radius: 20px;
   height: 3rem;
   font-size: 1.3rem;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-family: 'League Spartan', sans-serif;
+  padding: 0rem 0.5rem;
 
   :focus {
     outline: none;

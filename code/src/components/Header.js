@@ -15,12 +15,14 @@ const HeaderWrapper = styled.div`
     padding-top: 2rem;
     padding-bottom: 1rem;
     z-index: 2;
-  position: relative;
+    position: relative;
     `
 
 const HeaderTitle = styled.h1`
-    font-size: 3rem;
+    font-size: 5rem;
     text-align: center;
+    font-family: 'Paytone One', sans-serif;
+    color: #444444;
     `
 
 export const Header = () => {
@@ -32,7 +34,7 @@ export const Header = () => {
 
   return (
     <HeaderWrapper>
-      <HeaderTitle>Todo</HeaderTitle>
+      <HeaderTitle>TODO</HeaderTitle>
       <Button type="button" onClick={clearTasks}>Clear all</Button>
       <Counter />
     </HeaderWrapper>
