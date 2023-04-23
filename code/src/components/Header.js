@@ -24,7 +24,7 @@ export const Header = () => {
     <>
       <WaveAnimation />
       <HeaderWrapper>
-        <HeaderText>TODO TODO TODO TODO TODO TODOTODO TODO TODO</HeaderText>
+        <HeaderText>TODO TODO TODO TODO TODO TODO TODO TODO TODO</HeaderText>
       </HeaderWrapper>
     </>
   );
