@@ -4,11 +4,11 @@ import tasks from 'components/reducers/tasks';
 import styled from 'styled-components';
 
 const InnerWrapper = styled.div`
+background-color: pink;
 display: flex;
 flex-directon: row;
 justify-content: center;
 align-items: center;
-background-color: beige;
 `
 const Label = styled.div`
 font-size: 20px;

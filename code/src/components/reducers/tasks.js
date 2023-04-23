@@ -18,7 +18,7 @@ const initialState = {
       text: 'Jacket',
       isChecked: false },
     { id: '6',
-      text: 'The green backpacket',
+      text: 'The green backpack',
       isChecked: false }
   ]
 }

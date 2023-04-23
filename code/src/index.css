@@ -12,6 +12,9 @@ code {
     monospace;
 }
 
-body {
-  background-image: url('')
-}
+/* body {
+  background-image:
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}*/

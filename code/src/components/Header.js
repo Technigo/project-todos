@@ -6,11 +6,13 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+background-color: pink;
 `
 
 const HeaderText = styled.div`
 font-size: 21px;
 font-family: 'Quicksand', sans-serif;
+color: white;
 height: 100px;
 margin-bottom: 20px;
 `
@@ -27,9 +29,9 @@ export const Header = () => {
         <h1>Back & forth...</h1>
       </HeaderText>
       <Weather>
-        It's <span className="material-symbols-outlined">
+        It&apos;s <span className="material-symbols-outlined">
 rainy
-</span> today.
+        </span> today.
       </Weather>
     </HeaderWrapper>
   )

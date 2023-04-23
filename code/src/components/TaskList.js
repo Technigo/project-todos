@@ -6,12 +6,8 @@ import styled from 'styled-components';
 const List = styled.div`
 display: flex;
 flex-direction: column;
-background-color: white;
-margin-left: 20px;
-margin-right: 20px;
-border-radius: 5px;
-box-shadow:   box-shadow: 12px 12px 2px 1px rgba(0,0,0,0.5);
-
+background-color: pink;
+height: 100vh;
 `
 const ListHeader = styled.div`
 align-self: center;
@@ -48,7 +44,6 @@ height: 30px;
 border-radius: 50px;
 margin-left: 60px;
 border: 1px solid black;
-
 `
 
 const TaskList = () => {
@@ -74,7 +69,7 @@ const TaskList = () => {
                 onChange={() => dispatch(tasks.actions.toggleItem(task))} />
             </label>
             <TaskText>
-            {task.text}
+              {task.text}
             </TaskText>
             <DeleteBtn
               type="button"
@@ -83,7 +78,6 @@ const TaskList = () => {
           </InnerWrapper>
         )
       })}
-      
       <ListHeader><h2>Home</h2></ListHeader>
       {taskToDo.map((task) => {
         return (
@@ -96,7 +90,7 @@ const TaskList = () => {
                 onChange={() => dispatch(tasks.actions.toggleItem(task))} />
             </label>
             <TaskText>
-            {task.text}
+              {task.text}
             </TaskText>
             <DeleteBtn
               type="button"
