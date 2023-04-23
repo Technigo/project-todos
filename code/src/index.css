@@ -44,7 +44,13 @@ code {
     padding-top: 1rem;
     border: 2px solid white;
     border-radius: 20px;
-    box-shadow: 12px 12px 2px 1px rgb(45, 44, 44);
+    box-shadow: 0px 4px 8px rgba(214, 8, 8, 0.823), 0px 8px 16px rgba(198, 66, 66, 0.866), 0px 12px 24px rgba(214, 8, 8, 0.823);
+
+
+
+
+
+
   }
 
   .gradient-background {
