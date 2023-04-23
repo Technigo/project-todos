@@ -14,6 +14,7 @@ export const HeaderText = styled.h2`
   text-align: center;
   font-weight: 900;
   margin: 0;
+  padding-top: 10px;
   font-size: 50px;
   text-align: center;
 `

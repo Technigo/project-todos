@@ -12,7 +12,7 @@ export const ToDoCard = styled.div`
   justify-content: space-between;
   padding: 10px;
   position: relative;
-  background-color: pink;
+  background-color: oldlace;
 `
 
 export const ToDoInnerCard = styled.div`
@@ -40,9 +40,16 @@ export const ProjectHeader = styled.div`
   align-items: center;
   padding: 10px;
   justify-content: space-between;
-  background: #b8dee0;
 `
 
+export const ProjectWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  @media (min-width:1280px){
+    width: 313.984px;
+  }
+`
 export const ListHeaderButton = styled.button`
   background: transparent;
   border: none;
@@ -61,7 +68,8 @@ export const ListFooter = styled.div`
   justify-content: flex-end;
   align-items: center;
   padding: 10px;
-  background: #f85f36;
+  margin-top: 50px;
+  background: transparent;
 `
 
 export const ButtonsBox = styled.div`
@@ -76,6 +84,7 @@ export const ToDotext = styled.p`
   color: #464646;
   margin: auto 0;
   font-weight: 700;
+  word-break: break-word;
 `
 
 export const CounterText = styled.p`
@@ -103,7 +112,7 @@ export const DeleteButton = styled.button`
 
 export const TextInput = styled.input`
   background: #FFFFFF;
-  border: 2px solid pink;
+  border: 2px solid #f85f36;
   outline: none;
   border-radius: 8px;
   height: 48px;
@@ -118,30 +127,44 @@ export const TextInput = styled.input`
     }
 
     &:hover {
-      border: 2px solid #f85f36;
+      border: 2px solid pink;
     }
 `
 
 export const ToDoForm = styled.form`
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 15px;
 `
 export const AddNewProjectContainer = styled.div`
   display: flex;
-  height: 32px;
+  height: 29.5px;
   padding: 10px;
   gap: 10px;
   align-items: center;
   background: #E8E8E8;
+
+    @media (min-width:1280px){
+      width: 293.977px;
+    }
+  }
 `
 export const ProjectNameContainer = styled.div`
   display: flex;
-  height: 32px;
+  height: 27.5px;
   padding: 10px;
   justify-content: space-between;
   align-items: center;
-  background: #b8dee0;
+  background: transparent;
+  border: 1px solid  #f85f36;
+
+     &:hover {
+      border: 1px solid  pink;
+    }
+
+    @media (min-width:1280px){
+      width: 293.977px;
+    }
 `
 
 export const AddButton = styled.button`
@@ -157,11 +180,24 @@ export const AddButton = styled.button`
   font-weight: 900;
 `
 export const AddButton2 = styled.button`
-  width: 30%;
+  width: 50%;
   background: transparent;
   border: none;
   outline: none;
   justify-content: flex-end;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #f85f36;
+  font-weight: 900;
+`
+
+export const FormButton = styled.button`
+  width: 100%;
+  background: transparent;
+  border: none;
+  outline: none;
+  justify-content: center;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -180,9 +216,5 @@ export const ProjectNameInput = styled.input`
 
     &:focus {
       caret-color: #f85f36;
-    }
-
-    &:hover {
-      border-bottom: 1px solid #f85f36;
     }
 `

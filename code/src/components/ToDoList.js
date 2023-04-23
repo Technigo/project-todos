@@ -10,7 +10,7 @@ import { CompleteAll } from './CompleteAll';
 import { DeleteAll } from './DeleteAll';
 import { NewToDo } from './NewToDo';
 import { TaskCounter } from './TaskCounter'
-import { ToDoCard, ToDoInnerCard, ToDoListWrapper, ListHeader, ListHeaderButton, ListFooter, ButtonsBox, ToDotext, ProjectTitle, DeleteButton } from './style/GlobalStyle';
+import { ToDoCard, ToDoInnerCard, ToDoListWrapper, ListHeader, ListHeaderButton, ListFooter, ButtonsBox, ToDotext, ProjectTitle, DeleteButton, ProjectWrapper } from './style/GlobalStyle';
 
 export const ToDoList = () => {
   const [listActive, setlistActive] = useState(false);
@@ -43,7 +43,7 @@ export const ToDoList = () => {
   };
 
   return (
-    <>
+    <ProjectWrapper>
       <ListHeader>
         <ProjectTitle>My to do list</ProjectTitle>
         <TaskCounter />
@@ -56,7 +56,7 @@ export const ToDoList = () => {
       {listActive && (
         <ToDoListWrapper>
           {allTasks.map((todoItem, todoIndex) => (
-            <ToDoCard key={uniqid()} priority={todoItem.priority}>
+            <ToDoCard key={uniqid()}>
               <ToDoInnerCard>
                 <div className="container">
                   <div className="round">
@@ -97,6 +97,6 @@ export const ToDoList = () => {
           </ListFooter>
         </ToDoListWrapper>
       )}
-    </>
+    </ProjectWrapper>
   )
 }

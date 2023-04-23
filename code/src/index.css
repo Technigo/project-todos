@@ -121,10 +121,10 @@ code {
 
 .submit-button {
   font-size: 1rem;
-  padding: 0.8em 2em;
+  padding: 0.8em 1.5em;
   background-color: pink;
   border: 3px solid #f85f36;
-  border-radius: 1em;
+  border-radius: 8px;
   font-family: "Raleway", sans-serif;
   font-weight: 900;
   color: #f85f36;
@@ -132,7 +132,8 @@ code {
   box-shadow: -5px 5px 0px 0px #f85f36;
   cursor: pointer;
   letter-spacing: 1px;
-  height: 70px;
+  height: 56px;
+  width: 100%;
 }
 
 .submit-button:hover {
@@ -143,12 +144,33 @@ code {
   box-shadow: -5px 5px 0px 0px pink;
 }
 
+::placeholder { 
+  color: #f85f36;
+  opacity: 0.7;
+}
+
+:-ms-input-placeholder { 
+  color: #f85f36;
+}
+
+::-ms-input-placeholder { 
+  color: #f85f36;
+}
 
 #datePicker {
-      padding: 3px;
+      padding: 10px;
       border-radius: 8px;
       cursor: pointer;
-      width: 6em;
+      border: 2px solid #f85f36;
+      font-weight: 500;
+      outline: none;
+      font-family: 'Raleway', sans-serif;
+      box-sizing: border-box;
+      width: 100%;
+    }
+
+    #datePicker:hover {
+      border: 2px solid pink;
     }
 
     .react-datepicker__input-container {

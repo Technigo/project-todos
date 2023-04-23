@@ -17,7 +17,19 @@ export const Main = styled.main`
   margin: 30px 20px 20px 20px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
+
+  @media (min-width:744px) and (max-width:1280px){
+    max-width: 533px;
+    margin: 45px auto 20px auto;
+  }
+
+  @media (min-width:1280px){
+    margin: 40px 20px 20px 20px;
+    flex-direction: row;
+    justify-content: center;
+  }
+
 `
 
 const reducer = combineReducers({

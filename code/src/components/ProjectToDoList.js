@@ -4,13 +4,12 @@ import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addList, addItem, toggleItem, togglePriority, deleteItem, sortItems, sortPriority, deleteList } from 'reducers/tasksproject';
 import uniqid from 'uniqid';
-import styled from 'styled-components'
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { compareAsc } from 'date-fns'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown, faChevronUp, faPlus, faFlag, faTrashCan } from '@fortawesome/free-solid-svg-icons'
-import { TextInput, CounterText, ListHeaderButton, ProjectTitle, AddNewProjectContainer, AddButton, AddButton2, ProjectNameInput, ProjectNameContainer, ToDoForm, ToDoListWrapper, ToDoCard, ToDoInnerCard, ToDotext, ButtonsBox, DeleteButton, ProjectHeader } from './style/GlobalStyle';
+import { faChevronDown, faChevronUp, faPlus, faMinus, faFlag, faTrashCan } from '@fortawesome/free-solid-svg-icons'
+import { TextInput, CounterText, ListHeaderButton, ProjectTitle, AddNewProjectContainer, AddButton, AddButton2, ProjectNameInput, ProjectNameContainer, ToDoForm, ToDoListWrapper, ToDoCard, ToDoInnerCard, ToDotext, ButtonsBox, DeleteButton, ProjectHeader, ProjectWrapper, FormButton } from './style/GlobalStyle';
 
 export const ProjectToDoList = () => {
   const [projectCreated, setProjectCreated] = useState(false);
@@ -18,6 +17,7 @@ export const ProjectToDoList = () => {
   const [listName, setListName] = useState('');
   const [itemName, setItemName] = useState('');
   const [dueDate, setDueDate] = useState('');
+  const [showForm, setShowForm] = useState(false);
   const [projectActive, setProjectActive] = useState(true);
 
   const lists = useSelector((state) => state.tasksproject.lists);
@@ -25,11 +25,9 @@ export const ProjectToDoList = () => {
   const dispatch = useDispatch();
 
   const handleAddList = () => {
-    dispatch(addList({ name: listName }));
+    dispatch(addList({ name: listName.charAt(0).toUpperCase() + listName.slice(1) }));
     setListName('');
     setListNameCreated(true)
-    console.log(listName)
-    console.log(projectCreated)
     setProjectCreated(false)
   };
 
@@ -80,23 +78,34 @@ export const ProjectToDoList = () => {
     dispatch(deleteList({ name: list.name }));
   }
 
+  const handleShowForm = () => {
+    setShowForm(true)
+  }
+
+  const handleHideForm = () => {
+    setShowForm(false)
+  }
+
+  const colorsArray = ['#3d5a80', '#b8dee0', '#79c9b0', '#e8e863', '#e4d1f1', '#831e74', '#ffccb8']
+  const a = Math.floor(Math.random() * colorsArray.length);
+  
   return (
     <>
       {listNameCreated && (
-        <div>
+        <ProjectWrapper>
           {Array.isArray(lists) && lists.map((list, listIndex) => (
             <>
-              <ProjectHeader key={list.name}>
+              <ProjectHeader key={list.name} style={{ background:`${colorsArray[a, listIndex]}`}}>
                 <ProjectTitle>{list.name}</ProjectTitle>
-                <CounterText>{list.items.length} tasks</CounterText>
-                <div style={{ display: 'flex', gap: '20px' }}>
-                  <DeleteButton type="button" onClick={() => deleteListByName(list)}><FontAwesomeIcon icon={faTrashCan} style={{ color: '#f85f36', fontWeight: '300', fontSize: '20px' }} /></DeleteButton>
+                <div style={{ display: 'flex', gap: '10px', alignItems: 'center' }}>
+                  <CounterText>{list.items.length} tasks</CounterText>
+                  <DeleteButton type="button" onClick={() => deleteListByName(list)}><FontAwesomeIcon icon={faTrashCan} style={{ color: '#f85f36', fontWeight: '300', fontSize: '15px' }} /></DeleteButton>
                   <ListHeaderButton type="button" onClick={() => handleProjectClick(listIndex)}>
                     {projectActive[listIndex] ? (
                       <FontAwesomeIcon icon={faChevronUp} style={{ color: '#f85f36', fontWeight: '300', fontSize: '25px' }} />)
                       : (<FontAwesomeIcon icon={faChevronDown} style={{ color: '#f85f36', fontWeight: '300', fontSize: '25px' }} />)}
                   </ListHeaderButton>
-                </div>
+                  </div>
               </ProjectHeader>
               {projectActive[listIndex] && (
                 <>
@@ -137,7 +146,13 @@ export const ProjectToDoList = () => {
                       </ToDoCard>
                     ))}
                   </ToDoListWrapper>
+                  {showForm && ( 
                   <ToDoForm key={listIndex}>
+                    <FormButton
+                      type="button"
+                      onClick={handleHideForm}>
+                      <FontAwesomeIcon icon={faMinus} style={{ color: '#f85f36', fontWeight: '300', fontSize: '35px' }} />
+                    </FormButton>
                     <label htmlFor="projecttodo">
                       <TextInput
                         type="text"
@@ -145,7 +160,10 @@ export const ProjectToDoList = () => {
                         value={itemName[listIndex] || ''}
                         onChange={(e) => handleItemNameChange(listIndex, e.target.value)} />
                     </label>
-                    <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+                    <div style={{
+                      display: 'grid', gridGap: '20px',
+                      gridTemplateColumns: 'repeat(2, 1fr)'
+                    }}>
                       <div>
                         <DatePicker
                           id="datePicker"
@@ -161,18 +179,27 @@ export const ProjectToDoList = () => {
                         ADD TODO
                       </button>
                     </div>
-                  </ToDoForm>
+                  </ToDoForm>)}
+                  {!showForm && (
+                    <FormButton
+                      type="button"
+                      onClick={handleShowForm}>
+                      <FontAwesomeIcon icon={faPlus} style={{ color: '#f85f36', fontWeight: '300', fontSize: '35px' }} />
+                    </FormButton>)}
                 </>
               )}
             </>
           ))}
-        </div>)}
+        </ProjectWrapper>)}
       {projectCreated && (
         <ProjectNameContainer>
           <ProjectNameInput
             type="text"
             value={listName}
+            minLength="2"
+            maxLength="12"
             placeholder='Your project name...'
+            required
             onChange={(e) => setListName(e.target.value)} />
           <AddButton2
             type="button"

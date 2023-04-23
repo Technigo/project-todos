@@ -13,7 +13,7 @@ export const DeleteButton = styled.button`
   display: flex;
   align-items: center;
   gap: 10px;
-  color: pink;
+  color: #f85f36;
   font-weight: 900;
 
   &:hover:after {
