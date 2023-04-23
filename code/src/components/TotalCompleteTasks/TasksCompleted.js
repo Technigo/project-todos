@@ -23,6 +23,7 @@ const Wrapper = styled.section`
   display: flex;
   flex-direction: row;
   align-items: center;
+  background-color: black;
 `
 
 const TotalCompleteItems = () => {

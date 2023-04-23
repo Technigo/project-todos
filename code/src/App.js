@@ -14,10 +14,24 @@ export const App = () => {
   const store = configureStore({ reducer })
   return (
     <Provider store={store}>
-      <TotalCompleteItems />
-      <Header />
-      <TaskList />
-      <AddTask />
+      <div className="main-container">
+        <div className="particle-background">
+          <div className="particle" />
+          <div className="particle" />
+          <div className="particle" />
+          <div className="particle" />
+          <div className="particle" />
+          <div className="particle" />
+          <div className="particle" />
+          <div className="particle" />
+          <div className="particle" />
+          <div className="particle" />
+        </div>
+        <TotalCompleteItems />
+        <Header />
+        <TaskList />
+        <AddTask />
+      </div>
     </Provider>
   );
 }

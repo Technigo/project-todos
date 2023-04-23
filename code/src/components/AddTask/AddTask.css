@@ -1,11 +1,11 @@
 .addtask-container {
-  margin: 2rem auto 0;
+ 
   background-color: black;
   display: flex;
   align-items: center;
   justify-content: center;
   width: 100%;
-  max-width: calc(100% - 4rem);
+
 }
 
 .onTaskDeleteBtn {
@@ -13,8 +13,9 @@
   width: 2.8rem;
   height: 2.8rem;
   background-color: black;
-  margin-left: 1.5rem;
+  margin-right: 2rem;
 }
+
 
 .onTaskDeleteBtn svg path {
   position: absolute;
@@ -27,6 +28,7 @@
   width: 2.5rem;
   height: 2.5rem;
   margin-right: 0.8rem;
+  margin-left: 2rem;
 }
 
 .add-button svg path {
@@ -45,9 +47,11 @@ form label {
 }
 
 form input {
-  width: 100%;
+  width: calc(100% - 1.8rem);
   border: none;
   padding: 0.5rem;
   font-size: 1rem;
   border-radius: 10px;
+  margin: 2rem 0rem 2rem 0rem;
 }
+
