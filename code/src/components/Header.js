@@ -20,6 +20,8 @@ const Weather = styled.div`
 font-size: 20px;
 font-famiy: 'Quicksand', sans-serif;
 margin-bottom: 20px;
+letter-spacing: 7px;
+color: white;
 `
 
 export const Header = () => {

@@ -14,6 +14,7 @@ align-self: center;
 font-size: 18px;
 font-family: 'Quicksand', sans-serif;
 margin-bottom: -20px;
+color: white;
 `
 
 const InnerWrapper = styled.div`
@@ -23,6 +24,7 @@ justify-content: center;
 font-size: 18px;
 margin-bottom: 10px;
 font-family: 'Quicksand', sans-serif;
+color: white;
 [type="checkbox"]{
   margin-left: 40px;
   width: 20px;
@@ -59,7 +61,9 @@ const TaskList = () => {
 
   return (
     <List>
-      <ListHeader><h2>Pree School</h2></ListHeader>
+      <ListHeader><h2>Pree Scho<span class="material-symbols-outlined">
+child_care
+</span>l</h2></ListHeader>
       {completedTask.map((task) => {
         return (
           <InnerWrapper>
@@ -80,7 +84,9 @@ const TaskList = () => {
           </InnerWrapper>
         )
       })}
-      <ListHeader><h2>Home</h2></ListHeader>
+      <ListHeader><h2>H<span class="material-symbols-outlined">
+home
+</span>me</h2></ListHeader>
       {taskToDo.map((task) => {
         return (
           <InnerWrapper>

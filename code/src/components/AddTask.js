@@ -29,7 +29,7 @@ height: 37px;
 border-radius: 5px;
 border-color: black;
 background-color: white;
-font-size: 25px;
+font-size: 15px;
 color: black;
 position: absolute;
 
@@ -59,7 +59,7 @@ const AddTask = () => {
             placeholder="Don't forget to bring..."
             onChange={(event) => setInputValue(event.target.value)}
             id="addInput" />
-          <SubmitBtn type="submit" disabled={inputValue.length === 0}>+</SubmitBtn>
+          <SubmitBtn type="submit" disabled={inputValue.length === 0}>Add</SubmitBtn>
         </Label>
       </form>
     </InnerWrapper>
