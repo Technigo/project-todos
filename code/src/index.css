@@ -7,7 +7,6 @@ body {
   background-image: url(../assets/background-blob.jpg);
   background-attachment: fixed;
   background-size: cover;
-  height: 100vh;
   margin-top: 120px;
 }
 
