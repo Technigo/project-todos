@@ -1,23 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  tasks: [
-    { id: 1, text: 'Watch video on actions & reducers', complete: false },
-    { id: 2, text: 'Follow redux codealong', complete: false },
-    { id: 3, text: 'Fork weekly assignment', complete: false },
-    { id: 4, text: 'Create a todo app', complete: false }
-  ]
+  tasks: [],
+  completedCount: 0
 };
 
 export const tasks = createSlice({
   name: 'tasks',
   initialState,
   reducers: {
+    setupStore: (store, action) => {
+      store.tasks = action.payload;
+    },
     addTask: (store, action) => {
       store.tasks = [...store.tasks, action.payload];
+      localStorage.setItem('taskList', JSON.stringify(store.tasks));
     },
     deleteTask: (store, action) => {
       store.tasks = store.tasks.filter((task) => task.id !== action.payload.id);
+      localStorage.setItem('taskList', JSON.stringify(store.tasks));
     },
     toggleChecked: (store, action) => {
       const { id } = action.payload;
@@ -27,6 +28,7 @@ export const tasks = createSlice({
         }
         return task;
       });
+      localStorage.setItem('taskList', JSON.stringify(store.tasks));
       store.completedCount = store.tasks.filter((task) => task.complete).length;
     }
   }
