@@ -4,11 +4,13 @@ import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { todos } from 'redux/reducers/todos';
 import { DefaultButton } from 'styles/Button';
-import { TagsInput } from 'components/TagsInput/TagsInput';
+// import { TagsInput } from 'components/TagsInput/TagsInput';
 import {
   NewToDo,
   Input,
-  AddContainer
+  AddContainer,
+  Select,
+  Option
 } from 'components/AddToDo/AddToDo.style'
 
 export const AddToDo = () => {
@@ -43,17 +45,17 @@ export const AddToDo = () => {
             onChange={(event) => setInputValue(event.target.value)} />
           {/* id={`new-todo-input${newToDo.id}`} /> */}
         </label>
-        <select
+        <Select
           value={selectedCategory}
           onChange={(event) => setSelectedCategory(event.target.value)}>
-          <option value="">Select a category</option>
-          <option value="Home">Home</option>
-          <option value="Work">Work</option>
-          <option value="Shopping">Buy</option>
-          <option value="Other">Other</option>
-        </select>
+          <Option value="">Select a category</Option>
+          <Option value="Home">Home</Option>
+          <Option value="Work">Work</Option>
+          <Option value="Shopping">Buy</Option>
+          <Option value="Other">Other</Option>
+        </Select>
         <AddContainer>
-          <TagsInput />
+          {/* <TagsInput /> */}
           <DefaultButton
             type="submit"
             disabled={inputValue.length === 0}

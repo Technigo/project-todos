@@ -6,8 +6,8 @@ export const SingleTodo = styled.div`
   align-items: center;
   justify-content: space-between;
   background: lightpink;
-  margin: 10px;
-  border-bottom: 1px solid black;
+  border: solid 0.3rem #e3bdf0;
+  margin: 1rem;
   padding: 1rem 2rem;
 `;
 

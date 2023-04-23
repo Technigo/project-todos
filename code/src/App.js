@@ -5,6 +5,7 @@ import { PersistGate } from 'redux-persist/integration/react';
 import { ToDoList } from 'components/ToDoList/ToDoList';
 import { GlobalStyle } from 'styles/GlobalStyle';
 import { Header } from 'components/Header/Header';
+import { Footer } from 'components/Footer/Footer';
 
 export const App = () => {
   return (
@@ -13,6 +14,7 @@ export const App = () => {
         <GlobalStyle />
         <Header />
         <ToDoList />
+        <Footer />
       </PersistGate>
     </Provider>
   )

@@ -17,6 +17,7 @@ body {
 
 export const Wrapper = styled.div`
     background: white;
+    border: solid 0.4rem #e3bdf0;
     width: 80vw;
     text-align: center;
     padding: 10px;

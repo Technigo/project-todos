@@ -3,6 +3,8 @@ import styled from 'styled-components';
 export const HeaderContainer = styled.div`
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
   max-width: 100vh;
   padding: 1rem;
   font-size: 30px;
