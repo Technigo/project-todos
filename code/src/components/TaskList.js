@@ -6,6 +6,7 @@ import styled from 'styled-components';
 const List = styled.div`
 display: flex;
 flex-direction: column;
+margin-top: 20px;
 `
 const ListHeader = styled.div`
 display: flex;
@@ -16,7 +17,8 @@ gap: 100px;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
-color: white;
+color: #b4c4b2;
+
 `
 const ListHeaderHome = styled.div`
 display: flex;
@@ -25,7 +27,7 @@ margin-left: 20px;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
-color: white;
+color: #b4c4b2;
 `
 
 const InnerWrapper = styled.div`

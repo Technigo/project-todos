@@ -11,7 +11,7 @@ align-items: center;
 const HeaderText = styled.div`
 font-size: 21px;
 font-family: 'Quicksand', sans-serif;
-color: white;
+color: #b4c4b2;
 height: 100px;
 margin-bottom: 10px;
 `
