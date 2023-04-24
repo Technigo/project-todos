@@ -14,6 +14,8 @@ code {
 
 body {
   background-color: #f6cfd7;
-  color: rgb(194, 61, 61)
 }
 
+.material-symbols-outlined {
+  font-size: 36px;
+}

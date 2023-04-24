@@ -25,15 +25,13 @@ font-size: 18x;
 const SubmitBtn = styled.button`
 width: 42px;
 height: 37px;
-padding-right: 15px;
+margin-left: -9px;
 border-style: none;
 background-color: #f6cfd7;
 font-size: 15px;
 color: rgb(194, 61, 61);
 position: absolute;
-
 `
-
 const AddTask = () => {
   const [inputValue, setInputValue] = useState('')
   const dispatch = useDispatch()
@@ -60,7 +58,7 @@ const AddTask = () => {
             id="addInput" />
           <SubmitBtn type="submit" disabled={inputValue.length === 0}>
             <span className="material-symbols-outlined">
-backpack
+local_mall
             </span>
           </SubmitBtn>
         </Label>

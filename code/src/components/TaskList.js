@@ -35,13 +35,13 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 font-size: 18px;
-margin: 2px 30px 2px 30px;
+margin: 4px 30px 4px 30px;
 gap: 40px;
 font-family: 'Quicksand', sans-serif;
 color: white;
 [type="checkbox"]{
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 `
 
