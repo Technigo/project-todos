@@ -38,6 +38,7 @@ color: white;
 
 const TaskText = styled.div`
 width: 200px;
+margin-left: -20px;
 `
 
 const DeleteBtn = styled.button`
