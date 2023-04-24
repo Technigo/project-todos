@@ -17,7 +17,7 @@ const Input = styled.input`
 width: 200px;
 height: 30px;
 border-radius: 5px;
-border: solid #b4c4b2;
+border: solid rgb(194, 61, 61);
 margin-right: 10px;
 font-size: 18x;
 `
@@ -27,9 +27,9 @@ width: 42px;
 height: 37px;
 padding-right: 15px;
 border-style: none;
-background-color: #606c5f;
+background-color: #f6cfd7;
 font-size: 15px;
-color: white;
+color: rgb(194, 61, 61);
 position: absolute;
 
 `

@@ -17,7 +17,7 @@ gap: 120px;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
-color: #b4c4b2;
+color: rgb(194, 61, 61);
 
 `
 const ListHeaderHome = styled.div`
@@ -27,7 +27,7 @@ margin-left: 20px;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
-color: #b4c4b2;
+color: rgb(194, 61, 61);
 `
 
 const InnerWrapper = styled.div`
@@ -51,13 +51,13 @@ margin-left: -20px;
 `
 
 const DeleteBtn = styled.button`
-background-color: #606c5f;
+background-color: #f6cfd7;
 font-size: 20px;
 font-family: 'Quicksand', sans-serif;
 width: 30px;
 height: 30px;
 margin-left: 60px;
-color: white;
+color: rgb(194, 61, 61);
 border-style: none;
 `
 

@@ -7,7 +7,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-color: #b4c4b2;
+color: white;
 font-size: 10px;
 font-family: 'Quicksand', sans-serif;
 `
