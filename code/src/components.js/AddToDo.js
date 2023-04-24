@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import todos from 'reducers.js/todos';
 import DateToday from './Date';
 import { StyledForm, StyledInput, TopDiv } from './GlobalStyles';
+import Counter from './Counter';
 
 export const Buttons = styled.button`
   background: transparent;
@@ -83,6 +84,7 @@ const AddToDo = () => {
         <Buttons type="button" onClick={onThrowToDoAwayBtnClick}> Finish this list</Buttons>
         <DateToday />
       </TopDiv>
+      <Counter />
       <StyledForm onSubmit={onFormSubmit}>
         <label htmlFor="addToDoInput">
         Time to add a new task to the list and get things done <br />

@@ -13,6 +13,7 @@ export const H = styled.h5`
   text-align: center;
   display:flex;
   justify-content: center;
+
 `
 
 export default function DateToday() {

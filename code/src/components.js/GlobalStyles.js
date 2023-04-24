@@ -68,12 +68,15 @@ export const LeftToDo = styled.div`
 
 export const BottomToDo = styled.div`
 text-align: center;
-margin: 0 0 4rem 0;
+display:flex-inline;
+flex-direction:row
+align-items:centre;
+text-align:centre;
 `
 
 export const HCounter = styled.h4`
 font-family: 'Manrope', sans-serif;
-font-size: 12px;
+font-size: 15px;
 font-weight: 300;
 `
 

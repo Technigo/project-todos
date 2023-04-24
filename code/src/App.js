@@ -4,7 +4,6 @@ import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import AddToDo from 'components.js/AddToDo';
 import ToDoList from 'components.js/ToDoList';
 import todos from 'reducers.js/todos';
-import Counter from 'components.js/Counter';
 import { Wrapper } from 'components.js/GlobalStyles';
 
 export const App = () => {
@@ -18,7 +17,6 @@ export const App = () => {
         <AddToDo />
         <ToDoList />
       </Wrapper>
-      <Counter />
     </Provider>
   );
 }
