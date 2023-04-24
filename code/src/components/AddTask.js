@@ -26,11 +26,11 @@ font-size: 18x;
 const SubmitBtn = styled.button`
 width: 42px;
 height: 37px;
+border: 2px solid white;
 border-radius: 5px;
-border-color: deeppink;
-background-color: pink;
+background-color: #606c5f;
 font-size: 15px;
-color: deeppink;
+color: white;
 position: absolute;
 
 `
@@ -59,7 +59,11 @@ const AddTask = () => {
             placeholder="Don't forget to bring..."
             onChange={(event) => setInputValue(event.target.value)}
             id="addInput" />
-          <SubmitBtn type="submit" disabled={inputValue.length === 0}>Add</SubmitBtn>
+          <SubmitBtn type="submit" disabled={inputValue.length === 0}>
+            <span className="material-symbols-outlined">
+backpack
+            </span>
+          </SubmitBtn>
         </Label>
       </form>
     </InnerWrapper>

@@ -15,8 +15,8 @@ flex-direction: row;
 align-items: center;
 justify-content: center;
 gap: 100px;
-font-size: 16px;
-font-family: 'Quicksand', sans-serif;
+font-size: 15px;
+font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
 color: white;
 `
