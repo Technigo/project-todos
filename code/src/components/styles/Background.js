@@ -16,5 +16,5 @@ export const Background = styled.div`
   height: 100vh; 
   margin: 0 auto;
   opacity: 0.4;
-  z-index: 1; //this makes the footer go on top of
+  z-index: 1; 
 `
