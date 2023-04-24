@@ -28,7 +28,7 @@ export const Counter = () => {
 
   return (
     <CounterWrapper>
-      <p className={items.length < completedTasks.length}>
+      <p>
         {Alldone()}
       </p>
     </CounterWrapper>
