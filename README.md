@@ -1,13 +1,27 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+This week's project was to create a To-Do-App with the main focus in Redux on the below parts:
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+How to create:
+* New slices
+* New reducers
+* New actions
+
+We also went through what immutability means and how to work with it.
+Added to the above things we also worked with the structure in a redux store and how to interact with the store using selectors or by dispatching actions.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+The app has the listed features below:
+* Adding and removing tasks
+* All to-dos and uncompleted/completed todos
+* Each to-do has a timestamp and a date
+* You can toggle between to-dos and switch completed ones to incomplete and vice versa
+
+I tried to work with React styled components in this project and I feel it went better than last week's project so that's a progress! =D
+
+If I had more time I'd try to make the categories to work better. I did not manage to make the categories show properly while choosing and I didn't make a list so you can show to-dos by different categories so that is something I'd like to fix in the future.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://w11-to-do-react-redux-ylva-karlsson.netlify.app/
