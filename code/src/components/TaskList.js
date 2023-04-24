@@ -72,7 +72,9 @@ cursor: pointer;
 `
 
 const DeleteAllButton = styled(CompleteAllButton)`
-color: red;
+text-decoration: underline;
+text-decoration-color: red;
+text-underline-offset: 4px;
 `
 
 const TaskList = () => {

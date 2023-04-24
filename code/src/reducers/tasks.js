@@ -3,10 +3,10 @@ import { createSlice } from '@reduxjs/toolkit'
 export const tasks = createSlice({ name: 'tasks',
   initialState: {
     todos: [
-      { id: 0, text: 'Plugga', complete: true },
-      { id: 1, text: 'Gamea', complete: false },
-      { id: 2, text: 'Kodea', complete: true },
-      { id: 3, text: 'Chilla', complete: true }
+      { id: 0, text: 'Study', complete: true },
+      { id: 1, text: 'Work out', complete: false },
+      { id: 2, text: 'Code', complete: true },
+      { id: 3, text: 'Chill', complete: false }
     ]
   },
   reducers: {
