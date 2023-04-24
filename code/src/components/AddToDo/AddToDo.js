@@ -11,7 +11,7 @@ import {
   AddContainer,
   Select,
   Option
-} from 'components/AddToDoTest/AddToDo.style'
+} from 'components/AddToDo/AddToDo.style'
 
 export const AddToDo = () => {
   const [inputValue, setInputValue] = useState('');
