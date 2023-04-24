@@ -11,7 +11,7 @@ align-items: center;
 const HeaderText = styled.div`
 font-size: 21px;
 font-family: 'Quicksand', sans-serif;
-color: rgb(194, 61, 61);
+color: rgb(69, 92, 107);
 height: 100px;
 margin-bottom: 10px;
 `
@@ -20,7 +20,7 @@ font-size: 18px;
 font-famiy: 'Quicksand', sans-serif;
 margin-bottom: 20px;
 letter-spacing: 5px;
-color: white;
+color: rgb(69, 92, 107);
 `
 
 export const Header = () => {

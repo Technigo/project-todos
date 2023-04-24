@@ -17,7 +17,7 @@ gap: 110px;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
-color: rgb(194, 61, 61);
+color: rgb(69, 92, 107);
 
 `
 const ListHeaderHome = styled.div`
@@ -27,7 +27,7 @@ margin-left: 20px;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
-color: rgb(194, 61, 61);
+color: rgb(69, 92, 107);
 `
 
 const InnerWrapper = styled.div`
@@ -38,7 +38,7 @@ font-size: 18px;
 margin: 4px 30px 4px 30px;
 gap: 40px;
 font-family: 'Quicksand', sans-serif;
-color: white;
+color: rgb(69, 92, 107);
 [type="checkbox"]{
   width: 25px;
   height: 25px;
@@ -51,13 +51,13 @@ margin-left: -20px;
 `
 
 const DeleteBtn = styled.button`
-background-color: #f6cfd7;
+background-color: #f2f4f2;
 font-size: 20px;
 font-family: 'Quicksand', sans-serif;
-width: 45px;
+width: 50px;
 height: 40px;
 margin-left: 60px;
-color: rgb(194, 61, 61);
+color: rgb(44, 133, 122);
 border-style: none;
 `
 
