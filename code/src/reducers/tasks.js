@@ -48,7 +48,7 @@ export const tasks = createSlice({
       const { id } = action.payload
       const selectedTask = id !== null && state.tasks.find((item) => item.id === id)
       const filteredProject = state.selectedProject
-      if (id === null) {
+      if (id === 'complete all') {
         if (filteredProject === 'all projects' && state.filterOn !== 'done') {
           state.tasks.forEach((task) => {
             task.completed = true
@@ -73,9 +73,18 @@ export const tasks = createSlice({
       state.filterOn = filter
     },
     changeProject: (state, action) => {
-      const { id, value } = action.payload
-      const selectedTask = id !== null && state.tasks.find((item) => item.id === id)
-      selectedTask.value = value
+      const { id, value } = action.payload;
+      const updatedTasks = state.tasks.map((task) => {
+        if (task.id === id) {
+          return { ...task, value };
+        } else {
+          return task;
+        }
+      });
+      return {
+        ...state,
+        tasks: updatedTasks,
+      };
     },
     filterProject: (state, action) => {
       const { value } = action.payload

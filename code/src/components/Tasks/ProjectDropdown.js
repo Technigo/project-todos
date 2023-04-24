@@ -16,7 +16,6 @@ export const ProjectDropdown = ({ taskId, optionValue }) => {
   const changeProject = (e) => {
     setSelectedValue(e.target.textContent)
     dispatch(tasks.actions.changeProject({ id: taskId, value: e.target.textContent }))
-    dispatch()
   }
   return (
     <MDBDropdown>

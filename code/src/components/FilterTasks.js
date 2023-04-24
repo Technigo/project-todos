@@ -47,22 +47,22 @@ export const FilterTasks = () => {
   }
 
   const completeAllTasks = () => {
-    dispatch(tasks.actions.checkItem({ id: null }))
+    dispatch(tasks.actions.checkItem({ id: 'complete all' }))
   }
 
   return (
     <>
       <MDBNavbarItem>
-        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" filtering onClick={filterAllTasks}>All ({filteredAllTasks.length})</MDBNavbarLink>
+        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" onClick={filterAllTasks}>All ({filteredAllTasks.length})</MDBNavbarLink>
       </MDBNavbarItem>
       <MDBNavbarItem>
-        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" filtering onClick={filterOngoingTasks}>Ongoing ({ongoingTasks.length})</MDBNavbarLink>
+        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" onClick={filterOngoingTasks}>Ongoing ({ongoingTasks.length})</MDBNavbarLink>
       </MDBNavbarItem>
       <MDBNavbarItem>
-        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" filtering onClick={filterCompletedTasks}>Done ({completedTasks.length})</MDBNavbarLink>
+        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" onClick={filterCompletedTasks}>Done ({completedTasks.length})</MDBNavbarLink>
       </MDBNavbarItem>
       <MDBNavbarItem>
-        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" filtering onClick={completeAllTasks}>Complete all</MDBNavbarLink>
+        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" onClick={completeAllTasks}>Complete all</MDBNavbarLink>
       </MDBNavbarItem>
     </>
   )
