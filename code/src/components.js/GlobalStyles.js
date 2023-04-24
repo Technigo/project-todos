@@ -23,7 +23,7 @@ export const TopDiv = styled.div`
 `
 
 export const StyledForm = styled.form`
-  margin-top: 2rem;
+  margin: 2rem 0;
   border: 1px solid var(--primaryBlack);
   padding: 3rem 1.5rem 1rem 1.5rem;
   border-radius: 2px;
@@ -35,9 +35,10 @@ export const NewToDoP = styled.span`
   padding: 0 1rem;
 `
 
-export const ToDoListBox = styled.p`
+export const ToDoListBox = styled.div`
   display: flex;
   text-align:left;
+  width:100%;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
@@ -62,7 +63,7 @@ export const LeftToDo = styled.div`
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  align-content: center;
+  align-content: flex-start;
   text-align:center;
 `
 

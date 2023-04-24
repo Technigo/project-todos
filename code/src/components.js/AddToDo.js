@@ -63,8 +63,12 @@ const capitalize = (stringToCapitalise) => {
 const AddToDo = () => {
   const [inputValue, setInputValue] = useState('');
   const dispatch = useDispatch();
+
   const onFormSubmit = (event) => {
     event.preventDefault();
+    if (inputValue.trim() === '') { // check if the inputValue is empty or only contains whitespace
+      return; // exit the function without dispatching the action
+    }
     const newToDo = {
       id: Date.now().toString(),
       createdAt: format(new Date(), "yyyy-MM-dd' at 'HH:mm"),
@@ -88,7 +92,7 @@ const AddToDo = () => {
       <StyledForm onSubmit={onFormSubmit}>
         <label htmlFor="addToDoInput">
         Time to add a new task to the list and get things done <br />
-          <StyledInput placeholder="Type a task" value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addToDoInput" type="text" />
+          <StyledInput placeholder="Write down a task" value={inputValue} onChange={(event) => setInputValue(event.target.value)} id="addToDoInput" type="text" />
         </label>
         <Buttons newtodo type="submit">Add Now</Buttons>
       </StyledForm>
