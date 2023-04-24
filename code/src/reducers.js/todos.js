@@ -1,13 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  items: [
-    {
-      id: '01',
-      name: 'Plan your day!',
-      isDone: false
-    }
-  ]
+  items: []
 }
 
 const todos = createSlice({
