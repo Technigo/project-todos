@@ -82,7 +82,8 @@ child_care
             </TaskText>
             <DeleteBtn
               type="button"
-              onClick={() => dispatch(tasks.actions.deleteTask(task))}><span className="material-symbols-outlined">
+              onClick={() => dispatch(tasks.actions.deleteTask(task))}>
+              <span className="material-symbols-outlined">
               local_laundry_service
               </span>
             </DeleteBtn>
@@ -109,7 +110,8 @@ home
             </TaskText>
             <DeleteBtn
               type="button"
-              onClick={() => dispatch(tasks.actions.deleteTask(task))}><span className="material-symbols-outlined">
+              onClick={() => dispatch(tasks.actions.deleteTask(task))}>
+              <span className="material-symbols-outlined">
               local_laundry_service
               </span>
             </DeleteBtn>
