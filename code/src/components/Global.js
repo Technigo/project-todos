@@ -64,16 +64,16 @@ export const DeleteAllButton = styled(Button)`
 `;
 
 export const Lists = styled.ul`
-font-family: var(--paragraph-font-family);
-font-size: 1.2rem;
+  font-family: var(--paragraph-font-family);
+  font-size: 1.2rem;
 `;
 
 export const StyledTaskList = styled(Lists)`
-list-style: none;
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: space-between;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 `;
 
 export const StyledTaskListItem = styled.li`
@@ -127,11 +127,11 @@ export const StyledCheckbox = styled.input`
 `;
 
 export const StyledCheckboxLabel = styled.label`
-cursor: ponter;
+  cursor: ponter;
 `
 
 export const StyledIcon = styled(FontAwesomeIcon)`
-margin: 0.5rem;
-filter: var(--drop-shadow);
+  margin: 0.5rem;
+  filter: var(--drop-shadow);
 `;
 

@@ -27,32 +27,32 @@ export const TaskForm = styled.form`
 `;
 
 export const SecondHeadingLabel = styled.label`
-font-family: var(--second-headings-font-family);
-font-weight: 100;
-font-size: 2rem;
-margin: 0;
+  font-family: var(--second-headings-font-family);
+  font-weight: 100;
+  font-size: 2rem;
+  margin: 0;
 `;
 
 export const ThirdHeading = styled.h2`
-font-family: var(--second-headings-font-family);
-font-weight: 100;
-font-size: 1.7rem;
+  font-family: var(--second-headings-font-family);
+  font-weight: 100;
+  font-size: 1.7rem;
 `;
 
 export const TasksCompleted = styled.h2`
-font-family: var(--second-headings-font-family);
-font-weight: 100;
-font-size: 1.7rem;
+  font-family: var(--second-headings-font-family);
+  font-weight: 100;
+  font-size: 1.7rem;
 `;
 
 export const TasksCompletedImage = styled.img`
-width: 50%;
-height: auto;
+  width: 50%;
+  height: auto;
 `;
 
 export const UncompletedTasks = styled.span`
-color: #B9B4AE;
-font-weight: 700;
+  color: #B9B4AE;
+  font-weight: 700;
 `;
 export const StyledInput = styled.input`
   padding: 0.625rem;
