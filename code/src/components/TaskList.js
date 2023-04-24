@@ -13,7 +13,7 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: center;
-gap: 110px;
+gap: 120px;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
@@ -72,7 +72,7 @@ const TaskList = () => {
 
   return (
     <List>
-      <ListHeader><h2>Preschool</h2><h2>Laundry</h2>
+      <ListHeader><h2>Preschool</h2><h2>Put in ↓</h2>
       </ListHeader>
       {completedTask.map((task) => {
         return (
