@@ -28,6 +28,9 @@ font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
 color: rgb(69, 92, 107);
+@media (min-width: 768px) {
+  align-self: center;
+}
 `
 
 const InnerWrapper = styled.div`
