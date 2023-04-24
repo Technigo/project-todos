@@ -12,7 +12,7 @@ export const FooterText = styled.footer`
   color: #e6dbbc;
   font-size: 1.2rem;
   height: 20px;
-  width: 100vw;
+  width: 90%;
   background-color: #0f333a;
   z-index: 4
 
