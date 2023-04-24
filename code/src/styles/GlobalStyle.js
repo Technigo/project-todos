@@ -30,18 +30,3 @@ export const Wrapper = styled.div`
     width: 55vw;
   }
 `;
-
-// export const Button = styled.button`
-//   font-size: 18px;
-//   padding: 4px 13px;
-//   margin: 8px;
-//   font-family: 'Dynapuff', cursive;
-//   background: tomato;
-//   color: #fff;
-//   border: solid 2px red;
-//   border-radius: 30px;
-//   cursor: pointer;
-//   /* :hover {
-//     opacity: 70%;
-//   } */
-// `;
