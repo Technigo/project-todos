@@ -6,14 +6,17 @@ import styled from 'styled-components';
 const List = styled.div`
 display: flex;
 flex-direction: column;
-background-color: pink;
+background-color: #606c5f;
 height: 100vh;
 `
 const ListHeader = styled.div`
-align-self: center;
+display: flex;
+flex-direction: row;
+margin-left: 40px;
+gap: 130px;
 font-size: 18px;
 font-family: 'Quicksand', sans-serif;
-margin-bottom: -20px;
+margin-bottom: -10px;
 color: white;
 `
 
@@ -38,16 +41,14 @@ margin-left: -70px;
 `
 
 const DeleteBtn = styled.button`
-background-color: white;
-font-size: 15px;
+background-color: #606c5f;
+font-size: 20px;
 font-family: 'Quicksand', sans-serif;
 width: 30px;
 height: 30px;
-border-radius: 50px;
 margin-left: 60px;
-color: black;
-padding-right: 3px;
-border: 1px solid black;
+color: white;
+border-style: none;
 `
 
 const TaskList = () => {
@@ -64,7 +65,7 @@ const TaskList = () => {
       <ListHeader><h2>Pree Scho
         <span className="material-symbols-outlined">
 child_care
-        </span>l  </h2>
+        </span>l  </h2><h2>Laundry</h2>
       </ListHeader>
       {completedTask.map((task) => {
         return (
@@ -81,7 +82,9 @@ child_care
             </TaskText>
             <DeleteBtn
               type="button"
-              onClick={() => dispatch(tasks.actions.deleteTask(task))}>X
+              onClick={() => dispatch(tasks.actions.deleteTask(task))}><span className="material-symbols-outlined">
+              local_laundry_service
+              </span>
             </DeleteBtn>
           </InnerWrapper>
         )
@@ -106,7 +109,9 @@ home
             </TaskText>
             <DeleteBtn
               type="button"
-              onClick={() => dispatch(tasks.actions.deleteTask(task))}>X
+              onClick={() => dispatch(tasks.actions.deleteTask(task))}><span className="material-symbols-outlined">
+              local_laundry_service
+              </span>
             </DeleteBtn>
           </InnerWrapper>
         )

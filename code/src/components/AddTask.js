@@ -4,7 +4,7 @@ import tasks from 'components/reducers/tasks';
 import styled from 'styled-components';
 
 const InnerWrapper = styled.div`
-background-color: pink;
+background-color: #606c5f;
 display: flex;
 flex-directon: row;
 justify-content: center;
@@ -24,13 +24,13 @@ font-size: 18x;
 `
 
 const SubmitBtn = styled.button`
-width: 37px;
+width: 42px;
 height: 37px;
 border-radius: 5px;
-border-color: black;
-background-color: white;
+border-color: deeppink;
+background-color: pink;
 font-size: 15px;
-color: black;
+color: deeppink;
 position: absolute;
 
 `

@@ -6,7 +6,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-background-color: pink;
+background-color: #606c5f;
 `
 
 const HeaderText = styled.div`
@@ -28,7 +28,7 @@ export const Header = () => {
   return (
     <HeaderWrapper>
       <HeaderText>
-        <h1>Back & forth...</h1>
+        <h1>Back & forth list</h1>
       </HeaderText>
       <Weather>
         It&apos;s
