@@ -20,6 +20,8 @@ font-weight: 800;
   @media (min-width: 768px) {
  height: 80px;
  width: 80px;
+ border-radius: 50%;
+ padding: 0px;
  font-size: 2em;
   }
  
