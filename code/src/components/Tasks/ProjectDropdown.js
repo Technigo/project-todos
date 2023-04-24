@@ -20,7 +20,7 @@ export const ProjectDropdown = ({ taskId, optionValue }) => {
   }
   return (
     <MDBDropdown>
-      <MDBDropdownToggle style={{ color: 'rgb(71 69 69)', fontSize: '0.5em' }} tag="a" className="nav-link" role="button">
+      <MDBDropdownToggle style={{ color: 'rgb(71 69 69)', fontSize: '0.8em' }} tag="a" className="nav-link" role="button">
         {optionValue === 'all projects' ? 'assign a project' : optionValue}
       </MDBDropdownToggle>
       <MDBDropdownMenu

@@ -55,5 +55,5 @@ width:187px;
 
 export const DateText = styled.p`
 margin:0;
-font-size:0.5em;
+font-size:0.6em;
 `
