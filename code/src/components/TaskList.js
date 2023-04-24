@@ -22,22 +22,22 @@ color: white;
 `
 
 const InnerWrapper = styled.div`
-display: grid;
-grid-template-columns: 1fr 1fr 1fr;
+display: flex;
+flex-direction: row;
 justify-content: center;
 font-size: 18px;
 margin-bottom: 10px;
+gap: 40px;
 font-family: 'Quicksand', sans-serif;
 color: white;
 [type="checkbox"]{
-  margin-left: 30px;
   width: 20px;
   height: 20px;
 }
 `
 
 const TaskText = styled.div`
-margin-left: -70px;
+width: 200px;
 `
 
 const DeleteBtn = styled.button`
