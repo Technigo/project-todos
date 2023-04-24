@@ -4,7 +4,7 @@ import { BottomToDo, HCounter } from './GlobalStyles';
 
 const Counter = () => {
   const todo = useSelector((store) => store.todos.items);
-  const completedTodos = todo.filter((todos) => todos.isDone && todos.isDone === true);
+  const completedTodos = todo.filter((todos) => todos.isDone)
 
   return (
     <BottomToDo>

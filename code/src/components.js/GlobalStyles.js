@@ -63,6 +63,7 @@ export const LeftToDo = styled.div`
   justify-content: space-between;
   align-items: center;
   align-content: center;
+  text-align:center;
 `
 
 export const BottomToDo = styled.div`
@@ -71,6 +72,12 @@ margin: 0 0 4rem 0;
 `
 
 export const HCounter = styled.h4`
+font-family: 'Manrope', sans-serif;
+font-size: 12px;
+font-weight: 300;
+`
+
+export const PTime = styled.p`
 font-family: 'Manrope', sans-serif;
 font-size: 12px;
 font-weight: 300;

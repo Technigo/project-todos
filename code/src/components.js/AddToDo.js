@@ -1,6 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import styled, { css } from 'styled-components';
+import { format } from 'date-fns'
 import { useDispatch } from 'react-redux';
 import todos from 'reducers.js/todos';
 import DateToday from './Date';
@@ -65,8 +66,9 @@ const AddToDo = () => {
     event.preventDefault();
     const newToDo = {
       id: Date.now().toString(),
+      createdAt: format(new Date(), "yyyy-MM-dd' at 'HH:mm"),
       name: capitalize(inputValue),
-      isDone: true
+      isDone: false
     };
     dispatch(todos.actions.addToDo(newToDo));
     setInputValue('');

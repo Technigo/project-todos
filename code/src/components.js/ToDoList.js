@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import todos from 'reducers.js/todos';
 import { Buttons } from './AddToDo';
-import { LeftToDo, NewToDoP, ToDoListBox } from './GlobalStyles';
+import { LeftToDo, NewToDoP, PTime, ToDoListBox } from './GlobalStyles';
 
 const ToDoList = () => {
   const dispatch = useDispatch();
@@ -32,6 +32,7 @@ const ToDoList = () => {
                   <input id={`toDo_with_id${singleToDo.id}`} type="checkbox" value={singleToDo.IsDone} onChange={() => onIsDoneCheckboxToggle(singleToDo.id)} />
                   <label htmlFor={`toDo_with_id${singleToDo.id}`} />
                   <NewToDoP>{singleToDo.name}</NewToDoP>
+                  <PTime>Added: {singleToDo.createdAt}</PTime>
                 </LeftToDo>
                 <Buttons delete type="button" onClick={() => onDeleteSingleToDoBtnClick(singleToDo.id)}> Remove</Buttons>
               </ToDoListBox>

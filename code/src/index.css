@@ -22,6 +22,7 @@ code {
   --light: #fbfbfbb6;
   --buttonHover: #e8d1d2;
   --buttonGreen: #ddd97f;
+  --buttonGreenDarker: #3e6416;
   --buttonHoverbeige: #e5d3bc;
 }
 
@@ -31,7 +32,6 @@ code {
 
 [type="checkbox"] + label {
   position: relative;
-  padding-left: 30px;
   cursor: pointer;
   display: inline-flex;
   line-height: 25px;
@@ -58,7 +58,7 @@ code {
   position: absolute;
   width: 25px;
   height: 25px;
-  outline: 2px solid var(--buttonGreen);
+  outline: 2px solid var(--buttonGreenDarker);
   background-image: url(../assets/trans-check.png);
   background-size: contain;
 }
