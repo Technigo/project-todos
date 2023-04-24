@@ -7,7 +7,7 @@ import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks';
 import EmptyState from './EmptyState';
-
+import './Tasklist.css';
 import TrashImg from '../assets/icons8-trash.svg';
 
 const Tasklist = () => {
@@ -15,12 +15,9 @@ const Tasklist = () => {
   const items = useSelector((store) => store.tasks.tasks);
   const dispatch = useDispatch();
 
-  console.log(items);
-
   const completedTasks = useSelector((store) => store.tasks.completedCount);
   // Because completedTasks returns NaN if no tasks are compleat, this function returns 0 insted of NaN
   // Known bug: is not correct when no items in list...
-  // Known bug: compleated tasks dont get updated in local storage
   const unfinishedTasks = () => {
     if (isNaN(completedTasks)) {
       return '0';
@@ -40,12 +37,12 @@ const Tasklist = () => {
       {items.length === 0 ? (
         <EmptyState />
       ) : (
-        <>
+        <div className="task-list-header-container">
           <h1>Tasks</h1>
           <p>
             Complted: {unfinishedTasks()} / {items.length}
           </p>
-        </>
+        </div>
       )}
       {items.map((todo) => (
         <div
