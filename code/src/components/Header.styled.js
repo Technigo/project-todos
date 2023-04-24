@@ -10,9 +10,9 @@ export const HeaderContent = styled.div`
 `;
 
 export const BtnContainer = styled.div`
-  margin: 40px;
+  margin: 70px 40px 40px -20px;
   @media (min-width: 380px) {
-    margin: 40px; 
+    margin: 70px 40px 40px 40px;
   }
   @media (min-width: 600px) {
     margin: 80px;
