@@ -1,13 +1,13 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+This is a React Redux app that allows you to manage tasks. You can add, remove, and mark tasks as completed or uncompleted, and the app will display a count of all tasks or all uncompleted tasks. Redux Toolkit is used to manage state and provide functionality such as creating slices, reducers, and actions, as well as working with immutability and structuring the store.
+Photo by <a href="https://unsplash.com/@paicooficial?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Paico Oficial</a> on <a href="https://unsplash.com/photos/7jFMs5vzsSQ?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I checked past projects for ideas, completed a Technigo e-commerce project, sketched my own design, selected necessary components and features, and utilized ChatGPT and forums for npm packages and code snippets. Ideally, I would have utilized styled components instead of index.css for the background image if given more time.
+
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://project-todo-smirrebinx.netlify.app/
