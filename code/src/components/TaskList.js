@@ -12,9 +12,10 @@ height: 100vh;
 const ListHeader = styled.div`
 display: flex;
 flex-direction: row;
-margin-left: 40px;
-gap: 130px;
-font-size: 18px;
+align-items: center;
+justify-content: center;
+gap: 100px;
+font-size: 16px;
 font-family: 'Quicksand', sans-serif;
 margin-bottom: -10px;
 color: white;
@@ -29,10 +30,9 @@ margin-bottom: 10px;
 font-family: 'Quicksand', sans-serif;
 color: white;
 [type="checkbox"]{
-  margin-left: 40px;
+  margin-left: 30px;
   width: 20px;
   height: 20px;
-  border-radius: 20px;
 }
 `
 
