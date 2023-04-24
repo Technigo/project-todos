@@ -6,7 +6,7 @@ import {
   DeleteButton,
   ToDoText,
   DateText
-} from 'components/ToDoItem/ToDoItem.style';
+} from 'components/ToDoItemTest/ToDoItem.style';
 
 export const ToDoItem = ({ todo, index, onDelete, onDone }) => {
   return (

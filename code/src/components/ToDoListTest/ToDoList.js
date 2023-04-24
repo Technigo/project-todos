@@ -1,8 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { todos } from 'redux/reducers/todos';
-import { AddToDo } from 'components/AddToDo/AddToDo';
-import { ToDoItem } from 'components/ToDoItem/ToDoItem';
+import { AddToDo } from 'components/AddToDoTest/AddToDo';
+import { ToDoItem } from 'components/ToDoItemTest/ToDoItem';
 import { Wrapper } from 'styles/GlobalStyle';
 import { DefaultButton } from 'styles/Button';
 import { ButtonContainer } from './ToDoList.style';
