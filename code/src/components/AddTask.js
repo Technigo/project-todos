@@ -23,7 +23,7 @@ font-size: 18x;
 `
 
 const SubmitBtn = styled.button`
-width: 40px;
+width: 50px;
 height: 40px;
 margin-left: -9px;
 border-style: none;
