@@ -10,6 +10,7 @@ export const ExpandButton = styled.button`
 font-weight: 800;
  position: absolute;
  border: none;
+ padding: 0px;
  &:hover{
   background-color: #00b4ff;
   transition: transform ease-in-out 840ms ;
