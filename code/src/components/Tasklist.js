@@ -59,6 +59,20 @@ const StyledListItem = styled.li`
   border-radius: 10px;
   overflow-wrap: break-word;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.25);
+  animation-name: slicing;
+  animation-duration 0.2s;
+  animation-timing-function: ease-in;
+
+  @keyframes slicing {
+  0% {
+    opacity: 0;
+    transform: translateY(-200px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
   @media (min-width: 668px) {
     min-height: 20%;
