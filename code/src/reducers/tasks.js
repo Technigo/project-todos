@@ -11,6 +11,7 @@ const tasks = createSlice({
   reducers: {
     setupStore: (store, action) => {
       store.items = action.payload
+      store.completedCount = action.payload.filter((item) => item.checked).length
     },
     addTask: (store, action) => {
       store.items = [...store.items, action.payload]
