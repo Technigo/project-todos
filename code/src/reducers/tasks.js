@@ -2,9 +2,9 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const taskData = [
-  { id: 1, text: 'playing with the cat', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'all projects' },
-  { id: 2, text: 'finish homework', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'all projects' },
-  { id: 3, text: 'go to the gym', created: '10/10/2022', due: '10/11/2022', completed: true, value: 'all projects' },
+  { id: 1, text: 'playing with the cat', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'other' },
+  { id: 2, text: 'finish homework', created: '10/10/2022', due: '10/11/2022', completed: false, value: 'learning' },
+  { id: 3, text: 'go to the gym', created: '10/10/2022', due: '10/11/2022', completed: true, value: 'sports' },
 ];
 
 const projectsData = [
@@ -12,6 +12,7 @@ const projectsData = [
   { value: 'shopping' },
   { value: 'cooking' },
   { value: 'sports' },
+  { value: 'learning' },
   { value: 'other' },
 ];
 
@@ -26,16 +27,18 @@ export const tasks = createSlice({
   reducers: {
     addItem: (state, action) => {
       const { text, due } = action.payload.response
-      const lastItemOfTaskData = state.tasks[state.tasks.length - 1].id
+      const lastItemOfTaskData = state.tasks.length === 0
+        ? 1 : state.tasks[state.tasks.length - 1].id + 1
       state.tasks.push({
-        id: lastItemOfTaskData + 1,
+        id: lastItemOfTaskData,
         text,
         created: Date.now(),
         due,
         completed: false,
-        value: 'other',
-        label: 'Other'
+        value: 'other'
       })
+      console.log(state.tasks)
+      console.log(lastItemOfTaskData)
     },
     removeItem: (state, action) => {
       const { id } = action.payload

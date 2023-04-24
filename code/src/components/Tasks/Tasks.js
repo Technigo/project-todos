@@ -10,10 +10,8 @@ import { NewTaskContainer, TaskListContainer, TaskPageContainer } from './TasksS
 export const Tasks = () => {
   const allTasks = useSelector((store) => store.tasks.tasks);
   const projectToFilterOn = useSelector((store) => store.tasks.selectedProject)
-  console.log(projectToFilterOn)
   const filterOn = useSelector((store) => store.tasks.filterOn);
   const ongoingTasks = allTasks.filter((item) => {
-    console.log('item.value:', item.value)
     if (projectToFilterOn === 'all projects') {
       return item.completed === false
     } else {
