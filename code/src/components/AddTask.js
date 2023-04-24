@@ -23,8 +23,8 @@ font-size: 18x;
 `
 
 const SubmitBtn = styled.button`
-width: 42px;
-height: 37px;
+width: 40px;
+height: 40px;
 margin-left: -9px;
 border-style: none;
 background-color: #f6cfd7;
