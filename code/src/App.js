@@ -5,6 +5,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import AddTask from 'components/AddTask.js';
 import TaskList from 'components/TaskList.js';
 import tasks from 'components/reducers/tasks.js';
+import { Container, Background } from 'components/styles/global';
 
 export const App = () => {
   const reducer = combineReducers({ // Reducer/Function = () and inside {} indicating
@@ -25,8 +26,13 @@ export const App = () => {
     <>
       {/* <Header /> */}
       <Provider store={store}>
-        <AddTask />
-        <TaskList />
+        <Background>
+          <img src="https://lh3.googleusercontent.com/VVoJ0R6G-90qRJ4n93tkojl_Ymoyjnz7WVMZADkLILGZQdkhKVXAVyk9Z5jpdNeZIcUoW2SoGxI4_enOLAxyltkngO-5uVN9CXDdYHl52dS-ZyMayO5Dh5SAjdFzCe8j7NnpZkeGdA=w2400" alt="star wars background" />
+        </Background>
+        <Container>
+          <AddTask />
+          <TaskList />
+        </Container>
       </Provider>
     </>
   )

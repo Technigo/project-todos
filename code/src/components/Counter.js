@@ -3,24 +3,23 @@ import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
 const CounterText = styled.p`
-  font-family: 'Roboto', sans-serif;
   font-size: 1em;
   display: flex;
 `
 
 export const Counter = () => {
-  const items = useSelector((store) => store.tasks.items)
-  const completedTasks = items.filter((task) => task.completed);
+  const taskList = useSelector((store) => store.tasks.items)
+  const completedTasks = taskList.filter((task) => task.isCompleted);
 
   const doneTasks = () => {
-    if (items.length === 0) {
+    if (taskList.length === 0) {
       return ''
-    } else if (items.length === completedTasks.length) {
+    } else if (taskList.length === completedTasks.length) {
       return (
-        <p>All done</p>
+        <p>Done today too</p>
       )
     } else {
-      return `${completedTasks.length} / ${items.length} done`
+      return `${completedTasks.length} / ${taskList.length} done`
     }
   }
   return (

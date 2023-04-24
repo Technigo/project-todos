@@ -15,17 +15,31 @@ export const Container = styled.div`
     }
 `
 
+export const Background = styled.div`
+    width: 100%;
+    
+    @media (min-width: 668px) {
+        width: 50%;
+        justify-items: center;
+        margin: 0 auto;
+    }
+`
+
 export const Button = styled.button`
     border: none;
-    background: none;
+    background: yellow;
     color: black;
+    font-family: Garamond;
+
     &:hover {
-        color: red;
+        color: yellow;
     }
 `
 export const AddButton = styled(Button)`
+    font-family: Garamond;
+
     &:hover {
-        color: green;
+        color: yellow;
     }
 `
 
@@ -36,21 +50,23 @@ export const DeleteButton = styled(Button)`
     align-items: center;
     width: 200px;
     margin: 0;
-    font-family: 'Roboto', sans-serif;
     font-size: 1em;
+    font-family: Garamond;
+
 `
 export const Title = styled.h1`
-    font-family: 'Dongle', sans-serif;
-    font-size: 5em;
+    font-size: 1em;
     margin: 10px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    font-family: Garamond;
     width: 100%;
     margin: 0;
 `
 export const H2 = styled.h2`
-    font-family: 'Dongle', sans-serif;
-    font-size: 3em;
+    font-size: 2em;
+    font-family: Garamond;
+
 `

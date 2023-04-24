@@ -1,4 +1,4 @@
-// /* eslint-disable */
+/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
@@ -23,6 +23,8 @@ const NewTask = styled.input`
     border-bottom: solid black 1px;
     width: 80%;
     margin-left: 20px;
+    font-family: Garamond;
+
     &:focus {
         outline: none;
     }
@@ -34,6 +36,7 @@ const HeaderWrapper = styled.div`
   align-items: flex-end;
   margin: 20px;
 `
+
 const FooterWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -67,19 +70,20 @@ const AddTask = () => { // A function.
     <section>
       <HeaderWrapper>
         <Title>
-        To Do ToDay Too
+        D2 D82
         </Title>
       </HeaderWrapper>
       <form onSubmit={onFormSubmit}>
-        {/* <label htmlFor="newTaskInput"> */}
-        <NewTask
-          type="text"
-          value={inputValue}
-          onChange={(event) => setInputValue(event.target.value)}
-          id="newTaskInput" />
-        {/* </label> */}
+        <label htmlFor="newTaskInput">
+          <NewTask
+            type="text"
+            placeholder="Do today too"
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)}
+            id="newTaskInput" />
+        </label>
         <AddButton
-          type="submit"> Add new task
+          type="submit"> Do
         </AddButton>
       </form>
       <FooterWrapper>

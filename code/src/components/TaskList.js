@@ -14,8 +14,8 @@ const InnerWrapper = styled.div`
 `
 
 const TaskText = styled.p`
-    font-family: 'Dongle', sans-serif;
     font-size: 2em;
+    font-family: Garamond;
     line-height: 0.5em;
     width: 100%;
 `
@@ -52,7 +52,7 @@ const TaskList = () => { // Function.
               <Button
                 type="button"
                 onClick={() => onDeleteSingleTaskBtnCLick(singleTask.id)}>
-                Delete this task
+                Delete
               </Button>
             </InnerWrapper>
           )
