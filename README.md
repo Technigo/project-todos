@@ -10,6 +10,7 @@ This is a to do list, made with React and Redux, styling made with styled compon
 - the app shows a current date.
 - my first time styling checkboxes.
 - learnt to use styled components comfortably. 
+- used the date-fns to show the date of the added todo. 
 
 ## View it live
 https://musical-bubblegum-d9620c.netlify.app/
