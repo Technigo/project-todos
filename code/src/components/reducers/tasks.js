@@ -9,7 +9,7 @@ const initialState = {
       text: 'Cap',
       isChecked: true },
     { id: '3',
-      text: 'Sun Lotion',
+      text: 'The Unicorn T-shirt',
       isChecked: true },
     { id: '4',
       text: 'Extra pants(2)',
