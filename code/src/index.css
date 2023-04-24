@@ -5,9 +5,60 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background: #FFEEEE;
+  background: -webkit-linear-gradient(to right, #FFEEEE, #DDEFBB); 
+  background: linear-gradient(to right, #FFEEEE, #DDEFBB);
+  font-family: 'Manrope', sans-serif;
+  list-style: none;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+:root {
+  --primaryBlack: #2d2c2c;
+  --light: #fbfbfbb6;
+  --buttonHover: #e8d1d2;
+  --buttonGreen: #ddd97f;
+  --buttonGreenDarker: #3e6416;
+  --buttonHoverbeige: #e5d3bc;
+}
+
+[type="checkbox"] {
+  opacity:0;
+}
+
+[type="checkbox"] + label {
+  position: relative;
+  cursor: pointer;
+  display: inline-flex;
+  line-height: 25px;
+}
+
+[type="checkbox"] + label::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  outline: 2px solid white;
+  background: #fff;
+}
+
+[type="checkbox"]:checked + label::before {
+  content: "";
+  width: 25px;
+  height: 25px;
+  outline: 2px solid var(--primaryBlack);
+  background: #fff;
+}
+
+[type="checkbox"]:checked + label::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  outline: 2px solid var(--buttonGreenDarker);
+  background-image: url(../assets/trans-check.png);
+  background-size: contain;
 }
