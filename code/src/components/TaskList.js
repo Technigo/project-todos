@@ -72,7 +72,7 @@ const TaskList = () => {
 
   return (
     <List>
-      <ListHeader><h2>Pree School</h2><h2>Laundry</h2>
+      <ListHeader><h2>Preschool</h2><h2>Laundry</h2>
       </ListHeader>
       {completedTask.map((task) => {
         return (
