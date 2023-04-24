@@ -2,11 +2,11 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { todos } from 'redux/reducers/todos';
 import { AddToDo } from 'components/AddToDo/AddToDo';
-// import { ToDoItem } from 'components/ToDoItem/ToDoItem';
+import { ToDoItem } from 'components/ToDoItem/ToDoItem';
 import { Wrapper } from 'styles/GlobalStyle';
 import { DefaultButton } from 'styles/Button';
 import { ButtonContainer } from './ToDoList.style';
-// Comment to change in Github
+
 export const ToDoList = () => {
   const dispatch = useDispatch();
   const allTodos = useSelector((store) => store.todos.items);
