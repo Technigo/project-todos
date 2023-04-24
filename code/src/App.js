@@ -5,6 +5,7 @@ import tasks from 'components/reducers/tasks';
 import AddTask from 'components/AddTask';
 import TaskList from 'components/TaskList';
 import Header from 'components/Header';
+import Footer from 'components/Footer';
 
 const reducer = combineReducers({
   tasks: tasks.reducer
@@ -18,6 +19,7 @@ export const App = () => {
       <Header />
       <AddTask />
       <TaskList />
+      <Footer />
     </Provider>
   )
 }

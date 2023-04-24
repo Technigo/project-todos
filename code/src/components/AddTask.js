@@ -4,7 +4,6 @@ import tasks from 'components/reducers/tasks';
 import styled from 'styled-components';
 
 const InnerWrapper = styled.div`
-background-color: #606c5f;
 display: flex;
 flex-directon: row;
 justify-content: center;

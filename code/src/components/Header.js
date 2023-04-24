@@ -6,7 +6,6 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-background-color: #606c5f;
 `
 
 const HeaderText = styled.div`

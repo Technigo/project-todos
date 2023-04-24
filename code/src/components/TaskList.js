@@ -6,8 +6,6 @@ import styled from 'styled-components';
 const List = styled.div`
 display: flex;
 flex-direction: column;
-background-color: #606c5f;
-height: 100vh;
 `
 const ListHeader = styled.div`
 display: flex;

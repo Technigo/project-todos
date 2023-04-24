@@ -12,9 +12,6 @@ code {
     monospace;
 }
 
-/* body {
-  background-image:
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-}*/
+body {
+  background-color: #606c5f;
+}
