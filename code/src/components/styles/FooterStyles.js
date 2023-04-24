@@ -10,7 +10,7 @@ export const FooterWrapper = styled.footer`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 68%; 
+  height: 90%; 
   margin: 0 auto;
   opacity: 0.4;
   z-index: 0; //this makes the footer go on top of

@@ -1,9 +1,11 @@
+/* eslint-disable max-len */
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { tasks } from 'reducers/tasks'
 import { Checkbox } from './styles/Checkbox';
 import { IconButton } from './styles/IconButton';
 import { TaskListWrapper, SingleTaskWrapper } from './TaskListStyles';
+// for some very strange reason, I could only import these styles if i put them in the same folder as the TaskLis-component.
 
 export const TaskList = () => {
   // FUNCTIONALITY

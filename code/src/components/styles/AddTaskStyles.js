@@ -42,7 +42,7 @@ height: 20px;
 
 export const AddTaskInput = styled.input`
   width: 9rem;
-  background-color:transparent;
+  background-color: transparent;
   border: none;
   border-radius: 20px;
   height: 2rem;
