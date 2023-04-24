@@ -14,7 +14,7 @@ font-size: 21px;
 font-family: 'Quicksand', sans-serif;
 color: white;
 height: 100px;
-margin-bottom: 20px;
+margin-bottom: 10px;
 `
 const Weather = styled.div`
 font-size: 20px;

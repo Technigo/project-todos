@@ -31,7 +31,7 @@ const tasks = createSlice({
       store.items = [...store.items, action.payload]
     },
     deleteTask: (store, action) => {
-      store.items.filter((item) => item.id !== action.payload.id)
+      store.items = store.items.filter((item) => item.id !== action.payload.id)
     },
     toggleItem: (store, action) => {
       const { id } = action.payload
