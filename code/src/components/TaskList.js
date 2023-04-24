@@ -57,7 +57,7 @@ font-family: 'Quicksand', sans-serif;
 width: 50px;
 height: 40px;
 margin-left: 60px;
-color: rgb(44, 133, 122);
+color: rgb(69, 92, 107);
 border-style: none;
 `
 
