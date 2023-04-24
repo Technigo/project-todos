@@ -54,7 +54,7 @@ margin-left: -20px;
 `
 
 const DeleteBtn = styled.button`
-background-color: rgb(190, 209, 231);
+background-color: rgb(187, 205, 226);
 font-size: 20px;
 font-family: 'Quicksand', sans-serif;
 width: 50px;

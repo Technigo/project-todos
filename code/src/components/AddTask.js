@@ -27,7 +27,7 @@ width: 50px;
 height: 40px;
 margin-left: -9px;
 border-style: none;
-background-color: rgb(190, 209, 231);
+background-color: rgb(187, 205, 226);
 font-size: 15px;
 color: rgb(86, 113, 143);
 position: absolute;
