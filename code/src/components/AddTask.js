@@ -17,7 +17,7 @@ const Input = styled.input`
 width: 200px;
 height: 30px;
 border-radius: 5px;
-border: solid rgb(44, 133, 122);
+border: solid rgb(86, 113, 143);
 margin-right: 10px;
 font-size: 18x;
 `
@@ -27,9 +27,9 @@ width: 50px;
 height: 40px;
 margin-left: -9px;
 border-style: none;
-background-color: #f2f4f2;
+background-color: rgb(190, 209, 231);
 font-size: 15px;
-color: rgb(44, 133, 122);
+color: rgb(86, 113, 143);
 position: absolute;
 `
 const AddTask = () => {

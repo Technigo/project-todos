@@ -17,7 +17,7 @@ gap: 120px;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
-color: rgb(69, 92, 107);
+color: white;
 
 `
 const ListHeaderHome = styled.div`
@@ -27,7 +27,7 @@ margin-left: 20px;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
-color: rgb(69, 92, 107);
+color: white;
 @media (min-width: 768px) {
   align-self: center;
 }
@@ -54,13 +54,13 @@ margin-left: -20px;
 `
 
 const DeleteBtn = styled.button`
-background-color: #f2f4f2;
+background-color: rgb(190, 209, 231);
 font-size: 20px;
 font-family: 'Quicksand', sans-serif;
 width: 50px;
 height: 40px;
 margin-left: 60px;
-color: rgb(69, 92, 107);
+color: rgb(86, 113, 143);
 border-style: none;
 `
 
