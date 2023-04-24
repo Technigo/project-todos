@@ -35,7 +35,7 @@ display: flex;
 flex-direction: row;
 justify-content: center;
 font-size: 18px;
-margin: 5px 30px 5px 30px;
+margin: 2px 30px 2px 30px;
 gap: 40px;
 font-family: 'Quicksand', sans-serif;
 color: white;
