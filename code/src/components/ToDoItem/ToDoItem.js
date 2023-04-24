@@ -13,6 +13,7 @@ export const ToDoItem = ({ todo, index, onDelete, onDone }) => {
     <SingleTodo>
       <ToDoText onClick={() => onDone(todo.id)} key={todo.id} isDone={todo.isDone}>
         <p>{todo.text}</p>
+        <p>{todo.category && (`${todo.category}`)}</p>
       </ToDoText>
       <DateAndDelete>
         <DeleteButton onClick={() => onDelete(index)} type="button" title="Delete task">
