@@ -11,10 +11,16 @@ const InnerWrapper = styled.div`
     justify-content: space-between;
     gap: 5px;
     margin: 0 20px;
+    border: solid green 2px;
+
+    [type="checkbox"]{
+      width: 100px;
+      height: 100px;
+    }
 `
 
 const TaskText = styled.p`
-    font-size: 2em;
+    font-size: 1em;
     font-family: Garamond;
     line-height: 0.5em;
     width: 100%;
@@ -30,6 +36,7 @@ const TaskList = () => { // Function.
   }
   const onIsCompletedCheckboxToggle = (id) => { // To establish, we need the id.
     dispatch(tasks.actions.toggleIfTaskIsCompleted(id)); // Since id we need to dispatch an action.
+    dispatch(tasks.actions.toggleIfTaskIsCompleted(alert));
   }
   return (
     <section>
@@ -41,8 +48,8 @@ const TaskList = () => { // Function.
                 <input
                   id={`task_with_id${singleTask.id}`}
                   type="checkbox"
+                  alert="play"
                   value={singleTask.isCompleted}
-                  className="checkBox"
                   onChange={() => onIsCompletedCheckboxToggle(singleTask.id)}
                   checked={singleTask.isCompleted} />
               </label>
@@ -52,7 +59,7 @@ const TaskList = () => { // Function.
               <Button
                 type="button"
                 onClick={() => onDeleteSingleTaskBtnCLick(singleTask.id)}>
-                Delete
+                Delete task
               </Button>
             </InnerWrapper>
           )

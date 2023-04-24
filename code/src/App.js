@@ -5,7 +5,7 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import AddTask from 'components/AddTask.js';
 import TaskList from 'components/TaskList.js';
 import tasks from 'components/reducers/tasks.js';
-import { Container, Background } from 'components/styles/global';
+import { Container } from 'components/styles/global';
 
 export const App = () => {
   const reducer = combineReducers({ // Reducer/Function = () and inside {} indicating
@@ -26,10 +26,11 @@ export const App = () => {
     <>
       {/* <Header /> */}
       <Provider store={store}>
-        <Background>
-          <img src="https://lh3.googleusercontent.com/VVoJ0R6G-90qRJ4n93tkojl_Ymoyjnz7WVMZADkLILGZQdkhKVXAVyk9Z5jpdNeZIcUoW2SoGxI4_enOLAxyltkngO-5uVN9CXDdYHl52dS-ZyMayO5Dh5SAjdFzCe8j7NnpZkeGdA=w2400" alt="star wars background" />
-        </Background>
+        {/* <Background>
+          <img src="https://lh3.googleusercontent.com/pw/AJFCJaVaP4snGs1TYultSd0cLi1jfUGo0yFWsvOtYYCZk-nIxYc3dppo2I7W48foXHkPFJ5FrvO-m0WzhoJpteZn0-oq5YkV5fMvoo-78nyXpc6oGN5Zp7Y=w2400" alt="checked paper" />
+        </Background> */}
         <Container>
+          {/* <img src="https://lh3.googleusercontent.com/pw/AJFCJaVaP4snGs1TYultSd0cLi1jfUGo0yFWsvOtYYCZk-nIxYc3dppo2I7W48foXHkPFJ5FrvO-m0WzhoJpteZn0-oq5YkV5fMvoo-78nyXpc6oGN5Zp7Y=w2400" alt="checked paper" /> */}
           <AddTask />
           <TaskList />
         </Container>

@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import tasks from 'components/reducers/tasks.js';
 import styled from 'styled-components';
-import { AddButton, DeleteButton, Title } from './styles/global';
-import { Counter } from './Counter';
+import { AddButton, DeleteButton, Title, CheckBox } from './styles/global';
+import { TaskCounter } from './TaskCounter';
 
 // Object.defineProperty(String.prototype, 'capitalize', {
 //   value: () => {
@@ -21,7 +21,7 @@ const capitalize = (stringToCapitalize) => {
 const NewTask = styled.input`
     border: none;
     border-bottom: solid black 1px;
-    width: 80%;
+    width: 60%;
     margin-left: 20px;
     font-family: Garamond;
 
@@ -32,8 +32,8 @@ const NewTask = styled.input`
 const HeaderWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
+  justify-content: center;
+  align-items: center;
   margin: 20px;
 `
 
@@ -70,27 +70,27 @@ const AddTask = () => { // A function.
     <section>
       <HeaderWrapper>
         <Title>
-        D2 D82
+        Completed? Delete it!
         </Title>
       </HeaderWrapper>
       <form onSubmit={onFormSubmit}>
         <label htmlFor="newTaskInput">
           <NewTask
             type="text"
-            placeholder="Do today too"
+            placeholder="Needs to be completed"
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
             id="newTaskInput" />
         </label>
         <AddButton
-          type="submit"> Do
+          type="submit"> +
         </AddButton>
       </form>
       <FooterWrapper>
-        <Counter />
+        <TaskCounter />
         <DeleteButton
           type="button"
-          onClick={onDeleteAllTaskBtnClick}> Delete all tasks
+          onClick={onDeleteAllTaskBtnClick}> Start over
         </DeleteButton>
       </FooterWrapper>
     </section>

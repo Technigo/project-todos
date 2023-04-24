@@ -2,29 +2,30 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 
-const CounterText = styled.p`
-  font-size: 1em;
+const TaskCounterText = styled.p`
+  font-size: em;
   display: flex;
+  font-family: Garamond;
 `
 
-export const Counter = () => {
+export const TaskCounter = () => {
   const taskList = useSelector((store) => store.tasks.items)
   const completedTasks = taskList.filter((task) => task.isCompleted);
 
-  const doneTasks = () => {
+  const tasksCompleted = () => {
     if (taskList.length === 0) {
       return ''
     } else if (taskList.length === completedTasks.length) {
       return (
-        <p>Done today too</p>
+        <p>All tasks completed</p>
       )
     } else {
-      return `${completedTasks.length} / ${taskList.length} done`
+      return `${completedTasks.length} / ${taskList.length} Completed`
     }
   }
   return (
-    <CounterText>
-      {doneTasks()}
-    </CounterText>
+    <TaskCounterText>
+      {tasksCompleted()}
+    </TaskCounterText>
   )
 }

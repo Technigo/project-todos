@@ -5,8 +5,7 @@ export const Container = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    margin: 0;
-    overflow-x: hidden;
+    border: solid 1px red;
 
     @media (min-width: 668px) {
         width: 50%;
@@ -15,15 +14,9 @@ export const Container = styled.div`
     }
 `
 
-export const Background = styled.div`
-    width: 100%;
-    
-    @media (min-width: 668px) {
-        width: 50%;
-        justify-items: center;
-        margin: 0 auto;
-    }
-`
+// export const Background = styled.div`
+//     width: 100vw;
+// `
 
 export const Button = styled.button`
     border: none;
@@ -37,6 +30,7 @@ export const Button = styled.button`
 `
 export const AddButton = styled(Button)`
     font-family: Garamond;
+    font-size: 2em;
 
     &:hover {
         color: yellow;
@@ -50,7 +44,7 @@ export const DeleteButton = styled(Button)`
     align-items: center;
     width: 200px;
     margin: 0;
-    font-size: 1em;
+    font-size: 2em;
     font-family: Garamond;
 
 `
@@ -59,7 +53,7 @@ export const Title = styled.h1`
     margin: 10px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: rightdk;
     align-items: center;
     font-family: Garamond;
     width: 100%;
@@ -67,6 +61,6 @@ export const Title = styled.h1`
 `
 export const H2 = styled.h2`
     font-size: 2em;
-    font-family: Garamond;
+    font-family: helvetica;
 
 `
