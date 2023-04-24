@@ -9,10 +9,12 @@ export const FooterText = styled.footer`
   text-align: center;
   color: white;
   font-family: 'League Spartan', sans-serif;
-  color: black;
+  color: #e6dbbc;
   font-size: 1.2rem;
   height: 20px;
   width: 100%;
-  background-color: #E6DBBC;
+  background-color: #0f333a;
   z-index: 4
+
+
 `;
