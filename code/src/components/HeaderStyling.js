@@ -10,7 +10,7 @@ export const StyledTitle = styled.h1`
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
     top: 0;
-    margin: 7rem auto 0;
+    margin: 0 auto;
     text-align: center;
     padding: 1rem;
 ;`
