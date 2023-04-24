@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const FooterWrapper = styled.div`
-margin-top: 50px;
+margin-top: 80px;
 display: flex;
 flex-direction: column;
 justify-content: center;
