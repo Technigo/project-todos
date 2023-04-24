@@ -8,14 +8,12 @@ const tasks = createSlice({
       {
         id: 0,
         text: 'Play with cats',
-        isComplete: false,
-        date: Date.now()
+        isComplete: false
       },
       {
         id: 1,
         text: 'Eat chocolate',
-        isComplete: false,
-        date: Date.now()
+        isComplete: false
       }
     ]
   },
@@ -24,8 +22,7 @@ const tasks = createSlice({
       const newTask = {
         id: uniqid(),
         text: action.payload.text,
-        isComplete: false,
-        date: Date.now()
+        isComplete: false
       };
       store.items = [newTask, ...store.items];
     },
