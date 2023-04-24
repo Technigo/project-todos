@@ -10,15 +10,15 @@ export const HeaderContent = styled.div`
 `;
 
 export const BtnContainer = styled.div`
-  margin: 26px 40px 0 0;
+  margin: 40px;
   @media (min-width: 380px) {
-    margin: 26px 40px 0 0;
+    margin: 40px; 
   }
   @media (min-width: 600px) {
-    margin: 26px 40px 0 0;
+    margin: 80px;
   }
   @media (min-width: 768px) {
-    margin: -10px 40px 0 0;
+    margin: 80px;
   }
 `;
 
@@ -27,10 +27,10 @@ display: flex;
 flex-direction: column;
 margin: 70px 0px 0 0px;
 @media (min-width: 600px) {
-    margin: 70px 0px 0 -40px;
+    margin: 70px 0px 0 0px;
   }
   @media (min-width: 768px) {
-    margin: 70px 0px 0 -40px;
+    margin: 70px 0px 0 0px;
   }
 `;
 
