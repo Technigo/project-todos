@@ -29,6 +29,10 @@ input[type='checkbox'].checkbox {
 @media (max-width:1024px) {
   min-height: 60vh;
 }
+
+@media (max-width:667px){
+min-height: 50vh;
+}
 `
 
 const StyledList = styled.ul`
@@ -59,8 +63,10 @@ box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px, rgba(0, 0, 0, 0.05) 0px 5px 10px;
 }
 
 @media (max-width:667px){
-  font-size: 16px;
   width:60%;
+  font-size: 14px;
+  margin: 15px 25px;
+
 }
 
 @media (min-width:667px) and (max-width:1024px) {
@@ -76,6 +82,11 @@ font-family: 'Mouse Memoirs', sans-serif;
 font-size: 45px; 
 text-align: center;
 margin:20px;
+
+@media (max-width:667px) {
+  font-size: 32px;
+  margin: 10px;
+}
 `
 const Datebox = styled.div`
 display:flex: 

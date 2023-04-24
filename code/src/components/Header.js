@@ -14,6 +14,11 @@ color:#1261BC;
 @media (min-width:1024px) {
   font-size: 90px;
 }
+
+@media (max-width: 667px) {
+  font-size: 72px; 
+  margin: 20px; 
+}
 `
 export const Header = () => {
   return (
