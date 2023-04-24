@@ -13,7 +13,7 @@ display: flex;
 flex-direction: row;
 align-items: center;
 justify-content: center;
-gap: 120px;
+gap: 110px;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
