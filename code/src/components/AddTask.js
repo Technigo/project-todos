@@ -26,8 +26,8 @@ font-size: 18x;
 const SubmitBtn = styled.button`
 width: 42px;
 height: 37px;
-border: 2px solid white;
-border-radius: 5px;
+padding-right: 15px;
+border-style: none;
 background-color: #606c5f;
 font-size: 15px;
 color: white;
