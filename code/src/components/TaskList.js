@@ -20,6 +20,15 @@ font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
 color: white;
 `
+const ListHeaderHome = styled.div`
+display: flex;
+align-items: flex-start;
+margin-left: 20px;
+font-size: 15px;
+font-family: 'Montserrat', sans-serif;
+margin-bottom: -10px;
+color: white;
+`
 
 const InnerWrapper = styled.div`
 display: flex;
@@ -91,11 +100,11 @@ child_care
           </InnerWrapper>
         )
       })}
-      <ListHeader><h2>H
+      <ListHeaderHome><h2>H
         <span className="material-symbols-outlined">
 home
         </span>me </h2>
-      </ListHeader>
+      </ListHeaderHome>
       {taskToDo.map((task) => {
         return (
           <InnerWrapper>
