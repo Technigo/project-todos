@@ -3,7 +3,7 @@ import styled from 'styled-components'
 export const ExpandButton = styled.button`
  color: white;
  background-color: #0062ff;
- border-radius: 50%;
+ border-radius: 20px;
  height: 40px;
  width: 40px;
  font-size: 1.84em;
@@ -16,15 +16,10 @@ font-weight: 800;
 
  }
 
- @media (min-width: 400px) {
-  height: 50px;
- width: 50px;
- font-size: 2em;
- }
-
   @media (min-width: 768px) {
     height: 80px;
  width: 80px;
+ border-radius: 40px;
  font-size: 2em;
   }
  
