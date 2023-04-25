@@ -14,10 +14,74 @@ const InnerWrapper = styled.div`
     margin: 0 20px;
     border: solid green 2px;
 
-    [type="checkbox"]{
+    [type="checkbox"] {
       width: 100px;
       height: 100px;
+      position: relative;
+      padding-left; 30px;
+      cursor: pointer;
+      color: green;
+      line-height: 25px;
     }
+
+    [type="checkbox"] + label{
+      width: 100px;
+      height: 100px;
+      position: relative;
+      padding-left; 30px;
+      cursor: pointer;
+      color: green;
+      line-height: 25px;
+    }
+
+    [type="checkbox"]:checked + label::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      outline: 2px solid black;
+      background: pink;
+      transform: scale(1);
+      transition: all .3s ease;
+    }
+
+    [type="checkbox"] + label::before{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      outline: 2px solid yellow;
+      background: pink;
+    }
+
+    [type="checkbox"]:not(:checked) + label::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      background-image:url(./assets/vecteezy_hand-drawn-blue-check-mark-in-black-square-flat-vector_7042389.jpg);
+      background-size: contain;
+      transform: scale(0);
+      }
+
+
+    [type="checkbox"] + label::after{
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 50px;
+      height: 50px;
+      // background-image:url(https://lh3.googleusercontent.com/pw/AJFCJaXZbz_cEXotxm2zQKD4qcxfVQvUDDygGprKDn9fwW4xxLDQmwDESZZgdIj73K6Y1fXAqRsmKb4UoQRWtMe8J3REfORXpse_0_W4zUSkNRmB-L9LnQU=w2400);
+      // background-size: contain;
+      }
+
 `
 
 const TaskText = styled.p`
@@ -27,10 +91,10 @@ const TaskText = styled.p`
     width: 100%;
 `
 
-const alertSound = () => {
-  document.getElementById(mp3);
+const playSound = () => {
+  const audio = new Audio(mp3);
+  audio.play();
 }
-// const alertSound = (document.getElementById(mp3));
 
 const TaskList = () => { // Function.
   const taskList = useSelector((store) => store.tasks.items) // useSelector
@@ -41,7 +105,7 @@ const TaskList = () => { // Function.
     dispatch(tasks.actions.deleteSingleTask(id)); // Dispatch the action
   }
   const onIsCompletedCheckboxToggle = (id) => { // To establish, we need the id.
-    dispatch(tasks.actions.toggleIfTaskIsCompleted(id)); alertSound(); // Since id
+    dispatch(tasks.actions.toggleIfTaskIsCompleted(id)); playSound(); // Since id
     // we need to dispatch an action.
   }
   return (
@@ -56,6 +120,7 @@ const TaskList = () => { // Function.
                   type="checkbox"
                   value={singleTask.isCompleted}
                   onChange={() => onIsCompletedCheckboxToggle(singleTask.id)}
+                  onClick={playSound}
                   checked={singleTask.isCompleted} />
               </label>
               <TaskText>
