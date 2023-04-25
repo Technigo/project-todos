@@ -12,8 +12,8 @@ const ListHeader = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
+gap: 160px;
 justify-content: center;
-gap: 120px;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
@@ -23,7 +23,7 @@ color: white;
 const ListHeaderHome = styled.div`
 display: flex;
 align-items: flex-start;
-margin-left: 20px;
+margin-left: 32px;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
 margin-bottom: -10px;
