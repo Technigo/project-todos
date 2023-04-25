@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import styled from 'styled-components'
 import uniqid from 'uniqid'
 
-// import todos from 'reducers/'
+import todos from 'reducers/list'
 
 const ListContainer = styled.form`
   line-height: 1em;
@@ -14,7 +14,7 @@ background: #fff;
 border: none;
 padding: 8px;
 font-size: 18px;
-// font-family: 'Baloo 2', cursive;
+// font-family: ;
 border-bottom: 2px dashed;
 :focus {
   outline: none;
@@ -22,7 +22,7 @@ border-bottom: 2px dashed;
 `
 
 const AddButton = styled.button`
-font-family: 'Baloo 2', cursive;
+font-family: ;
 font-size: 18px;
 border: none;
 background: transparent;
@@ -36,14 +36,14 @@ const AddPlus = styled.span`
 const AddTodo = () => {
   const [inputValue, setInputValue] = useState('')
   const dispatch = useDispatch()
-  const todos = useSelector((store) => store.todos)
+  // const todos = useSelector((store) => store.todos)
 
   const onFormSubmit = (event) => {
     event.preventDefault()
 
     const newTodo = {
       id: uniqid(),
-      // key: todos.id,
+      key: todos.id,
       name: inputValue,
       isDone: false
     };

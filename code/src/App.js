@@ -1,11 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import ToDo from 'components/ToDo';
-// import Counter from 'components/Counter';
-import Header from 'components/Header';
+import Header from './components/Header'
+import ToDo from './components/ToDo'
 
-import todos from './reducers/list';
+import todos from './reducers/list'
 
 export const App = () => {
   const reducer = combineReducers({

@@ -4,7 +4,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 
-import todos from 'reducers/list';
+import todos from 'reducers/list'
 import AddTodo from './AddToDo';
 import TodoItem from './ToDoItem';
 
