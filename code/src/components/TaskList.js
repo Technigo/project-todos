@@ -12,7 +12,7 @@ const ListHeader = styled.div`
 display: flex;
 flex-direction: row;
 align-items: center;
-gap: 160px;
+gap: 110px;
 justify-content: center;
 font-size: 15px;
 font-family: 'Montserrat', sans-serif;
