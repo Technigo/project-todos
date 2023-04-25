@@ -1,7 +1,8 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import tasks from 'components/reducers/tasks.js';
 import styled from 'styled-components';
+import tasks from './reducers/tasks.js';
+import mp3 from './assets/check.mp3';
 import { Button } from './styles/global';
 
 const InnerWrapper = styled.div`
@@ -26,6 +27,10 @@ const TaskText = styled.p`
     width: 100%;
 `
 
+const alertSound = () => {
+  document.getElementById(mp3);
+}
+
 const TaskList = () => { // Function.
   const taskList = useSelector((store) => store.tasks.items) // useSelector
   // to select the list/slice of tasks from Redux store and from that map over
@@ -35,8 +40,8 @@ const TaskList = () => { // Function.
     dispatch(tasks.actions.deleteSingleTask(id)); // Dispatch the action
   }
   const onIsCompletedCheckboxToggle = (id) => { // To establish, we need the id.
-    dispatch(tasks.actions.toggleIfTaskIsCompleted(id)); // Since id we need to dispatch an action.
-    dispatch(tasks.actions.toggleIfTaskIsCompleted(alert));
+    dispatch(tasks.actions.toggleIfTaskIsCompleted(id)); alertSound(); // Since id
+    // we need to dispatch an action.
   }
   return (
     <section>
@@ -48,7 +53,6 @@ const TaskList = () => { // Function.
                 <input
                   id={`task_with_id${singleTask.id}`}
                   type="checkbox"
-                  alert="play"
                   value={singleTask.isCompleted}
                   onChange={() => onIsCompletedCheckboxToggle(singleTask.id)}
                   checked={singleTask.isCompleted} />

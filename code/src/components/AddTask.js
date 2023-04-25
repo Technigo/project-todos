@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { v4 as uuidv4 } from 'uuid';
 import tasks from 'components/reducers/tasks.js';
 import styled from 'styled-components';
-import { AddButton, DeleteButton, Title, CheckBox } from './styles/global';
+import { AddButton, DeleteButton, Title } from './styles/global';
 import { TaskCounter } from './TaskCounter';
 
 // Object.defineProperty(String.prototype, 'capitalize', {
