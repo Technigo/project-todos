@@ -30,6 +30,7 @@ const TaskText = styled.p`
 const alertSound = () => {
   document.getElementById(mp3);
 }
+// const alertSound = (document.getElementById(mp3));
 
 const TaskList = () => { // Function.
   const taskList = useSelector((store) => store.tasks.items) // useSelector
