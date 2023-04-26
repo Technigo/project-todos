@@ -20,9 +20,7 @@ export const tasks = createSlice({
       });
     },
     deleteItem: (store, action) => {
-      const updatedItems = store.items.filter((item) => {
-        return store.items.indexOf(item) !== action.payload;
-      });
+      const updatedItems = store.items.filter((item) => item.id !== action.payload);
       store.items = updatedItems;
     },
     addItem: (store, action) => {

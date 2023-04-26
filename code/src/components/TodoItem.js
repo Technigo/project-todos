@@ -19,13 +19,13 @@ const DeleteButton = styled.button`
   color: #ccc;
 `;
 
-export const TodoItem = ({ todo, index, onDelete, onDone }) => {
+export const TodoItem = ({ todo, onDelete, onDone }) => {
   return (
     <SingleTodo key={todo.id}>
       <TodoText onClick={() => onDone(todo.id)} isDone={todo.isDone}>
         <p>{todo.text}</p>
       </TodoText>
-      <DeleteButton onClick={() => onDelete(index)} type="button" title="Remove task">
+      <DeleteButton onClick={() => onDelete(todo.id)} type="button" title="Remove task">
         {' '}
         X
       </DeleteButton>
