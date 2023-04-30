@@ -2,6 +2,8 @@ import styled from 'styled-components/macro'
 
 export const NewTaskContainer = styled.div`
 background-color: rgb(246, 230, 194);
+position:absolute;
+bottom:0;
 display:flex;
 justify-content:center;
 align-items:center;
@@ -42,11 +44,11 @@ display:flex;
 
 export const TaskPageContainer = styled.div`
 display:flex;
-justify-content:flex-end;
+justify-content:space-between;
 align-items:center;
 flex-direction:column;
 box-sizing: border-box;
-min-height:100vh;
+min-height:100%;
 `
 
 export const TaskCardContainer = styled.div`
@@ -60,7 +62,7 @@ padding:0.5em;
 border:rgb(184, 184, 184) solid 3px;
 border-radius:25px;
 position:relative;
-margin: 0.8em 0.8em 0 0.8em;
+margin: 0.8em;
 width:90%;
 background-color:#F6E6C2;
 
