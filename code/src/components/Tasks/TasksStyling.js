@@ -1,17 +1,48 @@
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 
 export const NewTaskContainer = styled.div`
+background-color: rgb(246, 230, 194);
 display:flex;
 justify-content:center;
 align-items:center;
 flex-direction:row;
 bottom:0;
 width:100vw;
+color: rgb(71 69 69);
+font-size: 1em;
+gap:1em;
+button{
+color: rgb(71 69 69);
+font-size: 1em; 
+  :hover{
+   transform: scale(1.3);
+   color: #EA8FEA;
+}
+}
+li{
+display:flex;
+  font-size: 1em;
+  a{
+  color: rgb(71 69 69);
+  :hover{
+   transform: scale(1.2);
+   color: #EA8FEA;
+}
+  }
+}
+
+  @media (min-width: 768px) {
+    font-size: 2rem;
+    li{
+      font-size: 2rem;
+    }
+  }
+
 `
 
 export const TaskPageContainer = styled.div`
 display:flex;
-justify-content:center;
+justify-content:flex-end;
 align-items:center;
 flex-direction:column;
 box-sizing: border-box;
@@ -32,6 +63,10 @@ position:relative;
 margin: 0.8em 0.8em 0 0.8em;
 width:90%;
 background-color:#F6E6C2;
+
+    @media (min-width: 768px) {
+        font-size:2em;
+    }
 `
 
 export const TaskListContainer = styled.div`

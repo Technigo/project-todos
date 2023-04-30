@@ -7,6 +7,7 @@ import {
   MDBDropdownMenu,
   MDBDropdownItem
 } from 'mdb-react-ui-kit';
+import styled from 'styled-components/macro'
 
 export const NavbarDropdown = () => {
   const options = useSelector((store) => store.tasks.projects);
@@ -19,9 +20,11 @@ export const NavbarDropdown = () => {
   }
   return (
     <MDBDropdown>
-      <MDBDropdownToggle style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} tag="a" className="nav-link" role="button">
-        {selectedOption.toUpperCase()}
-      </MDBDropdownToggle>
+      <Container>
+        <MDBDropdownToggle tag="a" className="nav-link" role="button">
+          {selectedOption.toUpperCase()}
+        </MDBDropdownToggle>
+      </Container>
       <MDBDropdownMenu>
         {options.map((option) => {
           return (
@@ -36,3 +39,16 @@ export const NavbarDropdown = () => {
     </MDBDropdown>
   )
 }
+
+const Container = styled.div`
+color: rgb(71 69 69);
+a{
+  font-size: 1em;
+  }
+
+  @media (min-width: 768px) {
+    a{
+      font-size: 2em;
+    }
+  }
+`

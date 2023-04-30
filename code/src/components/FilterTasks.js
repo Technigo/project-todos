@@ -4,6 +4,7 @@ import { tasks } from 'reducers/tasks';
 import {
   MDBNavbarItem, MDBNavbarLink
 } from 'mdb-react-ui-kit';
+import styled from 'styled-components/macro'
 
 export const FilterTasks = () => {
   const allTasks = useSelector((store) => store.tasks.tasks);
@@ -46,24 +47,34 @@ export const FilterTasks = () => {
     dispatch(tasks.actions.filterOn({ filter: 'all' }))
   }
 
-  const completeAllTasks = () => {
-    dispatch(tasks.actions.checkItem({ id: 'complete all' }))
-  }
-
   return (
-    <>
+    <Container>
       <MDBNavbarItem>
-        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" onClick={filterAllTasks}>All ({filteredAllTasks.length})</MDBNavbarLink>
+        <MDBNavbarLink href="#" onClick={filterAllTasks}>All ({filteredAllTasks.length})</MDBNavbarLink>
       </MDBNavbarItem>
       <MDBNavbarItem>
-        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" onClick={filterOngoingTasks}>Ongoing ({ongoingTasks.length})</MDBNavbarLink>
+        <MDBNavbarLink href="#" onClick={filterOngoingTasks}>Ongoing ({ongoingTasks.length})</MDBNavbarLink>
       </MDBNavbarItem>
       <MDBNavbarItem>
-        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" onClick={filterCompletedTasks}>Done ({completedTasks.length})</MDBNavbarLink>
+        <MDBNavbarLink href="#" onClick={filterCompletedTasks}>Done ({completedTasks.length})</MDBNavbarLink>
       </MDBNavbarItem>
-      <MDBNavbarItem>
-        <MDBNavbarLink style={{ color: 'rgb(71 69 69)', fontSize: '0.7em' }} href="#" onClick={completeAllTasks}>Complete all</MDBNavbarLink>
-      </MDBNavbarItem>
-    </>
+    </Container>
   )
 }
+
+const Container = styled.div`
+color: rgb(71 69 69);
+display:flex;
+flex-direction:row;
+gap:0.5em;
+
+li{
+  font-size: 1em;
+}
+
+  @media (min-width: 768px) {
+    li{
+      font-size: 2em;
+    }
+  }
+`
