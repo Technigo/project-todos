@@ -1,0 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace+SC&family=Press+Start+2P&display=swap');
+
+.turnInSection {
+    display: flex;
+    font-family: 'Bruno Ace SC';
+    
+}
+
+.clearListBtn {
+    background-color: #e9edc9;
+    font-family: 'Bruno Ace SC';
+    cursor: pointer;
+    font-weight: 700;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    width: fit-content;
+    border: 1px;
+    border-radius: 50%;
+    margin: 10px;
+    padding: 8px 15px;
+    opacity: 0.7;
+    margin-bottom: 20%;
+    align-self: center;
+}
+
+button {
+    font-family: 'Bruno Ace SC'
+}
