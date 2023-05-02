@@ -34,6 +34,7 @@ const HeaderWrapper = styled.div`
   justify-content: flex-end;
   align-items: flex-end;
   margin: 20px;
+  margin-top: 50px;
 `
 
 export const NewTask = () => {
