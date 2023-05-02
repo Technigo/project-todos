@@ -5,8 +5,9 @@ import styled from 'styled-components';
 const TaskCounterText = styled.p`
   font-size: em;
   display: flex;
-  font-family: Garamond;
-`
+  font-family: 'Satoshi', sans-serif;
+  color: blue;
+  `
 
 export const TaskCounter = () => {
   const taskList = useSelector((store) => store.tasks.items)

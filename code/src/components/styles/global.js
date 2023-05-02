@@ -5,7 +5,7 @@ export const Container = styled.div`
     flex-direction: column;
     flex-wrap: wrap;
     justify-content: center;
-    border: solid 1px red;
+    // border: solid 1px red;
 
     @media (min-width: 668px) {
         width: 50%;
@@ -20,21 +20,23 @@ export const Container = styled.div`
 
 export const Button = styled.button`
     border: none;
-    background: yellow;
-    color: black;
-    font-family: Garamond;
+    // background: yellow;
+    color: blue;
+    font-family: 'Satoshi', sans-serif;
+    background: white;
 
     &:hover {
-        color: yellow;
+        color: blue;
     }
 `
 export const AddButton = styled(Button)`
-    font-family: Garamond;
+    font-family: Roboto;
     font-size: 2em;
+    font-family: 'Satoshi', sans-serif;
 
-    &:hover {
-        color: yellow;
-    }
+    // &:hover {
+    //     color: blue;
+    // }
 `
 
 export const DeleteButton = styled(Button)`
@@ -45,22 +47,23 @@ export const DeleteButton = styled(Button)`
     width: 200px;
     margin: 0;
     font-size: 2em;
-    font-family: Garamond;
-
+    font-family: 'Satoshi', sans-serif;
+    background: white;
 `
 export const Title = styled.h1`
-    font-size: 1em;
+    font-size: 2em;
     margin: 10px;
     display: flex;
     flex-direction: row;
     justify-content: rightdk;
     align-items: center;
-    font-family: Garamond;
+    font-family: 'Satoshi', sans-serif;
+    color: blue;
     width: 100%;
     margin: 0;
 `
 export const H2 = styled.h2`
     font-size: 2em;
-    font-family: helvetica;
-
+    font-family: '  Satoshi';
+    color: blue;
 `

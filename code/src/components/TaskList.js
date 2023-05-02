@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import tasks from './reducers/tasks.js';
 import mp3 from './assets/check.mp3';
 import { Button } from './styles/global';
+// import { CheckboxForm } from './CheckboxForm.js'
 
 const InnerWrapper = styled.div`
     display: flex;
@@ -11,18 +12,19 @@ const InnerWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 5px;
-    margin: 0 20px;
-    border: solid green 2px;
+    margin: 1.5em auto 0;
+    padding: 0.75em;
+    // border: solid green 2px;
 
     [type="checkbox"] {
-      width: 100px;
-      height: 100px;
+      width: 200px;
+      height: 200px;
       position: relative;
       padding-left; 30px;
-      cursor: pointer;
-      color: green;
+      outline: 5px solid blue;
       line-height: 25px;
-    }
+      background-image: 
+      url("https://s22.postimg.cc/fi4blx4gx/checkmark.png") 0 100% / 1.2em 1.35em no-repeat;    }
 
     [type="checkbox"] + label{
       width: 100px;
@@ -30,8 +32,8 @@ const InnerWrapper = styled.div`
       position: relative;
       padding-left; 30px;
       cursor: pointer;
-      color: green;
       line-height: 25px;
+      background-image: url("https://s22.postimg.cc/fi4blx4gx/checkmark.png") 0 100% / 1.2em 1.35em no-repeat;
     }
 
     [type="checkbox"]:checked + label::before{
@@ -41,10 +43,10 @@ const InnerWrapper = styled.div`
       top: 0;
       width: 100px;
       height: 100px;
-      outline: 2px solid black;
-      background: pink;
+      background: white;
       transform: scale(1);
       transition: all .3s ease;
+      background-image: url("https://s22.postimg.cc/fi4blx4gx/checkmark.png") 0 100% / 1.2em 1.35em no-repeat;
     }
 
     [type="checkbox"] + label::before{
@@ -54,8 +56,7 @@ const InnerWrapper = styled.div`
       top: 0;
       width: 100px;
       height: 100px;
-      outline: 2px solid yellow;
-      background: pink;
+      background-image: url("https://s22.postimg.cc/fi4blx4gx/checkmark.png") 0 100% / 1.2em 1.35em no-repeat;
     }
 
     [type="checkbox"]:not(:checked) + label::after{
@@ -65,9 +66,8 @@ const InnerWrapper = styled.div`
       top: 0;
       width: 100px;
       height: 100px;
-      background-image:url(./assets/vecteezy_hand-drawn-blue-check-mark-in-black-square-flat-vector_7042389.jpg);
-      background-size: contain;
-      transform: scale(0);
+      background-image: 
+        url("https://s22.postimg.cc/fi4blx4gx/checkmark.png") 0 100% / 1.2em 1.35em no-repeat;
       }
 
 
@@ -80,17 +80,86 @@ const InnerWrapper = styled.div`
       height: 50px;
       // background-image:url(https://lh3.googleusercontent.com/pw/AJFCJaXZbz_cEXotxm2zQKD4qcxfVQvUDDygGprKDn9fwW4xxLDQmwDESZZgdIj73K6Y1fXAqRsmKb4UoQRWtMe8J3REfORXpse_0_W4zUSkNRmB-L9LnQU=w2400);
       // background-size: contain;
-      }
+      background-image: 
+      url("https://s22.postimg.cc/fi4blx4gx/checkmark.png") 0 100% / 1.2em 1.35em no-repeat;
+    }
 
-`
+  //   [type="checkbox]{
+  //   box-shadow: 0 0 0 0.125em $bk3 inset;
+  //   display: inline-block;
+  //   position: relative;
+  //   width: 200px;
+  //   height: 200px;
+  //   vertical-align: middle;
+  //   -moz-appearance: none;
+  //   -webkit-appearance: none;
+  //   padding-left; 30px;
+  //   // cursor: pointer;
+  //   line-height: 25px;
+  //   }
+
+  //   [type="checkbox"] + label{
+  //   box-shadow: 0 0 0 0.125em $bk3 inset;
+  //   display: inline-block;
+  //   position: relative;
+  //   width: 200px;
+  //   height: 200px;
+  //   vertical-align: middle;
+  //   -moz-appearance: none;
+  //   -webkit-appearance: none;
+  //   padding-left; 30px;
+  //   // cursor: pointer;
+  //   line-height: 25px;
+  //   }
+
+  //   [type="checkbox]&:before, &:after {
+  //     content: "";
+  //     display: block;
+  //     position: absolute;
+  //   }
+
+  //   [type="checkbox"]:checked + label::before{
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   width: 100px;
+  //   height: 100px;
+  //   outline: 2px solid black;
+  //   background: white;
+  //   transform: scale(1);
+  //   transition: all .3s ease;
+  //   background-color: transparent;
+  //   }
+  
+  //   [type="checkbox"]&:before {
+  //     background: 
+  //       url("https://s22.postimg.cc/fi4blx4gx/checkmark.png") 0 100% / 1.2em 1.35em no-repeat;
+  //     bottom: 0.2em;
+  //     left: 0.3em;
+  //     width: 0;
+  //     height: 1.35em;
+  //   }
+
+  //   [type="checkbox"]&:after {
+  //     background:
+  //     background-repeat: no-repeat;
+  //     border-radius: 0 0.1em 0.1em 0;
+  //     opacity: 0;
+  //     visibility: hidden;
+  //     transform-origin: 0 0.25em;
+  //     width: 12em;
+  //     height: 1em;
+  //   }
+  `
 
 const TaskText = styled.p`
-    font-size: 1em;
-    font-family: Garamond;
+    font-size: 2em;
+    font-family: 'Satoshi', sans-serif;
     line-height: 0.5em;
     width: 100%;
+    color: blue;
 `
-
 const playSound = () => {
   const audio = new Audio(mp3);
   audio.play();
@@ -118,6 +187,7 @@ const TaskList = () => { // Function.
                 <input
                   id={`task_with_id${singleTask.id}`}
                   type="checkbox"
+                  className="cb pristine"
                   value={singleTask.isCompleted}
                   onChange={() => onIsCompletedCheckboxToggle(singleTask.id)}
                   onClick={playSound}
@@ -140,5 +210,18 @@ const TaskList = () => { // Function.
 }
 
 // id as key and singleTask.name in list = printed out value.
-// store = backpack
+// // store = backpack
 export default TaskList;
+
+// CheckboxForm
+
+// // stop erase animations from firing on load
+// document.addEventListener('DOMContentLoaded', function(){
+// document.querySelector({InnerWrapper}).addEventListener('click',e => {
+// const checkboxCL = e.target.classList
+// pState = "pristine";
+
+// if (checkboxCL.contains(pState))
+// checkboxCL.remove(pState);
+// });
+// });

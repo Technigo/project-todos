@@ -20,10 +20,12 @@ const capitalize = (stringToCapitalize) => {
 
 const NewTask = styled.input`
     border: none;
-    border-bottom: solid black 1px;
+    border-bottom: solid blue 3px;
     width: 60%;
     margin-left: 20px;
-    font-family: Garamond;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 1em;
+    color: blue;
 
     &:focus {
         outline: none;
