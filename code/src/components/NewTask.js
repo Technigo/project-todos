@@ -19,6 +19,10 @@ const AddTask = styled.input`
     }
 `
 
+const TodoForm = styled.form`
+    max-width: 100vw;
+`
+
 const HeadlineWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -72,7 +76,7 @@ delete
           <Counter />
         </HeadlineWrapper>
       </HeaderWrapper>
-      <form onSubmit={onTaskSubmit}>
+      <TodoForm onSubmit={onTaskSubmit}>
         <label htmlFor="addTaskInput">
           <AddTask
             key={onTaskSubmit.id}
@@ -87,7 +91,7 @@ delete
 add_circle
           </span>
         </AddButton>
-      </form>
+      </TodoForm>
     </section>
   )
 }

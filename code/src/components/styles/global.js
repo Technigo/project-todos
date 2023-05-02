@@ -20,6 +20,7 @@ export const Button = styled.button`
     border: none;
     background: none;
     color: black;
+    
 
     &:hover {
         color: red;
