@@ -1,0 +1,43 @@
+@import url(//https://fonts.google.com/specimen/Press+Start+2P);
+
+.listSection {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+ul {
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+.deleteButton {
+    position: relative;
+    gap: 2rem;
+    border-radius: 25px;
+    border: 2px solid rgb(231, 50, 50);
+    background-color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 10px #333;
+    overflow: hidden;
+    transition: .3s;
+}
+
+.deleteButton:hover {
+    background-color: rgb(245, 207, 207);
+    transform: scale(1.2);
+    box-shadow: 0 0 4px #111;
+    transition: .3s;   
+}
+
+p {
+    display: flex;
+    font-family: 'Press Start 2P';
+    color: #473c94;
+    font-weight: 500;
+    font-size: 10px;
+    margin: 2rem;
+}
