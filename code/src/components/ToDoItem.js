@@ -15,13 +15,14 @@ const TodoText = styled.div`
 
 const DeleteButton = styled.button`
   background: #f6f6f6;
-  border: none;
+  border: 1px solid #84b082;
   // font-family: ;
   font-size: 16px;
   cursor: pointer;
   border-radius: 50%;
   padding: 0px 9px;
-  color: #ccc;
+  color: #84b082;
+  // color: #ccc;
 `
 
 const TodoItem = ({ todo, index, deleteTodo, toggleTodo }) => {

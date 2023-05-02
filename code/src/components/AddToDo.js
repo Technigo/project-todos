@@ -9,13 +9,15 @@ const ListContainer = styled.form`
   line-height: 1em;
   padding-bottom: 10px;
 `
+
 const InputField = styled.input`
 background: #fff;
+color: #353a47;
 border: none;
 padding: 8px;
 font-size: 18px;
 // font-family: ;
-border-bottom: 2px dashed;
+
 :focus {
   outline: none;
 }
@@ -27,10 +29,12 @@ font-size: 18px;
 border: none;
 background: transparent;
 cursor: pointer;
+margin-left: 10px;
 `
 
 const AddPlus = styled.span`
-  font-size: 28px;
+  font-size: 26px;
+  color: #fff;
 `
 
 const AddTodo = () => {
@@ -54,7 +58,7 @@ const AddTodo = () => {
     <ListContainer onSubmit={onFormSubmit}>
       <InputField
         type="text"
-        placeholder="Type here..."
+        placeholder="Add your new task here"
         value={inputValue}
         required
         onChange={(e) => setInputValue(e.target.value)} />

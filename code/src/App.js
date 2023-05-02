@@ -1,8 +1,10 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { combineReducers, configureStore } from '@reduxjs/toolkit';
-import Header from './components/Header'
-import ToDo from './components/ToDo'
+// import styled from 'styled-components';
+import Header from './components/Header';
+import ToDo from './components/ToDo';
+// import image from './assets/forest.jpg';
 
 import todos from './reducers/list'
 

@@ -5,7 +5,10 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #4b7f52;
+  background-image: url("../src/assets/forest.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background: #4b7f52; */
   font-size: 18px;
   display: flex;
   justify-content: center;

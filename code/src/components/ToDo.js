@@ -9,7 +9,8 @@ import AddTodo from './AddToDo';
 import TodoItem from './ToDoItem';
 
 const TodoContainer = styled.div`
-background-color: #fff;
+background-color: rgba(20, 20, 20, 0.5);
+color: #b6c8a9;
 width: 80vw;
 text-align: center;
 padding: 10px;
@@ -36,17 +37,17 @@ box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
 
 const Button = styled.button`
 font-size: 18px;
-padding: 4px 13px;
-margin: 8px;
+padding: 10px 18px;
+margin-top: 15px;
 // font-family: ;
 background: #edca7f;
 color: #fff;
 border: none;
-border-radius: 30px;
+border-radius: 40px 0px 40px 0px;
 cursor: pointer;
 
 :hover {
-  opacity: 70%;
+  color: #353a47;
 }
 `
 
@@ -85,7 +86,7 @@ const ToDo = () => {
       ))}
       <AddTodo />
       <Button type="button" onClick={completeAll}>
-          Complete all
+          Complete all tasks
       </Button>
       <h2>
           You have completed {doneTasks.length} {doneTasks.length === 1 ? 'task' : 'tasks'}
