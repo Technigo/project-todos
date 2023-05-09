@@ -1,0 +1,53 @@
+.widerTaskListSection {
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+}
+
+li {
+    list-style-type: none;
+}
+
+ul {
+    padding: 0;
+}
+
+.deleteSingleTaskButton {
+    background-color: transparent;
+    border: none;
+}
+
+p {
+    font-family: 'Open_Sans';
+    display: flex;
+    text-align: center;
+    color: #606C38;
+    justify-content: space-between;
+    font-weight: 700;
+}
+
+.singleTask {
+    border-radius: 5px 20px 5px;
+    background: #e9edc9;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.ClearListButton {
+    background-color: #e9edc9;
+    cursor: pointer;
+    font-weight: 700;
+    height: 75px;
+    width: 75px;
+    border: 1px;
+    border-radius: 50%;
+    margin: 10px;
+    padding: 8px 15px;
+    opacity: 0.7;
+    margin-bottom: 20%;
+    align-self: center;
+}
+.ClearListButton:hover{
+    transform: scale(1.2);
+    opacity: 1;
+  }
