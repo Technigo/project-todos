@@ -13,3 +13,9 @@ Flex your redux muscles and build an application that pulls together all the par
 - [x]  You should be able to mark an uncompleted task as complete (and change it back to uncompleted).
 - [x]  You should be able to add and remove tasks.
 - [x]  Your app should show a count of either all tasks or all uncompleted tasks (or both).
+
+## Installation
+
+    npm install
+    npm start 
+
