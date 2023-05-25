@@ -1,9 +1,36 @@
-import React from 'react';
+/* eslint-disable linebreak-style */
+import React from 'react'
+import { Provider } from 'react-redux'
+import { combineReducers, configureStore } from '@reduxjs/toolkit'
+import { OuterWrapper, GlobalStyles, ContentWrapper } from 'StyledComponents/globalStyles';
+import Sidebar from 'components/Sidebar';
+import tasks from './reducers/tasks'
+
+import TaskList from './components/TaskList';
+import AddTask from './components/AddTask';
+import Logo from './components/Logo'
+
+const reducer = combineReducers({
+  tasks: tasks.reducer
+})
+
+const store = configureStore({ reducer })
 
 export const App = () => {
   return (
-    <div>
-      Find me in src/app.js!
-    </div>
-  );
+    <>
+      <GlobalStyles />
+      <OuterWrapper>
+        <Provider store={store}>
+          <Logo />
+          <Sidebar />
+          <ContentWrapper>
+            <AddTask />
+            <TaskList />
+          </ContentWrapper>
+        </Provider>
+      </OuterWrapper>
+    </>
+  )
 }
+
