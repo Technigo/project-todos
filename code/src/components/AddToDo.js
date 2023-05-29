@@ -1,59 +1,56 @@
-import React, { useState } from 'react'
-import { useDispatch } from 'react-redux'
-import styled from 'styled-components'
-import uniqid from 'uniqid'
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
+import uniqid from 'uniqid';
 
-import todos from 'reducers/list'
+import todos from 'reducers/list';
 
 const ListContainer = styled.form`
   line-height: 1em;
   padding-bottom: 10px;
-`
+`;
 
 const InputField = styled.input`
-background: #fff;
-color: #353a47;
-border: none;
-padding: 8px;
-font-size: 18px;
-// font-family: ;
+  background: #fff;
+  color: #353a47;
+  border: none;
+  padding: 8px;
+  font-size: 18px;
 
-:focus {
-  outline: none;
-}
-`
+  :focus {
+    outline: none;
+  }
+`;
 
 const AddButton = styled.button`
-font-family: ;
-font-size: 18px;
-border: none;
-background: transparent;
-cursor: pointer;
-margin-left: 10px;
-`
+  font-size: 18px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  margin-left: 10px;
+`;
 
 const AddPlus = styled.span`
   font-size: 26px;
   color: #fff;
-`
+`;
 
 const AddTodo = () => {
-  const [inputValue, setInputValue] = useState('')
-  const dispatch = useDispatch()
-  // const todos = useSelector((store) => store.todos)
+  const [inputValue, setInputValue] = useState('');
+  const dispatch = useDispatch();
 
   const onFormSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault();
 
     const newTodo = {
       id: uniqid(),
-      // key: todos.id,
-      name: inputValue,
+      text: inputValue,
       isDone: false
     };
-    dispatch(todos.actions.addItem(newTodo))
+    dispatch(todos.actions.addItem(newTodo));
     setInputValue('');
-  }
+  };
+
   return (
     <ListContainer onSubmit={onFormSubmit}>
       <InputField
@@ -63,10 +60,12 @@ const AddTodo = () => {
         required
         onChange={(e) => setInputValue(e.target.value)} />
       <AddButton type="submit" disabled={inputValue.length > 100}>
-        <AddPlus role="img" aria-label="plus sign emoji">✚</AddPlus>
+        <AddPlus role="img" aria-label="plus sign emoji">
+          ✚
+        </AddPlus>
       </AddButton>
     </ListContainer>
-  )
+  );
 };
 
 export default AddTodo;
