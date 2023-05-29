@@ -44,6 +44,7 @@ const AddTodo = () => {
 
     const newTodo = {
       id: uniqid(),
+      key: todos.id,
       text: inputValue,
       isDone: false
     };

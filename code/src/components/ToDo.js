@@ -55,8 +55,8 @@ const ToDo = () => {
   const dispatch = useDispatch()
   const todoList = useSelector((store) => store.todos.items)
 
-  const toggleTodo = (todoId) => {
-    dispatch(todos.actions.toggleItem(todoId))
+  const toggleTodo = (id) => {
+    dispatch(todos.actions.toggleItem(id))
   }
 
   const deleteTodo = (index) => {
@@ -66,7 +66,7 @@ const ToDo = () => {
   const completeAll = () => {
     todoList.forEach((todo) => {
       if (!todo.isDone) {
-        dispatch(todos.actions.toggleItem(todo.todoId));
+        dispatch(todos.actions.toggleItem(todo.id));
       }
     });
   };
@@ -77,12 +77,12 @@ const ToDo = () => {
   return (
     <TodoContainer>
       <h2>
-      You have {tasksTodo.length} {tasksTodo.length === 1 ? 'thing' : 'things'} to do today.
+      You have {tasksTodo.length} {tasksTodo.length === 1 ? 'thing' : 'things'} to do today. Click on a task to mark it as completed.
       </h2>
 
       {tasksTodo.length === 0 && <p>You are all done!</p>}
       {tasksTodo.map((todo, index) => (
-        <TodoItem todo={todo} index={index} key={todo.todoId} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
+        <TodoItem todo={todo} index={index} key={todo.id} deleteTodo={deleteTodo} toggleTodo={toggleTodo} />
       ))}
       <AddTodo />
       <Button type="button" onClick={completeAll}>
