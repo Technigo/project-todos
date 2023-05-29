@@ -19,6 +19,11 @@ margin-bottom: 40px;
 border-radius: 25px;
 box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
 
+h3 {
+  color: white;
+  font-size: 14px;
+}
+
 @media (min-width: 668px) {
   width: 55vw;
 }
@@ -40,7 +45,7 @@ font-size: 18px;
 padding: 10px 18px;
 margin-top: 15px;
 // font-family: ;
-background: #edca7f;
+background-color: #edca7f;
 color: #fff;
 border: none;
 border-radius: 40px 0px 40px 0px;
@@ -79,7 +84,7 @@ const ToDo = () => {
       <h2>
       You have {tasksTodo.length} {tasksTodo.length === 1 ? 'thing' : 'things'} to do today.
       </h2>
-      <p>Click on a task to mark it as completed.</p>
+      <h3>(Click on a task to mark it as completed)</h3>
 
       {tasksTodo.length === 0 && <p>You are all done!</p>}
       {tasksTodo.map((todo, index) => (
