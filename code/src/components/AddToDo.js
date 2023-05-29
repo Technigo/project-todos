@@ -47,7 +47,7 @@ const AddTodo = () => {
 
     const newTodo = {
       id: uniqid(),
-      key: todos.id,
+      // key: todos.id,
       name: inputValue,
       isDone: false
     };
