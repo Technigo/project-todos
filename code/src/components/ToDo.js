@@ -77,8 +77,9 @@ const ToDo = () => {
   return (
     <TodoContainer>
       <h2>
-      You have {tasksTodo.length} {tasksTodo.length === 1 ? 'thing' : 'things'} to do today. Click on a task to mark it as completed.
+      You have {tasksTodo.length} {tasksTodo.length === 1 ? 'thing' : 'things'} to do today.
       </h2>
+      <p>Click on a task to mark it as completed.</p>
 
       {tasksTodo.length === 0 && <p>You are all done!</p>}
       {tasksTodo.map((todo, index) => (
