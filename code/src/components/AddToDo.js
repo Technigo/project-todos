@@ -6,7 +6,7 @@ import uniqid from 'uniqid';
 import todos from 'reducers/list';
 
 const ListContainer = styled.form`
-  line-height: 1em;
+  line-height: 16px;
   padding-bottom: 10px;
 `;
 

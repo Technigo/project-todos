@@ -12,9 +12,11 @@ const TodoContainer = styled.div`
 background-color: rgba(20, 20, 20, 0.5);
 color: #b6c8a9;
 width: 80vw;
+height: auto;
+align-item: center;
 text-align: center;
 padding: 10px;
-margin: 20px auto;
+margin: 50px auto;
 margin-bottom: 40px;
 border-radius: 25px;
 box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
@@ -29,22 +31,10 @@ h3 {
 }
 `
 
-// const TodoItem = styled.article`
-//   border-radius: 4px;
-//   padding: 12px;
-//   margin-bottom: 6px;
-//   background: #86bbd8;
-//   position: relative;
-//   @media (min-width: 768px) {
-//     width: 500px;
-//   }
-// `
-
 const Button = styled.button`
 font-size: 18px;
 padding: 10px 18px;
 margin-top: 15px;
-// font-family: ;
 background-color: #edca7f;
 color: #fff;
 border: none;

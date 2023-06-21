@@ -2,10 +2,10 @@ import React from 'react';
 import styled from 'styled-components';
 
 const SingleTodo = styled.div`
-margin: 10px;
+  margin: 15px;
   border-bottom: 1px solid black;
   padding-bottom: 15px;
-  line-height: 1em;
+  line-height: 16px;
 `
 const TodoText = styled.div`
   cursor: pointer;
@@ -16,13 +16,11 @@ const TodoText = styled.div`
 const DeleteButton = styled.button`
   background: #f6f6f6;
   border: 1px solid #84b082;
-  // font-family: ;
   font-size: 16px;
   cursor: pointer;
   border-radius: 50%;
   padding: 0px 9px;
   color: #84b082;
-  // color: #ccc;
 `
 
 const TodoItem = ({ todo, index, deleteTodo, toggleTodo }) => {
