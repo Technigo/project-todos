@@ -1,0 +1,42 @@
+.add-task-label {
+    display: flex;
+}
+
+#addTaskInput {
+    /*font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;*/
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    font-weight: 600;
+    width: 170px;
+    border: 2px solid #D4E2D4;
+    border-radius: 5px;
+    color: #555555;
+    margin-left: 20px;
+    padding: 2px 5px 2px 5px;
+}
+
+#addTaskInput::placeholder {
+    opacity: 0.9;
+    font-family: 'Courier New', Courier, monospace
+  }
+
+#addTaskInput:focus {
+  outline: #DF7861;
+}
+
+.add-button {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 14px;
+    width: 55px;
+    border: 2px solid #D4E2D4;
+    border-radius: 5px;
+    color: #555555;
+    background-color: white;
+    margin-left: 10px;
+    padding: 1px 5px 1px 5px;
+}
+
+.add-button:hover {
+    background-color: #D4E2D4;
+    cursor: pointer;
+}

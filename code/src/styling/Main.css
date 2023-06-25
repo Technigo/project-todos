@@ -1,0 +1,26 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Permanent Marker', cursive;
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    /*align-items: center;*/
+    width: 300px;
+    border-radius: 2px;
+    background-color: white;
+    padding: 25px;
+    margin-top: 15px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 6px;
+}
+
+@media (min-width: 668px) {
+
+    .list-container {
+        margin-top: 30px;
+        width: 300px;
+    }
+}

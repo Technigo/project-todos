@@ -1,0 +1,22 @@
+.task-count-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 300px;
+    border-radius: 2px;
+    background-color: white;
+    padding: 15px 25px 15px 25px;
+    margin-top: 20px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 6px;
+}
+
+
+.task-count-text {
+    font-size: 16px;
+    color: #ECB390;
+    margin: 5px 0px 5px 0px;
+}
+
+.highlighted-number {
+    color: #dd8673;
+}

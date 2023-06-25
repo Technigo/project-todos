@@ -1,0 +1,18 @@
+.header-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    width: 300px;
+    border: 2px dashed #D4E2D4;
+    border-radius: 5px;
+    background-color: white;
+    padding: 10px 0px 20px 0px;
+}
+
+.header-h1 {
+    font-size: 26px;
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    margin: 2px 0px 10px 0px;
+    color: #DF7861;
+}
