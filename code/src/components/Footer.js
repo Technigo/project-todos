@@ -14,7 +14,7 @@ const Footer = () => {
           <i className="fa-solid fa-envelope" />
         </a>
       </div>
-      <p className="footer-text">Designed by Frida Nordenlöw</p>
+      <p className="footer-text">Made by Frida Nordenlöw</p>
       <p className="footer-text">Technigo Web Development Boot Camp 2023</p>
     </div>
   )

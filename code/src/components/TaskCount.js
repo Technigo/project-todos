@@ -11,12 +11,15 @@ const TaskCount = () => {
       <p className="task-count-text">
           Number of tasks: <span className="highlighted-number">{completedTask.length + notCompletedTask.length}</span>
       </p>
+      <hr />
       <p className="task-count-text">
           Tasks left to complete: <span className="highlighted-number">{notCompletedTask.length}</span>
       </p>
+      <hr />
       <p className="task-count-text">
           Completed tasks: <span className="highlighted-number">{completedTask.length}</span>
       </p>
+      <hr />
     </section>
   )
 }

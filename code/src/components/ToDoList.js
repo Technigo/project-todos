@@ -19,7 +19,7 @@ const ToDoList = () => {
   }
 
   const onCheckTaskToggleBtnClick = (id) => {
-    dispatch(tasks.actions.toggleComplete(id))
+    dispatch(tasks.actions.toggleComplete({ id }))
   }
 
   const onDeleteAllTasksBtnClick = (id) => {
@@ -48,15 +48,15 @@ const ToDoList = () => {
             </>
           )
         })}
-        <p className="invisible-text">Invisible</p>
+        <p className="invisible-text">I</p>
         <hr />
-        <p className="invisible-text">Invisible</p>
+        <p className="invisible-text">I</p>
         <hr />
-        <p className="invisible-text">Invisible</p>
+        <p className="invisible-text">I</p>
         <hr />
-        <p className="invisible-text">Invisible</p>
+        <p className="invisible-text">I</p>
         <hr />
-        <p className="invisible-text">Invisible</p>
+        <p className="invisible-text">I</p>
         <hr />
       </ul>
       <button className="delete-all-tasks-button" type="button" onClick={() => onDeleteAllTasksBtnClick()}>Delete all</button>

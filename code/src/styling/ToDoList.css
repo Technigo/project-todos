@@ -56,6 +56,7 @@ hr {
     border-radius: 5px;
     color: #767676;
     align-self: flex-end;
+    margin-top: 10px;
 }
 
 .delete-all-tasks-button:hover {
