@@ -1,13 +1,11 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+I created a todo list using Redux. I needed the app to list all tasks (completed or uncompleted), to be able to mark an uncompleted task as complete (and change it back to uncompleted), to be able to add and remove tasks and to show  a count of either all tasks or all uncompleted tasks (or both).
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I began by thinking about which components I would need. I then set up the reducer and continued from there. My stretch goal this week was to use styled components. I also wanted to use some animation so I imported a React Confetti package. I used a date-fns package to create a date on the app, and if I had more time I would also have added a timestamp to each task when added.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://fiona-klacar-project-todo.netlify.app/
