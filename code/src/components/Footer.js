@@ -43,17 +43,36 @@ const FooterStyled = styled.footer`
     align-items: center;
     margin-top: auto;
     gap: 20px;
+
+    @media (max-width: 667px) {
+     display: flex;
+     flex-direction: column;
+    }
 `
 
 const MadeBy = styled.p`
     font-family: 'Quicksand', serif;
     opacity: 0.7;
+
+    @media (max-width: 900px) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      font-size: 12px;
+    }
     `
 const IconsContainer = styled.div`
     display: flex;
     flex-direction: row;
     gap: 5px;
     opacity: 0.7;
+
+    @media (max-width: 900px) {
+     font-size: 12px;
+     padding-bottom: 10px;
+     padding-top: 0px;
+    }
 `
 const Icon = styled.img`
     width: 20px;
@@ -66,3 +85,4 @@ const Icon = styled.img`
     `
 //  would like to try and add animation in future
 /* animation: bounce 1s infinite alternate; */
+

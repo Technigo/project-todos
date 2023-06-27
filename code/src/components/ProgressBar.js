@@ -48,9 +48,7 @@ export default ProgressBar;
 const ProgressBarStyled = styled.div`
 `
 const Status = styled.p`
-   
     `
-
 const CounterText = styled.p`
     `
 

@@ -23,7 +23,6 @@ const TaskList = () => {
     dispatch(tasks.actions.removeTask(taskId));
   }
 
-  // if (allTasks.length > 0) {
   return (
     <>
       <GlobalStyle />
@@ -50,6 +49,8 @@ const TaskList = () => {
     </>
 
   )
+  // Try to implement in future:
+  // if (allTasks.length > 0) {
   // } else {
   //   return (
   //     <p> Great job, you&apos;ve got no more tasks! Time to relax!</p>
