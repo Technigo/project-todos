@@ -1,0 +1,36 @@
+.input{
+    height: 50px;
+    width: 255px;
+    border-radius: 12px;
+    background-color: #FEFEE3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    font-family: "Roboto";
+}
+
+input{
+    background: none;
+    border: none;
+    margin-left: 12px;
+    outline:none;
+    flex: 1;
+}
+
+.addIcon{
+    height: 30px;
+    width: 30px;
+}
+
+.addBtn {
+    background: transparent;
+    border: none;
+}
+
+.addBtn:hover {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transform: scale(1.05);
+}

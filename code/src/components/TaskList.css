@@ -1,0 +1,59 @@
+.tasklist-container {
+  display: flex;
+  flex-direction: column;
+  justify-items: center;
+}
+  
+  .taskList {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 15px;
+}
+
+.checkBox {
+  margin: auto;
+  scale: 150%;
+}
+
+.listSection {
+  padding: 10px;
+  border-radius: 12px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  white-space: break-spaces;
+  word-break: break-all;
+}
+
+.timeStamp {
+  font-size: 10px;
+  text-align: left;
+}
+
+.taskText {
+  display: flex;
+}
+
+.mainList {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+}
+
+
+.list {
+  background: rgba(148, 187, 233, 0.4);
+  border-radius: 12px;
+}
+
+
+.removeBtn:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
