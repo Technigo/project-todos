@@ -24,7 +24,7 @@ justify-content: space-between;
 gap: 10px;
 animation: ${fadeIn} 1s ease-in;
 
-@media (min-width: 1024px) {
+@media (min-width: 600px) {
   width: 400px;
 }
 

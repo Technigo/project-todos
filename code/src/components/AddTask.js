@@ -26,7 +26,7 @@ backdrop-filter: blur(4.9px);
 border: 1px solid rgba(255, 255, 255, 0.22);
 overflow: hidden;
 
-@media (min-width: 1024px) {
+@media (min-width: 600px) {
   width: 460px;
 }
 
@@ -52,7 +52,7 @@ border: 1px solid rgba(255, 255, 255, 0.12);
   color: transparent;
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 600px) {
   width: 320px;
 }
  }`

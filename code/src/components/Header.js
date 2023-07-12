@@ -10,7 +10,7 @@ font-weight: 700;
 margin-bottom: -20px;
 opacity: 72%;
 
-@media (min-width: 1024px) {
+@media (min-width: 600px) {
   font-size: 100px;
   font-weight: 700;
 }
