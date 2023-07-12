@@ -16,7 +16,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-width: 460px;
+width: 330px;
 padding-top: 10px;
 background: rgba(255, 255, 255, 0.12);
 border-radius: 16px;
@@ -26,12 +26,16 @@ backdrop-filter: blur(4.9px);
 border: 1px solid rgba(255, 255, 255, 0.22);
 overflow: hidden;
 
+@media (min-width: 1024px) {
+  width: 460px;
+}
+
 input[type=text] {
 font-family: Quicksand;
 outline: none;
 color: white;
 padding-left: 15px;
-width: 320px;
+width: 200px;
 height: 40px;
 background: rgba(255, 255, 255, 0.08);
 border-radius: 170px;
@@ -46,6 +50,10 @@ border: 1px solid rgba(255, 255, 255, 0.12);
   }
   :focus::placeholder {
   color: transparent;
+}
+
+@media (min-width: 1024px) {
+  width: 320px;
 }
  }`
 

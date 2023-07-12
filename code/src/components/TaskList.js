@@ -16,13 +16,17 @@ const fadeIn = keyframes`
  `;
 
 const SingleTaskDiv = styled.div`
-width: 400px;
+width: 280px;
 margin: 10px;
 display: flex;
 flex-direction: row;
 justify-content: space-between;
 gap: 10px;
 animation: ${fadeIn} 1s ease-in;
+
+@media (min-width: 1024px) {
+  width: 400px;
+}
 
 input[type=checkbox] {
   outline: none;
