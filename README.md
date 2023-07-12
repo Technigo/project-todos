@@ -1,13 +1,14 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+A simple todo-app created using React, Redux and styled components. You can add and remove tasks, check them, and remove all tasks. There is also a task counter that keeps track of how many tasks you have completed, and gives you a congratulatory alert when you've checked all your tasks.
 
 ## The problem
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+I still struggle a bit with understanding the logic of Redux, but I did get the most important features of the project off the ground. The biggest challenge for me this week was the styling and the animations, I decided to go for a glassmorphism look to my project. It did work out well but it was definitely a bit of an ambitious plan for the timeframe that I had.
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://antonias-todoapp.netlify.app
+
+
+<img width="408" alt="Skärmavbild 2023-04-24 kl  10 55 46" src="https://user-images.githubusercontent.com/95037306/233934265-280f22ca-3bcf-4804-81cf-a31ec8dc351a.png">
