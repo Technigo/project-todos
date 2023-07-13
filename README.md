@@ -1,5 +1,8 @@
-# Project Todos
+# To do App
+### Week 11 Technigo Bootcamp
+
 I created a To do list using React, Redux and various node packages. 
+The goal this week was to explore Redux further including creating a proper store and learning about slices, reducers and actions in order to properly interact with your store using selectors or by dispatching actions.
 
 ## The problem
 
