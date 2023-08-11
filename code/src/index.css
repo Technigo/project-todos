@@ -1,13 +1,52 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: Quicksand;
+  color: white;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-image: url(../assets/background-blob.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  margin-top: 120px;
+  overflow-x: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.swal-overlay {
+  background-color: rgba(23, 53, 143, 0.171);
+}
+
+.swal-modal {
+  background: rgba(255, 255, 255, 0.12);
+border-radius: 20px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(4.9px);
+-webkit-backdrop-filter: blur(4.9px);
+border: 1px solid rgba(255, 255, 255, 0.22);
+width: 300px;
+}
+
+.swal-title {
+  color: white;
+}
+
+.swal-text {
+  color: white;
+}
+
+.swal-footer {
+  text-align: center;
+}
+
+.swal-button {
+  background: rgba(255, 255, 255, 0.08);
+border-radius: 30px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+backdrop-filter: blur(1.5px);
+-webkit-backdrop-filter: blur(1.5px);
+border: 1px solid rgba(255, 255, 255, 0.16);
 }
