@@ -21,9 +21,9 @@ body {
 
 :root {
     --btn-color: #000;
-    --btn-hover: #1f1f1f;
-    --btn-border: coral;
+    --btn-border: #8a2be2;
     --btn-disabled: #8b8a8b;
+    --btn-hover: #8a2be2;
   }`
 
 export default GlobalStyles;

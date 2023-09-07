@@ -1,14 +1,19 @@
-.app-container {
+.outer-wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
 }
 
-.main {
+.inner-wrapper {
+  width: 80%;
+}
+
+main {
   display: flex;
   flex-direction: column;
   align-content: flex-end;
-  width: 75vw;
+  max-width: 75vw;
 }
 
 form {

@@ -5,16 +5,6 @@ import styled from 'styled-components';
 // image
 import illustration1 from 'assets/images/Coffe call_DrawKit_Vector_Illustrations copy.png';
 
-const InnerWrapper = styled.section`
-display: flex;
-width: 70vw;
-`
-
-const OuterWrapper = styled.section`
-display: flex;
-flex-direction: column;
-margin: 10px;`
-
 const Title = styled.h3`
 font-weight: 700px;
 font-size: 60px;
@@ -30,11 +20,9 @@ height: auto;`
 
 export const Header = () => {
   return (
-    <OuterWrapper>
-      <InnerWrapper>
-        <Title>To-Do List</Title>
-        <Illustration src={illustration1} alt="illustration" />
-      </InnerWrapper>
-    </OuterWrapper>
+    <header>
+      <Title>To-Do List</Title>
+      <Illustration src={illustration1} alt="illustration" />
+    </header>
   )
 }
