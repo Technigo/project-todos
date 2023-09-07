@@ -24,12 +24,16 @@ margin-bottom: 20px;
   font-size: 70px;
 }`
 
+export const Illustration = styled.img`
+width: 100%;
+height: auto;`
+
 export const Header = () => {
   return (
     <OuterWrapper>
       <InnerWrapper>
         <Title>To-Do List</Title>
-        <img src={illustration1} alt="illustration" />
+        <Illustration src={illustration1} alt="illustration" />
       </InnerWrapper>
     </OuterWrapper>
   )
