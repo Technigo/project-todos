@@ -18,7 +18,7 @@ margin: 10px;`
 const Title = styled.h3`
 font-weight: 700px;
 font-size: 60px;
-color: #F2B807;
+color: inherit;
 margin-bottom: 20px;
 @media (min-width:1024px) {
   font-size: 70px;
