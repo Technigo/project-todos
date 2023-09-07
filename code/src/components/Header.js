@@ -2,6 +2,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
+// image
+import illustration1 from 'assets/images/Coffe call_DrawKit_Vector_Illustrations copy.png';
+
 const InnerWrapper = styled.section`
 display: flex;
 width: 70vw;
@@ -26,6 +29,7 @@ export const Header = () => {
     <OuterWrapper>
       <InnerWrapper>
         <Title>To-Do List</Title>
+        <img src={illustration1} alt="illustration" />
       </InnerWrapper>
     </OuterWrapper>
   )
