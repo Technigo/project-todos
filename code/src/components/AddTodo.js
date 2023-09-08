@@ -25,13 +25,15 @@ const TaskInput = styled.input`
     height: 2.25rem;
     display: block;
     margin: 2rem 0;
-    width: 70%;
+    max-width: 70%;
     &:focus {
       border-color: var(--color);
       box-shadow: 0 0 0 2px var(--color);
       outline: 2px solid transparent; /* for Windows High Contrast mode */
-    }
-    
+    };
+    ::placeholder {
+      color: #767676;
+      opacity: 1;
     `
 
 const AddTodo = () => {
@@ -49,17 +51,18 @@ const AddTodo = () => {
   }
   return (
     <>
+      <Divider />
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="task-input">Add a new task here:
+        <label htmlFor="textInput">Add a new task here:
           <TaskInput
             autoComplete="off"
             inputMode="text"
             value={inputValue}
             onChange={(event) => setInputValue(event.target.value)}
-            id="task-input"
+            id="textInput"
             name="newTask"
             type="text"
-            placeholder="Press Enter"
+            placeholder="Press Enter to add"
             required />
         </label>
       </form>

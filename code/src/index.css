@@ -9,28 +9,6 @@
   width: 80%;
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-content: flex-end;
-  max-width: 75vw;
-}
-
-form {
-  margin-top: 20px;
-  margin-bottom: 40px;
-  align-self: center;
-  grid-area: form;
-}
-
-label {
-  font-size: 21px;
-}
-
-ul {
-  grid-area: list;
-}
-
 .counter {
   margin: 10px;
   align-self: flex-end;

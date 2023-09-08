@@ -21,6 +21,9 @@ const GlobalStyles = createGlobalStyle`
     padding: 0;
     background: var(--background); 
     color: var(--color);
+    line-height: 1.4;
+    font-size: 1rem;
+  font-weight: 400;
     font-family: 'Fredoka', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

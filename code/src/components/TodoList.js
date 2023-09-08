@@ -13,6 +13,40 @@ const ListItem = styled.article`
 border: 2px solid red;
 `
 
+const Checkbox = styled.input`
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 0.15em solid currentColor;
+  border-radius: 0.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  ::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    transform: scale(0);
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em #000;
+    background-color: CanvasText; /* WHCM */
+    transform-origin: bottom left;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  };
+  :checked::before {
+    transform: scale(1);
+  };
+  :focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+  }
+`
+
 const TodoList = () => {
   const todoList = useSelector((store) => store.todos.items);
   const dispatch = useDispatch();
@@ -25,7 +59,7 @@ const TodoList = () => {
           return (
             <ListItem key={singleTodo.id}>
               <label htmlFor={singleTodo.id}>
-                <input
+                <Checkbox
                   onChange={() => dispatch(todos.actions.completeTodo(singleTodo.id))}
                   name="newTodo"
                   type="checkbox"
