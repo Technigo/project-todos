@@ -9,13 +9,6 @@
   width: 80%;
 }
 
-.counter {
-  margin: 10px;
-  align-self: flex-end;
-  font-size: 21px;
-  grid-area: counter;
-}
-
 @media (min-width: 1024px) {
   .main {
     display: grid;

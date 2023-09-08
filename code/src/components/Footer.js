@@ -50,7 +50,8 @@ const FooterContainer = styled.footer`
 display: flex;
 flex-direction: column;
 align-items: center;
-text-align: center;`
+text-align: center;
+margin-bottom: 2em;`
 
 const FooterText = styled.p`
 margin: 0 auto 1rem auto;`

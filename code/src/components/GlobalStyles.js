@@ -23,12 +23,12 @@ const GlobalStyles = createGlobalStyle`
     color: var(--color);
     line-height: 1.4;
     font-size: 1rem;
-  font-weight: 400;
+    font-weight: 400;
     font-family: 'Fredoka', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  box-sizing: border-box;
-  overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    box-sizing: border-box;
+    overflow-x: hidden;
 };
 `
 

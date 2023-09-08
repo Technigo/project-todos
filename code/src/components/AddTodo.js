@@ -5,7 +5,7 @@ import styled from 'styled-components/macro';
 import { useDispatch } from 'react-redux';
 import { todos } from 'reducers/todos';
 
-const Divider = styled.hr`
+export const Divider = styled.hr`
   border: none;
   color: var(--color);
   height: 1px;
@@ -13,8 +13,7 @@ const Divider = styled.hr`
   width: 100%;`
 
 const TaskInput = styled.input`
-    font-size: 16px;
-    font-size: max(16px, 1em);
+    font-size: inherit;
     font-family: inherit;
     padding: 0.25em 0.5em;
     background-color: #fff;
@@ -24,8 +23,8 @@ const TaskInput = styled.input`
     line-height: 1;
     height: 2.25rem;
     display: block;
-    margin: 2rem 0;
     max-width: 70%;
+    margin: 1em 0;
     &:focus {
       border-color: var(--color);
       box-shadow: 0 0 0 2px var(--color);
@@ -35,6 +34,12 @@ const TaskInput = styled.input`
       color: #767676;
       opacity: 1;
     `
+
+const InputLabel = styled.label`
+margin: 0;
+font-size: 21px;
+font-size: max(21px, 1em);
+`
 
 const AddTodo = () => {
   const [inputValue, setInputValue] = useState('');
@@ -51,9 +56,8 @@ const AddTodo = () => {
   }
   return (
     <>
-      <Divider />
       <form onSubmit={onFormSubmit}>
-        <label htmlFor="textInput">Add a new task here:
+        <InputLabel htmlFor="textInput">Add a new task here:
           <TaskInput
             autoComplete="off"
             inputMode="text"
@@ -64,7 +68,7 @@ const AddTodo = () => {
             type="text"
             placeholder="Press Enter to add"
             required />
-        </label>
+        </InputLabel>
       </form>
       <Divider />
     </>
