@@ -13,11 +13,12 @@ export const TodoList = () => {
       <ul>
         {todoList.map((singleTodo) => {
           return (
-            <div className="list-item">
+            <div className="list-item" key={singleTodo.id}>
               <input
                 onChange={() => dispatch(todos.actions.completeTodo(singleTodo.id))}
+                name="newTodo"
                 type="checkbox"
-                key="input-field"
+                id={singleTodo.id}
                 checked={singleTodo.isDone} />
               <li key={singleTodo.id}>{singleTodo.task}</li>
               <button
