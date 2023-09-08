@@ -16,13 +16,33 @@ margin-bottom: 20px;
 
 export const Illustration = styled.img`
 width: 100%;
-height: auto;`
+height: auto;
+max-width: 200px;
+// media queries for desktop
+@media (min-width: 769px) {
+  max-width: 500px;
+  &:hover {
+    transform: scale(1.1);
+    transition: all 220ms ease-in-out 0s;
+  }
+}
+`
+
+const HeaderContainer = styled.header`
+display: flex;
+align-items: end;
+@media (min-width: 769px) {
+    display: grid;
+    grid-template-columns: 18rem 1fr;
+    align-items: start;
+}
+`
 
 export const Header = () => {
   return (
-    <header>
+    <HeaderContainer>
       <Title>To-Do List</Title>
       <Illustration src={illustration1} alt="illustration" />
-    </header>
+    </HeaderContainer>
   )
 }

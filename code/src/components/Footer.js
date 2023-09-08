@@ -26,8 +26,9 @@ display: inline-flex;
     height: 2.5rem;
     padding: 0.35em;
     border-radius: 50%;
+    margin-left: 1rem;
     &:hover, &:active {
-        background-color: var(--btn-hover);
+        transform: scale(1.1);
     };
     &:focus {
         outline-style: solid;
@@ -45,11 +46,20 @@ display: inline-flex;
     };
 `
 
+const FooterContainer = styled.footer`
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;`
+
+const FooterText = styled.p`
+margin: 0 auto 1rem auto;`
+
 const Footer = () => {
   return (
-    <footer>
+    <FooterContainer>
       <Illustration src={illustration2} alt="illustration" />
-      <p>A website created by Nino Aquilon @Technigo &apos;23.</p>
+      <FooterText>A website created by Nino Aquilon @Technigo &apos;23.</FooterText>
       <section className="contact">
         <IconButton href="https://www.github.com" className="button icon-button" aria-label="Go to my Github">
           <FontAwesomeIcon icon={faGithub} />
@@ -58,7 +68,7 @@ const Footer = () => {
           <FontAwesomeIcon icon={faLinkedin} />
         </IconButton>
       </section>
-    </footer>
+    </FooterContainer>
   )
 };
 
