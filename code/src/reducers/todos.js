@@ -15,7 +15,7 @@ export const todos = createSlice({
         isDone: false
       }, {
         id: '03',
-        task: 'Cook dinner',
+        task: 'Do laundry',
         isDone: false
       }, {
         id: '04',
