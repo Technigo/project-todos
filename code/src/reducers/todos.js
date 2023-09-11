@@ -7,23 +7,23 @@ export const todos = createSlice({
     items: [
       {
         id: '01',
-        task: 'Eat some food',
+        task: 'Pick up parcel',
         isDone: false
       }, {
         id: '02',
-        task: 'Have a nap',
+        task: 'Get groceries',
         isDone: false
       }, {
         id: '03',
-        task: 'Eat some more',
+        task: 'Cook dinner',
         isDone: false
       }, {
         id: '04',
-        task: 'Another nap',
+        task: 'Make Tiktok',
         isDone: false
       }, {
         id: '05',
-        task: 'Play with yarn',
+        task: 'Plan outfits',
         isDone: false
       }
     ]

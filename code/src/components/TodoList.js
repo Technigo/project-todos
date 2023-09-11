@@ -105,8 +105,8 @@ font-size: 21px;`
 const TodoList = () => {
   const todoList = useSelector((store) => store.todos.items);
   const dispatch = useDispatch();
-  const amountOfTasks = useSelector((store) => store.todos.items);
-  const amountOfCompleted = amountOfTasks.filter((task) => task.isDone)
+  const allTasks = useSelector((store) => store.todos.items);
+  const completedTasks = allTasks.filter((task) => task.isDone);
   return (
     <>
       <TaskList>
@@ -119,7 +119,14 @@ const TodoList = () => {
                   name="completeTask"
                   type="checkbox"
                   id={singleTodo.id}
-                  checked={singleTodo.isDone} />{singleTodo.task}
+                  checked={singleTodo.isDone} />
+                <span
+                  style={{
+                    textDecoration: singleTodo.isDone ? 'line-through' : 'none',
+                    flex: 1 // Ensure the text takes the available space
+                  }}>
+                  {singleTodo.task}
+                </span>
               </FormControl>
               <IconButton
                 className="icon-button"
@@ -132,7 +139,7 @@ const TodoList = () => {
         })}
       </TaskList>
       <Divider />
-      <Counter name="Counter">{amountOfCompleted.length} / {amountOfTasks.length} completed</Counter>
+      <Counter name="Counter">{completedTasks.length} / {allTasks.length} completed</Counter>
     </>
   )
 };
