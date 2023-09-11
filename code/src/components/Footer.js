@@ -51,7 +51,7 @@ display: flex;
 flex-direction: column;
 align-items: center;
 text-align: center;
-margin-bottom: 2em;`
+margin-bottom: 4em;`
 
 const FooterText = styled.p`
 margin: 0 auto 1rem auto;`

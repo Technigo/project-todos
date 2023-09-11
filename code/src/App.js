@@ -25,6 +25,7 @@ const OuterWrapper = styled.section`
 
 const InnerWrapper = styled.section`
   width: 80%;
+  max-width: 700px;
 `;
 
 export const App = () => {

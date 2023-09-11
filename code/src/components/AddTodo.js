@@ -23,7 +23,7 @@ const TaskInput = styled.input`
     line-height: 1;
     height: 2.25rem;
     display: block;
-    max-width: 70%;
+    max-width: 80%;
     margin: 1em 0;
     &:focus {
       border-color: var(--color);
