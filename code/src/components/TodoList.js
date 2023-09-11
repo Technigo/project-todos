@@ -151,6 +151,8 @@ const TodoList = () => {
                 className="icon-button"
                 onClick={() => dispatch(todos.actions.removeTodo(singleTodo))}
                 type="button"
+                id="deleteTask"
+                aria-label="deleteTask"
                 name="deleteTask">
                 <FontAwesomeIcon icon={faMinus} />
               </IconButton>
