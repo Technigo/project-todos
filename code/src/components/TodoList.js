@@ -62,7 +62,10 @@ const FormControl = styled.label`
     font-family: inherit;
     line-height: 1.1;
     display: grid;
-    grid-template-columns: 2em auto;`
+    grid-template-columns: 2em auto;
+    max-width: 80%;
+    line-break: strict;
+    `
 
 const IconButton = styled.button`
         border: none;
