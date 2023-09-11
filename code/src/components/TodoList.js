@@ -4,12 +4,16 @@ import styled from 'styled-components/macro';
 import { useDispatch, useSelector } from 'react-redux';
 import { todos } from 'reducers/todos';
 
-// components
+// illustration
+import illustration3 from 'assets/images/Shopping call_DrawKit_Vector_Illustrations copy.png';
 
-// Icon
+// components
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMinus } from '@fortawesome/free-solid-svg-icons';
 import { Divider } from './AddTodo';
+import { Illustration } from './Header';
+
+// Icon
 
 const TaskList = styled.ul`
 margin: 2em 0;
@@ -105,6 +109,12 @@ const IconButton = styled.button`
 const Counter = styled.p`
 font-size: 21px;`
 
+const NoTasksYet = styled.section`
+display: flex;
+flex-direction: column;
+align-items: center;
+`
+
 const TodoList = () => {
   const todoList = useSelector((store) => store.todos.items);
   const dispatch = useDispatch();
@@ -113,6 +123,12 @@ const TodoList = () => {
   return (
     <>
       <TaskList>
+        {todoList.length === 0 && (
+          <NoTasksYet>
+            <p>No tasks here yet. Try adding one above!</p>
+            <Illustration src={illustration3} />
+          </NoTasksYet>
+        )}
         {todoList.map((singleTodo) => {
           return (
             <ListItem key={singleTodo.id}>
