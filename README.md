@@ -1,13 +1,21 @@
 # Project Todos
 
-Replace this readme with your own information about your project.
+Tha task was to build a To-Do app using React and Redux Toolkit. We were free to implement our own design. 
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## The brief
 
-## The problem
+In this week's project, it's time to flex your redux muscles and build an application that pulls together all the parts of redux by building a to do app.
 
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+**What you need to do**
+
+✓ Your app should list all tasks - completed or uncompleted.
+
+✓ You should be able to mark an uncompleted task as complete (and change it back to uncompleted).
+
+✓ You should be able to add and remove tasks.
+
+✓ Your app should show a count of either all tasks or all uncompleted tasks (or both).
 
 ## View it live
 
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+https://gregarious-griffin-0ee914.netlify.app/
