@@ -41,6 +41,20 @@ font-size: 21px;
 font-size: max(21px, 1em);
 `
 
+const LabelSpan = styled.span`
+    font-size: .75rem;
+    display: inline-block;
+    height: 1rem;
+    line-height: 1rem;
+    font-family: inherit;
+    background: #222;
+    padding: 0 0.325rem;
+    position: relative;
+    top: -1px;
+    color: #eee;
+    border-radius: 0.125rem;
+    margin-left: 5px;`
+
 const AddTodo = () => {
   const [inputValue, setInputValue] = useState('');
   const dispatch = useDispatch();
@@ -57,7 +71,7 @@ const AddTodo = () => {
   return (
     <>
       <form onSubmit={onFormSubmit}>
-        <InputLabel htmlFor="textInput">Add a new task here:
+        <InputLabel htmlFor="textInput">Add a new task here: <LabelSpan>max 30 characters</LabelSpan>
           <TaskInput
             autoComplete="off"
             inputMode="text"
@@ -66,6 +80,8 @@ const AddTodo = () => {
             id="textInput"
             name="newTask"
             type="text"
+            minLength="1"
+            maxLength="30"
             placeholder="Press Enter to add"
             required />
         </InputLabel>

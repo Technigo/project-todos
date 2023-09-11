@@ -1,6 +1,6 @@
 /* eslint-disable linebreak-style */
 import React from 'react';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
 // image
 import illustration1 from 'assets/images/Coffe call_DrawKit_Vector_Illustrations copy.png';
@@ -31,6 +31,7 @@ max-width: 200px;
 const HeaderContainer = styled.header`
 display: flex;
 align-items: end;
+margin-bottom: 1rem;
 @media (min-width: 769px) {
     display: grid;
     grid-template-columns: 18rem 1fr;
