@@ -31,7 +31,6 @@ The user can:
 - Then I moved on to work on more functionality: Reducers and actions to add new lists in an array, i.e. add new projects
 - Added reducers and actions to delete lists + a functionality to toggle between opening and closing lists
 - Added functionality to the list items in the lists in the array, i.e. toggle completion of tasks, flag tasks and count tasks
-<br />
 - Styling: I worked with Global Style/Styled Components and made the app responsive
 - I got inspired by this [SVG wave animation in code pen](https://codepen.io/tedmcdo/pen/PqxKXg "Wave animation") and decided to manipulate it and place in the header section
 <br />
