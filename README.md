@@ -4,8 +4,6 @@
 ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white)
 ![Styled Components](https://img.shields.io/badge/styled--components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white)
 
-<img width="300" alt="To Do Demo" src="./code/public/images/todo-demo.png">
-
 A classic to do-app built in React using Redux.
 
 ## Functionality
@@ -32,11 +30,9 @@ The user can:
 - When everything worked I went on to add reducers and actions to toggle, flag and count tasks
 - Then I moved on to work on more functionality: Reducers and actions to add new lists in an array, i.e. add new projects
 - Added reducers and actions to delete lists + a functionality to toggle between opening and closing lists
-- Added functionality to the list items in the lists in the array, i.e. toggle completion of tasks, flag tasks and count tasks
- \ 
+- Added functionality to the list items in the lists in the array, i.e. toggle completion of tasks, flag tasks and count tasks\ 
 - Parallell with all this I worked with Global Style/Styled Components and made the app responsive
-- I got inspired by this [SVG wave animation in code pen](https://codepen.io/tedmcdo/pen/PqxKXg "Wave animation") and decided to manipulate it and place in the header section
- \ 
+- I got inspired by this [SVG wave animation in code pen](https://codepen.io/tedmcdo/pen/PqxKXg "Wave animation") and decided to manipulate it and place in the header section\ 
 ## Potential improvements to be made
 - Work on styling, user flow and accessibility
 - Work on backend, such as: authentication and to store all tasks and lists on a database
@@ -70,7 +66,7 @@ Run the following command to start the development server and launch the app in 
 ```
 npm start
 ```
-The app should automatically open in your browser at http://localhost:3000. If not, navigate to this URL manually.
+The app should automatically open in your browser at http://localhost:3000. If not, navigate to this URL manually.\
 5. Explore the App:
 Explore the app, add tasks, create projects, and test out the functionality.
 
@@ -96,6 +92,8 @@ Explore the app, add tasks, create projects, and test out the functionality.
 ## View it live
 
 https://to-do-project-vera.netlify.app/
+
+<img width="300" alt="To Do Demo" src="./code/public/images/todo-demo.png">
 
 
 
