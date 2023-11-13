@@ -73,7 +73,7 @@ npm start
 The app should automatically open in your browser at http://localhost:3000. If not, navigate to this URL manually.\
 
 5. Explore the App:
-Explore the app, add tasks, create projects, and test out the functionality.
+Explore the app, add tasks, create projects and test out the functionality.
 
 ### Additional notes:
 
