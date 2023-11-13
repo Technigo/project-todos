@@ -1,6 +1,6 @@
 # Project Todos
 
-<img width="500" alt="To Do Demo" src="https://ibb.co/HFCg3Qc](https://imageupload.io/1VEHjBddTcX5yQX">
+<img width="500" alt="To Do Demo" src="./code/public/images/todo-demo.png">
 
 Replace this readme with your own information about your project.
 
