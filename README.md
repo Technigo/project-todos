@@ -1,13 +1,8 @@
 # Project Todos
-
-Replace this readme with your own information about your project.
-
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+Basic todo app with childish design and state management in Redux.
 
 ## The problem
-
-Describe how you approached to problem, and what tools and techniques you used to solve it. How did you plan? What technologies did you use? If you had more time, what would be next?
+Created two state slices, one for unfinished tasks and one for finnished tasks. The app passes the tasks back and forth between the two. There is also an unstasking function for clearing the schedule and go doing something fun!
 
 ## View it live
-
-Every project should be deployed somewhere. Be sure to include the link to the deployed project so that the viewer can click around and see what it's all about.
+Deployed at: https://jonastodoapp.netlify.app/
