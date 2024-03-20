@@ -11,6 +11,10 @@ body {
   height: 100vh;
 }
 
+html {
+  font-size: 16px;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -134,9 +138,11 @@ button:hover {
 color: rgba(106,246,211, 0.6);
 }*/
 
+/*
 #vaultListSection {
- /* display: none; */
+ display: none; 
 }
+*/
 
 footer {
   margin-bottom: 0;
