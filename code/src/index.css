@@ -1,13 +1,165 @@
 body {
-  margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightslategray;
+  -ms-overflow-style: none;
+  background-image:url(./icons/magicpattern-background.png);
+  background-size: cover;
+  height: 100vh;
+}
+
+html {
+  font-size: 16px;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-family: 'Bruno Ace SC';
+}
+
+#wrapperDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  max-width: 600px;
+  border-radius: 2rem;
+  border: 2px solid black;
+  padding: 0.4rem;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70vh;
+  width: 90vw;
+  /* From https://css.glass */
+background: rgba(181, 140, 169, 0.1); 
+border-radius: 16px;
+box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+backdrop-filter: blur(4.9px);
+-webkit-backdrop-filter: blur(4.9px);
+border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+section {
+  width: 98%;
+  max-width: 540px;
+}
+
+.listSection {
+  height: 60vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  scrollbar-width: none;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  border-bottom: 1px solid seashell;
+}
+
+.listSection::-webkit-scrollbar{
+  display: none;
+} /* this hides the scrollbars in Chrome and Safari */
+
+
+.buttonContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+p {
+  text-shadow: 1px 1px 2px black;
+  padding-left: 5px;
+  font-weight: bold;
+  color: seashell;
+}
+
+span, label {
+  color:white;
+  text-shadow: 1px 1px 2px black;
+  margin-bottom: 1rem;
+  letter-spacing: 2px;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 0.6rem;
+  margin-bottom: 2rem;
+}
+
+input {
+  width: 100%;
+  background-color: seashell;
+  align-self: center;
+  height: 1.5rem;
+  border: none;
+  font: inherit;
+  margin-top: 3px;
+}
+
+input:focus {
+  outline: 2px solid #6af6d3;
+  outline-offset: 3px;
+  border-radius: 3px;
+  margin-top: 5px;
+}
+
+#submitIcon {
+  height: 100%;
+  padding-right: 1rem;
+  padding-left: 3rem;
+  transition: 0.3s ease-in-out;
+}
+
+#submitIcon:hover {
+  filter:sepia(0.5);
+}
+
+button {
+  cursor: pointer;
+  white-space: break-spaces;
+}
+/*
+button:hover {
+color: rgba(106,246,211, 0.6);
+}*/
+
+#addSection {
+  margin-left: 1rem;
+}
+
+
+#vaultListSection {
+ display: none; 
+}
+
+footer {
+  margin-bottom: 0;
+}
+
+@media screen and (min-width:667px) {
+  #listSection {
+  height: 50vh;
+  }
+  h1 {
+    font-size: 3rem;
+  }
+  section {
+    width: 100%;
+  }
 }
