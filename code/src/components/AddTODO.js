@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { format } from 'date-fns';
@@ -22,11 +23,10 @@ const AddTODO = () => {
       isPrioritized: false,
       createdAt: timestamp
     }
-    // eslint-disable-next-line max-len
     // dispatch(slice.actions.reducer(payload)) We import the slice so that we can reference the reducer.
     dispatch(tickets.actions.addTODO(newTODO));
     setInputValue('');
-    console.log(timestamp)
+    console.log('timestamp:', timestamp)
   }
 
   return (
@@ -34,9 +34,16 @@ const AddTODO = () => {
     <section id="addSection">
       <form onSubmit={handleNewSubmit}>
         <label htmlFor="addTODOinput">
-          <input type="text" maxLength="70" required id="addTODOinput" value={inputValue} onChange={(event) => setInputValue(event.target.value)} />
+          Add new:
+          <input
+            type="text"
+            maxLength="70"
+            required
+            id="addTODOinput"
+            value={inputValue}
+            onChange={(event) => setInputValue(event.target.value)} />
         </label>
-        <AddButton type="submit" aria-label="Add it">
+        <AddButton type="submit" aria-label="Add new task">
           <img id="submitIcon" src={SubmitIcon} alt="Add todo" />
         </AddButton>
       </form>
