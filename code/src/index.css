@@ -139,6 +139,10 @@ button:hover {
 color: rgba(106,246,211, 0.6);
 }*/
 
+#addSection {
+  margin-left: 1rem;
+}
+
 
 #vaultListSection {
  display: none; 
