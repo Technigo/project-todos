@@ -105,6 +105,7 @@ input {
   margin-left: 1rem;
   height: 1.5rem;
   border: none;
+  font: inherit;
 }
 
 input:focus {
@@ -134,7 +135,7 @@ color: rgba(106,246,211, 0.6);
 }*/
 
 #vaultListSection {
-  display: none;
+ /* display: none; */
 }
 
 footer {
