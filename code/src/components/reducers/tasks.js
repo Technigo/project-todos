@@ -23,6 +23,9 @@ export const tasks = createSlice({
         }
       });
     },
+    loadTasks: (store, action) => {
+      store.items = action.payload;
+    },
     deleteTask: (store, action) => {
       store.items.splice(action.payload, 1)
     },

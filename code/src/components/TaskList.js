@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import styled from 'styled-components';
 import { tasks } from './reducers/tasks';
@@ -29,6 +29,22 @@ const Time = styled.p`
 export const TaskList = () => {
   const taskList = useSelector((list) => list.tasks.items)
   const dispatch = useDispatch()
+
+  useEffect(() => {
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+      try {
+        const parsedTasks = JSON.parse(storedTasks);
+        dispatch(tasks.actions.loadTasks(parsedTasks));
+      } catch (error) {
+        console.error('Error parsing tasks from localStorage:', error);
+      }
+    }
+  }, [dispatch]);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(taskList));
+  }, [taskList]);
 
   const checkboxToggle = (id) => {
     dispatch(tasks.actions.toggleTask(id));
