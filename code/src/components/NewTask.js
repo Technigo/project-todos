@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import styled from 'styled-components'
+import styled from 'styled-components/macro';
 import moment from 'moment';
 import { tasks } from './reducers/tasks';
 import { AddButton, DeleteButton, HeadLine } from './styles/global';

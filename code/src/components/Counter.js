@@ -2,12 +2,11 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import { useWindowSize } from '@react-hook/window-size';
 import Confetti from 'react-confetti'
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 
-const CounterText = styled.p`
+const CounterText = styled.div`
   font-family: 'Roboto', sans-serif;
   font-size: 1em;
-  display: flex;
 `
 
 export const Counter = () => {
@@ -25,9 +24,9 @@ export const Counter = () => {
             width={width}
             height={height}
             colors={['#FE6D60', '#FFC967']}
-            numberOfPieces={100}
+            numberOfPieces={200}
             gravity={0.05}
-            confettiSource={{ x: 0, y: 500, w: 1000, h: 1000 }} />
+            confettiSource={{ w: 1000, h: 1000 }} />
           <p>All done</p>
         </>)
     } else {

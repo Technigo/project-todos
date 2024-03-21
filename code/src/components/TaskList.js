@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import styled from 'styled-components';
+import styled from 'styled-components/macro';
 import { tasks } from './reducers/tasks';
 import { Button } from './styles/global';
 import { EmptyState } from './EmptyState';
